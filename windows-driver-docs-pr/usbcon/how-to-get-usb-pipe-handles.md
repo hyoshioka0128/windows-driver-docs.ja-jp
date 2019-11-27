@@ -1,29 +1,29 @@
 ---
-Description: このトピックでは、USB パイプの概要を説明し、USB クライアント ドライバーで USB ドライバー スタックからパイプ ハンドルを取得するために必要な手順について説明します。
+Description: このトピックでは、usb パイプの概要について説明し、usb ドライバースタックからパイプハンドルを取得するために USB クライアントドライバーが必要とする手順について説明します。
 title: USB パイプの列挙方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 789c7f5416592b7a5af94e2b5b98e29eaf95ff5e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7d574a4ac44297d62edf158c0915b4644768a38c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386263"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844371"
 ---
 # <a name="how-to-enumerate-usb-pipes"></a>USB パイプの列挙方法
 
 
-このトピックでは、USB パイプの概要を説明し、USB クライアント ドライバーで USB ドライバー スタックからパイプ ハンドルを取得するために必要な手順について説明します。
+このトピックでは、usb パイプの概要について説明し、usb ドライバースタックからパイプハンドルを取得するために USB クライアントドライバーが必要とする手順について説明します。
 
-A *USB エンドポイント*クライアント ドライバーは、データを送信またはからのデータを受信するデバイスでのバッファーします。 データを送受信するには、クライアント ドライバーは、ホスト コント ローラーにデータを表示します。 USB ドライバー スタックへの I/O 転送要求を送信します。 ホスト コント ローラーの後に続く特定のプロトコル (エンドポイントの種類に応じて: 一括、割り込み、アイソクロナスまたは)、デバイス間でデータを転送する要求を構築します。 データ転送のすべての詳細は、クライアント ドライバーから抽象化されます。 クライアント ドライバーでは、適切な形式で要求を送信する限り、USB ドライバー スタックは要求を処理し、デバイスにデータを転送します。
+*USB エンドポイント*は、デバイス内のバッファーで、クライアントドライバーがデータを送信するか、データを受信します。 データを送受信するために、クライアントドライバーは、データをホストコントローラーに提示する、USB ドライバースタックに i/o 転送要求を送信します。 ホストコントローラーは、デバイスとの間でデータを転送する要求を構築するために、特定のプロトコル (エンドポイントの種類 (一括、割り込み、またはアイソクロナス) によって異なります) に従います。 データ転送の詳細はすべて、クライアントドライバーから抽象化されています。 クライアントドライバーが適切な形式の要求を送信する限り、USB ドライバースタックは要求を処理し、データをデバイスに転送します。
 
-USB ドライバー スタックの作成、デバイスの構成時に、 *USB パイプ*(ホスト側) に、USB インターフェイスとそのアクティブな代替設定で定義されているデバイスのエンドポイントごと。 USB パイプは、ホスト コント ローラーとエンドポイント間の通信チャネルです。 クライアント ドライバーの場合は、パイプは、エンドポイントの論理の抽象化です。 データ転送を送信するには、ドライバーは、転送対象となっているエンドポイントに関連付けられたパイプ ハンドルを取得する必要があります。 パイプ ハンドルは、ドライバーが転送を中止するか、エラー条件が発生した場合、パイプをリセットする場合にも必要です。
+デバイスの構成中に、usb ドライバースタックは、usb インターフェイスに定義されているデバイスの各エンドポイントとそのアクティブな代替設定に対して、usb*パイプ*(ホスト側) を作成します。 USB パイプは、ホストコントローラーとエンドポイント間の通信チャネルです。 クライアントドライバーの場合、パイプはエンドポイントを論理的に抽象化したものです。 データ転送を送信するために、ドライバーは、転送先のエンドポイントに関連付けられているパイプハンドルを取得する必要があります。 パイプハンドルは、エラーが発生した場合に、ドライバーによって転送が中止されたり、パイプがリセットされたりする場合にも必要です。
 
-パイプのすべての属性は、関連付けられたエンドポイント記述子から派生します。 たとえば、USB ドライバー スタック、エンドポイントの種類に応じて、パイプの型が割り当てられます。 一括エンドポイントの場合は、USB ドライバー スタックは一括パイプ; を作成しますアイソクロナス エンドポイントの場合、アイソクロナス パイプが作成されなど。 もう 1 つの重要な属性は、ホスト コント ローラーは、要求で、エンドポイントのポイントに送信できるデータの量です。 クライアント ドライバーは、その値に応じて、転送バッファーのレイアウトを決定する必要があります。
+パイプのすべての属性は、関連付けられているエンドポイント記述子から派生します。 たとえば、エンドポイントの種類によっては、USB ドライバースタックによってパイプの種類が割り当てられます。 一括エンドポイントの場合、USB ドライバースタックによって一括パイプが作成されます。アイソクロナスエンドポイントの場合は、アイソクロナスパイプが作成されます。 もう1つの重要な属性は、ホストコントローラーが要求のエンドポイントに送信できるデータの量です。 クライアントドライバーは、その値に応じて、転送バッファーのレイアウトを決定する必要があります。
 
-Windows Driver Foundation (WDF) での特殊な I/O ターゲット オブジェクトを提供する[カーネル モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)と[ユーザー モード ドライバー フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)さまざまな構成タスクを簡略化クライアントドライバー。 これらのオブジェクトを使用すると、クライアント ドライバーはインターフェイスの数など、現在の構成に関する情報を取得、別の各インターフェイスとそのエンドポイント内で設定できます。 呼ばれるこれらのオブジェクトの 1 つ、*ターゲット パイプ オブジェクト*エンドポイントに関連するタスクを実行します。 このトピックでは、ターゲットのパイプ オブジェクトを使用してパイプ情報を取得する方法について説明します。
+Windows Driver Foundation (WDF) は、[カーネルモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)と[ユーザーモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)に特化した i/o ターゲットオブジェクトを提供します。これにより、クライアントドライバーの多くの構成タスクを簡単に行うことができます。 これらのオブジェクトを使用することにより、クライアントドライバーは、インターフェイスの数、各インターフェイス内の別の設定、エンドポイントなど、現在の構成に関する情報を取得できます。 これらのオブジェクトのいずれか (*ターゲットパイプオブジェクト*と呼ばれます) によって、エンドポイント関連のタスクが実行されます。 このトピックでは、ターゲットパイプオブジェクトを使用してパイプ情報を取得する方法について説明します。
 
-Windows Driver Model (WDM) クライアント ドライバーでは、USB ドライバー スタックの配列を返します[ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体。 配列内の要素の数は、選択した構成でインターフェイスのアクティブな代替設定に定義されたエンドポイントの数によって異なります。 各要素には、特定のエンドポイント用に作成されたパイプに関する情報が含まれています。 構成を選択して、パイプ情報の配列を取得する方法については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
+Windows Driver Model (WDM) クライアントドライバーの場合、USB ドライバースタックは、 [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体の配列を返します。 配列内の要素の数は、選択した構成のインターフェイスのアクティブな代替設定に定義されているエンドポイントの数によって異なります。 各要素には、特定のエンドポイント用に作成されたパイプに関する情報が含まれます。 構成を選択し、パイプ情報の配列を取得する方法の詳細については、「 [USB デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)」を参照してください。
 
 ## <a name="what-you-need-to-know"></a>理解しておく必要があること
 
@@ -35,49 +35,49 @@ Windows Driver Model (WDM) クライアント ドライバーでは、USB ドラ
 
 ### <a name="prerequisites"></a>前提条件
 
-クライアント ドライバーでは、パイプを列挙できます、前に、これらの要件を満たしていることを確認してください。
+クライアントドライバーがパイプを列挙できるようにするには、次の要件が満たされていることを確認します。
 
--   クライアント ドライバー フレームワーク USB ターゲット デバイス オブジェクトを作成する必要があります。
+-   クライアント ドライバーによって、フレームワーク USB ターゲット デバイス オブジェクトが作成されている必要があります。
 
-    Microsoft Visual Studio Professional 2012 と共に用意されている USB テンプレートを使用する場合、テンプレート コードは、これらのタスクを実行します。 テンプレート コードでは、ターゲット デバイス オブジェクトを識別するハンドルを取得し、デバイス コンテキストに格納します。
+    Microsoft Visual Studio Professional 2012 に付属する USB テンプレートを使用している場合、テンプレート コードでこれらのタスクが実行されます。 テンプレート コードによりターゲット デバイス オブジェクトのハンドルが取得され、デバイス コンテキストに格納されます。
 
-    \* * クライアント ドライバーの KMDF: * *
+    **KMDF クライアント ドライバー: **
 
-    KMDF クライアント ドライバーは、呼び出すことによって WDFUSBDEVICE ハンドルを取得する必要があります、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)メソッド。 詳細については、「デバイスのソース コード」を参照してください[USB クライアント ドライバー コード構造 (KMDF) について](understanding-the-kmdf-template-code-for-usb.md)します。
+    KMDF クライアント ドライバーでは、[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) メソッドを呼び出すことで WDFUSBDEVICE ハンドルを取得する必要があります。 詳細については、「[USB クライアント ドライバー コード構造について (KMDF)](understanding-the-kmdf-template-code-for-usb.md)」の「デバイスのソース コード」を参照してください。
 
-    \* * クライアント ドライバーの UMDF: * *
+    **UMDF クライアント ドライバー: **
 
-    UMDF クライアント ドライバーを入手する必要があります、 [ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)フレームワーク ターゲットのデバイス オブジェクトのクエリを実行してポインター。 詳細については、次を参照してください。"[**IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF) について](understanding-the-umdf-template-code-for-usb.md)します。
+    UMDF クライアント ドライバーは、フレームワーク ターゲット デバイス オブジェクトを問い合わせることで、[**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) ポインターを取得する必要があります。 詳細については、「[USB クライアント ドライバー コード構造について (UMDF) **」の「** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)IPnpCallbackHardware[](understanding-the-umdf-template-code-for-usb.md) 実装と USB 固有のタスク」を参照してください。
 
--   デバイスをアクティブな構成が必要です。
+-   デバイスにはアクティブな構成が必要です。
 
-    USB テンプレートを使用している場合に、コードは、各インターフェイスの最初の構成と既定の代替設定を選択します。 その既定の設定を変更する方法については、次を参照してください。 [USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)します。
+    USB テンプレートを使用している場合、コードは各インターフェイスの最初の構成と既定の代替設定を選択します。 この既定の設定を変更する方法の詳細については、「 [USB インターフェイスで別の設定を選択する方法](select-a-usb-alternate-setting.md)」を参照してください。
 
-    \* * クライアント ドライバーの KMDF: * *
+    **KMDF クライアント ドライバー: **
 
-    KMDF クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)メソッド。
+    KMDF クライアントドライバーは、 [**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)メソッドを呼び出す必要があります。
 
-    \* * クライアント ドライバーの UMDF: * *
+    **UMDF クライアント ドライバー: **
 
-    UMDF のクライアント ドライバーの場合は、フレームワークは、その構成の最初の構成と各インターフェイスの既定の代替設定を選択します。
+    UMDF クライアントドライバーでは、フレームワークによって、最初の構成と、その構成内の各インターフェイスの既定の代替設定が選択されます。
 
 <a name="instructions"></a>手順
 ------------
 
-### <a name="getting-usb-pipe-handles---kmdf-client-driver"></a>USB パイプ ハンドルの取得 KMDF クライアント ドライバー
+### <a name="getting-usb-pipe-handles---kmdf-client-driver"></a>USB パイプハンドルの取得-KMDF クライアントドライバー
 
-フレームワークは、USB ターゲット パイプ オブジェクトとして、USB ドライバー スタックによって開かれている、それぞれのパイプを表します。 KMDF クライアント ドライバーは、パイプに関する情報を取得する対象のパイプ オブジェクトのメソッドにアクセスできます。 データ転送を実行するには、クライアント ドライバーは、WDFUSBPIPE パイプ処理する必要があります。 パイプ ハンドルを取得するには、ドライバーがアクティブな構成のインターフェイスと代替の設定を列挙し、各設定で定義されているエンドポイントが列挙する必要があります。 各データ転送の列挙操作を実行すると、高価なことができます。 したがって、1 つの方法は、デバイスを構成した後は、パイプ ハンドルを取得し、ドライバーの定義済みのデバイス コンテキスト内に格納します。 ドライバーは、データ転送の要求を受信すると、ドライバーは、デバイス コンテキストから必要なパイプ ハンドルを取得し、それらを使用して要求を送信します。 クライアント ドライバーでは、デバイスの構成を変更する場合は、代替などが選択を設定するドライバーも更新する必要あります新しいパイプ ハンドルを使用して、デバイス コンテキスト。 それ以外の場合、ドライバーは古いパイプ ハンドルの転送要求を送信することが誤って。
+このフレームワークは、usb ドライバースタックによって開かれる各パイプを、USB ターゲットパイプオブジェクトとして表します。 KMDF クライアントドライバーは、パイプに関する情報を取得するために、ターゲットパイプオブジェクトのメソッドにアクセスできます。 データ転送を実行するには、クライアントドライバーが WDFUSBPIPE パイプハンドルを持っている必要があります。 パイプハンドルを取得するには、ドライバーは、アクティブな構成のインターフェイスと代替設定を列挙し、各設定で定義されているエンドポイントを列挙する必要があります。 データ転送ごとに列挙操作を実行すると、コストが高くなる可能性があります。 そのため、デバイスの構成後にパイプハンドルを取得し、ドライバー定義のデバイスコンテキストに格納する方法があります。 ドライバーは、データ転送要求を受信すると、デバイスコンテキストから必要なパイプハンドルを取得し、それを使用して要求を送信できます。 クライアントドライバによってデバイスの構成が変更された場合 (たとえば、が代替設定を選択した場合)、ドライバは新しいパイプハンドルを使用してデバイスコンテキストを更新する必要があります。 それ以外の場合、ドライバーは古いパイプハンドルに対して誤って転送要求を送信できます。
 
-**注**パイプ ハンドルはコントロールの転送に必要ありません。
-WDF のクライアント ドライバーを呼び出してコントロールの転送要求を送信する**WdfUsbDevicexxxx** framework デバイス オブジェクトによって公開されるメソッド。 これらのメソッドには、コントロールの転送を開始する WDFUSBDEVICE ハンドルを対象とする既定のエンドポイントが必要があります。 要求の I/O ターゲット、このような転送に既定のエンドポイントし、WDFIOTARGET で表されるハンドルは抽象化を WDFUSBPIPE ハンドルでします。 デバイス レベルでは、WDFUSBDEVICE ハンドルは、既定のエンドポイントへの WDFUSBPIPE ハンドルの抽象化が。
+**メモ** パイプハンドルは、制御転送には必要ありません。
+制御転送要求を送信するために、WDF クライアントドライバーは、フレームワークデバイスオブジェクトによって公開されている**WdfUsbDevicexxxx**メソッドを呼び出します。 これらのメソッドでは、既定のエンドポイントを対象とする制御転送を開始するために、WDFUSBDEVICE ハンドルが必要です。 このような転送では、要求の i/o ターゲットは既定のエンドポイントであり、WDFUSBPIPE ハンドルによって抽象化される WDFIOTARGET ハンドルによって表されます。 デバイスレベルでは、WDFUSBDEVICE ハンドルは、既定のエンドポイントへの WDFUSBPIPE ハンドルを抽象化したものです。
 
-コントロールの転送と KMDF メソッドに送信する方法の詳細については、次を参照してください。 [USB 制御転送を送信する方法](usb-control-transfer.md)します。
+制御転送と KMDF メソッドの送信の詳細については、「 [USB 制御転送を送信する方法](usb-control-transfer.md)」を参照してください。
 
 
 
-1.  パイプ ハンドルを格納するため、デバイス コンテキストの構造を拡張します。
+1.  パイプハンドルを格納するようにデバイスコンテキスト構造を拡張します。
 
-    デバイスで、エンドポイントをわかっている場合は、関連付けられている USB パイプ ハンドルを格納する WDFUSBPIPE メンバーを追加することでデバイス コンテキストの構造体を拡張します。 たとえば、次に示すようにデバイス コンテキストの構造を拡張できます。
+    デバイスのエンドポイントがわかっている場合は、関連付けられている USB パイプハンドルを格納する WDFUSBPIPE メンバーを追加することによって、デバイスコンテキスト構造を拡張します。 たとえば、次に示すように、デバイスコンテキスト構造を拡張できます。
 
     ```cpp
     typedef struct _DEVICE_CONTEXT {  
@@ -95,9 +95,9 @@ WDF のクライアント ドライバーを呼び出してコントロールの
     } DEVICE_CONTEXT, *PDEVICE_CONTEXT;  
     ```
 
-2.  パイプの context 構造体を宣言します。
+2.  パイプコンテキスト構造体を宣言します。
 
-    各パイプと呼ばれる別の構造でエンドポイントに関連する特性を格納できる、*パイプ コンテキスト*します。 デバイス コンテキストと同様に、パイプ コンテキストは、(クライアント ドライバーで定義された) データ構造のエンドポイントに関連付けられているパイプに関する情報を格納するため。 デバイスの構成時に、クライアント ドライバーは、フレームワークには、そのパイプ コンテキストへのポインターを渡します。 フレームワークは、構造体のサイズに基づいて、メモリのブロックを割り当てし、framework USB ターゲット パイプ オブジェクトには、そのメモリ位置へのポインターを格納します。 クライアント ドライバーは、ポインターを使用してアクセスし、パイプのコンテキストのメンバーでパイプ情報を格納します。
+    各パイプは、*パイプコンテキスト*と呼ばれる別の構造にエンドポイント関連の特性を格納できます。 デバイスコンテキストと同様に、パイプコンテキストは、エンドポイントに関連付けられているパイプに関する情報を格納するためのデータ構造 (クライアントドライバーによって定義される) です。 デバイスの構成中に、クライアントドライバーはパイプコンテキストへのポインターをフレームワークに渡します。 フレームワークは、構造体のサイズに基づいてメモリのブロックを割り当て、フレームワークの USB ターゲットパイプオブジェクトを使用して、そのメモリ位置へのポインターを格納します。 クライアントドライバーは、ポインターを使用してパイプの情報にアクセスし、パイプのコンテキストのメンバーに格納することができます。
 
     ```cpp
     typedef struct _PIPE_CONTEXT {  
@@ -111,23 +111,23 @@ WDF のクライアント ドライバーを呼び出してコントロールの
 
     ```
 
-    この例では、パイプ コンテキストは、1 つの転送に送信できるバイトの最大数を格納します。 クライアント ドライバーでは、転送バッファーのサイズを決定する値を使用できます。 宣言にも含まれています、 [ **WDF\_DECLARE\_コンテキスト\_型\_WITH\_名前**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)マクロで、インラインを生成します。関数、GetPipeContext です。 クライアント ドライバーでは、パイプのコンテキストを格納するメモリ ブロックへのポインターを取得するには、その関数を呼び出すことができます。
+    この例では、パイプコンテキストは、1回の転送で送信できる最大バイト数を格納します。 クライアントドライバーは、その値を使用して転送バッファーのサイズを決定できます。 宣言には、インライン関数 GetPipeContext を生成する\_NAME マクロを使用して[ **\_コンテキスト\_型\_を宣言する WDF\_** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-declare-context-type-with-name)も含まれています。 クライアントドライバーは、その関数を呼び出して、パイプコンテキストを格納するメモリブロックへのポインターを取得できます。
 
-    コンテキストの詳細については、次を参照してください。[フレームワーク オブジェクト コンテキストの空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)します。
+    コンテキストの詳細については、「[フレームワークオブジェクトコンテキスト空間](https://docs.microsoft.com/windows-hardware/drivers/wdf/framework-object-context-space)」を参照してください。
 
-    フレームワークには、ポインターを渡す、クライアント ドライバー最初のパイプライン コンテキスト呼び出しを初期化します[ **WDF\_オブジェクト\_属性\_INIT\_コンテキスト\_型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-object-attributes-init-context-type). 次に、呼び出し中にパイプ コンテキストへのポインターを渡します[ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig) (の構成を選択する) または[ **WdfUsbInterfaceSelectSetting** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting) (の代替設定を選択します)。
+    クライアントドライバーは、ポインターをフレームワークに渡すために、まず[**WDF\_OBJECT\_属性\_初期化\_コンテキスト\_型**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdf-object-attributes-init-context-type)を呼び出して、そのパイプコンテキストを初期化します。 次に、は、 [**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig) (構成を選択する場合) または[**WdfUsbInterfaceSelectSetting**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfaceselectsetting) (別の設定を選択する場合) を呼び出すときに、パイプコンテキストへのポインターを渡します。
 
-3.  デバイスの構成要求が完了した後は、インターフェイスを列挙し、構成されているパイプのパイプ ハンドルを取得します。 この一連の情報を必要となります。
+3.  デバイス構成要求が完了したら、インターフェイスを列挙し、構成されているパイプのパイプハンドルを取得します。 この情報のセットが必要になります。
 
-    -   現在の設定を格納しているインターフェイスの WDFUSBINTERFACE ハンドル。 アクティブな構成でインターフェイスを列挙することによって、そのハンドルを取得できます。 またはへのポインターを指定した場合、 [ **WDF\_USB\_デバイス\_選択\_CONFIG\_PARAMS** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_device_select_config_params) で構造体[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)からハンドルを取得する**Type.SingleInterface.ConfiguredUsbInterface** (1 つのインターフェイス デバイス) のメンバーまたは**Type.MultiInterface.Pairs.UsbInterface** (マルチ インターフェイス デバイス) のメンバー。
-    -   現在の設定内のエンドポイント用に開くパイプの数。 特定のインターフェイスで呼び出してその数を取得することができます、 [ **WdfUsbInterfaceGetNumConfiguredPipes** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetnumconfiguredpipes)メソッド。
-    -   WDFUSBPIPE が構成されているすべてのパイプ処理します。 呼び出すことによって、ハンドルを取得することができます、 [ **WdfUsbInterfaceGetConfiguredPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)メソッド。
+    -   WDFUSBINTERFACE は、現在の設定を含むインターフェイスをハンドルします。 アクティブ構成のインターフェイスを列挙することで、そのハンドルを取得できます。 または、 [**WDF\_USB\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_device_select_config_params)へのポインターを指定し\_\_CONFIG\_PARAMS 構造体を選択した場合は、 **ConfiguredUsbInterface**メンバー (単一インターフェイスデバイスの場合) または[**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)**インターフェイス**メンバー (マルチインターフェイスデバイスの場合) からハンドルを取得することもできます。
+    -   現在の設定のエンドポイントで開かれているパイプの数。 [**WdfUsbInterfaceGetNumConfiguredPipes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetnumconfiguredpipes)メソッドを呼び出すことによって、特定のインターフェイスでその番号を取得できます。
+    -   構成されているすべてのパイプの WDFUSBPIPE ハンドル。 ハンドルを取得するには、 [**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)メソッドを呼び出します。
 
-    パイプ ハンドルを取得した後、クライアント ドライバーは、型およびパイプの方向を判断するメソッドを呼び出すことができます。 ドライバーはで、エンドポイントに関する情報を取得することができます、 [ **WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造体。 ドライバーは呼び出すことによって設定された構造体を取得することができます、 [ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)メソッド。 または、ドライバーに構造体へのポインターを指定できます、 [ **WdfUsbInterfaceGetConfiguredPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)呼び出します。
+    パイプハンドルを取得した後、クライアントドライバーはメソッドを呼び出して、パイプの型と方向を決定できます。 ドライバーは、エンドポイントに関する情報を、 [**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造で取得できます。 ドライバーは、 [**WdfUsbTargetPipeGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)メソッドを呼び出すことによって、設定された構造体を取得できます。 また、ドライバーは、 [**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)呼び出しの構造体へのポインターを提供することもできます。
 
-次のコード例では、現在の設定でパイプを列挙します。 デバイスの一括と割り込みエンドポイント用のパイプ ハンドルを取得し、ドライバーのデバイス コンテキストの構造体に格納します。 関連するパイプのコンテキストで各エンドポイントの最大パケット サイズを格納します。 エンドポイントは、ストリームをサポートする場合は、OpenStreams ルーチンを呼び出すことによって静的なストリームを開きます。 OpenStreams の実装を示した[を開いて、USB 一括エンドポイントで静的なストリームを閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)します。
+次のコード例では、現在の設定のパイプを列挙します。 デバイスの bulk および interrupt エンドポイントのパイプハンドルを取得し、ドライバーのデバイスコンテキスト構造に格納します。 各エンドポイントの最大パケットサイズは、関連付けられているパイプコンテキストに格納されます。 エンドポイントでストリームがサポートされている場合は、OpenStreams ルーチンを呼び出すことによって、静的ストリームが開かれます。 OpenStreams の実装については、「 [USB 一括エンドポイントで静的ストリームを開いて閉じる方法](how-to-open-streams-in-a-usb-endpoint.md)」を参照してください。
 
-特定の一括エンドポイントは静的なストリームをサポートするかどうかを確認するのには、クライアント ドライバーは、エンドポイント記述子を調べます。 そのコードは、という名前の次のコード ブロックに示された RetrieveStreamInfoFromEndpointDesc ヘルパー ルーチンに実装されます。
+特定の一括エンドポイントで静的ストリームがサポートされているかどうかを判断するために、クライアントドライバーはエンドポイント記述子を調べます。 このコードは、次のコードブロックに示すように、RetrieveStreamInfoFromEndpointDesc という名前のヘルパールーチンに実装されています。
 
 ```cpp
 NTSTATUS  
@@ -293,9 +293,9 @@ Exit:
 }
 ```
 
-次のコード例では、パイプを列挙中に、クライアント ドライバーを呼び出す RetrieveStreamInfoFromEndpointDesc、という名前のヘルパー ルーチンを示します。
+次のコード例は、パイプの列挙中にクライアントドライバーが呼び出す、RetrieveStreamInfoFromEndpointDesc という名前のヘルパールーチンを示しています。
 
-次のコード例では、クライアント ドライバーは、パイプを列挙中に前のヘルパー ルーチンの RetrieveStreamInfoFromEndpointDesc を呼び出します。 ルーチンでは、最初の取得の構成記述子を調査し、エンドポイント記述子の取得を解析します。 パイプのエンドポイント記述子が USB を含むかどうか\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子\_型記述子では、ドライバーでサポートされているストリームの最大数を取得します、エンドポイント。
+次のコード例では、クライアントドライバーは、パイプの列挙中に、前のヘルパールーチン RetrieveStreamInfoFromEndpointDesc を呼び出します。 ルーチンは最初に構成記述子を取得し、それを解析してエンドポイント記述子を取得します。 パイプのエンドポイント記述子に、USB\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子\_型記述子が含まれている場合、ドライバーはエンドポイントでサポートされているストリームの最大数を取得します。
 
 ```cpp
 /*++
@@ -490,15 +490,15 @@ Exit:
 }
 ```
 
-### <a name="getting-pipe-handles---umdf-client-driver"></a>パイプ ハンドルの取得 - UMDF クライアント ドライバー
+### <a name="getting-pipe-handles---umdf-client-driver"></a>パイプハンドルの取得-UMDF クライアントドライバー
 
-UMDF クライアント ドライバーでは、COM インフラストラクチャを使用し、framework デバイス オブジェクトと組み合わせて使用する COM コールバック クラスを実装します。 KMDF ドライバーと同様に、クライアント UMDF ドライバーのみを取得できますパイプ情報、デバイスを構成した後。 ドライバー情報を取得するパイプ クライアントへのポインターを取得する必要があります、 [ **IWDFUsbTargetPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)アクティブな設定を含むフレームワーク インターフェイス オブジェクトのインターフェイス。 インターフェイス ポインターを使用すると、ドライバーはパイプを取得するには、その設定の列挙できる**IWDFUsbTargetPipe**インターフェイス フレームワーク ターゲットのパイプ オブジェクトによって公開されるポインター。
+UMDF クライアントドライバーは、COM インフラストラクチャを使用し、フレームワークデバイスオブジェクトとペアになる COM コールバッククラスを実装します。 KMDF ドライバーと同様に、UMDF クライアントドライバーは、デバイスが構成された後でのみ、パイプ情報を取得できます。 パイプ情報を取得するには、クライアントドライバーは、アクティブな設定を含むフレームワークインターフェイスオブジェクトの[**IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)インターフェイスへのポインターを取得する必要があります。 インターフェイスポインターを使用すると、ドライバーはその設定のパイプを列挙して、フレームワークのターゲットパイプオブジェクトによって公開されている**IWDFUsbTargetPipe**インターフェイスポインターを取得できます。
 
-ドライバーは、パイプを列挙するを起動する前に、デバイスの構成とサポートされているエンドポイントについて、ドライバーが必要です。 その情報に基づいて、ドライバーはクラスのメンバー変数としてパイプ オブジェクトを格納できます。
+ドライバーがパイプの列挙を開始する前に、ドライバーはデバイスの構成とサポートされているエンドポイントを認識している必要があります。 ドライバーは、その情報に基づいて、パイプオブジェクトをクラスメンバー変数として格納できます。
 
-次のコード例では、Visual Studio Professional 2012 に付属している USB UMDF テンプレートを拡張します。 スタート コードの詳細については、次を参照してください"[**IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF)について](understanding-the-umdf-template-code-for-usb.md).
+次のコード例では、Visual Studio Professional 2012 で提供される USB UMDF テンプレートを拡張します。 スターターコードの説明については、「 [usb クライアントドライバーコード構造 (UMDF) につい](understanding-the-umdf-template-code-for-usb.md)て」の「[**IPnpCallbackHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)の実装と usb 固有のタスク」を参照してください。
 
-CDevice クラスの宣言は、次に示すように拡張します。 このコード例では、デバイスが OSR FX2 ボードであると仮定します。 記述子のレイアウトについては、次を参照してください。 [USB デバイス レイアウト](usb-device-layout.md)します。
+次に示すように CDevice クラスの宣言を拡張します。 このコード例では、デバイスが OSR FX2 board であることを前提としています。 記述子のレイアウトの詳細については、「 [USB デバイスのレイアウト](usb-device-layout.md)」を参照してください。
 
 ```cpp
 class CMyDevice :
@@ -588,7 +588,7 @@ public:
 };
 ```
 
-CDevice クラスの定義では、CreateUsbIoTargets というヘルパー メソッドを実装します。 このメソッドは、ドライバーは、ターゲット デバイスのオブジェクトへのポインターを取得した後、IPnpCallbackHardware::OnPrepareHardware 実装から呼び出されます。
+CDevice クラスの定義で、CreateUsbIoTargets というヘルパーメソッドを実装します。 このメソッドは、ドライバーがターゲットデバイスオブジェクトへのポインターを取得した後に、IPnpCallbackHardware:: On ハードウェアの実装から呼び出されます。
 
 ```cpp
 
@@ -702,32 +702,32 @@ HRESULT  CMyDevice::CreateUsbIoTargets()
 }  
 ```
 
-UMDF では、クライアント ドライバーは、データ転送の要求を送信するのにパイプ インデックスを使用します。 パイプのインデックスは、設定でエンドポイントの場合、パイプを開くときに、USB ドライバー スタックによって割り当てられた番号です。 パイプのインデックスを取得するには、呼び出し、[**IWDFUsbTargetPipe::GetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)メソッド。 メソッドの設定、 [ **WINUSB\_パイプ\_情報**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information)構造体。 **PipeId**値がパイプ インデックスを示します。
+UMDF では、クライアントドライバーはパイプインデックスを使用してデータ転送要求を送信します。 パイプインデックスは、設定内のエンドポイントに対してパイプを開くときに、USB ドライバースタックによって割り当てられる番号です。 パイプインデックスを取得するには、[**IWDFUsbTargetPipe:: GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)メソッドを呼び出します。 メソッドは、 [**Winusb\_パイプ\_情報**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information)構造体を設定します。 **PipeId**値は、パイプのインデックスを示します。
 
-実行する方法の 1 つの読み取りし、ターゲットのパイプで書き込み操作を呼び出すことです[ **IWDFUsbInterface::GetWinUsbHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle) WinUSB ハンドルを取得し、呼び出す[WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb). たとえば、ドライバーを呼び出すことができます、 [ **WinUsb\_ReadPipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)または[ **WinUsb\_WritePipe** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)関数。 これらの関数呼び出しで、ドライバーは、パイプ インデックスを指定する必要があります。 詳細については、次を参照してください。 [WinUSB 関数を使用して、USB デバイスへのアクセス方法](using-winusb-api-to-communicate-with-a-usb-device.md)します。
+ターゲットパイプで読み取りおよび書き込み操作を実行する方法の1つとして、 [**IWDFUsbInterface:: GetWinUsbHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-getwinusbhandle)を呼び出して winusb ハンドルを取得し、 [winusb 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)を呼び出すことができます。 たとえば、ドライバーは[**winusb\_ReadPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_readpipe)または[**Winusb\_writepipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_writepipe)関数を呼び出すことができます。 これらの関数呼び出しでは、ドライバーはパイプインデックスを指定する必要があります。 詳細については、「 [Winusb 機能を使用して Usb デバイスにアクセスする方法](using-winusb-api-to-communicate-with-a-usb-device.md)」を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-### <a name="pipe-handles-for-wdm-based-client-drivers"></a>WDM ベースのクライアント ドライバー用のパイプ ハンドル
+### <a name="pipe-handles-for-wdm-based-client-drivers"></a>WDM ベースのクライアントドライバーのパイプハンドル
 
-構成を選択すると、USB ドライバー スタックは、各デバイスのエンドポイントへのパイプを設定します。 USB ドライバー スタックの配列を返します[ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)構造体。 配列内の要素の数は、選択した構成でインターフェイスのアクティブな代替設定に定義されたエンドポイントの数によって異なります。 各要素には、特定のエンドポイント用に作成されたパイプに関する情報が含まれています。 パイプ ハンドルを取得する方法の詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)します。
+構成を選択すると、USB ドライバースタックは、各デバイスのエンドポイントにパイプを設定します。 USB ドライバースタックは、 [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体の配列を返します。 配列内の要素の数は、選択した構成のインターフェイスのアクティブな代替設定に定義されているエンドポイントの数によって異なります。 各要素には、特定のエンドポイント用に作成されたパイプに関する情報が含まれます。 パイプハンドルの取得の詳細については、「 [USB デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)」を参照してください。
 
-I/O の転送要求をビルドするには、クライアント ドライバーは、そのエンドポイントに関連付けられているパイプへのハンドルをする必要があります。 クライアント ドライバーからパイプ ハンドルを取得できます、 **PipeHandle**のメンバー [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)配列にします。
+I/o 転送要求を作成するには、クライアントドライバーが、そのエンドポイントに関連付けられているパイプへのハンドルを持っている必要があります。 クライアントドライバーは、配列の[**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)の**PipeHandle**メンバーからパイプハンドルを取得できます。
 
-クライアント ドライバーには、パイプ ハンドルだけでなく、パイプ型も必要です。 クライアント ドライバーを調べることでパイプ タイプを決定できます、 **PipeType**メンバー。
+パイプハンドルに加えて、クライアントドライバーもパイプの種類を必要とします。 クライアントドライバーは、 **PipeType**メンバーを調べることによって、パイプの種類を決定できます。
 
-エンドポイントの種類に基づいて、USB ドライバー スタックは、パイプのさまざまな種類をサポートします。 クライアント ドライバーを調べることでパイプ タイプを決定できます、 **PipeType**のメンバー [ **USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_usbd_pipe_information)します。 別のパイプ型では、さまざまな種類の USB 要求のブロック (翻訳) I/O トランザクションを実行する必要があります。
+USB ドライバースタックでは、エンドポイントの種類に基づいて、さまざまな種類のパイプがサポートされています。 クライアントドライバーは、パイプの種類を特定できます。そのためには、 [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)の**PipeType**メンバーを調べます。 さまざまなパイプの種類で i/o トランザクションを実行するには、さまざまな種類の USB 要求ブロック (URBs) が必要です。
 
-クライアント ドライバーでは、USB ドライバー スタックに URB、送信します。 USB ドライバー スタックは、要求を処理し、要求されたターゲットのパイプを指定したデータを送信します。
+その後、クライアントドライバーは、USB ドライバースタックに URB を送信します。 USB ドライバースタックは要求を処理し、指定されたデータを要求されたターゲットパイプに送信します。
 
-URB には、ターゲットのパイプ ハンドル、転送のバッファーの長さなどの要求に関する情報が含まれています。 内の各構造、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)共用体は、特定のメンバーを共有します。**TransferFlags**、 **TransferBuffer**、 **TransferBufferLength**、および**TransferBufferMDL**します。 型固有のフラグがあります、 **TransferFlags** URB の種類ごとに対応するメンバー。 すべてのデータ転送の翻訳、USBD\_転送\_方向\_IN フラグ**TransferFlags**転送の方向を指定します。 クライアント ドライバーの設定、USBD\_転送\_方向\_デバイスからデータを読み取るフラグ。 ドライバーは、デバイスにデータを送信するには、このフラグをクリアします。 データの読み取りし、メモリに常駐しているか、バッファーまたは MDL に書き込むことがあります。 どちらの場合、ドライバーは、バッファーのサイズを指定します、 **TransferBufferLength**メンバー。 ドライバーに常駐しているバッファーを提供する、 **TransferBuffer**メンバーとの MDL、 **TransferBufferMDL**メンバー。 いずれか 1 つ、ドライバーには、NULL にする他の必要があります。
+URB には、ターゲットパイプハンドル、転送バッファー、その長さなど、要求に関する情報が含まれています。 [**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)共用体内の各構造体は、特定のメンバー ( **transferflags**、 **transferflags**、 **Transferbufferlength**、および**transferbuffermdl**) を共有します。 各 URB の種類に対応する**transferflags**メンバーには、型固有のフラグがあります。 すべてのデータ転送 URBs について、 **Transferflags**のフラグ内の USBD\_TRANSFER\_direction\_は転送の方向を指定します。 クライアントドライバーは、デバイスからデータを読み取るフラグで、USBD\_転送\_の方向\_設定します。 ドライバーは、デバイスにデータを送信するために、このフラグをクリアします。 データは、メモリまたは MDL に常駐しているバッファーに対して読み取りまたは書き込みを行うことができます。 どちらの場合も、ドライバーは**Transferbufferlength**メンバー内のバッファーのサイズを指定します。 このドライバーは、 **transferbuffer**メンバーの常駐バッファーと**TRANSFERBUFFERMDL**メンバーの MDL を提供します。 ドライバーが提供するいずれかの方法で、もう1つは NULL である必要があります。
 
 ## <a name="related-topics"></a>関連トピック
-[USB I/O の転送](usb-device-i-o.md)  
+[USB i/o 転送](usb-device-i-o.md)  
 [USB デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)  
-[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)  
-[USB クライアント ドライバーに関する一般的なタスク](wdk-resources-for-usb-driver-development.md)  
+[USB インターフェイスで別の設定を選択する方法](select-a-usb-alternate-setting.md)  
+[USB クライアントドライバーの一般的なタスク](wdk-resources-for-usb-driver-development.md)  
 
 
 

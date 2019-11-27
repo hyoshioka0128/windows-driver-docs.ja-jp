@@ -1,63 +1,63 @@
 ---
-title: または、UMDF ドライバーが読み込みに失敗した原因を判断し、デバイスの起動に失敗
-description: このトピックでは、UMDF ドライバーの読み込みに失敗または開始する、関連付けられているデバイスが失敗した場合に使用できるトラブルシューティングの手順について説明します。
+title: UMDF ドライバーの読み込みに失敗した理由、またはデバイスの起動に失敗した原因を特定する
+description: このトピックでは、UMDF ドライバーの読み込みに失敗した場合、または関連付けられたデバイスを起動できない場合に使用できるトラブルシューティング手順について説明します。
 ms.assetid: 366c0ab4-8d06-4dac-a301-f433cf7978bd
 keywords:
-- WDK UMDF のシナリオをデバッグするには、UMDF ドライバーの読み込みに失敗します。
-- WDK UMDF のシナリオをデバッグするには、UMDF デバイスの起動に失敗します。
-- UMDF デバッグ シナリオでは、WDK UMDF ドライバーの読み込みに失敗します。
-- UMDF デバッグ シナリオでは、WDK UMDF デバイスの起動に失敗します。
-- UMDF WDK、シナリオを読み込んでいないドライバー
-- UMDF WDK、シナリオを開始していないデバイス
+- デバッグシナリオ WDK UMDF、UMDF ドライバーの読み込みが失敗する
+- デバッグシナリオ WDK UMDF、UMDF デバイスを起動できない
+- UMDF WDK、デバッグシナリオ、UMDF ドライバーの読み込みに失敗する
+- UMDF WDK、デバッグシナリオ、UMDF デバイスを起動できない
+- UMDF WDK、ドライバーを読み込まないシナリオ
+- UMDF WDK、デバイスを開始しないシナリオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4725643bcd62dbf2d509d58e7131592ebaa75016
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4ef23e04d8451fc3b058b2cc6e2c228a75980a0b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377418"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72833673"
 ---
 # <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>UMDF ドライバーの読み込み失敗または UMDF デバイスの起動失敗の理由の特定
 
 
-このトピックでは、UMDF ドライバーの読み込みに失敗または開始する、関連付けられているデバイスが失敗した場合に使用できるトラブルシューティングの手順について説明します。
+このトピックでは、UMDF ドライバーの読み込みに失敗した場合、または関連付けられたデバイスを起動できない場合に使用できるトラブルシューティング手順について説明します。
 
-両方の UMDF バージョン 1 と 2 ドライバーでは、次の手法を使用できます。
+次の手法は、UMDF バージョン1と2ドライバーの両方で使用できます。
 
 1.  次のファイルが正しいことを確認して、セットアップを確認します。
     -   ドライバーの INF ファイル。
 
-        使用して、 [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)ドライバーの INF ファイルを検証するためのツール。
+        [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)ツールを使用して、ドライバーの INF ファイルを検証します。
 
-    -   %windir%\\inf\\setupapi.dev.log (Windows XP で setupapi.log)、%windir%\\setupact.log、および %windir%\\temp\\wudf\_update.log ファイル。
+    -   % windir%\\inf\\setupapi.log (Windows XP の場合)、% windir%\\setupact .log、および% windir%\\temp\\wudf\_更新 .log ファイルになります。
 
-2.  セットアップの問題が見つからなかった場合に有効にする、 **HostProcessDbgBreakOnStart**レジストリ エントリを使用して、 [WDF Verifier コントロール アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)(WdfVerifier.exe)。 有効にすると**HostProcessDbgBreakOnStart**デバッガーを WUDFHost.exe 起動後すぐにデバイス (WUDFHost.exe) 区切りのためのドライバーのホスト プロセスが作成されますが、DLL の読み込みには、ドライバーの前にします。
+2.  セットアップの問題が見つからない場合は、 [WDF Verifier コントロールアプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)(wdfverifier) を使用して**Hostprocessdbgbreakonstart**レジストリエントリを有効にします。 **Hostprocessdbgbreakonstart**を有効にすることにより、デバイス (wudfhost .exe) のドライバーホストプロセスは、wudfhost .exe が開始されてからドライバー DLL が読み込まれる前に、デバッガーに中断されるようになります。
 
-    有効にする必要があります**HostProcessDbgBreakOnStart**ユーザー モード デバッガーとカーネル モードのデバッガーではありません。 カーネル モードのデバッガー、既定は、ユーザー モードのモジュールの読み込みが表示され、通知をアンロードするはありません。 そのため、遅延のブレークポイントを設定することはできません。
+    カーネルモードのデバッガーではなく、ユーザーモードのデバッガーで**Hostprocessdbgbreakonstart**を有効にする必要があります。 既定では、カーネルモードのデバッガーは、ユーザーモードモジュールの読み込みとアンロードの通知を受け取りません。 したがって、遅延ブレークポイントを設定することはできません。
 
-3.  開始ホストが表示されない場合は、デバイスを正しく構成するのには、次の手順を実行します。
-    1.  すべてのドライバーの INF を使ってインストールが存在し、オペレーティング システムにコピーされることを確認します。
-    2.  Reflector (WUDFRd.sys とも呼ばれます) がデバイス上のサービスでない場合、ドライバーは、サービスになりますし、サービス エントリ (たとえば、' sc qc' foo') があり、自動的に開始に設定されていることを確認します。
+3.  ホストの開始が表示されない場合は、次の手順を実行してデバイスを正しく構成します。
+    1.  INF を通じてインストールするすべてのドライバーが存在し、オペレーティングシステムにコピーされていることを確認します。
+    2.  リフレクター (WUDFRd. sys とも呼ばれます) がデバイス上のサービスでない場合は、ドライバーがサービスであること、およびサービスエントリ (例、"sc qc foo") を持ち、自動的に開始するように設定されていることを確認します。
 
-4.  ドライバーのシンボルがシンボル パス (つまり、.sympath) であることを確認します。
+4.  ドライバーのシンボルがシンボルパス (つまり、sympath) にあることを確認します。
 
-5.  一度に 1 つに、次の項目を確認します。 次の手順で、ドライバーが foo.dll であると仮定します。
-    1.  いることを確認、ドライバーの**DllMain**ルーチンは (たとえば、bu Foo と呼ばれます!。DllMain)。
-    2.  後続の手順については、ドライバ DLL が読み込ま場合使用することも、 **HostProcessDbgBreakOnDriverLoad**レジストリ エントリ。 ある**HostProcessDbgBreakOnDriverLoad**セットにより、ドライバー DLL が読み込まれた後、デバッガーを中断する WUDFHost.exe します。 **HostProcessDbgBreakOnDriverLoad**のため、この時点で、ドライバーの読み込みとプロセスを開始するデバイスでブレークポイントを設定できますでドライバー コードにも、カーネル モード デバッガーに使用できます。
-    3.  この手順は、UMDF バージョン 1 のドライバーのみに適用されます。 いることを確認、ドライバーの**DllGetClassObject**ルーチンが呼び出されます。 ドライバーのクラス識別子 (ID) が正しいことを確認します。 いることを確認**DllGetClassObject**が正常に実行し、(たとえば、bu Foo ドライバー オブジェクトを返します!DllGetClassObject)。
+5.  次の項目を一度に1つずつ確認します。 次の手順では、ドライバーが foo .dll であると仮定します。
+    1.  ドライバーの**DllMain**ルーチンが呼び出されていることを確認します (たとえば、bu Foo!DllMain)。
+    2.  ドライバー DLL が読み込まれる場合、以降の手順では、 **Hostprocessdbgbreakondriverload**レジストリエントリを使用することもできます。 **Hostprocessdbgbreakondriverload** set を使用すると、ドライバー DLL が読み込まれた後、WUDFHost .exe がデバッガーに中断されます。 **Hostprocessdbgbreakondriverload**は、カーネルモードのデバッガーでも使用できます。これは、ドライバーの読み込みおよびデバイスの開始プロセスの時点で、ドライバーコードにブレークポイントを設定できるためです。
+    3.  この手順は、UMDF version 1 ドライバーのみに適用されます。 ドライバーの**DllGetClassObject**ルーチンが呼び出されていることを確認します。 ドライバーのクラス識別子 (ID) が正しいことを確認します。 **DllGetClassObject**が正常に実行され、ドライバーオブジェクトを返すことを確認します (例、bu Foo!DllGetClassObject)。
 
-    4.  Umdf バージョン 1 であることを確認、ドライバーの[ **IDriverEntry::OnDeviceAdd** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドが呼び出されます。 メソッドが、デバイスを作成し、正常に (たとえば bu Foo 返すことを確認します!CMyDriver::OnDeviceAdd)。
+    4.  UMDF version 1 の場合は、ドライバーの[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドが呼び出されていることを確認します。 メソッドによってデバイスが作成され、正常に返されたことを確認します (たとえば、bu Foo!CMyDriver:: OnDeviceAdd)。
 
-        Umdf バージョン 2 であることを確認、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)関数が呼び出されます。 関数はデバイスを作成し、正常に (たとえば bu Foo を返しますを確認します。!MyDriverDeviceAdd)。
+        UMDF version 2 の場合は、ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)関数が呼び出されていることを確認します。 関数がデバイスを作成し、正常に返されたことを確認します (たとえば、bu Foo!MyDriverDeviceAdd)。
 
-    5.  Umdf バージョン 1 であることを確認、ドライバーの[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)または[ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)メソッドが呼び出されます。 正常に (たとえば bu Foo メソッドが返すことを確認!CMyDevice::OnPrepareHardware または Foo!CMyDevice::OnD0Entry)。
+    5.  UMDF バージョン1の場合は、ドライバーの[**IPnpCallbackHardware:: OnIPnpCallback hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)または[ **:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)メソッドが呼び出されていることを確認します。 メソッドが正常に返されたことを確認します (例、bu Foo!CMyDevice:: On Hardware または Foo!CMyDevice::OnD0Entry).
 
-        Umdf バージョン 2 であることを確認、ドライバーの[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)または[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が呼び出されます。 正常に (たとえば bu Foo 関数によって返されることを確認!MyDevicePrepareHardware または Foo!MyDeviceD0Entry)。
+        UMDF version 2 の場合は、ドライバーの[*EvtdeviceEvtDeviceD0Entry ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)または[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が呼び出されていることを確認します。 関数が正常に返されたことを確認します (例、bu Foo!Mydevice(ハードウェアまたは Foo)MyDeviceD0Entry).
 
-    6.  以前の操作が正常に実行されましたが、次の操作が実行されない場合、次のものを確認する必要があります。
-        1.  上と下、ドライバー、ユーザー モードのスタック内のすべてのドライバーが正常にもこれらの操作を実行することを確認します。
-        2.  ドライバーの下に、カーネル スタックが正常に完了することを確認、 [ **IRP\_MJ\_PNP** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)と[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device) Irp します。
+    6.  前の各操作が正常に実行されても、次の操作が実行されない場合は、次の項目を確認する必要があります。
+        1.  ユーザーモードスタック内のドライバーよりも前のすべてのドライバーが、これらの操作を正常に実行できることを確認します。
+        2.  ドライバーの下にあるカーネルスタックが正常に[**irp\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)と[**irp\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)完了したことを確認します。これにより、デバイスの irp が\_開始されます。
 
  
 

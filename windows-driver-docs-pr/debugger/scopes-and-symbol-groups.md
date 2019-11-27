@@ -3,18 +3,18 @@ title: スコープとシンボルのグループ
 description: スコープとシンボルのグループ
 ms.assetid: f14b6361-9962-4fa3-bb1a-dfde066754b9
 keywords:
-- デバッガーのエンジンの API、記号、シンボルのグループ
-- シンボルのグループ、スコープ
-- デバッガーのエンジンの API、記号、スコープ
+- デバッガーエンジン API、シンボル、シンボルグループ
+- シンボルグループ、スコープ
+- デバッガーエンジン API、シンボル、スコープ
 - スコープ
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f56ed9cb78424c87378336925439d4eda8a5168
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6f1f96f9a37d258c9ded57e205d320dc186dc5bb
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366400"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838815"
 ---
 # <a name="scopes-and-symbol-groups"></a>スコープとシンボルのグループ
 
@@ -22,65 +22,65 @@ ms.locfileid: "67366400"
 ## <span id="ddk_scopes_and_symbol_groups_dbx"></span><span id="DDK_SCOPES_AND_SYMBOL_GROUPS_DBX"></span>
 
 
-A*シンボル グループ*効率的な操作をグループとしての記号のセットが含まれています。 シンボル グループは、作成できる、手動で設定されますと自動的に生成することができますまたはおよびに基づいてシンボルなど、ローカル変数と関数の引数の構文のスコープでの更新をします。 インターフェイス[IDebugSymbolGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nn-dbgeng-idebugsymbolgroup)シンボルのグループを表すために使用します。
+*シンボルグループ*には、グループとして効率的に操作するためのシンボルのセットが含まれています。 シンボルグループは、手動で作成して設定することも、ローカル変数や関数の引数など、構文のスコープ内のシンボルに基づいて自動的に生成および更新することもできます。 インターフェイス[IDebugSymbolGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbolgroup)は、シンボルグループを表すために使用されます。
 
-シンボルのグループを作成する 2 つの方法はあります。 によって、空のシンボルのグループが返される[ **CreateSymbolGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-createsymbolgroup)、現在の構文のスコープのシンボルのグループがによって返されると[ **GetScopeSymbolGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getscopesymbolgroup).
+シンボルグループを作成するには、次の2つの方法があります。 空のシンボルグループが "GetScopeSymbolGroup"[**グループ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-createsymbolgroup)によって返され、現在の構文のスコープのシンボルグループが[](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscopesymbolgroup)によって返されます。
 
-**注**  現在のスコープから生成されたシンボルのグループはローカル変数のスナップショットです。 ターゲットのいずれかの実行が発生した場合、シンボルが正しく不要になった可能性があります。 また、現在のスコープが変更された場合、シンボルのグループを表さなく、*現在*スコープ (ため、作成対象のスコープを表すし続けます)。
-
- 
-
-シンボルを使用してシンボルのグループに追加できる[ **AddSymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-addsymbol)を使用して削除と[ **RemoveSymbolByIndex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-removesymbolbyindex)または[ **RemoveSymbolByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-removesymbolbyname)します。 メソッド[ **OutputAsType** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-outputastype)シンボルのデータを処理するときに、別の記号の種類を使用するデバッガーに指示します。
-
-**注**  スコープを持つシンボルの値が正しくない可能性があります。 具体的には、コンピューターのアーキテクチャおよびコンパイラの最適化では、シンボルの値を正確に判断するからデバッガーをできない可能性があります。
+現在のスコープから生成されたシンボルグループがローカル変数のスナップショットである   に**注意**してください。 ターゲットで実行が行われると、シンボルが正確ではなくなる可能性があります。 また、現在のスコープが変更された場合、シンボルグループは*現在*のスコープを表すものではなくなります (これは、作成されたスコープを引き続き表すためです)。
 
  
 
-*シンボル エントリ情報*の場所とその型を含む、シンボルの説明を示します。 モジュールのシンボルには、この情報を検索するには使用、 [ **IDebugSymbols3::GetSymbolEntryInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentryinformation)します。 シンボルのグループ内のシンボルには、この情報を検索するには使用[ **IDebugSymbolGroup2::GetSymbolEntryInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolentryinformation)します。 参照してください[**デバッグ\_シンボル\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_symbol_entry)シンボル エントリの情報の詳細についてはします。
+シンボルは、 [**Addsymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-addsymbol)を使用してシンボルグループに追加したり、 [**RemoveSymbolByIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-removesymbolbyindex)または[**RemoveSymbolByName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-removesymbolbyname)を使用して削除したりできます。 [**OutputAsType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-outputastype)メソッドは、シンボルのデータを処理するときに、別のシンボルの種類を使用するようにデバッガーに指示します。
 
-次の方法では、シンボルのグループでシンボルに関する情報が返されます。
+スコープが指定されたシンボルの値が正確ではない   に**注意**してください。 特に、コンピューターのアーキテクチャとコンパイラの最適化により、デバッガーがシンボルの値を正確に判断できなくなる場合があります。
 
--   [**GetSymbolName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolname)シンボルの名前を返します。
+ 
 
--   [**GetSymbolOffset** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymboloffset)シンボルが絶対アドレスを持つ場合は、シンボルのターゲットの仮想アドレス空間で絶対アドレスを返します。
+*シンボルエントリ情報*は、シンボルの場所とその型を含むシンボルの説明です。 モジュール内のシンボルに関するこの情報を検索するには、 [**IDebugSymbols3:: Getsymbol Entryinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getsymbolentryinformation)を使用します。 シンボルグループ内のシンボルに関するこの情報を検索するには、 [**IDebugSymbolGroup2:: Getsymbol Entryinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolentryinformation)を使用します。 シンボルエントリ情報の詳細については、「 [**DEBUG\_symbol\_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_entry) 」を参照してください。
 
--   [**GetSymbolRegister** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolregister)レジスタにシンボルが含まれている場合、シンボルを格納しているレジスタを返します。
+次のメソッドは、シンボルグループ内のシンボルに関する情報を返します。
 
--   [**GetSymbolSize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolsize)のシンボル データのサイズを返します。
+-   [**GetSymbolName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolname)は、シンボルの名前を返します。
 
--   [**GetSymbolTypeName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymboltypename)シンボルの型の名前を返します。
+-   シンボルに絶対アドレスが指定されている場合、 [**GetSymbolOffset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymboloffset)はシンボルのターゲットの仮想アドレス空間にある絶対アドレスを返します。
 
--   [**GetSymbolValueText** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolvaluetext)文字列としての記号の値を返します。
+-   シンボルがレジスタに含まれている場合、 [**Getsymbol register**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolregister)はシンボルを含むレジスタを返します。
 
-使用して、その値を変更できるレジスタ内、またはデバッガー エンジンに既知のメモリ位置には、シンボルが格納されている場合[ **WriteSymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-writesymbol)します。
+-   [**Getsymbol size**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolsize)は、シンボルのデータのサイズを返します。
 
-シンボルは、*親シンボル*その他の記号が含まれている場合。 たとえば、構造体には、そのメンバーが含まれています。 シンボルは、*子シンボル*別のシンボルに含まれている場合。 親と子の両方のシンボル、シンボルがあります。 各シンボルのグループは、フラットな構造を持ち、親のシンボルとその子を含みます。 各シンボルを*深さ*--シンボルのグループ内の親がないシンボルがある深さ 0、および各子シンボルの深さは 1 つの親の深さを超えています。 親のシンボルの子は、シンボルのグループに存在することができない可能性があります。 子は、シンボルのグループに存在するが、親のシンボルと呼びます*展開*します。 を追加またはシンボルのグループ内のシンボルの子を削除するには使用[ **ExpandSymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-expandsymbol)します。
+-   [**Getsymbol typename**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymboltypename)は、シンボルの型の名前を返します。
 
-シンボルのグループ内のシンボルの数がによって返される[ **GetNumberSymbols**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getnumbersymbols)します。 *インデックス*シンボルとしてシンボルのグループには、id 番号は、インデックスの範囲は 0 から 1 を引いたのシンボルの数をします。 シンボルを追加または - たとえば、シンボルを展開するには--してシンボルのグループから削除するたびに、シンボルのグループ内のすべてのシンボルのインデックスを変更できます。
+-   [**GetSymbolValueText**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolvaluetext)は、記号の値を文字列として返します。
 
-使用して、親子のリレーションシップに関する情報など、シンボルのパラメーターを検出できます[ **GetSymbolParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolparameters)します。 このメソッドが戻る、 [**デバッグ\_シンボル\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/ns-dbgeng-_debug_symbol_parameters)構造体。
+シンボルがレジスタまたはデバッガーエンジンによって認識されるメモリ位置に格納されている場合、その値は[**WriteSymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-writesymbol)を使用して変更できます。
 
-シンボルのグループ内のシンボルは、メソッドを使用して、デバッガーの出力ストリームに印刷できる[ **OutputSymbols**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbolgroup2-outputsymbols)します。
+記号は、他の記号が含まれている場合は*親シンボル*です。 たとえば、構造体にメンバーが含まれているとします。 シンボルは、別のシンボルに含まれている場合は、*子シンボル*です。 記号は、親と子の両方のシンボルにすることができます。 各シンボルグループにはフラット構造があり、親シンボルとその子が含まれています。 各シンボルの*深さ*は、記号グループの親を持たない深さが0で、各子シンボルの深さが親の深さよりも1大きくなっています。 親シンボルの子は、シンボルグループに含まれている場合と存在しない場合があります。 子がシンボルグループに存在する場合、親シンボルは "*展開*済み" と呼ばれます。 シンボルグループ内の記号の子を追加または削除するには、 [**Expandsymbol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-expandsymbol)を使用します。
+
+シンボルグループ内の記号の数は、 [**Getnumber シンボル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getnumbersymbols)によって返されます。 シンボルグループ内のシンボルの*インデックス*は識別番号です。インデックスの範囲は0から、記号から1を引いた数です。 シンボルを追加したり、シンボルグループから削除したりするたびに (たとえば、シンボルを展開するなど)、シンボルグループ内のすべてのシンボルのインデックスが変更されることがあります。
+
+親子関係に関する情報を含むシンボルパラメーターは、 [**Getsymbol parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-getsymbolparameters)を使用して見つけることができます。 このメソッドは、[**デバッグ\_シンボル\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/ns-dbgeng-_debug_symbol_parameters)構造体を返します。
+
+シンボルグループ内のシンボルは、 [**outputsymbols**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbolgroup2-outputsymbols)メソッドを使用して、デバッガーの出力ストリームに出力できます。
 
 ### <a name="span-idscopesspanspan-idscopesspanscopes"></a><span id="scopes"></span><span id="SCOPES"></span>スコープ
 
-*現在のスコープ*、または*現在ローカル コンテキスト*、デバッガー エンジンによって公開されているローカル変数を決定します。 スコープでは、次の 3 つのコンポーネントがあります。
+*現在のスコープ*または*現在のローカルコンテキスト*によって、デバッガーエンジンによって公開されるローカル変数が決まります。 スコープには、次の3つのコンポーネントがあります。
 
-1.  スタック フレーム。
+1.  スタックフレーム。
 
 2.  現在の命令。
 
-3.  レジスタのコンテキスト。
+3.  レジスタコンテキスト。
 
-スタック フレームが呼び出し履歴の上部にある場合は、現在の手順の最後のイベントを発生させた命令です。 それ以外の場合、現在の命令は、関数呼び出しでは、[次へ] の上のスタック フレームです。
+スタックフレームが呼び出し履歴の一番上にある場合、現在の命令は最後のイベントが発生した命令になります。 それ以外の場合、現在の命令は、次に大きいスタックフレームが生成された関数呼び出しになります。
 
-メソッド[ **GetScope** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-getscope)と[ **SetScope** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-setscope)を取得し、現在のスコープを設定するために使用できます。 イベントの発生時に、現在のスコープは、イベントのスコープに設定されます。 使用して最終イベントのスコープには、現在のスコープをリセットできます[ **ResetScope**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugsymbols3-resetscope)します。
+[**GetScope**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscope)メソッドと[**setscope**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-setscope)メソッドを使用して、現在のスコープを取得して設定できます。 イベントが発生すると、現在のスコープがイベントのスコープに設定されます。 現在のスコープは、 [**Resetscope**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-resetscope)を使用して、最後のイベントのスコープにリセットできます。
 
-### <a name="span-idthread-contextspanspan-idthreadcontextspanthread-context"></a><span id="thread-context"></span><span id="THREAD_CONTEXT"></span>スレッド コンテキスト
+### <a name="span-idthread-contextspanspan-idthread_contextspanthread-context"></a><span id="thread-context"></span><span id="THREAD_CONTEXT"></span>スレッドコンテキスト
 
-*スレッド コンテキスト*はスレッドを切り替えるときに、Windows によって保持状態です。 レジスタのコンテキストがスレッド コンテキストではなくの一部であるいくつかのカーネル専用のプロセッサの状態があることを除き、レジスタのコンテキストに似ています。 この余分な状態は、カーネル モードのデバッグ中にレジスタとして使用できます。
+*スレッドコンテキスト*は、スレッドを切り替えるときに Windows によって保持される状態です。 これはレジスタコンテキストに似ていますが、レジスタコンテキストの一部であるものの、スレッドコンテキストの一部ではないカーネル専用プロセッサ状態がある点が異なります。 この追加の状態は、カーネルモードのデバッグ中にレジスタとして使用できます。
 
-スレッド コンテキストは ntddk.h で定義されているコンテキストの構造体によって表されます。 この構造体はプラットフォームに依存して、その解釈は、有効なプロセッサの種類によって異なります。 メソッド[ **GetThreadContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugadvanced3-getthreadcontext)と[ **SetThreadContext** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/dbgeng/nf-dbgeng-idebugadvanced3-setthreadcontext)を取得し、スレッド コンテキストを設定するために使用できます。
+スレッドコンテキストは、ntddk で定義されているコンテキスト構造によって表されます。 この構造体はプラットフォームに依存し、その解釈は、有効なプロセッサの種類によって異なります。 [**Getthreadcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-getthreadcontext)メソッドと[**setthreadcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-setthreadcontext)メソッドを使用して、スレッドコンテキストを取得および設定できます。
 
  
 

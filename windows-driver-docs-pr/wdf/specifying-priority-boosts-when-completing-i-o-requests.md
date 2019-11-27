@@ -3,23 +3,23 @@ title: I/O 要求完了時の優先度引き上げの指定
 description: I/O 要求完了時の優先度引き上げの指定
 ms.assetid: 9a501ca1-58c9-4458-b202-9581f8ce5e5f
 keywords:
-- 要求処理の WDK KMDF、優先度の実行
-- 優先順位の WDK KMDF ブーストします。
+- 要求の処理 WDK KMDF、優先度のブースト
+- 優先度を上げる WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a30d15f8209943c94f0fb4ac89b2cbe3887491
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9c8098efd572c9be60b320f598e3392a5ab943f1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382361"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842190"
 ---
 # <a name="specifying-priority-boosts-when-completing-io-requests"></a>I/O 要求完了時の優先度引き上げの指定
 
 
-呼び出すことができます、ドライバーでは、I/O 要求が完了したら、 [ **WdfRequestCompleteWithPriorityBoost** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)システムは、I/O を要求したスレッドの実行時の優先度を上げるを使用して値を指定するには操作です。
+ドライバーは、i/o 要求を完了すると、 [**Wdfrequestcompletewithpriority ブースト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)を呼び出して、i/o 操作を要求したスレッドの実行時の優先順位を上げるためにシステムで使用される値を指定できます。
 
-ドライバーを呼び出す場合[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)または[ **WdfRequestCompleteWithInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)の代わりに[ **WdfRequestCompleteWithPriorityBoost**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)フレームワークは、デバイスの種類に基づく既定の優先度のブースト値を使用します。 次の表では、フレームワークを使用して既定の優先度のブースト値を示します。 デバイスの種類および優先順位 boost 定数で定義されて*Wdm.h*します。
+ドライバーが[**Wdfrequestcompletewith優先順位ブースト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)ではなく Wdfrequestcomplete または[**Wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)を呼び出した場合、フレームワークはデバイスの種類に基づく既定の priority boost 値を使用します。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete) 次の表は、フレームワークが使用する既定の priority boost の値を示しています。 デバイスの種類と priority boost 定数は、 *Wdm*で定義されています。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ ms.locfileid: "67382361"
 <thead>
 <tr class="header">
 <th align="left">デバイスの種類</th>
-<th align="left">既定の Priority Boost</th>
+<th align="left">既定の優先度ブースト</th>
 </tr>
 </thead>
 <tbody>

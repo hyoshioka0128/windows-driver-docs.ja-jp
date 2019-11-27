@@ -3,78 +3,78 @@ title: 自己管理型 I/O の使用
 description: 自己管理型 I/O の使用
 ms.assetid: 539b3618-44bb-41fd-a9f2-ed6a377c94e2
 keywords:
-- WDK KMDF、自己管理型の I/O を PnP します。
-- プラグ アンド プレイ WDK KMDF、自己管理型の I/O
-- 電源管理 WDK KMDF、自己管理型の I/O
-- 自己管理型の I/O WDK KMDF
-- I/O 自己管理 WDK KMDF
-- デバイスの削除の WDK KMDF 驚くような
-- 予期しないデバイスの削除の WDK KMDF
+- PnP WDK KMDF、自己管理型 i/o
+- WDK KMDF、自己管理型 i/o のプラグアンドプレイ
+- 電源管理 WDK KMDF、自己管理型 i/o
+- 自己管理型 i/o WDK KMDF
+- I/o セルフ管理 WDK KMDF
+- 予期しないデバイス削除 WDK KMDF
+- 予期しないデバイス削除 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 618dd322624e95509e7be41cc23dc02dc6bd820e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d291fcabb8813d33e090d4a8b16d9f452e65884a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67372230"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845431"
 ---
 # <a name="using-self-managed-io"></a>自己管理型 I/O の使用
 
 
-ほとんどのフレームワークに基づいたドライバーでは、サポートされるデバイスのフレームワークの PnP や電源管理機能を活用します。 つまり、framework ベースのほとんどのドライバーでは、次の手順を実行して、デバイスの PnP、電源の状態を管理するために、フレームワークができます。
+ほとんどのフレームワークベースのドライバーは、サポートするデバイスのために、フレームワークの PnP および電源管理機能を利用します。 つまり、ほとんどのフレームワークベースのドライバーでは、次のすべてを実行して、デバイスの PnP と電源の状態を管理できます。
 
--   指定[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)と[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)コールバック関数。
+-   [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)と[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)のコールバック関数を提供します。
 
--   指定[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)と[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数。
+-   [*EvtdeviceEvtDeviceReleaseHardware hardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)関数と[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数を提供します。
 
--   電源管理対象のキューの稼働状態にあるデバイスを必要とする I/O 要求を使用し、その他のすべての要求に対して電源管理されていないキューを使用します。
+-   I/o 要求に対して、電源管理キューを使用して、デバイスを動作状態にする必要があります。また、他のすべての要求に対して、電源管理されていないキューを使用します。
 
-ただし、いくつかのフレームワークに基づいたドライバーには、次の状況でドライバーを含む、自分のデバイスの状態の大きい知識が必要です。
+ただし、いくつかのフレームワークベースのドライバーでは、次のような状況でのドライバーを含む、デバイスの状態に関するより多くの知識が必要になります。
 
--   ドライバーを実行する操作は、ドライバーが framework I/O キューから受信した I/O 要求のセットによっては決定されません。
+-   ドライバーが実行する操作は、ドライバーがフレームワークの i/o キューから受信する i/o 要求のセットによって決定されることはありません。
 
--   ドライバーは、古い framework 以外のドライバーと通信し、WDM インターフェイスを直接処理します。
+-   ドライバーは、従来の非フレームワークドライバーと通信し、WDM インターフェイスを直接処理します。
 
--   ドライバーが受け取る I/O 要求は、2 つのグループに分割できない: 作業の状態とそうでないものにするデバイスを必要とします。
+-   ドライバーが受信する i/o 要求は2つのグループに分けることができません。つまり、デバイスを動作状態にする必要があるものと、そうでないものがあります。
 
-ほとんどのドライバーが前の状況では、いずれかでないが、ドライバーの場合は、デバイスの PnP、電源管理操作をより直接的に制御が必要があります。 このようなドライバーを使用できる*I/O を自己管理*します。 自己管理型の I/O を使用して、そのデバイスの電源接続時または、電源が入っていない場合、およびデバイスが一時的に停止されるたびに、(コールバック関数のセット) を使用して、ドライバーを通知することを意味します。
+ほとんどのドライバーは、上記の状況の1つではありませんが、ドライバーがの場合は、デバイスの PnP および電源管理操作をより直接的に制御する必要があります。 このようなドライバーでは *、自己管理型の*i/o を使用できます。 自己管理型 i/o を使用するということは、デバイスが電源に接続されているか、接続が切断された場合、およびデバイスが一時的に停止された場合に、ドライバーが (コールバック関数のセットによって) 通知されることを意味します。
 
-ドライバーできます自己管理型の I/O を使用し、依然として電源管理対象のキューのいずれかのフレームワークの I/O キューを使用するかに注意してください。 たとえば、ドライバーでは、一連の自己管理型の I/O のコールバック関数のいない電源の管理のフレームワークの I/O キューを使用できます。
+ドライバーは自己管理型 i/o を使用できますが、その場合でも、フレームワークの i/o キューは、電源管理キューとしても使用できます。 たとえば、ドライバーは、自己管理型の i/o コールバック関数のセットと共に、電源管理ではなく、フレームワークの i/o キューを使用できます。
 
-呼び出すときに自己管理型の I/O を使用するドライバーは、余分なイベントのコールバック関数のセットに登録[ **WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)します。 これらのイベントのコールバック関数は次のとおりです。
+自己管理型の i/o を使用するために、ドライバーは[**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)を呼び出すときに、イベントコールバック関数の追加セットを登録します。 これらのイベントコールバック関数は次のとおりです。
 
--   [*EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)、初期化、およびデバイスの I/O 操作を開始します。
+-   [*Evtdeviceselfmanagedioinit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)。デバイスの i/o 操作を初期化して開始します。
 
--   [*EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)、I/O 操作を中断します。
+-   [*Evtdeviceselfmanagediosuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)。 i/o 操作を中断します。
 
--   [*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)、中断された後は、デバイスの I/O 操作を再起動します。
+-   [*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)。中断されたデバイスの i/o 操作を再開します。
 
--   [*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)、これは非対処の I/O 要求を削除します。
+-   [*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)。サービスされていない i/o 要求を削除します。
 
--   [*EvtDeviceSelfManagedIoCleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)、によって割り当てられたリソースを解放する[ *EvtDeviceSelfManagedIoInit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)します。
+-   [*Evtdeviceselfmanagediocleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)。 [*Evtdeviceselfmanagediocleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)によって割り当てられたリソースを解放します。
 
-デバイスでは、初めての作業 (D0) の状態が入ると、フレームワークのドライバーの[ *EvtDeviceSelfManagedIoInit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)コールバック関数。 これは、毎回ユーザーに、システムにデバイスが接続されるため、システムを再起動するたびに発生します。
+デバイスが最初に動作中 (D0) 状態になると、フレームワークは、ドライバーの[*Evtdeviceselfmanagedioinit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)コールバック関数を呼び出します。 これは、ユーザーがデバイスをシステムに接続するたび、およびシステムが再起動されるたびに発生します。
 
-次の 3 つな状況で、ドライバーがデバイスの I/O 操作を停止する必要があります: デバイスが省電力状態に移行しようとしていますが削除される直前にまたはが予期せず削除されて既にします。 次の一覧には、このような状況の詳細の各が調べられます。
+デバイスの i/o 操作をドライバーが停止する必要がある状況は3つあります。デバイスが低電力状態になるか、削除されようとしているか、予期せずに削除されています。 次の一覧では、これらの状況について詳しく説明します。
 
--   デバイスは、低電力状態にしは最終的に作業の状態を返します。
+-   デバイスが低電力状態になり、最終的には動作状態に戻ります。
 
-    デバイスが省電力状態の場合 (デバイスがアイドル状態になって、システム全体が、低電力状態を入力するかがあるため、PnP マネージャー[システムのハードウェア リソースを再配布](handling-requests-to-stop-a-device.md#redistributing-resources))、フレームワークによって、ドライバーの[ *EvtDeviceSelfManagedIoSuspend* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)コールバック関数。 後の作業の状態をデバイスに入ります、フレームワークのドライバーの[ *EvtDeviceSelfManagedIoRestart* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart)コールバック関数。
+    デバイスが低電力状態に入ろうとしているとき (デバイスがアイドル状態になっているか、システム全体が低電力状態に入っているか、PnP マネージャーが[システムハードウェアリソース](handling-requests-to-stop-a-device.md#redistributing-resources)を再配布しているため)、フレームワークはドライバー[*を呼び出します。EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)コールバック関数。 デバイスが動作状態になった後、フレームワークはドライバーの[*EvtDeviceSelfManagedIoRestart*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_restart) callback 関数を呼び出します。
 
--   デバイスは、削除しようとしています。
+-   デバイスを削除しようとしています。
 
-    処理するために[ユーザーが要求したデバイスの削除](handling-requests-to-stop-a-device.md#a-user-removes-or-disables-a-device)、フレームワークは、ドライバーの[ *EvtDeviceSelfManagedIoSuspend* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)デバイスを停止する前に、コールバック関数。 デバイスを停止した後は、フレームワークは、ドライバーを呼び出します。 [ *EvtDeviceSelfManagedIoFlush* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)コールバック関数。 デバイスが削除された後、フレームワーク、 [ *EvtDeviceSelfManagedIoCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)コールバック関数。
+    [ユーザーが要求したデバイスの削除](handling-requests-to-stop-a-device.md#a-user-removes-or-disables-a-device)を処理するために、フレームワークはデバイスを停止する前に、ドライバーの[*Evtdeviceselfmanagediosuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)コールバック関数を呼び出します。 デバイスを停止した後、フレームワークはドライバーの[*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush) callback 関数を呼び出します。 デバイスが削除されると、フレームワークは[*Evtdeviceselfmanagediocleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)コールバック関数を呼び出します。
 
--   デバイスが予期せず削除されて既に (突然の削除) します。
+-   デバイスは予期せず削除されました (突然削除)。
 
-    デバイスのバスのドライバーは、デバイスが存在する場合は、不要になったことを決定します。 または、スタック内の別のドライバーは、デバイスが応答していないことを決定します。 場合は、問題が発見されたドライバーは PnP マネージャーに通知します。 PnP マネージャーはそのデバイスがなくなったことに、ドライバーの残りの部分を通知します。 フレームワーク ベースのドライバーでは、フレームワークは PnP マネージャーのメッセージを受信し、ドライバーの呼び出し[ *EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)、 [ *EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)、および[ *EvtDeviceSelfManagedIoCleanup* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)コールバック関数。
+    デバイスのバスのドライバーによってデバイスが存在しないと判断された場合、またはスタック内の別のドライバーによってデバイスが応答していないと判断された場合、問題を検出したドライバーは PnP マネージャーに通知します。 PnP マネージャーは、デバイスが失われたことを他のドライバーに通知します。 フレームワークベースのドライバーの場合、フレームワークは PnP マネージャーのメッセージを受信し、ドライバーの[*Evtdeviceselfmanagediosuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)、 [*EvtDeviceSelfManagedIoFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_flush)、および[*Evtdeviceselfmanagediosuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)コールバック関数を呼び出します。
 
-    (ドライバーにも登録できます、 [ *EvtDeviceSurpriseRemoval* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)コールバック関数。 削除されたときの作業 (D0) 状態で、デバイスであった場合、フレームワーク*EvtDeviceSurpriseRemoval*自己管理型の I/O のコールバック関数を呼び出す前にします。 デバイスが削除されると、低電力状態だった場合*EvtDeviceSurpriseRemoval*が呼び出された後[ *EvtDeviceSelfManagedIoSuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend))
+    (ドライバーでは、 [*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)コールバック関数を登録することもできます。 デバイスが削除されたときに動作 (D0) 状態になった場合、フレームワークは、自己管理型の i/o コールバック関数を呼び出す前に*EvtDeviceSurpriseRemoval*を呼び出します。 デバイスが削除されたときに低電力状態になった場合、 *EvtDeviceSurpriseRemoval*は[*Evtdeviceselfmanagediosuspend*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_suspend)の後に呼び出されます。
 
-これで、フレームワーク ドライバーのイベントのコールバック関数、順序の詳細については、次を参照してください。 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)します。
+フレームワークがドライバーのイベントコールバック関数を呼び出す順序の詳細については、「 [PnP および電源管理のシナリオ](pnp-and-power-management-scenarios.md)」を参照してください。
 
-゚は必要ありません、ただし、フレームワークにより、ドライバーにアクセスして、デバイスの PnP、電源の状態をより詳細に制御を有効にして、[フレームワーク内のマシンの状態](state-machines-in-the-framework.md)します。
+ほとんど必要ありませんが、フレームワークでは、[フレームワークのステートマシン](state-machines-in-the-framework.md)にアクセスすることによって、デバイスの PnP と電源の状態をさらに制御することができます。
 
  
 

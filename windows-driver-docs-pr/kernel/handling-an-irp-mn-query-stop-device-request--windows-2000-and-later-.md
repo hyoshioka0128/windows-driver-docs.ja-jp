@@ -1,104 +1,104 @@
 ---
-title: IRP_MN_QUERY_STOP_DEVICE 要求 (Windows 2000 以降) の処理
-description: IRP_MN_QUERY_STOP_DEVICE 要求 (Windows 2000 以降) の処理
+title: IRP_MN_QUERY_STOP_DEVICE 要求の処理 (Windows 2000 以降)
+description: IRP_MN_QUERY_STOP_DEVICE 要求の処理 (Windows 2000 以降)
 ms.assetid: 668a920c-aadb-405a-9a1d-091982ca2c04
 keywords:
 - IRP_MN_QUERY_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cbf5855ee2768d9b3c5e43714a28c856df7630a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7e913c65594b193ea0ea2f4ce182a00229c611b9
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384235"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838665"
 ---
-# <a name="handling-an-irpmnquerystopdevice-request-windows-2000-and-later"></a>IRP の処理\_MN\_クエリ\_停止\_デバイス (Windows 2000 以降) を要求します。
+# <a name="handling-an-irp_mn_query_stop_device-request-windows-2000-and-later"></a>IRP\_の処理\_クエリ\_\_デバイスの要求の停止 (Windows 2000 以降)
 
 
 
 
 
-[ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)デバイス スタックの最上位のドライバーによって、各 [次へ] の下のドライバーでし、要求が最初に処理します。 ドライバーのハンドルに Irp の停止、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[**IRP\_\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)の要求は、デバイススタック内の上位のドライバーによって最初に処理され、次に下位のドライバーごとに処理されます。 ドライバーは、 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで停止 irp を処理します。
 
-応答、 **IRP\_MN\_クエリ\_停止\_デバイス**ドライバーは、次を実行する必要があります。
+**\_\_デバイスを停止する IRP\_\_** に応答して、ドライバーは次の操作を行う必要があります。
 
-1.  かどうか、デバイスを停止することができます、およびリリースされると、悪影響ことがなく、ハードウェア リソースを決定します。
+1.  デバイスを停止できるかどうか、およびハードウェアリソースが解放され、悪影響を及ぼすことがないかどうかを判断します。
 
-    ドライバーは、次のいずれかに該当する場合、クエリ停止 IRP を失敗する必要があります。
+    次のいずれかに該当する場合、ドライバーはクエリ停止の IRP を失敗させる必要があります。
 
-    -   ドライバーに通知されました (を通じて[ **IRP\_MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)) デバイスがページング、休止状態のパスであります。、またはクラッシュ ダンプ ファイル。
+    -   デバイスがページングファイル、休止状態、またはクラッシュダンプファイルのパスにあることを示す、( [**IRP\_\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)を介して) ドライバーに通知されました。
 
-    -   デバイスのハードウェア リソースを解放することはできません。
+    -   デバイスのハードウェアリソースを解放できません。
 
-    ドライバーが、次の条件が true の場合、クエリ停止 IRP が失敗する可能性があります。
+    次の条件に該当する場合、ドライバーはクエリ停止の IRP を失敗させる可能性があります。
 
-    -   ドライバーは、I/O 要求を削除する必要がありますしないと、キュー Irp のメカニズムはありません。
+    -   ドライバーは、i/o 要求をドロップせず、Irp をキューに格納するメカニズムを備えていません。
 
-        停止状態では、デバイスが、ドライバーは Irp をデバイスへのアクセスを必要とするを保持する必要があります。 ドライバーは Irp を蓄積されません場合、停止するデバイスを許可する必要があり、そのため、クエリ停止 IRP に失敗する必要があります。
+        デバイスが停止状態にある間は、デバイスへのアクセスを必要とする Irp をドライバーが保持する必要があります。 ドライバーが Irp をキューに配置していない場合は、デバイスの停止を許可しないため、クエリ停止の IRP を失敗させる必要があります。
 
-        このルールの例外は、I/O を削除する許可されているデバイスです。 このようなデバイスのドライバーは、クエリ停止を成功およびキュー Irp なし要求を停止できます。
+        このルールの例外は、i/o の削除が許可されているデバイスです。 このようなデバイスのドライバーは、キューの Irp を使用せずにクエリの停止と停止要求を正常に実行できます。
 
-2.  デバイスを停止できない場合は、クエリ停止 IRP に失敗します。
+2.  デバイスを停止できない場合は、クエリ停止の IRP を失敗とします。
 
-    設定**Irp -&gt;IoStatus.Status** 、該当するエラー状態を呼び出す**IoCompleteRequest** IO と\_いいえ\_増分値、およびドライバーのからの戻り値*DispatchPnP*ルーチン。 [次へ] の下のドライバーに IRP を渡さないでください。
+    **Irp&gt;iostatus. status**を適切なエラー状態に設定し、\_IO を使用して**IoCompleteRequest**を呼び出します。\_インクリメントはなく、ドライバーの*DispatchPnP*ルーチンから戻ります。 IRP を次の下位のドライバーに渡さないでください。
 
-3.  デバイスを停止して、ドライバーは Irp をキューする場合、ホールドを設定します。\_新規\_後続 Irp をキューに配置するため、デバイスの拡張機能の要求のフラグ (を参照してください[を保持している受信 Irp ときに、デバイスが一時停止](holding-incoming-irps-when-a-device-is-paused.md))。
+3.  デバイスを停止して、ドライバーが Irp をキューに入れる場合は、その後の Irp がキューに入れられるように、デバイス拡張で HOLD\_NEW\_REQUESTS フラグを設定します (「[デバイスが一時停止したときに受信 irp を保持する](holding-incoming-irps-when-a-device-is-paused.md)」を参照してください)。
 
-    または、デバイスのドライバーがドライバーは、それ以降受信されるまで、デバイスを完全に一時停止を延期することができます[ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求。 ただし、このようなドライバーはから到着した時点ですぐに停止 IRP を指すようにすべての要求をキューする必要があります。 デバイスが再起動されるまでこのようなドライバーは、次の要求をキューする必要があります。
+    または、デバイスのドライバーが、デバイスの一時停止を遅延させることもできます。これにより、ドライバーは、その後の[**IRP\_完了\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求を受信します。 ただし、このようなドライバーは、受信時に停止 IRP の直後に到達できないようにする要求をキューに置いておく必要があります。 デバイスが再起動されるまで、このようなドライバーは次のような要求をキューに含める必要があります。
 
-    -   [**IRP\_MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)要求 (たとえば、デバイス上のページング ファイルを配置する場合)。
+    -   [**IRP\_、デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification)要求 (たとえば、ページングファイルをデバイスに配置するなど) を\_します。
 
-    -   アイソクロナス転送の要求数。
+    -   アイソクロナス転送の要求。
 
-    -   停止 IRP を指すからドライバーを妨げる要求を作成します。
+    -   停止 IRP でドライバーが停止するのを防ぐ要求を作成します。
 
-4.  デバイスは、進行状況の失敗では IRP を含めることはできない場合、は、その他のドライバー ルーチンとドライバーの削減に渡された未処理の要求が完了したことを確認します。
+4.  デバイスで IRP が進行中でない場合は、他のドライバールーチンに渡された未処理の要求と、ドライバーが下位にあるすべての要求が完了していることを確認します。
 
-    これをドライバーで達成する方法の 1 つは、参照カウントとイベントを使用して、すべての要求が完了したことを確認します。
+    ドライバーがこれを実現する方法の1つは、参照カウントとイベントを使用して、すべての要求が完了したことを確認することです。
 
-    -   その[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device) 、日常的なドライバー デバイス拡張機能で I/O の参照カウントを定義し、数を 1 つを初期化します。
+    -   [*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンでは、ドライバーはデバイス拡張機能の i/o 参照カウントを定義し、カウントを1に初期化します。
 
-    -   また、その*AddDevice*ドライバー作成イベントを日常的な[ **KeInitializeEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeevent)を非シグナル状態イベントの初期化と[**KeClearEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keclearevent)します。
-    -   毎回 IRP の処理、ドライバーと参照カウントをインクリメントする[ **InterlockedIncrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockedincrement)します。
+    -   また、 *AddDevice*ルーチンでは、ドライバーは[**keinitializeevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeevent)を使用してイベントを作成し、 [**keclearevent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keclearevent)を使用して、イベントを非シグナル状態に初期化します。
+    -   IRP を処理するたびに、ドライバーは[**InterlockedIncrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockedincrement)を使用して参照カウントをインクリメントします。
 
-    -   要求を完了するたびに、ドライバー、参照カウントをデクリメントを[ **InterlockedDecrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-interlockeddecrement)します。
+    -   要求が完了するたびに、ドライバーは[**InterlockedDecrement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-interlockeddecrement)を使用して参照カウントをデクリメントします。
 
-        参照カウント ドライバー デクリメント、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)場合は、要求がある 1 つは、日常的なまたは右への呼び出し後[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)ドライバーなしを使用している場合*IoCompletion*要求のルーチンです。
+        ドライバーは、要求に対して*iocompletion*ルーチンが使用されていない場合、要求に1つ、または[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)の呼び出しの直後に、 [*iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンの参照カウントをデクリメントします。
 
-    -   ドライバーが受信すると、 **IRP\_MN\_クエリ\_停止\_デバイス**、ことで、参照がカウントをデクリメント**InterlockedDecrement**します。 未処理の要求はありません、この参照カウントを 0 に減少します。
+    -   ドライバーが IRP\_を受信すると **\_デバイス\_停止\_クエリ**を実行すると、参照カウントが**InterlockedDecrement**で減少します。 未処理の要求がない場合は、参照カウントを0に減らします。
 
-    -   参照カウントがゼロに達すると、ドライバーを持つイベントを設定[ **KeSetEvent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kesetevent)シグナリング クエリ停止コードを継続できます。
+    -   参照カウントが0になると、ドライバーは、クエリストップコードを続行できることを[**KeSetEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)シグナリングでイベントに設定します。
 
-    上記の手順を代わりに、ドライバーをシリアル化できる、 **IRP\_MN\_クエリ\_停止\_デバイス**IRP が進行中の任意の Irp の背後にあります。
+    上記の手順の代わりに、ドライバーは**irp\_\_クエリ**をシリアル化して、進行中の任意の irp の背後にある\_デバイスの IRP を停止\_ことができます。
 
-5.  その他のデバイスを停止保留中の状態にするために必要な手順を実行します。
+5.  デバイスを停止保留中状態にするために必要なその他の手順を実行します。
 
-    正常に準備する必要が、クエリ停止 IRP がドライバーに成功した後、 **IRP\_MN\_停止\_デバイス**します。
+    ドライバーは、クエリ停止の IRP を正常に完了した後に、Irp\_完了する準備ができて **\_デバイスを停止\_** する必要があります。
 
 6.  IRP を終了します。
 
-    関数またはフィルター ドライバーでは。
+    関数またはフィルタードライバーの場合:
 
-    -   設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+    -   **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-    -   [次へ] スタックの場所を設定[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で [次へ] の下位のドライバーに IRP を渡すと[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
+    -   [**IoskipIoCallDriver Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用して次のスタックの場所を設定し、IRP を次の下位[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)のドライバーに渡します。
 
-    -   状態を反映**保留**から戻り値の状態として、 *DispatchPnP*ルーチン。
+    -   **IoCallDriver**の状態を*DispatchPnP*ルーチンからの戻りステータスとして伝達します。
 
-    -   IRP を実行しないでください。
+    -   IRP を完了しないでください。
 
-    バス ドライバー。
+    バスドライバーの場合:
 
-    -   設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+    -   **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-        ただし、バス上のデバイスは、ハードウェア リソースを使用して場合は、バスと子デバイスのリソース要件を再評価します。 要件のいずれかが変更された場合は、状態を返す\_リソース\_要件\_状態ではなく変更\_成功します。 この状態は成功を示しますが、PnP マネージャーが停止 IRP を送信する前に、リソースを再要求します。
+        ただし、バス上のデバイスでハードウェアリソースを使用する場合は、バスと子デバイスのリソース要件を再評価します。 要件のいずれかが変更されている場合は、状態\_成功の状態ではなく、\_リソース\_要件\_変更されます。 この状態は成功を示しますが、stop IRP を送信する前に、PnP マネージャーがリソースを再実行するように要求します。
 
-    -   IRP の完了 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) IO と\_いいえ\_インクリメントします。
+    -   IO\_\_を増やさずに、IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
-    -   戻り値、 *DispatchPnP*ルーチン。
+    -   *DispatchPnP*ルーチンからを返します。
 
-デバイス スタック内の任意のドライバーが失敗した場合、 **IRP\_MN\_クエリ\_停止\_デバイス**、PnP マネージャーに送信する[ **IRP\_MN\_キャンセル\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)デバイス スタックにします。 これにより、ドライバーを必要とする、 *IoCompletion*下位のドライバーが IRP を失敗するかどうかを検出するために、クエリ停止 IRP のルーチンです。
+デバイススタック内のいずれかのドライバー **\_が\_クエリ\_\_デバイスを停止**しようとして失敗した場合、PnP マネージャーは\_デバイススタックへの\_を停止\_キャンセル\_[**irp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-stop-device)を送信します。 これにより、ドライバーが IRP に障害が発生したかどうかを検出するために、クエリ停止の IRP に対して*Iocompletion*ルーチンが要求されるのを防ぐことができます。
 
  
 

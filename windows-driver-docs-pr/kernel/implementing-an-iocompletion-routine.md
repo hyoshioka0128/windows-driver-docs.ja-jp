@@ -5,15 +5,15 @@ ms.assetid: 669860b1-5e85-4b28-a9b1-1ccf8c689b7a
 keywords:
 - IoCompletion ルーチン
 - IoCompleteRequest ルーチン
-- 優先順位の WDK Irp ブーストします。
+- 優先順位が WDK Irp をブースト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a38ec71556eac99cddf9ca99df5d2686e7785fca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f01e1982cbd6ee44170eb383659682a83e9fce23
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365817"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828310"
 ---
 # <a name="implementing-an-iocompletion-routine"></a>IoCompletion ルーチンの実装
 
@@ -21,70 +21,70 @@ ms.locfileid: "67365817"
 
 
 
-開始時、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)ルーチンを受け取る、*コンテキスト*ポインター。 ディスパッチ ルーチンを呼び出すと[ **IoSetCompletionRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)を指定できます、*コンテキスト*ポインター。 このポインターは、すべてのドライバーが指定したコンテキスト情報を参照できます、 *IoCompletion*ルーチンが IRP を処理する必要があります。 ページング可能なコンテキストの領域であることに注意してください。 ため、 *IoCompletion* IRQL でルーチンを呼び出すことができます = ディスパッチ\_レベル。
+入力時、 [*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンは*コンテキスト*ポインターを受け取ります。 ディスパッチルーチンが[**Ioset補完ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出すと、*コンテキスト*ポインターを提供できます。 このポインターは、 *Iocompletion*ルーチンが IRP を処理するために必要なドライバーによって決定されたコンテキスト情報を参照できます。 *Iocompletion*ルーチンを IRQL = DISPATCH\_レベルで呼び出すことができるため、コンテキスト領域をページングできないことに注意してください。
 
-**IoCompletion ルーチンに関する次の実装のガイドラインを考慮してください。**
+**IoCompletion ルーチンには、次の実装ガイドラインを考慮してください。**
 
--   *IoCompletion*ルーチンが IRP を確認できます[状態の I/O ブロック](i-o-status-blocks.md)I/O 操作の結果を判定します。
+-   *Iocompletion*ルーチンは、IRP の[i/o 状態ブロック](i-o-status-blocks.md)を確認して、i/o 操作の結果を判断できます。
 
--   入力の IRP がディスパッチ ルーチンを使用して、によって割り当てられた場合[ **IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)または[ **IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildasynchronousfsdrequest)、 *IoCompletion*ルーチンを呼び出す必要があります[ **IoFreeIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreeirp)元 IRP の完了前に可能であれば、その IRP を解放します。
+-   入力 IRP が[**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)または[**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)を使用してディスパッチルーチンによって割り当てられた場合、 *Iocompletion*ルーチンは[**iofreeirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreeirp)を呼び出してその irp を解放する必要があります。これは、可能であれば、元のIRP.
 
-    -   *IoCompletion*ルーチンが割り当てられた IRP がドライバーに割り当てられた、可能であれば、対応する IRP を解放する前に、ディスパッチ ルーチンには IRP あたりリソースの解放する必要があります。
+    -   *Iocompletion*ルーチンは、ディスパッチルーチンによってドライバー割り当ての irp に割り当てられた irp リソース (可能であれば、対応する irp を解放する前に) を解放する必要があります。
 
-        たとえば、ディスパッチ ルーチンは割り当てで MDL [ **IoAllocateMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)と呼び出し[ **IoBuildPartialMdl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iobuildpartialmdl)のこれによって割り当てられる部分転送 IRP、 *IoCompletion*ルーチンと MDL をリリースする必要があります[ **IoFreeMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iofreemdl)します。 IRP が元の状態を維持するためにリソースを割り当てることがある場合にする必要がありますそれらのリソースを解放可能であればを呼び出す前に[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)元 IRP と確実に返す前にコントロール。
+        たとえば、ディスパッチルーチンが[**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)を使用して MDL を割り当て、それによって割り当てられる部分転送の IRP に対して[**Iobuildpartialmdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildpartialmdl)を呼び出す場合、 *Iocompletion*ルーチンは、 [**iofreemdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iofreemdl)で mdl を解放する必要があります。 元の IRP に関する状態を維持するためにリソースを割り当てる場合は、そのリソースを解放する必要があります。つまり、元の IRP で[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出す前に、制御を返す前に確実にそのリソースを解放する必要があります。
 
-        一般に、解放または、IRP の完了前に、 *IoCompletion*ルーチンは、ディスパッチ ルーチンによって割り当てられた、IRP ごとのリソースを解放する必要があります。 ドライバーが前に解放するためのリソースについての状態を維持する必要がありますそれ以外の場合、その*IoCompletion*ルーチンでは、コントロールを返しますが、元の要求を完了します。
+        一般に、IRP を解放または完了する前に、 *Iocompletion*ルーチンは、ディスパッチルーチンによって割り当てられた irp ごとのリソースを解放する必要があります。 それ以外の場合、ドライバーは解放されるリソースについての状態を維持してから、 *Iocompletion*ルーチンが元の要求の完了から制御を返すようにする必要があります。
 
-    -   場合、 *IoCompletion*ルーチンを完了できません状態が元の IRP\_成功した場合、原因となったドライバーに割り当てられた IRP の戻り値を元の IRP で状態の I/O ブロックを設定があります、  *。IoCompletion*ルーチンを元の要求は失敗します。
+    -   *Iocompletion*ルーチンが、状態\_SUCCESS の元の irp を完了できない場合、元の irp の i/o 状態ブロックを、ドライブに割り当てられた irp で返される値に設定する必要があります。これにより、 *iocompletion*ルーチンは、元の要求。
 
-    -   場合、 *IoCompletion*ルーチンは、元の要求の状態を完了\_保留中、呼び出す必要があります[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)元 IRP に呼び出す前に**IoCompleteRequest**します。
+    -   *Iocompletion*ルーチンが、状態\_保留中の元の要求を完了する場合、 **IoCompleteRequest**を呼び出す前に、元の IRP で[**終了する iomarkirppを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)呼び出す必要があります。
 
-    -   場合、 *IoCompletion*ルーチンがエラー状態で元の IRP に失敗する必要があります\_*XXX*、可能な[エラー ログに記録](logging-errors.md)します。 ただし、そのため、発生したデバイス I/O エラーをログに、基になるデバイス ドライバーの必要があります*IoCompletion*ルーチンは、通常はエラーをログしないようにします。
+    -   *Iocompletion*ルーチンが、エラー状態\_*XXX*で元の IRP を失敗させる必要がある場合は、[エラーをログに記録](logging-errors.md)できます。 ただし、発生したデバイス i/o エラーをログに記録するのは、基になるデバイスドライバーの役割であるため、 *Iocompletion*ルーチンは通常、エラーをログに記録しません。
 
-    -   ときに、 *IoCompletion*ルーチンは、コントロールの状態を返す必要があります、ルーチンが処理され、解放 IRP がドライバーに割り当てられた\_詳細\_処理\_必要な作業です。
+    -   *Iocompletion*ルーチンが処理され、ドライバーによって割り当てられた IRP が解放されると、ルーチンは状態\_制御を返す必要があり\_処理\_必要があります。
 
-        状態を返す\_詳細\_処理\_から必要な*IoCompletion*ルーチン forestalls I/O マネージャーの完了がドライバー割り当ておよび解放された IRP の処理します。 2 番目の呼び出し**IoCompleteRequest**原因 IRP の完了のルーチン、すぐ上に状態が返されましたルーチン完了ルーチンの以降の呼び出しを再開する I/O マネージャー\_複数\_処理\_必要な作業です。
+        状態を返す\_、 *iocompletion*ルーチンから必要な\_処理\_の数が増え、i/o マネージャーによるドライバーの割り当ておよび解放された IRP の完了処理が forestalls ます。 **IoCompleteRequest**への2回目の呼び出しでは、i/o マネージャーが IRP の完了ルーチンの呼び出しを再開します。これは、\_状態を返したルーチンのすぐ上の完了ルーチンから開始し、\_処理\_必要があります.
 
--   場合、 *IoCompletion*ルーチンには、ドライバーを削減する 1 つまたは複数の要求を送信する受信の IRP が再利用されますまたは、どのようなコンテキストを更新する必要があります、日常的な再試行操作に失敗した場合、 *IoCompletion* 。各再利用性や IRP の再試行についてルーチンを保持します。 次の下位ドライバーの I/O スタックの場所、もう一度の呼び出しを設定し、 [ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)独自のエントリ ポイントと呼び出し[**保留** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver) IRP の。
+-   *Iocompletion*ルーチンが受信 IRP を再利用して1つまたは複数の要求を下位のドライバーに送信した場合、またはルーチンが失敗した操作を再試行した場合は、 *iocompletion*ルーチンが再利用または再試行のたびに保持するすべてのコンテキストを更新する必要があります。IRP. その後、次の下位にあるドライバーの i/o スタックの場所をもう一度設定し、独自のエントリポイントを使用して[**IosetIoCallDriver ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出し、IRP に対してを呼び出します。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
 
-    -   *IoCompletion*ルーチンを呼び出す必要がありますいない[ **IoMarkIrpPending** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iomarkirppending)再利用または IRP の再試行ごとにします。
+    -   *Iocompletion*ルーチンは、IRP の再利用または再試行のたびに[**Iomarkirpp終了**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iomarkirppending)を呼び出さないでください。
 
-        ディスパッチ ルーチンには、元の IRP 保留中として既にマークされています。 チェーン内のすべてのドライバーで元の IRP の完了まで**IoCompleteRequest**、保留中のままにします。
+        ディスパッチルーチンでは、元の IRP が保留中として既にマークされています。 チェーン内のすべてのドライバーが**IoCompleteRequest**を使用して元の IRP を完了するまでは、保留中のままになります。
 
-    -   要求を再試行する前に、 *IoCompletion*ルーチンがステータスの I/O のステータスのブロックをリセットする必要があります\_の成功を**状態**の場合は 0 と**情報**、返されたエラー情報を保存した後可能性があります。
+    -   要求を再試行する前に、 *Iocompletion*ルーチンは、状態\_が "成功" に設定され、返されたエラー情報を保存した後、**情報** **が0の**i/o 状態ブロックをリセットする必要があります。
 
-        各再試行のため、 *IoCompletion*日常的なは、通常、再試行カウントをデクリメント セット ディスパッチ ルーチンによって。 通常、 *IoCompletion*ルーチンを呼び出す必要があります**IoCompleteRequest** IRP をいくつかの限られた数の再試行が失敗したときに失敗します。
+        再試行のたびに、 *Iocompletion*ルーチンは通常、ディスパッチルーチンによって設定された再試行回数を減らします。 通常、 *Iocompletion*ルーチンは、一部の再試行が失敗した場合に、IRP を失敗させるために**IoCompleteRequest**を呼び出す必要があります。
 
-    -   *IoCompletion*ルーチンは、状態を返す必要があります\_詳細\_処理\_呼び出し後に必要な[ **IoSetCompletionRoutine** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutine)と[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)されている IRP で再利用または再試行します。
+    -   [**Iosetcompletion ルーチン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutine)を呼び出し、再利用または再試行される IRP で[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出した後で、必要な\_処理\_より多くの処理を実行するために、 *iocompletion*ルーチンは状態\_返す必要があります。
 
-        状態を返す\_詳細\_処理\_から必要な*IoCompletion*ルーチン forestalls I/O マネージャーの完了を再利用または再試行 IRP の処理します。
+        状態を返す\_、 *iocompletion*ルーチンから必要な\_処理\_の数が増えると、i/o マネージャーによる再利用または再試行中の IRP の完了処理が forestalls されます。
 
-    -   場合、 *IoCompletion*ルーチンを完了できません状態が元の IRP\_成功すると、その必要がありますのままに状態の I/O ブロックにより、再利用性や再試行操作の下位のドライバーによって返される、  *。IoCompletion* IRP が失敗するルーチン。
+    -   *Iocompletion*ルーチンが、状態\_SUCCESS の元の IRP を完了できない場合は、 *IOCOMPLETION*ルーチンが IRP を失敗させる再利用または再試行操作のために、低いドライバーによって返された i/o 状態ブロックのままにする必要があります。
 
-    -   場合、 *IoCompletion*ルーチンは、元の要求の状態を完了\_保留中、呼び出す必要があります**IoMarkIrpPending**を呼び出す前に元の IRP に**IoCompleteRequest**します。
-    -   場合、 *IoCompletion*ルーチンがエラー状態で元の IRP に失敗する必要があります\_*XXX*、可能な[エラー ログに記録](logging-errors.md)します。 ただし、そのため、発生したデバイス I/O エラーをログに、基になるデバイス ドライバーの必要があります*IoCompletion*ルーチンは、通常はエラーをログしないようにします。
+    -   *Iocompletion*ルーチンが、状態\_保留中の元の要求を完了する場合、 **IoCompleteRequest**を呼び出す前に、元の IRP で**終了する iomarkirppを**呼び出す必要があります。
+    -   *Iocompletion*ルーチンが、エラー状態\_*XXX*で元の IRP を失敗させる必要がある場合は、[エラーをログに記録](logging-errors.md)できます。 ただし、発生したデバイス i/o エラーをログに記録するのは、基になるデバイスドライバーの役割であるため、 *Iocompletion*ルーチンは通常、エラーをログに記録しません。
 
--   設定するドライバー、 *IoCompletion* IRP し、パスで日常的な IRP が下位のドライバーに確認する必要があります、 **IRP -&gt;PendingReturned**フラグ、 *IoCompletion*ルーチン。 フラグが設定されている場合、 *IoCompletion*ルーチンを呼び出す必要があります**IoMarkIrpPending** IRP にします。 ただし、ドライバーは IRP を渡し、イベントを待機し、保留中の IRP がマークする必要がありますに注意してください。 代わりに、その*IoCompletion*ルーチンが、イベント通知し、状態を返す必要があります\_詳細\_処理\_必要な作業です。
+-   IRP で*iocompletion*ルーチンを設定し、その後、irp を下位のドライバーに渡すドライバーは、 *iocompletion*ルーチンで**irp&gt;pendingreturned た**フラグをチェックする必要があります。 フラグが設定されている場合、 *Iocompletion*ルーチンは、IRP を使用して**Iomarkirpp終了**を呼び出す必要があります。 ただし、IRP を通過してイベントを待機するドライバーは、保留中の IRP をマークしないことに注意してください。 代わりに、その*Iocompletion*ルーチンはイベントを通知し、必要な\_処理\_より多くの状態\_返す必要があります。
 
--   *IoCompletion*ルーチンが可能であれば、前に元の IRP の処理に割り当てられたディスパッチ ルーチンにはリソースの解放する必要があります、 *IoCompletion*ルーチンの呼び出し**IoCompleteRequest**元 IRP と前に間違いなく、 *IoCompletion*ルーチンは、元の IRP の完了からコントロールを返します。
+-   *Iocompletion*ルーチンは、ディスパッチルーチンが元の irp を処理するために割り当てられたすべてのリソースを解放する必要があります。これは、 *iocompletion*ルーチンが元の irp で**IoCompleteRequest**を呼び出す前に、確実に*Iocompletion*ルーチンは、元の IRP の完了を制御します。
 
-高度なドライバーを設定した場合、 *IoCompletion* 、元、そのドライバーの IRP で日常的な*IoCompletion*ルーチンはまで呼び出されません、 *IoCompletion*ルーチン下位レベルのすべてのドライバーが呼び出されています。
+上位レベルのドライバーで、その*Iocompletion*ルーチンが元の IRP に設定されている場合、すべての下位レベルのドライバーの*iocompletion*ルーチンが呼び出されるまで、そのドライバーの*iocompletion*ルーチンは呼び出されません。
 
-### <a name="supplying-a-priority-boost-in-calls-to-iocompleterequest"></a>IoCompleteRequest への呼び出しで優先順位を指定します。
+### <a name="supplying-a-priority-boost-in-calls-to-iocompleterequest"></a>IoCompleteRequest の呼び出しで優先度を上げる
 
-呼び出す場合、最下位レベルのデバイス ドライバーは IRP のディスパッチ ルーチンで完了できます[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)で、 *PriorityBoost* IO の\_ありません\_増分値です。 ドライバーは元の要求者は、I/O 操作を完了するが待機しないことを想定できますので、実行時の優先順位の引き上げは必要ありません。
+最下位レベルのデバイスドライバーがディスパッチルーチンで IRP を完了できる場合は、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)が呼び出され、IO の優先*順位*が\_\_インクリメントはありません。 ドライバーでは、元の要求元が i/o 操作の完了を待機していないと見なすことができるため、実行時の優先順位の増加は必要ありません。
 
-それ以外の場合、最下位レベルのドライバーは、システム定義とデバイスの種類に固有の値で、要求元がそのデバイスの I/O 要求の待機時間を補正するために、要求者の実行時の優先度の向上を提供します。 参照してください Wdm.h または Ntddk.h のブースト値。
+それ以外の場合、最下位レベルのドライバーは、要求元がデバイス i/o 要求を待機した時間を補正するために、要求元の実行時の優先順位を増幅するシステム定義のデバイスタイプ固有の値を提供します。 値をブーストするには、「Ntddk」または「」を参照してください。
 
-高度なドライバーにも同じ*PriorityBoost*それぞれ基になるデバイス ドライバーの呼び出し時として**IoCompleteRequest**します。
+上位レベルのドライバーでは、 **IoCompleteRequest**を呼び出すと、基になる各デバイスドライバーと同じ優先*順位ブースト*が適用されます。
 
-### <a name="effect-of-calling-iocompleterequest"></a>IoCompleteRequest を呼び出すことの影響
+### <a name="effect-of-calling-iocompleterequest"></a>IoCompleteRequest を呼び出した場合の影響
 
-ドライバーを呼び出すと**IoCompleteRequest**、I/O マネージャーがあるように設定する場合は、次のより高度なドライバーを呼び出す前に 0 でそのドライバーの I/O スタックの場所を入力、 *IoCompletion*ルーチンをIRP について呼び出されます。
+ドライバーが**IoCompleteRequest**を呼び出すと、i/o マネージャーは、そのドライバーの i/o スタック位置をゼロで埋め、次に高いレベルのドライバー (存在する場合) を呼び出してから、IRP に対して呼び出される*iocompletion*ルーチンを設定します。
 
-高度なドライバーの*IoCompletion* IRP の I/O 状態ブロックだけを下位のすべてのドライバーを確認要求を処理するルーチンを確認できます。
+上位レベルのドライバーの*Iocompletion*ルーチンは、IRP の i/o 状態ブロックだけをチェックし、下位のすべてのドライバーが要求を処理した方法を確認できます。
 
-呼び出し元**IoCompleteRequest**完了したばかりの IRP にアクセスしようとはする必要があります。 このような試行は、システムのクラッシュの原因となるプログラミング エラーです。
+**IoCompleteRequest**の呼び出し元は、完了した IRP にアクセスしようとすることはできません。 このような試みは、システムがクラッシュする原因となるプログラミングエラーです。
 
  
 

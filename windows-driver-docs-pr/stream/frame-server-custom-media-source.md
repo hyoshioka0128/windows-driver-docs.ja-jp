@@ -1,103 +1,103 @@
 ---
 title: フレーム サーバーのカスタム メディア ソース
-description: フレーム サーバー アーキテクチャ内でカスタム メディア ソースの実装について説明します。
+description: フレームサーバーアーキテクチャ内でのカスタムメディアソースの実装について説明します。
 ms.date: 10/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 825540b9854f2431017c8ce86772ec7119f406b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9ca5c0beab801285b6bde63672f0d2e8faddc5ce
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372387"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842594"
 ---
 # <a name="frame-server-custom-media-source"></a>フレーム サーバーのカスタム メディア ソース 
 
-このトピックでは、フレーム サーバー アーキテクチャ内でカスタム メディア ソースの実装について説明します。 
+このトピックでは、フレームサーバーアーキテクチャ内でのカスタムメディアソースの実装について説明します。 
 
-## <a name="av-stream-and-custom-media-source-options"></a>AV Stream とカスタム メディア ソース オプション
+## <a name="av-stream-and-custom-media-source-options"></a>AV ストリームおよびカスタムメディアソースオプション
 
-ビデオ キャプチャ フレーム サーバー アーキテクチャ内のストリームのサポートを提供する方法を決定する際に、2 つの主なオプションがあります。AV Stream とカスタム メディア ソース。
+フレームサーバーアーキテクチャでビデオキャプチャストリームのサポートを提供する方法を決定する際には、主に AV ストリームとカスタムメディアソースという2つのオプションがあります。
 
-AV Stream モデルは、AV Stream ミニポート ドライバー (カーネル モード ドライバー) を使用して、標準カメラ ドライバー モデルです。 通常、AV Stream ドライバーは、2 つの主なカテゴリに分類されます。MIPI ベースのドライバーと USB ビデオ クラス ドライバー。
+AV Stream モデルは、AV ストリームミニポートドライバー (カーネルモードドライバー) を使用する標準のカメラドライバーモデルです。 通常、AV ストリームドライバーは、MIPI ベースのドライバーと USB ビデオクラスドライバーの2つの主なカテゴリに分類されます。
 
-カスタムのメディア ソース オプションのドライバー モデルが完全にカスタムあります (専用) または非従来カメラ ソース (ファイル、ネットワーク ソースなど) に基づいて。
+[カスタムメディアソース] オプションでは、ドライバーモデルが完全にカスタム (専用) である場合もあれば、従来のカメラソース (ファイル、ネットワークソースなど) に基づいている場合もあります。
 
-### <a name="av-stream-driver"></a>AV Stream ドライバー
+### <a name="av-stream-driver"></a>AV ストリームドライバー
 
-AV Stream ドライバー アプローチの主な利点は、PnP と管理/デバイスの電源管理は、AV Stream フレームワークによって既に処理します。
+AV Stream ドライバーのアプローチの主な利点は、PnP と電源管理/デバイス管理が既に AV ストリームフレームワークによって処理されていることです。
 
-ただし、基になるソースは、ハードウェアとのインターフェイスのカーネル モード ドライバーを使用した物理デバイスである必要がありますも意味します。 UVC デバイスでは、Windows UVC 1.5 クラス ドライバーが提供される受信トレイのためデバイスが単にファームウェアを実装する必要があります。
+ただし、基になるソースが、ハードウェアとのインターフェイスを持つカーネルモードドライバーを持つ物理デバイスであることも意味します。 UVC デバイスの場合、デバイスがファームウェアを実装するだけで済むように、Windows UVC 1.5 クラスドライバーが受信トレイに提供されます。
 
-MIPI ベースのデバイスでは、仕入先は、独自の AV Stream ミニポート ドライバーを実装する必要があります。
+MIPI ベースのデバイスの場合、ベンダーは独自の AV ストリームミニポートドライバーを実装する必要があります。
 
-### <a name="custom-media-source"></a>カスタムのメディア ソース
+### <a name="custom-media-source"></a>カスタムメディアソース
 
-(ただし、AV Stream ミニポート ドライバーではなく) がデバイス ドライバが既にソースまたは非従来のカメラ キャプチャを使用するソースの場合、AV Stream ドライバーの実行可能なない場合があります。 たとえば、ネットワーク経由で接続されている、IP カメラも適合しない AV Stream ドライバー モデルに。
+デバイスドライバーが既に利用可能で (AV ストリームミニポートドライバーではない)、または従来のカメラキャプチャを使用するソースの場合、AV ストリームドライバーは実行できない可能性があります。 たとえば、ネットワーク経由で接続されている IP カメラは、AV ストリームドライバーモデルには適合しません。
 
-このような状況では、フレームのサーバー モデルを使用してカスタム メディア ソースを別の方法となります。
+このような場合は、フレームサーバーモデルを使用したカスタムメディアソースが代わりに使用されます。
 
-| 機能 | カスタムのメディア ソース | AV Stream ドライバー |
+| 機能 | カスタムメディアソース | AV ストリームドライバー |
 |---|---|---|
-| PnP や電源管理 | ソースまたはスタブ ドライバーによって実装する必要があります。 | AV Stream フレームワークによって提供されます。 |
-| ユーザー モードのプラグイン       | 使用できません。 カスタムのメディア ソースには、OEM/IHV の特定のユーザー モードのロジックが組み込まれています。 | DMFT、プラットフォーム DMFT、および従来の実装の MFT0 |
-| センサーのグループ | サポートされている | サポートされている |
-| カメラ プロファイル V2 | サポートされている | サポートされている |
-| カメラ プロファイル V1 | サポートされていません | サポートされている |
+| PnP と電源管理 | ソースまたはスタブドライバーによって実装されている必要があります。 | AV Stream フレームワークによって提供されます。 |
+| ユーザーモードプラグイン       | 使用できません。 カスタムメディアソースには、OEM/IHV 固有のユーザーモードロジックが組み込まれています。 | 従来の実装のための DMFT、Platform DMFT、MFT0 |
+| センサーグループ | サポート対象 | サポート対象 |
+| カメラプロファイル V2 | サポート対象 | サポート対象 |
+| カメラプロファイル V1 | サポートされない | サポート対象 |
 
-## <a name="custom-media-source-requirements"></a>カスタムのメディア ソースの要件
+## <a name="custom-media-source-requirements"></a>カスタムメディアソースの要件
 
-Windows カメラ フレームのサーバー (サーバーのフレームと呼ばれる) サービスの導入に伴いは、これはカスタム メディア ソースを使って実現できます。 これには、2 つの主要なコンポーネントが必要です。
+Windows Camera Frame Server (Frame Server) サービスの導入により、これはカスタムメディアソースを通じて実現できます。 これには、次の2つの主要なコンポーネントが必要です。
 
--   カメラ デバイスのインターフェイスを登録/有効にするように設計されたスタブ ドライバーを使用したドライバー パッケージ。
+-   カメラデバイスインターフェイスを登録または有効にするように設計されたスタブドライバーを含むドライバーパッケージ。
 
--   カスタムのメディア ソースをホストする COM DLL です。
+-   カスタムメディアソースをホストする COM DLL。
 
-2 つの目的は、最初の要件が必要です。
+最初の要件は、次の2つの目的で必要です。
 
--   (ドライバー パッケージには、WHQL の認定が必要です)、信頼されたプロセスを通じてカスタム メディア ソースを使用して審査プロセスがインストールされます。
+-   カスタムメディアソースが信頼されたプロセスによってインストールされるようにする審査プロセス (ドライバーパッケージには WHQL 認定が必要です)。
 
--   標準の PnP 列挙型と「カメラ」の検出をサポートします。
+-   "カメラ" の標準の PnP 列挙と検出のサポート。
 
 ### <a name="security"></a>セキュリティ
 
-フレームのサーバーのカスタム メディア ソースは、次のようにセキュリティの観点からは、汎用のカスタム メディア ソースとは異なります。
+フレームサーバーのカスタムメディアソースは、次の方法で、セキュリティの観点から汎用カスタムメディアソースと異なります。
 
--   ローカル サービス (ローカル システムと混同しないとしてフレーム サーバー カスタム メディア ソースが実行されます。ローカル サービスは、Windows マシンでの非常に低い特権付きアカウント)。
+-   フレームサーバーカスタムメディアソースはローカルサービスとして実行されます (ローカルシステムと混同しないでください)。ローカルサービスは、Windows マシン上で非常に低い特権を持つアカウントです。
 
--   フレーム サーバー カスタム メディア ソースは、セッション 0 (システム サービスのセッション) で実行され、ユーザーのデスクトップと対話できません。
+-   フレームサーバーのカスタムメディアソースは、セッション 0 (システムサービスセッション) で実行され、ユーザーのデスクトップと対話することはできません。
 
-これらの制約を指定するには、フレーム サーバー カスタム メディア ソースしようとしないで、ファイル システムやレジストリの保護された部分にアクセスします。 通常、読み取りアクセスが許可されているが、書き込みアクセス権がありません。
+これらの制約により、フレームサーバーのカスタムメディアソースは、ファイルシステムまたはレジストリの保護された部分にアクセスしないようにする必要があります。 一般に、読み取りアクセスは許可されますが、書き込みアクセスは許可されません。
 
 ### <a name="performance"></a>パフォーマンス
 
-、、フレームのサーバー モデルの一部として 2 つのケースをフレーム サーバーによってカスタム メディア ソースがインスタンス化される方法でがあります。
+フレームサーバーモデルの一部として、次の2つのケースでは、フレームサーバーによってカスタムメディアソースがインスタンス化されます。
 
--   センサーの中に生成/公開をグループ化します。
+-   センサーグループの生成/発行中。
 
--   「カメラ」アクティブ化時に
+-   "カメラ" のアクティブ化中
 
-センサーのグループの生成は通常、デバイスのインストールや電源サイクル中に行われます。 そのため、強くお勧めカスタム メディア ソースがその作成時に、大量の処理を回避し、に対してこのようなアクティビティの遅延、 [IMFMediaSource::Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)関数。 カスタム メディア ソースを開始する、さまざまな使用可能なストリーム/メディアの種類とソース/ストリーム属性情報をクエリだけでは、センサー グループ生成を試行しません。
+センサーグループの生成は、通常、デバイスのインストールや電源サイクル中に行われます。 このため、カスタムメディアソースでは、作成時の重要な処理を避け、 [Imfmediasource:: Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)関数にそのようなアクティビティを遅延させることを強くお勧めします。 センサーグループの生成では、カスタムメディアソースを開始しようとしません。使用可能なさまざまなストリーム/メディアの種類とソース/ストリーム属性の情報をクエリするだけです。
 
-## <a name="stub-driver"></a>スタブのドライバー
+## <a name="stub-driver"></a>スタブドライバー
 
-ドライバー パッケージとスタブのドライバーの 2 つの最小要件があります。
+ドライバーパッケージとスタブドライバーには、次の2つの最小要件があります。
 
-スタブのドライバーは、(UMDF または KMDF) WDF または WDM ドライバー モデルを使用して記述できます。
+スタブドライバーは、WDF (UMDF または KMDF) または WDM ドライバーモデルを使用して書き込むことができます。
 
 ドライバーの要件は次のとおりです。
 
--   で、「カメラ」(カスタムのメディア ソース) デバイスのインターフェイスを登録、 [KSCATEGORY_VIDEO_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video-camera)カテゴリに列挙できるようにします。
+-   [ [KSCATEGORY_VIDEO_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video-camera) ] カテゴリの下に "カメラ" (カスタムメディアソース) デバイスインターフェイスを登録して、列挙できるようにします。
 
 > [!NOTE]
-> DirectShow のレガシ アプリケーションによって列挙できるようにには、ドライバーが も登録する必要があります、 [KSCATEGORY_VIDEO](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video)と[KSCATEGORY_CAPTURE](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-capture)します。
+> レガシ DirectShow アプリケーションで列挙できるようにするには、ドライバーも[KSCATEGORY_VIDEO](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video)と[KSCATEGORY_CAPTURE](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-capture)に登録する必要があります。
 
--   デバイスのインターフェイス ノードの下のレジストリ エントリを追加 (を使用して、 **AddReg** 、ドライバーの INF ディレクティブ**DDInstall.Interface**セクション) CoCreate 可能なカスタム メディアのソース COM の CLSID を宣言していますオブジェクト。 これは、次のレジストリ値の名前を使用して追加する必要があります。**CustomCaptureSourceClsid**します。
+-   [デバイスインターフェイス] ノードの下にレジストリエントリを追加します ( **AddReg**ディレクティブを使用してください)。これは、カスタムメディアソース COM オブジェクトの CoCreate が可能な CLSID を宣言します **。** これは、次のレジストリ値の名前を使用して追加する必要があります: **CustomCaptureSourceClsid**。
 
-これは「カメラ」ソースがアプリケーションによって検出され、アクティブになると通知をアクティブ化の呼び出しをインターセプトし、カスタム メディアの一緒ソースに再ルーティングする場合、フレーム サーバー サービス。
+これにより、アプリケーションで "カメラ" ソースを検出し、アクティブにすると、アクティブ化呼び出しをインターセプトして、CoCreated カスタムメディアソースに再ルーティングするようにフレームサーバーサービスに通知します。
 
 ### <a name="sample-inf"></a>サンプル INF
 
-次の例は、カスタム メディア ソース スタブ ドライバーの一般的な INF を示しています。
+次のサンプルは、カスタムメディアソーススタブドライバーの一般的な INF を示しています。
 
 ```INF
 ;/*++
@@ -224,20 +224,20 @@ CustomCaptureSource.Binary = "SimpleMediaSource.dll"
 REG_EXPAND_SZ = 0x00020000
 ```
 
-上記のカスタム メディア ソースを登録**KSCATEGORY\_ビデオ**、 **KSCATEGORY\_キャプチャ**、および**KSCATEGORY\_ビデオ\_カメラ**「カメラ」は標準の RGB カメラを探して UWP と UWP 以外のアプリが検出できるようにすることを確認します。
+上記のカスタムメディアソースは、UWP と UWP 以外のアプリの検索によって "カメラ" が検出可能であることを確認するために、 **KSCATEGORY\_video**、 **KSCATEGORY\_CAPTURE**、 **KSCATEGORY\_video\_カメラ**の下に登録されています。標準の RGB カメラの場合。
 
-必要に応じてカスタム メディア ソースも RGB 非ストリーム (IR、深さ、およびなど) を公開している場合は登録することも、 [KSCATEGORY_SENSOR_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-sensor-camera)します。
+カスタムメディアソースでも RGB 以外のストリーム (IR、深度など) が公開される場合は、必要に応じて[KSCATEGORY_SENSOR_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-sensor-camera)で登録することもできます。
 
 > [!NOTE]
-> ほとんどの USB ベースの web カメラを公開 YUY2 と MJPG 形式。 この動作により多くのレガシ DirectShow アプリケーションは YUY2/MJPG が使用できることを前提に書き込まれます。 このようなアプリケーションとの互換性を確認するには、YUY2 メディアの種類は提供されているカスタム メディア ソースから従来のアプリケーションの互換性が必要な場合をお勧めします。
+> ほとんどの USB ベースの web カメラでは、YUY2 形式と MJPG 形式が公開されます。 この動作のため、多くの従来の DirectShow アプリケーションは、YUY2/MJPG が使用可能であるという前提で記述されています。 このようなアプリケーションとの互換性を確保するために、レガシアプリの互換性が必要な場合は、カスタムメディアソースから YUY2 メディアの種類を使用できるようにすることをお勧めします。
 
-### <a name="stub-driver-implementation"></a>スタブのドライバーの実装
+### <a name="stub-driver-implementation"></a>スタブドライバーの実装
 
-だけでなく、INF、ドライバーのスタブも登録してカメラ デバイスのインターフェイスを有効にする必要があります。 中にこれは、通常、**ドライバー\_追加\_デバイス**操作。
+INF に加えて、ドライバースタブもカメラデバイスインターフェイスを登録して有効にする必要があります。 これは通常、**ドライバー\_\_デバイス**操作の追加によって行われます。
 
-参照してください、 [DRIVER_ADD_DEVICE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device) WDM 用コールバック関数は、ドライバーをベースと[WdfDriverCreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nf-wdfdriver-wdfdrivercreate) UMDF/KMDF ドライバー関数。
+「WDM ベースのドライバー用の[DRIVER_ADD_DEVICE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)コールバック関数」および「UMDF/kmdf ドライバー用の[Wdfdrivercreate](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)関数」を参照してください。
 
-この操作を処理する UMDF ドライバー スタブのコードの領域切り取りを次に示します。
+次に、この操作を処理する UMDF ドライバースタブのコード切り取りを示します。
 
 ```cpp
 NTSTATUS
@@ -462,17 +462,17 @@ Return Value:
 
 ### <a name="pnp-operation"></a>PnP 操作
 
-その他の物理的なカメラと同様、スタブは、ドライバーは PnP の操作を有効にして、基になるソースが削除/接続されている場合は、デバイスを無効にするので管理少なくともをお勧めします。 など、カスタム メディア ソースが IP カメラの場合) などのネットワーク ソースを使用している場合、そのネットワークのソースが使用可能ながなくなったときにデバイスの削除をトリガーします。
+他の物理カメラと同じように、スタブドライバーは少なくとも、基になるソースが削除またはアタッチされたときにデバイスを有効または無効にする PnP 操作を管理することをお勧めします。 たとえば、カスタムメディアソースがネットワークソース (IP カメラなど) を使用している場合、そのネットワークソースが使用できなくなったときに、デバイスの削除をトリガーすることができます。
 
-これにより、適切な通知のデバイスの追加/削除、PnP Api get 経由でのアプリケーションがリッスンします。 なりは使用できなくするソースを列挙することはできません。
+これにより、アプリケーションは PnP Api を使用してデバイスの追加と削除をリッスンし、適切な通知を受け取ることができます。 また、使用できなくなったソースを列挙できないようにします。
 
-UMDF および KMDF ドライバーでは、次を参照してください。、 [WdfDeviceSetDeviceState](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)関数のドキュメント。
+UMDF および KMDF ドライバーについては、 [Wdfdevicesetdevicestate](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdevicestate)関数のドキュメントを参照してください。
 
-WMD ドライバーでは、次を参照してください。、 [IoSetDeviceInterfaceState](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)関数のドキュメント。
+WMD ドライバーについては、 [Iosetdeviceinterfacestate](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)関数のドキュメントを参照してください。
 
-## <a name="custom-media-source-dll"></a>カスタムのメディア ソース DLL
+## <a name="custom-media-source-dll"></a>カスタムメディアソース DLL
 
-カスタムのメディア ソースは、次のインターフェイスを実装する必要があります、標準の inproc COM サーバーを示します。
+カスタムメディアソースは標準の inproc COM サーバーで、次のインターフェイスを実装する必要があります。
 
 -   [IMFMediaEventGenerator](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)
 
@@ -480,14 +480,14 @@ WMD ドライバーでは、次を参照してください。、 [IoSetDeviceInt
 
 -   [IMFMediaSourceEx](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfmediasourceex)
 
--   [IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)
+-   [Iksk コントロール](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol)
 
 -   [IMFGetService](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfgetservice)
 
 > [!NOTE]
-> **IMFMediaSourceEx**継承**IMFMediaSource**と**IMFMediaSource**継承**IMFMediaEventGenerator**します。
+> **Imfmediasourceex**は**Imfmediasource**から継承され、 **Imfmediasource**は**imfmediaeventgenerator**から継承されます。
 
-カスタム メディア ソース内でサポートされている各ストリームは、次のインターフェイスをサポートする必要があります。
+カスタムメディアソース内でサポートされている各ストリームは、次のインターフェイスをサポートしている必要があります。
 
 -   **IMFMediaEventGenerator**
 
@@ -496,15 +496,15 @@ WMD ドライバーでは、次を参照してください。、 [IoSetDeviceInt
 -   **IMFMediaStream2**
 
 > [!NOTE]
-> **IMFMediaStream2**継承**IMFMediaStream**と**IMFMediaStream**継承**IMFMediaEventGenerator**します。
+> **IMFMediaStream2**は**Imfmediastream**から継承し、Imfmediastream は**imfmediaeventgenerator**から継承します。
 
-参照してください、[カスタム メディア ソースを記述](https://docs.microsoft.com/windows/desktop/medfound/writing-a-custom-media-source)カスタム メディア ソースを作成する方法について説明します。 このセクションの残りの部分は、フレームのサーバー フレームワーク内で、カスタムのメディア ソースをサポートするために必要な相違点について説明します。
+カスタムメディアソースを作成する方法については、[カスタムメディアソース](https://docs.microsoft.com/windows/desktop/medfound/writing-a-custom-media-source)の作成に関するドキュメントを参照してください。 このセクションの残りの部分では、フレームサーバーフレームワーク内でカスタムメディアソースをサポートするために必要な違いについて説明します。
 
 ### <a name="imfgetservice"></a>IMFGetService
 
-**IMFGetService**フレーム サーバー カスタム メディア ソースが、必須インターフェイス。 **IMFGetService**返す可能性があります**MF\_E\_UNSUPPORTED\_サービス**場合は、カスタム メディア ソースが、その他のサービス インターフェイスを公開する必要はありません。
+**IMFGetService**は、フレームサーバーカスタムメディアソースに必須のインターフェイスです。 カスタムメディアソースが追加のサービスインターフェイスを公開する必要がない場合、 **IMFGetService**は、サポートされて**いない\_サービス\_、MF\_E**を返すことがあります。
 
-次の例に示す、 **IMFGetService**サポート サービス インターフェイスを実装します。
+次の例は、サポートサービスインターフェイスのない**IMFGetService**実装を示しています。
 
 ```cpp
 _Use_decl_annotations_
@@ -535,11 +535,11 @@ SimpleMediaSource::GetService(
 
 ### <a name="imfmediaeventgenerator"></a>IMFMediaEventGenerator
 
-上記のように、ソースと、ソース内の個別のストリームの両方サポートする必要が独自[IMFMediaEventGenerator](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)インターフェイス。 特定の送信によってイベント ジェネレーターを通じて管理全体 MF パイプライン データと制御フロー元の[IMFMediaEvent](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaevent)します。
+上に示すように、ソース内のソースと個々のストリームは、それぞれ独自の[Imfmediaeventgenerator](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventgenerator)インターフェイスをサポートしている必要があります。 ソースからのすべての MF パイプラインデータおよび制御フローは、特定の[Imfmediaevent](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaevent)を送信することによって、イベントジェネレーターによって管理されます。
 
-IMFMediaEventGenerator を実装するには、カスタムのメディア ソースを使用する必要があります、 [MFCreateEventQueue](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreateeventqueue) API を作成する、 [IMFMediaEventQueue](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventqueue)ルーティングのすべてのメソッドと**IMFMediaEventGenerator**のキュー オブジェクト。
+IMFMediaEventGenerator を実装する場合、カスタムメディアソースは、 [](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreateeventqueue)次のように、mffmediaeventqueue API を使用して imfmediaeventgenerator を作成し、 **imfmediaeventgenerator**のすべてのメソッドをキューオブジェクトにルーティングする必要があります。 [](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediaeventqueue)
 
-**IMFMediaEventGenerator**次の方法があります。
+**Imfmediaeventgenerator**には、次のメソッドがあります。
 
 ```cpp
 // IMFMediaEventGenerator
@@ -549,9 +549,9 @@ IFACEMETHOD(GetEvent)(DWORD dwFlags, _Out_ IMFMediaEvent **ppEvent);
 IFACEMETHOD(QueueEvent)(MediaEventType met, REFGUID guidExtendedType, HRESULT hrStatus, _In_opt_ const PROPVARIANT *pvValue);
 ```
 
-次のコードの推奨される実装を示しています、 **IMFMediaEventGenerator**インターフェイス。 メディア ソースのカスタム実装は、公開、 **IMFMediaEventGenerator**インターフェイス、およびそのインターフェイスのメソッドに要求をルーティングするが、 **IMFMediaEventQueue**オブジェクトメディアのソースの作成/初期化中に作成します。
+次のコードは、 **Imfmediaeventgenerator**インターフェイスの推奨される実装を示しています。 カスタムメディアソースの実装は**Imfmediaeventgenerator**インターフェイスを公開し、そのインターフェイスのメソッドは、メディアソースの作成時に作成された**Imfmediaeventgenerator**オブジェクトに要求をルーティングします。イニシャライズ.
 
-次のコードで **\_spEventQueue**オブジェクトが、 **IMFMediaEventQueue**を使用して作成、 **MFCreateEventQueue**関数。
+次のコードでは、 **\_speventqueue**オブジェクトは、 **mfcreateeventqueue**関数を使用して作成された**imfmediaeventqueue**です。
 
 ```cpp
 // IMFMediaEventGenerator methods
@@ -630,17 +630,17 @@ SimpleMediaSource::QueueEvent(
 }
 ```
 
-### <a name="seeking-and-pausing"></a>一時停止して、シーク
+### <a name="seeking-and-pausing"></a>シークと一時停止
 
-フレームのサーバー フレームワークを通じてサポートされているカスタムのメディア ソースがシークをサポートしてまたは一時停止操作。 カスタム メディア ソースをこれらの操作のサポートを提供する必要はありませんし、いずれかを post する必要があります、 **MFSourceSeeked**または**MEStreamSeeked**イベント。
+フレームサーバーフレームワークでサポートされているカスタムメディアソースでは、シーク操作または一時停止操作はサポートされていません。 カスタムメディアソースは、これらの操作のサポートを提供する必要がなく、 **MFSourceSeeked**イベントまたは**MEStreamSeeked**イベントをポストしないようにする必要があります。
 
-[IMFMediaSource::Pause](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-pause)返す必要があります**MF\_E\_無効な\_状態\_遷移**(または**MF\_E\_シャット ダウン**ソースが既ににシャット ダウンされた場合)。
+[Imfmediasource::P ause](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-pause)は、**無効な\_状態\_遷移**(または、ソースが既にシャットダウンされている場合は、 **mf\_E\_シャットダウン**) を\_、mf\_e を返す必要があります。
 
-### <a name="ikscontrol"></a>IKsControl
+### <a name="ikscontrol"></a>Iksk コントロール
 
-[IKsControl](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ks/nn-ks-ikscontrol)すべての標準コントロールのインターフェイスは、カメラの関連するコントロール。 カスタム メディア ソースが、カメラ コントロールを実装している場合、 **IKsControl**インターフェイスは、パイプラインは、コントロールの I/O をルーティングする方法。
+[Ikscontrol](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nn-ks-ikscontrol)は、すべてのカメラ関連コントロールの標準コントロールインターフェイスです。 カスタムメディアソースでカメラコントロールが実装されている場合、 **Iksk コントロール**インターフェイスは、パイプラインが制御 i/o をルーティングする方法を示します。
 
-詳細については、次のコントロールの設定ドキュメント トピックを参照してください。
+詳細については、次のコントロールセットに関するドキュメントのトピックを参照してください。
 
 -   [PROPSETID_VIDCAP_CAMERACONTROL](https://docs.microsoft.com/windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol)
 
@@ -648,9 +648,9 @@ SimpleMediaSource::QueueEvent(
 
 -   [KSPROPERTYSETID_ExtendedCameraControl](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol)
 
-コントロールは省略可能と推奨されるエラー コードを返すにはサポートされていない場合**HRESULT\_FROM\_WIN32 (エラー\_セット\_NOT\_が見つかりました)** します。
+これらのコントロールは省略可能であり、サポートされていない場合、返されるエラーコードは **\_WIN32 からの HRESULT\_です (エラー\_設定\_\_見つかりません)** 。
 
-次のコード例は、 **IKsControl**実装でサポートされているコントロールがありません。
+次のコードは、サポートされていないコントロールを使用した**Iksk コントロール**の実装例です。
 
 ```cpp
 // IKsControl methods
@@ -699,7 +699,7 @@ IFACEMETHODIMP SimpleMediaSource::KsEvent(
 
 ### <a name="imfmediastream2"></a>IMFMediaStream2
 
-説明したよう[カスタム メディア ソースを記述](https://docs.microsoft.com/windows/desktop/medfound/writing-a-custom-media-source)、 **IMFMediaStream2**を使用して、カスタムのメディア ソースのフレームの作業にインターフェイスが提供される、 [MENewStream](https://docs.microsoft.com/windows/desktop/medfound/menewstream)メディア完了中に、イベントが送信元のイベント キューにポスト、 [IMFMediaSource::Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)メソッド。
+「[カスタムメディアソースの作成](https://docs.microsoft.com/windows/desktop/medfound/writing-a-custom-media-source)」で説明されているように、 [Imfmediasource:: Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)メソッドの完了時にソースイベントキューにポストされた[menewstream](https://docs.microsoft.com/windows/desktop/medfound/menewstream)メディアイベントを使用して、カスタムメディアソースからフレーム作業に**IMFMediaStream2**インターフェイスを提供します。
 
 ```cpp
 IFACEMETHODIMP
@@ -795,60 +795,60 @@ SimpleMediaSource::Start(
 }
 ```
 
-これで選択されている各ストリームを行う必要があります、 [IMFPresentationDescriptor](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfpresentationdescriptor)します。
+これは、 [Imfプレゼンテーション記述子](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfpresentationdescriptor)によって選択されたストリームごとに実行する必要があります。
 
-ビデオ ストリームをメディア ソースのカスタム[MEEndOfStream](https://docs.microsoft.com/windows/desktop/medfound/meendofstream)と[MEEndOfPresentation](https://docs.microsoft.com/windows/desktop/medfound/meendofpresentation)イベントを送信しない必要があります。
+ビデオストリームを使用したカスタムメディアソースの場合、 [Meendofstream](https://docs.microsoft.com/windows/desktop/medfound/meendofstream)イベントと[meendofstream](https://docs.microsoft.com/windows/desktop/medfound/meendofpresentation)イベントを送信することはできません。
 
-### <a name="stream-attributes"></a>Stream 属性
+### <a name="stream-attributes"></a>ストリーム属性
 
-すべてのカスタム メディア ソース ストリームする必要がありますが、 [MF_DEVICESTREAM_STREAM_CATEGORY](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category)に設定**PINNAME\_ビデオ\_キャプチャ**します。 **PINNAME\_ビデオ\_プレビュー**カスタム メディア ソースはサポートされていません。
+すべてのカスタムメディアソースストリームには、 [MF_DEVICESTREAM_STREAM_CATEGORY](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category)を**PINNAME\_VIDEO\_CAPTURE**として設定する必要があります。 カスタムメディアソースでは、 **Pinname\_VIDEO\_PREVIEW**はサポートされていません。
 
 > [!NOTE]
-> **PINNAME\_イメージ**、サポートされていますが、推奨はされません。 ストリームを公開する**PINNAME\_イメージ**フォト トリガーのすべてのコントロールをサポートするカスタム メディア ソースが必要です。 参照してください、 [Photo Stream コントロール](#photo-stream-controls)詳細については後述します。
+> **Pinname\_IMAGE**はサポートされていますが、推奨されていません。 **Pinname\_IMAGE**でストリームを公開するには、すべてのフォトトリガーコントロールをサポートするためにカスタムメディアソースが必要です。 詳細については、後述の「[写真ストリームコントロール](#photo-stream-controls)」セクションを参照してください。
 
-[MF_DEVICESTREAM_STREAM_ID](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-id)はすべてのストリームの必須の属性です。 0 から始まるインデックスである必要があります。 ID は 0 を最初のストリームには、第 2 1, の ID をストリームします。
+[MF_DEVICESTREAM_STREAM_ID](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-id)は、すべてのストリームに必須の属性です。 0から始まるインデックスを指定する必要があります。 そのため、最初のストリームの ID は0、2番目のストリームの ID は1のようになります。
 
-次に、ストリームで推奨される属性の一覧を示します。
+ストリームで推奨される属性の一覧を次に示します。
 
 -   [MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-attribute-framesource-types)
 
 -   [MF_DEVICESTREAM_FRAMESERVER_SHARED](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-frameserver-shared)
 
-#### <a name="mfdevicestreamattributeframesourcetypes"></a>MF\_DEVICESTREAM\_属性\_FRAMESOURCE\_型
+#### <a name="mf_devicestream_attribute_framesource_types"></a>MF\_DEVICESTREAM\_属性\_FRAMESOURCE\_型
 
-**MF\_DEVICESTREAM\_属性\_FRAMESOURCE\_型**は stream 型のビットマスク値である UINT32 属性です。 次のいずれかに設定する必要があります (これらの型には、ビットマスクのフラグが、これはソースの種類を可能であれば混在させないでをお勧めします)。
+**MF\_DEVICESTREAM\_属性\_FRAMESOURCE\_TYPES**は、ストリーム型のビットマスク値である UINT32 属性です。 次のいずれかに設定されている場合があります (これらの型はビットマスクフラグですが、可能な限りソースの種類を混在させないことをお勧めします)。
 
-| 型                         | Flag   | 説明                                      |
+| 種類                         | Flag   | 説明                                      |
 |------------------------------|--------|--------------------------------------------------|
-| MFFrameSourceTypes\_色    | 0x0001 | RGB 色の標準のストリーム                        |
+| MFFrameSourceTypes\_Color    | 0x0001 | 標準の RGB カラーストリーム                        |
 | MFFrameSourceTypes\_赤外線 | 0x0002 | IR ストリーム                                        |
-| MFFrameSourceTypes\_深さ    | 0x0004 | 深さのストリーム                                     |
-| MFFrameSourceTypes\_イメージ    | 0x0008 | イメージ ストリーム (通常は JPEG のサブタイプ ビデオ以外) |
-| MFFrameSourceTypes\_カスタム   | 0x0080 | カスタム ストリームの種類                               |
+| MFFrameSourceTypes\_の深さ    | 0x0004 | 深度ストリーム                                     |
+| MFFrameSourceTypes\_イメージ    | 0x0008 | イメージストリーム (ビデオ以外のサブタイプ、通常は JPEG) |
+| MFFrameSourceTypes\_カスタム   | 0x0080 | カスタムストリームの種類                               |
 
-#### <a name="mfdevicestreamframeservershared"></a>MF\_DEVICESTREAM\_FRAMESERVER\_共有
+#### <a name="mf_devicestream_frameserver_shared"></a>MF\_DEVICESTREAM\_FRAMESERVER\_SHARED
 
-**MF\_DEVICESTREAM\_FRAMESERVER\_SHARED**は UINT32 属性は 0 または 1 に設定できます。 かどうか 1 に設定すると、マークとしてフレーム サーバーで「共有」されているストリーム。 これによって、アプリケーションを別のアプリで使用する場合でも、共有モードでストリームを開きます。
+**MF\_DEVICESTREAM\_FRAMESERVER\_SHARED**は、0または1のいずれかに設定できる UINT32 属性です。 1に設定すると、フレームサーバーによってストリームが "共有可能" としてマークされます。 これにより、他のアプリで使用されている場合でも、アプリケーションは共有モードでストリームを開くことができます。
 
-フレームのサーバーで共有する最初のマークされている非ストリームを許可するこの属性が設定されていない場合 (そのストリームをマークするカスタムのメディア ソースに 1 つのみのストリームがある場合は、共有として)。
+この属性が設定されていない場合、フレームサーバーでは、最初のマークされていないストリームを共有できます (カスタムメディアソースにストリームが1つしかない場合、そのストリームは共有としてマークされます)。
 
-この属性が 0 に設定されている場合、フレームのサーバーは共有されたアプリからのストリームをブロックします。 場合は、カスタム メディア ソースは、この属性を 0 に設定されたすべてのストリームをマーク、共有アプリケーションはされません、ソースを初期化できません。
+この属性が0に設定されている場合、フレームサーバーは共有アプリからのストリームをブロックします。 カスタムメディアソースで、この属性が0に設定されているすべてのストリームがマークされている場合、共有アプリケーションはソースを初期化できません。
 
-### <a name="sample-allocation"></a>サンプルの割り当て
+### <a name="sample-allocation"></a>割り当てのサンプル
 
-としてメディアのすべてのフレームを生成する必要があります、 [IMFSample](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfsample)します。 カスタムのメディア ソースを使用する必要があります、 [MFCreateSample](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatesample) IMFSample と使用のインスタンスを割り当てるため、 [AddBuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfsample-addbuffer)メディア バッファーを追加します。
+すべてのメディアフレームは[Imfsample](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfsample)として生成される必要があります。 カスタムメディアソースでは、 [Mfcreatesample](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatesample)のインスタンスを割り当て、 [addbuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfsample-addbuffer)メソッドを使用してメディアバッファーを追加する必要があります。
 
-各**IMFSample**サンプル時間と設定のサンプル期間があります。 すべてのサンプルのタイムスタンプは、QPC の時刻 (QueryPerformanceCounter) に基づいている必要があります。
+各**Imfsample**には、サンプル時間とサンプル期間を設定する必要があります。 すべてのサンプルタイムスタンプは、QPC の時刻 (QueryPerformanceCounter) に基づいている必要があります。
 
-カスタム メディア ソースが使用することをお勧めしますが、 [MFGetSystemTime](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfgetsystemtime)可能な限り機能します。 この関数は、ラッパー **QueryPerformanceCounter** QPC タイマー刻みを 100 ナノ秒単位に変換します。
+カスタムメディアソースでは、可能な限り、 [Mfgetsystemtime](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfgetsystemtime)関数を使用することをお勧めします。 この関数は、 **Queryperformancecounter**のラッパーであり、qpc タイマー刻みを100ナノ秒単位に変換します。
 
-カスタムのメディア ソースが内部クロックを使用して可能性がありますが、すべてのタイムスタンプは、現在 QPC に基づいて 100 ナノ秒の単位に関連付ける必要があります。
+カスタムメディアソースは内部時計を使用する場合がありますが、すべてのタイムスタンプは、現在の QPC に基づく100ナノ秒単位に関連付けられている必要があります。
 
-#### <a name="media-buffer"></a>メディアをバッファリングします。
+#### <a name="media-buffer"></a>メディアバッファー
 
-追加されたすべてのメディア バッファー、 **IMFSample**標準 MF バッファー割り当て関数を使用する必要があります。 カスタムのメディア ソース必要がありますいない実装独自[IMFMediaBuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediabuffer)インターフェイスまたはメディアのバッファーを直接割り当てようとして (たとえば、新しい/malloc/VirtualAlloc と、必要がありますいない使用フレーム データの)。
+**Imfsample**に追加されるすべてのメディアバッファーは、標準の MF バッファー割り当て関数を使用する必要があります。 カスタムメディアソースは、独自の[IMFMediaBuffer](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfmediabuffer)インターフェイスを実装したり、メディアバッファーを直接割り当てることはできません (たとえば、new/Malloc/VirtualAlloc などをフレームデータに対して使用しないでください)。
 
-メディア フレームを割り当てるには、次の Api のいずれかを使用します。
+次のいずれかの Api を使用して、メディアフレームを割り当てます。
 
 -   [MFCreateMemoryBuffer](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatememorybuffer)
 
@@ -858,21 +858,21 @@ SimpleMediaSource::Start(
 
 -   [MFCreateDXGISurfaceBuffer](https://docs.microsoft.com/windows/desktop/api/mfapi/nf-mfapi-mfcreatedxgisurfacebuffer)
 
-**MFCreateMemoryBuffer**と**MFCreateAlignedMemoryBuffer** stride 非固定メディア データを使用する必要があります。 通常、カスタムのサブタイプまたは (H264/HEVC/MJPG) などの圧縮のサブタイプこれらがあります。
+**MFCreateMemoryBuffer**と**MFCreateAlignedMemoryBuffer**は、非 stride アラインメディアデータに対して使用する必要があります。 通常、これらはカスタムのサブタイプまたは圧縮されたサブタイプ (H264/HEVC/MJPG など) です。
 
-(YUY2、NV12 など) の既知の圧縮されていないメディアの種類のシステム メモリを使用して、使用する推奨が**MFCreate2DMediaBuffer**します。
+システムメモリを使用する一般的な非圧縮メディアの種類 (YUY2、NV12 など) については、 **MFCreate2DMediaBuffer**を使用することをお勧めします。
 
-DX サーフェス (処理に使用する GPU アクセラレータによるレンダリングやエンコードなど) の**MFCreateDXGISurfaceBuffer**使用する必要があります。
+DX サーフェイスを使用する場合 (レンダリングやエンコードなどの GPU アクセラレータ操作の場合) は、 **MFCreateDXGISurfaceBuffer**を使用する必要があります。
 
-**MFCreateDXGISurfaceBuffer** DX 画面を作成できません。 使用してメディア ソースに渡される DXGI マネージャーを使用して、画面を作成、 [IMFMediaSourceEx::SetD3DManager](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-setd3dmanager)メソッド。
+**MFCreateDXGISurfaceBuffer**では、DX サーフェイスは作成されません。 サーフェイスは、 [Imfmediasourceex:: SetD3DManager](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-setd3dmanager)メソッドを使用してメディアソースに渡される DXGI マネージャーを使用して作成されます。
 
-[IMFDXGIDeviceManager::OpenDeviceHandle](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-opendevicehandle)選択 D3D デバイスに関連付けられているハンドルが提供されます。 [ID3D11Device](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)インターフェイスから取得できますを使用して、 [IMFDXGIDeviceManager::GetVideoService](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-getvideoservice)メソッド。
+[Imfdxgidevicemanager:: OpenDeviceHandle](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-opendevicehandle)は、選択した D3D デバイスに関連付けられているハンドルを提供します。 [ID3D11Device](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)インターフェイスは、 [Imfdxgidevicemanager:: getvideoservice](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfdxgidevicemanager-getvideoservice)メソッドを使用して取得できます。
 
-バッファーの種類を使用するに関係なく、 **IMFSample**作成する必要がありますをパイプラインに提供する、 **MEMediaSample**上のイベント、 **IMFMediaEventGenerator**のメディア ストリーム。
+使用されるバッファーの種類に関係なく、作成された**Imfsample**は、メディアストリームの**Imfmediaeventgenerator**にある**memediasample**イベントを使用してパイプラインに提供する必要があります。
 
-同じを使用することはできますが**IMFMediaEventQueue**カスタム メディア ソースとの基になるコレクションの両方の**IMFMediaStream**、することでは、シリアル化に注意してくださいメディア ソースのイベント、およびストリーム イベント (をメディアのフローを含む)。 複数のストリーム ソースの場合、これは望ましくありません。
+カスタムメディアソースと**imfmediastream**の基になるコレクションの両方に同じ**Imfmediaeventqueue**を使用できますが、これを行うと、メディアソースイベントとストリームイベントのシリアル化が行われることに注意する必要があります (これには、メディアフローが含まれます)。 複数のストリームを含むソースの場合、これは望ましくありません。
 
-次のコードの切り取り領域は、メディア ストリームの実装例を示しています。
+次のコード領域は、メディアストリームの実装例を示しています。
 
 ```cpp
 IFACEMETHODIMP
@@ -921,39 +921,39 @@ IFACEMETHODIMP
 }
 ```
 
-## <a name="custom-media-source-extension-to-expose-imfactivate-available-in-windows-10-version-1809"></a>IMFActivate (Windows 10、バージョンは 1809 で使用可能) を公開するカスタムのメディア ソース拡張機能
+## <a name="custom-media-source-extension-to-expose-imfactivate-available-in-windows-10-version-1809"></a>IMFActivate を公開するカスタムメディアソース拡張機能 (Windows 10 バージョン1809で使用可能)
 
-のみあること"activated"UMDF ドライバーの 1 つのインスタンスは、フレーム サーバー アーキテクチャ内でのカスタム メディア ソース操作によって課される制限のいずれかのカスタム メディア ソースをサポートする必要があるインターフェイスの上記のリストだけでなくパイプライン。
+カスタムメディアソースに対してサポートする必要がある上記のインターフェイスの一覧に加えて、フレームサーバーアーキテクチャ内でカスタムメディアソース操作によって課される制限事項の1つに、UMDF ドライバー "アクティブ化" のインスタンスは1つしか存在できないということがあります。パイプラインを使用します。
 
-その AV 以外の Stream ドライバー パッケージだけでなくスタブ UMDF ドライバーをインストールする物理デバイスがあるし、UMDF ドライバーの各インスタンスの中に、コンピューターにそれらの物理デバイスの 1 つ以上をアタッチする場合がシンボリック リンクの一意の名前を取得するなど、、カスタムのメディア ソースのアクティブ化パスには、作成時にカスタムのメディア ソースに関連付けられているシンボリック リンクの名前との通信手段はありません。
+たとえば、非 AV ストリームドライバーパッケージに加えて UMDF スタブドライバーをインストールし、それらの物理デバイスの1つをコンピューターに接続し、各 UMDF ドライバーの各インスタンスが一意のシンボリックリンク名を取得する物理デバイスがあるとします。では、カスタムメディアソースのアクティブ化パスには、作成時にカスタムメディアソースに関連付けられたシンボリックリンク名を通信する手段がありません。
 
-カスタムのメディア ソースが標準的な検索[MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_SYMBOLIC_LINK](https://docs.microsoft.com/windows/desktop/medfound/mf-devsource-attribute-source-type-vidcap-symbolic-link)カスタム メディア ソースの属性ストア (属性ストアからカスタムのメディア ソースから返される属性[IMFMediaSourceEx::GetSourceAttributes](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)メソッド) 時に[IMFMediaSource::Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)が呼び出されます。
+カスタムメディアソースは、 [Imfmediasource:: Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)が呼び出されたときに、カスタムメディアソースの属性ストア ( [Imfmediasourceex:: getsourceattributes](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)メソッドを介してカスタムメディアソースから返された属性ストア) の標準[MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_SYMBOLIC_LINK](https://docs.microsoft.com/windows/desktop/medfound/mf-devsource-attribute-source-type-vidcap-symbolic-link)属性を検索する場合があります。
 
-ただし、この可能性起動の待機時間にこれを作成/初期化時ではなく、時間を開始するハードウェア リソースの取得で遅延があるためです。
+ただし、これにより起動時の待機時間が長くなる可能性があります。これは、ハードウェアリソースの取得が作成/初期化時ではなく開始時刻になるためです。
 
-このため、Windows 10、バージョンは 1809、カスタム メディア ソース公開される可能性が必要に応じて、 [IMFActivate](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfactivate)インターフェイス。
+このため、Windows 10 バージョン1809では、必要に応じてカスタムメディアソースが[Imfactivate](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfactivate)インターフェイスを公開する場合があります。
 
 > [!NOTE] 
-> **IMFActivate**継承[IMFAttributes](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfattributes)します。
+> **Imfactivate**は[imfactivate](https://docs.microsoft.com/windows/desktop/api/mfobjects/nn-mfobjects-imfattributes)から継承します。
 
 ### <a name="imfactivate"></a>IMFActivate
 
-カスタムのメディア ソースの COM サーバー サポート**IMFActivate**インターフェイス、デバイスの初期化情報は、COM サーバーに提供されます、 **IMFAttributes** によって継承されます**IMFActivate**します。 したがって、 [IMFActivate::ActivateObject](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfactivate-activateobject)が呼び出されるの属性ストア、 **IMFActivate** UMDF スタブ ドライバーと、追加の構成設定のシンボリック リンク名が含まれますソースの作成と初期化の時点で、パイプライン/アプリケーションによって提供されます。
+カスタムメディアソースの COM サーバーが**imfactivate**インターフェイスをサポートしている場合、 **imfactivate**によって継承された**imfactivate**を通じて、デバイスの初期化情報が com サーバーに提供されます。 [Imfactivate:: Activate オブジェクト](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfactivate-activateobject)が呼び出されると、 **imfactivate**の属性ストアには、UMDF スタブドライバーのシンボリックリンク名と、パイプライン/アプリケーションによって提供されるその他の構成設定が含まれます。ソースの作成/初期化の。
 
-カスタムのメディア ソースは、必要なすべてのハードウェア リソースを取得する、このメソッドの呼び出しを使用してください。
+カスタムメディアソースは、このメソッド呼び出しを使用して、必要なハードウェアリソースを取得する必要があります。
 
 > [!NOTE]
-> ハードウェア resource acquisition 200 ミリ秒よりも大きい場合は、ハードウェア リソースが非同期的に取得したをお勧めします。 ハードウェア リソースの購入にカスタムのメディア ソースのアクティブ化をブロックしないでください。 代わりに[IMFMediaSource::Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)操作は、ハードウェア リソースの購入に対するシリアル化する必要があります。
+> ハードウェアリソースの取得にかかる時間が200ミリ秒を超える場合は、ハードウェアリソースを非同期に取得することをお勧めします。 カスタムメディアソースのライセンス認証では、ハードウェアリソースの取得をブロックしないでください。 代わりに、 [Imfmediasource:: Start](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasource-start)操作をハードウェアリソースの取得に対してシリアル化する必要があります。
 
-によって公開されている 2 つの追加方法**IMFActivate**、 [DetachObject](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfactivate-detachobject)と[ShutdownObject](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfactivate-shutdownobject)、返す必要があります**E\_NOTIMPL**.
+**Imfactivate**、 [DetachObject](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfactivate-detachobject) 、および[ShutdownObject](https://docs.microsoft.com/windows/desktop/api/mfobjects/nf-mfobjects-imfactivate-shutdownobject)によって公開されている2つの追加のメソッドは、 **E\_NOTIMPL**を返す必要があります。
 
-カスタムのメディア ソースを実装することもできます、 **IMFActivate**と**IMFAttributes**内と同じ COM オブジェクトのインターフェイス、 [IMFMediaSource](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfmediasource)します。 これは場合、お勧め、 [IMFMediaSourceEx::GetSourceAttributes](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)返す同じ**IMFAttributes**インターフェイスからのものとして、 **IMFActivate**します。
+カスタムメディアソースは、 [Imfmediasource](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfmediasource)と同じ COM オブジェクト内に**imfactivate**および**imfactivate**インターフェイスを実装することができます。 これを行う場合は、 [Imfmediasourceex:: GetSourceAttributes](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)が**imfactivate**と同じ**imfattributes**インターフェイスを返すことをお勧めします。
 
-カスタムのメディア ソースが実装していない場合、 **IMFActivate**と**IMFAttributes**同一のオブジェクトとカスタム メディア ソースが すべての属性をコピーする必要があります、 **IMFActivate**カスタム メディア ソースのソース属性ストアに格納する属性。
+カスタムメディアソースが、同じオブジェクトを使用して**imfactivate**および**imfactivate**を実装していない場合、カスタムメディアソースは、 **imfactivate**属性ストアに設定されているすべての属性をカスタムメディアソースのソースにコピーする必要があります。属性ストア。
 
-## <a name="encoded-camera-stream"></a>エンコードされたカメラ Stream
+## <a name="encoded-camera-stream"></a>エンコードされたカメラストリーム
 
-カスタムのメディア ソースが圧縮されたメディアの種類 (HEVC または H264 基本ストリーム) に公開される可能性が、OS のパイプラインは、ソースとエンコード パラメーターの構成を完全にサポートすると、カスタム メディア ソース (エンコード パラメーターを通じて伝達は、[ICodecAPI](https://docs.microsoft.com/previous-versions/windows/desktop/api/strmif/nn-strmif-icodecapi)、としてルーティングされますが、 [IKsControl::KsProperty](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksproxy/nf-ksproxy-ikscontrol-ksproperty)呼び出す)。
+カスタムメディアソースは、圧縮されたメディアの種類 (HEVC または H264 の基本ストリーム) を公開する場合があり、OS パイプラインはカスタムメディアソースのエンコードパラメーターのソースと構成を完全にサポートします (エンコーディングパラメーターは、[ICodecAPI](https://docs.microsoft.com/previous-versions/windows/desktop/api/strmif/nn-strmif-icodecapi)は、 [Ikscontrol:: ksk プロパティ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksproxy/nf-ksproxy-ikscontrol-ksproperty)呼び出しとしてルーティングされます。
 
 ```cpp
 // IKsControl methods
@@ -968,7 +968,7 @@ SimpleMediaSource::KsProperty(
     );
 ```
 
-**KSPROPERTY**に渡された構造体、 **IKsControl::KsProperty**メソッドで、次の情報が必要があります。
+**Ikscontrol:: Ksk プロパティ**メソッドに渡される**ksk プロパティ**構造体には、次の情報が含まれます。
 
 ```cpp
 KSPROPERTY.Set = Encoder Property GUID
@@ -976,26 +976,26 @@ KSPROPERTY.Id = 0
 KSPROPERTY.Flags = (KSPROPERTY_TYPE_SET or KSPROPERTY_TYPE_GET)
 ```
 
-エンコーダーのプロパティの GUID がで定義されている使用可能なプロパティの一覧を[コーデック API プロパティ](https://docs.microsoft.com/windows/desktop/DirectShow/codec-api-properties)します。
+エンコーダーのプロパティ GUID は、[コーデック API のプロパティ](https://docs.microsoft.com/windows/desktop/DirectShow/codec-api-properties)で定義されている使用可能なプロパティの一覧です。
 
-エンコーダーのプロパティのペイロードでを通じて渡される、 *pPropertyData*のフィールド、 **KsProperty**上で宣言されたメソッド。
+エンコーダープロパティのペイロードは、前に宣言した**Ksk プロパティ**メソッドの*ppropertydata*フィールドを介して渡されます。
 
-### <a name="capture-engine-requirements"></a>エンジンの要件をキャプチャします。
+### <a name="capture-engine-requirements"></a>キャプチャエンジンの要件
 
-クライアント側エンジンのキャプチャのフレームのサーバーでサポートされる完全にエンコードされたソースは中、(**IMFCaptureEngine**) によって使用される、 [Windows.Media.Capture.MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)オブジェクトでは、追加要件:
+エンコードされたソースはフレームサーバーによって完全にサポートされていますが、 [MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)オブジェクトによって使用されるクライアント側キャプチャエンジン (**IMFCaptureEngine**) には追加の要件があります。
 
--   Stream すべてエンコード (HEVC または H264) にする必要がありますか、またはすべての非圧縮 (このコンテキストで MJPG が扱われますとして圧縮されていない)。
+-   ストリームは、すべてエンコードされている (HEVC または H264) か、すべて非圧縮である必要があります (このコンテキストでは、MJPG は非圧縮として扱われます)。
 
--   少なくとも 1 つの非圧縮ストリームが使用可能なあります。
+-   少なくとも1つの圧縮されていないストリームが使用可能である必要があります。
 
 > [!NOTE]
-> これらの要件はこのトピックで説明されているカスタム メディア ソース要件です。 ただし、キャプチャ Engine の要件はのみ適用されるクライアント アプリケーションを使用してカスタムのメディア ソースを使用して、 **IMFCaptureEngine**または**Windows.Media.Capture.MediaCapture** API。
+> これらの要件は、このトピックで説明するカスタムメディアソースの要件に追加されます。 ただし、キャプチャエンジンの要件は、クライアントアプリケーションが**IMFCaptureEngine**または**MediaCapture** API を介してカスタムメディアソースを使用する場合にのみ適用されます。
 
-## <a name="camera-profiles-available-in-windows-10-version-1803-and-later"></a>カメラのプロファイル (Windows 10、バージョン 1803 以降で使用可能)
+## <a name="camera-profiles-available-in-windows-10-version-1803-and-later"></a>カメラプロファイル (Windows 10 バージョン1803以降で使用可能)
 
-カメラのプロファイルのサポートは、カスタム メディア ソース使用できます。 推奨されるメカニズムを使用して、プロファイルを発行する、 **MF\_DEVICEMFT\_SENSORPROFILE\_コレクション**属性を無効にソース属性 ([IMFMediaSourceEx:。GetSourceAttributes](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes))。
+カスタムメディアソースでは、カメラプロファイルのサポートを利用できます。 推奨されるメカニズムは、 **MF\_DEVICEMFT\_SENSORPROFILE\_COLLECTION**属性を使用して、ソース属性 ([Imfmediasourceex:: getsourceattributes](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-imfmediasourceex-getsourceattributes)) からプロファイルを発行することです。
 
-**MF\_DEVICEMFT\_SENSORPROFILE\_コレクション**属性は、 **IUnknown**の[IMFSensorProfileCollection](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfsensorprofilecollection)インターフェイス。 **IMFSensorProfileCollection**を使用して取得できます、 [MFCreateSensorProfileCollection](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatesensorprofilecollection)関数。
+**MF\_DEVICEMFT\_SENSORPROFILE\_COLLECTION**属性は、 [Imfsensorprofilecollection](https://docs.microsoft.com/windows/desktop/api/mfidl/nn-mfidl-imfsensorprofilecollection)インターフェイスの**IUnknown**です。 **Imfsensorprofilecollection**は、次のように、 [Mf、ensorprofilecollection](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatesensorprofilecollection)関数を使用して取得できます。
 
 ```cpp
 IFACEMETHODIMP
@@ -1053,20 +1053,20 @@ SimpleMediaSource::GetSourceAttributes(
 
 ### <a name="face-authentication-profile"></a>顔認証プロファイル
 
-Windows こんにちは顔認識をサポートするためには、カスタム メディア ソースがデザインされている場合は顔認証プロファイルを発行する必要があます。 顔認証プロファイルの要件は次のとおりです。
+カスタムメディアソースが Windows Hello 顔認識をサポートするように設計されている場合は、顔認証プロファイルを公開することをお勧めします。 顔認証プロファイルの要件は次のとおりです。
 
--   1 つの IR ストリームでは、顔認証 DDI コントロールをサポートする必要があります。 詳細については、次を参照してください。 [KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)します。
+-   Face Authentication DDI コントロールは、単一の IR ストリームでサポートされている必要があります。 詳細については、「 [KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)」を参照してください。
 
--   IR ストリームは、少なくとも 340 x 340 15 fps である必要があります。 L8、NV12 または MJPG L8 圧縮とマークされているか、フォーマットを使用する必要があります。
+-   IR ストリームは、15 fps で 340 x 340 以上である必要があります。 形式は、l8 圧縮でマークされた L8、NV12、または MJPG のいずれかである必要があります。
 
--   RGB ストリームは、少なくとも 480 x 480 7.5 の fps (これはのみ必要 Multispectrum 認証を適用する場合) である必要があります。
+-   RGB ストリームは、7.5 fps で 480 x 480 以上である必要があります (これは、Multispectrum 認証が適用されている場合にのみ必要です)。
 
--   顔認証プロファイルのプロファイル ID が必要です。KSCAMERAPROFILE\_FaceAuth\_モードは 0。
+-   顔認証プロファイルのプロファイル ID は、KSCAMERAPROFILE\_FaceAuth\_Mode、0である必要があります。
 
-顔認証プロファイルは、IR および RGB のストリームの各メディアの種類を 1 つをだけ通知をお勧めします。
+顔認証プロファイルでは、IR および RGB ストリームごとに1種類のメディアをアドバタイズすることをお勧めします。
 
-## <a name="photo-stream-controls"></a>Photo Stream コントロール
+## <a name="photo-stream-controls"></a>フォトストリームコントロール
 
-ストリームのいずれかをマークすることで、独立系のフォト ストリームが公開されているかどうか[MF\_DEVICESTREAM\_ストリーム\_カテゴリ](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category)として**PINNAME\_イメージ**、ストリームのカテゴリでストリームし**PINNAME\_ビデオ\_キャプチャ**が必要です (など、1 つのストリームを公開するだけで**PINNAME\_イメージ**有効なメディア ソースがありません)。
+ストリームのいずれかの[MF\_DEVICESTREAM\_ストリームの\_カテゴリ](https://docs.microsoft.com/windows/desktop/medfound/mf-devicestream-stream-category)を**ピン名\_イメージ**としてマークすることによって、独立したフォトストリームが公開されている場合は、ストリームカテゴリの**pinname\_VIDEO というストリームを\_キャプチャ**が必要です (たとえば、 **pinname\_イメージ**だけを公開する1つのストリームが有効なメディアソースではありません)。
 
-を通じて**IKsControl**、 **PROPSETID\_しました\_VIDEOCONTROL**プロパティ セットをサポートする必要があります。 詳細については、次を参照してください。[ビデオ コントロールのプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/video-control-properties)します。
+**Iksk コントロール**を使用して、 **PROPSETID\_VIDCAP\_videocontrol**プロパティセットをサポートする必要があります。 詳細については、「[ビデオコントロールのプロパティ](https://docs.microsoft.com/windows-hardware/drivers/stream/video-control-properties)」を参照してください。

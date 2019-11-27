@@ -3,38 +3,38 @@ title: DMA トランザクションの完了
 description: DMA トランザクションの完了
 ms.assetid: 90531b72-e51d-451e-ae84-a9bbf0245665
 keywords:
-- DMA トランザクションの完了の WDK KMDF
+- DMA トランザクション WDK KMDF、完了
 - DMA 操作 WDK KMDF、トランザクション
-- バス マスター DMA WDK KMDF、トランザクション
-- DMA トランザクション WDK KMDF の完了
+- バスマスタ DMA WDK KMDF、トランザクション
+- DMA トランザクションの完了 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d6fdfae27e4dcfc6869ffa47ee17718423d69a97
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 457a5c5236c22a725e28bd901083c2bea13a6cd7
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382884"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843555"
 ---
 # <a name="completing-a-dma-transaction"></a>DMA トランザクションの完了
 
 
-\[KMDF にのみ適用されます。\]
+\[は KMDF にのみ適用され\]
 
 
 
 
-ごとに、ドライバーのハンドヘルド デバイス[DMA 転送が完了すると](completing-a-dma-transfer.md)、ドライバーを呼び出す必要があります[ **WdfDmaTransactionDmaCompleted**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)、 [ **WdfDmaTransactionDmaCompletedWithLength**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)、または[ **WdfDmaTransactionDmaCompletedFinal** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)し、戻り値を確認します。
+ドライバーのデバイスが[DMA 転送を完了](completing-a-dma-transfer.md)するたびに、ドライバーは[**wdfdmatransactiondmacomを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)呼び出す必要があります。 wdfdmatransactiondmacomtedtedwithlength または[**wdfdmatransactiondmacomが**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedfinal)、戻り値を確認します。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompletedwithlength)
 
-戻り値が**TRUE**DMA トランザクション以上ない転送が必要なドライバーは、DMA トランザクションを完了する必要があります。 通常、ドライバーがまだ返ってからその[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数。 そのため、このコールバック関数は、DMA のトランザクションによってを実行します。
+戻り値が**TRUE**の場合、dma トランザクションに対してこれ以上転送は必要なく、ドライバーは dma トランザクションを完了する必要があります。 通常、ドライバーは[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数から返されていません。 したがって、このコールバック関数は、次の方法で DMA トランザクションを完了します。
 
-1.  呼び出す[ **WdfObjectDelete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete)トランザクション オブジェクトを削除または通話に[ **WdfDmaTransactionRelease** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionrelease)場合ドライバー[DMA トランザクション オブジェクトを再利用](reusing-dma-transaction-objects.md)します。
+1.  [**Wdfobjectdelete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfobject/nf-wdfobject-wdfobjectdelete)を呼び出してトランザクションオブジェクトを削除するか、ドライバーが[DMA トランザクションオブジェクト](reusing-dma-transaction-objects.md)を再利用する場合は[**Wdfdmatransactionrelease**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionrelease)を呼び出します。
 
-2.  呼び出す[ **WdfRequestComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)または[ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)トランザクションは、フレームワークに関連付けられている場合は、要求オブジェクト。
+2.  トランザクションがフレームワークの要求オブジェクトに関連付けられている場合は、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)または[**Wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)を呼び出します。
 
-ドライバーを呼び出す場合[ **WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)、それを通常最初に呼び出す[ **WdfDmaTransactionGetBytesTransferred** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetbytestransferred)すべてのトランザクションの転送の合計の長さ (バイト数) を取得します。
+ドライバーが[**Wdfrequestcompletewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation)を呼び出す場合、通常はまず[**WdfDmaTransactionGetBytesTransferred**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiongetbytestransferred)を呼び出して、すべてのトランザクション転送の合計長 (バイト数) を取得します。
 
-これらの手順についてから次のコード例では説明、 [PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)サンプルの[ *EvtInterruptDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)でコールバック関数、 *Isrdpc.c*ファイル。
+次の手順は、 *Isrdpc. c*ファイルの[PLX9x5x](https://go.microsoft.com/fwlink/p/?linkid=256157)サンプルの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)コールバック関数から抜粋した次のコード例に示されています。
 
 ```cpp
 if (readComplete) {

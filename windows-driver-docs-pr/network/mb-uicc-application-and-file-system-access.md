@@ -3,36 +3,36 @@ title: MB UICC アプリケーションとファイル システム アクセス
 description: MB UICC アプリケーションとファイル システム アクセス
 ms.assetid: 9A9BFCCE-2481-412F-AEBB-9919F6916224
 keywords:
-- MB UICC アプリケーションとファイル システムへのアクセス、モバイル ブロード バンド UICC アプリケーションおよびファイル システムへのアクセス
+- MB UICC アプリケーションとファイルシステムアクセス、モバイルブロードバンド UICC アプリケーションとファイルシステムアクセス
 ms.date: 03/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ac43797904bb5bce69b5bd28b21f0a181b55928c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5462e874d16d1de9a612a808d61b7394d9fefcfd
+ms.sourcegitcommit: b8876f616ac625bb3f38218a32b2dc35ac7b3399
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367608"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73443052"
 ---
 # <a name="mb-uicc-application-and-file-system-access"></a>MB UICC アプリケーションとファイル システム アクセス
 
 ## <a name="overview"></a>概要
 
-このトピックでは、UICC スマート カード アプリケーションとファイル システムへのアクセスを許可するようにモバイル ブロード バンド インターフェイス モデル (MBIM) インターフェイスの拡張機能を指定します。 MBIM に対するこの拡張機能は、UICC のに対する論理アクセスを公開します。 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)-準拠のアプリケーションおよびファイル システム、Windows 10、バージョンが 1903 以降でサポートされています。
+このトピックでは、UICC スマートカードアプリケーションとファイルシステムへのアクセスを許可するモバイルブロードバンドインターフェイスモデル (MBIM) インターフェイスの拡張機能について説明します。 この MBIM の拡張機能は、UICC の[ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)に準拠したアプリケーションとファイルシステムへの論理アクセスを公開し、Windows 10 バージョン1903以降でサポートされています。
 
 ## <a name="uicc-access-and-security"></a>UICC アクセスとセキュリティ
 
-UICC はファイル システムを提供し、同時に実行できるアプリケーションのセットをサポートします。 以下の USIM UMTS、CSIM CDMA、および ISIM IMS の。 SIM とは、これらのアプリケーション (GSM) 用の 1 つとしてモデル化できる UICC の従来の一部です。
+UICC は、ファイルシステムを提供し、同時に実行できる一連のアプリケーションをサポートします。 たとえば、UMTS の場合は USIM、CDMA の場合は CSIM、IMS の場合は ISIM を使用します。 SIM は、これらのアプリケーションの1つ (GSM 用) としてモデル化できる、UICC の従来の部分です。
 
-次の図のセクション 8.1 から、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)カード アプリケーション構造の例を示しています。
+[ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.1 の次の図は、カードアプリケーション構造の例を示しています。
 
-![たとえば UICC アプリケーション構造](images/mb-uicc-application-structure.png "例 UICC アプリケーションの構造体。")
+![UICC アプリケーション構造の例](images/mb-uicc-application-structure.png "UICC アプリケーション構造の例。")
 
-UICC ファイル システムは、ディレクトリ ツリーのフォレストとして見なすことができます。 レガシの SIM ツリーは、Master ファイル (MF) では、root 化されているし、最大で 2 つのレベル サブディレクトリ (専用のファイルまたは DFs) にはが含まれていますさまざまな種類の情報を保持する Elemental ファイル (EFs) を格納しています。 SIM のいずれかと、MF DFs を定義する共通の電話帳など複数のアクセスの種類に共通の情報が含まれている DFTelecom、します。 その他のアプリケーションは個別のツリーとして効果的に実装、root 化されているそれぞれの独自アプリケーション ディレクトリ ファイル (ADF)。 各 ADF は、最大 128 ビット長可能性のあるアプリケーション識別子によって識別されます。 (下の図に MF EFDir) カードのルートの下のファイルには、アプリケーション名と対応する識別子が含まれています。 MF (ADF) ツリー内で、DFs と EFs によって特定されます。 ファイル ID が 16 ビット整数を Id のファイルのパス。
+UICC ファイルシステムは、ディレクトリツリーのフォレストと見なすことができます。 レガシ SIM ツリーは、マスターファイル (MF) をルートとしており、さまざまな種類の情報を保持する、複数のサブディレクトリ (専用ファイル、または DFs) が含まれています。 SIM では、MF の下に DFs が定義されています。このうちの1つは、DFTelecom に共通の電話帳などの複数の種類のアクセスに共通する情報です。 追加のアプリケーションは、それぞれ独自のアプリケーションディレクトリファイル (ADF) をルートとする個別のツリーとして効果的に実装されます。 各 ADF は、最大128ビットのアプリケーション識別子によって識別されます。 カードルート (図の MF の下にある EFDir) の下にあるファイルには、アプリケーション名と対応する識別子が含まれています。 ツリー内 (MF または ADF) では、DFs と EFs がファイル id のパスによって識別される場合があります。ファイル ID は16ビットの整数です。
 
 ## <a name="ndis-interface-extensions"></a>NDIS インターフェイスの拡張機能
 
-次の Oid は UICC アプリケーションとファイル システムへのアクセスをサポートするために定義されています。
+次の Oid は、UICC アプリケーションとファイルシステムアクセスをサポートするために定義されています。
 
 - [OID_WWAN_UICC_APP_LIST](oid-wwan-uicc-app-list.md)
 - [OID_WWAN_UICC_FILE_STATUS](oid-wwan-uicc-file-status.md)
@@ -42,14 +42,14 @@ UICC ファイル システムは、ディレクトリ ツリーのフォレス�
 
 ## <a name="mbim-service-and-cid-values"></a>MBIM サービスと CID 値
 
-| サービス名 | UUID | UUID 値 |
+| サービス名 | UUID | UUID の値 |
 | --- | --- | --- |
-| Microsoft UICC の低レベルのアクセス | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
-| Microsoft Basic IP 接続の拡張機能 | UUID_BASIC_CONNECT_EXTENSIONS | 3D01DCC5-FEF5-4D05-9D3A-BEF7058E9AAF |
+| Microsoft 低レベルの UICC アクセス | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
+| Microsoft 基本 IP 接続拡張機能 | UUID_BASIC_CONNECT_EXTENSIONS | 3D01DCC5-FEF5-4D05-9D3A-BEF7058E9AAF |
 
-次の表に、UUID を指定して、各 CID のコードをコマンドだけでなく、CID がサポートしているかどうかを設定、クエリ、またはイベント (通知) を要求します。 詳細については、パラメーター、データ構造、および通知の詳細については、このトピック内の各 CID の個々 のセクションを参照してください。 
+次の表では、各 CID の UUID とコマンドコードに加えて、CID が Set、Query、または Event (通知) 要求をサポートしているかどうかを示します。 パラメーター、データ構造、および通知の詳細については、このトピック内の各 CID の個別のセクションを参照してください。 
 
-| CID | UUID | コマンド コード | 設定 | クエリ | 通知 |
+| CID | UUID | コマンドコード | 設定 | クエリ | 通知 |
 | --- | --- | --- | --- | --- | --- |
 | MBIM_CID_MS_UICC_APP_LIST | UUID_MS_UICC_LOW_LEVEL | 7 | N | Y | N |
 | MBIM_CID_MS_UICC_FILE_STATUS | UUID_MS_UICC_LOW_LEVEL | 8 | N | Y | N |
@@ -57,13 +57,13 @@ UICC ファイル システムは、ディレクトリ ツリーのフォレス�
 | MBIM_CID_MS_UICC_ACCESS_RECORD | UUID_MS_UICC_LOW_LEVEL | 10 | Y | Y | N |
 | MBIM_CID_MS_PIN_EX | UUID_BASIC_CONNECT_EXTENSIONS | 15 | Y | Y | N |
 
-## <a name="mbimcidmsuiccapplist"></a>MBIM_CID_MS_UICC_APP_LIST
+## <a name="mbim_cid_ms_uicc_app_list"></a>MBIM_CID_MS_UICC_APP_LIST
 
-この CID を UICC 内のアプリケーションとそれらについての情報の一覧を取得します。 ときにモデムで UICC が完全に初期化されると携帯電話会社に登録する準備ができて、UICC アプリケーションを選択してください登録とこの CID を持つクエリで選択したアプリケーションを返す必要があります、 **ActiveAppIndex**応答で使用される MBIM_UICC_APP_LIST 構造のフィールドです。
+この CID は、UICC 内のアプリケーションの一覧と、それらに関する情報を取得します。 モデムの UICC が完全に初期化され、携帯電話会社に登録する準備ができたら、UICC アプリケーションを登録用に選択する必要があります。また、この CID を使用してクエリを実行すると、選択したアプリケーションが応答で使用される MBIM_UICC_APP_LIST 構造の**Activeappindex**フィールドに返されます。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+|  | 設定 | クエリ | Notification |
 | --- | --- | --- | --- |
 | コマンド | 該当なし | 空 | 該当なし |
 | 応答 | 該当なし | MBIM_UICC_APP_LIST | 該当なし |
@@ -72,391 +72,391 @@ UICC ファイル システムは、ディレクトリ ツリーのフォレス�
 
 MBIM_COMMAND_MSG の InformationBuffer が空です。
 
-### <a name="set"></a>Set
+### <a name="set"></a>設定
 
 適用できません。
 
 ### <a name="response"></a>応答
 
-MBIM_COMMAND_DONE で InformationBuffer には、次の MBIM_UICC_APP_LIST 構造が含まれています。
+MBIM_COMMAND_DONE の InformationBuffer には、次の MBIM_UICC_APP_LIST 構造が含まれています。
 
-#### <a name="mbimuiccapplist-version-1"></a>MBIM_UICC_APP_LIST (バージョン 1)
-
-| Offset | サイズ | フィールド | 種類 | 説明 |
-| --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 次の構造のバージョン番号。 このフィールドを設定する必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | AppCount | UINT32 | UICC アプリケーション数**MBIM_UICC_APP_INFO**この応答で返される構造体。 |
-| 8 | 4 | ActiveAppIndex | UINT32(0..NumApp - 1) | モバイル、ネットワークへの登録用のモデムが選択したアプリケーションのインデックス。 このフィールドは、の間である必要があります**0**と**AppCount - 1**します。 この応答によって返されるアプリケーションの配列にインデックスを作成します。 このフィールドには登録のアプリケーションが選択されていない場合**0 xffffffff**します。 |
-| 12 | 4 | AppListOffset | OFFSET | オフセット (バイト単位) は、アプリの一覧を格納しているバッファーには、この構造体の先頭から計算されます。 |
-| 16 | 4 | AppListSize | SIZE (0..AppCount * 312) | 一覧のアプリ データのバイト単位のサイズ。 |
-| 20 | AppListSize | DataBuffer | DATABUFFER | 配列の**AppCount** * **MBIM_UICC_APP_INFO**構造体。 |
-
-#### <a name="mbimuiccappinfo"></a>MBIM_UICC_APP_INFO
+#### <a name="mbim_uicc_app_list-version-1"></a>MBIM_UICC_APP_LIST (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | appType | MBIM_UICC_APP_TYPE | UICC アプリケーションの種類。 |
-| 4 | 4 | AppIdSize | サイズ (0..16) | (バイト単位) のセクションの 8.3 で定義されている、アプリケーション ID のサイズ、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 このフィールドの場合は 0 に設定されて、 **MBIMUiccAppTypeMf**、 **MBIMUiccAppTypeMfSIM**、または**MBIMUiccAppTypeMfRUIM**アプリの種類。 |
-| 8 | 16 | AppId | バイト配列 | アプリケーション id。 最初のメッセージだけ**AppIdSize**バイトが意味を持ちます。 アプリケーション ID がより長い場合**MBIM_MAXLENGTH_APPID**最初のメッセージだけが、実際の長さを指定し、(バイト単位)、AppIdSize **MBIM_MAXLENGTH_APPID**バイトは、このフィールドにします。 このフィールドは有効な場合にのみ**AppType**ない**MBIMUiccAppTypeMf**、 **MBIMUiccAppTypeMfSIM**、または**MBIMUiccAppTypeMfRUIM**します。 |
-| 24 | 4 | AppNameLength | サイズ (0..256) | アプリケーション名の文字の長さ。 |
-| 28 | 256 | アプリ名 | ASCII 文字の配列 | アプリケーションの名前を指定する utf-8 文字列を返します。 このフィールドの長さがで指定された**AppNameLength**します。 長さがより大きいまたは等しい場合**MBIM_MAXLENGTH_APPNAME**バイト、このフィールドには、1 つ目が含まれています。 **MBIM_MAXLENGTH_APPNAME - 1**名のバイト数。 文字列が常に null で終了します。 |
-| 284 | 4 | NumPins | サイズ (0..8) | 暗証番号 (pin) のアプリケーション参照の数。 要素の数、つまり**PinRef**が有効です。 仮想の R UIM 上のアプリケーションは、暗証番号 (pin) の参照を持つありません。 |
-| 288 | 8 | PinRef | バイト配列 | 9.4.2 のセクションで定義されている (PIN1 および場合によっては UPIN keys)、このアプリケーション用のアプリケーションの暗証番号 (pin) を指定するバイト配列を参照、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 場合は単一検証カード、または、MBB ドライバーやモデムは、さまざまなアプリケーションの別のアプリケーション キーをサポートしていませんが、このフィールドにする必要があります**0x01**します。 |
+| 0 | 4 | バージョン | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドを**1**に設定する必要があります。 |
+| 4 | 4 | AppCount | UINT32 | この応答で返される UICC アプリケーション**MBIM_UICC_APP_INFO**構造体の数。 |
+| 8 | 4 | ActiveAppIndex | UINT32 (0. NumApp-1) | モバイルネットワークに登録するためにモデムによって選択されたアプリケーションのインデックス。 このフィールドは、 **0**から**appcount-1**までの範囲で指定する必要があります。 この応答によって返されるアプリケーションの配列にインデックスを付けます。 登録するアプリケーションが選択されていない場合、このフィールドには**0xffffffff**が含まれます。 |
+| 12 | 4 | アプライアンスののオフセット | OFFSET | この構造体の先頭から、アプリの一覧を格納しているバッファーまでのオフセット (バイト単位)。 |
+| 16 | 4 | アプライアンスのサイズ変更 | サイズ (0. AppCount * 312) | アプリリストデータのサイズ (バイト単位)。 |
+| 20 | アプライアンスのサイズ変更 | DataBuffer | DATABUFFER | **MBIM_UICC_APP_INFO**構造体 * **appcount**の配列。 |
 
-#### <a name="mbimuiccapptype"></a>MBIM_UICC_APP_TYPE
+#### <a name="mbim_uicc_app_info"></a>MBIM_UICC_APP_INFO
+
+| Offset | サイズ | フィールド | 種類 | 説明 |
+| --- | --- | --- | --- | --- |
+| 0 | 4 | AppType | MBIM_UICC_APP_TYPE | UICC アプリケーションの型。 |
+| 4 | 4 | AppIdSize | サイズ (0 ~ 16) | [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.3 で定義されている、アプリケーション ID のサイズ (バイト単位)。 **MBIMUiccAppTypeMf**、 **MBIMUiccAppTypeMfSIM**、または**MBIMUiccAppTypeMfRUIM**アプリの種類では、このフィールドは0に設定されます。 |
+| 8 | 16 | AppId | バイト配列 | アプリケーション ID。 最初の**Appidsize**バイトだけが意味を持ちます。 アプリケーション ID が**MBIM_MAXLENGTH_APPID**バイトを超えている場合、AppIdSize は実際の長さを指定しますが、このフィールドには最初の**MBIM_MAXLENGTH_APPID**バイトだけが含まれます。 このフィールドは、 **AppType**が**MBIMUiccAppTypeMf**、 **MBIMUiccAppTypeMfSIM**、または**MBIMUiccAppTypeMfRUIM**ではない場合にのみ有効です。 |
+| 24 | 4 | AppNameLength | サイズ (0 ~ 256) | アプリケーション名の長さ (文字数)。 |
+| 28 | 256 | AppName | ASCII 文字配列 | アプリケーションの名前を指定する UTF-8 文字列。 このフィールドの長さは、 **AppNameLength**によって指定されます。 長さが**MBIM_MAXLENGTH_APPNAME**バイト以上の場合、このフィールドには名前の最初の**MBIM_MAXLENGTH_APPNAME-1**バイトが格納されます。 文字列は常に null で終わります。 |
+| 284 | 4 | NumPins | サイズ (0. 8) | アプリケーションの PIN 参照の数。 つまり、有効な**Pinref**の要素の数。 仮想 R/UIM のアプリケーションには、PIN 参照がありません。 |
+| 288 | 8 | PinRef | バイト配列 | [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション9.4.2 で定義されているように、このアプリケーションのアプリケーションの PIN 参照 (PIN1 のキーと、場合によっては upin) を指定するバイト配列。 シングル検証カードの場合、または異なるアプリケーションに対して異なるアプリケーションキーをサポートしていない MBB ドライバーやモデムの場合は、このフィールドを**0x01**にする必要があります。 |
+
+#### <a name="mbim_uicc_app_type"></a>MBIM_UICC_APP_TYPE
 
 | 種類 | Value | 説明 |
 | --- | --- | --- |
-| MBIMUiccAppTypeUnknown | 0 | 不明な種類。 |
-| MBIMUiccAppTypeMf | 1 | MF レガシ SIM ディレクトリをルートとします。 |
-| MBIMUiccAppTypeMfSIM | 2 | レガシ SIM ディレクトリ、DF_GSM で root 化されます。 |
-| MBIMUiccAppTypeMfRUIM | 3 | レガシ SIM ディレクトリ、DF_CDMA で root 化されます。 |
-| MBIMUiccAppTypeUSIM | 4 | USIM アプリケーションです。 |
-| MBIMUiccAppTypeCSIM | 5 | CSIM アプリケーション。 |
-| MBIMUiccAppTypeISIM | 6 | ISIM アプリケーションです。 |
+| MBIMUiccAppTypeUnknown | 0 | 不明な型です。 |
+| MBIMUiccAppTypeMf | 1 | MF をルートとする従来の SIM ディレクトリ。 |
+| MBIMUiccAppTypeMfSIM | 2 | DF_GSM をルートとする従来の SIM ディレクトリ。 |
+| MBIMUiccAppTypeMfRUIM | 3 | DF_CDMA をルートとする従来の SIM ディレクトリ。 |
+| MBIMUiccAppTypeUSIM | 4 | USIM アプリケーション。 |
+| MBIMUiccAppTypeCSIM | 5 | CSIM の場合は、 |
+| MBIMUiccAppTypeISIM | 6 | ISIM アプリケーション。 |
 
 #### <a name="constants"></a>定数
 
-次の定数は、MBIM_CID_MS_UICC_APP_INFO に対して定義されます。
+MBIM_CID_MS_UICC_APP_INFO には、次の定数が定義されています。
 
 `const int MBIM_MAXLENGTH_APPID = 16`  
 `const int MBIM_MAXLENGTH_APPNAME = 256`  
 `const int MBIM_MAXNUM_PINREF = 8`  
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
 適用できません。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
 | 状態コード | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_NOT_INITIALIZED | UICC はまだ完全に初期化されていないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_NOT_INITIALIZED | Uicc がまだ完全に初期化されていないため、UICC 操作を実行できません。 |
 
-## <a name="mbimcidmsuiccfilestatus"></a>MBIM_CID_MS_UICC_FILE_STATUS
+## <a name="mbim_cid_ms_uicc_file_status"></a>MBIM_CID_MS_UICC_FILE_STATUS
 
-この CID では、指定した UICC ファイルに関する情報を取得します。
+この CID は、指定された UICC ファイルに関する情報を取得します。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+|  | 設定 | クエリ | Notification |
 | --- | --- | --- | --- |
 | コマンド | 該当なし | MBIM_UICC_FILE_PATH | 該当なし |
 | 応答 | 該当なし | MBIM_UICC_FILE_STATUS | 該当なし |
 
 ### <a name="query"></a>クエリ
 
-MBIM_COMMAND_MSG InformationBuffer のでは、MBIM_UICC_FILE_PATH 構造体としてターゲット EF が含まれています。
+MBIM_COMMAND_MSG の InformationBuffer には、ターゲット EF が MBIM_UICC_FILE_PATH 構造として含まれています。
 
-#### <a name="mbimuiccfilepath-version-1"></a>MBIM_UICC_FILE_PATH (バージョン 1)
+#### <a name="mbim_uicc_file_path-version-1"></a>MBIM_UICC_FILE_PATH (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 次の構造のバージョン番号。 このフィールドである必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | AppIdOffset | OFFSET | アプリケーション ID を含むバッファーをこの構造体の先頭からのオフセット (バイト単位) が計算されます。 |
-| 8 | 4 | AppIdSize | サイズ (0..16) | (バイト単位) のセクションの 8.3 で定義されている、アプリケーション ID のサイズ、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 2 G カードでは、このフィールドはゼロ (0) に設定する必要があります。 |
-| 12 | 4 | FilePathOffset | OFFSET | オフセット (バイト単位) は、ファイルのパスを含むバッファーには、この構造体の先頭から計算されます。 ファイルのパスは、16 ビットのファイル Id の配列です。 最初の ID はいずれかである必要があります**0x7FFF**または**0x3F00**します。 最初の ID が場合**0x7FFF**、によってアプリケーション desginated の ADF の相対パスですし、 **AppId**します。 それ以外の場合、MF から絶対パスになります。 |
-| 16 | 4 | FilePathSize | サイズ (0..8) | ファイルのパス (バイト単位) のサイズ。 |
-| 20 |   | DataBuffer | DATABUFFER | AppId とファイル パスを含むデータ バッファー。 |
+| 0 | 4 | バージョン | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドは**1**である必要があります。 |
+| 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
+| 8 | 4 | AppIdSize | サイズ (0 ~ 16) | [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.3 で定義されている、アプリケーション ID のサイズ (バイト単位)。 2G カードの場合、このフィールドはゼロ (0) に設定する必要があります。 |
+| 12 | 4 | FilePathOffset | OFFSET | ファイルパスを格納しているバッファーに、この構造体の先頭から計算されたオフセット (バイト単位)。 ファイルパスは、16ビットのファイル Id の配列です。 1つ目の**ID は、** "2" または " **0x3f00**" のいずれかである必要があります。 最初の**ID が desginated の場合、パス**は**AppId**によってアプリケーションの ADF に対して相対的になります。 それ以外の場合は、MF から始まる絶対パスです。 |
+| 16 | 4 | FilePathSize | サイズ (0. 8) | ファイルパスのサイズ (バイト単位)。 |
+| 20 |   | DataBuffer | DATABUFFER | AppId と FilePath を含むデータバッファー。 |
 
-### <a name="set"></a>Set
+### <a name="set"></a>設定
 
 適用できません。
 
 ### <a name="response"></a>応答
 
-次の MBIM_UICC_FILE_STATUS 構造は、InformationBuffer で使用されます。
+InformationBuffer では、次の MBIM_UICC_FILE_STATUS 構造が使用されます。
 
-#### <a name="mbimuiccfilestatus-version-1"></a>MBIM_UICC_FILE_STATUS (バージョン 1)
+#### <a name="mbim_uicc_file_status-version-1"></a>MBIM_UICC_FILE_STATUS (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 次の構造のバージョン番号。 このフィールドである必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | StatusWord1 | UINT32(0..256) | 戻り値パラメーター UICC コマンドに固有です。 |
-| 8 | 4 | StatusWord2 | UINT32(0..256) | 戻り値パラメーター UICC コマンドに固有です。 |
+| 0 | 4 | バージョン | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドは**1**である必要があります。 |
+| 4 | 4 | StatusWord1 | UINT32 (0. 256) | UICC コマンドに固有の戻りパラメーター。 |
+| 8 | 4 | StatusWord2 | UINT32 (0. 256) | UICC コマンドに固有の戻りパラメーター。 |
 | 12 | 4 | FileAccessibility | MBIM_UICC_FILE_ACCESSIBILITY | UICC ファイルのアクセシビリティ。 |
 | 16 | 4 | FileType | MBIM_UICC_FILE_TYPE | UICC ファイルの種類。 |
-| 20 | 4 | FileStructure | MBIM_UICC_FILE_STRUCTURE | UICC ファイルの構造体。 |
-| 24 | 4 | ItemCount | UINT32 | UICC ファイル内の項目の数。 Transparent に設定されて TLV ファイル、および**1**します。 |
-| 28 | 4 | サイズ | UINT32 | (バイト単位)、各項目のサイズ。 透過的な TLV ファイル、または全体の EF のサイズです。 ファイルのレコードに基づくレコードの合計数を表します。 |
-| 32 | 16 | FileLockStatus | MBIM_PIN_TYPE_EX\[4\] | そのファイルの各操作 (読み取り、更新、アクティブ化、および非アクティブ化をこの順序で) のアクセス条件を記述する MBIM_PIN_TYPE_EX 型の配列。 |
+| 20 | 4 | FileStructure | MBIM_UICC_FILE_STRUCTURE | UICC ファイル構造体。 |
+| 24 | 4 | ItemCount | UINT32 | UICC ファイル内の項目の数。 Transparent ファイルと TLV ファイルの場合は、 **1**に設定されます。 |
+| 28 | 4 | サイズ | UINT32 | 各項目のサイズ (バイト単位)。 Transparent または TLV ファイルの場合、これは EF 全体のサイズです。 レコードベースのファイルの場合、これはレコードの合計数を表します。 |
+| 32 | 16 | FileLockStatus | MBIM_PIN_TYPE_EX\[4\] | そのファイルに対する各操作 (読み取り、更新、アクティブ化、および非アクティブ化) のアクセス条件を記述する MBIM_PIN_TYPE_EX 型の配列。 |
 
-#### <a name="mbimuiccfileaccessibility"></a>MBIM_UICC_FILE_ACCESSIBILITY
+#### <a name="mbim_uicc_file_accessibility"></a>MBIM_UICC_FILE_ACCESSIBILITY
 
-MBIM_UICC_FILE_ACCESSIBILITY 列挙体は、前述の MBIM_UICC_FILE_STATUS 構造で使用されます。
+MBIM_UICC_FILE_ACCESSIBILITY 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
 | 種類 | Value | 説明 |
 | --- | --- | --- |
 | MBIMUiccFileAccessibilityUnknown | 0 | ファイル共有性が不明です。 |
-| MBIMUiccFileAccessibilityNotShareable | 1 | 共有できません。 ファイルです。 |
-| MBIMUiccFileAccessibilityShareable | 2 | 共有可能なファイルです。 |
+| MBIMUiccFileAccessibilityNotShareable | 1 | 共有可能ファイルではありません。 |
+| MBIMUiccFileAccessibilityShareable | 2 | 共有可能ファイル。 |
 
-#### <a name="mbimuiccfiletype"></a>MBIM_UICC_FILE_TYPE
+#### <a name="mbim_uicc_file_type"></a>MBIM_UICC_FILE_TYPE
 
-MBIM_UICC_FILE_TYPE 列挙体は、前述の MBIM_UICC_FILE_STATUS 構造で使用されます。
+MBIM_UICC_FILE_TYPE 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
 | 種類 | Value | 説明 |
 | --- | --- | --- |
 | MBIMUiccFileTypeUnknown | 0 | ファイルの種類が不明です。 |
-| MBIMUiccFileTypeWorkingEf | 1 | EF の動作。 |
-| MBIMUiccFileTypeInternalEf | 2 | EF の内部。 |
-| MBIMUiccFileTypeDfOrAdf | 3 | 専用のファイルでは、他のノードの親であるディレクトリ。 DF または ADF 可能性があります。 |
+| MBIMUiccFileTypeWorkingEf | 1 | 作業 EF。 |
+| MBIMUiccFileTypeInternalEf | 2 | 内部 EF。 |
+| MBIMUiccFileTypeDfOrAdf | 3 | 専用ファイル。他のノードの親であるディレクトリです。 これは DF または ADF である可能性があります。 |
 
-#### <a name="mbimuiccfilestructure"></a>MBIM_UICC_FILE_STRUCTURE
+#### <a name="mbim_uicc_file_structure"></a>MBIM_UICC_FILE_STRUCTURE
 
-MBIM_UICC_FILE_STRUCTURE 列挙体は、前述の MBIM_UICC_FILE_STATUS 構造で使用されます。
-
-| 種類 | Value | 説明 |
-| --- | --- | --- |
-| MBIMUiccFileStructureUnknown | 0 | 不明なファイルの構造体。 |
-| MBIMUiccFileStructureTransparent | 1 | 可変長の 1 つのレコード。 |
-| MBIMUiccFileStructureCyclic | 2 | 同じ長さの各レコードの循環のセット。 |
-| MBIMUiccFileStructureLinear | 3 | 同じ長さの各レコードの線形のセット。 |
-| MBIMUiccFileStructureBerTLV | 4 | タグを使用してアクセスできるデータ値のセット。 |
-
-#### <a name="mbimpintypeex"></a>MBIM_PIN_TYPE_EX
-
-MBIM_PIN_TYPE_EX 列挙体は、前述の MBIM_UICC_FILE_STATUS 構造で使用されます。
+MBIM_UICC_FILE_STRUCTURE 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
 | 種類 | Value | 説明 |
 | --- | --- | --- |
-| MBIMPinTypeNone | 0 | PIN が入力する保留中ではありません。 |
-| MBIMPinTypeCustom | 1 | 暗証番号 (pin) の型は、カスタム型とは、他の種類の暗証番号 (pin) の一覧に表示されないこの列挙体。 |
+| MBIMUiccFileStructureUnknown | 0 | 不明なファイル構造です。 |
+| MBIMUiccFileStructureTransparent | 1 | 可変長の1つのレコード。 |
+| MBIMUiccFileStructureCyclic | 2 | 同じ長さのレコードの循環セット。 |
+| MBIMUiccFileStructureLinear | 3 | レコードの線形セット。各長さは同じです。 |
+| MBIMUiccFileStructureBerTLV | 4 | タグによってアクセスできるデータ値のセット。 |
+
+#### <a name="mbim_pin_type_ex"></a>MBIM_PIN_TYPE_EX
+
+MBIM_PIN_TYPE_EX 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
+
+| 種類 | Value | 説明 |
+| --- | --- | --- |
+| MBIMPinTypeNone | 0 | 入力が保留中の PIN はありません。 |
+| MBIMPinTypeCustom | 1 | PIN の種類はカスタム型で、この列挙に示されている他の PIN の種類はありません。 |
 | MBIMPinTypePin1 | 2 | PIN1 キー。 |
-| MBIMPinTypePin2 | 3 | 暗証番号 2 キー。 |
-| MBIMPinTypeDeviceSimPin | 4 | SIM のキーをデバイスです。 |
-| MBIMPinTypeDeviceFirstSimPin | 5 | SIM の最初のキーをデバイスです。 |
+| MBIMPinTypePin2 | 3 | PIN2 キー。 |
+| MBIMPinTypeDeviceSimPin | 4 | デバイスを SIM キーにします。 |
+| MBIMPinTypeDeviceFirstSimPin | 5 | デバイスは最初の SIM キーになります。 |
 | MBIMPinTypeNetworkPin | 6 | ネットワークのパーソナル化キー。 |
-| MBIMPinTypeNetworkSubsetPin | 7 | ネットワークのサブセットのパーソナル化のキー。 |
-| MBIMPinTypeServiceProviderPin | 8 | サービス プロバイダー (SP) パーソナル化のキー。 |
-| MBIMPinTypeCorporatePin | 9 | 企業のパーソナル化のキー。 |
-| MBIMPinTypeSubsidyLock | 10 | キー、subsidy のロックを解除します。 | 
-| MBIMPinTypePuk1 | 11 | 個人識別番号 1 キー (PUK1) のロックを解除します。 |
-| MBIMPinTypePuk2 | 12 | 個人識別番号 2 キー (PUK2) のロックを解除します。 |
-| MBIMPinTypeDeviceFirstSimPuk | 13 | SIM の最初の PIN をデバイスには、キーがロックを解除します。 |
-| MBIMPinTypeNetworkPuk | 14 | ネットワークのパーソナル化キーのロックを解除します。 |
-| MBIMPinTypeNetworkSubsetPuk | 15 | ネットワークのサブセットのパーソナル化キーのロックを解除します。 |
-| MBIMPinTypeServiceProviderPuk | 16 | サービス プロバイダー (SP) パーソナル化キーのロックを解除します。 |
-| MBIMPinTypeCorporatePuk | 17 | 企業のパーソナル化キーのロックを解除します。 |
+| MBIMPinTypeNetworkSubsetPin | 7 | ネットワークサブセットのパーソナル化キー。 |
+| MBIMPinTypeServiceProviderPin | 8 | サービスプロバイダー (SP) のパーソナル化キー。 |
+| MBIMPinTypeCorporatePin | 9 | 企業の個人設定キー。 |
+| MBIMPinTypeSubsidyLock | 10 | Subsidy unlock キー。 | 
+| MBIMPinTypePuk1 | 11 | 個人識別番号1ロック解除キー (PUK1)。 |
+| MBIMPinTypePuk2 | 12 | 暗証番号 (PUK2) を指定します。 |
+| MBIMPinTypeDeviceFirstSimPuk | 13 | デバイスは最初に SIM ピンロック解除キーを持っています。 |
+| MBIMPinTypeNetworkPuk | 14 | ネットワークパーソナル化ロック解除キー。 |
+| MBIMPinTypeNetworkSubsetPuk | 15 | ネットワークサブセットのパーソナル化解除キー。 |
+| MBIMPinTypeServiceProviderPuk | 16 | サービスプロバイダー (SP) のパーソナル化ロック解除キー。 |
+| MBIMPinTypeCorporatePuk | 17 | 企業のパーソナル化ロック解除キー。 |
 | MBIMPinTypeNev | 18 | NEV キー。 |
-| MBIMPinTypeAdm | 19 | 管理者キー。 |
+| MBIMPinTypeAdm | 19 | 管理キー。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
 適用できません。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
 | 状態コード | 説明 |
 | --- | --- |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_SHAREABILITY_CONDITION_ERROR | 共有可能ではなく、別のアプリケーションによってアクセスされているために、ファイルを選択することはできません。 SIM によって返されるステータス ワードは、6985 です。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_SHAREABILITY_CONDITION_ERROR | このファイルは共有可能ではなく、現在別のアプリケーションによってアクセスされているため、選択できません。 SIM によって返されるステータスワードは6985です。 |
 
-## <a name="mbimcidmsuiccaccessbinary"></a>MBIM_CID_MS_UICC_ACCESS_BINARY
+## <a name="mbim_cid_ms_uicc_access_binary"></a>MBIM_CID_MS_UICC_ACCESS_BINARY
 
-構造体型で UICC バイナリ ファイルにアクセスする特定のコマンドを送信するこの CID **MBIMUiccFileStructureTransparent**または**MBIMUiccFileStructureBerTLV**します。
+この CID は、 **MBIMUiccFileStructureTransparent**または**MBIMUiccFileStructureBerTLV**構造体型の uicc バイナリファイルにアクセスするための特定のコマンドを送信します。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+|  | 設定 | クエリ | Notification |
 | --- | --- | --- | --- |
-| コマンド | MBIM_UICC_ACCESS_BINARY | MBIM_UICC_ACCESS_BINARY | 該当なし |
-| 応答 | MBIM_UICC_RESPONSE | MBIM_UICC_RESPONSE | 該当なし |
+| コマンド | 該当なし | MBIM_UICC_ACCESS_BINARY | 該当なし |
+| 応答 | 該当なし | MBIM_UICC_RESPONSE | 該当なし |
 
 ### <a name="query"></a>クエリ
 
-バイナリ ファイルを読み取ります。 MBIM_COMMAND_MSG の InformationBuffer には MBIM_UICC_ACCESS_BINARY 構造体が含まれています。 MBIM_COMMAND_DONE の InformationBuffer MBIM_UICC_RESPONSE 構造体が返されます。
+バイナリファイルを読み取ります。 MBIM_COMMAND_MSG の InformationBuffer に MBIM_UICC_ACCESS_BINARY 構造体が含まれています。 MBIM_COMMAND_DONE の InformationBuffer に MBIM_UICC_RESPONSE 構造体が返されます。
 
-#### <a name="mbimuiccaccessbinary-version-1"></a>MBIM_UICC_ACCESS_BINARY (バージョン 1)
+#### <a name="mbim_uicc_access_binary-version-1"></a>MBIM_UICC_ACCESS_BINARY (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 次の構造のバージョン番号。 このフィールドを設定する必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | AppIdOffset | OFFSET | アプリケーション ID を格納するバッファーへのこの構造体の先頭からのバイト単位のオフセット |
-| 8 | 4 | AppIdSize | サイズ (0..16) | (バイト単位) のセクションの 8.3 で定義されている、アプリケーション ID のサイズ、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 2 G カードでは、このフィールドはゼロ (0) に設定する必要があります。 |
-| 12 | 4 | FilePathOffset | OFFSET | オフセット (バイト単位) は、ファイルのパスを含むバッファーには、この構造体の先頭から計算されます。 ファイルのパスは、16 ビットのファイル Id の配列です。 最初の ID はいずれかである必要があります**0x7FFF**または**0x3F00**します。 最初の ID が場合**0x7FFF**、によってアプリケーション desginated の ADF の相対パスですし、 **AppId**します。 それ以外の場合、MF から絶対パスになります。 |
-| 16 | 4 | FilePathSize | サイズ | ファイルのパス (バイト単位) のサイズ。 |
-| 20 | 4 | fileOffset | UINT32 | ファイルから読み取るときに使用されるオフセット。 このフィールドは 256 より大きく、およびオフセット高と offset の両方で定義されている低が組み合わされています、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 |
-| 24 | 4 | NumberOfBytes | UINT32 | 読み取るバイト数。 たとえば、クライアント ドライバーはこの関数のあたり 256 バイトが読み取りまたは単一 UICC 操作で書き込まれたができる最大量は 256 バイトより大きい、透過的な (バイナリ) ファイルを読み取るを使用できます、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 この複数 Apdu 複数に分割し、1 つの応答での結果を送信する関数の役目です。 |
-| 28 | 4 | LocalPinOffset | OFFSET | オフセット (バイト単位) は、パスワードを含んでいるバッファーには、この構造体の先頭から計算されます。 これは、ローカルの PIN (暗証番号 2) であり、操作には、ローカルの PIN の検証が必要です。 場合に使用されます。 |
-| 32 | 4 | LocalPinSize | サイズ (0..16) | (バイト単位)、パスワードのサイズ。 |
-| 36 | 4 | BinaryDataOffset | OFFSET | オフセット (バイト単位) は、コマンドに固有のデータを格納しているバッファーには、この構造体の先頭から計算されます。 バイナリ データは、セットの操作にのみ使用されます。 |
-| 40 | 4 | BinaryDataSize | サイズ (0..32768) | データのバイト単位のサイズ。 |
-| 44 |   | DataBuffer | DATABUFFER | AppId、FilePath、LocalPin、およびデータを含むデータ バッファーです。 |
+| 0 | 4 | バージョン | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドを**1**に設定する必要があります。 |
+| 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
+| 8 | 4 | AppIdSize | サイズ (0 ~ 16) | [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.3 で定義されている、アプリケーション ID のサイズ (バイト単位)。 2G カードの場合、このフィールドはゼロ (0) に設定する必要があります。 |
+| 12 | 4 | FilePathOffset | OFFSET | ファイルパスを格納しているバッファーに、この構造体の先頭から計算されたオフセット (バイト単位)。 ファイルパスは、16ビットのファイル Id の配列です。 1つ目の**ID は、** "2" または " **0x3f00**" のいずれかである必要があります。 最初の**ID が desginated の場合、パス**は**AppId**によってアプリケーションの ADF に対して相対的になります。 それ以外の場合は、MF から始まる絶対パスです。 |
+| 16 | 4 | FilePathSize | 幅 | ファイルパスのサイズ (バイト単位)。 |
+| 20 | 4 | fileOffset | UINT32 | ファイルからの読み取り時に使用されるオフセット。 このフィールドは256よりも大きくすることができます。また、 [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)で定義されているように、オフセットの最大値とオフセット低の両方を組み合わせています。 |
+| 24 | 4 | NumberOfBytes | UINT32 | 読み取るバイト数。 たとえば、クライアントドライバーは、この関数を使用して256バイトを超える transparent (バイナリ) ファイルを読み取ることができますが、1つの UICC 操作で読み取りまたは書き込みが可能な最大量は[ETSI TS 102 221 technical specification につき256バイトです。](https://go.microsoft.com/fwlink/p/?linkid=864594). これを複数の APDUs に分割し、結果を1回の応答で返すのは、関数の役割です。 |
+| 28 | 4 | LocalPinOffset | OFFSET | この構造体の先頭からパスワードを格納しているバッファーまでのオフセット (バイト単位)。 これはローカル PIN (PIN2) であり、操作でローカル PIN の検証が必要な場合に使用されます。 |
+| 32 | 4 | LocalPinSize | サイズ (0 ~ 16) | パスワードのサイズ (バイト単位)。 |
+| 36 | 4 | BinaryDataOffset | OFFSET | この構造体の先頭から、コマンド固有のデータを格納しているバッファーまでのオフセット (バイト単位)。 バイナリデータは、セット操作に対してのみ使用されます。 |
+| 40 | 4 | BinaryDataSize | サイズ (0 ~ 32768) | データのサイズ (バイト単位)。 |
+| 44 |   | DataBuffer | DATABUFFER | AppId、FilePath、LocalPin、および BinaryData を含むデータバッファー。 |
 
-### <a name="set"></a>Set
+### <a name="set"></a>設定
 
-透過的なファイルを更新します。 MBIM_COMMAND_MSG の InformationBuffer には MBIM_UICC_ACCESS_BINARY 構造体が含まれています。 MBIM_COMMAND_DONE の InformationBuffer MBIM_UICC_RESPONSE 構造体が返されます。
+適用できません。
 
 ### <a name="response"></a>応答
 
-次の MBIM_UICC_RESPONSE 構造は、InformationBuffer で使用されます。
+InformationBuffer では、次の MBIM_UICC_RESPONSE 構造が使用されます。
 
-#### <a name="mbimuiccresponse-version-1"></a>MBIM_UICC_RESPONSE (バージョン 1)
+#### <a name="mbim_uicc_response-version-1"></a>MBIM_UICC_RESPONSE (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 続いて、structurethat のバージョン番号。 このフィールドである必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | StatusWord1 | UINT32(0..256) | 戻り値パラメーター UICC コマンドに固有です。 |
-| 8 | 4 | StatusWord2 | UINT32(0..256) | 戻り値パラメーター UICC コマンドに固有です。 |
-| 12 | 4 | ResponseDataOffset | OFFSET | 計算されるこの構造体の先頭からの応答データを格納しているバッファーへのバイト オフセット。 応答データは、クエリ操作でのみ使用されます。 |
-| 16 | 4 | ResponseDataSize | サイズ (0..32768) | データのバイト単位のサイズ。 |
-| 20 |   | DataBuffer | DATABUFFER | ResponseData を含むデータ バッファーです。 |
+| 0 | 4 | バージョン | UINT32 | 次の構造体のバージョン番号。 この構造体のバージョン1では、このフィールドは**1**である必要があります。 |
+| 4 | 4 | StatusWord1 | UINT32 (0. 256) | UICC コマンドに固有の戻りパラメーター。 |
+| 8 | 4 | StatusWord2 | UINT32 (0. 256) | UICC コマンドに固有の戻りパラメーター。 |
+| 12 | 4 | ResponseDataOffset | OFFSET | この構造体の先頭から応答データを格納しているバッファーまでのオフセット (バイト単位)。 応答データはクエリ操作にのみ使用されます。 |
+| 16 | 4 | ResponseDataSize | サイズ (0 ~ 32768) | データのサイズ (バイト単位)。 |
+| 20 |   | DataBuffer | DATABUFFER | ResponseData を格納しているデータバッファー。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
 適用できません。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
 | 状態コード | 説明 |
 | --- | --- |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_SHAREABILITY_CONDITION_ERROR | 共有可能ではなく、別のアプリケーションによってアクセスされているために、ファイルを選択することはできません。 SIM によって返されるステータス ワードは、6985 です。 |
-| MBIM_STATUS_PIN_FAILURE | 暗証番号 (pin) エラーのため、操作が失敗しました。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_SHAREABILITY_CONDITION_ERROR | このファイルは共有可能ではなく、現在別のアプリケーションによってアクセスされているため、選択できません。 SIM によって返されるステータスワードは6985です。 |
+| MBIM_STATUS_PIN_FAILURE | PIN エラーが発生したため、操作に失敗しました。 |
 
-## <a name="mbimcidmsuiccaccessrecord"></a>MBIM_CID_MS_UICC_ACCESS_RECORD
+## <a name="mbim_cid_ms_uicc_access_record"></a>MBIM_CID_MS_UICC_ACCESS_RECORD
 
-この CID UICC 線形固定または循環のファイルの構造型へのアクセスに特定のコマンドを送信する**MBIMUiccFileStructureCyclic**または**MBIMUIccFileStructureLinear**します。
+この CID は、 **MBIMUiccFileStructureCyclic**または**MBIMUIccFileStructureLinear**の構造体型を使用して、uicc 線形固定ファイルまたは循環ファイルにアクセスするための特定のコマンドを送信します。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+|  | 設定 | クエリ | Notification |
 | --- | --- | --- | --- |
-| コマンド | MBIM_UICC_ACCESS_RECORD | MBIM_UICC_ACCESS_RECORD | 該当なし |
-| 応答 | MBIM_UICC_RESPONSE | MBIM_UICC_RESPONSE | 該当なし |
+| コマンド | 該当なし | MBIM_UICC_ACCESS_RECORD | 該当なし |
+| 応答 | 該当なし | MBIM_UICC_RESPONSE | 該当なし |
 
 ### <a name="query"></a>クエリ
 
-レコードの内容を読み取ります。 MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_UICC_ACCESS_RECORD 構造が含まれています。 MBIM_COMMAND_DONE の InformationBuffer MBIM_UICC_RESPONSE が返されます。
+レコードの内容を読み取ります。 MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_UICC_ACCESS_RECORD 構造が含まれています。 MBIM_COMMAND_DONE の InformationBuffer に MBIM_UICC_RESPONSE が返されます。
 
-#### <a name="mbimuiccaccessrecord-version-1"></a>MBIM_UICC_ACCESS_RECORD (バージョン 1)
+#### <a name="mbim_uicc_access_record-version-1"></a>MBIM_UICC_ACCESS_RECORD (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 次の構造のバージョン番号。 このフィールドを設定する必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | AppIdOffset | OFFSET | アプリケーション ID を格納するバッファーへのこの構造体の先頭からのバイト単位のオフセット |
-| 8 | 4 | AppIdSize | サイズ (0..16) | (バイト単位) のセクションの 8.3 で定義されている、アプリケーション ID のサイズ、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 2 G カードでは、このフィールドはゼロ (0) に設定する必要があります。 |
-| 12 | 4 | FilePathOffset | OFFSET | オフセット (バイト単位) は、ファイルのパスを含むバッファーには、この構造体の先頭から計算されます。 ファイルのパスは、16 ビットのファイル Id の配列です。 最初の ID はいずれかである必要があります**0x7FFF**または**0x3F00**します。 最初の ID が場合**0x7FFF**、によってアプリケーション desginated の ADF の相対パスですし、 **AppId**します。 それ以外の場合、MF から絶対パスになります。 |
-| 16 | 4 | FilePathSize | サイズ | ファイルのパス (バイト単位) のサイズ。 |
-| 20 | 4 | RecordNumber | UINT32(0..256) | レコードの数。 これは、常に絶対のレコードのインデックスを表します。 モデムは (次に、前) のファイルに対して複数回アクセスを実行できるため、相対レコードへのアクセスがサポートされていません。 |
-| 24 | 4 | LocalPinOffset | OFFSET | オフセット (バイト単位) は、パスワードを含んでいるバッファーには、この構造体の先頭から計算されます。 ロックのパスワードは、10 進数字の null で終わる utf-8 文字列です。 | 
-| 28 | 4 | LocalPinSize | サイズ (0..16) | (バイト単位)、パスワードのサイズ。 |
-| 32 | 4 | RecordDataOffset | OFFSET | オフセット (バイト単位) は、コマンドに固有のデータを格納しているバッファーには、この構造体の先頭から計算されます。 レコード データは、セットの操作にのみ使用されます。 |
-| 36 | 4 | RecordDataSize | サイズ (0..256) | データのバイト単位のサイズ。 |
-| 40 |   | DataBuffer | DATABUFFER | AppId、FilePath、LocalPin、および RecordData を含むデータ バッファーです。 |
+| 0 | 4 | バージョン | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドを**1**に設定する必要があります。 |
+| 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
+| 8 | 4 | AppIdSize | サイズ (0 ~ 16) | [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.3 で定義されている、アプリケーション ID のサイズ (バイト単位)。 2G カードの場合、このフィールドはゼロ (0) に設定する必要があります。 |
+| 12 | 4 | FilePathOffset | OFFSET | ファイルパスを格納しているバッファーに、この構造体の先頭から計算されたオフセット (バイト単位)。 ファイルパスは、16ビットのファイル Id の配列です。 1つ目の**ID は、** "2" または " **0x3f00**" のいずれかである必要があります。 最初の**ID が desginated の場合、パス**は**AppId**によってアプリケーションの ADF に対して相対的になります。 それ以外の場合は、MF から始まる絶対パスです。 |
+| 16 | 4 | FilePathSize | 幅 | ファイルパスのサイズ (バイト単位)。 |
+| 20 | 4 | RecordNumber | UINT32 (0. 256) | レコード番号。 これは、絶対レコードインデックスを常に表します。 モデムがファイル (次、前) に対して複数のアクセスを実行できるため、相対レコードアクセスはサポートされていません。 |
+| 24 | 4 | LocalPinOffset | OFFSET | この構造体の先頭からパスワードを格納しているバッファーまでのオフセット (バイト単位)。 ロックパスワードは、10進数の null で終わる UTF-8 文字列です。 | 
+| 28 | 4 | LocalPinSize | サイズ (0 ~ 16) | パスワードのサイズ (バイト単位)。 |
+| 32 | 4 | RecordDataOffset | OFFSET | この構造体の先頭から、コマンド固有のデータを格納しているバッファーまでのオフセット (バイト単位)。 レコードデータは、セット操作に対してのみ使用されます。 |
+| 36 | 4 | RecordDataSize | サイズ (0 ~ 256) | データのサイズ (バイト単位)。 |
+| 40 |   | DataBuffer | DATABUFFER | AppId、FilePath、LocalPin、および RecordData を含むデータバッファー。 |
 
-### <a name="set"></a>Set
+### <a name="set"></a>設定
 
-線形の固定または循環ファイルを更新します。 MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_UICC_ACCESS_RECORD 構造が含まれています。 MBIM_COMMAND_DONE の InformationBuffer MBIM_UICC_RESPONSE が返されます。
+適用できません。
 
 ### <a name="response"></a>応答
 
-MBIM_UICC_RESPONSE 構造体は、InformationBuffer で使用されます。
+InformationBuffer では、MBIM_UICC_RESPONSE 構造体が使用されます。
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
 適用できません。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
 | 状態コード | 説明 |
 | --- | --- |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_SHAREABILITY_CONDITION_ERROR | 共有可能ではなく、別のアプリケーションによってアクセスされているために、ファイルを選択することはできません。 SIM によって返されるステータス ワードは、6985 です。 |
-| MBIM_STATUS_PIN_FAILURE | 暗証番号 (pin) エラーのため、操作が失敗しました。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_SHAREABILITY_CONDITION_ERROR | このファイルは共有可能ではなく、現在別のアプリケーションによってアクセスされているため、選択できません。 SIM によって返されるステータスワードは6985です。 |
+| MBIM_STATUS_PIN_FAILURE | PIN エラーが発生したため、操作に失敗しました。 |
 
-## <a name="mbimcidmspinex"></a>MBIM_CID_MS_PIN_EX
+## <a name="mbim_cid_ms_pin_ex"></a>MBIM_CID_MS_PIN_EX
 
-セクション 9 で定義されているすべてのピン留めするセキュリティ操作を実行するこの CID が使用される、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 CID は MBIM_CID_MS_PIN に似ていますが、マルチ アプリ UICC カードをサポートするように拡張します。 1 つの検証に対応 UICCs のみがサポートされています。 暗証番号 (pin) がサポートされていない 1 つ以上のアプリケーションをサポートするマルチ verification 対応 UICCs します。 1 つのアプリケーション (PIN1) 暗証番号 (pin) は、すべての ADFs/DFs と、UICC 上のファイルに割り当てられます。 ただし、各アプリケーションでは、すべてのアクセス コマンドの追加の検証が必要になり、レベル 2 のユーザーの検証要件として、ローカルの PIN (暗証番号 2) を指定できます。 このシナリオは、MBIM_CID_MS_PIN_EX がサポートしています。
+この CID は、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション9で定義されているすべての PIN セキュリティ操作を実行するために使用されます。 CID は MBIM_CID_MS_PIN に似ていますが、マルチアプリの UICC カードをサポートするように拡張されています。 1つの検証に対応した UICCs のみがサポートされています。 複数のアプリケーション PIN をサポートするマルチ検証対応の UICCs はサポートされていません。 1つのアプリケーション PIN (PIN1) が、UICC 上のすべての ADFs/DFs およびファイルに割り当てられます。 ただし、各アプリケーションでは、レベル2のユーザー検証要件としてローカル PIN (PIN2) を指定できます。その結果、すべてのアクセスコマンドに対して追加の検証が必要になります。 このシナリオは MBIM_CID_MS_PIN_EX でサポートされています。
 
-MBIM_CID_MS_PIN と同じように MBIM_CID_MS_PIN_EX でデバイスを報告するだけ 1 つの PIN、時にします。 複数の Pin が有効になっているし、複数の Pin の報告を有効にも、機能する必要がありますを報告 PIN1 最初。 たとえば、subsidy ロックの報告を有効にすると、SIM の PIN1 が有効になっている、し subsidy ロック PIN に報告されます後続のクエリ要求 PIN1 が正常に検証された後にのみ。 MBIMPinOperationEnter と共に空の PIN が許可されます。 空の PIN を指定するには、PinSize を 0 に設定します。 この場合、SET コマンドでは、クエリに似ていて、参照ピンの状態を返します。 指定したセクション 11.1.9 の確認 コマンドの動作に整列されて完全、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。
+MBIM_CID_MS_PIN_EX MBIM_CID_MS_PIN と同様に、デバイスは一度に1つの PIN のみを報告します。 複数の Pin が有効になっていて、複数の Pin を報告する場合も、関数は PIN1 を最初に報告する必要があります。 たとえば、subsidy ロックレポートが有効で、SIM の PIN1 が有効になっている場合、PIN1 が正常に検証された後にのみ、後続のクエリ要求で subsidy lock PIN を報告する必要があります。 空の PIN は、MBIMPinOperationEnter と共に使用できます。 空の PIN を指定するには、PinSize を0に設定します。 この場合、SET コマンドはクエリに似ており、参照先の PIN の状態を返します。 これは、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション11.1.9 で指定されている VERIFY コマンドの動作に完全に対応しています。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+|  | 設定 | クエリ | Notification |
 | --- | --- | --- | --- |
 | コマンド | MBIM_SET_PIN_EX | MBIM_PIN_APP | 該当なし |
 | 応答 | MBIM_PIN_INFO_EX | MBIM_PIN_INFO_EX | 該当なし |
 
 ### <a name="query"></a>クエリ
 
-次の MBIM_PIN_APP 構造は、InformationBuffer で使用されます。
+InformationBuffer では、次の MBIM_PIN_APP 構造が使用されます。
 
-#### <a name="mbimpinapp-version-1"></a>MBIM_PIN_APP (バージョン 1)
-
-| Offset | サイズ | フィールド | 種類 | 説明 |
-| --- | --- | --- | --- | --- |
-| 0 | 4 | バージョン | UINT32 | 次の構造のバージョン番号。 このフィールドを設定する必要があります**1**この構造体のバージョン 1。 |
-| 4 | 4 | AppIdOffset | OFFSET | アプリケーション ID を格納するバッファーへのこの構造体の先頭からのバイト単位のオフセット |
-| 8 | 4 | AppIdSize | サイズ (0..16) | (バイト単位) のセクションの 8.3 で定義されている、アプリケーション ID のサイズ、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 2 G カードでは、このフィールドはゼロ (0) に設定する必要があります。 |
-| 12 |   | DataBuffer | DATABUFFER | 定義されている、AppId、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 |
-
-### <a name="set"></a>Set
-
-次の MBIM_SET_PIN_EX 構造は、InformationBuffer で使用されます。
-
-#### <a name="mbimsetpinex"></a>MBIM_SET_PIN_EX
+#### <a name="mbim_pin_app-version-1"></a>MBIM_PIN_APP (バージョン 1)
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PinType | MBIM_PIN_TYPE_EX | 暗証番号 (pin) の型。 このトピックの「MBIM_PIN_TYPE_EX テーブルを参照してください。 |
-| 4 | 4 | PinOperation | MBIM_PIN_OPERATION | ピン留め操作です。 MBIM 1.0 を参照してください。 |
-| 8 | 4 | PinOffset | OFFSET | 暗証番号 (pin)、操作を実行するための暗証番号 (pin) 値を表す文字列をこの構造体の先頭からのオフセット (バイト単位) が計算されますか、有効または PIN の設定を無効にするために必要な暗証番号 (pin) の値。 このフィールドはのすべての値に適用されます。 **PinOperation**します。 |
-| 12 | 4 | PinSize | サイズ (0..32) | PIN の使用、バイト単位のサイズ。 |
-| 16 | 4 | NewPinOffset | OFFSET | この構造体の先頭からのオフセット (バイト単位) が計算されます、 **NewPin**を設定するときに新しい PIN の値を表す文字列を**PinOperation**は MBIMPinOperationChange またはMBIMPinOperationEnter、PinTypeMBIMPinTypePuk1 または PinTypeMBIMPinTypePuk2 します。 |
-| 20 | 4 | NewPinSize | サイズ (0..32) | 使用される、NewPin バイト サイズ。 |
-| 24 | 4 | AppIdOffset | OFFSET | アプリケーション ID を含むバッファーをこの構造体の先頭からのオフセット (バイト単位) が計算されます。 |
-| 28 | 4 | AppIdSize | サイズ (0..16) | (バイト単位) のセクションの 8.3 で定義されている、アプリケーション ID のサイズ、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 2 G カードでは、このフィールドはゼロ (0) に設定する必要があります。 |
-| 32 |   | DataBuffer | DATABUFFER | 暗証番号 (pin)、NewPin、および AppId を含むデータ バッファー。 |
+| 0 | 4 | バージョン | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドを**1**に設定する必要があります。 |
+| 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
+| 8 | 4 | AppIdSize | サイズ (0 ~ 16) | [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.3 で定義されている、アプリケーション ID のサイズ (バイト単位)。 2G カードの場合、このフィールドはゼロ (0) に設定する必要があります。 |
+| 12 |   | DataBuffer | DATABUFFER | [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)で定義されている AppId。 |
+
+### <a name="set"></a>設定
+
+InformationBuffer では、次の MBIM_SET_PIN_EX 構造が使用されます。
+
+#### <a name="mbim_set_pin_ex"></a>MBIM_SET_PIN_EX
+
+| Offset | サイズ | フィールド | 種類 | 説明 |
+| --- | --- | --- | --- | --- |
+| 0 | 4 | PinType | MBIM_PIN_TYPE_EX | PIN の種類。 このトピックの MBIM_PIN_TYPE_EX テーブルを参照してください。 |
+| 4 | 4 | PinOperation | MBIM_PIN_OPERATION | PIN 操作。 「MBIM 1.0」を参照してください。 |
+| 8 | 4 | PinOffset | OFFSET | この構造体の先頭から、アクションの実行に使用する PIN 値を表す文字列 PIN、または PIN 設定を有効または無効にするために必要な PIN 値までのオフセット (バイト単位)。 このフィールドは、 **Pinoperation**のすべての値に適用されます。 |
+| 12 | 4 | PinSize | サイズ (0. 32) | PIN に使用されるサイズ (バイト単位)。 |
+| 16 | 4 | NewPinOffset | OFFSET | PinTypeMBIMPinTypePuk1 または MBIMPinOperationEnter の場合、 **Pinoperation**が MBIMPinOperationChange またはの場合に設定する新しい pin 値を表す**newpin**文字列に、この構造体の先頭から計算されたオフセット (バイト単位)。PinTypeMBIMPinTypePuk2. |
+| 20 | 4 | NewPinSize | サイズ (0. 32) | NewPin に使用されるサイズ (バイト単位)。 |
+| 24 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
+| 28 | 4 | AppIdSize | サイズ (0 ~ 16) | [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション8.3 で定義されている、アプリケーション ID のサイズ (バイト単位)。 2G カードの場合、このフィールドはゼロ (0) に設定する必要があります。 |
+| 32 |   | DataBuffer | DATABUFFER | Pin、NewPin、および AppId を格納しているデータバッファー。 |
 
 ### <a name="response"></a>応答
 
-次の MBIM_PIN_INFO_EX 構造は、InformationBuffer で使用されます。
+InformationBuffer では、次の MBIM_PIN_INFO_EX 構造が使用されます。
 
 | Offset | サイズ | フィールド | 種類 | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PinType | MBIM_PIN_TYPE_EX | 暗証番号 (pin) の型。 このトピックの「MBIM_PIN_TYPE_EX テーブルを参照してください。 |
-| 4 | 4 | PinState | MBIM_PIN_STATE | 暗証番号 (pin) の状態。 MBIM 1.0 を参照してください。 |
-| 8 | 4 | RemainingAttempts | UINT32 | 残り試行回数を有効にする、暗証番号 (pin) に関連する操作など」と入力します、または無効にします。 この情報をサポートしていないデバイスでは、このメンバーを 0 xffffffff に設定する必要があります。 |
+| 0 | 4 | PinType | MBIM_PIN_TYPE_EX | PIN の種類。 このトピックの MBIM_PIN_TYPE_EX テーブルを参照してください。 |
+| 4 | 4 | PinState | MBIM_PIN_STATE | PIN の状態。 「MBIM 1.0」を参照してください。 |
+| 8 | 4 | RemainingAttempts | UINT32 | Enter、enable、disable など、PIN に関連する操作の残りの試行回数。 この情報をサポートしていないデバイスは、このメンバーを0xFFFFFFFF に設定する必要があります。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
 適用できません。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
 | 状態コード | 説明 |
 | --- | --- |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
 | MBIM_STATUS_PIN_DISABLED | PIN が無効になっているため、操作に失敗しました。 |
-| MBIM_STATUS_PIN_REQUIRED | 続行する PIN を入力する必要があるため操作に失敗しました。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | 暗証番号 (pin)、対応する型のセットが、デバイスでサポートされていないため、操作が失敗しました。 |
+| MBIM_STATUS_PIN_REQUIRED | 操作を実行できませんでした。続行するには、PIN を入力する必要があります。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | 対応する PIN の種類に設定されているがデバイスでサポートされていないため、操作に失敗しました。 |

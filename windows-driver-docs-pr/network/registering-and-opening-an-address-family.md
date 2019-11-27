@@ -3,18 +3,18 @@ title: アドレス ファミリの登録と開始
 description: アドレス ファミリの登録と開始
 ms.assetid: 2249adf9-2876-4442-be94-1a966d3f1c88
 keywords:
-- アドレス ファミリの WDK ネットワーク
+- アドレスファミリ WDK ネットワーク
 - AFs WDK ネットワーク
-- アドレス ファミリを登録します。
-- アドレス ファミリを開く
+- アドレスファミリの登録
+- アドレスファミリを開く
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cdeda547b17d3c637ca1780bf09d57cba210588
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 912909cf2a8de29ab5e059d7ce2abf945f2e0599
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374780"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842089"
 ---
 # <a name="registering-and-opening-an-address-family"></a>アドレス ファミリの登録と開始
 
@@ -22,47 +22,47 @@ ms.locfileid: "67374780"
 
 
 
-コール マネージャーは、各 NIC の接続指向のクライアントに呼び出し manager サービスを提供するアドレス ファミリを登録する必要があります。 同様に、MCM、ドライバーは、管理している NIC のアドレス ファミリを登録する必要があります。
+呼び出しマネージャーは、接続指向クライアントにコールマネージャーサービスを提供する各 NIC のアドレスファミリを登録する必要があります。 同様に、MCM ドライバーは、管理する NIC のアドレスファミリを登録する必要があります。
 
-アドレス ファミリを登録することにより、コール マネージャーまたは MCM ドライバーは、アダプターにバインドされたすべての接続指向のクライアントに、コール マネージャーのまたは MCM ドライバーのサービスを提供する NDIS とします。
+アドレスファミリを登録すると、呼び出しマネージャーまたは MCM ドライバーによって、NDIS は、アダプターにバインドされているすべての接続指向クライアントに、呼び出しマネージャーまたは MCM ドライバーのサービスを提供します。
 
-接続指向のクライアントが、コール マネージャーまたは MCM ドライバーによってアドバタイズされたサービスを使用する場合は、コール マネージャーや MCM ドライバーのアドレス ファミリを開くことできます。
+接続指向クライアントで、コールマネージャーまたは MCM ドライバーによって提供されるサービスを使用できる場合は、通話マネージャーまたは MCM ドライバーを使用してアドレスファミリを開くことができます。
 
-### <a name="registering-an-address-family-from-a-call-manager"></a>コール マネージャーから、アドレス ファミリを登録します。
+### <a name="registering-an-address-family-from-a-call-manager"></a>通話マネージャーからのアドレスファミリの登録
 
-後にその[ *ProtocolBindAdapterEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_bind_adapter_ex)関数バインドで基になるミニポート ドライバー [ **NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex)、コール マネージャー呼び出し[ **NdisCmRegisterAddressFamilyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmregisteraddressfamilyex)バインディングのアドレス ファミリを登録する (次の図を参照してください)。
+[*Protocolbindadapterex*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_bind_adapter_ex)関数を[**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)を使用して基になるミニポートドライバーにバインドした後、呼び出しマネージャーは[**NdisCmRegisterAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmregisteraddressfamilyex)を呼び出して、バインドのアドレスファミリを登録します (次の図を参照)。).
 
-![登録して、コール マネージャーを開くと、アドレス ファミリを示す図](images/cm-01.png)
+![通話マネージャーを使用したアドレスファミリの登録とオープンを示す図](images/cm-01.png)
 
-呼び出し**NdisCmRegisterAddressFamilyEx**コール マネージャーの特定のシグナル通知サービスをアドバタイズします。 コール マネージャーは、アドレスを登録する必要がありますファミリするごとにその*ProtocolBindAdapterEx*関数し、呼びますし、使用して、NIC に正常にバインド[ **NdisOpenAdapterEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisopenadapterex).
+**NdisCmRegisterAddressFamilyEx**を呼び出すと、呼び出しマネージャー固有のシグナリングサービスがアドバタイズされます。 呼び出しマネージャーは、 *Protocolbindadapterex*関数が呼び出され、 [**NdisOpenAdapterEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenadapterex)を使用して NIC に正常にバインドされるたびに、アドレスファミリを登録する必要があります。
 
-コール マネージャーは、バインドされているすべてのミニポート ドライバーは、複数のアドレス ファミリをサポートできます。 コール マネージャーでは、バインドされている NIC が 1 つでも 1 つ以上のアドレス ファミリをサポートできます。 コール マネージャーは、バインディングでは、各アドレス ファミリ用の同じエントリ ポイントを登録する必要があります。 1 つだけのコール マネージャーは、任意の特定のミニポート ドライバーにバインドされているクライアントに対して特定の種類のアドレス ファミリをサポートできます。 コール マネージャーのエントリ ポイントを登録の詳細については、次を参照してください。[いる CoNDIS 登録](condis-registration.md)します。
+コールマネージャーは、バインドされているすべてのミニポートドライバーで複数のアドレスファミリをサポートできます。 また、呼び出しマネージャーは、1つの NIC で1つ以上のアドレスファミリをサポートすることもできます。 呼び出しマネージャーは、バインドの各アドレスファミリに対して同じエントリポイントを登録する必要があります。 特定の種類のアドレスファミリは、特定のミニポートドライバーにバインドされているクライアントに対して1つしかサポートできません。 呼び出しマネージャーのエントリポイントの登録の詳細については、「 [Condis 登録](condis-registration.md)」を参照してください。
 
-### <a name="registering-an-address-family-from-an-mcm-driver"></a>アドレス ファミリ、MCM ドライバーからの登録
+### <a name="registering-an-address-family-from-an-mcm-driver"></a>MCM ドライバーからのアドレスファミリの登録
 
-MCM にドライバーを呼び出す**NdisMCmRegisterAddressFamilyEx**からその[ *MiniportInitializeEx* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-miniport_initialize) でそのミニポートドライバーのエントリポイントを登録すた後関数[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismregisterminiportdriver)します。 Regsitering エントリに関する詳細については、「、[いる CoNDIS 登録](condis-registration.md)します。 MCM にドライバーを呼び出す[ **NdisMCmRegisterAddressFamilyEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmregisteraddressfamilyex)接続指向のクライアントにそのサービスを提供する 1 回 (次の図を参照してください)。
+MCM ドライバーは、そのミニポートドライバーエントリポイントを[**NdisMRegisterMiniportDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismregisterminiportdriver)に登録した後、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize)関数から**NdisMCmRegisterAddressFamilyEx**を呼び出します。 レジストリポイントの詳細については、「」を参照し[てください。](condis-registration.md) MCM ドライバーは、 [**NdisMCmRegisterAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmregisteraddressfamilyex)を1回呼び出して、そのサービスを接続指向クライアントに提供します (次の図を参照してください)。
 
-![登録して、mcm のドライバーを開くと、アドレス ファミリを示す図](images/fig1-01.png)
+![mcm ドライバーを使用したアドレスファミリの登録とオープンを示す図](images/fig1-01.png)
 
-接続指向のシグナリング サポートのオンボードになっている NIC のミニポート ドライバーとして登録できます自体、MCM ドライバー場合でも、コール マネージャーが使用可能な可能性があります。 これにより、このような MCM ドライバーには、その NIC にコール マネージャーとしてコール マネージャーが横取りされ
+オンボード接続指向の信号サポートを備えた NIC のミニポートドライバーは、コールマネージャーが使用可能な場合でも、それ自体を MCM ドライバーとして登録できます。 このようにすることで、このような MCM ドライバーは、その NIC の呼び出しマネージャーとしてプリエンプションを呼び出します。
 
-### <a name="opening-an-address-family"></a>アドレス ファミリを開く
+### <a name="opening-an-address-family"></a>アドレスファミリを開く
 
-呼び出しをコール マネージャーのまたは MCM ドライバーの**Ndis (M) CmRegisterAddressFamily** NDIS を呼び出すと、 [ **ProtocolCoAfRegisterNotify** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_co_af_register_notify)の各関数(前の 2 つの図に示すように)、バインドの接続指向クライアント。
+呼び出しマネージャーまたは MCM ドライバーの**ndis (M) CmRegisterAddressFamily**呼び出しによって、ndis はバインド上の各接続指向クライアントの[**Protocolcoafregisternotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_co_af_register_notify)関数を呼び出します (前の2つの図を参照)。
 
-*ProtocolCoAfRegisterNotify*クライアントがこの特定の CM または MCM のドライバーのサービスを使用できるかどうかを判断するアドレス ファミリのデータを調査します。 かどうか、クライアントは、(M) CM が指定したアドレス ファミリのデータの変更を加えることは、コール マネージャーまたは MCM ドライバーの特定のシグナル通知プロトコルのサポートによって異なります。
+*Protocolcoafregisternotify*は、アドレスファミリデータを調べて、クライアントがこの特定の CM または mcm ドライバーのサービスを使用できるかどうかを判断します。 クライアントが (M) CM によって指定されたアドレスファミリデータを変更できるかどうかは、呼び出しマネージャーまたは MCM ドライバーの特定のシグナリングプロトコルのサポートに依存します。
 
-クライアントは、提供された呼び出し管理サービスを検索する場合*ProtocolCoAfRegisterNotify* 、クライアントと呼び出しの AF あたりコンテキストの領域を割り当てます[ **NdisClOpenAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex). **NdisClOpenAddressFamilyEx** NDIS を使用して、クライアントの接続指向のエントリ ポイントは登録されません。 NDIS との接続指向のエントリ ポイントの登録の詳細については、次を参照してください。[いる CoNDIS 登録](condis-registration.md)します。
+提供されている呼び出し管理サービスがクライアントによって検出された場合、 *Protocolcoafregisternotify*はクライアントに AF コンテキスト領域を割り当て、 [**NdisClOpenAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)を呼び出します。 **NdisClOpenAddressFamilyEx**は、クライアントの接続指向エントリポイントを NDIS に登録しません。 接続指向エントリポイントを NDIS に登録する方法の詳細については、「 [Condis 登録](condis-registration.md)」を参照してください。
 
-呼び出し**NdisClOpenAddressFamilyEx**と呼び出しを上司に NDIS または MCM ドライバーの[ **ProtocolCmOpenAf** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nc-ndis-protocol_cm_open_af) (前述のように既に 2 つの関数図の場合)。 *ProtocolCmOpenAf*によって、クライアントの有効なアドレス ファミリで渡される割り当てとアドレス ファミリのこのインスタンスを開いているクライアントに代わって操作を実行するために必要なリソースを初期化します。 *ProtocolCmOpenAf* NDIS 指定も格納*NdisAfHandle*コール マネージャーとオープン アドレス ファミリ用のクライアント間の関連付けを表します。
+**NdisClOpenAddressFamilyEx**を呼び出すと、NDIS によって、呼び出しマネージャーまたは mcm ドライバーの[**protocolcmoを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-protocol_cm_open_af)呼び出すことができます (前の2つの図を参照)。 *Protocolcmoの af*は、クライアントが有効なアドレスファミリで渡されたことを確認し、アドレスファミリのこのインスタンスを開いているクライアントに代わって操作を実行するために必要なリソースを割り当てて初期化します。 *ProtocolcmoNdisAfHandle*は、オープンアドレスファミリの呼び出しマネージャーとクライアントの関連付けを表す、NDIS によって提供されるも格納します。
 
-*ProtocolCmOpenAf*同期または非同期で完了できます。 非同期的に完了する、 *ProtocolCmOpenAf*コール マネージャーの関数を呼び出す[ **NdisCmOpenAddressFamilyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndiscmopenaddressfamilycomplete)、 *ProtocolCmOpenAf* MCM ドライバーの関数を呼び出す[ **NdisMCmOpenAddressFamilyComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismcmopenaddressfamilycomplete)します。 呼び出し**Ndis (M) CmOpenAddressFamilyComplete** NDIS を呼び出すと、 *ProtocolOpenAfComplete*関数を呼び出した元クライアントの**NdisClOpenAddressFamilyEx**.
+*Protocolcmoの af*は、同期的または非同期的に完了できます。 非同期的に完了するために[ **、呼び出しマネージャー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscmopenaddressfamilycomplete)の*ProtocolcmoNdisCmOpenAddressFamilyComplete af*関数は、を呼び出します。MCM ドライバーの*ProtocolcmoNdisMCmOpenAddressFamilyComplete af*関数は、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcmopenaddressfamilycomplete)を呼び出します。 **Ndis (M) CmOpenAddressFamilyComplete**を呼び出すと、ndis は、もともと**NdisClOpenAddressFamilyEx**と呼ばれていたクライアントの*ProtocolOpenAfComplete*関数を呼び出します。
 
-場合に、クライアントの呼び出し**NdisClOpenAddressFamilyEx** NDIS をクライアントに返しますが、成功すると、 *NdisAfHandle*コール マネージャーとオープン アドレス用のクライアント間の関連付けを表すファミリ。
+クライアントの**NdisClOpenAddressFamilyEx**への呼び出しが成功した場合、NDIS は、open address ファミリの呼び出しマネージャーとクライアントの関連付けを表す*NdisAfHandle*をクライアントに返します。
 
-クライアントが、受信呼び出しを受け入れる場合通常は[レジスタの 1 つまたは複数の SAPs](registering-a-sap.md)からその*ProtocolClOpenAfCompleteEx*関数を呼び出すことによって[ **NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclregistersap)次の成功した呼び出し[ **NdisClOpenAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisclopenaddressfamilyex)します。
+クライアントが着信呼び出しを受け入れる場合は、通常、 [**NdisClOpenAddressFamilyEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclopenaddressfamilyex)への呼び出しが成功した後に[**NdisClRegisterSap**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclregistersap)を呼び出すことによって、 *Protocolclo afcompleteex*関数から[1 つ](registering-a-sap.md)以上の sap を登録します。
 
-発信呼び出しは、クライアントが、それが[1 つまたは複数の VCs を作成](creating-a-vc.md)でその*ProtocolClOpenAfCompleteEx* 1 つまたは複数で、発信通話を行うには、そのクライアントの要求に応じるために機能します。
+クライアントが発信呼び出しを行う場合、発信呼び出しを行うために1つまたは複数のクライアントからの要求を想定して、その*Protocolcloの*関数に[1 つ](creating-a-vc.md)以上の VCs を作成できます。
 
  
 

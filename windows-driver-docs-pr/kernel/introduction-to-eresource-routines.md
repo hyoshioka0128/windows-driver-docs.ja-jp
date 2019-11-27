@@ -3,20 +3,20 @@ title: ERESOURCE 構造体の概要
 description: ERESOURCE 構造体の概要
 ms.assetid: 5c7759db-aeb5-47f3-8adc-ddedb74b5cb4
 keywords:
-- 次の構造体
-- 排他の待機処理の WDK カーネル
-- 共有の待機処理の WDK カーネル
-- 排他/共有の同期の WDK カーネル
-- 同期の WDK カーネル、排他/共有
-- 待機処理の WDK カーネル
+- ÷の構造体
+- exclusive 待機処理 WDK カーネル
+- shared 待機処理 WDK カーネル
+- 排他的/共有同期 WDK カーネル
+- 同期 WDK カーネル、排他/共有
+- 待機処理 WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 609800a2fee6db3c167f973a2c3d28b003a7d94c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1f9575b485ef1d75c184f1f8e49033fba33135a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369736"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838627"
 ---
 # <a name="introduction-to-eresource-routines"></a>ERESOURCE 構造体の概要
 
@@ -24,41 +24,41 @@ ms.locfileid: "67369736"
 
 
 
-システムは、取得およびその現在の状態を確認したり、次の構造を解放するルーチンを提供します。
+システムには、現在の状態を確認するためだけでなく、作業中の構造体を取得して解放するルーチンが用意されています。
 
-### <a name="acquiring-and-releasing-an-eresource-structure"></a>取得と開放を次の構造体
+### <a name="acquiring-and-releasing-an-eresource-structure"></a>を取得し、この構造体を解放する
 
-ドライバーは、次の構造体を使用して実装する*排他/共有の同期*します。 排他/共有の同期はように動作します。
+ドライバーは、使用して、*共有と共有の同期*を実装することができます。 排他的/共有同期は次のように機能します。
 
--   任意の数のスレッドは、共有として、次を取得できます。
+-   任意の数のスレッドが、共有として共有を取得できます。
 
--   1 つのスレッドでは、のみ、スケジュールの作成を取得できます。 ÷ リソースだけを専用のスレッドが既に取得がない場合、共有として取得できます。
+-   1つのスレッドのみが、1つの資源を排他的に取得できます。 %1 は、まだ共有として取得されているスレッドがない場合にのみ取得できます。
 
-÷ リソースを取得するまで、÷ リソースを取得できません現在のスレッドは必要に応じて待機状態で配置できます。 システムは、スケジュールの作成を待機しているスレッドの 2 つのリストを保持: 一連の*排他待機処理*の一覧と*待機処理の共有*。
+現在の場合は、現在のスレッドを待機状態にすることができます。 システムは、2つのスレッドのリストを保持しています。これは、*待機処理*の一覧と*共有待機処理*のリストです。
 
-排他/共有の同期の一般的な用途では、読み取り/書き込みロックを実装します。 読み取り/書き込みロックは、読み取り操作を実行する複数のスレッドが 1 つのスレッドが同時に書き込むことができます。 これは、次の取得の観点から直接実装できます。
+排他的/共有同期の一般的な使用方法は、読み取り/書き込みロックを実装することです。 読み取り/書き込みロックでは、複数のスレッドで読み取り操作を実行できますが、一度に書き込むことができるスレッドは1つだけです。 これは、によって直接実装できます。
 
-ドライバーは、次に、記憶域を割り当てますで初期化して[ **ExInitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializeresourcelite)します。 システムでは、使用中のすべてのスケジュール作成構造体のリストを保持します。 呼び出す必要がありますが、ドライバーでは、特定のスケジュール作成が必要なくなる、 [ **ExDeleteResourceLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exdeleteresourcelite)システムの一覧から削除します。 ドライバーが、呼び出すことによって、スケジュール作成再利用できるも[ **ExReinitializeResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreinitializeresourcelite)します。
+ドライバーは、資源のストレージを割り当て、 [**Exinitializer Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)を使用して初期化します。 システムは、使用されているすべての÷の構造体の一覧を保持します。 ドライバーが特定の資源を必要としなくなった場合は、 [**ExDeleteResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exdeleteresourcelite)を呼び出してシステムの一覧から削除する必要があります。 また、ドライバーは、 [**Exreinitializer Eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)を呼び出すことによって、資源を再利用することもできます。
 
-ドライバーは、次に、次の基本的な操作を実行できます。
+ドライバーは、次の基本的な操作を実行できます。
 
--   共有として、次の取得[ **ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)します。 このルーチンは、リソースが排他的に取得されていないと、排他待機処理がない場合にのみ、リソースを取得します。
+-   [**ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)を使用して共有として共有を取得します。 このルーチンは、リソースが排他的に取得されておらず、排他的な待機処理がない場合にのみ、リソースを取得します。
 
--   取得のみで、スケジュール作成[ **ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)します。 取得されていないのみまたは共有のいずれかであれば、このルーチンは、リソースを取得します。
+-   [**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)を使用して、"%" を排他的に取得します。 このルーチンは、排他的にまたは共有として取得されていない限り、リソースを取得します。
 
--   排他の取得をによる取得を共有する変換[ **ExConvertExclusiveToSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544558)します。
+-   [**ExConvertExclusiveToSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544558)を使用して、排他取得を共有取得に変換します。
 
--   取得したリソースを解放[ **ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exreleaseresourcelite)します。
+-   [**ExReleaseResourceLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreleaseresourcelite)を使用して、取得したリソースを解放します。
 
-*待機*パラメーターの[ **ExAcquireResourceSharedLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544363)と[ **ExAcquireResourceExclusiveLite** ](https://msdn.microsoft.com/library/windows/hardware/ff544351)が獲得される次の現在のスレッドが待機するかどうかを決定します。 値を指定する場合**FALSE** 、÷ リソースを取得することはできませんし、ルーチンを返します**FALSE**します。 値を指定する場合**TRUE**、現在のスレッドは、次の適切な待機リストに配置します。
+[**ExAcquireResourceSharedLite**](https://msdn.microsoft.com/library/windows/hardware/ff544363)と[**ExAcquireResourceExclusiveLite**](https://msdn.microsoft.com/library/windows/hardware/ff544351)の*Wait*パラメーターによって、現在のスレッドが、現在のスレッドが使用されるのを待機しているかどうかが判断されます。 値を**false**に指定し、かつ、値を取得できない場合、ルーチンは**false**を返します。 値**TRUE**を指定した場合、現在のスレッドは、その値に対応する待機リストに配置されます。
 
-### <a name="examining-the-state-of-an-eresource-structure"></a>次の構造体の状態を調べる
+### <a name="examining-the-state-of-an-eresource-structure"></a>の状態を調べています。
 
-ドライバーは、スケジュール作成の現在の状態を次のように特定もできます。
+また、次のように、ドライバーは、現在の状態を確認することもできます。
 
--   使用[ **ExIsResourceAcquiredLite** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545466(v=vs.85))または[ **ExIsResourceAcquiredSharedLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredsharedlite)スケジュールの作成が既にかどうかを判断するには共有または排他として取得します。 使用[ **ExIsResourceAcquiredExclusiveLite** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exisresourceacquiredexclusivelite)かどうか、スケジュールの作成が取得されている具体的には排他的にチェックします。
+-   [**ExIsResourceAcquiredLite**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545466(v=vs.85))または[**ExIsResourceAcquiredSharedLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredsharedlite)を使用して、が既に shared または exclusive として取得されているかどうかを確認します。 [**ExIsResourceAcquiredExclusiveLite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exisresourceacquiredexclusivelite)を使用して、指定されているときに、そのときに、このときには、このときにのみ。
 
--   使用して、 [ **ExGetSharedWaiterCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetsharedwaitercount) 、次の共有の待機処理の数を決定して、使用する[ **ExGetExclusiveWaiterCount** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exgetexclusivewaitercount)、次の排他待機処理の数を決定します。
+-   ExGetExclusiveWaiterCount の共有待機処理の数を確認するには、 [**Exgetsharedwa count**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exgetsharedwaitercount)を使用します。また、待機処理の排他的の数を決定するには、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exgetexclusivewaitercount)を使用します。
 
  
 

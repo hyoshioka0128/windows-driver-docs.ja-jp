@@ -3,127 +3,127 @@ title: IRP_MN_SURPRISE_REMOVAL 要求の処理
 description: IRP_MN_SURPRISE_REMOVAL 要求の処理
 ms.assetid: 39a90617-40ad-4c10-95d3-2b618d66d70e
 keywords:
-- 突然の PnP WDK の削除
+- 不用意の削除 WDK PnP
 - IRP_MN_SURPRISE_REMOVAL
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c62730867b226430f37d6d2df9360cd9733a4b8f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3eeaa38dbcbf7f354a1b0f5ab0eb1084739b4a0e
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386876"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836597"
 ---
-# <a name="handling-an-irp_mn_surprise_removal-request"></a>IRP の処理\_MN\_突然\_削除要求
+# <a name="handling-an-irp_mn_surprise_removal-request"></a>IRP\_処理\_突然\_の削除要求
 
 
 
 
 
-Windows 2000 および PnP マネージャー後で、デバイスが I/O 操作に使用できるが不要になったと、コンピューター (「突然削除」) から予期せずに削除された可能性がありますドライバーに通知するには、この IRP を送信します。
+Windows 2000 以降の PnP マネージャーは、この IRP を送信して、デバイスが i/o 操作で使用できなくなったため、予期せずコンピューターから削除された ("突然の削除") ことをドライバーに通知します。
 
-PnP マネージャーに送信、 [ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)要求は、次の理由。
+PnP マネージャーは、次の理由により、 [**IRP\_削除要求\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)を送信します。
 
--   バスに通知のホット プラグがある場合は、デバイスが表示されなくなったデバイスの親のバス ドライバーに通知します。 バス ドライバー呼び出し[ **IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicerelations)します。 PnP マネージャーがその子のバス ドライバーをクエリの応答、([**IRP\_MN\_クエリ\_デバイス\_リレーション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations)の**BusRelations**)。 PnP マネージャーでは、デバイスが新しい子の一覧にないし、デバイスの場合は、その突然削除操作を開始します。 を決定します。
+-   バスにホットプラグ通知がある場合は、デバイスが消失したことをデバイスの親バスドライバーに通知します。 バスドライバーは[**IoInvalidateDeviceRelations**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicerelations)を呼び出します。 応答として、PnP マネージャーは、その子のバスドライバーを照会します ([**IRP\_\_クエリ\_デバイス\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-device-relations) **busrelations**の関係)。 PnP マネージャーは、デバイスが新しい子リストに含まれていないと判断し、そのデバイスに対する突然の削除操作を開始します。
 
--   その他の理由、バスが列挙され、突然削除されたデバイスは、子の一覧には含まれません。 PnP マネージャーは、突然の削除操作を開始します。
+-   バスは別の理由で列挙され、突然削除されたデバイスは子の一覧に含まれません。 PnP マネージャーは、突然の削除操作を開始します。
 
--   (ため、たとえば、繰り返し、要求がタイムアウト時)、デバイスは存在しないデバイスの機能のドライバーを決定します。 バスは、列挙可能な可能性がありますが、ホット プラグ通知はありません。 この場合、関数のドライバーを呼び出す[ **IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)します。 PnP マネージャーに送信、応答で、 [ **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)デバイス スタックを要求します。 関数ドライバー、PNP を設定する\_デバイス\_の失敗のフラグ、 [ **PNP\_デバイス\_状態**](#about-pnp_device_state)デバイスが失敗したことを示すビットマスク。
+-   デバイスの関数ドライバーは、デバイスが存在しないことを判断します (たとえば、要求が繰り返しタイムアウトするなど)。 バスは列挙可能ですが、ホットプラグ通知を持っていない可能性があります。 この場合、関数ドライバーは[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)を呼び出します。 応答として、PnP マネージャーは、 [**pnp\_デバイス\_状態要求\_、IRP\_\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)をデバイススタックに送信します。 関数ドライバーは、デバイスに障害が発生したことを示す[**pnp\_デバイスの\_状態**](#about-pnp_device_state)のビットマスクで、PNP\_デバイス\_失敗フラグを設定します。
 
--   ドライバー スタックが正常に完了、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求が、その後、後続の失敗した[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。 このような場合、デバイスは接続されていると思います。
+-   ドライバースタックは正常に Irp\_を完了し、デバイスの要求[ **\_を停止\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)ますが、その後の[**irp\_完了\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求の開始\_失敗します。 このような場合は、デバイスがまだ接続されている可能性があります。
 
-すべての PnP ドライバーは、この IRP を処理する必要があり、設定する必要があります**Irp -&gt;IoStatus.Status**ステータス\_成功します。 PnP デバイスのドライバーを処理するために準備する必要があります**IRP\_MN\_突然\_削除**ドライバーの後にいつでも[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチンが呼び出されます。 IRP の適切な処理は、ドライバー、PnP マネージャーを有効にします。
+すべての PnP ドライバーはこの IRP を処理する必要があり、 **irp&gt;IoStatus. status**を STATUS\_SUCCESS に設定する必要があります。 PnP デバイス用のドライバーは、ドライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンが呼び出された後、いつでも**IRP\_\_\_** 処理するように準備する必要があります。 IRP を適切に処理することで、ドライバーと PnP マネージャーは次のことができるようになります。
 
-1.  まだ接続されている場合、デバイスを無効にします。
+1.  デバイスがまだ接続されている場合は、デバイスを無効にします。
 
-    ドライバー スタックが正常に完了した場合、 [ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)要求が、その後、何らかの理由で失敗しました、後続[**IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求、デバイスを無効にする必要があります。
+    ドライバースタックが Irp\_が正常に完了した場合は、デバイス要求の[ **\_を停止\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)ますが、何らかの理由により後続の irp\_失敗して[ **\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)の要求を開始すると、デバイスを無効にする必要があります。\_
 
-2.  デバイスに割り当てられたハードウェア リソースを解放し、別のデバイスに利用できるようにします。
+2.  デバイスに割り当てられているハードウェアリソースを解放し、別のデバイスで使用できるようにします。
 
-    デバイスが使用できなくするとすぐにハードウェア リソースを解放する必要があります。 PnP マネージャーは、このユーザーがホット プラグ、マシンに、同じデバイスを含む別のデバイスにリソースを再割り当てしできます。
+    デバイスが使用できなくなるとすぐに、ハードウェアリソースが解放されます。 PnP マネージャーは、同じデバイスを含む別のデバイスにリソースを再割り当てできます。この場合、ユーザーはコンピューターにホットプラグバックする可能性があります。
 
-3.  データの損失やシステムの停止のリスクを最小限に抑えます。
+3.  データ損失とシステム中断のリスクを最小限に抑えます。
 
-    ホットプラグとそのドライバーをサポートするデバイスは、突然の削除を処理するために設計する必要があります。 ユーザーは、いつでもホットプラグ機能をサポートするデバイスを削除できるようにする予定です。
+    ホットプラグとそのドライバーをサポートするデバイスは、突然の削除を処理するように設計する必要があります。 ユーザーは、ホットプラグをサポートするデバイスをいつでも削除できることを期待しています。
 
-PnP マネージャーに送信、 **IRP\_MN\_突然\_削除**IRQL = パッシブ\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストで、IRQL = パッシブ\_レベルでの**IRP\_削除\_を\_** して、IRP を送信します。
 
-PnP マネージャーでは、ユーザー モード アプリケーションとその他のカーネル モード コンポーネントに通知する前に、この IRP がドライバーに送信します。 IRP が完了したら、PnP マネージャーに送信した後、 **EventCategoryTargetDeviceChange** GUID を持つ通知\_ターゲット\_デバイス\_削除\_カーネル モードの完了デバイスでは、このような通知に登録するコンポーネント。
+PnP マネージャーは、ユーザーモードアプリケーションやその他のカーネルモードコンポーネントに通知する前に、この IRP をドライバーに送信します。 IRP が完了すると、PnP マネージャーは、\_デバイスの GUID\_ターゲットと共に**Eventcomponents Targetdevicechange** notification を送信\_\_ます。この通知に登録されているカーネルモードコンポーネントには、ドライブ.
 
-**IRP\_MN\_突然\_削除**デバイス スタックの最上位のドライバー、続いて各 [次へ] の下のドライバー、IRP が最初に処理されます。
+**Irp\_\_驚く\_削除**irp は、まずデバイススタックの上位ドライバーによって処理され、次に下位のドライバーごとに処理されます。
 
-応答で**IRP\_MN\_突然\_削除**ドライバーが一覧表示されている順序で、以下を実行する必要があります。
+**IRP\_が\_驚く\_削除**されると、ドライバーは次の処理を順番に実行する必要があります。
 
-1.  デバイスが削除されたかどうかを決定します。
+1.  デバイスが削除されているかどうかを確認します。
 
-    ドライバー常に、デバイスがまだ接続されているかどうかの判断を試みます。 場合は、ドライバーは、デバイスを停止および無効にすることを試みる必要があります。
+    ドライバーは、デバイスがまだ接続されているかどうかを常に判断する必要があります。 有効である場合、ドライバーはデバイスを停止して無効にする必要があります。
 
-2.  (割り込み、I/O ポート、メモリのレジスタおよび DMA チャネル) のデバイスのハードウェア リソースを解放します。
+2.  デバイスのハードウェアリソース (割り込み、i/o ポート、メモリレジスタ、および DMA チャネル) を解放します。
 
-3.  親のバス ドライバー、バス スロット電源、ドライバーではこれを行う場合。 呼び出す[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)電源マネージャーに通知します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
+3.  親バスドライバーで、ドライバーが対応できる場合はバススロットの電源を入れます。 [**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)を呼び出して、電源マネージャーに通知します。 詳細については、「[電源管理](implementing-power-management.md)」を参照してください。
 
-4.  デバイスで新しい I/O 操作を防止します。
+4.  デバイスで新しい i/o 操作を実行しないようにします。
 
-    ドライバーを後続処理[ **IRP\_MJ\_クリーンアップ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)、 [ **IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)、 [ **IRP\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)、および[ **IRP\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)要求ですが、ドライバーは、新しい I/O 操作を防ぐ必要があります。 ドライバーは、デバイスが閉じる、クリーンアップ、および PnP Irp だけでなく、存在していた場合、ドライバーは処理後の Irp で失敗する必要があります。
+    ドライバーは、後続の[**irp\_MJ\_CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)、 [**irp\_MJ\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)、 [**irp\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)、および[**irp\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)要求を処理する必要がありますが、ドライバーは新しい i/o 操作。 ドライバーは、終了、クリーンアップ、および PnP Irp 以外に、デバイスが存在する場合にドライバーによって処理された後続の Irp をすべて失敗させる必要があります。
 
-    ドライバーが、デバイスが突然削除されたことを示すデバイス拡張機能で少し設定できます。 ドライバーのディスパッチ ルーチンは、このビットをチェックする必要があります。
+    ドライバーは、デバイスが突然削除されたことを示すために、デバイス拡張機能のビットを設定できます。 ドライバーのディスパッチルーチンは、このビットを確認する必要があります。
 
-5.  デバイスで未処理の I/O 要求が失敗します。
+5.  デバイス上の未処理の i/o 要求を失敗させます。
 
-6.  続行すると、デバイスのドライバーが処理しないすべての Irp を渡します。
+6.  ドライバーがデバイス用に処理しない Irp を引き続き渡します。
 
-7.  デバイスのインターフェイスを無効にする[ **IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)します。
+7.  [**Iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)を使用してデバイスインターフェイスを無効にします。
 
-8.  任意のデバイスに固有の割り当て、メモリ、イベント、またはその他のシステム リソースをクリーンアップします。
+8.  デバイス固有の割り当て、メモリ、イベント、またはその他のシステムリソースをクリーンアップします。
 
-    それに続くを受信するまで、ドライバーはこのようなクリーンアップを延期でした[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)レガシ コンポーネントの開いているハンドルである場合は、要求閉じることができません、削除の IRP は送信されません。
+    ドライバーは、後続の IRP\_を受け取るまで、このようなクリーンアップを延期して[ **\_デバイス要求を削除\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)ます。ただし、レガシコンポーネントに閉じられないハンドルが開いている場合は、remove IRP は送信されません。
 
-9.  デバイス スタックに接続されているデバイス オブジェクトのままにします。
+9.  デバイスオブジェクトはデバイススタックにアタッチしたままにしておきます。
 
-    デタッチしてそれに続くまで、デバイス オブジェクトを削除しない**IRP\_MN\_削除\_デバイス**要求。
+    その後の**IRP\_完了\_\_デバイス**の要求を削除するまで、デバイスオブジェクトをデタッチして削除しないでください。
 
 10. IRP を終了します。
 
-    関数またはフィルター ドライバーでは。
+    関数またはフィルタードライバーの場合:
 
-    -   設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+    -   **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-    -   [次へ] スタックの場所を設定[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で [次へ] の下位のドライバーに IRP を渡すと[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
+    -   [**IoskipIoCallDriver Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用して次のスタックの場所を設定し、IRP を次の下位[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)のドライバーに渡します。
 
-    -   状態を反映**保留**から戻り値の状態として、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+    -   **IoCallDriver**の状態を[*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンからの戻りステータスとして伝達します。
 
-    -   IRP を実行しないでください。
+    -   IRP を完了しないでください。
 
-    (子 PDO に対してこの IRP を処理) している、バス ドライバー。
+    バスドライバー (子 PDO に対してこの IRP を処理する) では、次の操作を行います。
 
-    -   設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+    -   **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-    -   IRP の完了 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) IO と\_いいえ\_インクリメントします。
+    -   IO\_\_を増やさずに、IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
-    -   戻り値、 *DispatchPnP*ルーチン。
+    -   *DispatchPnP*ルーチンからを返します。
 
-PnP マネージャーが送信した後、この IRP が成功し、デバイスへのすべての開いているハンドルが閉じられている、 [ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)デバイス スタックを要求します。 IRP の削除に応答してでは、ドライバーは、スタックからそれらのデバイス オブジェクトをデタッチし、それらを削除します。 レガシ コンポーネントが開き、デバイスにハンドルと外に出て、ハンドルを開く I/O の失敗にかかわらず、PnP マネージャー削除 IRP を送信しません。
+この IRP が成功し、デバイスに対して開いているハンドルがすべて閉じられると、PnP マネージャーは、デバイススタックに\_デバイスの要求を[**削除\_、IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)を送信します。 Remove IRP に応答して、ドライバーはデバイスオブジェクトをスタックからデタッチし、削除します。 レガシコンポーネントにデバイスが開かれているハンドルがあり、i/o エラーが発生してもハンドルが開いたままになっている場合、PnP マネージャーは削除 IRP を送信しません。
 
-すべてのドライバーでは、この IRP を処理する必要があり、マシンから、デバイスが物理的に削除されたことに注意してください。 一部のドライバーでは、ただしが有害な結果 IRP を処理しない場合。 たとえば、ハードウェア リソースは、消費しませんので、システムのハードウェア リソースを消費しませんされ、USB または 1394 などのプロトコルに基づくバス上に存在するデバイスをリンク付けできません。 ドライバーが、関数とフィルター ドライバー親バス ドライバーを介してのみ、デバイスをアクセスするため、削除された後、デバイスにアクセスしようとしてのリスクはありません。 バスは、削除の通知をサポートするため、親のバス ドライバー、デバイスが表示されなくなり、バス ドライバーには、デバイスにアクセスする後続のすべてが失敗したときに通知されます。
+すべてのドライバーがこの IRP を処理する必要があり、デバイスがコンピューターから物理的に削除されていることに注意してください。 ただし、一部のドライバーでは、IRP を処理しないと、悪影響を及ぼすことはありません。 たとえば、システムハードウェアリソースを消費せず、プロトコルベースのバス上に存在するデバイス (USB や1394など) は、を消費しないため、ハードウェアリソースを割り当てることができません。 ドライバーが削除された後に、ドライバーがデバイスにアクセスしようとするリスクはありません。これは、機能とフィルタードライバーが親バスドライバーを使用してのみデバイスにアクセスするためです。 バスは削除通知をサポートしているため、デバイスが非表示になったときに親バスドライバーに通知され、その後デバイスへのすべてのアクセス試行がバスドライバーによって失敗します。
 
-Windows 98 で、PnP マネージャーを送信しませんこの IRP/。 PnP マネージャーがのみに送信して、ユーザーは、最初に、適切なユーザー インターフェイスを使用せず、デバイスを削除した場合、 **IRP\_MN\_削除\_デバイス**デバイスのドライバーを要求します。 すべての WDM ドライバーは、両方を処理する必要があります**IRP\_MN\_突然\_削除**と**IRP\_MN\_削除\_デバイス**。 コードを**IRP\_MN\_削除\_デバイス**ドライバーが突然削除の前の IRP を受信し、両方のケースを処理する必要があるかどうかを確認する必要があります。
+Windows 98/Me では、PnP マネージャーはこの IRP を送信しません。 ユーザーが適切なユーザーインターフェイスを使用せずにデバイスを削除した場合、PnP マネージャーは、デバイスのドライバーに\_デバイスの要求を**削除\_、IRP\_** を送信します。 すべての WDM ドライバーは、 **irp\_\_** を処理する必要があります。突然\_削除し、 **IRP\_\_デバイスを削除\_** ます。 **Irp\_\_削除\_デバイス**のコードでは、ドライバーが前の予期しない IRP を受信し、両方のケースを処理する必要があるかどうかを確認する必要があります。
 
- ## <a name="using-guid_reenumerate_self_interface_standard"></a>GUID_REENUMERATE_SELF_INTERFACE_STANDARD を使用します。
+ ## <a name="using-guid_reenumerate_self_interface_standard"></a>GUID_REENUMERATE_SELF_INTERFACE_STANDARD の使用
 
-GUID_REENUMERATE_SELF_INTERFACE_STANDARD インターフェイスでは、そのデバイスが再度列挙することを要求するためのドライバーを使用します。
+GUID_REENUMERATE_SELF_INTERFACE_STANDARD インターフェイスを使用すると、ドライバーはデバイスを再列挙するように要求できます。
 
-このインターフェイスを使用するには、InterfaceType にバス ドライバーに IRP_MN_QUERY_INTERFACE IRP を送信 GUID_REENUMERATE_SELF_INTERFACE_STANDARD を = です。 バス ドライバーでは、インターフェイスの個々 のルーチンへのポインターを格納する REENUMERATE_SELF_INTERFACE_STANDARD 構造体へのポインターを提供します。 A [ReenumerateSelf ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-preenumerate_self)バス ドライバーに子デバイスが再列挙を要求します。
+このインターフェイスを使用するには、InterfaceType = GUID_REENUMERATE_SELF_INTERFACE_STANDARD を使用して IRP_MN_QUERY_INTERFACE IRP をバスドライバーに送信します。 バスドライバーは、インターフェイスの個々のルーチンへのポインターを含む REENUMERATE_SELF_INTERFACE_STANDARD 構造体へのポインターを提供します。 [ReenumerateSelf ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-preenumerate_self)は、バスドライバーが子デバイスを reenumerate することを要求します。
 
 
 ## <a name="about-pnp_device_state"></a>PNP_DEVICE_STATE について
 
-PNP\_デバイス\_状態の種類は PnP デバイスの状態を記述するビットマスク。 ドライバーへの応答でこの型の値を返します、 **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**要求。
+PNP\_デバイスの\_状態の種類は、デバイスの PnP 状態を示すビットマスクです。 ドライバーは、 **IRP\_の\_クエリ\_PNP\_デバイス\_状態**要求に応答して、この型の値を返します。
 
 ``` syntax
 typedef ULONG PNP_DEVICE_STATE, *PPNP_DEVICE_STATE;
 ```
 
-フラグのビットで、PNP\_デバイス\_状態値は次のように定義されます。
+PNP\_デバイス\_状態値のフラグビットは、次のように定義されます。
 
 <table>
 <colgroup>
@@ -132,56 +132,56 @@ typedef ULONG PNP_DEVICE_STATE, *PPNP_DEVICE_STATE;
 </colgroup>
 <thead>
 <tr class="header">
-<th>フラグのビット</th>
+<th>フラグビット</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>PNP_DEVICE_DISABLED</td>
-<td><p>デバイスが物理的に存在するが、ハードウェアでは無効です。</p></td>
+<td><p>デバイスは物理的に存在していますが、ハードウェアで無効になっています。</p></td>
 </tr>
 <tr class="even">
 <td>PNP_DEVICE_DONT_DISPLAY_IN_UI</td>
-<td><p>デバイスをユーザー インターフェイスに表示されません。 物理的に存在するラップトップ コンピューター、ラップトップがドッキングされていないときに、使用できないゲーム ポートなど、現在の構成では使用できませんが、デバイスの設定します。 (も参照してください、 <strong>NoDisplayInUI</strong>フラグ、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities" data-raw-source="[&lt;strong&gt;DEVICE_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities)"> <strong>DEVICE_CAPABILITIES</strong> </a>構造です)。</p></td>
+<td><p>デバイスをユーザーインターフェイスに表示しません。 物理的に存在するが、現在の構成では使用できないデバイスに対して設定します。たとえば、ラップトップのドッキングが解除されたときには使用できない、ラップトップのゲームポートなどです。 ( <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities" data-raw-source="[&lt;strong&gt;DEVICE_CAPABILITIES&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_capabilities)"><strong>DEVICE_CAPABILITIES</strong></a>構造体の<strong>Nodisplayinui</strong>フラグも参照してください)。</p></td>
 </tr>
 <tr class="odd">
 <td>PNP_DEVICE_FAILED</td>
-<td><p>デバイスがあり、正しく機能していません。</p>
-<p>このフラグと PNP_DEVICE_RESOURCE_REQUIREMENTS_CHANGED の両方を設定すると、PnP マネージャー (途切れることがなく再調整は、デバイスのサポートされていません)、新しいハードウェア リソースを割り当てる前に、このデバイスを停止する必要があります。</p></td>
+<td><p>デバイスは存在しますが、正常に機能していません。</p>
+<p>このフラグと PNP_DEVICE_RESOURCE_REQUIREMENTS_CHANGED の両方を設定した場合、PnP マネージャが新しいハードウェアリソースを割り当てる前にデバイスを停止する必要があります (デバイスでは、無着陸再調整はサポートされていません)。</p></td>
 </tr>
 <tr class="even">
 <td>PNP_DEVICE_NOT_DISABLEABLE</td>
-<td><p>コンピューターの起動時、デバイスが必要です。 このようなデバイスを無効にしない必要があります。</p>
-<p>ドライバーは、デバイスのシステムの適切な操作に必要な場合、このビットを設定します。 ドライバーがページング パスでデバイスが通知を受け取る場合など (<a href="irp-mn-device-usage-notification.md" data-raw-source="[&lt;strong&gt;IRP_MN_DEVICE_USAGE_NOTIFICATION&lt;/strong&gt;](irp-mn-device-usage-notification.md)"><strong>IRP_MN_DEVICE_USAGE_NOTIFICATION</strong> </a>の<strong>DeviceUsageTypePaging</strong>)、ドライバー呼び出し<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate" data-raw-source="[&lt;strong&gt;IoInvalidateDeviceState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)"> <strong>IoInvalidateDeviceState</strong> </a> 、最終的なこのフラグを設定および<strong>IRP_MN_QUERY_PNP_DEVICE_STATE</strong>要求。</p>
-<p>このビットが設定されて、デバイスの場合、PnP マネージャーには、親デバイス、その親の親のデバイスなどを行うには、この設定が反映されます。</p>
-<p>このビットがルートで列挙されるデバイスに設定されている場合、デバイスを無効またはアンインストールできません。</p></td>
+<td><p>デバイスは、コンピューターを起動するときに必要になります。 このようなデバイスは無効にしないでください。</p>
+<p>ドライバーは、適切なシステム操作に必要なデバイスにこのビットを設定します。 たとえば、デバイスがページングパス ( <strong>DeviceIoInvalidateDeviceState Typepaging</strong>の場合は<a href="irp-mn-device-usage-notification.md" data-raw-source="[&lt;strong&gt;IRP_MN_DEVICE_USAGE_NOTIFICATION&lt;/strong&gt;](irp-mn-device-usage-notification.md)"><strong>IRP_MN_DEVICE_USAGE_NOTIFICATION</strong></a> ) にあるという通知をドライバーが受信すると、ドライバーは<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate" data-raw-source="[&lt;strong&gt;IoInvalidateDeviceState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)"></a>を呼び出し、結果の<strong>IRP_MN_QUERY_PNP_DEVICE_STATE</strong>要求にこのフラグを設定します。</p>
+<p>このビットがデバイスに対して設定されている場合、PnP マネージャーは、デバイスの親デバイス (親デバイス) にこの設定を反映します。</p>
+<p>このビットがルートで列挙されたデバイスに対して設定されている場合、デバイスを無効にしたり、アンインストールしたりすることはできません。</p></td>
 </tr>
 <tr class="odd">
 <td>PNP_DEVICE_REMOVED</td>
-<td><p>デバイスが物理的に削除されました。</p></td>
+<td><p>デバイスは物理的に削除されています。</p></td>
 </tr>
 <tr class="even">
 <td>PNP_DEVICE_RESOURCE_REQUIREMENTS_CHANGED</td>
 <td><p>デバイスのリソース要件が変更されました。</p>
-<p>通常、バス ドライバーは、新しい子デバイスを列挙するためのリソース要件を展開する必要がありますと判断したときに、このフラグを設定します。</p></td>
+<p>通常、バスドライバーは、新しい子デバイスを列挙するためにリソース要件を拡張する必要があると判断したときに、このフラグを設定します。</p></td>
 </tr>
 <tr class="odd">
 <td>PNP_DEVICE_DISCONNECTED</td>
-<td><p>デバイス ドライバーが読み込まれますが、このドライバーは、デバイスが不要になったコンピューターに接続されていることを検出しました。 通常、このフラグは、ワイヤレス デバイスと通信する関数のドライバーに対して使用されます。 たとえば、フラグは、デバイスが範囲外へ移動しすると、デバイスの範囲に移動し、再度接続をオフに設定されます。</p>
-<p>バス ドライバーでは、このフラグは通常は設定されません。 代わりに、デバイスが不要になった接続されている場合は、子デバイスを列挙するバス ドライバーを停止します。 このフラグは、関数のドライバーが接続を管理する場合にのみ使用されます。</p>
-<p>このフラグの唯一の目的では、クライアントが、デバイスが接続されているかどうかを把握できるようにします。 フラグを設定するには影響しません、ドライバーが読み込まれるかどうか。</p></td>
+<td><p>デバイスドライバーが読み込まれていますが、このドライバーは、デバイスがコンピューターに接続されていないことを検出しました。 通常、このフラグは、ワイヤレスデバイスと通信する関数ドライバーに使用されます。 たとえば、デバイスが範囲外に移動したときにフラグが設定され、デバイスが範囲内に戻り、再接続された後にクリアされます。</p>
+<p>通常、バスドライバーはこのフラグを設定しません。 デバイスが接続されていない場合は、代わりに、バスドライバーが子デバイスの列挙を停止する必要があります。 このフラグは、関数ドライバーが接続を管理する場合にのみ使用されます。</p>
+<p>このフラグの唯一の目的は、デバイスが接続されているかどうかをクライアントに通知することです。 フラグを設定しても、ドライバーが読み込まれるかどうかには影響しません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-PnP マネージャー クエリ、デバイスの PNP\_デバイス\_状態を送信してデバイスの開始直後に、 **IRP\_MN\_クエリ\_PNP\_デバイス\_状態**デバイス スタックを要求します。 この IRP に応答してでデバイスのドライバーは PNP で適切なフラグを設定\_デバイス\_状態。
+PnP マネージャーは、デバイスを起動した直後にデバイスの PNP\_デバイス\_状態を照会します。これには、IRP\_完了した **\_クエリ\_pnp\_デバイス\_状態**要求をデバイススタックに送信します。 この IRP に応答して、デバイスのドライバーによって、PNP\_デバイス\_状態の適切なフラグが設定されます。
 
-最初のクエリの後に状態の特性のいずれかを変更する場合、ドライバー マネージャーに通知します PnP 呼び出して[ **IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinvalidatedevicestate)します。 呼び出しに応答**IoInvalidateDeviceState**、PnP マネージャー クエリ、デバイスの PNP\_デバイス\_もう一度状態します。
+最初のクエリの後に状態の特性が変化した場合、ドライバーは[**IoInvalidateDeviceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)を呼び出すことによって PnP マネージャーに通知します。 PnP マネージャーは、 **IoInvalidateDeviceState**への呼び出しに応答して、デバイスの PNP\_デバイス\_状態を再度照会します。
 
-デバイスは PNP マークされている場合\_デバイス\_いない\_DISABLEABLE、デバッガーを表示する、DNUF\_いない\_devnode DISABLEABLE ユーザー フラグ。 デバッガーを表示することも、 **DisableableDepends**上の理由から、デバイスを無効にできない理由の数をカウントする値。 この値は、X は 1 つのデバイスを無効にすることはできません、Y は無効にすることはできません、デバイスの子のデバイスの数の場合、X + Y の合計です。
+デバイスが PNP\_とマークされている場合\_\_DISABLEABLE が許可されていないと、デバッガーによって、devnode の DNUF\_\_DISABLEABLE ユーザーフラグが表示されます。 デバッガーでは、デバイスを無効にできない理由の数をカウントする**Disableabledepends**値も表示されます。 この値は X + Y の合計です。 X は、デバイスを無効にできない場合は1、Y は無効にできないデバイスの子デバイスの数を示します。
 
 
 

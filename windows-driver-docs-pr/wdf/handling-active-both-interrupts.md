@@ -4,37 +4,37 @@ description: Active-Both 割り込みの処理
 ms.assetid: CFA205B1-FDDD-4E27-8CF9-106C8D1CC4EF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a4994396d0e2937f9fea92838f88e17131b11672
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66568a41b18d1e9599cb199b24721259ccbb932f
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384441"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844431"
 ---
 # <a name="handling-active-both-interrupts"></a>Active-Both 割り込みの処理
 
 
-**注**  このトピックには、のみをカーネル モード ドライバー フレームワーク (KMDF) 1.13 およびそれ以前のバージョンが適用されます。
+**注**  このトピックは、カーネルモードドライバーフレームワーク (kmdf) バージョン1.13 以前にのみ適用されます。
 
  
 
-多くのデバイスでは、その割り込みの生成を制御し、マスク ハードウェア レジスタがあります。 通常、このようなデバイス ドライバー KMDF および UMDF ドライバーは、組み込みの割り込みのフレームワークのサポートを使用します。
+多くのデバイスには、割り込みの生成とマスキングを制御するハードウェアレジスタがあります。 通常、このようなデバイスの KMDF および UMDF ドライバーは、フレームワークの組み込みの割り込みサポートを使用します。
 
-ただし、チップ (SoC) のハードウェア プラットフォーム上のシステム上の単純なデバイスでは、割り込みのハードウェア レジスタがあります。 結果としてのようなデバイス ドライバーが割り込みが生成されるときにコントロールをことができるいない、またはハードウェアの割り込みをマスクすることができる可能性があります。 デバイスが接続時にすぐに中断して、ドライバーは割り込みのフレームワークのサポートを使用して、フレームワーク、framework 割り込みオブジェクトの初期化が完了する前に割り込み可能性が。 その結果、KMDF ドライバーでは、接続し、切断の割り込みを直接 WDM ルーチンを呼び出す必要があります。 UMDF ドライバーでは、これらのメソッドを呼び出すことはできません、ために、このようなデバイスの UMDF ドライバーを記述することはできません。
+ただし、チップ (SoC) ハードウェアプラットフォーム上のシステム上の単純なデバイスには、割り込み用のハードウェアレジスタがない場合があります。 その結果、割り込みが生成されるタイミングを制御できない場合や、ハードウェアで割り込みをマスクできる場合があります。 デバイスが接続時にすぐに割り込み、ドライバーがフレームワークの割り込みサポートを使用している場合は、フレームワークがフレームワークの interrupt オブジェクトを完全に初期化する前に割り込みが発生する可能性があります。 その結果、KMDF ドライバーは、接続して割り込みを切断するために、WDM ルーチンを直接呼び出す必要があります。 UMDF ドライバーはこれらのメソッドを呼び出すことができないため、このようなデバイスには UMDF ドライバーを書き込むことはできません。
 
 このトピックでは、KMDF ドライバーがこのようなデバイスの割り込みを処理する方法について説明します。
 
-SoC のハードウェア プラットフォームでアクティブ両方の割り込みは通常、ハードウェアのプッシュ ボタンのような非常に単純なデバイスを使用します。 ユーザーは、クリック 1 回押すと、デバイスからの割り込みシグナル線低から高、または高からに移行低します。 ユーザーはリリース、プッシュ ボタン、割り込みの線は反対方向に遷移します。 GPIO ピン構成アクティブ両方の割り込みの入力が、システムのどちらの場合も、周辺機器のデバイス ドライバーの割り込みサービス ルーチン (ISR) を呼び出すことで、低-高と高から低の両方の遷移の割り込みを生成します。 ただし、ドライバーの移行が低-高または高から低かどうかを示す値を受け取りませんしません。
+SoC ハードウェアプラットフォームでは、アクティブ-両方の割り込みは通常、ハードウェアプッシュボタンなどの非常に単純なデバイスに使用されます。 ユーザーがプッシュボタンを押すと、デバイスの割り込み信号線が低から高に、または高から低に遷移します。 ユーザーがプッシュボタンを放すと、割り込み線は反対方向に遷移します。 アクティブ-両方の割り込み入力として構成された GPIO pin は、低対高の遷移と高対低の遷移の両方で割り込みを生成するため、システムは両方の場合に周辺機器ドライバーの割り込みサービスルーチン (ISR) を呼び出します。 ただし、ドライバーは、移行が低対高または高から低のどちらであるかを示すものではありません。
 
-低-高と高から低の遷移を区別するために、ドライバーは、各割り込みの状態を追跡する必要があります。 これを行うには、ドライバーがブール割り込み状態の値であるを維持可能性があります**FALSE**割り込み回線の状態が低いときと**TRUE**行の状態が高い場合。
+低い遷移と高対低の遷移を区別するために、ドライバーは各割り込みの状態を追跡する必要があります。 これを行うために、ドライバーでは、割り込みラインの状態が低い場合は**FALSE**であり、行の状態が高の場合は**TRUE**になるブール値の割り込み状態の値を維持することができます。
 
-たとえば、システムの起動時に低に回線の状態が既定値があるとします。 ドライバーの初期化に状態値**FALSE**でその[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数。 状態の変化のシグナル、ドライバーの ISR が呼び出されるたびに、ドライバーを反転その ISR. で状態の値
+システムの起動時に行の状態が既定値 low になる例を考えてみましょう。 このドライバーは、 [*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数で状態値を**FALSE**に初期化します。 その後、ドライバーの ISR が呼び出されるたびに、状態の変化が通知されます。その後、ドライバーはその ISR の状態値を反転します。
 
-回線の状態が高い場合、システムの起動時に有効にした後すぐに割り込みが発生します。 ドライバーを呼び出すため、 [ **IoConnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)呼び出す代わりに直接、日常的な[ **WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)は即時割り込みの受信のことを確認します。
+システムの起動時に行の状態が高い場合は、有効になった直後に割り込みが発生します。 ドライバーは、 [**IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)ルーチンを直接呼び出すのではなく、 [**WdfInterruptCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nf-wdfinterrupt-wdfinterruptcreate)を呼び出すのではなく、直ちに可能な割り込みを受け取ることを保証します。
 
-このソリューションでは、GPIO コント ローラーが、ハードウェアの割り込みのアクティブ両方をサポートすることや、GPIO コント ローラー用ドライバーがのソフトウェアのアクティブな両方の割り込みをエミュレートすることが必要です。 アクティブな両方の割り込みをエミュレートする方法の詳細については、の説明を参照して、 **EmulateActiveBoth**のメンバー、 [**コント ローラー\_属性\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags)構造体。
+このソリューションでは、GPIO コントローラーがハードウェアのアクティブな割り込みをサポートするか、または GPIO コントローラーのドライバーがソフトウェアのアクティブな割り込みをエミュレートする必要があります。 アクティブな両方の割り込みをエミュレートする方法の詳細については、[**コントローラー\_属性\_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_controller_attribute_flags)構造体の**EmulateActiveBoth**メンバーの説明を参照してください。
 
-次のコード例では、周辺機器の KMDF ドライバーが割り込み極性を追跡する方法を示します。
+次のコード例は、周辺機器の KMDF ドライバーが割り込み極性を追跡する方法を示しています。
 
 ```cpp
 typedef struct _INTERRUPT_CONTEXT INTERRUPT_CONTEXT, *PINTERRUPT_CONTEXT;
@@ -171,11 +171,11 @@ EvtDeviceReleaseHardware(
 }
 ```
 
-上記のコードの例で、ドライバーの[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数は、デバイス コンテキストを構成しを呼び出して[ **IoInitializeDpcRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioinitializedpcrequest)を登録する、 [ *DpcForIsr* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_dpc_routine)ルーチン。
+上記のコード例では、ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数によって、デバイスコンテキストが構成され、 [*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)ルーチンを登録するために[**Ioinitializer edpcreクエスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinitializedpcrequest)が呼び出されます。
 
-ドライバーの[ *InterruptService* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kservice_routine)ルーチンが割り込み状態の値を反転し、呼び出します[ **IoRequestDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iorequestdpc) DPC キューに登録します。
+ドライバーの[*InterruptService*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kservice_routine)ルーチンは、割り込み状態の値を反転し、 [**IoRequestDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iorequestdpc)を呼び出して DPC をキューに置いています。
 
-その[ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数では、ドライバーを初期化する状態値**FALSE**号餧ェヒェマル[ **IoConnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioconnectinterruptex)します。 その[ *EvtDeviceReleaseHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)コールバック関数では、ドライバー呼び出し[ **IoDisconnectInterruptEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterruptex)その ISR. の登録を解除するには
+[*EvtdeviceIoConnectInterruptEx ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数では、ドライバーは状態値を**FALSE**に初期化し、次に[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioconnectinterruptex)を呼び出します。 [*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) callback 関数では、ドライバーは[**IoDisconnectInterruptEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterruptex)を呼び出して、ISR の登録を解除します。
 
  
 

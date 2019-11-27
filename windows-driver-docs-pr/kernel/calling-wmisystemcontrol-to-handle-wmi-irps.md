@@ -3,18 +3,18 @@ title: WMI IRP を処理するための WmiSystemControl の呼び出し
 description: WMI IRP を処理するための WmiSystemControl の呼び出し
 ms.assetid: a2fa53e2-6468-4c3c-8b41-9a97305abc43
 keywords:
-- WMI の WDK カーネルでは、要求
-- WDK の WMI の要求
+- WMI WDK カーネル、要求
+- WDK WMI を要求する
 - Irp WDK WMI
-- WmiSystemControl
+- Wmi コントロール
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af17b88cf9e58ae2d7ea38a15da9d6fc6ca0b2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a67216bde594957962bea380bbe2863ff35f727a
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387016"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828572"
 ---
 # <a name="calling-wmisystemcontrol-to-handle-wmi-irps"></a>WMI IRP を処理するための WmiSystemControl の呼び出し
 
@@ -22,39 +22,39 @@ ms.locfileid: "67387016"
 
 
 
-WMI のライブラリ ルーチンがこのような各要求を処理する代わりに、ドライバーを呼び出すためにの WMI 要求の処理を簡略化[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)します。 **WmiSystemControl**呼び出し、ドライバーは初期化された渡します[ **WMILIB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)ドライバーのを指すエントリを含む構造体[WMI ライブラリ コールバック ルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index)(*DpWmiXxx*ルーチン) と、ドライバーのデータ ブロックおよびブロックのイベントに関する情報。
+WMI ライブラリルーチンは、このような要求を処理するのではなく、WMI の要求の処理を簡略化[**します。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) Wmi**コントロール**の呼び出しで、ドライバーは、初期化された[**WMB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)構造を渡します。この構造体には、ドライバーの[WMI ライブラリコールバックルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index) *("* データポイント" ルーチン) へのエントリポイントと、ドライバーのデータブロックとイベントブロック。
 
-WMI ライブラリは動的なインスタンス名または静的インスタンス名の一覧を渡すためのメカニズムを提供しないために、ドライバーは、PDO または 1 つのベース名の文字列に基づく静的インスタンスの名前を唯一のデータ ブロックに関連した要求を処理するために WMI ライブラリを使用できます。 静的および動的なインスタンス名の詳細については、次を参照してください。 [WMI インスタンスの名前の定義](defining-wmi-instance-names.md)します。 WMI ライブラリを使用して、このようなブロックの要求を処理して、ブロックを他の要求の処理からドライバーにこだわるの[ *DispatchSystemControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 詳細については、次を参照してください。 [DispatchSystemControl ルーチンで WMI Irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)します。
+WMI ライブラリには、動的インスタンス名または静的インスタンス名の一覧を渡すメカニズムが用意されていないため、ドライバーは、PDO または1つのベース名文字列に基づく静的インスタンス名を持つデータブロックのみを含む要求を処理するために、WMI ライブラリを使用できます。 静的および動的なインスタンス名の詳細については、「 [WMI インスタンス名の定義](defining-wmi-instance-names.md)」を参照してください。 ドライバーが WMI ライブラリを使用してそのようなブロックの要求を処理したり、 [*DispatchSystemControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン内の他のブロックの要求を処理したりするのを防ぐことはできません。 詳細については、「 [DispatchSystemControl ルーチンでの WMI irp の処理](processing-wmi-irps-in-a-dispatchsystemcontrol-routine.md)」を参照してください。
 
-呼び出して WMI Irp を処理するために**WmiSystemControl**、ドライバーが必要な特定を実装する必要があります*DpWmiXxx*コールバック ルーチンでは、追加の実装と省略可能な*DpWmiXxx*コールバック ルーチン。
+WMI Irp を処理するには、次のような特定の必須の**システム***コールバック*ルーチンを実装*する必要が*あります。
 
--   [*DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)—(Required) データおよびイベントに関する情報を提供は、ドライバーによって登録されているをブロックします。 WMI 呼び出し、ドライバーの*DpWmiQueryReginfo*プロセスに日常的な[ **IRP\_MN\_REGINFO** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[ **IRP\_MN\_REGINFO\_EX** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)要求。 詳細については、次を参照してください。[ブロックの登録に WMI ライブラリを使用して](using-the-wmi-library-to-register-blocks.md)します。
+-   [ *(必須*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)) ドライバーによって登録されているデータおよびイベントブロックに関する情報を提供します。 WMI は*ドライバーの要求*を処理するために、ドライバーのすべての[ **\_Reginfo**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo)または[**irp\_\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-reginfo-ex)を処理するために、ドライバーの\_を呼び出します。 詳細については、「 [WMI ライブラリを使用したブロックの登録](using-the-wmi-library-to-register-blocks.md)」を参照してください。
 
--   [*DpWmiQueryDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)—(Required) が 1 つのインスタンスまたはデータ ブロックのすべてのインスタンスのいずれかを返します。 WMI 呼び出し、ドライバーの*DpWmiQueryDataBlock*プロセスに日常的な[ **IRP\_MN\_クエリ\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)または[ **IRP\_MN\_クエリ\_すべて\_データ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)要求。
+-   [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_datablock_callback)/(必須) は、1つのインスタンスまたはデータブロックのすべてのインスタンスを返します。 WMI は、*ドライバーの*すべての\_データ要求\_クエリ\_、 [**1 つの\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-single-instance)または[**IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-all-data)の\_クエリを処理するために、ドライバーの\_を呼び出します。\_
 
--   [*DpWmiSetDataBlock*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_set_datablock_callback)—(Optional) データ ブロックの 1 つのインスタンス内のすべてのデータ項目を変更します。 WMI 呼び出し、ドライバーの*DpWmiSetDataBlock*プロセスに日常的な[ **IRP\_MN\_変更\_単一\_インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-instance)要求。
+-   データブロックの1つのインスタンスのすべてのデータ項目を変更し[*ます (省略*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_datablock_callback)可能)。 WMI は、 [**1 つの\_インスタンス要求\_\_変更**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-instance)された IRP\_を処理するために、*ドライバーの設定*を呼び出します。
 
--   [*DpWmiSetDataItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_set_dataitem_callback)—(Optional) データ ブロックのインスタンス内の 1 つのデータ項目を変更します。 WMI 呼び出し、ドライバーの*DpWmiSetDataItem*プロセスに日常的な[ **IRP\_MN\_変更\_単一\_項目**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-item)要求。
+-   [インスタンス[ *]: (* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_set_dataitem_callback)省略可能) データブロックのインスタンス内の1つのデータ項目を変更します。 WMI は、ドライバーの設定された、 [**1 つの\_項目の要求\_\_変更**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-change-single-item)された IRP\_処理*するルーチンを*呼び出します。
 
--   [*DpWmiFunctionControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_function_control_callback)—(Optional) 有効にしを収集する高価なとして登録されているブロックのイベント通知とデータの収集を無効にします。 WMI 呼び出し、ドライバーの*DpWmiFunctionControl*プロセスに日常的な[ **IRP\_MN\_を有効にする\_コレクション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)、 [**IRP\_MN\_を無効にする\_コレクション**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)、 [ **IRP\_MN\_を有効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)、または[ **IRP\_MN\_を無効にする\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events)要求。
+-   [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_function_control_callback)/(オプション) 収集にかかるコストとして登録されたブロックのイベント通知とデータ収集を有効または無効にします。 WMI は、Irp\_を処理するために、ドライバーの実行可能な*コントロール*ルーチンを呼び出します。これに[**より、\_COLLECTION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-collection)、 [**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-collection)\_\_コレクションの無効化\_irp\_\_有効にすることができ[ **\_イベント**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-enable-events)、または[**IRP\_、\_イベントの要求を無効\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-disable-events) 。
 
--   [*DpWmiExecuteMethod*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_execute_method_callback)—(Optional) データ ブロックに関連付けられているメソッドを実行します。 WMI 呼び出し、ドライバーの*DpWmiExecuteMethod*プロセスに日常的な[ **IRP\_MN\_EXECUTE\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-execute-method)要求。
+-   [ *(オプション*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_execute_method_callback)) データブロックに関連付けられたメソッドを実行します。 WMI は、*ドライバーの*実行されたプロセスを呼び出して、 [ **\_メソッド要求を実行\_IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-execute-method)を処理します。
 
-ドライバーの*DpWmiXxx*ルーチンがドライバー ライターによって選択された任意の名前があることができます。
+ドライバーの設定では、ドライバーライターによって*任意の名前*を選択できます。
 
-呼び出しの前に[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、ドライバーを初期化する必要があります、 [ **WMILIB\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)エントリを含む構造体指すその*DpWmiXxx*ルーチンとそのデータ ブロックとブロックのイベントに関する情報。
+[**Wmi コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)を呼び出す前に、ドライバーは *、そのデータ*ブロックとイベントブロックに関する情報を含むエントリポイントを使用して、 [**wmb\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)構造体を初期化する必要があります。
 
-ドライバーは、WMI 要求を受信するとします。
+ドライバーが WMI 要求を受け取ると、次のようになります。
 
-1. ドライバー呼び出し**WmiSystemControl**へのポインターの初期化に**WMILIB\_コンテキスト**構造、そのデバイス オブジェクトへのポインターおよび IRP へのポインター。
+1. ドライバーは、初期化された**Wmb\_コンテキスト**構造体へのポインター、デバイスオブジェクトへのポインター、および IRP へのポインターを使用して、 **wmi コントロール**を呼び出します。
 
-2. WMI IRP パラメーターを検証およびドライバーの呼び出し*DpWmiXxx*要求を処理するルーチン。 ドライバー エントリ ポイント設定されていない場合、 **WMILIB\_コンテキスト**、省略可能な*DpWmiXxx* 、日常的な WMI 完了 IRP が既定値と状態。
+2. WMI は、IRP パラメーターを検証し、要求を処理するドライバーの要求*元ルーチンを*呼び出します。 ドライバーが *、オプションの*設定可能なのに **\_コンテキスト**のエントリポイントを設定していない場合、WMI は既定値と状態を使用して IRP を完了します。
 
-3. その*DpWmiXxx*ルーチン、ドライバー、要求を処理し、呼び出し元が指定のバッファーに出力を書き込みます。 たとえば、運転免許[ *DpWmiQueryDataBlock* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_datablock_callback)ルーチンは、要求されたインスタンスは指定されたブロックをバッファーに書き込むとします。
+3. このルーチン*で*は、ドライバーが要求を処理し、呼び出し元が指定したバッファーに出力を書き込みます。 たとえば、[*ドライバーのインスタンス*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_datablock_callback)は、指定されたブロックの要求されたインスタンスをバッファーに書き込みます。
 
-4. すべての*DpWmiXxx*以外ルーチン[ *DpWmiQueryReginfo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_query_reginfo_callback)、ドライバー呼び出し[ **WmiCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmicompleterequest)要求、または返します状態を完了する\_PENDING と任意の IRP の完了を延期します。
+4. WmiCompleteRequest を除くすべての実行されて*いるルーチンで*は、ドライバー[*は、要求*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_query_reginfo_callback)を完了するために[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmicompleterequest)を呼び出します。または、IRP の場合と同様に、完了を延期するステータス\_を返します。
 
-5. WMI は、必要に応じて後処理を実行します。、、適切な出力をパッケージ化**れた WNODE\_* XXX*** 構造体、およびデータ コンシューマーに出力と状態を渡します。
+5. WMI は必要な後処理を実行し、適切な**Wnode\_* XXX*** 構造の出力をパッケージ化して、出力と状態をデータコンシューマーに渡します。
 
  
 

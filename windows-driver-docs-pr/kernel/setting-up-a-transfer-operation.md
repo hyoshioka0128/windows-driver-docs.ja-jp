@@ -3,20 +3,20 @@ title: 転送操作のセットアップ
 description: 転送操作のセットアップ
 ms.assetid: cabac16d-b946-4b96-af2c-5fd0a0d848da
 keywords:
-- バス マスター DMA WDK カーネル
-- DMA は、WDK カーネル、バス マスター DMA を転送します。
-- アダプター オブジェクトの WDK カーネル、バス マスター DMA
-- 論理アドレスの範囲を WDK DMA
-- WDK DMA のアドレス
+- バスマスタ DMA WDK カーネル
+- DMA 転送 WDK カーネル、バスマスタ DMA
+- アダプタオブジェクト WDK カーネル、バスマスタ DMA
+- 論理アドレスの範囲 (WDK DMA)
+- WDK DMA に対処する
 - 転送操作 WDK DMA
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc56c467e5d1405b34fdeff71354f07e4c74fcd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e9f488bf04c0bcca185c1264d09337ba6f726d48
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360282"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838435"
 ---
 # <a name="setting-up-a-transfer-operation"></a>転送操作のセットアップ
 
@@ -24,68 +24,68 @@ ms.locfileid: "67360282"
 
 
 
-ときに[ **AllocateAdapterChannel** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_adapter_channel)にドライバーの制御を転送[ *AdapterControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_control) 、日常的な割り当て済みのマップ セット登録します。 ただし、ドライバーする必要があります現在 IRP の譲渡要求の物理メモリをシステムようにマップ、バス マスター アダプターの論理アドレスの範囲。
+[**Allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)が制御をドライバーの[*adaptercontrol*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_control)ルーチンに転送すると、マップレジスタのセットが割り当てられます。 ただし、ドライバーは、次のように、現在の IRP の転送要求のシステム物理メモリを、バスマスターアダプターの論理アドレス範囲にマップする必要があります。
 
-1.  呼び出す[ **MmGetMdlVirtualAddress** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で MDL で**Irp -&gt;MdlAddress**転送が開始する必要があります、システムの物理アドレスのインデックスを取得します。
+1.  Irp で[**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出して、転送を開始する必要があるシステムの物理アドレスのインデックスを取得します。これには、 **Irp-&gt;mdladdress**を使用します。
 
-    戻り値が必要なパラメーター (*CurrentVa*) に[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)します。
+    戻り値は、 [**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)の必須パラメーター (*currentva*) です。
 
-2.  呼び出す**MapTransfer** IRP のバッファーのシステムの物理アドレスの範囲をバス マスター アダプターの論理アドレスの範囲にマップします。
+2.  **Maptransfer**を呼び出して、IRP のバッファーのシステム物理アドレス範囲をバスマスターアダプターの論理アドレス範囲にマップします。
 
-ドライバーは、転送操作のアダプターを設定できます。 次の図では、転送を設定する手順を示します。
+ドライバーは、転送操作用にアダプターを設定できます。 次の図は、転送の設定に関連する手順を示しています。
 
-![転送操作の設定を示す図します。](images/3dmabus.png)
+![転送操作の設定を示す図](images/3dmabus.png)
 
-前図に示すよう、ドライバーの*AdapterControl*ルーチンは次のようにバス マスターの DMA 操作を設定します。
+前の図に示すように、ドライバーの*Adaptercontrol*ルーチンは、次のようにバスマスタ DMA 操作を設定します。
 
-1.  *AdapterControl*ルーチンは、転送を開始する位置のアドレスを取得します。 IRP を満たすために必要な初期転送の*AdapterControl*ルーチンの呼び出し[ **MmGetMdlVirtualAddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)、ポインターで MDL を渡して**Irp -&gt;MdlAddress**、この DMA 転送、バッファーを記述します。
+1.  *Adaptercontrol*ルーチンは、転送を開始するアドレスを取得します。 初期転送が IRP を満たすために必要な場合、 *Adaptercontrol*ルーチンは[**Mmgetmdlvirtualaddress**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を呼び出し、この DMA 転送のバッファーを記述する**Irp-&gt;mdladdress**の MDL へのポインターを渡します。
 
-    **MmGetMdlVirtualAddress**ドライバーとして使用できるインデックス システムの物理アドレスの転送を開始位置となる仮想アドレスを返します。
+    **Mmgetmdlvirtualaddress**は、ドライバーが転送を開始するシステムの物理アドレスのインデックスとして使用できる仮想アドレスを返します。
 
-    IRP では、1 つ以上の転送操作が必要とする場合、ドライバーは、このセクションで後述するよう更新された開始アドレスを計算します。
+    IRP に複数の転送操作が必要な場合は、このセクションで後述するように、ドライバーによって更新された開始アドレスが計算されます。
 
-2.  *AdapterControl*ルーチンによって返されるアドレスを保存します**MmGetMdlVirtualAddress**または手順 1. で計算します。 このアドレスは必須パラメーター (*CurrentVa*) に[ **MapTransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pmap_transfer)します。
+2.  *Adaptercontrol*ルーチンは、 **Mmgetmdlvirtualaddress**によって返されるアドレスまたは手順1で計算されたアドレスを保存します。 このアドレスは、 [**Maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)の必須パラメーター (*currentva*) です。
 
-3.  *AdapterControl*ルーチンの呼び出し**MapTransfer**、位置、ドライバーが転送操作を開始するバス マスター アダプターをプログラミングできる論理アドレスが返されます。 呼び出しで**MapTransfer**ドライバーは、次のパラメーターを提供します。
-    -   によって返されるアダプター オブジェクト ポインター [ **IoGetDmaAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdmaadapter)
+3.  *Adaptercontrol*ルーチンは**maptransfer**を呼び出します。これは、ドライバーが転送操作を開始するためにバスマスターアダプターをプログラムできる論理アドレスを返します。 **Maptransfer**の呼び出しでは、ドライバーは次のパラメーターを提供します。
+    -   IoGetDmaAdapter によって返されるアダプターオブジェクトポインター [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdmaadapter)
 
-    -   MDL へのポインター **Irp -&gt;MdlAddress**現在 IRP の
+    -   現在の IRP の**irp&gt;MdlAddress**にある MDL へのポインター
 
-    -   *MapRegisterBase*にドライバーのハンドルが渡される*AdapterControl*で日常的な**AllocateAdapterChannel** (を参照してください[バス マスターの割り当てアダプター オブジェクト](allocating-the-bus-master-adapter-object.md))
+    -   **Allocateadapterchannel**によってドライバーの*adaptercontrol*ルーチンに渡された*mapregisterbase*ハンドル (「 [Bus マスターアダプターオブジェクトの割り当て](allocating-the-bus-master-adapter-object.md)」を参照してください)
 
-    -   によって返される値**MmGetMdlVirtualAddress**場合、最初の呼び出しは**MapTransfer**現在 IRP の
+    -   現在の IRP に対する**Maptransfer**への最初の呼び出しである場合に、 **Mmgetmdlvirtualaddress**によって返される値。
 
-        それ以外の場合、ドライバーを提供、更新された*CurrentVa*実行する次の物理-論理マッピングを示す値。 (更新済みの計算方法*CurrentVa*は後でこのセクションで説明します)。
+        それ以外の場合、ドライバーは更新された*Currentva*値を提供します。これは、次に実行する物理-論理マッピングを示します。 (更新された*Currentva*の計算方法については、このセクションで後述します)。
 
-    -   変数へのポインター (*長さ*)、この転送バイト数を示します
+    -   この転送のバイト数を示す変数 (*長さ*) へのポインター
 
-        ドライバーが十分なマップのレジスタを単一の DMA 操作で要求されたすべてのデータを転送するが、その DMA 操作でデバイス固有の制約がない場合、*長さ*の値に設定することができます**長さ**ドライバーの I/O の IRP の場所をスタックします。 入力文字列の長さ (バイト単位) は、最大で (ページ\_サイズ\*、 *NumberOfMapRegisters*によって返される**IoGetDmaAdapter**)。 説明したように、要求に分割する必要があります、ドライバーのそれ以外の場合、[転送要求の分割](splitting-dma-transfer-requests.md)の値を更新する必要がありますと*長さ*に後続の呼び出しで**MapTransfer**現在 IRP の。
+        1つの DMA 操作で要求されたすべてのデータを転送するのに十分なマップレジスタがドライバーにあり、DMA 操作にデバイス固有の制約がない場合、その*長さ*は、ドライバーの i/o スタックの IRP の場所の**長さ**の値に設定できます. 最大で、バイト単位の入力長は、 **IoGetDmaAdapter**によって返される*numberofmapregisters* \* のページ\_サイズにすることができます。 それ以外の場合、ドライバーは、「[転送要求の分割](splitting-dma-transfer-requests.md)」で説明されているように要求を分割する必要があり、その後、現在の IRP に対する**maptransfer**への後続の呼び出しで*長さ*の値を更新する必要があります。
 
-    -   ブール値 (*WriteToDevice*)、(デバイスにメモリからのデータを転送) は true、転送操作の方向を示す
+    -   転送操作の方向を示すブール値 (*Writetodevice*) です (メモリからデバイスにデータを転送する場合は TRUE)。
 
-4.  *AdapterControl*ルーチンは、DMA 操作については、デバイスを設定します。
+4.  *Adaptercontrol*ルーチンは、DMA 操作用にデバイスを設定します。
 
-5.  *AdapterControl*ルーチンを返します。 **DeallocateObjectKeepRegisters**します。
+5.  *Adaptercontrol*ルーチンは、 **DeallocateObjectKeepRegisters**を返します。
 
-場合は、ドライバーを呼び出す必要があります**MapTransfer**同じアダプター オブジェクトのポインターを提供する現在の IRP を満たすために 2 回以上*Mdl*ポインター、 *MapRegisterBase*を処理します。呼び出すたびに方向を転送および**MapTransfer**します。 ただし、ドライバーを提供する必要があります更新*CurrentVa*と*長さ*を 2 回目以降の呼び出しで値**MapTransfer**します。 これらの値を計算するのにには、次の数式を使用します。
+ドライバーが現在の IRP を満たすために**Maptransfer**を2回以上呼び出す必要がある場合、 **maptransfer**を呼び出すたびに同じアダプターオブジェクトポインター、 *Mdl*ポインター、 *mapregisterbase*ハンドル、および転送方向が提供されます。 ただし、ドライバーは、2回目以降の**Maptransfer**への呼び出しで、更新された*Currentva*と*長さ*の値を提供する必要があります。 これらの値を計算するには、次の数式を使用します。
 
--   *CurrentVa* = *CurrentVa* + (*長さ*への呼び出しの前で要求された**MapTransfer**)
+-   *Currentva* = *currentva* + (前の**maptransfer**への呼び出しで要求された*長さ*)
 
--   *長さ*= 最小 (残り**長さ**転送する (ページ\_サイズ\* *NumberOfMapRegisters*によって返される**IoGetDmaAdapter**))
+-   *長さ*= 最小 (転送する残りの**長さ**( **IoGetDmaAdapter**によって返される*NUMBEROFMAPREGISTERS* \* のページ\_サイズ))
 
-その DMA の転送に関するコンテキスト情報各ドライバーを維持する必要がありますは、その特定のデバイスのニーズによって異なります。 一般的なコンテキストが MDL に現在の仮想アドレスを含めることがあります (*CurrentVa*)、ここまでは、転送、および場合によっては、現在の IRP へのポインターに残りのバイト数に転送されたバイト数。
+各ドライバーが DMA 転送に関して保持するコンテキスト情報は、特定のデバイスのニーズによって異なります。 一般的なコンテキストには、MDL (*Currentva*) の現在の仮想アドレス、これまでに転送されたバイト数、転送する残りのバイト数、および場合によっては現在の IRP へのポインターが含まれます。
 
-スキャッター/ギャザー機能により、デバイスのドライバー、*長さ*パラメーターを**MapTransfer**入力と出力の両方のパラメーターです。 戻り時にから**MapTransfer**システムがマップされているデータのバイト数を示します。 戻り値である、*長さ*、返された論理アドレスと組み合わせて、バス マスター アダプターがこの DMA 操作で転送のこの部分を使用できる論理アドレスの範囲を示します。
+スキャッター/ギャザー機能を備えたデバイスのドライバーの場合、 **Maptransfer**の*長さ*のパラメーターは入力パラメーターと出力パラメーターの両方になります。 **Maptransfer**から戻ると、システムによってマップされたデータのバイト数が示されます。 つまり、返された論理アドレスと組み合わせた*長さ*の戻り値は、この DMA 操作で転送のこの部分に対してバスマスターアダプターが使用できる論理アドレスの範囲を示します。
 
-**注**  ため*長さ*によって上書き**MapTransfer**、この実装のガイドラインに従ってください。ポインターを渡すことはありません、**長さ**ドライバーの I/O スタックとして IRP の場所、*長さ*パラメーターを**MapTransfer**デバイスは、スキャッター/ギャザーをサポートしている場合。
+**注**   は、 **maptransfer**によって*長さ*が上書きされるので、次の実装ガイドラインに従います。 IRP のドライバーの i/o スタック位置の**長さ**へのポインターを、*長さ*のパラメーターとして渡すことはでき**ません。MapTransfer** (デバイスでスキャッター/ギャザーがサポートされている場合)。
 
-これを行うと、現在 IRP がドライバーが要求されたすべてのデータを転送するかどうかを判断することは不可能で値が破棄でした。
+これを行うと、現在の IRP の値が破壊され、ドライバーが要求したすべてのデータを転送したかどうかを判断できなくなる可能性があります。
 
  
 
-DMA 操作ごとの最後に、ドライバーを呼び出す必要があります[ **FlushAdapterBuffers** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pflush_adapter_buffers)有効なアダプター オブジェクト ポインターを使用して、 *MapRegisterBase*ことを確認しますすべてへのハンドル、データが転送された現在の DMA 操作の物理-論理マッピングを解放するとします。 呼び出す必要がありますが、ドライバーは、現在 IRP を満たすために追加の DMA 操作を設定する必要がある場合、 **FlushAdapterBuffers**各転送操作の完了後します。
+各 DMA 操作の最後に、ドライバーは有効なアダプターオブジェクトポインターを使用して[**Flushadapterbuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pflush_adapter_buffers)を呼び出し、すべてのデータが転送されたことを確認*し、の*物理-論理マッピングを解放する必要があります。現在の DMA 操作。 ドライバーで、現在の IRP を満たすために追加の DMA 操作を設定する必要がある場合は、各転送操作の完了後に**Flushadapterbuffers**を呼び出す必要があります。
 
-要求されたすべての転送が完了するか、ドライバーは IRP のエラー状態を返す必要があります、ときに、ドライバーを呼び出す必要があります[ **FreeMapRegisters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_map_registers)その最後の呼び出しの直後に**FlushAdapterBuffers**バス マスター アダプターの最適なスループットを取得するためにします。 呼び出しで**FreeMapRegisters**、ドライバーは、前の呼び出しに渡されるアダプター オブジェクトのポインターを渡す必要があります**AllocateAdapterChannel**します。
+要求されたすべての転送が完了するか、ドライバーが IRP のエラー状態を返す必要がある場合、ドライバーは、 **Flushadapterbuffers**の最後の呼び出しの直後に[**FreeMapRegisters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_map_registers)を呼び出し、バスマスターアダプター。 **FreeMapRegisters**の呼び出しでは、ドライバーは、前の「 **Allocateadapterchannel**」呼び出しで渡されたアダプターオブジェクトポインターを渡す必要があります。
 
  
 

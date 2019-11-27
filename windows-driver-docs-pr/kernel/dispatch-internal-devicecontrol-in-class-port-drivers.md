@@ -3,18 +3,18 @@ title: クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
 description: クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
 ms.assetid: 94f6050d-c47e-4fb2-8b7f-afadcf12e0b8
 keywords:
-- ディスパッチ ルーチンの WDK カーネル、DispatchDeviceControl ルーチン
+- ディスパッチルーチン WDK カーネル、DispatchDeviceControl ルーチン
 - ディスパッチ DispatchDeviceControl ルーチン
-- IRP_MJ_DEVICE_CONTROL I/O 関数のコード
-- デバイス制御ディスパッチ ルーチン WDK カーネル
+- IRP_MJ_DEVICE_CONTROL i/o 関数コード
+- デバイス制御ディスパッチルーチン WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1a5821b34d1195b18ca3c2d80679204b0a5f56
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 41b28235bd9f84966652ab907744ba746ffb5513
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384993"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828320"
 ---
 # <a name="dispatchinternaldevicecontrol-in-classport-drivers"></a>クラス/ポート ドライバーの Dispatch(Internal)DeviceControl
 
@@ -22,23 +22,23 @@ ms.locfileid: "67384993"
 
 
 
-クラスとポートのペアの上位レベルのドライバーの Irp の完了できる場合があります、 [ *DispatchDeviceControl* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。 たとえばクラス ドライバー、初期化中に、収集し、後続の検索が、基になるデバイスの機能に関する情報を格納[ **IRP\_MJ\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)を要求し、したがってにより、基になるデバイス ドライバーに渡すことがなく、要求処理時間を節約します。 クラスのドライバーが IRP のパラメーターを確認し、ポート ドライバーに有効なパラメーターでのみ要求を送信する設計することも可能性があります。
+クラスとポートのペアの上位レベルのドライバーは、 [*DispatchDeviceControl*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで irp を完了することがあります。 たとえば、クラスドライバーは、初期化中に、基になるデバイスの機能に関する情報を収集して格納することができます。これは、その後の[**IRP\_MJ\_デバイス\_制御**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-device-control)要求でシークされる可能性があり、その結果、保存します。基になるデバイスドライバーに要求を渡さずに要求を満たすことによる処理時間。 また、クラスドライバーは、IRP のパラメーターを確認し、有効なパラメーターを持つ要求のみをポートドライバーに送信するように設計されている場合もあります。
 
-クラス/ポートに密接に結合されたドライバーもドライバー固有またはデバイス固有内部 I/O 制御コードの使用できるクラス ドライバーのセットを定義できます[ **IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)ポート ドライバーに要求します。
+また、厳密に結合されたクラス/ポートドライバーでは、ドライバー固有またはデバイス固有の内部 i/o 制御コードのセットを定義することもできます。このコードでは、クラスドライバーは、内部\_デバイスに対して、ポートへの要求[ **\_制御する IRP\_MJ\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)使用できます。driver.
 
-たとえば、 *DispatchCreateClose*ルーチンで、システムのキーボードとマウスのクラス ドライバーを有効または、キーボードとマウスの割り込みを基になるポート ドライバーを無効にする内部デバイスのシステム定義のコントロール要求を送信します。 これらのシステム クラス ドライバーを設定する**IRP\_MJ\_内部\_デバイス\_コントロール**基になるポート ドライバーを要求します。 任意の新しいキーボードまたはこれらのシステム クラス ドライバーで相互運用マウス ポート ドライバーこれら内部パブリックのデバイスのコントロール要求もサポートする必要があります。
+たとえば、システムキーボードおよびマウスクラスのドライバーの*DispatchCreateClose*ルーチンは、システム定義の内部デバイスコントロール要求を送信して、基になるポートドライバーに対するキーボードおよびマウスの割り込みを有効または無効にします。 これらのシステムクラスドライバーは、基になるポートドライバーの要求 **\_制御する内部\_デバイス\_、IRP\_MJ**を設定します。 これらのシステムクラスドライバーと相互運用できる新しいキーボードまたはマウスポートドライバーは、これらのパブリック内部デバイス制御要求もサポートする必要があります。
 
-システムの並列クラス/ポート ドライバー モデルには、同様の機能があります。 Parallel クラスの新しいドライバーからサポートを受けるシステムのパラレル ポート ドライバーの Irp を設定して**IRP\_MJ\_内部\_デバイス\_コントロール**パブリック IOCTL で要求\_並列\_ポート\_*XXX*コードを制御します。 システムのパラレル ポート ドライバーを置き換えることができますが、新しいドライバーもこの内部パブリックのデバイスに対する制御要求のセットをサポートする必要があります。
+システム並列クラス/ポートドライバーモデルには同様の機能があります。 新しい並列クラスドライバーは、 **irp\_MJ\_内部\_\_デバイス**の irp を設定することによって、システムのパラレルポートドライバーからサポートを受けることができます。この場合、パブリック IOCTL\_パラレル\_ポート\_*XXX*の制御コードを使用して要求を制御します。 システムパラレルポートドライバーは置き換えることができますが、新しいドライバーでは、このような内部デバイス制御要求のセットもサポートする必要があります。
 
-これらの内部パブリックのデバイス制御要求の詳細については、Windows Driver Kit (WDK) でデバイス固有のマニュアルを参照してください。 プライベートの I/O 制御コードを定義する方法については、次を参照してください。 [I/O 制御コードを使用して](using-i-o-control-codes.md)します。
+これらのパブリック内部デバイス制御要求の詳細については、Windows Driver Kit (WDK) のデバイス固有のドキュメントを参照してください。 プライベート i/o 制御コードを定義する方法の詳細については、「 [I/o 制御コードの使用](using-i-o-control-codes.md)」を参照してください。
 
-ポート/クラス ドライバーの密接に結合されたペアは、クラス ドライバーは、ポート ドライバーに渡すことがなく特定のデバイス制御要求の処理を処理することがあります。 新しいクラス/ポート ドライバー ペアで、クラス ドライバーの*DispatchDeviceControl*ルーチンは、次のいずれかで行うことができます。
+ポート/クラスドライバーのペアが密接に結合されている場合、クラスドライバーは、ポートドライバーに渡さずに特定のデバイス制御要求の処理を処理することがあります。 新しいクラス/ポートドライバーのペアでは、クラスドライバーの*DispatchDeviceControl*ルーチンは次のいずれかを実行できます。
 
--   I/O スタックの場所は、独自のパラメーターの有効性をチェック、任意のパラメーター エラー、および呼び出しが見つかった場合は、状態の I/O ブロックを設定[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)で、 *PriorityBoost* IO の\_いいえ\_インクリメントしますそれ以外の場合、呼び出し[ **IoGetNextIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetnextirpstacklocation)ポート ドライバーの、独自の I/O スタックの場所にコピーし、渡す、。IRP [**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+-   独自の i/o スタックの場所にあるパラメーターの有効性を確認し、パラメーターエラーが検出された場合は i/o 状態ブロックを設定し、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出して\_\_IO の優先*順位を上げ*ますそれ以外の場合は、 [**IogetnextiIoCallDriver Stacklocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetnextirpstacklocation)を呼び出して、独自の i/o スタックの場所をポートドライバーのにコピーし、IRP を[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)に渡します。
 
--   または、何もしない複数のパラメーターをチェックせず、ポート ドライバーの IRP で I/O スタックの場所を設定し、処理のためのポート ドライバーに渡すこと。
+-   または、パラメーターをチェックせずに、IRP 内のポートドライバーの i/o スタックの場所を設定する以外に、処理のためにポートドライバーに渡すこともできません。
 
-SCSI クラス ドライバーには、デバイス制御要求を処理するための特別な要件があります。 これらの要件の詳細については、次を参照してください。[記憶装置ドライバー](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)します。
+SCSI クラスドライバーには、デバイス制御要求を処理するための特別な要件があります。 これらの要件の詳細については、「 [Storage Drivers](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-drivers)」を参照してください。
 
  
 

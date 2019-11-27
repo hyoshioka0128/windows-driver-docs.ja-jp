@@ -22,13 +22,13 @@ ms.locfileid: "72840078"
 # <a name="periodictimer-rule-ndis"></a>PeriodicTimer ルール (ndis)
 
 
-[**NdisCancelTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)の*MillisecondsPeriod*パラメーター [**に0以外の値が指定されている場合、このタイマー規則は、の呼び出し元が IRQL = パッシブ\_レベルで実行されている必要があることを指定します。NdisSetTimerObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject)関数。 **NdisSetTimerObject**関数の*MillisecondsPeriod*パラメーターが0の場合、 **NdisCancelTimerObject**の呼び出し元は**IRQL &lt;= DISPATCH\_LEVEL**で実行できます。
+NdisCancelTimerObject[**関数の**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndissettimerobject) *MillisecondsPeriod*パラメーターに0以外の値が指定されている場合は、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndiscanceltimerobject)の呼び出し元が**IRQL = パッシブ\_レベル**で実行されている必要があることを、 **periodictimer**ルールで指定します。 **NdisSetTimerObject**関数の*MillisecondsPeriod*パラメーターが0の場合、 **NdisCancelTimerObject**の呼び出し元は**IRQL &lt;= DISPATCH\_LEVEL**で実行できます。
 
 |              |      |
 |--------------|------|
-| ドライバーモデル | NDIS |
+| ドライバー モデル | NDIS |
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>

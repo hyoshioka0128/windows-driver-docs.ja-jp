@@ -3,19 +3,19 @@ title: ドライバーによって割り当てられたリソースの解放
 description: ドライバーによって割り当てられたリソースの解放
 ms.assetid: b286b4b0-54f2-4798-a77b-c08743502552
 keywords:
-- ルーチン WDK カーネルでは、非 PnP ドライバーをアンロードします。
-- WDK カーネルの日常的な非 PnP アンロード
-- ドライバーによって割り当てられたリソースを解放します。
-- ドライバーによって割り当てられたリソースは、WDK のカーネルを解放します。
-- リソースの解放 WDK カーネル
+- アンロードルーチン WDK カーネル、非 PnP ドライバー
+- PnP 以外のアンロードルーチン WDK カーネル
+- ドライバーで割り当てられたリソースの解放
+- ドライバーで割り当てられたリソースが WDK カーネルを解放する
+- WDK カーネルを解放するリソース
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 578d93631f67edc7b566345d3eeda9f59db6b0d4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9cc7d941d9c9fe7401e27291c61daa5739439169
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373431"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72827462"
 ---
 # <a name="releasing-driver-allocated-resources"></a>ドライバーによって割り当てられたリソースの解放
 
@@ -23,47 +23,47 @@ ms.locfileid: "67373431"
 
 
 
-ドライバーが、レジストリを使用する方法の詳細、システム オブジェクトとそのデバイスの拡張機能、コント ローラー拡張機能または非ページ プールのドライバーに割り当てられたリソースをセットでは、ドライバーが異なります。 ただし、すべて[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_unload)ルーチンは、段階的に、ドライバーを使用してリソースを解放する必要があります。
+ドライバーがレジストリを使用する方法の詳細については、デバイス拡張機能、コントローラー拡張機能、またはドライバーによって割り当てられたページプールのシステムオブジェクトとリソースの設定は、ドライバーによって異なります。 ただし、[*アンロード*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンでは、ドライバーが使用しているリソースを段階的に解放する必要があります。
 
-任意のドライバーの*アンロード*ルーチンする必要があることを確認しないその他のドライバーのルーチンが現在使用してすぐを使用して特定のリソースをそのリソースを解放する前にします。
+ドライバーのすべての*アンロード*ルーチンは、そのリソースを解放する前に、他のドライバールーチンが現在使用していないか、特定のリソースをすぐに使用していることを確認する必要があります。
 
-一般に、*アンロード*ルーチンは、次の段階ですべてのドライバーに割り当てられたリソースを解放します。
+一般に、 *Unload*ルーチンは、次の段階でドライバーによって割り当てられたすべてのリソースを解放します。
 
-1.  ドライバーが既に実行していない場合は、可能な場合、任意の物理デバイスの割り込みを無効にするを呼び出して[ **IoDisconnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterrupt)割り込みを無効にするようになります。
+1.  ドライバーがまだ実行していない場合は、可能であれば、任意の物理デバイスの割り込みを無効にしてから、割り込みが無効になるとすぐに[**Io切る割り込み**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterrupt)を呼び出します。
 
-2.  その他のドライバーのルーチン参照できるようにしないリソースを*アンロード*ルーチンにリリースする予定です。
+2.  *アンロード*ルーチンによってリリースされるリソースを他のドライバールーチンが参照できないことを確認します。
 
-    たとえば、*アンロード*ルーチンを呼び出す必要があります[ **IoStopTimer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-iostoptimer)場合、ドライバーの[ *IoTimer* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_timer_routine)ルーチンは特定のデバイス オブジェクトの現在有効です。 ドライバーのディスパッチャー オブジェクトのいずれかを待機しているスレッドがないへの呼び出しのキューにそのタイマー オブジェクトがないことが必ずその[ *CustomTimerDpc* ](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンの記憶域を解放する前に、ディスパッチャー オブジェクト。 呼び出す必要があります[ **KeRemoveQueueDpc** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keremovequeuedpc)がある場合、 [ *CustomDpc* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kdeferred_routine) ISR がキューに置かれた可能性がありますが、ルーチンとします。
+    たとえば、ドライバーの[*Iotimer*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_timer_routine)ルーチンが特定のデバイスオブジェクトに対して現在有効になっている場合、 *Unload*ルーチンは[**iost最適化 er**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostoptimer)を呼び出す必要があります。 これにより、どのスレッドもドライバーのディスパッチャーオブジェクトを待機していないこと、およびそのタイマーオブジェクトが[*Customtimerdpc*](https://msdn.microsoft.com/library/windows/hardware/ff542983)ルーチンへの呼び出しのためにキューに置かれていないことを確認してから、ディスパッチャーオブジェクトのストレージを解放する必要があります。 ISR がキューに登録されている可能性がある[*Customdpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kdeferred_routine)ルーチンがある場合は、 [**KeRemoveQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovequeuedpc)を呼び出す必要があります。
 
-    ドライバーが呼び出された場合[ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem)、作業項目が完了していることを確認する必要があります。 **IoQueueWorkItem**は関連付けられているデバイス オブジェクトの参照を out; のような参照が残っている場合は、ドライバーをアンロードすることはできません。
+    ドライバーが[**Ioqueueworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)を呼び出した場合は、作業項目が完了していることを確認する必要があります。 **Ioqueueworkitem**は、関連付けられているデバイスオブジェクトの参照を取得します。このような参照が残っている場合は、ドライバーをアンロードできません。
 
-    ドライバーが呼び出された場合[ **PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pscreatesystemthread)、*アンロード*ルーチンもする必要がありますが発生する実行スレッド自体はを呼び出すことができるようにするドライバーが作成したスレッド[ **PsTerminateSystemThread** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-psterminatesystemthread)ドライバーが読み込まれる前にします。 ドライバーは、呼び出すことによってシステムのドライバーが作成したスレッドを解放できません[ **ZwClose** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntclose)で、 *ThreadHandle*によって返される**PsCreateSystemThread**.
+    ドライバーが[**PsCreateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pscreatesystemthread)を呼び出した場合、*アンロード*ルーチンは、ドライバーがアンロードされる前にスレッド自体が[**PsTerminateSystemThread**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-psterminatesystemthread)を呼び出すことができるように、ドライバーによって作成されたスレッドを実行する必要もあります。 ドライバーは、 **PsCreateSystemThread**から返された*threadhandle*を使用して[**zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出すことによって、ドライバーによって作成されたシステムスレッドを解放することはできません。
 
-3.  ドライバーが割り当てられているデバイスに固有のリソースを解放します。 これにより、次のシステム サポート ルーチンを呼び出すことになる場合があります。
-    -   [**IoDeleteSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletesymboliclink)場合、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_initialize)または[*を再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nc-ntddk-driver_reinitialize) というルーチン[**IoCreateSymbolicLink** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreatesymboliclink)または[ **IoCreateUnprotectedSymbolicLink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocreateunprotectedsymboliclink)、および[ **IoDeassignArcName** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iodeassignarcname)ドライバーが呼び出された場合[ **IoAssignArcName**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-ioassignarcname)します。
+3.  ドライバーによって割り当てられたデバイス固有のリソースを解放します。 これを行うには、次のシステムサポートルーチンを呼び出す必要があります。
+    -   [**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_initialize)または[*再初期化*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-driver_reinitialize)ルーチンが[**IoIoDeleteSymbolicLink YmIoCreateUnprotectedSymbolicLink iclink**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatesymboliclink)または[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreateunprotectedsymboliclink)と呼ばれる場合は、 [**io**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletesymboliclink) [**arcname**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioassignarcname)というドライバーがある場合は[**iodeを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iodeassignarcname)関連付けます。
 
-    -   [**ExFreePool** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-exfreepool)場合**DriverEntry**またはその他のルーチンのドライバーと呼ばれる[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)ドライバーがまだリリースされていないと割り当てられたメモリ。
+    -   **Driverentry**または[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)と呼ばれるその他のドライバールーチンが、割り当てられたメモリを解放していない場合は、 [**exfreepool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-exfreepool) 。
 
-    -   [**MmUnmapIoSpace** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)場合、 **DriverEntry**または*を再初期化*というルーチン[ **MmMapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmmapiospace)します。
+    -   **Driverentry**または*再初期化*ルーチンが[**mmmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)と呼ばれる場合は、 [**mmunmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace) 。
 
-    -   [**MmFreeNonCachedMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmfreenoncachedmemory)場合、 **DriverEntry**または*を再初期化*というルーチン[ **MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-mmallocatenoncachedmemory).
+    -   **Driverentry**または*再初期化*ルーチンが[**MmAllocateNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmallocatenoncachedmemory)という名前の場合、 [**MmFreeNonCachedMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-mmfreenoncachedmemory) 。
 
-    -   [**MmFreeContiguousMemory** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmfreecontiguousmemory)場合、 **DriverEntry**または*を再初期化*というルーチン[ **MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmallocatecontiguousmemory).
+    -   **Driverentry**または*再初期化*ルーチンが[**MmAllocateContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatecontiguousmemory)という名前の場合、 [**MmFreeContiguousMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreecontiguousmemory) 。
 
-    -   [**FreeCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pfree_common_buffer)場合、 **DriverEntry**または*を再初期化*というルーチン[ **AllocateCommonBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-pallocate_common_buffer).
+    -   **Driverentry**または*再初期化*ルーチンが[**allocatecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_common_buffer)という名前の場合、 [**freecommonbuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pfree_common_buffer) 。
 
-    -   [**IoAssignResources** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)または[ **IoReportResourceUsage** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)場合、 **DriverEntry**または*を再初期化*これらのルーチンと呼ばれる 1 サポート ルーチンまたは[ **HalAssignSlotResources** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))自体やその物理デバイスの構成のレジストリ内のハードウェア リソースを要求するには個別にします。
+    -   **Driverentry**または*再初期化*ルーチンがこれらのサポートルーチンまたは[**HalAssignSlotResources**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff546644(v=vs.85))のいずれかを呼び出して、構成レジストリ内のハードウェアリソース、またはその物理デバイスを個別に要求している場合は、 [**ioIoReportResourceUsage resources**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)または[](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl) 。
 
-4.  システム オブジェクトとリソースを解放する、 **DriverEntry**または*を再初期化*ルーチンまたはコント ローラー オブジェクトのコント ローラー拡張機能にデバイス オブジェクトの拡張機能でデバイスを設定する (場合、作成されたいずれか)。 具体的には、ドライバーする必要があります、次の操作には、デバイス オブジェクトを削除する前に ([**IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)) またはコント ローラーのオブジェクト ([**IoDeleteController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddk/nf-ntddk-iodeletecontroller)):
-    -   呼び出す[ **IoDisconnectInterrupt** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterrupt)対応するデバイスまたはコント ローラー拡張機能に格納されている割り込みオブジェクト ポインターを解放します。
-    -   呼び出す[ **ObDereferenceObject** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-obdereferenceobject)呼び出される場合に、次の下位ドライバーのファイル オブジェクトへのポインターが[ **IoGetDeviceObjectPointer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer)デバイスまたはコント ローラーの拡張機能にこのポインターを格納します。
-    -   呼び出す[ **IoDetachDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodetachdevice)呼び出される場合、下位のドライバーのデバイス オブジェクトへのポインターが[ **IoAttachDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevice)または[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)され、デバイスまたはコント ローラーの拡張機能にこのポインターを格納します。
+4.  **Driverentry**または*再初期化*ルーチンがデバイスオブジェクトのデバイス拡張機能またはコントローラーオブジェクトのコントローラー拡張機能 (作成されている場合) で設定したシステムオブジェクトとリソースを解放します。 特に、ドライバーは、デバイスオブジェクト ([**Iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)) またはコントローラーオブジェクト ([**IoDeleteController**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iodeletecontroller)) の削除を試みる前に、次の操作を行う必要があります。
+    -   [**Io切る割り込み**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterrupt)を呼び出して、対応するデバイスまたはコントローラーの拡張機能に格納されている割り込みオブジェクトポインターを解放します。
+    -   [**Iogetdeviceobjectpointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceobjectpointer)を呼び出し、デバイスまたはコントローラーの拡張機能にこのポインターを格納している場合は、次の下位にあるドライバーのファイルオブジェクトへのポインターを使用して[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出します。
+    -   [**Ioattachdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevice)または[**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)を呼び出し、デバイスまたはコントローラーの拡張機能にこのポインターを格納している場合は、下位のドライバーのデバイスオブジェクトへのポインターを使用して[**IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)を呼び出します。
 
-5.  ハードウェア リソースを解放する、 **DriverEntry**または*を再初期化*ルーチンは、下のレジストリに存在する場合、ドライバーの物理デバイスでは、要求、 **\\レジストリ\\マシン\\ハードウェア\\ResourceMap**ツリー。
+5.  ドライバーの物理デバイス (存在する場合) について、 **Driverentry**または*再初期化*のルーチンが要求したハードウェアリソースを解放します。これには、\\レジストリの下にあるレジストリ内の **\\マシン\\ハードウェア\\resourcemap**ツリー.
 
-6.  そのデバイスのすべての名前を削除する、 **DriverEntry**または*を再初期化*ルーチンの下のレジストリに格納されている、 **\\レジストリ.\\DeviceMap**ツリーもします。
+6.  **Driverentry**または*再初期化*ルーチンによってレジストリに格納されているデバイスの名前を、 **\\registry..\\DeviceMap**ツリーにも削除します。
 
-デバイス、システム、およびハードウェア リソースに、ドライバーがリリースされた後、次のセクションで説明した、デバイスとコント ローラーのオブジェクトを削除できます。
+ドライバーによってデバイス、システム、およびハードウェアリソースが解放された後、次のセクションで説明するように、デバイスとコントローラーオブジェクトを削除できます。
 
  
 

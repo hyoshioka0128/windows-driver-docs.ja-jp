@@ -1,25 +1,25 @@
 ---
-Description: このトピックでは、WDF の継続的なリーダー オブジェクトについて説明します。 このトピックの手順では、オブジェクトを構成し、USB パイプからデータの読み取りに使用する方法についての詳細な手順を説明します。
+Description: このトピックでは、WDF に用意されている連続リーダーオブジェクトについて説明します。 このトピックの手順では、オブジェクトを構成し、それを使用して USB パイプからデータを読み取る方法について、手順を追って説明します。
 title: 継続的リーダーを使用して USB パイプからデータを読み取る方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 171bce22d0f525b096c2de6d746019e87aff6c20
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b00563d9357dc9791250f91362eaece03f87748c
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378296"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72837544"
 ---
 # <a name="how-to-use-the-continuous-reader-for-reading-data-from-a-usb-pipe"></a>継続的リーダーを使用して USB パイプからデータを読み取る方法
 
 
-このトピックでは、WDF の継続的なリーダー オブジェクトについて説明します。 このトピックの手順では、オブジェクトを構成し、USB パイプからデータの読み取りに使用する方法についての詳細な手順を説明します。
+このトピックでは、WDF に用意されている連続リーダーオブジェクトについて説明します。 このトピックの手順では、オブジェクトを構成し、それを使用して USB パイプからデータを読み取る方法について、手順を追って説明します。
 
-Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提供する、*継続的なリーダー*します。 このオブジェクトは、データがある使用可能な限り、継続的に、一括および割り込みのエンドポイントからデータを読み取る USB クライアント ドライバーを使用できます。 リーダーを使用するには、クライアント ドライバーにドライバーがデータを読み取るエンドポイントに関連付けられている USB ターゲット パイプ オブジェクトを識別するハンドルが必要です。 エンドポイントは、アクティブな構成である必要があります。 構成をアクティブにできます 2 つの方法のいずれかで: USB 構成を選択するか、現在の構成で別の設定を変更することで。 これらの操作の詳細については、次を参照してください。 [USB デバイスの構成の選択方法](how-to-select-a-configuration-for-a-usb-device.md)と[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)します。
+Windows Driver Framework (WDF) には、*継続的リーダー*と呼ばれる特殊なオブジェクトが用意されています。 このオブジェクトを使用すると、使用可能なデータがある限り、USB クライアントドライバーが一括および中断エンドポイントからデータを継続的に読み取ることができます。 リーダーを使用するには、クライアントドライバーが、ドライバーがデータを読み取るエンドポイントに関連付けられている、USB ターゲットパイプオブジェクトのハンドルを持っている必要があります。 エンドポイントはアクティブ構成である必要があります。 構成をアクティブにするには、USB 構成を選択するか、現在の構成の別の設定を変更します。 これらの操作の詳細については、「 [Usb デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)」および「 [usb インターフェイスで別の設定を選択する方法](select-a-usb-alternate-setting.md)」を参照してください。
 
-継続的なリーダーを作成した後は、クライアント ドライバーは開始および必要な場合に、リーダーを停止できます。 読み取り要求が常にターゲット パイプ オブジェクトと、クライアント ドライバーで使用できるようにする継続的なリーダーでは、エンドポイントからデータを受信する準備が常にします。
+継続的リーダーを作成した後、クライアントドライバーは必要に応じて、リーダーを開始および停止できます。 読み取り要求が常にターゲットパイプオブジェクトで使用可能であり、クライアントドライバーは常にエンドポイントからデータを受信する準備ができていることを確認する継続的リーダー。
 
-継続的なリーダーは、自動的に電源管理の対象フレームワークによってではありません。 つまり、クライアント ドライバーが、デバイスが低電力状態に入ったときに、リーダーを停止し、デバイスが稼働状態に入ったときに、リーダーを再起動する必要があります。
+継続的リーダーは、フレームワークによって自動的に電源管理されることはありません。 これは、デバイスが電力状態を低くしたときに、クライアントドライバーがリーダーを停止し、デバイスが動作状態になったときにリーダーを再起動する必要があることを意味します。
 
 ## <a name="what-you-need-to-know"></a>理解しておく必要があること
 
@@ -31,47 +31,47 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
 
 ### <a name="prerequisites"></a>前提条件
 
-クライアント ドライバーでは、継続的なリーダーを使用できます、前に、これらの要件を満たしていることを確認します。
+クライアントドライバーが連続リーダーを使用できるようにするには、次の要件が満たされていることを確認します。
 
--   USB デバイスのエンドポイントが必要です。 デバイスの構成をチェックイン[USBView](https://docs.microsoft.com/windows-hardware/drivers/debugger/usbview)します。 Usbview.exe は、すべての USB コント ローラーとそれらに接続されている USB デバイスを参照することができるアプリケーションです。 通常に USBView がインストール、**デバッガー** Windows Driver Kit (WDK) でのフォルダー。
--   クライアント ドライバー フレームワーク USB ターゲット デバイス オブジェクトを作成する必要があります。
+-   USB デバイスには、エンドポイントが必要です。 [Usbview](https://docs.microsoft.com/windows-hardware/drivers/debugger/usbview)でデバイスの構成を確認します。 Usbview .exe は、すべての USB コントローラーとそれらに接続されている USB デバイスを参照できるアプリケーションです。 通常、USBView は、Windows Driver Kit (WDK) の **[デバッガー]** フォルダーにインストールされます。
+-   クライアント ドライバーによって、フレームワーク USB ターゲット デバイス オブジェクトが作成されている必要があります。
 
-    Microsoft Visual Studio Professional 2012 と共に用意されている USB テンプレートを使用する場合、テンプレート コードは、これらのタスクを実行します。 テンプレート コードでは、ターゲット デバイス オブジェクトを識別するハンドルを取得し、デバイス コンテキストに格納します。
+    Microsoft Visual Studio Professional 2012 に付属する USB テンプレートを使用している場合、テンプレート コードでこれらのタスクが実行されます。 テンプレート コードによりターゲット デバイス オブジェクトのハンドルが取得され、デバイス コンテキストに格納されます。
 
-    **KMDF クライアント ドライバー:**
+    **KMDF クライアントドライバー:**
 
-    KMDF クライアント ドライバーは、呼び出すことによって WDFUSBDEVICE ハンドルを取得する必要があります、 [ **WdfUsbTargetDeviceCreateWithParameters** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)メソッド。 詳細については、「デバイスのソース コード」を参照してください[USB クライアント ドライバー コード構造 (KMDF) について](understanding-the-kmdf-template-code-for-usb.md)します。
+    KMDF クライアント ドライバーでは、[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters) メソッドを呼び出すことで WDFUSBDEVICE ハンドルを取得する必要があります。 詳細については、「[USB クライアント ドライバー コード構造について (KMDF)](understanding-the-kmdf-template-code-for-usb.md)」の「デバイスのソース コード」を参照してください。
 
-    **クライアント ドライバーの UMDF:**
+    **UMDF クライアントドライバー:**
 
-    UMDF クライアント ドライバーを入手する必要があります、 [ **IWDFUsbTargetDevice** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetdevice)フレームワーク ターゲットのデバイス オブジェクトのクエリを実行してポインター。 詳細については、次を参照してください。"[**IPnpCallbackHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallbackhardware)実装と USB の特定のタスク"で[USB クライアント ドライバー コード構造 (UMDF) について](understanding-the-umdf-template-code-for-usb.md)します。
+    UMDF クライアント ドライバーは、フレームワーク ターゲット デバイス オブジェクトを問い合わせることで、[**IWDFUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetdevice) ポインターを取得する必要があります。 詳細については、「[USB クライアント ドライバー コード構造について (UMDF) **」の「** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)IPnpCallbackHardware[](understanding-the-umdf-template-code-for-usb.md) 実装と USB 固有のタスク」を参照してください。
 
--   デバイスをアクティブな構成が必要です。
+-   デバイスにはアクティブな構成が必要です。
 
-    USB テンプレートを使用している場合に、コードは、各インターフェイスの最初の構成と既定の代替設定を選択します。 別の設定を変更する方法については、次を参照してください。 [USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)します。
+    USB テンプレートを使用している場合、コードは各インターフェイスの最初の構成と既定の代替設定を選択します。 代替設定を変更する方法の詳細については、「 [USB インターフェイスで別の設定を選択する方法](select-a-usb-alternate-setting.md)」を参照してください。
 
-    **KMDF クライアント ドライバー:**
+    **KMDF クライアントドライバー:**
 
-    KMDF クライアント ドライバーを呼び出す必要があります、 [ **WdfUsbTargetDeviceSelectConfig** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)メソッド。
+    KMDF クライアントドライバーは、 [**WdfUsbTargetDeviceSelectConfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdeviceselectconfig)メソッドを呼び出す必要があります。
 
-    **クライアント ドライバーの UMDF:**
+    **UMDF クライアントドライバー:**
 
-    UMDF のクライアント ドライバーの場合は、フレームワークは、その構成の最初の構成と各インターフェイスの既定の代替設定を選択します。
+    UMDF クライアントドライバーでは、フレームワークによって、最初の構成と、その構成内の各インターフェイスの既定の代替設定が選択されます。
 
--   クライアント ドライバーのエンドポイントのフレームワーク ターゲット パイプ オブジェクトを識別するハンドルが必要です。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
+-   クライアントドライバーには、のエンドポイント用のフレームワークのターゲットパイプオブジェクトへのハンドルが必要です。 詳細については、「 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)」を参照してください。
 
 <a name="instructions"></a>手順
 ------------
 
-### <a name="using-the-continuous-reader---kmdf-client-driver"></a>継続的なリーダー - KMDF クライアント ドライバーを使用します。
+### <a name="using-the-continuous-reader---kmdf-client-driver"></a>継続的リーダーの使用-KMDF クライアントドライバー
 
-1.  継続的なリーダーを構成します。
+1.  継続的リーダーを構成します。
 
-    1.  初期化を[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)構造を呼び出すことによって、 [ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT** ](https://msdn.microsoft.com/library/windows/hardware/ff552561_init)マクロ。
-    2.  その構成オプションを指定、 [ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)構造体。
-    3.  呼び出す、 [ **WdfUsbTargetPipeConfigContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)メソッド。
+    1.  [**WDF\_usb\_continuous\_reader\_config\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552561_init)マクロを呼び出して、[**継続的\_リーダー\_CONFIG 構造体を WDF\_usb\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)初期化します。
+    2.  [**WDF\_USB\_継続的\_リーダー\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)構造体で構成オプションを指定します。
+    3.  [**WdfUsbTargetPipeConfigContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipeconfigcontinuousreader)メソッドを呼び出します。
 
-    次のコード例では、指定されたターゲット パイプ オブジェクトの継続的なリーダーを構成します。
+    次のコード例では、指定されたターゲットパイプオブジェクトの連続リーダーを構成します。
 
     ```cpp
     NTSTATUS FX3ConfigureContinuousReader(
@@ -118,25 +118,25 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
     }
     ```
 
-通常、クライアント ドライバーが連続でリーダーを構成、 [ *EvtDevicePrepareHardware* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)アクティブな設定で、対象のパイプ オブジェクトを列挙した後、コールバック関数。
+通常、クライアントドライバーは、アクティブな設定でターゲットパイプオブジェクトを列挙した後、 [*Evtdevicepreparehardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数で継続的リーダーを構成します。
 
-前の例では、クライアント ドライバーは、2 つの方法では、その構成オプションを指定します。 呼び出して最初[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)を設定してから[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)メンバー。 パラメーターに注意してください**WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT**します。 これらの値が必須です。 この例では、クライアント ドライバーを指定します。
+前の例では、クライアントドライバーは2つの方法で構成オプションを指定しています。 最初に、 [**WDF\_usb\_連続\_リーダー\_config\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)を呼び出し、次に[**WDF\_usb\_継続的\_リーダー\_config**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)メンバーを設定します。 **WDF\_USB\_継続的\_リーダー\_CONFIG\_INIT**のパラメーターに注意してください。 これらの値は必須です。 この例では、クライアントドライバーは次のように指定します。
 
--   ドライバーを実装する完了ルーチンへのポインター。 フレームワークは、読み取り要求を完了すると、このルーチンを呼び出します。 入力候補のルーチンで、ドライバーは読み取られたデータが含まれるメモリ位置にアクセスできます。 完了ルーチンの実装は、手順 2. で説明します。
--   ドライバー定義のコンテキストへのポインター。
--   1 つの転送にデバイスから読み取ることができるバイト数。 クライアント ドライバーは、その情報を取得できます、 [ **WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)呼び出して構造[ **WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)または[ **WdfUsbTargetPipeGetInformation** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)メソッド。 詳細については、次を参照してください。 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)します。
+-   ドライバーが実装する完了ルーチンへのポインター。 フレームワークは、読み取り要求の完了時にこのルーチンを呼び出します。 完了ルーチンでは、ドライバーは読み取られたデータを格納しているメモリ位置にアクセスできます。 完了ルーチンの実装については、手順 2. で説明します。
+-   ドライバーで定義されたコンテキストへのポインター。
+-   1回の転送でデバイスから読み取ることができるバイト数。 クライアントドライバーは、 [**WdfUsbInterfaceGetConfiguredPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbinterfacegetconfiguredpipe)または[**WdfUsbTargetPipeGetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetpipegetinformation)メソッドを呼び出すことによって、 [**WDF\_USB\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_pipe_information)構造でその情報を取得できます。 詳細については、「 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)」を参照してください。
 
-[**WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)構成の既定値を使用する継続的なリーダー *NumPendingReads*. その値は、フレームワークが保留中のキューに追加の読み取り要求の数を決定します。 多くのプロセッサ構成の多くのデバイスのそれなりのパフォーマンスを提供する既定値と判断されました。
+[**WDF\_USB\_継続的\_リーダー\_CONFIG\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)は、 *numpendingreads*の既定値を使用するように連続リーダーを構成します。 この値によって、フレームワークが保留キューに追加する読み取り要求の数が決まります。 既定値は、多くのプロセッサ構成の多くのデバイスで適度に良好なパフォーマンスを提供するように決定されています。
 
-指定された構成パラメーターだけでなく[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)、例でも設定して失敗ルーチン[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)します。 このエラーのルーチンでは、省略可能です。
+[**WDF\_usb\_継続的\_リーダー\_CONFIG\_INIT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdf_usb_continuous_reader_config_init)で指定された構成パラメーターに加えて、この例では、 [**WDF\_usb\_連続したエラールーチンも設定\_リーダー\_構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)。 このエラールーチンは省略可能です。
 
-他のメンバーがあるだけでなく、エラー ルーチン[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)クライアント ドライバーができます。転送バッファーのレイアウトを指定する場合に使用します。 たとえば、ネットワーク パケットの受信を継続的なリーダーを使用するネットワーク ドライバーを検討してください。 各パケットには、ヘッダー、ペイロード、およびフッターのデータが含まれています。 パケットを記述するドライバーする必要がありますまずサイズを指定、パケットの呼び出しで[ **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552561_init). ドライバーが設定して、ヘッダーとフッターの長さを指定する必要がありますし、 **HeaderLength**と**TrailerLength**のメンバー **WDF\_USB\_CONTINUOUS\_リーダー\_CONFIG**します。 フレームワークでは、これらの値を使って、ペイロードのいずれかの側のバイト オフセットを計算します。 エンドポイントのペイロード データが読み取られると、フレームワークは、バッファー、オフセットの間の部分でそのデータを格納します。
+エラールーチンに加えて、 [**WDF\_USB\_継続的\_リーダー\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/ns-wdfusb-_wdf_usb_continuous_reader_config)には、クライアントドライバーが転送バッファーのレイアウトを指定するために使用できる他のメンバーもあります。 たとえば、連続したリーダーを使用してネットワークパケットを受信するネットワークドライバーがあるとします。 各パケットには、ヘッダー、ペイロード、およびフッターのデータが含まれています。 パケットを記述するには、ドライバーはまず、 [**WDF\_USB\_継続的\_リーダー\_CONFIG\_INIT**](https://msdn.microsoft.com/library/windows/hardware/ff552561_init)の呼び出しでパケットのサイズを指定する必要があります。 次に、ドライバーは、 **WDF\_USB\_連続\_リーダー\_CONFIG**の**Headerlength**と**TrailerLength**メンバーを設定して、ヘッダーとフッターの長さを指定する必要があります。 フレームワークは、これらの値を使用して、ペイロードの両側のバイトオフセットを計算します。 ペイロードデータがエンドポイントから読み取られると、フレームワークは、オフセット間のバッファーの部分にそのデータを格納します。
 
 2.  完了ルーチンを実装します。
 
-    フレームワークは、要求が完了するたびにクライアント ドライバーの実装の完了ルーチンを呼び出します。 フレームワークは、読み取られたバイトとパイプから読み取られるデータを格納するバッファーが WDFMEMORY オブジェクトの数を渡します。
+    フレームワークは、要求が完了するたびに、クライアントドライバーで実装された完了ルーチンを呼び出します。 このフレームワークは、読み取ったバイト数と、パイプから読み取られたデータをバッファーに格納する WDFMEMORY オブジェクトを渡します。
 
-    次のコード例では、完了の日常的な実装を示します。
+    次のコード例は、完了ルーチンの実装を示しています。
 
     ```cpp
     EVT_WDF_USB_READER_COMPLETION_ROUTINE FX3EvtReadComplete;
@@ -174,13 +174,13 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
 
     ```
 
-フレームワークは、要求が完了するたびにクライアント ドライバーの実装の完了ルーチンを呼び出します。 フレームワークは、各読み取り操作にメモリ オブジェクトを割り当てます。 入力候補のルーチンでは、フレームワークは、メモリ オブジェクトに読み取られたバイトと WDFMEMORY ハンドルの数を渡します。 オブジェクトのメモリ バッファーには、パイプから読み取られるデータが含まれています。 クライアント ドライバーでは、メモリ オブジェクトを解放する必要があります。 各完了ルーチンの返された後に、フレームワークは、オブジェクトを解放します。 クライアント ドライバーは、受信データを格納する必要がある場合、ドライバーは、完了のルーチンで、バッファーの内容をコピーする必要があります。
+フレームワークは、要求が完了するたびに、クライアントドライバーで実装された完了ルーチンを呼び出します。 フレームワークは、読み取り操作ごとにメモリオブジェクトを割り当てます。 完了ルーチンでは、フレームワークは読み取ったバイト数と WDFMEMORY ハンドルをメモリオブジェクトに渡します。 メモリオブジェクトバッファーには、パイプから読み取られたデータが含まれています。 クライアントドライバーは、メモリオブジェクトを解放しないでください。 各完了ルーチンからが返された後に、フレームワークによってオブジェクトが解放されます。 クライアントドライバーが受信したデータを格納する場合、ドライバーは、完了ルーチンでバッファーの内容をコピーする必要があります。
 
-3.  失敗ルーチンを実装します。
+3.  エラールーチンを実装します。
 
-    フレームワークは、継続的なリーダーが読み取り要求の処理中にエラーを報告しているドライバーを通知するためにクライアント ドライバーが実装されている失敗ルーチンを呼び出します。 要求が失敗したフレームワーク パス ターゲット パイプへのポインターがオブジェクト、およびエラー コードの値。 これらのエラー コード値に基づいて、ドライバーは、エラー回復メカニズムを実装できます。 ドライバーは、フレームワークに、フレームワーク、継続的なリーダーを再起動する必要があるかどうかを示す適切な値を返すも必要があります。
+    フレームワークは、クライアントドライバーで実装されたエラールーチンを呼び出して、読み取り要求の処理中に継続的なリーダーがエラーを報告したことをドライバーに通知します。 フレームワークは、要求が失敗したターゲットパイプオブジェクトおよびエラーコード値へのポインターを渡します。 これらのエラーコード値に基づいて、ドライバーはエラー回復メカニズムを実装できます。 また、ドライバーは、フレームワークが継続的リーダーを再起動する必要があるかどうかをフレームワークに示す適切な値も返す必要があります。
 
-    次のコード例では、障害の日常的な実装を示します。
+    次のコード例は、エラールーチンの実装を示しています。
 
     ```cpp
     EVT_WDF_USB_READERS_FAILED FX3EvtReadFailed;  
@@ -203,20 +203,20 @@ Windows Driver Framework (WDF) と呼ばれる特殊なオブジェクトを提�
     }  
     ```
 
-前の例では、ドライバーは、TRUE を返します。 この値は、ことは、パイプをリセットし、継続的なリーダーを再起動が必要があります、フレームワークに示します。
+前の例では、ドライバーは TRUE を返します。 この値は、パイプをリセットした後、連続リーダーを再起動する必要があることをフレームワークに示します。
 
-または、クライアント ドライバーは、FALSE を返すし、パイプで停止条件が発生した場合、エラー回復メカニズムを提供します。 たとえば、ドライバーは USBD 状態を確認し、停止状態をクリアするパイプのリセット要求を発行できます。
+または、クライアントドライバーが FALSE を返し、パイプでストール条件が発生した場合にエラー復旧メカニズムを提供することもできます。 たとえば、ドライバーは USBD の状態を確認し、リセットパイプ要求を発行して、失速条件をクリアできます。
 
-エラー回復パイプの詳細については、次を参照してください。 [USB パイプ エラーから回復する方法](how-to-recover-from-usb-pipe-errors.md)します。
+パイプでのエラー回復の詳細については、「 [USB パイプエラーから回復する方法](how-to-recover-from-usb-pipe-errors.md)」を参照してください。
 
-4.  デバイスが稼働状態に入ったときに、継続的なリーダーを開始するためにフレームワークを指示します。デバイスが稼働状態になったときに、リーダーを停止します。 これらのメソッドを呼び出すし、I/O の対象オブジェクトとしてターゲット パイプ オブジェクトを指定します。
+4.  デバイスが動作状態になったときに、継続的リーダーを起動するようにフレームワークに指示します。デバイスが動作状態のままになったときに、リーダーを停止します。 これらのメソッドを呼び出し、ターゲットパイプオブジェクトを i/o ターゲットオブジェクトとして指定します。
 
-    -   [**WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)
-    -   [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)
+    -   [**WdfIoTargetStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)
+    -   [**WdfIoTargetStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)
 
-    継続的なリーダーは、自動的に電源管理の対象フレームワークによってではありません。 そのため、クライアント ドライバーが開始に明示的に、またはデバイスの電源の状態が変更されたときにターゲット パイプ オブジェクトを停止する必要があります。 ドライバー呼び出し[ **WdfIoTargetStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)ドライバーの[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)実装します。 この呼び出しにより、デバイスが稼働状態の場合にのみ、キューが要求を配信するようになります。 逆に、ドライバーを呼び出す[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)ドライバーで[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)実装、キューを停止するようにデバイスが低電力状態に入ったときに、要求を提供します。
+    継続的リーダーは、フレームワークによって自動的に電源管理されることはありません。 したがって、クライアントドライバーは、デバイスの電源状態が変化したときに、ターゲットパイプオブジェクトを明示的に開始または停止する必要があります。 ドライバーは、ドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)実装で[**Wdfiotargetstart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstart)を呼び出します。 この呼び出しにより、デバイスが動作状態のときにのみ、キューが要求を配信するようになります。 逆に、ドライバーは[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)の実装で[**Wdfiotargetstop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)を呼び出し、デバイスがより低い電力状態になると、キューが要求の配信を停止するようにします。
 
-次のコード例では、指定されたターゲット パイプ オブジェクトの継続的なリーダーを構成します。
+次のコード例では、指定されたターゲットパイプオブジェクトの連続リーダーを構成します。
 
 ```cpp
 
@@ -267,22 +267,22 @@ NTSTATUS FX3EvtDeviceD0Exit(
 }
 ```
 
-前の例では、実装[ *EvtDeviceD0Entry* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)と[ *EvtDeviceD0Exit* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)コールバック ルーチン。 Action パラメーターの[ **WdfIoTargetStop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)デバイスが稼働状態になったときに、キューで保留中の要求のアクションを決定する、クライアント ドライバーを使用します。 例では、ドライバーを指定します**WdfIoTargetCancelSentIo**します。 そのオプションは、キュー内のすべての保留中の要求をキャンセルするためにフレームワークを指示します。 または、ドライバーは保留中の I/O ターゲットを停止する前に完了または保留中の要求を保持し、I/O ターゲットを再起動すると再開要求を待機するフレームワークに指示できます。
+前の例は、 [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)と[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)のコールバックルーチンの実装を示しています。 [**Wdfiotargetstop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetstop)の action パラメーターを使用すると、クライアントドライバーは、デバイスが動作状態のままになったときに、キュー内の保留中の要求に対するアクションを決定できます。 この例では、ドライバーは**WdfIoTargetCancelSentIo**を指定しています。 このオプションは、キュー内のすべての保留中の要求をキャンセルするようにフレームワークに指示します。 または、ドライバーは、保留中の要求が完了するのを待ってから i/o ターゲットを停止するか、保留中の要求を保持し、i/o ターゲットの再起動時に再開するようにフレームワークに指示できます。
 
-### <a name="using-the-continuous-reader---umdf-client-driver"></a>継続的なリーダー - UMDF クライアント ドライバーを使用します。
+### <a name="using-the-continuous-reader---umdf-client-driver"></a>継続的リーダーの使用-UMDF クライアントドライバー
 
-継続的なリーダーを使用して、開始する前に、リーダーの実装でを構成する必要があります[ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)メソッド。 ポインターを取得したら[ **IWDFUsbTargetPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)のエンドポイントに関連付けられているターゲット パイプ オブジェクトのインターフェイスでこれらの手順を実行します。
+継続的リーダーの使用を開始する前に、 [**IPnpCallbackHardware:: On hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)メソッドの実装でリーダーを構成する必要があります。 [**IWDFUSBTARGETPIPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe) IN エンドポイントに関連付けられているターゲットパイプオブジェクトのインターフェイスへのポインターを取得した後、次の手順を実行します。
 
-**継続的なリーダーを構成します。**
+**継続的リーダーの構成**
 
-1.  呼び出す**QueryInterface**ターゲット パイプ オブジェクトの ([**IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)) に対してクエリを実行し、 [ **IWDFUsbTargetPipe2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe2)インターフェイス。
-2.  呼び出す**QueryInterface**デバイス コールバック オブジェクトとのクエリで、 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)インターフェイス。 継続的なリーダーを使用するには、IUsbTargetPipeContinuousReaderCallbackReadComplete を実装する必要があります。 実装は、このトピックの後半で説明します。
-3.  呼び出す**QueryInterface**デバイス コールバック オブジェクトとのクエリで、 [IUsbTargetPipeContinuousReaderCallbackReadersFailed](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)インターフェイスのエラーのコールバックを実装している場合。 実装は、このトピックの後半で説明します。
-4.  呼び出す、 [ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッド ヘッダー、トレーラー、保留中の要求、および完了への参照の数など、構成パラメーターを指定しますエラー コールバック メソッドです。
+1.  ターゲットパイプオブジェクト ([**IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)) で**QueryInterface**を呼び出し、 [**IWDFUsbTargetPipe2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe2)インターフェイスのクエリを実行します。
+2.  デバイスコールバックオブジェクトで**QueryInterface**を呼び出し、 [**IUsbTargetPipeContinuousReaderCallbackReadComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)インターフェイスのクエリを実行します。 連続リーダーを使用するには、IUsbTargetPipeContinuousReaderCallbackReadComplete を実装する必要があります。 実装については、このトピックの後半で説明します。
+3.  エラーコールバックを実装している場合は、デバイスコールバックオブジェクトで**QueryInterface**を呼び出し、 [IUsbTargetPipeContinuousReaderCallbackReadersFailed](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)インターフェイスのクエリを実行します。 実装については、このトピックの後半で説明します。
+4.  [**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッドを呼び出し、ヘッダー、トレーラー、保留中の要求の数、完了と失敗のコールバックメソッドへの参照などの構成パラメーターを指定します。
 
-    メソッドは、ターゲットのパイプ オブジェクトの継続的なリーダーを構成します。 継続的なリーダーは、送信はそのターゲット パイプ オブジェクトから受信した読み取り要求のセットを管理するキューを作成します。
+    メソッドは、ターゲットパイプオブジェクトの連続リーダーを構成します。 連続リーダーは、ターゲットパイプオブジェクトとの間で送受信される一連の読み取り要求を管理するキューを作成します。
 
-次のコード例では、指定されたターゲット パイプ オブジェクトの継続的なリーダーを構成します。 例では、呼び出し元によって指定されたターゲット パイプ オブジェクトがのエンドポイントに関連付けられていることを前提としています。 継続的なリーダーが読み取るように構成 USBD\_既定\_最大\_転送\_サイズ バイトを表します保留中の要求が、framework で使用して、ドライバーによって提供される、クライアントを呼び出す既定の数を使用するには。入力候補およびエラーのコールバック メソッド。 受信バッファーでは、任意のヘッダーまたはトレーラーのデータは含まれません。
+次のコード例では、指定されたターゲットパイプオブジェクトの連続リーダーを構成します。 この例では、呼び出し元によって指定されたターゲットパイプオブジェクトがエンドポイントのに関連付けられていることを前提としています。 継続的リーダーは、USBD を読み取るように構成されています。\_既定\_最大\_転送\_サイズバイトです。フレームワークでを使用して、既定の数の保留中の要求を使用するには、クライアントドライバーが提供した完了および失敗のコールバックメソッドを呼び出す場合は。 受信したバッファーには、ヘッダーまたはトレーラーデータは含まれません。
 
 ```cpp
 HRESULT CDeviceCallback::ConfigureContinuousReader (IWDFUsbTargetPipe* pFxPipe)
@@ -361,21 +361,21 @@ ConfigureContinuousReaderExit:
 }
 ```
 
-デバイスに入って動作状態を終了するときに、ターゲットのパイプ オブジェクトの状態を次に、指定 (**D0**)。
+次に、デバイスが動作状態 (**D0**) に入って終了するときに、ターゲットパイプオブジェクトの状態を指定します。
 
-デバイスがである場合にのみ、キューが要求を配信クライアント ドライバーでは、パイプに要求を送信する電源管理対象のキューを使用している場合、 **D0**状態。 デバイスの電源状態が変更された場合**D0**低電力状態に (で**D0**終了)、ターゲットのパイプ オブジェクトが保留中の要求を完了すると、およびターゲット パイプ オブジェクトに要求を送信、キューを停止します. そのため、クライアント ドライバーでは、開始およびターゲットのパイプ オブジェクトを停止する必要はありません。
+クライアントドライバーが電源管理キューを使用してパイプに要求を送信する場合、キューはデバイスが**D0**状態のときにのみ要求を配信します。 デバイスの電源状態が**d0**から低電力状態に変わると ( **d0**終了時)、ターゲットパイプオブジェクトは保留中の要求を完了し、キューはターゲットパイプオブジェクトへの要求の送信を停止します。 したがって、クライアントドライバーは、ターゲットパイプオブジェクトを開始および停止する必要はありません。
 
-継続的なリーダーは、要求を送信するのに電源管理対象のキューを使用しません。 そのため、開始または、デバイスの電源の状態が変更されたときにターゲット パイプ オブジェクトを停止する必要があります明示的にします。 ターゲットのパイプ オブジェクトの状態を変更するには、使用することができます、 [ **IWDFIoTargetStateManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement) framework によって実装されるインターフェイス。 ポインターを取得したら[ **IWDFUsbTargetPipe** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)のエンドポイントに関連付けられているターゲット パイプ オブジェクトのインターフェイスで、次の手順を実行します。
+継続的リーダーは、要求を送信するために、電源管理キューを使用しません。 そのため、デバイスの電源状態が変化したときに、ターゲットパイプオブジェクトを明示的に開始または停止する必要があります。 ターゲットパイプオブジェクトの状態を変更するには、フレームワークによって実装されている[**IWDFIoTargetStateManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイスを使用できます。 [**IWDFUSBTARGETPIPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe) IN エンドポイントに関連付けられているターゲットパイプオブジェクトのインターフェイスへのポインターを取得した後、次の手順を実行します。
 
-**状態管理を実装します。**
+**状態管理の実装**
 
-1.  実装で[ **IPnpCallbackHardware::OnPrepareHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)、呼び出す [**QueryInterface**ターゲット パイプ オブジェクトの ([ **IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iwdfusbtargetpipe)) に対してクエリを実行し、 [ **IWDFIoTargetStateManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイス。 デバイス コールバック クラスのメンバー変数に参照を格納します。
-2.  実装、 [ **IPnpCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)デバイス コールバック オブジェクトのインターフェイス。
-3.  実装では、 [ **IPnpCallback::OnD0Entry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)メソッドを呼び出します[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を開始します継続的なリーダー。
-4.  実装では、 [ **IPnpCallback::OnD0Exit** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)メソッドを呼び出します[ **IWDFIoTargetStateManagement::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を停止します継続的なリーダー。
+1.  [**IPnpCallbackHardware:: 代わっ hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)の実装で、ターゲットパイプオブジェクト ([**IWDFUsbTargetPipe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)) に対して **[QueryInterface]** を呼び出し、 [**IWDFIoTargetStateManagement**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイスに対してクエリを実行します。 デバイスコールバッククラスのメンバー変数に参照を格納します。
+2.  デバイスコールバックオブジェクトに[**IPnpCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallback)インターフェイスを実装します。
+3.  [**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)メソッドの実装では、 [**IWDFIoTargetStateManagement:: start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を呼び出して、連続リーダーを開始します。
+4.  [**IPnpCallback:: OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit)メソッドの実装では、 [**IWDFIoTargetStateManagement:: stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を呼び出して、連続リーダーを停止します。
 
-動作状態を入力すると、デバイス (**D0**)、指定されたターゲットを起動するコールバック メソッドを D0 エントリのクライアント ドライバー、フレームワークによってオブジェクトをパイプ処理します。 デバイスから離したときに、 **D0**状態では、フレームワーク、D0 終了のコールバック メソッドを呼び出します。 ターゲットのパイプ オブジェクトでは、保留中のクライアント ドライバーで構成されている、読み取り要求の数が完了して、新しい要求の受け入れを停止します。
-次のコード例の実装、 [IPnpCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-ipnpcallback)デバイス コールバック オブジェクトのインターフェイス。
+デバイスが動作状態 (**d0**) になると、フレームワークは、ターゲットパイプオブジェクトを開始する、クライアントドライバーが提供する D0-entry コールバックメソッドを呼び出します。 デバイスが**d0**状態のままになると、フレームワークは d0-exit コールバックメソッドを呼び出します。 ターゲットパイプオブジェクトは、クライアントドライバーによって構成された保留中の読み取り要求の数を完了し、新しい要求の受け入れを停止します。
+次のコード例では、デバイスコールバックオブジェクトに[IPnpCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallback)インターフェイスを実装しています。
 
 ```cpp
 class CDeviceCallback : 
@@ -408,7 +408,7 @@ private:
 };
 ```
 
-次のコード例は、IPnpCallback::OnPrepareHardware メソッドでターゲット パイプ オブジェクトの IWDFIoTargetStateManagement インターフェイスへのポインターを取得する方法を示しています。
+次のコード例は、IPnpCallback:: OnIWDFIoTargetStateManagement Hardware メソッドでターゲットパイプオブジェクトのインターフェイスへのポインターを取得する方法を示しています。
 
 ```cpp
    //Enumerate the endpoints and get the interrupt pipe.
@@ -448,7 +448,7 @@ private:
     }
 ```
 
-次のコード例へのポインターを取得する方法を示しています、 [ **IWDFIoTargetStateManagement** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)でターゲット パイプ オブジェクトのインターフェイス、 [ **IPnpCallbackHardware::OnPrepareHardware** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)メソッド。
+次のコード例は、 [**IPnpCallbackHardware:: OnIWDFIoTargetStateManagement hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)メソッドでターゲットパイプオブジェクトの[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotargetstatemanagement)インターフェイスへのポインターを取得する方法を示しています。
 
 ```cpp
  HRESULT CDeviceCallback::OnD0Entry(
@@ -491,18 +491,18 @@ HRESULT CDeviceCallback::OnD0Exit(
 }
 ```
 
-継続的なリーダーには、読み取り要求が完了すると、クライアント ドライバーは、要求が読み取り要求を正常に完了するときに通知を受け取るする方法を提供する必要があります。 クライアント ドライバーでは、デバイス コールバック オブジェクトに次のコードを追加する必要があります。
+継続的リーダーが読み取り要求を完了すると、クライアントドライバーは、要求が読み取り要求を正常に完了したときに通知を受け取る方法を提供する必要があります。 クライアントドライバーは、デバイスコールバックオブジェクトにこのコードを追加する必要があります。
 
-**IUsbTargetPipeContinuousReaderCallbackReadComplete を実装して完了コールバックを提供します。**
+**IUsbTargetPipeContinuousReaderCallbackReadComplete を実装して完了コールバックを提供する**
 
-1.  実装、 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)デバイス コールバック オブジェクトのインターフェイス。
-2.  必ず、 **QueryInterface**デバイス コールバック オブジェクトの実装は、コールバック オブジェクトの参照カウントをインクリメントしてから返します、 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)インターフェイス ポインター。
-3.  実装では、 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)メソッド、データの読み取りアクセスは、パイプから読み取られました。 *PMemory*パラメーター データを含む、フレームワークによって割り当てられたメモリを指します。 呼び出すことができます[ **IWDFMemory::GetDataBuffer** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisgetdatabuffer)データを格納しているバッファーを取得します。 バッファーには、ヘッダーが含まれています。 ただしデータの長さが付いて、 *NumBytesTransferred*パラメーターの**OnReaderCompletion**ヘッダーの長さは含まれません。 ヘッダーの長さは、クライアント ドライバー、ドライバーの呼び出しで継続的なリーダーの構成時に指定した[ **IWDFUsbTargetPipe2::ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)します。
-4.  完了コールバックへのポインターを指定、 *pOnCompletion*のパラメーター、 [ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッド。
+1.  デバイスコールバックオブジェクトに[**IUsbTargetPipeContinuousReaderCallbackReadComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)インターフェイスを実装します。
+2.  デバイスコールバックオブジェクトの**QueryInterface**実装がコールバックオブジェクトの参照カウントをインクリメントし、 [**IUsbTargetPipeContinuousReaderCallbackReadComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)インターフェイスポインターを返すことを確認します。
+3.  [**IUsbTargetPipeContinuousReaderCallbackReadComplete:: OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)メソッドの実装では、パイプから読み取られたデータにアクセスします。 *Pmemory*パラメーターは、データを格納するフレームワークによって割り当てられたメモリを指します。 [**Iwdfmemory:: GetDataBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisgetdatabuffer)を呼び出して、データを含むバッファーを取得できます。 バッファーにはヘッダーが含まれていますが、 **Onreadercompletion**の*NumBytesTransferred*パラメーターによって示されるデータの長さには、ヘッダーの長さが含まれていません。 ヘッダーの長さはクライアントドライバーによって指定され、ドライバーの[**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)への呼び出しで継続的リーダーを構成します。
+4.  [**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッドの*pOnCompletion*パラメーターで、完了コールバックへのポインターを指定します。
 
-データは、デバイス上のエンドポイントで使用するたびにターゲット パイプ オブジェクトは、読み取り要求を完了します。 フレームワークが呼び出すことによって、クライアント ドライバーを通知する場合は、読み取り要求が正常に完了したら、 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)します。 それ以外の場合、フレームワークは、ターゲットのパイプ オブジェクトが読み取り要求のエラーを報告したときに、クライアント ドライバーによって提供されるエラーのコールバックを呼び出します。
+デバイス上のエンドポイントでデータが使用可能になるたびに、ターゲットパイプオブジェクトは読み取り要求を完了します。 読み取り要求が正常に完了した場合、フレームワークは[**IUsbTargetPipeContinuousReaderCallbackReadComplete:: OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)を呼び出すことによってクライアントドライバーに通知します。 そうしないと、ターゲットパイプオブジェクトが読み取り要求でエラーを報告したときに、フレームワークがクライアントドライバーから提供されたエラーコールバックを呼び出します。
 
-次のコード例の実装、 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)デバイス コールバック オブジェクトのインターフェイス。
+次のコード例では、デバイスコールバックオブジェクトに[**IUsbTargetPipeContinuousReaderCallbackReadComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete)インターフェイスを実装しています。
 
 ```cpp
 class CDeviceCallback : 
@@ -540,7 +540,7 @@ private:
 };
 ```
 
-次のコード例では、デバイス コールバック オブジェクトの QueryInterface の実装を示します。
+次のコード例は、デバイスコールバックオブジェクトの QueryInterface 実装を示しています。
 
 ```cpp
 HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
@@ -582,7 +582,7 @@ HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
 }
 ```
 
-次のコード例は、によって返されるバッファーからデータを取得する方法を示しています。 [ **IUsbTargetPipeContinuousReaderCallbackReadComplete::OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)します。 ターゲット パイプ オブジェクトには、読み取りが完了するたびには、フレームワークによって要求が正常に**OnReaderCompletion**します。 この例では、containsng データ バッファーを取得し、デバッガーの出力の内容を出力します。
+次のコード例は、 [**IUsbTargetPipeContinuousReaderCallbackReadComplete:: OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion)によって返されるバッファーからデータを取得する方法を示しています。 ターゲットパイプオブジェクトが読み取り要求を正常に完了するたびに、フレームワークは**Onreadercompletion**を呼び出します。 この例では、データを containsng するバッファーを取得し、その内容をデバッガーの出力に出力します。
 
 ```cpp
  VOID CDeviceCallback::OnReaderCompletion(
@@ -623,23 +623,23 @@ HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
 }
 ```
 
-クライアント ドライバーは、読み取り要求の完了中にターゲット パイプ オブジェクトで障害が発生したときに、フレームワークから通知を受け取ることができます。 通知を取得するには、クライアント ドライバーはエラー コールバックを実装し、継続的なリーダーを構成するときに、コールバックへのポインターを指定する必要があります。 次の手順では、エラー コールバックを実装する方法について説明します。
+クライアントドライバーは、読み取り要求の完了中にターゲットパイプオブジェクトでエラーが発生したときに、フレームワークから通知を受け取ることができます。 クライアントドライバーは、通知を取得するために、エラーコールバックを実装し、連続リーダーの構成中にコールバックへのポインターを提供する必要があります。 次の手順では、エラーコールバックを実装する方法について説明します。
 
-**IUsbTargetPipeContinuousReaderCallbackReadersFailed を実装してエラーのコールバックを提供します。**
+**IUsbTargetPipeContinuousReaderCallbackReadersFailed を実装してエラーコールバックを提供する**
 
-1.  実装、 [ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)デバイス コールバック オブジェクトのインターフェイス。
-2.  必ず、 **QueryInterface**デバイス コールバック オブジェクトの実装は、コールバック オブジェクトの参照カウントをインクリメントしてから返します、 [ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)インターフェイス ポインター。
-3.  実装では、 [ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)メソッド、失敗した読み取り要求のエラー処理を提供します。
+1.  デバイスコールバックオブジェクトに[**IUsbTargetPipeContinuousReaderCallbackReadersFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)インターフェイスを実装します。
+2.  デバイスコールバックオブジェクトの**QueryInterface**実装がコールバックオブジェクトの参照カウントをインクリメントし、 [**IUsbTargetPipeContinuousReaderCallbackReadersFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)インターフェイスポインターを返すことを確認します。
+3.  [**IUsbTargetPipeContinuousReaderCallbackReadersFailed:: OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)メソッドの実装では、失敗した読み取り要求のエラー処理を提供します。
 
-    読み取り要求と、クライアント ドライバーは、エラー コールバックを提供します完了する継続的なリーダーが失敗した場合は、フレームワーク、 [ **IUsbTargetPipeContinuousReaderCallbackReadersFailed::OnReaderFailure** 。](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)メソッド。 フレームワークの HRESULT 値を提供する、 *hrStatus*ターゲット パイプ オブジェクトで発生したエラー コードを示すパラメーターです。 基づく特定のエラー処理を提供するエラー コード可能性があります。 たとえば、パイプをリセットし、継続的なリーダーを再起動するためにフレームワークを実行する場合に、確認、コールバックが TRUE を返します。
+    連続リーダーが読み取り要求を完了できず、クライアントドライバーがエラーコールバックを提供する場合、フレームワークは[**IUsbTargetPipeContinuousReaderCallbackReadersFailed:: OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)メソッドを呼び出します。 このフレームワークでは、ターゲットパイプオブジェクトで発生したエラーコードを示す HRESULT 値が*Hrstatus*パラメーターに指定されています。 このエラーコードに基づいて、特定のエラー処理を提供する場合があります。 たとえば、フレームワークでパイプをリセットし、継続的リーダーを再起動する必要がある場合は、コールバックによって TRUE が返されることを確認します。
 
-    **注**呼び出さない[ **IWDFIoTargetStateManagement::Start** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)と[ **IWDFIoTargetStateManagement::Stop** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)内でのエラーのコールバック。
+    **メモ** 失敗コールバック内で[**IWDFIoTargetStateManagement:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)と[**IWDFIoTargetStateManagement:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を呼び出さないでください。
 
 
 
-4.  失敗コールバックへのポインターを指定、 *pOnFailure*のパラメーター、 [ **IWDFUsbTargetPipe2::ConfigureContinuousReader** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッド。
+4.  [**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッドの*pOnFailure*パラメーターに、エラーコールバックへのポインターを指定します。
 
-次のコード例の実装、 [ **IUsbTargetPipeContinuousReaderCallbackReadersFailed** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)デバイス コールバック オブジェクトのインターフェイス。
+次のコード例では、デバイスコールバックオブジェクトに[**IUsbTargetPipeContinuousReaderCallbackReadersFailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed)インターフェイスを実装しています。
 
 ```cpp
 class CDeviceCallback : 
@@ -678,7 +678,7 @@ private:
 };
 ```
 
-次のコード例では、デバイス コールバック オブジェクトの QueryInterface の実装を示します。
+次のコード例は、デバイスコールバックオブジェクトの QueryInterface 実装を示しています。
 
 ```cpp
 HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
@@ -726,7 +726,7 @@ HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
 }
 ```
 
-次のコード例では、エラー コールバックの実装を示します。 読み取り要求が失敗した場合、メソッドは、デバッガーで、フレームワークによって報告されたエラー コードを出力し、パイプをリセットし、継続的なリーダーを再起動するためにフレームワークを指示します。
+次のコード例は、エラーコールバックの実装を示しています。 読み取り要求が失敗した場合、メソッドはフレームワークによって報告されたエラーコードをデバッガーに出力し、パイプをリセットして継続的リーダーを再起動するようにフレームワークに指示します。
 
 ```cpp
  BOOL CDeviceCallback::OnReaderFailure(
@@ -741,14 +741,14 @@ HRESULT CDeviceCallback::QueryInterface(REFIID riid, LPVOID* ppvObject)
 }
 ```
 
-クライアント ドライバーはエラー コールバックを提供していない、エラーが発生した場合は、フレームワークは、USB パイプをリセットし、継続的なリーダーを再起動します。
+クライアントドライバーでエラーコールバックが提供されず、エラーが発生した場合、フレームワークは USB パイプをリセットし、連続リーダーを再起動します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB I/O の転送](usb-device-i-o.md)  
+[USB i/o 転送](usb-device-i-o.md)  
 [USB パイプを列挙する方法](how-to-get-usb-pipe-handles.md)  
 [USB デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)  
-[USB インターフェイスで代替の設定を選択する方法](select-a-usb-alternate-setting.md)  
-[USB クライアント ドライバーに関する一般的なタスク](wdk-resources-for-usb-driver-development.md)  
+[USB インターフェイスで別の設定を選択する方法](select-a-usb-alternate-setting.md)  
+[USB クライアントドライバーの一般的なタスク](wdk-resources-for-usb-driver-development.md)  
 
 
 

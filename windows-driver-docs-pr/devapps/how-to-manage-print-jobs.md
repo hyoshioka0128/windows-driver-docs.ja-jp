@@ -1,57 +1,57 @@
 ---
-title: UWP デバイス アプリでの印刷ジョブを管理する方法
-description: Windows 8.1 では、プリンター用の UWP デバイス アプリは、印刷ジョブを管理できます。
+title: UWP デバイスアプリで印刷ジョブを管理する方法
+description: Windows 8.1 では、プリンター用の UWP デバイスアプリで印刷ジョブを管理できます。
 ms.assetid: 30E247DB-E5B0-4CD5-89F5-4227EE20A564
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e9bb4b27115b24f0355281684e6a92baf7ab161
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0d319ab0e926f270f08084aa9b2e4ef3b7e9aff6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369352"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72829908"
 ---
-# <a name="how-to-manage-print-jobs-in-a-uwp-device-app"></a>UWP デバイス アプリでの印刷ジョブを管理する方法
+# <a name="how-to-manage-print-jobs-in-a-uwp-device-app"></a>UWP デバイスアプリで印刷ジョブを管理する方法
 
 
-Windows 8.1 では、プリンター用の UWP デバイス アプリは、印刷ジョブを管理できます。 このトピックでは、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)印刷ジョブのビューを作成、それらのジョブを監視および必要に応じて、ジョブをキャンセルする方法を示すサンプル。 一般に UWP デバイス アプリの詳細について、次を参照してください。[満たす UWP デバイス アプリ](meet-uwp-device-apps.md)します。
+Windows 8.1 では、プリンター用の UWP デバイスアプリで印刷ジョブを管理できます。 このトピックではC# 、[印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルのバージョンを使用して、印刷ジョブのビューを作成し、それらのジョブを監視し、必要に応じてジョブをキャンセルする方法を示します。 UWP デバイスアプリ全般の詳細については、 [uwp デバイスアプリの準拠](meet-uwp-device-apps.md)に関するページを参照してください。
 
-C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルではプリンターでのメンテナンス、 **DeviceMaintenance.xaml.cs**ファイル、 **DeviceAppForPrinters2**プロジェクト。 サンプルを Bidi を使用するでプリンターの拡張機能ライブラリを使用して、 **PrinterExtensionLibrary**プロジェクト。 プリンターの拡張機能ライブラリでは、v4 印刷ドライバーのプリンター拡張機能のインターフェイスにアクセスする便利な手段を提供します。 詳細については、次を参照してください。、[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)します。
+C# [印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルのバージョンは、 **DeviceAppForPrinters2**プロジェクトの**DeviceMaintenance.xaml.cs**ファイルを使用したプリンターのメンテナンスを示しています。 このサンプルでは、Bidi を操作するために、**プリンターの拡張**機能ライブラリを使用します。 プリンター拡張ライブラリは、v4 印刷ドライバーのプリンター拡張機能インターフェイスにアクセスするための便利な方法を提供します。 詳細については、「[プリンター拡張機能ライブラリの概要](printer-extension-library-overview.md)」を参照してください。
 
-**注**  このトピックで示すコード例に基づいています、C#のバージョン、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプル。 このサンプルも JavaScript および C++ で使用できます。 C++ は COM を直接アクセスできるため、C++ のバージョン サンプルにはが含まれていないことコード ライブラリ プロジェクトに注意してください。 コードの最新バージョンを参照するサンプルをダウンロードします。
+このトピックに示されているコード例は、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルのC#バージョンに基づい**て  ます**。 このサンプルは、JavaScript およびC++でも使用できます。 は COM にC++直接アクセスできるため、サンプルC++のバージョンにはコードライブラリプロジェクトが含まれていないことに注意してください。 サンプルをダウンロードして、最新バージョンのコードを確認してください。
 
  
 
-## <a name="span-idmanagingprintjobsspanspan-idmanagingprintjobsspanspan-idmanagingprintjobsspanmanaging-print-jobs"></a><span id="Managing_print_jobs"></span><span id="managing_print_jobs"></span><span id="MANAGING_PRINT_JOBS"></span>印刷ジョブの管理
+## <a name="span-idmanaging_print_jobsspanspan-idmanaging_print_jobsspanspan-idmanaging_print_jobsspanmanaging-print-jobs"></a><span id="Managing_print_jobs"></span><span id="managing_print_jobs"></span><span id="MANAGING_PRINT_JOBS"></span>印刷ジョブの管理
 
 
-Windows 8.1 には、新しい印刷ジョブを管理するために使用できる、v4 プリンター ドライバーでのプリンター拡張機能のインターフェイスが導入されています。[**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueue2)、 [ **IPrinterQueueView**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueview)、 [ **IPrinterQueueViewEvent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprinterqueueviewevent)、 [ **IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjob)、および[ **IPrintJobCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/printerextension/nn-printerextension-iprintjobcollection)します。 これらのインターフェイスを使うとを監視し、印刷ジョブをキャンセルできます。 詳細については、次を参照してください。[印刷ジョブの管理 (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)します。
+Windows 8.1 では、印刷ジョブの管理に使用できる、 [**IPrinterQueue2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueue2)、 [**iIPrinterQueueViewEvent queueview**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueueview)、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterqueueviewevent)、 [**IPrintJob**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintjob)、および[**iprinterqueueview**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprintjobcollection)の新しいプリンター拡張インターフェイスが v4 プリンタードライバーに導入されています。 これらのインターフェイスを使用すると、印刷ジョブを監視および取り消すことができます。 詳細については、「[印刷ジョブの管理 (V4 プリンタードライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)」を参照してください。
 
-**ヒント:**    C# JavaScript アプリは COM Api と直接動作できません。 作成する場合、C#または JavaScript UWP デバイス アプリ、プリンターの拡張機能ライブラリを使用して、これらのインターフェイス (このトピックで示す) にアクセスします。
+**ヒント**  C#と JavaScript アプリが COM api を直接操作することはできません。 C#または JAVASCRIPT の UWP デバイスアプリを作成する場合は、このトピックに示すように、プリンター拡張ライブラリを使用してこれらのインターフェイスにアクセスします。
 
  
 
 ## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>前提条件
 
 
-開始する前に。
+作業を開始する前に:
 
-1.  V4 印刷ドライバーを使用して、プリンターをインストールすることを確認します。 詳細については、次を参照してください。[開発 v4 印刷ドライバー](https://go.microsoft.com/fwlink/p/?LinkId=314231)します。
-2.  開発用 PC の設定を取得します。 参照してください[Getting started](getting-started.md)については、ツールをダウンロードして開発者アカウントを作成します。
-3.  アプリをストアに関連付けます。 参照してください[UWP デバイスのアプリを作成](step-1--create-a-uwp-device-app.md)についてです。
-4.  アプリに関連付けているプリンター用のデバイス メタデータを作成します。 参照してください[デバイス メタデータを作成する](step-2--create-device-metadata.md)の詳細についてはします。
-5.  アプリのメイン ページの UI をビルドします。 表示されている全画面表示になりますが、最初からすべての UWP デバイス アプリを起動できます。 スタート エクスペリエンスを使用して、製品またはサービスに固有のブランドと一致する方法と、デバイスの機能を強調表示します。 使用できる UI コントロールの種類の特別な制限はありません。 全画面表示エクスペリエンスのデザインを開始するを参照してください。、 [Microsoft Store の設計原則](https://go.microsoft.com/fwlink/p/?LinkID=299845)します。
-6.  使用してアプリを作成している記述しているかどうかはC#または JavaScript を追加、 **PrinterExtensionLibrary** UWP デバイスのアプリ ソリューションにプロジェクト。 このプロジェクトを見つけることができます、[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプル。
-    **注**  のための C++ COM に直接アクセスできる、C アプリの場合は、COM ベースのプリンター デバイス コンテキストを使用する別のライブラリを必要としません。
+1.  プリンターが v4 印刷ドライバーを使用してインストールされていることを確認します。 詳細については、「 [v4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)」を参照してください。
+2.  開発用 PC のセットアップを開始します。 ツールのダウンロードと開発者アカウントの作成に関する情報については、「[作業の開始](getting-started.md)」を参照してください。
+3.  アプリをストアに関連付けます。 詳細については[、「UWP デバイスアプリの作成](step-1--create-a-uwp-device-app.md)」を参照してください。
+4.  アプリに関連付けられているプリンターのデバイスメタデータを作成します。 詳細については、「[デバイスメタデータの作成](step-2--create-device-metadata.md)」を参照してください。
+5.  アプリのメインページの UI を作成します。 すべての UWP デバイスアプリはスタート画面から起動でき、全画面表示されます。 スタート画面を使用して、お使いのデバイスのブランドと機能に合わせて製品やサービスを強調表示します。 使用できる UI コントロールの種類に特別な制限はありません。 全画面表示のエクスペリエンスのデザインを開始するには、 [Microsoft Store 設計の原則](https://go.microsoft.com/fwlink/p/?LinkID=299845)に関するページを参照してください。
+6.  または JavaScript を使用C#してアプリを作成する場合は、UWP デバイスアプリソリューションに**プリンター extensionlibrary**プロジェクトを追加します。 このプロジェクトは、[印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルで見つけることができます。
+    は、がC++ com に直接アクセスできるC++ため、アプリケーションは com ベースのプリンターデバイスコンテキストを操作するために個別のライブラリを必要としないため、  に**注意**してください。
 
      
 
-## <a name="span-idstep1findprinterspanspan-idstep1findprinterspanspan-idstep1findprinterspanstep-1-find-printer"></a><span id="Step_1__Find_printer"></span><span id="step_1__find_printer"></span><span id="STEP_1__FIND_PRINTER"></span>手順 1: プリンターを検索します。
+## <a name="span-idstep_1__find_printerspanspan-idstep_1__find_printerspanspan-idstep_1__find_printerspanstep-1-find-printer"></a><span id="Step_1__Find_printer"></span><span id="step_1__find_printer"></span><span id="STEP_1__FIND_PRINTER"></span>手順 1: プリンターを検索する
 
 
-アプリでは、印刷ジョブを管理することには、まず、プリンターが印刷ジョブを探します。 これを行う、[印刷ジョブの管理やプリンターの管理](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルには、という名前の便利なクラスが含まれています。 `PrinterEnumeration` (で、 **PrinterEnumeration.cs**ファイル)。 このクラスは、デバイスのメタデータを使用して、アプリに関連付けられているすべてのプリンターを検索しの一覧を返します`PrinterInfo`オブジェクトで、名前と各プリンターについては、デバイス Id が含まれています。
+アプリで印刷ジョブを管理するには、まず印刷ジョブがあるプリンターを見つける必要があります。 これを行うために、[印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルには、( **PrinterEnumeration.cs**ファイルに) `PrinterEnumeration` という便利なクラスが含まれています。 このクラスは、デバイスメタデータを使用してアプリに関連付けられているすべてのプリンターを検索し、各プリンターの名前とデバイス Id を含む `PrinterInfo` オブジェクトの一覧を返します。
 
-この例では、`EnumeratePrinters_Click`メソッドで、 **PrintJobManagement.xaml.cs**ファイル。 サンプルを使用する方法を示しています、`PrinterEnumeration`クラスの一覧を取得するには、プリンターが関連付けられています。
+この例は、 **PrintJobManagement.xaml.cs**ファイルの `EnumeratePrinters_Click` メソッドを示しています。 このサンプルでは、`PrinterEnumeration` クラスを使用して、関連付けられているプリンターの一覧を取得する方法を示します。
 
 ```CSharp
 private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
@@ -86,18 +86,18 @@ private async void EnumeratePrinters_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**ヒント:**   の詳細については、`PrinterEnumeration`と`PrinterInfo`クラスを参照してください、 **PrinterEnumeration.cs**ファイル。
+**ヒント**  `PrinterEnumeration` と `PrinterInfo` クラスの詳細については、 **PrinterEnumeration.cs**ファイルを参照してください。
 
  
 
-## <a name="span-idstep2getprinterqueuespanspan-idstep2getprinterqueuespanspan-idstep2getprinterqueuespanstep-2-get-printer-queue"></a><span id="Step_2__Get_printer_queue"></span><span id="step_2__get_printer_queue"></span><span id="STEP_2__GET_PRINTER_QUEUE"></span>手順 2: プリンター キューを取得します。
+## <a name="span-idstep_2__get_printer_queuespanspan-idstep_2__get_printer_queuespanspan-idstep_2__get_printer_queuespanstep-2-get-printer-queue"></a><span id="Step_2__Get_printer_queue"></span><span id="step_2__get_printer_queue"></span><span id="STEP_2__GET_PRINTER_QUEUE"></span>手順 2: プリンターキューを取得する
 
 
-プリンターの印刷ジョブを作成、管理することを特定したら、*ビュー*に基づくオブジェクトに、印刷ジョブの`IPrinterQueueView`インターフェイス (で定義されている、 **PrinterExtensionTypes.cs**のファイル、 **PrinterExtensionLibrary**プロジェクト)。 [印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルでは、このオブジェクトの名前は`currentPrinterQueueView`とプリンターの選択が変更されるたびに再作成します。
+管理する印刷ジョブがあるプリンターを特定したら、`IPrinterQueueView` インターフェイス **(プリンターの** **PrinterExtensionTypes.cs**ファイルで定義されている) に基づくオブジェクトを使用して、印刷ジョブの*ビュー*を作成します。 [印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルでは、このオブジェクトの名前は `currentPrinterQueueView` で、プリンターの選択が変更されるたびに再作成されます。
 
-`Printer_SelectionChanged`メソッド、サンプルの最初では、`PrinterInfo`という名前のプリンター拡張コンテキスト オブジェクトを作成するオブジェクト`context`します。 使用して、`GetPrinterQueueView`メソッドを`context`を作成する、`currentPrinterQueueView`オブジェクト。 最後に、イベント ハンドラーを処理するために追加、`currentPrinterQueueView`の`OnChanged`イベント。
+`Printer_SelectionChanged` メソッドでは、サンプルはまず `PrinterInfo` オブジェクトを使用して、`context`という名前のプリンター拡張コンテキストオブジェクトを作成します。 次に、`context` の `GetPrinterQueueView` メソッドを使用して、`currentPrinterQueueView` オブジェクトを作成します。 最後に、イベントハンドラーを追加して、`currentPrinterQueueView`の `OnChanged` イベントを処理します。
 
-この例では、`Printer_SelectionChanged`メソッドで、 **PrintJobManagement.xaml.cs**ファイル。 に基づいてプリンター キューのビュー オブジェクトを作成する方法を示します`IPrinterQueueView`します。
+この例は、 **PrintJobManagement.xaml.cs**ファイルの `Printer_SelectionChanged` メソッドを示しています。 `IPrinterQueueView`に基づいてプリンターキュービューオブジェクトを作成する方法を示します。
 
 ```CSharp
 private void Printer_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -131,9 +131,9 @@ private void Printer_SelectionChanged(object sender, SelectionChangedEventArgs e
 }
 ```
 
-また、印刷ジョブの表示に変更があるたびにイベント ハンドラーを呼び出す、`OnPrinterQueueViewChanged`メソッド。 再バインドするため、このメソッドは、`PrintJobListBox`の IEnumerable コレクションを持つ`IPrintJob`オブジェクト。 コレクションが経由でメソッドに渡される、`PrinterQueueViewEventArgs`オブジェクトで定義されている、 **PrinterExtensionTypes.cs**ファイル。
+また、印刷ジョブのビューが変更されるたびに、イベントハンドラーは `OnPrinterQueueViewChanged` メソッドを呼び出します。 このメソッドは、`IPrintJob` オブジェクトの IEnumerable コレクションで `PrintJobListBox` を再バインドする役割を担います。 コレクションは、 **PrinterExtensionTypes.cs**ファイルで定義されている `PrinterQueueViewEventArgs` オブジェクトを介してメソッドに渡されます。
 
-この例では、`OnPrinterQueueViewChanged`メソッドで、 **PrintJobManagement.xaml.cs**ファイル。
+この例は、 **PrintJobManagement.xaml.cs**ファイルの `OnPrinterQueueViewChanged` メソッドを示しています。
 
 ```CSharp
 private async void OnPrinterQueueViewChanged(object sender, PrinterQueueViewEventArgs e)
@@ -151,14 +151,14 @@ private async void OnPrinterQueueViewChanged(object sender, PrinterQueueViewEven
 }
 ```
 
-## <a name="span-idstep3displayprintjobstatusspanspan-idstep3displayprintjobstatusspanspan-idstep3displayprintjobstatusspanstep-3-display-print-job-status"></a><span id="Step_3__Display_print_job_status"></span><span id="step_3__display_print_job_status"></span><span id="STEP_3__DISPLAY_PRINT_JOB_STATUS"></span>手順 3: 印刷ジョブの状態を表示します。
+## <a name="span-idstep_3__display_print_job_statusspanspan-idstep_3__display_print_job_statusspanspan-idstep_3__display_print_job_statusspanstep-3-display-print-job-status"></a><span id="Step_3__Display_print_job_status"></span><span id="step_3__display_print_job_status"></span><span id="STEP_3__DISPLAY_PRINT_JOB_STATUS"></span>手順 3: 印刷ジョブの状態を表示する
 
 
-`PrintJobListBox`のコレクションにバインドされた`IPrintJob`オブジェクトの場合、ジョブの状態を表示するは非常に簡単です。 選択した印刷ジョブとしてキャスト、`IPrintJob`オブジェクト、および、そのオブジェクトのプロパティが塗りつぶしに使用、`PrintJobDetails`テキスト ボックス。
+`PrintJobListBox` は `IPrintJob` オブジェクトのコレクションにバインドされているため、ジョブの状態を表示するのは非常に簡単です。 選択した印刷ジョブは `IPrintJob` オブジェクトとしてキャストされ、そのオブジェクトのプロパティを使用して `PrintJobDetails` テキストボックスに入力されます。
 
-[印刷ジョブの管理とプリンターの保守](https://go.microsoft.com/fwlink/p/?LinkID=299829)サンプルを別の印刷ジョブを選択するたびに印刷ジョブの状態が表示されます。 この更新プログラムが隠メ諶、`PrintJob_SelectionChanged`メソッド。
+[印刷ジョブの管理とプリンターのメンテナンス](https://go.microsoft.com/fwlink/p/?LinkID=299829)のサンプルでは、印刷ジョブの状態は、別の印刷ジョブが選択されるたびに表示されます。 この更新は、`PrintJob_SelectionChanged` 方法によって行われます。
 
-この例では、`PrintJob_SelectionChanged`メソッドで、 **PrintJobManagement.xaml.cs**ファイル。 に基づいて、印刷ジョブの状態を表示する方法を示します、`IPrintJob`オブジェクト。
+この例は、 **PrintJobManagement.xaml.cs**ファイルの `PrintJob_SelectionChanged` メソッドを示しています。 ここでは、`IPrintJob` オブジェクトに基づいて印刷ジョブの状態を表示する方法を示します。
 
 ```CSharp
 private void PrintJob_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -187,9 +187,9 @@ private void PrintJob_SelectionChanged(object sender, SelectionChangedEventArgs 
 }
 ```
 
-印刷ジョブの状態の説明を表示できるように、`PrintJob_SelectionChanged`メソッドは、という名前の静的ディクショナリを使用して`printJobStatusDisplayNames`、わかりやすいテキスト形式ではジョブの状態の説明を表示できるようにします。
+印刷ジョブの状態の説明を表示するために、`PrintJob_SelectionChanged` 方法では、`printJobStatusDisplayNames`という名前の静的ディクショナリを使用して、ユーザーにわかりやすいテキスト形式のジョブの状態の説明を表示します。
 
-この例では、`DisplayablePrintJobStatus`クラス、 **PrintJobManagement.xaml.cs**ファイル。 このクラスにはで使用する静的メンバーが含まれています、`PrintJob_SelectionChanged`します。
+この例は、 **PrintJobManagement.xaml.cs**ファイルの `DisplayablePrintJobStatus` クラスを示しています。 このクラスには、`PrintJob_SelectionChanged`によって使用される静的メンバーが含まれています。
 
 ```CSharp
 internal class DisplayablePrintJobStatus
@@ -258,12 +258,12 @@ internal class DisplayablePrintJobStatus
 }
 ```
 
-## <a name="span-idstep4cancelprintjobspanspan-idstep4cancelprintjobspanspan-idstep4cancelprintjobspanstep-4-cancel-print-job"></a><span id="Step_4__Cancel_print_job"></span><span id="step_4__cancel_print_job"></span><span id="STEP_4__CANCEL_PRINT_JOB"></span>手順 4: 印刷ジョブをキャンセルします。
+## <a name="span-idstep_4__cancel_print_jobspanspan-idstep_4__cancel_print_jobspanspan-idstep_4__cancel_print_jobspanstep-4-cancel-print-job"></a><span id="Step_4__Cancel_print_job"></span><span id="step_4__cancel_print_job"></span><span id="STEP_4__CANCEL_PRINT_JOB"></span>手順 4: 印刷ジョブをキャンセルする
 
 
-印刷ジョブの状態の表示と同様に、印刷ジョブのキャンセルはとても簡単ですがある場合、`IPrintJob`オブジェクト。 `IPrintJob`クラスには、`RequestCancel`対応する印刷ジョブの取り消しを開始するメソッド。 これは、方法については、サンプルの`CancelPrintJob_Click`メソッド。
+印刷ジョブの状態を表示するのと同様に、`IPrintJob` オブジェクトがある場合、印刷ジョブをキャンセルするのは非常に簡単です。 `IPrintJob` クラスには、対応する印刷ジョブの取り消しを開始する `RequestCancel` メソッドが用意されています。 これは、サンプルの `CancelPrintJob_Click` メソッドに示されています。
 
-この例では、`CancelPrintJob_Click`メソッドで、 **PrintJobManagement.xaml.cs**ファイル。
+この例は、 **PrintJobManagement.xaml.cs**ファイルの `CancelPrintJob_Click` メソッドを示しています。
 
 ```CSharp
 private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
@@ -280,47 +280,47 @@ private void CancelPrintJob_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="span-idtestingspanspan-idtestingspantesting"></a><span id="testing"></span><span id="TESTING"></span>テスト
+## <a name="span-idtestingspanspan-idtestingspantesting"></a><span id="testing"></span><span id="TESTING"></span>調べる
 
 
-UWP デバイス アプリをテストする前に、デバイス メタデータを使用して、プリンターにリンクする必要があります。
+UWP デバイスアプリをテストするには、デバイスメタデータを使用してプリンターにリンクされている必要があります。
 
--   デバイスのアプリ情報を追加するプリンターのデバイス メタデータ パッケージのコピーする必要があります。 使用してビルドできるデバイス メタデータを持っていない場合、**デバイス メタデータの作成ウィザード**、トピックの説明に従って[UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+-   デバイスアプリ情報を追加するには、プリンターのデバイスメタデータパッケージのコピーが必要です。 デバイスメタデータを持っていない場合は、「 [UWP デバイスアプリのデバイスメタデータの作成](https://go.microsoft.com/fwlink/p/?LinkId=313644)」の説明に従って、**デバイスメタデータ作成ウィザード**を使用して作成できます。
 
-    **注**  を使用する、**デバイス メタデータの作成ウィザード**、Microsoft Visual Studio Professional、Microsoft、Visual Studio Ultimate をインストールする必要がありますまたは[スタンドアロン Windows 8.1 の SDK](https://go.microsoft.com/fwlink/p/?linkid=309209)、このトピックの手順を完了する前にします。 Microsoft Visual Studio Express for Windows をインストールすると、ウィザードが含まれていない SDK のバージョンがインストールされます。
+    **注**  **デバイスメタデータ作成ウィザード**を使用するには、このトピックの手順を実行する前に、Windows 8.1 用の Microsoft Visual Studio Professional、Microsoft Visual Studio Ultimate、または[スタンドアロン SDK](https://go.microsoft.com/fwlink/p/?linkid=309209)をインストールする必要があります。 Windows 用の Microsoft Visual Studio Express をインストールすると、ウィザードを含まないバージョンの SDK がインストールされます。
 
      
 
 次の手順では、アプリをビルドし、デバイスのメタデータをインストールします。
 
 1.  テスト署名を有効にします。
-    1.  開始、**デバイス メタデータの作成ウィザード**から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\をダブルクリックして、x86**DeviceMetadataWizard.exe**
-    2.  **ツール**メニューの **テスト署名を有効にする**します。
+    1.  DeviceMetadataWizard をダブルクリックして、 *% ProgramFiles (x86)%* \\Windows kit\\8.1\\bin\\x86 から、**デバイスメタデータ作成ウィザード**を開始し**ます。**
+    2.  **[ツール]** メニューの **[テスト署名を有効にする]** を選択します。
 
-2.  コンピューターを再起動します
-3.  ソリューション (.sln) ファイルを開くには、ソリューションをビルドします。 F7 キーを押すか**ビルド -&gt;ソリューションのビルド**サンプルが読み込まれた後は、上部のメニューから。
+2.  コンピューターを再起動する
+3.  ソリューション (.sln) ファイルを開いて、ソリューションをビルドします。 F7 キーを押すか、サンプルが読み込まれた後で、上部のメニューから [**ビルド-&gt;ビルド**] をクリックします。
 
-4.  接続を切断し、プリンターをアンインストールします。 Windows が次に、デバイスが検出されたときに更新済みのデバイス メタデータの読み取りができるように、この手順が必要です。
-5.  編集し、デバイスのメタデータを保存します。 デバイス アプリをデバイスにリンクするには、デバイスでデバイス アプリを関連付ける必要があります。
-    **注**  デバイスのメタデータをまだ作成していない場合は、次を参照してください。 [UWP デバイス アプリのデバイス メタデータを作成する](https://go.microsoft.com/fwlink/p/?LinkId=313644)します。
+4.  プリンタを切断し、アンインストールします。 この手順は、デバイスが次回検出されたときに、更新されたデバイスメタデータを Windows が読み取るようにするために必要です。
+5.  デバイスメタデータを編集して保存します。 デバイスアプリをデバイスにリンクするには、デバイスアプリをデバイスに関連付ける必要があります。
+    **注**  デバイスのメタデータをまだ作成していない場合は、「 [UWP デバイスアプリのデバイスメタデータを作成](https://go.microsoft.com/fwlink/p/?LinkId=313644)する」を参照してください。
 
      
 
-    1.  場合、**デバイス メタデータの作成ウィザード**が開くまだ、開始から *%programfiles (x86) %* \\Windows キット\\8.1\\bin\\x86 により、ダブルクリック**DeviceMetadataWizard.exe**します。
-    2.  クリックして**デバイス メタデータの編集**します。 これからは、既存のデバイス メタデータ パッケージを編集できます。
-    3.  **オープン** ダイアログ ボックスで、UWP デバイス アプリに関連付けられている、デバイス メタデータ パッケージを見つけます。 (これが、 **devicemetadata ms**ファイル拡張子)。
-    4.  **指定 UWP デバイスのアプリ情報** ページで、Microsoft Store アプリの情報を入力、 **UWP デバイス アプリ**ボックス。 をクリックして**インポート UWP アプリのマニフェスト ファイル**自動的に入力する、**パッケージ名**、**パブリッシャー名**と**UWP アプリの ID**します。
-    5.  場合は、アプリは、プリンターの通知の登録は、入力、**通知ハンドラー**ボックス。 **イベント ID**、印刷イベント ハンドラーの名前を入力します。 **イベント資産**、そのコードが存在するファイルの名前を入力します。
+    1.  **デバイスメタデータの作成ウィザード**がまだ開いていない場合は、 **DeviceMetadataWizard**をダブルクリックして、 *% ProgramFiles (X86)%* \\Windows kit\\8.1\\bin\\x86 から起動します。
+    2.  **[デバイスメタデータの編集]** をクリックします。 これにより、既存のデバイスメタデータパッケージを編集できるようになります。
+    3.  **[開く]** ダイアログボックスで、UWP デバイスアプリに関連付けられているデバイスメタデータパッケージを見つけます。 ( **Devicemetadata**ファイル拡張子が付いています)。
+    4.  **[Uwp デバイスアプリ情報の指定]** ページで、 **[uwp デバイスアプリ]** ボックスに Microsoft Store アプリ情報を入力します。 **[UWP アプリケーションマニフェストファイルのインポート]** をクリックすると、**パッケージ名**、**発行者名**、および**UWP アプリ ID**が自動的に入力されます。
+    5.  アプリがプリンター通知に登録されている場合は、 **[通知ハンドラー]** ボックスに入力します。 **[イベント ID]** に、印刷イベントハンドラーの名前を入力します。 **[イベントアセット]** に、そのコードが存在するファイルの名前を入力します。
 
-    6.  完了したら、クリックして **[次へ]** に到達するまで、**完了**ページ。
-    7.  **デバイス メタデータ パッケージの確認** ページで、すべての設定が正しいことと選択するかどうかを確認、**デバイス メタデータ パッケージをローカル コンピューター上のメタデータ ストアにコピー**チェック ボックスをオンします。 クリックして**保存**します。
+    6.  完了したら、 **[完了]** ページが表示されるまで **[次へ]** をクリックします。
+    7.  **[デバイスメタデータパッケージの確認]** ページで、すべての設定が正しいことを確認し、 **[ローカルコンピューターのメタデータストアにデバイスメタデータパッケージをコピーする]** チェックボックスをオンにします。 **[保存]** をクリックします。
 
-6.  デバイスが接続されている場合、その Windows が更新されたデバイスのメタデータを読み取り、プリンターに再接続します。
+6.  デバイスが接続されているときに、Windows によって更新されたデバイスメタデータが読み取られるように、プリンターを再接続します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[ジョブの管理 (v4 プリンター ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)
+[ジョブ管理 (v4 プリンタードライバー)](https://docs.microsoft.com/windows-hardware/drivers/print/job-management)
 
 [V4 印刷ドライバーの開発](https://go.microsoft.com/fwlink/p/?LinkId=314231)
 
@@ -328,9 +328,9 @@ UWP デバイス アプリをテストする前に、デバイス メタデー�
 
 [UWP アプリの概要](getting-started.md)
 
-[アプリを作成する UWP デバイス (ステップ バイ ステップ ガイド)](step-1--create-a-uwp-device-app.md)
+[UWP デバイスアプリを作成する (ステップバイステップガイド)](step-1--create-a-uwp-device-app.md)
 
-[UWP デバイスのアプリ (ステップ バイ ステップ ガイド) のデバイス メタデータを作成します。](step-2--create-device-metadata.md)
+[UWP デバイスアプリのデバイスメタデータを作成する (ステップバイステップガイド)](step-2--create-device-metadata.md)
 
  
 

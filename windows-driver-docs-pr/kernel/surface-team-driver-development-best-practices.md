@@ -91,7 +91,7 @@ ms.locfileid: "74261432"
 6. ドライバーがアンロードされないことを前提としています。 「 [PnP ドライバーのアンロードルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/pnp-driver-s-unload-routine)」を参照してください。
 7. 擬似インターフェイスの到着通知を処理していません。 このような状況が発生する可能性があり、ドライバーはこの状態を安全に処理することが期待されます。
 8. S0 アイドル電源ポリシーを実装していません。これは、DRIPS の制約または子であるデバイスにとって重要です。 「[アイドル状態の電源ダウンをサポート](https://docs.microsoft.com/windows-hardware/drivers/wdf/supporting-idle-power-down)する」を参照してください。
-9. [WdfDeviceStopIdle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle) の戻り値を確認しないと、WdfDeviceStopIdle/ResumeIdle 不均衡が発生し、最終的にバグチェックが9F されるため、電源参照のリークにつながります。
+9. Wdfdevicestopidle の戻り値を確認しないと、WdfDeviceStopIdle/ResumeIdle 不均衡が発生し、最終的にバグチェックが9F されるため、電源参照のリークにつながります。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicestopidle)
 10. リソースの再調整によって、ハードウェア/ReleaseHardware を複数回呼び出すことができることは不明です。 これらのコールバックは、ハードウェアリソースの初期化に制限する必要があります。 「 [.Evt\_WDF\_デバイス\_\_ハードウェアを準備](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)する」を参照してください。
 11. ソフトウェアリソースの割り当てには、ハードウェア/ReleaseHardware を使用します。 デバイスに対する静的ソフトウェアリソース割り当ては、AddDevice または SelfManagedIoInit で、ハードウェアとの対話が必要なリソースの割り当てを行う場合に実行する必要があります。 「 [.Evt\_WDF\_デバイス\_SELF\_マネージ\_IO\_INIT](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_init)」を参照してください。
 

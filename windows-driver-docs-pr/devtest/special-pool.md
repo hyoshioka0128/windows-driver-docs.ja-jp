@@ -3,16 +3,16 @@ title: Special Pool
 description: Special Pool
 ms.assetid: b1381a75-279a-42b7-b18d-43aba796424b
 keywords:
-- 特別なプール機能 WDK Driver Verifier
-- メモリの破損 WDK Driver Verifier
+- 特別なプール機能 WDK ドライバー検証ツール
+- メモリ破損 WDK ドライバー検証ツール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c8dca6108a0e7a9b83c8d44e1ac26debd97f484
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5f7bd117f5b3070ef40b9ec13182948c80dac023
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67374407"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839323"
 ---
 # <a name="special-pool"></a>Special Pool
 
@@ -20,107 +20,107 @@ ms.locfileid: "67374407"
 ## <span id="ddk_special_memory_pool_tools"></span><span id="DDK_SPECIAL_MEMORY_POOL_TOOLS"></span>
 
 
-メモリの破損は、一般的なドライバーの問題です。 ドライバーのエラーによりクラッシュ、エラーが発生した後もあります。 これらのエラーの最も一般的なが既に解放されたメモリにアクセスして、割り当て*n*バイトとにアクセスする*n*+1 のバイト数。
+メモリの破損は、一般的なドライバーの問題です。 ドライバーエラーが発生すると、エラーが発生した後にクラッシュすることがあります。 これらのエラーの最も一般的な部分は、既に解放されているメモリにアクセスし、 *n*バイトを割り当ててから*n*+ 1 バイトにアクセスすることです。
 
-メモリの破損を検出するには、Driver Verifier は特別なプールからドライバーのメモリを割り当てるし、正しくないアクセス用には、そのプールを監視できます。 特別なプールのサポートがなどのカーネル モード システム指定のルーチンに対して提供されます[ **exallocatepoolwithtag に**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtag)と GDI システム指定のルーチンのもなど[ **EngAllocMem**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)します。
+メモリの破損を検出するために、ドライバーの検証ツールは特殊なプールからドライバーのメモリを割り当て、そのプールを監視して不正なアクセスを防ぐことができます。 特別なプールのサポートは、 [**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)などのカーネルモードシステム提供のルーチンや、 [**ENGALLOCMEM**](https://docs.microsoft.com/windows/desktop/api/winddi/nf-winddi-engallocmem)などの GDI システム提供のルーチンに対して提供されます。
 
-特別なプールの 2 つの配置を利用できます。 **終了の確認**アクセスのオーバーランを検出する方が、配置、**開始を確認します**アクセス アンダーランを検出する方が、配置します。 (ある膨大なメモリの破損は、オーバーランにより、いないアンダーランに注意してください)。
+特別なプールの2つのアラインメントを使用できます。 **検証の終了**アラインメントは、アクセスオーバーランの検出に適しています。また、**検証の開始**アラインメントは、アクセスアンダーランの検出に適しています。 (メモリの破損の大部分は、アンダーランではなくオーバーランによるものであることに注意してください)。
 
-特別なプール機能がアクティブな場合と**終了の確認**が選択すると、ドライバーによって要求されたメモリ割り当てが別のページに配置します。 メモリは、ページの末尾と一致するように合わせて、ページ割り当ては、最上位アドレスが返されます。 ページの前の部分は、特殊なパターンと書き込まれます。 前のページと、次のページは、アクセス不能でマークされます。
+特別なプール機能がアクティブになっていて、 **[End]** が選択されている場合、ドライバーによって要求された各メモリ割り当てが別のページに配置されます。 ページに合わせて割り当てを可能にする最大のアドレスが返されます。これにより、ページの末尾にメモリが配置されます。 ページの前の部分は特殊なパターンで記述されています。 前のページと次のページにはアクセスできないとマークされています。
 
-Driver Verifier がこれ、すぐに検出され、発行する場合は、ドライバーが、割り当ての終了後にメモリにアクセスしようとすると、 [**バグ チェック 0 xcd**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xcd--page-fault-beyond-end-of-allocation)します。 ドライバーは、バッファーの先頭の前にメモリに書き込み、これと、パターンは変更 (おそらく)。 Driver Verifier は、変更と問題を検出、バッファーが解放されると、 [**バグ チェック 0xC1**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc1--special-pool-detected-memory-corruption)します。
+ドライバーが割り当ての終了後にメモリにアクセスしようとすると、ドライバーの検証ツールはこれをすぐに検出し、[**バグチェック 0xCD**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xcd--page-fault-beyond-end-of-allocation)を発行します。 ドライバーがバッファーの先頭より前にメモリを書き込んだ場合は、パターンが変更されることがあります。 バッファーが解放されると、ドライバー検証ツールは変更を検出し、[**バグチェック 0xC1**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc1--special-pool-detected-memory-corruption)を発行します。
 
-Driver Verifier を発行する場合は、ドライバーに対して読み取りまたは書き込みバッファーされ、解放した後、 [**バグ チェック 0 xcc**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xcc--page-fault-in-freed-special-pool)します。
+ドライバーが解放された後に、そのバッファーの読み取りまたは書き込みを実行すると、ドライバーの検証ツールによって[**バグチェック 0xCC**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xcc--page-fault-in-freed-special-pool)が発行されます。
 
-ときに**確認を開始**は選択すると、メモリ バッファーは、ページの先頭に揃えられます。 この設定でアンダーラン、即時のバグ チェックが発生して、オーバーラン バグ チェックが発生するメモリが解放されるとき。 このオプションは、それ以外の場合と同じ、**終了の確認**オプション。
+**[開始の確認]** を選択すると、メモリバッファーはページの先頭に合わせて調整されます。 この設定では、アンダーランによって即時のバグチェックが発生し、オーバーランによってメモリが解放されるとバグチェックが発生します。 このオプションは、それ以外の場合は、 **[終了の確認]** オプションと同じです。
 
-**最後の確認**オーバーラン エラーはドライバーでの一般的な不足エラーよりもはるかに既定の配置が。
+[終了] が既定の配置である**ことを確認**します。これは、オーバーランエラーよりもドライバーでオーバーランエラーがはるかに一般的になるためです。
 
-個々 のメモリ割り当てがこれらの設定をオーバーライドし、アラインメントを呼び出すことによって選択[ **ExAllocatePoolWithTagPriority** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exallocatepoolwithtagpriority)で、*優先度*パラメーター セットXxxSpecialPoolOverrun または XxxSpecialPoolUnderrun します。 (このルーチンことはできませんをアクティブ化、特別なプール機能を非アクティブ化または特別なプールは、それ以外の場合通常のプールから割り当てられるメモリの割り当てを要求します。 配置のみ制御できますこのルーチンから。)
+個々のメモリ割り当てでは、これらの設定を上書きして、*優先順位*パラメーターを xxx に設定して[**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)を呼び出すことによって、その配置を選択できます。 (このルーチンでは、特別なプール機能をアクティブ化または非アクティブ化したり、メモリ割り当て用に特別なプールを要求したりすることはできません。この場合、通常のプールから割り当てられます。 このルーチンから制御できるのはアラインメントだけです)。
 
-Windows 7 および Windows オペレーティング システムの以降のバージョンでは、特別なプールのオプションには、次のカーネル Api を使用して割り当てられたメモリがサポートしています。
+Windows 7 以降のバージョンの Windows オペレーティングシステムでは、特別なプールオプションは、次のカーネル Api を使用して割り当てられたメモリをサポートしています。
 
--   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocatemdl)
+-   [**IoAllocateMdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocatemdl)
 
--   [**IoAllocateIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioallocateirp)と I/O を割り当てることができるその他のルーチン要求パケット (IRP) データ構造体
+-   [**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)および i/o 要求パケット (IRP) データ構造を割り当てることができる他のルーチン
 
--   [**RtlAnsiStringToUnicodeString** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイム ライブラリ (RTL) の文字列ルーチン
+-   [**RtlAnsiStringToUnicodeString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtlansistringtounicodestring)およびその他のランタイムライブラリ (RTL) 文字列ルーチン
 
--   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetcompletionroutineex)
+-   [**IoSetCompletionRoutineEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetcompletionroutineex)
 
-### <a name="span-idspecialpoolbypooltagorallocationsizespanspan-idspecialpoolbypooltagorallocationsizespanspecial-pool-by-pool-tag-or-allocation-size"></a><span id="special_pool_by_pool_tag_or_allocation_size"></span><span id="SPECIAL_POOL_BY_POOL_TAG_OR_ALLOCATION_SIZE"></span>プールでプールの特殊なタグまたはアロケーション サイズ
+### <a name="span-idspecial_pool_by_pool_tag_or_allocation_sizespanspan-idspecial_pool_by_pool_tag_or_allocation_sizespanspecial-pool-by-pool-tag-or-allocation-size"></a><span id="special_pool_by_pool_tag_or_allocation_size"></span><span id="SPECIAL_POOL_BY_POOL_TAG_OR_ALLOCATION_SIZE"></span>プールタグまたは割り当てサイズ別の特別なプール
 
-によって指定された特別なプールの割り当てを要求するだけでなく、特別なプールには、Driver Verifier の機能が、*ドライバー*は特別なプールを使用するその他の 2 つの方法があります。
+特定の*ドライバー*による割り当てに特別なプールを要求する driver Verifier の特別なプール機能に加えて、特殊なプールを使用するには、次の2つの方法があります。
 
--   **プール タグ。** 指定されたプール タグを持つすべての割り当て用の特別なプールを要求します。
+-   **プールタグ。** 指定されたプールタグを持つすべての割り当てに対して、特別なプールを要求します。
 
--   **サイズ。** 指定したサイズの範囲内のすべての割り当て用の特別なプールを要求します。
+-   **幅.** 指定されたサイズ範囲内のすべての割り当てに対して、特別なプールを要求します。
 
-プールのタグまたはサイズの範囲の特別なプールを要求する Gflags に付属のツールを使用して、*ツールを Windows のデバッグ*します。 詳細については、次を参照してください。[グローバル フラグ ユーティリティを使用して](using-the-global-flags-utility.md)します。
+プールタグまたはサイズ範囲に特別なプールを要求するには、 *Windows 用デバッグツール*に含まれている Gflags ツールを使用します。 詳細については、「[グローバルフラグユーティリティの使用](using-the-global-flags-utility.md)」を参照してください。
 
-同時には、Driver Verifier の特別なプール機能と Gflags の特別なプール機能を使用できます。 この場合、特別なプールが制限される、特別なは、プールが成功し、Windows が通常メモリの割り当てによって満たされる特別なプールからの割り当ての失敗の回数を成功状態を返すことから割り当てることの試みがすべてないことを注意してください。プール。
+ドライバー検証ツールの特別なプール機能と、Gflags の特別なプール機能を同時に使用することができます。 特殊なプールが制限されていて、特別なプールからの割り当てが成功していないこと、および通常のメモリからの割り当てによって満たされた特殊なプールからの割り当てに失敗した場合の成功の状態が返されることを忘れないでください。記憶域.
 
-### <a name="span-idspecialpoolefficiencyspanspan-idspecialpoolefficiencyspanspecial-pool-efficiency"></a><span id="special_pool_efficiency"></span><span id="SPECIAL_POOL_EFFICIENCY"></span>特別なプールの効率性
+### <a name="span-idspecial_pool_efficiencyspanspan-idspecial_pool_efficiencyspanspecial-pool-efficiency"></a><span id="special_pool_efficiency"></span><span id="SPECIAL_POOL_EFFICIENCY"></span>特別なプールの効率性
 
-すべての特別なプールの要求が満たされます。 特別なプールから各割り当ては、非ページングの物理メモリの 1 つのページと仮想アドレス空間の 2 つのページを使用します。 プールがなくなった場合は、特別なプールが再び使用可能になるまでに、標準的な方法でメモリが割り当てられます。 特別なプールの要求は、標準的なプールからいっぱいになると、要求元の関数エラーは返されませんが、プールの要求が成功したため。 そのため、特別なプール機能がアクティブの場合、複数のドライバーを同時に検証することをしないお勧めします。
+すべての特別なプール要求が満たされているわけではありません。 特別なプールからの各割り当てでは、非ページング物理メモリの1ページと仮想アドレス空間の2つのページが使用されます。 プールが使い果たされると、特別なプールが再び使用可能になるまで、メモリは標準の方法で割り当てられます。 特別なプール要求が標準プールから入力された場合、要求元の関数はエラーを返しません。これは、プール要求が成功したためです。 したがって、特別なプール機能がアクティブ化されている場合は、複数のドライバーを同時に検証することはお勧めしません。
 
-多くのメモリ要求を行う 1 つのドライバーには、このプールが使い果たされもします。 このような場合は、ドライバーのメモリ割り当てにプール タグを割り当てるし、一度に 1 つのプール タグに専用の特別なプールすることをお勧め場合があります。
+多数の小さなメモリ要求を実行する1つのドライバーによっても、このプールが消費される可能性があります。 この問題が発生した場合は、ドライバーのメモリ割り当てにプールタグを割り当て、一度に1つのプールタグに専用のプールを割り当てることをお勧めします。
 
-特別なプールのサイズはシステム上の物理メモリ量を増加します。理想的には少なくとも 1 ギガバイト (GB) があります。 X86 マシン、仮想 (場合によってに物理また) 領域が消費されるため、使用しないでください、 [ **3 GB** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-3gb)ブート オプション。 2 または 3 の倍数でページファイルの最小値/最大数量を増やすことをお勧めします。
+特別なプールのサイズは、システムの物理メモリの量によって増加します。理想的には、1 Gb 以上である必要があります。 X86 コンピューターでは、仮想 (物理ディスクに加えて) 領域が消費されるため、 [ **/3gb**](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-3gb)ブートオプションは使用しないでください。 また、ページファイルの最小/最大数を 2 ~ 3 の係数で増やすことをお勧めします。
 
-テスト中のすべてのドライバーの割り当てのことを確認するには、長期間にわたってドライバーを生じてすることをお勧めします。
+すべてのドライバーの割り当てがテストされていることを確認するには、長い時間をかけてドライバーをストレスすることをお勧めします。
 
-### <a name="span-idmonitoringthespecialpoolspanspan-idmonitoringthespecialpoolspanmonitoring-the-special-pool"></a><span id="monitoring_the_special_pool"></span><span id="MONITORING_THE_SPECIAL_POOL"></span>特別なプールの監視
+### <a name="span-idmonitoring_the_special_poolspanspan-idmonitoring_the_special_poolspanmonitoring-the-special-pool"></a><span id="monitoring_the_special_pool"></span><span id="MONITORING_THE_SPECIAL_POOL"></span>特別なプールの監視
 
-プールの割り当てに関連する統計情報を監視することができます。 これらは、ドライバー検証ツール マネージャーによって、Verifier.exe コマンドラインまたはログ ファイルに表示できます。 参照してください[グローバル カウンターの監視](monitoring-global-counters.md)詳細についてはします。
+プール割り当てに関連する統計を監視できます。 これらは、ドライバー検証マネージャー、検証ツールのコマンドライン、またはログファイルで表示できます。 詳細については、「[グローバルカウンターの監視](monitoring-global-counters.md)」を参照してください。
 
-場合、**特別なプールにプールの割り当てが成功した**カウンターと等しい、**プールの割り当てが成功した**カウンター、特別なプールがすべてのメモリ割り当てをカバーするための十分なが。 前者のカウンターが、後者より低い場合は、特別なプールが使い果たされたを少なくとも 1 回です。
+"**特殊**なプールの割り当てが成功しました" というカウンターが "プールの割り当てに成功しました **" カウンターと**等しい場合は、特別なプールによってすべてのメモリの割り当てを処理できます。 前者のカウンターが後者より小さい場合は、特別なプールが少なくとも1回使い果たされています。
 
-これらのカウンターは、サイズが 1 つのページ割り当てを追跡しないか、特別なプールから該当します。
+これらのカウンターは、サイズが1ページ以上の割り当てを追跡しません。これは、特殊なプールが適用されないためです。
 
-特別なプール機能が有効になっているすべてのプール割り当ての 95% 未満を特別なプールから割り当てられている場合は、警告がドライバー検証マネージャーで表示されます。 Windows 2000 でこの警告が表示されます、 **ドライバ ステータスの**画面。 Windows XP 以降では、この警告に表示されます、**グローバル カウンター**画面。 この場合、ドライバーの短い一覧を確認します。 プールのタグを使用して個々 のプールを確認します、以上の物理メモリをシステムに追加またはする必要があります。
+特別なプール機能が有効になっていても、すべてのプール割り当ての95% 未満が特別なプールから割り当てられている場合は、ドライバー検証マネージャーに警告が表示されます。 Windows 2000 では、この警告はドライバーの**ステータス**画面に表示されます。 Windows XP 以降では、この警告は **[グローバルカウンター]** 画面に表示されます。 この問題が発生した場合は、短いドライバーの一覧を確認し、プールタグによって個々のプールを確認するか、システムに物理メモリを追加します。
 
-カーネル デバッガー拡張機能 **! verifier**特別なプールの使用状況を監視できます。 ドライバー検証マネージャーのする同様の情報が表示されます。 デバッガーの拡張機能については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
+カーネルデバッガー拡張機能の**検証ツール**は、特別なプールの使用を監視するためにも使用できます。 ドライバー検証ツールマネージャーと同様の情報が表示されます。 デバッガー拡張機能の詳細については、「 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)」を参照してください。
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバー用に特別なプール機能をアクティブ化することができます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーの特別なプール機能をアクティブ化できます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
 
-**注**  プール タグまたは割り当てのサイズの特別なプール機能をアクティブ化するかを設定する、**開始を確認します**(アンダーランの検出) と**終了の確認**(オーバーランの検出) 配置、使用して、[グローバル フラグ ユーティリティ](using-the-global-flags-utility.md); 特別なプールのすべての割り当てにこれらの配置の設定が適用されます。
+プールタグまたは割り当てサイズによって特別なプール機能をアクティブ化**する  、** または **[開始の確認]** (アンダーランの検出) と [End (オーバーランの検出) の配置を**確認**するには、[グローバルフラグユーティリティ](using-the-global-flags-utility.md)を使用します。これらの配置設定は、すべての特別なプール割り当てに適用されます。
 
  
 
 -   **コマンドラインで**
 
-    、コマンドラインでは、特別なプール オプションで表される**ビット 0 (0x1)** します。 特別なプールをアクティブ化するには、0x1 のフラグの値を使用するか、フラグの値を 0x1 を追加します。 次に、例を示します。
+    コマンドラインでは、特殊なプールオプションは**ビット 0 (0x1)** で表されます。 特別なプールをアクティブ化するには、フラグ値0x1 を使用するか、フラグ値に0x1 を追加します。 次に、例を示します。
 
     ```
     verifier /flags 0x1 /driver MyDriver.sys
     ```
 
-    この機能は、[次へ] の起動後にアクティブになります。
+    この機能は、次回の起動時にアクティブになります。
 
-    Windows 2000 と Windows の以降のバージョンもアクティブ化し、特別なプールを追加することで、コンピューターを再起動しなくても非アクティブ化することができます、 **/volatile**パラメーターをコマンド。 次に、例を示します。
+    Windows 2000 以降のバージョンの Windows では、 **/volatile**パラメーターをコマンドに追加することで、コンピューターを再起動しなくても、特別なプールのアクティブ化と非アクティブ化を行うことができます。 次に、例を示します。
 
     ```
     verifier /volatile /flags 0x1 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動すると失われます。 詳細については、「 [Volatile 設定の使用](using-volatile-settings.md)」を参照してください。
 
-    特別なプール機能は、標準の設定にも含まれます。 次に、例を示します。
+    特別なプール機能は、標準設定にも含まれています。 次に、例を示します。
 
     ```
     verifier /standard /driver MyDriver.sys
     ```
 
--   **ドライバー検証マネージャーを使用します。**
+-   **ドライバー検証マネージャーの使用**
 
-    1.  選択 **(コード開発者) 用のカスタム設定を作成する**順にクリックします**次**します。
-    2.  選択**完全な一覧から個々 の設定を選択します。** します。
-    3.  選択 (チェック)**特別なプール**します。
+    1.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
+    2.  [**完全な一覧から個々の設定を選択]** を選択します。
+    3.  **[特殊なプール]** を選択します。
 
-    特別なプール機能は、標準の設定にも含まれます。 この機能では、ドライバー検証マネージャーでを使用する をクリックして**標準設定の作成**です。
+    特別なプール機能は、標準設定にも含まれています。 この機能を使用するには、ドライバー検証マネージャーで **[標準設定の作成]** をクリックします。
 
  
 

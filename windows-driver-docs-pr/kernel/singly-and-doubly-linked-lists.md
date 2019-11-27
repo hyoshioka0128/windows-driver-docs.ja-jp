@@ -3,19 +3,19 @@ title: 片方向および双方向リンク リスト
 description: 片方向および双方向リンク リスト
 ms.assetid: 3a305f54-7866-4163-a3e4-e078d1927adc
 keywords:
-- シングル リンク リストの WDK カーネル
-- ダブルリンク リスト WDK カーネル
-- シングル リンク リストの WDK カーネルをシーケンス処理
+- シングルリンクリスト WDK カーネル
+- ダブルリンクリスト WDK カーネル
+- シーケンスされた単一のリンクリスト WDK カーネル
 - SINGLE_LIST_ENTRY
 - LIST_ENTRY
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e0b8358c4a7fc3f5add12e80bfda98a0a5d00e76
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a9b545baa9f64be63e5778961a2d97a71a0187f1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383018"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836311"
 ---
 # <a name="singly-and-doubly-linked-lists"></a>片方向および双方向リンク リスト
 
@@ -23,23 +23,23 @@ ms.locfileid: "67383018"
 
 
 
-### <a name="singly-linked-lists"></a>シングル リンク リスト
+### <a name="singly-linked-lists"></a>シングルリンクリスト
 
-オペレーティング システムを使用して、シングル リンク リストの組み込みサポートを提供する[**単一\_一覧\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_single_list_entry)構造体。 シングル リンク リストは、リストの先頭といくつかの一覧のエントリで構成されます。 (一覧のエントリの数は 0、リストが空の場合) です。リストの各エントリとして表される、**単一\_一覧\_エントリ**構造体。 リストの先頭としても表される、**単一\_一覧\_エントリ**構造体。
+オペレーティングシステムには、[**単一の\_リスト\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_single_list_entry)構造を使用する、単一のリンクリストの組み込みサポートが用意されています。 シングルリンクリストは、リストの先頭にいくつかのリストエントリを加えたもので構成されます。 リストが空の場合は、リストエントリの数が0になります。各リストエントリは、エントリ構造 **\_単一の\_リスト**として表されます。 また、リストの先頭は、 **1 つの\_リスト\_エントリ**の構造として表されます。
 
-各**単一\_一覧\_エントリ**構造に含まれる、 **[次へ]** メンバーを指す別**単一\_一覧\_エントリ**構造体。 **単一\_一覧\_エントリ**リストの先頭を表す構造体、 **[次へ]** メンバーの一覧で、最初のエントリが指すまたはリストが空の場合は NULL です。 **単一\_一覧\_エントリ**、リスト内のエントリを表す構造体、 **[次へ]** メンバー リストの次のエントリをポイントまたはこのエントリは、内の最後の場合は NULL に、リスト。
+各**単一\_リスト\_エントリ**構造には、**次**のメンバーが含まれています。このメンバーは、別の**単一\_リスト\_エントリ**構造を指します。 リストの先頭を表す**1 つの\_リスト\_エントリ**の構造では、**次**のメンバーがリストの最初のエントリを指します。リストが空の場合、は NULL になります。 リスト内のエントリを表す**1 つの\_リスト\_エントリ**構造では、**次**のメンバーがリストの次のエントリを指しています。または、このエントリがリストの最後にある場合は NULL になります。
 
-シングル リンク リストを操作するルーチンへのポインターを使用する、 [**単一\_一覧\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_single_list_entry)リストの先頭を表します。 更新すること、**次**ことが操作の完了後の一覧の最初のエントリを指すポインター。
+シングルリンクリストを操作するルーチンは、リストの先頭を表す[**単一の\_リスト\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_single_list_entry)へのポインターを取得します。 **次**のポインターを更新して、操作後のリストの最初のエントリを指すようにします。
 
-ものとします、 *ListHead*変数がへのポインター、**単一\_一覧\_エントリ**リストの先頭を表す構造体です。 ドライバー操作*ListHead*次のようにします。
+*ListHead*変数が、リストの先頭を表す**単一の\_リスト\_エントリ**の構造体へのポインターであるとします。 ドライバーは、次のように*ListHead*を操作します。
 
--   空としてリストを初期化するには、次のように設定します。 *ListHead * * *-&gt;次** する**NULL**します。
+-   リストを空として初期化するには、 *ListHead * * *-&gt;Next** を**NULL**に設定します。
 
--   一覧に新しいエントリを追加するには、割り当て、**単一\_一覧\_エントリ**を新しいエントリを表し、呼び出して[ **PushEntryList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pushentrylist)を追加する、リストの先頭のエントリ。
+-   新しいエントリを一覧に追加するには、新しいエントリを表す**単一の\_リスト\_エントリ**を割り当ててから、 [**pushentrylist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pushentrylist)を呼び出してリストの先頭にエントリを追加します。
 
--   使用して、一覧から最初のエントリをポップ[ **PopEntryList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-popentrylist)します。
+-   [**Popentrylist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-popentrylist)を使用して、リストの最初のエントリをポップします。
 
-A**単一\_一覧\_エントリ**、単独でのみが、 **[次へ]** メンバー。 埋め込みのリストでは、独自のデータを格納する、**単一\_一覧\_エントリ**一覧のエントリを次のように記述する構造体のメンバーとして。
+**1 つの\_リスト\_エントリ**自体には、**次**のメンバーのみが含まれます。 リストに独自のデータを格納するには、次のように、リストエントリを記述する構造体のメンバーとして、**単一の\_リスト\_エントリ**を埋め込みます。
 
 ```cpp
 typedef struct {
@@ -56,7 +56,7 @@ typedef struct {
 } XXX_ENTRY;
 ```
 
-一覧に新しいエントリを追加するには、割り当て、 **XXX\_エントリ**構造体、しへのポインターを渡す、 **SingleListEntry**メンバー [ **PushEntryList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-pushentrylist). ポインターに変換する、**単一\_一覧\_エントリ**に戻す、 **XXX\_エントリ**を使用して、 [**含まれている\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)します。 挿入し、シングル リンク リストからエントリのドライバーの定義を削除するルーチンの例を示します。
+リストに新しいエントリを追加するには、 **XXX\_エントリ**構造を割り当て、 **SingleListEntry**メンバーへのポインターを[**pushentrylist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pushentrylist)に渡します。 **1 つの\_リスト**にポインターを変換し\_**XXX\_エントリ**に戻すには、[**包含\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用します。 次に、単一のリンクリストからドライバー定義のエントリを挿入または削除するルーチンの例を示します。
 
 ```cpp
 typedef struct {
@@ -80,47 +80,47 @@ PopXxxEntry(PSINGLE_LIST_ENTRY ListHead)
 }
 ```
 
-システムは、リストの操作の分割不可能なバージョンも用意されています[ **ExInterlockedPopEntryList** ](https://msdn.microsoft.com/library/windows/hardware/ff545408)と[ **ExInterlockedPushEntryList** ](https://msdn.microsoft.com/library/windows/hardware/ff545418). 各は、追加のスピン ロック パラメーターです。 ルーチンは、一覧を更新し、ルーチンはスピン ロックを解放の操作が完了したら、前に、スピン ロックを取得します。 ロックが保持されている間は、割り込みが無効です。 リストの各操作は、その他のすべての操作を一覧にこのような各操作が同期されていることを確認するのに同じスピン ロックを使用する必要があります。 これらでのみ、スピン ロックを使用する必要があります**ExInterlocked*Xxx*一覧**ルーチン。 その他の目的は、スピン ロックを使用しないでください。 ドライバーは、複数のリストの同じロックを使用することができますが、ドライバーは、これを避ける必要がありますので、この動作はロックの競合を増加します。
+また、システムでは、リスト操作、 [**ExInterlockedPopEntryList**](https://msdn.microsoft.com/library/windows/hardware/ff545408) 、および[**ExInterlockedPushEntryList**](https://msdn.microsoft.com/library/windows/hardware/ff545418)のアトミックバージョンも提供されます。 各は、追加のスピンロックパラメーターを受け取ります。 ルーチンは、リストを更新する前にスピンロックを取得した後、操作の完了後にスピンロックを解放します。 ロックが保持されている間、割り込みは無効になります。 リストに対する各操作は、同じスピンロックを使用して、リストに対する各操作が他のすべての操作と同期されるようにする必要があります。 スピンロックは、これらの**Exinterlocked ロック*Xxx*リスト**ルーチンでのみ使用する必要があります。 その他の目的では、スピンロックを使用しないでください。 ドライバーは複数のリストに対して同じロックを使用できますが、この動作によってロックの競合が増加するため、ドライバーはこれを回避する必要があります。
 
-たとえば、 **ExInterlockedPopEntryList**と**ExInterlockedPushEntryList**ルーチンが IRQL で実行されているドライバーのスレッドによってシングル リンク リストの共有をサポートすることができます = パッシブ\_レベルDIRQL で実行されている ISR を選択します。 これらのルーチンは、スピン ロックが保持されているときに割り込みを無効にします。 したがって、ISR とドライバー スレッド安全に使用できる同じスピン ロックには、これらの呼び出しで**ExInterlocked*Xxx*一覧**デッドロック ルーチン。
+たとえば、 **ExInterlockedPopEntryList**ルーチンと**ExInterlockedPushEntryList**ルーチンは、IRQL = パッシブ\_レベルで実行されるドライバースレッドと dirql で実行される ISR によって、単一のリンクリストの共有をサポートできます。 これらのルーチンは、スピンロックが保持されているときに割り込みを無効にします。 したがって、ISR とドライバーのスレッドは、デッドロックを損なうことなく、これらの**Exinterlocked ロック*Xxx*リスト**ルーチンへの呼び出しで同じスピンロックを安全に使用できます。
 
-同じリストにリスト操作の原子性と非アトミックなトランザクションのバージョンへの呼び出しを混在させないでください。 データ構造体が壊れている可能性になる場合は、アトミックと非アトミックなトランザクションのバージョンは、同じリストで同時に実行と、コンピューターが応答を停止する可能性がありますまたはバグのチェック (つまり、*クラッシュ*)。 (リスト操作の原子性と非アトミックなトランザクションのバージョンへの呼び出しを混在する代わりに非アトミック ルーチンの呼び出し中に、スピン ロックを取得できません。 スピン ロックを使用して、この方法ではサポートされていませんし、一覧の破損が発生する可能性がありますもします。)
+リスト操作のアトミックバージョンと非アトミックバージョンの呼び出しを同じリストに混在させないでください。 アトミックバージョンと非アトミックバージョンが同じリストで同時に実行されると、データ構造が破損し、コンピューターが応答を停止したり、バグチェック (*クラッシュ*) したりする可能性があります。 (アトミックおよび非アトミックバージョンのリスト操作の呼び出しを混在させる代わりに、非アトミックルーチンの呼び出し中にスピンロックを取得することはできません。 この方法でのスピンロックの使用はサポートされていないため、リストが破損する可能性があります)。
 
-システムには、効率的なアトミック シングル リンク リストの代替実装も提供します。 詳細については、次を参照してください。 [Sequenced シングル リンク リスト](#sequenced-singly-linked-lists)します。
+システムでは、アトミックの単一リンクリストをより効率的に実装することもできます。 詳細については、「シーケンス化された[単一のリンクリスト](#sequenced-singly-linked-lists)」を参照してください。
 
-### <a name="doubly-linked-lists"></a>ダブルリンク リスト
+### <a name="doubly-linked-lists"></a>ダブルリンクリスト
 
-オペレーティング システムを使用して二重リンク リストの組み込みのサポートを提供します[**一覧\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)構造体。 ダブルリンク リストは、リストの先頭といくつかの一覧のエントリで構成されます。 (一覧のエントリの数は 0、リストが空の場合) です。リストの各エントリとして表される、**一覧\_エントリ**構造体。 リストの先頭としても表される、**一覧\_エントリ**構造体。
+オペレーティングシステムには、[**リスト\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)構造を使用するダブルリンクリストのサポートが組み込まれています。 ダブルリンクリストは、リストの先頭といくつかのリストエントリで構成されます。 リストが空の場合は、リストエントリの数が0になります。各リストエントリは、エントリ構造 **\_リスト**として表されます。 また、リストの先頭は **\_エントリ**の構造体のリストとして表されます。
 
-各**一覧\_エントリ**構造に含まれる、 **Flink**メンバーと**点滅**メンバー。 メンバーは両方ともへのポインター**一覧\_エントリ**構造体。
+各**リスト\_エントリ**構造には、 **flink**メンバーと**点滅**メンバーが含まれています。 両方のメンバーは **\_エントリ構造を一覧表示**するポインターです。
 
-**一覧\_エントリ**リストの先頭を表す構造体、 **Flink**メンバーの一覧の最初のエントリが指す、**点滅**へのポインター、一覧の最後のエントリ。 リストが、空の場合**Flink**と**点滅**リストにリストのヘッド ポイントのヘッド自体。
+リストの先頭を表す**リスト\_エントリ**の構造体では、 **flink**メンバーがリストの最初のエントリを指し、**点滅**メンバーがリストの最後のエントリを指しています。 リストが空の場合は、リストの先頭がリストの先頭になるように**Flink**と**点滅**します。
 
-**一覧\_エントリ**、リスト内のエントリを表す構造体、 **Flink**メンバーの一覧で、次のエントリが指す、**点滅**メンバー ポイント一覧の前のエントリ。 (エントリが一覧で、最後の 1 つである場合**Flink**リストの先頭を指します。 同様に、エントリが一覧で、1 つ目の場合、**点滅**リストの先頭を指します)。
+一覧のエントリを表す**リスト\_エントリ**の構造では、 **flink**メンバーはリスト内の次のエントリを指し、**点滅**メンバーはリスト内の前のエントリを指します。 (エントリがリスト内の最後のエントリである場合、 **Flink**はリストの先頭を指します。 同様に、エントリがリスト内の最初のエントリである場合、**点滅**はリストの先頭を指します)。
 
-(これらの規則は、一見驚くかもしれません、中に、許可一覧挿入と削除の操作を実装しない条件付きコードの分岐がある。)
+(これらのルールは一見すると驚くかもしれませんが、条件付きのコード分岐を使用せずにリストの挿入と削除の操作を実装できます)。
 
-ダブルリンク リストを操作するルーチンへのポインターを使用する、 [**一覧\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)リストの先頭を表します。 これらのルーチンを更新、 **Flink**と**点滅**をこれらのメンバーが、結果リストで最初と最後のエントリを指すようにリスト内のメンバーが移動します。
+ダブルリンクリストを操作するルーチンは、リストの先頭を表す[**リスト\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)へのポインターを取得します。 これらのルーチンは、リストの先頭の**Flink**メンバーと**点滅**メンバーを更新して、これらのメンバーが結果のリストの最初と最後のエントリを指すようにします。
 
-ものとします、 *ListHead*変数がへのポインター、**一覧\_エントリ**リストの先頭を表す構造体です。 ドライバー操作*ListHead*次のようにします。
+*ListHead*変数が、リストの先頭を表す**リスト\_エントリ**の構造体へのポインターであるとします。 ドライバーは、次のように*ListHead*を操作します。
 
--   空としてリストを初期化するために使用[ **InitializeListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializelisthead)、どの初期化*ListHead * * *-&gt;Flink** と*ListHead * * *-&gt;点滅** を指す*ListHead*します。
+-   リストを空として初期化するには、 [**InitializeListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-initializelisthead)を使用します。これに*より、ListHead * * *-&gt;flink** と*ListHead * * *-&gt;点滅** が*ListHead*を指すように初期化されます。
 
--   一覧の先頭に新しいエントリを挿入するには、割り当て、**一覧\_エントリ**を新しいエントリを表し、呼び出して[ **InsertHeadList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-insertheadlist)でエントリを挿入するにはリストの先頭。
+-   リストの先頭に新しいエントリを挿入するには、新しいエントリを表す**リスト\_エントリ**を割り当ててから、挿入された[**エントリをリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-insertheadlist)の先頭に挿入します。
 
--   リストの末尾に新しいエントリを追加するには、割り当て、**一覧\_エントリ**を新しいエントリを表し、呼び出して[ **InsertTailList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-inserttaillist)でエントリを挿入するにはリストの末尾。
+-   新しいエントリをリストの末尾に追加するには、新しいエントリを表す**リスト\_エントリ**を割り当ててから、 [**InsertTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-inserttaillist)を呼び出してリストの末尾にエントリを挿入します。
 
--   一覧から最初のエントリを削除するには使用[ **RemoveHeadList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-removeheadlist)します。 一覧から、または削除されたエントリへのポインターを返しますこれ*ListHead*リストが空の場合。
+-   リストから最初のエントリを削除するには、[ [**Removeヘッドホン list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeheadlist)] を使用します。 この値は、リストから削除されたエントリへのポインターを返すか、リストが空の場合は*ListHead*に戻ります。
 
--   一覧から、最後のエントリを削除するには、使用[ **RemoveTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-removetaillist)します。 一覧から、または削除されたエントリへのポインターを返しますこれ*ListHead*リストが空の場合。
+-   リストから最後のエントリを削除するには、 [**Removetthe list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removetaillist)を使用します。 この値は、リストから削除されたエントリへのポインターを返すか、リストが空の場合は*ListHead*に戻ります。
 
--   一覧から指定されたエントリを削除するには使用[ **RemoveEntryList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-removeentrylist)します。
+-   指定されたエントリを一覧から削除するには、 [**Removeentrylist**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-removeentrylist)を使用します。
 
--   リストが空かどうかを確認するには、使用[ **IsListEmpty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-islistempty)します。
+-   リストが空かどうかを確認するには、 [**Islistempty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-islistempty)を使用します。
 
--   一覧を別のリストの末尾に追加するには、使用[ **AppendTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-appendtaillist)します。
+-   リストを別のリストの末尾に追加するには、 [**AppendTailList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-appendtaillist)を使用します。
 
-A [**一覧\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)、単独でのみが**点滅**と**Flink**メンバー。 埋め込みのリストでは、独自のデータを格納する、**一覧\_エントリ**一覧のエントリを次のように記述する構造体のメンバーとして。
+[**リスト\_エントリ**](https://docs.microsoft.com/windows/desktop/api/ntdef/ns-ntdef-_list_entry)自体には、**点滅**および**flink**メンバーのみが含まれます。 リストに独自のデータを格納するには、リストエントリを記述する構造体のメンバーとして**リスト\_エントリ**を次のように埋め込みます。
 
 ```cpp
 typedef struct {
@@ -137,33 +137,33 @@ typedef struct {
 } XXX_ENTRY;
 ```
 
-一覧には、新しいエントリを追加するには、割り当て、 **XXX\_エントリ**構造体、しへのポインターを渡す、 **ListEntry**メンバー **InsertHeadList**または**InsertTailList**します。 ポインターに変換する、**一覧\_エントリ**に戻す、 **XXX\_エントリ**を使用して、 [**含まれている\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer). シングル リンク リストを使用して、この方法の例は、シングル リンク リスト上記を参照してください。
+リストに新しいエントリを追加するには、 **XXX\_エントリ**の構造を割り当ててから、 **ListEntry**メンバーへのポインターを、挿入された **@ list**または**InsertTailList**に渡します。 ポインターをリストに変換して、 **XXX\_エントリ**に戻すには **\_** を[**含む\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用します。 この手法の例については、単一のリンクリストを使用して、上記の「シングルリンクリスト」を参照してください。
 
-システムは、リストの操作の分割不可能なバージョンも用意されています[ **ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)、 [ **ExInterlockedInsertTailList** ](https://msdn.microsoft.com/library/windows/hardware/ff545402)。、および[ **ExInterlockedRemoveHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545427)します。 (アトミック版がないことに注意してください**RemoveTailList**または**RemoveEntryList**。)。各ルーチンでは、追加のスピン ロック パラメーターを受け取ります。 ルーチンは、一覧を更新する前に、スピン ロックを取得し、操作が完了したら、スピン ロックを解放します。 ロックが保持されている間は、割り込みが無効です。 リストの各操作は、他のすべてのリストに対してこのような各操作が同期されていることを確認するのに同じスピン ロックを使用する必要があります。 これらでのみ、スピン ロックを使用する必要があります**ExInterlocked*Xxx*一覧**ルーチン。 その他の目的は、スピン ロックを使用しないでください。 ドライバーは、複数のリストの同じロックを使用することができますが、ドライバーは、これを避ける必要がありますので、この動作はロックの競合を増加します。
+システムには、リスト操作、 [**ExInterlockedInsertHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545397)、 [**ExInterlockedInsertTailList**](https://msdn.microsoft.com/library/windows/hardware/ff545402)、および[**ExInterlockedRemoveHeadList**](https://msdn.microsoft.com/library/windows/hardware/ff545427)のアトミックバージョンも用意されています。 ( **Removetlist**または**removeentrylist**の atomic バージョンがないことに注意してください)。各ルーチンは、追加のスピンロックパラメーターを受け取ります。 ルーチンは、リストを更新する前にスピンロックを取得し、操作の完了後にスピンロックを解放します。 ロックが保持されている間、割り込みは無効になります。 リストに対する各操作は、同じスピンロックを使用して、リストに対する各操作が互いに同期されるようにする必要があります。 スピンロックは、これらの**Exinterlocked ロック*Xxx*リスト**ルーチンでのみ使用する必要があります。 その他の目的では、スピンロックを使用しないでください。 ドライバーは複数のリストに対して同じロックを使用できますが、この動作によってロックの競合が増加するため、ドライバーはこれを回避する必要があります。
 
-たとえば、 **ExInterlockedInsertHeadList**、 **ExInterlockedInsertTailList**、および**ExInterlockedRemoveHeadList**ルーチンがの共有をサポートすることができます、二重IRQL で実行されているドライバーのスレッドでのリンクのリスト = パッシブ\_レベルと DIRQL で実行されている ISR します。 これらのルーチンは、スピン ロックが保持されているときに割り込みを無効にします。 したがって、ISR とドライバー スレッド安全に使用できる同じスピン ロックには、これらの呼び出しで**ExInterlocked*Xxx*一覧**デッドロック ルーチン。
+たとえば、 **ExInterlockedInsertHeadList**、 **ExInterlockedInsertTailList**、および**ExInterlockedRemoveHeadList**ルーチンは、IRQL = パッシブ\_レベルで実行されているドライバースレッドによって、ダブルリンクリストの共有をサポートできます。DIRQL で実行されている ISR。 これらのルーチンは、スピンロックが保持されているときに割り込みを無効にします。 したがって、ISR とドライバーのスレッドは、デッドロックを損なうことなく、これらの**Exinterlocked ロック*Xxx*リスト**ルーチンへの呼び出しで同じスピンロックを安全に使用できます。
 
-同じリストにリスト操作の原子性と非アトミックなトランザクションのバージョンへの呼び出しを混在させないでください。 データ構造体が壊れて、アトミックと非アトミックなトランザクションのバージョンは、同じリストで同時に実行が場合と、コンピューターが応答を停止する可能性がありますまたはバグのチェック (つまり、*クラッシュ*)。 (作業することはできません、リスト操作の原子性と非アトミックなトランザクションのバージョンへの呼び出しの混在を回避するために非アトミック ルーチンの呼び出し中に、スピン ロックを取得します。 スピン ロックを使用して、この方法ではサポートされていませんし、一覧の破損が発生する可能性がありますもします。)
+リスト操作のアトミックバージョンと非アトミックバージョンの呼び出しを同じリストに混在させないでください。 アトミックバージョンと非アトミックバージョンが同じリストで同時に実行されると、データ構造が破損し、コンピューターが応答を停止したり、バグチェック (*クラッシュ*) したりする可能性があります。 非アトミックルーチンの呼び出し中にスピンロックを取得することはできません。これにより、リスト操作のアトミックおよび非アトミックバージョンへの呼び出しが混在するのを回避できます。 この方法でのスピンロックの使用はサポートされていないため、リストが破損する可能性があります)。
 
-### <a name="sequenced-singly-linked-lists"></a>シングル リンク リストをシーケンス処理
+### <a name="sequenced-singly-linked-lists"></a>シーケンスされた単一のリンクリスト
 
-シーケンス処理されたシングル リンク リストは、アトミックの操作をサポートするシングル リンク リストの実装です。 説明されているシングル リンク リストの実装よりもアトミック操作の方が効率的です[シングル リンク リスト](#singly-linked-lists)します。
+シーケンスされたシングルリンクリストは、アトミックな操作をサポートする単一のリンクリストを実装したものです。 Atomic 操作では、[単一](#singly-linked-lists)リンクリストに記述されている単一リンクリストの実装よりも効率的です。
 
-[ **SLIST\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体を使用してシーケンス番号付きのシングル リンク リストの先頭を記述するときに[ **SLIST\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_slist_entry)リスト内のエントリを記述するために使用します。
+配列形式の単一リンクリストの先頭を説明するために、また、一覧のエントリを説明するために使用されるのは、表示[ **\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_slist_entry)の[ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)です。
 
-ドライバーでは、一覧を次のように操作します。
+ドライバーは、次のようにリストを操作します。
 
--   初期化するために、 **SLIST\_ヘッダー**構造体を使用して[ **ExInitializeSListHead**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-initializeslisthead)します。
+-   ExInitializeSListHead ヘッダーの構造を **\_** 初期化するには、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-initializeslisthead)を使用します。
 
--   一覧に新しいエントリを追加するには、割り当て、 **SLIST\_エントリ**を新しいエントリを表し、呼び出して[ **ExInterlockedPushEntrySList** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedpushentryslist)にエントリを追加するにはリストの先頭。
+-   一覧に新しいエントリを追加するには、新しいエントリを表すために、ExInterlockedPushEntrySList**エントリ\_** を割り当ててから、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpushentryslist)を呼び出してリストの先頭にエントリを追加します。
 
--   使用して、一覧から最初のエントリをポップ[ **ExInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedpopentryslist)します。
+-   [**ExInterlockedPopEntrySList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedpopentryslist)を使用して、リストの最初のエントリをポップします。
 
--   使用して一覧を完全に消去する[ **ExInterlockedFlushSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinterlockedflushslist)します。
+-   一覧を完全にクリアするには、 [**ExInterlockedFlushSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinterlockedflushslist)を使用します。
 
--   一覧のエントリの数を調べるには[ **ExQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exquerydepthslist)します。
+-   リスト内のエントリの数を確認するには、 [**ExQueryDepthSList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exquerydepthslist)を使用します。
 
-A [ **SLIST\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_slist_entry)、単独でのみが、**次**メンバー。 埋め込みのリストでは、独自のデータを格納する、 **SLIST\_エントリ**一覧のエントリを次のように記述する構造体のメンバーとして。
+**次**のメンバーのみが含まれている、 [ **\_のエントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_slist_entry)。 リストに独自のデータを格納するには、次のように、リストエントリを記述する構造体のメンバーとして、表示 **\_エントリ**を埋め込みます。
 
 ```cpp
 typedef struct 
@@ -181,19 +181,19 @@ typedef struct
 } XXX_ENTRY;
 ```
 
-一覧に新しいエントリを追加するには、割り当て、 **XXX\_エントリ**構造体、しへのポインターを渡す、 **SListEntry**メンバー **ExInterlockedPushEntrySList**. ポインターに変換する、 **SLIST\_エントリ**に戻す、 **XXX\_エントリ**を使用して、 [**含まれている\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer). 単独 非シーケンス処理を使用して、この手法の例では、リストがリンクされたを参照してください。[シングル リンク リスト](#singly-linked-lists)します。
+リストに新しいエントリを追加するには、 **XXX\_エントリ**構造を割り当ててから、 **SListEntry**メンバーへのポインターを**ExInterlockedPushEntrySList**に渡します。 **\_エントリ**へのポインターを、 **XXX\_エントリ**に変換するには、[**包含\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用します。 この手法の例として、シーケンス処理されていない単一のリンクリストを使用する方法については、「[単一リンクリスト](#singly-linked-lists)」を参照してください。
 
-**警告**   64 ビット用の Microsoft Windows オペレーティング システム、 [ **SLIST\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_slist_entry)構造体は 16 バイトでアラインである必要があります。
+64ビットの Microsoft Windows オペレーティングシステムでは**警告**  、 [ **\_エントリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_slist_entry)構造は16バイトでアラインされている必要があります。
 
  
 
-Windows XP および Windows の以降のバージョンは、Windows 2000 では使用できないシングル リンク リストをシーケンス処理された関数の最適化されたバージョンを提供します。 場合は、ドライバーは、これらの関数を使用しも、Windows 2000 で実行する必要があります、ドライバーを定義する必要があります、 \_WIN2K\_COMPAT\_SLIST\_使用法フラグの次のようにします。
+Windows XP 以降のバージョンの windows では、Windows 2000 では使用できない、シーケンスされた単一リンクリスト関数の最適化されたバージョンを提供しています。 ドライバーがこれらの機能を使用し、Windows 2000 でも実行する必要がある場合は、次のように、ドライバーで \_WIN2K\_COMPAT\_\_の使用フラグが設定されている必要があります。
 
 ```cpp
 #define _WIN2K_COMPAT_SLIST_USAGE
 ```
 
-X86 ベースのプロセッサでは、このフラグとコンパイラ バージョンの Windows 2000 と互換性があるシーケンス処理されたシングル リンク リスト関数を使用します。
+X86 ベースのプロセッサの場合、このフラグを使用すると、コンパイラは Windows 2000 と互換性のある、シーケンスされた単一のリンクリスト関数のバージョンを使用します。
 
  
 

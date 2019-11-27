@@ -1,32 +1,32 @@
 ---
-Description: トランスポートで UCSI 仕様を実装する UCSI クラスの拡張機能の動作を記述に依存しない方法です。
+Description: トランスポートに依存しない方法で UCSI 仕様を実装する UCSI クラス拡張の動作について説明します。
 title: UCSI クライアント ドライバーを記述する
 ms.date: 09/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dafc98f16cb5b0cfab0e931fcb52198efaf97f5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b059d03672d8c08d894229997d3b31239bd95971
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385343"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841680"
 ---
 # <a name="write-a-ucsi-client-driver"></a>UCSI クライアント ドライバーを記述する
 
-USB タイプ C コネクタ システム ソフトウェア インターフェイス (UCSI) ドライバーは、埋め込みコント ローラー (EC) を備えた USB 型-c システムのコント ローラーのドライバーとして機能します。
+USB タイプ c コネクタシステムソフトウェアインターフェイス (UCSI) ドライバーは、埋め込みコントローラー (EC) を備えた USB タイプ C システムのコントローラードライバーとして機能します。
 
-実装する場合、システムをプラットフォーム ポリシー マネージャー (PPM) UCSI 仕様」の説明に従って、EC 内に接続されているシステム上。
+次のようにシステムに接続されている EC で、UCSI 仕様で説明されているプラットフォームポリシーマネージャー (PPM) を実装しているシステムの場合:
 
-- ACPI トランスポート_いない_ドライバーを作成する必要があります。 (UcmUcsiCx.sys および UcmUcsiAcpiClient.sys)、Microsoft によって提供されるインボックス ドライバーを読み込みます。 (を参照してください[UCSI ドライバー](ucsi.md))。
+- ACPI トランスポートでは、ドライバーを作成する必要はあり_ません_。 Microsoft が提供するインボックスドライバー (UcmUcsiCx および UcmUcsiAcpiClient) を読み込みます。 (「 [Ucsi ドライバー](ucsi.md)」を参照してください)。
 
-- USB、PCI、I2C UART などの非 ACPI トランスポートでは、コント ローラーのクライアント ドライバーを記述する必要があります。
+- USB、PCI、I2C、UART などの非 ACPI トランスポートでは、コントローラーのクライアントドライバーを書き込む必要があります。
 
-> USB タイプ-c ハードウェアが電力 (PD) の配信のステート マシンを処理する機能を持たない場合は、型-C# の USB ポートのコント ローラー ドライバーの作成を検討してください。 詳細については、次を参照してください。[型-C# の USB ポート コント ローラー ドライバー](bring-up-a-usb-type-c-connector-on-a-windows-system.md)します。
+> USB タイプ C ハードウェアに電力配信 (PD) のステートマシンを処理する機能がない場合は、USB タイプの C ポートコントローラードライバーを記述することを検討してください。 詳細については、「 [Write a USB Type-C port controller driver](bring-up-a-usb-type-c-connector-on-a-windows-system.md)」を参照してください。
 
-以降では、Windows 10、バージョンは 1809、UCSI (UcmUcsiCx.sys) の新しいクラスの拡張機能が追加されました、UCSI 仕様を実装するトランスポートに依存しない方法です。 最小限のコードで、UcmUcsiCx へのクライアントであるドライバーが非 ACPI トランスポート経由で USB Type-C ハードウェアと通信できます。 このトピックでは、UCSI クラス拡張機能で提供されるサービスと、クライアント ドライバーの想定される動作について説明します。
+Windows 10 バージョン1809以降では、UCSI (UcmUcsiCx) の新しいクラス拡張が追加されました。これにより、トランスポートに依存しない方法で UCSI 仕様が実装されます。 最小限のコードで、UcmUcsiCx へのクライアントであるドライバーが非 ACPI トランスポート経由で USB Type-C ハードウェアと通信できます。 このトピックでは、UCSI クラス拡張機能で提供されるサービスと、クライアント ドライバーの想定される動作について説明します。
 
 **公式の仕様**
--   [UCSI の Intel BIOS の実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)
--   [USB 3.1 と USB 型-C# の仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)
+-   [UCSI の Intel BIOS 実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)
+-   [USB 3.1 および USB タイプ-C 仕様](https://go.microsoft.com/fwlink/p/?LinkId=699515)
 -   [UCSI ドライバー](ucsi.md)
 
 適用対象:
@@ -35,92 +35,92 @@ USB タイプ C コネクタ システム ソフトウェア インターフェ�
 
 **WDF のバージョン**
 
--   KMDF 1.27 のバージョン
+-   KMDF バージョン1.27
 
 
 **重要な API**
 
-[UcmUcsiCx クラス拡張機能のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/_usbref/#type-c-driver-reference)
+[UcmUcsiCx クラス拡張機能のリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_usbref/#type-c-driver-reference)
 
 **サンプル**
 
 [UcmUcsiCx クライアント ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/UcmUcsiAcpiSample)
 
-必須のバスの実装では、ACPI 部分を置き換えます。
+ACPI 部分を、必要なバスの実装に置き換えます。
 
-## <a name="ucsi-class-extension-architecture"></a>UCSI クラスの拡張機能アーキテクチャ
-UCSI クラスの拡張、UcmUcsiCx、非 ACPI のトランスポートを使用して、その埋め込みコント ローラーと通信するドライバーを作成することができます。 コント ローラー ドライバーは、UcmUcsiCx にクライアント ドライバーです。 UcmUcsiCx は、さらに、USB コネクタ マネージャー (UCM) にクライアントです。 そのため、UcmUcsiCx には、独自のポリシーの決定はすべてのことはありません。 代わりに、UCM によって提供されるポリシーを実装します。 UcmUcsiCx では、クライアント ドライバーからプラットフォーム ポリシー マネージャー (PPM) 通知の処理用にステート マシンを実装しより信頼性の高い問題の検出とエラー処理のことができます UCM ポリシーの決定を実装するためのコマンドを送信します。
+## <a name="ucsi-class-extension-architecture"></a>UCSI クラス拡張アーキテクチャ
+UCSI クラス拡張、UcmUcsiCx では、非 ACPI トランスポートを使用して、埋め込みコントローラーと通信するドライバーを記述できます。 コントローラードライバーは、UcmUcsiCx するクライアントドライバーです。 UcmUcsiCx は、クライアントを USB コネクタマネージャー (UCM) に変換します。 そのため、UcmUcsiCx は独自のポリシー決定を行いません。 代わりに、UCM によって提供されるポリシーを実装します。 UcmUcsiCx は、クライアントドライバーからのプラットフォームポリシーマネージャー (PPM) 通知を処理するためのステートマシンを実装し、UCM ポリシーの決定を実装するコマンドを送信して、より信頼性の高い問題の検出とエラー処理を可能にします。
 
-![UCSI クラスの拡張機能アーキテクチャ](images/ucsicxarch.png)
+![UCSI クラス拡張アーキテクチャ](images/ucsicxarch.png)
 
-**OS Policy Manager (OPM)**
+**OS ポリシーマネージャー (OPM)**
 
-UCSI 仕様」の説明に従って、OS ポリシー マネージャー (OPM) は PPM、対話するためのロジックを実装します。 OPM は責任を負います。
+OS ポリシーマネージャー (OPM) は、UCSI 仕様で説明されているように、PPM と対話するためのロジックを実装します。 OPM の責任は次のとおりです。
 
-- UCM ポリシーに UCSI コマンドおよび UCSI 通知 UCM 通知に変換します。
-- UCSI コマンドの PPM、エラー、および復旧メカニズムの検出を初期化するために必要な送信します。
+- UCM ポリシーを UCSI コマンドに変換し、UCM 通知に UCSI 通知を変換します。
+- PPM の初期化、エラーの検出、および復旧のメカニズムに必要な UCSI コマンドを送信しています。
 
 **UCSI コマンドの処理** 
 
-標準的な操作では、いくつかのコマンドを UCSI complicant ハードウェアによって完了する必要があります。 たとえば、GET_CONNECTOR_STATUS コマンドについて考えてみましょう。
+一般的な操作には、UCSI-complicant ハードウェアによって実行されるいくつかのコマンドが含まれます。 たとえば、GET_CONNECTOR_STATUS のコマンドを考えてみましょう。
 
-1. PPM ファームウェア UcmUcsiCx/クライアント ドライバーに接続の変更通知を送信します。
-2. 応答では、UcmUcsiCx/クライアント ドライバーは、PPM ファームウェアに GET_CONNECTOR_STATUS コマンドを送信します。  
-3. PPM ファームウェアは GET_CONNECTOR_STATUS を実行し、非同期的に UcmUcsiCx/クライアント ドライバーにコマンドの完了通知を送信します。 通知にはに関するデータが含まれている状態を実際に接続します。
-4. UcmUcsiCx/クライアント ドライバーでは、その状態情報を処理し、ACK_CC_CI を PPM ファームウェアに送信します。
-5. PPM ファームウェアは ACK_CC_CI を実行し、非同期的に UcmUcsiCx/クライアント ドライバーにコマンドの完了通知を送信します。
-6. UcmUcsiCx/クライアント ドライバーでは、GET_CONNECTOR_STATUS コマンドが完了すると見なします。
+1. PPM ファームウェアは、connect 変更通知を UcmUcsiCx/client ドライバーに送信します。
+2. 応答として、UcmUcsiCx/クライアントドライバーは、GET_CONNECTOR_STATUS コマンドを PPM ファームウェアに送り返します。  
+3. PPM ファームウェアは GET_CONNECTOR_STATUS を実行し、コマンド完了通知を非同期的に UcmUcsiCx/クライアントドライバーに送信します。 この通知には、実際の接続状態に関するデータが含まれています。
+4. UcmUcsiCx/client ドライバーは、その状態情報を処理し、PPM ファームウェアに ACK_CC_CI を送信します。
+5. PPM ファームウェアは ACK_CC_CI を実行し、コマンド完了通知を非同期的に UcmUcsiCx/クライアントドライバーに送信します。
+6. UcmUcsiCx/client ドライバーは、GET_CONNECTOR_STATUS コマンドが完了したと見なします。
 
-**プラットフォーム ポリシー マネージャー (PPM) との通信**
+**プラットフォームポリシーマネージャー (PPM) との通信**
 
-UcmUcsiCx は OPM から PPM ファームウェアに UCSI コマンドを送信して、PPM ファームウェアから通知を受信の詳細を抽象化します。 WDFREQUEST オブジェクトへの PPM コマンドを変換し、クライアント ドライバーに転送します。
+UcmUcsiCx は、OPM から PPM ファームウェアへの UCSI コマンドの送信と、PPM ファームウェアからの通知の受信の詳細を抽象化します。 PPM コマンドを WDFREQUEST オブジェクトに変換し、クライアントドライバーに転送します。
 
-- PPM 通知
+- PPM の通知
 
-    クライアント ドライバーでは、ファームウェアの PPM 通知に関する UcmUcsiCx を通知します。 ドライバーは、CCI を含む UCSI データ ブロックを提供します。 UcmUcsiCx は、OPM やデータに基づく適切なアクションを実行する他のコンポーネントに通知を転送します。
+    クライアントドライバーは、ファームウェアからの PPM の通知について UcmUcsiCx に通知します。 このドライバーは、CCI を含む UCSI データブロックを提供します。 UcmUcsiCx は、データに基づいて適切なアクションを実行する OPM およびその他のコンポーネントに通知を転送します。
 
-- クライアント ドライバーに Ioctl
+- クライアントドライバーへの Ioctl
 
-    UcmUcsiCx は、PPM ファームウェアに送信するクライアント ドライバー (IOCTL 要求) を通じて UCSI コマンドを送信します。 ドライバーは、ファームウェアに UCSI のコマンドは、送信後に、要求を完了します。
+    UcmUcsiCx は、(IOCTL 要求を介して) UCSI コマンドをクライアントドライバーに送信して、PPM ファームウェアに送信します。 ドライバーは、UCSI コマンドをファームウェアに送信した後に、要求を完了する役割を担います。
 
 
-**電源の移行の処理**
+**電源遷移の処理**
 
-クライアント ドライバーは、電源ポリシー所有者です。  
+クライアントドライバーは、電源ポリシーの所有者です。  
 
-場合は、クライアント ドライバーが Dx 状態に入る S0 アイドル状態のため、WDF は、UcmUcsiCx 送信すると、クライアント ドライバーの電源管理対象のキューに UCSI コマンドを含む IOCTL D0 にドライバーをもたらします。 S0 アイドル状態で、クライアント ドライバーは、S0 アイドル状態の PPM 通知が引き続き有効であるため、ファームウェアの PPM 通知がある場合に、電源の状態を再入力する必要があります。  
+S0 がアイドル状態になったためにクライアントドライバーが Dx 状態になると、WDF は、UcmUcsiCx が UCSI コマンドを含む IOCTL をクライアントドライバーの電源管理キューに送信するときに、ドライバーを D0 にします。 S0 がアイドル状態の場合、PPM の通知が引き続き有効になっているため、ファームウェアから PPM の通知がある場合は、S0 のクライアントドライバーが電源状態に再入力する必要があります。  
 
-## <a name="before-you-begin"></a>開始する前にしています.
+## <a name="before-you-begin"></a>開始する前に...
 
--   によって、ハードウェアまたはファームウェア PD ステート マシン、およびトランスポートを実装するかどうかを記述する必要があるドライバーの種類を決定します。
+-   ハードウェアまたはファームウェアが PD ステートマシンとトランスポートのどちらを実装しているかに応じて、書き込む必要があるドライバーの種類を決定します。
 
-    ![適切なクラスの拡張機能を選択するための意思決定](images/drivers-c.png)詳細については、次を参照してください。[型-C# の USB コネクタ用の開発の Windows ドライバー](developing-windows-drivers-for-usb-type-c-connectors.md)します。  
+    正しいクラス拡張機能を選択するかどうかを判断 ![には](images/drivers-c.png) 「 [USB タイプ-C コネクタ用の Windows ドライバーの開発](developing-windows-drivers-for-usb-type-c-connectors.md)」を参照してください。  
 
--   デスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の場合は、Windows 10 をインストールします。
+-   デスクトップエディション (Home、Pro、Enterprise、および教育) 用の Windows 10 をインストールします。
 
--   [インストール](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)開発用コンピューターに最新 Windows Driver Kit (WDK)。 このキットが必要なヘッダー ファイルとライブラリを具体的には、クライアント ドライバーを記述するため、必要があります。
+-   開発用コンピューターに最新の Windows Driver Kit (WDK) を[インストール](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)します。 キットには、クライアントドライバーを記述するために必要なヘッダーファイルとライブラリが用意されています。具体的には、次のものが必要です。
 
-    -   スタブ ライブラリは、(UcmUcsiCxStub.lib)。 ライブラリでは、クライアント ドライバーによって行われた呼び出しを変換し、クラスの拡張機能に渡します。
-    -   ヘッダー ファイルでは、Ucmucsicx.h します。
-    - クライアント ドライバーでは、カーネル モードで実行され、KMDF 1.27 ライブラリにバインドします。
+    -   スタブライブラリ (UcmUcsiCxStub)。 ライブラリは、クライアントドライバーによって行われた呼び出しを変換し、クラス拡張に渡します。
+    -   ヘッダーファイル Ucmucsicx。
+    - クライアントドライバーはカーネルモードで実行され、KMDF 1.27 ライブラリにバインドされます。
 
--   Windows Driver Foundation (WDF) を理解します。 参考資料。[Windows Driver Foundation でのドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)少額 Orwick と Guy Smith によって書き込まれた、します。
+-   Windows Driver Foundation (WDF) について理解を深めます。 推奨される読み取り: 小額 Orwick および Guy Smith によって作成され[た Windows Driver Foundation を使用したドライバーの開発]( https://go.microsoft.com/fwlink/p/?LinkId=691676)。
 
-## <a name="1-register-your-client-driver-with-ucmucsicx"></a>1.UcmUcsiCx をクライアント ドライバーに登録します。
+## <a name="1-register-your-client-driver-with-ucmucsicx"></a>1. クライアントドライバーを UcmUcsiCx に登録します。
 
-[ **EVT_WDF_DRIVER_DEVICE_ADD** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)の実装 
+[**EVT_WDF_DRIVER_DEVICE_ADD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)の実装では、 
 
-1. 設定した後、プラグ アンド プレイと電源管理イベントのコールバック関数 ([**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks))、呼び出す[ **UcmUcsiDeviceInitInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitinitialize)初期化するために、 [ **WDFDEVICE_INIT** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)非透過構造体。 呼び出しは、クライアント ドライバーをフレームワークに関連付けます。
+1. プラグアンドプレイと電源管理のイベントコールバック関数 ([**WdfDeviceInitSetPnpPowerEventCallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpnppowereventcallbacks)) を設定した後、 [**UcmUcsiDeviceInitInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitinitialize)を呼び出して、不透明な構造体を[**WDFDEVICE_INIT**](https://docs.microsoft.com/windows-hardware/drivers/wdf/wdfdevice_init)初期化します。 この呼び出しにより、クライアントドライバーがフレームワークに関連付けられます。
 
-2. Framework デバイス オブジェクト (WDFDEVICE) を作成すると、呼び出す[ **UcmUcsiDeviceInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitialize.md) UcmUcsiCx クライアント ドライバーに登録します。
+2. フレームワークデバイスオブジェクト (WDFDEVICE) を作成した後、 [**UcmUcsiDeviceInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsidevice/nf-ucmucsidevice-ucmucsideviceinitialize.md)を呼び出して、UcmUcsiCx にクライアントのダイバーを登録します。
 
-## <a name="2-create-the-ppm-object-with-ucmucsicx"></a>2.UcmUcsiCx で PPM オブジェクトを作成します。
+## <a name="2-create-the-ppm-object-with-ucmucsicx"></a>2. UcmUcsiCx を使用して PPM オブジェクトを作成する
 
-実装で[ **EVT_WDF_DEVICE_PREPARE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)、生と翻訳されたリソースの一覧を受信した後、リソースを使用して、ハードウェアを準備します。 たとえば、トランスポートが I2C の場合は、通信チャネルを開くためのハードウェア リソースを読み取り。 次に、PPM オブジェクトを作成します。 オブジェクトを作成するには、特定の構成オプションを設定する必要があります。
+[**EVT_WDF_DEVICE_PREPARE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)の実装では、生のリソースと変換されたリソースの一覧を受け取ったら、リソースを使用してハードウェアを準備します。 たとえば、トランスポートが I2C の場合は、ハードウェアリソースを読み取り、通信チャネルを開きます。 次に、PPM オブジェクトを作成します。 オブジェクトを作成するには、特定の構成オプションを設定する必要があります。
 
-1. デバイス上には、コネクタのコレクションを識別するハンドルを提供します。 
-   1. コネクタのコレクションを呼び出すことによって作成[ **UcmUcsiConnectorCollectionCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectioncreate)します。
-   2. デバイスのコネクタを列挙し、呼び出すことによって、コレクションに追加[ **UcmUcsiConnectorCollectionAddConnector**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectionaddconnector)
+1. デバイス上のコネクタコレクションへのハンドルを指定します。 
+   1. [**UcmUcsiConnectorCollectionCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectioncreate)を呼び出して、コネクタコレクションを作成します。
+   2. UcmUcsiConnectorCollectionAddConnector を呼び出して、デバイス上のコネクタを列挙し、コレクションに追加します。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsiconnectorcollectionaddconnector)
 
       ```cpp
       // Create the connector collection.
@@ -141,13 +141,13 @@ UcmUcsiCx は OPM から PPM ファームウェアに UCSI コマンドを送信
       status = UcmUcsiConnectorCollectionAddConnector ( &ConnectorCollectionHandle,
                    &connectorInfo);
       ```
-2. デバイス コント ローラーを有効にするかどうかを決定します。
+2. デバイスコントローラーを有効にするかどうかを決定します。
 
-3. 構成し、PPM オブジェクトを作成します。
-   1. 初期化を[ **UCMUCSI_PPM_CONFIG** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/ns-ucmucsippm-_ucmucsi_ppm_config)手順 1 で作成したコネクタのハンドルを提供することで、構造体。
-   2. 設定**UsbDeviceControllerEnabled**メンバーを手順 2. で決定するブール値。
-   3. WDF_OBJECT_ATTRIBUTES でイベントのコールバックを設定します。
-   4. 呼び出す[ **UcmUcsiPpmCreate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmcreate)で構成されているすべての構造体の受け渡し。
+3. PPM オブジェクトを構成して作成します。
+   1. 手順 1. で作成したコネクタハンドルを指定して、 [**UCMUCSI_PPM_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/ns-ucmucsippm-_ucmucsi_ppm_config)構造体を初期化します。
+   2. **UsbDeviceControllerEnabled**メンバーを、手順 2. で決定したブール値に設定します。
+   3. WDF_OBJECT_ATTRIBUTES でイベントコールバックを設定します。
+   4. 構成されているすべての構造体を渡して[**UcmUcsiPpmCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmcreate)を呼び出します。
 
       ```cpp
       UCMUCSIPPM ppmObject = WDF_NO_HANDLE;
@@ -163,18 +163,18 @@ UcmUcsiCx は OPM から PPM ファームウェアに UCSI コマンドを送信
 
       status = UcmUcsiPpmCreate(wdfDevice, UcsiPpmConfig, &attrib, &ppmObject);
       ```
-      ## <a name="3-set-up-io-queues"></a>3.IO キューを設定します。
+      ## <a name="3-set-up-io-queues"></a>3. IO キューを設定する
 
-UcmUcsiCx は、PPM ファームウェアに送信するクライアント ドライバーに UCSI コマンドを送信します。 コマンドは、WDF キュー内のこれらの IOCTL 要求の形式で送信されます。
+UcmUcsiCx は、PPM のファームウェアに送信するために、UCSI コマンドをクライアントドライバーに送信します。 これらのコマンドは、これらの IOCTL 要求の形式で WDF キューに送信されます。
 
--  [IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)
--  [IOCTL_UCMUCSI_PPM_GET_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_get_ucsi_data_block)
+-  [IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)
+-  [IOCTL_UCMUCSI_PPM_GET_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_get_ucsi_data_block)
 
-クライアント ドライバーは、作成して呼び出すことによって UcmUcsiCx にそのキューを登録する責任を負います[ **UcmUcsiPpmSetUcsiCommandRequestQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)します。 キューは、電源管理対象にする必要があります。
+クライアントドライバーは、 [**UcmUcsiPpmSetUcsiCommandRequestQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)を呼び出して、そのキューを作成し、UcmUcsiCx に登録する役割を担います。 キューは、電源管理されている必要があります。
 
-あること多くて 1 つの未処理の要求、WDF キューで UcmUcsiCx が保証されます。 クライアント ドライバーも担当のファームウェアに UCSI のコマンドは、送信後、WDF 要求を完了します。
+UcmUcsiCx は、WDF キューに未処理の要求が1つだけ存在することを保証します。 クライアントドライバーは、UCSI コマンドをファームウェアに送信した後に、WDF 要求を完了する役割も担います。
 
-キューの実装でのドライバーを設定する通常[ **EVT_WDF_DEVICE_PREPARE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)します。
+通常、ドライバーは[**EVT_WDF_DEVICE_PREPARE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)の実装にキューを設定します。
 
 ```cpp
 WDFQUEUE UcsiCommandRequestQueue = WDF_NO_HANDLE;
@@ -201,24 +201,24 @@ status = WdfIoQueueCreate(device, &queueConfig, &attrib, &UcsiCommandRequestQueu
 UcmUcsiPpmSetUcsiCommandRequestQueue(ppmObject, UcsiCommandRequestQueue);
 ```
 
-また、クライアント ドライバーを呼び出す必要がありますも[ **UcmUcsiPpmStart** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmstart)ドライバーが、IOCTL を受信する準備が UcmUcsiCx に通知を要求します。  その呼び出しを行うことをお勧めで[ **EVT_WDF_DEVICE_PREPARE_HARDWARE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)を通じて、コマンドの受信 UCSI WDFQUEUE ハンドルを作成した後[ **UcmUcsiPpmSetUcsiCommandRequestQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)します。
-逆に、要求を処理する場合は、ドライバーは、呼び出す必要があります[ **UcmUcsiPpmStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmstop)します。 これは、 [ **EVT_WDF_DEVICE_RELEASE_HARDWARE** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)実装します。
+また、クライアントドライバーは、 [**UcmUcsiPpmStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmstart)を呼び出して、ドライバーが IOCTL 要求を受信する準備ができていることを UcmUcsiCx に通知する必要もあります。  [**UcmUcsiPpmSetUcsiCommandRequestQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmsetucsicommandrequestqueue)を使用して、ucsi コマンドを受け取るための WDFQUEUE ハンドルを作成した後で、 [**EVT_WDF_DEVICE_PREPARE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)でその呼び出しを行うことをお勧めします。
+逆に、ドライバーが他の要求を処理したくない場合は、 [**UcmUcsiPpmStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmstop)を呼び出す必要があります。 これは[**EVT_WDF_DEVICE_RELEASE_HARDWARE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)の実装に含まれています。
 
-## <a name="4-handle-the-ioctl-requests"></a>4.IOCTL 要求を処理します。
+## <a name="4-handle-the-ioctl-requests"></a>4. IOCTL 要求を処理する
 
-USB タイプ-c パートナーがコネクタに接続されているときに発生するこの例一連のイベントを検討してください。
+USB タイプ C パートナーがコネクタに接続されている場合に発生するイベントのシーケンス例を考えてみましょう。
 
-1. PPM ファームウェアでは、添付イベントを決定し、クライアント ドライバーに通知を送信します。
-2. クライアント ドライバー呼び出し[ **UcmUcsiPpmNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippm/nf-ucmucsippm-ucmucsippmnotification) UcmUcsiCx にその通知を送信します。
-3. UcmUcsiCx notfies OPM ステート マシンと UcmUcsiCx にコネクタの状態の取得コマンドを送信します。
-4. 要求を作成し、UcmUcsiCx [IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)クライアント ドライバーにします。
-5. クライアント ドライバーでは、その要求を処理し、PPM ファームウェアにコマンドを送信します。 ドライバーは、この要求を非同期的に完了して、UcmUcsiCx を別の通知を送信します。
-6. コマンドが正常に完了の通知では、OPM ステート マシンは (コネクタの状態情報を含む) ペイロードを読み取るし、種類 C の UCM 添付イベントを通知します。
+1. PPM ファームウェアによって添付イベントが特定され、クライアントドライバーに通知が送信されます。
+2. クライアントドライバーは、 [**UcmUcsiPpmNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippm/nf-ucmucsippm-ucmucsippmnotification)を呼び出して、その通知を UcmUcsiCx に送信します。
+3. UcmUcsiCx notfies OPM state machine; Get Connector Status コマンドを UcmUcsiCx に送信します。
+4. UcmUcsiCx は要求を作成し、 [IOCTL_UCMUCSI_PPM_SEND_UCSI_DATA_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucmucsippmrequests/ni-ucmucsippmrequests-ioctl_ucmucsi_ppm_send_ucsi_data_block)をクライアントドライバーに送信します。
+5. クライアントドライバーはその要求を処理し、コマンドを PPM ファームウェアに送信します。 ドライバーはこの要求を非同期に完了し、別の通知を UcmUcsiCx に送信します。
+6. コマンドの完了通知が成功すると、OPM ステートマシンは、(コネクタステータス情報を含む) ペイロードを読み取り、タイプ C attach イベントの UCM に通知します。
 
-この例で、ファームウェア、ポート、パートナーとの間電源配信ネゴシエーションのステータスの変更が成功したことをペイロードも表示されます。 OPM ステート マシンは、別の UCSI コマンドを送信します。Pdo を取得します。
-コネクタの状態の取得のコマンドを取得 Pdo コマンドが正常に終了したときと同様に、OPM ステート マシンは、このイベントの UCM を通知します。
+この例では、ペイロードは、ファームウェアとポートパートナー間の電力配信ネゴシエーション状態の変更が成功したことを示しています。 OPM ステートマシンが別の UCSI コマンドを送信します: Get PDOs。
+Get the Connector Status コマンドと同様に、Get PDOs コマンドが正常に完了すると、OPM ステートマシンはこのイベントの UCM に通知します。
 
-クライアント ドライバーのハンドラーを[EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)は次のコード例に似ています。 要求の処理方法の詳細については、次を参照してください[要求ハンドラー。](https://docs.microsoft.com/windows-hardware/drivers/wdf/request-handlers)
+クライアントドライバーの[EVT_WDF_IO_QUEUE_IO_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_device_control)のハンドラーは、次のコード例のようになります。 要求の処理の詳細については、「[要求ハンドラー](https://docs.microsoft.com/windows-hardware/drivers/wdf/request-handlers) 」を参照してください。
 
 ```cpp
 void EvtIoDeviceControl(

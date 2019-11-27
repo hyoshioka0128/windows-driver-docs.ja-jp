@@ -3,86 +3,86 @@ title: ストリームの検査
 description: ストリームの検査
 ms.assetid: 77e152bf-cb6b-4845-9a5e-9c37281f23f1
 keywords:
-- ストリームの検査 WDK Windows フィルタ リング プラットフォーム
+- ストリーム検査 WDK Windows フィルタリングプラットフォーム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bcd0517c6f1d33bf4be18ed732c657c06bfac3c1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a3ae108552f7a5037d3fe1080dbcba62e5e44a47
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370586"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841816"
 ---
 # <a name="stream-inspection"></a>ストリームの検査
 
 
-## <a name="inline-stream-inspection"></a>インライン Stream の検査
+## <a name="inline-stream-inspection"></a>インラインストリーム検査
 
 
-インライン ストリーム修飾子を許可またはブロックしている指定されたデータの一部の値を設定がストリームのデータを編集できる、 **countBytesEnforced**のメンバー、 [ **FWPS\_ストリーム\_コールアウト\_IO\_PACKET0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造を返す**FWP\_アクション\_許可**または**FWP\_アクション\_ブロック**から、 [ *classifyFn* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)コールアウト関数。 呼び出すことができます、 [ **FwpsStreamInjectAsync0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)ストリームに新しいコンテンツを追加する関数。 このコンテンツは新しいまたはブロックされているデータを置き換えることができます。
+インラインストリーム修飾子では、指定されたデータの一部を許可またはブロックすることによってストリームデータを編集できます。これを行うには、Fwps\_ストリームの**Countbytesenforced**メンバーの値を設定します。 [ **\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体として設定します。これらの関数は、 [*classid*](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nc-fwpsk-fwps_callout_classify_fn0)の **\_アクション\_許可**または **.fwp\_\_アクション**を返します。 また、 [**FwpsStreamInjectAsync0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreaminjectasync0)関数を呼び出して、ストリームに新しいコンテンツを追加することもできます。 このコンテンツは、新しく追加することも、ブロックされたデータを置き換えることもできます。
 
-指定されたセグメントの途中で見つかったパターンを置き換える (たとえば、 *n*バイト数が続くパターンの*p*バイト数が続く*m*バイト)、吹き出しは次の次の手順:
+指定されたセグメントの中央にあるパターン (たとえば、 *n*バイトの後に*p*バイトの後に*m*バイトが続くパターン) を置き換えるには、次の手順に従います。
 
-1.  吹き出しの*classifyFn*を使用して関数を呼び出す*n* + *p* + *m*バイト。
+1.  コールアウトの*classid*関数は、 *n* + *p* + *m*バイトを使用して呼び出されます。
 
-2.  引き出し線を返します**FWP\_アクション\_許可**で、 **countBytesEnforced**メンバーに設定*n*します。
+2.  このコールアウトは、 **Countbytesenforced**メンバーを*n*に設定した場合に**許可\_\_アクション**を返します。
 
-3.  吹き出しの*classifyFn*関数の呼び出しでもう一度*p* + *m*バイト。 WFP は呼び出す*classifyFn*もう一度場合**countBytesEnforced**が指定された量よりも少ない。
+3.  吹き出しの*classid*関数は、 *p* + *m*バイトで再び呼び出されます。 **Countbytesenforced 適用**されている場合は、指定された量よりも少ない場合、WFP は*classid*を再び呼び出します。
 
-4.  *ClassifyFn*関数では、引き出し線の呼び出し、 *FwpsStreamInjectAsync0*関数を挿入、置換パターン*p'* します。 引き出し線を返します**FWP\_アクション\_ブロック**で**countBytesEnforced**に設定*p*します。
+4.  *Classid*の年関数から、コールアウトは*FwpsStreamInjectAsync0*関数を呼び出して置換パターン*p '* を挿入します。 次に、このコールアウトは、 **Countbytesenforced 適用**された **\_アクション\_BLOCK**を*p*に設定して返します。
 
-5.  吹き出しの*classifyFn*関数の呼び出しでもう一度*m*バイト。
+5.  コールアウトの*classid*関数は、 *m*バイトで再び呼び出されます。
 
-6.  引き出し線を返します**FWP\_アクション\_ブロック**で**countBytesEnforced**に設定*m*します。
+6.  このコールアウトは、 **Countbytesenforced 適用**された **\_アクション\_ブロック**を*m*に設定して返します。
 
-指定されたデータがコールアウトの検査を決定するのに十分ではない場合は設定できます、 **streamAction**のメンバー、 [ **FWPS\_ストリーム\_コールアウト\_IO\_PACKET0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**FWPS\_ストリーム\_アクション\_必要\_詳細\_データ**設定と、 **countBytesRequired**最小限 WFP へのメンバーは、データが再度示される前に蓄積する必要があります。 ときに**streamAction**が設定された場合、引き出し線を返す必要があります**FWP\_アクション\_NONE**から、 *classifyFn*関数。
+指定されたデータが、検査の決定を行うために十分でない場合は、Fwps\_ストリームの**Streamaction**メンバーを設定できます。 [ **\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**fwps\_ストリームに設定でき\_ACTION\_より多くの\_データを\_必要があり**ます。また、 **Countbytesrequired**メンバーには、データが再度表示される前に、最低限必要な量の最小値を設定します。 **Streamaction**が設定されている場合、コールアウトは、" *classid* " 関数から **[\_]\_アクション**を返します。
 
-WFP は最大 8 MB のデータのストリームを累積できるときに**FWPS\_ストリーム\_アクション\_必要があります\_詳細\_データ**設定されています。 WFP は設定、 **FWPS\_分類\_アウト\_フラグ\_バッファー\_制限\_に達しました**フラグの吹き出しを呼び出すときに*classifyFn*関数とバッファー領域が不足します。 後者のフラグが設定されている場合、引き出し線は、完全に指定されたデータを受け入れる必要があります。 吹き出しが返す必要がありますいない**FWPS\_ストリーム\_アクション\_必要\_詳細\_データ**ときに、 **FWPS\_分類\_OUT\_フラグ\_いいえ\_詳細\_データ**フラグを設定します。
+**Fwps\_stream\_アクション\_\_より多くの\_データ**を設定する必要がある場合、WFP は最大 8 MB のストリームデータを蓄積できます。 WFP は、コールアウトの*classid の classid*関数を呼び出してバッファー領域が使い果たされたときに、 **FWPS\_分類\_OUT\_フラグ\_buffer\_LIMIT\_に到達**するフラグを設定します。 後者のフラグが設定されている場合、コールアウトは、指定されたデータを完全に受け入れる必要があります。 コールアウトは**fwps\_STREAM\_** を返さないようにする必要があり\_**fwps\_** によって\_OUT\_フラグが分類され\_\_\_データフラグが\_ない場合に、データを\_必要があります。一連.
 
-フラット バッファーからストリームのパターンをスキャンできる使いやすいように、WFP が提供、 [ **FwpsCopyStreamDataToBuffer0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpscopystreamdatatobuffer0)ユーティリティ関数をコピーできますに連続したストリーム データを表示します。バッファー。
+フラットバッファーからストリームパターンをスキャンできるようにするために、WFP には[**FwpsCopyStreamDataToBuffer0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpscopystreamdatatobuffer0) utility 関数が用意されています。これにより、指定されたストリームデータを連続したバッファーにコピーできます。
 
-## <a name="out-of-band-stream-inspection"></a>帯域外の Stream 検査
+## <a name="out-of-band-stream-inspection"></a>帯域外のストリーム検査
 
 
-ストリーム コールアウト帯域外の検査または変更は、パケット検査コールアウトとしてのようなパターンに従うと: 遅延の処理のすべてのストリームが指定されたセグメントを最初に複製する場合し、これらのセグメントはブロックされます。 検査または変更されたデータは後で、データ ストリームに挿入されます。 データの帯域外を挿入するときに、引き出しを返す必要があります**FWP\_アクション\_ブロック**すべてでセグメント結果のストリームの整合性を保証するために示されます。 帯域外の検査モジュールが、送信のデータ ストリームに (を送信者からデータを示す) FIN を任意に挿入していない必要があります。 場合は、モジュールは、接続を削除する必要があります、 *classifyFn*コールアウト関数を設定する必要があります、 **streamAction**のメンバー、 [ **FWPS\_ストリーム\_吹き出し\_IO\_PACKET0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**FWPS\_ストリーム\_アクション\_ドロップ\_接続**.
+帯域外検査または変更の場合、ストリームコールアウトは、パケットインスペクションコールアウトと同様のパターンに従います。最初に、すべての指定されたストリームセグメントを遅延処理のために複製し、次にこれらのセグメントをブロックします。 検査または変更されたデータは、後でデータストリームに挿入されます。 帯域外でデータを挿入するときに、コールアウトは、指定されたすべてのセグメントの **.fwp\_アクション\_ブロック**を返して、結果として得られるストリームの整合性を保証する必要があります。 アウトオブバンド検査モジュールは、送信データストリームに任意の FIN (送信側からのデータがこれ以上存在しないことを示す) を任意に挿入することはできません。 モジュールが接続を削除する必要がある場合、その*classid の classid*関数は、fwps\_ストリームの**streamaction**メンバー [ **\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を fwps\_ストリームに設定する必要があり **\_ACTION\_\_接続を削除**します。
 
-ストリーム データは、として指定することができますので、 [ **NET\_バッファー\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_net_buffer_list)チェーン、FWP の提供、 [ **FwpsCloneStreamData0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsclonestreamdata0)と[ **FwpsDiscardClonedStreamData0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsdiscardclonedstreamdata0) net バッファーを操作するユーティリティ関数チェーンを一覧表示します。
+ストリームデータは[**net\_buffer\_list**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list) chain として示されるため、 [**FwpsCloneStreamData0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsclonestreamdata0)は、net BUFFER list チェーンを操作する[**FwpsDiscardClonedStreamData0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsdiscardclonedstreamdata0)ユーティリティ関数を提供します。
 
-WFP は、ストリーム データが入力方向の調整もサポートします。 それを返すことができるかどうか、コールアウトは、受信データ速度追い付かことはできません、 **FWPS\_ストリーム\_アクション\_DEFER**ストリームを「一時停止」にします。 ストリームから「再開できる」を呼び出して、 [ **FwpsStreamContinue0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreamcontinue0)関数。 受信データの確認処理を停止する TCP/IP スタックは、この関数でストリームを延期します。 これにより、TCP のスライディング ウィンドウを 0 方向に減らします。
+また、受信方向のストリームデータの調整もサポートされています。 コールアウトが受信データレートを維持できない場合は、 **Fwps\_stream\_ACTION**を返すことができます。これにより、ストリームの "一時停止" に遅延\_ます。 その後、 [**FwpsStreamContinue0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreamcontinue0)関数を呼び出すことによって、ストリームを "再開" できます。 この関数を使用してストリームを遅延させると、TCP/IP スタックは受信データの ACK 処理を停止します。 これにより、TCP スライディングウィンドウが0方向に減少します。
 
-帯域外のストリーム検査のコールアウトの[ **FwpsStreamContinue0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/nf-fwpsk-fwpsstreamcontinue0)呼び出さないでください中に、 **FwpsStreamInjectAsync0**関数が呼び出されます。
+帯域外ストリーム検査のコールアウトの場合、 **FwpsStreamInjectAsync0**関数の呼び出し中に[**FwpsStreamContinue0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsstreamcontinue0)を呼び出すことはできません。
 
-挿入されたストリーム データを吹き出しに再指定にすることはできませんが、利用可能になりますストリームの吹き出しに下位重みサブレイヤーから。
+挿入されたストリームデータは、コールアウトに再表示されませんが、低重みのサブレイヤーからのコールアウトに使用できるようになります。
 
-[Windows フィルタ リング プラットフォーム Stream サンプルの編集](https://go.microsoft.com/fwlink/p/?LinkId=617933)で、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリには、インライン コード スニペットとストリーム レイヤーでの帯域外の編集を実行する方法を示します。
+GitHub の[windows ドライバーサンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)リポジトリにある[Windows フィルタリングプラットフォームストリームの編集サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617933)は、ストリームレイヤーでインラインおよび帯域外編集を実行する方法を示しています。
 
-**注**  Windows Server 2008 以降は、次のプロセス中にストリームのフィルターの削除をサポートしていません。
--   引き出し線では、帯域外のパケットの挿入を実行します。
+**注**  Windows Server 2008 以降では、次のプロセスでのストリームフィルターの削除はサポートされていません。
+-   コールアウトが帯域外パケット挿入を実行しています。
 
--   引き出し線が設定してより多くのデータを要求する、 **streamAction**のメンバー、 [ **FWPS\_ストリーム\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**FWPS\_ストリーム\_アクション\_必要\_詳細\_データ**します。
+-   コールアウトは、Fwps\_ストリームの**Streamaction**メンバーを設定することによってより多くのデータを要求しています。これには、 [ **\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**FWPS\_ストリーム\_操作\_必要\_@no ます。__ データ (_s)** \_
 
--   引き出し線を延期するストリームと設定して、 **streamAction**のメンバー、 [ **FWPS\_ストリーム\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**FWPS\_ストリーム\_アクション\_DEFER**します。
+-   コールアウトは、Fwps\_ストリームの**Streamaction**メンバー [ **\_コールアウト\_IO\_PACKET0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_stream_callout_io_packet0_)構造体を**FWPS\_ストリーム\_アクション\_遅延**に設定することによってストリームを遅延します。
 
  
 
-## <a name="dynamic-stream-inspection"></a>動的な Stream 検査
+## <a name="dynamic-stream-inspection"></a>動的ストリーム検査
 
 
-Windows 7 およびそれ以降のサポート動的ストリーム検査します。 ストリームが動的な検査は、既存のストリームを作成して、新しいリソースの破棄ではなく、データ フローです。 動的なストリームの検査を実行できるコールアウト ドライバーを設定する必要があります、 **FWP\_コールアウト\_フラグ\_許可\_MID\_ストリーム\_検査**フラグ、**フラグ**のメンバー、 [ **FWPS\_CALLOUT1** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_callout1_)または[ **FWPS\_CALLOUT2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_callout2_)構造体。
+Windows 7 以降では、動的なストリーム検査がサポートされています。 動的ストリーム検査は、新しいストリームの作成と破棄ではなく、既存のストリームデータフローに対して動作します。 動的ストリーム検査を実行できるコールアウトドライバーでは、CALLOUT2 構造体の[**Fwps\_CALLOUT1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_callout1_)または[**Fwps\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_callout2_)の**Flags**メンバーで **\_MID\_stream\_インスペクションフラグ\_許可**するように、[.fwp\_] 吹き出し\_フラグを設定する必要があります。
 
-## <a name="avoiding-unnecessary-inspections"></a>不要な検査を回避します。
+## <a name="avoiding-unnecessary-inspections"></a>不要な検査の回避
 
 
-ストリームの検査をドライバーに関心が接続でのみ実行する吹き出しを設定できます、 **FWP\_コールアウト\_フラグ\_条件付き\_ON\_フロー**フラグ、**フラグ**のメンバー、 [ **FWPS\_CALLOUT0** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fwpsk/ns-fwpsk-fwps_callout0_)構造体。 その他のすべての接続でこの吹き出しは無視されます。 パフォーマンスが向上して、ドライバーが不要な状態データを保持する必要はありません。
+ドライバーが興味を持っている接続でのみストリーム検査を実行する場合、コールアウトは、Fwps の**Flags**メンバーの **\_FLOW フラグに対して、[\_吹き出し\_フラグ\_条件付き\_を**設定でき[ **\_CALLOUT0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/ns-fwpsk-fwps_callout0_)構造体。 このコールアウトは、他のすべての接続で無視されます。 パフォーマンスが向上し、ドライバーは不要な状態データを維持する必要がなくなります。
 
-## <a name="stream-layer-waterfall-model"></a>Stream レイヤー ウォーター フォール モデル
+## <a name="stream-layer-waterfall-model"></a>ストリームレイヤーウォーターフォールモデル
 
-WFP のストリーム レイヤーは、厳密なウォーター フォール モデルに依存します。このレイヤーに引き出しを許可する場合のみストリームのセグメントを検査するは、明示的に許可している場合前の吹き出し (ある場合)。 コールアウトは、指定されたセグメントをブロックする場合は、そのセグメントは、ストリームから外されます完全にされ、検査コールアウトは許可されません。
+WFP のストリームレイヤーは、厳密なウォーターフォールモデルに従います。つまり、このレイヤーのコールアウトは、前のコールアウト (存在する場合) が明示的に許可されている場合にのみ、ストリームセグメントを検査できます。 指定されたセグメントがコールアウトによってブロックされている場合、そのセグメントはストリームから完全に削除され、どのコールアウトも検査できません。
 
 さらに：
 
-1. すべて非検査コールアウト ストリーム レイヤーする必要があります明示的に値を割り当てる、 **actionType**のメンバー、 *classifyOut*にかかわらず、どのような値が以前に設定されているパラメーターパラメーター。
-2. **FWPS\_右\_アクション\_書き込み**フラグ、 **rights**のメンバー、 *classifyOut*パラメーターには意味がありませんWFP ストリーム レイヤー。 このフラグが存在するこのレイヤーでのコールアウトがチェックする必要があります。 吹き出しを指定された処理*データ*パラメーターの値に関係なく*classifyOut*->**rights**します。
+1. ストリームレイヤーのすべての検査できないコールアウトは、そのパラメーターで以前に設定された値に関係なく、 *classifyOut*パラメーターの**actionType**メンバーに値を明示的に割り当てる必要があります。
+2. *ClassifyOut*パラメーターの**権利**メンバーの**FWPS\_RIGHT\_ACTION\_WRITE**フラグには、WFP ストリームレイヤーには意味がありません。 このレイヤーのコールアウトは、このフラグの存在を確認することはできません。 コールアウトは、 *classifyOut*->**権限**の値に関係なく、指定された*レイヤーデータ*パラメーターを処理できます。
 
  
 

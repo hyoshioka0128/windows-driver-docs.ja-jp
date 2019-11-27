@@ -3,17 +3,17 @@ title: 偽装
 description: 偽装
 ms.assetid: 368c6741-b51a-4629-8ae6-a7848c07c0fc
 keywords:
-- セキュリティ WDK ファイル システム、セキュリティ チェックを追加します。
-- セキュリティは、WDK のファイル システム、権限借用を確認します。
-- 権限借用 WDK ファイル システム
+- セキュリティ WDK ファイルシステム、セキュリティチェックの追加
+- セキュリティチェック WDK ファイルシステム、偽装
+- 権限借用 WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c01fda410e546f57488f0effc9c614e5acd1ce0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e7ec8a6d06b6487c135b49f515eab9afa3226a3
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67375689"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841206"
 ---
 # <a name="impersonation"></a>偽装
 
@@ -21,27 +21,27 @@ ms.locfileid: "67375689"
 ## <span id="ddk_impersonation_if"></span><span id="DDK_IMPERSONATION_IF"></span>
 
 
-一部のファイル システムに役に立つ最初の呼び出し元の代わりに操作を実行します。 たとえば、ネットワーク ファイル システムは、適切な資格情報を使用して、後続の操作を実行できるように、ファイルを開いた時点で、呼び出し元のセキュリティの情報をキャプチャする必要があります。 さまざまな他の特殊なケースこの種の機能が便利ですが、特定のアプリケーションと同様にもファイル システム内で両方がある間違いありません。
+ファイルシステムによっては、元の呼び出し元に代わって操作を実行すると便利な場合があります。 たとえば、ネットワークファイルシステムでは、ファイルを開いたときに呼び出し元のセキュリティ情報をキャプチャし、適切な資格情報を使用して後続の操作を実行できるようにすることが必要になる場合があります。 当然のことですが、この種の機能は、ファイルシステム内と特定のアプリケーションの両方で役に立ちます。
 
-キーのルーチンに必要な権限の借用が含まれます。
+偽装に必要な主なルーチンは次のとおりです。
 
--   [**PsImpersonateClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-seimpersonateclientex)--偽装を開始します。 特定のスレッドは、指定した場合を除き、権限の借用は、現在のスレッド コンテキストで行われます。
+-   [](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psimpersonateclient) [**SeImpersonateClientEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-seimpersonateclientex)は偽装を開始します。 特定のスレッドが指定されていない限り、偽装は現在のスレッドコンテキストで実行されます。
 
--   **PsRevertToSelf**--現在のスレッド コンテキスト内で権限借用を終了します。
+-   **Psreverttoself**--現在のスレッドコンテキスト内で偽装を終了します。
 
--   [**PsReferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psreferenceprimarytoken)--指定されたプロセスのプライマリ (プロセス) トークンの参照を保持します。 この関数は、システム上のどのプロセスのトークンをキャプチャを使用できます。
+-   [**Psreferenceprimarytoken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psreferenceprimarytoken)--指定されたプロセスのプライマリ (プロセス) トークンに対する参照を保持します。 この関数は、システム上の任意のプロセスのトークンをキャプチャするために使用できます。
 
--   [**PsDereferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-psdereferenceprimarytoken)-参照されている以前のプライマリ トークンの参照を解放します。
+-   [**PsDereferencePrimaryToken**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-psdereferenceprimarytoken)--以前に参照されたプライマリトークンで参照を解放します。
 
--   [**SeCreateClientSecurityFromSubjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)--クライアントに返しますサブジェクト コンテキストからの権限借用のための便利なセキュリティ コンテキスト (中に、FSD に提供される、 **IRP\_MJ\_を作成します。** 処理など)。
+-   [**SeCreateClientSecurityFromSubjectContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurityfromsubjectcontext)--クライアントのセキュリティコンテキストを返します。サブジェクトコンテキストからの権限借用に役立ちます ( **IRP\_MJ\_CREATE**処理中に FSD に提供されます)。
 
--   [**SeCreateClientSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-secreateclientsecurity)--システム上の既存のスレッドのセキュリティ資格情報に基づいたクライアントのセキュリティ コンテキストを作成します。
+-   [**SeCreateClientSecurity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-secreateclientsecurity)--システム上の既存のスレッドのセキュリティ資格情報に基づいて、クライアントのセキュリティコンテキストを作成します。
 
--   **ImpersonateSecurityContext**--ksecdd.sys、カーネルのセキュリティ サービス内でのセキュリティ コンテキストの権限を借用します。
+-   **ImpersonateSecurityContext**--カーネルセキュリティサービスである ksecdd .sys 内のセキュリティコンテキストを偽装します。
 
--   **RevertSecurityContext**--ksecdd.sys、カーネルのセキュリティ サービス内で権限借用を終了します。
+-   **RevertSecurityContext**--カーネルセキュリティサービスである ksecdd .sys 内の偽装を終了します。
 
-権限借用には、実装するために簡単です。 次のコード例では、基本的な権限の借用を示しています。
+偽装は、を実装するための簡単な方法です。 次のコード例は、基本的な偽装を示しています。
 
 ```cpp
 NTSTATUS PerformSpecialTask(IN PFSD_CONTEXT Context)
@@ -112,7 +112,7 @@ NTSTATUS PerformSpecialTask(IN PFSD_CONTEXT Context)
 }
 ```
 
-ファイル システムの開発者が利用できるは、この権限借用のコードのさまざまなバリエーションがありますが、この方法の基本的な説明を提供します。
+この偽装コードには、ファイルシステムの開発者が使用できるさまざまなバリエーションがありますが、その手法の基本的な例を示します。
 
  
 

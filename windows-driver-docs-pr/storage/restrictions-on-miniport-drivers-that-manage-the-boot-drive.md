@@ -3,68 +3,68 @@ title: ブート ドライブを管理するミニポート ドライバーに�
 description: ブート ドライブを管理するミニポート ドライバーに関する制約
 ms.assetid: 78375e9b-8be9-4e64-b90e-cc8c4ab1751b
 keywords:
-- ストレージ ミニポート ドライバー WDK、ブート ドライブ
-- ミニポート ドライバー WDK ストレージ、ブート ドライブ
-- ブート ドライブの WDK ストレージ
-- ディスク ダンプ ドライバー WDK ストレージ
-- ダンプ モード WDK ストレージ
+- 記憶域ミニポートドライバー WDK、ブートドライブ
+- ミニポートドライバー WDK 記憶域、ブートドライブ
+- ブートドライブ WDK 記憶域
+- ディスクダンプドライバー WDK ストレージ
+- ダンプモード WDK ストレージ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9f11d76dcb70bd4a43e274a42d0596a4cf1e84a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 70dce1a215b45e684beeeb1a68597a1d86b92118
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373207"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842692"
 ---
 # <a name="restrictions-on-miniport-drivers-that-manage-the-boot-drive"></a>ブート ドライブを管理するミニポート ドライバーに関する制約
 
 
-システムのクラッシュ時に特別な制限は、記憶域ミニポート ドライバーをブート デバイス用のアダプターを管理します。 ディスクにシステム メモリのイメージをダンプするには、中には、ミニポート ドライバーは、別の環境内で動作する必要があります。 ミニポート ドライバー、ポートのドライバーとディスク クラス ドライバー間の通常の通信が中断されました。 ディスク ダンプのポート ドライバーへの直接呼び出しによって、カーネルはディスク I/O *diskdump.sys* (*dumpata.sys* ATA コント ローラー)、ファイル システム、および通常の I/O スタックをバイパスします。 ディスク ダンプ ドライバーが、さらに、すべての I/O 操作を処理するために、ブート デバイスのミニポート ドライバーを呼び出すし、ディスク ダンプ ドライバーはすべてのポート ドライバーに、ミニポート ドライバーの呼び出しをインターセプトします。
+ブートデバイス用のアダプターを管理する記憶域ミニポートドライバーは、システムのクラッシュ時に特別な制限を受けることがあります。 システムのメモリイメージをディスクにダンプするときに、ミニポートドライバーを別の環境で動作させる必要があります。 ミニポートドライバー、ポートドライバー、およびディスククラスドライバー間の通常の通信は中断されます。 カーネルでは、ディスクダンプポートドライバー、 *diskdump .sys* (ATA コントローラーの*dumpata* )、ファイルシステムのバイパス、および通常の i/o スタックを直接呼び出すことによって、ディスク i/o が行われます。 その後、ディスクダンプドライバーは、すべての i/o 操作を処理するためにブートデバイスのミニポートドライバーを呼び出します。また、ディスクダンプドライバーは、ポートドライバーへのすべてのミニポートドライバーの呼び出しをインターセプトします。
 
-ディスクのダンプ ドライバーは、ミニポート ドライバーがポート ルーチンを使用する同じ方法でディスク ダンプ ドライバー ルーチンを使用できるように、同じポート ドライバーが提供するサポート ルーチンのセットを提供します。
+ディスクダンプドライバーは、ポートドライバーが提供するものと同じサポートルーチンのセットを提供します。そのため、ミニポートドライバーは、ポートルーチンを使用する場合と同じ方法で、ディスクダンプドライバールーチンを使用できるようにする必要があります。
 
-ただし、管理ディスク ダンプ パス内のアダプターのミニポート ドライバーは、ダンプのモードでは、次の制限が適用されます。
+ただし、ディスクダンプパスでアダプターを管理するミニポートドライバーでは、ダンプモードでは次の制限が適用されます。
 
-### <a name="span-idmemusagespanspan-idmemusagespanmemory-usage"></a><span id="mem_usage"></span><span id="MEM_USAGE"></span>メモリ使用量
+### <a name="span-idmem_usagespanspan-idmem_usagespanmemory-usage"></a><span id="mem_usage"></span><span id="MEM_USAGE"></span>メモリ使用量
 
-ミニポート ドライバーでは、システムのクラッシュ時にメモリの消費が少ない使用を行う必要があります。 ミニポート ドライバーがそのデバイスとドライバーの拡張機能に割り当てることがキャッシュされていないメモリの量は、非常に制限されています。 ミニポート ドライバーが 32 キロバイト以上のメモリを割り当てるしないようにします。
+ミニポートドライバーは、システムのクラッシュ中にメモリを高速に使用する必要があります。 ミニポートドライバーがデバイスとドライバーの拡張機能に割り当てることができる、キャッシュされていないメモリの量は非常に限られています。 ミニポートドライバーは、32 kb を超えるメモリを割り当てないようにする必要があります。
 
-### <a name="span-idaccessibilityspanspan-idaccessibilityspanaccessibility-of-the-boot-device"></a><span id="accessibility"></span><span id="ACCESSIBILITY"></span>ブート デバイスのユーザー補助機能
+### <a name="span-idaccessibilityspanspan-idaccessibilityspanaccessibility-of-the-boot-device"></a><span id="accessibility"></span><span id="ACCESSIBILITY"></span>ブートデバイスのユーザー補助
 
-ミニポートが初期化ルーチンから戻る前に、ブート デバイスがアクセスできる必要があります ([**HwStorInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_initialize) StorPort のおよび[ *HwScsiInitialize* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85)) SCSI ポート)。 オペレーティング システムは、初期化ルーチンが完了したら、任意の時点で、ブート デバイスにコマンドを送信可能性があります。
+ブートデバイスは、ミニポートが初期化ルーチンから戻る前にアクセス可能である必要があります ([**HwStorInitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_initialize)の場合は HWSCSIINITIALIZE、SCSI ポートの場合は[](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557302(v=vs.85)) )。 オペレーティングシステムは、初期化ルーチンが完了した後、いつでもブートデバイスにコマンドを送信することがあります。
 
-### <a name="span-idbusresetsspanspan-idbusresetsspanbus-resets"></a><span id="bus_resets"></span><span id="BUS_RESETS"></span>バスのリセット
+### <a name="span-idbus_resetsspanspan-idbus_resetsspanbus-resets"></a><span id="bus_resets"></span><span id="BUS_RESETS"></span>バスのリセット
 
-ミニポート ドライバー、バスのリセットへの要求を無視する必要があります ([**HwStorResetBus** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_reset_bus) StorPort のおよび[ *HwScsiResetBus* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557318(v=vs.85)) scsiポート)。
+ミニポートドライバーは、バスをリセットするための要求を無視する必要があります (StorPort の場合は[**HwStorResetBus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_reset_bus) 、SCSI ポートの場合は[*HwScsiResetBus*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557318(v=vs.85)) )。
 
 ### <a name="span-iddpcsspanspan-iddpcsspandeferred-procedure-calls-dpcs"></a><span id="dpcs"></span><span id="DPCS"></span>遅延プロシージャ呼び出し (Dpc)
 
-StorPort ミニポート ドライバー DPC ルーチンを初期化するために読み取ろうとしないで ([**HwStorDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_dpc_routine)) と[ **StorPortInitializeDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportinitializedpc)します。 通常、処理は、割り込み要求中に、DPC ルーチンを実行する必要があります、その要求のコンテキストで発生するこの場合、キューに置かれました。
+StorPort ミニポートドライバーは、 [**Storportinitializer Edpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportinitializedpc)を使用して DPC ルーチン ([**HwStorDpcRoutine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_dpc_routine)) を初期化しようとすることはできません。 割り込み要求中に、DPC ルーチンへの実行のために通常キューに登録されている処理は、その要求のコンテキストで発生する必要があります。
 
-### <a name="span-idmultiplerequestsspanspan-idmultiplerequestsspanmultiple-requests-per-logical-unit"></a><span id="multiple_requests"></span><span id="MULTIPLE_REQUESTS"></span>論理ユニットごとの複数の要求
+### <a name="span-idmultiple_requestsspanspan-idmultiple_requestsspanmultiple-requests-per-logical-unit"></a><span id="multiple_requests"></span><span id="MULTIPLE_REQUESTS"></span>論理ユニットあたり複数の要求
 
-ディスク ダンプ ポート ドライバーでは、論理ユニットごとの複数の要求を送信しません。 そのため、どのような値のミニポート ドライバーに割り当てます関係ありません、 **MultipleRequestPerLu**のメンバー [**ポート\_構成\_情報**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85)).
+ディスクダンプポートドライバーは、論理ユニットごとに複数の要求を送信しません。 そのため、[**ポート\_構成\_情報**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff563901(v=vs.85))の**MultipleRequestPerLu**メンバーにミニポートドライバーが割り当てる値は関係ありません。
 
-### <a name="span-idpollingspanspan-idpollingspanpolling-and-time-checking"></a><span id="polling"></span><span id="POLLING"></span>ポーリングと時のチェック
+### <a name="span-idpollingspanspan-idpollingspanpolling-and-time-checking"></a><span id="polling"></span><span id="POLLING"></span>ポーリングと時間チェック
 
-ミニポート ドライバーなどのルーチンをチェックする時間に依存しない[ **ScsiPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/srb/nf-srb-scsiportquerysystemtime)または[ **StorPortQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nf-storport-storportquerysystemtime)ダンプのモードで実行中には ミニポート ドライバーのベスト プラクティスは除外を使用して、 [ **KeQuerySystemTime** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kequerysystemtime)ルーチンをいつでも、ミニポート ドライバーはする必要があります常にポート ドライバー ライブラリのルーチンを使用して時刻を確認するためです。
+ミニポートドライバーは、ダンプモードで実行中の[**ScsiPortQuerySystemTime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/srb/nf-srb-scsiportquerysystemtime)や[**Storportquerysystemtime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportquerysystemtime)などの時間チェックルーチンに依存しないようにする必要があります。 ミニポートドライバーでは、常に[**Kequerysystemtime**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerysystemtime)ルーチンを使用しないことをお勧めします。ミニポートドライバーでは、常にポートドライバーライブラリルーチンを使用して時刻を確認する必要があるためです。
 
 ### <a name="span-idirqlspanspan-idirqlspaninterrupt-request-level"></a><span id="irql"></span><span id="IRQL"></span>割り込み要求レベル
 
-ランタイム ポート ドライバー [ **HwStorFindAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)と[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))パッシブ IRQL でします。 ただし、ダンプ ドライバーは、パッシブより大きい IRQL ですべてのミニポート ルーチンを呼び出します。 そのため、ダンプ パスのミニポート ドライバーでは、パッシブ IRQL で実行する必要がありますレジストリ アクセスなどの操作を回避する必要があります。
+ランタイムポートドライバーは、パッシブ IRQL で[**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)と[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))を呼び出します。 ただし、ダンプドライバーは、パッシブより高い IRQL ですべてのミニポートルーチンを呼び出します。 そのため、ダンプパスのミニポートドライバーは、パッシブ IRQL で実行する必要があるレジストリアクセスなどの操作を回避する必要があります。
 
-### <a name="span-idtargetandlunspanspan-idtargetandlunspantarget-ids-and-logical-unit-numbers-luns"></a><span id="target_and_lun"></span><span id="TARGET_AND_LUN"></span>ターゲット Id および論理ユニット番号 (Lun)
+### <a name="span-idtarget_and_lunspanspan-idtarget_and_lunspantarget-ids-and-logical-unit-numbers-luns"></a><span id="target_and_lun"></span><span id="TARGET_AND_LUN"></span>ターゲット Id と論理ユニット番号 (Lun)
 
-ミニポート ドライバーする必要がありますいないを使用して、別のターゲットの ID と LUN ブート デバイスのダンプ プロセス中に。
+ミニポートドライバーは、ダンプ処理中に、ブートデバイスに異なるターゲット ID と LUN を使用することはできません。
 
-ブートまたはダンプのパスでの記憶域ミニポート ドライバーでは、ダンプのモードで実行されているかどうかを検出する必要があります。 オペレーティング システムは、ミニポート ドライバーがダンプ モードで実行中またはオペレーティング システムが休止状態に変更する記憶域ミニポート ドライバーを通知する 2 つの方法はあります。
+ブートパスまたはダンプパス内の記憶域ミニポートドライバーは、ダンプモードで実行されているかどうかを検出する必要があります。 オペレーティングシステムは、ミニポートドライバーがダンプモードで実行されているか、オペレーティングシステムが休止状態に変更されていることを、記憶域ミニポートドライバーに通知する2つの方法があります。
 
--   オペレーティング システムに渡します**NULL**ミニポート ドライバーの引数*DriverEntry*ルーチン。
+-   オペレーティングシステムが、ミニポートドライバーの*Driverentry*ルーチンに**NULL**引数を渡しています。
 
--   ディスク ダンプ ポート ドライバーには文字列の"ダンプ = 1"で、*引き*パラメーターを呼び出すときに、 [ **HwStorFindAdapter** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/storport/nc-storport-hw_find_adapter)または[ *HwScsiFindAdapter* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチン。
+-   ディスクダンプポートドライバーは、 [**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)または[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチンを呼び出すときに、 *argumentstring*パラメーターに "dump = 1" という文字列を渡します。
 
-ドライバー名のプレフィックスになりますダンプ モードでの記憶域ミニポート ドライバーのイメージのデバッガーで確認すると"ダンプ\_"。 ドライバー名のプレフィックスには、ミニポート ドライバーが休止状態モードの場合は、"休止\_"。
+ダンプモードでストレージミニポートドライバーのイメージをデバッガーで確認すると、ドライバー名の先頭に "dump\_" というプレフィックスが付けられます。 ミニポートドライバーが休止モードの場合、ドライバー名のプレフィックスは "hiber\_" になります。
 
  
 

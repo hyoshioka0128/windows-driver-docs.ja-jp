@@ -1,122 +1,122 @@
 ---
 title: IRP_MN_EXECUTE_METHOD
-description: データ ブロック内のメソッドをサポートするすべてのドライバーでは、この IRP を処理する必要があります。
+description: データブロック内のメソッドをサポートするすべてのドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: cc42340e-4a7c-475c-b44d-2127e8a0d7dc
 keywords:
-- IRP_MN_EXECUTE_METHOD カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_EXECUTE_METHOD カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc089c4d3fc154e223a3981a5d094a7454a8090
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 16258bc05ecd45e5292c40c2c4d4ce2cfcff5057
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353357"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828057"
 ---
-# <a name="irpmnexecutemethod"></a>IRP\_MN\_EXECUTE\_メソッド
+# <a name="irp_mn_execute_method"></a>IRP\_\_メソッドを実行\_
 
 
-データ ブロック内のメソッドをサポートするすべてのドライバーでは、この IRP を処理する必要があります。 ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
+データブロック内のメソッドをサポートするすべてのドライバーは、この IRP を処理する必要があります。 ドライバーは、wmi Irp を処理できます。詳細につい[**ては、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 「 [Wmi 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)」を参照してください。
 
-ドライバーを呼び出す場合[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)処理するために、 **IRP\_MN\_EXECUTE\_メソッド**WMI がさらに呼び出しを要求します。ドライバーの[ *DpWmiExecuteMethod* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_execute_method_callback)ルーチン。
+ドライバーが、 **\_メソッド要求を実行\_IRP\_** を[**処理するよう**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)に呼び出した場合、WMI はその[*ドライバーの設定*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_execute_method_callback)された設定を呼び出します。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)送信されるときに
+[**IRP\_MJ\_システム\_コントロール**](irp-mj-system-control.md)送信時
 ---------
 
-WMI では、データ ブロックに関連付けられているメソッドを実行するには、この IRP を送信します。
+WMI は、データブロックに関連付けられたメソッドを実行するために、この IRP を送信します。
 
-WMI IRQL でこの IRP の送信 = パッシブ\_任意のスレッド コンテキストでします。
+WMI は、任意のスレッドコンテキストで、IRQL = パッシブ\_レベルでこの IRP を送信します。
 
-WMI を送り、 [ **IRP\_MN\_クエリ\_単一\_インスタンス**](irp-mn-query-single-instance.md)送信する前に、 **IRP\_MN\_EXECUTE\_メソッド**します。 ドライバーをサポートしている場合**IRP\_MN\_EXECUTE\_メソッド**必要があります、 **IRP\_MN\_クエリ\_単一\_インスタンス**メソッドが実行されている同じデータ ブロックのハンドラー。
+WMI は、irp\_を送信する前に[ **\_1 つの\_インスタンスに、irp\_\_クエリ**](irp-mn-query-single-instance.md)を送信して **\_メソッドを実行**します。\_ ドライバーで Irp\_がサポートされていて **\_メソッドを実行\_** 場合、メソッドが実行されているのと同じデータブロックに対して、 **1 つの\_インスタンス**ハンドラーを使用する必要\_があります。\_\_
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.WMI.ProviderId**要求に応答する必要がありますドライバーのデバイス オブジェクトを指します。 このポインターは、ドライバーの IRP で I/O スタックの場所にあります。
+**Parameters. WMI. ProviderId**は、要求に応答する必要があるドライバーのデバイスオブジェクトを指します。 このポインターは、IRP 内のドライバーの i/o スタックの場所にあります。
 
-**Parameters.WMI.DataPath**に実行するメソッドに関連付けられているデータ ブロックを識別する GUID をポイントします。
+**データパス**は、実行するメソッドに関連付けられたデータブロックを識別する GUID を指します。
 
-**Parameters.WMI.BufferSize** nonpaged、バッファーのサイズを示します**Parameters.WMI.Buffer**対象&gt; =  **sizeof**(**れた WNODE\_メソッド\_項目**) と、任意のサイズは、メソッドのデータを出力します。
+**パラメーター** 。 Wmi. BufferSize は、非ページバッファーのサイズを示します。このバッファーは、= **sizeof**(**WNODE\_METHOD\_ITEM**) と、の出力データのサイズを &gt;する必要があり**ます**。b.
 
-**Parameters.WMI.Buffer**を指す、 [**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)構造の**メソッド Id**を示します、実行するメソッドの識別子と**DataBlockOffset**存在する場合、入力データの最初のバイトを構造体の先頭からのバイト オフセットを示します。 **Parameters.WMI.Buffer -&gt;SizeDataBlock**入力のバイト単位のサイズを示す**れた WNODE\_メソッド\_項目**入力データを含むまたは入力がない場合は 0。
+MethodID は[**Wnode\_メソッド**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)を指します **。** この\_メソッドは、が実行するメソッドの識別子を示し、データ型は、構造体の先頭から入力データの最初のバイトまでのオフセット (バイト単位)**を示します**。 **&gt;パラメーター**を指定すると、入力データを含む **\_メソッド\_項目の入力 wnode**のサイズをバイト数で示します。入力がない場合は0を示します。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-ドライバーを呼び出して WMI Irp の処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI を入力、 [**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)ドライバーのによって返されるデータで[ *DpWmiExecuteMethod* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_execute_method_callback)ルーチン。
+ドライバーが、の WMI Irp を処理するときには、wmi によって WMI Irp が処理される[**場合、wmi**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)は、 [**WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)を入力します。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_execute_method_callback)
 
-それ以外の場合、ドライバーの設定、**れた WNODE\_メソッド\_項目**構造体**Parameters.WMI.Buffer**次のように指します。
+それ以外の場合、ドライバーは**Wnode\_メソッド\_項目**構造体に入力**します。** これにより、パラメーターは次のようになります。
 
--   更新プログラム**WnodeHeader.BufferSize**出力のサイズと**れた WNODE\_メソッド\_項目**、出力データを含むいずれか。
+-   出力データを含む**Wnodeheader. BufferSize**を出力**WNODE\_メソッド\_ITEM**のサイズで更新します。
 
--   更新プログラム**SizeDataBlock**出力データが存在しない場合は 0 個、出力データのサイズ。
+-   出力データのサイズを使用して**Sizedata lock**を更新します。出力データがない場合は0になります。
 
--   チェック**Parameters.WMI.Buffersize**バッファーが出力を受信するのに十分な大きさかどうかを判断する**れた WNODE\_メソッド\_項目**出力データを含むいずれか。 ドライバーで必要なサイズ設定、バッファーが十分ない場合、 [**れた WNODE\_すぎます\_小さな**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_too_small)によって示される構造**Parameters.WMI.Buffer**. バッファーがより小さい場合**sizeof**(**れた WNODE\_すぎます\_小さな**)、ドライバーは IRP が失敗し、ステータスを返します\_バッファー\_すぎます\_小さい。
+-   **パラメーター**をチェックして、出力データを含む出力**WNODE\_メソッド\_項目**を受け取るのに十分な大きさのバッファーであるかどうかを確認します。 バッファーのサイズが十分ではない場合、ドライバーは Wnode に必要なサイズを入力するだけでなく、**パラメーター**によって示される[**小さな構造\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_too_small)ます。 バッファーが**sizeof**(**wnode\_が\_小さい**) より小さい場合、ドライバーは IRP に失敗し、ステータス\_バッファー\_\_小さすぎることを返します。
 
--   入力データを開始位置として経由では、存在する場合、出力データを書き込みます**DataBlockOffset**します。 ドライバーは、入力値を変更する必要があります**DataBlockOffset**します。
+-   データがある場合は、データを入力**データに書き込みます。** ドライバーでは、の入力値を変更すること**はできません。**
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-呼び出すことによって、ドライバーが IRP を処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、WMI セット**Irp -&gt;IoStatus.Status**と**Irp-&gt;IoStatus.Information**状態の I/O ブロックにします。
+ドライバーが、wmi[**コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)を呼び出すことによって irp を処理する場合、WMI は、i/o 状態ブロック内の**irp&gt;Iostatus. Status**と**Irp&gt;iostatus. 情報**を設定します。
 
-それ以外の場合、ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態、次のように。
+それ以外の場合、ドライバーは**Irp&gt;iostatus. status**を STATUS\_SUCCESS に、または次のような適切なエラー状態に設定します。
 
-ステータス\_バッファー\_すぎます\_小さな
+状態\_バッファー\_\_小さすぎます
 
-ステータス\_WMI\_GUID\_いない\_が見つかりました
+ステータス\_WMI\_GUID\_見つかりませんでした\_
 
-ステータス\_WMI\_インスタンス\_いない\_が見つかりました
+ステータス\_WMI\_インスタンス\_見つかりませ\_んでした
 
-ステータス\_WMI\_ITEMID\_いない\_が見つかりました
+ステータス\_WMI\_ITEMID\_見つかりませ\_んでした
 
-成功した場合、ドライバーの設定**Irp -&gt;IoStatus.Information** 、バッファーに書き込まれたバイト数に**Parameters.WMI.Buffer**します。
+成功した場合、ドライバーは**Irp&gt;IoStatus**を設定します。これは、**パラメーター**によってバッファーに書き込まれたバイト数になります。
 
 <a name="operation"></a>操作
 ---------
 
-ドライバーを処理できる WMI Irp を呼び出すか[ **WmiSystemControl** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)または」の説明に従って、IRP を処理することによって[WMI 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)します。
+ドライバーは、wmi Irp を処理できます。詳細につい[**ては、** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol) 「 [Wmi 要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-wmi-requests)」を参照してください。
 
-ドライバーを呼び出して WMI Irp の処理する場合[ **WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)、ドライバーが、ルーチンを呼び出す[ *DpWmiExecuteMethod* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_execute_method_callback)ルーチン、またはステータスを返します\_無効な\_デバイス\_ドライバーが、ルーチンを定義していないかどうかに要求します。
+ドライバー[**が、この**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)ルーチンを呼び出して WMI irp を処理する場合、このルーチンは、[*ドライバーの設定*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_execute_method_callback)を呼び出します。または、ドライバーがルーチンを定義していない場合、デバイス\_要求\_無効\_状態を返します。
 
-ドライバーが処理する場合、 **IRP\_MN\_EXECUTE\_メソッド**自体、要求が行う必要がある場合にのみ**Parameters.WMI.ProviderId**として同じデバイス オブジェクトを指し示すドライバーに渡されたポインター [ **IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)します。 それ以外の場合、ドライバーでは、次の下位のドライバーに要求を転送する必要があります。
+ドライバーが**IRP\_** を処理し、\_メソッドの要求自体を実行\_場合は、パラメーターが指定されている場合にのみ、ドライバーが[**Iowmiregistrationcontrol**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)に渡すポインターと同じデバイスオブジェクトを指すようにする必要があります **。** それ以外の場合、ドライバーは、要求を次の下位のドライバーに転送する必要があります。
 
-ドライバーがすべての入力値を検証する責任を負います。 具体的には、ドライバーは IRP 要求自体を処理する場合、次を実行する必要があります。
+ドライバーは、すべての入力値の検証を担当します。 具体的には、ドライバーが IRP 要求自体を処理する場合は、次の操作を行う必要があります。
 
--   静的な名前のことを確認します、 **InstanceIndex**のメンバー、 [**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)がインスタンスの範囲内に構造体データ ブロックのドライバーでサポートされるインデックス。
+-   静的名の場合は、 [**Wnode\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)構造体の**instanceindex**メンバーが、データブロックのドライバーでサポートされているインスタンスインデックスの範囲内であることを確認します。
 
--   動的な名前は、インスタンス名の文字列が、ドライバーでサポートされるデータ ブロックのインスタンスを識別することを確認します。
+-   動的名の場合は、ドライバーでサポートされているデータブロックインスタンスがインスタンス名の文字列によって識別されていることを確認します。
 
--   いることを確認、**メソッド Id**のメンバー、 [**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)がでサポートされているメソッドの識別子の範囲内に構造体データ ブロックのドライバー、呼び出し元がメソッドの実行に許可されているとします。
+-   [**Wnode\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)構造体の**MethodId**メンバーが、データブロックのドライバーでサポートされているメソッド識別子の範囲内であること、および呼び出し元がメソッドを実行できることを確認します。
 
--   いることを確認、 **DataBlockOffset**と**SizeDataBlock**のメンバー、 [**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)構造が指定されたメソッドのパラメーターを格納するのに十分な大きさであるとパラメーターは、メソッドに対して有効なバッファーについて説明します。
+-   [**Wnode\_メソッドの\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)構造体のデータマイニング**オフセット**および**sizeのロック**メンバーが、指定されたメソッドのパラメーターを格納するのに十分な大きさのバッファーを記述していること、およびパラメーターが有効であることを確認します。メソッドの。
 
--   いることを確認**Parameters.WMI.Buffersize**を受信するのに十分な大きさであるバッファーを指定します、**れた WNODE\_メソッド\_項目**が出力に更新された後に構造体データ。
+-   **パラメーター**を確認します。これは、出力データで更新された後、 **WNODE\_メソッド\_項目**構造を受け取るのに十分な大きさのバッファーを指定します。
 
-発信側ユーザー モード アプリケーションのスレッド コンテキストと見なさないでください: より高度なドライバー、変更がある可能性があります。
+スレッドコンテキストが、開始側のユーザーモードアプリケーションのコンテキストであることを前提としていません。これは、上位レベルのドライバーによって変更されている可能性があります。
 
-要求を処理する前に、ドライバーを決定する必要があるかどうか**Parameters.WMI.DataPath**ドライバーでサポートされている GUID を指します。 そうでない、ドライバーが IRP が失敗する必要があり、状態を返す場合\_WMI\_GUID\_いない\_が見つかりました。
+ドライバーは、要求を処理する前に、**データパス**がドライバーでサポートされている GUID を指しているかどうかを判断する必要があります。 それ以外の場合は、ドライバーが IRP を失敗させ、ステータスを返す必要があります。 WMI\_GUID\_見つかりませ\_ん\_ます。
 
-ドライバーは、データ ブロックをサポートする場合、入力を確認します[**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)で**Parameters.WMI.Buffer**インスタンス名。、次のようにします。
+ドライバーがデータブロックをサポートしている場合は、次に示すように、インスタンス**名の入力** [**WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)がチェックされます。
 
--   場合れた WNODE\_フラグ\_静的\_インスタンス\_で名前が設定されて**WnodeHeader.Flags**、ドライバーを使用して**InstanceIndex**へのインデックスとして、そのブロックの静的インスタンス名のドライバーの一覧。 WMI では、ブロックが登録されているときに、ドライバーによって提供された登録データからインデックスを取得します。
+-   WNODE\_フラグ\_静的\_インスタンス\_名前が**Wnodeheader. Flags**に設定されている場合、ドライバーは、そのブロックのドライバーの静的インスタンス名の一覧へのインデックスとして**instanceindex**を使用します。 WMI は、ブロックの登録時にドライバーによって提供された登録データからインデックスを取得します。
 
--   場合れた WNODE\_フラグ\_静的\_インスタンス\_名が明確では**WnodeHeader.Flags、** ドライバーは、オフセットを使用して**OffsetInstanceName**に入力内でインスタンス名の文字列を検索**れた WNODE\_メソッド\_項目**します。 **OffsetInstanceName**に存在すると、インスタンス名の文字列に続く場合は、終端の null を含むバイト (しない文字) でインスタンス名文字列の長さである USHORT 構造体の先頭からのバイト オフセットですUnicode。
+-   WNODE\_フラグ\_静的\_インスタンス\_名前が**Wnodeheader. Flags**で明確になっている場合、ドライバーは**OffsetInstanceName**のオフセットを使用して、入力**wnode\_メソッド内のインスタンス名の文字列を検索し\_項目**。 **OffsetInstanceName**は、構造体の先頭からのオフセット (バイト単位) から USHORT までのオフセットです。これは、(文字ではなく) インスタンス名の文字列の長さ (バイト単位) です (存在する場合は終端の null を含み、その後に Unicode のインスタンス名の文字列が続きます)。
 
-ドライバーでは、指定されたインスタンスで特定できない場合は、IRP が失敗し、状態を返すする必要があります\_WMI\_インスタンス\_いない\_が見つかりました。 動的なインスタンスの名前を持つインスタンスの場合は、この状態は、ドライバーが、インスタンスをサポートしていないことを示します。 WMI は、他のデータ プロバイダーのクエリを実行し、別のプロバイダーはインスタンスを検索しますが、何らかの理由で要求を処理できない場合は、適切なエラーをデータ コンシューマーに返されます。 そのため続行できます。
+ドライバーは、指定されたインスタンスを見つけることができない場合、IRP を失敗させ、ステータス\_WMI\_インスタンス\_見つから\_ないことを確認します。 動的なインスタンス名を持つインスタンスの場合、この状態はドライバーがインスタンスをサポートしていないことを示します。 そのため、他のプロバイダーがインスタンスを検出しても、他の何らかの理由で要求を処理できない場合、WMI は他のデータプロバイダーのクエリを続行し、適切なエラーをデータコンシューマーに返すことができます。
 
-ドライバーは、入力にメソッド ID を確認します**れた WNODE\_メソッド\_項目**データ ブロックに対して有効なメソッドがあるかどうかを判断します。 そうでないドライバーは IRP が失敗し、ステータスを返す場合\_WMI\_ITEMID\_いない\_が見つかりました。
+次に、入力**Wnode\_メソッド\_項目**のメソッド ID を調べて、そのデータブロックに対して有効なメソッドであるかどうかを判断します。 それ以外の場合、ドライバーは IRP に失敗し、ステータス\_WMI\_ITEMID\_返され\_見つかりません。
 
-ドライバーが出力バッファーのサイズを確認する必要があります、メソッドは、出力を生成する場合**Parameters.WMI.BufferSize**副作用がある可能性がありますか、2 回実行しないようにするすべての操作を実行する前にします。 やなどの場合は、メソッドは、カウンターのグループの値を返し、カウンターをリセットし、ドライバーする必要がありますバッファー サイズを確認 (バッファーが小さすぎる場合は IRP を失敗) カウンターをリセットする前にします。 これにより、WMI の場合より大きなバッファーで要求を安全に再送します。
+メソッドによって出力が生成される場合、ドライバーは、副作用がある可能性がある操作または2回実行してはならない操作を実行する前に、**パラメーター**の出力バッファーのサイズを確認する必要があります。 たとえば、メソッドがカウンターのグループの値を返し、カウンターをリセットした場合、ドライバーはカウンターをリセットする前に、バッファーサイズを確認し (バッファーが小さすぎる場合は IRP を失敗させる) 必要があります。 これにより、WMI はより大きなバッファーで要求を安全に再送信できます。
 
-インスタンスとメソッド ID が有効なバッファーがサイズで適切な場合は、ドライバーは、メソッドを実行します。 場合**SizeDataBlock**入力に**れた WNODE\_メソッド\_項目**が 0 以外の場合、ドライバーを使用して、データの開始位置として**DataBlockOffset**入力としてメソッド。
+インスタンスとメソッド ID が有効で、バッファーのサイズが十分である場合、ドライバーはメソッドを実行します。 入力**Wnode\_メソッド\_項目**が0以外の場合に**sizeの lock**が使用されている場合、ドライバーは、メソッドの**入力とし**て、データを使用します。
 
-ドライバーが開始位置として、バッファーに出力データを書き込みます、メソッドは、出力を生成する場合**DataBlockOffset**設定と**SizeDataBlock**出力**れた WNODE\_メソッド\_項目**出力データのバイト数にします。 ドライバーの設定、メソッドには、出力データがなければ、 **SizeDataBlock**をゼロにします。 ドライバーは、入力値を変更する必要があります**DataBlockOffset**します。
+メソッドによって出力が生成された場合、ドライバーは、出力データを、データを格納するバッファーにデータを書き込みます。また、出力**Wnode\_メソッド\_ITEM** **に出力**データのバイト数を**設定します**。 メソッドに出力データが含まれていない場合、ドライバーは**sizesets lock**を0に設定します。 ドライバーでは、の入力値を変更すること**はできません。**
 
-インスタンスが有効では、ドライバーが要求を処理できない場合は、すべての該当するエラー状態を返すできます。
+インスタンスが有効であっても、ドライバーが要求を処理できない場合は、適切なエラー状態を返すことができます。
 
 <a name="requirements"></a>要件
 ------------
@@ -129,7 +129,7 @@ WMI を送り、 [ **IRP\_MN\_クエリ\_単一\_インスタンス**](irp-mn-qu
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -137,15 +137,15 @@ WMI を送り、 [ **IRP\_MN\_クエリ\_単一\_インスタンス**](irp-mn-qu
 ## <a name="see-also"></a>関連項目
 
 
-[*DpWmiExecuteMethod*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nc-wmilib-wmi_execute_method_callback)
+[*このようにしてください。* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nc-wmilib-wmi_execute_method_callback)
 
-[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iowmiregistrationcontrol)
+[**IoWMIRegistrationControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iowmiregistrationcontrol)
 
-[**WMILIB\_CONTEXT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/ns-wmilib-_wmilib_context)
+[**WMB\_のコンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/ns-wmilib-_wmilib_context)
 
-[**WmiSystemControl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmilib/nf-wmilib-wmisystemcontrol)
+[**Wmi コントロール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmilib/nf-wmilib-wmisystemcontrol)
 
-[**れた WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wmistr/ns-wmistr-tagwnode_method_item)
+[**WNODE\_メソッド\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wmistr/ns-wmistr-tagwnode_method_item)
 
  
 

@@ -34,7 +34,7 @@ ms.locfileid: "72030803"
 
 これらのダンプファイルの違いは、サイズの1つです。 ミニダンプは通常、よりコンパクトで、アナリストに簡単に送信できます。
 
-**注**   つのダンプファイルを分析することで、多くの情報を取得できます。 ただし、デバッガーを使用して直接クラッシュをデバッグするのと同じほど多くの情報をダンプファイルに提供できません。
+**注**   ダンプファイルを分析することで、多くの情報を取得できます。 ただし、デバッガーを使用して直接クラッシュをデバッグするのと同じほど多くの情報をダンプファイルに提供できません。
 
 
 ## <a name="span-idfullspanspan-idfullspanfull-user-mode-dumps"></a><span id="full"></span><span id="FULL"></span>完全なユーザーモードダンプ
@@ -45,10 +45,10 @@ ms.locfileid: "72030803"
 
 完全なユーザーモードのダンプファイルをミニダンプに "圧縮" できます。 単純にダンプファイルをデバッガーに読み込んでから、.dump [ **(ダンプファイルの作成)** ](-dump--create-dump-file-.md)コマンドを使用して、新しいダンプファイルをミニダンプ形式で保存します。
 
-@No__t-1 は名前に関係なく、最大の "ミニダンプ" ファイルには、完全なユーザーモードダンプよりも多くの情報が含まれている**ことに注意**してください。 たとえば、 **. dump/mf**または **. dump/ma**では、 **. dump/f**よりも大規模で完全なファイルが作成されます。
+**メモ**   名前にかかわらず、最大の "ミニダンプ" ファイルには、完全なユーザーモードダンプよりも多くの情報が含まれています。 たとえば、 **. dump/mf**または **. dump/ma**では、 **. dump/f**よりも大規模で完全なファイルが作成されます。
 
 
-ユーザーモードでは、 **. dump/m @ no__t-1**<em>minioptions</em> **\]** が最適な選択肢です。 このスイッチを使用して作成されたダンプファイルのサイズは、非常に小さいものから大きくなる場合があります。 適切な*Minioptions*を指定することによって、含まれる情報を正確に制御できます。
+ユーザーモードでは、 **. dump/m\[** <em>minioptions</em> **\]** が最適な選択肢です。 このスイッチを使用して作成されたダンプファイルのサイズは、非常に小さいものから大きくなる場合があります。 適切な*Minioptions*を指定することによって、含まれる情報を正確に制御できます。
 
 
 
@@ -58,7 +58,7 @@ ms.locfileid: "72030803"
 
 ミニダンプファイルのサイズと内容は、ダンプするプログラムとダンプを実行するアプリケーションによって異なります。 ミニダンプファイルのサイズが非常に大きく、完全なメモリとハンドルのテーブルが含まれていることがあります。 それ以外の場合は、非常に小さくなります。たとえば、1つのスレッドに関する情報のみが含まれている場合や、実際にスタック内で参照されているモジュールに関する情報のみが含まれている場合などです。
 
-最大のミニダンプファイルには、"完全な" ユーザーモードダンプよりも多くの情報が含まれているため、"ミニダンプ" という名前は誤解を招くことがあります。 たとえば、 **. dump/mf**または **. dump/ma**では、 **. dump/f**よりも大規模で完全なファイルが作成されます。 このため、 **. dump/m**\[*minioptions*\] を使用することをお勧めします。すべてのユーザーモードダンプファイルを作成するには**ダンプ/f を使用します。**
+最大のミニダンプファイルには、"完全な" ユーザーモードダンプよりも多くの情報が含まれているため、"ミニダンプ" という名前は誤解を招くことがあります。 たとえば、 **. dump/mf**または **. dump/ma**では、 **. dump/f**よりも大規模で完全なファイルが作成されます。 このため、 **. dump/m**\[*minioptions*\] 推奨さ**れています。** すべてのユーザーモードダンプファイルを作成するにはダンプ/f を使用してください。
 
 デバッガーでミニダンプファイルを作成する場合は、どのような情報を含めるかを正確に選択できます。 単純な **.dump/m**コマンドには、対象プロセス、スレッド情報、およびスタック情報を構成する、読み込まれたモジュールに関する基本情報が含まれます。 これは、次のいずれかのオプションを使用して変更できます。
 
@@ -103,7 +103,7 @@ ms.locfileid: "72030803"
 <td align="left"><p>ミニダンプに<em>セカンダリメモリ</em>を追加します。 セカンダリメモリは、スタックまたはバッキングストアのポインターによって参照される任意のメモリと、このアドレスを囲む小さい領域で参照されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>/mp</strong></p></td>
+<td align="left"><p><bpt id="p1">&lt;strong&gt;</bpt>/mp<ept id="p1">&lt;/strong&gt;</ept></p></td>
 <td align="left"><p>プロセス環境ブロック (PEB) とスレッド環境ブロック (TEB) のデータをミニダンプに追加します。 これは、アプリケーションのプロセスとスレッドに関する Windows システム情報にアクセスする必要がある場合に便利です。</p></td>
 </tr>
 <tr class="odd">
@@ -139,7 +139,7 @@ ms.locfileid: "72030803"
 
 ## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>ユーザーモードのダンプファイルを作成する
 
-ユーザーモードのダンプファイルの作成に使用できるツールには、次のようなものがあります。CDB、WinDbg、Windows エラー報告 (WER)、UserDump、ADPlus。
+ユーザーモードのダンプファイルの作成に使用できるツールには、CDB、WinDbg、Windows エラー報告 (WER)、UserDump、および ADPlus のいくつかがあります。
 
 ADPlus を使用したユーザーモードのダンプファイルの作成の詳細については、「 [adplus](adplus.md)」を参照してください。
 
@@ -172,45 +172,45 @@ WER を使用したユーザーモードのダンプファイルの作成の詳�
 <tbody>
 <tr class="odd">
 <td align="left"><p>アプリケーションがクラッシュしたときにダンプファイルを作成する (事後分析デバッグ)</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>アプリケーションが "ハング" したときにダンプファイルを作成する (応答を停止し、実際にはクラッシュしない)</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>アプリケーションで例外が発生した場合のダンプファイルの作成</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>アプリケーションが正常に実行されているときにダンプファイルを作成する</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>起動時に失敗するアプリケーションからのダンプファイルの作成</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>はい</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>既存のダンプファイルを圧縮する</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>いいえ</p></td>
-<td align="left"><p>はい</p></td>
-<td align="left"><p>いいえ</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>

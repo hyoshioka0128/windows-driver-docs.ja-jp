@@ -3,18 +3,18 @@ title: ネットワーク インターフェイス スタックの保守
 description: ネットワーク インターフェイス スタックの保守
 ms.assetid: c51a2e5b-28ad-4e86-8b37-1491f85a17bb
 keywords:
-- NDIS ネットワーク インターフェイス、WDK スタック メンテナンス
-- ネットワーク インターフェイスの WDK、スタックのメンテナンス
-- スタックの WDK ネットワーク
-- stack テーブル WDK のネットワークをインターフェイスします。
+- NDIS ネットワークインターフェイス WDK、スタックメンテナンス
+- ネットワークインターフェイス WDK、スタックメンテナンス
+- スタック WDK ネットワーク
+- インターフェイススタックテーブル WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d06baba22acf836f0dc3fc0bdaaa3b4759f20c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7cc8954262f47fb7242b76cc1c8220b103220484
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356190"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844133"
 ---
 # <a name="maintaining-a-network-interface-stack"></a>ネットワーク インターフェイス スタックの保守
 
@@ -22,15 +22,15 @@ ms.locfileid: "67356190"
 
 
 
-NDIS インターフェイスの履歴テーブルを維持するためにサービスを提供します (*ifStackTable*で RFC 2863)。 NDIS は、NDIS ミニポート アダプター、NDIS 5 スタックのテーブルを保持します。*x*中間のドライバーおよび NDIS フィルター モジュールをフィルター処理します。 NDIS には、NDIS ドライバーを追加し、このテーブル内のエントリの削除を有効にするサービスも提供します。 MUX 中間ドライバーでは、NDIS に仮想ミニポート インターフェイスとプロトコルの低いインターフェイス間のリレーションシップへのアクセスはありません。 そのため、NDIS 6.0 MUX 中間ドライバーでは、これらの内部インターフェイス リレーションシップを指定する必要があります。
+NDIS には、インターフェイススタックテーブル (RFC 2863 の*Ifstacktable* ) を維持するサービスが用意されています。 Ndis は ndis ミニポートアダプター (NDIS 5) のスタックテーブルを保持します。*x*フィルター中間ドライバーおよび NDIS フィルターモジュール。 また、NDIS は、NDIS ドライバーがこのテーブル内のエントリを追加および削除できるようにするサービスも提供します。 MUX 中間ドライバーの場合、NDIS は、仮想ミニポートインターフェイスとプロトコル下位インターフェイスの間の関係にアクセスできません。 したがって、NDIS 6.0 MUX 中間ドライバーでは、これらの内部インターフェイス関係を指定する必要があります。
 
-2 つのインターフェイスに関係するスタックを定義する NDIS ドライバーを渡すことができます*HigherLayerIfIndex*と*LowerLayerIfIndex*パラメーターを[ **NdisIfAddIfStackEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifaddifstackentry)関数。 これらのパラメーターは、ネットワーク インターフェイスのスタックとの下位のスタックにする必要がある 1 つのネットワーク インターフェイスの上位にする必要がある 1 つのネットワーク インターフェイスを指定します。
+2つのインターフェイス間のスタック関係を定義するために、すべての NDIS ドライバーは、NdisIfAddIfStackEntry 関数に*Higher$ erifindex* *パラメーターと* [](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifaddifstackentry)パラメーターを渡すことができます。 これらのパラメーターでは、ネットワークインターフェイススタックの上位にある1つのネットワークインターフェイスと、スタックの下位にある1つのネットワークインターフェイスを指定します。
 
-別のインターフェイス (たとえば、内部バインド MUX 中間ドライバーで NDIS に表示されていない) に関連するインターフェイスのスタック順序情報を持つドライバーは呼び出し**NdisIfAddIfStackEntry**を設定する、インターフェイスの履歴テーブルです。 この関数は、NDIS を返します\_状態\_スタック エントリが正常に行われた場合は成功します。 所有または上位のレイヤー インターフェイスのインターフェイスのプロバイダーは、コンポーネントでは通常、(この*HigherLayerIfIndex*識別) 呼び出し**NdisIfAddIfStackEntry**します。
+別のインターフェイスに関連付けられているインターフェイスに関するスタック順情報 (たとえば、NDIS から参照できない MUX 中間ドライバーの内部バインドなど) があるドライバーは、 **NdisIfAddIfStackEntry**を呼び出してインターフェイススタックテーブルを設定します. スタックエントリが正常に作成された場合、この関数は NDIS\_STATUS\_SUCCESS を返します。 通常、またはを所有するコンポーネントは、上位層インターフェイスのインターフェイスプロバイダーである ( *Higher$ Erifindex*によって識別されます) **NdisIfAddIfStackEntry**を呼び出します。
 
-履歴テーブルのエントリを削除するドライバーに渡します*HigherLayerIfIndex*と*LowerLayerIfIndex*パラメーターを[ **NdisIfDeleteIfStackEntry** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndisifdeleteifstackentry)関数。
+スタックテーブルのエントリを削除するために、ドライバーは、 [**NdisIfDeleteIfStackEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifdeleteifstackentry)関数に*Higher$ erifindex* *パラメーターと*より高速パラメーターを渡します。
 
-インターフェイスのスタックを維持するための例では、MUX 6.0 のドライバーのサンプルを参照してください。
+インターフェイススタックを維持する例については、「MUX 6.0 サンプルドライバー」を参照してください。
 
  
 

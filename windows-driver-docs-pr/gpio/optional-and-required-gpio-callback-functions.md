@@ -1,61 +1,61 @@
 ---
 title: 省略可能および必須の GPIO コールバック関数
-description: 汎用入出力 (GPIO) コント ローラーのドライバーでは、GPIO フレームワーク拡張機能 (GpioClx) のクライアントとして登録する GPIO_CLX_RegisterClient メソッドを呼び出します。
+description: 汎用 i/o (GPIO) コントローラードライバーは、GPIO_CLX_RegisterClient メソッドを呼び出して、GPIO framework 拡張機能 (GpioClx) のクライアントとして登録します。
 ms.assetid: 2F126431-13AB-4E3F-9E5E-56DC7D9AF024
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f481b34385b8bdd6cf83bae94457477578307ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 54105426a2d003334c99195436841fdbdf7af492
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383416"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72824936"
 ---
 # <a name="optional-and-required-gpio-callback-functions"></a>省略可能および必須の GPIO コールバック関数
 
 
-汎用の I/O (GPIO) コント ローラー ドライバーは呼び出し、 [ **GPIO\_CLX\_RegisterClient** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nf-gpioclx-gpio_clx_registerclient) GPIO フレームワーク拡張機能 (GpioClx) のクライアントとして登録します。 この呼び出し中に、ドライバーはドライバーによって実装されているイベントのコールバック関数の一覧を示す GpioClx に登録パケットを渡します。 GpioClx は、GPIO コント ローラーのハードウェア構成、I/O 操作を実行および割り込みを管理するこれらのコールバック関数を呼び出します。 GpioClx では、GPIO コント ローラーのドライバーを特定のコールバック関数の実装が他のコールバック関数は省略可能なサポートが必要です。
+汎用 i/o (GPIO) コントローラードライバーは、gpio フレームワーク拡張機能 (GpioClx) のクライアントとして登録するために、 [**gpio\_CLX\_RegisterClient**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nf-gpioclx-gpio_clx_registerclient)メソッドを呼び出します。 この呼び出しの間に、ドライバーは、ドライバーによって実装されているイベントコールバック関数のリストを指定する登録パケットを GpioClx に渡します。 GpioClx は、これらのコールバック関数を呼び出して、GPIO コントローラーハードウェアを構成し、i/o 操作を実行し、割り込みを管理します。 GpioClx では、特定のコールバック関数を実装するために、GPIO コントローラードライバーが必要ですが、他のコールバック関数のサポートは省略可能です。
 
-登録のパケットが、 [ **GPIO\_クライアント\_登録\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_gpio_client_registration_packet)構造体。 GPIO コント ローラーのドライバーでは、特定のコールバック関数を実装する場合にこの構造体の対応するメンバーにそのコールバック関数、関数ポインターを書き込みます。 または、特定のコールバック関数がサポートされていないことを示す場合、ドライバーでは、対応するメンバーに NULL を書き込みます。
+登録パケットは、[**パケット構造\_の GPIO\_クライアント\_登録**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_gpio_client_registration_packet)パケットです。 GPIO コントローラードライバーが特定のコールバック関数を実装している場合は、そのコールバック関数への関数ポインターを、この構造体の対応するメンバーに書き込みます。 または、特定のコールバック関数がサポートされていないことを示すために、ドライバーは、対応するメンバーに NULL を書き込みます。
 
-登録パケットでは、次のコールバック関数を含める必要があります。
+次のコールバック関数を登録パケットに含める必要があります。
 
-[*クライアント\_PrepareController*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_prepare_controller)
-[*クライアント\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) 
- [*クライアント\_StartController*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_start_controller)
-[*クライアント\_StopController* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_stop_controller) 
- [*クライアント\_ReleaseController* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_release_controller) (関数の登録でポインターを対応する場合は、上記のコールバック関数が不足しているかどうかパケットが NULL)、 **GPIO\_CLX\_RegisterClient**メソッドは失敗します。
+[*クライアント\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_prepare_controller)
+[*クライアント\_Querycontroller Basicinformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)
+[*Client\_Startcontroller*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_start_controller)
+[*CLIENT\_stopcontroller*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_stop_controller)
+[*クライアント\_ReleaseController*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_release_controller) 。前の一覧のコールバック関数が見つからない場合 (つまり、登録パケット内の対応する関数ポインターが NULL の場合)、 **GPIO\_clx\_registerclient**メソッドは失敗します。.
 
-GPIO コント ローラーのドライバーがからの読み取りまたは書き込み I/O の GPIO ピンをサポートする必要はありませんはデータ入力またはデータとして構成されているピンを出力します。 (なし I/O ピン GPIO コント ローラーがまだ周辺機器からの割り込み要求をリレー。)ただし、登録パケットには、次の O に関連するコールバック関数のいずれかが含まれている場合、パケットは、次のコールバック関数のどちらもデータを含める必要があります。
+Gpio i/o ピンへの読み取りまたは書き込みをサポートするために、GPIO コントローラードライバーは必要ありません。これは、データ入力またはデータ出力として構成されているピンです。 (I/o ピンがない GPIO コントローラーは、周辺機器からの割り込み要求を引き続きリレーできます)。ただし、登録パケットに次のいずれかの i/o 関連コールバック関数が含まれる場合、パケットには次のコールバック関数の両方が含まれている必要があります。
 
-[*クライアント\_ConnectIoPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_connect_io_pins)
-[*クライアント\_DisconnectIoPins* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disconnect_io_pins)さらに、登録のパケットが含まれている場合、上記の 2 つのコールバック関数、ドライバーする必要がありますさらにサポートする I/O の GPIO ピンの場合、またはその両方への書き込みの I/O の GPIO ピンからの読み取り。 具体的には、登録パケットは、次の一覧に少なくとも 1 つのコールバック関数を含める必要があります。
+[*クライアント\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_connect_io_pins)
+[*クライアント\_Dis/tiopins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_disconnect_io_pins)に加えて、登録パケットに前の一覧に2つのコールバック関数が含まれている場合、ドライバーは、さらに、GPIO i/o ピンからの読み取りをサポートする必要があります。GPIO i/o ピンへの書き込み、またはその両方。 具体的には、登録パケットには、次の一覧にコールバック関数が少なくとも1つ含まれている必要があります。
 
-[*クライアント\_ReadGpioPins* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins)または[*クライアント\_ReadGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)
-[*クライアント\_WriteGpioPins* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins)または[*クライアント\_WriteGpioPinsUsingMask* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_write_pins_mask)読み取りをサポートしているドライバーが 1 つを実装する必要があります、2 つ*クライアント\_ReadGpioPins*Xxx コールバック関数が、上記の一覧にします。 書き込みをサポートするドライバーは、2 つのいずれかを実装する必要があります*クライアント\_WriteGpioPins*Xxx コールバック関数が、上記の一覧にします。
+[*クライアント\_ReadGpioPins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins)または[*client\_ReadGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_read_pins_mask)
+[*Client\_writegpiopins*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins)または[*client\_WriteGpioPinsUsingMask*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_write_pins_mask)をサポートするドライバーは、前の一覧の2つの*クライアント\_ReadGpioPins*Xxx コールバック関数。 書き込みをサポートするドライバーは、上記の一覧にある2つの*クライアント\_writの*両方のコールバック関数のいずれかを実装する必要があります。
 
-実装するドライバー*クライアント\_ReadGpioPinsUsingMask*、*クライアント\_WriteGpioPinsUsingMask*、または両方を設定する必要があります、 **FormatIoRequestsAsMasks**フラグのビットによって提供されるデバイス情報、 [*クライアント\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)コールバック関数。 実装するドライバー*クライアント\_ReadGpioPins*、*クライアント\_WriteGpioPins*、または両方、このフラグのビットを設定する必要があります。 詳細については、の説明を参照して、**フラグ**メンバー [**クライアント\_コント ローラー\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information)します。
+クライアント *\_ReadGpioPinsUsingMask*、 *client\_WriteGpioPinsUsingMask*、またはその両方を実装するドライバーでは、クライアントによって提供されるデバイス情報に**FormatIoRequestsAsMasks**フラグビットを設定する必要があり[ *\_Queryコントローラー Basicinformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)コールバック関数。 *クライアント\_ReadGpioPins*、 *Client\_writegpiopins*、またはその両方を実装するドライバーでは、このフラグビットを設定しないようにする必要があります。 詳細については、「 [**CLIENT\_CONTROLLER\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)の**Flags**メンバーの説明」を参照してください。
 
-GPIO コント ローラーのドライバーは、GPIO 割り込みをサポートする必要はありません。 ただし、登録のパケットには、次の割り込みに関連するコールバック関数のいずれかが含まれている場合、パケットはすべて、次のコールバック関数のデータを含める必要があります。
+Gpio の割り込みをサポートするために、GPIO コントローラードライバーは必要ありません。 ただし、登録パケットに次の割り込み関連のコールバック関数のいずれかが含まれている場合、パケットには次のコールバック関数がすべて含まれている必要があります。
 
-[*クライアント\_EnableInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)
-[*クライアント\_DisableInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_disable_interrupt) 
- [ *クライアント\_MaskInterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_mask_interrupts)
-[*クライアント\_QueryActiveInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_active_interrupts) 
- [*クライアント\_UnmaskInterrupt* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt)割り込みのマスクをサポートしているドライバーを実装する必要があります、*クライアント\_MaskInterrupts*コールバック関数。 アクティブな割り込みのクエリをサポートするドライバーを実装する必要があります、*クライアント\_QueryActiveInterrupts*コールバック関数。
+クライアント[ *\_enableinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_enable_interrupt)
+[*クライアント\_Disableinterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_disable_interrupt)
+[*クライアント\_マスク割り込み*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_mask_interrupts)
+[*クライアント\_queryactiveinterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_active_interrupts)
+[*client\_* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_unmask_interrupt)割り込みのマスクをサポートするドライバーは、*クライアント\_の maskinterrupt*コールバック関数を実装する必要があります。 アクティブな割り込みのクエリをサポートするドライバーは、*クライアント\_QueryActiveInterrupts*コールバック関数を実装する必要があります。
 
-[*クライアント\_ClearActiveInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_clear_active_interrupts)コールバック関数は、特殊なケースです。 GPIO コント ローラーのハードウェアが自動的に読み取られるときにアクティブな割り込みがオフの場合、*クライアント\_ClearActiveInterrupts*関数は必要ありませんし、登録に対応する関数ポインターパケットは、NULL に設定する必要があります。 登録のパケットで読み取られるとき、アクティブな割り込みが自動的にクリアされませんし、上記の一覧で、割り込みに関連するコールバックが機能する場合を指定するただし、*クライアント\_ClearActiveInterrupts*パケットで関数を含める必要があります。 読み取られるとき、ドライバー、ハードウェアがそのアクティブな割り込みを自動的に消去されるかを示す設定、 **ActiveInterruptsAutoClearOnRead**フラグのビットによって提供されるデバイス情報、 [ *クライアント\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)コールバック関数。 詳細については、の説明を参照して、**フラグ**メンバー [**クライアント\_コント ローラー\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information)します。
+[*クライアント\_ClearActiveInterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_clear_active_interrupts)コールバック関数は特殊なケースです。 GPIO コントローラーハードウェアが読み取り時にアクティブな割り込みを自動的にクリアする場合、*クライアント\_ClearActiveInterrupts*関数は必要ありません。また、登録パケット内の対応する関数ポインターを NULL に設定する必要があります。 ただし、アクティブな割り込みが読み込まれたときに自動的にクリアされない場合や、前の一覧の割り込みに関連するコールバック関数が登録パケットに指定されている場合は、*クライアント\_ClearActiveInterrupts*関数がである必要があります。パケットに含まれています。 ハードウェアが読み取り時にアクティブな割り込みを自動的にクリアすることを示すために、ドライバーは、クライアントによって提供されるデバイス情報に**ActiveInterruptsAutoClearOnRead**フラグビットを設定し[ *\_Queryコントローラー Basicinformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)コールバック関数。 詳細については、「 [**CLIENT\_CONTROLLER\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)の**Flags**メンバーの説明」を参照してください。
 
-GPIO コント ローラーのドライバーでは、GPIO 割り込みをサポートする場合、登録パケット含めることができます、オプションとして、次のコールバック関数。
+GPIO コントローラードライバーで GPIO 割り込みがサポートされている場合、登録パケットはオプションとして次のコールバック関数を含むことができます。
 
-[*クライアント\_QueryEnabledInterrupts* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts) GpioClx サポート、*クライアント\_QueryEnabledInterrupts*関数が Windows 8.1 以降します。
+[*クライアント\_QueryEnabledInterrupts*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_enabled_interrupts)GpioClx は、Windows 8.1 で始まる*クライアント\_QueryEnabledInterrupts*関数をサポートしています。
 
-サポートするドライバー[コンポーネント レベルの電源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/component-level-power-management)次のコールバック関数の両方を実装する必要があります。
+[コンポーネントレベルの電源管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/component-level-power-management)をサポートするドライバーは、次のコールバック関数の両方を実装する必要があります。
 
-[*クライアント\_RestoreBankHardwareContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_restore_bank_hardware_context)
-[*クライアント\_SaveBankHardwareContext* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_save_bank_hardware_context)いることを示すハードウェアコンポーネント レベルの電源管理、ドライバーのセットをサポート、 **BankIdlePowerMgmtSupported**フラグのビットによって提供されるデバイス情報、 [*クライアント\_QueryControllerBasicInformation* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information)コールバック関数。 詳細については、の説明を参照して、**フラグ**メンバー [**クライアント\_コント ローラー\_BASIC\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information)します。
+[*クライアント\_RestoreBankHardwareContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_restore_bank_hardware_context)
+[*client\_SaveBankHardwareContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_save_bank_hardware_context)がハードウェアがコンポーネントレベルの電源管理をサポートしていることを示すために、ドライバーは**BankIdlePowerMgmtSupported**フラグを設定します。クライアントによって提供されるデバイス情報のビットは、 [*Queryコントローラー basicinformation*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) callback 関数\_ます。 詳細については、「 [**CLIENT\_CONTROLLER\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/ns-gpioclx-_client_controller_basic_information)の**Flags**メンバーの説明」を参照してください。
 
-[*クライアント\_PreProcessControllerInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_pre_process_controller_interrupt)、 [*クライアント\_ReconfigureInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)と[*クライアント\_ControllerSpecificFunction* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_controller_specific_function)コールバック関数は省略可能で、いくつかの GPIO コント ローラーのハードウェアに固有の問題に対処する GpioClx でサポートされます。実装。 特別な要件に GPIO コント ローラー ドライバーだけでは、これらの関数を実装します。
+[*クライアント\_Preprocessコントローラー interrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_pre_process_controller_interrupt)、 [*client\_ReconfigureInterrupt*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_reconfigure_interrupt)、および[*client\_コントローラー*](https://docs.microsoft.com/windows-hardware/drivers/ddi/gpioclx/nc-gpioclx-gpio_client_controller_specific_function)のコールバック関数は省略可能であり、gpioclx to アドレスによってサポートされています。一部の GPIO controller 実装におけるハードウェア固有の問題。 特別な要件を持つ GPIO controller ドライバーのみが、これらの機能を実装します。
 
  
 

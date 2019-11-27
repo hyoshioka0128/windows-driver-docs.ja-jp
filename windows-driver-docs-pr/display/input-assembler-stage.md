@@ -4,47 +4,47 @@ description: 入力アセンブラー ステージ
 ms.assetid: 8db6a2ab-8354-4690-8141-2cdd91c77d5c
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8fbd37c2116f7225e1f562a9de1c888494a68c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fd733f6aa8806d218bfd5624548e9352ebd62c65
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385175"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840365"
 ---
 # <a name="input-assembler-stage"></a>入力アセンブラー ステージ
 
 
-入力アセンブラー (IA) は三角形、線、またはポイントをソース 1 D バッファーからの geometry 型のデータをプルして、レンダリング パイプラインに導入します。
+入力アセンブラー (IA) は、1-D バッファーからソースジオメトリデータを取得することによって、レンダリングパイプラインに三角形、線、またはポイントを導入します。
 
-頂点データは、複数のバッファーに由来して、各バッファーから、構造体への配列の形式でアクセスできます。 バッファーは各個々 の入力のスロットにバインドされているし、構造体のストライドを指定します。 すべてのバッファー間のデータのレイアウトが、入力宣言、各エントリを定義で指定された、*要素*します。 要素には、(パイプラインの最初のアクティブなシェーダー) 用の入力のスロット、構造体のオフセット、データ型、およびターゲットの登録が含まれています。
+頂点データは、複数のバッファーから取得でき、各バッファーから構造体の配列形式でアクセスできます。 各バッファーは個々の入力スロットにバインドされ、構造のストライドが与えられます。 すべてのバッファーでのデータのレイアウトは入力宣言によって指定され、各エントリによって*要素*が定義されます。 要素には、入力スロット、構造オフセット、データ型、およびターゲットレジスタ (パイプラインの最初のアクティブなシェーダー用) が含まれています。
 
-バッファーから取り出されているデータからの特定の頂点のシーケンスが構築されます。 固定機能の状態とさまざまな組み合わせによって、データがフェッチが指定されたトラバーサルで*描画\** DDI 呼び出し。 さまざまなプリミティブのトポロジ (たとえば、ポイントの一覧、行のリスト、三角形の一覧および三角形ストリップ)、一連のプリミティブの頂点データのシーケンスを利用できます。
+頂点の特定のシーケンスは、バッファーからフェッチされたデータから構築されます。 データは、固定関数の状態とさまざまな*Draw\** () DDI 呼び出しの組み合わせによって転送されるトラバーサルでフェッチされます。 さまざまなプリミティブトポロジ (ポイントリスト、行リスト、トライアングルリスト、トライアングルストリップなど) を使用して、頂点データのシーケンスをプリミティブのシーケンスとして表すことができます。
 
-頂点データは、2 つの方法のいずれかで生成されることができます。 頂点データを生成するために最初の方法は*インデックスのない*レンダリングでは、頂点データを含んでいるバッファーのシーケンシャル トラバーサルであります。 頂点データは、開始オフセットはバッファーの各バインディングで発生します。 頂点データを生成するために 2 つ目の方法は、*インデックス*レンダリングでは、スカラーの整数インデックスを含む 1 つのバッファーのトラバーサルがシーケンシャルであります。 インデックスは、バッファーには、開始オフセットで生成されたものです。 各インデックスでは、頂点データを格納しているバッファーからデータをフェッチする場所を示します。 インデックス値は、参照されているバッファーの特性に依存しません。 バッファーは宣言によって記述されます。 インデックス付きでないと、インデックス付き表示、それぞれに独自の方法で、メモリ内の頂点のデータをフェッチする元のアドレスを生成および頂点とプリミティブに、その後、結果をアセンブルします。
+頂点データは、次の2つの方法のいずれかで生成できます。 頂点データを生成する最初の方法は、*インデックスなし*のレンダリングです。これは、頂点データを格納するバッファーの順次走査です。 頂点データは、各バッファーバインドで開始オフセットから開始されます。 頂点データを生成する2番目の方法は、*インデックス付き*レンダリングです。これは、スカラー整数インデックスを含む1つのバッファーのシーケンシャル走査です。 インデックスは、開始オフセットでバッファーに生成されます。 各インデックスは、頂点データを格納するバッファーからデータをフェッチする場所を示します。 インデックス値は、参照するバッファーの特性に依存しません。 バッファーは、宣言によって記述されます。 インデックス付きでない、またはインデックス付きのレンダリングでは、それぞれ独自の方法で、頂点データをメモリ内にフェッチし、その結果を頂点とプリミティブにアセンブルするアドレスを生成します。
 
-インスタンス化されたジオメトリのレンダリングは、各頂点バッファー (インデックス付きでない場合) 内の範囲のループまたはバッファー (インデックス付きの場合) のインデックス、非インデックスまたはインデックス付きのレンダリングで順次のトラバーサルを許可することで有効です。 バッファー バインディングとして識別できる*インスタンス データ*または*頂点データ*します。 この id は、インスタンス化されたレンダリングを実行中にバインドされたバッファーを使用する方法を指定します。 によって生成されるアドレス以外のインデックスを作成または頂点データは、ループ、ランタイムがインスタンス化されたレンダリングを実行するときにもアカウントをフェッチするインデックス付きのレンダリングが使われます。 インスタンス データをその一方が常に順番に通過インスタンス (たとえばは手順インスタンス内の頂点の数が走査転送後の 1 つ) ごとに 1 つの手順と同じ頻度でのバッファー オフセット位置から開始します。 手順レート インスタンスのデータは、インスタンス数 (つまり、1 つ一歩前進インスタンス、すべての 3 番目のインスタンスとその他のすべての) のサブ調和するも選択できます。
+インスタンス化された geometry レンダリングが有効になるのは、インデックス付きレンダリングでもインデックス付きレンダリングでも、各頂点バッファー内の範囲 (インデックスなしのケース) またはインデックスバッファー (インデックス付きの場合) をループするためです。 バッファーバインドは、*インスタンスデータ*または*頂点データ*として識別できます。 この id では、インスタンス化されたレンダリングの実行中にバインドされたバッファーを使用する方法を指定します。 インデックス付きでない、またはインデックス付きレンダリングによって生成されるアドレスは、頂点データをフェッチするために使用されます。これは、ランタイムがインスタンス化されたレンダリングを実行するときのループの対象にもなります。 一方、インスタンスデータは、インスタンスごとに1つのステップと同じ頻度で (たとえば、インスタンス内の頂点の数が走査された後の1つのステップ)、常にバッファーごとのオフセットから順番に順次スキャンされます。 インスタンスデータのステップレートを選択して、インスタンスの頻度を部分的に調和させることもできます (つまり、他のすべてのインスタンス、3番目のインスタンスごとなど)。
 
-IA のもう 1 つの特殊なケースに書き込まれたバッファー ストリーム ステージの出力を読み取ることができます。 このようなシナリオにより、新しい種類の描画操作では、 [ **DrawAuto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_drawauto)します。 *DrawAuto* CPU 操作で、データの量が実際に書き込まれたかを判断することがなく、再利用されるストリーム出力バッファーに書き込まれた出力の動的な量を許可します。
+IA のもう1つの特殊なケースは、ストリーム出力ステージが書き込んだバッファーを読み取ることができることです。 このようなシナリオでは、新しい種類の描画操作である[**Drawauto**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_drawauto)が有効になります。 *Drawauto*を使用すると、ストリーム出力バッファーに書き込まれる動的な出力を CPU 関与なしで再利用でき、実際に書き込まれたデータの量を確認できます。
 
-バッファーから頂点データを生成するには、だけでなく、IA できます自動生成 3 つのスカラーのカウンター値。VertexID、PrimitiveID、および InstanceID、レンダリング パイプラインのシェーダーのステージを入力します。
+IA は、バッファーから頂点データを生成するだけでなく、レンダリングパイプラインのシェーダーステージへの入力のために、VertexID、PrimitiveID、および InstanceID という3つのスカラーカウンター値を自動生成できます。
 
-ストリップのトポロジ、三角形ストリップなどのインデックス付きのレンダリングを 1 つの複数のストリップを描画するためのメカニズムを提供 * 描画\*<em>() 呼び出し (つまり、**切り取り</em>* 切り取りコマンドストリップ)。
+トライアングルストリップなどのストリップトポロジのインデックス付きレンダリングでは、1つの * 描画\*<em>() 呼び出し *</em>* で複数のストリップを描画するためのメカニズムが用意されています (つまり、ストリップをカットするための * 切り取りコマンド)。
 
-Direct3D のランタイムは、設定を作成する次のドライバー関数を呼び出すし、IA を破棄します。
+Direct3D ランタイムは、次のドライバー関数を呼び出して、IA を作成、設定、および破棄します。
 
-[**CalcPrivateElementLayoutSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateelementlayoutsize)
+[**CalcPrivateElementLayoutSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_calcprivateelementlayoutsize)
 
-[**CreateElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createelementlayout)
+[**CreateElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createelementlayout)
 
-[**DestroyElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyelementlayout)
+[**DestroyElementLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_destroyelementlayout)
 
-[**IaSetIndexBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setindexbuffer)
+[**IaSetIndexBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setindexbuffer)
 
-[**IaSetInputLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setinputlayout)
+[**IaSetInputLayout**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_setinputlayout)
 
-[**IaSetTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_settopology)
+[**IaSetTopology**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_settopology)
 
-[**IaSetVertexBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setvertexbuffers)
+[**IaSetVertexBuffers**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_ia_setvertexbuffers)
 
  
 

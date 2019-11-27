@@ -1,94 +1,94 @@
 ---
-Description: MA USB パケットを送信する USB デバイス ドライバー。
+Description: MA USB パケットを送信する USB デバイスドライバー。
 title: Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
 ms.date: 09/26/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9bb01d052ea99f135e23811611bb71cc04385b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0e5cce8e6c3cec069a3d1aa69d3c6376e2b73855
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368749"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843197"
 ---
 # <a name="usb-client-drivers-for-media-agnostic-ma-usb"></a>Media-Agnostic (MA-USB) 用 USB クライアント ドライバー
 
-Windows 10 バージョン 1709 で USB ドライバー スタック パケットを送信できます USB USB 以外の物理メディアなど、Wi-fi 経由でメディアに依存しない USB (USB MA) プロトコルを使用しています。 新しい機能は、既存の USB クライアント ドライバーに必要な変更が最小限に抑えるように設計されています。 この一連の変更では、トランスポートに関する追加情報を含めます。
+Windows 10 バージョン1709では、USB ドライバースタックは、メディアに依存しない USB (MA) プロトコルを使用して、Wi-fi などの非 USB 物理メディア経由で USB パケットを送信できます。 新しい機能は、USB クライアントドライバーの既存に必要な変更が最小限になるように設計されています。 この一連の変更には、トランスポートに関する追加情報が含まれます。
 
--   アイソクロナス/ストリーミング エンドポイントを持つデバイスは、クライアント ドライバーは、プログラミングの転送に関連する遅延を把握し、デバイスが、時間にアイソクロナス パケットを取得することを確認して、ドライバーを行える、完了を転送する必要があります。
+-   アイソクロナス/ストリーミングエンドポイントを使用するデバイスの場合、クライアントドライバーは、デバイスが常時アイソクロナスパケットを確実に取得できるように、転送プログラミングおよび転送完了に関連する遅延を知る必要があります。
 
--   クライアント ドライバーでは、プロトコルの上位のレイヤーの選択を最適化するために、その informationf を使用できます。 たとえば、ディスプレイ ドライバーは、最適なコーデックとバッファリング スキームを選択するのに、待機時間と帯域幅の情報を使用できます。 このような特性は、動的に変わる可能性がある、ドライバーは、変更を確認する必要があります。
+-   クライアントドライバーは、その情報 f を使用して、より高いレイヤーのプロトコルの選択を最適化できます。 たとえば、ディスプレイドライバーは、待ち時間と帯域幅の情報を使用して、最適なコーデックとバッファリングスキームを選択できます。 これらの特性は動的に変更される可能性があるため、ドライバーは変更を判断する必要があります。
 
-## <a name="getting-the-delays-for-isochronous-transfers"></a>アイソクロナス転送の遅延を取得します。
+## <a name="getting-the-delays-for-isochronous-transfers"></a>アイソクロナス転送の遅延を取得する
 
-アイソクロナス エンドポイントは、クライアント ドライバーは、プログラミングの最大待機時間と最大の完了の待機時間を把握する必要があります。 MA USB 仕様は、ホストがこれらの値を計算するためのメカニズムを提供します。 その待機時間は、同じデバイス上の複数のエンドポイントに対して異なるできるので、その要求は特定のパイプの対象となる必要があります。 
+アイソクロナスエンドポイントの場合、クライアントドライバーは、最大のプログラミング待機時間と最大完了待機時間を把握している必要があります。 この要求は、特定のパイプを対象としている必要があります。これは、同じデバイス上の異なるエンドポイントの待機時間が、ホストがこれらの値を計算するメカニズムを提供するためです。 
 
-ドライバーを使用する必要があります、その要求を構築する、 **_URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS** URB します。
+この要求をビルドするには、ドライバーが **_URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS** URB を使用する必要があります。
 
 > [!NOTE]
-> このリリースでは、この機能は KMDF と WDM ベースのドライバーのみを使用できます。 
+> このリリースでは、KMDF と WDM ベースのドライバーのみがこの機能を使用できます。 
 
-この URB を構築するためのベスト プラクティスを次に示します。
+この URB を構築するためのベストプラクティスを次に示します。
 
 
--    呼び出すことによってこの URB を割り当てる必要がありますクライアント dirver [WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)または[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)します。 
-- URB に送信されることができます < = ディスパッチ レベル。
-- URB は非アイソクロナス エンドポイントを対象となる、USB ドライバー スタックでは、要求が失敗します。
-- クライアント ドライバーはこの URB がサード パーティ製の USB スタックでサポートされていると想定する必要があります。 すべて Microsoft によってサポートされる指定された受信トレイの USB クライアント ドライバーを = です。
+-    クライアントの dirver は、 [WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)または[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)を呼び出すことによって、この URB を割り当てる必要があります。 
+- URB は < = ディスパッチレベルで送信できます。
+- URB が非アイソクロナスエンドポイントを対象としている場合、USB ドライバースタックは要求に失敗します。
+- クライアントドライバーは、この URB がサードパーティの USB スタックでサポートされていると想定してはいけません。 これは、Microsoft が提供するすべての受信トレイの USB クライアントドライバーでサポートされます。
 
-継続的なアイソクロナス streaming では、クライアント ドライバー通常問題の未処理の複数の読み取り要求。 ドライバーは、ラウンドト リップ時間を使用して、未処理の読み取り要求の数に基づいて、読み取り要求に存在する必要があるアイソクロナス パケットの数を計算します。
+ストリーミングの連続するアイソクロナスの場合、クライアントドライバーは通常、複数の未処理の読み取り要求を発行します。 ドライバーはラウンドトリップ時間を使用して、未処理の読み取り要求の数に基づいて、読み取り要求に含まれる必要があるアイソクロナスパケットの数を計算できます。
 
-たとえば、未処理の要求の数が 2 つの場合で、URB isochronous パケットの数以上でなければなりません (ラウンド トリップ時間の合計)/(サービス間隔の長さ)、ラウンド トリップ時間の合計 = MaximumSendPathDelayInMilliSeconds +MaximumCompletionPathDelayInMilliSeconds
+たとえば、未処理の要求の数が2の場合、合計ラウンドトリップ時間 = MaximumSendPathDelayInMilliSeconds + を使用して、URB 内のアイソクロナスパケットの数は少なくとも (ラウンドトリップ時間の合計)/(サービス間隔の長さ) である必要があります。Maximum○ Pathdelayinmilliseconds
 
-送信を遅らせるかどうか = 10 ミリ秒、完了遅延 = 15msec、合計のラウンド トリップ 25msec を =。
-場合サービス間隔の長さ = 5 ミリ秒アイソクロナス翻訳の数 = 2、継続的なストリーミングの各アイソクロナス翻訳で isochronous パケットの数する必要がありますが、少なくとも、= 25 5/5 パケットを =。
+送信遅延 = 10 ミリ秒、完了遅延 = 15msec 秒、合計ラウンドトリップ数 = 25msec 秒。
+サービス間隔の長さが、連続ストリーミングの場合、アイソクロナス URBs = 2 の長さが5ミリ秒の場合、各アイソクロナス URBs のアイソクロナスパケットの数は少なくとも 25/5 = 5 パケットである必要があります。
 
-## <a name="getting-the-host-controller-transport-characteristics"></a>ホスト コント ローラーのトランスポート特性を取得します。
-クライアント ドライバーでは、これらの Ioctl 要求を送信することによってトランスポート特性を取得できます。
+## <a name="getting-the-host-controller-transport-characteristics"></a>ホストコントローラーのトランスポート特性を取得する
+クライアントドライバーは、次のような Ioctl 要求を送信することによって、トランスポートの特性を取得できます。
 
--    [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
--    [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
--    [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change) 
--    [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)
+-    [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
+-    [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
+-    [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change) 
+-    [IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)
 
-トランスポートの特性は、USB ドライバー スタックがそれらの値を公開する、基になるトランスポートに依存するために常に利用できない可能性があります。 そのため、クライアント ドライバーする必要があります情報を決定する、他のメカニズムを介して IOCTL 要求が失敗したときにします。 
+USB ドライバースタックは基になるトランスポートに依存してそれらの値を公開するため、トランスポートの特性はすべてのケースで使用できるとは限りません。 そのため、クライアントドライバーは、IOCTL 要求が失敗したときに、他のメカニズムを介して情報を特定する必要があります。 
 
 ### <a name="query-for-the-current-transport-characterisctics"></a>現在のトランスポート characterisctics のクエリ
 
-クライアント ドライバーは送信することによって特定の時点でのトランスポート特性をクエリすることができます、 [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)要求。 要求を受信するには、USB ドライバー スタックがと共に直ちに完了 USB_TRANSPORT_CHARACTERISTICS 構造内の現在のトランスポート特性に関する情報。 情報は示しませんが常に、この要求での変更をアルゴリズムを決定する、またはストリームの開始のドライバーで使用できます。 
+クライアントドライバーは、 [IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)要求を送信することによって、特定の時点でトランスポートの特性を照会できます。 USB ドライバースタックは、要求を受信すると、現在のトランスポート特性に関する情報を USB_TRANSPORT_CHARACTERISTICS 構造ですぐに完了します。 情報が常に変更されていることを示すわけではないため、この要求は、アルゴリズムを決定したり、ストリームを開始したりするためにドライバーによって使用されます。 
 
-### <a name="receive-changes-in-trasport-characteristics"></a>Trasport 特性の変更を受信します。
-MA USB、基になるトランスポートがワイヤード (有線)、ワイヤレスで可能性があります。 これらのメディアのトランスポート特性は、時間の経過と共に大きく異なることができます。 クライアント ドライバーで継続的な変更通知を受け取ることができます。
+### <a name="receive-changes-in-trasport-characteristics"></a>Trasport の特性の変更を受信する
+MA USB の場合、基になるトランスポートは有線、ワイヤレスになります。 これらのメディアのトランスポート特性は、時間の経過と共に大きく変化する可能性があります。 クライアントドライバーは、進行中の変更について通知を受け取ることができます。
 
-1.    送信、 [IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)要求の通知を登録します。 登録が成功した場合、クライアント ドライバーは、ハンドルとトランスポート特性の初期値を受け取ります。
+1.    通知を登録するための[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)要求を送信します。 登録が成功した場合、クライアントドライバーは、トランスポート特性のハンドルと初期値を受け取ります。
 
-2.  送信、 [IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)手順 1. で登録ハンドルを要求します。 USB ドライバー スタックは、保留中の要求を保持します。 トランスポート特性の変更のたびに、トランスポートの特性の新しい値で保留中の要求が完了しました。
+2.  手順 1. で取得した登録ハンドルを使用して[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)要求を送信します。 USB ドライバースタックは、要求を保留状態のままにします。 トランスポートの特性が変更されるたびに、保留中の要求はトランスポート特性の新しい値で完了します。
 
-3.  クライアントが完了し、さらに通知の取得中に関心がない、そのことを確認しますが、スタック内の保留中の Ioctl がないと、IOCTL サブ コードを送信して[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)登録ハンドルを渡して、します。 クライアントは、保留中の変更要求の登録を解除場合、USB スタックは完了して IOCTL 登録解除を完了する前にします。
+3.  クライアントが実行され、さらに通知されないようにするには、スタックに保留中の Ioctl がないことを確認してから、サブコード[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)で ioctl を送信し、登録ハンドルを渡します。 クライアントが保留中の変更要求で登録を解除すると、USB スタックは、IOCTL の登録解除を完了する前にそれらを完了させます。
 
-### <a name="query-for-device-characteristics"></a>デバイスの特性のクエリ
+### <a name="query-for-device-characteristics"></a>デバイスの特性に関するクエリ
 
-Determione に最大値などの USB デバイスに関する標準の特性が送信し、クライアント ドライバーを送信するすべての要求の遅延を受信、 [IOCTL_USB_GET_DEVICE_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ns-usbioctl-_usb_device_characteristics)要求。
+要求の送信と受信の最大遅延など、USB デバイスに関する e 特性を判別するために、クライアントドライバーは[IOCTL_USB_GET_DEVICE_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ns-usbioctl-_usb_device_characteristics)要求を送信できます。
 
-## <a name="setting-priority-for-a-bulk-endpoint"></a>一括エンドポイントの優先度の設定
+## <a name="setting-priority-for-a-bulk-endpoint"></a>一括エンドポイントの優先順位の設定
 
-特定のクライアント ドライバーでは、一括エンドポイントを使用して、さまざまな種類のデータを一括転送の優先度クラスに収まらないを実行するための場合があります。 たとえば、USB のディスプレイ ドライバーは、ディスプレイのフレームとカーソルの更新プログラムを実行するため一括エンドポイントを使用することができます。 MIDI の USB オーディオ ドライバーでは、オーディオ/音声データを実行するため、一括のエンドポイントを使用できます。
-ユーザー良好なエクスペリエンス MA USB 経由でこのようなクライアント ドライバーで、ドライバーはデータの種類に基づく一括転送を優先する必要があります。 たとえば、マウス カーソルの更新実行する一括エンドポイントまたはオーディオ/音声データ設定されなければなりません最も高い優先度表示/ビデオまたはストレージのデータを保持する一括エンドポイントは中位の優先順位を設定することは。
+場合によっては、一括転送の優先度クラスに収まらないさまざまな種類のデータを送信するために、特定のクライアントドライバーが一括エンドポイントを使用することがあります。 たとえば、USB ディスプレイドライバーでは、表示フレームとカーソルの更新を行うために一括エンドポイントを使用できます。 MIDI 用の USB オーディオドライバーでは、オーディオ/音声データを伝送するために一括エンドポイントを使用できます。
+このようなクライアントドライバーを使用したユーザーエクスペリエンスを向上させるために、ドライバーはデータの種類に基づいて一括転送の優先順位を設定する必要があります。 たとえば、マウスカーソルの更新またはオーディオ/音声データを伝送する一括エンドポイントは、最も優先度の高いものとしてマークする必要がありますが、表示/ビデオまたはストレージデータを保持する一括エンドポイントは "中" の優先順位に設定する必要があります。
 
-クライアント ドライバーでは、デバイスのハードウェアのレジストリ キーのデバイス パラメーターのサブキーの特定の一括エンドポイント priorties を定義することで、オプションを設定できます。  
+クライアントドライバーは、デバイスの HW レジストリキーのデバイスパラメーターサブキーで、特定の一括エンドポイントの priorties を定義することで、オプションを設定できます。  
 
-レジストリ値の形式は、という名前の複数**EndpointPriorities**します。  複数行文字列内の各文字列は、特定のエンドポイントの優先順位を定義します。  文字列の形式のとおりです:"<CONFIG>、<INTERFACE>、<ALTSETTING>、<TYPE>、<ORDER>、<PRIORITY>"
+レジストリ値の形式は、 **Endpointpriorities**という名前の文字列です。  複数文字列内の各文字列は、特定のエンドポイントの優先度を定義します。  文字列の形式は次のとおりです。 "<CONFIG>、<INTERFACE>、<ALTSETTING>、<TYPE>、<ORDER>、<PRIORITY>"
 
 各項目の意味は次のとおりです。
 
--    – CONFIG を示す値を 10 進数、 **bConfigurationValue**構成記述子で定義されているエンドポイントを格納している構成の値。  0 の値が無効です。  ワイルドカード値"*"を示すすべての構成に適用される指定することがあります。
+-    CONFIG –構成記述子で定義されているエンドポイントを含む構成の**Bconfigurationvalue**値を示す10進値。  値0は無効です。  ワイルドカード値 "*" を指定すると、すべての構成に適用されることを示すことができます。
 
--    インターフェイスの 10 進値を示す、 **bInterfaceNumber**インターフェイス記述子で定義されているエンドポイントが含まれた構成内のインターフェイスとして。  ワイルドカード値"*"を示すすべてのインターフェイスに適用される指定することがあります。  USB デバイス全体ではなく複合 USB 関数にレジストリ設定を適用されている場所の場合は、インターフェイスの値を示します。
+-    INTERFACE-インターフェイス記述子で定義されている、エンドポイントを含む構成内のインターフェイスの**bInterfaceNumber**を示す10進値。  ワイルドカード値 "*" を指定すると、すべてのインターフェイスに適用されることを示すことができます。  レジストリ設定が USB デバイス全体ではなく複合 USB 関数に適用されている場合、インターフェイスの値はを示します。
 
--    ALTSETTING - インターフェイスの bAlternateSetting 値を表す 10 進値の代替設定します。  ワイルドカード値"*"に、インターフェイス内のすべての代替設定に適用されるかを示すことができます。
+-    ALTSETTING-インターフェイスの代替設定の bAlternateSetting 値を示す10進値。  ワイルドカード値 "*" を使用して、インターフェイス内のすべての代替設定に適用されることを示すことができます。
 
--    入力 - 型および指定されているエンドポイントの方向を示します。  有効な文字列は**BULK_IN**、 **BULK_OUT**、 **INTERRUPT_IN**、 **INTERRUPT_OUT**、 **ISOCHRONOUS_IN**、 **ISOCHRONOUS_OUT**、および**コントロール**します。  
+-    TYPE-指定されているエンドポイントの種類と方向を示します。  有効な文字列は**BULK_IN**、 **BULK_OUT**、 **INTERRUPT_IN**、 **INTERRUPT_OUT**、 **ISOCHRONOUS_IN**、 **ISOCHRONOUS_OUT**、および**コントロール**します。  
 
--    配置 - に適用されます、インターフェイス内でエンドポイントの優先順位を示す 0 から始まる 10 進値。  たとえば、インターフェイスが 3 つの BULK_OUT エンドポイントがある場合は、最初のエンドポイントが 0 の位置の値、1 と 2 番目のエンドポイントによって指定されます。  複合 USB デバイス上の関数のインターフェイスの番号、インターフェイスを基準に割り当てられます複合の関数では、親の USB デバイスではありません。
+-    POSITION-インターフェイス内で優先順位が適用されるエンドポイントを示す0から始まる10進値。  たとえば、インターフェイスに3つの BULK_OUT エンドポイントがある場合、最初のエンドポイントは、position 値が0、2番目のエンドポイントが1によって指定されます。  複合 USB デバイス上の関数の場合、インターフェイス番号は親の USB デバイスではなく、複合関数に割り当てられたインターフェイスに対して相対的です。
 
 以下に例を示します。
 
@@ -99,14 +99,14 @@ REG_MULTI_SZ:"EndpointPriorities" =
 "1,1,*,BULK_OUT,0,VOICE",  // First BULK OUT endpoint in interface 1, configuration 1, all alternate settings has VOICE priority. 
 "2,1,0,BULK_OUT,1,INTERACTIVE"” // BULK OUT endpoint in configuration 2, interface 1, alt setting 1 has INTERACTIVE priority.
 ```
-## <a name="see-also"></a>関連項目
-[WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)
+## <a name="see-also"></a>参照
+[WdfUsbTargetDeviceCreateUrb](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreateurb)
 
-[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)
-[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
+[USBD_UrbAllocate](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)
+[IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_get_transport_characteristics)
 
-[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
+[IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_register_for_transport_characteristics_change)
 
-[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)
+[IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_notify_on_transport_characteristics_change)
 
-[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)
+[IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_usb_unregister_for_transport_characteristics_change)

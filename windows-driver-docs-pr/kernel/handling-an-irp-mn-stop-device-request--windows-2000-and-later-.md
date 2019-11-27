@@ -6,44 +6,44 @@ keywords:
 - IRP_MN_STOP_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e399fa2809870e8bb9c626dc4fff6f8c51021aca
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f6f992c337719cefb3229e43f8224f83e06b0a82
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355229"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72836591"
 ---
-# <a name="handling-an-irpmnstopdevice-request-windows-2000-and-later"></a>IRP の処理\_MN\_停止\_デバイス (Windows 2000 以降) を要求します。
+# <a name="handling-an-irp_mn_stop_device-request-windows-2000-and-later"></a>IRP\_の処理\_\_デバイスの要求の停止 (Windows 2000 以降)
 
 
 
 
 
-[ **IRP\_MN\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)デバイス スタックの最上位のドライバーによって、各 [次へ] の下のドライバーでし、要求が最初に処理します。 ドライバーのハンドルに Irp の停止、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+[ **\_デバイス要求\_停止する IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)は、デバイススタックの上位のドライバーによって最初に処理され、次に下位のドライバーごとに処理されます。 ドライバーは、 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで停止 irp を処理します。
 
-ドライバーの処理、 **IRP\_MN\_停止\_デバイス**次のようなプロシージャを使って要求。
+ドライバーは、次のような手順を使用して、 **\_デバイスの要求\_停止する IRP\_** を処理します。
 
-1.  デバイスが一時停止したことを確認します。
+1.  デバイスが一時停止されていることを確認します。
 
-    かどうか、ドライバーが完全に一時停止しないへの応答でデバイス、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)要求、ここでは、する必要があります。 保持設定\_新規\_要求がデバイスの拡張機能のフラグし、デバイスを一時停止に必要なその他の操作を実行します。
+    IRP\_に応答してデバイスを完全に一時停止しなかった場合は[ **\_クエリ\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)の要求を停止します。 デバイス拡張機能で HOLD\_NEW\_REQUESTS フラグを設定し、デバイスを一時停止するために必要なその他の操作を実行します。
 
-    デバイスは、リソースに再調整操作中に電源を失う可能性があり、そのため、デバイスの状態を失う可能性があります。 デバイスのドライバーが、デバイスの状態情報を保存する必要があり、後続の受信時に復元[ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。
+    デバイスのリソース再調整操作中に電力が失われる可能性があるため、デバイスの状態が失われる可能性があります。 デバイスのドライバーは、デバイスの状態に関する情報を保存し、後続の IRP\_を受信したときにその情報を復元して[ **\_デバイスの要求\_開始**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)する必要があります。
 
-2.  デバイスのハードウェア リソースを解放します。
+2.  デバイスのハードウェアリソースを解放します。
 
-    関数のドライバー、正確な操作は、デバイスとドライバーによって異なりますが、切断割り込みを含めることができます[ **IoDisconnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterrupt)と物理アドレスの範囲を解放[ **MmUnmapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)、I/O ポートを解放します。
+    関数ドライバーでは、正確な操作はデバイスとドライバーによって異なりますが、割り込みの切断、 [**io切った割り込み**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterrupt)の切断、 [**Mmunmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace)を使用した物理アドレス範囲の解放、i/o ポートの解放などを行うことができます。
 
-    ドライバーがへの応答でリソースを解放する必要があります、フィルターまたはバス ドライバーに、デバイスのハードウェア リソースが取得される場合、 **IRP\_MN\_停止\_デバイス**要求。
+    フィルターまたはバスドライバーによってデバイスのハードウェアリソースが取得された場合、そのドライバーは IRP\_に応答してリソースを解放し、 **\_デバイスの要求\_停止**する必要があります。
 
-3.  設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+3.  **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-4.  [次へ] の下のドライバーに IRP を渡すか、IRP を完了します。
+4.  IRP を次の下位のドライバーに渡すか、または IRP を完了します。
 
-    -   関数またはフィルター ドライバーでは、セットアップで [次へ] スタックの場所[ **IoSkipCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で [次へ] の下位のドライバーに IRP を渡す[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)からの状態を返すと**保留**から戻り値の状態として、 *DispatchPnP*ルーチン。 IRP を実行しないでください。
+    -   関数またはフィルタードライバーで、次のスタックの場所を[**IoskipIoCallDriver Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で設定します。次に、IRP を[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を使用して次の下位のドライバーに渡し、 **IoCallDriver**から状態を*DispatchPnP*ルーチンからのリターンステータスとして返します。 IRP を完了しないでください。
 
-    -   バス ドライバーの完了を使用して、IRP [ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest) IO と\_いいえ\_インクリメント演算子とからの戻り値、 *DispatchPnP*ルーチン。
+    -   バスドライバーでは、 [**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を使用して IRP を完了します。 IO\_は\_インクリメントを行わず、 *DispatchPnP*ルーチンからを返します。
 
-リソースを再調整する、デバイスを停止すると、中に、ドライバーは、デバイスにアクセスする任意の Irp を開始できません。 」の説明に従って、ドライバーは、このような Irp をキューする必要があります[を保持している受信 Irp ときに、デバイスが一時停止](holding-incoming-irps-when-a-device-is-paused.md)、またはキュー、ドライバーは IRP を保持するを実装していない場合に、I/O 要求を削除する必要がありますしないと失敗します。
+デバイスがリソースの再調整を停止している間、デバイスにアクセスする Irp を開始することはできません。 ドライバーは、[デバイスが一時停止したときの受信 irp の保持](holding-incoming-irps-when-a-device-is-paused.md)に関するページで説明されているように、このような irp をキューに格納する必要があります。また、ドライバーが IRP を保持するキューを実装しておらず、i/o 要求を削除してはいけない場合は失敗します。
 
  
 

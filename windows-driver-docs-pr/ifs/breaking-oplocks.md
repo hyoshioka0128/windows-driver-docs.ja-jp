@@ -4,12 +4,12 @@ description: Oplock の破損
 ms.assetid: 1f3c4a99-5ad2-4597-a1c9-a21f80c40291
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 365e344cbce7695cc69840a558d7b95168a76051
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: be10a1b3a47d9296b7e8937af665654246f778e2
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364353"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841482"
 ---
 # <a name="breaking-oplocks"></a>Oplock の破損
 
@@ -17,27 +17,27 @@ ms.locfileid: "67364353"
 ## <span id="ddk_network_redirector_design_and_performance_if"></span><span id="DDK_NETWORK_REDIRECTOR_DESIGN_AND_PERFORMANCE_IF"></span>
 
 
-Oplock が付与された後にその oplock の所有者は、(要求された oplock の種類に基づく) ストリームにアクセスできます。 受信操作に現在の oplock の互換性がない場合、oplock は解除されます。
+Oplock が付与されると、その oplock の所有者は、要求された oplock の種類に基づいて、ストリームにアクセスできるようになります。 受信した操作が現在の oplock と互換性がない場合、oplock は解除されます。
 
-Oplock が付与される要求元の IRP が保留にします。 状態で保留 oplock 要求 IRP が完了しました、oplock が切れた場合\_成功します。 レベル 1、バッチ、およびフィルターの各 oplock の**IoStatus.Information** IRP のメンバー、oplock の重大なレベルを示すために設定されます。 これらのレベルは次のとおりです。
+Oplock が付与されると、要求元の IRP は保留されます。 Oplock が解除されると、保留中の oplock 要求の IRP は状態\_SUCCESS で完了します。 レベル1、バッチ、およびフィルターについては、の Iostatus を適用し**ます。** IRP の情報メンバーは、oplock が中断されているレベルを示すように設定されます。 これらのレベルは次のとおりです。
 
--   ファイル\_OPLOCK\_切断\_TO\_なし - oplock が解除され、ストリームの現在の oplock はありません。 Oplock が壊れている"none"と呼ばれます。
+-   ファイル\_OPLOCK\_破損している\_を\_NONE-oplock が解除され、ストリームに現在の oplock がありません。 Oplock は "None に破損しています" と言います。
 
--   ファイル\_OPLOCK\_切断\_TO\_レベル\_2 - 現在の oplock (レベル 1 またはバッチ) は、レベル 2 oplock に変換されました。 レベル 2 へのフィルターの各 oplock を解除しないを None に常に中断することに注意してください。
+-   ファイル\_OPLOCK\_\_レベル\_2 に\_破損しています。現在の oplock (レベル1またはバッチ) はレベル2の oplock に変換されました。 フィルターの oplock がレベル2になることはないことに注意してください。これは常に [なし] になります。
 
-ハンドルの読み取りの読み取り/書き込みと読み取り-書き込みハンドル oplocks、oplock の重大なレベルが 0 個以上の OPLOCK のフラグの組み合わせとして説明されている\_レベル\_キャッシュ\_読み取り、OPLOCK\_レベル\_キャッシュ\_ハンドル、または OPLOCK\_レベル\_キャッシュ\_書き込み、 **NewOplockLevel**メンバー要求の\_OPLOCK\_出力\_として渡されたバッファーの構造、 *lpOutBuffer*パラメーターの[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)します。 同様の方法で[ **FltFsControlFile** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)と[ **ZwFsControlFile** ](https://msdn.microsoft.com/library/windows/hardware/ff566462)カーネル モードから Windows 7 の各 oplock を要求するために使用できます。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)します。
+読み取りハンドル、読み取り/書き込み、および読み取り/書き込みハンドルの oplock は、oplock を解除するレベルを、0個以上のフラグ OPLOCK の組み合わせとして記述されます\_レベル\_キャッシュ\_読み取り、OPLOCK\_レベル\_キャッシュ\_ハンドル、または OPLOCK\_レベル\_キャッシュ\_要求の DeviceIoControl の*Lpoutbuffer*パラメーターとして渡さ**れたバッファー**構造を書き込み\_ます。 [](https://go.microsoft.com/fwlink/p/?linkid=124239).\_\_ 同様の方法で、 [**Fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)と[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)を使用して、カーネルモードから Windows 7 の oplock を要求できます。 詳細については、「 [**FSCTL\_REQUEST\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)」を参照してください。
 
-フィルター処理、読み取り/書き込み、読み取り、書き込みハンドル、または、特定の状況 (注を参照してください)、読み取りハンドル oplock、IRP の完了、oplock パッケージによって保留 oplock の要求および、oplock を原因となった操作自体では、レベル 1 に、バッチを中断するときに保留 (同期ハンドルでは、上で、操作が発行または IRP が場合\_MJ\_作成で、同期は常に、I/O マネージャーにより、操作の状態を返すのではなく、ブロック、\_PENDING) 待機している、保留操作を続行するには、安全では、その処理が終了したら、oplock のパッケージを指示する、oplock の所有者から受信確認。 この遅延の目的は、現在の操作を続行する前に一貫性のある状態に戻るストリームを格納する、oplock の所有者を許可します。 システムは、タイムアウトが存在しないため、受信確認の受信を永久に待機します。 適切なタイミングで、中断を受け入れますが、oplock の所有者の責任ためです。 保留操作の IRP がキャンセル可能な状態に設定されています。 Oploack パッケージのステータスの IRP がすぐに完了場合は、アプリケーションまたはドライバーが、待機を実行する終了する\_キャンセルします。
+レベル1、バッチ、フィルター、読み取り/書き込み、読み取り/書き込みハンドル、または特定の状況下で (注を参照)、読み取りハンドルの oplock を解除すると、oplock パッケージによって保留中の oplock 要求 IRP が完了し、oplock の原因となった操作が実行されます。保留 (操作が同期ハンドルに対して実行される場合、または同期ハンドルに対して実行される場合は、IRP\_MJ\_CREATE (常に同期される) であることに注意してください。 i/o マネージャーによって操作がブロックされます。返される状態\_PENDING)は、oplock の所有者からの受信確認を待機して、処理が完了したことを oplock パッケージに伝えます。また、保留中の操作を続行することも安全です。 この遅延の目的は、oplock の所有者が、現在の操作を続行する前にストリームを一貫性のある状態に戻すことができるようにすることです。 タイムアウトがないため、システムは無期限に受信確認を受信します。 そのため、oplock の所有者は、適切なタイミングで中断を確認する必要があります。 保留中の操作の IRP は、キャンセル可能な状態に設定されます。 待機を実行しているアプリケーションまたはドライバーが終了した場合、o/the IRP は状態\_取り消された状態で直ちに完了します。
 
-IRP\_MJ\_IRP の作成は、ファイルを指定できます\_完了\_場合\_OPLOCKED oplock 中断の受信確認の一部としてブロックされるを防ぐためのオプションを作成します。 このオプションは、oplock の中断の受信確認が受信されるまで作成 IRP のブロックを oplock パッケージを指定します。 代わりに、作成の実行を許可します。 リターン コードは、状態、oplock の場合、正常に作成\_OPLOCK\_BREAK\_IN\_状態ではなく、進行状況\_成功します。 ファイル\_完了\_場合\_OPLOCKED フラグは、通常、デッドロックを回避するために使用します。 たとえば、クライアントにストリームの oplock が所有するいるし、同じストリームを開いて、同じクライアント、クライアントには自体を oplock の承認を待つがブロックします。 このシナリオでは、ファイルの使用\_完了\_場合\_OPLOCKED フラグは、デッドロックを回避できます。
+IRP\_MJ\_CREATE IRP では、oplock 解除確認の一部としてブロックされないように\_OPLOCKED create オプションを指定すると、ファイル\_\_完了するように指定できます。 このオプションは、oplock 解除の受信確認が受信されるまで、create IRP をブロックしないように oplock パッケージに指示します。 代わりに、作成を続行できます。 作成が成功した場合、oplock ブレークが発生すると、ステータス\_SUCCESS ではなく\_の進行状況で\_中断\_\_OPLOCK が返されます。 \_OPLOCKED フラグがデッドロックを回避するために通常使用される場合は、ファイル\_完了\_ます。 たとえば、クライアントがストリームで oplock を所有していて、同じクライアントが同じストリームを開いた場合、クライアントは、それ自体が oplock の中断を確認するのを待機してブロックします。 このシナリオでは、\_OPLOCKED フラグによってデッドロックが回避される場合、ファイル\_\_を使用します。
 
-NTFS ファイル システムでは、共有違反をチェックする前にバッチとフィルターの各 oplock の oplock の区切りを開始するため、指定されたファイルを作成する可能性が\_完了\_場合\_OPLOCKEDの状態で失敗するには\_共有\_違反では、中断するバッチまたはフィルター oplock が発生します。 ここでの情報のメンバー、 [ **IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_status_block)構造がファイルに設定されている\_OPBATCH\_中断\_このケースを検出するために、呼び出し元を許可するには、進行中です。
+NTFS ファイルシステムは、共有違反を確認する前に、バッチとフィルターの oplock に対して oplock の解除を開始するため、指定されたファイル\_が\_完了したとしても、\_OPLOCKED が状態\_共有に失敗する可能性があり\_違反が発生しても、バッチまたはフィルターの oplock は中断されます。 この場合は、 [**IO\_STATUS\_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造体の情報メンバーが FILE\_opbatch\_BREAK\_実行中に設定され、呼び出し元がこのケースを検出できるようになります。
 
-ハンドルの読み取りと書き込みハンドルの読み取り oplock の場合は、NTFS をチェックし、共有違反を検出した後、oplock が開始されます。 これにより、そのハンドルを閉じるし、なり、ユーザーに返さない共有違反の可能性を邪魔を取得するこれらの各 oplock 営業案件の所有者です。 また、無条件に oplock を oplock をキャッシュするハンドルは、新規作成と競合しない場合もなくなります。
+読み取りハンドルと読み取り/書き込みハンドルの oplock の場合、共有違反を検出して検出すると、oplock の解除が開始されます。 これにより、これらの oplock を解除してハンドルを終了し、ユーザーに共有違反を返すことができないようにする機会が与えられます。 また、oplock によってキャッシュされたハンドルが新しい create と競合しない場合に、無条件で oplock が解除されるのを回避できます。
 
-第 2 のレベルを読み取るときに、特定の状況 (注を参照してください) で読み取りハンドル oplock の中断、システムは受信確認の場合に待機しません。 これは、ことはありませんキャッシュされている状態で他のクライアントへのアクセスを許可する前に、ファイルを復元する必要があるストリームであるためにです。
+レベル2、読み取り、および、特定の状況下 (注を参照)、読み取りハンドル oplock 解除、システムは受信確認を待機しません。 これは、他のクライアントからのアクセスを許可する前に、ファイルに復元する必要があるストリームには、キャッシュされた状態がないためです。
 
-Oplock を切断する必要があるかどうかを判断する現在の oplock の状態を確認する特定のファイル システム操作があります。 以下のセクションでは、各操作を一覧表示し、oplock 何によってトリガー、どのようにして決まります oplock が区切りレベルと、中断の受信確認が必要かどうかについて説明します。
+現在の oplock 状態をチェックして oplock を解除する必要があるかどうかを判断する、特定のファイルシステム操作があります。 次のセクションでは、各操作の一覧を示し、oplock 解除のトリガー、oplock が中断されるレベルを決定する方法、および中断の確認が必要かどうかについて説明します。
 
 - [IRP_MJ_CREATE](irp-mj-create2.md)
 
@@ -53,9 +53,9 @@ Oplock を切断する必要があるかどうかを判断する現在の oplock
 
 - [IRP_MJ_FILE_SYSTEM_CONTROL](irp-mj-file-system-control2.md)
 
-Windows 7 の oplock の中断が場合、受信確認を必要とする要求\_OPLOCK\_出力\_フラグ\_ACK\_必須フラグが設定されて、**フラグ**のメンバー、要求\_OPLOCK\_出力\_の出力パラメーターとして渡されたバッファーの構造体[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)(*lpOutBuffer*)、 [ **FltFsControlFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltfscontrolfile)(*OutBuffer*) または[ **ZwFsControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)(*OutBuffer*)。 詳細については、次を参照してください。 [ **FSCTL\_要求\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)します。
+Windows 7 の oplock を解除するには、要求の**Flags**メンバーで\_出力\_フラグ\_ACK\_必要なフラグが設定されている場合は、受信確認が必要\_要求\_OPLOCK\_出力\_バッファー[DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)(*Lpoutbuffer*)、 [**fltfscontrolfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltfscontrolfile)(*Outbuffer*)、または[**zwfscontrolfile**](https://msdn.microsoft.com/library/windows/hardware/ff566462)(*outbuffer*) の出力パラメーターとして渡された構造体。 詳細については、「 [**FSCTL\_REQUEST\_OPLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ifs/fsctl-request-oplock)」を参照してください。
 
-**注**  上記の操作を一覧表示と読み取りハンドル oplock の中断がの結果の詳細を説明します。、保留中、oplock を無効にした操作の。 たとえば、 [IRP\_MJ\_作成](irp-mj-create2.md)トピックに関連付けられているハンドルの読み取りの詳細が含まれています。
+ここに示されている操作ごとのトピックでは、読み取りハンドルの oplock が解除されたときに、oplock を壊す操作が保留になった場合の詳細について説明し**て  ます**。 たとえば、 [IRP\_MJ\_CREATE](irp-mj-create2.md)トピックには、関連付けられている読み取りハンドルの詳細が含まれています。
 
  
 

@@ -3,72 +3,72 @@ title: 高速ミューテックスと保護されたミューテックス
 description: 高速ミューテックスと保護されたミューテックス
 ms.assetid: 8c8014bf-6b81-4039-ae93-d4cedd6d6fed
 keywords:
-- 同期 WDK カーネルでは、高速なミュー テックス
-- 同期 WDK カーネルでは、保護されたミュー テックス
-- 保護されたミュー テックス WDK カーネル
-- 高速なミュー テックス WDK カーネル
-- ミュー テックス WDK カーネル
+- 同期 WDK カーネル、高速ミューテックス
+- 同期 WDK カーネル、保護されたミューテックス
+- 保護された mutex WDK カーネル
+- 高速ミューテックス WDK カーネル
+- mutex WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 358b4c3450472823e13b3bf37ee486bc8d95a973
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4139553213606144b0559b725fb23adeafb80c4b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386609"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838694"
 ---
 # <a name="fast-mutexes-and-guarded-mutexes"></a>高速ミューテックスと保護されたミューテックス
 
 
-ドライバーを使用できます Windows 2000 以降、*ミュー テックスを高速*IRQL で実行されるコードの相互排他のオーバーヘッドの少ない形式を必要な場合&lt;APC を =\_レベル。 高速なミュー テックスは、一度に 1 つのスレッドによって入力必要のあるコード パスを保護できます。 スレッドである保護されたコード パスを入力する*取得*ミュー テックスです。 別のスレッドがミュー テックスを取得済みの場合、ミュー テックスが解放されるまで、現在のスレッドの実行は中断されます。 保護されているコードのパスをスレッドを終了する*解放*ミュー テックスです。
+Windows 2000 以降では、IRQL &lt;= APC\_レベルで実行されるコードに対して、低オーバーヘッド形式の相互排他が必要な場合、ドライバーは*高速ミューテックス*を使用できます。 高速ミューテックスは、一度に1つのスレッドでのみ入力する必要があるコードパスを保護できます。 保護されたコードパスを入力するために、スレッドはミューテックスを*取得*します。 別のスレッドが既にミューテックスを取得している場合、ミューテックスが解放されるまで、現在のスレッドの実行は中断されます。 保護されたコードパスを終了するために、スレッドはミューテックスを*解放*します。
 
-Windows Server 2003 以降では、ドライバーも使用できます*ミュー テックスを保護された*します。 保護されたミュー テックスは高速なミュー テックスに置き換わりますが、パフォーマンスが向上します。 保護されたミュー テックスは、高速のミュー テックスなど、一度に 1 つのスレッドによって入力必要のあるコード パスを保護できます。 ただし、ミュー テックスの実行が高速なミュー テックスを使用するコードをより迅速に保護を使用するコード。
+Windows Server 2003 以降では、ドライバーは保護された*ミューテックス*を使用することもできます。 保護されたミューテックスは、高速ミューテックスのドロップイン置換ですが、パフォーマンスが向上します。 高速ミューテックスと同様に、保護されたミューテックスは、一度に1つのスレッドだけが入力する必要があるコードパスを保護できます。 ただし、保護されたミューテックスを使用するコードは、高速ミューテックスを使用するコードよりも高速に実行されます。
 
-Windows 8 の前に Windows のバージョンでは、保護されたミュー テックスは、高速なミュー テックスを異なる方法で実装されます。 IRQL で高速なミュー テックスによって保護されているコード パスが実行される = APC\_レベル。 IRQL で保護されたミュー テックスによって保護されているコード パスが実行される&lt;APC を =\_レベルがすべての Apc が無効になっています。 これら以前のバージョンの Windows では、保護されたミュー テックスの取得より高速なミュー テックスの取得も高速な操作です。 ただし、これら 2 種類のミュー テックスは、動作は同じです、同じ制限が適用されます。 具体的には、カーネルのルーチンはないを IRQL で呼び出す APC を =\_レベルは、高速なミュー テックスまたは保護されたミュー テックスによって保護されているコード パスから呼び出すことはできません。
+Windows 8 より前のバージョンの Windows では、保護されたミューテックスが高速ミューテックスとは異なる方法で実装されています。 高速ミューテックスによって保護されているコードパスは、IRQL = APC\_レベルで実行されます。 保護されたミューテックスによって保護されているコードパスは、IRQL &lt;= APC\_レベルで実行されますが、すべての Apc は無効になっています。 以前のバージョンの Windows では、保護されたミューテックスを取得する操作は高速ミューテックスの取得よりも高速です。 ただし、これらの2種類のミューテックスは同じように動作し、同じ制限が適用されます。 特に、IRQL = APC\_LEVEL で呼び出すことができないカーネルルーチンは、高速ミューテックスまたは保護されたミューテックスで保護されているコードパスからは呼び出さないでください。
 
-Windows 8 以降、保護されたミュー テックスは、高速なミュー テックスとして実装されます。 保護されたミュー テックスまたは高速のミュー テックスによって保護されているコード パスで[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)処理として IRQL で発生しているカーネル ルーチン = APC\_レベル。 APC で有効でない呼び出し、Windows の以前のバージョンと\_レベルは、保護されたミュー テックスまたは高速なミュー テックスによって保護されているコード パスで無効です。
+Windows 8 以降では、保護されたミューテックスは高速ミューテックスとして実装されています。 保護されたミューテックスまたは高速ミューテックスによって保護されているコードパスでは、[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)は、IRQL = APC\_レベルで発生するようにカーネルルーチンへの呼び出しを処理します。 以前のバージョンの Windows と同様に、APC\_レベルでは無効な呼び出しは、保護されたミューテックスまたは高速ミューテックスによって保護されているコードパスでは無効です。
 
-### <a name="fast-mutexes"></a>高速なミュー テックス
+### <a name="fast-mutexes"></a>高速ミューテックス
 
-高速なミュー テックスがによって表される、 [**高速\_ミュー テックス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 ドライバーの独自のストレージを割り当てます、**高速\_ミュー テックス**構造体に呼び出し、 [ **ExInitializeFastMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-exinitializefastmutex)ルーチンを構造体を初期化します。
+高速ミューテックスは、[**高速\_mutex**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体によって表されます。 ドライバーは、**高速\_MUTEX**構造用に独自のストレージを割り当ててから、 [**Exinitializefastmutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializefastmutex)ルーチンを呼び出して構造体を初期化します。
 
-スレッドでは、次のいずれかの方法で高速のミュー テックスを取得します。
+スレッドは、次のいずれかの方法で高速ミューテックスを取得します。
 
--   呼び出す、 [ **ExAcquireFastMutex** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))ルーチン。 ミュー テックスは、別のスレッドによって既に取得されていますが、ミュー テックスができるまで、呼び出し元のスレッドの実行が中断されます。
+-   [**ExAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))ルーチンを呼び出しています。 ミューテックスが既に別のスレッドによって取得されている場合、ミューテックスが使用可能になるまで、呼び出し元スレッドの実行は中断されます。
 
--   呼び出す、 [ **ExTryToAcquireFastMutex** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))ルーチンを現在のスレッドを中断することがなく、高速、ミュー テックスを取得しようとしています。 ルーチンは、ミュー テックスが取得されているかどうかに関係なく、すぐに返します。 **ExTryToAcquireFastMutex**返します**TRUE** ; 呼び出し元のミュー テックスを正常に取得した場合、それを返します**FALSE**します。
+-   [**ExTryToAcquireFastMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545647(v=vs.85))ルーチンを呼び出して、現在のスレッドを中断せずに高速ミューテックスを取得しようとしています。 このルーチンは、ミューテックスが取得されたかどうかに関係なく、直ちに戻ります。 **ExTryToAcquireFastMutex**は、呼び出し元のミューテックスを正常に取得した場合、 **TRUE**を返します。それ以外の場合は**FALSE**を返します。
 
-スレッドが[ **ExReleaseFastMutex** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545549(v=vs.85))いずれかで取得された高速なミュー テックスを解放する**ExAcquireFastMutex**または**ExTryToAcquireFastMutex**.
+スレッドは、 [**Exreleasefastmutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545549(v=vs.85))を呼び出して、 **ExAcquireFastMutex**または**ExTryToAcquireFastMutex**のいずれかによって取得された高速ミューテックスを解放します。
 
-IRQL で高速なミュー テックスによって保護されているコード パスが実行される = APC\_レベル。 **ExAcquireFastMutex**と**ExTryToAcquireFastMutex** APC を現在の IRQL を発生させる\_レベル、および**ExReleaseFastMutex**元の IRQL が復元されます。 そのため、スレッドが高速なミュー テックスを保持している間、すべての Apc が無効です。
+高速ミューテックスによって保護されているコードパスは、IRQL = APC\_レベルで実行されます。 **ExAcquireFastMutex**と**ExTryToAcquireFastMutex**は、現在の IRQL を APC\_レベルに上げ、 **exreleasefastmutex**は元の irql を復元します。 したがって、スレッドが高速ミューテックスを保持している間は、すべての Apc が無効になります。
 
-APC で常に実行するかどうかに、コード パスは保証\_レベル、ドライバーは呼び出すことができます代わりに[ **ExAcquireFastMutexUnsafe** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544340(v=vs.85))と[ **ExReleaseFastMutexUnsafe** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545567(v=vs.85))を取得し、高速なミュー テックスを解放します。 これらのルーチンが現在の IRQL を変更しないでくださいし、安全に使用できる現在の IRQL が APC が場合にのみ\_レベル。
+コードパスが常に APC\_レベルで実行されることが保証されている場合、ドライバーは[**ExAcquireFastMutexUnsafe**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544340(v=vs.85))と[**ExReleaseFastMutexUnsafe**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff545567(v=vs.85))を呼び出して、高速ミューテックスを取得して解放することができます。 これらのルーチンは、現在の IRQL を変更せず、現在の IRQL が APC\_レベルの場合にのみ安全に使用できます。
 
-高速なミュー テックスは、取得した再帰的にすることはできません。 高速なミュー テックスが既に保持しているスレッドは、それを取得しようとすると、そのスレッドがデッドロックが発生します。 高速なミュー テックスは IRQL で実行されるコードでのみ使用できます&lt;APC を =\_レベル。
+高速ミューテックスを再帰的に取得することはできません。 既に高速ミューテックスを保持しているスレッドがそのスレッドを取得しようとすると、そのスレッドはデッドロック状態になります。 高速ミューテックスは、IRQL &lt;= APC\_レベルで実行されるコード内でのみ使用できます。
 
-### <a name="guarded-mutexes"></a>保護されたミュー テックス
+### <a name="guarded-mutexes"></a>保護されたミューテックス
 
-Windows Server 2003 以降から使用できますが、保護されたミュー テックスより高いパフォーマンスが、高速なミュー テックスは、同じ関数を実行します。
+Windows Server 2003 以降で使用可能な保護されたミューテックスは、高速ミューテックスと同じ機能を実行しますが、パフォーマンスは高くなります。
 
-Windows 8 以降、保護されたミュー テックスと高速なミュー テックス実装されます同じです。
+Windows 8 以降では、保護されたミューテックスと高速ミューテックスは同じように実装されています。
 
-Windows 8 の前に Windows のバージョンでは、保護されたミュー テックスは、高速なミュー テックスを異なる方法で実装されます。 APC を現在の IRQL を発生させる、高速なミュー テックスを獲得\_レベルをすばやく処理、保護された領域を入力して、保護されたミュー テックスを取得します。 保護された領域の詳細については、次を参照してください。[クリティカル領域および領域の保護された](critical-regions-and-guarded-regions.md)します。
+Windows 8 より前のバージョンの Windows では、保護されたミューテックスが高速ミューテックスとは異なる方法で実装されています。 高速ミューテックスを取得すると、現在の IRQL が APC\_レベルに上がりますが、保護されたミューテックスを取得すると、保護された領域に入ります。これは、より高速な操作です。 保護されたリージョンの詳細については、「[クリティカルなリージョンと保護](critical-regions-and-guarded-regions.md)されたリージョン」を参照してください。
 
-保護されたミュー テックスがによって表される、 [ **KGUARDED\_ミュー テックス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)構造体。 ドライバーの独自のストレージを割り当て、 **KGUARDED\_ミュー テックス**構造体に呼び出し、 [ **KeInitializeGuardedMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-keinitializeguardedmutex)ルーチンを初期化するために、構造体。
+保護されたミューテックスは、 [**Kguarded**](https://docs.microsoft.com/windows-hardware/drivers/kernel/eprocess)された\_mutex 構造体によって表されます。 ドライバーは、 **\_kguarded の MUTEX**構造用に独自のストレージを割り当ててから、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinitializeguardedmutex)ルーチンを呼び出して構造体を初期化します。
 
-スレッドは、次のいずれかの方法で保護されたミュー テックスを取得します。
+スレッドは、次のいずれかの方法で、保護されたミューテックスを取得します。
 
--   呼び出す[ **KeAcquireGuardedMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551892(v=vs.85))します。 ミュー テックスは、別のスレッドによって既に取得されていますが、ミュー テックスができるまで、呼び出し元のスレッドの実行が中断されます。
+-   [**KeAcquireGuardedMutex**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551892(v=vs.85))を呼び出しています。 ミューテックスが既に別のスレッドによって取得されている場合、ミューテックスが使用可能になるまで、呼び出し元スレッドの実行は中断されます。
 
--   呼び出す[ **KeTryToAcquireGuardedMutex** ](https://msdn.microsoft.com/library/windows/hardware/ff553307)現在のスレッドを中断することがなく、保護された、ミュー テックスを取得しようとします。 ルーチンは、ミュー テックスが取得されているかどうかに関係なく、すぐに返します。 **KeTryToAcquireGuardedMutex**返します**TRUE** ; 呼び出し元のミュー テックスを正常に取得した場合、それを返します**FALSE**します。
+-   [**KeTryToAcquireGuardedMutex**](https://msdn.microsoft.com/library/windows/hardware/ff553307)を呼び出して、現在のスレッドを中断せずに、保護されたミューテックスを取得しようとしています。 このルーチンは、ミューテックスが取得されたかどうかに関係なく、直ちに戻ります。 **KeTryToAcquireGuardedMutex**は、呼び出し元のミューテックスを正常に取得した場合、 **TRUE**を返します。それ以外の場合は**FALSE**を返します。
 
-スレッドが[ **KeReleaseGuardedMutex** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseguardedmutex)いずれかで取得された保護されたミュー テックスを解放する**KeAcquireGuardedMutex**または**KeTryToAcquireGuardedMutex**します。
+スレッドは、 [**KeReleaseGuardedMutex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseguardedmutex)を呼び出して、 **KeAcquireGuardedMutex**または**KeTryToAcquireGuardedMutex**のいずれかによって取得された保護されたミューテックスを解放します。
 
-保護された領域内で保護されたミュー テックスを暗黙的に保持しているスレッドが実行されます。 **KeAcquireGuardedMutex**と**KeTryToAcquireGuardedMutex** 、保護された領域を入力中に**KeReleaseGuardedMutex**が終了します。 スレッドが保護されたミュー テックスを保持している間は、すべての Apc が無効です。
+保護されたミューテックスを保持するスレッドは、保護された領域内で暗黙的に実行されます。 **KeAcquireGuardedMutex**と**KeTryToAcquireGuardedMutex**は保護されたリージョンを入力しますが、 **KeReleaseGuardedMutex**は終了します。 スレッドが保護されたミューテックスを保持している間、すべての Apc が無効になります。
 
-代わりに、ドライバーを使用できる場合、コード パスが無効になっているすべての Apc を実行することが保証、 [ **KeAcquireGuardedMutexUnsafe** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551894(v=vs.85))と[ **KeReleaseGuardedMutexUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-kereleaseguardedmutexunsafe)を取得し、保護されたミュー テックスを解放します。 これらのルーチンがない入力または保護された領域を終了し、既存の保護された領域内でのみ使用できますまたは IRQL = APC\_レベル。
+すべての Apc を無効にしてコードパスを確実に実行することが保証されている場合、ドライバーは[**KeAcquireGuardedMutexUnsafe**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff551894(v=vs.85))と[**KeReleaseGuardedMutexUnsafe**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseguardedmutexunsafe)を使用して、保護されたミューテックスを取得して解放できます。 これらのルーチンは保護されたリージョンを入力したり終了したりすることはなく、既に保護されているリージョン内、または IRQL = APC\_レベルでのみ使用できます。
 
-保護されたミュー テックスは、獲得再帰的にすることはできません。 保護されたミュー テックスが既に保持しているスレッドは、それを取得しようとすると、そのスレッドがデッドロックが発生します。 保護されたミュー テックスは IRQL で実行されるコードでのみ使用できます&lt;APC を =\_レベル。
+保護されたミューテックスを再帰的に取得することはできません。 保護されたミューテックスを既に保持しているスレッドがそのスレッドを取得しようとすると、そのスレッドはデッドロック状態になります。 保護されたミューテックスは、IRQL &lt;= APC\_レベルで実行されるコードでのみ使用できます。
 
  
 

@@ -3,16 +3,16 @@ title: ファンクション ドライバーでのデバイスの削除
 description: ファンクション ドライバーでのデバイスの削除
 ms.assetid: 46a75647-e72a-4194-be9d-070e3ac95650
 keywords:
-- 機能ドライバー WDK PnP
+- 関数ドライバー WDK PnP
 - DispatchPnP ルーチン
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a7bb956681e48579ca6d2b4a973c0cd1c5c41f05
-ms.sourcegitcommit: fee68bc5f92292281ecf1ee88155de45dfd841f5
+ms.openlocfilehash: 2e0b688d60db56844778c4c201c9499c1dc65583
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67716921"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838455"
 ---
 # <a name="removing-a-device-in-a-function-driver"></a>ファンクション ドライバーでのデバイスの削除
 
@@ -20,59 +20,59 @@ ms.locfileid: "67716921"
 
 
 
-関数のドライバーがすべての操作を取り消す必要があります、デバイスを削除するときにその解析が実行を追加して、デバイスを起動します。 ここには、周辺機器の関数のドライバーとバス デバイスの機能のドライバーが含まれます。
+デバイスを削除する場合、関数ドライバーは、デバイスを追加して起動するために実行されたすべての操作を元に戻す必要があります。 この説明には、周辺機器用の関数ドライバーと、バスデバイス用の機能ドライバーが含まれています。
 
-関数のドライバーなどでは、次の手順を使用してデバイスを削除します。 その[ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+関数ドライバーは、 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンで次のような手順を使用して、デバイスを削除します。
 
-1. バスのデバイスの機能のドライバーですか。
+1. これはバスデバイス用の関数ドライバーですか。
 
-   そうである場合は、バス上のデバイスのすべての未処理の子 Pdo を削除可能性があります。
+   その場合は、バス上のデバイスの未処理の子 PDOs を削除する可能性があります。
 
-   前に、バス ドライバーが処理される場合は[ **IRP\_MN\_突然\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)子デバイスがドライバーの要求がまだ受信していません、それ以降[ **IRP\_MN\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)要求、バス ドライバーは、子の PDO をそのまま残ります。 子デバイスに対してすべてのハンドルを閉じるときに、後で、PnP マネージャーは、子デバイスの削除 IRP を送信し、バス ドライバーは、その時点で子 PDO を削除します。
+   バスドライバーが以前の Irp を処理した\_、子デバイスに対して予期しない[ **\_削除要求\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)したが、ドライバーがそれ以降の irp を受信していない場合\_デバイス要求を[**削除\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)では、バスドライバーは子 PDO をそのまま残します。 後で、子デバイスへのすべてのハンドルが閉じられると、PnP マネージャーが子デバイスの削除 IRP を送信し、その時点で、バスドライバーが子 PDO を削除します。
 
-   前に、バス ドライバーが処理される場合は**IRP\_MN\_削除\_デバイス**、デバイスの要求し、後続いいえが**IRP\_MN\_突然\_削除**バス ドライバーは、PDO の子を削除し、要求。 この場合、PnP マネージャーにより、すべての関数とフィルター ドライバーを子デバイスから削除されていること (DOs FDO とフィルターされて削除) 削除 IRP を親のバスのデバイスに送信する前にします。 子 PDO バス デバイスを削除する前に、バス ドライバーは子 PDO を削除する必要がありますので可能性が存在する場合は、あります。
+   バスドライバーが以前の Irp を処理し、デバイスのデバイスの要求を**削除\_\_** していて、その後の**irp\_\_の\_突然の削除**要求がない場合は、バスドライバーが子を削除します。PDO.\_ この場合、PnP マネージャーは、親バスデバイスに remove IRP を送信する前に、すべての関数とフィルタードライバーが子デバイスから削除されている (FDO とフィルター DOs が削除されている) ことを確認します。 子 PDO がまだ存在している可能性があるため、バスドライバーは、バスデバイスを削除する前に、子 PDO を削除する必要があります。
 
-2. ドライバーが既に処理前**IRP\_MN\_突然\_削除**この FDO の要求ですか?
+2. ドライバーは、この FDO の予期しない **\_削除要求\_** 、以前の IRP\_処理していますか?
 
-   場合は、残りのクリーンアップを実行し、手順 8. に進みます[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver)します。
+   その場合は、残りのクリーンアップを実行し、手順 8. [**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)に進みます。
 
-   通常、ドライバーは、ドライバーが処理されるかどうかを示すデバイス拡張機能のフラグ、 **IRP\_MN\_突然\_削除**デバイスの要求。
+   通常、ドライバーはデバイスの拡張機能にフラグを保持します。これは、ドライバーが IRP\_を処理し、デバイスに対する予期しない **\_削除要求\_** 処理したかどうかを示します。
 
-3. ドライバーは以前、ウェイク アップについては、デバイスが有効になっている、キャンセル、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)要求。
+3. ドライバーで事前にデバイスのウェイクアップが有効になっている場合は、 [**IRP\_完了\_待ち\_ウェイク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)要求をキャンセルします。
 
-4. デバイスがアクティブであることを確認します。
+4. デバイスが非アクティブであることを確認します。
 
-   かどうか、デバイスは既に以前への応答で非アクティブな**IRP\_MN\_クエリ\_削除\_デバイス**ドライバーは新しい要求を受け入れないようにデバイスをマークする必要があり、完了する必要がありますこのドライバーですべての要求がキューに登録します。 ドライバーには、デバイスへのアクセスを必要とする未処理の要求が失敗する必要があります。
+   以前の IRP\_に応答してデバイスがまだ非アクティブになっていない場合は **\_クエリ\_\_デバイスを削除**します。ドライバーは、デバイスが新しい要求を受け入れていないとマークし、このドライバーでキューに登録されているすべての要求を完了する必要があります。 ドライバーは、デバイスへのアクセスを必要とするすべての未処理の要求を失敗させる必要があります。
 
-   ドライバーを使用できる、 **Io*Xxx*RemoveLock<em>Xxx</em>** 未処理の I/O をカウントし、その削除処理を示すイベントを設定するルーチンを続行できます。
+   ドライバーは、 **Io*Xxx*removelock<em>Xxx</em>** ルーチンを使用して未処理 i/o をカウントし、削除処理を続行できることを示すイベントを設定できます。
 
-5. 電源オフ操作を実行します。
+5. 電源を切る操作を実行します。
 
-   各デバイス ドライバーの受信したときに存在する場合、電源オフ操作を実行します、 **IRP\_MN\_削除\_デバイス**要求。 関数ドライバー、通常、デバイスの電源ポリシーの所有者が、個別に送信しません[ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)デバイスの電源を設定する要求D3 状態です。 親のバス ドライバーは、通常、スロットを補強しで電源マネージャーに通知[ **PoSetPowerState** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-posetpowerstate)バス ドライバーが IRP の削除を取得します。 詳細については、次を参照してください。[電源管理](implementing-power-management.md)します。
+   デバイスの各ドライバーは、\_IRP を受信したときに、 **\_デバイス要求\_削除**することによって、そのデバイスの電源ダウン操作を実行します。 デバイスの電源ポリシー所有者 (通常は関数ドライバー) は、個別の IRP\_を送信しません。[**電源要求\_設定**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)して、デバイスの電源状態を D3 に設定\_ます。 通常、親バスドライバーはスロットを電源オフにし、バスドライバーが remove IRP を取得すると、 [**PoSetPowerState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerstate)を使用して電源マネージャーに通知します。 詳細については、「[電源管理](implementing-power-management.md)」を参照してください。
 
-6. 呼び出すことによって、デバイス インターフェイスを無効にする[ **IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iosetdeviceinterfacestate)します。
+6. [**Iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)を呼び出すことによって、すべてのデバイスインターフェイスを無効にします。
 
-7. ドライバーによって使用中のデバイスのハードウェア リソースを解放します。
+7. ドライバーによって使用されているデバイスのすべてのハードウェアリソースを解放します。
 
-   正確な操作は、デバイスとドライバーによって異なりますが、切断割り込みを含めることができます[ **IoDisconnectInterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodisconnectinterrupt)、物理アドレス範囲を解放[ **MmUnmapIoSpace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-mmunmapiospace)、I/O ポートを解放します。
+   正確な操作は、デバイスとドライバーによって異なりますが、 [**Io切る割り込み**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodisconnectinterrupt)による割り込みの切断、 [**Mmunmapiospace**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace)を使用した物理アドレス範囲の解放、および i/o ポートの解放を含むことができます。
 
-8. 渡す、 **IRP\_MN\_削除\_デバイス**次のドライバーに要求します。
+8. IRP\_次のドライバーに\_デバイスの要求を**削除\_** 渡します。
 
-   IRP スタックの場所で [次へ] の下位のドライバーのセットアップ[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で次のドライバーに IRP を渡すと[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
+   [**IoskipIoCallDriver Enti Stacklocation**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用して、次に低いドライバーの irp スタックの場所を設定し、irp を次[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)のドライバーに渡します。
 
-   ドライバーは、基になるドライバーの削除活動を続行する前に、削除操作を完了するまで待機する必要はありません。
+   ドライバーは、削除操作を続行する前に、基になるドライバーが削除操作を完了するのを待つ必要はありません。
 
-9. デバイス オブジェクトを使用してデバイス スタックから削除[ **IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodetachdevice)します。
+9. [**IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)を使用して、デバイススタックからデバイスオブジェクトを削除します。
 
-   [次へ] の低いデバイス オブジェクトとしてへのポインターを指定、*台*パラメーター。 ドライバーでは、このようなポインターを受け取るへの呼び出しから[ **IoAttachDeviceToDeviceStack** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioattachdevicetodevicestack)ドライバーの[ *AddDevice* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_add_device)ルーチン。
+   *ほか*パラメーターとして、次に小さいデバイスオブジェクトへのポインターを指定します。 ドライバーは、ドライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンで[**Ioattachdevicetodevicestack**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioattachdevicetodevicestack)の呼び出しからこのようなポインターを受け取ります。
 
-10. 任意のデバイスに固有の割り当て、メモリ、イベント、およびなどをクリーンアップします。
+10. デバイス固有の割り当て、メモリ、イベントなどをクリーンアップします。
 
-11. 無料で FDO [ **IoDeleteDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iodeletedevice)します。
+11. [**Iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)で FDO を解放します。
 
-12. 戻り値、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)から戻り値の状態を伝達するルーチン**保留**します。
+12. **IoCallDriver**から戻り値の状態を反映して、 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチンからを返します。
 
-関数のドライバーが指定されていない、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine) IRP、完了ルーチンの IRP では、削除もできません。 Irp の削除は、親のバス ドライバーを実施します。
+関数ドライバーでは、remove IRP の[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンが指定されていません。また、irp も完了しません。 Irp の削除は、親バスドライバーによって完了します。
 
  
 

@@ -6,94 +6,94 @@ keywords:
 - IRP_MN_QUERY_REMOVE_DEVICE
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a581a32ca3a9cc9e6e7bae2cfd7662760251e8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dd033b68d4ce3b38d86da4e8f2a02edcf93f8d96
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384231"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838667"
 ---
-# <a name="handling-an-irpmnqueryremovedevice-request"></a>IRP の処理\_MN\_クエリ\_削除\_デバイス要求
+# <a name="handling-an-irp_mn_query_remove_device-request"></a>IRP\_を処理\_クエリ\_\_デバイスの要求を削除する
 
 
 
 
 
-PnP マネージャーでは、デバイスは、コンピューターから削除されると、マシンを停止することがなく、デバイスを削除できるかどうかを確認することをドライバーに通知するためには、この IRP を送信します。 ユーザーがデバイスのドライバーの更新を要求すると、この IRP も送信します。
+PnP マネージャーは、この IRP を送信して、デバイスがコンピューターから削除されようとしていることをドライバーに通知し、コンピューターを邪魔せずにデバイスを削除できるかどうかを確認します。 また、この IRP は、ユーザーがデバイスのドライバーを更新するように要求したときにも送信されます。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
 
-デバイスのドライバーをこの IRP を送信する前に、次が行われます。
+この IRP をデバイスのドライバーに送信する前に、次のことを行います。
 
--   デバイス (または関連するデバイス) で通知に登録されているすべてのユーザー モード アプリケーションに通知します。
+-   デバイス (または関連デバイス) に通知するために登録されたすべてのユーザーモードアプリケーションに通知します。
 
-    これには、デバイスの子孫 (子デバイス、子、およびその他の子) のいずれかで、デバイスまたはデバイスの取り外し関係の 1 つの通知に登録するアプリケーションが含まれます。 アプリケーションを呼び出すことによってこのような通知の登録**RegisterDeviceNotification**します。
+    これには、デバイスで通知するために登録されたアプリケーション、デバイスの子孫の1つ (子デバイス、子の子など)、またはデバイスの削除関係の1つが含まれます。 アプリケーションは、 **RegisterDeviceNotification**を呼び出すことによって、このような通知を登録します。
 
-    この通知への応答、アプリケーションはデバイスの削除 (デバイスに閉じますハンドル) を準備するか、またはクエリが失敗しました。
+    この通知に応答して、アプリケーションはデバイスの削除を準備するか (デバイスへのハンドルを閉じる)、またはクエリを失敗させることができます。
 
--   デバイス (または関連するデバイス) で通知に登録されているすべてのカーネル モード ドライバーに通知します。
+-   デバイス (または関連デバイス) で通知するために登録されたすべてのカーネルモードドライバーに通知します。
 
-    これには、デバイスの子孫のいずれかで、デバイスまたはデバイスの取り外し関係の 1 つの通知に登録されているドライバーが含まれます。 ドライバーでは、呼び出すことによってこの通知を登録します。 [ **IoRegisterPlugPlayNotification** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioregisterplugplaynotification)のイベント カテゴリに**EventCategoryTargetDeviceChange**します。
+    これには、デバイスで通知するために登録されたドライバー、デバイスの子孫の1つ、またはデバイスの削除関係の1つが含まれます。 ドライバーは、 **eventcategory Targetdevicechange**のイベントカテゴリを使用して[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification)を呼び出すことによって、この通知を登録します。
 
-    この通知への応答、ドライバーはデバイスの削除 (デバイスに閉じますハンドル) を準備するか、またはクエリが失敗しました。
+    この通知に応答して、ドライバーはデバイスの削除を準備するか (デバイスへのハンドルを閉じる)、またはクエリに失敗します。
 
--   送信[ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device) Irp をデバイスの子孫のドライバーにします。
+-   [**Irp\_\_クエリ**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)を送信し、デバイスの子孫のドライバーに\_デバイスの IRP を削除\_ます。
 
--   (Windows 2000 およびそれ以降のシステム)デバイスのファイル システムをマウントすると、PnP マネージャーはファイル システムとファイル システム フィルターにクエリの削除要求を送信します。 デバイスに開いているハンドルがある場合は、ファイル システムでは通常、クエリの削除要求が失敗します。 通常、ファイル システムをロックそうでない場合の次の位置から未来を防ぐためにボリュームを作成します。 マウントされたファイル システムがクエリの削除要求をサポートしていない場合、PnP マネージャー デバイスのクエリの削除要求は失敗します。
+-   (Windows 2000 以降のシステム)ファイルシステムがデバイスにマウントされている場合、PnP マネージャーは、ファイルシステムおよびすべてのファイルシステムフィルターにクエリ削除要求を送信します。 デバイスに開いているハンドルがある場合、通常、ファイルシステムはクエリ削除要求に失敗します。 それ以外の場合、ファイルシステムは通常、将来の作成を防ぐためにボリュームをロックします。 マウントされたファイルシステムがクエリ削除要求をサポートしていない場合、PnP マネージャーはデバイスのクエリ削除要求に失敗します。
 
-PnP マネージャーが送信すべて上記の手順の成功した場合、 **IRP\_MN\_クエリ\_削除\_デバイス**デバイスのドライバーにします。
+上記のすべての手順が成功した場合、PnP マネージャーは、デバイスのドライバーに **\_デバイスを削除\_、IRP\_の\_クエリ**を送信します。
 
-**IRP\_MN\_クエリ\_削除\_デバイス**デバイス スタックの最上位のドライバーによって、各 [次へ] の下のドライバーでし、要求が最初に処理します。 ドライバーのハンドルの Irp の削除、 [ *DispatchPnP* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-driver_dispatch)ルーチン。
+**\_デバイス要求を削除\_の IRP\_\_クエリ**は、デバイススタックの上位のドライバーによって最初に処理され、次に下位のドライバーごとに処理されます。 ドライバーは、 [*DispatchPnP*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)ルーチン内の irp の削除を処理します。
 
-応答、 **IRP\_MN\_クエリ\_削除\_デバイス**ドライバーは、次を実行する必要があります。
+IRP\_に応答して **\_デバイスを削除\_\_クエリ**を実行した場合、ドライバーは次の操作を行う必要があります。
 
-1.  操作を中断せず、マシンからデバイスを削除できるかどうかを決定します。
+1.  操作を中断せずに、デバイスをコンピューターから削除できるかどうかを判断します。
 
-    次のいずれかに該当する場合、ドライバーはクエリ削除 IRP に失敗する必要があります。
+    次のいずれかに該当する場合、ドライバーはクエリ-削除 IRP を失敗させる必要があります。
 
-    -   場合は、デバイスを削除するデータを失うことになる可能性があります。
+    -   デバイスを削除すると、データが失われる可能性があります。
 
-    -   場合は、コンポーネントには、デバイスへの開いているハンドルがあります。 (これは、Windows 98 上の問題/ユーザーのみです。 開いているハンドルを追跡し、後に開いているハンドルがある場合、クエリは失敗し、Windows 2000 以降のバージョンの Windows、 **IRP\_MN\_クエリ\_削除\_デバイス**が完了するとします)。
+    -   コンポーネントにデバイスへのハンドルが開かれている場合。 (これは Windows 98/Me でのみ発生する問題です。 Windows 2000 以降のバージョンの Windows では開いているハンドルが開かれ、 **IRP\_\_クエリ\_\_デバイスの削除**が完了した後に開いているハンドルがある場合、クエリは失敗します。
 
-    -   ドライバーの通知を受け取る場合 (を通じて、 [ **IRP\_MN\_デバイス\_使用状況\_通知**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification) IRP) デバイスが、ページングのパスにあります。クラッシュ ダンプ、または休止状態ファイル。
+    -   デバイスがページング、クラッシュダンプ、または休止状態のファイルのパスにあることを通知する ( [**IRP\_\_デバイス\_USAGE\_NOTIFICATION**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-device-usage-notification) IRP を介して) ことを通知されたドライバーがある場合。
 
-    -   場合は、ドライバーでは、デバイスに対する未処理インターフェイス参照があります。 ドライバーは、インターフェイスへの応答で提供されている場合、 [ **IRP\_MN\_クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求とインターフェイスがない逆参照されています。
+    -   ドライバーがデバイスに対して未処理のインターフェイス参照を持っている場合。 つまり、IRP\_に対する応答としてのインターフェイスが提供されています。これは、[**クエリ\_インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-interface)要求で、インターフェイスが逆参照されていない\_です。
 
-2.  デバイスを削除できない場合は、IRP がクエリの削除に失敗します。
+2.  デバイスを削除できない場合は、クエリの削除-IRP を失敗させます。
 
-    設定**Irp -&gt;IoStatus.Status**は適切なエラー状態を (通常の状態\_失敗)、呼び出す[ **IoCompleteRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)でIO\_いいえ\_ドライバーからの戻り値のインクリメントと*DispatchPnP*ルーチン。 [次へ] の下のドライバーに IRP を渡さないでください。
+    **Irp&gt;iostatus. status**を適切なエラー状態 (通常はステータス\_失敗) に設定し、\_IO を使用して[**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)を呼び出します。このとき、\_増分はなく、ドライバーの*DispatchPnP*ルーチンから戻ります。 IRP を次の下位のドライバーに渡さないでください。
 
-3.  ドライバーが以前に送信された場合、 [ **IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)待機ウェイク IRP をキャンセルするウェイク アップについては、デバイスを有効にする要求。
+3.  ドライバーが以前に IRP\_送信したことがある場合は、ウェイクアップのためにデバイスを有効にするために[ **\_待機\_ウェイク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)要求を待ってから、待機ウェイク IRP をキャンセルします。
 
 4.  デバイスの以前の PnP 状態を記録します。
 
-    ドライバーはドライバーが受信したときに、デバイスが含まれる PnP の状態を記録する必要があります、 [ **IRP\_MN\_クエリ\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)要求ドライバーは、クエリが取り消された場合に、その状態のデバイスを返す必要がありますので ([**IRP\_MN\_キャンセル\_削除\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)). 以前の状態が通常は「開始」、ドライバーが正常に完了したときに、デバイスが入力した状態である、 [ **IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)要求。
+    ドライバーは、ドライバーが[ **\_\_\_\_irp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)を受信したときのデバイスの PnP 状態を記録する必要があります。この場合、ドライバーは、クエリが取り消された場合にデバイスをその状態に返す必要があるため ([**irp\_の\_[キャンセル]\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-cancel-remove-device)) を削除します。 以前の状態は通常 "開始済み" です。これは、ドライバーが正常に\_IRP を完了したときにデバイスが入力した状態であり、 [ **\_デバイスの要求\_開始**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)します。
 
-    ただし、他の以前の状態は、考えられるです。 たとえば、ユーザー デバイス マネージャーを介してデバイスを無効が可能性があります。 またはへの応答、 **IRP\_MN\_クエリ\_機能**要求と、親のバス ドライバー (またはフィルター ドライバー、バス ドライバーに) 可能性がありますが報告されるデバイスのハードウェアが無効になっています。 いずれの場合も、無効になっているデバイスのドライバーが表示されることができます、 **IRP\_MN\_クエリ\_削除\_デバイス**要求を受信する前に、 **IRP\_MN\_開始\_デバイス**要求。
+    ただし、その他の以前の状態が発生する可能性があります。 たとえば、ユーザーがデバイスマネージャーによってデバイスを無効にした可能性があります。 または、 **IRP\_\_クエリ\_機能**の要求に応じて、親バスドライバー (またはバスドライバーのフィルタードライバー) によって、デバイスのハードウェアが無効になっていると報告されている可能性があります。 どちらの場合でも、無効になっているデバイスのドライバーは、irp\_\_\_**デバイス**要求を受信する前に\_デバイスの要求を**削除\_クエリ**を実行することで、irp\_を受け取ることができます。\_
 
-5.  IRP を終了します。
+5.  IRP を完了します。
 
-    関数またはフィルター ドライバーでは。
+    関数またはフィルタードライバーの場合:
 
-    -   設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+    -   **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-    -   [次へ] スタックの場所を設定[ **IoSkipCurrentIrpStackLocation** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)で [次へ] の下位のドライバーに IRP を渡すと[**保留**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocalldriver).
+    -   [**IoskipIoCallDriver Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)を使用して次のスタックの場所を設定し、IRP を次の下位[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)のドライバーに渡します。
 
-    -   状態を反映**保留**から戻り値の状態として、 *DispatchPnP*ルーチン。
+    -   **IoCallDriver**の状態を*DispatchPnP*ルーチンからの戻りステータスとして伝達します。
 
-    -   IRP を実行しないでください。
+    -   IRP を完了しないでください。
 
-    バス ドライバー。
+    バスドライバーの場合:
 
-    -   設定**Irp -&gt;IoStatus.Status**ステータス\_成功します。
+    -   **Irp-&gt;iostatus. status**を STATUS\_SUCCESS に設定します。
 
-    -   IRP の完了 ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iocompleterequest)) IO と\_いいえ\_インクリメントします。
+    -   IO\_\_を増やさずに、IRP ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
-    -   戻り値、 *DispatchPnP*ルーチン。
+    -   *DispatchPnP*ルーチンからを返します。
 
-デバイス スタック内の任意のドライバーが失敗した場合、 **IRP\_MN\_クエリ\_削除\_デバイス**、PnP マネージャーに送信する**IRP\_MN\_キャンセル\_削除\_デバイス**デバイス スタックにします。 これにより、ドライバーを必要とする、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)下位のドライバーが IRP を失敗するかどうかを検出するためにクエリの削除 IRP のルーチンです。
+デバイススタック内のいずれかのドライバーで Irp\_が失敗した場合 **\_クエリ\_\_デバイスを削除**すると、PnP マネージャーは\_デバイススタックへの **\_デバイスの削除\_取り消し**\_を送信します。 これにより、ドライバーが IRP に失敗したかどうかを検出するために、クエリ-削除 IRP の[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンが不要になります。
 
-ドライバーが完了すると、 **IRP\_MN\_クエリ\_削除\_デバイス**削除保留中状態にあるデバイスと見なされる場合、ドライバーが、それ以降の作成に失敗する必要がありますデバイスの要求数。 ドライバーが処理の他のすべての Irp 通常どおり、ドライバーが受信されるまで、 **IRP\_MN\_キャンセル\_削除\_デバイス**または**IRP\_MN\_削除\_デバイス**します。
+ドライバーが IRP\_完了した後 **\_クエリ\_\_デバイスを削除**し、デバイスが削除待ち状態であると見なされた場合、ドライバーはデバイスの後続の作成要求をすべて失敗させる必要があります。 ドライバーは、すべての Irp を通常どおりに処理します。これにより、ドライバーが Irp を受信したときに、\_デバイスまたは**irp\_\_デバイスを削除** **\_削除\_キャンセル**するまで、その他のすべての irp が\_されます。\_
 
  
 

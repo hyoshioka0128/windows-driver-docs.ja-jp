@@ -1,28 +1,28 @@
 ---
 title: NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE
-description: ミニポート ドライバーでは、OID_WWAN_DEVICE_SERVICE_COMMAND のトランザクションの完了の応答を実装するために、NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE を示す値を使用します。NDIS_WWAN_DEVICE_SERVICE_RESPONSE 構造体。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE を示すメッセージを使用して、OID_WWAN_DEVICE_SERVICE_COMMAND のトランザクション完了応答を実装します。NDIS_WWAN_DEVICE_SERVICE_RESPONSE 構造体。
 ms.assetid: 2817EAFA-7A9A-4DC1-B2B7-31E1F4E5E331
 ms.date: 07/18/2017
 keywords:
-- NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WWAN_DEVICE_SERVICE_RESPONSE
 ms.localizationpriority: medium
-ms.openlocfilehash: dab0f6c21b96673cd6b928e44eb17eba20c1007e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9d04dfbb8de4abf3f31d69e1469e9602b3770e99
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385509"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72842644"
 ---
-# <a name="ndisstatuswwandeviceserviceresponse"></a>NDIS\_状態\_WWAN\_デバイス\_サービス\_応答
+# <a name="ndis_status_wwan_device_service_response"></a>NDIS\_ステータス\_WWAN\_デバイス\_サービス\_応答
 
 
-ミニポート ドライバーを使用して、NDIS\_状態\_WWAN\_デバイス\_サービス\_のトランザクションの完了の応答を実装するために応答を示す値[OID\_WWAN\_デバイス\_サービス\_コマンド](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command)します。
+ミニポートドライバーは、NDIS\_ステータス\_WWAN\_デバイス\_サービス\_応答の表示を使用して、 [OID\_WWAN\_デバイス\_サービス\_コマンドのトランザクション完了応答を実装します。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command).
 
-ミニポート ドライバーは、この通知を使用して、不要なイベントを送信することはできません。
+ミニポートドライバーは、この通知を使用して一方的なイベントを送信することはできません。
 
-この通知を使用して、 [ **NDIS\_WWAN\_デバイス\_サービス\_応答**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_response)構造体。
+この通知では、 [**NDIS\_WWAN\_デバイス\_サービス\_応答**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_response)構造を使用します。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -37,7 +37,7 @@ ms.locfileid: "67385509"
 </tr>
 <tr class="even">
 <td><p>Header</p></td>
-<td>Ndis.h</td>
+<td>Ndis. h</td>
 </tr>
 </tbody>
 </table>
@@ -47,7 +47,7 @@ ms.locfileid: "67385509"
 
 [OID\_WWAN\_デバイス\_サービス\_コマンド](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-device-service-command)
 
-[**NDIS\_WWAN\_デバイス\_サービス\_応答**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_response)
+[**NDIS\_WWAN\_デバイス\_サービス\_応答**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_device_service_response)
 
  
 

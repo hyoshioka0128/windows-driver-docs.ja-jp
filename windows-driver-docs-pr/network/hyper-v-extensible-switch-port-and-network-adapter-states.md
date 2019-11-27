@@ -104,7 +104,7 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のコンポー
  
 
 <a href="" id="network-adapter-connection-deleted"></a>*ネットワークアダプターの接続が削除されました*  
-ネットワークアダプター接続をターゲットとするすべてのパケットトラフィックと OID 要求が完了すると、拡張可能なスイッチインターフェイスは oid の OID セット要求を発行します。 [\_スイッチ\_\_NIC](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)によって削除されます。拡張可能なスイッチ。
+ネットワークアダプター接続を対象とするすべてのパケットトラフィックと OID 要求が完了すると、拡張可能なスイッチインターフェイスは oid の OID セット要求を\_して[\_\_NIC を削除](https://docs.microsoft.com/windows-hardware/drivers/network/oid-switch-nic-delete)し、拡張可能なスイッチから接続を削除します。
 
 この状態では、拡張可能なスイッチインターフェイスは、接続を対象とするパケットまたは OID 要求を発行しなくなります。
 
@@ -123,7 +123,7 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のコンポー
 
 拡張機能は、参照可能なスイッチポートの参照カウンターをインクリメントまたはデクリメントするために、参照可能な[*Chport*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_port)または[*DereferenceSwitchPort*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_port)を呼び出すことができます。 これらの呼び出しは、ポートが*作成さ*れた状態に到達した後に行うことができます。 ポートが*切断*された後、またはポートが作成されて*いない*状態になった後に、これらの呼び出しを行うことはできません。
 
-この拡張機能で[*は、* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)参照用の [*DereferenceSwitchNic*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic) を呼び出して、拡張可能なスイッチネットワークアダプター接続の参照カウンターを増減できます。 これらの呼び出しは、接続が*ネットワークアダプターの接続*状態に到達した後に行うことができます。 接続が*切断*されたか、*ネットワークアダプターが削除さ*れた状態になった後に、これらの呼び出しを行うことはできません。
+この拡張機能で[*は、* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_reference_switch_nic)参照用の "DereferenceSwitchNic" または " [](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_dereference_switch_nic) " を呼び出して、拡張可能なスイッチネットワークアダプター接続の参照カウンターを増減できます。 これらの呼び出しは、接続が*ネットワークアダプターの接続*状態に到達した後に行うことができます。 接続が*切断*されたか、*ネットワークアダプターが削除さ*れた状態になった後に、これらの呼び出しを行うことはできません。
 
 次の表では、拡張可能なスイッチポートまたはネットワークアダプター接続コンポーネントの状態に基づいて許可される操作について説明します。
 
@@ -143,38 +143,38 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のコンポー
 <tbody>
 <tr class="odd">
 <td align="left"><p>ポートが作成されていません</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>作成されたポート</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ネットワークアダプターの接続が作成されました</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>接続されているネットワークアダプター</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ネットワークアダプターが切断されました</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ネットワークアダプターの接続が削除されました</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ポートの破棄</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>
@@ -205,66 +205,66 @@ Hyper-v 拡張可能スイッチインターフェイスは、次のコンポー
 <tbody>
 <tr class="odd">
 <td align="left"><p>ポートが作成されていません</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>作成されたポート</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ネットワークアダプターの接続が作成されました</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>接続されているネットワークアダプター</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ネットワークアダプターが切断されました</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ネットワークアダプターの接続が削除されました</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ポートの破棄</p></td>
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
-<td align="left"><p>必須ではない</p></td>
+<td align="left"><p>〇</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
+<td align="left"><p>X</p></td>
 </tr>
 </tbody>
 </table>

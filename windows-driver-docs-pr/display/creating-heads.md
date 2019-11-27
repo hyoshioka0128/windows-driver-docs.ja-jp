@@ -4,15 +4,15 @@ description: ヘッドの作成
 ms.assetid: 0b6d4aa0-e3c9-45df-998d-d6dfca5ab720
 keywords:
 - ヘッド WDK DirectX 9.0
-- 複数ヘッド ハードウェア WDK DirectX 9.0、ヘッドの作成
+- 複数ヘッドハードウェア WDK DirectX 9.0、ヘッドの作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c85b4ba54880fcdca0e443476ea568f92df561
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c90b9baa1566ebd0f2a1c51fa138198218486d56
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370194"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72839773"
 ---
 # <a name="creating-heads"></a>ヘッドの作成
 
@@ -20,36 +20,36 @@ ms.locfileid: "67370194"
 ## <span id="ddk_creating_heads_gg"></span><span id="DDK_CREATING_HEADS_GG"></span>
 
 
-Microsoft DirectX 9.0 ドライバーは、各ヘッドが複数のカードで複数ヘッド カードごとに 1 つのマイクロソフトの Direct3D コンテキストと各 head Microsoft DirectDraw オブジェクトを作成します。 したがって、複数ヘッド カード作成プロセスでは、ヘッドの部分とクロス ヘッドの部分があります。 先頭部分は、DirectDraw DDI 呼び出し、Direct3D DDI 呼び出しにまたがるヘッドの一部にほぼ対応します。
+Microsoft DirectX 9.0 ドライバーは、複数のヘッドカードごとに1つの Microsoft Direct3D コンテキストを作成し、各ヘッドカードの各ヘッドに Microsoft DirectDraw オブジェクトを作成します。 そのため、複数のヘッドカードの作成プロセスには、ヘッドパーツとクロスヘッドパーツがあります。 ヘッドごとの部分は、約 DirectDraw DDI 呼び出しに相当します。これは、Direct3D DDI 呼び出しのクロスヘッドパートです。
 
-さまざまなヘッド間の接続ポイントは、ドライバーのによって作成された Direct3D ハンドル[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数。 ドライバーは、グループ内のすべてのヘッドで各画面に一意の Direct3D ハンドルを割り当てます。 Master head で Direct3D コンテキストは、これらすべてのハンドルを管理し、任意のヘッダーで作成されるすべてのレンダー ターゲットを対象にできます下位ヘッドの反転で最も顕著なバック バッファーにチェーンします。 **D3dCreateSurfaceEx**関数の各下位 head は master head によって管理されているハンドルのルックアップ テーブルを更新できる必要があります。 その後、これらのハンドルが、ドライバーの呼び出しで使用されてのみ[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb) master head 関数。
+さまざまなヘッド間の接続ポイントは、ドライバーの[**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数によって作成される Direct3D ハンドルです。 ドライバーは、グループ内のすべてのヘッドの各サーフェイスに対して、一意の Direct3D ハンドルを割り当てます。 マスターヘッド上の Direct3D コンテキストは、これらのすべてのハンドルを管理し、任意のヘッドで作成された任意のレンダーターゲットをターゲットにすることができます。特に、下位ヘッドの反転チェーンのバックバッファーです。 各下位ヘッドの**D3dCreateSurfaceEx**関数は、マスターヘッドによって管理されるハンドル参照テーブルを更新できる必要があります。 その後、これらのハンドルは、マスターヘッドのドライバーの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数の呼び出しでのみ使用されます。
 
-ドライバーでは、master head で、テクスチャやその他のリソースがのみ作成します。
+ドライバーは、マスターヘッドにテクスチャおよびその他のリソースを作成するだけです。
 
-ドライバーは作成し、次の順序での説明に従って、ヘッドを連携します。
+ドライバーは、次の順序に従ってヘッドを作成し、使用します。
 
-1.  表示を設定する各 head では、以下の操作の実行モードとプライマリ反転サーフェス。
+1.  各ヘッドに対して、表示モードと主反転サーフェスを設定するために次の操作が実行されます。
     -   ランタイムは、表示モードを設定します。
     -   ランタイムは、DirectDraw オブジェクトを作成します。
-    -   ランタイムは、プライマリのフリッピング チェーンや Z バッファーを作成します。 ランタイムを指定します、 **DDSCAPS2\_ADDITIONALPRIMARY**ビット (0x80000000) 機能、 **dwCaps2**のメンバー、 [ **DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))を複数ヘッド カードの追加のプライマリ画面を示すために各サーフェス (Z バッファーを含む) の構造体します。 ランタイムが呼び出す、ドライバーの[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))関数。
-    -   ランタイムが呼び出す、ドライバーの[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数、およびによって定義された順序で最初に、マスター **AdapterOrdinalInGroup**下位図形の。 この呼び出しでは、Direct3D は、グループ内のすべてのヘッドで一意になるランタイムのパスが保証されるを処理します。 ドライバーは、下位の頭のハンドルのルックアップ テーブルに参照を挿入できます。 ただし、Direct3D のコンテキストに作成されないため、下位ヘッド、いいえ[ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)のコマンドは、下位ヘッドに発行します。 そのため、この参照を挿入する必要はありません。
-    -   ランタイム呼び出し後[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))のすべてのヘッド (マスターを含む)、さらに[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)呼び出しが行われます各下位 head は master head の DirectDraw オブジェクトのチェーンを反転の。 ドライバーは、各ヘッドが下位の前面、戻る、および/深度ステンシル バッファーの master head のハンドルのルックアップ テーブルにエントリを作成します。
+    -   ランタイムは、主反転チェーンと Z バッファーを作成します。 ランタイムは、各サーフェス (Z バッファーを含む) の[**DDSCAPS2**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff550292(v=vs.85))構造体の**DwCaps2**メンバーに**DDSCAPS2\_additionalprimary** (0x80000000) 機能ビットを指定して、複数のヘッドカード。 ランタイムは、ドライバーの[*Dd/フェイス*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))関数を呼び出します。
+    -   ランタイムは、ドライバーの[**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数を、最初にマスターに対して、もう1つは**AdapterOrdinalInGroup**によって定義された下位図形の順序で呼び出します。 この呼び出しでは、ランタイムがパスする Direct3D ハンドルは、グループ内のすべてのヘッドで一意であることが保証されます。 ドライバーは、下位のヘッドのハンドルルックアップテーブルに参照を挿入できます。 ただし、Direct3D コンテキストは下位ヘッドに作成されないので、下位ヘッドに対して[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)コマンドは発行されません。 したがって、この参照を挿入する必要はありません。
+    -   ランタイムがすべてのヘッド (マスターを含む) に対して[*DdD3dCreateSurfaceEx Urface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))を呼び出すと、マスターヘッドの DirectDraw オブジェクトの下位の各ヘッドの反転チェーンに対してさらに[](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)呼び出しが行われます。 ドライバーは、各下位ヘッドの前面、背面、深度/ステンシルバッファーごとに、マスターヘッドのハンドルルックアップテーブルにエントリを作成します。
 
-2.  ランタイムが呼び出す、ドライバーの[ *D3dContextCreate* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_contextcreatecb) master head で、DirectDraw オブジェクトに対してのみ関数。 これは、アプリケーションの実行中に使用される唯一のコンテキストです。
+2.  ランタイムは、マスターヘッドの DirectDraw オブジェクトに対してのみ、ドライバーの[*D3dContextCreate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_contextcreatecb)関数を呼び出します。 これは、アプリケーションの実行中に使用される唯一のコンテキストです。
 
-3.  アプリケーションは、テクスチャとリソースを作成する要求、ランタイムは、ドライバーを呼び出して[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))と[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex) master head を使用して関数。
+3.  アプリケーションがテクスチャとリソースの作成を要求すると、ランタイムはマスタヘッドを介してドライバーの[*DdD3dCreateSurfaceEx Urface*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))および[](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数を呼び出します。
 
-4.  ランタイムが呼び出す、ドライバーのアプリケーションでは、レンダリングの呼び出しを行う、 [ **D3dDrawPrimitives2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)に対して適切な操作のコードを使用して、master head 関数。
+4.  アプリケーションでレンダリングの呼び出しが行われると、ランタイムは適切な操作コードを使用して、マスターヘッドでドライバーの[**D3dDrawPrimitives2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dhal/nc-d3dhal-lpd3dhal_drawprimitives2cb)関数を呼び出します。
 
-    アプリケーションでは、その他の操作を実行するときに、次の呼び出しは、マスターおよび下位のヘッドにルーティングされます。
+    アプリケーションで他の操作を実行すると、次の呼び出しがマスターヘッドと下位ヘッドにルーティングされます。
 
-    -   1 つは、手順の説明に従って[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)各ヘッドが下位のチェーンの反転のハンドルでドライバーを指定する呼び出しは行われます。 これらのハンドルは、通常の使用、 **D3DDP2OP\_SETRENDERTARGET**アプリケーション下位ヘッドのスワップ チェーンのいずれかのバック バッファーにフレームをレンダリングするときに、操作コード トークンです。
-    -   ランタイムが呼び出す、ドライバーの[ *DdFlip* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)で各ヘッド (マスターおよび下位) これらヘッドのサーフェスをプライマリにバック バッファーを提示する関数。 この呼び出しは決してを別のヘッドのプライマリ画面に 1 つのヘッドからバック バッファーを表示します。 各ヘッドの反転のチェーンは完全に独立します。
-    -   ランタイムは、ドライバーを呼び出すことができます[ *DdBlt* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)バック バッファーを任意のヘッダーの前面のバッファーにコピーする関数。 この呼び出しはことはありません、もう 1 つの head フロント バッファーに、1 つのヘッドからバック バッファーをコピーします。
-    -   ランタイムは、ドライバーを呼び出すことができます[ *DdGetScanLine* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getscanline)この呼び出しに関連するモニターと Direct3D のコンテキストではなくの状態のために、任意のヘッダーに機能します。
-    -   ランタイムは、ドライバーを呼び出すことができます[ *DdLock* ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)任意のヘッダーのバック バッファーに対して関数。
+    -   手順 1. で説明したように、下位の各ヘッドの反転チェーンのハンドルを使用してドライバーを提供する[**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)呼び出しが行われます。 これらのハンドルは、通常、アプリケーションが下位のいずれかのヘッドのスワップチェーンのバックバッファーにフレームをレンダリングするときに、 **D3DDP2OP\_SETRENDERTARGET** operation コードトークンと共に使用されます。
+    -   ランタイムは、各ヘッド (マスターと下位) でドライバーの[*Ddflip*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_flip)関数を呼び出して、これらのヘッドのプライマリサーフェイスにバッファーを戻します。 この呼び出しは、1つのヘッドから別のヘッドのプライマリサーフェイスへのバックバッファーを提示することはありません。 各ヘッドの反転チェーンは完全に独立しています。
+    -   ランタイムは、ドライバーの[*Ddblt*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_blt)関数を呼び出して、任意のヘッドのフロントバッファーにバックバッファーをコピーする場合があります。 この呼び出しは、1つのヘッドから別のヘッドのフロントバッファーにバックバッファーをコピーしません。
+    -   この呼び出しは Direct3D コンテキストではなくモニターの状態に関連しているため、ランタイムは任意のヘッドでドライバーの[*DdGetScanLine*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_getscanline)関数を呼び出すことができます。
+    -   ランタイムは、任意のヘッドのバックバッファーに対してドライバーの[*Ddlock*](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_surfcb_lock)関数を呼び出すことができます。
 
-    アプリケーションでは、各ヘッドで Z バッファーを割り当てすることか、各ヘッドを順番に使用する 1 つの Z バッファーを割り当てることができます。 前者の場合、共通言語ランタイムは、ドライバーの[ *DdCreateSurface* ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))関数が各ヘッド (マスターおよび下位) には」の説明に従ってステップ 1。 後者の場合、共通言語ランタイムは、ドライバーの*DdCreateSurface* master head でのみ機能します。 いずれの場合も、共通言語ランタイムは、ドライバーの[ **D3dCreateSurfaceEx** ](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数は、グループ内のすべてのヘッド全体で一意のすべての Z バッファーへのハンドルを指定します。
+    アプリケーションでは、各ヘッドに Z バッファーを割り当てるか、各ヘッドで順番に1つの Z バッファーを割り当てることができます。 前者の場合、ランタイムは、手順 1. で説明されているように、各ヘッド (マスターと下位) でドライバーの[*ddの*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff549263(v=vs.85))参照元関数を呼び出します。 後者の場合、ランタイムは、マスターヘッド上でのみドライバーの*ddの*"関数" を呼び出します。 どちらの場合も、ランタイムはドライバーの[**D3dCreateSurfaceEx**](https://docs.microsoft.com/windows/desktop/api/ddrawint/nc-ddrawint-pdd_createsurfaceex)関数を呼び出して、グループ内のすべてのヘッドで一意なすべての Z バッファーにハンドルを提供します。
 
  
 

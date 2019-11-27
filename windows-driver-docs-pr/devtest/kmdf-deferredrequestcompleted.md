@@ -1,6 +1,6 @@
 ---
 title: DeferredRequestCompleted ルール (kmdf)
-description: DeferredRequestCompleted ルールでは、ドライバーの既定の I/O キューに表示される、I/O 要求は、コールバック関数では、完了していないが、後で処理の遅延が場合、要求する必要があるが完了している、遅延処理のコールバック関数を指定します要求が転送され、フレームワークに配信しない限り、または WdfRequestStopAcknowledge メソッドが呼び出された場合を除き、します。
+description: DeferredRequestCompleted ルールは、ドライバーの既定の i/o キューに提示された i/o 要求がコールバック関数では完了せず、後で処理するために遅延される場合、遅延処理のコールバック関数で要求を完了する必要があることを指定します。要求が転送されてフレームワークに配信されない限り、または WdfRequestStopAcknowledge メソッドが呼び出されない限り。
 ms.assetid: 14ed0dda-8acb-48fe-933f-e498c41f5403
 ms.date: 05/21/2018
 keywords:
@@ -12,43 +12,43 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c38aa3c239ab500a874f9cd63b5b6ea81bf845f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 9af9c81ee0f38132368f4dada39b1ca1a8a666a1
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393182"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72840235"
 ---
 # <a name="deferredrequestcompleted-rule-kmdf"></a>DeferredRequestCompleted ルール (kmdf)
 
 
-**DeferredRequestCompleted**規則を指定する場合、ドライバーの既定の I/O キューに表示される、I/O 要求は、コールバック関数では、完了していないが、後で処理の遅延が、要求する必要がありますを完了、遅延でコールバック関数の処理か、要求が転送され、フレームワークに配信される場合を除き、 [ **WdfRequestStopAcknowledge** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge)メソッドが呼び出されます。
+**DeferredRequestCompleted**ルールは、ドライバーの既定の i/o キューに提示された i/o 要求がコールバック関数では完了せず、後で処理するために遅延される場合、遅延処理のコールバックで要求を完了する必要があることを指定します。関数。要求が転送されてフレームワークに配信される場合、または[**Wdfrequeststopacknowledge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge)メソッドが呼び出されない場合はです。
 
-**DeferredRequestCompleted**ルールを使用して遅延の要求を識別することが必要です、  **\_ \_sdv\_保存\_要求**と **\_ \_sdv\_取得\_要求**マクロ。 これらのマクロを使用する方法については、次を参照してください[Using \_ \_sdv\_保存\_要求と\_ \_sdv\_取得\_の要求。遅延プロシージャ呼び出し](https://docs.microsoft.com/windows-hardware/drivers/devtest/using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce)します。 前提条件規則**AliasWithinTimerDpc**これらのマクロの存在を確認します。
+**DeferredRequestCompleted**ルールでは、 **\_\_sdv\_** を使用して遅延要求を識別し、\_要求を保存し\_\_**sdv\_\_要求**マクロを取得する必要があります。 これらのマクロの使用方法の詳細については、「 [\_\_sdv\_を使用して\_要求を保存する」および「\_\_sdv\_遅延プロシージャ呼び出しの要求\_取得](https://docs.microsoft.com/windows-hardware/drivers/devtest/using---sdv-save-request-and---sdv-retrieve-request-for-deferred-proce)する」を参照してください。 前提条件の規則**AliasWithinTimerDpc**は、これらのマクロの存在を確認します。
 
-終了前に、I/O 要求のコールバック関数からを除き、次の場合、キューのコールバック関数のいずれかで、ドライバーの既定のキューに表示され、遅延の要求を完了する必要があります。
+キューのコールバック関数と遅延の1つを通じて、ドライバーの既定のキューに提示される要求は、次の場合を除き、i/o 要求のコールバック関数から抜ける前に完了する必要があります。
 
--   I/O 要求が I/O のターゲットに、または別のキューに転送されました
+-   I/o 要求は、i/o ターゲットまたは別のキューに転送されました
 
--   I/O 要求がフレームワークに配信されました (呼び出して[ **WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest))
+-   I/o 要求がフレームワークに配信されました ( [**Wdfdeviceenqueuerequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)呼び出すことによって)
 
--   **WdfRequestStopAcknowledge**メソッドが呼び出されました
+-   **Wdfrequeststopacknowledge**メソッドが呼び出されました
 
-ドライバーは、次のコールバック関数を終了したときに、規則が確認済み。
+このルールは、ドライバーが次のコールバック関数から終了したときに検証されます。
 
--   **EvtIoStop**、 **EvtCleanupCallback**または**EvtDestroyCallback**キュー
+-   キューの**Evtiostop**、 **evtiostop** 、または**evtiostop**
 
--   **EvtCleanupCallback**または**EvtDestroyCallback**ファイルのオブジェクト
+-   File オブジェクトの**Evtcleanupcallback**または**Evtcleanupcallback**
 
--   **EvtFileClose**、 **EvtFileCleanup**、 **EvtDeviceSelfManagedIoSuspend**、 **EvtDeviceSelfManagedIoFlush**、 **EvtDeviceSelfManagedIoCleanup**、 **EvtDeviceShutdownNotification**、 **EvtDeviceSurpriseRemoval**、 **EvtCleanupCallback**または**EvtDestroyCallback**デバイス
+-   **Evtfileclose**、 **EvtFileCleanup**、 **evtdeviceselfmanagediosuspend**、 **EvtDeviceSelfManagedIoFlush**、 **evtdeviceselfmanagediocleanup、evtdevice**、デバイスの**EvtDeviceSurpriseRemoval**、 **evtcleanupcallback** 、または**evtdestroycallback**
 
 -   **EvtDriverUnload**
 
-プレゼンテーションは、I/O に対して I/O キューのコールバック関数の要求**EvtIoDefault**、 **EvtIoRead**、 **EvtIoWrite**、 **EvtIoDeviceControl**、および**EvtIoInternalDeviceControl**します。
+I/o 要求プレゼンテーション用の i/o キューコールバック関数は、 **Evtiodefault**、 **EvtIoRead**、 **evtiodefault**、 **Evtiodevicecontrol**、および**evtiointernaldevicecontrol**です。
 
-I/O 要求の遅延処理のコールバック関数は**EvtTimerFunc**、 **EvtDpcFunc**、 **EvtInterruptDpc**、 **EvtInterruptEnable**、 **EvtInterruptDisable**、および**EvtWorkItem**します。
+I/o 要求の遅延処理のコールバック関数は、 **Evttimerfunc**、 **EvtDpcFunc**、 **EvtInterruptDpc**、 **EvtInterruptEnable**、 **EvtInterruptDisable**、および**evtworkitem**です。
 
-**DeferredRequestCompleted**ルールの呼び出しを使用して、 **WdfRequestMarkCancelable**、 **WdfDmaTransactionInitializeUsingRequest**、 **WdfDmaTransactionInitialize**、または**WdfWorkItemEnqueue**メソッドを I/O 要求が遅延されることを示します。
+**DeferredRequestCompleted**ルールでは、 **Wdfrequestmarkcancelable** **wdfdmatransactioninitializeuses 要求**、 **wdfdmatransactioninitialize**、または**wdfworkitemのエンキュー**メソッドの呼び出しを使用して、i/o 要求が遅延しています。
 
 |              |      |
 |--------------|------|
@@ -68,14 +68,14 @@ I/O 要求の遅延処理のコールバック関数は**EvtTimerFunc**、 **Evt
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>DeferredRequestCompleted</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>DeferredRequestCompleted</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,24 +83,24 @@ I/O 要求の遅延処理のコールバック関数は**EvtTimerFunc**、 **Evt
 <a name="applies-to"></a>適用対象
 ----------
 
-[**WdfDeviceEnqueueRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)
-[**WdfDmaTransactionInitialize** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize) 
- [ **WdfDmaTransactionInitializeUsingRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitializeusingrequest)
-[**WdfIoTargetSendInternalIoctlOthersSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlotherssynchronously) 
-[ **WdfIoTargetSendInternalIoctlSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlsynchronously)
-[**WdfIoTargetSendIoctlSynchronously** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously) 
- [ **WdfIoTargetSendReadSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)
-[**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously) 
- [ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)
-[**WdfRequestCompleteWithInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) 
- [ **WdfRequestCompleteWithPriorityBoost** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost) 
- [ **WdfRequestForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue)
-[**WdfRequestMarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable) 
- [ **WdfRequestMarkCancelableEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)
-[**WdfRequestSend** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestsend) 
- [ **WdfRequestStopAcknowledge**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge)
-[**WdfRequestUnmarkCancelable** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable)
- [ **WdfWorkItemEnqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfworkitem/nf-wdfworkitem-wdfworkitemenqueue)
+Wd
+[**Deviceenqueu
+** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest) [**Wdfdmatransactioninitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize) [**Wdfdmatransactioninitializeon request**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitializeusingrequest)
+
+[**WdfIoTargetSendInternalIoctlOthersSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlotherssynchronously)を[**同期的**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendinternalioctlsynchronously)に同期的に
+wdfiotargetsendioctlは同期的に
+wdfiotargetsendientl
+[**WdfIoTargetSendWriteSynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendwritesynchronously)
+[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendioctlsynchronously) [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously) [**WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)
+[**wdfrequestcompletewith
+** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithinformation) [**Wdfrequestcompletetoioブースト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcompletewithpriorityboost)
+[**Wdfrequestforwardtoioqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue)
+[**Wdfrequestmarkを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelable)
+[**Wdfrequestmarkcancelableex
+Wdfrequestmarkcancelableex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestmarkcancelableex)
+Wdfrequestunmarkcancel
+[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestsend) wdfworkitemunmarkキャンセル[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestunmarkcancelable) [ **
+** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequeststopacknowledge) [**wdfrequestcomplete エンキュー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfworkitem/nf-wdfworkitem-wdfworkitemenqueue)
  
 
  

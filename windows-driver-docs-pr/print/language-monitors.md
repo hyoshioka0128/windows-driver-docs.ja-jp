@@ -4,16 +4,16 @@ description: 言語モニター
 ms.assetid: 26ba1c22-390a-4187-b67a-3f3497964f8e
 keywords:
 - 印刷モニター WDK、言語モニター
-- 言語モニター WDK を印刷します。
-- 言語モニター WDK を印刷する言語モニタについて
+- 言語モニターの WDK 印刷
+- 言語モニターの WDK 印刷、言語モニターについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e2680b98b86f826898bf92c4213a80b0b3f19d43
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6c4046ffe79c986cfc478bf4b2b32be09a83a85b
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353539"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72843253"
 ---
 # <a name="language-monitors"></a>言語モニター
 
@@ -21,25 +21,25 @@ ms.locfileid: "67353539"
 
 
 
-言語モニターは、2 つの目的のユーザー モード Dll:
+言語モニターは、次の2つの目的で機能するユーザーモードの Dll です。
 
--   印刷スプーラとソフトウェアにアクセス可能な状態情報を提供することができる双方向プリンター間の全二重通信パスを提供します。
+-   これらは、ソフトウェアからアクセスできる状態情報を提供できる印刷スプーラと双方向のプリンターの間の全二重通信パスを提供します。
 
--   これらは、プリンターのコントロールは、データ ストリームへのプリンター ジョブ言語によって定義されたコマンドなどを追加します。
+-   プリンタージョブ言語によって定義されたコマンドなどのプリンター制御情報をデータストリームに追加します。
 
-マイクロソフトは、言語モニター、Pjlmon.dll で、サポートを提供しています*プリンター ジョブ言語 (PJL)* 、し PJL プリンターの双方向通信を提供します。 このモニターとして Microsoft Windows Driver Kit (WDK) で含まれている、[サンプル言語モニター](sample-language-monitor.md)します。
+Microsoft は、 *printer job language (PJL)* をサポートし、PJL プリンターの双方向通信を提供する、言語モニターである Pjlmon .dll を提供しています。 このモニターは、Microsoft Windows Driver Kit (WDK) の[サンプル言語モニター](sample-language-monitor.md)に含まれています。
 
-その他のジョブ制御言語をサポートするためにカスタマイズされた言語モニターを書き込むことが一方向または双方向プリンターです。
+カスタマイズされた言語モニターは、一方向または双方向のプリンター用に、他のジョブ制御言語をサポートするように記述できます。
 
-言語モニターは、省略可能なだけ」の説明に従って、プリンターの INF ファイルに含まれている場合は、特定のプリンター型に関連付けられている[印刷モニターをインストール](installing-a-print-monitor.md)します。
+言語モニターはオプションであり、プリンターの INF ファイルに含まれている場合にのみ、特定のプリンターの種類に関連付けられます (「[印刷モニターのインストール](installing-a-print-monitor.md)」を参照)。
 
-オフにした場合**双方向サポートを有効にする** チェック ボックス、**ポート**プリンターのプロパティ ダイアログ ボックス、スプーラーのタブは呼び出しません、 [ **StartDocPort** ](https://docs.microsoft.com/previous-versions/ff562710(v=vs.85))、 [ **WritePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-writeport)、 [ **EndDocPort**](https://docs.microsoft.com/previous-versions/ff548742(v=vs.85))、 [ **GetPrinterDataFromPort**](https://docs.microsoft.com/previous-versions/ff550506(v=vs.85))、 [**して**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-readport)言語モニターの機能です。 呼び出す、スプーラーは引き続き、 [ **OpenPortEx**](https://docs.microsoft.com/previous-versions/ff559596(v=vs.85))、 [ **ClosePort**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/nf-winsplp-closeport)、 [ **SendRecvBidiDataFromPort** ](https://docs.microsoft.com/previous-versions/ff562071(v=vs.85))場合であっても関数**双方向サポートを有効にする**がオフになっています。 **双方向サポートを有効にする** チェック ボックスでは、アプリケーションは、双方向通信 API の関数を呼び出すときに行われた言語モニターへの呼び出しには影響しません。
+プリンターのプロパティ] ダイアログボックスの **[ポート]** タブで **[双方向サポートを有効に]** する チェックボックスをオフにした場合、スプーラは[**startdocport**](https://docs.microsoft.com/previous-versions/ff562710(v=vs.85))、 [**writeport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-writeport)、 [**enddocport**](https://docs.microsoft.com/previous-versions/ff548742(v=vs.85))、 [**GetPrinterDataFromPort**](https://docs.microsoft.com/previous-versions/ff550506(v=vs.85))を呼び出しません。言語モニターの[**Readport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-readport)関数。 [**双方向サポートを有効に**する] がオフになっている場合でも、スプーラは[**openportex**](https://docs.microsoft.com/previous-versions/ff559596(v=vs.85))、 [**closeport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/nf-winsplp-closeport)、 [**SendRecvBidiDataFromPort**](https://docs.microsoft.com/previous-versions/ff562071(v=vs.85))関数を呼び出し続けます。 [**双方向サポートを有効に**する] チェックボックスは、アプリケーションが双方向通信 API で関数を呼び出すときに行われる言語モニターの呼び出しには影響しません。
 
-言語モニターが、プリンターに関連付けられている場合は、言語モニターは、プリント プロセッサからプリンターのデータ ストリームを受信する、変更しとプリンターのポート モニターに渡します。 詳細については、次を参照してください。[言語およびポート モニターの相互作用](language-and-port-monitor-interaction.md)します。
+言語モニターがプリンターに関連付けられている場合、言語モニターはプリンターのデータストリームを印刷プロセッサから受け取り、それを変更して、プリンターのポートモニターに渡します。 詳細については、「[言語およびポートモニターの相互作用](language-and-port-monitor-interaction.md)」を参照してください。
 
-**注**  常に言語モニターを実装する必要があります、 **SendRecvBidiDataFromPort**関数し、で、関数のアドレスが含まれて、 *pfnSendRecvBidiDataFromPort*メンバー、 [ **MONITOR2** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/winsplp/ns-winsplp-_monitor2)構造体。
+   言語モニターは常に**SendRecvBidiDataFromPort**関数を実装し、 [**MONITOR2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_monitor2)構造体の*pfnSendRecvBidiDataFromPort*メンバーに関数のアドレスを含める必要がある**ことに注意**してください。
 
-言語モニター ポート モニターへの呼び出しを転送する必要があります、言語モニターが、Bidi をサポートしていないか、Bidi スキーマ値で、言語モニターがサポートされていませんが、要求に含まれています、こと**SendRecvBidiDataFromPort**関数。
+言語モニターで Bidi がサポートされていない場合、または言語モニターでサポートされていない Bidi スキーマ値が要求に含まれている場合、言語モニターはポートモニターの**SendRecvBidiDataFromPort**関数への呼び出しを転送する必要があります。
 
  
 

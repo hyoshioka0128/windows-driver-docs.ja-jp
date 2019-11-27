@@ -3,34 +3,34 @@ title: ファイル システムによるコンテキストのサポート
 description: ファイル システムによるコンテキストのサポート
 ms.assetid: 661ee3ff-3171-4d1e-a8fe-8d1852c5e990
 keywords:
-- コンテキストの WDK のファイル システム ミニフィルター、ファイル システムのサポートします。
+- コンテキスト WDK ファイルシステムミニフィルター、ファイルシステムサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b4b007414586d130a5df91204fbf19dce08fc1f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a56fbea6b53554df45492f12b0cdfd29c802484
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369253"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72841398"
 ---
 # <a name="file-system-support-for-contexts"></a>ファイル システムによるコンテキストのサポート
 
-使用する必要があります (該当する) 場合は、ファイルのコンテキストをサポートするには、ストリームのコンテキスト、およびファイル オブジェクト (ストリームのハンドル) のコンテキスト、ファイル システム、 [ **FSRTL\_詳細\_FCB\_ヘッダー** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)構造体。 すべての Microsoft Windows ファイル システムは、この構造体を使用して、サード パーティ製のファイル システムのすべての開発者はでもを強くお勧めします。 詳細については、次を参照してください。 [ **FsRtlSetupAdvancedHeader** ](https://msdn.microsoft.com/library/windows/hardware/ff547257)と**FSRTL\_詳細\_FCB\_ヘッダー**します。
+ファイルコンテキスト (該当する場合)、ストリームコンテキスト、およびファイルオブジェクト (ストリームハンドル) のコンテキストをサポートするには、ファイルシステムで[**FSRTL\_ADVANCED\_FCB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)構造体を使用する必要があります。 すべての Microsoft Windows ファイルシステムはこの構造を使用します。また、すべてのサードパーティのファイルシステム開発者にもこのような構成を行うことを強くお勧めします。 詳細については、「 [**Fsrtlsetupadvanced ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff547257) 」と「 **FSRTL\_ADVANCED\_FCB\_ヘッダー**」を参照してください。
 
-NTFS および FAT ファイル システムはサポートしませんファイル、ストリーム、またはファイル オブジェクトのコンテキストの pre-create または閉じる後のパス、または、ページング ファイルに[ **IRP\_MJ\_ネットワーク\_クエリ\_開いている**](https://docs.microsoft.com/windows-hardware/drivers/ifs/flt-parameters-for-irp-mj-network-query-open)操作。
+NTFS および FAT ファイルシステムは、ページングファイル、作成前または終了パス、または[**IRP\_MJ\_ネットワーク\_クエリ\_オープン**](https://docs.microsoft.com/windows-hardware/drivers/ifs/flt-parameters-for-irp-mj-network-query-open)操作のために、ファイル、ストリーム、またはファイルオブジェクトコンテキストをサポートしていません。
 
-ミニフィルター ドライバーをファイル システムがサポートするかストリーム コンテキストやファイル オブジェクトの指定されたファイル オブジェクト呼び出すことによって調べる[ **FltSupportsStreamContexts** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsupportsstreamcontexts)と[ **FltSupportsStreamHandleContexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsupportsstreamhandlecontexts)、それぞれします。
+ミニフィルタードライバーは、 [**Fltsupportsstreamcontexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsstreamcontexts)と[**Fltsupportsstreamhandlテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsstreamhandlecontexts)をそれぞれ呼び出して、ファイルシステムが特定のファイルオブジェクトのストリームコンテキストとファイルオブジェクトコンテキストをサポートするかどうかを判断できます。
 
-ファイルのコンテキストとは、以降 Windows Vista で利用可能です。
+ファイルコンテキストは、Windows Vista 以降で使用できます。
 
-ファイルあたり 1 つのデータ ストリームのみをサポートする (例: FAT) ファイル システム、ファイルのコンテキストでは、ストリームのコンテキストと同じです。 通常、このようなファイル システムは、ストリーム コンテキストをサポートが、ファイルのコンテキストをサポートしていません。 代わりに、フィルター マネージャーでは、このサポートが提供ストリーム コンテキストをファイル システムの既存のサポートを使用します。 ミニフィルター ドライバーのインスタンスがこれらのファイル システムに接続されている[ **FltSupportsFileContexts** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsupportsfilecontexts)返します**FALSE**、中に[ **FltSupportsFileContextsEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltsupportsfilecontextsex)返します**TRUE** (有効な場合以外**NULL**値が渡される、*インスタンス*パラメーターの場合)。
+ファイルごとに1つのデータストリームのみをサポートするファイルシステム (FAT など) の場合、ファイルコンテキストはストリームコンテキストに相当します。 通常、このようなファイルシステムではストリームコンテキストはサポートされていますが、ファイルコンテキストはサポートしていません。 代わりに、フィルターマネージャーは、ファイルシステムのストリームコンテキストの既存のサポートを使用して、このサポートを提供します。 これらのファイルシステムに接続されているミニフィルタードライバーのインスタンスの場合、 [**Fltsupportsfilecontexts**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsfilecontexts)は**FALSE**を返しますが、は**TRUE**を返します (*インスタンス*パラメーターに有効な**NULL**以外の値が渡された場合)。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltsupportsfilecontextsex)
 
-コンテキストの種類がファイルでサポートされていない場合、ミニフィルターはそのファイルにその型のコンテキストをアタッチできません。
+ファイルでコンテキストの種類がサポートされていない場合、ミニフィルターでそのファイルにその種類のコンテキストをアタッチすることはできません。
 
-ファイルのコンテキストをサポートするために、ファイル システムが必要です。
+ファイルのコンテキストをサポートするには、ファイルシステムで次のことを行う必要があります。
 
-* 埋め込みを**FileContextSupportPointer**型 PVOID でそのファイルの context 構造は、通常、ファイル コンテキスト ブロック (FCB) のメンバー。 ファイル システムにこのメンバーを初期化する必要があります**NULL**します。
+* ファイルコンテキスト構造 (通常はファイルコンテキストブロック (FCB)) に PVOID 型の**FileContextSupportPointer**メンバーを埋め込みます。 ファイルシステムは、このメンバーを**NULL**に初期化する必要があります。
 
-* 使用**FsRtlSetupAdvancedHeaderEx** (の代わりに[ **FsRtlSetupAdvancedHeader**](https://msdn.microsoft.com/library/windows/hardware/ff547257))、に有効なポインターを渡すストリームコンテキスト構造を初期化するために**FileContextSupportPointer** (ファイル コンテキストの対応する構造体に埋め込まれた) のメンバー、 *FileContextSupportPointer*パラメーター。 詳細については、次を参照してください。 **FsRtlSetupAdvancedHeaderEx**と[ **FSRTL\_詳細\_FCB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)します。
+* Fsrtlsetupの**Headerex** ( [**fsrtlsetupadvanced ヘッダー**](https://msdn.microsoft.com/library/windows/hardware/ff547257)ではなく) を使用して、ストリームコンテキスト構造を初期化し、 **FileContextSupportPointer**メンバーへの有効なポインターを渡します (対応するファイルコンテキストに埋め込まれています)。*FileContextSupportPointer*パラメーターの構造体)。 詳細については、「 **FsrtlsetupFSRTL Headerex**と[ **\_ADVANCED\_FCB\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_fsrtl_advanced_fcb_header)」を参照してください。
 
-* 呼び出す**FsRtlTeardownPerFileContexts**をファイル システムがファイルのファイル コンテキスト構造を削除するときにファイルを使用してフィルターとミニフィルター ドライバーが関連付けられているすべてのファイル コンテキスト構造体を解放します。
+* **FsRtlTeardownPerFileContexts**を呼び出して、ファイルシステムによってファイルのファイルコンテキスト構造が削除されたときにフィルター処理およびミニフィルタを適用するすべてのファイルコンテキスト構造を解放します。

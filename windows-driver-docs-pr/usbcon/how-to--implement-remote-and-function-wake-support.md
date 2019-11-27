@@ -1,76 +1,76 @@
 ---
-Description: このトピックでは、関数の概要が中断し、関数リモート ウェイク アップ機能ユニバーサル シリアル バス (USB) の 3.0 の多機能デバイス (複合デバイス) を提供します。
-title: 複合のドライバーで中断する関数を実装する方法
+Description: このトピックでは、ユニバーサルシリアルバス (USB) 3.0 マルチ機能デバイス (複合デバイス) の関数の中断と関数のリモートウェイクアップ機能の概要について説明します。
+title: 複合ドライバーで関数の中断を実装する方法
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 53ba7b9abb05eff983b7ab51d24924dfa63d4925
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 757dcece9f37d26d2d18cb9bbf6df540987684c0
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386265"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844993"
 ---
-# <a name="how-to-implement-function-suspend-in-a-composite-driver"></a>複合のドライバーで中断する関数を実装する方法
+# <a name="how-to-implement-function-suspend-in-a-composite-driver"></a>複合ドライバーで関数の中断を実装する方法
 
 
-このトピックでは、関数の概要が中断し、関数リモート ウェイク アップ機能ユニバーサル シリアル バス (USB) の 3.0 の多機能デバイス (複合デバイス) を提供します。 このトピックでは、ドライバーでは複合デバイスを制御するこれらの機能を実装する方法について説明します。 置換で、Usbccgp.sys 複合のドライバーをトピックが適用されます。
+このトピックでは、ユニバーサルシリアルバス (USB) 3.0 マルチ機能デバイス (複合デバイス) の関数の中断と関数のリモートウェイクアップ機能の概要について説明します。 このトピックでは、複合デバイスを制御するドライバーでこれらの機能を実装する方法について説明します。 このトピックは、Usbccgp を置き換える複合ドライバーに適用されます。
 
-ユニバーサル シリアル バス (USB) 3.0 の仕様と呼ばれる新しい機能を定義する*関数中断*します。 機能は、その他の関数とは無関係に、低電力状態に複合デバイスの個々 の関数を使用できます。 関数のキーボードとマウスの別の関数を定義する複合デバイスを検討してください。 ユーザーが作業の状態でキーボードの機能のままで一定期間、マウスを移動しません。 マウスのクライアント ドライバーは、関数のアイドル状態を検出し、キーボードの機能が稼働状態のままの状態を中断する関数を送信できます。
+Universal Serial Bus (USB) 3.0 仕様では、*関数の中断*と呼ばれる新しい機能が定義されています。 この機能を使用すると、複合デバイスの個々の機能が、他の機能とは別に低電力状態に入ることができます。 キーボードの関数とマウスの別の機能を定義する複合デバイスを考えてみましょう。 ユーザーはキーボードの機能を動作状態のままにしますが、一定の時間、マウスを移動しません。 マウスのクライアントドライバーは、関数のアイドル状態を検出し、キーボード関数が動作状態のままであれば、その関数を中断状態に送信できます。
 
-複合デバイス全体の遷移には、個々 の関数はすべて中断状態と状態を中断します。 ただし、デバイス全体が中断デバイス内の任意の関数の電源の状態に関係なく状態に移行できます。 特定の関数およびデバイス全体には、中断状態が入力と、デバイスが中断状態では、デバイスの保留の開始と終了のプロセス全体を通じて、関数の中断状態が保持されます。
+すべての個別の関数が中断状態になると、複合デバイス全体が中断状態に移行します。 ただし、デバイス内のすべての機能の電源状態に関係なく、デバイス全体が中断状態に移行する可能性があります。 特定の関数とデバイス全体が中断状態になった場合、デバイスが中断状態になっている間、およびデバイスの中断エントリと終了プロセスを通じて、関数の中断状態が保持されます。
 
-USB 2.0 デバイスをリモート ウェイク アップ機能に似ています (を参照してください[USB デバイスのリモート ウェイク アップ](remote-wakeup-of-usb-devices.md))、USB 3.0 複合デバイスで個々 の関数をウェイク アップできる低電力状態から他の関数の電源の状態に影響を与えずにします。 この機能は呼*リモート ウェイク アップ機能*します。 機能は、デバイスのファームウェアのリモート ウェイク アップのビットを設定するプロトコル要求を送信することによって、ホストによって明示的に有効です。 このプロセスが呼び出されます*リモート ウェイク アップの関数を取り組ま*します。 リモート ウェイクのビットについては、公式の USB 仕様の図 9-6 を参照してください。
+Usb 2.0 デバイスのリモートウェイクアップ機能 (「 [Usb デバイスのリモートウェイクアップ](remote-wakeup-of-usb-devices.md)」を参照) と同様に、usb 3.0 複合デバイスの個々の機能は、他の機能の電源状態に影響を与えることなく、低電力状態からウェイクアップできます。 この機能は *、関数のリモートウェイクアップ*と呼ばれます。 この機能は、デバイスのファームウェアのリモートウェイクアップビットを設定するプロトコル要求を送信することによって、ホストによって明示的に有効化されます。 このプロセスは *、リモートウェイクアップ用の関数の取り組ま*と呼ばれます。 リモートウェイク関連のビットの詳細については、公式の USB 仕様の図9-6 を参照してください。
 
-リモート ウェイク アップ、関数の関数をされている場合 (ときに中断状態) はウェイク アップを生成するための十分な電力が保持されます*信号を再開*ユーザー イベントが物理デバイスで発生します。 終了が関連付けられている関数の状態を中断し、その再開シグナルの結果として、クライアント ドライバーことができます。 マウス関数複合デバイスの例では、ユーザーはアイドル状態でマウスの形跡ときにマウス関数再開にシグナルを送りますホスト。 ホストでは、USB ドライバー スタックは、関数が復帰を対応する関数のクライアント ドライバーに通知を反映させるを検出します。 クライアント ドライバーでは、ウェイク アップ関数、および、作業の状態を入力できます。
+関数がリモートウェイクアップ用に設定されている場合、(中断状態のときに) 関数は、物理デバイスでユーザーイベントが発生したときにウェイクアップ*再開通知*を生成するのに十分な電力を保持します。 この再開信号の結果として、クライアントドライバーは、関連付けられている関数の中断状態を終了できます。 複合デバイスのマウス機能の例では、ユーザーがアイドル状態にあるマウスをウィグリングすると、マウス機能によってホストに再開信号が送信されます。 ホストでは、USB ドライバースタックは、ウェイクアップされた機能を検出し、対応する関数のクライアントドライバーに通知を伝達します。 その後、クライアントドライバーは関数をウェイクアップして、動作状態に入ることができます。
 
-クライアント ドライバーの場合は、状態とウェイク アップする関数は、中断する関数を送信するための手順は、中断状態にデバイス全体を送信する単一関数のデバイス ドライバーに似ています。 次の手順では、これらの手順をまとめたものです。
+クライアントドライバーの場合は、状態を中断するために関数を送信し、関数をウェイクアップする手順は、デバイス全体を中断状態に送信する単一関数のデバイスドライバーに似ています。 これらの手順の概要を次に示します。
 
-1.  アイドル状態にある、関連付けられた関数を検出します。
-2.  アイドル状態の I/O 要求パケット (IRP) を送信します。
-3.  待機ウェイク I/O 要求パケット (IRP) を送信することによってその関数のリモート ウェイク アップを arm に要求を送信します。
-4.  省電力状態に関数を送信することによって移行**Dx** Irp の電源 (**D2**または**D3**)。
+1.  関連付けられている関数がアイドル状態であることを検出します。
+2.  アイドル状態の i/o 要求パケット (IRP) を送信します。
+3.  待機ウェイクアップ i/o 要求パケット (IRP) を送信して、リモートウェイクアップのためにその機能を arm に渡す要求を送信します。
+4.  **Dx**の電源 Irp (**D2**または**D3**) を送信して、関数を低電力状態に移行します。
 
-上記の手順の詳細についてを参照してください"の送信、USB アイドル要求 IRP" [USB セレクティブ サスペンド](usb-selective-suspend.md)します。
-複合のドライバーでは、クライアント ドライバー (関数デバイス スタックの FDO) によって送信された複合のデバイスとハンドル power の要求で、物理デバイス オブジェクト (PDO) の各関数を作成します。 クライアント ドライバーを正常に入力し、終了するために、その関数の状態を中断、複合ドライバーは、関数をサポートする必要がありますを中断し、リモートのウェイク アップ機能、およびプロセス受信の電源を要求します。
+上記の手順の詳細については、「 [Usb 選択的中断](usb-selective-suspend.md)」の「Usb アイドル要求の IRP を送信する」を参照してください。
+複合ドライバーは、複合デバイスの各関数用に物理デバイスオブジェクト (PDO) を作成し、クライアントドライバー (関数のデバイススタックの FDO) によって送信された電力要求を処理します。 クライアントドライバーが機能の中断状態を正常に開始して終了するには、複合ドライバーが機能の中断およびリモートウェイクアップ機能をサポートし、受信した電源要求を処理する必要があります。
 
-Windows 8 では、USB 3.0 デバイスの USB ドライバー スタックは、これらの機能をサポートします。 さらに、関数を中断し、Microsoft が提供する関数のリモート ウェイク アップの実装が追加された[一般的な親の USB ドライバー](usb-common-class-generic-parent-driver.md) (Usbccgp.sys)、これは、Windows の既定の複合ドライバー。 カスタム複合ドライバーを作成する場合、ドライバーが関数に関連する要求を処理する必要がありますを中断し、次の手順に従って、リモート ウェイク アップを要求します。
+Windows 8 では、USB 3.0 デバイスの USB ドライバースタックがこれらの機能をサポートしています。 さらに、関数の中断および関数のリモートウェイクアップの実装は、Windows の既定の複合ドライバーである Microsoft 提供の[USB 汎用親ドライバー](usb-common-class-generic-parent-driver.md) (Usbccgp) に追加されています。 カスタム複合ドライバーを作成する場合は、次の手順に従って、関数の中断およびリモートウェイクアップ要求に関連する要求をドライバーで処理する必要があります。
 
 <a name="instructions"></a>手順
 ------------
 
-### <a href="" id="determine-whether-the-usb-driver-stack-supports-function-suspend"></a>手順 1:USB ドライバー スタックのサポート関数が中断するかどうかを判断します。
+### <a href="" id="determine-whether-the-usb-driver-stack-supports-function-suspend"></a>手順 1: USB ドライバースタックが関数の中断をサポートしているかどうかを判断する
 
-デバイスの起動のルーチンで ([**IRP\_MN\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device))、複合のドライバーの次の手順を実行します。
+複合ドライバーの開始デバイスルーチン ([**IRP\_\_によって起動\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)) で、次の手順を実行します。
 
-1.  呼び出す、 [ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))基になる USB ドライバー スタックは、関数をサポートするかどうかを判断するルーチンが機能を中断します。 呼び出しは、以前の呼び出しで取得した有効な USBD の処理が必要です、 [ **USBD\_CreateHandle** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_createhandle)ルーチン。
+1.  [**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))ルーチンを呼び出して、基になる USB ドライバースタックが関数の中断機能をサポートしているかどうかを確認します。 この呼び出しには、前の[**USBD\_CreateHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_createhandle)ルーチンの呼び出しで取得した有効な USBD ハンドルが必要です。
 
-    呼び出しは成功[ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))基になる USB ドライバー スタックのサポート関数が中断するかどうかを決定します。 USB ドライバー スタックでは、関数はサポートされていないことを示すエラー コードが中断または接続しているデバイスが USB 3.0 多機能デバイスではない、呼び出しを返すことができます。
+    [**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))への呼び出しが成功すると、基になる USB ドライバースタックが関数の中断をサポートしているかどうかが判断されます。 この呼び出しは、USB ドライバースタックが関数の中断をサポートしていないか、接続されているデバイスが USB 3.0 マルチ機能デバイスではないことを示すエラーコードを返すことができます。
 
-2.  場合、 [ **USBD\_QueryUsbCapability** ](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))呼び出し関数が中断することは、基になる USB ドライバー スタックに複合デバイスを登録します。 複合デバイスを登録するには送信する必要があります、 [ **IOCTL\_内部\_USB\_登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device) I/Oコントロールの要求。 この要求の詳細については、次を参照してください。[複合デバイスを登録する方法](register-a-composite-driver.md)します。
+2.  [**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))の呼び出しで、関数の中断がサポートされていることが示された場合は、基になる USB ドライバースタックに複合デバイスを登録します。 複合デバイスを登録するには、 [ **\_内部\_USB\_登録し、複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_register_composite_device)i/o 制御要求\_登録する必要があります。 この要求の詳細については、「[複合デバイスを登録する方法](register-a-composite-driver.md)」を参照してください。
 
-    登録要求を使用して、 [**登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_register_composite_device)複合ドライバーに関する情報を指定する構造体。 設定することを確認**CapabilityFunctionSuspend**複合ドライバーが関数をサポートしていることを示すためには 1 を中断します。
+    登録要求では、[**登録\_複合\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_register_composite_device)構造を使用して、複合ドライバーに関する情報を指定します。 **CapabilityFunctionSuspend**が1に設定されていることを確認してください。これは、複合ドライバーが関数の中断をサポートしていることを示します。
 
-USB ドライバー スタックが関数をサポートするかどうかを確認する方法を示すコード例については、中断を参照してください[ **USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))します。
+USB ドライバースタックが関数の中断をサポートしているかどうかを確認する方法を示すコード例については、「 [**USBD\_QueryUsbCapability**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/hh406230(v=vs.85))」を参照してください。
 
-### <a href="" id="handle-the-idle-irp"></a>手順 2:アイドル状態の IRP を処理します。
+### <a href="" id="handle-the-idle-irp"></a>手順 2: アイドル状態の IRP を処理する
 
-クライアント ドライバーがアイドル状態の IRP を送信できます (を参照してください[ **IOCTL\_内部\_USB\_送信\_IDLE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification))。 クライアント ドライバーが関数のアイドル状態を検出した後、要求が送信されます。 IRP にはコールバックの完了のルーチンへのポインターが含まれています (と呼ばれる*アイドル コールバック*) クライアント ドライバーによって実装されます。 アイドル状態のコールバックでは、クライアントは、状態を中断する関数を送信する前に保留中の I/O 転送では、キャンセルなどのタスクを実行します。
+クライアントドライバーは、アイドル状態の IRP を送信できます (「 [**IOCTL\_内部\_USB\_送信\_アイドル\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_submit_idle_notification))」を参照してください。 要求は、クライアントドライバーが関数のアイドル状態を検出した後に送信されます。 IRP には、クライアントドライバーによって実装されるコールバック完了ルーチン (*アイドルコールバック*と呼ばれます) へのポインターが含まれています。 アイドルコールバック内では、クライアントは、中断状態の関数を送信する直前に、保留中の i/o 転送のキャンセルなどのタスクを実行します。
 
-**注**  アイドル状態の IRP メカニズムは USB 3.0 デバイスのクライアント ドライバーの省略可能です。 ただし、ほとんどのクライアント ドライバーは、USB 2.0 と USB 3.0 の両方のデバイスをサポートするために書き込まれます。 USB 2.0 デバイスをサポートするには、複合ドライバーは、各関数の電源の状態を追跡するためにその IRP に依存するため、ドライバーがアイドル状態の IRP を送信する必要があります。 すべての関数がアイドル状態の場合は、複合、ドライバーは中断状態にデバイス全体を送信します。
+USB 3.0 デバイスのクライアントドライバーでは、アイドル状態の IRP メカニズムがオプションで  **ことに注意**してください。 ただし、ほとんどのクライアントドライバーは、USB 2.0 と USB 3.0 の両方のデバイスをサポートするように記述されています。 USB 2.0 デバイスをサポートするには、ドライバーがアイドル状態の IRP を送信する必要があります。これは、複合ドライバーが各関数の電源状態を追跡するためにその IRP に依存しているためです。 すべての関数がアイドル状態の場合、複合ドライバーはデバイス全体を中断状態に送信します。
 
  
 
-クライアント ドライバーからアイドル状態の IRP を受信すると、複合ドライバーはすぐにクライアント ドライバーが中断状態に関数を送信することがあります、クライアント ドライバーに通知するアイドル状態のコールバックを呼び出す必要があります。
+クライアントドライバーからアイドル状態の IRP を受け取ると、複合ドライバーはすぐにアイドルコールバックを呼び出して、クライアントドライバーが中断状態になることがクライアントドライバーに通知されるようにクライアントドライバーに通知する必要があります。
 
-### <a href="" id="send-a-request-for-remote-wake-up-notification"></a>手順 3:リモート ウェイク アップの通知の要求を送信します。
+### <a href="" id="send-a-request-for-remote-wake-up-notification"></a>手順 3: リモートウェイクアップ通知の要求を送信する
 
-クライアント ドライバーは、関数をリモート ウェイク アップを送信することで arm に要求を送信できる、 [ **IRP\_MJ\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)マイナー関数コードで IRP に設定[**IRP\_MN\_待機\_WAKE** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake) (待機ウェイク IRP)。 クライアント ドライバーは、ドライバーがユーザー イベントの結果として動作する状態を入力する場合にのみ、この要求を送信します。
+クライアントドライバーは、 [**irp\_MJ\_POWER**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power) IRP を送信することによって、その機能を arm に渡す要求を送信します。これにより、マイナー機能コードが irp\_\_に設定され、[**待機\_ウェイク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-wait-wake)(待機-ウェイクアップ IRP) になります。 クライアントドライバーは、ユーザーイベントの結果として動作状態を入力する必要がある場合にのみ、この要求を送信します。
 
-待機ウェイク IRP を受信すると、複合のドライバーを送信する必要があります、 [ **IOCTL\_内部\_USB\_要求\_リモート\_WAKE\_通知** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification) USB ドライバー スタックに I/O 制御要求。 要求には、スタックが再開信号に関する通知を受信すると、複合ドライバーに通知する USB ドライバー スタックができます。 **IOCTL\_内部\_USB\_要求\_リモート\_WAKE\_通知**を使用して、 [**要求\_リモート\_WAKE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/ns-usbdlib-_request_remote_wake_notification)要求パラメーターを指定する構造体。 複合のドライバーを指定する必要がある値の 1 つは、リモート ウェイク アップされている関数の関数のハンドルです。 複合のドライバーでは、USB ドライバー スタックに複合デバイスを登録する前の要求では、そのハンドルを取得します。 複合のドライバーの登録要求の詳細については、次を参照してください。[複合デバイスを登録する方法](register-a-composite-driver.md)します。
+複合ドライバーは、待機ウェイク IRP を受信したときに、リモート\_ウェイクアップ\_通知 I/o 制御要求\_、USB ドライバースタックに[ **\_内部\_usb\_要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)を送信する必要があります。 この要求により、スタックが再開シグナルに関する通知を受信したときに、USB ドライバースタックから複合ドライバーに通知されるようになります。 **内部\_USB\_要求\_リモート\_ウェイク\_通知**では、要求[ **\_リモート\_ウェイク\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/ns-usbdlib-_request_remote_wake_notification)構造を使用して要求パラメーターを指定します。\_。 複合ドライバーによって指定される必要がある値の1つは、リモートウェイクアップ用に設定されている関数の関数ハンドルです。 前の要求でを処理して、複合デバイスを USB ドライバースタックに登録するために取得した複合ドライバー。 複合ドライバーの登録要求の詳細については、「[複合デバイスを登録する方法](register-a-composite-driver.md)」を参照してください。
 
-複合のドライバーが、(リモート ウェイク アップ) へのポインターを提供する要求の IRP、完了のルーチンは、複合、ドライバーによって実装されます。
+要求の IRP では、複合ドライバーは、複合ドライバーによって実装される (リモートウェイクアップ) 完了ルーチンへのポインターを提供します。
 
-次のコード例では、リモート ウェイク アップ要求を送信する方法を示します。
+次のコード例は、リモートウェイクアップ要求を送信する方法を示しています。
 
 ```ManagedCPlusPlus
 /*++
@@ -137,17 +137,17 @@ SendRequestForRemoteWakeNotification(
 }
 ```
 
-[ **IOCTL\_内部\_USB\_要求\_リモート\_WAKE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)によって要求が完了しました再開の信号に関する通知を受信すると、ウェイク アップ プロセス中に USB ドライバー スタック。 この期間中、USB ドライバー スタックは、リモートのウェイク アップ完了ルーチンを呼び出します。
+[**内部\_usb\_要求\_リモート\_wake\_通知要求の IOCTL\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)は、再開シグナルに関する通知を受信したときに、ウェイクアッププロセス中に usb ドライバースタックによって完了します。 その間、USB ドライバースタックによって、リモートウェイクアップの完了ルーチンも呼び出されます。
 
-複合ドライバーは、保留中の待機ウェイク IRP を保持し、後の処理キューにする必要があります。 複合のドライバーは、ドライバーのリモートのウェイク アップ完了ルーチンを取得、USB ドライバー スタックによって呼び出されたときにその IRP を完了する必要があります。
+複合ドライバーは、待機-ウェイク IRP を保留したままにして、後で処理するためにキューに置く必要があります。 複合ドライバーは、ドライバーのリモートウェイクアップ完了ルーチンが USB ドライバースタックによって起動されたときに、その IRP を完了する必要があります。
 
-### <a href="" id="send-a-request-to-arm-the-function-for-remote-wake-up"></a>手順 4:リモート ウェイク アップの関数を Arm に要求を送信します。
+### <a href="" id="send-a-request-to-arm-the-function-for-remote-wake-up"></a>手順 4: リモートウェイクアップ用に関数を Arm に渡す要求を送信する
 
-クライアント ドライバーを送信する関数を低電力状態を送信する、 [ **IRP\_MN\_設定\_POWER** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power) IRP を Windows Driver Model (を変更する要求WDM) デバイスの電源状態を**D2**または**D3**します。 通常、クライアント ドライバーの送信**D2** IRP がドライバーにリモート ウェイク アップを要求するには、前の待機ウェイク IRP が送信される場合。 それ以外の場合、クライアント ドライバーの送信**D3** IRP します。
+関数を低電力状態に送信するために、クライアントドライバーは、Windows Driver Model (WDM) デバイスの電源状態を**D2**または**D3**に変更する要求を使用して\_電源 irp を\_設定して、 [**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-set-power)を送信します。 通常、リモートウェイクアップを要求するためにドライバーが前に待機ウェイク IRP を送信した場合、クライアントドライバーは**D2** irp を送信します。 それ以外の場合、クライアントドライバーは**D3** IRP を送信します。
 
-受信すると、 **D2** IRP、複合ドライバーする必要がありますまず決定待機ウェイク IRP が保留中かどうか、クライアント ドライバーによって送信される前の要求から。 その IRP が保留中の場合は、複合、ドライバーは、リモート ウェイク アップの関数を arm する必要があります。 これを行うには、複合のドライバーがセットを送信する必要がある\_関数の最初のインターフェイスに再開信号を送信するデバイスを有効にする機能の制御を要求します。 コントロールの要求を送信するには、割り当て、 [ **URB** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usb/ns-usb-_urb)構造を呼び出すことによって、 [ **USBD\_UrbAllocate** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbdlib/nf-usbdlib-usbd_urballocate)ルーチンを呼び出します[ **UsbBuildFeatureRequest** ](https://docs.microsoft.com/previous-versions/ff538932(v=vs.85))マクロを書式設定、 **URB**一連の\_機能要求。 呼び出しで指定 URB\_関数\_設定\_機能\_TO\_操作コードと、USB インターフェイス\_機能\_関数\_として中断、機能のセレクター。 *インデックス*パラメーター設定**ビット 1**の最上位バイト。 値をコピーすること、 **wIndex**フィールドに、転送のパケットをセットアップします。
+**D2** irp を受信すると、複合ドライバーは、最初にクライアントドライバーによって送信された前の要求から待機ウェイク IRP が保留されているかどうかを判断する必要があります。 その IRP が保留中の場合は、複合ドライバーがリモートウェイクアップ用に関数を arm にする必要があります。 これを行うには、複合ドライバーは、デバイスが再開信号を送信できるようにするために、関数の最初のインターフェイスに\_機能コントロール要求を送信する必要があります。 コントロール要求を送信するには、 [**USBD\_Urを検索**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbdlib/nf-usbdlib-usbd_urballocate)ルーチンを呼び出し、 [**UsbBuildFeatureRequest**](https://docs.microsoft.com/previous-versions/ff538932(v=vs.85))マクロを呼び出して、SET\_機能要求の**urb**をフォーマットすることによって、 [**urb**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)構造体を割り当てます。 この呼び出しでは、URB\_関数を指定し\_\_機能\_を操作コードとして\_インターフェイスに設定します。また、USB\_機能\_機能セレクターとして中断\_ます。 *Index*パラメーターで、最上位バイトの**ビット 1**を設定します。 この値は、転送のセットアップパケットの**wIndex**フィールドにコピーされます。
 
-次の例は、セットを送信する方法を示しています。\_機能コントロール要求。
+次の例は、SET\_機能コントロール要求を送信する方法を示しています。
 
 ```ManagedCPlusPlus
 /*++
@@ -239,22 +239,22 @@ Exit:
 }
 ```
 
-複合のドライバーを送信し、 **D2** IRP USB ドライバー スタックにします。 その他のすべての関数がある場合は、中断状態、USB ドライバー スタックは、コント ローラー上の特定のポート レジスタを操作することで、ポートを中断します。
+その後、複合ドライバーは**D2** IRP を USB ドライバースタックに送信します。 他のすべての関数が中断状態にある場合、USB ドライバースタックはコントローラー上の特定のポートレジスタを操作してポートを中断します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-マウス関数の例で、リモートのウェイク アップ機能が有効になっているため、(手順 4 を参照)、マウス関数が、ユーザーがマウスを形跡ときに、ホスト コント ローラーにアップ ストリーム ネットワーク上で再開シグナルを生成します。 コント ローラーを関数に関する情報を含む通知パケットを送信することによって、USB ドライバー スタックを通知します。 関数のスリープ解除通知については、USB 3.0 仕様で図 8-17 を参照してください。
+マウスの機能の例では、リモートウェイクアップ機能が有効になっているため (手順4を参照)、マウスの機能により、ユーザーがマウスを操作したときに、ネットワーク上でホストコントローラーへの再開信号が生成されます。 次に、コントローラーは、ウェイクアップした関数に関する情報を含む通知パケットを送信することによって、USB ドライバースタックに通知します。 関数のウェイクアップ通知の詳細については、「USB 3.0 仕様」の図8-17 を参照してください。
 
-USB ドライバー スタックの完了通知パケットを受信すると、保留中[ **IOCTL\_内部\_USB\_要求\_リモート\_WAKE\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)要求 (手順 3 を参照してください)、(リモート ウェイク アップ) を呼び出すと、要求で指定され、複合ドライバによって実装された完了コールバック ルーチン。 通知には、複合ドライバーに達するに通知クライアントに対応するドライバー関数がクライアント ドライバーが既に送信した待機ウェイク IRP の完了を稼働状態になったことです。
+USB ドライバースタックは、通知パケットを受信すると、保留中の[**IOCTL\_内部\_usb\_要求\_リモート\_ウェイク\_通知**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbioctl/ni-usbioctl-ioctl_internal_usb_request_remote_wake_notification)要求 (手順3を参照) を完了し、(リモートウェイクアップ) を呼び出します。要求で指定され、複合ドライバーによって実装された完了コールバックルーチン。 通知が複合ドライバーに到達すると、クライアントドライバーが以前に送信した待機ウェイク IRP を完了することによって、関数が動作状態に入ったことを、対応するクライアントドライバーに通知します。
 
-(リモート ウェイク アップ) が完了するまで、日常的な複合ドライバーは IRP が保留中の待機スリープ解除を完了する作業項目をキューする必要があります。 USB 3.0 デバイスの場合は、複合ドライバー スリープ状態の解除を再開信号を送信し、他の関数のまま関数のみは、状態を中断します。 USB 2.0 デバイスのドライバーの関数の既存の実装との互換性を確保する作業項目のキューします。 作業項目のキューについては、次を参照してください。 [ **IoQueueWorkItem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ioqueueworkitem)します。
+(リモートウェイクアップ) 完了ルーチンでは、保留中の待機ウェイク IRP を完了するために、複合ドライバーが作業項目をキューに入れます。 USB 3.0 デバイスの場合、複合ドライバーは再開信号を送信し、他の機能を中断状態のままにする関数だけを起動します。 作業項目をキューに置いて、USB 2.0 デバイスの関数ドライバーの既存の実装との互換性を確保します。 作業項目のキューの詳細については、「 [**Ioqueueworkitem**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioqueueworkitem)」を参照してください。
 
-ワーカー スレッドは待機ウェイク IRP が完了し、クライアント ドライバーの完了ルーチンを呼び出します。 完了ルーチンを送信し、 **D0** IRP を動作中の関数を入力します。 待機ウェイク IRP を完了する前に、複合のドライバーを呼び出す必要があります[ **PoSetSystemWake** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-posetsystemwake)からシステムをスリープ解除に使用されたものとして IRP が状態を中断する待機ウェイクをマークします。 電源マネージャーは、システムをデバイスに関する情報が含まれる Event Tracing for Windows (ETW) イベント (グローバル システム チャネルで表示できる) を記録します。
+ワーカースレッドは、待機ウェイク IRP を完了し、クライアントドライバーの完了ルーチンを呼び出します。 次に、完了ルーチンは**D0** IRP を送信して、関数を動作状態にします。 待機ウェイク IRP を完了する前に、複合ドライバーは[**Posetsystemwake**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemwake)を呼び出して、待機ウェイク irp を、中断状態からシステムをウェイクアップするためのものとしてマークする必要があります。 電源マネージャーは、システムを起動したデバイスに関する情報を含む Windows イベントトレーシング (ETW) イベント (グローバルシステムチャネルに表示される) をログに記録します。
 
 ## <a name="related-topics"></a>関連トピック
 [USB 電源管理](usb-power-management.md)  
-[USB のセレクティブ サスペンドします。](usb-selective-suspend.md)  
+[USB セレクティブサスペンド](usb-selective-suspend.md)  
 
 
 

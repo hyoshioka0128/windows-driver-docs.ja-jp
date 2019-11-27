@@ -4,60 +4,60 @@ description: I/O キューへの IRP のディスパッチ
 ms.assetid: 71872114-2A38-47FE-9D18-EF8923273811
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 937928e9b469bc2da4977d50bced0deeddc9ef25
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 53d42ba9784373a7a2e61010b8fc55604987fe83
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377405"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72845277"
 ---
 # <a name="dispatching-irps-to-io-queues"></a>I/O キューへの IRP のディスパッチ
 
 
-\[KMDF および UMDF に適用されます。\]
+\[KMDF と UMDF\] に適用されます
 
-フレームワーク ベースのドライバーでは、着信 IRP のターゲット キューを動的に指定することができます。 特定のキューに IRP をディスパッチするドライバーを呼び出す必要があります、 [ **WdfDeviceWdmDispatchIrpToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)メソッド。
+フレームワークベースのドライバーでは、受信する IRP のターゲットキューを動的に指定できます。 IRP を特定のキューにディスパッチするには、ドライバーで[**WdfDeviceWdmDispatchIrpToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)メソッドを呼び出す必要があります。
 
-通常、ドライバーを呼び出す[ **WdfDeviceWdmDispatchIrpToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)いずれかからその[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)または[*EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数。 最適なパフォーマンスをほとんどのドライバーには、両方のコールバック関数が提供されません。
+通常、ドライバーは、 [*EvtdevicewdmiWdfDeviceWdmDispatchIrpToIoQueue プリプロセス*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)または[*Evtdevicewdmiのディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数のいずれかから、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)を呼び出します。 最適なパフォーマンスを得るために、ほとんどのドライバーには両方のコールバック関数が用意されていません。
 
-**注**  A UMDF ドライバーを指定できます、 [ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数が唯一の KMDF ドライバーが提供できる[ *EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)します。
+UMDF ドライバーでは、 [*Evtdevicewdmirpq ディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数を提供できますが、使用できるのは kmdf ドライバーだけで[*evtdevicewdmiのプリプロセス*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)を提供でき  ことに**注意**してください。
 
  
 
-場合は、ドライバーが既に用意されています[ *EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)、それを使用して、キューを動的に選択することができます。 そうでない場合は、提供[ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)を呼び出すと[ **WdfDeviceWdmDispatchIrpToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)からそのコールバック内関数。
+ドライバーによって既に[*Evtdevicewdmiの前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)が提供されている場合は、それを使用してキューを動的に選択できます。 それ以外の場合は、 [*EvtdevicewdmiWdfDeviceWdmDispatchIrpToIoQueue ディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)を提供し、そのコールバック関数内から呼び出します。 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)
 
-さらに、次の注意する必要があります。
+また、次の点に注意する必要があります。
 
--   I/O のキューに IRP のディスパッチ用の別の方法として[既定のキューを作成する](creating-i-o-queues.md)しから、キューのハンドラー内で呼び出す[ **WdfRequestForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue)します。 この手法は以降 KMDF 1.0 で使用できますが、適切では機能しません[進行中のキューに転送](guaranteeing-forward-progress-of-i-o-operations.md)は一般に遅くなります。 使用を検討して[ **WdfDeviceWdmDispatchIrpToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)代わりにします。
+-   I/o キューに IRP をディスパッチする別の方法として、[既定のキューを作成](creating-i-o-queues.md)した後、キューのハンドラー内から[**Wdfrequestforwardtoioqueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestforwardtoioqueue)を呼び出します。 この手法は KMDF 1.0 以降で使用できますが、[進行状況の上位キュー](guaranteeing-forward-progress-of-i-o-operations.md)ではうまく機能せず、一般に低速です。 代わりに[**WdfDeviceWdmDispatchIrpToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)を使用することを検討してください。
 
--   呼び出すときに[ **WdfDeviceConfigureWdmIrpDispatchCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)を登録する、 [ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数ドライバーを設定する必要があります、 *MajorFunction*次のいずれかのパラメーター。IRP\_MJ\_DEVICE\_CONTROL, IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL, IRP\_MJ\_READ, IRP\_MJ\_WRITE. この要件には適用されません[ *EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)のみ、これらの型の Irp は指定されたキューを動的にディスパッチします。
+-   [**WdfDeviceConfigureWdmIrpDispatchCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)を呼び出して[*Evtdevicewdmi*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)のコールバック関数を登録する場合、ドライバーは*MajorFunction*パラメーターを次のいずれかに設定する必要があります。 IRP\_MJ\_デバイス\_CONTROL、IRP\_MJ\_内部\_デバイス\_コントロール、IRP\_MJ\_READ、irp\_MJ\_WRITE です。 この要件は[*Evtdevicewdmiの前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)には適用されませんが、指定されたキューに動的にディスパッチできるのはこれらの種類の irp だけです。
 
--   移動 Irp [ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)追加のスタックの場所があります。 移動 Irp [ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch) (の直前の呼び出しなし*EvtDeviceWdmIrpPreprocess*) はありません。
+-   [*Evtdevicewdmiの前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)に移動する irp には、スタックの場所が追加されています。 [*Evtdevicewdmiのディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)にアクセスする irp (以前の*Evtdevicewdmiのプリプロセス*の呼び出しなし) は、実行されません。
 
--   [*EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)促進はしないドライバーによって定義されたコンテキストの情報を送信する一方[ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)は。
+-   [*Evtdevicewdmiの前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)では、ドライバー定義のコンテキスト情報を送信することはできませんが、 [*evtdevicewdmiのディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)はできません。
 
-## <a name="dispatching-non-preprocessed-irps"></a>前処理された非 Irp のディスパッチ
-
-
-ドライバーから Irp をディスパッチする[ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数を次の手順を使用します。
-
-1.  その[ *EvtDriverDeviceAdd* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数では、ドライバー呼び出し[ **WdfDeviceConfigureWdmIrpDispatchCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)に登録、 [ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数。
-
-    KMDF ドライバーを呼び出す必要があります、ターゲットが、親デバイスの I/O キューの場合は、 [ **WdfPdoInitAllowForwardingRequestToParent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitallowforwardingrequesttoparent)を呼び出す前に[ **WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicecreate). KMDF ドライバーにも指定されている場合、 [ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数、フレームワーク関数を呼び出すそのまず IRP が到着するとします。 コールバック関数は、要求を前処理し、後に呼び出して[ **WdfDeviceWdmDispatchPreprocessedIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp) IRP をフレームワークに戻ります。
-
-2.  フレームワークは、ドライバーの[ *EvtDeviceWdmIrpDispatch* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数。
-3.  内から[ *EvtDeviceWdmIrpDispatch*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)、呼び出すことができます、ドライバー [ **WdfDeviceWdmDispatchIrpToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)または[ **WdfDeviceWdmDispatchIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirp)、両方ではないです。 KMDF ドライバーでは、どちらも、これらのメソッドを呼び出すことと代わりに、IRP の完了または保留中のマークの追加のオプションがあります。
-4.  KMDF ドライバーが、WDF を設定した場合\_フォワード\_IRP\_TO\_IO\_キュー\_INVOKE\_INCALLERCTX\_コールバック フラグが有効になっていないことが保証処理を進行し、フレームワーク ターゲット I/O キューの呼び出し、ドライバーの[ *EvtIoInCallerContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)指定されている場合、します。 要求を前処理した後、コールバック関数する必要がありますか、再生待ちに呼び出して[ **WdfDeviceEnqueueRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)呼び出して完了または[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete).
-
-## <a name="dispatching-preprocessed-irps"></a>前処理済みの Irp のディスパッチ
+## <a name="dispatching-non-preprocessed-irps"></a>プリプロセス以外の Irp のディスパッチ
 
 
-ドライバーから Irp をディスパッチする[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数を特定の I/O キューは、次の手順を使用します。
+ドライバーの[*Evtdevicewdmirpq ディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数から irp をディスパッチするには、次の手順に従います。
 
-1.  ドライバーのレジスタを[ *EvtDeviceWdmIrpPreprocess* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数を呼び出して[ **WdfDeviceInitAssignWdmIrpPreprocessCallback** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback).
-2.  ドライバー呼び出し[ **WdfPdoInitAllowForwardingRequestToParent** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfpdo/nf-wdfpdo-wdfpdoinitallowforwardingrequesttoparent)ターゲットが、親デバイスの I/O キューの場合。
-3.  [ *EvtDeviceWdmIrpPreprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)、呼び出す[ **WdfDeviceWdmDispatchIrpToIoQueue** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)で*フラグ*WDF に設定\_フォワード\_IRP\_TO\_IO\_キュー\_前処理された\_IRP します。
-4.  ドライバーは WDF を設定した場合\_フォワード\_IRP\_TO\_IO\_キュー\_INVOKE\_INCALLERCTX\_コールバック フラグが有効になっていないと転送保証ターゲット I/O キューの場合、フレームワークの進行状況の呼び出し、ドライバーの[ *EvtIoInCallerContext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)指定されている場合、します。 コールバック関数は、要求の前処理が完了したら後に、する必要がありますか、再生待ちに呼び出して[ **WdfDeviceEnqueueRequest** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)呼び出して完了または[ **WdfRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfrequest/nf-wdfrequest-wdfrequestcomplete)します。
+1.  この[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数から、ドライバーは[**WdfDeviceConfigureWdmIrpDispatchCallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceconfigurewdmirpdispatchcallback)を呼び出して[*Evtdevicewdmidriverdispatch*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数を登録します。
+
+    ターゲットが親デバイスの i/o キューの場合、KMDF ドライバーは[**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出す前に[**WdfPdoInitAllowForwardingRequestToParent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallowforwardingrequesttoparent)を呼び出す必要があります。 KMDF ドライバーにも[*Evtdevicewdmiの前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数が用意されている場合、このフレームワークは IRP が到着すると最初にその関数を呼び出します。 コールバック関数は、要求の前に[**WdfDeviceWdmDispatchPreprocessedIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchpreprocessedirp)を呼び出して、IRP をフレームワークに返します。
+
+2.  フレームワークは、ドライバーの[*Evtdevicewdmirpq ディスパッチ*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)コールバック関数を呼び出します。
+3.  [*EvtdevicewdmiWdfDeviceWdmDispatchIrpToIoQueue dispatch*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_dispatch)内から、ドライバーは、両方で[**はなく、いずれか**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)の[**WdfDeviceWdmDispatchIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirp)を呼び出すことができます。 KMDF ドライバーには、これらのメソッドを呼び出さずに、IRP を完了するか、保留中としてマークするオプションが追加されています。
+4.  KMDF ドライバーによって\_ディスパッチ\_IRP\_が\_IO\_キューに設定されている場合は\_を呼び出し\_INCALLERCTX\_CALLBACK フラグを呼び出し、対象の i/o キューの事前進行を保証していません。次に、フレームワークは、指定されている場合、ドライバーの[*Evtioincallercontext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)を呼び出します。 要求をプリプロセスした後、コールバック関数は、 [**Wdfdeviceenqueuerequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)呼び出してキューをキューに置いておくか、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出して完了する必要があります。
+
+## <a name="dispatching-preprocessed-irps"></a>プリプロセス済み Irp のディスパッチ
+
+
+ドライバーの[*Evtdevicewdmiの前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)コールバック関数から特定の i/o キューに irp をディスパッチするには、次の手順に従います。
+
+1.  このドライバーは、 [**Wdfdeviceinit割り当て Wdmirpq Preprocesscallback**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignwdmirppreprocesscallback)を呼び出すことによって、 [*Evtdevicewdmirpq*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)のコールバック関数を登録します。
+2.  ターゲットが親デバイスの i/o キューの場合、ドライバーは[**WdfPdoInitAllowForwardingRequestToParent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitallowforwardingrequesttoparent)を呼び出します。
+3.  [*EvtdevicewdmiWdfDeviceWdmDispatchIrpToIoQueue の前処理*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdfdevice_wdm_irp_preprocess)で、 *FLAGS*を\_WDF に設定[**して呼び出し**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicewdmdispatchirptoioqueue)、IRP\_を\_IO\_キュー\_プリプロセスされた\_irp に\_ディスパッチします。
+4.  ドライバーによって\_ディスパッチ\_IRP\_が\_IO\_キューに設定されている場合は\_を呼び出し\_INCALLERCTX\_コールバックフラグを呼び出し、対象の i/o キューの事前進行を保証していません。次に、フレームワークは、指定されている場合、ドライバーの[*Evtioincallercontext*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_io_in_caller_context)を呼び出します。 コールバック関数が要求のプリプロセスを完了したら、 [**Wdfdeviceenqueuerequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceenqueuerequest)呼び出してキューをキューに置いておくか、 [**Wdfrequestcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestcomplete)を呼び出して完了する必要があります。
 
  
 

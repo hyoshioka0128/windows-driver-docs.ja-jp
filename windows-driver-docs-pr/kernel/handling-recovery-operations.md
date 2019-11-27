@@ -3,67 +3,67 @@ title: 回復操作の処理
 description: 回復操作の処理
 ms.assetid: 35149bb9-fd48-44d3-a9fd-0e631aa0e853
 keywords:
-- トランザクション WDK KTM をトランザクションの回復
-- WDK KTM をトランザクションの回復
-- トランザクション処理システム WDK KTM をトランザクションの回復
-- TP WDK KTM をトランザクションの回復
-- ログ ストリーム WDK KTM をトランザクションの回復
-- 仮想のクロック値 WDK KTM をトランザクションの回復
+- トランザクション WDK KTM、トランザクションの復旧
+- トランザクションの回復 WDK KTM
+- トランザクション処理システム WDK KTM、トランザクションの復旧
+- TP WDK KTM、トランザクションの復旧
+- ログストリーム WDK KTM, トランザクションの復旧
+- 仮想クロック値 WDK KTM、トランザクションの復旧
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cb9cacbb646034c227c9f1432c26ebc10dbd7d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 149d9568561723053854137aa796585b0de43b63
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385619"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72838653"
 ---
 # <a name="handling-recovery-operations"></a>回復操作の処理
 
 
-*Recovery*内にある情報からの状態を回復する操作、トランザクション処理システム (TPS) で、試行[ログ ストリーム](using-log-streams-with-ktm.md)します。 回復操作が完了したら、すべてのトランザクションをコミット済みでなければなりませんまたは戻る状態にロールバックし、リソースのすべてのデータが正常な状態でなければなりません。
+*復旧*操作では、トランザクション処理システム (TPS) は、[ログストリーム](using-log-streams-with-ktm.md)内の情報から状態を回復しようとします。 回復操作が完了すると、すべてのトランザクションがコミット済みまたはロールバック状態になり、すべてのリソースデータが既知の良好な状態である必要があります。
 
-場合があります、TP は、すべてのトランザクションが完了する前に停止します。 たとえば、オペレーティング システムがクラッシュする可能性があります。 そのため、リソース マネージャーは、実行が開始されるたびに、回復操作を開始する必要があります。 回復操作は、すべてのトランザクションが完了しないかどうかを判断しようとします。 未完了のトランザクション ログで見つかると、回復操作はコミットまたはそれらのトランザクションのロールバックを試行します。
+TP は、すべてのトランザクションが終了する前に停止することがあります。 たとえば、オペレーティングシステムがクラッシュする可能性があります。 そのため、リソースマネージャーは、実行が開始されるたびに復旧操作を開始する必要があります。 復旧操作では、トランザクションが不完全であるかどうかを判断しようとします。 不完全なトランザクションがログに見つかった場合、復旧操作では、これらのトランザクションのコミットまたはロールバックが試行されます。
 
-KTM ベース TP では、各復旧操作は、2 つの手順で構成されます。 最初の手順では、トランザクション マネージャー オブジェクトのログ ストリームから情報を回復する必要があります。 2 番目の手順では、リソース マネージャーのログ ストリームから情報を回復する必要があります。
+KTM ベースの TP の場合、各復旧操作は2つの手順で構成されます。 最初の手順では、トランザクションマネージャーオブジェクトのログストリームから情報を回復します。 2番目の手順では、リソースマネージャーのログストリームから情報を回復します。
 
-TP は、すべてのログ ストリームの末尾に回復できる場合は、リソース マネージャーの管理[仮想クロック値](using-virtual-clock-values.md)クロックの指定した値になるまで復元できます。
+TP は、すべてのログストリームの末尾に復旧できます。また、リソースマネージャーが[仮想クロック値](using-virtual-clock-values.md)を保持している場合は、指定されたクロック値まで回復できます。
 
-### <a name="recovering-information-from-a-transaction-manager-objects-log-stream"></a>トランザクション マネージャー オブジェクトのログの Stream から情報を回復します。
+### <a name="recovering-information-from-a-transaction-manager-objects-log-stream"></a>トランザクションマネージャーオブジェクトのログストリームからの情報の回復
 
-リソース マネージャーの呼び出し直後後[ **ZwCreateTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreatetransactionmanager)または[ **ZwOpenTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopentransactionmanager)、呼び出す必要があります[ **ZwRecoverTransactionManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecovertransactionmanager)します。 **ZwRecoverTransactionManager**ルーチンは、トランザクション マネージャーのオブジェクトに属するログ ストリームを読み取ります。 このルーチンは、最後から始まるログ ストリームでは、回復情報の (すべてのトランザクション、参加リスト、およびリソース マネージャーを含む)、トランザクション マネージャー オブジェクトの状態を再構築します[再開領域](reading-restart-records-from-a-clfs-stream.md)その KTM を作成し、ストリームの末尾で終了します。
+リソースマネージャーは、 [**Zwcreatetransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreatetransactionmanager)または[**zwcreatetransactionmanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopentransactionmanager)を呼び出した直後に、 [**zwの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecovertransactionmanager)transactionmanager を呼び出す必要があります。 **Zw回復**するルーチンは、トランザクションマネージャーオブジェクトに属しているログストリームを読み取ります。 このルーチンは、KTM が作成した最後の[再開領域](reading-restart-records-from-a-clfs-stream.md)から開始して、ログストリーム内の復旧情報からトランザクションマネージャーオブジェクト (すべてのトランザクション、参加リスト、およびリソースマネージャーを含む) の状態を再構築します。ストリームの末尾で終了します。
 
-リソース マネージャーを呼び出すことができますに指定された仮想クロック値は、最後の再開領域から回復する[ **ZwRollforwardTransactionManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollforwardtransactionmanager)の代わりに**ZwRecoverTransactionManager**.
+指定した仮想クロック値まで最後の再起動領域から回復するために、リソースマネージャーは**ZwZwRollforwardTransactionManager transactionmanager**ではなく、 [](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollforwardtransactionmanager)を呼び出すことができます。
 
-### <a name="recovering-information-from-a-resource-managers-log-stream"></a>Resource Manager のログの Stream から情報を回復します。
+### <a name="recovering-information-from-a-resource-managers-log-stream"></a>リソースマネージャーのログストリームから情報を回復する
 
-リソース マネージャーの呼び出し直後後[ **ZwCreateResourceManager** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcreateresourcemanager)または[ **ZwOpenResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntopenresourcemanager)を呼び出す必要があります[**ZwRecoverResourceManager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverresourcemanager)します。 **ZwRecoverResourceManager**ルーチンは、リソース マネージャーの参加リストのそれぞれに関連付けられているトランザクションを回復しようとしています。
+リソースマネージャーは、 [**Zwcreateresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcreateresourcemanager)または[**zwopenresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntopenresourcemanager)を呼び出した直後に、 [**zwの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverresourcemanager)resourcemanager を呼び出す必要があります。 **Zw回復マネージャー**ルーチンは、各リソースマネージャーの参加リストに関連付けられているトランザクションを復旧しようとします。
 
-リソース マネージャーを呼び出すと**ZwRecoverResourceManager**、KTM トランザクションを送信する\_通知\_回復[通知](transaction-notifications.md)リソース マネージャーの参加リストの各します。 リソース マネージャーを呼び出す必要があります[ **ZwRecoverEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrecoverenlistment)を受信するトランザクションのいずれかのたびに\_通知\_回復通知します。
+リソースマネージャーが**Zw回復マネージャー**を呼び出すと、KTM によってトランザクション\_通知され、各リソースマネージャーの参加リストの[通知](transaction-notifications.md)\_復旧できます。 リソースマネージャーは、トランザクションの1つを受信するたびに[**Zwの参加リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrecoverenlistment)を呼び出す必要があります\_通知\_回復します。
 
-リソース マネージャーを呼び出すと**ZwRecoverEnlistment**KTM は、次の通知の 1 つ送信します。
+リソースマネージャーが**Zw回復参加リスト**を呼び出すと、KTM は次のいずれかの通知を送信します。
 
--   トランザクション\_通知\_コミット
+-   コミット\_通知するトランザクション\_
 
-    リソース マネージャーを選択し、そのログ ストリームでトランザクションをコミットする情報を使用する必要がありますし、呼び出す必要があります[ **ZwCommitComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntcommitcomplete)します。
+    リソースマネージャーは、ログストリーム内の情報を使用してトランザクションをコミットした後、 [**Zwcommitcomplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntcommitcomplete)を呼び出す必要があります。
 
 -   トランザクション\_通知\_ロールバック
 
-    リソース マネージャーを選択し、そのログ ストリームで、トランザクションをロールバックする情報を使用する必要がありますし、呼び出す必要があります[ **ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntrollbackcomplete)します。
+    リソースマネージャーは、ログストリーム内の情報を使用してトランザクションをロールバックし、次に[**ZwRollbackComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntrollbackcomplete)を呼び出す必要があります。
 
 -   トランザクション\_通知\_INDOUBT
 
-    KTM では、トランザクションの状態が決定されていないと、コミットまたはロールバック通知を後で送信されます。
+    KTM はトランザクションの状態を特定しておらず、後でコミットまたはロールバックの通知を送信します。
 
-KTM でトランザクションを送信する通常、\_通知\_コミット通知すべてのリソース マネージャーと呼ばれることを判断した場合[ **ZwPrepareComplete** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntpreparecomplete) TPS を停止する前に、再起動します。 KTM トランザクションを送信する\_通知\_1 つまたは複数のリソース マネージャーが呼び出さなかったことを判断した場合にロールバック通知**ZwPrepareComplete**します。
+通常、KTM は、TP が停止して再起動される前に、 [**Zwに**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntpreparecomplete)呼び出されたすべてのリソースマネージャーが完了したと判断した場合に、\_コミット通知を通知\_トランザクションを送信します。 KTM は、1つまたは複数のリソースマネージャーが**Zwの完了**を呼び出していないと判断した場合に、\_ロールバック通知を通知\_トランザクションを送信します。
 
-KTM でトランザクションが送信後\_通知\_各参加の回復の通知、トランザクション送信\_通知\_最後\_回復通知します。
+KTM によってトランザクションが送信された後、各登録について\_復旧通知を通知\_、最後\_回復通知を\_に通知\_トランザクションを送信します。
 
-リソース マネージャーが呼び出された場合**ZwRollforwardTransactionManager**の代わりに**ZwRecoverTransactionManager**、ことを指定した仮想のクロックの値に達するまで回復する必要があります**ZwRollforwardTransactionManager**します。
+リソースマネージャーが**ZwZwRollforwardTransactionManager transactionmanager**ではなくを呼び出した場合は、 **ZwRollforwardTransactionManager**に指定された仮想時計の値までのみ回復する必要があります。
 
-リソース マネージャーを呼び出すことができます[ **ZwSetInformationEnlistment** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntsetinformationenlistment)を設定するには、回復情報をカスタマイズします。 KTM は、この情報を保存し、ログ ストリームに書き込みますが、情報を解釈する KTM は試みません。 リソース マネージャーは、呼び出すことによって、いつでも、回復情報を取得できます[ **ZwQueryInformationEnlistment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-ntqueryinformationenlistment)します。
+リソースマネージャーは、 [**Zwsetinformationenlistment リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntsetinformationenlistment)を呼び出して、カスタマイズされた回復情報を設定できます。 KTM は、この情報を保存してログストリームに書き込みますが、KTM は情報を解釈しません。 リソースマネージャーは、 [**Zwqueryinformationenlistment リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntqueryinformationenlistment)を呼び出すことによって、いつでも回復情報を取得できます。
 
-[優先的なトランザクション マネージャー](creating-a-superior-transaction-manager.md)トランザクションが表示される場合があります\_通知\_回復\_回復操作中にクエリ通知します。
+[優れたトランザクションマネージャー](creating-a-superior-transaction-manager.md)は、復旧操作中に\_クエリ通知を回復\_に通知\_トランザクションを受け取ることがあります。
 
  
 

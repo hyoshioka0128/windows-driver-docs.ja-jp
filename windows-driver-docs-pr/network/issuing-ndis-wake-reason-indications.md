@@ -4,99 +4,99 @@ description: NDIS ウェイク理由状態表示の発行
 ms.assetid: F3DBE0DB-9787-4C3D-8DE3-AD47E5778B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 003710607a9a52150da1de801622c5c2e2442c31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5989c7469feb469662614271a5f4ace83cec5ef6
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356251"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72844155"
 ---
 # <a name="issuing-ndis-wake-reason-status-indications"></a>NDIS ウェイク理由状態表示の発行
 
 
-ミニポート ドライバーが NDIS ウェイク理由状態インジケーターをサポートしているかどうか ([**NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason))、これを生成する必要があります電力状態にウェイク アップ イベントと、アダプターにネットワーク アダプターが生成した直後に状態を示す値を再開します。
+ミニポートドライバーが NDIS wake reason status ([**ndis\_status\_PM\_wake\_reason**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)) をサポートしている場合、ネットワークアダプターがウェイクアップイベントを生成し、アダプターがフルパワー状態に戻ります。
 
-**注**サポートの NDIS ウェイク状態インジケーターの理由の指定はモバイル ブロード バンド (MB) のミニポート ドライバーでは省略可能。
+**メモ** モバイルブロードバンド (MB) ミニポートドライバーでは、NDIS wake reason ステータスのインジケーターのサポートは省略可能です。
 
-オブジェクト識別子 (OID) セット要求を電源管理 (PM) パラメーターを持つ、ミニポート ドライバーが構成されている[OID\_PM\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)します。 この OID 要求を通じて PM パラメーターを指定する、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体。
+ミニポートドライバーは、オブジェクト識別子 (OID) set 要求 ( [oid\_pm\_パラメーター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-parameters)) を使用して、電源管理 (pm) パラメーターで構成されます。 この OID 要求では、 [**NDIS\_pm\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体を使用して pm パラメーターを指定します。
 
-[ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造がウェイク アップのイベントの種類は次のパラメーターを指定します。
+[**NDIS\_PM\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体では、次の種類のウェイクアップイベントのパラメーターを指定します。
 
-<a href="" id="received-packet-wake-up-events"></a>受信パケットのウェイク アップ イベント  
-ネットワーク アダプターでは、wake on LAN (WOL) のパターンに一致するパケットを受信した場合、ウェイク アップ イベントが生成されます。 WOL パターンを以下に示します。
+<a href="" id="received-packet-wake-up-events"></a>受信パケットウェイクアップイベント  
+Wake on LAN (WOL) パターンに一致するパケットを受信すると、ネットワークアダプターはウェイクアップイベントを生成します。 WOL パターンは次のとおりです。
 
--   マジック パケットや TCP/IP パケット ペイロード内のデータのパターンなどのメディアに依存しない WOL パターン。 たとえば、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体の TCP SYN フレーム WOL パターンを指定できます。
+-   パケットペイロード内のマジックパケットや TCP/IP データパターンなど、メディアに依存しない WOL パターン。 たとえば、 [**NDIS\_PM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体では、TCP SYN フレームの WOL パターンを指定できます。
 
--   EAPOL 要求識別子パケットやモバイル ブロード バンド (MB) のショート メッセージ サービス (SMS) メッセージなどのメディア固有 WOL パターン。
+-   EAPOL 要求識別子パケットやモバイルブロードバンド (MB) ショートメッセージサービス (SMS) メッセージなど、メディア固有の WOL パターン。
 
--   OID セットの要求で指定された受信フィルターと一致するワイルドカード パターン[OID\_GEN\_現在\_パケット\_フィルター](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)します。
+-   Oid\_GEN の OID セット要求によって指定された受信フィルターに一致するワイルドカードパターンは、[現在の\_パケット\_フィルター\_](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-current-packet-filter)ます。
 
-**注**この種類のウェイク アップの理由の状態の表示にするは、ネットワーク アダプターで受信したパケットを保存できる必要があります。 ドライバーは、受信パケット内の状態を示す値を返す必要があります。
+**メモ** この種類のスリープ解除の理由を示すために、ネットワークアダプターは受信したパケットを保存できる必要があります。 ドライバーは、受信したパケットをステータス表示内で返す必要があります。
 
-WOL パターンを使用して指定、 **EnabledWoLPacketPatterns**のメンバー、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体。
+WOL パターンは、 [**NDIS\_PM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体の**EnabledWoLPacketPatterns**メンバーによって指定されます。
 
-<a href="" id="media-specific-wake-up-events"></a>メディアに固有のウェイク アップ イベント  
-ネットワーク アダプターでは、802.11 アクセス ポイント (AP) またはモバイル ブロード バンド (MB) のショート メッセージ サービス (SMS) メッセージの受信から関連付け解除など、メディア固有の理由のため、ウェイク アップ イベントが生成されます。
+<a href="" id="media-specific-wake-up-events"></a>メディア固有のウェイクアップイベント  
+ネットワークアダプターは、802.11 アクセスポイント (AP) からの関連付け、モバイルブロードバンド (MB) ショートメッセージサービス (SMS) メッセージの受信など、メディア固有の理由により、ウェイクアップイベントを生成します。
 
-この種類のウェイク アップのイベントがで指定された、 **MediaSpecificWakeUpEvents**のメンバー、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体。
+この種類のウェイクアップイベントは、 [**NDIS\_PM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体の**MediaSpecificWakeUpEvents**メンバーによって指定されます。
 
-<a href="" id="media-independent-wake-up-events"></a>メディアに依存しないウェイク アップ イベント  
-ネットワーク アダプターでは、メディア接続または切断などのメディアに依存しない理由のため、ウェイク アップ イベントが生成されます。
+<a href="" id="media-independent-wake-up-events"></a>メディアに依存しないウェイクアップイベント  
+メディア接続や切断など、メディアに依存しない理由により、ネットワークアダプターはウェイクアップイベントを生成します。
 
-この種類のウェイク アップのイベントがで指定された、 **WakeUpFlags**のメンバー、 [ **NDIS\_PM\_パラメーター** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体。
+この種類のウェイクアップイベントは、 [**NDIS\_PM\_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_parameters)構造体の**WakeUpFlags**メンバーによって指定されます。
 
-ネットワーク アダプターにウェイク アップの信号が生成された場合、ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態示します。 それがの OID のセット要求を処理中にこのドライバーは[OID\_PNP\_設定\_POWER](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)電力状態にアダプターを移行します。
+ネットワークアダプターによってウェイクアップ信号が生成された場合は、ミニポートドライバーは、 [ **\_PM\_ウェイク\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)を示す状態を示す NDIS\_ステータスを発行する必要があります。 この処理は、アダプターをフルパワー状態に移行するために、 [oid\_PNP\_\_設定](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)された OID の oid セット要求を処理している間に行われます。
 
-**注**ミニポート ドライバーを発行する必要があります、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態を示す値を発行する前に、ウェイク アップ イベントに関連する状態を示します。 たとえば、メディア接続の状態の変更されたため、ウェイク アップ イベントであった場合、ミニポート ドライバー発行する必要があります、 [ **NDIS\_状態\_リンク\_状態**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)発行済みの状態を示す値、 **NDIS\_状態\_PM\_WAKE\_理由**状態を示す値。
+**メモ** ミニポートドライバーは、ウェイクアップイベントに関連する状態を示す通知を発行する前に、 [ **\_PM\_wake\_REASON ステータスを示す NDIS\_status**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)を発行する必要があります。 たとえば、ウェイクアップイベントがメディアの接続状態の変更によって発生した場合、ミニポートドライバーは、ndis の\_ステータス\_PM を発行した後\_状態の状態を示す[ **\_リンクを\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-link-state)発行する必要があります。 **\_ウェイク\_理由**の状態を示します。
 
-ミニポート ドライバーを発行したとき、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態を示す値、次の手順に従う必要があります。
+ミニポートドライバーが[**NDIS\_status\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態を示す場合は、次の手順に従う必要があります。
 
-1.  ミニポート ドライバーでは、以下を格納するのに十分な大きさであるバッファーを割り当てる必要があります。
+1.  ミニポートドライバーは、次のものを格納するのに十分な大きさのバッファーを割り当てる必要があります。
 
-    -   [ **NDIS\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体。
+    -   [**NDIS\_PM\_ウェイク\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体。
 
-    -   [ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)と共に受信パケットの構造 (*パケットの wake*)、ネットワークの原因となったウェイク アップのイベントを生成するアダプター。
+    -   [**NDIS\_PM\_wake\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造と共に、ネットワークアダプターがウェイクアップイベントを生成する原因となった受信パケット (*ウェイクアップパケット*) と共に使用します。
 
-        **注**ミニポート ドライバーがメディア固有またはメディアに依存しないウェイク アップのイベントが示されている場合は、このバッファー領域を割り当てる必要はありません。
+        **メモ** ミニポートドライバーは、メディア固有またはメディアに依存しないウェイクアップイベントを示す場合、このバッファー領域を割り当てる必要はありません。
 
-2.  ミニポート ドライバーを初期化します、 [ **NDIS\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)バッファーの先頭にある構造体。 ドライバーのセット、 **WakeReason**にメンバーを[ **NDIS\_PM\_WAKE\_理由\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ne-ntddndis-_ndis_pm_wake_reason_type)列挙型ウェイク アップ イベントの種類を定義する値。
+2.  ミニポートドライバーは、バッファーの開始時に、 [**NDIS\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体を初期化します。 このドライバーは、ウェイクアップイベントの種類を定義する**WakeReason**メンバーを、 [**NDIS\_PM\_wake\_REASON\_type**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ne-ntddndis-_ndis_pm_wake_reason_type)列挙値に設定します。
 
-    たとえば、ミニポート ドライバーは、受信パケットのウェイク アップ イベントを示すは場合、設定があります、 **WakeReason**メンバー **NdisWakeReasonPacket**します。 それ以外の場合、ドライバーの設定、 **WakeReason**を最適なメディア固有またはメディアに依存しないウェイク アップ イベントを説明する列挙値のメンバー。
+    たとえば、ミニポートドライバーが受信パケットウェイクアップイベントを示す場合、 **WakeReason**メンバーを**NdisWakeReasonPacket**に設定する必要があります。 それ以外の場合、ドライバーは、メディア固有またはメディアに依存しないウェイクアップイベントに最も近い列挙値に**WakeReason**メンバーを設定します。
 
-3.  Miniportdriver 発行している場合、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)受信パケットのウェイク アップ イベント、状態を示す値が次の手順に従います。
+3.  Miniportdriver が NDIS\_STATUS を発行している場合は[ **\_PM\_wake\_** ](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)の状態を示す受信パケットウェイクアップイベントについて、次の手順に従う必要があります。
 
-    1.  ミニポート ドライバーのセット、 **InfoBufferOffset**のオフセットにメンバーを[ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造体後の[ **NDIS\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)バッファー内の構造体。
+    1.  ミニポートドライバーは、バッファー内の[**ndis\_PM\_wake\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体に続く[**ndis\_pm\_wake\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造のオフセットに、 **infobufferoffset**メンバーを設定します。
 
-        **注**ミニポート ドライバーの開始を配置する必要があります、 [ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet) 64 ビットの境界で構造体。
+        **メモ** ミニポートドライバーは、64ビットの境界で、 [**NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造の開始位置を揃える必要があります。
 
-    2.  ミニポート ドライバーのセット、 **InfoBufferSize**メンバーのサイズを[ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)プラス構造体ウェイク アップ イベントが発生したパケットのサイズ。
+    2.  このミニポートドライバーは、 **Infobuffersize**メンバーを[**NDIS\_PM\_wake\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造のサイズに、ウェイクアップイベントの原因となったパケットのサイズを設定します。
 
-    3.  ミニポート ドライバーを初期化します、 [ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造次、 [ **NDIS\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)バッファー内の構造体。
+    3.  ミニポートドライバーは、ndis [ **\_pm\_wake\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体をバッファーに置いた後に、 [**ndis\_pm\_wake\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造を初期化します。
 
-        ミニポート ドライバーがのメンバーを設定、 [ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)次のように構造体します。
+        ミニポートドライバーは、次のように、 [**NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造のメンバーを設定します。
 
-        -   **PatternId**メンバー ウェイク アップ パケットに一致する WOL パターンの識別子に設定されます。 この識別子が指定された、 **PatternId**のメンバー、 [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)渡される構造体OID の中にドライバーへの要求の設定[OID\_PM\_追加\_WOL\_パターン](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern)します。
+        -   **PatternId**メンバーは、ウェイクアップパケットと一致する WOL パターンの識別子に設定されます。 この識別子は、 [**NDIS\_pm\_WOL\_pattern**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造の**PatternId**メンバーによって指定されます。これは、Oid 設定要求の[OID\_PM\_\_WOL\_PATTERN の追加によってドライバーに渡されます。](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pm-add-wol-pattern).
 
-        -   **PatternFriendlyName**で指定されたウェイク パターンのユーザーが判読できる説明にメンバーが設定されている、 **PatternId**メンバー。 この値を指定して、 **FriendlyName**のメンバー、 [ **NDIS\_PM\_WOL\_パターン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造体。
+        -   **Pattern friendlyname**メンバーは、 **PatternId**メンバーによって指定されたウェイクパターンのユーザーが判読できる説明に設定されます。 この値は、 [**NDIS\_PM\_WOL\_PATTERN**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wol_pattern)構造体の**FriendlyName**メンバーによって指定されます。
 
-            **注**ミニポート ドライバーはこのメンバーを初期化する必要はありません。 NDIS セット、 **PatternFriendlyName**を渡す前に、正しい値へのメンバー、 [ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)ドライバーに関連する構造体。
+            **メモ** ミニポートドライバーは、このメンバーを初期化する必要はありません。 NDIS は、 [ **\_PM\_WAKE\_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造体を後続のドライバーに渡す前に、 **pattern friendlyname**メンバーを正しい値に設定します。
 
-        -   **OriginalPacketSize**メンバーは、ネットワーク アダプターで受信されたパケットの長さに設定されます。
+        -   **OriginalPacketSize**メンバーは、ネットワークアダプターが受信したパケットの長さに設定されます。
 
-        -   **SavedPacketSize**を通じて報告されるパケットの長さにメンバーを設定する必要があります、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態を示す値。
+        -   **SavedPacketSize**メンバーは、 [**NDIS\_status\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)ステータス表示によって報告されるパケットの長さに設定する必要があります。
 
-            **注**このメンバーの値がミニポート ドライバーに設定した値より大きくはできません、 **MaxWoLPacketSaveBuffer**のメンバー、 [ **NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_capabilities)構造体。 ドライバーは、ウェイク アップ パケットを示す値機能を報告する場合に、この構造体を返します。 詳細については、次を参照してください。 [Reporting Wake 理由の状態を示す値機能](reporting-wake-reason-status-indication-capabilities.md)します。
+            **メモ** このメンバーの値は、 [**NDIS\_PM\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_capabilities)の構造体の**MaxWoLPacketSaveBuffer**メンバーで設定されているミニポートドライバーの値より大きくすることはできません。 ドライバーは、スリープ解除パケットの表示機能を報告するときに、この構造体を返します。 詳細については、「 [Wake Reason Status のレポート機能](reporting-wake-reason-status-indication-capabilities.md)」を参照してください。
 
-        -   **SavedPacketOffset**に続くウェイク アップ パケットをバイト単位のオフセットにメンバーを設定する必要があります、 [ **NDIS\_PM\_WAKE\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造体。
+        -   **SavedPacketOffset**メンバーは、 [**NDIS\_PM\_wake\_パケット**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_packet)構造に続く wake パケットのバイト単位のオフセットに設定する必要があります。
 
-            **注**ミニポート ドライバーは、バッファー内の 64 ビット境界のウェイク アップ パケットの開始を配置する必要があります。
+            **メモ** ミニポートドライバーは、バッファー内の64ビット境界で wake パケットの開始位置を揃える必要があります。
 
-    4.  ミニポートで指定されたオフセットからバッファーにウェイク アップ パケットをコピーする、 **SavedPacketOffset**メンバー。
+    4.  ミニポートは、 **SavedPacketOffset**メンバーによって指定されたオフセットで、ウェイクアップパケットをバッファーにコピーします。
 
-4.  ミニポート ドライバーを発行する場合、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)メディア固有の状態を示す値、またはメディアに依存しないウェイク アップ イベント、設定、 **InfoBufferOffset**と**InfoBufferSize**のメンバー、 [ **NDIS\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体をゼロにします。
+4.  ミニポートドライバーが[**NDIS\_status\_PM\_wake\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)状態を発行している場合、メディア固有またはメディアに依存しないウェイクアップイベントについて、**インフォ Bufferoffset**と**インフォ buffersize**を設定します。[**NDIS\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_pm_wake_reason)構造体のメンバーが0になります。
 
-5.  ミニポート ドライバーを初期化します、 [ **NDIS\_状態\_INDICATION** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体。 ドライバーのセット、 **StatusCode** NDIS メンバー\_状態\_PM\_WAKE\_理由。 ドライバーも設定、 **StatusBuffer**バッファー、およびセットを指すメンバー、 **StatusBufferLength**バッファーの長さ、(バイト単位)。
+5.  ミニポートドライバーは、 [**NDIS\_ステータス\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)表示構造体を初期化します。 ドライバーは、 **StatusCode**メンバーを NDIS\_STATUS\_PM\_WAKE\_REASON に設定します。 また、ドライバーは、 **statusbuffer**メンバーがバッファーを指すように設定し、 **statusbufferlength**をバッファーの長さ (バイト単位) に設定します。
 
-6.  ミニポート ドライバー呼び出し[ **NdisMIndicateStatusEx** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatestatusex)へのポインターを渡すと、 [ **NDIS\_状態\_INDICATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/ns-ndis-_ndis_status_indication)構造体、 *StatusIndication*パラメーター。
+6.  ミニポートドライバーは[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)を呼び出し、 *statusindication*パラメーターに、 [**NDIS\_STATUS\_を示す**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_status_indication)構造体へのポインターを渡します。
 
-**注**ミニポート ドライバーの問題の後、 [ **NDIS\_状態\_PM\_WAKE\_理由**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)を受信した状態の表示パケットのウェイク アップのイベントを呼び出すことによってこの受信パケットを示すその必要があります[ **NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ndis/nf-ndis-ndismindicatereceivenetbufferlists)します。
+**メモ** ミニポートドライバーによって、 [**NDIS\_status\_PM\_WAKE\_REASON**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-pm-wake-reason)ステータスが返された後、受信したパケットウェイクアップイベントについては、 [**NdisMIndicateReceiveNetBufferLists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatereceivenetbufferlists)を呼び出すことによって、この受信パケットを示す必要があります。

@@ -1,47 +1,47 @@
 ---
 title: IRP_MN_QUERY_POWER
-description: この IRP では、システム電源の状態またはデバイスの電源状態を変更できるかどうかを判断するデバイスを照会します。
+description: この IRP は、デバイスを照会して、システムの電源状態またはデバイスの電源状態を変更できるかどうかを判断します。
 ms.date: 08/12/2017
 ms.assetid: fc4c5364-2160-4525-889a-96785a3c7a07
 keywords:
-- IRP_MN_QUERY_POWER カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_QUERY_POWER カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: d598d294aac98cba066ee904cab1484ff8ae37ba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e599bcb71cc98f39ed496caa76f47fe5d1da27ad
+ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370862"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72828018"
 ---
-# <a name="irpmnquerypower"></a>IRP\_MN\_クエリ\_電源
+# <a name="irp_mn_query_power"></a>IRP\_\_クエリ\_電力
 
 
-この IRP では、システム電源の状態またはデバイスの電源状態を変更できるかどうかを判断するデバイスを照会します。
+この IRP は、デバイスを照会して、システムの電源状態またはデバイスの電源状態を変更できるかどうかを判断します。
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_POWER** ](irp-mj-power.md)送信されるときに
+[**IRP\_MJ\_の電源**](irp-mj-power.md)送信時
 ---------
 
-電源マネージャーまたはデバイスの電源ポリシー所有者は、変更が決定するかどうかにできますシステムまたはデバイスの電源状態で、通常にスリープ状態にするには、この IRP を送信します。 ドライバーを呼び出す必要があります[ **PoRequestPowerIrp** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)を割り当てて、この IRP を送信します。
+電源マネージャーまたはデバイスの電源ポリシー所有者は、この IRP を送信して、システムまたはデバイスの電源状態を変更できるかどうかを判断します。通常はスリープ状態に移行します。 ドライバーは、この IRP を割り当てて送信するために[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)を呼び出す必要があります。
 
-電源マネージャー IRQL でこの IRP の送信 = パッシブ\_レベル設定デバイス スタックを\_POWER\_pdo PAGABLE フラグを設定します。
+パワーマネージャーは、この IRP を IRQL = パッシブ\_レベルで、PDO の DO\_パワー\_PAGABLE フラグを設定するデバイススタックに送信します。
 
-電源マネージャーは IRQL で IRP を送信することができます = ディスパッチ\_レベルの場合、操作を行います\_POWER\_突入フラグを設定します。 このようなドライバー直接的または間接的にアクセスできません、ページのコードやデータ。
+DO\_電源\_突入電流フラグが設定されている場合、電源マネージャーは、IRQL = ディスパッチ\_レベルで IRP を送信できます。 このようなドライバーは、ページングされたコードやデータに直接または間接的にアクセスすることはできません。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-**Parameters.Power.Type**か、設定されている電源状態の種類を指定します**SystemPowerState**または**DevicePowerState**します。
+**SystemPowerState**または**DevicePowerState**のいずれかで、設定する電源の状態の種類を指定し**ます。**
 
-**Parameters.Power.State**自体には、電源の状態を次のように指定します。
+**Parameters**は、次のように電源状態を指定します。
 
--   場合**Parameters.Power.Type**は**SystemPowerState**、値の列挙子は、 [**システム\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_system_power_state)型。
+-   **SystemPowerState**が**の場合、** この値は[ **\_システムの\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_system_power_state)の種類の列挙子になります。
 
--   場合**Parameters.Power.Type**は**DevicePowerState**、値の列挙子は、 [**デバイス\_POWER\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ne-wdm-_device_power_state)型。
+-   **DevicePowerState**がの場合、この値は[ **\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_device_power_state)の列挙子\_状態の**種類です。**
 
-**Parameters.Power.ShutdownType**要求された移行に関する追加情報を指定します。 指定できる値はの列挙子、 **POWER\_アクション**型。
+**パラメーター。 ShutdownType**は、要求された遷移に関する追加情報を指定します。 指定できる値は、 **POWER\_アクション**の種類の列挙子です。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -51,44 +51,44 @@ ms.locfileid: "67370862"
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_をデバイスが要求された状態を入力できることを示すために成功します。 ドライバーは、要求された状態を入力できないことを示すすべての適切なエラー状態を設定します。
+ドライバーは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定して、デバイスが要求された状態に入ることができることを示します。 ドライバーは、要求された状態を入力できないことを示すために、適切なエラー状態を設定します。
 
 <a name="operation"></a>操作
 ---------
 
-パラメーターを**IRP\_MN\_クエリ\_POWER**がの場合と同じ[ **IRP\_MN\_設定\_電源**](irp-mn-set-power.md). ただし、電源状態を後の変更のドライバーを通知するのではなく**IRP\_MN\_クエリ\_POWER**システムまたはデバイスが特定の電源状態を入力することができるかどうかを照会します。
+**Irp\_\_クエリ\_電力**のパラメーターは、 [ **\_電力\_設定**](irp-mn-set-power.md)されている irp\_を使用した場合と同じです。 ただし、後による電源状態の変更をドライバーに通知するのではなく、IRP\_は、システムまたはデバイスが特定の電源状態に入ることができるかどうかをクエリ **\_POWER QUERY\_** ます。
 
-ドライバーはへの応答には、そのデバイスの電源状態を変更する必要があります、 **IRP\_MN\_クエリ\_POWER**要求。
+ドライバーは、 **IRP\_\_クエリ\_電源**要求に応答して、デバイスの電源状態を変更することはできません。
 
-ドライバーを受信した後、 **IRP\_MN\_クエリ\_POWER**ドライバーを呼び出す必要があります要求を Windows server 2003、Windows XP、および Windows 2000、 [ **PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)」の説明に従って、[呼び出す**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/kernel/calling-postartnextpowerirp)します。 Windows Vista 以降、通話**PoStartNextPowerIrp**は必要ありませんし、このような呼び出しには電源管理操作は実行されません。
+ドライバーが、Windows Server 2003、Windows XP、および Windows 2000 で **\_クエリ\_電源**要求を\_、irp を受信した後、ドライバーは[**postartnextpowerirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)を呼び出す必要があります。詳細については、「 [ **postartnextpowerirp**の呼び出し」を参照してください。](https://docs.microsoft.com/windows-hardware/drivers/kernel/calling-postartnextpowerirp). Windows Vista 以降では、 **Postartnextpowerirp**を呼び出す必要はなく、このような呼び出しは電源管理操作を実行しません。
 
-**IRP\_MN\_クエリ\_システム電源の状態の電源**
+**システムの電源状態に対する IRP\_\_クエリ\_電力**
 
-電源マネージャーは、ネットワーク接続を削除するなどの作業を中断せずシステム電源の状態を変更できるように、この IRP を送信します。
+この IRP は、ネットワーク接続の切断などの処理を中断することなく、システムの電源状態を変更できることを確認するために、電源マネージャーによって送信されます。
 
-電源マネージャーが送信する前にクエリ可能であれば、 **IRP\_MN\_設定\_POWER**システムのスリープ状態または通常のシステムのシャット ダウンを要求します。 ただし、いくつかの重要な条件下 (ユーザー キーを押してなど、**電源オフ**ボタンや、バッテリの期限切れ)、電源マネージャーが送信することがあります、 **IRP\_MN\_設定\_POWER**電源要求のクエリを最初に送信せずに要求します。 スリープ状態にのみ電源マネージャーのクエリ動作状態に戻る前に決してを照会します。
+可能な限り、電源マネージャーは、IRP\_を送信する前にクエリを実行し、システムのスリープ状態または通常のシステムシャットダウンを要求する **\_電源\_設定**します。 ただし、一部の重大な状況 (ユーザーが**電源オフ**ボタンを押したときや、バッテリの有効期限が切れている場合など) では、電源管理者は、最初にクエリの電源要求を送信することなく、**電源要求\_\_設定**された IRP\_を送信することがあります。 電源マネージャーは、スリープ状態の場合にのみクエリを行います。動作状態に戻る前にクエリを実行することはありません。
 
-ドライバーは、システム電源クエリ IRP を受信したときに、クエリ対象のシステム状態の有効なデバイスの状態のいずれかをサポートできない場合に IRP が失敗する必要があります。 詳細については、次を参照してください。 [ **DeviceState**](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate)します。 それ以外の場合、ドライバーは、[次へ] の下のドライバーに IRP を渡す必要があります。 バス ドライバーは IRP を完了します。
+ドライバーがシステムの power query IRP を受信した場合、この irp は、照会されたシステム状態に対して有効なデバイスの状態をサポートできない場合、IRP を失敗させる必要があります。 詳細については、「 [**Devicestate**](https://docs.microsoft.com/windows-hardware/drivers/kernel/devicestate)」を参照してください。 それ以外の場合、ドライバーは IRP を次の下位のドライバーに渡す必要があります。 バスドライバーが IRP を完了します。
 
-システムのスリープ状態に遷移の Windows Vista 以降、重要な操作と見なされます。 ドライバーが失敗する、システムが引き続きクエリ性能の IRP 電源マネージャーでは、次のスリープ状態にシステムの電源状態を変更可能性があります。 ドライバーは IRP のクエリ機能、ドライバーは常にシステムを受信した後は、システムの電源状態の後続の変更を準備します。
+Windows Vista 以降では、システムスリープ状態への移行は重大な操作と見なされます。 ドライバーがシステムクエリを失敗させる可能性がありますが、停電の場合でも、電源マネージャーはシステムの電源状態をスリープ状態に変更することがあります。 ドライバーがシステムクエリを受信した後、システムの電源状態を変更するには、ドライバーを常に準備する必要があります。
 
-設定する必要がありますが、デバイスの電源ポリシー所有者は、システム電源クエリ IRP を受信したときに、 [ *IoCompletion* ](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-io_completion_routine)渡す前に IRP のルーチンです。 *IoCompletion*ルーチンを送る、 **IRP\_MN\_クエリ\_POWER**のクエリ対象のシステム状態の有効なデバイスの状態。 詳細については、次を参照してください。[電源ポリシー所有者のデバイスでのシステム クエリ Power IRP の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-a-system-query-power-irp-in-a-device-power-policy-owner)します。
+デバイスの電源ポリシー所有者がシステムの power query IRP を受け取ると、IRP で[*Iocompletion*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンが渡される前に、その irp を設定する必要があります。 *Iocompletion*ルーチンでは、照会されたシステム状態に対して有効なデバイスの状態に対して、 **IRP\_\_クエリ\_電力**を送信する必要があります。 詳細については、「[システムクエリ-電源 IRP をデバイスの電源ポリシー所有者に処理する](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-a-system-query-power-irp-in-a-device-power-policy-owner)」を参照してください。
 
-IRP を指定した場合**PowerSystemShutdown** (S5) にある値**Parameters.Power.ShutdownType**シャット ダウンの理由を示します。 **ShutdownType**ドライバーに指示するかどうか、システムがリセットされています (**PowerActionShutdownReset**) または後で再起動するには、無期限に電源をオフ (**PowerActionShutdownOff**). ほとんどのデバイス ドライバー、違いは重要ではありません。 ただし、DMA を実行するデバイスをストリーミング ビデオなど、特定のデバイス ドライバーを選択する場合、デバイスの電源をシステムをリセットすると、そのため、継続的な I/O を停止するときにします。
+IRP で**Powersystemshutdown** (S5) が指定されている場合、shutdown**型**の値は、シャットダウンの理由を提供します。 **Shutdowntype**は、システムがリセットされているかどうか (**Poweractionshutdownreset**)、または後で再起動するために無期限に電源をオフにする (**PowerActionShutdownOff**) かどうかをドライバーに指示します。 ほとんどのデバイスのドライバーの場合、違いは重要ではありません。 ただし、DMA を実行するビデオストリーミングデバイスなど、特定のデバイスの場合、ドライバーはシステムをリセットするときにデバイスの電源を切ることを選択して、実行中の i/o を停止することがあります。
 
-Microsoft Windows 2000 以降のシステム、ある値で**ShutdownType**することもできます**PowerActionShutdown**します。 この場合、ドライバーでは、シャット ダウンの種類が要求され、このためとリセットを実行する必要がありますを見分けることはできません。
+Microsoft Windows 2000 以降のシステムでは、 **Shutdowntype**の値も**poweractionshutdown**にすることができます。 この場合、ドライバーはどの種類のシャットダウンが要求されているかを識別できないため、リセットのために続行する必要があります。
 
-ドライバーが失敗した場合、 **IRP\_MN\_クエリ\_POWER**を発行して電源マネージャーが通常は応答のシステム電源の状態を要求する**IRP\_MN\_設定\_POWER** IRP します。 通常、この IRP ことを再確認する現在のシステム状態。 ただし、ドライバーを受信する可能性があることは、 **IRP\_MN\_設定\_POWER**照会された状態またはその他の中間状態にします。 ドライバーは、このような状況を処理するために準備する必要があります。
+システムの電源状態に対する**電源要求\_\_クエリ**を実行したときに、ドライバーで irp\_が失敗した場合、通常、電源マネージャーは、irp\_を実行して、**電源 irp\_設定**して応答します。\_ 通常、この IRP は、現在のシステム状態を reaffirm します。 ただし、ドライバーが IRP\_を受け取る可能性があります。これにより、クエリされた状態またはその他の中間状態に**電力\_\_設定**されます。 ドライバーは、このような状況に対処できるように準備する必要があります。
 
-**IRP\_MN\_クエリ\_デバイスの電源状態の電源**
+**デバイスの電源状態に対する IRP\_\_クエリ\_電力**
 
-デバイスの電源ポリシー所有者は、この IRP をシステムへの応答には、そのスタックに送信**IRP\_MN\_クエリ\_POWER**要求。
+デバイスの電源ポリシー所有者は、システム Irp\_に応答して、この IRP をスタックに送信します。これにより、**電源要求\_\_クエリ**が実行されます。
 
-設定されている場合は、ドライバーは、要求されたデバイスの状態にそのデバイスを置くことが、 **IoStatus.Status**ステータス\_ドライバーを削減し、バス ドライバーが IRP に到達するまでになど成功を次に IRP を渡します。 スタック内の任意のドライバーは IRP を失敗する必要があります場合、ドライバーをする必要があります IRP 直ちに完了呼び出して**IoCompleteRequest**エラー状態を返すとします。 ドライバーは IRP を失敗を渡さないでくださいさらに下位のスタック。
+ドライバーは、要求されたデバイスの状態にデバイスを配置できる場合、 **iostatus. status**を STATUS\_SUCCESS に設定し、irp を次の下位のドライバーに渡します。これは、irp がバスドライバーに到達するまで続きます。 スタック内のいずれかのドライバーが IRP を失敗させる必要がある場合、そのドライバーは**IoCompleteRequest**を呼び出してエラー状態を返すことで、直ちに irp を完了する必要があります。 IRP が失敗したドライバーは、スタックの下位に到達しません。
 
-状態を返すことによって\_成功すると、ドライバーの保証が、要求された電源の状態を設定するには、その機能を変更する操作は開始されません。 ドライバーを許容可能な電源状態のデバイスを返すセット power IRP が完了するまで、このような操作を必要とする任意の Irp キューに入れる必要があります。
+正常な状態\_返すことで、ドライバーは、要求された電源状態を設定する機能を変更する操作を開始しないことを保証します。 ドライバーは、デバイスを許容できる電力状態に返す set-電源 IRP を完了するまで、このような操作を必要とする任意の Irp をキューに入れます。
 
-Windows 2000 および IRP を指定すると、以降のシステムで**PowerDeviceD1**、 **PowerDeviceD2**、または**PowerDeviceD3**にある値**Parameters.Power.ShutdownType**システム電源 IRP がアクティブな場合は、現在のシステム電源 IRP、に関する情報を提供します。 この場合、ある値**ShutdownType**現在要求されているシステムの電源状態を示しますまたは**PowerActionNone**システム要求が存在しない場合。 Windows 98 でこのフィールドは常に格納する、/ **PowerActionNone** IRP がデバイスの電源状態を要求したときにします。
+Windows 2000 以降のシステムでは、IRP で**PowerDeviceD1**、 **PowerDeviceD2**、または**PowerDeviceD3**が指定されている場合、システムによっては、現在のシステム電源 IRP に関する情報が提供され**ます。** power IRP はアクティブです。 この場合、 **Shutdowntype**の値は、現在要求されているシステム電源の状態を示します。システム要求が未処理でない場合は**poweractionnone**を示します。 Windows 98/Me では、IRP がデバイスの電源状態を要求した場合、このフィールドには常に**Poweractionnone**が含まれます。
 
 <a name="requirements"></a>要件
 ------------
@@ -101,7 +101,7 @@ Windows 2000 および IRP を指定すると、以降のシステムで**PowerD
 <tbody>
 <tr class="odd">
 <td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -109,13 +109,13 @@ Windows 2000 および IRP を指定すると、以降のシステムで**PowerD
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_クエリ\_電源**](irp-mn-query-power.md)
+[**IRP\_\_クエリ\_電力**](irp-mn-query-power.md)
 
-[**IRP\_MN\_SET\_POWER**](irp-mn-set-power.md)
+[**IRP\_\_設定\_電源**](irp-mn-set-power.md)
 
-[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-porequestpowerirp)
+[**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)
 
-[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-postartnextpowerirp)
+[**PoStartNextPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-postartnextpowerirp)
 
  
 
