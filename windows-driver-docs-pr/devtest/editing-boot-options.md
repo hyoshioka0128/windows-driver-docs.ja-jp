@@ -1,6 +1,6 @@
 ---
-title: ブートオプションの編集
-description: ブートオプションの編集
+title: ブート オプションの編集
+description: ブート オプションの編集
 ms.assetid: b50b3ac8-154a-4c26-907f-11e274a5c7c8
 keywords:
 - ブートオプション WDK、編集
@@ -10,22 +10,18 @@ keywords:
 - ブートエントリ WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d23f7ef979cbc36e2382ef9b697b057ad395f8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5c305b2c8acf6ba04acaeb997da8da1a7d5d2289
+ms.sourcegitcommit: 2c8c13ed8d8f11eccf4c4ffb492c64099003b6a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840271"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681889"
 ---
-# <a name="editing-boot-options"></a>ブートオプションの編集
+# <a name="editing-boot-options"></a>ブート オプションの編集
 
+このセクションでは、Windows Server 2008、Windows Server 2012、または Windows 7 以降を実行しているコンピューターでブートオプションを編集するための実用的なガイドを示します。 ブートオプションの基本要素をカスタマイズするための詳細な手順について説明します。
 
-## <span id="ddk_editing_boot_options_tools"></span><span id="DDK_EDITING_BOOT_OPTIONS_TOOLS"></span>
-
-
-このセクションでは、Windows 10、Windows 8、Windows Server 2012、Windows 7、または Windows Server 2008 を実行しているコンピューターでブートオプションを編集するための実用的なガイドを示します。 ブートオプションの基本要素をカスタマイズするための詳細な手順について説明します。
-
-このセクションでは、オペレーティングシステムに付属のツールである BCDEdit を使用する方法について説明します。 BCDEdit コマンドの構文の詳細については、「 **bcdedit/?」と**入力してください。 または**bcdedit/?** コマンドプロンプトウィンドウのトピック。 詳細については、「 [BCD ブートオプションリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
+このセクションでは、オペレーティングシステムに付属のツールである BCDEdit を使用する方法について説明します。 BCDEdit コマンドの構文の詳細については、「 **bcdedit/?」と**入力してください。 または**bcdedit/?** コマンドプロンプトウィンドウのトピック。 詳細については、「 [BCD ブートオプションリファレンス](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)」を参照してください。
 
 > [!NOTE]
 > BCDEdit オプションを設定する前に、コンピューターで BitLocker とセキュアブートを無効にしたり、中断したりすることが必要になる場合があります。
@@ -45,6 +41,9 @@ ms.locfileid: "72840271"
 - [新しいブートエントリを既定のエントリに](changing-the-default-boot-entry.md)します。
 
 -  [ブートメニューのタイムアウトを変更](changing-the-boot-menu-time-out.md)します。Windows がすぐに起動するように、ブートメニューのタイムアウトを短縮することができます。 または、ブートメニューのタイムアウトを長くして、優先ブートエントリを選択するための十分な時間を確保します。
+
+## <a name="related-topics"></a>関連トピック 
+ [BCDEdit のコマンドラインオプション](https://docs.microsoft.com/windows-hardware/manufacture/desktop/bcdedit-command-line-options)
 
 > [!CAUTION]
 > BCDEdit を使用して BCD を変更するには、管理者特権が必要です。 **BCDEdit/set**コマンドを使用して一部のブートエントリオプションを変更すると、コンピューターが動作しなくなる可能性があります。 別の方法として、システム構成ユーティリティ (Msconfig.exe) を使用してブート設定を変更することもできます。
