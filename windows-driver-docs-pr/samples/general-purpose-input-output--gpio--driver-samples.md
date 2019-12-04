@@ -1,34 +1,20 @@
 ---
 title: 汎用入力/出力 (GPIO) ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム GPIO ドライバーを記述するための開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタム GPIO ドライバーを作成するための開始点となります。
 ms.assetid: F56180C7-44CF-47A6-A292-48DEF5AD90A6
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 93834e05c96e6f5b63be819f66fe4fcd7a9a4663
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4743c27158a0b1ffb720f09ad2dee1c152b5d3ca
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63371858"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735262"
 ---
 # <a name="general-purpose-inputoutput-gpio-driver-samples"></a>汎用入力/出力 (GPIO) ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタム GPIOdriver を作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルは、デバイスのカスタム GPIOdriver を記述するための開始点を提供します。
-
-## <a name="general-purpose-inputoutput-gpio"></a>汎用入力/出力 (GPIO)
-
-
-| サンプル名  | ソリューション                                               | 説明                                                                                                                                                                                                                                                                             |
-|--------------|--------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GPIO ドライバー | [sim](https://go.microsoft.com/fwlink/p/?LinkId=617729) | GPIO ドライバーのサンプルには、GPIO フレームワーク拡張 GPIO I/O 制御の要求を処理するには、(GpioClx) と組み合わせて動作する GPIO コント ローラー ドライバーやカーネル モードで実行され、GPIO を使用して周辺のドライバーを作成する方法を説明する注釈付きのコードが含まれていますリソース。 |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [GPIO ドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/gpio-sample-drivers) | Gpio driver サンプルには、gpio の i/o 制御要求を処理するために GPIO framework extension (GpioClx) と連携して動作する GPIO controller ドライバーを記述する方法を示す注釈付きコードと、カーネルモードで実行され、GPIO リソースを使用する周辺ドライバーが含まれています。 |

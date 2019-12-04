@@ -1,38 +1,24 @@
 ---
 title: Windows ポータブル デバイス (WPD) ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム WPD ドライバーを記述するための開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタム WPD ドライバーを作成するための開始点となります。
 ms.assetid: 5EB5B820-A29A-4A93-BBB9-6F4CDF101E3B
-ms.date: 04/20/2017
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c36c16098cdc7d8b85252e2032ff034648d4561
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7da2e16a267f583af0282545634d206a1424f17
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342844"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735168"
 ---
 # <a name="windows-portable-device-wpd-driver-samples"></a>Windows ポータブル デバイス (WPD) ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタム WPD ドライバーを作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイスのカスタム WPD ドライバーを記述するための開始点を提供します。
-
-## <a name="windows-portable-device-wpd"></a>Windows ポータブル デバイス (WPD)
-
-
-| サンプル名                               | ソリューション                                                                   | 説明                                                                                                                                                                                                                                                           |
-|-------------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WPD ハードウェアの基本的なサンプル ドライバー (UMDF 1) | [WpdBasicHardwareDriver](https://go.microsoft.com/fwlink/p/?LinkId=620318)  | 視差 BS2 プログラミング可能なマイクロ コント ローラーと統合される 9 つのセンサー デバイスをサポートしている WPD サンプル ドライバー。                                                                                                                                              |
-| Hello World の例                       | [WpdHelloWorldDriver](https://go.microsoft.com/fwlink/p/?LinkId=618008)     | このサンプルのドライバーが 4 つのオブジェクトをサポートしています: デバイス オブジェクト、ストレージ オブジェクト、フォルダー オブジェクト、およびファイル オブジェクト。 各オブジェクトは、一連のプロパティをサポートします。                                                                                                            |
-| 複数のトランスポート ドライバー                    | [WpdMultiTransportDriver](https://go.microsoft.com/fwlink/p/?LinkId=618009) | 複数のトランスポートをサポートするデバイスの WpdHelloWorldDriver を拡張する方法を示します。 トランスポートは、ポータブル デバイスがコンピューターと通信するプロトコルです。 トランスポートの例には、インターネット プロトコル (IP)、Bluetooth、USB などがあります。 |
-| WPD サービス サンプル ドライバー                 | [WpdServiceSampleDriver](https://go.microsoft.com/fwlink/p/?LinkId=618010)  | 連絡先のデバイス サービスでシミュレートされたデバイスをサポートするように、WpdHelloWorldDriver サンプルを拡張する方法を示します。                                                                                                                                      |
-| WUDF ドライバー                               | [WpdWudfSampleDriver](https://go.microsoft.com/fwlink/p/?LinkId=618011)     | WPD デバイス ドライバー インターフェイス (DDI) のほぼすべての側面を包括的な WPD サンプル ドライバーに示します。                                                                                                                                                        |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [WPD 基本ハードウェアサンプルドライバー (UMDF 1)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/wpd-basic-hardware-sample-driver-umdf-version-1)  | 視差 BS2 のプログラム可能なマイクロコントローラーと統合される9台のセンサーデバイスをサポートする WPD サンプルドライバー。 |
+| [Hello World の例](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/wpdhelloworld-sample-driver-for-portable-devices) | このサンプルドライバーでは、デバイスオブジェクト、ストレージオブジェクト、フォルダーオブジェクト、およびファイルオブジェクトという4つのオブジェクトがサポートされています。 各オブジェクトは、一連のプロパティをサポートしています。 |
+| [マルチトランスポートドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/wpd-multi-transport-sample-driver) | 複数のトランスポートをサポートするデバイスの WpdHelloWorldDriver を拡張する方法について説明します。 トランスポートは、ポータブルデバイスがコンピューターと通信するためのプロトコルです。 トランスポートの例としては、インターネットプロトコル (IP)、Bluetooth、USB などがあります。 |
+| [WPD サービスのサンプルドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/wpd-service-sample-driver) | WpdHelloWorldDriver サンプルを拡張して、連絡先デバイスサービスを持つシミュレートされたデバイスをサポートする方法を示します。 |
+| [WUDF ドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/wpd-wudf-sample-driver) | 包括的な WPD サンプルドライバーは、WPD デバイスドライバーインターフェイス (DDI) のほぼすべての側面を示しています。 |

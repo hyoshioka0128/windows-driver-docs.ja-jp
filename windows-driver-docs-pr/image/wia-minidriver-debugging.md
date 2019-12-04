@@ -4,34 +4,30 @@ description: WIA ミニドライバーのデバッグ
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0db7e17f8422d7128c767e041e06a5d6b28807fa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 61711f0f18e4bf4a3855dca36ecfd83dfbb3c0cf
+ms.sourcegitcommit: 1585a52e762226b01c7369371727746487cc57bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840678"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74796668"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA ミニドライバーのデバッグ
-
-
-
-
 
 Wia ドライバーは、WIA サービスプロセス内で実行されます。 そのため、これらのドライバーのユーザーモードデバッグを実行するには、デバッガーを WIA サービスに接続する必要があります。 これを行うには、いくつかの方法があります。このトピックでは、その2つを紹介します。 (詳細については、Microsoft Windows SDK のドキュメントの「デバッグサービス」を参照してください)。
 
 デバッガーは、次の2つの方法のいずれかで起動できます。
 
--   デバッガーで WIA サービスを自動的に開始します。
+- デバッガーで WIA サービスを自動的に開始します。
 
--   実行時に適切なプロセスにデバッガーをアタッチします。
+- 実行時に適切なプロセスにデバッガーをアタッチします。
 
-次の2つの点に注意してください。
+ミニドライバーをデバッグする際は、次の2点に注意してください。
 
-デバッガー内からシンボルおよびその他のファイルへのネットワークアクセスが必要な場合、デバッガーで WIA サービスを自動的に開始すると、これらのファイルが表示されないことがあります。 WIA は、Windows XP では LocalSystem サービスとして、Microsoft Windows Server 2003 以降のバージョンのオペレーティングシステムでは LocalService として実行され、ネットワークにアクセスするための適切な特権を持っていません。 このため、コンピューターがネットワーク上のすべてを "参照" できる場合でも、サービスを実行しているデバッガーができない可能性があります。 WIA サービスの変更された特権レベルの詳細については、「 [Wia ドライバーのセキュリティの問題](security-issues-for-wia-drivers.md)」を参照してください。
+1. デバッガー内からシンボルおよびその他のファイルへのネットワークアクセスが必要な場合、デバッガーで WIA サービスを自動的に開始すると、これらのファイルが表示されないことがあります。 WIA は、Windows XP では LocalSystem サービスとして、Microsoft Windows Server 2003 以降のバージョンのオペレーティングシステムでは LocalService として実行され、ネットワークにアクセスするための適切な特権を持っていません。 このため、コンピューターがネットワーク上のすべてを "参照" できる場合でも、サービスを実行しているデバッガーができない可能性があります。 WIA サービスの変更された特権レベルの詳細については、「 [Wia ドライバーのセキュリティの問題](security-issues-for-wia-drivers.md)」を参照してください。
 
--   ドライバーのメッセージの読み込みまたは初期化中に問題が発生した場合 (例[ **: I後部 usd:: Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)の実行中)、デバッガーがアタッチされたときに、エラーが既に発生していて、役に立つ情報を取得するには遅すぎます。 この問題の一般的な症状は、デバイスが**マイコンピューター**フォルダーに表示されず、**デバイスマネージャー**フォルダー*に表示さ*れることです。
+1. ドライバーのメッセージの読み込みまたは初期化中に問題が発生した場合 (例[ **: I後部 usd:: Initialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/stiusd/nf-stiusd-istiusd-initialize)の実行中)、デバッガーがアタッチされたときに、エラーが既に発生していて、役に立つ情報を取得するには遅すぎます。 この問題の一般的な症状は、デバイスが**マイコンピューター**フォルダーに表示されず、**デバイスマネージャー**フォルダー*に表示さ*れることです。
 
-### <a name="starting-the-wia-service-under-a-debugger"></a>デバッガーでの WIA サービスの開始
+## <a name="starting-the-wia-service-under-a-debugger"></a>デバッガーでの WIA サービスの開始
 
 WIA サービスが開始されると、サービスコントロールマネージャー (SCM) がサービスコントロールデータベースのエントリを参照し、そのエントリが指す実行可能ファイルを起動します。 デバッガーで WIA サービスを開始する簡単な方法は、そのエントリをデバッガーを含むエントリに置き換えることです。 エントリは、次のレジストリにあります。
 
@@ -47,7 +43,7 @@ WIA サービスが開始されると、サービスコントロールマネー�
 
 この変更により、WIA サービスは常に NTSD で開始されます。 サービスが既に実行されている場合は、この変更が有効になる前に、サービスを停止して再起動する必要があることに注意してください。 詳細について[は、「イメージサービスの開始と停止](starting-and-stopping-the-still-image-service.md)」を参照してください。
 
-デバッガーのウィンドウが表示されるようにするには、別のレジストリキーも変更する必要があります。 このレジストリキーへのパスは次のとおりです。
+デバッガーウィンドウが表示されるようにするには、別のレジストリキーも変更する必要があります。 このレジストリキーへのパスは次のとおりです。
 
 **HKLM\\System\\CurrentControlSet\\Services\\StiSvc\\型**
 
@@ -59,7 +55,7 @@ WIA サービスが開始されると、サービスコントロールマネー�
 
 Microsoft サイト (www.microsoft.com) からデバッガーパッケージをダウンロードした場合は、 *tlist.exe*という名前のユーティリティプログラムが含まれています。 *Tlist.exe*は、実行中のすべてのプロセスを表示します。 S スイッチを使用して*tlist.exe*を実行すると、このユーティリティは、どのプロセスがどのサービスをホストしているかも示します。 たとえば、 *tlist.exe-s*を実行すると、次のような出力が生成されます。
 
-```console
+```cmd
    0 System Process
    4 System
  160 smss.exe
@@ -88,6 +84,6 @@ Microsoft サイト (www.microsoft.com) からデバッガーパッケージを�
 
 次の文字列値になります。
 
-" **% SystemRoot%\\System32\\stisvc .exe-k imgsvc**"
+**% SystemRoot%\\System32\\stisvc .exe-k imgsvc**"
 
-これで、WIA サービスが開始されると、 *svchost.exe*ではなく、 *stisvc .exe*の下で実行されます。 このプロセスは、 *stisvc .exe*のインスタンスが1つしかないため、簡単に見つけることができます。 PID を検索する必要はありません。 このため、Microsoft Visual Studio を使用してドライバーを開発している場合は、 **[ビルド]** メニューの **[デバッグの開始]** メニューをクリックし、 **[プロセスにアタッチ...]** をクリックして、一覧で [ *stisvc .exe* ] を選択します。
+WIA サービスが開始されると、 *svchost.exe*ではなく、 *stisvc .exe*の下で実行されます。 このプロセスは、 *stisvc .exe*のインスタンスが1つしかないため、簡単に見つけることができます。 PID を検索する必要はありません。 このため、Microsoft Visual Studio を使用してドライバーを開発している場合は、 **[ビルド]** メニューの **[デバッグの開始]** メニューをクリックし、 **[プロセスにアタッチ...]** をクリックして、一覧で [ *stisvc .exe* ] を選択します。

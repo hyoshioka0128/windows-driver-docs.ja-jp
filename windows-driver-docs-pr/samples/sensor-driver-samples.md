@@ -1,38 +1,26 @@
 ---
 title: センサー ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム センサー ドライバーの作成の開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタムセンサードライバーを作成するための出発点となります。
 ms.assetid: D3B69433-6427-40B2-B3A1-8F48E014BE63
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ad83c0347b4200886a24ed3e8197ddfe53e4b431
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: df739548a2af9d7cd94cdfa26989b8882ef7fc59
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56558953"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735224"
 ---
 # <a name="sensor-driver-samples"></a>センサー ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタムセンサードライバーを作成するための出発点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイスのカスタム センサー ドライバーの作成の開始点を提供します。
-
-## <a name="sensors"></a>センサー
-
-
-| サンプル名                   | ソリューション                                                                         | 説明                                                                                   |
-|-------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| アクティビティ                      | [アクティビティ](https://go.microsoft.com/fwlink/p/?LinkId=617956)                      | 仮想アクティビティ センサーを制御する UMDF v2 ドライバーを作成する方法を示します。              |
-| ADXL345Accelerometer          | [ADXL345Acc](https://go.microsoft.com/fwlink/p/?LinkId=617957)                    | ADXL345 の加速度計チップを制御する UMDF v2 ドライバーを作成する方法を示します。          |
-| CustomSensors                 | [CustomSensors](https://go.microsoft.com/fwlink/p/?LinkId=617958)                 | 仮想 CO2 センサーを制御する UMDF v2 ドライバーを作成する方法を示します。                   |
-| 万歩計                     | [歩数計](https://go.microsoft.com/fwlink/p/?LinkId=617959)                     | 仮想の歩数計センサーを制御する UMDF v2 ドライバーを作成する方法を示します。             |
-| SimpleDeviceOrientationSensor | [SimpleDeviceOrientationSensor](https://go.microsoft.com/fwlink/p/?LinkId=617960) | デバイスの向きの単純な値を出力する UMDF v2 センサー ドライバーを作成する方法を示します。 |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [アクティビティ](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/activity-sensor-driver-sample) | 仮想アクティビティセンサーを制御するために、UMDF v2 ドライバーを記述する方法を示します。 |
+| [ADXL345 加速度計](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/adxl345-accelerometer-sample-driver) | ADXL345 加速度計チップを制御するために、UMDF v2 ドライバーを記述する方法を示します。 |
+| [CustomSensors](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/custom-sensor-driver-sample) | 仮想 CO2 センサーを制御するために、UMDF v2 ドライバーを記述する方法を示します。 |
+| [Fusion センサードライバーのサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/fusion-sensor-driver-sample) | 仮想 FusionSensor センサーを制御するために、UMDF v2 ドライバーを記述する方法を示します。 |
+| [Pedometer](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/pedometer-sensor-sample) | 仮想 pedometer センサーを制御するために、UMDF v2 ドライバーを記述する方法を示します。 |
+| [センサーのコンボドライバーのサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/sensors-combo-driver-sample) | さまざまな種類の仮想センサーを制御するために、UMDF v2 ドライバーを記述する方法を示します。 |
+| [SimpleDeviceOrientationSensor](https://go.microsoft.com/fwlink/p/?LinkId=617960) | 単純なデバイスの向きの値を出力するように、UMDF v2 センサードライバーを記述する方法を示します。 |

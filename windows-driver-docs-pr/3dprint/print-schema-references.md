@@ -1,87 +1,78 @@
 ---
 title: 印刷スキーマ リファレンス
-description: 次の一覧は、参照と業界標準や仕様、技術記事へのリンクを提供します。
+description: 次の一覧は、業界標準、仕様、技術記事への参照とリンクを示しています。
 ms.assetid: D25FB8AF-D227-4940-8740-D1AFF9BE3AC3
 ms.date: 06/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 10e9a05c0b952fbea6af7f61a20533ae1b01c7f6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bce8b8a463175e74e9aeb9ba33d7a4451e942c45
+ms.sourcegitcommit: 1585a52e762226b01c7369371727746487cc57bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324758"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74796656"
 ---
 # <a name="print-schema-references"></a>印刷スキーマ リファレンス
 
+次の一覧は、業界標準、仕様、技術記事への参照とリンクを示しています。
 
-次の一覧は、参照と業界標準や仕様、技術記事へのリンクを提供します。
+## <a name="bnf-rfc-2234"></a>BNF (RFC 2234)
 
-**BNF (RFC 2234)**
+Crocker、d.、およびオーバー BNF。 "拡張された構文仕様: ABNF" インターネット社会。 1997。
 
-Crocker、D. と Overell、P."構文の仕様の BNF を拡張します。ABNF。" Internet Society します。 1997.
+[https://www.ietf.org/rfc/rfc2234.txt](https://go.microsoft.com/fwlink/p/?LinkId=780787)
 
-[http://www.ietf.org/rfc/rfc2234.txt](https://go.microsoft.com/fwlink/p/?LinkId=780787)
+## <a name="bnf-of-generic-uri-syntax"></a>BNF Generic URI の構文
 
-**ジェネリックの URI 構文の BNF**
-
-"汎用 URI 構文の BNF。" World Wide Web Consortium します。
+"BNF of Generic URI 構文." World Wide Web コンソーシアム。
 
 [https://www.w3.org/Addressing/URL/5\_URI\_BNF.html](https://go.microsoft.com/fwlink/p/?LinkId=780788)
 
-**IEEE 754-1985**
+## <a name="ieee-754-1985"></a>IEEE 754-1985
 
-Institute of Electrical と Electronics エンジニア, Inc (IEEE)。 「バイナリ浮動小数点演算の IEEE 標準。」 1985.
+米国電気技師、エレクトロニクス (IEEE) エンジニア。 「バイナリ浮動小数点演算の IEEE 標準」を参照してください。 1985。
 
-[http://ieeexplore.ieee.org/servlet/opac?punumber=2355](https://go.microsoft.com/fwlink/p/?LinkId=780790)
+[https://ieeexplore.ieee.org/servlet/opac?punumber=2355](https://go.microsoft.com/fwlink/p/?LinkId=780790)
 
-**印刷スキーマの仕様**
+## <a name="print-schema-specification"></a>印刷スキーマの仕様
 
-Microsoft Corporation. 「スキーマの仕様を印刷します。」
+Microsoft Corporation. "Print Schema Specification"
 
-[印刷スキーマ仕様](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)ダウンロード
+[印刷スキーマ仕様](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)のダウンロード
 
-**RFC 2119**
+## <a name="rfc-2119"></a>RFC 2119
 
-Bradner、s.「要件レベルを示すために Rfc で使用するためのキー単語。」 Internet Society します。 1997.
+Bradner, S. "要件レベルを示すために Rfc で使用されるキーワード。" インターネット社会。 1997。
 
-[http://www.rfc-editor.org](https://go.microsoft.com/fwlink/p/?LinkId=780795)
+[https://www.rfc-editor.org](https://go.microsoft.com/fwlink/p/?LinkId=780795)
 
-**sRGB**
+## <a name="srgb"></a>sRGB
 
-Anderson、Mathew Srinivasan Chandrasekar、Ricardo Motta、および Michael Stokes します。 「標準的な既定のカラー領域をインターネットの sRGB、バージョン 1.10。」 World Wide Web Consortium します。 1996.
+Anderson、Mathew Srinivasan Chandrasekar、高橋さん Motta、および Michael Stokes。 "インターネット-sRGB、バージョン1.10 の標準の既定の色空間。" World Wide Web コンソーシアム。 1996。
 
-[http://www.w3.org/Graphics/Color/sRGB](https://go.microsoft.com/fwlink/p/?LinkId=780798)
+[https://www.w3.org/Graphics/Color/sRGB](https://go.microsoft.com/fwlink/p/?LinkId=780798)
 
-**Unicode**
+## <a name="unicode"></a>Unicode
 
-Unicode Consortium でします。 Unicode 規格、によって定義されているバージョン 4.0.0 の場合:Unicode 規格では、バージョン 4.0。 Boston、MA:Addison-wesley、2003。
+Unicode コンソーシアム。 Unicode standard Version 4.0.0 は、Unicode 標準バージョン4.0 で定義されています。 ボストン、MA: Addison-Wesley、2003。
 
-**XML**
+## <a name="xml"></a>XML
 
-Bray、Tim、クリスマス_イブ Maler、Jean パオリ C. M です。 Sperlberg McQueen、および; Yergeau (エディター)。 "拡張マークアップ言語 (XML) 1.0 (Fourth Edition)." World Wide Web Consortium します。 2006.
+Bray、Tim、Jean Paoli、c. M。 Sperlberg と; Ois ajenstat Yergeau (エディター)。 "拡張マークアップ言語 (XML) 1.0 (4 番目のエディション)" World Wide Web コンソーシアム。 2006。
 
-[http://www.w3.org/TR/2006/REC-xml-20060816/](https://go.microsoft.com/fwlink/p/?LinkId=780799)
+[https://www.w3.org/TR/2006/REC-xml-20060816/](https://go.microsoft.com/fwlink/p/?LinkId=780799)
 
-**XML 名前空間**
+## <a name="xml-namespaces"></a>XML 名前空間
 
-Bray、Tim、Dave Hollander、Andrew の素人、Richard Tobin (エディター) "Namespaces in XML 1.0 (Second Edition)." World Wide Web Consortium します。 2006.
+Bray、Tim、Dave Hollander、Andrew $ Man、および Richard Tobin (エディター)。 "XML 1.0 の名前空間 (2 番目のエディション)" World Wide Web コンソーシアム。 2006。
 
-[http://www.w3.org/TR/2006/REC-xml-names-20060816/](https://go.microsoft.com/fwlink/p/?LinkId=780800)
+[https://www.w3.org/TR/2006/REC-xml-names-20060816/](https://go.microsoft.com/fwlink/p/?LinkId=780800)
 
-**XML スキーマ**
+## <a name="xml-schema"></a>XML スキーマ
 
-ビーチ、David、Murray Maloney、Noah Mendelsohn、および Henry S. Thompson (エディター) "XML Schema Part 1。構造体、"Second Edition。 World Wide Web Consortium します。 2004.
+Beech、David、Murray マルウェア、Noah Mendelsohn、Henry Thompson (エディター)。 "XML スキーマパート 1: 構造体" 2 番目のエディション。 World Wide Web コンソーシアム。 2004。
 
-[http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/](https://go.microsoft.com/fwlink/p/?LinkId=780801)
+[https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/](https://go.microsoft.com/fwlink/p/?LinkId=780801)
 
-Biron、Paul V. と Ashok Malhotra (エディター) "XML Schema Part 2。データ型、"Second Edition です。 World Wide Web Consortium します。 2004.
+Biron、Paul V. および Ashok Malhotra (エディター)。 "XML スキーマパート 2: データ型" Second "。 World Wide Web コンソーシアム。 2004。
 
-[http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/](https://go.microsoft.com/fwlink/p/?LinkId=780802)
-
- 
-
- 
-
-
-
-
+[https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/](https://go.microsoft.com/fwlink/p/?LinkId=780802)

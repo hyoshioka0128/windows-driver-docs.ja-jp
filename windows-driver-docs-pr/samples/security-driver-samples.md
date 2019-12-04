@@ -1,34 +1,20 @@
 ---
 title: セキュリティ ドライバーのサンプル
-description: このディレクトリに早期起動マルウェア対策ドライバー サンプルは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+description: このディレクトリの起動時マルウェア対策ドライバーのサンプルでは、デバイスのカスタムドライバーを作成するための出発点となります。
 ms.assetid: 335446EF-0DEA-4C5E-9DE5-B08F07F6BA09
-ms.date: 04/20/2017
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccfa244ef02e7f75654514998bcc44f53a88680
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0b218aaa5c10f9357901975f2d38099ee41aa5f
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366304"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735254"
 ---
 # <a name="security-driver-samples"></a>セキュリティ ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタムドライバーを作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
-
-## <a name="security"></a>セキュリティ
-
-
-| サンプル名                      | ソリューション                                                | 説明                                                                                                                              |
-|----------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 起動時マルウェア対策ドライバー | [elam](https://go.microsoft.com/fwlink/p/?LinkId=617954) | 早期起動マルウェア対策ドライバーで通常のブート開始ドライバーの初期化の詳細についての通知を受け取る方法を示します。 |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [起動時マルウェア対策ドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/early-launch-anti-malware-driver) | 起動時マルウェア対策ドライバーでの通常のブート開始ドライバーの初期化に関する通知を受信する方法を示します。 |

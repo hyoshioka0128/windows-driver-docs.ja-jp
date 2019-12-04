@@ -1,37 +1,23 @@
 ---
 title: シリアル ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスの場合は、カスタム シリアル ドライバーの記述の開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタムシリアルドライバーを作成するための開始点となります。
 ms.assetid: C4C6ED0B-50EA-4483-A81F-FC3C7F5CCE12
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dd5644988fb39a43fb9d589df0719774f6815b2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac883efc323b8aa28fc3d680efbefb85923b6ed3
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366386"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735178"
 ---
 # <a name="serial-driver-samples"></a>シリアル ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタムシリアルドライバーを作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイスの場合は、カスタム シリアル ドライバーの記述の開始点を提供します。
-
-## <a name="serial"></a>シリアル
-
-
-| サンプル名      | ソリューション                                                         | 説明                                                                                                                                   |
-|------------------|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Serenum          | [serenum](https://go.microsoft.com/fwlink/p/?LinkId=617961)       | プラグ アンド プレイ RS の列挙-232 デバイス プラグ アンド プレイの外部 COM デバイスの現在のリビジョンに対応しています。                      |
-| シリアル           | [シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)        | シリアル (16550 ベース rs-232) ドライバーのサンプルは、受信トレイの際にドライバーの WDF バージョンです。                                                |
-| 仮想シリアル   | [VirtualSerial](https://go.microsoft.com/fwlink/p/?LinkId=617963) | このサンプルでは、シリアル ドライバーを示します。 これには、単純な仮想シリアル ドライバー (人) とコント ローラーのないモデム ドライバー (FakeModem) が含まれます。 |
-| 仮想シリアル 2 | [VirtualSerial](https://go.microsoft.com/fwlink/p/?LinkId=617965) | このサンプルでは、シリアル ドライバーを示します。 これには、単純な仮想シリアル ドライバー (人) とコント ローラーのないモデム ドライバー (FakeModem) が含まれます。 |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明
+| --- | --- |
+| [Serenum.sys](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/serenum-sample) | プラグアンドプレイ外部 COM デバイスの現在のリビジョンに準拠しているプラグアンドプレイ RS-232 デバイスを列挙します。 |
+| [シリアル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/serial-port-driver) | シリアル (16550 ベースの RS-232) サンプルドライバーは、WDF バージョンの受信トレイのシリアル .sys ドライバーです。 |
+| [仮想シリアル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/virtual-serial-driver-sample) | このサンプルでは、シリアルドライバーの例を示します。 これには、単純な仮想シリアルドライバー (ComPort) とコントローラーレスモデムドライバー (FakeModem) が含まれます。 |
+| [仮想シリアル2](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/virtual-serial-driver-sample-v2) | このサンプルでは、シリアルドライバーの例を示します。 これには、単純な仮想シリアルドライバー (ComPort) とコントローラーレスモデムドライバー (FakeModem) が含まれます。 |

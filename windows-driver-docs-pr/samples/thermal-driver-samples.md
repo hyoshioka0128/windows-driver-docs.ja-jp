@@ -1,23 +1,21 @@
 ---
 title: 温度ドライバーのサンプル
-description: このディレクトリに温度のドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+description: このディレクトリのサーマルドライバサンプルは、デバイスのカスタムドライバを作成するための開始点となります。
 ms.assetid: FACF0FB6-8D43-4CFA-A255-EA302957A329
-ms.date: 04/20/2017
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e99b38f37dd2b85a6409a5b6fee497de6d3719be
-ms.sourcegitcommit: 241983a8f5cbdb4f27914278d5e166727edecf3c
+ms.openlocfilehash: a13fe4b1091b3f207a707b1ccd9df0a55c180467
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420001"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735186"
 ---
 # <a name="thermal-driver-samples"></a>温度ドライバーのサンプル
 
-このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+このディレクトリのドライバーサンプルは、デバイスのカスタムサーマルドライバーを作成するための開始点となります。
 
-## <a name="thermal"></a>Thermal
-
-| サンプル名 | ソリューション | 説明 |
-| --- | --- | --- |
-| SimSensor | [simsensor](https://go.microsoft.com/fwlink/p/?LinkId=617991) | シミュレートされた温度センサー デバイスです。 |
-| シミュレートされた温度クライアント ドライバーのサンプル | [thermalclient](https://go.microsoft.com/fwlink/p/?LinkId=617992) | Windows の温度管理のクライアントであるデバイスをシミュレートします。 このドライバーは、THERMAL_COOLING_INTERFACE のドライバー インターフェイスを公開します。 |
+| サンプル | 説明 |
+| --- | --- |
+| [簡略化センサー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/simsensor---simulated-temperature-sensor-sample-driver) | シミュレートされた温度センサーデバイス。 |
+| [シミュレートされたサーマルクライアントのサンプルドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/simthermalclient---simulated-thermal-client-sample-driver) | Windows の温度管理のクライアントであるデバイスをシミュレートします。 このドライバーは、THERMAL_COOLING_INTERFACE driver インターフェイスを公開します。 |

@@ -1,56 +1,44 @@
 ---
 title: 汎用ドライバーのサンプル
-description: このディレクトリにサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+description: このディレクトリのサンプルは、デバイスのカスタムドライバーを作成するための開始点として使用されます。
 ms.assetid: C5DC72F1-D093-47D0-9AC3-680878C5A868
-ms.date: 04/20/2017
+ms.date: 12/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7660536daeff45e57cf012ca7aa791c59ac9c664
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea54e92fb10af5534b82926058923d571249dce5
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356754"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735264"
 ---
 # <a name="general-driver-samples"></a>汎用ドライバーのサンプル
 
+このディレクトリのサンプルは、デバイスのカスタムドライバーを作成するための開始点として使用されます。
 
-このディレクトリにサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
-
-## <a name="general-samples"></a>一般的なサンプル
-
-
-| サンプル名                     | ソリューション                                                              | 説明                                                                                                                                                                                                                                        |
-|---------------------------------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 安全な IRP のキューをキャンセルします。           | [cancel](https://go.microsoft.com/fwlink/p/?LinkId=617705)             | キャンセルの安全なキュー ルーチン IoCsqInitialize、IoCsqInsertIrp、IoCsqRemoveIrp、IoCsqRemoveNextIrp の使用を示します。 これらのルーチンを使用すると、ドライバーの開発者は IRP キャンセル競合状態について心配ありません。                |
-| KMDF エコー                       | [kmdfecho](https://go.microsoft.com/fwlink/p/?LinkId=617706)           | 読み取りをシリアル化および書き込み要求、ドライバーに提示する連続したキューを使用する方法を示します。                                                                                                                                           |
-| UMDF エコー                       | [echo](https://go.microsoft.com/fwlink/p/?LinkId=617707)               | ドライバーを作成し、ベスト プラクティスを採用する UMDF 1 を使用する方法を示します。                                                                                                                                                                     |
-| UMDF2 エコー                      | [umdf2echo](https://go.microsoft.com/fwlink/p/?LinkId=617708)          | ドライバーを作成し、ベスト プラクティスを採用する UMDF 2 を使用する方法を示します。                                                                                                                                                                     |
-| UMDF SocketEcho                 | [umdfsocketecho](https://go.microsoft.com/fwlink/p/?LinkId=617709)     | UMDF を使用してドライバーを作成する方法とベスト プラクティスについて説明します。                                                                                                                                                                |
-| ハードウェア イベント                  | [eventsample](https://go.microsoft.com/fwlink/p/?LinkId=617711)        | ハードウェア イベントに関するをアプリケーションに通知できる 2 つの方法はカーネル モード ドライバーを示します。 1 つの方法は、イベント ベースのメソッドを使用して他のメソッドを使用して、IRP ベースします。 ドライバーのサンプルでは、DPC タイマーを使用して、ハードウェアのイベントをシミュレートします。 |
-| ファイル履歴                    | [filehistory](https://go.microsoft.com/fwlink/p/?LinkId=617712)        | 定期的なバックアップのスケジュールが停止している場合は、ファイル履歴、サービスを開始するコンソール アプリケーションを指定します。                                                                                                                                       |
-| WDF のインストール パッケージ        | [installwdf](https://go.microsoft.com/fwlink/p/?LinkId=617713)         | WDF のパッケージをシステムにインストールする方法を示します。 このコードとして使用できます-ユーザー システムに必要な WDF コンポーネントをインストールすることです。 サンプル コードより優れたエクスペリエンスを提供する既存のセットアップ アプリケーションにもやり直すことができます。 |
-| 非 PnP ドライバーのサンプル           | [ioctl](https://go.microsoft.com/fwlink/p/?LinkId=620307)              | カーネル モード ドライバー フレームワークを使用して、非 PnP ドライバーを作成する方法を示します。                                                                                                                                                                 |
-| IOCTL                           | [ioctl](https://go.microsoft.com/fwlink/p/?LinkId=617715)              | Ioctl の 4 つのさまざまな種類の使用方法を示します (メソッド\_IN\_ダイレクト、メソッド\_アウト\_ダイレクト、メソッド\_NEITHER、およびメソッド\_バッファーに格納された)。                                                                                                         |
-| ObCallback                      | [obcallback](https://go.microsoft.com/fwlink/p/?LinkId=617716)         | プロセスの保護のための登録済みのコールバックの使用について説明します。 ドライバーは、プロセスの作成時と呼ばれるコントロールのコールバックを登録します。                                                                                                  |
-| PCIDRV                          | [pcidrv](https://go.microsoft.com/fwlink/p/?LinkId=617717)             | このサンプルでは、PCI デバイス KMDF ドライバーを作成する方法を示します。 Intel 82557/82558 でサンプルの動作は、PCI Ethernet アダプター (10/100) および Intel 互換に基づいています。                                                                       |
-| カーネルのカウンター                  | [kcs](https://go.microsoft.com/fwlink/p/?LinkId=617718)                | カーネル モードのパフォーマンスのライブラリの使用を示します。 ドライバーは、任意のハードウェアを制御しません単に、カウンターを提供します。 コードには、各関数が何を説明するコメントが含まれています。                                                 |
-| PLX9x5x PCI ドライバ              | [PLX9x5x](https://go.microsoft.com/fwlink/p/?LinkId=617719)            | Windows Driver Frameworks (WDF) を使用してジェネリック PCI デバイス ドライバーを作成する方法を示します。 このドライバーのターゲット ハードウェアは、PLX9656/9653RDK LITE の基盤です。                                                                                |
-| RegFltr                         | [regflltr](https://go.microsoft.com/fwlink/p/?LinkId=617720)           | レジストリのフィルター ドライバーを作成する方法を示します。                                                                                                                                                                                                       |
-| DMA システム                      | [SystemDma](https://go.microsoft.com/fwlink/p/?LinkId=617722)          | V3 システム DMA の使用状況を示します。 どのドライバーは、DMA を使用してハードウェアの場所にデータを書き込むの Windows でサポートされているシステム DMA コント ローラーを使用可能性がありますが表示されます。                                                                              |
-| トースター ドライバーのサンプル           | [トースター](https://go.microsoft.com/fwlink/p/?LinkId=620309)            | 反復的な一連のカーネル モード ドライバー フレームワーク (KMDF) とユーザー モード ドライバー フレームワーク (UMDF) バージョン 1 の両方の Windows ドライバー開発の基本的な側面を示すサンプルです。                                                    |
-| トースター パッケージ サンプル          | [toastpkg](https://go.microsoft.com/fwlink/p/?LinkId=617723)           | トースター サンプル ドライバーの優先ハードウェアとソフトウェア最初のインストールをシミュレートします。                                                                                                                                                             |
-| トースター サンプル (UMDF バージョン 2) | [umdf2toaster](https://go.microsoft.com/fwlink/p/?LinkId=620310)       | 反復的な一連のユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 を使用して Windows ドライバー開発の基本的な側面を示すサンプルです。                                                                                               |
-| EventDrv                        | [evntdrv](https://go.microsoft.com/fwlink/p/?LinkId=617724)            | カーネル モード トレース プロバイダーとドライバー。 ドライバーは、任意のハードウェアを制御しません単に、トレース イベントを生成します。 Event Tracing for Windows (ETW) API、ドライバーの使用を示すために設計されています。                                 |
-| システム トレース コントロール            | [SystemTraceControl](https://go.microsoft.com/fwlink/p/?LinkId=617725) | システム トレース プロバイダーからイベントを収集するイベント トレース管理 Api を使用する方法を示します。                                                                                                                                               |
-| tracedrv                        | [tracedrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)           | ソフトウェア トレース用にインストルメント化サンプル ドライバー。                                                                                                                                                                                                 |
-| UMDF ドライバーのスケルトン            | [umdfSkeleton](https://go.microsoft.com/fwlink/p/?LinkId=617727)       | 最小限のドライバーを作成するために、ユーザー モード ドライバー フレームワークを使用する方法について説明し、ベスト プラクティスを示します。                                                                                                                                         |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [安全な IRP キューをキャンセルする](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/cancel-safe-irp-queue-sample) | キャンセルセーフキュールーチン IoCsqInitialize、IoCsqInsertIrp、IoCsqRemoveIrp、IoCsqRemoveNextIrp の使用方法を示します。 これらのルーチンを使用することにより、ドライバーの開発者は、IRP のキャンセルの競合状態について心配する必要がなくなります。 |
+| [KMDF エコー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/kmdf-echo-sample) | シーケンシャルキューを使用して、ドライバーに提示される読み取り要求と書き込み要求をシリアル化する方法を示します。 |
+| [UMDF1 Echo](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/echo-sample-umdf-version-1) | UMDF 1 を使用してドライバーを記述し、ベストプラクティスを採用する方法を示します。 |
+| [UMDF2 Echo](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/echo-sample-umdf-version-2) | UMDF 2 を使用してドライバーを記述し、ベストプラクティスを採用する方法を示します。 |
+| [UMDF SocketEcho サンプル (UMDF Version 1)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/umdf-socketecho-sample-umdf-version-1) | UMDF を使用してドライバーを記述し、ベストプラクティスを示す方法を示します。 |
+| [ハードウェアイベント](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/hardware-event-sample)| カーネルモードドライバーがハードウェアイベントについてアプリケーションに通知できる2つの異なる方法を示します。 一方向では、イベントベースのメソッドを使用し、もう1つは IRP ベースのメソッドを使用します。 サンプルドライバーでは、タイマー DPC を使用してハードウェアイベントをシミュレートします。 |
+| [ファイル履歴](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/file-history-sample)| ファイル履歴サービスが停止されている場合は、そのサービスを開始し、定期的なバックアップをスケジュールするコンソールアプリケーション。 |
+| [PnP 以外のドライバーのサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/non-pnp-driver-sample)| カーネルモードドライバーフレームワークを使用して、PnP 以外のドライバーを記述する方法を示します。 |
+| [IOCTL](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/ioctl)| 4つの異なる種類の Ioctl (\_DIRECT のメソッド\_、メソッド\_OUT\_DIRECT、メソッド\_ない、およびメソッド\_バッファリング) の使用方法を示します。 |
+| [ObCallback](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/obcallback-callback-registration-driver) | プロセス保護のための登録済みコールバックの使用方法を示します。 ドライバーは、プロセスの作成時に呼び出されるコントロールのコールバックを登録します。 |
+| [PCIDRV](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/pcidrv---wdf-driver-for-pci-device) | このサンプルでは、PCI デバイス用の KMDF ドライバーを記述する方法を示します。 このサンプルは、Intel 82557/82558 ベースの PCI イーサネットアダプター (10/100) と Intel 互換機と連携して動作します。 |
+| [カーネルカウンター](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/kernel-counter-sample-kcs) | カーネルモードパフォーマンスライブラリの使用方法を示します。 ドライバーは、ハードウェアを制御するのではなく、単にカウンターを提供します。 このコードには、各関数の動作を説明するコメントが含まれています。 |
+| [PLX9x5x PCI ドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/plx9x5x-pci-driver) | Windows ドライバーフレームワーク (WDF) を使用して、汎用 PCI デバイス用のドライバーを記述する方法を示します。 このドライバーのターゲットハードウェアは、PLX9656/9653RDK-LITE ボードです。 |
+| [RegFltr](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/regfltr-sample-driver) | レジストリフィルタードライバーを記述する方法について説明します。 |
+| [単純なメディアソース](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/simplemediasource-sample) | カスタムメディアソースとドライバーパッケージを作成する方法を示します。 |
+| [システム DMA](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/system-dma) | V3 システム DMA の使用方法を示します。 Windows でサポートされているシステム DMA コントローラーを使用して、ドライバーが DMA を使用してハードウェアの場所にデータを書き込む方法を示します。 |
+| [トースターサンプルドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/toaster-sample-driver) | カーネルモードドライバーフレームワーク (KMDF) とユーザーモードドライバーフレームワーク (UMDF) バージョン1の両方の Windows ドライバー開発の基本的な側面を示す反復的な一連のサンプルです。 |
+| [トースターパッケージのサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/toaster-package-sample-driver) | トースターサンプルドライバーのハードウェア優先およびソフトウェア優先インストールをシミュレートします。 |
+| [トースターサンプル (UMDF バージョン 2)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/toaster-sample-umdf-version-2) | ユーザーモードドライバーフレームワーク (UMDF) バージョン2を使用した Windows ドライバー開発の基本的な側面を示す、反復的な一連のサンプルです。 |
+| [EventDrv](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv) | カーネルモードのトレースプロバイダーとドライバー。 ドライバーは、ハードウェアを制御しません。単にトレースイベントを生成します。 これは、ドライバーでの Windows イベントトレーシング (ETW) API の使用方法を示すために設計されています。 |
+| [システムトレースコントロール](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/systemtraceprovider) | イベントトレースコントロール Api を使用して、システムトレースプロバイダーからイベントを収集する方法を示します。 |
+| [Tracedrv](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/tracedrv) | ソフトウェアのトレース用にインストルメント化されたサンプルドライバー。|
+| [UMDF ドライバースケルトン](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/umdf-driver-skeleton-sample-umdf-version-1) | ユーザーモードドライバーフレームワークを使用して最小限のドライバーを記述し、ベストプラクティスを示す方法を示します。 |
+| [ユニバーサルドライバー用ドライバーパッケージインストールツールキット](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/driver-package-installation-toolkit-for-universal-drivers) | ユニバーサルドライバー設計の DCHU の原則を示します。 |
+| [WinHEC 2017 ラボ](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/winhec-2017-lab) | WinHEC 2017 Lab: トースター Driver、PlugInToaster、トースター Support App のトースターサンプル。 |

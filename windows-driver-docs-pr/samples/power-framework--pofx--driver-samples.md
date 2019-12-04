@@ -1,36 +1,22 @@
 ---
 title: 電源フレームワーク (PoFx) ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスのカスタム PoFx ドライバーを記述するための開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタム PoFx ドライバーを作成するための開始点となります。
 ms.assetid: BA2CC8F0-E337-4A5E-987F-1B40213F5983
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d8ea71095c832d78c0f47e9dab8cb6e434169402
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dddb23a78991d09cc098b8ec66dd0e049a8ed5fd
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63366322"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735232"
 ---
 # <a name="power-framework-pofx-driver-samples"></a>電源フレームワーク (PoFx) ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタム PoFx ドライバーを作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイスのカスタム PoFx ドライバーを記述するための開始点を提供します。
-
-## <a name="power-framework-pofx"></a>電源フレームワーク (PoFx)
-
-
-| サンプル名       | ソリューション                                                      | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|-------------------|---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| PEP ACPI サンプル   | [pepsamples](https://go.microsoft.com/fwlink/p/?LinkId=620311) | ファームウェアではなく、Windows ドライバーを使用してネイティブの ACPI ランタイム メソッドを実装するために Power エンジン プラグイン (PEP) を使用するインターフェイスを示します。                                                                                                                                                                                                                                                                                               |
-| UMDF2 PoFx ドライバー | [pofx](https://go.microsoft.com/fwlink/p/?LinkId=617936)       | UMDF 2 SingleComp サンプルでは、UMDF2 ドライバーが 1 つのコンポーネントのみがあるデバイスの F 状態ベースの電源管理を実装する方法を示します。                                                                                                                                                                                                                                                                                               |
-| WDF PoFx ドライバー   | [pofx](https://go.microsoft.com/fwlink/p/?LinkId=617937)       | KMDF ドライバーが F 状態ベースの電源管理を実装する方法を示す 2 つのサンプルが含まれています。 SingleComp サンプルでは、KMDF ドライバーが 1 つのコンポーネントのみがあるデバイスの F 状態ベースの電源管理を実装する方法を示します。 MultiComp サンプルでは、KMDF ドライバーが任意の数の電源管理を個別に使用されるコンポーネントがあるデバイスの F 状態ベースの電源管理を実装する方法を示します |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [PEP ACPI サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/pep-acpi-sample) | 電源エンジンプラグイン (PEP) がファームウェアではなく Windows ドライバーを使用してネイティブに ACPI ランタイムメソッドを実装できるようにするインターフェイスを示します。 |
+| [UMDF2 PoFx ドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/power-framework-pofx-sample-umdf-version-2) | UMDF 2 SingleComp サンプルでは、コンポーネントが1つしかないデバイスに対して、UMDF2 ドライバーが F 状態ベースの電源管理を実装する方法を示します。 |
+| [WDF PoFx ドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/kmdf-power-framework-pofx-sample) | KMDF ドライバーが F 状態ベースの電源管理を実装する方法を示す2つのサンプルが含まれています。 SingleComp サンプルは、1つのコンポーネントのみを持つデバイスに対して、KMDF ドライバーが F 状態ベースの電源管理を実装する方法を示しています。 MultiComp サンプルでは、個別の電源管理が可能な任意の数のコンポーネントを持つデバイスに対して、KMDF ドライバーが F 状態ベースの電源管理を実装する方法を示します。 |

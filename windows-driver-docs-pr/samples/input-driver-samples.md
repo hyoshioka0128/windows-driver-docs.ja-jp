@@ -1,35 +1,22 @@
 ---
 title: 入力ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
+description: このディレクトリの入力ドライバーのサンプルは、デバイスのカスタムドライバーを作成するための開始点となります。
 ms.assetid: 19DD6B95-AAE7-4F40-BB48-7AA1C20BA01E
-ms.date: 04/20/2017
+ms.date: 11/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 500c93c33d9f005e899c5981dc6914aae9a43290
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93ab07dceafb35c5345ac75f073ac3b55f454d98
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391915"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735240"
 ---
 # <a name="input-driver-samples"></a>入力ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタムドライバーを作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイス用のカスタム ドライバーを記述するための開始点を提供します。
-
-## <a name="input"></a>入力
-
-
-| サンプル名            | ソリューション                                                          | 説明                                                                              |
-|------------------------|-------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| キーボード フィルター        | [kbfiltr](https://go.microsoft.com/fwlink/p/?LinkId=620194)        | キーボード入力のフィルター ドライバーを WDF 例です。                                         |
-| マウスのフィルター           | [moufiltr](https://go.microsoft.com/fwlink/p/?LinkId=620195)       | マウス入力フィルター ドライバーを WDF 例です。                                            |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [キーボード フィルター](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/keyboard-input-wdf-filter-driver-kbfiltr) | キーボード入力フィルタードライバーの WDF の例。 |
+| [キーボードレイアウトのサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/keyboard-layout-samples) | キーボードレイアウトのサンプルでは、さまざまなキーボードとロケールのレイアウトを生成する方法を示します。 |
+| [マウスフィルター](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/mouse-input-wdf-filter-driver-moufiltr) | マウス入力フィルタードライバーの WDF の例。 |

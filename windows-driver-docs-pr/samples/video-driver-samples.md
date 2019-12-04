@@ -1,35 +1,21 @@
 ---
 title: ビデオ ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスのカスタムのビデオ ドライバーを記述するための開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタムビデオドライバーを作成するための出発点となります。
 ms.assetid: CF8789E0-790E-4110-A40B-ED9F43CD4DA2
-ms.date: 04/20/2017
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a78517b2f4d35c2a19603b757a82c076431a9d44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8535e80e90712498337698fd850c04f873e5d1d7
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342872"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735252"
 ---
 # <a name="video-driver-samples"></a>ビデオ ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタムビデオドライバーを作成するための出発点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイスのカスタムのビデオ ドライバーを記述するための開始点を提供します。
-
-## <a name="video"></a>Video
-
-
-| という名前のサンプル                                            | ソリューション                                                  | 説明                                                                                                                                                                                                                                                                     |
-|---------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| カーネル モードの表示専用のミニポート ドライバー (KMDOD) のサンプル | [KMDOD](https://go.microsoft.com/fwlink/p/?LinkId=620317)  | 表示専用のミニポート ドライバーは Windows 表示 Driver Model (WDDM) を提供するほとんどのデバイス ドライバー インターフェイス (Ddi) を実装します。 コードは、表示専用デバイスは、ミニポート ドライバーを作成する方法、または完全版の WDDM ドライバーを開発する方法を把握するのに役立ちます。 |
-| PixLib                                                  | [pixlib](https://go.microsoft.com/fwlink/p/?LinkId=618005) | ディスプレイ ドライバーによって使用される CPixel クラスを実装する方法を示します。                                                                                                                                                                                                     |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [カーネルモード表示専用ミニポートドライバー (KMDOD) のサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/kernel-mode-display-only-miniport-driver-kmdod-sample)  | は、表示専用のミニポートドライバーが Windows Display Driver Model (WDDM) に提供する必要があるほとんどのデバイスドライバーインターフェイス (DDIs) を実装します。 このコードは、ディスプレイ専用デバイスのミニポートドライバーを記述する方法、または完全な WDDM ドライバーを開発する方法を理解するのに役立ちます。 |
+| [PixLib](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/pixlib-sample) | ディスプレイドライバーによって使用される CPixel クラスを実装する方法を示します。 |

@@ -1,39 +1,26 @@
 ---
 title: ツールのサンプル
-description: このディレクトリにドライバーのサンプルには、Static Driver Verifier (SDV) の機能を表示するように設計されたコードの意図的なエラーが含まれています。
+description: このディレクトリのドライバーサンプルには、静的ドライバー検証ツール (SDV) の機能と機能を示すために設計された、意図的なコードエラーが含まれています。
 ms.assetid: 0B0487B1-C14D-4CD8-AE81-875E8886004D
-ms.date: 04/20/2017
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d5e5cd4ce0306d1d91939834fa38df4b2191056c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0fa842d9804298039a883193a705a9ea4488b3aa
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384598"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735270"
 ---
 # <a name="tools-samples"></a>ツールのサンプル
 
+このディレクトリのドライバーサンプルには、静的ドライバー検証ツール (SDV) の機能と機能を示すために設計された、意図的なコードエラーが含まれています。
 
-このディレクトリにドライバーのサンプルには、Static Driver Verifier (SDV) の機能を表示するように設計されたコードの意図的なエラーが含まれています。
+SDV は、Windows カーネルモードドライバーのソースコードを体系的に分析する静的な検証ツールです。 SDV は Windows Driver Kit (WDK) に含まれており、Microsoft Visual Studio から実行できます。
 
-SDV は、Windows カーネル モード ドライバーのソース コードを体系的に分析する静的検証ツールです。 SDV では、Windows Driver Kit (WDK) では含まれており、Microsoft Visual Studio から実行することができます。
-
-## <a name="tools"></a>ツール
-
-
-| サンプル名             | ソリューション                                                                   | 説明                                                            |
-|-------------------------|----------------------------------------------------------------------------|------------------------------------------------------------------------|
-| SDV の FailDriver-KMDF     | [SDV-FailDriver-KMDF](https://go.microsoft.com/fwlink/p/?LinkId=617993)     | このサンプルでは、SDV が KMDF ドライバーでエラーを検出する方法を示します。     |
-| SDV の FailDriver-NDIS     | [SDV-FailDriver-NDIS](https://go.microsoft.com/fwlink/p/?LinkId=617995)     | このサンプルでは、SDV が NDIS ドライバーでエラーを検出する方法を示します。     |
-| SDV の FailDriver-Storport | [SDV-FailDriver-STORPORT](https://go.microsoft.com/fwlink/p/?LinkId=617997) | このサンプルでは、SDV が Storport ドライバーでエラーを検出する方法を示します。 |
-| SDV-FailDriver-WDM      | [SDV-FailDriver-WDM](https://go.microsoft.com/fwlink/p/?LinkId=617999)      | このサンプルでは、SDV が WDM ドライバーでエラーを検出する方法を示します。      |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [DV-FailDriver-WDM](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/dv-faildriver-wdm/) | このサンプルでは、DV が WDM ドライバーでエラーを検出する方法を示します。 |
+| [SDV-FailDriver-KMDF](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/sdv-faildriver-kmdf/) | このサンプルでは、SDV が KMDF ドライバーでエラーを検出する方法を示します。 |
+| [SDV-FailDriver-NDIS](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/sdv-faildriver-ndis/) | このサンプルでは、SDV が NDIS ドライバーでエラーを検出する方法を示します。 |
+| [SDV-FailDriver-STORPORT](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/sdv-faildriver-storport/) | このサンプルでは、SDV が Storport ドライバーでエラーを検出する方法を示します。 |
+| [SDV-FailDriver-WDM](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/sdv-faildriver-wdm/) | このサンプルでは、SDV が WDM ドライバーでエラーを検出する方法を示します。 |

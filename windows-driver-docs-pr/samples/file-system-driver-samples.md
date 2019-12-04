@@ -1,49 +1,35 @@
 ---
 title: ファイル システム ドライバーのサンプル
-description: このディレクトリにドライバーのサンプルでは、デバイスのカスタムのファイル システム ドライバーを記述するための開始点を提供します。
+description: このディレクトリのドライバーサンプルは、デバイスのカスタムファイルシステムドライバーを作成するための開始点となります。
 ms.assetid: 9F2F995E-EA20-4877-B96C-5FF082CE886D
-ms.date: 04/20/2017
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f4d87404dc5060cccff8358170a664a500375abc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec42afa31f558dc36c5d8bb100bdb4b858c1fe8b
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345223"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735242"
 ---
 # <a name="file-system-driver-samples"></a>ファイル システム ドライバーのサンプル
 
+このディレクトリのドライバーサンプルは、デバイスのカスタムファイルシステムドライバーを作成するための開始点となります。
 
-このディレクトリにドライバーのサンプルでは、デバイスのカスタムのファイル システム ドライバーを記述するための開始点を提供します。
-
-## <a name="file-systems"></a>ファイル システム
-
-
-| サンプル名      | ソリューション                                                           | 説明                                                                                                                                                                                                                                                                            |
-|------------------|--------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CDFS を含む             | [cdfs を含む](https://go.microsoft.com/fwlink/p/?LinkId=617642)            | CD-ROM のファイル システム (cdfs) ドライバーのサンプルは、リムーバブル メディアのファイル システム ドライバーです。                                                                                                                                                                                               |
-| FastFAT          | [fastfat](https://go.microsoft.com/fwlink/p/?LinkId=620305)         | ファイル システム ドライバーでは、FastFAT ファイル システムの新しいファイル システムのモデルとして使用される Windows の受信トレイに基づいています。                                                                                                                                                                              |
-| AVScan           | [avscan](https://go.microsoft.com/fwlink/p/?LinkId=617644)          | このフィルターは、ファイル内のデータを検査するファイルのトランザクションに対応したスキャナーです。 ウイルス対策は、この方法で動作可能性があります。                                                                                                                                                                 |
-| CancelSafe       | [cancelSafe](https://go.microsoft.com/fwlink/p/?LinkId=617645)      | ミニフィルターがキャンセルの安全なキューの使用方法を示します。                                                                                                                                                                                                                              |
-| CDO              | [cdo](https://go.microsoft.com/fwlink/p/?LinkId=617646)             | ミニフィルターと制御デバイス オブジェクト (CDO) を使用する例です。                                                                                                                                                                                                                   |
-| [Change]           | [change](https://go.microsoft.com/fwlink/p/?LinkId=617647)          | リアルタイムでファイル変更を監視するトランザクションに対応したフィルターです。                                                                                                                                                                                                                    |
-| Ctx              | [ctx](https://go.microsoft.com/fwlink/p/?LinkId=617648)             | インスタンス、ファイル、ストリーム、および、ミニフィルターのストリームのハンドルにコンテキストをアタッチする方法を示します。                                                                                                                                                                               |
-| DELETE           | [delete](https://go.microsoft.com/fwlink/p/?LinkId=617649)          | ファイルまたはストリームの削除を検出する方法を示します。                                                                                                                                                                                                                              |
-| メタデータ マネージャー | [MetadataManager](https://go.microsoft.com/fwlink/p/?LinkId=617650) | ファイルをミニフィルターに対応するメタデータを格納するために使用する方法の例として機能します。 このサンプルの実装は、ファイルの変更がブロックする必要がありますまたは一時的にファイルを閉じる必要があります、ミニフィルターのシナリオを示しています。 |
-| Minispy          | [Minispy](https://go.microsoft.com/fwlink/p/?LinkId=617651)         | 監視し、システム内で発生した I/O、トランザクションのアクティビティ ログに記録するツール。                                                                                                                                                                                                  |
-| NameChanger      | [NameChanger](https://go.microsoft.com/fwlink/p/?LinkId=617652)     | マッピングを使用して別の部分にボリュームの名前空間の 1 つの部分からディレクトリに移植します。 ミニフィルター、ディレクトリの列挙型へのエントリを挿入する、名前のプロバイダーとして機能することによってこの錯覚を維持して、転送先のディレクトリ変更通知                             |
-| NullFilter       | [nullFilter](https://go.microsoft.com/fwlink/p/?LinkId=617653)      | フィルター マネージャーへの登録を単に示すミニフィルターします。                                                                                                                                                                                                            |
-| PassThrough      | [passThrough](https://go.microsoft.com/fwlink/p/?LinkId=617654)     | さまざまな種類の I/O 要求のコールバック関数を指定する方法を示します。                                                                                                                                                                                                    |
-| スキャナー          | [scanner](https://go.microsoft.com/fwlink/p/?LinkId=617655)         | ファイル データのスキャナー例。 通常、ウイルス対策フィルターはこの型です。                                                                                                                                                                                                           |
-| SimRep           | [simrep](https://go.microsoft.com/fwlink/p/?LinkId=617656)          | ファイル システム フィルターが開いているファイルを代替パスにリダイレクトする再解析ポイントの動作のようなファイル システムをシミュレートする方法について説明します。                                                                                                                                               |
-| SwapBuffer       | [swapBuffers](https://go.microsoft.com/fwlink/p/?LinkId=617657)     | バッファー間でデータの読み取りや書き込みを切り替える方法を示します。 この手法は、暗号化のフィルターに特に便利です。                                                                                                                                                     |
-
- 
-
- 
-
- 
-
-
-
-
+| サンプル | 説明 |
+| --- | --- |
+| [CDFS ファイルシステムドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/cdfs-file-system-driver) | CD-ROM ファイルシステムドライバー (cdfs) サンプルは、リムーバブルメディア用のファイルシステムドライバーです。 |
+| [fastfat ファイルシステムドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/fastfat-file-system-driver) | 新しいファイルシステムのモデルとして使用される Windows inbox FastFAT ファイルシステムに基づくファイルシステムドライバー。 |
+| [AvScan ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avscan-file-system-minifilter-driver) | このフィルターは、ファイル内のデータを検査するトランザクション対応のファイルスキャナーです。 ウイルス対策は、この方法で動作する可能性があります。 |
+| [CancelSafe ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/cancelsafe-file-system-minifilter-driver) | キャンセルセーフキューの使用方法を示すミニフィルター。 |
+| [CDO ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/cdo-file-system-minifilter-driver) | フィルターを使用してコントロールデバイスオブジェクト (CDO) を使用する例を次に示します。 |
+| [ファイルシステムミニフィルタードライバーの変更](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/change-file-system-minifilter-driver) | リアルタイムでファイルの変更を監視するトランザクション対応フィルター。 |
+| [Ctx ファイルシステムミニフィルタードライブ](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/ctx-file-system-minifilter-drive) | ミニフィルターでインスタンス、ファイル、ストリーム、およびストリームハンドルにコンテキストをアタッチする方法を示します。 |
+| [ファイルシステムミニフィルタードライバーの削除](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/delete-file-system-minifilter-driver) | ファイルまたはストリームの削除を検出する方法を示します。 |
+[メタデータマネージャーファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/metadata-manager-file-system-minifilter-driver) | ミニフィルターに対応するメタデータを格納するためにファイルを使用する方法の例として機能します。 このサンプルの実装では、ファイルに対する変更をブロックする必要がある場合や、ファイルを一時的に閉じる場合にミニフィルターが必要になることがあります。 |
+| [Minispy ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/minispy-file-system-minifilter-driver) | システムで発生した i/o とトランザクションのアクティビティを監視してログに記録するツール。 |
+| [NameChanger ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/namechanger-file-system-minifilter-driver) | マッピングを使用して、ボリュームの名前空間のある部分から別のパートにディレクトリを Grafts します。 ミニフィルターでは、名前プロバイダーとして機能し、ディレクトリの列挙にエントリを挿入し、ディレクトリの変更通知を転送することで、この錯覚を維持します。 |
+| [NullFilter ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/nullfilter-file-system-minifilter-driver) | フィルタマネージャへの登録を示すミニフィルター。 |
+| [パススルーファイルシステムミニフィルタードライバー](h https://docs.microsoft.com/samples/microsoft/windows-driver-samples/passthrough-file-system-minifilter-driver) | さまざまな種類の i/o 要求に対してコールバック関数を指定する方法を示します。 |
+| [スキャナーファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/scanner-file-system-minifilter-driver) | ファイルデータスキャナーの例。 通常、ウイルス対策フィルターの種類は次のとおりです。 |
+| [簡略化されたファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/simrep-file-system-minifilter-driver) | ファイルシステムフィルターを使用してファイルシステムの再解析ポイント動作をシミュレートし、ファイルを別のパスに開く方法を示します。 |
+[スワップバッファーファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/swapbuffer-file-system-minifilter-driver) | データの読み取りと書き込みの間でバッファーを切り替える方法について説明します。 この手法は、暗号化フィルターに特に役立ちます。 |

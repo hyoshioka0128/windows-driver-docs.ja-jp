@@ -1,29 +1,29 @@
 ---
-title: システムを使用して、ターゲットを CHID を対象とします。
-description: システムを使用して、ターゲットを CHID を対象とします。
+title: CHID ターゲットを使用してシステムをターゲットにする
+description: CHID ターゲットを使用してシステムをターゲットにする
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4915040e15ab87b959132e16d1ab5ad9de163f01
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 15c0d6205624d3bb2a3ca8a104d1a6e6f6187eb4
+ms.sourcegitcommit: 1585a52e762226b01c7369371727746487cc57bf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353949"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74796662"
 ---
-# <a name="target-a-system-using-chid-targeting"></a>システムを使用して、ターゲットを CHID を対象とします。
+# <a name="target-a-system-using-chid-targeting"></a>CHID ターゲットを使用してシステムをターゲットにする
 
-コンピューターのハードウェア Id (CHID) s をとおして Oem に、Windows 開発者 Kit(WDK) ツール (ComputerHardwareIDs.exe) または使用可能な監査ツールを実行している OEM または ODM によって作成、 [Microsoft OEM ダウンロード サイト](https://www.microsoftoem.com)(ログインが必要です)。
+コンピューターのハードウェア Id (CHID) は、Windows Developer Kit (WDK) ツール (Computerhardware Ids .exe) を実行している OEM/ODM、または[MICROSOFT oem ダウンロードサイト](https://www.microsoftoem.com)(ログインが必要) を通じて oem が利用できる監査ツールで作成されます。
 
-CHIDs はコンピューターのハードウェア Id と、Windows は、目的の対象とする場合の特異性のさまざまなレベルでこれらの Id を使用します。 適切なドライバーがシステムに配信されると、通常の PNP 順位付けに引き継が」の説明に従って[ランク ドライバーをどのように Windows](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)、仕入先は、製品ラインにとって意味がある、この問題を回避戦略を作成できます。
+CHIDs はコンピューターのハードウェア Id であり、Windows では、これらの Id をさまざまなレベルでターゲットとして使用します。 正しいドライバーがシステムに配布されると、「 [Windows がドライバーをランク](https://docs.microsoft.com/windows-hardware/drivers/install/how-setup-ranks-drivers--windows-vista-and-later-)付けする方法」で説明されているように、通常の PNP 順位が引き継がれます。また、ベンダーは、製品ラインに適した方法を構築できます。
 
-提供される情報に基づいて、OEM または ODM ニーズをすべての適切な SMBIOS フィールドには、データが設定されます、 [SMBIOS](smbios.md)次のガイダンスと、 [DMTF SMBIOS 仕様](https://www.dmtf.org/standards/smbios)CHIDs ことを確認するには個々 および一意。
+OEM/ODM は、 [smbios](smbios.md)ガイダンスに記載されている情報に基づいて、すべての適切な smbios フィールドにデータが設定されていることを確認する必要があります。また、chids が個人で一意であることを保証するために、 [DMTF の smbios 仕様](https://www.dmtf.org/standards/smbios)に従ってください。
 
-Microsoft は、ファームウェアの更新プログラム パッケージでの一意の ID だけでなく、コンピューターのハードウェア ID (CHID) のターゲット設定を含めることが必要なようになりました**システム**EFI システム リソース テーブル (ESRT)。 [ダウンロード ドライバー発行ワークフローを Windows 10](http://download.microsoft.com/download/B/A/8/BA89DCE0-DB25-4425-9EFF-1037E0BA06F9/windows10_driver_publishing_workflow.docx)ドキュメントには CHIDs 配布を対象とすると、インストール対象とするために使用の詳細な説明が含まれています。
+Microsoft では、EFI システムリソーステーブル (ESRT) の **[システム]** に表示されている一意の id に加えて、ファームウェア更新パッケージにコンピューターハードウェア ID (chid) を含めるように要求しています。 「 [Windows 10 用ドライバー公開ワークフローのダウンロード](https://download.microsoft.com/download/B/A/8/BA89DCE0-DB25-4425-9EFF-1037E0BA06F9/windows10_driver_publishing_workflow.docx)」ドキュメントには、配布のターゲット設定とインストールの対象で使用される chids の詳細な説明が含まれています。
 
 ## <a name="related-resources"></a>関連リソース
 
 [パートナー センター](https://docs.microsoft.com/windows-hardware/drivers/dashboard)
 
-[コンピューターのハードウェア Id を指定します。](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)
+[コンピューターのハードウェア Id の指定](https://docs.microsoft.com/windows-hardware/drivers/install/specifying-hardware-ids-for-a-computer)
 
-[Windows 10 用のワークフローの発行 Driver をダウンロードします。](http://download.microsoft.com/download/B/A/8/BA89DCE0-DB25-4425-9EFF-1037E0BA06F9/windows10_driver_publishing_workflow.docx)
+[Windows 10 用のドライバー発行ワークフローのダウンロード](https://download.microsoft.com/download/B/A/8/BA89DCE0-DB25-4425-9EFF-1037E0BA06F9/windows10_driver_publishing_workflow.docx)
