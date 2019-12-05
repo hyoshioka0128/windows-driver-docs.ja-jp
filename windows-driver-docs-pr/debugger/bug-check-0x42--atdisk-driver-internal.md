@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x42 ATDISK_DRIVER_INTERNAL
-description: ATDISK_DRIVER_INTERNAL のバグ チェックでは、0x00000042 の値を持ちます。このバグ チェックが非常に少ない回数が表示されます。
+title: バグチェック 0x42 ATDISK_DRIVER_INTERNAL
+description: ATDISK_DRIVER_INTERNAL バグチェックの値は0x00000042 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: 422c8fc9-e980-4879-abf7-d30c69086069
 keywords:
-- バグ チェック 0x42 ATDISK_DRIVER_INTERNAL
+- バグチェック 0x42 ATDISK_DRIVER_INTERNAL
 - ATDISK_DRIVER_INTERNAL
 ms.date: 05/23/2017
 topic_type:
@@ -13,25 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 684c01113e32a7b28eb82de79ed011f4f4831656
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 64924c85ac607e25c9d44a2acb7afdc63be6662a
+ms.sourcegitcommit: b7971067b64ffa9162bfedc263ce4de53dcbe9b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519453"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74832871"
 ---
-# <a name="bug-check-0x42-atdiskdriverinternal"></a>バグ チェック 0x42:ATDISK\_ドライバー\_内部
+# <a name="bug-check-0x42-atdisk_driver_internal"></a>バグチェック 0x42: ATDISK\_ドライバー\_内部
 
 
-ATDISK\_ドライバー\_内部バグ チェックが 0x00000042 の値を持ちます。
+ATDISK\_ドライバー\_内部バグチェックには、値0x00000042 があります。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
- 
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
  
 
