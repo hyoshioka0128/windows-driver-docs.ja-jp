@@ -12,8 +12,6 @@
       href: biometrics-driver-samples.md
     - name: Bluetooth ドライバーのサンプル
       href: bluetooth-driver-samples.md
-    - name: カメラ ドライバーのサンプル
-      href: camera-driver-samples.md
     - name: ファイル システム ドライバーのサンプル
       href: file-system-driver-samples.md
     - name: 汎用ドライバーのサンプル
@@ -54,10 +52,14 @@
       href: thermal-driver-samples.md
     - name: ツールのサンプル
       href: driver-tools-samples.md
+    - name: 信頼される実行環境 (TrEE) ドライバーのサンプル
+      href: tree-driver-samples.md
     - name: USB (ユニバーサル シリアル バス) ドライバーのサンプル
       href: universal-serial-bus--usb--driver-samples.md
     - name: ビデオ ドライバーのサンプル
       href: video-driver-samples.md
+    - name: Windows Image Acquisition (WIA) ドライバーのサンプル
+      href: wia-driver-samples.md
     - name: Windows Management Instrumentation (WMI) ドライバーのサンプル
       href: windows-management-instrumentation--wmi--driver-samples.md
     - name: Windows ポータブル デバイス (WPD) ドライバーのサンプル
