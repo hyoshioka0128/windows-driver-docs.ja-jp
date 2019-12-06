@@ -1,9 +1,9 @@
 ---
 title: requestClose 要素
-description: 省略可能な requestClose 要素は、クライアント コンピューターのイベント通知メッセージを閉じるに使用されます。
+description: 省略可能な requestClose 要素は、クライアントコンピューター上のイベント通知メッセージを閉じるために使用されます。
 ms.assetid: b2f21ab2-9205-483c-9f56-1c877edb7da2
 keywords:
-- 印刷デバイスの requestClose 要素
+- requestClose 要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,34 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da1ed220d080383b7edcafcab9dd2dea67e9710d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82b40ae17284b90f874ea0cfd47d9d964c0014eb
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323172"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881891"
 ---
 # <a name="requestclose-element"></a>requestClose 要素
 
+省略可能な**Requestclose**要素は、クライアントコンピューター上のイベント通知メッセージを閉じるために使用されます。
 
-省略可能な**requestClose**要素を使用して、クライアント コンピューターのイベント通知メッセージを閉じます。
+**Requestclose**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
-**RequestClose**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用方法
 
 ```xml
 <requestClose/>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 属性はありません。
 
 ## <a name="child-elements"></a>子要素
 
-
 子要素はありません。
 
 ## <a name="parent-elements"></a>親要素
-
 
 <table>
 <colgroup>
@@ -61,15 +56,14 @@ ms.locfileid: "63323172"
 <tr class="odd">
 <td><p><a href="asyncprintuirequest.md" data-raw-source="[&lt;strong&gt;asyncPrintUIRequest&lt;/strong&gt;](asyncprintuirequest.md)"><strong>asyncPrintUIRequest</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターでメッセージを作成するプリンター ドライバーによって発行された要求を記述する必須要素。</p></td>
+<p>クライアントコンピューターでメッセージを作成するためにプリンタードライバーによって発行された要求を記述する必須の要素。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
-次のコード例は、メッセージ ボックス ボタン クリックをキャプチャした後、イベント通知を閉じる方法を示しています、 **OK**ボタンをクリックします。
+次のコード例では、 **[OK** ] ボタンのメッセージボックスをクリックした後に、イベント通知を閉じる方法を示しています。
 
 ```cpp
 <?xml version="1.0" ?>

@@ -3,27 +3,26 @@ title: 以前のバージョンの Windows の XPS サポート
 description: 以前のバージョンの Windows の XPS サポート
 ms.assetid: e13b43f5-e926-404d-9f76-c2dfef6e0637
 keywords:
-- XPSDrv プリンター ドライバー WDK、Windows の以前のバージョン
+- XPSDrv プリンタードライバー WDK、以前のバージョンの Windows
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4a85f89a820de51e585083c821a048df876f0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b291ac69a78f7e464b850f0b4fb4ef8004ba4b9a
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355129"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881920"
 ---
 # <a name="xps-support-in-earlier-versions-of-windows"></a>以前のバージョンの Windows の XPS サポート
 
+Windows Vista に加えて、XPS ベースのテクノロジは、microsoft WinFX Runtime Component 3.0 を通じて、Microsoft Windows Server 2003 および Windows XP でサポートされています。 XPS 印刷は、これらのオペレーティングシステムを使用したポイントアンドプリントシナリオで機能します。
 
-Windows Vista では、だけでなく、XPS ベースのテクノロジは、Microsoft Windows Server 2003 および Windows XP、Microsoft WinFX Runtime コンポーネント 3.0 でサポートされます。 XPS 印刷時点で作業をこれらのオペレーティング システムのシナリオを印刷します。
+Windows Server 2003 および Windows XP のサポートは、次の方法で提供されます。
 
-Windows Server 2003 および Windows XP のサポートは、次のように提供されます。
+- Win32 および Windows Presentation Foundation (WPF) アプリケーションの出力の透過的な変換。 レンダリングの出力は Win32 と Windows Presentation Foundation (WPF) アプリケーションによって大きく異なりますが、XPSDrv ドライバーモデルでは、両方のアプリケーションの種類が1つのドライバーに出力できるようになっています。 印刷用の出力は、アプリケーションの種類とドライバーの種類の間で適切に変換されます。これにより、GDI および XPS ベースのプリンターに出力する Win32 アプリケーションと WPF アプリケーションの完全なサポートマトリックスが有効になります。 XPSDrv インフラストラクチャは、Windows Server 2003 および Windows XP でも使用できます。
 
--   Win32、Windows Presentation Foundation (WPF) アプリケーションの出力の透過的な変換です。 表示出力は、Win32、Windows Presentation Foundation (WPF) アプリケーション間で大幅に異なる場合は、XPSDrv ドライバー モデルでは、両方を 1 つのドライバーを印刷するアプリケーションの種類を有効します。 印刷用の出力は、アプリケーションの種類と、GDI および XPS ベースのプリンターに印刷する Win32 と WPF のアプリケーション間で完全にサポート マトリックスを有効にすると、ドライバーの型の間で適切に変換されます。 XPSDrv インフラストラクチャも Windows Server 2003 および Windows XP で使用するために使用できます。
+- 一貫したフィルターパイプラインモデル。 Windows Vista、Windows Server 2003、および Windows XP のフィルターパイプラインでは、フィルター、プラグインモデル、パイプライン構成ファイル、およびイベントログに対して同じインターフェイスがサポートされています。 以前のバージョンの Windows での通知のサポートが減少しているなど、いくつかの違いがあります。 Windows Vista では、表示フィルターは通知を完全に制御し、フィルターが処理しているあらゆる種類の "パーツ" (ドキュメント、ページ、フォント、画像など) に関する通知を送信できます。 以前のバージョンの Windows でのスケーラブルなコンシューマーの場合、通知はページの境界でのみ行われます。
 
--   一貫性のあるフィルター パイプライン モデル。 フィルターは、Windows Vista、Windows Server 2003、および Windows XP のサポートのフィルター、プラグイン モデル、パイプラインの構成ファイル、およびイベントのログ記録と同じインターフェイスをパイプラインします。 以前のバージョンの Windows で通知の減少のサポートを含む、いくつかの違いがあります。 表示フィルター、Windows Vista の通知の完全な制御し、は、フィルター処理「部分」の任意の型に関する通知を送信することができます (つまり、ドキュメント、ページ、フォント、イメージ、およびなど)。 以前のバージョンの Windows で拡張性の高いコンシューマーは、通知はページの境界でのみ発生します。
+- XPS ベースのプリントプロセッサ。 Windows Server 2003 および Windows XP では、XPSDrv を有効にする XPS ベースのプリントプロセッサが用意されています。 XPS ベースのプリントプロセッサは、XPSDrv ドライバーをホストし、これらのオペレーティングシステムの既存のスプーラと通信します。 特定の XPS 印刷パス機能は Windows Vista でのみ使用できます。そのため、以前のバージョンの Windows では、XPSDrv ドライバーが適切に機能しなくなる必要があります。
 
--   XPS ベースのプリント プロセッサ。 Windows Server 2003 と Windows XP、XPS ベース プリント プロセッサが XPSDrv をできるようにします。 XPS ベースのプリント プロセッサは、XPSDrv ドライバーをホストし、これらのオペレーティング システム上の既存のスプーラーと通信します。 XPS 印刷パスの特定の機能は、XPSDrv ドライバーが Windows の以前のバージョンで適切に低下できる必要がありますので、Windows Vista でのみ使用できます。
-
-XPS の詳細については、ダウンロード、 [XML 仕様概要](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)します。
+XPS の詳細については、 [「XML Paper Specification の概要」](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)をダウンロードしてください。

@@ -1,104 +1,104 @@
 ---
-title: ドライバーのインストールを簡略化する SetupAPI 関数
-description: ドライバーのインストールを簡略化する SetupAPI 関数
+title: ドライバーのインストールを簡略化する関数
+description: ドライバーのインストールを簡略化する関数
 ms.assetid: 7201b260-6239-4c76-8d48-7e2df9c662cd
 keywords:
-- SetupAPI 関数 WDK、ドライバーのインストールを簡略化します。
+- 関数 WDK、ドライバーのインストールの簡略化
 - DiInstallDevice
 - DiInstallDriver
 - DiRollbackDriver
 - UpdateDriverForPlugAndPlayDevices
-- PnP WDK デバイスのインストール、SetupAPI
-- プラグ アンド プレイ WDK デバイス インストールでは、SetupAPI
+- PnP WDK デバイスのインストール
+- WDK デバイスのインストールのプラグアンドプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fceae2a2f3771f4eda0aeeac23ebc4eb431ced52
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9c171b1adc508bde47dc8db76877e22b5c3aaeac
+ms.sourcegitcommit: 34e36b185a28886752b0245f1b95858b75578e5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67386399"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74868210"
 ---
-# <a name="setupapi-functions-that-simplify-driver-installation"></a>ドライバーのインストールを簡略化する SetupAPI 関数
+# <a name="functions-that-simplify-driver-installation"></a>ドライバーのインストールを簡略化する関数
 
 
-インストール アプリケーションでは、関数の PnP ドライバーのインストールを簡略化するのに次の SetupAPI 関数を使用できます。
+インストールアプリケーションでは、次の機能を使用して、PnP 関数ドライバーのインストールを簡略化できます。
 
-### <a href="" id="diinstalldevice--windows-vista-and-later-versions-of-windows-"></a> DiInstallDevice (Windows Vista および Windows の以降のバージョン)
+### <a href="" id="diinstalldevice--windows-vista-and-later-versions-of-windows-"></a>DiInstallDevice (Windows Vista 以降のバージョンの Windows)
 
-[ **DiInstallDevice** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)関数では、プレインストールされている特定のドライバーのインストール、[ドライバー ストア](driver-store.md)システムに存在する特定のデバイス。
+[**Diinstalldevice**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldevice)関数は、システムに存在する特定のデバイスの[ドライバーストア](driver-store.md)にプレインストールされている特定のドライバーをインストールします。
 
-インストール アプリケーションでは、次の両方に該当する場合は、この関数を使用するのみ。
+インストールアプリケーションでは、次の両方が当てはまる場合にのみ、この関数を使用する必要があります。
 
--   アプリケーションには、同じ型の 1 つ以上のデバイス インスタンスが組み込まれています、同じハードウェア Id および互換性 Id、つまり、デバイスのすべてのインスタンスがあります。
+-   このアプリケーションには、同じ種類のデバイスインスタンスが複数組み込まれています。つまり、すべてのデバイスインスタンスが同じハードウェア Id と互換性 Id を持っています。
 
--   アプリケーションでは、デバイス固有のインスタンスのドライバーがデバイスのインスタンスにインストールすることが必要です。
+-   アプリケーションでは、デバイスインスタンスに固有のドライバーをインストールする必要があります。
 
-それ以外の場合、インストール アプリケーションで使用する[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)または[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)をインストールするにはデバイスに最適なものであるドライバー。
+それ以外の場合は、インストールアプリケーションで[**Diinstalldriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)または[**UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)を使用して、デバイスに最適なドライバーをインストールする必要があります。
 
-呼び出し元が呼び出すことができますも**DiInstallDevice**以下を実行します。
+呼び出し元は**Diinstalldevice**を呼び出して、次の操作を行うこともできます。
 
--   プレインストールされているドライバー、デバイスに最適な一致を検索し、いずれかが存在しない場合は、デバイスの新しいハードウェアの検出ウィザードを表示します。
+-   デバイスに最適なドライバーがプレインストールされていることを検索し、見つからない場合は、そのデバイスの新しいハードウェアの検出ウィザードを表示します。
 
--   -インストールが [完了] ページの呼び出しを抑制して、アクションのインストールが完了します。
+-   [完了] を非表示にします。インストールページと完了-インストールアクション。
 
--   特定のデバイスには、null のドライバをインストールします。
+-   特定のデバイスに null ドライバーをインストールします。
 
--   インストールを完了するシステムの再起動が必要かどうかを呼び出し元に通知します。
+-   インストールを完了するためにシステムの再起動が必要かどうかを呼び出し元に通知します。
 
-### <a href="" id="diinstalldriver--windows-vista-and-later-versions-of-windows-"></a> DiInstallDriver (Windows Vista および Windows の以降のバージョン)
+### <a href="" id="diinstalldriver--windows-vista-and-later-versions-of-windows-"></a>DiInstallDriver (Windows Vista 以降のバージョンの Windows)
 
-[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)関数のプレインストール、[ドライバー パッケージ](driver-packages.md)で、[ドライバー ストア](driver-store.md)し、すべてのデバイスで、ドライバーをインストールしますID またはドライバー パッケージと一致する互換性 ID は、ハードウェアのあるシステムに存在します。
+[**Diinstalldriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)関数は、ドライバー[ストア](driver-store.md)にドライバー[パッケージ](driver-packages.md)をプレインストールした後、ドライバーパッケージと一致するハードウェア ID または互換性のある id を持つ、システムに存在するすべてのデバイスにドライバーをインストールします。
 
-呼び出す**DiInstallDriver**または[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)デバイス用の新しいドライバーをインストールするインストール アプリケーションの最も簡単な方法です。 **DiInstallDriver**と**UpdateDriverForPlugAndPlayDevices**同じ基本的なインストール操作を実行します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
+**Diinstalldriver**または[**UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)を呼び出すことは、インストールアプリケーションがデバイス用の新しいドライバーをインストールする最も簡単な方法です。 **Diinstalldriver**と**UpdateDriverForPlugAndPlayDevices**は、同じ基本的なインストール操作を実行します。 ただし、 **UpdateDriverForPlugAndPlayDevices**では追加のインストールオプションがサポートされています。
 
-既定では、 **DiInstallDriver**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。 Windows デバイスのドライバーを選択する方法については、次を参照してください。 [Windows ドライバーを選択する方法](how-setup-selects-drivers.md)します。
+既定では、デバイスに現在インストールされているドライバーよりもドライバーの方がデバイスに適合する場合にのみ、 **Diinstalldriver**はデバイスにドライバーをインストールします。 Windows がデバイスのドライバーを選択する方法の詳細については、「 [windows がドライバーを選択する方法](how-setup-selects-drivers.md)」を参照してください。
 
-呼び出し元が呼び出すことができますも**DiInstallDriver**以下を実行します。
+呼び出し元は**Diinstalldriver**を呼び出して、次の操作を行うこともできます。
 
--   ドライバーは、デバイスに現在インストールされているドライバーよりも、デバイスに合わせて、かどうかに関係なく、指定したドライバーのインストールを強制します。
+-   ドライバーが現在デバイスにインストールされているドライバーよりもデバイスに適合するかどうかに関係なく、指定したドライバーのインストールを強制します。
 
-    **注意**  ドライバーのインストールが強制されることがあまりに互換性があるか、古いドライバーより互換性があるか、新しいドライバーを置き換えます。
-
-     
-
--   呼び出し元に、インストールを完了するシステムの再起動が必要かどうかを示します。
-
-### <a href="" id="dirollbackdriver--windows-vista-and-later-versions-of-windows-"></a> DiRollbackDriver (Windows Vista および Windows の以降のバージョン)
-
-[ **DiRollbackDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-dirollbackdriver)関数は現在のデバイスをデバイスに設定されているバックアップ ドライバーのインストールにインストールされているドライバーを置き換えます。 この関数は、デバイスのドライバーを更新した後、デバイスが失敗した場合、デバイスを稼働状態に復元するには、主に提供されます。 この関数は、ユーザーがクリックされた場合に実行される同じ操作を実行**ドライバーのロールバック**デバイス マネージャーでデバイス ドライバーのページ。
-
-Windows では、最大でデバイスの 1 つのバックアップ ドライバーを保持します。 Windows では、バックアップ デバイスのドライバーをドライバーが正常にデバイスと Windows のインストール後すぐには、デバイスが正しく機能していることを判断すると、ドライバーを設定します。 ただし、デバイス ドライバーが正常にインストールされませんまたはインストール後、デバイスが正しく機能しない、Windows は設定されません、ドライバー、デバイスのバックアップ ドライバーとして。
-
-呼び出し元が呼び出すことができますも**DiRollbackDriver**以下を実行します。
-
--   ドライバーのロールバックに関連付けられているすべてのユーザー インターフェイス コンポーネントを表示しないようにします。
-
--   呼び出し元に、インストールを完了するシステムの再起動が必要かどうかを示します。
-
-ドライバーのロールバックの詳細については、デバイス マネージャーのヘルプとサポート センターでについてを参照してください。
-
-### <a href="" id="updatedriverforplugandplaydevices"></a> UpdateDriverForPlugAndPlayDevices
-
-[ **UpdateDriverForPlugAndPlayDevices** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)関数は、すべてのデバイスで、システムに存在するハードウェア ID またはドライバー パッケージと一致する互換性のある ID を持つドライバーをインストールします。
-
-この関数の呼び出しまたは[ **DiInstallDriver** ](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)インストール アプリケーション、システム内のデバイスに最適なものである新しいドライバーをインストールする最も簡単な方法です。 基本的な操作**UpdateDriverForPlugAndPlayDevices**の操作に似ています**DiInstallDriver**します。 ただし**UpdateDriverForPlugAndPlayDevices**追加のインストール オプションをサポートしています。
-
-既定では、 **UpdateDriverForPlugAndPlayDevices**ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに最適である場合のみをデバイスに、ドライバーをインストールします。
-
-呼び出し元が呼び出すことができますも**UpdateDriverForPlugAndPlayDevices**以下を実行します。
-
--   ドライバーは、デバイスに現在インストールされているドライバーよりも、デバイスに合わせて、かどうかに関係なく、指定したドライバーのインストールを強制します。
-
-    **注意**  ドライバーのインストールが強制されることがあまりに互換性があるか、古いドライバーより互換性があるか、新しいドライバーを置き換えます。
+    **注意**   ドライバーを強制的にインストールすると、互換性のあるドライバーまたは新しいドライバーが互換性のないドライバーまたは古いドライバーと置き換えられる可能性があります。
 
      
 
--   コピー、名前の変更、またはインストール ファイルの削除を抑制します。
+-   インストールを完了するためにシステムの再起動が必要かどうかを呼び出し元に示します。
 
--   ユーザー インターフェイス コンポーネントを表示しないようにします。
+### <a href="" id="dirollbackdriver--windows-vista-and-later-versions-of-windows-"></a>DiRollbackDriver (windows Vista 以降のバージョンの Windows)
 
--   呼び出し元に、インストールを完了するシステムの再起動が必要かどうかを示します。
+[**DiRollbackDriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-dirollbackdriver)関数は、デバイスに対して設定されている以前にインストールされたバックアップドライバーを使用して、デバイスに現在インストールされているドライバーを置き換えます。 この機能は主に、デバイスのドライバーを更新した後にデバイスでエラーが発生した場合に、デバイスを動作状態に復元するために用意されています。 この関数は、ユーザーがデバイスマネージャーのデバイスのドライバーページで **[ドライバーのロールバック]** をクリックした場合に実行される操作と同じ操作を実行します。
+
+Windows では、デバイスのバックアップドライバーを1つだけ保持します。 Windows は、ドライバーがデバイスに正常にインストールされた直後に、デバイスのバックアップドライバーとしてドライバーを設定し、Windows はデバイスが正しく機能していると判断します。 ただし、ドライバーがデバイスに正常にインストールされない場合、またはインストール後にデバイスが正常に機能しない場合、Windows では、デバイスのバックアップドライバーとしてドライバーが設定されません。
+
+呼び出し元は、 **DiRollbackDriver**を呼び出して次の操作を行うこともできます。
+
+-   ドライバーロールバックに関連付けられているユーザーインターフェイスコンポーネントの表示を抑制します。
+
+-   インストールを完了するためにシステムの再起動が必要かどうかを呼び出し元に示します。
+
+ドライバーのロールバックの詳細については、ヘルプとサポートセンターのデバイスマネージャーに関する情報を参照してください。
+
+### <a href="" id="updatedriverforplugandplaydevices"></a>UpdateDriverForPlugAndPlayDevices
+
+[**UpdateDriverForPlugAndPlayDevices**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-updatedriverforplugandplaydevicesa)関数は、ドライバーパッケージと一致するハードウェア id または互換性のある id を持つ、システムに存在するすべてのデバイスにドライバーをインストールします。
+
+この関数または[**Diinstalldriver**](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera)を呼び出すことは、システム内のデバイスに最適な新しいドライバーをインストールするための最も簡単な方法です。 **UpdateDriverForPlugAndPlayDevices**の基本的な操作は、 **diinstalldriver**の操作に似ています。 ただし、 **UpdateDriverForPlugAndPlayDevices**では追加のインストールオプションがサポートされています。
+
+既定では、 **UpdateDriverForPlugAndPlayDevices**は、ドライバーがデバイスに現在インストールされているドライバーよりもデバイスに一致する場合にのみ、デバイスにドライバーをインストールします。
+
+呼び出し元は、必要に応じて**UpdateDriverForPlugAndPlayDevices**を呼び出して、次の操作を行うこともできます。
+
+-   ドライバーが現在デバイスにインストールされているドライバーよりもデバイスに適合するかどうかに関係なく、指定したドライバーのインストールを強制します。
+
+    **注意**   ドライバーを強制的にインストールすると、互換性のあるドライバーまたは新しいドライバーが互換性のないドライバーまたは古いドライバーと置き換えられる可能性があります。
+
+     
+
+-   インストールファイルのコピー、名前の変更、または削除を抑制します。
+
+-   ユーザーインターフェイスコンポーネントの表示を抑制します。
+
+-   インストールを完了するためにシステムの再起動が必要かどうかを呼び出し元に示します。
 
  
 

@@ -1,512 +1,475 @@
 ---
 title: サポートされている PrintTicket 機能
-description: このセクションでは、標準 XPS フィルターでサポートされている PrintTicket の機能についての情報を提供します。
+description: このセクションでは、標準の XPS フィルターでサポートされる PrintTicket 機能について説明します。
 ms.assetid: 6D1AD770-D4BA-4BDC-886A-C5C36A09BB0E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3390095e14b175eb411bce8c4de07a490e727ed5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 20ef6c4698a744ad8efe77655fac2c05854f04e1
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331757"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881903"
 ---
 # <a name="supported-printticket-features"></a>サポートされている PrintTicket 機能
 
+このセクションでは、標準の XPS フィルターでサポートされる PrintTicket 機能について説明します。
 
-このセクションでは、標準 XPS フィルターでサポートされている PrintTicket の機能についての情報を提供します。
-
-これらすべての機能には、生成される PDL コマンドを変更するため、XPS フィルター効果があります。 フィルターによって PDL コマンドを生成するかどうか自体、またはこれらが GPD/PPD デバイスによって指定されると、XPS フィルター PDL コマンドを変更する原因となるこれらの機能です。 印刷スキーマ (psk) のキーワード名前空間には、すべての要素 (機能、オプション、ScoredProperties、パラメーター)、次のセクションで参照されているを確認できます。
+これらすべての機能は、XPS フィルターが生成された PDL コマンドを変更することによる影響を受けます。 PDL コマンドがフィルター自体によって生成されるか、デバイス GPD/PPD によって指定されているかにかかわらず、これらの機能によって、XPS フィルターが PDL コマンドを変更することがあります。 次のセクションで参照されているすべての要素 (Features、Options、スコア Edproperties、Parameters) は、print schema keywords (psk) 名前空間にあります。
 
 ## <a name="pagemediasize"></a>PageMediaSize
 
+この機能は、印刷出力に使用されるメディアシートのサイズを示します。 名前に加えて、各オプションには、MediaSizeWidth と Mediasizewidth という2つのスコア付けされたプロパティを含めることができます。 これらは、メディアの物理サイズを示します。 サポートされているオプションは、対応する GPD/PPD ファイルエントリを持つ任意のオプションです。
 
-この機能では、印刷出力に使用されるメディア用紙のサイズについて説明します。 各オプションは、名だけでなく、スコア付けされた 2 つのプロパティを含めることができます。MediaSizeWidth MediaSizeHeight. これらには、物理メディアのサイズについて説明します。 サポートされているオプションは、対応する GPD/PPD ファイル エントリと、オプションです。
+PCL6/GPD の場合、PrintTicket オプションが CustomMediaSize の場合、PageMediaSizeMediaSizeWith パラメーターと PageMediaSizeMediaSizeHeight パラメーターを使用してメディアのサイズを取得します。
 
-PCL6/GPD の PrintTicket オプションが場合 CustomMediaSize、PageMediaSizeMediaSizeWith と PageMediaSizeMediaSizeHeight パラメーター使用されますメディアのサイズを取得します。
+PostScript/PPD の場合、PrintTicket オプションが PSCustomMediaSize の場合、メディアのサイズを取得するために、PageMediaSizePSHeight パラメーターとパラメーターが使用されます。 選択したメディアの種類に対して生成された PCL6 は、GPD PageSize 機能の値によって指定されます。 次の一覧は、使用する PageMediaSize オプションを決定するために GPD を検査する順序を示しています。
 
-PostScript/PPD、PrintTicket オプションは PSCustomMediaSize PageMediaSizePSWith しいて PageMediaSizePSHeight パラメーターを使用すると、メディアのサイズを取得します。 選択したメディアの種類に対して生成された PCL6 は GPD PageSize 機能の値によって指定されます。 次に、GPD が使用する PageMediaSize オプションかが調べられる順序を示します。
+1. PrintSchemaKeywordMap を指定した場合、PageMediaSize オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageMediaSize オプションの名前属性と一致します。
+1. 次の[既定の PageMediaSize マッピング](default-pagemediasize-mappings.md)が使用されます。
 
-2. 次[PageMediaSize の既定のマッピング](default-pagemediasize-mappings.md)使用されます。
+1. PageSize オプションの name 属性は、GPD 内のオプションの名前と一致します。
 
-3. PageSize オプションの name 属性は、GPD でオプションの名前と一致します。
+レンダリングプロセス中、任意の GPD コマンドの PhysPaperWidth が、MediaSizeWidth スコアのプロパティまたは PageMediaSizeMediaSizeWidth パラメーターで指定された用紙の幅に置き換えられます。
 
-レンダリング プロセス中に、フィルターで置換されます PhysPaperWidth に対して GPD コマンドで MediaSizeWidth ScoredProperty または PageMediaSizeMediaSizeWidth パラメーターで指定された用紙の幅。
+また、任意の GPD コマンドの PhysPaperLength を、MediaSizeHeight の焦げ Edproperty または PageMediaSizeMediaSizeHeight パラメーターで指定された用紙の長さに置き換えます。
 
-フィルターも置き換えます PhysPaperLength に対して GPD コマンドで MediaSizeHeight ScoredProperty または PageMediaSizeMediaSizeHeight パラメーターで指定された用紙の長さ。
+選択したメディアの種類に対して生成された PostScript は、PPD PageSize 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択したメディアの種類に対して生成された PostScript は PPD PageSize 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
+1. MSPrintSchemaKeywordMap を指定した場合、PageMediaSize オプションの name 属性と一致します。
 
-1. MSPrintSchemaKeywordMap が指定されており、PageMediaSize オプションの名前属性と一致します。
-
-2. PageSize オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageSize オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="pagemediatype"></a>PageMediaType
 
+この機能では、デバイスで使用できるメディアシートの特性 (coatings、メディアマテリアル、メディアの重さなど) が説明されています。 サポートされているオプションは、対応する GPD/PPD エントリを持つものです。
 
-この機能では、コーティング、メディアのマテリアル、およびメディアの太さなど、デバイスで使用できるメディアのシートの特性について説明します。 サポートされているオプションは、対応する GPD/PPD エントリで。
+選択したメディアの種類に対して生成された PCL6 は、GPD MediaType 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択したメディアの種類に対して生成された PCL6 は GPD MediaType 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、PageMediaType オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageMediaType オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | PageMediaType 値            | GPD/PPD ファイルエントリ |
+    |--------------------------------|--------------------|
+    | PrintTicket PhotographicGlossy | GPD 光沢         |
+    | PrintTicket Plain              | GPD 標準       |
+    | PrintTicket の透明度       | GPD の透明度   |
 
-| PageMediaType 値            | GPD/PPD ファイルのエントリ |
-|--------------------------------|--------------------|
-| PrintTicket PhotographicGlossy | GPD 光沢紙         |
-| PrintTicket プレーン              | GPD 標準       |
-| PrintTicket の透過性       | GPD 透過性   |
+1. PageMediaType オプションの name 属性は、GPD のオプションの名前と一致します。
 
- 
+選択したメディアの種類に対して生成された PostScript は、PPD MediaType 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-3. PageMediaType オプションの name 属性は、GPD でオプションの名前と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、PageMediaType オプションの name 属性と一致します。
 
-選択したメディアの種類に対して生成された PostScript は PPD MediaType 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-
-1. MSPrintSchemaKeywordMap が指定されており、PageMediaType オプションの名前属性と一致します。
-
-2. PageMediaType オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageMediaType オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="pagemediacolor"></a>PageMediaColor
 
+この機能は、メディアシートの色について説明します。 サポートされているオプションは、対応する GPD/PPD エントリを持つものです。
 
-この機能には、メディアのシートの色がについて説明します。 サポートされているオプションは、対応する GPD/PPD エントリで。
+選択したメディアの色に対して生成される PCL6 は、PrintSchemaKeywordMap: "PageMediaColor" という \*を含む GPD 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択したメディアの色が GPD 機能で指定されたために生成される PCL6 を含む\*PrintSchemaKeywordMap:"PageMediaColor"。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、PageMediaColor オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageMediaColor オプションの名前属性と一致します。
+1. PageMediaColor オプションの name 属性は、GPD のオプションの名前と一致します。
 
-2. PageMediaColor オプションの name 属性は、GPD でオプションの名前と一致します。
+選択したメディアの色に対して生成される PostScript は、PPD MediaColor 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択したメディア色に対して生成された PostScript は PPD MediaColor 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、PageMediaColor オプションの名前属性と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、PageMediaColor オプションの name 属性と一致します。
 
-2. PageMediaColor オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageMediaColor オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="jobinputbin"></a>JobInputBin
 
+この機能では、メディアを印刷デバイスに取り込む入力場所について説明します。 サポートされているオプションは、対応する GPD/PPD エントリを持つオプションです。
 
-この機能では、印刷デバイスにメディアを引き出す入力場所について説明します。 サポートされているオプションは、対応する GPD/PPD エントリを持つです。
+選択した入力トレイ用に生成された PCL6 は、GPD InputBin 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した入力トレイ用に生成 PCL6 は GPD InputBin 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、JobInputBin オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、JobInputBin オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | JobInputBin 値      | GPD/PPD ファイルエントリ                  |
+    |------------------------|-------------------------------------|
+    | PrintTicket カセット   | GPD AUTO、カセット、ENVFEED、ENVMANUAL |
+    | PrintTicket の自動の自動で | GPD FORMSOURCE                      |
+    | PrintTicket High       | GPD LARGECAPACITY、LARGEFMT、LOWER    |
+    | PrintTicket の手動     | GPD MANUAL、中段、SMALLFMT          |
+    | PrintTicket トラクター    | GPD トラクター、UPPER                   |
 
-| JobInputBin 値      | GPD/PPD ファイルのエントリ                  |
-|------------------------|-------------------------------------|
-| PrintTicket カセット   | GPD AUTO、カセット、ENVFEED、ENVMANUAL |
-| PrintTicket の自動選択 | GPD FORMSOURCE                      |
-| PrintTicket 高       | GPD LARGECAPACITY、LARGEFMT、削減します。    |
-| PrintTicket 手動     | GPD MANUAL,MIDDLE,SMALLFMT          |
-| PrintTicket の供給    | GPD 供給、上限                   |
+1. PageMediaType オプションの name 属性は、GPD のオプションの名前と一致します。
 
- 
+選択した入力トレイ用に生成された PostScript は、PPD InputSlot 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-3. PageMediaType オプションの name 属性は、GPD でオプションの名前と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、JobInputBin オプションの name 属性と一致します。
 
-選択した入力トレイに対して生成された PostScript は PPD InputSlot 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、JobInputBin オプションの名前属性と一致します。
-
-2. JobInputBin オプションの name 属性、PPD. でオプションの名前に一致します。
+1. JobInputBin オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="pageorientation"></a>PageOrientation
 
+この機能は、コンテンツの座標空間からシートのメディア座標空間に変換するときに使用する回転変換を示します。 サポートされているオプションは、縦、横、ReversePortrait、および ReverseLandscape です。
 
-この機能では、コンテンツの座標空間からシートのメディアの座標空間に変換するときに使用する回転変換を示します。 縦、横、ReversePortrait、ReverseLandscape、サポートされていることもできます。
+選択した方向に対して生成された PCL6 は、GPD Orientation 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した方向に対して生成された PCL6 は GPD 方向付けによって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、PageOrientation オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageOrientation オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | PageOrientation 値        | GPD/PPD ファイルエントリ   |
+    |------------------------------|----------------------|
+    | PrintTicket 縦長         | GPD 縦         |
+    | PrintTicket の横        | GPD ランドスケープ\_CC90  |
+    | PrintTicket ReverseLandscape | GPD ランドスケープ\_CC 1.0 |
 
-| PageOrientation 値        | GPD/PPD ファイルのエントリ   |
-|------------------------------|----------------------|
-| PrintTicket の縦向き         | GPD 縦向き         |
-| PrintTicket のランドス ケープ        | GPD ランドス ケープ\_CC90  |
-| PrintTicket ReverseLandscape | GPD ランドス ケープ\_CC270 |
+1. PageOrientation オプションの name 属性は、GPD 内のオプションの名前と一致します。
 
- 
+選択した向きに対して生成される PostScript は、フィルターによって決まります。
 
-3. PageOrientation オプションの name 属性は、GPD でオプションの名前と一致します。
+## <a name="pageoutputcolor"></a>PageOutputColor
 
-選択した方向に対して生成された PostScript はフィルターによって決まります。
-## <a name="pageoutputcolor"></a>印刷
+この機能は、出力先ドキュメントページの印刷出力の色特性 (色、モノクロ) を制御します。 サポートされているオプションは、Color、グレースケール、モノクロです。
 
+選択した出力色に対して生成された PCL6 は、GPD ColorMode 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-この機能は、移行先のドキュメント ページの印刷出力の色に関する特性 (色、モノクロ) を制御します。 サポートされているオプションは、色、グレースケールやモノクロです。
+1. PrintSchemaKeywordMap を指定した場合、PageOutputColor オプションの name 属性と一致します。
 
-選択した出力の色に対して生成された PCL6 は GPD 返さ機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PageOutputColor オプションの name 属性は、GPD 内のオプションの名前と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、印刷オプションの名前属性と一致します。
+選択した出力色に対して生成される PostScript は、フィルターによって決定されます。
 
-2. 印刷オプションの name 属性は、GPD でオプションの名前と一致します。
+## <a name="pageresolution"></a>PageResolution 方法
 
-選択した出力の色に対して生成された PostScript はフィルターによって決まります。
-## <a name="pageresolution"></a>PageResolution
+この機能では、デバイスが出力を生成できる解像度 (1 インチあたりのドット数) を定義します。 印刷スキーマでは、この機能のオプションに標準名は指定されていません。ただし、オプション名 (解像度 x) と解像度 y に関係なく、2つのスコアプロパティをサポートしています。 サポートされているオプションは、対応する GPD/PPD エントリを持つものです。
 
+選択した解像度に対して生成された PCL6 は、GPD Resolution 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-この機能は、デバイスに出力を生成できます (1 インチあたりのドット数) で使用可能な解像度を定義します。 印刷スキーマがこの機能のオプションの任意の標準名を指定しません。ただし、オプションの名前に関係なく 2 つの ScoredProperties をサポートしています。ResolutionX、ResolutionY とします。 サポートされているオプションは、対応する GPD/PPD エントリで。
+1. PrintSchemaKeywordMap を指定した場合に、PageResolution オプションの name 属性と一致します。
 
-選択した解決用に生成 PCL6 GPD 解決の機能を指定します。 次の順序で使用する、GPD でオプションが選択されます。
+1. PageResolution オプションの name 属性は、このオプションの名前と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageResolution オプションの名前属性と一致します。
+レンダリング時には、任意の GPD コマンドの GraphicsXRes と TextXRes が、解像度 x で指定された水平方向の解像度に置き換えられます。
+また、GPD コマンドの GraphicsYRes と TextYRes も、解決方法 y で指定された垂直方向の解像度に置き換えられます。
 
-2. PageResolution オプションの name 属性は、GPD でオプションの名前と一致します。
+選択した解像度に対して生成された PostScript は、PPD 解像度または JCLResolution 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-レンダリング中に、フィルターで置換されます GraphicsXRes と TextXRes に対して GPD コマンドで ResolutionX で指定された水平方向の解像度。
-フィルターは置き換えることも GraphicsYRes と TextYRes に対して GPD コマンドで ResolutionY で指定された垂直方向の解像度でします。
+1. MSPrintSchemaKeywordMap を指定した場合に、PageResolution オプションの name 属性と一致します。
 
-選択した解決用に生成 PostScript は、PPD 解像度または JCLResolution 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-
-1. MSPrintSchemaKeywordMap が指定されており、PageResolution オプションの名前属性と一致します。
-
-2. PageResolution オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageResolution 検索オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="pageoutputquality"></a>PageOutputQuality
 
+この機能は、ドキュメントページの印刷品質を定義します。 サポートされているオプションは、対応する GPD/PPD エントリを持つオプションです。
 
-この機能は、ドキュメントのページの印刷品質を定義します。 サポートされるオプションは、対応する GPD/PPD エントリを持つです。
+選択した品質に対して生成された PCL6 は、GPD 機能によって、PrintSchemaKeywordMap の値が PageOutputQuality によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した品質の生成 PCL6 は PageOutputQuality の PrintSchemaKeywordMap 値を持つ GPD 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、PageOutputQuality オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageOutputQuality オプションの名前属性と一致します。
+1. PageOutputQuality オプションの name 属性は、GPD 内のオプションの名前と一致します。
 
-2. PageOutputQuality オプションの name 属性は、GPD でオプションの名前と一致します。
+選択した品質に対して生成される PostScript は、MSPrintSchemaKeywordMap 値が PageOutputQuality である PPD 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択した品質に対して生成された PostScript は PageOutputQuality MSPrintSchemaKeywordMap 値を持つ PPD 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、PageOutputQuality オプションの名前属性と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、PageOutputQuality オプションの name 属性と一致します。
 
-2. PageOutputQuality オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageOutputQuality オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="jobcopiesalldocuments"></a>JobCopiesAllDocuments
 
-
 このパラメーターは、印刷ジョブ内のすべてのドキュメントを出力する回数を指定します。
 
-選択されているコピー用に生成 PCL6 はフィルターによって決まります。 このパラメーターとの対話 JobCollateAllDocuments 機能を参照してください。
+選択したコピーに対して生成された PCL6 は、フィルターによって決定されます。 このパラメーターとの対話については、JobCollateAllDocuments 機能に関する説明を参照してください。
 
-選択したコピーに対して生成された PostScript はフィルターによって決まります。 このパラメーターとの対話 JobCollateAllDocuments 機能を参照してください。
+選択したコピーに対して生成される PostScript は、フィルターによって決定されます。 このパラメーターとの対話については、JobCollateAllDocuments 機能に関する説明を参照してください。
 
 ## <a name="documentcopiesallpages"></a>DocumentCopiesAllPages
 
+このパラメーターは、印刷ジョブに関連付けられたドキュメントが出力するページコピーの数を指定します。
 
-このパラメーターは、印刷ジョブに関連付けられているドキュメントを出力 ページのコピーの数を指定します。
+選択したコピーに対して生成された PCL6 は、フィルターによって決定されます。 このパラメーターと対話するには、DocumentCollate 機能を参照してください。
 
-選択されているコピー用に生成 PCL6 はフィルターによって決まります。 このパラメーターとの対話示さ機能を参照してください。
-
-選択したコピーに対して生成された PostScript はフィルターによって決まります。 このパラメーターとの対話示さ機能を参照してください。
+選択したコピーに対して生成される PostScript は、フィルターによって決定されます。 このパラメーターと対話するには、DocumentCollate 機能を参照してください。
 
 ## <a name="pagecopies"></a>PageCopies
 
+このパラメーターは、ドキュメント内の個々のソースドキュメントページのコピーを出力する回数を指定します。 コピー数は現在のページにのみ適用されるため、照合順序はありません。
 
-このパラメーターは、出力するドキュメント内の個々 のソース ドキュメントのページのコピーの数を指定します。 コピーの数は、現在のページにのみ適用されるので、照合順序はありません。
+選択したコピーに対して生成された PCL6 は、フィルターによって決定されます。
 
-選択されているコピー用に生成 PCL6 はフィルターによって決まります。
+選択したコピーに対して生成される PostScript は、フィルターによって決定されます。
 
-選択したコピーに対して生成された PostScript はフィルターによって決まります。
+## <a name="documentcollate"></a>DocumentCollate
 
-## <a name="documentcollate"></a>示さ
+この機能は、印刷ジョブに関連付けられているドキュメントのページを印刷出力に表示する順序を指定します。 サポートされているオプションは、照合と丁合いなしです。
 
+選択した照合順序に対して生成された PCL6 は、GPD Collate 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-この機能は、印刷出力の印刷ジョブに関連付けられているドキュメントのページが表示される順序を指定します。 丁合い、丁合いなしサポートされていることもできます。
+1. PrintSchemaKeywordMap を指定した場合、DocumentCollate オプションの name 属性と一致します。
 
-選択された照合順序に対して生成された PCL6 GPD 部単位印刷機能を指定します。 次の順序で使用する、GPD でオプションが選択されます。
+1. 次の既定のマッピングが使用されます。
 
-1. PrintSchemaKeywordMap を指定して、示さオプションの名前属性と一致する場合。
+    | DocumentCollate の値  | GPD/PPD ファイルエントリ |
+    |------------------------|--------------------|
+    | PrintTicket 丁合いなし | GPD OFF            |
+    | PrintTicket の照合   | GPD             |
 
-2. 次の既定のマッピングが使用されます。
+1. DocumentCollate オプションの name 属性は、GPD 内のオプションの名前と一致します。
 
-| 示さ値  | GPD/PPD ファイルのエントリ |
-|------------------------|--------------------|
-| PrintTicket 丁合いなし | オフ GPD            |
-| PrintTicket の部単位で印刷   | GPD             |
+> [!NOTE]
+> DocumentCollate が丁合いに設定されていて、GPD Collate オプションにコマンドが含まれている場合は、デバイスが照合されたコピーを生成できると想定されます。 *PCL6*フィルターはジョブのコピーを1つだけ生成し、GPD コマンドを使用して、照合されたコピーを生成するようにデバイスに指示します。 フィルターは、GPD コマンドの NumOfCopies を、JobCopiesAllDocuments によって指定されたコピーの数に置き換えます。
 
- 
+選択した照合順序に対して生成された PostScript は、PPD Collate 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-3. 示さオプションの name 属性は、GPD でオプションの名前と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、DocumentCollate オプションの name 属性と一致します。
 
-**注**  丁合いに設定されているときに示さし GPD Collate オプションは、コマンドを含む、デバイスが部単位でのコピーを生成できることと見なされます。 *XPS.PCL6*フィルターはのみ、ジョブの 1 つのコピーを生成し、GPD コマンドを使用して、部単位でのコピーを生成するデバイスに指示します。 フィルターに置き換えます NumOfCopies GPD コマンドで JobCopiesAllDocuments で指定されたコピーの数。
+1. 次の既定のマッピングが使用されます。
 
- 
+    | DocumentCollate の値  | GPD/PPD ファイルエントリ |
+    |------------------------|--------------------|
+    | PrintTicket 丁合いなし | PPD False          |
+    | PrintTicket の照合   | PPD True           |
 
-選択された照合順序に対して生成された PostScript は PPD 部単位印刷機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap を指定して、示さオプションの名前属性と一致する場合。
+1. DocumentCollate オプションの name 属性は、PPD のオプションの名前と一致します。
 
-2. 次の既定のマッピングが使用されます。
-
-| 示さ値  | GPD/PPD ファイルのエントリ |
-|------------------------|--------------------|
-| PrintTicket 丁合いなし | PPD False          |
-| PrintTicket の部単位で印刷   | PPD True           |
-
- 
-
-3. 示さオプションの name 属性、PPD. でオプションの名前に一致します。
-
-**注**  丁合いに設定されているときに示さ、PPD には、Collate 機能、または示さにマップされているキーワードである機能が含まれていて、デバイスが部単位でのコピーを生成できることと見なされます。 XPS.PS フィルターはのみ、ジョブの 1 つのコピーを生成し、PPD コマンドを使用して、部単位でのコピーを生成するデバイスに指示します。
-
- 
+> [!NOTE]
+> DocumentCollate が丁合いに設定されていて、PPD に Collate 機能が含まれている場合、または DocumentCollate にマップされたキーワードである機能がある場合は、デバイスが照合されたコピーを生成できることを前提としています。 XPS.PS フィルターは、ジョブのコピーを1つだけ生成し、PPD コマンドを使用して、照合されたコピーを生成するようにデバイスに指示します。
 
 ## <a name="jobduplexalldocumentscontiguously"></a>JobDuplexAllDocumentsContiguously
 
+この機能は、ドキュメントの境界を考慮せずに印刷ジョブの両面印刷を指定します。 両面印刷が指定されている場合、印刷ジョブ内のすべてのドキュメントのすべてのページは、ドキュメント間に空白ページを挿入せずに、常に二重に印刷されます。 サポートされているオプションは、OneSided、TwoSidedShortEdge、および TwoSidedLongEdge です。
 
-この機能は、ドキュメントの境界を考慮せず、印刷ジョブの両面印刷を指定します。 両面印刷が指定されている場合、印刷ジョブのすべてのドキュメントのすべてのページは双方向ドキュメント間の空白のページを挿入せずに継続的に印刷します。 OneSided、TwoSidedShortEdge、および TwoSidedLongEdge サポートされていることもできます。
+選択した二重に対して生成された PCL6 は、GPD デュプレックス機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した双方向に対して生成された PCL6 GPD 双方向機能を指定します。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、JobDuplexAllDocumentsContiguously オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、JobDuplexAllDocumentsContiguously オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | JobDuplexAllDocumentsContiguously 値 | GPD/PPD ファイルエントリ |
+    |-----------------------------------------|--------------------|
+    | PrintTicket OneSided                    | GPD NONE           |
+    | PrintTicket TwoSidedShortEdge           | GPD 横線     |
+    | PrintTicket TwoSidedLongEdge            | GPD VERTICAL       |
 
-| JobDuplexAllDocumentsContiguously 値 | GPD/PPD ファイルのエントリ |
-|-----------------------------------------|--------------------|
-| PrintTicket OneSided                    | GPD なし           |
-| PrintTicket TwoSidedShortEdge           | GPD 水平     |
-| PrintTicket TwoSidedLongEdge            | GPD 垂直       |
+1. JobDuplexAllDocumentsContiguously オプションの name 属性は、GPD のオプションの名前と一致します。
 
- 
+選択した二重用に生成された PostScript は、[使用する PPD] のオプションが次の順序で選択されます。
 
-3. JobDuplexAllDocumentsContiguously オプションの name 属性は、GPD でオプションの名前と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、JobDuplexAllDocumentsContiguously オプションの name 属性と一致します。
 
-選択した双方向に対して生成された PostScript は PPD で使用するオプションが次の順序で選択されている PPD 双方向機能によって指定されます。
-1. MSPrintSchemaKeywordMap が指定されており、JobDuplexAllDocumentsContiguously オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | JobDuplexAllDocumentsContiguously 値 | GPD/PPD ファイルエントリ |
+    |-----------------------------------------|--------------------|
+    | PrintTicket OneSided                    | [PPD None]           |
+    | PrintTicket TwoSidedShortEdge           | PPD duplextumum   |
+    | PrintTicket TwoSidedLongEdge            | PPD DuplexNoTumble |
 
-| JobDuplexAllDocumentsContiguously 値 | GPD/PPD ファイルのエントリ |
-|-----------------------------------------|--------------------|
-| PrintTicket OneSided                    | PPD なし           |
-| PrintTicket TwoSidedShortEdge           | PPD DuplexTumble   |
-| PrintTicket TwoSidedLongEdge            | PPD DuplexNoTumble |
-
- 
-
-3. JobDuplexAllDocumentsContiguously オプションの name 属性、PPD. でオプションの名前に一致します。
+1. JobDuplexAllDocumentsContiguously オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="documentduplex"></a>DocumentDuplex
 
+この機能は、印刷ジョブの関連ドキュメントの両面印刷を制御します。 これが指定されている場合、印刷される出力は、メディアの新しいシートの前面から開始されます。 サポートされているオプションは、OneSided、TwoSidedShortEdge、および TwoSidedLongEdge です。
 
-この機能は、印刷ジョブに関連付けられているドキュメントの両面印刷を制御します。 これが指定されている場合は、メディアの新しいシートの前面にある印刷出力が開始します。 サポートされているオプションは、OneSided、TwoSidedShortEdge、TwoSidedLongEdge です。
+選択した二重に対して生成された PCL6 は、GPD デュプレックス機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した双方向に対して生成された PCL6 GPD 双方向機能を指定します。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、DocumentDuplex オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、DocumentDuplex オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | DocumentDuplex 値          | GPD/PPD ファイルエントリ |
+    |-------------------------------|--------------------|
+    | PrintTicket OneSided          | GPD NONE           |
+    | PrintTicket TwoSidedShortEdge | GPD 横線     |
+    | PrintTicket TwoSidedLongEdge  | GPD VERTICAL       |
 
-| DocumentDuplex 値          | GPD/PPD ファイルのエントリ |
-|-------------------------------|--------------------|
-| PrintTicket OneSided          | GPD なし           |
-| PrintTicket TwoSidedShortEdge | GPD 水平     |
-| PrintTicket TwoSidedLongEdge  | GPD 垂直       |
+1. DocumentDuplex オプションの name 属性は、GPD 内のオプションの名前と一致します。
 
- 
+選択した双方向用に生成された PostScript は、PPD 二重機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-3. DocumentDuplex オプションの name 属性は、GPD でオプションの名前と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、DocumentDuplex オプションの name 属性と一致します。
 
-選択した双方向に対して生成された PostScript は PPD 双方向機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、DocumentDuplex オプションの名前属性と一致します。
+1. 次の既定のマッピングが使用されます。
 
-2. 次の既定のマッピングが使用されます。
+    | DocumentDuplex 値          | GPD/PPD ファイルエントリ |
+    |-------------------------------|--------------------|
+    | PrintTicket OneSided          | [PPD None]           |
+    | PrintTicket TwoSidedShortEdge | PPD duplextumum   |
+    | PrintTicket TwoSidedLongEdge  | PPD DuplexNoTumble |
 
-| DocumentDuplex 値          | GPD/PPD ファイルのエントリ |
-|-------------------------------|--------------------|
-| PrintTicket OneSided          | PPD なし           |
-| PrintTicket TwoSidedShortEdge | PPD DuplexTumble   |
-| PrintTicket TwoSidedLongEdge  | PPD DuplexNoTumble |
-
- 
-
-3. DocumentDuplex オプションの name 属性、PPD. でオプションの名前に一致します。
+1. DocumentDuplex オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="documentnup"></a>DocumentNUp
 
+この機能では、複数ページのコンテンツを物理メディアの各シートに印刷するように指定します。 また、印刷は、異なるドキュメントのコンテンツが同じシートに印刷されないように行う必要があります。 印刷スキーマの仕様では、このオプションの名前は指定されていません。ただし、このオプションでは、物理メディアの片面に配置されるページ数を指定する、スコア付け Edproperty とページ Persheet の値がサポートされています。 ページ Persheet のサポートされている値は1、2、4、6、8、9、12、16、25、32で、物理的なページの向きが2、6、8、12、および32に回転しています。
 
-この機能は、複数のページのコンテンツが物理メディアの各シートに印刷することを指定します。 異なるドキュメントの内容が同じシートに印刷されないように、印刷を行う必要があります。 印刷スキーマの仕様はこのオプションの名前を指定していません。ただし、オプションでは、物理メディアの 1 つの側では、ページの数を指定する ScoredProperty と PagesPerSheet の値をサポートします。 1、2、4、6、8、9、12、16、25、2、6、8、12、および 32 回転されている物理ページの向きで 32 PagesPerSheet の値を指定できます。
+選択した N アップに対して生成された PCL6 は、フィルターによって決定されます。
 
-選択した N-up に対して生成された PCL6 はフィルターによって決まります。
+選択した N-up 用に生成された PostScript は、フィルターによって決定されます。
 
-選択した N-up に対して生成された PostScript はフィルターによって決まります。
+### <a name="joboutputbin"></a>JobOutputBin
 
-**JobOutputBin**
+この機能は、印刷後にメディアが格納される印刷デバイス上の場所を示します。 サポートされているオプションは、対応する GPD/PPD エントリを持つオプションです。
 
-この機能では、印刷デバイスが印刷された後にメディアを格納する場所の場所について説明します。 サポートされているオプションは、対応する GPD/PPD エントリを持つです。
+選択した出力ビンに対して生成された PCL6 は、GPD OutputBin 機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した出力トレイ用に生成 PCL6 は GPD OutputBin 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap が指定されていて、\[Job | の name 属性と一致する場合は、Document |ページ\]OutputBin オプション。
 
-1. PrintSchemaKeywordMap を指定しての name 属性と一致するかどうか、\[ジョブ |ドキュメント |ページ\]OutputBin オプション。
+1. \[Job | の name 属性 |Document |ページ\]OutputBin オプションは、GPD のオプションの名前と一致します。
 
-2. Name 属性、\[ジョブ |ドキュメント |ページ\]OutputBin オプション、GPD でオプションの名前に一致します。
+選択した二重用に生成された PostScript は、PPD OutputBin 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択した双方向に対して生成された PostScript は PPD OutputBin 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap を指定しての name 属性と一致するかどうか、\[ジョブ |ドキュメント |ページ\]OutputBin オプション。
+1. MSPrintSchemaKeywordMap が指定されていて、\[Job | の name 属性と一致する場合は、Document |ページ\]OutputBin オプション。
 
-2. Name 属性、\[ジョブ |ドキュメント |ページ\]OutputBin オプション、PPD. でオプションの名前に一致
+1. \[Job | の name 属性 |Document |ページ\]OutputBin オプションは、PPD のオプションの名前と一致します。
 
 ## <a name="jobbindalldocuments"></a>JobBindAllDocuments
 
+この機能は、印刷ジョブで印刷されるシートにバインドする方法について説明します。 印刷ジョブのすべてのドキュメントを結合する必要があります。 サポートされているオプションは、None、BindBottom、Bindbottom、BindRight、Bindbottom、小冊子、EdgeStitchBottom、EdgeStitchLeft、EdgeStitchRight、および EdgeStitchTop です。
 
-この機能では、印刷ジョブで印刷された用紙のバインドのメソッドについて説明します。 印刷ジョブのすべてのドキュメントをまとめてバインドする必要があります。 サポートされているオプションは次のとおりです。None、BindBottom、BindLeft、BindRight、BindTop、小冊子、EdgeStitchBottom、EdgeStitchLeft、EdgeStitchRight および EdgeStitchTop します。
+[小冊子] が選択されている場合、フィルターの出力は2つの形式に設定されています。これにより、ジョブのシートのスタックが1つのページのうち半分に折りたたまれたときに、そのページがブックの正しい順序になります。
 
-小冊子を選択すると、フィルターの出力は再の順序は、半分のページに書籍の適切な順序でジョブ用のシートのスタックを折りたたむときにページを 2 枚として書式設定します。
+[小冊子] に BindingGutter のスコアが指定されている場合、フィルターによって、Jobbindallpaper margin パラメーターで指定されたサイズ以上の中央余白 (用紙の中央から拡大可能な領域の端まで) が適用されます。
 
-小冊子の BindingGutter ScoredProperty を指定すると、フィルターは JobBindAllDocumentsGutter パラメーターで指定されたサイズ以上である (からスケールの印刷可能領域の端に用紙のセンター) センター余白を適用します。
+[BindLeft] に BindingGutter の "Edproperty" を指定した場合、または EdgeStitchLeft フィルターを使用すると、Jobbindall パラメーターで指定したとおりに、シートの前面が右側に移動します。 右側のコンテンツは、印刷可能領域の外側に表示されます。 シートの背面のコンテンツは、Jobbindallsheet パラメーターで指定された右端にクリップされます。
 
-ときに、BindLeft BindingGutter ScoredProperty が指定されてまたは EdgeStitchLeft フィルター JobBindAllDocumentsGutter パラメーターで指定された右側に、シートの正面をシフトします。 印刷可能領域を今すぐ外側にある右側にあるコンテンツはクリップされます。 右端 JobBindAllDocumentsGutter パラメーターで指定したとおりに、シートの背面にある上のコンテンツがクリップされます。
+BindTop に BindingGutter を指定すると、EdgeStitchTop は、ワークシートの前面と裏面の両方の内容を、Jobbindall パラメーターで指定された下部に移動します。 現在、印刷可能領域の外側にあるコンテンツはクリップされます。
 
-BindTop BindingGutter ScoredProperty が指定されて、EdgeStitchTop フィルターは、下部 JobBindAllDocumentsGutter パラメーターで指定されたシートのフロント エンドとバックエンドの辺のコンテンツを移動します。 下部にある印刷可能領域を今すぐ外側にあるコンテンツはクリップされます。
+BindRight または EdgeStitchRight に BindingGutter の値 Edproperty が指定されている場合、フィルターは Jobbindall パラメーターで指定された右側のシートの前面にコンテンツをクリップします。 シートの背面のコンテンツは、Jobbindallsheet パラメーターで指定されているように左にシフトされます。 左側のコンテンツは、印刷可能領域の外にある内容がクリップされます。
 
-BindRight BindingGutter ScoredProperty が指定されて場合または EdgeStitchRight フィルターは、右側 JobBindAllDocumentsGutter パラメーターで指定されたシートの前面にあるコンテンツをクリップします。 シートの背面にある上のコンテンツは、JobBindAllDocumentsGutter パラメーターで指定した左にシフトされます。 印刷可能領域を今すぐ外側にある左側にあるコンテンツはクリップされます。
+BindBottom または EdgeStitchBottom に BindingGutter の焦げ Edproperty が指定されている場合、フィルターは、Jobbindall パラメーターで指定されているように、シートの前面と裏面の両方の内容を一番上に移動します。 上部に印刷可能領域の外側にあるコンテンツはクリップされます。
 
-BindBottom または EdgeStitchBottom BindingGutter ScoredProperty を指定すると、フィルターは、上部 JobBindAllDocumentsGutter パラメーターで指定されたシートのフロント エンドとバックエンドの辺のコンテンツを移動します。 印刷可能領域を今すぐ外側にある上部のコンテンツはクリップされます。
+> [!NOTE]
+> バインドエッジは、ジョブ内の最初のドキュメントの最初のページの向きに基づいて指定されたエッジです。 その他のオプションについては、BindingGutter は無視されます。
 
-**注**  綴じ辺は、ジョブの最初のドキュメントの最初のページの向きに基づいて指定されたエッジ。 その他のすべてのオプション、BindingGutter は無視されます。
+GPD ファイルで、選択したオプションのコマンドが指定されていない場合は、選択したバインドに対して生成された PCL6 がフィルターによって決定されます。
 
- 
-
-GPD ファイルが選択されているオプションのコマンドを指定しない場合は、フィルターによって選択したバインドに対して生成された PCL6 が決まります。
-
-PPD ファイルが選択したオプションの呼び出しコマンドを指定しない場合は、フィルターによって選択したバインドに対して生成された PostScript が決まります。
+選択したオプションの呼び出しコマンドが PPD ファイルによって指定されていない場合、選択したバインドに対して生成される PostScript はフィルターによって決定されます。
 
 ## <a name="documentbinding"></a>DocumentBinding
 
+この機能は、印刷ジョブに関連付けられているドキュメントの印刷シートをバインドするときに使用する方法について説明します。 ドキュメント内のすべてのページを結合する必要があります。 サポートされているオプションは、None、BindBottom、Bindbottom、BindRight、Bindbottom、小冊子、EdgeStitchBottom、EdgeStitchLeft、EdgeStitchRight、および EdgeStitchTop です。
 
-この機能では、印刷ジョブに関連付けられているドキュメントの印刷された用紙をバインドするときに使用する方法について説明します。 ドキュメント内のすべてのページをまとめてバインドする必要があります。 サポートされているオプションは次のとおりです。None、BindBottom、BindLeft、BindRight、BindTop、小冊子、EdgeStitchBottom、EdgeStitchLeft、EdgeStitchRight、および EdgeStitchTop します。
+[小冊子] を選択すると、フィルターの出力は2つの形式になり、ページが並べ替えられます。これにより、ドキュメントのシートのスタックが、1つのブックに対して適切な順序で折りたたまれます。
 
-小冊子を選択すると、再の順序は、半分のページに書籍の適切な順序でドキュメントのシートのスタックを折りたたむときにページを使用して、フィルターの出力を 2 枚としてフォーマットされます。
+"小冊子" に BindingGutter の焦げ Edproperty が指定されている場合、フィルターにより、DocumentBindingGutter パラメーターで指定されているサイズ以上の中央余白 (用紙の中央から拡大可能な領域の端まで) が適用されます。
 
-小冊子の BindingGutter ScoredProperty を指定すると、フィルターは DocumentBindingGutter パラメーターで指定されたサイズ以上である (からスケールの印刷可能領域の端に用紙のセンター) センター余白を適用します。
+BindLeft または EdgeStitchLeft に BindingGutter の値 Edproperty が指定されている場合、フィルターは DocumentBindingGutter パラメーターで指定されているとおりに、シートのフロントサイドを右に移動します。 右側のコンテンツは、印刷可能領域の外側に表示されます。 シートの背面のコンテンツは、DocumentBindingGutter パラメーターで指定された右端にクリップされます。
 
-BindLeft または EdgeStitchLeft BindingGutter ScoredProperty が指定されて、フィルター、シートの前面にある DocumentBindingGutter パラメーターで指定された右にシフトします。 印刷可能領域を今すぐ外側にある右側にあるコンテンツはクリップされます。 右端 DocumentBindingGutter パラメーターで指定したとおりに、シートの背面にある上のコンテンツがクリップされます。
+BindTop または EdgeStitchTop に BindingGutter の値 Edproperty が指定されている場合、フィルターは、シートの前面と裏面の両方の内容を DocumentBindingGutter パラメーターで指定された下部に移動します。 現在、印刷可能領域の外側にあるコンテンツはクリップされます。
 
-BindTop または EdgeStitchTop BindingGutter ScoredProperty を指定すると、フィルターは、下部に DocumentBindingGutter パラメーターで指定されたシートのフロント エンドとバックエンドの辺のコンテンツを移動します。 下部にある印刷可能領域を今すぐ外側にあるコンテンツはクリップされます。
+BindRight または EdgeStitchRight に BindingGutter の焦げ Edproperty が指定されている場合、DocumentBindingGutter パラメーターで指定されているとおり、フィルターによって右側のシートの前面にコンテンツがクリップされます。 シートの背面のコンテンツは、DocumentBindingGutter パラメーターで指定されているように左にシフトされます。 左側のコンテンツは、印刷可能領域の外にある内容がクリップされます。
 
-BindRight BindingGutter ScoredProperty が指定されて場合または EdgeStitchRight フィルターは、右側 DocumentBindingGutter パラメーターで指定されたシートの前面にあるコンテンツをクリップします。 シートの背面にある上のコンテンツは、DocumentBindingGutter パラメーターで指定した左にシフトされます。 印刷可能領域を今すぐ外側にある左側にあるコンテンツはクリップされます。
+BindBottom または EdgeStitchBottom に BindingGutter の "Edproperty" が指定されている場合、フィルターは DocumentBindingGutter パラメーターで指定されているように、シートの前面と裏面の両方の内容を一番上に移動します。 上部に印刷可能領域の外側にあるコンテンツはクリップされます。
 
-BindBottom または EdgeStitchBottom BindingGutter ScoredProperty を指定すると、フィルターは、上部 DocumentBindingGutter パラメーターで指定されたシートのフロント エンドとバックエンドの辺のコンテンツを移動します。 印刷可能領域を今すぐ外側にある上部のコンテンツはクリップされます。
+> [!NOTE]
+> バインドエッジは、ドキュメントの最初のページの向きに基づいて指定されたエッジです。 その他のオプションについては、BindingGutter は無視されます。
 
-**注**  綴じ辺は、ドキュメントの最初のページの向きに基づいて指定されたエッジ。 その他のすべてのオプション、BindingGutter は無視されます。
+GPD ファイルで、選択したオプションのコマンドが指定されていない場合は、選択したバインドに対して生成された PCL6 がフィルターによって決定されます。
 
- 
+選択したオプションの呼び出しコマンドが PPD ファイルによって指定されていない場合、選択したバインドに対して生成される PostScript はフィルターによって決定されます。
 
-GPD ファイルが選択されているオプションのコマンドを指定しない場合は、フィルターによって選択したバインドに対して生成された PCL6 が決まります。
+## <a name="jobstaplealldocuments"></a>Jobのすべてのドキュメント
 
-PPD ファイルが選択したオプションの呼び出しコマンドを指定しない場合は、フィルターによって選択したバインドに対して生成された PostScript が決まります。
+この機能は、印刷ジョブで印刷したシートをホチキス止めするときに使用する方法について説明します。 ジョブ内のすべてのドキュメントを一緒にホチキス止めする必要があります。 サポートされているオプションは、対応する GPD/PPD エントリを持つものです。
 
-## <a name="jobstaplealldocuments"></a>JobStapleAllDocuments
+選択したホチキス止め用に生成された PCL6 は、GPD ホチキス止め機能によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
+1. 場合 PrintSchemaKeywordMap が指定されている場合は、Job の名前属性と一致します。
 
-この機能は、印刷ジョブで印刷された用紙をステープル処理するときに使用する方法を説明します。 ジョブ内のすべてのドキュメントは、まとめてホチキス止めにする必要があります。 サポートされているオプションは、対応する GPD/PPD エントリで。
+1. JobGPD の name 属性は、このオプションの名前と一致します。
 
-選択したホチキス止めの生成 PCL6 は GPD ホチキス止めの機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+選択したホチキス止め用に生成された PostScript は、MSPrintSchemaKeywordMap の値が Job に指定された PPD 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-1. PrintSchemaKeywordMap が指定されており、JobStapleAllDocuments オプションの名前属性と一致します。
+1. 場合 MSPrintSchemaKeywordMap が指定されている場合は、Job の名前属性と一致します。
 
-2. JobStapleAllDocuments オプションの name 属性は、GPD でオプションの名前と一致します。
-
-選択したホチキス止めに対して生成された PostScript は JobStapleAllDocuments または DocumentStaple MSPrintSchemaKeywordMap 値を持つ PPD 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、JobStapleAllDocuments オプションの名前属性と一致します。
-
-2. JobStapleAllDocuments オプションの name 属性、PPD. でオプションの名前に一致します。
+1. Jobている Alldocuments オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="jobholepunch"></a>JobHolePunch
 
+この機能では、印刷ジョブに穴を印刷するときに使用する方法について説明します。 ジョブ内のすべてのドキュメントにパンチ穴をあけする必要があります。 サポートされているオプションは、対応する GPD/PPD エントリを持つものです。
 
-この機能は、ときに使用する方法を説明します。 印刷ジョブで印刷された用紙のパンチ穴します。 ジョブのすべてのドキュメントには、一緒にパンチ穴必要があります。 サポートされているオプションは、対応する GPD/PPD エントリで。
+選択した穴あけ用に生成された PCL6 は、GPD 機能で PrintSchemaKeywordMap 値 JobHolePunch または DocumentHolePunch によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した穴のパンチ穴を生成する PCL6 は JobHolePunch または DocumentHolePunch PrintSchemaKeywordMap 値を持つ GPD 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、JobHolePunch オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、JobHolePunch オプションの名前属性と一致します。
+1. JobHolePunch オプションの name 属性は、GPD のオプションの名前と一致します。
 
-2. JobHolePunch オプションの name 属性は、GPD でオプションの名前と一致します。
+選択した穴あけ用に生成された PostScript は、MSPrintSchemaKeywordMap 値が JobHolePunch または DocumentHolePunch の PPD 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択した穴のパンチ穴を生成する PostScript は JobHolePunch または DocumentHolePunch MSPrintSchemaKeywordMap 値を持つ PPD 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、JobHolePunch オプションの名前属性と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、JobHolePunch オプションの name 属性と一致します。
 
-2. JobHolePunch オプションの name 属性、PPD. でオプションの名前に一致します。
+1. JobHolePunch オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="documentholepunch"></a>DocumentHolePunch
 
+この機能は、印刷ジョブに関連付けられているドキュメントの印刷シートをパンチ穴にパンチするときに使用する方法について説明します。 ドキュメント内のすべてのページがパンチ穴に穴をあけている必要があります。 サポートされているオプションは、対応する GPD/PPD エントリを持つものです。
 
-この機能は、ときに使用する方法を説明します。 印刷ジョブに関連付けられているドキュメントの印刷された用紙のパンチ穴します。 すべてのページ、ドキュメントに一緒にパンチ穴があります。 サポートされているオプションは、対応する GPD/PPD エントリで。
+選択した穴あけ用に生成された PCL6 は、GPD 機能で PrintSchemaKeywordMap 値 JobHolePunch または DocumentHolePunch によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した穴のパンチ穴を生成する PCL6 は JobHolePunch または DocumentHolePunch PrintSchemaKeywordMap 値を持つ GPD 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、DocumentHolePunch オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、DocumentHolePunch オプションの名前属性と一致します。
+1. DocumentHolePunch オプションの name 属性は、GPD のオプションの名前と一致します。
 
-2. DocumentHolePunch オプションの name 属性は、GPD でオプションの名前と一致します。
+選択した穴あけ用に生成された PostScript は、MSPrintSchemaKeywordMap 値が JobHolePunch または DocumentHolePunch の PPD 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択した穴のパンチ穴を生成する PostScript は JobHolePunch または DocumentHolePunch MSPrintSchemaKeywordMap 値を持つ PPD 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、DocumentHolePunch オプションの名前属性と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、DocumentHolePunch オプションの name 属性と一致します。
 
-2. DocumentHolePunch オプションの name 属性、PPD. でオプションの名前に一致します。
+1. DocumentHolePunch オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="pagemirrorimage"></a>PageMirrorImage
 
+この機能は、ページコンテンツをミラー化する必要があるかどうかを指定します。 サポートされているオプションは None と MirrorImageWidth です。
 
-この機能は、ページの内容をミラー化するかどうかを指定します。 サポートされているオプションは None と MirrorImageWidth します。
+選択したミラーリング用に生成された PCL6 は、GPD 機能で PrintSchemaKeywordMap 値が PageMirrorImage によって指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択したミラーリング用に生成 PCL6 は PageMirrorImage の PrintSchemaKeywordMap 値を持つ GPD 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、PageMirrorImage オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageMirrorImage オプションの名前属性と一致します。
+1. PageMirrorImage オプションの name 属性は、GPD のオプションの名前と一致します。
 
-2. PageMirrorImage オプションの name 属性は、GPD でオプションの名前と一致します。
+選択したミラーリング用に生成された PostScript は、PPD MirrorPrint 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択したミラーリング用に生成 PostScript は PPD MirrorPrint 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、PageMirrorImage オプションの名前属性と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、PageMirrorImage オプションの name 属性と一致します。
 
-2. 次の既定のマッピングが使用されます。
+1. 次の既定のマッピングが使用されます。
 
-| PageMirrorImage 値        | GPD/PPD ファイルのエントリ |
-|------------------------------|--------------------|
-| PrintTicket なし             | PPD False          |
-| PrintTicket MirrorImageWidth | PPD True           |
+    | PageMirrorImage 値        | GPD/PPD ファイルエントリ |
+    |------------------------------|--------------------|
+    | PrintTicket なし             | PPD False          |
+    | PrintTicket MirrorImageWidth | PPD True           |
 
- 
-
-3. PageMirrorImage オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageMirrorImage オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="pagenegativeimage"></a>PageNegativeImage
 
+この機能は、ページコンテンツがネガイメージである必要があるかどうかを指定します。 サポートされているオプションは None と負です。
 
-この機能は、そのかどうか、ページのコンテンツが負のイメージをする必要がありますを指定します。 サポートされているオプションは、None と負です。
+選択した否定印刷用に生成された PCL6 は、GPD 機能で PrintSchemaKeywordMap 値 PageNegativeImage を使用して指定されます。 使用する GPD のオプションは、次の順序で選択されます。
 
-選択した負の印刷用に生成 PCL6 は PageNegativeImage の PrintSchemaKeywordMap 値を持つ GPD 機能によって指定されます。 次の順序で使用する、GPD でオプションが選択されます。
+1. PrintSchemaKeywordMap を指定した場合、PageNegativeImage オプションの name 属性と一致します。
 
-1. PrintSchemaKeywordMap が指定されており、PageNegativeImage オプションの名前属性と一致します。
+1. PageNegativeImage オプションの name 属性は、GPD のオプションの名前と一致します。
 
-2. PageNegativeImage オプションの name 属性は、GPD でオプションの名前と一致します。
+選択したネガ印刷用に生成された PostScript は、PPD NegativePrint 機能によって指定されます。 使用する PPD のオプションは、次の順序で選択されます。
 
-選択された負の印刷用に生成された PostScript は PPD NegativePrint 機能によって指定されます。 次の順序で PPD で使用するオプションが選択されます。
-1. MSPrintSchemaKeywordMap が指定されており、PageNegativeImage オプションの名前属性と一致します。
+1. MSPrintSchemaKeywordMap を指定した場合、PageNegativeImage オプションの name 属性と一致します。
 
-2. 次の既定のマッピングが使用されます。
+1. 次の既定のマッピングが使用されます。
 
-| PageNegativeImage 値 | GPD/PPD ファイルのエントリ |
-|-------------------------|--------------------|
-| PrintTicket なし        | PPD False          |
-| PrintTicket 負の値    | PPD True           |
+    | PageNegativeImage 値 | GPD/PPD ファイルエントリ |
+    |-------------------------|--------------------|
+    | PrintTicket なし        | PPD False          |
+    | PrintTicket 負の値    | PPD True           |
 
- 
-
-3. PageNegativeImage オプションの name 属性、PPD. でオプションの名前に一致します。
+1. PageNegativeImage オプションの name 属性は、PPD のオプションの名前と一致します。
 
 ## <a name="related-topics"></a>関連トピック
 
-[PageMediaSize の既定のマッピング](default-pagemediasize-mappings.md)  
+[既定の PageMediaSize マッピング](default-pagemediasize-mappings.md)  
 
-[標準的な XPS のフィルター](standard-xps-filters.md)  
+[標準の XPS フィルター](standard-xps-filters.md)  
 
-印刷スキーマの仕様は、ここでダウンロードできます。
+印刷スキーマの仕様は、次の場所でダウンロードできます。
 
-[印刷スキーマ仕様 1.1](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/print-schema-spec-1-1.zip)
+[印刷スキーマの仕様1.1](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/print-schema-spec-1-1.zip)
 
-[印刷スキーマの仕様を 2.0](http://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)
-
-
+[印刷スキーマの仕様2.0](https://download.microsoft.com/download/d/e/c/deca6e6b-3e81-48e7-b7ef-6d92a547d03c/print-schema-spec-2-0.zip)

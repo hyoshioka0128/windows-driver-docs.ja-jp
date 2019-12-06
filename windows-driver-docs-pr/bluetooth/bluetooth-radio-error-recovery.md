@@ -1,19 +1,19 @@
 ---
-title: Bluetooth ラジオのリセットと回復
+title: Bluetooth 無線のリセットと回復
 description: Bluetooth ラジオの自動エラー復旧メカニズム
 keywords:
 - Bluetooth 無線エラー回復
 - Bluetooth PLDR
 ms.date: 09/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ef87ac6b295d32a1c47dffefb70909fafa5d1d99
-ms.sourcegitcommit: 37ec8aa998c7be7c5892c6e7fa1b761733dabc05
+ms.openlocfilehash: 1def050b43664789bb89ba8e765e4371b959650f
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71316822"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860762"
 ---
-# <a name="bluetooth-radio-reset-and-recovery"></a>Bluetooth ラジオのリセットと回復
+# <a name="bluetooth-radio-reset-and-recovery"></a>Bluetooth 無線のリセットと回復
 
 Bluetooth ラジオのリセットと回復は、Bluetooth ラジオ用の堅牢なリセットと復旧のメカニズムを導入する、Windows 10 バージョン1803以降のテクノロジです。 このメカニズムにより、Bluetooth ラジオは、誤動作、接続の切断、または操作コマンドへの無応答の原因となるハードウェア障害から回復できます。 目標は、無線を自動的に回復し、ユーザーエクスペリエンスをシームレスにし、システムの再起動が必要になる可能性を減らすことです。
 
@@ -49,9 +49,9 @@ Bluetooth のリセットと回復が開始される問題には、次の3つの
 | 関数レベルのデバイスのリセット (FLDR) | リセット操作は特定のデバイスに制限され、他のデバイスからは表示されません。 再列挙がありません。 関数ドライバーは、操作後にハードウェアが元の状態に戻ったと想定する必要があります。  中間状態は保持されません。
 | プラットフォームレベルのデバイスリセット (PLDR) | リセット操作は、特定のデバイスと、それに接続されている他のすべてのデバイスに、同じ電源レールまたはリセットラインを使用して影響を及ぼします。 リセット操作を実行すると、バスからデバイスが不足していると報告され、再列挙されます。 この種類のリセットは、リソースを共有するすべてのデバイスが元の状態に戻るため、システムに最も影響を与えます。|
 
-- **FLDR をサポートするに**は、次のように、__ADR_名前空間内で、 [ACPI ファームウェアで詳細に定義されている __ RST メソッドが定義されている必要があります。関数レベルのリセット](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-function-level-reset)。
+- **FLDR をサポートするに**は、 [「ACPI ファームウェア: 関数レベルのリセット](https://docs.microsoft.com/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-function-level-reset)」で詳しく説明されているように、__ADR_名前空間内で定義されている __RST メソッドが必要です。
 
-- **Pldr をサポートするに**は、次のように、__ADR_名前空間で定義されているよう[に、ACPI ファームウェアでの詳細な方法を定義する必要があります。プラットフォームレベルのリセット](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-platform-level-reset)。 __PR3_メソッドが使用されている場合、ACPI は D3Cold の電源サイクル機構を使用してリセットします。 これにより、デバイスから電力が削除され、その後復元されます。 他のデバイスが同じ電源レールを共有している場合は、そのデバイスもリセットされます。 __RST_メソッドが定義されていて、__PRR_ (powerresource) によって参照されている場合、その powerresource を使用するすべてのデバイスが影響を受けます。
+- **PLDR をサポートするに**は、 [「ACPI ファームウェア: プラットフォームレベルのリセット](https://docs.microsoft.com/windows-hardware/drivers/kernel/resetting-and-recovering-a-device#acpi-firmware-platform-level-reset)」で詳しく説明されているように、__ADR_名前空間内で定義されている _RST または _PR3 メソッドが必要です。 __PR3_メソッドが使用されている場合、ACPI は D3Cold の電源サイクル機構を使用してリセットします。 これにより、デバイスから電力が削除され、その後復元されます。 他のデバイスが同じ電源レールを共有している場合は、そのデバイスもリセットされます。 __RST_メソッドが定義されていて、__PRR_ (powerresource) によって参照されている場合、その powerresource を使用するすべてのデバイスが影響を受けます。
 
   - PLDR は内部デバイスに対してのみ機能するため、ACPI のように宣言する必要があります。 USB デバイスの場合、内部で (ユーザーに表示されない) ポートを指定し、統合されたデバイスに接続できるようにするには、_ UPC を設定し_ます。PortIsConnectable_バイトを0xff と __pld にします。UserVisible_ビットを0にします。
 
@@ -65,4 +65,4 @@ Bluetooth のリセットと回復が開始される問題には、次の3つの
 
 ### <a name="related-links"></a>関連リンク
 
-[デバイスのリセットと回復](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/resetting-and-recovering-a-device)
+[デバイスのリセットと回復](https://docs.microsoft.com/windows-hardware/drivers/kernel/resetting-and-recovering-a-device)

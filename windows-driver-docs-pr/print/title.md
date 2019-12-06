@@ -1,9 +1,9 @@
 ---
-title: Title 要素
-description: 必要な title 要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。
+title: title 要素
+description: 必須の title 要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。
 ms.assetid: 60583593-9fe9-4c3c-ab86-3e7c37a8e199
 keywords:
-- 要素の印刷デバイスをタイトルします。
+- タイトル要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,20 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acbf9669af62899138560270cc89345eeeb869b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec932e1f3621f38f4136c5999725cc282afcfd55
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368889"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881898"
 ---
-# <a name="title-element"></a>Title 要素
+# <a name="title-element"></a>title 要素
 
+必須の**title**要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。
 
-必要な**タイトル**要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。
+**Title**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
-**タイトル**で要素が定義されている、 *asyncui*この URI に、名前空間: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](http://schemas.microsoft.com/2003/print/asyncui/v1/request )します。 (このリソースできない場合がありますのいくつかの言語および国。)
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用方法
 
 ```xml
 <title
@@ -35,8 +33,7 @@ ms.locfileid: "63368889"
   resourceDll = "xs:string"/>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 <table>
 <colgroup>
@@ -47,37 +44,35 @@ ms.locfileid: "63368889"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>種類</th>
-<th>必須</th>
+<th>備わっている</th>
+<th>タスクバーの検索ボックスに</th>
+<th>必須かどうか</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>ResourceDll</strong></p></td>
+<td><p><strong>resourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>必須ではない</p></td>
 <td><p></p>
-<p>リソース イベントの通知メッセージを表示するタイトル テキストを含む DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
+<p>イベント通知メッセージに表示するタイトルテキストを含むリソース DLL を指定する、省略可能な属性です。 この DLL は、プリンタドライバの依存ファイルである必要があり、ドライバリソースフォルダに存在する必要があります (たとえば、%SYSTEMROOT%\system32\spool\drivers\w32x86\3)。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
 <td><p></p>
-<p>イベント通知メッセージのタイトルに表示するテキストを指定する必須の属性。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
+<p>イベント通知メッセージのタイトルに表示するテキストを指定する必須の属性です。 属性値は、リソース DLL 内のテキスト文字列の場所を指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="child-elements"></a>子要素
 
-
 子要素はありません。
 
 ## <a name="parent-elements"></a>親要素
-
 
 <table>
 <colgroup>
@@ -94,22 +89,20 @@ ms.locfileid: "63368889"
 <tr class="odd">
 <td><p><a href="balloonui.md" data-raw-source="[&lt;strong&gt;balloonUI&lt;/strong&gt;](balloonui.md)"><strong>balloonUI</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターでメッセージ バルーンの表示に使用される省略可能な要素です。</p></td>
+<p>クライアントコンピューターにメッセージバルーンを表示するために使用される省略可能な要素。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>注釈
 
-場合、属性**resourceDll**が指定されていない、Microsoft 提供のユーザー インターフェイスの DLL Prnntfy.dll からタイトルのテキストが生成されます。
+属性**Resourcedll**が指定されていない場合、Microsoft が提供するユーザーインターフェイス dll Prnntfy からタイトルテキストが生成されます。
 
-リソース DLL から読み込まれた本文が割合 (%) を含めることができます。指定されたテキスト文字列で置き換えられる文字、 [**パラメーター** ](parameter.md)子要素。
+リソース DLL から読み込まれた本文のテキストには、パーセンテージ (%) を含めることができます。[**parameter**](parameter.md)子要素で指定されたテキスト文字列に置き換えられる文字。
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
-次のコード例を使用する方法を示しています、**タイトル**をリソース DLL の場所の文字列を示す要素 (この例では、stringID =「1234」) タイトルに使用するテキストを格納しています。
+**Title 要素を**使用して、タイトルに使用されるテキストが含まれているリソース DLL 内の文字列の場所 (この例では stringid = "1234") を示すコード例を次に示します。
 
 ```cpp
 <?xml version="1.0" ?>

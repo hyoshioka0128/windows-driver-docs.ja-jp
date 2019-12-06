@@ -12,12 +12,12 @@ keywords:
 - デバイスエラーの報告 (WDK KMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 90dc924ad4c7cb0d36e3098d0c5b8084e6024021
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 52319a0abeb81d9f66e0ef92faf4ef00d4c2b60b
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842210"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863100"
 ---
 # <a name="reporting-device-failures"></a>デバイスの障害の報告
 
@@ -28,11 +28,11 @@ ms.locfileid: "72842210"
 
 -  ドライバーは[**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出すことができます。
 
--  [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックルーチンから制御が戻るときに、関数ドライバーは、 [NT\_SUCCESS](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)(*状態*) が**FALSE**になる戻り値を指定できます。 [フィルタ]( https://docs.microsoft.com/en-us/windows-hardware/drivers/install/installing-a-filter-driver)としてインストールされたドライバが[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)に失敗した場合、オペレーティングシステムはフィルタデバイスオブジェクトをスキップし、PnP エラーを示しません。
+-  [*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックルーチンから制御が戻るときに、関数ドライバーは、 [NT\_SUCCESS](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-ntstatus-values)(*状態*) が**FALSE**になる戻り値を指定できます。 [フィルタ]( https://docs.microsoft.com/windows-hardware/drivers/install/installing-a-filter-driver)としてインストールされたドライバが[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)に失敗した場合、オペレーティングシステムはフィルタデバイスオブジェクトをスキップし、PnP エラーを示しません。
 
 上記の方法では、フレームワークによってデバイスが実質的に削除されます。 デバイスのドライバーがシステム上の他のデバイスをサポートしていない場合は、i/o マネージャーによってドライバーがアンロードされます。
 
-ドライバーのデバイスオブジェクトコールバック関数が、NT\_SUCCESS (*状態*) が**FALSE**に等しい値を返した場合、フレームワークは PnP マネージャーに通知します。これにより、バスドライバーによってデバイスの再起動が試行されます。ハードウェア. ドライバーがアンロードされた場合は、再読み込みされます。
+ドライバーのデバイスオブジェクトコールバック関数が、NT\_SUCCESS (*状態*) が**FALSE**に等しい値を返した場合、フレームワークは PnP マネージャーに通知します。その後、デバイスを reenumerate するようにバスドライバーに要求することによって、デバイスの再起動を試みます。 ドライバーがアンロードされた場合は、再読み込みされます。
 
 ドライバーが[**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出すと、デバイスを再起動するかどうかを決定する入力引数が提供されます。 引数の値は**Wdfdevicefailedattemptrestart**と**WdfDeviceFailedNoRestart**です。
 
@@ -43,7 +43,7 @@ ms.locfileid: "72842210"
 
 短時間以内に複数回の再起動が失敗した場合 (再起動されたドライバーによってエラーが再度報告される)、フレームワークはデバイスの再起動を停止します。
 
-バスドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が、NT\_SUCCESS (*状態*) が**FALSE**に等しい値を返した場合、このフレームワークは、バスドライバーに関連付けられているドライバーの*EvtDeviceD0Entry*関数を呼び出す可能性があります。子デバイス。
+バスドライバーの[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が、NT\_SUCCESS (*状態*) が**FALSE**に等しい値を返す場合、そのバスドライバーの子デバイスに関連付けられているドライバーの*EvtDeviceD0Entry*関数がフレームワークによって呼び出されることがあります。
 
  
 

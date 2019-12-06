@@ -4,14 +4,14 @@ description: ユーザーモード ダンプ ファイル
 ms.assetid: bef29d75-6620-4219-b402-36fbddc4fe1f
 keywords:
 - ダンプファイル、ユーザーモード
-ms.date: 10/04/2019
+ms.date: 12/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f97674802693100fd426d77e06420e3a6c66d0
-ms.sourcegitcommit: bff7fdcac628f8b62bd9df2658ca56301d1f8b07
+ms.openlocfilehash: a0d2f9e217d5d33331924d6f6619335eed8a0371
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72030803"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861927"
 ---
 # <a name="user-mode-dump-files"></a>ユーザーモード ダンプ ファイル
 
@@ -22,7 +22,6 @@ ms.locfileid: "72030803"
 - [ユーザーモードのダンプファイルを作成する](#creating)
 
 ダンプファイルの分析の詳細については、「[ユーザーモードのダンプファイルの分析](analyzing-a-user-mode-dump-file.md)」を参照してください。
-
 
 ## <a name="span-idvarietiesspanspan-idvarietiesspan-varieties-of-user-mode-dump-files"></a><span id="varieties"></span><span id="VARIETIES"></span>ユーザーモードのダンプファイルの種類
 
@@ -36,7 +35,6 @@ ms.locfileid: "72030803"
 
 **注**   ダンプファイルを分析することで、多くの情報を取得できます。 ただし、デバッガーを使用して直接クラッシュをデバッグするのと同じほど多くの情報をダンプファイルに提供できません。
 
-
 ## <a name="span-idfullspanspan-idfullspanfull-user-mode-dumps"></a><span id="full"></span><span id="FULL"></span>完全なユーザーモードダンプ
 
 *完全なユーザーモードダンプ*は、ユーザーモードの基本ダンプファイルです。
@@ -47,10 +45,7 @@ ms.locfileid: "72030803"
 
 **メモ**   名前にかかわらず、最大の "ミニダンプ" ファイルには、完全なユーザーモードダンプよりも多くの情報が含まれています。 たとえば、 **. dump/mf**または **. dump/ma**では、 **. dump/f**よりも大規模で完全なファイルが作成されます。
 
-
 ユーザーモードでは、 **. dump/m\[** <em>minioptions</em> **\]** が最適な選択肢です。 このスイッチを使用して作成されたダンプファイルのサイズは、非常に小さいものから大きくなる場合があります。 適切な*Minioptions*を指定することによって、含まれる情報を正確に制御できます。
-
-
 
 ## <a name="span-idminidumpsspanspan-idminidumpsspanminidumps"></a><span id="minidumps"></span><span id="MINIDUMPS"></span>ミニダンプ
 
@@ -103,7 +98,7 @@ ms.locfileid: "72030803"
 <td align="left"><p>ミニダンプに<em>セカンダリメモリ</em>を追加します。 セカンダリメモリは、スタックまたはバッキングストアのポインターによって参照される任意のメモリと、このアドレスを囲む小さい領域で参照されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><bpt id="p1">&lt;strong&gt;</bpt>/mp<ept id="p1">&lt;/strong&gt;</ept></p></td>
+<td align="left"><p><strong>/mp</strong></p></td>
 <td align="left"><p>プロセス環境ブロック (PEB) とスレッド環境ブロック (TEB) のデータをミニダンプに追加します。 これは、アプリケーションのプロセスとスレッドに関する Windows システム情報にアクセスする必要がある場合に便利です。</p></td>
 </tr>
 <tr class="odd">
@@ -133,91 +128,19 @@ ms.locfileid: "72030803"
 </tbody>
 </table>
 
-
 これらのオプションは組み合わせて使用できます。 たとえば、 **/mfiu**を使用すると、非常に大きなミニダンプやコマンドを作成でき**ます。 dump/mrR**を使用すると、ユーザーのプライバシーを維持するミニダンプを作成できます。 完全な構文の詳細については、「[**ダンプ (ダンプファイルの作成)** ](-dump--create-dump-file-.md)」を参照してください。
-
 
 ## <a name="span-idcreatingspanspan-idcreatingspancreating-a-user-mode-dump-file"></a><span id="creating"></span><span id="CREATING"></span>ユーザーモードのダンプファイルを作成する
 
-ユーザーモードのダンプファイルの作成に使用できるツールには、CDB、WinDbg、Windows エラー報告 (WER)、UserDump、および ADPlus のいくつかがあります。
+ユーザーモードのダンプファイルの作成に使用できるツールには、CDB、WinDbg、Procdump のいくつかがあります。
 
-ADPlus を使用したユーザーモードのダンプファイルの作成の詳細については、「 [adplus](adplus.md)」を参照してください。
+## <a name="span-idprocdumpspanspan-idprocdumpspanprocdump"></a><span id="procdump"></span><span id="Procdump"></span>ProcDump
 
-WER を使用したユーザーモードのダンプファイルの作成の詳細については、「 [Windows エラー報告](windows-error-reporting.md)」を参照してください。
+ProcDump は、CPU スパイクのためにアプリケーションを監視し、管理者または開発者がスパイクの原因を特定するために使用できるスパイク中にクラッシュダンプを生成することを主な目的としているコマンドラインユーティリティです。 また、ProcDump には、ハングしたウィンドウの監視 (Windows およびタスクマネージャーが使用するウィンドウのハングと同じ定義を使用)、未処理の例外監視、システムパフォーマンスカウンターの値に基づいたダンプの生成が含まれます。 また、他のスクリプトに埋め込むことができる一般的なプロセスダンプユーティリティとしても使用できます。
 
+Sysinternals ProcDump ユーティリティを使用してユーザーモードのダンプファイルを作成する方法の詳細については、「 [ProcDump](https://docs.microsoft.com/sysinternals/downloads/procdump)」を参照してください。
 
-## <a name="span-idddk_choosing_the_best_tool_dbgspanspan-idddk_choosing_the_best_tool_dbgspanchoosing-the-best-tool"></a><span id="ddk_choosing_the_best_tool_dbg"></span><span id="DDK_CHOOSING_THE_BEST_TOOL_DBG"></span>最適なツールの選択
-
-ユーザーモードのダンプファイルを作成できるツールはいくつかあります。 ほとんどの場合、ADPlus は使用するのに最適なツールです。
-
-次の表は、各ツールの機能を示しています。
-
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">機能</th>
-<th align="left"><a href="adplus.md" data-raw-source="[ADPlus](adplus.md)">立ち</a></th>
-<th align="left"><a href="windows-error-reporting.md" data-raw-source="[Windows Error Reporting](windows-error-reporting.md)">Windows エラー報告</a></th>
-<th align="left"><a href="#cdb-windbg" data-raw-source="[CDB and WinDbg](#cdb-windbg)">CDB と WinDbg</a></th>
-<th align="left"><a href="#userdump" data-raw-source="[UserDump](#userdump)">UserDump</a></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>アプリケーションがクラッシュしたときにダンプファイルを作成する (事後分析デバッグ)</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>アプリケーションが "ハング" したときにダンプファイルを作成する (応答を停止し、実際にはクラッシュしない)</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>アプリケーションで例外が発生した場合のダンプファイルの作成</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>アプリケーションが正常に実行されているときにダンプファイルを作成する</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>起動時に失敗するアプリケーションからのダンプファイルの作成</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>〇</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>既存のダンプファイルを圧縮する</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-</tr>
-</tbody>
-</table>
-
- 
 ## <a name="span-idcdb-windbgspanspan-idcdb-windbgspancdb-and-windbg"></a><span id="cdb-windbg"></span><span id="CDB-WINDBG"></span>CDB と WinDbg
-
 
 CDB と WinDbg では、さまざまな方法でユーザーモードのダンプファイルを作成できます。
 
@@ -235,21 +158,12 @@ CDB または WinDbg がユーザーモードアプリケーションをデバ�
 
 CDB と WinDbg を使用してダンプファイルを*圧縮*することもできます。 これを行うには、既存のダンプファイルのデバッグを開始してから、.dump コマンドを使用してサイズの小さいダンプファイルを作成し**ます**。
 
+## <a name="span-idcdb-windbgspanspan-idcdb-windbgspan-time-travel-debugging-ttd"></a><span id="cdb-windbg"></span><span id="CDB-WINDBG"></span>タイムトラベルデバッグ (TTD)
 
-## <a name="span-iduserdumpspanspan-iduserdumpspanuserdump"></a><span id="userdump"></span><span id="USERDUMP"></span>UserDump
+CDB、WinDbg、Procdump に加えて、ユーザーモードアプリケーションをデバッグするためのもう1つのオプションは、タイムトラベルデバッグ (TTD) です。 タイムトラベルデバッグは、実行中のプロセスの実行を記録し、後で前後に再生できるツールです。 タイムトラベルデバッグ (TTD) を使用すると、バグが見つかるまで問題を再現するのではなく、デバッガーセッションを "巻き戻し" することで、問題を簡単にデバッグできます。
 
-UserDump ツール (printbrm.exe) は、ユーザーモードのプロセスダンプとも呼ばれ、ユーザーモードのダンプファイルを作成できます。
+TTD を使用すると、バグにつながる条件をより深く理解し、それを複数回再生して問題の解決に最適な方法を知ることができます。
 
-UserDump とそのドキュメントは、OEM サポートツールパッケージに含まれています。
+TTD には、クラッシュダンプファイルよりも利点があります。多くの場合、最終的な障害につながるコード実行が欠落しています。
 
-詳細およびこれらのツールをダウンロードするには、「 [printbrm.exe ツールを使用してダンプファイルを作成する方法](https://go.microsoft.com/fwlink/p/?LinkId=241339)」を参照し、そのページの指示に従ってください。 また、CDB または WinDbg がユーザーモードアプリケーションをデバッグしているときに、.dump [(ダンプファイルの作成) コマンド](-dump--create-dump-file-.md)を使用してダンプファイルを作成することもできます。
-
-
-
-
- 
-
-
-
-
-
+タイムトラベルデバッグ (TTD) の詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。

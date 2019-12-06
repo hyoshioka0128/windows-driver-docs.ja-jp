@@ -4,12 +4,12 @@ description: このトピックでは、モバイルデバイスにサンプル�
 ms.assetid: E929D80D-17BF-4079-8CF9-972020306358
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3918ee4680eca84c7ad5a9b0e70ff3d22e892f
-ms.sourcegitcommit: d5f54510b9500413dd3084b59cb8869f2f6b13cf
+ms.openlocfilehash: fffc7ff8377e5e739d33ebf65d94c717baf4f37d
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68866769"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862152"
 ---
 # <a name="creating-a-mobile-package"></a>モバイルパッケージの作成
 
@@ -17,7 +17,7 @@ ms.locfileid: "68866769"
 
 次のタスクを実行して、サンプルドライバーのパッケージを作成します。
 
-1. 次のコードをコピーし、メモ帳に貼り付けます。
+1. 次のコードをコピーして、メモ帳に貼り付けます。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,20 +61,20 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 ```
 
 >[!NOTE]
-> **Security InfSectionName**要素の値は、このトピックで説明する**AddReg**フィールドの値とまったく同じである必要があります。[INX ファイルを確認](review-and-revise-the-inf-file.md)します。
+> **Security InfSectionName**要素の値は、このトピックで説明されている**AddReg**フィールドの値とまったく同じである必要があります。「 [INX ファイルを確認](review-and-revise-the-inf-file.md)する」を参照してください。
 
-2. メモ帳のメインメニューで、[**ファイル** &gt;名を付け**て保存**] をクリックし、[名前を付け**て**保存] ダイアログウィンドウで、ドロップダウンボックスを使用して [名前を付け**て保存**] フィールドを [**すべてのファイル**] に設定します。 * * * *
+2. メモ帳のメインメニューで、[**ファイル**&gt;**名前を付けて保存**] をクリックし、[名前を付け**て**保存] ダイアログウィンドウで、ドロップダウンボックスを使用して [名前を付け**て保存**] フィールドを**すべてのファイル**に設定します。 * * * *
 
-3. [**ファイル名**] テキストボックスに、次のように入力します。
+3. **[ファイル名]** テキストボックスに、次のように入力します。
 
 *adxl345acc*
-4. [**名前を付けて保存**] ダイアログウィンドウの上部にある [保存先] ボックスを使用して、Microsoft Visual Studio のプロジェクトフォルダーに移動します。 [**保存**] をクリックします。
+4. **名前を付けて保存** ダイアログウィンドウの上部にある 保存先 ボックスを使用して、Microsoft Visual Studio のプロジェクトフォルダーに移動します。 **[保存]** をクリックします。
 
 前の手順で示したように*adxl345acc*ファイルを作成した後、Windows Driver KIT (WDK) に含まれている**pkggen**ツールを使用してファイルをパッケージ化することもできます。
 
 WDK を既定の場所にインストールした場合、 **pkggen**は次の場所にあります。 *%WPDKCONTENTROOT%\Tools\bin\i386*
 
-モバイルデバイスのパッケージを作成する方法については、「[パッケージジェネレーターのコマンドライン引数](https://docs.microsoft.com/en-us/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)」を参照してください。 包括的な概要については、「 [Mobile Pacakages の作成](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))」を参照してください。
+モバイルデバイスのパッケージを作成する方法については、「[パッケージジェネレーターのコマンドライン引数](https://docs.microsoft.com/windows-hardware/manufacture/mobile/command-line-arguments-for-package-generator)」を参照してください。 包括的な概要については、「 [Mobile Pacakages の作成](https://docs.microsoft.com/previous-versions/windows/hardware/packaging/dn756642(v=vs.85))」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 

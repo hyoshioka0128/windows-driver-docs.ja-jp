@@ -4,12 +4,12 @@ description: このトピックでは、XPSDrv 表示アーキテクチャに対
 ms.assetid: 5D76ECA2-C5F6-47E4-BC05-B5137AD4196B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ff7a5d3cec465f7e850937d20b4aa57940f22a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb8e4d193c6638a321bfc49e9034e6b7f581a324
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842310"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881885"
 ---
 # <a name="improvements-in-xpsdrv"></a>XPSDrv の改善
 
@@ -17,7 +17,7 @@ ms.locfileid: "72842310"
 
 ## <a name="xps-format"></a>XPS 形式
 
-XPS 印刷 API や印刷フィルターパイプラインは、 [Microsoft Xml Paper Specification 1.0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85)) (MS XPS) と[OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm) (ECMA-388) の間でシームレスに変換されます。 特に指定がない限り、v4 印刷ドライバーは既定で MS XPS を使用します。 Manifest ディレクティブ XpsFormat を使用すると、ドライバーは、使用可能な XPS 形式のいずれかまたは両方をサポートすることができます。 OpenXPS のサポートの詳細については、「 [OpenXPS support In Windows](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)」を参照してください。
+XPS 印刷 API や印刷フィルターパイプラインは、 [MICROSOFT XML Paper Specification 1.0](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614032(v=vs.85)) (MS XPS) と[OpenXPS](https://www.ecma-international.org/publications/standards/Ecma-388.htm) (ECMA-388) の間でシームレスに変換されます。 特に指定がない限り、v4 印刷ドライバーは既定で MS XPS を使用します。 Manifest ディレクティブ XpsFormat を使用すると、ドライバーは、使用可能な XPS 形式のいずれかまたは両方をサポートすることができます。 OpenXPS のサポートの詳細については、「 [OpenXPS support In Windows](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)」を参照してください。
 
 ## <a name="xps-rasterization-service-improvements"></a>XPS ラスタライズサービスの機能強化
 
@@ -41,11 +41,11 @@ XPS ラスタライズサービスでは、次の新しい高精度形式を含�
 
 [IPrintCoreHelperUni2](https://docs.microsoft.com/windows-hardware/drivers/ddi/prcomoem/nn-prcomoem-iprintcorehelperuni2)  
 
-[Microsoft Xml Paper Specification 1.0](https://docs.microsoft.com/en-us/previous-versions/windows/hardware/design/dn614032(v=vs.85))  
+[Microsoft XML Paper Specification 1.0](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn614032(v=vs.85))  
 
 [ネイティブピクセル形式の概要](https://docs.microsoft.com/windows/desktop/wic/-wic-codec-native-pixel-formats)  
 
-[OpenXPS](http://www.ecma-international.org/publications/standards/Ecma-388.htm)  
+[OpenXPS](https://www.ecma-international.org/publications/standards/Ecma-388.htm)  
 
 [Windows での OpenXPS のサポート](https://docs.microsoft.com/windows-hardware/drivers/print/driver-support-for-openxps)  
 

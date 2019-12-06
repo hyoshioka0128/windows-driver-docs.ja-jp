@@ -1,14 +1,14 @@
 ---
 title: オーディオ リソースの再調整と予期しない削除操作中におけるメモリ バッファーの管理
 description: PnP の再調整は、メモリリソースを再割り当てする必要がある特定の PCI シナリオで使用されます。 問題を回避するには、メモリバッファーを適切に管理する必要があります。
-ms.date: 04/10/2019
+ms.date: 12/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f20a301ebb183ad92a66641bf7b6f88ed51dad2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2d8291114dd3c6f175cf2154d88adb55cfd63317
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72832657"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860570"
 ---
 # <a name="managing-memory-buffers-during-audio-resource-rebalance-and-surprise-removal-operations"></a>オーディオ リソースの再調整と予期しない削除操作中におけるメモリ バッファーの管理
 
@@ -26,7 +26,7 @@ PnP "突然削除" (SR) は、デバイスがコンピューターから予期�
 
 このトピックで説明されているバッファー管理アプローチのオペレーティングシステムのサポートは、2019年5月の更新後の Windows の次の主な機能リリースで利用できることに注意してください。
 
-サポートするメモリバッファーの割り当てと解放が適切に実行されない場合は、メモリの破損、ソフトハング、および[バグチェック 0x9f: DRIVER_POWER_STATE_FAILURE](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)などの障害が発生する可能性があります。
+サポートするメモリバッファーの割り当てと解放が適切に行われなかった場合、メモリの破損、ソフトハング、および[バグチェック 0x9f: DRIVER_POWER_STATE_FAILURE](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x9f--driver-power-state-failure)などの障害が発生する可能性があります。
 
 
 **ストリームハンドルの動作を閉じる**
@@ -35,22 +35,21 @@ Portcls が close ストリームハンドルを受け取ると、portcls は次
 
 *ストリームの状態を設定*します (ストリームがまだ停止状態になっていない場合)。
 
-[IMiniportWaveRTStream:: SetState](https://msdn.microsoft.com/en-us/library/windows/hardware/ff536756(v=vs.85).aspx)
+[IMiniportWaveRTStream:: SetState](https://msdn.microsoft.com/library/windows/hardware/ff536756(v=vs.85).aspx)
 
 *リリースバッファー*  
 
-[IMiniportWaveRTStream:: FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)または[IMiniportWaveRTStreamNotification:: FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
+[IMiniportWaveRTStream:: FreeAudioBuffer]([IMiniportWaveRTStream:: SetState](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536756(v=vs.85))または[IMiniportWaveRTStreamNotification:: FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 
-Portcls ミニポートドライバーが、SR/STOP 操作中にドライバーによって既に停止されている場合 (つまり、前に SR/STOP が到着した場合) に、状態が大きい値から小さい値に正常に移行することに注意してください。ハンドルを閉じる要求)。
+Portcls ミニポートドライバーが、SR/STOP 操作中にドライバーによって既に停止されている場合 (つまり、クローズハンドル要求の前に SR/STOP が到着した場合) に、状態が大きい値から小さい値に正常に移行することに注意してください。
 
 **バッファー処理**
 
-
 通常の操作中にストリームが閉じられると、portcls は Wave RT のコールバックを呼び出して、ドライバーが DMA 操作を停止し、関連付けられているバッファーを解放できるようにします。
 
-[IMiniportWaveRTStream:: SetState](https://msdn.microsoft.com/en-us/library/windows/hardware/ff536756(v=vs.85).aspx) -> SETDMAENGINESTATE (HD AUDIO Bus DDI)。 DMA を開始または一時停止するためのアクションを実行します。
+[IMiniportWaveRTStream:: SetState](https://msdn.microsoft.com/library/windows/hardware/ff536756(v=vs.85).aspx) -> SETDMAENGINESTATE (HD AUDIO Bus DDI)。 DMA を開始または一時停止するためのアクションを実行します。
 
-[IMiniportWaveRTStream:: FreeAudioBuffer](https://msdn.microsoft.com/library/windows/hardware/ff536745)または[IMiniportWaveRTStreamNotification:: FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer (HD audio Bus DDI)。
+[IMiniportWaveRTStream:: FreeAudioBuffer](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstream-freeaudiobuffer)または[IMiniportWaveRTStreamNotification:: FreeBufferWithNotification](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)-> FreeDmaBuffer (HD audio Bus DDI)。
 
 IMiniportWaveRTStream [Notification] のデストラクター-> FreeDmaEngine (HD Audio Bus DDI)。 
 
@@ -114,15 +113,15 @@ DMAEngineAllocated=false
 
 詳しくは、次のトピックをご覧ください。
 
-[PSET_DMA_ENGINE_STATE callback 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
+[PSET_DMA_ENGINE_STATE コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[HDAUDIO_STREAM_STATE 列挙型](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/hdaudio/ne-hdaudio-_hdaudio_stream_state)
+[HDAUDIO_STREAM_STATE 列挙型](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ne-hdaudio-_hdaudio_stream_state)
 
-[PFREE_DMA_ENGINE callback 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pfree_dma_engine)
+[PFREE_DMA_ENGINE コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pfree_dma_engine)
 
-[PSET_DMA_ENGINE_STATE callback 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
+[PSET_DMA_ENGINE_STATE コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pset_dma_engine_state)
 
-[IMiniportWaveRTStreamNotification インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstreamnotification) 
+[IMiniportWaveRTStreamNotification インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavertstreamnotification)
 
 [IMiniportWaveRTStreamNotification:: FreeBufferWithNotification メソッド](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iminiportwavertstreamnotification-freebufferwithnotification)
 

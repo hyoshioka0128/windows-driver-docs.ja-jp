@@ -1,85 +1,83 @@
 ---
 title: Web Services on Devices for Printing (WS-Print)
-description: 印刷およびスキャンの周辺機器を接続プロトコルを提供する、Windows Vista で導入された印刷 (Print WS) のデバイス上のサービスを web です。
+description: 印刷用のデバイスの Web サービス (WS 印刷) は、Windows Vista で導入され、印刷とスキャンの周辺機器用の接続プロトコルを提供します。
 ms.assetid: 4A641EF8-FBD3-46CA-9284-28AF1A4B8226
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee41e6eab8af7458791bf96cf770abdae6b81131
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6231bc8dadeae49a12d2880620b99b8b8606f054
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356988"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881928"
 ---
 # <a name="web-services-on-devices-for-printing-ws-print"></a>Web Services on Devices for Printing (WS-Print)
 
-
-印刷およびスキャンの周辺機器を接続プロトコルを提供する、Windows Vista で導入された印刷 (Print WS) のデバイス上のサービスを web です。
+印刷用のデバイスの Web サービス (WS 印刷) は、Windows Vista で導入され、印刷とスキャンの周辺機器用の接続プロトコルを提供します。
 
 ## <a name="overview"></a>概要
 
+Web サービステクノロジは、情報を記述および共有するための共通のフレームワークを提供します。 その結果、Windows には、ネットワークに接続されたデバイスでサービスを使用および制御するための一連のプロトコルが用意されています。
 
-Web サービス テクノロジには、記述すると、情報を共有する共通のフレームワークが提供されます。 その結果、Windows が付属、一連のプロトコルを使用し、ネットワークに接続されたデバイス上のサービスを制御します。
+印刷およびスキャン用に4つの Web サービス仕様が存在します。これは、デバイスの製造元が Windows でのデバイスの接続、インストール、および使用に関する改善されたカスタマーエクスペリエンスを活用するのに役立ちます。
 
-印刷およびスキャン、デバイスの製造元を接続する、インストール、および Windows のデバイスを使用して強化されたカスタマー エクスペリエンスを活用する 4 つの Web サービス仕様が存在します。
+## <a name="ws-print-v11"></a>WS 印刷 v1.1
 
-## <a name="ws-print-v11"></a>Ws-print v1.1
+Windows 8 では、web services on devices (WSD) の印刷スキーマが v1.1 に更新されました。 このバージョンのスキーマ (WS-RELIABLEMESSAGING v1.1 と呼ばれます) は、強化されたドライバー構成、インク/トナーの色表現の向上、およびデバイスモデル Id をサポートするように更新されました。
 
+## <a name="ws-print-v12"></a>WS-RELIABLEMESSAGING 1.2
 
-Windows 8 では、services on devices (WSD) の web の印刷スキーマは、v1.1 に更新されました。 このバージョンのスキーマ (Ws-print v1.1 と呼ばれます) は、拡張ドライバー構成をサポートしてより色のインクまたはトナーとデバイスの表現のモデル Id に更新されました。
+Windows 8.1 の場合、WS-ATOMICTRANSACTION には、WS-ATOMICTRANSACTION で使用されるすべての操作とスキーマ要素が含まれていますが、デバイス上の web サービスの印刷サービス定義が更新されました。 また、印刷用のデバイス上の新しい Web サービスは、WS-RELIABLEMESSAGING v1.0 です。
 
-## <a name="ws-print-v12"></a>WS 印刷 v1.2
+では、新しいスキーマ要素がサポートされ、新しい操作が追加されました。 新しい schema 要素 "SupportsWSPrintV12" を使用して、WS 印刷 v1.0 のサポートを識別します。 新しい操作 "Setprinter Elements" を使用すると、クライアントはプリンター上の schema 要素の値を設定できます。 たとえば、クライアントは、プリンターがインクジェットのヘッドを再調整するために使用する "Inkヘッドの配置値" というカスタム要素を設定できます。
 
+ここでは、必要に応じて、[ダウンロード] セクションで、完全なスタンドアロン形式で、関連付けられている Web サービス記述言語 (Wsdl) と XML スキーマ定義 (Xsd) の仕様を提供しています。 これら4つのデバイス上の Web サービスの仕様は、Windows driver development kit (WDK) を参照する、付属の技術文書使用許諾契約書に記載されています。
 
-Windows 8.1 では、WS 印刷には、すべての操作と Ws-print v1.1 で使用されるスキーマの要素が含まれていますが、デバイス上の web サービスの印刷サービス定義が更新されました。 印刷用のデバイスでの結果として得られる新しい Web サービスは Ws-print v1.2 です。
-
-新しいスキーマの WS 印刷バージョン 1.2 のサポートでは、要素と、新しい操作が追加されました。 新しいスキーマ要素"SupportsWSPrintV12"は、WS 印刷バージョン 1.2 のサポートを識別するために使用されます。 新しい操作では、"SetPrinterElements"により、クライアント プリンターのスキーマ要素の値を設定できます。 など、クライアントは、インク ジェット ヘッドを再配置するプリンターを使用する"InkHeadAlignmentValue"と呼ばれるカスタム要素を設定する可能性があります。
-
-便宜上、仕様は、ここでは、それに関連付けられたと共に、スタンドアロンの完全な形式でダウンロード セクションで Web サービス記述言語 (Wsdl) と XML スキーマ定義 (Xsd)。 これら 4 つの Web サービスのデバイスの仕様には、Windows ドライバー開発キット (WDK) を参照する技術ドキュメントが含まれる使用許諾契約が適用されます。
-
-次のセクションでは、WS 印刷のさまざまな側面に関するより詳細な情報を提供します。
+以下のセクションでは、WS 印刷のさまざまな側面について詳しく説明します。
 
 ## <a name="sequence-diagrams"></a>シーケンス図
 
+次のシーケンス図は、サポートされている WS 印刷名前空間のバージョンを判断し、拡張されたスキーマ要素を取得するために、クライアントとプリンター間の相互作用を示しています。
 
-次のシーケンス図は、サポートされている WS 印刷名前空間のバージョンを判断するためにクライアントとプリンターの間の相互作用を示していて、拡張スキーマの要素を取得します。
+### <a name="ws-print-v11-sequence-diagram"></a>WS-RELIABLEMESSAGING v1.1 シーケンス図
 
-**Ws-print v1.1**します。 Ws-print v1.1 をサポートしているプリンターの相互作用のシーケンス図を次に示します。
+次に、WS-ATOMICTRANSACTION をサポートするプリンターの相互作用シーケンス図を示します。
 
-![シーケンス図は、ws 印刷 v1.1 サポートに関する相互作用とプリンターの説明と構成の後続のクエリは、クライアント プリンターを表示します。](images/wsprint-diagv11.png)
+![クライアントとプリンターの間の相互作用と、プリンターの説明と構成に関するその後のクエリを示すシーケンス図。](images/wsprint-diagv11.png)
 
-プリンターをサポートする Ws-print v1.1、クライアントから GetPrinterElements(wprt:PrinterDescription) クエリに応答プリンター送信がされていることを示す情報。
+プリンターが WS-RELIABLEMESSAGING v1.1 をサポートしている場合、クライアントからの Getprinter Elements (wprt: プリンターの説明) クエリに応答して、プリンターは、そのことを示すために情報を送り返します。
 
-Ws-print v1.1 をサポートしていること確認すると、プリンター後、は、クライアントが GetPrinterElements(wprt11:DriverConfiguration) クエリを送信し、プリンターが要求されたドライバーの構成情報で応答します。
+プリンターが WS Print v1.1 をサポートしていることを確認すると、クライアントは Getprinter Elements (wprt11: DriverConfiguration) クエリを送信し、プリンターは要求されたドライバー構成情報で応答します。
 
-**WS 印刷 v1.2**します。 WS 印刷バージョン 1.2 をサポートしているプリンターの相互作用のシーケンス図を次に示します。
+### <a name="ws-print-v12-sequence-diagram"></a>WS-RELIABLEMESSAGING v1.0 のシーケンス図
 
-![シーケンス図は、ws 印刷バージョン 1.2 のサポートに関する相互作用とプリンターの説明と構成の後続のクエリは、クライアント プリンターを表示します。](images/wsprint-diagv12.png)
+次に、WS-I 1.2 をサポートするプリンターの相互作用シーケンス図を示します。
 
-プリンターでは、WS 印刷バージョン 1.2 をサポートする場合、GetPrinterElements(wprt:PrinterDescription) クエリに、クライアントからの応答でプリンター情報を送信バックがされていることを示します。
+![クライアントとプリンターの間の相互作用と、プリンターの説明と構成に関する次のクエリを示すシーケンス図。](images/wsprint-diagv12.png)
 
-さらに、プリンターは GetPrinterElements(wprt:PrinterDescription) 呼び出しに対する応答で wprt12:SupportsWSPrintV12 を返す必要があります。 その後、クライアントは、WS 印刷デバイスでサポートされているスキーマの 1 つまたは複数のデータ要素を設定する SetPrinterElements 操作を呼び出すことができます。
+プリンターで WS-ATOMICTRANSACTION がサポートされている場合、クライアントからの Getprinter Elements (wprt: プリンターの説明) クエリに応答して、プリンターは、そのことを示すために情報を送り返します。
 
-Ws-print v1.2 をサポートしていること確認すると、プリンター後、は、クライアントが GetPrinterElements(wprt12:DriverConfiguration) クエリを送信し、プリンターが要求されたドライバーの構成情報で応答します。
+さらに、Getprinter Elements (wprt: wprt12) 呼び出しに応答して、プリンターは SupportsWSPrintV12: を返します。 その後、クライアントは、Setprint Elements 操作を呼び出して、WS 印刷デバイスでサポートされているスキーマに1つ以上のデータ要素を設定できます。
+
+プリンターが WS-RELIABLEMESSAGING v1.0 をサポートしていることを確認すると、クライアントは Getprinter Elements (wprt12: DriverConfiguration) クエリを送信し、プリンターは要求されたドライバー構成情報で応答します。
 
 ## <a name="namespaces"></a>名前空間
 
+### <a name="ws-print-v11-namespace"></a>WS-RELIABLEMESSAGING v1.1 名前空間
 
-**Ws-print v1.1**
+**名前空間:** `<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>`
+**XML 名前空間の定義:** `xmlns:wprt12="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"`
 
-**名前空間:** <http://schemas.microsoft.com/windows/2010/06/wdp/printv11>
-**XML の Namespace 定義:** xmlns:wprt12 ="<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>"
+### <a name="ws-print-v12-namespace"></a>WS-ATOMICTRANSACTION の名前空間
 
-**WS 印刷 v1.2**
+**名前空間:** `<http://schemas.microsoft.com/windows/2012/10/wdp/printV12>`
+**XML 名前空間の定義:** `xmlns:wprt11="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"`
 
-**名前空間:** <http://schemas.microsoft.com/windows/2012/10/wdp/printV12>
-**XML の Namespace 定義:** xmlns:wprt11 ="<http://schemas.microsoft.com/windows/2010/06/wdp/printv11>"
-## <a name="specifying-ws-print-11-support"></a>WS 印刷 1.1 のサポートを指定します。
+## <a name="specifying-ws-print-11-support"></a>WS Print 1.1 サポートの指定
 
+WS Print 1.1 要素をサポートするプリンターでは、wprt11: SupportsWSPrintv11 を含めるようにプリンターの説明を更新する必要があります。 Wprt11: SupportsWSPrintv11 が指定されておらず、true に設定されている場合、WSDMon はプリンターからの WS Print 1.1 要素を要求しません。
 
-Ws-print 1.1 要素をサポートするプリンターは、その PrinterDescription wprt11:SupportsWSPrintv11 を含めるを更新する必要があります。 Wprt11:SupportsWSPrintv11 でない場合は true に設定して指定し、WSDMon は要求しません Ws-print 1.1 要素プリンターから。
-
-Ws-print v1.1 をサポートしている印刷デバイスは、Windows の名前空間内の他の要素をクエリするためには、その PrinterDescription で次の内容を含める必要があります。
+WS-ATOMICTRANSACTION をサポートする印刷デバイスでは、Windows がその名前空間の他の要素に対してクエリを実行するために、プリンターの説明に次の内容を含める必要があります。
 
 ```xml
 <soap:Envelope
@@ -90,7 +88,7 @@ Ws-print v1.1 をサポートしている印刷デバイスは、Windows の名�
 ...
 ```
 
-次の XML スニペットは、WSD 印刷サービス仕様 v1.0 から派生し、前のセクションで、コンテンツの適切な使用方法を示します。
+次の XML スニペットは、WSD Print Service Specification v1.0 から派生したもので、前のセクションでコンテンツが適切に使用されていることを示しています。
 
 ```xml
 <soap:Envelope
@@ -134,7 +132,7 @@ Ws-print v1.1 をサポートしている印刷デバイスは、Windows の名�
 </soap:Envelope>
 ```
 
-次の XML スニペットでは、Ws-print v1.1 をサポートしている印刷デバイス用のスキーマを示します。
+次の XML スニペットは、WS-RELIABLEMESSAGING v1.1 をサポートする印刷デバイスのスキーマを示しています。
 
 ```xml
 <xs:schema targetNamespace="http://schemas.microsoft.com/windows/2010/06/wdp/printv11"
@@ -157,12 +155,11 @@ Ws-print v1.1 をサポートしている印刷デバイスは、Windows の名�
 <xs:element name="SupportsWSPrintv11" type="xs:boolean"/>
 ```
 
-## <a name="specifying-ws-print-12-support"></a>WS 印刷 1.2 のサポートを指定します。
+## <a name="specifying-ws-print-12-support"></a>WS Print 1.2 サポートの指定
 
+WS Print 1.2 要素をサポートするプリンターでは、wprtV12: SupportsWSPrintV12 を含めるようにプリンターの説明を更新する必要があります。 WprtV12: SupportsWSPrintV12 が指定されておらず、true に設定されている場合、WSDMon はプリンターからの WS Print 1.2 要素を要求しません。
 
-Ws-print 1.2 要素をサポートするプリンターは、その PrinterDescription wprtV12:SupportsWSPrintV12 を含めるを更新する必要があります。 WprtV12:SupportsWSPrintV12 でない場合は true に設定して指定し、WSDMon は要求しません Ws-print 1.2 要素プリンターから。
-
-Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名前空間内の他の要素をクエリするためには、その PrinterDescription で次の内容を含める必要があります。
+WS-ATOMICTRANSACTION をサポートする印刷デバイスでは、Windows がその名前空間の他の要素に対してクエリを実行するために、プリンターの説明に次の内容を含める必要があります。
 
 ```xml
 <soap:Envelope
@@ -174,7 +171,7 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
 </soap:Envelope>
 ```
 
-次の XML スニペットは、WSD 印刷サービスの仕様の v1.2 から派生し、前のセクションで、コンテンツの適切な使用方法を示します。
+次の XML スニペットは、WSD Print Service Specification v1.1 から派生したもので、前のセクションで説明した内容の適切な使用方法を示しています。
 
 ```xml
 <soap:Envelope
@@ -205,7 +202,7 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
                          <wprt:PrinterInfo xml:lang="en-AU, en-CA, en-GB, en-US">
                              Printer for use of Accounting only</wprt:PrinterInfo>
                          <wprt:PrinterLocation xml:lang="en-AU, en-CA, en-GB, en-US">
-                             LA Campus – Building 3</wprt:PrinterLocation>                      
+                             LA Campus – Building 3</wprt:PrinterLocation>
                          <wprtV12:SupportsWSPrintV12>true</wprtV12:SupportsWSPrintV12>
                     </wprt:PrinterDescription>
              </wprt:ElementData>
@@ -215,12 +212,11 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
 </soap:Envelope>
 ```
 
-スキーマの例を次の 3 つのセクションでは、Ws-print V1.1 で導入された新しい要素の一部を使用する方法を示します。 Ws-print V1.1 名前空間で導入されたすべての要素の詳細については、WS 印刷 v1.0 のサポート ファイルを参照してください。 – v1.2 に記載の**ダウンロード**セクション。
+次の3つのセクションのスキーマ例では、WS-RELIABLEMESSAGING v1.1 で導入されたいくつかの新しい要素の使用方法を示しています。 WS Print v1.1 名前空間で導入されたすべての要素の詳細については、以下の**ダウンロード**セクションに記載されている、「サポートファイル」を参照してください。
 
-## <a name="enhanced-driver-configuration"></a>強化されたドライバーの構成
+## <a name="enhanced-driver-configuration"></a>拡張ドライバーの構成
 
-
-このスキーマは、このデバイスのデバイス固有 GPD または PPD 構成ファイルを提供します。
+このスキーマは、デバイス固有の GPD または PPD 構成ファイルをこのデバイスに提供します。
 
 ```xml
    <xs:annotation>
@@ -237,10 +233,9 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
     </xs:complexType>
 ```
 
-## <a name="device-model-id"></a>デバイスのモデル ID
+## <a name="device-model-id"></a>デバイスモデル ID
 
-
-次のスキーマは、デバイスの ModelID をについて説明し、デバイス メタデータの取得のために使用します。 ModelIDs の詳細については、次を参照してください。 [ModelID 要素](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))します。
+次のスキーマは、デバイスの ModelID を記述し、デバイスメタデータの取得に使用されます。 ModelIDs の詳細については、「 [Modelids 要素](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff549295(v=vs.85))」を参照してください。
 
 ```xml
     <xs:annotation>
@@ -255,10 +250,9 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
     </xs:simpleType>
 ```
 
-## <a name="inktoner-color-representation-value"></a>インクまたはトナー色形式の値
+## <a name="inktoner-color-representation-value"></a>インク/トナーの色の表記値
 
-
-次のスキーマは、特定のインクまたはトナー型の色を表す RGB triple を取得します。 この値は、アプリの UI に表示される色のより適切な表現を有効にすると、インクまたはトナーの消耗品を指定する必要があります。
+次のスキーマは、特定のインクまたはトナーの種類の色を表す RGB トリプルを取得します。 この値は、アプリケーション UI に表示される色をより適切に表現できるように、インクまたはトナー消耗品に対して指定する必要があります。
 
 ```xml
     <xs:annotation>
@@ -267,7 +261,7 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
             A 6-digit hex representation of the RGB color value this Consumable entry represents.
             Examples of these values are:
                 Black – 000000
-                Red – FF0000 
+                Red – FF0000
                 White – FFFFFF
                 Magenta – FF00FF
                 Cyan – 00FFFF
@@ -282,37 +276,34 @@ Ws-print v1.2 をサポートしている印刷デバイスは、Windows の名�
     </xs:simpleType>
 ```
 
-Ws-print v1.2 セクションで、このトピックで説明したように、次の新しい操作が Ws-print V1.2 名前空間に導入されました。
+このトピックで既に説明したように、「WS-ATOMICTRANSACTION v2.0」セクションでは、次の新しい操作が WS-Print v1.0 名前空間で導入されました。
 
-## <a name="setprinterelements"></a>SetPrinterElements
+## <a name="setprinterelements"></a>Setプリンター要素
 
+**Setprinter elements**操作は新しいもので、クライアントはプリンター上の schema 要素の値を設定できます。 Setの Elements 操作には、8つの要求要素と4つの応答要素があります。 要求要素と応答要素を使用すると、クライアントは、WS 印刷デバイススキーマとの接続でデータの挿入と取得を細かく制御できます。
 
-"SetPrinterElements"操作は、新しくして、クライアント プリンターのスキーマ要素の値を設定することができます。 SetPrinterElements 操作には、8 つの要素の要求と応答の 4 つの要素が必要があります。 要求と応答の要素では、クライアントにデータを挿入および WS 印刷デバイス スキーマ関連の取得を細かく制御を提供します。
+たとえば、ElementPath データ要素 (Setprinter Elements 操作の一部) は、設定するデータ要素のプリンタースキーマ内の場所を表す XPath 文字列です。
 
-たとえば、ElementPath データ要素 (SetPrinterElements 操作の一部) は XPath 文字列を設定するデータ要素のプリンター スキーマ内の場所を表すです。
-
-SetPrinterElements 操作の詳細については、WS 印刷 v1.0 – ダウンロード セクションに記載バージョン 1.2 のサポート ファイルを参照してください。
+Setprint Elements 操作の詳細については、後述の「**ダウンロード**」セクションに記載されている「ws-i v1.0-v1.0 のサポートファイル」を参照してください。
 
 ## <a name="downloads"></a>ダウンロード
 
+### <a name="specification-and-supporting-files-for-ws-print-v10--v12"></a>WS プリント v1.0-v1.0 の仕様とサポートファイル
 
-**仕様とサポート ファイルを Ws-print v1.0 – v1.2**
+**File:** デバイス[上の Web サービスの印刷デバイス定義](https://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)V1.0
+**説明:** Microsoft Word 文書とサポートファイルを含む 2.64 MB の zip ファイル2013年9月16日
 
-**ファイル:** [デバイスで Web サービスのデバイス定義 V1.0 を印刷](http://download.microsoft.com/download/E/9/7/E974CFCB-4B3B-40CC-AF92-4F7F84477F0B/Printer.zip)
-**説明。** 2.64 Microsoft Word のドキュメントを格納しているとサポート ファイルは、MB zip ファイル2013 年 9 月 16 日
+### <a name="specification-and-supporting-files"></a>仕様とサポートファイル
 
-**仕様とサポート ファイル**
+**File:** デバイス[上の Web サービス用にデバイス定義 v1.0 を印刷](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
+**説明:** 76 KB 自己解凍形式の Microsoft Word 文書とサポートファイルを含むファイル。2007年1月29日
 
-**ファイル:** [デバイスで Web サービスのデバイス定義 V1.0 を印刷](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PrintDevice.exe)
-**説明。** 自己解凍形式のファイルは、Microsoft Word のドキュメントを含むファイルをサポートしている 76 KB2007 年 1 月 29 日
+**ファイル:** [デバイス上の Web サービスのサービス定義 v1.0 をスキャン](https://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
+**説明:** (Microsoft Word 文書とサポートファイルを含む 1.5 MB の zip ファイル。2012年2月9日)
 
-**ファイル:** [Web Services on Devices のサービス定義 V1.0 をスキャン](http://download.microsoft.com/download/9/C/5/9C5B2167-8017-4BAE-9FDE-D599BAC8184A/ScanService.zip)
-**説明。** (1.5 MB zip ファイル Microsoft Word のドキュメントを格納しているとサポート ファイル。2012 年 2 月 9 日)
+**ファイル:** デバイス[の Web サービス用にデバイス定義 v1.0 をスキャン](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
+**説明:** (76 KB 自己解凍形式のファイルを含む Microsoft Word 文書とサポートファイルを含む)2007年1月29日)
 
-**ファイル:** [Web Services on Devices のデバイス定義 V1.0 をスキャン](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/ScanDevice.exe)
-**説明。** (76 KB 自己解凍形式のファイルを Microsoft Word のドキュメントを格納していると、ファイルのサポート2007 年 1 月 29 日)
 ## <a name="related-topics"></a>関連トピック
-[V4 プリンター ドライバーの接続](v4-printer-driver-connectivity.md)  
 
-
-
+[V4 プリンタードライバーの接続](v4-printer-driver-connectivity.md)  

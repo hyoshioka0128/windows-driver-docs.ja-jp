@@ -6,19 +6,19 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bcc1b10c5454ef894563c2306b52e421b47d25c
-ms.sourcegitcommit: 06f357860a18d28ee875f33f89a5a0ac2ff02b3f
+ms.openlocfilehash: c5a3f1f13e8a8980a7a4f03b1b11b1ff4939056a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225341"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861350"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg プレビュー - 新機能
 
 このトピックでは、WinDbg Preview デバッガーの新機能について説明します。
 
 ## <a name="10190830002"></a>1.0.1908.30002
-**TTD 呼び出しオブジェクト** - の機能強化。[クエリを呼び出す](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects)と、パラメーター名、型、値が含まれるようになりました。 関数呼び出しのトレースに対してクエリを実行すると、完全に型指定されたパラメーターとその値を取得できるため、パラメーターによって結果を簡単にフィルター処理できます。
+**TTD 呼び出しオブジェクトの機能強化に**より、[クエリを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects) - 、パラメーター名、型、値が含まれるようになりました。 関数呼び出しのトレースに対してクエリを実行すると、完全に型指定されたパラメーターとその値を取得できるため、パラメーターによって結果を簡単にフィルター処理できます。
 
 Open**エンクレーブのサポート**-WinDbg Preview で open エンクレーブ (OE) アプリケーションをデバッグできるようになりました。これを実行する方法については、 [open エンクレーブのドキュメント](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/GettingStarted.Windows.md)を参照してください。
 
@@ -35,7 +35,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 * パラメーターを指定せずに ' dx ' を実行すると、browsability が簡単になるようにルート名前空間が表示されるようになります。
 * [設定] メニューを使用して、既定のシンボルとソースキャッシュの場所を変更できるようになりました。
 * AVX を記録するためのサポートの向上-512 (512 AVX の記録によって、通常よりも大きな速度が低下します)
-* [オフラインライセンス](https://docs.microsoft.com/en-us/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)を有効にしました
+* [オフラインライセンス](https://docs.microsoft.com/windows/uwp/publish/organizational-licensing#allowing-disconnected-offline-licensing)を有効にしました
 
 ## <a name="10190512001"></a>1.0.1905.12001
 **SymSetDiaSession エラー軽減の機能強化**-先月の修正により、プロセスに dbghelp を挿入するアプリケーションによって発生するエラーを軽減しましたが、一部のシナリオではまだ機能していませんでした。 このエラーに関するフィードバックは、引き続き改善されました。
@@ -44,7 +44,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 **[表示]** リボンをクリックし、最後のセクションで **[アクセントの色]** のオプションを選択します。 最新のターゲットから今後のセッションが開始されると、アクセントの色はターゲットのワークスペースの一部として保持されます。
 
-**ソーストークン化の機能強化**-ソースウィンドウでは、トークン化 Rust ソースファイルとC++ SEH __try/__except/__finally/__ leave の基本的なサポートが開始されました。
+**ソーストークン化の機能強化**-ソースウィンドウに、トークン化 Rust ソースファイルとC++ SEH __try/__except/__finally/__leave の基本的なサポートが表示されるようになりました。
 
 **コルーチンの機能強化**-コルーチンローカル変数と特定の最適化された変数のサポートが向上しました。
 
@@ -76,7 +76,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 **デバッガーデータモデルC++ヘッダー** -新しいC++ヘッダー (dbgmodel .h) があります。これは、を介しC++てデバッガーデータモデルを拡張するための Windows SDK の一部として含まれています。 詳細については、 [「デバッガーデータC++モデルの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)」を参照してください。 このリリースには、"dx" コマンド、JavaScript、および新しい DbgModel. h ヘッダーを使用してアクセスできるデバッガーデータモデルに、いくつかの "API スタイル" 機能を追加する新しい拡張機能が含まれています。 この拡張機能は、デバッガーを使用して、アセンブリとコードの実行に関するナレッジを含むようにデータモデルを拡張します。ユーティリティ。[コード](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)の名前空間、およびローカルファイルシステムを使用[します。](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)
 
-**統合型の拡張機能**この新しい API 拡張機能では、GitHub リポジトリ https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes に新しいサンプルが追加されました。 この JavaScript 拡張機能は、基本 C ヘッダーファイルを読み取り、ヘッダーで定義されている構造体と共用体の合成型情報を定義します。 Dx コマンドを使用すると、これらの型の型情報を含む PDB があるかのように、メモリを構造化して表示できます。
+**統合型の拡張機能**この新しい API 拡張機能を使用すると、GitHub リポジトリに新しいサンプルが作成されました (https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes )。 この JavaScript 拡張機能は、基本 C ヘッダーファイルを読み取り、ヘッダーで定義されている構造体と共用体の合成型情報を定義します。 Dx コマンドを使用すると、これらの型の型情報を含む PDB があるかのように、メモリを構造化して表示できます。
 
 その他の変更とバグ修正:
 
@@ -90,7 +90,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 - [ファイル] メニューまたは [ホーム] リボンからアクセスできる新しい設定ダイアログ。 
 - [イベントと例外の設定] ダイアログ。 このメニューは、デバッガーがイベントと例外を処理する方法を変更します。これは、"sx" コマンドまたは WinDbg の [イベントフィルター] ダイアログに相当します。 ホーム] リボンの **[設定]** を選択し、左側の [イベントと例外 をクリックして管理します。
-- パフォーマンス向上のため、TTD インデクサーが改善されました。 これにより、インデックスファイルのサイズを大幅に小さくする一方で (約 50% 小さく)、インデックス作成処理のパフォーマンスが向上し、インデックス作成プロセスが TTD になります (倍10倍)。 パフォーマンスの向上は、サイズが 4 GB を超えるトレース、または多数の CPU コア (8 +) を搭載したマシンを使用している場合に顕著になります。 新しいインデクサーを使用すると、非常に大きなトレース (50 GB 以上) をデバッグできるようになります。
+- パフォーマンス向上のため、TTD インデクサーが改善されました。 これにより、インデックスファイルのサイズを大幅に小さくする一方で (約50% 小さく)、インデックス作成処理のパフォーマンスが向上し、インデックス作成プロセスが TTD になります (倍10倍)。 パフォーマンスの向上は、サイズが 4 GB を超えるトレース、または多数の CPU コア (8 +) を搭載したマシンを使用している場合に顕著になります。 新しいインデクサーを使用すると、非常に大きなトレース (50 GB 以上) をデバッグできるようになります。
 - アーキテクチャを指定するための新しい*Debugarch* launch フラグ。 WinDbg Preview では、マネージコードのデバッグをより適切にサポートするために、ターゲットへの正しいビット数でデバッガーエンジンを起動しようとしています。 適切なビットを特定できない場合や、決定内容をオーバーライドする場合があります。 デバッガーエンジンのアーキテクチャを制御するには、-debugArch x86 | amd64 を使用します。
 
 その他の変更とバグ修正:
@@ -102,7 +102,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 -  インデックスが付けられていない TTD トレースは、インデックスが解除されていることがわかりやすくなりました。
 -  [ローカル] ウィンドウのパフォーマンスの向上
 -  コマンドウィンドウのログをファイルに保存するためのリボンボタンが追加されました。
--  れ. SelectMany (<projection>) を LINQ メソッドの既定のセットに設定します。
+-  れ. LINQ メソッドの既定のセットに SelectMany (<projection>) します。
 
 ## <a name="10180711002"></a>1.0.1807.11002 
 
@@ -152,8 +152,8 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 **JSPROVIDER api バージョン 1.2** -api バージョン1.2 のサポートを宣言する JavaScript 拡張機能の場合:
 
-- スクリプトを終了する、compareTo メソッドを持つすべてのオブジェクトには、そのオブジェクトに対するカスタム比較子があります (比較演算子は、DX エバリュエーターとその他の場所で動作します。例:IModelObject:: Compare)
-- スクリプトを終了する. equals メソッドを持つオブジェクトは、それに対してカスタム等値演算子 (= = および! =) を持つことになります。これは、DX エバリュエーターと他の場所で動作します。例:IModelObject:: IsEqualTo)
+- スクリプトを終了する compareTo メソッドを持つオブジェクトには、そのオブジェクトに対するカスタム比較子があります (比較演算子は、DX エバリュエーターで動作し、他の場所: IModelObject:: Compare など)
+- スクリプトを終了する. equals メソッドを含むすべてのオブジェクトには、それに対するカスタム等値演算子があります (= = および! = は、DX エバリュエーターで動作し、他の場所では、: IModelObject:: IsEqualTo)。
 - スクリプトに入るネイティブまたはデータモデルオブジェクトには、すべてのカスタム比較子またはカスタム等値実装へのアクセスを許可する compareTo と. equals があります。
  
 軽微な変更とバグ修正:
@@ -163,7 +163,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 - [逆アセンブル] ウィンドウにアドレスバーが追加されました。
 - WinDbg Preview では、_NT_SYMBOL_PATH がより適切な方法で処理されるようになりました。
 - サーバーのコマンドラインオプションが追加されました。
-- TTD data model のクエリを徐々に表示できるようになりました。中断した場合でも、いくつかの結果が表示されます。 この機能は引き続き試験段階であり、省略可能です。 を`dx @$cursession.TTD.AsyncQueryEnabled = 1`実行して有効にします。
+- TTD data model のクエリを徐々に表示できるようになりました。中断した場合でも、いくつかの結果が表示されます。 この機能は引き続き試験段階であり、省略可能です。 `dx @$cursession.TTD.AsyncQueryEnabled = 1` を実行して有効にします。
 - ' Dps ' コマンドに、参照先のソースファイルへのリンクが含まれるようになりました。
 
 ## <a name="11801190010"></a>1.1801.19001.0
@@ -174,11 +174,11 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 コマンドを使用する場合は、"$hl" コマンドを使用できます。
 
-`$hl ["someValueHere"]`-テキストを強調表示します (既に強調表示されている場合は強調表示を解除します)
+`$hl ["someValueHere"]`-テキストを表示します (強調表示されていない場合は強調表示を解除します)
 
-`$hl clearAll`–強調表示されているすべてのエントリをクリア
+`$hl clearAll` –強調表示されているすべてのエントリをクリア
 
-`$hl caseSensitive [1|0]`-強調表示の一致を大文字と小文字を区別するか、大文字と小文字を区別しないように設定
+`$hl caseSensitive [1|0]`-強調表示の一致を大文字と小文字を区別するか、大文字小文字を区別しないように設定
 
 このリリースには、いくつかの小さなバグ修正も含まれています。
 
@@ -189,9 +189,9 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 **TTD memory queries** -現在の呼び出しに対してクエリを実行するのと同様に、メモリアクセスの TTD に対してクエリを実行できるようになりました。 これにより、特定のメモリ範囲にアクセスする読み取り、書き込み、および実行をすべて検索できます。
 
-読み取りと書き込みの例:`dx @$cursession.TTD.Memory(startAddress, endAddress, "rw")`
+読み取りと書き込みの例: `dx @$cursession.TTD.Memory(startAddress, endAddress, "rw")`
 
-一意の実行の例:`dx @$cursession.TTD.Memory(startAddress, endAddress, "ec")`
+一意の実行例: `dx @$cursession.TTD.Memory(startAddress, endAddress, "ec")`
 
 **設定の変更**-WinDbg Preview では、シンボルパスとソースパスを含む、セッション間の設定が自動的に保存されるようになりました。
 
@@ -225,7 +225,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 **Javascript スクリプトからのメタデータ**-javascript 拡張機能は、プロパティおよびその他の構成要素のメタデータを返すようになりました。 これは、拡張機能がヘルプ文字列を提供し、値の表示の基数を示すことができることを意味します。 メタデータは、metadataDescriptor の存在または defineMetadata への明示的な呼び出しによって、オブジェクトにメタデータ記述子を配置することによって提供されます。 関数の戻り値、反復値、およびその他の値コンテキストは、ホストのメタデータを介してその値のメタデータを返すことができます。
 
-**JAVASCRIPT API の更新**-javascript プロバイダー内の api に対して、ソースレベルで重大な変更が加えられた可能性があります (新しい投影されたメソッドとネイティブオブジェクトのプロパティを含む)。 既存の拡張機能では、新しいバージョンの JsProvider API をサポートしているかどうかを示すことなく、重大な変更が表示されることはありません。 新しい API バージョンのサポートについては、initializeScript によって返される配列に、バージョン1.1 をサポートするクレームと共にホストの apiVersionSupport レコードを配置することで示されます。 よさ? .. バージョン1.1 のサポートを示す値。
+**JAVASCRIPT API の更新**-javascript プロバイダー内の api に対して、ソースレベルで重大な変更が加えられた可能性があります (新しい投影されたメソッドとネイティブオブジェクトのプロパティを含む)。 既存の拡張機能では、新しいバージョンの JsProvider API をサポートしているかどうかを示すことなく、重大な変更が表示されることはありません。 新しい API バージョンのサポートについては、initializeScript によって返される配列に、バージョン1.1 をサポートするクレームと共にホストの apiVersionSupport レコードを配置することで示されます。 よさ? . バージョン1.1 のサポートを示す値。
 
 API バージョン1.1 の変更点は次のとおりです。
 
@@ -256,7 +256,7 @@ API バージョン1.1 の変更点は次のとおりです。
 
 ## <a name="10130"></a>1.0.13.0
 
-このバージョンでは、タイムトラベルトレースが追加されます。 タイムトラベルデバッグでは、プロセスを記録し、後で前後に再生することができます。 タイムトラベルデバッグ (TTD) を使用すると、バグが見つかるまで問題を再現するのではなく、デバッガーセッションを "巻き戻し" することで、問題を簡単にデバッグできます。 詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
+このバージョンでは、タイムトラベルトレースが追加されます。 タイムトラベルデバッグでは、プロセスを記録し、後で前後に再生することができます。 タイムトラベルデバッグ (TTD) を使用すると、バグが見つかるまで問題を再現するのではなく、デバッガーセッションを "巻き戻し" することで、問題を簡単にデバッグできます。 詳細については、「[Time Travel Debugging - 概要](time-travel-debugging-overview.md)」を参照してください。
 
 ## <a name="10120"></a>1.0.12.0
 
@@ -264,6 +264,6 @@ API バージョン1.1 の変更点は次のとおりです。
 
 ---
  
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

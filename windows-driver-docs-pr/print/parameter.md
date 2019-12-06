@@ -1,9 +1,9 @@
 ---
-title: Parameter 要素
-description: 省略可能なパラメーター要素には、イベント通知メッセージのテキストにパーセント記号 () 文字の代わりに使用するテキスト文字列を指定します。
+title: parameter 要素
+description: 省略可能な parameter 要素は、イベント通知メッセージのテキストでパーセント () 文字を置き換えるテキスト文字列を指定します。
 ms.assetid: 6a43af7d-da00-4038-b1a8-a076d07c4c1a
 keywords:
-- parameter 要素印刷デバイス
+- パラメーター要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,20 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 820b1985308399f83af8cb2b23b594e5763aebe2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6063785012286e73387a5011fb0c8e0543857edd
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324242"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881910"
 ---
-# <a name="parameter-element"></a>Parameter 要素
+# <a name="parameter-element"></a>parameter 要素
 
+省略可能な**parameter**要素は、パーセント (%) の代わりに使用するテキスト文字列を指定します。イベント通知メッセージのテキスト内の文字。
 
-省略可能な**パラメーター**割合 (%) の代わりに使用するテキスト文字列を指定します。イベント通知メッセージのテキストの文字。
+**Parameter**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
-**パラメーター**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用方法
 
 ```xml
 <parameter
@@ -36,8 +34,7 @@ ms.locfileid: "63324242"
   type = "xs:string"/>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 <table>
 <colgroup>
@@ -48,44 +45,42 @@ ms.locfileid: "63324242"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>種類</th>
-<th>必須</th>
+<th>備わっている</th>
+<th>タスクバーの検索ボックスに</th>
+<th>必須かどうか</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>ResourceDll</strong></p></td>
+<td><p><strong>resourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>必須ではない</p></td>
 <td><p></p>
-<p>リソース イベントの通知メッセージを表示するテキストを含んでいる DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
+<p>イベント通知メッセージに表示するテキストを含むリソース DLL を指定する、省略可能な属性です。 この DLL は、プリンタドライバの依存ファイルである必要があり、ドライバリソースフォルダに存在する必要があります (たとえば、%SYSTEMROOT%\system32\spool\drivers\w32x86\3)。</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
 <td><p></p>
-<p>割合 (%) の場所に表示するテキストを指定する必須の属性イベント通知メッセージのテキストの文字。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
+<p>パーセント (%) の場所に表示するテキストを指定する必須の属性です。イベント通知メッセージのテキスト内の文字。 属性値は、リソース DLL 内のテキスト文字列の場所を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>type</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>必須ではない</p></td>
 <td><p></p>
-<p>プリンターやドキュメントの名前を指定する省略可能な属性。 この属性は、印刷中のドキュメントの次の値: DocumentThe 名前のいずれかを実行できます。PrinterNameThe 名、プリンタと Fax に記載されているプリンターのコントロール パネル、たとえば、"Fabrikam 5000 \printserver で"フォルダーまたは「2 階の寝室のプリンター」。</p></td>
+<p>プリンターまたはドキュメントの名前を指定する省略可能な属性です。 この属性には、次の値のいずれかを指定できます。 DocumentThe されるドキュメントの名前。プリンター名。コントロールパネルの [プリンターと Fax] フォルダーに表示されるプリンターの名前。たとえば、"Fabrikam 5000 on \ プリント" または "Printer in 階ベッドルーム" のように指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="child-elements"></a>子要素
 
-
 子要素はありません。
 
 ## <a name="parent-elements"></a>親要素
-
 
 <table>
 <colgroup>
@@ -102,31 +97,31 @@ ms.locfileid: "63324242"
 <tr class="odd">
 <td><p><a href="body.md" data-raw-source="[&lt;strong&gt;body&lt;/strong&gt;](body.md)"><strong>body</strong></a></p></td>
 <td><p></p>
-<p>テキストを提供する必須要素は、イベントの通知メッセージに表示されます。 このテキストは、プリンターのイベントの特定の詳細、ユーザーを提供する必要があります。</p></td>
+<p>イベント通知メッセージに表示されるテキストを提供する必須の要素。 このテキストは、プリンターイベントについてのユーザー固有の詳細を提供します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>title</strong></a></p></td>
+<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>題</strong></a></p></td>
 <td><p></p>
-<p>必要な title 要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。</p></td>
+<p>必須の title 要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>注釈
 
-リソース DLL から読み込まれたテキストは割合 (%) を含めることができます。指定されたテキスト文字列で置き換えられる文字、**パラメーター**要素。
+リソース DLL から読み込まれるテキストには、パーセンテージ (%) を含めることができます。**parameter**要素によって指定されたテキスト文字列に置き換えられる文字。
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
-次のコード例に示す方法、**パラメーター**要素を使用して、完了イベントの通知メッセージを生成します。
+次のコード例は、**パラメーター**要素を使用して、完全なイベント通知メッセージを生成する方法を示しています。
 
-この例で、 **stringID**値は、次を指定します。
+この例では、 **Stringid**値によって次の値が指定されています。
 
--   ドライバー リソース DLL 内のユーザー インターフェイス文字列 100 は"プリンターが; %1 のインクが不足ください %2 を開き、インク カートリッジを交換します。"
--   Microsoft 提供のユーザー インターフェイスの DLL でのユーザー インターフェイス文字列 5 は「黄」です。
--   ドライバー リソース DLL 内のユーザー インターフェイス文字列 1002 は、"側アクセス ドア B"です。
+- ドライバーリソース DLL 内のユーザーインターフェイス文字列100は、"プリンターは %1 インクを超えています。%2 を開いてインクカートリッジを交換してください。 "
+
+- Microsoft が提供するユーザーインターフェイス DLL のユーザーインターフェイス文字列5は、"黄色" です。
+
+- ドライバーリソース DLL のユーザーインターフェイス文字列1002は、"サイドアクセスドア B" です。
 
 ```xml
 <?xml version="1.0" ?>
@@ -146,7 +141,7 @@ ms.locfileid: "63324242"
   </asyncPrintUIRequest>
 ```
 
-上記の XML コードを次に本体テキスト (stringID =「100」)、イベント通知メッセージが表示されます。"プリンターが黄色のインクからくださいアクセス ドア B 開きインク カートリッジを交換します。"
+上記の XML コードでは、イベント通知メッセージに次の本文 (stringID = "100") が表示されます: "プリンターは黄色のインクが不足しています。サイドアクセスドア B を開いてインクカートリッジを交換してください。 "
 
 ## <a name="see-also"></a>関連項目
 

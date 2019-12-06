@@ -1,9 +1,9 @@
 ---
 title: action 要素
-description: 省略可能なアクション要素には、ユーザーがバルーン メッセージ内のボタンをクリックしたときに完了するアクションについて説明します。
+description: オプションの action 要素は、ユーザーがバルーンメッセージのボタンをクリックしたときに実行されるアクションを表します。
 ms.assetid: dae207ad-072e-4de6-b6a2-f1188ce91065
 keywords:
-- 印刷デバイスの action 要素
+- アクション要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,20 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e144aa68c24dd78cc398eeba7c6872bb95891a0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec58ab45d6e8cea2ff01bcddd697f42de670c5e8
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381181"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881924"
 ---
 # <a name="action-element"></a>action 要素
 
+オプションの**action**要素は、ユーザーがバルーンメッセージのボタンをクリックしたときに実行されるアクションを表します。
 
-省略可能な**アクション**要素は、ユーザーがバルーン メッセージ内のボタンをクリックしたときに完了する必要がアクションを表します。
+**Action**要素は、この URI: https://schemas.microsoft.com/2003/print/asyncui/v1/request の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
-**アクション**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースできない場合がありますのいくつかの言語および国。)
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用方法
 
 ```xml
 <action
@@ -37,8 +35,7 @@ ms.locfileid: "63381181"
 </action>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 <table>
 <colgroup>
@@ -49,9 +46,9 @@ ms.locfileid: "63381181"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>種類</th>
-<th>必須</th>
+<th>備わっている</th>
+<th>タスクバーの検索ボックスに</th>
+<th>必須かどうか</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -59,32 +56,29 @@ ms.locfileid: "63381181"
 <tr class="odd">
 <td><p><strong>dll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
 <td><p></p>
-<p>ユーザーがボタンをクリックしたときに呼び出す関数を含む、IHV によって提供される DLL を指定する必須の属性。</p></td>
+<p>ユーザーがボタンをクリックしたときに呼び出す関数を含む、IHV によって提供される DLL を指定する必須の属性です。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>entrypoint</strong></p></td>
+<td><p><strong>エントリー</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
 <td><p></p>
-<p>IHV によって提供される DLL 内に呼び出される関数を指定する必須の属性。 この関数が返す<strong>NULL</strong>呼び出されるとします。</p></td>
+<p>IHV によって提供される DLL で呼び出す関数を指定する必須の属性です。 この関数は、呼び出された場合に<strong>NULL</strong>を返します。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="text-value"></a>テキスト値
-----------
+## <a name="text-value"></a>テキスト値
 
-ドライバー リソース DLL に渡される、CDATA として書式設定された省略可能な文字列。
+ドライバーリソース DLL に渡される、CDATA 形式の省略可能な文字列。
 
 ## <a name="child-elements"></a>子要素
-
 
 子要素はありません。
 
 ## <a name="parent-elements"></a>親要素
-
 
 <table>
 <colgroup>
@@ -101,25 +95,23 @@ ms.locfileid: "63381181"
 <tr class="odd">
 <td><p><a href="balloonui.md" data-raw-source="[&lt;strong&gt;balloonUI&lt;/strong&gt;](balloonui.md)"><strong>balloonUI</strong></a></p></td>
 <td><p></p>
-<p>イベントの通知メッセージが表示されるテキストを提供します。 このテキストは、プリンターのイベントの特定の詳細、ユーザーを提供する必要があります。</p></td>
+<p>イベント通知メッセージに表示されるテキストを提供します。 このテキストは、プリンターイベントについてのユーザー固有の詳細を提供します。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>注釈
 
-**アクション**正規バルーンに似ていますが、対話型のバルーンと要素が使用されますが、ユーザーがクリックするためのボタンが含まれています。
+**Action**要素は対話型バルーンと共に使用されます。これは通常のバルーンに似ていますが、ユーザーがクリックするボタンが含まれています。
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
-次の XML コードの例の実行、 *IHV.exe*クライアント コンピューター上のプログラム
+次の XML コード例では、クライアントコンピューターで IHV プログラムを実行します *。*
 
 ```xml
 <?xml version="1.0" ?> 
   <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <balloonUI iconID="1" resourceDll="IHV.dll">
@@ -134,12 +126,12 @@ ms.locfileid: "63381181"
   </asyncPrintUIRequest>
 ```
 
-次のコード例を使用する方法を示しています、**アクション**リソース DLL にデータを渡す要素。
+**Action**要素を使用して、リソース DLL にデータを渡す方法を次のコード例に示します。
 
 ```xml
 <?xml version="1.0" ?>
    <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <balloonUI iconID="1" resourceDll="IHV.dll">
@@ -159,13 +151,4 @@ ms.locfileid: "63381181"
 
 ## <a name="see-also"></a>関連項目
 
-
 [**balloonUI**](balloonui.md)
-
- 
-
- 
-
-
-
-

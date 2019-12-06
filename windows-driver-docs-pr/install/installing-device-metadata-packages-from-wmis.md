@@ -4,12 +4,12 @@ description: WMIS からのデバイス メタデータ パッケージのイン
 ms.assetid: e2466b8a-c9c7-4d0d-9ce7-4648c83fc272
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e902643aa9c9198dc981157871ba037b598ddba9
-ms.sourcegitcommit: 134bbe010add8cf161a82d9cccac084bb6931d32
+ms.openlocfilehash: 487b27b642664b1e0adba7bd8cc3045c3d9cf430
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73914925"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862368"
 ---
 # <a name="installing-device-metadata-packages-from-wmis"></a>WMIS からのデバイス メタデータ パッケージのインストール
 
@@ -20,7 +20,7 @@ ms.locfileid: "73914925"
 
  
 
-[ドライバーパッケージ](driver-packages.md)を[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)に送信してデジタル署名する場合に、デバイスメタデータパッケージを[Windows Quality Online Services (winqual)](https://docs.microsoft.com/en-us/windows-hardware/drivers/dashboard/winqual-submission-tool--winqualexe-)に送信すると、Windows 7 以降のバージョンの windows を実行している任意のコンピューターで DMRC によって行われたダウンロード要求に対して、WMIS がパッケージを使用できるようになります。
+[ドライバーパッケージ](driver-packages.md)を[ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=227016)に送信してデジタル署名する場合に、デバイスメタデータパッケージを[Windows Quality Online Services (winqual)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/winqual-submission-tool--winqualexe-)に送信すると、Windows 7 以降のバージョンの windows を実行している任意のコンピューターで DMRC によって行われたダウンロード要求に対して、WMIS がパッケージを使用できるようになります。
 
 **重要**  OEM は WMIS を使用してのみデバイスメタデータパッケージを配布することを強くお勧めします。 WMIS を使用したデバイスメタデータパッケージの配布では、*ハードウェア優先*のインストールシナリオがサポートされます。 このシナリオでは、デバイスのドライバーとデバイス固有のソフトウェアがインストールされる前に、新しいデバイスがインストールされます。 このシナリオの詳細については、「[ハードウェア優先インストール](hardware-first-installation.md)」を参照してください。
 

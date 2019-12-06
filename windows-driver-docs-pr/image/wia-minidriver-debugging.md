@@ -4,12 +4,12 @@ description: WIA ミニドライバーのデバッグ
 ms.assetid: 6466d0db-a2f9-4b3e-aa3e-8030b243f862
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 61711f0f18e4bf4a3855dca36ecfd83dfbb3c0cf
-ms.sourcegitcommit: 1585a52e762226b01c7369371727746487cc57bf
+ms.openlocfilehash: 427ddcec5bd86533701ed7ed28b515332d324f41
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74796668"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881878"
 ---
 # <a name="wia-minidriver-debugging"></a>WIA ミニドライバーのデバッグ
 
@@ -53,7 +53,7 @@ WIA サービスが開始されると、サービスコントロールマネー�
 
 ほとんどのデバッガーでは、プロセスが既に開始された後にアタッチするために、実行中のプロセスの PID が必要になります。 WIA は*svchost.exe*と呼ばれる汎用ホスティングプロセスで実行されるため、 *svchost.exe*の正しいインスタンスを見つけることが不可欠です。
 
-Microsoft サイト (www.microsoft.com) からデバッガーパッケージをダウンロードした場合は、 *tlist.exe*という名前のユーティリティプログラムが含まれています。 *Tlist.exe*は、実行中のすべてのプロセスを表示します。 S スイッチを使用して*tlist.exe*を実行すると、このユーティリティは、どのプロセスがどのサービスをホストしているかも示します。 たとえば、 *tlist.exe-s*を実行すると、次のような出力が生成されます。
+Microsoft サイトからデバッガーパッケージをダウンロードした場合は、 *tlist.exe*という名前のユーティリティプログラムが含まれています。 *Tlist.exe*は、実行中のすべてのプロセスを表示します。 S スイッチを使用して*tlist.exe*を実行すると、このユーティリティは、どのプロセスがどのサービスをホストしているかも示します。 たとえば、 *tlist.exe-s*を実行すると、次のような出力が生成されます。
 
 ```cmd
    0 System Process

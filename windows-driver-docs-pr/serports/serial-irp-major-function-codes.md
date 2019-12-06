@@ -7,12 +7,12 @@ keywords:
 - シリアル IRP コード
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: f539716ade660a4b4d08583c4b1860541a8c2cd9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2c6742c5c9e50dd212fce83387f6cb27c0451a0a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845389"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862591"
 ---
 # <a name="serial-irp-major-function-codes"></a>シリアル IRP の主要な関数コード
 このトピックでは、シリアル IRP の主要な関数コードについて説明します。
@@ -23,7 +23,7 @@ ms.locfileid: "72845389"
 
 [IRP_MJ_CREATE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-create)要求によって、シリアルデバイスが開かれます。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、ポートまたはポートに接続されているデバイスにアクセスする前に、シリアルデバイスを開く必要があります。
 
@@ -41,14 +41,14 @@ ms.locfileid: "72845389"
 
 **Status**フィールドは、次のいずれかの値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|シリアルデバイスが正常に開かれました。|
 |STATUS_ACCESS_DENIED|デバイスは既に開いています。|
 |STATUS_DELETE_PENDING|シリアルはデバイスを削除しています。|
 |STATUS_INSUFFICIENT_RESOURCES|デバイスがプラグアンドプレイ開始状態でないか、ドライバーが内部データ構造を割り当てることができませんでした。|
 |STATUS_NOT_A_DIRECTORY|シリアルデバイスをディレクトリとして開くことはできません。|
-|あります|シリアルは、後で処理するために要求をキューに入れました。|
+|STATUS_PENDING|シリアルは、後で処理するために要求をキューに入れました。|
 |STATUS_SHARED_IRQ_BUSY|デバイスに割り当てられている割り込みが、別の開いているデバイスによって使用されています。|
 
 ### <a name="operation"></a>操作
@@ -59,7 +59,7 @@ ms.locfileid: "72845389"
 
 IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、次の場合にデバイス制御要求を使用します。
 
@@ -67,9 +67,9 @@ IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 * レジスタの取得と設定
 * 動作モードの取得と設定
 
-シリアルでサポートされているデバイス制御要求の詳細については、 [ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
+シリアルでサポートされているデバイス制御要求の詳細については、 [ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 特定の要求
 
@@ -89,11 +89,11 @@ IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 
 [IRP_MJ_FLUSH_BUFFER](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-flush-buffers)要求は、シリアルデバイスの内部書き込みバッファーをフラッシュします。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、フラッシュ要求を使用して、クライアントがフラッシュ要求の前に送信したすべての書き込み要求がシリアルによって完了したことを確認します。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 なし。
 
@@ -107,12 +107,12 @@ IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 
 **Status**メンバーは、次のいずれかの状態値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|要求は正常に完了しました。|
 |STATUS_CANCELLED|クライアントが要求を取り消しました。 また、デバイスエラーが発生し、シリアルがデバイスエラーが発生した場合に要求をキャンセルするように構成されている場合にも、シリアルは要求をキャンセルします。|
 |STATUS_DELETE_PENDING|ドライバーは、デバイスを削除しています。|
-|あります|シリアルは、後で処理するために要求をキューに入れました。|
+|STATUS_PENDING|シリアルは、後で処理するために要求をキューに入れました。|
 
 ### <a name="operation"></a>操作
 
@@ -121,7 +121,7 @@ IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 ## <a name="irp_mj_internal_device_control"></a>IRP_MJ_INTERNAL_DEVICE_CONTROL
 [IRP_MJ_INTERNAL_DEVICE_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)要求は、シリアルデバイスで内部の動作モードを設定します。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、次のための内部デバイス制御要求を使用します。
 
@@ -130,7 +130,7 @@ IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 
 デバイスコントロールの内部要求の詳細については、 [ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 特定の要求
 
@@ -150,11 +150,11 @@ IRP_MJ_DEVICE_CONTROL 要求は、シリアルポートを操作します。
 
 [IRP_MJ_PNP](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)要求ではプラグアンドプレイがサポートされています。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
-PnP マネージャーは、デバイスを照会し、デバイスの起動、停止、および削除を行うために、IRP_MJ_PNP 要求を送信します。
+PnP マネージャーは、デバイスを照会し、デバイスの起動、停止、および削除を行うために IRP_MJ_PNP 要求を送信します。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 特定の要求
 
@@ -203,11 +203,11 @@ Serial は、プラグアンドプレイ要求に対して次のシリアル固�
 
 [IRP_MJ_POWER](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-power)要求は電源管理を制御します。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 電源マネージャーは、電源要求を使用してクエリを実行し、電源状態を設定します。
 
-###  <a name="input-parameters"></a>入力パラメーター
+###  <a name="input-parameters"></a>入力パラメーター。
 
 特定の要求
 
@@ -234,13 +234,13 @@ Serial は、関数ドライバーまたは下位レベルのフィルタード�
 
 ## <a name="irp_mj_query_information"></a>IRP_MJ_QUERY_INFORMATION
 
-[IRP_MJ_QUERY_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information)要求は、シリアルデバイスのファイルの末尾情報を照会します。 
+[IRP_MJ_QUERY_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-query-information)要求は、シリアルデバイスのファイルの最後情報を照会します。 
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、クエリ情報要求を使用して、シリアルデバイスで開かれたファイルに関する標準的な情報と位置情報を取得します。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 **パラメーターの QueryFile. FileInformationClass**は**fileinformationclass**または**fileinformationclass**に設定されます。
 
@@ -248,7 +248,7 @@ Serial は、関数ドライバーまたは下位レベルのフィルタード�
 
 |パラメーター|説明|
 |----|----|
-|**FileStandardInformation**|**AssociatedIrp**のメンバーは、シリアルが標準情報を出力するために使用する、クライアントに割り当てられた FILE_STANDARD_INFORMATION 構造体を指します。|
+|**FileStandardInformation**|**AssociatedIrp**メンバーは、シリアルが標準情報を出力するために使用する、クライアントによって割り当てられた FILE_STANDARD_INFORMATION 構造体を指します。|
 |**FilePositionInformation**|AssociatedIrp のメンバーは、シリアルが位置情報を出力するために使用する、クライアントに割り当てられた FILE_POSITION_INFORMATION 構造体を指し**ます**。|
 
 ### <a name="io-status-block"></a>I/o 状態ブロック
@@ -257,13 +257,13 @@ Serial は、関数ドライバーまたは下位レベルのフィルタード�
 
 **Status**メンバーは、次のいずれかの状態値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|要求は正常に完了しました。|
 |STATUS_CANCELLED|クライアントが要求を取り消しました。 また、デバイスエラーが発生し、シリアルがデバイスエラーが発生した場合に要求をキャンセルするように構成されている場合にも、シリアルは要求をキャンセルします。|
 |STATUS_DELETE_PENDING|シリアルはデバイスを削除しています。|
 |STATUS_INVALID_PARAMETER|要求された情報はサポートされていません。|
-|あります|シリアルは、後で処理するために要求をキューに入れました。|
+|STATUS_PENDING|シリアルは、後で処理するために要求をキューに入れました。|
 
 ### <a name="operation"></a>操作
 
@@ -275,11 +275,11 @@ Serial は、 **Filestandardinformation**と**filestandardinformation**型の要
 
 [IRP_MJ_READ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-read)要求は、シリアルデバイスからクライアントにデータを転送します。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、シリアルデバイス上のデータを読み取るときに、読み取り要求を使用します。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 **Parameters. read. Length**メンバーは、クライアントの読み取りバッファーに転送するバイト数に設定されます。
 
@@ -293,29 +293,29 @@ Serial は、 **Filestandardinformation**と**filestandardinformation**型の要
 
 **Status**メンバーは、次のいずれかの値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|要求は正常に完了しました。|
 |STATUS_CANCELLED|クライアントが要求を取り消しました。 また、デバイスエラーが発生し、シリアルがデバイスエラーが発生した場合に要求をキャンセルするように構成されている場合にも、シリアルは要求をキャンセルします。|
 |STATUS_DELETE_PENDING|シリアルはデバイスを削除しています。|
-|あります|シリアルは、後で処理するために要求をキューに入れました。|
+|STATUS_PENDING|シリアルは、後で処理するために要求をキューに入れました。|
 |STATUS_TIMEOUT|要求の完了に要する時間が、タイムアウトの合計値または間隔のタイムアウト値を超えました。|
 
 ### <a name="operation"></a>操作
 
-クライアントは、タイムアウトイベントを使用して読み取り要求を終了できます。 ただし、シリアルデバイスを開くと、デバイスのタイムアウト設定が定義されていないことに注意してください。 カーネルモードクライアントは、 [IOCTL_SERIAL_INTERNAL_BASIC_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_internal_basic_settings)を使用してタイムアウトパラメーターを0に設定できます (タイムアウトイベントは使用されません)。 ユーザーモードとカーネルモードのクライアントは、 [IOCTL_SERIAL_SET_TIMEOUTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)要求を使用してタイムアウトパラメーターを設定できます。 
+クライアントは、タイムアウトイベントを使用して読み取り要求を終了できます。 ただし、シリアルデバイスを開くと、デバイスのタイムアウト設定が定義されていないことに注意してください。 カーネルモードのクライアントは、 [IOCTL_SERIAL_INTERNAL_BASIC_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_internal_basic_settings)を使用してタイムアウトパラメーターを0に設定できます (タイムアウトイベントは使用されません)。 ユーザーモードとカーネルモードのクライアントは、 [IOCTL_SERIAL_SET_TIMEOUTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)要求を使用して、タイムアウトパラメーターを設定できます。 
 
 読み取りと書き込みのタイムアウトの詳細については、「[シリアルデバイスの読み取りおよび書き込みタイムアウトの設定](https://docs.microsoft.com/previous-versions/ff547486(v=vs.85))」を参照してください。
 
 ## <a name="irp_mj_set_information"></a>IRP_MJ_SET_INFORMATION
 
-[IRP_MJ_SET_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)要求は、シリアルデバイスに関するファイルの終了情報を設定します。
+[IRP_MJ_SET_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-shutdown)要求は、シリアルデバイスに関するファイルの最終情報を設定します。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、設定情報要求を使用して、シリアルデバイスで開かれているファイルの現在のファイルの終了位置を変更します。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 **Parameters. FileInformationClass**メンバーは**fileendoffileinformation**または**fileの情報**に設定されています。
 
 ### <a name="output-parameters"></a>出力パラメーター
@@ -328,13 +328,13 @@ Serial は、 **Filestandardinformation**と**filestandardinformation**型の要
 
 **Status**メンバーは、次のいずれかの状態値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|要求は正常に完了しました。|
 |STATUS_CANCELLED|クライアントが要求を取り消しました。 また、デバイスエラーが発生し、シリアルがデバイスエラーが発生した場合に要求をキャンセルするように構成されている場合にも、シリアルは要求をキャンセルします。|
 |STATUS_DELETE_PENDING|シリアルはデバイスを削除しています。|
 |STATUS_INVALID_PARAMETER|指定されたファイルの末尾情報はサポートされていません。|
-|あります|シリアルは、後で処理するために要求をキューに入れました。|
+|STATUS_PENDING|シリアルは、後で処理するために要求をキューに入れました。|
 
 ### <a name="operation"></a>操作
 
@@ -344,11 +344,11 @@ Serial では、 **Fileendoffileinformation**と**fileて information**型の要
 
 [IRP_MJ_SYSTEM_CONTROL](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-system-control)要求では、WMI 要求がサポートされています。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 WMI カーネルモードコンポーネントは、シリアルデバイスの WMI プロバイダーとしてシリアルレジスタの後でいつでも IRP_MJ_SYSTEM_CONTROL 要求を送信できます。 通常、WMI Irp は、ユーザーモードデータコンシューマーが WMI データを要求したときに送信されます。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 特定の要求
 
@@ -360,7 +360,7 @@ WMI カーネルモードコンポーネントは、シリアルデバイスの 
 
 WMI 要求の場合、[状態] フィールドは次のいずれかの値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|要求は正常に完了しました。|
 |STATUS_BUFFER_TOO_SMALL|出力バッファーのサイズ (バイト単位) が要求された情報の必要なサイズを下回っています。|
@@ -396,11 +396,11 @@ Serial は、他のシステム制御要求をサポートしていません。 
 
 [IRP_MJ_WRITE](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)要求は、クライアントからシリアルデバイスにデータを転送します。
 
-### <a name="when-sent"></a>送信時
+### <a name="when-sent"></a>送信日時
 
 クライアントは、シリアルデバイスにデータを書き込むときに、書き込み要求を使用します。
 
-### <a name="input-parameters"></a>入力パラメーター
+### <a name="input-parameters"></a>入力パラメーター。
 
 **Parameters. Length**メンバーは、クライアントが割り当てた書き込みバッファーからシリアルデバイスにコピーするバイト数に設定されます。
 
@@ -416,17 +416,17 @@ Serial は、他のシステム制御要求をサポートしていません。 
 
 *Status*メンバーは、次のいずれかの値に設定されます。
 
-|状態の値|説明|
+|ステータス値|説明|
 |----|----|
 |STATUS_SUCCESS|要求は正常に完了しました。|
 |STATUS_CANCELLED|クライアントが要求を取り消しました。 また、デバイスエラーが発生し、シリアルがデバイスエラーが発生した場合に要求をキャンセルするように構成されている場合にも、シリアルは要求をキャンセルします。|
 |STATUS_DELETE_PENDING|シリアルはデバイスを削除しています。|
-|あります|シリアルは、後で処理するために要求をキューに入れました。|
+|STATUS_PENDING|シリアルは、後で処理するために要求をキューに入れました。|
 |STATUS_TIMEOUT|書き込み要求に許可された合計時間を超えました。|
 
 ### <a name="operation"></a>操作
 
-クライアントは、タイムアウトイベントを使用して、書き込み要求を終了できます。 ただし、シリアルデバイスを開いたときに、デバイスに設定されたタイムアウトイベントは未定義であることに注意してください。 カーネルモードクライアントは、 [IOCTL_SERIAL_INTERNAL_BASIC_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_internal_basic_settings)を使用してタイムアウトパラメーターを0に設定し (タイムアウトイベントは使用されません)、 [IOCTL_SERIAL_SET_TIMEOUTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)要求によってタイムアウトパラメーターを設定できます。 読み取りと書き込みのタイムアウトの詳細については、「[シリアルデバイスの読み取りおよび書き込みタイムアウトの設定](https://docs.microsoft.com/previous-versions/ff547486(v=vs.85))」を参照してください。
+クライアントは、タイムアウトイベントを使用して、書き込み要求を終了できます。 ただし、シリアルデバイスを開いたときに、デバイスに設定されたタイムアウトイベントは未定義であることに注意してください。 カーネルモードクライアントは、 [IOCTL_SERIAL_INTERNAL_BASIC_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_internal_basic_settings)を使用してタイムアウトパラメーターを0に設定できます (タイムアウトイベントは使用されません)。また、タイムアウトパラメーターを設定するための[IOCTL_SERIAL_SET_TIMEOUTS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_timeouts)要求です。 読み取りと書き込みのタイムアウトの詳細については、「[シリアルデバイスの読み取りおよび書き込みタイムアウトの設定](https://docs.microsoft.com/previous-versions/ff547486(v=vs.85))」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
@@ -434,4 +434,4 @@ Serial は、他のシステム制御要求をサポートしていません。 
 
 [電源 Irp を処理するための規則](https://docs.microsoft.com/windows-hardware/drivers/kernel/rules-for-handling-power-irps)
 
-[シリアルコントローラードライバーの設計ガイド](https://docs.microsoft.com/en-us/windows-hardware/drivers/serports/)
+[シリアルコントローラードライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/serports/)

@@ -3,12 +3,12 @@ title: Windows 10 UVC カメラ実装ガイド
 description: 受信トレイドライバーを使用して、USB ビデオクラスに準拠しているカメラの特定の機能をアプリケーションに公開する方法について説明します。
 ms.date: 08/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eca9d97a2e6bbccf39cb0f2211303a7e9d58073d
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: 54b87f5f4ec0d42376246e22417851a8640a9b14
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750051"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881894"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC カメラ実装ガイド
 
@@ -16,21 +16,21 @@ Windows 10 は、USB ビデオクラス仕様 (バージョン1.0 から 1.5) �
 
 ## <a name="terminology"></a>用語
 
-| Keyword              | 説明                                                                  |
+| キーワード              | 説明                                                                  |
 |----------------------|------------------------------------------------------------------------------|
 | UVC                  | USB ビデオクラス                                                              |
 | UVC ドライバー           | OS に付属している USBVideo ドライバー                                   |
-| ―                   | 赤外線                                                                     |
+| IR                   | 赤外線                                                                     |
 | カラーカメラ         | カラーストリームを出力するカメラ (RGB や YUV カメラなど)      |
 | センサーカメラ        | 非カラーストリームを出力するカメラ (IR カメラや深度カメラなど) |
-| BO                  | バイナリデバイスオブジェクトストア                                                   |
+| BOS                  | バイナリデバイスオブジェクトストア                                                   |
 | MS OS 2.0 記述子 | Microsoft プラットフォーム固有の BOS デバイス機能記述子                 |
 
 ## <a name="sensor-cameras"></a>センサーカメラ
 
 Windows では、2つのカテゴリのカメラがサポートされています。 1つはカラーカメラで、もう1つはカラーセンサー以外のカメラです。 RGB または YUV カメラは、カラーカメラと、グレースケール、IR、および深度カメラなどの非カラーカメラとして分類され、センサーカメラとして分類されます。 UVC ドライバーでは、両方の種類のカメラがサポートされています。 カメラのファームウェアでは、UVC ドライバーがサポートされているカテゴリのいずれかまたは両方にカメラを登録するかに基づいて値を指定することをお勧めします。
 
-色のみの形式の種類をサポートするカメラは、KSCATEGORY\_VIDEO\_カメラで登録する必要があります。 IR または深度専用の形式の種類をサポートするカメラは、KSCATEGORY\_センサー\_カメラで登録する必要があります。 色と非カラーの両方の形式の種類をサポートするカメラは、KSCATEGORY\_VIDEO\_カメラと KSCATEGORY\_センサー\_カメラで登録する必要があります。 この分類により、アプリケーションは、使用するカメラを選択できます。
+色のみの形式の種類をサポートしているカメラは、KSCATEGORY\_VIDEO\_カメラで登録する必要があります。 IR または深度専用の形式の種類をサポートするカメラは、KSCATEGORY\_センサー\_カメラで登録する必要があります。 色と非カラーの両方の形式の種類をサポートするカメラは、KSCATEGORY\_VIDEO\_カメラと KSCATEGORY\_センサー\_カメラに登録する必要があります。 この分類により、アプリケーションは、使用するカメラを選択できます。
 
 UVC カメラは、次のセクションで詳しく説明されている BOS [MS OS 2.0 記述子](https://docs.microsoft.com/windows-hardware/drivers/usbcon/microsoft-defined-usb-descriptors)の**SensorCameraMode**および**SkipCameraEnumeration**属性を使用して、カテゴリの基本設定を指定できます。
 
@@ -38,7 +38,7 @@ UVC カメラは、次のセクションで詳しく説明されている BOS [M
 
 値が1の場合、デバイスは KSCATEGORY\_センサー\_カメラに登録されます。 これに加えて、 **SkipCameraEnumeration**には1を指定します。これにより、センサーカメラだけを対象とするアプリケーションでカメラを使用できるようになります。 センサーカメラのメディアの種類のみを公開するカメラでは、この値を使用する必要があります。
 
-**SensorCameraMode**の\_値が2の場合、デバイスは KSCATEGORY センサー\_カメラ & KSCATEGORY\_VIDEO\_カメラに登録されます。 これにより、センサーとカラーカメラを検索するアプリケーションでカメラを使用できるようになります。 センサーカメラとカラーカメラメディアタイプの両方を公開するカメラでは、この値を使用する必要があります。
+**SensorCameraMode**の値が2の場合、デバイスは KSCATEGORY\_センサー\_カメラ & KSCATEGORY\_VIDEO\_カメラに登録されます。 これにより、センサーとカラーカメラを検索するアプリケーションでカメラを使用できるようになります。 センサーカメラとカラーカメラメディアタイプの両方を公開するカメラでは、この値を使用する必要があります。
 
 前述のレジストリ値は、BOS 記述子を使用して指定することをお勧めします。 プラットフォーム固有の MS OS 2.0 記述子を含む BOS 記述子のサンプルについては、後述の「[複合デバイスの例](#example-composite-device)」を参照してください。
 
@@ -46,9 +46,9 @@ UVC カメラは、次のセクションで詳しく説明されている BOS [M
 
 (受信トレイ UVC ドライバーに基づく) カスタム INF ファイルには、次の AddReg エントリが含まれている必要があります。
 
-**SensorCameraMode**:REG\_DWORD:1 (センサーカメラとして登録する場合)
+**SensorCameraMode**: REG\_DWORD: 1 (センサーカメラとして登録)
 
-**SkipCameraEnumeration**:REG\_DWORD:1 (IR アプリケーションでのみ使用できるようにする)
+**SkipCameraEnumeration**: REG\_DWORD: 1 (IR アプリケーションでのみ使用できるようにします)
 
 カスタム INF セクションの例を次に示します。
 
@@ -73,11 +73,11 @@ Windows 受信トレイ USB ビデオクラス (UVC) ドライバーは、YUV �
 
 次の形式の種類の Guid は、WDK ksmedia .h ヘッダーファイルで定義されているストリームビデオ形式記述子で指定する必要があります。
 
-| 種類 | 説明 |
+| タスクバーの検索ボックスに | 説明 |
 | --- | --- |
-| KSDATAFORMAT\_サブ\_タイプL8\_IR |  非圧縮8ビットのルミナンス平面。 この型は、 [mfvideoformat\_L8](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)にマップされます。 |
-| KSDATAFORMAT\_SUBTYPE\_L16IR\_ | 16ビットの非圧縮平面。 この型は、 [mfvideoformat\_L16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)にマップされます。 |
-| KSDATAFORMAT\_サブ\_タイプ MJPG\_IR | 圧縮された MJPEG フレーム。 メディアファンデーションは、これを NV12 圧縮されていないフレームに変換し、ルミナンス平面のみを使用します。 |
+| KSDATAFORMAT\_のサブタイプ\_L8\_IR |  非圧縮8ビットのルミナンス平面。 この型は、 [Mfvideoformat\_L8](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)にマップされます。 |
+| KSDATAFORMAT\_サブタイプ\_L16\_IR | 16ビットの非圧縮平面。 この型は[\_、L16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)にマップされます。 |
+| KSDATAFORMAT\_サブタイプ\_MJPG\_IR | 圧縮された MJPEG フレーム。 メディアファンデーションは、これを NV12 圧縮されていないフレームに変換し、ルミナンス平面のみを使用します。 |
 
 これらの形式の種類の Guid がフレーム記述子の guidFormat フィールドに指定されている場合、メディアファンデーションキャプチャパイプラインはストリームを IR ストリームとしてマークします。 メディアファンデーション FrameReader API で記述されたアプリケーションは、IR ストリームを使用できます。 Ir ストリームのパイプラインでは、IR フレームのスケーリングや変換はサポートされていません。
 
@@ -111,9 +111,9 @@ typedef struct _VIDEO_FORMAT_FRAME
 
 Windows 受信トレイ USB ビデオクラスドライバーは、深度ストリームを生成するカメラをサポートしています。 これらのカメラは、シーンの深度情報 (たとえば、フライト時間) をキャプチャし、その深度マップを非圧縮の YUV フレームとして USB 上に送信します。 次の形式の種類の GUID は、WDK ksmedia .h ヘッダーファイルで定義されているストリームビデオ形式記述子で指定する必要があります。
 
-| 種類 | 説明 |
+| タスクバーの検索ボックスに | 説明 |
 | --- | --- |
-| KSDATAFORMAT\_SUBTYPE\_D16 |  16ビット深度マップの値。 この型は、 [mfvideoformat\_D16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)と同じです。 値はミリメートル単位です。 |
+| KSDATAFORMAT\_サブタイプ\_D16 |  16ビット深度マップの値。 この型は、 [D16\_の Mfvideoformat](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)と同じです。 値はミリメートル単位です。 |
 
 フレーム記述子の guidFormat メンバーで形式の種類 GUID が指定されている場合、メディアファンデーションキャプチャパイプラインはストリームを深度ストリームとしてマークします。 FrameReader API で記述されたアプリケーションは、深度ストリームを使用できます。 深度ストリームのスケーリングや変換は、パイプラインによってサポートされていません。
 
@@ -156,9 +156,9 @@ Windows では、コンテナー ID に基づくカメラのグループ化が�
 
 前述のようにデバイスのファームウェアを更新できない場合は、カスタムの INF を使用し、次のようにセンサーグループの ID と名前を指定することによって、カメラがセンサーグループの一部であることを指定できます。 (受信トレイ UVC ドライバーに基づく) カスタム INF ファイルには、次の AddReg エントリが含まれている必要があります。
 
-**Fssensorgroupid**:REG_SZ: "{自分のセンサーグループ ID GUID}"
+**Fssensorgroupid**: REG_SZ: "{自分のセンサーグループ ID GUID}"
 
-**Fssensorgroupname**:REG_SZ: "センサーグループのフレンドリ名"
+**Fssensorgroupname**: REG_SZ: "センサーグループのフレンドリ名"
 
 カスタム INF セクションの例を次に示します。
 
@@ -194,7 +194,7 @@ UVC 仕様には、ビデオストリーミングインターフェイスが、�
 
 カスタム INF ファイル (カスタム UVC ドライバーまたは受信トレイ UVC ドライバーに基づく) には、次の AddReg エントリが含まれている必要があります。
 
-**EnableDependentStillPinCapture**:REG_DWORD:0x0 (無効) から 0x1 (有効)
+**EnableDependentStillPinCapture**: REG_DWORD: 0X0 (無効) から 0X1 (有効)
 
 このエントリが有効 (0x1) に設定されている場合、キャプチャパイプラインは引き続きイメージキャプチャのためにメソッド2/3 を利用します (ファームウェアが UVC 仕様で指定されているように、メソッド2/3 のサポートをアドバタイズしていることを前提とします)。
 
@@ -244,7 +244,7 @@ DMFTs の要件:
 
 カスタム。INF ファイルの "Interface AddReg" セクションで、次のレジストリエントリを追加して、DMFT の Clsid を指定します。
 
-**CameraDeviceMftCLSIDChain**(REG\_マルチ\_SZ)% Dmft0。CLSID%、% Dmft。CLSID%、% Dmft2。CLSID
+**CameraDeviceMftCLSIDChain** (REG\_複数\_SZ)% Dmft0。CLSID%、% Dmft。CLSID%、% Dmft2。CLSID
 
 次のサンプルの INF 設定に示されているように、% Dmft0 を置き換えます。CLSID% と% Dmft1% は、お使いの DMFTs に使用している実際の CLSID 文字列と共に、最大2つの Clsid が Windows 10 バージョン1703で許可されています。最初の clsid は DevProxy に最も近いもので、最後の文字列はチェーン内の最後の DMFTS です。
 
@@ -260,7 +260,7 @@ Platform DMFT CLSID は {3D096DDE8971-4AD5-98f9 c74f56492630} です。
 
   - CameraDeviceMftCLSIDChain =% Dmft。CLSID
 
-- *プラットフォーム dmft &lt; -IHV/OEM dmft&gt;*
+- *プラットフォーム DMFT &lt;-&gt; IHV/OEM DMFT*
 
   - CameraDeviceMftCLSIDChain = "{3D096DDE8971-4AD5-98f9 c74f56492630}",% Dmft.CLSID
 
@@ -268,7 +268,7 @@ Platform DMFT CLSID は {3D096DDE8971-4AD5-98f9 c74f56492630} です。
 
 ![レジストリエディターの DMFT チェーン](images/dmft-registry-editor.png)
 
-- *IHV/OEM DMFT0 &lt; - &gt; IHV/OEM DMFT1*
+- *IHV/OEM DMFT0 &lt;-&gt; IHV/OEM DMFT1*
 
   - CameraDeviceMftCLSIDChain =% Dmft0.CLSID%、% Dmft1。CLSID%、
 
@@ -277,7 +277,7 @@ Platform DMFT CLSID は {3D096DDE8971-4AD5-98f9 c74f56492630} です。
 
 **CameraDeviceMftCLSIDChain**が構成されている場合、従来の CameraDeviceMftCLSID 設定は dtm によってスキップされます。
 
-**CameraDeviceMftCLSIDChain**が構成されておらず、レガシ CameraDeviceMftCLSID が構成されている場合、チェーンは次のようになります (USB カメラがあり、platform dmft と platform &lt;dmft が有効になっている場合)。&gt;Platform dmft &lt;–&gt; OEM/ihv dmft または (カメラが platform dmft でサポートされていないか、platform dmft が&lt;無効になっている場合) devproxy - &gt; OEM/ihv dmft。
+**CameraDeviceMftCLSIDChain**が構成されておらず、レガシ CameraDeviceMftCLSID が構成されている場合は、このチェーンは、(USB カメラがあり、platform dmft と platform dmft が有効になっている場合)、devproxy &lt;–&gt; platform dmft &lt;–&gt; OEM/IHV dmft または (カメラが platform dmft でサポートされていない場合、または platform dmft が無効になっている場合) devproxy &lt;-&gt; OEM/IHV
 
 INF ファイルの設定例:
 
@@ -297,7 +297,7 @@ Windows 10 バージョン1703以降では、Windows には、オプトインで
 
 | Platform DMFT でサポートされる機能 | Windows リリース |
 |-------------------------------------|-----------------|
-| ROI 対応の USB カメラで3A 調整を行うために、面ベースの領域 (ROI) を有効にします。 | Windows 10 Version 1703 |
+| ROI 対応の USB カメラで3A 調整を行うために、面ベースの領域 (ROI) を有効にします。 | Windows 10 バージョン 1703 |
 
 > [!NOTE]
 > カメラで UVC 1.5 ベースの ROI がサポートされていない場合、PDMFT を使用するデバイスが選択されていても、PDMFT は読み込まれません。
@@ -310,7 +310,7 @@ Platform DMFT を有効にするために指定する値は、名前が*Uvc-Enab
 
 カスタム INF ファイル (カスタム UVC ドライバーまたは受信トレイ UVC ドライバーに基づく) には、次の AddReg エントリが含まれている必要があります。
 
-**Enableplatformdmft**:REG_DWORD:0x0 (無効) から 0x1 (有効)
+**Enableplatformdmft**: REG_DWORD: 0X0 (無効) から 0X1 (有効)
 
 このエントリが有効 (0x1) に設定されている場合、キャプチャパイプラインはデバイスに受信トレイプラットフォーム DMFT を使用します。 このカスタム INF セクションの例を次に示します。
 
@@ -368,47 +368,47 @@ Windows 10 RS5 では、Windows Hello サポートを使用するすべてのカ
 
 ヘッダーセクションでは、1つのカスタムプロパティ (Face Auth Profile) について説明します。
 
-| Offset | フィールド      | サイズ (バイト) | 値  | 説明                     |
+| Offset | フィールド      | サイズ (バイト) | Value  | 説明                     |
 | ------ | ---------- | ------------ | ------ | ------------------------------- |
-| 0      | dwLength   | 4            | \<\>   |                                 |
-| 4      | bcdVersion | 2            | 0x0100 | バージョン 1.0                     |
+| 0      | dwLength   | ホーム フォルダーが置かれているコンピューターにアクセスできない            | \<\>   |                                 |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない      | bcdVersion | 2            | 0x0100 | バージョン 1.0                     |
 | 6      | wIndex     | 2            | 0x0005 | 拡張プロパティの OS 記述子 |
 | 8      | wCount     | 2            | 0x0001 | 1つのカスタムプロパティ             |
 
 #### <a name="microsoft-os-10-descriptor-custom-property-section"></a>Microsoft OS 1.0 記述子カスタムプロパティセクション
 
-| Offset | フィールド                | サイズ (バイト) | 値                 | 説明                                |
+| Offset | フィールド                | サイズ (バイト) | Value                 | 説明                                |
 | ------ | -------------------- | ------------ | --------------------- | ------------------------------------------ |
-| 0      | dwSize               | 4            | 0x00000036 (54)       | このプロパティの合計サイズ (バイト単位)。   |
-| 4      | dwPropertyDataType   | 4            | 0x00000004            | REG\_DWORD\_リトル\_エンディアン                 |
+| 0      | dwSize               | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 0x00000036 (54)       | このプロパティの合計サイズ (バイト単位)。   |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない      | dwPropertyDataType   | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 0x00000004            | REG\_DWORD\_リトル\_エンディアン                 |
 | 8      | wPropertyNameLength  | 2            | 0x00000024 (36)       | プロパティ名のサイズ (バイト単位)。      |
 | 10     | bPropertyName        | 36           | UVC-CPV2FaceAuth      | Unicode の "UVC-CPV2FaceAuth" 文字列。      |
-| 46     | dwPropertyDataLength | 4            | 0x00000004            | プロパティデータ (sizeof (DWORD)) の場合は4バイト。 |
-| 50     | bPropertyData        | 4            | 以下のデータスキーマをご覧ください。 | 以下のデータスキーマを参照してください。                     |
+| 46     | dwPropertyDataLength | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 0x00000004            | プロパティデータ (sizeof (DWORD)) の場合は4バイト。 |
+| 50     | bPropertyData        | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 以下のデータスキーマをご覧ください。 | 以下のデータスキーマを参照してください。                     |
 
-##### <a name="payload-schema"></a>ペイロードスキーマ
+##### <a name="payload-schema"></a>ペイロード スキーマ
 
 UVC CPV2FaceAuth データペイロードは、32ビットの符号なし整数です。 上位16ビットは、RGB pin によって公開されるメディアの種類の一覧の0から始まるインデックスを表します。 下位16ビットは、IR pin によって公開されるメディアの種類の一覧の0から始まるインデックスを表します。
 
 たとえば、次のメディアの種類を、RGB pin から宣言された順序で公開するタイプ3のカメラです。
 
-- YUY2640x480@30fps
+- YUY2、640x480@30fps
 - MJPG、1280x720@30fps
 - MJPG、800x600@30fps
 - MJPG、1920x1080@30fps
 
 IR のメディアの種類は次のとおりです。
 
-- L8480x480@30fps
-- L8480x480@15fps
-- L8480x480@10fps
+- L8、480x480@30fps
+- L8、480x480@15fps
+- L8、480x480@10fps
 
 ペイロード値が0x00010000 の場合、次のような顔認証プロファイルが発行されます。
 
 Pin0: (RES = = 1280, 720;FRT = = 30, 1;SUT = = MJPG)//2 番目のメディアの種類 (0x0001)  
 Pin1: (RES = = 480480;FRT = = 30, 1;SUT = = L8)//最初のメディアの種類 (0x0000)
 
-> **注意**:このドキュメントの執筆時点では、Windows Hello では、RGB 480x480@7.5fpsストリームと340x340@15fps IR ストリームについて最小要件があります。 顔認証プロファイルを有効にするときに、この要件を満たすメディアの種類を選択するには、IHV/Oem が必要です。
+> **注**: このドキュメントの執筆時点では、Windows Hello の最小要件は、IR ストリームの RGB ストリームと 340x340@15fps の 480x480@7.5fps です。 顔認証プロファイルを有効にするときに、この要件を満たすメディアの種類を選択するには、IHV/Oem が必要です。
 
 ##### <a name="type-1-camera-sample"></a>Type 1 カメラのサンプル
 
@@ -416,12 +416,12 @@ Type 1 カメラの場合は、IR pin がないため (センサーグループ�
 
 たとえば、タイプ1のカメラで次のメディアの種類の一覧が公開されているとします。
 
-- YUY2640x480@30fps
+- YUY2、640x480@30fps
 - MJPG、1280x720@30fps
 - MJPG、800x600@30fps
 - MJPG、1920x1080@30fps
 
-Mjpg、 1280x720@30fpsメディアの種類を使用して CPV2FaceAuth を発行するには、ペイロードを0x0001ffff に設定する必要があります。
+MJPG、1280x720@30fps メディアの種類を使用して CPV2FaceAuth を発行するには、ペイロードを0x0001FFFF に設定する必要があります。
 
 ##### <a name="type-2-camera-sample"></a>Type 2 カメラのサンプル
 
@@ -429,11 +429,11 @@ Type 2 カメラの場合、上位16ビットを0xFFFF に設定する必要が�
 
 たとえば、次の種類のメディアを含む Type 2 カメラの場合は、次のようになります。
 
-- L8480x480@30fps
-- L8480x480@15fps
-- L8480x480@10fps
+- L8、480x480@30fps
+- L8、480x480@15fps
+- L8、480x480@10fps
 
-最初のメディアの種類が顔認証に使用される場合、値は次のようにする必要があります。0xFFFF0000。
+最初のメディアの種類が顔認証に使用される場合、値は0xFFFF0000 である必要があります。
 
 ### <a name="microsoft-os-extended-descriptor-20-specification"></a>Microsoft OS 拡張記述子2.0 仕様
 
@@ -473,7 +473,7 @@ UCHAR Example2_MSOS20DescriptorSet_UVCFaceAuthForFutureWindows[0x3C] =
 }
 ```
 
-UVC-CPV2FaceAuth レジストリエントリを追加すると、デバイスは、このドキュメント https://docs.microsoft.com/en-us/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices で説明されているように、enabledshowredirection レジストリエントリを発行する必要はありません。
+UVC-CPV2FaceAuth レジストリエントリを追加すると、デバイスは、次のドキュメントの説明に従って、EnableDshowRedirection レジストリエントリを発行する必要はありません: https://docs.microsoft.com/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices 。
 
 ただし、デバイスベンダーが古いバージョンの Windows をサポートする必要がある場合や、フレームサーバー内で MJPEG の圧縮解除を有効にする必要がある場合は、EnableDshowRedirection レジストリエントリを追加する必要があります。
 
@@ -494,14 +494,14 @@ Oem は、Type 1 と Type 2 のカメラを使用して Windows Hello サポー�
 
 > {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX} ({XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX})
 
-GUID の値は、Type 1 と Type 2 カメラの間で同じである必要があり、両方のカメラを同じ物理シャーシに追加する必要があります。 組み込みカメラの場合、物理シャーシはコンピューター自体です。 外部カメラの場合は、Type 1 と Type 2 の両方のカメラモジュールを、コンピューターに接続されているのと同じ物理デバイスに組み込む必要があります。 
+GUID の値は、Type 1 と Type 2 カメラの間で同じである必要があり、両方のカメラを同じ物理シャーシに追加する必要があります。 組み込みカメラの場合、物理シャーシはコンピューター自体です。 外部カメラの場合は、Type 1 と Type 2 の両方のカメラモジュールを、コンピューターに接続されているのと同じ物理デバイスに組み込む必要があります。
 
 ## <a name="custom-device-interface-categories-for-sensor-groups"></a>センサーグループのカスタムデバイスインターフェイスカテゴリ
 
 19H1 以降では、Windows は IHV/OEM が指定した拡張メカニズムを提供して、合成されたセンサーグループをカスタムまたは事前定義されたカテゴリに発行できるようにします。 センサーグループの世代は、カスタム INF でセンサーグループ ID キーを提供する IHV/Oem によって定義されます。
 
 > FSSensorGroupId: {カスタム GUID}  
-> FSSensorGroupName:\<センサーグループに使用されるフレンドリ名\>
+> FSSensorGroupName: センサーグループ\> に使用されるフレンドリ名 \<
 
 INF の上記の2つの AddReg エントリに加えて、カスタムカテゴリに対して新しい AddReg エントリが定義されています。
 
@@ -509,7 +509,7 @@ INF の上記の2つの AddReg エントリに加えて、カスタムカテゴ�
 
 複数のカテゴリは、セミコロン (;) を使用して定義します。区切られた GUID の一覧。
 
-一致する FSSensorGroupId を宣言する各デバイスは、同じ Fssensorgroupカテゴリリストを宣言する必要があります。 一覧が一致しない場合は、すべてのリストが無視され、カスタムカテゴリが定義されて\_い\_ない場合と同じように、既定では、センサーグループが KSCATEGORY センサーグループに発行されます。
+一致する FSSensorGroupId を宣言する各デバイスは、同じ Fssensorgroupカテゴリリストを宣言する必要があります。 リストが一致しない場合、すべてのリストが無視され、既定では、カスタムカテゴリが定義されていない場合と同様に、KSCATEGORY\_センサー\_グループにそのセンサーグループが発行されます。
 
 ## <a name="camera-rotation"></a>カメラの回転
 
@@ -521,24 +521,24 @@ INF の上記の2つの AddReg エントリに加えて、カスタムカテゴ�
 
 ## <a name="bos-and-ms-os-20-descriptor"></a>BOS および MS OS 2.0 記述子
 
-UVC 準拠カメラは、 [MICROSOFT OS 2.0 の記述子](https://msdn.microsoft.com/en-us/library/windows/hardware/dn385747.aspx)を使用して、ファームウェアのプラットフォーム機能 BOS 記述子に Windows 固有のデバイス構成値を指定できます。 デバイス構成を OS に伝える有効な BOS 記述子を指定する方法については、MS OS 2.0 記述子のドキュメントを参照してください。
+UVC 準拠カメラは、 [MICROSOFT OS 2.0 の記述子](https://docs.microsoft.com/previous-versions/dn385747(v=msdn.10))を使用して、ファームウェアのプラットフォーム機能 BOS 記述子に Windows 固有のデバイス構成値を指定できます。 デバイス構成を OS に伝える有効な BOS 記述子を指定する方法については、MS OS 2.0 記述子のドキュメントを参照してください。
 
 ### <a name="microsoft-os-20-descriptor-set-header"></a>Microsoft OS 2.0 記述子セットヘッダー
 
 | Offset | フィールド            | サイズ (バイト) | 説明                                                                  |
 | ------ | ---------------- | ------------ | ---------------------------------------------------------------------------- |
 | 0      | wLength          | 2            | このヘッダーの長さ (バイト単位) は10である必要があります。                                  |
-| 2      | W記述子の種類  | 2            | MSOS20\_SET\_ヘッダー記述子\_                                              |
-| 4      | dwWindowsVersion | 4            | Windows のバージョン。                                                             |
-| 8      | wTotalLength     | 2            | このヘッダーサイズを含む、MS OS 2.0 descrioptor セット全体のサイズ。 |
+| 2      | W記述子の種類  | 2            | MSOS20\_\_ヘッダー\_記述子の設定                                              |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない      | dwWindowsVersion | ホーム フォルダーが置かれているコンピューターにアクセスできない            | Windows のバージョン。                                                             |
+| 8      | wTotalLength     | 2            | このヘッダーサイズを含む、MS OS 2.0 記述子セット全体のサイズ。 |
 
 ### <a name="microsoft-os-20-registry-property-descriptor"></a>Microsoft OS 2.0 レジストリプロパティ記述子
 
 | Offset | フィールド               | サイズ (バイト) | 説明                        |
 | ------ | ------------------- | ------------ | ---------------------------------- |
 | 0      | wLength             | 2            | この記述子の長さ (バイト単位) |
-| 2      | W記述子の種類     | 2            | MS\_OS\_20機能\_のREG\_プロパティ\_ |
-| 4      | wPropertyDataType   | 2            | 0x04 (REG\_DWORD\_リトル\_エンディアン)  |
+| 2      | W記述子の種類     | 2            | MS\_OS\_20\_機能\_REG\_プロパティ |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない      | wPropertyDataType   | 2            | 0x04 (REG\_DWORD\_リトル\_エンディアン)  |
 | 6      | wPropertyNameLength | 2            | プロパティ名の長さ。   |
 | 8      | PropertyName        | 変数     | レジストリプロパティの名前。 |
 | 8 + M    | wPropertyDataLength | 2            | プロパティデータの長さ。   |
@@ -558,7 +558,7 @@ UVC ドライバーは、デバイスのハードウェアレジストリキー�
 
 ## <a name="currently-supported-configuration-values-through-bos-descriptor"></a>現在サポートされている構成値 (BOS 記述子を使用)
 
-| 構成名 | 種類 | 説明 |
+| 構成名 | タスクバーの検索ボックスに | 説明 |
 | --- | --- | --- |
 | SensorCameraMode                              | REG\_DWORD | 特定のカテゴリの下にカメラを登録します。  |
 | UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 同じ UVC-FSSensorGroupID でカメラをグループ化する |
@@ -579,8 +579,8 @@ OS で BOS Platform Device 機能と MS OS 2.0 記述子を使用するには、
 
 サンプル記述子は次のとおりです。
 
-1. カラーカメラ機能を KSCATEGORY\_ビデオ\_カメラに登録する
-1. KSCATEGORY\_センサー\_カメラの下に IR カメラ機能を登録する
+1. KSCATEGORY\_VIDEO\_カメラでカラーカメラ機能を登録する
+1. KSCATEGORY\_センサー\_カメラに IR カメラ機能を登録する
 1. イメージキャプチャのカラーカメラ機能の有効化
 1. 色と IR カメラの機能をグループとして関連付けます
 
@@ -617,16 +617,16 @@ const BYTE USBVideoBOSDescriptor[0x21] =
 BOS プラットフォーム機能記述子は次を指定します。
 
 1. MS OS 2.0 記述子プラットフォームの機能 GUID
-1. ベンダ制御コード bms\_VendorCode (ここでは1に設定されています)。 MS OS 2.0 記述子を取得するために、ベンダーが推奨する任意の値を使用できます)。
+1. ベンダ制御コード bMS\_VendorCode (ここでは1に設定されています)。 MS OS 2.0 記述子を取得するために、ベンダーが推奨する任意の値を使用できます)。
 1. この BOS 記述子は、Windows 10 以降の OS バージョンに適用されます。
 
 BOS 記述子が表示された後、USB スタックは、MS OS 2.0 記述子を取得するためにベンダー固有の制御要求を発行します。
 
 MS OS 2.0 ベンダー固有の記述子を取得するためのコントロール要求の形式:
 
-| bmRequestType | BRequest            | wValue | WIndex | wLength | data                                   |
+| bmRequestType | BRequest            | wValue | WIndex | wLength | データ                                   |
 |---------------|---------------------|--------|--------|---------|----------------------------------------|
-| 1100 0000B    | **bms\_VendorCode** | 0x00   | 0x07   | Length  | MS OS 2.0 記述子セット blob が返されました |
+| 1100 0000B    | **bMS\_VendorCode** | 0x00   | 0x07   | 長さ  | MS OS 2.0 記述子セット blob が返されました |
 
 _**bmRequestType**_
 
@@ -636,7 +636,7 @@ _**bmRequestType**_
 
 _**bRequest**_
 
-記述子セット情報構造体で返される **\_bms VendorCode**値。
+記述子セット情報構造体で返される**Bms\_VendorCode**値。
 
 _**wValue**_
 
@@ -644,7 +644,7 @@ _**wValue**_
 
 _**wIndex**_
 
-MS\_OS\_20\_記述子インデックスの0x7。\_
+0x7 for MS\_OS\_20\_記述子\_インデックス。
 
 _**wLength**_
 

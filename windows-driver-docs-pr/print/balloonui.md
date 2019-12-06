@@ -1,9 +1,9 @@
 ---
 title: balloonUI 要素
-description: 省略可能な balloonUI 要素は、クライアント コンピューターでメッセージ バルーンの表示に使用されます。
+description: オプションの balloonUI 要素は、クライアントコンピューターにメッセージバルーンを表示するために使用されます。
 ms.assetid: 8db15dcb-26ed-429e-ad4c-e5dc59f9bbca
 keywords:
-- balloonUI 要素印刷デバイス
+- balloonUI 要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,20 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: db9fa4cc0554f0d6569eb9c8b35cfa95a8964db1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7003092cfca1e01f4e706536443c99da0eebc749
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349261"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881906"
 ---
 # <a name="balloonui-element"></a>balloonUI 要素
 
+オプションの**balloonUI**要素は、クライアントコンピューターにメッセージバルーンを表示するために使用されます。
 
-省略可能な**balloonUI**要素を使用して、クライアント コンピューターでメッセージ バルーンを表示します。
+**BalloonUI**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています (このリソースは一部の言語および国では使用できない可能性があります)。
 
-**BalloonUI**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/requestします。 (このリソースできない場合がありますのいくつかの言語および国。)
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用方法
 
 ```xml
 <balloonUI
@@ -37,8 +35,7 @@ ms.locfileid: "63349261"
 </balloonUI>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 <table>
 <colgroup>
@@ -49,9 +46,9 @@ ms.locfileid: "63349261"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>種類</th>
-<th>必須</th>
+<th>備わっている</th>
+<th>タスクバーの検索ボックスに</th>
+<th>必須かどうか</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -59,22 +56,21 @@ ms.locfileid: "63349261"
 <tr class="odd">
 <td><p><strong>iconID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>必須ではない</p></td>
 <td><p></p>
-<p>イベントの通知メッセージを表示するプリンターのアイコンを指定する省略可能な属性。 属性の値は、リソース DLL で、アイコンの場所を指定します。 アイコンは、32 x 32 のピクセルのサイズ、色深度が任意である必要があります。</p></td>
+<p>イベント通知メッセージに表示するプリンターアイコンを指定する省略可能な属性です。 属性値は、リソース DLL 内のアイコンの場所を指定します。 アイコンのサイズは 32 x 32 ピクセルで、任意の色深度を使用する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>ResourceDll</strong></p></td>
+<td><p><strong>resourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>必須ではない</p></td>
 <td><p></p>
-<p>リソース イベントの通知メッセージを表示するプリンターのアイコンを含む DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
+<p>イベント通知メッセージに表示するプリンターアイコンを含むリソース DLL を指定する、省略可能な属性です。 この DLL は、プリンタドライバの依存ファイルである必要があり、ドライバリソースフォルダに存在する必要があります (たとえば、%SYSTEMROOT%\system32\spool\drivers\w32x86\3)。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="child-elements"></a>子要素
-
 
 <table>
 <colgroup>
@@ -91,18 +87,17 @@ ms.locfileid: "63349261"
 <tr class="odd">
 <td><p><a href="body.md" data-raw-source="[&lt;strong&gt;body&lt;/strong&gt;](body.md)"><strong>body</strong></a></p></td>
 <td><p></p>
-<p>テキストを提供する必須要素は、イベントの通知メッセージに表示されます。 このテキストは、プリンターのイベントの特定の詳細、ユーザーを提供する必要があります。</p></td>
+<p>イベント通知メッセージに表示されるテキストを提供する必須の要素。 このテキストは、プリンターイベントについてのユーザー固有の詳細を提供します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>title</strong></a></p></td>
+<td><p><a href="title.md" data-raw-source="[&lt;strong&gt;title&lt;/strong&gt;](title.md)"><strong>題</strong></a></p></td>
 <td><p></p>
-<p>イベント通知メッセージのタイトルに表示されるテキストを提供する必須要素。</p></td>
+<p>イベント通知メッセージのタイトルに表示されるテキストを提供する必須の要素。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="parent-elements"></a>親要素
-
 
 <table>
 <colgroup>
@@ -119,20 +114,18 @@ ms.locfileid: "63349261"
 <tr class="odd">
 <td><p><a href="requestopen.md" data-raw-source="[&lt;strong&gt;requestOpen&lt;/strong&gt;](requestopen.md)"><strong>requestOpen</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターのイベント通知メッセージを開くために使用する要素。</p></td>
+<p>クライアントコンピューターでイベント通知メッセージを開くために使用される要素。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>注釈
 
-場合、属性**iconID**と**resourceDll**が指定されていない、バルーン メッセージに汎用的なプリンターのアイコンが表示されます。 カスタムのプリンターのアイコンを表示するには、両方の属性の値を指定します。
+属性**iconID**と**resourcedll**が指定されていない場合は、一般的なプリンターアイコンがバルーンメッセージに表示されます。 カスタムプリンターアイコンを表示するには、両方の属性の値を指定します。
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
-次のコード例は、対話型のバルーンを使用して渡す方法を示しています。 **CDATA** DLL へのデータを入力します。
+次のコード例は、対話型のバルーンを使用して、 **CDATA**型のデータを DLL に渡す方法を示しています。
 
 ```xml
 <?xml version="1.0" ?> 
@@ -157,19 +150,10 @@ ms.locfileid: "63349261"
 
 ## <a name="see-also"></a>関連項目
 
-
-[**アクション**](action.md)
+[**action**](action.md)
 
 [**body**](body.md)
 
 [**requestOpen**](requestopen.md)
 
-[**title**](title.md)
-
- 
-
- 
-
-
-
-
+[**題**](title.md)

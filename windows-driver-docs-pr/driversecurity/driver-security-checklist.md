@@ -4,12 +4,12 @@ description: この記事では、ドライバー開発者向けのドライバ�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 04/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ed3caac09ef16e303f09a560e41593b542884b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e77b10574ff74e44afa604235cb5a8761df554a
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829274"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862207"
 ---
 # <a name="driver-security-checklist"></a>ドライバーのセキュリティ チェックリスト
 
@@ -125,7 +125,7 @@ Windows Driver Framework のソースコードはオープンソースであり�
 
 ![架空のカーネルモードドライバーのサンプルデータフロー図](images/sampledataflowdiagramkernelmodedriver.gif)
 
-セキュリティ開発ライフサイクル (SDL) のベストプラクティスと関連付けられているツールを、Ihv および Oem が製品のセキュリティを向上させるために使用できます。 詳細については、「 [oem 向けの SDL の推奨事項](https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/security-overview#sdl-recommendations-for-oems)」を参照してください。
+セキュリティ開発ライフサイクル (SDL) のベストプラクティスと関連付けられているツールを、Ihv および Oem が製品のセキュリティを向上させるために使用できます。 詳細については、「 [oem 向けの SDL の推奨事項](https://docs.microsoft.com/windows-hardware/drivers/bringup/security-overview#sdl-recommendations-for-oems)」を参照してください。
 
 
 ## <a name="span-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanfollow-driver-secure-coding-guidelines"></a><span id="DriverSecurityCodePractices"></span><span id="driversecuritycodepractices"></span><span id="DRIVERSECURITYCODEPRACTICES"></span>ドライバーの安全なコーディングのガイドラインに従う
@@ -193,7 +193,7 @@ Ioctl でのバッファーの使用の詳細については、「[データバ�
 
 ドライバーが HVCI 仮想化をサポートできるようにするには、追加のメモリ要件があります。 詳細については、この記事で後述する「 [Device Guard の互換性](#dgc)」を参照してください。
 
-**対応**
+**ハンドル**
 
 - ユーザーモードとカーネルモードのメモリの間で渡されるハンドルを検証します。 詳細については、「[ハンドル管理](https://docs.microsoft.com/windows-hardware/drivers/ifs/handle-management)と[エラーによるオブジェクトハンドルの検証」を](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-object-handles)参照してください。
 
@@ -369,7 +369,7 @@ Device Guard と互換性のあるコードを実装するには、ドライバ�
 
 Device Guard に関する一般的な情報については、「[ドライバーと Windows 10 の Device guard の互換性](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)」を参照してください。
 
-関連するシステムの基礎セキュリティテストの詳細については、「 [Device guard](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)と[Device Guard の互換性](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)テストおよびドライバーの互換性」を参照してください。
+関連するシステムの基礎セキュリティテストの詳細については、「 [Device guard](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)と[Device Guard の互換性](https://docs.microsoft.com/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)テストおよびドライバーの互換性」を参照してください。
 
 
 
@@ -480,7 +480,7 @@ Visual Studio のコード分析機能を使用して、コード内のセキュ
 コードを変更する必要があるかどうか、またはコード分析エンジンがコードの意図に適切に従うために注釈を追加する必要があるかどうかを判断します。 コード注釈の詳細については、「 [Sal 注釈を使用しC++ ](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)て、Windows ドライバーの C/コードの欠陥と[Sal 2.0 の注釈](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)を減らす」を参照してください。
 
 SAL に関する一般的な情報については、OSR から入手できるこの記事を参照してください。
-https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/
+[https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/ )
 
 ## <a name="span-idsdvspanspan-idsdvspanuse-static-driver-verifier-to-check-for-vulnerabilities"></a><span id="SDV"></span><span id="sdv"></span>静的ドライバー検証ツールを使用して脆弱性を確認する
 
@@ -601,7 +601,7 @@ All Scanned Items
 
 上記で説明した[Visual Studio Code 分析](#use-code-analysis)、[静的ドライバー検証ツール](#sdv)、 [binscope](#binscope)に加えて、次のツールを使用して、開発プロセスで欠落しているギャップを調査します。
 
-**ドライバーの検証ツール**
+**ドライバー検証ツール**
 
 ドライバーの検証ツールを使用すると、ドライバーをライブテストできます。 ドライバーの検証ツールは、Windows カーネルモードドライバーとグラフィックスドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。 ドライバーの検証ツールでは、Windows ドライバーがさまざまなストレスとテストを受けて、不適切な動作を見つけることができます。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
@@ -623,11 +623,11 @@ All Scanned Items
 
  また、ドライバー検証ツールに含まれている[カーネル同期遅延ファジー化](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)を使用することもできます。
 
-混乱 (ハードウェアとオペレーティングシステムの同時実行) テストでは、さまざまな PnP ドライバーテスト、デバイスドライバーのファジーテスト、および電源システムテストが同時に実行されます。 詳細については、「[混乱テスト (デバイスの基礎)](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/chaos-tests--device-fundamentals-)」を参照してください。
+混乱 (ハードウェアとオペレーティングシステムの同時実行) テストでは、さまざまな PnP ドライバーテスト、デバイスドライバーのファジーテスト、および電源システムテストが同時に実行されます。 詳細については、「[混乱テスト (デバイスの基礎)](https://docs.microsoft.com/windows-hardware/drivers/devtest/chaos-tests--device-fundamentals-)」を参照してください。
 
-デバイスの基本侵入テストは、セキュリティテストの重要なコンポーネントであるさまざまな形式の入力攻撃を実行します。 攻撃および侵入テストは、ソフトウェアインターフェイスの脆弱性を特定するのに役立ちます。 詳細については、「[侵入テスト (デバイスの基礎)](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)」を参照してください。
+デバイスの基本侵入テストは、セキュリティテストの重要なコンポーネントであるさまざまな形式の入力攻撃を実行します。 攻撃および侵入テストは、ソフトウェアインターフェイスの脆弱性を特定するのに役立ちます。 詳細については、「[侵入テスト (デバイスの基礎)](https://docs.microsoft.com/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)」を参照してください。
 
-この記事で説明されている他のツールと共に[Device Guard コンプライアンステスト](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)を使用して、ドライバーが device guard と互換性があることを確認します。
+この記事で説明されている他のツールと共に[Device Guard コンプライアンステスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)を使用して、ドライバーが device guard と互換性があることを確認します。
 
 
 **カスタムおよびドメイン固有のテストツール**
@@ -732,7 +732,7 @@ Windows ドライバーのクラスルームトレーニングは、次のよう
 
 セキュリティで保護されたコーディングオンライントレーニングは、さまざまなソースから入手できます。 たとえば、このコースは coursera から入手できます。
 
-[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security)。
+[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security)」を参照してください。
 
 また、フリートレーニングも用意されています。
 
@@ -751,7 +751,7 @@ Windows ドライバーのクラスルームトレーニングは、次のよう
 
 -   最小限の特権の原則を適用します。
 
-    a.  厳格な SDDL 文字列を使用して、ドライバーへのアクセスを制限する
+    」を参照します。  厳格な SDDL 文字列を使用して、ドライバーへのアクセスを制限する
 
     b.  個々の IOCTL をさらに制限する 
 

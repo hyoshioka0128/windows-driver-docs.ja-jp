@@ -4,12 +4,12 @@ description: シリアルコントローラー上のポートに接続されて�
 ms.assetid: D536A0EC-2B8B-491B-8A14-656F4B5A3843
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce989c4fc56687995620926e66700d6f8747763c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e81217407aeff075436b8bf673dcae18923a2899
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844939"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862209"
 ---
 # <a name="serial-io-request-interface"></a>シリアル I/O 要求インターフェイス
 
@@ -49,7 +49,7 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_clr_dtr" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_CLR_DTR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_clr_dtr)"><strong>IOCTL_SERIAL_CLR_DTR</strong></a></p></td>
-<td><p>メモ1を参照してください。</p></td>
+<td><p>注 1 を参照</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 </tr>
@@ -91,7 +91,7 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_handflow" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_GET_HANDFLOW&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_handflow)"><strong>IOCTL_SERIAL_GET_HANDFLOW</strong></a></p></td>
-<td><p>メモ1を参照してください。</p></td>
+<td><p>注 1 を参照</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 </tr>
@@ -102,7 +102,7 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 <td><p>[はい]</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_GET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control)"><strong>IOCTL_SERIAL_GET_MODEM_CONTROL</strong></a> (注4を参照)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_GET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_get_modem_control)"><strong>IOCTL_SERIAL_GET_MODEM_CONTROL</strong></a> (注4を参照)。</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
@@ -156,7 +156,7 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 <td><p>[はい]</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_reset_device" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_RESET_DEVICE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_reset_device)"><strong>IOCTL_SERIAL_RESET_DEVICE</strong></a> (注5を参照)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_reset_device" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_RESET_DEVICE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_reset_device)"><strong>IOCTL_SERIAL_RESET_DEVICE</strong></a> (注5を参照)。</p></td>
 <td><p>必須ではない</p></td>
 <td><p>必須ではない</p></td>
 <td><p>[はい]</p></td>
@@ -187,18 +187,18 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 </tr>
 <tr class="even">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_dtr" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_DTR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_dtr)"><strong>IOCTL_SERIAL_SET_DTR</strong></a></p></td>
-<td><p>メモ1を参照してください。</p></td>
+<td><p>注 1 を参照</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 </tr>
 <tr class="odd">
 <td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_fifo_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_FIFO_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_fifo_control)"><strong>IOCTL_SERIAL_SET_FIFO_CONTROL</strong></a></p></td>
-<td><p>メモ1を参照してください。</p></td>
+<td><p>注 1 を参照</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_handflow" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_HANDFLOW&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_handflow)"><strong>IOCTL_SERIAL_SET_HANDFLOW</strong></a> (注3を参照)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_handflow" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_HANDFLOW&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_handflow)"><strong>IOCTL_SERIAL_SET_HANDFLOW</strong></a> (注3を参照)。</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
@@ -210,7 +210,7 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 <td><p>[はい]</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control)"><strong>IOCTL_SERIAL_SET_MODEM_CONTROL</strong></a> (注4を参照)</p></td>
+<td><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control" data-raw-source="[&lt;strong&gt;IOCTL_SERIAL_SET_MODEM_CONTROL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/ni-ntddser-ioctl_serial_set_modem_control)"><strong>IOCTL_SERIAL_SET_MODEM_CONTROL</strong></a> (注4を参照)。</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
 <td><p>[はい]</p></td>
@@ -279,4 +279,4 @@ SerCx2、SerCx、および Serial は、同じシリアル Ioctl の多くをサ
 
 5. Serial .sys ドライバーは、常に**IOCTL\_シリアル\_リセット\_デバイス**要求を正常に完了した\_状態でリセットしますが、この要求に対する応答では操作を実行しません。 SerCx2 と SerCx は、**デバイス要求\_のシリアル\_の\_シリアル**の送信をサポートしておらず、常に状態\_\_実装されていない要求を完了します。
 
-**IOCTL\_シリアル\_<em>XXX</em>** 要求の詳細、およびシリアルコントローラーの読み取りおよび書き込み要求の詳細については、 [ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
+**IOCTL\_シリアル\_<em>XXX</em>** 要求の詳細、およびシリアルコントローラーの読み取りおよび書き込み要求の詳細については、 [ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。

@@ -8,12 +8,12 @@ keywords:
 - Serial driver WDK、デバイス制御要求
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e55a2fe562876c41ddc1ff34dab7732f278cad0d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 605032f179573fdba04303027f5ee87c5ed41767
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845394"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863026"
 ---
 # <a name="serial-device-control-requests"></a>シリアル デバイスの制御要求
 
@@ -51,4 +51,4 @@ Serial は、信頼されたカーネルモードクライアントが次のタ�
 
 シリアル i/o 要求の詳細については、[シリアルポート](https://docs.microsoft.com/windows-hardware/drivers/ddi/_serports/)のリファレンスに関するトピックを参照してください。
 
-IOCTL\_SERIAL\_XXX および IOCTL\_SERIAL\_内部\_XXX 要求の詳細については、 [ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
+IOCTL\_SERIAL\_XXX および IOCTL\_SERIAL\_内部\_XXX 要求の詳細については、 [ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。

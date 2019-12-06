@@ -3,23 +3,23 @@ title: INF ファイルの提供
 description: INF ファイルの提供
 ms.assetid: 208726d9-6f62-46a4-84a1-6fab3895bbe3
 keywords:
-- WDK のドライバー パッケージ、INF ファイル
-- WDK のパッケージでは、INF ファイル
-- INF ファイルの詳細については、INF ファイル、WDK
-- WDK の情報ファイル
+- ドライバーパッケージ WDK、INF ファイル
+- WDK、INF ファイルをパッケージ化する
+- INF ファイル WDK, INF ファイルについて
+- 情報ファイル WDK
 - .inf ファイル
 - デバイスのインストール WDK、INF ファイル
-- インストールを実行するデバイス WDK、INF ファイル
+- デバイスのインストール WDK, INF ファイル
 - デバイスのインストール WDK、INF ファイル
 - INF ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08dd93b486b7ae5a5d207237052c8012b5494129
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4a7f33c3a70b7f75847ab02a0031d5bd123c26c7
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385877"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862975"
 ---
 # <a name="supplying-an-inf-file"></a>INF ファイルの提供
 
@@ -27,17 +27,17 @@ ms.locfileid: "67385877"
 
 
 
-すべてのドライバー パッケージは、INF を含める必要がありますファイルを[デバイス インストール コンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))デバイスのインストール時の読み取り。 INF ファイルは、インストール スクリプトではありません。 これが ASCII または Unicode テキスト ファイル ドライバー ファイル、レジストリ エントリ、デバイスの Id など、デバイスとドライバーの情報を提供する[カタログ ファイル](catalog-files.md)、およびデバイスまたはドライバーをインストールするために必要なバージョン情報。 だけでなく、デバイスまたはドライバーのインストール時にまずもドライバー、ユーザーの要求を通じてデバイス マネージャーを更新するときに、INF が使用されます。
+すべてのドライバーパッケージには、デバイスをインストールするときに[デバイスのインストールコンポーネント](https://docs.microsoft.com/previous-versions/ff541277(v=vs.85))が読み取る INF ファイルが含まれている必要があります。 INF ファイルはインストールスクリプトではありません。 これは、ドライバーファイル、レジストリエントリ、デバイス Id、[カタログファイル](catalog-files.md)、およびデバイスまたはドライバーのインストールに必要なバージョン情報を含む、デバイスとドライバーの情報を提供する、ASCII または Unicode のテキストファイルです。 INF は、デバイスまたはドライバーが最初にインストールされたときだけでなく、ユーザーがデバイスマネージャーによってドライバーの更新を要求したときにも使用されます。
 
-正確な内容と INF ファイルの形式に依存して、[デバイス セットアップ クラス](device-setup-classes.md)します。 [INF セクションの概要](summary-of-inf-sections.md)INF の種類ごとに必要な情報について説明します。 一般に、製造元ごとの情報にある、 [ **INF*モデル*セクション**](inf-models-section.md)します。 内のエントリ、**モデル**セクションを参照してください[ **INF *DDInstall*セクション**](inf-ddinstall-section.md)モデルに固有の詳細が含まれます。
+INF ファイルの正確な内容と形式は、デバイスの[セットアップクラス](device-setup-classes.md)によって異なります。 [Inf セクションの概要](summary-of-inf-sections.md)各種類の inf で必要な情報について説明します。 一般に、製造元ごとの情報は[ **「INF*モデル*」セクション**](inf-models-section.md)にあります。 「**モデル**」セクションのエントリは、モデル固有の詳細が含まれている「 [**INF *ddinstall* 」セクション**](inf-ddinstall-section.md)を参照してください。
 
-[InfVerif](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/infverif)で提供されており、ツール、 *\\ツール*ディレクトリ Microsoft Windows Driver Kit (WDK) の構文とすべてのクロス クラス INF セクションと、ディレクティブの構造を確認します。と共にプリンターを除くすべてのセットアップ クラスのクラスに固有の拡張機能。
+Microsoft Windows Driver Kit (WDK) の *\\tools*ディレクトリに用意されている[InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)ツールを使用すると、すべてのクロスクラスの INF セクションとディレクティブの構文と構造、およびプリンターを除くすべてのセットアップクラスのクラス固有の拡張機能を確認できます。
 
-Windows 2000 以降、すべてのバージョンの Windows オペレーティング システムにインストールするための 1 つの INF ファイルを使用できます。 詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。 デバイスは、国際市場で販売が場合は、[国際 INF ファイルを作成する](creating-international-inf-files.md)します。 関係のローカリティによっては、国際対応の INF ファイルを ASCII ではなく Unicode ファイルである必要があります。
+Windows 2000 以降では、すべてのバージョンの Windows オペレーティングシステムにインストールするために1つの INF ファイルを使用できます。 詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。 デバイスが国際市場で販売される場合は、[国際対応の INF ファイルを作成](creating-international-inf-files.md)する必要があります。 関連するローカリティによっては、国際 INF ファイルが ASCII ではなく Unicode ファイルであることが必要になる場合があります。
 
-ドライバーの INF ファイルを作成する優れた方法では、変更、WDK を提供するサンプルの 1 つです。 大部分の WDK サンプル ドライバーでは、ドライバーのサンプルと同じディレクトリの INF ファイルを含めます。
+ドライバーの INF ファイルを作成するには、WDK が提供するサンプルのいずれかを変更することをお勧めします。 ほとんどの WDK サンプルドライバーには、サンプルドライバーと同じディレクトリにある INF ファイルが含まれています。
 
-INF ファイルの詳細については、次を参照してください[INF ファイルを作成する](overview-of-inf-files.md)、ドキュメントを[InfVerif](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/infverif)、デバイス固有のドキュメントで、WDK とサンプル ドライバーに付属している INF ファイル。自分とよく似たデバイス。
+INF ファイルの詳細については、「 [Inf ファイルの作成](overview-of-inf-files.md)」、「 [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)のドキュメント」、「WDK のデバイス固有のドキュメント」、および「デバイス用のサンプルドライバー」で提供されている inf ファイルを参照してください。
 
  
 

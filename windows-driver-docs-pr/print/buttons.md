@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 109dbaff5b4ed89287c4370378fa004ed3fb89fb
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
+ms.openlocfilehash: 116555381b93b997e460e95cfc2d766a75cd8297
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164796"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881932"
 ---
 # <a name="buttons-element"></a>buttons 要素
 
 
 必須**ボタン**要素は、クライアントコンピューターのイベント通知メッセージボックスに表示される1つ以上のボタンを指定します。
 
-**ボタン**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。 (このリソースは、一部の言語および国では使用できません。)
+**Buttons**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 <a name="usage"></a>使用方法
 -----
@@ -86,13 +86,13 @@ ms.locfileid: "71164796"
 </tbody>
 </table>
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 **ボタン要素を**使用して、 **[OK]** と **[キャンセル**] ボタンを表示する2つの**ボタン**要素を囲む方法を示すコード例については、「[**ボタン**](button.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-[;](button.md)
+[ボタン](button.md)
 
 [messageBoxUI](messageboxui.md)

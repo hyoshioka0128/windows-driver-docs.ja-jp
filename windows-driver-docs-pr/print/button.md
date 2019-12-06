@@ -1,9 +1,9 @@
 ---
-title: Button 要素
-description: 必要なボタン要素は、クライアント コンピューターに表示されるメッセージ ボックスに、ボタンの特性を指定します。
+title: button 要素
+description: 必須ボタン要素は、クライアントコンピューターに表示されるメッセージボックスのボタンの特性を指定します。
 ms.assetid: 3e210599-9412-4eea-a024-338e39852199
 keywords:
-- 要素の印刷デバイスをボタンします。
+- ボタン要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8abffb192f94b44696a93db9cb7c8e0e6a794be3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7bb842dae8326970537c49e3162f193d2c11426f
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330348"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881915"
 ---
-# <a name="button-element"></a>Button 要素
+# <a name="button-element"></a>button 要素
 
 
-必要な**ボタン**要素は、クライアント コンピューターに表示されるメッセージ ボックスに、ボタンの特性を指定します。
+必須**ボタン**要素は、クライアントコンピューターに表示されるメッセージボックスのボタンの特性を指定します。
 
-**ボタン**で要素が定義されている、 *asyncui*この URI に、名前空間: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](http://schemas.microsoft.com/2003/print/asyncui/v1/request )します。 (このリソースできない場合がありますのいくつかの言語および国。)
+**Button**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 <a name="usage"></a>使用方法
 -----
@@ -48,9 +48,9 @@ ms.locfileid: "63330348"
 </colgroup>
 <thead>
 <tr class="header">
-<th>属性</th>
-<th>種類</th>
-<th>必須</th>
+<th>備わっている</th>
+<th>タスクバーの検索ボックスに</th>
+<th>必須かどうか</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -58,25 +58,25 @@ ms.locfileid: "63330348"
 <tr class="odd">
 <td><p><strong>buttonID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
 <td><p></p>
-<p>ユーザーがボタンをクリックすると、プリンター ドライバーに返される文字列を指定する必須の属性。 この属性には、値は次のいずれかを実行できます。</p>
-名前 [IDOK A] ボタンを表示して、メッセージ ボックスには"OK"されます。 ユーザーは、ボタンをクリックすると、メッセージ ボックスは"IDOK"文字列を返します。
-名前"CANCEL"の [IDCANCEL A] ボタンがメッセージ ボックスに表示されます。 ユーザーは、ボタンをクリックすると、メッセージ ボックスは"IDCANCEL"文字列を返します。</td>
+<p>ユーザーがボタンをクリックしたときにプリンタードライバーに返される文字列を指定する必須の属性です。 この属性は、次のいずれかの値をとります。</p>
+IDOK "OK" という名前のボタンがメッセージボックスに表示されます。 ユーザーがボタンをクリックすると、メッセージボックスに "IDOK" という文字列が返されます。
+IDCANCEL [キャンセル] という名前のボタンがメッセージボックスに表示されます。 ユーザーがボタンをクリックすると、メッセージボックスに "IDCANCEL" という文字列が返されます。</td>
 </tr>
 <tr class="even">
-<td><p><strong>ResourceDll</strong></p></td>
+<td><p><strong>resourceDll</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>X</p></td>
+<td><p>必須ではない</p></td>
 <td><p></p>
-<p>リソースのボタンに表示するテキストを含んでいる DLL を指定する省略可能な属性。 この DLL は、プリンター ドライバーの依存ファイルである必要があり、ドライバーのリソース フォルダー (たとえば、%systemroot%\system32\spool\drivers\w32x86\3) に存在する必要があります。</p></td>
+<p>ボタンに表示するテキストを含むリソース DLL を指定する省略可能な属性です。 この DLL は、プリンタドライバの依存ファイルである必要があり、ドライバリソースフォルダに存在する必要があります (たとえば、%SYSTEMROOT%\system32\spool\drivers\w32x86\3)。</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>stringID</strong></p></td>
 <td><p>xs:string</p></td>
-<td><p>〇</p></td>
+<td><p>[はい]</p></td>
 <td><p></p>
-<p>ボタンを表示するテキストを指定する必須の属性。 属性の値は、リソース DLL でのテキスト文字列の場所を指定します。</p></td>
+<p>ボタンに表示するテキストを指定する必須の属性です。 属性値は、リソース DLL 内のテキスト文字列の場所を指定します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,9 +102,9 @@ ms.locfileid: "63330348"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="buttons.md" data-raw-source="[&lt;strong&gt;buttons&lt;/strong&gt;](buttons.md)"><strong>ボタン</strong></a></p></td>
+<td><p><a href="buttons.md" data-raw-source="[&lt;strong&gt;buttons&lt;/strong&gt;](buttons.md)"><strong>83'7b</strong></a></p></td>
 <td><p></p>
-<p>1 つまたは複数のボタンを指定する必須要素は、クライアント コンピューターの通知のメッセージ ボックスで表示、イベント。</p></td>
+<p>クライアントコンピューターのイベント通知メッセージボックスに表示される1つ以上のボタンを指定する必須の要素。</p></td>
 </tr>
 </tbody>
 </table>
@@ -112,12 +112,12 @@ ms.locfileid: "63330348"
 <a name="remarks"></a>注釈
 -------
 
-ボタンがメッセージ ボックスの下部に表示されます。
+ボタンは、メッセージボックスの下部に表示されます。
 
 <a name="examples"></a>例
 --------
 
-次のコード例を使用する方法を示しています、**ボタン**を表示する要素**OK**と**キャンセル**互いの隣のボタン。
+次のコード例は、 **button**要素を使用して、 **[OK]** ボタンと **[キャンセル**] ボタンを相互に表示する方法を示しています。
 
 ```xml
 <?xml version="1.0" ?>
@@ -143,4 +143,4 @@ ms.locfileid: "63330348"
 
 ## <a name="see-also"></a>関連項目
 
-[ボタン](buttons.md)
+[buttons](buttons.md)

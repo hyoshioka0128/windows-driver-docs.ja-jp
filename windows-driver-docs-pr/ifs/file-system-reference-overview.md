@@ -4,16 +4,16 @@ description: ファイルシステムのリファレンス資料の概要
 ms.assetid: 9dc4a3fa-3ce1-4710-aab2-0658225733a4
 ms.date: 09/30/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 099939a97ad5b980f99ae930e2145140d52e443c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bd2e6701aec97b65bd55ac95b27c9aad1371a822
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841402"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863138"
 ---
 # <a name="file-system-reference-material-overview"></a>ファイルシステムのリファレンス資料の概要
 
-このセクションでは、ファイルシステム関連のドライバー開発に使用できるさまざまなプログラミング関数、構造体、Ioctl、および列挙型について説明します。 WDK に付属するヘッダーファイルで構成されている実際の参照ページについては、「 [Windows Driver Kit のプログラミングリファレンス-> インストール可能なファイルシステム](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/_ifsk/)」を参照してください。
+このセクションでは、ファイルシステム関連のドライバー開発に使用できるさまざまなプログラミング関数、構造体、Ioctl、および列挙型について説明します。 WDK に付属するヘッダーファイルで構成されている実際の参照ページについては、「 [Windows Driver Kit のプログラミングリファレンス-> インストール可能なファイルシステム](https://docs.microsoft.com/windows-hardware/drivers/ddi/_ifsk/)」を参照してください。
 
 ## <a name="functions"></a>関数
 
@@ -41,7 +41,7 @@ ms.locfileid: "72841402"
 
 [セキュリティリファレンスモニタのサポートルーチン](security-reference-monitor-support-routines.md)
 
-## <a name="callbacks"></a>関数
+## <a name="callbacks"></a>コールバック
 
 ミニフィルタードライバーのコールバックルーチン
 

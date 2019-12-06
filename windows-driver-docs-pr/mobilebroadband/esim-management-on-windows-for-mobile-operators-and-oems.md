@@ -1,36 +1,36 @@
 ---
-title: Windows 上の携帯電話会社や Oem の eSIM 管理
-description: Windows 上の携帯電話会社や Oem の eSIM 管理
+title: 通信事業者および OEM の Windows での eSIM 管理
+description: 通信事業者および OEM の Windows での eSIM 管理
 ms.assetid: 7D37D297-76FD-46DA-ACC3-73E4BF970524
 ms.date: 05/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 82f14e695ad7973f560110f025a95e40d29038bb
-ms.sourcegitcommit: 6152f92c5d2bc7c8db08dd0fdbc0146f88e8413b
+ms.openlocfilehash: bb1165868de85b98dec352c19ec5c148c85dabc1
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66224507"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74862867"
 ---
-# <a name="esim-management-on-windows-for-mobile-operators-and-oems"></a>Windows 上の携帯電話会社や Oem の eSIM 管理
+# <a name="esim-management-on-windows-for-mobile-operators-and-oems"></a>通信事業者および OEM の Windows での eSIM 管理
 
-## <a name="mobile-operators-and-oems"></a>携帯電話会社や Oem
+## <a name="mobile-operators-and-oems"></a>携帯電話および Oem
 
-携帯電話会社や OEM、している Windows の eSIM の管理をサポートする場合は、これらの手順に従います。
+モバイルオペレーターまたは OEM で、Windows での eSIM 管理をサポートする場合は、次の手順を実行します。
 
-1. ハードウェア ラボ キット (HLK) テストの実行を実行します。 これにより、Windows 10 の eSIM のサポートのモデム ハードウェアの互換性。 Oem、Odm 次 HLK eSIM テストの実行を確認する必要があります。
-    1. Esim 状の基本的なサポートのテスト_ケース:
+1. ハードウェアラボキット (HLK) のテストの実行を実施します。 これにより、Windows 10 の eSIM サポートとのモデムハードウェアの互換性が確保されます。 Oem と Odm は、次の HLK eSIM テストを確実に実行する必要があります。
+    1. 基本的な eSIM サポートテストケース:
         - [Win6_4.MB.CDMA.Data.TestLowLevelUiccAccess](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f27c8d81-7e2b-49d1-be4c-614bf62f003c)
-        - [Win6_4.MB.GSM.Data.TestLowLevelUiccAccess](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/104db926-5cc4-47ad-a7d0-ff476b0f57a1)
-    2. リムーバブル SIM スロットとはんだ eUICC の両方で Windows 10 デバイス。
-        - [Win6_4.MB します。CDMA します。Data.TestSlot](https://docs.microsoft.com/windows-hardware/test/hlk/testref/049a0532-3d58-49aa-ac3d-2a9b8aab24a7)や[Win6_4.MB します。GSM します。Data.TestSlot](https://docs.microsoft.com/windows-hardware/test/hlk/testref/defddebe-cc40-4d6f-9b0c-ca5ca9a1cb4d)
-        - [Win6_4.MB します。CDMA します。Data.TestDeviceCapsEx](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e4ec5199-0841-4864-ac17-b6b71f81cdf3)や[Win6_4.MB します。GSM します。Data.TestDeviceCapsEx](https://docs.microsoft.com/windows-hardware/test/hlk/testref/75c812d5-8c7d-4589-8336-7d72f2feb987)
+        - [Win6_4.MB.GSM.Data.TestLowLevelUiccAccess](https://docs.microsoft.com/windows-hardware/test/hlk/testref/104db926-5cc4-47ad-a7d0-ff476b0f57a1)
+    2. リムーバブル SIM スロットとはんだ eUICC の両方を備えた Windows 10 デバイスの場合:
+        - [WIN6_4 MB。CDMA.Data. TestSlot](https://docs.microsoft.com/windows-hardware/test/hlk/testref/049a0532-3d58-49aa-ac3d-2a9b8aab24a7)および/または[Win6_4 MB。GSM.Data. TestSlot](https://docs.microsoft.com/windows-hardware/test/hlk/testref/defddebe-cc40-4d6f-9b0c-ca5ca9a1cb4d)
+        - [WIN6_4 MB。CDMA.Data. TestDeviceCapsEx](https://docs.microsoft.com/windows-hardware/test/hlk/testref/e4ec5199-0841-4864-ac17-b6b71f81cdf3)および/または[Win6_4 MB。GSM.Data. TestDeviceCapsEx](https://docs.microsoft.com/windows-hardware/test/hlk/testref/75c812d5-8c7d-4589-8336-7d72f2feb987)
 
-Windows では、企業のユース ケースで eSIM プロファイルを管理するモバイル デバイス管理プロバイダーの機能を提供します。 ただし、Windows は制限されません、独自のパートナーや顧客に機能を提供するエコシステム パートナーが方法する可能性があります。 そのため、Windows OMA-DM とを統合することによって eSIM プロファイルの管理機能をサポートできます。 これにより、リモートで会社のポリシーに従って eSIM プロファイルを管理できるようにします。
+Windows には、エンタープライズユースケースで、モバイルデバイス管理プロバイダーが eSIM プロファイルを管理する機能が用意されています。 ただし、Windows では、エコシステムパートナーがパートナーや顧客にこれを提供する方法は制限されていません。 そのため、Windows OMA-URI との統合によって、eSIM プロファイル管理機能をサポートできます。 これにより、会社のポリシーに従って eSIM プロファイルをリモートで管理できるようになります。
 
-1 つのみの MDM プロバイダーと統合して使用する場合は、直接そのプロバイダーに問い合わせてください。 Esim 状の管理を別の MDM プロバイダーにお問い合わせくださいを使用して顧客に提供したい場合、 [orchestrator プロバイダー](https://www.idemia.com/esim-management-facilitation)します。 Orchestrator のプロバイダーは、通信事業者のオンボードと MDM のオンボードを処理するプロキシとして機能します。 その[ロール](https://www.idemia.com/smart-connect-hub)簡単と可能な拡張性の高いすべての当事者に対して、プロセスを確保します。
+1つの MDM プロバイダーのみを統合して使用する場合は、そのプロバイダーに直接問い合わせてください。 さまざまな MDM プロバイダーを使用しているお客様に対して eSIM 管理を提供する場合は、 [orchestrator プロバイダー](https://www.idemia.com/esim-management-facilitation)にお問い合わせください。 Orchestrator プロバイダーは、MDM オンボードだけでなく、携帯電話会社のオンボードを処理するプロキシとして機能します。 これらの[役割](https://www.idemia.com/smart-connect-hub)は、すべてのパーティに対してプロセスを可能な限り簡単かつスケーラブルにすることです。
 
-## <a name="esim-management-for-other-audiences"></a>その他のユーザー向けの eSIM の管理
+## <a name="esim-management-for-other-audiences"></a>他のユーザーのための eSIM 管理
 
-MDM プロバイダーを Windows の eSIM の管理をサポートする場合は、次を参照してください。[モバイル デバイス管理プロバイダー方法は、Windows の eSIM 管理をサポート](https://docs.microsoft.com/windows/client-management/mdm/esim-enterprise-management)します。
+MDM プロバイダーで、Windows での eSIM 管理をサポートする場合は、「[モバイルデバイス管理プロバイダーが windows での Esim 管理をサポートする方法](https://docs.microsoft.com/windows/client-management/mdm/esim-enterprise-management)」を参照してください。
 
-エンド ユーザーが組織であり、組織で提供されるデバイスの携帯データ ネットワーク接続、eSIM を使用する場合を参照してください。 [、eSIM を使用して、Windows 10 PC で携帯データ ネットワーク接続を取得する](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data)します。
+組織のエンドユーザーであり、組織が提供するデバイスで携帯データネットワーク接続用の eSIM を使用する場合は、「 [Windows 10 PC で esim を使用して携帯データネットワーク接続を取得](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data)する」を参照してください。

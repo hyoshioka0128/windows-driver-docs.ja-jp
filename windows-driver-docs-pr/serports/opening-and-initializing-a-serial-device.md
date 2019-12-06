@@ -10,12 +10,12 @@ keywords:
 - シリアルデバイスの初期化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af94445882c9c32d0c9479ce536d3289e0df4f97
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d83b4aa47569564761db9fed5f0e4830a51e08d6
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842441"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860657"
 ---
 # <a name="opening-and-initializing-a-serial-device"></a>シリアル デバイスを開いて初期化する
 
@@ -23,7 +23,7 @@ Serial が関数ドライバーとして使用されている場合、シリア�
 
 - シリアルは、シリアルデバイス上で一度に1つだけ開くことができます。
 
-- デバイスが開いたときに未定義の状態になっています。 クライアントは、デバイスを使用する前に、デバイスを既知の状態に初期化する必要があります。 ユーザーモードのクライアントは、Microsoft Windows SDK で Windows ベースサービスによってサポートされている通信機能を使用する必要があります。 カーネルモードクライアントは、IOCTL\_シリアル\_セット\_Xxx および IOCTL\_シリアル\_内部\_Xxx 要求を使用できます。 詳細については、 [ntddser](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
+- デバイスが開いたときに未定義の状態になっています。 クライアントは、デバイスを使用する前に、デバイスを既知の状態に初期化する必要があります。 ユーザーモードのクライアントは、Microsoft Windows SDK で Windows ベースサービスによってサポートされている通信機能を使用する必要があります。 カーネルモードクライアントは、IOCTL\_シリアル\_セット\_Xxx および IOCTL\_シリアル\_内部\_Xxx 要求を使用できます。 詳細については、 [ntddser](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddser/)ヘッダーを参照してください。
 
 - すべてのクライアントは、必要に応じてシリアルデバイスを開き、ポートを使用してデバイスをすぐに閉じる必要があります。
 

@@ -1,9 +1,9 @@
 ---
 title: asyncPrintUIRequest 要素
-description: 必要な asyncPrintUIRequest 要素には、クライアント コンピューターでメッセージを作成するプリンター ドライバーによって発行された要求について説明します。
+description: 必須の asyncPrintUIRequest 要素は、クライアントコンピューターでメッセージを作成するためにプリンタードライバーによって発行される要求を記述します。
 ms.assetid: 992e3c97-b148-4802-be48-3067adb6dd0d
 keywords:
-- asyncPrintUIRequest 要素印刷デバイス
+- asyncPrintUIRequest 要素の印刷デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,20 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 023928b2266a5577ed1271ecf61daef6870e1692
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 629d7d8b753e74981206b7edd581750714d23015
+ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331210"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881923"
 ---
 # <a name="asyncprintuirequest-element"></a>asyncPrintUIRequest 要素
 
+必須の**asyncPrintUIRequest**要素は、クライアントコンピューターでメッセージを作成するためにプリンタードライバーによって発行される要求を記述します。
 
-必要な**asyncPrintUIRequest**要素には、クライアント コンピューターでメッセージを作成するプリンター ドライバーによって発行された要求がについて説明します。
+**AsyncPrintUIRequest**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。
 
-**AsyncPrintUIRequest**で要素が定義されている、 *asyncui*この URI に、名前空間: http://schemas.microsoft.com/2003/print/asyncui/v1/request します。
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用方法
 
 ```xml
 <asyncPrintUIRequest>
@@ -35,13 +33,11 @@ ms.locfileid: "63331210"
 </asyncPrintUIRequest>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 属性はありません。
 
 ## <a name="child-elements"></a>子要素
-
 
 <table>
 <colgroup>
@@ -58,25 +54,23 @@ ms.locfileid: "63331210"
 <tr class="odd">
 <td><p><a href="requestclose.md" data-raw-source="[&lt;strong&gt;requestClose&lt;/strong&gt;](requestclose.md)"><strong>requestClose</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターのイベント通知メッセージを閉じるに使用される省略可能な要素です。</p></td>
+<p>クライアントコンピューターでイベント通知メッセージを閉じるために使用される省略可能な要素。</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="requestopen.md" data-raw-source="[&lt;strong&gt;requestOpen&lt;/strong&gt;](requestopen.md)"><strong>requestOpen</strong></a></p></td>
 <td><p></p>
-<p>クライアント コンピューターのイベント通知メッセージを開くために使用する要素。</p></td>
+<p>クライアントコンピューターでイベント通知メッセージを開くために使用される要素。</p></td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="parent-elements"></a>親要素
 
-
 親要素はありません。
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
-次のコード例を使用する方法を示しています、 **asyncPrintUIRequest**要素。
+**AsyncPrintUIRequest**要素を使用する方法を次のコード例に示します。
 
 ```xml
 <?xml version="1.0" ?>
@@ -98,15 +92,6 @@ ms.locfileid: "63331210"
 
 ## <a name="see-also"></a>関連項目
 
-
 [**requestClose**](requestclose.md)
 
 [**requestOpen**](requestopen.md)
-
- 
-
- 
-
-
-
-
