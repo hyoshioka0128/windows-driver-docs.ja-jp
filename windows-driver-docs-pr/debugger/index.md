@@ -13,12 +13,12 @@ ms.date: 02/22/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: c8b2392b931e9babed5f07ba4bbab54bc64ff960
-ms.sourcegitcommit: 21eb29567c7b9ae2801a4f5b002cf0a6daef3cf5
+ms.openlocfilehash: 982379cd73e2949bdcd7d0bc46ff53e1fce55f2d
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796934"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861424"
 ---
 # <a name="debugging-tools-for-windows-windbg-kd-cdb-ntsd"></a>Debugging Tools for Windows (WinDbg、KD、CDB、NTSD)
 
@@ -58,7 +58,7 @@ Windows のデバッグの概要については、「[Getting Started with Windo
 これらのデバッグ環境で提供されるユーザー インターフェイスはすべて、基になる同じデバッグ エンジンに対するものであり、このエンジンは Windows Symbolic Debugger Engine (Dbgeng.dll) で実装されます。 このデバッグ エンジンは "*Windows デバッガー*" とも呼ばれ、6 つのデバッグ環境の総称も "*Windows デバッガー*" です。
 
 > [!NOTE]
-> Visual Studio は独自のデバッグ環境とデバッグ エンジンを備えており、それらはまとめて "*Visual Studio デバッガー*" と呼ばれます。 Visual Studio でのデバッグについては、「[Visual Studio でのデバッグ](https://docs.microsoft.com/en-us/visualstudio/debugger/)」をご覧ください。 C# のようなマネージド コードをデバッグする場合は、通常、Visual Studio デバッガーを使用して始めるのが最も簡単な方法です。
+> Visual Studio は独自のデバッグ環境とデバッグ エンジンを備えており、それらはまとめて "*Visual Studio デバッガー*" と呼ばれます。 Visual Studio でのデバッグについては、「[Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/)」をご覧ください。 C# のようなマネージド コードをデバッグする場合は、通常、Visual Studio デバッガーを使用して始めるのが最も簡単な方法です。
 
 
 ## <a name="span-idwindows_debuggersspanspan-idwindows_debuggersspanspan-idwindows_debuggersspanwindows-debuggers"></a><span id="Windows_debuggers"></span><span id="windows_debuggers"></span><span id="WINDOWS_DEBUGGERS"></span>Windows デバッガー

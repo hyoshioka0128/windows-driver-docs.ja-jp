@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 44158f2c619b4ede0cb4edfccdfe01e4669aa861
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: db74e0710a473254d22b6541bda0ba3802e49a62
+ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385991"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735164"
 ---
 # <a name="other-wdk-downloads"></a>その他の WDK のダウンロード
 
@@ -68,8 +68,8 @@ WDK は Visual Studio および Debugging Tools for Windows (WinDbg) と統合�
 | Windows 10 バージョン 1709 | [WDK for Windows 10 Version 1709](https://go.microsoft.com/fwlink/p/?linkid=859232) |
 | Windows 10 Version 1703 | [WDK for Windows 10 Version 1703](https://go.microsoft.com/fwlink/p/?LinkID=845980) |
 | Windows 10 Version 1607 | [WDK for Windows 10 Version 1607](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
-| Windows 8.1 Update       | [WDK 8.1 Update](https://go.microsoft.com/fwlink/p/?LinkId=393659) (英語のみ) <br/>[WDK 8.1 Update Test Pack](https://go.microsoft.com/fwlink/p/?LinkID=393660) (英語のみ) <br/>[WDK 8.1 サンプル](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-81-cf35e953) |
-| Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284) (英語のみ) <br/>[WDK 8 再頒布可能コンポーネント](https://go.microsoft.com/fwlink/p/?LinkID=253170) (英語のみ) <br/>[WDK 8 サンプル](https://code.msdn.microsoft.com/windowshardware/Windows-Driver-Kit-WDK-80-e3161626) |
+| Windows 8.1 Update       | [WDK 8.1 Update](https://go.microsoft.com/fwlink/p/?LinkId=393659) (英語のみ) <br/>[WDK 8.1 Update Test Pack](https://go.microsoft.com/fwlink/p/?LinkID=393660) (英語のみ) <br/>[WDK 8.1 サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052) |
+| Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284) (英語のみ) <br/>[WDK 8 再頒布可能コンポーネント](https://go.microsoft.com/fwlink/p/?LinkID=253170) (英語のみ) <br/>[WDK 8 サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616509) |
 | Windows XP <br/>Windows Server 2003 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
 
 
@@ -84,9 +84,9 @@ WDK は Visual Studio および Debugging Tools for Windows (WinDbg) と統合�
 
 Enterprise WDK (EWDK) は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境であり、基本的な Win32 テスト アプリケーションです。 これには、Visual Studio Build Tools、SDK、WDK が含まれています。 この環境には、統合開発環境 (IDE) など、Visual Studio で利用可能な一部の機能が含まれていません。
 
-EWDK を使用するには、.NET Framework 4.6.1 が必要です。 このバージョンのフレームワークを実行するシステムの詳細については、「[.NET Framework のシステム要件](https://docs.microsoft.com/en-us/dotnet/framework/get-started/system-requirements)」を参照してください。 .NET Framework のダウンロード用リンクについては、「[開発者向けの .NET Framework のインストール](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers)」を参照してください。
+EWDK を使用するには、.NET Framework 4.6.1 が必要です。 このバージョンのフレームワークを実行するシステムの詳細については、「[.NET Framework のシステム要件](https://docs.microsoft.com/dotnet/framework/get-started/system-requirements)」を参照してください。 .NET Framework のダウンロード用リンクについては、「[開発者向けの .NET Framework のインストール](https://docs.microsoft.com/dotnet/framework/install/guide-for-developers)」を参照してください。
 
-EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/using-the-enterprise-wdk)」を参照してください。
+EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.microsoft.com/windows-hardware/drivers/develop/using-the-enterprise-wdk)」を参照してください。
 
 | Windows のバージョン               | EWDK                              |
 |-----------------------------------|-----------------------------------|
@@ -115,7 +115,7 @@ WinDbg Preview のダウンロード リンクと詳細については、[WinDbg
 Windows XP、Windows Server 2003、Windows Vista、または Windows Server 2008 をデバッグしている場合 (またはこれらのオペレーティング システムのいずれかを使って Debugging Tools for Windows を実行している場合) は、デバッグ ツールの Windows 7 リリースを使う必要があります。 これは、Windows 7 と .NET Framework 4.0 用 SDK に含まれています。
 
 > [!IMPORTANT]
-> SDK for Windows 7 をインストールする際に、新しいバージョンの Visual C++ 2010 再頒布可能パッケージによって問題が発生することがあります。 詳細については、Microsoft サポートの「[Windows SDK Fails to Install with Return Code 5100](https://support.microsoft.com/en-us/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)」 (Windows SDK のインストールがリターン コード 5100 で失敗する) を参照してください。
+> SDK for Windows 7 をインストールする際に、新しいバージョンの Visual C++ 2010 再頒布可能パッケージによって問題が発生することがあります。 詳細については、Microsoft サポートの「[Windows SDK Fails to Install with Return Code 5100](https://support.microsoft.com/help/2717426/windows-sdk-fails-to-install-with-return-code-5100)」 (Windows SDK のインストールがリターン コード 5100 で失敗する) を参照してください。
 
 スタンドアロンの Windows XP 用デバッグ ツールを入手します (最初に Windows 7 SDK:[Microsoft Windows SDK for Windows 7 および .NET Framework 4](https://www.microsoft.com/download/confirmation.aspx?id=8279) をダウンロードします)。
 

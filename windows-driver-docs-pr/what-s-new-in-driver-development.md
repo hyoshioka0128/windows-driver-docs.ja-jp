@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 185b2598c332c828495065ab43a3b312e83c3a20
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e55cb4a09b3f9d2d7c5b8a4171a7ac170cfca3bf
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844795"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860892"
 ---
 # <a name="top"></a>ドライバー開発に関する最新情報
 
@@ -71,7 +71,7 @@ ms.locfileid: "72844795"
 
 ### <a name="wdk-supports-visual-studio-2019"></a>WDK による Visual Studio 2019 のサポート
 
-Windows 10 Version 1903 用の Windows Driver Kit (WDK) は、以前の[発表](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)のとおり、Visual Studio 2019 をサポートするように更新されました。 このリリースの WDK は Visual Studio 2017 とは互換性がありませんが、開発者は以前のリリースの WDK を使用して Visual Studio 2017 を引き続き使用できます (リリース 1709 から 1809 は[こちら](https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads)にあります)。 Visual Studio 2019 の新機能については、[こちら](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)の情報を参照してください。
+Windows 10 Version 1903 用の Windows Driver Kit (WDK) は、以前の[発表](https://social.msdn.microsoft.com/Forums/en-US/b116571d-d5b2-4c1c-a43e-4b57171c8c41/windows-driver-kit-wdk-to-support-visual-studio-2019?forum=wdk)のとおり、Visual Studio 2019 をサポートするように更新されました。 このリリースの WDK は Visual Studio 2017 とは互換性がありませんが、開発者は以前のリリースの WDK を使用して Visual Studio 2017 を引き続き使用できます (リリース 1709 から 1809 は[こちら](https://docs.microsoft.com/windows-hardware/drivers/other-wdk-downloads)にあります)。 Visual Studio 2019 の新機能については、[こちら](https://docs.microsoft.com/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019)の情報を参照してください。
 
 Visual Studio 2019 の Windows ドライバー開発者向けの注目すべき変更点を次に示します。
 

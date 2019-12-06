@@ -4,12 +4,12 @@ description: オーディオの測定値の定義
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 50956d9fda24b7d055a687b633deba14b9b22b9e
-ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
+ms.openlocfilehash: 91afcac656d5be6fba78b8b1b61df1e4dd6394e3
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71195761"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74860818"
 ---
 # <a name="audio-measures"></a>オーディオの測定値
 
@@ -17,7 +17,7 @@ ms.locfileid: "71195761"
 
 アプリケーション (または Windows コンポーネント) でオーディオを再生または録音するときは、さまざまなオーディオ API のいずれかが使用されます。
 
-すべてのオーディオ API では、最終的にコア オーディオ API 呼び出し [IAudioClient::Initialize](https://docs.microsoft.com/en-us/windows/win32/api/audioclient/nf-audioclient-iaudioclient-initialize) を呼び出します。 これにより、アプリケーションと Windows オーディオ エンジン間の接続と、Windows オーディオ エンジンとオーディオ ドライバー間の接続が作成されます。
+すべてのオーディオ API では、最終的にコア オーディオ API 呼び出し [IAudioClient::Initialize](https://docs.microsoft.com/windows/win32/api/audioclient/nf-audioclient-iaudioclient-initialize) を呼び出します。 これにより、アプリケーションと Windows オーディオ エンジン間の接続と、Windows オーディオ エンジンとオーディオ ドライバー間の接続が作成されます。
 
 IAudioClient:: Initialize の呼び出しが失敗した場合、一部の例外を除いて、アプリケーションはオーディオを使用できません。 IAudioClient:: Initialize エラーの中には、特に問題なく、無視されるものもあります。これらのエラーの一覧については[付録](measure-appendix.md)に記載されています。
 

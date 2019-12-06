@@ -4,16 +4,16 @@ title: ドライバー検証ツール ログの作成
 description: Windows Server 2012 ハードウェア認定プログラムでは、該当するドライバーを提出するときに、ドライバー検証ツール ログ (DVL) を含める必要があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f01f04912ab214dc178817e350d382d5faf0dae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: af3dc6e4e9d98fedb0ecf714206728e4f5b5582e
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370788"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861280"
 ---
 # <a name="creating-a-driver-verification-log"></a>ドライバー検証ツール ログの作成
 
-Windows Server [ハードウェア認定プログラム](https://docs.microsoft.com/en-us/windows-hardware/design/compatibility/)では、すべてのドライバーを提出するときに、ドライバー検証ツール ログ (DVL) を含める必要があります。 DVL には、コード分析 (CA) と静的ドライバー検証ツール (SDV) のログ ファイルからの結果の要約が含まれています。 DVL には、ソースの情報は含まれていません。 ドライバーの DVL を作成する前に、コード分析ツールと静的ドライバー検証ツールを実行する必要があります。
+Windows Server [ハードウェア認定プログラム](https://docs.microsoft.com/windows-hardware/design/compatibility/)では、すべてのドライバーを提出するときに、ドライバー検証ツール ログ (DVL) を含める必要があります。 DVL には、コード分析 (CA) と静的ドライバー検証ツール (SDV) のログ ファイルからの結果の要約が含まれています。 DVL には、ソースの情報は含まれていません。 ドライバーの DVL を作成する前に、コード分析ツールと静的ドライバー検証ツールを実行する必要があります。
 
 **ドライバー検証ツール ログを作成するには**
 
