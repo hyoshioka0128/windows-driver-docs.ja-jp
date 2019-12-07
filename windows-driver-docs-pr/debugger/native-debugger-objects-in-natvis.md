@@ -1,60 +1,56 @@
 ---
 title: NatVis のネイティブ デバッガー オブジェクト
-description: Dx コマンドでは、NatVis の拡張機能モデルを使用して、C++ の式が表示されます。 NatVis の詳細については、デバッガーでのネイティブ オブジェクトのカスタム ビューの作成を参照してください。
+description: Dx コマンドは、NatVis C++拡張モデルを使用して式を表示します。 NatVis の詳細については、「デバッガーでのネイティブオブジェクトのカスタムビューの作成」を参照してください。
 keywords:
-- NatVis 内のオブジェクトをネイティブ デバッガー"
+- NatVis のネイティブデバッガーオブジェクト
 ms.date: 08/10/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 652481c6f8c329c3ff45eea74cbe2f662046def5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dced0a8dea51c87864447e104f9cf2ea3a82c742
+ms.sourcegitcommit: 5a10ea8a98fa4b6f8c43176156530e859a71b10e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366458"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74908355"
 ---
 # <a name="native-debugger-objects-in-natvis"></a>NatVis のネイティブ デバッガー オブジェクト
 
 ## <a name="overview"></a>概要
 
-ネイティブ デバッガー オブジェクトは、さまざまな構成要素とデバッガー環境の動作を表します。 デバッガー オブジェクトの例では、次に示します。
+ネイティブデバッガーオブジェクトは、デバッガー環境のさまざまな構造と動作を表します。 デバッガーオブジェクトの例を次に示します。
 
 -   セッション
 -   スレッド/スレッド
--   プロセス/処理
--   スタック フレームのスタック フレーム/
+-   プロセス/プロセス
+-   スタックフレーム/スタックフレーム
 -   ローカル変数
 -   モジュール/モジュール
 -   ユーティリティ
--   状態
+-   都道府県
 -   設定
 
-デバッガー オブジェクトとの対話には、dx コマンドと LINQ を使用できます。 詳細については、次を参照してください。 [dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)と[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)します。
+Dx コマンドと LINQ を使用して、デバッガーオブジェクトと対話することができます。 詳細については、「 [dx (デバッガーオブジェクトモデル式の表示)](dx--display-visualizer-variables-.md) 」および「[デバッガーオブジェクトでの LINQ の使用](using-linq-with-the-debugger-objects.md)」を参照してください。
 
-JavaScript を使用してデバッガー オブジェクトを操作することもできます。 詳細については、「その[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。
+JavaScript を使用して、デバッガーオブジェクトを操作することもできます。 詳細については、「 [JavaScript 拡張機能のネイティブデバッガーオブジェクト](native-objects-in-javascript-extensions.md)」を参照してください。
 
-このトピックでは、デバッガー オブジェクトを表示するカスタムの NatVis ビジュアライザーを作成する方法について説明します。 
+このトピックでは、カスタム NatVis ビジュアライザーを作成して、デバッガーオブジェクトを表示する方法について説明します。 
 
 ## <a name="natvis-development-resources"></a>NatVis 開発リソース
 
-これらのリソースの NatVis の使用に関する一般的な情報を参照してください。
+NatVis の使用に関する一般的な情報については、これらのリソースを参照してください。
 
-[ネイティブ オブジェクトのカスタム ビューを作成します。](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)
+[ネイティブ オブジェクトのカスタム ビューの作成](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)
 
-[.Natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)
+[**nvload**](-nvload--natvis-load-.md)
 
-[ **.nvload**](-nvload--natvis-load-.md)
+[ **. nvlist**](-nvlist--natvis-list-.md)
 
-[ **.nvlist**](-nvlist--natvis-list-.md)
-
-[ **.nvunload**](-nvunload--natvis-unload-.md)
+[**nvunload**](-nvunload--natvis-unload-.md)
 
 [ **.nvunloadall**](-nvunloadall--natvis-unload-all-.md)
 
+## <a name="custom-natvis-object-example"></a>Custom NatVis オブジェクトの例
 
-## <a name="span-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespanspan-idcustomnatvisobjectexamplespancustom-natvis-object-example"></a><span id="Custom_NatVis_object_example"></span><span id="custom_natvis_object_example"></span><span id="CUSTOM_NATVIS_OBJECT_EXAMPLE"></span>カスタムの NatVis オブジェクトの例
-
-
-クラスのインスタンスがある単純な C++ アプリケーション作成**CDog**します。
+**Cdog**クラスC++のインスタンスを持つ単純なアプリケーションを作成します。
 
 ```cpp
 class CDog
@@ -73,7 +69,7 @@ int main()
 }
 ```
 
-この XML を含む Dog.natvis という名前のファイルを作成します。
+次の XML を含む natvis という名前のファイルを作成します。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -84,11 +80,11 @@ int main()
 </AutoVisualizer>
 ```
 
-Windows のツールのデバッグのビジュアライザー フォルダーのインストール ディレクトリに Dog.natvis をコピーします。 以下に例を示します。
+Windows 用デバッグツールのインストールディレクトリの [ビジュアライザー] フォルダーに natvis をコピーします。 次に、例を示します。
 
-C:\\プログラム ファイル\\(x64) の Windows 用デバッグ ツール\\ビジュアライザー
+C:\\プログラムファイル\\Windows 用デバッグツール (x64)\\ビジュアライザー
 
-プログラムを実行し、main 関数に分割します。 ステップを実行できるように、変数`MyDog`が初期化されます。 表示`MyDog`を使用して[**いますか。** ](----evaluate-c---expression-.md) 使用してもう一度と**dx**します。
+プログラムを実行し、main 関数で中断します。 変数 `MyDog` 初期化されるように手順を実行します。 ?? を使用して `MyDog` を表示し[**ますか**?](----evaluate-c---expression-.md) もう一度**dx**を使用します。
 
 ```dbgcmd
 0:000> ??MyDog
@@ -101,21 +97,10 @@ class CDog
 MyDog     : {Age = 8 years. Weight = 30 pounds.} [Type: CDog]
 ```
 
+## <a name="see-also"></a>関連項目
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+[dx (表示デバッガーオブジェクトモデル式)](dx--display-visualizer-variables-.md)
 
-[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)
+[デバッガーオブジェクトでの LINQ の使用](using-linq-with-the-debugger-objects.md)
 
-[デバッガー オブジェクトを LINQ で使用します。](using-linq-with-the-debugger-objects.md)
-
-[JavaScript の拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md) 
-
- 
----
- 
-
-
-
-
-
-
+[JavaScript 拡張機能のネイティブデバッガーオブジェクト](native-objects-in-javascript-extensions.md) 

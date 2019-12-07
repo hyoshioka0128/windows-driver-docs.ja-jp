@@ -1,9 +1,9 @@
 ---
 title: .nvunloadall (NatVis のすべてアンロード)
-description: .Nvunloadall コマンドは、すべてのデバッガーの環境から NatVis ファイルをアンロードします。
+description: Nvunloadall コマンドは、デバッガー環境からすべての NatVis ファイルをアンロードします。
 ms.assetid: E018D09A-1B52-4D9E-944E-7F61841EAE1A
 keywords:
-- .nvunloadall (NatVis は、すべてをアンロード) Windows のデバッグ
+- nvunloadall (NatVis Unload All) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e634451a0149a9eeac8c7bf0a8d3f616456c4d32
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fd9a0790b093f1e39170070a96be734a0da44897
+ms.sourcegitcommit: 5a10ea8a98fa4b6f8c43176156530e859a71b10e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335825"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74908357"
 ---
 # <a name="nvunloadall-natvis-unload-all"></a>.nvunloadall (NatVis のすべてアンロード)
 
-
-.Nvunloadall コマンドは、すべてのデバッガーの環境から NatVis ファイルをアンロードします。
+Nvunloadall コマンドは、デバッガー環境からすべての NatVis ファイルをアンロードします。
 
 ```dbgcmd
- .nvunloadall 
+ .nvunloadall
 ```
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+## <a name="environment"></a>環境
 
 <table>
 <colgroup>
@@ -37,37 +36,24 @@ ms.locfileid: "63335825"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+## <a name="additional-information"></a>追加情報
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+詳細については、「[ネイティブオブジェクトのカスタムビューを作成する](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)」を参照してください。
 
-詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
+## <a name="see-also"></a>関連項目
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
-
-
-[**dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)
-
- 
-
- 
-
-
-
-
-
-
+[**dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)

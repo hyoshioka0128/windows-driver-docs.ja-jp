@@ -1,9 +1,9 @@
 ---
 title: .nvload (NatVis の読み込み)
-description: .Nvload コマンドは、デバッガーの環境に NatVis ファイルを読み込みます。 視覚エフェクトが読み込まれた後、視覚エフェクトで定義されているデータを表示するために使用されます。
+description: Nvload コマンドは、NatVis ファイルをデバッガー環境に読み込みます。 視覚エフェクトが読み込まれると、視覚エフェクトで定義されたデータを表示するために使用されます。
 ms.assetid: 9B14B3B4-EA90-426E-8555-0E5B8F63E0A9
 keywords:
-- .nvload (NatVis 負荷) Windows のデバッグ
+- . nvload (NatVis Load) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,33 +12,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f4a08aeb8e7676a6759a89726701a6a2f24ae44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd188d2e6a38d445cab25b4075cec62dfb088444
+ms.sourcegitcommit: 5a10ea8a98fa4b6f8c43176156530e859a71b10e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335839"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74908349"
 ---
 # <a name="nvload-natvis-load"></a>.nvload (NatVis の読み込み)
 
 
-.Nvload コマンドは、デバッガーの環境に NatVis ファイルを読み込みます。 視覚エフェクトが読み込まれた後、視覚エフェクトで定義されているデータを表示するために使用されます。
+Nvload コマンドは、NatVis ファイルをデバッガー環境に読み込みます。 視覚エフェクトが読み込まれると、視覚エフェクトで定義されたデータを表示するために使用されます。
 
 ```dbgcmd
-.nvload FileName|ModuleName   
+.nvload FileName|ModuleName
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="parameters"></a>パラメーター
 
+*FileName |ModuleName*
 
-<span id="_______FileName___ModuleName______"></span><span id="_______filename___modulename______"></span><span id="_______FILENAME___MODULENAME______"></span> *ファイル名 |ModuleName*   
-NatVis ファイルの名前または読み込むモジュールの名前を指定します。
+読み込む NatVis ファイル名またはモジュール名を指定します。
 
-**FileName** .natvis ファイルを読み込むの明示的な名前を指定します。 完全修飾パスを使用できます。
+**ファイル名**は、読み込む natvis ファイルの明示的な名前です。 完全修飾パスを使用できます。
 
-**ModuleName**デバッグ中のターゲット プロセスのモジュールの名前を指定します。 使用可能な場合、名前付きモジュールの名前のシンボル (PDB) ファイル内で埋め込まれたすべての .natvis ファイルが読み込まれます。
+**ModuleName**は、デバッグ対象のプロセス内のモジュールの名前です。 名前付きモジュール名のシンボルファイル (PDB) に埋め込まれているすべての NatVis ファイルが読み込まれます (使用可能なファイルがある場合)。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+## <a name="environment"></a>環境
 
 <table>
 <colgroup>
@@ -47,37 +47,24 @@ NatVis ファイルの名前または読み込むモジュールの名前を指�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+## <a name="additional-information"></a>追加情報
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+詳細については、「[ネイティブオブジェクトのカスタムビューを作成する](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)」を参照してください。
 
-詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
+## <a name="see-also"></a>関連項目
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
-
-
-[**dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)
-
- 
-
- 
-
-
-
-
-
-
+[**dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)

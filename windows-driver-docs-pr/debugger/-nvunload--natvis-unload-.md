@@ -1,9 +1,9 @@
 ---
 title: .nvunload (NatVis のアンロード)
-description: .Nvunload コマンドでは、デバッガーの環境から NatVis ファイルをアンロードします。
+description: Nvunload コマンドは、デバッガー環境から NatVis ファイルをアンロードします。
 ms.assetid: E63BE2B5-291B-4F78-98FF-C1D7663A184E
 keywords:
-- .nvunload (NatVis Unload) Windows のデバッグ
+- . nvunload (NatVis Unload) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,30 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b7e084694d3430bf84e3c8859a0674d4f0ba55
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cad98e4a17c9203a3cf5a0e1517177a031a522dd
+ms.sourcegitcommit: 5a10ea8a98fa4b6f8c43176156530e859a71b10e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335841"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74908353"
 ---
 # <a name="nvunload-natvis-unload"></a>.nvunload (NatVis のアンロード)
 
-
-.Nvunload コマンドでは、デバッガーの環境から NatVis ファイルをアンロードします。
+Nvunload コマンドは、デバッガー環境から NatVis ファイルをアンロードします。
 
 ```dbgcmd
 .nvunload FileName|ModuleName  
 ```
 
-<span id="_______FileName___ModuleName______"></span><span id="_______filename___modulename______"></span><span id="_______FILENAME___MODULENAME______"></span> *ファイル名 |ModuleName*   
-NatVis ファイルの名前またはアンロードするモジュール名を指定します。
+*FileName |ModuleName*
 
-**FileName**アンロードに .natvis ファイルの明示的な名前を指定します。 完全修飾パスを使用できます。
+アンロードする NatVis ファイル名またはモジュール名を指定します。
 
-**ModuleName**デバッグ中のターゲット プロセスのモジュールの名前を指定します。 名前付きモジュールの名前のシンボル (PDB) ファイル内に埋め込まれたすべての NatVis ファイルは、アンロードされます。
+**ファイル名**は、アンロードする natvis ファイルの明示的な名前です。 完全修飾パスを使用できます。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+**ModuleName**は、デバッグ対象のプロセス内のモジュールの名前です。 名前付きモジュール名のシンボルファイル (PDB) 内に埋め込まれているすべての NatVis ファイルがアンロードされます。
+
+## <a name="environment"></a>環境
 
 <table>
 <colgroup>
@@ -44,37 +44,24 @@ NatVis ファイルの名前またはアンロードするモジュール名を�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p><strong>Modes</strong></p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p><strong>Platforms</strong></p></td>
 <td align="left"><p>すべての</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+## <a name="additional-information"></a>追加情報
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+詳細については、「[ネイティブオブジェクトのカスタムビューを作成する](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)」を参照してください。
 
-詳細については、次を参照してください。 [.natvis ファイルを使用して C++ のデバッガーの種類のビジュアライザーを書き込み](https://code.msdn.microsoft.com/windowsdesktop/Writing-type-visualizers-2eae77a2)します。
+## <a name="see-also"></a>関連項目
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
-
-
-[**dx (表示 NatVis 式)**](dx--display-visualizer-variables-.md)
-
- 
-
- 
-
-
-
-
-
-
+[**dx (Display NatVis Expression)** ](dx--display-visualizer-variables-.md)
