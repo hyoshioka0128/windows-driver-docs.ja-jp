@@ -1,38 +1,38 @@
 ---
 title: WinDbg を使用した UWP アプリのデバッグ
-description: WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。
+description: WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグできます。
 ms.assetid: 1CE337AC-54C0-4EF5-A374-3ECF1D72BA60
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5756bb217cef8a051426f6bbaa704d65d916ca38
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e38cf99e7c9a7159b6cb82b225468fad776c4ece
+ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366940"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898497"
 ---
 # <a name="debugging-a-uwp-app-using-windbg"></a>WinDbg を使用した UWP アプリのデバッグ
 
 
-WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグすることができます。 このアプローチは通常使用の高度なシナリオは、場所、ビルドを使用して Visual Studio デバッガーでデバッグ タスクを完了することはできません。 Visual Studio でのデバッグの詳細については、次を参照してください。 [Visual Studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio?view=vs-2015)します。
+WinDbg を使用してユニバーサル Windows プラットフォーム (UWP) アプリをデバッグできます。 この方法は、通常、組み込みの Visual Studio デバッガーを使用してデバッグタスクを完了できない高度なシナリオに使用されます。 Visual Studio でのデバッグの詳細については、「 [Visual studio でのデバッグ](https://docs.microsoft.com/visualstudio/debugger/debugging-in-visual-studio?view=vs-2015)」を参照してください。
 
-## <a name="span-idattachingtoauwpappspanspan-idattachingtoauwpappspanspan-idattachingtoauwpappspanattaching-to-a-uwp-app"></a><span id="Attaching_to_a_UWP_app"></span><span id="attaching_to_a_uwp_app"></span><span id="ATTACHING_TO_A_UWP_APP"></span>UWP アプリへのアタッチ
-
-
-UWP のプロセスにアタッチすると、ユーザー モード プロセスにアタッチする場合と同じです。 たとえば、WinDbg で割り当てることができます、実行中のプロセスを選択して**ファイルからプロセスにアタッチ**メニューまたは F6 キーを押しています。 詳細については、次を参照してください。[デバッグ ユーザー モード プロセスを使用して WinDbg](debugging-a-user-mode-process-using-windbg.md)します。
-
-UWP アプリは、デバッグ中でない場合と同じ方法では中断されません。 明示的に中断または再開するため、UWP アプリを .suspendpackage と .resumepackage コマンド (以下の詳細) を使用できます。 プロセスのライフ サイクル管理 (PLM) UWP アプリで使用される一般的な情報は、次を参照してください。[アプリのライフ サイクル](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)と[Launching, resuming, とバック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/index)します。
-
-## <a name="span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app"></a><span id="Launching_and_debugging__a_UWP_app"></span><span id="launching_and_debugging__a_uwp_app"></span><span id="LAUNCHING_AND_DEBUGGING__A_UWP_APP"></span>起動して、UWP アプリのデバッグ
+## <a name="span-idattaching_to_a_uwp_appspanspan-idattaching_to_a_uwp_appspanspan-idattaching_to_a_uwp_appspanattaching-to-a-uwp-app"></a><span id="Attaching_to_a_UWP_app"></span><span id="attaching_to_a_uwp_app"></span><span id="ATTACHING_TO_A_UWP_APP"></span>UWP アプリへのアタッチ
 
 
-PlmPackage - と - plmApp コマンド ライン パラメーターは、デバッガー下でアプリを起動するデバッガーに指示します。
+UWP プロセスへのアタッチは、ユーザーモードプロセスへのアタッチと同じです。 たとえば、WinDbg では、[ファイル] メニュー**の [プロセスにアタッチ**] をクリックするか、F6 キーを押して、実行中のプロセスにアタッチできます。 詳細については、「 [WinDbg を使用したユーザーモードプロセスのデバッグ](debugging-a-user-mode-process-using-windbg.md)」を参照してください。
+
+UWP アプリは、デバッグされていない場合と同じ方法で中断されることはありません。 UWP アプリを明示的に中断/再開するには、. suspendpackage および resumepackage コマンド (以下の詳細) を使用できます。 UWP アプリで使用されるプロセスライフサイクル管理 (PLM) に関する一般的な情報については、「[アプリのライフサイクル](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)」と「[起動、再開、およびバックグラウンドタスク](https://docs.microsoft.com/windows/uwp/launch-resume/index)」を参照してください。
+
+## <a name="span-idlaunching_and_debugging__a_uwp_appspanspan-idlaunching_and_debugging__a_uwp_appspanspan-idlaunching_and_debugging__a_uwp_appspanlaunching-and-debugging-a-uwp-app"></a><span id="Launching_and_debugging__a_UWP_app"></span><span id="launching_and_debugging__a_uwp_app"></span><span id="LAUNCHING_AND_DEBUGGING__A_UWP_APP"></span>UWP アプリの起動とデバッグ
+
+
+-PlmPackage コマンドラインパラメーターと-Plmpackage コマンドラインパラメーターは、デバッガーでアプリを起動するように指示します。
 
 ```console
 windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 ```
 
-1 つのパッケージ内に複数のアプリを含まれていることができますので両方&lt;PLMPackage&gt;と&lt;ApplicationId&gt;パラメーターが必要です。 これは、パラメーターの概要を示します。
+1つのパッケージ内に複数のアプリを含めることができるため、&lt;PLMPackage&gt; と &lt;ApplicationId&gt; パラメーターの両方が必要です。 これは、パラメーターの概要です。
 
 <table>
 <colgroup>
@@ -46,16 +46,16 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
-<td align="left">アプリケーション パッケージの名前。 すべての UWP アプリケーションの一覧に、.querypackages コマンドを使用します。 パッケージの場所へのパスを指定ではなくパッケージ名だけを指定します。</td>
+<td align="left">アプリケーションパッケージの名前。 Querypackages コマンドを使用して、すべての UWP アプリケーションを一覧表示します。 パッケージの場所へのパスを指定せずに、パッケージ名だけを指定してください。</td>
 </tr>
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
-<td align="left"><p>ApplicationId は、アプリケーション マニフェスト ファイルにあるし、このトピックで説明したように、.querypackage または .querypackages コマンドを使用して表示できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">アプリ パッケージのマニフェスト</a>します。</p></td>
+<td align="left"><p>ApplicationId はアプリケーションマニフェストファイルに格納されており、このトピックで説明されているように、querypackage または querypackages コマンドを使用して表示できます。</p>
+<p>アプリケーションマニフェストファイルの詳細については、「アプリケーション<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">パッケージマニフェスト</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;パラメーター&gt;]</td>
-<td align="left"><p>省略可能なパラメーターは、アプリに渡されます。 すべてのアプリまたは使用して、パラメーターが必要です。</p></td>
+<td align="left"><p>アプリに渡される省略可能なパラメーター。 すべてのアプリでパラメーターを使用したり、要求したりすることはできません。</p></td>
 </tr>
 </tbody>
 </table>
@@ -64,13 +64,13 @@ windbg.exe -plmPackage <PLMPackageName> -plmApp <ApplicationId> [<parameters>]
 
 **HelloWorld サンプル**
 
-UWP のデバッグを示すためには、このトピックは「HelloWorld サンプルを使用して[作成"Hello, world"アプリ (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)します。
+UWP のデバッグを示すために、このトピックでは、 [「Hello, world "アプリの作成 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)」で説明されている HelloWorld の例を使用します。
 
-テストの実行可能なアプリを作成するには、まで、ラボの 3 つの手順を完了する必要はのみです。
+実行可能なテストアプリを作成するには、ラボの手順 3. まで完了するだけで済みます。
 
-**AppId とパッケージの完全な名前を検索します。**
+**完全なパッケージ名と AppId の検索**
 
-完全なパッケージ名と、アプリ Id を検索するのにには、.querypackages コマンドを使用します。 .Querypackages しユーザー CRTL + F、HelloWorld など、アプリケーション名の出力で上へ検索 を入力します。 エントリは、CTRL キーを押しながら F キーを使用して配置が、表示されます、パッケージ フル_ネーム、たとえば*e24caf14-8483-4743-b80c-ca46c28c75df\_1.0.0.0\_x86\_\_97ghe447vaan8*とAppId*アプリ*します。
+Querypackages コマンドを使用して、完全なパッケージ名と AppId を検索します。 「Querypackages」と入力します。次に、HelloWorld などのアプリケーション名の出力を検索します。 CTRL + F キーを使用してエントリを配置すると、パッケージの完全な名前が表示されます。たとえば、 *e24caf14-8483-4743-b80c-ca46c28c75df\_1.0.0.0\_x86\_\_97ghe447vaan8* 、*アプリ*の AppId などです。
 
 以下に例を示します。
 
@@ -89,13 +89,13 @@ AppId: App
 ...
 ```
 
-**基本パッケージの名前を表示する、マニフェストに**
+**マニフェスト内のでの基本パッケージ名の表示**
 
-トラブルシューティングについては、Visual Studio で、基本パッケージの名前を表示します。
+トラブルシューティングのために、Visual Studio で基本パッケージ名を表示することができます。
 
-Visual Studio で、基本パッケージ名を検索するには、プロジェクト エクスプ ローラーで、ApplicationManifest.xml ファイルをクリックします。 基本パッケージの名前は"Package name"としてパッケージ化 タブで表示されます。 既定では、パッケージ名になります、GUID では、たとえば*e24caf14-8483-4743-b80c-ca46c28c75df*します。
+Visual Studio で基本パッケージ名を検索するには、プロジェクトエクスプローラーで ApplicationManifest .xml ファイルをクリックします。 基本パッケージ名は、[パッケージ化] タブの下に "パッケージ名" として表示されます。 既定では、パッケージ名は*e24caf14-8483-4743-b80c-ca46c28c75df*などの GUID になります。
 
-メモ帳を使用して、基本パッケージの名前を検索する、ApplicationManifest.xml ファイルを開くし、検索、 **Id 名**タグ。
+メモ帳を使用して基本パッケージ名を検索するには、ApplicationManifest .xml ファイルを開き、 **Identity name**タグを見つけます。
 
 ```xml
   <Identity
@@ -104,11 +104,11 @@ Visual Studio で、基本パッケージ名を検索するには、プロジェ
     Version="1.0.0.0" />
 ```
 
-**マニフェストに、アプリケーション Id を検索します。**
+**マニフェストでのアプリケーション Id の検索**
 
-インストールされている UWP アプリのマニフェスト ファイルでアプリケーション Id を検索する検索、*アプリケーション Id*エントリ。
+インストールされている UWP アプリのマニフェストファイルでアプリケーション Id を検索するには、*アプリケーション id*のエントリを探します。
 
-たとえば、hello world アプリのアプリケーション ID は*アプリ*します。
+たとえば、hello world アプリの場合、アプリケーション ID は*app*です。
 
 ```xml
 <Application Id="App"
@@ -116,18 +116,18 @@ Visual Studio で、基本パッケージ名を検索するには、プロジェ
       EntryPoint="HelloWorld.App">
 ```
 
-**WinDbg のコマンドラインの例**
+**WinDbg コマンドラインの例**
 
-これは、読み込み、完全なパッケージ名とアプリ Id を使用して、デバッガー下で HelloWorld アプリケーション コマンドラインの例です。
+これは、完全なパッケージ名と AppId を使用して、デバッガーで HelloWorld アプリを読み込むコマンドラインの例です。
 
 ```console
 windbg.exe -plmPackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 -plmApp App
 ```
 
-## <a name="span-idlaunchingabackgroundtaskunderthedebuggerspanspan-idlaunchingabackgroundtaskunderthedebuggerspanspan-idlaunchingabackgroundtaskunderthedebuggerspanlaunching-a-background-task-under-the-debugger"></a><span id="Launching_a_background_task_under_the_debugger"></span><span id="launching_a_background_task_under_the_debugger"></span><span id="LAUNCHING_A_BACKGROUND_TASK_UNDER_THE_DEBUGGER"></span>デバッガーの下でバック グラウンド タスクの開始
+## <a name="span-idlaunching_a_background_task_under_the_debuggerspanspan-idlaunching_a_background_task_under_the_debuggerspanspan-idlaunching_a_background_task_under_the_debuggerspanlaunching-a-background-task-under-the-debugger"></a><span id="Launching_a_background_task_under_the_debugger"></span><span id="launching_a_background_task_under_the_debugger"></span><span id="LAUNCHING_A_BACKGROUND_TASK_UNDER_THE_DEBUGGER"></span>デバッガーでのバックグラウンドタスクの起動
 
 
-TaskId を使用してコマンドラインからデバッガーの下でバック グラウンド タスクを明示的に起動できます。 これを行うには、plmPackage - と - plmBgTaskId コマンド ライン パラメーターを使用します。
+バックグラウンドタスクは、コマンドラインから TaskId を使用して、デバッガーで明示的に起動できます。 これを行うには、-plmPackage パラメーターと-plmBgTaskId コマンドラインパラメーターを使用します。
 
 ```console
 windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
@@ -145,27 +145,27 @@ windbg.exe -plmPackage <PLMPackageName> -plmBgTaskId <BackgroundTaskId>
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
-<td align="left"><p>アプリケーション パッケージの名前。 すべての UWP アプリケーションの一覧に、.querypackages コマンドを使用します。 パッケージの場所へのパスを指定ではなくパッケージ名だけを指定します。</p></td>
+<td align="left"><p>アプリケーションパッケージの名前。 Querypackages コマンドを使用して、すべての UWP アプリケーションを一覧表示します。 パッケージの場所へのパスを指定せずに、パッケージ名だけを指定してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">&lt;BackgroundTaskId&gt;</td>
-<td align="left"><p>BackgroundTaskId を以下に示すように、.querypackages コマンドを使用して配置できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">アプリ パッケージのマニフェスト</a>します。</p></td>
+<td align="left"><p>BackgroundTaskId は、以下で説明するように、querypackages コマンドを使用して見つけることができます。</p>
+<p>アプリケーションマニフェストファイルの詳細については、「アプリケーション<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">パッケージマニフェスト</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これは、デバッガーの下で SDKSamples.BackgroundTask コードの読み込みの例です。
+デバッガーで SDKSamples タスクコードを読み込む例を次に示します。
 
 ```console
 windbg.exe -plmPackage Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe -plmBgTaskId {ee4438ee-22db-4cdd-85e4-8ad8a1063523}
 ```
 
-UWP のデバッグに精通するバック グラウンド タスクのサンプル コードを実験できます。 ダウンロード[バック グラウンド タスクのサンプル](https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9)します。
+バックグラウンドタスクのサンプルコードを試して、UWP デバッグに慣れることができます。 [バックグラウンドタスクのサンプル](https://go.microsoft.com/fwlink/p/?linkid=2112776)でダウンロードできます。
 
-BackgroundTaskId を検索するのにには、.querypackages コマンドを使用します。 CTRL + F を使用して、アプリを検索し、*バック グラウンド タスク Id*フィールド。 タスク id と関連付けられているバック グラウンド タスクの名前を表示するバック グラウンド タスクを実行する必要があります。
+Querypackages コマンドを使用して、BackgroundTaskId を検索します。 CTRL + F キーを使用してアプリを検索し、[*バックグラウンドタスク Id* ] フィールドを探します。 バックグラウンドタスクは、関連付けられているバックグラウンドタスク名とタスク Id を表示するために実行されている必要があります。
 
 ```dbgcmd
 0:000> .querypackages
@@ -184,9 +184,9 @@ Background Task Id: {ee4438ee-22db-4cdd-85e4-8ad8a1063523}
 ...
 ```
 
-表示する .querypackage を使用するには、完全なパッケージ名がわかっている場合、*バック グラウンド タスク Id*フィールド。
+完全なパッケージ名がわかっている場合は、. querypackage を使用して [*バックグラウンドタスク Id* ] フィールドを表示できます。
 
-PLMDebug の enumerateBgTasks オプションを使用して、BackgroundTaskId を検索することもできます。 PMLDebug utiltity の詳細については、次を参照してください。 [ **PLMDebug**](plmdebug.md)します。
+PLMDebug の enumerateBgTasks オプションを使用して、BackgroundTaskId を検索することもできます。 PMLDebug utiltity の詳細については、「 [**Plmdebug**](plmdebug.md)」を参照してください。
 
 ```console
 C:\Program Files\Debugging Tools for Windows (x64)>PLMDebug /enumerateBgTasks Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe
@@ -197,27 +197,27 @@ SampleBackgroundTask : {C05806B1-9647-4765-9A0F-97182CEA5AAD}
 SUCCEEDED
 ```
 
-## <a name="span-iddebuggingauwpprocessremotelyusingaprocessserverdbgsrvspanspan-iddebuggingauwpprocessremotelyusingaprocessserverdbgsrvspanspan-iddebuggingauwpprocessremotelyusingaprocessserverdbgsrvspandebugging-a-uwp-process-remotely-using-a-process-server-dbgsrv"></a><span id="Debugging_a_UWP_process_remotely_using_a_Process_Server__DbgSrv_"></span><span id="debugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_"></span><span id="DEBUGGING_A_UWP_PROCESS_REMOTELY_USING_A_PROCESS_SERVER__DBGSRV_"></span>プロセス サーバー (DbgSrv) を使用してリモートでの UWP プロセスのデバッグ
+## <a name="span-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spanspan-iddebugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_spandebugging-a-uwp-process-remotely-using-a-process-server-dbgsrv"></a><span id="Debugging_a_UWP_process_remotely_using_a_Process_Server__DbgSrv_"></span><span id="debugging_a_uwp_process_remotely_using_a_process_server__dbgsrv_"></span><span id="DEBUGGING_A_UWP_PROCESS_REMOTELY_USING_A_PROCESS_SERVER__DBGSRV_"></span>プロセスサーバー (DbgSrv) を使用したリモートでの UWP プロセスのデバッグ
 
 
-すべての plm の\*dbgsrv でコマンドが正常に動作します。 Dbgsrv を使用してデバッグするには、使用に premote スイッチ dbgsrv の接続文字列に置き換えます。
+-Plm srv では、すべての-plm\* コマンドが正常に動作します。 Dbgsrv を使用してデバッグするには、-premote スイッチと dbgsrv の接続文字列を使用します。
 
 ```console
 windbg.exe -premote npipe:pipe=fdsa,server=localhost -plmPackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 -plmApp App
 ```
 
-詳細については、- premote のオプションの詳細についてを参照してください[プロセス サーバー (ユーザー モード)](process-servers--user-mode-.md)と[プロセス サーバーの例](process-server-examples.md)します。
+-Premote オプションの詳細については、「[プロセスサーバー (ユーザーモード)](process-servers--user-mode-.md) 」および「[プロセスサーバーの例](process-server-examples.md)」を参照してください。
 
-## <a name="span-idsummaryofuwpappcommandsspanspan-idsummaryofuwpappcommandsspanspan-idsummaryofuwpappcommandsspansummary-of-uwp-app-commands"></a><span id="Summary_of_UWP_app_commands"></span><span id="summary_of_uwp_app_commands"></span><span id="SUMMARY_OF_UWP_APP_COMMANDS"></span>UWP アプリ コマンドの概要
+## <a name="span-idsummary_of_uwp_app_commandsspanspan-idsummary_of_uwp_app_commandsspanspan-idsummary_of_uwp_app_commandsspansummary-of-uwp-app-commands"></a><span id="Summary_of_UWP_app_commands"></span><span id="summary_of_uwp_app_commands"></span><span id="SUMMARY_OF_UWP_APP_COMMANDS"></span>UWP アプリのコマンドの概要
 
 
-このセクションでは、UWP アプリのデバッガー コマンドの概要を提供します。
+このセクションでは、UWP アプリデバッガーコマンドの概要について説明します。
 
-**パッケージ情報の収集**
+**パッケージ情報を収集しています**
 
 **.querypackage**
 
-.Querypackage では、UWP アプリケーションの状態が表示されます。 たとえば、アプリが実行されている場合ことができますで、 *Active*状態。
+Querypackage は、UWP アプリケーションの状態を表示します。 たとえば、アプリが実行されている場合は、*アクティブな*状態になることがあります。
 
 ```dbgcmd
 .querypackage <PLMPackageName>
@@ -241,7 +241,7 @@ Executable: HelloWorld.exe
 
 **.querypackages**
 
-.Querypackages コマンドには、インストールされているすべての UWP アプリケーションとその現在の状態が一覧表示します。
+Querypackages コマンドは、インストールされているすべての UWP アプリケーションとその現在の状態を一覧表示します。
 
 ```dbgcmd
 .querypackages
@@ -286,17 +286,17 @@ AppId: BackgroundTask.App
 ...
 ```
 
-**デバッグ用のアプリを起動します。**
+**デバッグ用のアプリの起動**
 
-**.createpackageapp**
+**. createpackageapp**
 
-.Createpackageapp コマンドでは、デバッグを有効にし、UWP アプリケーションを起動します。
+Createpackageapp コマンドは、デバッグを有効にし、UWP アプリケーションを起動します。
 
 ```dbgcmd
 .createpackageapp <PLMPackageName> <ApplicationId> [<parameters>] 
 ```
 
-このテーブルは、.createpackageapp のパラメーターを一覧表示します。
+次の表に、createpackageapp のパラメーターの一覧を示します。
 
 <table>
 <colgroup>
@@ -310,16 +310,16 @@ AppId: BackgroundTask.App
 </tr>
 <tr class="even">
 <td align="left">&lt;PLMPackageName&gt;</td>
-<td align="left">アプリケーション パッケージの名前。 すべての UWP アプリケーションの一覧に、.querypackages コマンドを使用します。 パッケージの場所へのパスを指定ではなくパッケージ名だけを指定します。</td>
+<td align="left">アプリケーションパッケージの名前。 Querypackages コマンドを使用して、すべての UWP アプリケーションを一覧表示します。 パッケージの場所へのパスを指定せずに、パッケージ名だけを指定してください。</td>
 </tr>
 <tr class="odd">
 <td align="left">&lt;ApplicationId&gt;</td>
-<td align="left"><p>ApplicationId は、このトピックで前述したように、.querypackage または .querypackages を使用して配置できます。</p>
-<p>アプリケーション マニフェスト ファイルの詳細については、次を参照してください。<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">アプリ パッケージのマニフェスト</a>します。</p></td>
+<td align="left"><p>ApplicationId は、このトピックで既に説明したように、. querypackage または querypackages を使用して見つけることができます。</p>
+<p>アプリケーションマニフェストファイルの詳細については、「アプリケーション<a href="https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest" data-raw-source="[App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)">パッケージマニフェスト</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[&lt;パラメーター&gt;]</td>
-<td align="left">アプリケーションに渡される省略可能なパラメーター。 すべてのアプリケーションが必要ですか、これらの省略可能なパラメーターを使用します。</td>
+<td align="left">アプリケーションに渡される省略可能なパラメーター。 これらの省略可能なパラメーターを必要としないアプリケーションもあります。</td>
 </tr>
 </tbody>
 </table>
@@ -332,13 +332,13 @@ AppId: BackgroundTask.App
 .createpackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 App
 ```
 
-**コマンドのデバッグを有効にしての使用を無効化**
+**デバッグコマンドの使用を有効または無効にする**
 
-**.enablepackagedebug**
+**. enablepackagedebug**
 
-.Enablepackagedebug コマンドは、UWP アプリケーションのデバッグを有効にします。 .Enablepackagedebug を使用する必要があります、中断のいずれかを呼び出す前に、再開、または関数を終了します。
+. Enablepackagedebug コマンドは、UWP アプリケーションのデバッグを有効にします。 Suspend、resume、または terminate 関数のいずれかを呼び出す前に、. enablepackagedebug を使用する必要があります。
 
-.Createpackageapp コマンドは、アプリのデバッグをまた有効に注意してください。
+Createpackageapp コマンドでは、アプリのデバッグも有効になっていることに注意してください。
 
 ```dbgcmd
 .enablepackagedebug <PLMPackageName>
@@ -350,9 +350,9 @@ AppId: BackgroundTask.App
 .enablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-**.disablepackagedebug**
+**. disablepackagedebug**
 
-.Disablepackagedebug コマンドでは、UWP アプリケーションのデバッグを無効にします。
+. Disablepackagedebug コマンドは、UWP アプリケーションのデバッグを無効にします。
 
 ```dbgcmd
 .disablepackagedebug <PLMPackageName>
@@ -364,13 +364,13 @@ AppId: BackgroundTask.App
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-**開始して、アプリを停止しています**
+**アプリの開始と停止**
 
-中断、メモは、再開、および、パッケージ アプリの実行中のすべてに影響を終了します。
+中断、再開、および終了は、パッケージ内で現在実行中のすべてのアプリに影響します。
 
 **.suspendpackage**
 
-.Suspendpackage のコマンドは、UWP アプリケーションを中断します。
+Suspendpackage コマンドは、UWP アプリケーションを中断します。
 
 ```dbgcmd
 .suspendpackage <PLMPackageName> 
@@ -384,7 +384,7 @@ AppId: BackgroundTask.App
 
 **.resumepackage**
 
-.Resumepackage コマンドは、UWP アプリケーションを再開します。
+Resumepackage コマンドは、UWP アプリケーションを再開します。
 
 ```dbgcmd
 .resumepackage <PLMPackageName> 
@@ -398,7 +398,7 @@ AppId: BackgroundTask.App
 
 **.terminatepackageapp**
 
-.Terminatepackageapp コマンドでは、すべてのパッケージの UWP アプリケーションが終了します。
+Terminatepackageapp コマンドは、パッケージ内のすべての UWP アプリケーションを終了します。
 
 ```dbgcmd
 .terminatepackageapp <PLMPackageName> 
@@ -410,11 +410,11 @@ AppId: BackgroundTask.App
 .terminatepackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-**バック グラウンド タスク**
+**バックグラウンド タスク**
 
 **.activatepackagebgtask**
 
-.Activatepackagebgtask コマンドでは、デバッグを有効にし、UWP のバック グラウンド タスクを起動します。
+Activatepackagebgtask コマンドは、デバッグを有効にし、UWP バックグラウンドタスクを起動します。
 
 ```dbgcmd
  .activatepackagebgtask <PLMPackageName> <bgTaskId>
@@ -426,12 +426,12 @@ AppId: BackgroundTask.App
 .activatepackagebgtask Microsoft.SDKSamples.BackgroundTask.CPP_1.0.0.0_x64__8wekyb3d8bbwe {C05806B1-9647-4765-9A0F-97182CEA5AAD}
 ```
 
-## <a name="span-idusageexamplesspanspan-idusageexamplesspanspan-idusageexamplesspanusage-examples"></a><span id="Usage_Examples"></span><span id="usage_examples"></span><span id="USAGE_EXAMPLES"></span>使用例
+## <a name="span-idusage_examplesspanspan-idusage_examplesspanspan-idusage_examplesspanusage-examples"></a><span id="Usage_Examples"></span><span id="usage_examples"></span><span id="USAGE_EXAMPLES"></span>使用例
 
 
-**アプリを起動するときにデバッガーをアタッチします。**
+**アプリが起動されたときにデバッガーをアタッチする**
 
-E24caf14-8483-4743-b80c-ca46c28c75df という名前のパッケージでは、HelloWorld という名前のアプリがあるとします\_1.0.0.0\_x86\_\_97ghe447vaan8 します。 完全な名前を表示して、インストールされているすべてのパッケージの状態を実行して、パッケージがインストールされていることを確認します。 コマンド プロンプト ウィンドウで、次のコマンドを入力します。 CTRL + F を使用すると、アプリ名の HelloWorld コマンドの出力を検索します。
+HelloWorld という名前のアプリがあり、e24caf14-8483-4743-b80c-ca46c28c75df\_1.0.0.0\_x86\_\_97ghe447vaan8 という名前のパッケージに含まれているとします。 完全な名前を表示し、インストールされているすべてのパッケージを実行して、パッケージがインストールされていることを確認します。 コマンドプロンプトウィンドウで、次のコマンドを入力します。 CTRL + F を使用して、コマンドの出力で HelloWorld のアプリ名を検索できます。
 
 ```dbgcmd
 .querypackages 
@@ -450,43 +450,43 @@ AppId: App
 ...
 ```
 
-起動し、アプリにアタッチするには、.createpackageapp を使用します。 .Createpackageapp コマンドは、アプリのデバッグもできます。
+Createpackageapp を使用してアプリを起動し、アプリにアタッチします。 また、createpackageapp コマンドを使用すると、アプリのデバッグも有効になります。
 
 ```dbgcmd
 .createpackageapp e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8 App
 ```
 
-デバッグが完了したら、.disablepackagedebug コマンドを使用して、パッケージのデバッグの参照カウントをデクリメントします。
+デバッグが完了したら、. disablepackagedebug コマンドを使用して、パッケージのデバッグ参照カウントをデクリメントします。
 
 ```dbgcmd
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-**既に実行されているアプリにデバッガーをアタッチします。**
+**既に実行中のアプリにデバッガーをアタッチする**
 
-既に実行中の MyApp に WinDbg をアタッチするとします。 WinDbg での**ファイル**] メニューの [選択**プロセスにアタッチする**します。 MyApp のプロセス ID に注意してください。 たとえば、プロセス ID が 4816 とします。 MyApp を含むパッケージのデバッグの参照カウントをインクリメントします。
+既に実行されているである、MyApp に WinDbg をアタッチするとします。 WinDbg の **ファイル** メニューで、**プロセスにアタッチ** を選択します。 MyApp のプロセス ID をメモしておきます。 たとえば、プロセス ID が4816であるとします。 MyApp を含むパッケージのデバッグ参照カウントをインクリメントします。
 
 ```dbgcmd
 .enablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-WinDbg での**プロセスにアタッチ** ダイアログ ボックスでは、プロセス 4816 を選択し、ok をクリックします。 WinDbg は、MyApp に接続されます。
+WinDbg の **プロセスにアタッチ** ダイアログボックスで、プロセス 4816 を選択し、OK をクリックします。 WinDbg が MyApp にアタッチされます。
 
-デバッグが完了したら、.disablepackagedebug コマンドを使用して、パッケージのデバッグの参照カウントをデクリメントします。
+デバッグが完了したら、. disablepackagedebug コマンドを使用して、パッケージのデバッグ参照カウントをデクリメントします。
 
 ```dbgcmd
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-**手動で中断し、アプリの再開**
+**アプリを手動で中断して再開する**
 
-手動で中断し、アプリを再開するこれらの手順に従います。 最初に、アプリを含むパッケージのデバッグの参照カウントをインクリメントします。
+アプリを手動で中断して再開するには、次の手順に従います。 最初に、アプリを含むパッケージのデバッグ参照カウントをインクリメントします。
 
 ```dbgcmd
 .enablepackagedebug  e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-パッケージを中断します。 アプリの中断ハンドラーが呼び出され、これは、デバッグに役立ちます。
+パッケージを中断します。 アプリの中断ハンドラーが呼び出されます。これはデバッグに役立ちます。
 
 ```dbgcmd
 .suspendpackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
@@ -498,13 +498,13 @@ WinDbg での**プロセスにアタッチ** ダイアログ ボックスでは�
 .resumepackage e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-最後に、パッケージのデバッグの参照カウントをデクリメントします。
+最後に、パッケージのデバッグ参照カウントをデクリメントします。
 
 ```dbgcmd
 .disablepackagedebug e24caf14-8483-4743-b80c-ca46c28c75df_1.0.0.0_x86__97ghe447vaan8
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [WinDbg を使用したデバッグ](debugging-using-windbg.md)

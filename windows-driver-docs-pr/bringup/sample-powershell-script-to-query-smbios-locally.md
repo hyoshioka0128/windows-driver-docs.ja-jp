@@ -3,17 +3,17 @@ title: SMBIOS をローカルにクエリする PowerShell スクリプトのサ
 description: SMBIOS をローカルにクエリする PowerShell スクリプトのサンプル
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ea4fbe0b1c6273c9b3288bbe75e2f821a920e39c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 391c0cdaf4d472bc0eca41464f075afc14f31a26
+ms.sourcegitcommit: 69df2a54164dfd6621bf909632f8ddaa6f05e5ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337412"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74897430"
 ---
 # <a name="sample-powershell-script-to-query-smbios-locally"></a>SMBIOS をローカルにクエリする PowerShell スクリプトのサンプル
 
 
-次の位置する ChassisTypes の一覧は、最新の DMTF SMBIOS 仕様からコピーされます。
+次の ChassisTypes の一覧は、最新の DMTF SMBIOS 仕様からコピーされています。
 
 ```powershell
 # Set-ExecutionPolicy or Script Signing documentation needs to be reviewed
@@ -79,7 +79,7 @@ foreach ($machine in $machines)
     $obj.Manufacturer = Get-WmiObject -class Win32_Bios -computername $machine -namespace $namespace | Select-Object -ExpandProperty Manufacturer
     $obj.UUID = Get-WmiObject Win32_ComputerSystemProduct | Select-Object -ExpandProperty UUID
     $obj.BaseBoardProduct = Get-WmiObject Win32_BaseBoard | Select-Object -ExpandProperty Product
-    $obj.ChassisTypes = Get-WmiObject Win32_SystemEnclosure | Select-Object -ExpandProperty ChassisType
+    $obj.ChassisTypes = Get-WmiObject Win32_SystemEnclosure | Select-Object -ExpandProperty ChassisTypes
     $obj.Chassis = $ChassisTypes[[int]$obj.ChassisTypes]
     $obj.SystemFamily = Get-WmiObject Win32_ComputerSystem | Select-Object -ExpandProperty SystemFamily
     $obj.SystemSKUNumber = Get-WmiObject Win32_ComputerSystem | Select-Object -ExpandProperty SystemSKUNumber
@@ -103,4 +103,4 @@ $list
 
 サンプル出力:
 
-![サンプル出力](images/sample-output.png)
+![出力例](images/sample-output.png)

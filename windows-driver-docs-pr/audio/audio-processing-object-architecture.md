@@ -4,12 +4,12 @@ description: オーディオ処理オブジェクト (APOs) は、Windows オー
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b69cb56c80ec3f9be2c66bc4e880d01b17848f
-ms.sourcegitcommit: 36b7db40d5a91d8726feb2e2d9d4ece1fb484051
+ms.openlocfilehash: 5f89a0c8a87f4f071610eec6021c0016decdd4c0
+ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591012"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898493"
 ---
 # <a name="audio-processing-object-architecture"></a>オーディオ処理オブジェクトのアーキテクチャ
 
@@ -76,7 +76,7 @@ APOs のサポートに関するオーディオの要件については、「[�
 
 "オーディオ効果検出サンプル" を使用して、利用可能なオーディオ効果を調べることができます。 このサンプルでは、オーディオデバイスのレンダリングとキャプチャに関するオーディオ効果を照会する方法と、オーディオ効果を使用して変更を監視する方法を示します。 SDK サンプルの一部として含まれており、次のリンクを使用してダウンロードできます。
 
-[オーディオエフェクト検出のサンプル](https://code.msdn.microsoft.com/windowsapps/Audio-effects-discovery-5fd65c15)
+[オーディオエフェクト検出のサンプル](https://go.microsoft.com/fwlink/p/?linkid=2112597)
 
 **アプリケーションオーディオ効果の認識**
 
