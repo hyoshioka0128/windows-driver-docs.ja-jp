@@ -4,12 +4,12 @@ author: DOMARS
 redirect_url: https://msdn.microsoft.com/library/windows/hardware/mt786448
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b22ffc8bdcdf93783c2e7b68f2ff2845027bbaf5
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: b8ce89f77d3cba335aac24272226fed959a1e5bf
+ms.sourcegitcommit: 4184cb3bb6737762b2768cd8b9b2233297fc64cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025144"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74820389"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -19,7 +19,7 @@ ms.locfileid: "70025144"
 
  - 構成証明署名は、Windows 10 デスクトップのカーネル モード ドライバーとユーザー モード ドライバーをサポートしています。 Windows 10 では、ユーザー モード ドライバーは Microsoft による署名を必要としませんが、ユーザー モード ドライバーとカーネル モード ドライバーの両方で同じ構成証明プロセスを使うことができます。
  - 構成証明署名では、EV 証明書を使ってハードウェア デベロッパー センター ダッシュボードにドライバーを提出する必要があります。
- - 構成証明署名されたドライバーは、Windows 10 デスクトップのみで動作し、Windows Server 2016、Windows 8.1、Windows 7 などのその他のバージョンの Windows では動作しません。
+ - 構成証明署名されたドライバーは、Windows 10 および Windows Server 2016 以降で動作します。 それより前のバージョンの Windows (Windows 8.1 や Windows 7 など) では機能しません。
 
 
 

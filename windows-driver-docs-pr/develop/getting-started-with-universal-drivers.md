@@ -4,12 +4,12 @@ title: ユニバーサル Windows ドライバーの概要
 description: ユニバーサル Windows ドライバーを使用すると、組み込みシステムからタブレットや PC まで、複数の種類のデバイスで動作する 1 つのドライバーを作成できます。
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e09e700906f5fc86f6e100d5ab1c6a60fc0a69c3
-ms.sourcegitcommit: 0b38c5075d85ede328bf9901b0d36e84ec0e3d66
+ms.openlocfilehash: f54d52ae032ef66a7d48c0c08e6502ac556f7a84
+ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71826519"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74861261"
 ---
 # <a name="getting-started-with-universal-windows-drivers"></a>ユニバーサル Windows ドライバーの概要
 
@@ -51,7 +51,7 @@ OEM は、OEM システムに対して提供するオプションのカスタマ
 
 * ユニバーサル API コンプライアンス **(U)** : ユニバーサル ドライバー パッケージ内のバイナリは、Windows 10 の UWP ベースのエディションに含まれる API と DDI のみを呼び出します。 このような DDI には、ドキュメントのリファレンス ページで "**ユニバーサル**" というマークが付いています。 INF ファイルは、ユニバーサル INF 構文のみを使います。
 
-また、ユニバーサル ドライバーでは、ドライバー パッケージの分離の原則からも恩恵を得ることができます。  これらのベスト プラクティスに従うための詳細なガイダンスについては、「ドライバー パッケージの分離」ページをご覧ください。
+また、ユニバーサル ドライバーでは、ドライバー パッケージの分離の原則からも恩恵を得ることができます。  これらのベスト プラクティスに従うための詳細なガイダンスについては、「[ドライバー パッケージの分離](driver-isolation.md)」ページをご覧ください。
 
 このドキュメントでは、これらの原則を参照する際に **DCHU** の頭字語を使用します。 この記事の後半には、ドライバー パッケージを DCHU 互換にする方法についてのガイダンスが示されています。
 [DCHU ユニバーサル ドライバー サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)での DCHU 設計原則の適用方法について説明されている「[ユニバーサル ドライバーのシナリオ](universal-driver-scenarios.md)」もご覧ください。
@@ -81,7 +81,7 @@ OEM は、OEM システムに対して提供するオプションのカスタマ
     
 *  INF がターゲット プラットフォームに依存するカスタム セットアップ アクションを実行する場合は、それらのアクションを拡張 INF に分離することを検討してください。 拡張 INF はベース ドライバー パッケージとは独立して更新できるので、堅牢性とサービス性が向上します。 詳細については、「[拡張 INF ファイルの使用](../install/using-an-extension-inf-file.md)」を参照してください。
 *  お客様のデバイスで動作するアプリケーションを提供する場合は、UWP アプリを含めてください。 詳しくは、「[ハードウェア サポート アプリ (HSA):ドライバー開発者向け手順](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)」を参照してください。  OEM は [DISM (展開イメージのサービスと管理)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows) を使ってそのようなアプリを事前に読み込むことができます。 または、ユーザーは Microsoft Store からアプリを手動でダウンロードすることもできます。
-*  [**INF の DestinationDirs セクション**](../install/inf-destinationdirs-section.md)で、対象ディレクトリを [dirid 13](../install/using-dirids.md) に設定して、ドライバーを[ドライバー ストア](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/driver-store)から実行します。 一部のデバイスでは、この設定は機能しません。
+*  [**INF の DestinationDirs セクション**](../install/inf-destinationdirs-section.md)で、対象ディレクトリを [dirid 13](../install/using-dirids.md) に設定して、ドライバーを[ドライバー ストア](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)から実行します。 一部のデバイスでは、この設定は機能しません。
 *  Windows ハードウェア互換性プログラム認定を取得するためのユニバーサル ドライバー パッケージの提出 詳しくは、以下のトピックをご覧ください。
 
    *  [新しいハードウェア申請を作成する](../dashboard/create-a-new-hardware-submission.md)

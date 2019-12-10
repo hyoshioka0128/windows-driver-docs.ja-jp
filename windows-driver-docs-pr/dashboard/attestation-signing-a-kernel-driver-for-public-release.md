@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e989bad5eef8ed1a780b846273662776a8a2f24
-ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
+ms.openlocfilehash: aa573aff7307e8a2a81917fa2d4e68b0f3c85d01
+ms.sourcegitcommit: 4184cb3bb6737762b2768cd8b9b2233297fc64cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73589236"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74820388"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -21,7 +21,7 @@ ms.locfileid: "73589236"
 > - 構成証明署名は、Windows 10 デスクトップのカーネル モード ドライバーとユーザー モード ドライバーをサポートしています。 Windows 10 では、ユーザー モード ドライバーは Microsoft による署名を必要としませんが、ユーザー モード ドライバーとカーネル モード ドライバーの両方で同じ構成証明プロセスを使うことができます。
 > - 構成証明署名は、**ELAM** または **Windows Hello** PE バイナリについて、適切な PE レベルを返しません。  これらは、追加の署名属性を受け取るために、テストして .hlkx パッケージとして提出する必要があります。
 > - 構成証明署名では、EV 証明書を使ってパートナー センターでドライバーを申請する必要があります。
-> - **構成証明署名されたドライバーは、Windows 10 のみで動作します。その他のバージョンの Windows では機能しません (Windows 8.1、Windows 7、Windows Server 2016 以降のバージョンの Windows Server など)。**
+> - **構成証明署名されたドライバーは、Windows 10 および Windows Server 2016 以降で動作します。それより前のバージョンの Windows (Windows 8.1 や Windows 7 など) では機能しません。**
 > - 構成証明署名を行うには、ドライバー フォルダー名に特殊文字や UNC ファイル共有パスを使用せず、 40 文字未満のフォルダー名にする必要があります。
 
 ## <a name="attestation-signing-a-kernel-mode-driver"></a>カーネル モード ドライバーへの構成証明署名
