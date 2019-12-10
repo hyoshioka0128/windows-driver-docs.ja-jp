@@ -4,18 +4,18 @@ description: DIFx のガイドライン
 ms.assetid: de34f810-0e90-4626-b84d-160ac61541ad
 ms.date: 05/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 265ef1ed226aeeb4ab0727a16676e8740b5f4e51
-ms.sourcegitcommit: a97a623d64ddf573c760664be17778606e156cf5
+ms.openlocfilehash: ff0210d32624188043fb7f4a93e06f408ce62b31
+ms.sourcegitcommit: cb3443285ce085f17dd1750467845f0e551a6844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74907118"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955059"
 ---
 # <a name="difx-guidelines"></a>DIFx のガイドライン
 
 Windows 10 バージョン 1607 (Redstone 1) 以降、Driver Install Framework (DIFx) ツール (`Difxapi.dll`、`Difxapp.dll`、`Difxappa.dll`、および `DPInst.exe`) は非推奨となり、WDK に含まれなくなりました。
 
-代わりに、インストーラーを必要としないスタンドアロンドライバーパッケージとして[ドライバーパッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)を提供することをお勧めします。  これは、システム状態を変更するインストーラーに依存するのではなく、独自の設定または構成を追加する自己完結型パッケージです。  すべてのドライバーパッケージシナリオを堅牢にサポートするためには、スタンドアロンドライバーパッケージが必要です。  スタンドアロンのドライバーパッケージを公開するには、Windows Update を使用することをお勧めします。  これを行うには、まず、ドライバーパッケージを[Windows ハードウェアデベロッパーセンター](https://partner.microsoft.com/dashboard)に送信します。
+代わりに、インストーラーを必要としないスタンドアロンドライバーパッケージとして[ドライバーパッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)を提供することをお勧めします。  これは、システム状態を変更するインストーラーに依存するのではなく、独自の設定または構成を追加する自己完結型パッケージです。  Windows Update によるドライバーパッケージの配布、オフラインイメージへのドライバーパッケージの追加など、ドライバーパッケージのシナリオをサポートするには、スタンドアロンのドライバーパッケージが必要です。  スタンドアロンのドライバーパッケージを公開するには、Windows Update を使用することをお勧めします。  これを行うには、まず、ドライバーパッケージを[Windows ハードウェアデベロッパーセンター](https://partner.microsoft.com/dashboard)に送信します。
 
 DIFx の使用を選択した場合は、古い WDK を使用して適切なツールを取得する必要があります。 次の注意事項が適用されます。
 
