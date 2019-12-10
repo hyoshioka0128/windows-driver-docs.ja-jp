@@ -413,7 +413,7 @@
         - name: 基本のインストール操作
           href: basic-installation-operations.md
         - name: ドライバーのインストールを簡略化する関数
-          href: setupapi-functions-that-simplify-driver-installation.md
+          href: functions-that-simplify-driver-installation.md
         - name: ドライバーの Authenticode 署名を検証するための SetupAPI の使用
           href: using-setupapi-to-verify-driver-authenticode-signatures.md
         - name: デバイスの親の判断
