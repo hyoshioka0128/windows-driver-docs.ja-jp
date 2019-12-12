@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 1132dfa045e74df4c3771e597fd11f5227c107c4
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.openlocfilehash: f2b81859bb82a05c0d7e2cd0d211c4da4744a41b
+ms.sourcegitcommit: 631cd4a65d49a071596920d764eeb660ad25ce7f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473405"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74953968"
 ---
 # <a name="partner-center-for-windows-hardware"></a>Windows ハードウェアのパートナー センター
 
@@ -97,7 +97,7 @@ Windows ハードウェアのパートナー センターを使用すると、�
                         <ul>
                             <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/register-for-the-hardware-program">ハードウェア プログラムの登録</a></li>
                             <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/adding-or-removing-users">ユーザーの追加または削除</a></li>
-                            <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/driver-failure-reporting">ドライバー エラーのレポート</a></li>
+                            <li><a href="https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-code-signing-certificate">コード署名証明書の追加</a></li>
                         </ul>
                     </div>
                 </div>
