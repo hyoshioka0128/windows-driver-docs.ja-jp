@@ -3,12 +3,12 @@ title: ユニバーサル ドライバーのシナリオ
 description: 'DCHU ユニバーサル ドライバーのサンプルに、DCHU 設計原則 (Declarative: 宣言型、Componentized: コンポーネント化済み、Hardware Support Apps [HSA]: ハードウェア サポート アプリ、Universal API Compliance: ユニバーサル API 準拠) がどのように適用されているかについて説明します。'
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a868e73ff14234fea0cc4721fc0a7ed7e1be8765
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a0f5ad4427ea0bb33332c7cc061dfbbc2e00b32f
+ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839607"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898499"
 ---
 # <a name="universal-driver-scenarios"></a>ユニバーサル ドライバーのシナリオ
 
@@ -149,7 +149,7 @@ Fabrikam は、ユニバーサル ドライバー パッケージの一部とし
 
 ## <a name="registering-a-com-component-in-an-inf-file"></a>INF ファイルに COM コンポーネントを登録する
 
-Fabrikam は、共同インストーラーを使用せずに COM コンポーネントを登録する必要があります。  そこでユニバーサル INF ファイルでこれを実現するために、WDK で配布された [Reg2inf ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/reg2inf) を使用します。  同社は COM サーバー プロジェクト ([In-process ATL COM server のサンプル](https://code.msdn.microsoft.com/ATLDllCOMServer-b52a7d5d) から取得) をビルドした後、COM .dll を Reg2inf ツールへの入力として指定します。  このツールによって次の INF ディレクティブが生成され、Fabrikam はこれを基本 INF ([`osrfx2_DCHU_base.inx`]) に追加します。
+Fabrikam は、共同インストーラーを使用せずに COM コンポーネントを登録する必要があります。  そこでユニバーサル INF ファイルでこれを実現するために、WDK で配布された [Reg2inf ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/reg2inf) を使用します。  同社は COM サーバー プロジェクト ([In-process ATL COM server のサンプル](https://go.microsoft.com/fwlink/p/?linkid=2112596) から取得) をビルドした後、COM .dll を Reg2inf ツールへの入力として指定します。  このツールによって次の INF ディレクティブが生成され、Fabrikam はこれを基本 INF ([`osrfx2_DCHU_base.inx`]) に追加します。
 
 ```cpp
 ; Add all registry keys to successfully register the
@@ -198,7 +198,7 @@ CopyInf=osrfx2_DCHU_component.inf
 [DestinationDirs]
 OsrFx2_UserSvcCopyFiles = 13 ; copy to Driver Store
 ```
-ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  たとえば、次のように入力します。 
+ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  次に、例を示します。 
 
 ```cpp
 bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
@@ -269,7 +269,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 > [!NOTE]
 > **CM_GETIDLIST_FILTER_PRESENT** フラグと [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用するか、**CM_GET_DEVICE_INTERFACE_LIST_PRESENT** フラグと [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を使用します。 これにより、ハードウェアが存在し、通信の準備ができていることを確認します。 
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>概要
 
 次の図は、Fabrikam と Contoso がユニバーサル Windows ドライバー用に作成したドライバー パッケージを示したものです。  疎結合の例では、[Windows ハードウェア デベロッパー センター ダッシュボード](https://partner.microsoft.com/dashboard/Registration/Hardware)で、基本パッケージ、拡張パッケージ、コンポーネントパッケージの 3 回にわたってパッケージが別個に提出されます。  密結合の例では、基本パッケージと拡張/コンポーネント パッケージの 2 つが提出されます。
 
@@ -277,7 +277,7 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 コンポーネント INF はコンポーネント ハードウェア ID に一致し、基本 INF と拡張 INF はボードのハードウェア ID に一致することに注意してください。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 [ユニバーサル Windows ドライバーの概要](getting-started-with-universal-drivers.md)
 
