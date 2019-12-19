@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 4c6e5c12a9c2d2d621c8fbd29d6f6c0956c2c390
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63323432"
----
 ## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
 
 このプロジェクトは [Microsoft オープン ソース論理規定](https://opensource.microsoft.com/codeofconduct/)を採用しています。
