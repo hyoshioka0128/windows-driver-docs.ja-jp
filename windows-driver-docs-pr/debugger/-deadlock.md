@@ -1,10 +1,10 @@
 ---
 title: デッドロック (deadlock)
-description: デッドロックの拡張機能は、Driver Verifier のデッドロック検出オプションによって収集されたデッドロック情報を表示します。
+description: デッドロック拡張機能は、ドライバーの検証ツールのデッドロック検出オプションによって収集されたデッドロックに関する情報を表示します。
 ms.assetid: c0e6074f-8afe-4526-a30f-427aac67ab99
 keywords:
-- デッドロックの検出 (Driver Verifier)
-- Windows デバッグ デッドロック
+- デッドロック検出 (ドライバーの検証ツール)
+- デッドロック Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df3c218a781e2d42d3e1b7bb1477059bad8e97c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 541c9a0ae1ab9c980c3f5009f1e027dff13f929c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336843"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209127"
 ---
 # <a name="deadlock"></a>!deadlock
 
 
-**! デッドロック**拡張機能によって収集されたデッドロックに関する情報を表示する、**デッドロック検出**Driver Verifier のオプション。
+**! デッドロック**拡張機能は、ドライバーの検証ツールの**デッドロック検出**オプションによって収集されたデッドロックに関する情報を表示します。
 
 ```dbgcmd
 !deadlock 
@@ -47,25 +47,25 @@ ms.locfileid: "63336843"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-Driver Verifier については、Windows Driver Kit (WDK) ドキュメントを参照してください。
+ドライバーの検証機能の詳細については、Windows Driver Kit (WDK) のドキュメントを参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-場合は、この拡張機能に有用な情報は提供のみ Driver Verifier の**デッドロック検出**オプションがロック階層の違反を検出し、発行[**バグ チェック 0xC4** ](bug-check-0xc4--driver-verifier-detected-violation.md)(ドライバー\_VERIFIER\_検出\_違反)。
+この拡張機能では、ドライバー検証ツールの**デッドロック検出**オプションによってロック階層違反が検出され、[**バグチェック 0xc4**](bug-check-0xc4--driver-verifier-detected-violation.md) (ドライバー\_検証\_検出された\_違反) が検出された場合にのみ、有用な情報が提供されます。
 
-任意の引数を指定せず、 **! デッドロック**拡張子が原因で表示する基本的なロック階層のトポロジ。 問題は、単純な cyclical デッドロックではありません、このコマンドは、状況が発生したことを説明します。
+引数を指定しない場合、 **! デッドロック**拡張によって、基本的なロック階層トポロジが表示されます。 この問題が単純な循環デッドロックでない場合は、このコマンドによって発生した状況が記述されます。
 
-**! デッドロック 1**拡張により、スタック トレースを表示します。 表示されるスタックは、ロックが取得された時点でのアクティブなになります。
+**! デッドロック 1**拡張により、スタックトレースが表示されます。 表示されるスタックは、ロックが取得された時点でアクティブになっています。
 
 以下に例を示します。
 
@@ -84,9 +84,9 @@ Lock A =   bba2af30 Type 'Spinlock'
 Lock B =   dummy!GlobalLock Type 'Spinlock'
 ```
 
-これは、どのスレッドと、どのロックが関係しています。 ただしは、概要と、状況を適切にデバッグするのに十分な情報ができない可能性があります。
+これにより、どのスレッドとどのロックが関係しているかがわかります。 ただし、これは概要であり、状況を適切にデバッグするのに十分な情報ではない可能性があります。
 
-使用 **! デッドロック 1**デッドロックに参加している各ロックが取得された時点で呼び出し履歴の内容を印刷します。 これらは実行時のスタック トレースであるためチェック ビルドが使用されている場合より完全なされます。 無料のビルドで、わずか 1 行の後に切り捨てられます可能性があります。
+デッドロックに関与している各ロックが取得されたときに、 **! デッドロック 1**を使用して呼び出し履歴の内容を出力します。 これらは実行時のスタックトレースであるため、チェックされたビルドが使用されている場合はより完全です。 チェックされたビルドは、Windows 10 バージョン1803より前の以前のバージョンの Windows で使用できました。 無料のビルドでは、1行だけの後に切り捨てられる場合があります。
 
 ```dbgcmd
 0:kd> !deadlock 1
@@ -122,7 +122,7 @@ Thread 1 (8D903030) took locks in the following order:
     Stack:   << Current stack >>
 ```
 
-この情報により、ほぼ現在のスタックを除く、必要なすべてがあります。
+この情報を使用すると、現在のスタックを除き、必要なものがほぼすべて揃います。
 
 ```dbgcmd
 0: kd> k
@@ -138,7 +138,7 @@ f78aafd8 804b393b NDIS!ndisMDpcX+0x3c
 f78aaff4 804b922b ntkrnlpa!KiRetireDpcList+0x5d
 ```
 
-これから、どのロックが関連しているし、取得されたを確認できます。 デッドロックをデバッグするための十分な情報があります。 ソース コードを使用できる場合は、正確に問題の発生場所を表示する、デバッガーを使用できます。
+これにより、どのロックが関係しており、どこで取得されたかを確認できます。 これにより、デッドロックをデバッグするための十分な情報が得られます。 ソースコードが使用可能な場合は、デバッガーを使用して、問題が発生した場所を正確に確認できます。
 
 ```dbgcmd
 0: kd> .lines
@@ -161,13 +161,13 @@ dummy!dummyRxInterruptOnCompletion+2b5 [d:\nt\drivers\dummy\receive.c @ 1441]:
 b1bf5d5d 8b4648           mov     eax,[esi+0x48]
 ```
 
-ソース ファイルと取得が行われた行番号の名前です。 この場合、ソース ファイルのスレッドが次のように動作しないことが表示されます。
+これで、ソースファイルの名前と、取得が行われた行番号がわかりました。 この場合、ソースファイルには、次のようにスレッドが動作していることが示されます。
 
--   スレッドの 1。**DummyActivateVcComplete**かかりました、**ダミー**ミニポート ロックします。 呼び出された**dummyQueueRecvBuffers**、かかりました、**ダミー**グローバル ロックします。
+-   スレッド 1: **DummyActivateVcComplete**は**ダミー**ミニポートロックを受け取りました。 その後、 **dummyQueueRecvBuffers**という名前が付いています。これは、**ダミー**のグローバルロックを受け取りました。
 
--   スレッド 2: **dummyRxInterruptOnCompletion**グローバル ロックがかかりました。 次に、わずか数行ミニポート ロックかかった後で、します。
+-   スレッド 2: **dummyRxInterruptOnCompletion**がグローバルロックを受け取りました。 その後、いくつかの行でミニポートロックがかかっていました。
 
-この時点で、デッドロックはまったく明確になります。
+この時点で、デッドロックは完全に明確になります。
 
  
 

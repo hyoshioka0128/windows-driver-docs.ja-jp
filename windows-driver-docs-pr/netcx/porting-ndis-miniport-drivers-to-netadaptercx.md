@@ -7,16 +7,14 @@ keywords:
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 641a7ec3b0f290dc54cb366690966bfe084f732f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2d0d800e5ab51fe0de76f7b077a3bd7de4dcca9c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835503"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209008"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>NDIS ミニポート ドライバーの NetAdapterCx への移植
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 このページでは、NDIS 6.x ミニポートドライバーを NetAdapterCx クライアントドライバーに変換する方法について説明します。
 
@@ -26,8 +24,8 @@ WDF に関する一般情報については、 [WDF ドライバー開発ガイ�
 
 Visual Studio で既存の NDIS ミニポートドライバープロジェクトを開き、次の手順を使用してそれを KMDF プロジェクトに変換します。
 
-1. 最初に、 **[構成プロパティ-> ドライバーの設定-> ドライバーモデル]** に移動し、**ドライバーの種類**が kmdf に設定されていること、および**kmdf バージョンのメジャー**と**kmdf バージョンのマイナー**が両方とも空であることを確認します。
-2. プロジェクトのプロパティ で、**ドライバーの設定-> ネットワークアダプタードライバー** を開き、**ネットワークアダプター クラス拡張へのリンクを** **はい**に設定します。
+1. 最初に、[**構成プロパティ-> ドライバーの設定-> ドライバーモデル**] に移動し、**ドライバーの種類**が kmdf に設定されていること、および**kmdf バージョンのメジャー**と**kmdf バージョンのマイナー**が両方とも空であることを確認します。
+2. [プロジェクトのプロパティ] で、[**ドライバーの設定-> ネットワークアダプタードライバー** ] を開き、[**ネットワークアダプター] クラス拡張へのリンクを** **[はい]** に設定します。
    * 変換されたドライバーが引き続き NDIS Api を呼び出す場合は、引き続き `ndis.lib`に対するリンクを作成します。
 3. `NDIS650_MINIPORT=1`などの NDIS プリプロセッサマクロを削除します。
 4. すべてのソースファイル (または、共通/プリコンパイル済みヘッダー) に次のヘッダーを追加します。
@@ -83,7 +81,7 @@ Net アダプターを起動しているときに、 [**NetAdapterStart**](https
 
 ## <a name="creating-queues-to-manage-control-requests"></a>制御要求を管理するためのキューの作成
 
-次に、 [*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)で、オブジェクト識別子 (OID) のパスを設定します。 OID パスは WDF キューとしてモデル化されますが、WDFREQUESTs ではなく Oid を取得します。
+次に、引き続き[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)で、オブジェクト識別子 (OID) のパスを設定します。 OID パスは WDF キューとしてモデル化されますが、WDFREQUESTs ではなく Oid を取得します。
 
 これを移植する際には、2つの高レベルのアプローチを取ることができます。 最初のオプションは、ミニポートドライバーが NDIS からの要求を受信するのとよく似た方法で OID 要求を受信する[*EVT_NET_REQUEST_DEFAULT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_default)ハンドラーを登録することです。 これは最も簡単なポートです。これは、古い MINIPORT_OID_REQUEST ハンドラーから関数シグネチャを調整するだけで済むためです。
 
@@ -111,21 +109,21 @@ WDF ネットワーククライアントドライバーでこれを行うには�
 
 ## <a name="finishing-device-initialization"></a>デバイスの初期化の終了
 
-[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)のこの時点では、割り込みの割り当てなど、デバイスを初期化する他の操作を行うことができます。
+[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)のこの時点で、割り込みの割り当てなど、デバイスを初期化する他の操作を行うことができます。
 
 ## <a name="handling-power-state-change-notifications"></a>電源状態の変更通知の処理
 
-WDF クライアントドライバーは、電源状態の変更に対して[**OID_PNP_SET_POWER**](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)を受信しません。
+WDF クライアントドライバーは、電源状態の変更の[**OID_PNP_SET_POWER**](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)を受信しません。
 
 代わりに、WDF クライアントは、オプションのコールバック関数を登録して、電源状態の変更通知を受信します。 概要については、「[関数ドライバーでの PnP と電源管理のサポート](../wdf/supporting-pnp-and-power-management-in-function-drivers.md)」を参照してください。
 
-通常、 [**OID_PNP_SET_POWER**](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)ハンドラーのコードは[*EVT_WDF_DEVICE_D0_EXIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)および[*EVT_WDF_DEVICE_D0_ENTRY*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)に移動します。
+通常、 [**OID_PNP_SET_POWER**](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)ハンドラーのコードは[*EVT_WDF_DEVICE_D0_EXIT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)と[*EVT_WDF_DEVICE_D0_ENTRY*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)に移動します。
 
 WDF の電源状態のマシンは少し異なります。そのため、コードに若干の変更を加える必要がある場合があります。
 
-具体的には、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) callback 関数では、NDIS ミニポートドライバーは、1回だけの初期化タスクを実行し、デバイスを D0 状態にするための作業を行います。 次に、 [*OID_PNP_SET_POWER*](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)ハンドラーの D0 に進むために作業を繰り返します。
+具体的には、 [*MiniportInitializeEx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_initialize) callback 関数では、NDIS ミニポートドライバーは、1回だけの初期化タスクを実行し、デバイスを D0 状態にするための作業を行います。 次に、処理を繰り返して、 [*OID_PNP_SET_POWER*](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)ハンドラーで D0 にアクセスします。
 
-これに対し、WDF クライアントは、 [**EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)より前のイベントコールバックで1回限りの初期化タスクを実行します。その間、デバイスは低電力状態になります。 次に、 [**EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)の D0 にアクセスします。
+これに対して、WDF クライアントは[**EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)する前にイベントコールバックで1回限りの初期化タスクを実行します。その間、デバイスは低電力状態になります。 次に、 [**EVT_WDF_DEVICE_D0_ENTRY**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)の D0 にアクセスします。
 
 まとめると、WDF では、"D0 に移動" コードを2つではなく1つの場所に配置します。
 
@@ -148,13 +146,13 @@ NetAdapter フレームワークは、ホストがネットワークインター
 データパスプログラミングモデルが大幅に変更されました。 主な相違点を次に示します。
 
 * NetAdapter モデルでは、NDIS の場合と同様に、アダプターごとにネットワークトラフィックがなくなります。ただし、WDF キューではなくなります。 「 [I/o キューの作成](../wdf/creating-i-o-queues.md)」を参照してください。
-* NetAdapterCx は、NET_BUFFER_LIST および NET_BUFFER プールではなく、次のように NDIS にマップする NET パケットで構成されるリングバッファーを導入します。
+* NetAdapterCx は NET_BUFFER_LIST と NET_BUFFER プールではなく、次のように NDIS にマップするネットパケットで構成されるリングバッファーを導入します。
   * [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet)は NET_BUFFER_LIST + NET_BUFFER に似ています。
   * [**NET_PACKET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet_fragment)は、メモリ記述子リスト (MDL) に似ています。 各[**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet)には、これらのうち1つ以上があります。
   * 置換構造とその使用方法の詳細については、「[パケット記述子と拡張機能](packet-descriptors-and-extensions.md)」を参照してください。
 * NDIS 6.x では、ミニポートで開始と一時停止のセマンティクスを処理する必要があります。 NetAdapterCx モデルでは、そうではなくなりました。
-* [*EVT_RXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)コールバックは、NDIS 6.X の[**MINIPORT_RETURN_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)に似ています。
-* [*EVT_TXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nc-nettxqueue-evt_txqueue_advance)コールバックは、NDIS 6.X の[**MINIPORT_SEND_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)に似ています。
+* [*EVT_RXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrxqueue/nc-netrxqueue-evt_rxqueue_advance)のコールバックは、NDIS 6.x の[**MINIPORT_RETURN_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_return_net_buffer_lists)に似ています。
+* [*EVT_TXQUEUE_ADVANCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nc-nettxqueue-evt_txqueue_advance)のコールバックは、NDIS 6.x の[**MINIPORT_SEND_NET_BUFFER_LISTS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)に似ています。
 
 ## <a name="device-removal"></a>デバイスの削除
 

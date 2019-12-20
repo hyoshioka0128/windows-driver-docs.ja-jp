@@ -3,15 +3,15 @@ title: Create kernel mode stack trace database
 description: Create kernel mode stack trace database
 ms.assetid: 0c1f94c0-ebc7-4e3c-8101-ba3cf830e7f8
 keywords:
-- カーネル モード スタック トレース データベース (グローバル フラグ) の作成します。
+- カーネルモードスタックトレースデータベースの作成 (グローバルフラグ)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b92527797d311c111c96a104c3e89100c02892
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ffd8b0741010cdf1737d3026d455d55b7e6ad11
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374978"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209310"
 ---
 # <a name="create-kernel-mode-stack-trace-database"></a>Create kernel mode stack trace database
 
@@ -19,7 +19,7 @@ ms.locfileid: "63374978"
 ## <span id="ddk_create_kernel_mode_stack_trace_database_dtools"></span><span id="DDK_CREATE_KERNEL_MODE_STACK_TRACE_DATABASE_DTOOLS"></span>
 
 
-**カーネル モードのスタック トレースのデータベースの作成**フラグはリソース オブジェクトおよびオブジェクトの管理操作などのカーネルの操作の実行時のスタック トレースのデータベースを作成し、Windows のチェック ビルドを使用する場合にだけ機能します。
+"**カーネルモードスタックトレースデータベースの作成**" フラグは、リソースオブジェクトやオブジェクト管理操作などのカーネル操作の実行時スタックトレースデータベースを作成し、Windows のチェックされたビルドを使用する場合にのみ機能します。 チェックされたビルドは、Windows 10 バージョン1803より前の以前のバージョンの Windows で使用できました。
 
 <table>
 <colgroup>
@@ -32,7 +32,7 @@ ms.locfileid: "63374978"
 <td align="left"><p>kst</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>16 進数の値</strong></p></td>
+<td align="left"><p><strong>16進数値</strong></p></td>
 <td align="left"><p>0x2000</p></td>
 </tr>
 <tr class="odd">
@@ -41,16 +41,16 @@ ms.locfileid: "63374978"
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Destination (公開先)</strong></p></td>
-<td align="left"><p>システム全体のレジストリ エントリ</p></td>
+<td align="left"><p>システム全体のレジストリエントリ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>コメント
+### <a name="span-idcommentsspanspan-idcommentsspancomments"></a><span id="comments"></span><span id="COMMENTS"></span>Comments
 
-GFlags カーネル フラグを設定すると、このフラグを表示しますが、カーネルが既に開始されているために、実行時に、効率的ではありません。
+GFlags は、このフラグをカーネルフラグ設定として表示しますが、カーネルが既に起動しているため、実行時には有効ではありません。
 
  
 

@@ -9,17 +9,17 @@ keywords:
 - IWDFFile
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98017974962a436901f1c84c1bf9806b87d5f7eb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 254d85ff50115524ace7e6baf3979a362e05a283
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843177"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210910"
 ---
 # <a name="framework-file-object"></a>フレームワーク ファイル オブジェクト
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークファイルオブジェクトは、 [Iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)インターフェイスによってドライバーに公開されます。 これは、開いているデバイスのフレームワーク表現です。 アプリケーションが Microsoft Win32 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)関数を使用してデバイスを開くと、開いているデバイスインスタンスを表すファイルオブジェクトがフレームワークによって作成されます。 したがって、フレームワークファイルオブジェクトは、アプリケーションの**CreateFile**への呼び出しから返される Win32 ハンドルと概念的には同じです。 フレームワークでは、1つのデバイスに関連付けられた複数のファイルオブジェクトを作成できます。 各ファイルオブジェクトは、 **CreateFile**の呼び出しが成功するたびに作成されます。 読み取りや書き込みなどのすべての i/o 操作は、特定のファイルオブジェクトインスタンスを対象としています。
 

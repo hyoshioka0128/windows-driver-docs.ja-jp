@@ -12,17 +12,17 @@ keywords:
 - ドライバーホストプロセス WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 23ee06a7dc89aaa400774b549de33a4da4a8f5be
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6cc52ae8cbb8632056be8ab806be1742f9451a28
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842802"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210044"
 ---
 # <a name="initializing-umdf-drivers"></a>UMDF ドライバーの初期化
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 デバイスの UMDF ドライバーが初期化される前に、ドライバーマネージャーとリフレクターがオペレーティングシステムによって読み込まれ、ドライバーのホストプロセスが作成されます。 デバイスが正常に開始されるようにするために、ドライバーマネージャーが読み込まれ、リフレクターが初期化されるときに完全に初期化されます。
 

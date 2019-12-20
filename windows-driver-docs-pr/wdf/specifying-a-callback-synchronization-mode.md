@@ -11,17 +11,17 @@ keywords:
 - WDK の UMDF をロックする
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 58546459818257e2104754e2857caa77c9973b7d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b8a461ffece59f2890abab078372a938d551b243
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842198"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209950"
 ---
 # <a name="specifying-a-callback-synchronization-mode"></a>コールバック同期モードの指定
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ドライバーは、そのコールバック関数がフレームワークによってどのように呼び出されるかを指定できます。 ドライバーは、 [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドを呼び出してデバイスの[デバイスオブジェクト](framework-device-object.md)を作成する前に、デバイスの同期 (またはロック) モードを指定します。 同期モードを指定するには、ドライバーは[**Iwdfdeviceinitialize:: Setロック制約**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)メソッドを呼び出す必要があります。 ドライバーは、デバイスをシステムに追加するために、 [**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドが呼び出されたときに、 [Iwdfdeviceinitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイスへのポインターを受け取ります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "72842198"
 
  
 
-  **なお**、ドライバーが**Iwdfdeviceinitialize:: setWdfDeviceLevel 制約**を呼び出して値を指定していない場合、フレームワークはこのプロパティの既定値をに設定します。
+  **なお**、ドライバーが**Iwdfdeviceinitialize:: setWdfDeviceLevel 制約**を呼び出して値を指定していない場合、フレームワークはこのプロパティの既定値を**** に設定します。
 
  
 

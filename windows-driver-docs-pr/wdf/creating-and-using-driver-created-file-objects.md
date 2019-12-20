@@ -12,17 +12,17 @@ keywords:
 - ユーザーモードドライバー WDK UMDF、i/o を処理するためのファイルオブジェクト、作成、使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b14670c7a8ca5d1ccc34a641f330852aea777d6e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a5f2534fe60a6ce7d9137986a8e4ee1c2733d0e4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845608"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210228"
 ---
 # <a name="creating-and-using-driver-created-file-objects"></a>ドライバー作成ファイル オブジェクトの作成と使用
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ドライバーで、アプリケーションから独立した i/o 要求を作成し、スタック内の次のドライバー (既定の i/o ターゲット) に送信する必要がある場合、ドライバーは独自のファイルオブジェクトを作成して閉じる必要があります。
 
@@ -59,13 +59,13 @@ ms.locfileid: "72845608"
 
 通常、ドライバーは、 [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)または[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)コールバックメソッドから[**iwdfdriverを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)呼び出します。
 
-ドライバーが[**IwdfdriverIFileCallbackCleanup file:: Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)を呼び出すと、フレームワークは次のドライバーの[ **:: oncleanupfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)メソッドを呼び出します。 この方法では、次のドライバーは、ファイルオブジェクトに関連付けられているすべての保留中の i/o 要求をキャンセルまたは完了する必要があります。 次に、 [**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)というドライバーによって作成されたすべての i/o 要求をキャンセルします。 このフレームワークでは、スタック内の下位のドライバーがファイルオブジェクトに関連付けられている可能性がある i/o 要求はキャンセルされません。 このような要求をキャンセルするのは、ドライバーの役割です。 ファイルオブジェクトは、関連付けられているすべての i/o 要求が完了した後にのみ閉じます。
+ドライバーが[**IwdfdriverIFileCallbackCleanup file:: Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdrivercreatedfile-close)を呼び出すと、フレームワークは次のドライバーの[**:: oncleanupfile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackcleanup-oncleanupfile)メソッドを呼び出します。 この方法では、次のドライバーは、ファイルオブジェクトに関連付けられているすべての保留中の i/o 要求をキャンセルまたは完了する必要があります。 次に、 [**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)というドライバーによって作成されたすべての i/o 要求をキャンセルします。 このフレームワークでは、スタック内の下位のドライバーがファイルオブジェクトに関連付けられている可能性がある i/o 要求はキャンセルされません。 このような要求をキャンセルするのは、ドライバーの役割です。 ファイルオブジェクトは、関連付けられているすべての i/o 要求が完了した後にのみ閉じます。
 
 次に、フレームワークは次のドライバーの[**IFileCallbackClose:: OnCloseFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)メソッドを呼び出します。 この時点で、フレームワークは、次のドライバーがこのファイルオブジェクトに対して追加の i/o 要求を受信しないことを保証します。
 
 フレームワークは[**Onclosefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ifilecallbackclose-onclosefile)を呼び出すと、ファイルオブジェクトを表す[iwdffile](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)インターフェイスを破棄します。
 
-ドライバーによって作成されたデバイスの削除方法 ( [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)や[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)など) の後にドライバーによって作成されたファイルオブジェクトが返された場合、フレームワークはを生成します。ドライバーを停止します。 この問題のトラブルシューティングの詳細については、「 [UMDF が未解決のファイルをデバイスの削除時に示し](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)ている理由を特定する」を参照してください。
+ドライバーによって作成されたデバイスの削除方法 ( [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)や[**IPnpCallbackSelfManagedIo:: OnSelfManagedIoCleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackselfmanagedio-onselfmanagediocleanup)など) の後にドライバーによって作成されたファイルオブジェクトが返された場合は、フレームワークによってドライバーの停止が生成されます。 この問題のトラブルシューティングの詳細については、「 [UMDF が未解決のファイルをデバイスの削除時に示し](determining-why-umdf-indicates-outstanding-files-at-device-removal-tim.md)ている理由を特定する」を参照してください。
 
  
 

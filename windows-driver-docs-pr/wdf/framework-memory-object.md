@@ -9,17 +9,17 @@ keywords:
 - IWDFMemory
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 529f9f1b372575daced39fbaa31c529a83bd68c2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5fdee0c4a3d9c7a260afc9a428fa114802c55407
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843165"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210762"
 ---
 # <a name="framework-memory-object"></a>フレームワーク メモリ オブジェクト
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークメモリオブジェクトは、 [Iwdfmemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfmemory)インターフェイスによってドライバーに公開されます。 メモリブロックへのアクセスを提供します。
 

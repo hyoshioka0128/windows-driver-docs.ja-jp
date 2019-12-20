@@ -8,17 +8,17 @@ keywords:
 - 電源管理 WDK UMDF、電源ポリシーの所有権
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dab18ddac030c053bf4cc09d21eec508f7db6429
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 69d840ba35d04a148a9ad18dda887615d500f8fb
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842244"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210908"
 ---
 # <a name="power-policy-ownership-in-umdf"></a>UMDF での電源ポリシーの所有権
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 デバイスごとに、デバイスのドライバーの1つ (1 つだけ) がデバイスの*電源ポリシーの所有者*である必要があります。 電源ポリシーの所有者は、デバイスの適切な[デバイスの電源状態](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-power-states)を判断し、デバイスの電源状態が変更されるたびにデバイスのドライバースタックに要求を送信します。
 
@@ -32,11 +32,11 @@ ms.locfileid: "72842244"
 
 -   外部イベントを検出したときにシステムのスリープ状態からシステム全体をウェイクアップするデバイスの能力
 
-デバイスでこれらのアイドル状態の電源とシステムのウェイクアップ機能がサポートされている場合、電源ポリシーの所有者は、次のセットを定義するフレームワークの[IPowerPolicyCallbackWakeFromS0](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0)インターフェイスと[IPowerPolicyCallbackWakeFromSx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefromsx)インターフェイスをサポートすることもできます。電源ポリシーイベントコールバック関数。
+デバイスでこれらのアイドル状態の電源とシステムのウェイクアップ機能がサポートされている場合、電源ポリシーの所有者は、一連の電源ポリシーイベントコールバック関数を定義するフレームワークの[IPowerPolicyCallbackWakeFromS0](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0)インターフェイスと[IPowerPolicyCallbackWakeFromSx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefromsx)インターフェイスをサポートすることもできます。
 
-既定では、UMDF ベースのドライバーは電源ポリシーの所有者ではありません。 デバイスのカーネルモード関数ドライバーは、既定の電源ポリシーの所有者です。 (カーネルモードの関数ドライバーがなく、バスドライバーが[**Wdfpdoinit割り当て Rawdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)を呼び出している場合、バスドライバーは電源ポリシーの所有者です)。 UMDF ベースのドライバーをドライバースタックの電源ポリシー所有者にする場合、ドライバーは[**Iwdfdeviceinitialize:: SetPowerPolicyOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setpowerpolicyownership)を呼び出す必要があります。また、カーネルモードの既定の電源ポリシー所有者は、を呼び出す[**必要があります。所有権を無効にする WdfDeviceInitSetPowerPolicyOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership) 。
+既定では、UMDF ベースのドライバーは電源ポリシーの所有者ではありません。 デバイスのカーネルモード関数ドライバーは、既定の電源ポリシーの所有者です。 (カーネルモードの関数ドライバーがなく、バスドライバーが[**Wdfpdoinit割り当て Rawdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoinitassignrawdevice)を呼び出している場合、バスドライバーは電源ポリシーの所有者です)。 UMDF ベースのドライバーをドライバースタックの電源ポリシーの所有者にする場合、ドライバーは[**Iwdfdeviceinitialize:: SetPowerPolicyOwnership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setpowerpolicyownership)を呼び出す必要があります。また、カーネルモードの既定の電源ポリシー所有者は、 [**Wdfdeviceinitsetpowerpolicyオーナーシップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)を呼び出して所有権を無効にする必要があります。
 
-さらに、USB デバイスに対して UMDF ベースのドライバーを提供していて、ドライバーを電源ポリシーの所有者にする場合は、ドライバーの INF ファイルに、WinUsbPowerPolicyOwnershipDisabled の値を設定する[**Inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)が含まれている必要があります。登録. この REG\_DWORD サイズの値が0以外の数値に設定されている場合は、デバイスの電源ポリシーの所有者である[Winusb](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)ドライバーの機能が無効になります。 次の例に示すように、AddReg ディレクティブは、 [**INF DDInstall. HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)に存在する必要があります。
+さらに、USB デバイス用に UMDF ベースのドライバーを提供していて、ドライバーを電源ポリシーの所有者にする場合は、ドライバーの INF ファイルに、レジストリの WinUsbPowerPolicyOwnershipDisabled 値を設定する[**Inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)が含まれている必要があります。 この REG\_DWORD サイズの値が0以外の数値に設定されている場合は、デバイスの電源ポリシーの所有者である[Winusb](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)ドライバーの機能が無効になります。 次の例に示すように、AddReg ディレクティブは、 [**INF DDInstall. HW セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)に存在する必要があります。
 
 ```cpp
 [MyDriver_Install.NT.hw]

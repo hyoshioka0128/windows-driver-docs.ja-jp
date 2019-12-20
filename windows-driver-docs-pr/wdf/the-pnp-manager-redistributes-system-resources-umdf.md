@@ -7,17 +7,17 @@ keywords:
 - システムリソースの再配布のシナリオ WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f2ab0d6a3bbfe4e93dd7dd1d3054eb98c3dea39a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df830c62538799d67c7faafd66e19e71a494f892
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831615"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210826"
 ---
 # <a name="the-pnp-manager-redistributes-system-resources"></a>PnP マネージャーがシステム リソースを再配布する
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ユーザーがデバイスをシステムに追加し、PnP マネージャーが既に別のデバイスに割り当てているシステムリソースがデバイスに必要な場合は、PnP マネージャーがリソースの再割り当てを試行します。
 

@@ -10,17 +10,17 @@ keywords:
 - WDK UMDF のターゲット
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a72bcea59fe3f848b2b9e7f57ba3c25fc6b55b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 50da71595f7edc35dedd826575c9e78e46ba4e6a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843169"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210360"
 ---
 # <a name="framework-io-target-object"></a>フレームワーク I/O ターゲット オブジェクト
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークの i/o ターゲットオブジェクトは、 [Iwdfiotarget](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfiotarget)インターフェイスによってドライバーに公開されます。 I/o ターゲットに関する情報を取得します。これは通常、スタック内の下位のドライバーを表しますが、別の UMDF ドライバーまたはスタックのカーネルモード部分を表すこともできます。 I/o ターゲットオブジェクトは、他のデバイスに要求を送信するための方法を、UMDF ドライバーに提供します。
 

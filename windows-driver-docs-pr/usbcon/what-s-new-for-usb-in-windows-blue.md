@@ -1,45 +1,45 @@
 ---
-Description: 新機能とのユニバーサル シリアル バス (USB) Windows 8.1 での機能強化を次に示します。
-title: Windows 8.1 の新機能については、usb
+Description: Windows 8.1 での Universal Serial Bus (USB) の新機能と強化された機能を次に示します。
+title: Windows 8.1-USB の新機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e3a764d1fb4f3af046def0e4a6902dd20436259
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ce6171bcef7118b24ba3a43fea7b520b4b369c6c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356551"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210144"
 ---
-# <a name="windows-81-whats-new-for-usb"></a>Windows 8.1:USB の新機能
+# <a name="windows-81-whats-new-for-usb"></a>Windows 8.1: USB の新機能
 
 
-新機能とのユニバーサル シリアル バス (USB) Windows 8.1 での機能強化を次に示します。
+Windows 8.1 での Universal Serial Bus (USB) の新機能と強化された機能を次に示します。
 
--   [UWP アプリを開発するための Windows ランタイム USB API](#windows-runtime-usb-api-for-developing-uwp-apps)
--   [強化されたデバイスの列挙の Microsoft OS 2.0 記述子](#microsoft-os-20-descriptors-for-improved-device-enumerations)
--   [WinUSB アイソクロナスのサポート](#isochronous-support-for-winusb)
--   [USB ドライバー スタックの機能強化](#usb-driver-stack-improvements)
--   [USB ハードウェア認定キット (HCK) でのテスト](#usb-tests-in-the-hardware-certification-kit-hck)
--   [USB の強化された診断ツールとデバッガー拡張機能](#improved-usb-diagnostic-tools-and-debugger-extensions)
+-   [UWP アプリを開発するための Windows ランタイムの USB API](#windows-runtime-usb-api-for-developing-uwp-apps)
+-   [デバイスの列挙を改善するための Microsoft OS 2.0 記述子](#microsoft-os-20-descriptors-for-improved-device-enumerations)
+-   [WinUSB のアイソクロナスサポート](#isochronous-support-for-winusb)
+-   [USB ドライバースタックの機能強化](#usb-driver-stack-improvements)
+-   [ハードウェア認定キット (HCK) の USB テスト](#usb-tests-in-the-hardware-certification-kit-hck)
+-   [強化された USB 診断ツールとデバッガー拡張機能](#improved-usb-diagnostic-tools-and-debugger-extensions)
 -   [関連トピック](#related-topics)
 
-## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>UWP アプリを開発するための Windows ランタイム USB API
+## <a name="windows-runtime-usb-api-for-developing-uwp-apps"></a>UWP アプリを開発するための Windows ランタイムの USB API
 
 
-Windows ランタイムには、新しい名前空間が用意されています。[**Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) (を参照してください[USB デバイスのアプリの作成 (を使用して UWP アプリC##/vb/c)](https://docs.microsoft.com/previous-versions/windows/apps/dn263144(v=win.10))簡単な概要について)。 名前空間を使用して、カスタムの USB デバイスと通信する UWP アプリを記述できます。
+Windows ランタイムには、新しい名前空間が用意され[**ています (「** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) [usb デバイスC#C++用アプリの作成](https://docs.microsoft.com/previous-versions/windows/apps/dn263144(v=win.10))」を参照)。簡単な概要については、「」を参照してください。 名前空間を使用すると、カスタム USB デバイスと通信する UWP アプリを作成できます。
 
 詳しくは、次のトピックをご覧ください。
 
--   [USB デバイスとの対話を開始する (UWP アプリ) の完了](talking-to-usb-devices-start-to-finish.md)
--   [アプリケーション マニフェストに USB デバイスの機能を追加する方法](updating-the-app-manifest-with-usb-device-capabilities.md)
--   [USB デバイス (UWP アプリ) に接続する方法](how-to-connect-to-a-usb-device--uwp-app-.md)
--   [USB 制御転送 (UWP アプリ) を送信する方法](how-to-send-a-usb-control-transfer--uwp-app-.md)
--   [USB 割り込み転送要求 (UWP アプリ) を送信する方法](how-to-send-a-usb-interrupt-transfer--uwp-app-.md)
--   [USB 一括転送要求 (UWP アプリ) を送信する方法](how-to-send-a-usb-bulk-transfer--uwp-app-.md)
--   [USB ディスクリプター (UWP アプリ) を取得する方法](how-to-get-usb-descriptors--uwp-app-.md)
--   [USB インターフェイスの設定 (UWP アプリ) を選択する方法](how-to-select-a-usb-interface-setting--uwp-app-.md)
+-   [USB デバイスとの対話、終了の開始 (UWP アプリ)](talking-to-usb-devices-start-to-finish.md)
+-   [アプリマニフェストに USB デバイス機能を追加する方法](updating-the-app-manifest-with-usb-device-capabilities.md)
+-   [USB デバイスに接続する方法 (UWP アプリ)](how-to-connect-to-a-usb-device--uwp-app-.md)
+-   [USB 制御転送を送信する方法 (UWP アプリ)](how-to-send-a-usb-control-transfer--uwp-app-.md)
+-   [USB 割り込み転送要求を送信する方法 (UWP アプリ)](how-to-send-a-usb-interrupt-transfer--uwp-app-.md)
+-   [USB 一括転送要求を送信する方法 (UWP アプリ)](how-to-send-a-usb-bulk-transfer--uwp-app-.md)
+-   [USB 記述子を取得する方法 (UWP アプリ)](how-to-get-usb-descriptors--uwp-app-.md)
+-   [USB インターフェイス設定を選択する方法 (UWP アプリ)](how-to-select-a-usb-interface-setting--uwp-app-.md)
 
-これらのサンプルの使用法を示す、 [ **Windows.Devices.Usb** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)名前空間。
+これらのサンプルでは、 [**Windows のデバイス**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb)の名前空間の使用方法を示します。
 
 <table>
 <colgroup>
@@ -54,39 +54,39 @@ Windows ランタイムには、新しい名前空間が用意されています
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="" id="custom-usb-device-access-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Custom USB device access sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">カスタム USB デバイスへのアクセスのサンプル</a></p></td>
-<td><p>このサンプルでは、USB デバイスと通信する方法を示します。 このサンプルは、OSR USB FX2 ラーニング キットと SuperMUTT デバイスと通信できます。</p></td>
+<td><p><a href="" id="custom-usb-device-access-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Custom USB device access sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">カスタム USB デバイスアクセスのサンプル</a></p></td>
+<td><p>このサンプルでは、USB デバイスと通信する方法を示します。 このサンプルは、OSR USB FX2 learning kit および SuperMUTT デバイスと通信できます。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="" id="usb-cdc-control-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[USB CDC Control sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">USB CDC コントロールのサンプル</a></p></td>
-<td><p>このサンプルは、CDC (通信デバイス クラス) の USB デバイスと通信する方法を示していて、送信し、USB シリアル コンバーター ケーブルなどのシリアル ポートを使用してデータを受け取ります。</p></td>
+<td><p><a href="" id="usb-cdc-control-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[USB CDC Control sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">USB CDC 制御のサンプル</a></p></td>
+<td><p>このサンプルでは、usb CDC (通信デバイスクラス) デバイスと通信し、USB シリアルコンバーターケーブルなどのシリアルポートを介してデータを送受信する方法を示します。</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="" id="firmware-update-usb-device-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Firmware Update USB Device sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">ファームウェアの更新プログラムの USB デバイスのサンプル</a></p></td>
-<td><p>このサンプルでは、UWP アプリが、USB デバイスのファームウェアを更新する方法を示します。 更新操作は、バック グラウンド タスクとして実行されます。</p></td>
+<td><p><a href="" id="firmware-update-usb-device-sample"></a><a href="https://go.microsoft.com/fwlink/p/?linkid=309716" data-raw-source="[Firmware Update USB Device sample](https://go.microsoft.com/fwlink/p/?linkid=309716)">ファームウェア更新の USB デバイスのサンプル</a></p></td>
+<td><p>このサンプルでは、UWP アプリで USB デバイスのファームウェアを更新する方法を示します。 更新操作はバックグラウンドタスクとして実行されます。</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="microsoft-os-20-descriptors-for-improved-device-enumerations"></a>強化されたデバイスの列挙型の Microsoft OS 2.0 記述子 
+## <a name="microsoft-os-20-descriptors-for-improved-device-enumerations"></a>デバイスの列挙を改善するための Microsoft OS 2.0 記述子 
  
-Microsoft OS 2.0 記述子は、デバイスの識別とドライバーのインストールを向上させるエクスペリエンスします。
+Microsoft OS 2.0 記述子により、デバイスの識別とドライバーのインストールエクスペリエンスが向上します。
 
-MS OS 2.0 記述子の仕様では、これらの機能強化を提供します。
+MS OS 2.0 記述子の仕様では、次の機能強化が行われています。
 
--   デバイス プラットフォームに固有のプロパティを返すことを許可するには、新しい BOS デバイス機能記述子を定義します。 BOS 記述子は、検索は、通常、意図しないデバイスの動作につながる必要がありますいない列挙型が必要な手順は、USB バージョン 2.1 以降の標準の USB 仕様で定義された標準的な記述子です。
--   記述子を対象とすると、デバイス全体、特定の構成、または関数を使用できます。
--   により、デバイスを複数の記述子のセットを返す各セットが特定の範囲の Windows バージョンに適用されます。 これにより、デバイスが接続されているシステム上の Windows のバージョンに応じて異なる方法で列挙できます。
--   再開時間を短縮:デバイスは、時間が短縮される再開時間を識別できますから状態を中断します。
+-   デバイスがプラットフォーム固有のプロパティを返すことができるように、新しい BOS デバイス機能記述子を定義します。 BOS 記述子は、USB バージョン2.1 以上の標準の USB 仕様で定義されている標準記述子です。そのため、予期しないデバイスの動作を発生させないようにするために、通常の列挙の手順が必要になります。
+-   デバイス全体、特定の構成、または関数に対して、記述子のスコープを設定できます。
+-   各セットが Windows の特定の範囲に適用される複数の記述子セットをデバイスが返すことができるようにします。 これにより、デバイスが接続されているシステム上の Windows のバージョンによって、デバイスの列挙が異なることがあります。
+-   再開時間の短縮: デバイスは再開時間を識別できるため、中断状態からの時間が短縮されます。
 
-仕様の詳細については、次を参照してください。 [USB デバイスの Microsoft OS ディスクリプター](microsoft-defined-usb-descriptors.md)します。
+仕様の詳細については、「 [USB デバイス用の MICROSOFT OS 記述子](microsoft-defined-usb-descriptors.md)」を参照してください。
 
-## <a name="isochronous-support-for-winusb"></a>WinUSB アイソクロナスのサポート
+## <a name="isochronous-support-for-winusb"></a>WinUSB のアイソクロナスサポート
 
 
-Microsoft 提供の WinUSB (カーネル モード ドライバー) と、USB デバイスのアイソクロナス エンドポイントの転送をようになりました
+Microsoft 提供の WinUSB (カーネルモードドライバー) は、USB デバイスのアイソクロナスエンドポイントとの間の転送をサポートするようになりました。
 
-ユーザー モード DLL、Winusb.dll、公開これら[WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) Windows デスクトップ アプリを使用してこのような転送を開始します。
+ユーザーモードの DLL である Winusb .dll は、Windows デスクトップアプリがこのような転送を開始するために使用できる[Winusb 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)を公開します。
 
 -   [**WinUsb\_RegisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_registerisochbuffer)
 -   [**WinUsb\_UnregisterIsochBuffer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_unregisterisochbuffer)
@@ -97,36 +97,36 @@ Microsoft 提供の WinUSB (カーネル モード ドライバー) と、USB �
 -   [**WinUsb\_GetCurrentFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getcurrentframenumber)
 -   [**WinUsb\_GetAdjustedFrameNumber**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getadjustedframenumber)
 
-## <a name="usb-driver-stack-improvements"></a>USB ドライバー スタックの機能強化
+## <a name="usb-driver-stack-improvements"></a>USB ドライバースタックの機能強化
 
 
-Windows 8.1 のでは、USB 3.0 と 2.0 ドライバー スタックの両方の信頼性とパフォーマンスが改善されました。
+Windows 8.1 では、USB 3.0 と2.0 の両方のドライバースタックのパフォーマンスと信頼性が向上しています。
 
--   InstantGo をサポートする新しいプラットフォーム、S0 の全体的なシステム電源消費量が非常に短いことがあります。 このようなシステムの場合でも、USB デバイスが中に選択的に使用するいくつかのミリ ワットの中断、重要で開始します。 新しいシステムの最適化の電源の目標が、USB 2.0 スタックとで、Usbccgp.sys と USB 3.0 ドライバー スタックの強化された Windows 8 の実装、D3cold を実装します。
--   ドライバーがインストールされていないときに電源管理が向上します。 USB ドライバー スタックは、今すぐ、ハブ、コント ローラーに接続されている唯一のデバイスである場合に中断する原因となる USB ポートを中断します。
--   ウォッチドッグのタイムアウトのクラッシュを回避するためには、DPC のパフォーマンスが改善されました。
--   デバイスが USB 2.0 仕様で指定された既定値は 10 ミリ秒よりも高速回復できるようになりました。 また、ホスト コント ローラーのドライバーは、再開の USB 2.0 仕様に必要な 20 ミリ秒未満の信号をアサートします。
--   USB 3.0 ドライバー スタックは、コントロールや一括 isochronous データ転送を実行するときより信頼性の高いようになりました。
+-   InstantGo をサポートする新しいプラットフォームでは、S0 の全体的なシステム電力消費量が非常に低くなる可能性があります。 このようなシステムでは、USB デバイスがセレクティブサスペンド中に使用する数ミリワットもありますが、これは重要です。 新しいシステムの電力を最適化することを目標として、usb 2.0 stack と Usbccgp の D3cold と、USB 3.0 ドライバースタックの強化された Windows 8 実装を実装しました。
+-   ドライバーがインストールされていない場合の電源管理の向上。 USB ドライバースタックは、コントローラーに接続されている唯一のデバイスである場合、ハブが中断する原因となる USB ポートを中断するようになりました。
+-   ウォッチドッグのタイムアウトがクラッシュしないように、DPC のパフォーマンスが向上しました。
+-   USB 2.0 仕様で指定されている既定の10ミリ秒より早くデバイスを回復できるようになりました。 また、ホストコントローラードライバーは、USB 2.0 仕様で必要とされる20ミリ秒未満の信号の再開をアサートします。
+-   コントロール、一括、およびアイソクロナスデータ転送を実行すると、USB 3.0 ドライバースタックの信頼性が向上しました。
 
-## <a name="usb-tests-in-the-hardware-certification-kit-hck"></a>USB ハードウェア認定キット (HCK) でのテスト
+## <a name="usb-tests-in-the-hardware-certification-kit-hck"></a>ハードウェア認定キット (HCK) の USB テスト
 
--   これらの USB テスト ハードウェア認定キット (HCK) でが改善されました。 デバイスの列挙型のテストは、簡略化されたトポロジを使用してテスト中に手動介入を削減する新しいパラメーターを指定するようになりました。 中断のテストは、改善されたロギング機能しました。
+-   ハードウェア認定キット (HCK) のこれらの USB テストが改善されました。 デバイスの列挙テストに新しいパラメーターが追加されました。これにより、簡略化されたトポロジを使用したテスト中の手動介入が減少します。 中断テストのログ記録機能が改善されました。
 
-    -   [USB ポートが公開されているコント ローラーのテスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
-    -   [USB ハブに USB ポートのテストが公開されています。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123960(v=vs.85))
-    -   [ハブの選択的テストを中断します。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124844(v=vs.85))
+    -   [USB で公開されているポートコントローラーのテスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/hh998021(v=vs.85))
+    -   [USB ハブの公開ポートテスト USB](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123960(v=vs.85))
+    -   [ハブの選択的中断テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124844(v=vs.85))
     -   [USB 公開ポート システム テスト](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj123655(v=vs.85))
-    -   [USB セレクティブ サスペンド テスト (xHCI)](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124491(v=vs.85))
-    -   [USB 3.0 テストを中断します。](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
--   MUTT および SuperMUTT デバイスが USB-準拠デバイスの場合。 デバイスと付属のソフトウェア パッケージに USB テストの HCK スイートに統合します。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。
+    -   [USB 選択的中断テスト (xHCI)](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj124491(v=vs.85))
+    -   [USB 3.0 テストの中断](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj125210(v=vs.85))
+-   MUTT と SuperMUTT デバイスは、現在は USB に準拠しているデバイスです。 デバイスと付随するソフトウェアパッケージは、HCK suite の USB テストに統合されています。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。
 
-    MUTT ハードウェアを購入できる[JJG テクノロジ](http://jjgtechnologies.com/mutt.md)します。 デバイスのファームウェアがインストールされているインストールではありません。 ファームウェアをインストールするから MUTT ソフトウェア パッケージをダウンロード[この Web サイト](https://msdn.microsoft.com/windows/hardware/jj590752)MUTTUtil.exe を実行します。 詳細については、パッケージに付属のマニュアルを参照してください。
+    MUTT ハードウェアは、 [Jjg テクノロジ](https://jjgtechnologies.com/mutt.md)から購入できます。 デバイスにインストールされているファームウェアがインストールされていません。 ファームウェアをインストールするには、[この Web サイト](https://msdn.microsoft.com/windows/hardware/jj590752)から MUTT ソフトウェアパッケージをダウンロードし、MUTTUtil を実行します。 詳細については、パッケージに含まれているドキュメントを参照してください。
 
-## <a name="improved-usb-diagnostic-tools-and-debugger-extensions"></a>USB の強化された診断ツールとデバッガー拡張機能
+## <a name="improved-usb-diagnostic-tools-and-debugger-extensions"></a>強化された USB 診断ツールとデバッガー拡張機能
 
 
--   コマンド、同様のパターンには、USB 2.0 および 3.0 (USBKD.dll および USB3KD.dll) 用のカーネル デバッグ拡張機能が強化されました。 Usbccgp.sys のデバッガーの拡張機能は、ご利用いただけます。
--   Message Analyzer (Netmon) に示すように USB イベントとはわかりやすいようになりました。 イベントをグループ化もしてコント ローラー、ハブ、およびなどで並べ替えられます。
+-   USB 2.0 と3.0 のカーネルデバッグ拡張機能 (USBKD .dll および USB3KD) が、類似したコマンドパターンになるように改善されました。 Usbccgp のデバッガー拡張機能を使用できるようになりました。
+-   Message Analyzer (Netmon) に表示される USB イベントは、よりわかりやすいものになりました。 イベントは、コントローラーやハブなどによってグループ化および並べ替えを行うこともできます。
 
 ## <a name="related-topics"></a>関連トピック
 [ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

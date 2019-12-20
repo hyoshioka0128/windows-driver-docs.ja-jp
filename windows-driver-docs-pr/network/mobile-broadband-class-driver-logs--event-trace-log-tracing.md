@@ -1,106 +1,106 @@
 ---
-title: モバイル ブロード バンド クラス ドライバー ログ イベントのトレース ログのトレース
-description: このトピックでは、エンジニアをレビューして、問題のトラブルシューティングを行うモバイル ブロード バンド クラス ドライバー イベント トレース ログと操作に役立つ情報を提供します。
+title: モバイルブロードバンドクラスドライバーログのイベントトレースログのトレース
+description: このトピックでは、エンジニアがモバイルブロードバンドクラスドライバーのイベントトレースログを操作して、問題の確認とトラブルシューティングを行うのに役立つ情報を提供します。
 ms.assetid: 9742BFCA-CC22-497A-B11F-D3E89F0B4FE6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae7127def90ec16e3e87dd6c7765affb1cc86cb
-ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
+ms.openlocfilehash: 33c3bf3f56f75ed2d3834c3fd139130bf92d446d
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67499810"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210858"
 ---
-# <a name="mobile-broadband-class-driver-logs-event-trace-log-tracing"></a>モバイル ブロード バンド クラス ドライバー ログ:イベント トレース ログのトレース
+# <a name="mobile-broadband-class-driver-logs-event-trace-log-tracing"></a>モバイルブロードバンドクラスドライバーログ: イベントトレースログトレース
 
 
-このトピックでは、エンジニアをレビューして、問題のトラブルシューティングを行うモバイル ブロード バンド クラス ドライバー イベント トレース ログと操作に役立つ情報を提供します。
+このトピックでは、エンジニアがモバイルブロードバンドクラスドライバーのイベントトレースログを操作して、問題の確認とトラブルシューティングを行うのに役立つ情報を提供します。
 
-このトピックの情報に適用されます。
+このトピックの情報は、以下に適用されます。
 
 -   Windows 8
 
 ## <a name="etl-tracing"></a>ETL トレース
 
 
-次の手順では、イベント トレース ログ (ETL) を確認する方法について説明します。
+次の手順では、イベントトレースログ (ETL) を確認する方法について説明します。
 
-1.  イベント ビューアー を開く**開始** &gt; **実行** &gt; **EventVwr**します。
-2.  左側のウィンドウに移動します**Applications and Services Logs** &gt; **Microsoft** &gt; **Windows**します。
+1.  [**開始**] をクリックして eventviewer を開き &gt; &gt; **EventVwr**を**実行**します。
+2.  左側のウィンドウで、[**アプリケーションとサービスログ**] &gt; **Microsoft** &gt; **Windows**] の順に移動します。
 
-    ![windows フォルダーに移動する手順を示すスクリーン ショット](images/mbcdlogs1.png)
+    ![windows フォルダーに移動する手順を示すスクリーンショット](images/mbcdlogs1.png)
 
-3.  移動 さらに**Windows**に**wmbclass します。**
+3.  [ **Windows** to **wmbclass] の下に移動します。**
 
-    ![windows モバイル ブロード バンド クラス ドライバーのチャネルを示す、wmbclass フォルダーを開く](images/mbcdlogs2.png)
+    ![wmbclass フォルダーを開いています。 windows mobile ブロードバンドクラスドライバーチャネルが表示されています](images/mbcdlogs2.png)
 
-4.  右クリック**Windows モバイル ブロード バンド クラス ドライバー チャンネル**クリック**ログの有効化**。 表示された場合**ログの無効化**ログが既に有効になっています。
+4.  [ **Windows Mobile ブロードバンドクラスドライバーチャネル**] を右クリックし、[**ログの有効化**] をクリックします。 [ログの**無効化**] が表示されている場合は、ログは既に有効になっています。
 
-    ![コンテキスト メニューが表示されたスクリーン ショットは、ログを有効にし、オプションの更新](images/mbcdlogs3.png)
+    ![[ログと更新の有効化] オプションを示すショートカットメニューのスクリーンショット](images/mbcdlogs3.png)
 
-5.  キーを押して、問題を再現**更新**します。 後**更新**、中央のペインに、ログが表示されます。
+5.  問題を再現し、[最新の状態に**更新**] をクリックします。 **更新**が完了すると、中央のウィンドウにログが表示されます。
 
-    ![上のウィンドウのイベントが選択されているログのスクリーン ショット。 下のウィンドウの説明の 全般 タブおよび選択されていない詳細 タブを示しています。](images/mbcdlogs4.png)
+    ![ログのスクリーンショット。イベントは上部ペインで選択されています。 下部のペインには [全般] タブが表示され、[説明] タブと [詳細] タブが選択されていません。](images/mbcdlogs4.png)
 
-6.  使用してログをフィルター処理することができます、**操作ウィンドウ**右側にします。
+6.  右側の [**操作] ウィンドウ**を使用して、ログをフィルター処理できます。
 
-    ![現在のログをフィルターを使用して、[操作] ウィンドウで、現在のログをイベント id とイベントのレベルでフィルター処理を例に示します。 この場合、イベントのレベルは、エラーとイベント id は-105 します。](images/mbcdlogs5.png)
+    ![[操作] ウィンドウの [現在のログをフィルター] を使用すると、イベント id とイベントレベルでフィルター処理された現在のログが表示されます。 この場合、イベントレベルは error で、イベント id は-105 です。](images/mbcdlogs5.png)
 
-## <a name="mobile-broadband-logs"></a>モバイル ブロード バンド ログ
+## <a name="mobile-broadband-logs"></a>モバイルブロードバンドログ
 
 
-によって、問題とシナリオでは、さまざまな情報は、次を含むソリューションを決定するために必要があります。
+問題とシナリオに応じて、次のような解決策を決定するためにさまざまな情報が必要になります。
 
-**コントロールのパス**
+**制御パス**
 
-接続の問題が発生した場合の送信または受信 SMS、USSD のメッセージを受信または、プロファイルを使用して送信を収集してください、次の情報。
+SMS の接続、送信、受信、USSD メッセージの送信または受信、プロファイルの使用に関する問題が発生した場合は、次の情報を収集してください。
 
-1.  **netsh トレース開始 wwan\_dbg**
-2.  システムの予期しない動作につながるタスクを実行します。
+1.  **netsh トレースの開始 wwan\_dbg**
+2.  システムの予期しない動作につながるタスクを実行します
 3.  **netsh トレースの停止**
-4.  すべてのファイルをアップロードします。 `%localappdata%\temp\nettraces\`
+4.  `%localappdata%\temp\nettraces\` の下のすべてのファイルをアップロードする
 
 **IP 構成**
 
-IP アドレスの構成に関する問題がある場合は場合、は、次を実行してください。
+IP アドレスの構成に問題がある場合は、次の手順を実行してください。
 
-1. **netsh トレース開始 wwan\_dbg**
-2. &lt;システムの予期しない動作につながるタスクを実行します。
+1. **netsh トレースの開始 wwan\_dbg**
+2. システムの予期しない動作につながるタスクを実行 &lt;
 3. **netsh トレースの停止**
 4. 次の情報をアップロードします。
 
-    - すべてのファイル `%localappdata%\temp\nettraces\`
+    - `%localappdata%\temp\nettraces\` の下にあるすべてのファイル
 
-    - 出力の**ipconfig/all**
+    - **Ipconfig/all**の出力
 
-**データ パス**
+**データパス**
 
-データ パケットの削除に関連する問題のトラブルシューティングを行う場合の再試行、スループットの問題、または接続が制限を実行してください以下。
+データパケットの破棄、再試行、スループットの問題、または接続の制限に関連する問題のトラブルシューティングを行う場合は、次の手順を実行してください。
 
-1.  **netsh trace start wwan\_dbg,InternetClient,nid\_wpp provider={c5aa495b-8432-4de5-9d7c-8afc7d3b522a} 0xFFFFFFFF 255**
-2.  モバイル ブロード バンド アダプターでは、netmon のトレースを開始します。
-3.  システムの予期しない動作につながるタスクを実行します。
-4.  Netmon のトレースを停止し、ネットワーク モニターのキャプチャを保存します。
+1.  **netsh trace start wwan\_dbg、InternetClient、nid\_wpp provider = {c5aa495b-8432-4de5-9d7c-8afc7d3b522a} 0xFFFFFFFF 255**
+2.  モバイルブロードバンドアダプターで netmon トレースを開始します。
+3.  システムの予期しない動作につながるタスクを実行します
+4.  Netmon トレースを停止し、netmon キャプチャを保存します。
 5.  **netsh トレースの停止**
 6.  次の情報をアップロードします。
-    -   すべてのファイル `%localappdata%\temp\nettraces\`
-    -   Netmon のキャプチャをアップロードします。
+    -   `%localappdata%\temp\nettraces\` の下にあるすべてのファイル
+    -   Netmon キャプチャをアップロードします。
 
-**デバイスの列挙**
+**デバイス列挙型**
 
-USB 層でデバイスの列挙に関連する問題のトラブルシューティングを行う場合 (ドライバーではなく起動に失敗する)、ドライバーの読み込みの問題などを実行してください以下。
+ドライバーの読み込みに関する問題など、USB レイヤーでのデバイスの列挙に関連する問題のトラブルシューティングを行う場合 (ドライバーを起動できない場合) は、次の手順を実行してください。
 
-1.  **logman start USBTrace -p Microsoft-Windows-USB-USBPORT -ets -nb 128 640 -bs 128 -o USBTrace.etl**
-2.  **logman 更新 USBTrace-p Microsoft Windows USB USBHUB-ets-nb 128 640 bs 128**
-3.  **logman update trace USBTrace -p {bc6c9364-fc67-42c5-acf7-abed3b12ecc6} 0xFFFFFFFF 255 –ets**
-4.  システムの予期しない動作につながるタスクを実行します。
-5.  **Logman stop USBTrace ets**
+1.  **logman は、USBTrace-p Microsoft-Windows-USB 128 128 640---------------------------------------**
+2.  **logman update USBTrace-p 128 128 640 USBHUB----------------------------------**
+3.  **logman 更新トレース USBTrace-p {bc6c9364-fc67-42c5-acf7-abed3b12ecc6} 0xFFFFFFFF 255 –変更**
+4.  システムの予期しない動作につながるタスクを実行します
+5.  **Logman が USBTrace を停止します。**
 6.  次の情報をアップロードします。
-    -   `USBTrace.etl` logman を使用して作成
+    -   logman を使用して作成された `USBTrace.etl`
     -   `c:\windows\inf\setupapi.dev.log`
-    -   出力の**devcon hwids"USB\\VID\_DeviceVendorID\*"**
-        -   Devcon.exe の最新バージョンとは、WDK の一部です。
-        -   以前のバージョンが存在します http://support.microsoft.com/kb/311272
+    -   **Devcon hwids "USB\\VID\_DeviceVendorID\*"** の出力
+        -   最新バージョンの Devcon は、WDK に含まれています。
+        -   https://support.microsoft.com/kb/311272 に古いバージョンが存在します
 
  
 

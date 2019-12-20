@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x103 MUP_FILE_SYSTEM
-description: MUP_FILE_SYSTEM のバグ チェックでは、0x00000103 の値を持ちます。
+title: バグチェック 0x103 MUP_FILE_SYSTEM
+description: MUP_FILE_SYSTEM バグチェックの値は0x00000103 です。
 ms.assetid: 2756bdcc-5b10-481e-99ec-17b00c4f459d
 keywords:
-- バグ チェック 0x103 MUP_FILE_SYSTEM
+- バグチェック 0x103 MUP_FILE_SYSTEM
 - MUP_FILE_SYSTEM
 ms.date: 05/23/2017
 topic_type:
@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 21184e1db60bcefefcc4cdd3fee816724fe81584
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 9b1661c8512d0a99b59a1a110a77f1611462de9d
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521586"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209096"
 ---
-# <a name="bug-check-0x103-mupfilesystem"></a>バグ チェック 0x103:MUP\_ファイル\_システム
+# <a name="bug-check-0x103-mup_file_system"></a>バグチェック 0x103: MUP\_ファイル\_システム
 
 
-MUP\_ファイル\_システムのバグ チェックが 0x00000103 の値を持ちます。 このバグ チェックでは、複数 UNC プロバイダー (MUP) が無効または予期しないデータを発生したことを示します。 結果として、MUP はネットワーク リダイレクター、汎用名前付け規則 (UNC) プロバイダーをリモート ファイル システムの要求をチャネルすることはできません。
+MUP\_ファイル\_システムのバグチェックには、0x00000103 の値が含まれています。 このバグチェックは、複数の UNC プロバイダー (MUP) で無効なデータまたは予期しないデータが検出されたことを示します。 その結果、MUP は、リモートファイルシステム要求をネットワークリダイレクター (汎用名前付け規則 (UNC) プロバイダー) にチャネルできません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="mupfilesystem-parameters"></a>MUP\_ファイル\_システム パラメーター
+## <a name="mup_file_system-parameters"></a>MUP\_ファイル\_システムパラメーター
 
 
-パラメーター 1 では、違反の種類を識別します。
+パラメーター1は違反の種類を識別します。
 
 <table>
 <colgroup>
@@ -44,10 +44,10 @@ MUP\_ファイル\_システムのバグ チェックが 0x00000103 の値を持
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">エラーの原因</th>
 </tr>
 </thead>
@@ -55,31 +55,31 @@ MUP\_ファイル\_システムのバグ チェックが 0x00000103 の値を持
 <tr class="odd">
 <td align="left"><p>0x1</p></td>
 <td align="left"><p>保留中の IRP のアドレス。</p></td>
-<td align="left"><p>コンテキストを持つファイルが見つかりませんでした。 ファイル オブジェクトのアドレス。</p></td>
-<td align="left"><p>デバイス オブジェクトのアドレス。</p></td>
-<td align="left"><p>MUP は、ファイル オブジェクトに対応するファイルのコンテキストが見つかりませんでした。 これは、通常、MUP MUP が対応する irp_mj_create 用要求に見当たらないファイル オブジェクトの I/O 要求が多いことを示します。 このバグ チェックの可能性の高い原因は、フィルター ドライバー エラーです。</p></td>
+<td align="left"><p>ファイルコンテキストが見つからないファイルオブジェクトのアドレス。</p></td>
+<td align="left"><p>デバイスオブジェクトのアドレス。</p></td>
+<td align="left"><p>MUP は、ファイルオブジェクトに対応するファイルコンテキストを見つけることができませんでした。 これは、通常、mup が、対応する IRP_MJ_CREATE 要求を表示しないファイルオブジェクトの i/o 要求を参照していることを示しています。 このバグチェックの原因として、フィルタードライバーエラーが考えられます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>予想されるファイルのコンテキストのアドレス。</p></td>
-<td align="left"><p>実際には、ファイル オブジェクトから取得されたアドレス。</p></td>
+<td align="left"><p>予想されるファイルコンテキストのアドレス。</p></td>
+<td align="left"><p>ファイルオブジェクトから実際に取得されたアドレス。</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>ファイル コンテキストが、ファイル オブジェクトの存在しているだけで、想定されたされませんが (たとえば、ことが考えられます<strong>NULL</strong>)。</p></td>
+<td align="left"><p>ファイルコンテキストがファイルオブジェクトに対して存在することがわかっていますが、予期されたものではありませんでした (たとえば、 <strong>NULL</strong>である可能性があります)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>IRP コンテキストのアドレス。</p></td>
-<td align="left"><p>IRP の完了ステータス コード。</p></td>
-<td align="left"><p>IRP の完了した UNC プロバイダーのドライバー オブジェクト (あります<strong>NULL</strong>)。</p></td>
-<td align="left"><p>IRP の完了状態は予期されない、または無効でした。</p>
-<p>このバグ チェックでは、レガシ ネットワーク リダイレクターに接続されているファイル システム フィルター ドライバーによってのみ発生する必要があり、チェック ビルドの Windows を使用している場合にのみ発生します。 レガシ リダイレクターを使用して、 <strong>FsRtlRegisterUncProvider</strong> MUP に登録します。 このバグ チェックでは、フィルター ドライバー、NTSTATUS IRP_MJ_CLEANUP または未完了の要求ではない STATUS_SUCCESS を返すことを検出します。</p></td>
+<td align="left"><p>IRP 完了ステータスコード。</p></td>
+<td align="left"><p>IRP を完了した UNC プロバイダーのドライバーオブジェクト ( <strong>NULL</strong>の場合もあります)。</p></td>
+<td align="left"><p>IRP の完了状態が予期しないか無効です。</p>
+<p>このバグチェックは、Windows のチェックされたビルドを使用しており、レガシネットワークリダイレクターに接続されているファイルシステムフィルタードライバーによってのみ発生します。 チェックされたビルドは、Windows 10 バージョン1803より前の以前のバージョンの Windows で使用できました。 従来のリダイレクターでは、 <strong>Fsrtlregisteruncprovider</strong>を使用して、MUP に登録します。 このバグチェックは、IRP_MJ_CLEANUP または IRP_MJ_CLOSE 要求で STATUS_SUCCESS されていない NTSTATUS を返すフィルタードライバーを検出します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>IRP のアドレス</p></td>
-<td align="left"><p>ファイル オブジェクトのアドレス</p></td>
-<td align="left"><p>ファイル オブジェクトのファイル コンテキスト</p></td>
-<td align="left"><p>ファイル オブジェクトの作成要求が完了する前に、ファイル オブジェクトの I/O 操作が開始されました。</p></td>
+<td align="left"><p>ファイルオブジェクトのアドレス</p></td>
+<td align="left"><p>ファイルオブジェクトのファイルコンテキスト</p></td>
+<td align="left"><p>ファイルオブジェクトの作成要求が完了する前に、ファイルオブジェクトに対して i/o 操作が開始されました。</p></td>
 </tr>
 </tbody>
 </table>
@@ -89,7 +89,7 @@ MUP\_ファイル\_システムのバグ チェックが 0x00000103 の値を持
 <a name="remarks"></a>注釈
 -------
 
-MUP では、処理のすべてのファイル オブジェクトのファイル オブジェクトごとにコンテキスト情報を保持します。
+MUP は、処理するすべてのファイルオブジェクトについて、ファイルごとのオブジェクトごとにコンテキスト情報を保持します。
 
  
 

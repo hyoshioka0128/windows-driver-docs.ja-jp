@@ -4,19 +4,17 @@ description: このトピックでは、NetAdapterCx クライアントドライ
 ms.assetid: 2F3DA1A5-D0C1-4928-80B2-AF41F949FF14
 keywords:
 - NetAdapterCx Net リングと net ring 反復子、NetCx Net リングと net ring 反復子、NetAdapterCx PCI devices net ring、NetAdapterCx 非同期 i/o
-ms.date: 03/21/2019
+ms.date: 11/01/2019
 ms.localizationpriority: medium
-ms.custom: 19H1
-ms.openlocfilehash: c5a242f5f3c62d5e39141c48e0d8ed14efbd152c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.custom: Vib
+ms.openlocfilehash: 26a2670ba00cb15eff935d5d0892bac05124a465
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835424"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208998"
 ---
 # <a name="sending-network-data-with-net-rings"></a>ネット リングを使用したネットワーク データの送信
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 NetAdapterCx クライアントドライバーは、フレームワークが送信キューの[*Evtpacketqueueadvance*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacketqueue/nc-netpacketqueue-evt_packet_queue_advance)コールバック関数を呼び出すと、ネットワークデータを送信します。 このコールバック中に、クライアントドライバーは、キューのフラグメントリングからハードウェアにバッファーをポストし、完了したパケットをドレインしてから OS に戻します。
 
@@ -32,27 +30,27 @@ NetAdapterCx クライアントドライバーは、フレームワークが送�
 
 次に示すのは、デバイスがデータを順に転送するドライバー (単純な PCI NIC など) の一般的な post とドレインシーケンスです。
 
-1. **NetTxQueueGetRingCollection**を呼び出して、送信キューのリングコレクション構造を取得します。 これをキューのコンテキスト空間に格納して、ドライバーからの呼び出しを減らすことができます。 
-2. データをハードウェアに投稿する:    
-    1. 発信キューのパケットリングのポスト反復子を取得するには、ring コレクションを[**使用します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetpostpackets)。
+1. [**NetTxQueueGetRingCollection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/nettxqueue/nf-nettxqueue-nettxqueuegetringcollection)を呼び出して、送信キューのリングコレクション構造を取得します。 これをキューのコンテキスト空間に格納して、ドライバーからの呼び出しを減らすことができます。 送信キューのパケットリングを取得するには、ring コレクションを使用します。
+2. データをハードウェアに投稿する:        
+    1. パケットインデックスに UINT32 変数を割り当て、それをパケットリングの**Nextindex**に設定します。これはリングの post サブセクションの始まりです。
     2. ループで次の操作を実行します。
-        1. パケット反復子を使用して[**NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)を呼び出すことにより、パケットを取得します。
+        1. パケットインデックスを使用して[**Netringgetpacketatindex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringgetpacketatindex)を呼び出してパケットを取得します。
         2. このパケットを無視するかどうかを確認してください。 無視する場合は、このループの手順6に進みます。 それ以外の場合は、続行します。
-        3. [**NetPacketIteratorGetFragments**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetfragments)を呼び出して、このパケットのフラグメントのフラグメント反復子を取得します。
+        3. このパケットのフラグメントを取得します。 リングコレクションから送信キューのフラグメントリングを取得し、パケットの**Fragmentindex**メンバーからパケットのフラグメントの先頭を取得します。次に、パケットの**fragmentindex**を使用して[**NetRingIncrementIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringincrementindex)を呼び出して、パケットのフラグメントの末尾を取得します。
         4. ループで次の操作を実行します。
-            1. フラグメントを取得するには、フラグメント反復子を使用して[**NetFragmentIteratorGetFragment**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratorgetfragment)を呼び出します。
+            1. [**Netringgetfragmentatindex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringgetpacketatindex)を呼び出して、フラグメントを取得します。
             2. **NET_FRAGMENT**記述子を、関連付けられているハードウェアフラグメント記述子に変換します。
-            3. このパケットの次のフラグメントに移動するには、 [**NetFragmentIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netfragmentiteratoradvance)を呼び出します。
+            3. [**NetRingIncrementIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringincrementindex)を呼び出して、フラグメントのインデックスを進めます。
         5. フラグメントの反復子の現在の**インデックス**に一致するように、フラグメントリングの**次**のインデックスを更新します。これは、ハードウェアへのポストが完了したことを示します。
-        6. [**NetPacketIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratoradvance)を呼び出して、次のパケットに移動します。
-    3. [**NetPacketIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorset)を呼び出して、ハードウェアへのパケットの送信を完了します。
+        6. [**NetRingIncrementIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringincrementindex)を呼び出してパケットインデックスを進めます。
+    3. パケットリングの**Nextindex**をパケットインデックスに更新して、ハードウェアへのパケットの送信を完了します。
 3. 完了した送信パケットを OS にドレインします:
-    1. 発信キューのパケットリングのドレイン反復子を取得するには、ring コレクションを[**使用します**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netringgetdrainpackets)。
+    1. パケットインデックスをパケットリングの**Beginindex**に設定します。これはリングのドレインサブセクションの始まりです。
     2. ループで次の操作を実行します。
-        1. [**NetPacketIteratorGetPacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorgetpacket)を呼び出してパケットを取得します。
+        1. パケットインデックスを使用して[**Netringgetpacketatindex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringgetpacketatindex)を呼び出してパケットを取得します。
         2. パケットの送信が完了したかどうかを確認します。 そうでない場合は、ループを中断します。
-        2. [**NetPacketIteratorAdvance**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratoradvance)を呼び出して、次のパケットに移動します。
-    3. [**NetPacketIteratorSet**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringiterator/nf-netringiterator-netpacketiteratorset)を呼び出して、OS へのパケットのドレインを完了します。
+        3. [**NetRingIncrementIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ring/nf-ring-netringincrementindex)を呼び出してパケットインデックスを進めます。
+    3. パケットリングの**Beginindex**をパケットインデックスに更新して、ハードウェアへのパケットの送信を完了します。
 
 これらの手順は、コードでは次のようになります。 ハードウェア固有の詳細 (ハードウェアに記述子をポストする方法や、正常な post トランザクションをフラッシュする方法など) は、わかりやすくするために残されています。
 
@@ -62,59 +60,66 @@ MyEvtTxQueueAdvance(
     NETPACKETQUEUE TxQueue
 )
 {
-    // Get the transmit queue's context to retrieve the net ring collection
+    //
+    // Retrieve the transmit queue's ring collection and packet ring. 
+    // This example stores the Tx queue's ring collection in its queue context space.
+    //
     PMY_TX_QUEUE_CONTEXT txQueueContext = MyGetTxQueueContext(TxQueue);
-    NET_RING_COLLECTION const * Rings = txQueueContext->Rings;
+    NET_RING_COLLECTION const * ringCollection = txQueueContext->RingCollection;
+    NET_RING * packetRing = ringCollection->Rings[NET_RING_TYPE_PACKET];
+    UINT32 currentPacketIndex = 0;
 
     //
     // Post data to hardware
-    //
-    NET_RING_PACKET_ITERATOR packetIterator = NetRingGetPostPackets(Rings);
-    while(NetPacketIteratorHasAny(&packetIterator))
+    //      
+    currentPacketIndex = packetRing->NextIndex;
+    while(currentPacketIndex != packetRing->EndIndex)
     {
-        NET_PACKET* packet = NetPacketIteratorGetPacket(&packetIterator);        
+        NET_PACKET * packet = NetRingGetPacketAtIndex(packetRing, currentPacketIndex);        
         if(!packet->Ignore)
         {
-            NET_FRAGMENT_ITERATOR fragmentIterator = NetPacketIteratorGetFragments(&packetIterator);
-            UINT32 packetIndex = NetPacketIteratorGetIndex(&packetIterator);
+            NET_RING * fragmentRing = ringCollection->Rings[NET_RING_TYPE_FRAGMENT];
+            UINT32 currentFragmentIndex = packet->FragmentIndex;
+            UINT32 fragmentEndIndex = NetRingIncrementIndex(fragmentRing, currentFragmentIndex + packet->FragmentCount - 1);
             
             for(txQueueContext->PacketTransmitControlBlocks[packetIndex]->numTxDescriptors = 0; 
-                NetFragmentIteratorHasAny(&fragmentIterator); 
+                currentFragmentIndex != fragmentEndIndex; 
                 txQueueContext->PacketTransmitControlBlocks[packetIndex]->numTxDescriptors++)
             {
-                NET_FRAGMENT* fragment = NetFragmentIteratorGetFragment(&fragmentIterator);
+                NET_FRAGMENT * fragment = NetRingGetFragmentAtIndex(fragmentRing, currentFragmentIndex);
 
                 // Post fragment descriptor to hardware
                 ...
                 //
 
-                NetFragmentIteratorAdvance(&fragmentIterator);
+                currentFragmentIndex = NetRingIncrementIndex(fragmentRing, currentFragmentIndex);
             }
 
             //
             // Update the fragment ring's Next index to indicate that posting is complete and prepare for draining
             //
-            fragmentIterator.Iterator.Rings->Rings[NET_RING_TYPE_FRAGMENT]->NextIndex = NetFragmentIteratorGetIndex(&fragmentIterator);
+            fragmentRing->NextIndex = currentFragmentIndex;
         }
-        NetPacketIteratorAdvance(&packetIterator);
+        currentPacketIndex = NetRingIncrementIndex(packetRing, currentPacketIndex);
     }
-    NetPacketIteratorSet(&packetIterator);
+    packetRing->NextIndex = currentPacketIndex;
 
     //
     // Drain packets if completed
     //
-    packetIterator = NetRingGetDrainPackets(Rings);
-    while(NetPacketIteratorHasAny(&packetIterator))
+    currentPacketIndex = packetRing->BeginIndex;
+    while(currentPacketIndex != packetRing->NextIndex)
     {        
-        NET_PACKET* packet = NetPacketIteratorGetPacket(&packetIterator);
+        NET_PACKET * packet = NetRingGetPacketAtIndex(packetRing, currentPacketIndex); 
         
         // Test packet for transmit completion by checking hardware ownership flags in the packet's last fragment
-        ..
+        // Break if transmit is not complete
+        ...
         //
         
-        NetPacketIteratorAdvance(&packetIterator);
+        currentPacketIndex = NetRingIncrementIndex(packetRing, currentPacketIndex);
     }
-    NetPacketIteratorSet(&packetIterator);
+    packetRing->BeginIndex = currentPacketIndex;
 }
 ```
 

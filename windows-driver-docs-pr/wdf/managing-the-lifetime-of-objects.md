@@ -9,17 +9,17 @@ keywords:
 - コールバックオブジェクト WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30404ae8f5753755131690d4a58e179066febaf9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ce73d2aaf8a156471d2d89d5642445c70a3cba28
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843149"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210770"
 ---
 # <a name="managing-the-lifetime-of-objects"></a>オブジェクトの有効期間の管理
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF は、参照カウントスキームを使用して、[コールバックオブジェクト](creating-callback-objects.md)と[フレームワークオブジェクト](framework-objects.md)の有効期間を管理します。
 
@@ -43,7 +43,7 @@ UMDF はオブジェクトツリー内のすべてのフレームワークオブ
 
 ただし、ドライバーがフレームワークオブジェクトへの参照を保持している場合、ドライバーは、オブジェクトが不要になったときに参照を解放する必要があります。 循環参照は、ドライバーがその参照を解放するまで保持されます。 循環参照を回避するには、通常、ドライバーはフレームワークオブジェクトへの明示的な参照を保持しないようにする必要があります。
 
-ドライバーがフレームワークオブジェクトへの参照を保持する必要がある場合、ドライバーのコールバックオブジェクトも[IObjectCleanup](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iobjectcleanup)インターフェイスを実装する必要があります。 ドライバーが[**Iwdfobject:** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) framework オブジェクトの:D eletewdfobject を呼び出すと、フレームワークオブジェクトは対応するコールバックオブジェクトの[**IObjectCleanup:: oncleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iobjectcleanup-oncleanup)メソッドを呼び出します。 フレームワークオブジェクトの破棄を完了するには、 **IObjectCleanup:: OnCleanup**の実装でフレームワークオブジェクトへの参照を解放する必要があります。
+ドライバーがフレームワークオブジェクトへの参照を保持する必要がある場合、ドライバーのコールバックオブジェクトも[IObjectCleanup](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iobjectcleanup)インターフェイスを実装する必要があります。 ドライバーが[**Iwdfobject:**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject) framework オブジェクトの:D eletewdfobject を呼び出すと、フレームワークオブジェクトは対応するコールバックオブジェクトの[**IObjectCleanup:: oncleanup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iobjectcleanup-oncleanup)メソッドを呼び出します。 フレームワークオブジェクトの破棄を完了するには、 **IObjectCleanup:: OnCleanup**の実装でフレームワークオブジェクトへの参照を解放する必要があります。
 
 ### <a name="wdf-lifetime-management"></a>WDF の有効期間管理
 

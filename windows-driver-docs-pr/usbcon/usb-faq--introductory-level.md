@@ -1,253 +1,250 @@
 ---
-Description: このトピックでは、初心者の開発と Windows オペレーティング システムとの USB デバイスとドライバーの統合にはドライバー開発者向けのよく寄せられる質問を表示します。
+Description: このトピックでは、Windows オペレーティングシステムで USB デバイスとドライバーを開発して統合することを初めて行うドライバー開発者に関してよく寄せられる質問を示します。
 title: Windows における USB- よくあるご質問
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75e2367af2ee80170b468c61cfe1e14170063fda
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 280052d878eeb9ffd367fc43039a7d22c9332d6e
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356645"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210622"
 ---
 # <a name="usb-in-windows---faq"></a>Windows における USB- よくあるご質問
 
-このトピックでは、初心者の開発と Windows オペレーティング システムとの USB デバイスとドライバーの統合にはドライバー開発者向けのよく寄せられる質問を表示します。
+このトピックでは、Windows オペレーティングシステムで USB デバイスとドライバーを開発して統合することを初めて行うドライバー開発者に関してよく寄せられる質問を示します。
 
-- [質問すると、たくさんの USB 用語が聞こえます。これらすべては一体何でしょうか。](#i-hear-numerous-usb-terms-thrown-around-almost-interchangeably-what-do-they-all-mean)
-- [自分の PC に USB 3.0 ポートがあるでしょうか。](#does-my-pc-have-usb-30-ports)
-- [EXtensible ホスト コント ローラー用ドライバーをインストールする必要がありますか。](#do-i-need-to-install-drivers-for-my-extensible-host-controller)
-- [私のシステムで複数のホスト コント ローラーが参照する理由](#why-do-i-see-several-host-controllers-on-my-system)
-- [1 つだけの USB 3.0 ハブを接続していないときに 2 つのハブ デバイス マネージャーにするはなぜですか。](#why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub)
-- [2.0 ポートに接続されているデバイスにどのドライバー セットが読み込まれますか。](#which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports)
-- [USB 3.0 デバイスが SuperSpeed として動作しているかどうかを判断する方法](#how-do-i-determine-whether-my-usb-30-device-is-operating-as-superspeed)
-- [なぜ私の SuperSpeed USB デバイスを同等の高速 USB デバイスより速くないでしょうか。](#why-isnt-my-superspeed-usb-device-faster-than-an-equivalent-high-speed-usb-device)
-- [複合と 1 つのハードウェアに複合デバイスを用意することはできますか。](#is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware)
-- [一部の USB デバイスを新しいポートに移動したときに再インストールはなぜですか。](#why-are-some-of-my-usb-devices-reinstalled-when-they-are-moved-to-a-new-port)
-- [USB 製品パッケージのデザイン推奨一覧はありますか。](#is-there-a-list-of-design-recommendations-for-usb-product-packaging)
-- [USB 3.0 デバイスをサポートするために、クライアント ドライバーを書き直す必要はでしょうか。](#do-i-have-to-rewrite-my-client-driver-to-support-usb-30-devices)
-- [SuperSpeed ストレージ デバイスで使用する、Uaspstor.sys と Usbstor.sys ドライバーが読み込まれますか。](#which-driver-is-loaded-for-my-superspeed-storage-device-use-uaspstorsys-or-usbstorsys)
-- [Microsoft はどの USB DWG クラスをサポートしますか。](#which-usb-dwg-classes-does-microsoft-support)
-- [どのデバイス セットアップ クラス、カスタムの USB デバイスを使用する必要がありますか。](#which-device-setup-class-should-i-use-for-a-custom-usb-device)
-- [なぜしない CPU が c3 一部の USB デバイスを接続したときか。](#why-wont-my-cpu-enter-c3-when-i-attach-some-usb-devices)
-- [どの USB クラス ドライバーがセレクティブ サスペンドをサポートしますか。](#which-usb-class-drivers-support-selective-suspend)
-- [なぜことはできません、USB デバイスがスリープ解除 Windows S3 からでしょうか。](#why-cant-a-usb-device-awaken-windows-from-s3)
-- [拡張 (USB 2.0) ホスト コント ローラー用ドライバーをインストールする必要がありますか。](#do-i-need-to-install-drivers-for-my-enhanced-usb-20-host-controller)
-- [「高速 USB デバイスは非 HI-SPEED USB ポートに接続されている」通知を無効にできますか。](#can-i-disable-the-hi-speed-usb-device-plugged-into-non-hi-speed-usb-port-notice)
-- [自分の USB 2.0 ハブ シングル TT またはマルチ TT ですか。](#is-my-usb-20-hub-single-tt-or-multi-tt)
-- [どのような文字またはバイトは、USB シリアル番号で有効ですか。](#what-characters-or-bytes-are-valid-in-a-usb-serial-number)
-- [どのような LANGID が Windows のローカライズされたビルド文字列の要求で使用されるでしょうか。](#what-langid-is-used-in-a-string-request-on-localized-builds-of-windows)
-- [どのような LANGID はデバイスのシリアル番号を抽出するために使用しますか?](#what-langid-is-used-to-extract-a-devices-serial-number)
-- [さまざまな Windows バージョンの最大の USB 転送サイズとは何ですか。](#what-is-the-maximum-usb-transfer-size-for-different-windows-versions)
-- [番号は、複合デバイスに複数のインターフェイスにどのように割り当てする必要がありますか。](#how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device)
-- [Usbccgp.sys によって課される主要な制約とは](#what-are-the-major-restrictions-imposed-by-usbccgpsys)
-- [USB の主要なバイナリのデバッグ トレースを有効にする方法](#how-do-i-enable-debug-tracing-for-usb-core-binaries)
-- [Windows は、インターフェイスの関連付けの記述子をサポートしますか。](#does-windows-support-interface-association-descriptors)
-- [USB スタックのハンドルは、URB で MDLs チェーンされているか。](#does-the-usb-stack-handle-chained-mdls-in-a-urb)
-- [ドライバーは IRP の 1 つ以上の URB を持つことができますか。](#can-a-driver-have-more-than-one-urb-in-an-irp)
-- [Windows は、複合の USB ハブをサポートしますか。](#does-windows-support-usb-composite-hubs)
-- [USB の他の Faq はどこで入手できますか。](#where-can-i-find-additional-faqs-on-usb)
+- [ほぼ同じように、多数の USB 用語がスローされました。どのような意味があるのでしょうか。](#i-hear-numerous-usb-terms-thrown-around-almost-interchangeably-what-do-they-all-mean)
+- [PC に USB 3.0 ポートがありますか。](#does-my-pc-have-usb-30-ports)
+- [拡張可能なホストコントローラーのドライバーをインストールする必要がありますか。](#do-i-need-to-install-drivers-for-my-extensible-host-controller)
+- [システムに複数のホストコントローラーが表示されるのはなぜですか。](#why-do-i-see-several-host-controllers-on-my-system)
+- [USB 3.0 ハブを1つしか接続していない場合、デバイスマネージャーに2つのハブが表示されるのはなぜですか。](#why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub)
+- [2.0 ポートに接続されているデバイス用に読み込まれるドライバーのセットを教えてください。](#which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports)
+- [USB 3.0 デバイスが SuperSpeed として動作しているかどうかを判断操作方法には](#how-do-i-determine-whether-my-usb-30-device-is-operating-as-superspeed)
+- [SuperSpeed USB デバイスが同等の高速 USB デバイスより高速ではないのはなぜですか。](#why-isnt-my-superspeed-usb-device-faster-than-an-equivalent-high-speed-usb-device)
+- [1つのハードウェアに複合デバイスと複合デバイスを用意することはできますか。](#is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware)
+- [新しいポートに移動すると、USB デバイスの一部が再インストールされるのはなぜですか。](#why-are-some-of-my-usb-devices-reinstalled-when-they-are-moved-to-a-new-port)
+- [USB 製品パッケージの設計に関する推奨事項の一覧がありますか。](#is-there-a-list-of-design-recommendations-for-usb-product-packaging)
+- [USB 3.0 デバイスをサポートするようにクライアントドライバーを書き換える必要がありますか。](#do-i-have-to-rewrite-my-client-driver-to-support-usb-30-devices)
+- [SuperSpeed ストレージデバイスで使用されているドライバー (Uaspstor または Usbstor.sys)](#which-driver-is-loaded-for-my-superspeed-storage-device-use-uaspstorsys-or-usbstorsys)
+- [Microsoft はどの USB DWG クラスをサポートしていますか。](#which-usb-dwg-classes-does-microsoft-support)
+- [カスタム USB デバイスにどのデバイスセットアップクラスを使用する必要がありますか。](#which-device-setup-class-should-i-use-for-a-custom-usb-device)
+- [USB デバイスを接続したときに CPU が C3 にならないのはなぜですか。](#why-wont-my-cpu-enter-c3-when-i-attach-some-usb-devices)
+- [セレクティブサスペンドをサポートする USB クラスドライバー](#which-usb-class-drivers-support-selective-suspend)
+- [USB デバイスが S3 から Windows を目覚めできないのはなぜですか。](#why-cant-a-usb-device-awaken-windows-from-s3)
+- [Enhanced (USB 2.0) ホストコントローラーのドライバーをインストールする必要がありますか。](#do-i-need-to-install-drivers-for-my-enhanced-usb-20-host-controller)
+- ["高速ではない USB ポートに接続されている高速 USB デバイス" という通知を無効にすることはできますか。](#can-i-disable-the-hi-speed-usb-device-plugged-into-non-hi-speed-usb-port-notice)
+- [USB 2.0 ハブのシングル TT またはマルチ TT ですか。](#is-my-usb-20-hub-single-tt-or-multi-tt)
+- [USB シリアル番号で有効な文字またはバイトは何ですか。](#what-characters-or-bytes-are-valid-in-a-usb-serial-number)
+- [Windows のローカライズされたビルドにおける文字列要求では、どのような LANGID が使用されますか。](#what-langid-is-used-in-a-string-request-on-localized-builds-of-windows)
+- [デバイスのシリアル番号を抽出するために使用される LANGID](#what-langid-is-used-to-extract-a-devices-serial-number)
+- [さまざまな Windows バージョンの USB 転送の最大サイズはどのくらいですか。](#what-is-the-maximum-usb-transfer-size-for-different-windows-versions)
+- [複合デバイスの複数のインターフェイスに番号を割り当てる方法](#how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device)
+- [Usbccgp によって課せられる主な制限は何ですか。](#what-are-the-major-restrictions-imposed-by-usbccgpsys)
+- [USB コアバイナリのデバッグトレースを有効に操作方法ますか?](#how-do-i-enable-debug-tracing-for-usb-core-binaries)
+- [Windows はインターフェイスの関連付け記述子をサポートしていますか。](#does-windows-support-interface-association-descriptors)
+- [USB スタックはチェーンされた MDLs を URB に処理しますか。](#does-the-usb-stack-handle-chained-mdls-in-a-urb)
+- [ドライバーが1つの IRP に複数の URB を持つことはできますか。](#can-a-driver-have-more-than-one-urb-in-an-irp)
+- [Windows では USB 複合ハブがサポートされるのですか。](#does-windows-support-usb-composite-hubs)
 
-## <a name="i-hear-numerous-usb-terms-thrown-around-almost-interchangeably-what-do-they-all-mean"></a>質問すると、たくさんの USB 用語が聞こえます。 これらすべては一体何でしょうか。
+## <a name="i-hear-numerous-usb-terms-thrown-around-almost-interchangeably-what-do-they-all-mean"></a>ほぼ同じように、多数の USB 用語がスローされました。 どのような意味があるのでしょうか。
 
-たとえばなどのテキストを表示します *"USB 3.0、に協力してくれた SuperSpeed USB を接続できるサム ドライブを PC の xHCI ホスト コント ローラーにすると、ファイルのコピーを高速化します。"。*
+たとえば、「 *usb 3.0 のおかげで、SUPERSPEED usb thumb ドライブを PC の xHCI ホストコントローラーに接続して、ファイルをより速くコピーすることができます」* というようなものがあるとします。
 
-その文の USB 用語を理解しましょう。 USB 3.0、USB 2.0、および USB 1.0 は、USB 仕様のリビジョン番号を参照してください、 [USB Implementers Forum](https://www.usb.org/)します。 USB 仕様では、どのホスト PC と USB デバイス相互に通信を定義します。
+その文での USB 用語について説明します。 Usb 3.0、USB 2.0、および USB 1.0 は、usb[実装者フォーラム](https://www.usb.org/)の usb 仕様のリビジョン番号を参照しています。 USB 仕様では、ホスト PC と USB デバイスが相互に通信する方法を定義します。
 
-バージョン番号は、最大転送速度も示します。 仕様の最新リビジョンは、USB 3.0 では、最大転送速度は 5 Gbps を指定します。 USB 1.0 は、2 つの異なるデータ レート、低速 USB (最大 1.5 Mbps) とフル_スピード USB (最大 12 Mbps) を定義します。 USB 2.0 定義の新しいデータ速度として高速 USB (480 Mbps) 低とフル スピード デバイスのサポートを維持しながらします。 USB 3.0 は、すべての定義済みのデータ レートを使用するが続行されます。 製品のパッケージを見ると、SuperSpeed USB は最新の USB 3.0 デバイスを参照します。 高速 USB は高速 USB 2.0 デバイスを記述するために使用します。 USB、記述のないは、低速とフル_スピードのデバイスを指します。
+バージョン番号は、最大転送速度も示しています。 最新仕様のリビジョンは USB 3.0 で、最大転送速度は 5 Gbps です。 USB 1.0 では、低速 USB (最大 1.5 Mbps) とフルスピード USB (最大 12 Mbps) の2種類のデータ速度が定義されています。 USB 2.0 では、高速および高速のデバイスのサポートを維持しながら、新しいデータ速度、高速 USB (480 Mbps) が定義されています。 USB 3.0 は、以前に定義されたすべてのデータ速度で動作し続けます。 製品パッケージを見ると、SuperSpeed USB は最新の USB 3.0 デバイスを参照します。 高速 usb は、高速 USB 2.0 デバイスを記述するために使用されます。 記述子のない USB は、低速デバイスと完全速度デバイスを指します。
 
-USB プロトコルに加えて、USB ホスト コント ローラー、1 つのデバイスが接続されている PC のハードウェアの 2 番目の指定があります。 ホスト コント ローラー インターフェイス仕様では、ホスト コント ローラーのハードウェアとソフトウェアの対話方法を定義します。 EXtensible ホスト コント ローラー インターフェイス (xHCI) は、USB 3.0 ホスト コント ローラーを定義します。 エンハンス ホスト コント ローラー インターフェイス (EHCI) は、USB 2.0 ホスト コント ローラーを定義します。 ユニバーサル ホスト コント ローラー (UHCI) とオープン ホスト コント ローラー (OHCI) は 2 つ、別の USB 1.0 ホスト コント ローラーの実装。
+Usb プロトコルに加えて、USB ホストコントローラーには、デバイスが接続されている PC のハードウェアの2番目の仕様があります。 ホストコントローラーのインターフェイス仕様では、ホストコントローラーのハードウェアとソフトウェアがどのように対話するかを定義します。 拡張可能なホストコントローラーインターフェイス (xHCI) は、USB 3.0 ホストコントローラーを定義します。 Enhanced Host Controller Interface (EHCI) は、USB 2.0 ホストコントローラーを定義します。 ユニバーサルホストコントローラー (UHCI) と Open Host Controller (OHCI) は、USB 1.0 ホストコントローラーの2つの代替実装です。
 
-## <a name="does-my-pc-have-usb-30-ports"></a>自分の PC に USB 3.0 ポートがあるでしょうか。
+## <a name="does-my-pc-have-usb-30-ports"></a>PC に USB 3.0 ポートがありますか。
 
-USB 3.0 ポートが、SuperSpeed USB ロゴでマークされたか、またはポートは通常は青色です。
+USB 3.0 ポートは SuperSpeed USB ロゴでマークされているか、通常は青色で示されます。
 
-![ロゴの usb ポート](images/usb-intro-faq-fig1-usblogo.png)
+![usb ロゴ付きのポート](images/usb-intro-faq-fig1-usblogo.png)
 
-![青色の usb 3.0 ポート](images/usb-intro-faq-fig2-blueusbport.png)
+![blue usb 3.0 ポート](images/usb-intro-faq-fig2-blueusbport.png)
 
-新しい Pc には、USB 3.0 と USB 2.0 ポートがあります。 SuperSpeed USB デバイスを最高速度で実行する場合は、USB 3.0 ポートを検索し、デバイスをそのポートに接続します。 SuperSpeed デバイスには、USB 2.0 ポートが接続されている高速で動作します。
+新しい Pc には、USB 3.0 と USB 2.0 の両方のポートがあります。 SuperSpeed USB デバイスが最高速度で実行されるようにするには、USB 3.0 ポートを見つけて、そのポートにデバイスを接続します。 USB 2.0 ポートに接続されている SuperSpeed デバイスは、高速で動作します。
 
-特定のポートが USB 3.0 ポート デバイス マネージャーでも確認することができます。 Windows Vista またはそれ以降のバージョンの Windows では、デバイス マネージャーを開きし、一覧から、ポートを選択します。
+また、デバイスマネージャーで特定のポートが USB 3.0 ポートであることを確認することもできます。 Windows Vista 以降のバージョンの Windows では、デバイスマネージャーを開き、一覧からポートを選択します。
 
-![デバイス マネージャーで usb ホスト コント ローラー](images/usb-host-controllers-dm.png)
+![デバイスマネージャーの usb ホストコントローラー](images/usb-host-controllers-dm.png)
 
-EXtensible ホスト コント ローラーを使っている場合は、USB 3.0 をサポートします。
+拡張可能なホストコントローラーがある場合は、USB 3.0 がサポートされます。
 
-## <a name="do-i-need-to-install-drivers-for-my-extensible-host-controller"></a>EXtensible ホスト コント ローラー用ドライバーをインストールする必要がありますか。
+## <a name="do-i-need-to-install-drivers-for-my-extensible-host-controller"></a>拡張可能なホストコントローラーのドライバーをインストールする必要がありますか。
 
-Windows 8 および Windows Server 2012 には、USB 3.0 のサポートが含まれます。
+Windows 8 および Windows Server 2012 には、USB 3.0 のサポートが含まれています。
 
-PC が USB 3.0 ポートが、Windows 8 より前のバージョンの Windows を実行している場合は、ホスト コント ローラーのドライバーは、PC の製造元によって提供されます。 これらのドライバーを再インストールする必要がある場合は、製造元から入手する必要があります。
+PC に USB 3.0 ポートがあり、Windows 8 より前のバージョンの Windows を実行している場合、ホストコントローラードライバーは PC の製造元から提供されます。 これらのドライバーを再インストールする必要がある場合は、製造元から入手する必要があります。
 
-Windows 8 より前のバージョンの Windows を実行している PC に USB 3.0 コント ローラー カードを追加した場合は、コント ローラー カードの製造元によって提供されるドライバーをインストールする必要があります。
+Windows 8 より前のバージョンの Windows を実行している PC に USB 3.0 コントローラーカードを追加した場合は、コントローラーカードの製造元から提供されているドライバーをインストールする必要があります。
 
-Windows 8 では、Microsoft から提供された一連の USB 3.0 ドライバー (USB ドライバー スタック) はほとんどのホスト コント ローラーを使用します。 Microsoft USB 3.0 ドライバー スタックは Fresco Logic FL1000 コント ローラーでは機能しません。 FL1000 コント ローラーがあるかどうかを決定するには、デバイス マネージャーを開くし、展開**ユニバーサル シリアル バス コント ローラー**します。 コント ローラーのノードを右クリックして、コント ローラーのプロパティを表示します。 **詳細**] タブで [**ハードウェア Id**リスト内のプロパティ。 ハードウェア ID が PCI で始まる場合\\VEN\_1B73 & DEV\_1000、FL1000 です。 そのコント ローラーをダウンロードして、PC またはコント ローラー カードの製造元からドライバーをインストールします。
+Windows 8 では、Microsoft が提供する一連の USB 3.0 ドライバー (USB ドライバースタック) は、ほとんどのホストコントローラーで動作します。 Microsoft USB 3.0 ドライバースタックは、Fresco Logic FL1000 コントローラーでは機能しません。 FL1000 コントローラーがあるかどうかを判断するには、デバイスマネージャーを開き、[**ユニバーサルシリアルバスコントローラー**] を展開します。 コントローラーのプロパティを表示するには、コントローラーノードを右クリックします。 [**詳細**] タブの一覧で、[**ハードウェア id** ] プロパティを選択します。 ハードウェア ID が PCI\\VEN\_1B73 & DEV\_1000 で始まる場合は、これが FL1000 です。 そのコントローラーについては、PC またはコントローラーカードの製造元からドライバーをダウンロードしてインストールしてください。
 
-## <a name="why-do-i-see-several-host-controllers-on-my-system"></a>私のシステムで複数のホスト コント ローラーが参照する理由
+## <a name="why-do-i-see-several-host-controllers-on-my-system"></a>システムに複数のホストコントローラーが表示されるのはなぜですか。
 
-お使いの PC に接続する USB デバイスだけでなく、web カメラ、指紋リーダー、SD カード リーダーなど、USB 経由で接続されている PC 内で統合されたデバイス数があります。 これらのデバイスのすべての接続を外部 USB ポートを引き続き提供は、PC には、いくつかの USB ホスト コント ローラーがサポートしています。
+PC に接続する USB デバイスに加えて、web カメラ、指紋リーダー、SD カードリーダーなど、USB 経由で接続される可能性のある多数のデバイスが PC 内に統合されています。 これらのデバイスをすべて接続し、外部 USB ポートを引き続き提供するために、PC は複数の USB ホストコントローラーをサポートしています。
 
-USB 3.0 xHCI ホスト コント ローラーはすべて USB デバイスの速度、SuperSpeed、高速、フル_スピードと低速で完全に下位互換性があります。 XHCI コント ローラーに直接すべてのデバイスを接続し、そのデバイスを職場に予想されることができます。 EHCI コント ローラーでない場合。 USB 2.0 仕様には、あらゆる速度のデバイスがサポートされますが、EHCI コント ローラーは高速 USB デバイスのみをサポートします。 作業のフル_スピードと低速の USB デバイスの順序で、USB 2.0 ハブを介して EHCI コント ローラーに接続する必要があります。 または UHCI または OHCI コント ローラーに接続する必要があります。
+USB 3.0 xHCI ホストコントローラーは、すべての USB デバイス速度、SuperSpeed、高速、最高速度、および低速度と完全に下位互換性があります。 任意のデバイスを直接 xHCI コントローラーに接続し、そのデバイスが動作することを期待できます。 EHCI コントローラーでは、そうではありません。 USB 2.0 仕様では、すべての速度のデバイスがサポートされていますが、EHCI コントローラーでは高速 USB デバイスのみがサポートされています。 高速で高速な USB デバイスを動作させるには、USB 2.0 ハブを介して EHCI コントローラーに接続されているか、UHCI または OHCI コントローラーに接続されている必要があります。
 
-新しい Pc、Pc によって公開されているほとんどの USB 2.0 ポートは USB 2.0 ハブのダウン ストリームです。 このハブは EHCI コント ローラーに接続されます。 これにより、あらゆる速度のデバイスを使用する PC の USB 2.0 ポートができます。 SuperSpeed デバイスは、2.0 ポートに接続されているときに、高速デバイスとして動作します。
+新しい Pc では、Pc によって公開されるほとんどの USB 2.0 ポートは、USB 2.0 ハブの下流にあります。 このハブは EHCI コントローラーに接続されています。 これにより、PC の USB 2.0 ポートは、あらゆる速度のデバイスで動作できるようになります。 SuperSpeed デバイスは、2.0 ポートに接続しているときに高速デバイスとして動作します。
 
-USB 2.0 仕様がリリースされた後、Pc は、あらゆる速度のデバイスをサポートするためにホスト コント ローラーの組み合わせを使用します。 1 つの USB 2.0 ポートは、2 つのホスト コント ローラー、EHCI ホスト コント ローラーと、UHCI または OHCI ホスト コント ローラーにワイヤード (有線) なります。 デバイスを接続するときに、ハードウェアは、接続を動的に 2 つのホストのいずれかにルーティングします。 ルーチンは、デバイスの速度に依存します。
+USB 2.0 仕様がリリースされた後、Pc は、すべての速度のデバイスをサポートするために、ホストコントローラーを組み合わせて使用しました。 単一の USB 2.0 ポートは、EHCI ホストコントローラーと UHCI または OHCI ホストコントローラーの2つのホストコントローラーに接続されます。 デバイスを接続すると、その接続は2つのホストのいずれかに動的にルーティングされます。 ルーチンは、デバイスの速度に依存します。
 
-## <a name="why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub"></a>1 つだけの USB 3.0 ハブを接続していないときに 2 つのハブ デバイス マネージャーにするはなぜですか。
+## <a name="why-do-i-see-two-hubs-in-device-manager-when-i-have-connected-only-one-usb-30-hub"></a>USB 3.0 ハブを1つしか接続していない場合、デバイスマネージャーに2つのハブが表示されるのはなぜですか。
 
-XHCI ホスト コント ローラーはどの速度のデバイスを操作するときに、SuperSpeed ハブは SuperSpeed デバイスでのみ機能します。 USB 3.0 ハブはあらゆる速度に使えるように、2 つの部分がある: SuperSpeed ハブと USB 2.0 ハブ。 USB 3.0 ハブは、によって動的にルーティング デバイス、SuperSpeed ハブまたは 2.0 ハブにデバイスの速度に基づいて、すべての速度をサポートできます。
+XHCI ホストコントローラーは、デバイスの速度で動作しますが、SuperSpeed hub は SuperSpeed デバイスでのみ機能します。 USB 3.0 ハブがすべての速度で動作することを保証するために、SuperSpeed ハブと USB 2.0 ハブの2つの部分があります。 USB 3.0 hub は、デバイスの速度に基づいて、SuperSpeed hub または 2.0 hub にデバイスを動的にルーティングすることで、すべての速度をサポートできます。
 
-デバイス マネージャーを開き、表示**接続によってデバイス**、eXtensible ホスト コント ローラーを見つけます。 1 つの USB 3.0 ハブを USB 3.0 ポートに接続するときに、コント ローラーのルート ハブの 2 つのハブをダウン ストリーム。
+デバイスマネージャーを開き、**接続別にデバイス**を表示し、拡張可能なホストコントローラーを見つけます。 1つの USB 3.0 ハブを USB 3.0 ポートに接続すると、コントローラーのルートハブの下流に2つのハブがあります。
 
-![デバイス マネージャーの usb 3.0 ハブ](images/usb-3-hub-dm.png)
+![デバイスマネージャーの usb 3.0 ハブ](images/usb-3-hub-dm.png)
 
-次の例で、SuperSpeed USB ストレージ デバイスと USB オーディオ デバイスが両方に接続して、USB 3.0 ハブ。 ストレージ デバイスが SuperSpeed ハブのダウン ストリームとオーディオ デバイスが USB 2.0 ハブのダウン ストリームを確認できます。
+次の例では、SuperSpeed USB ストレージデバイスと USB オーディオデバイスが両方とも USB 3.0 ハブに接続されています。 ストレージデバイスが SuperSpeed ハブの下流にあり、オーディオデバイスが USB 2.0 ハブの下流にあることを確認できます。
 
-![デバイス マネージャーに接続されたデバイスの usb 3.0 ハブ](images/usb-3-hub-connected-devices-dm.png)
+![デバイスマネージャーでデバイスが接続されている usb 3.0 ハブ](images/usb-3-hub-connected-devices-dm.png)
 
-## <a name="which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports"></a>2\.0 ポートに接続されているデバイスにどのドライバー セットが読み込まれますか。
+## <a name="which-set-of-drivers-is-loaded-for-the-devices-that-are-connected-to-20-ports"></a>2.0 ポートに接続されているデバイス用に読み込まれるドライバーのセットを教えてください。
 
-ホスト コント ローラーの種類ごとに異なるバイナリのセットが読み込まれます。 Windows が読み込む USB ドライバー スタックが接続されているデバイスの速度が、ホスト コント ローラーの種類に関連していることを理解しておく必要があります。
+ホストコントローラーの種類ごとに、異なるバイナリセットが読み込まれます。 Windows が読み込む USB ドライバースタックは、接続されているデバイスの速度ではなく、ホストコントローラーの種類に関連していることを理解しておくことが重要です。
 
-この図では、どのドライバーが読み込まれる各 USB ホスト コント ローラーのさまざまな種類がわかります。
+このイメージでは、さまざまな種類の USB ホストコントローラーごとに読み込まれているドライバーを確認できます。
 
-![windows 8 における usb ドライバー スタック](images/usb-win8-driver-stacks.png)
+![windows 8 の usb ドライバースタック](images/usb-win8-driver-stacks.png)
 
-USB 3.0 ポートが xHCI コント ローラーに正しくルーティングされて、Windows は xHCI ドライバー スタック (USB 3.0 ドライバー スタックとも呼ばれます) を読み込みます。
+USB 3.0 ポートが xHCI コントローラーに正しくルーティングされている場合、Windows は xHCI ドライバースタック (USB 3.0 ドライバースタックとも呼ばれます) を読み込みます。
 
-USB 2.0 ポートが USB 2.0 ハブを介して EHCI コント ローラーに接続されている場合は、トラフィックは EHCI コント ローラーを移動され、USB 2.0 ドライバー スタックが読み込まれます。
+Usb 2.0 ポートが USB 2.0 ハブを介して EHCI コントローラーに接続されている場合、トラフィックは EHCI コントローラーを通過し、USB 2.0 ドライバースタックが読み込まれます。
 
-USB ドライバー スタックのドライバーの詳細については、次を参照してください。 [Windows での USB ホスト側ドライバー](https://go.microsoft.com/fwlink/p/?linkid=320134)します。
+USB ドライバースタックのドライバーの詳細については、「 [Windows の usb ホスト側ドライバー](https://go.microsoft.com/fwlink/p/?linkid=320134)」を参照してください。
 
-PC の USB 2.0 ポートがコンパニオン コント ローラーを使用する場合、ポートがルーティング ホスト コント ローラーは、デバイスの速度によって異なります。 たとえば、低速デバイスは UHCI または OHCI コント ローラーを経由して接続し、USBUHCI または USBOHCI ドライバーを使用します。 PC 高速デバイスを EHCI コント ローラーにルーティングする、そのため、Windows は USBEHCI ドライバーを使用します。
+PC の USB 2.0 ポートでコンパニオンコントローラーが使用されている場合、ポートがルーティングされるホストコントローラーはデバイスの速度に依存します。 たとえば、低速度のデバイスは、UHCI または OHCI コントローラーを介して接続し、USBUHCI または USBOHCI ドライバーを使用します。 PC が高速デバイスを EHCI コントローラーにルーティングするため、Windows では USBEHCI ドライバーが使用されます。
 
-別のデバイスの速度は、コント ローラーに読み込まれるドライバーを特定できません。 ただし、別のデバイスの速度は、コント ローラーの使用を判断する可能性があります。 コント ローラーは、常に同じドライバーを使用します。
+デバイスの速度が異なると、コントローラー用に読み込まれているドライバーは特定されません。 ただし、デバイスの速度が異なると、使用するコントローラーが決まります。 コントローラーは常に同じドライバーを使用します。
 
-## <a name="how-do-i-determine-whether-my-usb-30-device-is-operating-as-superspeed"></a>USB 3.0 デバイスが SuperSpeed として動作しているかどうかを判断する方法
+## <a name="how-do-i-determine-whether-my-usb-30-device-is-operating-as-superspeed"></a>USB 3.0 デバイスが SuperSpeed として動作しているかどうかを判断操作方法には
 
-Windows 8 で最初に、USB 3.0 ポートと xHCI ホスト コント ローラーがあることを確認します。 SuperSpeed USB デバイスが xHCI ホスト コント ローラーに接続されている場合、Windows 8 では、Windows 8 の UI の特定の部分での「USB 3.0 への接続済み」のメッセージが表示されます。 デバイスが XHCI コント ローラーではなく EHCI コント ローラーに接続されている場合、メッセージは代わりに読み取り、「USB 3.0 に接続されている場合に、デバイスが高速実行できます」。
+Windows 8 では、まず、USB 3.0 ポートと xHCI ホストコントローラーがあることを確認します。 SuperSpeed USB デバイスが xHCI ホストコントローラーに接続されている場合は、windows 8 UI の特定の部分で "USB 3.0 に接続しています" というメッセージが表示されます。 デバイスが XHCI コントローラーではなく EHCI コントローラーに接続されている場合は、メッセージが読み取られます。 "デバイスは USB 3.0 に接続すると、高速に実行できます" と表示されます。
 
-PC 設定では、これらの UI メッセージを表示できます。
+これらの UI メッセージは、[PC 設定] で確認できます。
 
-1. チャーム バーを開きます (上または下の画面の右下隅にカーソルをドラッグして、Windows キー + C を入力するか、指で右からスワイプして)。
-2. 選択**設定**し**PC 設定の変更**します。
-3. 選択、**デバイス** **PC 設定**します。
+1. Charms バーを開きます (カーソルを画面の上端または右下隅にドラッグするか、Windows キー + C を入力するか、指で右からスワイプします)。
+2. [**設定**] を選択し、[ **PC の設定**] を変更します。
+3. [ **PC 設定**] で**デバイス**を選択します。
 
-このイメージは、USB 3.0 デバイスが SuperSpeed で動作しているときに、UI のメッセージを示します。
+この画像は、USB 3.0 デバイスが SuperSpeed で動作しているときの UI メッセージを示しています。
 
-![superspeed usb デバイスが superspeed で ](images/usb-superspeed.jpg)
+![superspeed で動作する superspeed usb デバイス ](images/usb-superspeed.jpg)
 
-このイメージは、USB デバイスが SuperSpeed よりも小さいバス速度で動作しているときに、UI のメッセージを示します。
+この画像は、USB デバイスが SuperSpeed より低いバス速度で動作しているときの UI メッセージを示しています。
 
-![高速で動作している superspeed usb デバイス ](images/usb-high-speed.jpg)
+![superspeed usb デバイスが高速に動作 ](images/usb-high-speed.jpg)
 
-デバイスとプリンターのようなメッセージを表示するには、これらの画像に示すようにします。
+次の図に示すように、[デバイスとプリンター] で同様のメッセージを表示できます。
 
-![superspeed usb デバイスが superspeed で](images/usb-superspeed-devices.jpg)
+![superspeed で動作する superspeed usb デバイス](images/usb-superspeed-devices.jpg)
 
-![高速で動作している superspeed デバイス](images/usb-high-speed-devices.jpg)
+![高速で動作する superspeed デバイス](images/usb-high-speed-devices.jpg)
 
-USB 3.0 デバイスがストレージ デバイスの場合は、Windows エクスプ ローラーに表示のようなメッセージ ボリューム ラベルを選択すると、次のようです。 なお、**ビュー -&gt;詳細**メッセージを表示するウィンドウを選択してください。
+USB 3.0 デバイスが記憶装置の場合、次に示すように、ボリュームラベルが選択されると、エクスプローラーに類似のメッセージが表示されます。 メッセージを表示するには、**ビュー&gt; の詳細**ペインを選択する必要があることに注意してください。
 
-![superspeed usb デバイスが superspeed で ](images/usb-superspeed-storage-device.jpg)
+![superspeed で動作する superspeed usb デバイス ](images/usb-superspeed-storage-device.jpg)
 
-![高速で動作している superspeed usb デバイス](images/usb-high-speed-storage-device.jpg)
+![superspeed usb デバイスが高速に動作](images/usb-high-speed-storage-device.jpg)
 
-デバイス ドライバーを作成する場合、 [USBView](https://go.microsoft.com/fwlink/p/?linkid=320135) Windows Driver Kit (WDK) に含まれるツールは非常に便利です。 Windows 8 WDK の SuperSpeed USB 情報を表示する USBView が更新されます。 このツールを使用すると、デバイスが SuperSpeed で動作しているかどうかを判断します。 このイメージは、USB 3.0 デバイスが superspeed で USBView を示しています。
+デバイスドライバーを作成する場合、Windows Driver Kit (WDK) に含まれている[Usbview](https://go.microsoft.com/fwlink/p/?linkid=320135)ツールは非常に便利です。 Windows 8 WDK の場合、Microsoft は USBView を更新して SuperSpeed USB 情報を表示します。 このツールを使用すると、デバイスが SuperSpeed で動作しているかどうかを判断できます。 このイメージは、SuperSpeed で動作している USB 3.0 デバイスを USBView で示しています。
 
-![superspeed usb デバイスが superspeed で](images/usb-superspeed-usbview.jpg)
+![superspeed で動作する superspeed usb デバイス](images/usb-superspeed-usbview.jpg)
 
-デバイス ドライバー開発者は、使用する場合、 [USB ドライバー スタック](https://go.microsoft.com/fwlink/p/?linkid=320134)はという新しい ioctl [IOCTL\_USB\_取得\_ノード\_接続\_情報\_EX\_V2](https://go.microsoft.com/fwlink/p/?linkid=320136)、USB 3.0 デバイスの速度情報のクエリに使用できます。
+デバイスドライバーの開発者の場合、usb[ドライバースタック](https://go.microsoft.com/fwlink/p/?linkid=320134)は IOCTL\_usb\_と呼ばれる新しい ioctl を公開します。この ioctl は[\_ノード\_接続\_](https://go.microsoft.com/fwlink/p/?linkid=320136)\_\_V2 を取得します。これを使用して、usb 3.0 デバイスの速度情報を照会できます。
 
-## <a name="why-isnt-my-superspeed-usb-device-faster-than-an-equivalent-high-speed-usb-device"></a>なぜ私の SuperSpeed USB デバイスを同等の高速 USB デバイスより速くないでしょうか。
+## <a name="why-isnt-my-superspeed-usb-device-faster-than-an-equivalent-high-speed-usb-device"></a>SuperSpeed USB デバイスが同等の高速 USB デバイスより高速ではないのはなぜですか。
 
-一般に、USB 3.0 の USB デバイスが高速 USB デバイスより速くがない場合、SuperSpeed で実行とはしません。 SuperSpeed USB デバイスが USB 3.0 ポートに接続されている場合に、動作しない可能性 SuperSpeed で、次の理由。
+一般に、USB 3.0 USB デバイスが高速 USB デバイスより高速ではない場合、SuperSpeed では実行されません。 SuperSpeed USB デバイスが USB 3.0 ポートに接続されている場合、次の理由により、SuperSpeed で動作しない可能性があります。
 
-- USB 2.0 ハブを使用しています。
+- USB 2.0 ハブを使用している。
 
-    ハブを使用している場合は、USB 3.0 ハブはあることを確認します。 USB 2.0 ハブを使用している場合、接続している SuperSpeed USB デバイスは高速で動作します。 ハブ、USB 3.0 ハブと交換またはデバイスを直接 USB 3.0 ポートに接続します。
+    ハブを使用している場合は、USB 3.0 ハブであることを確認します。 USB 2.0 ハブを使用している場合は、接続されている SuperSpeed USB デバイスは高速で動作します。 ハブを USB 3.0 ハブに置き換えるか、デバイスを USB 3.0 ポートに直接接続します。
 
-- USB 3.0 ハブのファームウェアが古くなっています。
+- USB 3.0 hub のファームウェアが最新ではありません。
 
-    特定の以前の USB 3.0 ハブはうまく機能しませんでした。 その結果、Windows は、それらのハブの 2.0 の機能のみを使用します。 デバイス マネージャーでは、この図のように、「機能不可」のハブが示されている場合は Windows 8 は、ハブの 3.0 の機能を使用していません。
+    以前の USB 3.0 ハブは正常に機能しませんでした。 このため、Windows では、これらのハブの2.0 部分のみを使用します。 このイメージに示されているように、デバイスマネージャーが "機能していない" ハブを示している場合、Windows 8 はハブの3.0 部分を使用していません。
 
-    ![機能不可の superspeed usb ハブ](images/usb-superspeed-nonfunctional.jpg)
+    ![機能していない superspeed usb ハブ](images/usb-superspeed-nonfunctional.jpg)
 
-    SuperSpeed デバイスを USB 3.0 ポートに直接接続するか、ハブ上のファームウェアを更新します。 Windows 8 では、新しいファームウェアのハブを認識します。
+    SuperSpeed デバイスを USB 3.0 ポートに直接接続するか、ハブのファームウェアを更新することができます。 Windows 8 は、新しいファームウェアが搭載されているハブを認識します。
 
-- デバイスが USB 2.0 ケーブルで接続します。
+- デバイスは USB 2.0 ケーブルで接続されています。
 
-    デバイスの接続に使用されているケーブルが USB 3.0 ケーブルであることを確認します。 USB 3.0 ケーブルにシグナル インテグリティの問題があることもできます。 その場合は、デバイスは、高速に切り替わる可能性があります。 その場合は、別の USB 3.0 ケーブルを使用する必要があります。
+    デバイスへの接続に使用されているケーブルが USB 3.0 ケーブルであることを確認します。 また、USB 3.0 ケーブルに信号の整合性の問題がある可能性もあります。 この場合、デバイスが高速に切り替わることがあります。 その場合は、別の USB 3.0 ケーブルを使用する必要があります。
 
-- デバイスのファームウェアが古くなっています。
+- デバイスのファームウェアが最新ではありません。
 
-    製造元の web サイトから最新バージョンを入手して SuperSpeed USB デバイスのファームウェアを更新します。 一部の SuperSpeed USB デバイス製造元では、ファームウェアの更新プログラムとして、デバイスで見つかったバグの修正プログラムをリリースします。
+    製造元の web サイトから最新バージョンを入手して、SuperSpeed USB デバイスのファームウェアを更新します。 一部の SuperSpeed USB デバイス製造元は、ファームウェアの更新プログラムとして、デバイスで見つかったバグの修正プログラムをリリースします。
 
-- ホスト コント ローラーのファームウェアが古くなっています。
+- ホストコントローラーのファームウェアが最新ではありません。
 
-    PC の製造元のサイトからもから最新バージョンを取得することで、USB 3.0 コント ローラーのファームウェアを更新、カードの製造元のサイトに追加します。 一部の USB 3.0 コント ローラー製造元では、ファームウェアの更新プログラムとして、コント ローラーで見つかったバグの修正プログラムをリリースします。
+    PC 製造元のサイトから最新のバージョンを入手するか、カードの製造元の追加のサイトから、USB 3.0 コントローラーのファームウェアを更新します。 一部の USB 3.0 コントローラー製造元では、ファームウェアの更新プログラムとして、コントローラーで見つかったバグの修正プログラムがリリースされています。
 
-- システムの BIOS が古くなっています。
+- システムの BIOS が最新ではありません。
 
-    PC メーカーから最新バージョンを取得することにより、システムの BIOS を更新します。 一部のマザーボードで BIOS 正しくルーティングできますない EHCI コント ローラーに xHCI ホスト コント ローラーに接続されているデバイス。 SuperSpeed USB デバイスが高速で動作するを強制ルーティングの間違いです。 BIOS の更新プログラムは、この問題を修正できます。
+    PC メーカーから最新バージョンを入手して、システムの BIOS を更新します。 マザーボードによっては、BIOS が xHCI ホストコントローラーに接続されているデバイスを EHCI コントローラーに誤ってルーティングすることがあります。 ルーティングが正しくないと、SuperSpeed USB デバイスは高速で動作します。 BIOS の更新により、この問題を解決できる場合があります。
 
-## <a name="is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware"></a>複合と 1 つのハードウェアに複合デバイスを用意することはできますか。
+## <a name="is-it-possible-to-have-a-composite-and-a-compound-device-in-one-piece-of-hardware"></a>1つのハードウェアに複合デバイスと複合デバイスを用意することはできますか。
 
-[はい]。 コンパウンド複合 USB デバイスの例は、Microsoft Natural Keyboard Pro が 3 つのポート、バスを利用したハブのです。 デバイスでは、ポート 1 に接続されている複合デバイスがあります。 2 つのポートは、エンドユーザーに公開されます。
+できます。 3ポートのバスを搭載したハブを搭載した Microsoft 自然キーボード Pro は、複合複合 USB デバイスの一例です。 デバイスには、ポート1に接続された複合デバイスがあります。 2つの追加のポートがエンドユーザーに公開されます。
 
-ポート 1 に接続されているデバイスは、低速複合デバイスです。 デバイスでは、ヒューマン インターフェイス デバイス (HID) の USB 規格デバイス クラス定義に準拠する、2 つのインターフェイスがあります。 複合デバイスは、最上位のコレクションを使用して、1 つの HID インターフェイス経由ですべてのコレクションを多重化ではなく 2 つの HID インターフェイスを提供します。 この設計は、古い Bios と互換性のために選択されました。
+ポート1に接続されているデバイスは、低速の複合デバイスです。 デバイスには、2つのインターフェイスがあります。どちらも、ヒューマンインターフェイスデバイス (HID) の USB 標準デバイスクラス定義に準拠しています。 複合デバイスは、最上位レベルのコレクションを使用して、1つの HID インターフェイスですべてのコレクションを多重化するのではなく、2つの HID インターフェイスを提供します。 この設計は、旧バージョンの Bios との互換性のために選択されました。
 
-## <a name="why-are-some-of-my-usb-devices-reinstalled-when-they-are-moved-to-a-new-port"></a>一部の USB デバイスを新しいポートに移動したときに再インストールはなぜですか。
+## <a name="why-are-some-of-my-usb-devices-reinstalled-when-they-are-moved-to-a-new-port"></a>新しいポートに移動すると、USB デバイスの一部が再インストールされるのはなぜですか。
 
-Windows 2000 および以降のオペレーティング システムでは、USB デバイスが別の 1 つのポートに移動した場合は、新しい物理デバイス オブジェクト (PDO) が作成されます。 ハードウェア固有の USB シリアル番号を報告する場合は、新しい PDO は作成されません。
+Windows 2000 以降のオペレーティングシステムでは、USB デバイスがあるポートから別のポートに移動されると、新しい物理デバイスオブジェクト (PDO) が作成されます。 ハードウェアが一意の USB シリアル番号を報告した場合、新しい PDO は作成されません。
 
-同じ PDO を再利用して、デバイス エクスペリエンス変更されていないこと、デバイスが同じポートでも新しいポートに再度挿入されるかどうかを確認するには、ハードウェア ベンダーは自身のデバイスでシリアル番号を格納する必要があります。 Windows ハードウェア認定プログラムの要件に従ってシリアル番号はデバイスのインストール id を共有するすべてのデバイスに対して一意である必要があります。
+同じ PDO を再利用し、デバイスを同じポートまたは新しいポートに再挿入するかどうかにかかわらず、デバイスのエクスペリエンスが変更されないようにするには、ハードウェアベンダーがデバイスにシリアル番号を格納する必要があります。 Windows ハードウェア認定プログラムの要件に従って、シリアル番号は、デバイスのインストール識別子を共有するすべてのデバイスで一意である必要があります。
 
-## <a name="is-there-a-list-of-design-recommendations-for-usb-product-packaging"></a>USB 製品パッケージのデザイン推奨一覧はありますか。
+## <a name="is-there-a-list-of-design-recommendations-for-usb-product-packaging"></a>USB 製品パッケージの設計に関する推奨事項の一覧がありますか。
 
-USB の場合は、Microsoft およびその他の USB と協力して-独立系ハードウェア ベンダーが、パッケージに含めるための推奨事項の一覧を作成する場合はメンバー企業です。
+USB (if) は、Microsoft および他の USB-IF メンバー企業と協力して、独立系ハードウェアベンダーがパッケージに含める推奨事項の一覧を作成しました。
 
-詳細については、USB Web サイトで使用できます。
+詳細については、USB Web サイトを参照してください。
 
-USB および高速 USB を参照してください: [ http://www.usb.org/developers/packaging ](https://www.usb.org/developers/packaging/)/。
+USB の高速および SuperSpeed については、 [https://www.usb.org/](https://www.usb.org/)を参照してください。
 
-SuperSpeed USB を参照してください:<http://www.usb.org/channel/>します。
+## <a name="do-i-have-to-rewrite-my-client-driver-to-support-usb-30-devices"></a>USB 3.0 デバイスをサポートするようにクライアントドライバーを書き換える必要がありますか。
 
-## <a name="do-i-have-to-rewrite-my-client-driver-to-support-usb-30-devices"></a>USB 3.0 デバイスをサポートするために、クライアント ドライバーを書き直す必要はでしょうか。
+すべての既存のクライアントドライバーは、低、完全、または高速のデバイスが USB 3.0 ポートに接続されている場合と同様に動作します。 Windows 8 では、既存のクライアントドライバーとの互換性が確保されています。
 
-既存のすべてのクライアント ドライバーは、低、いっぱいの場合は、作業を続行するか、高速のデバイスが USB 3.0 ポートに接続されています。 Windows 8 では、既存のクライアント ドライバーとの互換性を確認されています。
+USB 3.0 ドライバースタックは、IRQL レベル、呼び出し元コンテキスト、およびエラー状態を管理します。デバイスと対話するときの再試行の頻度とタイミング、および既存のドライバーが引き続き動作することを確認します。 テストすることも非常に重要です。
 
-USB 3.0 ドライバー スタック IRQL レベル、呼び出し元コンテキスト、およびエラーの状態を維持します。デバイス、および既存のドライバーが作業を続けるように対話するときに、頻度とタイミングを再試行してください。 テストする非常に重要ですが。
+一般的なエラーは次のような場合に発生します。
 
-一般的なエラーが発生します。
+- SuperSpeed エンドポイントコンパニオンの記述子が存在するため、ドライバーのエンドポイント記述子の解析が中断します。
+- 速度が向上するため、アプリケーションプロトコルレベルでタイミングの問題が発生する可能性があります。
+- エンドポイントでサポートされる最大パケットサイズが異なる場合があります。
+- 関数の電源管理により、セレクティブサスペンド操作のタイミングが異なる場合があります。
 
-- ドライバーのエンドポイント記述子が SuperSpeed エンドポイント コンパニオンの記述子の存在によって改行を解析します。
-- 速度の向上により、アプリケーション プロトコル レベルでタイミングの問題に実行する場合があります。
-- エンドポイントでサポートされている最大パケット サイズが異なる可能性があります。
-- タイミングの機能の電源管理のため選択的な中断操作が異なる可能性があります。
+Windows 7 以前のバージョンのオペレーティングシステムでは、USB 3.0 ドライバースタックはサードパーティによって提供されています。 そのため、サードパーティの USB ドライバースタックで動作するようにドライバーをテストすることを強くお勧めします。
 
-Windows 7 と以前のバージョンのオペレーティング システムでは、USB 3.0 ドライバー スタックは、サード パーティによって提供されます。 そのため、サード パーティ製の USB ドライバー スタックを使用するドライバーをテストすることを強くお勧めします。
+高速で SuperSpeed USB デバイス向けの Windows 8 の新しいクライアントドライバーでは、新しい機能を選択する必要があります。
 
-高速および SuperSpeed USB デバイスを Windows 8 でのクライアント ドライバーは新しいの新機能を選択する必要があります。
+## <a name="which-driver-is-loaded-for-my-superspeed-storage-device-use-uaspstorsys-or-usbstorsys"></a>SuperSpeed ストレージデバイスで使用されているドライバー (Uaspstor または Usbstor.sys)
 
-## <a name="which-driver-is-loaded-for-my-superspeed-storage-device-use-uaspstorsys-or-usbstorsys"></a>SuperSpeed ストレージ デバイスで使用する、Uaspstor.sys と Usbstor.sys ドライバーが読み込まれますか。
+USB 接続 SCSI (UAS) プロトコルは、確立された USB 大容量記憶装置プロトコル (ボット) に対してパフォーマンスを向上するように設計された新しい大容量記憶装置プロトコルです。 これは、プロトコルのオーバーヘッドを減らし、SATA ネイティブコマンドキュー (NCQ) をサポートし、複数のコマンドを並行して処理することで実現されます。 これを行うために、UA は、ストリームと呼ばれる一括転送に新しい USB 3.0 機能を使用します。
 
-USB 接続 SCSI (UAS) プロトコルは、一括専用 Transport (BOT) 確立された USB マス ストレージ プロトコル経由でパフォーマンスを向上させるために設計されています新しいマス ストレージ プロトコルです。 これは SATA ネイティブ コマンド キューイング (NCQ) をサポートしているプロトコルのオーバーヘッドを減らすことで、複数のコマンドを並列で処理することによって。 これを行うには、UA は、USB 3.0 の新しい機能をバルク転送と呼ばれるストリーム。
+既存の大容量記憶装置ドライバー Usbstor.sys は、BOT プロトコルを使用します。 SuperSpeed USB デバイスなど、あらゆる速度のデバイスで動作します。
 
-既存のマス ストレージ ドライバー Usbstor.sys、BOT プロトコルを使用します。 SuperSpeed USB デバイスを含め、デバイスのすべての速度で動作します。
+Windows 8 の場合、Microsoft には、UA プロトコルを使用する新しい大容量記憶装置クラスドライバー Uaspstor が付属しています。 ストリームは USB 3.0 の新機能であるため、Uaspstor は、ハードウェアでストリームがサポートされている場合にのみストリームを使用できます (SuperSpeed USB デバイスは xHCI ホストコントローラーに接続されています)。 また、ドライバーにはソフトウェアストリームのサポートも含まれているので、ホストの種類に関係なく、高速で動作するデバイスにも読み込むことができます。
 
-Windows 8 では、新しい大容量記憶装置クラス ドライバー Uaspstor.sys UAS プロトコルを使用しています。 ストリームは USB 3.0 に新しいため、そのため Uaspstor.sys のみ使用できますストリーム ハードウェア (SuperSpeed USB デバイスが xHCI ホスト コント ローラーに接続されている) ストリームをサポートしている場合。 ドライバーもサポートしています、ソフトウェア ストリームのため、デバイスで読み込むことができますもホストの種類に関係なく、高速です。
+大容量記憶装置を Windows 8 に接続し、そのデバイスで UA がサポートされている場合は、Windows によって Uaspstor 読み込まれます。 場合によっては、特定の xHCI ホストコントローラーのハードウェアストリームに関する既知の問題や、デバイスの UAS プロトコルの実装に関する既知の問題が考えられます。 このような場合、Windows は BOT プロトコルにフォールバックし、代わりに Usbstor.sys ドライバーを読み込みます。
 
-大容量記憶装置デバイスを Windows 8 に接続するであり、そのデバイスが UAS をサポートする場合、Windows は、Uaspstor.sys を読み込みます。 場合によってである可能性がありますが認識またはデバイスの UAS プロトコルの実装に関する既知の問題の特定の xHCI ホスト コント ローラー上のハードウェア ストリームで問題。 ような場合は、Windows は、BOT プロトコルにフォールバックし、代わりに Usbstor.sys ドライバーを読み込みます。
+Uaspstor は Windows 8 に新しく追加されたものです。 以前のバージョンの Windows には存在しません。
 
-Uaspstor.sys は Windows 8 で新しく導入します。 以前のバージョンの Windows に存在するがありません。
+## <a name="which-usb-dwg-classes-does-microsoft-support"></a>Microsoft はどの USB DWG クラスをサポートしていますか。
 
-## <a name="which-usb-dwg-classes-does-microsoft-support"></a>Microsoft はどの USB DWG クラスをサポートしますか。
+Windows は、USB デバイスの作業グループ (DWG) によって定義されているいくつかの USB クラスをサポートしています。 現在の USB クラス仕様およびクラスコードの一覧については、 [https://www.usb.org/documents]( https://go.microsoft.com/fwlink/p/?LinkId=623332)の Usb DWG Web サイトを参照してください。
 
-Windows では、USB デバイス Working Group (DWG) が定義されているいくつかの USB クラスをサポートします。 USB クラス仕様とクラス コードの現在の一覧については、USB DWG Web サイトを参照してください。 [ http://www.usb.org/developers/devclass\_docs]( https://go.microsoft.com/fwlink/p/?LinkId=623332)します。
-
-このテーブルは、Windows でサポートされている USB DWG クラスを強調表示し、また各クラスをサポートする Windows のバージョンを示します。
+次の表は、Windows でサポートされている USB DWG クラスを示しています。また、各クラスをサポートする Windows のバージョンも示しています。
 
 <table>
 <colgroup>
@@ -268,13 +265,13 @@ Windows では、USB デバイス Working Group (DWG) が定義されている�
 <tr class="odd">
 <td>Bluetooth クラス</td>
 <td>0xE0</td>
-<td>Bthusb.sys</td>
+<td>Bthusb .sys</td>
 <td>Windows XP 以降</td>
 </tr>
 <tr class="even">
-<td>チップ/スマート カード インターフェイス デバイス (CCID)</td>
+<td>チップ/スマートカードインターフェイスデバイス (CCID)</td>
 <td>0x0B</td>
-<td>Usbccid.sys</td>
+<td>Usbccid .sys</td>
 <td><p>Windows Server 2008 以降</p>
 <p>Windows Vista 以降</p>
 <p>Windows Server 2003<em></p>
@@ -284,7 +281,7 @@ Windows では、USB デバイス Working Group (DWG) が定義されている�
 <tr class="odd">
 <td>Hub クラス</td>
 <td>0x09</td>
-<td>Usbhub.sys</td>
+<td>Usbhub</td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p>
 <p>Windows 2000 以降</p></td>
@@ -292,7 +289,7 @@ Windows では、USB デバイス Working Group (DWG) が定義されている�
 <tr class="even">
 <td>ヒューマン インターフェイス デバイス (HID)</td>
 <td>0x03</td>
-<td>Hidusb.sys</td>
+<td>Hidusb .sys</td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p>
 <p>Windows 2000 以降</p></td>
@@ -308,14 +305,14 @@ Windows では、USB デバイス Working Group (DWG) が定義されている�
 <tr class="even">
 <td>USB 接続 SCSI (UAS)</td>
 <td>0x08</td>
-<td>Uaspstor.sys</td>
+<td>Uaspstor</td>
 <td><p>Windows Server 2012</p>
 <p>Windows 8</p></td>
 </tr>
 <tr class="odd">
 <td>印刷クラス</td>
 <td>0x07</td>
-<td>Usbprint.sys</td>
+<td>Usbprint .sys</td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p>
 <p>Windows 2000 以降</p></td>
@@ -323,8 +320,8 @@ Windows では、USB デバイス Working Group (DWG) が定義されている�
 <tr class="even">
 <td>スキャン/イメージング (PTP)</td>
 <td>0x06</td>
-<td><p>WpdUsb.sys</p>
-<p>Usbscan.sys</p></td>
+<td><p>WpdUsb .sys</p>
+<p>Usbscan .sys</p></td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p>
 <p>Windows 2000 以降</p></td>
@@ -332,243 +329,239 @@ Windows では、USB デバイス Working Group (DWG) が定義されている�
 <tr class="odd">
 <td>メディア転送 (MTP)</td>
 <td>0x06</td>
-<td>WpdUsb.sys</td>
+<td>WpdUsb .sys</td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p></td>
 </tr>
 <tr class="even">
-<td>USB オーディオ クラス</td>
+<td>USB オーディオクラス</td>
 <td>0x01</td>
-<td>Usbaudio.sys</td>
+<td>Usbaudio. sys</td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p>
 <p>Windows 2000 以降</p></td>
 </tr>
 <tr class="odd">
-<td>モデム クラス (CDC)</td>
+<td>Modem クラス (CDC)</td>
 <td>0x02</td>
-<td>Usbser.sys</td>
+<td>Usbser</td>
 <td><p>Windows Server 2003 以降</p>
 <p>Windows XP 以降</p>
 <p>Windows 2000 以降</p></td>
 </tr>
 <tr class="even">
-<td>ビデオ クラス (UVC)</td>
+<td>Video クラス (UVC)</td>
 <td>0x0E</td>
-<td>Usbvideo.sys</td>
+<td>Usbvideo. sys</td>
 <td><p>Windows Vista 以降</p>
 <p>Windows XP</em></p></td>
 </tr>
 </tbody>
 </table>
 
-\*特別な手順については、このドライバーがリリースされたオペレーティング システムよりも後であるために、このドライバーを読み込むために必要です。 Windows クラス ドライバーが可能性があります DWG クラス仕様で説明されている機能のすべてをサポートしていません。 この場合、ドライバーはクラスの一致に基づいて読み込みません。 クラス仕様の中で実装された機能については、WDK のマニュアルを参照してください。
+このドライバーはオペレーティングシステムより後にリリースされている可能性があるため、このドライバーを読み込むには \*特別な指示が必要です。 Windows クラスドライバーは、DWG クラス仕様で説明されているすべての機能をサポートしていない場合があります。 この場合、ドライバーはクラスの一致に基づいて読み込まれません。 クラス仕様内で実装されている機能の詳細については、WDK のドキュメントを参照してください。
 
-## <a name="which-device-setup-class-should-i-use-for-a-custom-usb-device"></a>どのデバイス セットアップ クラス、カスタムの USB デバイスを使用する必要がありますか。
+## <a name="which-device-setup-class-should-i-use-for-a-custom-usb-device"></a>カスタム USB デバイスにどのデバイスセットアップクラスを使用する必要がありますか。
 
-Microsoft では、ほとんどのデバイスの種類のシステム定義のセットアップ クラスを提供します。 システム定義のセットアップ クラス Guid は Devguid.h で定義されます。 詳細については、WDK を参照してください。 クラス Guid の Windows の一覧については、これらのトピックを参照してください。
+Microsoft では、ほとんどの種類のデバイスに対してシステム定義のセットアップクラスを提供しています。 システム定義のセットアップクラス Guid は、Devguid .h で定義されています。 詳細については、「WDK」を参照してください。 Windows クラス Guid の一覧については、次のトピックを参照してください。
 
-- [システム定義のデバイス セットアップ クラスがベンダーに使用できます。](https://go.microsoft.com/fwlink/p/?linkid=320141)
-- [システム定義のデバイス セットアップ クラスがシステム用に予約されています](https://go.microsoft.com/fwlink/p/?linkid=320142)
+- [ベンダーが使用できるシステム定義のデバイスセットアップクラス](https://go.microsoft.com/fwlink/p/?linkid=320141)
+- [システムで使用するために予約されているシステム定義のデバイスセットアップクラス](https://go.microsoft.com/fwlink/p/?linkid=320142)
 
-独立系ハードウェア ベンダーは、バスの種類ではなく、USB デバイスの種類に関連付けられているセットアップ クラスを使用する必要があります。 デバイスの種類を Microsoft が指定されていない既存のクラス GUID を開発している場合は、新しいデバイス セットアップ クラスを定義できます。
+独立系ハードウェアベンダーは、バスの種類ではなく、USB デバイスの種類に関連付けられているセットアップクラスを使用する必要があります。 Microsoft によって既存のクラス GUID が提供されていないデバイスの種類を開発している場合は、新しいデバイスセットアップクラスを定義できます。
 
-Windows 8 では、新しいセットアップ クラスが定義されて、名前付き**USBDevice** (ClassGuid = {88bae032-5a81-49f0-bc3d-a4ff138216d6})。 デバイスの種類を開発している場合を使用してデバイスを関連付ける**USBDevice**セットアップ クラスではなく**USB**します。 **USBDevice**クラスは、Windows Vista およびそれ以降のバージョンのオペレーティング システムで動作します。
+Windows 8 では、" **Usbdevice** " という名前の新しいセットアップクラスが定義されています (classguid = {88 Bae032-5a81-49F0-bc3de4ff138216d6})。 デバイスの種類を開発している場合は、セットアップクラスの**USB**ではなく、デバイスを**usbdevice**に関連付けます。 **Usbdevice**クラスは、Windows Vista 以降のバージョンのオペレーティングシステムで動作します。
 
-セットアップ クラス**USB** (ClassGuid = 36fc9e60-c465-11cf-8056-444553540000) は USB ホスト コント ローラーと USB ハブに対してのみに予約されており、他のデバイス カテゴリは使用しないでください。 このセットアップ クラスを正しく使用すると、各デバイス ドライバーが Windows ロゴ テストに失敗する可能性があります。
+セットアップクラス**usb** (classguid = {36fc9e60-c465-11cf-8056-444553540000}) は、usb ホストコントローラーと usb ハブ専用に予約されており、他のデバイスカテゴリには使用できません。 このセットアップクラスを誤って使用すると、デバイスドライバが Windows ロゴテストに失敗する可能性があります。
 
-## <a name="why-wont-my-cpu-enter-c3-when-i-attach-some-usb-devices"></a>なぜしない CPU が c3 一部の USB デバイスを接続したときか。
+## <a name="why-wont-my-cpu-enter-c3-when-i-attach-some-usb-devices"></a>USB デバイスを接続したときに CPU が C3 にならないのはなぜですか。
 
-USB デバイスが接続されると、USB ホスト コント ローラーは、ダイレクト メモリ アクセス (DMA) バス マスター操作にはフレーム スケジューラをポーリングします。 「中断イベント」など、バス マスター トラフィック、割り込み、またはその他のシステム アクティビティがいくつかあるため、定義上、C3 では、CPU のキャッシュは覗き見ことはできません、CPU が C3 の外に移動します。
+USB デバイスが接続されている場合、USB ホストコントローラーは、ダイレクトメモリアクセス (DMA) バスマスター操作であるフレームスケジューラをポーリングします。 バスマスタトラフィック、割り込み、またはその他のいくつかのシステムアクティビティなどの "中断イベント" は、cpu を C3 から除外します。これは、cpu のキャッシュを C3 に捜索ことができないためです。
 
-この問題を回避する 2 つの方法はあります。
+この問題を回避するには、次の2つの方法があります。
 
 - ハードウェアの削除。
 
-    ハードウェアをユニバーサル シリアル バスから電子的に切断できます。 たとえば、USB リーダーから削除されると、記憶域メディアに、USB リーダーが、電子的な切断をエミュレートおよびメディアが再度挿入されるときに再接続することができます。 この場合、ホスト コント ローラー上の USB デバイスがないため、C3 に移行が発生することができます。
+    場合によっては、ユニバーサルシリアルバスからハードウェアを電子的に切断できます。 たとえば、USB リーダーから記憶メディアを削除すると、USB リーダーは、電子切断をエミュレートし、メディアが再挿入されたときに再接続することができます。 この場合、ホストコントローラーに USB デバイスがないため、C3 の移行が発生する可能性があります。
 
-- 選択的な中断します。
+- セレクティブサスペンド。
 
-    Windows XP 以降のオペレーティング システムで使用可能な唯一の代替手段では、USB セレクティブ サスペンドをサポートします。 この機能は、中断、デバイスがアイドル状態になった場合でも、システム自体は完全に operational 電源の状態 (S0) を維持制御する USB デバイス ドライバーを使用できます。 セレクティブ サスペンドは、USB 機能ドライバーをすべてサポートしている場合に特に強力です。 1 つでもドライバーではサポートされていない場合、CPU は C3 に入力できません。 セレクティブ サスペンドの詳細については、WDK を参照してください。
+    Windows XP 以降のオペレーティングシステムで使用できる唯一の代替手段は、USB のセレクティブサスペンドをサポートすることです。 この機能を使用すると、システム自体が完全に動作している電源状態 (S0) にある場合でも、デバイスがアイドル状態になったときに制御する USB デバイスをドライバーで中断できます。 セレクティブサスペンドは、すべての USB 関数ドライバーがサポートしている場合は特に強力です。 1つのドライバーでもサポートされていない場合、CPU は C3 に入ることができません。 選択的中断の詳細については、「WDK」を参照してください。
 
-## <a name="which-usb-class-drivers-support-selective-suspend"></a>どの USB クラス ドライバーがセレクティブ サスペンドをサポートしますか。
+## <a name="which-usb-class-drivers-support-selective-suspend"></a>セレクティブサスペンドをサポートする USB クラスドライバー
 
-セレクティブ サスペンドをサポートする Windows 8 の USB クラス ドライバーの一覧を次には。
+セレクティブサスペンドをサポートする Windows 8 の USB クラスドライバーの一覧を次に示します。
 
-- Bluetooth
+- [Bluetooth]
 
-    このドライバーは、Windows XP Service Pack 2 および以降のバージョンの Windows を実行しているコンピューターで、デバイスをセレクティブ サスペンドことができます。 ドライバーでは、Bluetooth 無線構成記述子で自己給電とリモート ウェイクのビットを設定する必要があります。 ドライバー選択的に中断します (D2)、Bluetooth 無線 Bluetooth のアクティブな接続が存在しない場合。
+    このドライバーは、Windows XP Service Pack 2 以降のバージョンの Windows を実行しているコンピューター上のデバイスを選択的に中断できます。 ドライバーでは、Bluetooth ラジオで、構成記述子に自己給電とリモートウェイクのビットを設定する必要があります。 アクティブな Bluetooth 接続が存在しない場合、ドライバーは Bluetooth ラジオを選択的に中断 (D2) します。
 
 - USB HID
 
-    このドライバーは HID デバイスをセレクティブ サスペンドことができます。 すべてのデバイス状態の変更にリモート ウェイク信号をトリガーするユーザーの責任になります。 HID スタックでセレクティブ サスペンドを有効にするには、デバイスの特定の VID+PID に、SelectiveSuspendEnabled レジストリ値を有効にする必要があります。 例については、Input.inf を参照してください。
+    このドライバーは、HID デバイスを選択的に中断できます。 すべてのデバイスの状態の変更に対してリモートウェイク信号をトリガーする必要があります。 HID スタックでセレクティブサスペンドを有効にするには、デバイスの特定の VID + PID に対して SelectiveSuspendEnabled レジストリ値が有効になっている必要があります。 例については、「Input .inf」を参照してください。
 
-    Windows 8 のコネクテッド スタンバイをサポートするシステムで、このドライバーは選択的なシステムがコネクテッド スタンバイ時 (D2) を中断します。 このドライバーでは、システムをスリープ解除でき、画面を有効にすることができます。
+    Windows 8 のコネクトスタンバイをサポートするシステムでは、このドライバーはシステムがコネクトスタンバイ状態のときにセレクティブサスペンド (D2) に入ります。 このドライバーは、システムをスリープ解除して画面をオンにすることができます。
 
 - USB ハブ
 
-    このドライバーはセレクティブ サスペンド ルートまたは外部ハブとデバイスが添付されていないことに、またはそのハブに接続されているすべてのデバイスを選択的に中断されることができます。
+    このドライバーは、デバイスが接続されていない場合、またはそのハブに接続されているすべてのデバイスを選択的に中断できる場合に、ルートまたは外部ハブを選択的に中断できます。
 
 - USB モデム
 
-    アクティブなモデム接続が存在しない場合に、このドライバーは、デバイスをセレクティブ サスペンドことができます。
+    このドライバーは、アクティブなモデム接続が存在しない場合に、デバイスを選択的に中断できます。
 
-- USB ストレージ (BOT)
+- USB ストレージ (ボット)
 
-    このドライバーは、これらのシステムがコネクテッド スタンバイに移動するときに Windows 8 のコネクテッド スタンバイをサポートするシステムで (D3) ストレージ デバイスをセレクティブ サスペンドことができます。 HID などがあるすべての Windows 8 システムで選択的に有効にするレジストリの上書きを中断します。
+    このドライバーは、Windows 8 に接続されたスタンバイをサポートするシステム上のストレージデバイスを選択的に中断 (D3) することができます。 HID と同様に、すべての Windows 8 システムでセレクティブサスペンドを有効にするためのレジストリの上書きがあります。
 
 - USB ストレージ (UAS)
 
-    このドライバーはセレクティブ サスペンド (D3) 記憶装置がディスクのタイムアウト期間アイドル状態のとき。
+    このドライバーは、ディスクのタイムアウト期間中に記憶装置がアイドル状態になったときに、その記憶装置を選択的に中断 (D3) できます。
 
 - USB ビデオ
 
-    このドライバーは、Windows Vista およびそれ以降のオペレーティング システムで web カメラ (D3) をセレクティブ サスペンドことができます。
+    このドライバーは、Windows Vista 以降のオペレーティングシステムで、web カメラを選択的に中断 (D3) できます。
 
 - USB オーディオ
 
-    このドライバーはセレクティブ サスペンド (D3) Windows 7 以降のオペレーティング システムでは、USB オーディオ デバイス、コンピューターがバッテリ電源上。
+    このドライバーは、コンピューターがバッテリ電源で動作しているときに、Windows 7 以降のオペレーティングシステム上の USB オーディオデバイスを選択的に中断 (D3) できます。
 
 - 複合 USB
 
-    このドライバーは、すべての子が中断の場合、(D3) 複合デバイスをセレクティブ サスペンドことができます。 D3 コールドをサポートするシステムで、すべての子は、D3 コールドを選択する必要があります。
+    このドライバーは、すべての子が中断状態のときに、複合デバイスを選択的に中断 (D3) できます。 D3-コールドをサポートするシステムでは、すべての子が D3-コールドを選択する必要があります。
 
-- USB スマート カード
+- USB スマートカード
 
-    このドライバーは、既定では、Windows 7 およびそれ以降のオペレーティング システム (D2) スマート カード インターフェイス デバイスをセレクティブ サスペンドことができます。
+    このドライバーは、Windows 7 以降のオペレーティングシステムでは、既定で、スマートカードインターフェイスデバイスを選択的に中断 (D2) できます。
 
 - 汎用 USB 周辺機器 (WinUSB)
 
-    このドライバーは、Windows Vista 以降のオペレーティング システムで既定で (D3) デバイスをセレクティブ サスペンドことができます。
+    このドライバーは、Windows Vista 以降のオペレーティングシステムで、既定で選択的に一時停止 (D3) できます。
 
-- WWAN:3 G または WiMax ドングル
+- WWAN: 3G または WiMax ドングル
 
-    このドライバーは、デバイスをセレクティブ サスペンドことができます。 デバイス d2 に切り替わりが入力したアクティブなサブスクリプションがある場合に、アクティブなサブスクリプションがなくても、デバイスが D3 を入力します。
+    このドライバーは、デバイスを選択的に中断できます。 アクティブなサブスクリプションがある場合、デバイスは D2 に入ります。アクティブなサブスクリプションがない場合、デバイスは D3 に入ります。
 
-## <a name="why-cant-a-usb-device-awaken-windows-from-s3"></a>なぜことはできません、USB デバイスがスリープ解除 Windows S3 からでしょうか。
+## <a name="why-cant-a-usb-device-awaken-windows-from-s3"></a>USB デバイスが S3 から Windows を目覚めできないのはなぜですか。
 
-USB デバイスは、いくつかの理由から、次のように、S3 から Windows を呼び起こすことはできません。
+USB デバイスは、次のようないくつかの理由により、S3 から Windows を目覚め解除できません。
 
-1. 不適切な BIOS。
+1. BIOS が正しくありません。
 
-    最新の BIOS がコンピューターにインストールされていることを確認します。 コンピューターの最新の BIOS リビジョンを取得するには、OEM または ODM の Web サイトを参照してください。
+    コンピューターに最新の BIOS がインストールされていることを確認します。 コンピューターの最新の BIOS リビジョンを取得するには、OEM または ODM の Web サイトにアクセスします。
 
-2. スリープ解除を有効になっていない BIOS。
+2. スリープ解除が有効になっていない BIOS。
 
-    一部の Bios を使用すれば、S3 と S4 からのスリープ解除を無効にできます。 BIOS を S3 からスリープ解除が有効であることを確認します。
+    一部の Bios では、S3 と S4 からのウェイクを無効にすることができます。 BIOS で S3 からの復帰が有効になっていることを確認します。
 
-3. USBBIOSx レジストリ キーが設定されていません。
+3. USBBIOSx レジストリキーが設定されていません。
 
-    Windows XP のクリーン インストールでは、USBBIOSx レジストリ キーがありません。 OEM または ODM、BIOS を S3 からウェイクできることを検証して、このレジストリ キーを 0x00 に設定し、コンピューターを再起動します。
+    Windows XP のクリーンインストールには、USBBIOSx レジストリキーがありません。 BIOS が S3 からウェイクアップできることを OEM または ODM が検証した場合は、このレジストリキーを0x00 に設定し、コンピューターを再起動します。
 
-4. ホスト コント ローラーには、S3 または S4 に電力はありません。
+4. ホストコントローラーの電源が S3 または S4 になっていません。
 
-    多くの場合は、PC が低電力状態のときアドイン カードに電力を切り取ります。 アドイン カードに電源が入っていない場合、ウェイク イベントを検出することはできませんし、PC をスリープ解除することはできません。
+    Pc の電源が省電力状態になると、多くの場合、PC はアドインカードの電源を切ります。 アドインカードに電源が供給されていない場合は、wake イベントを検出できず、PC をスリープ解除できません。
 
-詳細については、ヘルプとサポート センター Windows XP 以降のバージョンの Windows で USB のトラブルシューティングを参照してください。
+詳細については、Windows XP 以降のバージョンの Windows のヘルプとサポートセンターにある USB トラブルシューティングを参照してください。
 
-## <a name="do-i-need-to-install-drivers-for-my-enhanced-usb-20-host-controller"></a>拡張 (USB 2.0) ホスト コント ローラー用ドライバーをインストールする必要がありますか。
+## <a name="do-i-need-to-install-drivers-for-my-enhanced-usb-20-host-controller"></a>Enhanced (USB 2.0) ホストコントローラーのドライバーをインストールする必要がありますか。
 
-次のバージョンの Windows では、USB 2.0 エンハンス ホスト コント ローラーをサポートします。
+次のバージョンの Windows では、USB 2.0 拡張ホストコントローラーがサポートされています。
 
 - Windows Vista 以降
 - Windows Server 2003 以降
 - Windows XP Service Pack 1
 - Windows 2000 Service Pack 4
 
-**注**  前に、USB 2.0 ハードウェアが使用可能なため、Windows 2000 および Windows XP がリリースされた、service pack は、これらのオペレーティング システムのドライバーがリリースされました。 ドライバーをインストールします。
+**注**   windows 2000 および windows XP は、USB 2.0 ハードウェアを利用できるようになる前にリリースされていたため、これらのオペレーティングシステムのドライバーはサービスパックにリリースされました。 ドライバーをインストールするには:
 
-1. コンピューターに USB 2.0 ポートがあることと、エンハンス ホスト コント ローラー用ドライバーをインストールする必要があることを確認する最初の質問に対する回答で説明した手順に従います。
-2. デバイス マネージャー ウィンドウで、展開、**その他のデバイス**セクションの最初の質問で説明したようにし、ダブルクリック**ユニバーサル シリアル バス (USB) コント ローラー**します。
-3. **全般** タブのプロパティ ダイアログ ボックスで、次のようにクリックします。**ドライバーの再インストール**します。
+1. 最初の質問の答えで説明されている手順に従って、コンピューターに USB 2.0 ポートがあること、および拡張ホストコントローラー用のドライバーをインストールする必要があることを確認します。
+2. [デバイスマネージャー] ウィンドウで、最初の質問で説明されているように [**その他のデバイス**] セクションを展開し、[ **Universal SERIAL Bus (USB) コントローラー**] をダブルクリックします。
+3. [プロパティ] ダイアログボックスの [**全般**] タブで、[**ドライバーの再インストール**] をクリックします。
 
-    ![ドライバを再インストールします。](images/usb-reinstall-driver.jpg)
+    ![ドライバーの再インストール](images/usb-reinstall-driver.jpg)
 
-4. 新しいハードウェアの追加ウィザードで選択**ソフトウェアを自動的にインストール (推奨)** 、順にクリックします**次**します。 ウィザードの最後のページをクリックするまで、すべての既定のオプションを使用して、ウィザードを続行**完了**します。 インストールを完了する、コンピューターを再起動する必要があります。
+4. 新しいハードウェアの追加ウィザードで、[**ソフトウェアを自動的にインストールする (推奨)**] を選択し、[**次へ**] をクリックします。 ウィザードの最後のページが表示されるまで、すべての既定のオプションをそのまま使用してウィザードを続行し、[**完了**] をクリックします。 インストールを完了するには、コンピューターの再起動が必要になる場合があります。
 
-Windows XP Service Pack 1 での USB 2.0 の可用性に関する詳細については、マイクロソフト サポート技術情報の記事 329632 を参照してください"方法を取得し、USB 2.0 をインストールするドライバーを Windows XP Service pack 1"で[ http://support.microsoft.com/default.aspx?scid=KB;。EN-US;Q329632 &](https://support.microsoft.com/help/329632)します。
+**注**   コンピューターに最新の更新プログラムがインストールされていることを確認するには、Windows Update 定期的にアクセスしてください。
 
-**注**  コンピューターにインストールされている最新の更新プログラムがあることを確認するには、Windows 更新プログラムを定期的にアクセスします。
+## <a name="can-i-disable-the-hi-speed-usb-device-plugged-into-non-hi-speed-usb-port-notice"></a>"高速ではない USB ポートに接続されている高速 USB デバイス" という通知を無効にすることはできますか。
 
-## <a name="can-i-disable-the-hi-speed-usb-device-plugged-into-non-hi-speed-usb-port-notice"></a>「高速 USB デバイスは非 HI-SPEED USB ポートに接続されている」通知を無効にできますか。
+Windows XP 以降のバージョンの Windows では、高速 USB デバイスが高速でサポートされていない USB ポートに接続されている場合、ポップアップ通知が作成されます。 デバイスから最も高速なパフォーマンスを得るには、ユーザーが通知をクリックし、画面の指示に従っている必要があります。
 
-Windows XP および Windows の以降のバージョンは、高速をサポートしていない USB ポートに高速 USB デバイスが接続されているときにポップアップ通知が表示を作成します。 最速のパフォーマンスをデバイスから取得するには、ユーザーは、通知をクリックして、画面の指示に従って必要があります。
+この通知を無効にするには、次の手順を実行します。
 
-通知を無効にするには、次の手順に従います。
+1. この FAQ の最初の質問で説明されているように、デバイスマネージャーを開始します。
+2. [デバイスマネージャー] ウィンドウで、[**ユニバーサルシリアルバスコントローラー** ] ノードを展開します。 タイトルに "Universal" または "Open" という単語が含まれているホストコントローラーを探します。 見つかった場合は、ダブルクリックします。
+3. [**プロパティ**] ダイアログボックスの [**詳細設定**] タブで、[ **USB エラーについて**の通知を表示しない] を選択します。
 
-1. この FAQ では、最初の質問」の説明に従って、デバイス マネージャーを起動します。
-2. デバイス マネージャー ウィンドウで、展開、**ユニバーサル シリアル バス コント ローラー**ノード。 タイトルに"Universal"または「開いている」という語があるホスト コント ローラーを探します。 いずれかの場合をダブルクリックします。
-3. **詳細**のタブ、**プロパティ**ダイアログ ボックスで、 **USB エラーを表示しない**します。
+前の手順では、"高速ではないポートに接続された高速 USB デバイスだけでなく、すべての USB 通知を無効に**する   ます**。
 
-**注**  前の手順は、すべての USB 通知を無効にします、「高速 USB デバイスは高速ではないポートに接続されている」だけでなく。
+## <a name="is-my-usb-20-hub-single-tt-or-multi-tt"></a>USB 2.0 ハブのシングル TT またはマルチ TT ですか。
 
-Windows XP Service Pack 1 での USB 2.0 のサポートについては、マイクロソフト サポート技術情報の記事 329632 を参照してください"方法を取得し、USB 2.0 をインストールする Windows XP Service pack 1、ドライバーで[ http://support.microsoft.com/default.aspx?scid=KB;。EN-US;Q329632](https://support.microsoft.com/help/329632)します。
+USB 2.0 ハブは、ハブ上の下流に接続されているすべてのポートに対して1つのトランザクション変換 (TT) を持つことができます。また、ハブのダウンストリーム接続ポートごとに1つの TT を持つことができます (複数の TT)。
 
-## <a name="is-my-usb-20-hub-single-tt-or-multi-tt"></a>自分の USB 2.0 ハブ シングル TT またはマルチ TT ですか。
+Usb デバイス記述子の**Bdeviceprotocol**フィールドの値と、usb インターフェイス記述子の**bdeviceprotocol**フィールドの値によって、ハブがシングル tt とマルチ tt のどちらであるかが示されます。
 
-USB 2.0 ハブには、ハブ (単一 TT) 上のすべてのダウン ストリームに接続するポートの 1 つのトランザクション translator (TT) または (複数 TT) ハブのダウン ストリームに接続するポートごとに 1 つの TT ことができます。
+- 単一 TT。 **Bdeviceprotocol** = = 0x01
+- マルチ TT。 **Bdeviceprotocol** = = 0x02
 
-値、 **bDeviceProtocol**の USB デバイスの記述子フィールドと**bInterfaceProtocol** USB インターフェイス記述子のフィールドを示すかどうか、ハブは、単一 TT またはマルチ TT:
+**Usbhub**は、この設定を使用して、マルチ tt モードまたはシングル tt モードを有効にします。 Windows XP 以降では、Usbhub は、常にマルチ TT ハブでマルチ TT モードを有効にします。 TT レイアウトの詳細については、「11.14.1.3 and 11.23.1 of the [USB 2.0 Specification](https://www.usb.org/documents)」を参照してください。
 
-- シングル TT します。 **bDeviceProtocol** == 0x01
-- マルチ TT します。 **bDeviceProtocol** == 0x02
+## <a name="what-characters-or-bytes-are-valid-in-a-usb-serial-number"></a>USB シリアル番号で有効な文字またはバイトは何ですか。
 
-**Usbhub.sys**マルチ TT モードまたはシングル TT モードを有効にするこの設定を使用します。 Windows xp 以降、Usbhub.sys 常にモードを有効にマルチ TT マルチ TT ハブ。 TT レイアウトの詳細については、11.14.1.3 と 11.23.1 のセクションを参照してください、 [USB 2.0 仕様](https://www.usb.org/documents)します。
+USB デバイス記述子の**iserialnumber**フィールドは、次のように、デバイスにシリアル番号と番号が格納されているかどうかを示します。
 
-## <a name="what-characters-or-bytes-are-valid-in-a-usb-serial-number"></a>どのような文字またはバイトは、USB シリアル番号で有効ですか。
+- **iserialnumber** = = 0X00: USB デバイスにシリアル番号がありません。
+- **iserialnumber** ! = 0X00: USB デバイスにシリアル番号が付いています。 **Iserialnumber**に割り当てられた値は、シリアル番号の文字列インデックスです。
 
-USB デバイス記述子の**iSerialNumber**フィールド、デバイスのシリアル番号がかどうかと数が格納、次の手順を示します。
+デバイスにシリアル番号がある場合、シリアル番号は、同じデバイスの各インスタンスを一意に識別する必要があります。
 
-- **iSerialNumber** 0x00 = =。USB デバイスのシリアル番号がありません。
-- **iSerialNumber** != 0x00 :USB デバイスには、シリアル番号があります。 割り当てられた値**iSerialNumber**シリアル番号の文字列のインデックスします。
+たとえば、2つのデバイス記述子が i**Dvendor**、 **Idproduct**、 **bcddevice**の各フィールドに同一の値を持っている場合、1つのデバイスを他のデバイスと区別するために、 **iserialnumber**フィールドが異なる必要があります。
 
-デバイスのシリアル番号の場合、シリアル番号は、同じデバイスの各インスタンスを一意に識別する必要があります。
+プラグアンドプレイには、USB シリアル番号のすべてのバイトが有効である必要があります。 1バイトが無効である場合、Windows はシリアル番号を破棄し、シリアル番号がないかのようにデバイスを扱います。 次のバイト値は、USB シリアル番号には有効ではありません。
 
-たとえば、2 つのデバイス記述子が、i の値で同じ**dVendor**、 **idProduct**と**bcdDevice** 、フィールド、 **iSerialNumber**フィールドは、他の 1 つのデバイスを区別するために、さまざまなである必要があります。
+- 0x2C.
+- 値が0x20 未満です。
+- 値が0x7F を超えています。
 
-プラグ アンド プレイでは、USB シリアル番号のすべてのバイト有効である必要があります。 1 バイトが有効でない場合、Windows は、シリアル番号を破棄し、シリアル番号がなかったかのように、デバイスを処理します。 次のバイト値は有効で USB シリアル番号のないです。
+**Iserialnumber**値の詳細については、「9.6.1 the [USB 2.0 Specification](https://www.usb.org/documents)」の「」セクションを参照してください。
 
-- 0x2C します。
-- 0x20 より小さい値です。
-- 0x7F よりも大きい値です。
+## <a name="what-langid-is-used-in-a-string-request-on-localized-builds-of-windows"></a>Windows のローカライズされたビルドにおける文字列要求では、どのような LANGID が使用されますか。
 
-詳細については、 **iSerialNumber**値の 9.6.1」セクションを参照してください、 [USB 2.0 仕様](https://www.usb.org/documents)します。
+USB デバイスは、USB デバイス記述子の iSerialNumber 化フィールドをシリアル番号の文字列インデックスに設定することによって、シリアル番号が存在することを示します。 シリアル番号を取得するために、Windows は言語識別子 (LANGID) が 0x0409 (米国英語) に設定された文字列要求を発行します。 Windows では、他の言語用にローカライズされた Windows のバージョンでも、常にこの LANGID を使用して USB シリアル番号を取得します。
 
-## <a name="what-langid-is-used-in-a-string-request-on-localized-builds-of-windows"></a>どのような LANGID が Windows のローカライズされたビルド文字列の要求で使用されるでしょうか。
+## <a name="what-langid-is-used-to-extract-a-devices-serial-number"></a>デバイスのシリアル番号を抽出するために使用される LANGID
 
-USB デバイスでは、シリアル番号の文字列のインデックスに USB デバイス記述子の iSerialNumber フィールドを設定してシリアル番号の有無を示します。 シリアル番号を取得するには、Windows では、0x0409 (米国に設定する言語識別子 (LANGID) を持つ文字列要求を発行します。英語のみ)。 Windows では、他の言語にローカライズされた Windows のバージョンの場合でも、USB シリアル番号を取得するのにこの LANGID 常に使用します。
+USB デバイスは、USB デバイス記述子の iSerialNumber 化フィールドをシリアル番号の文字列インデックスに設定することによって、シリアル番号が存在することを示します。 シリアル番号を取得するために、Windows は言語識別子 (LANGID) が 0x0409 (米国英語) に設定された文字列要求を発行します。 Windows では、他の言語用にローカライズされた Windows のバージョンでも、常にこの LANGID を使用して USB シリアル番号を取得します。
 
-## <a name="what-langid-is-used-to-extract-a-devices-serial-number"></a>どのような LANGID はデバイスのシリアル番号を抽出するために使用しますか?
+## <a name="what-is-the-maximum-usb-transfer-size-for-different-windows-versions"></a>さまざまな Windows バージョンの USB 転送の最大サイズはどのくらいですか。
 
-USB デバイスでは、シリアル番号の文字列のインデックスに USB デバイス記述子の iSerialNumber フィールドを設定してシリアル番号の有無を示します。 シリアル番号を取得するには、Windows では、0x0409 (米国に設定する言語識別子 (LANGID) を持つ文字列要求を発行します。英語のみ)。 Windows では、他の言語にローカライズされた Windows のバージョンの場合でも、USB シリアル番号を取得するのにこの LANGID 常に使用します。
+「[さまざまなオペレーティングシステムでの USB 転送の最大サイズ」を](https://support.microsoft.com/help/832430/maximum-size-of-usb-transfers-on-various-operating-systems)参照してください。
 
-## <a name="what-is-the-maximum-usb-transfer-size-for-different-windows-versions"></a>さまざまな Windows バージョンの最大の USB 転送サイズとは何ですか。
+## <a name="how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device"></a>複合デバイスの複数のインターフェイスに番号を割り当てる方法
 
-参照してください[さまざまなオペレーティング システム上の USB の最大サイズの転送](https://support.microsoft.com/help/832430/maximum-size-of-usb-transfers-on-various-operating-systems)します。
+Windows では、1つ目の構成で複数のインターフェイスを持つ USB デバイスを複合デバイスとして扱います。
 
-## <a name="how-should-numbers-be-assigned-to-multiple-interfaces-on-a-composite-device"></a>番号は、複合デバイスに複数のインターフェイスにどのように割り当てする必要がありますか。
+Windows XP Service Pack 1 以前のバージョンの Windows の場合:
 
-Windows では、USB デバイスを最初の構成では、複数のインターフェイスを持つ複合デバイスとして扱われます。
+- インターフェイス番号は、0から始まる必要があります。
+- インターフェイス番号は、連続して増加する必要があります。
 
-Windows XP Service Pack 1 および Windows の以前のバージョン。
+Windows XP Service Pack 2 以降のバージョンの Windows では、インターフェイス番号が連続していなくても増加する必要があります。
 
-- インターフェイス番号は 0 から始まるである必要があります。
-- インターフェイス番号は、連続して増加である必要があります。
+インターフェイス番号の詳細については、「 [WINDOWS XP では、順番に番号が付けられていない複合 USB デバイスが機能](https://support.microsoft.com/help/814560)しない」を参照してください。
 
-Windows XP Service Pack 2 および以降のバージョンの Windows では、インターフェイスの番号は増加、連続しないにのみ必要です。
+インターフェイスの代替設定は、すべてのバージョンの Windows で次のように割り当てる必要があります。
 
-インターフェイス番号の詳細については、次を参照してください。[インタ フェースが順番に番号付けされていない複合 USB デバイスが Windows XP では動作しない](https://support.microsoft.com/help/814560)します。
+- インターフェイスの既定値は、常に別の設定0です。
+- その他の代替設定番号は、連続して増加する必要があります。
 
-インターフェイスの代替設定は、すべてのバージョンの Windows には、次のように割り当てる必要があります。
+代替設定の詳細については、「9.6.5 the [USB 2.0 Specification](https://www.usb.org/documents)」セクションを参照してください。
 
-- インターフェイスの既定値は 0 を設定する代替では常にします。
-- その他の代替設定の数値は、連続して増加である必要があります。
+## <a name="what-are-the-major-restrictions-imposed-by-usbccgpsys"></a>Usbccgp によって課せられる主な制限は何ですか。
 
-代替の設定の詳細については、の 9.6.5」セクションを参照してください。、 [USB 2.0 仕様](https://www.usb.org/documents)します。
-
-## <a name="what-are-the-major-restrictions-imposed-by-usbccgpsys"></a>Usbccgp.sys によって課される主要な制約とは
-
-**Usbccgp.sys**複合デバイスをサポートしています。
+Usbccgp では、次のような複合デバイスがサポートされてい**ます。**
 
 - Windows Me
 - Windows XP
@@ -576,59 +569,55 @@ Windows XP Service Pack 2 および以降のバージョンの Windows では、
 - Windows Vista
 - Windows Server 2008
 
-読み込みが可能にある可能性がありますが**Usbhub.sys**として複合デバイス以降では、これらの親のドライバーのバージョンの Windows、Microsoft は推奨していませんので、ハードウェアの互換性エラーが発生する可能性があります。 使用する必要があります**で、Usbccgp.sys**代わりにします。
+ただし、これら以降のバージョンの Windows では、複合デバイスの親ドライバーとして**Usbhub**を読み込むこともできますが、ハードウェアの互換性エラーが発生する可能性があるため、Microsoft では推奨されません。 代わりに**Usbccgp**を使用してください。
 
-複合デバイスの適切なドライバーをロードすることを確認するには、よう INF ファイルでインクルードし、ニーズのディレクティブを使用します。
+複合デバイス用の正しいドライバーを確実に読み込むには、次のように、INF ファイルで Include ディレクティブと必要なディレクティブを使用します。
 
 ``` syntax
 Include = USB.INF
 Needs = Composite.Dev
 ```
 
-ハードウェア デバイスとドライバーを主な制限が課せられる**で、Usbccgp.sys**次に示します。
+**Usbccgp**によってハードウェアデバイスとドライバーに課せられる主な制限は次のとおりです。
 
-- Usbccgp のみ既定構成 0 の構成をサポートします。
-- Usbccgp サポートしていませんセレクティブ サスペンド Windows XP および Windows Server 2003 で。 この機能は、Windows Vista および Windows の以降のバージョンでのみサポートされます。
-    **注**   Usbccgp でセレクティブ サスペンドをサポート Windows XP SP1、Windows XP では、機能制限付きで以降のバージョンでします。 これらのバージョンの Windows デバイスの場合は、各子関数に保留中のアイドル状態の IRP がある場合にのみ、複合デバイスがセレクティブ サスペンドに配置します。 Usbccgp ではサポートされないセレクティブ サスペンド Windows XP RTM
+- Usbccgp でサポートされるのは、既定の構成である configuration 0 だけです。
+- Usbccgp は、Windows XP および Windows Server 2003 のセレクティブサスペンドをサポートしていません。 この機能は、Windows Vista 以降のバージョンの Windows でのみサポートされています。
+    **注**   Usbccgp は、WINDOWS xp SP1 以降のバージョンの windows xp でのセレクティブサスペンドをサポートしていますが、機能が制限されています。 これらのバージョンの Windows では、デバイスの各子関数に保留中のアイドル状態の IRP がある場合にのみ、複合デバイスがセレクティブサスペンドに配置されます。 Usbccgp は、Windows XP RTM でのセレクティブサスペンドをサポートしていません。
 
-- Usbccgp では、Windows XP SP2、Windows Server 2003 SP1 では、以降のバージョンの Windows でのみ、インターフェイスの関連付け記述子 (IAD) をサポートしています。
-- Usbccgp は、Windows XP SP2、Windows Server 2003 SP1 では、以降のバージョンの Windows でのみ、連続しない複数のインターフェイスの番号をサポートします。
+- Usbccgp は、windows XP SP2、Windows Server 2003 SP1、およびそれ以降のバージョンの Windows でのみインターフェイスアソシエーション記述子 (IAD) をサポートしています。
+- Usbccgp は、windows XP SP2、Windows Server 2003 SP1、およびそれ以降のバージョンの Windows でのみ連続しないインターフェイス番号をサポートしています。
 
-## <a name="how-do-i-enable-debug-tracing-for-usb-core-binaries"></a>USB の主要なバイナリのデバッグ トレースを有効にする方法
+## <a name="how-do-i-enable-debug-tracing-for-usb-core-binaries"></a>USB コアバイナリのデバッグトレースを有効に操作方法ますか?
 
-に関するブログの投稿を参照してください。[を含めると、ドライバーのパブリックの PDB ファイルに WPP トレース メッセージを表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)します。
+[WPP トレースメッセージをドライバーのパブリック PDB ファイルに追加して表示する方法](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog/archive/2013/06/29/wpp-blog-post.aspx)については、ブログの投稿を参照してください。
 
-USB core スタックのデバッグに関する詳細については、次を参照してください。[ドライバーとサブシステムのさまざまな詳細なデバッグ トレースを有効にする方法](https://support.microsoft.com/help/314743)します。
+USB コアスタックのデバッグの詳細については、「[さまざまなドライバーおよびサブシステムで詳細デバッグトレースを有効にする方法](https://support.microsoft.com/help/314743)」を参照してください。
 
-## <a name="does-windows-support-interface-association-descriptors"></a>Windows は、インターフェイスの関連付けの記述子をサポートしますか。
+## <a name="does-windows-support-interface-association-descriptors"></a>Windows はインターフェイスの関連付け記述子をサポートしていますか。
 
-[はい]。 USB 2.0 インターフェイスの関連付け記述子 (IAD) エンジニア リングの変更通知 (ECN) には、インターフェイスのグループ化し、関数内での代替設定を記述するための新しい標準的な方法が導入されました。 IAD は、2 つ以上連続するインターフェイスと 1 つの関数内での代替設定を識別するために使用できます。
+できます。 USB 2.0 インターフェイスアソシエーション記述子 (IAD) エンジニアリングの変更通知 (ECN) では、インターフェイスのグループ化とその代替設定を関数内で記述するための新しい標準メソッドが導入されました。 IAD を使用すると、1つの関数内で2つ以上の連続するインターフェイスと代替設定を識別できます。
 
-Microsoft は現在、IAD をサポートするデバイスを開発する Ihv で作業します。 次のオペレーティング システムでは、IAD サポートがあります。
+Microsoft は現在、Ihv と協力して、IAD をサポートするデバイスを開発しています。 次のオペレーティングシステムでは、IAD がサポートされています。
 
 - Windows XP Service Pack 2 以降
 - Windows Server 2003 Service Pack 1 以降
 - Windows Vista
 
-## <a name="does-the-usb-stack-handle-chained-mdls-in-a-urb"></a>USB スタックのハンドルは、URB で MDLs チェーンされているか。
+## <a name="does-the-usb-stack-handle-chained-mdls-in-a-urb"></a>USB スタックはチェーンされた MDLs を URB に処理しますか。
 
-この機能は Windows に含まれている USB 3.0 ドライバー スタックがサポートされます。
+この機能は、Windows に付属している USB 3.0 ドライバースタックでサポートされています。
 
-## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>ドライバーは IRP の 1 つ以上の URB を持つことができますか。
+## <a name="can-a-driver-have-more-than-one-urb-in-an-irp"></a>ドライバーが1つの IRP に複数の URB を持つことはできますか。
 
-No. この機能は Windows に含まれている USB スタックによってサポートされていません。
+いいえ。 この機能は、Windows に付属している USB スタックではサポートされていません。
 
-## <a name="does-windows-support-usb-composite-hubs"></a>Windows は、複合の USB ハブをサポートしますか。
+## <a name="does-windows-support-usb-composite-hubs"></a>Windows では USB 複合ハブがサポートされるのですか。
 
-多機能の USB デバイス - とも呼ばれます - 複合 USB デバイスは、それぞれが独立したデバイスとして処理できる、複数の関数を公開します。 USB の一般的な親ドライバーが読み込まれます**で、Usbccgp.sys**デバイスの機能の eaech の親ドライバーとして機能します。 一般的な親の USB ドライバーが別の USB デバイスと PDO を作成し、関数ごとにデバイス スタックを構築しますかのように複合デバイスの機能を列挙します。
+複合 USB デバイス (多機能 USB デバイスとも呼ばれます) は複数の機能を公開し、それぞれを独立したデバイスとして扱うことができます。 システムは、デバイスの機能の eaech の親ドライバーとして機能するように、USB 汎用親ドライバー **Usbccgp**を読み込みます。 USB 汎用親ドライバーは、複合デバイスの機能を個別の USB デバイスとして列挙し、PDO を作成して、各関数のデバイススタックを構築します。
 
-複合 USB デバイスがハブとして機能する関数を公開できません。 Windows にこのようなハブが正しく列挙できませんし、システム クラッシュが発生する可能性があります、デバイスをインストールしようとします。
-
-## <a name="where-can-i-find-additional-faqs-on-usb"></a>USB の他の Faq はどこで入手できますか。
-
-USB を参照してください-IF FAQ ページ<http://www.usb.org/developers/usbfaq/>します。
+複合 USB デバイスは、ハブとして機能する関数を公開できません。 Windows では、このようなハブが正しく列挙されず、デバイスをインストールしようとするとシステムがクラッシュする可能性があります。
 
 ## <a name="related-topics"></a>関連トピック
 
-[すべての開発者の USB の概念](usb-concepts-for-all-developers.md)  
+[すべての開発者のための USB の概念](usb-concepts-for-all-developers.md)  
 [ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/)  

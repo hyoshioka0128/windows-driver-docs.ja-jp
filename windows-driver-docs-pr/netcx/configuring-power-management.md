@@ -4,18 +4,16 @@ description: 電源管理の構成
 ms.assetid: 0EAE26D0-C191-422F-8A73-28A71C272D4D
 keywords:
 - NetAdapterCx 電源管理の構成, NetCx 電源管理の構成
-ms.date: 06/05/2017
+ms.date: 11/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17468822a966aafe4e6cdf5dd79f149e9dfe87c9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a3466dfa505558afebc4af2c207470df5d9e695b
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835532"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210784"
 ---
 # <a name="configuring-power-management"></a>電源管理の構成
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 このトピックでは、NetAdapterCx クライアントドライバーで電源管理機能を構成する方法について説明します。
 
@@ -29,68 +27,116 @@ ms.locfileid: "72835532"
 
 ## <a name="setting-power-capabilities-of-the-network-adapter"></a>ネットワークアダプターの電源機能の設定
 
-標準の WDF 電源管理機能を構成した後、次の手順では、 [**NetAdapterSetPowerCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptersetpowercapabilities)を呼び出してネットワークアダプターの電源機能を設定します。
+標準の WDF 電源管理機能を構成した後、次の手順では、ネットワークアダプターの電源機能を設定します。 電源機能は、低電力プロトコルオフロード機能と wake ソース機能という2つのカテゴリに分類されます。 クライアントドライバーは、ハードウェアに適した次の方法を呼び出すことによって、プロトコルオフロード機能を設定します。
 
-次の例は、NETPOWERSETTINGS オブジェクトを初期化して構成する方法を示しています。このオブジェクトは、通常、クライアントが net アダプターを起動するときに、 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す前に実行します。
+- [**NetAdapterPowerOffloadSetArpCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterpoweroffloadsetarpcapabilities)
+- [**NetAdapterPowerOffloadSetNSCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterpoweroffloadsetnscapabilities)
+
+次に、クライアントドライバーは、ハードウェアがサポートする wake on LAN (WoL) 機能を設定するために、次のいずれかの方法を呼び出します。
+
+- [**NetAdapterWakeSetBitmapCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetbitmapcapabilities)
+- [**NetAdapterWakeSetMagicPacketCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetmagicpacketcapabilities)
+- [**NetAdapterWakeSetMediaChangeCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetmediachangecapabilities)
+- [**NetAdapterWakeSetPacketFilterCapabilities**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterwakesetpacketfiltercapabilities)
+
+次の例では、クライアントドライバーが電力機能を初期化する方法を示しています。この動作は、net アダプターの開始中、 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す前に行われます。 この例では、クライアントドライバーはビットマップ、メディアの変更、およびパケットフィルターのウェイクアップ機能を設定します。
 
 ```C++
-NET_ADAPTER_POWER_CAPABILITIES     powerCaps;
-NET_ADAPTER_POWER_CAPABILITIES_INIT(&powerCaps);
+//
+// Set bitmap wake capabilities
+//
+NET_ADAPTER_WAKE_BITMAP_CAPABILITIES bitmapCapabilities;
+NET_ADAPTER_WAKE_BITMAP_CAPABILITIES_INIT(&bitmapCapabilities);
 
-powerCaps.Flags = NET_ADAPTER_POWER_WAKE_PACKET_INDICATION;
+bitmapCapabilities.BitmapPattern = TRUE;
+bitmapCapabilities.MaximumPatternCount = deviceContext->PowerFiltersSupported;
+bitmapCapabilities.MaximumPatternSize = 256;
 
-powerCaps.SupportedMediaSpecificWakeUpEvents = NET_ADAPTER_WLAN_WAKE_ON_AP_ASSOCIATION_LOST;
-powerCaps.SupportedProtocolOffloads = NET_ADAPTER_PROTOCOL_OFFLOAD_ARP | NET_ADAPTER_PROTOCOL_OFFLOAD_NS;
-powerCaps.SupportedWakePatterns = NET_ADAPTER_WAKE_BITMAP_PATTERN;
-powerCaps.SupportedWakeUpEvents = NET_ADAPTER_WAKE_ON_MEDIA_CONNECT | NET_ADAPTER_WAKE_ON_MEDIA_DISCONNECT;
+NetAdapterWakeSetBitmapCapabilities(Adapter, &bitmapCapabilities);
 
-powerCaps.EvtAdapterPreviewWakePattern = EvtAdapterPreviewWakePattern;
-powerCaps.EvtAdapterPreviewProtocolOffload = EvtAdapterPreviewProtocolOffload;
+//
+// Set media change wake capabilties
+//
+NET_ADAPTER_WAKE_MEDIA_CHANGE_CAPABILITIES mediaChangeCapabilities;
+NET_ADAPTER_WAKE_MEDIA_CHANGE_CAPABILITIES_INIT(&mediaChangeCapabilities);
 
-NetAdapterSetPowerCapabilities(NetAdapter, &powerCaps);
+mediaChangeCapabilities.MediaConnect = TRUE;
+mediaChangeCapabilities.MediaDisconnect = TRUE;
+
+NetAdapterWakeSetMediaChangeCapabilities(Adapter, &mediaChangeCapabilities);
+
+//
+// Set packet filter wake capabilties 
+//
+if(deviceContext->SelectiveSuspendSupported)
+{
+    NET_ADAPTER_WAKE_PACKET_FILTER_CAPABILITIES packetFilterCapabilities;
+    NET_ADAPTER_WAKE_PACKET_FILTER_CAPABILITIES_INIT(&packetFilterCapabilities);
+    
+    packetFilterCapabilities.PacketFilterMatch = TRUE;
+
+    NetAdapterWakeSetPacketFilterCapabilities(Adapter, &packetFilterCapabilities);
+}
 ```
 
-クライアントは、 [*EVT_NET_ADAPTER_PREVIEW_PROTOCOL_OFFLOAD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_preview_protocol_offload)および[*EVT_NET_ADAPTER_PREVIEW_WAKE_PATTERN*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nc-netadapter-evt_net_adapter_preview_wake_pattern)コールバック関数を登録して、受信プロトコルオフロードとウェイクパターンを受け入れたり拒否したりできます。 これらの省略可能なコールバックのいずれかを登録する場合は、 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す前に、net アダプターの開始時に行う必要があります。
+クライアントは[*EVT_NET_DEVICE_PREVIEW_POWER_OFFLOAD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netdevice/nc-netdevice-evt_net_device_preview_power_offload)および[*EVT_NET_DEVICE_PREVIEW_WAKE_SOURCE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netdevice/nc-netdevice-evt_net_device_preview_wake_source)コールバック関数を登録して、着信プロトコルオフロードとウェイクパターンを受け入れたり拒否したりできます。 これらの省略可能なコールバックのいずれかを登録する場合は、 [**NetAdapterStart**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadapterstart)を呼び出す前に、net アダプターの開始時に行う必要があります。
 
 ## <a name="programming-protocol-offload-and-wake-patterns"></a>プロトコルオフロードとスリープ解除パターンのプログラミング
 
 [*EvtDeviceArmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)と[*EvtDeviceArmWakeFromSx*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_sx)のコールバック関数では、ドライバーは有効なウェイクパターンを反復処理し、プロトコルをオフロードしてハードウェアにプログラムします。
 
-まず、 [*EvtDeviceArmWakeFromS0*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_arm_wake_from_s0)または関連するコールバック関数から[**NetAdapterGetPowerSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netadapter/nf-netadapter-netadaptergetpowersettings)を呼び出すことによって、アダプターに関連付けられている netpowersettings オブジェクトへのハンドルを取得します。  次の例は、スリープ解除パターンを反復処理する方法を示しています。
+次の例では、クライアントドライバーが wake on マジックパケットエントリを確認するためにウェイクパターンリストを反復処理し、次に電源オフロードリストを反復処理して IPv4 ARP プロトコルオフロードを処理する方法を示します。
 
 ```C++
 NTSTATUS
-EvtDeviceArmWakeFromS0(
+EvtDeviceArmWakeFromSx(
     WDFDEVICE     Device
 )
 {
-
     NETADAPTER adapter = GetDeviceContext(Device)->Adapter;
-    NETPOWERSETTINGS powerSettings = NetAdapterGetPowerSettings(adapter);
+    
+    //
+    // Process wake source list
+    //
+    NET_WAKE_SOURCE_LIST wakeSourceList;
+    NET_WAKE_SOURCE_LIST_INIT(&wakeSourceList);
 
-    ULONG wakeUpFlags = NetPowerSettingsGetEnabledWakeUpFlags(powerSettings);
-     
-    if (wakeUpFlags & NET_ADAPTER_WAKE_ON_MEDIA_DISCONNNECT)
+    NetDeviceGetWakeSourceList(Device, &wakeSourceList);
+
+    for(UINT32 i = 0; i < NetWakeSourceListGetCount(&wakeSourceList; i++); i++)
     {
-        // ...
+        NETWAKESOURCE wakeSource = NetWakeSourceListGetElement(&wakeSourceList, i);
+        NET_WAKE_SOURCE_TYPE const wakeSourceType = NetWakeSourceGetType(wakeSource);
+
+        if(wakeSourceType == NetWakeSourceTypeMagicPacket)
+        {
+            // Enable magic packet wake for the adapter
+            ..
+            //
+        }
     }
 
-    // Iterate through stored wake patterns and query which ones
-    // are enabled and should be programmed to hardware
+    //
+    // Process power offload list
+    //
+    NET_POWER_OFFLOAD_LIST powerOffloadList;
+    NET_POWER_OFFLOAD_LIST_INIT(&powerOffloadList);
 
-    for (ULONG i = 0; i < NetPowerSettingsGetWakePatternCount(powerSettings); i++)
+    NetDeviceGetPowerOffloadList(Device, &powerOffloadList);
+
+    for(UINT32 i = 0; i < NetPowerOffloadListGetCount(&powerOffloadList); i++)
     {
-        PNDIS_PM_WOL_PATTERN wakePattern = NetPowerSettingsGetWakePattern(powerSettings, i);
+        NETPOWEROFFLOAD powerOffload = NetPowerOffloadGetElement(&powerOffloadList, i);
+        NET_POWER_OFFLOAD_TYPE const powerOffloadType = NetPowerOffloadGetType(powerOffload);
 
-        if (NetPowerSettingsIsWakePatternEnabled(powerSettings, wakePattern))
+        if(powerOffloadType == NetPowerOffloadTypeArp)
         {
-            // ...
+            // Enable ARP protocol offload for the adapter
+            ..
+            //
         }
-
     }
 
     return STATUS_SUCCESS;
 }
 ```
-
-クライアントは、 [**NetPowerSettingsGetProtocolOffloadCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpowersettings/nf-netpowersettings-netpowersettingsgetprotocoloffloadcount)、 [**NetPowerSettingsGetProtocolOffload**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpowersettings/nf-netpowersettings-netpowersettingsgetprotocoloffload) 、および[**NetPowerSettingsIsProtocolOffloadEnabled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpowersettings/nf-netpowersettings-netpowersettingsisprotocoloffloadenabled)を使用して、プロトコルのオフロードを反復処理するのと同じメカニズムを使用します。

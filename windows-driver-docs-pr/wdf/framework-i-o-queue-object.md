@@ -10,17 +10,17 @@ keywords:
 - queue オブジェクト WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1484087c0f45fa42875233e737d1caeb5b8a22bc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 64cca126dd69a87e07b81998ad5453db0402f908
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843175"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210414"
 ---
 # <a name="framework-io-queue-object"></a>フレームワーク I/O キュー オブジェクト
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークの i/o キューオブジェクトは、 [Iwdfioqueue](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfioqueue)インターフェイスによってドライバーに公開されます。 これは i/o キューを表します。これは、i/o 要求のコンテナーです。 I/o キューは、ドライバーへの要求のフローを制御します。 I/o 要求が到着すると、適切なキューに配置されます。 I/o キューオブジェクトは、 [UMDF デバイスオブジェクト](framework-device-object.md)の子です。 ドライバーは、 [**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドを呼び出して、i/o キューオブジェクトを作成できます。 **Iwdfdevice:: CreateIoQueue**の呼び出しでは、キューが既定のキューであるかどうかをドライバーが指定できます。
 

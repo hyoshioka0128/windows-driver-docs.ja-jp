@@ -7,17 +7,17 @@ keywords:
 - 一般的な i/o ターゲットの初期化 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9ae8b9fe69f008eeb9ad4de20793d1b0bfee238
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8b09f4b7219a814c14533d98132d573097df519a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845445"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210600"
 ---
 # <a name="initializing-a-general-io-target-in-umdf"></a>UMDF での一般 I/O ターゲットの初期化
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 一般的な i/o ターゲットを初期化するためにドライバーが使用する手順は、i/o ターゲットが[ローカル](general-i-o-targets-in-umdf.md)かリモートかによって異なります。
 
@@ -37,7 +37,7 @@ UMDF ドライバーがネットワークソケットインターフェイスな
 
 3.  [**Iwdffilehandletargetfactory:: createfilehandletarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)メソッドを呼び出して、ファイルハンドルベースの i/o ターゲットオブジェクトをファイル、パイプ、またはソケットに作成します。
 
-[Iwdffilehandletargetfactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)インターフェイスを取得し、Win32 ハンドルを取得し、ファイルハンドルベースの i/o ターゲットオブジェクトを作成する方法を示すコード例については、 [**Iwdffilehandletargetfactory:: CreateFileHandleTarget にあるコード例を参照してください。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget).
+[Iwdffilehandletargetfactory](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffilehandletargetfactory)インターフェイスを取得し、Win32 ハンドルを取得し、ファイルハンドルベースの i/o ターゲットオブジェクトを作成する方法を示すコード例については、 [**Iwdffilehandletargetfactory:: createfilehandletarget**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdffilehandletargetfactory-createfilehandletarget)にあるコード例を参照してください。
 
 ドライバーがファイルハンドルベースの i/o ターゲットを作成した後、ドライバーは i/o ターゲットに i/o 要求を送信できます。
 

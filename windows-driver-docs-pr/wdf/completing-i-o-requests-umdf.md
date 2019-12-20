@@ -8,17 +8,17 @@ keywords:
 - i/o 要求の完了 (WDK UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c60331a9d7ca87f9865357cd53237b16c53e0ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 96b3c35aaa7e0a1d0227e5eac6d017a08fffeb20
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842261"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210234"
 ---
 # <a name="completing-io-requests-in-umdf"></a>UMDF で i/o 要求を完了しています
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 すべての i/o 要求は、最終的には、UMDF ドライバーによって完了される必要があります。 要求を完了するには、ドライバーは[**IWDFIoRequest:: complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドのいずれかを呼び出す必要があります。 ドライバーが要求を完了すると、次のいずれかのシナリオが示されます。
 
@@ -80,7 +80,7 @@ CMyQueue::OnWrite(
 
 -   [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を呼び出して、より小さな要求を表す1つの追加の要求オブジェクトを作成します。
 
-    ドライバーは、i/o ターゲットにこの要求を同期的に送信できます。 小さい要求の[**IrequestIWDFIoRequest2 Requestcompletion:: OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数は、ドライバーが要求を再利用して、再度 i/o ターゲットに送信できるように、 [ **:: 再利用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)を呼び出すことができます。 I/o ターゲットがより小さな要求の最後に完了した後、 **Oncompletion**コールバック関数は[**iwdfobject::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出して、ドライバーによって作成された要求オブジェクトを削除します。ドライバーは[**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)を呼び出して元の要求を完了できます。
+    ドライバーは、i/o ターゲットにこの要求を同期的に送信できます。 小さい要求の[**IrequestIWDFIoRequest2 Requestcompletion:: OnCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackrequestcompletion-oncompletion)コールバック関数は、ドライバーが要求を再利用して、再度 i/o ターゲットに送信できるように、 [**:: 再利用**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-reuse)を呼び出すことができます。 I/o ターゲットがより小さな要求の最後に完了した後、 **Oncompletion**コールバック関数は[**iwdfobject::D eletewdfobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-deletewdfobject)を呼び出して、ドライバーによって作成された要求オブジェクトを削除します。ドライバーは[**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)を呼び出して元の要求を完了できます。
 
 -   [**Iwdfdevice:: CreateRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createrequest)を呼び出して、より小さな要求を表すいくつかの追加の要求オブジェクトを作成します。
 

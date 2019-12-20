@@ -13,14 +13,14 @@ keywords:
 - トレースメッセージフォーマットファイル WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cb08888529dda9234e01e30bf765e1dca9c3f46d
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: 18fb9b1539cd693b044cd0faa228c66191bc27ae
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592428"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209460"
 ---
-# <a name="dtrace-live-dump"></a>DTrace ライブダンプ
+# <a name="dtrace-live-dump"></a>DTrace ライブ ダンプ
 
 DTrace は、lkd () を使用して、D スクリプト内からライブダンプをキャプチャする機能を提供します。 メモリダンプファイルは、windows デバッガーを使用して Windows の複雑な問題をデバッグするために使用されます。 詳細については、「WinDbg を使用した[クラッシュダンプファイルの分析](https://docs.microsoft.com/windows-hardware/drivers/debugger/crash-dump-files)」を参照してください。 デバッガーをダウンロードするには、「 [WinDbg Preview-Installation](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-install-preview)」を参照してください。
 
@@ -91,7 +91,7 @@ Triggering LiveDump
 
 ### <a name="viewing-live-dump-related-events"></a>ライブダンプ関連のイベントの表示
 
-Windows イベントビューアーを開きます。 アプリケーションとサービスログ-> Microsoft-> Windows-> Kernel-Livedump-> Operational を参照してください。
+Windows イベントビューアーを開きます。 [アプリケーションとサービスログ]-> Microsoft-> Windows-> Kernel-Livedump-> Operational] を参照してください。
 
 ログが見つからない場合は、次に示すように、コマンドプロンプトまたはイベントビューアーから分析チャネルを有効にします。
 
@@ -111,7 +111,7 @@ Windows イベントビューアーを開きます。 アプリケーション�
 
 ### <a name="enabling-full-live-dumps"></a>完全なライブダンプを有効にする
 
-次の例の設定では、任意の時点でディスク上に存在する可能性がある完全なライブダンプの最大数を10に設定し、ミニダンプだけでなく、完全なメモリダンプを格納します。
+以下の設定例では、任意の時点でディスク上に存在する可能性がある完全なライブダンプの最大数を10に設定し、ミニダンプだけでなく、完全なメモリダンプを格納します。
 
 `reg add "HKLM\System\CurrentControlSet\Control\CrashControl\FullLiveKernelReports" /f /t REG_DWORD /v FullLiveReportsMax /d 10`
 
@@ -132,7 +132,7 @@ reg add "HKLM\System\CurrentControlSet\Control\CrashControl\FullLiveKernelReport
 
 ### <a name="disk-space-issues-event-id-202--error-text-live-dump-write-deferred-dump-data-api-ended-nt-status-0xc000007f"></a>ディスク領域の問題 (イベント ID 202-エラーテキスト: ライブダンプ書き込み遅延ダンプデータ API が終了しました。 NT ステータス: 0xC000007F)
 
-これは、ディスク領域が不足していることを意味します。 次のレジストリキーを更新して、ライブダンプ作成のパス (この例では、追加の記憶領域があるドライブ d) を変更します。
+これは、ディスク領域が不足していることを意味します。 次に示すレジストリキーを更新して、ライブダンプ作成のパス (この例では、追加の記憶領域があるドライブ d) を変更します。
 
 `reg add hklm\system\currentcontrolset\control\crashcontrol\livekernelreports /v "LiveKernelReportsPath" /t reg_sz /d "\??\d:\livedumps"`
 

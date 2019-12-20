@@ -4,17 +4,17 @@ description: UMDF 1.x ドライバーでのハードウェア リソースの検
 ms.assetid: 51CB254D-1B2C-43F5-925A-209810E2F5FC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41b05f64dd99141d113cec06befefab18b1edd06
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3ed315f412178cf4530f989fcfe63baed1a0c33a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842862"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210744"
 ---
 # <a name="finding-and-mapping-hardware-resources-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのハードウェア リソースの検索とマッピング
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF バージョン2.0 以降を使用している場合は、「[ハードウェアリソースの検索とマッピング](finding-and-mapping-hardware-resources.md)」を参照してください。
 

@@ -9,17 +9,17 @@ keywords:
 - IWDFDevice
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0008ec6cc16be804627815954684d443a7faeb35
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df0c337c5e074d1b8f5bb7e2802789245c4f0b66
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843183"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210732"
 ---
 # <a name="framework-device-object"></a>フレームワーク デバイス オブジェクト
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークデバイスオブジェクトは、 [Iwdfdevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdevice)インターフェイスによってドライバーに公開されます。 Framework device オブジェクトは、システム上のデバイスのフレームワーク表現です。 各デバイスオブジェクトには親ドライバーオブジェクトがあります。
 

@@ -6,21 +6,19 @@ keywords:
 - NetAdapterCx クライアント ドライバーの電源切断シーケンス
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48635d5c7bb5decb13c6a7c69da2f2db7e31ced7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5aa3117c75c03162bb715a0538f164600412434e
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353422"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209012"
 ---
 # <a name="power-down-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx クライアント ドライバーの電源切断シーケンス
 
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
+次の図は、デバイスの電源をオンにして削除するときに、NetAdapterCx がクライアントドライバーのイベントコールバック関数を呼び出す順序を示しています。 シーケンスは、動作中の電源状態 (D0) にある操作デバイスを使用して、図の上部から開始します。
 
-次の図は、電源を切ったとき、NetAdapterCx クライアント ドライバーのイベントのコールバック関数を呼び出す順序とデバイスを削除します。 シーケンスは、図の上部にある作業の電源の状態 (D0) では、運用のデバイスで始まります。
+<img src="images/netadaptercx-powerdown.png" alt="Device enumeration and power-down sequence for NetAdapterCx client driver" title="NetAdapterCx クライアントドライバーのデバイス列挙と電源ダウンシーケンス" style="width: 600px;"/>
 
-<img src="images/netadaptercx-powerdown.png" alt="Device enumeration and power-down sequence for NetAdapterCx client driver" title="デバイスの列挙と NetAdapterCx クライアント ドライバーの電源のシーケンス" style="width: 600px;"/>
+大まかな横線は、デバイスの電源を切るために必要な手順を示しています。 図の左側の列には手順が記述されており、右側の列には、それを実現するイベントコールバックが一覧表示されます。 青いテキストでマークされた手順は NetAdapterCx に固有であり、他の手順はすべての WDF ベースのドライバーに共通です。
 
-広範な水平の線は、デバイスの電源に関連するステップをマークします。 図の左側にある列について、手順を説明し、右側の列には、そのイベントのコールバックが一覧表示されます。 青色のテキストでマークされている手順は、他の手順はすべて WDF ベースのドライバーに共通 NetAdapterCx に固有です。
-
-図が示すよう電源と削除のシーケンスでは、デバイスを運用に関連する関数がフレームワークと呼ばれる逆の順序で、対応する「元に戻す」コールバックを呼び出す必要があります。 フレームワークは、デバイス オブジェクトのコンテキストの領域を削除した後にデバイス オブジェクトを削除します。
+図に示すように、電源ダウンと削除のシーケンスでは、対応する "元に戻す" コールバックを、デバイスを操作するために使用する関数をフレームワークが呼び出した逆の順序で呼び出す必要があります。 デバイスオブジェクトのコンテキスト領域を削除すると、そのオブジェクトが削除されます。

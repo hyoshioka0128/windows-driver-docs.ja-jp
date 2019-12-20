@@ -6,16 +6,14 @@ keywords:
 - モバイルブロードバンド (MBB) WDF クラス拡張、MBBCx、モバイルブロードバンド NetAdapterCx
 ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 47ae8376e181e11a966d3bb5ab25c0dea7794214
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a4b530ebfadb77f929541345a952c52ba08f77fd
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835535"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210816"
 ---
 # <a name="introduction-to-the-mobile-broadband-mbb-wdf-class-extension-mbbcx"></a>モバイル ブロードバンド (MBB) WDF クラス拡張機能 (MBBCx) の概要
-
-[!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
 Windows 10 の次期リリース以降、Windows Driver Kit (WDK) には、NetAdapterCx と連携するモバイルブロードバンド (MBB) WDF クラスの拡張機能が含まれています。 MBB クライアントドライバーは、最初は最も重要な WDF クライアントドライバーであり、他の NIC ドライバーと同様に NetAdapterCx クライアントドライバーであり、最後に、MBBCX メディア固有のドライバーを提供する MBB クラス拡張 (MBB) のクライアントドライバーです。機. 次のブロック図は、MBBCx アーキテクチャを示しています。
 
@@ -34,6 +32,6 @@ MBB アダプタークライアントドライバーは、フレームワーク�
 
 このセクションのトピックでは、基本的な NIC 用に NetAdapterCx クライアントドライバーを記述する方法が既にわかっていることを前提としているため、MBBCx 固有のコードにのみ焦点を当てます。
 
-ここでは、次のトピックについて説明します。
+このセクションでは、次のトピックについて説明します。
 
 - [Writing an MBBCx client driver (MBBCx クライアント ドライバーの作成)](writing-an-mbbcx-client-driver.md)

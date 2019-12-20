@@ -4,17 +4,17 @@ description: 作業項目の使用
 ms.assetid: 4617A33F-9026-45FF-9CC2-7215423E6D35
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f430d389ec7586312a94b1399273be6b212283a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b0384d57951ba61cdbdb1a6d6a9f9e62a8f67d02
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842590"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210854"
 ---
 # <a name="using-work-items"></a>作業項目の使用
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 作業項目は、ドライバーが[*Onworkitem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)イベントコールバック関数で実行するタスクです。 これらの関数は、非同期的に実行します。
 
@@ -52,7 +52,7 @@ ms.locfileid: "72842590"
 2.  指定したタスクを実行します。 必要に応じて、コールバック関数は[**Iwdfworkitem:: GetParentObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-getparentobject)を呼び出して、作業項目の親オブジェクトを決定できます。
 3.  ドライバーが作業項目をキューへする場合は、作業項目へのハンドルを再利用できるようになったことを示します。
 
-一部のドライバーでは、作業項目キューから作業項目をフラッシュするために[**Iwdfworkitem:: Flush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-flush)を呼び出す必要がある場合があります。 ドライバーが**Flush**メソッドを呼び出すと、メソッドは、ワーカースレッドが作業項目キューから指定された作業項目を削除し、ドライバーの[*onworkitem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)コールバック関数と*onworkitem*コールバックを呼び出した後に、を返しません。その後、作業項目の処理後に関数が返されます。
+一部のドライバーでは、作業項目キューから作業項目をフラッシュするために[**Iwdfworkitem:: Flush**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfworkitem-flush)を呼び出す必要がある場合があります。 ドライバーが**Flush**メソッドを呼び出した場合、メソッドは、ワーカースレッドが作業項目キューから指定された作業項目を削除し、ドライバーの[*onworkitem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfworkitem/nc-wudfworkitem-wudf_workitem_function)コールバック関数を呼び出し、その後、作業項目の処理後に*onworkitem*コールバック関数が返されるまで、を返しません。
 
  
 

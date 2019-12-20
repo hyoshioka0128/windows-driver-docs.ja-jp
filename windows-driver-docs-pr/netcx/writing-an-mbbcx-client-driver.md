@@ -6,16 +6,14 @@ keywords:
 - モバイルブロードバンド (MBB) WDF クラス拡張、MBBCx、モバイルブロードバンド NetAdapterCx
 ms.date: 03/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac24ff1b5112d158c8a5405055b9144c0ab636c5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fc98feda0b608ca5dff32664e392454912bcdefb
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838265"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208942"
 ---
 # <a name="writing-an-mbbcx-client-driver"></a>MBBCx クライアント ドライバーの作成
-
-[!include[MBBCx Beta Prerelease](../mbbcx-beta-prerelease.md)]
 
 >[!WARNING]
 >このトピックのシーケンス図は、例示のみを目的としています。 パブリックコントラクトではなく、将来変更される可能性があります。
@@ -81,7 +79,7 @@ MBBCx では、コントロールプレーンの MBIM 仕様リビジョン1.0�
 
 MBBCx フレームワークは、常に、クライアントドライバーの*Evtmbb Endmbimfragment*および*EvtMbbDeviceReceiveMbimFragment*コールバック関数への呼び出しをシリアル化します。 クライアントドライバーが**MbbRequestComplete**または**MbbRequestCompleteWithInformation**のいずれかを呼び出すまで、フレームワークによって新しい呼び出しは行われません。
 
-クライアントドライバーは、重複する*EvtmbbEvtMbbDeviceReceiveMbimFragment Endmbimfragment*またはコールバックを受信しないことが保証されていますが、前のコマンドの応答が返される前に、連続して複数の呼び出しを受け取ることがあります。デバイスから使用できます。
+クライアントドライバーは、重複する*EvtmbbEvtMbbDeviceReceiveMbimFragment Endmbimfragment*または** コールバックを受信しないことが保証されていますが、前のコマンドの応答がデバイスから利用できるようになるまで、連続して複数の呼び出しを受け取る場合があります。
 
 デバイスが*d0*状態でない場合、MBBCx フレームワークは最初にデバイスを d0 に (つまり、 [*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)を呼び出して)、 *Evtmbb Endmbimfragment*または*EvtMbbDeviceReceiveMbimFragment*を呼び出します。 また、MBBCx フレームワークでは、デバイスを D0 状態のままにすることも保証されます。つまり、クライアントが**MbbRequestComplete**または**MbbRequestCompleteWithInformation**を呼び出すまで、 [*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)は呼び出されません。
 

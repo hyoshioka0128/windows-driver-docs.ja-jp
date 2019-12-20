@@ -5,14 +5,14 @@ ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
 keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2、OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ee26b386076c8a489638e1d32beb3405f234a3a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b11da5dced57bb7240b713eeb7d79cb27a6a7ddf
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844608"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210860"
 ---
-[!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 # <a name="oid_gen_receive_scale_parameters_v2"></a>OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
 

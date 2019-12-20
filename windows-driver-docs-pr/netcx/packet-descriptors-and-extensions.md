@@ -1,22 +1,20 @@
 ---
-title: パケット記述子と拡張機能
-description: パケット記述子と拡張機能
+title: パケットの記述子と拡張機能
+description: パケットの記述子と拡張機能
 ms.assetid: 7B2357AE-F446-4AE8-A873-E13DF04D8D71
 keywords:
 - WDF ネットワークアダプタークラス拡張パケット記述子と拡張機能、NetAdapterCx データパス記述子、マルチリングバッファー、NetAdapterCx パケット記述子、NetAdapterCx パケット拡張機能
-ms.date: 01/30/2019
+ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.custom: 19H1
-ms.openlocfilehash: caaf4961c269527a667cbdc55e0f7816b8ac77f6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.custom: Vib
+ms.openlocfilehash: c34a3f491f7c16c315c24455bc984f77e9025035
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838279"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209037"
 ---
-# <a name="packet-descriptors-and-extensions"></a>パケット記述子と拡張機能
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
+# <a name="packet-descriptors-and-extensions"></a>パケットの記述子と拡張機能
 
 NetAdapterCx では、*パケット記述子*は、ネットワークパケットを記述する、小さい、コンパクト、ランタイム拡張可能な構造です。 各パケットには次のものが必要です。
 
@@ -24,11 +22,11 @@ NetAdapterCx では、*パケット記述子*は、ネットワークパケッ�
 - 1つまたは複数のフラグメント記述子
 - 0個以上のパケット拡張 
 
-パケットの*コア記述子*は、 [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet)構造体です。 これには、特定のパケットのフレーミングレイアウトや、パケットの最初のフラグメント記述子へのインデックスなど、すべてのパケットに適用される最も基本的なメタデータのみが含まれます。   
+パケットの*コア記述子*は[**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/packet/ns-packet-_net_packet)構造体です。 これには、特定のパケットのフレーミングレイアウトや、パケットの最初のフラグメント記述子へのインデックスなど、すべてのパケットに適用される最も基本的なメタデータのみが含まれます。   
 
-各パケットには、パケットデータが置かれているシステムメモリ内の場所を記述する1つまたは複数の*フラグメント記述子*( [**NET_PACKET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet_fragment)構造体) も必要です。
+各パケットには、パケットデータが存在するシステムメモリ内の場所を記述する1つまたは複数の*フラグメント記述子*( [**NET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fragment/ns-fragment-_net_fragment)構造) も必要です。
 
-*パケット拡張*はオプションであり、シナリオ固有の機能に対してパケットごとのメタデータを保持します。 たとえば、拡張機能は、checksum、large send offload (LSO)、および receive segment 要素 (RSC) のオフロード情報を保持できます。また、アプリケーション固有の詳細を保持することもできます。
+*拡張*機能は省略可能で、シナリオ固有の機能に対して、パケット単位またはフラグメントごとのメタデータを保持します。 たとえば、パケット拡張では、checksum、large send offload (LSO)、および receive segment 要素 (RSC) のオフロード情報を保持することも、アプリケーション固有の詳細を保持することもできます。 フラグメント拡張機能は、仮想アドレス情報、論理 DMA アドレス情報、またはフラグメントのその他の情報を保持できます。
 
 これらの記述子と拡張機能は、ネットワークパケットに関するすべてのメタデータを保持します。 ここでは、パケットを記述する方法の2つの例を示します。 最初の図は、パケット全体が単一のメモリフラグメント内に格納され、チェックサムオフロードが有効になっているシナリオを示しています。
 
@@ -41,9 +39,9 @@ NetAdapterCx では、*パケット記述子*は、ネットワークパケッ�
 
 ## <a name="packet-descriptor-storage-and-access"></a>パケット記述子のストレージとアクセス
 
-パケット記述子とフラグメント記述子は両方とも**NET_RING**構造体に格納されます。 NIC クライアントドライバーは、net リング反復子インターフェイスを呼び出すことによって、ネットリングにアクセスし、それらに対して操作を実行します。これにより、ドライバーは NetAdapterCx を使用してネットワークデータをハードウェアにポストし、完了したデータを OS にドレインできます。 
+パケット記述子とフラグメント記述子は、どちらも**NET_RING**構造体に格納されます。 NIC クライアントドライバーは、net リング反復子インターフェイスを呼び出すことによって、ネットリングにアクセスし、それらに対して操作を実行します。これにより、ドライバーは NetAdapterCx を使用してネットワークデータをハードウェアにポストし、完了したデータを OS にドレインできます。 
 
-ネットリングと Net Ring 反復子インターフェイスの詳細については、「 [net リングと net ring 反復子](net-rings-and-net-ring-iterators.md)」を参照してください。
+ネットリングと Net Ring 反復子インターフェイスの詳細については、「 [net リングの概要](introduction-to-net-rings.md)」を参照してください。
 
 ## <a name="packet-descriptor-extensibility"></a>パケット記述子の拡張性
 
@@ -123,7 +121,7 @@ NIC クライアントドライバーでパケット拡張機能を使用する�
 
 NetAdapterCx は、既知のパケット拡張定数の定義を提供します。
 
-| 常時 | 定義 |
+| 定数 | 定義 |
 | --- | --- |
 | NET_PACKET_EXTENSION_INVALID_OFFSET | 無効なオフセットサイズに対してガードを行います。 |
 | <ul><li>NET_PACKET_EXTENSION_CHECKSUM_NAME</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1</li><li>NET_PACKET_EXTENSION_CHECKSUM_VERSION_1_SIZE</li></ul> | チェックサムパケット拡張の名前、バージョン、およびサイズ。 |
@@ -132,8 +130,8 @@ NetAdapterCx は、既知のパケット拡張定数の定義を提供します�
 
 さらに、NetAdapterCx には、 [**Netextensiongetdata**](https://docs.microsoft.com/windows-hardware/drivers/ddi/extension/nf-extension-netextensiongetdata)メソッドのラッパーとして機能する3つのヘルパーメソッドが用意されています。 これらの各メソッドは、適切な構造体の型へのポインターを返します。
 
-| メソッド | Structure |
+| メソッド | 構造体 |
 | --- | --- |
 | [**NetExtensionGetPacketChecksum**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksum/nf-checksum-netextensiongetpacketchecksum) | [**NET_PACKET_CHECKSUM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/checksumtypes/ns-checksumtypes-_net_packet_checksum) |
-| [**NetExtensionGetLargeSendSegmentation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlargesendsegmentation) | [**NET_PACKET_LARGE_SEND_SEGMENTATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_large_send_segmentation)
-| [**NetExtensionGetPacketReceiveSegmentCoalescence**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketreceivesegmentcoalescence) | [**NET_PACKET_RECEIVE_SEGMENT_COALESCENCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_receive_segment_coalescence) |
+| [**NetExtensionGetLso**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lso/nf-lso-netextensiongetpacketlso) | [**NET_PACKET_LSO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/lsotypes/ns-lsotypes-_net_packet_lso)
+| [**NetExtensionGetPacketRsc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsc/nf-rsc-netextensiongetpacketrsc) | [**NET_PACKET_RSC**](https://docs.microsoft.com/windows-hardware/drivers/ddi/rsctypes/ns-rsctypes-_net_packet_rsc) |

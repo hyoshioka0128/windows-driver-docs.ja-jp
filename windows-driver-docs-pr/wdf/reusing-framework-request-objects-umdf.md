@@ -11,17 +11,17 @@ keywords:
 - i/o 要求オブジェクトの再利用 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3130335a266cbec8578ad7beed9dd13e5b0ba86c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9785cf2179b9595b4a1a26f6d46d1fb3d85a5f59
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842226"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210866"
 ---
 # <a name="reusing-framework-request-objects-in-umdf"></a>UMDF でのフレームワーク要求オブジェクトの再利用
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ドライバーのパフォーマンスを向上させるために、i/o ターゲットにほぼ同一の非同期要求を作成して送信するフレームワークベースのドライバーは、要求ごとに新しい要求オブジェクトを作成する代わりに、要求オブジェクトを再利用できます。 要求が完了すると、ドライバーは要求オブジェクトを再利用できます。
 

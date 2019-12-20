@@ -12,17 +12,17 @@ keywords:
 - キー WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cb7d3efdb734110a86b0c5a3f50d40e09b2b27fc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4503c3fff3ff2c9fbcc6b2a5cc34740629dd57c8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845429"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210240"
 ---
 # <a name="using-the-registry-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのレジストリの使用
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF ベースのドライバーは、プロパティストアオブジェクトのインターフェイスを使用して、レジストリ内の値の読み取りと書き込みを行うことができます。
 
@@ -45,7 +45,7 @@ UMDF ベースのドライバーは、4種類のレジストリキーにアク�
   <a href="" id="iwdfpropertystorefactory--retrievedevicepropertystore"></a>[**IWDFPropertyStoreFactory::RetrieveDevicePropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfpropertystorefactory-retrievedevicepropertystore)  
   [**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)インターフェイスへのポインターを取得します。 *Subkeypath パス*パラメーターを使用して、ドライバーによって作成されたサブキーの下に値を指定できます。たとえば、 **\\デバイスパラメーター\\** <em>driverservicename\\サブキー</em>です。
 
-  ドライバーは **\\デバイスパラメーター**サブキー内の値への読み取り専用アクセス権を持ち、 **\\デバイスパラメーター\\WDF**または **\\デバイスパラメーター\\wudf**にアクセスすることはできません。
+  ドライバーは**\\デバイスパラメーター**サブキー内の値への読み取り専用アクセス権を持ち、 **\\デバイスパラメーター\\WDF**または**\\デバイスパラメーター\\wudf**にアクセスすることはできません。
 
   統合デバイスプロパティモデルを使用して作成されたプロパティ値は、ハードウェアキーの下にある [ **\\Properties** ] サブキーに格納されます。
 
@@ -67,7 +67,7 @@ UMDF ベースのドライバーは、4種類のレジストリキーにアク�
 
   レジストリには、 **HKEY\_ローカル\_マシン\\ハードウェア\\DEVICEMAP**キーが含まれています。これは、シリアルポートやパラレルポートなど、古いテクノロジの一部のドライバーで使用されることを示しています。 ドライバーが**DEVICEMAP**キーを使用するテクノロジをサポートしている場合、ドライバーは[**IWDFPropertyStoreFactory:: RetrieveDevicePropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfpropertystorefactory-retrievedevicepropertystore)を呼び出すことによって、キーの下のサブキーと値にアクセスできます。
 
-ドライバーが**RetrieveDevicePropertyStore**メソッドのいずれかを呼び出してレジストリサブキーを開くと、ドライバーは[**Iwdfnamedpropertystore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore)、 [**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)、または[**IWDFUnifiedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfunifiedpropertystore)によって公開されているメソッドを使用できます。サブキーの下に値を作成、読み取り、および書き込みを行います。 **IWDFNamedPropertyStore2**インターフェイスを使用すると、ドライバーは値を削除することもできます。
+ドライバーが**RetrieveDevicePropertyStore**メソッドのいずれかを呼び出してレジストリサブキーを開くと、ドライバーは[**Iwdfnamedpropertystore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore)、 [**IWDFNamedPropertyStore2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfnamedpropertystore2)、または[**IWDFUnifiedPropertyStore**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfunifiedpropertystore)によって公開されているメソッドを使用して、サブキーの下に値を作成、読み取り、および書き込みを行うことができます。 **IWDFNamedPropertyStore2**インターフェイスを使用すると、ドライバーは値を削除することもできます。
 
 ドライバーのレジストリキーの詳細については、「[レジストリツリーとキーの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-registry-trees-and-keys)」を参照してください。
 

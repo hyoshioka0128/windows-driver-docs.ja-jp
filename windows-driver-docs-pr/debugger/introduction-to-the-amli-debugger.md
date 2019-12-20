@@ -3,17 +3,17 @@ title: AMLI Debugger の概要
 description: AMLI Debugger の概要
 ms.assetid: f210171c-2226-4bd6-bbb4-aee4b087e575
 keywords:
-- AMLI デバッガー, 概要
-- ACPI は、コンピューター言語のデバッグ
+- AMLI デバッガー、概要
+- ACPI デバッグ、コンピューターの言語
 - AML インタープリター
 ms.date: 11/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5334a3161e53046fa48f8020bf03d90bdfe9213f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dd8d79b5d5c0f296b8dc36f19405b5f013c609ae
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374344"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209838"
 ---
 # <a name="introduction-to-the-amli-debugger"></a>AMLI Debugger の概要
 
@@ -21,15 +21,15 @@ ms.locfileid: "63374344"
 ## <span id="ddk_introduction_to_the_amli_debugger_dbg"></span><span id="DDK_INTRODUCTION_TO_THE_AMLI_DEBUGGER_DBG"></span>
 
 
-標準のカーネル モード コードのデバッグと ACPI (Advanced Configuration and Power Interface) BIOS のデバッグの間に大きな違いがあります。
+標準のカーネルモードコードのデバッグと ACPI (Advanced Configuration and Power Interface) BIOS のデバッグには大きな違いがあります。
 
-Windows とそのドライバーは、特定のプロセッサ用にコンパイルされたバイナリのマシン コードで構成されますが、ACPI BIOS のコアのマシン語コードにないです。 代わりに、ACPI 機械語 (AML) として格納し、それが実行されると、Microsoft AML インタープリターによって処理されます。
+Windows とそのドライバーは、特定のプロセッサ用にコンパイルされたバイナリマシンコードで構成されますが、ACPI BIOS のコアはコンピューターコードには含まれていません。 代わりに、ACPI コンピューター言語 (AML) として格納され、実行時に Microsoft AML インタープリターによって処理されます。
 
-Microsoft AMLI デバッガーには、AML コードをデバッグできる特別なデバッグ ツールのセットです。 
+Microsoft AMLI デバッガーは、AML コードをデバッグできる特殊なデバッグツールのセットです。 
 
-Windows 10 より前に、の Windows のバージョンでは、Windows の ACPI ドライバー (Acpi.sys) のバージョン 1803 チェック ビルドが使用されました。 このケースではなくなりました。
+Windows 10 より前のバージョンの Windows では、バージョン1803のチェックを行った Windows ACPI ドライバー (Acpi) のビルドが使用されていました。 これは、チェックされたビルドが提供されなくなった場合のケースではなくなりました。
 
-AMLI デバッガーが完全には、64 ビットに注意してください。 どのようなプロセッサは、対象のコンピューターまたはホスト コンピューターで使用されているに関係なくは AMLI デバッガーが正しく機能します。
+AMLI デバッガーは、完全に64ビットに対応しています。 ターゲットコンピューターまたはホストコンピューターで使用されているプロセッサに関係なく、AMLI デバッガーは正常に機能します。
 
  
 

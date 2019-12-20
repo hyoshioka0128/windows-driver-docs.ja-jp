@@ -8,17 +8,17 @@ keywords:
 - WDK UMDF、データバッファーの処理を要求する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ef43e1f944a9310e3f85cbc67120236c3991bb6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ddadcaa1e564a7399cbd58ab6180ead3e620c393
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843445"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210072"
 ---
 # <a name="accessing-data-buffers-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーのデータバッファーへのアクセス
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ドライバーが読み取り、書き込み、またはデバイス i/o 制御要求を受信すると、要求オブジェクトには、入力バッファーまたは出力バッファーのいずれかまたは両方が含まれます。 (いくつかのデバイス i/o 制御要求では、2つの入力、2つの出力、または2つの入力/出力バッファーが提供します)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72843445"
 
 -   バージョン1.9 より前のバージョンの UMDF では、バッファーされた[i/o](#using-buffered-i-o-in-umdf-drivers)アクセス方法のみがサポートされます。 これらのバージョンの UMDF で実行される UMDF ベースのドライバーでは、すべての読み取り、書き込み、およびデバイスの i/o 制御要求に対して、バッファーされた i/o メソッドのみを使用できます。 I/o 要求のデータバッファーにアクセスするには、UMDF ベースのドライバーで[**IWDFIoRequest:: GetInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getinputmemory)オブジェクトと[**IWDFIoRequest:: getinputmemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getoutputmemory)オブジェクトのメソッドを使用する必要があります。
 
--   UMDF バージョン1.9 以降では、2つのアクセスメソッド ([バッファー i/o](#using-buffered-i-o-in-umdf-drivers)と[ダイレクト i/o](#using-direct-i-o-in-umdf-drivers)) を、umdf ベースのドライバーで使用できます。 UMDF バージョン1.9 以降用に記述された UMDF ドライバーでは、 [**IWDFIoRequest2:: RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2:: RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2:: RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)、または[**IWDFIoRequest2:: を使用する必要があります。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)データバッファーにアクセスするための RetrieveOutputMemory オブジェクトメソッド。
+-   UMDF バージョン1.9 以降では、2つのアクセスメソッド ([バッファー i/o](#using-buffered-i-o-in-umdf-drivers)と[ダイレクト i/o](#using-direct-i-o-in-umdf-drivers)) を、umdf ベースのドライバーで使用できます。 Umdf バージョン1.9 以降用に記述された UMDF ドライバーでは、 [**IWDFIoRequest2:: RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2:: RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2:: RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)、または[**IWDFIoRequest2:: RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)オブジェクトメソッドを使用してデータバッファーにアクセスする必要があります。
 
 3番目のアクセスメソッドは、"バッファーなし" または "[直接](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)i/o" と呼ばれ、umdf ベースのドライバーでは使用できませんが、umdf は、一部の i/o 要求を、"いずれの" メソッドから、umdf version がサポートするメソッドに変換できます。
 
@@ -48,7 +48,7 @@ ms.locfileid: "72843445"
 
 ### <a href="" id="specifying-a-preferred-buffer-access-method"></a>適切なバッファーアクセス方法の指定
 
-UMDF バージョン1.9 以降では、バッファーとダイレクト i/o の両方のアクセス方法がサポートされています。 ドライバーは、 [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出して[**IWDFDeviceInitialize2:: SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)を呼び出してから次のものを作成することによって、デバイスのすべての読み取り、書き込み、デバイスの i/o 制御要求に使用するアクセス方法を指定できます。デバイスオブジェクト。 たとえば、ドライバーが、そのデバイスの1つの読み取りおよび書き込み要求に対してバッファリングされた i/o メソッドの設定を指定した場合、 [UMDF driver ホストプロセス](umdf-driver-host-process.md)は、そのデバイスのドライバーに対して読み取りおよび書き込み要求を行うときに、バッファーされた i/o メソッドを使用します。 ドライバーでダイレクト i/o の優先順位を指定した場合、UMDF は直接 i/o を使用できます (ただし、そうでない場合もあります)。 UMDF が直接 i/o を使用する場合の詳細については、「 [umdf で I/o 要求のバッファーアクセス方法を選択する方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)」を参照してください。
+UMDF バージョン1.9 以降では、バッファーとダイレクト i/o の両方のアクセス方法がサポートされています。 ドライバーは、 [**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出してデバイスオブジェクトを作成する前に[**IWDFDeviceInitialize2:: SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)を呼び出すことによって、デバイスのすべての読み取り、書き込み、デバイスの i/o 制御要求に使用するアクセス方法を指定できます。 たとえば、ドライバーが、そのデバイスの1つの読み取りおよび書き込み要求に対してバッファリングされた i/o メソッドの設定を指定した場合、 [UMDF driver ホストプロセス](umdf-driver-host-process.md)は、そのデバイスのドライバーに対して読み取りおよび書き込み要求を行うときに、バッファーされた i/o メソッドを使用します。 ドライバーでダイレクト i/o の優先順位を指定した場合、UMDF は直接 i/o を使用できます (ただし、そうでない場合もあります)。 UMDF が直接 i/o を使用する場合の詳細については、「 [umdf で I/o 要求のバッファーアクセス方法を選択する方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)」を参照してください。
 
 ドライバーでサポートされているデバイスごとに、ドライバーは、バッファー内の i/o、直接 i/o、またはバッファーまたはデバイスの直接 i/o のいずれかの設定を指定できます。 このドライバーでは、読み取り要求と書き込み要求に対して1種類のアクセス方法を指定できます。また、デバイスの i/o 制御要求に対して別の種類のアクセス方法を指定することもできます。 ドライバーでアクセス方法の設定が指定されていない場合、UMDF はバッファーされたメソッドを使用します。
 
@@ -56,7 +56,7 @@ UMDF バージョン1.9 以降では、バッファーとダイレクト i/o の
 
 -   バージョン1.9 より前の UMDF バージョンでは、UMDF は常に、すべての i/o 制御要求に対してバッファーされたアクセスメソッドを使用します。
 
--   、IOCTL がバッファー i/o を指定する場合、UMDF バージョン1.9 以降では、バッファーされた i/o アクセスメソッドが使用されます。 IOCTL が直接 i/o を指定し、ドライバーが[**IWDFDeviceInitialize2:: SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)を呼び出して、ダイレクト i/o の優先順位が設定されていることを示している場合、または、「 [umdf がバッファーを選択する方法」の説明に従って、umdf i/o を使用している可能性があります。I/o 要求のアクセスメソッド](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)。 "バッファーに接続されていない i/o およびダイレクト i/o" メソッドを指定する Ioctl をサポートする方法の詳細については、「 [Umdf ドライバーでのバッファー i/o と直接 i/o の両方を使用する](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)」を参照してください。
+-   、IOCTL がバッファー i/o を指定する場合、UMDF バージョン1.9 以降では、バッファーされた i/o アクセスメソッドが使用されます。 IOCTL が直接 i/o を指定し、ドライバーが[**IWDFDeviceInitialize2:: SetIoTypePreference**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize2-setiotypepreference)を呼び出して、ダイレクト I/O、umdf が直接 i/o を使用している、または、「 [Umdf が i/o 要求に対してバッファーアクセス方法を選択する方法](#how-umdf-chooses-a-buffer-access-method-for-an-i-o-request)」の説明に従って、バッファー内 i/o を使用する場合があります。 "バッファーに接続されていない i/o およびダイレクト i/o" メソッドを指定する Ioctl をサポートする方法の詳細については、「 [Umdf ドライバーでのバッファー i/o と直接 i/o の両方を使用する](#using-neither-buffered-i-o-nor-direct-i-o-in-umdf-drivers)」を参照してください。
 
 ### <a href="" id="specifying-a-buffer-retrieval-mode"></a>バッファー取得モードの指定
 
@@ -88,13 +88,13 @@ UMDF バージョン1.9 以降では、即時取得モードと*遅延取得*モ
 
     このフレームワークでは、 **Directtransferthreshold**に指定した値に基づいてしきい値を決定するために、次の規則を使用します。 指定された数値は、4096の**ページ\_サイズ**を想定しています。これは、Itanium ベースのシステムを除き、有効です。
 
-    -   **Directtransferthreshold**を 8192 (または **\_\* ページサイズ**) 以下の値に設定すると、フレームワークによってしきい値が8192に設定されます。 このフレームワークでは、8192バイト未満のバッファーにはバッファー i/o、8192バイト以上のバッファーにはダイレクト i/o が使用されます。
+    -   **Directtransferthreshold**を 8192 (または**\_\* ページサイズ**) 以下の値に設定すると、フレームワークによってしきい値が8192に設定されます。 このフレームワークでは、8192バイト未満のバッファーにはバッファー i/o、8192バイト以上のバッファーにはダイレクト i/o が使用されます。
 
     -   **Directtransferthreshold**を8192より大きい値に設定すると、フレームワークは**ページ\_サイズ**の次の倍数に切り上げます。 ここでも、フレームワークでは、しきい値より小さいバッファーの場合はバッファー i/o を使用し、しきい値以上の場合はバッファーの直接 i/o を使用します。
 
 -   UMDF は、メモリページの境界で開始および終了するバッファー領域に対してのみ、direct i/o を使用します。 バッファーの先頭または末尾がページの境界上にない場合、UMDF はバッファーのその部分に対してバッファーされた i/o を使用します。 言い換えると、複数の i/o 要求で構成される大規模なデータ転送の場合、UMDF はバッファー i/o とダイレクト i/o の両方を使用することがあります。
 
--   デバイス i/o 制御要求の場合、UMDF は直接 i/o を指定するのは、i/o 制御コード (IOCTL) が直接 i/o を指定し、デバイスの UMDF ベースのすべてのドライバーが直接アクセスを指定するために**IWDFDeviceInitialize2:: SetIoTypePreference**を呼び出した場合のみです。b.
+-   デバイス i/o 制御要求の場合、UMDF は直接 i/o を使用します。これは、i/o 制御コード (IOCTL) が直接 i/o を指定し、デバイスのすべての UMDF ベースドライバーが直接アクセス方法を指定するために**IWDFDeviceInitialize2:: SetIoTypePreference**を呼び出した場合のみです。
 
 ドライバーは、バッファーアクセス方法に関係なく、同じセットの要求オブジェクトメソッドを使用してデータバッファーにアクセスします。 そのため、ほとんどのドライバーでは、通常、UMDF がバッファー i/o を使用しているかどうか、または i/o 要求に直接 i/o を使用しているかどうかを知る必要はありません。
 
@@ -122,11 +122,11 @@ UMDF バージョン1.9 以降では、要求バッファーの即時取得ま�
 
 イミディエイトバッファー取得モードを使用するドライバーは、 [**IWDFIoRequest:: GetInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getinputmemory)と[**IWDFIoRequest:: getinputmemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getoutputmemory)を使用してバッファーにアクセスする必要があります。
 
-遅延バッファー取得モードを使用するドライバーは、 [**IWDFIoRequest2:: RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2:: RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2:: RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)を[**呼び出すことによってバッファーにアクセスできます。IWDFIoRequest2:: RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)。
+遅延バッファー取得モードを使用するドライバーは、 [**IWDFIoRequest2:: RetrieveInputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputbuffer)、 [**IWDFIoRequest2:: RetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveinputmemory)、 [**IWDFIoRequest2:: RetrieveOutputBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputbuffer)、または[**IWDFIoRequest2:: RetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-retrieveoutputmemory)を呼び出すことによって、バッファーにアクセスできます。
 
 ### <a href="" id="using-direct-i-o-in-umdf-drivers"></a>UMDF ドライバーでの Direct i/o の使用
 
-ドライバーが直接 i/o を使用している場合、ドライバーホストプロセスは、i/o 要求の発信元 (通常はユーザーモードアプリケーション) によって指定されたバッファー領域のアクセシビリティを確認し、バッファー領域を物理メモリにロックして、ドライバーを提供します。バッファー領域に直接アクセスできます。
+ドライバーが直接 i/o を使用している場合、ドライバーホストプロセスは、i/o 要求の発信元 (通常はユーザーモードアプリケーション) によって指定されたバッファー領域のアクセシビリティを検証し、バッファー領域を物理メモリにロックしてから、ドライバーにバッファー領域への直接アクセスを提供します。
 
 ダイレクト i/o を選択するタイミングのガイドラインについては、「 [**WDF\_DEVICE\_IO\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi_types/ne-wudfddi_types-_wdf_device_io_type)」を参照してください。
 

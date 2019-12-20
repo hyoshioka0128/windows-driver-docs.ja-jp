@@ -6,16 +6,14 @@ keywords:
 - 構成情報にアクセスする NetAdapterCx、NetCx が構成情報にアクセスする
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 193a2e454fd79ff4cc75042623822427f85fde48
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f96f5273c6752ee32d39a480988bdf807f756347
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838294"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210790"
 ---
 # <a name="accessing-configuration-information"></a>構成情報へのアクセス
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 NetAdapterCx クラス拡張は、クライアントドライバーのレジストリパラメーターへのアクセスを提供する一連の関数をサポートしています。
 
@@ -62,7 +60,7 @@ status = NetConfigurationQueryMultiString(configuration,
                                           myStrings);
 ```
 
-ULONG データ、文字列、複数文字列 (REG_MULTI_SZ に似ています)、バイナリ blob、およびソフトウェア構成可能なネットワークアドレスに対してクエリを実行するための `NetConfiguration*` 関数があります。
+ULONG データ、文字列、複数文字列 (REG_MULTI_SZ に似ています)、バイナリ blob、ソフトウェア構成可能なネットワークアドレスに対してクエリを実行するための `NetConfiguration*` 関数があります。
 
 * [**Netconfiguration割り当てバイナリ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationassignbinary)
 * [**Netconfiguration割り当ての文字列**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netconfiguration/nf-netconfiguration-netconfigurationassignmultistring)

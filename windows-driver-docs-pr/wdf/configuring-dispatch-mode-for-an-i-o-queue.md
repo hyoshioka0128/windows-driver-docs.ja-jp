@@ -13,17 +13,17 @@ keywords:
 - 手動ディスパッチモード WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f09c0c4bda351144b1469778101523896b8ba907
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 65a16843b128cd8a40623533018fb68fd6fabcae
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843645"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210230"
 ---
 # <a name="configuring-dispatch-mode-for-an-io-queue"></a>I/O キューのディスパッチ モードの構成
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 アプリケーションからの i/o 要求が到着すると、フレームワークは各要求を適切な i/o キューに配置します。 要求がドライバーに配信される方法とタイミングは、ドライバーが i/o キューのディスパッチを構成する方法と、ドライバーが[コールバック関数の同期を指定](specifying-a-callback-synchronization-mode.md)する方法によって異なります。 また、i/o キューは、デバイスが適切な状態になるまで、UMDF の PnP および電源管理サブシステムとやり取りして、i/o 要求をキューに保持します。
 
@@ -44,7 +44,7 @@ I/o キューのディスパッチモードが[同期モード](specifying-a-cal
     -   ドライバーは、 [**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)メソッドのいずれかを呼び出して、i/o 要求を直ちに完了します。 I/o 要求が無効であるか、サービスを提供できない場合、またはデータを格納しているバッファーまたはキャッシュからデータをコピーすることによって完了できる場合、ドライバーは i/o 要求を直ちに完了します。
     -   ドライバーは、 [**IWDFIoRequest:: ForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)メソッドを呼び出して、i/o 要求をキューへします。
     -   ドライバーは、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)メソッドを呼び出して、i/o 要求を下位レベルのドライバーに渡します。
--   Manual
+-   手動
 
     手動ディスパッチモードは、 **WdfIoQueueDispatchManual**値を使用して指定します。 このディスパッチモードでは、要求がキューに到着すると、i/o キューはドライバーに自動的に通知しません。 ドライバーは、 [**Iwdfioqueue:: RetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfioqueue-retrievenextrequest)メソッドを呼び出して、キューから要求を手動で取得する必要があります。 これはポーリングモデルです。
 

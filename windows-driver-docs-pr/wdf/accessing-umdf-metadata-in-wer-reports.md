@@ -1,37 +1,37 @@
 ---
 title: WER レポートでの UMDF メタデータへのアクセス
-description: このトピックでは、オペレーティング システムがユーザー モード ドライバー フレームワーク (UMDF) がクラッシュしたときに作成した Windows エラー報告 (WER) レポートの内容と場所について説明します。システムは、3 UMDF イベント種類の WUDFHostProblem、WUDFUnhandledException、WER レポートを生成し、WUDFVerifierFailure.When、reflector はもホストのタイムアウトしきい値を超えているため、ドライバーのホスト プロセスを終了します、システムでは、WER の情報を含む、Report.wer という名前のファイルを生成します。 具体的には、Report.wer には、ライブ デバッグ ターゲットへのアクセスなしで UMDF ドライバーをデバッグしようとしている場合に役立つ可能性がある UMDF メタデータが含まれています。
+description: このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) がクラッシュしたときにオペレーティングシステムによって作成される Windows エラー報告 (WER) レポートの場所と内容について説明します。システムは、3つの異なる UMDF イベントの種類 WUDFHostProblem、WUDFUnhandledException、および WUDFVerifierFailure に対して WER レポートを生成します。リフレクターがドライバーホストプロセスを終了するとき、ホストのタイムアウトしきい値を超えたことが原因であることがあります。システムは、WER 情報を含む、wer という名前のファイルを生成します。 具体的には、レポートの wer には、ライブデバッグターゲットにアクセスせずに、UMDF ドライバーをデバッグする場合に役立つ、UMDF メタデータが含まれています。
 ms.assetid: ca5fe108-b4fb-4c90-87bc-9901854780d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b13a070fdfacd3e216817327197783fb0d400858
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 34a408d946d540a6011e33d0341b92b06b4b0a3c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379053"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210232"
 ---
 # <a name="accessing-umdf-metadata-in-wer-reports"></a>WER レポートでの UMDF メタデータへのアクセス
 
 
-このトピックでは、オペレーティング システムがユーザー モード ドライバー フレームワーク (UMDF) がクラッシュしたときに作成した Windows エラー報告 (WER) レポートの内容と場所について説明します。
+このトピックでは、ユーザーモードドライバーフレームワーク (UMDF) がクラッシュしたときにオペレーティングシステムによって作成される Windows エラー報告 (WER) レポートの場所と内容について説明します。
 
-システムでは、WER UMDF イベントの 3 つの異なる種類のレポートが生成されます。**WUDFHostProblem**、 **WUDFUnhandledException**、および**WUDFVerifierFailure**します。
+システムは、 **Wudfhostproblem**、 **WUDFUnhandledException**、および**WUDFVerifierFailure**の3つの異なる UMDF イベントの種類に対して WER レポートを生成します。
 
-リフレクターが終了したとき、ドライバーのホスト プロセス場合がありますす、[ホスト タイムアウト](how-umdf-enforces-time-outs.md)しきい値を超えている、システムには、WER の情報を含む Report.wer という名前のファイルが生成されます。 具体的には、Report.wer には、ライブ デバッグ ターゲットへのアクセスなしで UMDF ドライバーをデバッグしようとしている場合に役立つ可能性がある UMDF メタデータが含まれています。
+リフレクターがドライバーホストプロセスを終了すると、[ホストのタイムアウト](how-umdf-enforces-time-outs.md)しきい値を超えたことが原因で、wer という名前のファイルが生成されます。このファイルには、wer 情報が含まれています。 具体的には、レポートの wer には、ライブデバッグターゲットにアクセスせずに、UMDF ドライバーをデバッグする場合に役立つ、UMDF メタデータが含まれています。
 
-Windows 8.1 では、c: Report.wer ファイルを検出できる\\ProgramData\\Microsoft\\Windows\\WER\\ReportQueue ディレクトリ。 このディレクトリに開き、最新の重要でない\_HostProblem\_ \*フォルダー Report.wer を見つけます。
+Windows 8.1 では、"C:\\ProgramData\\Microsoft\\Windows\\WER\\ReportQueue ディレクトリにある wer ファイルを見つけることができます。 このディレクトリで、\* フォルダー\_最新の重要ではない\_HostProblem を開き、レポート wer を見つけます。
 
-次の PowerShell コマンドを使用して umdf WER レポートを表示できます。
+次の PowerShell コマンドを使用して、UMDF の WER レポートにアクセスすることもできます。
 
 ```cpp
 get-winevent -providername "Windows Error Reporting" | where-object {$_.Message -like "*wudf*"} | format-list | out-file UmdfReports.txt
 ```
 
-## <a name="wudfhostproblem-sample-report"></a>WUDFHostProblem サンプル レポート
+## <a name="wudfhostproblem-sample-report"></a>WUDFHostProblem のサンプルレポート
 
 
-次にサンプルの種類の UMDF WER レポート**WUDFHostProblem**します。 上記で説明した ReportQueue ディレクトリから取得されています。 フィールドがラベルで Sig ではなく P0、P1、P2 して PowerShell を使用して、レポートを取得する場合\[0\]、Sig\[1\]、Sig\[2\]します。 それ以外の場合、フィールドは同じであり、同じ使用可能な値を含めることができます。 このサンプルは、OSR usb-fx2 のハードウェアの参照をボードを使用するこの WDK サンプルのいずれかから生成されました。
+**Wudfhostproblem**タイプのサンプルの UMDF WER レポートを次に示します。 これは、上記で説明した ReportQueue ディレクトリから取得されたものです。 PowerShell を使用してレポートを取得する場合、フィールドには、Sig、P1、P2 (Sig\[0\]、Sig\[1\]、Sig\[2\]ではなく、P0、P1、P2 のラベルが付けられます。 それ以外の場合、フィールドは同じであり、同じ値を含んでいます。 このサンプルは、OSR USB FX2 ハードウェアリファレンスボードを使用する WDK サンプルの1つから生成されました。
 
 ```cpp
 Sig[0].Name=EventClass
@@ -54,10 +54,10 @@ Sig[8].Name=HardwareId
 Sig[8].Value=USB\VID_0547&PID_1002&REV_0000
 ```
 
-## <a name="wudfhostproblem-fields"></a>WUDFHostProblem フィールド
+## <a name="wudfhostproblem-fields"></a>WUDFHostProblem のフィールド
 
 
-次の表に、可能な型のレポートのフィールド値**WUDFHostProblem します。**
+次の表は、 **Wudfhostproblem**という種類のレポートのフィールドに使用できる値を示しています。
 
 <table>
 <colgroup>
@@ -76,12 +76,12 @@ Sig[8].Value=USB\VID_0547&PID_1002&REV_0000
 <tr class="odd">
 <td align="left">0</td>
 <td align="left">EventClass</td>
-<td align="left"><p>フレームワークでは、この値を設定<strong>HostProblem</strong>します。</p></td>
+<td align="left"><p>フレームワークによって、この値が<strong>Hostproblem</strong>に設定されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
 <td align="left">問題</td>
-<td align="left"><p>このフィールドには、次の値のいずれかが含まれています。</p>
+<td align="left"><p>このフィールドには、次のいずれかの値が含まれます。</p>
 <ul>
 <li>HostFailure</li>
 <li>SendFailure</li>
@@ -89,17 +89,17 @@ Sig[8].Value=USB\VID_0547&PID_1002&REV_0000
 <li>BadRequest</li>
 <li>BadReply</li>
 <li>HostFailure</li>
-<li>その他</li>
+<li>Other</li>
 <li>HostDisconnect</li>
-<li>LeakedHandle</li>
+<li>最小のハンドル</li>
 <li>InvalidInterruptState</li>
 <li>IsrTimedOut</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">認識</td>
-<td align="left"><p>次の列挙値のいずれかが含まれます。</p>
+<td align="left">DetectedBy</td>
+<td align="left"><p>次の列挙値のいずれかが含まれています。</p>
 <div class="code">
 <code>cpp
 WdfComponentInvalid = 0,
@@ -115,12 +115,12 @@ WdfComponentMax</code>
 <tr class="even">
 <td align="left">3</td>
 <td align="left">UMDFVersion</td>
-<td align="left"><p>現在使用中の UMDF ライブラリのバージョンを指定します。 も新しいバージョンがありますので注意は、ユーザーは、フレームワーク ライブラリを更新する操作を行った場合、オペレーティング システムに付属します。</p></td>
+<td align="left"><p>現在使用されている UMDF ライブラリのバージョンを指定します。 これは、ユーザーがフレームワークライブラリを更新するアクションを実行した場合、オペレーティングシステムに付属していたよりも新しいバージョンである可能性があることに注意してください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">4</td>
+<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
 <td align="left">ExitCode</td>
-<td align="left"><p>次の列挙値のいずれかが含まれます。</p>
+<td align="left"><p>次の列挙値のいずれかが含まれています。</p>
 <div class="code">
 <code>cpp
     WdfHostExit_StillActive = 0x103,
@@ -129,12 +129,12 @@ WdfComponentMax</code>
     WdfHostExit_InternalDriverStopReportFailed,
     WdfHostExit_ExternalTermination</code>
 </div>
-<p><strong>WdfHostExit_StillActive</strong>フレームワーク、エラー レポートの作成時に、ホスト プロセスが実行されていることを示します。</p></td>
+<p><strong>WdfHostExit_StillActive</strong>は、フレームワークがエラーレポートを作成した時点でホストプロセスが実行されていたことを示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">5</td>
 <td align="left">操作</td>
-<td align="left"><p>次の列挙値のいずれかが含まれます。</p>
+<td align="left"><p>次の列挙値のいずれかが含まれています。</p>
 <div class="code">
 <code>cpp
     WudfOperation_Invalid,
@@ -153,29 +153,29 @@ WdfComponentMax</code>
 </tr>
 <tr class="odd">
 <td align="left">6</td>
-<td align="left">メッセージ</td>
-<td align="left"><p>最初の桁は、このフィールドは常に 1 で、操作では IRP が関係していることを示します。 以降の桁の数字のペアを示す、 <strong>MajorFunction</strong>と<strong>MinorFunction</strong>の IRP では、それぞれします。</p>
-<p>上記のサンプル レポートで、このフィールドに値 11b00。 つまり、IRP IRP_MJ_PNP の主要な関数の値と IRP_MN_START_DEVICE のマイナー関数値を持つドライバー ホスト プロセスの代わりに、リフレクタ処理したです (1 = IRP メッセージ、1b IRP_MJ_PNP、00 = IRP_MN_START_DEVICE =)。</p></td>
+<td align="left">Message</td>
+<td align="left"><p>このフィールドの最初の桁は常に1です。これは、IRP が操作に関係していることを示します。 後続の数字のペアは、それぞれ IRP の<strong>MajorFunction</strong>と<strong>minorfunction</strong>を示します。</p>
+<p>たとえば、上記のサンプルレポートでは、このフィールドには11b00 という値が含まれています。 これは、この操作は、主な関数値が IRP_MJ_PNP であり、IRP_MN_START_DEVICE のマイナー関数値 (1 = IRP message、1b = IRP_MJ_PNP、00 = IRP_MN_START_DEVICE) で、ドライバーホストプロセスの代わりにリフレクタが処理した IRP であることを意味します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">7</td>
-<td align="left">状態</td>
-<td align="left"><p>フレームワークは、常にこの値を 0 xffffffff に設定します。</p></td>
+<td align="left">状況</td>
+<td align="left"><p>フレームワークは、常にこの値を0xffffffff に設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">8</td>
 <td align="left">HardwareId</td>
-<td align="left"><p>このフィールドには、問題のあるドライバーに関連付けられているデバイスのハードウェア ID が含まれています。</p></td>
+<td align="left"><p>このフィールドには、問題が発生したドライバーに関連付けられているデバイスのハードウェア ID が含まれます。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="wudfunhandledexception-fields"></a>WUDFUnhandledException フィールド
+## <a name="wudfunhandledexception-fields"></a>WUDFUnhandledException のフィールド
 
 
-次の表に、可能な型のレポートのフィールド値**WUDFUnhandledException**します。
+次の表では、 **WUDFUnhandledException**型のレポートのフィールドに使用できる値について説明します。
 
 <table>
 <colgroup>
@@ -194,71 +194,71 @@ WdfComponentMax</code>
 <tr class="odd">
 <td align="left">0</td>
 <td align="left">EventClass</td>
-<td align="left"><p>フレームワークでは、この値を設定<strong>UnhandledException</strong>します。</p></td>
+<td align="left"><p>この値は、フレームワークによって<strong>UnhandledException</strong>に設定されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">コンポーネント</td>
-<td align="left"><p>このフィールドには、次の値のいずれかが含まれています。</p>
+<td align="left">Component</td>
+<td align="left"><p>このフィールドには、次のいずれかの値が含まれます。</p>
 <ul>
 <li>ライセンスが無効</li>
 <li>プラットフォーム</li>
-<li>リフレクター</li>
-<li>ドライバー マネージャー</li>
+<li>反射</li>
+<li>ドライバーマネージャー</li>
 <li>Host</li>
-<li>Framework</li>
+<li>フレームワーク</li>
 <li>テスト</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
 <td align="left">ExceptionCode</td>
-<td align="left"><p>理由、例外が発生しました。 値の一覧は、次を参照してください。 <a href="https://docs.microsoft.com/windows/desktop/api/winnt/ns-winnt-_exception_record" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winnt/ns-winnt-_exception_record)"> <strong>EXCEPTION_RECORD</strong></a>します。</p></td>
+<td align="left"><p>例外が発生した理由。 値の一覧については、「 <a href="https://docs.microsoft.com/windows/win32/api/winnt/ns-winnt-exception_record" data-raw-source="[&lt;strong&gt;EXCEPTION_RECORD&lt;/strong&gt;](https://docs.microsoft.com/windows/win32/api/winnt/ns-winnt-exception_record)"><strong>EXCEPTION_RECORD</strong></a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">3</td>
 <td align="left">RelativeFaultingAddress</td>
-<td align="left"><p>例外が発生したアドレスです。</p></td>
+<td align="left"><p>例外が発生したアドレス。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">4</td>
+<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
 <td align="left">CrashingModuleName</td>
-<td align="left">例外が発生したドライバーの名前。</td>
+<td align="left">例外を発生させたドライバーの名前。</td>
 </tr>
 <tr class="even">
 <td align="left">5</td>
 <td align="left">CrashingFileVersion</td>
-<td align="left">ドライバーのフレームワークのバージョン。</td>
+<td align="left">ドライバーのフレームワークバージョン。</td>
 </tr>
 <tr class="odd">
 <td align="left">6</td>
-<td align="left">LastDriverName</td>
-<td align="left">ドライバー スタックの最初の非 UMDF ドライバー コンポーネントの名前です。</td>
+<td align="left">LastDriverName の場合</td>
+<td align="left">ドライバースタック内の最初の非 UMDF ドライバーコンポーネントの名前。</td>
 </tr>
 <tr class="even">
 <td align="left">7</td>
 <td align="left">LastDriverVersion</td>
-<td align="left">ドライバー スタックの最初の非 UMDF ドライバー コンポーネントのバージョン番号。</td>
+<td align="left">ドライバースタック内の最初の非 UMDF ドライバーコンポーネントのバージョン番号。</td>
 </tr>
 <tr class="odd">
 <td align="left">8</td>
 <td align="left">UMDFVersion</td>
-<td align="left"><p>現在使用中の UMDF ライブラリのバージョンを指定します。 も新しいバージョンがありますので注意は、ユーザーは、フレームワーク ライブラリを更新する操作を行った場合、オペレーティング システムに付属します。</p></td>
+<td align="left"><p>現在使用されている UMDF ライブラリのバージョンを指定します。 これは、ユーザーがフレームワークライブラリを更新するアクションを実行した場合、オペレーティングシステムに付属していたよりも新しいバージョンである可能性があることに注意してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">9</td>
 <td align="left">HardwareId</td>
-<td align="left"><p>Windows 8 以降、ハードウェア ID を別のファイルに提供されます。 ここでは、フレームワークがこの値を設定<strong>ダンプとは別に</strong>します。</p></td>
+<td align="left"><p>Windows 8 以降では、ハードウェア ID は別のファイルで提供されています。 この場合、フレームワークはこの値を個別に<strong>ダンプ</strong>するように設定します。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="wudfverifierfailure-fields"></a>WUDFVerifierFailure フィールド
+## <a name="wudfverifierfailure-fields"></a>WUDFVerifierFailure のフィールド
 
 
-次の表に、可能な型のレポートのフィールド値**WUDFVerifierFailure**します。
+次の表では、 **WUDFVerifierFailure**型のレポートのフィールドに使用できる値について説明します。
 
 <table>
 <colgroup>
@@ -277,21 +277,21 @@ WdfComponentMax</code>
 <tr class="odd">
 <td align="left">0</td>
 <td align="left">EventClass</td>
-<td align="left"><p>フレームワークでは、この値を設定<strong>VerifierFailure</strong>します。</p></td>
+<td align="left"><p>この値は、フレームワークによって<strong>VerifierFailure</strong>に設定されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">FoundBy</td>
-<td align="left"><p>フレームワークでは、この値を設定<strong>Framework</strong>します。</p></td>
+<td align="left">が見つかりません</td>
+<td align="left"><p>フレームワークは、この値を<strong>フレームワーク</strong>に設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
 <td align="left">カテゴリ</td>
-<td align="left"><p>このフィールドには、次の値のいずれかが含まれています。</p>
+<td align="left"><p>このフィールドには、次のいずれかの値が含まれます。</p>
 <ul>
 <li>内部</li>
-<li>Driver (ドライバー)</li>
-<li>呼び出し元</li>
+<li>[ドライバー]</li>
+<li>コール</li>
 <li>外部リンク</li>
 <li>UnhandledException</li>
 </ul></td>
@@ -302,29 +302,29 @@ WdfComponentMax</code>
 <td align="left">内部使用のみです。</td>
 </tr>
 <tr class="odd">
-<td align="left">4</td>
-<td align="left">Location</td>
+<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
+<td align="left">位置情報</td>
 <td align="left">内部使用のみです。</td>
 </tr>
 <tr class="even">
 <td align="left">5</td>
-<td align="left">Driver (ドライバー)</td>
-<td align="left">失敗したドライバーのモジュールの名前。</td>
+<td align="left">[ドライバー]</td>
+<td align="left">失敗したドライバーモジュールの名前。</td>
 </tr>
 <tr class="odd">
 <td align="left">6</td>
 <td align="left">CallerAddress</td>
-<td align="left">レポートの生成を開始するルーチンのアドレス。</td>
+<td align="left">レポートの生成を開始したルーチンのアドレス。</td>
 </tr>
 <tr class="even">
 <td align="left">7</td>
 <td align="left">UMDFVersion</td>
-<td align="left"><p>現在使用中の UMDF ライブラリのバージョンを指定します。 も新しいバージョンがありますので注意は、ユーザーは、フレームワーク ライブラリを更新する操作を行った場合、オペレーティング システムに付属します。</p></td>
+<td align="left"><p>現在使用されている UMDF ライブラリのバージョンを指定します。 これは、ユーザーがフレームワークライブラリを更新するアクションを実行した場合、オペレーティングシステムに付属していたよりも新しいバージョンである可能性があることに注意してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">8</td>
 <td align="left">HardwareId</td>
-<td align="left"><p>Windows 8 以降、ハードウェア ID を別のファイルに提供されます。 ここでは、フレームワークがこの値を設定<strong>ダンプとは別に</strong>します。</p></td>
+<td align="left"><p>Windows 8 以降では、ハードウェア ID は別のファイルで提供されています。 この場合、フレームワークはこの値を個別に<strong>ダンプ</strong>するように設定します。</p></td>
 </tr>
 </tbody>
 </table>

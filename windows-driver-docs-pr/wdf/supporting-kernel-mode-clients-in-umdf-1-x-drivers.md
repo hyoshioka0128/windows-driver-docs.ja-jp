@@ -10,16 +10,16 @@ keywords:
 - ユーザーモードドライバーフレームワーク WDK、カーネルモードクライアント
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfdeaa7dfc49feb1c6c6660606aef7bd15c5ef0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 590fbd04a9ec26df8dab1a1992acdac1df3bc90d
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831796"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210820"
 ---
 # <a name="supporting-kernel-mode-clients-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのカーネルモード クライアントのサポート
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 >[!WARNING]
 >「 [UMDF 2.x でのカーネルモードクライアントのサポート](supporting-kernel-mode-clients-in-umdf-drivers.md)」も参照してください。
@@ -72,7 +72,7 @@ UMDF ドライバーは、カーネルモードドライバーが次の要件を
 
 戻り値の状態の値をユーザーモードからカーネルモードに渡すには、次のように特別な注意が必要です。
 
--   通常、UMDF version 1 のドライバーは HRESULT で型指定された戻り値を受け取りますが、KMDF および WDM ベースのカーネルモードドライバーは通常、NTSTATUS で型指定された値を受け取ります。 UMDF 1 の場合。*x*ドライバーは i/o 要求を完了します。ドライバーにカーネルモードクライアントがある場合は、ドライバーの[**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)への呼び出しで、ドライバーが生成する HRESULT 値を指定する必要があります。NTSTATUS 値。 一般に、UMDF 1 です。*x*ドライバーは、( *winerror.h*で定義されている)\_NT マクロからの HRESULT\_を使用して、カーネルモードのクライアントに状態を返す必要があります。 次の例は、要求の完了時にこのマクロを使用する方法を示しています。
+-   通常、UMDF version 1 のドライバーは HRESULT で型指定された戻り値を受け取りますが、KMDF および WDM ベースのカーネルモードドライバーは通常、NTSTATUS で型指定された値を受け取ります。 UMDF 1 の場合。*x*ドライバーは i/o 要求を完了し、ドライバーにカーネルモードクライアントがある場合は、ドライバーが[**IWDFIoRequest:: Complete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-complete)または[**IWDFIoRequest:: completewithinformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-completewithinformation)を呼び出したときに、ドライバーが NTSTATUS 値から生成する HRESULT 値を指定する必要があります。 一般に、UMDF 1 です。*x*ドライバーは、( *winerror.h*で定義されている)\_NT マクロからの HRESULT\_を使用して、カーネルモードのクライアントに状態を返す必要があります。 次の例は、要求の完了時にこのマクロを使用する方法を示しています。
 
     ```cpp
     hr = HRESULT_FROM_NT(STATUS_BUFFER_OVERFLOW)
@@ -82,8 +82,8 @@ UMDF ドライバーは、カーネルモードドライバーが次の要件を
 
     カーネルモードクライアントに特定の HRESULT 値を返すには、次のコールバックで\_NT マクロからの HRESULT\_を使用する必要があります。
 
-    -   [**IPnpCallback:: OnQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onqueryremove)
-    -   [**IPnpCallback:: OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)
+    -   [**IPnpCallback::OnQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onqueryremove)
+    -   [**IPnpCallback::OnQueryStop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-onquerystop)
     -   [**IPnpCallbackHardware:: On Hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)
     -   [**IPnpCallbackHardware:: OnReleaseHardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onreleasehardware)
 

@@ -8,17 +8,17 @@ keywords:
 - 階層 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 216574d417b252560588f8e414be9d93c3032226
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bd6bcf16db05d2022737aa7b3e63b48be20c0c0a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843119"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210772"
 ---
 # <a name="framework-object-hierarchy"></a>フレームワーク オブジェクトの階層
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 次の図は、親子フレームワークオブジェクト階層を示しています。
 

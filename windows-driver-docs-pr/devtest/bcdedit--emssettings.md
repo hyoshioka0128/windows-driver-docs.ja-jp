@@ -1,6 +1,6 @@
 ---
 title: BCDEdit /emssettings
-description: /Emssettings オプションは、コンピューターのグローバルの緊急管理サービス (EMS) の設定を設定します。 を有効にまたは EMS を無効にするには、/ems オプションを使用します。 /Emssettings オプションを有効または任意のブート エントリの EMS を無効にするにはありません。
+description: /Emssettings オプションは、コンピューターのグローバル緊急管理サービス (EMS) 設定を設定します。 EMS を有効または無効にするには、/ems オプションを使用します。 /Emssettings オプションでは、ブートエントリの EMS を有効または無効にすることはできません。
 ms.assetid: 010e852d-ff97-4280-b35b-f1881e249e42
 ms.date: 07/03/2018
 keywords:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: af92340222bfd1f6e5baab39bda2de06af81bdd3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5a3809bd9ae6c129ab8654a1d29144d11ba593c8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371667"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209486"
 ---
 # <a name="bcdedit-emssettings"></a>BCDEdit /emssettings
 
 
-**/Emssettings**オプションは、コンピューターのグローバルの緊急管理サービス (EMS) の設定を設定します。 有効または EMS を無効にする、使用、 **/ems**オプション。 **/Emssettings**オプションも有効または任意のブート エントリの EMS を無効にします。
+**/Emssettings**オプションは、コンピューターのグローバル緊急管理サービス (EMS) 設定を設定します。 EMS を有効または無効にするには、 **/ems**オプションを使用します。 **/Emssettings**オプションでは、ブートエントリの EMS を有効または無効にすることはできません。
 
 構文 
 
@@ -34,27 +34,27 @@ ms.locfileid: "67371667"
 ----------
 
 **BIOS**   
-システムが BIOS 設定を使用して EMS 構成のことを指定します。 これは、BIOS によって提供される EMS サポートしているシステムでのみ機能します。
+システムが EMS 構成に BIOS 設定を使用することを指定します。 これは、BIOS で EMS サポートが提供されているシステムでのみ機能します。
 
- **EMSPORT:** *ポート*   
-EMS のポートとして使用するシリアル ポートを指定します。 このパラメーターを指定しないで、 **BIOS**オプション。
+ **Emsport:** *ポート*   
+EMS ポートとして使用するシリアルポートを指定します。 このパラメーターを**BIOS**オプションと共に指定することはできません。
 
-**EMSBAUDRATE:** *baudrate*   
-EMS を使用するシリアル ボー レートを指定します。 このコマンドは、BIOS で指定されていませんする必要があります。 *Baudrate*は省略可能で、既定値は 9,600 bps です。
+**Emsbaudrate レート:** *ボーレート*   
+EMS に使用するシリアルボーレートを指定します。 このコマンドを BIOS で指定することはできません。 *ボーレート*は省略可能で、既定値は 9600 bps です。
 
 ### <a name="comments"></a>コメント
 
-正しく Windows をインストールした後は、EMS のコンソールのリダイレクトを有効に、Windows のコンピューターで帯域外通信に使用されるポートと送信レートを把握する必要があります。 Windows では、EMS のコンソールのリダイレクトをこれらの同じ設定を使用します。
+Windows のインストール後に EMS コンソールのリダイレクトを正しく有効にするには、コンピューターが帯域外通信に使用するポートと転送速度を認識している必要があります。 Windows では、これらの同じ設定を EMS コンソールのリダイレクトに使用します。
 
-コンピューターの BIOS ファームウェアと ACPI シリアル ポート Console Redirection (SPCR) テーブルでは、Windows は SPCR テーブル内のエントリを読み取ることで、BIOS で確立された帯域外の設定を確認できます。 これらのシステムで使用することができます、 **BIOS**ポートの設定の SPCR テーブルで検索する Windows に出力するためのパラメーターを使用できる、 **emsport:** <em>ポート</em>と**emsbaudrate:** <em>baudrate</em> SPCR テーブルの設定を上書きするパラメーター。
+BIOS ファームウェアが搭載されたコンピューターと ACPI シリアルポートコンソールのリダイレクト (SPCR) テーブルでは、Windows は、SPCR テーブルのエントリを読み取って、BIOS で設定された帯域外設定を見つけることができます。 これらのシステムでは、 **BIOS**パラメーターを使用して、Windows に対してポートの設定を SPCR テーブルで探すように指示することも、 **emsport:**<em>port</em>パラメーターと**emsボーレート:**<em>ボーレート</em>パラメーターを使用して、spcr テーブルの設定を上書きすることもできます。
 
-BIOS ファームウェア、SPCR テーブルにはありませんがいるコンピューターで、BCDEdit を使用して、 **/emssettings**コマンドと、 **emsport:** <em>ポート</em>ポートを指定するパラメーターと**emsbaudrate:** <em>baudrate</em>転送速度を指定するパラメーター。
+BIOS ファームウェアを搭載していても、SPCR テーブルがないコンピューターでは、BCDEdit を使用し、 **emスポーツ:**<em>port</em>パラメーターを指定した **/emssettings**コマンドを使用してポートを指定し、 **emsボーレート:**<em>ボー</em>レートパラメーターを使用して伝送速度を指定します。
 
-すべてのシステムで使用して、 [ **BCDEdit/ems** ](bcdedit--ems.md)コマンドし、ブート エントリが読み込まれるオペレーティング システムで EMS のコンソール リダイレクトを有効にするブート エントリを指定します。
+すべてのシステムで、 [**BCDEdit/ems**](bcdedit--ems.md)コマンドを使用し、ブートエントリを指定して、ブートエントリが読み込まれるオペレーティングシステムで ems コンソールのリダイレクトを有効にします。
 
-このセクションで説明されているブート パラメーターでは、Windows のインストール後に、EMS のコンソールのリダイレクトが有効にします。 新規インストールまたは Windows のアップグレード中に、EMS を有効にする方法についてで「を有効にする緊急管理サービス」の検索、 [Microsoft TechNet](https://go.microsoft.com/fwlink/p/?linkid=10111) web サイト。
+このセクションで説明するブートパラメーターを使用すると、Windows のインストール後に EMS コンソールのリダイレクトが有効になります。 
 
-詳細の例では、次を参照してください。 [EMS のリダイレクトを有効にするのにブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-ems-redirection)します。
+詳細な例については、「[ブートパラメーターを使用した EMS リダイレクトの有効化](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-enable-ems-redirection)」を参照してください。
 
  
 

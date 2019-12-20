@@ -3,36 +3,36 @@ title: COM サブセットに基づく UMDF
 description: COM サブセットに基づく UMDF
 ms.assetid: 918459a9-a6a2-40b8-8b97-3aabe3e49bfb
 keywords:
-- WDK の UMDF オブジェクト、COM のサブセット
-- フレームワークは、WDK UMDF、COM のサブセットをオブジェクトします。
-- COM の WDK UMDF
+- UMDF オブジェクト WDK、COM サブセット
+- フレームワークオブジェクト WDK UMDF、COM サブセット
+- COM WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aef0031d9c1c71b255a185cb2c648993b33fa15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a55744eb6acd64f800751fd610cd922f84b39c5b
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "68229649"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210256"
 ---
 # <a name="umdf-based-on-com-subset"></a>COM サブセットに基づく UMDF
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-Framework のオブジェクトとインターフェイスは、次の理由でコンポーネント オブジェクト モデル (COM) を基づいています。
+フレームワークオブジェクトとインターフェイスは、次の理由により、コンポーネントオブジェクトモデル (COM) に基づいています。
 
--   COM は、アプリケーションの多くのプログラマになじみです。
+-   COM は多くのアプリケーションプログラマになじみがあります。
 
--   C++ では、COM アプリケーションをプログラミング言語です。
+-   C++は、COM アプリケーションのプログラミングに適した言語です。
 
--   COM インターフェイスは、デバイス ドライバー インターフェイス (DDI) が理解し、やすいように、関数の論理的なグループを有効にします。
+-   COM インターフェイスを使用すると、デバイスドライバーインターフェイス (DDI) を簡単に理解してナビゲートできるように、関数の論理的なグループ化が可能になります。
 
--   COM の使用を拡張し、既存のドライバー Dll を再コンパイルを必要とせずに、進化 DDI 有効にします。
+-   COM を使用すると、既存のドライバー Dll を再コンパイルしなくても、DDI を拡張および進化させることができます。
 
--   Microsoft Visual Studio と active template library (ATL) を含む、多数のツールは、COM ベースのアプリケーションとオブジェクトをサポートします。
+-   Microsoft Visual Studio や active template library (ATL) などの多くのツールでは、COM ベースのアプリケーションとオブジェクトがサポートされています。
 
-フレームワークは、COM のごく一部のみを使用します。全体の COM インフラストラクチャとランタイム ライブラリには依存しません。 代わりに、フレームワークは、クエリ インターフェイスと機能の参照カウントだけを使用します。 派生したすべての framework インターフェイス**IUnknown**し、そのためのサポート、 **QueryInterface**、 **AddRef**、および**リリース**メソッド既定では。 **AddRef**と**リリース**メソッドがオブジェクトの有効期間を管理します。 **QueryInterface**メソッドは、ドライバーがサポートするインタ フェースを判断するには、その他のコンポーネントを使用できます。
+フレームワークは COM の小さなサブセットのみを使用します。COM インフラストラクチャとランタイムライブラリ全体に依存しません。 代わりに、フレームワークはクエリインターフェイスと参照カウント機能のみを使用します。 すべてのフレームワークインターフェイスは**IUnknown**から派生しているため、既定では**QueryInterface**、 **AddRef**、および**Release**メソッドをサポートしています。 **AddRef**メソッドと**Release**メソッドは、オブジェクトの有効期間を管理します。 **QueryInterface**メソッドを使用すると、他のコンポーネントで、ドライバーがサポートするインターフェイスを特定できます。
 
  
 

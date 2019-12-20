@@ -1,17 +1,17 @@
 ---
-title: 汎用ルーティングカプセル化を使用したネットワーク仮想化について (NVGRE)
+title: 汎用ルーティング カプセル化 (NVGRE) を使用したネットワークの仮想化について
 description: このセクションでは、汎用ルーティングカプセル化 (NVGRE) タスクオフロードを使用したネットワーク仮想化について説明します。
 ms.assetid: D1BE5659-4491-411B-9D32-9CB7A141A240
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd96a293f7351d2139acb157b8360eaec1929fc6
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 97c05595ff9c2c73fe8ff5e0dd0e38ac57a9f5a7
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565134"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210890"
 ---
-# <a name="about-network-virtualization-using-generic-routing-encapsulation-nvgre"></a>汎用ルーティングカプセル化を使用したネットワーク仮想化について (NVGRE)
+# <a name="about-network-virtualization-using-generic-routing-encapsulation-nvgre"></a>汎用ルーティング カプセル化 (NVGRE) を使用したネットワークの仮想化について
 
 Hyper-v ネットワーク仮想化では、IP アドレスを仮想化するメカニズムとして、汎用ルーティングカプセル化 (NVGRE) を使用したネットワーク仮想化がサポートされています。 NVGRE では、仮想マシンのパケットは別のパケット内にカプセル化されます。 この新しい NVGRE 形式のパケットのヘッダーには、適切な送信元と送信先のプロバイダー領域 (PA) IP アドレスが含まれています。 また、新しいパケットの GRE ヘッダーに格納されている、24ビットの仮想サブネット ID (VSID) を備えています。
 
@@ -26,22 +26,22 @@ NDIS 6.30 (Windows Server 2012 以降で使用可能) では、NVGRE タスク�
 -   送信 (Tx) チェックサムオフロード (IPv4、TCP、UDP)
 -   受信 (Rx) チェックサムオフロード (IPv4、TCP、UDP)
 
-**注:**   プロトコルドライバーが "混合モード" パケットをオフロードする可能性があります。これは、内部および外部の IP ヘッダーバージョンが異なるパケットを意味します。 たとえば、パケットには、IPv6 としての外部 IP ヘッダーと、IPv4 としての内部 IP ヘッダーを含めることができます。
+プロトコルドライバーが "混合モード" パケットをオフロードすること**が  ます**。これは、内部および外部の IP ヘッダーバージョンが異なるパケットを意味します。 たとえば、パケットには、IPv6 としての外部 IP ヘッダーと、IPv4 としての内部 IP ヘッダーを含めることができます。
 
  
 
-また、プロトコルドライバーは、内部 TCP ヘッダーまたは UDP ヘッダーのない nvgre 形式のパケットをオフロードすることもできます。   たとえば、IP パケットは、インターネット制御メッセージプロトコル (ICMP) パケットである内部ペイロードを持つことができます。
+また、プロトコルドライバーは、内部 TCP ヘッダーまたは UDP ヘッダーのない NVGRE 形式のパケットをオフロードすることも**でき  ます**。 たとえば、IP パケットは、インターネット制御メッセージプロトコル (ICMP) パケットである内部ペイロードを持つことができます。
 
  
 
 NVGRE の詳細については、次のインターネットドラフトを参照してください。
 
--   [NVGRE汎用ルーティングカプセル化を使用したネットワーク仮想化](http://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)
+-   [NVGRE: 汎用ルーティングカプセル化を使用したネットワーク仮想化](https://ietfreport.isoc.org/idref/draft-sridharan-virtualization-nvgre/)
 
 NVGRE は、汎用ルーティングカプセル化 (GRE) に基づいています。 GRE の詳細については、次のリソースを参照してください。
 
--   [RFC 2784:汎用ルーティングカプセル化 (GRE)](https://tools.ietf.org/html/rfc2784)
--   [RFC 2890:GRE のキーおよびシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
+-   [RFC 2784: 汎用ルーティングカプセル化 (GRE)](https://tools.ietf.org/html/rfc2784)
+-   [RFC 2890: GRE のキーおよびシーケンス番号の拡張機能](https://tools.ietf.org/html/rfc2890)
 
 このセクションの内容:
 

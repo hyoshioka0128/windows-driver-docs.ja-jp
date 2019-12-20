@@ -11,17 +11,17 @@ keywords:
 - ユーザーモードドライバー WDK UMDF、i/o を処理するファイルオブジェクト、ドライバー作成とアプリケーション作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e7bf13dbd1b5f1049894eb121499cc70a53389e9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a48a31aabb5051704ee1ca7b1472bd4298fccc71
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845593"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210462"
 ---
 # <a name="driver-created-versus-application-created-file-objects"></a>ドライバー作成ファイル オブジェクトとアプリケーション作成ファイル オブジェクトの比較
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 アプリケーションがデバイスへのハンドルを開くと、フレームワークは、ドライバーの[**Iqueuecallbackcreate:: OnCreateFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iqueuecallbackcreate-oncreatefile)メソッドを呼び出し、デバイスに関連付けられているファイルオブジェクトの[**Iwdffile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdffile)インターフェイスへのポインターを提供します。 開いているハンドルにアプリケーションが送信する i/o 要求は、作成されたファイルオブジェクトに関連付けられます。 このような要求が到着すると、フレームワークは、ドライバーによって指定されたいずれかの[UMDF Queue オブジェクトインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/)から適切なメソッドを呼び出します。 次に、ドライバーは[**IWDFIoRequest:: GetFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-getfileobject)を呼び出して、要求に関連付けられているファイルオブジェクトを特定できます。 ドライバーは、ファイルオブジェクトに対して割り当て[**コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfobject-assigncontext)を呼び出して、i/o セッションに固有のコンテキストを関連付けることができます。
 
@@ -64,7 +64,7 @@ ms.locfileid: "72845593"
 ## <a name="driver-created-file-objects"></a>ドライバーで作成されたファイルオブジェクト
 
 
-ドライバーで、アプリケーションに依存しない i/o 要求をスタック内の次のドライバー (既定の i/o ターゲット) に作成して送信する必要がある場合、ドライバーは[**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)を呼び出して[**Iwdfdriverのファイル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)へのポインターを取得する必要があります。efi. この場合、次のドライバーは、アプリケーションが要求を生成するときに、ドライバーが受信するのと同じ通知を受け取ります。
+ドライバーでアプリケーションに依存しない i/o 要求を作成して、スタック内の次のドライバー (既定の i/o ターゲット) に送信する必要がある場合、ドライバーは[**Iwdfdevice:: CreateWdfFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createwdffile)を呼び出して[**Iwdfdriverのファイル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdrivercreatedfile)インターフェイスへのポインターを取得する必要があります。 この場合、次のドライバーは、アプリケーションが要求を生成するときに、ドライバーが受信するのと同じ通知を受け取ります。
 
 次の表は、ドライバーが行う呼び出しと、スタック内の次のドライバーへの結果の通知を示しています。
 

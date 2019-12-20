@@ -10,17 +10,17 @@ keywords:
 - デバイスの追加 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5edafcef9186c99483faeb4654d641be4c5cfce7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 50a8fbb37db5bf3a8f6b9a65e6d8e79d1a4bbde2
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845512"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210050"
 ---
 # <a name="adding-a-device"></a>デバイスの追加
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークは、ドライバーホストプロセスに読み込まれた各デバイスのデバイスオブジェクトを追加します。 デバイスを追加するために、フレームワークはドライバーの[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)メソッドを呼び出し、呼び出しで[Iwdfdriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdriver)インターフェイスと[iwdfdeviceinitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)インターフェイスを渡します。 指定された**Iwdfdeviceinitialize**インターフェイスは、ドライバーが[**Iwdfdriver:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)を呼び出す前にのみ有効です。 ドライバーは、 **Iwdfdeviceinitialize**の次のメソッドを呼び出して、次の操作を実行できます。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72845512"
 
 -   ドライバーは[**Iwdfdeviceinitialize:: SetFilter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setfilter)メソッドを呼び出して、デバイスをフィルターデバイスとして有効にします。
 
-ドライバーは[Iwdfdeviceinitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)を使用してデバイスを初期化した後、Iwdfdriver [ **:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドの呼び出しで**iwdfdeviceinitialize**へのポインターを渡して、デバイスの[UMDF デバイスオブジェクト](framework-device-object.md)を作成します。 フレームワークデバイスオブジェクトが作成されると、ドライバーは[**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドを呼び出して、読み取りおよび書き込みの i/o キューを作成します。 これらの**Iwdfdevice:: CreateIoQueue**呼び出しでは、ドライバーは i/o キューからの要求を受信する方法を識別する必要があります。 詳細については、「 [I/o キューのディスパッチモードの構成](configuring-dispatch-mode-for-an-i-o-queue.md)」を参照してください。
+ドライバーは[Iwdfdeviceinitialize](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-iwdfdeviceinitialize)を使用してデバイスを初期化した後、Iwdfdriver [**:: CreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdriver-createdevice)メソッドの呼び出しで**iwdfdeviceinitialize**へのポインターを渡して、デバイスの[UMDF デバイスオブジェクト](framework-device-object.md)を作成します。 フレームワークデバイスオブジェクトが作成されると、ドライバーは[**Iwdfdevice:: CreateIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice-createioqueue)メソッドを呼び出して、読み取りおよび書き込みの i/o キューを作成します。 これらの**Iwdfdevice:: CreateIoQueue**呼び出しでは、ドライバーは i/o キューからの要求を受信する方法を識別する必要があります。 詳細については、「 [I/o キューのディスパッチモードの構成](configuring-dispatch-mode-for-an-i-o-queue.md)」を参照してください。
 
  
 

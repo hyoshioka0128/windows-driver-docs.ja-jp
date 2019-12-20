@@ -1,23 +1,23 @@
 ---
-title: ユーザーがデバイスに接続する
-description: ユーザーがデバイスに接続する
+title: ユーザーがデバイスを接続する
+description: ユーザーがデバイスを接続する
 ms.assetid: 1968270b-ce57-4a8c-8b7a-bbd4a972435d
 keywords:
 - 電源管理のシナリオ WDK UMDF、デバイスの接続
 - デバイスシナリオでのプラグイン WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92d0ad4027762471205acf6ad6656fb6c3ac5645
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1a5c2b8336d3763cb5e11d0fb87f267d5113f323
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841679"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210078"
 ---
-# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスに接続する
+# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスを接続する
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ユーザーがデバイスに接続すると、フレームワークは、次の順序で UMDF ドライバーの PnP および電源管理コールバックメソッドを呼び出します。これは、図の下部にあるデバイスが到着した状態から始まります。
 

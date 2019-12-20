@@ -7,17 +7,17 @@ keywords:
 - システムウェイクアップ WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f86802fe49deeba3b9c7f52aeaa2bf42b70c1595
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7397965fce7c1774300af8c0372b4f8e4dcefe38
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831688"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210835"
 ---
 # <a name="supporting-system-wake-up-in-umdf-drivers"></a>UMDF ドライバーでのシステム ウェイクアップのサポート
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 システムが低電力状態にある間、一部のデバイスでは、受信ネットワークパケットなどの外部イベントを検出し、システムをスリープ解除できます。 たとえば、デバイスの電源管理機能 (PMC) の登録に示されているように、PCI デバイスにシステムウェイクアップ機能がある場合、PCI バスの電源管理イベント (PME) シグナルを発生させてシステムをスリープ解除します。
 

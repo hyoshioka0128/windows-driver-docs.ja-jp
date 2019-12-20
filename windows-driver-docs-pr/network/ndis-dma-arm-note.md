@@ -2,17 +2,17 @@
 title: ARM/ARM64 プロセッサでの NDIS DMA の使用を防ぐために注意してください
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 4712128bba51a6bc1c12586b40b49a0b7a86849a
-ms.sourcegitcommit: 724404f7baf0f7f9a8bd3fd3eaf41c09f45a9e60
+ms.openlocfilehash: 32310496340d59aa8696625e9535743de516a24e
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445871"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75297192"
 ---
-# 
+# <a name="note-to-discourage-ndis-dma-use-on-armarm64-processors"></a>ARM/ARM64 プロセッサでの NDIS DMA の使用を防ぐために注意してください
 
 > [!CAUTION]
-> ARM および ARM64 プロセッサの場合、NDIS ドライバーライターは NDIS スキャッター/Gather DMA ではなく WDF DMA または WDM DMA を使用することを強くお勧めします。 
+> ARM および ARM64 プロセッサの場合、NDIS ドライバーライターは NDIS スキャッター/Gather DMA ではなく WDF DMA または WDM DMA を使用することを強くお勧めします。
 >
 > WDF DMA の詳細については、「 [KMDF ドライバーでの Dma 操作の処理](../wdf/handling-dma-operations-in-kmdf-drivers.md)」を参照してください。
 >

@@ -6,25 +6,25 @@ keywords:
 - XpsAnalyzer WDK
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f271b653d4a2f4f5a0a1f0ba726ad0b49efbf8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b964fa2816fc39d36be5b7801f7bca3d8bf64d7
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363112"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208876"
 ---
 # <a name="xpsanalyzer"></a>XpsAnalyzer
 
-XpsAnalyzer (XpsAnalyzer.exe) は、XPS 1.0 仕様と互換性のための XML Paper Specification (XPS) ファイルを分析するコマンド ライン ツールです。
+XpsAnalyzer (XpsAnalyzer) は、XPS 1.0 仕様との互換性のために XML Paper Specification (XPS) ファイルを分析するコマンドラインツールです。
 
-これについては、XPS ルールのセットを使用して、分析を実行[XpsAnalyzer ルール](xpsanalyzer-rules.md)します。 XpsAnalyzer では、構造体とこれらの規則に基づいて、XPS ファイルの内容を示すレポートを生成します。 レポートでは、XML、HTM の形式で生成され、オプションで SQL ファイルとして生成できます。
+このツールは、「 [XpsAnalyzer rules](xpsanalyzer-rules.md)」で説明されている一連の XPS ルールを使用して分析を実行します。 XpsAnalyzer は、これらのルールに基づいて XPS ファイルの構造と内容を示すレポートを生成します。 レポートは XML および HTM 形式で生成され、必要に応じて SQL ファイルとして生成することができます。
 
-XPS と XPS ファイルの構造の詳細については、ダウンロード、 [XML Paper Specification](http://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)します。
+Xps および XPS ファイルの構造の詳細については、「 [XML Paper Specification](https://download.microsoft.com/download/1/6/a/16acc601-1b7a-42ad-8d4e-4f0aa156ec3e/XPS_1_0.exe)」をダウンロードしてください。
 
 このセクションの内容:
 
 [**XpsAnalyzer コマンドの構文**](xpsanalyzer-command-syntax.md)
 
-[XpsAnalyzer ルール](xpsanalyzer-rules.md)
+[XpsAnalyzer の規則](xpsanalyzer-rules.md)
 
-[XpsAnalyzer 出力](xpsanalyzer-output.md)
+[XpsAnalyzer の出力](xpsanalyzer-output.md)

@@ -7,17 +7,17 @@ keywords:
 - フレームワークオブジェクト WDK UMDF、一覧
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf20a2e5c73a3e2412b35e43173bda253738d31b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8f4102c03ac4697cb929a7511dc5164d4ef49d29
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845131"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210768"
 ---
 # <a name="framework-objects"></a>フレームワーク オブジェクト
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 次の表は、各フレームワークオブジェクトの基本情報、オブジェクトのインターフェイスへのリンク、およびコアフレームワークオブジェクトに関する詳細情報へのリンクを示しています。
 

@@ -9,17 +9,17 @@ keywords:
 - USB パイプ WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a3ffc5b5bfae081a6e7f06e6da35a94812bbc2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b04c01d51b5321b53a3349392449722938e76d57
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823499"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210833"
 ---
 # <a name="working-with-usb-pipes-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでの USB パイプの操作
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークは、USB インターフェイス内の各パイプをフレームワークの USB パイプオブジェクトとして表します。 ドライバーが USB デバイスを構成すると、フレームワークは、選択された各インターフェイスの各パイプに対してフレームワークの USB パイプオブジェクトを作成します。 パイプオブジェクトのメソッドを使用すると、ドライバーは次のことを実行できます。
 
@@ -37,7 +37,7 @@ ms.locfileid: "72823499"
 
 ### <a name="obtaining-umdf-usb-pipe-information"></a>UMDF USB パイプ情報の取得
 
-UMDF ドライバーが[**IWDFUsbInterface:: RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)メソッドを呼び出して、usb パイプオブジェクトの[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)インターフェイスへのポインターを取得した後、ドライバーは、usb パイプオブジェクトで定義されている次のメソッドを呼び出すことができます。USB パイプに関する情報の取得:
+UMDF ドライバーが[**IWDFUsbInterface:: RetrieveUsbPipeObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbinterface-retrieveusbpipeobject)メソッドを呼び出して、usb パイプオブジェクトの[IWDFUsbTargetPipe](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nn-wudfusb-iwdfusbtargetpipe)インターフェイスへのポインターを取得した後、ドライバーは、usb パイプに関する情報を取得するために、usb パイプオブジェクトが定義する次のメソッドを呼び出すことができます。
 
 <a href="" id="iwdfusbtargetpipe--getinformation"></a>[**IWDFUsbTargetPipe:: GetInformation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe-getinformation)  
 USB パイプとそのエンドポイントに関する情報を取得します。
@@ -70,13 +70,13 @@ USB 入力パイプからデータを読み取るには、次の方法のいず�
 
     *継続的リーダー*は、USB パイプで読み取り要求を常に使用できるようにするフレームワークによって提供されるメカニズムです。 このメカニズムにより、ドライバーは、非同期の要請されていない入力ストリームを提供するデバイスからデータを受信する準備が常に整っていることが保証されます。 たとえば、ネットワークインターフェイスカード (NIC) のドライバーは、連続リーダーを使用して入力データを受信する場合があります。
 
-    入力パイプの連続リーダーを構成するには、ドライバーの[**IPnpCallbackHardware:: OnIWDFUsbTargetPipe2 ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数で、 [ **:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッドを呼び出す必要があります。 このメソッドは、デバイスの i/o ターゲットに対する一連の読み取り要求をキューに置いています。
+    入力パイプの連続リーダーを構成するには、ドライバーの[**IPnpCallbackHardware:: OnIWDFUsbTargetPipe2 ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)コールバック関数で、 [**:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)メソッドを呼び出す必要があります。 このメソッドは、デバイスの i/o ターゲットに対する一連の読み取り要求をキューに置いています。
 
-    また、ドライバーの[**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) callback 関数は、 [**IWDFIoTargetStateManagement:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を呼び出して継続的リーダーを開始する必要があり、ドライバーの[**IPnpCallback:: OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit) callback 関数はを呼び出す[**必要があります。IWDFIoTargetStateManagement:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を実行して、継続的リーダーを停止します。
+    また、ドライバーの[**IPnpCallback:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry) callback 関数は、連続リーダーを開始するために[**IWDFIoTargetStateManagement:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-start)を呼び出す必要があります。また、ドライバーの[**IPnpCallback:: OnD0Exit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0exit) callback 関数は、連続リーダーを停止するために[**IWDFIoTargetStateManagement:: Stop**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiotargetstatemanagement-stop)を呼び出す必要があります。
 
-    デバイスからデータが使用可能になるたびに、i/o ターゲットは読み取り要求を完了し、フレームワークは2つのコールバック関数のいずれかを呼び出します: [**IUsbTargetPipeContinuousReaderCallbackReadComplete:: OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) (i/o ターゲットの場合)i/o ターゲットでエラーが報告された場合、データ、または[**IUsbTargetPipeContinuousReaderCallbackReadersFailed:: OnReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)が正常に読み取られました。
+    デバイスからデータが使用可能になるたびに、i/o ターゲットは読み取り要求を完了します。また、i/o ターゲットによってデータが正常に読み取られた場合は[**IUsbTargetPipeContinuousReaderCallbackReadComplete:: OnReaderCompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadcomplete-onreadercompletion) 、i/o ターゲットでエラーが報告された場合は[**IUsbTargetPipeContinuousReaderCallbackReadersFailed:: onreadercompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)という2つのコールバック関数のいずれかを呼び出します。
 
-    ドライバーが[**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)を呼び出した後、ドライバーの IUsbTargetPipeContinuousReaderCallbackReadersFailed:: O を使用しない限り、 [**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を使用してパイプに i/o 要求を送信することはできません。 [**nReaderFailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)コールバック関数が呼び出され、 **FALSE**が返されます。
+    ドライバーが[**IWDFUsbTargetPipe2:: ConfigureContinuousReader**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetpipe2-configurecontinuousreader)を呼び出した後、ドライバーの[**IUsbTargetPipeContinuousReaderCallbackReadersFailed:: onreaderfailure**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iusbtargetpipecontinuousreadercallbackreadersfailed-onreaderfailure)コールバック関数が呼び出され、 **FALSE**が返されない限り、ドライバーは[**IWDFIoRequest:: Send**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-send)を使用してパイプに i/o 要求を送信できません。
 
     継続的リーダーは、UMDF バージョン1.9 以降でサポートされています。
 

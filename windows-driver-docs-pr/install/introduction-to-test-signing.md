@@ -6,12 +6,12 @@ keywords:
 - テスト署名ドライバーパッケージ WDK、テスト署名ドライバーパッケージについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 724b495dc8a96537cdc22b025d8f8e11678bf403
-ms.sourcegitcommit: c557a56ff865b5766c871e18268637dec455aa89
+ms.openlocfilehash: cbacd155de77a2f3f9c5bf1d8d3463ffa6b903b8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72512077"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210604"
 ---
 # <a name="introduction-to-test-signing"></a>テスト署名の概要
 
@@ -26,7 +26,7 @@ ms.locfileid: "72512077"
 
     既定では、Windows Vista 以降のバージョンの windows の[カーネルモードコード署名64ポリシー](kernel-mode-code-signing-policy--windows-vista-and-later-.md)では、ドライバーを読み込むためにカーネルモードドライバーが署名されている必要があります。 この要件は、ドライバーの開発やデバッグを容易にするために、一時的にオーバーライドすることができます。
 
--   特定の種類の次世代プレミアムコンテンツを再生するには、Windows Vista 以降のバージョンの Windows のすべてのカーネルモードコンポーネントに署名する必要があります。 さらに、保護されたメディアパス (PMP) のすべてのユーザーモードおよびカーネルモードコンポーネントは、PMP 署名ポリシーに準拠している必要があります。 PMP 署名ポリシーの詳細については、 [Windows Vista での保護されたメディアコンポーネントの](http://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)ホワイトペーパー「コード署名」を参照してください。
+-   特定の種類の次世代プレミアムコンテンツを再生するには、Windows Vista 以降のバージョンの Windows のすべてのカーネルモードコンポーネントに署名する必要があります。 さらに、保護されたメディアパス (PMP) のすべてのユーザーモードおよびカーネルモードコンポーネントは、PMP 署名ポリシーに準拠している必要があります。 PMP 署名ポリシーの詳細については、 [Windows Vista での保護されたメディアコンポーネントの](https://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/pmp-sign.doc)ホワイトペーパー「コード署名」を参照してください。
 
 このような理由から、Windows Vista 以降のバージョンの Windows のドライバーは、Microsoft Authenticode を使用して作成されたデジタル証明書を使用してテスト署名する必要があります。 このようなデジタル証明書は*テスト証明書*と呼ばれ、テスト証明書を使用して生成された署名は*テスト署名*と呼ばれます。
 

@@ -2,16 +2,14 @@
 title: デバイス インターフェイスの使用
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 8fbe1ef5d1051c3e59f9fbafe7ab117864cb08a8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6cd0f66e44cbb7eb33c067d3d0a7128147e4a744
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838267"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208936"
 ---
 # <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 ユーザーモードから Ioctl を受信するために、クライアントドライバーは、次に示すように、参照文字列を使用して[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)を呼び出します。
 

@@ -7,17 +7,17 @@ keywords:
 - デバイスが動作状態に戻ります。 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41570e738284f46d13187655592cb0f5501151e3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9218d9f1a874175c9cefc70cc01a9fe131a2314c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843656"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210130"
 ---
 # <a name="a-device-returns-to-its-working-state"></a>デバイスが動作状態に戻る
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 次のいずれかが発生した場合、低電力状態のデバイスは稼動状態に戻ります。
 

@@ -7,17 +7,17 @@ keywords:
 - i/o 要求の送信 (WDK UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e45fbe38439079598e888883db116a0a09fe1c0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1923744538f2dbbb40a266b07d68b95fb0889543
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845204"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209948"
 ---
 # <a name="sending-io-requests-to-a-general-io-target-in-umdf"></a>UMDF での一般 I/O ターゲットへの I/O 要求の送信
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF ドライバーは、i/o 要求を一般 i/o ターゲットに同期または非同期で送信できます。
 

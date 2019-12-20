@@ -7,16 +7,14 @@ keywords:
 ms.date: 06/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 64193125a6e51bc063d0edd85c1a86a635fbc5c2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0df67151af11ef2e30fd0fce31cea31381d91dec
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838284"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210780"
 ---
 # <a name="debugging-a-netadaptercx-client-driver"></a>NetAdapterCx クライアント ドライバーのデバッグ
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 [Windows Driver Framework Extensions (Wdfkd .dll)](https://docs.microsoft.com/windows-hardware/drivers/debugger/kernel-mode-driver-framework-extensions--wdfkd-dll-)コマンドを使用して、クライアントドライバーをデバッグできます。  さらに、 [! ndiskd netadapter](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netadapter)には、アダプターのネットワーク固有のプロパティが表示されます。
 
@@ -24,13 +22,13 @@ ms.locfileid: "72838284"
 
 NetAdapterCx クライアントドライバーでは、次の! ndiskd コマンドを使用できます。
 
-*  [ **! ndiskd cxadapter**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-cxadapter)
+*  [**! ndiskd cxadapter**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-cxadapter)
     *  NETADAPTER ハンドルを指定すると、NETADAPTER オブジェクトに関する情報が表示されます。
-*  [ **! ndiskd netqueue**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netqueue)
+*  [**!ndiskd.netqueue**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netqueue)
     *  NETTXQUEUE ハンドルまたは NETRXQUEUE ハンドルを指定すると、データパスキューに関する情報が表示されます。
-*  [ **! ndiskd netrb**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netrb)
-    *  [**NET_RING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringbuffer/ns-netringbuffer-_NET_RING)の情報を表示します。
-*  [ **! ndiskd netpacket**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netpacket)
+*  [**!ndiskd.netrb**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netrb)
+    *  [**NET_RING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netringbuffer/ns-netringbuffer-_NET_RING)情報を表示します。
+*  [**!ndiskd.netpacket**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netpacket)
     *  [**NET_PACKET**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet)に関する情報を表示します。
-*  [ **! ndiskd netpacketfragment**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netpacketfragment)
+*  [**! ndiskd netpacketfragment**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-netpacketfragment)
     *  [**NET_PACKET_FRAGMENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/netpacket/ns-netpacket-_net_packet_fragment)に関する情報を表示します。

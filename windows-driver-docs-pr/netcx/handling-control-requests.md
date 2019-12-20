@@ -6,16 +6,14 @@ keywords:
 - NetAdapterCx 処理コントロール要求、NetCx 処理制御要求
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fb5c56cd0154ab2c319621a08926057c1c9775
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e30d1259789909aeb36206ed2b2880e167e93523
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838282"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210782"
 ---
 # <a name="handling-control-requests"></a>制御要求の処理
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 NetAdapterCx モデルでは、クライアントドライバーはほとんどの制御要求を NETREQUEST オブジェクトとして受信し、それぞれが OID (オブジェクト識別子) 要求を表します。 クライアントドライバーは、通常、制御要求を管理するために、1つまたは2つの WDF キュー (NETREQUESTQUEUEs) を設定します。
 
@@ -55,7 +53,7 @@ NetAdapterCx モデルでは、クライアントは、次の2種類のキュー
 
 3つの主要な要求の種類ごとに、OID 固有のハンドラーが既定のハンドラーよりも優先されます。 クライアントが指定された OID に対してどちらも指定しない場合、NetAdapterCx は要求に失敗します。
 
-Query data、set data、および method 以外の種類の要求の場合、クライアントドライバーは[*EVT_NET_REQUEST_DEFAULT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_default)イベントコールバック関数を提供できます。
+Query data、set data、および method 以外の種類の要求の場合、クライアントドライバーは[*EVT_NET_REQUEST_DEFAULT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_default)イベントのコールバック関数を提供できます。
 
 たとえば、プロトコルドライバーが `NDIS_REQUEST_TYPE = NdisRequestGeneric1`で OID 要求を発行した場合、NetAdapterCx は[*EVT_NET_REQUEST_DEFAULT*](https://docs.microsoft.com/windows-hardware/drivers/ddi/netrequestqueue/nc-netrequestqueue-evt_net_request_default)を呼び出します。 クライアントドライバーがこのようなハンドラーを提供していない場合、NetAdapterCx は要求に失敗します。
 
@@ -105,7 +103,7 @@ if(!NT_SUCCESS(status))
 }
 ```
 
-NetAdapterCx は、 [*EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)を呼び出す時間まで[*EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)が返されるとすぐに、クライアントドライバーの制御要求ハンドラーを呼び出すことができます。
+NetAdapterCx は、 [*EVT_WDF_DEVICE_RELEASE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware)を呼び出すまで[*EVT_WDF_DEVICE_PREPARE_HARDWARE*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)が返されるとすぐに、クライアントドライバーの制御要求ハンドラーを呼び出すことができます。
 
 ## <a name="completing-requests"></a>要求の完了
 

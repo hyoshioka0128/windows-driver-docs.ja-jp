@@ -3,37 +3,37 @@ title: UMDF での USB I/O ターゲット
 description: UMDF での USB I/O ターゲット
 ms.assetid: e08ca910-1b28-4809-9a5b-db3730cda31a
 keywords:
-- ユーザー モード ドライバー WDK UMDF、USB I/O ターゲット
-- UMDF WDK、USB I/O ターゲット
-- ユーザー モード ドライバー フレームワーク WDK、USB I/O ターゲット
-- フレームワーク ベースのドライバー WDK UMDF、USB I/O ターゲット
-- USB I/O ターゲット WDK UMDF
-- USB I/O ターゲット WDK UMDF、
+- ユーザーモードドライバー WDK UMDF、USB i/o ターゲット
+- UMDF WDK、USB i/o ターゲット
+- ユーザーモードドライバーフレームワーク WDK、USB i/o ターゲット
+- フレームワークベースのドライバー WDK UMDF、USB i/o ターゲット
+- USB i/o ターゲット (WDK UMDF)
+- I/o ターゲット WDK UMDF、USB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b91ec4da152a3bed45e272c96e6d4e26eae36f7d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9bc4340371a0c9d68227d9ea9c3e731812c593f8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325948"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210774"
 ---
 # <a name="usb-io-targets-in-umdf"></a>UMDF での USB I/O ターゲット
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-各ユニバーサル シリアル バス (USB) デバイスと USB デバイスのインターフェイスをサポートする各パイプは、別の I/O ターゲットを持ちます。 USB デバイスを処理する I/O は、デバイスの I/O のターゲットに送信されます。 特定のパイプ処理する I/O は、そのパイプの I/O のターゲットに送信されます。
+各 universal serial bus (USB) デバイスと、USB デバイスインターフェイスがサポートする各パイプには、個別の i/o ターゲットがあります。 USB デバイスが処理する i/o は、デバイスの i/o ターゲットに送信されます。 特定のパイププロセスがそのパイプの i/o ターゲットに送信される i/o。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [USB デバイスのドライバー モデルの選択](choosing-a-driver-model-for-a-usb-device.md)
--   [特定の USB UMDF 1.x インターフェイス](usb-specific-umdf-1-x-interfaces.md)
--   [UMDF 1.x ドライバーで USB デバイスの操作](working-with-usb-devices-in-umdf-1-x-drivers.md)
--   [UMDF 1.x ドライバーで USB インターフェイスの操作](working-with-usb-interfaces-in-umdf-1-x-drivers.md)
--   [UMDF 1.x ドライバーで USB パイプの使用](working-with-usb-pipes-in-umdf-1-x-drivers.md)
--   [USB I/O ターゲットによってファイルの作成](file-creation-by-a-usb-i-o-target.md)
--   [UMDF から WinUSB の呼び出し](escaping-to-winusb.md)
+-   [USB デバイスのドライバーモデルの選択](choosing-a-driver-model-for-a-usb-device.md)
+-   [USB 固有の UMDF 1.x インターフェイス](usb-specific-umdf-1-x-interfaces.md)
+-   [UMDF 1.x ドライバーでの USB デバイスの操作](working-with-usb-devices-in-umdf-1-x-drivers.md)
+-   [UMDF 1.x ドライバーでの USB インターフェイスの使用](working-with-usb-interfaces-in-umdf-1-x-drivers.md)
+-   [UMDF 1.x ドライバーでの USB パイプの使用](working-with-usb-pipes-in-umdf-1-x-drivers.md)
+-   [USB i/o ターゲットによるファイルの作成](file-creation-by-a-usb-i-o-target.md)
+-   [UMDF から WinUSB を呼び出しています](escaping-to-winusb.md)
 
  
 

@@ -7,17 +7,17 @@ keywords:
 - デバイスシナリオの取り外し WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1e4636acdab4039935101b75b047655ad3f08c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d0ffa7cf9423150f26e81593ba97b490000f75ac
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841676"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210076"
 ---
 # <a name="a-user-unplugs-a-device"></a>ユーザーがデバイスを取り外す
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 システムが実行されている間、ユーザーは、次の2つの方法のいずれかでデバイスを削除できます。*つまり、デバイス*が削除されようとしていることをシステムに通知します (たとえば、プラグまたは取り出しハードウェアプログラムを使用して)。または、*突然削除*することによって、ユーザーがシステムに通知せずにデバイスを unplugs することになります。 バスで突然の削除 (USB など) がサポートされている場合、デバイスのドライバーはデバイスの突然の消失を処理できる必要があります。
 

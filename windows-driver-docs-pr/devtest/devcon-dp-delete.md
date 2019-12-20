@@ -1,9 +1,9 @@
 ---
 title: DevCon Dp_delete
-description: ローカル コンピューターのドライバー ストアからサード パーティ (OEM) のドライバー パッケージを削除します。 このコマンドは、INF ファイル、PNF ファイル、および関連するカタログ ファイル (.cat) を削除します。
+description: ローカルコンピューターのドライバーストアからサードパーティ (OEM) ドライバーパッケージを削除します。 このコマンドを実行すると、INF ファイル、PNF ファイル、および関連付けられているカタログファイル (.cat) が削除されます。
 ms.assetid: bc9d8d66-4aa1-423b-b907-40a8c0194eb1
 keywords:
-- DevCon Dp_delete ドライバーの開発ツール
+- DevCon Dp_delete ドライバー開発ツール
 topic_type:
 - apiref
 api_name:
@@ -12,16 +12,16 @@ api_type:
 - NA
 ms.date: 04/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 240d2eed9fe8f4fe56f6236d586768c12cf90b08
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3536a1a96fc305cfb7000dfda020d7beaab21255
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347693"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209484"
 ---
-# <a name="devcon-dpdelete"></a>DevCon Dp\_削除
+# <a name="devcon-dp_delete"></a>DevCon Dp\_削除
 
-ローカル コンピューターのドライバー ストアからサード パーティ (OEM) のドライバー パッケージを削除します。 このコマンドは、INF ファイル、PNF ファイル、および関連するカタログ ファイル (.cat) を削除します。
+ローカルコンピューターのドライバーストアからサードパーティ (OEM) ドライバーパッケージを削除します。 このコマンドを実行すると、INF ファイル、PNF ファイル、および関連付けられているカタログファイル (.cat) が削除されます。
 
 ```command
     devcon [-f] dp_delete inf
@@ -29,9 +29,9 @@ ms.locfileid: "63347693"
 
 ## <a name="parameters"></a>パラメーター
 
-**-f**デバイスを使用すると、時に使用されている場合でも、このパラメーターは、ドライバー パッケージを削除します。
+**-f**このパラメーターは、デバイスがその時点で使用している場合でも、ドライバーパッケージを削除します。
 
-*inf* OEM\*INF ファイルの .inf ファイル名。 追加すると、ドライバー パッケージ、ドライバー ストアなどを使用して Windows に INF ファイルをこの形式のファイル名が割り当てられます[ **DevCon dp\_追加**](devcon-dp-add.md)します。
+*inf*INF ファイルの OEM\*.inf ファイル名。 [**DevCon dp\_add**](devcon-dp-add.md)などを使用してドライバーパッケージをドライバーストアに追加すると、Windows によって、この形式のファイル名が INF ファイルに割り当てられます。
 
 ## <a name="comments"></a>コメント
 
@@ -39,5 +39,5 @@ ms.locfileid: "63347693"
 
 ```command
 devcon dp_delete oem2.inf
-devcon dp_delete oem0.inf -f
+devcon -f dp_delete oem0.inf
 ```

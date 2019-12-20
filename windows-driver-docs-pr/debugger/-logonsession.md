@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 706f6931b69b29ffa645bfeafe3cee4347ff1318
-ms.sourcegitcommit: 424c435700d8f8a85bdaa83e8ddaab9568c8d347
+ms.openlocfilehash: 5802e44f69697b8846c28c54df03efacecfcdca8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70025228"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209104"
 ---
 # <a name="logonsession"></a>!logonsession
 
@@ -43,10 +43,10 @@ ms.locfileid: "70025228"
 <span id="_______LUID______"></span><span id="_______luid______"></span>*LUID*   
 表示するログオンセッションのローカル一意識別子 (LUID) を指定します。 *LUID*が0の場合、すべてのログオンセッションに関する情報が表示されます。
 
-チェックされたビルドのシステムセッションとすべてのシステムトークンに関する情報を表示するには、「 **! logonsession 3e7 1**」と入力します。
+チェックされたビルドのシステムセッションとすべてのシステムトークンに関する情報を表示するには、「 **! logonsession 3e7 1**」と入力します。 チェックされたビルドは、Windows 10 バージョン1803より前の以前のバージョンの Windows で使用できました。
 
 <span id="_______InfoLevel______"></span><span id="_______infolevel______"></span><span id="_______INFOLEVEL______"></span>*InfoLevel*   
-(チェックされたビルドのみ)表示するトークン情報の量を指定します。 *InfoLevel*パラメーターには、0 ~ 4 の値を指定できます。0は最も少ない情報を表し、4は最も多くの情報を表します。
+(チェックされたビルドのみ)表示するトークン情報の量を指定します。 *InfoLevel*パラメーターには、0 ~ 4 の値を指定できます。0は最も少ない情報を表し、4は最も多くの情報を表します。 チェックされたビルドは、Windows 10 バージョン1803より前の以前のバージョンの Windows で使用できました。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -71,9 +71,9 @@ ms.locfileid: "70025228"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ログオンセッションの詳細については、Microsoft Windows SDK のドキュメントと、Mark Russinovich と David ソロモンを参照してください。 
+ログオンセッションの詳細については、Microsoft Windows SDK の*ドキュメントと、* Mark Russinovich と David ソロモンを参照してください。 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
 無料のビルドでのこの拡張機能からの出力の例を次に示します。

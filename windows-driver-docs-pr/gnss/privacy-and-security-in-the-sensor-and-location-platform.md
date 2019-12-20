@@ -4,12 +4,12 @@ description: センサーおよび位置情報プラットフォームのプラ�
 ms.assetid: 9defb163-4de6-46cc-b817-d3e6291137be
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 240648fb548181304853fb8520158750cebbfaf6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a168a743469b2ecfd45d66f34fd2f8c777334a28
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825059"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210798"
 ---
 # <a name="privacy-and-security-in-the-sensor-and-location-platform"></a>センサーおよび位置情報プラットフォームのプライバシーとセキュリティ
 
@@ -30,14 +30,6 @@ Windows のセンサーと場所のプラットフォームには、場所デー
 ## <a name="keeping-user-data-private"></a>ユーザーデータをプライベートに保つ
 
 センサードライバーを作成する場合は、ユーザーのプライバシーを考慮する必要があります。 センサークラスの拡張機能によって適用されるプライバシーコントロールをバイパスしないようにする必要があります。 ユーザーがアクセス許可を付与する前に特定のプロパティを取得できるため、これらのプロパティを使用して、個人を特定できる情報をドライバーが明らかにしないようにする必要があります。 ユーザーがアクセス許可を付与する前に使用可能なプロパティの一覧については、「 [**ISensorDriver:: OnGetProperties**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsclassextension/nf-sensorsclassextension-isensordriver-ongetproperties)」を参照してください。
-
-## <a name="additional-resources"></a>その他の情報
-
-ユーザーのプライバシーを保護するソフトウェアを開発する際には、次のリソースを参照してください。
-
-[ソフトウェア製品とサービスの開発に関するプライバシーガイドライン](https://go.microsoft.com/fwlink/p/?linkid=2085300)
-
-[TechNet セキュリティデベロッパーセンター](https://go.microsoft.com/fwlink/p/?linkid=237150)
 
 ## <a name="related-topics"></a>関連トピック
 

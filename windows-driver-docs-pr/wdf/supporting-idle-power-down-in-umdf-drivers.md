@@ -7,17 +7,17 @@ keywords:
 - アイドル状態の非アクティブな WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 36071fec92a4e9845411afad5c39d59f011afda2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e50c1eacf39891cf6607c8d360c8866dfabc4295
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831797"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210764"
 ---
 # <a name="supporting-idle-power-down-in-umdf-drivers"></a>UMDF ドライバーでのアイドル電源切断のサポート
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 一部のデバイスは、システムの動作状態が維持されている間にスリープ状態になることがあります。 このようなデバイスでは、デバイスがアイドル状態 (使用されていない) になると、事前に決められた時間が経過すると、デバイスの電源が低下します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "72831797"
     -   システムが動作中 (S0) 状態に戻ったときに、デバイスが動作中 (D0) 状態に戻るかどうか
 
 2.  デバイスに必要な場合は、 [IPowerPolicyCallbackWakeFromS0](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipowerpolicycallbackwakefroms0)インターフェイスと次のイベントコールバック関数を実装します。
-    -   [**IPowerPolicyCallbackWakeFromS0:: OnArmWakeFromS0。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-onarmwakefroms0)これにより、バスではなくデバイスハードウェアが外部ウェイクアップイベントに応答できるようになります。
+    -   [**IPowerPolicyCallbackWakeFromS0:: OnArmWakeFromS0。**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-onarmwakefroms0)これにより、バスではなくデバイスハードウェアが外部ウェイクアップイベントに応答できるようになります。
     -   [**IPowerPolicyCallbackWakeFromS0:: OnDisarmWakeFromS0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-ondisarmwakefroms0)。外部ウェイクアップイベントに応答するためのデバイスの機能 (バスの機能ではない) を無効にします。
     -   [**IPowerPolicyCallbackWakeFromS0:: OnWakeFromS0Triggered**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipowerpolicycallbackwakefroms0-onwakefroms0triggered)。バスがウェイクアップ信号を検出したことをドライバーに通知します。
 

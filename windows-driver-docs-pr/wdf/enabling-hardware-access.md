@@ -4,20 +4,20 @@ description: ハードウェアへのアクセスの有効化
 ms.assetid: 89D8A4B9-4D61-4968-BC78-156717B3EED9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d8998986609616cc795c7ee0190a35e0d917a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4066e528730c72af44cb2bc1a973fd45bc74d118
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369798"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210428"
 ---
 # <a name="enabling-hardware-access"></a>ハードウェアへのアクセスの有効化
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-ハードウェアへのアクセスを有効にする UMDF ドライバーを設定する必要があります、 **UmdfDirectHardwareAccess** INF ディレクティブを**AllowDirectHardwareAccess**します。
+ハードウェアアクセスを有効にするには、UMDF ドライバーで**UmdfDirectHardwareAccess** INF ディレクティブを**AllowDirectHardwareAccess**に設定する必要があります。
 
-UMDF INF ディレクティブの詳細については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
+UMDF の INF ディレクティブの詳細については、「 [Inf ファイルでの WDF ディレクティブの指定](specifying-wdf-directives-in-inf-files.md)」を参照してください。
 
  
 

@@ -3,12 +3,12 @@ Description: Windows ハードウェア認定プログラムを送信するた�
 title: USB-IF 認定テスト
 ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cc2ac3be6ea1d3dbf0b74e15590091e73e17387
-ms.sourcegitcommit: 0660c8d6d374298f3246fdb91661360610f8c846
+ms.openlocfilehash: 9577c09b317b4a632101764e1de35c0124c51b7c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72889649"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210602"
 ---
 # <a name="usb-if-certification"></a>USB-認定の場合
 
@@ -33,7 +33,7 @@ USB デバイスが現在の Microsoft Windows 認定プログラムの要件を
 
 ## <a name="windows-hlk-requirements-for-usb-if-tests"></a>USB IF テストの Windows HLK の要件
 
-- デバイス (**デバイス. 接続. usbdevices. UsbifCertification)** :
+- デバイス (**デバイス. 接続. usbdevices. UsbifCertification)**:
 
     USB を利用する場合は、ただし、Windows HLK**の要件で**ある、usb デバイスの場合、usb が必要であることを前提としています。 要件は、デバイスが USB 対応であるかどうか、または USB IF の認定テストのサブセットをデバイスで実行できることを示します。
 
@@ -95,7 +95,7 @@ USB デバイスが現在の Microsoft Windows 認定プログラムの要件を
 
   | USB バージョン | USB-IF テスト |
   | --- | --- |
-  | USB 2.0 | XHCI ホストコントローラーの背後にデバイスを接続し、USB 3.0 コマンド検証ツール (USB3CV) で9つのテスト [USB 2.0 デバイス] を実行します。 <br><br> 「 [Ehci テストプロシージャ](http://compliance.usb.org/resources/GoldSuite%20Test%20Procedure.pdf)」の「相互運用性」の「ehci」で説明されているように、相互運用性テストを実行します。 これらのテストを2回実行します。1つは EHCI ホストコントローラーの背後に接続されたデバイスで、もう1つは xHCI ホストコントローラーの背後に接続されているデバイスです。 |
+  | USB 2.0 | XHCI ホストコントローラーの背後にデバイスを接続し、USB 3.0 コマンド検証ツール (USB3CV) で9つのテスト [USB 2.0 デバイス] を実行します。 <br><br> 「 [Ehci テストプロシージャ](https://compliance.usb.org/resources/GoldSuite%20Test%20Procedure.pdf)」の「相互運用性」の「ehci」で説明されているように、相互運用性テストを実行します。 これらのテストを2回実行します。1つは EHCI ホストコントローラーの背後に接続されたデバイスで、もう1つは xHCI ホストコントローラーの背後に接続されているデバイスです。 |
   | USB 3.0 | XHCI ホストコントローラーの背後にデバイスを接続し、USB 3.0 コマンド検証ツール (USB3CV) で9つのテスト [USB 3.0 デバイス] を実行します。 <br><br> 「 [XHCI 相互運用性テスト手順](https://www.usb.org/document-library/xhci-interoperability-test-procedures-peripherals-hubs-and-hosts-version-096)」のドキュメントで説明されているように、相互運用性テストを実行します。 これらのテストを2回実行します。1回は、EHCI ホストコントローラーの背後に接続されているデバイスで、もう1回は xHCI ホストコントローラーの背後に接続されているデバイスです。 |
   
   3. テストが成功している場合は、HLK で "SELFTEST" という文字列を入力して、USB IF 証明書検証テストに入力します。

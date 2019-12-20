@@ -13,12 +13,12 @@ keywords:
 - トレースメッセージフォーマットファイル WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9fbbac12d49e2ee4657689398ef67d938973d9
-ms.sourcegitcommit: 5081de283b09b4fe847912fc1dc0e7f057e0a0cd
+ms.openlocfilehash: cf77440157fa3cad5f7e4acf2cbb42bdab02119d
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73592431"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209478"
 ---
 # <a name="dtrace-etw"></a>DTrace ETW
 
@@ -39,9 +39,9 @@ Probename = etw
 
 Modname は、すべての小文字を使用する xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 形式のプロバイダー guid です。
 
-Funcname = Level_Keyword という形式の。 すべてを一致させるには、0xff_0xffffffffffffffff に設定する必要があります。
+Funcname = フォーム0x00_0x0000000000000000 の Level_Keyword。 すべてを一致させるには、これを0xff_0xffffffffffffffff に設定する必要があります。
 
-Probename = 整数イベント ID または "generic_event" をすべてのイベント Id に一致させます。
+Probename = 整数イベント ID または "generic_event" は、すべてのイベント Id に一致します。
 
 Probename に基づくフィルター処理は、イベントの発生に対してのみ機能します。 トレースログイベントには、ワイルドカード (*) を使用します。
 
@@ -304,7 +304,7 @@ etw:d1d93ef7-e1f2-4f45-9943-03d245fe6c00:0xff_0xffffffffffffffff:12
 クライアントの Windows PC で実行している場合は、1つの NUMA ノードが表示されます。
 
 ```dtrace
-C:\> dtrace -s etwnumamemstats.d 
+C:\> dtrace -s etwnumamemstats.d
 trace: script 'etwnumamemstats.d' matched 36 probes
 CPU     ID                    FUNCTION:NAME
   0  42735       0xff_0xffffffffffffffff:12

@@ -4,17 +4,17 @@ description: UMDF 1.x ドライバーでのデバイス レジスターの読み
 ms.assetid: A0640E60-B0DF-4CAD-B292-CC1875EF7F7D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2070778a2e61c2065ace8c129abcb54fd2a495ad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7e4803eb751b22c26475d62868515d37641faa8a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842228"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210868"
 ---
 # <a name="reading-and-writing-to-device-registers-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのデバイス レジスターの読み取りと書き込み
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF バージョン1.11 以降、フレームワークには、メモリ領域と i/o ポート領域のレジスタにアクセスするためのルーチンのセットが用意されています。 [UMDF register/port アクセスルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/)は、カーネルモードドライバーによって使用される HAL ルーチンとよく似ています。 「 [UMDF ドライバーでのハードウェアリソースの検索とマッピング](https://docs.microsoft.com/windows-hardware/drivers/wdf/finding-and-mapping-hardware-resources-in-umdf-1-x-drivers)」で説明されているように、ドライバーによってレジスタがマップされた後、ドライバーは読み取り/書き込み\_REGISTER\_Xxx ルーチンを使用して個々のレジスタの読み取りと書き込みを行います。 I/o ポートの場合、ドライバーは読み取り/書き込み\_ポート\_Xxx ルーチンを呼び出します。
 

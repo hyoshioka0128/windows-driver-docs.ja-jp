@@ -6,16 +6,14 @@ keywords:
 - NetAdapterCx クライアントドライバーの電源シーケンス, NetAdapterCx クライアントドライバーの電源シーケンス, NetCx クライアントドライバー用の電源設定のシーケンスです。
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bac2adbf13381a25cb229709dbe5271e11ac9d10
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 338fdff71b81c017161d4715b6cccec54eb0dc6b
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72835465"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209010"
 ---
 # <a name="power-up-sequence-for-a-netadaptercx-client-driver"></a>NetAdapterCx クライアント ドライバーの電源投入シーケンス
-
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
 
 次の図は、デバイスを完全に動作状態にするときに、図の下部にあるデバイスが到着した状態から開始するときに、NetAdapterCx がクライアントドライバーのイベントコールバック関数を呼び出す順序を示しています。
 

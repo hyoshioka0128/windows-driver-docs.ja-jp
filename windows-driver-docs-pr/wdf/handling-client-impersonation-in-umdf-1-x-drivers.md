@@ -9,17 +9,17 @@ keywords:
 - 権限借用 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fc53b3d055f7efc784be844f94513821b6becad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0c598fb1ff090f7a62b47f643218ca89de123901
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843639"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209930"
 ---
 # <a name="handling-client-impersonation-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでのクライアント偽装の処理
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 UMDF ドライバーは通常、LocalService アカウントで実行され、保護されたファイルやその他の保護されたリソースなどのユーザー資格情報を必要とするファイルまたはリソースにはアクセスできません。 通常、UMDF ドライバーは、クライアントアプリケーションとデバイスとの間でやり取りされるコマンドとデータを操作します。 そのため、ほとんどの UMDF ドライバーは保護されたリソースにアクセスしません。
 

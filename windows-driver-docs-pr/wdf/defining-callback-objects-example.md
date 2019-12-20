@@ -6,17 +6,17 @@ keywords:
 - コールバックオブジェクト WDK UMDF、定義の例
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f7ae9ca5e71f09eedeebd6693e520a12bedc24e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3bd034d0ac3a8b34034ce1d79b54db08ed1967ca
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841756"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210488"
 ---
 # <a name="defining-callback-objects-example"></a>コールバック オブジェクトの定義の例
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 次のコード例は、デバイスのコールバックオブジェクトを定義するために、ドライバーが[IPnpCallbackHardware](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nn-wudfddi-ipnpcallbackhardware)インターフェイスから継承する方法を示しています。
 

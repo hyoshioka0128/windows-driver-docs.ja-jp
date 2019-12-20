@@ -9,17 +9,17 @@ keywords:
 - USB デバイス WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f7eeee25f2866d41d88d0dbcb78b8b260e50e9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 099486de52e0fba166c2d5eea174c8881780e39f
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842786"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210838"
 ---
 # <a name="working-with-usb-devices-in-umdf-1x-drivers"></a>UMDF 1.x ドライバーでの USB デバイスの操作
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークは、各 USB デバイスをフレームワークの USB デバイスオブジェクトとして表します。 UMDF ドライバーは、ドライバーが USB i/o ターゲットに対するフレームワークのサポートにアクセスする前に、フレームワークの USB デバイスオブジェクトを作成する必要があります。 UMDF には、UMDF ドライバーが次のことを行うための USB デバイスオブジェクトメソッドが用意されています。
 
@@ -45,7 +45,7 @@ hr = pdevice->QueryInterface(IID_IWDFUsbTargetFactory, (LPVOID*)&ppUsbTargetFact
 
 ### <a name="obtaining-umdf-usb-device-information"></a>UMDF USB デバイス情報の取得
 
-UMDF ドライバーは、 [**IWDFUsbTargetFactory:: CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)メソッドを呼び出して、umdf usb ターゲットデバイスオブジェクトを作成した後、usb ターゲットデバイスオブジェクトが usb に関する情報を取得するために定義する次のメソッドを呼び出すことができます。ドライブ
+UMDF ドライバーは、 [**IWDFUsbTargetFactory:: CreateUsbTargetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetfactory-createusbtargetdevice)メソッドを呼び出して、umdf usb ターゲットデバイスオブジェクトを作成した後、usb ターゲットデバイスオブジェクトが usb デバイスに関する情報を取得するために定義する次のメソッドを呼び出すことができます。
 
 <a href="" id="iwdfusbtargetdevice--retrievedescriptor"></a>[**IWDFUsbTargetDevice::RetrieveDescriptor**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfusb/nf-wudfusb-iwdfusbtargetdevice-retrievedescriptor)  
 デバイスの USB デバイス記述子を取得します。

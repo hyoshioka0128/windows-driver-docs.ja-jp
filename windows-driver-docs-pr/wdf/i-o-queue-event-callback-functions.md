@@ -9,17 +9,17 @@ keywords:
 - イベントコールバック関数 WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f98e089e7fb91826bd3d85406b57d7acf9b5c527
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ebbd20377314e8fd703d4e138cc3fc7062b7d3f8
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845215"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209916"
 ---
 # <a name="io-queue-event-callback-functions"></a>I/O キューのイベント コールバック関数
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 ドライバーが i/o キューを作成するとき、または既定の i/o キューを構成するときに、インターフェイスに関連付けられているメソッドを呼び出すことによって、インターフェイスに関連付けられているメソッドを呼び出すことによって、フレームワークがドライバーに通知するように、次のインターフェイスを登録できます。 I/o キューの詳細および i/o キューの作成と構成の詳細については、「[フレームワーク I/o キューオブジェクト](framework-i-o-queue-object.md)」を参照してください。
 

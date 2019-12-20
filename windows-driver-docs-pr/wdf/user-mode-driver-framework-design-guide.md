@@ -1,25 +1,25 @@
 ---
 title: UMDF 1.x 設計ガイド
-description: このセクションには、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1.11 以降のみに適用される情報が含まれています。
+description: このセクションには、ユーザーモードドライバーフレームワーク (UMDF) バージョン1.11 以前にのみ適用される情報が含まれています。
 ms.assetid: 4e56b62a-640d-4a9d-bf38-118b211d41f6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fec70e24cd31ff198785e85a4c019a1bf1404ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b367185177274e41a409c369dd09bb528dd06fb
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331076"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210898"
 ---
 # <a name="umdf-1x-design-guide"></a>UMDF 1.x 設計ガイド
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-このセクションには、ユーザー モード ドライバー フレームワーク (UMDF) バージョン 1.11 以降のみに適用される情報が含まれています。
+このセクションには、ユーザーモードドライバーフレームワーク (UMDF) バージョン1.11 以前にのみ適用される情報が含まれています。
 
-Windows 8.1 では、UMDF バージョン 2 を紹介します。 詳細については、次を参照してください。 [UMDF 入門](getting-started-with-umdf-version-2.md)します。
+Windows 8.1 には、UMDF バージョン2が導入されています。 詳細については、「[はじめにと UMDF](getting-started-with-umdf-version-2.md)」を参照してください。
 
-UMDF のバージョンの Windows の特定のバージョンで使用可能なについての詳細については、次を参照してください。 [UMDF バージョン履歴](umdf-version-history.md)します。
+特定のバージョンの Windows で使用できる UMDF のバージョンの詳細については、「 [Umdf Version History](umdf-version-history.md)」を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -27,16 +27,16 @@ UMDF のバージョンの Windows の特定のバージョンで使用可能な
 -   [UMDF オブジェクトとインターフェイス](umdf-objects-and-interfaces.md)
 -   [UMDF ドライバーの初期化](initializing-umdf-drivers.md)
 -   [UMDF ドライバーでの PnP と電源管理](pnp-and-power-management-in-umdf-drivers.md)
--   [I/O 要求の処理](processing-i-o-requests-umdf.md)
--   [UMDF で I/O ターゲットを使用します。](using-i-o-targets-in-umdf.md)
--   [ハードウェアにアクセスして、割り込み処理](accessing-hardware-and-handling-interrupts.md)
--   [UMDF ドライバーでの処理](umdf-driver-tasks.md)
+-   [I/o 要求の処理](processing-i-o-requests-umdf.md)
+-   [UMDF での i/o ターゲットの使用](using-i-o-targets-in-umdf.md)
+-   [ハードウェアへのアクセスと割り込みの処理](accessing-hardware-and-handling-interrupts.md)
+-   [UMDF ドライバータスク](umdf-driver-tasks.md)
 
-## <a name="additional-resources-for-umdf-version-1"></a>UMDF バージョン 1 の他のリソース
+## <a name="additional-resources-for-umdf-version-1"></a>UMDF バージョン1の追加リソース
 
 
--   [ユーザー モード ドライバー フレームワークのアーキテクチャ](https://msdn.microsoft.com/windows/hardware/gg463289)
--   [UMDF 開発者向けの COM クイック スタート](https://msdn.microsoft.com/windows/hardware/gg463299)
+-   [ユーザーモードドライバーフレームワークのアーキテクチャ](https://msdn.microsoft.com/windows/hardware/gg463289)
+-   [UMDF 開発者向けの COM クイックスタート](https://msdn.microsoft.com/windows/hardware/gg463299)
 
  
 

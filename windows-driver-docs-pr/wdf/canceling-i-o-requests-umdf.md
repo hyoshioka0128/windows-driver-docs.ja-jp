@@ -11,17 +11,17 @@ keywords:
 - 要求処理 WDK UMDF、状態
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f25ad6977b67668ec22c5ba6c63a6db0bc93d353
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b472620cccfccbc652e8d024c91fcdbc49b02a60
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843651"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210236"
 ---
 # <a name="canceling-io-requests-in-umdf"></a>UMDF で i/o 要求をキャンセルしています
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 デバイスの進行中の i/o 操作 (ディスクからの複数のブロックの読み取り要求など) は、アプリケーション、システム、またはドライバーによって取り消されることがあります。 デバイスの i/o 操作が取り消された場合、i/o マネージャーは i/o 操作に関連付けられているすべての未処理 i/o 要求をキャンセルしようとします。 I/o マネージャーが i/o 要求をキャンセルしようとしたときに、デバイスのドライバーが通知を受け取るように登録できます。また、ドライバーは、\_WIN32 (エラー\_操作\_中止された) からの HRESULT\_の完了ステータスを使用[して、所有している](completing-i-o-requests.md)要求をキャンセルできます。
 
@@ -35,7 +35,7 @@ ms.locfileid: "72843651"
 
 フレームワークがドライバーに i/o 要求を送信した後、ドライバーは要求を所有しており、フレームワークはその要求を取り消すことができません。 この時点では、ドライバーのみが i/o 要求をキャンセルできますが、フレームワークは、要求をキャンセルする必要があることをドライバーに通知する必要があります。 ドライバーは、 [**Irequestcallback cancel:: OnCancel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-irequestcallbackcancel-oncancel) callback 関数を提供することによって、この通知を受信します。
 
-場合によっては、ドライバーは i/o キューから i/o 要求を受信しますが、要求を処理するのではなく、ドライバーは要求を同じまたは別の i/o キューにキューして、後で処理することができます。 たとえば、フレームワークは、ドライバーの要求ハンドラーの1つに i/o 要求を配信し、後で[**IWDFIoRequest:: ForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)を呼び出して、別のキューまたは[**IWDFIoRequest2:: キューへに要求を配置する場合があります。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-requeue)要求を同じキューに戻します。
+場合によっては、ドライバーは i/o キューから i/o 要求を受信しますが、要求を処理するのではなく、ドライバーは要求を同じまたは別の i/o キューにキューして、後で処理することができます。 たとえば、フレームワークは、ドライバーの要求ハンドラーの1つに i/o 要求を配信し、後で[**IWDFIoRequest:: ForwardToIoQueue**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest-forwardtoioqueue)を呼び出して別のキューまたは[**IWDFIoRequest2:: キューへ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-requeue)に要求を配置し、同じキューに要求を戻すことができます。
 
 このような場合は、要求が i/o キューにあるため、フレームワークは i/o 要求を取り消すことができます。 ただし、ドライバーが要求が存在する i/o キューのコールバック関数を登録している場合、関連付けられている i/o 操作が取り消されるときに、フレームワークは要求をキャンセルする代わりにコールバック関数を呼び出します。 フレームワークがドライバーのコールバック関数を呼び出す場合、ドライバーは要求をキャンセルする必要があります。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72843651"
 
 ドライバーが**Markcancelable**を呼び出して**OnCancel**コールバック関数を登録していない場合は、 [**IWDFIoRequest2:: iscanceled**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfiorequest2-iscanceled)を呼び出して、i/o マネージャーが i/o 要求をキャンセルしようとしたかどうかを判断できます。 **Iscanceled**が**TRUE**を返した場合、ドライバーは要求をキャンセルする必要があります。
 
-たとえば、大規模な読み取り要求または書き込み要求をいくつかの小さな要求に分割して受信するドライバーは、ドライバーが**Markcancelable**を呼び出していない場合、ドライバーの i/o ターゲットが各小さい要求を完了した後に**iscanceled**を呼び出すことがあります。受信した要求の。
+たとえば、大量の読み取り要求または書き込み要求をいくつかの小さな要求に分割して受信するドライバーは、ドライバーが受信した要求に対して**Markcancelable**を呼び出していない場合、ドライバーの i/o ターゲットが各小さい要求を完了した後に**iscanceled**を呼び出すことがあります。
 
 ### <a name="canceling-the-request"></a>要求を取り消しています
 

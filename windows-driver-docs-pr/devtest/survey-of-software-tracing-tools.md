@@ -3,30 +3,30 @@ title: ソフトウェア トレース ツールの調査
 description: ソフトウェア トレース ツールの調査
 ms.assetid: d6b5d131-ed03-4961-9680-1c4ded35de96
 keywords:
-- ソフトウェアが示されているツールを WDK のトレース
-- トレース WDK、記載されているツール
+- ソフトウェアトレース WDK、ツール一覧
+- WDK のトレース、ツールの一覧
 - トレースの追加
-- トレースの WDK、ソフトウェアの追加
-- WDK、トレースを追加します。
-- WDK のトレース、セッションを制御するソフトウェア
-- トレース セッションを制御する WDK
-- ソフトウェアは、WDK をトレース TMF ファイル
-- トレースの WDK、TMF ファイル
-- ソフトウェアの WDK のトレース、メッセージの書式設定
-- メッセージの書式設定、WDK のトレース
-- WDK のトレース、メッセージを表示するソフトウェア
-- トレース メッセージを表示する WDK
-- WDK のトレース、イベントを表示するソフトウェア
-- イベントの表示、WDK のトレース
-- トレース コンシューマ WDK
+- ソフトウェアトレース WDK、追加
+- WDK のトレース、追加
+- ソフトウェアのトレース WDK、セッションの制御
+- WDK のトレース、セッションの制御
+- ソフトウェアトレース WDK、TMF ファイル
+- WDK、TMF ファイルのトレース
+- ソフトウェアトレース WDK, 書式設定メッセージ
+- WDK のトレース, メッセージの書式設定
+- ソフトウェアトレース WDK, メッセージの表示
+- WDK をトレースし、メッセージを表示する
+- ソフトウェアトレース WDK, イベントの表示
+- WDK のトレース, イベントの表示
+- トレースコンシューマー WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b61d157a36319926691e98acba80ca3e2bb05e74
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2214e4b059c7f5635146eb85124df58928918742
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347613"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75208888"
 ---
 # <a name="survey-of-software-tracing-tools"></a>ソフトウェア トレース ツールの調査
 
@@ -34,63 +34,63 @@ ms.locfileid: "63347613"
 ## <span id="ddk_survey_of_software_tracing_tools_tools"></span><span id="DDK_SURVEY_OF_SOFTWARE_TRACING_TOOLS_TOOLS"></span>
 
 
-Windows Driver Kit (WDK) または Windows オペレーティング システムのいずれかでは、次のソフトウェア トレース ツールが含まれます。
+次のソフトウェアトレースツールは、Windows Driver Kit (WDK) または Windows オペレーティングシステムに含まれています。
 
-### <a name="span-idenablingwpptracinginatraceproducerspanspan-idenablingwpptracinginatraceproducerspanenabling-wpp-tracing-in-a-trace-producer"></a><span id="enabling_wpp__tracing_in_a_trace_producer"></span><span id="ENABLING_WPP__TRACING_IN_A_TRACE_PRODUCER"></span>トレースのプロデューサーで WPP トレースを有効にします。
+### <a name="span-idenabling_wpp__tracing_in_a_trace_producerspanspan-idenabling_wpp__tracing_in_a_trace_producerspanenabling-wpp-tracing-in-a-trace-producer"></a><span id="enabling_wpp__tracing_in_a_trace_producer"></span><span id="ENABLING_WPP__TRACING_IN_A_TRACE_PRODUCER"></span>トレースプロデューサーでの WPP トレースの有効化
 
--   TraceWPP (TraceWPP.exe) のソース ファイルで、Windows ソフトウェア トレース プリプロセッサ (WPP) を実行するコマンド ライン ツールは、[トレース プロバイダー](trace-provider.md)、カーネル モード ドライバーまたはユーザー モード アプリケーションなどです。
+-   TraceWPP (TraceWPP) は、カーネルモードドライバーやユーザーモードアプリケーションなど、[トレースプロバイダー](trace-provider.md)のソースファイルに対して Windows software trace プリプロセッサ (WPP) を実行するコマンドラインツールです。
 
-    TraceWPP では、ドライバーまたは WDK と Visual Studio を使用してアプリケーションをビルドするときに、WPP オプションを設定する代わりに提供します。 このツールのプロセスでは、ソース ファイル内のマクロをトレースし、WPP トレースを有効にするヘッダー ファイルを作成します。
+    TraceWPP は、WDK と Visual Studio を使用してドライバーまたはアプリケーションをビルドするときに、WPP オプションを設定する代わりに使用できます。 このツールでは、ソースファイル内のトレースマクロを処理し、WPP トレースを有効にするヘッダーファイルを作成します。
 
-    際に使用されるものと同じ TraceWPP のコマンド ライン オプションは、 [TraceWPP タスク](tracewpp-task.md)は MSBuild に渡されます。 これらのオプションの詳細については、次を参照してください。 [WPP プリプロセッサ](wpp-preprocessor.md)します。
+    TraceWPP のコマンドラインオプションは、 [tracewpp タスク](tracewpp-task.md)が MSBuild に渡されるときに使用されるオプションと同じです。 これらのオプションの詳細については、「 [WPP プリプロセッサ](wpp-preprocessor.md)」を参照してください。
 
-    TraceWPP が、箱にある\\&lt;*プラットフォーム*&gt; WDK のディレクトリ。
+    TraceWPP は、WDK の bin\\&lt;*Platform*&gt; ディレクトリにあります。
 
-### <a name="span-idcontrollingtracesessionstracecontrollersspanspan-idcontrollingtracesessionstracecontrollersspancontrolling-trace-sessions-trace-controllers"></a><span id="controlling_trace_sessions__trace_controllers_"></span><span id="CONTROLLING_TRACE_SESSIONS__TRACE_CONTROLLERS_"></span>(トレース コント ローラー) のトレース セッションを制御します。
+### <a name="span-idcontrolling_trace_sessions__trace_controllers_spanspan-idcontrolling_trace_sessions__trace_controllers_spancontrolling-trace-sessions-trace-controllers"></a><span id="controlling_trace_sessions__trace_controllers_"></span><span id="CONTROLLING_TRACE_SESSIONS__TRACE_CONTROLLERS_"></span>トレースセッションの制御 (トレースコントローラー)
 
--   [Traceview で](traceview.md)(TraceView.exe) は GUI ベース[トレース コント ローラー](trace-controller.md)と[トレース コンシューマー](trace-consumer.md)とは、トレース メッセージのリアルタイム表示に特に設計されています。 により、構成、開始、更新と停止[トレース セッション](trace-session.md)します。 このツールも書式設定、フィルター、およびリアルタイムのトレース セッションからのトレース メッセージを表示し、[トレース ログ](trace-log.md)します。
+-   [Traceview](traceview.md) (traceview .exe) は、GUI ベースの[トレースコントローラー](trace-controller.md)と[トレースコンシューマー](trace-consumer.md)であり、特にトレースメッセージをリアルタイムで表示するために設計されています。 [トレースセッション](trace-session.md)の有効化、構成、開始、更新、停止を行います。 このツールでは、リアルタイムのトレースセッションと[トレースログ](trace-log.md)からトレースメッセージの形式を設定、フィルター処理、および表示することもできます。
 
-    Traceview で結合しの機能が拡張され[Tracepdb](tracepdb.md)、 [Tracelog](tracelog.md)、および[Tracefmt](tracefmt.md)します。 詳しくは、開始 traceview でとの間、**ヘルプ**] メニューの [選択**ヘルプ トピック**します。
+    TraceView は、 [Traceview](tracepdb.md)、 [Traceview](tracelog.md)、および[tracefmt](tracefmt.md)の機能を組み合わせて拡張したものです。 詳細については、TraceView を開始し、[**ヘルプ**] メニューの [**ヘルプトピック**] をクリックします。
 
-    Traceview では、ツールである\\&lt;*プラットフォーム*&gt; 、WDK のサブディレクトリで&lt;*プラットフォーム*&gt;は x86 または x64 のいずれか。
+    TraceView は、WDK の tools\\&lt;*Platform*&gt; サブディレクトリにあります。ここで &lt;*Platform*&gt; は、x86 または x64 です。
 
--   [Tracelog](tracelog.md) (Tracelog.exe) は、コマンド ライン[トレース コント ローラー](trace-controller.md)をによりでを構成します、開始、更新、およびリアルタイムを停止しますファイルとログ セッション。 トレース ログは、ユーザー モードとカーネル モードのトレース セッションをサポートしているだけでなく[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)と[グローバル ロガー (ブート) のトレース セッション](global-logger-trace-session.md)します。 このツールが遅延プロシージャに費やされた時間を測定するトレースをサポートしても呼び出し (Dpc) および割り込みサービス ルーチン (Isr)。
+-   [Tracelog](tracelog.md) (tracelog .exe) は、リアルタイムおよびログセッションを有効化、構成、開始、更新、および停止するコマンドライン[トレースコントローラー](trace-controller.md)です。 Tracelog では、ユーザーモードとカーネルモードのトレースセッションだけでなく、 [NT カーネルロガートレース](nt-kernel-logger-trace-session.md)セッションおよび[グローバル Logger (ブート) トレースセッション](global-logger-trace-session.md)もサポートされています。 このツールでは、遅延プロシージャ呼び出し (Dpc) と割り込みサービスルーチン (Isr) に費やされた時間を測定するトレースもサポートしています。
 
-    トレース ログは、ツールにある\\&lt;*プラットフォーム*&gt; 、WDK のサブディレクトリで&lt;*プラットフォーム*&gt;は x86 または x64 のいずれか。
+    Tracelog は、WDK の tools\\&lt;*Platform*&gt; サブディレクトリにあります。ここで &lt;*Platform*&gt; は、x86 または x64 です。
 
--   Logman (Logman.exe) が完全に機能を GUI ベース[トレース コント ローラー](trace-controller.md)はパフォーマンス カウンターおよびイベント トレースのログ記録を制御するために特に設計されています。
+-   Logman (Logman) は、フル機能を備えた GUI ベースの[トレースコントローラー](trace-controller.md)であり、特にパフォーマンスカウンターおよびイベントトレースのログ記録を制御するように設計されています。
 
-    Windows XP および Windows の以降のバージョンので Logman が含まれます。 このツールを使用する方法の詳細については、次を参照してください。、 [Logman](https://go.microsoft.com/fwlink/p/?linkid=179385) TechNet web サイトのトピックです。
+    Logman は、windows XP 以降のバージョンの Windows に含まれています。 このツールの使用方法の詳細については、「 [Logman](https://go.microsoft.com/fwlink/p/?linkid=179385)」を参照してください。
 
-### <a name="span-idcreatingtmffilesspanspan-idcreatingtmffilesspancreating-tmf-files"></a><span id="creating_tmf_files"></span><span id="CREATING_TMF_FILES"></span>TMF ファイルを作成します。
+### <a name="span-idcreating_tmf_filesspanspan-idcreating_tmf_filesspancreating-tmf-files"></a><span id="creating_tmf_files"></span><span id="CREATING_TMF_FILES"></span>TMF ファイルを作成しています
 
--   [Tracepdb](tracepdb.md) (Tracepdb.exe) が作成するコマンド ライン サポート ツール[トレース メッセージの形式 (TMF) ファイル](trace-message-format-file.md)トレース メッセージからの指示を書式設定[PDB シンボル ファイル](pdb-symbol-files.md)します。
+-   [Tracepdb](tracepdb.md) (tracepdb) は、 [PDB シンボルファイル](pdb-symbol-files.md)のトレースメッセージ書式設定命令から[トレースメッセージ形式 (tmf) ファイル](trace-message-format-file.md)を作成するコマンドラインサポートツールです。
 
-    トレースのメッセージが表示されるツール[Tracefmt](tracefmt.md)(Tracefmt.exe) と[traceview で](traceview.md)(TraceView.exe) は書式設定し、トレース メッセージを表示する TMF ファイルから書式設定の手順を使用することができます。
+    トレースメッセージ、 [tracefmt](tracefmt.md)(tracefmt .exe)、 [traceview](traceview.md)(traceview .exe) を表示するツールでは、tmf ファイルの書式設定命令を使用して、トレースメッセージの書式設定と表示を行うことができます。
 
-    Tracefmt できますから TMF ファイルを作成しても[PDB シンボル ファイル](pdb-symbol-files.md)します。
+    また、tracefmt は、 [PDB シンボルファイル](pdb-symbol-files.md)から tmf ファイルを作成することもできます。
 
-    Tracepdb と Tracefmt ツールにある\\トレース\\&lt;*プラットフォーム*&gt; 、WDK のサブディレクトリで&lt;*プラットフォーム*&gt;は x86 または x64 のいずれか。
+    Tracepdb と Tracefmt は、WDK の tools\\tracing\\&lt;*Platform*&gt; サブディレクトリにあります。 &lt;*Platform*&gt; は、x86 または x64 です。
 
-### <a name="span-idformattinganddisplayingtracemessagestraceconsumersspanspan-idformattinganddisplayingtracemessagestraceconsumersspanformatting-and-displaying-trace-messages-trace-consumers"></a><span id="formatting_and_displaying_trace_messages__trace_consumers_"></span><span id="FORMATTING_AND_DISPLAYING_TRACE_MESSAGES__TRACE_CONSUMERS_"></span>書式設定して、トレース メッセージ (トレース コンシューマー) を表示します。
+### <a name="span-idformatting_and_displaying_trace_messages__trace_consumers_spanspan-idformatting_and_displaying_trace_messages__trace_consumers_spanformatting-and-displaying-trace-messages-trace-consumers"></a><span id="formatting_and_displaying_trace_messages__trace_consumers_"></span><span id="FORMATTING_AND_DISPLAYING_TRACE_MESSAGES__TRACE_CONSUMERS_"></span>トレースメッセージの書式設定と表示 (トレースコンシューマー)
 
--   [Tracefmt](tracefmt.md)は、コマンド ライン[トレース コンシューマー](trace-consumer.md)に書式設定*トレース メッセージ*(**TraceMessage**) からのリアルタイムのトレース セッションまたはトレース ログ、および書き込みファイルまたはコマンド プロンプト ウィンドウに表示されます。
+-   [Tracefmt](tracefmt.md)は、*トレースメッセージ*(**TraceMessage**) をリアルタイムのトレースセッションまたはトレースログからフォーマットし、それらをファイルに書き込むか、コマンドプロンプトウィンドウに表示するコマンドライン[トレースコンシューマー](trace-consumer.md)です。
 
--   Tracerpt (Tracerpt.exe) は、コマンド ライン[トレース コンシューマー](trace-consumer.md)に書式設定*トレース イベント*(**TraceEvent**) パフォーマンス カウンターし、CSV または XML ファイルに書き込むとします。 また、イベントを分析し、概要レポートを生成します。
+-   Tracerpt (Tracerpt) は、*トレースイベント*(**traceevent**) とパフォーマンスカウンターをフォーマットし、それらを CSV または XML ファイルに書き込むコマンドライン[トレースコンシューマー](trace-consumer.md)です。 また、イベントを分析し、概要レポートを生成します。
 
-    Tracerpt は、Windows XP および Windows の以降のバージョンに含まれます。 このツールを使用する方法の詳細については、次を参照してください。 [Tracerpt](https://go.microsoft.com/fwlink/p/?linkid=179389) TechNet web サイトのトピックです。
+    Tracerpt は、windows XP 以降のバージョンの Windows に含まれています。 このツールの使用方法の詳細については、「 [Tracerpt](https://go.microsoft.com/fwlink/p/?linkid=179389)」を参照してください。
 
--   [Traceview で](traceview.md)、GUI ツール、つまりトレース コント ローラーとトレース コンシューマーも書式設定し、トレース メッセージが表示されます (**TraceMessage**) からのリアルタイムのトレース セッションまたはトレース ログ。 フィルター処理しを参照しやすく、表形式で、トレース メッセージを表示します。
+-   トレースコントローラーおよびトレースコンシューマーである[Traceview](traceview.md)は、トレースメッセージ (**TraceMessage**) を書式設定し、リアルタイムのトレースセッションまたはトレースログから表示します。 トレースメッセージは表形式で表示されるため、フィルター処理と参照が簡単になります。
 
-### <a name="span-idviewingtraceeventsinadebuggerspanspan-idviewingtraceeventsinadebuggerspanviewing-trace-events-in-a-debugger"></a><span id="viewing_trace_events_in_a_debugger"></span><span id="VIEWING_TRACE_EVENTS_IN_A_DEBUGGER"></span>デバッガーでのトレース イベントの表示
+### <a name="span-idviewing_trace_events_in_a_debuggerspanspan-idviewing_trace_events_in_a_debuggerspanviewing-trace-events-in-a-debugger"></a><span id="viewing_trace_events_in_a_debugger"></span><span id="VIEWING_TRACE_EVENTS_IN_A_DEBUGGER"></span>デバッガーでのトレースイベントの表示
 
--   デバッグ ツールの Windows を含む **! wmitrace**、トレース セッションで、トレース メッセージを表示する特殊なデバッガー拡張機能は、ログ ファイルに書き込まれる、または表示用に提供される前にバッファー処理します。
+-   Windows 用デバッグツールには、 **! wmitrace**が含まれています。これは、トレースセッションバッファーにトレースメッセージを表示する特殊なデバッガー拡張機能であり、ログファイルに書き込まれるか、表示するために配信されます。
 
--   [Tracelog](tracelog.md)と[traceview で](traceview.md)KD または Windbg、トレース メッセージをリダイレクトできる方がアタッチされています。 詳細については、トレース ログを参照してください。 **-kd**パラメーターと、traceview で**Windbg**オプション。
+-   [Tracelog](tracelog.md)および[tracelog](traceview.md)は、接続されているいずれかの方法で、トレースメッセージを KD または Windbg にリダイレクトできます。 詳細については、「Tracelog **-kd**パラメーター」と「Tracelog **Windbg**オプション」を参照してください。
 
-### <a name="span-idanalyzingdpcandisrexecutiontimesspanspan-idanalyzingdpcandisrexecutiontimesspananalyzing-dpc-and-isr-execution-times"></a><span id="analyzing_dpc_and_isr_execution_times"></span><span id="ANALYZING_DPC_AND_ISR_EXECUTION_TIMES"></span>DPC と ISR の実行時間の分析
+### <a name="span-idanalyzing_dpc_and_isr_execution_timesspanspan-idanalyzing_dpc_and_isr_execution_timesspananalyzing-dpc-and-isr-execution-times"></a><span id="analyzing_dpc_and_isr_execution_times"></span><span id="ANALYZING_DPC_AND_ISR_EXECUTION_TIMES"></span>DPC と ISR の実行時間の分析
 
--   Windows XP Service Pack 2 (SP2) 以降で使用できます[Tracelog](tracelog.md)を遅延プロシージャ呼び出し (DPC) のログし NT Kernel Logger のトレース セッションでサービス ルーチン (ISR) イベントを中断または、Tracerpt を使用して、概要レポートの作成ログです。 詳細については、例を含む、このツールを使用する方法の詳細については、トレース ログを参照してください。
+-   Windows XP Service Pack 2 (SP2) 以降では、 [Tracelog](tracelog.md)を使用して、NT カーネルロガートレースセッションで遅延プロシージャ呼び出し (DPC) イベントと割り込みサービスルーチン (ISR) イベントをログに記録してから、Tracerpt を使用してログから概要レポートを作成できます。 このツールの使用方法 (例を含む) の詳細については、「Tracelog」を参照してください。
 
  
 

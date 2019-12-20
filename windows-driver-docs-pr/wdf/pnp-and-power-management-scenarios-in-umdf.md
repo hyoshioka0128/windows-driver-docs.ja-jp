@@ -3,34 +3,34 @@ title: UMDF での PnP と電源管理のシナリオ
 description: UMDF での PnP と電源管理のシナリオ
 ms.assetid: ca36eee5-482c-4cfe-a515-be9d3743e241
 keywords:
-- プラグ アンド プレイ WDK UMDF、UMDF に電源管理のシナリオ
-- PnP WDK UMDF、UMDF に電源管理のシナリオ
-- 電源管理のシナリオ WDK UMDF
+- プラグアンドプレイ、UMDF の WDK UMDF、電源管理のシナリオ
+- UMDF WDK の UMDF、「UMDF での電源管理のシナリオ」
+- 管理シナリオの WDK UMDF
 - 電源管理のシナリオ WDK UMDF、PnP
-- 電源管理のシナリオ WDK UMDF、プラグ アンド プレイ
+- 電源管理のシナリオ WDK UMDF、プラグアンドプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08ef3168ab7683cd6e38fee7abf7f00947f3b612
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05550cf1b07b460426dbc45e44112a1f4b45dd6b
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "68229643"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210870"
 ---
 # <a name="pnp-and-power-management-scenarios-in-umdf"></a>UMDF での PnP と電源管理のシナリオ
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-次の PnP ドライバー パッケージと電源管理のシナリオは、シーケンスをフレームワーク UMDF ドライバーのイベントのコールバック関数を示します。
+次の PnP および電源管理のシナリオでは、フレームワークが UMDF ドライバーのイベントコールバック関数を呼び出すシーケンスを示しています。
 
--   [ユーザーはデバイスをプラグインします。](a-user-plugs-in-a-device-umdf.md)
--   [ユーザーがデバイスから切り離し](a-user-unplugs-a-device-umdf.md)
--   [デバイスが省電力状態に入る](a-device-enters-a-low-power-state-umdf.md)
--   [デバイスは、作業の状態に戻ります](a-device-returns-to-its-working-state-umdf.md)
--   [PnP マネージャーでシステム リソースを再配布します。](the-pnp-manager-redistributes-system-resources-umdf.md)
+-   [ユーザーがデバイスに接続する](a-user-plugs-in-a-device-umdf.md)
+-   [デバイスを Unplugs するユーザー](a-user-unplugs-a-device-umdf.md)
+-   [デバイスが低電力状態になる](a-device-enters-a-low-power-state-umdf.md)
+-   [デバイスが動作状態に戻ります。](a-device-returns-to-its-working-state-umdf.md)
+-   [PnP マネージャーがシステムリソースを再配布する](the-pnp-manager-redistributes-system-resources-umdf.md)
 
-KMDF ドライバーの電源管理のコールバック シーケンスと PnP については、次を参照してください。 [PnP、電源管理のコールバック シーケンス](pnp-and-power-management-callback-sequences.md)します。
+KMDF ドライバーの PnP および電源管理のコールバックシーケンスの詳細については、「 [pnp および電源管理のコールバックシーケンス](pnp-and-power-management-callback-sequences.md)」を参照してください。
 
  
 

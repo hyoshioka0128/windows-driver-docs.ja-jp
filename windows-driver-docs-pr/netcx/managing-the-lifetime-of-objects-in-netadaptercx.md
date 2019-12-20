@@ -3,21 +3,19 @@ title: デバイスとアダプターの初期化
 description: デバイスとアダプターの初期化
 ms.assetid: 394BDE67-2667-4672-896A-2407F3A54725
 keywords:
-- NetAdapterCx デバイスの初期化、NetCx デバイスの初期化、NetAdapterCx アダプターの初期化、NetCx アダプターの初期化
+- NetAdapterCx デバイスの初期化, NetCx デバイスの初期化, NetAdapterCx アダプターの初期化, NetCx アダプターの初期化
 ms.date: 08/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf7ab0288c3b399b7e884d3f934bb8f19a2011d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f01841277202d0ae4c76c2f6d8d24c877f9713cf
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369974"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210814"
 ---
 # <a name="managing-the-lifetime-of-objects-in-netadaptercx"></a>NetAdapterCx でのオブジェクトの有効期間の管理
 
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
-
-このセクションでは、framework のオブジェクトと NetAdapterCx でその有効期間について説明します。 これらのトピックを使用して、標準に加え、ネットワークに固有のオブジェクトについて理解を深める[WDF オブジェクト](../wdf/wdf-objects.md)方法と同様、初期化、開始、停止、およびそれらを破棄します。
+ここでは、NetAdapterCx でのフレームワークオブジェクトとその有効期間について説明します。 これらのトピックを使用して、標準の[WDF オブジェクト](../wdf/wdf-objects.md)に加えて、ネットワーク固有のオブジェクトの詳細を確認し、それらを初期化、開始、停止、および破棄する方法についても説明します。
 
 このセクションの内容
 

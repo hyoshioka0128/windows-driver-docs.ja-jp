@@ -3,16 +3,16 @@ title: デバッグ メッセージの読み取りとフィルター処理
 description: デバッグ メッセージの読み取りとフィルター処理
 ms.assetid: 785469d2-30b8-4f73-b397-80bf89ed20ea
 keywords:
-- 読み取りとデバッグ メッセージをフィルター処理
-- デバッグ メッセージの読み取り、およびフィルター処理
+- デバッグメッセージの読み取りとフィルター処理
+- メッセージのデバッグ, 読み取りとフィルター処理
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 944f36f07f24e7bb13446a4a078e035ede976d50
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f2c96f433ada8feb655e06b4f5a5089eded1bd4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387068"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209802"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>デバッグ メッセージの読み取りとフィルター処理
 
@@ -20,35 +20,35 @@ ms.locfileid: "63387068"
 ## <span id="ddk_reading_and_filtering_debugging_messages_dbg"></span><span id="DDK_READING_AND_FILTERING_DEBUGGING_MESSAGES_DBG"></span>
 
 
-カーネル モード コードを使用して、 **DbgPrintEx**と**KdPrintEx**デバッガーのカーネルへのメッセージを送信するためのルーチンは特定の条件下でだけを転送します。 これによりが必要ないメッセージをフィルター処理できます。
+カーネルモードのコードでは、 **Dbgprintex**ルーチンと**KdPrintEx**ルーチンを使用して、特定の条件下でのみ転送されるメッセージをカーネルデバッガーに送信できます。 これにより、関心のないメッセージを除外できます。
 
-**注**  では、Windows Server 2003 および以前のバージョンの Windows、**による DbgPrint**と**KdPrint**カーネル デバッガーに無条件でメッセージを送信します。 Windows Vista および Windows では、これらのルーチンの送信などの条件付きでは、メッセージの以降のバージョンで**DbgPrintEx**と**KdPrintEx**します。 使用して Windows のどちらのバージョンを使用することをお勧め**DbgPrintEx**と**KdPrintEx**、ため、これらを使用するメッセージを送信する条件を制御できます。
+**注**   windows Server 2003 以前のバージョンの windows では、 **Dbgprint**と**KdPrint**は、無条件でカーネルデバッガーにメッセージを送信します。 Windows Vista 以降のバージョンの Windows では、これらのルーチンは、 **Dbgprintex**や**KdPrintEx**などの条件に応じてメッセージを送信します。 どのバージョンの Windows を使用している場合でも、 **Dbgprintex**と**KdPrintEx**を使用することをお勧めします。これにより、メッセージが送信される条件を制御できるためです。
 
  
 
-これらのルーチンの完全なドキュメントについては、Windows Driver Kit を参照してください。
+これらのルーチンの完全なドキュメントについては、「Windows Driver Kit」を参照してください。
 
 基本的な手順は次のとおりです。
 
-**デバッグ メッセージをフィルター処理**
+**デバッグメッセージをフィルター処理するには**
 
-1.  デバッガーに送信するメッセージごとに、関数を使用して**DbgPrintEx**または**KdPrintEx**ドライバーのコードにします。 対象の適切なコンポーネント名を渡す、 *ComponentId*パラメーターに値を渡すと、*レベル*重大度またはこのメッセージの性質を反映するパラメーター。 メッセージが渡される、*形式*と*引数*パラメーターとして**printf**します。
+1.  デバッガーに送信する各メッセージについて、ドライバーのコードで**Dbgprintex**関数または**KdPrintEx**関数を使用します。 適切なコンポーネント名を*ComponentId*パラメーターに渡し、このメッセージの重大度または性質を反映する*レベル*パラメーターに値を渡します。 メッセージ自体は、 **printf**と同様に、*形式*と*引数*のパラメーターに渡されます。
 
-2.  適切な値を設定*コンポーネント フィルター マスク*します。 各コンポーネントが別のマスク。マスクの値は、そのコンポーネントのメッセージのどれを表示するを示します。 レジストリ エディターを使用して、レジストリまたはカーネル デバッガーを使用してメモリ内で、コンポーネントのフィルターのマスクを設定できます。
+2.  適切な*コンポーネントフィルターマスク*の値を設定します。 各コンポーネントには異なるマスクがあります。マスクの値は、そのコンポーネントのメッセージのうち、どれが表示されるかを示します。 コンポーネントフィルターマスクは、レジストリエディターを使用するか、カーネルデバッガーを使用してメモリ内で設定できます。
 
-3.  コンピューターにカーネル デバッガーをアタッチします。 毎回、ドライバーにメッセージを渡す**DbgPrintEx**または**KdPrintEx**に渡される値*ComponentId*と*レベル*になります対応するコンポーネントのフィルター マスクの値と比較します。 これらの値は、特定の条件を満たすため、メッセージが、カーネル デバッガーに送信し、表示されます。 それ以外の場合、メッセージは送信されません。
+3.  コンピューターにカーネルデバッガーをアタッチします。 ドライバーが**Dbgprintex**または**KdPrintEx**にメッセージを渡すたびに、 *ComponentId*と*Level*に渡される値は、対応するコンポーネントフィルターマスクの値と比較されます。 これらの値が特定の条件を満たしている場合、メッセージはカーネルデバッガーに送信されて表示されます。 それ以外の場合、メッセージは送信されません。
 
-完全な詳細情報に従います。 このページにすべての参照**DbgPrintEx**に同様に適用**KdPrintEx**します。
+詳細については、こちらをご覧ください。 このページでは、 **Dbgprintex**へのすべての参照が**KdPrintEx**にも同様に適用されます。
 
-### <a name="span-ididentifying-the-component-namespanspan-ididentifyingthecomponentnamespanidentifying-the-component-name"></a><span id="identifying-the-component-name"></span><span id="IDENTIFYING_THE_COMPONENT_NAME"></span>コンポーネント名を識別します。
+### <a name="span-ididentifying-the-component-namespanspan-ididentifying_the_component_namespanidentifying-the-component-name"></a><span id="identifying-the-component-name"></span><span id="IDENTIFYING_THE_COMPONENT_NAME"></span>コンポーネント名の識別
 
-各コンポーネントには、別個のフィルターのマスクがあります。 これにより、デバッガーは個別に各コンポーネントのフィルターを構成できます。
+各コンポーネントには、個別のフィルターマスクがあります。 これにより、デバッガーは各コンポーネントのフィルターを個別に構成できます。
 
-各コンポーネントは、コンテキストに応じて、さまざまな方法で参照されます。 *ComponentId*パラメーターの**DbgPrintEx**、コンポーネントの名前が付いて"DPFLTR\_「とのサフィックスが付いた」\_ID"。 レジストリで、コンポーネントのフィルターのマスクは、コンポーネント自体と同じ名前をが。 デバッガーで、コンポーネントのフィルターのマスクが付きます"Kd\_「とのサフィックスが付いた」\_マスク"。
+各コンポーネントは、コンテキストに応じてさまざまな方法で参照されます。 **Dbgprintex**の*ComponentId*パラメーターでは、コンポーネント名の先頭に "DPFLTR\_" と "\_ID" が付加されます。 レジストリのコンポーネントフィルターマスクは、コンポーネント自体と同じ名前になります。 デバッガーでは、コンポーネントフィルターマスクの先頭に "Kd\_" と "\_Mask" というプレフィックスが付いています。
 
-すべてのコンポーネント名の完全な一覧がある (DPFLTR で\_*XXXX*\_ID の形式) では、Microsoft Windows Driver Kit (WDK) のヘッダー ntddk.h と Windows SDK のヘッダー ntrtl.h します。 これらのコンポーネントの名前のほとんどは、Windows と Microsoft によって作成されたドライバーに予約されています。
+Microsoft Windows Driver Kit (WDK) ヘッダー ntddk と Windows SDK ヘッダー ntrtl. h のすべてのコンポーネント名 (DPFLTR\_*XXXX*\_ID 形式) の完全な一覧が表示されます。 これらのコンポーネント名の大部分は、Windows 用に予約されており、Microsoft によって作成されたドライバー用です。
 
-独立系ハードウェア ベンダーの予約は 6 つのコンポーネント名です。 Windows コンポーネントの出力とドライバーの出力の混在を回避するには、次のコンポーネント名のいずれかを使用する必要があります。
+独立系ハードウェアベンダー用に予約されているコンポーネント名は6つあります。 ドライバーの出力と Windows コンポーネントの出力が混在しないようにするには、次のコンポーネント名のいずれかを使用する必要があります。
 
 <table>
 <colgroup>
@@ -64,48 +64,48 @@ ms.locfileid: "63387068"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>IHVVIDEO</strong></p></td>
-<td align="left"><p>ビデオ ドライバー</p></td>
+<td align="left"><p>ビデオドライバー</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IHVAUDIO</strong></p></td>
-<td align="left"><p>オーディオ ドライバー</p></td>
+<td align="left"><p>オーディオドライバー</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IHVNETWORK</strong></p></td>
-<td align="left"><p>ネットワークのドライバー</p></td>
+<td align="left"><p>ネットワークドライバー</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IHVSTREAMING</strong></p></td>
-<td align="left"><p>カーネル ドライバーをストリーミング</p></td>
+<td align="left"><p>カーネルストリーミングドライバー</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>IHVBUS</strong></p></td>
-<td align="left"><p>バス ドライバー</p></td>
+<td align="left"><p>バスドライバー</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>IHVDRIVER</strong></p></td>
-<td align="left"><p>他の種類のドライバー</p></td>
+<td align="left"><p>その他の種類のドライバー</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-たとえば、ビデオ ドライバーを作成する場合を使用する DPFLTR\_IHVVIDEO\_ID として、 *ComponentId*パラメーターの**DbgPrintEx**、値の名前を使用して、 **IHVVIDEO**レジストリを参照してください**Kd\_IHVVIDEO\_マスク**デバッガーでします。
+たとえば、ビデオドライバーを作成する場合は、DPFLTR\_IHVVIDEO\_ID を**Dbgprintex**の*ComponentId*パラメーターとして使用し、レジストリで値 name **IHVVIDEO**を使用して、デバッガーで**Kd\_IHVVIDEO\_Mask**を参照します。
 
-Windows Vista および以降のバージョンの Windows では、すべてのメッセージの送信によって**による DbgPrint**と**KdPrint**に関連付けられている、**既定**コンポーネント。
+Windows Vista 以降のバージョンの Windows では、 **Dbgprint**および**KdPrint**によって送信されたすべてのメッセージが、**既定**のコンポーネントに関連付けられています。
 
-### <a name="span-idchoosingthecorrectlevelspanspan-idchoosingthecorrectlevelspanchoosing-the-correct-level"></a><span id="choosing_the_correct_level"></span><span id="CHOOSING_THE_CORRECT_LEVEL"></span>適切なレベルを選択します。
+### <a name="span-idchoosing_the_correct_levelspanspan-idchoosing_the_correct_levelspanchoosing-the-correct-level"></a><span id="choosing_the_correct_level"></span><span id="CHOOSING_THE_CORRECT_LEVEL"></span>適切なレベルの選択
 
-*レベル*のパラメーター、 **DbgPrintEx**ルーチン、DWORD 型です。 これは、決定に使用、*重要度のビット フィールド*します。 間の接続、*レベル*パラメーターとこのビット フィールドのサイズに依存*レベル*:
+**Dbgprintex**ルーチンの*Level*パラメーターの型は DWORD です。 *重要度ビットフィールド*を決定するために使用されます。 *レベル*パラメーターとこのビットフィールドの間の接続は、*レベル*のサイズによって異なります。
 
--   場合*レベル*が 0 から 31 まで、ビット シフトとして解釈されるまでの数値と等しい。 重要度のビット フィールドが値 1 に設定されている&lt; &lt; *レベル*します。 0 ~ 31 の値を選択するため*レベル*正確に 1 つのビットが設定されたビット フィールドになります。 場合*レベル*は 0、ビット フィールドは 0x00000001; と同じ場合*レベル*は 31、ビット フィールドは 0x80000000 に相当します。
+-   *Level*が 0 ~ 31 の数値と等しい場合は、ビットシフトとして解釈されます。 重要度ビットフィールドは、値 1 &lt;&lt;*レベル*に設定されます。 したがって、 *Level*に対して0から31までの値を選択すると、ビットフィールドに1ビットだけが設定されます。 *Level*が0の場合、ビットフィールドは0x00000001 に相当します。 *level*が31の場合、ビットフィールドは0x80000000 に相当します。
 
--   場合*レベル*32 ~ 0 xffffffff の包括的な重要度のビット フィールドがの値に設定されている数値は、*レベル*自体。
+-   *Level*が32から0xffffffff の範囲の数値の場合、重要度のビットフィールドは、*レベル*自体の値に設定されます。
 
-したがって、0x00004000 にビット フィールドを設定する場合を指定できます*レベル*0x00004000 または 14 です。 特定のビット フィールドの値がまったくゼロ、ビット フィールドを含む--このシステムによって実現されていないことに注意してください。
+したがって、ビットフィールドを0x00004000 に設定する場合は、0x00004000 として、または単に14として*レベル*を指定できます。 このシステムでは特定のビットフィールド値を使用できないことに注意してください。これは、完全にゼロのビットフィールドを含みます。
 
-次の定数の値を設定する役に立ちます*レベル*します。 これらは、Microsoft Windows Driver Kit (WDK) のヘッダー ntddk.h と Windows SDK のヘッダー ntrtl.h で定義されます。
+次の定数は、 *Level*の値を設定するのに役立ちます。 これらは、Microsoft Windows Driver Kit (WDK) ヘッダー ntddk および Windows SDK ヘッダーで定義されています。
 
 ```cpp
 #define   DPFLTR_ERROR_LEVEL     0
@@ -115,60 +115,60 @@ Windows Vista および以降のバージョンの Windows では、すべての
 #define   DPFLTR_MASK    0x8000000
 ```
 
-簡単な方法を使用して、*レベル*0、1、2、3 DPFLTR によって指定された意味を持つパラメーターが 0 と、bits を使用して - 31 の間の値を常に使用するが\_*XXXX*\_レベル、および他の使用選択したあらゆる項目を意味するビットです。
+*Level*パラメーターを使用する簡単な方法の1つは、0 ~ 31 の値を常に使用することです。ビット0、1、2、3を DPFLTR\_*XXXX*\_レベルで指定された意味で使用し、他のビットを使用して任意の内容を意味します。
 
-もう 1 つの簡単な方法を使用する、*レベル*パラメーターは、常に明示的なビット フィールドを使用します。 この方法を選択する場合は、することができます、または値 DPFLTR\_ビット フィールドを持つマスク。 これにより、誤って使用しない 32 未満の値。
+*Level*パラメーターを使用するもう1つの簡単な方法は、明示的なビットフィールドを常に使用することです。 この方法を選択した場合は、または値 DPFLTR\_MASK をビットフィールドと共に使用することができます。これにより、誤って32未満の値を使用することがなくなります。
 
-重大なエラーが発生した場合は、ドライバーを Windows メッセージ レベルの使用方法に対応するためには、重要度のビット フィールドの最下位ビット (0x1) を設定する必要がありますのみ。 使用する場合*レベル*DPFLTR がこのプロパティの値未満の 32\_エラー\_レベル。 このビットが設定されている場合、メッセージは、ドライバーが実行されているコンピューターに、カーネル デバッガーがアタッチだれかがいつ表示しようとします。
+Windows でのメッセージレベルの使用方法とドライバーの互換性を確保するには、重大なエラーが発生した場合にのみ、重要度ビットフィールドの最低ビット (0x1) を設定する必要があります。 32未満の*レベル*値を使用している場合は、DPFLTR\_ERROR\_level に相当します。 このビットが設定されている場合は、ドライバーが実行されているコンピューターに他のユーザーがカーネルデバッガーをアタッチするたびに、メッセージが表示されます。
 
-適切な状況では、警告、トレース、および情報のレベルを使用してください。 目的で役立つその他のビットを自由に使用できます。 これにより、さまざまな選択的に表示または非表示にできるメッセージの種類を使用できます。
+適切な状況では、警告、トレース、および情報の各レベルを使用する必要があります。 他のビットは、役に立つ任意の目的で自由に使用できます。 これにより、さまざまな種類のメッセージを選択して表示または非表示にすることができます。
 
-Windows Vista および以降のバージョンの Windows では、すべてのメッセージの送信によって**による DbgPrint**と**KdPrint**と同様に動作**DbgPrintEx**と**KdPrintEx**を使用してメッセージ*レベル*DPFLTR 等しく\_情報\_レベル。 つまり、これらのメッセージには、設定、重要度のビット フィールドの 3 番目のビットがあります。
+Windows Vista 以降のバージョンの Windows では、 **Dbgprint**および**KdPrint**によって送信されたすべてのメッセージは、DPFLTR\_INFO\_レベルと同じ*レベル*の**dbgprintex**および**KdPrintEx**メッセージのように動作します。 つまり、これらのメッセージには、重要度が2番目のビットフィールドが設定されています。
 
-### <a name="span-idsetting-the-component-filter-maskspanspan-idsettingthecomponentfiltermaskspansetting-the-component-filter-mask"></a><span id="setting-the-component-filter-mask"></span><span id="SETTING_THE_COMPONENT_FILTER_MASK"></span>コンポーネントのフィルターのマスクを設定
+### <a name="span-idsetting-the-component-filter-maskspanspan-idsetting_the_component_filter_maskspansetting-the-component-filter-mask"></a><span id="setting-the-component-filter-mask"></span><span id="SETTING_THE_COMPONENT_FILTER_MASK"></span>コンポーネントフィルターマスクの設定
 
-コンポーネントのフィルター マスクを設定する 2 つの方法はあります。
+コンポーネントフィルターマスクを設定するには、次の2つの方法があります。
 
-- コンポーネントのフィルターのマスクは、レジストリ キーにアクセスできる**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\セッション マネージャー\\デバッグ印刷フィルター**します。 レジストリ エディターを使用して、作成か、このキーを開きます。 このキーの下には、大文字で、必要なコンポーネントの名前と値を作成します。 コンポーネントのフィルター マスクとして使用する DWORD 値を等しく設定します。
+- コンポーネントフィルターマスクは、レジストリキー **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\デバッグ印刷フィルター**にアクセスできます。 レジストリエディターを使用して、このキーを作成または開きます。 このキーの下に、目的のコンポーネントの名前を大文字で指定して値を作成します。 コンポーネントフィルターマスクとして使用する DWORD 値と同じ値を設定します。
 
-- カーネル デバッガーがアクティブな場合は、コンポーネントのフィルターのマスク値シンボルに格納されているアドレスを逆参照によってアクセスできる**Kd\_**<em>XXXX</em>**\_マスク**ここで、 *XXXX*必要なコンポーネントの名前を指定します。 このマスクの値を表示するには WinDbg、KD をまたはに、 **dd (DWORD の表示)** コマンド、またはを新しいコンポーネント フィルター マスクを入力、 **ed (入力 DWORD)** コマンド。 シンボルのあいまいさの危険性がある場合としては、この記号を指定することがあります**nt!Kd\_**<em>XXXX</em>**\_マスク**します。
+- カーネルデバッガーがアクティブな場合は、 **Kd\_** <em>xxxx</em> **\_mask**という記号に格納されているアドレスを逆参照することによって、コンポーネントフィルターマスクの値にアクセスできます。ここで、 *xxxx*は目的のコンポーネント名です。 このマスクの値を WinDbg または KD で表示するには、 **dd (表示 dword)** コマンドを使用するか、 **ED (enter dword)** コマンドで新しいコンポーネントフィルターマスクを入力します。 シンボルがあいまいになる危険性がある場合は、このシンボルを nt! として指定することもできます **。Kd\_** <em>XXXX</em> **\_Mask**です。
 
-レジストリに格納されているフィルターのマスクは、ブート時にも反映されます。 デバッガーによって作成されたフィルターのマスクは、即座に有効と、Windows が再起動されるまでに保持されます。 レジストリに設定された値は、デバッガーによってオーバーライドできますが、コンポーネントのフィルターのマスクは、システムが再起動された場合に、レジストリで指定された値に戻ります。
+レジストリに格納されているフィルターマスクは、ブート中に有効になります。 デバッガーによって作成されたフィルターマスクはすぐに有効になり、Windows が再起動されるまで保持されます。 レジストリに設定されている値はデバッガーによってオーバーライドできますが、システムを再起動すると、コンポーネントフィルターマスクはレジストリに指定された値に戻ります。
 
-呼ばれるシステム全体のマスクも**WIN2000**します。 これは、機能は、レジストリまたはその他のすべてのコンポーネントと同様に、デバッガーでは、既定では、0x1 と同じです。 各コンポーネントのフィルターのマスクで最初の論理和は、フィルター処理が実行されると、 **WIN2000**マスク。 具体的には、つまり、マスクされていないコンポーネントが 0x1 に既定値を指定すること。
+また、 **WIN2000**というシステム全体のマスクもあります。 既定では、これは0x1 と同じですが、レジストリまたはデバッガーを使用して他のすべてのコンポーネントと同様に変更できます。 フィルター処理を実行すると、各コンポーネントのフィルターマスクは、まず**WIN2000**マスクと共に使用されます。 特に、マスクが指定されていないコンポーネントは、既定で0x1 に設定されています。
 
-### <a name="span-idcriteria-for-displayingthemessagespanspan-idcriteriafordisplayingthemessagespancriteria-for-displaying-the-message"></a><span id="criteria-for-displaying_the_message"></span><span id="CRITERIA_FOR_DISPLAYING_THE_MESSAGE"></span>メッセージを表示するための条件
+### <a name="span-idcriteria-for-displaying_the_messagespanspan-idcriteria_for_displaying_the_messagespancriteria-for-displaying-the-message"></a><span id="criteria-for-displaying_the_message"></span><span id="CRITERIA_FOR_DISPLAYING_THE_MESSAGE"></span>メッセージを表示するための条件
 
-ときに**DbgPrintEx**メッセージの重要度のビット フィールドで指定された比較、Windows カーネル モードのコードで呼び出される*レベル*によって指定されたコンポーネントのフィルターのマスクを含む*ComponentId*.
+**Dbgprintex**がカーネルモードコードで呼び出されると、Windows は、*レベル*で指定されたメッセージの重要度のビットフィールドと、 *ComponentId*で指定されたコンポーネントのフィルターマスクを比較します。
 
-**注**  することを思い出してください、*レベル*パラメーターが 0 ~ 31 の範囲は、重要度のビット フィールドは 1 に等しい&lt; &lt; *レベル*が、 *レベル*パラメーターが 32 以上、重要度のビット フィールドは単に等しく*レベル*します。
+**注**  *レベル*パラメーターが 0 ~ 31 の場合、重要度ビットフィールドは 1 &lt;&lt;*レベル*と等しくなりますが、 *level*パラメーターが32以上の場合、重要度ビットフィールドは単に*level*と同じになります。
 
  
 
-Windows では、重要度のビット フィールドとコンポーネントのフィルター マスクで AND 演算を実行します。 結果が 0 以外の場合、メッセージは、デバッガーに送信されます。
+Windows は、重要度ビットフィールドとコンポーネントフィルターマスクに対して AND 演算を実行します。 結果が0以外の場合は、メッセージがデバッガーに送信されます。
 
-### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>例
+### <a name="span-idexamplespanspan-idexamplespanexample"></a><span id="example"></span><span id="EXAMPLE"></span>よう
 
 次に例を示します。
 
-最後の起動前に、次の値を作成するものとします、**デバッグ印刷フィルター**キー。
+最後に起動する前に、**デバッグ印刷フィルター**キーに次の値を作成したとします。
 
--   **IHVVIDEO**、DWORD 0x2 に等しい値を持つ
+-   **IHVVIDEO**(DWORD 0x2 と等しい値)
 
--   **IHVBUS**DWORD 0x7FF と等しく、
+-   **IHVBUS**(DWORD 0x7ff と等しい)
 
-カーネル デバッガーで次のコマンドを発行するようになりました。
+ここで、カーネルデバッガーで次のコマンドを発行します。
 
 ```dbgcmd
 kd> ed Kd_IHVVIDEO_Mask 0x8 
 kd> ed Kd_IHVAUDIO_Mask 0x7 
 ```
 
-この時点では、 **IHVVIDEO** 0x8 のフィルターのマスクがコンポーネントには、 **IHVAUDIO** 0x7 のフィルターのマスクがコンポーネントには、および**IHVBUS**コンポーネントが 0x7FF のフィルターのマスク。
+この時点で、 **IHVVIDEO**コンポーネントのフィルターマスクは0x8 で、 **IHVAUDIO**コンポーネントのフィルターマスクは0x7 で、 **IHVBUS**コンポーネントのフィルターマスクは0x7ff です。
 
-ただし、これらのマスクは自動的に論理和であるために、 **WIN2000** (これは通常 0x1 と等しい) システム全体のマスク、 **IHVVIDEO**マスクは 0x9 を効果的に等しい。 実際には、コンポーネントのフィルターがマスクが設定されていないすべての (たとえば、 **IHVSTREAMING**または**既定**) 0x1 のフィルター マスクする必要があります。
+ただし、これらのマスクは、 **WIN2000**システム全体のマスク (通常は0x1 と同じ) に自動的に設定されるため、 **IHVVIDEO** mask は実質的に0x9 と同じになります。 実際には、フィルターマスクがまったく設定されていないコンポーネント (たとえば、 **IHVSTREAMING**または**DEFAULT**) は、フィルターマスクが0x1 になります。
 
-次の関数呼び出しがさまざまなドライバーで発生するものとします。
+ここで、次の関数呼び出しがさまざまなドライバーで発生するとします。
 
 ```cpp
 DbgPrintEx( DPFLTR_IHVVIDEO_ID,  DPFLTR_INFO_LEVEL,   "First message.\n");
@@ -177,29 +177,20 @@ DbgPrintEx( DPFLTR_IHVBUS_ID,    DPFLTR_MASK | 0x10,  "Third message.\n");
 DbgPrint( "Fourth message.\n");
 ```
 
-最初のメッセージがその*レベル*DPFLTR パラメーター\_情報\_レベルで 3 であります。 これは、32 未満であるために、ビット シフト、0x8 の重要度、ビット フィールドでその結果として扱われます。 この値は、and 演算は有効な**IHVVIDEO** 0x9、0 以外の場合の結果のコンポーネントのフィルター マスク。 したがって、最初のメッセージは、デバッガーに送信されます。
+最初のメッセージの*レベル*パラメーターは、DPFLTR\_INFO\_level に等しいレベルです (3)。 これは32未満であるため、ビットシフトとして扱われ、その結果、0x8 のビットフィールドが重要になります。 この値は、0x9 の有効な**IHVVIDEO**コンポーネントフィルターマスクを使用して連結され、0以外の結果が返されます。 そのため、最初のメッセージがデバッガーに送信されます。
 
-2 番目のメッセージがその*レベル*7 と等しくパラメーター。 ここでも、これは、ビット シフト、0x80 の重要度、ビット フィールドでその結果として扱われます。 これはで and 演算を使用し、 **IHVAUDIO** 0x7、0 の結果のコンポーネントのフィルター マスク。 したがって、2 番目のメッセージは送信されません。
+2番目のメッセージの*レベル*パラメーターは7です。 ここでも、これはビットシフトとして扱われ、その結果、0x80 という重要度のビットフィールドになります。 次に、0x7 の**IHVAUDIO**コンポーネントフィルターマスクを使用して and 演算を行い、結果を0にします。 そのため、2番目のメッセージは転送されません。
 
-3 番目のメッセージがその*レベル*パラメーターと等しい DPFLTR\_マスク | 0x10。 これは、31 を超えるとそのための重要度のビット フィールドの値と等しく設定*レベル*- つまり、0x80000010 にします。 これはで and 演算を使用し、 **IHVBUS** 0x7FF、0 以外の場合の結果のコンポーネントのフィルター マスク。 したがって、3 番目のメッセージは、デバッガーに送信されます。
+3番目のメッセージには、DPFLTR\_MASK | と等しい*レベル*パラメーターがあります。0x10. これは31を超えるため、重要度ビットのフィールドは、0x80000010 に*レベル*の値 (つまり、) に等しい値に設定されます。 次に、0x7FF の**IHVBUS**コンポーネントフィルターマスクを使用して and 演算を行い、0以外の結果を提供します。 そのため、3番目のメッセージがデバッガーに送信されます。
 
-4 番目のメッセージに渡された**による DbgPrint**の代わりに**DbgPrintEx**します。 Windows Server 2003、Windows の以前のバージョンでは、このルーチンに渡されたメッセージが常に送信します。 Windows Vista および以降のバージョンの Windows では、このルーチンに渡されたメッセージは、既定のフィルターを常に付与されます。 重要度のビット フィールドは 1 に等しい&lt; &lt; DPFLTR\_情報\_0x00000008 のレベル。 このルーチンのコンポーネントが**既定**します。 設定していないため、**既定**コンポーネント フィルターのマスク値が 0x1 です。 これにより、重要度のビット フィールドを持つ and 演算が、結果は 0 です。 したがって、4 番目のメッセージは送信されません。
+4番目のメッセージは、 **Dbgprintex**ではなく、 **dbgprint**に渡されました。 Windows Server 2003 以前のバージョンの Windows では、このルーチンに渡されるメッセージは常に転送されます。 Windows Vista 以降のバージョンの Windows では、このルーチンに渡されるメッセージには常に既定のフィルターが付与されます。 重要度ビットフィールドは、1 &lt;&lt; DPFLTR\_INFO\_レベル (0x00000008) に相当します。 このルーチンのコンポーネントは、**既定値**です。 **既定**のコンポーネントのフィルターマスクを設定していないため、値は0x1 です。 この値が "重要度" のビットフィールドと連結されている場合、結果は0になります。 4番目のメッセージは転送されません。
 
-### <a name="span-idthe-dbgprint-bufferspanspan-idthedbgprintbufferspanthe-dbgprint-buffer"></a><span id="the-dbgprint-buffer"></span><span id="THE_DBGPRINT_BUFFER"></span>による DbgPrint バッファー
+### <a name="span-idthe-dbgprint-bufferspanspan-idthe_dbgprint_bufferspanthe-dbgprint-buffer"></a><span id="the-dbgprint-buffer"></span><span id="THE_DBGPRINT_BUFFER"></span>DbgPrint バッファー
 
-ときに**による DbgPrint**、 **DbgPrintEx**、 **KdPrint**、または**KdPrintEx**はメッセージを送信する書式設定された文字列を送信する、デバッガー、*による DbgPrint バッファー*します。 ほとんどの場合、デバッガー コマンド ウィンドウですぐにこのバッファーの内容が表示されます。 使用して、この表示を無効にすることができます、**バッファーによる DbgPrint 出力**グローバル フラグ ユーティリティ (gflags.exe) のオプション。 この表示は、ローカル カーネル デバッグ中に自動的には表示されません。
+**Dbgprint**、 **dbgprintex**、 **KdPrint**、または**KdPrintEx**がメッセージをデバッガーに送信すると、書式設定された文字列が*dbgprint バッファー*に送信されます。 ほとんどの場合、このバッファーの内容は、デバッガーコマンドウィンドウに直ちに表示されます。 この表示は、グローバルフラグユーティリティ (gflags) の**バッファー DbgPrint 出力**オプションを使用して無効にすることができます。 この表示は、ローカルカーネルデバッグ中に自動的には表示されません。
 
-この表示は無効になっているローカル カーネル デバッグ、およびその他の時間、中にによる DbgPrint バッファーの内容のみ表示できるを使用して、 [ **! による dbgprint** ](-dbgprint.md)拡張機能コマンド。
+ローカルカーネルデバッグ中、およびこの表示が無効になっている場合、DbgPrint バッファーの内容を表示するには、 [**! dbgprint**](-dbgprint.md)拡張コマンドを使用する必要があります。
 
-任意の 1 への呼び出し**による DbgPrint**、 **DbgPrintEx**、 **KdPrint**、または**KdPrintEx** 512 バイトの情報は送信するだけです。 これは失われますよりも長く出力します。 による DbgPrint バッファー自体は、Windows の無料のビルドで最大 4 KB のデータを保持しを 32 KB のデータをチェックするビルドの Windows できます。 Windows Server 2003 および以降のバージョンの Windows で KDbgCtrl ツールを使用してによる DbgPrint バッファーのサイズを変更することができます。 参照してください[を使用して KDbgCtrl](using-kdbgctrl.md)詳細についてはします。
+**Dbgprint**、 **dbgprintex**、 **KdPrint**、または**KdPrintEx**を1回呼び出すだけで、512バイトの情報が送信されます。 この値よりも長い出力は失われます。 DbgPrint バッファー自体は、Windows の無料ビルドで最大 4 KB のデータを保持できます。 Windows Server 2003 以降のバージョンの Windows では、KDbgCtrl ツールを使用して、DbgPrint バッファーのサイズを変更できます。 詳細については、「 [KDbgCtrl の使用](using-kdbgctrl.md)」を参照してください。
 
-ため、メッセージがフィルター選択される場合、 *ComponentId*と*レベル*値、これは、デバッグ接続経由で送信されません。 したがって、デバッガーでこのメッセージを表示する方法はありません。
-
- 
-
- 
-
-
-
-
-
+*ComponentId*と*Level*の値によってメッセージがフィルターで除外される場合、そのメッセージはデバッグ接続を介して送信されません。 このため、このメッセージをデバッガーで表示する方法はありません。

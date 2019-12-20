@@ -4,26 +4,26 @@ description: ハードウェアへのアクセスと割り込みの処理
 ms.assetid: 25D526CF-7C37-4D10-B099-352933F92F98
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ebe59bde04dd00b275c1eab9b9b02bac6001bb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 414749c5ad57de47ba8a057660f6f76c04a33339
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331626"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210880"
 ---
 # <a name="accessing-hardware-and-handling-interrupts"></a>ハードウェアへのアクセスと割り込みの処理
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-UMDF 1.11 以降、UMDF ドライバー、システムがデバイスに割り当てられているハードウェア リソースを取得する、直接読み取るまたはシステムが割り当てられている、メモリ領域や I/O ポートの領域にマップされるデバイス レジスタへの書き込みと接続してサービスのハードウェア中断します。
+Umdf 1.11 以降では、UMDF ドライバーは、システムによってデバイスに割り当てられたハードウェアリソースを取得したり、システムによって割り当てられてメモリ領域または i/o ポート領域に割り当てられたデバイスレジスタに直接読み書きしたり、ハードウェア割り込みの接続とサービスを行ったりすることができます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [ハードウェアへのアクセスを有効にします。](enabling-hardware-access.md)
--   [検索と UMDF 1.x ドライバー内のハードウェア リソースのマッピング](finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md)
--   [読み取りと書き込みをデバイスには、UMDF 1.x ドライバーで登録します](reading-and-writing-to-device-registers-in-umdf-1-x-drivers.md)
--   [割り込みを処理](handling-interrupts.md)
+-   [ハードウェアアクセスの有効化](enabling-hardware-access.md)
+-   [UMDF 1.x ドライバーでのハードウェアリソースの検索とマッピング](finding-and-mapping-hardware-resources-in-umdf-1-x-drivers.md)
+-   [UMDF 1.x ドライバーでのデバイスレジスタの読み取りと書き込み](reading-and-writing-to-device-registers-in-umdf-1-x-drivers.md)
+-   [割り込みの処理](handling-interrupts.md)
 
  
 

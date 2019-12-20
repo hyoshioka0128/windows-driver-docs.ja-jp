@@ -7,17 +7,17 @@ keywords:
 - 低電力状態シナリオの WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80ada1d6a6e60c070e71518caee149e24bbdc093
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 393aed47b83ff5689122eb47125c8bab84b4746c
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843659"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210884"
 ---
 # <a name="a-device-enters-a-low-power-state"></a>デバイスが低電力状態になる
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 次のいずれかが発生すると、デバイスは動作中 (D0) 状態を維持し、低電力状態になります。
 

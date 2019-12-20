@@ -5,16 +5,16 @@ ms.assetid: 192CAA41-0D17-4C06-8F13-68EA7C26D023
 keywords: Receive Side Scaling Version 2、RSSv2、Receive Side Scaling Version 2 WDK、RSSv2 network drivers
 ms.date: 10/12/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f87f7ff282891fead1912f8815a8692ddc72ccbd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9a2632ebc681493ef29a8b99587dcef7506223c4
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844859"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210810"
 ---
 # <a name="receive-side-scaling-version-2-rssv2"></a>Receive Side Scaling Version 2 (RSSv2)
 
-[!include[RSSv2 Beta Prerelease](../rssv2-beta-prerelease.md)]
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 [Receive Side Scaling](ndis-receive-side-scaling2.md)は、マルチプロセッサシステムでのネットワークデータの処理に関連するシステムパフォーマンスを向上させます。 NDIS 6.80 以降では、RSS バージョン 2 (RSSv2) がサポートされています。これは、キューの動的な VPort 分散を提供することで RSS を拡張します。
 

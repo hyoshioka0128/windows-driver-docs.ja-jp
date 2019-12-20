@@ -3,45 +3,45 @@ title: UMDF での一般 I/O ターゲット
 description: UMDF での一般 I/O ターゲット
 ms.assetid: 46fac165-3afd-4481-b68d-8d3474e0ff52
 keywords:
-- 一般的な I/O ターゲット WDK UMDF
-- I/O ターゲット WDK UMDF、[全般]
-- ローカルの I/O ターゲット WDK UMDF
-- リモートの I/O ターゲット WDK UMDF
-- 一般的な I/O に関する一般的な I/O ターゲット WDK の UMDF を対象と
+- 一般的な i/o ターゲット WDK UMDF
+- I/o ターゲット WDK UMDF、general
+- ローカル i/o ターゲット (WDK UMDF)
+- リモート i/o ターゲット (WDK UMDF)
+- 一般的な i/o ターゲット WDK UMDF、一般的な i/o ターゲットについて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d35cd8b7f8d79eec794211b7211411cd59ef8c98
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c5f01e28c9c1526df005dce70ada77977d0caff7
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365534"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209932"
 ---
 # <a name="general-io-targets-in-umdf"></a>UMDF での一般 I/O ターゲット
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
-一般的な I/O ターゲットでは、いずれかになります*ローカル*または*リモート*、I/O ターゲットが USB 要求のブロックなどの特殊なデバイスに固有のデータ形式をサポートしていません。 ドライバーは、一般的な I/O ターゲットにデータを送信、前に、I/O のターゲットとデバイスを解釈できる形式での書き込みバッファーにデータを配置する必要があります。 同様に、ドライバーは、一般的な I/O ターゲットからのデータを読み取り、ときに、ドライバーは、ターゲットから受け取ったデータ バッファーの内容を解釈することである必要があります。
+一般的な i/o ターゲットは、*ローカル*または*リモート*のどちらでもかまいません。 I/O ターゲットは、USB 要求ブロックなど、特殊なデバイス固有のデータ形式をサポートしていません。 ドライバーは、一般 i/o ターゲットにデータを送信する前に、i/o ターゲットとデバイスが解釈できる形式でデータを書き込みバッファーに格納する必要があります。 同様に、ドライバーが一般的な i/o ターゲットからデータを読み取る場合、ドライバーはターゲットから受信するデータバッファーの内容を解釈できる必要があります。
 
-<a href="" id="local-i-o-targets-------"></a>**ローカルの I/O ターゲット**   
-ドライバーは、次の下位ドライバーはドライバー スタックに多くの場合、I/O 要求を送信します。 したがって、それぞれ UMDF ドライバーは、 *I/O の既定のターゲット*デバイスごとに、これは、デバイスの次の下位ドライバー。 最下位レベルの UMDF ベースのドライバーの既定の I/O ターゲットは、カーネル モード[reflector](overview-of-the-umdf.md)します。
+<a href="" id="local-i-o-targets-------"></a>**ローカル I/o ターゲット**   
+ドライバーは、多くの場合、ドライバースタック内の次に小さいドライバーに i/o 要求を送信します。 そのため、各 UMDF ベースのドライバーには、デバイスごとに*既定の i/o ターゲット*があります。これは、デバイスの次の下位のドライバーです。 最下位レベルの UMDF ベースのドライバーの既定の i/o ターゲットは、カーネルモード[リフレクター](overview-of-the-umdf.md)です。
 
-場合があります UMDF ドライバーでは、ファイルやネットワーク ソケットなどファイル ハンドル ベースの I/O ターゲットに I/O 要求を送信する必要があります。 そのため、フレームワークには、I/O ターゲット オブジェクトのファイル ハンドル ベースも提供します。
+場合によっては、ファイルハンドルベースの i/o ターゲット (ファイルやネットワークソケットなど) に i/o 要求を送信する必要があります。 したがって、フレームワークはファイルハンドルベースの i/o ターゲットオブジェクトも提供します。
 
-I/O の既定のターゲットと I/O ターゲットのファイル ハンドル ベースの両方が呼び出されます*ローカル I/O ターゲット*UMDF ベースのドライバーでは、これらのターゲットを使用して、I/O 要求をドライバー スタックでサポートされるデバイスに送信するためです。
+既定の i/o ターゲットとファイルハンドルベースの i/o ターゲットはどちらも、*ローカル i/o ターゲット*と呼ばれます。これは、UMDF ベースのドライバーがこれらのターゲットを使用して、ドライバースタックがサポートしているデバイスに i/o 要求を送信するためです。
 
-<a href="" id="remote-i-o-targets-------"></a>**リモートの I/O ターゲット**   
-場合によっては、ドライバーは、別のドライバー スタックに、I/O 要求を送信する必要があります。 また、framework にはそのため、*リモートの I/O ターゲット*のすべてのローカルの I/O ターゲットを除く I/O ターゲットで構成されます。
+<a href="" id="remote-i-o-targets-------"></a>**リモート I/o ターゲット**   
+場合によっては、ドライバーから別のドライバースタックに i/o 要求を送信する必要があります。 したがって、このフレームワークには、ローカル i/o ターゲットを除くすべての i/o ターゲットで構成される*リモート i/o ターゲット*も用意されています。
 
-リモートの I/O ターゲット ドライバー スタックがサポートされていないデバイス、そのデバイス上のファイルがありますまたは[デバイス インターフェイス](using-device-interfaces-in-umdf-drivers.md)デバイスにします。
+リモート i/o ターゲットは、ドライバースタックがサポートしていないデバイス、そのデバイス上のファイル、またはそのデバイスの[デバイスインターフェイス](using-device-interfaces-in-umdf-drivers.md)である可能性があります。
 
-次のセクションでは、初期化、および一般的な I/O ターゲットを使用する方法について説明します。
+次のセクションでは、一般的な i/o ターゲットを初期化して使用する方法について説明します。
 
--   [UMDF で一般的な I/O ターゲットの初期化](initializing-a-general-i-o-target-in-umdf.md)
--   [UMDF で一般的な I/O ターゲットへの I/O 要求を送信します。](sending-i-o-requests-to-a-general-i-o-target-in-umdf.md)
--   [UMDF で一般的な I/O ターゲットの状態を制御します。](controlling-a-general-i-o-target-s-state-in-umdf.md)
--   [UMDF で一般的な I/O ターゲットに関する情報を取得します。](obtaining-information-about-a-general-i-o-target-in-umdf.md)
+-   [UMDF での一般的な i/o ターゲットの初期化](initializing-a-general-i-o-target-in-umdf.md)
+-   [UMDF での一般的な i/o ターゲットへの i/o 要求の送信](sending-i-o-requests-to-a-general-i-o-target-in-umdf.md)
+-   [UMDF での一般的な i/o ターゲットの状態の制御](controlling-a-general-i-o-target-s-state-in-umdf.md)
+-   [UMDF での一般的な i/o ターゲットに関する情報の取得](obtaining-information-about-a-general-i-o-target-in-umdf.md)
 
  
 

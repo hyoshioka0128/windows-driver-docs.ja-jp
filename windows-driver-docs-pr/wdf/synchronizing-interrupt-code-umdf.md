@@ -4,17 +4,17 @@ description: 割り込みコードの同期
 ms.assetid: 5E2D0063-2251-40B3-8982-46001E67EB55
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a82eea2a4c9e051724943da2b4573960804f2e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: da2931c7e1e4756c71adb79e5686980386bd1561
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831641"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210830"
 ---
 # <a name="synchronizing-interrupt-code"></a>割り込みコードの同期
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 割り込みデータバッファーにアクセスするすべてのドライバーコードは、一度に1つのルーチンのみがデータにアクセスするように同期する必要があります。
 
@@ -34,7 +34,7 @@ UMDF は、 [*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drive
 
 UMDF ドライバーは、 *LockType*パラメーターを**WdfDeviceLevel**に設定して[**Iwdfdeviceinitialize:: setlocktype constraint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdeviceinitialize-setlockingconstraint)を呼び出して、自動コールバック同期を要求できます。
 
-次に、 [**Createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)を呼び出す前に、ドライバーは wudf の自動**シリアル化**メンバー [ **\_割り込み\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を**TRUE**に設定します。
+次に、 [**Createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)を呼び出す前に、ドライバーは wudf の自動**シリアル化**メンバー [**\_割り込み\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を**TRUE**に設定します。
 
 その結果、UMDF は、i/o キュー、要求の取り消し、およびファイルオブジェクトのコールバックルーチンを使用して、ドライバーの[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)コールバックをシリアル化します。 このシナリオでは、UMDF は、割り込みごとのオブジェクトロックではなく、コールバックロックを使用します。
 

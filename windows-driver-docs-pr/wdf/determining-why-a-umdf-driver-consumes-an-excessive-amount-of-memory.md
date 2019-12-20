@@ -8,16 +8,16 @@ keywords:
 - UMDF WDK、UMDF ドライバーは過剰なメモリを消費する
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0955d276d1cbd51ebec7e8bdd38ea186ba061190
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c4e98dd23a2328cd459773600f38ce16b88cf7df
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840387"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210474"
 ---
 # <a name="determining-why-a-umdf-driver-consumes-an-excessive-amount-of-memory"></a>UMDF ドライバーが大量にメモリを消費する理由の特定
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 このトピックでは、Wudfext デバッガー拡張機能をユーザーモードドライバーフレームワーク (UMDF) バージョン1ドライバーと組み合わせて使用して、UMDF ドライバーが大量のメモリを消費する原因を特定する方法について説明します。
 

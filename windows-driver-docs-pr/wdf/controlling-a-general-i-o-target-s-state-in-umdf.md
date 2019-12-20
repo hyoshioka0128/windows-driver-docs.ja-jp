@@ -15,17 +15,17 @@ keywords:
 - i/o ターゲットの再起動
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f51efc9445a154592db73216cc495b858565f1e7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c639d411b3454ee70490bcb95ed80b2cf884588a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843644"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210042"
 ---
 # <a name="controlling-a-general-io-targets-state-in-umdf"></a>UMDF での一般 I/O ターゲットの状態の制御
 
 
-[!include[UMDF 1 Deprecation](../umdf-1-deprecation.md)]
+[!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
 
 フレームワークは、一般的な i/o ターゲットに対して次の状態を定義します。
 
@@ -69,10 +69,10 @@ I/o ターゲットのデバイスは削除されています。
 <a href="" id="---------iremotetargetcallbackremoval--onremotetargetqueryremove--------"></a>[**IRemoteTargetCallbackRemoval::OnRemoteTargetQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetqueryremove)  
 リモート i/o ターゲットのデバイスが削除される可能性があることをドライバーに通知します。 ドライバーがデバイスの削除を許可する場合は、ドライバーが[**Iwdfremotetarget:: CloseForQueryRemove**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-closeforqueryremove)を呼び出す必要があります。
 
-<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecomplete--------"></a>[**IremotetargetOnRemoteTargetRemoveComplete の削除::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecomplete)  
+<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecomplete--------"></a>[**IremotetargetOnRemoteTargetRemoveComplete の削除::**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecomplete)  
 リモート i/o ターゲットのデバイスが削除されたことをドライバーに通知します。 このコールバック関数は、 [**Iwdfremotetarget:: Close**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-close)を呼び出す必要があります。
 
-<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecanceled--------"></a>[**IremotetargetOnRemoteTargetRemoveCanceled の削除::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecanceled)  
+<a href="" id="---------iremotetargetcallbackremoval--onremotetargetremovecanceled--------"></a>[**IremotetargetOnRemoteTargetRemoveCanceled の削除::**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iremotetargetcallbackremoval-onremotetargetremovecanceled)  
 リモート i/o ターゲットのデバイスを削除しようとしたことがキャンセルされたことをドライバーに通知します。 ドライバーがターゲットを引き続き使用するようにするには、ドライバーが[**Iwdfremotetarget:: 再度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-reopen)を呼び出す必要があります。 通常、ドライバーは**OnRemoteTargetRemoveCanceled**コールバック関数内から**再び開く**ことを呼び出しますが、 **OnRemoteTargetRemoveCanceled**が返された後で、**再度開く**ことができます。
 
 ドライバーは、 [**Iwdfremotetarget:: GetState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfremotetarget-getstate)を呼び出して、リモート i/o ターゲットの現在の状態を取得できます。
