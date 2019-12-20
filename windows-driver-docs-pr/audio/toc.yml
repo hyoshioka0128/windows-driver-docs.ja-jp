@@ -1,15 +1,13 @@
 - name: オーディオ ドライバー設計ガイド
-  items:
-    - name: オーディオ ドライバー設計ガイド
-      href: index.md
-    - name: 'Windows 10:オーディオの新機能'
-      href: windows-threshold--what-s-new-for-audio.md
-    - name: Windows オーディオ アーキテクチャ
-      href: windows-audio-architecture.md
-    - name: WDM オーディオ ドライバーの開発のロードマップ
-      href: roadmap-for-developing-wdm-audio-drivers.md
-    - name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
-      href: custom-audio-driver-type-decision-tree.md
+  href: index.md
+- name: 'Windows 10:オーディオの新機能'
+  href: windows-threshold--what-s-new-for-audio.md
+- name: Windows オーディオ アーキテクチャ
+  href: windows-audio-architecture.md
+- name: WDM オーディオ ドライバーの開発のロードマップ
+  href: roadmap-for-developing-wdm-audio-drivers.md
+- name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
+  href: custom-audio-driver-type-decision-tree.md
 - name: WDM オーディオ ドライバーの概要
   items:
     - name: WDM オーディオ ドライバーの概要

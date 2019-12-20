@@ -4,12 +4,12 @@ description: Microsoft ハードウェア API では、組織のパートナー 
 ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e996a8ae33dc4e491eef281398f65e6e31c7a00
-ms.sourcegitcommit: 202a9dd161090af3e3815e3fbf3da0bcad993e0e
+ms.openlocfilehash: 7cec191850f774186b0c564eecd36137881217e7
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685593"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209250"
 ---
 # <a name="hardware-dashboard-api"></a>ハードウェア ダッシュボード API
 
@@ -82,7 +82,7 @@ Azure AD アクセス トークンを取得したら、Microsoft ハードウェ
 
 次のサンプルは、Microsoft Surface and Devices チームによって作成された完全なエンド ツー エンドの構築済みソリューションと共に Microsoft Hardware API を使用する方法を示す詳細なコードとして利用できます。
 
-* [C# のサンプル](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
+* [C# のサンプル](https://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 [ハードウェア ダッシュボード API のサンプル (GitHub)](https://aka.ms/hpc_async_api_samples)
 

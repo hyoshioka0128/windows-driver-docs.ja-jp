@@ -1,244 +1,242 @@
 - name: Windows ポータブル デバイス
+  href: index.md
+- name: WPD の新機能
+  href: what-s-new-in-wpd.md
+- name: WPD 設計ガイド
   items:
-    - name: Windows ポータブル デバイス
-      href: index.md
-    - name: WPD の新機能
-      href: what-s-new-in-wpd.md
     - name: WPD 設計ガイド
+      href: wpd-design-guide.md
+    - name: WPD ドライバー
       items:
-        - name: WPD 設計ガイド
-          href: wpd-design-guide.md
         - name: WPD ドライバー
-          items:
-            - name: WPD ドライバー
-              href: wpd-drivers.md
-            - name: 要件
-              href: requirements.md
-        - name: WPD ドライバーの概要
-          items:
-            - name: WPD ドライバーの概要
-              href: wpd-drivers-overview.md
-            - name: サポートされるシナリオ
-              href: supported-scenarios.md
-            - name: WPD と以前のテクノロジ
-              href: wpd-and-earlier-technologies.md
-            - name: ハードウェア ベンダー向けのガイダンス
-              href: guidance-for-the-hardware-vendor.md
-            - name: アーキテクチャの概要
-              href: architecture-overview.md
-            - name: アクセス制御
-              href: access-control.md
-            - name: 概念モデル
-              href: the-conceptual-model.md
-            - name: デバイスの表現
-              href: device-representation.md
-            - name: 機能の表現
-              href: representing-functionality.md
-            - name: コンテンツの表現
-              href: representing-contents.md
-            - name: デバイスのインストール
-              href: device-installation.md
-            - name: Windows ポータブル デバイスの PROPERTYKEY と GUID
-              href: propertykeys-and-guids-in-windows-portable-devices.md
-            - name: オブジェクトの要件
-              href: requirements-for-objects.md
-    - name: WPD プログラミング ガイド
+          href: wpd-drivers.md
+        - name: 要件
+          href: requirements.md
+    - name: WPD ドライバーの概要
       items:
-        - name: WPD プログラミング ガイド
-          href: wpd-programming-guide.md
+        - name: WPD ドライバーの概要
+          href: wpd-drivers-overview.md
+        - name: サポートされるシナリオ
+          href: supported-scenarios.md
+        - name: WPD と以前のテクノロジ
+          href: wpd-and-earlier-technologies.md
+        - name: ハードウェア ベンダー向けのガイダンス
+          href: guidance-for-the-hardware-vendor.md
+        - name: アーキテクチャの概要
+          href: architecture-overview.md
+        - name: アクセス制御
+          href: access-control.md
+        - name: 概念モデル
+          href: the-conceptual-model.md
+        - name: デバイスの表現
+          href: device-representation.md
+        - name: 機能の表現
+          href: representing-functionality.md
+        - name: コンテンツの表現
+          href: representing-contents.md
+        - name: デバイスのインストール
+          href: device-installation.md
+        - name: Windows ポータブル デバイスの PROPERTYKEY と GUID
+          href: propertykeys-and-guids-in-windows-portable-devices.md
+        - name: オブジェクトの要件
+          href: requirements-for-objects.md
+- name: WPD プログラミング ガイド
+  items:
+    - name: WPD プログラミング ガイド
+      href: wpd-programming-guide.md
+    - name: WPD ドライバー開発ツール
+      items:
         - name: WPD ドライバー開発ツール
-          items:
-            - name: WPD ドライバー開発ツール
-              href: familiarizing-yourself-with-the-sample-driver.md
-            - name: WpdInfo Tool の使用
-              href: using-the-wpdinfo-tool.md
-            - name: WpdDeviceInspector Tool の使用
-              href: using-the-wpddeviceinspector-tool.md
-            - name: Network Monitor Tool の使用
-              href: using-the-netmon-tool.md
+          href: familiarizing-yourself-with-the-sample-driver.md
+        - name: WpdInfo Tool の使用
+          href: using-the-wpdinfo-tool.md
+        - name: WpdDeviceInspector Tool の使用
+          href: using-the-wpddeviceinspector-tool.md
+        - name: Network Monitor Tool の使用
+          href: using-the-netmon-tool.md
+    - name: WPD ドライバーのサンプル
+      items:
         - name: WPD ドライバーのサンプル
+          href: the-wpd-driver-samples.md
+        - name: WpdHelloWorldDriver サンプル
           items:
-            - name: WPD ドライバーのサンプル
-              href: the-wpd-driver-samples.md
             - name: WpdHelloWorldDriver サンプル
+              href: the-sample-driver-architecture.md
+            - name: WpdHelloWorldDriver サンプルのインストール
+              href: the-wpdhelloworlddriver-installation.md
+            - name: サンプル ドライバー セットアップ情報 (.inf) ファイル
               items:
-                - name: WpdHelloWorldDriver サンプル
-                  href: the-sample-driver-architecture.md
-                - name: WpdHelloWorldDriver サンプルのインストール
-                  href: the-wpdhelloworlddriver-installation.md
                 - name: サンプル ドライバー セットアップ情報 (.inf) ファイル
-                  items:
-                    - name: サンプル ドライバー セットアップ情報 (.inf) ファイル
-                      href: the-sample-driver-setup-information---inf--file.md
-                    - name: 自動再生のサポート
-                      href: supporting-autoplay.md
-                - name: MTP セットアップ情報 (.inf) ファイル
-                  href: the-mtp-setup-information---inf--file.md
-                - name: セットアップ情報ファイルの構造と構文の確認
-                  href: verifying-structure-and-syntax-for-setup-information-files.md
-                - name: COM コンポーネント ファイル
-                  href: the-com-component-files.md
+                  href: the-sample-driver-setup-information---inf--file.md
+                - name: 自動再生のサポート
+                  href: supporting-autoplay.md
+            - name: MTP セットアップ情報 (.inf) ファイル
+              href: the-mtp-setup-information---inf--file.md
+            - name: セットアップ情報ファイルの構造と構文の確認
+              href: verifying-structure-and-syntax-for-setup-information-files.md
+            - name: COM コンポーネント ファイル
+              href: the-com-component-files.md
+            - name: Windows Driver Framework ファイル
+              items:
                 - name: Windows Driver Framework ファイル
+                  href: the-windows-driver-foundation-files.md
+                - name: プラグ アンド プレイおよび電源管理イベントの処理
+                  href: handling-plug-and-play-and-power-management-events.md
+                - name: エントリ ポイントと終了ポイントの処理
+                  href: handling-the-entry-and-exit-points.md
+                - name: デバイス制御とファイル作成の処理
                   items:
-                    - name: Windows Driver Framework ファイル
-                      href: the-windows-driver-foundation-files.md
-                    - name: プラグ アンド プレイおよび電源管理イベントの処理
-                      href: handling-plug-and-play-and-power-management-events.md
-                    - name: エントリ ポイントと終了ポイントの処理
-                      href: handling-the-entry-and-exit-points.md
                     - name: デバイス制御とファイル作成の処理
-                      items:
-                        - name: デバイス制御とファイル作成の処理
-                          href: handling-device-control-and-file-creation.md
-                        - name: アクセス制御の処理
-                          href: handling-access-control.md
+                      href: handling-device-control-and-file-creation.md
+                    - name: アクセス制御の処理
+                      href: handling-access-control.md
+            - name: Windows ポータブル デバイス ファイル
+              items:
                 - name: Windows ポータブル デバイス ファイル
+                  href: the-windows-portable-device-files.md
+                - name: ベース ドライバー
                   items:
-                    - name: Windows ポータブル デバイス ファイル
-                      href: the-windows-portable-device-files.md
                     - name: ベース ドライバー
-                      items:
-                        - name: ベース ドライバー
-                          href: the-base-driver.md
-                        - name: ドライバーの初期化
-                          href: initializing-the-driver.md
-                        - name: メッセージング機能
-                          href: messaging-functionality.md
-                        - name: オブジェクトの識別子のマッピング
-                          href: mapping-object-identifiers.md
+                      href: the-base-driver.md
+                    - name: ドライバーの初期化
+                      href: initializing-the-driver.md
+                    - name: メッセージング機能
+                      href: messaging-functionality.md
+                    - name: オブジェクトの識別子のマッピング
+                      href: mapping-object-identifiers.md
+                - name: ドライバーの機能
+                  items:
                     - name: ドライバーの機能
-                      items:
-                        - name: ドライバーの機能
-                          href: driver-capabilities.md
-                        - name: コマンドオプションの取得
-                          href: command-option-retrieval.md
-                        - name: 固定プロパティ属性の取得
-                          href: fixed-property-attribute-retrieval.md
-                        - name: 機能カテゴリの取得
-                          href: functional-category-retrieval.md
-                        - name: 機能オブジェクトの取得
-                          href: functional-object-retrieval.md
-                        - name: サポートされているコマンドの取得
-                          href: supported-command-retrieval.md
-                        - name: サポートされているコンテンツタイプの取得
-                          href: supported-content-type-retrieval.md
-                        - name: サポートされているファイル形式プロパティの取得
-                          href: supported-format-property-retrieval.md
-                        - name: サポートされているフォーマットの取得
-                          href: supported-format-retrieval.md
-                    - name: オブジェクトの列挙
-                      href: object-enumeration.md
+                      href: driver-capabilities.md
+                    - name: コマンドオプションの取得
+                      href: command-option-retrieval.md
+                    - name: 固定プロパティ属性の取得
+                      href: fixed-property-attribute-retrieval.md
+                    - name: 機能カテゴリの取得
+                      href: functional-category-retrieval.md
+                    - name: 機能オブジェクトの取得
+                      href: functional-object-retrieval.md
+                    - name: サポートされているコマンドの取得
+                      href: supported-command-retrieval.md
+                    - name: サポートされているコンテンツタイプの取得
+                      href: supported-content-type-retrieval.md
+                    - name: サポートされているファイル形式プロパティの取得
+                      href: supported-format-property-retrieval.md
+                    - name: サポートされているフォーマットの取得
+                      href: supported-format-retrieval.md
+                - name: オブジェクトの列挙
+                  href: object-enumeration.md
+                - name: プロパティのサポート
+                  items:
                     - name: プロパティのサポート
-                      items:
-                        - name: プロパティのサポート
-                          href: property-support.md
-                        - name: プロパティの削除
-                          href: property-deletion.md
-                        - name: プロパティ属性の取得
-                          href: property-attribute-retrieval.md
-                        - name: サポートされているプロパティの取得
-                          href: supported-property-retrieval.md
-                        - name: プロパティ値の取得
-                          href: property-value-retrieval.md
-                        - name: プロパティ値の設定
-                          href: setting-property-values.md
+                      href: property-support.md
+                    - name: プロパティの削除
+                      href: property-deletion.md
+                    - name: プロパティ属性の取得
+                      href: property-attribute-retrieval.md
+                    - name: サポートされているプロパティの取得
+                      href: supported-property-retrieval.md
+                    - name: プロパティ値の取得
+                      href: property-value-retrieval.md
+                    - name: プロパティ値の設定
+                      href: setting-property-values.md
+                - name: 参考資料
+                  items:
                     - name: 参考資料
-                      items:
-                        - name: 参考資料
-                          href: resources.md
-                        - name: サポートされているリソース一覧の取得
-                          href: retrieving-a-list-of-supported-resources.md
-                        - name: リソース属性の取得
-                          href: retrieving-resource-attributes.md
-                        - name: リソースの開始と IStream オブジェクトの取得
-                          href: opening-a-resource-and-retrieving-an-istream-object.md
-                        - name: リソース データの読み取り
-                          href: reading-resource-data.md
-                        - name: リソースの終了
-                          href: closing-a-resource.md
-            - name: WpdBasicHardwareDriver サンプル
-              items:
-                - name: WpdBasicHardwareDriver サンプル
-                  href: the-wpdbasichardwaredriver-sample.md
-                - name: サンプル ドライバーのインストール
-                  href: the-wpdbasichardwaredriver-installation.md
-                - name: WpdBasicHardwareDriver プロトコル
-                  href: the-wpdbasichardwaredriver-protocol.md
-                - name: センサー デバイスの作成
-                  href: the-wpdbasichardwaredriver-device-creation.md
-                - name: ソース オブジェクトの定義
-                  href: the-wpdbasichardwaredriver-defining-the-sensor-objects.md
-                - name: センサー プロパティの定義
-                  href: the-wpdbasichardwaredriver-property-definitions.md
-                - name: I/O のサポート
-                  href: the-wpdbasichardwaredriver-supporting-io.md
-                - name: WPD インフラストラクチャのサポート
-                  items:
-                    - name: WPD インフラストラクチャのサポート
-                      href: the-wpdbasichardwaredriver-supporting-wpd-infrastructure.md
-                    - name: プロパティ コマンドのサポート
-                      href: the-wpdbasichardwaredriver-supporting-wpd-property-commands.md
-                    - name: プロパティ範囲属性のサポート
-                      href: the-wpdbasichardwaredriver-supporting-property-range-attributes.md
-                    - name: 列挙コマンドのサポート
-                      href: the-wpdbasichardwaredriver-supporting-wpd-enumeration-commands.md
-                    - name: 機能コマンドのサポート
-                      href: the-wpdbasichardwaredriver-supporting-wpd-capability-commands.md
-                    - name: ベースドライバー コマンドのサポート
-                      href: the-wpdbasichardwaredriver-supporting-base-driver-commands.md
-                    - name: デバイス イベントのサポート
-                      href: the-wpdbasichardwaredriver-supporting-device-events.md
-                - name: サンプル ドライバーのテストとデバッグ
-                  href: the-wpdbasichardwaredriver-testing-and-debugging.md
-            - name: WpdServiceSampleDriver サンプル
-              items:
-                - name: WpdServiceSampleDriver サンプル
-                  href: the-wpdservicesampledriver-sample.md
-                - name: WpdServiceSampleDriver サンプルのインストール
-                  href: the-wpdservicesampledriver-installation.md
-                - name: サービス オブジェクトの定義
-                  href: the-wpdservicesampledriver-object-definitions.md
-                - name: サービス プロパティの定義
-                  href: the-wpdservicesampledriver-property-definitions.md
-                - name: WPD インフラストラクチャのサポート
-                  items:
-                    - name: WPD インフラストラクチャのサポート
-                      href: the-wpdservicesampledriver-supporting-wpd-infrastructure.md
-                    - name: サービス コマンドのサポート
-                      href: the-wpdservicesampledriver-supporting-service-commands.md
-                    - name: プロパティ コマンドのサポート
-                      href: the-wpdservicesampledriver-supporting-wpd-property-commands.md
-                    - name: 列挙コマンドのサポート
-                      href: the-wpdservicesampledriver-supporting-wpd-enumeration-commands.md
-                    - name: 機能コマンドのサポート
-                      href: the-wpdservicesampledriver-supporting-wpd-capability-commands.md
-                    - name: ベースドライバー コマンドのサポート
-                      href: the-wpdservicesampledriver-supporting-base-driver-commands.md
-                - name: サービス イベントの範囲設定
-                  href: the-wpdservicesampledriver-scoping-service-events.md
-            - name: WpdMultiTransportDriver サンプル
-              items:
-                - name: WpdMultiTransportDriver サンプル
-                  href: the-wpdmultitransportdriver-sample.md
-                - name: WpdMultiTransportDriver サンプルのインストール
-                  href: the-wpdmultitransportdriver-installation.md
-                - name: MultiTransport デバイスのサポート
-                  href: the-wpdmultitransportdriver-sample-device-arrival.md
-        - name: 高度なタスク
+                      href: resources.md
+                    - name: サポートされているリソース一覧の取得
+                      href: retrieving-a-list-of-supported-resources.md
+                    - name: リソース属性の取得
+                      href: retrieving-resource-attributes.md
+                    - name: リソースの開始と IStream オブジェクトの取得
+                      href: opening-a-resource-and-retrieving-an-istream-object.md
+                    - name: リソース データの読み取り
+                      href: reading-resource-data.md
+                    - name: リソースの終了
+                      href: closing-a-resource.md
+        - name: WpdBasicHardwareDriver サンプル
           items:
-            - name: 高度なタスク
-              href: advanced-tasks.md
-            - name: WpdWudfSampleDriver サンプル
-              href: the-wpdwudfsampledriver-sample.md
-            - name: WpdWudfSampleDriver サンプルのインストール
-              href: the-wpdwudfsampledriver-installation.md
-            - name: プラグ アンド プレイ (PnP) と電源管理のサポート
-              href: supporting-plug-and-play--pnp-.md
-            - name: レンダリング プロファイルのサポート
-              href: supporting-rendering-profiles.md
-            - name: クライアント コンテキストのサポート
-              href: supporting-client-contexts.md
-            - name: イベント Cookie のサポート
-              href: supporting-event-cookie.md
-            - name: WPP トレースのサポート
-              href: supporting-wpp-tracing-info.md
+            - name: WpdBasicHardwareDriver サンプル
+              href: the-wpdbasichardwaredriver-sample.md
+            - name: サンプル ドライバーのインストール
+              href: the-wpdbasichardwaredriver-installation.md
+            - name: WpdBasicHardwareDriver プロトコル
+              href: the-wpdbasichardwaredriver-protocol.md
+            - name: センサー デバイスの作成
+              href: the-wpdbasichardwaredriver-device-creation.md
+            - name: ソース オブジェクトの定義
+              href: the-wpdbasichardwaredriver-defining-the-sensor-objects.md
+            - name: センサー プロパティの定義
+              href: the-wpdbasichardwaredriver-property-definitions.md
+            - name: I/O のサポート
+              href: the-wpdbasichardwaredriver-supporting-io.md
+            - name: WPD インフラストラクチャのサポート
+              items:
+                - name: WPD インフラストラクチャのサポート
+                  href: the-wpdbasichardwaredriver-supporting-wpd-infrastructure.md
+                - name: プロパティ コマンドのサポート
+                  href: the-wpdbasichardwaredriver-supporting-wpd-property-commands.md
+                - name: プロパティ範囲属性のサポート
+                  href: the-wpdbasichardwaredriver-supporting-property-range-attributes.md
+                - name: 列挙コマンドのサポート
+                  href: the-wpdbasichardwaredriver-supporting-wpd-enumeration-commands.md
+                - name: 機能コマンドのサポート
+                  href: the-wpdbasichardwaredriver-supporting-wpd-capability-commands.md
+                - name: ベースドライバー コマンドのサポート
+                  href: the-wpdbasichardwaredriver-supporting-base-driver-commands.md
+                - name: デバイス イベントのサポート
+                  href: the-wpdbasichardwaredriver-supporting-device-events.md
+            - name: サンプル ドライバーのテストとデバッグ
+              href: the-wpdbasichardwaredriver-testing-and-debugging.md
+        - name: WpdServiceSampleDriver サンプル
+          items:
+            - name: WpdServiceSampleDriver サンプル
+              href: the-wpdservicesampledriver-sample.md
+            - name: WpdServiceSampleDriver サンプルのインストール
+              href: the-wpdservicesampledriver-installation.md
+            - name: サービス オブジェクトの定義
+              href: the-wpdservicesampledriver-object-definitions.md
+            - name: サービス プロパティの定義
+              href: the-wpdservicesampledriver-property-definitions.md
+            - name: WPD インフラストラクチャのサポート
+              items:
+                - name: WPD インフラストラクチャのサポート
+                  href: the-wpdservicesampledriver-supporting-wpd-infrastructure.md
+                - name: サービス コマンドのサポート
+                  href: the-wpdservicesampledriver-supporting-service-commands.md
+                - name: プロパティ コマンドのサポート
+                  href: the-wpdservicesampledriver-supporting-wpd-property-commands.md
+                - name: 列挙コマンドのサポート
+                  href: the-wpdservicesampledriver-supporting-wpd-enumeration-commands.md
+                - name: 機能コマンドのサポート
+                  href: the-wpdservicesampledriver-supporting-wpd-capability-commands.md
+                - name: ベースドライバー コマンドのサポート
+                  href: the-wpdservicesampledriver-supporting-base-driver-commands.md
+            - name: サービス イベントの範囲設定
+              href: the-wpdservicesampledriver-scoping-service-events.md
+        - name: WpdMultiTransportDriver サンプル
+          items:
+            - name: WpdMultiTransportDriver サンプル
+              href: the-wpdmultitransportdriver-sample.md
+            - name: WpdMultiTransportDriver サンプルのインストール
+              href: the-wpdmultitransportdriver-installation.md
+            - name: MultiTransport デバイスのサポート
+              href: the-wpdmultitransportdriver-sample-device-arrival.md
+    - name: 高度なタスク
+      items:
+        - name: 高度なタスク
+          href: advanced-tasks.md
+        - name: WpdWudfSampleDriver サンプル
+          href: the-wpdwudfsampledriver-sample.md
+        - name: WpdWudfSampleDriver サンプルのインストール
+          href: the-wpdwudfsampledriver-installation.md
+        - name: プラグ アンド プレイ (PnP) と電源管理のサポート
+          href: supporting-plug-and-play--pnp-.md
+        - name: レンダリング プロファイルのサポート
+          href: supporting-rendering-profiles.md
+        - name: クライアント コンテキストのサポート
+          href: supporting-client-contexts.md
+        - name: イベント Cookie のサポート
+          href: supporting-event-cookie.md
+        - name: WPP トレースのサポート
+          href: supporting-wpp-tracing-info.md

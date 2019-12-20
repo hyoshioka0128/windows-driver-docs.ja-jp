@@ -1,108 +1,110 @@
 - name: Windows ハードウェアのパートナー センター
+  href: index.md
+- name: ハードウェア プログラム ダッシュボードに関する FAQ
+  href: hardware-dashboard-faq.md
+- name: ハードウェアの提出
   items:
-    - name: Windows ハードウェアのパートナー センター
-      href: index.md
-    - name: ハードウェア プログラム ダッシュボードに関する FAQ
-      href: hardware-dashboard-faq.md
-    - name: ハードウェアの提出
+    - name: ハードウェア申請の概要
+      href: hardware-certification-submissions.md
+    - name: 新しいハードウェア申請の作成
+      href: create-a-new-hardware-submission.md
+    - name: ハードウェア提出の管理
+      href: manage-your-hardware-submissions.md
+    - name: ハードウェア申請を検索する
+      href: find-hardware-submission.md
+    - name: WLK デバイス認定を申請する
       items:
-        - name: ハードウェア申請の概要
-          href: hardware-certification-submissions.md
-        - name: 新しいハードウェア申請の作成
-          href: create-a-new-hardware-submission.md
-        - name: ハードウェア提出の管理
-          href: manage-your-hardware-submissions.md
-        - name: ハードウェア申請を検索する
-          href: find-hardware-submission.md
-        - name: WLK デバイス認定を申請する
+        - name: 新しい WLK デバイス認定申請を作成する
+          href: create-a-new-hardware-logo-submission.md
+        - name: Winqual Submission Tool を使用する (winqual.exe)
+          href: winqual-submission-tool--winqualexe-.md
+    - name: ID の定義
+      href: id-definitions.md
+    - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
+      href: attestation-signing-a-kernel-driver-for-public-release.md
+    - name: 複数のバージョンの Windows で Microsoft によって署名されたドライバーを取得する方法
+      href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
+    - name: ドライバーのフライティング
+      items:
+        - name: 概要
+          href: driver-flighting.md
+        - name: Microsoft ドライバーの測定値
+          href: overview-of-microsoft-driver-measure-dictionary.md
+        - name: ドライバー測定の属性
+          href: measure-attributes.md
+        - name: 全体的な測定値
           items:
-            - name: 新しい WLK デバイス認定申請を作成する
-              href: create-a-new-hardware-logo-submission.md
-            - name: Winqual Submission Tool を使用する (winqual.exe)
-              href: winqual-submission-tool--winqualexe-.md
-        - name: ID の定義
-          href: id-definitions.md
-        - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
-          href: attestation-signing-a-kernel-driver-for-public-release.md
-        - name: 複数のバージョンの Windows で Microsoft によって署名されたドライバーを取得する方法
-          href: get-drivers-signed-by-microsoft-for-multiple-windows-versions.md
-        - name: ドライバーのフライティング
+            - name: ドライバー インストールの測定値
+              items:
+                - name: ドライバー インストール プロセスが正常に完了したマシンの割合
+                  href: pct-machines-where-driver-install-completes-successfully.md
+                - name: ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
+                  href: pct-machines-installed-driver-update-and-reported-pnp-error-within-2-days.md
+            - name: 信頼性の測定値
+              items:
+                - name: カーネル モード クラッシュなしのマシンの割合
+                  href: pct-machines-without-kernel-mode-crash.md
+                - name: ライブ カーネル ダンプなしのマシンの割合
+                  href: pct-machines-without-live-kernel-dump.md
+        - name: デバイス クラスの測定値
           items:
-            - name: 概要
-              href: driver-flighting.md
-            - name: Microsoft ドライバーの測定値
-              href: overview-of-microsoft-driver-measure-dictionary.md
-            - name: ドライバー測定の属性
-              href: measure-attributes.md
-            - name: 全体的な測定値
+            - name: オーディオ
               items:
-                - name: ドライバー インストールの測定値
-                  items:
-                    - name: ドライバー インストール プロセスが正常に完了したマシンの割合
-                      href: pct-machines-where-driver-install-completes-successfully.md
-                    - name: ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
-                      href: pct-machines-installed-driver-update-and-reported-pnp-error-within-2-days.md
-                - name: 信頼性の測定値
-                  items:
-                    - name: カーネル モード クラッシュなしのマシンの割合
-                      href: pct-machines-without-kernel-mode-crash.md
-                    - name: ライブ カーネル ダンプなしのマシンの割合
-                      href: pct-machines-without-live-kernel-dump.md
-            - name: デバイス クラスの測定値
+                - name: オーディオの測定値
+                  href: audio-measures.md
+                - name: 少なくとも 1 つのオーディオ ストリーム初期化エラーが発生したマシンの割合
+                  href: pct-machines-with-at-least-one-audio-stream-initialization-failure.md
+                - name: subpar ストリーム初期化成功率のあるマシンの割合
+                  href: pct-machines-with-subpar-stream-initialization-success-rate.md
+                - name: 少なくとも 1 つのオーディオ クラッシュが発生したマシンの割合
+                  href: percent-machines-with-at-least-one-audio-crash.md
+                - name: 少なくとも 1 つのオーディオ ハングが発生したマシンの割合
+                  href: pct-machines-with-at-least-one-audio-hang.md
+            - name: Bluetooth
               items:
-                - name: オーディオ
-                  items:
-                    - name: オーディオの測定値
-                      href: audio-measures.md
-                    - name: 少なくとも 1 つのオーディオ ストリーム初期化エラーが発生したマシンの割合
-                      href: pct-machines-with-at-least-one-audio-stream-initialization-failure.md
-                    - name: subpar ストリーム初期化成功率のあるマシンの割合
-                      href: pct-machines-with-subpar-stream-initialization-success-rate.md
-                    - name: 少なくとも 1 つのオーディオ クラッシュが発生したマシンの割合
-                      href: percent-machines-with-at-least-one-audio-crash.md
-                    - name: 少なくとも 1 つのオーディオ ハングが発生したマシンの割合
-                      href: pct-machines-with-at-least-one-audio-hang.md
-                - name: Bluetooth
-                  items:
-                    - name: Bluetooth の測定値
-                      href: bluetooth-measures.md
-                    - name: Bluetooth ペアリング エラー率
-                      href: bluetooth-pairing-failure-rate-per-machine.md
-                    - name: Bluetooth 接続エラー率
-                      href: bluetooth-connect-failure-rate-for-machines-with-the-driver.md
-                - name: Camera
-                  items:
-                    - name: カメラの測定値
-                      href: camera-measures.md
-                    - name: カメラの初期化エラー率
-                      href: camera-initialization-failure-rate.md
-                    - name: カメラのプレビュー エラー率
-                      href: camera-preview-failure-rate.md
-                    - name: カメラの写真キャプチャ エラー率
-                      href: camera-photo-failure-rate.md
-                    - name: カメラのビデオおよびストリーム エラー率
-                      href: camera-video-and-stream-failure-rate.md
-                - name: ファームウェア
-                  items:
-                    - name: ファームウェアの測定値
-                      href: firmware-measures.md
-                    - name: ESRT から正常にファームウェアがインストールされたことを報告しているマシンの割合
-                      href: ESRT-pct-machines-reporting-successful-firmware-installation.md
-                    - name: ESRT からのファームウェアの最大再試行回数の上限を超えたマシンの割合
-                      href: ESRT-pct-machines-exceed-max-retry.md
-                    - name: ファームウェアのインストール後に WHEA エラーが発生したマシンの割合
-                      href: ESRT-pct-machines-WHEA-error.md
-                    - name: バグチェックまたは電源ボタンによるものではない異常なシャットダウンが発生したマシンの割合
-                      href: ESRT-pct-machines-ABS.md
-                    - name: 7日以内にファームウェアが正常にインストールされ、ハートビートしないマシンの割合
-                      href: ESRT-7-day-brick-detector.md
-                    - name: 14日以内にファームウェアが正常にインストールされ、ハートビートしないマシンの割合
-                      href: ESRT-14-day-brick-detector.md
-                    - name: Bitlocker のリスクが原因で、ファームウェアの更新が保留中のマシンの割合
-                      href: ESRT-pct-machines-blocked-bitlocker.md
-                    - name: 更新され、Bitlocker 回復が正常にロック解除されたマシンの割合
-                      href: ESRT-pct-machines-entered-bitlocker-recovery.md
-                - name: グラフィックス
+                - name: Bluetooth の測定値
+                  href: bluetooth-measures.md
+                - name: Bluetooth ペアリング エラー率
+                  href: bluetooth-pairing-failure-rate-per-machine.md
+                - name: Bluetooth 接続エラー率
+                  href: bluetooth-connect-failure-rate-for-machines-with-the-driver.md
+            - name: Camera
+              items:
+                - name: カメラの測定値
+                  href: camera-measures.md
+                - name: カメラの初期化エラー率
+                  href: camera-initialization-failure-rate.md
+                - name: カメラのプレビュー エラー率
+                  href: camera-preview-failure-rate.md
+                - name: カメラの写真キャプチャ エラー率
+                  href: camera-photo-failure-rate.md
+                - name: カメラのビデオおよびストリーム エラー率
+                  href: camera-video-and-stream-failure-rate.md
+            - name: ファームウェア
+              items:
+                - name: ファームウェアの測定値
+                  href: firmware-measures.md
+                - name: ESRT から正常にファームウェアがインストールされたことを報告しているマシンの割合
+                  href: ESRT-pct-machines-reporting-successful-firmware-installation.md
+                - name: ESRT からのファームウェアの最大再試行回数の上限を超えたマシンの割合
+                  href: ESRT-pct-machines-exceed-max-retry.md
+                - name: ファームウェアのインストール後に WHEA エラーが発生したマシンの割合
+                  href: ESRT-pct-machines-WHEA-error.md
+                - name: バグチェックまたは電源ボタンによるものではない異常なシャットダウンが発生したマシンの割合
+                  href: ESRT-pct-machines-ABS.md
+                - name: 7日以内にファームウェアが正常にインストールされ、ハートビートしないマシンの割合
+                  href: ESRT-7-day-brick-detector.md
+                - name: 14日以内にファームウェアが正常にインストールされ、ハートビートしないマシンの割合
+                  href: ESRT-14-day-brick-detector.md
+                - name: Bitlocker のリスクが原因で、ファームウェアの更新が保留中のマシンの割合
+                  href: ESRT-pct-machines-blocked-bitlocker.md
+                - name: 更新され、Bitlocker 回復が正常にロック解除されたマシンの割合
+                  href: ESRT-pct-machines-entered-bitlocker-recovery.md
+            - name: グラフィックス
+              items:
+                - name: グラフィックスの計測値
+                  href: graphics-measures.md
+                - name: 標準および拡張対象ユーザーの測定値
                   items:
                     - name: グラフィックスの計測値
                       href: graphics-measures.md
@@ -112,8 +114,6 @@
                           href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-standard.md
                         - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
                           href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-standard.md
-                        - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
-                          href: myriad-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-standard.md
                         - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した無数のマシン
                           href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-standard.md
                         - name: グラフィックス カーネルのクラッシュによってブルー スクリーンが表示されたマシンの数
@@ -130,18 +130,12 @@
                           href: user-mode-reliability-for-crashes-in-windows-components.md
                         - name: Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
                           href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
-                        - name: UWP ゲームにおけるクラッシュとハングの数を使用量で正規化した値がベースライン目標と同じかそれより小さい
-                          href: graphics-game-reliability-uwp-crashes-hangs-by-usage.md
-                        - name: Win32 ゲームにおけるクラッシュとハングの数を使用量で正規化した値がベースライン目標と同じかそれより小さい
-                          href: graphics-game-reliability-win32-crashes-hangs-by-usage.md
                     - name: エコシステム対象ユーザーの測定値
                       items:
                         - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
                           href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-ecosystem.md
                         - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
                           href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-ecosystem.md
-                        - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
-                          href: myriad-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-ecosystem.md
                         - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した無数のマシン
                           href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-ecosystem.md
                         - name: Microsoft Edge でのユーザー モード クラッシュの数
@@ -154,10 +148,6 @@
                           href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
                         - name: Windows コンポーネントでのユーザー モード クラッシュの数
                           href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
-                        - name: UWP ゲームでのクラッシュとハングの数
-                          href: number-crashes-and-hangs-in-uwp-games.md
-                        - name: Win32 ゲームでのクラッシュとハングの数
-                          href: number-crashes-and-hangs-in-win32-games.md
                         - name: Netflix での SWDRM 再生エラーの割合
                           href: pct-swdrm-playback-failures-on-netflix.md
                         - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合
@@ -166,160 +156,190 @@
                           href: ecosystem-netflix-hwdrm-quality-comparison.md
                 - name: Wi-Fi
                   items:
-                    - name: Wi-Fi の測定値
-                      href: wi-fi-measures.md
-                    - name: 'Wi-Fi 接続エラーの割合 (デバイスとアクセスポイントのペアの上位 95% から) '
-                      href: percent-of-wifi-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
-                    - name: インターネット接続エラーの割合 (信号品質が 50% を超えるデバイスとアクセスポイントのペアの上位 95% から)
-                      href: percent-of-internet-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
-                    - name: 予期しない切断で終了した Wi-Fi セッションの割合
-                      href: pct-wi-fi-sessions-ending-in-unexpected-disconnect.md
-            - name: 付録
-              href: measure-appendix.md
-            - name: 用語集
-              href: measures-glossary.md
-        - name: 拡張 INF ファイルの使用
-          href: submit-dashboard-extension-inf-files.md
-        - name: バグ管理
-          href: bug-management.md
-    - name: 配送先住所ラベル
+                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
+                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-ecosystem.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
+                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-ecosystem.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
+                      href: myriad-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した無数のマシン
+                      href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                    - name: Microsoft Edge でのユーザー モード クラッシュの数
+                      href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
+                    - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
+                      href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
+                    - name: クリエイティブ アプリケーションでのユーザー モード クラッシュの数
+                      href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps.md
+                    - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
+                      href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
+                    - name: Windows コンポーネントでのユーザー モード クラッシュの数
+                      href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
+                    - name: UWP ゲームでのクラッシュとハングの数
+                      href: number-crashes-and-hangs-in-uwp-games.md
+                    - name: Win32 ゲームでのクラッシュとハングの数
+                      href: number-crashes-and-hangs-in-win32-games.md
+                    - name: Netflix での SWDRM 再生エラーの割合
+                      href: pct-swdrm-playback-failures-on-netflix.md
+                    - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合
+                      href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
+                    - name: エコシステム Netflix HWDRM 品質比較
+                      href: ecosystem-netflix-hwdrm-quality-comparison.md
+            - name: Wi-Fi
+              items:
+                - name: Wi-Fi の測定値
+                  href: wi-fi-measures.md
+                - name: 'Wi-Fi 接続エラーの割合 (デバイスとアクセスポイントのペアの上位 95% から) '
+                  href: percent-of-wifi-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
+                - name: インターネット接続エラーの割合 (信号品質が 50% を超えるデバイスとアクセスポイントのペアの上位 95% から)
+                  href: percent-of-internet-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
+                - name: 予期しない切断で終了した Wi-Fi セッションの割合
+                  href: pct-wi-fi-sessions-ending-in-unexpected-disconnect.md
+        - name: 付録
+          href: measure-appendix.md
+        - name: 用語集
+          href: measures-glossary.md
+    - name: 拡張 INF ファイルの使用
+      href: submit-dashboard-extension-inf-files.md
+    - name: バグ管理
+      href: bug-management.md
+- name: 配送先住所ラベル
+  items:
+    - name: 出荷ラベルによるドライバーの配布の管理
+      href: manage-driver-distribution-by-submission.md
+    - name: 公開の制限
+      href: publishing-restrictions.md
+    - name: Windows Update にドライバーを公開する
+      href: publish-a-driver-to-windows-update.md
+    - name: ドライバーの配布に関する Windows Update の自動規則とオプション規則について
+      href: understanding-windows-update-automatic-and-optional-rules-for-driver-distribution.md
+    - name: パートナーとのドライバーの共有
+      href: sharing-drivers-with-your-partners.md
+    - name: Windows Update からドライバーの期限を終了する
+      href: expire-a-driver-from-windows-update.md
+    - name: パートナーによる共有ドライバーの出荷ラベルを表示する
+      href: viewing-shipping-labels-for-your-shared-driver.md
+    - name: コンピューター ハードウェア ID (CHID) の使用
+      href: using-chids.md
+    - name: 拡張 INF ファイルの使用
+      href: submit-dashboard-extension-inf-files.md
+    - name: ドライバーの配布を Windows のバージョンに基づいて制限または拡張する方法
+      href: limit-driver-distribution.md
+    - name: テスト配布用の公開
+      href: publishing-for-test-distribution.md
+    - name: ドライバー配布の段階的なロールアウト
+      href: gradual-rollout.md
+- name: ハードウェア ダッシュボード API
+  items:
+    - name: ハードウェア ダッシュボード API の概要
+      href: dashboard-api.md
+    - name: 製品データ API
       items:
-        - name: 出荷ラベルによるドライバーの配布の管理
-          href: manage-driver-distribution-by-submission.md
-        - name: 公開の制限
-          href: publishing-restrictions.md
-        - name: Windows Update にドライバーを公開する
-          href: publish-a-driver-to-windows-update.md
-        - name: ドライバーの配布に関する Windows Update の自動規則とオプション規則について
-          href: understanding-windows-update-automatic-and-optional-rules-for-driver-distribution.md
-        - name: パートナーとのドライバーの共有
-          href: sharing-drivers-with-your-partners.md
-        - name: Windows Update からドライバーの期限を終了する
-          href: expire-a-driver-from-windows-update.md
-        - name: パートナーによる共有ドライバーの出荷ラベルを表示する
-          href: viewing-shipping-labels-for-your-shared-driver.md
-        - name: コンピューター ハードウェア ID (CHID) の使用
-          href: using-chids.md
-        - name: 拡張 INF ファイルの使用
-          href: submit-dashboard-extension-inf-files.md
-        - name: ドライバーの配布を Windows のバージョンに基づいて制限または拡張する方法
-          href: limit-driver-distribution.md
-        - name: テスト配布用の公開
-          href: publishing-for-test-distribution.md
-        - name: ドライバー配布の段階的なロールアウト
-          href: gradual-rollout.md
-    - name: ハードウェア ダッシュボード API
+        - name: 製品データの取得
+          href: get-product-data.md
+        - name: すべての製品の取得
+          href: get-all-products.md
+        - name: 製品の取得
+          href: get-a-product.md
+        - name: すべての申請の取得
+          href: get-all-submissions.md
+        - name: 申請の取得
+          href: get-a-submission.md
+    - name: 製品申請 API
       items:
-        - name: ハードウェア ダッシュボード API の概要
-          href: dashboard-api.md
-        - name: 製品データ API
-          items:
-            - name: 製品データの取得
-              href: get-product-data.md
-            - name: すべての製品の取得
-              href: get-all-products.md
-            - name: 製品の取得
-              href: get-a-product.md
-            - name: すべての申請の取得
-              href: get-all-submissions.md
-            - name: 申請の取得
-              href: get-a-submission.md
-        - name: 製品申請 API
-          items:
-            - name: 製品申請の管理
-              href: manage-product-submissions.md
-            - name: 新しい製品の作成
-              href: create-a-new-product.md
-            - name: 製品の新しい申請の作成
-              href: create-a-new-submission-for-a-product.md
-            - name: 製品申請のコミット
-              href: commit-a-product-submission.md
-            - name: 申請データの更新
-              href: update-submission-data.md
-            - name: 製品データの更新
-              href: update-product-data.md
-        - name: 配送先住所ラベルのデータを取得するための API
-          items:
-            - name: 配送先住所ラベルのデータを取得する
-              href: get-shipping-labels.md
-            - name: すべての配送先住所ラベルを取得する
-              href: get-all-shipping-labels.md
-            - name: 配送先住所ラベルの取得
-              href: get-a-shipping-label.md
-        - name: 配送先住所ラベル管理用の API
-          items:
-            - name: 配送先住所ラベルを管理する
-              href: manage-shipping-labels.md
-            - name: 新しい配送先住所ラベルを作成する
-              href: create-a-new-shipping-label.md
-            - name: 配送先住所ラベルの更新
-              href: update-a-shipping-label.md
-            - name: 配送先住所ラベルの取り消し
-              href: cancel-a-shipping-label.md
-        - name: 対象ユーザー データの取得
-          href: get-audience-data.md
-        - name: ドライバー パッケージ メタデータ
-          href: driver-package-metadata.md
-          items:
-            - name: 発行元ドライバー メタデータの作成
-              href: create-publisher-metadata.md
-    - name: LSA プラグインと UEFI ファームウェアのファイル署名
-      href: lsa-and-uefi-file-signing.md
-    - name: ダッシュボードの管理
+        - name: 製品申請の管理
+          href: manage-product-submissions.md
+        - name: 新しい製品の作成
+          href: create-a-new-product.md
+        - name: 製品の新しい申請の作成
+          href: create-a-new-submission-for-a-product.md
+        - name: 製品申請のコミット
+          href: commit-a-product-submission.md
+        - name: 申請データの更新
+          href: update-submission-data.md
+        - name: 製品データの更新
+          href: update-product-data.md
+    - name: 配送先住所ラベルのデータを取得するための API
       items:
-        - name: ハードウェア プログラムの概要
-          href: get-started-with-the-hardware-dashboard.md
-        - name: ハードウェア プログラムの登録
-          href: register-for-the-hardware-program.md
-        - name: ユーザーの追加または削除
-          href: adding-or-removing-users.md
-        - name: ユーザー ロールの管理
-          href: managing-user-roles.md
-        - name: コード署名証明書の取得
-          href: get-a-code-signing-certificate.md
-        - name: コード署名証明書の追加または更新
-          href: update-a-code-signing-certificate.md
-    - name: デバイス メタデータ
+        - name: 配送先住所ラベルのデータを取得する
+          href: get-shipping-labels.md
+        - name: すべての配送先住所ラベルを取得する
+          href: get-all-shipping-labels.md
+        - name: 配送先住所ラベルの取得
+          href: get-a-shipping-label.md
+    - name: 配送先住所ラベル管理用の API
       items:
-        - name: デバイス メタデータ エクスペリエンス
-          items:
-            - name: デバイス メタデータ エクスペリエンスの作成
-              href: create-a-device-metadata-experience.md
-            - name: プレビュー パッケージの作成
-              href: creating-a-preview-package.md
-        - name: デバイス メタデータ エクスペリエンスの管理
-          href: manage-device-metadata-experiences.md
-        - name: デバイス メタデータ パッケージの申請
-          items:
-            - name: 申請と確認
-              href: submit-a-device-metadata-package--dashboard-help-.md
-            - name: LocaleInfo.xml サブミッション ファイルの作成
-              href: create-the-localeinfoxml-submission-file.md
-            - name: PC デバイス マニフェスト パッケージの提出
-              href: submit-a-pc-device-manifest-package.md
-            - name: モバイル ブロードバンド デバイス マニフェスト パッケージの提出
-              href: submit-a-mobile-broadband-device-manifest-package.md
-            - name: 複数ロケールのデバイス マニフェスト パッケージの提出
-              href: submit-a-multiple-locale-device-manifest-package.md
-            - name: バルク メタデータ パッケージの提出
-              href: submit-a-bulk-metadata-package.md
-            - name: デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法
-              href: errors-and-solutions-when-submitting-device-metadata-experiences.md
-        - name: デバイス メタデータのビジネス規則
-          href: device-metadata-business-rules.md
-        - name: モバイル ブロードバンド エクスペリエンス
-          items:
-            - name: モバイル ブロードバンド エクスペリエンスの作成
-              href: create-a-mobile-broadband-experience.md
-            - name: 開発者モードとプレビュー モード
-              href: developer-and-preview-mode.md
-            - name: サービス アイコンの要件
-              href: service-icon-requirements.md
-            - name: サービス番号
-              href: service-number.md
-            - name: 信頼できる証明書
-              href: trusted-certificates.md
-    - name: Windows Device Experience List
-      href: windows-device-experience-list.md
-    - name: Windows 認定製品リスト
-      href: windows-certified-products-list.md
+        - name: 配送先住所ラベルを管理する
+          href: manage-shipping-labels.md
+        - name: 新しい配送先住所ラベルを作成する
+          href: create-a-new-shipping-label.md
+        - name: 配送先住所ラベルの更新
+          href: update-a-shipping-label.md
+        - name: 配送先住所ラベルの取り消し
+          href: cancel-a-shipping-label.md
+    - name: 対象ユーザー データの取得
+      href: get-audience-data.md
+    - name: ドライバー パッケージ メタデータ
+      href: driver-package-metadata.md
+      items:
+        - name: 発行元ドライバー メタデータの作成
+          href: create-publisher-metadata.md
+- name: LSA プラグインと UEFI ファームウェアのファイル署名
+  href: lsa-and-uefi-file-signing.md
+- name: ダッシュボードの管理
+  items:
+    - name: ハードウェア プログラムの概要
+      href: get-started-with-the-hardware-dashboard.md
+    - name: ハードウェア プログラムの登録
+      href: register-for-the-hardware-program.md
+    - name: ユーザーの追加または削除
+      href: adding-or-removing-users.md
+    - name: ユーザー ロールの管理
+      href: managing-user-roles.md
+    - name: コード署名証明書の取得
+      href: get-a-code-signing-certificate.md
+    - name: コード署名証明書の追加または更新
+      href: update-a-code-signing-certificate.md
+- name: デバイス メタデータ
+  items:
+    - name: デバイス メタデータ エクスペリエンス
+      items:
+        - name: デバイス メタデータ エクスペリエンスの作成
+          href: create-a-device-metadata-experience.md
+        - name: プレビュー パッケージの作成
+          href: creating-a-preview-package.md
+    - name: デバイス メタデータ エクスペリエンスの管理
+      href: manage-device-metadata-experiences.md
+    - name: デバイス メタデータ パッケージの申請
+      items:
+        - name: 申請と確認
+          href: submit-a-device-metadata-package--dashboard-help-.md
+        - name: LocaleInfo.xml サブミッション ファイルの作成
+          href: create-the-localeinfoxml-submission-file.md
+        - name: PC デバイス マニフェスト パッケージの提出
+          href: submit-a-pc-device-manifest-package.md
+        - name: モバイル ブロードバンド デバイス マニフェスト パッケージの提出
+          href: submit-a-mobile-broadband-device-manifest-package.md
+        - name: 複数ロケールのデバイス マニフェスト パッケージの提出
+          href: submit-a-multiple-locale-device-manifest-package.md
+        - name: バルク メタデータ パッケージの提出
+          href: submit-a-bulk-metadata-package.md
+        - name: デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法
+          href: errors-and-solutions-when-submitting-device-metadata-experiences.md
+    - name: デバイス メタデータのビジネス規則
+      href: device-metadata-business-rules.md
+    - name: モバイル ブロードバンド エクスペリエンス
+      items:
+        - name: モバイル ブロードバンド エクスペリエンスの作成
+          href: create-a-mobile-broadband-experience.md
+        - name: 開発者モードとプレビュー モード
+          href: developer-and-preview-mode.md
+        - name: サービス アイコンの要件
+          href: service-icon-requirements.md
+        - name: サービス番号
+          href: service-number.md
+        - name: 信頼できる証明書
+          href: trusted-certificates.md
+- name: Windows Device Experience List
+  href: windows-device-experience-list.md
+- name: Windows 認定製品リスト
+  href: windows-certified-products-list.md

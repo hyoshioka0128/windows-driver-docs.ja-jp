@@ -1,76 +1,74 @@
 - name: UWP デバイス アプリ
+  href: index.md
+- name: 新着情報
+  href: what-s-new.md
+- name: 概要
   items:
-    - name: UWP デバイス アプリ
-      href: index.md
-    - name: 新着情報
-      href: what-s-new.md
     - name: 概要
-      items:
-        - name: 概要
-          href: getting-started.md
-        - name: UWP デバイス アプリの概要
-          href: meet-UWP-device-apps.md
-        - name: UWP デバイス アプリを構築する
-          href: the-workflow.md
+      href: getting-started.md
+    - name: UWP デバイス アプリの概要
+      href: meet-UWP-device-apps.md
+    - name: UWP デバイス アプリを構築する
+      href: the-workflow.md
+- name: UWP デバイス アプリを手順に従って構築する
+  items:
     - name: UWP デバイス アプリを手順に従って構築する
-      items:
-        - name: UWP デバイス アプリを手順に従って構築する
-          href: build-a-UWP-device-app-step-by-step.md
-        - name: '手順 1:UWP デバイス アプリを作成する'
-          href: step-1--create-a-UWP-device-app.md
-        - name: '手順 2:デバイス メタデータを作成する'
-          href: step-2--create-device-metadata.md
-        - name: '手順 3:アプリにエクスペリエンス ID を追加する'
-          href: step-3--add-an-experience-id-to-the-app.md
-        - name: '手順 4:デバイス メタデータをテストする'
-          href: step-4--test-device-metadata.md
-        - name: '手順 5:アプリを送信する'
-          href: step-5--submit-the-app.md
-        - name: '手順 6:デバイス メタデータを送信する'
-          href: step-6--submit-device-metadata.md
-    - name: UWP デバイス アプリの自動再生
-      href: autoplay-for-UWP-device-apps.md
+      href: build-a-UWP-device-app-step-by-step.md
+    - name: '手順 1:UWP デバイス アプリを作成する'
+      href: step-1--create-a-UWP-device-app.md
+    - name: '手順 2:デバイス メタデータを作成する'
+      href: step-2--create-device-metadata.md
+    - name: '手順 3:アプリにエクスペリエンス ID を追加する'
+      href: step-3--add-an-experience-id-to-the-app.md
+    - name: '手順 4:デバイス メタデータをテストする'
+      href: step-4--test-device-metadata.md
+    - name: '手順 5:アプリを送信する'
+      href: step-5--submit-the-app.md
+    - name: '手順 6:デバイス メタデータを送信する'
+      href: step-6--submit-device-metadata.md
+- name: UWP デバイス アプリの自動再生
+  href: autoplay-for-UWP-device-apps.md
+- name: UWP デバイス アプリによるデバイスの同期と更新
+  items:
     - name: UWP デバイス アプリによるデバイスの同期と更新
-      items:
-        - name: UWP デバイス アプリによるデバイスの同期と更新
-          href: device-sync-and-update-for-UWP-device-apps.md
-        - name: デバイス バックグラウンド タスクを作成する
-          href: how-to-create-a-device-background-task.md
+      href: device-sync-and-update-for-UWP-device-apps.md
+    - name: デバイス バックグラウンド タスクを作成する
+      href: how-to-create-a-device-background-task.md
+- name: プリンター用の UWP デバイス アプリ
+  items:
     - name: プリンター用の UWP デバイス アプリ
-      items:
-        - name: プリンター用の UWP デバイス アプリ
-          href: UWP-device-apps-for-printers.md
-        - name: プリンターの状態を表示する方法
-          href: how-to-display-printer-status.md
-        - name: 印刷設定をカスタマイズする方法
-          href: how-to-customize-print-settings.md
-        - name: 印刷通知を使用する
-          href: working-with-print-notifications.md
-        - name: 印刷ジョブを管理する方法
-          href: how-to-manage-print-jobs.md
-        - name: プリンターのメンテナンスを実行する方法
-          href: how-to-do-printer-maintenance.md
-        - name: プリンター拡張ライブラリの概要
-          href: printer-extension-library-overview.md
+      href: UWP-device-apps-for-printers.md
+    - name: プリンターの状態を表示する方法
+      href: how-to-display-printer-status.md
+    - name: 印刷設定をカスタマイズする方法
+      href: how-to-customize-print-settings.md
+    - name: 印刷通知を使用する
+      href: working-with-print-notifications.md
+    - name: 印刷ジョブを管理する方法
+      href: how-to-manage-print-jobs.md
+    - name: プリンターのメンテナンスを実行する方法
+      href: how-to-do-printer-maintenance.md
+    - name: プリンター拡張ライブラリの概要
+      href: printer-extension-library-overview.md
+- name: カメラ用の UWP デバイス アプリ
+  items:
     - name: カメラ用の UWP デバイス アプリ
-      items:
-        - name: カメラ用の UWP デバイス アプリ
-          href: UWP-device-apps-for-webcams.md
-        - name: カメラのオプションをカスタマイズする方法
-          href: how-to-customize-camera-options.md
-        - name: カメラ ドライバー MFT を作成する
-          href: creating-a-camera-driver-mft.md
-        - name: マルチピン カメラ上のドライバー MFT に関する考慮事項
-          href: driver-mfts-on-multi-pin-cameras.md
-        - name: 内蔵カメラの位置を特定する
-          href: identifying-the-location-of-internal-cameras.md
-    - name: 内部デバイス用の UWP デバイス アプリ
-      href: UWP-device-apps-for-specialized-devices.md
-    - name: UWP デバイス アプリの自動インストール
-      href: auto-install-for-UWP-device-apps.md
-    - name: 'ハードウェア サポート アプリ (HSA):ドライバー開発者向けの手順'
-      href: hardware-support-app--hsa--steps-for-driver-developers.md
-    - name: 'ハードウェア サポート アプリ (HSA):アプリ開発者向けの手順'
-      href: hardware-support-app--hsa--steps-for-app-developers.md
-    - name: カスタム機能についてよくあるご質問
-      href: FAQ-on-custom-capabilities.md
+      href: UWP-device-apps-for-webcams.md
+    - name: カメラのオプションをカスタマイズする方法
+      href: how-to-customize-camera-options.md
+    - name: カメラ ドライバー MFT を作成する
+      href: creating-a-camera-driver-mft.md
+    - name: マルチピン カメラ上のドライバー MFT に関する考慮事項
+      href: driver-mfts-on-multi-pin-cameras.md
+    - name: 内蔵カメラの位置を特定する
+      href: identifying-the-location-of-internal-cameras.md
+- name: 内部デバイス用の UWP デバイス アプリ
+  href: UWP-device-apps-for-specialized-devices.md
+- name: UWP デバイス アプリの自動インストール
+  href: auto-install-for-UWP-device-apps.md
+- name: 'ハードウェア サポート アプリ (HSA):ドライバー開発者向けの手順'
+  href: hardware-support-app--hsa--steps-for-driver-developers.md
+- name: 'ハードウェア サポート アプリ (HSA):アプリ開発者向けの手順'
+  href: hardware-support-app--hsa--steps-for-app-developers.md
+- name: カスタム機能についてよくあるご質問
+  href: FAQ-on-custom-capabilities.md

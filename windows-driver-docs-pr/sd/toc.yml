@@ -1,12 +1,10 @@
 - name: SD バス ドライバー設計ガイド
-  items:
-    - name: SD バス ドライバー設計ガイド
-      href: index.md
-    - name: SD カードのドライバー スタック
-      href: sd-card-driver-stack.md
-    - name: SD カードのバス インターフェイスを開く、初期化する、および閉じる
-      href: opening--initializing-and-closing-an-sd-card-bus-interface.md
-    - name: SD カードの割り込みの処理
-      href: handling-sd-card-interrupts.md
-    - name: SD カードの要求
-      href: sd-card-requests.md
+  href: index.md
+- name: SD カードのドライバー スタック
+  href: sd-card-driver-stack.md
+- name: SD カードのバス インターフェイスを開く、初期化する、および閉じる
+  href: opening--initializing-and-closing-an-sd-card-bus-interface.md
+- name: SD カードの割り込みの処理
+  href: handling-sd-card-interrupts.md
+- name: SD カードの要求
+  href: sd-card-requests.md

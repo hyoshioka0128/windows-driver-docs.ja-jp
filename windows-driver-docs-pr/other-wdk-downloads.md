@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: db74e0710a473254d22b6541bda0ba3802e49a62
-ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
+ms.openlocfilehash: c328c2aca85819449910d3334d6870b95096abb1
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735164"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210848"
 ---
 # <a name="other-wdk-downloads"></a>その他の WDK のダウンロード
 
@@ -90,10 +90,10 @@ EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.mi
 
 | Windows のバージョン               | EWDK                              |
 |-----------------------------------|-----------------------------------|
-| Windows 10 Version 1809          | [EWDK for Windows 10 Version 1809](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 バージョン 1803          | [EWDK for Windows 10 Version 1803](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 バージョン 1709          | [EWDK for Visual Studio with Build Tools 15.6](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) (推奨) <br/>[EWDK for Visual Studio with Build Tools 15.4](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) <br/>[EWDK for Visual Studio with Build Tools 15.2](https://developer.microsoft.com/windows/hardware/license-terms-EWDK) |
-| Windows 10 Version 1703          | [EWDK for Windows 10 Version 1703](https://developer.microsoft.com/windows/hardware/license-terms-enterprise-wdk) |
+| Windows 10 Version 1809          | [EWDK for Windows 10 Version 1809](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 バージョン 1803          | [EWDK for Windows 10 Version 1803](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 バージョン 1709          | [EWDK for Visual Studio with Build Tools 15.6](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) (推奨) <br/>[EWDK for Visual Studio with Build Tools 15.4](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) <br/>[EWDK for Visual Studio with Build Tools 15.2](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
+| Windows 10 Version 1703          | [EWDK for Windows 10 Version 1703](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2015) |
 
 > [!Note]
 > Windows 10 バージョン 1709 以降、EWDK は ISO ベースです。ased. まず、ISO をダウンロードしてマウントした後、**LaunchBuildEnv** を実行します。

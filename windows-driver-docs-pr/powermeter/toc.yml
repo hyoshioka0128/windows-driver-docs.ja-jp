@@ -1,22 +1,20 @@
 - name: 電力計測および予算作成設計ガイド
+  href: index.md
+- name: 電力計測および予算作成インフラストラクチャの概要
+  href: overview-of-the-power-metering-and-budgeting-infrastructure.md
+- name: ユーザー モード電力サービス
+  href: user-mode-power-service.md
+- name: 電源メーター インターフェイス
+  href: power-meter-interface.md
+- name: エネルギー メーター インターフェイス
+  href: energy-meter-interface.md
+- name: ソフトウェア定義バッテリー
+  href: software-defined-batteries.md
+- name: ACPI 電源メーター インターフェイス
   items:
-    - name: 電力計測および予算作成設計ガイド
-      href: index.md
-    - name: 電力計測および予算作成インフラストラクチャの概要
-      href: overview-of-the-power-metering-and-budgeting-infrastructure.md
-    - name: ユーザー モード電力サービス
-      href: user-mode-power-service.md
-    - name: 電源メーター インターフェイス
-      href: power-meter-interface.md
-    - name: エネルギー メーター インターフェイス
-      href: energy-meter-interface.md
-    - name: ソフトウェア定義バッテリー
-      href: software-defined-batteries.md
     - name: ACPI 電源メーター インターフェイス
-      items:
-        - name: ACPI 電源メーター インターフェイス
-          href: acpi-power-meter-interface.md
-        - name: ACPI 4.0 電力計測オブジェクトの概要
-          href: overview-of-the-acpi-4-0-power-metering-objects.md
-        - name: ACPI IPMI 操作領域
-          href: acpi-ipmi-operation-region.md
+      href: acpi-power-meter-interface.md
+    - name: ACPI 4.0 電力計測オブジェクトの概要
+      href: overview-of-the-acpi-4-0-power-metering-objects.md
+    - name: ACPI IPMI 操作領域
+      href: acpi-ipmi-operation-region.md

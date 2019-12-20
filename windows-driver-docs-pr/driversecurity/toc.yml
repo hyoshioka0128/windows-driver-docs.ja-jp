@@ -1,12 +1,10 @@
 - name: ドライバーのセキュリティ ガイダンス
-  items:
-    - name: ドライバーのセキュリティ ガイダンス
-      href: index.md
-    - name: ドライバーのセキュリティ チェックリスト
-      href: driver-security-checklist.md
-    - name: ドライバーの脅威モデリング
-      href: threat-modeling-for-drivers.md
-    - name: ドライバー開発者向けの Windows セキュリティ モデル
-      href: windows-security-model.md
-    - name: Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
-      href: use-device-guard-readiness-tool.md
+  href: index.md
+- name: ドライバーのセキュリティ チェックリスト
+  href: driver-security-checklist.md
+- name: ドライバーの脅威モデリング
+  href: threat-modeling-for-drivers.md
+- name: ドライバー開発者向けの Windows セキュリティ モデル
+  href: windows-security-model.md
+- name: Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
+  href: use-device-guard-readiness-tool.md

@@ -1,36 +1,34 @@
 - name: 生体認証設計ガイド
-  items:
-    - name: 生体認証設計ガイド
-      href: index.md
-    - name: 生体認証ドライバーの概要
-      href: getting-started-with-biometric-drivers.md
-    - name: 生体認証ドライバーの開発のロードマップ
-      href: roadmap-for-developing-biometric-drivers.md
-    - name: 生体認証ドライバーのサンプル
-      href: sample-biometric-driver.md
-    - name: 生体認証 IOCTL 呼び出しシーケンスのサポート
-      href: supporting-biometric-ioctl-calling-sequence.md
-    - name: WBDI ドライバーでの WinUSB の使用
-      href: using-winusb-in-a-wbdi-driver.md
-    - name: 生体認証ドライバーのインストール
-      href: installing-a-biometric-driver.md
-    - name: WBDI ドライバーでのキューの管理
-      href: managing-queues-in-a-wbdi-driver.md
-    - name: WBDI ドライバー用のデバイス インターフェイスの作成
-      href: creating-a-device-interface-for-a-wbdi-driver.md
-    - name: WBDI ドライバーでのセキュリティで保護されたチャネルのサポート
-      href: supporting-secure-channels-in-wbdi-drivers.md
-    - name: 非 PnP デバイスまたは専用スタックでの WBDI の使用
-      href: using-wbdi-with-non-pnp-devices-or-proprietary-stacks.md
-    - name: 生体認証ドライバーのハードウェアに関する考慮事項
-      href: hardware-considerations-for-biometric-drivers.md
-    - name: Windows Update における生体認証ドライバーのランク付け
-      href: ranking-a-biometric-driver-on-windows-update.md
-    - name: 生体認証ドライバーのテスト
-      href: testing-biometric-drivers.md
-    - name: WBDI ドライバーへの署名
-      href: signing-wbdi-drivers.md
-    - name: 'Windows Hello:フィンガープリント ドライバーを送信する手順'
-      href: windows-hello-driver-signing.md
-    - name: カスタム コントロールのコード
-      href: custom-control-codes.md
+  href: index.md
+- name: 生体認証ドライバーの概要
+  href: getting-started-with-biometric-drivers.md
+- name: 生体認証ドライバーの開発のロードマップ
+  href: roadmap-for-developing-biometric-drivers.md
+- name: 生体認証ドライバーのサンプル
+  href: sample-biometric-driver.md
+- name: 生体認証 IOCTL 呼び出しシーケンスのサポート
+  href: supporting-biometric-ioctl-calling-sequence.md
+- name: WBDI ドライバーでの WinUSB の使用
+  href: using-winusb-in-a-wbdi-driver.md
+- name: 生体認証ドライバーのインストール
+  href: installing-a-biometric-driver.md
+- name: WBDI ドライバーでのキューの管理
+  href: managing-queues-in-a-wbdi-driver.md
+- name: WBDI ドライバー用のデバイス インターフェイスの作成
+  href: creating-a-device-interface-for-a-wbdi-driver.md
+- name: WBDI ドライバーでのセキュリティで保護されたチャネルのサポート
+  href: supporting-secure-channels-in-wbdi-drivers.md
+- name: 非 PnP デバイスまたは専用スタックでの WBDI の使用
+  href: using-wbdi-with-non-pnp-devices-or-proprietary-stacks.md
+- name: 生体認証ドライバーのハードウェアに関する考慮事項
+  href: hardware-considerations-for-biometric-drivers.md
+- name: Windows Update における生体認証ドライバーのランク付け
+  href: ranking-a-biometric-driver-on-windows-update.md
+- name: 生体認証ドライバーのテスト
+  href: testing-biometric-drivers.md
+- name: WBDI ドライバーへの署名
+  href: signing-wbdi-drivers.md
+- name: 'Windows Hello:フィンガープリント ドライバーを送信する手順'
+  href: windows-hello-driver-signing.md
+- name: カスタム コントロールのコード
+  href: custom-control-codes.md

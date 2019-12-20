@@ -4,12 +4,12 @@ description: 製品のハードウェア ダッシュボード申請を管理し
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 11e4228e3a54079e6ae74d988a6f8e043a1ea026
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96b831612540ecae02d14dde15bbbbb8627f9ba0
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364430"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209226"
 ---
 # <a name="manage-product-submissions"></a>製品申請の管理
 
@@ -82,7 +82,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 
 次のコード例は、Microsoft ハードウェア API を呼び出す方法を示しています。
 
-* [C# のサンプル](http://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
+* [C# のサンプル](https://download.microsoft.com/download/C/F/4/CF404E53-87A0-4204-BA13-A64B09A237C1/HardwareApiCSharpSample.zip)
 
 ## <a name="data-resources"></a>データ リソース
 

@@ -1,66 +1,64 @@
 - name: Windows ドライバー サンプル
-  items:
-    - name: Windows ドライバー サンプル
-      href: index.md
-    - name: オーディオ ドライバーのサンプル
-      href: audio-driver-samples.md
-    - name: AVStream ドライバーのサンプル
-      href: avstream-driver-samples.md
-    - name: バッテリ ドライバーのサンプル
-      href: battery-driver-samples.md
-    - name: 生体認証ドライバーのサンプル
-      href: biometrics-driver-samples.md
-    - name: Bluetooth ドライバーのサンプル
-      href: bluetooth-driver-samples.md
-    - name: ファイル システム ドライバーのサンプル
-      href: file-system-driver-samples.md
-    - name: 汎用ドライバーのサンプル
-      href: general-driver-samples.md
-    - name: 汎用入力/出力 (GPIO) ドライバーのサンプル
-      href: general-purpose-input-output--gpio--driver-samples.md
-    - name: ヒューマン インターフェイス デバイス (HID) ドライバーのサンプル
-      href: human-interface-devices--hid--driver-samples.md
-    - name: 入力ドライバーのサンプル
-      href: input-driver-samples.md
-    - name: ネットワーク ドライバーのサンプル
-      href: networking-driver-samples.md
-    - name: 近距離近接通信 (NFP) ドライバーのサンプル
-      href: near-field-proximity--nfp--driver-samples.md
-    - name: 電源フレームワーク (PoFx) ドライバーのサンプル
-      href: power-framework--pofx--driver-samples.md
-    - name: Point of Service (POS) ドライバーのサンプル
-      href: point-of-service--pos--driver-samples.md
-    - name: 印刷ドライバーのサンプル
-      href: print-driver-samples.md
-    - name: Secure Digital (SD) ドライバーのサンプル
-      href: secure-digital--sd--driver-samples.md
-    - name: セキュリティ ドライバーのサンプル
-      href: security-driver-samples.md
-    - name: センサー ドライバーのサンプル
-      href: sensor-driver-samples.md
-    - name: シリアル ドライバーのサンプル
-      href: serial-driver-samples.md
-    - name: セットアップのサンプル
-      href: driver-setup-samples.md
-    - name: スマート カード ドライバーのサンプル
-      href: smart-card-driver-samples.md
-    - name: SPB (Simple Peripheral Bus) ドライバーのサンプル
-      href: simple-peripheral-bus--spb--driver-samples.md
-    - name: ストレージ ドライバーのサンプル
-      href: storage-driver-samples.md
-    - name: 温度ドライバーのサンプル
-      href: thermal-driver-samples.md
-    - name: ツールのサンプル
-      href: driver-tools-samples.md
-    - name: 信頼される実行環境 (TrEE) ドライバーのサンプル
-      href: tree-driver-samples.md
-    - name: USB (ユニバーサル シリアル バス) ドライバーのサンプル
-      href: universal-serial-bus--usb--driver-samples.md
-    - name: ビデオ ドライバーのサンプル
-      href: video-driver-samples.md
-    - name: Windows Image Acquisition (WIA) ドライバーのサンプル
-      href: wia-driver-samples.md
-    - name: Windows Management Instrumentation (WMI) ドライバーのサンプル
-      href: windows-management-instrumentation--wmi--driver-samples.md
-    - name: Windows ポータブル デバイス (WPD) ドライバーのサンプル
-      href: windows-portable-device--wpd--driver-samples.md
+  href: index.md
+- name: オーディオ ドライバーのサンプル
+  href: audio-driver-samples.md
+- name: AVStream ドライバーのサンプル
+  href: avstream-driver-samples.md
+- name: バッテリ ドライバーのサンプル
+  href: battery-driver-samples.md
+- name: 生体認証ドライバーのサンプル
+  href: biometrics-driver-samples.md
+- name: Bluetooth ドライバーのサンプル
+  href: bluetooth-driver-samples.md
+- name: ファイル システム ドライバーのサンプル
+  href: file-system-driver-samples.md
+- name: 汎用ドライバーのサンプル
+  href: general-driver-samples.md
+- name: 汎用入力/出力 (GPIO) ドライバーのサンプル
+  href: general-purpose-input-output--gpio--driver-samples.md
+- name: ヒューマン インターフェイス デバイス (HID) ドライバーのサンプル
+  href: human-interface-devices--hid--driver-samples.md
+- name: 入力ドライバーのサンプル
+  href: input-driver-samples.md
+- name: ネットワーク ドライバーのサンプル
+  href: networking-driver-samples.md
+- name: 近距離近接通信 (NFP) ドライバーのサンプル
+  href: near-field-proximity--nfp--driver-samples.md
+- name: 電源フレームワーク (PoFx) ドライバーのサンプル
+  href: power-framework--pofx--driver-samples.md
+- name: Point of Service (POS) ドライバーのサンプル
+  href: point-of-service--pos--driver-samples.md
+- name: 印刷ドライバーのサンプル
+  href: print-driver-samples.md
+- name: Secure Digital (SD) ドライバーのサンプル
+  href: secure-digital--sd--driver-samples.md
+- name: セキュリティ ドライバーのサンプル
+  href: security-driver-samples.md
+- name: センサー ドライバーのサンプル
+  href: sensor-driver-samples.md
+- name: シリアル ドライバーのサンプル
+  href: serial-driver-samples.md
+- name: セットアップのサンプル
+  href: driver-setup-samples.md
+- name: スマート カード ドライバーのサンプル
+  href: smart-card-driver-samples.md
+- name: SPB (Simple Peripheral Bus) ドライバーのサンプル
+  href: simple-peripheral-bus--spb--driver-samples.md
+- name: ストレージ ドライバーのサンプル
+  href: storage-driver-samples.md
+- name: 温度ドライバーのサンプル
+  href: thermal-driver-samples.md
+- name: ツールのサンプル
+  href: driver-tools-samples.md
+- name: 信頼される実行環境 (TrEE) ドライバーのサンプル
+  href: tree-driver-samples.md
+- name: USB (ユニバーサル シリアル バス) ドライバーのサンプル
+  href: universal-serial-bus--usb--driver-samples.md
+- name: ビデオ ドライバーのサンプル
+  href: video-driver-samples.md
+- name: Windows Image Acquisition (WIA) ドライバーのサンプル
+  href: wia-driver-samples.md
+- name: Windows Management Instrumentation (WMI) ドライバーのサンプル
+  href: windows-management-instrumentation--wmi--driver-samples.md
+- name: Windows ポータブル デバイス (WPD) ドライバーのサンプル
+  href: windows-portable-device--wpd--driver-samples.md

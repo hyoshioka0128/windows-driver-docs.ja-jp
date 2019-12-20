@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 5cb46404fc7381d07ebc02943e0f453ffe2b1c1b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d2a7da20e127757192cc0dd88fd0c70cb213b5dc
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842801"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210818"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 の WDF ドライバーの新機能
 
@@ -85,11 +85,11 @@ Windows 10、バージョン 1703 では、WDF に以下の機能強化が含ま
 ## <a name="wdf-source-code-is-publicly-available"></a>WDF ソース コードが公開中
 
 
--   WDF ソース コードは GitHub でオープン ソースとして入手できます。 これは、Windows 10 に付属する WDF ランタイム ライブラリのソース コードと同じです。 ドライバーと WDF のやりとりを追跡できるとき、ドライバーをさらに効果的にデバッグできます。 <http://github.com/Microsoft/Windows-Driver-Frameworks> からダウンロードしてください。
+-   WDF ソース コードは GitHub でオープン ソースとして入手できます。 これは、Windows 10 に付属する WDF ランタイム ライブラリのソース コードと同じです。 ドライバーと WDF のやりとりを追跡できるとき、ドライバーをさらに効果的にデバッグできます。 <https://github.com/Microsoft/Windows-Driver-Frameworks> からダウンロードしてください。
 
 -   Windows 10 の WDF のプライベート シンボル ファイルが Microsoft Symbol Server から入手できるようになりました。
 
--   Windows Driver Kit (WDK) 10 サンプルも GitHub に公開されています。 <http://github.com/Microsoft/Windows-Driver-Samples> からダウンロードしてください。
+-   Windows Driver Kit (WDK) 10 サンプルも GitHub に公開されています。 <https://github.com/Microsoft/Windows-Driver-Samples> からダウンロードしてください。
 
 ## <a name="automatic-source-level-debugging-of-framework-code"></a>フレームワーク コードの自動ソース レベル デバッグ
 

@@ -1,74 +1,72 @@
 - name: バッテリ デバイス設計ガイド
+  href: index.md
+- name: バッテリ ミニクラス ドライバーの作成
   items:
-    - name: バッテリ デバイス設計ガイド
-      href: index.md
     - name: バッテリ ミニクラス ドライバーの作成
+      href: writing-battery-miniclass-drivers.md
+    - name: システム バッテリ管理の概要
+      href: overview-of-system-battery-management.md
+    - name: バッテリ クラス ドライバーとバッテリ ミニクラス ドライバーの相互作用
       items:
-        - name: バッテリ ミニクラス ドライバーの作成
-          href: writing-battery-miniclass-drivers.md
-        - name: システム バッテリ管理の概要
-          href: overview-of-system-battery-management.md
         - name: バッテリ クラス ドライバーとバッテリ ミニクラス ドライバーの相互作用
-          items:
-            - name: バッテリ クラス ドライバーとバッテリ ミニクラス ドライバーの相互作用
-              href: interaction-of-battery-class-and-miniclass-drivers.md
-            - name: バッテリ クラス ドライバーの機能
-              href: battery-class-driver-functionality.md
-            - name: バッテリ ミニクラス ドライバーの機能
-              href: battery-miniclass-driver-functionality.md
-        - name: 必要なバッテリ ミニクラス ドライバー機能の提供
-          href: supplying-required-battery-miniclass-driver-functionality.md
-        - name: バッテリ ミニクラス ドライバーの DriverEntry ルーチン
-          href: driverentry-routine-of-a-battery-miniclass-driver.md
-        - name: バッテリ ミニクラス ドライバーの AddDevice ルーチン
-          items:
-            - name: バッテリ ミニクラス ドライバーの AddDevice ルーチン
-              href: adddevice-routine-of-a-battery-miniclass-driver.md
-            - name: バッテリ ミニクラス ドライバーの FDO の作成
-              href: creating-an-fdo-in-the-battery-miniclass-driver.md
-            - name: バッテリ クラス デバイスの初期化
-              href: initializing-the-battery-class-device.md
-        - name: バッテリ ミニクラス ドライバーの DispatchDeviceControl ルーチン
-          href: dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md
-        - name: バッテリ ミニクラス ドライバーの DispatchSystemControl ルーチン
-          href: dispatchsystemcontrol-routine-of-a-battery-miniclass-driver.md
-        - name: バッテリ クラス ドライバー クエリへの応答
-          items:
-            - name: バッテリ クラス ドライバー クエリへの応答
-              href: responding-to-battery-class-driver-queries.md
-            - name: バッテリ タグ クエリへの応答
-              href: responding-to-battery-tag-queries.md
-            - name: バッテリ情報クエリへの応答
-              href: responding-to-battery-information-queries.md
-            - name: バッテリ状態クエリへの応答
-              href: responding-to-battery-status-queries.md
-        - name: バッテリ デバイス通知の提供
-          items:
-            - name: バッテリ デバイス通知の提供
-              href: supplying-battery-device-notification.md
-            - name: バッテリ状態と通知ルーチンの相互作用
-              href: interaction-of-battery-status-and-notification-routines.md
-            - name: バッテリ通知の設定とキャンセル
-              href: setting-and-canceling-battery-notification.md
-        - name: バッテリ ミニクラス ドライバーの Unload ルーチン
-          href: unload-routine-of-a-battery-miniclass-driver.md
-        - name: バッテリ ドライバーのインストール
-          href: installing-a-battery-driver.md
-    - name: UPS ミニドライバーの作成
+          href: interaction-of-battery-class-and-miniclass-drivers.md
+        - name: バッテリ クラス ドライバーの機能
+          href: battery-class-driver-functionality.md
+        - name: バッテリ ミニクラス ドライバーの機能
+          href: battery-miniclass-driver-functionality.md
+    - name: 必要なバッテリ ミニクラス ドライバー機能の提供
+      href: supplying-required-battery-miniclass-driver-functionality.md
+    - name: バッテリ ミニクラス ドライバーの DriverEntry ルーチン
+      href: driverentry-routine-of-a-battery-miniclass-driver.md
+    - name: バッテリ ミニクラス ドライバーの AddDevice ルーチン
       items:
-        - name: UPS ミニドライバーの作成
-          href: writing-ups-minidrivers.md
-        - name: UPS ミニドライバーの機能
-          href: ups-minidriver-functionality.md
+        - name: バッテリ ミニクラス ドライバーの AddDevice ルーチン
+          href: adddevice-routine-of-a-battery-miniclass-driver.md
+        - name: バッテリ ミニクラス ドライバーの FDO の作成
+          href: creating-an-fdo-in-the-battery-miniclass-driver.md
+        - name: バッテリ クラス デバイスの初期化
+          href: initializing-the-battery-class-device.md
+    - name: バッテリ ミニクラス ドライバーの DispatchDeviceControl ルーチン
+      href: dispatchdevicecontrol-routine-of-a-battery-miniclass-driver.md
+    - name: バッテリ ミニクラス ドライバーの DispatchSystemControl ルーチン
+      href: dispatchsystemcontrol-routine-of-a-battery-miniclass-driver.md
+    - name: バッテリ クラス ドライバー クエリへの応答
+      items:
+        - name: バッテリ クラス ドライバー クエリへの応答
+          href: responding-to-battery-class-driver-queries.md
+        - name: バッテリ タグ クエリへの応答
+          href: responding-to-battery-tag-queries.md
+        - name: バッテリ情報クエリへの応答
+          href: responding-to-battery-information-queries.md
+        - name: バッテリ状態クエリへの応答
+          href: responding-to-battery-status-queries.md
+    - name: バッテリ デバイス通知の提供
+      items:
+        - name: バッテリ デバイス通知の提供
+          href: supplying-battery-device-notification.md
+        - name: バッテリ状態と通知ルーチンの相互作用
+          href: interaction-of-battery-status-and-notification-routines.md
+        - name: バッテリ通知の設定とキャンセル
+          href: setting-and-canceling-battery-notification.md
+    - name: バッテリ ミニクラス ドライバーの Unload ルーチン
+      href: unload-routine-of-a-battery-miniclass-driver.md
+    - name: バッテリ ドライバーのインストール
+      href: installing-a-battery-driver.md
+- name: UPS ミニドライバーの作成
+  items:
+    - name: UPS ミニドライバーの作成
+      href: writing-ups-minidrivers.md
+    - name: UPS ミニドライバーの機能
+      href: ups-minidriver-functionality.md
+    - name: UPS レジストリ エントリ
+      items:
         - name: UPS レジストリ エントリ
-          items:
-            - name: UPS レジストリ エントリ
-              href: ups-registry-entries.md
-            - name: UPS\Status レジストリ エントリ
-              href: ups-status-registry-entries.md
-            - name: UPS\ServiceProviders レジストリ エントリ
-              href: ups-serviceproviders-registry-entries.md
-        - name: サンプル UPS ミニドライバー
-          href: sample-ups-minidriver.md
-        - name: UPS ミニドライバーのインストール
-          href: installing-ups-minidrivers.md
+          href: ups-registry-entries.md
+        - name: UPS\Status レジストリ エントリ
+          href: ups-status-registry-entries.md
+        - name: UPS\ServiceProviders レジストリ エントリ
+          href: ups-serviceproviders-registry-entries.md
+    - name: サンプル UPS ミニドライバー
+      href: sample-ups-minidriver.md
+    - name: UPS ミニドライバーのインストール
+      href: installing-ups-minidrivers.md

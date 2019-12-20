@@ -5,12 +5,12 @@ ms.assetid: c8e248d4-a419-48e1-839d-1bbb9adda382
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c789f0b204b1752d652073e463989eb4575a7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 852fcca8b1f2b0601172a7babd9b05cb5d033459
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364432"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209164"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>バルク メタデータ パッケージの提出
 
@@ -142,7 +142,7 @@ BulkMetadataSubmission.xml ドキュメント内のデータは、以降で説�
 
 **BulkMetadataSubmission XML スキーマの名前空間**
 
-PcMetadataSubmission XML スキーマの名前空間は、次のようになります: http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/BulkMetadataSubmission
+PcMetadataSubmission XML スキーマの名前空間は、次のようになります: `http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/BulkMetadataSubmission`
 
 **BulkMetadataSubmission XML の要素/属性の概要**
 

@@ -1,52 +1,50 @@
 - name: Windows ドライバーの概要
+  href: index.md
+- name: ドライバーとは
+  href: what-is-a-driver-.md
+- name: ドライバーの作成の必要性
+  href: do-you-need-to-write-a-driver-.md
+- name: ドライバー モデルの選択
+  href: choosing-a-driver-model.md
+- name: 初めてのドライバーの作成
   items:
-    - name: Windows ドライバーの概要
-      href: index.md
-    - name: ドライバーとは
-      href: what-is-a-driver-.md
-    - name: ドライバーの作成の必要性
-      href: do-you-need-to-write-a-driver-.md
-    - name: ドライバー モデルの選択
-      href: choosing-a-driver-model.md
     - name: 初めてのドライバーの作成
-      items:
-        - name: 初めてのドライバーの作成
-          href: writing-your-first-driver.md
-        - name: テンプレートを使ったユニバーサル Windows ドライバー (UMDF 2) の作成
-          href: writing-a-umdf-driver-based-on-a-template.md
-        - name: ユニバーサル Hello World ドライバー (KMDF) の作成
-          href: writing-a-very-small-kmdf--driver.md
-        - name: テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
-          href: writing-a-kmdf-driver-based-on-a-template.md
-    - name: Windows 互換ハードウェア開発ボード
-      href: windows-compatible-hardware-development-boards.md
-    - name: Sharks Cove ハードウェア開発ボード
-      href: sharks-cove-hardware-development-board.md
-    - name: ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
-      href: provision-a-target-computer-wdk-8-1.md
+      href: writing-your-first-driver.md
+    - name: テンプレートを使ったユニバーサル Windows ドライバー (UMDF 2) の作成
+      href: writing-a-umdf-driver-based-on-a-template.md
+    - name: ユニバーサル Hello World ドライバー (KMDF) の作成
+      href: writing-a-very-small-kmdf--driver.md
+    - name: テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
+      href: writing-a-kmdf-driver-based-on-a-template.md
+- name: Windows 互換ハードウェア開発ボード
+  href: windows-compatible-hardware-development-boards.md
+- name: Sharks Cove ハードウェア開発ボード
+  href: sharks-cove-hardware-development-board.md
+- name: ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
+  href: provision-a-target-computer-wdk-8-1.md
+- name: すべてのドライバー開発者のための概念
+  items:
     - name: すべてのドライバー開発者のための概念
-      items:
-        - name: すべてのドライバー開発者のための概念
-          href: concepts-and-knowledge-for-all-driver-developers.md
-        - name: ユーザー モードとカーネル モード
-          href: user-mode-and-kernel-mode.md
-        - name: 仮想アドレス領域
-          href: virtual-address-spaces.md
-        - name: デバイス ノードとデバイス スタック
-          href: device-nodes-and-device-stacks.md
-        - name: I/O 要求パケット
-          href: i-o-request-packets.md
-        - name: ドライバー スタック
-          href: driver-stacks.md
-        - name: ミニドライバー、ミニポート ドライバー、ドライバー ペア
-          href: minidrivers-and-driver-pairs.md
-        - name: 汎用ドライバー ペア モデルとしての KMDF
-          href: kmdf-as-a-generic-pair-model.md
-        - name: KMDF 拡張機能とドライバー トリプル
-          href: extensions-and-driver-triples.md
-        - name: ドライバーの上端と下端
-          href: upper-and-lower-edges-of-drivers.md
-        - name: Windows Driver Kit (WDK) のヘッダー ファイル
-          href: header-files-in-the-windows-driver-kit.md
-        - name: 異なるバージョンの Windows に対するドライバーの作成
-          href: platforms-and-driver-versions.md
+      href: concepts-and-knowledge-for-all-driver-developers.md
+    - name: ユーザー モードとカーネル モード
+      href: user-mode-and-kernel-mode.md
+    - name: 仮想アドレス領域
+      href: virtual-address-spaces.md
+    - name: デバイス ノードとデバイス スタック
+      href: device-nodes-and-device-stacks.md
+    - name: I/O 要求パケット
+      href: i-o-request-packets.md
+    - name: ドライバー スタック
+      href: driver-stacks.md
+    - name: ミニドライバー、ミニポート ドライバー、ドライバー ペア
+      href: minidrivers-and-driver-pairs.md
+    - name: 汎用ドライバー ペア モデルとしての KMDF
+      href: kmdf-as-a-generic-pair-model.md
+    - name: KMDF 拡張機能とドライバー トリプル
+      href: extensions-and-driver-triples.md
+    - name: ドライバーの上端と下端
+      href: upper-and-lower-edges-of-drivers.md
+    - name: Windows Driver Kit (WDK) のヘッダー ファイル
+      href: header-files-in-the-windows-driver-kit.md
+    - name: 異なるバージョンの Windows に対するドライバーの作成
+      href: platforms-and-driver-versions.md

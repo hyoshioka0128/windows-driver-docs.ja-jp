@@ -5,12 +5,12 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 976eaeaa857826b7c896d3944c1f782103a1da8f
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 6cf4935ac0532d4db9b0e603a6707e5201e0720a
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863136"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210650"
 ---
 # <a name="universal-serial-bus-usb"></a>ユニバーサル シリアル バス (USB)
 
@@ -102,7 +102,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <a href="https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog" data-raw-source="[Microsoft Windows USB Core Team Blog](https://techcommunity.microsoft.com/t5/Microsoft-USB-Blog/bg-p/MicrosoftUSBBlog)">Microsoft Windows USB コア チーム ブログ</a>
 <p>Microsoft USB チームが記述した投稿をご覧ください。 このブログでは、Windows PC に搭載されたさまざまな USB ホスト コントローラーや USB ハブと連動する Windows USB ドライバー スタックを中心に取り上げています。 USB クライアント ドライバーの開発者や USB ハードウェアのデザイナーがドライバー スタック実装を理解し、一般的な問題を解決し、ツールを利用してトレースとログ ファイルを集める方法を説明する際に役立つリソース。</p>
 <a href="https://community.osr.com/categories/ntdev" data-raw-source="[OSR Online Lists - ntdev](https://community.osr.com/categories/ntdev)">OSR オンライン リスト - ntdev</a>
-<p>カーネルモード ドライバーの開発者のための <a href="http://www.osronline.com/index.cfm" data-raw-source="[OSR Online](http://www.osronline.com/index.cfm)">OSR オンライン</a>によって管理されるディスカッション リスト。</p>
+<p>カーネルモード ドライバーの開発者のための <a href="https://www.osronline.com/index.cfm" data-raw-source="[OSR Online](https://www.osronline.com/index.cfm)">OSR オンライン</a>によって管理されるディスカッション リスト。</p>
 <a href="https://msdn.microsoft.com/windows/hardware/" data-raw-source="[Windows Dev-Center for Hardware Development](https://msdn.microsoft.com/windows/hardware/)">ハードウェア開発のための Windows Dev-Center</a>
 <p>Windows オペレーティング システムで動作する USB デバイスとドライバーを初めて開発する開発者からよく寄せられる質問に基づくその他のリソース。</p>
 <p></p>
@@ -114,7 +114,7 @@ Windows オペレーティング システムは、公式の USB 仕様に準拠
 <p><strong>学習向け USB ハードウェア</strong></p>
 <a href="microsoft-usb-test-tool--mutt--devices.md" data-raw-source="[MUTT devices](microsoft-usb-test-tool--mutt--devices.md)">MUTT デバイス</a>
 <p>MUTT デバイス、SuperMUTT デバイス、付随するソフトウェア パッケージは USB テストの HCK スイートに統合されています。 USB のコントローラー、デバイス、システムの開発周期において、特にストレス テストにおいて使用できる自動化されたテストを提供します。</p>
-<a href="http://www.osronline.com/index.cfm" data-raw-source="[OSR USB FX2 Learning Kit](http://www.osronline.com/index.cfm)">OSR USB FX2 ラーニング キット</a>
+<a href="https://www.osronline.com/index.cfm" data-raw-source="[OSR USB FX2 Learning Kit](https://www.osronline.com/index.cfm)">OSR USB FX2 ラーニング キット</a>
 <p>USB ドライバーを初めて開発する場合。 このキットは、このドキュメント セットに含まれている学習用 USB サンプルに最も適しています。 OSR オンライン ストアからラーニング キットを入手できます。</p></td>
 <td><strong>USB クライアント ドライバーを記述する (KMDF、UMDF)</strong>
 <p>USB ドライバー開発の概要を紹介します。 デバイスに USB ドライバーを提供するために最も適したモデルを選択するための情報を提供します。 このセクションには、Microsoft Visual Studio に付属する USB テンプレートを使用し、初めてのユーザーモードおよびカーネルモード USB ドライバーを記述する方法をついてのチュートリアルも含まれています。</p>

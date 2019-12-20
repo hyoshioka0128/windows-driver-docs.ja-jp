@@ -1,44 +1,42 @@
 - name: POS デバイス ドライバー設計ガイド
+  href: index.md
+- name: POS ドライバーのサンプル
   items:
-    - name: POS デバイス ドライバー設計ガイド
-      href: index.md
     - name: POS ドライバーのサンプル
-      items:
-        - name: POS ドライバーのサンプル
-          href: driver-samples.md
-        - name: バーコード スキャナー ドライバーのサンプル
-          href: barcode-scanner-driver.md
-        - name: 磁気ストライプ リーダー ドライバーのサンプル
-          href: magnetic-stripe-reader-driver.md
-    - name: バーコード スキャナー Bluetooth サービスの UUID
-      href: barcode-scanner-bluetooth-service-uuids.md
+      href: driver-samples.md
+    - name: バーコード スキャナー ドライバーのサンプル
+      href: barcode-scanner-driver.md
+    - name: 磁気ストライプ リーダー ドライバーのサンプル
+      href: magnetic-stripe-reader-driver.md
+- name: バーコード スキャナー Bluetooth サービスの UUID
+  href: barcode-scanner-bluetooth-service-uuids.md
+- name: バーコード スキャナーのイベント
+  items:
     - name: バーコード スキャナーのイベント
-      items:
-        - name: バーコード スキャナーのイベント
-          href: barcode-scanner-events.md
-        - name: BarcodeScannerDataReceived
-          href: barcodescannerdatareceived.md
-        - name: BarcodeScannerErrorOccurred
-          href: barcodescannererroroccurred.md
-        - name: BarcodeScannerImagePreviewReceived
-          href: barcodescannerimagepreviewreceived.md
-        - name: BarcodeScannerTriggerPressed
-          href: barcodescannertriggerpressed.md
-        - name: BarcodeScannerTriggerReleased
-          href: barcodescannertriggerreleased.md
+      href: barcode-scanner-events.md
+    - name: BarcodeScannerDataReceived
+      href: barcodescannerdatareceived.md
+    - name: BarcodeScannerErrorOccurred
+      href: barcodescannererroroccurred.md
+    - name: BarcodeScannerImagePreviewReceived
+      href: barcodescannerimagepreviewreceived.md
+    - name: BarcodeScannerTriggerPressed
+      href: barcodescannertriggerpressed.md
+    - name: BarcodeScannerTriggerReleased
+      href: barcodescannertriggerreleased.md
+- name: 磁気ストライプ リーダーのイベント
+  items:
     - name: 磁気ストライプ リーダーのイベント
-      items:
-        - name: 磁気ストライプ リーダーのイベント
-          href: magnetic-stripe-reader-events.md
-        - name: MagneticStripeReaderDataReceived
-          href: magneticstripereaderdatareceived.md
-        - name: MagneticStripeReaderErrorOccured
-          href: magneticstripereadererroroccured.md
+      href: magnetic-stripe-reader-events.md
+    - name: MagneticStripeReaderDataReceived
+      href: magneticstripereaderdatareceived.md
+    - name: MagneticStripeReaderErrorOccured
+      href: magneticstripereadererroroccured.md
+- name: POS のイベント
+  items:
     - name: POS のイベント
-      items:
-        - name: POS のイベント
-          href: pos-events.md
-        - name: ReleaseDeviceRequested
-          href: releasedevicerequested.md
-        - name: StatusUpdated
-          href: statusupdated.md
+      href: pos-events.md
+    - name: ReleaseDeviceRequested
+      href: releasedevicerequested.md
+    - name: StatusUpdated
+      href: statusupdated.md

@@ -1,74 +1,72 @@
 - name: パラレル デバイス設計ガイド
+  href: index.md
+- name: パラレル ポートとデバイスの概要
   items:
-    - name: パラレル デバイス設計ガイド
-      href: index.md
     - name: パラレル ポートとデバイスの概要
-      items:
-        - name: パラレル ポートとデバイスの概要
-          href: introduction-to-parallel-ports-and-devices.md
-        - name: パラレル ポートの物理構成
-          href: physical-configuration-of-parallel-ports.md
-        - name: パラレル ポートに接続されているデバイスの物理構成
-          href: physical-configuration-of-devices-attached-to-a-parallel-port.md
+      href: introduction-to-parallel-ports-and-devices.md
+    - name: パラレル ポートの物理構成
+      href: physical-configuration-of-parallel-ports.md
+    - name: パラレル ポートに接続されているデバイスの物理構成
+      href: physical-configuration-of-devices-attached-to-a-parallel-port.md
+- name: システム提供のパラレル ドライバー
+  items:
     - name: システム提供のパラレル ドライバー
-      items:
-        - name: システム提供のパラレル ドライバー
-          href: system-supplied-parallel-drivers.md
-        - name: システム提供のパラレル ドライバーの機能
-          href: features-of-system-supplied-parallel-drivers.md
-        - name: パラレル ポートとデバイスのデバイス スタック
-          href: device-stacks-for-parallel-ports-and-devices.md
-        - name: 並列デバイスのインターフェイス、内部名、シンボリック リンク
-          href: parallel-device-interfaces--internal-names--and-symbolic-links.md
-        - name: パラレル ポートとデバイスの IOCTL とコールバックのサポート
-          href: ioctl-and-callback-support-for-parallel-ports-and-devices.md
+      href: system-supplied-parallel-drivers.md
+    - name: システム提供のパラレル ドライバーの機能
+      href: features-of-system-supplied-parallel-drivers.md
+    - name: パラレル ポートとデバイスのデバイス スタック
+      href: device-stacks-for-parallel-ports-and-devices.md
+    - name: 並列デバイスのインターフェイス、内部名、シンボリック リンク
+      href: parallel-device-interfaces--internal-names--and-symbolic-links.md
+    - name: パラレル ポートとデバイスの IOCTL とコールバックのサポート
+      href: ioctl-and-callback-support-for-parallel-ports-and-devices.md
+- name: ベンダー提供のパラレル ドライバー
+  items:
     - name: ベンダー提供のパラレル ドライバー
+      href: vendor-supplied-parallel-drivers.md
+    - name: ベンダー提供のパラレル ドライバーの要件
+      href: requirements-for-vendor-supplied-parallel-drivers.md
+    - name: パラレル ポートの操作
       items:
-        - name: ベンダー提供のパラレル ドライバー
-          href: vendor-supplied-parallel-drivers.md
-        - name: ベンダー提供のパラレル ドライバーの要件
-          href: requirements-for-vendor-supplied-parallel-drivers.md
         - name: パラレル ポートの操作
-          items:
-            - name: パラレル ポートの操作
-              href: operating-a-parallel-port.md
-            - name: パラレル ポートの作成と開始
-              href: creating-and-starting-a-parallel-port.md
-            - name: パラレル ポートの開始と終了
-              href: opening-and-closing-a-parallel-port.md
-            - name: パラレル ポートに関する情報の取得
-              href: obtaining-information-about-a-parallel-port.md
-            - name: パラレル ポートの使用の同期
-              href: synchronizing-the-use-of-a-parallel-port.md
-            - name: パラレル ポートに接続されている IEEE 1284 デバイスの選択と選択解除
-              href: selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md
-            - name: パラレル ポートの通信モードの設定と解除
-              href: setting-and-clearing-the-communication-mode-on-a-parallel-port.md
-            - name: IEEE 1284.3 データ リンク デバイスへの接続
-              href: connecting-to-an-ieee-1284-3-data-link-device.md
-            - name: 割り込みサービス ルーチンのパラレル ポートへの接続する
-              href: connecting-an-interrupt-service-routine-to-a-parallel-port.md
+          href: operating-a-parallel-port.md
+        - name: パラレル ポートの作成と開始
+          href: creating-and-starting-a-parallel-port.md
+        - name: パラレル ポートの開始と終了
+          href: opening-and-closing-a-parallel-port.md
+        - name: パラレル ポートに関する情報の取得
+          href: obtaining-information-about-a-parallel-port.md
+        - name: パラレル ポートの使用の同期
+          href: synchronizing-the-use-of-a-parallel-port.md
+        - name: パラレル ポートに接続されている IEEE 1284 デバイスの選択と選択解除
+          href: selecting-and-deselecting-an-ieee-1284-device-attached-to-a-parallel-p.md
+        - name: パラレル ポートの通信モードの設定と解除
+          href: setting-and-clearing-the-communication-mode-on-a-parallel-port.md
+        - name: IEEE 1284.3 データ リンク デバイスへの接続
+          href: connecting-to-an-ieee-1284-3-data-link-device.md
+        - name: 割り込みサービス ルーチンのパラレル ポートへの接続する
+          href: connecting-an-interrupt-service-routine-to-a-parallel-port.md
+    - name: パラレル ポートに接続されているパラレル デバイスの操作
+      items:
         - name: パラレル ポートに接続されているパラレル デバイスの操作
-          items:
-            - name: パラレル ポートに接続されているパラレル デバイスの操作
-              href: operating-a-parallel-device-attached-to-a-parallel-port.md
-            - name: パラレル デバイスの開始と使用
-              href: opening-and-using-a-parallel-device.md
-            - name: パラレル デバイスへの接続
-              href: connecting-to-a-parallel-device.md
-            - name: パラレル デバイスに関する情報の取得
-              href: obtaining-information-about-a-parallel-device.md
-            - name: パラレル デバイスに使用するパラレル ポートのロックとロック解除
-              href: locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md
-            - name: パラレル デバイスの通信モードの設定と解除
-              href: setting-and-clearing-a-communication-mode-for-a-parallel-device.md
-            - name: パラレル デバイスの属性の設定
-              href: setting-attributes-on-a-parallel-device.md
-            - name: パラレル デバイスの読み取りと書き込み
-              href: reading-and-writing-a-parallel-device.md
-            - name: パラレル デバイスの I/O 要求に対するデバイス固有の操作
-              href: device-specific-operations-io-requests-parallel-devices.md
-            - name: パラレル ポートの I/O 要求に対するデバイス固有の操作
-              href: device-specific-operations-io-requests-parallel-ports.md
-        - name: パラレル ポートとデバイスのインストール
-          href: installing-parallel-ports-and-devices.md
+          href: operating-a-parallel-device-attached-to-a-parallel-port.md
+        - name: パラレル デバイスの開始と使用
+          href: opening-and-using-a-parallel-device.md
+        - name: パラレル デバイスへの接続
+          href: connecting-to-a-parallel-device.md
+        - name: パラレル デバイスに関する情報の取得
+          href: obtaining-information-about-a-parallel-device.md
+        - name: パラレル デバイスに使用するパラレル ポートのロックとロック解除
+          href: locking-and-unlocking-a-parallel-port-for-use-by-a-parallel-device.md
+        - name: パラレル デバイスの通信モードの設定と解除
+          href: setting-and-clearing-a-communication-mode-for-a-parallel-device.md
+        - name: パラレル デバイスの属性の設定
+          href: setting-attributes-on-a-parallel-device.md
+        - name: パラレル デバイスの読み取りと書き込み
+          href: reading-and-writing-a-parallel-device.md
+        - name: パラレル デバイスの I/O 要求に対するデバイス固有の操作
+          href: device-specific-operations-io-requests-parallel-devices.md
+        - name: パラレル ポートの I/O 要求に対するデバイス固有の操作
+          href: device-specific-operations-io-requests-parallel-ports.md
+    - name: パラレル ポートとデバイスのインストール
+      href: installing-parallel-ports-and-devices.md

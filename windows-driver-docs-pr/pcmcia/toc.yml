@@ -1,46 +1,44 @@
 - name: PCMCIA バス ドライバー設計ガイド
+  href: index.md
+- name: PCMCIA デバイスの属性メモリにアクセスする
   items:
-    - name: PCMCIA バス ドライバー設計ガイド
-      href: index.md
     - name: PCMCIA デバイスの属性メモリにアクセスする
-      items:
-        - name: PCMCIA デバイスの属性メモリにアクセスする
-          href: access-attribute-memory-of-a-pcmcia-device.md
-        - name: PCMCIA デバイスの属性メモリにアクセスするための要件
-          href: requirements-for-accessing-attribute-memory-of-a-pcmcia-device.md
-        - name: プラグ アンド プレイの I/O 要求を使用して PCMCIA 属性メモリにアクセスする
-          href: access-pcmcia-attribute-memory-by-using-a-plug-and-play-i-o-request.md
-        - name: BUS_INTERFACE_STANDARD を使用して PCMCIA 属性メモリにアクセスする
-          href: access-pcmcia-attribute-memory-by-using-a-bus-interface-standard-inter.md
-        - name: 永続メモリ ウィンドウを使用して PCMCIA 属性メモリにアクセスする
-          href: access-pcmcia-attribute-memory-through-a-permanent-memory-window.md
-        - name: PCMCIA_INTERFACE_STANDARD を使用して PCMCIA 属性メモリにアクセスする
-          href: access-pcmcia-attribute-memory-by-using-a-pcmcia-interface-standard-in.md
+      href: access-attribute-memory-of-a-pcmcia-device.md
+    - name: PCMCIA デバイスの属性メモリにアクセスするための要件
+      href: requirements-for-accessing-attribute-memory-of-a-pcmcia-device.md
+    - name: プラグ アンド プレイの I/O 要求を使用して PCMCIA 属性メモリにアクセスする
+      href: access-pcmcia-attribute-memory-by-using-a-plug-and-play-i-o-request.md
+    - name: BUS_INTERFACE_STANDARD を使用して PCMCIA 属性メモリにアクセスする
+      href: access-pcmcia-attribute-memory-by-using-a-bus-interface-standard-inter.md
+    - name: 永続メモリ ウィンドウを使用して PCMCIA 属性メモリにアクセスする
+      href: access-pcmcia-attribute-memory-through-a-permanent-memory-window.md
+    - name: PCMCIA_INTERFACE_STANDARD を使用して PCMCIA 属性メモリにアクセスする
+      href: access-pcmcia-attribute-memory-by-using-a-pcmcia-interface-standard-in.md
+- name: メモリ カードの PCMCIA_INTERFACE_STANDARD インターフェイス
+  items:
     - name: メモリ カードの PCMCIA_INTERFACE_STANDARD インターフェイス
+      href: pcmcia-interface-standard-interface-for-memory-cards.md
+    - name: PCMCIA_INTERFACE_STANDARD インターフェイスの機能
+      href: functionality-of-the-pcmcia-interface-standard-interface.md
+    - name: PCMCIA_INTERFACE_STANDARD インターフェイスを取得する
+      href: obtaining-a-pcmcia-interface-standard-interface.md
+    - name: PCMCIA_INTERFACE_STANDARD インターフェイスのルーチンを呼び出す
+      href: calling-a-pcmcia-interface-standard-interface-routine.md
+    - name: PCMCIA メモリ カード ドライバーの特別な考慮事項
       items:
-        - name: メモリ カードの PCMCIA_INTERFACE_STANDARD インターフェイス
-          href: pcmcia-interface-standard-interface-for-memory-cards.md
-        - name: PCMCIA_INTERFACE_STANDARD インターフェイスの機能
-          href: functionality-of-the-pcmcia-interface-standard-interface.md
-        - name: PCMCIA_INTERFACE_STANDARD インターフェイスを取得する
-          href: obtaining-a-pcmcia-interface-standard-interface.md
-        - name: PCMCIA_INTERFACE_STANDARD インターフェイスのルーチンを呼び出す
-          href: calling-a-pcmcia-interface-standard-interface-routine.md
         - name: PCMCIA メモリ カード ドライバーの特別な考慮事項
-          items:
-            - name: PCMCIA メモリ カード ドライバーの特別な考慮事項
-              href: special-considerations-for-pcmcia-memory-card-drivers.md
-            - name: メモリ ウィンドウに関する制限事項
-              href: restrictions-on-memory-windows.md
-            - name: 属性メモリの読み取りと書き込み
-              href: read-and-write-attribute-memory.md
+          href: special-considerations-for-pcmcia-memory-card-drivers.md
+        - name: メモリ ウィンドウに関する制限事項
+          href: restrictions-on-memory-windows.md
+        - name: 属性メモリの読み取りと書き込み
+          href: read-and-write-attribute-memory.md
+- name: Windows XP での PCMCIA IRQ ルーティング
+  items:
     - name: Windows XP での PCMCIA IRQ ルーティング
-      items:
-        - name: Windows XP での PCMCIA IRQ ルーティング
-          href: pcmcia-irq-routing-on-windows-xp.md
-        - name: PC カードの割り込みをルーティングするための要件
-          href: requirements-for-routing-pc-card-interrupts.md
-        - name: PC カードの割り込みを構成するための INF オーバーライド
-          href: inf-override-for-configuring-pc-card-interrupts.md
-        - name: PC カードとカード ドライバーの設計のベスト プラクティス
-          href: best-practices-for-the-design-of-pc-cards-and-card-drivers.md
+      href: pcmcia-irq-routing-on-windows-xp.md
+    - name: PC カードの割り込みをルーティングするための要件
+      href: requirements-for-routing-pc-card-interrupts.md
+    - name: PC カードの割り込みを構成するための INF オーバーライド
+      href: inf-override-for-configuring-pc-card-interrupts.md
+    - name: PC カードとカード ドライバーの設計のベスト プラクティス
+      href: best-practices-for-the-design-of-pc-cards-and-card-drivers.md

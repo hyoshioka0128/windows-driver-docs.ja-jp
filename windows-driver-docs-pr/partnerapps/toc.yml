@@ -1,12 +1,10 @@
 - name: パートナー アプリ開発
-  items:
-    - name: パートナー アプリ開発
-      href: index.md
-    - name: バックグラウンド タスクとカスタム トリガー
-      href: background-tasks-and-oem-triggers.md
-    - name: '割り当てられたアクセスのキオスク アプリ:ベスト プラクティス'
-      href: create-a-kiosk-app-for-assigned-access.md
-    - name: パートナーの設定アプリを作成する
-      href: create-a-system-settings-application.md
-    - name: Wi-Fi Direct
-      href: wi-fi-direct.md
+  href: index.md
+- name: バックグラウンド タスクとカスタム トリガー
+  href: background-tasks-and-oem-triggers.md
+- name: '割り当てられたアクセスのキオスク アプリ:ベスト プラクティス'
+  href: create-a-kiosk-app-for-assigned-access.md
+- name: パートナーの設定アプリを作成する
+  href: create-a-system-settings-application.md
+- name: Wi-Fi Direct
+  href: wi-fi-direct.md

@@ -1,74 +1,72 @@
 - name: ACPI 設計ガイド
+  href: index.md
+- name: ACPI デバイスをサポートする
   items:
-    - name: ACPI 設計ガイド
-      href: index.md
     - name: ACPI デバイスをサポートする
+      href: supporting-acpi-devices.md
+    - name: ACPI デバイスのデバイス スタック
+      href: device-stacks-for-an-acpi-device.md
+    - name: ACPI デバイス機能ドライバーの操作
       items:
-        - name: ACPI デバイスをサポートする
-          href: supporting-acpi-devices.md
-        - name: ACPI デバイスのデバイス スタック
-          href: device-stacks-for-an-acpi-device.md
         - name: ACPI デバイス機能ドライバーの操作
+          href: operation-of-an-acpi-device-function-driver.md
+        - name: 操作領域をサポートする
           items:
-            - name: ACPI デバイス機能ドライバーの操作
-              href: operation-of-an-acpi-device-function-driver.md
             - name: 操作領域をサポートする
-              items:
-                - name: 操作領域をサポートする
-                  href: supporting-an-operation-region.md
-                - name: 操作領域のメモリ バッファーを維持する
-                  href: maintaining-an-operation-region-memory-buffer.md
-                - name: 操作領域ハンドラーを登録/登録解除する
-                  href: registering-and-deregistering-an-operation-region-handler.md
-                - name: 操作領域ハンドラーを実装する
-                  href: implementing-an-operation-region-handler.md
-                - name: 操作領域にアクセスする
-                  href: accessing-an-operation-region.md
-            - name: ベンダー定義の ACPI デバイス インターフェイスを提供する
-              href: providing-a-vendor-defined-acpi-device-interface.md
+              href: supporting-an-operation-region.md
+            - name: 操作領域のメモリ バッファーを維持する
+              href: maintaining-an-operation-region-memory-buffer.md
+            - name: 操作領域ハンドラーを登録/登録解除する
+              href: registering-and-deregistering-an-operation-region-handler.md
+            - name: 操作領域ハンドラーを実装する
+              href: implementing-an-operation-region-handler.md
+            - name: 操作領域にアクセスする
+              href: accessing-an-operation-region.md
+        - name: ベンダー定義の ACPI デバイス インターフェイスを提供する
+          href: providing-a-vendor-defined-acpi-device-interface.md
+- name: ACPI 制御メソッドを評価する
+  items:
     - name: ACPI 制御メソッドを評価する
+      href: evaluating-acpi-control-methods.md
+    - name: ACPI 制御メソッドを同期的に評価する
       items:
-        - name: ACPI 制御メソッドを評価する
-          href: evaluating-acpi-control-methods.md
         - name: ACPI 制御メソッドを同期的に評価する
-          items:
-            - name: ACPI 制御メソッドを同期的に評価する
-              href: evaluating-acpi-control-methods-synchronously.md
-            - name: 制御メソッドの入力バッファーの構造
-              href: control-method-input-buffer-structures.md
-            - name: 入力引数なしの制御メソッドを評価する
-              href: evaluating-a-control-method-without-input-arguments.md
-            - name: 入力引数を受け取る制御メソッドを評価する
-              href: evaluating-a-control-method-that-takes-input-arguments.md
-            - name: SendDownStreamIrp 関数
-              href: senddownstreamirp-function.md
+          href: evaluating-acpi-control-methods-synchronously.md
+        - name: 制御メソッドの入力バッファーの構造
+          href: control-method-input-buffer-structures.md
+        - name: 入力引数なしの制御メソッドを評価する
+          href: evaluating-a-control-method-without-input-arguments.md
+        - name: 入力引数を受け取る制御メソッドを評価する
+          href: evaluating-a-control-method-that-takes-input-arguments.md
+        - name: SendDownStreamIrp 関数
+          href: senddownstreamirp-function.md
+    - name: 子デバイスと制御メソッドを列挙する
+      items:
         - name: 子デバイスと制御メソッドを列挙する
-          items:
-            - name: 子デバイスと制御メソッドを列挙する
-              href: enumerating-child-devices-and-control-methods.md
-            - name: IOCTL_ACPI_ENUM_CHILDREN 要求を送信する
-              href: sending-an-ioctl-acpi-enum-children-request.md
+          href: enumerating-child-devices-and-control-methods.md
+        - name: IOCTL_ACPI_ENUM_CHILDREN 要求を送信する
+          href: sending-an-ioctl-acpi-enum-children-request.md
+    - name: 制御メソッドのマクロ
+      items:
         - name: 制御メソッドのマクロ
-          items:
-            - name: 制御メソッドのマクロ
-              href: control-method-macros.md
-            - name: ACPI_METHOD_SET_ARGUMENT_INTEGER
-              href: acpi-method-set-argument-integer.md
-            - name: ACPI_METHOD_SET_ARGUMENT_STRING
-              href: acpi-method-set-argument-string.md
-            - name: ACPI_METHOD_SET_ARGUMENT_BUFFER
-              href: acpi-method-set-argument-buffer.md
-            - name: ACPI_ENUM_CHILD_NEXT
-              href: acpi-enum-child-next.md
-            - name: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD
-              href: acpi-enum-child-length-from-child.md
-            - name: ACPI_METHOD_ARGUMENT_LENGTH
-              href: acpi-method-argument-length.md
-            - name: ACPI_METHOD_ARGUMENT_LENGTH_FROM_ARGUMENT
-              href: acpi-method-argument-length-from-argument.md
-            - name: ACPI_METHOD_NEXT_ARGUMENT
-              href: acpi-method-next-argument.md
-            - name: ACPI_MANIPULATE_LOCK_BUFFER
-              href: acpi-manipulate-lock-buffer.md
-    - name: _OSI を使用して ACPI で Windows バージョンを識別する方法
-      href: winacpi-osi.md
+          href: control-method-macros.md
+        - name: ACPI_METHOD_SET_ARGUMENT_INTEGER
+          href: acpi-method-set-argument-integer.md
+        - name: ACPI_METHOD_SET_ARGUMENT_STRING
+          href: acpi-method-set-argument-string.md
+        - name: ACPI_METHOD_SET_ARGUMENT_BUFFER
+          href: acpi-method-set-argument-buffer.md
+        - name: ACPI_ENUM_CHILD_NEXT
+          href: acpi-enum-child-next.md
+        - name: ACPI_ENUM_CHILD_LENGTH_FROM_CHILD
+          href: acpi-enum-child-length-from-child.md
+        - name: ACPI_METHOD_ARGUMENT_LENGTH
+          href: acpi-method-argument-length.md
+        - name: ACPI_METHOD_ARGUMENT_LENGTH_FROM_ARGUMENT
+          href: acpi-method-argument-length-from-argument.md
+        - name: ACPI_METHOD_NEXT_ARGUMENT
+          href: acpi-method-next-argument.md
+        - name: ACPI_MANIPULATE_LOCK_BUFFER
+          href: acpi-manipulate-lock-buffer.md
+- name: _OSI を使用して ACPI で Windows バージョンを識別する方法
+  href: winacpi-osi.md

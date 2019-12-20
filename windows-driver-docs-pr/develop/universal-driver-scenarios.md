@@ -3,12 +3,12 @@ title: ユニバーサル ドライバーのシナリオ
 description: 'DCHU ユニバーサル ドライバーのサンプルに、DCHU 設計原則 (Declarative: 宣言型、Componentized: コンポーネント化済み、Hardware Support Apps [HSA]: ハードウェア サポート アプリ、Universal API Compliance: ユニバーサル API 準拠) がどのように適用されているかについて説明します。'
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0f5ad4427ea0bb33332c7cc061dfbbc2e00b32f
-ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
+ms.openlocfilehash: 8db7ae14129e2c7253c8c258896449a484f0d57e
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898499"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209502"
 ---
 # <a name="universal-driver-scenarios"></a>ユニバーサル ドライバーのシナリオ
 
@@ -24,7 +24,7 @@ ms.locfileid: "74898499"
 
 ## <a name="overview"></a>概要
 
-DCHU サンプルで提供されているシナリオ例では、2 つのハードウェア パートナー Contoso (システム ビルダーまたは OEM) と Fabrikam (デバイスの製造元または IHV) が共同で、Contoso の次期システムのデバイス用のユニバーサル Windows ドライバーを作成しています。  対象のデバイスは [OSR USB FX2 学習キット](https://store.osr.com/product/osr-usb-fx2-learning-kit-v2/)です。  これまで、Fabrikam は、特定の Contoso 製品ライン用にカスタマイズされた非ユニバーサル ドライバー パッケージを作成し、サービスを処理するために OEM に渡していました。  その結果、大きなメンテナンス オーバーヘッドが発生していたため、Fabrikam は、コードをリファクタリングして、代わりにユニバーサル ドライバー パッケージを作成することを決定しました。
+DCHU サンプルで提供されているシナリオ例では、2 つのハードウェア パートナー Contoso (システム ビルダーまたは OEM) と Fabrikam (デバイスの製造元または IHV) が共同で、Contoso の次期システムのデバイス用のユニバーサル Windows ドライバーを作成しています。  対象のデバイスは [OSR USB FX2 学習キット](https://go.microsoft.com/fwlink/p/?linkid=2113717)です。  これまで、Fabrikam は、特定の Contoso 製品ライン用にカスタマイズされた非ユニバーサル ドライバー パッケージを作成し、サービスを処理するために OEM に渡していました。  その結果、大きなメンテナンス オーバーヘッドが発生していたため、Fabrikam は、コードをリファクタリングして、代わりにユニバーサル ドライバー パッケージを作成することを決定しました。
 
 ## <a name="use-only-declarative-sections-and-directives"></a>宣言型セクションとディレクティブのみを使用する
 
@@ -61,7 +61,7 @@ HKR, OSR, "OperatingParams",, "None" ; FLG_ADDREG_TYPE_SZ
 ```cpp
 [OsrUsbFx2Extension_AddReg]
 HKR, OSR, "OperatingParams",, "-Extended"
-HKR, OSR, "OperatingExceptions",, "x86" 
+HKR, OSR, "OperatingExceptions",, "x86"
 ```
 
 拡張機能は常に基本 INF の後に順不同で処理されることに注意してください。 基本 INF が新しいバージョンに更新された場合、拡張 INF は新しい基本 INF がインストールされた後で再適用されます。
@@ -76,7 +76,7 @@ CopyFiles = OsrFx2_UserSvcCopyFiles
 
 [OsrFx2_Install.NT.Services]
 AddService = osrfx2_DCHU_usersvc, 0x00000800, UserSvc_ServiceInstall
-    
+
 [UserSvc_ServiceInstall]
 DisplayName = %UserSvcDisplayName%
 ServiceType = 0x00000010
@@ -87,6 +87,7 @@ ServiceBinary = %13%\osrfx2_DCHU_usersvc.exe
 [OsrFx2_UserSvcCopyFiles]
 osrfx2_DCHU_usersvc.exe
 ```
+
 このようなサービスは、状況に応じて、コンポーネント INF または拡張 INF にもインストールできることに注意してください。
 
 ## <a name="use-a-component-to-install-legacy-software-from-a-driver-package"></a>コンポーネントを使ってドライバー パッケージからレガシ ソフトウェアをインストールする
@@ -109,12 +110,12 @@ ComponentIds=VID_045e&PID_94ab
 ```cpp
 [OsrFx2Component_Install.NT.Software]
 AddSoftware = osrfx2_DCHU_componentsoftware,, OsrFx2Component_SoftwareInstall
-    
+
 [OsrFx2Component_SoftwareInstall]
 SoftwareType = 1
 SoftwareBinary = osrfx2_DCHU_componentsoftware.exe
 SoftwareArguments = <<DeviceInstanceId>>
-SoftwareVersion = 1.0.0.0 
+SoftwareVersion = 1.0.0.0
 
 [OsrFx2Component_CopyFiles]
 osrfx2_DCHU_componentsoftware.exe
@@ -177,7 +178,7 @@ HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084}\VersionIndependentProgID,,,"AT
 
 * [DCHU_Sample\osrfx2_DCHU_extension_loose](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_loose)
 * [DCHU_Sample\osrfx2_DCHU_extension_tight](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU/osrfx2_DCHU_extension_tight)
- 
+
   拡張機能とコンポーネントが、同じドライバー パッケージにある場合 (「密結合」)、拡張 INF は [CopyINF ディレクティブ](../install/inf-copyinf-directive.md)を指定して、コンポーネント INF をターゲット システムにコピーします。  この例については、[DCHU_Sample\osrfx2_DCHU_extension_tight\osrfx2_DCHU_extension\osrfx2_DCHU_extension.inx ](https://github.com/Microsoft/Windows-driver-samples/blob/master/general/DCHU/osrfx2_DCHU_extension_tight/osrfx2_DCHU_extension/osrfx2_DCHU_extension.inx) をご覧ください。
 
 ```cpp
@@ -185,7 +186,7 @@ HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084}\VersionIndependentProgID,,,"AT
 CopyInf=osrfx2_DCHU_component.inf
 ```
 
-このディレクティブは、多機能デバイス内での INF ファイルのインストールを調整することもできます。  詳しくは、「[Copying INF files](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)」 (INF ファイルのコピー) をご覧ください。 
+このディレクティブは、多機能デバイス内での INF ファイルのインストールを調整することもできます。  詳しくは、「[Copying INF files](https://docs.microsoft.com/windows-hardware/drivers/install/copying-inf-files)」 (INF ファイルのコピー) をご覧ください。
 
 > [!NOTE]
 > ベース ドライバーのペイロードに拡張機能を格納する (そして、配送先住所ラベルでベース ドライバーをターゲットにする) ことはできますが、別のドライバーとバンドルされている拡張機能を、拡張機能のハードウェア ID に公開することはできません。
@@ -198,15 +199,16 @@ CopyInf=osrfx2_DCHU_component.inf
 [DestinationDirs]
 OsrFx2_UserSvcCopyFiles = 13 ; copy to Driver Store
 ```
-ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  次に、例を示します。 
+
+ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  次に、例を示します。
 
 ```cpp
 bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
                          (PCWSTR)&DriverEntry,
                          &handleModule);
 if (bRet) {
-   winErr = GetModuleFileNameW(handleModule, 
-                               path, 
+   winErr = GetModuleFileNameW(handleModule,
+                               path,
                                pathLength);
      …
 ```
@@ -234,7 +236,7 @@ AddReg = Example_DDInstall.AddReg
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
 
-デバイス インターフェイスの状態としてこれを設定する INF の例は次のようになります。 
+デバイス インターフェイスの状態としてこれを設定する INF の例は次のようになります。
 
 ```cpp
 [ExampleDDInstall.Interfaces]
@@ -246,15 +248,16 @@ AddReg = Example_Add_Interface_Section.AddReg
 [Example_Add_Interface_Section.AddReg]
 HKR,,ExampleValue,,%13%\ExampleFile.dll
 ```
-上記の例では、空フラグの値が使用されているため、REG_SZ レジストリ値になります。 これにより、 **%13%** が完全修飾ユーザー モード ファイル パスに変換されます。 多くの場合、このパスは環境変数の相対パスであることが望ましいです。 フラグ値 **0x20000** を使用すると、レジストリ値はタイプ REG_EXPAND_SZ となり、 **%13%** は適切な環境変数で変換され、パスの場所が抽象化されます。 このレジストリ値を取得する場合、[**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) を呼び出して、パスの環境変数を解決します。 
 
-カーネル モード コンポーネントによってこの値を読み取る必要がある場合、値は REG_SZ 値でなければなりません。 カーネル モード コンポーネントはこの値を読み取るときに、先頭に `\??\` を付けてから、[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) などの API に渡す必要があります。 
+上記の例では、空フラグの値が使用されているため、REG_SZ レジストリ値になります。 これにより、 **%13%** が完全修飾ユーザー モード ファイル パスに変換されます。 多くの場合、このパスは環境変数の相対パスであることが望ましいです。 フラグ値 **0x20000** を使用すると、レジストリ値はタイプ REG_EXPAND_SZ となり、 **%13%** は適切な環境変数で変換され、パスの場所が抽象化されます。 このレジストリ値を取得する場合、[**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) を呼び出して、パスの環境変数を解決します。
+
+カーネル モード コンポーネントによってこの値を読み取る必要がある場合、値は REG_SZ 値でなければなりません。 カーネル モード コンポーネントはこの値を読み取るときに、先頭に `\??\` を付けてから、[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) などの API に渡す必要があります。
 
 この設定がデバイスの状態の一部である場合にアクセスするには、まずアプリケーションはデバイスの ID を検索する必要があります。  ユーザー モード コードでは、[**CM_Get_Device_ID_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用してデバイスの一覧 (必要に応じて、フィルタ適用) を取得できます。 このデバイスの一覧には複数のデバイスが含まれている場合があるため、デバイスから状態を読み取る前に、適切なデバイスを検索します。 たとえば、特定の条件に一致するデバイスを検索するときに、[**CM_Get_DevNode_Property**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw) を呼び出して、そのデバイスのプロパティを取得します。
 
-適切なデバイスが見つかったら、[**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) を呼び出して、デバイスの状態が格納されたレジストリの場所へのハンドルを取得します。 
+適切なデバイスが見つかったら、[**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) を呼び出して、デバイスの状態が格納されたレジストリの場所へのハンドルを取得します。
 
-カーネル モード コードでは、PDO (物理デバイス オブジェクト) を取得し、[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) を呼び出す必要があります。 
+カーネル モード コードでは、PDO (物理デバイス オブジェクト) を取得し、[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) を呼び出す必要があります。
 
 デバイス インターフェイスの状態の場合にこの設定にアクセスするために、ユーザー モード コードで [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizea) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を呼び出すことができます。
 
@@ -264,10 +267,10 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 
 カーネル モード コードでは、状態を取得するデバイス インターフェイスのシンボリック リンク名を取得できます。 そのためには、[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) を呼び出して、適切なデバイス インターフェイス クラスでデバイス インターフェイス通知に登録します。  別の方法として、システム上の現在のデバイス インターフェイスの一覧を取得するために [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出すこともできます。  上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、読み込まれる設定を持つ適切なインターフェイスを特定します。
 
-適切なシンボリック リンク名が見つかったら、[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) を呼び出して、デバイス インターフェイスの状態が格納されたレジストリの場所へのハンドルを取得します。 
+適切なシンボリック リンク名が見つかったら、[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) を呼び出して、デバイス インターフェイスの状態が格納されたレジストリの場所へのハンドルを取得します。
 
 > [!NOTE]
-> **CM_GETIDLIST_FILTER_PRESENT** フラグと [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用するか、**CM_GET_DEVICE_INTERFACE_LIST_PRESENT** フラグと [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を使用します。 これにより、ハードウェアが存在し、通信の準備ができていることを確認します。 
+> **CM_GETIDLIST_FILTER_PRESENT** フラグと [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用するか、**CM_GET_DEVICE_INTERFACE_LIST_PRESENT** フラグと [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を使用します。 これにより、ハードウェアが存在し、通信の準備ができていることを確認します。
 
 ## <a name="summary"></a>概要
 

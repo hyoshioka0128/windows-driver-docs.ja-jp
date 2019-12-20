@@ -1,20 +1,18 @@
 - name: PCI ドライバー プログラミング ガイド
-  items:
-    - name: PCI ドライバー プログラミング ガイド
-      href: index.md
-    - name: PCI 電源の管理とデバイス ドライバー
-      href: pci-power-management-and-device-drivers.md
-    - name: Windows での PCI Express ネイティブ コントロールの有効化
-      href: enabling-pci-express-native-control.md
-    - name: PCIe ルート ポートのデバイス固有データ (_DSD)
-      href: dsd-for-pcie-root-ports.md
-    - name: PCI デバイス構成領域へのアクセス
-      href: accessing-pci-device-configuration-space.md
-    - name: I/O リソース使用量の削減
-      href: i-o-resource-usage-reduction.md
-    - name: 開始デバイス IRP でのリソースの順序
-      href: order-of-resources-in-start-device-irp.md
-    - name: PCI Express のグラフィックスについてよく寄せられる質問
-      href: pci-express-faq-for-graphics.md
-    - name: PCI のサンプル
-      href: pci-sample.md
+  href: index.md
+- name: PCI 電源の管理とデバイス ドライバー
+  href: pci-power-management-and-device-drivers.md
+- name: Windows での PCI Express ネイティブ コントロールの有効化
+  href: enabling-pci-express-native-control.md
+- name: PCIe ルート ポートのデバイス固有データ (_DSD)
+  href: dsd-for-pcie-root-ports.md
+- name: PCI デバイス構成領域へのアクセス
+  href: accessing-pci-device-configuration-space.md
+- name: I/O リソース使用量の削減
+  href: i-o-resource-usage-reduction.md
+- name: 開始デバイス IRP でのリソースの順序
+  href: order-of-resources-in-start-device-irp.md
+- name: PCI Express のグラフィックスについてよく寄せられる質問
+  href: pci-express-faq-for-graphics.md
+- name: PCI のサンプル
+  href: pci-sample.md

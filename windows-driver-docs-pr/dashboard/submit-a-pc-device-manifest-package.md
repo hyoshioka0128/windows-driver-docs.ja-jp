@@ -5,12 +5,12 @@ ms.assetid: b96b02b8-8804-403e-9513-7a5d1b730fcd
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1424706a511a53ad2167966ac4c1fa6af9078a58
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 147d3c944141cbcc8075f7ab2d47193d599ba2ee
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363827"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209161"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>PC デバイス マニフェスト パッケージの提出
 
@@ -143,9 +143,9 @@ ComputerHardwareID について詳しくは、[[デバイスとプリンター] 
 
 PcMetadataSubmission XML スキーマの名前空間は、以下のとおりです。
 
--   http://schemas.microsoft.com/Windows/2009/05/MetadataSubmission/PcMetadataSubmission
+-   `http://schemas.microsoft.com/Windows/2009/05/MetadataSubmission/PcMetadataSubmission`
 
--   http://schemas.microsoft.com/Windows/2011/06/MetadataSubmission/PcMetadataSubmissionv2
+-   `http://schemas.microsoft.com/Windows/2011/06/MetadataSubmission/PcMetadataSubmissionv2`
 
 **PcMetadataSubmission XML の要素/属性の概要**
 
