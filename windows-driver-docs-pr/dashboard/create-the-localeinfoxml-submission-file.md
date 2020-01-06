@@ -5,12 +5,12 @@ ms.assetid: 2b16b045-4d34-418c-8f68-7f688adf8e7e
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be40057ddc31cb48a2e027068737a620c177e8c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 2f65d958e15445b0a5c492d546795f8bbe500bd3
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337270"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75209248"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>LocaleInfo.xml サブミッション ファイルの作成
 
@@ -25,11 +25,11 @@ LocaleInfo.xml ドキュメント内のデータは、以降で説明する Loca
 
 アドレス範囲について詳しくは、「[How to Create a Device Metadata Package for Devices and Printers ([デバイスとプリンター] 用デバイス メタデータ パッケージの作成方法)](https://go.microsoft.com/fwlink/?LinkId=253559)」をご覧ください。
 
-### <a name="span-idlocaleinfoxmlschemanamespacespanspan-idlocaleinfoxmlschemanamespacespanspan-idlocaleinfoxmlschemanamespacespanlocaleinfo-xml-schema-namespace"></a><span id="LocaleInfo_XML_Schema_NameSpace"></span><span id="localeinfo_xml_schema_namespace"></span><span id="LOCALEINFO_XML_SCHEMA_NAMESPACE"></span>LocaleInfo XML スキーマの名前空間
+### <a name="span-idlocaleinfo_xml_schema_namespacespanspan-idlocaleinfo_xml_schema_namespacespanspan-idlocaleinfo_xml_schema_namespacespanlocaleinfo-xml-schema-namespace"></a><span id="LocaleInfo_XML_Schema_NameSpace"></span><span id="localeinfo_xml_schema_namespace"></span><span id="LOCALEINFO_XML_SCHEMA_NAMESPACE"></span>LocaleInfo XML スキーマの名前空間
 
-LocaleInfo XML スキーマの名前空間は次のようになります: **http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/LocaleInfo**
+LocaleInfo XML スキーマの名前空間は次のようになります: `http://schemas.microsoft.com/Windows/2010/08/MetadataSubmission/LocaleInfo`
 
-### <a name="span-idoverviewoflocaleinfoxmlelementsattributesspanspan-idoverviewoflocaleinfoxmlelementsattributesspanspan-idoverviewoflocaleinfoxmlelementsattributesspanoverview-of-localeinfo-xml-elementsattributes"></a><span id="Overview_of_LocaleInfo_XML_Elements_Attributes"></span><span id="overview_of_localeinfo_xml_elements_attributes"></span><span id="OVERVIEW_OF_LOCALEINFO_XML_ELEMENTS_ATTRIBUTES"></span>LocaleInfo XML の要素/属性の概要
+### <a name="span-idoverview_of_localeinfo_xml_elements_attributesspanspan-idoverview_of_localeinfo_xml_elements_attributesspanspan-idoverview_of_localeinfo_xml_elements_attributesspanoverview-of-localeinfo-xml-elementsattributes"></a><span id="Overview_of_LocaleInfo_XML_Elements_Attributes"></span><span id="overview_of_localeinfo_xml_elements_attributes"></span><span id="OVERVIEW_OF_LOCALEINFO_XML_ELEMENTS_ATTRIBUTES"></span>LocaleInfo XML の要素/属性の概要
 
 次の表では、LocaleInfo XML スキーマのメタデータの要素と属性について説明します。
 
@@ -77,7 +77,7 @@ LocaleInfo XML スキーマの名前空間は次のようになります: **http
 
  
 
-### <a name="span-idlocaleinfoxmlschemadefinitionspanspan-idlocaleinfoxmlschemadefinitionspanspan-idlocaleinfoxmlschemadefinitionspanlocaleinfo-xml-schema-definition"></a><span id="LocaleInfo_XML_Schema_Definition"></span><span id="localeinfo_xml_schema_definition"></span><span id="LOCALEINFO_XML_SCHEMA_DEFINITION"></span>LocaleInfo XML スキーマの定義
+### <a name="span-idlocaleinfo_xml_schema_definitionspanspan-idlocaleinfo_xml_schema_definitionspanspan-idlocaleinfo_xml_schema_definitionspanlocaleinfo-xml-schema-definition"></a><span id="LocaleInfo_XML_Schema_Definition"></span><span id="localeinfo_xml_schema_definition"></span><span id="LOCALEINFO_XML_SCHEMA_DEFINITION"></span>LocaleInfo XML スキーマの定義
 
 LocaleInfo XML スキーマの定義は以下のとおりです。
 
@@ -142,7 +142,7 @@ MultipleLocale 要素は、デバイス メタデータ パッケージが複数
 
 デバイス メタデータ パッケージで複数のロケールがサポートされている場合、MultipleLocale 要素は "true" である必要があります。 デバイス メタデータ パッケージでサポートされるロケールが 1 つである場合は、"true" でも "false" でもかまいません。 MultipleLocale の値は、PackageInfo.xml に指定された値と一致している必要があります。
 
-### <a name="span-idlocaledeclaredinpackageinfoelementspanspan-idlocaledeclaredinpackageinfoelementspanspan-idlocaledeclaredinpackageinfoelementspanlocaledeclaredinpackageinfo-element"></a><span id="LocaleDeclaredInPackageInfo_Element"></span><span id="localedeclaredinpackageinfo_element"></span><span id="LOCALEDECLAREDINPACKAGEINFO_ELEMENT"></span>LocaleDeclaredInPackageInfo 要素
+### <a name="span-idlocaledeclaredinpackageinfo_elementspanspan-idlocaledeclaredinpackageinfo_elementspanspan-idlocaledeclaredinpackageinfo_elementspanlocaledeclaredinpackageinfo-element"></a><span id="LocaleDeclaredInPackageInfo_Element"></span><span id="localedeclaredinpackageinfo_element"></span><span id="LOCALEDECLAREDINPACKAGEINFO_ELEMENT"></span>LocaleDeclaredInPackageInfo 要素
 
 LocaleDeclaredInPackageInfo 要素は、デバイス メタデータ パッケージ内で宣言されるロケールとパッケージの属性についての情報を指定します。 この情報は、デバイス メタデータ パッケージに宣言されているロケール メタデータを適切に検証するためにパートナー センターで使われます。
 
@@ -162,7 +162,7 @@ LocaleDeclaredInPackageInfo 要素は、デバイス メタデータ パッケ�
 
 LocaleDeclaredInPackageInfo 要素は、PackageInfo.xml に指定されたロケール値と一致している必要があります。
 
-### <a name="span-iddefaultattributespanspan-iddefaultattributespanspan-iddefaultattributespandefault-attribute"></a><span id="default_Attribute"></span><span id="default_attribute"></span><span id="DEFAULT_ATTRIBUTE"></span>default 属性
+### <a name="span-iddefault_attributespanspan-iddefault_attributespanspan-iddefault_attributespandefault-attribute"></a><span id="default_Attribute"></span><span id="default_attribute"></span><span id="DEFAULT_ATTRIBUTE"></span>default 属性
 
 default 属性は、デバイス メタデータ パッケージが、PackageInfo.xml に示されている既定のパッケージであるかどうかを指定します。
 
@@ -174,7 +174,7 @@ default 属性は、デバイス メタデータ パッケージが、PackageInf
 
 default 要素は、PackageInfo.xml に指定された既定値と一致している必要があります。
 
-### <a name="span-idsupportedlocalelistelementspanspan-idsupportedlocalelistelementspanspan-idsupportedlocalelistelementspansupportedlocalelist-element"></a><span id="SupportedLocaleList_Element"></span><span id="supportedlocalelist_element"></span><span id="SUPPORTEDLOCALELIST_ELEMENT"></span>SupportedLocaleList 要素
+### <a name="span-idsupportedlocalelist_elementspanspan-idsupportedlocalelist_elementspanspan-idsupportedlocalelist_elementspansupportedlocalelist-element"></a><span id="SupportedLocaleList_Element"></span><span id="supportedlocalelist_element"></span><span id="SUPPORTEDLOCALELIST_ELEMENT"></span>SupportedLocaleList 要素
 
 SupportedLocaleList 要素は、デバイス メタデータ パッケージでサポートされている他のロケールを指定します。 この情報は、デバイス メタデータ パッケージ内の追加ロケール メタデータを適切に検証するためにパートナー センターで使われます。
 
@@ -189,11 +189,11 @@ SupportedLocaleList 要素は、デバイス メタデータ パッケージで�
 </xs:complexType>
 ```
 
-### <a name="span-idlocaleelementspanspan-idlocaleelementspanspan-idlocaleelementspanlocale-element"></a><span id="Locale_Element"></span><span id="locale_element"></span><span id="LOCALE_ELEMENT"></span>Locale 要素
+### <a name="span-idlocale_elementspanspan-idlocale_elementspanspan-idlocale_elementspanlocale-element"></a><span id="Locale_Element"></span><span id="locale_element"></span><span id="LOCALE_ELEMENT"></span>Locale 要素
 
 Locale 要素は、デバイス メタデータ パッケージでサポートされている追加のロケールを指定します。 この値がパートナー センターでどのように使われるかについて詳しくは、SupportedLocaleList 要素をご覧ください。
 
-## <a name="span-idlocaleinfoxmlexamplespanspan-idlocaleinfoxmlexamplespanspan-idlocaleinfoxmlexamplespanlocaleinfo-xml-example"></a><span id="LocaleInfo_XML_Example"></span><span id="localeinfo_xml_example"></span><span id="LOCALEINFO_XML_EXAMPLE"></span>LocaleInfo XML の例
+## <a name="span-idlocaleinfo_xml_examplespanspan-idlocaleinfo_xml_examplespanspan-idlocaleinfo_xml_examplespanlocaleinfo-xml-example"></a><span id="LocaleInfo_XML_Example"></span><span id="localeinfo_xml_example"></span><span id="LOCALEINFO_XML_EXAMPLE"></span>LocaleInfo XML の例
 
 
 以下の XML ドキュメントでは、LocaleInfo 情報の構成要素が LocaleInfo XML スキーマを使って指定されています。

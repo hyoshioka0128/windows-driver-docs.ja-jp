@@ -4,25 +4,23 @@ description: ネットワーク アダプターの WDF クラス拡張機能 (Ne
 ms.assetid: 74719A80-AE66-410F-85B7-31B6F455A818
 keywords:
 - ネットワーク アダプターのクラス拡張機能、ネットワーク アダプターの WDF クラス拡張機能、NetAdapterCx、NetCx
-ms.date: 03/21/2019
+ms.date: 08/27/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 41184d69be8382429ae6b59e8606afb49c729c0a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 373b90f326408e36dbd4fb92b7380fb92aea60fb
+ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375391"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75210896"
 ---
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
 
-[!include[NetAdapterCx Beta Prerelease](../netcx-beta-prerelease.md)]
-
 ## <a name="overview"></a>概要
 
-Windows 10 バージョン 1703 以降の Windows Driver Kit (WDK) には、ネットワーク インターフェイス コントローラー (NIC) 用の KMDF ベースのクライアント ドライバーを作成できるネットワーク アダプターの WDF クラス拡張機能モジュール (NetAdapterCx) が含まれています。 NetAdapterCx によって、WDF の機能と柔軟性、NDIS のネットワーク パフォーマンスを利用し、NIC 用のドライバーを簡単に作成できます。
+Windows 10 バージョン 2004 以降の Windows Driver Kit (WDK) には、ネットワーク インターフェイス コントローラー (NIC) 用の KMDF ベースのクライアント ドライバーを作成できるネットワーク アダプターの WDF クラス拡張機能モジュール (NetAdapterCx) が含まれています。 NetAdapterCx によって、WDF の機能と柔軟性、NDIS のネットワーク パフォーマンスを利用し、NIC 用のドライバーを簡単に作成できます。
 
 以前のバージョンの Windows では、WDF と NDIS にはそれぞれ利点がありましたが、相互運用性は良くありませんでした。 NIC ドライバーを作成するには、NDIS ミニポート ドライバーを作成する必要がありました。 NDIS ミニポート ドライバーで WDF を使用するには、ドライバーに追加のコードを記述する必要がありましたが、それでもアクセスできるのは WDF 機能のごく一部のみでした。
 

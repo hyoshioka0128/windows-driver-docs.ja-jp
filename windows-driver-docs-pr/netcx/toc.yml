@@ -1,5 +1,9 @@
 - name: ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
   href: index.md
+- name: NetAdapterCx の新機能
+  items:
+    - name: NetAdapterCx バージョンの概要
+      href: netadaptercx-version-overview.md
 - name: NDIS ミニポート ドライバーの NetAdapterCx への移植
   href: porting-ndis-miniport-drivers-to-netadaptercx.md
 - name: NetAdapterCx クライアント ドライバーの構築
@@ -34,10 +38,10 @@
       href: transmit-and-receive-queues.md
     - name: ネットワーク データ バッファーの管理
       href: network-data-buffer-management.md
-    - name: ネット リングとネット リングの反復子
+    - name: ネット リング
       items:
-        - name: ネット リングとネット リングの反復子の概要
-          href: net-rings-and-net-ring-iterators.md
+        - name: ネット リングの概要
+          href: introduction-to-net-rings.md
         - name: ネット リングを使用したネットワーク データの送信
           href: sending-network-data-with-net-rings.md
         - name: ネット リングを使用したネットワーク データの受信

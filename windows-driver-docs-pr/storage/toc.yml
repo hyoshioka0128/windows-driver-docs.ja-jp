@@ -400,6 +400,12 @@
               href: interlocked-operations-in-storport-miniport-drivers.md
             - name: StorNVMe でサポートされている NVMe 機能
               href: nvme-features-supported-by-stornvme.md
+            - name: StorNVMe コマンド セットのサポート
+              href: stornvme-command-set-support.md
+            - name: StorNVMe 機能のサポート
+              href: stornvme-feature-support.md
+            - name: StorNVMe SCSI 変換のサポート
+              href: stornvme-scsi-translation-support.md
             - name: NVMe デバイス用ファームウェアのアップグレード
               href: upgrading-firmware-for-an-nvme-device.md
             - name: StorPort ミニポート ドライバーのレジストリ エントリ

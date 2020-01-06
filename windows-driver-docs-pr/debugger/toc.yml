@@ -68,6 +68,8 @@
       href: windbg-what-is-new-preview.md
     - name: WinDbg プレビュー - インストール
       href: windbg-install-preview.md
+    - name: WinDbg プレビュー - タイムライン
+      href: windbg-timeline-preview.md
     - name: WinDbg プレビュー - コマンド ライン スタートアップ オプション
       href: windbg-command-line-preview.md
     - name: WinDbg プレビュー - 設定とワークスペース
