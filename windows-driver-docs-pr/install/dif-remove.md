@@ -3,7 +3,7 @@ title: DIF_REMOVE
 description: DIF_REMOVE
 ms.assetid: 14429756-c059-46d7-bd1c-0ae57d1ec8b5
 keywords:
-- DIF_REMOVE デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DIF_REMOVE
 topic_type:
 - apiref
 api_name:
@@ -14,23 +14,23 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: ae9b8b778e45d8343faeafc1811f769322ae1ed0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: fc772967ee59347bcfc5ce4163b2428e8dbee2e1
+ms.sourcegitcommit: 9355a80229bb2384dd45493d36bdc783abdd8d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387038"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694240"
 ---
-# <a name="difremove"></a>DIF_REMOVE
+# <a name="dif_remove"></a>DIF_REMOVE
 
 
-DIF_REMOVE 要求は、Windows がデバイスを削除しようし、インストーラーを削除するために準備する機会が与えられますインストーラーを通知します。
+DIF_REMOVE 要求によって、Windows がデバイスを削除しようとしていることがインストーラーに通知され、インストーラーに削除の準備をする機会が与えられます。
 
 ### <a name="when-sent"></a>送信時
 
-ときに、ユーザーは、デバイス マネージャーでデバイスを削除します。
+ユーザーがデバイスマネージャーでデバイスを削除したとき。
 
-### <a name="who-handles"></a>処理します。
+### <a name="who-handles"></a>処理対象
 
 <table>
 <colgroup>
@@ -40,15 +40,15 @@ DIF_REMOVE 要求は、Windows がデバイスを削除しようし、インス�
 <tbody>
 <tr class="odd">
 <td align="left"><p>クラスの共同インストーラー</p></td>
-<td align="left"><p>処理できます。</p></td>
+<td align="left"><p>処理可能</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>デバイスの共同インストーラー</p></td>
-<td align="left"><p>処理できます。</p></td>
+<td align="left"><p>処理可能</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>クラスのインストーラー</p></td>
-<td align="left"><p>処理できます。</p></td>
+<td align="left"><p>クラスインストーラー</p></td>
+<td align="left"><p>処理可能</p></td>
 </tr>
 </tbody>
 </table>
@@ -58,58 +58,58 @@ DIF_REMOVE 要求は、Windows がデバイスを削除しようし、インス�
 ### <a name="installer-input"></a>インストーラーの入力
 
 <a href="" id="deviceinfoset"></a>*DeviceInfoSet*  
-識別するハンドルを提供、[デバイス情報設定されている](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)を削除するデバイスを格納しています。
+削除するデバイスを含む[デバイス情報セット](https://docs.microsoft.com/windows-hardware/drivers/install/device-information-sets)へのハンドルを提供します。
 
 <a href="" id="deviceinfodata"></a>*DeviceInfoData*  
-ポインターを提供する[ **SP_DEVINFO_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)デバイス情報のセットでのデバイスの構造体。
+デバイス情報セット内のデバイスの[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)構造体へのポインターを提供します。
 
-<a href="" id="device-installation-parameters-"></a>デバイスのインストール パラメーター   
-デバイス インストールのパラメーターがある ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)) に関連付けられている、 *DeviceInfoData*します。
+<a href="" id="device-installation-parameters-"></a>デバイスのインストールパラメーター   
+*Deviceinfodata*には、デバイスインストールパラメーター ([**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)) が関連付けられています。
 
-<a href="" id="class-installation-parameters"></a>インストール パラメーターをクラスします。  
-[ **SP_REMOVEDEVICE_PARAMS** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_removedevice_params)構造が関連付けられる可能性があります、 *DeviceInfoData*します。
+<a href="" id="class-installation-parameters"></a>クラスのインストールパラメーター  
+[**SP_REMOVEDEVICE_PARAMS**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_removedevice_params)構造体は、 *deviceinfodata*に関連付けられる場合があります。
 
-DI_CLASSINSTALLPARAMS フラグがオフの場合、要求のクラスのインストールのパラメーターがない、 [ **SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)します。 この場合は、ハードウェア プロファイルが指定されていないと、デバイスは、全体として、システムから削除します。
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)で DI_CLASSINSTALLPARAMS フラグがクリアされている場合、要求のクラスインストールパラメーターはありません。 この場合、ハードウェアプロファイルが指定されていないため、デバイスはシステム全体から削除されます。
 
 ### <a name="installer-output"></a>インストーラーの出力
 
-<a href="" id="none"></a>[なし]  
+<a href="" id="none"></a>存在  
 
 ### <a name="installer-return-value"></a>インストーラーの戻り値
 
-共同インストーラーには、NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED、または Win32 エラー コードを返すことができます。
+共同インストーラーは、NO_ERROR、ERROR_DI_POSTPROCESSING_REQUIRED、または Win32 エラーコードを返すことができます。
 
-クラスのインストーラーが正常にこの要求を処理する場合と[ **SetupDiCallClassInstaller** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)既定のハンドラーを呼び出す必要があります、その後、クラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
+クラスインストーラーがこの要求を正常に処理し、 [**Setupdicallclassinstaller**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicallclassinstaller)がその後既定のハンドラーを呼び出す必要がある場合、クラスインストーラーは ERROR_DI_DO_DEFAULT を返します。
 
-クラスのインストーラーが正常に既定のハンドラーを直接呼び出しなど、この要求を処理する場合、クラスのインストーラーは NO_ERROR を返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しはもう一度です。
+クラスインストーラーが、既定のハンドラーを直接呼び出すなど、この要求を正常に処理した場合、クラスインストーラーは NO_ERROR を返す必要があります。また、 **Setupdicallclassinstaller**は、その後、既定のハンドラーを再度呼び出すことはありません。
 
-**注**  クラスのインストーラーは、既定のハンドラーを直接呼び出すことができますが、既定のハンドラーの操作を優先するクラスのインストーラーはいけません。
+クラスインストーラーでは既定のハンドラーを直接呼び出すことができますが、クラスインストーラーでは既定のハンドラーの操作を置き換えないようにする必要**が   ます**。
 
  
 
-既定のハンドラーを呼び出す方法の詳細については、次を参照してください。[既定 DIF コード ハンドラーを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)します。
+既定のハンドラーの呼び出しの詳細については、「[既定の差分コードハンドラーの呼び出し](https://docs.microsoft.com/windows-hardware/drivers/install/calling-the-default-dif-code-handlers)」を参照してください。
 
-クラスのインストーラーには、エラーが発生すると、インストーラーが適切な Win32 エラー コードを返す必要がありますと**SetupDiCallClassInstaller**既定ハンドラーその呼び出しは。
+クラスインストーラーでエラーが発生した場合、インストーラーは適切な Win32 エラーコードを返す必要があります。また、 **Setupdicallclassinstaller**は、その後、既定のハンドラーを呼び出しません。
 
-### <a name="default-dif-code-handler"></a>既定の差分コード ハンドラー
+### <a name="default-dif-code-handler"></a>既定の差分コードハンドラー
 
 [**SetupDiRemoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)
 
 ### <a name="installer-operation"></a>インストーラーの操作
 
-DIF_REMOVE 要求に応答して、インストーラーは通常、一部のクリーンアップ操作を実行します。 この場合、共同インストーラーは NO_ERROR を返しクラスのインストーラーが ERROR_DI_DO_DEFAULT を返します。
+DIF_REMOVE 要求に応答して、インストーラーは通常、いくつかのクリーンアップ操作を実行します。 この場合、共同インストーラーは NO_ERROR を返し、クラスインストーラーは ERROR_DI_DO_DEFAULT を返します。
 
-インストーラーでは、デバイスが削除されないことを判断した場合、インストーラー Win32 エラー コードを返すことによって、差分要求は失敗します。 DI_QUIETINSTALL フラグがオフの場合は、インストーラーは、デバイスが削除されていない理由を説明するメッセージを表示する必要があります。
+インストーラーによってデバイスが削除されないと判断された場合、インストーラーは Win32 エラーコードを返すことによって差分要求を失敗させます。 DI_QUIETINSTALL フラグがオフの場合、インストーラーは、デバイスが削除されていない理由を説明するメッセージをユーザーに表示する必要があります。
 
-共同インストーラーを呼び出すことによって自分のデバイスを削除する必要がありますしない**SetupDiRemoveDevice**します。 共同インストーラーは、通常、処理後のデバイスが正常に削除された後でこの要求を処理します。
+共同インストーラーでは、 **Setupdiremovedevice**を呼び出すことによって、デバイス自体を削除することはできません。 共同インストーラーは、通常、デバイスが正常に削除された後に、後処理でこの要求を処理します。
 
-レジストリ内の情報を削除する共同インストーラーがある場合は、後処理とのみの場合に前のインストーラーは、削除要求が成功したのでなど共同インストーラーは行う必要があります。 前処理のパスで共同インストーラーはコンテキスト パラメーターにレジストリ情報を格納し、ERROR_DI_POSTPROCESSING_REQUIRED 処理後の要求を返す必要があります。 Windows では、この差分要求の処理後の共同インストーラーを呼び出し、差分の状態は NO_ERROR と、レジストリ情報を削除し、共同インストーラーをチェックする必要があります。 共同インストーラーの前処理パスでのレジストリ情報を削除し、クラスのインストーラー (または別の共同インストーラー) に、DIF_REMOVE が失敗した場合、共同インストーラーで、デバイスが、予期しない状態で残る可能性があります。
+たとえば、共同インストーラーでレジストリ内の情報を削除する必要がある場合、共同インストーラーは、前のインストーラーが削除要求を正常に完了した場合にのみ、後処理でそれを実行します。 そのプリプロセスパスでは、共同インストーラーがそのコンテキストパラメーターにレジストリ情報を格納し、ERROR_DI_POSTPROCESSING_REQUIRED を返して後処理を要求します。 Windows がこの差分要求の後処理のために共同インストーラーを呼び出す場合、共同インストーラーは、差分の状態が NO_ERROR ことを確認してから、レジストリ情報を削除する必要があります。 共同インストーラーによって前処理パスのレジストリ情報が削除され、クラスインストーラー (または別の共同インストーラー) によって DIF_REMOVE が失敗した場合、共同インストーラーによってデバイスが予期しない状態のままになることがあります。
 
-インストーラーがファイルを削除この差分要求を処理するときに、ファイルが別のデバイスによって使用されている場合に。
+インストーラーでは、ファイルが別のデバイスで使用されている場合に、この差分要求を処理するときにファイルを削除しないでください。
 
-Windows では、PnP - クエリの削除を開始する前に、この差分要求を送信し、処理を削除します。
+Windows は、PnP クエリを開始する前に、この差分要求を送信します。処理を削除および削除します。
 
-差分のコードの詳細については、次を参照してください。 [DIF コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)します。
+差分コードの詳細については、「[差分コードの処理](https://docs.microsoft.com/windows-hardware/drivers/install/handling-dif-codes)」を参照してください。
 
 <a name="requirements"></a>要件
 ------------
@@ -126,21 +126,21 @@ Windows では、PnP - クエリの削除を開始する前に、この差分要
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Setupapi.h (Setupapi.h を含む)</td>
+<td align="left">Setupapi.log (Setupapi.log を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**SetupDiRemoveDevice**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiremovedevice)
 
-[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)
+[**SP_DEVINFO_DATA**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_devinfo_data)
 
-[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinstall_params_a)
+[**SP_DEVINSTALL_PARAMS**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_devinstall_params_a)
 
-[**SP_REMOVEDEVICE_PARAMS**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_removedevice_params)
+[**SP_REMOVEDEVICE_PARAMS**](https://docs.microsoft.com/windows/win32/api/setupapi/ns-setupapi-sp_removedevice_params)
 
  
 

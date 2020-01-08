@@ -1,29 +1,33 @@
 ---
 title: UMDF 2.0 ドライバーのクラッシュのトラブルシューティング
-description: ユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 を開始するには、UMDF ドライバーをデバッグするのに Wdfkd.dll で実装されたデバッガー拡張機能コマンドのサブセットを使用できます。
+description: ユーザーモードドライバーフレームワーク (UMDF) バージョン2以降では、Wdfkd に実装されているデバッガー拡張機能コマンドのサブセットを使用して、UMDF ドライバーをデバッグできます。
 ms.assetid: df1bfc10-379b-457f-a9c8-40fa10048f81
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 62ae6efccd3326c2c64246e974124f63145ec193
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4336f7b007fe1d03f5f2fb902658779d24d5f84d
+ms.sourcegitcommit: 9355a80229bb2384dd45493d36bdc783abdd8d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377469"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694242"
 ---
 # <a name="troubleshooting-umdf-20-driver-crashes"></a>UMDF 2.0 ドライバーのクラッシュのトラブルシューティング
 
 
-ユーザー モード ドライバー フレームワーク (UMDF) バージョン 2 を開始するには、UMDF ドライバーをデバッグするのに Wdfkd.dll で実装されたデバッガー拡張機能コマンドのサブセットを使用できます。 このトピックでは、UMDF ドライバーに関する問題のトラブルシューティングを起動する可能性がありますコマンドについて説明します。
+ユーザーモードドライバーフレームワーク (UMDF) バージョン2以降では、Wdfkd に実装されているデバッガー拡張機能コマンドのサブセットを使用して、UMDF ドライバーをデバッグできます。 このトピックでは、UMDF ドライバーの問題をトラブルシューティングするために、どのコマンドを起動するかについて説明します。
 
-##  <a name="determining-why-a-umdf-20-driver-crashed"></a>ドライバーがクラッシュした理由 UMDF 2.0 を決定します。
+##  <a name="determining-why-a-umdf-20-driver-crashed"></a>UMDF 2.0 ドライバーがクラッシュした原因の特定
 
 
-ドライバーのホスト プロセスを終了すると場合に、ドライバーで発生するコールバックで問題がある可能性があります、[ホスト タイムアウト](how-umdf-enforces-time-outs.md)しきい値を超えています。 ここで、reflector は、ドライバーのホスト プロセスを終了します。
+ドライバーのホストプロセスが終了した場合、コールバックで[ホストのタイムアウト](how-umdf-enforces-time-outs.md)しきい値を超えた問題が発生している可能性があります。 この場合、リフレクタはドライバーホストプロセスを終了します。
 
-調査のため、カーネル モードのデバッグ セッションの設定」の説明に従って[UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md)します。
+調査するには、まず、「 [UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md)」の説明に従って、カーネルモードのデバッグセッションを設定します。 テストシステムにアタッチされたカーネルデバッガーで、UMDF ドライバーのすべての開発とテストを行い、WUDFHost で[アプリケーション検証ツール ()](../debugger/debugger-download-tools.md)を有効にすることを強くお勧めします。 次のコマンドを使用して、カーネルデバッガーをアタッチし、再起動します。
 
-- 場合**HostFailKdDebugBreak**設定は、カーネル モード デバッガーのタイムアウトしきい値を超えたときに、リフレクタ中断します。 デバッガーの出力に表示されますいくつかの提案を開始する方法のなどのリンクをクリックすることができます。 例:
+```cpp
+AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHost.exe
+```
+
+- **HostFailKdDebugBreak**が設定されている場合 (これは既定で Windows 8 を起動しています)、タイムアウトしきい値を超えたときに、リフレクターはカーネルモードのデバッガーを中断します。 デバッガーの出力には、クリックできるリンクなど、開始方法に関するいくつかの推奨事項が表示されます。 たとえば次のようになります。
 
   ```cpp
   **** Problem detected in UMDF driver "WUDFOsrUsbFx2". !process 0xFFFFE0000495B080 0x1f, !devstack 0xFFFFE000032BFA10, Problem code 3 ****
@@ -34,29 +38,27 @@ ms.locfileid: "67377469"
   **** Note that driver host process may get terminated if you go past this break, making it difficult to debug the problem!
   ```
 
-- 使用[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)試みることができます、エラー、およびその他の UMDF 拡張機能コマンドに関する情報を表示します。
-- 使用[ **! プロセス 0 0x1f wudfhost.exe** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process)スレッド スタック情報を含むすべて Wudfhost.exe ドライバー ホスト プロセスを一覧表示します。
+- [ **! Analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)を使用して、エラーに関する情報と、実行できるその他の UMDF 拡張コマンドを表示します。
+- [ **! Process 0 0x1f wudfhost .exe**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process)を使用して、スレッドスタック情報を含むすべての Wudfhost .exe ドライバーのホストプロセスを一覧表示します。
 
-  使用することも[ **! wdfkd.wdfldr** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfldr) WDF に現在バインドされているすべてのドライバーを表示します。 UMDF ドライバーのイメージ名をクリックすると、デバッガーには、ホスト プロセスのアドレスが表示されます。 そのプロセスに固有の情報を表示するプロセスのアドレスをクリックすることができます。
+  また、! wdfkd. wdfumtriage と[ **! wdfkd. wdfldr**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfldr)を使用すると、現在 WDF にバインドされているすべてのドライバーを表示できます。 UMDF ドライバーのイメージ名をクリックすると、ホストプロセスのアドレスがデバッガーに表示されます。 次に、プロセスのアドレスをクリックすると、そのプロセスに固有の情報が表示されます。
 
-- 必要に応じて、使用して[ **.process/r/p*プロセス*** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process--set-process-context-)ドライバーをホストしている Wudfhost プロセスのプロセスのコンテキストを切り替える。 使用[ **.cache forcedecodeuser** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-cache--set-cache-size-)と**lmu**ドライバーが、現在のプロセスでホストされていることを確認します。
-- スレッドの呼び出し履歴を調べます ([ **! スレッド*アドレス*** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)) ドライバーのコールバックがタイムアウトしたかどうかを判断します。スレッドのティック数を確認します。 Windows 8.1 ので、reflector は 1 分後にタイムアウトします。
-- 使用[ **! wdfkd.wdfdriverinfo MyDriver.dll 0x10** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)詳細フォームに、デバイス ツリーを表示します。 をクリックして[ **! wdfdevice**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice)します。 このコマンドは、詳細な電源、電源ポリシー、プラグ アンド プレイ (PnP) の状態情報を表示します。
-- 使用[ **! wdfkd.wdfumirps** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)に保留中の Irp を探します。
-- 使用[ **! wdfkd.wdfdevicequeues** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevicequeues)ドライバーのキューの状態を確認します。
-- カーネル モードのデバッグ セッションで使用できます[ **! wmitrace.logdump WudfTrace** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wmitrace-logdump)トレース ログを表示します。
+- 必要に応じて、 [ **. process/r/P*プロセス*** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process--set-process-context-)を使用して、プロセスコンテキストを、ドライバーをホストしている wudfhost プロセスのコンテキストに切り替えます。 [ **. Cache forcedecodeuser**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-cache--set-cache-size-)と**lmu**を使用して、ドライバーが現在のプロセスでホストされていることを確認します。
+- スレッド呼び出し履歴 ([ **! スレッド*アドレス*** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)) を調べて、ドライバーコールバックがタイムアウトしたかどうかを確認します。スレッドのティック数を確認します。 Windows 8.1 では、リフレクターは1分後にタイムアウトします。
+- デバイスツリーを詳細な形式で表示するには、 [ **! wdfkd. wdfdriverinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdriverinfo)を使用します。 次に、[ [ **! wdfdevice**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevice)] をクリックします。 このコマンドは、電源、電源ポリシー、およびプラグアンドプレイ (PnP) の詳細な状態情報を表示します。
+- [**Wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)を使用して、保留中の irp を探します。
+- [ **! Wdfkd. wdfdevicequeues**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdevicequeues)を使用して、ドライバーのキューの状態を確認します。
+- カーネルモードのデバッグセッションでは、 [ **! Wmitrace WudfTrace**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wmitrace-logdump)を使用してトレースログを表示できます。
 
-## <a name="displaying-the-umdf-20-ifr-log"></a>IFR ログインの UMDF 2.0 を表示します。
-
-
-カーネル モードのデバッグ セッションで使用することができます、 [ **! wdfkd.wdflogdump** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump)使用可能な場合、Windows Driver Frameworks (WDF) インフライト レコーダー (IFR) ログを表示する拡張機能のコマンドを記録します。
-
-## <a name="finding-memory-dump-files"></a>メモリ ダンプ ファイルを検索します。
+## <a name="displaying-the-umdf-20-ifr-log"></a>UMDF 2.0 IFR ログの表示
 
 
-参照してください[リフレクターが、ホスト プロセスを終了した理由を判断する](determining-why-the-reflector-terminated-the-host-process.md)をユーザー モード ダンプ ファイルを見つける方法について。 参照してください[UMDF ドライバーで WPP ソフトウェア トレースを使用して](using-wpp-software-tracing-in-umdf-drivers.md)を設定する方法については、 **LogMinidumpType**ミニダンプ ファイルに格納されている情報の種類を指定するレジストリ値。
+カーネルモードのデバッグセッションでは、 [ **! wdfkd. wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump) extension コマンドを使用して、Windows Driver FRAMEWORK (WDF) の実行中のレコーダー (IFR) ログレコードを表示できます (使用可能な場合)。
+
+## <a name="finding-memory-dump-files"></a>メモリダンプファイルの検索
 
 
+ユーザーモードのダンプファイルの検索について[は、「リフレクターがホストプロセスを終了した理由の特定](determining-why-the-reflector-terminated-the-host-process.md)」を参照してください。 **LogMinidumpType**レジストリ値を設定してミニダンプファイルに格納されている情報の種類を指定する方法については、「 [UMDF ドライバーでの WPP ソフトウェアトレースの使用](using-wpp-software-tracing-in-umdf-drivers.md)」を参照してください。
 
 
 
