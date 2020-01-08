@@ -1,9 +1,9 @@
 ---
 title: RetrieveImageRequest 要素
-description: RetrieveImageRequest 操作の必要な要素には、クライアントのスキャン ジョブが作成された後、デバイスからスキャン データを取得する要求が含まれています。
+description: Required RetrieveImageRequest operation 要素には、スキャンジョブの作成後にデバイスからスキャンデータを取得するためのクライアントの要求が含まれています。
 ms.assetid: 4f6d6bd0-b323-4f95-b380-2be9cec1ee6e
 keywords:
-- RetrieveImageRequest 要素イメージング デバイス
+- RetrieveImageRequest 要素イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0023e7ca3f8211e5d626455ae634e983b79145c2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cf1c5900fce4ef892f9ba129f182c9dc04cecf01
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381614"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652946"
 ---
 # <a name="retrieveimagerequest-element"></a>RetrieveImageRequest 要素
 
 
-必要な**RetrieveImageRequest**操作の要素には、クライアントのスキャン ジョブが作成された後、デバイスからスキャン データを取得する要求が含まれています。
+Required **RetrieveImageRequest** operation 要素には、スキャンジョブの作成後にデバイスからスキャンデータを取得するためのクライアントの要求が含まれています。
 
 <a name="usage"></a>使用方法
 -----
@@ -68,78 +68,78 @@ ms.locfileid: "63381614"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **RetrieveImageRequest**操作の要素。
+WSD Scan サービスは、 **RetrieveImageRequest** operation 要素をサポートしている必要があります。
 
-スキャン サービスを検証する必要があります、 [ **JobId** ](jobid.md)と[ **JobToken** ](jobtoken.md)ジョブが有効であることを確認するクライアントを提供する要素と取得を要求しているクライアントによって作成されました。 スキャン サービスが応答する必要があります、要求が有効な場合、 [ **RetrieveImageResponse** ](retrieveimageresponse.md)操作の要素。
+スキャンサービスは、ジョブが有効であり、取得を要求しているクライアントによって作成されたことを確認するために、クライアントが提供する[**JobId**](jobid.md)および[**jobtoken**](jobtoken.md)要素を検証する必要があります。 要求が有効な場合、スキャンサービスは[**RetrieveImageResponse**](retrieveimageresponse.md) operation 要素を使用して応答する必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
-この操作は、次のエラーを返すも可能性があります。
+この操作では、次のエラーが返されることもあります。
 
--   **ClientErrorJobIdNotFound**スキャナーは、ジョブ Id 値と一致するジョブを見つけることができませんまたはジョブ Id 値が定義された範囲内です。
+-   **ClientErrorJobIdNotFound**スキャナーが JobId 値に一致するジョブを見つけることができません。または、JobId 値が定義された範囲内にありません。
 
     | Fault プロパティ | 定義                         |
     |----------------|------------------------------------|
-    | \[コード\]       | soap 送信者:                        |
-    | \[サブコード\]    | wscn:ClientErrorJobIdNotFound      |
-    | \[Reason\]     | 指定したジョブ Id が見つかりませんでした。 |
-    | \[詳細\]     | JobId:JobId が正しくありません。             |
+    | \[コード\]       | soap: 送信者                        |
+    | \[サブコード\]    | wscn: ClientErrorJobIdNotFound      |
+    | \[Reason\]     | 指定された JobId が見つかりませんでした。 |
+    | \[詳細\]     | JobId: JobId が正しくありません             |
 
      
 
--   **ClientErrorNoImagesAvailable**スキャナーには、クライアントを取得するために使用できるその他のイメージはありません。
+-   **ClientErrorNoImagesAvailable**スキャナーにクライアントが取得できるイメージがありません。
 
     | Fault プロパティ | 定義                                     |
     |----------------|------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                    |
-    | \[サブコード\]    | wscn:ClientErrorNoImagesAvailable              |
-    | \[Reason\]     | サーバーには、取得に使用できるイメージがありません。 |
-    | \[詳細\]     | なし                                           |
+    | \[コード\]       | soap: 送信者                                    |
+    | \[サブコード\]    | wscn: ClientErrorNoImagesAvailable              |
+    | \[Reason\]     | サーバーで取得できるイメージがありません。 |
+    | \[詳細\]     | None                                           |
 
      
 
--   **ClientErrorInvalidJobToken**JobToken 値として指定したが、指定したスキャン JobId 無効です。
+-   **Clienterrorinvalidjobtoken**指定された JobToken 値は、指定されたスキャンジョブ Id に対して無効です。
 
     | Fault プロパティ | 定義                                                          |
     |----------------|---------------------------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                                         |
-    | \[サブコード\]    | wscn:ClientErrorInvalidJobToken                                     |
-    | \[Reason\]     | JobId パラメーターを持つ JobToken パラメーターの値が正しくありません。 |
-    | \[詳細\]     | なし                                                                |
+    | \[コード\]       | soap: 送信者                                                         |
+    | \[サブコード\]    | wscn: ClientErrorInvalidJobToken                                     |
+    | \[Reason\]     | JobToken パラメーター値は、JobId パラメーターでは無効です。 |
+    | \[詳細\]     | None                                                                |
 
      
 
--   **ClientErrorJobCancelled**
+-   **ClientErrorJobCancelled れました**
 
     | Fault プロパティ | 定義                              |
     |----------------|-----------------------------------------|
-    | \[コード\]       | soap 送信者:                             |
-    | \[サブコード\]    | wscn:ClientErrorJobCancelled            |
-    | \[Reason\]     | 現在のスキャン ジョブが取り消されました。 |
-    | \[詳細\]     | なし                                    |
+    | \[コード\]       | soap: 送信者                             |
+    | \[サブコード\]    | wscn: ClientErrorJobCancelled 取り消されました            |
+    | \[Reason\]     | 現在のスキャンジョブは取り消されました。 |
+    | \[詳細\]     | None                                    |
 
      
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-次のコード例では、JobId 1 によって識別されるジョブのイメージ データを取得するクライアント要求を示しています。
+次のコード例は、JobId 1 で識別されるジョブのイメージデータを取得するクライアント要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/RetrieveImage
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/RetrieveImage
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -156,7 +156,7 @@ WSD スキャン サービスをサポートする必要があります、 **Ret
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**DocumentDescription**](documentdescription.md)

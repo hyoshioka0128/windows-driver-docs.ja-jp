@@ -3,28 +3,28 @@ title: WSD ポート モニターの双方向拡張例
 description: WSD ポート モニターの双方向拡張例
 ms.assetid: a04f16d5-ae99-4df5-bb55-aef95bd03588
 keywords:
-- 双方向の拡張機能は、WDK プリンター autoconfig をファイルします。
-- ボックスの自動構成サポートの WDK プリンター、双方向の拡張ファイル
-- WSD スキーマ拡張機能の WDK プリンター
-- スキーマ拡張 WDK WSD
+- bidi 拡張ファイル WDK プリンター autoconfig
+- 組み込み自動構成サポート WDK プリンター、bidi 拡張ファイル
+- WSD スキーマ拡張の WDK プリンター
+- スキーマ拡張の WDK WSD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0738fc4f183ee29829f3b650e41347c04951d757
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89e70f6eb1bda920791cf0d67181c9a9367ebaee
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387273"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652912"
 ---
 # <a name="bidi-extension-example-for-wsd-port-monitor"></a>WSD ポート モニターの双方向拡張例
 
-次のコード例では、Devices (WSD) ポート モニターの Web サービスの双方向通信のスキーマを拡張する XML ファイルのサンプルを示します。
+次のコード例は、Web Services for Devices (WSD) ポートモニターの bidi 通信スキーマを拡張するサンプル XML ファイルです。
 
 ```xml
 <?xml version='1.0'?>
-<bidi:Definition xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'>
+<bidi:Definition xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'>
 
-  <Schema xmlns:nprt='http://schemas.microsoft.com/windows/2006/08/wdp/print'>
+  <Schema xmlns:nprt='https://schemas.microsoft.com/windows/2006/08/wdp/print'>
     <Property name='Printer'>
       <Property name='DeviceInfo'>
         <Value name='FriendlyName' query='nprt:PrinterDescription' filter='nprt:PrinterDescription/nprt:PrinterName' type='BIDI_STRING' xmllang='true'/>
@@ -203,11 +203,11 @@ ms.locfileid: "63387273"
 </bidi:Definition>
 ```
 
-### <a name="description-of-schema-extension"></a>スキーマの拡張機能の説明
+### <a name="description-of-schema-extension"></a>スキーマ拡張の説明
 
-前の例の bidi 拡張ファイルには、ルート要素が含まれています。&lt;定義&gt;、2 つの主要なセクションで。&lt;スキーマ&gt;bidi スキーマの拡張機能を配置すると、ここと&lt;PortStatus&gt;ドライバーがポートに WSD 状態をマップ、\_情報\_3 のポートの状態の構造 (Windows SDK で説明します。ドキュメント)。
+前の例の bidi 拡張ファイルには、ルート要素 &lt;定義&gt;が含まれており、2つの主要なセクションがあります。 &lt;スキーマ&gt;では、bidi スキーマ拡張が配置されます。もう1つは、ドライバーが WSD ステータスをポート &lt;情報&gt;3 ポートの状態構造 (\_ドキュメントで説明) にマップします。
 
-スキーマの拡張機能で使用されている任意の名前空間は、スキーマの要素で定義する必要があります。 拡張機能の処理では、下位レベル要素で定義されている名前空間は認識されません。 下位レベル要素で名前空間を定義すると、検証に失敗する拡張ファイルが発生します。
+スキーマ拡張で使用される名前空間は、Schema 要素で定義されている必要があります。 拡張機能の処理では、下位レベルの要素で定義されている名前空間は認識されません。 下位レベルの要素で名前空間を定義すると、拡張ファイルの検証に失敗します。
 
 ```xml
 <Definition>
@@ -216,23 +216,23 @@ ms.locfileid: "63387273"
 </Definition>
 ```
 
-この拡張ファイルから各 bidi クエリは次のとおりです。
+この拡張ファイルからの各 bidi クエリには次のものが含まれます。
 
--   アルゴリズムによっては、WSD データから bidi データを作成する方法について説明しますアルゴリズムは、次の 4 つの構成要素で定義できます[Const](const.md)、[インストール済み](installed.md)、[一覧](list.md)、および[値](value.md)します。
+-   WSD データから bidi データを作成する方法を説明するアルゴリズム。アルゴリズムは、 [Const](const.md)、 [Installed](installed.md)、 [List](list.md)、 [Value](value.md)の4つの構成要素を使用して定義できます。
 
--   WSD データを取得する方法について説明します WSD クエリ パラメーター。
+-   WSD データを取得する方法を説明する WSD クエリパラメーター。
 
--   Bidi 結果の作成に使用される WSD スキーマから特定の XML 要素をフィルター処理する XPath フィルター。
+-   Bidi の結果を作成するために使用される WSD スキーマから特定の XML 要素をフィルター処理する XPath フィルター。
 
-### <a name="parameter-construct"></a>パラメーター コンス トラクター
+### <a name="parameter-construct"></a>パラメーターコンストラクター
 
-&lt;パラメーター&gt;前の例の bidi 拡張ファイルで使用される要素は、次の形式のクエリは、考えられるように、さまざまな値 (たとえば、TopBin または BottomBin) を使用できる変数プロパティを定義します。
+前の例の bidi 拡張ファイルで使用される &lt;Parameter&gt; 要素は、次の形式のクエリを実行できるように、異なる値 (TopBin や BottomBin など) を受け取ることができる変数プロパティを定義します。
 
 -   `\Printer.Layout.InputBins.TopBin:Installed`
 
 -   `\Printer.Layout.InputBins.BottomBin:Installed`
 
-次のクエリは、上記の双方向の拡張機能で定義されたカスタム属性の使用を示しています。
+次のクエリ例は、前の bidi 拡張で定義されているカスタム属性の使用方法を示しています。
 
 ```xml
 <Property name='Printer'>
@@ -252,6 +252,6 @@ ms.locfileid: "63387273"
 </Property>
 ```
 
-前の例は、次のクエリ結果します。
+前の例では、次のクエリが実行されます。
 
 `\Printer.Layout.InputBins.[TrayName]:Installed`

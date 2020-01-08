@@ -1,9 +1,9 @@
 ---
 title: ValidateScanTicketRequest 要素
-description: ValidateScanTicketRequest 操作の必要な要素では、クライアントが今後スキャン操作の設定が有効なかどうかを判断できるようにします。
+description: 必須の ValidateScanTicketRequest operation 要素を使用すると、クライアントは、今後のスキャン操作の設定が有効かどうかを判断できます。
 ms.assetid: 366b0d71-1494-48fa-94f5-1832d7f119a4
 keywords:
-- ValidateScanTicketRequest 要素イメージング デバイス
+- ValidateScanTicketRequest 要素イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dda1f11b6123105b0f2c5abfce44704d3d3fd38b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e8ae7777343f12162de5f37a4d203b99181244c
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356148"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652930"
 ---
 # <a name="validatescanticketrequest-element"></a>ValidateScanTicketRequest 要素
 
 
-必要な**ValidateScanTicketRequest**操作の要素をクライアントが判別の将来のスキャン操作の設定が有効なかどうかは有効にします。
+必須の**ValidateScanTicketRequest** operation 要素を使用すると、クライアントは、今後のスキャン操作の設定が有効かどうかを判断できます。
 
 <a name="usage"></a>使用方法
 -----
@@ -52,7 +52,7 @@ ms.locfileid: "63356148"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="scanticket.md" data-raw-source="[&lt;strong&gt;ScanTicket&lt;/strong&gt;](scanticket.md)"><strong>ScanTicket</strong></a></p></td>
+<td><p><a href="scanticket.md" data-raw-source="[&lt;strong&gt;ScanTicket&lt;/strong&gt;](scanticket.md)"><strong>スキャンチケット</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -65,46 +65,46 @@ ms.locfileid: "63356148"
 <a name="remarks"></a>注釈
 -------
 
-クライアントが使用できる、 **ValidateScanTicketRequest**さまざまな設定の変更との組み合わせを検証する要素。
+クライアントは、 **ValidateScanTicketRequest**要素を使用して、さまざまな設定の変更と組み合わせを検証できます。
 
-[**ScanTicket** ](scanticket.md)すべてのクライアントが、将来のスキャン操作で送信しようとしています。 設定が含まれています。 **ScanTicket**処理要素であること、クライアントが、スキャナーで、オーバーライドしようとしています。 または、WSD スキャン サービスでサポートされているすべての可能な要素を含めることができますのみを含めることができます。
+[**Scanticket**](scanticket.md)には、クライアントが今後のスキャン操作で送信する設定がすべて含まれています。 **Scanticket**には、クライアントがスキャナーで上書きする処理要素だけを含めることができます。また、WSD Scan サービスでサポートされているすべての要素を含めることもできます。
 
-WSD スキャン サービスが正常に処理する場合、 **ValidateScanTicketRequest**でその検証情報が返されます、 [ **ValidateScanTicketResponse** ](validatescanticketresponse.md)操作。 それ以外の場合、スキャン サービスでは、適切なエラー コードを返す必要があります。
+WSD Scan サービスが**ValidateScanTicketRequest**を正常に処理した場合は、 [**ValidateScanTicketResponse**](validatescanticketresponse.md)操作でその検証情報が返されます。 そうしないと、スキャンサービスから適切なエラーコードが返されます。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
-この操作は、次のエラー コードを返すも可能性があります。
+この操作では、次のエラーコードが返されることもあります。
 
--   **ClientErrorConflictingRequiredParameters**
+-   **Clienterror衝突 Tingrequiredparameters**
 
-    競合がある 2 つ以上の DocumentParameters 間、MustHonor がある要素属性が設定を true にします。 MustHonor を true に設定されている設定のすべてを使用して、デバイスで競合が発生します。 スキャン サービス、ScanTicket は無効と見なされるために、この競合を解決できません。
+    MustHonor 属性が true に設定されている2つ以上の DocumentParameters 要素が競合しています。 MustHonor set true に指定されたすべての設定を使用すると、デバイスで競合が発生します。 スキャンサービスはこの競合を解決できないため、ScanTicket は無効と見なされます。
 
     | Fault プロパティ | 定義                                                                                                                                                     |
     |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                                                                                                                                    |
-    | \[サブコード\]    | wscn:ClientErrorConflictingRequiredParameters                                                                                                                  |
-    | \[Reason\]     | DocumentParameters 要素で複数の要素がある MustHonor true に設定するが、すべての設定を適用する設定を true 競合スキャナーのデバイスで。 |
-    | \[詳細\]     | なし                                                                                                                                                           |
+    | \[コード\]       | soap: 送信者                                                                                                                                                    |
+    | \[サブコード\]    | wscn: Clienterror衝突 Tingrequiredparameters                                                                                                                  |
+    | \[Reason\]     | DocumentParameters 要素内の複数の要素で MustHonor が true に設定されていますが、すべての設定を true に設定すると、スキャナーデバイスで競合が発生します。 |
+    | \[詳細\]     | None                                                                                                                                                           |
 
      
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、有効なスキャンのチケットの検証要求を示します。
+次のコード例は、有効なスキャンチケットの検証要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -146,20 +146,20 @@ WSD スキャン サービスが正常に処理する場合、 **ValidateScanTic
   </soap:Envelope>
 ```
 
-次のコード例では、無効なスキャン チケットの検証要求を示します。
+次のコード例は、無効なスキャンチケットの検証要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ValidateScanTicket
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -197,8 +197,8 @@ WSD スキャン サービスが正常に処理する場合、 **ValidateScanTic
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
-[**ScanTicket**](scanticket.md)
+[**スキャンチケット**](scanticket.md)
 
 [**ValidateScanTicketRequest**](validatescanticketrequest.md)

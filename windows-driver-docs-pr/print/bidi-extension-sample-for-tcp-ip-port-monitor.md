@@ -3,25 +3,25 @@ title: TCP/IP ポート モニターの双方向拡張機能サンプル
 description: TCP/IP ポート モニターの双方向拡張機能サンプル
 ms.assetid: 76454b0c-0e02-4372-97ed-2401a785cef8
 keywords:
-- 双方向の拡張機能は、WDK プリンター autoconfig をファイルします。
-- ボックスの自動構成サポートの WDK プリンター、双方向の拡張ファイル
+- bidi 拡張ファイル WDK プリンター autoconfig
+- 組み込み自動構成サポート WDK プリンター、bidi 拡張ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbcadbc5803c82c622f728ebbf3e390b8c602b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c9f56681bb515ef57b391a69a28b8898ac9ed7d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379264"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652880"
 ---
 # <a name="bidi-extension-sample-for-tcpip-port-monitor"></a>TCP/IP ポート モニターの双方向拡張機能サンプル
 
 
-次のコード例は、標準の TCP/IP ポート モニタの双方向通信のスキーマを拡張するサンプル XML ファイルです。
+次のコード例は、標準 TCP/IP ポートモニターの bidi 通信スキーマを拡張するサンプル XML ファイルです。
 
 ```xml
 <?xml version="1.0" encoding="US-ASCII"?>
-<bidi:Schema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Schema xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
     <Property name="Printer">
       <Property name="Layout">
         <Property name="InputBins">
@@ -61,7 +61,7 @@ ms.locfileid: "63379264"
 </bidi:Schema>
 ```
 
-上記のコード サンプルは、次のクエリ結果します。
+上記のコードサンプルでは、次のクエリが実行されます。
 
 ```cpp
 \Printer.Layout.InputBins.TopBin:Installed

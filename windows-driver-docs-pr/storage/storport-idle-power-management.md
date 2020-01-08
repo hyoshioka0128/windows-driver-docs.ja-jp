@@ -1,33 +1,24 @@
 ---
-title: Storport のアイドル電源管理
-description: Storport のアイドル電源管理
+title: Storport アイドル状態の電源管理の概要
+description: Storport アイドル状態の電源管理の概要
 ms.assetid: 1ad47775-4d7a-47c4-83eb-774e58c863d3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8eeb81e9f24702c02ddabeec2c3c57406b345c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 100d38c7aa33ee41cb292b819ee1eb645eadb4f5
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63374497"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606379"
 ---
-# <a name="storport-idle-power-management"></a>Storport のアイドル電源管理
+# <a name="storport-idle-power-management-overview"></a>Storport アイドル状態の電源管理の概要
 
+Storport アイドル状態の電源管理 (IPM) を使用すると、classpnp および disk class ドライバーは、一定期間アイドル状態になったときに SCSI 停止ユニットコマンドをディスクデバイスに送信できます。 アイドル期間は、システム管理者が構成できます。 Storport ミニポートドライバーは、Storport ミニポートドライバーがコマンドを使用して電力を節約する方法を担います。 以下のセクションでは、IPM の詳細について説明します。
 
-Storport アイドル状態の電源管理 (IPM) は、classpnp とディスクにも一定の時間のアイドル状態にされたときに、ディスク デバイスに停止単位の SCSI コマンドを送信するクラスのドライバーを許可します。 アイドル時間とは、システム管理者によって構成できます。 Storport ミニポート ドライバーは、電源を節約するために、Storport ミニポート ドライバーでコマンドが使用される方法です。 次のセクションでは、さらに詳しく IPM をについて説明します。
+- [Scope](ipm-scope.md)
 
-[IPM スコープ](ipm-scope.md)
+- [予想](ipm-assumptions.md)
 
-[IPM の前提条件](ipm-assumptions.md)
+- [構成と使用方法](ipm-configuration-and-usage.md)
 
-[IPM 構成と使用状況](ipm-configuration-and-usage.md)
-
-[IPM ハード ディスク ドライブのアイドル タイムアウト](ipm-hard-disk-drive-idle-timeout.md)
-
- 
-
- 
-
-
-
-
+- [ハードディスクドライブのアイドルタイムアウト](ipm-hard-disk-drive-idle-timeout.md)

@@ -11,12 +11,12 @@ keywords:
 - GDL WDK、エラー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e19438b6320c0ed66083690cfb425d5d7656ecea
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 141bda331dc507d7e0c94b7cbc98b616bdfcbe0d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881896"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652956"
 ---
 # <a name="troubleshooting-gdl-parsing"></a>GDL 解析のトラブルシューティング
 
@@ -61,10 +61,10 @@ ms.locfileid: "74881896"
 <a href="" id="symptom--dom-interface---xpath-query-cannot-find-any-elements-in-the-snapshot---for-example--selectsinglenode---snapshotroot-gdl-attribute----returns-nothing--"></a>現象: DOM interface: Xpath クエリはスナップショット内の要素を見つけることができません (たとえば、selectSingleNode ("/SnapshotRoot/GDL\_ATTRIBUTE") は nothing を返します)。  
 解決策: Xpath では、名前空間プレフィックスのない要素名が、既定の名前空間ではなく、null または空の名前空間を参照することを想定しています。 スナップショットは既定の名前空間を定義し、ほとんどの要素は既定の名前空間に属します。
 
-Xpath を使用してこれらの要素にアクセスするには、クライアントはまず、この既定の名前空間を明示的なプレフィックスにマップする必要があります。 この方法で既定の名前空間をマップするには、document pbjects setProperty メソッドを使用します。 設定が必要なプロパティは、SelectionNamespaces です。 このプロパティを使用して、既定の名前空間明示的なプレフィックスを割り当てます。 スナップショットでは、既定の名前空間が[http://schemas.microsoft.com/2002/print/gdl/1.0](https://schemas.microsoft.com/2002/print/gdl/1.0)ため、setProperty の呼び出しは次のコード例のようになります。
+Xpath を使用してこれらの要素にアクセスするには、クライアントはまず、この既定の名前空間を明示的なプレフィックスにマップする必要があります。 この方法で既定の名前空間をマップするには、document pbjects setProperty メソッドを使用します。 設定が必要なプロパティは、SelectionNamespaces です。 このプロパティを使用して、既定の名前空間明示的なプレフィックスを割り当てます。 スナップショットでは、既定の名前空間が[https://schemas.microsoft.com/2002/print/gdl/1.0](https://schemas.microsoft.com/2002/print/gdl/1.0)ため、setProperty の呼び出しは次のコード例のようになります。
 
 ```cpp
-XMLDoc->setProperty(L"SelectionNamespaces", "xmlns:gdl=\"http://schemas.microsoft.com/2002/print/gdl/1.0\"");
+XMLDoc->setProperty(L"SelectionNamespaces", "xmlns:gdl=\"https://schemas.microsoft.com/2002/print/gdl/1.0\"");
 ```
 
 前の例の2番目の引数は実際にはバリアントですが、わかりやすくするために、この追加の複雑さは省略されています。 Xpath クエリでは、既定の名前空間の要素を参照するときに、名前空間プレフィックス gdl を明示的に参照する必要があります。 クエリは次のコード例になります。

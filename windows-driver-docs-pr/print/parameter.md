@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6063785012286e73387a5011fb0c8e0543857edd
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 11eddbb02718678f4727ccb396807974210667c9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881910"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652938"
 ---
 # <a name="parameter-element"></a>parameter 要素
 
 省略可能な**parameter**要素は、パーセント (%) の代わりに使用するテキスト文字列を指定します。イベント通知メッセージのテキスト内の文字。
 
-**Parameter**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
+**Parameter**要素は、この URI: [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 ## <a name="usage"></a>使用方法
 
@@ -126,7 +126,7 @@ ms.locfileid: "74881910"
 ```xml
 <?xml version="1.0" ?>
    <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <balloonUI iconID="1" resourceDll="IHV.dll">
@@ -143,7 +143,7 @@ ms.locfileid: "74881910"
 
 上記の XML コードでは、イベント通知メッセージに次の本文 (stringID = "100") が表示されます: "プリンターは黄色のインクが不足しています。サイドアクセスドア B を開いてインクカートリッジを交換してください。 "
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [body](body.md)
 

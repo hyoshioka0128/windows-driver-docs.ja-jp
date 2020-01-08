@@ -3,71 +3,71 @@ title: GPD または PPD ファイルを基盤とする構成モジュール
 description: GPD または PPD ファイルを基盤とする構成モジュール
 ms.assetid: b0aeea58-1c58-475e-8d4a-597778e42a7c
 keywords:
-- バージョン 3 XPS ドライバー WDK XPSDrv、GPD ファイル
+- バージョン 3 XPS ドライバー WDK XPSDrv、GPD files
 - バージョン 3 XPS ドライバー WDK XPSDrv、PPD ファイル
 - GPD ファイル WDK XPSDrv
 - PPD ファイル WDK XPSDrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cd79dada49ce41896df9ddb766fd63a10b6e478
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7bc56ecf70727b06d8c17e3f556fbe8496a4eb4
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360578"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652853"
 ---
 # <a name="configuration-modules-based-on-gpd-or-ppd-files"></a>GPD または PPD ファイルを基盤とする構成モジュール
 
 
-Windows vista の場合、GPD と PPD ファイルには、印刷スキーマのマッピングが含まれています、XPSDrv に固有の新しいエントリは印刷ドライバー。 これらの変更は、Unidrv または Pscript5 構成モジュールは印刷ドライバー プラグインを GPD 専用または PPD 専用の構成モジュールを作成する際に、GPD と PPD ファイルに適用されます。
+Windows Vista の場合、GPD ファイルと PPD ファイルには、印刷スキーママッピングと XPSDrv 印刷ドライバーに固有の新しいエントリが含まれています。 これらの変更は GPD および PPD ファイルに適用されます。これらのファイルを使用すると、Unidrv または Pscript5 print driver プラグイン用の GPD または PPD 専用の構成モジュールと構成モジュールを作成できます。
 
-### <a name="xpsdrv-specific-gpd-and-ppd-entries"></a>XPSDrv 固有 GPD と PPD エントリ
+### <a name="xpsdrv-specific-gpd-and-ppd-entries"></a>XPSDrv 固有の GPD と PPD エントリ
 
-GPD または PPD ファイルを使用して、XPSDrv プリンター ドライバーのバージョン 3 の印刷ドライバー構成モジュールを作成するには、次のいずれかを行う必要があります。
+GPD または PPD ファイルを使用して XPSDrv print driver 用のバージョン3の印刷ドライバー構成モジュールを作成するには、次のいずれかの操作を行う必要があります。
 
--   作成または GPD または PPD ファイルを編集します。 ファイルには、プリンターがサポートする機能を説明する構成キーワードを含める必要があります。 標準 GPD または PPD キーワードは、パブリックの印刷スキーマ キーワードを自動的にマップされますが、非標準のキーワードは、既定では、プライベートの名前空間にマップされます。
+-   GPD ファイルまたは PPD ファイルを作成または編集します。 このファイルには、プリンターでサポートされている機能を説明する構成キーワードを含める必要があります。 標準の GPD または PPD キーワードは、public Print Schema キーワードに自動的にマップされますが、非標準のキーワードは既定でプライベート名前空間にマップされます。
 
--   PPD ファイルを作成する場合、GPD ファイル、または、Msxpsinc.ppd ファイルを作成している場合は、Msxpsinc.gpd ファイルが含まれます。 これらのファイルには、結果の構成ファイルが XPSDrv プリンターのドライバーの一部をすることを示す、次のキーワードが含まれます。
+-   GPD ファイルを作成している場合は msgpd ファイルを、PPD ファイルを作成する場合は Ms ファイルを含めます (たとえば、)。 これらのファイルには、次のキーワードが含まれます。これは、結果として得られる構成ファイルが XPSDrv print ドライバーの一部であることを示します。
 
-    Msxpsinc.gpd に含まれています。
+    Gpd の場合、次のものが含まれます。
 
     ```cpp
     IsXPSDriver?: TRUE
     ```
 
-    Msxpsinc.ppd に含まれています。
+    Msxp の場合は、次のものが含まれます。
 
     ```cpp
     *MSIsXPSDriver: True
     ```
 
-これらの属性、GPD または PPD ファイルに追加するのではなく、優先のアプローチには、Msxpsinc.gpd Msxpsinc.ppd ファイルなどです。 Microsoft では、適切なインクルード ファイルに XPSDrv ドライバーの将来の属性を追加できます。 Microsoft では、インクルード ファイルに新しい属性を追加し、GPD または PPD ファイルにインクルード ファイルを使用して場合、は、印刷ドライバーの GPD または PPD ファイルを編集する必要はありません。
+これらの属性を GPD または PPD ファイルに追加するのではなく、Msxp singpd または Msxp をインクルードする方法をお勧めします。 Microsoft では、XPSDrv ドライバーの将来の属性を適切なインクルードファイルに追加できます。 Microsoft が新しい属性をインクルードファイルに追加し、GPD ファイルまたは PPD ファイルでインクルードファイルを使用する場合は、印刷ドライバーの GPD または PPD ファイルを編集する必要はありません。
 
-ルート GPD または PPD ファイル (ドライバーの INF ファイルで指定される`DataFile`) のすべての Microsoft Unidrv または PScript5 のドライバーに基づいた XPSDrv ドライバーが、対応する Msxpsinc.gpd または Msxpsinc.ppd ファイルを含める必要があります。
+Microsoft Unidrv または PScript5 ドライバーベースのすべての XPSDrv ドライバーのルート GPD ファイルまたは PPD ファイル (ドライバーの `DataFile`として指定されています) には、対応する msGPD またはファイルが含まれている必要があります。
 
-たとえば、モデル-foo.gpd のとおりです。
+たとえば、Model-foo の場合は、次のように指定します。
 
 ```cpp
 *Include: "msxpsinc.gpd"
 ```
 
-モデル-foo.ppd が含まれます。
+Model-foo の場合は、次のものを含めます。
 
 ```cpp
 *Include: "msxpinc.ppd"
 ```
 
-### <a name="print-schema-mapping"></a>印刷スキーマ マッピング
+### <a name="print-schema-mapping"></a>印刷スキーママッピング
 
-印刷スキーマのマッピングは、パブリック、相当する印刷スキーマ キーワード GPD と PPD キーワードを変換する Unidrv PScript5 構成モジュールの機能です。 既定では、すべての標準的な GPD と PPD キーワードは、同等のパブリック印刷スキーマ キーワードにマップされます。 GPD または PPD ファイルでは、非標準のキーワードただし、プライベートのデバイスに固有の名前空間に既定でマッピングされます。 次のいずれかの手順を実行して、このマッピングを改善できます。
+印刷スキーママッピングは、GPD および PPD キーワードを同等の公開印刷スキーマキーワードに変換する、Unidrv および PScript5 構成モジュールの機能です。 既定では、すべての standard GPD と PPD キーワードは、同等の公開印刷スキーマキーワードにマップされます。 ただし、GPD ファイルまたは PPD ファイル内の非標準のキーワードは、既定では、プライベートのデバイス固有の名前空間にマップされます。 このマッピングを改善するには、次のいずれかまたは両方を実行します。
 
--   非標準のキーワードの秘密の名前空間を指定します。
+-   非標準のキーワードにプライベート名前空間を指定します。
 
--   GPD または PPD ファイル内のパブリックの印刷スキーマから同等のキーワードと GPD または PPD ファイルの機能とオプションのキーワードを非標準の関連付け。 この関連付けは、印刷スキーマの公開機能として PrintTicket と PrintCapabilities データを生成するには構成モジュールを使用できます。
+-   GPD または PPD ファイル内の非標準の機能キーワードとオプションキーワードを、GPD または PPD ファイル内の公開された印刷スキーマと同等のキーワードに関連付けます。 この関連付けにより、構成モジュールは、パブリックな印刷スキーマ機能として、PrintTicket および PrintCapabilities データを生成できます。
 
 ### <a name="gpd-file-example"></a>GPD ファイルの例
 
-次のコード例は、エントリを示す GPD ファイルを示し、XPSDrv、バージョン 3 の構成モジュールを作成するためのキーワードは印刷ドライバー。
+次のコード例は、XPSDrv 印刷ドライバーのバージョン3構成モジュールを作成するためのエントリとキーワードを示す GPD ファイルを示しています。
 
 ```cpp
 *%
@@ -91,7 +91,7 @@ GPD または PPD ファイルを使用して、XPSDrv プリンター ドライ
 *%
 *% IHV Private Namespace
 *%
-*PrintSchemaPrivateNamespaceURI:"http://www.ihv.com/schema/2006"
+*PrintSchemaPrivateNamespaceURI:"https://www.ihv.com/schema/2006"
 *%
 *% IHV Private Feature
 *%

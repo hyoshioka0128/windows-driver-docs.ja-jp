@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec932e1f3621f38f4136c5999725cc282afcfd55
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 24b08ea498cd15e95e8bc9fc0efae63058cb9e8e
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881898"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652958"
 ---
 # <a name="title-element"></a>title 要素
 
 必須の**title**要素は、イベント通知メッセージのタイトルに表示されるテキストを提供します。
 
-**Title**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
+**Title**要素は、この URI: [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 ## <a name="usage"></a>使用方法
 
@@ -107,7 +107,7 @@ ms.locfileid: "74881898"
 ```cpp
 <?xml version="1.0" ?>
    <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <balloonUI iconID="1" resourceDll="IHV.dll">
@@ -122,7 +122,7 @@ ms.locfileid: "74881898"
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [balloonUI](balloonui.md)
 

@@ -1,17 +1,17 @@
 ---
-title: 要求スキーマと応答スキーマを設定する
+title: Set 要求と応答のスキーマ
 description: Set 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
 ms.assetid: 88E7F06C-3232-48C3-A0D6-2BEFF4ABA188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b349c7cba6d0187877b53abc264b5518f33d4c18
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53c1b87b5da29438077e6dc92f0b55ae602ca221
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840412"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652960"
 ---
-# <a name="set-request-and-response-schemas"></a>要求スキーマと応答スキーマを設定する
+# <a name="set-request-and-response-schemas"></a>Set 要求と応答のスキーマ
 
 
 Set 要求スキーマと対応する応答スキーマ定義、およびそれぞれの例を以下に示します。
@@ -24,7 +24,7 @@ Set 要求スキーマと対応する応答スキーマ定義、およびそれ�
 この例では、要求は2つのプロパティを設定しようとします。 2つ目は意図的な誤りです。メモリプロパティは書き込み可能ではありません。 この要求に対する応答については、以下の「応答スキーマを設定する」を参照してください。
 
 ```xml
-<bidi:Set xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Set xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema='\Printer.DeviceInfo:Location'>
     <BIDI_STRING>supply room</BIDI_STRING>
   </Query>
@@ -38,9 +38,9 @@ Set 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='Set'>
     <complexType>
       <sequence maxOccurs='unbounded'>
@@ -77,7 +77,7 @@ Set 要求スキーマの正式な定義
 これは、上記の Set 要求に対する応答です。 書き込み操作が成功すると、元のクエリ値が値なしで返されることに注意してください。 操作が失敗した場合は、エラーコードが返されます。
 
 ```xml
-<bidi:Set xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Set xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema='\Printer.DeviceInfo:Location'/>
   <Query schema='\Printer.Configuration.Memory:Size'>
     <Error>ERROR_BIDI_SCHEMA_READ_ONLY</Error>
@@ -89,9 +89,9 @@ Set Response スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-     xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+     xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='Set'>
     <complexType>
       <sequence maxOccurs='unbounded'>

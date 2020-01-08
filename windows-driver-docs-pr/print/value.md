@@ -6,12 +6,12 @@ keywords:
 - 値の構成体
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c445047f91a382d2e9779db6ba52c770c59041cd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f93fd1e12ad8d22ec5daa8b5322c1971421f8772
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826993"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652855"
 ---
 # <a name="value-wsd"></a>Value (WSD)
 
@@ -35,7 +35,7 @@ WSD `Value` コンストラクトを使用すると、Web サービスインタ�
 <td><p>Optionalポートモニターがドライバーに通知を送信するかどうかを示すブール値です。 <strong>TRUE</strong>の値は、ポートモニターがドライバーに通知を送信することを示します。<strong>FALSE</strong>は、ポートモニターがドライバーに通知を送信しないことを示します。</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>フィルター</strong></p></td>
+<td><p><strong>フィルター (filter)</strong></p></td>
 <td><p>クエリで指定された XML ドキュメントに、WSD モニターが適用する XPath クエリ。 このトピックの後半の説明を参照してください。</p></td>
 </tr>
 <tr class="odd">
@@ -43,7 +43,7 @@ WSD `Value` コンストラクトを使用すると、Web サービスインタ�
 <td><p>スキーマ値の名前です。</p></td>
 </tr>
 <tr class="even">
-<td><p>query</p></td>
+<td><p>クエリ</p></td>
 <td><p>WSD モニターが実行するクエリの種類。</p></td>
 </tr>
 <tr class="odd">
@@ -65,12 +65,12 @@ XPath 言語は Windows に実装されており、XML ファイル内の要素�
 
 `Value` コンストラクトは、WsdBidi で定義されています。
 
-### <a href="" id="example"></a>よう
+### <a href="" id="example"></a> 「例」
 
 次のコード例では、WSD モニターによって、RAM メモリのサイズが整数値として決定されます。
 
 ```cpp
-<Schema xmlns:nprt='http://schemas.microsoft.com/windows/2005/05/wdp/print'>
+<Schema xmlns:nprt='https://schemas.microsoft.com/windows/2005/05/wdp/print'>
   <Property name='Printer'>
     <Property name='DeviceInfo'>
       <Value name='PrinterString' 

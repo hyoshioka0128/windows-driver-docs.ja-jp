@@ -1,24 +1,24 @@
 ---
 title: V4 印刷クラス ドライバー レンダリング
-description: レンダリングには、v4 プリンター ドライバーは、印刷クラス ドライバーの既存の表示機能を利用できます。
+description: レンダリングのために、v4 プリンタードライバーは、印刷クラスドライバーの既存の表示機能を利用できます。
 ms.assetid: F8178988-1C11-4B21-B250-6626528E0AE5
 ms.date: 07/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b9dd9fa0b4ca6576794281e6e6460b8c0ee9d2f7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 457defe22d76824b729e6003657380420af9a2f8
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389479"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652942"
 ---
 # <a name="v4-print-class-driver-rendering"></a>V4 印刷クラス ドライバー レンダリング
 
 
-レンダリングには、v4 プリンター ドライバーは、印刷クラス ドライバーの既存の表示機能を利用できます。
+レンダリングのために、v4 プリンタードライバーは、印刷クラスドライバーの既存の表示機能を利用できます。
 
-既存のレンダリングの印刷クラス ドライバーの機能を活用する v4 プリンター ドライバーを使用できます、 **RequiredClass** v4 マニフェスト ディレクティブ。 使用して、 **RequiredClass**ディレクティブによりドライバーでキーとして、デバイスとその GUID のドライバー/フレンドリ名を使用して、指定したクラス ドライバーからのすべてのファイルが含まれます。 モデルに固有のプリンター ドライバーの印刷クラス ドライバーをリンクするためのメカニズムです。
+印刷クラスドライバーの既存の表示機能を利用するために、v4 プリンタードライバーは**Requiredclass** v4 manifest ディレクティブを使用できます。 **Requiredclass**ディレクティブを使用すると、ドライバーは、デバイスのドライバー/フレンドリ名と GUID をキーとして使用して、指定されたクラスドライバーのすべてのファイルをインクルードします。 これは、印刷クラスドライバーをモデル固有のプリンタードライバーにリンクするためのメカニズムです。
 
-たとえば、fabrikam という名前の印刷クラス ドライバーを使用した会社*PCL5e*、自分のプリンター ドライバーの印刷クラス ドライバーをリンクする、次のサンプルの印刷ドライバー マニフェストを使用して。
+たとえば、 *PCL5e*という名前の印刷クラスのドライバーを持つ Fabrikam という会社は、次のサンプルの印刷ドライバーマニフェストを使用して、印刷クラスドライバーをプリンタードライバーにリンクできます。
 
 ```Text
 [DriverConfig]
@@ -31,7 +31,7 @@ PrinterDriverID={GUID}
 DriverCategory=PrintFax.Printer
 ConstraintScript=faconst.js
 EventFile=faevents.xml
-PrinterExtensionUrl="http://www.fabrikam.com/download.asp?uiapp=120"
+PrinterExtensionUrl="https://www.fabrikam.com/download.asp?uiapp=120"
 
 [BidiFiles]
 BidiSPMFile=FABidiSPM.xml
@@ -50,14 +50,14 @@ PrintPreferences=FAapp.exe,{GUID2}
 ```
 
 > [!NOTE]
-> **RequiredClass**クラス ドライバーは、ディレクティブを使用できません。 使用すると**RequiredClass**、プリンター ドライバーとリンクしている印刷クラス ドライバーのファイル名の競合を避ける必要があります。 類似した名前のファイルは、相互に上書きされません、クラスのドライバー パッケージ ファイルと、v4 プリンター ドライバーからファイルを区別する、トラブルシューティングの際に難しいあります。
+> **Requiredclass**ディレクティブは、クラスドライバーでは使用できません。 **Requiredclass**を使用する場合は、リンク先のプリンタードライバーと印刷クラスドライバーの間でファイル名の競合を回避する必要があります。 類似した名前のファイルは相互に上書きされませんが、トラブルシューティング中に、クラスドライバーパッケージファイルと v4 プリンタードライバーのファイルを区別することが困難な場合があります。
 
  
-V4 プリンター ドライバー マニフェスト ディレクティブの詳細については、次を参照してください。 [V4 ドライバー マニフェスト](v4-driver-manifest.md)します。
+V4 プリンタードライバーのマニフェストディレクティブの詳細については、「 [V4 ドライバーマニフェスト](v4-driver-manifest.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
-[V4 ドライバー マニフェスト](v4-driver-manifest.md)  
+[V4 ドライバーマニフェスト](v4-driver-manifest.md)  
 
 
 

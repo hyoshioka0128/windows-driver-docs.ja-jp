@@ -1,42 +1,30 @@
 ---
-title: チェンジャー ミニクラス ドライバーの概要
-description: チェンジャー ミニクラス ドライバーの概要
+title: チェンジャー Miniclass ドライバーについて
+description: チェンジャー Miniclass ドライバーについて
 ms.assetid: ce0f78a3-69ae-4ca7-b2e1-f4892e35a230
 keywords:
-- チェンジャー ドライバー WDK ストレージ、miniclass ドライバー
-- 記憶域チェンジャー ドライバー WDK、miniclass ドライバー
-- miniclass ドライバー WDK チェンジャー
-ms.date: 04/20/2017
+- チェンジャードライバー WDK storage、miniclass drivers
+- storage チェンジャードライバー WDK、miniclass ドライバー
+- miniclass drivers WDK チェンジャー
+ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a5dea73e27243821da5ee8c8de3501b91b33052b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 290eef3135d095147fc5e2d27e3f8331a186eea6
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368732"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606562"
 ---
-# <a name="introduction-to-changer-miniclass-drivers"></a>チェンジャー ミニクラス ドライバーの概要
+# <a name="about-changer-miniclass-drivers"></a>チェンジャー Miniclass ドライバーについて
 
+新しいチェンジャーをサポートするために、ドライバーライターは、システム指定のチェンジャークラスドライバーにリンクするチェンジャー miniclass ドライバーを実装します。 新しいチェンジャー miniclass ドライバーは、システムによってドライバーがまだ提供されていないチェンジャーをサポートするためにのみ書き込まれる必要があります。
 
-## <span id="ddk_introduction_to_changer_miniclass_drivers_kg"></span><span id="DDK_INTRODUCTION_TO_CHANGER_MINICLASS_DRIVERS_KG"></span>
+新しい miniclass ドライバーの実装を開始する前に、次のことを確認する必要があります。
 
+- デバイスは、シリアルアクセススタッカーではなく、真のチェンジャーです。 チェンジャーは、スタッカーのように、固定シーケンスではなく、ランダムな順序でメディアをドライブにマウントすることを許可します。
 
-新しいチェンジャーをサポートするには、ドライバー開発者は、システム提供のチェンジャー クラス ドライバーにリンクするチェンジャー miniclass ドライバーを実装します。 チェンジャーをシステムが既に提供しないドライバーをサポートするためだけ新しいチェンジャー miniclass ドライバーを記述する必要があります。
+- デバイスのドライブには、WORM、CD-R、DVD-R など、ライトワンスの光学ドライブは書き込まれません。
 
-新しい miniclass ドライバーを実装する前を確認してください。
+- デバイスのドライブはすべて同じ種類であり、CD-ROM や CD-R などの種類が混在しているわけではありません。
 
--   デバイスでは、true チェンジャーおよびシリアル アクセス スタッカーではありません。 チェンジャーをスタッカーのように、固定のシーケンスではなく、ランダムな順序は、そのドライブにマウントするメディアを許可します。
-
--   デバイスのドライブは書き込み-光学ドライブは、ワームなどの CD-R または DVD-R したら
-
--   デバイスのドライブはすべて、同じ型、CD-ROM や CD-R などの型を混同しません。
-
-Microsoft のオペレーティング システムは書き込みをサポートしていません-1 回の光学式ドライブまたはドライブの 1 つ以上の型とチェンジャーします。
-
- 
-
- 
-
-
-
-
+Microsoft オペレーティングシステムでは、複数の種類のドライブを持つ書き込み1回の光学ドライブまたはチェンジャーはサポートされていません。

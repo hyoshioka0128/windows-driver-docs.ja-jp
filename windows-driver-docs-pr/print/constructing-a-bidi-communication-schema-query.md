@@ -7,12 +7,12 @@ keywords:
 - bidi 通信スキーマ WDK 印刷
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d51b0188dbdf1e064d831e006c1942f909589a96
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f14581e557728897d1d7cdfa5e43962271a598df
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831821"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652857"
 ---
 # <a name="constructing-a-bidi-communication-schema-query"></a>双方向通信スキーマ クエリを作成する
 
@@ -30,7 +30,7 @@ Bidi 通信スキーマクエリを構築する場合、次の3つの点に注�
 次に、 [bidi 通信インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_print/index)で必要とされる XML クエリと応答形式の例と、特に IBidiSpl2 COM インターフェイスの例を示します。 最初の例は、2つのスキーマを含む要求です。 最初のスキーマでは、双方向ユニットがインストールされているかどうかを判断します。 2番目のスキーマは、ハードディスクに関連付けられている値を決定します。
 
 ```cpp
-<bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema="\Printer.Configuration.DuplexUnit:Installed"/>
   <Query schema="\Printer.Configuration.HardDisk"/>
 </bidi:Get>
@@ -39,7 +39,7 @@ Bidi 通信スキーマクエリを構築する場合、次の3つの点に注�
 次の例は、最初の例のスキーマからの一連の一般的な応答です。 最初の応答は、二重ユニットがインストールされていることを示します。 残りの応答は、ハードディスクがインストールされており、その容量が 20 MB であることを示しています。そのうち 10 MB は未使用です。
 
 ```cpp
-<bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema="\Printer.Configuration.DuplexUnit:Installed">
     <Schema name="\Printer.Configuration.DuplexUnit:Installed">
       <BIDI_BOOL>true</BIDI_BOOL>

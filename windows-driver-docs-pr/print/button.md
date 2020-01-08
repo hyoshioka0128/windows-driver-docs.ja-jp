@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb842dae8326970537c49e3162f193d2c11426f
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 511debe97b341575154d14fc1f4ab40ffdb8bc2a
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881915"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652863"
 ---
 # <a name="button-element"></a>button 要素
 
 
 必須**ボタン**要素は、クライアントコンピューターに表示されるメッセージボックスのボタンの特性を指定します。
 
-**Button**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
+**Button**要素は、この URI: [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 <a name="usage"></a>使用方法
 -----
@@ -122,7 +122,7 @@ IDCANCEL [キャンセル] という名前のボタンがメッセージボッ�
 ```xml
 <?xml version="1.0" ?>
   <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <messageBoxUI>
@@ -141,6 +141,6 @@ IDCANCEL [キャンセル] という名前のボタンがメッセージボッ�
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [buttons](buttons.md)

@@ -1,9 +1,9 @@
 ---
-title: ScanAvailableEvent 要素
-description: 必要な ScanAvailableEvent 要素は、クライアントがサブスクライブしているデバイスのスキャンがジョブをスキャンする準備がクライアントに通知します。
+title: Scanのイベント要素
+description: 必要な Scan使用イベント要素は、サブスクライブされているスキャンデバイスがジョブをスキャンする準備ができていることをクライアントに通知します。
 ms.assetid: 82ebfa36-60df-44dd-a928-e751deeea5b0
 keywords:
-- ScanAvailableEvent 要素イメージング デバイス
+- Scanているイベント要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fa10ab3ecc8d0929617ca0648d89c0cd941c2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b01802172f27f6d614954004f5e26b37a9079f05
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364378"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652948"
 ---
-# <a name="scanavailableevent-element"></a>ScanAvailableEvent 要素
+# <a name="scanavailableevent-element"></a>Scanのイベント要素
 
 
-必要な**ScanAvailableEvent**要素は、クライアントがサブスクライブしているデバイスのスキャンがジョブをスキャンする準備が、クライアントを通知します。
+必要な**Scan使用イベント**要素は、サブスクライブされているスキャンデバイスがジョブをスキャンする準備ができていることをクライアントに通知します。
 
 <a name="usage"></a>使用方法
 -----
@@ -68,36 +68,36 @@ ms.locfileid: "63364378"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスの送信、 **ScanAvailableEvent**要素をユーザーがスキャンの変換先を選択し、デバイスのスキャンでスキャンが開始したときに、登録されているクライアント。
+WSD Scan サービスは、ユーザーがスキャン先を選択し、スキャンデバイスでスキャンを開始したときに、登録されているクライアントに**scanているイベント**要素を送信します。
 
-クライアントは WSD スキャン サービスが受信すると、サブスクリプションを作成する必要があります**ScanAvailableEvent**イベント。 クライアントによってスキャン サービスに要求メッセージを送信することによって、サブスクリプションを作成します、  **&lt;wse: サブスクライブ&gt;** 要求操作の要素。
+クライアントは、スキャンが利用できる**イベント**イベントを受け取るために、WSD Scan サービスを使用してサブスクリプションを作成する必要があります。 クライアントは、 **&lt;wse: Subscribe&gt;** request 操作要素を介してスキャンサービスに要求メッセージを送信することで、サブスクリプションを作成します。
 
-サブスクライブ要求には 1 つまたは複数の変換先が含まれています、 [ **ScanDestinations** ](scandestinations.md)拡張機能の要素。 スキャン サービスは、単一のクライアントに送信するたびにフィルター処理するこれらの変換先を使用する**ScanAvailableEvent**通知します。 このフィルターは、スキャン サービスがスキャン ボタンを押した場合に、すべてのクライアントを通知することを防ぎます。 拡張機能の要素の WSD スキャン サービスの名前空間で定義されているし、に追加し、  **&lt;wse: サブスクライブ&gt;** 要求本文。
+Subscribe 要求には、 [**scandestinations**](scandestinations.md)要素に1つ以上の送信先が含まれています。 スキャンが利用できる**イベント**通知が送信されるたびに、スキャンサービスはこれらの変換先を使用して、1つのクライアントにフィルターを適用します。 このフィルターは、ユーザーが [スキャン] ボタンをクリックしたときに、スキャンサービスがすべてのクライアントに通知しないようにします。 拡張要素は、WSD Scan サービス名前空間で定義され、 **&lt;wse: Subscribe&gt;** 要求本文に追加されます。
 
-WSD スキャン サービスがサブスクリプションを作成するクライアントの要求を受け入れる場合、サービスがで応答する必要があります、 **&lt;wse:SubscribeResponse&gt;** 応答操作の要素。 購読の応答にはで 1 つまたは複数の送信先の応答が含まれています、 [ **DestinationResponses** ](destinationresponses.md)拡張要素のするのに役立ちますが、使用できるデバイスのスキャンにサブスクリプションを接続します。
+WSD スキャンサービスがクライアントのサブスクリプション作成要求を受け入れる場合、サービスは **&lt;wse: SubscribeResponse&gt;** response operation 要素を使用して応答する必要があります。 Subscribe response には、 [**destinationresponses**](destinationresponses.md) extension 要素に1つ以上の宛先応答が含まれています。これにより、サブスクリプションを受け入れたスキャンデバイスにサブスクリプションを接続できます。
 
-**&lt;Wse: サブスクライブ&gt;** と **&lt;wse:SubscribeResponse&gt;** 要素は、仕様で説明します。
+**&lt;wse: Subscribe&gt;** と **&lt;wse: SubscribeResponse&gt;** 要素については、仕様で説明されています。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、WSD スキャン サービスから ScanAvailableEvent イベントを受信するクライアントがサブスクライブする方法を示します。
+次のコード例は、スキャンが利用できるイベントイベントを WSD Scan サービスから受信するためにクライアントがサブスクライブする方法を示しています。
 
 ```xml
 <soap:Envelope
-    xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-    xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-    xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan>
-    soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+    xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+    xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+    xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+    xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan>
+    soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
       <wsa:Action>
-         http://schemas.xmlsoap.org/ws/2004/08/eventing/Subscribe
+         https://schemas.xmlsoap.org/ws/2004/08/eventing/Subscribe
       </wsa:Action>
       <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
       <wsa:ReplyTo>
-        <wsa:Address>http://www.example.com/MyEventSink</wsa:Address>
+        <wsa:Address>https://www.example.com/MyEventSink</wsa:Address>
       </wsa:ReplyTo>
   </soap:Header>
   <soap:Body>
@@ -105,12 +105,12 @@ WSD スキャン サービスがサブスクリプションを作成するクラ
       <wse:Delivery>
         <wse:NotifyTo>
           <wsa:Address>
-            http://www.example.com/MyEventSink/OnScanAvailableForMe
+            https://www.example.com/MyEventSink/OnScanAvailableForMe
           </wsa:Address>
         </wse:NotifyTo>
       </wse:Delivery>
       <wse:Expires>P0Y0M0DT30H0M0S</wse:Expires>
-      <wse:Filter xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan">
+      <wse:Filter xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan">
         ScanAvailableEvent
       </wse:Filter>
       <wscn:ScanDestinations>
@@ -124,19 +124,19 @@ WSD スキャン サービスがサブスクリプションを作成するクラ
 </soap:Envelope>
 ```
 
-次のコード例では、クライアントのサブスクリプション要求 WSD スキャン サービスの応答を示します。
+次のコード例では、クライアントのサブスクリプション要求に対する WSD Scan サービスの応答を示します。
 
 ```xml
 <soap:Envelope
-    xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-    xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-    xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan">
-    soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+    xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+    xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+    xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+    xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan">
+    soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
   <soap:Header>
-    <wsa:To>http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous</wsa:To>
+    <wsa:To>https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous</wsa:To>
     <wsa:Action>
-      http://schemas.xmlsoap.org/ws/2004/08/eventing/SubscribeResponse
+      https://schemas.xmlsoap.org/ws/2004/08/eventing/SubscribeResponse
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheSubscribe</wsa:RelatesTo>
@@ -158,20 +158,20 @@ WSD スキャン サービスがサブスクリプションを作成するクラ
 </soap:Envelope>
 ```
 
-次のコード例では、WSD スキャン サービスが、ScanAvailableEvent をクライアントに送信する方法を示します。
+次のコード例では、WSD Scan サービスが Scan使用イベントをクライアントに送信する方法を示します。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScanAvailableEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScanAvailableEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -185,14 +185,14 @@ WSD スキャン サービスがサブスクリプションを作成するクラ
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ClientContext**](clientcontext.md)
 
 [**DestinationResponses**](destinationresponses.md)
 
-[**ScanDestinations**](scandestinations.md)
+[**スキャン先**](scandestinations.md)
 
 [**ScanIdentifier**](scanidentifier.md)
 
