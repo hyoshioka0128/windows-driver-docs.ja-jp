@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e1d4691da790e8b79be00b61aa51c311b333e5f7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 05aeeb2605ce6c2300754b6db01874182344d0e8
+ms.sourcegitcommit: 9355a80229bb2384dd45493d36bdc783abdd8d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845591"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694248"
 ---
 # <a name="driverentry-for-wdf-drivers-routine"></a>WDF ドライバー用 DriverEntry ルーチン
 
@@ -75,7 +75,7 @@ NTSTATUS DriverEntry(
 
 -   [Driverentry の戻り値](https://docs.microsoft.com/windows-hardware/drivers/kernel/driverentry-return-values)を指定してください。
 
-UMDF ドライバーはユーザーモードのホストプロセスで実行されますが、KMDF ドライバーはシステムプロセスでカーネルモードで実行される  に**注意**してください。 フレームワークは、UMDF ドライバーの複数のインスタンスをホストプロセスの個別のインスタンスに読み込む場合があります。 その結果：
+UMDF ドライバーはユーザーモードのホストプロセスで実行されますが、KMDF ドライバーはシステムプロセスでカーネルモードで実行される  に**注意**してください。 フレームワークは、UMDF ドライバーの複数のインスタンスをホストプロセスの個別のインスタンスに読み込む場合があります。 結果:
 
  
 
@@ -115,6 +115,7 @@ DriverEntry(
     WDFDRIVER  hDriver;
     NTSTATUS  status;
     WDF_OBJECT_ATTRIBUTES  attributes;
+    SERIAL_FIRMWARE_DATA driverDefaults;
 
     //
     // Initialize WPP tracing.
@@ -186,7 +187,7 @@ DriverEntry(
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**WdfDriverCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdrivercreate)
