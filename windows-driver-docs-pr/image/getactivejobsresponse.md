@@ -1,9 +1,9 @@
 ---
 title: GetActiveJobsResponse 要素
-description: 必要な GetActiveJobsResponse 要素は、すべてのスキャンが現在アクティブなジョブのジョブに関連する変数の概要を返します。
+description: Required GetActiveJobsResponse 要素は、現在アクティブなすべてのスキャンジョブのジョブ関連変数の概要を返します。
 ms.assetid: 77efef7f-451d-49f8-80c1-6ab12c98ee7b
 keywords:
-- GetActiveJobsResponse 要素イメージング デバイス
+- GetActiveJobsResponse 要素イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e42d915720be7b96214a9fc098c53c97e4aaa0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 02e604cc11af151776ea059e2102abc8c0439d1d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353014"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652978"
 ---
 # <a name="getactivejobsresponse-element"></a>GetActiveJobsResponse 要素
 
 
-必要な**GetActiveJobsResponse**要素が現在アクティブなスキャンのすべてのジョブのジョブに関連する変数の概要を返します。
+Required **GetActiveJobsResponse**要素は、現在アクティブなすべてのスキャンジョブのジョブ関連変数の概要を返します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,31 +65,31 @@ ms.locfileid: "63353014"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetActiveJobsResponse**操作。
+WSD Scan サービスは、 **GetActiveJobsResponse**操作をサポートしている必要があります。
 
-クライアントが呼び出すことができます[ **GetActiveJobsRequest** ](getactivejobsrequest.md)現在アクティブなスキャンのすべてのジョブのジョブに関連する変数の値を決定します。 WSD スキャン サービスの応答でなければなりません、 **GetActiveJobsResponse**のよく寄せられるクライアント情報を格納する要素または適切なエラー コード。
+クライアントは、 [**GetActiveJobsRequest**](getactivejobsrequest.md)を呼び出して、現在アクティブなすべてのスキャンジョブのジョブ関連変数の値を確認できます。 WSD Scan サービスは、クライアントが要求した情報または適切なエラーコードを含む**GetActiveJobsResponse**要素で応答する必要があります。
 
-**GetActiveJobsResponse**が含まれています、 [ **ActiveJobs** ](activejobs.md)すべてのジョブの概要を含む要素。
+**GetActiveJobsResponse**には、すべてのジョブの概要を含む[**activejobs**](activejobs.md)要素が含まれています。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、アクティブなスキャン ジョブがないという事実を返す方法を示します。
+次のコード例は、アクティブなスキャンジョブがないという事実を返す方法を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetActiveJobsRequest</wsa:RelatesTo>
@@ -103,22 +103,22 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-次のコード例では、2 つのアクティブなスキャン ジョブを報告します。
+次のコード例では、2つのアクティブなスキャンジョブを報告します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetActiveJobsRequest</wsa:RelatesTo>
@@ -153,7 +153,7 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ActiveJobs**](activejobs.md)

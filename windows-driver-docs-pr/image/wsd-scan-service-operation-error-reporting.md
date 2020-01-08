@@ -4,35 +4,35 @@ description: WSD スキャン サービス操作エラー報告
 ms.assetid: 78cf0cf9-f792-4dc9-b0df-c45b408b85ab
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf2e54facd2894bcd7320938b6a8ed971883371
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 77f375b2b2b672f314f6c9b7abb920707911f92c
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375802"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653012"
 ---
 # <a name="wsd-scan-service-operation-error-reporting"></a>WSD スキャン サービス操作エラー報告
 
 
-このセクションでは、WSD スキャン サービスが生成し、操作のエラー コードを送信する方法について説明します。 ほとんどの操作で返すことができるエラー コードの記述で[**共通 WSD スキャン サービス操作のエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。
+このセクションでは、WSD スキャンサービスが操作のエラーコードを生成して送信する方法について説明します。 ほとんどの操作で返すことができるエラーコードについては、「 [**COMMON WSD Scan Service Operation Error コード**](common-wsd-scan-service-operation-error-codes.md)」で説明されています。
 
-WSD スキャン サービスが、処理中にエラーが検出した場合、 *Xxx * * * 要求** の代わりにエラー コードを返しますが、操作、 *Xxx * * * 応答** 要素です。 スキャン サービスのエラー コードを返します、 **&lt;soap エラー:&gt;** 要素。
+WSD スキャンサービスが*xxx ** * * 要求 * 操作の処理中にエラーを検出すると、 *xxx ** * * * * 要素ではなくエラーコードが返されます。 スキャンサービスは **&lt;soap: Fault&gt;** 要素のエラーコードを返します。
 
-記載されている規則に従って WSD スキャン サービス内で定義されているすべてのエラー メッセージを送信する必要があります、 [Web Services Addressing (Ws-addressing) 仕様](https://go.microsoft.com/fwlink/p/?linkid=70144)します。 具体的には、WSD スキャン サービスでは、次の場所に順番にフォールト メッセージを送信する必要があります。
+WSD Scan サービス内で定義されているすべてのエラーメッセージは、 [Web サービスアドレス指定 (ws-addressing) 仕様](https://go.microsoft.com/fwlink/p/?linkid=70144)で説明されている規則に従って送信する必要があります。 具体的には、WSD Scan サービスは次の場所にエラーメッセージを順番に送信する必要があります。
 
-1.  \[フォールト エンドポイント\]存在し、有効である場合、します。
+1.  \[fault エンドポイントが存在し、有効である場合は\]ます。
 
-2.  それ以外の場合、\[エンドポイントを返信\]が存在する場合は、します。
+2.  それ以外の場合は、\[応答エンドポイントが存在する場合は\]ます。
 
-3.  それ以外の場合、\[ソース エンドポイント\]します。
+3.  それ以外の場合は、\[ソースエンドポイント\]ます。
 
-エンドポイントは、すべてのエラー メッセージで必要なメッセージはヘッダーを含める必要があります。 使用して返信としてエラー メッセージが関連付けられる、\[リレーションシップ\]Ws-addressing で定義されているプロパティ。 次\[アクション\]プロパティは、エラー メッセージを指定します。
+エンドポイントには、すべてのエラーメッセージに必要なメッセージ情報ヘッダーを含める必要があります。 エラーメッセージは、WS-ADDRESSING で定義されている \[リレーションシップ\] プロパティを使用して、応答として関連付けられます。 次の \[action\] プロパティは、エラーメッセージを指定します。
 
 ```xml
-http://schemas.xmlsoap.org/ws/2004/08/addressing/fault
+https://schemas.xmlsoap.org/ws/2004/08/addressing/fault
 ```
 
-エラーの定義は、次のプロパティを使用します。
+エラーの定義では、次のプロパティを使用します。
 
 <table>
 <colgroup>
@@ -47,32 +47,32 @@ http://schemas.xmlsoap.org/ws/2004/08/addressing/fault
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>[コード]</p></td>
-<td><p>エラー コード。</p></td>
+<td><p>コード</p></td>
+<td><p>エラーコード。</p></td>
 </tr>
 <tr class="even">
-<td><p>[サブコード]</p></td>
+<td><p>コード</p></td>
 <td><p>エラーのサブコード。</p></td>
 </tr>
 <tr class="odd">
-<td><p>[理由]</p></td>
-<td><p>英語理由要素。</p></td>
+<td><p>理由</p></td>
+<td><p>English language reason 要素。</p></td>
 </tr>
 <tr class="even">
-<td><p>[詳細]</p></td>
-<td><p>詳細要素。 この要素が存在しない場合はエラーに detail 要素は定義されません。</p></td>
+<td><p>データ</p></td>
+<td><p>Detail 要素。 この要素が存在しない場合、エラーの詳細要素は定義されません。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-次のコード例に示すように、これらのプロパティが SOAP 1.2 エラーにバインドします。
+これらのプロパティは、次のコード例に示すように、SOAP 1.2 エラーにバインドされます。
 
 ```xml
 <S:Envelope>
   <S:Header>
-    <wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action>
+    <wsa:Action>https://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action>
     <!-- Headers excluded for clarity -->
   </S:Header>
   <S:Body>
@@ -92,15 +92,15 @@ http://schemas.xmlsoap.org/ws/2004/08/addressing/fault
 </S:Envelope>
 ```
 
-次のコード例は、SOAP の例を示しています。**フォールト**します。
+SOAP**エラー**の例を次のコード例に示します。
 
 ```xml
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soapelope"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
-    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-    xmlns:nprt="http://schemas.microsoft.com/windows/2006/01/wdp/scan">
+<soap:Envelope xmlns:soap="https://www.w3.org/2003/05/soapelope"
+    xmlns:xml="https://www.w3.org/XML/1998/namespace"
+    xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+    xmlns:nprt="https://schemas.microsoft.com/windows/2006/01/wdp/scan">
   <soap:Header>
-    <wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action>
+    <wsa:Action>https://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action>
     <!-- Headers excluded for brevity -->
   </soap:Header>
   <soap:Body>

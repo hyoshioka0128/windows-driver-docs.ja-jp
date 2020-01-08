@@ -1,9 +1,9 @@
 ---
-title: GetScannerElementsResponse 要素
-description: 必要な GetScannerElementsResponse 要素には、クライアントの要求については、スキャナーに WSD スキャン サービスの応答が含まれています。
+title: Getscan"Response" 要素
+description: 必須の Getscan、Response 要素には、スキャナーに関する情報に対するクライアントの要求に対する WSD Scan サービスの応答が含まれます。
 ms.assetid: da3cded6-6aa9-4fe6-ad02-9a02d2219075
 keywords:
-- GetScannerElementsResponse 要素イメージング デバイス
+- Getscanに応答要素のイメージ化デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea5031172bf4368c685659885bd74c64a156b2c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b7c811aabdd510a18f90bffc3252fae5e4fa9536
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330279"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652968"
 ---
-# <a name="getscannerelementsresponse-element"></a>GetScannerElementsResponse 要素
+# <a name="getscannerelementsresponse-element"></a>Getscan"Response" 要素
 
 
-必要な**GetScannerElementsResponse**要素にはについて、スキャナーは、クライアントの要求への WSD スキャン サービスの応答が含まれています。
+必須の**Getscan、response**要素には、スキャナーに関する情報に対するクライアントの要求に対する WSD Scan サービスの応答が含まれます。
 
 <a name="usage"></a>使用方法
 -----
@@ -52,7 +52,7 @@ ms.locfileid: "63330279"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="scannerelements.md" data-raw-source="[&lt;strong&gt;ScannerElements&lt;/strong&gt;](scannerelements.md)"><strong>ScannerElements</strong></a></p></td>
+<td><p><a href="scannerelements.md" data-raw-source="[&lt;strong&gt;ScannerElements&lt;/strong&gt;](scannerelements.md)"><strong>スキャンの要素</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -65,29 +65,29 @@ ms.locfileid: "63330279"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetScannerElementsResponse**操作の要素。
+WSD Scan サービスでは、 **Getscanに応答**操作要素がサポートされている必要があります。
 
-ときにクライアントが正常にスキャナーを使用して情報を照会、 [ **GetScannerElementsRequest** ](getscannerelementsrequest.md)操作で、スキャン サービスが応答する必要があります、 **GetScannerElementsResponse**要求された情報が含まれる要素を操作します。
+クライアントが[**Getscanの要求**](getscannerelementsrequest.md)操作によってスキャナー情報を正常に照会する場合、スキャンサービスは、要求された情報を含む**getscanに応答**操作要素を使用して応答する必要があります。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、WSD スキャン サービスは、スキャナーの説明を返します。
+次のコード例では、WSD Scan サービスによってスキャナーの説明が返されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetScannerElementsRequest</wsa:RelatesTo>
@@ -115,22 +115,22 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-次のコード例では、スキャナーの状態要求に対する応答を示しています。
+次のコード例は、スキャナーの状態要求に対する応答を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetScannerElementsRequest</wsa:RelatesTo>
@@ -171,23 +171,23 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-次のコード例は、両方を含む GetScannerElementsRequest 操作に対する応答を示しています。 スキャナー構成要求とエントリが無効です。
+次のコード例では、スキャナー構成要求と無効なエントリの両方を含む Getscanの要求操作に対する応答を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  xmlns:ihv="http://www.example.com/extension"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  xmlns:ihv="https://www.example.com/extension"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetScannerElementsRequest</wsa:RelatesTo>
@@ -380,12 +380,12 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**GetScannerElementsRequest**](getscannerelementsrequest.md)
+[**Getscanの要求**](getscannerelementsrequest.md)
 
-[**ScannerElements**](scannerelements.md)
+[**スキャンの要素**](scannerelements.md)
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: GetActiveJobsRequest 要素
-description: 必要な GetActiveJobsRequest 要素は、デバイスのスキャンで現在アクティブなすべてのジョブの概要を要求します。
+description: Required GetActiveJobsRequest 要素は、スキャンデバイスで現在アクティブなすべてのジョブの概要を要求します。
 ms.assetid: 4dc7bc64-b62f-4634-8f0e-64039b9f8609
 keywords:
-- GetActiveJobsRequest 要素イメージング デバイス
+- GetActiveJobsRequest 要素イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 34af8b8822b279e7e3b31e1f2b2685b17dd0b266
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 419f9d963aa39267089a641ef3f073b5ed1bc1c0
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357534"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652980"
 ---
 # <a name="getactivejobsrequest-element"></a>GetActiveJobsRequest 要素
 
 
-必要な**GetActiveJobsRequest**要素は、デバイスのスキャンで現在アクティブなすべてのジョブの概要を要求します。
+Required **GetActiveJobsRequest**要素は、スキャンデバイスで現在アクティブなすべてのジョブの概要を要求します。
 
 <a name="usage"></a>使用方法
 -----
@@ -46,32 +46,32 @@ ms.locfileid: "63357534"
 
 親要素はありません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetActiveJobsRequest**操作。
+WSD Scan サービスは、 **GetActiveJobsRequest**操作をサポートしている必要があります。
 
-クライアントが呼び出す**GetActiveJobsRequest**現在アクティブなスキャンのすべてのジョブのジョブに関連する変数の要約を含む一覧を取得します。 WSD スキャン サービスの応答でなければなりません、 [ **GetActiveJobsResponse** ](getactivejobsresponse.md)のよく寄せられるクライアント情報を格納する要素または適切なエラー コード。
+クライアントは、 **GetActiveJobsRequest**を呼び出して、現在アクティブなすべてのスキャンジョブのジョブ関連変数の概要を含むリストを取得します。 WSD Scan サービスは、クライアントが要求した情報または適切なエラーコードを含む[**GetActiveJobsResponse**](getactivejobsresponse.md)要素で応答する必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-次のコード例では、すべてのアクティブなスキャン ジョブの要求を示します。
+次のコード例は、すべてのアクティブなスキャンジョブの要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetActiveJobs
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -82,7 +82,7 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**GetActiveJobsResponse**](getactivejobsresponse.md)

@@ -1,74 +1,32 @@
 ---
-title: IPM ハード ディスク ドライブのアイドル タイムアウト
-description: IPM ハード ディスク ドライブのアイドル タイムアウト
+title: アイドル状態の電源管理のハードディスクドライブのアイドルタイムアウト
+description: アイドル状態の電源管理のハードディスクドライブのアイドルタイムアウト
 ms.assetid: 1dcc261a-803c-4c0e-a68e-29b00f46cd32
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd731f1b57f8c4c6050431247ae0302f6286bf2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 966d4b16bc415f731f9f7d89bca0753e38b72cc3
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378736"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606544"
 ---
-# <a name="ipm-hard-disk-drive-idle-timeout"></a>IPM ハード ディスク ドライブのアイドル タイムアウト
+# <a name="idle-power-management-hard-disk-drive-idle-timeout"></a>アイドル状態の電源管理のハードディスクドライブのアイドルタイムアウト
 
+通常のモバイル PC では、ハードディスクドライブ (HDD) は主要な電力消費者ではありませんが、HDD メディアをスピンダウンすることで電力の節約を実現できます。 HDD のアイドルタイムアウトにより、Windows では、ディスクの読み取りと書き込みが非アクティブになった後に、HDD メディアを自動的にスピンダウンさせることができます。
 
-ハード ディスク ドライブ (HDD) は、標準的なモバイル PC で、プライマリ電源データ コンシューマーではありませんは、HDD メディアを回転して電源節約を実現できます。 HDD のアイドル タイムアウトは、ディスクの期間が非アクティブ状態を読み書きした後、HDD メディアを自動的に回転する Windows を使用できます。
+HDD メディアがスピンダウンした場合に実現される電力の節約は、HDD の製造元とモデルによって異なります。 システム製造元が HDD ベンダーと協力して、特定のデバイスに最適な HDD アイドルタイムアウト値を判断することをお勧めします。
 
-HDD メディアのスピン ダウン時に、実現する省電力は、製造元と HDD のモデルによって異なります。 システム製造元は、特定のデバイスに最適な HDD アイドル タイムアウト値を決定する HDD ベンダーと協力することをお勧めします。
+Windows Vista では、既定で、適度に長い HDD アイドルタイムアウト値が指定されています。 システムの製造元は、モバイル Pc で電力を大幅に節約するために、より短い値を指定することを検討してください。 次の表は、HDD のアイドル状態の設定の詳細をまとめたものです。
 
-既定では、Windows Vista は、比較的長い HDD アイドル タイムアウト値を指定します。 システム製造元は、モバイル Pc で積極的なバッテリの保護を実現しようとするときに短い値を指定することを検討してください。 次の表では、HDD アイドル状態の設定の詳細をまとめたものです。
+| 項目 | 説明 |
+| ------ | ----------- |
+| フレンドリ名     | の後にハードディスクをオフにする |
+| 説明       | ハードドライブが非アクティブになってからディスクがオフになるまでの時間を指定します。 |
+| PowerCfg エイリアス    | DISKIDLE |
+| グループポリシーのパス | 管理用システム \ システム \ 管理 \ ハードディスク Settings\Turn |
+| GUID              | 6738e2c4-e8a5-4a42-b16a-e040e769756e |
+| 定義されている場所        | Ntpoapi .h |
+| バランスの取れた既定値 | 60分 (AC) 30 分 (DC) |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p><strong>詳細</strong></p></td>
-<td align="left"><p><strong>説明</strong></p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>フレンドリ名</p></td>
-<td align="left"><p>後にハード_ディスクをオフにします。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>説明</p></td>
-<td align="left"><p>どのくらいの期間、ハード ドライブがアクティブでないディスクがオフにするを指定します。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>PowerCfg のエイリアス</p></td>
-<td align="left"><p>DISKIDLE</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>グループ ポリシーのパス</p></td>
-<td align="left"><p>ハード_ディスクをオフの管理システム \ 電源 Management\Hard ディスク Settings\Turn</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>GUID</p></td>
-<td align="left"><p>6738e2c4-e8a5-4a42-b16a-e040e769756e</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>定義されています。</p></td>
-<td align="left"><p>Ntpoapi.h</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>バランスの取れた既定値</p></td>
-<td align="left"><p>60 分 (AC) 30 分 (DC)</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-詳細については、次を参照してください。[モバイル バッテリの寿命に関するソリューションのモバイル プラットフォーム プロフェッショナル向けガイド。](https://go.microsoft.com/fwlink/p/?linkid=144534)
-
- 
-
- 
-
-
-
-
+詳細について[は、モバイルプラットフォームの専門家向けのガイドである「モバイルバッテリ寿命ソリューション](https://go.microsoft.com/fwlink/p/?linkid=144534)」を参照してください。

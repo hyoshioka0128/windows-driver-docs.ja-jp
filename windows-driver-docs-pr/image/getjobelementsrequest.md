@@ -1,9 +1,9 @@
 ---
-title: GetJobElementsRequest 要素
-description: 必要な GetJobElementsRequest 要素は、ジョブ Id 要素を識別する、ジョブに関連する情報を要求します。
+title: Getjobelement Request 要素
+description: 必須の Getjobの要求要素は、JobId 要素によって識別されるジョブに関連する情報を要求します。
 ms.assetid: ba8260f4-300f-447e-ad62-d2e4fa2811ef
 keywords:
-- GetJobElementsRequest 要素イメージング デバイス
+- Getjobの要求要素のイメージ作成デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c3eb4f27339aeca645f764327371b11d9875b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c8e4f663869f2da91fcfe46d0bba0c1f42854eb9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384557"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652996"
 ---
-# <a name="getjobelementsrequest-element"></a>GetJobElementsRequest 要素
+# <a name="getjobelementsrequest-element"></a>Getjobelement Request 要素
 
 
-必要な**GetJobElementsRequest**要素は、ジョブに関連する情報を要求する、 [ **JobId** ](jobid.md)要素を識別します。
+必須の**Getjobの要求**要素は、 [**JobId**](jobid.md)要素によって識別されるジョブに関連する情報を要求します。
 
 <a name="usage"></a>使用方法
 -----
@@ -68,44 +68,44 @@ ms.locfileid: "63384557"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetJobElementsRequest**操作。
+WSD Scan サービスは、 **Getjobの要求**操作をサポートする必要があります。
 
-クライアントが呼び出すことができます**GetJobElementsRequest**ジョブのジョブに関連する要素の値を決定する[ **JobId** ](jobid.md)を識別します。 WSD スキャン サービスの応答でなければなりません、 **GetJobElementsResponse**します。 スキャン サービスが返す情報は、スキーマのスキャン ジョブに関連する部分に完全に準拠する必要があります。
+クライアントは、 **Getjobelements 要求**を呼び出して、 [**JobId**](jobid.md)が識別するジョブのジョブ関連の要素の値を決定できます。 WSD Scan サービスは**Getjobの応答**で応答する必要があります。 スキャンサービスが返す情報は、スキーマのスキャンジョブに関連する部分に完全に準拠している必要があります。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
-**GetJobElementsRequest**次のエラーを返すも可能性があります。
+**Getjobの要求**も、次のエラーを返すことがあります。
 
 -   **ClientErrorJobIdNotFound**
 
-    スキャナーは、ジョブ Id 値と一致するジョブを見つけることができませんまたはジョブ Id 値が定義された範囲内です。
+    スキャナーが JobId 値に一致するジョブを見つけることができません。または、JobId 値が定義された範囲内にありません。
 
     | Fault プロパティ | 定義                         |
     |----------------|------------------------------------|
-    | \[コード\]       | soap 送信者:                        |
-    | \[サブコード\]    | wscn:ClientErrorJobIdNotFound      |
-    | \[Reason\]     | 指定したジョブ Id が見つかりませんでした。 |
-    | \[詳細\]     | JobId:JobId が正しくありません。             |
+    | \[コード\]       | soap: 送信者                        |
+    | \[サブコード\]    | wscn: ClientErrorJobIdNotFound      |
+    | \[Reason\]     | 指定された JobId が見つかりませんでした。 |
+    | \[詳細\]     | JobId: JobId が正しくありません             |
 
      
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、Fault プロパティ 1 を識別するスキャン ジョブの状態を要求します。
+次のコード例では、Fault プロパティ1が識別するスキャンジョブの状態を要求します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -121,10 +121,10 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**GetJobElementsResponse**](getjobelementsresponse.md)
+[**Getjobを応答する**](getjobelementsresponse.md)
 
 [**JobId**](jobid.md)
 

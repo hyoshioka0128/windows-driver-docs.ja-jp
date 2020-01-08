@@ -12,19 +12,19 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 907b2be97ce48a34b688ac6e6e17b8a216bf0079
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: de6e33920d2613ac218f460869af6cac9389dd2d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881912"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652814"
 ---
 # <a name="customui-element"></a>customUI 要素
 
 
 省略可能な**customUI**要素は、クライアントコンピューターに表示されるカスタムユーザーインターフェイスを指定します。
 
-**CustomUI**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
+**CustomUI**要素は、この URI: [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 <a name="usage"></a>使用方法
 -----
@@ -139,8 +139,8 @@ ms.locfileid: "74881912"
 
 ```cpp
 <?xml version="1.0"?>
-  <asyncPrintUIRequest xmlns="http://schemas.microsoft.com/2003/print/asyncui/1.0"
-      xmlns:myco="http://www.myprintercompany.com">
+  <asyncPrintUIRequest xmlns="https://schemas.microsoft.com/2003/print/asyncui/1.0"
+      xmlns:myco="https://www.myprintercompany.com">
     <requestOpen>
       <customUI dll="abc.dll" entrypoint="IHVFunction" bidi="true">
         <IHV:anyXMLData />
@@ -150,7 +150,7 @@ ms.locfileid: "74881912"
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**requestOpen**](requestopen.md)

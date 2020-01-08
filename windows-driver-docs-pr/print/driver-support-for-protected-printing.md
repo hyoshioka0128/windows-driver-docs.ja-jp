@@ -4,12 +4,12 @@ description: Windows 8.1 には、ジョブを印刷する前に、ユーザー�
 ms.assetid: 43569030-224F-46C6-963F-FC3BE24A0FB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e94b32d7dd4f0e1595c158b52235c5be3f20f710
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 0e9e154311553c3f4fd7f8e545b8203a66247d38
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881919"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652806"
 ---
 # <a name="driver-support-for-protected-printing"></a>保護された印刷のドライバー サポート
 
@@ -19,7 +19,7 @@ Windows 8.1 には、ジョブを印刷する前に、ユーザーがプリン�
 
 ## <a name="print-schema-changes"></a>スキーマ変更の印刷
 
-Windows 8.1 には、PrintTicket および PrintCapabilities ドキュメントで保護された印刷を指定するために使用できる新しい印刷スキーマキーワードが導入されています。 これらのキーワードは、新しい*printschemakeywordsv11*名前空間で定義されています。 この名前空間の URI を次に示します: [http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11](https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11)。
+Windows 8.1 には、PrintTicket および PrintCapabilities ドキュメントで保護された印刷を指定するために使用できる新しい印刷スキーマキーワードが導入されています。 これらのキーワードは、新しい*printschemakeywordsv11*名前空間で定義されています。 この名前空間の URI を次に示します: [https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11](https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11)。
 
 PrintTicket ファイルで保護された印刷を指定する方法については、「[ピン印刷用の Printticket ファイルの例](sample-printticket-file-for-pin-printing.md)」を参照してください。 また、PrintCapabilities ファイルで保護された印刷を指定する方法については、「 [PIN 印刷用のサンプル PrintCapabilities ファイル](sample-printcapabilities-file-for-pin-printing.md)」を参照してください。
 
@@ -73,7 +73,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Jobpass Codeminlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最小文字数。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。</p></td>
-<td>ルート</td>
+<td>［ルート］</td>
 <td>任意の<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD の数値</a></td>
 <td></em>Jobpass Codeminlength: 4</td>
 </tr>
@@ -81,7 +81,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Jobpass Codemaxlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最大長。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。 <strong></em>Jobpass Codeminlength</strong>値以上である必要があります。</p></td>
-<td>ルート</td>
+<td>［ルート］</td>
 <td>任意の<a href="numeric-values.md" data-raw-source="[GPD numeric value](numeric-values.md)">GPD の数値</a></td>
 <td>\* Jobpass Codemaxlength: 9</td>
 </tr>
@@ -114,7 +114,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Msjobpass Codeminlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最小文字数。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。</p></td>
-<td>ルート</td>
+<td>［ルート］</td>
 <td><p>"int" (QuotedValue)</p>
 <p>言い換えると、整数値は引用符で囲む必要があります。</p></td>
 <td></em>Msjobpass Codeminlength: "4"</td>
@@ -123,7 +123,7 @@ V4 印刷ドライバーのデータファイルで保護された印刷のサ�
 <td><strong><em>Msjobpass Codemaxlength</strong></td>
 <td><p>サポートされている PIN の数値文字列の最大長。</p>
 <p>この値は、少なくとも4で15以下でなければなりません。 この値は、 <b>Msjobpass Codeminlength</b>値以上である必要があります。</p></td>
-<td>ルート</td>
+<td>［ルート］</td>
 <td><p>"int" (QuotedValue)</p>
 <p>言い換えると、整数値は引用符で囲む必要があります。</p></td>
 <td>\* Msjobpass Codemaxlength: "9"</td>

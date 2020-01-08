@@ -1,9 +1,9 @@
 ---
-title: ScannerStatusSummaryEvent 要素
-description: 必要な ScannerStatusSummaryEvent 要素は、スキャン デバイスの状態が変更されたことをクライアントに通知します。
+title: Scantorstatusのイベント要素
+description: 必須の Scantorstatusイベント要素は、スキャンデバイスの状態が変更されたことをクライアントに通知します。
 ms.assetid: a1297e25-1136-49ef-8b8e-e7c8c62bec13
 keywords:
-- ScannerStatusSummaryEvent 要素イメージング デバイス
+- Scantorstatusのイベント要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc4a96a329fa4ced7e8ab9c4b33b69742d802d43
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 89df739aaf5cd6b3d5800b0848984f1733444f7f
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386297"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653004"
 ---
-# <a name="scannerstatussummaryevent-element"></a>ScannerStatusSummaryEvent 要素
+# <a name="scannerstatussummaryevent-element"></a>Scantorstatusのイベント要素
 
 
-必要な**ScannerStatusSummaryEvent**要素は、クライアントにスキャン デバイスの状態が変更されたことを通知します。
+必須の**Scantorstatusイベント**要素は、スキャンデバイスの状態が変更されたことをクライアントに通知します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,27 +65,27 @@ ms.locfileid: "63386297"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスに送信する必要があります、 **ScannerStatusSummaryEvent**スキャン デバイスの状態が変更されるたびに、クライアントに要素。
+WSD Scan サービスは、スキャンデバイスの状態が変化するたびに、 **Scantorstatusのイベント**要素をクライアントに送信する必要があります。
 
-本文**ScannerStatusSummaryEvent**含める必要があります、 [ **StatusSummary** ](statussummary.md)スキャナーの状態の変更について説明する要素。
+**Scantorstatussummary イベント**の本文には、スキャナーの状態への変更を説明する[**statussummary**](statussummary.md)要素が含まれている必要があります。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、メディアのパスをフィードで紙詰まりのために、デバイスのスキャンが停止していることを示します。
+次のコード例は、メディアフィードパスの紙詰まりが原因で、スキャンデバイスが停止したことを示しています。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusSummaryEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusSummaryEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -103,7 +103,7 @@ WSD スキャン サービスに送信する必要があります、 **ScannerSt
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**StatusSummary**](statussummary.md)

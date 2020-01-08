@@ -6,18 +6,16 @@ keywords:
 - ストレージクラスドライバー WDK, ストレージクラスドライバーについて
 - クラスドライバー WDK ストレージ、ストレージクラスドライバーについて
 - HBA WDK ストレージ
-ms.date: 10/21/2019
+ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 94049848af080157b95f778f6eb7190f7a56cca2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 21229a8955192cbf8bb39ad6875f58c2f62b0370
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838091"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606386"
 ---
 # <a name="introduction-to-storage-class-drivers"></a>記憶域クラス ドライバーの概要
-
-## <span id="ddk_introduction_to_storage_class_drivers_kg"></span><span id="DDK_INTRODUCTION_TO_STORAGE_CLASS_DRIVERS_KG"></span>
 
 *ストレージクラスドライバー*は、適切に確立された scsi クラス/ポートインターフェイスを使用して、システムが記憶ポートドライバー (現在は SCSI、IDE、USB、および IEEE 1394) を供給する任意のバス上のその種類の大容量記憶装置デバイスを制御します。 ストレージデバイスが接続されている特定のバスは、ストレージクラスドライバーに対して透過的です。
 
@@ -31,4 +29,5 @@ I/o マネージャーと、ストレージクラスドライバーの上に階�
 
 PnP マネージャーには、ストレージクラスドライバーは、個々のデバイスを駆動する[関数ドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/function-drivers)です。 ストレージクラスドライバーは、[バスドライバー](https://docs.microsoft.com/windows-hardware/drivers/kernel/bus-drivers)として機能し、デバイスの子デバイスを列挙することもできます。 たとえば、ディスクなどのパーティション分割されたメディアデバイスのクラスドライバーは、パーティションを表す PDOs の一覧を返します。 このような PDO はそれぞれ、ターゲットデバイスとしてアドレス指定でき、独自のクラスドライバーによって処理されます。
 
-**注:** このセクションで説明するように、プリンターやスキャナーなどの SCSI デバイス用のドライバーを実装する必要があり  。 このような SCSI デバイスのドライバーは、同じ SCSI クラス/ポートインターフェイスを利用してデバイスを制御し、Irp の処理、SRBs の構築、および記憶装置のドライバーと同様に基になるポートドライバーへの送信を行います。
+> [!NOTE]
+> このセクションで説明するように、プリンターやスキャナーなどの SCSI デバイス用のドライバーを実装する必要があります。 このような SCSI デバイスのドライバーは、同じ SCSI クラス/ポートインターフェイスを利用してデバイスを制御し、Irp の処理、SRBs の構築、および記憶装置のドライバーと同様に基になるポートドライバーへの送信を行います。

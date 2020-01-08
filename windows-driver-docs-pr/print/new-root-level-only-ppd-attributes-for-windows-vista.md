@@ -3,22 +3,22 @@ title: Windows Vista の新しいルート レベル専用 PPD 属性
 description: Windows Vista の新しいルート レベル専用 PPD 属性
 ms.assetid: 49cdfb2f-e119-4960-9e79-67e1025b753f
 keywords:
-- ルート レベルのみ属性 WDK Unidrv
-- 一般的なプリンター WDK Unidrv、ルート レベルのみの属性します。
-- PPD は、WDK Unidrv を属性します。
+- ルートレベルのみの属性 WDK Unidrv
+- 一般的なプリンター属性 WDK Unidrv、ルートレベルのみ
+- PPD 属性 WDK Unidrv
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30235aae4772d555ad99a7109b534c2f6bb67721
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c28ea5fd3deaf50ce24b6f051ce344fc81b9373d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330126"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653020"
 ---
 # <a name="new-root-level-only-ppd-attributes-for-windows-vista"></a>Windows Vista の新しいルート レベル専用 PPD 属性
 
 
-次の一覧には、Windows Vista と共に登場した新しい PPD 属性について説明します。 旧バージョンと Windows の以前の Windows Vista バージョンとの互換性を維持するには、これらの属性を次のコードを囲む必要があります。
+次の一覧では、Windows Vista 以降で新しく追加された PPD 属性について説明します。 Windows Vista より前のバージョンの Windows との下位互換性を維持するには、これらの属性を次のコードで囲む必要があります。
 
 ```cpp
 *Ifdef: WINNT_60 ... *Endif: WINNT_60 blocks
@@ -26,51 +26,51 @@ ms.locfileid: "63330126"
 
 ### <a name="msprintschemakeywordmap"></a>MSPrintSchemaKeywordMap
 
-**MSPrintSchemaKeywordMap** PPD 機能キーワードからパブリックの印刷スキーマ機能キーワードへのマッピングを定義する属性または PPD の PPD オプション キーワードからのマッピング機能、印刷の public 印刷スキーマ オプションのキーワードスキーマの機能です。
+**MSPrintSchemaKeywordMap**属性は、ppd 機能キーワードからパブリック印刷スキーマ機能キーワードへのマッピング、または、ppd 機能の ppd オプションキーワードから、印刷スキーマ機能のパブリック出力スキーマオプションキーワードへのマッピングを定義します。
 
-**MSPrintSchemaKeywordMap**が使用可能な 2 つの形式。
+**MSPrintSchemaKeywordMap**には、次の2つの形式があります。
 
-<a href="" id="format-1"></a>形式 1  
+<a href="" id="format-1"></a>形式1  
 ```cpp
 *MSPrintSchemaKeywordMap: PrintSchema_feature_keyword *<PPD_feature_keyword>
 ```
 
-<a href="" id="format-2"></a>形式 2  
+<a href="" id="format-2"></a>形式2  
 ```cpp
 *MSPrintSchemaKeywordMap: PrintSchema_feature_keyword PrintSchema_option_keyword *<PPD_feature_keyword> <PPD_option_keyword>
 ```
 
-PPD 機能キーワードのプレフィックス (これは、アスタリスク\[ \* \]) 両方の形式が必要です。
+両方の形式で、PPD 機能キーワードプレフィックス (アスタリスク \[\*\]) が必要です。
 
-形式 1。
+形式 1:
 
--   PPD 機能のキーワードは、以前 PPD ファイルの内容で既に定義されている PPD 機能を参照する必要があります。
+-   PPD 機能キーワードは、以前の PPD ファイルコンテンツで既に定義されている PPD 機能を参照する必要があります。
 
--   複数の定義\* **MSPrintSchemaKeywordMap**同じ PPD 機能は使用できません。 複数の定義が見つかった場合は、最初の定義のみが受け入れられますと他の定義は無視されます。
+-   同じ PPD 機能の \***MSPrintSchemaKeywordMap**の複数の定義は許可されていません。 複数の定義が見つかった場合は、最初の定義のみが受け入れられ、他の定義は無視されます。
 
-形式 2。
+形式 2:
 
--   \* **MSPrintSchemaKeywordMap** (形式を使用して 1) PPD 機能の定義は、いずれかの前に存在する必要があります\* **MSPrintSchemaKeywordMap** PPD の定義機能のオプションを表示できます。
+-   (Format 1 を使用した) PPD 機能の \***MSPrintSchemaKeywordMap**定義は、ppd 機能のオプションの \***MSPrintSchemaKeywordMap**定義が表示される前に存在している必要があります。
 
--   \* **MSPrintSchemaKeywordMap** PPD オプションの定義、PPD 機能キーワード印刷スキーマ機能のキーワードをマッピングする必要があります、以前に定義されているものと同じ\* **MSPrintSchemaKeywordMap** (形式を使用して 1) PPD 機能を定義します。
+-   PPD オプションの \***MSPrintSchemaKeywordMap**定義では、プリントスキーマ機能キーワードへの ppd 機能キーワードのマッピングは、(format 1 を使用して) ppd 機能の前の \***MSPrintSchemaKeywordMap**定義で定義されているものと同じである必要があります。
 
--   PPD オプションのキーワードは、以前 PPD ファイルの内容で既に定義されている PPD 機能のオプションを参照する必要があります。
+-   PPD オプションキーワードは、以前の PPD ファイルコンテンツで既に定義されている PPD 機能のオプションを参照する必要があります。
 
--   複数の定義\* **MSPrintSchemaKeywordMap** PPD 機能のオプション同じ PPD 用にこの変更は許可されません。 複数の定義が見つかった場合は、最初の定義のみが受け入れられますと他の定義は無視されます。
+-   PPD 機能の同じ PPD オプションに対する \***MSPrintSchemaKeywordMap**の複数の定義は許可されていません。 複数の定義が見つかった場合は、最初の定義のみが受け入れられ、他の定義は無視されます。
 
-場合、 \* **MSPrintSchemaKeywordMap**エントリの前の書式規則に違反、エントリが無視されますが、詳細な情報を ppdchecker 警告が表示されます。
+\***MSPrintSchemaKeywordMap**エントリが上記のいずれかの書式規則に違反している場合、そのエントリは無視され、詳細情報を含む ppdchecker 警告が表示されます。
 
-**重要な**   \*MSPrintSchemaKeywordMap は、次の標準 PPD 機能で使用するためにサポートされていません。
+**重要**   \*MSPrintSchemaKeywordMap は、次の標準の PPD 機能では使用できません。
 
-\*Collate\*双方向\*InputSlot \*OutputBin \*PageSize\*解決\*MediaType It が既にある印刷スキーマ キーワードに機能をマップした場合を知っておく必要もPPD ファイルで使用されている、対応する PrintCapabilities ドキュメント一覧可能性があります機能は複数回です。 複数回出現は、機能を PPD ファイルで使用される印刷スキーマのキーワードをマップする必要がありますので、混乱を招く可能性があります。
-
- 
-
-**注**  PPD パーサーは自動的に InputBin 機能 FORMSOURCE オプションを生成し、印刷スキーマで、自動選択はキーワードにマップします。 PPD ファイルには使用する InputBin オプションが含まれて かどうか、 **MSPrintSchemaKeywordMap**印刷スキーマ キーワード オプションにマップする属性、印刷スキーマの機能がデバイスの名前空間で FORMSOURCE オプションが含まれます。 自動選択は PrintCapabilities ドキュメントに表示され、オプションで指定されているを参照してください、 **MSPrintSchemaKeywordMap** PPD ファイルの属性です。
+\*\*双方向 \*InputSlot \*OutputBin \*PageSize \*Resolution \*MediaType、PPD ファイルで既に使用されている Print Schema キーワードに機能をマップすると、対応する PrintCapabilities ドキュメントによってその機能が複数回表示されることを理解しておくことが重要です。 複数のオカレンスがあると混乱する可能性があるため、PPD ファイルで使用される印刷スキーマキーワードに機能をマップしないでください。
 
  
 
-コード例を次の例を示しています、 **MSPrintSchemaKeywordMap**部分 PPD ファイル内の属性。
+  、PPD パーサーによって InputBin 機能の FORMSOURCE オプションが自動的に生成され、印刷スキーマの自動選択キーワードにマップされる**ことに注意**してください。 **MSPrintSchemaKeywordMap**属性を使用してオプションを print schema キーワードにマップする inputbin オプションが PPD ファイルに含まれている場合、印刷スキーマの機能には、デバイスの名前空間の formsource オプションが含まれます。 自動選択は PrintCapabilities ドキュメントに表示され、PPD ファイルの**MSPrintSchemaKeywordMap**属性に指定されているオプションを参照します。
+
+ 
+
+次のコード例は、部分的な PPD ファイルの**MSPrintSchemaKeywordMap**属性の例を示しています。
 
 ```cpp
 *OpenUI *IHVStapling:PickOne
@@ -86,128 +86,128 @@ PPD 機能キーワードのプレフィックス (これは、アスタリス�
 
 ### <a name="msprintschemaprivatenamespaceuri"></a>MSPrintSchemaPrivateNamespaceURI
 
-**MsPrintSchemaPrivateNamespaceURI**属性が名前空間がプライベート コア ドライバーがプライベート PPD 機能またはオプションか、PrintTicket と PrintCapabilities で公開するために使用する URI を定義します。 この URI は、機能または明示的なマッピングがないオプションに適用されます (を使用して、 \* **MSPrintSchemaKeywordMap**定義) 印刷スキーマをパブリックにします。
+**MsPrintSchemaPrivateNamespaceURI**属性は、コアドライバーが PrintTicket または PrintCapabilities のプライベートな PPD 機能またはオプションを公開するために使用するプライベート名前空間 URI を定義します。 この URI は、(\***MSPrintSchemaKeywordMap**定義を使用した) 明示的なマッピングを持たないすべての機能またはオプションに、パブリック印刷スキーマに適用されます。
 
-**MSPrintSchemaPrivateNamespaceURI**は次の形式を使用します。
+**MSPrintSchemaPrivateNamespaceURI**は、次の形式を使用します。
 
 ```cpp
 *MSPPrintSchemaPrivateNamespaceURI: "<URI>"
 ```
 
-&lt;URI&gt; PPD QuotedValue を表します。 PPD 仕様で定義されている、リテラルの ASCII 部分文字列と 16 進数の部分文字列の両方 QuotedValue ことができます。
+&lt;URI&gt; は、PPD QuotedValue を表します。 QuotedValue は、PPD 仕様で定義されているように、リテラル ASCII 部分文字列と16進部分文字列の両方を許可します。
 
-1 つのプリンター モデルの PPD ファイル (またはファイル) が 1 つだけ定義の\* **MSPrintSchemaPrivateNamespaceURI**します。 複数の定義が見つかった場合は、最初の定義のみが受け入れられますがされ、他のユーザーは無視されます。
+1つのプリンターモデルの PPD ファイル (またはファイル) には \***MSPrintSchemaPrivateNamespaceURI**の定義が1つだけ必要です。 複数の定義が見つかった場合は、最初の定義のみが受け入れられ、他の定義は無視されます。
 
-コード例を次の例を示しています、 **MsPrintSchemaPrivateNamespaceURI**部分 PPD ファイル内の属性。
+次のコード例は、部分的な PPD ファイルの**MsPrintSchemaPrivateNamespaceURI**属性の例を示しています。
 
 ```cpp
-*MSPrivateNamespaceURI:  "http://www.ihv.com/schema/2004"
+*MSPrivateNamespaceURI:  "https://www.ihv.com/schema/2004"
 ```
 
 ### <a name="msisxpsdriver"></a>MSIsXPSDriver
 
-**MSIsXPSDriver**属性は、次の形式を使用します。
+**MSIsXPSDriver**属性では、次の形式を使用します。
 
 ```cpp
 *MSIsXPSDriver:  True | False
 ```
 
-両方の Microsoft Win32 GDI ドライバーを Windows Vista PScript5 ドライバー構成モジュール (Ps5ui.dll) を使用して、[新しい XPSDrv ドライバー](xpsdrv-printer-drivers.md)します。 XPSDrv ドライバー PScript5 ドライバーの構成モジュールを使用する、XPSDrv ドライバーの PPD データ ファイルを指定する必要があります**MSIsXPSDriver**その値を True に設定します。
+Windows Vista PScript5 driver configuration モジュール (Ps5ui) は、Microsoft Win32 GDI ドライバーと[新しい XPSDrv ドライバー](xpsdrv-printer-drivers.md)の両方に使用できます。 XPSDrv ドライバーの PScript5 driver 構成モジュールを使用するには、XPSDrv ドライバーの PPD データファイルで**MSIsXPSDriver**を指定し、その値を True に設定する必要があります。
 
-次のコード例では、部分的な PPD ファイルでこの属性の例を示します。
+次のコード例は、部分的な PPD ファイルでのこの属性の例を示しています。
 
 ```cpp
 *MSIsXPSDriver: True
 ```
 
-Win32 GDI ドライバー PScript5 ドライバーの構成モジュールを使用するには、この PPD 属性を指定する必要はありません。
+Win32 GDI ドライバー用の PScript5 driver 構成モジュールを使用するには、この PPD 属性を指定する必要はありません。
 
 ### <a name="msprintprocduplexoptions"></a>MSPrintProcDuplexOptions
 
-**MSPrintProcDuplexOptions**属性は、次の形式を使用します。
+**MSPrintProcDuplexOptions**属性では、次の形式を使用します。
 
 ```cpp
 *MSPrintProcDuplexOptions:  "int"
 ```
 
-この属性は、次の値の 1 つがあります。
+この属性には、次のいずれかの値を指定できます。
 
-1:反転双方向の反転のページ
+1: リバース両面のページを反転する
 
-2:可能であれば、余分な空白ページの生成を抑制します。
+2: 可能な場合は、余分な空白ページの生成を抑制します。
 
-3:上記の両方
+3: 上記の両方
 
-0:上記以外
+0: 上記のいずれにも該当しません。
 
-コード例を次の例を示します**MSPrintProcDuplexOptions** PPD ファイルの一部分にします。
+次のコード例は、部分的な PPD ファイル内の**MSPrintProcDuplexOptions**の例を示しています。
 
 ```cpp
 *MSPrintProcDuplexOptions:  "2" 
 ```
 
-この属性は、プリント プロセッサのさまざまな二重化オプションを制御します。
+この属性は、プリントプロセッサのさまざまな二重オプションを制御します。
 
-場合**MSPrintProcDuplexOptions** 1 では、プリント プロセッサが反転双方向のページを回転する必要があるかどうかを制御します。
+**MSPrintProcDuplexOptions**が1の場合、印刷プロセッサが逆方向の両面でページを反転するかどうかを制御します。
 
-N を 4 ページの文書を印刷できると想定 = 1、逆の印刷や両面印刷を使用するとします。 最初のページの前に最後のページを印刷する逆の印刷をするためです。 両面印刷をするため、1 枚の用紙に 2 つのページを印刷します。 プリント プロセッサを再生できますページ (数字の各ペアは 1 枚の用紙の両面印刷は 2 つのページを示します) 次の 2 つの形式のいずれかで。
+4ページのドキュメントを n アップ = 1 で印刷する必要があり、逆印刷と両面印刷を使用する場合を想定しています。 印刷を反転させるには、最初のページの前にある最後のページを印刷します。 両面印刷が必要なので、1枚の用紙に2ページを印刷することをお勧めします。 印刷プロセッサは、次の2つの形式のいずれかでページを再生できます (各数値のペアは、1枚の用紙の両面に印刷される2ページを示します)。
 
--   形式 1:(4,3),(2,1)
+-   形式 1: (4, 3)、(2, 1)
 
--   形式 2:(3,4),(1,2)
+-   形式 2: (3, 4)、(1, 2)
 
-Windows Vista では、前に、プリント プロセッサが 2 の形式でページを印刷は\[(3,4),(1,2)\]します。 Windows Vista 以降では、既定の形式には 1 の形式が\[(4,3),(2,1)\]します。 多くのプリンターがある 2; の形式で出力が正しくないために、この変更が発生しましたつまり、印刷されるページでは、適切な順序で順序がありません。
+Windows Vista より前の印刷プロセッサでは、2 \[(3, 4)、(1, 2)\]の形式でページが印刷されます。 ただし、Windows Vista 以降では、既定の形式は 1 \[(4, 3)、(2, 1)\]です。 この変更は、多くのプリンターの出力の形式が2で正しくないために発生しました。つまり、印刷されるページの順序は適切ではありません。
 
-プリンターが 1 の形式で正常に動作する場合は、Windows Vista 以降のものを変更する必要はありません。 ただし、2 という形式に戻すには、プリンターで 1 形式に正しく動作する場合は、追加、 **MSPrintProcDuplexOptions**値 1 を持つ属性です。
+プリンターが形式1で正しく動作する場合、Windows Vista 以降では何も変更する必要はありません。 ただし、プリンターが形式1で正しく動作しない場合に、フォーマット2に戻すには、 **MSPrintProcDuplexOptions**属性を値1で追加します。
 
 ```cpp
 *MSPrintProcDuplexOptions: "1"
 ```
 
-以前の Windows Vista PScript ドライバーの場合、以前の Windows Vista のプリント プロセッサがあれば、形式 2 は、既定で; の動作を変更することはできません。それ以外の場合、Windows Vista がプリント プロセッサがあれば、1 の形式は、既定では、および動作を変更することはできません。
+Windows vista より前の PScript ドライバーでは、Windows Vista より前の印刷プロセッサを使用している場合、形式2が既定値であるため、動作を変更することはできません。それ以外の場合は、Windows Vista のプリントプロセッサがある場合、format 1 が既定値であるため、動作を変更することはできません。
 
-Windows Vista PScript ドライバー。 プリント プロセッサの以前の Windows Vista の場合は、2 の形式は、既定値と PPD 属性は無視されます。それ以外の場合、1 の形式は、既定ではを使用して形式を変更することができますが、Windows Vista のプリント プロセッサにある場合、 **MSPrintProcDuplexOptions**属性。
+Windows Vista PScript ドライバーの場合。 Windows Vista より前の印刷プロセッサを使用している場合、format 2 が既定値で、PPD 属性は無視されます。それ以外の場合、Windows Vista のプリントプロセッサがある場合は、フォーマット1が既定ですが、 **MSPrintProcDuplexOptions**属性を使用して形式を変更できます。
 
-場合**MSPrintProcDuplexOptions**が 2 のプリント プロセッサが特定の双方向シナリオでの空白のページの生成を抑制します場合。
+**MSPrintProcDuplexOptions**が2の場合、プリントプロセッサは、特定の二重シナリオで空白ページの生成を抑制します。
 
-たとえば、上、ジョブがジョブの 1 ページ、双方向の場合は (n を前提としています = 1)、シートの 1 つだけの側を印刷する必要があります。 現時点では、プリンターは一方の側を印刷して、裏面に空の空白ページを生成します。 (双方向で印刷ジョブが開始されたため、=、プリンターでは、シートを外れる前に、2 つのページが必要です。 2 番目のページが印刷されない場合は、一部のプリンター待機しています。)現在のソリューションの欠点は次のとおりです。
+たとえば、ジョブが1ページのジョブで、両面がオン (n アップ = 1) である場合、用紙の片面だけを印刷する必要があります。 現時点では、プリンターは片面に印刷し、空の空のページを反転させることができます。 (印刷ジョブは双方向 = on で開始されているため、プリンターはシートを取り出す前に2ページが必要です。 2番目のページが印刷されない場合、一部のプリンタは待機状態を維持します。)現在のソリューションの欠点は次のとおりです。
 
--   生成されたページは、会計ソフトウェア、プリンターでページ カウンター内の不正確なページ数です。
+-   生成されたページにより、アカウンティングソフトウェアのページ数とプリンター内のページカウンターが不正確になります。
 
--   ページ (一部の Hewlett Packard DeskJet スタイル プリンター) で、プリンターから中間場合は、ユーザーがでそれを取得するプリンターの試行がバックアップ中に引き出しますしようとします。 このような状況には、ハードウェアの問題が発生します。
+-   プリンターの途中でページが印刷されると (一部の Hewlett-packard DeskJet スタイルのプリンター)、プリンターがそのページをプルしようとしている間に、ユーザーがそのページを取り出しようとすることがあります。 このような状況では、ハードウェアの問題が発生する可能性があります。
 
-指定することで、上記の問題を回避できます\* **MSPrintProcDuplexOptions**:「2」PPD ファイルにします。
+この問題を回避するには、PPD ファイルで \***MSPrintProcDuplexOptions**: "2" を指定します。
 
-場合でも、この属性を設定するに、空白のページの最適化が次の制限付きの場合にのみ実行されることに注意してください。
+この属性が設定されている場合でも、空白のページの最適化は、次の限られた場合にのみ実行されることに注意してください。
 
-1.  用紙の片面全体のジョブに収まる場合にのみ、逆の印刷時に空白のページの最適化が実行される (n を aone ページ ジョブなど = 1 または n を 4 ページ ジョブ = 4)。 ジョブは、複数のシートを必要とする場合 (プリンター ページは、不正確な順序で印刷する) ため、最適化は実行されません。 たとえば、3 ページ ジョブが印刷するページ 3,2,1、順番&lt;空白&gt;4,3,2 ではなく&lt;空白&gt;します。
+1.  リバース印刷の場合、空白のページの最適化は、ジョブ全体が1つの用紙に収めることができる場合にのみ実行されます (たとえば、n アップ = 1 の aone ページジョブや、n アップ = 4 の4ページのジョブ)。 ジョブに複数のシートが必要な場合、最適化は実行されません (プリンターページが正しくない順序で印刷されるため)。 たとえば、3ページのジョブの場合、ページは注文3、2、1の順に印刷されます。4、3、2、&lt;空白の&gt;ではなく、空白&gt;&lt;ます。
 
-2.  コピーをシミュレートするために、プリント プロセッサがある場合、空白のページの最適化が performedd です。 プリント プロセッサは、必要なコピーの数が、プリント プロセッサが、コピーの数を超える場合、コピーをシミュレートします。
+2.  印刷プロセッサでコピーをシミュレートする必要がある場合、空白のページの最適化は performedd ません。 印刷プロセッサでは、必要なコピーの数がプリントプロセッサが実現できるコピーの数を超えている場合、コピーがシミュレートされます。
 
-    次のような状況は、シミュレーションが発生し、空のページが生成されます (必要な) 場合の例を示します。
+    次の状況は、シミュレーションが発生し、空白のページが生成される場合の例です (必要な場合)。
 
-    -   コピーを作成することはできませんのプリンターの 2 つのコピー
+    -   コピーを作成できないプリンターの2つのコピー
 
-    次の状況は、examles シミュレーションが存在しないと、余分なページの生成を抑制することができます。
+    シミュレーションが実行されず、余分なページの生成を抑制できる場合は、次の状況が examles ます。
 
-    -   コピーを作成することはできませんのプリンターの 1 つのコピー ジョブ
-    -   コピーではなく、プリンターの 5 つコピー ジョブ
+    -   コピーを作成できないプリンターの単一コピージョブ
+    -   複数のコピーを作成できるプリンターの5つのコピージョブ
 
-以前の Windows Vista PScript ドライバーが表示され、以前の Windows Vista のプリント プロセッサがある場合は、プリンター、必要と判断した場合、余分な空白ページが印刷されます; 動作を変更することはできません。それ以外の場合、Windows Vista のプリント プロセッサがある場合は、プリンター、必要と判断した場合、余分な空白ページが印刷され、動作を変更することはできません。
+Windows Vista より前の PScript ドライバーでは、Windows Vista より前の印刷プロセッサを使用している場合、プリンターは必要に応じて余分な空白ページを印刷し、動作を変更することはできません。Windows Vista のプリントプロセッサを使用している場合は、必要に応じて余分な空白のページが印刷され、動作を変更することはできません。
 
-Windows Vista PScript ドライバー。 以前の Windows Vista のプリント プロセッサがあれば、プリンター、必要と判断した場合、余分な空白ページが印刷され、PPD 属性は無視されます。それ以外の場合、Windows Vista のプリント プロセッサがある場合、適切な PPD 属性と、適切な条件がある場合 (つまり、防止について前に説明する条件を空のページ印刷)、プリンターは空白のページを印刷されません。
+Windows Vista PScript ドライバーの場合。 Windows Vista より前のプリントプロセッサを使用している場合は、必要に応じて余分な空白のページが印刷され、PPD 属性は無視されます。それ以外の場合、Windows Vista の印刷プロセッサを使用していて、適切な PPD 属性と適切な条件が存在する場合 (つまり、前に説明した空白ページの印刷を禁止する条件)、プリンターは空白のページを印刷しません。
 
 ### <a name="msbidiqueryfile"></a>MSBidiQueryFile
 
-**MSBiDiQueryFile**属性は、次の形式を使用します。
+**Msbidiqueryfile**属性では、次の形式を使用します。
 
 ```cpp
 *MSBidiQueryFile: "filename"
 ```
 
-使用**MSBiDiQueryFile**データが含まれる、プリンター ドライバーの自動構成 BidiQuery BidiResponse GPD または GDL ファイルの名前を指定します。 GPD または GDL ファイル名は、任意のパスを指定しないでください。
+**Msbidiqueryfile**を使用して、プリンタドライバの自動 Config BidiQuery と BidiResponse データを含む GPD ファイル名または gdl ファイル名を指定します。 GPD または GDL ファイル名にパスを指定することはできません。
 
-コード例を次の例を示します**MSBiDiQueryFile** PPD ファイルの一部分にします。
+次のコード例は、部分的な PPD ファイル内の**Msbidiqueryfile**の例を示しています。
 
 ```cpp
 *MSBidiQueryFile: "ACnfgPS.GDL"
@@ -215,15 +215,15 @@ Windows Vista PScript ドライバー。 以前の Windows Vista のプリント
 
 ### <a name="msxpsmaxcopies"></a>MSXPSMaxCopies
 
-**MSXPSMaxCopies**属性は、次の形式を使用します。
+**MSXPSMaxCopies**属性では、次の形式を使用します。
 
 ```cpp
 *MSXPSMaxCopies: "int"
 ```
 
-使用**MSXPSMaxCopies** XPSDrv プリンター ドライバーをサポートできるコピーの最大数を指定します。
+**MSXPSMaxCopies**を使用して、XPSDrv プリンタードライバーがサポートできるコピーの最大数を指定します。
 
-コード例を次の例を示します**MSXPSMaxCopies** PPD ファイルの一部分にします。
+次のコード例は、部分的な PPD ファイル内の**MSXPSMaxCopies**の例を示しています。
 
 ```cpp
 *MSXPSMaxCopies: "99"

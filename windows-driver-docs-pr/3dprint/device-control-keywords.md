@@ -1,25 +1,25 @@
 ---
 title: デバイス制御のキーワード
-description: これらのキーワードを使用して、3 D の製造デバイスの制御を提供します。
+description: これらのキーワードは、3D 製造デバイスを制御するために使用されます。
 ms.assetid: 1F0CBFC4-F641-4D82-9173-C89218E822B5
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ec29efb414e47f69866dba34ad695b4763dcb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 42941f7056e87d85962a123cccb5692a0baeea84
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325706"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652784"
 ---
 # <a name="device-control-keywords"></a>デバイス制御のキーワード
 
 
-これらのキーワードを使用して、3 D の製造デバイスの制御を提供します。
+これらのキーワードは、3D 製造デバイスを制御するために使用されます。
 
 ## <a name="21-job3doutputarea"></a>2.1. Job3DOutputArea
 
 
-Psk3d:Job3DOutputArea プロパティは、実際に印刷できるデバイス領域のサイズを定義するために使用する必要があります。 Job3DOutputArea の左下隅が (0,0,0) として定義されます。 Job3DOutputAreaWidth、Job3DOutputAreaDepth、および Job3DOutputAreaHeight プロパティ Job3DOutputAreaMesh はその境界ボックス内の正確な印刷量を必要に応じて定義印刷量でない場合がある場合、印刷、ボリュームの境界ボックスを定義します。
+Psk3d: Job3DOutputArea プロパティは、デバイスが実際に印刷できる領域のサイズを定義するために使用する必要があります。 Job3DOutputArea の左下隅は、(0, 0, 0) として定義されています。 Job3DOutputAreaWidth、Job3DOutputAreaDepth、および Job3DOutputAreaHeight の各プロパティは印刷ボリュームの境界ボックスを定義しますが、印刷ボリュームが cuboid でない場合は、必要に応じて境界ボックス内の正確な印刷ボリュームを定義します。
 
 <table>
 <colgroup>
@@ -29,7 +29,7 @@ Psk3d:Job3DOutputArea プロパティは、実際に印刷できるデバイス�
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -38,7 +38,7 @@ Psk3d:Job3DOutputArea プロパティは、実際に印刷できるデバイス�
 <td>psk3d:Job3DOutputArea</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -47,18 +47,18 @@ Psk3d:Job3DOutputArea プロパティは、実際に印刷できるデバイス�
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;Job3DOutputAreaWidth、Job3DOutputAreaDepth、および Job3DOutputAreaHeight プロパティを含める必要があるあり、Job3DOutputAreaMesh を含めることができる子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong>なし</p>
+<td><p>には、Job3DOutputAreaWidth、Job3DOutputAreaDepth、Job3DOutputAreaHeight の各プロパティを含み、Job3DOutputAreaMesh を含むことができる、子要素を1つだけ含む &lt;&gt; 値が含まれています。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong>該当なし</p>
 <p><strong>値:</strong>OutputDimensions</p>
-<p><strong>説明 :</strong>OutputDimensions には、各出力領域のサイズを構成する 3 つのプロパティのセットが含まれています。</p></td>
+<p><strong>説明:</strong>OutputDimensions には、各出力領域のサイズを構成する3つのプロパティのセットが含まれています。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Job3DOutputArea キーワードの使用状況
+Job3DOutputArea キーワードの使用法
 
 ```xml
 <psf:Property name="psk3d:Job3DOutputArea">
@@ -74,7 +74,7 @@ Job3DOutputArea キーワードの使用状況
      <psf:Property name="psk3d:Job3DOutputAreaMesh">
          <psf:Value xsi:type="xsd:string">
           <![CDATA[
-            <mesh xmlns="http://schemas.microsoft.com/3dmanufacturing/mesh/2014/11" unit="millimeter">
+            <mesh xmlns="https://schemas.microsoft.com/3dmanufacturing/mesh/2014/11" unit="millimeter">
              <vertices>
                 <vertex x="0" y="0" z="0" />
                 <vertex x="0" y="153000" z="0" />
@@ -95,7 +95,7 @@ Job3DOutputArea キーワードの使用状況
 
 ### <a name="211-job3doutputareawidth"></a>2.1.1. Job3DOutputAreaWidth
 
-ミクロン、X 軸に沿った出力領域の幅をについて説明します。
+X 軸に沿った出力領域の幅 (ミクロン単位) を記述します。
 
 <table>
 <colgroup>
@@ -105,7 +105,7 @@ Job3DOutputArea キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -114,7 +114,7 @@ Job3DOutputArea キーワードの使用状況
 <td>psk3d:Job3DOutputAreaWidth</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -123,11 +123,11 @@ Job3DOutputArea キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:integer</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>値:</strong>OutputWidth</p>
-<p><strong>説明 :</strong>ミクロン内の X 軸では、出力領域の幅と同じである 0 より大きい整数を含める OutputWidth 必要があります。</p></td>
+<p><strong>説明:</strong>OutputWidth には、X 軸に沿った出力領域の幅 (ミクロン単位) と等しい、0より大きい整数を含める必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -136,7 +136,7 @@ Job3DOutputArea キーワードの使用状況
 
 ### <a name="212-job3doutputareadepth"></a>2.1.2. Job3DOutputAreaDepth
 
-ミクロン、Y 軸に沿った出力領域の深さをについて説明します。
+Y 軸に沿った出力領域の深さをミクロン単位で記述します。
 
 <table>
 <colgroup>
@@ -146,7 +146,7 @@ Job3DOutputArea キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -155,7 +155,7 @@ Job3DOutputArea キーワードの使用状況
 <td>psk3d:Job3DOutputAreaDepth</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -164,11 +164,11 @@ Job3DOutputArea キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:integer</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>値:</strong>OutputDepth</p>
-<p><strong>説明 :</strong>ミクロン内の Y 軸では、出力領域の深さと同じである 0 より大きい整数を含める OutputDepth 必要があります。</p></td>
+<p><strong>説明:</strong>OutputDepth には、Y 軸に沿った出力領域の深さ (ミクロン) と同じ、0より大きい整数を含める必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -177,7 +177,7 @@ Job3DOutputArea キーワードの使用状況
 
 ### <a name="213-job3doutputareaheight"></a>2.1.3. Job3DOutputAreaHeight
 
-ミクロン、Z 軸に沿った出力領域の高さをについて説明します。
+Z 軸に沿った出力領域の高さをミクロン単位で表します。
 
 <table>
 <colgroup>
@@ -187,7 +187,7 @@ Job3DOutputArea キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -196,7 +196,7 @@ Job3DOutputArea キーワードの使用状況
 <td>psk3d:Job3DOutputAreaHeight</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -205,11 +205,11 @@ Job3DOutputArea キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:integer</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: integer</p>
 <p><strong>値:</strong>OutputHeight</p>
-<p><strong>説明 :</strong>ミクロン等しい Z 軸では、出力領域の深さにある、0 より大きい整数を含める OutputHeight 必要があります。</p></td>
+<p><strong>説明:</strong>OutputHeight には、Z 軸に沿った出力領域の深さ (ミクロン) に等しい、0より大きい整数を含める必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -218,7 +218,7 @@ Job3DOutputArea キーワードの使用状況
 
 ### <a name="214-job3doutputareamesh"></a>2.1.4. Job3DOutputAreaMesh
 
-四角形の prism でない場合に、出力のボリュームの形状について説明します。 文字列値が次の 3MF 仕様 XML blob が、&lt;メッシュ&gt;要素 (頂点と三角形を格納していると 3MF メッシュの manifoldness 標準に準拠している)。 この多面体は、以前 OutputArea プロパティで説明されている境界ボックス内で完全に含まれる必要があります。
+四角形の prism がない場合の出力ボリュームの形状について説明します。 文字列値は、&lt;メッシュ&gt; 要素 (頂点と三角形を含む) の3MF 仕様に従った XML blob であり、3MF メッシュの manifoldness 標準に準拠しています。 この多面体は、前の OutputArea プロパティで記述された境界ボックス内に完全に含まれている必要があります。
 
 <table>
 <colgroup>
@@ -228,7 +228,7 @@ Job3DOutputArea キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -237,7 +237,7 @@ Job3DOutputArea キーワードの使用状況
 <td>psk3d:Job3DOutputAreaMesh</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -246,11 +246,11 @@ Job3DOutputArea キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:string</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>値:</strong>OutputMesh</p>
-<p><strong>説明 :</strong>出力のボリュームの境界を表す 3MF 仕様のメッシュのセクションで定義されている、頂点と三角形の xml 文字列を含む OutputMesh にする必要があります。</p></td>
+<p><strong>説明:</strong>OutputMesh には、出力ボリュームの境界を表す3MF 仕様のメッシュセクションで定義されているように、頂点と三角形の xml 文字列を含める必要があります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -260,7 +260,7 @@ Job3DOutputArea キーワードの使用状況
 ## <a name="22-job3dappname"></a>2.2. Job3DAppName
 
 
-デバイス可能性があります (例では、既定のワークフローが含まれています)、既定以外のワークフロー アプリケーションを識別するこのプリンターを選択すると、印刷ダイアログ ボックスで起動されます。 このワークフロー アプリケーションは、可能性があるために必要なまたは必要な 3D 印刷ジョブを最適なセットをこのデバイスのカスタム ui できます。
+デバイスは、このプリンターが選択されたときに [印刷] ダイアログで呼び出される既定のワークフローアプリ (例では、既定のワークフローが含まれています) を識別できません。 このワークフローアプリでは、このデバイスの3D 印刷ジョブを最適に設定するために必要な、または必要なカスタム UI を使用できます。
 
 <table>
 <colgroup>
@@ -270,7 +270,7 @@ Job3DOutputArea キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -279,7 +279,7 @@ Job3DOutputArea キーワードの使用状況
 <td>psk3d:Job3DAppName</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -288,18 +288,18 @@ Job3DOutputArea キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:string</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>値:</strong></p>
-<p><strong>説明 :</strong>最新の印刷 ダイアログ ボックスでこのプリンターを使用するワークフロー アプリのパッケージ名</p></td>
+<p><strong>説明:</strong>最新の [印刷] ダイアログでこのプリンターに使用するワークフローアプリのパッケージ名</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Job3DAppName キーワードの使用状況
+Job3DAppName キーワードの使用法
 
 ```xml
 <psf:Property name="psk3d:Job3DAppName">
@@ -310,7 +310,7 @@ Job3DAppName キーワードの使用状況
 ## <a name="23-job3dwsdapackagefamilyname"></a>2.3. Job3DWSDAPackageFamilyName
 
 
-デバイスは、印刷ダイアログを起動する UWP デバイス アプリで見つかる場合があります、**詳細設定**ユーザーがボタンをクリックします。 このアプリでは、プリンターの保守、素材のセットアップ、調整などの操作の UI が表示されます。既定値が指定されていないため、このキーワードを省略すると、ありません**詳細設定**ボタンが表示されます。
+デバイスは、ユーザーが **[詳細設定**] ボタンをクリックしたときに印刷ダイアログを起動する UWP デバイスアプリを識別できます。 このアプリは、プリンターのメンテナンス、素材の設定、調整などの操作のための UI を提供します。既定値は指定されていないため、このキーワードを省略すると、 **[詳細設定**] ボタンは表示されません。
 
 <table>
 <colgroup>
@@ -320,7 +320,7 @@ Job3DAppName キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -329,7 +329,7 @@ Job3DAppName キーワードの使用状況
 <td>psk3d:Job3DWSDAPackageFamilyName</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -338,18 +338,18 @@ Job3DAppName キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:string</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>値:</strong></p>
-<p><strong>説明 :</strong>このプリンターを使用する UWP デバイス アプリのパッケージ名には、設定を詳細します。</p></td>
+<p><strong>説明:</strong>このプリンターの詳細設定に使用する UWP デバイスアプリのパッケージ名。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Job3DWSDAPackageFamilyName キーワードの使用状況
+Job3DWSDAPackageFamilyName キーワードの使用法
 
 ```xml
 <psf:Property name="psk3d:Job3DWSDAPackageFamilyName">
@@ -360,7 +360,7 @@ Job3DWSDAPackageFamilyName キーワードの使用状況
 ## <a name="24-job3d3mfversion"></a>2.4. Job3D3MFVersion
 
 
-デバイスは、Windows の印刷システムから受信する 3MF ファイルのバージョンを識別する必要があります。 バージョンは、適切なバージョンのコア仕様から URI 名前空間によって指定されます。 下位互換性、このキーワードを省略した場合と見なされますの既定値を取得"<http://schemas.microsoft.com/3dmanufacturing/2013/01”>3MF、非推奨のレガシ 0.93 バージョンを示します。
+デバイスは、Windows プリントシステムから受信する必要がある3MF ファイルのバージョンを識別する必要があります。 バージョンは、適切なバージョンのコア仕様の URI 名前空間によって指定されます。 旧バージョンとの互換性を維持するために、このキーワードを省略すると、既定値の "0.93<https://schemas.microsoft.com/3dmanufacturing/2013/01”>を使用することを前提としています。これは推奨されません。
 
 <table>
 <colgroup>
@@ -370,7 +370,7 @@ Job3DWSDAPackageFamilyName キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -379,7 +379,7 @@ Job3DWSDAPackageFamilyName キーワードの使用状況
 <td>psk3d:Job3D3MFVersion</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -388,29 +388,29 @@ Job3DWSDAPackageFamilyName キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:string</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>値:</strong></p>
-<p><strong>説明 :</strong>入力として、デバイスでサポートされている 3MF core バージョンを定義する URI 名前空間。</p></td>
+<p><strong>説明:</strong>デバイスでサポートされている3MF コアバージョンを入力として定義する URI 名前空間。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Job3D3MFVersion キーワードの使用状況
+Job3D3MFVersion キーワードの使用法
 
 ```xml
 <psf:Property name="psk3d:Job3D3MFVersion">
-    <psf:Value xsi:type="xsd:string"> http://schemas.microsoft.com/3dmanufacturing/core/2015/02</psf:Value>
+    <psf:Value xsi:type="xsd:string"> https://schemas.microsoft.com/3dmanufacturing/core/2015/02</psf:Value>
 </psf:Property>
 ```
 
 ## <a name="25-job3d3mfextensions"></a>2.5. Job3D3MFExtensions
 
 
-デバイスは (名前空間、スペースで区切られたリストを形成) によって 3MF 拡張機能を指定することがあります、認識、たとえば、印刷システム使用可能な場合は、スライスのデータを送信することができます。
+デバイスでは、認識される3つの MF 拡張機能 (名前空間で区切られたリスト) を指定できます。たとえば、使用可能な場合は、印刷システムでスライスデータを送信できます。
 
 <table>
 <colgroup>
@@ -420,7 +420,7 @@ Job3D3MFVersion キーワードの使用状況
 <thead>
 <tr class="header">
 <th>特性</th>
-<th>詳細</th>
+<th>詳細情報</th>
 </tr>
 </thead>
 <tbody>
@@ -429,7 +429,7 @@ Job3D3MFVersion キーワードの使用状況
 <td>psk3d:Job3D3MFExtensions</td>
 </tr>
 <tr class="even">
-<td>に対して有効です。</td>
+<td>有効期間</td>
 <td>PrintCapabilities ドキュメント</td>
 </tr>
 <tr class="odd">
@@ -438,22 +438,22 @@ Job3D3MFVersion キーワードの使用状況
 </tr>
 <tr class="even">
 <td>目次</td>
-<td><p>1 つのみを含む&lt;値&gt;次のように、子要素。</p>
-<p><strong>子:</strong>値</p>
-<p><strong>xsi:type:</strong> xsd:string</p>
+<td><p>次のように、子要素&gt; 1 つの &lt;値を格納します。</p>
+<p><strong>子:</strong>数値</p>
+<p><strong>xsi: type:</strong> xsd: string</p>
 <p><strong>値:</strong></p>
-<p><strong>説明 :</strong>入力として、デバイスでサポートされている 3MF 拡張機能を定義する URI 名前空間のスペースで区切られたリスト。</p></td>
+<p><strong>説明:</strong>デバイスでサポートされている3MF 拡張機能を入力として定義する URI 名前空間のスペース区切りのリスト。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Job3D3MFExtensions キーワードの使用状況
+Job3D3MFExtensions キーワードの使用法
 
 ```xml
 <psf:Property name="psk3d:Job3D3MFExtensions">
-    <psf:Value xsi:type="xsd:string"> http://schemas.microsoft.com/3dmanufacturing/material/2015/02</psf:Value>
+    <psf:Value xsi:type="xsd:string"> https://schemas.microsoft.com/3dmanufacturing/material/2015/02</psf:Value>
 </psf:Property>
 ```
 

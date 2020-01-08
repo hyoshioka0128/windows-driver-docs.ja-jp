@@ -1,9 +1,9 @@
 ---
 title: ScannerStatusConditionClearedEvent 要素
-description: 必要な ScannerStatusConditionClearedEvent 要素は、スキャナーで以前に報告された DeviceCondition 条件がクリアされたことをクライアントに通知します。
+description: 必須の ScannerStatusConditionClearedEvent 要素は、以前に報告された DeviceCondition 条件がスキャナーでクリアされたことをクライアントに通知します。
 ms.assetid: c849caba-d77b-441b-a5e1-94f9285cef3f
 keywords:
-- ScannerStatusConditionClearedEvent 要素イメージング デバイス
+- ScannerStatusConditionClearedEvent 要素イメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bee70559ed044dd9fd3a566e9d74c222f5daf3f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 84e2d28c03d35c8f81c245dc1a8fbe584fec0cc7
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386303"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653010"
 ---
 # <a name="scannerstatusconditionclearedevent-element"></a>ScannerStatusConditionClearedEvent 要素
 
 
-必要な**ScannerStatusConditionClearedEvent**要素をクライアントに通知を以前に報告された[ **DeviceCondition** ](devicecondition.md)条件がクリアされた時刻、スキャナーです。
+必須の**ScannerStatusConditionClearedEvent**要素は、以前に報告された[**DeviceCondition**](devicecondition.md)条件がスキャナーでクリアされたことをクライアントに通知します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,25 +65,25 @@ ms.locfileid: "63386303"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスに送信、 **ScannerStatusConditionClearedEvent**でデバイスが条件をときに要素が識別される[ **ScannerStatusConditionEvent** ](scannerstatusconditionevent.md)されましたオフにします。 **ScannerStatusConditionClearedEvent**が含まれています、 [ **DeviceConditionCleared** ](deviceconditioncleared.md)クリアされた条件とクリアされて時刻を含む要素。
+[**ScanScannerStatusConditionClearedEvent Statusconditionevent**](scannerstatusconditionevent.md)で特定されたデバイスの状態がクリアされた場合、WSD Scan サービスは、要素を送信します。 **ScannerStatusConditionClearedEvent**には、クリアされた条件とそれがクリアされた時刻を含む[**DeviceConditionCleared**](deviceconditioncleared.md)要素が含まれています。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、デバイスが ConditionId 1543 が識別される前の状態がクリアするクライアントをユーザーに通知方法を示します。
+次のコード例は、ConditionId 1543 が識別された以前の状態がクリアされたことをクライアントに通知する方法を示しています。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionClearedEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionClearedEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -101,7 +101,7 @@ WSD スキャン サービスに送信、 **ScannerStatusConditionClearedEvent**
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [**ConditionId**](conditionid.md)
 

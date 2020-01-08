@@ -1,29 +1,29 @@
 ---
 title: PIN 印刷のサンプル PrintCapabilities ファイル
-description: ここでは、保護された印刷の個人 ID 番号 (PIN) を指定する方法を示すサンプル PrintCapabilities ファイル。
+description: 次のサンプル PrintCapabilities ファイルは、暗証番号 (PIN) で保護された印刷を指定する方法を示しています。
 ms.assetid: 4C3BBEF1-C0DB-48F7-B4EC-BBB5D3699692
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f1c674cdd09328183a57ede8759c07e46ea6f622
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5fcf0ee3b823fbdbf5f960683f3c03adde3ef56d
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354937"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652966"
 ---
 # <a name="sample-printcapabilities-file-for-pin-printing"></a>PIN 印刷のサンプル PrintCapabilities ファイル
 
 
-ここでは、保護された印刷の個人 ID 番号 (PIN) を指定する方法を示すサンプル PrintCapabilities ファイル。
+次のサンプル PrintCapabilities ファイルは、暗証番号 (PIN) で保護された印刷を指定する方法を示しています。
 
 ```xml
 <?xml version="1.0"?>
 <psf:PrintCapabilities
-   xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" 
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1"
-   xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
-   xmlns:pskv11=" http://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11">
+   xmlns:psf="https://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" 
+   xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+   xmlns:xsd="https://www.w3.org/2001/XMLSchema" version="1"
+   xmlns:psk="https://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
+   xmlns:pskv11=" https://schemas.microsoft.com/windows/2013/05/printing/printschemakeywordsv11">
    <psf:ParameterDef name="pskv11:JobPasscodeString">
       <psf:Property name="psf:DataType">
            <psf:Value xsi:type="xsd:QName">xsd:string</psf:Value>
@@ -60,7 +60,7 @@ ms.locfileid: "63354937"
 </psf:PrintCapabilities>
 ```
 
-保護された印刷の詳細については、次を参照してください。[ドライバー サポートの保護された印刷](driver-support-for-protected-printing.md)します。
+保護された印刷の詳細については、「[保護された印刷のドライバーサポート](driver-support-for-protected-printing.md)」を参照してください。
 
  
 

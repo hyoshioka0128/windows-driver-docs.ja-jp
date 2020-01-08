@@ -4,12 +4,12 @@ description: GetWithArgument 要求スキーマと対応する応答スキーマ
 ms.assetid: F68731BC-2907-4FA2-B5A4-0FAC0A9F663A
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d197342049aa9e50188e06736f033c8a12d671e2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fbc16419aeb0a032d12711a10eef37a74ef820b9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844583"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652990"
 ---
 # <a name="getwithargument-request-and-response-schemas"></a>GetWithArgument 要求と応答のスキーマ
 
@@ -24,7 +24,7 @@ GetWithArgument 要求は、プリンターの現在の値の1つ以上のクエ
 この要求に対する応答は、次のセクションの[Getwithargument 応答スキーマ](#getwithargument-response-schema)にあります。
 
 ```xml
-<bidi:GetWithArgument xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'>
+<bidi:GetWithArgument xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'>
   <Query schema='\Printer.Resources:Data'>
     <BIDI_STRING>en-us</BIDI_STRING>
   </Query>
@@ -35,9 +35,9 @@ GetWithArgument 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>  
-<schema targetNamespace='http://schemas.microsoft.com/windows/2005/03/printing/bidi'  
-    xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'   
-    xmlns ='http://www.w3.org/2001/XMLSchema'>  
+<schema targetNamespace='https://schemas.microsoft.com/windows/2005/03/printing/bidi'  
+    xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'   
+    xmlns ='https://www.w3.org/2001/XMLSchema'>  
     <element name='GetWithArgument'>  
         <complexType>  
             <sequence maxOccurs='unbounded'>  
@@ -78,7 +78,7 @@ GetWithArgument 要求スキーマの正式な定義
 この例は、上記の GetWithArgument 要求に対する応答です。 クエリが成功した場合、結果は特定のスキーマの値になります。 クエリが失敗した場合、結果はエラーコードになります。
 
 ```xml
-<bidi:GetWithArgumentResponse xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:GetWithArgumentResponse xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema="\Printer.Data:GetWithArgument">
     <Schema name="\Printer.Data:GetWithArgument">
       <BIDI_BLOB>Base64 Encoded XML resource file data to be used by Print Config<BIDI_BLOB>
@@ -91,9 +91,9 @@ GetWithArgument 応答スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>  
-<schema targetNamespace='http://schemas.microsoft.com/windows/2005/03/printing/bidi'  
-    xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'   
-    xmlns ='http://www.w3.org/2001/XMLSchema'>  
+<schema targetNamespace='https://schemas.microsoft.com/windows/2005/03/printing/bidi'  
+    xmlns:bidi='https://schemas.microsoft.com/windows/2005/03/printing/bidi'   
+    xmlns ='https://www.w3.org/2001/XMLSchema'>  
     <element name='GetWithArgumentResponse'>  
         <complexType>  
             <sequence maxOccurs='unbounded'>  

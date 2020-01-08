@@ -9,27 +9,15 @@ keywords:
 - AddDevice ルーチン WDK storage
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f09b05eb5a77fbe3029ed982721d4827055da297
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 158c53a70c2e24eaec63d795d5a91776c5b21ee7
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844481"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606470"
 ---
 # <a name="storage-filter-drivers-adddevice-routine"></a>記憶域フィルター ドライバーの AddDevice ルーチン
 
+PnP マネージャーは、そのドライバーによって制御されるデバイスを検出したときに、記憶域フィルタードライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンを呼び出します。 記憶域フィルタードライバー (SFD) の AddDevice ルーチンは、デバイス (SRB_FUNCTION_CLAIM_DEVICE) を要求しないことを除けば、記憶域クラスドライバーのルーチンと似ています。
 
-## <span id="ddk_storage_filter_driver_s_adddevice_routine_kg"></span><span id="DDK_STORAGE_FILTER_DRIVER_S_ADDDEVICE_ROUTINE_KG"></span>
-
-
-PnP マネージャーは、そのドライバーによって制御されるデバイスを検出したときに、記憶域フィルタードライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンを呼び出します。 記憶域フィルタードライバー (SFD) の*AddDevice*ルーチンは、ストレージクラスドライバーのルーチンに似ていますが、デバイス (SRB\_関数\_の要求\_デバイス) を要求しない点が異なります。
-
-ストレージクラスドライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンの詳細については、「[ストレージクラスドライバー](storage-class-drivers.md)」を参照してください。 PnP ドライバーの*AddDevice*ルーチンに関する一般的な情報については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
-
- 
-
- 
-
-
-
-
+ストレージクラスドライバーの[*AddDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンの詳細については、「[ストレージクラスドライバー](introduction-to-storage-class-drivers.md)」を参照してください。 PnP ドライバーの*AddDevice*ルーチンに関する一般的な情報については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。

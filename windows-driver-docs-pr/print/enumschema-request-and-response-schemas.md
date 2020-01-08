@@ -4,12 +4,12 @@ description: EnumSchema 要求スキーマと対応する応答スキーマ定�
 ms.assetid: 031FA2EA-A33B-409C-82FD-B4FE9D0A2E93
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c34eb163316f3b614d3a43500538e507cb64c4aa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 798cc4d66e12e7627ca9747f55eb3c543b4e8075
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843125"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652800"
 ---
 # <a name="enumschema-request-and-response-schemas"></a>EnumSchema 要求と応答のスキーマ
 
@@ -24,16 +24,16 @@ EnumSchema 要求は、プリンターのプロパティの一覧を取得する
 すべての EnumSchema 要求はまったく同じであり、ルート要素のみで構成されています。
 
 ```xml
-<bidi:EnumSchema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi"/>
+<bidi:EnumSchema xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi"/>
 ```
 
 EnumSchema 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='EnumSchema'>
     <complexType>
       <anyAttribute namespace='##other' processContents='skip'/>
@@ -50,7 +50,7 @@ EnumSchema 応答には、各プロパティの &lt;Schema&gt; 要素があり�
 この例では、プリンターにはいくつかのアクセス可能なプロパティしかありません。
 
 ```xml
-<bidi:EnumSchema xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:EnumSchema xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Schema name='\Printer.Configuration.DuplexUnit:Installed' />
   <Schema name='\Printer.Configuration.HardDisk:Installed'/>
   <Schema name='\Printer.Configuration.HardDisk:Capacity'/>
@@ -62,9 +62,9 @@ EnumSchema Response スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='EnumSchema'>
     <complexType>
       <sequence maxOccurs='unbounded'>

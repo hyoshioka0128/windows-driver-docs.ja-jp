@@ -1,9 +1,9 @@
 ---
-title: GetJobElementsResponse 要素
-description: 必要な GetJobElementsResponse 要素は、クライアントが要求するジョブに関連する情報を返します。
+title: Getjobを Response 要素
+description: 必須の Getjobrequests Response 要素は、クライアントが要求するジョブ関連の情報を返します。
 ms.assetid: b27c1aba-eb5f-4446-ab34-c03a969e954f
 keywords:
-- GetJobElementsResponse 要素イメージング デバイス
+- Getjobelement Response 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f702c3e0b8182ca84ff0317de778fd02a22f0c2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2db1cd742c000d209ad6f82f86d389970e01d44a
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63357001"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652976"
 ---
-# <a name="getjobelementsresponse-element"></a>GetJobElementsResponse 要素
+# <a name="getjobelementsresponse-element"></a>Getjobを Response 要素
 
 
-必要な**GetJobElementsResponse**要素は、クライアントを要求するジョブに関連する情報を返します。
+必須の**Getjobrequests response**要素は、クライアントが要求するジョブ関連の情報を返します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,29 +65,29 @@ ms.locfileid: "63357001"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetJobElementsResponse**操作。
+WSD スキャンサービスは、 **Getjobの応答**操作をサポートする必要があります。
 
-クライアントが呼び出す**GetJobElementsRequest**ジョブのジョブに関連する要素の値を決定する[ **JobId** ](jobid.md)を識別します。 WSD スキャン サービスの応答でなければなりません、 **GetJobElementsResponse**要求された情報を含む要素。 スキャン サービスが返す情報は、スキーマのスキャン ジョブに関連する部分に完全に準拠する必要があります。
+クライアントは、 **Getjobelements 要求**を呼び出して、 [**JobId**](jobid.md)が識別するジョブのジョブ関連の要素の値を決定します。 WSD Scan サービスは、要求された情報を含む**Getjobの response**要素を使用して応答する必要があります。 スキャンサービスが返す情報は、スキーマのスキャンジョブに関連する部分に完全に準拠している必要があります。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、スキャン サービスは、ジョブ Id 1 を識別するジョブのジョブの状態を返します。
+次のコード例では、スキャンサービスは、JobId 1 が識別するジョブのジョブの状態を返します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetJobElementsRequest</wsa:RelatesTo>
@@ -112,10 +112,10 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**GetJobElementsRequest**](getjobelementsrequest.md)
+[**Getjobの要求**](getjobelementsrequest.md)
 
 [**JobElements**](jobelements.md)
 

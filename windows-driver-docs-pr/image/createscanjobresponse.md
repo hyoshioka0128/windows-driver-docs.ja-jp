@@ -1,9 +1,9 @@
 ---
-title: CreateScanJobResponse 要素
-description: 必要な CreateScanJobResponse 要素には、クライアントのスキャン要求への WSD スキャン サービスの応答が含まれています。
+title: "\"/\" オブジェクト (/)"
+description: 必要なのは、クライアントのスキャン要求に対する WSD Scan サービスの応答です。
 ms.assetid: a832bdc2-9c47-41da-ac78-a844b8f84ec1
 keywords:
-- CreateScanJobResponse 要素イメージング デバイス
+- オブジェクトのイメージ作成デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd61b561afd387dc7cf0c9a6d16d01996a15beb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8aa2db14d95976c4f47c68b53cf5f60ea6593648
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370974"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652986"
 ---
-# <a name="createscanjobresponse-element"></a>CreateScanJobResponse 要素
+# <a name="createscanjobresponse-element"></a>"/" オブジェクト (/)
 
 
-必要な**CreateScanJobResponse**要素には、クライアントのスキャン要求への WSD スキャン サービスの応答が含まれています。
+必要なのは、クライアントのスキャン要求に対する WSD Scan サービスの**応答です。**
 
 <a name="usage"></a>使用方法
 -----
@@ -74,38 +74,38 @@ ms.locfileid: "63370974"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **CreateScanJobResponse**操作の要素。
+WSD スキャンサービスで**は、"/" をサポート**する必要があります。
 
-WSD スキャン サービスに送信、 **CreateScanJobResponse**操作の要素をクライアントに応答をクライアントの[ **CreateScanJobRequest**](createscanjobrequest.md)します。
+WSD Scan サービスは、クライアントの[**メッセージの出力**](createscanjobrequest.md)に応答して、クライアントに対して、**出力操作要素を送信**します。
 
-クライアントには、有効なスキャン要求が行われて、WSD スキャン サービスは、次の情報を返す必要があります。
+クライアントが有効なスキャン要求を行った場合、WSD Scan サービスは次の情報を返す必要があります。
 
--   一意[ **JobId** ](jobid.md)ジョブを識別します。 スキャナーが生成されます**JobId**定義した範囲内での実装定義のようにします。 スキャン サービスには、クライアントは、古いジョブのジョブを混同しないでくださいようにを最近割り当てられた値が再利用する必要があります。
--   JobToken の一意の識別子。 JobToken はスキャン ジョブを一意に表す JobId と組み合わせて使用します。 JobToken はスキャン要求元がスキャン ジョブを実際に作成されたことを確認するデバイスのスキャンを有効にする RetrieveImageRequest 操作の要素で、スキャン サービスに渡されます。
--   ImageInformation 現在検証されている ScanTicket によるスキャンから結果として得られるイメージ データに関する情報が含まれています。
--   DocumentFinalParameters スキャン サービスは、このスキャン ジョブに使用する実際の DocumentParameters 要素が含まれています。
+-   ジョブを識別する一意の[**JobId**](jobid.md) 。 スキャナーは、定義された範囲内で、実装によって定義された方法で**JobId**を生成します。 スキャンサービスでは、クライアントがジョブを古いジョブと混同しないように、最近割り当てられた値を再利用することはできません。
+-   JobToken 内の一意の識別子。 JobToken は、スキャンジョブを一意に表すために JobId とペアになっています。 JobToken は RetrieveImageRequest operation 要素の Scan サービスに渡されます。これにより、スキャンデバイスはスキャンの依頼者がスキャンジョブを実際に作成したことを確認できます。
+-   ImageInformation。この情報には、現在検証中の ScanTicket を使用して行われたスキャンの結果のイメージデータに関する情報が含まれています。
+-   DocumentFinalParameters。スキャンサービスがこのスキャンジョブに使用する実際の DocumentParameters 要素が含まれています。
 
-クライアントは、実際の画像データを送信してスキャン サービスから 1 つまたは複数を取得する必要があります[ **RetrieveImageRequest** ](retrieveimagerequest.md)操作要素。 クライアントに送信する 60 秒、 **RetrieveImageRequest**操作の要素をクライアントのスキャン サービスが応答したら[ **CreateScanJobRequest**](createscanjobrequest.md)します。 スキャン サービスが受信しなかった場合、 **RetrieveImageRequest** 、この時間内にジョブを中止にする必要があります、 [ **JobStateReason** ](jobstatereason.md)の**JobTimedOut**. 場合は、ジョブは、複数のドキュメントで構成され、このタイムアウトが間に適用されます。 連続する各**RetrieveImageRequest/応答**操作。
+クライアントは、1つまたは複数の[**RetrieveImageRequest**](retrieveimagerequest.md) operation 要素を送信することによって、スキャンサービスから実際のイメージデータを取得する必要があります。 クライアントの RetrieveImageRequest operation 要素を送信するには、クライアントの operation[**要求**](createscanjobrequest.md)に対してスキャンサービスが応答した後、60秒かかります。 この時間内にスキャンサービスが**RetrieveImageRequest**を受信しない場合は、 [**JobStateReason**](jobstatereason.md)の**JobTimedOut**を使用してジョブを中止する必要があります。 ジョブが複数のドキュメントで構成されている場合、このタイムアウトは、連続する**RetrieveImageRequest/Response**操作の間に適用されます。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、WSD スキャン サービス応答を CreateScanJobRequest を示しています。
+次のコード例では、"/" を使用して、この要求に対する WSD Scan サービスの応答を示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheCreateScanJobRequest</wsa:RelatesTo>
@@ -177,10 +177,10 @@ WSD スキャン サービスに送信、 **CreateScanJobResponse**操作の要�
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**CreateScanJobRequest**](createscanjobrequest.md)
+[ **//ジョブ要求**](createscanjobrequest.md)
 
 [**DocumentFinalParameters**](documentfinalparameters.md)
 

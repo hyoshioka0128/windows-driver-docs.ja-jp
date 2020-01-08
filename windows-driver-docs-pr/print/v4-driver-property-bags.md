@@ -4,12 +4,12 @@ description: V4 印刷ドライバーモデルは、カスタマイズされた 
 ms.assetid: 4E20303A-BEB3-4928-BA5A-356D978FA2BE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aaa3f520cf05f14bf59aeeccd219afd461aeb94
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 51919d93e288268d3456903eaac287b4ffeeb4a9
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844193"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653002"
 ---
 # <a name="v4-printer-driver-property-bags"></a>V4 プリンター ドライバー プロパティ バッグ
 
@@ -58,9 +58,9 @@ GetProperties () –キュープロパティバッグを参照します。</td>
 </tr>
 <tr class="odd">
 <td>XPS 表示フィルター</td>
-<td><p>XPS フィルターは、プロパティ名 "DriverPropertyBag" を使用して、<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>印刷フィルターパイプラインプロパティバッグ</strong></a>内からドライバープロパティバッグにアクセスできます。または、 <em>filterpipeline. h</em>から定義された値 XPS_FP_PROPERTY_BAG を使用します。 DriverPropertyBag に関する情報を次に示します。</p>
+<td><p>XPS フィルターは、プロパティ名 "DriverPropertyBag" を使用して、<a href="https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag" data-raw-source="[&lt;strong&gt;Print Filter Pipeline Property Bag&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)"><strong>印刷フィルターパイプラインプロパティバッグ</strong></a>内からドライバープロパティバッグにアクセスできます。または、 <em>filterpipeline. h</em>から XPS_FP_PROPERTY_BAG 定義された値を使用します。 DriverPropertyBag に関する情報を次に示します。</p>
 <strong>プロパティの種類:</strong>VT_UNKNOWN <strong>Description:</strong> IUnknown インターフェイスへのポインター。 QueryInterface を呼び出して、ドライバープロパティバッグへの Iプリンター Propertybag インターフェイスへのポインターを取得します。
-<p>および XPS フィルターは、プロパティ名 "QueuePropertyBag" を使用して、印刷フィルターパイプラインプロパティバッグ内からキュープロパティバッグにアクセスできます。または、 <em>XPS_FP_QUEUE_PROPERTY_BAG から定義</em>されている値を使用します。 QueuePropertyBag に関する情報を次に示します。</p>
+<p>および XPS フィルターは、プロパティ名 "QueuePropertyBag" を使用して、印刷フィルターパイプラインプロパティバッグ内からキュープロパティバッグにアクセスできます。また、 <em>filterpipeline. h</em>から XPS_FP_QUEUE_PROPERTY_BAG 定義された値を使用することもできます。 QueuePropertyBag に関する情報を次に示します。</p>
 <strong>プロパティの種類:</strong>VT_UNKNOWN <strong>Description:</strong> IUnknown インターフェイスへのポインター。 QueryInterface を呼び出して、キュープロパティバッグへの Iプリンター Propertybag インターフェイスへのポインターを取得します。</td>
 </tr>
 </tbody>
@@ -101,7 +101,7 @@ DEVMODE プロパティバッグは、プロパティバッグのメンバーを
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Properties xmlns="http://schemas.microsoft.com/windows/2011/08/printing/devmodemap">
+<Properties xmlns="https://schemas.microsoft.com/windows/2011/08/printing/devmodemap">
   <Property Name="FabrikamAccountCode">
     <String Length="32"></String>
   </Property>  
@@ -179,7 +179,7 @@ Config:&lt;名&gt;
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Properties xmlns= "http://schemas.microsoft.com/windows/2011/08/printing/queueproperties">
+<Properties xmlns= "https://schemas.microsoft.com/windows/2011/08/printing/queueproperties">
   <Property Name="Name1">
     <String>String1</String>
   </Property>
@@ -201,7 +201,7 @@ Config:&lt;名&gt;
 [**Iプリンター Extensioneventargs**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterextensioneventargs)  
 [**Iプリンター Propertybag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterpropertybag)  
 [**Iプリンター Scriptablepropertybag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablepropertybag)  
-[**Iプリンター Scriptcontext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)  
+[**IPrinterScriptContext**](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)  
 [**印刷フィルターパイプラインプロパティバッグ**](https://docs.microsoft.com/windows-hardware/drivers/print/print-pipeline-property-bag)  
 
 

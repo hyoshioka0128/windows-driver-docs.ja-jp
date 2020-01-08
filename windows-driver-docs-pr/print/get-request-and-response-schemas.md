@@ -4,12 +4,12 @@ description: Get 要求スキーマと対応する応答スキーマ定義、お
 ms.assetid: 48980220-4DD6-4785-AAC1-850F8FBE49EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 93965c0096d702bbfb6fefe53034265420db9453
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 37a04b5a64e5b08bb0540619d09553623414a7a3
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844514"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652992"
 ---
 # <a name="get-request-and-response-schemas"></a>Get 要求と応答のスキーマ
 
@@ -22,7 +22,7 @@ Get 要求と応答は、プリンターの現在の値の1つまたは複数に
 この例では、3つのクエリがあります。 最初のクエリは、特定の双方向通信スキーマ値を指し、2番目のクエリはサブツリーを定義する双方向通信スキーマプロパティを指します。 3番目のエラーは意図的なエラーです。双方向通信スキーマに &lt;Foo&gt; プロパティがありません。 (この要求に対する応答は、 [Get Response スキーマの](#the-get-response-schema)次のセクションにあります)。
 
 ```xml
-<bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema='\Printer.Configuration.DuplexUnit:Installed'/>
   <Query schema='\Printer.Configuration.HardDisk'/>
   <Query schema='\Printer.Foo'/>
@@ -33,9 +33,9 @@ Get 要求スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi"
-  xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi"
+  xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='Get'>
     <complexType>
       <sequence maxOccurs='unbounded'>
@@ -62,7 +62,7 @@ Get 要求スキーマの正式な定義
 この例は、上記の Get 要求に対する応答です。 成功のクエリの場合、結果は特定のスキーマの値になります。 3番目のクエリが失敗したため、結果はエラーコードになります。 2番目のクエリでは、子を持つプロパティが要求されたため、応答では、すべての子の名前と値が提供されることに注意してください。
 
 ```xml
-<bidi:Get xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi">
+<bidi:Get xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi">
   <Query schema='\Printer.Configuration.DuplexUnit:Installed'/>
     <Schema name='\Printer.Configuration.DuplexUnit:Installed'>
       <BIDI_BOOL>true</BIDI_BOOL>
@@ -89,9 +89,9 @@ Get Response スキーマの正式な定義
 
 ```xml
 <?xml version='1.0'?>
-<schema targetNamespace="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns:bidi="http://schemas.microsoft.com/windows/2005/03/printing/bidi" 
-  xmlns ='http://www.w3.org/2001/XMLSchema'>
+<schema targetNamespace="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns:bidi="https://schemas.microsoft.com/windows/2005/03/printing/bidi" 
+  xmlns ='https://www.w3.org/2001/XMLSchema'>
   <element name='Get'>
     <complexType>
       <sequence maxOccurs='unbounded'>

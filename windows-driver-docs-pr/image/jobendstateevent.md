@@ -1,9 +1,9 @@
 ---
 title: JobEndStateEvent 要素
-description: 必要な JobEndStateEvent 要素は、スキャナーのジョブの処理が完了したことをクライアントに通知します。
+description: Required JobEndStateEvent 要素は、スキャナーがジョブの処理を完了したことをクライアントに通知します。
 ms.assetid: 2d5307fb-9c64-413d-8c5c-439012a44a19
 keywords:
-- JobEndStateEvent 要素イメージング デバイス
+- JobEndStateEvent 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a0d74c1976d7dba8bbfbce13b4970a91f2ce309
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 74bb42fa3d5533b0a99909eefaf767080d82ad83
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377583"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652984"
 ---
 # <a name="jobendstateevent-element"></a>JobEndStateEvent 要素
 
 
-必要な**JobEndStateEvent**要素は、スキャナーのジョブの処理が完了したことをクライアントに通知します。
+Required **Jobendstateevent**要素は、スキャナーがジョブの処理を完了したことをクライアントに通知します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,25 +65,25 @@ ms.locfileid: "63377583"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスの送信、 **JobEndStateEvent**スキャナーのジョブの処理が完了すると、クライアントに event 要素。 **JobEndStateEvent**および、完了したジョブの完了に関する詳細を識別するデータ要素が含まれています。
+WSD Scan サービスは、スキャナーがジョブの処理を終了したときに、 **Jobendstateevent**イベント要素をクライアントに送信します。 **Jobendstateevent**には、完了したジョブとその完了に関する詳細を識別するデータ要素が含まれています。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、デバイスのスキャンが最終的な状態のクライアントと 253 のジョブの状態をユーザーに通知方法を示します。
+次のコード例は、スキャンデバイスが、ジョブ253の最終状態と状態をクライアントに通知する方法を示しています。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/JobEndStateEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/JobEndStateEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -106,7 +106,7 @@ WSD スキャン サービスの送信、 **JobEndStateEvent**スキャナーの
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**JobEndState**](jobendstate.md)

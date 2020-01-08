@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b046ff169db86578684c12ae37f4c8b106e18dba
-ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
+ms.openlocfilehash: 035f96ee192e9f654c4e07e4e554402f99e1c1b6
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "70025327"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606450"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグチェック 0x50:\_の\_ていない\_領域のページ\_エラー
 
@@ -45,11 +45,11 @@ ms.locfileid: "70025327"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1</p></td>
+<td align="left"><p>1 で保護されたプロセスとして起動されました</p></td>
 <td align="left"><p>参照されたメモリアドレス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>2</p></td>
+<td align="left"><p>2 で保護されたプロセスとして起動されました</p></td>
 <td align="left">
 <p><i>Windows 1507 (TH1) バージョン-x64  の後</i></p>
 <p><strong>0:</strong>読み取り操作</p>
@@ -72,11 +72,11 @@ ms.locfileid: "70025327"
 </td>
 </tr>
 <tr class="odd">
-<td align="left"><p>3</p></td>
+<td align="left"><p>3 で保護されたプロセスとして起動されました</p></td>
 <td align="left"><p>参照されているメモリ (既知の場合) のアドレス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>4</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
 <td align="left"><p>ページフォールトの種類</p>
 <p>0x03-NONPAGED_BUGCHECK_WRONG_SESSION-セッション領域アドレスへの参照が、セッションを持たないプロセスのコンテキストで行われました。  通常、これは、適切なプロセスへのオブジェクト参照を適切に取得して最初にアタッチせずに、呼び出し元がセッションアドレスに不適切にアクセスしようとすることを意味します。 このバグチェック & サブタイプは、Windows 10 RS3 で最後に使用されました。  Windows 10 RS4 以降では、このエラーは、代わりに 0x02 (NONPAGED_BUGCHECK_NOT_PRESENT_PAGE_TABLE) として表示されます。</p>
 <p>0x04-NONPAGED_BUGCHECK_VA_NOT_CANONICAL-非正規 (無効) 仮想アドレス (パラメーター 1) への参照が試行されました。  呼び出し元は、このアドレスにアクセスしようとすることはできません。</p>
@@ -115,7 +115,7 @@ ms.locfileid: "70025327"
 
 ブルースクリーンの一般的なトラブルシューティング情報については、「 [**Blue Screen Data**](blue-screen-data.md)」を参照してください。
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
 通常、参照先のアドレスは解放されたメモリ内にあるか、単に無効になっています。 これは、 **try-except**ハンドラーによって保護することはできません。プローブまたは同様のプログラミング手法によってのみ保護できます。
@@ -225,7 +225,7 @@ fffff802`40d322f9 488b4810        mov     rcx,qword ptr [rax+10h] ds:ffffffff`00
 
 `!memusage` およびを使用して、システムメモリの全般的な状態を確認します。 
 
-**ドライバーの検証ツール**
+**ドライバー検証ツール**
 
-ドライバーの検証ツールは、ドライバーの動作を確認するためにリアルタイムで実行されるツールです。 たとえば、ドライバーの検証ツールは、メモリプールなどのメモリリソースの使用を確認します。 ドライバーコードの実行中にエラーが発生した場合は、ドライバーコードのその部分をさらに詳しく調査できるように、例外を事前に作成します。 Driver verifier マネージャーは Windows に組み込まれており、すべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動するには、コマンドプロンプトで「 *Verifer* 」と入力します。 確認するドライバーを構成できます。 ドライバーを検証するコードは、実行中のオーバーヘッドを追加するので、可能な限り最小のドライバー数を試してみてください。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
+ドライバーの検証ツールは、ドライバーの動作を確認するためにリアルタイムで実行されるツールです。 たとえば、ドライバーの検証ツールは、メモリプールなどのメモリリソースの使用を確認します。 ドライバーコードの実行中にエラーが発生した場合は、ドライバーコードのその部分をさらに詳しく調査できるように、例外を事前に作成します。 Driver verifier マネージャーは Windows に組み込まれており、すべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動するには、コマンドプロンプトで「 *verifier* 」と入力します。 確認するドライバーを構成できます。 ドライバーを検証するコードは、実行中のオーバーヘッドを追加するので、可能な限り最小のドライバー数を試してみてください。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 

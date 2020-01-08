@@ -1,53 +1,31 @@
 ---
-title: チェンジャー ドライバー
+title: チェンジャードライバーの概要
 description: チェンジャー ドライバー
 ms.assetid: 47310de7-e69d-4f06-9995-3d95783d607a
 keywords:
-- チェンジャー ドライバー WDK ストレージ
-- 記憶域チェンジャー ドライバー WDK
-- ストレージ ドライバー WDK、チェンジャー ドライバー
-- チェンジャー ドライバー WDK ストレージ、チェンジャー ドライバーについて
-- チェンジャー ドライバーに関するチェンジャー ドライバー WDK、ストレージ
+- チェンジャードライバー WDK 記憶域
+- ストレージチェンジャードライバー WDK
+- 記憶域ドライバー WDK、チェンジャードライバー
+- チェンジャードライバー WDK 記憶域、チェンジャードライバーについて
+- ストレージチェンジャードライバー WDK、チェンジャードライバーについて
 - オートローダ WDK ストレージ
-- オートチェン ジャー WDK ストレージ
+- オートチェンジャー WDK ストレージ
 - ジュークボックス WDK ストレージ
-ms.date: 04/20/2017
+ms.date: 12/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6448d7eec54d0611dbc81f8efa2f27b45332008c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5df64b4c59131fa939ff59f116195248126dd17a
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338307"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606530"
 ---
-# <a name="changer-drivers"></a>チェンジャー ドライバー
+# <a name="introduction-to-changer-drivers"></a>チェンジャードライバーの概要
 
+チェンジャードライバーは、メディアライブラリの要素、または*チェンジャー* (*オートローダ*、*オートチェンジャー*、または*ジュークボックス*と呼ばれることもあります) を制御します。 NT ベースのオペレーティングシステムでは、チェンジャーのドライバーは次の要素で構成されています。
 
-## <span id="ddk_changer_drivers_kg"></span><span id="DDK_CHANGER_DRIVERS_KG"></span>
+- Mcd ライブラリとして提供される、システム提供のチェンジャークラスドライバー。すべてのチェンジャードライバーに共通の機能を提供し*ます。*
 
+- 特定の種類のチェンジャーをサポートするためにチェンジャークラスドライバーによって呼び出されるルーチンを提供する、デバイス固有の miniclass ドライバー。 mcd に静的にリンクされて*います。*
 
-このセクションには、次の情報が含まれています。
-
-[システム提供のチェンジャー ドライバー](system-supplied-changer-drivers.md)
-
-[チェンジャーのベンダーから提供されたドライバー](vendor-supplied-changer-drivers.md)
-
-[チェンジャーのデバイスの拡張機能にデバイスに固有の情報を格納します。](storing-device-specific-information-in-the-changer-s-device-extension.md)
-
-[チェンジャー デバイス制御要求の処理](processing-changer-device-control-requests.md)
-
-チェンジャー ドライバーの制御、メディア ライブラリの要素または*チェンジャー* (とも呼ばれる、*オートローダー*、 *"オート チェンジャ"*、または*ジュークボックス*). NT ベースのオペレーティング システムでは、次のチェンジャー用のドライバーで構成されます。
-
--   ライブラリとして提供されるシステム提供のチェンジャー クラスのドライバーを*mcd.lib*、チェンジャー ドライバーをすべてに共通の機能を提供します。
-
--   デバイスに固有の miniclass ドライバーでは、静的にリンクする*mcd.lib*チェンジャーの特定の種類をサポートするために、チェンジャー クラス ドライバーによって呼び出されるルーチンを提供します。
-
-このセクションには、新しいチェンジャー miniclass ドライバーの記述に関するガイドラインが含まれています。
-
- 
-
- 
-
-
-
-
+このセクションでは、Windows チェンジャードライバーモデルについて説明し、新しいチェンジャー miniclass ドライバーの作成方法について詳しく説明します。

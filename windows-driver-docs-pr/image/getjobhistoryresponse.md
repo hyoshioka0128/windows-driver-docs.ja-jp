@@ -1,9 +1,9 @@
 ---
-title: GetJobHistoryResponse 要素
-description: 必要な GetJobHistoryResponse 要素は、完了したジョブの概要を返します。
+title: Getjobhistory Response 要素
+description: 必須の Getjobhistory Response 要素は、完了したジョブの概要を返します。
 ms.assetid: 85c9edb4-fe6c-49a7-899a-71ce65e38852
 keywords:
-- GetJobHistoryResponse 要素イメージング デバイス
+- Getjobhistory Response 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e04a3256ed576a77e70ca853278675f3f550791b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: df3d4b5ae3fe43b640fb49565773d8d81fbb5931
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346198"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652972"
 ---
-# <a name="getjobhistoryresponse-element"></a>GetJobHistoryResponse 要素
+# <a name="getjobhistoryresponse-element"></a>Getjobhistory Response 要素
 
 
-必要な**GetJobHistoryResponse**要素が完了したジョブの概要を返します。
+必須の**Getjobhistory response**要素は、完了したジョブの概要を返します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,31 +65,31 @@ ms.locfileid: "63346198"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetJobHistoryResponse**操作の要素。
+WSD Scan サービスは、 **Getjobhistory response** operation 要素をサポートしている必要があります。
 
-クライアントが呼び出すことができます[ **GetJobHistoryRequest** ](getjobhistoryrequest.md)前に完了したジョブのジョブに関連する変数の値を決定します。 WSD スキャン サービスの応答でなければなりません、 **GetJobHistoryResponse**クライアントが要求した情報が含まれる操作の要素または適切なエラー コード。
+クライアントは、 [**Getjobhistory 要求**](getjobhistoryrequest.md)を呼び出して、以前に完了したジョブのジョブ関連の変数の値を確認できます。 WSD Scan サービスは、クライアントが要求した情報または適切なエラーコードを含む**Getjobhistory response** operation 要素を使用して応答する必要があります。
 
-WSD スキャン サービスを保持するジョブ履歴の量は、実装に固有です。
+WSD Scan サービスによって管理されるジョブ履歴の量は、実装に固有のものです。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、ジョブ履歴ジョブ履歴のクライアントの要求に応答が返されない方法を示します。
+次のコード例では、ジョブ履歴に対するクライアントの要求に応答して、ジョブ履歴が返されないようにする方法を示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetJobHistoryRequest</wsa:RelatesTo>
@@ -103,22 +103,22 @@ WSD スキャン サービスを保持するジョブ履歴の量は、実装に
 </soap:Envelope>
 ```
 
-次のコード例では、ジョブと関連付けられているデータの最後の 2 つの完了したジョブの一覧を返します。
+次のコード例では、最後の2つの完了したジョブのジョブと関連データの一覧を返します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>
-      http://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
+      https://schemas.xmlsoap.org/ws/2003/03/addressing/role/anonymous
     </wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
     <wsa:RelatesTo>uuid:MsgIdOfTheGetJobHistoryRequest</wsa:RelatesTo>
@@ -153,10 +153,10 @@ WSD スキャン サービスを保持するジョブ履歴の量は、実装に
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**GetJobHistoryRequest**](getjobhistoryrequest.md)
+[**Getjobhistory 要求**](getjobhistoryrequest.md)
 
 [**JobHistory**](jobhistory.md)
 

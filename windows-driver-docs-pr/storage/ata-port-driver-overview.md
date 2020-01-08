@@ -9,21 +9,21 @@ keywords:
 - IDE コントローラー WDK ATA ポートドライバー
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b6b3844806a19cf223cc29eb79d335198dfa441
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9e57e9325aba73063b3a18ee99afe19e6b6c2943
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842868"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606496"
 ---
 # <a name="ata-port-driver-overview"></a>ATA ポート ドライバーの概要
 
->[!NOTE]
+> [!NOTE]
 > ATA ポートドライバーと ATA ミニポートドライバーのモデルは、将来変更されるか、使用できなくなる可能性があります。 代わりに、 [storport ドライバー](storport-driver-overview.md)および[storport ミニポート](https://docs.microsoft.com/windows-hardware/drivers/storage/storport-miniport-drivers)ドライバーモデルを使用することをお勧めします。
 
-[SCSI ポートドライバー](scsi-port-driver-overview.md)および[Storport ドライバー](storport-driver-overview.md)に加えて、windows Vista 以降のバージョンの windows オペレーティングシステムには、ATA ポートドライバー (Ataport) が用意されてい*ます。* これは、特に IDE での使用に適したストレージポートドライバーです。コントローラー.
+[SCSI ポートドライバー](scsi-port-driver-overview.md)および[Storport ドライバー](storport-driver-overview.md)に加えて、windows Vista 以降のバージョンの windows オペレーティングシステムには、ATA ポートドライバー (*Ataport*) が用意されています。これは、特に IDE コントローラーでの使用に適したストレージポートドライバーです。
 
-ATA ポートドライバーとその他のシステム提供のストレージポートドライバーの最も重要な違いは、ATA ポートドライバーが他のドライバーとの通信に使用するプロトコルです。 システムが提供するその他のすべての記憶域ポートドライバーは、SCSI 要求ブロック (SRBs) を使用して、記憶域クラスドライバーやミニポートドライバーなどの上位レベルのドライバーとの両方を通信します。 ATA ポートドライバーは、SRBs を使用して、上位レベルのドライバーとのみ通信します。 ATA ポートは、そのミニポートドライバーと通信するために、IDE 要求ブロック (IRB) と呼ばれるパケットを使用します。これは、 [IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_request_block)構造体で定義されています。 IRBs は、ATA デバイスの特性に SRBs するよりも優れた設計になっています。
+ATA ポートドライバーとその他のシステム提供のストレージポートドライバーの最も重要な違いは、ATA ポートドライバーが他のドライバーとの通信に使用するプロトコルです。 システムが提供するその他のすべての記憶域ポートドライバーは、SCSI 要求ブロック (SRBs) を使用して、記憶域クラスドライバーやミニポートドライバーなどの上位レベルのドライバーとの両方を通信します。 ATA ポートドライバーは、SRBs を使用して、上位レベルのドライバーとのみ通信します。 ATA ポートは、そのミニポートドライバーと通信するために、 [IDE_REQUEST_BLOCK](https://docs.microsoft.com/windows-hardware/drivers/ddi/irb/ns-irb-_ide_request_block)構造によって定義される IDE 要求ブロック (IRB) と呼ばれるパケットを使用します。 IRBs は、ATA デバイスの特性に SRBs するよりも優れた設計になっています。
 
 ATA ポートドライバーとその他のシステム提供の記憶装置ドライバーのもう1つの違いは、ata ポートドライバーが、SCSI 標準で定義されている特定の要件から ATA ミニポートドライバーをシールドすることです。 たとえば、ata ポートドライバーは ata コマンドを使用して ata ミニポートドライバーから同等の SCSI sense データを収集し、そのデータを SCSI sense データ形式に準拠するように変換して、そのデータを SCSI sense データであるかのように上位レベルのドライバーに渡します。 そのため、ATA ミニポートドライバーは、SCSI sense データ用の上位レベルのドライバーからの要求に直接応答する必要はありません。
 

@@ -1,9 +1,9 @@
 ---
 title: JobStatusEvent 要素
-description: 必要な JobStatusEvent 要素は、ジョブの状態が変更されたことをクライアントに通知します。
+description: Required JobStatusEvent 要素は、ジョブの状態が変更されたことをクライアントに通知します。
 ms.assetid: 8cb510ef-9622-48d0-859d-e52c9b5b8190
 keywords:
-- JobStatusEvent 要素イメージング デバイス
+- JobStatusEvent 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d24694e35bc5ce8863c62f4401a481097df495
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 33ffd91141af72f57158b1a6181706369d28299e
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348767"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652982"
 ---
 # <a name="jobstatusevent-element"></a>JobStatusEvent 要素
 
 
-必要な**JobStatusEvent**要素は、クライアントには、ジョブの状態が変更されたことを通知します。
+Required **Jobstatusevent**要素は、ジョブの状態が変更されたことをクライアントに通知します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,25 +65,25 @@ ms.locfileid: "63348767"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスに送信する**JobStatusEvent**ジョブの状態が変更されたときに、クライアントに要素。 **JobStatusEvent**が含まれています、 [ **JobStatus** ](jobstatus.md)すべてのジョブの現在の状態に関する情報を定義する要素。 最初の**JobStatusEvent**メッセージは、通常、 [ **JobId** ](jobid.md)要素と[ **JobState** ](jobstate.md)の**開始**します。
+WSD Scan サービスは、ジョブの状態が変化したときに**Jobstatusevent**要素をクライアントに送信します。 **Jobstatusevent**には、ジョブの現在の状態に関するすべての情報を定義する[**JobStatus**](jobstatus.md)要素が含まれています。 最初の**Jobstatusevent**メッセージには、通常、 [**JobId**](jobid.md)要素と、 [**jobstate**](jobstate.md)が**開始**されています。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、デバイスのスキャン、253 のジョブの現在の状態に関するクライアントに通知する方法を示します。
+次のコード例は、スキャンデバイスが、ジョブ253の現在の状態についてクライアントに通知する方法を示しています。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/JobStatusEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/JobStatusEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -104,7 +104,7 @@ WSD スキャン サービスに送信する**JobStatusEvent**ジョブの状態
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**JobId**](jobid.md)

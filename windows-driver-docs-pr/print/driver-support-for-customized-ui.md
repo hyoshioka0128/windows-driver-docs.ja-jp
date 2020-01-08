@@ -4,12 +4,12 @@ description: V4 印刷ドライバーモデルは、印刷用のプリンター�
 ms.assetid: 91B0E824-1EE3-40B0-A24E-5A66C158972E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f84396268e051b0fcadd7748df95070f965b8ac7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 25e12ce41e6b9c1edb31191c403edbebf4ff7bf6
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845053"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652816"
 ---
 # <a name="driver-support-for-customized-ui"></a>カスタマイズされた UI のドライバー サポート
 
@@ -47,7 +47,7 @@ V4 印刷ドライバーモデルは、印刷用のプリンター拡張機能�
 **ドライバーイベントの XML サンプル**。 次の XML コードスニペットでは、1つのドライバーイベントを指定しています。 イベントは、Bidi によって報告された合計容量の21% 未満の黄色いインクを確認します。 このような場合は、resourceID 132 によって参照される文字列を使用して AsyncUIBalloon メッセージが作成されます。 つまり、"' %1 ' はトナー/インクが不足しています" というメッセージが表示されます。 リソース 2002 ("黄") は %1 に置き換えられます。
 
 ```xml
-<de:DriverEvents xmlns:de="http://schemas.microsoft.com/windows/2011/08/printing/driverevents" schemaVersion="4.0">
+<de:DriverEvents xmlns:de="https://schemas.microsoft.com/windows/2011/08/printing/driverevents" schemaVersion="4.0">
   <DriverEvent eventId="{A04CF0FC-1CEB-4C62-B967-6F0AE5C5F81E}">
     <Transport>USB</Transport>
     <Transport>WSD</Transport>

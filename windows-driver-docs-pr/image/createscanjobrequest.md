@@ -1,9 +1,9 @@
 ---
-title: CreateScanJobRequest 要素
-description: 必要な CreateScanJobRequest 操作では、スキャンするスキャン デバイスを準備します。
+title: /の要求要素
+description: 必要なのは、スキャンデバイスをスキャンするように要求します。
 ms.assetid: ce3aafe2-71b0-4875-852a-f3ab78684329
 keywords:
-- CreateScanJobRequest 要素イメージング デバイス
+- //ジョブ要求要素のイメージ作成デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8221ab8d8df854c6a32b280ab29898afd21e196a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f03a0ab1e814a9dd4acf8a6df0ea7e92d9b7924c
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368544"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652988"
 ---
-# <a name="createscanjobrequest-element"></a>CreateScanJobRequest 要素
+# <a name="createscanjobrequest-element"></a>/の要求要素
 
 
-必要な**CreateScanJobRequest**操作をスキャンするスキャン デバイスを準備します。
+必要なのは、スキャンデバイスをスキャンするように**要求**します。
 
 <a name="usage"></a>使用方法
 -----
@@ -41,7 +41,7 @@ ms.locfileid: "63368544"
 <a name="text-value"></a>テキスト値
 ----------
 
-なし
+None
 
 ## <a name="child-elements"></a>子要素
 
@@ -63,7 +63,7 @@ ms.locfileid: "63368544"
 <td><p><a href="scanidentifier.md" data-raw-source="[&lt;strong&gt;ScanIdentifier&lt;/strong&gt;](scanidentifier.md)"><strong>ScanIdentifier</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="scanticket.md" data-raw-source="[&lt;strong&gt;ScanTicket&lt;/strong&gt;](scanticket.md)"><strong>ScanTicket</strong></a></p></td>
+<td><p><a href="scanticket.md" data-raw-source="[&lt;strong&gt;ScanTicket&lt;/strong&gt;](scanticket.md)"><strong>スキャンチケット</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -76,98 +76,98 @@ ms.locfileid: "63368544"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **CreateScanJobRequest**操作。
+WSD スキャン**サービスでは、"** /" をサポートする必要があります。
 
-**CreateScanJobRequest**操作は、メインのメカニズムを使用することは画像をスキャンするスキャン デバイスを準備します。 この操作は、2 つの方法で開始できます。 各メソッドは別に引数を渡す**CreateScanJobRequest**します。 2 つのメソッドと引数は。
+使用可能なイメージをスキャンするようにスキャンデバイスを準備する主なメカニズムとして、"ファイルの作成 **" 操作が**あります。 この操作は、2つの異なる方法で開始できます。 各メソッドは、異なる引数を///出力**要求**に送信します。 2つのメソッドと引数は次のとおりです。
 
--   ユーザーは、変換先を選択し、[スキャン] ボタンをデバイスにプッシュします。 このメソッドは、クライアントが送信を**CreateScanJobRequest**次の子要素を使用します。
-    -   スキャン サービスが ScanAvailableEvent を使用してクライアントに返す ScanIdentifier 要素。 スキャン サービスは、ユーザーが、変換先を選択した後、正しいクライアントがスキャンを要求することを確認するには、この識別子を確認する必要があります。
-    -   DestinationToken 要素は、受信 ScanAvailableEvent イベントをサブスクライブしたときに、WSD スキャン サービスがクライアントに返します。 スキャン サービスは、適切なクライアントがこのトークンをチェックして、スキャンを要求することを確認する必要があります。
-    -   スキャンの処理を制御する ScanTicket 要素。 スキャン チケット内の値は、ユーザーに、デバイスのスキャンを開始する前に、クライアント側で設定されている既定値です。
--   ユーザーは、クライアントで、アプリケーションを起動し、イメージを取得します。 このメソッドは、クライアントが送信**CreateScanJobRequest**だけを持つ、 **ScanTicket**要素。
+-   ユーザーは、変換先を選択し、デバイスに [スキャン] ボタンをプッシュします。 このメソッドでは、クライアントは、次の子要素を使用して、の**出力を送信**します。
+    -   スキャンサービスが Scanidentifier イベントを使用してクライアントに返す ScanIdentifier 要素。 スキャンサービスは、ユーザーが対象を選択した後に、正しいクライアントがスキャンを要求していることを確認するために、この識別子を確認する必要があります。
+    -   スキャンが利用できるイベントイベントの受信をサブスクライブしているときに、WSD Scan サービスがクライアントに返す DestinationToken 要素。 スキャンサービスは、このトークンを確認することによって、正しいクライアントがスキャンを要求していることを確認する必要があります。
+    -   スキャンの処理を制御するための ScanTicket 要素。 スキャンチケットの値は、ユーザーがデバイスにログオンしてからスキャンを開始する前にクライアントで設定される既定値です。
+-   ユーザーは、クライアントでアプリケーションを起動し、イメージを取得します。 このメソッドでは、クライアントは**Scancanjobrequest**を**scanticket**要素だけで送信します。
 
-特定の要素内で、 **CreateScanJobRequest**階層に含めることができます、 **MustHonor**ブール属性。 場合**MustHonor**が存在し、true の場合、WSD スキャン サービスが要求された要素とその値を維持するかスキャン ジョブ要求を拒否する必要があります。 サポートされていない要素がない場合、 **MustHonor**属性、またはその**MustHonor**属性が false で、WSD スキャン サービスは、それを無視する必要があります。 サポートされている要素の場合、 **MustHonor**属性が false で、WSD スキャン サービスがその要求された値でサポートされている必要があります。
+**MustHonor**のブール属性を格納**できるのは、構成**要素の属性を持つことができます。 **MustHonor**が存在し、true の場合、WSD Scan サービスは要求された要素とその値を受け入れ、スキャンジョブ要求を拒否する必要があります。 サポートされていない要素に**MustHonor**属性がない場合、または**MustHonor**属性が FALSE の場合、WSD Scan サービスはそれを無視する必要があります。 サポートされている要素の**MustHonor**属性が false の場合、WSD Scan サービスは要求された値をサポートされているものと substitue 必要があります。
 
-クライアントが競合するスキャン ジョブ要求内の要素の組み合わせを提供するかどうか (など[**指定**](inputsource.md)と[**解決**](resolution.md))、競合している要素がある場合、WSD スキャン サービスでスキャン ジョブの要求を拒否する必要があります、 **MustHonor**属性の値は true。
+クライアントがスキャンジョブ要求で要素の競合する組み合わせ ( [**Inputsource**](inputsource.md)や[**Resolution**](resolution.md)など) を提供する場合、競合する要素の**MustHonor**属性値が true に設定されていると、WSD scan サービスはスキャンジョブ要求を拒否する必要があります。
 
-次の要素を持つことができます、 **MustHonor**属性。[**ColorProcessing**](colorprocessing.md)、 [ **CompressionQualityFactor**](compressionqualityfactor.md)、 [ **ContentType**](contenttype.md)、 [**露出**](exposure.md)、 [ **FilmScanMode**](filmscanmode.md)、 [ **ImagesToTransfer** ](imagestotransfer.md)、 [ **InputSize**](inputsize.md)、 [**指定**](inputsource.md)、 [ **MediaSides** ](mediasides.md)、 [**解決**](resolution.md)、 [**回転**](rotation.md)、 [**スケーリング** ](scaling.md)、 [ **ScanRegionHeight**](scanregionheight.md)、 [ **ScanRegionWidth**](scanregionwidth.md)、 [**ScanRegionXOffset**](scanregionxoffset.md)、および[ **ScanRegionYOffset**](scanregionyoffset.md)します。
+**MustHonor**属性には、 [**colorprocessing**](colorprocessing.md)、 [**CompressionQualityFactor**](compressionqualityfactor.md)、 [**ContentType**](contenttype.md)、[**露光**](exposure.md)、 [**filmscanmode**](filmscanmode.md)、 [**ImagesToTransfer**](imagestotransfer.md)、 [**inputsize**](inputsize.md)、 [**inputsize**](inputsource.md)、 [**mediasides**](mediasides.md)、 [**Resolution**](resolution.md)、 [**Rotation**](rotation.md)、 [**Scaling**](scaling.md)、 [**scanregionheight**](scanregionheight.md)、 [**scanregionheight**](scanregionwidth.md)、 [**scanregionxoffset**](scanregionxoffset.md)、および[**ScanRegionYOffset**](scanregionyoffset.md)の各要素を含めることができます。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
-**CreateScanJobRequest**次のエラーを返すこともできます。
+また、この**要求**は、次のエラーを返すこともできます。
 
--   **ServerErrorNotAcceptingJobs**サーバーは、新しいスキャン ジョブを受け入れることはできません。 スキャナーがサービス モードに設定されているため、またはユーザーの介入の条件があり、すべてのメモリ バッファーがなくなるために、このエラーが発生する可能性があります。 クライアントでは、スキャナーでは、ジョブをもう一度同意は、サーバーがブロックされていないになり、という前提で時間の後でもう一度変更されていない要求を再試行できます。
+-   **Servererrornotacceptingjobs**サーバーは、新しいスキャンジョブを受け付けることができません。 このエラーは、スキャナーがサービスモードになったか、ユーザーの介入条件があり、すべてのメモリバッファーが使い果たされたことが原因で発生する可能性があります。 クライアントは、サーバーがブロック解除され、スキャナーがジョブを再度受け入れることを見込んで、変更されていない要求を後でもう一度試すことができます。
 
     | Fault プロパティ | 定義                                                                         |
     |----------------|------------------------------------------------------------------------------------|
-    | \[コード\]       | soap の受信者:                                                                      |
-    | \[サブコード\]    | wscn:ServerErrorNotAcceptingJobs                                                   |
-    | \[Reason\]     | サービスが一時的にブロックされて、新しいジョブまたはドキュメントの要求を受け入れることはできません。 |
-    | \[詳細\]     | なし                                                                               |
+    | \[コード\]       | soap: レシーバー                                                                      |
+    | \[サブコード\]    | wscn: ServerErrorNotAcceptingJobs                                                   |
+    | \[Reason\]     | サービスは一時的にブロックされ、新しいジョブまたはドキュメント要求を受け入れることができません。 |
+    | \[詳細\]     | None                                                                               |
 
      
 
--   **ClientErrorFormatNotSupported**スキャナーは指定された形式の値をサポートしていません。
+-   **ClientErrorFormatNotSupported**スキャナーは、指定されたフォーマット値をサポートしていません。
 
     | Fault プロパティ | 定義                                                                                                                                      |
     |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                                                                                                                     |
-    | \[サブコード\]    | wscn:ClientErrorFormatNotSupported                                                                                                              |
-    | \[Reason\]     | ドキュメント形式のパラメーター値がサポートされていません。                                                                                           |
-    | \[詳細\]     | (省略可能)。 スキャン サービスは、サポートされている形式の一覧を返すことができます。 この要素のデータ型でなければなりません&lt;wscn:FormatSupportedType&gt;します。 |
+    | \[コード\]       | soap: 送信者                                                                                                                                     |
+    | \[サブコード\]    | wscn: ClientErrorFormatNotSupported                                                                                                              |
+    | \[Reason\]     | ドキュメント形式のパラメーター値はサポートされていません。                                                                                           |
+    | \[詳細\]     | (省略可能)。 スキャンサービスは、サポートされている形式の一覧を返すことができます。 この要素のデータは、wscn: FormatSupportedType&gt;&lt;型である必要があります。 |
 
      
 
--   **ClientErrorInvalidScanIdentifier** ScanIdentifier 値として指定したが、スキャン デバイス内で現在無効です。
+-   **Clienterrorinvalidscanidentifier**指定された ScanIdentifier 値は、現在、スキャンデバイス内では有効ではありません。
 
     | Fault プロパティ | 定義                                                 |
     |----------------|------------------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                                |
-    | \[サブコード\]    | wscn:ClientErrorInvalidScanIdentifier                      |
-    | \[Reason\]     | ScanIdentifier パラメーターの値は現在無効です。 |
-    | \[詳細\]     | なし                                                       |
+    | \[コード\]       | soap: 送信者                                                |
+    | \[サブコード\]    | wscn: ClientErrorInvalidScanIdentifier                      |
+    | \[Reason\]     | ScanIdentifier パラメーターの値が現在有効ではありません。 |
+    | \[詳細\]     | None                                                       |
 
      
 
--   **ClientErrorInvalidDestinationToken** DestinationToken 値として指定したが、デバイスのスキャンを無効です。
+-   **Clienterrorinvaliddestinationtoken**指定された DestinationToken 値はスキャンデバイスに対して無効です。
 
     | Fault プロパティ | 定義                                                   |
     |----------------|--------------------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                                  |
-    | \[サブコード\]    | wscn:ClientErrorInvalidDestinationToken                      |
-    | \[Reason\]     | DestinationToken パラメーターの値は現在無効です。 |
-    | \[詳細\]     | なし                                                         |
+    | \[コード\]       | soap: 送信者                                                  |
+    | \[サブコード\]    | wscn: ClientErrorInvalidDestinationToken                      |
+    | \[Reason\]     | DestinationToken パラメーター値は現在有効ではありません。 |
+    | \[詳細\]     | None                                                         |
 
      
 
--   **ClientErrorNoImagesAvailable**スキャンするメディアがないため、サーバーが新しいスキャン ジョブを受け入れることはできません。 たとえば、スキャナーに接続されている自動ドキュメント フィーダーからスキャン ジョブを実行して、フィーダーが空、このエラーが生成されます。 クライアントは、条件は修正され、スキャナーがスキャンされるメディアになりましたことを見込んで変更されていない要求を後でもう一度試すことができます。
+-   **ClientErrorNoImagesAvailable**スキャンするメディアがないため、サーバーは新しいスキャンジョブを受け入れることができません。 たとえば、スキャナーに接続されている自動ドキュメントフィーダーからスキャンジョブが実行され、フィーダーが空の場合に、このエラーが生成されます。 クライアントは、条件が修正されたことを見込んで、変更されていない要求を後でもう一度試すことができます。また、スキャナーにはメディアがスキャンされるようになります。
 
     | Fault プロパティ | 定義                                     |
     |----------------|------------------------------------------------|
-    | \[コード\]       | soap 送信者:                                    |
-    | \[サブコード\]    | wscn:ClientErrorNoImagesAvailable              |
-    | \[Reason\]     | サーバーには、取得に使用できるイメージがありません。 |
-    | \[詳細\]     | なし                                           |
+    | \[コード\]       | soap: 送信者                                    |
+    | \[サブコード\]    | wscn: ClientErrorNoImagesAvailable              |
+    | \[Reason\]     | サーバーで取得できるイメージがありません。 |
+    | \[詳細\]     | None                                           |
 
      
 
 <a name="examples"></a>例
 --------
 
-次のコード例は、スキャンのデバイスからスキャンが開始されると、スキャン ジョブの要求を示します。
+次のコード例は、スキャンがスキャンデバイスから開始されたときのスキャンジョブ要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -212,20 +212,20 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 </soap:Envelope>
 ```
 
-次のコード例は、クライアント上のアプリケーションから、スキャンが開始されると、スキャン ジョブの要求を示します。
+次のコード例は、スキャンがクライアント上のアプリケーションから開始されたときのスキャンジョブ要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/CreateScanJob
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -263,7 +263,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ColorProcessing**](colorprocessing.md)
@@ -272,11 +272,11 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 
 [**ContentType**](contenttype.md)
 
-[**CreateScanJobResponse**](createscanjobresponse.md)
+[ **//ジョブ応答**](createscanjobresponse.md)
 
 [**DestinationToken**](destinationtoken.md)
 
-[**公開**](exposure.md)
+[**見る**](exposure.md)
 
 [**FilmScanMode**](filmscanmode.md)
 
@@ -284,17 +284,17 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 
 [**InputSize**](inputsize.md)
 
-[**指定**](inputsource.md)
+[**InputSource**](inputsource.md)
 
 [**MediaSides**](mediasides.md)
 
-[**解決方法**](resolution.md)
+[**解決**](resolution.md)
 
-[**回転**](rotation.md)
+[**ローテーション**](rotation.md)
 
-[**スケーリング**](scaling.md)
+[**幅**](scaling.md)
 
-[**ScanAvailableEvent**](scanavailableevent.md)
+[**スキャンが発生したイベント**](scanavailableevent.md)
 
 [**ScanIdentifier**](scanidentifier.md)
 
@@ -306,7 +306,7 @@ WSD スキャン サービスをサポートする必要があります、 **Cre
 
 [**ScanRegionYOffset**](scanregionyoffset.md)
 
-[**ScanTicket**](scanticket.md)
+[**スキャンチケット**](scanticket.md)
 
  
 

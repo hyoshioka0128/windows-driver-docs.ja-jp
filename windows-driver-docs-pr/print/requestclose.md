@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 82b40ae17284b90f874ea0cfd47d9d964c0014eb
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: c9541b545622da30f54c10438a6b54e3d2868849
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881891"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652998"
 ---
 # <a name="requestclose-element"></a>requestClose 要素
 
 省略可能な**Requestclose**要素は、クライアントコンピューター上のイベント通知メッセージを閉じるために使用されます。
 
-**Requestclose**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
+**Requestclose**要素は、この URI: [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 ## <a name="usage"></a>使用方法
 
@@ -68,7 +68,7 @@ ms.locfileid: "74881891"
 ```cpp
 <?xml version="1.0" ?>
    <asyncPrintUIResponse
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/response">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/response">
     <v1>
       <requestClose>
         <messageBoxUI>
@@ -79,7 +79,7 @@ ms.locfileid: "74881891"
   </asyncPrintUIResponse>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [asyncPrintUIRequest](asyncprintuirequest.md)
 

@@ -1,9 +1,9 @@
 ---
-title: ScannerElementsChangeEvent 要素
-description: 必要な ScannerElementsChangeEvent 要素は、スキャナーに変更が発生したことをクライアントに通知します。
+title: Scanの要素の Changeevent 要素
+description: 必須の Scanの Changeevent 要素は、スキャナーで変更が発生したことをクライアントに通知します。
 ms.assetid: 5a3eb934-631d-432b-befa-c67360fe68d1
 keywords:
-- ScannerElementsChangeEvent 要素イメージング デバイス
+- Scanの要素の Changeevent 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a89411a3bef5f92972c580ce41e37911e3531d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10d89a5b510c6204bbad13fefb1b12b674a6d9b2
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370059"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653008"
 ---
-# <a name="scannerelementschangeevent-element"></a>ScannerElementsChangeEvent 要素
+# <a name="scannerelementschangeevent-element"></a>Scanの要素の Changeevent 要素
 
 
-必要な**ScannerElementsChangeEvent**要素は、クライアントに、スキャナーでの変更が発生したことを通知します。
+必須の**Scanの Changeevent**要素は、スキャナーで変更が発生したことをクライアントに通知します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,27 +65,27 @@ ms.locfileid: "63370059"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスに送信する必要があります、 **ScannerElementsChangeEvent**要素内の要素が変更されたときに、クライアントに[ **ScannerDescription**](scannerdescription.md)、 [**ScannerConfiguration**](scannerconfiguration.md)、 [ **DefaultScanTicket**](defaultscanticket.md)、またはスキャナーのベンダー拡張機能。
+WSD スキャンサービスは、スキャナーで scanの[**description**](scannerdescription.md)、 [**scanの configuration**](scannerconfiguration.md)、 [**defaultscanticket**](defaultscanticket.md)、またはベンダーの拡張機能内で要素が変更された場合に、クライアントに**scanによって changeevent**要素を送信する必要があります。
 
-本文**ScannerElementsChangeEvent**含める必要があります、 [ **ElementChanges** ](elementchanges.md)更新された要素の完全な xml 要素。 オプションの要素が返された XML から不足している場合は、WSD スキャン サービスをクライアントに示すは、サービスにその要素がサポートしていません。 このサポートの変更は、フィルム スキャン オプションまたは双方向のスキャン モードなど、オプションの削除が原因と考えられます。 クライアントの情報を比較する必要があります**ElementChanges**に対してどの値が変更され、その内部データを更新する必要がありますを決定する前のデータを格納します。
+**Scan? Elementelementchangeevent**の本体には、更新された要素の完全な XML を含む[**elementchanges**](elementchanges.md)要素が含まれている必要があります。 返された XML にオプションの要素がない場合、WSD Scan サービスは、サービスがその要素をサポートしなくなったことをクライアントに示します。 このサポートの変更は、フィルムスキャンオプションや二重スキャンモードなどのオプションを削除することによって発生する可能性があります。 クライアントは、変更された値を特定し、その内部データストアを更新する必要があることを判断するために、[以前のデータとの**Elementchanges** ] の情報を比較する必要があります。
 
 <a name="examples"></a>例
 --------
 
-次のコード例は、デバイスの報告方法を示していますがスキャン オプション フィルムのインストールによるスキャナー構成情報を更新します。
+次のコード例は、フィルムスキャンオプションのインストールにより、デバイスが更新されたスキャナーの構成情報を報告する方法を示しています。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerElementsChangeEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerElementsChangeEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -274,16 +274,16 @@ WSD スキャン サービスに送信する必要があります、 **ScannerEl
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**DefaultScanTicket**](defaultscanticket.md)
 
 [**ElementChanges**](elementchanges.md)
 
-[**ScannerConfiguration**](scannerconfiguration.md)
+[**スキャンの構成**](scannerconfiguration.md)
 
-[**ScannerDescription**](scannerdescription.md)
+[**スキャンの説明**](scannerdescription.md)
 
  
 

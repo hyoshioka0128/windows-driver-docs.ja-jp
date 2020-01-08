@@ -1,149 +1,149 @@
 ---
-title: 3D プリンター用のカスタムの USB インターフェイス サポート
-description: このトピックでは、3 D、v3 プリンター用のインターフェイスをカスタムの USB を有効にする方法と、v4 印刷ドライバー エコシステムについて説明します。
+title: 3D プリンターのカスタム USB インターフェイスのサポート
+description: このトピックでは、v3 および v4 印刷ドライバーエコシステムで3D プリンターのカスタム USB インターフェイスを有効にする方法について説明します。
 ms.date: 01/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1728011ce0dc209c88333bac8a4ab1de81cc781f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a2c485914f6e6ed302d14d8e92135208fdd47860
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324775"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652798"
 ---
-# <a name="enable-a-custom-usb-interface-for-a-3d-printer"></a>3D プリンターに対してカスタム USB インターフェイスを有効にします。
+# <a name="enable-a-custom-usb-interface-for-a-3d-printer"></a>3D プリンターのカスタム USB インターフェイスを有効にする
 
-このトピックで説明するアーキテクチャを使用すると、カスタム USB インターフェイス 3D プリンター v3 と v4 印刷のエコシステムでのサポート。 標準ポート モニター、 **3dmon.dll**、転送 3D 印刷ジョブのコマンドを Windows に**3DPrintService**ローカル サービスの資格情報を実行します。 サービスでは、読み込みを DLL カスタム コマンドを実行するために必要な 3D の印刷ジョブは、パートナーと通信します。 DLL、パートナーだけでなく**3dmon.dll**と**3dprintservice.exe**デバイスの USB ドライバー パッケージで再頒布可能パッケージがインストールされます。 パートナー DLL する必要があります実装およびエクスポートして、一連の関数との通信に、 **3DPrintService**します。 印刷スプーラ サービスとの対話に必要な機能の残りの部分が実装された**3dmon.dll**します。
+このトピックで説明するアーキテクチャでは、v3 および v4 print エコシステムでのカスタム USB インターフェイス3D プリンターのサポートが有効になります。 標準ポートモニターである**3dmon .dll**は、ローカルサービスの資格情報で実行されている Windows **3Dprintservice**に3d 印刷ジョブコマンドを転送します。 サービスは、パートナー DLL を読み込んで通信し、3D 印刷ジョブに必要なカスタムコマンドを実行します。 パートナー DLL、および**3dmon .dll**および**3dprintservice .exe**再頒布可能パッケージは、デバイスの USB ドライバーパッケージによってインストールされます。 パートナー DLL は、 **3Dprintservice**と通信するために、一連の関数を実装してエクスポートする必要があります。 印刷スプーラサービスとの対話に必要なその他の機能は、 **3dmon .dll**に実装されています。
 
 > [!NOTE]
-> このアーキテクチャでは、スレッド セーフである、複数のインスタンスをパートナー DLL が必要です。
+> このアーキテクチャでは、パートナー DLL がマルチインスタンスであり、スレッドセーフである必要があります。
 
 ## <a name="architecture-decisions"></a>アーキテクチャの決定
 
-**3DPrintService**を読み込み、印刷ワークフロー中にパートナー提供の Dll で定義された特定の Api を呼び出す windows サービスを使用します。 これらの Api には、プリンターとの通信を使用します。
+**3Dprintservice** windows サービスは、印刷ワークフロー中にパートナーが提供する dll 内の特定の定義済み api を読み込んで呼び出すために使用されます。 これらの Api は、プリンターとの通信を可能にします。
 
-KMDF の USB フィルター ドライバー パッケージを使用してインストールするため Windows Update で公開されているサポートされている 3D プリンターの PnP します。 KMDF ドライバーでは、パートナー ソフトウェアがインストールされ、3 D プリンター デバイス ノードを作成します。 3D プリンター デバイス ノードは、Windows Update からのパートナーが公開した v4 印刷ドライバーを使用してインストールされます。
+KMDF USB フィルタードライバーパッケージは、サポートされている3D プリンターの PnP 経由でインストールするために Windows Update に公開されています。 KMDF ドライバーは、パートナーソフトウェアをインストールし、3D プリンターデバイスノードを作成します。 3D プリンターデバイスノードは、Windows Update から、パートナーが発行した v4 印刷ドライバーを使用してインストールされます。
 
-## <a name="packaging-decisions"></a>パッケージの決定
+## <a name="packaging-decisions"></a>パッケージ化の決定
 
 ### <a name="binaries-and-binary-dependencies"></a>バイナリとバイナリの依存関係
 
-Architectue では、Windows Update でハードウェアの製造元によって発行されたドライバーを使用します。 このドライバーには、次の Microsoft 提供再頒布可能バイナリとその依存関係が含まれています。
+このアーキテクチャでは、Windows Update のハードウェアの製造元によって発行されたドライバーを使用します。 このドライバーには、Microsoft が提供する次の再頒布可能なバイナリとその依存関係が含まれています。
 
-- 3dmon.dll
-- 3dprintservice.exe
-- ms3dprintusb.sys
+- 3dmon .dll
+- 3dprintservice .exe
+- ms3dprintusb
 
-#### <a name="kernel-mode-usb-filter-driver"></a>カーネル モードの USB フィルター ドライバー
+#### <a name="kernel-mode-usb-filter-driver"></a>カーネルモード USB フィルタードライバー
 
-KMDF ドライバーでは、パートナーによって発行され、次の図に示すようにコンポーネントで構成されます。 これはハードウェア ID を持つデバイスに対応 (通常、VID & PID)。 ドライバーは、印刷キューとスライサーのドライバーのインストールをトリガーするインストールでの 3D プリンター デバイス ノードを作成します。 パートナー provids v4 プリンター ドライバーの 3D プリンター デバイス ノードに作成されます。
+KMDF ドライバーはパートナーによって発行され、次の図に示すコンポーネントで構成されています。 これは、デバイスとハードウェア ID (通常は、VID & PID) と一致します。 ドライバーは、インストール時に、印刷キューとスライサードライバーのインストールをトリガーする3D プリンターデバイスノードを作成します。 パートナーは、作成された3D プリンターデバイスノードの ds v4 プリンタードライバーをプロビジョニングします。
 
-![kmdf の usb フィルター ドライバー](images/kmdf-usb-filter-driver.png)
+![kmdf usb フィルタードライバー](images/kmdf-usb-filter-driver.png)
 
-##### <a name="ms3dprintusbsys"></a>MS3DPrintUSB.sys
+##### <a name="ms3dprintusbsys"></a>MS3DPrintUSB
 
-列挙型 3 D プリンター開発ノードを作成、カーネル モード デバイス ドライバー\\3DPrint します。 VID & Winusb.sys によって作成された [デバイス] ノードに基づく PID の直接の一致を使用して、PnP サブシステムによって呼び出されます。 ドライバーの .inf ファイルの設定を設定するために使用するカスタム DLL を**3DPrintService** (システムにインストールされていない) 場合。
+列挙\\3DPrint の下に3D プリンター開発ノードを作成するカーネルモードデバイスドライバー。 これは、Winusb .sys によって作成されたデバイスノードに基づいて、VID & PID と直接一致することによって、PnP サブシステムによって呼び出されます。 ドライバーの .inf ファイルは、 **3Dprintservice** (システムにまだインストールされていない場合) の設定に使用されるカスタム DLL を設定します。
 
-##### <a name="3dmondll"></a>3dmon.dll
+##### <a name="3dmondll"></a>3dmon .dll
 
-3DMon.dll は、Microsoft の発行したポートが 3D プリンターとの通信にスプーラーによって呼び出される再頒布可能パッケージのバイナリを監視します。
+3DMon .dll は、Microsoft が公開しているポートモニターの再頒布可能なバイナリで、スプーラが3D プリンターとの通信に使用します。
 
-##### <a name="3dprintserviceexe"></a>3dprintservice.exe
+##### <a name="3dprintserviceexe"></a>3dprintservice .exe
 
-3DPrintService.exe とは、ドライバーのセットアップ中に、Windows サービスとしてインストールされている Microsoft の発行したバイナリです。 3DMon 3D プリンターとこれに、印刷、双方向などの操作を実行するには、このサービスと通信します。
+3DPrintService .exe は、ドライバーのセットアップ時に Windows サービスとしてインストールされる、Microsoft が公開するバイナリです。 3DMon は、このサービスと通信して、3D プリンターで印刷や bidi などの操作を実行します。
 
-##### <a name="partnerimpldll"></a>Partnerimpl.dll
+##### <a name="partnerimpldll"></a>Partnerimpl .dll
 
-Partnerimp.dll とは、パートナーの公開された Microsoft インターフェイス実装です。 DLL は、そのプロトコルを使用して、パートナーのデバイスと通信します。 3DPrintService.exe では、ドライブの 3D プリンター デバイスの操作を実行時にこの DLL を読み込みます。
+Partnerimp .dll は、発行された Microsoft インターフェイスのパートナーの実装です。 DLL は、プロトコルを使用してパートナーのデバイスと通信します。 3D プリンターデバイスの操作を実行するには、実行時にこの DLL が読み込まれます。
 
 ![3dprintservice](images/3dprintservice.png)
 
-### <a name="printer-usage-sequence"></a>プリンターの使用状況のシーケンス
+### <a name="printer-usage-sequence"></a>プリンターの使用状況シーケンス
 
-- 3dmon.dll 3DPrintService windows サービスにコマンドを送信すると、スプーラーの通信します。
-- NetworkService アカウントの資格情報で実行される、3DPrintService.exe
-- 3dmon.dll を使用して、スプーラーが 3D プリンターが使用されるたびに、3DPrintService にコマンドを送信します。
-- コマンドとパートナー提供の実装の Dll 上で実行時に Api を呼び出す、3DPrintService
-- パートナー提供の Dll からスプーラーへの応答から 3DPrintService 手
+- スプーラは、3DPrintService windows サービスにコマンドを送信する 3dmon .dll と通信します。
+- NetworkService のアカウント資格情報を使用して、3DPrintService .exe を実行します。
+- 3dmon .dll 経由のスプーラは、3D プリンターが使用されている場合は常に、3DPrintService にコマンドを送信します。
+- 3DPrintService は、パートナーが提供する実装 Dll で、実行時にコマンドを処理し、Api を呼び出します。
+- 3DPrintService は、パートナーから提供された Dll からスプーラに応答を送ります。
 
-## <a name="interfaces-and-interactions"></a>インターフェイスとの相互作用
+## <a name="interfaces-and-interactions"></a>インターフェイスと相互作用
 
-パートナーの DLL には、次の API 関数をエクスポートする必要があります。
+パートナー DLL は、次の API 関数をエクスポートする必要があります。
 
-### <a name="hresult-installin-lpcwstr-args"></a>HRESULT のインストール (\[で\]LPCWSTR args)
+### <a name="hresult-installin-lpcwstr-args"></a>HRESULT Install (\] LPCWSTR args の\[)
 
-この API は、オプションを製造元によってカスタムのソフトウェアまたは自分のデバイスの登録をインストールするのに使用できます。 たとえば、インストールを使用して、デバイスのドライバー パッケージに含まれているモデリングの。 この API は、インストールを有効にするシステムの資格情報で呼び出されます。
+この API はオプションであり、製造元がデバイスのカスタムソフトウェアまたは登録をインストールするために使用できます。 たとえば、デバイスのドライバーパッケージに含まれるモデリングのインストールがあります。 この API は、インストールを有効にするためにシステムの資格情報を使用して呼び出されます。
 
-### <a name="dword-printapisupported"></a>DWORD PrintApiSupported()
+### <a name="dword-printapisupported"></a>DWORD PrintApiSupported ()
 
-この API は、サポートされている 3D 印刷サービス API のバージョンを示す、サード パーティの製造元によって使用されます。 次の Api は、3DPrintService のバージョン 1 と互換性のあります。
+この API は、サポートされている3D 印刷サービス API のバージョンを示すために、サードパーティの製造元によって使用されます。 以下の Api は、3DPrintService のバージョン1と互換性があります。
 
-### <a name="hresult-initializeprintlpcwstr-pprintername-lpcwstr-pportname-dword-dwjobid-lpvoid-pppartnerdata"></a>HRESULT InitializePrint(LPCWSTR pPrinterName, LPCWSTR pPortName, DWORD dwJobId, LPVOID\* ppPartnerData)
+### <a name="hresult-initializeprintlpcwstr-pprintername-lpcwstr-pportname-dword-dwjobid-lpvoid-pppartnerdata"></a>HRESULT InitializePrint (LPCWSTR pPrinterName、LPCWSTR pPortName、DWORD dwJobId、LPVOID\* ppPartnerData)
 
-この API は、印刷イベント、プリンターの初期化を開始する前に呼び出されます。 プリンターは、ppPartnerData パラメーターは、特定のジョブの状態を保存できます。 この呼び出しは、StartDocPort 呼び出しに似ています。
+この API は、プリンターの初期化を開始する前に、印刷イベントの前に呼び出されます。 プリンターは、ppPartnerData パラメーターにジョブ固有の状態を保存できます。 この呼び出しは、StartDocPort 呼び出しに似ています。
 
-- **jobId** -ジョブを追跡するために使用されるジョブ id
-- **portName** -3D、プリンターの portname
-- **printerName** - プリンターに送信される印刷ジョブの名前
-- **ppPartnerData** -ポインターに使用できる任意のジョブ固有のデータを格納するには
+- **jobId** -ジョブの追跡に使用されるジョブ id
+- 3D プリンターの**portName** -portName
+- **printerName** -この印刷ジョブが送信されているプリンターの名前
+- **Pppartnerdata** -ジョブ固有のデータを格納するために使用できるポインターへのポインター
 
-### <a name="hresult-printfilein-dword-jobid-in-lpwstr-portname-in-lpwstr-printername-in-lpwstr-pathtorenderedfileinlpvoid-pppartnerdata"></a>HRESULT PrintFile (\[で\]DWORD の jobId\[で\]LPWSTR portName、\[で\]LPWSTR printerName、\[で\]LPWSTR pathToRenderedFile、\[で\]LPVOID\* ppPartnerData)
+### <a name="hresult-printfilein-dword-jobid-in-lpwstr-portname-in-lpwstr-printername-in-lpwstr-pathtorenderedfileinlpvoid-pppartnerdata"></a>HRESULT PrintFile (\] DWORD jobId 内の\[、\] LPWSTR portName の \[、\[LPWSTR printerName の\]、\[LPWSTR pathToRenderedFile、\] LPVOID\[ppPartnerData)
 
-この API は、自社のプリンターにドキュメントを印刷するサード パーティの製造元によって使用されます。
+この API は、プリンターでドキュメントを印刷するために、サードパーティの製造元によって使用されます。
 
-- **jobId** -ジョブを追跡するために使用されるジョブ id
-- **portName** -3D、プリンターの portname
-- **printerName** - プリンターに送信される印刷ジョブの名前
-- **pathToRenderedFile**のレンダリングが実行された後は、スプール ファイルの場所への UNC パス。 サード パーティ製の製造元がこの場所からファイルを処理し、自分のデバイスで、ドキュメントの印刷
-- **ppPartnerData** - ポインターにポインター InitializePrint API の呼び出し中にパートナーの特定のデータ設定を格納するその使われます。
-- **printerName**ポート名を使用して、レジストリから取得できます。 サード パーティの製造元は使えませんを自分のデバイスとの通信にポート名を使用できます。 プリンター名は、Windows マシン上で一意と、ソフトウェアに、ジョブを印刷するプリンターを識別するのに行えるようになります。 すべてのプリンターをコンピューターでアクティブでは、次のレジストリ キーの位置はあります。
+- **jobId** -ジョブの追跡に使用されるジョブ id
+- 3D プリンターの**portName** -portName
+- **printerName** -印刷ジョブが送信されているプリンターの名前
+- **Pathtorenderedfile** -レンダリング後にスプールされたファイルの場所への UNC パス。 サードパーティの製造元は、この場所からファイルを処理し、デバイスでドキュメントを印刷します。
+- **Pppartnerdata** -INITIALIZEPRINT API 呼び出し中にパートナー固有のデータ設定を格納する isused を指すポインターへのポインター。
+- **printerName**は、ポート名を使用してレジストリから取得できます。 サードパーティの製造元は、ポート名を使用してデバイスと通信することができます maynot。 プリンター名は Windows コンピューター上で一意であり、そのソフトウェアはジョブを印刷するプリンターを識別できます。 コンピューター上でアクティブになっているすべてのプリンターは、次のレジストリキーにあります。
 
-    **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Print\\Printers**
+    **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\印刷\\プリンター**
 
-![3d プリンター レジストリ](images/3d-printer-registry.png)
+![3d プリンターレジストリ](images/3d-printer-registry.png)
 
-### <a name="hresult-queryin-lpcwstr-command-in-lpcwstr-commanddata-out-lpwstr-resultbuffer-out-resultbuffersize--in-lpvoid-pppartnerdata"></a>HRESULT クエリ (\_で\_LPCWSTR コマンド、\_で\_LPCWSTR commandData、\_アウト\_LPWSTR resultBuffer、\_アウト\_resultBufferSize、 \_\_ LPVOID\* ppPartnerData)
+### <a name="hresult-query_in_-lpcwstr-command-_in_-lpcwstr-commanddata-_out_-lpwstr-resultbuffer-_out_-resultbuffersize--_in_-lpvoid-pppartnerdata"></a>HRESULT クエリ (\_ LPCWSTR コマンドの\_、\_ LPCWSTR commandData での \_、\_LPWSTR resultBuffer、\_ Out \_Resultbuffer、、\_、LPVOID \_ppPartnerData)
 
-- **コマンド**-文字列をクエリとして送信されたコマンド
-- **commandData** -コマンド引数 (省略可能)
-- **resultBuffer** -クエリの引数の呼び出しの結果 >
-- **resultBufferSize** - 結果バッファーの文字列のサイズ
-- **ppPartnerData** - 現在のパートナー DLL インスタンスのポインターにポインター
+- クエリとして送信された**コマンド**文字列コマンド
+- **Commanddata** -command の引数 (省略可能)
+- **Resultbuffer** -クエリ引数の呼び出しの結果 >
+- **Resultbuffersize** -結果バッファー文字列のサイズ
+- **Pppartnerdata** -現在のパートナー DLL インスタンスのポインターへのポインター
 
-3Dprint サービスは、コマンド用に割り当てる、パートナー、バッファーのサイズを取得する DLL を呼び出します。
+3Dprint サービスは、パートナー DLL を呼び出して、コマンドに割り当てられるバッファーのサイズを取得します。
 
-応答文字列を保持するためにメモリを割り当てた後、DLL が呼び出されますもう一度を実際の結果を取得します。
+応答文字列を保持するためにメモリを割り当てると、実際の結果を取得するために DLL が再度呼び出されます。
 
-DLL は、以前のインスタンス データを使用できます**IntializePrint()** たびに新しい通信チャネルを開くことがなく、デバイスと通信する呼び出し、 **Query()** 関数が呼び出されます。
+DLL は、 **Query ()** 関数が呼び出されるたびに新しい通信チャネルを開かずに、以前の**IntializePrint ()** 呼び出しのインスタンスデータを使用して、デバイスと通信できます。
 
-この API は、デバイスの構成に関する情報を取得、進行状況を印刷するか、デバイスの DLL は、イベントを取り外し、パートナーに通知するプリンターとの通信に使用されます。
+この API は、プリンターとの通信に使用され、デバイスの構成や印刷の進行状況に関する情報を取得したり、デバイスの取り外しイベントのパートナー DLL に通知したりします。
 
-次のコマンドは、製造元でサポートする必要があります。
+次のコマンドは、製造元によってサポートされている必要があります。
 
-| コマンド | CommandData | 出力 | コメント |
+| コマンド | CommandData | 出力 | 備考 |
 |---------|-------------|--------|----------|
-| \\\\Printer.3DPrint:JobStatus | | Job Commenced = {"Status": "ok"} <br> 完了時に使用する状態 {"Status"。"Completed"} | スプーラー印刷キューの UI ですべての戻り値が表示されます。 これにより、デバイスに印刷キューの UI で、印刷時に関連する情報を表示できます。 デバイスは、任意の文字列は、ここ (「取り込み中」または「33% 完了」など) を返すことができ、印刷キューのジョブの状態でそのまま表示されます。 |
-| \\\\Printer.3DPrint:JobCancel | | {"Status":"Completed"} | ユーザーは、印刷をキャンセルすると、スプーラーはこのコマンドを呼び出します。 パートナーの DLL は、キャンセルが成功し、ハンドルおよびスレッドを終了しているときにこの値を返します。 |
-| \\\\Printer.Capabilities:Data | | PrintDeviceCapabilites (PDC) スキーマに準拠した XML 文字列。 | PDC のクエリは、プリンターに関する詳細情報を取得するアプリによって呼び出されます。 データは、デバイスの機能の記述に使用され、ドライバーは、Microsoft のスライサーに依存する場合、スライサーの設定を含めることができます。 PDC サンプルについては以下をご覧ください。 |
-| \\\\Printer.3DPrint:Disconnect | | {"Status":"OK"} | このクエリは、プリンター デバイスの PnP 切断が発生するたびにトリガーされます。 パートナーは、必要なアクションを引き受けることができます、適切な許可に開いているハンドルが再接続に近い例です。 |
-| \\\\Printer.3DPrint:Connect | | {"Status":"OK"} | このクエリは、プリンター デバイスの PnP 接続があるたびにトリガーされます。 パートナーは、必要なアクションを引き受けることができます。 |
+| \\\\Printer: JobStatus | | Job 始まっ = {"Status": "ok"} <br> 完了時に使用される状態 {"Status": "Completed"} | スプーラによって、印刷キューの UI に返された値がすべて表示されます。 これにより、印刷中に、印刷キューの UI に関連する情報がデバイスに表示されます。 デバイスは、ここに任意の文字列 ("Busy" や "33% complete" など) を返すことができます。これは、印刷キューのジョブ状態のままで表示されます。 |
+| \\\\Printer. 3DPrint: JobCancel | | {"Status": "Completed"} | スプーラは、ユーザーが印刷をキャンセルしたときに、このコマンドを起動します。 キャンセルが成功し、ハンドルとスレッドが閉じられた場合、パートナー DLL はこの値を返します。 |
+| \\\\プリンターの機能: データ | | Printdevicecap(PDC) スキーマに準拠した XML 文字列。 | PDC クエリは、プリンターに関する詳細情報を取得したいアプリによって呼び出されます。 データはデバイスの機能を説明するために使用され、ドライバーが Microsoft スライサーに依存している場合はスライサー設定を含めることができます。 PDC の例については、以下を参照してください。 |
+| \\\\Printer. 3DPrint: 切断 | | {"Status": "OK"} | このクエリは、プリンターデバイスの PnP 切断が発生するたびにトリガーされます。 パートナーは、任意の必要なアクションを実行できます。たとえば、開いているハンドルを閉じて、適切な再接続を行うことができます。 |
+| \\\\プリンタの印刷: 接続 | | {"Status": "OK"} | このクエリは、プリンターデバイスの PnP 接続があるときにトリガーされます。 パートナーは、必要なアクションを実行できます。 |
 
-#### <a name="print-device-capabilities-xml"></a>印刷デバイス機能 XML
+#### <a name="print-device-capabilities-xml"></a>印刷デバイスの機能の XML
 
-XML は、例として使用できるデバイスの機能は、次の印刷します。
+次の印刷デバイス機能の XML を例として使用できます。
 
 ```xml
 <?xml version="1.0"?>
 <PrintDeviceCapabilities
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
-    xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
-    xmlns:psk3d="http://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d"
-    xmlns:psk3dx="http://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywords3dextended"
-    xmlns:pskv="http://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywordsvendor"
-    xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework"
-    xmlns:psf2="http://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
-    xmlns="http://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="https://www.w3.org/2001/XMLSchema"
+    xmlns:xml="https://www.w3.org/XML/1998/namespace"
+    xmlns:psk="https://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords"
+    xmlns:psk3d="https://schemas.microsoft.com/3dmanufacturing/2013/01/pskeywords3d"
+    xmlns:psk3dx="https://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywords3dextended"
+    xmlns:pskv="https://schemas.microsoft.com/3dmanufacturing/2014/11/pskeywordsvendor"
+    xmlns:psf="https://schemas.microsoft.com/windows/2003/08/printing/printschemaframework"
+    xmlns:psf2="https://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
+    xmlns="https://schemas.microsoft.com/windows/2013/12/printing/printschemaframework2"
     version="2">
     <CapabilitiesChangeID xsi:type="xsd:string">{9F58AF07-DCB6-4865-8CA3-A52EA5DCB05F}</CapabilitiesChangeID>
 
@@ -196,17 +196,17 @@ XML は、例として使用できるデバイスの機能は、次の印刷し�
 </PrintDeviceCapabilities>
 ```
 
-上記のように適切なユーザー入力メッセージのセットで PDC xml を返すアドボケイトを内蔵型の表示と印刷の先頭に、デバイスと対話するユーザーを許可するボタンがない 3 D プリンター、 **psdk3dx:userPrompt**. これは、既存の上に新しい印刷を起動できないようにします。 カスタム ステータス メッセージ *&lt;psk3dx:customStatus&gt;* スライス処理中にすべてのメッセージを表示するために使用します。
+印刷の開始時にユーザーがデバイスと対話できるようにボードの表示とボタンがない3D プリンターの場合は、 **psdk3dx: userPrompt**に示されているように、適切なユーザープロンプトメッセージを含む PDC xml を返すことをお勧めします。 これは、既存の印刷を開始しないようにするためのものです。 *Psk3dx: customstatus&gt;&lt;* カスタムステータスメッセージは、スライス中にメッセージを表示するために使用されます。
 
-### <a name="hresult-cleanuplpcwstr-pprintername-lpcwstr-pportname-dword-dwjobid-lpvoid-pppartnerdata"></a>HRESULT Cleanup(LPCWSTR pPrinterName, LPCWSTR pPortName, DWORD dwJobId, LPVOID\* ppPartnerData)
+### <a name="hresult-cleanuplpcwstr-pprintername-lpcwstr-pportname-dword-dwjobid-lpvoid-pppartnerdata"></a>HRESULT クリーンアップ (LPCWSTR pPrinterName、LPCWSTR pPortName、DWORD dwJobId、LPVOID\* ppPartnerData)
 
-- **dwJobId** -スプーラーにジョブを追跡するために使用されるジョブ id
-- **pPortName** -3D、プリンターの portname
-- **pPrinterName** - プリンターに送信される印刷ジョブの名前
-- **ppPartnerData** -ポインターにポインターを InitializePrint API の呼び出し中にジョブの特定のデータ設定を保持します。
+- **Dwjobid** -スプーラのジョブを追跡するために使用されるジョブ id
+- 3D プリンターの**pPortName** -portname
+- **pPrinterName** -この印刷ジョブが送信されているプリンターの名前
+- **Pppartnerdata** -INITIALIZEPRINT API 呼び出し中にジョブ固有のデータ設定を保持するポインターへのポインター
 
-クリーンアップは、印刷ジョブが正常に完了またはキャンセル クエリ印刷ジョブの完了時に呼び出されます。 この印刷用に初期化されたリソースをクリーンアップするパートナー DLL の機会を提供します。
+クリーンアップは、印刷ジョブが正常に完了したとき、または印刷ジョブに対するキャンセルクエリの完了時に呼び出されます。 パートナー DLL が、この印刷用に初期化されたリソースをクリーンアップする機会を提供します。
 
-### <a name="hresult-uninstallinlpcwstr-args"></a>HRESULT をアンインストール (\[で\]LPCWSTR args)
+### <a name="hresult-uninstallinlpcwstr-args"></a>HRESULT UnInstall (\]LPCWSTR args の\[)
 
-この API は、3D プリンター デバイスの uninstaling ときに呼び出され、製造元がインストールされているソフトウェアをアンインストールするメカニズムを提供します。
+この API は、3D プリンターデバイスを uninstaling するときに呼び出され、製造元がインストールしたソフトウェアをアンインストールするためのメカニズムを提供します。

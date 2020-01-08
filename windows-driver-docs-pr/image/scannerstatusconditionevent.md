@@ -1,9 +1,9 @@
 ---
-title: ScannerStatusConditionEvent element
-description: 必要な ScannerStatusConditionEvent 要素には、スキャン デバイスの 1 つの状態変更に関する詳細な情報をクライアントが提供します。
+title: ScannerStatusConditionEvent 要素
+description: 必須の ScannerStatusConditionEvent 要素は、スキャンデバイスの1つのステータス変更に関する詳細情報をクライアントに提供します。
 ms.assetid: 0a61fe67-ea1e-4143-afb8-edcdf50ee7c4
 keywords:
-- ScannerStatusConditionEvent 要素イメージング デバイス
+- ScannerStatusConditionEvent 要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f017efb6e15d450f79c169d21ecffde4be19fee2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a2cdfc945ab0b909affd44dc71ab407becbc0da
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386299"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653006"
 ---
-# <a name="scannerstatusconditionevent-element"></a>ScannerStatusConditionEvent element
+# <a name="scannerstatusconditionevent-element"></a>ScannerStatusConditionEvent 要素
 
 
-必要な**ScannerStatusConditionEvent**要素は、クライアント デバイスのスキャンで 1 つの状態の変更に関する詳細を提供します。
+必須の**Scannerstatusconditionevent**要素は、スキャンデバイスの1つのステータス変更に関する詳細情報をクライアントに提供します。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,27 +65,27 @@ ms.locfileid: "63386299"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスに送信、 **ScannerStatusConditionEvent**クライアントに要素と、 [ **DeviceCondition** ](devicecondition.md)要素が追加または変更、 [ **ActiveConditions** ](activeconditions.md)要素テーブル。 本文**ScannerStatusConditionEvent**新規または変更が含まれています**DeviceCondition**要素。
+WSD Scan サービスは、 [**ActiveConditions**](activeconditions.md) element テーブルで[**DeviceCondition**](devicecondition.md)要素が追加または変更されたときに、 **scannerstatusconditionevent**要素をクライアントに送信します。 **Scannerstatusconditionevent**の本体には、new または changed **DeviceCondition**要素が含まれています。
 
-WSD スキャン サービスに送信する必要があります、 [ **ScannerStatusConditionClearedEvent** ](scannerstatusconditionclearedevent.md)クライアントに要素と、報告された**DeviceCondition**がクリアされました。
+WSD Scan サービスは、報告された**DeviceCondition**がクリアされたときに、 [**ScannerStatusConditionClearedEvent**](scannerstatusconditionclearedevent.md)要素をクライアントに送信する必要があります。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、デバイスのスキャンでスキャン lamp エラーについて、クライアントがユーザーに通知方法を示します。
+次のコード例は、スキャンデバイスがスキャンランプの障害についてクライアントに通知する方法を示しています。
 
 ```xml
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
-  xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding'>
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2004/08/addressing"
+  xmlns:wse="https://schemas.xmlsoap.org/ws/2004/08/eventing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding'>
 
   <soap:Header>
     <wsa:To>AddressofEventSink</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionEvent
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/ScannerStatusConditionEvent
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -103,7 +103,7 @@ WSD スキャン サービスに送信する必要があります、 [ **Scanner
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [**ActiveConditions**](activeconditions.md)
 

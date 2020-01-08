@@ -1,9 +1,9 @@
 ---
-title: GetScannerElementsRequest 要素
-description: 必要な GetScannerElementsRequest 要素では、クライアントがスキャナーに関する情報を要求できるようにします。
+title: Getscanの要求要素
+description: 必須の Getscanの要求要素を使用すると、クライアントはスキャナーに関する情報を要求できます。
 ms.assetid: 9b5baed9-0950-4fbd-9e5b-4ad58dedb87e
 keywords:
-- GetScannerElementsRequest 要素イメージング デバイス
+- Getscanを要求要素のイメージ作成デバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c6865d6dde3f9981cced1e2e3b9a466010636d5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1ec8fe032a4ce2a8501204491e9d11715787b3c
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330276"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652970"
 ---
-# <a name="getscannerelementsrequest-element"></a>GetScannerElementsRequest 要素
+# <a name="getscannerelementsrequest-element"></a>Getscanの要求要素
 
 
-必要な**GetScannerElementsRequest**要素には、クライアントが要求については、スキャナーができるようにします。
+必須の**Getscanの要求**要素を使用すると、クライアントはスキャナーに関する情報を要求できます。
 
 <a name="usage"></a>使用方法
 -----
@@ -65,31 +65,31 @@ ms.locfileid: "63330276"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetScannerElementsRequest**操作。
+WSD Scan サービスは、 **Getscanの要求**操作をサポートする必要があります。
 
-クライアントが呼び出すことができます**GetScannerElementsRequest**スキャン サービス スキーマの標準およびベンダー拡張要素を検出します。 クライアントに提供される情報には、デバイスのルート レベルでアクセスできるスキャナー データの任意の部分が含まれます。 この情報には、説明、構成、状態、既定のスキャン チケット、およびスキャン サービスへの任意のベンダー拡張機能が含まれています。
+クライアントは、 **Getscanの Elements 要求**を呼び出して、スキャンサービスのスキーマの標準およびベンダーによって拡張された要素を検出できます。 クライアントが利用できる情報には、デバイスのルートレベルでアクセスできるスキャナーデータの一部が含まれています。 この情報には、[説明]、[構成]、[状態]、[既定のスキャンチケット]、およびスキャンサービスのすべてのベンダーの拡張機能が含まれます。
 
-スキャン サービスが正常に処理する場合、 **GetScannerElementsRequest**が返されます、 [ **GetScannerElementsResponse** ](getscannerelementsresponse.md)操作に必要な情報。 それ以外の場合、スキャン サービスでは、適切なエラー コードを返す必要があります。
+スキャンサービスが**Getscanの要求**を正常に処理した場合は、要求された情報と共に[**Getscanの応答**](getscannerelementsresponse.md)操作が返されます。 そうしないと、スキャンサービスから適切なエラーコードが返されます。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-次のコード例では、クライアントは、スキャナーの説明に対してクエリを実行する 1 つの QName 値 (wscn:ScannerDescription) を指定します。
+次のコード例では、クライアントは単一の QName 値 (wscn: ScannerDescription) を指定して、スキャナーの説明を照会します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -104,20 +104,20 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-次のコード例では、スキャナーの状態に対するクライアントの要求を示します。
+次のコード例は、クライアントによるスキャナーの状態の要求を示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -132,21 +132,21 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-次のコード例では、クライアントは、2 つの QName 値を指定します。 最初の QName が wscn:ScannerConfiguration、および 2 つ目の QName が無効です。
+次のコード例では、クライアントは2つの QName 値を指定しています。 最初の QName は wscn: ScannerConfiguration で、2番目の qname は無効です。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  xmlns:ihv="http://www.example.com/extension"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  xmlns:ihv="https://www.example.com/extension"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -162,10 +162,10 @@ WSD スキャン サービスをサポートする必要があります、 **Get
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**GetScannerElementsResponse**](getscannerelementsresponse.md)
+[**Getscanでの応答**](getscannerelementsresponse.md)
 
 [**RequestedElements**](requestedelements.md)
 

@@ -1,38 +1,24 @@
 ---
-title: 記憶域クラス メモリ
-description: Microsoft Windows での記憶域ドライバー スタックとプラットフォームのファームウェア間のデバイス固有クラスの通信をサポートするデバイス固有のメソッドを定義します (\_DSM) で記憶装置ドライバーを使用できます。
+title: ストレージクラスのメモリについて
+description: Windows の記憶域ドライバースタックとプラットフォームファームウェア間のデバイスクラス固有の通信をサポートするために、Microsoft では、記憶域ドライバーで使用できるデバイス固有のメソッド (_DSM) を定義しています。
 ms.assetid: e4f354d0-f292-4dc2-a7e3-edd8dfa63b90
 ms.localizationpriority: medium
-ms.date: 10/17/2018
-ms.openlocfilehash: abdc8fa4f230f816119a4f21f73b7371b1241909
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.date: 12/15/2019
+ms.openlocfilehash: 1e47c9a6b6fea8200241e624c1ae5ba5ce3667b6
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360865"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606538"
 ---
-# <a name="storage-class-memory"></a>記憶域クラス メモリ
+# <a name="about-storage-class-memory"></a>ストレージクラスのメモリについて
 
+Windows の記憶域ドライバースタックとプラットフォームファームウェア間のデバイスクラス固有の通信をサポートするために、Microsoft では、記憶域ドライバーで使用できるデバイス固有のメソッド (_DSM) を定義しています。
 
-Microsoft Windows での記憶域ドライバー スタックとプラットフォームのファームウェア間のデバイス固有クラスの通信をサポートするデバイス固有のメソッドを定義します (\_DSM) で記憶装置ドライバーを使用できます。
+バイトアドレッシング可能なエネルギーサポート関数クラス (関数インターフェイス 1) の _DSM インターフェイスは、BIOS の複雑さを最小限に抑えるために、JEDEC バイトのアドレス指定可能なエネルギーサポートインターフェイス標準にマップされるように設計されています。 これは、デバイスの機能をレポートするための一般的な機能を提供します。これは、OS ソフトウェアが同じメカニズムを使用してさまざまな実装と対話できるようにするための機能 & ます。 さらに、I2C レジスタにアクセスすることによって、ベンダー固有の機能をサポートできます。 JEDEC バイトのアドレス指定可能なエネルギーサポートインターフェイス標準をサポートする NVDIMM-N には、バイトアドレス可能なエネルギー (0x1) と関数インターフェイス値0x1 の関数クラスがあります。
 
-\_DSM クラスのインターフェイスをバイト アドレス指定可能なエネルギー バックアップ関数 (関数のインターフェイスの 1) が BIOS の複雑さを軽減するために、JEDEC バイト アドレス指定可能なエネルギー バックアップ インターフェイスの標準にマップするように設計します。 OS ソフトウェアが同じメカニズムを通じてさまざまな実装が操作できるよう、デバイスの機能と機能、レポートの共通の基盤を提供します。 さらに、I2C レジスタへのアクセスによりベンダー固有の機能をサポートできます。
+## <a name="related-topics"></a>関連トピック
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+[記憶域ドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/storage)
 
-
-[ストレージ ドライバーの設計ガイド](https://go.microsoft.com/fwlink/p/?LinkId=798409)
-
-[JEDEC バイトのアドレス指定可能なエネルギー バックアップ インターフェイス NVDIMM デバイス固有のメソッド (\_DSM)](jedec-byte-addressable-energy-backed-interface-nvdimms-device-specific-method---dsm-.md)
-
-[\_バイトのアドレス指定可能なエネルギーの DSM インターフェイス関数クラス (関数インターフェイス 1) のバックアップ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
-
- 
-
- 
-
-
-
-
-
-
+[JEDEC バイトのアドレス指定可能なエネルギー関数クラスのインターフェイスの _DSM (関数インターフェイス 1)](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)

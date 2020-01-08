@@ -4,60 +4,51 @@ description: Storport ミニポート ドライバーの開発のロードマッ
 ms.assetid: 43a8f1ee-b2d3-4f97-b7e5-d59790ca6754
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d671327880d03c3c9c5c119dbc49428fa4515659
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae8919adecfd8ec523acb47acf5a0b6c151b74d4
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387172"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606548"
 ---
 # <a name="roadmap-for-developing-storport-miniport-drivers"></a>Storport ミニポート ドライバーの開発のロードマップ
 
+![幹線道路に "wdk" というテキストがあるロードマップの図](images/wdkroadmap-th.png)Storport ミニポートドライバーを作成するには、次の手順を実行します。
 
-![テキスト"wdk"を高速道路に重ね合わせて示すロードマップの図](images/wdkroadmap-th.png)Storport ミニポート ドライバーを作成するには、次の手順を実行します。
+1. **Windows のアーキテクチャとドライバーについて説明します。**
 
-1.  **Windows アーキテクチャとドライバーについて説明します。**
+    Windows でのドライバーの動作の基本を理解しておくことが重要です。 基本を理解することで、適切な設計上の決定を行い、開発プロセスを効率化することができます。 [すべてのドライバー開発者向けの概念を](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)ご覧ください。
 
-    Windows でのドライバーのしくみの基礎を理解することが重要です。 基本事項を把握すると、適切な設計上の決定を行い、開発プロセスを効率化することは役立ちます。 参照してください[ドライバー開発者向けのすべての概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)します。
+2. **Storport ミニポートドライバーの基礎について説明します。**
 
-2.  **Storport ミニポート ドライバーの基礎について説明します。**
+    Storport ミニポートドライバーの基礎については、 [Windows Storage ドライバーのアーキテクチャ](storage-driver-architecture.md)、 [storport によって提供される機能](capabilities-provided-by-storport.md)、および storport[ミニポートドライバーを使用した storport のインターフェイスに関する](storport-s-interface-with-storport-miniport-drivers.md)ページを参照してください。
 
-    Storport ミニポート ドライバーの基礎については、次を参照してください[Windows ストレージ ドライバーのアーキテクチャ](storage-driver-architecture.md)、 [Storport によって提供される機能](capabilities-provided-by-storport.md)、および[Storport ミニポートに Storport のインターフェイス。ドライバー](storport-s-interface-with-storport-miniport-drivers.md)します。
+3. **追加の storport ミニポートドライバーの設計上の決定を決定します。**
 
-3.  **追加 storport ミニポート ドライバーの設計に関する決定事項を確認します。**
+   設計上の決定を行う方法については、「 [storport で提供される機能](capabilities-provided-by-storport.md)」、「[ストレージクラスドライバーを使用した storport のインターフェイス](storport-s-srb-interface-with-the-storage-class-driver.md)」、「[ストレージ仮想ミニポートドライバー](storage-virtual-miniport-drivers--when-are-they-appropriate-.md)」を[参照して](making-scsi-port-miniport-drivers-work-with-storport.md)ください。
 
-    設計上の決定を行う方法については、次を参照してください。 [Storport によって提供される機能](capabilities-provided-by-storport.md)、 [Storport のインターフェイスは、記憶域クラス ドライバーを](storport-s-interface-with-the-storage-class-driver.md)、[ミニポート ドライバーの仮想記憶域。ときに、適切なでしょうか。](storage-virtual-miniport-drivers--when-are-they-appropriate-.md)、および[行う SCSI ポート ミニポート ドライバーが Storport を扱う](making-scsi-port-miniport-drivers-work-with-storport.md)します。
+4. **Windows Vista 以降のオペレーティングシステムでの storport ミニポートドライバーについて説明します。**
 
-4.  **Windows Vista 以降のオペレーティング システムで storport ミニポート ドライバーについて説明します。**
+    Windows Driver Kit (WDK) の「 [Storport の履歴](history-of-storport.md)」を参照してください。
 
-    参照してください[Storport の履歴](history-of-storport.md)Windows Driver Kit (WDK) にします。
+5. **Windows ドライバーのビルド、テスト、およびデバッグのプロセスとツールについて説明します。**
 
-5.  **Windows ドライバーのビルド、テスト、およびデバッグ プロセスおよびツールについて説明します。**
+   ドライバーのビルドは、ユーザーモードアプリケーションのビルドと同じではありません。 Windows ドライバーのビルド、デバッグ、およびテストプロセス、ドライバー署名、および Windows ロゴテストに関する情報については、「[ドライバーの開発、テスト、および展開](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。 ツールのビルド、テスト、検証、およびデバッグについては、「[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)」を参照してください。
 
-    ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。 参照してください[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers) Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、および Windows のロゴ テストについてです。 参照してください[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)については、検証、および、デバッグ ツールを構築、テストします。
+6. **Storport ミニポートドライバーのサンプルを確認します。**
 
-6.  **Storport ミニポート ドライバーのサンプルを確認します。**
+    Storport ミニポートドライバーのサンプルにアクセスして確認するには、 [Windows Driver Kit (WDK) のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)を参照してください。
 
-    アクセスおよび storport ミニポート ドライバーのサンプルは、「レビュー、 [Windows Driver Kit (WDK) サンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)します。
+7. **Storport ミニポートドライバーを開発、ビルド、テスト、およびデバッグします。**
 
-7.  **開発、ビルド、テスト、および storport ミニポート ドライバーをデバッグします。**
+    反復[的](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)なビルド、テスト、およびデバッグについては、「ドライバーのビルド」、「[ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers)」、および「[ドライバーのデバッグ](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。 このプロセスを使用すると、動作するドライバーを確実にビルドできます。
 
-    参照してください[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)、[ドライバーのテスト](https://docs.microsoft.com/windows-hardware/drivers)と[ドライバーをデバッグ](https://docs.microsoft.com/windows-hardware/drivers)については反復的なビルド、テスト、およびデバッグします。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
+8. **Storport ミニポートドライバーのドライバーパッケージを作成します。**
 
-8.  **Storport ミニポート ドライバーのドライバー パッケージを作成します。**
+    詳細については、「[ドライバーパッケージの作成](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
 
-    詳細については、次を参照してください。[ドライバー パッケージを作成する](https://docs.microsoft.com/windows-hardware/drivers)します。
+9. **Storport ミニポートドライバーに署名して配布します。**
 
-9.  **署名し、配布、storport ミニポート** **ドライバー。**
+    最後の手順では、ドライバーの署名と配布を行います (必要に応じて)。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows Update プログラムを通じて配布できます。 詳細については、「[ドライバーパッケージの配布](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
 
-    最後の手順では、(必要に応じて) にサインインし、ドライバーを配布します。 ドライバーが Windows ハードウェア認定に対して定義されている品質基準を満たしている場合は、Microsoft Windows 更新プログラムを介して配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://docs.microsoft.com/windows-hardware/drivers)します。
-
-これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
-
- 
-
- 
-
-
-
-
+基本的な手順は次のとおりです。 個々のドライバーのニーズに基づいて、追加の手順が必要になる場合があります。

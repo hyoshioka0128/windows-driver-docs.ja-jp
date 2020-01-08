@@ -1,27 +1,27 @@
 ---
-title: プリンターの拡張機能
+title: プリンター拡張機能
 description: プリンター拡張アプリは、ユーザーが Windows デスクトップで既存のアプリケーションを実行するときの印刷設定とプリンター通知をサポートしています。
 ms.assetid: D617A897-D93E-4006-B42D-923CA7F29D7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a37d3c2e695cd3da0a3ebe306d08d1b595d4f674
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d9aa65c8f54186b1287527a14af9ac5cf4a2acc1
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840432"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606434"
 ---
-# <a name="printer-extensions"></a>プリンターの拡張機能
+# <a name="printer-extensions"></a>プリンター拡張機能
 
 プリンター拡張アプリは、ユーザーが Windows デスクトップで既存のアプリケーションを実行するときの印刷設定とプリンター通知をサポートしています。
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
 プリンター拡張は、任意の COM 対応言語で構築できますが、Microsoft .NET Framework 4 を使用して構築するように最適化されています。 プリンター拡張は、XCopy 対応であり、オペレーティングシステムに含まれているもの以外の外部ランタイム (.NET など) に依存していない場合に、印刷ドライバーパッケージと共に配布できます。 プリンター拡張機能アプリがこれらの条件を満たしていない場合は、setup.exe または MSI パッケージに配布され、v4 マニフェストに指定されている printer Extensionurl ディレクティブを使用して、プリンターのデバイスステージエクスペリエンスで提供される可能性があります。 プリンター拡張機能アプリが MSI パッケージを介して配布される場合、印刷ドライバーをパッケージに追加するか、ドライバーをそのまま残して別に配布するかを選択できます。 Printer Extensionurl は、プリンターの設定エクスペリエンスに表示されます。
 
-IT 管理者には、プリンターの拡張機能の配布を管理するためのオプションがいくつかあります。 アプリケーションが setup.exe または MSI にパッケージされている場合、IT 管理者は、System Center Configuration Manager (SCCM) などの標準のソフトウェア配布ツールを使用するか、標準の OS イメージにアプリケーションを含めることができます。 また、IT 管理者は、\_ローカル\_コンピューター\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\Print を編集する場合に、v4 マニフェストに指定されているプリンター Extensionurl をオーバーライドすることもでき\\プリンター\\&lt;印刷キュー名&gt;\\プリンター Driverdata\\プリンター Extensionurl です。
+IT 管理者には、プリンターの拡張機能の配布を管理するためのオプションがいくつかあります。 アプリケーションが setup.exe または MSI にパッケージされている場合、IT 管理者は、Microsoft Endpoint Configuration Manager などの標準のソフトウェア配布ツールを使用することも、標準の OS イメージにアプリケーションを含めることもできます。 IT 管理者は、v4 マニフェストに指定されているプリンターの出力を上書きすることもできます。これを行う場合は、\_ローカル\_コンピューター\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\印刷\\プリンター\\&lt;印刷キュー名&gt;\\プリンター Driverdata\\プリンターの Url を使用します。
 
-また、エンタープライズがプリンターの拡張機能を完全にブロックすることを選択した場合は、[コンピューターの構成\\管理用テンプレート\\\\プリンター] というグループポリシーを使用して、v4 プリンタードライバーがプリンターの拡張機能を表示できないようにすることができます。アプリケーション "。
+また、エンタープライズがプリンターの拡張機能を完全にブロックすることを選択した場合は、[コンピューターの構成\\管理用テンプレート\\\\プリンター] というグループポリシーを使用して、v4 プリンタードライバーがプリンター拡張アプリケーションを表示できないようにすることができます。
 
 ## <a name="building-a-printer-extension"></a>プリンター拡張機能のビルド
 
@@ -31,7 +31,7 @@ GitHub の[Printer Extension サンプル](https://go.microsoft.com/fwlink/p/?Li
 
 プリンター拡張機能を開発する際には、注意する必要がある6つの主な領域があります。 これらの対象領域を次の一覧に示します。
 
-- Registration
+- 登録
 
 - イベントの有効化
 
@@ -43,13 +43,13 @@ GitHub の[Printer Extension サンプル](https://go.microsoft.com/fwlink/p/?Li
 
 - プリンターの管理
 
-### <a name="registration"></a>Registration
+### <a name="registration"></a>登録
 
 プリンターの拡張機能は、レジストリキーのセットを指定するか、v4 マニフェストファイルの [プリンターの拡張] セクションでアプリケーションの情報を指定することによって、印刷システムに登録されます。
 
 プリンター拡張の各エントリポイントをサポートする Guid が指定されています。 これらの Guid を v4 マニフェストファイルで使用する必要はありませんが、v4 ドライバーのインストールにレジストリ形式を使用するには、GUID 値を把握しておく必要があります。 次の表は、2つのエントリポイントの GUID 値を示しています。
 
-| エントリポイント           | GUID                                   |
+| エントリ ポイント           | GUID                                   |
 |-----------------------|----------------------------------------|
 | 印刷設定     | {EC8F261F-267C-469F-B5D6-3933023C29CC} |
 | プリンター通知 | {23BB1328-63DE47 293-915BA6A23D929ACB} |
@@ -83,7 +83,7 @@ PrintNotify サービスが開始されると、\[OfflineRoot\] パスの下に�
     \[PrinterExtensionIdT]
 ```
 
-たとえば、次の一連のキーによって、{printer*Extensionidguid*} プリンター拡張 id と、{に対して "C:\\Program Files\\Fabrikam\\pe .exe" 実行可能ファイルへの完全修飾パスが登録されます。*PrinterDriverID1Guid*}プリンターの基本設定とプリンター通知の理由を含む {*PrinterDriverID2Guid*} PrinterDriverIDs。
+たとえば、次の一連のキーは、プリンター拡張機能を {printer*Extensionidguid*} プリンター extensionid に、完全修飾パスとして {*PrinterDriverID1Guid*} と {*PrinterDriverID2Guid*} PrinterDriverIDs の "C:\\プログラム\\\\ファイルへの完全修飾パスを登録します。これには、プリンターの設定とプリンター通知の理由があります。
 
 ```Registry
 [OfflineRoot]
@@ -324,7 +324,7 @@ OnDriverEvent 呼び出しの後、プリンターの拡張機能は UI を初�
 
 [Bidi の要求と応答のスキーマ](https://docs.microsoft.com/previous-versions/dd183368(v=vs.85))
 
-[データバインディングの概要](https://docs.microsoft.com/dotnet/framework/wpf/data/data-binding-overview)
+[データ バインディングの概要](https://docs.microsoft.com/dotnet/framework/wpf/data/data-binding-overview)
 
 [Visual Basic .NET を使用してプリンターに生データを送信する方法](https://support.microsoft.com/help/322090)
 

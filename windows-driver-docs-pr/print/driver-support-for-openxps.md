@@ -1,75 +1,75 @@
 ---
 title: OpenXPS のドライバー サポート
-description: OpenXPS とは、ドキュメントの Open XML Paper Specification 形式と Ecma International 標準仕様に基づきます。
+description: OpenXPS は、ドキュメントの Open XML Paper Specification 形式であり、エクマインターナショナルの標準仕様に基づいています。
 ms.assetid: 9BC9787E-A54D-4A11-B256-57BE5D206404
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: eacd891d04639d229463d97c4efda6990faa64ee
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3a66f4e884e471cb576e802044cea57db2be113f
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356065"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652808"
 ---
 # <a name="driver-support-for-openxps"></a>OpenXPS のドライバー サポート
 
 
-OpenXPS とは、ドキュメントの Open XML Paper Specification 形式と Ecma International 標準仕様に基づきます。
+OpenXPS は、ドキュメントの Open XML Paper Specification 形式であり、エクマインターナショナルの標準仕様に基づいています。
 
-この仕様に関する最新情報のほとんどで、次を参照してください。 [Open XML Paper Specification](http://www.ecma-international.org/publications/standards/Ecma-388.htm)します。
+この仕様の最新情報については、「 [OPEN XML Paper specification](https://www.ecma-international.org/publications/standards/Ecma-388.htm)」を参照してください。
 
-Windows 8 では、OpenXPS では、既存の Microsoft XPS 形式の継続的なサポートと並行して完全にサポートを提供します。 このトピックでは、v4 ドライバー モデルを使用して OpenXPS サポートについて説明します。 Windows アプリケーション開発者に関連する OpenXPS サポートについては、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)します。
+Windows 8 は OpenXPS を完全にサポートしており、既存の Microsoft XPS 形式を引き続きサポートしています。 このトピックでは、v4 ドライバーモデルによる OpenXPS のサポートに焦点を当てています。 Windows アプリケーション開発者に関連する OpenXPS サポートについては、「 [OpenXPS 印刷のアプリサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)」を参照してください。
 
 ## <a name="supported-openxps-scenarios"></a>サポートされている OpenXPS シナリオ
 
 
-Windows 印刷パスでは、送信された XPS 形式、対象となる印刷ドライバーのサポートされる形式に一致させる開発が完了され、必要に応じて、形式が変換されます。 Windows では、アプリケーション互換性のある要素を提供したり、印刷システム内で、追加の変換を回避できるように、印刷ドライバーでは、クエリを実行するための Api も提供します。
+Windows 印刷パスは、送信された XPS 形式が対象の印刷ドライバーのサポートされている形式と一致するように開発され、必要に応じて形式が変換されます。 また、Windows は印刷ドライバーにクエリを実行するための Api も提供します。これにより、アプリケーションは互換性のある要素を提供し、印刷システム内での追加変換を回避できます。
 
-印刷ドライバーでは、Microsoft XPS、Open XPS、または両方の形式をサポートするかどうかを示す、自らのマニフェストを使用できます。 いずれか印刷フィルター パイプライン内のフィルターには、Microsoft XPS または OpenXPS を提示すること、(OM) インターフェイス – 新しいインターフェイスは必要ありませんドライバーで OpenXPS をサポートするために既存のストリームとオブジェクト モデルを使用します。 フィルターに提示される形式は、ドライバーでサポートされている形式、またはアプリケーションによって提供される形式に依存します。
+印刷ドライバーは、そのマニフェストを使用して、Microsoft XPS、Open XPS、または両方の形式をサポートしているかどうかを示すことができます。 既存のストリームとオブジェクトモデル (OM) インターフェイスを使用して、Microsoft XPS または OpenXPS を印刷フィルターパイプラインのフィルターに提示できます。 OpenXPS をサポートするために、ドライバーは新しいインターフェイスを必要としません。 フィルターに表示される形式は、ドライバーでサポートされている形式、またはアプリケーションによって提供される形式によって異なります。
 
-任意の Windows デスクトップ アプリケーションから Microsoft XPS または OpenXPS のいずれかを出力する MXDW を許可する、Microsoft XPS ドキュメント ライター (MXDW) が更新されました。 同様に、Microsoft XPS ビューアーと Windows 8 のリーダー アプリでは、両方の XPS 形式を開くことができます。 必要な場合、ユーザーが印刷できる XPS ビューアーから MXDW を形式に変換するためにします。
+Microsoft XPS ドキュメントライター (MXDW) が更新され、MXDW が任意の Windows デスクトップアプリケーションから Microsoft XPS または OpenXPS を出力できるようになりました。 同様に、Windows 8 の Microsoft XPS ビューアーとリーダーアプリでも XPS 形式を開くことができます。 必要に応じて、ユーザーは XPS ビューアーから MXDW に印刷して、形式を変換することができます。
 
-## <a name="unsupported-openxps-scenarios"></a>OpenXPS サポートされていないシナリオ
+## <a name="unsupported-openxps-scenarios"></a>サポートされていない OpenXPS シナリオ
 
 
-一部のレガシ機能がサポートされていないか、または OpenXPS と併用すると、ダウン グレードされたエクスペリエンスを提供します。
+一部のレガシ機能はサポートされていないか、OpenXPS で使用したときにダウングレードされたエクスペリエンスを提供します。
 
-*サポートされていない*:OpenXPS ファイル (XPS 印刷 API をバイパスする)、スプーラーを直接送信は、サポートされていないシナリオです。 これを行うと、次の機能の問題が生成されます。
+サポートされて*いませ*ん: OpenXPS ファイルをスプーラに直接送信します (XPS 印刷 API をバイパス)。サポートされていないシナリオです。 この操作を行うと、次の機能の問題が発生します。
 
--   XPS スプール ファイルが、スプーラーに直接送信は MSXPS として扱われ、それに応じて処理します。
--   スプーラーに直接、OpenXPS ファイルを送信の結果は未定義とは、印刷ジョブが失敗が発生する可能性があります。
+-   スプーラに直接送信された XPS スプールファイルは、MSXPS として扱われ、それに応じて処理されます。
+-   OpenXPS ファイルをスプーラに直接送信した結果は未定義であるため、印刷ジョブが失敗する可能性があります。
 
-**注**  このシナリオのサポートを提供する予定はありません。
+このシナリオのサポートを提供する予定がない  に**注意**してください。
 
  
 
-*使用しないで*:送信、OpenXPS ストリーム XPS 印刷 API に直接アプリケーションからが推奨される方法です。 など、OpenXPS ストリームを StartXPSPrintJob メソッドに直接送信しないでください。 これを行うと、結果として得られるフレーバーを 1 つからの変換 XPS ストリームとして別にはパフォーマンスに非常に高価なできます。
+*推奨されません*: OpenXPS ストリームをアプリケーションから XPS 印刷 API に直接送信する方法はお勧めできません。 たとえば、OpenXPS ストリームを StartXPSPrintJob メソッドに直接送信しないでください。 これを行うと、あるフレーバーをストリームとして変換すると、パフォーマンスが非常に高くなる可能性があります。
 
-代わりに、IPrintDocumentPackageTarget を使用して、パフォーマンスの低下を回避するために、XPS OM として印刷ジョブを送信する必要があります。
+代わりに、IPrintDocumentPackageTarget を使用して、印刷ジョブを XPS OM として送信し、パフォーマンスの低下を回避する必要があります。
 
-*使用しないで*:スプーラーに直接 XPS スプール ファイルを送信します。 これを行う場合、印刷システムはしない印刷パス Api によって追加された必要なメタデータが見つかりません、OpenXPS への変換を試みます。 形式は MSXPS を想定しています。 OpenXPS 形式のファイル、スプール ファイル スプーラーに直接送信された場合は、印刷フィルター パイプラインで OpenXPS に 'convert' しよう、結果は未定義がされます。 スプーラーに送信されたファイルが MSXPS 形式のファイルと、ドライバーは、OpenXPS 専用ドライバー場合、は、印刷フィルター パイプラインで OpenXPS への変換が成功になります。 この遅延の段階の変換と、印刷システムのパフォーマンスが大幅に低下します。
+*推奨されません*: XPS スプールファイルをスプーラに直接送信します。 これを行うと、印刷パス Api によって追加された必要なメタデータが印刷システムによって検出されず、形式が MSXPS であると想定され、OpenXPS への変換が試行されます。 スプーラに直接送信されたスプールファイルが OpenXPS 形式のファイルであった場合、印刷フィルターパイプラインによる OpenXPS への ' 変換 ' の試行は、未定義の結果になります。 スプーラに送信されたファイルが MSXPS 形式のファイルであり、ドライバーが OpenXPS のみのドライバーである場合、OpenXPS への印刷フィルターパイプラインによる変換は正常に実行されます。 ただし、この遅延段階の変換によって、印刷システムのパフォーマンスが大幅に低下します。
 
 ## <a name="impact-on-app-developers"></a>アプリ開発者への影響
 
 
-OpenXPS for Windows 8 のサポートに関して、アプリ開発者の影響の詳細については、次を参照してください。 [OpenXPS を印刷するためのアプリのサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)します。
+OpenXPS の Windows 8 サポートに関するアプリ開発者への影響については、「 [App support For OpenXPS 印刷](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)」を参照してください。
 
 ## <a name="impact-on-driver-developers"></a>ドライバー開発者への影響
 
 
-以下は、v4 印刷ドライバーで OpenXPS を有効にするための基本的な手順です。
+V4 印刷ドライバーで OpenXPS を有効にするための基本的な手順を次に示します。
 
--   ドライバー マニフェスト:ドライバーの表示セクションには、"OpenXPS"を追加します。
--   ドライバー マニフェスト:該当する場合は、FileSave セクションに"oxps"を追加します。
--   フィルター パイプライン:OpenXPS 要素を処理する印刷フィルターを更新します。
+-   ドライバーマニフェスト: Driver Render セクションに "OpenXPS" を追加します。
+-   ドライバーマニフェスト: FileSave セクションに "oxps" を追加します (該当する場合)。
+-   フィルターパイプライン: 印刷フィルターを更新して OpenXPS 要素を処理します。
 
-指定されたストリームと、適切なオブジェクトのインターフェイスでは、クライアントは、印刷フィルター パイプライン内のフィルターのデータを転送するのに OpenXPS 形式を使用できます。 クライアントが、IID を使用するには、データ ストリームを転送するには、\_IPrintReadStream と IID\_IPrintWriteStream インターフェイス。 クライアントが、IID を使用するには、OM コンポーネントにデータを転送する\_IXpsDocumentProvider と IID\_IXpsDocumentConsumer インターフェイス。 OpenXPS のサポートを宣言するドライバーを提供する印刷フィルター処理できるように正しく OpenXPS 形式この形式は、パイプライン マネージャーから受信したときにする必要があります。
+クライアントは、特定のストリームと、適切なオブジェクトインターフェイスを使用して、OpenXPS 形式を使用して、印刷フィルターパイプラインのフィルターにデータを転送できます。 データストリームを転送するために、クライアントは、IPrintReadStream および IID\_IPrintWriteStream インターフェイス\_の IID を使用します。 OM コンポーネントにデータを転送するために、クライアントは、の IID\_IXpsDocumentProvider と IID\_Ixpsdocumentprovider インターフェイスを使用します。 OpenXPS のサポートを宣言するドライバーは、パイプラインマネージャーからこの形式を受信するときに、指定された印刷フィルターが OpenXPS 形式を正しく処理できるようにする必要があります。
 
-**ドライバー マニフェスト:DriverRender セクション**します。 ドライバーのインストール中には、セットアップ プロセスは、XpsFormat エントリ OpenXPS が含まれているかどうかに、マニフェストの DriverRender セクションを確認します。 XpsFormat エントリには、デュアル サポートを示すために、(Microsoft XPS) の XPS および OpenXPS の両方を含めることができます。 XpsFormat エントリで 2 つの形式が表示される順序は、ドライバーの優先形式を決定します。
+**ドライバーマニフェスト: DriverRender セクション**。 ドライバーのインストール中に、セットアッププロセスによってマニフェストの DriverRender セクションがチェックされ、XpsFormat エントリに OpenXPS が含まれているかどうかが確認されます。 XpsFormat エントリには、デュアルサポートを示すために XPS (for Microsoft XPS) と OpenXPS の両方を含めることができます。 XpsFormat エントリに表示される2つの形式の順序によって、ドライバーの優先形式が決まります。
 
-DriverRender セクションを更新する方法の例をいくつかを示します。
+DriverRender セクションを更新する方法の例をいくつか次に示します。
 
-OpenXPS のみのサポートを示します。
+OpenXPS のみのサポートを示す:
 
 ```Manifest
 [DriverRender]
@@ -83,45 +83,45 @@ MSXPS のみのサポートを示します。
 XpsFormat = XPS
 ```
 
-OpenXPS の基本設定で、両方の形式のサポートを示します。
+OpenXPS の設定を使用して、両方の形式のサポートを示します。
 
 ```Manifest
 [DriverRender]
 XpsFormat = OpenXPS,XPS
 ```
 
-MSXPS の基本設定で、両方の形式のサポートを示します。
+両方の形式のサポートを示します。 MSXPS の場合は次のようになります。
 
 ```Manifest
 [DriverRender]
 XpsFormat = XPS,OpenXPS
 ```
 
-ドライバー開発者は、V4 印刷ドライバーの優先形式を決定し、この決定は、ドライバーが提供する設計されている機能に基づきます。 たとえば、高品質な画像を JPEG XR サポートを提供する印刷ドライバーを開発する可能性があります。
+ドライバー開発者は、V4 印刷ドライバーに適した形式を決定します。この決定は、ドライバーが提供するように設計された機能に基づいて行われます。 たとえば、印刷ドライバーを開発して、再現性の高いイメージに対して JPEG XR のサポートを提供できます。
 
-印刷システムでは、マニフェストの DriverRender 情報に基づいてさまざまな決定を行います。 これらの決定のいくつかの例を次に示します。
+印刷システムは、マニフェスト内の DriverRender 情報に基づいてさまざまな決定を行います。 これらの決定の例をいくつか次に示します。
 
--   V4 ドライバーに送信される GDI ベースの印刷ジョブ
+-   V4 ドライバーに送信された GDI ベースの印刷ジョブ
 
-    Microsoft XPS ドキュメント コンバーター (MXDC) は、GDI 印刷ジョブの入力を受け取り、XPS スプール ファイルにジョブを変換します。 その操作のスプール ファイルの形式には、マニフェストの DriverRender セクションで示される、XPS 形式は一致します。
+    Microsoft XPS Document Converter (MXDC) は、GDI 印刷ジョブの入力を受け取り、ジョブを XPS スプールファイルに変換します。 そのスプールファイルの形式は、マニフェストの DriverRender セクションに示されている優先 XPS 形式と一致します。
 
--   XPS 印刷 API の形式の変換
+-   XPS 印刷 API 形式の変換
 
-    XPS 印刷 API では、ターゲットのドライバーのサポートされている XPS 形式を照会します。 ドライバーは、両方の形式をサポートする場合、XPS 印刷 API は XPS の印刷ジョブをアプリケーションで AS 送信スプーラーに渡します。 変換は実行されません。
+    XPS Print API は、サポートされている XPS 形式でターゲットドライバーを照会します。 ドライバーが両方の形式をサポートしている場合、XPS 印刷 API は、アプリケーションによって送信された XPS 印刷ジョブをスプーラに渡します。 変換は実行されません。
 
-    のみ、ターゲットのドライバーは、いずれかまたはその他の形式をサポートする場合、ジョブはスプールする前に、正しい形式に変換されます。
+    ターゲットドライバーがサポートしている形式が1つまたはそれ以外の場合は、スプール前にジョブが正しい形式に変換されます。
 
-    マニフェストに XpsFormat が指定されていない場合、動作は既定 MSXPS のみ。 OpenXPS 入力を MSXPS に変換されます。 この動作は、ドライバーの最も強力な下位互換性を提供します。
+    マニフェストで XpsFormat が指定されていない場合、動作は既定で MSXPS のみになります。 OpenXPS の入力が MSXPS に変換されます。 この動作により、ドライバーの最も強力な旧バージョンとの互換性が提供されます。
 
--   スプーラーに直接送信される XPS ファイル
+-   スプーラに直接送信される XPS ファイル
 
-    スプーラーに直接送信される XPS ファイルは、既定では、MSXPS です。 OpenXPS は、スプーラーに直接送信することはサポートされていません。 ただし、.NET 4.5 以降の前に、独自の MSXPS をシリアル化され、スプーラーに直接ジョブを送信します。 XPS 印刷 API (xpsprint.dll) の導入前に、この動作が実装されました。
+    スプーラに直接送信される XPS ファイルは、既定では MSXPS になります。 スプーラへの OpenXPS direct の送信はサポートされていません。 ただし、4.5 より前の .NET では、独自の MSXPS をシリアル化し、そのジョブをスプーラに直接送信していました。 この動作は、XPS 印刷 API (xp) の導入前に実装されました。
 
-    これらの .NET アプリケーションの旧バージョンとの互換性を提供するには、印刷フィルター パイプライン マネージャーは、スプール ファイルがあるかどうかを直接とスプーラーを受信したを確認されます。 そうである場合は MSXPS にすると想定します。 印刷フィルター パイプライン マネージャーがあれば、その時点で、ドライバーの XPS 形式がクエリを実行します。 ドライバーは、MSXPS をサポートする場合は、変換は実行されません。 ドライバーは、OpenXPS のみをサポートする場合、印刷フィルター パイプライン マネージャーは、ファイルの変換を実行します。 ジョブの変換をこの時点ではパフォーマンスが高価です。ただし、従来の .NET アプリが新しい v4 OpenXPS ドライバーを印刷できることになります。
+    これらの .NET アプリケーションの旧バージョンとの互換性を確保するために、印刷フィルターパイプラインマネージャーはスプールファイルをチェックして、直接スプーラを受信したかどうかを確認します。 その場合は、MSXPS と見なされます。 印刷フィルターパイプラインマネージャーは、その時点でドライバーの XPS 形式に対してクエリを実行します。 ドライバーが MSXPS をサポートしている場合、変換は実行されません。 ドライバーが OpenXPS のみをサポートしている場合は、印刷フィルターパイプラインマネージャーによってファイルの変換が実行されます。 ジョブのこの時点での変換はパフォーマンスが高くなります。ただし、従来の .NET アプリで新しい v4 OpenXPS ドライバーに印刷できるようになります。
 
-**ドライバー マニフェスト:FileSave セクション**します。 V4 印刷ドライバー マニフェストの FileSave セクションの拡張機能を提供する、**ファイルの保存の**PORTPROMPT によって使用されるダイアログ ボックス: ポート。 (PORTPROMPT: ファイルの代わりに使用する必要があります: で Windows 8.1、ため PORTPROMPT: ユーザーを権限を持っている、権限の低いモードでアプリケーションが実行されている場合でもすべてのファイルの場所にアクセスを許可します)。FileSave セクションのエントリは、インデックスを使用して DriverRender セクションのエントリに関連付けられます。
+**ドライバーマニフェスト: FileSave セクション**。 V4 印刷ドライバーマニフェストの FileSave セクションには、PORTPROMPT: ポートで使用される**ファイル保存**ダイアログの拡張機能が用意されています。 (PORTPROMPT: は、ファイルの代わりに使用する必要があります: Windows 8.1 では、アプリケーションが低権限モードで実行されている場合でも、ユーザーが権限を持っているすべてのファイルの場所にアクセスできるようにします)。FileSave セクションのエントリは、インデックスによって DriverRender セクションのエントリに関連付けられています。
 
-以下に例を示します。
+次に例を示します。
 
 ```Manifest
 [FileSave]
@@ -132,14 +132,14 @@ oxps=0
 XpsFormat=XPS,OpenXPS
 ```
 
-これにより、ユーザーは、このドライバーでは、印刷ジョブを送信ポートが PORTPROMPT に設定されている場合:、**ファイルの保存の**ダイアログが表示されます XPS と OpenXPS ファイルとしては、ダイアログ ボックスで、オプションを入力し、.xps または .oxps をそれぞれ、ファイルに適用拡張機能。
+これにより、ユーザーがこのドライバーに印刷ジョブを送信するときに、ポートが PORTPROMPT: に設定されていることを確認します。 **[ファイルの保存]** ダイアログでは、ダイアログのファイルの種類のオプションとして Xps と OpenXPS が表示され、ファイル拡張子としてそれぞれ .xps または oxps が適用されます。
 
-マニフェストのファイルの保存のセクションの他のオプションの詳細については、次を参照してください。 [V4 ドライバー マニフェスト](v4-driver-manifest.md)します。
+マニフェストの [ファイルの保存] セクションのその他のオプションの詳細については、「 [V4 ドライバーマニフェスト](v4-driver-manifest.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
-[OpenXPS 印刷用のアプリのサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)  
+[OpenXPS 印刷のアプリサポート](https://docs.microsoft.com/windows/desktop/printdocs/app-support-for-openxps-printing)  
 
-[Open XML Paper Specification](http://www.ecma-international.org/publications/standards/Ecma-388.htm) 
+[Open XML Paper Specification](https://www.ecma-international.org/publications/standards/Ecma-388.htm) 
 
-[V4 ドライバー マニフェスト](v4-driver-manifest.md)  
+[V4 ドライバーマニフェスト](v4-driver-manifest.md)  

@@ -1,9 +1,9 @@
 ---
-title: GetJobHistoryRequest element
-description: 必要な GetJobHistoryRequest 要素は、以前に完了したジョブのジョブに関連する変数の概要を要求します。
+title: Getjobhistory Request 要素
+description: 必須の Getjobhistory Request 要素は、以前に完了したジョブのジョブ関連変数の概要を要求します。
 ms.assetid: 679a2256-2b3f-4a54-be06-8b414acab679
 keywords:
-- GetJobHistoryRequest element Imaging Devices
+- Getjobhistory 要求要素のイメージングデバイス
 topic_type:
 - apiref
 api_name:
@@ -12,17 +12,17 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d76f49c102a7756f109d077fb517d6182712d33d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cbf8e434786b3917bf67f17f87d4247d7b3dab1e
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379378"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652974"
 ---
-# <a name="getjobhistoryrequest-element"></a>GetJobHistoryRequest element
+# <a name="getjobhistoryrequest-element"></a>Getjobhistory Request 要素
 
 
-必要な**GetJobHistoryRequest**要素は、以前に完了したジョブのジョブに関連する変数の概要を要求します。
+必須の**Getjobhistory request**要素は、以前に完了したジョブのジョブ関連変数の概要を要求します。
 
 <a name="usage"></a>使用方法
 -----
@@ -49,13 +49,13 @@ ms.locfileid: "63379378"
 <a name="remarks"></a>注釈
 -------
 
-WSD スキャン サービスをサポートする必要があります、 **GetJobHistoryRequest**操作の要素。
+WSD Scan サービスは、 **Getjobhistory request** operation 要素をサポートしている必要があります。
 
-クライアントが呼び出すことができます**GetJobHistoryRequest**前に完了したジョブのジョブに関連する変数の要約を含む一覧を取得します。 WSD スキャン サービスの応答でなければなりません、 [ **GetJobHistoryResponse** ](getjobhistoryresponse.md)クライアントが要求した情報が含まれる操作の要素または適切なエラー コード。
+クライアントは、 **Getjobhistory 要求**を呼び出して、以前に完了したジョブのジョブ関連変数の概要を含むリストを取得できます。 WSD Scan サービスは、クライアントが要求した情報または適切なエラーコードを含む[**Getjobhistory response**](getjobhistoryresponse.md) operation 要素を使用して応答する必要があります。
 
-WSD スキャン サービスがジョブ履歴の量は、実装に固有です。
+WSD Scan サービスが保持するジョブ履歴の量は、実装に固有です。
 
-この操作は、のすべてを返すことができます、 [ **WSD スキャン サービス操作の一般的なエラー コード**](common-wsd-scan-service-operation-error-codes.md)します。 エラーを報告する方法の詳細については、次を参照してください。 [WSD スキャン サービス操作エラー報告](wsd-scan-service-operation-error-reporting.md)します。
+この操作は、[**一般的な WSD Scan サービス操作のエラーコード**](common-wsd-scan-service-operation-error-codes.md)をすべて返すことができます。 エラーを報告する方法の詳細については、「 [WSD Scan サービス操作のエラー報告](wsd-scan-service-operation-error-reporting.md)」を参照してください。
 
 <a name="examples"></a>例
 --------
@@ -65,15 +65,15 @@ WSD スキャン サービスがジョブ履歴の量は、実装に固有です
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope
-  xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
-  xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
-  xmlns:wscn="http://schemas.microsoft.com/windows/2006/01/wdp/scan"
-  soap:encodingStyle='http://www.w3.org/2002/12/soap-encoding' >
+  xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+  xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+  xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan"
+  soap:encodingStyle='https://www.w3.org/2002/12/soap-encoding' >
 
   <soap:Header>
     <wsa:To>AddressofScannerService</wsa:To>
     <wsa:Action>
-      http://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
+      https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetJobHistory
     </wsa:Action>
     <wsa:MessageID>uuid:UniqueMsgId</wsa:MessageID>
   </soap:Header>
@@ -84,10 +84,10 @@ WSD スキャン サービスがジョブ履歴の量は、実装に固有です
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
-[**GetJobHistoryResponse**](getjobhistoryresponse.md)
+[**Getjobhistory 応答**](getjobhistoryresponse.md)
 
  
 

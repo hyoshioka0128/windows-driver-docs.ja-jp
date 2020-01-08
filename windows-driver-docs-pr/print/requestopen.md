@@ -12,18 +12,18 @@ api_type:
 - Schema
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95525612525dafca7e74f4bbe7048ede388c1e95
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 10beb0c0e6fa15d0c1f7ab85350ae6d372d94f3f
+ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881904"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75652994"
 ---
 # <a name="requestopen-element"></a>requestOpen 要素
 
 **Requestopen**要素は、クライアントコンピューターでイベント通知メッセージを開くために使用されます。
 
-**Requestopen**要素は、この URI: [http://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
+**Requestopen**要素は、この URI: [https://schemas.microsoft.com/2003/print/asyncui/v1/request](https://schemas.microsoft.com/2003/print/asyncui/v1/request)の*asyncui*名前空間で定義されています。 (このリソースは、一部の言語および国では使用できません。)
 
 ## <a name="usage"></a>使用方法
 
@@ -98,7 +98,7 @@ ms.locfileid: "74881904"
 ```xml
 <?xml version="1.0" ?>
    <asyncPrintUIRequest
-    xmlns="http://schemas.microsoft.com/2003/print/asyncui/v1/request">
+    xmlns="https://schemas.microsoft.com/2003/print/asyncui/v1/request">
     <v1>
       <requestOpen>
         <balloonUI iconID="1" resourceDll="IHV.dll">
@@ -113,7 +113,7 @@ ms.locfileid: "74881904"
   </asyncPrintUIRequest>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [asyncPrintUIRequest](asyncprintuirequest.md)
 

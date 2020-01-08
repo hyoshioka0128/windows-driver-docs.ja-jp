@@ -1,22 +1,21 @@
 ---
-title: IPM の構成と使用方法
-description: IPM の構成と使用方法
+title: アイドル状態の電源管理の構成と使用状況
+description: アイドル状態の電源管理の構成と使用状況
 ms.assetid: 95057785-e5b5-40ae-86e4-50bbf0014cef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3ffeb42fb0ff4439e984281f1d3cb90bb475f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15eaff4268d8cb30dfe8d827bbce7dfe75092785
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368753"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606520"
 ---
-# <a name="ipm-configuration-and-usage"></a>IPM の構成と使用方法
+# <a name="idle-power-management-configuration-and-usage"></a>アイドル状態の電源管理の構成と使用状況
 
+既定では、Storport アイドル電源管理 (IPM) は有効になっていません。 これは、デバイスのハードウェアキーの "StorPort" サブキーの "EnableIdlePowerManagement" 値を0以外の値に設定することによって、レジストリで有効にすることができます。 これは、デバイスの INF ファイルを使用するか、レジストリエディターを使用して手動で行うことができます。
 
-Storport アイドル状態の電源管理 (IPM) は、既定では無効です。 デバイスのハードウェア キーを 0 以外の値からの"StorPort"サブキーに"EnableIdlePowerManagement"値を設定して、レジストリで有効にできます。 これは、デバイスの INF ファイルを使用して、または手動でレジストリ エディターを使用して実行できます。
-
-次のサンプル テキストは、Storport アイドル状態の電源管理機能を有効にするデバイスの INF ファイルに追加する必要がありますを示しています。
+次のサンプルテキストは、Storport の IPM 機能を有効にするためにデバイスの INF ファイルに追加する必要があるものを示しています。
 
 ```cpp
           [DDInstall.HW]
@@ -24,18 +23,10 @@ Storport アイドル状態の電源管理 (IPM) は、既定では無効です�
           HKR, "StorPort", "EnableIdlePowerManagement", 0x00010001, 0x01
 ```
 
-これは、ハードウェア キーをサービス キーではなく HKR が指す場所、INF ファイルの DDInstall.HW セクション内からのみ実行できます。 INF ファイルを変更する方法の詳細については、次を参照してください。[ドライバーのレジストリ キーの概要](https://go.microsoft.com/fwlink/p/?linkid=144533)します。
+これは、HKR がサービスキーではなくハードウェアキーを指している INF ファイルの DDInstall. HW セクション内からのみ実行できます。 INF ファイルを変更する方法の詳細については、「[ドライバーのレジストリキーの概要](https://go.microsoft.com/fwlink/p/?linkid=144533)」を参照してください。
 
-次のスクリーン ショットに示すように、電源オプション コントロール パネル アプレットを使用して、システムの電源ポリシーとディスクのアイドル タイムアウト値を構成します。 アクセス**開始** &gt; **コントロール パネルの**  &gt; **電源オプション**します。
+次のスクリーンショットに示されている [電源オプション] コントロールパネルアプレットを使用して、システムの電源ポリシーとディスクのアイドル状態のタイムアウト値を構成します。 [**スタート**&gt;**コントロールパネル]** &gt; **[電源オプション]** からアクセスできます。
 
-![スクリーン ショット: ipm 電源オプション](images/ipm-power-options.png)
+![ipm 電源オプションを示すスクリーンショット](images/ipm-power-options.png)
 
-コマンド ライン ツール (*Powercfg.exe*) こともできます。 型**powercfg/でしょうか。** コマンド プロンプトでの使用状況情報。
-
- 
-
- 
-
-
-
-
+コマンドラインツール (*Powercfg*) を使用することもできます。 「 **Powercfg/?」と入力します。** 使用方法については、「」を参照してください。

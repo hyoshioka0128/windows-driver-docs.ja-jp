@@ -1,49 +1,34 @@
 ---
-title: 記憶域管理と WMI クラス
+title: 記憶域の管理と WMI クラスについて
 description: 記憶域管理と WMI クラス
 ms.assetid: 32cfb51e-b02a-4624-88ea-804d823256a6
 ms.localizationpriority: medium
-ms.date: 10/17/2018
-ms.openlocfilehash: e801c19c77ffbc165308d8373bd98a5306899a26
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.date: 12/15/2019
+ms.openlocfilehash: 5d1f971ac1fade444ca3eb44208334d712f1108f
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383157"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606514"
 ---
-# <a name="storage-management-and-wmi-classes"></a>記憶域管理と WMI クラス
+# <a name="about-storage-management-and-wmi-classes"></a>記憶域の管理と WMI クラスについて
 
+このセクションでは、記憶域管理イニシアチブ仕様 (SMI-S) の要件と、Windows ストレージアーキテクチャで使用されるシステム提供の Windows Management Instrumentation (WMI) クラスについて説明します。 記憶域ミニポートドライバーが WMI クラスを処理する方法の詳細については、「 [Storage ミニポートドライバーでの Wmi SRBs の処理](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-wmi-srbs-in-storage-miniport-drivers)」を参照してください。
 
-## <span id="ddk_storage_wmi_classes_kr"></span><span id="DDK_STORAGE_WMI_CLASSES_KR"></span>
+記憶域管理プロバイダー、SMI-S 要件、およびシステム提供の WMI クラスは、次のカテゴリに分類されます。
 
+- [記憶域管理プロバイダー](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn342891(v=vs.85))
 
-このセクションでは、Storage Management Initiative Specification (SMI-S) の要件と、Windows ストレージ アーキテクチャで使用されるシステム提供の Windows Management Instrumentation (WMI) クラスについて説明します。 ストレージ ミニポート ドライバーが WMI クラスを処理する方法の詳細については、次を参照してください。 [WMI される Srb ストレージ ミニポート ドライバーで処理](https://docs.microsoft.com/windows-hardware/drivers/storage/handling-wmi-srbs-in-storage-miniport-drivers)します。
+- [SMI-S の要件](https://docs.microsoft.com/previous-versions/windows/desktop/smi-s/dn265461(v=vs.85))
 
-記憶域管理プロバイダーや SMI-S 要件、システムが指定した WMI クラスは、次のカテゴリには。
+- [HBA WMI クラス](hba-wmi-classes.md)
 
--   [記憶域 Managemement プロバイダー](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn342891(v=vs.85))
+- [iSCSI WMI クラス](iscsi-wmi-classes.md)
 
--   [SMI-S 要件](https://docs.microsoft.com/previous-versions/windows/desktop/smi-s/dn265461(v=vs.85))
+- [MPIO WMI クラス](mpio-wmi-classes.md)
 
--   [HBA の WMI クラス](hba-wmi-classes.md)
+- [NPIV WMI クラス](npiv-wmi-classes.md)
 
--   [iSCSI の WMI クラス](iscsi-wmi-classes.md)
+## <a name="related-topics"></a>関連トピック
 
--   [MPIO の WMI クラス](mpio-wmi-classes.md)
-
--   [NPIV WMI クラス](npiv-wmi-classes.md)
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-
-
-[ストレージ ドライバーの設計ガイド](https://go.microsoft.com/fwlink/p/?LinkId=798409)
-
- 
-
- 
-
-
-
-
-
-
+[記憶域ドライバーの設計ガイド](https://go.microsoft.com/fwlink/p/?LinkId=798409)

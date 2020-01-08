@@ -1,31 +1,22 @@
 ---
-title: 概要
-description: 概要
+title: 記憶域サイロのドライバーについて
+description: 記憶域サイロのドライバーについて
 ms.assetid: e150228e-820f-49ac-bc3f-644e77f3d544
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 11882e9b5b4634cbc993d5d575df9b292213245c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eae47543610473920c9deb799ef6a34e28089a7e
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389411"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606522"
 ---
-# <a name="overview"></a>概要
+# <a name="about-storage-silo-drivers"></a>記憶域サイロのドライバーについて
 
+ここでは、記憶域サイロドライバーシステムコンポーネントの基礎となる設計とアーキテクチャについて説明します。これにより、次の一連のイベントが有効になります。
 
-このトピックでは、基になる次の一連のイベントを有効にするストレージ サイロ ドライバー システム コンポーネントのアーキテクチャと設計について説明します。
+1. ユーザーは、IEEE 1667 準拠の記憶装置をシステムに接続します。
 
-1.  ユーザーは、そのシステムに、IEEE 1667 対応の記憶域デバイスを接続します。
+2. デバイスが認識されます。 適切なドライバー、システムコンポーネント、サードパーティのコンポーネントがインストールされ、構成されている。
 
-2.  デバイスが認識されます。 適切なドライバー、システム コンポーネント、およびサード パーティのコンポーネントをインストールして構成します。
-
-3.  Windows シェルは、アプリケーションを検出できる、インストールされているサード パーティへのアクセス、管理、および IEEE 1667 仕様に従って、デバイスと対話します。
-
- 
-
- 
-
-
-
-
+3. Windows シェルとインストールされているサードパーティ製のアプリケーションは、IEEE 1667 仕様に従って、デバイスの検出、アクセス、管理、および対話を行うことができます。
