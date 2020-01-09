@@ -4,10 +4,6 @@
   href: windows-threshold--what-s-new-for-audio.md
 - name: Windows オーディオ アーキテクチャ
   href: windows-audio-architecture.md
-- name: WDM オーディオ ドライバーの開発のロードマップ
-  href: roadmap-for-developing-wdm-audio-drivers.md
-- name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
-  href: custom-audio-driver-type-decision-tree.md
 - name: WDM オーディオ ドライバーの概要
   items:
     - name: WDM オーディオ ドライバーの概要
@@ -16,6 +12,10 @@
       href: audio-universal-drivers.md
     - name: ユニバーサル オーディオ アーキテクチャ
       href: universal-audio-architecture.md
+    - name: WDM オーディオ ドライバーの開発のロードマップ
+      href: roadmap-for-developing-wdm-audio-drivers.md
+    - name: カスタム オーディオ ドライバーの種類のデシジョン ツリー
+      href: custom-audio-driver-type-decision-tree.md
     - name: オーディオ信号の処理モード
       href: audio-signal-processing-modes.md
     - name: カスタム オーディオ ドライバー
@@ -799,6 +799,12 @@
               href: obtaining-a-device-interface-name.md
             - name: 音楽テクノロジ GUID
               href: music-technology-guids.md
+- name: オーディオ デバイスのトラブルシューティング
+  items:
+    - name: オーディオ デバイスのトラブルシューティングの概要
+      href: audio-devices-troubleshooting.md
+    - name: USB オーディオ デバイスが再生されない
+      href: usb-audio-not-playing.md
 - name: オーディオ デバイス DDI リファレンスの概要
   items:
     - name: オーディオ デバイス DDI リファレンスの概要

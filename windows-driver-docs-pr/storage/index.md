@@ -1,40 +1,40 @@
 ---
-title: 概要
-description: 概要
+title: はじめに
+description: はじめに
 ms.assetid: 0AEFA19D-C270-4777-8C08-E6056FBB6BC5
-ms.date: 10/08/2019
+ms.date: 12/15/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 1524a7955611caef1238b87ed61ca290b366b65b
-ms.sourcegitcommit: 0610366df5de756bf8aa6bfc631eba5e3cd84578
+ms.openlocfilehash: c1ab472469eb0ecc8eb66fb6fc42561f19ea4823
+ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72262176"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606428"
 ---
 # <a name="storage-driver-design-guide"></a>記憶装置ドライバー設計ガイド
 
-記憶装置ドライバーには、[クラス](storage-class-drivers.md)、[ポート](storage-port-drivers.md)、[ミニポート](storage-miniport-drivers.md)、および[フィルター](storage-filter-drivers.md)の各ドライバーが含まれています。 通常、デバイス ベンダーでは、特定のアダプターまたはアダプターの種類に対応したミニポート ドライバーを実装します。 一般的ではありませんが、新しい記憶域クラスを定義できます。そのクラス用に新しいクラス ドライバーが開発されます。 Windows の記憶域クラスには、ディスク、CD-ROM、USB 記憶装置、および暗号化されたドライブの各クラスが含まれます。 通常、記憶装置ドライバーの開発は、[StorPort](storport-driver-overview.md) ポート ドライバーと連携するミニポート ドライバーの作成に制限されます。
+記憶装置ドライバーには、[クラス](introduction-to-storage-class-drivers.md)、[ポート](storage-port-drivers.md)、[ミニポート](storage-miniport-drivers.md)、および[フィルター](storage-filter-drivers.md)の各ドライバーが含まれています。 通常、デバイス ベンダーでは、特定のアダプターまたはアダプターの種類に対応したミニポート ドライバーを実装します。 一般的ではありませんが、新しい記憶域クラスを定義できます。そのクラス用に新しいクラス ドライバーが開発されます。 Windows の記憶域クラスには、ディスク、CD-ROM、USB 記憶装置、および暗号化されたドライブの各クラスが含まれます。 通常、記憶装置ドライバーの開発は、[StorPort](storport-driver-overview.md) ポート ドライバーと連携するミニポート ドライバーの作成に制限されます。
 
-他の種類の記憶装置ドライバーは、マルチパス I/O 用のセキュリティで保護された[サイロ](storage-silo-drivers.md) ドライバーおよびデバイス固有モジュール (DSM) です。 記憶域の管理のために、ドライバーに対する制御インターフェイスとして [WMI](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-wmi-classes) プロバイダーが開発されます。
+他の種類の記憶装置ドライバーは、マルチパス I/O 用のセキュリティで保護された[サイロ](overview.md) ドライバーおよびデバイス固有モジュール (_DSM) です。 記憶域の管理のために、ドライバーに対する制御インターフェイスとして [WMI](https://docs.microsoft.com/windows-hardware/drivers/storage/storage-wmi-classes) プロバイダーが開発されます。
 
 この記憶装置ドライバーの設計ガイドには次のセクションが含まれます。
 
 * [Windows 記憶装置ドライバーの開発のロードマップ](roadmap-for-developing-storage-drivers.md)
 * [Storport ミニポート ドライバーの開発のロードマップ](roadmap-for-developing-storport-miniport-drivers.md)  
 * [記憶装置ドライバー](storage-drivers.md)  
-* [記憶域クラス ドライバー](storage-class-drivers.md)  
+* [記憶域クラス ドライバー](introduction-to-storage-class-drivers.md)  
 * [記憶域ポート ドライバー](storage-port-drivers.md)  
 * [記憶域ミニポート ドライバー](storage-miniport-drivers.md)  
-* [記憶域仮想ミニポート ドライバー](storage-virtual-miniport-drivers.md)  
+* [記憶域仮想ミニポート ドライバー](overview-of-storage-virtual-miniport-drivers.md)  
 * [記憶域フィルター ドライバー](storage-filter-drivers.md)  
 * [クラッシュ ダンプ フィルター ドライバー](crash-dump-filter-drivers.md)  
-* [記憶域サイロ ドライバー](storage-silo-drivers.md)  
+* [記憶域サイロ ドライバー](overview.md)  
 * [CD-ROM ドライバー](cd-rom-drivers.md)  
 * [テープ ドライバー](tape-drivers-overview.md)  
 * [チェンジャー ドライバー](changer-drivers.md)  
-* [記憶域のシナリオ](storage-scenarios.md)  
+* [記憶域のシナリオ](offloaded-data-transfer.md)  
 
 ## <a name="samples"></a>サンプル
 
