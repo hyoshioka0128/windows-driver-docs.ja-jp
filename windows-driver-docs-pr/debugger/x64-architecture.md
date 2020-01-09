@@ -50,8 +50,8 @@ x64 では、x86 の 8 つの汎用レジスタを 64 ビットを拡張し、8 
 <tr class="odd">
 <td align="left"><p><strong>rax</strong></p></td>
 <td align="left"><p><strong>eax</strong></p></td>
-<td align="left"><p><strong>Ax</strong></p></td>
-<td align="left"><p><strong>Al</strong></p></td>
+<td align="left"><p><strong>ax</strong></p></td>
+<td align="left"><p><strong>al</strong></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>rbx</strong></p></td>
@@ -81,7 +81,7 @@ x64 では、x86 の 8 つの汎用レジスタを 64 ビットを拡張し、8 
 <td align="left"><p><strong>rdi</strong></p></td>
 <td align="left"><p><strong>edi</strong></p></td>
 <td align="left"><p><strong>di</strong></p></td>
-<td align="left"><p><strong>受け取りました</strong></p></td>
+<td align="left"><p><strong>dil</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>rbp</strong></p></td>
