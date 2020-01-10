@@ -4,12 +4,12 @@ description: V4 ドライバーアーキテクチャの設計上の目標は、M
 ms.assetid: 6318E480-C567-4866-8E88-B19904408C59
 ms.date: 09/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a449bf0f6fe1c95e18ff2013ede74abc234749e7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8419a777f40fb5dbfa2db76e6d5d93faecd55861
+ms.sourcegitcommit: 3fbf71b2bd92abca0bfb3c373f57af9a0eb67c93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838779"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75775730"
 ---
 # <a name="v4-driver-ui-architecture"></a>V4 ドライバー UI アーキテクチャ
 
@@ -19,7 +19,7 @@ V4 ドライバーアーキテクチャの設計上の目標は、Microsoft Stor
 
 プリンター拡張アプリは、ユーザーが Windows デスクトップで既存のアプリケーションを実行するときの印刷設定とプリンター通知をサポートしています。 これらのアプリケーションの Ui は非常に異なりますが、タッチ用に調整されたものと、マウスとキーボードのユーザー向けに最適化されたものがありますが、UI に関係なく、ビジネスロジックと v4 印刷ドライバーへの接続は似ています。
 
-次の図は、GitHub で提供されている[v4 プリンタードライバーとプリンター拡張のサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)用の Microsoft Store デバイスアプリの概要を示しています。
+次の図は、GitHub で提供されている[V4 印刷ドライバーとプリンター拡張のサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)用の Microsoft Store デバイスアプリの高レベルなアーキテクチャを示しています。
 
 ![カスタム ui アーキテクチャの概要](images/v4custuiarch.png)
 
@@ -33,7 +33,7 @@ V4 ドライバーアーキテクチャの設計上の目標は、Microsoft Stor
 
 Microsoft Store デバイスアプリとプリンター拡張機能のサンプルに付属しているプリンターの Extensionlibrary プロジェクトでは、同じソースコードを使用しますが、プロジェクト間の移植性を確保するために、個別にビルドしなくてもコードをビルドすることが重要な場合があります。作品. プリンター Extensionlibrary プロジェクトのコードを移植できるようにするには、プロジェクトをポータブルクラスライブラリに変換する必要があります。 変換を行うには、次の手順を実行します。
 
-1. Microsoft Visual Studio で、**ファイル**&gt;**新しい**&gt;**プロジェクト** をクリックし、**インストールされたテンプレートの検索** ボックスで ポータブル を検索します。
+1. Microsoft Visual Studio で、**ファイル** > **新しい** > **プロジェクト** をクリックし、**インストールされたテンプレートの検索** ボックスで ポータブル を検索します。
 
 2. ポータブルクラスライブラリ] C#ビジュアルを選択し、 **[名前]** テキストボックスにプロジェクトの名前を指定して、[OK をクリックし**ます。**
 
@@ -41,21 +41,21 @@ Microsoft Store デバイスアプリとプリンター拡張機能のサンプ�
 
 4. ポータブルクラスライブラリプロジェクトを右クリックし、 **[アンロード]** を選択します。 次に、.csproj ファイルを開き、ドキュメントの最後のタグの直前に、次のセクションをファイルに追加します。
 
-```xml
-  <ItemGroup>
-    <COMReference Include="PrinterExtensionLib">
-      <Guid>{91CE54EE-C67C-4B46-A4FF-99416F27A8BF}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-```
+    ```xml
+      <ItemGroup>
+        <COMReference Include="PrinterExtensionLib">
+          <Guid>{91CE54EE-C67C-4B46-A4FF-99416F27A8BF}</Guid>
+          <VersionMajor>1</VersionMajor>
+          <VersionMinor>0</VersionMinor>
+          <Lcid>0</Lcid>
+          <WrapperTool>tlbimp</WrapperTool>
+          <Isolated>False</Isolated>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+        </COMReference>
+      </ItemGroup>
+    ```
 
-5. COM 参照の結果として警告が表示された場合は、&lt;PropertyGroup&gt; タグに次のを追加します。
+5. COM 参照の結果として警告が表示された場合は、\<PropertyGroup\> タグに次のを追加します。
 
 ```xml
 <ResolveComReferenceSilent>true</ResolveComReferenceSilent>
@@ -72,6 +72,3 @@ API は、印刷用のプリンター拡張機能と UWP デバイスアプリ�
 [プリンター拡張インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/#interfaces)
 
 [GitHub の v4 印刷ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)
-
-
-

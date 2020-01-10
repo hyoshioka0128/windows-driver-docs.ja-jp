@@ -4,15 +4,14 @@ description: Bidi XML ファイルと、USB Bidi エクステンダーと呼ば�
 ms.assetid: C4012369-F1C6-4EBC-8DAE-F4E551DE782D
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfe05a522576ec1f572460bd1771d367841687d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cf0b03ad984b6c99f0006be1b8ac929a9f063a63
+ms.sourcegitcommit: 3fbf71b2bd92abca0bfb3c373f57af9a0eb67c93
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843619"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75775726"
 ---
 # <a name="usb-bidi-extender"></a>USB 双方向エクステンダー
-
 
 Windows では、製造元は、Bidi XML ファイルと、USB Bidi エクステンダーと呼ばれる Javascript ファイルの組み合わせを使用して、USB デバイスの双方向通信 (Bidi) をサポートできます。
 
@@ -38,35 +37,33 @@ USB プリンターの操作の詳細については、「 [Usb 印刷](usb-prin
 
 ## <a name="usb-bidi-extender-api-reference"></a>USB Bidi extender API リファレンス
 
-
 USB Bidi extender の JavaScript コードは、次の機能を使用して、印刷デバイスと通信します。
 
--   **getSchemas**
+- **getSchemas**
 
--   **setSchema**
+- **setSchema**
 
--   **getStatus**
+- **getStatus**
 
--   **requestStatus**
+- **requestStatus**
 
--   **startPrintJob**
+- **startPrintJob**
 
--   **writePrintData**
+- **writePrintData**
 
--   **endPrintJob**
+- **endPrintJob**
 
 これらの Api の詳細については、「 [JAVASCRIPT Api Reference](javascript-api-reference-.md)」を参照してください。
 
 ## <a name="usbmon-bidi-extension-xml-schema"></a>USBMon Bidi 拡張 XML スキーマ
 
-
 USBMon Bidi 拡張ファイルは、SNMP Bidi 拡張ファイルと WSDMon Bidi 拡張ファイルと同じ基本的な構造を使用します。 XML スキーマファイルは Windows Driver Kit に発行され、USBMon Bidi 拡張ファイルは INFGate のテスト中に自動的にスキーマ検証されます。 Bidi 拡張スキーマを開発し、USB バスを操作するときは、次の情報に注意することが重要です。
 
--   値には、Get、Set、または GetSet の accessType を指定できます。 これは、記述されたスキーマ要素が、Bidi の Get または Set 操作の種類でサポートされる場所を示します。
+- 値には、Get、Set、または GetSet の accessType を指定できます。 これは、記述されたスキーマ要素が、Bidi の Get または Set 操作の種類でサポートされる場所を示します。
 
--   値には queryKey を指定できます。 これは、デバイスからデータを取得するために使用される物理操作を示すために使用する必要があります。 [印刷ドライバーの usb モニターと Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)は、2つの異なる querykeys をサポートする usb デバイスを示しています。 同じ queryKey の下にあるすべてのプロパティは、1つの USB 読み取り/書き込み操作で取得可能である必要があります。
+- 値には queryKey を指定できます。 これは、デバイスからデータを取得するために使用される物理操作を示すために使用する必要があります。 [印刷ドライバーの usb モニターと Bidi サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)は、2つの異なる querykeys をサポートする usb デバイスを示しています。 同じ queryKey の下にあるすべてのプロパティは、1つの USB 読み取り/書き込み操作で取得可能である必要があります。
 
--   Bidi 値は、Bidi API 呼び出しで要求された場合、すぐにポーリングされます。 RefreshInterval 値は、特定の Bidi スキーマ値の更新プログラムをデバイスにポーリングするタイミングを示す初期値です。 ポーリングが行われるたびに、ポーリングが停止するまで refreshInterval が増加します。 次の数式は、refreshInterval のインクリメント方法を示しています。
+- Bidi 値は、Bidi API 呼び出しで要求された場合、すぐにポーリングされます。 RefreshInterval 値は、特定の Bidi スキーマ値の更新プログラムをデバイスにポーリングするタイミングを示す初期値です。 ポーリングが行われるたびに、ポーリングが停止するまで refreshInterval が増加します。 次の数式は、refreshInterval のインクリメント方法を示しています。
 
     ```javascript
     currentRefreshInterval = refreshInterval * (3 * numPolls);
@@ -74,17 +71,15 @@ USBMon Bidi 拡張ファイルは、SNMP Bidi 拡張ファイルと WSDMon Bidi 
 
 ## <a name="usbmon-and-usb-bidi-extension-file-interaction"></a>USBMon および USB Bidi 拡張ファイルの相互作用
 
-
 新しい USB ポートが作成または開かれるたびに、USBMon によって、接続されているデバイスと関連するドライバーに新しい Bidi 拡張ファイルと Bidi 拡張機能 JavaScriptfile が含まれているかどうかが判断されます。 USBMon は、v4 ドライバーマニフェストまたはドライバー INI ファイルを検索し、ファイルの名前を取得します。 USBMon が関連するファイルを検出すると、それらを使用して、このデバイスでサポートされている拡張 Bidi スキーマ値の一覧を特定し、デバイスと通信してそのファイルの値を照会します。 この時点で、USBMon は、既存の印刷スプーラ Api を介して、IHV が指定した Bidi スキーマアクションをサポートしています。
 
 ## <a name="windows-driver-samples-on-github"></a>GitHub の Windows ドライバーのサンプル
 
+**Usbmon BIDI Xml ファイルのサンプル**-Usbmon BIDI 拡張 XML ファイルのサンプルを提供します。 標準の Bidi スキーマプロパティ DeviceInfo、構成、およびメモリを使用し、いくつかのカスタム拡張機能も定義します。 詳細については、「[印刷ドライバーの USB モニター」および「Bidi サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)」を参照してください。
 
-**Usbmon BIDI Xml ファイルのサンプル**-Usbmon BIDI 拡張 XML ファイルのサンプルを提供します。 標準の Bidi スキーマプロパティ DeviceInfo、構成、およびメモリを使用し、いくつかのカスタム拡張機能も定義します。 詳細については、「[印刷ドライバーの USB モニター」および「Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)」を参照してください。
+Bidi 拡張ファイルの詳細については、「[双方向通信スキーマ](bidirectional-communication-schema.md)」を参照してください。
 
-Bibi 拡張ファイルの詳細については、「[双方向通信スキーマ](bidirectional-communication-schema.md)」を参照してください。
-
-**Usbmon Bidi JavaScript ファイルのサンプル**です。 このサンプルには、USBMon Bidi Extender JavaScript ファイルが含まれています。 これは、Bidi の設定および取得操作をサポートする方法、およびプリンターの印刷中にイベントをリッスンする方法を示しています。 詳細については、「[印刷ドライバーの USB モニター」および「Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)」を参照してください。
+**Usbmon Bidi JavaScript ファイルのサンプル**です。 このサンプルには、USBMon Bidi Extender JavaScript ファイルが含まれています。 これは、Bidi の SET 操作と GET 操作をサポートする方法、およびプリンターの印刷中にイベントをリッスンする方法を示しています。 詳細については、「[印刷ドライバーの USB モニター」および「Bidi サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)」を参照してください。
 
 デバッグ
 
@@ -104,7 +99,7 @@ Bibi 拡張ファイルの詳細については、「[双方向通信スキー�
 
 2. デバッガーをスクリプトデバッグモードに設定します。
 
-3. [すべて中断] (Ctrl + Alt + Break) を選択すると、スクリプトの次回実行時にプロセスが中断されます。
+3. **[すべて中断]** (Ctrl + Alt + Break) を選択すると、スクリプトの次回実行時にプロセスが中断されます。
 
 4. シナリオを実行して問題を再現します。
 
@@ -116,17 +111,14 @@ Bibi 拡張ファイルの詳細については、「[双方向通信スキー�
 
 [IPrinterBidiSchemaElement](iprinterbidischemaelement-interface.md)  
 
-[Iプリンター Scriptcontext](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)  
+[IPrinterScriptContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptcontext)  
 
 [IPrinterScriptableSequentialStream](https://docs.microsoft.com/windows-hardware/drivers/ddi/printerextension/nn-printerextension-iprinterscriptablesequentialstream)  
 
 [JavaScript API リファレンス](javascript-api-reference-.md)  
 
-[印刷ドライバーの USB モニターと Bidi サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples/v4PrintDriver-USBMon-Bidi-Extension)  
+[印刷ドライバーの USB モニターと Bidi サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-driver-usb-monitor-and-bidi-sample)  
 
 [USB 印刷](usb-printing.md)  
 
 [V4 プリンタードライバーの接続](v4-printer-driver-connectivity.md)
-
-
-

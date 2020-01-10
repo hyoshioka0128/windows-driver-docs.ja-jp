@@ -162,7 +162,7 @@ X64 プロセッサには、浮動小数点レジスタのいくつかのセッ�
 
 -   8 個の 128 ビット SSE レジスタの元のセットは、16 個に増加します。
 
-### <a name="span-idcallingconventionsspanspan-idcallingconventionsspanspan-idcallingconventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>呼び出し規則
+### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>呼び出し規則
 
 X86 とは異なり、C と C++ コンパイラは呼び出し規約を 1 つを x64 でのみサポートします。 この呼び出し規則は、x64 でレジスタの使用可能な数の増加の利点を受け取る。
 
@@ -182,7 +182,7 @@ X86 とは異なり、C と C++ コンパイラは呼び出し規約を 1 つを
 
 C++ の呼び出し規約は非常に似ています。、**この**ポインターは暗黙的な最初のパラメーターとして渡されます。 次の 3 つのパラメーターは、残りの部分がスタックに渡されるときに、レジスタに渡されます。
 
-### <a name="span-idaddressingmodesspanspan-idaddressingmodesspanspan-idaddressingmodesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>アドレッシング モード
+### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>アドレッシング モード
 
 64 ビット モードでアドレス指定モードに似ていますが、x86 と一致しません。
 
