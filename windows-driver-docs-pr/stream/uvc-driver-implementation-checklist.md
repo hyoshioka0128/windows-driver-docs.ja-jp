@@ -1,65 +1,66 @@
 ---
 title: USB ビデオ クラス (UVC) ドライバー実装チェックリスト
-description: デバイスの USB ビデオ クラス (UVC) ドライバーを実装する手順について説明します。
+description: デバイス用の USB ビデオクラス (UVC) ドライバーを実装する手順について説明します。
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d361e4611d2f0ebdc4a44f757a92e4ba4438efd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 94839ce6a93ffd5b55ea6dde8ff0885210373222
+ms.sourcegitcommit: eb1f58d23da3b1240385c072837d9118239a8f97
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356625"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75883889"
 ---
 # <a name="usb-video-class-uvc-driver-implementation-checklist"></a>USB ビデオ クラス (UVC) ドライバー実装チェックリスト
 
-## <a name="step-1-get-started-with-usb-video-class-uvc-using-documentation-from-usborg-and-microsoft"></a>手順 1:USB ビデオ クラス (UVC) が USB.org とマイクロソフトのドキュメントの使用を開始します。
+## <a name="step-1-get-started-with-usb-video-class-uvc-using-documentation-from-usborg-and-microsoft"></a>手順 1: USB.org と Microsoft のドキュメントを使用して USB ビデオクラス (UVC) の使用を開始する
 
-UVC に慣れ親しむには、これらのリンクを使用します。
+次のリンクを使用して、UVC について理解します。
 
-- アクセス、 [USB クラス](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)USB.org ドキュメント (非 UVC 固有)
+- USB.org で[USB クラス](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)のドキュメント (uvc 以外) にアクセスする
 
-- ダウンロード、 [USB ビデオ クラス 1.5](https://go.microsoft.com/fwlink/p/?linkid=2085170) USB.org からドキュメント
+- [USB ビデオクラス 1.5](https://go.microsoft.com/fwlink/p/?linkid=2085170)のドキュメントを USB.org からダウンロードします。
 
-- レビュー、 [USB ビデオ クラス ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver-overview)トピック
+- [USB ビデオクラスドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver-overview)に関するトピックを確認します。
 
-## <a name="step-2-implement-the-platform-supplied-device-mft"></a>手順 2:デバイスのプラットフォームによって提供される MFT を実装します。
+## <a name="step-2-implement-the-platform-supplied-device-mft"></a>手順 2: プラットフォームによって提供されるデバイスの MFT を実装する
 
-- デバイスのプラットフォームによって提供される MFT は RGB USB カメラ用です。 一般的な機能を提供、たとえば、顔検出ベースの ROI 3A の優先順位付け (カメラのファームウェアには、UVC 1.5 標準で指定された ROI コントロールがサポートされている) 場合。
+- プラットフォームによって提供されるデバイス MFT は、RGB USB カメラ用です。 これには一般的な機能が用意されています。たとえば、3A の優先順位付けの顔検出ベースの ROI (カメラのファームウェアが UVC 1.5 標準で指定された ROI 制御をサポートしている場合) です。
 
-- この機能を有効にするには、カメラが ROI をサポートしていることを確認する必要があります。 この機能を無効にする必要がある場合 (たとえば、INF ファイル エントリ) のレジストリ キーをこれを行う必要があります。
+- この機能を有効にするには、カメラが ROI をサポートしていることを確認する必要があります。 この機能を無効にする必要がある場合は、レジストリキー (INF ファイルエントリなど) を使用して設定する必要があります。
 
-## <a name="step-3-implement-the-custom-device-mft-and-mft0-for-your-device"></a>手順 3:デバイスのカスタムのデバイス MFT および MFT0 を実装します。
+## <a name="step-3-implement-the-custom-device-mft-and-mft0-for-your-device"></a>手順 3: デバイスのカスタムデバイス MFT と MFT0 を実装する
 
-- デバイス MFT は、UVC のユーザー モード コンポーネントです。 拡張機能との差別化要因、UVC を追加するには、このコンポーネントを挿入することができます。
+- デバイス MFT は、UVC のユーザーモードコンポーネントです。 このコンポーネントを挿入して、拡張機能と差別化要因を UVC に追加することができます。
 
-- レビュー、[デバイス MFT 設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/stream/dmft-design)します。
+- [DEVICE MFT 設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/stream/dmft-design)を確認します。
 
-- レビュー、[デバイス MFT サンプル コード](https://github.com/Microsoft/Windows-driver-samples/tree/master/avstream/sampledevicemft)GitHub 上にあります。
+- デバイスの[MFT サンプルコード](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/driver-device-transform-sample/)を確認します。
 
-- MFT0 で関連情報を確認、 [UWP アプリのデバイスのカメラ driver MFT 作成](https://docs.microsoft.com/windows-hardware/drivers/devapps/creating-a-camera-driver-mft)トピック。
+- MFT0 の関連情報については、「 [UWP デバイスアプリ用にカメラドライバー MFT を作成](https://docs.microsoft.com/windows-hardware/drivers/devapps/creating-a-camera-driver-mft)する」を参照してください。
 
-**注**デバイス MFT モデル MFT0 モデルよりも優先されます。 MFT0 モデルをサポートするために Windows が引き続き発生するときに、設計を簡略化し、機能性とスケーラビリティをサポートしているデバイス MFT を代わりに、使用することお勧めします。
+> [!NOTE]
+> デバイスの MFT モデルは、MFT0 モデルよりも優先されます。 Windows では MFT0 モデルを引き続きサポートしていますが、設計が簡素化され、より多くの機能とスケーラビリティがサポートされるため、代わりにデバイス MFT を使用することをお勧めします。
 
-## <a name="step-4-implement-microsoft-specified-uvc-extensions"></a>手順 4:Microsoft が指定した UVC 拡張機能を実装します。
+## <a name="step-4-implement-microsoft-specified-uvc-extensions"></a>手順 4: Microsoft によって指定された UVC 拡張機能を実装する
 
 - [USB ビデオ クラス 1.5 仕様に対する Microsoft の拡張機能](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)
 
-- [UVC で赤外線のストリームのサポート](https://docs.microsoft.com/windows-hardware/drivers/stream/infrared-stream-support-in-uvc)
+- [UVC での赤外線ストリームのサポート](https://docs.microsoft.com/windows-hardware/drivers/stream/infrared-stream-support-in-uvc)
 
-- 方法 2 では、キャプチャ静止画像します。
+- 方法 2: イメージのキャプチャ:
 
-    - USB.org ドキュメント:
+  - USB.org のドキュメント:
 
-        - セクションを復習*メソッド 2*の 17 ページ上で始まる、 *UVC 1.5 クラス specification.pdf*上記の手順 1. でダウンロードしました。
+    - 前の手順 1. でダウンロードした*Uvc 1.5 クラス仕様*のページ17で開始する*メソッド 2*のセクションを確認します。
 
-    - Microsoft 固有のドキュメント:
+  - Microsoft 固有のドキュメント:
 
-        - 2\.2.1 と 2.2.2 でセクションを確認して、 [USB ビデオ クラス 1.5 の仕様に対する Microsoft 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)します。
+    - 「 [Microsoft extensions FOR USB Video Class 1.5 仕様](https://docs.microsoft.com/windows-hardware/drivers/stream/uvc-extensions-1-5)」のセクション2.2.1 と2.2.2 を確認します。
 
-## <a name="step-5-test-your-uvc-implementation-to-ensure-it-passes-hlk-tests-and-meets-required-functionality-and-performance"></a>手順 5:HLK テストに合格し、必要な機能とパフォーマンスを満たしていることを確認する UVC 実装をテストします。
+## <a name="step-5-test-your-uvc-implementation-to-ensure-it-passes-hlk-tests-and-meets-required-functionality-and-performance"></a>手順 5: UVC 実装をテストして HLK テストに合格し、必要な機能とパフォーマンスを満たしていることを確認する
 
-- 実行[Windows HLK テスト](https://docs.microsoft.com/windows-hardware/drivers/)
+- [WINDOWS HLK テスト](https://docs.microsoft.com/windows-hardware/drivers/)の実行
 
-- カメラに固有の実行[Device.Streaming HLK テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-streaming)
+- カメラ固有の[デバイスを実行します。 STREAMING HLK テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-streaming)
 
-- カメラの要件を満たしているし、カメラが (たとえば、Skype、Windows こんにちは、およびなど) に準拠してもする必要がありますが、その他の製品 HLK テストが合格を確認してください。
+- カメラが要件を満たしていることを確認し、カメラが準拠している必要がある他の製品 (たとえば、Skype、Windows Hello など) に対して HLK テストを渡します。
