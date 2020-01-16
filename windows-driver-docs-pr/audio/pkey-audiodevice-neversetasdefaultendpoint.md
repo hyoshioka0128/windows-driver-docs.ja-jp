@@ -1,22 +1,22 @@
 ---
-title: 鍵\_AudioDevice\_NeverSetAsDefaultEndpoint
-description: 鍵\_AudioDevice\_NeverSetAsDefaultEndpoint
+title: PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
+description: PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
 ms.assetid: cb619972-d9d9-4f33-bb4a-720bfc29e3e8
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dcdea96e8c08e213814d6b505b268eccd65864
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ebed7e76f697f3d42ea7291595fae9108162b23
+ms.sourcegitcommit: 1addd14b2063aba321f5428a23393f22f59c02b8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332214"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76035720"
 ---
-# <a name="pkeyaudiodeviceneversetasdefaultendpoint"></a>鍵\_AudioDevice\_NeverSetAsDefaultEndpoint
+# <a name="pkey_audiodevice_neversetasdefaultendpoint"></a>PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint
 
 
-既定のデバイスとしてことはありません選択できるように、特定のデバイスを設定することがあります。 これらは、たとえば、モデムの線と医療のオーディオ デバイスあります。Windows 7 および Windows の以降のバージョンの提供、**鍵\_AudioDevice\_NeverSetAsDefaultEndpoint**のため、既定のエンドポイントとして、デバイスのエンドポイントを選択できるようにレジストリ キー。
+既定のデバイスとして選択されないように、特定のデバイスを設定することもできます。 これには、モデムラインや医療オーディオデバイスなどが含まれます。Windows 7 以降のバージョンの Windows では、 **PKEY\_audiodevice\_NeverSetAsDefaultEndpoint**レジストリキーを使用して、デバイスのエンドポイントを既定のエンドポイントとして選択できないようにしています。
 
-次の INF ファイルの抜粋は、使用する方法を示します**鍵\_AudioDevice\_NeverSetAsDefaultEndpoint**既定として選択することがないように、エンドポイントを設定します。
+次の INF ファイルの抜粋では、 **PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**を使用して、既定として選択されないようにエンドポイントを設定する方法を示しています。
 
 ```inf
 [Version]
@@ -29,7 +29,7 @@ ClassGuid= {4d36e96c-e325-11ce-bfc1-08002be10318}
 ...
 
 [USBAudio.Interfaces]
-AddInterface=%KSCATEGORY_AUDIO%,”GLOBAL”,USBAudio.Interface
+AddInterface=%KSCATEGORY_AUDIO%,"GLOBAL",USBAudio.Interface
 ...
 
 [USBAudio.Interface]
@@ -44,15 +44,15 @@ HKR,"EP\\n",%PKEY_AudioDevice_NeverSetAsDefaultEndpoint%,0x00010001,NeverSetAsDe
 ...
 
 [Strings]
-KSCATEGORY_AUDIO=” {6994AD04-93EF-11D0-A3CC-00A0C9223196}”
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
 PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
 PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},3"
 ...
 ```
 
-前の例では、NeverSetAsDefaultEndpointMaskValue は、デバイスの役割のフラグとデータ フローのフラグの組み合わせである DWORD マスク値を表します。
+前の例では、NeverSetAsDefaultEndpointMaskValue は、デバイスロールフラグとデータフローフラグの組み合わせである DWORD マスク値を表します。
 
-次の INF ファイルのスニペットは、未定義の出力デバイスかを示します (KSNODETYPE\_出力\_UNDEFINED) デバイスの役割とデータ フローの方向に関係なく、既定値としてそのエンドポイントが選択されているしないように設定します。
+次の INF ファイルスニペットは、デバイスロールとデータフロー方向に関係なく、そのエンドポイントが既定値として選択されないように、未定義の出力デバイス (KSNODETYPE\_OUTPUT\_UNDEFINED) を設定する方法を示しています。
 
 ```inf
 [Version]
@@ -65,7 +65,7 @@ ClassGuid= {4d36e96c-e325-11ce-bfc1-08002be10318}
 ...
 
 [USBAudio.Interfaces]
-AddInterface=%KSCATEGORY_AUDIO%,”GLOBAL”,USBAudio.Interface
+AddInterface=%KSCATEGORY_AUDIO%,"GLOBAL",USBAudio.Interface
 ...
 
 [USBAudio.Interface]
@@ -80,13 +80,13 @@ HKR,"EP\\0",%PKEY_AudioDevice_NeverSetAsDefaultEndpoint%,0x00010001,0x00000305
 ...
 
 [Strings]
-KSCATEGORY_AUDIO=” {6994AD04-93EF-11D0-A3CC-00A0C9223196}”
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
 KSNODETYPE_OUTPUT_UNDEFINED="{DFF21CE0-F70F-11D0-B917-00A0C9223196}"
 PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
 PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},3"
 ```
 
-前の例では、0x00000305 はのすべてのフラグとマスクの使用可能なビットごとの OR の組み合わせ**鍵\_AudioDevice\_NeverSetAsDefaultEndpoint**します。 次の表は、フラグ、およびマスクとその値を示します。
+前の例では、0x00000305 は、 **PKEY\_AudioDevice\_NeverSetAsDefaultEndpoint**で使用可能なすべてのフラグとマスクのビットごとの or の組み合わせです。 次の表に、フラグとマスク、およびそれらの値を示します。
 
 <table>
 <colgroup>
@@ -95,8 +95,8 @@ PKEY_AudioDevice_NeverSetAsDefaultEndpoint = "{F3E80BEF-1723-4FF2-BCC4-7F83DC5E4
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">フラグまたはエンドポイントのマスク</th>
-<th align="left">値</th>
+<th align="left">フラグまたはエンドポイントマスク</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
