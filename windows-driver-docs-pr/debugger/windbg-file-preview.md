@@ -1,73 +1,71 @@
 ---
-title: WinDbg Preview - ファイル メニュー
-description: このセクションでは、WinDbg プレビュー デバッガーで、[ファイル] メニューを使用する方法について説明します。
-ms.date: 08/04/2017
+title: WinDbg プレビュー-[ファイル] メニュー
+description: ここでは、WinDbg preview デバッガーの [ファイル] メニューを使用する方法について説明します。
+ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cba9d8ab2c98735dd78be50bfa78b07e3a979a82
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: e5e4e33e13ea8de20f8b6fb04a0dbf3f7cb9c496
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56570574"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256754"
 ---
-# <a name="windbg-preview---file-menu"></a>WinDbg Preview - ファイル メニュー 
+# <a name="windbg-preview---file-menu"></a>WinDbg プレビュー-[ファイル] メニュー
 
-このトピックで説明するファイル メニューを使用する方法。
+![ビットパターンを使用した windbg プレビューの小さいロゴ](images/windbgx-preview-logo.png)
 
-### <a name="start-debugging"></a>デバッグを開始します。
+このトピックでは、[ファイル] メニューの使用方法について説明します。
 
-最初に、[ファイル] メニューを開くとと、表示*デバッグを開始*と、最新のデバッガーの対象とします。 使用*デバッグを開始*新しい構成を以前のデバッガー セッションを開きます。
+### <a name="start-debugging"></a>デバッグを開始する
+
+[ファイル] メニューを初めて開くと、[*デバッグの開始*] と [最近使ったデバッガーのターゲット] が表示されます。 [*デバッグ開始*] を使用して、以前のデバッガーセッションを新規に構成します。
 
 #### <a name="recent"></a>Recent
 
-最近使用した一覧には、最近使ったワークスペースおよびデバッガー接続の一覧が含まれています。 作業の設定の詳細については、ワークスペースを参照してください[WinDbg Preview のセットアップ: 設定とワークスペース](windbg-setup-preview.md)します。
+[最近使ったもの] の一覧には、最近使用したワークスペースとデバッガーの接続の一覧が表示されます。 作業設定の詳細については、「 [WinDbg プレビュー設定–設定とワークスペース](windbg-setup-preview.md)」を参照してください。
 
-右クリック メニューを使用すると、ピン留め、名前変更および移動するように、ワークスペースを管理します。 メモ帳でそれらを編集します。
+右クリックメニューを使用して、固定、名前の変更、移動などのワークスペースを管理できます。 メモ帳で編集することもできます。
 
-![ワークスペース ファイル ピン留めするメモ帳で開いている名前の変更の編集を表示 メニューを右クリックし、一覧から削除だけでなく固定解除されたターゲットをクリア](images/windbgx-workspace-right-click.png)
+![ワークスペースファイルの右クリックメニューを開き、[メモ帳の pin で編集]、[リストから削除]、および [ピン留めされていないターゲット] をクリアします。](images/windbgx-workspace-right-click.png)
 
 #### <a name="start-a-new-session"></a>新しいセッションを開始します。
 
-他のタブを使用して、*デバッグを開始*アタッチするか、プロセスの起動など、新しいデバッガー セッションを開始するセクション。 新しいセッションの開始の詳細については、次を参照してください[WinDbg Preview - ユーザー モードのセッションを開始](windbg-user-mode-preview.md)と[WinDbg Preview - カーネル モードのセッションを開始。](windbg-kernel-mode-preview.md)
+プロセスのアタッチや起動など、新しいデバッガーセッションを開始するには、[*デバッグの開始*] セクションの他のタブを使用します。 新しいセッションを開始する方法の詳細については、「 [WinDbg preview-ユーザーモードセッションを開始する](windbg-user-mode-preview.md)」および「 [windbg プレビュー-カーネルモードセッションを開始する](windbg-kernel-mode-preview.md)」を参照してください。
 
+### <a name="save-workspace"></a>ワークスペースの保存
 
-### <a name="save-workspace"></a>ワークスペースを保存します。
+現在のワークスペースを保存するには、[*ワークスペースの保存*] を使用します。
 
-使用*ワークスペースを保存*を現在のワークスペースを保存します。
+セッション接続情報は、ワークスペース構成ファイルに格納されます。 ワークスペースファイルは、debugTarget ファイル拡張子付きで格納されます。
 
-セッションの接続情報は、ワークスペースの構成ファイルに格納されます。 ワークスペースのファイルは、.debugTarget ファイルの拡張子で保存されます。 
-
-ワークスペースのファイルの既定の場所を示します。 
+ワークスペースファイルの既定の場所は次のとおりです。
 
 ```console
 C:\Users\*UserName*\AppData\Local\DBG\targets
 ```
 
-### <a name="open-source-file"></a>ソース ファイルを開く
+### <a name="open-source-file"></a>ソースファイルを開く
 
-使用*ソース ファイルを開く*ソース ファイルを開きます。 コードの実行により読み込まれていない追加のソース ファイルを操作するときに実行します。 ソース ファイルの操作方法の詳細については、次を参照してください[WinDbg では、ソース コードのデバッグ。](source-window.md)
-
+ソースファイルを開くには、*オープンソースファイル*を使用します。 これは、コードの実行によって読み込まれていない追加のソースファイルを操作する場合に使用します。 ソースファイルの操作の詳細については、「 [WinDbg でのソースコードのデバッグ](source-window.md)」を参照してください。
 
 ### <a name="open-script"></a>スクリプトを開く
 
-使用*スクリプトを開きます*を既存の Javascript または NatVis スクリプトを開きます。 スクリプトの操作の詳細については、[WinDbg Preview - Scripting メニュー](windbg-scripting-preview.md)を参照してください。
+既存の Javascript または NatVis スクリプトを開くには、 *[スクリプトを開く*] を使用します。 スクリプトの操作の詳細については[、「WinDbg プレビュー-スクリプトメニュー](windbg-scripting-preview.md)」を参照してください。
 
 ### <a name="settings"></a>設定
 
-設定メニューを使用して、ソースとシンボルのパスを設定すると、デバッガーのライトと暗いテーマを選択します。 詳細については、設定を参照してください[WinDbg Preview のセットアップ: 設定とワークスペース](windbg-setup-preview.md)します。
+[設定] メニューを使用して、ソースとシンボルのパスを設定すると共に、デバッガーの明るいテーマとダークテーマを選択します。 設定の詳細については[、「WinDbg Preview Setup-settings and workspaces](windbg-setup-preview.md)」を参照してください。
 
+### <a name="about"></a>[バージョン情報]
 
-### <a name="about"></a>バージョン情報
-使用*について*デバッガーのビルド バージョン情報を表示します。 使用できますも使用してこの画面を Microsoft のプライバシーに関する声明を表示します。
+*について*は、デバッガーのビルドバージョン情報を表示するために使用します。 また、この画面を使用して、Microsoft のプライバシーに関する声明を表示することもできます。
+
+### <a name="exit"></a>終了
+
+デバッガーを終了するには、 *exit*を使用します。
 
 ---
- 
+
 ## <a name="see-also"></a>関連項目
 
-[WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
- 
-
-
-
-
-
+[WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

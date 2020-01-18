@@ -1,82 +1,69 @@
 ---
-title: WinDbg Preview - データ モデル
-description: このセクションでは、WinDbg プレビュー デバッガーでのデータ モデル メニューを操作する方法について説明します。
-ms.date: 10/12/2018
+title: WinDbg プレビュー-データモデルメニュー
+description: このセクションでは、WinDbg preview デバッガーで [データモデル] メニューを使用する方法について説明します。
+ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e35ba5ffb7fa8bd170b1401e3e6b4a80987174
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4b62daedbcfe0ad45a61211f2b2037009bfbaad7
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353086"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256756"
 ---
-# <a name="windbg-preview---data-model"></a>WinDbg Preview - データ モデル 
+# <a name="windbg-preview---data-model-menu"></a>WinDbg プレビュー-データモデルメニュー
 
-このセクションでは、データ モデル メニューのプレビューの WinDbg デバッガーで使用する方法について説明します。
+このセクションでは、WinDbg Preview デバッガーで [データモデル] メニューを使用する方法について説明します。
 
-![デバッガーでのデータ モデル メニューのスクリーン ショット](images/windbgx-data-model-menu.png)
+## <a name="new-model-query"></a>新しいモデルクエリ
 
+[新しいモデルクエリ] ダイアログボックスを使用すると、新しいモデルクエリを作成できます。 通常の `dx` コマンドに入れることができます。
 
-## <a name="new-model-query"></a>新しいモデルのクエリ
+たとえば、`Debugger.Sessions` を指定して、デバッガーセッションオブジェクトを確認します。 
 
-新しいモデルのクエリを作成するのにには、新しいモデルのクエリ ダイアログを使用します。 何も配置することができますにする場合は、通常にここで`dx`コマンド。
+![[新しいデータモデルクエリ] ダイアログボックス](images/windbgx-data-model-new-model-dialog.png)
 
-たとえば、指定`Debugger.Sessions`デバッガー セッション オブジェクトを確認します。 
+デバッガーオブジェクトに関する一般的な情報については、 [「dx (デバッガーオブジェクトモデル式の表示)](dx--display-visualizer-variables-.md)」を参照してください。
 
-![新しいデータ モデルのクエリ ダイアログ ボックス](images/windbgx-data-model-new-model-dialog.png)
-
-デバッガーの全般的な情報のオブジェクトを参照する[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)します。
-
-LINQ クエリを使用して、セッションをさらに掘り下げます。 このクエリは、ほとんどのスレッドを実行している上位 5 個のプロセスを示しています。 
+LINQ クエリを使用して、セッションをさらに掘り下げます。 このクエリは、最も多くのスレッドを実行している上位5つのプロセスを示します。 
 
 ```dbgcmd
 Debugger.Sessions.First().Processes.Select(p => new { Name = p.Name, ThreadCount = p.Threads.Count() }).OrderByDescending(p => p.ThreadCount),5
 ```
-![データ モデルの詳細 ウィンドウが表示されたプロセスとスレッド](images/windbgx-data-model-process-threads.png)
 
+![プロセスとスレッドを示すデータモデルの探索ウィンドウ](images/windbgx-data-model-process-threads.png)
 
-## <a name="data-model-explorer"></a>データ モデル エクスプ ローラー
+## <a name="data-model-explorer"></a>データモデルエクスプローラー
 
-内のすべてのデータ モデル オブジェクトを簡単に参照データのモデル エクスプ ローラーを使用して、`Debugger`名前空間。
+データモデルエクスプローラーを使用すると、`Debugger` 名前空間内のすべてのデータモデルオブジェクトをすばやく参照できます。
 
-![データ モデル エクスプ ローラー ウィンドウがデバッグ オブジェクトのセッションの表示](images/windbgx-data-model-explore-window.png)
+![デバッグオブジェクトセッションを示すデータモデルエクスプローラーウィンドウ](images/windbgx-data-model-explore-window.png)
 
+### <a name="display-mode"></a>表示モード
 
-## <a name="change-query"></a>クエリの変更
+表示モードを使用すると、グリッドと階層表示モードを切り替えることができます。 列ヘッダーを右クリックすると、列の表示と非表示を切り替えることができます。
 
-アクティブなデータ モデル ウィンドウで使用されるクエリを変更するのにには、クエリの変更を使用します。
+グリッドモードは、オブジェクトを掘り下げるのに役立ちます。 たとえば、次に示すのは、グリッドビューでの前の上位スレッドクエリです。 
 
+![上位スレッドを示すデータモデルの探索ウィンドウ](images/windbgx-data-model-process-threads-grid.png)
 
-## <a name="display-mode"></a>表示モード
+下線付きの項目をクリックすると、新しいタブが開かれ、その情報を表示するためのクエリが実行されます。
 
-グリッドと階層の表示モードを切り替える表示モードを使用します。 多くの列を表示または非表示に列ヘッダーを右クリックすることができます。
-
-グリッド モードをオブジェクトを調べることができます。 たとえば、グリッド ビューでトップのスレッドの前のクエリをここでは。 
-
-![データ モデルの詳細 ウィンドウが表示された最上位のスレッド](images/windbgx-data-model-process-threads-grid.png)
-
-新しいタブが開かれた任意の下線付きの項目と、クエリをクリックすると、その情報を表示する実行されます。
-
-
-このクエリでは、物理デバイス オブジェクトのドライバーの名前でグループ化されたプラグ アンド プレイ デバイス ツリーで、デバイスが表示されます。
+このクエリは、プラグアンドプレイデバイスツリー内のデバイスを、カーネルセッションの物理デバイスオブジェクトのドライバーの名前でグループ化して表示します。
 
 ```dbgcmd
 Debugger.Sessions.First().Devices.DeviceTree.Flatten(n => n.Children).GroupBy(n => n.PhysicalDeviceObject->Driver->DriverName.ToDisplayString()) 
 ```
-![データ モデルの詳細 ウィンドウのグリッド ビューでプラグ アンド プレイ デバイス ツリーを表示](images/windbgx-data-model-pnp-device.png)
+
+![データモデルの [エクスプローラー] ウィンドウが表示された [プラグアンドプレイ] デバイスツリーが表示されます。](images/windbgx-data-model-pnp-device.png)
+
+### <a name="change-query"></a>クエリの変更
+
+[クエリの変更] を使用して、[アクティブなデータモデル] ウィンドウで使用されるクエリを変更します。
 
 ---
- 
+
 ## <a name="see-also"></a>関連項目
 
-[dx (表示デバッガー オブジェクト モデルの式)](dx--display-visualizer-variables-.md)
+[dx (表示デバッガーオブジェクトモデル式)](dx--display-visualizer-variables-.md)
 
-[WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
- 
-
- 
-
-
-
-
-
+[WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

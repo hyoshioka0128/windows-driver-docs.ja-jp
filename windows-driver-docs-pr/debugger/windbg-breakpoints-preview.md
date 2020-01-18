@@ -1,39 +1,31 @@
 ---
-title: WinDbg Preview - ブレークポイント
-description: このセクションでは、設定および WinDbg プレビュー デバッガーを使用してブレークポイントを解除する方法について説明します。
+title: WinDbg プレビュー-[ブレークポイント] メニュー
+description: ここでは、WinDbg preview デバッガーを使用してブレークポイントを設定およびクリアする方法について説明します。
 ms.date: 08/15/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c132bce60f207cff637da974965aab5b34240574
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e2324a4643a240533a33c0871ca899661ec33238
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325854"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256675"
 ---
-# <a name="windbg-preview---breakpoints"></a>WinDbg Preview - ブレークポイント
+# <a name="windbg-preview---breakpoints-menu"></a>WinDbg プレビュー-[ブレークポイント] メニュー
 
-このセクションでは、WinDbg プレビュー デバッガーを使用してブレークポイントを操作する方法について説明します。
+ここでは、WinDbg preview デバッガーを使用してブレークポイントを操作する方法について説明します。
 
-## <a name="breakpoints-menu"></a>ブレークポイント メニュー
+## <a name="breakpoints-menu"></a>[ブレークポイント] メニュー
 
-ブレークポイント メニューを使用して新規作成し、既存のブレークポイントを削除するだけでなく最初のブレークポイントを切り替える (最初のブレークポイントはカーネルのみでは現在)。
+[ブレークポイント] メニューを使用して、既存のブレークポイントを作成および削除したり、最初のブレークポイントを切り替えたりします (最初のブレークポイントは現在カーネルのみです)。
 
-![デバッガーでブレークポイント メニュー](images/windbgx-breakpoints-menu.png)
+![デバッガーのブレークポイントメニュー](images/windbgx-breakpoints-menu.png)
 
-## <a name="breakpoints-window"></a>[ブレークポイント] ウィンドウ
+## <a name="breakpoints-window"></a>ブレークポイント ウィンドウ
 
-[表示] メニューを使用して開いた、[ブレークポイント] ウィンドウを使用して、表示、設定、およびブレークポイントをクリアします。 ブレークポイントのソース ファイルを開くをダブルクリックすることもできます。
+[表示] メニューから開いた [ブレークポイント] ウィンドウを使用すると、ブレークポイントを表示、設定、およびクリアできます。 ブレークポイントをダブルクリックして、そのソースファイルを開くこともできます。
 
-![デバッガーでブレークポイント メニュー](images/windbgx-breakpoints-window.png)
+![デバッガーのブレークポイントメニュー](images/windbgx-breakpoints-window.png)
 
-ブレークポイント ウィンドウ保持のブレークポイントがヒットするたびに累計されます。
+ブレークポイントウィンドウは、ブレークポイントにヒットするたびに、実行中の合計を保持します。
 
-
-ブレークポイントの操作の一般的なプロセスは、以前のバージョンの WinDbg に似ています。 ブレークポイントの設定の詳細については、次を参照してください。 [WinDbg でブレークポイントの設定](setting-breakpoints-in-windbg.md)します。
-
- 
-
-
-
-
-
+ブレークポイントを操作する一般的なプロセスは、以前のバージョンの WinDbg に似ています。 ブレークポイントの設定の詳細については、「 [WinDbg でのブレークポイントの設定](setting-breakpoints-in-windbg.md)」を参照してください。

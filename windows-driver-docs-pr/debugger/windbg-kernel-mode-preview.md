@@ -1,38 +1,32 @@
 ---
-title: WinDbg Preview - カーネル モードのセッションを開始します。
-description: このセクションについて説明します WinDbg プレビューとカーネル モード セッションを開始する方法。
-ms.date: 08/15/2017
+title: WinDbg プレビュー-カーネルモードセッションを開始しています
+description: このセクションでは、WinDbg Preview でカーネルモードセッションを開始する方法について説明します。
+ms.date: 01/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 078dce80d3efc3cf85ea6ce4d4d6622806cbd2e6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d92aa80ece224b9f80fa8bf83ed973997f45ab8d
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353072"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256677"
 ---
-# <a name="windbg-preview---starting-a-kernel-mode-session"></a>WinDbg Preview - カーネル モードのセッションを開始します。 
+# <a name="windbg-preview---starting-a-kernel-mode-session"></a>WinDbg プレビュー-カーネルモードセッションを開始しています
 
-このトピックでは、WinDbg preview カーネル モードのセッションを開始する方法について説明します。
+![WinDbg プレビューの小さなロゴ](images/windbgx-preview-logo.png)
 
-プロセスは、どのように WinDbg の以前のバージョンで行われていますに非常に似ています。 タブを使用するトランスポートの種類を選択、必須のフィールド入力し、[ok] をクリックします。
+このトピックでは、WinDbg Preview でカーネルモードセッションを開始する方法について説明します。
+
+このプロセスは、以前のバージョンの WinDbg での処理とよく似ています。 使用しているトランスポートの種類のタブを選択し、必須フィールドに入力して、[OK] をクリックします。
 
 > [!NOTE]
-> ローカル カーネルのデバッグには、管理者特権での起動にする WinDbg プレビューが必要です。
+> ローカルカーネルデバッグを行うには、WinDbg プレビューを昇格させる必要があります。
 
-![カーネル メニューが表示されたネットワーク タブをアタッチしてデバッグを開始](images/windbgx-attach-to-kernel.png)
+![[ネットワーク] タブが表示されている [カーネルにアタッチ] メニューのデバッグを開始する](images/windbgx-attach-to-kernel.png)
 
-*貼り付けます*タブでは、カスタム接続文字列内に貼り付けることができます。
+[*貼り付け*] タブを使用すると、カスタム接続文字列に貼り付けることができます。
 
-デバッガーのカーネル モードのセッションの設定に慣れていない場合は、次を参照してください[WinDbg (カーネル モード) の概要。](getting-started-with-windbg--kernel-mode-.md) 
-
+デバッガーのカーネルモードセッションの設定に慣れていない場合は、「 [WinDbg を使用したはじめに (カーネルモード)](getting-started-with-windbg--kernel-mode-.md) 」を参照してください。 
 
 ## <a name="see-also"></a>関連項目
 
-[WinDbg のプレビューを使用したデバッグ](debugging-using-windbg-preview.md)
- 
-
-
-
-
-
-
+[WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

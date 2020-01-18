@@ -1,19 +1,19 @@
 ---
 title: デバッグに関するリソース
-description: Windows 用デバッグツールを使用して、Windows システム上のドライバー、アプリケーション、およびサービスをデバッグします。
+description: Windows 用デバッグ ツールを使用すると、Windows システムで使用するドライバー、アプリケーション、サービスのデバッグを行うことができます。
 ms.assetid: F2111416-EC6C-4967-B123-9A6101040561
-ms.date: 12/03/2019
+ms.date: 12/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b5d9331601fa6c93387427a1c8bfecc42a6f3f
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 974b271597591e64164f34e5760c53e2e4e52ac2
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209294"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256726"
 ---
 # <a name="debugging-resources"></a>デバッグに関するリソース
 
-Windows 用デバッグツールを使用して、Windows システム上のドライバー、アプリケーション、およびサービスをデバッグします。 ツールセットのコアデバッグエンジンは、Windows デバッガーと呼ばれます。 従来のインターフェイス (WinDbg、CDB、NTSD) を使用できます。これは、WDK の一部として Windows 用のデバッグツールに含まれています。
+Windows 用デバッグ ツールを使用すると、Windows システムで使用するドライバー、アプリケーション、サービスのデバッグを行うことができます。 ツールセットのコアデバッグエンジンは、Windows デバッガーと呼ばれます。 従来のインターフェイス (WinDbg、CDB、NTSD) を使用できます。これは、WDK の一部として Windows 用のデバッグツールに含まれています。
 
 ## <a name="span-idgetting_started_with_debugging_tools_for_windowsspanspan-idgetting_started_with_debugging_tools_for_windowsspanspan-idgetting_started_with_debugging_tools_for_windowsspangetting-started-with-debugging-tools-for-windows"></a><span id="Getting_Started_with_Debugging_Tools_for_Windows"></span><span id="getting_started_with_debugging_tools_for_windows"></span><span id="GETTING_STARTED_WITH_DEBUGGING_TOOLS_FOR_WINDOWS"></span>Windows 用デバッグツールを使用したはじめに
 

@@ -1,34 +1,33 @@
 ---
 title: WinDbg プレビュー-[スクリプト] メニュー
 description: このセクションでは、WinDbg preview デバッガーでスクリプトを使用する方法について説明します。
-ms.date: 04/10/2017
+ms.date: 01/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 53e905612da91fc55e187f99d0d6d98df198452f
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: baa6478da0d8cd1d0ff3c0a74c3fc24fa6ce67c2
+ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916118"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256667"
 ---
-# <a name="windbg-preview---scripting"></a>WinDbg プレビュー-スクリプト 
+# <a name="windbg-preview---scripting-menu"></a>WinDbg プレビュー-[スクリプト] メニュー
 
 このセクションでは、WinDbg プレビューでスクリプトのサポートを使用する方法について説明します。
 
-![デバッガーの [スクリプト] メニューのスクリーンショット](images/windbgx-javascript-new-script.png)
+![デバッガーのスクリプト作成メニューのスクリーン ショット](images/windbgx-javascript-new-script.png)
 
 [WinDbg Preview スクリプト] ウィンドウには、基本的な構文の強調表示、IntelliSense、およびエラー認識機能があります。 
 
 リボンのボタンを使用して、次のことを行います。
-- 新しいスクリプトを作成する 
+- 新しいスクリプトを作成する
 - 既存のスクリプトを開く
-- スクリプトを実行する
+- スクリプトの実行
 - スクリプトを保存する 
 - スクリプトのリンク解除
-- JavaScript プロバイダーを読み込む
 
 スクリプトウィンドウを右クリックし、 *[保存時にスクリプトを実行*] を選択して、スクリプトを自動的に実行することもできます。 スクリプトを正常に読み込むと、スクリプトのタイトルバーに緑色のチェックボックスが表示されます。 スクリプトにエラーがある場合は、赤い x が表示されます。
 
-## <a name="javascript-scripting"></a>JavaScript スクリプト 
+## <a name="javascript-scripting"></a>JavaScript スクリプト
 
 JavaScript の使用を開始するには、まずターゲットをデバッグする必要があります。 JavaScript での作業を開始する準備ができたら、[JavaScript プロバイダーの読み込み] をクリックします。 その後、この2種類のスクリプトテンプレートを選択することで、新しい JavaScript を作成できます。
 
@@ -60,6 +59,6 @@ NatVis の操作の詳細については、「 [NatVis のデバッガーオブ�
  
 ---
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)
