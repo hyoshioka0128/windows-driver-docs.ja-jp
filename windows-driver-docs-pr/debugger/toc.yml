@@ -10,9 +10,9 @@
   items:
     - name: Windows のデバッグの概要
       href: getting-started-with-windows-debugging.md
-    - name: WinDbg ドライバーの概要 (ユーザー モード)
+    - name: WinDbg の概要 (ユーザー モード)
       href: getting-started-with-windbg.md
-    - name: WinDbg ドライバーの概要 (カーネル モード)
+    - name: WinDbg の概要 (カーネル モード)
       href: getting-started-with-windbg--kernel-mode-.md
     - name: 32 ビットまたは 64 ビット デバッグ ツールの選択
       href: choosing-a-32-bit-or-64-bit-debugger-package.md
@@ -60,7 +60,7 @@
       href: debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md
     - name: ドライバーのデバッグ - ステップ バイ ステップ ラボ (Sysvad カーネルモード)
       href: debug-universal-drivers--kernel-mode-.md
-- name: WinDbg プレビューを使用したデバッグ
+- name: WinDbg プレビュー
   items:
     - name: WinDbg プレビューを使用したデバッグ
       href: debugging-using-windbg-preview.md
@@ -68,8 +68,6 @@
       href: windbg-what-is-new-preview.md
     - name: WinDbg プレビュー - インストール
       href: windbg-install-preview.md
-    - name: WinDbg プレビュー - タイムライン
-      href: windbg-timeline-preview.md
     - name: WinDbg プレビュー - コマンド ライン スタートアップ オプション
       href: windbg-command-line-preview.md
     - name: WinDbg プレビュー - 設定とワークスペース
@@ -80,35 +78,43 @@
       href: windbg-user-mode-preview.md
     - name: WinDbg プレビュー - カーネルモード セッションの開始
       href: windbg-kernel-mode-preview.md
+    - name: WinDbg プレビュー - リモート、プロセス、ダンプ ファイル セッションの開始
+      href: windbg-remote-preview.md
     - name: 'WinDbg プレビュー - [File]\(ファイル\) メニュー'
       href: windbg-file-preview.md
     - name: 'WinDbg プレビュー - [Home]\(ホーム\) メニュー'
       href: windbg-home-preview.md
     - name: 'WinDbg プレビュー - [View]\(表示\) メニュー'
       href: windbg-view-preview.md
-    - name: WinDbg プレビュー - ブレークポイント
+    - name: WinDbg プレビュー – ブレークポイント メニュー
       href: windbg-breakpoints-preview.md
-    - name: WinDbg プレビュー - データ モデル
+    - name: WinDbg プレビュー – タイム トラベル メニュー
+      href: windbg-timetravel-preview.md
+    - name: WinDbg プレビュー - データ モデル メニュー
       href: windbg-data-model-preview.md
-    - name: WinDbg プレビュー - スクリプト
+    - name: WinDbg プレビュー - スクリプト メニュー
       href: windbg-scripting-preview.md
-    - name: Time Travel Debugging - 概要
+    - name: WinDbg プレビュー–メモ、コマンド、メモリ、ソース メニュー
+      href: windbg-notes-etc-preview.md
+    - name: タイム トラベル デバッグ
       items:
         - name: Time Travel Debugging - 概要
           href: time-travel-debugging-overview.md
-        - name: Time Travel Debugging - 記録
+        - name: タイム トラベル デバッグ - トレースの記録
           href: time-travel-debugging-record.md
         - name: Time Travel Debugging - トレースの再生
           href: time-travel-debugging-replay.md
+        - name: WinDbg プレビュー - タイムライン
+          href: windbg-timeline-preview.md
         - name: Time Travel Debugging - トレース ファイルの使用
           href: time-travel-debugging-trace-file-information.md
         - name: Time Travel Debugging - トラブルシューティング
           href: time-travel-debugging-troubleshooting.md
         - name: Time Travel Debugging - ナビゲーション コマンド
           href: time-travel-debugging-navigation-commands.md
-        - name: Time Travel Debugging - 拡張コマンド
+        - name: タイム トラベル デバッグ - コマンド
           items:
-            - name: Time Travel Debugging - 拡張コマンド
+            - name: タイム トラベル デバッグ - 拡張コマンドの概要
               href: time-travel-debugging-extension-commands.md
             - name: Time Travel Debugging - !tt (タイム トラベル)
               href: time-travel-debugging-extension-tt.md
@@ -116,9 +122,9 @@
               href: time-travel-debugging-extension-index.md
             - name: Time Travel Debugging - !positions (タイム トラベル)
               href: time-travel-debugging-extension-positions.md
-        - name: Time Travel Debugging - サンプル アプリのチュートリアル
+        - name: タイム トラベル デバッグ - チュートリアル
           href: time-travel-debugging-walkthrough.md
-        - name: Time Travel Debugging - Time Travel Debugging オブジェクトの概要
+        - name: タイム トラベル デバッグ - タイム トラベル デバッグ オブジェクト
           items:
             - name: Time Travel Debugging - Time Travel Debugging オブジェクトの概要
               href: time-travel-debugging-object-model.md
@@ -280,7 +286,7 @@
                   href: gflags-examples.md
                 - name: '例 1:グローバル フラグを表示する'
                   href: example-1---displaying-global-flags.md
-                - name: '例 2:フラグの省略形を使用してフラグを設定する'
+                - name: '例 2: フラグの省略形を使用してフラグを設定する'
                   href: example-2---setting-a-flag-by-using-a-flag-abbreviation.md
                 - name: '例 3: 16 進値を使用してフラグを設定する'
                   href: example-3---setting-a-flag-by-using-its-hexadecimal-value.md
@@ -464,9 +470,9 @@
                   href: using-unc-shares.md
                 - name: 通常のバージョン管理と組み合わせた HTTP サイトと UNC 共有の使用
                   href: using-http-sites-and-unc-shares-in-conjuction-with-regular-version-con.md
-    - name: セキュリティに関する考慮事項
+    - name: セキュリティの考慮事項
       items:
-        - name: セキュリティに関する考慮事項
+        - name: セキュリティの考慮事項
           href: security-considerations.md
         - name: デバッグ特権
           href: debug-privilege.md
@@ -534,11 +540,11 @@
               href: remote-debugging5.md
             - name: ターゲット
               href: targets.md
-            - name: イベント
+            - name: '[イベント]'
               href: events.md
             - name: ブレークポイント
               href: breakpoints3.md
-            - name: シンボル
+            - name: 記号
               href: symbols4.md
             - name: メモリ
               href: memory.md
@@ -598,7 +604,7 @@
                       href: using-symbols.md
                     - name: モジュール
                       href: modules.md
-                    - name: 型
+                    - name: 種類
                       href: types.md
                     - name: スコープとシンボルのグループ
                       href: scopes-and-symbol-groups.md
@@ -1848,7 +1854,7 @@
       href: extracting-information-from-a-dump-file.md
     - name: ページ ファイルと共にメモリ ダンプを含む CAB ファイル
       href: cab-files-that-contain-paging-files-along-with-a-memory-dump.md
-    - name: OCA ミニダンプ ファイルをデバッグする
+    - name: OCA ミニダンプ ファイルのデバッグ
       href: debugging-oca-minidump-files.md
 - name: バグ チェック (ブルー スクリーン)
   items:
