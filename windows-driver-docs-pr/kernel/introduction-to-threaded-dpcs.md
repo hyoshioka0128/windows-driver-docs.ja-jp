@@ -6,20 +6,16 @@ keywords:
 - スレッド Dpc WDK のカーネル
 - リアルタイムスレッド WDK カーネル
 - 割り込まれる Dpc WDK カーネル
-ms.date: 06/16/2017
+ms.date: 01/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 66466f956f520d0e381263b42c9900cd1bc01f57
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3439949fa7c858f835b17f2b82b2247da9e80bb8
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838618"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706987"
 ---
 # <a name="introduction-to-threaded-dpcs"></a>スレッド DPC の概要
-
-
-
-
 
 スレッド Dpc は、Windows Vista 以降のバージョンの Windows で使用できます。
 
@@ -33,14 +29,6 @@ ms.locfileid: "72838618"
 
 *CustomThreadedDpc*ルーチンは、パッシブ\_レベルまたはディスパッチ\_レベルで実行できるため、両方の IRQLs で*CustomThreadedDpc*ルーチンが正しく同期されていることを確認する必要があります。 その方法の詳細については、「[同期とスレッド dpc](synchronization-and-threaded-dpcs.md)」を参照してください。
 
-また、 *CustomThreadedDpc*ルーチンがディスパッチ\_レベルコードのすべての制限に従うことを確認する必要があります。 スレッド Dpc が有効になっている場合は、IRQL = パッシブ\_レベルで実行されますが、通常の Dpc と同じ制限が適用されます。 スレッド化された DPC ( *CustomThreadedDpc*ルーチンによって呼び出されるすべての関数を含む) で実行されるすべてのコードは、dpc 環境の制限に準拠している必要があります。 たとえば、 [KEVENT オブジェクト](defining-and-using-an-event-object.md)など、パッシブレベルの同期オブジェクトでコードをブロックすることはできません。 ネットワーク、ストレージ、USB などのほとんどの既存のデバイススタックは、スレッド化された DPC 処理をサポートしていません。また、パッシブ\_レベルで呼び出されることを検出した場合は、ブロックしようとする可能性があります。 同様の理由から、[カーネルモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)(kmdf) は、スレッド化された dpc 処理をサポートしていません。 kmdf ドライバーは、スレッド化された dpc を使用しないようにする必要があります。 DPC 環境の詳細については、「 [Dpc ルーチンの記述](writing-dpc-routines.md)」を参照してください。
+また、 *CustomThreadedDpc*ルーチンがディスパッチ\_レベルコードのすべての制限に従うことを確認する必要があります。 スレッド Dpc が有効になっている場合は、IRQL = パッシブ\_レベルで実行されますが、通常の Dpc と同じ制限が適用されます。 スレッド化された DPC ( *CustomThreadedDpc*ルーチンによって呼び出されるすべての関数を含む) で実行されるすべてのコードは、dpc 環境の制限に準拠している必要があります。 たとえば、 [KEVENT オブジェクト](defining-and-using-an-event-object.md)など、パッシブレベルの同期オブジェクトでコードをブロックすることはできません。 ネットワークや USB などの多くの既存のデバイススタックは、スレッド化された DPC 処理をサポートしておらず、パッシブ\_レベルで呼び出されることを検出した場合にブロックしようとする可能性があります。 同様の理由から、[カーネルモードドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/what-s-new-for-wdf-drivers)(kmdf) は、スレッド化された dpc 処理をサポートしていません。 kmdf ドライバーは、スレッド化された dpc を使用しないようにする必要があります。 DPC 環境の詳細については、「 [Dpc ルーチンの記述](writing-dpc-routines.md)」を参照してください。
 
 DPC キューにスレッド DPC を追加するには、 [**KeInsertQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keinsertqueuedpc)を呼び出します。 スレッド化された DPC を実行前にキューから削除するには、 [**KeRemoveQueueDpc**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keremovequeuedpc)を呼び出します。
-
- 
-
- 
-
-
-
-

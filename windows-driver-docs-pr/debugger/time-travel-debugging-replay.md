@@ -1,18 +1,18 @@
 ---
 title: Time Travel Debugging - トレースの再生
 description: このセクションでは、タイムトラベルトレースを再生する方法について説明します。
-ms.date: 10/12/2018
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2639b5e4654a2e52554295243aa0ada484b8b1a3
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: cace40ee102215a920653af28f0310dd7dc002da
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916139"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706949"
 ---
 # <a name="time-travel-debugging---replay-a-trace"></a>Time Travel Debugging - トレースの再生
 
-![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png) 
+![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
 このセクションでは、時間旅行トレースを再生し、前後を移動する方法について説明します。
 
@@ -20,10 +20,10 @@ ms.locfileid: "72916139"
 
 次のコマンドで末尾のマイナス記号を使用して、時間をさかのぼって移動します。
 
-| コマンド  | 
+| コマンド  |
 |----------------|
-| p-(ステップバック) | 
-| t-(トレースバック)| 
+| p-(ステップバック) |
+| t-(トレースバック)|
 | g-(戻る)   |
 
 詳細については、「[タイムトラベルのデバッグ-ナビゲーションコマンド](time-travel-debugging-navigation-commands.md)」を参照してください。 
@@ -34,11 +34,9 @@ ms.locfileid: "72916139"
 
 ![記録の開始チェックボックスが表示されている WinDbg プレビューのスクリーンショット](images/ttd-ribbon-buttons.png)
 
-
 ## <a name="example-ttd-trace-replay"></a>TTD トレース再生の例
 
 TTD トレースのイベントまたは先頭に到達するまで、コマンドを使用して後方に実行します。 逆方向の実行を停止できるイベントは、実行を停止するイベントと同じです。 この例では、トレースの開始に達しています。
-
 
 ```dbgcmd
 0:000> g-
@@ -94,7 +92,6 @@ ntdll!LdrpInitializeProcess+0x431:
 7774e094 e9f5170000      jmp     ntdll!LdrpInitializeProcess+0x1c2b (7774f88e)
 ```
 
-
 TTD トレースで前に進むには、p-コマンドを使用します。 
 
 ```dbgcmd
@@ -116,7 +113,6 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 また、t-sql を使用して、時間をさかのぼって移動することもできます。
 
-
 ## <a name="tt-navigation-commands"></a>! tt ナビゲーションコマンド
 
 ! Tt コマンドを使用して、トレース内の特定の位置にスキップすることにより、時間の前後に移動します。 
@@ -124,7 +120,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 ! tt [位置]
 
 その時点に移動するには、次のいずれかの形式で時刻の位置を指定します。
-           
+
 - [Position] が0から100までの10進数である場合、トレースに約そのパーセント移動します。 たとえば `!tt 50` は、トレースを通じて中間に移動します。
 
 - {Position} が #: # の場合 (# は16進数)、その位置に移動します。 たとえば、`!tt 1A0:12F` はトレースで 1A0: 12F の位置に移動します。
@@ -138,7 +134,7 @@ ntdll!LdrpInitializeProcess+0x1bd9:
 
 ```dbgcmd
 0:000> !positions
->Thread ID=0x1C74 - Position: F:2
+>*Thread ID=0x1C74 - Position: F:2
  Thread ID=0x1750 - Position: A5:0
  Thread ID=0x3FFC - Position: 200:0
  Thread ID=0x36B8 - Position: 403:0
@@ -146,10 +142,12 @@ ntdll!LdrpInitializeProcess+0x1bd9:
  Thread ID=0x392C - Position: B45:0
  Thread ID=0x32B4 - Position: C87:0
  Thread ID=0x337C - Position: DF1:0
+* indicates an actively running thread
 ```
+
 この例は、現在の位置に8つのスレッドがあることを示しています。 現在のスレッドは3604で、' > ' でマークされています。  
 
-> [!TIP] 
+> [!TIP]
 > 現在のスレッドの一覧とその位置を表示するもう1つの方法は、データモデルの dx コマンドを使用することです。
 >
 > `dx -g @$curprocess.Threads.Select(t => new { IsCurrent = t.Id == @$curthread.Id, ThreadId = t.Id, Position = t.TTD.Position })`
@@ -169,10 +167,10 @@ User mode [~ (スレッドの状態)](---thread-status-.md)コマンドを使用
    7  Id: 954.337c Suspend: 4096 Teb: 00ff3000 Unfrozen
 ```
 
-! Position 出力の3番目のスレッド (3FFC) の横にあるリンクをクリックして、トレースのその位置 (200:0) に移動します。
+! Position コマンドの出力で、3番目のスレッド (3FFC) の横にあるリンクをクリックして、トレースのその位置 (200:0) に移動します。
 
 ```dbgcmd
-0:002> !ttdext.tt 200:0
+0:002> !tt 200:0
 Setting position: 200:0
 (954.3ffc): Break instruction exception - code 80000003 (first/second chance not available)
 Time Travel Position: 200:0
@@ -197,17 +195,14 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
    7  Id: 954.337c Suspend: 4096 Teb: 00ff3000 Unfrozen
 ```
 
-
 > [!NOTE]
 > *~ S #* では、 *#* はスレッド番号ですが、指定されたスレッドにも切り替わりますが、トレースの現在位置は変更されません。  *! Tt*を使用して別のスレッドの位置に時間を移動すると、メモリから読み取られた値 (およびデバッガー) がその位置で検索されます。 *~ S #* のスレッドを切り替えると、デバッガーは現在の位置を内部で変更しません。これは、すべてのメモリクエリに使用されます。 これは主に、 *~ s #* でデバッガーの内側のループをリセットする必要がないため、この方法で動作します。
-
 
 ## <a name="time-travel-debugging-extension-commands"></a>タイムトラベルデバッグ拡張コマンド
 
 `!tt`の詳細については `!index` `!positions`、「[タイムトラベルデバッグ-拡張コマンド](time-travel-debugging-extension-commands.md)」を参照してください。
 
- 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)
 
@@ -216,4 +211,3 @@ ntdll!NtWaitForWorkViaWorkerFactory+0xc:
 [タイムトラベルデバッグ-トレースファイルの操作](time-travel-debugging-trace-file-information.md)
 
 [タイムトラベルデバッグ-サンプルアプリのチュートリアル](time-travel-debugging-walkthrough.md)
-

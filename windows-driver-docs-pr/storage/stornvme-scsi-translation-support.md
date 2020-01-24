@@ -1,56 +1,42 @@
 ---
-title: StorNVMe SCSI 翻訳のサポート
-description: StorNVMe SCSI 翻訳のサポート
+title: StorNVMe SCSI 変換のサポート
+description: StorNVMe SCSI 変換のサポート
 ms.assetid: cd903ef8-9528-46a5-a276-06cf2fff2b88
-ms.date: 12/12/2019
+ms.date: 01/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bdbee9cd952cf7a67bfeb379b4942f031d9586b
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 3ba918b2dc76b2a99c8d095f194f36b6f91c08cb
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75252077"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706929"
 ---
-# <a name="stornvme-scsi-translation-support"></a>StorNVMe SCSI 翻訳のサポート
+# <a name="stornvme-scsi-translation-support"></a>StorNVMe SCSI 変換のサポート
 
-次の表に、SCSI コマンドと、変換された NVMe コマンド (該当する場合) を示します。 **Stornvme**は、SCSI 変換参照リビジョン1.5 に準拠しています。
+次の表に、SCSI コマンドと、変換された NVMe コマンド (該当する場合) を示します。 Windows 10 バージョン1903以降のバージョンの**Stornvme**は、SCSI Translation Reference Rev 1.5 に準拠しています。
 
-| SCSI コマンド | NVMe コマンド | コメント |
-| ------------ | ------------ | -------- |
-| 比較と書き込み *      | 比較と書き込み           |
-| 単位/サニタイズの書式設定    | NVM のフォーマット                  |
-| 照会                 | ため                    |
+| SCSI コマンド | NVMe Command |
+| ------------ | ------------ |
+| 単位/サニタイズの書式設定    | Format NVM                  |
+| 照会                 | 特定                    |
 | ログの意味               | 機能の取得、ログの取得ページ  |
-| モードの選択 (6) *        | -                           |
 | モードの選択 (10)        | -                           |
-| モードの意味 (6) *         | 特定、機能の取得      |
 | モードの意味 (10)         | 特定、機能の取得      |
-| 読み取り (6) *               | Read                        |
-| 読み取り (10)               | Read                        |
-| 読み取り (12) *              | Read                        |
-| 読み取り (16)               | Read                        |
-| 読み取り容量 (10)      | ため                    |
-| 読み取り容量 (16)      | ため                    |
-| データバッファー16の読み取り     | [ログの取得] ページ                |
-| レポート Lun             | ため                    |
-| 要求の意味 *          | -                           |
-| のセキュリティプロトコル    | セキュリティの受信            |
-| セキュリティプロトコルの送信   | セキュリティ送信               |
+| 読み取り (10)               | 読み取り                        |
+| 読み取り (16)               | 読み取り                        |
+| 読み取り容量 (10)      | 特定                    |
+| 読み取り容量 (16)      | 特定                    |
+| データバッファー16の読み取り     | Get Log Page                |
+| レポート Lun             | 特定                    |
+| のセキュリティプロトコル    | Security Receive            |
+| セキュリティプロトコルの送信   | Security Send               |
 | 診断の送信         | なし                         |
 | 停止単位の開始         | 機能の設定、機能の取得  |
-| キャッシュの同期 (10)  | Flush                       |
-| キャッシュの同期 (16) * | Flush                       |
+| キャッシュの同期 (10)  | フラッシュ                       |
 | テスト単位の準備完了         | -                           |
-| Unmap                   | データセットの管理          |
+| Unmap                   | Dataset Management          |
 | 検証10               | 検証                      |
-| 確認 12 *              | 検証                      |
 | 検証16               | 検証                      |
-| 10 * の書き込み          | 修正不可能に書き込み         |
-| 長い16×書き込み *          | 修正不可能に書き込み         |
-| 書き込み 6 *                | 書き込み                       |
 | 書き込み10                | 書き込み                       |
-| 書き込み 12 *               | 書き込み                       |
 | 書き込み16                | 書き込み                       |
 | バッファーの書き込み            | ファームウェアのダウンロード、アクティブ化 |
-
-アスタリスクを使用した SCSI コマンドの \* は、*変換可能な NVMe コマンドを持ちますが、現在、 *stornvme*は翻訳をサポートしていません。*

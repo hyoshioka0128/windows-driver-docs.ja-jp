@@ -3,22 +3,20 @@ title: タイムトラベルデバッグ拡張機能
 description: このセクションでは、タイムトラベルデバッガー拡張機能コマンドの使用方法について説明します。
 ms.date: 09/22/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2733796d41c77354eba462f36827e8a76f232993
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 838337a0fc9db255097d190ee383f6e0cc252c20
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916211"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706981"
 ---
-#  <a name="time-travel-debugging-extension-commands"></a>タイムトラベルデバッグ拡張コマンド
+# <a name="time-travel-debugging-extension-commands"></a>タイムトラベルデバッグ拡張コマンド
 
 ![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
 このセクションでは、タイムトラベルデバッガー拡張機能のコマンドについて説明します。
 
-
 ## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
-
 
 <table>
 <colgroup>
@@ -56,6 +54,6 @@ ms.locfileid: "72916211"
 
 タイムトラベルデバッガー拡張機能のコマンドは、ttdext に実装されています。 タイムトラベルコマンド dll は、WinDbg プレビューで自動的に読み込まれます。 Load コマンドを使用して、手動で ttdext を読み込む必要はありません。
  
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

@@ -1,14 +1,14 @@
 ---
 title: タイムトラベルデバッグ拡張機能! tt コマンド
 description: 時間を前後に移動できる! tt time トラベルデバッガー拡張機能。
-ms.date: 09/22/2017
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 29b678ba0c8dd73b105bd9f6f9ab7ab69710d648
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 6af058ee25e25ee1875beb3a94005d526f895860
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916207"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706947"
 ---
 # <a name="tt-time-travel"></a>! tt (タイムトラベル)
 
@@ -21,25 +21,25 @@ ms.locfileid: "72916207"
 ! Tt 拡張機能を使用して、トレース内の特定の位置に移動することにより、時間の前後に移動します。 
 
 ```dbgcmd
-!tt [position] 
+!tt [position]
 ```
 
 ## <a name="span-idddk__analyze_dbgspanspan-idddk__analyze_dbgspanparameters"></a><span id="ddk__analyze_dbg"></span><span id="DDK__ANALYZE_DBG"></span>パラメータ
 
-**移動**
+**position**
 
 その時点に移動するには、次のいずれかの形式で時刻の位置を指定します。
            
-- {Position} が0から100までの10進数である場合、トレースに約そのパーセント移動します。 次に、例を示します。
-    - ! ttdext.tt 0-トレースの先頭への時刻の移動
-    - ! ttdext.tt 50-トレースを通じて中間に時間を移動する
-    - ! ttdext.tt 100-トレースの最後までのタイムトラベル
+- {Position} が0から100までの10進数である場合、トレースに約そのパーセント移動します。 たとえば次のようになります。
+    - ! tt 0-トレースの先頭への時刻の移動
+    - ! tt 50-トレースを通じて中間に時間を移動する
+    - ! tt 100-トレースの終わりまでの時間
  
 
 - {Position} が #: # の場合 (# は16進数)、その位置に移動します。 の後の数値が省略されている場合、既定値は0になります。
-    - ! ttdext.tt 1A0:-位置1A0 に移動する: 0
-    - ! ttdext.tt 1A0: 0-位置1A0 に移動: 0
-    - ! ttdext.tt 1A0: 12F-位置 1A0: 12F に移動
+    - ! tt 1A0:-位置1A0 に移動します: 0
+    - ! tt 1A0: 0-位置1A0 に移動: 0
+    - ! tt 1A0: 12F-位置 1A0: 12F に移動
 
 
    > [!NOTE]
@@ -51,7 +51,6 @@ ms.locfileid: "72916207"
    >
    > yy-2 番目の要素はステップ数で、シーケンスイベントからの命令数にほぼ対応します。
 
-
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 ttdext
@@ -60,6 +59,6 @@ ttdext
 
 この拡張機能は、タイムトラベルトレースでのみ機能します。 タイムトラベルの詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイムトラベルのデバッグ-概要](time-travel-debugging-overview.md)

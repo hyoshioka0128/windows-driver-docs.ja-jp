@@ -1,66 +1,66 @@
 ---
-title: StorNVMe コマンドセットのサポート
-description: StorNVMe コマンドセットのサポート
+title: StorNVMe コマンド セットのサポート
+description: StorNVMe コマンド セットのサポート
 ms.assetid: c0bcee11-ea66-4726-99a2-ad18256cf616
-ms.date: 12/12/2019
+ms.date: 01/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ff9ffed8c39469bfc086ebee85b1be55722fd248
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 68a7e099f13f2e0da3f93accd314d227cc69c45a
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75252079"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706937"
 ---
-# <a name="stornvme-command-set-support"></a>StorNVMe コマンドセットのサポート
+# <a name="stornvme-command-set-support"></a>StorNVMe コマンド セットのサポート
 
-次の表は、NVMe *Admin*と*nvm*コマンドセットおよび関連するオペコードを一覧表示し、 **stornvme**が各コマンドに提供するサポートを示しています。  
+The matrices below list the NVMe *Admin* and *NVM* command sets and associated opcodes, and indicate the support provided by **StorNVMe** on Windows 10 version 1903 and later.  
 
-## <a name="admin-command-set-support"></a>管理コマンドセットのサポート
+## <a name="admin-command-set-support"></a>Admin Command Set Support
 
-| オペコード  | NVMe コマンド                | StorNVMe のサポート      | コメント |
+| オペコード  | NVMe Command                | StorNVMe Support      | 備考 |
 | ------  | --------------------------  | --------------------- | -------- |
-| 0       | I/o 送信キューの削除 | 内部ドライバーの使用 |    |
-| 1       | I/o 送信キューの作成 | 内部ドライバーの使用 |    |
-| 2       | [ログの取得] ページ                | 内部ドライバーの使用IOCTL_STORAGE_QUERY_PROPERTY |   |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない       | I/o 完了キューの削除 | 内部ドライバーの使用 |   |
-| 5       | I/o 完了キューの作成 | 内部ドライバーの使用 |
-| 6       | ため                    | 内部ドライバーの使用IOCTL_STORAGE_QUERY_PROPERTY、IOCTL_STORAGE_FIRMWARE_GET_INFO |   |
-| 8       | 中止                       |   | 現在サポートされていません |
-| 9       | 機能の設定                | 内部ドライバーの使用IOCTL_STORAGE_SET_PROPERTY | IOCTL_STORAGE_SET_PROPERTY 用のホスト制御の温度管理セット機能に対してのみ有効です |
-| Ah      | 機能の取得                | 内部ドライバーの使用IOCTL_STORAGE_QUERY_PROPERTY |   |
-| ハーフ      | 非同期イベント要求  | 内部ドライバーの使用 |   |   |
-| Dh      | 名前空間の管理        | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 10h     | ファームウェアのコミット             | IOCTL_STORAGE_FIRMWARE_ACTIVATE | |
-| 11h     | ファームウェアイメージのダウンロード     | IOCTL_STORAGE_FIRMWARE_DOWNLOAD | |
-| 14h     | デバイスのセルフテスト            | IOCTL_STORAGE_PROTOCOL_COMMAND  | |
-| 15h     | 名前空間の添付ファイル        | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 19h     | ディレクティブの送信              | 内部ドライバーの使用 |   |
-| 1Ah     | ディレクティブの受信           | 内部ドライバーの使用 |   |
-| 1Ch     | 仮想化管理   |   | 現在サポートされていません |
-| 1 Dh     | NVMe-MI 送信                | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 1 Eh     | NVMe-MI 受信             | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 7Ch     | Doorbell バッファー構成      |   | 現在サポートされていません |
-| 80h     | NVM のフォーマット                  | IOCTL_SCSI_PASS_THROUGH、IOCTL_STORAGE_PROTOCOL_COMMAND、IOCTL_STORAGE_REINITIALIZE_MEDIA | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です。 IOCTL_SCSI_PASS_THROUGH の SCSIOP_SANITIZE。 IOCTL_STORAGE_REINITIALIZE_MEDIA は、暗号化消去だけをサポートします。 |
-| 81h     | セキュリティ送信               | IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_SECURITY_PROTOCOL_OUT |
-| 82h     | セキュリティの受信            | IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_SECURITY_PROTOCOL_IN |
-| 84 h     | 不要部分                    | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 86h     | LBA 状態の取得              |   | 現在サポートされていません |
-| C0h-FFh | ベンダー固有             | IOCTL_STORAGE_PROTOCOL_COMMAND | ベンダー固有のパススルーコマンド。 コマンド効果ログをサポートするためにコントローラーが必要です。また、ベンダコマンドのコマンド効果データはサポートされているものとして報告する必要があります。 |
+| 0       | Delete I/O Submission Queue | Internal Driver Usage |    |
+| 1 で保護されたプロセスとして起動されました       | Create I/O Submission Queue | Internal Driver Usage |    |
+| 2 で保護されたプロセスとして起動されました       | Get Log Page                | Internal Driver Usage; IOCTL_STORAGE_QUERY_PROPERTY |   |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない       | Delete I/O Completion Queue | Internal Driver Usage |   |
+| 5       | Create I/O Completion Queue | Internal Driver Usage |
+| 6       | 特定                    | Internal Driver Usage; IOCTL_STORAGE_QUERY_PROPERTY, IOCTL_STORAGE_FIRMWARE_GET_INFO |   |
+| 8       | 中止                       |   | 以下は現在サポートされていません |
+| 9       | Set Features                | Internal Driver Usage; IOCTL_STORAGE_SET_PROPERTY | Only enabled for Host Controlled Thermal Management Set Features for IOCTL_STORAGE_SET_PROPERTY |
+| Ah      | Get Features                | Internal Driver Usage; IOCTL_STORAGE_QUERY_PROPERTY |   |
+| Ch      | Asynchronous Event Request  | Internal Driver Usage |   |   |
+| Dh      | 名前空間の管理        | IOCTL_STORAGE_PROTOCOL_COMMAND | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND |
+| 10h     | Firmware Commit             | IOCTL_STORAGE_FIRMWARE_ACTIVATE | |
+| 11h     | Firmware Image Download     | IOCTL_STORAGE_FIRMWARE_DOWNLOAD | |
+| 14h     | Device Self-Test            | IOCTL_STORAGE_PROTOCOL_COMMAND  | |
+| 15h     | Namespace Attachment        | IOCTL_STORAGE_PROTOCOL_COMMAND | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND |
+| 19h     | Directive Send              | Internal Driver Usage |   |
+| 1Ah     | Directive Receive           | Internal Driver Usage |   |
+| 1Ch     | 仮想化管理   |   | 以下は現在サポートされていません |
+| 1Dh     | NVMe-MI Send                | IOCTL_STORAGE_PROTOCOL_COMMAND | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND |
+| 1Eh     | NVMe-MI Receive             | IOCTL_STORAGE_PROTOCOL_COMMAND | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND |
+| 7Ch     | Doorbell Buffer Config      |   | 以下は現在サポートされていません |
+| 80h     | Format NVM                  | IOCTL_SCSI_PASS_THROUGH, IOCTL_STORAGE_PROTOCOL_COMMAND, IOCTL_STORAGE_REINITIALIZE_MEDIA | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND. SCSIOP_SANITIZE for IOCTL_SCSI_PASS_THROUGH. IOCTL_STORAGE_REINITIALIZE_MEDIA only supports crypto erase. |
+| 81h     | Security Send               | IOCTL_SCSI_PASS_THROUGH | SCSIOP_SECURITY_PROTOCOL_OUT for IOCTL_SCSI_PASS_THROUGH |
+| 82h     | Security Receive            | IOCTL_SCSI_PASS_THROUGH | SCSIOP_SECURITY_PROTOCOL_IN for IOCTL_SCSI_PASS_THROUGH |
+| 84h     | Sanitize                    | IOCTL_STORAGE_PROTOCOL_COMMAND | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND |
+| 86h     | Get LBA Status              |   | 以下は現在サポートされていません |
+| C0h-FFh | Vendor Specific             | IOCTL_STORAGE_PROTOCOL_COMMAND | Vendor-specific pass-through commands. Requires controller to support command effects log and command effect data of vendor command should report as supported. |
 
-## <a name="nvm-command-set-support"></a>NVM コマンドセットのサポート
+## <a name="nvm-command-set-support"></a>NVM Command Set Support
 
-| オペコード  | NVMe コマンド                | StorNVMe のサポート      | コメント |
+| オペコード  | NVMe Command                | StorNVMe Support      | 備考 |
 | ------  | --------------------------  | --------------------- | -------- |
-| 0       | Flush                       | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_SYNCHRONIZE_CACHE |
-| 1       | 書き込み                       | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_WRITE/SCSIOP_WRITE16 |
-| 2       | Read                        | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_READ/SCSIOP_READ16 |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない       | 修正不可能に書き込み         |   | 現在サポートされていません |
-| 5       | 時差]                     | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 8       | ゼロの書き込み                |   | 現在サポートされていません |
-| 9       | データセットの管理          | IOCTL_SCSI_PASS_THROUGH | トリムのみ (割り当て解除);IOCTL_SCSI_PASS_THROUGH の SCSIOP_UNMAP |
-| ハーフ      | 検証                      |   | 現在サポートされていません |
-| Dh      | 予約レジスタ        |   | 現在サポートされていません |
-| Eh      | 予約レポート          |   | 現在サポートされていません |
-| 11h     | 予約の取得         |   | 現在サポートされていません |
-| 15h     | 予約リリース         |   | 現在サポートされていません |
-| 80h-FFh | ベンダー固有             | IOCTL_STORAGE_PROTOCOL_COMMAND | ベンダー固有のパススルーコマンド。 コマンド効果ログをサポートするためにコントローラーが必要です。また、ベンダコマンドのコマンド効果データはサポートされているものとして報告する必要があります。 |
+| 0       | フラッシュ                       | Internal Driver Usage, IOCTL_SCSI_PASS_THROUGH | SCSIOP_SYNCHRONIZE_CACHE for IOCTL_SCSI_PASS_THROUGH |
+| 1 で保護されたプロセスとして起動されました       | 書き込み                       | Internal Driver Usage, IOCTL_SCSI_PASS_THROUGH | SCSIOP_WRITE/SCSIOP_WRITE16 for  IOCTL_SCSI_PASS_THROUGH |
+| 2 で保護されたプロセスとして起動されました       | 読み取り                        | Internal Driver Usage, IOCTL_SCSI_PASS_THROUGH | SCSIOP_READ/SCSIOP_READ16 for IOCTL_SCSI_PASS_THROUGH |
+| ホーム フォルダーが置かれているコンピューターにアクセスできない       | Write Uncorrectable         |   | 以下は現在サポートされていません |
+| 5       | 時差                     | IOCTL_STORAGE_PROTOCOL_COMMAND | Only enabled in Win PE mode for IOCTL_STORAGE_PROTOCOL_COMMAND |
+| 8       | Write Zeroes                |   | 以下は現在サポートされていません |
+| 9       | Dataset Management          | IOCTL_SCSI_PASS_THROUGH | Only TRIM (Deallocate); SCSIOP_UNMAP for IOCTL_SCSI_PASS_THROUGH |
+| Ch      | 検証                      |   | 以下は現在サポートされていません |
+| Dh      | Reservation Register        |   | 以下は現在サポートされていません |
+| Eh      | Reservation Report          |   | 以下は現在サポートされていません |
+| 11h     | Reservation Acquire         |   | 以下は現在サポートされていません |
+| 15h     | Reservation Release         |   | 以下は現在サポートされていません |
+| 80h-FFh | Vendor Specific             | IOCTL_STORAGE_PROTOCOL_COMMAND | Vendor-specific pass-through commands. Requires controller to support command effects log and command effect data of vendor command should report as supported. |

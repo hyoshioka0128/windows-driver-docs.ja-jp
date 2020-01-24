@@ -1,23 +1,23 @@
 ---
-title: タイムトラベルデバッグ拡張機能! index コマンド
-description: '! インデックス拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。'
-ms.date: 10/12/2018
+title: Time Travel Debugging Extension !index Command
+description: The !index extension indexes time travel traces or displays index status information.
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 044410ba9e7ac93c2f27c589a8f30bfb00d95d9a
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: efde351e74b6ea40b3b27c8872459ff0adc9ca32
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916214"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706946"
 ---
-#  <a name="index"></a>! インデックス
+# <a name="index"></a>!index
 
 ![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
-**! インデックス**拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。
+The **!index** extension indexes time travel traces or displays index status information.
 
 ```dbgsyntax
-!index [-status] [-force] 
+!index [-status] [-force]
 ```
 
 
@@ -46,7 +46,7 @@ Successfully created the index in 0ms.
 トレースインデックスの状態をレポートするには、`!index -status` を使用します。
 
 ```dbgcmd
-0:000> !tt.index -status
+0:000> index -status
 Index file loaded.
 ```
 **-force**
@@ -54,7 +54,7 @@ Index file loaded.
 読み込めないインデックスファイルがディスク上に存在する場合でも、`!index -force` を使用してトレースのインデックスを再作成します。
 
 ```dbgcmd
-0:000> !tt.index -force
+0:000> index -force
 Successfully created the index in 152ms.
 ```
 
@@ -67,6 +67,6 @@ ttdext
 
 この拡張機能は、タイムトラベルトレースでのみ機能します。 タイムトラベルの詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [タイムトラベルデバッグ-拡張コマンド](time-travel-debugging-extension-commands.md)

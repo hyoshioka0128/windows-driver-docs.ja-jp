@@ -1,128 +1,110 @@
 ---
 title: Windows コンテナー用のウイルス対策最適化
-description: このトピックでは、ウイルス対策製品は Windows コンテナー内で実行するときに利用できる最適化について説明します。
+description: このトピックでは、Windows コンテナー内で実行するときにウイルス対策製品が利用できる最適化について説明します。
 ms.assetid: 101BC08B-EE63-4468-8B12-C8C8B0E99FC5
-ms.date: 04/20/2017
+ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 608297fa85d03c7e92995a9df7156aab3c847c1d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ee90897d29defac300844637bec9b185d9940733
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67379352"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706985"
 ---
-# <a name="span-idifskanti-virusoptimizationforwindowscontainersspananti-virus-optimization-for-windows-containers"></a><span id="ifsk.anti-virus_optimization_for_windows_containers"></span>Windows コンテナーのウイルス対策の最適化
+# <a name="anti-virus-optimization-for-windows-containers"></a>Windows コンテナー用のウイルス対策最適化
 
+**このページの情報は、次のものに適用されます。**
+- Windows 10 Version 1607
+- Windows Server 2016
+- ホストで実行されているウイルス対策 (AV) 製品
 
-**適用対象:**
--   Windows 10 Version 1607
--   Windows Server 2016
--   ホストで実行されているウイルス対策製品
+このトピックでは、Windows コンテナーファイルの冗長スキャンを回避し、コンテナーの起動時間を向上させるために AV 製品が使用できる最適化について説明します。
 
-このトピックでは、ウイルス対策製品は Windows コンテナーのファイルの重複をスキャンしないようにするために利用でき、コンテナーの起動時間を向上させるための最適化について説明します。
+## <a name="container-overview"></a>コンテナーの概要
 
-## <a name="span-idcontaineroverviewspanspan-idcontaineroverviewspanspan-idcontaineroverviewspancontainer-overview"></a><span id="Container_overview"></span><span id="container_overview"></span><span id="CONTAINER_OVERVIEW"></span>コンテナーの概要
+Windows コンテナー機能は、アプリケーションの配布と展開を簡略化するように設計されています。 詳細については、「 [Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/about_overview)の概要」を参照してください。
 
+コンテナーは、任意の数のパッケージレイヤーから構築されます。 Windows ベース OS パッケージは、最初のレイヤーを形成します。
 
-Windows コンテナー機能は、配布とアプリケーションの配置を簡単に設計されています。 詳細についてはの概要を参照してください。 [Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/about_overview)します。
+各コンテナーには、そのコンテナーのシステムボリュームを表す分離ボリュームがあります。 コンテナー分離フィルター (*wcifs .sys*) は、このコンテナーボリュームにパッケージレイヤーの仮想オーバーレイを提供します。 オーバーレイは、プレースホルダー (再解析ポイント) を使用して実現されます。 コンテナーが最初に overlain パスにアクセスする前に、プレースホルダーを使用してボリュームがシード処理されます。 プレースホルダーファイルの読み取りは、バッキングパッケージファイルに送られます。 このようにして、複数のコンテナーボリュームが同じ基になるパッケージファイルデータストリームにアクセスできます。
 
-コンテナーは、複数のパッケージのレイヤーから構築されます。 Windows ベース OS パッケージは、最初の層を形成します。
+コンテナーによってファイルが変更された場合、分離フィルターでは、書き込み時のコピーが実行され、プレースホルダーがパッケージファイルの内容に置き換えられます。 これにより、特定のコンテナーのパッケージファイルへの "リンケージ" が中断されます。
 
-各コンテナーにはそのコンテナーのシステム ボリュームを表すボリュームを分離します。 コンテナーの分離のフィルター (**wcifs.sys**) 仮想のオーバーレイのこのコンテナーのボリューム上にパッケージのレイヤーを提供します。 オーバーレイは、プレース ホルダー (再解析ポイント) を使用して実現されます。 コンテナーは、overlain のパスを最初にアクセスする前に、プレース ホルダーを含むボリュームがシード処理します。 ファイルはパッケージ ファイルに送られますプレース ホルダーを読み取ります。 この方法で同じ基になるパッケージ ファイルのデータ ストリームを複数のコンテナーのボリュームにアクセスできます。
+## <a name="read-redirection"></a>リダイレクトの読み取り
 
-コンテナーが、ファイルを変更した場合、分離のフィルターはコピー オン ライトを実行し、パッケージ ファイルの内容と、プレース ホルダーを置き換えます。 これにより、その特定のコンテナーのパッケージ ファイルに「リンケージ」が中断します。
+プレースホルダーファイルからの読み取りは、分離フィルターによって適切なパッケージレイヤーにリダイレクトされます。 リダイレクトは、フィルターのレベルで実行されます。 フィルターは AV 範囲を下回るため、AV フィルターでは読み取りリダイレクトが表示されません。 また、リダイレクトを設定するために実行されたパッケージファイルが開きません。
 
-## <a name="span-idreadredirectionspanspan-idreadredirectionspanspan-idreadredirectionspanread-redirection"></a><span id="Read_redirection"></span><span id="read_redirection"></span><span id="READ_REDIRECTION"></span>読み取りのリダイレクト
+AV フィルターには、コンテナーシステムボリューム上のすべての操作が完全に表示されます。 プレースホルダーファイルに加えて、ファイルの変更や新しいファイルの追加に関する操作も表示されます。
 
+## <a name="redundant-scanning-problem"></a>冗長スキャンの問題
 
-プレース ホルダー ファイルからの読み取りは、分離フィルターによって、適切なパッケージのレイヤーにリダイレクトされます。 リダイレクトは、フィルターのレベルで実行されます。 フィルターでは、下記の AV 範囲であるために、AV フィルターでは、読み取りのリダイレクトは表示されなくなります。 AV にも、リダイレクトを設定するために実行するパッケージ ファイルの開き表示されなくなります。
+多くの場合、同じパッケージレイヤーに応じて多数のコンテナーが存在します。 指定されたパッケージファイルの同じデータストリームによって、複数のコンテナーシステムボリューム上のプレースホルダーのデータが提供されます。 その結果、すべてのコンテナーの同じデータに対して、重複する AV スキャンが発生する可能性があります。 これにより、コンテナーのパフォーマンスに不要な悪影響が生じます。 これは、コンテナーがすぐに開始されることが予想され、有効期間が短くなる可能性があるため、signification コストです。
 
-AV、フィルターでは、コンテナーのシステム ボリューム上のすべての操作の完全なビューが。 プレース ホルダー ファイルだけでなく、ファイルの変更または新しいファイルの追加の操作が表示されます。
+## <a name="recommended-approach"></a>推奨されるアプローチ
 
-## <a name="span-idredundantscanningproblemspanspan-idredundantscanningproblemspanspan-idredundantscanningproblemspanredundant-scanning-problem"></a><span id="Redundant_scanning_problem"></span><span id="redundant_scanning_problem"></span><span id="REDUNDANT_SCANNING_PROBLEM"></span>冗長なスキャンの問題
+コンテナーでの冗長なスキャンを回避するには、以下で説明するように、AV 製品で動作を変更することをお勧めします。 このアプローチでは、お客様に対するリスク/報酬特典を決定するために、AV 製品が必要です。 詳細については、このページの下部にある「**利点とリスク**」を参照してください。
 
+### <a name="1-package-install"></a>1. パッケージのインストール
 
-多くのコンテナーと同じパッケージのレイヤーによって可能性あります。 特定のパッケージ ファイルの同じデータ ストリームは複数のコンテナーのシステム ボリューム上のプレース ホルダーのデータを提供します。 その結果はすべてのコンテナー内の同じデータの冗長のウイルス対策スキャンの潜在的です。 これは、コンテナーのパフォーマンスに不要なマイナス影響を与えます。 これは、コンテナーは短時間で起動する必要があり、有効期間が短い場合がありますを signification コストです。
+パッケージのインストール中に、管理ツールによってパッケージ内のファイルがレイヤールートに配置されます。 AV フィルタは、パッケージルートに配置されている間はファイルのスキャンを続行し、通常はファイルをスキャンします。 これにより、レイヤー内のすべてのファイルがマルウェアに対して最初にクリーンであることが保証されます。
 
-## <a name="span-idrecommendedapproachspanspan-idrecommendedapproachspanspan-idrecommendedapproachspanrecommended-approach"></a><span id="Recommended_approach"></span><span id="recommended_approach"></span><span id="RECOMMENDED_APPROACH"></span>推奨されるアプローチ
+### <a name="2-container-start-and-execution"></a>2. コンテナーの開始と実行
 
+コンテナーボリュームをリアルタイムでスキャンするには、重複を回避する方法で AVs をスキャンする必要があります。 プレースホルダーファイルには特別な考慮が必要です。 コンテナーによって変更されたファイルまたはコンテナー内に作成された新しいファイルはリダイレクトされないため、冗長スキャンが問題になることはありません。
 
-コンテナーの冗長なスキャンを回避するためには、ウイルス対策製品が以下に示すように、その動作を変更することをお勧めします。 このアプローチの顧客のリスク/reward メリットを判断するウイルス対策製品の責任です。 詳細については、次を参照してください。[メリットとリスク](#benefits-risks)します。
+重複するスキャンを回避するには、まず、そのボリュームのコンテナーボリュームとプレースホルダーを、AV フィルターで識別する必要があります。 さまざまな理由により、ボリュームがコンテナーボリュームであるか、または特定のファイルがプレースホルダーファイルであるかどうかをクエリするための直接の方法はありません。 分離フィルターでは、アプリケーションの互換性のためにプレースホルダーの再解析ポイントが非表示になります (再解析ポイントにアクセスしていることが認識されている場合、一部のアプリケーションは正しく動作しません)。 また、コンテナーが実行されている間、ボリュームはコンテナーボリュームにすぎません。 コンテナーが停止し、ボリュームが再マウントされる可能性があります。 代わりに、作成前に、AV フィルターは、ファイルオブジェクトに対してクエリを実行して、コンテナーのコンテキストで開かれているかどうかを判断する必要があります。 次に、作成完了時に、作成して、プレースホルダー状態を受信します。
 
-### <a name="span-id1packageinstallspanspan-id1packageinstallspanspan-id1packageinstallspan1-package-install"></a><span id="1._Package_install"></span><span id="1._package_install"></span><span id="1._PACKAGE_INSTALL"></span>1.パッケージのインストール
+AV 製品では、次の変更が必要です。
 
-パッケージのインストール中に、管理ツールのレイヤーのルートの下のパッケージ内のファイルはレイアウトします。 AV フィルターは、パッケージのルートに配置されているが、通常と同じように、ファイルをスキャンする続行する必要があります。 これにより、マルウェアに関しては、最初のレイヤー内のファイルすべてをクリーンアップします。
+- **コンテナーボリュームでの事前作成時に、プレースホルダー情報を受信する [作成] の [送信] データに ECP をアタッチします。** これらの作成は、 **IoGetSiloParameters**を使用して、FILEOBJECT からサイロパラメーターを照会することによって識別できます。 注フィルターでは**WCIFS_REDIRECTION_ECP_CONTEXT**構造のサイズを指定する必要があります。 他のすべてのフィールドは、ECP が確認された場合に、out フィールドに設定されます。
 
-### <a name="span-id2containstartandexecutionspanspan-id2containstartandexecutionspanspan-id2containstartandexecutionspan2-container-start-and-execution"></a><span id="2._Contain_start_and_execution"></span><span id="2._contain_start_and_execution"></span><span id="2._CONTAIN_START_AND_EXECUTION"></span>2.コンテナーの開始と実行
+- **[作成後] で、ECP が確認された場合は、ECP リダイレクトフラグを確認します。** フラグは、開いているがパッケージレイヤーまたはスクラッチルート (新規または変更されたファイル) のどちらであるかを示します。 フラグは、パッケージレイヤーが登録されているかどうか、およびリモートであるかどうかも示します。
 
-コンテナーのボリュームのリアルタイム スキャン、AVs は冗長性を回避するようにスキャンする必要があります。 プレース ホルダー ファイルには、特別な考慮が必要があります。 冗長なスキャンが問題にならないように、コンテナーまたはコンテナーで作成された新しいファイルが変更されたファイルはリダイレクトされません。
+  - リモートレイヤーからサービスが提供されている場合、AV はファイルのスキャンをスキップします。 これはリダイレクトフラグによって示されます: `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
 
-冗長なスキャンを避けるためには、AV フィルターはコンテナーのボリュームとそれらのボリュームにプレース ホルダーを識別するためにまず必要があります。 さまざまな理由は、ボリュームがコンテナーのボリュームの場合、または指定されたファイルがプレース ホルダー ファイルの場合にクエリを実行するウイルス対策フィルターの直接的な方法はありません。 分離フィルターには、アプリケーション互換性の理由から (一部のアプリケーションは正常に動作しない再解析ポイントへのアクセスは対応している場合) のプレース ホルダーの再解析ポイントが非表示にします。 また、ボリューム コンテナーの実行中にコンテナーのボリュームだけとは。 コンテナーを停止する可能性があり、ボリュームを再マウントに残ることがあります。 代わりで事前に作成、AV フィルターは、コンテナーのコンテキストで開いているかどうかを決定するファイル オブジェクトを照会する必要があります。 アタッチできますし、および作成する ECP と作成の完了時にプレース ホルダーの状態を受信します。
+    リモート層は、リモートホストでスキャンされていると見なすことができます。 Hyper-v コンテナーパッケージは、コンテナーをホストするユーティリティ VM に対してリモートです。 これらのパッケージは、ユーティリティ VM から SMB ループバックを介してアクセスされたときに、Hyper-v ホスト上で正常にスキャンされます。
 
-次の変更は、ウイルス対策製品が必要であります。
+    VolumeGUID と FileId はリモートでは適用されないため、これらのフィールドは設定されません。
 
--   **中には、事前にコンテナーのボリュームの作成をプレース ホルダーの情報を受け取る作成ここに、ECP をアタッチします。** これらの作成を使用して、fileobject からサイロのパラメーターをクエリすることによって識別できます**IoGetSiloParameters**します。 フィルターのサイズを指定する必要があります、 **WCIFS\_リダイレクト\_ECP\_コンテキスト**構造体。 その他のすべてのフィールドでは、ECP が受信確認される場合は、設定のフィールドです。
+    - 登録されたレイヤーからサービスが提供される場合、AV はファイルのスキャンをスキップします。 これは、リダイレクトフラグによって示されます。
 
--   **後を作成する場合は、応答が、ECP ECP リダイレクトのフラグを確認します。** スクラッチ ルート (新しいまたは変更されたファイル) から、またはパッケージのレイヤーから、オープンが処理されるかどうか、フラグが示されます。 フラグは、パッケージの層が登録されている、リモートであるかどうかも示します。
+    `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
 
-    -   リモートのレイヤーからサービスが提供されるが開いたら、AV は、ファイルのスキャンをスキップする必要があります。 これは、リダイレクトのフラグで示されます。
+    登録されたレイヤーは、パッケージのインストール中および署名の更新後に、非同期的にスキャンする必要があります。
 
-        `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER && WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REMOTE_LAYER`
+    >[!NOTE]
+    > 登録済みのレイヤーは、将来システムによって識別されない場合があります。 この場合、ローカルレイヤーファイルは、最後の箇条書きで説明されているように、個別に識別する必要があります。
 
-        リモートのレイヤーでは、リモート ホストでのスキャンが完了と見なさ ことができます。 HYPER-V コンテナーのパッケージは、ユーティリティ、コンテナーをホストする VM にリモートです。 これらのパッケージは、SMB 経由で VM のループバック ユーティリティによってアクセスされるときに、HYPER-V ホストで通常スキャンされます。
-
-        リモート経由での VolumeGUID、FileId が適用されませんので、これらのフィールドは設定できません。
-
-    -   登録されているレイヤーからサービスが提供されるが開いたら、AV は、ファイルのスキャンをスキップする必要があります。 これは、リダイレクトのフラグで示されます。
-
-        `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER        &&  WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_REGISTERED_LAYER`
-
-        登録済みの層は、パッケージのインストール中に、署名の更新後非同期的にスキャンする必要があります。
-
-        **注**  登録されているレイヤー識別できない、システムによって、将来します。 この場合、ファイルのローカル層する必要があります個別として識別されることの最後の項目で説明されています。
-
-         
-
-    -   ローカル パッケージのレイヤーからサービスが提供されるが開きの AV する必要がありますと使用して、指定された VolumeGUID FileId レイヤー ファイルの特定、ファイルをスキャンする必要があるかどうか。 ボリュームの GUID と FileId によってインデックス付けされたスキャン済みファイルのキャッシュを作成するアクセス違反が必要になります可能性があります。 これは、リダイレクトのフラグで示されます。
+    - ローカルパッケージレイヤーからサービスが提供されるオープンの場合、AV では、レイヤーファイルの指定された VolumeGUID と FileId を使用して、ファイルをスキャンする必要があるかどうかを判断する必要があります。 これには、ボリューム GUID と FileId によってインデックス付けされたスキャン済みファイルのキャッシュを作成するために、AV が必要になる可能性があります。 これはリダイレクトフラグによって示されます。
 
         `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_LAYER`
 
-    -   スクラッチ場所にファイルを新しい/変更、ウイルス対策製品がファイルをスキャンし、通常その修復を実行する必要があります。 これは、リダイレクトのフラグで示されます。
+    - 新規または変更されたファイルがスクラッチの場所にある場合、AV 製品はファイルをスキャンし、通常の修復を実行します。 これはリダイレクトフラグによって示されます。
 
         `WCIFS_REDIRECTION_FLAGS_CREATE_SERVICED_FROM_SCRATCH`
 
-        ないためレイヤー ファイルここで、VolumeGUID と FileId は設定できません。
+        この場合、レイヤーファイルは存在しないため、VolumeGUID と FileId は設定されません。
 
--   **ストリームのコンテキストで永続的なマーカーとして、「このファイルはレイヤーからサービス」を保存しません。** 作成した後、レイヤーのルートからサービスが最初にファイルを変更できます。 この場合、同じファイルの後続の作成は、コンテナーのボリュームから作成のサービスを受けること可能性があります。 AV フィルターは、これは発生を理解する必要があります。
+- **"このファイルはレイヤーからサービスされています" という名前のストリームコンテキストで永続的なマーカーとして保存しないでください。** 最初にレイヤールートから処理されるファイルは、作成後に変更される可能性があります。 この場合、同じファイルの後続の作成では、作成がコンテナーボリュームからサービスされていることを示している可能性があります。 この問題が発生する可能性があることを、AV フィルタが理解している必要があります。
 
-## <a name="span-iddontusethelayerrootlocationsregistrykeyspanspan-iddontusethelayerrootlocationsregistrykeyspanspan-iddontusethelayerrootlocationsregistrykeyspandont-use-the-layerrootlocations-registry-key"></a><span id="Don_t_use_the_LayerRootLocations_registry_key"></span><span id="don_t_use_the_layerrootlocations_registry_key"></span><span id="DON_T_USE_THE_LAYERROOTLOCATIONS_REGISTRY_KEY"></span>LayerRootLocations のレジストリ キーを使用しないでください。
+## <a name="dont-use-the-layerrootlocations-registry-key"></a>レイヤー Root場所レジストリキーは使用しないでください
 
+以前は、基本イメージの場所を取得するには、`LayerRootLocations` レジストリキーを使用することをお勧めします。 AV 製品では、このレジストリキーを使用できなくなります。 代わりに、このトピックで推奨されている方法を使用して、重複スキャンを回避してください。
 
-以前は、お勧めしますを使用して、`LayerRootLocations`基本イメージの場所を取得するレジストリ キー。 AV 製品では、このレジストリ キーが使用できなくする必要があります。 代わりに、このトピックの「推奨されるアプローチを使用して、冗長スキャンしないようにします。
-
-登録パッケージのレイヤーに使用されていたレジストリの場所:
+パッケージレイヤーの登録に使用されたレジストリの場所:
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Virtualization\LayerRootLocations`
 
-## <a name="span-idbenefits-risksspanspan-idbenefits-risksspanbenefits-and-risks"></a><span id="benefits-risks"></span><span id="BENEFITS-RISKS"></span>メリットとリスク
+## <a name="benefits-and-risks"></a>利点とリスク
 
+これらの新しい最適化を AV 製品に使用する場合は、次の利点とリスクについて検討してください。
 
-次の利点とウイルス対策製品にこれらの新しい最適化を使用するリスクを検討してください。
+### <a name="benefits"></a>利点
 
-### <a name="span-idbenefitsspanspan-idbenefitsspanspan-idbenefitsspanbenefits"></a><span id="Benefits"></span><span id="benefits"></span><span id="BENEFITS"></span>利点があります。
+- コンテナーの開始または実行時間には影響しません (最初のコンテナーであっても)。
+- 複数のコンテナー内の同じコンテンツのスキャンを回避します。
+- Windows Server コンテナーに対して機能します。 Hyper-v コンテナーの場合、これはパッケージに対して機能しますが、コンテナーを実行するには追加の作業が必要です。
 
--   コンテナーの開始または (最初のコンテナー) に対しても実行時間に影響はありません。
--   複数のコンテナーで同じコンテンツのスキャンを回避できます。
--   Windows Server のコンテナーに対して機能します。 HYPER-V コンテナーは、このパッケージの動作しますが、コンテナーの実行の追加の作業が必要です。 
+### <a name="risks"></a>リスク
 
-### <a name="span-idrisksspanspan-idrisksspanspan-idrisksspanrisks"></a><span id="Risks"></span><span id="risks"></span><span id="RISKS"></span>上のリスク
-
-コンテナーが起動された場合、署名の間に更新し、次回のスケジュールされた事前対応型のマルウェア対策スキャン、コンテナー内で実行ファイルが最新のマルウェア対策シグネチャに関してスキャンされません。 このリスクを軽減するためにされていないが、署名の更新プログラム事前対応型の前回のスキャン後場合にのみ、ウイルス対策製品はリダイレクトされたファイルのスキャンをスキップする可能性があります。 最新のシグネチャでプロアクティブなスキャンが完了するまでこの制限コンテナーのパフォーマンスが低下します。 必要に応じて、ウイルス対策製品は、後続のコンテナーの起動がより効率的になるよう、このような状況でプロアクティブなスキャンをトリガーできます。
-
- 
-
- 
-
-
-
-
+署名の更新と次にスケジュールされている予防的なマルウェア対策スキャンの間にコンテナーが起動した場合、コンテナーで実行されたファイルは、最新のマルウェア対策の署名に関してスキャンされません。 このリスクを軽減するために、最後のプロアクティブスキャン以降の署名の更新がない場合にのみ、AV 製品でリダイレクトされたファイルのスキャンをスキップできます。 これにより、最新の署名でプロアクティブスキャンが完了するまで、コンテナーのパフォーマンスの低下が制限されます。 必要に応じて、AV 製品はこの状況でプロアクティブスキャンをトリガーできます。これにより、以降のコンテナーの起動が効率的になります。

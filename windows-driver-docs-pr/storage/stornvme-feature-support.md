@@ -2,91 +2,90 @@
 title: StorNVMe でサポートされている NVMe 機能
 description: StorNVMe でサポートされている NVMe 機能
 ms.assetid: 96b62fbb-bcf3-402d-ba29-0a61dc95c92c
-ms.date: 12/12/2019
+ms.date: 01/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 250ef95374d2f1c7a8a6c2a5866171cddfa3873e
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 70ee6ea6a28405aa0680ff9c5bdd505ddd610d84
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75252083"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706931"
 ---
 # <a name="nvme-features-supported-by-stornvme"></a>StorNVMe でサポートされている NVMe 機能
 
-次の表は、NVME の特徴、各機能が必須か省略可能かを示し、 **Stornvme**がその機能をサポートするかどうかを示しています。
+次の表は、NVME の機能の一覧です。また、Windows 10 バージョン1903以降のバージョンで**Stornvme**が提供するサポートを示しています。
 
-| 機能  | オプション | Mandatory | サポートされる | コメント |
-| :------- | :------: | :-------: | :-------: | :------- |
-| ファームウェアのコミット/ダウンロード                                       |   | X | X | スロット1の読み取り専用、複数のスロットをサポートします。 コントローラーによって報告された FW 更新の粒度 |
-| リセットせずにファームウェアをアクティブ化する                              | X |   | X | |
-| メタデータの処理                                              | X |   |   | |
-| エンドツーエンドのデータ保護                                     | X |   |   | |
-| 電源管理のサポート                                       |   | X | X | 操作不可能な電源状態のサポート |
-| 自律的電源状態遷移                             | X |   | X | APST はサポートされますが、既定では無効になっています。 レジストリ設定 IdlePowerMode = 3 を使用して有効にすることができます。 |
-| D3 のサポート                                                     | X |   | X | D3 遷移をサポートしますが、既定では無効になっています。 レジストリ設定 IdlePowerMode = 2 を使用して有効にすることができます。 |
-| ランタイム D3 の移行                                         | X |   | X | 現在のスタンドアロンで選択されているプラットフォームに対して既定で有効になります |
-| ホスト制御の温度管理                             | X |   | X | IOCTL_STORAGE_QUERY_PROPERTY を通じて機能を取得し、を使用して機能を設定する IOCTL_STORAGE_SET_PROPERTY |
-| 仮想化の機能強化                                    | X |   |   | |
-| ソフトウェアエミュレーションの Doorbell Stride                         |   | X |   | |
-| 標準ベンダー固有のコマンド形式                        |   | X |   | |
-| 予約                                                   | X |   |   | |
-| ホストメモリバッファーのサポート                                     | X |   | X | |
-| 再生の保護されたメモリブロックのサポート                          | X |   |   | |
-| デバイスのセルフテスト                                               | X |   | X | サポート対象 IOCTL_STORAGE_PROTOCOL_COMMAND |
-| 名前空間の管理/添付ファイルコマンドのサポート                  | X |   | X | WinPE モードの IOCTL_STORAGE_PROTOCOL_COMMAND でサポートされます。 |
-| ブートパーティション                                                | X |   |   | |
-| テレメトリホスト/コントローラーが開始したログページのサポート           | X |   | X | IOCTL_SCSI_PASS_THROUGH でサポートされています。これは、コマンド SCSIOP_READ_DATA_BUFF16 をバッファーモードで READ_BUFFER_MODE_ERROR_HISTORY |
-| サニタイズ操作                                            | X |   |   | |
-| 復旧レベルの読み取り                                            | X |   |   | |
-| 耐久性のあるグループ                                               | X |   | X | 情報は、を使用して取得でき IOCTL_STORAGE_QUERY_PROPERTY |
-| 予測可能な待機時間モード                                       | X |   |   | |
-| 名前空間の書き込み保護                                     | X |   |   | |
-| 非対称名前空間のアクセスレポート                          | X |   |   | |
-| LBA 状態の取得                                                 | X |   |   | |
-| SQ の関連付け                                                | X |   |   | |
-| ベンダ固有の情報の Uuid                          | X |   |   | |
-| 名前空間の最適な IO 境界                                  | X |   | X | |
-| I/o サイズとアラインメントの準拠によるパフォーマンスの向上 | X |   |   | 現在、NPWG、NPWA、NPDG、NPWA、および NOWS はサポートされていません。 |
-| ディレクティブ                                                     | X |   | X | ストリームと識別ディレクティブをサポートします。 |
-|                                                                |   |   |   | |
-| バージョンの準拠                                             |   | X | X | バージョン < のコンプライアンス = 1.4 |
-| 推奨されるアービトレーションバースト                                  |   | X | X | ユーザーは、レジストリキー ArbitrationBurst を使用して、コントローラーで報告された値とは別の値を設定できます。 |
-| コントローラーマルチパス IO                                       | X |   |   | |
-| 名前空間の共有機能                                 | X |   |   | |
-| 最大データ転送サイズのサポート                             | X |   | X | |
-| ランタイム D3 待機時間                                             | X |   | X | |
-| Namespace 属性通知イベント                              | X |   | X | 変更ログに基づいてイベントをログに記録し、名前空間 reenumeration をトリガーします |
-| ファームウェアのアクティブ化に関する通知イベント                              | X |   | X | イベントをログに記録し、ログページを読む |
-| 耐久性グループイベント集計ログページ通知イベント         | X |   |   | |
-| コントローラー属性                                          | X |   | X | 非運用電源状態の制限モードと NVM セットが確認され、使用されています |
-| NVM セット                                                       | X |   | X | |
-| FRU グローバル一意識別子                                 | X |   |   | |
-| セキュリティ送信/セキュリティ受信サポート                         | X |   | X | |
-| NVM サポートの形式                                             | X |   | X | SCSI のサニタイズによるサポート |
-| NVMe-MI Send と NVMe-MI 受信                               | X |   | X | WinPE モードの IOCTL_STORAGE_PROTOCOL_COMMAND でサポートされます。 |
-| Doorbell バッファー構成のサポート                                 | X |   |   | |
-| 指定された制限付きの中止コマンドサポート                    |   | X |   | |
-| 非同期イベント要求のサポート                             |   | X | X | イベント数が4個に制限されています |
-| スマートログページのサポート                                         | X |   | X | 名前空間ごとのログページのサポート |
-| サポートされているコマンドと影響ログページのサポート                 | X |   | X | ベンダー固有のコマンドの実行を確認しました |
-| ログページの拡張データ                                     | X |   | X | サポート対象 IOCTL_STORAGE_QUERY_PROPERTY |
-| 永続的なイベントログのサポート                                   | X |   |   | |
-| ファームウェアライセンス認証の最大時間のサポート                       | X |   |   | リセットなしのファームウェアライセンス認証がサポートされている場合でも、現在サポートされていない |
-| ファームウェア更新の粒度                                    | X |   | X | |
-| キープアライブサポート                                             | X |   |   | |
-| 気温レポート                                             |   | X | X | WCTEMP と CCTEMP。 アクセス可能な IOCTL_STORAGE_QUERY_PROPERTY |
-| 複数の名前空間                                            | X |   | X | 名前空間のランタイム列挙をサポートします。 |
-| 比較コマンド                                                | X |   | X | WinPE モードの IOCTL_STORAGE_PROTOCOL_COMMAND でサポートされます。 |
-| 修正不可能コマンドの書き込み                                    | X |   |   | |
-| データセット管理コマンド                                     | X |   | X | |
-| ゼロの書き込み                                                   | X |   |   | |
-| 機能の保存オプションの設定                                       | X |   | X | 現在、VWC 永続的設定にのみ使用されています |
-| タイムスタンプ                                                      | X |   | X | |
-| Verify コマンド                                                 | X |   |   | |
-| 合成操作 (比較と書き込み)                           | X |   |   | |
-| 揮発性書き込みキャッシュ                                           | X |   | X | |
-| アトミック書き込み単位-標準                                       | X |   |   | |
-| NVMe の修飾名                                           | X |   |   | |
-| 名前空間「Device.storage.hd.thinprovisioning                                     | X |   | X | |
-| NVMe ブート                                                      |   | X | X | |
-| コントローラーの致命的な状態の条件                              | X |   | X | イベントをログに記録し、コントローラーの再初期化を続行する |
+| 機能  | サポートされる | 備考 |
+| :------- | :-------: | :------- |
+| ファームウェアの更新プロセス                                        | X |  スロット1読み取り専用、複数スロットのコミット/ダウンロードをサポートします。 コントローラーに対して、FW 更新の粒度を報告します。 |
+| リセットせずにファームウェアをアクティブ化する                              | X | |
+| メタデータの処理                                              |   | |
+| エンドツーエンドのデータ保護                                     |   | |
+| 電源管理                                               | X | 操作不可能な電源状態をサポートします。 自律電源状態の移行は、既定では無効になっています。 Runtime D3 transitions are enabled by default for selected platforms in Modern Stand-by. Host controlled thermal management Get and Set features supported through IOCTL_STORAGE_QUERY_PROPERTY and IOCTL_STORAGE_SET_PROPERTY, respectively. |
+| Virtualization Enhancements                                    |   | |
+| Doorbell Stride for Software Emulation                         |   | |
+| Standard Vendor Specific Command Format                        |   | |
+| Reservations                                                   |   | |
+| Host Memory Buffer                                             | X | |
+| Replay Protected Memory Block                                  |   | |
+| Device Self-test Operations                                    | X | No native support; feature available through IOCTL_STORAGE_PROTOCOL_COMMAND.|
+| 名前空間の管理                                           | X | No native support; feature available through IOCTL_STORAGE_PROTOCOL_COMMAND in WinPE mode. |
+| Boot Partitions                                                |   | |
+| 利用統計情報                                                      | X | Supported through IOCTL_SCSI_PASS_THROUGH using command SCSIOP_READ_DATA_BUFF16 with buffer mode as READ_BUFFER_MODE_ERROR_HISTORY. Also available through StorageAdapterProtocolSpecificProperty/StorageDeviceProtocolSpecificProperty from IOCTL_STORAGE_QUERY_PROPERTY. For host telemetry, this is also available through IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG. |
+| Sanitize Operations                                            | X | Supported through IOCTL_STORAGE_PROTOCOL_COMMAND in WinPE mode. |
+| Read Recovery Level                                            |   | |
+| Endurance Groups                                               | X | Information can be retrieved through IOCTL_STORAGE_QUERY_PROPERTY |
+| Predictable Latency Mode                                       |   | |
+| Namespace Write Protection                                     |   | |
+| Asymmetric Namespace Access Reporting                          |   | |
+| Get LBA Status                                                 |   | |
+| SQ Associations                                                |   | |
+| UUIDs for Vendor Specific Information                          |   | |
+| Improving Performance through I/O Size and Alignment Adherence | X | Supports Namespace Optimal IO Boundary (NOIOB). Currently doesn't support NPWG, NPWA, NPDG, NPDA, and NOWS |
+
+<!---  Everything commented out was provided by Vishal but is not in NVME Spec Section 8
+
+| Directives                                                     | X | Supports Stream and Identify directive |
+|                                                                |   | |
+| Version Compliance                                             | X | Compliance of version <= 1.4 |
+| Recommended Arbitration Burst                                  | X | User could set any value apart from controller reported value through registry key ArbitrationBurst |
+| Controller Multi-path IO                                       |   | |
+| Namespace sharing capabilities                                 |   | |
+| Maximum Data Transfer Size Support                             | X | |
+| Runtime D3 latency                                             | X | |
+| Namespace Attribute Notices event                              | X | Log the event and trigger namespace reenumeration based on change log |
+| Firmware Activation Notices event                              | X | Log the event and read the log page |
+| Endurance Group Event Aggregate Log Page notices event         |   | |
+| Controller Attributes                                          | X | Non-operational Power State Permissive Mode and NVM Sets are checked and used |
+| NVM Sets                                                       | X | |
+| FRU Globally Unique Identifier                                 |   | |
+| Security Send/Security Receive Support                         | X | |
+| Format NVM Support                                             | X | Supported through SCSI sanitize |
+| NVMe-MI Send and NVMe-MI Receive                               | X | Supported through IOCTL_STORAGE_PROTOCOL_COMMAND in WinPE mode |
+| Doorbell Buffer Config Support                                 |   | |
+| Abort Command Support with Specified Limits                    |   | |
+| Asynchronous Event Request Support                             | X | Supports limited to event count of 4 |
+| SMART Log Page Support                                         | X | Supports log page per Namespace |
+| Command Supported and Effects Log Page Support                 | X | Checked for vendor specific command execution |
+| Extended Data for Log Page                                     | X | Supported through IOCTL_STORAGE_QUERY_PROPERTY |
+| Persistent Event Log Support                                   |   | |
+| Firmware Activation maximum time support                       |   | Currently not supported even though firmware activation without reset is supported |
+| Firmware Update Granularity                                    | X | |
+| Keep Alive Support                                             |   | |
+| Temperature Report                                             | X | WCTEMP and CCTEMP. Accessible though IOCTL_STORAGE_QUERY_PROPERTY |
+| Multiple Namespaces                                            | X | Supports runtime enumeration of namespaces |
+| Compare Command                                                | X | Supported through IOCTL_STORAGE_PROTOCOL_COMMAND in WinPE mode |
+| Write Uncorrectable Command                                    |   | |
+| Dataset Management Command                                     | X | |
+| Write Zeroes                                                   |   | |
+| Set Features Save Option                                       | X | Currently only used for VWC persistent setting |
+| Timestamp                                                      | X | |
+| Verify Command                                                 |   | |
+| Fused Operations (Compare and Write)                           |   | |
+| Volatile Write Cache                                           | X | |
+| Atomic Write Unit Normal                                       |   | |
+| NVMe Qualified Names                                           |   | |
+| Namespace Thinprovisioning                                     | X | |
+| NVMe Boot                                                      | X | |
+| Controller Fatal Status Condition                              | X | Log the event and continue with controller re-initialization |
+--->
