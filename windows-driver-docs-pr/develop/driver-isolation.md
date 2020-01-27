@@ -1,12 +1,12 @@
 ---
 title: ドライバー パッケージの分離
 ms.date: 10/01/2019
-ms.openlocfilehash: 1da8fc165779b46c9bbbb05466cb9442ef0095f9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7c6c8824e143ffa893d79977bdd424263939ca16
+ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839615"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76706983"
 ---
 # <a name="driver-package-isolation"></a>ドライバー パッケージの分離
 
@@ -99,12 +99,12 @@ HKR,,ExampleValue,,%13%\ExampleFile.dll
 デバイス インターフェイスのレジストリの状態を読み取りおよび書き込みするには、使用しているプラットフォームに基づいて、次のオプションのうち 1 つを使用します。
 
 * [**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) (WDM)
-* [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keya) (ユーザーモード コード)
+* [**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/win32/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw) (ユーザーモード コード)
 * [INF AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) ディレクティブ。*add-interface-section* セクションから参照される [add-registry-section](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addinterface-directive) 内の HKR *reg-root* エントリを使用します。
 
 ### <a name="service-registry-state"></a>サービス レジストリの状態
 
-ドライバーおよび Win32 サービスの INF により設定されるレジストリの値は、[AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) セクション内に HKR 行を追加して、INF のサービス インストール セクション内でそのセクションを参照することにより、サービスの "Parameters" サブキーの下に保存する必要があります。  次に、例を示します。
+ドライバーおよび Win32 サービスの INF により設定されるレジストリの値は、[AddReg](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) セクション内に HKR 行を追加して、INF のサービス インストール セクション内でそのセクションを参照することにより、サービスの "Parameters" サブキーの下に保存する必要があります。  たとえば、次のように入力します。
 
 ```
 [ExampleDDInstall.Services]
@@ -124,7 +124,7 @@ HKR, Parameters, ExampleValue, 0x00010001, 1
 
 この状態の場所にアクセスするには、お使いのプラットフォームに基づいて次の関数のうちの 1 つを使用します。
 
-* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) (WDM)
+* [**IoOpenDriverRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendriverregistrykey) (WDM)
 * [**WdfDriverOpenParametersRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriveropenparametersregistrykey) (WDF)
 * **GetServiceRegistryStateKey** (Win32 サービス)
 
@@ -141,8 +141,7 @@ Win32 とドライバー サービスは両方とも、自分自身の状態の�
 
 自身の内部状態の値にアクセスするには、サービスは次のオプションの 1 つを使用します。 
 
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (WDM)
-* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (KMDF)
+* [**IoGetDriverDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdriverdirectory) (WDM と KMDF)
 * [**WdfDriverRetrieveDriverDataDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverretrievedriverdatadirectorystring) (UMDF)
 * **GetServiceDirectory** (Win32 サービス)
 
