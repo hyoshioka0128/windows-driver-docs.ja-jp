@@ -842,6 +842,8 @@
           href: native-objects-in-javascript-extensions.md
         - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト - デバッガー オブジェクトの詳細
           href: native-objects-in-javascript-extensions-debugger-objects.md
+        - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト - 型オブジェクト
+          href: native-objects-in-javascript-extensions-type-objects.md
         - name: JavaScript 拡張機能のネイティブ デバッガー オブジェクト - 設計に関する考慮事項
           href: native-objects-in-javascript-extensions-design-considerations.md
     - name: NatVis のネイティブ デバッガー オブジェクト
