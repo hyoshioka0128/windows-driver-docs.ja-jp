@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x5 INVALID_PROCESS_ATTACH_ATTEMPT
-description: INVALID_PROCESS_ATTACH_ATTEMPT のバグ チェックでは、0x00000005 の値を持ちます。
+title: バグチェック 0x5 INVALID_PROCESS_ATTACH_ATTEMPT
+description: INVALID_PROCESS_ATTACH_ATTEMPT バグチェックの値は0x00000005 です。
 ms.assetid: 72efb88f-1bf7-4552-b44e-4ecb04754b7d
 keywords:
-- バグ チェック 0x5 INVALID_PROCESS_ATTACH_ATTEMPT
+- バグチェック 0x5 INVALID_PROCESS_ATTACH_ATTEMPT
 - INVALID_PROCESS_ATTACH_ATTEMPT
 ms.date: 05/23/2017
 topic_type:
@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ca6b85bd0a4766c388909cc92866b312dd2231
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 663aabde692a1c0e27347914f589c328aa9113c5
+ms.sourcegitcommit: 70c8e83900015eaea013fb742e5e137cfd08ca98
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519384"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885357"
 ---
-# <a name="bug-check-0x5-invalidprocessattachattempt"></a>バグ チェック 0x5:無効な\_プロセス\_アタッチ\_試行
+# <a name="bug-check-0x5-invalid_process_attach_attempt"></a>バグチェック 0x5: 無効な\_プロセス\_アタッチ\_試行
 
 
-無効な\_プロセス\_アタッチ\_試行のバグ チェックが 0x00000005 の値を持ちます。 これは、通常、スレッドは許可されていませんかのような状況でのプロセスにアタッチされたことを示します。 たとえば、このバグ チェックが場合に発生する**KeAttachProcess** (これは有効ではありません)、接続されている状態で特定の関数を呼び出すスレッドから返された場合、スレッドが既に (これは、法律ではありません)、プロセスにアタッチされている、またはときに呼び出されました
+無効な\_プロセス\_アタッチ\_試行のバグチェックの値が0x00000005 になっています。 これは、通常、許可されていない状況でスレッドがプロセスにアタッチされたことを示します。 たとえば、スレッドが既にプロセスにアタッチされているときに**Keattachprocess**が呼び出された (無効な) 場合、または特定の関数から返されたスレッドがアタッチされた状態 (無効) である場合に、このバグチェックが発生する可能性があります。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="invalidprocessattachattempt-parameters"></a>無効な\_プロセス\_アタッチ\_試行パラメーター
+## <a name="invalid_process_attach_attempt-parameters"></a>無効な\_プロセス\_\_試行パラメーターをアタッチしています
 
 
 <table>
@@ -47,20 +47,20 @@ ms.locfileid: "67519384"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1</p></td>
-<td align="left"><p>ターゲット プロセスでは、ディスパッチャー オブジェクトへのポインターのかどうか、スレッドは既にまたは接続された、元のプロセスのオブジェクトへのポインター。</p></td>
+<td align="left"><p>1 で保護されたプロセスとして起動されました</p></td>
+<td align="left"><p>ターゲットプロセスのディスパッチャーオブジェクトへのポインター。スレッドが既にアタッチされている場合は、元のプロセスのオブジェクトへのポインター。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>2</p></td>
-<td align="left"><p>現在のスレッドに現在アタッチされているプロセスのディスパッチャー オブジェクトへのポインター。</p></td>
+<td align="left"><p>2 で保護されたプロセスとして起動されました</p></td>
+<td align="left"><p>現在のスレッドが現在アタッチされているプロセスのディスパッチャーオブジェクトへのポインター。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>3</p></td>
+<td align="left"><p>3 で保護されたプロセスとして起動されました</p></td>
 <td align="left"><p>スレッドの APC 状態インデックスの値。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>4</p></td>
-<td align="left"><p>0 以外の値は、現在のプロセッサの DPC が実行されていることを示します。</p></td>
+<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>0以外の値は、DPC が現在のプロセッサで実行されていることを示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,8 @@ ms.locfileid: "67519384"
 <a name="remarks"></a>注釈
 -------
 
-このバグ チェックは、ドライバーを呼び出す場合に発生することができます、 **KeAttachProcess**関数と、スレッドは既に別のプロセスにアタッチされています。 使用することをお勧め、 **KeStackAttachProcess**関数。 現在のスレッドが既に別のプロセスにアタッチされている場合、 **KeStackAttachProcess**新しいプロセスに現在のスレッドをアタッチする前に、関数が現在の APC 状態を保存します。
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+このバグチェックは、ドライバーが**Keattachprocess**関数を呼び出し、スレッドが既に別のプロセスにアタッチされている場合に発生する可能性があります。 **Kestackattachprocess**関数を使用することをお勧めします。 現在のスレッドが既に別のプロセスにアタッチされている場合、 **Kestackattachprocess**関数は、現在のスレッドを新しいプロセスにアタッチする前に、現在の APC の状態を保存します。
 
  
 

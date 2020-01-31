@@ -9,19 +9,19 @@ keywords:
 - コンテキストとデータフローの関連付け (WDK Windows フィルタリングプラットフォーム)
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 92dda65f7dce594d8e7bc0535a5b115a80ae3326
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 59476e85f694924ef77aa5d3eb2475fa4ca08e63
+ms.sourcegitcommit: 05c2f94fa2fe77276ca7000c1ff8e1bbe7a67b6a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838233"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76892193"
 ---
 # <a name="associating-context-with-a-data-flow"></a>コンテキストとデータ フローの関連付け
 
 
 データフローをサポートするフィルター処理レイヤーでデータを処理するコールアウトの場合、コールアウトドライバーは、コンテキストを各データフローに関連付けることができます。 このようなコンテキストは、フィルターエンジンに対して非透過的です。 コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、このコンテキストを使用して、次にそのデータフローのフィルターエンジンによって呼び出されたときのデータフローに固有の状態情報を保存できます。 フィルターエンジンは、 *flowcontext*パラメーターを使用して、コールアウトの classid 関数にこのコンテキストを渡します。 コンテキストがデータフローに関連付けられていない場合、 *Flowcontext*パラメーターは0になります。
 
-コンテキストをデータフローに関連付けるために、コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)は、 [**FwpsFlowAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowassociatecontext0)関数を呼び出します。 次に、例を示します。
+コンテキストをデータフローに関連付けるために、コールアウトの[classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)は、 [**FwpsFlowAssociateContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowassociatecontext0)関数を呼び出します。 たとえば次のようになります。
 
 ```cpp
 // Context structure to be associated with data flows
@@ -101,7 +101,7 @@ VOID NTAPI
 }
 ```
 
-コンテキストが既にデータフローに関連付けられている場合、新しいコンテキストがデータフローに関連付けられるようにするには、まずそのコンテキストを削除する必要があります。 データフローからコンテキストを削除するために、コールアウトの[classid の classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、 [**FwpsFlowRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowremovecontext0)関数を呼び出します。 次に、例を示します。
+コンテキストが既にデータフローに関連付けられている場合、新しいコンテキストがデータフローに関連付けられるようにするには、まずそのコンテキストを削除する必要があります。 データフローからコンテキストを削除するために、コールアウトの[classid の classid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)関数は、 [**FwpsFlowRemoveContext0**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fwpsk/nf-fwpsk-fwpsflowremovecontext0)関数を呼び出します。 たとえば次のようになります。
 
 ```C++
 // Context structure to be associated with data flows
@@ -137,7 +137,7 @@ VOID NTAPI
      flowHandle = inMetaValues->flowHandle;
 
     // Check whether there is a context associated with the data flow
-     if (flowContext != 0) 
+     if (flowHandle != 0) 
      {
         // Get a pointer to the flow context structure
         context = (PFLOW_CONTEXT)flowContext;

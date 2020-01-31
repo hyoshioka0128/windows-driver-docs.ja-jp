@@ -13,12 +13,12 @@ keywords:
 - トレースメッセージフォーマットファイル WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c0c4c513d3c1a65db4da128850bd33256ddc80
-ms.sourcegitcommit: 79490c5067a50727f928f213c16c5f8f62898b60
+ms.openlocfilehash: a4bc59edb1a22e863a2cc68a4fb8a3523395b3b9
+ms.sourcegitcommit: 6997fcbd0ad57e189c4b7c6b490632d1d53b6b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74119513"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822820"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上の DTrace
 
@@ -39,7 +39,7 @@ DTrace の詳細については、ケンブリッジの大学の[OpenDTrace 仕�
 
 一連の便利なスクリプトは、 [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit)で入手できます。
 
-[DTrace.Org](https://dtrace.org)は、元の開発者の多くがヒントと秘訣を提供する web サイトです。
+[DTrace.Org](http://dtrace.org)は、元の開発者の多くがヒントと秘訣を提供する web サイトです。
 
 Illumos[動的トレースガイド](http://dtrace.org/guide/bookinfo.html)では、DTrace を使用してシステムの動作を監視、デバッグ、調整する方法について説明します。
 
@@ -403,7 +403,7 @@ C:\> dtrace -qn "pid$target:::entry { @k[probemod] = count();} tick-10s{printa(@
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [DTrace の Windows プログラミング](dtrace-programming.md)
 
