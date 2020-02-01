@@ -1,80 +1,80 @@
 ---
 title: Windows デバッガーを使用したマネージド コードのデバッグ
-description: Windows デバッガー (WinDbg、CDB、NTSD) をマネージ コードを含む対象アプリケーションをデバッグするを使用することができます。
+description: Windows デバッガー (WinDbg、CDB、NTSD) を使用して、マネージコードを含むターゲットアプリケーションをデバッグできます。
 ms.assetid: eb4cc883-71ac-4a57-8654-07c3120310c0
-keywords: デバッグ、デバッグ、Windbg、マネージ コードのデバッグ、.NET 共通言語ランタイム、共通言語ランタイム、CLR、JIT コンパイラ、JITted コード
+keywords: デバッグ、デバッグ、Windbg、マネージコードデバッグ、.NET 共通言語ランタイム、共通言語ランタイム、CLR、JIT コンパイラ、Just-in-time code
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edea69504ef1085bb2df54934350426a28e1a01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 64b25e9c0822a8f5e4350d9dc844bafcb0541c65
+ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350608"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76910350"
 ---
 # <a name="debugging-managed-code-using-the-windows-debugger"></a>Windows デバッガーを使用したマネージド コードのデバッグ
 
 
-Windows デバッガー (WinDbg、CDB、NTSD) をマネージ コードを含む対象アプリケーションをデバッグするを使用することができます。 マネージ コードのデバッグに読み込む必要がある、 [SOS デバッガー拡張 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)およびデータ アクセス コンポーネント (mscordacwks.dll)。
+Windows デバッガー (WinDbg、CDB、NTSD) を使用して、マネージコードを含むターゲットアプリケーションをデバッグできます。 マネージコードをデバッグするには、 [sos デバッガー拡張 (sos)](https://go.microsoft.com/fwlink/p/?linkid=223345)とデータアクセスコンポーネント (mscordacwks) を読み込む必要があります。
 
-Windows デバッガーは、Visual Studio デバッガーとは別です。 Windows デバッガーと Visual Studio デバッガーの違いについては、次を参照してください。 [Windows デバッグ](index.md)します。
+Windows デバッガーは、Visual Studio デバッガーとは別のものです。 Windows デバッガーと Visual Studio デバッガーの違いについては、「 [Windows デバッグ](index.md)」を参照してください。
 
-## <a name="span-idintroduction-to-managed-codespanspan-idintroductiontomanagedcodespanintroduction-to-managed-code"></a><span id="introduction-to-managed-code"></span><span id="INTRODUCTION_TO_MANAGED_CODE"></span>マネージ コードの概要
+## <a name="span-idintroduction-to-managed-codespanspan-idintroduction_to_managed_codespanintroduction-to-managed-code"></a><span id="introduction-to-managed-code"></span><span id="INTRODUCTION_TO_MANAGED_CODE"></span>マネージコードの概要
 
 
-Microsoft .NET 共通言語ランタイム (CLR) とマネージ コードが実行されます。 マネージ コード アプリケーションでは、コンパイラが生成するバイナリ コードはで Microsoft Intermediate Language (MSIL)、プラットフォームに依存しません。
+マネージコードは、Microsoft .NET 共通言語ランタイム (CLR) と共に実行されます。 マネージコードアプリケーションでは、コンパイラによって生成されるバイナリコードは、プラットフォームに依存しない Microsoft 中間言語 (MSIL) に含まれています。
 
-マネージ コードを実行すると、ランタイムは、プラットフォーム固有のネイティブ コードを生成します。 MSIL からネイティブ コードを生成するプロセスと呼ばれます *- イン タイム (JIT) コンパイル*します。 特定のメソッドの MSIL には、JIT コンパイラがコンパイル後、メソッドのネイティブ コードは、メモリに残ります。 たびに、このメソッドは、後で呼び出されると、ネイティブ コードが実行され、JIT コンパイラが関与する必要はありません。
+マネージコードを実行すると、ランタイムによって、プラットフォーム固有のネイティブコードが生成されます。 MSIL からネイティブコードを生成するプロセスは、 *just-in-time (JIT) コンパイル*と呼ばれます。 JIT コンパイラが特定のメソッドの MSIL をコンパイルした後、メソッドのネイティブコードはメモリに残ります。 このメソッドが後で呼び出されるときは常に、ネイティブコードが実行され、JIT コンパイラが必要になることはありません。
 
-さまざまなソフトウェアの製作者によって製造するいくつかのコンパイラを使用して、マネージ コードをビルドすることができます。 具体的には、Microsoft Visual Studio がなど複数のさまざまな言語からマネージ コードをビルドできますC#、Visual Basic、JScript、および C++ マネージ拡張とします。
+さまざまなソフトウェアプロデューサーによって製造された複数のコンパイラを使用して、マネージコードをビルドできます。 特に、Microsoft Visual Studio はC#、、Visual Basic、JScript など、マネージ拡張をC++使用して、さまざまな言語のマネージコードをビルドできます。
 
-.NET Framework が更新されるたびに、CLR は更新されません。 たとえば、バージョン 2.0、3.0、および .NET Framework CLR のすべての使用バージョン 2.0 の 3.5。 次の表は、バージョンと .NET Framework の各バージョンによって使用されている CLR のファイル名を示します。
+CLR は、.NET Framework が更新されるたびに更新されることはありません。 たとえば、.NET Framework のバージョン2.0、3.0、3.5 では、すべて CLR のバージョン2.0 が使用されます。 次の表は、.NET Framework の各バージョンで使用される CLR のバージョンとファイル名を示しています。
 
-| .NET framework のバージョン | CLR のバージョン | CLR のファイル名 |
+| .NET Framework のバージョン | CLR バージョン | CLR ファイル名 |
 |------------------------|-------------|--------------|
 | 1.1                    | 1.1         | mscorwks.dll |
 | 2.0                    | 2.0         | mscorwks.dll |
 | 3.0                    | 2.0         | mscorwks.dll |
 | 3.5                    | 2.0         | mscorwks.dll |
-| 4.0                    | 4.0         | clr.dll      |
-| 4.5                    | 4.0         | clr.dll      |
+| 4.0                    | 4.0         | clr .dll      |
+| 4.5                    | 4.0         | clr .dll      |
 
  
 
-## <a name="span-iddebugging-managedcodespanspan-iddebuggingmanagedcodespandebugging-managed-code"></a><span id="debugging-managed_code"></span><span id="DEBUGGING_MANAGED_CODE"></span>マネージ コードのデバッグ
+## <a name="span-iddebugging-managed_codespanspan-iddebugging_managed_codespandebugging-managed-code"></a><span id="debugging-managed_code"></span><span id="DEBUGGING_MANAGED_CODE"></span>マネージコードのデバッグ
 
 
-マネージ コードをデバッグするには、デバッガーはこれら 2 つのコンポーネントを読み込む必要があります。
+マネージコードをデバッグするには、デバッガーでこれらの2つのコンポーネントを読み込む必要があります。
 
--   データ アクセス コンポーネント (DAC) (mscordacwks.dll)
--   [SOS デバッガー拡張 (sos.dll)](https://go.microsoft.com/fwlink/p/?linkid=223345)
+-   データアクセスコンポーネント (DAC) (mscordacwks)
+-   [SOS デバッガー拡張 (sos)](https://go.microsoft.com/fwlink/p/?linkid=223345)
 
-**注**  すべてのバージョンの .NET Framework では、DAC のファイル名は、mscordacwks.dll、SOS デバッグ拡張機能のファイル名は sos.dll を読み込みます。
+**注**  .NET Framework のすべてのバージョンでは、DAC のファイル名は mscordacwks であり、sos デバッグ拡張機能のファイル名は sos です。
 
  
 
-### <a name="span-idgetting-the-sos-debugging-extensionspanspan-idgettingthesosdebuggingextensionspangetting-the-sos-debugging-extension-sosdll"></a><span id="getting-the-sos-debugging-extension"></span><span id="GETTING_THE_SOS_DEBUGGING_EXTENSION"></span>SOS デバッガー拡張 (sos.dll) を取得します。
+### <a name="span-idgetting-the-sos-debugging-extensionspanspan-idgetting_the_sos_debugging_extensionspangetting-the-sos-debugging-extension-sosdll"></a><span id="getting-the-sos-debugging-extension"></span><span id="GETTING_THE_SOS_DEBUGGING_EXTENSION"></span>SOS デバッガー拡張 (sos) を取得する
 
-SOS デバッガー拡張 (sos.dll) ファイルは、現在のバージョンの Windows のツールをデバッグには含まれません。
+Windows 用デバッグツールの現在のバージョンには、SOS デバッガー拡張 (sos .dll) ファイルは含まれていません。
 
-.NET Framework バージョン 2.0 以降では、sos.dll が .NET Framework のインストールに含まれています。
+.NET Framework バージョン2.0 以降では、.NET Framework のインストールに sos が含まれています。
 
-バージョン 1。*x* .NET Framework の sos.dll 記載されていない .NET Framework のインストール。 .NET Framework 1 sos.dll を取得します。*x*Windows 7 のデバッグ ツールの Windows の 32 ビット バージョンをダウンロードします。
+バージョン1の場合.NET Framework の*x*は、.NET Framework のインストールには含まれていません。 .NET Framework 1 の sos を取得します。*x*では、windows 7 の Windows 7 デバッグツールの32ビット版をダウンロードします。
 
-Windows 7 のデバッグ ツールの Windows はこれら 2 つの場所で提供される、Windows SDK for Windows 7 に含まれます。
+Windows 用の windows 7 デバッグツールは、windows 7 の Windows SDK に含まれています。これは、次の2つの場所で利用できます。
 
--   [Windows SDK for Windows 7 および .NET Framework 4.0](https://go.microsoft.com/fwlink/p?LinkId=320327)
--   [Windows SDK for Windows 7 および .NET Framework 4.0 (ISO)](https://go.microsoft.com/fwlink/p?LinkId=320328)
+-   [Windows 7 および .NET Framework 4.0 の Windows SDK](https://go.microsoft.com/fwlink/p?LinkId=320327)
+-   [Windows 7 および .NET Framework 4.0 (ISO) の Windows SDK](https://go.microsoft.com/fwlink/p?LinkId=320328)
 
-X64 を実行している場合のバージョンの Windows を使用して、 [ISO](https://go.microsoft.com/fwlink/p?LinkID=320328)サイト、SDK の 32 ビット バージョンが必要なことを指定できるようにします。 Sos.dll は、Windows 7 のデバッグ ツールの Windows の 32 ビット バージョンにのみ含まれます。
+X64 バージョンの Windows を実行している場合は、32ビットバージョンの SDK を使用するように指定できるように、 [ISO](https://go.microsoft.com/fwlink/p?LinkID=320328)サイトを使用します。 Sos は、windows 7 の Windows 7 デバッグツールの32ビット版にのみ含まれています。
 
-### <a name="span-idloadingmscordacwksdllandsosdlllivedebuggingspanspan-idloadingmscordacwksdllandsosdlllivedebuggingspanspan-idloadingmscordacwksdllandsosdlllivedebuggingspanloading-mscordacwksdll-and-sosdll-live-debugging"></a><span id="Loading_mscordacwks.dll_and_sos.dll__live_debugging_"></span><span id="loading_mscordacwks.dll_and_sos.dll__live_debugging_"></span><span id="LOADING_MSCORDACWKS.DLL_AND_SOS.DLL__LIVE_DEBUGGING_"></span>読み込み mscordacwks.dll と sos.dll (ライブ デバッグ)
+### <a name="span-idloading_mscordacwksdll_and_sosdll__live_debugging_spanspan-idloading_mscordacwksdll_and_sosdll__live_debugging_spanspan-idloading_mscordacwksdll_and_sosdll__live_debugging_spanloading-mscordacwksdll-and-sosdll-live-debugging"></a><span id="Loading_mscordacwks.dll_and_sos.dll__live_debugging_"></span><span id="loading_mscordacwks.dll_and_sos.dll__live_debugging_"></span><span id="LOADING_MSCORDACWKS.DLL_AND_SOS.DLL__LIVE_DEBUGGING_"></span>Mscordacwks と sos を読み込んでいます (ライブデバッグ)
 
-デバッガーとデバッグ中のアプリケーションが同じコンピューターで実行されていることを想定しています。 アプリケーションで使用されている .NET Framework がコンピューターにインストールされているし、デバッガーを使用します。
+デバッガーとデバッグ中のアプリケーションが同じコンピューター上で実行されているとします。 その後、アプリケーションによって使用されている .NET Framework がコンピューターにインストールされ、デバッガーで使用できるようになります。
 
-デバッガーでは、マネージ コード アプリケーションを使用している CLR のバージョンと同じである、DAC のバージョンを読み込む必要があります。 ビット (32 ビットまたは 64 ビット) にも一致する必要があります。 DAC (mscordacwks.dll) .NET Framework が付属します。 正しいバージョンの DAC を読み込むには、マネージ コード アプリケーションにデバッガーをアタッチし、このコマンドを入力します。
+デバッガーは、マネージコードアプリケーションが使用している CLR のバージョンと同じバージョンの DAC を読み込む必要があります。 ビット (32 ビットまたは64ビット) も一致する必要があります。 DAC (mscordacwks) には .NET Framework が付属しています。 正しいバージョンの DAC を読み込むには、デバッガーをマネージコードアプリケーションにアタッチし、このコマンドを入力します。
 
-**.cordll -ve -u -l**
+**. cordll-ve-u-l**
 
 出力は次のようになります。
 
@@ -83,11 +83,11 @@ CLRDLL: Loaded DLL C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscordacwks.d
 CLR DLL status: Loaded DLL C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscordacwks.dll
 ```
 
-Mscordacwks.dll のバージョンが、アプリケーションを使用している CLR のバージョンと一致することを確認するには、読み込まれた CLR モジュールに関する情報を表示するには、次のコマンドのいずれかを入力します。
+Mscordacwks のバージョンが、アプリケーションが使用している CLR のバージョンと一致することを確認するには、次のコマンドのいずれかを入力して、読み込まれた CLR モジュールに関する情報を表示します。
 
-**lmv mclr** (用、CLR のバージョン 4.0)
+**lmv mclr** (CLR のバージョン 4.0)
 
-**lmv mscorwks** (バージョン 1.0 または 2.0 CLR の) の
+**lmv mscorwks.dll** (CLR のバージョン1.0 または 2.0)
 
 出力は次のようになります。
 
@@ -98,41 +98,41 @@ start             end                 module name
 ...
 ```
 
-前の例では、CLR (clr.dll) のバージョンが DAC (mscordacwks.dll) のバージョンと一致することに注意してください: v4.0.30319 します。 両方のコンポーネントが 64 ビットにも注目してください。
+前の例では、CLR (clr .dll) のバージョンが DAC のバージョン (mscordacwks) と一致することに注意してください: v v4.0.30319。 また、両方のコンポーネントが64ビットであることにも注意してください。
 
-使用すると[ **.cordll** ](-cordll--control-clr-debugging-.md) DAC を読み込むには、SOS デバッガー拡張 (sos.dll) を自動的に読み込まれます場合があります。 Sos.dll を自動的に読み込まれますが場合、は、読み込むことをこれらのコマンドのいずれかを使用できます。
+[**Cordll**](-cordll--control-clr-debugging-.md)を使用して DAC を読み込むと、sos デバッガー拡張 (sos) が自動的に読み込まれる場合があります。 Sos が自動的に読み込まれない場合は、これらのコマンドのいずれかを使用して、それを読み込むことができます。
 
-**.loadby sos clr** (用、CLR のバージョン 4.0)
+**. loadby sos clr** (clr のバージョン 4.0)
 
-**.loadby sos mscorwks** (バージョン 1.0 または 2.0 CLR の) の
+**. loadby sos mscorwks.dll** (CLR のバージョン1.0 または 2.0)
 
-使用する代替手段として[ **.loadby**](-load---loadby--load-extension-dll-.md)、使用することができます **.load**します。 たとえば、64 ビット CLR のバージョン 4.0 を読み込むには、次のようなコマンドを入力します。
+[**Loadby**](-load---loadby--load-extension-dll-.md)を使用する代わりに、 **load**を使用することもできます。 たとえば、64ビット CLR のバージョン4.0 を読み込むには、次のようなコマンドを入力します。
 
-**.load c:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\sos.dll**
+**. load C:\\Windows\\Microsoft.NET\\Framework64\\v v4.0.30319\\sos .dll**
 
-上記の出力で SOS デバッガー拡張 (sos.dll) のバージョンが、CLR および DAC のバージョンと一致することに注意してください: v4.0.30319 します。 次の 3 つのすべてのコンポーネントが 64 ビットにも注目してください。
+上記の出力では、SOS デバッガー拡張 (sos) のバージョンが CLR のバージョンと DAC: v v4.0.30319 と一致していることがわかります。 また、3つのコンポーネントすべてが64ビットであることにも注目してください。
 
-### <a name="span-idloadingmscordacwksdllandsosdlldumpfilespanspan-idloadingmscordacwksdllandsosdlldumpfilespanspan-idloadingmscordacwksdllandsosdlldumpfilespanloading-mscordacwksdll-and-sosdll-dump-file"></a><span id="Loading_mscordacwks.dll_and_sos.dll__dump_file_"></span><span id="loading_mscordacwks.dll_and_sos.dll__dump_file_"></span><span id="LOADING_MSCORDACWKS.DLL_AND_SOS.DLL__DUMP_FILE_"></span>Mscordacwks.dll と sos.dll (ダンプ ファイル) の読み込み
+### <a name="span-idloading_mscordacwksdll_and_sosdll__dump_file_spanspan-idloading_mscordacwksdll_and_sosdll__dump_file_spanspan-idloading_mscordacwksdll_and_sosdll__dump_file_spanloading-mscordacwksdll-and-sosdll-dump-file"></a><span id="Loading_mscordacwks.dll_and_sos.dll__dump_file_"></span><span id="loading_mscordacwks.dll_and_sos.dll__dump_file_"></span><span id="LOADING_MSCORDACWKS.DLL_AND_SOS.DLL__DUMP_FILE_"></span>Mscordacwks と sos を読み込んでいます (ダンプファイル)
 
-デバッガーを使用する (マネージ コード アプリケーション) の別のコンピューターで作成されたダンプ ファイルを開くとします。
+デバッガーを使用して、別のコンピューターで作成されたダンプファイル (マネージコードアプリケーション) を開くとします。
 
-デバッガーでは、マネージ コード アプリケーションが他のコンピューターを使用して CLR のバージョンと同じである、DAC のバージョンを読み込む必要があります。 ビット (32 ビットまたは 64 ビット) にも一致する必要があります。
+デバッガーは、マネージコードアプリケーションが他のコンピューターで使用していた CLR のバージョンと同じバージョンの DAC を読み込む必要があります。 ビット (32 ビットまたは64ビット) も一致する必要があります。
 
-DAC (mscordacwks.dll) が付属して、.NET Framework が、デバッガーを実行しているコンピューターにインストールされている .NET Framework の正しいバージョンがないことを仮定します。 3 つのオプションがあります。
+DAC (mscordacwks) には .NET Framework が付属していますが、デバッガーを実行しているコンピューターに適切なバージョンの .NET Framework がインストールされていないことを前提としています。 3つのオプションがあります。
 
--   シンボル サーバーから DAC を読み込みます。 たとえば、シンボル パスでマイクロソフトのパブリック シンボル サーバーを含めることができます。
--   デバッガーを実行しているコンピューターに .NET Framework の正しいバージョンをインストールします。
--   (別のコンピューター) にダンプ ファイルを作成したユーザーから mscordacwks.dll の正しいバージョンを取得し、手動でデバッガーを実行しているコンピューターにコピーします。
+-   シンボルサーバーから DAC を読み込みます。 たとえば、シンボルパスに Microsoft のパブリックシンボルサーバーを含めることができます。
+-   デバッガーを実行しているコンピューターに正しいバージョンの .NET Framework をインストールします。
+-   ダンプファイルを作成したユーザー (別のコンピューター上) から正しいバージョンの mscordacwks を取得し、デバッガーを実行しているコンピューターに手動でコピーします。
 
-ここで Microsoft のパブリック シンボル サーバーを使用してについて説明します。
+ここでは、Microsoft のパブリックシンボルサーバーを使用する方法について説明します。
 
-これらのコマンドを入力します。
+次のコマンドを入力します。
 
-**.sympath + srv\\*** (シンボル サーバーの追加シンボル パスにします)。
+**. sympath + srv\\** * (シンボルサーバーをシンボルパスに追加します。)
 
-**! ノイズの多い sym**
+**! 記号のノイズ**
 
-**.cordll -ve -u -l**
+**. cordll-ve-u-l**
 
 出力は次のようになります。
 
@@ -156,13 +156,13 @@ Automatically loaded SOS Extension
 ...
 ```
 
-上記の出力で、デバッガーが mscordacwks.dll と c: ローカル コンピューター上の sos.dll を最初に検索を確認できます\\Windows\\Microsoft.NET およびシンボルのキャッシュ (c:\\ProgramData\\dbg\\sym)。 デバッガー、ローカル コンピューター上のファイルの正しいバージョンが見つかりませんでした、ときに、それらから取得、パブリック シンボル サーバー。
+前の出力では、デバッガーが C:\\Windows\\Microsoft.NET とシンボルキャッシュ (C:\\ProgramData\\dbg\\sym) で、ローカルコンピューター上で mscordacwks と sos を最初に検索したことがわかります。 デバッガーがローカルコンピューター上の正しいバージョンのファイルを見つけられなかった場合、そのファイルをパブリックシンボルサーバーから取得します。
 
-Mscordacwks.dll のバージョンが、アプリケーションが使用している CLR のバージョンと一致することを確認するには、読み込まれた CLR モジュールに関する情報を表示するには、次のコマンドのいずれかを入力します。
+Mscordacwks のバージョンが、アプリケーションで使用していた CLR のバージョンと一致することを確認するには、次のコマンドのいずれかを入力して、読み込まれた CLR モジュールに関する情報を表示します。
 
-**lmv mclr** (用、CLR のバージョン 4.0)
+**lmv-mclr** (CLR のバージョン 4.0)
 
-**lmv mscorwks** (バージョン 1.0 または 2.0 CLR の) の
+**lmv** (CLR のバージョン1.0 または 2.0)
 
 出力は次のようになります。
 
@@ -173,11 +173,11 @@ start             end                 module name
 ...
 ```
 
-前の例では、CLR (clr.dll) のバージョンが DAC (mscordacwks.dll) のバージョンと一致することに注意してください: v4.0.30319 します。 両方のコンポーネントが 64 ビットにも注目してください。
+前の例では、CLR (clr .dll) のバージョンが DAC の製品バージョン (mscordacwks) と一致することに注意してください: v v4.0.30319。 また、両方のコンポーネントが64ビットであることにも注意してください。
 
-### <a name="span-idusingthesosdebuggingextensionspanspan-idusingthesosdebuggingextensionspanspan-idusingthesosdebuggingextensionspanusing-the-sos-debugging-extension"></a><span id="Using_the_SOS_Debugging_Extension_"></span><span id="using_the_sos_debugging_extension_"></span><span id="USING_THE_SOS_DEBUGGING_EXTENSION_"></span>SOS デバッガー拡張を使用します。
+### <a name="span-idusing_the_sos_debugging_extension_spanspan-idusing_the_sos_debugging_extension_spanspan-idusing_the_sos_debugging_extension_spanusing-the-sos-debugging-extension"></a><span id="Using_the_SOS_Debugging_Extension_"></span><span id="using_the_sos_debugging_extension_"></span><span id="USING_THE_SOS_DEBUGGING_EXTENSION_"></span>SOS デバッガー拡張機能の使用
 
-SOS デバッガー拡張が正しく読み込まれたことを確認するには、入力、 [ **.chain** ](-chain--list-debugger-extensions-.md)コマンド。
+SOS デバッガー拡張が正しく読み込まれたことを確認するには、 [ **. chain**](-chain--list-debugger-extensions-.md)コマンドを入力します。
 
 ```dbgcmd
 0:000> .chain
@@ -190,17 +190,8 @@ Extension DLL chain:
 ...
 ```
 
-SOS デバッガー拡張をテストするには、入力 **! sos.help**します。 SOS デバッグ拡張機能によって提供されるコマンドのいずれかを再試行してください。 たとえば、試して **! sos します。DumpDomain**または **! sos します。スレッド**コマンド。
+SOS デバッガー拡張をテストするには、「 **! SOS. help**」と入力します。 次に、SOS デバッガー拡張機能によって提供されるコマンドのいずれかを試します。 たとえば、! sos を試すことができ**ます。DumpDomain**または **! sos。Threads**コマンド。
 
-### <a name="span-idnotesspanspan-idnotesspanspan-idnotesspannotes"></a><span id="Notes"></span><span id="notes"></span><span id="NOTES"></span>ノート
+### <a name="span-idnotesspanspan-idnotesspanspan-idnotesspannotes"></a><span id="Notes"></span><span id="notes"></span><span id="NOTES"></span>注記
 
-場合があります、マネージ コード アプリケーションでは、CLR の 1 つ以上のバージョンを読み込みます。 その場合は、読み込みに DAC のバージョンを指定する必要があります。 詳細については、次を参照してください。 [ **.cordll**](-cordll--control-clr-debugging-.md)します。
-
- 
-
- 
-
-
-
-
-
+マネージコードアプリケーションによって、複数のバージョンの CLR が読み込まれることがあります。 その場合は、読み込む DAC のバージョンを指定する必要があります。 詳細については、「 [**cordll**](-cordll--control-clr-debugging-.md)」を参照してください。

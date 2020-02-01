@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x7 INVALID_SOFTWARE_INTERRUPT
-description: INVALID_SOFTWARE_INTERRUPT のバグ チェックでは、0x00000007 の値を持ちます。このバグ チェックが非常に少ない回数が表示されます。
+title: バグチェック 0x7 INVALID_SOFTWARE_INTERRUPT
+description: INVALID_SOFTWARE_INTERRUPT バグチェックの値は0x00000007 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: ceba1694-ed12-4e7a-85c9-9ad73a046bf3
 keywords:
-- バグ チェック 0x7 INVALID_SOFTWARE_INTERRUPT
+- バグチェック 0x7 INVALID_SOFTWARE_INTERRUPT
 - INVALID_SOFTWARE_INTERRUPT
 ms.date: 05/23/2017
 topic_type:
@@ -13,22 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83256a660a1cd9b9359c1b51d5dd76bab4074632
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 848ceabbdb7a3b505bb1a78091de8bdaf9972a93
+ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519234"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76910356"
 ---
-# <a name="bug-check-0x7-invalidsoftwareinterrupt"></a>バグ チェック 0x7:無効な\_ソフトウェア\_を中断
+# <a name="bug-check-0x7-invalid_software_interrupt"></a>バグチェック 0x7: 無効な\_ソフトウェア\_割り込み
 
 
-無効な\_ソフトウェア\_割り込みのバグ チェックが 0x00000007 の値を持ちます。
+無効な\_ソフトウェア\_割り込みのバグチェックに0x00000007 の値が含まれています。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
+
+
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
  

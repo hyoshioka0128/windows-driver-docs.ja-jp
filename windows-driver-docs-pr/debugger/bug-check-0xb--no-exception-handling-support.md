@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0 xb NO_EXCEPTION_HANDLING_SUPPORT
-description: NO_EXCEPTION_HANDLING_SUPPORT のバグ チェックが非常に少ない回数が表示される確認 0x0000000B.This バグの値を持ちます。
+title: バグチェック 0xB NO_EXCEPTION_HANDLING_SUPPORT
+description: NO_EXCEPTION_HANDLING_SUPPORT のバグチェックの値が0x0000000B になっています。このバグチェックは非常に頻繁に行われます。
 ms.assetid: 0f48aef9-b2e4-421e-bb78-dca74033d3c3
 keywords:
-- バグ チェック 0 xb NO_EXCEPTION_HANDLING_SUPPORT
+- バグチェック 0xB NO_EXCEPTION_HANDLING_SUPPORT
 - NO_EXCEPTION_HANDLING_SUPPORT
 ms.date: 05/23/2017
 topic_type:
@@ -13,22 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55908c7d49db419b5bfed4ef562e7aca2ad6b4f3
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d9e41da95f54237efee730a144e43c39e52eadcb
+ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519023"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76910354"
 ---
-# <a name="bug-check-0xb-noexceptionhandlingsupport"></a>バグ チェック 0xB:いいえ\_例外\_処理\_サポート
+# <a name="bug-check-0xb-no_exception_handling_support"></a>バグチェック 0xB:\_サポートを処理\_\_例外はありません
 
 
-いいえ、\_例外\_処理\_サポートのバグ チェックが 0x0000000B の値を持ちます。
+バグチェックがサポートされていない\_例外\_\_処理では、値は0x0000000B になります。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
+
+
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
  
