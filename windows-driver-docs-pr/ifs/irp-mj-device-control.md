@@ -3,7 +3,7 @@ title: IRP_MJ_DEVICE_CONTROL
 description: IRP\_MJ\_DEVICE\_CONTROL
 ms.assetid: 7a7f7372-ed69-42c1-95e2-b5a593d77d22
 keywords:
-- IRP_MJ_DEVICE_CONTROL インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_DEVICE_CONTROL
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d782cdcb2eeb8921912f3e4375c0492fb922b2ad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 30f6d9682a343737cb3d2fb0a90cf11be066afb3
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841178"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977685"
 ---
 # <a name="irp_mj_device_control"></a>IRP\_MJ\_DEVICE\_CONTROL
 
@@ -63,7 +63,7 @@ IRP\_MJ\_デバイス\_制御要求は、i/o マネージャーおよびその�
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_デバイス\_制御の処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用しないでください。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_デバイス\_制御の処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用しないでください。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 IRP\_MJ\_デバイス\_コントロールを指定します。
@@ -82,7 +82,7 @@ IOCTL 要求の詳細については、「*カーネルモードアーキテク�
 <a href="" id="irpsp--parameters-deviceiocontrol-type3inputbuffer"></a>*IrpSp-&gt;Parameters. DeviceIoControl. Type3InputBuffer*  
 メソッドを使用するカーネルモード要求の入力バッファー\_ません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
@@ -91,7 +91,7 @@ IOCTL 要求の詳細については、「*カーネルモードアーキテク�
 
 [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IoGetFunctionCodeFromCtlCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetfunctioncodefromctlcode)
 

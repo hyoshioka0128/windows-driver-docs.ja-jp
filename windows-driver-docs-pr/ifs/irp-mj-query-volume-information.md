@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3381954c99c37221f4c6a8e096a395676ec4a28b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c6868912a794cf12e53a2842bc1044c8892c4bff
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841172"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977665"
 ---
 # <a name="irp_mj_query_volume_information"></a>IRP\_MJ\_クエリ\_ボリューム\_情報
 
@@ -95,7 +95,7 @@ FileFsVolumeFlagsInformation クラスと関連付けられている[**ファイ
 
 <a href="" id="------irpsp--fileobject"></a>*Irpsp-&gt;FileObject* *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 **IRP\_MJ\_QUERY\_ボリューム\_情報**の処理中**は、ファイル**\_オブジェクト構造の関連性のあるフィールドは無効であり、使用できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 **IRP\_MJ\_QUERY\_ボリューム\_情報**の処理中**は、ファイル**\_オブジェクト構造の関連性のあるフィールドは無効であり、使用できません。
 
 <a href="" id="------irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction***IRP\_MJ\_クエリ\_ボリューム\_情報**を指定します。
 
@@ -156,7 +156,7 @@ FileFsVolumeFlagsInformation クラスと関連付けられている[**ファイ
 
 <a href="" id="------irpsp--parameters-queryvolume-length"></a>*Irpsp-&gt;パラメーター。 QueryVolume.* *Irp&gt;UserBuffer*が指すバッファーの長さ (バイト単位)。 返されると、この変数はバッファーに書き込まれたバイト数を受け取ります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ファイル\_FS\_属性\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_attribute_information)

@@ -3,7 +3,7 @@ title: IRP_MJ_SET_VOLUME_INFORMATION
 description: IRP\_MJ\_\_ボリューム\_情報の設定
 ms.assetid: 7c317e8b-ffa9-47f7-ac53-23b09873fab9
 keywords:
-- IRP_MJ_SET_VOLUME_INFORMATION インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_SET_VOLUME_INFORMATION
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 193450fd1cb3e9844a163a0af323f10de6efa6bb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 95e0d4858ae0134b4262112f4677534b0d3b24a0
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841156"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977671"
 ---
 # <a name="irp_mj_set_volume_information"></a>IRP\_MJ\_\_ボリューム\_情報の設定
 
@@ -68,7 +68,7 @@ FileFsObjectIdInformation
 
 <a href="" id="irpsp--fileobject"></a>*Irpsp-&gt;FileObject* *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ の処理中に、ファイル\_オブジェクト構造**の "関連性のある"** フィールドは無効になります。\_ボリューム\_情報を\_設定して使用することはできません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ の処理中に、ファイル\_オブジェクト構造**の "関連性のある"** フィールドは無効になります。\_ボリューム\_情報を\_設定して使用することはできません。
 
 <a href="" id="irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction*\_ボリューム\_情報を設定\_IRP\_MJ を指定します。
 
@@ -105,7 +105,7 @@ FileFsObjectIdInformation
 
 <a href="" id="irpsp--parameters-setvolume-length"></a>*Irpsp-&gt;Parameters. SetVolume. Length* *Irp&gt;AssociatedIrp*によってポイントされるバッファーの長さ (バイト単位)。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ファイル\_FS\_制御\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_fs_control_information)
@@ -118,7 +118,7 @@ FileFsObjectIdInformation
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

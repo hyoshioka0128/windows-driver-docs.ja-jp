@@ -3,7 +3,7 @@ title: IRP_MJ_SET_SECURITY
 description: IRP\_MJ\_設定\_セキュリティ
 ms.assetid: 8d8b06b9-5d63-4506-831c-9c533dbe95f4
 keywords:
-- IRP_MJ_SET_SECURITY インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_SET_SECURITY
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc86d366df014fdc6abe0e851a3175f70e14190
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 043c1588f00cddc8a92f6f594e95bef60f432fce
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841161"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977675"
 ---
 # <a name="irp_mj_set_security"></a>IRP\_MJ\_設定\_セキュリティ
 
@@ -51,7 +51,7 @@ IRP\_MJ\_SET\_セキュリティ要求は、i/o マネージャーによって�
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_\_\_MJ の処理中に、ファイル\_オブジェクト構造**の "関連性**のある" フィールドは無効になります。セキュリティで保護されているため、使用しないでください。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_\_\_MJ の処理中に、ファイル\_オブジェクト構造**の "関連性**のある" フィールドは無効になります。セキュリティで保護されているため、使用しないでください。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 セキュリティ\_設定\_IRP\_MJ を指定します。
@@ -95,14 +95,14 @@ IRP\_MJ\_SET\_セキュリティ要求は、i/o マネージャーによって�
 
  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

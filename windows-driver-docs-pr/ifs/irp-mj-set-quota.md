@@ -3,7 +3,7 @@ title: IRP_MJ_SET_QUOTA
 description: IRP\_MJ\_設定\_クォータ
 ms.assetid: 256c349b-48cb-4a9f-a60a-89503d8f3f58
 keywords:
-- IRP_MJ_SET_QUOTA インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_SET_QUOTA
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b7ddca72cd120d6b698f39d558c9ebfabe7b4ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5eb937c51d15ef06b50b19bb22a86c9e684ed844
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841146"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977667"
 ---
 # <a name="irp_mj_set_quota"></a>IRP\_MJ\_設定\_クォータ
 
@@ -60,7 +60,7 @@ DO\_バッファリング\_IO フラグが設定されている場合、呼び�
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_\_MJ の処理中に、ファイル\_オブジェクト構造の "関連性のある" フィールドが無効になります。この**フィールドは、** クォータ\_クォータを設定して使用する必要があります。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_\_MJ の処理中に、ファイル\_オブジェクト構造の "関連性のある" フィールドが無効になります。この**フィールドは、** クォータ\_クォータを設定して使用する必要があります。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 \_クォータを設定\_IRP\_MJ を指定します。
@@ -68,7 +68,7 @@ DO\_バッファリング\_IO フラグが設定されている場合、呼び�
 <a href="" id="irpsp--parameters-setquota-length"></a>*IrpSp-&gt;Parameters. SetQuota. Length*  
 *Irp&gt;UserBuffer*が指すバッファーの長さをバイト単位で指定します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ファイル\_クォータの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_quota_information)
@@ -79,7 +79,7 @@ DO\_バッファリング\_IO フラグが設定されている場合、呼び�
 
 [**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckquotabuffervalidity)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

@@ -3,7 +3,7 @@ title: IRP_MJ_SET_INFORMATION
 description: IRP\_MJ\_SET\_INFORMATION
 ms.assetid: cc1b539c-8d39-4f4d-93b1-ce9fcdb8c555
 keywords:
-- IRP_MJ_SET_INFORMATION インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_SET_INFORMATION
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e00751c2759dacb592957a61c3e43535416342b9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1c834b9a5af5d0cbceab057523d94df06c5c2a30
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841150"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977657"
 ---
 # <a name="irp_mj_set_information"></a>IRP\_MJ\_SET\_INFORMATION
 
@@ -90,7 +90,7 @@ FileValidDataLengthInformation
 
 <a href="" id="irpsp--fileobject"></a>*Irpsp-&gt;FileObject* *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ の処理中に、ファイル\_オブジェクト構造の**参照フィールドが**無効になります。このフィールドは\_情報を設定し\_使用できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ の処理中に、ファイル\_オブジェクト構造の**参照フィールドが**無効になります。このフィールドは\_情報を設定し\_使用できません。
 
 <a href="" id="irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction*\_情報を設定\_IRP\_MJ を指定します。
 
@@ -151,7 +151,7 @@ FileValidDataLengthInformation
 
  
 
-<a href="" id="irpsp--parameters-setfile-fileobject"></a>*Irpsp-&gt;Parameters. SetFile. FileObject*名前変更またはリンク操作に使用します。 *Irp-&gt;AssociatedIrp-&gt;FileName*に完全修飾ファイル名が含まれている場合、または*Irp-&gt;AssociatedIrp Rootdirectory*が**NULL**以外の場合、このメンバーはファイルオブジェクトポインターになります&gt;。操作の対象となるファイルの親ディレクトリ。 それ以外の場合は**NULL**になります。
+<a href="" id="irpsp--parameters-setfile-fileobject"></a>*Irpsp-&gt;Parameters. SetFile. FileObject*名前変更またはリンク操作に使用します。 *Irp-&gt;AssociatedIrp-&gt;FileName*に完全修飾ファイル名が含まれている場合、または*irp-&gt;&gt;AssociatedIrp Rootdirectory*が**NULL**以外の場合、このメンバーは、操作の対象となるファイルの親ディレクトリのファイルオブジェクトポインターになります。 それ以外の場合は**NULL**になります。
 
 <a href="" id="irpsp--parameters-setfile-length"></a>*Irpsp-&gt;Parameters. SetFile. Length* *Irp&gt;AssociatedIrp*によってポイントされるバッファーの長さ (バイト単位)。
 
@@ -162,7 +162,7 @@ FileValidDataLengthInformation
 
 **AdvanceOnly**メンバーは、ディスク上の現在の有効なデータ長を**endoffile**の新しい有効なデータ長に進めるようにファイルシステムに通知するために、キャッシュマネージャーによって**TRUE**に設定されます。 **AdvanceOnly**が**FALSE**の場合は、 **endoffile**メンバー内の新しいファイルサイズが、現在のファイルサイズより大きいまたは小さい値に設定されています。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ファイル\_割り当て\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_allocation_information)
@@ -185,7 +185,7 @@ FileValidDataLengthInformation
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

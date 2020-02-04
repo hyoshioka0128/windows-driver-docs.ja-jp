@@ -3,7 +3,7 @@ title: IRP_MJ_FILE_SYSTEM_CONTROL
 description: IRP\_MJ\_ファイル\_システム\_コントロール
 ms.assetid: 9df42b58-5820-44fd-8e55-0195807be951
 keywords:
-- IRP_MJ_FILE_SYSTEM_CONTROL インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_FILE_SYSTEM_CONTROL
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee15f03741b6c0c730e4bd387f10306c720f2940
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c25545db49d9ca3f3bd6a0721473c2c75cd14cfd
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841192"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977681"
 ---
 # <a name="irp_mj_file_system_control"></a>IRP\_MJ\_ファイル\_システム\_コントロール
 
@@ -48,7 +48,7 @@ IRP\_MJ\_FILE\_SYSTEM\_CONTROL 要求は、i/o マネージャーおよびその
 <tbody>
 <tr class="odd">
 <td align="left"><p>IRP_MN_KERNEL_CALL</p></td>
-<td align="left"><p>要求のソースは信頼されたカーネルコンポーネントであることを除いて、この要求は IRP_MN_USER_FS_REQUEST (次に説明) と同じです。</p></td>
+<td align="left"><p>この要求は IRP_MN_USER_FS_REQUEST (次に説明) と同じですが、要求のソースは信頼されたカーネルコンポーネントである点が異なります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IRP_MN_MOUNT_VOLUME</p></td>
@@ -56,7 +56,7 @@ IRP\_MJ\_FILE\_SYSTEM\_CONTROL 要求は、i/o マネージャーおよびその
 </tr>
 <tr class="odd">
 <td align="left"><p>IRP_MN_USER_FS_REQUEST</p></td>
-<td align="left"><p>FSCTL 要求を示します。これは、Microsoft Win32 DeviceIoControl 関数を呼び出したユーザーモードアプリケーションに代わって、または<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"><strong>ZwDeviceIoControlFile</strong></a> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>を呼び出したカーネルモードコンポーネントの代理として発生する可能性があります。IoBuildDeviceIoControlRequest</strong></a>。</p>
+<td align="left"><p>FSCTL 要求を示します。これは、Microsoft Win32 DeviceIoControl 関数を呼び出したユーザーモードアプリケーションに代わって、または<a href="https://msdn.microsoft.com/library/windows/hardware/ff566441" data-raw-source="[&lt;strong&gt;ZwDeviceIoControlFile&lt;/strong&gt;](https://msdn.microsoft.com/library/windows/hardware/ff566441)"><strong>ZwDeviceIoControlFile</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest" data-raw-source="[&lt;strong&gt;IoBuildDeviceIoControlRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)"><strong>IoBuildDeviceIoControlRequest</strong></a>を呼び出したカーネルモードコンポーネントの代理として発生する可能性があります。</p>
 <p>FSCTL 要求の詳細については、Microsoft Windows SDK のドキュメントの「デバイスの入力と出力の制御コード」を参照してください。</p></td>
 </tr>
 <tr class="even">
@@ -121,7 +121,7 @@ IRP\_MJ\_FILE\_SYSTEM\_CONTROL 要求は、i/o マネージャーおよびその
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_ファイル\_システム\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_ファイル\_システム\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
 
 <a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
 次のフラグは、IRP\_に対して設定できます。\_ボリューム\_確認してください。
@@ -166,7 +166,7 @@ IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモード
 <a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp-&gt;パラメーター。 VerifyVolume. Vpb*  
 検証するボリュームの VPB へのポインター。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
@@ -179,7 +179,7 @@ IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモード
 
 [**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

@@ -3,7 +3,7 @@ title: IRP_MJ_DIRECTORY_CONTROL
 description: IRP\_MJ\_DIRECTORY\_コントロール
 ms.assetid: cb1bed36-bcb5-419b-87ca-6d9107ece6d1
 keywords:
-- IRP_MJ_DIRECTORY_CONTROL インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_DIRECTORY_CONTROL
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d69055d5546a5435b26411b39740dd97a11a71
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b66cc6167552f49c0ecb8e77f0c893a15a585d6
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841177"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977683"
 ---
 # <a name="irp_mj_directory_control"></a>IRP\_MJ\_DIRECTORY\_コントロール
 
@@ -86,7 +86,7 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_DIRECTORY\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用しないでください。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_DIRECTORY\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用しないでください。
 
 <a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
 次のフラグは、IRP\_の\_クエリ\_ディレクトリに設定できます。
@@ -210,11 +210,11 @@ IRP\_MJ\_DIRECTORY\_コントロールを指定します。
 </tr>
 <tr class="even">
 <td align="left"><p><strong>FileQuotaInformation</strong></p></td>
-<td align="left"><p>この情報クラスは互換性のために残されています。 代わりに<a href="irp-mj-query-quota.md" data-raw-source="[&lt;strong&gt;IRP_MJ_QUERY_QUOTA&lt;/strong&gt;](irp-mj-query-quota.md)"><strong>IRP_MJ_QUERY_QUOTA</strong></a>を使用してください。</p></td>
+<td align="left"><p>この情報クラスは互換性のために残されています。 代わりに<a href="irp-mj-query-quota.md" data-raw-source="[&lt;strong&gt;IRP_MJ_QUERY_QUOTA&lt;/strong&gt;](irp-mj-query-quota.md)"><strong>IRP_MJ_QUERY_QUOTA</strong></a>を使用する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>FileReparsePointInformation</strong></p></td>
-<td align="left"><p>ディレクトリに対して1つの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_reparse_point_information" data-raw-source="[&lt;strong&gt;FILE_REPARSE_POINT_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_reparse_point_information)"><strong>FILE_REPARSE_POINT_INFORMATION</strong></a>構造体を返します。</p></td>
+<td align="left"><p>ディレクトリの1つの<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_reparse_point_information" data-raw-source="[&lt;strong&gt;FILE_REPARSE_POINT_INFORMATION&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_reparse_point_information)"><strong>FILE_REPARSE_POINT_INFORMATION</strong></a>構造体を返します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -227,7 +227,7 @@ IRP\_MJ\_DIRECTORY\_コントロールを指定します。
 <a href="" id="irpsp--parameters-querydirectory-length"></a>*IrpSp-&gt;Parameters. QueryDirectory. Length*  
 *Irp&gt;UserBuffer*が指すバッファーの長さ (バイト単位)。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**ファイル\_\_DIR\_の両方の情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)
@@ -252,7 +252,7 @@ IRP\_MJ\_DIRECTORY\_コントロールを指定します。
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

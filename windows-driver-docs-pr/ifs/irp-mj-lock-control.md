@@ -3,7 +3,7 @@ title: IRP_MJ_LOCK_CONTROL
 description: IRP\_MJ\_ロック\_コントロール
 ms.assetid: db21d779-c423-42bd-a94b-4d8c8fd1f7cb
 keywords:
-- IRP_MJ_LOCK_CONTROL インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_LOCK_CONTROL
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ca722f75691d1c2092e5b6d34831b09864d607d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 18f82f19c414c57f90247857dde941c5334f452f
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841190"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977669"
 ---
 # <a name="irp_mj_lock_control"></a>IRP\_MJ\_ロック\_コントロール
 
@@ -88,7 +88,7 @@ IRP\_MJ\_LOCK\_CONTROL 要求は、i/o マネージャーおよびその他の�
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_LOCK\_CONTROL の処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_LOCK\_CONTROL の処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
 
 <a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
 次の1つまたは複数を実行します。
@@ -138,7 +138,7 @@ IRP\_MJ\_ロック\_コントロールを指定します。
 <a href="" id="irpsp--parameters-lockcontrol-length"></a>*IrpSp-&gt;Parameters. LockControl. Length*  
 ロックまたはロック解除するバイト範囲の長さ (バイト単位)。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**FltProcessFileLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltprocessfilelock)
@@ -149,7 +149,7 @@ IRP\_MJ\_ロック\_コントロールを指定します。
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

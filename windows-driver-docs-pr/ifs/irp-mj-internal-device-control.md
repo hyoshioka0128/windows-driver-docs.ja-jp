@@ -3,7 +3,7 @@ title: IRP_MJ_INTERNAL_DEVICE_CONTROL
 description: IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 ms.assetid: a60325d5-993f-4505-bded-2c2be9782492
 keywords:
-- IRP_MJ_INTERNAL_DEVICE_CONTROL インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_INTERNAL_DEVICE_CONTROL
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0114cab68ecde5529b4b478416d6454fa2ad7aad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 379ad04e433e204227b1143035bd0e33b7391898
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841174"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977677"
 ---
 # <a name="irp_mj_internal_device_control"></a>IRP\_MJ\_INTERNAL\_DEVICE\_CONTROL
 
@@ -27,7 +27,7 @@ ms.locfileid: "72841174"
 
 IRP\_MJ\_内部\_デバイス\_制御要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。
 
-[**Irp\_MJ\_デバイス\_制御**](irp-mj-device-control.md)要求とは異なり、IRP\_MJ\_内部\_デバイスは、カーネルモードコンポーネント間の通信にのみ使用されます。 IRP\_MJ\_デバイス\_制御要求は通常、 **DeviceIoControl**または[**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)の呼び出しで発生しますが、これらのルーチンでは、内部\_デバイスの irp\_MJ を作成することはできません\_制御要求。 ただし、 [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を呼び出すことによって、両方の種類の IRP を作成できます。
+[**Irp\_MJ\_デバイス\_制御**](irp-mj-device-control.md)要求とは異なり、IRP\_MJ\_内部\_デバイスは、カーネルモードコンポーネント間の通信にのみ使用されます。 IRP\_MJ\_デバイス\_制御要求は通常、 **DeviceIoControl**または[**ZwDeviceIoControlFile**](https://msdn.microsoft.com/library/windows/hardware/ff566441)の呼び出しによって発生しますが、これらのルーチンは IRP\_MJ\_内部\_デバイス\_制御要求を作成することはできません。 ただし、 [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)を呼び出すことによって、両方の種類の IRP を作成できます。
 
 ## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
@@ -65,7 +65,7 @@ IRP\_MJ\_内部\_デバイス\_制御要求は、i/o マネージャーおよび
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_内部\_デバイス\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_内部\_デバイス\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 IRP\_MJ\_内部\_デバイス\_コントロールを指定します。
@@ -84,7 +84,7 @@ IOCTL 要求の詳細については、「*カーネルモードアーキテク�
 <a href="" id="irpsp--parameters-deviceiocontrol-type3inputbuffer"></a>*IrpSp-&gt;Parameters. DeviceIoControl. Type3InputBuffer*  
 メソッドを使用したカーネルモード要求の入力バッファー\_ません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
@@ -93,7 +93,7 @@ IOCTL 要求の詳細については、「*カーネルモードアーキテク�
 
 [**IoBuildDeviceIoControlRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuilddeviceiocontrolrequest)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IoGetFunctionCodeFromCtlCode**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetfunctioncodefromctlcode)
 

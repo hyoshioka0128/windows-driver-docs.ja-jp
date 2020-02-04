@@ -3,7 +3,7 @@ title: IRP_MJ_QUERY_QUOTA
 description: IRP\_MJ\_クエリ\_クォータ
 ms.assetid: eb48b5ef-7eac-49d4-ab23-2d3efe783fa3
 keywords:
-- IRP_MJ_QUERY_QUOTA インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_QUERY_QUOTA
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a72d3cc14faa756523c5872ba00bb89460bf08
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1e3266ab828dda5dca6c64fba84e99c96ee6a2f4
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841164"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977645"
 ---
 # <a name="irp_mj_query_quota"></a>IRP\_MJ\_クエリ\_クォータ
 
@@ -70,7 +70,7 @@ IRP\_MJ\_クエリ\_クォータ要求は、i/o マネージャーによって�
 
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-> FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_QUERY\_のクォータの処理中に、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効です。使用しないでください。
+*Irpsp-> FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_QUERY\_のクォータの処理中に、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効です。使用しないでください。
 
 ### <a name="irpsp-flags"></a>*IrpSp-> フラグ*
 
@@ -116,7 +116,7 @@ Sid のリスト (指定されている場合) の長さ (バイト単位)。
 
 返された情報が最初のエントリ以外のエントリで開始されることを示す SID へのポインター (省略可能)。 SID リストが指定されている場合、このパラメーターは無視されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [**ファイル\_\_クォータ\_情報の取得**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_get_quota_information)
 
@@ -128,7 +128,7 @@ Sid のリスト (指定されている場合) の長さ (バイト単位)。
 
 [**IoCheckQuotaBufferValidity**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocheckquotabuffervalidity)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

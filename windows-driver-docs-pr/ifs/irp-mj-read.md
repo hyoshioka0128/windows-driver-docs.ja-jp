@@ -3,7 +3,7 @@ title: IRP_MJ_READ
 description: IRP_MJ_READ
 ms.assetid: f2f909ff-4af6-433e-9f3c-9692b5ab7171
 keywords:
-- IRP_MJ_READ インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_READ
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 345a6d927621531b81a0d272722cb35ea9bd2ac6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 90266b8a76a467f925058b22c01d122f31a674db
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841155"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977663"
 ---
 # <a name="irp_mj_read"></a>IRP\_MJ\_READ
 
@@ -86,7 +86,7 @@ IRP\_MJ\_読み取り要求は、i/o マネージャーまたはファイルシ�
 
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。 FO\_同期\_IO フラグが*Irpsp-&gt;の&gt;FileObject フラグ*で設定されている場合、ファイルオブジェクトは同期 i/o 用に開かれています。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_の処理中は、ファイル\_オブジェクト構造の関連性のあるフィールドは無効で**あり、使用**できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_の処理中は、ファイル\_オブジェクト構造の関連性のあるフィールドは無効で**あり、使用**できません。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 
@@ -129,7 +129,7 @@ IRP\_MJ\_読み取ることを指定します。
 
 ファイルシステムは、ファイルの最後に、基になるファイルストレージデバイスのセクターサイズの倍数まで、書き込み操作と読み取り操作を実行します。 読み取り前または書き込み前の操作を処理する場合、バッファーの割り当てとスワップを行うフィルターでは、割り当てられたバッファーのサイズを、関連付けられているデバイスのセクターサイズの倍数まで丸める必要があります。 そうでない場合は、基になるファイルシステムから転送されるデータの長さが、バッファーに割り当てられた長さを超えます。 バッファーのスワップの詳細については、「 [Swapbuffers のミニサンプル](https://go.microsoft.com/fwlink/p/?linkid=256055)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**CcMdlRead**](https://docs.microsoft.com/previous-versions/ff539159(v=vs.85))
@@ -140,7 +140,7 @@ IRP\_MJ\_読み取ることを指定します。
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

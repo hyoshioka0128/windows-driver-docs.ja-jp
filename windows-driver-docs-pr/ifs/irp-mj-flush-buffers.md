@@ -3,7 +3,7 @@ title: IRP_MJ_FLUSH_BUFFERS
 description: IRP\_MJ\_フラッシュ\_バッファー
 ms.assetid: 13df0d84-0320-4d7e-9acc-8f913ba6afaa
 keywords:
-- IRP_MJ_FLUSH_BUFFERS インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_FLUSH_BUFFERS
 topic_type:
 - apiref
 api_name:
@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a098b7f6a72aee0bd55bf2ceb84ee937c82e0c9b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: c0d27d227cd3567c553d78cc552bf547b7dcc8ef
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841196"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977679"
 ---
 # <a name="irp_mj_flush_buffers"></a>IRP\_MJ\_フラッシュ\_バッファー
 
@@ -53,12 +53,12 @@ ms.locfileid: "72841196"
 <a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 IRP\_MJ\_フラッシュ\_バッファーの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_フラッシュ\_バッファーの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
 
 <a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
 IRP\_MJ\_フラッシュ\_バッファーを指定します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**CcFlushCache**](https://msdn.microsoft.com/library/windows/hardware/ff539082)
@@ -67,7 +67,7 @@ IRP\_MJ\_フラッシュ\_バッファーを指定します。
 
 [**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

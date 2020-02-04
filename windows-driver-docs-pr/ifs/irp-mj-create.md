@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d4e6bed0438b5d3627a11f59f721cb07b8e508
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b6626a0bc3a480b6bef4cfb98ad0bf4a970d581
+ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841180"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76977689"
 ---
 # <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
 
@@ -91,7 +91,7 @@ IRP\_同期\_API
 
 [**Fltcancelfileopen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcancelfileopen)と[**iocancelfileopen**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocancelfileopen)は、ファイルオブジェクトの**FLAGS**フィールドで、\_取り消されたフラグを開く\_\_ファイルを設定します。 このフラグを設定すると、IRP\_MJ\_CREATE 要求が取り消され、このファイルオブジェクトに対して[**irp\_MJ\_CLOSE**](irp-mj-close.md)要求が発行されることを示します。 作成要求がキャンセルされると、再発行することはできません。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_obect 構造体でもあります。 ファイル\_オブジェクト構造の関連するフィールドは、既に開いているファイルオブジェクトを基準にし**て、特定**のファイルが開かれていることを示すために使用されます。 これは通常、相対ファイルがディレクトリであることを示していますが、ストリームベースのファイルは、既にファイルのストリームを使用して開いている可能性があります。 ファイル\_オブジェクト構造の関連性のある**fileobject**フィールドは、IRP\_MJ\_CREATE の処理中にのみ有効です。
+*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 ファイル\_オブジェクト構造の関連するフィールドは、既に開いているファイルオブジェクトを基準にし**て、特定**のファイルが開かれていることを示すために使用されます。 これは通常、相対ファイルがディレクトリであることを示していますが、ストリームベースのファイルは、既にファイルのストリームを使用して開いている可能性があります。 ファイル\_オブジェクト構造の関連性のある**fileobject**フィールドは、IRP\_MJ\_CREATE の処理中にのみ有効です。
 
 <a href="" id="irpsp--flags"></a>*Irpsp-&gt;フラグ*次の1つまたは複数を実行します。
 
@@ -142,9 +142,9 @@ IRP\_同期\_API
 
 ファイル\_完了し\_場合、事前作成 (ディスパッチ) パスで\_OPLOCKED フラグが設定されていると、oplock が失われる可能性があるため、次のいずれの種類の操作も開始できません。
 
-IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コントロール IRP\_MJ\_フラッシュ\_バッファー IRP\_MJ\_ロック\_コントロール IRP\_MJ\_読み取り IRP\_MJ\_設定\_情報 IRP\_MJ\_\_の場合、フィルターまたはミニフィルターがファイルを受け入れない場合は書き込み\_@no__OPLOCKED フラグ t_23_、IRP\_MJ\_CREATE 要求を完了する必要があります。状態は\_共有\_違反です。\_
+IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コントロール IRP\_MJ\_フラッシュ\_バッファー IRP\_MJ\_ロック\_コントロール IRP\_MJ\_読み取り IRP\_MJ\_設定\_情報 IRP\_MJ\_\_の場合、フィルターまたはミニフィルターがファイルを受け入れない場合は書き込み\_@no__OPLOCKED フラグ t_23_、IRP\_MJ\_CREATE 要求を完了する必要があります。状態は\_共有\_違反です。
 
-\_完了 (作成後) パスで\_OPLOCKED フラグが設定されている場合\_ファイルが完了した場合、フィルターは、ファイルシステムが*Irp-&gt;iostatus. status*に設定されているかどうかを確認する必要があります\_oplock\_\_進行状況の状態の値。\_ この状態値が設定されていない場合は、フィルターがファイルに対して上記の操作のいずれかを開始することが安全です。 この状態値が設定されている場合、oplock はまだ解除されていないため、oplock 解除を引き起こす可能性がある操作をフィルターで開始することはできません。 したがって、次のいずれかの条件が満たされるまで、ファイルに対する上記のすべての操作をフィルターで延期する必要があります。
+\_完了 (作成後) パスで\_OPLOCKED フラグが設定されている場合\_ファイルが完了した場合、フィルターは、ファイルシステムが*Irp-&gt;iostatus. status*に設定されているかどうかを確認する必要があります\_oplock\_\_進行状況の状態の値。 この状態値が設定されていない場合は、フィルターがファイルに対して上記の操作のいずれかを開始することが安全です。 この状態値が設定されている場合、oplock はまだ解除されていないため、oplock 解除を引き起こす可能性がある操作をフィルターで開始することはできません。 したがって、次のいずれかの条件が満たされるまで、ファイルに対する上記のすべての操作をフィルターで延期する必要があります。
 
 -   Oplock の所有者は、ファイルシステムに対して、FSCTL\_OPLOCK\_中断\_確認要求を送信します。
 -   フィルターまたはミニフィルター以外のシステムコンポーネントは、oplock の解除が完了するまで待機する必要がある i/o 要求をファイルシステムに送信します (IRP\_MJ\_READ または IRP\_MJ\_WRITE など)。 フィルターまたはミニフィルターは、この新しい操作のディスパッチ (または事前操作コールバック) ルーチンから上記の操作のいずれかを開始できます。これは、ディスパッチまたは preoperation コールバックルーチンが、oplock の解除が完了するまで待機状態になるためです。
@@ -155,7 +155,7 @@ IRP\_MJ\_CLEANUP IRP\_MJ\_CREATE IRP\_MJ\_ファイル\_システム\_コント�
 
 <a href="" id="irpsp--parameters-create-shareaccess"></a>*Irpsp-&gt;パラメーター。作成します。* ファイルに要求された共有アクセス権のビットマスク。 このメンバーがゼロの場合は、排他アクセスが要求されます。 詳細については、 [**Iocreatefil指定**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)している場合は、*このパラメーターの*説明を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 
 [**アクセス\_マスク**](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)
