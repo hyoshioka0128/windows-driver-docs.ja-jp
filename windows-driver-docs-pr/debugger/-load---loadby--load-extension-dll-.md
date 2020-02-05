@@ -1,14 +1,14 @@
 ---
 title: .load、.loadby (拡張機能 DLL の読み込み)
-description: .Load と .loadby コマンドは、デバッガーに、新しい拡張 DLL を読み込みます。
+description: Load および loadby コマンドは、新しい拡張 DLL をデバッガーに読み込みます。
 ms.assetid: bf54064a-6f30-4f31-a373-fbc643e2660c
 keywords:
-- .load (拡張 DLL の読み込み) コマンド
+- . load (拡張 DLL の読み込み) コマンド
 - loadby (拡張 DLL の読み込み) コマンド
-- 拡張 DLL を読み込む (.load - .loadby) コマンド
-- 拡張機能のコマンド (コマンド)、拡張 DLL の読み込み (.load - .loadby) コマンド
-- .load、.loadby (拡張 DLL の読み込み) の Windows デバッグ
-ms.date: 05/23/2017
+- 拡張 DLL (. load-. loadby) コマンドの読み込み
+- 拡張コマンド (コマンド)、拡張 DLL (. load-. loadby) コマンドの読み込み
+- . load,. loadby (拡張 DLL の読み込み) Windows デバッグ
+ms.date: 01/30/2020
 topic_type:
 - apiref
 api_name:
@@ -16,17 +16,16 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c559509c916563fe1f9fedc459503c407b55fd0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2580192f7edfffe003737a276843e4d0559ab6ed
+ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336512"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76910358"
 ---
 # <a name="load-loadby-load-extension-dll"></a>.load、.loadby (拡張機能 DLL の読み込み)
 
-
-**.Load**と **.loadby**コマンドでは、新しい拡張 DLL を読み込む、デバッガーを起動します。
+**Load**および**loadby**コマンドは、新しい拡張 DLL をデバッガーに読み込みます。
 
 ```dbgcmd
 .load DLLName  
@@ -34,16 +33,16 @@ ms.locfileid: "63336512"
 .loadby DLLName ModuleName
 ```
 
-## <a name="span-idddkmetaloadextensiondlldbgspanspan-idddkmetaloadextensiondlldbgspanparameters"></a><span id="ddk_meta_load_extension_dll_dbg"></span><span id="DDK_META_LOAD_EXTENSION_DLL_DBG"></span>パラメーター
+## <a name="span-idddk_meta_load_extension_dll_dbgspanspan-idddk_meta_load_extension_dll_dbgspanparameters"></a><span id="ddk_meta_load_extension_dll_dbg"></span><span id="DDK_META_LOAD_EXTENSION_DLL_DBG"></span>パラメータ
 
 
-<span id="_______DLLName______"></span><span id="_______dllname______"></span><span id="_______DLLNAME______"></span> *DLLName*   
-デバッガーの拡張 DLL の読み込みを指定します。 使用する場合、 **.load**コマンド、 *DLLName*の完全なパスを含める必要があります。 使用する場合、 **.loadby**コマンド、 *DLLName*ファイル名のみを含める必要があります。
+<span id="_______DLLName______"></span><span id="_______dllname______"></span><span id="_______DLLNAME______"></span>*DLLName*   
+読み込むデバッガー拡張 DLL を指定します。 **Load**コマンドを使用する場合、 *DLLName*には完全なパスを含める必要があります。 **. Loadby**コマンドを使用する場合、 *DLLName*にはファイル名のみを含める必要があります。
 
-<span id="_______ModuleName______"></span><span id="_______modulename______"></span><span id="_______MODULENAME______"></span> *ModuleName*   
-拡張 DLL と同じディレクトリにあるモジュールのモジュール名を指定する*DLLName*を指定します。
+<span id="_______ModuleName______"></span><span id="_______modulename______"></span><span id="_______MODULENAME______"></span>*ModuleName*   
+*DLLName*が指定する拡張 DLL と同じディレクトリにあるモジュールのモジュール名を指定します。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -53,45 +52,50 @@ ms.locfileid: "63336512"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プラットフォーム</strong></p></td>
-<td align="left"><p>すべての</p></td>
+<td align="left"><p><strong>・</strong></p></td>
+<td align="left"><p>[すべて]</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+拡張機能の読み込み、アンロード、および制御の方法の詳細については、「[デバッガー拡張 dll の読み込み](loading-debugger-extension-dlls.md)」を参照してください。
 
-読み込み、アンロード、およびコントロール拡張機能する方法の詳細については、次を参照してください。[デバッガー拡張 Dll の読み込み](loading-debugger-extension-dlls.md)します。
-
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-使用すると、 **.load**コマンド、完全なパスを指定する必要があります。
+**Load**コマンドを使用する場合は、完全なパスを指定する必要があります。
 
-使用すると、 **.loadby**コマンド、パスを指定しないでください。 代わりに、デバッガーのモジュールを検出、 *ModuleName*パラメーターを指定します、そのモジュールのパスを決定およびデバッガー拡張 DLL の読み込み時にそのパスを使用します。 モジュールが見つからないか、拡張 DLL が見つからない場合、エラー メッセージが表示される場合、問題を指定します。 存在する必要はありませんおよび拡張 DLL の指定したモジュール間の関係があります。 使用して、 **.loadby**コマンドは、そのため、長いパスを入力しなくて済むようにする方法だけです。
+**. Loadby**コマンドを使用する場合、パスは指定しません。 代わりに、デバッガーは、 *ModuleName*パラメーターが指定するモジュールを検出し、そのモジュールのパスを決定して、デバッガーが拡張 DLL を読み込むときにそのパスを使用します。 デバッガーがモジュールを見つけられない場合、または拡張 DLL が見つからない場合は、問題を示すエラーメッセージが表示されます。 指定されたモジュールと拡張 DLL の間にリレーションシップが存在している必要はありません。 したがって、 **loadby**コマンドを使用するのは、長いパスを入力しないようにするための方法にすぎません。
 
-後に、 **.load**または **.loadby**コマンドが完了したら、読み込まれた拡張機能に格納されているコマンドにアクセスすることができます。
+**Load**または**loadby**コマンドが完了したら、読み込まれた拡張機能に格納されているコマンドにアクセスできます。
 
 拡張 DLL を読み込むには、次のいずれかの操作を行います。
 
-- 使用して、 **.load**または **.loadby**コマンド。
+- **Load**または**loadby**コマンドを使用します。
 
-- 完全なを発行して、拡張機能を実行 **!**<em>DLLName</em>**.**<em>ExtensionCommand</em>構文。 デバッガーがまだ読み込まれていない場合*DLLName*.dll、この時点で、DLL を読み込みます。
+- 完全なを発行して拡張機能を実行し**ます。** <em>DLLName</em> **。** <em>Extensioncommand</em>構文。 デバッガーがまだ*DLLName*を読み込んでいない場合は、現在の dll 検索パスに dll がある場合は、この時点で dll が読み込まれます。
 
- 
+Chain コマンドを使用して、読み込まれた内容と現在の DLL 検索パスに関する情報を表示します[。]()
 
- 
+```dbgcmd
+0:000> .chain
+Extension DLL search Path:
+    C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\WINXP;C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\winext;C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\winext\arcade;C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\pri;C:\Program Files (x86)\Windows Kits\10\Debuggers\x64;
+Extension DLL chain:
+    C:\Windows\Microsoft.NET\Framework64\v4.0.30319\SOS.dll: image 4.8.4084.0, API 1.0.0, built Sun Nov 24 00:38:52 2019
+```
 
+たとえば、マネージコードの SOS は、上に示した Dll の検索パスに含まれていません。そのため、その dll を読み込むには、load コマンドを完全なパスで使用します。  
 
-
-
-
+```dbgcmd
+0:000> .load C:\Windows\Microsoft.NET\Framework64\v4.0.30319\SOS.dll
+```
