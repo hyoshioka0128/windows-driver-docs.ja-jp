@@ -4,12 +4,12 @@ description: このディレクトリのドライバーサンプルは、デバ�
 ms.assetid: 9F2F995E-EA20-4877-B96C-5FF082CE886D
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ec42afa31f558dc36c5d8bb100bdb4b858c1fe8b
-ms.sourcegitcommit: 30fa63ad13fd5e2e883b76a44f0703e01049ffa1
+ms.openlocfilehash: fb2a5fac17f27e7e51f27158f93577ee8feef25f
+ms.sourcegitcommit: bf18e0a9c16784ebb45b5e0a567f16721b5f1c8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735242"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036779"
 ---
 # <a name="file-system-driver-samples"></a>ファイル システム ドライバーのサンプル
 
@@ -29,7 +29,7 @@ ms.locfileid: "74735242"
 | [Minispy ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/minispy-file-system-minifilter-driver) | システムで発生した i/o とトランザクションのアクティビティを監視してログに記録するツール。 |
 | [NameChanger ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/namechanger-file-system-minifilter-driver) | マッピングを使用して、ボリュームの名前空間のある部分から別のパートにディレクトリを Grafts します。 ミニフィルターでは、名前プロバイダーとして機能し、ディレクトリの列挙にエントリを挿入し、ディレクトリの変更通知を転送することで、この錯覚を維持します。 |
 | [NullFilter ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/nullfilter-file-system-minifilter-driver) | フィルタマネージャへの登録を示すミニフィルター。 |
-| [パススルーファイルシステムミニフィルタードライバー](h https://docs.microsoft.com/samples/microsoft/windows-driver-samples/passthrough-file-system-minifilter-driver) | さまざまな種類の i/o 要求に対してコールバック関数を指定する方法を示します。 |
+| [パススルーファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/passthrough-file-system-minifilter-driver) | さまざまな種類の i/o 要求に対してコールバック関数を指定する方法を示します。 |
 | [スキャナーファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/scanner-file-system-minifilter-driver) | ファイルデータスキャナーの例。 通常、ウイルス対策フィルターの種類は次のとおりです。 |
 | [簡略化されたファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/simrep-file-system-minifilter-driver) | ファイルシステムフィルターを使用してファイルシステムの再解析ポイント動作をシミュレートし、ファイルを別のパスに開く方法を示します。 |
 [スワップバッファーファイルシステムミニフィルタードライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/swapbuffer-file-system-minifilter-driver) | データの読み取りと書き込みの間でバッファーを切り替える方法について説明します。 この手法は、暗号化フィルターに特に役立ちます。 |

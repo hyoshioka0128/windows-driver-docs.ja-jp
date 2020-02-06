@@ -5,7 +5,7 @@ ms.assetid: 7d3ff54e-e61a-43fa-a378-fb8d32565586
 keywords:
 - バグチェック 0x1A MEMORY_MANAGEMENT
 - MEMORY_MANAGEMENT
-ms.date: 06/29/2019
+ms.date: 02/04/2020
 topic_type:
 - apiref
 api_name:
@@ -13,21 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 37a621a1f25f0581ec8bd5da84381209026d77f1
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 32f77bc9713f16345c07aa4b1fc9880b537caf10
+ms.sourcegitcommit: bf18e0a9c16784ebb45b5e0a567f16721b5f1c8d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209320"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036777"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>バグチェック 0x1A: メモリ\_管理
-
 
 メモリ\_管理のバグチェックには、値0x0000001A があります。 これは、重大なメモリ管理エラーが発生したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
-
 
 ## <a name="memory_management-parameters"></a>メモリ\_管理パラメーター
 
@@ -106,6 +104,14 @@ ms.locfileid: "75209320"
 <td align="left"><p>0x1236</p></td>
 <td align="left"><p>呼び出し元が、ロックが解除された (または無効な) 物理ページを含む MDL を指定しました。 パラメーター2には、MDL へのポインターが含まれています。 パラメーター3に無効な PFN へのポインターが含まれています。 パラメーター4に無効な PFN 値が含まれています。</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>0x1240</p></td>
+<td align="left"><p>呼び出し元が、常駐していない仮想アドレス範囲の MDL を構築するのは無効です。 パラメーター2はメモリ記述子リスト (MDL)、パラメーター3は PTE ポインターです。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x1241</p></td>
+<td align="left"><p>Mdl の仮想アドレスが予期せず非同期にマップ解除され、MDL をビルドするための呼び出しが行われました。 パラメーター2は MDL、パラメーター3は PTE ポインターです。</p></td>
+</tr>
 <tr class="odd">
 <td align="left"><p>0x3300</p></td>
 <td align="left"><p>書き込みを実行しているときに、参照先の仮想アドレスが誤って copy on write としてマークされています。 パラメーター2は FaultingAddress です。  パラメーター3は、PTE の内容です。 パラメーター4は、仮想アドレス空間の種類を示します。</p></td>
@@ -117,6 +123,10 @@ ms.locfileid: "75209320"
 <tr class="even">
 <td align="left"><p>0x3453</p></td>
 <td align="left"><p>未完了の参照により、終了したプロセスのすべてのページテーブルページを削除できませんでした。  これは通常、プロセスのページテーブル構造が破損していることを示します。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x347 0</p></td>
+<td align="left"><p>Freelist でキャッシュされたカーネルスタックが破損しました。このメモリの破損は、呼び出し元スタックが犠牲または原因である可能性がある重大な問題を示しています。 パラメーター2は仮想アドレス (VA)、パラメーター3は VA Cookie です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x447 7</p></td>
@@ -133,6 +143,10 @@ ms.locfileid: "75209320"
 <tr class="odd">
 <td align="left"><p>0x5200</p></td>
 <td align="left"><p>空きプールのページのページが破損しています。 これは、ドライバーの書き込み後のバグ、または前のページからのオーバーランの結果である可能性があります。 パラメーター2には、空きプールブロックのアドレスが含まれています。 パラメーター4には、そのアドレスにあると予期された値が含まれています。 パラメーター3には、検出された実際の値が含まれます。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x5305</p></td>
+<td align="left"><p>呼び出し元が、解放する無効なプールアドレス (パラメーター 2) を指定しています。 パラメーター2は評価される仮想アドレス (VA)、パラメーター3はリージョンのサイズです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6001</p></td>
@@ -156,12 +170,20 @@ ms.locfileid: "75209320"
 <td align="left"><p>PFN (パラメーター 2) が見つかりましたが、破損したリンケージが最上位レベルのプロセスに接続されていません。  これは、PFN 構造体が破損していることを示します。</p></td>
 </tr>
 <tr class="even">
+<td align="left"><p>0x15000</p></td>
+<td align="left"><p>呼び出し元が間違ったアドレスを指定しているか、間違ったプロセスコンテキストでこのルーチンを呼び出しています。  このエラーのために見つからない範囲をセキュリティで保護できないため、どちらも無効です。 パラメーター2は、評価される仮想アドレス (VA) です。</p></td>
+</tr>
+<tr class="even">
 <td align="left"><p>0x15001</p></td>
 <td align="left"><p>以前に保護されていたメモリのセキュリティを解除する処理で、エラーが発生しました。  これは、呼び出し元が間違ったプロセスコンテキストで MmUnsecureVirtualMemory を誤って呼び出した場合に発生する可能性があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41201</p></td>
 <td align="left"><p>仮想アドレスを照会するプロセスで、ページフレーム番号 (PFN) と現在のページテーブルエントリ (PTE) ポインターの間に矛盾がありました。 パラメーター2は対応する PTE です。 パラメーター3は、PTE の内容であり、パラメーター4は仮想アドレス記述子です。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x41202</p></td>
+<td align="left"><p>0以外の PTE のページ保護を決定するプロセスでは、PTE が破損していると判断されました。  パラメーター2は PTE ポインター、パラメーター3は PTE の内容、パラメーター4は仮想アドレス記述子 (VAD) です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x41283</p></td>
@@ -230,8 +252,7 @@ ms.locfileid: "75209320"
 </tbody>
 </table>
 
-
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 ! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 
