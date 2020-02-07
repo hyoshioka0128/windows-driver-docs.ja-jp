@@ -1,8 +1,8 @@
-- name: GNSS ドライバー設計ガイド
+- name: 全地球航法衛星システム (GNSS) ドライバー設計ガイド
   href: index.md
-- name: Windows 8.1 用 GNSS ドライバー設計ガイド
+- name: Windows 8.1 用全地球航法衛星システム (GNSS) ドライバー設計ガイド
   items:
-    - name: Windows 8.1 用 GNSS ドライバー設計ガイド
+    - name: Windows 8.1 用全地球航法衛星システム (GNSS) ドライバー設計ガイド
       href: gnss-driver-design-guide-for-windows-8-1.md
     - name: Windows 8.1 用位置センサー ドライバーの作成
       items:
@@ -42,15 +42,15 @@
           href: the-sample-driver-file-list.md
         - name: 無線マネージャー ファイル一覧
           href: the-radio-manager-file-list.md
-- name: Windows 10 用 GNSS ドライバー設計ガイド
+- name: Windows 10 用全地球航法衛星システム (GNSS) ドライバー設計ガイド
   items:
-    - name: Windows 10 用 GNSS ドライバー設計ガイド
+    - name: Windows 10 用全地球航法衛星システム (GNSS) ドライバー設計ガイド
       href: gnss-driver-design-guide-for-windows-10.md
-    - name: GNSS ドライバーの概要
+    - name: 全地球航法衛星システム (GNSS) ドライバーの概要
       href: gnss-driver-overview.md
-    - name: GNSS ドライバーの要件
+    - name: 全地球航法衛星システム (GNSS) ドライバーの要件
       href: gnss-driver-requirements.md
-    - name: GNSS ドライバーのアーキテクチャ
+    - name: 全地球航法衛星システム (GNSS) ドライバーのアーキテクチャ
       href: gnss-driver-architecture.md
-    - name: GNSS ドライバーの設計
+    - name: 全地球航法衛星システム (GNSS) ドライバーの設計
       href: gnss-driver-design.md
