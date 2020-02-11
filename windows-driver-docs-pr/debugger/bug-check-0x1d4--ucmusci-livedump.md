@@ -1,10 +1,10 @@
 ---
-title: バグ チェック 0x1D4 UCMUCSI_LIVEDUMP
-description: UCMUCSI_LIVEDUMP ライブ ダンプには、0x000001D4 の値があります。
+title: バグチェック 0x1D4 UCMUCSI_LIVEDUMP
+description: UCMUCSI_LIVEDUMP ライブダンプの値は0x000001D4 です。
 keywords:
-- バグ チェック 0x1D4 UCMUCSI_LIVEDUMP
+- バグチェック 0x1D4 UCMUCSI_LIVEDUMP
 - UCMUCSI_LIVEDUMP
-ms.date: 02/22/2019
+ms.date: 02/07/2020
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8740af40c73fc78c3fd45c42f4b3812198405c09
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 68ffee3e356c8b6b1c716d3c6f0bc2a4db5861db
+ms.sourcegitcommit: cf8f0b13f33dfe97a94c8587f1f6797db24d1746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519657"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075644"
 ---
-# <a name="bug-check-bug-check-0x1d4-ucmucsilivedump"></a>チェックのバグ チェック 0x1D4 をバグします。UCMUCSI\_LIVEDUMP  
+# <a name="bug-check-0x1d4-ucmucsi_livedump"></a>バグチェック 0x1D4: UCMUCSI\_LIVEDUMP  
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
+UCMUCSI_LIVEDUMP ライブダンプの値は0x000001D4 です。 これは、UcmUcsi クラス拡張でエラーが発生したことを示します。 たとえば、UCSI コマンドがタイムアウトしたか、クライアントドライバーからエラーが返されたために UCSI コマンドを実行できなかったことが原因である可能性があります。
 
-UCMUCSI_LIVEDUMP ライブ ダンプには、0x000001D4 の値があります。 
+UcmUcsiCx は、含まれている UCSI クラス拡張です。 詳細については、「 [USB タイプ-C コネクタシステムソフトウェアインターフェイス (UCSI) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/ucsi)」を参照してください。
 
-UcmUcsi.sys ドライバー エラーが発生しました。 UcmUcsi.sys は、アドインのボックス USB コネクタ マネージャー UCSI クライアント ドライバーです。 詳細については、次を参照してください。 [USB 型 C コネクタ システム ソフトウェア インターフェイス (UCSI) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/ucsi)します。
+## <a name="ucmucsi_livedump-parameters"></a>UCMUCSI\_LIVEDUMP パラメーター
 
-
-## <a name="ucmucsilivedump-parameters"></a>UCMUCSI\_LIVEDUMP パラメーター
-
-パラメーター | 説明 
+パラメーター | 説明
 |---------|--------------|
-1 | エラーの種類-次の値を参照してください。
-2 | UCSI コマンドの値。
-3 | 0 以外の場合の追加情報へのポインター (dt UcmUcsiCx!UCMUCSICX_TRIAGE)。
+1 | エラーの種類-以下の値を参照
+2 | UCSI コマンド値。
+3 | 0以外の場合は、追加情報へのポインター。 `dt UcmUcsiCx!UCMUCSICX_TRIAGE` を使用してを表示します。
 4 | 予約済み。
- 
+
 **エラーの種類**
 
-0x0 :UCSI コマンドは、ファームウェアが時間で、コマンドに応答しなかったためにタイムアウトしました。
+0x0: ファームウェアがコマンドに応答しなかったため、UCSI コマンドがタイムアウトしました。
 
-0x1:クライアント ドライバーにエラーが返されるか、またはファームウェアには、エラー コードが返されたために、UCSI コマンドの実行が失敗しました。
+0x1: クライアントドライバーがエラーを返したか、ファームウェアがエラーコードを返したため、UCSI コマンドを実行できませんでした。
 
+## <a name="see-also"></a>参照
 
+[USB チームブログ-UCSI ファームウェアエラーのデバッグ](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/debugging-ucsi-firmware-failures/ba-p/283226)
 
-
+[ユニバーサル シリアル バス (USB)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)

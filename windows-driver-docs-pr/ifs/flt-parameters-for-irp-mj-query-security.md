@@ -1,11 +1,11 @@
 ---
 title: IRP_MJ_QUERY_SECURITY 共用体の FLT_PARAMETERS
-description: FLT\_IO\_パラメーター\_操作のブロック構造の MajorFunction フィールドが IRP\_MJ\_クエリ\_セキュリティである場合に使用される共用体コンポーネント。
+description: 操作の FLT_IO_PARAMETER_BLOCK 構造体の MajorFunction フィールドが IRP_MJ_QUERY_SECURITY 場合に使用される共用体コンポーネント。
 ms.assetid: 7707fec2-9fe8-40f6-9f34-f43403551440
 keywords:
-- IRP_MJ_QUERY_SECURITY union インストール可能ファイルシステムドライバーの FLT_PARAMETERS
-- FLT_PARAMETERS union にインストール可能なファイルシステムドライバー
-- PFLT_PARAMETERS union ポインターのインストール可能なファイルシステムドライバー
+- IRP_MJ_QUERY_SECURITY ユニオンインストール可能なファイルシステムドライバーの FLT_PARAMETERS
+- ユニオンインストール可能なファイルシステムドライバーの FLT_PARAMETERS
+- PFLT_PARAMETERS 共用体ポインターのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,22 +14,20 @@ api_location:
 - fltkernel.h
 api_type:
 - HeaderDef
-ms.date: 11/28/2017
+ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fea2cb7033b12ba9ae37dc1cdb6c10447eb111ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f85f46bc878aa75a45a81a7a575f634f8eda1cdb
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841358"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072231"
 ---
-# <a name="flt_parameters-for-irp_mj_query_security-union"></a>IRP\_MJ\_クエリ\_セキュリティ共用体の FLT\_パラメーター
+# <a name="flt_parameters-for-irp_mj_query_security-union"></a>IRP_MJ_QUERY_SECURITY 共用体の FLT_PARAMETERS
 
+操作の[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体の**MajorFunction**フィールドが[**IRP_MJ_QUERY_SECURITY**](irp-mj-query-security.md)場合に使用される共用体コンポーネント。
 
-[**FLT\_IO\_パラメーター\_** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)操作のブロック構造の**MajorFunction**フィールドが[**IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)である場合に使用される共用体コンポーネント。
-
-<a name="syntax"></a>構文
-------
+## <a name="syntax"></a>構文
 
 ```ManagedCPlusPlus
 typedef union _FLT_PARAMETERS {
@@ -44,105 +42,60 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-<a name="members"></a>Members
--------
+## <a name="members"></a>Members
 
 **QuerySecurity**  
 次のメンバーを含む構造体。
 
 **SecurityInformation**  
-照会するセキュリティ情報を指定する、呼び出し元が指定した[**セキュリティ\_情報**](security-information.md)の値へのポインター。 次のいずれかです。
+照会するセキュリティ情報を指定する、呼び出し元から提供された[**SECURITY_INFORMATION**](security-information.md)値へのポインター。 次のいずれかです。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">SecurityInformation の値</th>
-<th align="left">意味</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>OWNER_SECURITY_INFORMATION</p></td>
-<td align="left"><p>オブジェクトの所有者識別子が照会されています。 READ_CONTROL アクセスが必要です。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>GROUP_SECURITY_INFORMATION</p></td>
-<td align="left"><p>オブジェクトのプライマリグループ識別子が照会されています。 READ_CONTROL アクセスが必要です。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>DACL_SECURITY_INFORMATION</p></td>
-<td align="left"><p>オブジェクトの随意アクセス制御リスト (DACL) を照会しています。 READ_CONTROL アクセスが必要です。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>SACL_SECURITY_INFORMATION</p></td>
-<td align="left"><p>オブジェクトのシステム ACL (SACL) を照会しています。 ACCESS_SYSTEM_SECURITY アクセスが必要です。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+| SecurityInformation の値 | 意味 |
+| ------------------------- | ------- |
+| OWNER_SECURITY_INFORMATION | オブジェクトの所有者識別子が照会されています。 READ_CONTROL アクセスが必要です。 |
+| GROUP_SECURITY_INFORMATION | オブジェクトのプライマリグループ識別子が照会されています。 READ_CONTROL アクセスが必要です。 |
+| DACL_SECURITY_INFORMATION | オブジェクトの随意アクセス制御リスト (DACL) を照会しています。 READ_CONTROL アクセスが必要です。 |
+| SACL_SECURITY_INFORMATION | オブジェクトのシステム ACL (SACL) を照会しています。 ACCESS_SYSTEM_SECURITY アクセスが必要です。 |
 
 **長さ**  
 **Securitybuffer**が指すバッファーの長さ (バイト単位)。
 
 **SecurityBuffer**  
-指定したオブジェクトのセキュリティ記述子のコピーを受け取る、呼び出し元から提供される出力バッファーへのポインター。 呼び出しプロセスには、オブジェクトのセキュリティステータスの指定した側面を表示する権限が必要です。 [**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))の構造体は、自己相対形式で返されます。
+指定したオブジェクトのセキュリティ記述子のコピーを受け取る、呼び出し元から提供される出力バッファーへのポインター。 呼び出しプロセスには、オブジェクトのセキュリティステータスの指定した側面を表示する権限が必要です。 [**SECURITY_DESCRIPTOR**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))構造体は、自己相対形式で返されます。 このメンバーは省略可能であり、MDL が**Mdladdress**に指定されている場合は NULL にすることができます。 「**解説**」を参照してください。
 
 **MdlAddress**  
-**Securitybuffer**が指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは省略可能であり、 **NULL**にすることができます。
+**Securitybuffer**が指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは省略可能であり、 **securitybuffer**にバッファーが指定されている場合は**NULL**にすることができます。 「**解説**」を参照してください。
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>コメント
 
-[**Irp\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)操作の[**FLT\_parameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータによって表される、irp ベースのクエリ-セキュリティ情報操作のパラメーターが含まれています ([**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体。 これは、 [**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体に含まれています。
+[**IRP_MJ_QUERY_SECURITY**](irp-mj-query-security.md)操作の[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体によって表される、IRP ベースのクエリセキュリティ情報操作のパラメーターが含まれています。 これは[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体に含まれています。
 
-Windows XP 以降では、FLT\_IO\_\_パラメーターの**Targetfileobject**メンバーが名前付きデータストリームを表すことができます。 名前付きデータストリームの詳細については、「[**ファイル\_ストリームの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stream_information)」を参照してください。
+**Securitybuffer**と**mdladdress**バッファーの両方が指定されている場合は、ミニフィルターで MDL を使用することをお勧めします。 **Securitybuffer**が指すメモリは、呼び出しプロセスのコンテキスト内でアクセスされているユーザーモードアドレスである場合、またはカーネルモードアドレスの場合に有効です。
 
-IRP\_MJ\_クエリ\_セキュリティは、IRP ベースの操作です。
+ミニフィルターによって**mdladdress**の値が変更された場合、事後操作コールバックの後、フィルターマネージャーは現在**mdladdress**に格納されている MDL を解放し、 **mdladdress**の前の値を復元します。
 
-<a name="requirements"></a>要件
-------------
+Windows XP 以降では、FLT_IO_PARAMETER_BLOCK 構造体の**Targetfileobject**メンバーが指すオブジェクトは、名前付きデータストリームを表すことができます。 名前付きデータストリームの詳細については、「 [**FILE_STREAM_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stream_information)」を参照してください。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
-</tr>
-</tbody>
-</table>
+IRP_MJ_QUERY_SECURITY は、IRP ベースの操作です。
 
-## <a name="see-also"></a>関連項目
+## <a name="requirements"></a>要件
 
+|   |   |
+| - | - |
+| ヘッダー | Fltkernel .h (Fltkernel. h を含む) |
 
-[**ファイル\_ストリームの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stream_information)
+## <a name="see-also"></a>参照
 
-[**FLT\_コールバック\_データ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
+[**FILE_STREAM_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_stream_information)
 
-[**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
-[**FLT\_パラメーター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
+[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**IRP\_MJ\_クエリ\_セキュリティ**](irp-mj-query-security.md)
+[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)
 
-[**セキュリティ\_記述子**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
+[**IRP_MJ_QUERY_SECURITY**](irp-mj-query-security.md)
 
-[**セキュリティ\_情報**](security-information.md)
+[**SECURITY_DESCRIPTOR**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff556610(v=vs.85))
 
- 
-
- 
-
-
-
-
-
-
+[**SECURITY_INFORMATION**](security-information.md)

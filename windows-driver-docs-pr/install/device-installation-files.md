@@ -3,18 +3,18 @@ title: デバイスのインストール ファイル
 description: デバイスのインストール ファイル
 ms.assetid: a4a53040-ff53-49ba-a4a5-aba5f13119ef
 keywords:
-- デバイス セットアップ WDK デバイス インストールのファイル
-- デバイスのインストール ファイル、WDK
-- デバイス ファイル、WDK をインストールします。
-- WDK デバイス インストール ファイル
+- デバイスのセットアップ WDK デバイスのインストール、ファイル
+- デバイスのインストール WDK、ファイル
+- WDK、ファイルのデバイスのインストール
+- ファイル WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be3c6d259c8e37c586e651039cf977b9e9ac212
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1db76e33bee19d28014913ad1d517e31365ae155
+ms.sourcegitcommit: f6aebb32c045b9da7da4bf9b3fd8d6fad05e9deb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387131"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089211"
 ---
 # <a name="device-installation-files"></a>デバイスのインストール ファイル
 
@@ -22,33 +22,33 @@ ms.locfileid: "67387131"
 
 
 
-特定のデバイスをサポートするために必要なソフトウェアは、デバイスとデバイスを使用する方法の種類によって異なります。 通常、仕入先はで、次のソフトウェアを提供します。、[ドライバー パッケージ](driver-packages.md)デバイスをサポートします。
+特定のデバイスをサポートするために必要なソフトウェアは、デバイスの種類とデバイスの使用方法によって異なります。 通常、ベンダーは、デバイスをサポートするために、次のソフトウェアを[ドライバーパッケージ](driver-packages.md)に提供します。
 
-<a href="" id="a-device-setup-information-file--inf-file-"></a>デバイスのセットアップ情報ファイル (INF ファイル)  
-INF ファイルには、デバイスのサポートをインストールする Windows のシステム コンポーネントを使用する情報が含まれています。 Windows では、このファイルをコピー、%*SystemRoot*%\\*inf*ディレクトリ、ドライバーをインストールするとき。 このファイルが必要です。
+* <a href="" id="a-device-setup-information-file--inf-file-"></a>デバイスのセットアップ情報ファイル (INF ファイル)  
+    INF ファイルには、システム Windows コンポーネントがデバイスのサポートをインストールするために使用する情報が含まれています。 Windows は、ドライバーをインストールするときに、このファイルを%*SystemRoot*%\\*inf*ディレクトリにコピーします。 このファイルは必須です。
 
-詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
+    詳細については、「 [INF ファイルの作成](overview-of-inf-files.md)」を参照してください。
 
-<a href="" id="one-or-more-drivers-for-the-device"></a>デバイスの 1 つまたは複数のドライバー  
-A。*sys*ファイルは、ドライバーのイメージ ファイル。 Windows には、このファイルのコピー、 *%systemroot%\\system32\\ドライバー*ディレクトリ、ドライバーがインストールされている場合。 ドライバーは、ほとんどのデバイスの必要があります。
+* <a href="" id="one-or-more-drivers-for-the-device"></a>デバイスの1つまたは複数のドライバー  
+    ある.*sys*ファイルは、ドライバーのイメージファイルです。 ドライバーがインストールされると、Windows はこのファイルを *% SystemRoot%\\system32\\drivers*ディレクトリにコピーします。 ほとんどのデバイスにはドライバーが必要です。
 
-詳細については、次を参照してください。[ドライバー モデルを選択する](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)します。
+    詳細については、「[ドライバーモデルの選択](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)」を参照してください。
 
-<a href="" id="digital-signatures-for-the-driver-package--a-driver-catalog-file-"></a>デジタル署名、[ドライバー パッケージ](driver-packages.md)(ドライバー カタログ ファイル)  
-ドライバー カタログのファイルには、デジタル署名が含まれています。 すべてのドライバー パッケージを署名する必要があります。
+* <a href="" id="digital-signatures-for-the-driver-package--a-driver-catalog-file-"></a>[ドライバーパッケージ](driver-packages.md)のデジタル署名 (ドライバーカタログファイル)  
+    ドライバーカタログファイルには、デジタル署名が含まれています。 すべてのドライバーパッケージに署名する必要があります。
 
-仕入先は、そのドライバー パッケージのテストと署名 Windows Hardware Quality Lab (WHQL) に送信することで、デジタル署名を取得します。 WHQL は、カタログ ファイルを使用して、パッケージを返します (.*cat*ファイル)。
+    ベンダーは、ドライバーパッケージをテストおよび署名のために Windows Hardware Quality Lab (WHQL) に送信することによって、デジタル署名を取得します。 WHQL は、カタログファイル () を含むパッケージを返します。*cat*ファイル)。
 
-詳細については、次を参照してください。 [WHQL リリース署名](whql-release-signature.md)します。
+    詳細については、「 [WHQL リリース署名](whql-release-signature.md)」を参照してください。
 
-<a href="" id="other-files"></a>その他のファイル  
-A[ドライバー パッケージ](driver-packages.md)カスタム デバイスのインストール アプリケーション、デバイスのアイコン、ドライバー ライブラリ ファイル (ビデオ ドライバーなど) などの他のファイルを含めることができます。
+* <a href="" id="other-files"></a>その他のファイル  
+    [ドライバーパッケージ](driver-packages.md)には、カスタムデバイスインストールアプリケーション、デバイスアイコン、ドライバーライブラリファイル (ビデオドライバーなど) など、他のファイルを含めることができます。
 
-詳細については、次を参照してください。[デバイスのプロパティ ページを提供する](providing-device-property-pages.md)と[特別なインストール要件を持つドライバー](drivers-with-special-installation-requirements.md)します。
+    詳細については、「[特別なインストール要件を持つ](drivers-with-special-installation-requirements.md)[デバイスプロパティページ](providing-device-property-pages.md)とドライバーの提供」を参照してください。
 
-また、WDK でデバイス固有の種類のドキュメントを参照してください。
+また、WDK のデバイスタイプ固有のドキュメントも参照してください。
 
-WDK には、さまざまなサンプルのインストール ファイルが含まれています。 詳細については、次を参照してください[デバイス インストール ファイルのサンプル。](sample-device-installation-files.md)
+WDK には、さまざまなサンプルインストールファイルが含まれています。 詳細については、「[デバイスのインストールファイルの例](sample-device-installation-files.md)」を参照してください。
 
  
 
