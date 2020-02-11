@@ -4,12 +4,12 @@ description: このセクションには、サポートされている各 Window
 ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e98f4239743786319c1736b3b3169492e303d8
-ms.sourcegitcommit: 76147255532f5fedacf591679e2604216e89365d
+ms.openlocfilehash: 8a4d14ff01309ca38dd9e4b298a0416d849017bd
+ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72021056"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980695"
 ---
 # <a name="overview-of-driver-technologies"></a>ドライバー テクノロジの概要
 
@@ -35,7 +35,7 @@ ms.locfileid: "72021056"
 - [Bluetooth ドライバー](bluetooth/index.md)
 - [ディスプレイ ドライバー](display/index.md)
 - [ファイル システム ドライバー](ifs/index.md)
-- [GNSS ドライバー](gnss/index.md)
+- [全地球航法衛星システム (GNSS) ドライバー](gnss/index.md)
 - [GPIO ドライバー](gpio/index.md)
 - [ハードウェア通知](gpiobtn/index.md)
 - [HID ドライバー](hid/index.md)

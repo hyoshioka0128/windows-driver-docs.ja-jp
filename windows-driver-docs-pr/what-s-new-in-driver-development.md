@@ -5,12 +5,12 @@ ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b72381e9d255c911160b73736342344e332e438
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 0d75b697082a08b8c7b87c25586e1b058dd24c17
+ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210828"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980707"
 ---
 # <a name="top"></a>ドライバー開発に関する最新情報
 
@@ -33,31 +33,31 @@ ms.locfileid: "75210828"
 
 次の表は、Windows 10 で更新された機能をドライバー テクノロジとバージョン別に示しています。
 
-| Driver (ドライバー)  |[1903](#whats-new-in-windows-10-version-1903-latest)| [1809](#whats-new-in-windows-10-version-1809) |   [1803](#whats-new-in-windows-10-version-1803)    | [1709](#whats-new-in-windows-10-version-1709) |  [1703](#whats-new-in-windows-10-version-1703)  | [1607](#whats-new-in-windows-10-version-1607) |  [1507](#whats-new-in-windows-10-version-1507)  |
+| ドライバー  |[1903](#whats-new-in-windows-10-version-1903-latest)| [1809](#whats-new-in-windows-10-version-1809) |   [1803](#whats-new-in-windows-10-version-1803)    | [1709](#whats-new-in-windows-10-version-1709) |  [1703](#whats-new-in-windows-10-version-1703)  | [1607](#whats-new-in-windows-10-version-1607) |  [1507](#whats-new-in-windows-10-version-1507)  |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | オーディオ  |  [![詳細](checkmark.png)](#audio-1903) |      [![詳細](checkmark.png)](#audio-1809)       |      [![詳細](checkmark.png)](#audio-1803)      |         [![詳細](checkmark.png)](#audio-1709)          |      [![詳細](checkmark.png)](#audio-1703)      |      [![詳細](checkmark.png)](#audio-1607)      |                   ![利用不可](minus.png)                   |
 |               ACPI         |   ![利用不可](minus.png)    |             ![利用不可](minus.png)              |      [![詳細](checkmark.png)](#acpi-1803)       |          [![詳細](checkmark.png)](#acpi-1709)          |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |             生体認証    |     ![利用不可](minus.png)   |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |       [![詳細](checkmark.png)](#biometric-1709)        |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |             Bluetooth     |   ![利用不可](minus.png)     |     [![詳細](checkmark.png)](#bluetooth-1809)     |    [![詳細](checkmark.png)](#bluetooth-1803)    |                ![利用不可](minus.png)                |    [![詳細](checkmark.png)](#bluetooth-1703)    |          ![利用不可](minus.png)          |             [![詳細](checkmark.png)](#bluetooth-1507)             |
 |          バスとポート          |   ![利用不可](minus.png)   |       ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |          [![詳細](checkmark.png)](#buses-and-ports)          |
-|              Camera       |    [![詳細](checkmark.png)](#camera-1903)    |             ![利用不可](minus.png)              |     [![詳細](checkmark.png)](#camera-1803)      |                ![利用不可](minus.png)                |     [![詳細](checkmark.png)](#camera-1703)      |   [![詳細](checkmark.png)](#camera-1607)   |            [![詳細](checkmark.png)](#camera-1507)            |
-|             Cellular              |   ![利用不可](minus.png)   |       ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |             [![詳細](checkmark.png)](#cellular)              |
+|              カメラ       |    [![詳細](checkmark.png)](#camera-1903)    |             ![利用不可](minus.png)              |     [![詳細](checkmark.png)](#camera-1803)      |                ![利用不可](minus.png)                |     [![詳細](checkmark.png)](#camera-1703)      |   [![詳細](checkmark.png)](#camera-1607)   |            [![詳細](checkmark.png)](#camera-1507)            |
+|             移動体通信              |   ![利用不可](minus.png)   |       ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |             [![詳細](checkmark.png)](#cellular)              |
 |              ディスプレイ          |  [![詳細](checkmark.png)](#display-1903) |      [![詳細](checkmark.png)](#display-1809)      |     [![詳細](checkmark.png)](#display-1803)     |        [![詳細](checkmark.png)](#display-1709)         |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |              [![詳細](checkmark.png)](#display-1507)              |
 |          ドライバーのセキュリティ      |  ![利用不可](minus.png)  |             ![利用不可](minus.png)              |    [![詳細](checkmark.png)](#security-1803)     |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |              ![利用不可](minus.png)              |
 |      ハードウェア通知    | ![利用不可](minus.png)  |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             | [![詳細](checkmark.png)](#hardware-notifications-1709) |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |   ヒューマン インターフェイス デバイス (HID)    |    ![利用不可](minus.png)    |     ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |      [![詳細](checkmark.png)](#human-interface-device)       |
 |              カーネル          |   ![利用不可](minus.png)  |      [![詳細](checkmark.png)](#kernel-1809)       |     [![詳細](checkmark.png)](#kernel-1803)      |         [![詳細](checkmark.png)](#kernel-1709)         |     [![詳細](checkmark.png)](#kernel-1703)      |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
-|             Location       |   ![利用不可](minus.png)    |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |  [![詳細](checkmark.png)](#location-1607)  |           [![詳細](checkmark.png)](#location-1507)           |
+|             インストール先       |   ![利用不可](minus.png)    |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |  [![詳細](checkmark.png)](#location-1607)  |           [![詳細](checkmark.png)](#location-1507)           |
 |         モバイル ブロードバンド    |    [![詳細](checkmark.png)](#mobilebroadband-1903)  |  [![詳細](checkmark.png)](#mobilebroadband-1809)  | [![詳細](checkmark.png)](#mobilebroadband-1803) |    [![詳細](checkmark.png)](#mobilebroadband-1709)     | [![詳細](checkmark.png)](#mobilebroadband-1703) |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |     近距離無線通信      |    ![利用不可](minus.png)     |    ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |     [![詳細](checkmark.png)](#near-field-communication)      |
 |            ネットワーク     |    [![詳細](checkmark.png)](#networking-1903)    |    [![詳細](checkmark.png)](#networking-1809)     |   [![詳細](checkmark.png)](#networking-1803)    |       [![詳細](checkmark.png)](#networking-1709)       |   [![詳細](checkmark.png)](#networking-1703)    |          ![利用不可](minus.png)          |          [![詳細](checkmark.png)](#networking-1507)          |
 |                POS          |   ![利用不可](minus.png)   |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |       [![詳細](checkmark.png)](#pos-1703)       |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |                PCI        |    ![利用不可](minus.png)    |             ![利用不可](minus.png)              |       [![詳細](checkmark.png)](#pci-1803)       |          [![詳細](checkmark.png)](#pci-1709)           |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
-|               印刷     |      [![詳細](checkmark.png)](#print-1903)    |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |   [![詳細](checkmark.png)](#print-1607)    |            [![詳細](checkmark.png)](#print-1507)             |
+|               ［印刷］     |      [![詳細](checkmark.png)](#print-1903)    |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |   [![詳細](checkmark.png)](#print-1607)    |            [![詳細](checkmark.png)](#print-1507)             |
 |      パルス幅変調       |   ![利用不可](minus.png)  |        ![利用不可](minus.png)              |            ![利用不可](minus.png)             |          [![詳細](checkmark.png)](#pwm-1709)           |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |              センサー        |  [![詳細](checkmark.png)](#sensors-1903)    |      [![詳細](checkmark.png)](#sensors-1809)      |     [![詳細](checkmark.png)](#sensors-1803)     |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
 |            スマート カード     |    ![利用不可](minus.png)    |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |            [![詳細](checkmark.png)](#smart-card)             |
-|              ストレージ         |    [![詳細](checkmark.png)](#storage-1903)  |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |        [![詳細](checkmark.png)](#storage-1709)         |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |              [![詳細](checkmark.png)](#storage-1507)              |
+|              記憶域         |    [![詳細](checkmark.png)](#storage-1903)  |             ![利用不可](minus.png)              |            ![利用不可](minus.png)             |        [![詳細](checkmark.png)](#storage-1709)         |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |              [![詳細](checkmark.png)](#storage-1507)              |
 | システム提供のドライバー インターフェイス |   ![利用不可](minus.png)   |      ![利用不可](minus.png)              |            ![利用不可](minus.png)             |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          | [![詳細](checkmark.png)](#system-supplied-driver-interfaces) |
 |                USB                |  ![利用不可](minus.png) |     [![詳細](checkmark.png)](#usb-1809)        |       [![詳細](checkmark.png)](#usb-1803)       |          [![詳細](checkmark.png)](#usb-1709)           |       [![詳細](checkmark.png)](#usb-1703)       |          ![利用不可](minus.png)          |                [![詳細](checkmark.png)](#usb-1507)                |
 |               Wi-Fi           |  [![詳細](checkmark.png)](#wifi-1903)  |       [![詳細](checkmark.png)](#wifi-1809)        |      [![詳細](checkmark.png)](#wifi-1803)       |                ![利用不可](minus.png)                |            ![利用不可](minus.png)             |          ![利用不可](minus.png)          |                   ![利用不可](minus.png)                   |
@@ -110,7 +110,7 @@ Windows 10 Version 1809 では、開発者、IHV、OEM 用の[ハードウェア
 
 ### <a name="open-publishing"></a>オープンな発行
 
-Microsoft では、コミュニティ主導によるドキュメント制作を推進しています。 Windows ドライバーのドキュメントの多くのページで、変更を直接提案できます。 ページの右上隅で **[投稿]** ボタンを探します。 次のようになります。
+Microsoft では、コミュニティ主導によるドキュメント制作を推進しています。 Windows ドライバーのドキュメントの多くのページで、変更を直接提案できます。 ページの右上隅で **[投稿]** ボタンを探します。 これは、次のように表示されます。
 
 ![[投稿] ボタンのスクリーンショット](contribute-button.png)
 
@@ -190,7 +190,7 @@ Windows 10 Version 1809 では、次のコンテンツが追加されました�
 * 新しい [AVStream ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-avstream-drivers)
 * 4 つの新しい [KMDF ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/sdv-rules-for-kmdf-drivers)
 * 3 つの新しい [NDIS ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/sdv-rules-for-ndis-drivers)
-* 新しい [Nullcheck 規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/nullcheck) ("*Version 1703 で追加*")
+* 新しい [Nullcheck 規則](https://docs.microsoft.com/windows-hardware/drivers/devtest/nullcheck) (*Version 1703 で追加*)
 
 ### <a name="windows-driver-frameworks-wdf"></a>Windows Driver Framework (WDF)
 
@@ -611,7 +611,7 @@ Windows 10 Version 1803 では、プラットフォームの機能と物理デ�
 
 ### <a name="bluetooth-1803"></a>Bluetooth
 
-Windows 10 Version 1803 では、クイック ペアリングのサポートが導入されます。 ユーザーが設定アプリに移動して、ペア設定する周辺機器を検索する必要がなくなりました。 使用可能な新しい周辺機器が近くで検出されると、Windows によって通知がポップアップ表示されます。 お使いの周辺機器をクイック ペアリングに確実に対応させるには、2 つの要件セットがあります。 1 つは周辺機器の動作に関するもので、もう 1 つは Microsoft が定義したベンダーのアドバタイズ セクションの構造と値に関するものです。 詳しくは、次のトピックをご覧ください。
+Windows 10 Version 1803 では、クイック ペアリングのサポートが導入されます。 ユーザーが設定アプリに移動して、ペア設定する周辺機器を検索する必要がなくなりました。 使用可能な新しい周辺機器が近くで検出されると、Windows によって通知がポップアップ表示されます。 お使いの周辺機器をクイック ペアリングに確実に対応させるには、2 つの要件セットがあります。 1 つは周辺機器の動作に関するもので、もう 1 つは Microsoft が定義したベンダーのアドバタイズ セクションの構造と値に関するものです。 詳細については、次のドキュメントを参照してください。
 
 * [Bluetooth クイック ペアリング](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth-swift-pair)
 * [Bluetooth の機能と推奨事項](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)
@@ -810,7 +810,7 @@ Windows 10 Version 1709 では、Windows ディスプレイ ドライバーの�
 
 ### <a name="hardware-notifications-1709"></a>ハードウェア通知
 
-Windows 10 Version 1709 には、通知コンポーネント (LED、振動のメカニズムなど) のハードウェアに依存しないサポートのためのサポートがあります。 詳しくは、次のトピックをご覧ください。
+Windows 10 Version 1709 には、通知コンポーネント (LED、振動のメカニズムなど) のハードウェアに依存しないサポートのためのサポートがあります。 詳細については、次のドキュメントを参照してください。
 
 * [Hardware notifications support (ハードウェア通知のサポート)](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/hardware-notifications-support)
 * [ハードウェア通知リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gpiobtn/)
@@ -910,7 +910,7 @@ USB ドライバー スタックは、Media Agnostic USB (MA-USB) プロトコ�
 
 MA-USB をサポートするには、ホスト コントローラーのドライバーが特定のコールバック関数を実装することでトランスポートの特性を提供する必要があります。 次の表は、MA-USB をサポートするコールバック関数と構造体を示しています。
 
-| コールバック関数 | 構造体 |
+| コールバック関数 | 構造 |
 | ----- | ----- |
 | [EVT_UCX_USBDEVICE_GET_CHARACTERISTIC](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_get_characteristic) | [UCX_ENDPOINT_ISOCH_TRANSFER_PATH_DELAYS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ns-ucxendpoint-_ucx_endpoint_isoch_transfer_path_delays) |
 | [EVT_UCX_USBDEVICE_RESUME](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_resume) | [UCX_CONTROLLER_ENDPOINT_CHARACTERISTIC_PRIORITY](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxendpoint/ne-ucxendpoint-_ucx_endpoint_characteristic_priority) |
@@ -1052,7 +1052,7 @@ Windows 10 Version 1607 では、Windows Hello と顔認証をサポートする
 
 ### <a name="location-1607"></a>位置情報
 
-Windows 10 Version 1607 では、ロケーション ドライバーの開発に関する次の GNSS Breadcrumb DDI が新たに追加されています。
+Windows 10 Version 1607 では、ロケーション ドライバーの開発に関する次の全地球航法衛星システム (GNSS) Breadcrumb DDI が新たに追加されています。
 
 * [**GNSS\_BREADCRUMB\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumb_list)
 * [**GNSS\_BREADCRUMB\_V1**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ns-gnssdriver-gnss_breadcrumb_v1)
@@ -1100,7 +1100,7 @@ OneCoreUAP ベースの Windows エディションには、SPB (Simple Periphera
 * [ハードウェア最適化のヒント](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-optimizationhint-)
 * [カメラ プロファイル](https://docs.microsoft.com/windows-hardware/drivers/stream/camera-driver-functions)
 
-### <a name="cellular"></a>Cellular
+### <a name="cellular"></a>移動体通信
 
 Windows 10 の[携帯電話のアーキテクチャと実装](https://docs.microsoft.com/windows-hardware/drivers/network/cellular-architecture-and-driver-model)が更新されました。
 
