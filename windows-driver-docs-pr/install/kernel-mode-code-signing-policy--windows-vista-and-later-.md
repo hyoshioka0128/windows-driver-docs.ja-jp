@@ -13,12 +13,12 @@ keywords:
 - パッケージデジタル署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bfee7045135387e53438ea53119ac75dad8c9e8b
-ms.sourcegitcommit: 15217d1d11a4d43048ff42e5aa3b7f37da7f28ff
+ms.openlocfilehash: 8aa60068e0cca799467ad4fa2148dc44c3a98cd0
+ms.sourcegitcommit: f6aebb32c045b9da7da4bf9b3fd8d6fad05e9deb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73753873"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114633"
 ---
 # <a name="driver-signing-policy"></a>ドライバー署名ポリシー
 
@@ -43,7 +43,7 @@ Windows 10 のドライバーに署名するには、次の手順を実行しま
 
 1. 認定を受けたい Windows 10 のバージョンごとに、そのバージョンの Windows HLK (ハードウェアラボキット) をダウンロードし、そのバージョンのクライアントに対して完全な証明書パスを実行します。 バージョンごとに1つのログが取得されます。
 2. 複数のログがある場合は、最新の HLK を使用して1つのログにマージします。
-3. ドライバーとマージされた HLK テスト結果を[Windows Hardware Developer Center ダッシュボードポータル](../dashboard/index.md)に送信します。
+3. ドライバーとマージされた HLK テスト結果を[Windows Hardware Developer Center ダッシュボードポータル](../dashboard/index.yml)に送信します。
 
 バージョン固有の詳細については、対象とする Windows バージョンの[Whcp (Windows ハードウェア互換性プログラム) ポリシー](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-specifications-policies)を確認してください。
 
@@ -63,7 +63,7 @@ Windows 10 バージョン1607より前では、次の種類のドライバー�
 
 セキュアブートは Windows Vista および Windows 7 には適用されないことに注意してください。
 
-|適用対象:|Windows Vista、Windows 7、Windows 8 以降 (セキュアブートオフ)|Windows 8、Windows 8.1、Windows 10、バージョン1507、1511 (セキュアブートオン)|Windows 10、バージョン1607、1703、1709 (セキュアブートオン)|Windows 10、バージョン 1803 + セキュアブートオン|
+|適用対象|Windows Vista、Windows 7、Windows 8 以降 (セキュアブートオフ)|Windows 8、Windows 8.1、Windows 10、バージョン1507、1511 (セキュアブートオン)|Windows 10、バージョン1607、1703、1709 (セキュアブートオン)|Windows 10、バージョン 1803 + セキュアブートオン|
 |--- |--- |--- |--- |--- |
 |**アーキテクチャ**|64ビットのみ、32ビットに署名は必要ありません|64-bit、32ビット|64-bit、32ビット|64-bit、32ビット|
 |**署名が必要:**|埋め込みファイルまたはカタログファイル|埋め込みファイルまたはカタログファイル|埋め込みファイルまたはカタログファイル|埋め込みファイルまたはカタログファイル|
