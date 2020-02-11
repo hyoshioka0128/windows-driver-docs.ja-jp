@@ -60,15 +60,7 @@
                   href: percent-machines-with-at-least-one-audio-crash.md
                 - name: 少なくとも 1 つのオーディオ ハングが発生したマシンの割合
                   href: pct-machines-with-at-least-one-audio-hang.md
-            - name: Bluetooth
-              items:
-                - name: Bluetooth の測定値
-                  href: bluetooth-measures.md
-                - name: Bluetooth ペアリング エラー率
-                  href: bluetooth-pairing-failure-rate-per-machine.md
-                - name: Bluetooth 接続エラー率
-                  href: bluetooth-connect-failure-rate-for-machines-with-the-driver.md
-            - name: Camera
+            - name: カメラ
               items:
                 - name: カメラの測定値
                   href: camera-measures.md
@@ -106,54 +98,54 @@
                   href: graphics-measures.md
                 - name: 標準および拡張対象ユーザーの測定値
                   items:
-                    - name: グラフィックスの計測値
-                      href: graphics-measures.md
-                    - name: 標準および拡張対象ユーザーの測定値
-                      items:
-                        - name: グラフィックス ドライバーのバイナリにおけるクラッシュによってブルー スクリーンが表示された、ディスクリート GPU の無数のマシン
-                          href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-standard.md
-                        - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
-                          href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-standard.md
-                        - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した無数のマシン
-                          href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-standard.md
-                        - name: グラフィックス カーネルのクラッシュによってブルー スクリーンが表示されたマシンの数
-                          href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-kernel.md
-                        - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
-                          href: user-mode-reliability-for-crashes-in-microsoft-photos-app-expanded.md
-                        - name: クリエイティブ アプリケーションでクラッシュが発生したユーザー モードの数
-                          href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps-expanded.md
-                        - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
-                          href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale-expanded.md
-                        - name: Microsoft Edge でのユーザー モード クラッシュの数
-                          href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale-expanded.md
-                        - name: Windows コンポーネントでのユーザー モード クラッシュの数
-                          href: user-mode-reliability-for-crashes-in-windows-components.md
-                        - name: Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
-                          href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
-                    - name: エコシステム対象ユーザーの測定値
-                      items:
-                        - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
-                          href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-ecosystem.md
-                        - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
-                          href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-ecosystem.md
-                        - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した無数のマシン
-                          href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-ecosystem.md
-                        - name: Microsoft Edge でのユーザー モード クラッシュの数
-                          href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
-                        - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
-                          href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
-                        - name: クリエイティブ アプリケーションでのユーザー モード クラッシュの数
-                          href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps.md
-                        - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
-                          href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
-                        - name: Windows コンポーネントでのユーザー モード クラッシュの数
-                          href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
-                        - name: Netflix での SWDRM 再生エラーの割合
-                          href: pct-swdrm-playback-failures-on-netflix.md
-                        - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合
-                          href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
-                        - name: エコシステム Netflix HWDRM 品質比較
-                          href: ecosystem-netflix-hwdrm-quality-comparison.md
+                    - name: グラフィックス ドライバーのバイナリにおけるクラッシュによってブルー スクリーンが表示された、ディスクリート GPU の無数のマシン
+                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-standard.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
+                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-standard.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン
+                      href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-standard.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した統合 GPU の無数のマシン
+                      href: graphics-tdr-integrated-gpu.md
+                    - name: グラフィックス カーネルのクラッシュによってブルー スクリーンが表示されたマシンの数
+                      href: number-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-kernel.md
+                    - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
+                      href: user-mode-reliability-for-crashes-in-microsoft-photos-app-expanded.md
+                    - name: クリエイティブ アプリケーションでクラッシュが発生したユーザー モードの数
+                      href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps-expanded.md
+                    - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
+                      href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale-expanded.md
+                    - name: Microsoft Edge でのユーザー モード クラッシュの数
+                      href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale-expanded.md
+                    - name: Windows コンポーネントでのユーザー モード クラッシュの数
+                      href: user-mode-reliability-for-crashes-in-windows-components.md
+                    - name: Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
+                      href: percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer.md
+                - name: エコシステム対象ユーザーの測定値
+                  items:
+                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
+                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-ecosystem.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
+                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-ecosystem.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン
+                      href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-ecosystem.md
+                    - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した統合 GPU の無数のマシン
+                      href: graphics-ecosystem-integrated-gpu-with-tdr.md
+                    - name: Microsoft Edge でのユーザー モード クラッシュの数
+                      href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
+                    - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
+                      href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
+                    - name: クリエイティブ アプリケーションでのユーザー モード クラッシュの数
+                      href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps.md
+                    - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
+                      href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
+                    - name: Windows コンポーネントでのユーザー モード クラッシュの数
+                      href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
+                    - name: Netflix での SWDRM 再生エラーの割合
+                      href: pct-swdrm-playback-failures-on-netflix.md
+                    - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合
+                      href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
+                    - name: エコシステム Netflix HWDRM 品質比較
+                      href: ecosystem-netflix-hwdrm-quality-comparison.md
                 - name: Wi-Fi
                   items:
                     - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
