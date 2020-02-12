@@ -13,7 +13,7 @@
 - name: ドライバーの開発、テスト、および展開
   href: develop/index.md
 - name: Windows ハードウェア デベロッパー センター ダッシュボード
-  href: dashboard/index.md
+  href: dashboard/index.yml
 - name: デバイスとドライバーのインストール
   href: install/index.md
 - name: カーネルモード ドライバー アーキテクチャ設計ガイド
