@@ -9,12 +9,12 @@ keywords:
 - KDNET
 ms.date: 09/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f19ba1317c838ff41af99a391d44b85fff85f05
-ms.sourcegitcommit: ee1fc949d1ae5eb14df4530758f767702a886e36
+ms.openlocfilehash: 76f5bb9dd746a6dbd2d926cff72a1bc816fc2cc0
+ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71164786"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144698"
 ---
 # <a name="setting-up-kdnet-network-kernel-debugging-automatically"></a>KDNET ネットワーク カーネル デバッグの自動設定
 
@@ -65,25 +65,25 @@ Windows 用デバッグツールでは、ネットワーク経由のカーネル
 4. ターゲットコンピューターで、C:\KDNET ディレクトリを作成し、 *KDNET*ファイルと*VerifiedNICList*ファイルをそのディレクトリにコピーします。
 
    > [!IMPORTANT]
-   > Kdnet を使用してブート情報を変更する前に、テスト PC で BitLocker やセキュアブートなどの Windows のセキュリティ機能を一時的に停止することが必要になる場合があります。
+   > Kdnet を使用してブート情報を変更する前に、テスト PC で BitLocker やセキュアブートなどの Windows セキュリティ機能を一時的に停止することが必要になる場合があります。
    > セキュリティ機能が無効になっている場合は、テストが完了し、テスト PC を適切に管理するときに、これらのセキュリティ機能を再び有効にします。
 
 
 5. ターゲット コンピューターで、管理者としてコマンド プロンプト ウィンドウを開きます。 次のコマンドを入力して、ターゲットコンピューターにサポートされているネットワークアダプターがあることを確認します。
 
    ```console
-   C:\KDNET>kdnet
+   C:\KDNET>kdnet.exe
    Network debugging is supported on the following NICs:
    busparams=1.0.0, Broadcom NetXtreme Gigabit Ethernet, Plugged in.  
    This Microsoft hypervisor supports using KDNET in guest VMs.
    ```
 
-6. Kdnet からの出力はターゲット上のネットワークアダプターがサポートされていることを示しているため、続行できます。
+6. Kdnet からの出力は、ターゲットのネットワークアダプターがサポートされていることを示しているので、続行できます。
 
-7. 次のコマンドを入力して、ホストシステムの IP アドレスを設定し、一意の接続キーを生成します。 IP アドレスまたはホストシステムの名前を使用します。 推奨される50000-50039 の範囲で、使用するターゲット/ホストペアごとに一意のポートアドレスを選択します。
+7. 次のコマンドを入力して、ホストシステムの IP アドレスを設定し、一意の接続キーを生成します。 IP アドレスまたはホストシステムの名前を使用します。 推奨される50000-50039 の範囲内で、使用するターゲット/ホストペアごとに一意のポートアドレスを選択します。
 
    ```console
-   C:\>kdnet <HostComputerIPAddress> <YourDebugPort> 
+   C:\>kdnet.exe <HostComputerIPAddress> <YourDebugPort> 
    
    Enabling network debugging on Intel(R) 82577LM Gigabit Network Connection.
    Key=2steg4fzbj2sz.23418vzkd4ko3.1g34ou07z4pev.1sp3yo9yz874p
@@ -94,9 +94,9 @@ Windows 用デバッグツールでは、ネットワーク経由のカーネル
 
 ## <a name="span-idusing_windbgspanspan-idusing_windbgspanspan-idusing_windbgspan-using-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg の使用
 
-ホストコンピューターで、[WinDbg] を開きます。 **[ファイル]** メニューの **[カーネルデバッグ]** をクリックします。 カーネルデバッグ ダイアログボックスで、 **Net** タブを開きます。前の手順でメモ帳の .txt ファイルに保存したポート番号とキーを貼り付けます。 **[OK]** をクリックします。
+ホストコンピューターで、[WinDbg] を開きます。 **[ファイル]** メニューの **[カーネルデバッグ]** をクリックします。 カーネルデバッグ ダイアログボックスで、 **Net** タブを開きます。前の手順でメモ帳の .txt ファイルに保存したポート番号とキーを貼り付けます。 **[OK]** をクリックすると、
 
-また、コマンドプロンプトウィンドウを開き、次のコマンドを入力して、WinDbg セッションを開始することもできます。 <YourPort> は上で選択したポートで、<YourKey> は上記で kdnet によって返されたキーです。 前の手順でメモ帳の .txt ファイルに保存したのキーを貼り付けます。
+また、コマンドプロンプトウィンドウを開き、次のコマンドを入力して、WinDbg セッションを開始することもできます。 <YourPort> は上で選択したポートで、<YourKey> は上の kdnet によって返されたキーです。 前の手順でメモ帳の .txt ファイルに保存したのキーを貼り付けます。
 
    ```console
   windbg -k net:port=<YourDebugPort>,key=<YourKey> 
@@ -119,7 +119,7 @@ Windows 用デバッグツールでは、ネットワーク経由のカーネル
 
 ## <a name="span-idrestarting_targetspanspan-idrestarting_targetspanspan-idrestarting_targetspan-restarting-the-target-pc"></a><span id="Restarting_Target"></span><span id="restarting_target"></span><span id="RESTARTING_TARGET"></span>ターゲット PC を再起動する
 
-デバッガーが接続されたら、ターゲットコンピューターを再起動します。 PC を再起動する1つの方法は、管理者のコマンドプロンプトからこのコマンドを使用することです。
+デバッガーが "再接続を待機しています..." になったら、ステージングし、ターゲットコンピューターを再起動します。 PC を再起動する1つの方法は、管理者のコマンドプロンプトからこのコマンドを使用することです。
 
    ```console
    shutdown -r -t 0 

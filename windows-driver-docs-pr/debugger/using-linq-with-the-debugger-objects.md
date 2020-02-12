@@ -5,12 +5,12 @@ keywords:
 - デバッガー オブジェクトでの LINQ の使用
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 14e3adaee50d25d283513cc3befef4c6ad8658a6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e0db367cdb6636212407b3aef0643217c2dfd59c
+ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834203"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144697"
 ---
 # <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトでの LINQ の使用
 
@@ -35,7 +35,7 @@ LINQ は、概念的にはデータベースのクエリに使用される構造
 - ローカル変数
 - モジュール/モジュール
 - ユーティリティ
-- 都道府県
+- 状態
 - 設定
 
 NatVis を使用して、デバッガーオブジェクトを操作することもできます。 詳細については[、「NatVis のネイティブデバッガーオブジェクト](native-debugger-objects-in-natvis.md)」を参照してください。 JavaScript でのデバッガーオブジェクトの使用の詳細については、「 [Javascript 拡張機能でのネイティブデバッガーオブジェクト](native-objects-in-javascript-extensions.md)」を参照してください。 とドライバーオブジェクトの使用C++の詳細については、「[デバッガー C++データモデルの概要](data-model-cpp-overview.md)」を参照してください。
@@ -554,7 +554,7 @@ Take メソッド
 
 |                      |                                                                                                                                                                                                                  |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| .ToDisplayString () | オブジェクトの文字列変換を返します。 これは、オブジェクトの dx 呼び出しで表示される文字列変換です。 書式指定子を指定して、ToDisplayString の出力を書式設定することができます。 |
+| .ToDisplayString () | オブジェクトの文字列変換を返します。 これは、オブジェクトの dx 呼び出しで表示される文字列変換です。 書式指定子を指定して、ToDisplayString の出力を書式設定することができます。 詳細については、「 [Visual C++ Studio デバッガーでの書式指定子](https://docs.microsoft.com/visualstudio/debugger/format-specifiers-in-cpp?view=vs-2019)」を参照してください。 |
 
 
 
@@ -572,6 +572,13 @@ kd> dx (10).ToDisplayString("o")
 
 kd> dx (10).ToDisplayString("b") 
 (10).ToDisplayString("b")  : 0y1010
+
+kd> dx ("some wchar string here").ToDisplayString("su") 
+("some wchar string here").ToDisplayString("su")  : "some wchar string here"
+
+kd> dx ("some wchar string here").ToDisplayString("sub") 
+("some wchar string here").ToDisplayString("sub")  : some wchar string here
+
 ```
 
 ## <a name="span-iddebugging_plug_and_playspanspan-iddebugging_plug_and_playspanspan-iddebugging_plug_and_playspandebugging-plug-and-play-example"></a><span id="Debugging_Plug_and_Play"></span><span id="debugging_plug_and_play"></span><span id="DEBUGGING_PLUG_AND_PLAY"></span>デバッグプラグアンドプレイの例
@@ -770,7 +777,7 @@ dx -r1 @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => (n.De
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">取り外せ</td>
+<td align="left">リムーバブル</td>
 <td align="left"><div class="code">
 
 <code>dbgcmd
