@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Windows ハードウェアのパートナー センター
+summary: システムおよびドライバーの申請を作成および管理します。 ハードウェアの認定と申請、出荷のラベル、ハードウェア ダッシュボード API、ダッシュボード管理、Windows Update 経由のドライバー配布の情報です。 レガシ (Sysdev) ダッシュボードを置き換えます。
+metadata:
+  author: eliotseattle
+  description: このセクションにより、システムおよびドライバーの申請を迅速かつ容易に作成して管理することができます。
+  ms.author: eliotgra
+  ms.date: 02/14/2020
+  ms.topic: landing-page
+  ms.prod: windows-hardware
+  ms.technology: windows-devices
+  services: wdk
+  ms.openlocfilehash: 5665df59028f68cf191ecc9aeb8f9f0f1a042648
+  ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 02/11/2020
+  ms.locfileid: "77145497"
+landingContent:
+- title: ハードウェア申請
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: 新しいドライバー申請の作成
+      url: create-a-new-hardware-submission.md
+    - text: ハードウェア提出の管理
+      url: manage-your-hardware-submissions.md
+    - text: ドライバーのフライティング
+      url: driver-flighting.md
+    - text: デバイス メタデータ
+      url: device-metadata.md
+- title: ドライバーの配布
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Windows Update へのドライバーの公開
+      url: publish-a-driver-to-windows-update.md
+    - text: パートナーとのドライバーの共有
+      url: sharing-drivers-with-your-partners.md
+    - text: 拡張 INF ファイルの使用
+      url: submit-dashboard-extension-inf-files.md
+- title: ハードウェア ダッシュボード API
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API を使用したハードウェア提出の管理
+      url: dashboard-api.md
+    - text: 製品データの取得
+      url: get-product-data.md
+    - text: 製品申請の管理
+      url: manage-product-submissions.md
+- title: ダッシュボードの管理
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ハードウェア プログラムの登録
+      url: register-for-the-hardware-program.md
+    - text: ユーザーの追加または削除
+      url: adding-or-removing-users.md
+    - text: コード署名証明書の追加
+      url: update-a-code-signing-certificate.md
+- title: ダッシュボードについて
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: ハードウェア ダッシュボードの概要
+      url: get-started-with-the-hardware-dashboard.md
+    - text: ハードウェア ダッシュボードに関する FAQ
+      url: hardware-dashboard-faq.md
+    - text: LSA/UEFI ファイル署名
+      url: lsa-and-uefi-file-signing.md
