@@ -4,29 +4,29 @@ description: Microsoft ハードウェア API の以下のメソッドは、デ�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f6414d39670cb29c5561df3459a2ef8852b95f92
-ms.sourcegitcommit: 62729233228955089d872d8010c99d48ad50f01e
+ms.openlocfilehash: 3d881ea71051ac1c65c2c06207cef7ebab7953b1
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68570817"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072163"
 ---
 # <a name="get-product-data"></a>製品データの取得
 
 *Microsoft ハードウェア API* の以下のメソッドを使用して、デベロッパー センター アカウントに登録されているハードウェア製品のデータを取得します。 API を使用するための前提条件など、Microsoft ハードウェア API の概要については、「[API を使用したハードウェア提出の管理](dashboard-api.md)」を参照してください。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 ```
 
 これらのメソッドを使用するには、製品をお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
 
-| メソッド | URI | 説明 |
+| 認証方法 | URI | 説明 |
 |-|-|-|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/`|[すべての製品のデータの取得](get-all-products.md)|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}`|[特定の製品のデータの取得](get-a-product.md)|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions`|[製品のすべての申請に関するデータの取得](get-all-submissions.md)|
-|GET |`https://manage.devcenter.microsoft.com/v1.0/hardware/products/{productID}/submissions/{submissionId}`|[製品の特定の申請に関するデータの取得](get-a-submission.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/`|[すべての製品のデータの取得](get-all-products.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/{productID}`|[特定の製品のデータの取得](get-a-product.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/{productID}/submissions`|[製品のすべての申請に関するデータの取得](get-all-submissions.md)|
+|GET |`https://manage.devcenter.microsoft.com/v2.0/hardware/products/{productID}/submissions/{submissionId}`|[製品の特定の申請に関するデータの取得](get-a-submission.md)|
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,12 +46,12 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
   “sharedProductId”: 1152921504606971100,
   “links”: [
     {
-      “href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/9007199267351834",
+      “href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/9007199267351834/submissions",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834/submissions",
       "rel": "get_submissions",
       "method": "GET"
     }
@@ -83,17 +83,17 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このリソースには、次の値があります。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
-| ID | Long | 製品のプライベート製品 ID |
+| Id | Long | 製品のプライベート製品 ID |
 | sharedProductId | Long | 製品の共有製品 ID |
-| Links | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
-| isCommitted | ブール値 | 製品に少なくとも 1 つのコミットされた申請があるかどうかを示します  |
-| isExtensionInf | ブール値 | (非推奨) 製品が拡張ドライバーかどうかを示します。 このフィールドは非推奨です。今後は使用しないでください。 isExtensionInf は申請レベルのプロパティに移動されました。 |
+| リンク | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
+| isCommitted | ブール型 | 製品に少なくとも 1 つのコミットされた申請があるかどうかを示します  |
+| isExtensionInf | ブール型 | (非推奨) 製品が拡張ドライバーかどうかを示します。 このフィールドは非推奨です。今後は使用しないでください。 isExtensionInf は申請レベルのプロパティに移動されました。 |
 | deviceMetadataIds | GUID の配列 | デバイス メタデータの提出をドライバーにマップする GUID |
 | deviceType | String | デバイスの種類を示します。 設定可能な値は、次のとおりです。<ul><li>“internal” - 内部コンポーネント、システムの一部として PC 内部に接続されるデバイス</li><li>“external” - 外部コンポーネント、PC に接続される外部デバイス (周辺機器)</li><li>“internalExternal” - その両方、内部的に (PC 内で) 接続できるほか、外部的にも (周辺機器として) 接続できるデバイス</li><li>“notSet” – データが存在しない</li></ul>|
-| isTestSign | ブール値 | 製品がテスト署名されたドライバーかどうかを示します。 ドライバー パッケージのテスト署名の詳細については、「[WHQL Test Signature Program](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)」(WHQL テスト署名プログラム) を参照してください。  |
-| isFlightSign | ブール値 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program の一部ではない、製品版のコンピューターにはインストールできません。|
+| isTestSign | ブール型 | 製品がテスト署名されたドライバーかどうかを示します。 ドライバー パッケージのテスト署名の詳細については、「[WHQL Test Signature Program](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)」(WHQL テスト署名プログラム) を参照してください。  |
+| isFlightSign | ブール型 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program の一部ではない、製品版のコンピューターにはインストールできません。|
 | marketingNames | 文字列の配列 | 製品のマーケティング名またはエイリアス |
 | productName | String | 作成中に指定されたドライバーの名前 |
 | selectedProductTypes | ディクショナリ  | キーと値のペア (両方とも文字列)。 <ul><li>**Key** はオペレーティング システムのファミリー コードを表します。 オペレーティング システムのファミリのコードの一覧については、「[OS ファミリ コードの一覧](#list-of-operating-system-family-codes)」を参照してください。</li><li>**Value** は製品の種類を表します。 製品の種類の一覧については、「[製品の種類](#list-of-product-types)」を参照してください。</li></ul>|
@@ -111,13 +111,13 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
   "id": 1152921504621442000,
   "productId": 13635057453741328,
    "workflowStatus": {
-      “currentStep": " finalizeIngestion",
+      "currentStep": " finalizeIngestion",
       " state": " completed",
       " messages": []
     },
   "links": [
     {
-      "href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/13635057453741329/submissions/1152921504621441944",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/13635057453741329/submissions/1152921504621441944",
       "rel": "self",
       "method": "GET"
     }
@@ -133,16 +133,16 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このリソースには、次の値があります。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
-| ID | long | 申請 ID |
+| Id | long | 申請 ID |
 | Productid | long | この申請が関連付けられているプライベート製品 ID |
-| Links | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
+| リンク | オブジェクトの配列 | 詳細については、「[リンク オブジェクト](#link-object)」を参照してください。 |
 | 名前 | string | 申請名 |
 | 種類 | string | 申請が最初の申請であるかまたは派生申請であるかを示します。 設定可能な値は、次のとおりです。 <ul><li>initial</li><li>derived</li></ul> |
-| isExtensionInf | ブール値 | 申請が拡張ドライバーかどうかを示します |
-| isUniversal | ブール値 | 申請がユニバーサル API テストに適合しているかどうかを示します。 ドライバーが宣言型かつユニバーサルである場合、そのドライバーは DCHU に準拠しています |
-| isDeclarativeInf | ブール値 | 申請が宣言型 INVerif テストに適合しているかどうかを示します。 ドライバーが宣言型かつユニバーサルである場合、そのドライバーは DCHU に準拠しています |
+| isExtensionInf | ブール型 | 申請が拡張ドライバーかどうかを示します |
+| isUniversal | ブール型 | 申請がユニバーサル API テストに適合しているかどうかを示します。 ドライバーが宣言型かつユニバーサルである場合、そのドライバーは DCHU に準拠しています |
+| isDeclarativeInf | ブール型 | 申請が宣言型 INVerif テストに適合しているかどうかを示します。 ドライバーが宣言型かつユニバーサルである場合、そのドライバーは DCHU に準拠しています |
 | workflowstatus | オブジェクト | これは、特定の申請の詳細を取得する場合にのみ利用可能です。 このオブジェクトは、この申請のワークフローの状態を示しています。 詳細については、「[ワークフローの状態オブジェクト](#workflow-status-object)」を参照してください。  |
 | ダウンロード | オブジェクト | これは、特定の申請のみの詳細を取得する場合にだけ利用可能です。 このオブジェクトは、申請に利用可能なダウンロードを示しています。 詳細については、「[リンク オブジェクト](#download-object)」を参照してください。 |
 
@@ -152,7 +152,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 ```json
 {
-      “currentStep": " finalizeIngestion",
+      "currentStep": " finalizeIngestion",
       " state": " completed",
       " messages": []
     }
@@ -160,10 +160,10 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | currentStep | string | このエンティティの全体的なワークフローにおける現在のステップの名前。 <br>取り込み/パッケージの申請の場合、指定可能な値は次のとおりです (かっこ内に説明を示します)。<ul><li>packageInfoValidation (*パッケージのメタデータとコンテンツを検証*)</li><li>preparation (*処理のためにパッケージを準備*)</li><li>scanning (*マルウェアがないかどうかパッケージの内容をスキャン*)</li><li>validation (*テスト結果の検証*)</li><li>catalogCreation (*パッケージのセキュリティ カタログを作成*)</li><li>manualReview (*手動による評価が進行中*)</li><li>signing (*バイナリの署名*)</li><li>finalizeIngestion (*取り込みを完了して、署名されたファイルをダウンロードまたは公開できるように準備*)</li></ul>|
-| 状態 | string | 現在のステップの状態。 設定可能な値は、次のとおりです。<ul><li>notStarted</li><li>started</li><li>failed</li><li>完了</li></ul> |
+| State | string | 現在のステップの状態。 設定可能な値は、次のとおりです。<ul><li>notStarted</li><li>started</li><li>失敗</li><li>完了</li></ul> |
 | Messages | array | (特に障害発生時に) 現在のステップに関するメッセージを提供する文字列の配列 |
 
 ### <a name="download-object"></a>オブジェクトのダウンロード
@@ -196,9 +196,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
-| Items | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
+| 項目 | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
 | 種類 | string | ダウンロード可能なパッケージの種類。 設定可能な値は、次のとおりです。<ul><li>“initialPackage” – ユーザーがアップロードしたパッケージ (新しい申請の場合、パッケージのアップロードに使用する SAS URI をポイントします)</li><li>“derivedPackage” – 派生申請のためのシェル</li><li>“signedPackage” – Microsoft によって署名されているパッケージ</li><li>“certificationReport” – 署名された製品の認定レポート</li></ul>|
 | Messages | array | ダウンロード可能なファイルについてのメッセージを提供する文字列の配列 |
 
@@ -208,7 +208,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 ```json
 {
-      “href": "https:// manage.devcenter.microsoft.com/api/v1.0/hardware/products/9007199267351834",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
       "rel": "self",
       "method": "GET"
     }
@@ -216,11 +216,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | Href | String | API を介してリソースにアクセスするための URL |
 | Rel | String | リソースの種類。 設定可能な値は、次のとおりです。<ul><li>self – リンクは自身を指定</li><li>next_link – リンクは通常、改ページに使用される次のリソースを指定</li><li>get_submissions – リンクは製品のすべての申請を指定</li><li>commit_submission – リンクは申請のコミットを指定 </li><li>update_submission – リンクは申請の更新を指定 </li><li>update_shippinglabel – リンクは配送先住所ラベルの更新を指定  </li><li>driverMetadata - リンクはドライバー メタデータのダウンロードを許可するファイルを指定。 詳しくは、[ドライバー パッケージのメタデータ](driver-package-metadata.md)に関する記事をご覧ください。</li></ul>|
-| メソッド | String | URL を呼び出すときに使用される http メソッドの種類。 設定可能な値は、次のとおりです。<ul><li>GET</li><li>POST</li><li>PATCH</li></ul>|
+| 認証方法 | String | URL を呼び出すときに使用される http メソッドの種類。 設定可能な値は、次のとおりです。<ul><li>GET</li><li>POST</li><li>PATCH</li></ul>|
 
 ### <a name="additional-attribute-object"></a>その他の属性オブジェクト
 
@@ -228,12 +228,12 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 #### <a name="storagecontroller-object"></a>StorageController オブジェクト
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | biosVersion | string | ROM Bios のバージョン |
 | firmwareVersion | string | ファームウェア バージョン |
 | driverVersion | string | ドライバーのバージョン |
-| driverName | string | ドライバー名 |
+| driverName | string | ドライバ名 |
 | deviceVersion | string | デバイス バージョン |
 | chipsetName | string | チップセット名 |
 | usedProprietary | boolean | 独自のドライバーでサポートされたマルチパス。 true の場合、proprietaryName および proprietaryVersion は必須です |
@@ -252,7 +252,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 #### <a name="raidcontroller-object"></a>RaidController オブジェクト
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | firmwareVersion | string | ファームウェア バージョン |
 | filterVersion | string | ドライバーのバージョン |
@@ -270,7 +270,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 #### <a name="svvp-object"></a>SVVP オブジェクト
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | productVersion | string | 製品バージョン |
 | supportLink | string | サポート URL |
@@ -289,7 +289,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 * Bluetooth コントローラー
 * Bluetooth コントローラー (非 USB)
 * コンバーチブル タブレット
-* Desktop
+* デスクトップ
 * デジタル メディア レンダラー
 * デジタル メディア サーバー
 * デジタル スチル カメラ
@@ -338,17 +338,17 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 * ルーター
 * スキャナー
 * SDIO コントローラー
-* Server
+* Server (サーバー)
 * サーバー仮想化検証プログラム
 * 署名タブレット
-* スマート カード
+* Smart Cards
 * スマート カード リーダー
 * 記憶域配列
 * 記憶域コントローラー
 * 記憶域スペース アダプター
 * 記憶域スペース ダイレクト
-* タブレット
-* タッチ
+* Tablet
+* Touch
 * タッチ モニター
 * ウルトラモバイル PC
 * タッチ対応ウルトラモバイル PC
@@ -425,7 +425,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |WINDOWS_2008_SERVER_R2_IA64|Windows Server 2008 Release 2 IA64|
 |WINDOWS_2008_SERVER_R2_X64|Windows Server 2008 Release 2 x64|
 |WINDOWS_SERVER_SOLUTIONS_X64|Windows Server Solutions x64|
-|WINDOWS_8|Windows 8 クライアント|
+|WINDOWS_8|Windows 8 Client|
 |WINDOWS_8_X64|Windows 8 クライアント x64|
 |WINDOWS_8_ARM|Windows 8 クライアント RT|
 |WINDOWS_8_SERVER_X64|Windows Server 2012|
@@ -471,7 +471,6 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | 422 - 処理できないエンティティです | 検証エラー。 |
 | 500 - インターネット サーバー エラー | API のサーバーで回復不能なエラーが発生しました。 |
 
-
 機能の検証エラーがある場合、応答本文には次の機能のエラー コードのいずれかが含まれます。
 
 | エラー コード | エラー メッセージ | 説明 |
@@ -497,4 +496,4 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 ## <a name="see-also"></a>関連項目
 
-- [ハードウェア ダッシュボード API のサンプル (GitHub)](https://aka.ms/hpc_async_api_samples)
+* [ハードウェア ダッシュボード API のサンプル (GitHub)](https://aka.ms/hpc_async_api_samples)

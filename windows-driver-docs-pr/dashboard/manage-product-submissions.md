@@ -4,30 +4,30 @@ description: 製品のハードウェア ダッシュボード申請を管理し
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b831612540ecae02d14dde15bbbbb8627f9ba0
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 9ca915ec2ee7a1f73622d222a7d029be6338c474
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209226"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072171"
 ---
 # <a name="manage-product-submissions"></a>製品申請の管理
 
 *Microsoft ハードウェア API* の以下のメソッドを使用して製品の申請を管理し、製品が Microsoft によって署名されるようにします。 API を使用するための前提条件など、Microsoft Hardware API の概要については、「[Hardware dashboard API (ハードウェア ダッシュボード API)](dashboard-api.md)」をご覧ください。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
 ```
 
 製品の申請を管理するためのメソッド
 
-| メソッド | URI | 説明 |
+| 認証方法 | URI | 説明 |
 |:--|:--|:--|
-| GET | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}` | [特定の製品の状態/データの取得](get-a-product.md)  |
-| GET | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}` |[製品の特定の申請の状態/データの取得](get-a-submission.md)   |
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products` | [新しい製品の作成](create-a-new-product.md)   |
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/` | [製品の新しい申請の作成](create-a-new-submission-for-a-product.md)  |
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/commit` |[製品申請のコミット](commit-a-product-submission.md)  |
+| GET | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}` | [特定の製品の状態/データの取得](get-a-product.md)  |
+| GET | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}` |[製品の特定の申請の状態/データの取得](get-a-submission.md)   |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products` | [新しい製品の作成](create-a-new-product.md)   |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/` | [製品の新しい申請の作成](create-a-new-submission-for-a-product.md)  |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/commit` |[製品申請のコミット](commit-a-product-submission.md)  |
 
 ## <a name="create-and-submit-a-product-for-signing"></a>製品を作成し、署名のために提出
 
@@ -38,7 +38,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 3. Microsoft ハードウェア API の次のメソッドを実行して、[新しい製品を作成します](create-a-new-product.md)。 これにより、進行中の新しい製品が作成され、この製品のパッケージを提出することができます。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/
     ```
 
     応答本文には、この製品の ID を含む[製品リソース](get-product-data.md#product-resource)が含まれます。
@@ -46,7 +46,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 4. Microsoft ハードウェア API の次のメソッドを実行して、この製品の[申請を作成します](create-a-new-submission-for-a-product.md)。  上記の手順で作成した ProductID を使用します。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/
     ```
 
     応答本文に含まれる[申請のリソース](get-product-data.md#submission-resource)には、申請の ID、申請の製品 (ドライバー) パッケージを Azure Blob Storage にアップロードするための共有アクセス署名 (SAS) URI が含まれます。 [!NOTE] > SAS URI では、アカウント キーを必要とせずに、Azure Storage 内のセキュリティで保護されたリソースにアクセスできます。 SAS URI の背景情報と Azure Blob Storage での SAS URI の使用については、[Shared Access Signature 第 1 部: SAS モデルにの概要](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)に関する記事と、「[Shared Access Signature、第 2 部: BLOB ストレージでの SAS の作成と使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)」をご覧ください。
@@ -64,13 +64,13 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/
 6. 次のメソッドを実行して、[製品の申請をコミット](commit-a-product-submission.md)します。 これで、製品の申請を完了したことがハードウェア デベロッパー センターに通知され、申請の検証が開始されます。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/commit
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/commit
     ```
 
 7. 次のメソッドを実行して[製品申請の状態を取得](get-a-submission.md)して、コミット状態を確認します。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}
     ```
 
     申請の状態を確認するには、応答本文の *commitStatus* の値を確認します。 この値が *commitReceived* から *commitCompleted* (要求が成功した場合) または *commitFailed* (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*error* フィールドにエラーについての詳細情報が含まれています。

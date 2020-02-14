@@ -4,12 +4,12 @@ description: このセクションには、サポートされている各 Window
 ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a4d14ff01309ca38dd9e4b298a0416d849017bd
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
+ms.openlocfilehash: 0b5c8ed9dc26adca1c411ff0ca108a294d744c12
+ms.sourcegitcommit: 331d113b4d78d64ba82fa4c9f0b895afabb5cb3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980695"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144692"
 ---
 # <a name="overview-of-driver-technologies"></a>ドライバー テクノロジの概要
 
@@ -71,4 +71,4 @@ ms.locfileid: "76980695"
 
 - [Windows ドライバーの概要](gettingstarted/index.md)
 - [ドライバー開発ツール](devtest/index.md)
-- [Windows ハードウェアのパートナー センター](dashboard/index.md)
+- [Windows ハードウェアのパートナー センター](dashboard/index.yml)

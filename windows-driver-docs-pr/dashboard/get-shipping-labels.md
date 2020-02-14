@@ -3,12 +3,12 @@ title: 配送先住所ラベルのデータを取得する
 description: Microsoft Hardware API のこれらのメソッドでは、デベロッパー センター アカウントに登録されているハードウェア製品の配送先住所ラベルに関するデータが取得されます。
 ms.topic: article
 ms.date: 10/03/2019
-ms.openlocfilehash: 07c0205b5bcfb6718979ce7597e0bb53c3471090
-ms.sourcegitcommit: 566219e815a670e4345ff259a030445af1e5fb20
+ms.openlocfilehash: f4795fa7a29071c1eb2c83051cf68a2052caa447
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71923783"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072161"
 ---
 # <a name="get-shipping-label-data"></a>配送先住所ラベルのデータを取得する
 
@@ -17,15 +17,15 @@ API を使用するための前提条件など、Microsoft ハードウェア AP
 ハードウェア デベロッパー センター アカウントに登録されているハードウェア製品の配送先住所ラベルに関するデータを取得するには、*Microsoft Hardware API* の以下のメソッドを使用します。
 
 ```html
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/
 ```
 
 これらのメソッドを使用するには、製品および申請をお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
 
-|説明|メソッド|URI|
+|説明|認証方法|URI|
 |-|-|-|
-|[申請のすべての配送先住所ラベルに関するデータを取得する](get-all-shipping-labels.md)|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/`|
-|[申請の特定の配送先住所ラベルに関するデータを取得する](get-a-shipping-label.md)|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/{shippingLabelId}`|
+|[申請のすべての配送先住所ラベルに関するデータを取得する](get-all-shipping-labels.md)|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/`|
+|[申請の特定の配送先住所ラベルに関するデータを取得する](get-a-shipping-label.md)|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/{shippingLabelId}`|
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -107,7 +107,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978422",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978422",
       "rel": "self",
       "method": "GET"
     }
@@ -119,7 +119,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 
 このリソースには、次の値があります。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |id|long|配送先住所ラベルの ID|
 |productId|long|この配送先住所ラベルが関連付けられているプライベート製品 ID|
@@ -165,7 +165,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |goLiveDate|datetime|Windows Update でドライバーがダウンロードできるようになる日時。 日時を指定しないと、ドライバーは認定後すぐに公開されます。|
 |visibleToAccounts|long の配列|ドライバーと配送先住所ラベルに対して読み取り専用アクセス許可を持っている SellerID のリスト。 この情報は、パートナーの代わりにドライバーを公開する場合など、配送先住所ラベルの要求をパートナーに通知する必要がある場合に役に立ちます。|
@@ -196,16 +196,16 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 ```
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |microsoftContact|string|この要求においてお客様と協力する Microsoft スポンサーのメール アドレス|
-|validationsPerformed|string|ドライバーの検証方法についての説明。 Microsoft は、レビューの間にこの情報を使います。|
+|validationsPerformed|string|ドライバーの検証方法についての説明。 この情報は、レビュー中に Microsoft によって使用されます。|
 |affectedOems|string|この公開によって影響を受ける OEM の名前のリスト。 Microsoft は、レビューの間にこの情報を使います。|
-|isRebootRequired|boolean|ドライバーのインストールの後で再起動が必要かどうか。 Microsoft は、レビューの間にこの情報を使います。|
+|isRebootRequired|boolean|ドライバーのインストールの後で再起動が必要かどうか。 この情報は、レビュー中に Microsoft によって使用されます。|
 |isCoEngineered|boolean|ドライバーが Windows のアクティブな (リリースされていない) ビルドで共同エンジニアリングされているドライバーかどうか。 Microsoft は、レビューの間にこの情報を使います。|
-|isForUnreleasedHardware|boolean|ドライバーで新規デバイスまたは未リリース デバイスがサポートされているかどうか。 Microsoft は、レビューの間にこの情報を使います。|
-|hasUiSoftware|boolean|ドライバーで UI かソフトウェアまたはその両方が展開されるかどうか。 Microsoft は、レビューの間にこの情報を使います。|
-|businessJustification|string|この公開要求をプロモーションするビジネス上の正当性。 Microsoft は、レビューの間にこの情報を使います。|
+|isForUnreleasedHardware|boolean|ドライバーで新規デバイスまたは未リリース デバイスがサポートされているかどうか。 この情報は、レビュー中に Microsoft によって使用されます。|
+|hasUiSoftware|boolean|ドライバーで UI かソフトウェアまたはその両方が展開されるかどうか。 この情報は、レビュー中に Microsoft によって使用されます。|
+|businessJustification|string|この公開要求をプロモーションするビジネス上の正当性。 この情報は、レビュー中に Microsoft によって使用されます。|
 
 ### <a name="recipient-specifications-object"></a>受信者仕様オブジェクト
 
@@ -219,7 +219,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 ```
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |receiverPublisherId|string|ドライバーを共有する相手の販売者 ID。 受信者は、ドライバーをダウンロードし、Windows Update に公開して、DUA パッケージを作成することができます。 受信者は、他のパートナーとさらに共有することはできません。|
 |enforceChidTargeting|boolean|パートナーがこのドライバー申請に対して作成するすべての配送先住所ラベルに CHID を適用する必要があるかどうかを示します。 これにより、多くのパートナー企業とハードウェア ID を共有する場合に、ユーザーを保護することができます。|
@@ -261,7 +261,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 ```
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |hardwareIds|オブジェクトの配列|詳しくは、「[ハードウェア ID オブジェクト](#hardware-id-object)」をご覧ください|
 |chids|オブジェクトの配列|詳しくは、「[CHID オブジェクト](#chids-object)」をご覧ください。|
@@ -284,7 +284,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 ```
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |bundleId|string|ハードウェア ID が存在するバンドルを表す ID。|
 |infId|string|このハードウェア ID が含まれる inf ファイルの名前|
@@ -308,7 +308,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |chid|GUID|ターゲットにする必要がある CHID|
 |distributionState|string|この CHID の現在のターゲットの状態を表します。 使用できる値は次のとおりです (かっこ内に説明があります)。<ul><li>pendingAdd ("*このハードウェア ID に対して追加が要求され、処理が進行中です*")</li><li>pendingRemove ("*このハードウェア ID に対して削除 (期限切れ) が要求され、処理が進行中です*")</li><li>added ("*このハードウェア ID は、この配送先住所ラベルのターゲットとして正常に追加されました*")</li><li>notSet ("*このハードウェア ID では、操作が行われていないか、または状態が設定されていません*")</li></ul>|
@@ -326,7 +326,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 ```
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |下限|string|このオプションは、示されているもの以降の Windows 10 オペレーティング システムに対してのみ、ドライバーを提供する場合に使用します。 たとえば、RS4 を下限として選択すると、Windows 10 1803 (RS4) 以降を実行しているシステムに対してのみ、このドライバーが提供されることを意味します。 設定可能な値は、次のとおりです。 <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 設定可能な値は、OS の最新バージョンを含むように拡張されることにご注意ください。 |
 |ceiling|string|"*この機能へのアクセスは制限されています*"。 このオプションは、示されているもの以前のオペレーティング システムに対してのみドライバーを提供する場合に使用します。 たとえば、Windows 10 1607 RS1 認定ドライバーについて、RS3 を上限として選択すると、Windows 10 1803 (RS4) 以降を実行しているシステムにドライバーは提供されません。設定可能な値は、次のとおりです。 <ul><li>TH</li><li>RS1</li><li>RS2</li><li>RS3</li><li>RS4</li><li>RS5</li><li>19H1</li></ul> 設定可能な値は、OS の最新バージョンを含むように拡張されることにご注意ください。 |
@@ -344,7 +344,7 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 ```
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |flooringBuildNumber|number|ドライバーを提供する下限のリリースのビルド番号。 たとえば、下限を 10.1.17135 にする必要がある場合は、「17135」と入力する必要があります。 メジャー バージョン (10.1) は、常に既定で適切なバージョンに自動的に設定されます。|
 |ceiling|number|ドライバーを提供する上限のリリースのビルド番号。 たとえば、上限を 10.1.17139 にする必要がある場合は、「17139」と入力する必要があります。 メジャー バージョン (10.1) は、常に既定で適切なバージョンに自動的に設定されます。|
@@ -365,10 +365,10 @@ Microsoft Hardware API に関するすべての[前提条件](https://docs.micro
 
 このオブジェクトには、次の値があります
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | currentStep | string | このエンティティの全体的なワークフローにおける現在のステップの名前。 <br>Windows Update に対して公開される配送先住所ラベルの場合、使用可能な値は次のとおりです (かっこ内に説明があります)。<ul><li>Created ("*配送先住所ラベルを作成しています*")</li><li>PreProcessShippingLabel ("*ターゲット情報を検証しています*")</li><li>FinalizePreProcessing ("*前処理の後で適切な次のステップを呼び出しています*")</li><li>PublishJobValidation ("*パッケージの取り込み/申請が完了したかどうかを確認しています*")</li><li>UpdateGeneration ("*WU の公開の詳細を生成しています*")</li><li>MicrosoftApproval ("*プロモーション中/フライト中です*")</li><li>Publishing ("*WU に公開の詳細をプッシュしています*")</li><li>FinalizePublishing ("*公開プロセスを完了しています*")</li></ul> 他のパートナーと共有される配送先住所ラベルの場合、使用可能な値は次のとおりです (かっこ内に説明があります)。 <ul><li>Created ("*配送先住所ラベルを作成しています*")</li><li>PreProcessShippingLabel ("*ターゲット情報を検証しています*")</li><li>FinalizePreProcessing ("*前処理の後で適切な次のステップを呼び出しています*")</li><li>PublishJobValidation ("*パッケージの取り込み/申請が完了したかどうかを確認しています*")</li><li>ProcessSharing ("*受信者に対する共有の詳細を生成しています*")</li><li>FinalizeSharing ("*共有プロセスを完了しています*")</li></ul>|
-| 状態 | string | 現在のステップの状態。 設定可能な値は、次のとおりです。<ul><li>notStarted</li><li>started</li><li>failed</li><li>完了</li></ul> |
+| State | string | 現在のステップの状態。 設定可能な値は、次のとおりです。<ul><li>notStarted</li><li>started</li><li>失敗</li><li>完了</li></ul> |
 | Messages | array | (特に障害発生時に) 現在のステップに関するメッセージを提供する文字列の配列 |
 
 ## <a name="error-codes"></a>エラー コード

@@ -5,28 +5,28 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/23/2018
-ms.openlocfilehash: a4d0997b27979c32c2c19fecb0edab550f6ab553
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 37b268df879ad4d591fcaab034699fd45096d86d
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209216"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072157"
 ---
 # <a name="manage-shipping-labels"></a>配送先住所ラベルを管理する
 
 Windows ハードウェア ダッシュ ボード申請の配送先住所ラベルを管理するには、次のメソッドを使用します。 API を使用するための前提条件など、Microsoft ハードウェア ダッシュボード API の概要については、「[API を使用したハードウェア提出の管理](dashboard-api.md)」を参照してください。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
 ```
 
 配送先住所ラベルを管理するためのメソッド
 
-|説明|メソッド |URI|
+|説明|認証方法 |URI|
 |:--|:--|:--|
-|[新しい配送先住所ラベルを作成する](create-a-new-shipping-label.md)|POST|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels`|
-|[配送先住所ラベルを更新する](update-a-shipping-label.md)|PATCH|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId}`|
-|[配送先住所ラベルの取り消し](cancel-a-shipping-label.md)|PUT|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId/cancel}`|
+|[新しい配送先住所ラベルを作成する](create-a-new-shipping-label.md)|POST|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels`|
+|[配送先住所ラベルを更新する](update-a-shipping-label.md)|PATCH|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId}`|
+|[配送先住所ラベルの取り消し](cancel-a-shipping-label.md)|PUT|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels/{shippingLabelId/cancel}`|
 
 ## <a name="create-a-new-shipping-label"></a>新しい配送先住所ラベルを作成する
 
@@ -39,7 +39,7 @@ https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/sub
 4. 次のメソッドを実行して、この申請に対する[新しい配送先住所ラベルを作成](create-a-new-shipping-label.md)します。  前の手順の「[製品申請の管理](manage-product-submissions.md)」で作成した ProductID と SubmissionID を使用します。
 
     ```cpp
-    https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
+    https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productid}/submissions/{submissionid}/shippingLabels
     ```
     応答本文には、新しく作成された配送先住所ラベルやその他の詳細情報を含んだ、[配送先住所ラベル リソース](get-shipping-labels.md#shippinglabel-resource)が含まれます。
 
