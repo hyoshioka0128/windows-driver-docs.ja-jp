@@ -1,97 +1,138 @@
-### YamlMime:Landing
-title: Windows Driver Kit のドキュメント
-summary: Windows Driver Kit (WDK) 10 は Microsoft Visual Studio および Debugging Tools for Windows と統合されています。 この統合された環境には、ドライバーの開発、構築、パッケージ、デプロイ、テスト、デバッグのために必要なツールが用意されています。 統合環境内で、多くの基本的な認定テストを実行できます。 WDK には、Windows Driver Frameworks (WDF)、ユニバーサル シリアル バス (USB)、印刷、ネットワーキング、ファイル システム フィルターを含む、いくつかのテクノロジとドライバー モデルのテンプレートが含まれています。
+### YamlMime:Hub
+title: Windows ハードウェア開発者向けドキュメント
+summary: Windows PC や他のデバイスのハードウェアおよびデバイス ドライバーを設計、開発、デプロイする方法について説明します。
+brand: windows
 metadata:
+  title: Windows 開発者向けドキュメント
+  description: Windows PC や他のデバイスのハードウェアおよびデバイス ドライバーを設計、開発、デプロイします。
   author: tedhudek
-  description: このセクションでは、WDK とサンプルの入手方法と Windows ドライバーの構築方法について説明します。
   ms.author: tedhudek
-  ms.date: 09/18/2019
-  ms.topic: landing-page
-  ms.prod: windows-hardware
-  ms.technology: windows-devices
-  services: wdk
-  ms.openlocfilehash: b48b3a492da4b7d4ab18421945e8729fa8aece6b
-  ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+  ms.topic: hub-page
+  ms.date: 01/14/2020
+  ms.localizationpriority: medium
+  uhfHeaderId: MSDocsHeader-WinDevCenter
+  ms.openlocfilehash: db539d17accf0461db402ad9850e3df605e33212
+  ms.sourcegitcommit: 0fda09661b467aca3f54378c16d297ee00f7905c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 10/24/2019
-  ms.locfileid: "72840654"
-landingContent:
-- title: キットについて
-  linkLists:
-  - linkListType: whats-new
+  ms.lasthandoff: 02/13/2020
+  ms.locfileid: "77179236"
+highlightedContent:
+  items:
+  - title: Windows Driver Kit を入手する
+    itemType: download
+    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+  - title: デバイスとドライバーのインストール
+    itemType: overview
+    url: https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation
+  - title: Insider Program に参加する
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: Windows 開発者向けオンライン トレーニング
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=windows
+conceptualContent:
+  items:
+  - title: ツールの入手
     links:
-    - text: 新機能と更新プログラム
-      url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
-    - text: WDF ドライバーの新機能
-      url: https://docs.microsoft.com/windows-hardware/drivers/wdf/
-  - linkListType: reference
-    links:
-    - text: Windows ドライバー API リファレンス
-      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/
-- title: ツールの入手
-  linkLists:
-  - linkListType: download
-    links:
-    - text: Windows Driver Kit (WDK)
-      url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
     - text: Visual Studio 2019
       url: https://go.microsoft.com/fwlink/p/?LinkId=698539
+      itemType: download
     - text: Debugging Tools for Windows
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/
+      itemType: download
     - text: Windows ドライバー サンプル
       url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+      itemType: download
     - text: 以前のバージョンの WDK のインストール
       url: https://docs.microsoft.com/windows-hardware/drivers/installing-preview-versions-wdk
-- title: はじめに
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: ドライバーとは
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
-    - text: ユニバーサル Windows ドライバーの概要
-      url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
-  - linkListType: tutorial
-    links:
-    - text: ユニバーサル Hello World ドライバーの作成
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
-- title: インストール
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: デバイスとドライバーのインストール
-      url: https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-and-driver-installation
-    - text: ブート エントリの追加
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-boot-entries
-    - text: ブート オプションの編集
-      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/editing-boot-options
-    - text: デバイス マネージャーを使用したデバイスとドライバー パッケージのアンインストール
-      url: https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager-to-uninstall-devices-and-driver-packages
-- title: デバッグ
-  linkLists:
-  - linkListType: overview
+      itemType: overview
+  - title: デバッグ
     links:
     - text: WinDbg の概要
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg
+      itemType: get-started
     - text: KDNET デバッグの設定
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically
-    - text: Windows シンボル パッケージ
-      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
-  - linkListType: tutorial
-    links:
+      itemType: overview
+    - text: Debugging Tools for Windows のダウンロード - WinDbg
+      url: https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools
+      itemType: download
     - text: ユニバーサル ドライバーのデバック
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-
-- title: ドライバーの署名取得
-  linkLists:
-  - linkListType: overview
+      itemType: tutorial
+  - title: API リファレンス
     links:
-    - text: Windows ハードウェアのパートナー センター
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
-    - text: 新しい配送先住所ラベルを作成する
+    - text: Windows ドライバー API リファレンス
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/
+      itemType: reference
+    - text: WDF API リファレンス
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_wdf
+      itemType: reference
+    - text: コア カーネル API リファレンス
+      url: https://docs.microsoft.com/windows-hardware/drivers/ddi/_kernel
+      itemType: reference
+tools:
+  title: ドライバー プラットフォームとフレームワーク
+  items:
+  - title: カーネル/Windows Driver Model
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows-hardware/drivers/kernel
+  - title: Windows Driver Frameworks
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows-hardware/drivers/wdf
+additionalContent:
+  sections:
+  - title: タスク
+    items:
+    - title: ユニバーサル Hello World ドライバーの作成
+      summary: KMDF を使用して、非常に小さいユニバーサル Windows ドライバーを作成する方法について説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
+    - title: ユニバーサル Windows ドライバーの概要
+      summary: 複数のデバイス タイプで動作する 1 つのドライバー パッケージを作成します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
+    - title: ブート エントリの追加
+      summary: ブート エントリは、オペレーティング システムまたは起動可能なプログラムの読み込み構成を定義する一連のオプションです。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/adding-boot-entries
+    - title: ブート オプションの編集
+      summary: ブート オプションのカスタマイズ方法について説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/editing-boot-options
+    - title: デバイス マネージャーを使用したデバイスとドライバー パッケージのアンインストール
+      summary: デバイス マネージャーは、デバイスやドライバーの管理に使用できるコントロール パネル アプリケーションです。
+      url: https://docs.microsoft.com/windows-hardware/drivers/install/using-device-manager-to-uninstall-devices-and-driver-packages
+    - title: 新しい配送先住所ラベルを作成する
+      summary: Microsoft ハードウェア API でこのメソッドを使用して、新しい配送先住所ラベルを作成します。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-new-shipping-label
-    - text: 配送先住所ラベルを管理する
+    - title: 配送先住所ラベルを管理する
+      summary: Windows ハードウェア ダッシュボード申請の配送先住所ラベルを管理する方法について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/manage-shipping-labels
-    - text: 配送先住所ラベルの更新
-      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-shipping-label
-    - text: コード署名証明書の取得
+    - title: コード署名証明書の取得
+      summary: デジタル情報を保護するためのコード署名証明書を取得する方法について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate
+  - title: 参照情報
+    items:
+    - title: Windows ハードウェアのパートナー センター
+      summary: システムおよびドライバーの申請を迅速かつ容易に作成して管理する方法について説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
+    - title: 新機能と更新プログラム
+      summary: Windows 10 の最新のドライバー開発機能について説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
+    - title: ドライバーとは
+      summary: Windows ドライバーについて理解するうえで必要となる基本的な概念について説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
+    - title: Windows シンボル パッケージ
+      summary: シンボル ファイルにより、コードのデバッグが簡単になります。
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
+    - title: バグ チェック コード リファレンス
+      summary: このセクションでは、青のバグ チェック画面にエラー コードと共に表示されるパラメーターを含む、一般的なバグ チェック コードについて説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2
+    - title: ドライバーの検証ツール
+      summary: ドライバーの検証ツールは、Windows カーネルモード ドライバーとグラフィックス ドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier
+    - title: Windows デバイス コンソール (Devcon.exe)
+      summary: DevCon は、Windows を実行しているコンピューター上のデバイスに関する詳細情報を表示するコマンドライン ツールです。
+      url: https://docs.microsoft.com/windows-hardware/drivers/devtest/devcon
+    - title: WinUSB (Winusb.sys)
+      summary: このセクションでは、すべての USB デバイス用に Microsoft が提供する汎用 WinUSB ドライバー (Winusb.sys) とそのユーザーモード コンポーネント (Winusb.dll) について説明します。
+      url: https://docs.microsoft.com/windows-hardware/drivers/usbcon/winusb
+  footer: '[@WindowsDocs (Twitter)](https://twitter.com/WindowsDocs) - [OneDevMinute (YouTube)](https://aka.ms/OneDevMinute) - [Windows 開発者向けサポート](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'
