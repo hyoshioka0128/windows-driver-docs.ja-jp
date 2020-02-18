@@ -5,26 +5,26 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 2fc033ca64fded4d2cc8a3fe00082d1e3a635d92
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 1e9aefd492d82db21cb8d1f851aedf5d8402c336
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335031"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072189"
 ---
 # <a name="get-audience-data"></a>対象ユーザー データの取得
 
 組織の対象ユーザーを取得するには、*Microsoft ハードウェア API* の次のメソッドを使用します。 対象ユーザーを使用すると、公開を特定の構成のコンピューターに限定できます。 たとえば、テスト環境を、特定のレジストリ キーがインストールされているクライアントにのみ提供することもできます。
 
 ```cpp
-https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences
+https://manage.devcenter.microsoft.com/v2.0/my/hardware/audiences
 ```
 
-これらのメソッドを使用するには、製品および申請をお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
+これらのメソッドを使用するには、自分のデベロッパー センター アカウントに、製品および申請が既に存在している必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
 
-|説明|メソッド|URI|
+|説明|認証方法|URI|
 |-|-|-|
-|組織の対象ユーザーの一覧を取得します。|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/audiences`|
+|組織の対象ユーザーの一覧を取得します。|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/audiences`|
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -49,33 +49,33 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このリソースには、次の値があります。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |id|string|対象ユーザーの ID。 これは、配送先住所ラベルで送受信される値です。|
 |name|string|対象ユーザーのフレンドリ名|
-|説明|string|対象ユーザーの説明|
+|description|string|対象ユーザーの説明|
 |audienceName|string|対象ユーザーの名前|
 
 ## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |--|--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/audience`|
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/audience`|
 
 ### <a name="request-header"></a>要求ヘッダー
 
 |Header|種類|説明|
 |--|--|--|
 |Authorization|string|必須。 **Bearer** *\<トークン\>* という形式の Azure AD アクセス トークン。|
-|accept|string|(省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です|
+|accept|string|任意。 コンテンツの種類を指定します。 許容値は “application/json” です|
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。
 
@@ -84,11 +84,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、組織の対象ユーザーに関する情報を取得する方法を示しています。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/audience HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/audience HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、組織のすべての対象ユーザーに対する要求が成功した場合に返される JSON 応答本文を示しています。 応答本文の値について詳しくは、次の表をご覧ください。
 
@@ -120,7 +120,7 @@ Authorization: Bearer <your access token>
 
 このリソースには、次の値があります。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | value | array | 各対象ユーザーに関する情報を含むオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、「[対象ユーザー](#audience-resource)」をご覧ください。 |
 | links | array | コンテナー エンティティに関する役立つリンクが含まれるオブジェクトの配列です。 詳しくは、「[リンク オブジェクト](get-product-data.md#link-object)」をご覧ください。|

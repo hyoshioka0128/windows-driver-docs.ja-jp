@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c1398e0480362f3be2ec85e9231e1a5d24a331c
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: f9d2a835b10dec14903b21cb291faee22b643b95
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337081"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072185"
 ---
 # <a name="update-product-data"></a>製品データの更新  
 Microsoft ハードウェア API の以下のメソッドを使用して、製品の詳細情報を更新します。 このメソッドを使用する前に、製品を作成済みであることを確認します。 詳細については、「[新しい製品の作成](create-a-new-product.md)」を参照してください。 
@@ -23,22 +23,22 @@ Microsoft ハードウェア API に関するすべての前提条件がまだ�
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。 
 
 
-| メソッド | 要求 URI |
+| 認証方法 | 要求 URI |
 |:--|:--|
-| PATCH | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}` |
+| PATCH | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}` |
 
 ### <a name="request-header"></a>要求ヘッダー
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| Authorization | String    | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
-| accept |  String | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+| Authorization | String    | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| accept |  String | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 次の例は、製品を更新するための JSON 応答本文を示しています。 製品に対して、announcementDate、marketingNames、productName の 3 種類の変更のみを行うことができます。
 
@@ -56,11 +56,11 @@ Microsoft ハードウェア API に関するすべての前提条件がまだ�
 次の例は、製品を更新する方法を示しています。
 
 ```json 
-PATCH https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838 HTTP/1.1
+PATCH https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 応答は HTTP ステータスの 204 で空になります。
 

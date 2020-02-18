@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b173b2ed2c4d7e0a86e6e410ae99f95bccf32490
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 349dcb2238ba7dedf71f28c8bf02cea57a770516
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813578"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072217"
 ---
 # <a name="get-a-product"></a>製品の取得
 
@@ -25,23 +25,23 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |:--|:--|
-|GET|https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}|
+|GET|https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}|
 
 ### <a name="request-header"></a>要求ヘッダー
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| authorization | string | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
-| accept | string | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+| 承認 | string | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| accept | string | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。
 
@@ -50,11 +50,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、アカウントに登録する特定の製品に関する情報を取得する方法を示しています。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14039471039847257 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14039471039847257 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、開発者アカウントに登録されている特定の製品に対する要求が成功した場合に返される JSON 応答本文を示しています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 

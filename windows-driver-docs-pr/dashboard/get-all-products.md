@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c3eed99484bce4192f398221dd408e01c717ab85
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: fd5afc9a5a04ac5468e0f001143150ea08c1e568
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813573"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072209"
 ---
 # <a name="get-all-products"></a>すべての製品の取得
 
@@ -25,22 +25,22 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |--|--|
-|GET| `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/` |
+|GET| `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/` |
 
 ### <a name="request-header"></a>要求ヘッダー
 
 |Header|種類|説明|
 |--|--|--|
-|Authorization|string|必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。|
-|accept|string|(省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です|
+|Authorization|string|必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。|
+|accept|string|任意。 コンテンツの種類を指定します。 許容値は “application/json” です|
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。
 
@@ -49,11 +49,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、アカウントに登録するすべての製品に関する情報を取得する方法を示しています。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/ HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/ HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、開発者アカウントに登録されているすべての製品に対する要求が成功した場合に返される JSON 応答本文を示しています。 簡潔にするために、この例では、要求によって返される最初の 2 つの製品のデータのみが示されています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>応答本文
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | value | array | アカウントに登録されている各製品についての情報が含まれるオブジェクトの配列。 各オブジェクトのデータの詳細については、「[製品リソース](get-product-data.md#product-resource)」を参照してください。 |
 | links | array | コンテナー エンティティに関する役立つリンクが含まれるオブジェクトの配列です。 詳細については、「[リンク オブジェクト](get-product-data.md#link-object)」を参照してください。  |

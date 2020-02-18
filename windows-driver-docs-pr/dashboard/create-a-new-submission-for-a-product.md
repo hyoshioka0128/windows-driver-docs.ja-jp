@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a68793cda9761a1982f69f1da62e329a6e3a0b73
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: e153d22e6fcd54eb9706e150f8547eb89d74f1a2
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66813580"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072159"
 ---
 # <a name="create-a-new-submission-for-a-product"></a>製品の新しい申請の作成
 
@@ -25,9 +25,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-| メソッド | 要求 URI |
+| 認証方法 | 要求 URI |
 |:--|:--|
-| POST | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions` |
+| POST | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions` |
 
 
 メソッド内の productId は、申請の対象となる製品です。
@@ -36,15 +36,15 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| Authorization | String | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
-| OK | String | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+| Authorization | String | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| 同意する | String | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 次の例は、新しい製品を作成するための JSON 要求本文の例を示しています。
 
@@ -62,11 +62,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、新しい申請を作成する方法を示しています。
 
 ```cpp
-POST https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions HTTP/1.1
+POST https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、製品の新しい申請を作成する要求が成功した場合に返される JSON 応答本文を示しています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -85,12 +85,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504621465124",
       "rel": "update_submission",
       "method": "PATCH"
     }

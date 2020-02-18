@@ -4,12 +4,12 @@ description: Microsoft パートナー センターで、ハードウェア ダ�
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 71e94fc186e6302964e147b8c3232457ce411702
-ms.sourcegitcommit: 3de5c4aa7df9c21fc26dd063c8c4b65d67c83c58
+ms.openlocfilehash: f89411c7f9d2eb9c4f2f63b907bd17b6188f5b0b
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68223982"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072211"
 ---
 # <a name="get-a-submission"></a>申請の取得
 
@@ -23,22 +23,22 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |:--|:--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionID}` |
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionID}` |
 
 ### <a name="request-header"></a>要求ヘッダー
 
 |Header|種類|説明|
 |:--|:--|:--|
-|Authorization|string|必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。|
-|accept|string|(省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です|
+|Authorization|string|必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。|
+|accept|string|任意。 コンテンツの種類を指定します。 許容値は “application/json” です|
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。
 
@@ -48,11 +48,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/13635057453741329/submissions/1152921504621441930 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/13635057453741329/submissions/1152921504621441930 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、製品の特定の申請に対する要求が成功した場合に返される JSON 応答本文を示しています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -88,12 +88,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/13635057453741329/submissions/1152921504621441930",
       "rel": "update_submission",
       "method": "PATCH"
     }

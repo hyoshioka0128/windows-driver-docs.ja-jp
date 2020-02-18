@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 2b34be22c944b18f0c519941881dea2d7727d4b5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: d14bc2ed0b3a291062c1af4e83ca0d409a595d4c
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63335055"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072213"
 ---
 # <a name="get-a-shipping-label"></a>配送先住所ラベルの取得
 
@@ -18,22 +18,22 @@ ms.locfileid: "63335055"
 
 ## <a name="prerequisites"></a>前提条件
 
-Microsoft ハードウェア API に関するすべての[前提条件](dashboard-api.md)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。 これらのメソッドを使用するには、製品および申請をお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
+Microsoft ハードウェア API に関するすべての[前提条件](dashboard-api.md)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。 これらのメソッドを使用するには、自分のデベロッパー センター アカウントに、製品および申請が既に存在している必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
 
 ## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |--|--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/{shippingLabelId}`|
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/{shippingLabelId}`|
 
 ### <a name="request-header"></a>要求ヘッダー
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| authorization | string | 必須。 **Bearer** \*<トークン\>* という形式の Azure AD アクセス トークン。 |
-| accept | string | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+| 承認 | string | 必須。 **Bearer** \*<トークン\>* という形式の Azure AD アクセス トークン。 |
+| accept | string | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 ### <a name="request-parameters"></a>要求パラメーター
 
@@ -41,9 +41,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 |名前|種類|説明|
 |:--|:--|:--|
-| includeTargetingInfo | boolean | (省略可能)。 このパラメーターが true に設定されている場合は、配送先住所ラベルで、配送先住所ラベルのターゲットの詳細が返されます (ハードウェア ID や CHID など)。 詳しくは、「[ターゲット オブジェクト](get-shipping-labels.md#targeting-object)」をご覧ください。|
+| includeTargetingInfo | boolean | 任意。 このパラメーターが true に設定されている場合は、配送先住所ラベルで、配送先住所ラベルのターゲットの詳細が返されます (ハードウェア ID や CHID など)。 詳しくは、「[ターゲット オブジェクト](get-shipping-labels.md#targeting-object)」をご覧ください。|
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。
 
@@ -52,11 +52,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、アカウントに登録する特定の製品に関する情報を取得する方法を示しています。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、特定の配送先住所ラベルに対する要求が成功した場合に返される JSON 応答本文を示しています。 応答本文の値について詳しくは、次の表をご覧ください。
 
@@ -132,12 +132,12 @@ Authorization: Bearer <your access token>
   },
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
       "rel": "self",
       "method": "GET"
     },
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978459",
       "rel": "update_shippinglabel",
       "method": "PATCH"
     }

@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: e7f4c90ad508e7c2270621da289133375c5e98e0
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 65cd448a3ed862f61cbe7fb894c19b3e87d40b96
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334889"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072155"
 ---
 # <a name="update-a-shipping-label"></a>配送先住所ラベルの更新
 
@@ -24,9 +24,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、このトピックの他のセクションをご覧ください。
 
-| メソッド | 要求 URI |
+| 認証方法 | 要求 URI |
 |:--|:--|
-| PATCH | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}` |
+| PATCH | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}` |
 
 メソッド内の *ProductID*、 *submissionID*、*shippingLabelId* は、更新される製品、申請および配送先住所ラベルを表します。
 
@@ -34,14 +34,14 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| Authorization | String | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
-| OK | String | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+| Authorization | String | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| 同意する | String | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 次の例は、配送先住所ラベルの JSON 要求本文を示しています。 配送先住所ラベルでは、次の種類の変更のみ加えることができます。
 
@@ -112,11 +112,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、製品を更新する方法を示しています。
 
 ```json
-PATCH https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
+PATCH https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 応答は HTTP ステータスの 204 で空になります。
 

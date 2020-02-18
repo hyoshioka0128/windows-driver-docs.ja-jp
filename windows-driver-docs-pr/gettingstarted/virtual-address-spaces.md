@@ -4,12 +4,12 @@ description: 仮想アドレス領域
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 778e9a60127f2dfc852aca940cd5faf153fa6f1d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f945bd59b717c7e242ce46398ea33f2ae76f1582
+ms.sourcegitcommit: 8fce8b22c7437f0aa322c40625d5163e8812ea01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358665"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77146510"
 ---
 # <a name="virtual-address-spaces"></a>仮想アドレス領域
 
@@ -22,7 +22,7 @@ ms.locfileid: "67358665"
 
 -   個々のプロセスが使う仮想アドレスはそれぞれ独立しています。 あるプロセス中のコードが、別のプロセスまたはオペレーティング システムで使われている物理メモリを変更することはできません。
 
-あるプロセスで利用できる仮想アドレスの範囲は、そのプロセスの*仮想アドレス領域*と呼ばれます。 個々のユーザー モード プロセスには独自のプライベート仮想アドレス領域が割り当てられます。 32 ビット プロセスの仮想アドレス領域は通常、0x00000000 ～ 0x7FFFFFFF の 2 GB 分です。 64 ビット プロセスの仮想アドレス領域は、0x000'00000000 ～ 0x7FF'FFFFFFFF の 8 TB 分です。 仮想アドレスの範囲は、*仮想メモリ*の範囲と呼ばれることもあります。
+あるプロセスで利用できる仮想アドレスの範囲は、そのプロセスの*仮想アドレス領域*と呼ばれます。 個々のユーザー モード プロセスには独自のプライベート仮想アドレス領域が割り当てられます。 32 ビット プロセスの仮想アドレス領域は通常、0x00000000 ～ 0x7FFFFFFF の 2 GB 分です。 64 ビット Windows の 64 ビット プロセスの仮想アドレス領域は、0x000'00000000 から 0x7FFF'FFFFFFFF の 128 TB 分です。 仮想アドレスの範囲は、*仮想メモリ*の範囲と呼ばれることもあります。 詳細については、「[Memory and Address Space Limits](https://docs.microsoft.com/windows/win32/memory/memory-limits-for-windows-releases#memory-and-address-space-limits)」(メモリおよびアドレス領域の制限) を参照してください。
 
 下図は、仮想アドレス領域の主な特徴を表したものです。
 

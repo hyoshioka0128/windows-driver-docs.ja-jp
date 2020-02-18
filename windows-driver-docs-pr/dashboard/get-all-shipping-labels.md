@@ -5,12 +5,12 @@ author: balapv
 ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 59fbf44a5cf8f5a1cdf7cb588bab751cfecab114
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 4f5f1626ee3cb79eec1e8ee76e7cdaa752b13668
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337221"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072203"
 ---
 # <a name="get-all-shipping-labels"></a>すべての配送先住所ラベルを取得する
 
@@ -18,28 +18,28 @@ ms.locfileid: "63337221"
 
 ## <a name="prerequisites"></a>前提条件
 
-Microsoft ハードウェア API に関するすべての[前提条件](dashboard-api.md)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。 これらのメソッドを使用するには、製品および申請をお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
+Microsoft ハードウェア API に関するすべての[前提条件](dashboard-api.md)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。 これらのメソッドを使用するには、自分のデベロッパー センター アカウントに、製品および申請が既に存在している必要があります。 製品の申請を作成または管理する方法については、「[製品申請の管理](manage-product-submissions.md)」のメソッドを参照してください。
 
 ## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |--|--|
-|GET|`https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/`|
+|GET|`https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productId}/submissions/{submissionId}/shippingLabels/`|
 
 ### <a name="request-header"></a>要求ヘッダー
 
 |Header|種類|説明|
 |--|--|--|
 |Authorization|string|必須。 **Bearer** \*<トークン\>* という形式の Azure AD アクセス トークン。|
-|accept|string|(省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です|
+|accept|string|任意。 コンテンツの種類を指定します。 許容値は “application/json” です|
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。
 
@@ -48,10 +48,10 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、アカウントに登録するすべての製品に関する情報を取得する方法を示しています。
 
 ```cpp
-GET https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/ HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/ HTTP/1.1
 Authorization: Bearer <your access token>
 ```
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 次の例は、開発者アカウントに登録されている特定の製品申請の、すべての配送先住所ラベルの要求が成功した場合に返される、JSON 応答本文を示しています。 簡潔にするために、この例では、要求によって返される最初の 3 つの配送先住所ラベルのデータのみが示されています。 応答本文の値について詳しくは、次の表をご覧ください。
 
@@ -90,12 +90,12 @@ Authorization: Bearer <your access token>
       },
       "links": [
         {
-          "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606980231",
+          "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606980231",
           "rel": "self",
           "method": "GET"
         },
         {
-          "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606980231",
+          "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606980231",
           "rel": "update_shippinglabel",
           "method": "PATCH"
         }
@@ -118,12 +118,12 @@ Authorization: Bearer <your access token>
       },
       "links": [
         {
-          "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978460",
+          "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978460",
           "rel": "self",
           "method": "GET"
         },
         {
-          "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978460",
+          "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978460",
           "rel": "update_shippinglabel",
           "method": "PATCH"
         }
@@ -150,12 +150,12 @@ Authorization: Bearer <your access token>
       },
       "links": [
         {
-          "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978538",
+          "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978538",
           "rel": "self",
           "method": "GET"
         },
         {
-          "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978538",
+          "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964157/submissions/1152921504621467613/shippingLabels/1152921504606978538",
           "rel": "update_shippinglabel",
           "method": "PATCH"
         }
@@ -166,7 +166,7 @@ Authorization: Bearer <your access token>
   ],
   "links": [
     {
-      "href": "https://manage.devcenter.microsoft.com/v1.0/my/hardware/products?pageSize=50",
+      "href": "https://manage.devcenter.microsoft.com/v2.0/my/hardware/products?pageSize=50",
       "rel": "self",
       "method": "GET"
     }
@@ -175,7 +175,7 @@ Authorization: Bearer <your access token>
 ```
 このリソースには、次の値があります。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 | value | array | 各配送先住所ラベルに関する情報を含むオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、「[配送先住所ラベルのリソース](get-shipping-labels.md#shippinglabel-resource)」をご覧ください。 |
 | links | array | コンテナー エンティティに関する役立つリンクが含まれるオブジェクトの配列です。 詳しくは、「[リンク オブジェクト](get-product-data.md#link-object)」をご覧ください。|

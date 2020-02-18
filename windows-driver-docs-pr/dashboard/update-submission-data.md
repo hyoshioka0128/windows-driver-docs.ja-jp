@@ -6,12 +6,12 @@ ms.author: balapv
 ms.topic: article
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8bb7598480e7c98802afc8b42e4e5aa4ed65cb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 9303d6b4df89a80259b447e68eb7247c91ba1b90
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63334887"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072151"
 ---
 # <a name="update-submission-data"></a>申請データの更新 
 
@@ -24,22 +24,22 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 ## <a name="request"></a>要求
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-| メソッド | 要求 URI |
+| 認証方法 | 要求 URI |
 |:--|:--|
-| PATCH | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}`
+| PATCH | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}`
 
 ### <a name="request-header"></a>要求ヘッダー
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-|Authorization | String | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
-| accept | String | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+|Authorization | String | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| accept | String | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 次の例は、製品を更新するための JSON 応答本文を示しています。 申請には名前の変更のみが可能です。
 
@@ -55,11 +55,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、製品を更新する方法を示しています。
 
 ```json 
-PATCH https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14631253285588838/submissions/1152921504627422408 HTTP/1.1
+PATCH https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14631253285588838/submissions/1152921504627422408 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 応答は HTTP ステータスの 204 で空になります。
 

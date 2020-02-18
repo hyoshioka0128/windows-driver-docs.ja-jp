@@ -4,12 +4,12 @@ description: Microsoft による承認または段階的なロールアウトで
 ms.topic: article
 ms.date: 11/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6be0ee5bc80f1258f5ddf278a9b63f346740796f
-ms.sourcegitcommit: 67335434c02f122f29468420ce2e076b51b493ad
+ms.openlocfilehash: 7532f0275676300aa320449823c62dd70db21333
+ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74056055"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072169"
 ---
 # <a name="cancel-a-shipping-label"></a>配送先住所ラベルの取り消し
 
@@ -23,9 +23,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、このトピックの他のセクションをご覧ください。
 
-| メソッド | 要求 URI |
+| 認証方法 | 要求 URI |
 |:--|:--|
-| PUT | `https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}/cancel` |
+| PUT | `https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/{productID}/submissions/{submissionId}/shippingLabels/{shippingLabelId}/cancel` |
 
 メソッド内の *ProductID*、*submissionID*、*shippingLabelId* は、取り消される製品、申請および配送先住所ラベルを表します。
 
@@ -33,14 +33,14 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| Authorization | String | 必須。 **Bearer** \<トークン\> という形式の Azure AD アクセス トークン。 |
-| OK | String | (省略可能)。 コンテンツの種類を指定します。 許容値は “application/json” です |
+| Authorization | String | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| 同意する | String | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 ### <a name="request-parameters"></a>要求パラメーター
 
 このメソッドでは要求パラメーターを指定しないでください。 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>[要求本文]
 
 このメソッドでは要求本文を指定しないでください。 
 
@@ -49,11 +49,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 次の例は、配送先住所ラベルの取り消しを要求する方法を示しています。
 
 ```json
-PUT https://manage.devcenter.microsoft.com/v1.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300/cancel HTTP/1.1
+PUT https://manage.devcenter.microsoft.com/v2.0/my/hardware/products/14461751976964156/submissions/1152921504621467600/shippingLabels/1152921504606980300/cancel HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a>[応答]
 
 応答は HTTP ステータスの 204 で空になります。
 
