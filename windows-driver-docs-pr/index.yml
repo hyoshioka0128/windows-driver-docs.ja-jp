@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinDevCenter
-  ms.openlocfilehash: db539d17accf0461db402ad9850e3df605e33212
-  ms.sourcegitcommit: 0fda09661b467aca3f54378c16d297ee00f7905c
+  ms.openlocfilehash: 3261dc9cf4f03a4c4ffc2574ac07aa4fbe3f7700
+  ms.sourcegitcommit: c2a96138fe8d619c2d2591cd849ae2dd4bb6c37b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/13/2020
-  ms.locfileid: "77179236"
+  ms.lasthandoff: 02/15/2020
+  ms.locfileid: "77260506"
 highlightedContent:
   items:
   - title: Windows Driver Kit を入手する
@@ -117,9 +117,9 @@ additionalContent:
     - title: 新機能と更新プログラム
       summary: Windows 10 の最新のドライバー開発機能について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
-    - title: ドライバーとは
-      summary: Windows ドライバーについて理解するうえで必要となる基本的な概念について説明します。
-      url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/what-is-a-driver-
+    - title: ドライバー テクノロジの概要
+      summary: Bluetooth や USB などを含む、特定の Windows ドライバー モデルの入門情報です。
+      url: https://docs.microsoft.com/windows-hardware/drivers/device-and-driver-technologies
     - title: Windows シンボル パッケージ
       summary: シンボル ファイルにより、コードのデバッグが簡単になります。
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols
