@@ -1,29 +1,31 @@
 ---
 title: 指示電源管理フレームワークの概要
-description: ダイレクト電源管理フレームワーク、または Power Framework、PoFx、version 3 に相当する DFx について説明します。
+description: 電源管理フレームワーク、または Power Framework の一部である DFx、バージョン3について説明します。
 ms.assetid: 58550c57-3439-4212-b0c6-6a2fbfd38414
-ms.date: 03/27/2019
+ms.date: 02/21/2020
 ms.custom: 19H1
-ms.openlocfilehash: 35c96f9482b46108dceca4c03b61c2f69c259fd6
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0759e31fce138294a61deddb86be642ee993054e
+ms.sourcegitcommit: c9e5aa086b72ae9c1a31bf952d0711383cfd4bbd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838615"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575210"
 ---
 # <a name="introduction-to-the-directed-power-management-framework"></a>指示電源管理フレームワークの概要
 
 Windows 10 バージョン1903以降のランタイム電源管理フレームワーク ([Pofx](https://docs.microsoft.com/windows-hardware/drivers/kernel/overview-of-the-power-management-framework)) では、オプションの有向電源モデルであるダイレクト Pofx (DFx) が提供されています。
 
-DFx を使用すると、オペレーティングシステムは、システムがアイドル状態に遷移したときに、適切な低電力アイドル状態を入力するようにデバイススタックに指示します。これにより、システムが低電力の電力をより確実に入力できるようになります。
+DFx を使用すると、オペレーティングシステムは、システムがアイドル状態に移行し、[アクティベーター](https://docs.microsoft.com/windows-hardware/design/device-experiences/activators)仲介型ソフトウェアアクティビティが存在しない場合に、適切な低電力アイドル状態を入力するようにデバイススタックに指示します。これにより、システムが低電力の電力をより確実に入力できるようになります。
 
 この目的は、システムの電力効率を高め、Windows デバイスのエネルギー消費量をフォームファクター全体に抑えることです。
 
-DFx は現在、D 状態管理のみをサポートしています。  DFx は、F 状態の制約があるデバイスのサブツリーをスキップします。
+DFx は、現在、D 状態制約のみのデバイスでサポートされています。  DFx は、F 状態の制約があるデバイスのサブツリーをスキップします。
+
+DFx は、ページングやデバッグデバイスの電源を入れません。
 
 ## <a name="requirements-for-wdf-non-miniport-drivers"></a>WDF (非ミニポート) ドライバーの要件
 
-**WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS** 構造体で**SystemManagedIdleTimeout** または [SystemManagedIdleTimeoutWithHint](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings) を指定する WDF ドライバーでは、次のレジストリキーを INF の [AddReg directive セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) に追加することにより、DFx を選択できます。[ddinstall. HW セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)内のディレクティブセクション:
+[WDF_DEVICE_POWER_POLICY_IDLE_SETTINGS](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_power_policy_idle_settings)構造体で**SystemManagedIdleTimeout**または**SystemManagedIdleTimeoutWithHint**を指定する WDF ドライバーは、 [DDINSTALL. HW セクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-hw-section)内の INF の[AddReg ディレクティブセクション](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に次のレジストリキーを追加することで、DFx を選択できます。
 
 ```
 HKR,"WDF","WdfDirectedPowerTransitionEnable",0x00010001,1
@@ -37,13 +39,13 @@ WDF ドライバーがランタイム電源管理を使用していない場合�
 
 ## <a name="requirements-for-wdm-non-miniport-drivers"></a>WDM (ミニポート以外) ドライバーの要件
 
-ドライバーが、WDF によって提供されるシステム管理のアイドルサポートを使用していない場合 (ドライバーは、ドライバーで管理されているアイドル状態のドライバーまたは WDM ドライバーのいずれか)、PoFx に登録することによって、DFx のサポートを受けることができます。  このシナリオでは、ドライバーは以下を実装して PoFx に登録します。
+ドライバーが、WDF によって提供されるシステム管理のアイドルサポートを使用していない場合 (ドライバーは、[ドライバーで管理](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ne-wdfdevice-_wdf_power_policy_idle_timeout_type)されているアイドル状態のドライバーまたは WDM ドライバーのいずれか)、pofx に登録することによって、DFx のサポートを受けることができます。  このシナリオでは、ドライバーは以下を実装して PoFx に登録します。
 
 - [PO_FX_DIRECTED_POWER_DOWN_CALLBACK コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_down_callback)
 - [PO_FX_DIRECTED_POWER_UP_CALLBACK コールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-po_fx_directed_power_up_callback)
 
 
-[**Pofxregisterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice)関数に入力される[PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)構造体でこれらのコールバックへのポインターを提供します。
+[**Pofxregisterdevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-pofxregisterdevice)関数に入力される[PO_FX_DEVICE_V3](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-po_fx_device_v3)構造体で、これらのコールバックへのポインターを提供します。
 
 DFx のサポートを受けるには、ドライバーが次のことを行う必要があります。
 
@@ -82,9 +84,9 @@ Status = PoFxRegisterDevice(
 
 ポート/ミニポートドライバーモデルに従うデバイスクラスの場合、システム指定のポートドライバーは通常、電源ポリシーの所有権を処理します。  対応するポートドライバーが DFx のサポートを処理することが想定されているため、ほとんどのミニポートでは、DFx を選択するためにコードの変更を要求する必要はありません。
 
-## <a name="testing"></a>テスト
+## <a name="testing"></a>Testing (テスト)
 
-Microsoft では、DFx に使用できる3つのテストを提供しています。ユーザーが指定したデバイスをテストするための[Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)の単一デバイステスト、デバイスレベルの HLK テスト、システム上のすべてのデバイスのテストを目的としたシステムレベルの HLK テストが用意されています。
+Microsoft では、DFx に対して3つのテストを提供しています。ユーザー指定のデバイスをテストするための[Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)の単一デバイステスト、デバイスレベルの HLK テスト、システム上のすべてのデバイスのテストを目的としたシステムレベルの HLK テストです。
 
 単一デバイステストは、WDK に付属する[Pwrtest](https://docs.microsoft.com/windows-hardware/drivers/devtest/pwrtest)ツールの一部として利用できます。  このツールにアクセスするには、`/directedfx` スイッチを使用してツールを実行します。  詳細については、「 [Pwrtest](../devtest/pwrtest-directedfx-scenario.md)を使用したテストのシナリオ」を参照してください。
 
@@ -103,6 +105,7 @@ S4 からの再開後にドライバーが[Pofxreportdevicepoweredon](https://do
 ## <a name="dfx-and-runtime-d3-rtd3"></a>DFx とランタイム D3 (RTD3)
 
 - RTD3 を使用すると、デバイスは通常、アイドル状態になったときに低電力の状態になります。  新しい作業が到着すると、デバイスはすぐに D0 に復帰します。  DFx を使用すると、デバイスは引き続きターゲットの D 状態 (およびキューでの新しい作業を保留) のままにして、PoFx によって電源バックアップが行われるようにする必要があります。
+
 
 ## <a name="see-also"></a>参照
 

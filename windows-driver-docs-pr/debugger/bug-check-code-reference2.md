@@ -4,16 +4,16 @@ description: ここでは、ブルースクリーンに渡されるパラメー�
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 02/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a5afbc115331b6b2e8ff726bfa2806c19e278a
-ms.sourcegitcommit: f931a1bad4132c07be5966b428c77745c96bcba4
+ms.openlocfilehash: 61adb0d567024bae0425a104cef9b1802fd5d3a0
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77248035"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528974"
 ---
 # <a name="bug-check-code-reference"></a>バグ チェック コード リファレンス
 
-ここでは、青のバグチェック画面にエラーコードと共に表示されるパラメーターなど、一般的なバグチェックコードについて説明します。 このセクションでは、バグチェックにつながるエラーを診断する方法と、エラーに対処するための方法についても説明します。
+このセクションでは、青のバグ チェック画面にエラー コードと共に表示されるパラメーターを含む、一般的なバグ チェック コードについて説明します。 このセクションでは、バグチェックにつながるエラーを診断する方法と、エラーに対処するための方法についても説明します。
 
 > [!NOTE] 
 > このトピックはプログラマーを対象としています。 システムにバグチェックコードを含むブルースクリーンが表示されているお客様の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)」を参照してください。
@@ -388,16 +388,17 @@ ms.locfileid: "77248035"
 | 0x0000019B | [**TTM\_致命的な\_エラー**](bug-check-0x19b--ttm-fatal-error.md)                                                                                      |
 | 0x0000019C | [**WIN32K\_POWER\_ウォッチドッグ\_タイムアウト**](bug-check-0x19c--win32k-power-watchdog-timeout.md)                                                         |
 | 0x0000019D | [**クラスター\_SVHDX\_LIVEDUMP**](bug-check-0x19d--cluster-svhdx-livedump.md)                                                                        |
-| 0x000001A0 | [**TTM\_ウォッチドッグ\_タイムアウト**](bug-check-0x1a0--ttm-watchdog-timeout.md)
-| 0x000001A1 | [**WIN32K\_吹き出し\_ウォッチドッグ\_LIVEDUMP**](bug-check-0x1a1--win32k-callout-watchdog-livedump.md)
-| 0x000001A2 | [**WIN32K\_コールアウト\_ウォッチドッグ\_バグチェック**](bug-check-0x1a2--win32k-callout-watchdog-bugcheck.md)
+| 0x000001A0 | [**TTM\_ウォッチドッグ\_タイムアウト**](bug-check-0x1a0--ttm-watchdog-timeout.md)                                                                            |
+| 0x000001A1 | [**WIN32K\_吹き出し\_ウォッチドッグ\_LIVEDUMP**](bug-check-0x1a1--win32k-callout-watchdog-livedump.md)                                                   |
+| 0x000001A2 | [**WIN32K\_コールアウト\_ウォッチドッグ\_バグチェック**](bug-check-0x1a2--win32k-callout-watchdog-bugcheck.md)                                                   |
 | 0x000001A3 | [ **\_呼び出し\_ウォッチドッグ\_タイムアウト\_LIVEDUMP が\_返され\_いません**](bug-check-0x1a3--call-has-not-returned-watchdog-timeout-livedump.md)                  |
 | 0x000001A4 | [**DRIPS\_SW\_HW\_相違\_LIVEDUMP**](bug-check-0x1a4--drips-sw-hw-divergence-livedump.md)                                                    |
 | 0x000001A5 | [**USB\_DRIPS\_ブロック\_突然\_削除\_LIVEDUMP**](bug-check-0x1a5--usb-drips-blocker-surprise-removal-livedump.md)                           |
 | 0x000001A6 | [**BLUETOOTH\_エラー\_回復\_LIVEDUMP**](bug-check-0x1a6--bluetooth-error-recovery-livedump.md)                                                 |
-| 0x000001A7 | [**SMB\_リダイレクター\_LIVEDUMP**](bug-check-0x1A7--smb-redirector-livedump.md)                                                                       |
+| 0x000001A7 | [**SMB\_リダイレクター\_LIVEDUMP**](bug-check-0x1A7--smb-redirector-livedump.md)                                                                      |
 | 0x000001A8 | [**VIDEO\_DXGKRNL\_BLACK\_画面\_LIVEDUMP**](bug-check-0x1a8--video-dxgkrnl-black-screen-livedump.md)                                            |
 | 0x000001B0 | [**VIDEO_MINIPORT_FAILED_LIVEDUMP**](bug-check-0x1b0--video-miniport-failed-livedump.md)                                                          |
+| 0x000001B8 | [**VIDEO_MINIPORT_BLACK_SCREEN_LIVEDUMP**](bug-check-0x1b8--video-miniport-black-screen-livedump.md)                                              |
 | 0x000001C4 | [**DRIVER\_VERIFIER\_検出された\_違反\_LIVEDUMP**](bug-check-0x1c4--driver-verifier-detected-violation-livedump.md)                            |
 | 0x000001C5 | [**IO\_THREADPOOL\_デッドロック\_LIVEDUMP**](bug-check-0x1c5--io-threadpool-deadlock-livedump.md)                                                     |
 | 0x000001C6 | [ **\_の高速な\_の前提条件\_違反**](bug-check-0x1c6--fast-eresource-precondition-violation.md)                                         |
@@ -419,7 +420,8 @@ ms.locfileid: "77248035"
 | 0x000001D6 | [**ワーカー\_スレッド\_、\_既定\_ワークロード\_ではない\_と\_返されました。** ](bug-check-0x1d6--worker-thread-returned-with-non-default-workload-class.md)   |
 | 0x000001D7 | [**EFS\_致命的な\_エラー**](bug-check-0x1d7--efs-fatal-error.md)                                                                                      |
 | 0x000001D8 | [**UCMUCSI\_エラー**](bug-check-0x1d8--ucmucsi-failure.md)                                                                                       |
-| 0x000001D9 | [ **\_IOMMU\_内部\_エラーの HAL**](bug-check-0x1d8--ucmucsi-failure.md)                                                                            |
+| 0x000001D9 | [ **\_IOMMU\_内部\_エラーの HAL**](bug-check-0x1d8--ucmucsi-failure.md)                                                                            |  
+| 0x000001DA | [* * HAL\_ブロック\_プロセッサ\_内部\_エラー * *](bug-check-0x1da--hal-blocked-processor-internal-error.md)                                         |
 | 0x000001DB | [**IPI\_ウォッチドッグ\_タイムアウト**](bug-check-0x1db--ipi-watchdog-timeout.md)                                                                            |
 | 0x000001DC | [**DMA_COMMON_BUFFER_VECTOR_ERROR**](bug-check-0x1dc--dma-common-buffer-vector-error.md)                                                          |
 | 0x00000356 | [**XBOX\_ERACTRL\_CS\_タイムアウト**](bug-check-0x356--xbox-eractrl-cs-timeout.md)                                                                     |

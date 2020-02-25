@@ -1,86 +1,86 @@
 ---
 title: WinDbg ドライバーの概要 (カーネル モード)
-description: このトピックでは、カーネル モード デバッガーとして WinDbg を使用するのに役立つ実践的な演習を開始します。
+description: このトピックでは、WinDbg をカーネルモードのデバッガーとして使用する際に役立つ実践的な演習について説明します。
 ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
-ms.date: 05/21/2018
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c119aa1994b53ce79b7983bbee559455084b464
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f87672476bca81ec688877dd90e35d84092ad732
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362187"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528976"
 ---
-# <a name="span-iddebuggergettingstartedwithwindbgkernel-modespangetting-started-with-windbg-kernel-mode"></a><span id="debugger.getting_started_with_windbg__kernel-mode_"></span>WinDbg (カーネル モード) の概要
+# <a name="span-iddebuggergetting_started_with_windbg__kernel-mode_spangetting-started-with-windbg-kernel-mode"></a><span id="debugger.getting_started_with_windbg__kernel-mode_"></span>WinDbg を使用したはじめに (カーネルモード)
+
+WinDbg は、Windows 用デバッグツールに含まれているカーネルモードおよびユーザーモードのデバッガーです。 ここでは、WinDbg をカーネルモードのデバッガーとして使用する際に役立つ実践的な演習を提供します。
+
+Windows 用のデバッグツールを入手する方法については、「 [windows 用デバッグツール (WinDbg、KD、CDB、NTSD)](index.md)」を参照してください。 デバッグツールをインストールしたら、64ビット (x64) および32ビット (x86) バージョンのツールのインストールディレクトリを見つけます。 例 :
+
+- C:\\Program Files (x86)\\Windows キット\\10\\デバッガー\\x64
+- C:\\Program Files (x86)\\Windows キット\\10\\デバッガー\\x86
+
+## <a name="span-idset_up_a_kernel-mode_debuggingspanspan-idset_up_a_kernel-mode_debuggingspanspan-idset_up_a_kernel-mode_debuggingspanset-up-a-kernel-mode-debugging"></a><span id="Set_up_a_kernel-mode_debugging"></span><span id="set_up_a_kernel-mode_debugging"></span><span id="SET_UP_A_KERNEL-MODE_DEBUGGING"></span>カーネルモードのデバッグを設定する
+
+通常、カーネルモードのデバッグ環境には、*ホストコンピューター*と*対象コンピューター*という2台のコンピューターがあります。 デバッガーはホストコンピューター上で実行され、デバッグ中のコードは対象のコンピューター上で実行されます。 ホストとターゲットは、デバッグケーブルによって接続されています。
+
+Windows デバッガーは、デバッグ用に次の種類のケーブルをサポートしています。
+
+- イーサネット
+- USB 2.0/USB 3.0
+- シリアル (null モデムとも呼ばれます)
+
+速度と信頼性のために、ローカルネットワークハブでイーサネットを使用することをお勧めします。 この図は、イーサネットケーブル経由でデバッグするために接続されたホストとターゲットコンピューターを示しています。
+
+![イーサネット接続を使用したホストとターゲットの図](images/configfortest01.png)
+
+以前のバージョンの Windows では、USB やシリアルケーブルなどの直接ケーブルを使用する方法もあります。 
+
+![デバッグケーブルを使用したホストとターゲットの図](images/configfortest02.png)
+
+ホストとターゲットコンピューターを設定する方法の詳細については、「[カーネルモードデバッグの手動](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)セットアップ」を参照してください。
+
+### <a name="virtual-machine---vms"></a>仮想マシン-Vm
+
+Hyper-v 仮想マシンへのデバッガーの接続の詳細については、「[仮想マシンのネットワークデバッグの設定-KDNET](setting-up-network-debugging-of-a-virtual-machine-host.md)」を参照してください。
+
+## <a name="span-idestablish_a_kernel-mode_debugging_sessionspanspan-idestablish_a_kernel-mode_debugging_sessionspanspan-idestablish_a_kernel-mode_debugging_sessionspanestablish-a-kernel-mode-debugging-session"></a><span id="Establish_a_kernel-mode_debugging_session"></span><span id="establish_a_kernel-mode_debugging_session"></span><span id="ESTABLISH_A_KERNEL-MODE_DEBUGGING_SESSION"></span>カーネルモードのデバッグセッションを確立する
 
 
-WinDbg では、Windows のツールのデバッグに含まれるカーネル モードとユーザー モード デバッガーです。 ここで、カーネル モード デバッガーとして WinDbg を使用するのに役立つ実践的な演習を開始する提供されています。
+ホストとターゲットコンピューターを設定し、デバッグケーブルで接続したら、セットアップに使用したのと同じトピックに記載されている手順に従って、カーネルモードのデバッグセッションを確立できます。 たとえば、イーサネット上でデバッグするためにホストとターゲットコンピューターを設定する場合、カーネルモードのデバッグセッションを確立するための手順は、次のトピックに記載されています。
 
-Windows のツールのデバッグを取得する方法については、次を参照してください。[デバッグ ツールの Windows (WinDbg、KD、CDB、NTSD)](index.md)します。 デバッグ ツールをインストールした後は、64 ビット (x64) と、ツールの 32 ビット (x86) バージョンのインストール ディレクトリを見つけます。 以下に例を示します。
-
--   C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\デバッガー\\x64
--   C:\\プログラム ファイル (x86)\\Windows キット\\8.1\\デバッガー\\x86
-
-## <a name="span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging"></a><span id="Set_up_a_kernel-mode_debugging"></span><span id="set_up_a_kernel-mode_debugging"></span><span id="SET_UP_A_KERNEL-MODE_DEBUGGING"></span>カーネル モード デバッグのセットアップします。
+-  [KDNET Network カーネルデバッグを自動的に設定する](setting-up-a-network-debugging-connection-automatically.md)
 
 
-カーネル モードのデバッグ環境は、2 台のコンピューターを通常、:*ホスト コンピューター*と*ターゲット コンピューター*。 デバッガーは、ホスト コンピューターで実行し、ターゲット コンピューターでデバッグ中のコードを実行します。 ホストとターゲットは、デバッグ ケーブルで接続されます。
-
-Windows デバッガーのデバッグ ケーブルのこれらの型をサポートします。
-
--   Ethernet
--   USB 2.0
--   USB 3.0
--   1394
--   シリアル (も呼び出されるヌル モデム)
-
-8 またはそれ以降、ターゲット コンピューターが Windows を実行している場合は、デバッグ ケーブル、イーサネットなどの任意の型を使用することができます。 この図は、ホストとターゲットのコンピューターがイーサネット ケーブル経由でのデバッグのために接続を示しています。
-
-![ホストとターゲットのイーサネット接続でのダイアグラム](images/configfortest01.png)
-
-デバッグ イーサネットを使用することはできませんし、対象のコンピューターがウィンドウの 8 より前のバージョンの Windows を実行している場合1394、またはシリアル、USB を使用する必要があります。 この図は、USB、1394、またはシリアル デバッグ ケーブルで接続されたホストとターゲットのコンピューターを示しています。
-
-![ホストとデバッグ ケーブルで対象のダイアグラム](images/configfortest02.png)
-
-詳細については、ホストとターゲット コンピューターを設定する方法は、次を参照してください。[カーネル モード デバッグ手作業でセットアップ](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)します。
-
-## <a name="span-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanspan-idestablishakernel-modedebuggingsessionspanestablish-a-kernel-mode-debugging-session"></a><span id="Establish_a_kernel-mode_debugging_session"></span><span id="establish_a_kernel-mode_debugging_session"></span><span id="ESTABLISH_A_KERNEL-MODE_DEBUGGING_SESSION"></span>カーネル モードのデバッグ セッションを確立します。
+## <a name="span-idget_started_using_windbgspanspan-idget_started_using_windbgspanspan-idget_started_using_windbgspanget-started-using-windbg"></a><span id="Get_started_using_WinDbg"></span><span id="get_started_using_windbg"></span><span id="GET_STARTED_USING_WINDBG"></span>WinDbg を使用して作業を開始する
 
 
-ホストおよびターゲット コンピューターをセットアップしてデバッグ ケーブルで接続されていることと後、は、次の手順を設定する際に使用した同じトピック内で、カーネル モードのデバッグ セッションを確立できます。 たとえば、イーサネット経由のデバッグと、ホストとターゲット コンピューターを設定することを決定した場合は、カーネル モードのデバッグ セッションは、このトピックで確立するための手順を見つけることができます。
+1. ホストコンピューターで、WinDbg を開き、対象のコンピューターとのカーネルモードデバッグセッションを確立します。
+2. WinDbg で、**ヘルプ** メニューの **コンテンツ** をクリックします。 デバッガーのドキュメント CHM ファイルが開きます。 [ここ](index.md)では、デバッガーのドキュメントも参照できます。
+3. カーネルモードのデバッグセッションを確立すると、WinDbg によって対象コンピューターが自動的に中断されることがあります。 WinDbg がまだ壊れていない場合は、 **[デバッグ]** メニューの **[中断]** をクリックします。
 
--   [デバッグが自動的に KDNET ネットワーク カーネルの設定](setting-up-a-network-debugging-connection-automatically.md)
+4. WinDbg ウィンドウの下部にあるコマンドラインで、次のコマンドを入力します。
 
+   [ **. sympath srv\\** *](https://go.microsoft.com/fwlink/p?linkid=399238)
 
-## <a name="span-idgetstartedusingwindbgspanspan-idgetstartedusingwindbgspanspan-idgetstartedusingwindbgspanget-started-using-windbg"></a><span id="Get_started_using_WinDbg"></span><span id="get_started_using_windbg"></span><span id="GET_STARTED_USING_WINDBG"></span>WinDbg の使用を開始します。
-
-
-1. ホスト コンピューターには、WinDbg を開き、対象のコンピューターに、カーネル モードのデバッグ セッションを確立します。
-2. 、WinDbg で次のように選択します。**内容**から、**ヘルプ**メニュー。 デバッガーのドキュメントの CHM ファイルが開きます。 デバッガーのドキュメントは回線で利用できるも[ここ](index.md)します。
-3. カーネル モードのデバッグ セッションを確立するときに WinDbg 可能性がありますの中断、ターゲット コンピューターに自動的にあります。 WinDbg 既に壊れていない場合、選択**中断**から、**デバッグ**メニュー。
-
-4. コマンドラインで、WinDbg ウィンドウの下部の近くには、このコマンドを入力します。
-
-   [**.sympath srv\\***](https://go.microsoft.com/fwlink/p?linkid=399238)
-
-   出力は次のようにします。
+   出力は次のようになります。
 
    ```dbgcmd
    Symbol search path is: srv*
    Expanded Symbol search path is: cache*;SRV*https://msdl.microsoft.com/download/symbols
    ```
 
-   シンボルの検索パスは、シンボル (PDB) ファイルを検索する場所を WinDbg に指示します。 デバッガーでは、シンボル ファイルのコード モジュール (関数名、変数名、およびなど) に関する情報を取得する必要があります。
+   シンボル検索パスは、WinDbg がシンボル (PDB) ファイルを検索する場所を指定します。 デバッガーは、コードモジュール (関数名、変数名など) に関する情報を取得するために、シンボルファイルを必要とします。
 
-   このコマンドは、最初に行う WinDbg に指示を入力します。 検索とシンボル ファイルの読み込み。
+   次のコマンドを入力します。これにより、WinDbg は、シンボルファイルの最初の検索と読み込みを実行するように指示します。
 
-   [**.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)
+   [ **。再読み込み**](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-5. 読み込まれたモジュールの一覧を表示するには、このコマンドを入力します。
+5. 読み込まれたモジュールの一覧を表示するには、次のコマンドを入力します。
 
    [**lm**](https://go.microsoft.com/fwlink/p?linkid=399237)
 
-   出力は次のようにします。
+   出力は次のようになります。
 
    ```dbgcmd
    0:000>3: kd> lm
@@ -95,17 +95,17 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
    ...
    ```
 
-6. 実行しているターゲット コンピューターを起動するには、このコマンドを入力します。
+6. を実行している対象コンピューターを起動するには、次のコマンドを入力します。
 
-   [**g**](https://go.microsoft.com/fwlink/p?linkid=399388)
+   [**a-g-dl-p**](https://go.microsoft.com/fwlink/p?linkid=399388)
 
-7. もう一度解除、選択**Break**から、**デバッグ**メニュー。
+7. もう一度中断するには、 **[デバッグ]** メニューの **[中断]** をクリックします。
 
-8. 確認するには、このコマンドを入力して、\_ファイル\_nt モジュール内のデータ型のオブジェクト。
+8. 次のコマンドを入力して、nt モジュールで \_ファイル\_オブジェクトのデータ型を確認します。
 
    [**dt nt!\_ファイル\_オブジェクト**](https://go.microsoft.com/fwlink/p?linkid=399397)
 
-   出力は次のようにします。
+   出力は次のようになります。
 
    ```dbgcmd
    0:000>0: kd> dt nt!_FILE_OBJECT
@@ -118,11 +118,11 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
       +0x0d0 FileObjectExtension : Ptr64 Void
    ```
 
-9. Nt モジュールのシンボルのいくつかを確認するには、このコマンドを入力します。
+9. 次のコマンドを入力して、nt モジュール内のいくつかのシンボルを確認します。
 
-   [**nt x!\*CreateProcess\\***](https://go.microsoft.com/fwlink/p?linkid=399240)
+   [**x nt!\*CreateProcess\\** *](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-   出力は次のようにします。
+   出力は次のようになります。
 
    ```dbgcmd
    0:000>0: kd> x nt!*CreateProcess*
@@ -133,15 +133,15 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
    ...
    ```
 
-10. ブレークポイントを配置するには、このコマンドを入力して**MmCreateProcessAddressSpace**:
+10. 次のコマンドを入力して、 **MmCreateProcessAddressSpace**にブレークポイントを設定します。
 
     [**bu nt!MmCreateProcessAddressSpace**](https://go.microsoft.com/fwlink/p?linkid=399390)
 
-    ブレークポイントが設定されていることを確認するには、このコマンドを入力します。
+    ブレークポイントが設定されていることを確認するには、次のコマンドを入力します。
 
     [**bl**](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-    出力は次のようにします。
+    出力は次のようになります。
 
     ```dbgcmd
     0:000>0: kd> bu nt!MmCreateProcessAddressSpace
@@ -149,15 +149,15 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     0 e fffff800`02e03904     0001 (0001) nt!MmCreateProcessAddressSpace
     ```
 
-    入力[ **g** ](https://go.microsoft.com/fwlink/p?linkid=399388)実行対象のコンピュータをできるようにします。
+    ターゲットコンピューターを実行するには、「 [**g**](https://go.microsoft.com/fwlink/p?linkid=399388) 」と入力します。
 
-11. 対象のコンピュータは中断されませんデバッガーにすぐに場合、は、いくつかのアクションをターゲット コンピューター (たとえば、メモ帳を開く) を実行します。 対象のコンピュータは、デバッガーを中断時に**MmCreateProcessAddressSpace**が呼び出されます。 スタック トレースを表示するには、これらのコマンドを入力します。
+11. ターゲットコンピューターがすぐにデバッガーに侵入しない場合は、対象のコンピューターでいくつかの操作を実行します (たとえば、メモ帳を開きます)。 **MmCreateProcessAddressSpace**が呼び出されると、ターゲットコンピューターはデバッガーに中断します。 スタックトレースを表示するには、次のコマンドを入力します。
 
-    [**.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)
+    [ **。再読み込み**](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-    [**k**](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [**kb**](https://go.microsoft.com/fwlink/p?linkid=399389)
 
-    出力は次のようにします。
+    出力は次のようになります。
 
     ```dbgcmd
     0:000>2: kd> k
@@ -170,21 +170,21 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     000000d7`4167fbe0 00000000`00000000 ntdll!RtlUserThreadStart+0x1d
     ```
 
-12. **ビュー** ] メニューの [選択**逆アセンブル**します。
+12. **[表示]** メニューの **[逆アセンブリ]** をクリックします。
 
-    **デバッグ**] メニューの [選択**ステップ オーバー** (またはキーを押します**F10**)。 入力ステップ コマンドをいくつか回逆アセンブル ウィンドウを見ながらします。
+    **[デバッグ]** メニューの **[ステップオーバー]** をクリックするか、 **F10**キーを押します。 [逆アセンブル] ウィンドウを見ると、ステップコマンドを数回入力します。
 
-13. このコマンドを入力して、ブレークポイントをクリアします。
+13. 次のコマンドを入力して、ブレークポイントをクリアします。
 
-    [**ビジネス継続性 \\***](https://go.microsoft.com/fwlink/p?linkid=399401)
+    [**bc \\** *](https://go.microsoft.com/fwlink/p?linkid=399401)
 
-    入力[ **g** ](https://go.microsoft.com/fwlink/p?linkid=399388)実行対象のコンピュータをできるようにします。 選択してもう一度中断**中断**から、**デバッグ**メニューまたはキーを押して**Ctrl + break**します。
+    ターゲットコンピューターを実行するには、「 [**g**](https://go.microsoft.com/fwlink/p?linkid=399388) 」と入力します。 **[デバッグ]** メニューの **[中断]** をクリックするか、 **CTRL + break**キーを押して、もう一度中断します。
 
-14. すべてのプロセスの一覧を表示するには、このコマンドを入力します。
+14. すべてのプロセスの一覧を表示するには、次のコマンドを入力します。
 
-    [**!process 0 0**](https://go.microsoft.com/fwlink/p?linkid=399241)
+    [ **! プロセス 0 0**](https://go.microsoft.com/fwlink/p?linkid=399241)
 
-    出力は次のようにします。
+    出力は次のようになります。
 
     ```dbgcmd
     0:000>0: kd> !process 0 0
@@ -205,13 +205,13 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
         Image: explorer.exe
     ```
 
-15. 1 つのプロセスのアドレスをコピーし、このコマンドを入力します。
+15. 1つのプロセスのアドレスをコピーし、次のコマンドを入力します。
 
-    [**! プロセス***アドレス* **2**](https://go.microsoft.com/fwlink/p?linkid=399241)
+    [ **! プロセス***アドレス* **2**](https://go.microsoft.com/fwlink/p?linkid=399241)
 
-    例: **! プロセス ffffe00000d5290 2**
+    例: **! process ffffe00000d5290 2**
 
-    プロセスのスレッドが出力されます。
+    出力には、プロセス内のスレッドが表示されます。
 
     ```dbgcmd
     0:000>0:000>0: kd> !process ffffe00000d52900 2
@@ -232,13 +232,13 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
                 ffffe0000089a300  QueueObject
     ```
 
-16. 1 つのスレッドのアドレスをコピーし、このコマンドを入力します。
+16. 1つのスレッドのアドレスをコピーし、次のコマンドを入力します。
 
-    [**! スレッド***アドレス*](https://go.microsoft.com/fwlink/p?linkid=399244)
+    [ **! スレッド***アドレス*](https://go.microsoft.com/fwlink/p?linkid=399244)
 
-    例: **! ffffe00000e6d080 スレッド**
+    例: **! thread ffffe00000e6d080**
 
-    出力には、個々 のスレッドに関する情報が表示されます。
+    出力には、個々のスレッドに関する情報が表示されます。
 
     ```dbgcmd
     0: kd> !thread ffffe00000e6d080
@@ -259,9 +259,9 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     ...
     ```
 
-17. プラグ アンド プレイ デバイス ツリー内のすべてのデバイス ノードを表示するには、このコマンドを入力します。
+17. プラグアンドプレイデバイスツリー内のすべてのデバイスノードを表示するには、次のコマンドを入力します。
 
-    [**!devnode 0 1**](https://go.microsoft.com/fwlink/p?linkid=399242)
+    [ **! devnode 0 1**](https://go.microsoft.com/fwlink/p?linkid=399242)
 
     ```dbgcmd
     0:000>0: kd> !devnode 0 1
@@ -284,9 +284,9 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     ...
     ```
 
-18. そのハードウェアのリソースと一緒にデバイス ノードを表示するには、このコマンドを入力します。
+18. ハードウェアリソースと共にデバイスノードを表示するには、次のコマンドを入力します。
 
-    [**!devnode 0 9**](https://go.microsoft.com/fwlink/p?linkid=399242)
+    [ **! devnode 0 9**](https://go.microsoft.com/fwlink/p?linkid=399242)
 
     ```dbgcmd
     0:000>...
@@ -308,9 +308,9 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     ...
     ```
 
-19. ディスクのサービスの名前を持つデバイス ノードを表示するには、このコマンドを入力します。
+19. ディスクのサービス名を持つデバイスノードを表示するには、次のコマンドを入力します。
 
-    [**! devnode 0 1 ディスク**](https://go.microsoft.com/fwlink/p?linkid=399242)
+    [ **! devnode 0 1 ディスク**](https://go.microsoft.com/fwlink/p?linkid=399242)
 
     ```dbgcmd
     0: kd> !devnode 0 1 disk
@@ -323,11 +323,11 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     ...
     ```
 
-20. 出力[ **! devnode 0 1** ](https://go.microsoft.com/fwlink/p?linkid=399242)ノードの物理デバイス オブジェクト (PDO) のアドレスが表示されます。 物理デバイス オブジェクト (PDO) のアドレスをコピーし、このコマンドを入力します。
+20. [ **! Devnode 0 1**](https://go.microsoft.com/fwlink/p?linkid=399242)の出力には、ノードの物理デバイスオブジェクト (PDO) のアドレスが表示されます。 物理デバイスオブジェクト (PDO) のアドレスをコピーし、次のコマンドを入力します。
 
-    [**! devstack** *PdoAddress*](https://go.microsoft.com/fwlink/p?linkid=399245)
+    [ **! devstack** *PdoAddress*](https://go.microsoft.com/fwlink/p?linkid=399245)
 
-    次に、例を示します。<em>PdoAddress</em>**! devstack 0xffffe00001159610**
+    例: <em>PdoAddress</em> **! devstack 0xffffe00001159610**
 
     ```dbgcmd
     0:000>0: kd> !devstack 0xffffe00001159610
@@ -337,9 +337,9 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
       ffffe00001156e50  \Driver\ACPI       ffffe000010d8bf0  
     ```
 
-21. ドライバー disk.sys に関する情報を取得するには、このコマンドを入力します。
+21. ドライバーの disk.sys に関する情報を取得するには、次のコマンドを入力します。
 
-    [**! drvobj ディスク 2**](https://go.microsoft.com/fwlink/p?linkid=399246)
+    [ **! drvobj disk 2**](https://go.microsoft.com/fwlink/p?linkid=399246)
 
     ```dbgcmd
     0:000>0: kd> !drvobj disk 2
@@ -359,21 +359,21 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     [1b] IRP_MJ_PNP                         fffff8000106d160    CLASSPNP!ClassGlobalDispatch
     ```
 
-22. 出力! drvobj ディスパッチ ルーチンのアドレスが表示されます: たとえば、CLASSPNP!ClassGlobalDispatch します。 ClassGlobalDispatch にブレークポイントを確認し、するには、これらのコマンドを入力します。
+22. ! Drvobj の出力には、ディスパッチルーチンのアドレスが表示されます。例: CLASSPNP!ClassGlobalDispatch。 ClassGlobalDispatch にブレークポイントを設定して確認するには、次のコマンドを入力します。
 
     [**bu CLASSPNP!ClassGlobalDispatch**](https://go.microsoft.com/fwlink/p?linkid=399390)
 
     [**bl**](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-    G を実行する対象のコンピュータを入力します。
+    ターゲットコンピューターを実行するには、「g」と入力します。
 
-    対象のコンピュータは中断されませんデバッガーにすぐに場合、は、ターゲット コンピューターに、いくつかの操作を実行 (メモ帳を開くし、ファイルの保存など)。 対象のコンピュータは、デバッガーを中断時に**ClassGlobalDispatch**が呼び出されます。 スタック トレースを表示するには、これらのコマンドを入力します。
+    ターゲットコンピューターがすぐにデバッガーに侵入しない場合は、対象のコンピューターでいくつかの操作を実行します (たとえば、メモ帳を開き、ファイルを保存します)。 **Classglobaldispatch**が呼び出されると、ターゲットコンピューターはデバッガーに中断します。 スタックトレースを表示するには、次のコマンドを入力します。
 
-    [**.reload**](https://go.microsoft.com/fwlink/p?linkid=399239)
+    [ **。再読み込み**](https://go.microsoft.com/fwlink/p?linkid=399239)
 
-    [**k**](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [**kb**](https://go.microsoft.com/fwlink/p?linkid=399389)
 
-    出力は次のようにします。
+    出力は次のようになります。
 
     ```dbgcmd
     2: kd> k
@@ -388,52 +388,43 @@ Windows デバッガーのデバッグ ケーブルのこれらの型をサポ�
     ...
     ```
 
-23. デバッグ セッションを終了するには、このコマンドを入力します。
+23. デバッグセッションを終了するには、次のコマンドを入力します。
 
     [**qd**](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idsummaryofcommandsspanspan-idsummaryofcommandsspanspan-idsummaryofcommandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>コマンドの概要
+## <a name="span-idsummary_of_commandsspanspan-idsummary_of_commandsspanspan-idsummary_of_commandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>コマンドの概要
 
 
--   **内容**コマンドを**ヘルプ**メニュー
--   [.sympath (シンボル パスの設定)](https://go.microsoft.com/fwlink/p?linkid=399238)
--   [.reload (モジュールの再読み込み)](https://go.microsoft.com/fwlink/p?linkid=399239)
--   [x (シンボルの検証)](https://go.microsoft.com/fwlink/p?linkid=399240)
--   [g (移動)](https://go.microsoft.com/fwlink/p?linkid=399388)
+-   **[ヘルプ]** メニューの **[コンテンツ]** コマンド
+-   [. sympath (シンボルパスの設定)](https://go.microsoft.com/fwlink/p?linkid=399238)
+-   [。再読み込み (モジュールの再読み込み)](https://go.microsoft.com/fwlink/p?linkid=399239)
+-   [x (シンボルを調べる)](https://go.microsoft.com/fwlink/p?linkid=399240)
+-   [g (ゴー)](https://go.microsoft.com/fwlink/p?linkid=399388)
 -   [dt (表示の種類)](https://go.microsoft.com/fwlink/p?linkid=399397)
--   **中断**コマンドを**デバッグ**メニュー
--   [lm (読み込まれたモジュールを一覧表示)](https://go.microsoft.com/fwlink/p?linkid=399237)
--   [k (Display Stack Backtrace)](https://go.microsoft.com/fwlink/p?linkid=399389)
+-   **[デバッグ]** メニューの **[中断]** コマンド
+-   [lm (読み込まれたモジュールの一覧)](https://go.microsoft.com/fwlink/p?linkid=399237)
+-   [k (スタックバックトレースの表示)](https://go.microsoft.com/fwlink/p?linkid=399389)
 -   [bu (ブレークポイントの設定)](https://go.microsoft.com/fwlink/p?linkid=399390)
--   [bl (ブレークポイントの一覧)](https://go.microsoft.com/fwlink/p?linkid=399391)
--   [bc (ブレークポイント クリア)](https://go.microsoft.com/fwlink/p?linkid=399401)
--   **ステップ イン**コマンドを**デバッグ**メニュー (**F11**)
+-   [bl (ブレークポイント一覧)](https://go.microsoft.com/fwlink/p?linkid=399391)
+-   [bc (ブレークポイントのクリア)](https://go.microsoft.com/fwlink/p?linkid=399401)
+-   **[デバッグ]** メニューの **[ステップイン]** コマンド (**F11**)
 -   [! プロセス](https://go.microsoft.com/fwlink/p?linkid=399241)
--   [!thread](https://go.microsoft.com/fwlink/p?linkid=399244)
--   [! devnode](https://go.microsoft.com/fwlink/p?linkid=399242)
+-   [! スレッド](https://go.microsoft.com/fwlink/p?linkid=399244)
+-   [!devnode](https://go.microsoft.com/fwlink/p?linkid=399242)
 -   [! devstack](https://go.microsoft.com/fwlink/p?linkid=399245)
 -   [!drvobj](https://go.microsoft.com/fwlink/p?linkid=399246)
--   [qd (Quit およびデタッチ)](https://go.microsoft.com/fwlink/p?linkid=399394)
+-   [qd (終了とデタッチ)](https://go.microsoft.com/fwlink/p?linkid=399394)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 [WinDbg ドライバーの概要 (ユーザー モード)](getting-started-with-windbg.md)
 
-[カーネル モードのデバッグを手動での設定](https://go.microsoft.com/fwlink/p?linkid=272138)
+[KDNET Network カーネルデバッグを自動的に設定する](setting-up-a-network-debugging-connection-automatically.md)
 
-[デバッガーの操作](https://go.microsoft.com/fwlink/p?linkid=399247)
+[デバッガーの操作](debugger-operation-win8.md)
 
-[デバッグの手法](https://go.microsoft.com/fwlink/p?linkid=399248)
+[デバッグの手法](debugging-techniques.md)
 
-[(WinDbg、KD、CDB、NTSD)、Windows 用デバッグ ツール](https://go.microsoft.com/fwlink/p?linkid=223405)
+[Windows 用デバッグツール (WinDbg、KD、CDB、NTSD)](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
 
- 
-
- 
-
-
-
-
-
-
+[WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

@@ -1,116 +1,104 @@
 ---
 title: 1394 ケーブル経由のカーネルモード デバッグの手動設定
-description: デバッグ ツールの Windows カーネルは、1394 (Firewire) ケーブル経由でデバッグをサポートします。 このトピックでは、1394 デバッグを手動で設定する方法について説明します。
+description: Windows 用デバッグツールでは、1394 (Firewire) ケーブル経由のカーネルデバッグがサポートされています。 このトピックでは、1394デバッグを手動で設定する方法について説明します。
 ms.assetid: bcfc61a1-0315-451c-a279-f6305995b05f
-keywords: 1394 ケーブルの接続、1394 接続を IEEE 1394 ケーブル、FireWire ケーブルの作成
-ms.date: 05/03/2018
+keywords: 1394ケーブル接続、1394接続、IEEE 1394 ケーブル、FireWire ケーブルを作成する
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bd273e328d6fd6642f8ca6bf1b281b737383b10
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 98a8f0e1e3f912ee21b1f19440247a32b382f1cd
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381941"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528956"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-manually"></a>1394 ケーブル経由のカーネルモード デバッグの手動設定
 
 > [!IMPORTANT]
-> 1394 トランスポートは、Windows 10 バージョン 1607 およびそれ以前で使用できます。 以降のバージョンの Windows でご利用いただけません。 イーサネットを使用して KDNET などの他のトランスポートにプロジェクトを移行する必要があります。 トランスポートの詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動でのネットワーク ケーブル](setting-up-a-network-debugging-connection.md)します。
+> 1394トランスポートは、Windows 10 バージョン1607以前で使用できます。 これは、以降のバージョンの Windows では使用できません。 イーサネットを使用して KDNET などの他のトランスポートにプロジェクトを移行する必要があります。 そのトランスポートの詳細については、「 [KDNET Network カーネルデバッグの自動](setting-up-a-network-debugging-connection-automatically.md)セットアップ」を参照してください。
 >
 
-デバッグ ツールの Windows カーネルは、1394 (Firewire) ケーブル経由でデバッグをサポートします。 このトピックでは、1394 デバッグを手動で設定する方法について説明します。
+Windows 用デバッグツールでは、1394 (Firewire) ケーブル経由のカーネルデバッグがサポートされています。 このトピックでは、1394デバッグを手動で設定する方法について説明します。
 
-デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。 ホストおよびターゲット コンピューター 1394 アダプターに対し、および Windows XP を実行する必要がありますまたはそれ以降。 ホストとターゲットのコンピューターを同じバージョンの Windows を実行する必要はありません。
+デバッガーを実行するコンピューターは*ホストコンピューター*と呼ばれ、デバッグ中のコンピューターは*ターゲットコンピューター*と呼ばれます。 ホストとターゲットコンピュータにはそれぞれ1394アダプターがあり、Windows XP 以降を実行している必要があります。 ホストとターゲットのコンピューターは、同じバージョンの Windows を実行している必要はありません。
 
-## <a name="span-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspansetting-up-the-target-computer"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ターゲット コンピューターをセットアップします。
+## <a name="span-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspanspan-idsetting_up_the_target_computerspansetting-up-the-target-computer"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ターゲットコンピューターのセットアップ
 
-
-1.  ホストおよびターゲット コンピューターでデバッグするため、選択した 1394 コント ローラーには、1394 ケーブルを接続します。
+1. ホストとターゲットコンピュータでデバッグ用に選択した1394コントローラに1394ケーブルを接続します。
 
 > [!IMPORTANT]
-> BCDEdit を使用してブート情報を変更する前に、テスト用のコンピューターの BitLocker とセキュア ブートなどの Windows セキュリティ機能を一時的に中断する必要があります。
-> テストが完了すると、これらのセキュリティ機能を再度有効にし、適切なセキュリティ機能を無効にするテスト PC を管理します。
+> BCDEdit を使用してブート情報を変更する前に、テスト PC で BitLocker やセキュアブートなどの Windows のセキュリティ機能を一時的に停止することが必要になる場合があります。
+> セキュリティ機能が無効になっている場合は、テストが完了し、テスト PC を適切に管理するときに、これらのセキュリティ機能を再び有効にします。
 
-2. 管理者特権でコマンド プロンプト ウィンドウで、次のコマンドを入力します。 ここ*n*は 0 ~ 62、任意のチャンネル番号。
+2. 管理者特権でのコマンドプロンプトウィンドウで、次のコマンドを入力します。ここで、 *n*は選択したチャネル番号です (0 ~ 62)。
 
-   **bcdedit /debug on**
+   **bcdedit/debug on**
 
-   **bcdedit/dbgsettings 1394 チャネル:**<em>n</em>
+   **bcdedit/dbgsettings 1394 channel:** <em>n</em>
 
-3. 1 つ以上を使用する必要がある場合、ターゲット コンピューターに 1394 コント ローラーは、バス、デバイス、およびデバッグに使用する、1394 コント ローラーの関数の番号を指定する必要があります。 詳細については、次を参照してください。[を 1394 デバッグ用のトラブルシューティングのヒント](#troubleshooting-tips-for-debugging-over-a-1394-cable)します。
+3. ターゲットコンピューターに 1 1394 を超えるコントローラーがある場合は、デバッグに使用する1394コントローラーのバス、デバイス、および関数番号を指定する必要があります。 詳細については、「 [1394 デバッグのトラブルシューティングのヒント](#troubleshooting-tips-for-debugging-over-a-1394-cable)」を参照してください。
 
-4. まだ対象のコンピュータを再起動されません。
+4. ターゲットコンピューターをまだ再起動しないでください。
 
-## <a name="span-idstartingadebuggingsessionforthefirsttimespanspan-idstartingadebuggingsessionforthefirsttimespanspan-idstartingadebuggingsessionforthefirsttimespanstarting-a-debugging-session-for-the-first-time"></a><span id="Starting_a_Debugging_Session_for_the_First_Time"></span><span id="starting_a_debugging_session_for_the_first_time"></span><span id="STARTING_A_DEBUGGING_SESSION_FOR_THE_FIRST_TIME"></span>初めてデバッグ セッションの開始
+## <a name="span-idstarting_a_debugging_session_for_the_first_timespanspan-idstarting_a_debugging_session_for_the_first_timespanspan-idstarting_a_debugging_session_for_the_first_timespanstarting-a-debugging-session-for-the-first-time"></a><span id="Starting_a_Debugging_Session_for_the_First_Time"></span><span id="starting_a_debugging_session_for_the_first_time"></span><span id="STARTING_A_DEBUGGING_SESSION_FOR_THE_FIRST_TIME"></span>初めてデバッグセッションを開始する
 
+1.  ホストコンピューター上で実行されている Windows のビット数 (32 ビットまたは64ビット) を確認します。
+2.  ホストコンピューターで、ホストコンピューター上で実行されている Windows のビットと一致するバージョンの WinDbg (管理者として) を開きます。 たとえば、ホストコンピューターで64ビットバージョンの Windows が実行されている場合は、管理者として、WinDbg の64ビットバージョンを開きます。
+3.  **[ファイル]** メニューの **[カーネルデバッグ]** をクリックします。 カーネルデバッグ ダイアログボックスで、 **1394** タブを開きます。チャンネル番号を入力し、**OK** をクリックします。
 
-1.  ホスト コンピューターで実行されている Windows のビット数 (32 ビットまたは 64 ビット) を決定します。
-2.  ホスト コンピューターでは、ホスト コンピューターで実行されている Windows のビット数に一致する (管理者) として WinDbg のバージョンが開きます。 たとえば、ホスト コンピューターで Windows の 64 ビット版が実行されている場合は、管理者として WinDbg の 64 ビット バージョンを開きます。
-3.  **ファイル**] メニューの [選択**カーネル デバッグ**します。 カーネル デバッグ ダイアログ ボックスで、開く、 **1394**タブ。チャンネル番号を入力し、クリックして**OK**します。
-
-    この時点では、1394 デバッグ ドライバーが、ホスト コンピューターにインストールを取得します。 これは、ため、Windows のビット数に WinDbg のビット数と一致することが重要です。 1394 デバッグ ドライバーがインストールされた後は、後続のデバッグ セッション WinDbg の 32 ビットまたは 64 ビット バージョンのいずれかを使用できます。
+    この時点で、1394デバッグドライバーがホストコンピューターにインストールされます。 このため、WinDbg のビットと Windows のビットを一致させることが重要です。 1394デバッグドライバーをインストールした後、次のデバッグセッションでは、WinDbg の32ビットバージョンまたは64ビットバージョンのいずれかを使用できます。
 
 4.  ターゲット コンピューターを再起動します。
 
-## <a name="span-idstartingadebuggingsessionspanspan-idstartingadebuggingsessionspanspan-idstartingadebuggingsessionspanstarting-a-debugging-session"></a><span id="Starting_a_Debugging_Session"></span><span id="starting_a_debugging_session"></span><span id="STARTING_A_DEBUGGING_SESSION"></span>デバッグ セッションの開始
+## <a name="span-idstarting_a_debugging_sessionspanspan-idstarting_a_debugging_sessionspanspan-idstarting_a_debugging_sessionspanstarting-a-debugging-session"></a><span id="Starting_a_Debugging_Session"></span><span id="starting_a_debugging_session"></span><span id="STARTING_A_DEBUGGING_SESSION"></span>デバッグセッションの開始
+
+### <a name="span-idusing_windbgspanspan-idusing_windbgspanspan-idusing_windbgspanusing-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg の使用
+
+- ホストコンピューターで、[WinDbg] を開きます。 **[ファイル]** メニューの **[カーネルデバッグ]** をクリックします。 カーネルデバッグ ダイアログボックスで、 **1394** タブを開きます。チャンネル番号を入力し、**OK** をクリックします。
+
+  また、コマンドプロンプトウィンドウで次のコマンドを入力して、WinDbg を使用してセッションを開始することもできます。ここで、 *n*はチャネル番号です。
+
+  **windbg/k 1394: channel =** <em>n</em>
+
+### <a name="span-idusing_kdspanspan-idusing_kdspanspan-idusing_kdspanusing-kd"></a><span id="Using_KD"></span><span id="using_kd"></span><span id="USING_KD"></span>KD の使用
+
+- ホストコンピューターで、コマンドプロンプトウィンドウを開き、次のコマンドを入力します。ここで、 *n*はチャネル番号です。
+
+  **kd/k 1394: channel =** <em>n</em>
+
+## <a name="span-idusing_environment_variablesspanspan-idusing_environment_variablesspanspan-idusing_environment_variablesspanusing-environment-variables"></a><span id="Using_Environment_Variables"></span><span id="using_environment_variables"></span><span id="USING_ENVIRONMENT_VARIABLES"></span>環境変数の使用
 
 
-### <a name="span-idusingwindbgspanspan-idusingwindbgspanspan-idusingwindbgspanusing-windbg"></a><span id="Using_WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg を使用します。
+ホストコンピューターでは、環境変数を使用して1394チャネルを指定できます。 その後、デバッグセッションを開始するたびにチャネルを指定する必要はありません。 環境変数を使用して1394チャネルを指定するには、コマンドプロンプトウィンドウを開き、次のコマンドを入力します。ここで、 *n*はチャネル番号です。
 
-- ホスト コンピューターでは、WinDbg を開きます。 **ファイル**] メニューの [選択**カーネル デバッグ**します。 カーネル デバッグ ダイアログ ボックスで、開く、 **1394**タブ。チャンネル番号を入力し、クリックして**OK**します。
+- **\_NT\_デバッグ\_バス = 1394 を設定します。**
+- **\_NT\_デバッグ\_1394\_CHANNEL =** <em>n</em>に設定します。
 
-  コマンド プロンプト ウィンドウで、次のコマンドを入力して、WinDbg でセッションを開始することもできます、 *n*チャネル番号します。
-
-  **windbg/k 1394:channel =**<em>n</em>
-
-### <a name="span-idusingkdspanspan-idusingkdspanspan-idusingkdspanusing-kd"></a><span id="Using_KD"></span><span id="using_kd"></span><span id="USING_KD"></span>KD を使用します。
-
-- ホスト コンピューターでは、コマンド プロンプト ウィンドウを開き、次のコマンドを入力して、 *n*チャネル番号します。
-
-  **kd/k 1394:channel =**<em>n</em>
-
-## <a name="span-idusingenvironmentvariablesspanspan-idusingenvironmentvariablesspanspan-idusingenvironmentvariablesspanusing-environment-variables"></a><span id="Using_Environment_Variables"></span><span id="using_environment_variables"></span><span id="USING_ENVIRONMENT_VARIABLES"></span>環境変数の使用
-
-
-ホスト コンピューターでは、1394 チャネルを指定するのに環境変数を使用することができます。 デバッグ セッションを開始するたびに、チャネルを指定する必要はありません。 環境変数を使用して、1394 チャネルを指定、コマンド プロンプト ウィンドウを開き、次のコマンドを入力する場所*n*チャネル番号します。
-
-- **設定\_NT\_デバッグ\_BUS 1394 を =**
-- **設定\_NT\_デバッグ\_1394\_チャネル =**<em>n</em>
-
-デバッグ セッションを開始するにはコマンド プロンプト ウィンドウを開き、次のコマンドのいずれかを入力します。
+デバッグセッションを開始するには、コマンドプロンプトウィンドウを開き、次のいずれかのコマンドを入力します。
 
 -   **kd**
 -   **windbg**
 
-## <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+## <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
 
-完全なドキュメントについて、 **bcdedit**コマンドと、boot.ini ファイルで、Windows Driver Kit (WDK) ドキュメントのドライバーのテストおよびデバッグのブート オプションを参照してください。
+**Bcdedit**コマンドと boot.ini ファイルの完全なドキュメントについては、Windows driver KIT (WDK) ドキュメントの「ドライバーテストおよびデバッグ用のブートオプション」を参照してください。
 
-## <a name="span-idtroubleshooting-tips-for-debugging-over-a-1394-cablespanspan-idtroubleshooting-tips-for-debugging-over-a-1394-cablespantroubleshooting-tips-for-debugging-over-a-1394-cable"></a><span id="troubleshooting-tips-for-debugging-over-a-1394-cable"></span><span id="TROUBLESHOOTING-TIPS-FOR-DEBUGGING-OVER-A-1394-CABLE"></span>1394 ケーブル経由でのデバッグのトラブルシューティングのヒント
+## <a name="span-idtroubleshooting-tips-for-debugging-over-a-1394-cablespanspan-idtroubleshooting-tips-for-debugging-over-a-1394-cablespantroubleshooting-tips-for-debugging-over-a-1394-cable"></a><span id="troubleshooting-tips-for-debugging-over-a-1394-cable"></span><span id="TROUBLESHOOTING-TIPS-FOR-DEBUGGING-OVER-A-1394-CABLE"></span>1394ケーブルでのデバッグに関するトラブルシューティングのヒント
 
 
-1394 デバッグの問題のほとんどは、ホストまたはターゲットのいずれかのコンピューターで複数の 1394 コント ローラーを使用して、発生します。 ホスト コンピューターに 1394 の複数のコント ローラーを使用することはサポートされていません。 ホスト上で実行され、1394 デバッグ ドライバーは、レジストリに列挙された 1394 最初のコント ローラーとのみ通信できます。 1394 のコント ローラーと個別 1394 カードのマザーボードに組み込まれている場合は、カードを取り外すか、または組み込みのコント ローラーで、コンピューターの BIOS 設定を無効にします。
+1394デバッグの問題のほとんどは、ホストまたはターゲットコンピューターで複数の1394コントローラーを使用した場合に発生します。 ホストコンピューターでの複数の1394コントローラーの使用はサポートされていません。 ホスト上で実行される1394デバッグドライバーは、レジストリで列挙された最初の1394コントローラーとのみ通信できます。 マザーボードに1394コントローラーを内蔵し、別の1394カードを使用している場合は、カードを取り外すか、コンピューターの BIOS 設定でビルトインコントローラーを無効にします。
 
-これは推奨されませんが、ターゲット コンピューター、複数の 1394 コント ローラーことができます。 マザーボード上のターゲット コンピューターに 1394 コント ローラーした場合、デバッグ可能であれば、そのコント ローラーを使用します。 追加 1394 のカードがある場合は、カードを取り外すをオンボード コント ローラーを使用する必要があります。 別のソリューションでは、オンボードの 1394 コント ローラーで、コンピューターの BIOS 設定を無効にします。
+ターゲットコンピューターは、複数の1394コントローラーを持つことができますが、これは推奨されません。 ターゲットコンピューターのマザーボードに1394コントローラーが搭載されている場合は、可能であれば、そのコントローラーをデバッグに使用します。 1394カードが追加されている場合は、カードを取り外し、オンボードコントローラーを使用する必要があります。 もう1つの解決策は、コンピューターの BIOS 設定で、オンボード1394コントローラーを無効にすることです。
 
-ターゲット コンピューターで有効になって 1394 コント ローラーが複数ある場合は、デバッガーがデバッグの要求をコント ローラーを認識できるように bus パラメーターを指定する必要があります。 ターゲット コンピューターでは、デバイス マネージャーを開き、バスのパラメーターを指定し、デバッグに使用する 1394 コント ローラーを見つけます。 コント ローラーのプロパティ ページを開き、バス番号、デバイスの数、および関数の数をメモしておきます。 管理者特権でコマンド プロンプト ウィンドウで、次のコマンドを入力します。 ここ*b*、 *d*、および*f* bus、デバイス、および関数の数値を 10 進数形式では。
+ターゲットコンピューターで複数の1394コントローラーを有効にする場合は、デバッグのために要求するコントローラーをデバッガーが認識できるように、バスパラメーターを指定する必要があります。 バスパラメーターを指定するには、ターゲットコンピューターでデバイスマネージャーを開き、デバッグに使用する1394コントローラーを探します。 コントローラーのプロパティページを開き、バス番号、デバイス番号、および関数番号をメモしておきます。 管理者特権でのコマンドプロンプトウィンドウで、次のコマンドを入力します。ここで、 *b*、 *d*、および*f*は、10進形式のバス、デバイス、および関数の数値です。
 
-**bcdedit の設定"{dbgsettings}"busparams** <em>b</em>**.**<em>d</em>**.**<em>f</em>します。
+**bcdedit-"{dbgsettings}" busparams** <em>b</em>**を設定します。** <em>d</em> **。** <em>f</em>。
 
 ターゲット コンピューターを再起動します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
+[カーネルモードデバッグの手動設定](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)
 
-[カーネル モードのデバッグを手動での設定](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)
-
- 
-
- 
-
-
-
-
-
-
+[KDNET Network カーネルデバッグを自動的に設定する](setting-up-a-network-debugging-connection-automatically.md)

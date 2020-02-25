@@ -2,14 +2,14 @@
 title: WinDbg ドライバーの概要 (ユーザー モード)
 description: WinDbg は、Windows 用デバッグツールに含まれているカーネルモードおよびユーザーモードのデバッガーです。 ここでは、ユーザーモードのデバッガーとしての WinDbg の使用を開始する際に役立つ実践的な演習を提供します。
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
-ms.date: 10/09/2017
+ms.date: 02/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9d140c4eddf12fce29b7eba6b1c7df3c70df03
-ms.sourcegitcommit: b3167f0d423713bee9561fabbdb3d581aea449f9
+ms.openlocfilehash: 97372706b6d7c636b2115e0e1594f83e35689080
+ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616813"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77528958"
 ---
 # <a name="getting-started-with-windbg-user-mode"></a>WinDbg ドライバーの概要 (ユーザー モード)
 
@@ -17,10 +17,10 @@ WinDbg は、Windows 用デバッグツールに含まれているカーネル�
 
 Windows 用のデバッグツールを入手する方法については、「 [windows 用デバッグツール (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)」を参照してください。 
 
-デバッグツールをインストールしたら、64ビット (x64) および32ビット (x86) バージョンのツールのインストールディレクトリを見つけます。 以下に例を示します。
+デバッグツールをインストールしたら、64ビット (x64) および32ビット (x86) バージョンのツールのインストールディレクトリを見つけます。 例 :
 
--   C:\\Program Files (x86)\\Windows kit\\8.1\\デバッガー\\x64
--   C:\\Program Files (x86)\\Windows kit\\8.1\\デバッガー\\x86
+-   C:\\Program Files (x86)\\Windows キット\\10\\デバッガー\\x64
+-   C:\\Program Files (x86)\\Windows キット\\10\\デバッガー\\x86
 
 ## <a name="span-idlaunch_notepad_and_attach_windbgspanspan-idlaunch_notepad_and_attach_windbgspanspan-idlaunch_notepad_and_attach_windbgspanlaunch-notepad-and-attach-windbg"></a><span id="Launch_Notepad_and_attach_WinDbg"></span><span id="launch_notepad_and_attach_windbg"></span><span id="LAUNCH_NOTEPAD_AND_ATTACH_WINDBG"></span>メモ帳を起動して WinDbg をアタッチする
 
@@ -28,7 +28,7 @@ Windows 用のデバッグツールを入手する方法については、「 [w
 
 2.  [ここ](https://go.microsoft.com/fwlink/p?linkid=223405)では、デバッガーのドキュメントも参照できます。
 
-3.  [**ファイル**] メニューの [**実行可能**ファイルを開く] をクリックします。 [実行可能ファイルを開く] ダイアログボックスで、notepad.exe が格納されているフォルダー (たとえば、\\C\\: Windows System32) に移動します。 [**ファイル名**] に「notepad.exe」と入力します。 **[開く]** をクリックします。
+3.  **[ファイル]** メニューの **[実行可能]** ファイルを開く をクリックします。 [実行可能ファイルを開く] ダイアログボックスで、notepad.exe が格納されているフォルダー (たとえば、C:\\Windows\\System32) に移動します。 **[ファイル名]** に「notepad.exe」と入力します。 **[開く]** をクリックします。
 
     ![メモ帳を起動した後の windbg のスクリーンショット](images/windbggetstart01.png)
 
@@ -53,7 +53,7 @@ Windows 用のデバッグツールを入手する方法については、「 [w
 
     [x メモ帳! *](https://go.microsoft.com/fwlink/p?linkid=399240)
 
-    メモ  出力が表示されない場合は、「」と入力し[**ます。** ](https://go.microsoft.com/fwlink/p?linkid=399239)
+    **メモ**  出力が表示されない場合は、「」と入力し[**ます。再度読み込み**](https://go.microsoft.com/fwlink/p?linkid=399239)ます。
 
     Main を含む Notepad.exe モジュールにシンボルを表示するには、次のコマンドを入力します。
 
@@ -125,7 +125,7 @@ Windows 用のデバッグツールを入手する方法については、「 [w
 
     スタックトレースを表示するには、次のコマンドを入力します。
 
-    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [kb](https://go.microsoft.com/fwlink/p?linkid=399389)
 
     出力は次のようになります。
 
@@ -142,7 +142,7 @@ Windows 用のデバッグツールを入手する方法については、「 [w
 
     [g](https://go.microsoft.com/fwlink/p?linkid=399388)
 
-9.  メモ帳を中断するには、[**デバッグ**] メニューの [**中断**] をクリックします。
+9.  メモ帳を中断するには、 **[デバッグ]** メニューの **[中断]** をクリックします。
 
 10. **Zwwritefile**でブレークポイントを設定して確認するには、次のコマンドを入力します。
 
@@ -150,7 +150,7 @@ Windows 用のデバッグツールを入手する方法については、「 [w
 
     [bl](https://go.microsoft.com/fwlink/p?linkid=399391)
 
-11. 「 [G](https://go.microsoft.com/fwlink/p?linkid=399388) 」と入力して、メモ帳を再度実行します。 メモ帳ウィンドウで、テキストを入力し、[**ファイル**] メニューの [**保存**] をクリックします。 実行中のコードは、 **Zwcreatefile**に関しては中断されます。 「 [K](https://go.microsoft.com/fwlink/p?linkid=399389) 」と入力すると、スタックトレースが表示されます。
+11. 「 [G](https://go.microsoft.com/fwlink/p?linkid=399388) 」と入力して、メモ帳を再度実行します。 メモ帳ウィンドウで、テキストを入力し、 **[ファイル]** メニューの **[保存]** をクリックします。 実行中のコードは、 **Zwcreatefile**に関しては中断されます。 「 [K](https://go.microsoft.com/fwlink/p?linkid=399389) 」と入力すると、スタックトレースが表示されます。
 
     ![windbg のスタックトレースのスクリーンショット](images/windbggetstart02.png)
 
@@ -184,7 +184,7 @@ Windows 用のデバッグツールを入手する方法については、「 [w
 
     [~ 0](https://go.microsoft.com/fwlink/p?linkid=399393)
 
-    [k](https://go.microsoft.com/fwlink/p?linkid=399389)
+    [kb](https://go.microsoft.com/fwlink/p?linkid=399389)
 
     出力は次のようになります。
 
@@ -229,16 +229,16 @@ void main ()
 }
 ```
 
-この演習では、ビルドされたアプリケーション (myapp.exe) とシンボルファイル (myapp) が C:\\MyApp\\x64\\Debug にあることを前提としています。 また、アプリケーションのソースコードが C:\\myapp\\myapp で、ターゲットコンピューターが myapp をコンパイルしたことを前提としています。
+この演習では、ビルドされたアプリケーション (Myapp.exe) とシンボルファイル (MyApp) が C:\\MyApp\\x64\\Debug にあることを前提としています。 また、アプリケーションのソースコードが C:\\MyApp\\MyApp で、ターゲットコンピューターが MyApp をコンパイルしたことを前提としています。
 
 1.  [WinDbg] を開きます。
 
-2.  [**ファイル**] メニューの [**実行可能**ファイルを開く] をクリックします。 [実行可能ファイルを開く] ダイアログボックスで、\\C\\:\\MyApp x64 Debug に移動します。 [**ファイル名**] に「myapp.exe」と入力します。 **[開く]** をクリックします。
+2.  **[ファイル]** メニューの **[実行可能]** ファイルを開く をクリックします。 実行可能ファイルを開く ダイアログボックスで、C:\\MyApp\\x64\\デバッグ に移動します。 **[ファイル名]** に「myapp.exe」と入力します。 **[開く]** をクリックします。
 3.  次のコマンドを入力します。
 
     [。 symfix](https://docs.microsoft.com/windows-hardware/drivers/debugger/-symfix--set-symbol-store-path-)
 
-    [. sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ C:\\MyApp\\x64\\デバッグ
+    [. sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)+ C:\\MyApp\\X64\\デバッグ
 
     ここで、WinDbg はアプリケーションのシンボルとソースコードの検索場所を認識しています。 この場合、シンボルにはソースファイルへの完全修飾パスがあるため、ソースコードの場所を[. srcpath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-srcpath---lsrcpath--set-source-path-)で設定する必要はありません。
 
@@ -256,7 +256,7 @@ void main ()
 
     ![windbg のソースコードのスクリーンショット](images/windbggetstart03.png)
 
-5.  [**デバッグ**] メニューの [**ステップイン**] をクリックするか、 **F11**キーを押します。 **MyFunction**にステップインするまで、ステップを続行します。 この行`y = x / p2`にステップインすると、アプリケーションがクラッシュし、デバッガーに中断します。 出力は次のようになります。
+5.  **[デバッグ]** メニューの **[ステップイン]** をクリックするか、 **F11**キーを押します。 **MyFunction**にステップインするまで、ステップを続行します。 `y = x / p2`行にステップインすると、アプリケーションがクラッシュし、デバッガーに中断します。 出力は次のようになります。
 
     ```dbgcmd
     (1450.1424): Integer divide-by-zero - code c0000094 (first chance)
@@ -320,12 +320,12 @@ void main ()
 ## <a name="span-idsummary_of_commandsspanspan-idsummary_of_commandsspanspan-idsummary_of_commandsspansummary-of-commands"></a><span id="Summary_of_commands"></span><span id="summary_of_commands"></span><span id="SUMMARY_OF_COMMANDS"></span>コマンドの概要
 
 
--   [**ヘルプ**] メニューの [**コンテンツ**] コマンド
+-   **[ヘルプ]** メニューの **[コンテンツ]** コマンド
 -   [. sympath (シンボルパスの設定)](https://go.microsoft.com/fwlink/p?linkid=399238)
 -   [。再読み込み (モジュールの再読み込み)](https://go.microsoft.com/fwlink/p?linkid=399239)
 -   [x (シンボルを調べる)](https://go.microsoft.com/fwlink/p?linkid=399240)
 -   [g (ゴー)](https://go.microsoft.com/fwlink/p?linkid=399388)
--   [**デバッグ**] メニューの [**中断**] コマンド
+-   **[デバッグ]** メニューの **[中断]** コマンド
 -   [lm (読み込まれたモジュールの一覧)](https://go.microsoft.com/fwlink/p?linkid=399237)
 -   [k (スタックバックトレースの表示)](https://go.microsoft.com/fwlink/p?linkid=399389)
 -   [bu (ブレークポイントの設定)](https://go.microsoft.com/fwlink/p?linkid=399390)
@@ -334,27 +334,18 @@ void main ()
 -   [~ s (現在のスレッドを設定)](https://go.microsoft.com/fwlink/p?linkid=399393)
 -   [. sympath + (シンボルパスの設定) 既存のシンボルパスに追加する](https://go.microsoft.com/fwlink/p?linkid=399238)
 -   [. srcpath (ソースパスの設定)](https://go.microsoft.com/fwlink/p?linkid=399395)
--   [**デバッグ**] メニューの [**ステップイン**] コマンド (**F11**)
+-   **[デバッグ]** メニューの **[ステップイン]** コマンド (**F11**)
 -   [! analyze-v](https://go.microsoft.com/fwlink/p?linkid=399396)
 -   [qd (終了とデタッチ)](https://go.microsoft.com/fwlink/p?linkid=399394)
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-
 [WinDbg ドライバーの概要 (カーネル モード)](getting-started-with-windbg--kernel-mode-.md)
 
-[デバッガーの操作](https://go.microsoft.com/fwlink/p?linkid=399247)
+[デバッガーの操作](debugger-operation-win8.md)
 
-[デバッグの手法](https://go.microsoft.com/fwlink/p?linkid=399248)
+[デバッグの手法](debugging-techniques.md)
 
-[Windows 用デバッグツール (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)
+[Windows 用デバッグツール (WinDbg、KD、CDB、NTSD)](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
 
- 
-
- 
-
-
-
-
-
-
+[WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

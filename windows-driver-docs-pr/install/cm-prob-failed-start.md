@@ -6,33 +6,37 @@ keywords:
 - CM_PROB_FAILED_START
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 957882d0ee0ae0e60c03742becd233ea83baf2a9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 185621f49368d5e2ad85e3daf1531c3459a4ea4b
+ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391481"
+ms.lasthandoff: 02/22/2020
+ms.locfileid: "77558420"
 ---
-# <a name="cmprobfailedstart"></a>CM_PROB_FAILED_START
+# <a name="cm_prob_failed_start"></a>CM_PROB_FAILED_START
 
-この関数は、システムの使用に予約されています。
+この関数は、システムで使用するために予約されています。
 
-デバイスは、開始できませんでした。
+デバイスを起動できませんでした。
 
 ## <a name="error-code"></a>エラー コード
 
 10
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-デバイスのハードウェア キーに「ドライバー」値が含まれている場合、値の文字列は、エラー メッセージとして表示されます。 (ドライバーまたは列挙子を提供このレジストリ文字列値。)ハードウェア キーに「ドライバー」値が含まれていない場合は、次の一般的なエラー メッセージが表示されます。
+デバイスのハードウェアキーに "Fail理由文字列" の値が含まれている場合は、値の文字列がエラーメッセージとして表示されます。 (ドライバーまたは列挙子は、このレジストリ文字列値を提供します)。ハードウェアキーに "Fail理由文字列" の値が含まれていない場合は、次の一般的なエラーメッセージが表示されます。
 
-"このデバイスを起動できません。 (コードは 10)"
+"このデバイスを開始できません。 (コード 10) "
 
-「このデバイスのデバイス ドライバーのアップグレードを再試行してください。」
+"このデバイスのデバイスドライバーをアップグレードしてみてください。"
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-選択**ドライバーの更新**ハードウェアの更新ウィザードを開始します。
+**[ドライバーの更新]** を選択すると、ハードウェアの更新ウィザードが起動します。
 
-このエラー コードは、IRP_MN_START_DEVICE 失敗した場合、デバイスのドライバー スタック内のドライバーのいずれかに設定されます。 スタックに多くのドライバーがある場合は、失敗した 1 つの特定が困難ができます。
+このエラーコードは、デバイスのドライバースタック内のいずれかのドライバーが IRP_MN_START_DEVICE に失敗した場合に設定されます。 スタック内に多数のドライバーがある場合は、失敗したドライバーを特定するのが困難な場合があります。
+
+開始 IRP に対して返されたエラーコードについては、デバイスの[**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)プロパティを参照してください。
+
+詳細については、「[デバイスインスタンスの状態と問題コードを取得](retrieving-the-status-and-problem-code-for-a-device-instance.md)する」を参照してください。

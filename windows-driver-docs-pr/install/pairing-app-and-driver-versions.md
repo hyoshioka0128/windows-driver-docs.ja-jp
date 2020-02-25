@@ -1,45 +1,45 @@
 ---
 title: ドライバーとユニバーサル Windows プラットフォーム (UWP) アプリとのペアリング
-description: このトピックでは、特定のドライバーが存在する場合に、ユニバーサル Windows プラットフォーム (UWP) アプリがのみ読み込むことを指定する方法について説明します。
+description: このトピックでは、特定のドライバーが存在する場合にのみ、ユニバーサル Windows プラットフォーム (UWP) アプリを読み込むように指定する方法について説明します。
 ms.assetid: 50f981bb-e17b-4454-88f9-46b09eb05509
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f31245dd44ee9597907614accdb956592fa84b1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8b9d79f2fa11b2d607352f0ae005e3b7196ed1f
+ms.sourcegitcommit: c9e5aa086b72ae9c1a31bf952d0711383cfd4bbd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363345"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575206"
 ---
 # <a name="pairing-a-driver-with-a-universal-windows-platform-uwp-app"></a>ドライバーとユニバーサル Windows プラットフォーム (UWP) アプリとのペアリング
 
-Windows 10 バージョン 1709 以降、特定のドライバーが存在する場合に、ユニバーサル Windows プラットフォーム (UWP) アプリがのみ読み込むことを指定できます。 このオプションを使用すると、Microsoft Store は、そのユーザーのコンピューターにインストールされているバージョンのドライバーで動作するアプリの最新バージョンを各ユーザーに提供します。
+Windows 10 バージョン1709以降では、特定のドライバーが存在する場合にのみ、ユニバーサル Windows プラットフォーム (UWP) アプリを読み込むように指定できます。 このオプションを使用すると、Microsoft Store は、ユーザーのコンピューターにインストールされているバージョンのドライバーで動作するアプリの最新バージョンを各ユーザーに提供します。
 
-さらにアプリが、特定のドライバーのバージョンや日付への読み込みを制限します。  このトピックでは、このような要求を作成するアプリとドライバーの両方で必要な手順について説明します。
+アプリは、特定のドライバーのバージョンまたは日付への読み込みをさらに制限することができます。  このトピックでは、このような要件を作成するために、アプリとドライバーの両方で必要な手順について説明します。
 
-## <a name="steps-in-the-app"></a>アプリでの手順
+## <a name="steps-in-the-app"></a>アプリのステップ
 
-UWP アプリを特定のドライバーが存在する場合にのみを読み込むには、2 つの XML 要素をアプリのマニフェスト XML (.appx) ファイルに追加します。
+特定のドライバーが存在するときに UWP アプリが読み込まれるようにするには、アプリのマニフェスト XML (.appx) ファイルに2つの XML 要素を追加します。
 
-* [uap5:DriverDependency](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverdependency)
-* [uap5:DriverConstraint](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverconstraint)
+* [uap5: DriverDependency](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverdependency)
+* [uap5: DriverConstraint](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverconstraint)
 
-具体的には、これらの要素を使用して、少なくとも 1 つのドライバーの制約を含む少なくとも 1 つのドライバーの依存関係を指定します。  上記にリンクされているリファレンス ページのこれらの要素の使用方法の詳細な情報を参照してください。  後者のページには、例が含まれています。
+特に、これらの要素を使用して、少なくとも1つのドライバーの制約を含むドライバーの依存関係を少なくとも1つ指定します。  これらの要素の使用方法の詳細については、上記のリンク先の参照ページを参照してください。  後者のページには例が含まれています。
 
-## <a name="steps-in-the-driver"></a>ドライバーでの手順
+## <a name="steps-in-the-driver"></a>ドライバーのステップ
 
-次に、ドライバーの INF ファイルでは、次の操作を行います。
+次に、ドライバーの INF ファイルで次の操作を行います。
 
-1. 指定、 [INF AddSoftware ディレクティブ](inf-addsoftware-directive.md)します。
-2. 設定、 **SoftwareType** 2 を入力します。
-3. パッケージ ファミリ名 (PFN) の提供、 **SoftwareID**エントリ。
+1. [INF AddSoftware ディレクティブ](inf-addsoftware-directive.md)を指定します。
+2. **ソフトウェアの種類**のエントリを2に設定します。
+3. **[ソフトウェア id]** エントリにパッケージファミリ名 (PFN) を指定します。
 
-最新のアプリとドライバーのバージョンに一致する、だけでなく、システムもアプリとドライバーの以前のバージョンの一致を試みます。  たとえば、アプリのバージョン 2 では、最小ドライバー バージョン 2、およびアプリのバージョン 1 = 最小のドライバーのバージョン 1 を指定します、ドライバーのバージョン 1 を搭載したシステムにアプリのバージョン 1 が読み込ま正常にれます。
+最新のアプリとドライバーのバージョンを照合するだけでなく、システムは以前のアプリとドライバーのバージョンを照合しようとします。  たとえば、アプリバージョン2で最小ドライバーバージョン2が指定され、アプリバージョン1で最小ドライバーバージョン1が指定されている場合、ドライバーバージョン1のシステムでは、アプリバージョン1が正常に読み込まれます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-* [uap5:DriverDependency](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverdependency)
-* [uap5:DriverConstraint](https://review.docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverconstraint?branch=lahugh-rs3)
+* [uap5: DriverDependency](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverdependency)
+* [uap5: DriverConstraint](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-driverconstraint)
 * [INF AddSoftware ディレクティブ](inf-addsoftware-directive.md)
-* [ハードウェア サポート アプリ (HSA):ドライバー開発者向け手順](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)
-* [ハードウェア サポート アプリ (HSA):アプリ開発者向け手順](../devapps/hardware-support-app--hsa--steps-for-app-developers.md)
+* [ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)
+* [ハードウェアサポートアプリ (HSA): アプリ開発者向けの手順](../devapps/hardware-support-app--hsa--steps-for-app-developers.md)
