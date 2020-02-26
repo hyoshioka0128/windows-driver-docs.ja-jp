@@ -1,11 +1,11 @@
 ---
-title: Bug Check 0xDEADDEAD MANUALLY_INITIATED_CRASH1
-description: MANUALLY_INITIATED_CRASH1 のバグ チェックでは、0 xdeaddead の値を持ちます。 これは、ユーザーが、カーネル デバッガーまたは、キーボードからクラッシュ ダンプを意図的に開始されたことを示します。
+title: バグチェック 0xDEADDEAD MANUALLY_INITIATED_CRASH1
+description: MANUALLY_INITIATED_CRASH1 バグチェックの値は0xDEADDEAD です。 これは、ユーザーがカーネルデバッガーまたはキーボードから意図的にクラッシュダンプを開始したことを示します。
 ms.assetid: b7439fc7-3146-48c9-b44e-dddea2d84769
 keywords:
-- Bug Check 0xDEADDEAD MANUALLY_INITIATED_CRASH1
+- バグチェック 0xDEADDEAD MANUALLY_INITIATED_CRASH1
 - MANUALLY_INITIATED_CRASH1
-ms.date: 05/23/2017
+ms.date: 02/24/2020
 topic_type:
 - apiref
 api_name:
@@ -13,36 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b91772022846a2ea263c60f63daa13ab6de555d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d32c35a169417157197bb28c08a22f460da71909
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518827"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601724"
 ---
-# <a name="bug-check-0xdeaddead-manuallyinitiatedcrash1"></a>バグ チェック 0xDEADDEAD:手動で\_INITIATED\_CRASH1
+# <a name="bug-check-0xdeaddead-manually_initiated_crash1"></a>バグチェック 0xDEADDEAD: 手動\_開始\_CRASH1
 
-
-手動で\_INITIATED\_CRASH1 バグ チェックが 0 xdeaddead の値を持ちます。 これは、ユーザーが、カーネル デバッガーまたは、キーボードからクラッシュ ダンプを意図的に開始されたことを示します。
+手動\_開始\_CRASH1 バグチェックの値は0xDEADDEAD です。 これは、手動で開始されたクラッシュが発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
+## <a name="manually_initiated_crash1-parameters"></a>手動\_開始\_CRASH1 パラメーター
 
-## <a name="manuallyinitiatedcrash1-parameters"></a>手動で\_INITIATED\_CRASH1 パラメーター
-
-
-なし
-
-<a name="remarks"></a>注釈
--------
-
-詳細については、手動で開始されたクラッシュ ダンプは、次を参照してください。[強制的にシステムのクラッシュ](forcing-a-system-crash.md)します。
-
- 
-
- 
-
-
-
-
+| パラメーター | 説明 |
+|-----------|-------------|
+|     1     | 予約済み    |
+|     2     | 予約済み    |
+|     3     | 予約済み    |
+|     4     | 予約済み    |

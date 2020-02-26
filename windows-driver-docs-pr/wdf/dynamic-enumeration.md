@@ -11,12 +11,12 @@ keywords:
 - 動的な子リストの走査 WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf0fbeebb921c6d99b2d0e5f45fadaf603251410
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5cd974a90c06dc9e3ff447acd4c30b96e9d45eff
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845589"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601722"
 ---
 # <a name="dynamic-enumeration"></a>動的な列挙
 
@@ -33,7 +33,7 @@ ms.locfileid: "72845589"
 
 デバイスの FDO を表すフレームワークデバイスオブジェクトがドライバーによって作成されるたびに、フレームワークによって、デバイスの空の既定の子リストが作成されます。 ドライバーは、 [**WdfFdoGetDefaultChildList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdogetdefaultchildlist)を呼び出すことによって、デバイスの既定の子リストへのハンドルを取得できます。 通常、デバイスの子を列挙するバスドライバーを作成する場合、ドライバーは子を既定の子リストに追加できます。 追加の子リストを作成する必要がある場合は、ドライバーが[**Wdfchildlistcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)を呼び出すことができます。
 
-ドライバーが子リストを使用できるようにするには、 [**WDF\_子\_リスト\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_list_config)構造体を初期化し、構造体を[**Wdffdoinitsetdefaultchildlistconfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)に渡すことによって、子リストオブジェクトを構成する必要があります。追加の子リストの場合は、既定の子リスト、または[**Wdfchildlistcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)になります。
+ドライバーが子リストを使用できるようにするには、その前に子リストオブジェクトを構成する必要があります。そのためには、 [**WDF\_子\_リスト\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/ns-wdfchildlist-_wdf_child_list_config)構造体を初期化し、その構造体を[**Wdffdoinitsetdefaultchildlistconfig**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdffdo/nf-wdffdo-wdffdoinitsetdefaultchildlistconfig)、既定の子リスト、または[**wdfchildlistcreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistcreate)に渡します。
 
 ### <a name="dynamic-child-descriptions"></a>動的な子の説明
 
@@ -91,7 +91,7 @@ ms.locfileid: "72845589"
 
 3.  [**Wdfchildlistendscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)を呼び出します。
 
-[**Wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)と[**Wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)の呼び出しを使用してドライバーの動的列挙を囲むと、フレームワークはすべての変更を子リストに格納し、ドライバーがを呼び出し**たときに、変更を PnP マネージャーに通知します。WdfChildListEndScan**。 後で、フレームワークは、子リスト内の各デバイスに対してバスドライバーの[*EvtChildListCreateDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) callback 関数を呼び出します。 このコールバック関数は、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、新しいデバイスごとに PDO を作成します。
+[**Wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)および[**wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)の呼び出しを使用してドライバーの動的列挙を囲むと、フレームワークはすべての変更を子リストに格納し、ドライバーが**wdfchildlistbeginscan**を呼び出したときに、変更の PnP マネージャーに通知します。 後で、フレームワークは、子リスト内の各デバイスに対してバスドライバーの[*EvtChildListCreateDevice*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_create_device) callback 関数を呼び出します。 このコールバック関数は、 [**WdfDeviceCreate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreate)を呼び出して、新しいデバイスごとに PDO を作成します。
 
 ドライバーが[**Wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)を呼び出すと、フレームワークは以前に報告されたすべてのデバイスを存在しないとマークします。 そのため、ドライバーは、新たに検出された子だけでなく、ドライバーが検出できるすべての子に対して[**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)を呼び出す必要があります。 子リストに1つの子を追加する場合、ドライバーは最初に**Wdfchildlistbeginscan**を呼び出さずに[**WdfChildListUpdateAllChildDescriptionsAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent)を1回呼び出すことができます。
 
@@ -101,7 +101,7 @@ ms.locfileid: "72845589"
 
 1.  親デバイスが子の到着または削除を示す割り込みを受け取ると、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数は、デバイスが接続されている場合は[**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent)を、デバイスが取り外されていない場合は[**WdfChildListUpdateChildDescriptionAsMissing**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdatechilddescriptionasmissing)を呼び出します。
 
-2.  ドライバーは[*Evtchildlistscanforchildren*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children)コールバック関数を提供できます。この関数は、親デバイスが動作 (D0) 状態になるたびにフレームワークによって呼び出されます。 このコールバック関数は、 [**Wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)、 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) (または[**WdfChildListUpdateAllChildDescriptionsAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent)) を呼び出して、すべての[**子デバイスを列挙する必要があります。WdfChildListEndScan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)。
+2.  ドライバーは[*Evtchildlistscanforchildren*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nc-wdfchildlist-evt_wdf_child_list_scan_for_children)コールバック関数を提供できます。この関数は、親デバイスが動作 (D0) 状態になるたびにフレームワークによって呼び出されます。 このコールバック関数は、 [**Wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistbeginscan)、 [**WdfChildListAddOrUpdateChildDescriptionAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistaddorupdatechilddescriptionaspresent) (または[**WdfChildListUpdateAllChildDescriptionsAsPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistupdateallchilddescriptionsaspresent))、および[**wdfchildlistbeginscan**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfchildlist/nf-wdfchildlist-wdfchildlistendscan)を呼び出すことにより、すべての子デバイスを列挙する必要があります。
 
 ドライバーでは、これらの方法のいずれかまたは両方を使用できます。
 
@@ -131,9 +131,10 @@ ms.locfileid: "72845589"
 
 -   [**WdfPdoUpdateAddressDescription**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfpdo/nf-wdfpdo-wdfpdoupdateaddressdescription): PDO に関連付けられているアドレスの説明を更新します。
 
- 
+### <a name="handling-re-enumeration-requests"></a>再列挙要求の処理
 
- 
+動的列挙をサポートするフレームワークベースのバスドライバーは、 [**REENUMERATE_SELF_INTERFACE_STANDARD**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_reenumerate_self_interface_standard)インターフェイスを介して特定の子デバイスを reenumerate するための要求を受け取ることができます。 詳細については、「[列挙型要求の処理](https://docs.microsoft.com/windows-hardware/drivers/wdf/handling-enumeration-requests)」を参照してください。
+
 
 
 

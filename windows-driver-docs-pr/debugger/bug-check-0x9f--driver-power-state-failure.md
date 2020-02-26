@@ -3,7 +3,7 @@ title: バグチェック 0x9F DRIVER_POWER_STATE_FAILURE
 description: このバグチェックの値は0x0000009F です。 このバグチェックは、ドライバーの電源状態が矛盾しているか、無効であることを示します。
 ms.assetid: f767fe80-0ec0-45e4-9949-467f50ac601c
 keywords:
-- (開発者向けコンテンツ)バグチェック 0x9F DRIVER_POWER_STATE_FAILURE
+- バグチェック 0x9F DRIVER_POWER_STATE_FAILURE
 - DRIVER_POWER_STATE_FAILURE
 ms.date: 05/23/2017
 topic_type:
@@ -13,14 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9754dd7117a745e3d290a29fb54246db49390a
-ms.sourcegitcommit: 667b4be765b2eac6bc586d39abef3393a718b23f
+ms.openlocfilehash: df50ead9a8bd9398c3df5b3b97cec400bc1b13ce
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "70025315"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601716"
 ---
-# <a name="developer-content-bug-check-0x9f-driver_power_state_failure"></a>(開発者向けコンテンツ)バグチェック 0x9F: ドライバー\_電源\_状態\_エラー
+# <a name="bug-check-0x9f-driver_power_state_failure"></a>バグチェック 0x9F: ドライバー\_電源\_状態\_エラー
 
 ドライバー\_電源\_状態\_エラーのバグチェックには、0x0000009F の値が含まれています。 このバグチェックは、ドライバーの電源状態が矛盾しているか、無効であることを示します。
 
@@ -66,7 +66,7 @@ ms.locfileid: "70025315"
 <tr class="odd">
 <td align="left"><p>0x3</p></td>
 <td align="left"><p>スタックの物理デバイスオブジェクト (PDO)</p></td>
-<td align="left"><p>スタックの機能デバイスオブジェクト (FDO)。 Windows 7 以降、nt!TRIAGE_9F_POWER。</p></td>
+<td align="left"><p>r!TRIAGE_9F_POWER。</p></td>
 <td align="left"><p>ブロックされた IRP</p></td>
 <td align="left"><p>デバイスオブジェクトが IRP を長時間ブロックしています。</p></td>
 </tr>
@@ -74,8 +74,22 @@ ms.locfileid: "70025315"
 <td align="left"><p>0x4</p></td>
 <td align="left"><p>タイムアウト値 (秒単位)。</p></td>
 <td align="left"><p>現在、プラグアンドプレイ (PnP) ロックを保持しているスレッド。</p></td>
-<td align="left"><p>Windows 7 以降、nt!TRIAGE_9F_POWER。</p></td>
+<td align="left"><p>r!TRIAGE_9F_POWER。</p></td>
 <td align="left"><p>PnP サブシステムとの同期を待機中に、電源状態の移行がタイムアウトしました。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>0x5</p></td>
+<td align="left"><p>スタックの物理デバイスオブジェクト</p></td>
+<td align="left"><p></p>POP_FX_DEVICE オブジェクト</td>
+<td align="left"><p>予約済み-0</p></td>
+<td align="left"><p>デバイスは、必要な時間内に、有向電源移行を完了できませんでした。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>0x6</p></td>
+<td align="left"><p>POP_FX_DEVICE オブジェクト</p></td>
+<td align="left"><p>これが、電源がオン (1) または電源 (0) の完了であるかどうかを示します。</p></td>
+<td align="left"><p>予約済み-0</p></td>
+<td align="left"><p></p>デバイスは、有向電源移行コールバックを正常に完了できませんでした。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x500</p></td>
@@ -88,12 +102,10 @@ ms.locfileid: "70025315"
 </table>
 
 ## <a name="cause"></a>原因
------
 
 考えられる原因の詳細については、「Parameters」セクションの各コードの説明を参照してください。
 
 ## <a name="resolution"></a>解決方法
-----------
 
 **パラメーター1が0x3 の場合のバグチェック0x9F のデバッグ**
 
@@ -293,7 +305,7 @@ Nt!トリアージ\_9F\_PNP 構造により、エラーの原因を特定する�
 
 - 前述の「パラメーター0x3」で説明されている追加の手法を参照してください。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 ----------
 
 上記の手法を使用してこの問題をデバッグすることができない場合は、いくつかの基本的なトラブルシューティング手法を使用できます。

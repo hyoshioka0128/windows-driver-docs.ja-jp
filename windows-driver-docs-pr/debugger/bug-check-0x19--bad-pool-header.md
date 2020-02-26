@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x19 BAD_POOL_HEADER
-description: BAD_POOL_HEADER のバグ チェックでは、0x00000019 の値を持ちます。 これは、プールのヘッダーが壊れていることを示します。
+title: バグチェック 0x19 BAD_POOL_HEADER
+description: BAD_POOL_HEADER バグチェックの値は0x00000019 です。 これは、プールヘッダーが破損していることを示します。
 ms.assetid: a3e84703-d778-426b-80e6-e143f5d8f869
 keywords:
-- (開発者向けコンテンツ)バグ チェック 0x19 BAD_POOL_HEADER
+- バグチェック 0x19 BAD_POOL_HEADER
 - BAD_POOL_HEADER
 ms.date: 12/07/2017
 topic_type:
@@ -13,26 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e5813b2a9b5b3a77f14730d8f5fda32b3dc82441
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: a066f2700b6698cdc3adb9155349d00ce95a0b9e
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519836"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601720"
 ---
-# <a name="developer-content-bug-check-0x19-badpoolheader"></a>(開発者向けコンテンツ)0x19 チェックをバグします。不適切な\_プール\_ヘッダー
+# <a name="bug-check-0x19-bad_pool_header"></a>バグチェック 0x19: 無効な\_プール\_ヘッダー
 
-
-不適切な\_プール\_ヘッダーのバグ チェックが 0x00000019 の値を持ちます。 これは、プールのヘッダーが壊れていることを示します。
+無効な\_プール\_ヘッダーのバグチェックの値が0x00000019 になっています。 これは、プールヘッダーが破損していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
+## <a name="bad_pool_header-parameters"></a>\_プール\_ヘッダーパラメーターが正しくありません
 
-## <a name="badpoolheader-parameters"></a>不適切な\_プール\_ヘッダー パラメーター
-
-
-パラメーター 1 では、違反の種類を示します。 その他のパラメーターの意味は、パラメーター 1 の値によって異なります。
+パラメーター1は違反の種類を示します。 他のパラメーターの意味は、パラメーター1の値によって異なります。
 
 <table>
 <colgroup>
@@ -44,135 +41,125 @@ ms.locfileid: "67519836"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 1</th>
+<th align="left">パラメーター1</th>
 <th align="left">パラメータ 2</th>
-<th align="left">3 番目のパラメーター</th>
-<th align="left">パラメーター 4</th>
+<th align="left">パラメーター3</th>
+<th align="left">パラメーター4</th>
 <th align="left">エラーの原因</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>チェックされているプール エントリ</p></td>
-<td align="left"><p>プールのブロックのサイズ</p></td>
+<td align="left"><p>チェックされるプールエントリ</p></td>
+<td align="left"><p>プールブロックのサイズ</p></td>
 <td align="left"><p>0</p></td>
-<td align="left"><p>特別なプールのパターンのチェックに失敗しました。</p>
-<p>(所有者は、プールのブロックを破損が可能性があります)。</p></td>
+<td align="left"><p>特別なプールパターンチェックに失敗しました。</p>
+<p>(所有者がプールブロックを破損している可能性があります)。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
-<td align="left"><p>チェックされているプール エントリ</p></td>
-<td align="left"><p>読み戻し<strong>flink</strong> freelist 値</p></td>
-<td align="left"><p>読み戻し<strong>点滅</strong>freelist 値</p></td>
-<td align="left"><p>プール空きリストが壊れています。</p>
-<p>(正常な状態の一覧でパラメーター 2、3、および 4 の値と同じなります。)</p></td>
+<td align="left"><p>チェックされるプールエントリ</p></td>
+<td align="left"><p>読み取り戻る<strong>flink</strong> freelist 値</p></td>
+<td align="left"><p>読み取り戻る<strong>点滅</strong>の freelist 値</p></td>
+<td align="left"><p>プール freelist が破損しています。</p>
+<p>(正常な一覧では、パラメーター2、3、および4の値は同一である必要があります)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x5</p></td>
-<td align="left"><p>1 つのプール エントリ</p></td>
+<td align="left"><p>プールエントリの1つ</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>その他のプール エントリ</p></td>
-<td align="left"><p>2 つの隣接するプールのエントリには、互いに矛盾するヘッダーがあります。 少なくとも 1 つが壊れています。</p></td>
+<td align="left"><p>その他のプールエントリ</p></td>
+<td align="left"><p>隣接するプールエントリのペアには、互いに矛盾するヘッダーがあります。 少なくとも1つは破損しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x6</p></td>
-<td align="left"><p>1 つの計算が正しくないエントリ</p></td>
+<td align="left"><p>誤って計算された1つのエントリ</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>計算式の原因となった無効なエントリ</p></td>
-<td align="left"><p>プールのブロック ヘッダーの前のサイズが大きすぎます。</p></td>
+<td align="left"><p>誤差の原因となった無効なエントリ</p></td>
+<td align="left"><p>プールブロックヘッダーの前のサイズが大きすぎます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x7</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>無効なプール エントリ</p></td>
-<td align="left"><p>プールのブロック ヘッダーのサイズが壊れています。</p></td>
+<td align="left"><p>無効なプールエントリ</p></td>
+<td align="left"><p>プールブロックヘッダーのサイズが破損しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x8</p></td>
 <td align="left"><p>0</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>無効なプール エントリ</p></td>
-<td align="left"><p>プールのブロック ヘッダーのサイズには 0 です。</p></td>
+<td align="left"><p>無効なプールエントリ</p></td>
+<td align="left"><p>プールブロックヘッダーのサイズが0です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x9</p></td>
-<td align="left"><p>1 つの計算が正しくないエントリ</p></td>
+<td align="left"><p>誤って計算された1つのエントリ</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>計算式の原因となった無効なエントリ</p></td>
-<td align="left"><p>プールのブロック ヘッダーのサイズが破損しています (これが大きすぎます)。</p></td>
+<td align="left"><p>誤差の原因となった無効なエントリ</p></td>
+<td align="left"><p>プールブロックヘッダーのサイズが破損しています (大きすぎます)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 xa</p></td>
-<td align="left"><p>検出されたプール エントリ</p></td>
+<td align="left"><p>0xA</p></td>
+<td align="left"><p>検出されたプールエントリ</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>プールのエントリが含まれている必要がありますページの仮想アドレス</p></td>
-<td align="left"><p>プールのブロック ヘッダーのサイズが壊れています。</p></td>
+<td align="left"><p>プールエントリを含む必要があるページの仮想アドレス</p></td>
+<td align="left"><p>プールブロックヘッダーのサイズが破損しています。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 xd、0xE、0 xf、0x23、0x24、0x25</p></td>
+<td align="left"><p>0xD、0Xd、0Xf です、0x23、0x24、0x25</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>それが解放された後、解放されたブロックのプールのヘッダーは変更されています。 一般的にはこれが、解放されたブロック; の以前の所有者の障害になることはありません。代わりには、通常 (必ずではありません) により、ブロックの前に、解放されたブロックのオーバーランが発生します。</p></td>
+<td align="left"><p>解放されたブロックのプールヘッダーは、解放された後で変更されています。 これは、通常、解放されたブロックの前の所有者のエラーではありません。代わりに、解放されたブロックがオーバーランする前のブロックにより、通常は (常にではありませんが) 発生します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x20</p></td>
-<td align="left"><p>検出されたプール エントリ</p></td>
-<td align="left"><p>プールの次のエントリ</p></td>
+<td align="left"><p>検出されたプールエントリ</p></td>
+<td align="left"><p>次のプールエントリ</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>プールのブロック ヘッダーのサイズが壊れています。</p></td>
+<td align="left"><p>プールブロックヘッダーのサイズが破損しています。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0X21</p></td>
-<td align="left"><p>解放されてプールへのポインター</p></td>
-<td align="left"><p>プールのブロックに割り当てられたバイト数</p></td>
-<td align="left"><p>次のプールのブロックが見つかりました破損した値</p></td>
-<td align="left"><p>解放されてプールのブロックの後のデータが壊れています。 通常、コンシューマー (コール スタック) が、ブロックをオーバーラン意味します。</p></td>
+<td align="left"><p>解放されているプールポインター</p></td>
+<td align="left"><p>プールブロックに割り当てられたバイト数</p></td>
+<td align="left"><p>プールブロックの後に破損した値が見つかりました</p></td>
+<td align="left"><p>解放されているプールブロックに続くデータが破損しています。 通常、これはコンシューマー (呼び出し履歴) がブロックをオーバーランさせることを意味します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0X22</p></td>
 <td align="left"><p>解放されているアドレス</p></td>
 <td align="left"><p>予約済み</p></td>
 <td align="left"><p>予約済み</p></td>
-<td align="left"><p>解放されているアドレスの追跡のエントリではありません。 呼び出し履歴が既に解放されたか、始めに割り当てられていないポインターを解放しようとしたため、通常です。</p></td>
+<td align="left"><p>解放されているアドレスに追跡エントリがありません。 これは、通常、呼び出し履歴が既に解放されているポインター、またはから開始するように割り当てられていないポインターを解放しようとしているためです。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 <a name="cause"></a>原因
 -----
 
-プールは既に現在の要求時に破損しています。
+現在の要求の時点で、プールは既に破損しています。
 
-これは、呼び出し元によりできない可能性がありますもかまいません。
+これは、呼び出し元によって異なる場合があります。
 
 <a name="resolution"></a>解決方法
 ----------
 
-カーネル デバッガーを使用して、問題の考えられる原因を解明内部プールへのリンクを処理する必要があります。
+内部プールリンクは、問題の考えられる原因を解明するために、カーネルデバッガーを使用してウォークする必要があります。
 
-問題のあるプール タグの特別なプールを使用したり、Driver Verifier を使用し、問題のあるドライバーの「特別なプール」オプション。 [ **! 分析**](-analyze.md)未確認のドライバーを特定することでヘルプの拡張機能がありますが、これは頻繁にプール corrupters の場合。
+その後、問題のあるプールタグに特別なプールを使用するか、問題のあるドライバーでドライバー検証ツールの "特別なプール" オプションを使用することができます。 [ **! 分析**](-analyze.md)拡張機能は、問題のあるドライバーを特定するのに役立つ場合がありますが、多くの場合、プール corrupters の場合はそうではありません。
 
-説明する手順を使用して、 [**青い画面データ**](blue-screen-data.md)停止コード パラメーターを収集します。 停止コード パラメーターを使用して、コードの動作追跡するために作業しているは、特定の種類を決定します。
+「 [**Blue Screen Data**](blue-screen-data.md) 」で説明されている手順を使用して、Stop コードパラメーターを収集します。 Stop コードパラメーターを使用して、追跡する特定の種類のコード動作を決定します。
 
 **ドライバーの検証ツール**
 
-Driver Verifier は、ドライバーの動作を確認するのにはリアルタイムで実行されているツールです。 ドライバー コードの実行でエラーが参照してください、さらに細かく検証するドライバー コードの部分を許可する例外が事前に作成されます。 ドライバー検証マネージャーは、Windows に組み込まれているしはすべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動する入力*Verifier*コマンド プロンプトでします。 確認するにはどのドライバーを構成することができます。 ドライバーを検証するコードは実行時にオーバーヘッドを追加、のでお試しくださいし、可能なドライバーの最小数を確認します。 詳細については、次を参照してください。 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。
+ドライバーの検証ツールは、ドライバーの動作を確認するためにリアルタイムで実行されるツールです。 ドライバーコードの実行中にエラーが発生した場合は、ドライバーコードのその部分をさらに詳しく調べることを許可する例外が事前に作成されています。 Driver verifier マネージャーは Windows に組み込まれており、すべての Windows Pc で使用できます。 ドライバー検証マネージャーを起動するには、コマンドプロンプトで「 *verifier* 」と入力します。 確認するドライバーを構成できます。 ドライバーを検証するコードは、実行中のオーバーヘッドを追加するので、可能な限り最小のドライバー数を試してみてください。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
 **Windows メモリ診断**
 
-このバグ チェックが一貫性なく表示されている場合は、物理メモリを関係可能性があります。
+このバグチェックが一貫して表示されない場合は、問題のある物理メモリに関連している可能性があります。
 
-メモリをテストする、Windows メモリ診断ツールを実行します。 コントロール パネルの検索ボックスには、メモリを入力し、クリックして **、コンピューターのメモリの問題を診断**します。テストの実行後は、イベント ビューアーを使用して、システム ログで結果を表示します。 探して、 *MemoryDiagnostics 結果*結果を表示するエントリ。
-
- 
-
- 
-
-
-
-
+Windows メモリ診断ツールを実行して、メモリをテストします。 コントロールパネルの検索ボックスに「Memory」と入力し、 **[コンピューターのメモリの問題を診断する]** をクリックします。テストの実行後、イベントビューアーを使用して、システムログの下に結果を表示します。 結果を表示するには、 *Memorydiagnostics-results*エントリを探します。
