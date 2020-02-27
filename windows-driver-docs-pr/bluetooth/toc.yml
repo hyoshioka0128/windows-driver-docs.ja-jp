@@ -90,5 +90,33 @@
       href: bluetooth-proximity-profile.md
     - name: 近接通信プロファイルの実装の詳細
       href: proximity-profile-implementation-details.md
+- name: Bluetooth ドライバーのテスト
+  items:
+    - name: Bluetooth ドライバーのテスト リソース
+      href: testing-Bluetooth-main.md
+    - name: Bluetooth テスト プラットフォーム (BTP)
+      items:
+        - name: Bluetooth テスト プラットフォームの概要
+          href: testing-BTP-Overview.md
+        - name: BTP の設定
+          href: testing-BTP-setup.md
+        - name: BTP ソフトウェア
+          href: testing-BTP-software-package.md
+        - name: BTP ハードウェア
+          items:
+            - name: Traduci ボード
+              href: testing-BTP-hw.md
+            - name: HID 対応ラジオ
+              href: testing-BTP-hw-hid.md
+            - name: オーディオ対応ラジオ
+              href: testing-BTP-hw-audio.md
+        - name: BTP のテスト
+          items:
+            - name: 現在利用可能な BTP のテスト
+              href: testing-BTP-Tests.md
+            - name: Bluetooth ペアリングのテスト
+              href: testing-BTP-tests-pairing.md
+            - name: Bluetooth HID のテスト
+              href: testing-BTP-tests-hid.md
 - name: Bluetooth 無線のリセットと回復
   href: bluetooth-radio-error-recovery.md
