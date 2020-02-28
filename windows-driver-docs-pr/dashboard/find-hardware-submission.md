@@ -2,16 +2,15 @@
 title: ハードウェア申請の検索と管理
 author: dimanjar
 description: テキストを使って検索するか、キーワード検索でドライバー属性を選択することで、特定の Windows ハードウェア申請を検索する方法について説明します。
-ms.author: dimanjar
 ms.topic: article
 ms.date: 09/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48dd2f115aa4d5c8cfad6e9e9e56842fd64e7a80
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 77c5d52709ce09bd674de5dba00a2700674863fe
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63337265"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601711"
 ---
 # <a name="find-a-hardware-submission"></a>ハードウェア申請を検索する
 
@@ -65,19 +64,19 @@ ms.locfileid: "63337265"
 |----|----|----|
 |ProductID |数値|17 桁のプライベート製品 ID|
 |SharedProductID |数値|19 桁の共有製品 ID|
-|ProductName |Text|
-|CertificationType |Text|Attestation (構成証明)、HCK、HLK、WLK|
-|Permission (アクセス許可) |Text|Author (作成者)、Publisher (発行元)|
+|ProductName |テキスト|
+|CertificationType |テキスト|Attestation (構成証明)、HCK、HLK、WLK|
+|アクセス許可 |テキスト|Author (作成者)、Publisher (発行元)|
 |SubmissionID |数値|19 桁の申請 ID|
-|SubmissionName |Text|
-|SubmissionType |Text|Initial (初期)、Derived (派生)|
-|SubmissionStatus |Text|Complete (完了)、Failed (失敗)、NotSet (未設定)、Processing (処理中)、Ready (準備完了)|
-|IsExtensionDriver |ブール値|False、True|
-|IsUniversalDriver |ブール値|False、True|
-|IsDeclarativeDriver |ブール値|False、True|
-|INFName |Text|
-|HardwareID |Text|
-|OperatingSystemCode |Text|[OS コードの一覧](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-product-data#list-of-operating-system-codes)|
+|SubmissionName |テキスト|
+|SubmissionType |テキスト|Initial (初期)、Derived (派生)|
+|SubmissionStatus |テキスト|Complete (完了)、Failed (失敗)、NotSet (未設定)、Processing (処理中)、Ready (準備完了)|
+|IsExtensionDriver |ブール型|False、True|
+|IsUniversalDriver |ブール型|False、True|
+|IsDeclarativeDriver |ブール型|False、True|
+|INFName |テキスト|
+|HardwareID |テキスト|
+|OperatingSystemCode |テキスト|[OS コードの一覧](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-product-data#list-of-operating-system-codes)|
 
 ## <a name="search-results"></a>検索結果
 

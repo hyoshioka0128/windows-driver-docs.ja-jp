@@ -2,14 +2,14 @@
 title: ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
 description: ターゲット コンピューターやテスト コンピューターのプロビジョニングは、自動ドライバー展開、テスト、デバッグ用にコンピューターを構成するプロセスです。 コンピューターをプロビジョニングするには、Microsoft Visual Studio を使います。
 ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
-ms.date: 01/29/2020
+ms.date: 02/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e9d311908c7c26b7b4061cd4f7630c16fe1f3d
-ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
+ms.openlocfilehash: 5201f216036949b968d2c5b162bd1e7a602f808d
+ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76910362"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77601734"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
 
@@ -20,7 +20,7 @@ ms.locfileid: "76910362"
 ホスト コンピューターとターゲット コンピューターが、名前によって相互に ping できる必要があります。 ホスト コンピューターとターゲット コンピューターの両方が同じワークグループまたは同じネットワーク ドメインに参加している場合、この ping は簡単に行うことができます。 お使いのコンピューターがワークグループに属している場合は、ハブやスイッチではなくルーターにコンピューターを接続することをお勧めします。 
 
 > [!TIP]
-> WDK および既知の問題に関する最新情報については、[WDK サポート フォーラム](https://social.msdn.microsoft.com/Forums/home?forum=wdk)を参照してください。
+> WDK および既知の問題に関する最新情報については、[WDK サポート フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wdk)を参照してください。
 
 ## <a name="span-idpreparing_the_target_computer_for_provisioningspanspan-idpreparing_the_target_computer_for_provisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>ターゲット コンピューターのプロビジョニングの準備
 
