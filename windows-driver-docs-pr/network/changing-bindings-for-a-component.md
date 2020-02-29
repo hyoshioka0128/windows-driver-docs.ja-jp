@@ -3,17 +3,17 @@ title: コンポーネントのバインドの変更
 description: コンポーネントのバインドの変更
 ms.assetid: 2e59a160-d8d9-4739-a8fa-919760f8eb05
 keywords:
-- オブジェクトの WDK ネットワーク、バインディングの変更を通知します。
-- ネットワーク オブジェクト WDK、バインディングの変更を通知します。
-- バインディングは、WDK のネットワークを変更します。
+- オブジェクトに WDK ネットワークを通知し、変更をバインドする
+- ネットワーク通知オブジェクト WDK、バインドの変更
+- バインドの変更 WDK ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a224e33b0e7742cb6b97d650acc181696170852
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c25c990da302101854b146c60b493f6878643ef8
+ms.sourcegitcommit: 69939496f6d5cb535aad2bd426ab2baa8d7b9051
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382779"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78178061"
 ---
 # <a name="changing-bindings-for-a-component"></a>コンポーネントのバインドの変更
 
@@ -21,7 +21,7 @@ ms.locfileid: "67382779"
 
 
 
-ネットワーク構成のサブシステムは、通知オブジェクトのネットワーク コンポーネントに影響するバインディングの変更について通知オブジェクトを常に通知します。 サブシステムの呼び出し、通知オブジェクトの[ **INetCfgComponentNotifyBinding::NotifyBindingPath** ](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547731(v=vs.85))メソッドへのポインターと共に変更を示す値を渡すと、 **INetCfgBindingPath**バインド パスの変更に関係のインターフェイス。 場合は、サブシステム渡します NCN\_無効にすると、特定のネットワーク カードと、通知オブジェクトのネットワーク コンポーネントを共有するバインディング パスが無効にする、通知オブジェクトをアクティブ化できますバインディング別のネットワーク カードで次のコードに示すようにします。
+ネットワーク構成サブシステムは、通知オブジェクトのネットワークコンポーネントに影響を与えるバインドの変更について、通知オブジェクトに常に通知します。 サブシステムは、notify オブジェクトの[**Inetcfgcomponentnotifybinding:: NotifyBindingPath**](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff547731(v=vs.85))メソッドを呼び出し、変更に関係するバインドパスの**inetcfgbindingpath**インターフェイスへのポインターと共に、変更を指定する値を渡します。 サブシステムが NCN\_DISABLE を渡して、通知オブジェクトのネットワークコンポーネントが特定のネットワークカードと共有するバインドパスを無効にすると、通知オブジェクトは、次のコードに示すように、別のネットワークカードを使用してバインドをアクティブ化できます。
 
 ```C++
 HRESULT CSample::NotifyBindingPath(DWORD dwChangeFlag,
@@ -52,7 +52,7 @@ HRESULT CSample::NotifyBindingPath(DWORD dwChangeFlag,
    hr = penumncbp->Skip(celt); // skip one element
             hr = penumncbp->Next(celt, &pncbp2, NULL);
         } while (SUCCEEDED(hr));
-        if (SUCCEEDED(hr) {
+        if (SUCCEEDED(hr)) {
             // Retrieve enumerator for interfaces of the binding path.
             hr = pncbp2->EnumBindingInterfaces(&penumncbi);
             // Retrieve a binding interface for the binding path.

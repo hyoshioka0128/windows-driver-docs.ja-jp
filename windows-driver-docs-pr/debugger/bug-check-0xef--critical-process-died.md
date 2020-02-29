@@ -5,7 +5,7 @@ ms.assetid: caa18221-6128-4d77-ab61-ef3c28cfba38
 keywords:
 - バグチェック 0xEF CRITICAL_PROCESS_DIED
 - CRITICAL_PROCESS_DIED
-ms.date: 09/17/2018
+ms.date: 02/25/2020
 topic_type:
 - apiref
 api_name:
@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 28d7c9573742134c2f5ff9ed5a654229f193fa0f
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: 657ff1747b3830370b2ba5a976425cdd5dd1386b
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601713"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166670"
 ---
 # <a name="bug-check-0xef-critical_process_died"></a>バグチェック 0xEF: 重大な\_プロセス\_しています
 
@@ -73,8 +73,6 @@ Windows の重要なシステムサービスとしては、csrss、wininit.ini�
 多くの場合、システムのバグチェックの前にユーザーダンプも作成されます。  一般に、ユーザーダンプを利用できる場合は、まず問題の根本原因を調査する必要があります。 これは、ページアウト/欠損データを含む、カーネルダンプからのユーザーモードコードのデバッグに制限があるためです。 詳細については、「[ユーザーモードのダンプファイル](user-mode-dump-files.md)」を参照してください。 
 
 イベントログを使用して、この stop コードに先行するエラーが発生していないかどうかを確認します。 存在する場合は、これらのエラーを使用して、調査する特定のサービスまたはその他のコードを調べることができます。
-
-バグチェックをいつでも再現できる場合は、タイムトラベルトレースを使用して、バグチェックにつながるイベントを記録することを検討してください。 詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
 問題のコードに関する情報を入手できたら、このコードを実行する前に関連するコードにブレークポイントを設定し、コードフローの制御に使用される重要な変数の値を示すコードを1回順に進めます。  コードのこの領域を慎重に調べて、誤った想定やその他の誤りを見つけてください。 
 

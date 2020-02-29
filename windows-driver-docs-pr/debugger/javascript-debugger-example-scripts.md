@@ -1,42 +1,41 @@
 ---
 title: JavaScript デバッガーのスクリプト例
-description: このトピックでは、JavaScript コード サンプルでは、データのフィルター処理プラグ アンド プレイ デバイス ツリー サンプルなど、ユーザー モードとカーネル モードの情報を示します。
+description: このトピックでは、ユーザーおよびカーネルモードの JavaScript コードサンプルについて説明します。たとえば、データフィルター処理プラグアンドプレイデバイスツリーのサンプルです。
 ms.assetid: F477430B-10C7-4039-9C5F-25556C306643
-ms.date: 04/10/2019
+ms.date: 02/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e5e27226292aefcf50508285021f5adaa5bdbf4e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c58f8382cf8b3790a53d06642ee5caa18bf698ec
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367221"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166668"
 ---
 # <a name="javascript-debugger-example-scripts"></a>JavaScript デバッガーのスクリプト例
 
-このトピックでは、次のユーザーとカーネル モード JavaScript コード サンプルを提供します。
+このトピックでは、次のユーザーとカーネルモードの JavaScript コードサンプルについて説明します。
 
-- [プロセスのアーキテクチャを決定します。](#processarchitecture)
-- [データのフィルター処理します。KD (カーネル モード) のプラグ アンド プレイ デバイス ツリー](#filter)
-- [マルチ メディア (カーネル モード) のデバイス固有を拡張します。](#multimedia)
-- [バスの情報を追加する\_デバイス\_オブジェクト (カーネル モード)](#bus)
-- [(ユーザー モード) のアプリケーション タイトルを検索します。](#title)
+- [プロセスアーキテクチャの決定](#processarchitecture)
+- [データのフィルター処理: KD のデバイスツリーのプラグアンドプレイ (カーネルモード)](#filter)
+- [マルチメディアに固有のデバイスの拡張 (カーネルモード)](#multimedia)
+- [\_デバイス\_オブジェクトへのバス情報の追加 (カーネルモード)](#bus)
+- [アプリケーションタイトルの検索 (ユーザーモード)](#title)
 
-## <a name="microsoft-github-repo-example-scripts"></a>Microsoft の GitHub リポジトリのサンプル スクリプト
+## <a name="microsoft-github-repo-example-scripts"></a>Microsoft GitHub リポジトリのサンプルスクリプト
 
-デバッガー チームは、JavaScript のサンプル スクリプトと拡張機能を含む GitHub リポジトリをホストします。
+デバッガーチームは、JavaScript のスクリプトと拡張機能の例を含む GitHub リポジトリをホストします。
 
-検索できます。 https://github.com/Microsoft/WinDbg-Samples
+詳細については、 https://github.com/Microsoft/WinDbg-Samples を参照してください。
 
-Readme ファイルには、使用できる、現在コードの例について説明します。
+Readme ファイルには、使用可能な現在のコード例が記述されています。
 
-## <a name="span-idworkingwithsamplesspanspan-idworkingwithsamplesspanspan-idworkingwithsamplesspanworking-with-samples"></a><span id="Working_with_Samples"></span><span id="working_with_samples"></span><span id="WORKING_WITH_SAMPLES"></span>サンプルの実行
+## <a name="span-idworking_with_samplesspanspan-idworking_with_samplesspanspan-idworking_with_samplesspanworking-with-samples"></a><span id="Working_with_Samples"></span><span id="working_with_samples"></span><span id="WORKING_WITH_SAMPLES"></span>サンプルの使用
 
+すべてのサンプルをテストするには、一般的なプロセスを使用します。
 
-サンプルのいずれかをテストするのにには、一般的なプロセスを使用します。
+1. サンプル JavaScript がカーネルモードまたはユーザーモードのデバッグ用であるかどうかを判断します。 次に、適切なダンプファイルを読み込むか、ターゲットシステムへのライブ接続を確立します。
 
-1. サンプルの JavaScript がカーネルまたはユーザー モード デバッグの対象として かどうかを決定します。 いずれか、適切なダンプ ファイルを読み込むまたは、ターゲット システムへのライブ接続を確立します。
-
-2. メモ帳などのテキスト エディターを使用してという名前のテキスト ファイルを作成しなどの .js ファイルの拡張子で保存*HelloWorld.js*
+2. メモ帳などのテキストエディターを使用して、という名前のテキストファイルを作成し、HelloWorld ファイル拡張子 ( *HelloWorld*など) を付けて保存します。
 
 ```javascript
 // WinDbg JavaScript sample
@@ -52,13 +51,13 @@ function sayHi()
 }
 ```
 
-3. 使用して、 [ **.load (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md) JavaScript プロバイダを読み込むコマンド。
+3. [**読み込み (拡張 DLL の読み込み)** ](-load---loadby--load-extension-dll-.md)コマンドを使用して、JavaScript プロバイダーを読み込みます。
 
 ```dbgcmd
 0:000> .load jsprovider.dll
 ```
 
-4. 使用して、 [ **.scriptrun (スクリプトの実行)**](-scriptrun--run-script-.md)コマンドを読み込み、スクリプトを実行します。 ルート/上部と関数名の下のコードにコードを実行 .scriptrun コマンド*initializeScript*と*invokeScript*します。
+4. スクリプトを読み込んで実行するには、 [**scriptrun (スクリプトの実行)** ](-scriptrun--run-script-.md)コマンドを使用します。 *InitializeScript*と*invokeScript*関数名の下にあるコードは、scriptrun コマンドによってルート/top にコードが実行されます。
 
 ```dbgcmd
 0:000> .scriptrun c:\WinDbg\Scripts\HelloWorld.js
@@ -66,7 +65,7 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\HelloWorld.js'
 ***> Hello World! 
 ```
 
-5. スクリプトに一意の名前の関数が含まれている場合は、dx コマンドを使用して、Debugger.State.Scripts に配置されている関数を実行します。*ScriptName*します。内容。*FunctionName*します。
+5. スクリプトに一意の名前が付けられた関数が含まれている場合は、dx コマンドを使用して、その関数を実行します。この関数は、デバッガーの状態スクリプトにあります。*ScriptName*。内容.*FunctionName*。
 
 ```dbgcmd
 0:001> dx Debugger.State.Scripts.HelloWorld.Contents.sayHi()
@@ -74,17 +73,17 @@ Hi from JavaScript!
 Debugger.State.Scripts.HelloWorld.Contents.sayHi()
 ```
 
-参照してください[JavaScript デバッガー Scripting](javascript-debugger-scripting.md)詳細については、JavaScript を使用します。
+JavaScript の使用方法の詳細については、 [Javascript デバッガーのスクリプト](javascript-debugger-scripting.md)を参照してください。
 
-## <a name="span-idprocessarchitecturespanspan-idprocessarchitecturespanspan-idprocessarhcitecturespandetermining-process-architecture"></a><span id="Processarchitecture"></span><span id="processarchitecture"></span><span id="PROCESSARHCITECTURE"></span>プロセスのアーキテクチャを決定します。
+## <a name="span-idprocessarchitecturespanspan-idprocessarchitecturespanspan-idprocessarhcitecturespandetermining-process-architecture"></a><span id="Processarchitecture"></span><span id="processarchitecture"></span><span id="PROCESSARHCITECTURE"></span>プロセスアーキテクチャの決定
 
-この JavaScript コードは、プロセスが x86 または x64 を示すデバッガー オブジェクト モデルのプロセスのオブジェクトに 'ProcessArchitecture' をという名前のプロパティを追加します。
+この JavaScript コードは、"ProcessArchitecture" というプロパティをデバッガーオブジェクトモデルのプロセスオブジェクトに追加して、プロセスが x86 または x64 のどちらであるかを示します。
 
-このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
+このスクリプトは、カーネルモードのデバッグをサポートするためのものです。
 
 ```JavaScript
 "use strict";
- 
+
 class __CheckArchitecture
 {
 //
@@ -110,7 +109,7 @@ return [new host.namedModelParent(__CheckArchitecture, "Debugger.Models.Process"
 }
 ```
 
-カーネル ダンプ ファイルを読み込むか、ターゲット システムにカーネル モード接続を確立します。 次に、JavaScript プロバイダーとサンプル スクリプトを読み込みます。
+カーネルダンプファイルを読み込むか、またはターゲットシステムへのカーネルモード接続を確立します。 次に、JavaScript プロバイダーとサンプルスクリプトを読み込みます。
 
 ```dbgcmd
 0: kd> !load jsprovider.dll
@@ -121,7 +120,7 @@ return [new host.namedModelParent(__CheckArchitecture, "Debugger.Models.Process"
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\processarchitecture.js'
 ```
 
-使用して、 [dx](dx--display-visualizer-variables-.md)コマンドを現在のプロセスのプロセス アーキテクチャを表示します。
+[Dx](dx--display-visualizer-variables-.md)コマンドを使用して、現在のプロセスのプロセスアーキテクチャを表示します。
 
 ```dbgcmd
 2: kd> dx @$curprocess
@@ -138,15 +137,15 @@ JavaScript script successfully loaded from 'c:\WinDbg\Scripts\processarchitectur
     ProcessArchitecture : x64
 ```
 
-このサンプル コード常にできないことがあります、アーキテクチャを正しく判断に注意してください。 たとえばでは特定の場合は 32 ビットのデバッガーを使用している時にダンプ ファイルを操作します。
+このサンプルコードでは、常にアーキテクチャを正しく判断できない場合があることに注意してください。 たとえば、32ビットデバッガーを使用しているときにダンプファイルを操作する場合などです。
 
-## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>データのフィルター処理します。KD (カーネル モード) のプラグ アンド プレイ デバイス ツリー
+## <a name="span-idfilterspanspan-idfilterspanspan-idfilterspandata-filtering-plug-and-play-device-tree-in-kd-kernel-mode"></a><span id="Filter"></span><span id="filter"></span><span id="FILTER"></span>データのフィルター処理: KD のデバイスツリーのプラグアンドプレイ (カーネルモード)
 
-このサンプル コードは、ディスプレイだけのデバイス PCI のパスが含まれている開始されるデバイス ノード ツリーをフィルター処理します。
+このサンプルコードでは、デバイスノードツリーをフィルター処理して、開始された PCI のパスを含むデバイスのみを表示します。
 
-このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
+このスクリプトは、カーネルモードのライブデバッグをサポートするためのものです。
 
-使用することができます、! devnode 0 1 コマンド、デバイス ツリーに関する情報を表示します。 詳細については、次を参照してください。 [ **! devnode**](-devnode.md)します。
+! Devnode 0 1 コマンドを使用して、デバイスツリーに関する情報を表示できます。 詳細については、「 [ **! devnode**](-devnode.md)」を参照してください。
 
 ```javascript
 // PlugAndPlayDeviceTree.js
@@ -180,18 +179,18 @@ function filterAllDevices()
 }
 ```
 
-カーネル ダンプ ファイルを読み込むか、ターゲット システムにカーネル モード接続を確立します。
+ターゲットシステムへのカーネルモード接続を確立します。
 
 ```dbgcmd
 0: kd> !load jsprovider.dll
 ```
 
 ```dbgcmd
-0: kd> .scriptload c:\WinDbg\Scripts\deviceFilter.js
-JavaScript script successfully loaded from 'c:\WinDbg\Scripts\deviceFilter.js'
+0: kd> .scriptload c:\WinDbg\Scripts\PlugAndPlayDeviceTree.js
+JavaScript script successfully loaded from 'c:\WinDbg\Scripts\PlugAndPlayDeviceTree.js'
 ```
 
-FilterAllDevices() 関数を呼び出します。
+FilterAllDevices () 関数を呼び出します。
 
 ```dbgcmd
 0: kd> dx Debugger.State.Scripts.PlugAndPlayDeviceTree.Contents.filterAllDevices()
@@ -205,9 +204,9 @@ Debugger.State.Scripts.PlugAndPlayDeviceTree.Contents.filterAllDevices()        
 ...
 ```
 
-これらの各オブジェクトは、上で、DML のサポートに自動的に表示され、dx 他のクエリと同様をクリックすることができます。
+上記の各オブジェクトは、自動的に DML をサポートし、他の dx クエリと同様に、を使用してクリックできます。
 
-またこのスクリプトを使用する LINQ クエリを使用して、同様の結果を実現することが。
+また、このスクリプトを使用する場合は、LINQ クエリを使用して同様の結果を達成することもできます。
 
 ```dbgcmd
 0: kd> dx @$cursession.Devices.DeviceTree.Flatten(n => n.Children).Where(n => n.InstancePath.Contains("PCI") && n.State == 776)
@@ -221,14 +220,13 @@ Debugger.State.Scripts.PlugAndPlayDeviceTree.Contents.filterAllDevices()        
 ...
 ```
 
-## <a name="span-idmultimediaspanspan-idmultimediaspanspan-idmultimediaspanextend-devices-specific-to-multimedia-kernel-mode"></a><span id="Multimedia"></span><span id="multimedia"></span><span id="MULTIMEDIA"></span>マルチ メディア (カーネル モード) のデバイス固有を拡張します。
+## <a name="span-idmultimediaspanspan-idmultimediaspanspan-idmultimediaspanextend-devices-specific-to-multimedia-kernel-mode"></a><span id="Multimedia"></span><span id="multimedia"></span><span id="MULTIMEDIA"></span>マルチメディアに固有のデバイスの拡張 (カーネルモード)
 
+この大規模な JavaScript の例では、マルチメディアに固有の情報を対象としてカーネル \_デバイス\_オブジェクトを拡張し、StreamingDevices をデバッガーセッションに追加します。
 
-この大規模な JavaScript の例は、カーネルを拡張\_デバイス\_マルチ メディアに固有の情報のオブジェクトをデバッガー セッション StreamingDevices を追加します。
+このスクリプトは、カーネルモードのデバッグをサポートするためのものです。
 
-このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
-
-StreamingDevices とのセッションを拡張する選択が行われますたとえばのみを目的に注意してください。 これはいずれかのままに\_デバイス\_のみ、または既存の下で、名前空間内のより深いオブジェクトします。デバイス。\*階層。
+StreamingDevices を使用したセッション拡張の選択は、例としてのみ実行されます。 これは、既存のの下にある名前空間の内部でのみ、または \_デバイス\_オブジェクトに対して残されている必要があります。ハードウェア.\* 階層。
 
 ```javascript
 // StreamingFinder.js
@@ -433,14 +431,14 @@ function initializeScript()
 }
 ```
 
-まず前述のように、スクリプトのプロバイダーを読み込みます。 次のスクリプトを読み込みます。
+まず、前述のようにスクリプトプロバイダーを読み込みます。 その後、スクリプトを読み込みます。
 
 ```dbgcmd
 0: kd> .scriptload c:\WinDbg\Scripts\StreamingFinder.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\StreamingFinder.js'
 ```
 
-Dx コマンドを使用して、スクリプトが用意されている新しい StreamingDevices 機能にアクセスします。
+次に、dx コマンドを使用して、スクリプトによって提供される新しい StreamingDevices 機能にアクセスします。
 
 ```dbgcmd
 0: kd> dx -r3 @$cursession.StreamingDevices.Select(d => d->StreamingState.CreateEntries)
@@ -477,12 +475,12 @@ Dx コマンドを使用して、スクリプトが用意されている新し�
             CreateContext    [Type: IUnknown]
 ```
 
-## <a name="span-idbusspanspan-idbusspanspan-idbusspanadding-bus-information-to-deviceobject-kernel-mode"></a><span id="Bus"></span><span id="bus"></span><span id="BUS"></span>バスの情報を追加する\_デバイス\_オブジェクト (カーネル モード)
+## <a name="span-idbusspanspan-idbusspanspan-idbusspanadding-bus-information-to-_device_object-kernel-mode"></a><span id="Bus"></span><span id="bus"></span><span id="BUS"></span>\_デバイス\_オブジェクトへのバス情報の追加 (カーネルモード)
 
 
-このスクリプトの視覚化の拡張\_デバイス\_をその下にある PCI 固有の情報を持つ BusInformation フィールドを追加するオブジェクト。 方法と、このサンプルの namespacing でも説明されています。 これは、JavaScript のプロバイダーの機能のサンプルを検討してください。
+このスクリプトは \_デバイス\_オブジェクトの視覚エフェクトを拡張して、PCI 固有の情報が含まれている BusInformation フィールドを追加します。 このサンプルの方法と namespacing については、まだ説明しています。 これは、JavaScript プロバイダーの機能のサンプルとして考える必要があります。
 
-このスクリプトは、カーネル モードのデバッグをサポートするために対象としています。
+このスクリプトは、カーネルモードのデバッグをサポートするためのものです。
 
 ```javascript
 "use strict";
@@ -651,14 +649,14 @@ function initializeScript()
 }
 ```
 
-まず前述のように、スクリプトのプロバイダーを読み込みます。 次のスクリプトを読み込みます。
+まず、前述のようにスクリプトプロバイダーを読み込みます。 その後、スクリプトを読み込みます。
 
 ```dbgcmd
 0: kd> .scriptload c:\WinDbg\Scripts\DeviceExtensionInformation.js
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\DeviceExtensionInformation.js'
 ```
 
-ここでは、デバイス オブジェクトのアドレスを検索する必要があります。 この例では、オーディオ HDAudBus ドライバーを説明します。
+興味のあるデバイスオブジェクトのアドレスを見つける必要があります。 この例では、audio HDAudBus ドライバーを確認します。
 
 ```dbgcmd
 0: kd>  !drvobj HDAudBus
@@ -670,7 +668,7 @@ Device Object list:
 ffffb60758e21810  ffffb60757a67c60
 ```
 
-スクリプトが読み込まれた後は、dx コマンドを使用して、デバイス オブジェクトのバスの情報を表示します。
+スクリプトが読み込まれたら、dx コマンドを使用して、デバイスオブジェクトのバス情報を表示します。
 
 ```dbgcmd
 0: kd> dx -r1 (*((ntkrnlmp!_DEVICE_OBJECT *)0xffffe00001b567c0))
@@ -707,12 +705,12 @@ ffffb60758e21810  ffffb60757a67c60
     [0x0]            : Memory Resource: 0xf0340000 of length 0x4000 [Type: _CM_PARTIAL_RESOURCE_DESCRIPTOR]
 ```
 
-## <a name="span-idtitlespanspan-idtitlespanspan-idtitlespanfind-an-application-title-user-mode"></a><span id="Title"></span><span id="title"></span><span id="TITLE"></span>(ユーザー モード) のアプリケーション タイトルを検索します。
+## <a name="span-idtitlespanspan-idtitlespanspan-idtitlespanfind-an-application-title-user-mode"></a><span id="Title"></span><span id="title"></span><span id="TITLE"></span>アプリケーションタイトルの検索 (ユーザーモード)
 
 
-これは、例、デバッガーの現在のプロセス内のすべてのスレッドで反復処理を含むフレームを検索します *\_ \_mainCRTStartup*内 StartupInfo.lpTitle から文字列を返すと、CRT のスタートアップ。 このスクリプトでは、イテレーション、文字列操作、および JavaScript 内での LINQ クエリの例を示します。
+この例では、デバッガーの現在のプロセス内のすべてのスレッドを反復処理し、 *\_\_mainCRTStartup*を含むフレームを検索して、CRT の起動時に startupinfo から文字列を返します。 このスクリプトは、JavaScript におけるイテレーション、文字列操作、LINQ クエリの例を示しています。
 
-このスクリプトは、ユーザー モードのデバッグをサポートするために対象としています。
+このスクリプトは、ユーザーモードのデバッグをサポートするためのものです。
 
 ```javascript
 // TitleFinder.js
@@ -768,21 +766,21 @@ function findTitleWithLINQ()
 JavaScript script successfully loaded from 'c:\WinDbg\Scripts\TitleFinder.js'
 ```
 
-FindTitle() 関数を呼び出すには、notepad.exe が返されます。
+FindTitle () 関数を呼び出すと notepad.exe が返されます。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts.TitleFinder.Contents.findTitle()
 Debugger.State.Scripts.TitleFinder.Contents.findTitle() : C:\Windows\System32\notepad.exe
 ```
 
-LINQ のバージョンの呼び出し、findTitleWithLINQ() も返します notepad.exe
+LINQ バージョンを呼び出すと、Findタイトル Withlinq () も notepad.exe を返します。
 
 ```dbgcmd
 0:000> dx Debugger.State.Scripts.TitleFinder.Contents.findTitleWithLINQ()
 Debugger.State.Scripts.titleFinder.Contents.findTitleWithLINQ() : C:\Windows\System32\notepad.exe
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [JavaScript デバッガー スクリプト](javascript-debugger-scripting.md)

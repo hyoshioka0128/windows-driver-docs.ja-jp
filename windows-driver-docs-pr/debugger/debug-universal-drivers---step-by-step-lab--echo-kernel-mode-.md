@@ -6,35 +6,33 @@ keywords:
 - ラボのデバッグ
 - ステップバイステップ
 - エコー
-ms.date: 03/28/2019
+ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b15d006868171ec2e0e2e8bcee2013e46316de5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ed666748964750f240334a662f1c18b1ba78eb63
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837787"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166686"
 ---
 # <a name="span-iddebuggerdebug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_spandebug-universal-drivers---step-by-step-lab-echo-kernel-mode"></a><span id="debugger.debug_universal_drivers_-_step_by_step_lab__echo_kernel-mode_"></span>ユニバーサルドライバーのデバッグ-ステップバイステップラボ (カーネルモードのエコー)
-
 
 このラボでは、WinDbg カーネルデバッガーについて説明します。 WinDbg は、echo カーネルモードサンプルドライバーコードのデバッグに使用されます。
 
 ## <a name="span-idlab_objectivesspanspan-idlab_objectivesspanspan-idlab_objectivesspanlab-objectives"></a><span id="Lab_objectives"></span><span id="lab_objectives"></span><span id="LAB_OBJECTIVES"></span>ラボの目標
 
-
 このラボには、デバッグツールを紹介し、一般的なデバッグコマンドを学習し、ブレークポイントの使用方法を示し、デバッグ拡張機能の使用方法を示す演習が含まれています。
 
 このラボでは、次のことを調べるために、ライブカーネルデバッグ接続が使用されます。
 
--   Windows デバッガーのコマンドを使用する
--   標準コマンド (呼び出し履歴、変数、スレッド、IRQL) を使用する
--   高度なドライバーデバッグコマンドを使用する (! コマンド)
--   シンボルを使用する
--   ライブデバッグでブレークポイントを設定する
--   呼び出し履歴の表示
--   プラグアンドプレイデバイスツリーを表示する
--   スレッドとプロセスコンテキストの操作
+- Windows デバッガーのコマンドを使用する
+- 標準コマンド (呼び出し履歴、変数、スレッド、IRQL) を使用する
+- 高度なドライバーデバッグコマンドを使用する (! コマンド)
+- シンボルを使用する
+- ライブデバッグでブレークポイントを設定する
+- 呼び出し履歴の表示
+- プラグアンドプレイデバイスツリーを表示する
+- スレッドとプロセスコンテキストの操作
 
 **メモ** Windows デバッガーを使用する場合、ユーザーモードまたはカーネルモードデバッグの2種類のデバッグを実行できます。
 
@@ -44,42 +42,39 @@ ms.locfileid: "72837787"
 
 このラボでは、多くのデバイスドライバーのデバッグに使用される方法であるため、カーネルモードのデバッグに焦点を当てます。
 
-
 この演習では、ユーザーモードとカーネルモードの両方のデバッグ中に頻繁に使用されるデバッグコマンドについて説明します。 この演習では、カーネルモードのデバッグに使用されるデバッグ拡張機能 ("! コマンド" とも呼ばれます) についても説明します。
 
 ## <a name="span-idlab_setupspanspan-idlab_setupspanspan-idlab_setupspanlab-setup"></a><span id="Lab_setup"></span><span id="lab_setup"></span><span id="LAB_SETUP"></span>ラボのセットアップ
 
-
 ラボを完了するには、次のハードウェアが必要です。
 
--   Windows 10 を実行するラップトップまたはデスクトップコンピューター (ホスト)
--   Windows 10 を実行するラップトップまたはデスクトップコンピューター (ターゲット)
--   2台の Pc を接続するためのネットワークハブ/ルーターとネットワークケーブル
--   シンボルファイルをダウンロードするためのインターネットへのアクセス
+- Windows 10 を実行するラップトップまたはデスクトップコンピューター (ホスト)
+- Windows 10 を実行するラップトップまたはデスクトップコンピューター (ターゲット)
+- 2台の Pc を接続するためのネットワークハブ/ルーターとネットワークケーブル
+- シンボルファイルをダウンロードするためのインターネットへのアクセス
 
 ラボを完成させるには、次のソフトウェアが必要です。
 
--   Visual Studio 2017
--   Windows 10 用 Windows ソフトウェア開発キット (SDK)
--   Windows 10 用 windows Driver Kit (WDK)
--   Windows 10 用の echo ドライバーのサンプル
+- Visual Studio 
+- Windows 10 用 Windows ソフトウェア開発キット (SDK)
+- Windows 10 用 windows Driver Kit (WDK)
+- Windows 10 用の echo ドライバーのサンプル
 
 ラボには、次の11個のセクションがあります。
 
--   [セクション 1: カーネルモードの WinDbg セッションに接続する](#connectto)
--   [セクション 2: カーネルモードのデバッグコマンドと手法](#kernelmodedebuggingcommandsandtechniques)
--   [セクション 3: KMDF Universal Echo Driver をダウンロードしてビルドする](#download)
--   [セクション 4: ターゲットシステムに KMDF Echo driver サンプルをインストールする](#install)
--   [セクション 5: WinDbg を使用してドライバーに関する情報を表示する](#usewindbgtodisplayinformation)
--   [セクション 6: プラグアンドプレイデバイスツリー情報を表示する](#displayingtheplugandplaydevicetree)
--   [セクション 7: ブレークポイントとソースコードの操作](#workingwithbreakpoints)
--   [セクション 8: 変数と呼び出し履歴を表示する](#viewingvariables)
--   [セクション 9: プロセスとスレッドを表示する](#displayingprocessesandthreads)
--   [セクション 10: IRQL、登録、および WinDbg セッションの終了](#irqlregistersmemory)
--   [セクション 11: Windows デバッグリソース](#windowsdebuggingresources)
+- [セクション 1: カーネルモードの WinDbg セッションに接続する](#connectto)
+- [セクション 2: カーネルモードのデバッグコマンドと手法](#kernelmodedebuggingcommandsandtechniques)
+- [セクション 3: KMDF Universal Echo Driver をダウンロードしてビルドする](#download)
+- [セクション 4: ターゲットシステムに KMDF Echo driver サンプルをインストールする](#install)
+- [セクション 5: WinDbg を使用してドライバーに関する情報を表示する](#usewindbgtodisplayinformation)
+- [セクション 6: プラグアンドプレイデバイスツリー情報を表示する](#displayingtheplugandplaydevicetree)
+- [セクション 7: ブレークポイントとソースコードの操作](#workingwithbreakpoints)
+- [セクション 8: 変数と呼び出し履歴を表示する](#viewingvariables)
+- [セクション 9: プロセスとスレッドを表示する](#displayingprocessesandthreads)
+- [セクション 10: IRQL、登録、および WinDbg セッションの終了](#irqlregistersmemory)
+- [セクション 11: Windows デバッグリソース](#windowsdebuggingresources)
 
 ## <a name="span-idconnecttospanspan-idconnecttospansection-1-connect-to-a-kernel-mode-windbg-session"></a><span id="connectto"></span><span id="CONNECTTO"></span>セクション 1: カーネルモードの WinDbg セッションに接続する
-
 
 *セクション1では、ホストとターゲットシステムでネットワークデバッグを構成します。*
 
@@ -179,8 +174,6 @@ Approximate round trip times in milli-seconds:
 
 ![windows セキュリティの警告-windows ファイアウォールがこのアプリの一部の機能をブロックしました ](images/debuglab-image-firewall-dialog-box.png)
 
-
-
 **&lt;-ホストシステム**
 
 1. ホスト コンピューターで、管理者としてコマンド プロンプト ウィンドウを開きます。 Windows キットのインストールの一部としてインストールされた Windows Driver Kit (WDK) の、x64 バージョンの WinDbg を使用します。 既定では、この場所にあります。
@@ -190,8 +183,10 @@ Approximate round trip times in milli-seconds:
     ```
 
 > [!NOTE]
-> このラボでは、両方の Pc がターゲットとホストの両方で64ビット版の Windows を実行していることを前提としています。 そうでない場合は、ターゲットが実行されているホストで同じ "ビット" のツールを実行するのが最善の方法です。 たとえば、ターゲットが32ビット Windows を実行している場合は、ホストで32バージョンのデバッガーを実行します。 詳細については、「 [32 ビットまたは64ビットのデバッグツールの選択](choosing-a-32-bit-or-64-bit-debugger-package.md)」を参照してください。
-> 
+> このラボでは、両方の Pc がターゲットとホストの両方で64ビット版の Windows を実行していることを前提としています。
+> そうでない場合は、ターゲットが実行されているホストで同じ "ビット" のツールを実行するのが最善の方法です。
+たとえば、ターゲットが32ビット Windows を実行している場合は、ホストで32バージョンのデバッガーを実行します。 詳細については、「 [32 ビットまたは64ビットのデバッグツールの選択](choosing-a-32-bit-or-64-bit-debugger-package.md)」を参照してください。
+>
 
 2. 次のコマンドを使用して、リモートユーザーデバッグで WinDbg を起動します。 キーとポートの値は、ターゲットで BCDEdit を使用して以前に設定したものと一致します。
 
@@ -598,7 +593,7 @@ set ENABLE_OPTIMIZER=0
    0: kd> x /D Echo!a*
    ```
 
-3. 結局のところ、echo サンプルには文字 "a" で始まるシンボルは含まれていないので、echo で始まる echo ドライバーに関連付けられているすべてのシンボルに関する情報を表示するには、「* * x ECHO!」と入力します。Echo\\* * *。
+3. 結局のところ、echo サンプルには文字 "a" で始まるシンボルは含まれていないため、「`x ECHO!Echo*`」と入力すると、echo で始まる echo ドライバーに関連付けられているすべてのシンボルに関する情報が表示されます。
 
    ```dbgcmd
    0: kd> x ECHO!Echo*
@@ -737,7 +732,7 @@ set ENABLE_OPTIMIZER=0
 
 出力には、デバイスドライバースタックが非常に単純であることが示されています。 Echo ドライバーは、PnPManager ノードの子です。 PnPManager はルートノードです。
 
-\Driver\ECHO      
+\Driver\ECHO
 
 \Driver\PnpManager
 
@@ -746,8 +741,6 @@ set ENABLE_OPTIMIZER=0
 ![約20個のノードを含むデバイスノードツリー](images/debuglab-image-device-node-tree.png)
 
 **メモ** より複雑なドライバースタックの詳細については、「[ドライバースタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/driver-stacks)と[デバイスノードおよびデバイススタック](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)」を参照してください。
-
-
 
 ## <a name="span-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspanspan-idworkingwithbreakpointsspansection-7-working-with-breakpoints-and-source-code"></a><span id="WorkingWithBreakpoints"></span><span id="workingwithbreakpoints"></span><span id="WORKINGWITHBREAKPOINTS"></span>セクション 7: ブレークポイントとソースコードの操作
 
@@ -782,10 +775,6 @@ set ENABLE_OPTIMIZER=0
 </tr>
 </tbody>
 </table>
-
-
-
-
 
 詳細については、デバッグリファレンスドキュメントの「 [WinDbg でのソースコードのデバッグ](source-window.md)」を参照してください。
 
@@ -917,13 +906,13 @@ ba <access> <size> <address> {options}
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>つまり</p></td>
+<td align="left"><p>e</p></td>
 <td align="left"><p>実行 (CPU がアドレスから命令をフェッチする場合)</p></td>
 </tr>
 <tr class="even">
@@ -931,7 +920,7 @@ ba <access> <size> <address> {options}
 <td align="left"><p>読み取り/書き込み (CPU がそのアドレスに対して読み取りまたは書き込みを行う場合)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>リダイレクト</p></td>
+<td align="left"><p>w</p></td>
 <td align="left"><p>書き込み (CPU がそのアドレスに書き込む場合)</p></td>
 </tr>
 </tbody>
@@ -1075,7 +1064,7 @@ ba r 4 0x0003f7bf0
    ECHO!EchoEvtIoRead         
    ```
 
-2. \* * Bc \\* * * を使用して、前のブレークポイントをクリアします。
+2. **Bc \*** を使用して、前のブレークポイントをクリアします。
 
    ```dbgcmd
    0: kd> bc *  
@@ -1480,7 +1469,7 @@ fffff803`bb757020 cc              int     3
 
 ユーザーモードのデバッグセッションを終了し、デバッガーを休止モードに戻して、ターゲットアプリケーションを再度実行するように設定するには、 **qd** (Quit および Detach) コマンドを入力します。
 
-使用できるように、ターゲットコンピューターにコードを実行させるには、必ず**g**コマンドを使用してください。 また、* * bc \\* * * を使用してすべてのブレークポイントをクリアし、ターゲットコンピューターが中断せずにホストコンピューターデバッガーに接続しようとすることもお勧めします。
+使用できるように、ターゲットコンピューターにコードを実行させるには、必ず**g**コマンドを使用してください。 また、 **bc \*** を使用してブレークポイントをクリアし、対象のコンピュータが中断してホストコンピュータデバッガーに接続しようとしないようにすることをお勧めします。
 
 ```dbgcmd
 0: kd> qd
