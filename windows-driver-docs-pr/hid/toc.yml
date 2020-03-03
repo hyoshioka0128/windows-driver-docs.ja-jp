@@ -1,15 +1,9 @@
-- name: HID ドライバー
+- name: ヒューマン インターフェイス デバイス (HID) の概要
   href: index.md
-- name: HID の新機能
-  href: what-s-new-in-hid.md
-- name: HID の概念の紹介
-  href: introduction-to-hid-concepts.md
 - name: HID のアーキテクチャ
   href: hid-architecture.md
-- name: Windows でサポートされる HID クライアント
-  href: hid-clients-supported-in-windows.md
-- name: Windows でサポートされる HID トランスポート
-  href: hid-transports-supported-in-windows.md
+- name: HID アプリケーション プログラミング インターフェイス (API)
+  href: introduction-to-hid-concepts.md
 - name: HID クライアント
   items:
     - name: HID クライアントの概要
@@ -110,8 +104,6 @@
           href: power-management.md
         - name: HID over USB デバイスのセレクティブ サスペンド
           href: selective-suspend-for-hid-over-usb-devices.md
-        - name: HID over USB のリソース
-          href: reference-and-additional-details.md
     - name: HID over I2C
       items:
         - name: HID over I2C の概要
@@ -126,8 +118,6 @@
           href: troubleshooting-common-errors.md
         - name: イベント トレース
           href: event-tracing.md
-        - name: HID over I2C のリソース
-          href: reference-and-additional-details2.md
 - name: 非 HID のレガシ デバイスとドライバー
   items:
     - name: 非 HID のレガシ デバイス

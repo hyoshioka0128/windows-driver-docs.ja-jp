@@ -1,5 +1,5 @@
 ---
-title: HID ドライバー
+title: ヒューマン インターフェイス デバイス (HID) の概要
 description: このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 通常、これらは、人間がコンピューター システムの操作を直接制御するために使用するデバイスです。
 ms.assetid: 19aefe5f-d82a-411f-86ab-5d1d53191524
 keywords:
@@ -7,78 +7,45 @@ keywords:
 - 入力デバイス WDK
 - ヒューマン インターフェイス デバイス WDK
 - HID WDK
-ms.date: 04/20/2017
+ms.date: 02/28/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: d6f8184fada8c5b4982a205d3f2d4541c6468061
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ad35eabb019b12b4367c7413cc22db98dacd1940
+ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365072"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78166682"
 ---
-# <a name="hid-drivers"></a>HID ドライバー
+# <a name="introduction-to-human-interface-devices-hid"></a>ヒューマン インターフェイス デバイス (HID) の概要
 
+ヒューマンインターフェイ スデバイス (HID) は、PS/2 スタイルのコネクタを汎用 USB ドライバーに置き換えて、キーボード、マウス、ゲーム コントローラーなどの HID デバイスをサポートするデバイス クラス定義です。HID より前のデバイスでは、マウスとキーボードに対して厳密に定義されたプロトコルしか使用できませんでした。 ハードウェア イノベーションでは、既存のプロトコルでデータをオーバーロードするか、独自の専用のドライバーを使用して標準ではないハードウェアを作成する必要があります。 HID では、拡張可能で標準化された、簡単にプログラミングできるインターフェイスによってハードウェア イノベーションのサポートを追加され、これらの "ブートモード" デバイスがサポートされました。
 
-このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 HID の概念の詳細については、公式の [HID の仕様](https://www.usb.org/hid)をご覧ください。 
+現在、HID デバイスには、英数字表示、バー コード リーダー、スピーカーやヘッドセットのボリューム コントロール、補助ディスプレイ、センサーなど、さまざまなデバイスが含まれます。 多くのハードウェア ベンダーは、独自のデバイスに対して HID も使用しています。
 
-## <a name="in-this-section"></a>このセクションの内容
+HID は最初 USB を使用するように設計されましたが、バスに依存しないように設計されています。 低待機時間で低帯域幅のデバイス向けに設計されましたが、基になるトランスポートの速度を柔軟に指定できます。 USB 経由での HID の仕様は、1996 年に [USB-IF](https://www.usb.org/about) によって批准され、その後すぐに追加のトランスポートに対するサポートが提供されました。 現在サポートされているトランスポートの詳細については、[Windows でサポートされている HID トランスポート](https://docs.microsoft.com/windows-hardware/drivers/hid/hid-transports)に関するページを参照してください。 サードパーティのベンダー固有のトランスポートも、カスタム トランスポート ドライバーで使用できます。
 
+## <a name="hid-concepts"></a>HID の概念
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>トピック</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="what-s-new-in-hid.md" data-raw-source="[What's New in HID](what-s-new-in-hid.md)">HID の新機能</a></p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><a href="introduction-to-hid-concepts.md" data-raw-source="[Introduction to HID Concepts](introduction-to-hid-concepts.md)">HID の概念の紹介</a></p></td>
-<td><p>このセクションでは、ヒューマン インターフェイス デバイス (HID) について紹介します。 通常、これらは、人間がコンピューター システムの操作を直接制御するために使用するデバイスです。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="hid-architecture.md" data-raw-source="[HID Architecture](hid-architecture.md)">HID のアーキテクチャ</a></p></td>
-<td><p>Windows における HID ドライバー スタックのアーキテクチャは、<em>hidclass.sys</em> という名前のクラス ドライバー上に構築されています。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="hid-clients-supported-in-windows.md" data-raw-source="[HID Clients Supported in Windows](hid-clients-supported-in-windows.md)">Windows でサポートされる HID クライアント</a></p></td>
-<td><p>Windows では、次に示す最上位のコレクションがサポートされます。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="hid-transports-supported-in-windows.md" data-raw-source="[HID Transports Supported in Windows](hid-transports-supported-in-windows.md)">Windows でサポートされる HID トランスポート</a></p></td>
-<td><p>Windows では、次のトランスポートがサポートされます。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="hid-clients.md" data-raw-source="[HID Clients](hid-clients.md)">HID クライアント</a></p></td>
-<td><p>HID クライアントは、HID API を使用して通信するドライバー、サービス、またはアプリケーションであり、多くの場合、特定の種類のデバイス (センサー、キーボード、マウスなど) を表します。 これらは、ハードウェア ID または特定の HID コレクションを通じてデバイスを識別し、HID API を通じて HID コレクションと通信します。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="hid-transports.md" data-raw-source="[HID Transports](hid-transports.md)">HID トランスポート</a></p></td>
-<td><p>現在および以前のバージョンの Windows でサポートされる HID トランスポートの説明です。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="non-hid-legacy-devices.md" data-raw-source="[Non-HID legacy devices](non-hid-legacy-devices.md)">非 HID のレガシ デバイス</a></p></td>
-<td><p>このセクションでは、非 HID のキーボードとマウスに対応したドライバー、トランスポート、およびフィルター ドライバーについて説明します。 これらのデバイスは主に PS/2 トランスポートで実行されます。</p></td>
-</tr>
-</tbody>
-</table>
+HID は、レポート記述子とレポートという 2 つの基本的な概念で構成されています。 レポートは、デバイスとソフトウェア クライアントの間で交換される実際のデータです。 レポート記述子は、デバイスがサポートするデータの形式と意味を説明します。
 
- 
+### <a name="reports"></a>レポート
 
- 
+アプリケーションと HID デバイスは、レポートを介してデータを交換します。 レポートには、3 つの種類 (入力レポート、出力レポート、機能レポート) があります。
 
- 
+| レポートの種類    | 説明                                                                                                     |
+|----------------|-----------------------------------------------------------------------------------------------------------------|
+| 入力レポート   | 通常、コントロールの状態が変化したときに、HID デバイスからアプリケーションに送信されるデータ。 |
+| 出力レポート  | アプリケーションから HID デバイス (キーボードの LED など) に送信されるデータ。         |
+| 機能レポート | 手動で読み取りや書き込みができるデータ。通常、構成情報に関連します。    |
 
+レポート記述子に定義されている最上位レベルの各コレクションには、各型のレポートをゼロ (0) 個以上含めることができます。
 
+### <a name="usage-tables"></a>使用法テーブル
 
+[USB-IF](https://www.usb.org/about) ワーキング グループは、HID デバイスで実行できることを説明するレポート記述子の一部である HID 使用法テーブルを公開します。 これらの HID 使用法テーブルには、レポート記述子に説明されている特定の項目の意味と使用目的を説明する**使用法**の説明を含む一覧が含まれています。 たとえば、使用法はマウスの左ボタンに対して定義されています。 レポート記述子では、アプリケーションがマウスの左ボタンの現在の状態を見つけることができるレポート内の場所を定義できます。 使用法テーブルは、使用法ページと呼ばれる複数の名前空間に分割されています。 使用法の各ページには、ドキュメントを整理するのに役立つ、関連する使用法のセットが説明されています。 使用法ページと使用法の組み合わせにより、使用法テーブルの特定の使用法を一意に識別する使用 ID が定義されます。
 
+## <a name="see-also"></a>関連項目
+
+[USB-IF HID 仕様](https://www.usb.org/hid)。
