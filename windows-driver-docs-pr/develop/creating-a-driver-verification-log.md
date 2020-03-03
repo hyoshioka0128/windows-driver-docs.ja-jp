@@ -4,12 +4,12 @@ title: ドライバー検証ツール ログの作成
 description: Windows Server 2012 ハードウェア認定プログラムでは、該当するドライバーを提出するときに、ドライバー検証ツール ログ (DVL) を含める必要があります。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: af3dc6e4e9d98fedb0ecf714206728e4f5b5582e
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 630db8890a4710b71178e3357bffa819bd4cc902
+ms.sourcegitcommit: c9e5aa086b72ae9c1a31bf952d0711383cfd4bbd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861280"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77575204"
 ---
 # <a name="creating-a-driver-verification-log"></a>ドライバー検証ツール ログの作成
 
@@ -28,7 +28,7 @@ Windows Server [ハードウェア認定プログラム](https://docs.microsoft
 
 **注**  SDV ではドライバーのクリーン リビルドが実行されます。これにより、コード分析ログが削除されます。  そのため、CA を実行する前に SDV を実行してください。
 
-**注**  [Windows ハードウェア認定キット (HCK)](https://go.microsoft.com/fwlink/p/?linkid=254893) を使ってドライバーをテストする準備ができたら、ドライバー検証ツール ログをテスト コンピューターの %systemdrive%\\DVL ディレクトリにコピーする必要があります。 新しいドライバー検証ツール ログをコピーする前に、テスト コンピューターのこのディレクトリの内容を必ず削除してください。
+**注**   [Windows Hardware Lab Kit](https://docs.microsoft.com/windows-hardware/test/hlk/) を使ってドライバーをテストする準備ができたら、ドライバー検証ツール ログをテスト コンピューターの %systemdrive%\\DVL ディレクトリにコピーする必要があります。 新しいドライバー検証ツール ログをコピーする前に、テスト コンピューターのこのディレクトリの内容を必ず削除してください。
 
  
 
