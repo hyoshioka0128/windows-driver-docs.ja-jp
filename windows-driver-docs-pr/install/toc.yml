@@ -36,8 +36,8 @@
       items:
         - name: ドライバーの選択プロセスの概要
           href: overview-of-the-driver-selection-process.md
-        - name: Windows のドライバーの検索場所
-          href: where-setup-searches-for-drivers.md
+        - name: Windows のデバイスのためのドライバーの選択方法
+          href: how-windows-selects-a-driver-for-a-device.md
     - name: Windows のドライバーのランキング方法
       items:
         - name: Windows のドライバーのランキング方法
@@ -78,7 +78,7 @@
           href: overview-of-inf-files.md
         - name: INF ファイルの参照
           href: looking-at-an-inf-file.md
-        - name: Using a Universal INF File (ユニバーサル INF ファイルの使用)
+        - name: ユニバーサル INF ファイルの使用
           href: using-a-universal-inf-file.md
         - name: 拡張 INF ファイルの使用
           href: using-an-extension-inf-file.md
@@ -748,7 +748,7 @@
           href: initiating-system-restarts-during-device-installations.md
         - name: 64 ビット システムへのデバイスのインストール
           href: device-installations-on-64-bit-systems.md
-    - name: Registry
+    - name: レジストリ
       items:
         - name: レジストリ ツリーとキー
           href: registry-trees-and-keys.md
@@ -886,7 +886,7 @@
       href: inf-updateinifields-directive.md
     - name: INF UpdateInis ディレクティブ
       href: inf-updateinis-directive.md
-- name: 推奨する運用方法
+- name: ベスト プラクティス
   items:
     - name: デバイス プロパティへのアクセス
       href: accessing-device-properties.md
@@ -1112,7 +1112,7 @@
       href: elam-driver-requirements.md
     - name: ELAM ドライバーの送信
       href: elam-driver-submission.md
-- name: 参照先
+- name: リファレンス
   items:
     - name: BUS1394_CLASS_GUID
       href: bus1394-class-guid.md
