@@ -4,25 +4,25 @@ description: CM_PROB_USED_BY_DEBUGGER
 ms.assetid: 7dd93509-cb37-493f-9922-70a8cda905ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0434fa662c572c43567471f78c9239f0f8a14251
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 06f9fb16e1d39ddda2f7657041885d9c30dcfb74
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335260"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279463"
 ---
-# <a name="cmprobusedbydebugger"></a>CM_PROB_USED_BY_DEBUGGER
+# <a name="code-53---cm_prob_used_by_debugger"></a>コード 53-CM_PROB_USED_BY_DEBUGGER
 
-この関数は、システムの使用に予約されています。
+このデバイスマネージャーエラーメッセージは、デバイスが Windows カーネルデバッガーで使用するために予約されていることを示します。
 
 ## <a name="error"></a>エラー
 
 53
 
-### <a name="display-message-windows-81-and-later-versions-of-windows"></a>(Windows 8.1 および Windows の以降のバージョン) のメッセージを表示します。
+### <a name="display-message-windows-81-and-later-versions-of-windows"></a>メッセージの表示 (Windows 8.1 以降のバージョンの Windows)
 
-"このデバイスが用に予約されて使用するため、Windows カーネル デバッガーによってこのブート セッションの期間。 (コード 53)"
+"このデバイスは、このブートセッションの間、Windows カーネルデバッガーで使用するために予約されています。 (コード 53) "
 
-### <a name="recommended-resolution-windows-81-and-later-versions-of-windows"></a>推奨される解決方法 (Windows 8.1 および Windows の以降のバージョン)
+### <a name="recommended-resolution-windows-81-and-later-versions-of-windows"></a>推奨される解決方法 (Windows 8.1 以降のバージョンの Windows)
 
-Windows カーネルが正常に起動するデバイスを許可するデバッグを無効にします。
+Windows カーネルデバッグを無効にして、デバイスを正常に起動できるようにします。

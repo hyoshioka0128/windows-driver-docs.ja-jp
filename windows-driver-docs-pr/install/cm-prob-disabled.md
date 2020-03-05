@@ -6,27 +6,25 @@ keywords:
 - CM_PROB_DISABLED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ac1edde161e501ac48c4ebaae6fb448180a736
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 110301345716c6f81cdc507dadc6a6707438d488
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63353050"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279587"
 ---
-# <a name="cmprobdisabled"></a>CM_PROB_DISABLED
+# <a name="code-22---cm_prob_disabled"></a>コード 22-CM_PROB_DISABLED
 
-この関数は、システムの使用に予約されています。
-
-デバイスが無効です。
+このデバイスマネージャーエラーメッセージは、デバイスが無効になっていることを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 22
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"このデバイスは無効です。 (コード 22)"
+"このデバイスは無効になっています。 (コード 22) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-デバイス マネージャーを使用して、ユーザーが無効なために、デバイスが無効です。 選択**デバイスの有効化**デバイスを有効になります。
+ユーザーがデバイスマネージャーを使用して無効にしたため、デバイスが無効になっています。 [**デバイスを有効**にする] を選択すると、デバイスが有効になります。
