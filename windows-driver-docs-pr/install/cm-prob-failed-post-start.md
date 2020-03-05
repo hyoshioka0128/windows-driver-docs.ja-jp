@@ -4,31 +4,35 @@ description: CM_PROB_FAILED_POST_START
 ms.assetid: 82d43c8b-d5de-4395-9ca0-34d2258b9772
 keywords:
 - CM_PROB_FAILED_POST_START
-ms.date: 04/20/2017
+ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 54b4df29184de0203e117d31d1777dd9a0b51882
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 14e7bb470f3b1a92b512309a7dd89618d1a6fdeb
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391483"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279567"
 ---
-# <a name="cmprobfailedpoststart"></a>CM_PROB_FAILED_POST_START
+# <a name="code-43---cm_prob_failed_post_start"></a>コード 43-CM_PROB_FAILED_POST_START
 
-この関数は、システムの使用に予約されています。
-
-ドライバーが、デバイス エラーを報告します。
+このデバイスマネージャーエラーメッセージは、ドライバーがデバイスの障害を報告したことを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 43
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows が停止しましたこのデバイスの問題が発生したので。 (コード 43)"
+"問題が報告されたため、Windows はこのデバイスを停止しました。 (コード 43) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-アンインストールし、デバイスを再インストールします。
+デバイスをアンインストールして再インストールします。
 
-デバイスを制御するドライバーの 1 つは指示 IRP_MN_QUERY_PNP_DEVICE_STATE への応答でなんらかの方法で、デバイスが失敗しました、オペレーティング システムです。
+デバイスを制御するドライバーの1つで、IRP_MN_QUERY_PNP_DEVICE_STATE に応答して何らかの方法でデバイスが失敗したことがオペレーティングシステムに通知されました。
+
+## <a name="for-driver-developers"></a>ドライバー開発者向け
+
+ドライバーはデバイスのデバイスの[状態を無効](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioinvalidatedevicestate)にし、結果として生成されたクエリデバイスの状態を[PNP_DEVICE_FAILED](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-pnp-device-state)します。
+
+ドライバーが WDF ドライバーである場合、WDF ドライバーが[**Wdfdevicesetfailed**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetfailed)を呼び出したか、WDF コールバックからエラーを返すことによって、デバイスの報告が失敗したことが間接的に発生する可能性があります。 詳細については、「[デバイスの障害の報告](https://docs.microsoft.com/windows-hardware/drivers/wdf/reporting-device-failures)」を参照してください。

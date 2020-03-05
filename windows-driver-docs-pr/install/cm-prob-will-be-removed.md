@@ -6,31 +6,29 @@ keywords:
 - CM_PROB_WILL_BE_REMOVED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b02e84adb7fc614012367868d06d55e7d98f5ed2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2a0e58644226e9c6a9b4c13307aed8c5c13c879
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63354861"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279473"
 ---
-# <a name="cmprobwillberemoved"></a>CM_PROB_WILL_BE_REMOVED
+# <a name="code-21---cm_prob_will_be_removed"></a>コード 21-CM_PROB_WILL_BE_REMOVED
 
-この関数は、システムの使用に予約されています。
-
-デバイスが削除されます。
+このデバイスマネージャーエラーメッセージは、システムによってデバイスが削除されることを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 21
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows がこのデバイスでは削除します。 (コード 21)"
+"Windows はこのデバイスを削除しています。 (コード 21) "
 
-"このダイアログ ボックスを閉じるし、数秒待ってから。 この問題が解決しない場合、コンピューターを再起動します。"
+"このダイアログボックスを閉じて、数秒待ってください。 この問題が解決しない場合は、コンピューターを再起動してください。 "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-選択**コンピューターの再起動**、これには、コンピューターを再起動します。
+**[コンピューターの再起動]** を選択すると、コンピューターが再起動されます。
 
-**注**  この問題のコードは、一時的なとクエリを実行し、デバイスを削除する試行中にのみ存在します。
+この問題コードは一時的であり、クエリを実行してからデバイスを削除しようとしたときにのみ存在する**ことに注意**してください  。

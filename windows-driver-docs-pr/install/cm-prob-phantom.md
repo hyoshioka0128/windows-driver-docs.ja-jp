@@ -6,29 +6,27 @@ keywords:
 - CM_PROB_PHANTOM
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d771d56198e631190a08c5cd5a5505c599947385
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c78b30839581f34fb70cc734d2dd80c9617871bf
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355747"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279493"
 ---
-# <a name="cmprobphantom"></a>CM_PROB_PHANTOM
+# <a name="code-45---cm_prob_phantom"></a>コード 45-CM_PROB_PHANTOM
 
-この関数は、システムの使用に予約されています。
-
-デバイスが存在しません。
+このデバイスマネージャーエラーメッセージは、デバイスが存在しないことを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 45
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"現時点では、このハードウェア デバイスに接続されていないコンピューター。 (コード 45)"
+"現在、このハードウェアデバイスはコンピューターに接続されていません。 (コード 45) "
 
-「この問題を解決するには、コンピューターには、このハードウェア デバイスを再接続します」。
+"この問題を解決するには、このハードウェアデバイスをコンピューターに再接続してください。"
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-なし。 この問題のコードは、DEVMGR_SHOW_NONPRESENT_DEVICES 環境変数が設定されている場合にのみ表示されます必要があります。
+[なし]。 この問題コードは、DEVMGR_SHOW_NONPRESENT_DEVICES 環境変数が設定されている場合にのみ表示されます。

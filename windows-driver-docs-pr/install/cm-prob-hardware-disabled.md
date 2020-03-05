@@ -6,27 +6,25 @@ keywords:
 - CM_PROB_HARDWARE_DISABLED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de3d218a12af0edeb13733319c8a9a4c5e957476
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dc84f3cae4159976e3d4ba8d8813ba15bfa33401
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63360330"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279550"
 ---
-# <a name="cmprobhardwaredisabled"></a>CM_PROB_HARDWARE_DISABLED
+# <a name="code-29---cm_prob_hardware_disabled"></a>コード 29-CM_PROB_HARDWARE_DISABLED
 
-この関数は、システムの使用に予約されています。
-
-デバイスが無効です。
+このデバイスマネージャーエラーメッセージは、デバイスが無効になっていることを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 29
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"このデバイスはデバイスのファームウェアによって、必要なリソースを与えられていないために無効にします。 (コード 29)"
+"このデバイスは、デバイスのファームウェアによって必要なリソースが提供されなかったため、無効になっています。 (コード 29) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
 BIOS でデバイスを有効にします。

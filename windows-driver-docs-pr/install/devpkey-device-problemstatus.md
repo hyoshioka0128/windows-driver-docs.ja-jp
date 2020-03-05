@@ -13,13 +13,13 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.date: 02/14/2020
-ms.openlocfilehash: 914ee5cc10659ac458f0f79064612dfaf8742f05
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.date: 02/28/2020
+ms.openlocfilehash: c5b6247f02b042cc29d590b4ca7a22f79f62b4db
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558712"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279453"
 ---
 # <a name="devpkey_device_problemstatus"></a>DEVPKEY_Device_ProblemStatus
 
@@ -57,7 +57,7 @@ DEVPKEY_Device_ProblemStatus デバイスプロパティは、問題コードが
 <a name="remarks"></a>コメント
 -------
 
-Devnode に問題がある場合、問題の **[状態]** プロパティは、デバイスマネージャーのデバイスの **[詳細]** タブの**プロパティ**のドロップダウンに表示されます。
+デバイスマネージャーまたはカーネルデバッガーで問題の状態を検出する方法の詳細については、「[デバイスインスタンスの状態と問題のコードを取得](retrieving-the-status-and-problem-code-for-a-device-instance.md)する」を参照してください。
 
 NTSTATUS 値の詳細については、「 [Ntstatus 値の使用](../kernel/using-ntstatus-values.md)」を参照してください。
 

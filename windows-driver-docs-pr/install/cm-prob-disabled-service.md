@@ -6,27 +6,25 @@ keywords:
 - CM_PROB_DISABLED_SERVICE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6676daed32102b6e413ae071d8ee81cb5b7a8d77
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c3a70b04d22b31a3d9fc7798b2fc4f17589101b1
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391493"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279589"
 ---
-# <a name="cmprobdisabledservice"></a>CM_PROB_DISABLED_SERVICE
+# <a name="code-32---cm_prob_disabled_service"></a>コード 32-CM_PROB_DISABLED_SERVICE
 
-この関数は、システムの使用に予約されています。
-
-ドライバーが無効になりました。
+このデバイスマネージャーエラーメッセージは、ドライバーが無効になっていることを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 32
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"このデバイスのドライバー (サービス) が無効になっています。 代替のドライバーは、この機能を提供することがあります。 (コード 32)"
+"このデバイスのドライバー (サービス) は無効になっています。 代替ドライバーがこの機能を提供している可能性があります。 (コード 32) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-このサービスの開始の種類は、レジストリで無効に設定されます。 ドライバー本当に必要な場合は、開始の種類を変更します。
+レジストリで、このサービスの開始の種類が無効に設定されています。 ドライバーが本当に必要な場合は、開始の種類を変更します。

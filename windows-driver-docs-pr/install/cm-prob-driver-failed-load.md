@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_DRIVER_FAILED_LOAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ef92d58401433ea83bf25600dd2cbb15e20156f1
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.openlocfilehash: 07297f6ce47c7f3580420bf7cd2bdc7c749cf8f2
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558414"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279583"
 ---
-# <a name="cm_prob_driver_failed_load"></a>CM_PROB_DRIVER_FAILED_LOAD
+# <a name="code-39---cm_prob_driver_failed_load"></a>コード 39-CM_PROB_DRIVER_FAILED_LOAD
 
-この関数は、システムで使用するために予約されています。
-
-ドライバーを読み込むことができませんでした。
+このデバイスマネージャーエラーメッセージは、ドライバーを読み込むことができなかったことを示します。
 
 ## <a name="error-code"></a>エラー コード
 

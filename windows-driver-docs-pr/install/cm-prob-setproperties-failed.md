@@ -6,29 +6,27 @@ keywords:
 - CM_PROB_SETPROPERTIES_FAILED
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 589919961477f7ccb1e58503494f71fb73cf54e8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 730b5f47e35d3b5d0a1622a1637619a864b5028d
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327254"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279480"
 ---
-# <a name="cmprobsetpropertiesfailed"></a>CM_PROB_SETPROPERTIES_FAILED
+# <a name="code-50---cm_prob_setproperties_failed"></a>コード 50-CM_PROB_SETPROPERTIES_FAILED
 
-この関数は、システムの使用に予約されています。
-
-デバイスのプロパティを設定することはできません。
+このデバイスマネージャーエラーメッセージは、デバイスのプロパティを設定できないことを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 50
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows 適用できませんすべてのデバイスのプロパティ。 デバイスのプロパティは、デバイスの機能と設定 (たとえばセキュリティ設定) などを説明する情報を含めることができます。 (コード 50)"
+"このデバイスのすべてのプロパティを適用することはできません。 デバイスプロパティには、デバイスの機能と設定について説明する情報 (たとえば、セキュリティ設定など) を含めることができます。 (コード 50) "
 
-"この問題を解決するには、ことができますを行うこのデバイスを再インストールします。 ただし、お勧め新しいドライバーは、ハードウェアの製造元に問い合わせてください。"
+"この問題を解決するには、このデバイスを再インストールしてみてください。 ただし、新しいドライバーについては、ハードウェアの製造元にお問い合わせいただくことをお勧めします。 "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-デバイスを再インストールしてみてください。 機能しない場合は、ハードウェア ベンダーから新しいドライバーを入手します。
+デバイスを再インストールしてみてください。 それでもうまくいかない場合は、ハードウェアベンダーから新しいドライバーを入手してください。

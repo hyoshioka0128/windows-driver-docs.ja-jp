@@ -13,13 +13,13 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.date: 10/17/2018
-ms.openlocfilehash: 48960b5f4b99c9c836554cdd139f8dd9fa78a7cb
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.date: 02/28/2020
+ms.openlocfilehash: 83230d0ab8bf01d6d16b23c0c7e16972946f5514
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558421"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279449"
 ---
 # <a name="devpkey_device_problemcode"></a>DEVPKEY_Device_ProblemCode
 
@@ -61,6 +61,8 @@ DEVPKEY_Device_ProblemCode の値は、Cfg に定義されている CM_PROB_*Xxx
 [**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して、DEVPKEY_Device_ProblemCode の値を取得できます。
 
 Windows Server 2003、Windows XP、および Windows 2000 では、このプロパティは直接サポートされていません。 以前のバージョンの Windows 上にあるデバイスインスタンスの問題コードにアクセスする方法の詳細については、「[デバイスインスタンスの状態と問題コードを取得](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-the-status-and-problem-code-for-a-device-instance)する」を参照してください。
+
+デバイスマネージャーまたはカーネルデバッガーで問題の状態を検出する方法の詳細については、「[デバイスインスタンスの状態と問題のコードを取得](retrieving-the-status-and-problem-code-for-a-device-instance.md)する」を参照してください。
 
 問題コードの詳細については、「 [**DEVPKEY_Device_ProblemStatus**](devpkey-device-problemstatus.md)」を参照してください。
 

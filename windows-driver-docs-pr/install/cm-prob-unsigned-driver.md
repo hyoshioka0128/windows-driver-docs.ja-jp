@@ -4,18 +4,16 @@ description: CM_PROB_UNSIGNED_DRIVER
 ms.assetid: 91d37d25-ca0d-413f-9e6f-5a22a0406714
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 85a895d80e88c10f175a080bf5c160fb0570896a
-ms.sourcegitcommit: aa7083b10b34a29a348f4950ced21a8a67a44a0f
+ms.openlocfilehash: 6fec56daa34610b85deff3d54ee36bebc7da20b2
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/22/2020
-ms.locfileid: "77558412"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279467"
 ---
-# <a name="cm_prob_unsigned_driver"></a>CM_PROB_UNSIGNED_DRIVER
+# <a name="code-52---cm_prob_unsigned_driver"></a>コード 52-CM_PROB_UNSIGNED_DRIVER
 
-この関数は、システムで使用するために予約されています。
-
-デバイスは、デジタル署名されていないドライバーがあるため、64ビットバージョンの Windows で開始されませんでした。 ドライバーに署名する方法の詳細については、「[ドライバーの署名](driver-signing.md)」を参照してください。
+このデバイスマネージャーエラーメッセージは、デジタル署名されていないドライバーがあるため、デバイスが64ビットバージョンの Windows で開始されなかったことを示します。 ドライバーに署名する方法の詳細については、「[ドライバーの署名](driver-signing.md)」を参照してください。
 
 ## <a name="error"></a>エラー
 

@@ -6,29 +6,27 @@ keywords:
 - CM_PROB_DEVICE_NOT_THERE
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab4135b18bd4ac805c095df072297ee192d4ac9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b5d8931b6fe5790b466fdc042956ec706425fffd
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532551"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279591"
 ---
-# <a name="cmprobdevicenotthere"></a>CM_PROB_DEVICE_NOT_THERE
+# <a name="code-24---cm_prob_device_not_there"></a>コード 24-CM_PROB_DEVICE_NOT_THERE
 
-この関数は、システムの使用に予約されています。
-
-デバイスが存在しません。
+このデバイスマネージャーエラーメッセージは、デバイスが存在しないと思われることを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 24
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"が存在しない、適切に動作していない、またはすべてがこのデバイスのドライバーをインストールします。 (コード 24)"
+"このデバイスは存在しないか、正常に動作していないか、またはすべてのドライバーがインストールされていません。 (コード 24) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-問題の不具合のあるハードウェアは、可能性があります。 または新しいドライバーを必要な場合があります。 デバイスは、削除の準備した場合、この状態で維持します。 ドライバーの場合、このエラー コードを設定できます**DriverEntry**ルーチンには、デバイスが検出されたが、 **DriverEntry**ルーチンは後で失敗します。
+問題の原因はハードウェアに問題があるか、新しいドライバーが必要である可能性があります。 デバイスが削除用に準備されている場合、デバイスはこの状態のままです。 このエラーコードは、ドライバーの**Driverentry**ルーチンがデバイスを検出したが、後で**driverentry**ルーチンが失敗した場合に設定できます。
 
-**注**  For Windows XP と以降のバージョンの Windows、 **DriverEntry**問題がある個別のエラー コード。
+**注**  windows XP 以降のバージョンの windows では、 **driverentry**の問題に個別のエラーコードがあります。

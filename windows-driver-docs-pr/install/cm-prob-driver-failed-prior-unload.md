@@ -6,29 +6,27 @@ keywords:
 - CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4797c3c15795b203221bd0176652721ee1c91e16
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72d03c0461ce5abeb9c8e2cdbb33226562d3b071
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358992"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279581"
 ---
-# <a name="cmprobdriverfailedpriorunload"></a>CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD
+# <a name="code-38---cm_prob_driver_failed_prior_unload"></a>コード 38-CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD
 
-この関数は、システムの使用に予約されています。
-
-以前のインスタンスがまだ読み込まれているために、ドライバーを読み込むことができませんでした。
+このデバイスマネージャーエラーメッセージは、前のインスタンスがまだ読み込まれているためにドライバーを読み込めなかったことを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 38
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows 読み込むことができませんこのハードウェアのデバイス ドライバーは、デバイス ドライバーの以前のインスタンスをメモリ内に残っています。 (コード 38)"
+"デバイスドライバの以前のインスタンスがまだメモリ内にあるため、このハードウェアのデバイスドライバを読み込めません。 (コード 38) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-以前のドライバーのインスタンスが正しくない参照カウントまたは負荷の間の競合が原因で読み込まれるまだとアンロード操作。 さらに、このメッセージは複数のドライバーが参照されている場合に表示される[ **INF AddService ディレクティブ**](inf-addservice-directive.md)で 1 つ以上の INF ファイル。
+以前のドライバーインスタンスは、参照カウントが正しくないか、読み込み操作とアンロード操作の間に競合が発生したため、引き続き読み込むことができます。 また、1つまたは複数の INF ファイル内の複数の[**Inf AddService ディレクティブ**](inf-addservice-directive.md)によってドライバーが参照されている場合にも、このメッセージが表示されることがあります。
 
-選択**コンピューターの再起動**、これには、コンピューターを再起動します。
+**[コンピューターの再起動]** を選択すると、コンピューターが再起動されます。

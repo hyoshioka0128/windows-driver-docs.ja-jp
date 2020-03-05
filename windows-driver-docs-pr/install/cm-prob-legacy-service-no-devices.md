@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_LEGACY_SERVICE_NO_DEVICES
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 215af1fc2dbaa24f4ee94348e3258628f3959490
-ms.sourcegitcommit: dff3834724bd5204c4a47204540fe8125dd37b20
+ms.openlocfilehash: 528b712bf2b13b9ed5b520241cc3e9e569aee53b
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70750013"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279531"
 ---
-# <a name="cm_prob_legacy_service_no_devices"></a>CM_PROB_LEGACY_SERVICE_NO_DEVICES
+# <a name="code-41---cm_prob_legacy_service_no_devices"></a>コード 41-CM_PROB_LEGACY_SERVICE_NO_DEVICES
 
-この関数は、システムで使用するために予約されています。
-
-ドライバーが読み込まれましたが、Windows がデバイスを見つけることができません。
+このデバイスマネージャーエラーメッセージは、ドライバーが読み込まれたが、Windows がデバイスを見つけることができないことを示します。
 
 ## <a name="error-code"></a>エラー コード
 

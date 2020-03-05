@@ -6,29 +6,27 @@ keywords:
 - CM_PROB_SYSTEM_SHUTDOWN
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a2c0c2a1f35dec72c17d452bb9b68a4d92e1b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9243374afdd5f3353fe90464160ad5bf69474383
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63326999"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279469"
 ---
-# <a name="cmprobsystemshutdown"></a>CM_PROB_SYSTEM_SHUTDOWN
+# <a name="code-46---cm_prob_system_shutdown"></a>コード 46-CM_PROB_SYSTEM_SHUTDOWN
 
-この関数は、システムの使用に予約されています。
-
-システムのシャット ダウンしているために、デバイスは使用できません。
+このデバイスマネージャーエラーメッセージは、システムがシャットダウンしているため、デバイスが使用できないことを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 46
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows にアクセスできないこのハードウェア デバイス、オペレーティング システムがシャット ダウン処理中にあるためです。 (コード 46)
+"オペレーティングシステムがシャットダウン処理中であるため、Windows はこのハードウェアデバイスにアクセスできません。 (コード 46)
 
-"ハードウェア デバイスは、正しく次回コンピューターを起動したときを作業する必要があります
+"ハードウェアデバイスは、次にコンピューターを起動するときに正しく動作します。"
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
-なし。 このエラー コードは、ドライバーの検証が有効になっており、すべてのアプリケーションが既にシャット ダウンされたときにのみ設定します。
+[なし]。 このエラーコードは、ドライバーの検証ツールが有効になっていて、すべてのアプリケーションが既にシャットダウンされている場合にのみ設定されます。

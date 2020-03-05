@@ -6,18 +6,16 @@ keywords:
 - CM_PROB_HELD_FOR_EJECT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4f48bc871f2dbabba36932a4b30f7d8af90ef0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b76724cf14058e890ce97094a5ad460b4d36073a
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840652"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279547"
 ---
-# <a name="cm_prob_held_for_eject"></a>CM_PROB_HELD_FOR_EJECT
+# <a name="code-47---cm_prob_held_for_eject"></a>コード 47-CM_PROB_HELD_FOR_EJECT
 
-この関数は、システムで使用するために予約されています。
-
-デバイスは、取り出し用に準備されています。
+このデバイスマネージャーエラーメッセージは、デバイスが取り出し用に準備されたことを示します。
 
 ## <a name="error-code"></a>エラー コード
 
@@ -29,7 +27,7 @@ ms.locfileid: "72840652"
 
 "この問題を解決するには、このデバイスをコンピューターから取り外してから、もう一度接続してください。"
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
 デバイスを取り外してから、もう一度接続してください。 または、 **[コンピューターの再起動]** を選択すると、コンピューターが再起動され、デバイスが使用できるようになります。
 

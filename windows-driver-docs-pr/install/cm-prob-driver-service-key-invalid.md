@@ -6,27 +6,25 @@ keywords:
 - CM_PROB_DRIVER_SERVICE_KEY_INVALID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d277b447fe35695f013b53df90902817e7f33647
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9d760fc514d83f6d095eebb821cb7285955aafe
+ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358860"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279579"
 ---
-# <a name="cmprobdriverservicekeyinvalid"></a>CM_PROB_DRIVER_SERVICE_KEY_INVALID
+# <a name="code-40---cm_prob_driver_service_key_invalid"></a>コード 40-CM_PROB_DRIVER_SERVICE_KEY_INVALID
 
-この関数は、システムの使用に予約されています。
-
-ドライバーのレジストリのサービス キーの情報が無効です。
+このデバイスマネージャーエラーメッセージは、ドライバーのレジストリのサービスキーの情報が無効であることを示します。
 
 ## <a name="error-code"></a>エラー コード
 
 40
 
-### <a name="display-message"></a>メッセージを表示します。
+### <a name="display-message"></a>メッセージの表示
 
-"Windows にアクセスできませんこのハードウェア レジストリ内のサービスのキー情報が見つからないか、記録された正しくされていないためです。 (コード 40)"
+"レジストリ内のサービスキー情報が見つからないか、正しく記録されていないため、Windows はこのハードウェアにアクセスできません。 (コード 40) "
 
-### <a name="recommended-resolution"></a>推奨される解決方法
+### <a name="recommended-resolution"></a>推奨される解決策
 
 ドライバーを再インストールします。
