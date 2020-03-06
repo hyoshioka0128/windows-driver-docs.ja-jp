@@ -12,13 +12,13 @@ api_name:
 - PAGE_FAULT_IN_NONPAGED_AREA
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 035f96ee192e9f654c4e07e4e554402f99e1c1b6
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: c161f61dd3a5b08aa69dcfa8edb170eb31612dae
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606450"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402346"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグチェック 0x50:\_の\_ていない\_領域のページ\_エラー
 
@@ -45,11 +45,11 @@ ms.locfileid: "75606450"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>1 で保護されたプロセスとして起動されました</p></td>
+<td align="left"><p>1</p></td>
 <td align="left"><p>参照されたメモリアドレス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>2 で保護されたプロセスとして起動されました</p></td>
+<td align="left"><p>2</p></td>
 <td align="left">
 <p><i>Windows 1507 (TH1) バージョン-x64  の後</i></p>
 <p><strong>0:</strong>読み取り操作</p>
@@ -72,11 +72,11 @@ ms.locfileid: "75606450"
 </td>
 </tr>
 <tr class="odd">
-<td align="left"><p>3 で保護されたプロセスとして起動されました</p></td>
+<td align="left"><p>3</p></td>
 <td align="left"><p>参照されているメモリ (既知の場合) のアドレス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ホーム フォルダーが置かれているコンピューターにアクセスできない</p></td>
+<td align="left"><p>4</p></td>
 <td align="left"><p>ページフォールトの種類</p>
 <p>0x03-NONPAGED_BUGCHECK_WRONG_SESSION-セッション領域アドレスへの参照が、セッションを持たないプロセスのコンテキストで行われました。  通常、これは、適切なプロセスへのオブジェクト参照を適切に取得して最初にアタッチせずに、呼び出し元がセッションアドレスに不適切にアクセスしようとすることを意味します。 このバグチェック & サブタイプは、Windows 10 RS3 で最後に使用されました。  Windows 10 RS4 以降では、このエラーは、代わりに 0x02 (NONPAGED_BUGCHECK_NOT_PRESENT_PAGE_TABLE) として表示されます。</p>
 <p>0x04-NONPAGED_BUGCHECK_VA_NOT_CANONICAL-非正規 (無効) 仮想アドレス (パラメーター 1) への参照が試行されました。  呼び出し元は、このアドレスにアクセスしようとすることはできません。</p>
@@ -96,7 +96,7 @@ ms.locfileid: "75606450"
 また、障害が発生したハードウェアをインストールした後、またはインストールされたハードウェアの障害が発生した場合にも発生する可能性があります (通常は、欠陥のある RAM、メインメモリ、L2 RAM キャッシュ、またはビデオ RAM)。
 
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 ----------
 
 **イベントログ:** エラーの原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。 詳細については、「 [Open イベントビューアー](https://support.microsoft.com/hub/4338813/windows-help#1TC=windows-7)」を参照してください。 ブルースクリーンと同じ時間枠内に発生したシステムログの重大なエラーを探します。
@@ -115,7 +115,7 @@ ms.locfileid: "75606450"
 
 ブルースクリーンの一般的なトラブルシューティング情報については、「 [**Blue Screen Data**](blue-screen-data.md)」を参照してください。
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 通常、参照先のアドレスは解放されたメモリ内にあるか、単に無効になっています。 これは、 **try-except**ハンドラーによって保護することはできません。プローブまたは同様のプログラミング手法によってのみ保護できます。

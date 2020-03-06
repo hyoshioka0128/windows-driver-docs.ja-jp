@@ -9,12 +9,12 @@ keywords:
 - デバイスインターフェイスクラス WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1187deb89c8e665b4a44e67dbb184589b5784419
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 52be0ab0cbe32adec5d3407c1173dd642c1de9b1
+ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843089"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78335958"
 ---
 # <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
 
@@ -36,7 +36,7 @@ ms.locfileid: "72843089"
 
 ### <a name="enabling-and-disabling-a-device-interface"></a>デバイスインターフェイスを有効または無効にする
 
-ドライバーが[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)を呼び出した後、デバイスが動作状態になると、フレームワークはデバイスのすべてのインターフェイスを自動的に有効にし、デバイスが動作状態のままになったときにインターフェイスを無効にします。 ドライバーが**WdfDeviceCreateDeviceInterface**を呼び出したときに物理デバイスオブジェクト (PDO) を指定した場合、無効になっているデバイスが再度有効にされた場合、フレームワークによってデバイスのインターフェイスが再度有効になります。
+ドライバーが[**WdfDeviceCreateDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicecreatedeviceinterface)を呼び出した後、デバイスが pnp 列挙を通過すると、フレームワークはデバイスのすべてのインターフェイスを自動的に有効にし、デバイスが pnp を削除したときにインターフェイスを無効にします。 ドライバーが**WdfDeviceCreateDeviceInterface**を呼び出したときに物理デバイスオブジェクト (PDO) を指定した場合、無効になっているデバイスが再度有効にされた場合、フレームワークによってデバイスのインターフェイスが再度有効になります。
 
 ドライバーは、必要に応じて、デバイスインターフェイスを無効にしてから再度有効にすることができます。 たとえば、ドライバーがデバイスの応答を停止したと判断した場合、ドライバーは[**Wdfdevicesetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestate)を呼び出してデバイスのインターフェイスを無効にし、アプリケーションがインターフェイスに新しいハンドルを取得できないようにします。 (インターフェイスに対する既存のハンドルは影響を受けません)。後でデバイスが使用可能になった場合、ドライバーは**Wdfdevicesetdeviceinterfacestate**を再度呼び出して、インターフェイスを再び有効にすることができます。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72843089"
 
 ### <a name="accessing-another-drivers-device-interface"></a>別のドライバーのデバイスインターフェイスへのアクセス
 
-このセクションでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーまたはユーザーモードドライバーフレームワーク (UMDF) バージョン2ドライバーが、別のドライバーによって提供されるデバイスインターフェイスの到着または削除の通知を登録し、[リモート i/o ターゲットを作成する方法について説明します。](general-i-o-targets-in-umdf.md)デバイスインターフェイスによって表されるデバイスと通信する。
+このセクションでは、カーネルモードドライバーフレームワーク (KMDF) ドライバーまたはユーザーモードドライバーフレームワーク (UMDF) バージョン2ドライバーが、別のドライバーによって提供されるデバイスインターフェイスの到着または削除の通知を登録し、デバイスインターフェイスによって表されるデバイスと通信するための[リモート i/o ターゲット](general-i-o-targets-in-umdf.md)を作成する方法について説明します。
 
 UMDF バージョン1のドライバーでこれを行う方法については、「 [Umdf ドライバーでのデバイスインターフェイスの使用](using-device-interfaces-in-umdf-drivers.md#accessing-another-drivers-device-interface)」を参照してください。
 

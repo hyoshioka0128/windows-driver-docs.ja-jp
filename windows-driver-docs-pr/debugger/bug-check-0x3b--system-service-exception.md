@@ -12,13 +12,13 @@ api_name:
 - SYSTEM_SERVICE_EXCEPTION
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 9f92b529d19650ff18e9faff211131bfbd86eee4
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 8180a3a7470771ccdb5204580f380267ada803db
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359581"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402348"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>バグチェック 0x3B: システム\_サービス\_例外
 
@@ -130,7 +130,7 @@ Error code: (NTSTATUS) 0xc0000005 (3221225477) - The instruction at 0x%p referen
 ドライバー検証マネージャーを起動するには、コマンドプロンプトで「 **verifier** 」と入力します。 検証するドライバーを構成できます。 ドライバーを検証するコードは、実行中のオーバーヘッドを追加するので、可能な限り最小のドライバー数を確認してみてください。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 Windows バグチェックコードの一般的なトラブルシューティングについては、次の推奨事項に従ってください。
