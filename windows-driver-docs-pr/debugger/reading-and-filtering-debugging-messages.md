@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f2c96f433ada8feb655e06b4f5a5089eded1bd4
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209802"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402364"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>デバッグ メッセージの読み取りとフィルター処理
 
@@ -189,7 +189,7 @@ DbgPrint( "Fourth message.\n");
 
 **Dbgprint**、 **dbgprintex**、 **KdPrint**、または**KdPrintEx**がメッセージをデバッガーに送信すると、書式設定された文字列が*dbgprint バッファー*に送信されます。 ほとんどの場合、このバッファーの内容は、デバッガーコマンドウィンドウに直ちに表示されます。 この表示は、グローバルフラグユーティリティ (gflags) の**バッファー DbgPrint 出力**オプションを使用して無効にすることができます。 この表示は、ローカルカーネルデバッグ中に自動的には表示されません。
 
-ローカルカーネルデバッグ中、およびこの表示が無効になっている場合、DbgPrint バッファーの内容を表示するには、 [**! dbgprint**](-dbgprint.md)拡張コマンドを使用する必要があります。
+ローカルカーネルデバッグ中、およびこの表示が無効になっている場合、DbgPrint バッファーの内容を表示するには、 [ **! dbgprint**](-dbgprint.md)拡張コマンドを使用する必要があります。
 
 **Dbgprint**、 **dbgprintex**、 **KdPrint**、または**KdPrintEx**を1回呼び出すだけで、512バイトの情報が送信されます。 この値よりも長い出力は失われます。 DbgPrint バッファー自体は、Windows の無料ビルドで最大 4 KB のデータを保持できます。 Windows Server 2003 以降のバージョンの Windows では、KDbgCtrl ツールを使用して、DbgPrint バッファーのサイズを変更できます。 詳細については、「 [KDbgCtrl の使用](using-kdbgctrl.md)」を参照してください。
 
