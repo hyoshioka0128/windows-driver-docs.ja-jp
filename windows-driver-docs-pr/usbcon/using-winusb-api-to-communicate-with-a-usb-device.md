@@ -3,12 +3,12 @@ Description: このトピックには、WinUSB 関数を使用して、関数ド
 title: WinUSB 関数を使用して USB デバイスにアクセスする方法
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 1f42c2dc7a21cbcd6c78c42cc0a5a3e000c0ce9d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
-ms.translationtype: HT
+ms.openlocfilehash: 214dfc6d36eef05f533aa4eed749ef1a998d1bc8
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837658"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402434"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>WinUSB 関数を使用して USB デバイスにアクセスする方法
 
@@ -39,9 +39,9 @@ Microsoft Visual Studio 2013 を使用している場合は、WinUSB テンプ�
 
 -   この情報は、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、Windows Vista の各 Windows バージョンに適用されます。
 -   デバイスの関数ドライバーとして Winusb.sys をインストールしている必要があります。 このプロセスの詳細については、「[WinUSB (Winusb.sys) のインストール](winusb-installation.md)」を参照してください。
--   このトピックの例は、[OSR USB FX2 Learning Kit デバイス](http://www.osronline.com/)に基づいています。 これらの例を使用して、手順を他の USB デバイスに拡張できます。
+-   このトピックの例は、[OSR USB FX2 Learning Kit デバイス](https://www.osronline.com/)に基づいています。 これらの例を使用して、手順を他の USB デバイスに拡張できます。
 
-## <a href="" id="setup"></a>手順 1: WinUSB テンプレートに基づいてスケルトン アプリを作成する
+## <a href="" id="setup"></a>手順 1: WinUSB テンプレートに基づいてスケルトンアプリを作成する
 
 
 USB デバイスにアクセスするには、まず、Windows Driver Kit (WDK) と Microsoft Visual Studio の統合環境 (Debugging Tools for Windows を含む) に含まれる WinUSB テンプレートに基づいてスケルトン アプリを作成します。
@@ -50,7 +50,7 @@ USB デバイスにアクセスするには、まず、Windows Driver Kit (WDK) 
 
 このテンプレートは、[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) ルーチンを使用してデバイスを列挙し、デバイスのファイル ハンドルを開いて、以降のタスクに必要な WinUSB インターフェイス ハンドルを作成します。 デバイス ハンドルを取得してデバイスを開くコード例については、[テンプレート コードの説明](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)に関するページを参照してください。
 
-## <a href="" id="query"></a>手順 2: デバイスに USB 記述子を照会する
+## <a href="" id="query"></a>手順 2: デバイスで USB 記述子を照会する
 
 
 次に、デバイスに USB 固有の情報 (デバイスの速度、インターフェイス記述子、関連するエンドポイント、そのパイプなど) を照会します。 この手順は、USB デバイス ドライバーが使用する手順とよく似ています。 ただし、アプリケーションは、[**WinUsb\_GetDescriptor**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getdescriptor) を呼び出してデバイス クエリを実行します。
@@ -59,19 +59,19 @@ USB デバイスにアクセスするには、まず、Windows Driver Kit (WDK) 
 
 -   追加のデバイス情報。
 
-    デバイスのデバイス記述子の情報を要求するには、[**WinUsb\_QueryDeviceInformation**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querydeviceinformation) を呼び出します。 デバイスの速度を取得するには、*InformationType* パラメーターに DEVICE\_SPEED (0x01) を設定します。 関数は、LowSpeed (0x01) または HighSpeed (0x03) を返します。
+    デバイスのデバイス記述子の情報を要求するには、[**WinUsb\_QueryDeviceInformation**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querydeviceinformation) を呼び出します。 デバイスの速度を取得するには、\_InformationType *パラメーターに DEVICE*SPEED (0x01) を設定します。 関数は、LowSpeed (0x01) または HighSpeed (0x03) を返します。
 
 -   インターフェイス記述子
 
-    対応するインターフェイス記述子を取得するには、[**WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) を呼び出して、デバイスのインターフェイス ハンドルを渡します。 WinUSB インターフェイス ハンドルは、最初のインターフェイスに対応します。 OSR Fx2 デバイスなどの一部の USB デバイスでは、1 つのインターフェイスのみをサポートし、代替設定は使用されません。 このため、これらのデバイスの場合、*AlternateSettingNumber* パラメーターを 0 に設定し、関数を 1 回だけ呼び出します。 **WinUsb\_QueryInterfaceSettings** は、呼び出し元で割り当てられた [**USB\_INTERFACE\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor) 構造体 (*UsbAltInterfaceDescriptor* パラメーターで渡された) にインターフェイスに関する情報を設定します。 たとえば、インターフェイス内のエンドポイント数は、**USB\_INTERFACE\_DESCRIPTOR** の **bNumEndpoints** メンバーで設定されます。
+    対応するインターフェイス記述子を取得するには、[**WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) を呼び出して、デバイスのインターフェイス ハンドルを渡します。 WinUSB インターフェイス ハンドルは、最初のインターフェイスに対応します。 OSR Fx2 デバイスなどの一部の USB デバイスでは、1 つのインターフェイスのみをサポートし、代替設定は使用されません。 このため、これらのデバイスの場合、*AlternateSettingNumber* パラメーターを 0 に設定し、関数を 1 回だけ呼び出します。 **WinUsb\_QueryInterfaceSettings** は、呼び出し元で割り当てられた [**USB\_INTERFACE\_DESCRIPTOR**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_interface_descriptor) 構造体 (*UsbAltInterfaceDescriptor* パラメーターで渡された) にインターフェイスに関する情報を設定します。 たとえば、インターフェイス内のエンドポイント数は、**USB**INTERFACE**DESCRIPTOR\_ の \_bNumEndpoints** メンバーで設定されます。
 
-    複数のインターフェイスをサポートするデバイスの場合は、*AssociatedInterfaceIndex* パラメーターで代替設定を指定して [**WinUsb\_GetAssociatedInterface**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getassociatedinterface) を呼び出すことで、関連付けられたインターフェイスのインターフェイス ハンドルを取得します。
+    複数のインターフェイスをサポートするデバイスの場合は、[AssociatedInterfaceIndex **パラメーターで代替設定を指定して \_** WinUsb](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getassociatedinterface)GetAssociatedInterface を呼び出すことで、関連付けられたインターフェイスのインターフェイス ハンドルを取得します。
 
 -   エンドポイント
 
-    各インターフェイスの各エンドポイントに関する情報を取得するには、[**WinUsb\_QueryPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipe) を呼び出します。 **WinUsb\_QueryPipe** は、呼び出し元で割り当てられた [**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 構造体に、指定されたエンドポイントのパイプに関する情報を設定します。 エンドポイントのパイプは、0 から始まるインデックスによって識別されます。また、[**WinUsb\_QueryInterfaceSettings**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) への以前の呼び出しで取得されたインターフェイス記述子の **bNumEndpoints** メンバーの値より小さい値である必要があります。 OSR Fx2 デバイスには、3 つのエンドポイントを持つインターフェイスが 1 つあります。 このデバイスの場合、関数の *AlternateInterfaceNumber* パラメーターは 0 に設定され、*PipeIndex* パラメーターの値は 0 から 2 の範囲で変化します。
+    各インターフェイスの各エンドポイントに関する情報を取得するには、[**WinUsb\_QueryPipe**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_querypipe) を呼び出します。 **WinUsb\_QueryPipe** は、呼び出し元で割り当てられた [**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 構造体に、指定されたエンドポイントのパイプに関する情報を設定します。 エンドポイントのパイプは、0 から始まるインデックスによって識別されます。また、WinUsb[QueryInterfaceSettings **\_ への以前の呼び出しで取得されたインターフェイス記述子の** bNumEndpoints](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_queryinterfacesettings) メンバーの値より小さい値である必要があります。 OSR Fx2 デバイスには、3 つのエンドポイントを持つインターフェイスが 1 つあります。 このデバイスの場合、関数の *AlternateInterfaceNumber* パラメーターは 0 に設定され、*PipeIndex* パラメーターの値は 0 から 2 の範囲で変化します。
 
-    パイプの種類を特定するには、[**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 構造体の **PipeInfo** メンバーを調べます。 このメンバーは、[**USBD\_PIPE\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ne-usb-_usbd_pipe_type) 列挙値 (UsbdPipeTypeControl、UsbdPipeTypeIsochronous、UsbdPipeTypeBulk、または UsbdPipeTypeInterrupt) のいずれかに設定されます。 OSR USB FX2 デバイスは、割り込みパイプ、バルクイン パイプ、バルクアウト パイプをサポートするため、**PipeInfo** は、UsbdPipeTypeInterrupt または UsbdPipeTypeBulk のいずれかに設定されます。 UsbdPipeTypeBulk の値は、バルク パイプを識別しますが、パイプの方向を指定しません。 方向情報は、パイプ アドレスの上位ビットでエンコードされ、**WINUSB\_PIPE\_INFORMATION** 構造体の **PipeId** メンバーに格納されます。 パイプの方向を最も簡単に特定するには、**PipeId** の値を、Usb100.h から次のマクロのいずれかに渡します。
+    パイプの種類を特定するには、[**WINUSB\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows/desktop/api/winusbio/ns-winusbio-_winusb_pipe_information) 構造体の **PipeInfo** メンバーを調べます。 このメンバーは、UsbdPipeTypeControl、UsbdPipeTypeIsochronous、UsbdPipeTypeBulk、または UsbdPipeTypeInterrupt のいずれかの[**USBD\_パイプ\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ne-usb-_usbd_pipe_type)の列挙値に設定されます。 OSR USB FX2 デバイスは、割り込みパイプ、バルクイン パイプ、バルクアウト パイプをサポートするため、**PipeInfo** は、UsbdPipeTypeInterrupt または UsbdPipeTypeBulk のいずれかに設定されます。 UsbdPipeTypeBulk の値は、バルク パイプを識別しますが、パイプの方向を指定しません。 方向情報は、パイプ アドレスの上位ビットでエンコードされ、**WINUSB\_PIPE\_INFORMATION** 構造体の **PipeId** メンバーに格納されます。 パイプの方向を最も簡単に特定するには、**PipeId** の値を、Usb100.h から次のマクロのいずれかに渡します。
 
     -   方向がインの場合、`USB_ENDPOINT_DIRECTION_IN (PipeId)` マクロは **TRUE** を返します。
     -   方向がアウトの場合、`USB_ENDPOINT_DIRECTION_OUT(PipeId)` マクロは **TRUE** を返します。
@@ -194,7 +194,7 @@ done:
 }
 ```
 
-## <a href="" id="control"></a>手順 3: 既定のエンドポイントにコントロール転送を送信する
+## <a href="" id="control"></a>手順 3: 既定のエンドポイントに制御転送を送信する
 
 
 次に、既定のエンドポイントに制御要求を発行してデバイスと通信します。
@@ -263,7 +263,7 @@ done:
 }
 ```
 
-## <a href="" id="io"></a>手順 4: I/O 要求を発行する
+## <a href="" id="io"></a>手順 4: i/o 要求を発行する
 
 
 次に、データをデバイスのバルクイン エンドポイントとバルクアウト エンドポイントに送信します。これらはそれぞれ、要求の読み取りと書き込みに使用できます。 OSR USB FX2 デバイスでは、これらの 2 つのエンドポイントは、ループバック用に構成されるため、デバイスはデータをバルクイン エンドポイントからバルクアウト エンドポイントに移動します。 これにより、データの値が変更されたり、新しいデータが追加されたりすることはありません。 ループバック構成の場合、読み取り要求は、最新の書き込み要求で送信されたデータを読み取ります。 WinUSB には、書き込み要求と読み取り要求を送信するための次の関数が用意されています。
@@ -346,7 +346,7 @@ done:
 }
 ```
 
-## <a name="step-5-release-the-device-handles"></a>手順 5:デバイス ハンドルを解放する
+## <a name="step-5-release-the-device-handles"></a>手順 5: デバイスハンドルを解放する
 
 
 デバイスへの必要な呼び出しがすべて完了したら、デバイスのファイル ハンドルと WinUSB インターフェイス ハンドルを解放します。 このためには、次の関数を呼び出します。
@@ -354,7 +354,7 @@ done:
 -   **CloseHandle**: 手順 1 の説明に従って **CreateFile** で作成されたハンドルを解放します。
 -   [**WinUsb\_Free**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free): デバイスの WinUSB インターフェイス ハンドルを解放します。これは、[**WinUsb\_Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) によって返されます。
 
-## <a name="step-6-implement-main"></a>手順 6:main を実装する
+## <a name="step-6-implement-main"></a>手順 6: Main を実装する
 
 
 次のコード例は、コンソール アプリケーションの main 関数を示します。
@@ -428,7 +428,7 @@ done:
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
 
 デバイスで等時性エンドポイントがサポートされる場合、[WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb) を使用して転送を送信できます。 この機能は、Windows 8.1 でのみサポートされます。
