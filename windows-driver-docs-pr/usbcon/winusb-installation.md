@@ -4,11 +4,11 @@ title: WinUSB (Winusb.sys) のインストール
 ms.date: 05/09/2018
 ms.localizationpriority: High
 ms.openlocfilehash: d2157430a1e220e693d9ae88c3a3a36ce3fd3d2e
-ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
-ms.translationtype: HT
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72007588"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402524"
 ---
 # <a name="winusb-winusbsys-installation"></a>WinUSB (Winusb.sys) のインストール
 
