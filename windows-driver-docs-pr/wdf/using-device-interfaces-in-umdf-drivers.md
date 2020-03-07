@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e882d43204ffae3e77ff51c4d40dea24c8e0b2b
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210778"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402538"
 ---
 # <a name="using-device-interfaces-in-umdf-drivers"></a>UMDF ドライバーでのデバイス インターフェイスの使用
 
