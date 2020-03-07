@@ -8,11 +8,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 15b22ddb8039fe1c602be46b9e82e1dac10a644e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837824"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402414"
 ---
 # <a name="client-objects"></a>クライアント オブジェクト
 
