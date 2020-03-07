@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a928327db59c9fcf45d1a90913060865b049ba1
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837818"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402336"
 ---
 # <a name="controlling-threads-and-processes"></a>スレッドとプロセスの制御
 

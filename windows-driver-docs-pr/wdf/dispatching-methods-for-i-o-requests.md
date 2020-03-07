@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: be88ba6724347b49864bdc67c0b2f7bc4e30b80c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843196"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402527"
 ---
 # <a name="dispatching-methods-for-io-requests"></a>I/O 要求のディスパッチ方法
 
@@ -38,7 +38,7 @@ ms.locfileid: "72843196"
 
 フレームワークは、ドライバーの[要求ハンドラー](request-handlers.md)のいずれかに要求を配信した後、[要求を処理](processing-i-o-requests.md)します。 ドライバーが要求を[一般的な i/o ターゲット](general-i-o-targets.md)に転送する場合、通常は、i/o ターゲットオブジェクトの同期メソッドの1つを呼び出します。 これらの方法の詳細については、「[同期的に I/o 要求を送信](sending-i-o-requests-synchronously.md)する」を参照してください。 ドライバーは、i/o キューから受信したすべての要求を最終的に[完了](completing-i-o-requests.md)または[キャンセル](canceling-i-o-requests.md)する必要があります。
 
-順次ディスパッチ用の i/o キューを設定したドライバーは、 [**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)または[**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)を呼び出して、最後に受信した要求が完了する前に別の要求をキューから取得することができます。または取り消されました。 これを関数ドライバーで実行すると、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数が以前のハードウェア操作のデータを処理している間に、ドライバーが次のハードウェア操作を開始できるようになります。
+順次ディスパッチ用の i/o キューを設定したドライバーは、 [**WdfIoQueueRetrieveNextRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrievenextrequest)または[**WdfIoQueueRetrieveRequestByFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nf-wdfio-wdfioqueueretrieverequestbyfileobject)を呼び出して、最後に受信した要求が完了または取り消される前に、別の要求をキューから取得することができます。 これを関数ドライバーで実行すると、ドライバーの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数が以前のハードウェア操作のデータを処理している間に、ドライバーが次のハードウェア操作を開始できるようになります。
 
 複数の i/o キューを作成し、それらを順次ディスパッチ用に設定した場合、フレームワークは各キューから順番に要求をディスパッチしますが、キューは並列で実行されます。 ドライバーまたはデバイスが、任意の種類の一度に1つの要求のみを処理できる場合は、1つの i/o キューで[*Evtiodefault*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfio/nc-wdfio-evt_wdf_io_queue_io_default)コールバック関数を使用する必要があります。
 

@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4fe3e6b949d5bc327b8638b9bcf65852a93a7d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66373152"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402382"
 ---
 # <a name="share-a-driver-with-a-partner"></a>パートナーとのドライバーの共有
 
