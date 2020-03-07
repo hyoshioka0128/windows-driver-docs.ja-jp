@@ -1,87 +1,87 @@
 ---
 title: HID の使用状況
-description: HID の使用法は、HID コントロールとコントロールが実際に測定の使用目的を特定します。
+description: HID usage は、HID コントロールの使用目的、およびコントロールが実際にどのように測定するかを特定します。
 ms.assetid: 84fed314-3554-4291-b51c-734d874a4bab
 keywords:
-- ヒューマン インターフェイス デバイス WDK、使用状況
-- HID WDK、使用状況
-- 対話型の入力デバイス WDK、使用状況
-- 入力デバイス WDK、使用状況
-- ヒューマン インターフェイス デバイス WDK、コントロール
+- ヒューマンインターフェイスデバイス WDK、使用法
+- HID WDK、usage
+- 対話型の入力デバイス WDK、使用法
+- 入力デバイス WDK、使用法
+- ヒューマンインターフェイスデバイス WDK、コントロール
 - HID WDK、コントロール
 - 対話型の入力デバイス WDK、コントロール
 - 入力デバイス WDK、コントロール
-- WDK を非表示コントロール
-- WDK HID 使用法をページします。
-- Id WDK HID の使用状況
-- WDK の HID 拡張の使用法
-- 使用状況の範囲は WDK を非表示
-- WDK の HID エイリアスの使用法
-- WDK の HID の使用状況
+- WDK HID を制御します
+- 使用量ページ WDK HID
+- 使用状況 Id WDK HID
+- 拡張使用量 WDK HID
+- 使用範囲 WDK HID
+- 別名使用法 WDK HID
+- 使用状況 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 43f88332071171ce90e145e9abfacb36d4c26e61
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388805"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402436"
 ---
 #  <a name="hid-usages"></a>HID の使用状況
 
 
-*HID の使用法*HID コントロールとコントロールが実際に測定の使用目的を識別します。
+*Hid usage*は、hid コントロールの使用目的、およびコントロールが実際にどのように測定するかを特定します。
 
 
 
 
-次の概念と用語は、WDK の HID ドキュメント全体で使用されます。
+WDK の HID ドキュメント全体で、次の概念と用語が使用されています。
 
-[使用状況 ページ](#usage-page)
+[[使用状況] ページ](#usage-page)
 
 [使用状況 ID](#usage-id)
 
-[拡張の使用状況](#extended-usage)
+[拡張使用量](#extended-usage)
 
-[使用状況の範囲](#usage-range)
+[使用範囲](#usage-range)
 
-[エイリアスの使用法](#aliased-usages)
+[エイリアス使用](#aliased-usages)
 
-Windows コンポーネントにアクセスする使用法の具体的な例については、次を参照してください。[最上位のコレクションは、Windows システムの使用によって開かれた](top-level-collections-opened-by-windows-for-system-use.md)します。
+Windows コンポーネントがアクセスする特定の使用例については、「[システムで使用するために windows によって開かれたトップレベルのコレクション](top-level-collections-opened-by-windows-for-system-use.md)」を参照してください。
 
-HIDClass デバイスをサポートする使用状況を確認する方法の詳細についてを参照してください。
+HIDClass デバイスでサポートされている使用状況を確認する方法の詳細については、以下を参照してください。
 
-[コレクションの機能](collection-capability.md)
+[コレクション機能](collection-capability.md)
 
-[ボタンの機能の配列](button-capability-arrays.md)
+[ボタン機能配列](button-capability-arrays.md)
 
-[機能の値の配列](value-capability-arrays.md)
+[値機能配列](value-capability-arrays.md)
 
 [HID レポートの解釈](interpreting-hid-reports.md)
 
-業界標準の HID 使用法の詳細については、ユニバーサル シリアル バス (USB) 仕様を参照してください。 *HID Usage Tables*にある、 [USB Implementers Forum](https://go.microsoft.com/fwlink/?linkid=830142) web サイト。 (このリソースできない場合がありますのいくつかの言語および国。)
+業界標準の HID 使用法の詳細については、 [Usb 実装フォーラム](https://go.microsoft.com/fwlink/?linkid=830142)の web サイトにある Universal Serial BUS (usb) 仕様の*hid 使用表*を参照してください。 (このリソースは、一部の言語および国では使用できません。)
 
-### <a name="usage-page"></a>使用状況 ページ
+### <a name="usage-page"></a>[使用状況] ページ
 
-HID の使用法が編成されます *[使い方] ページ*の関連するコントロール。 使用状況 ページで特定のコントロールの使用量が定義されている、[使用状況 ID](#usage-id)名、および説明します。 [使い方] ページの例には、汎用的なデスクトップのコントロール、ゲームのコントロール、Led、ボタン、およびなどが含まれます。 一般的なデスクトップのコントロールの使用状況 ページに表示されるコントロールの例についてには、ポインター、マウスとキーボード デバイス、ジョイスティック、およびなどが含まれます。 使用状況 ページの値は、16 ビット符号なし値です。
+HID の使用は、関連するコントロールの*使用状況ページ*にまとめられています。 特定のコントロールの使用方法は、使用状況ページ、[使用 ID](#usage-id)、名前、および説明で定義されています。 使用例としては、一般的なデスクトップコントロール、ゲームコントロール、Led、ボタンなどがあります。 汎用デスクトップコントロールの [使用状況] ページに表示されるコントロールの例としては、ポインター、マウスとキーボードデバイス、ジョイスティックなどがあります。 使用状況ページの値は16ビットの符号なしの値です。
 
 ### <a name="usage-id"></a>使用状況 ID
 
-有効な使用方法の識別子では、使用状況 ページのコンテキストでまたは*使用状況 ID*、使用状況 ページでの使用状況を示します。 0 の使用状況の ID は予約されています。 使用法の ID 値は、符号なし 16 ビット値です。
+使用状況ページのコンテキストでは、有効な使用 id (使用状況*id*) が使用状況ページで使用されていることを示します。 使用状況 ID 0 は予約されています。 使用 ID 値は16ビットの符号なしの値です。
 
-### <a name="extended-usage"></a>拡張の使用状況
+### <a name="extended-usage"></a>拡張使用量
 
-*拡張使用法*16 ビットを指定する 32 ビット値は、 [使用状況ページ](#usage-page) の最上位の 2 つのバイト数と 16 ビット値[使用状況 ID](#usage-id) (最下位の 2 つのバイト単位)拡張使用法の値。
+*拡張使用*とは、最大の2バイトの16ビット[使用量ページ](#usage-page)値を指定する32ビット値で、拡張使用率の最小値の2バイトを16ビット[使用 ID](#usage-id)で指定します。
 
-### <a name="usage-range"></a>使用状況の範囲
+### <a name="usage-range"></a>使用範囲
 
-A*使用状況の範囲*の包括的な連続する範囲[Id の使用状況](#usage-id)、すべて同じであるの[使用状況 ページ](#usage-page)します。 使用状況の範囲は、使用量の最小値とレポート記述子の使用量の最大アイテムによって指定されます。
+*使用範囲*は、連続した一連の[使用量 id](#usage-id)であり、すべて同じ [[使用状況] ページ](#usage-page)にあります。 使用範囲は、レポート記述子の使用量の最小値と使用量の最大値によって指定されます。
 
-### <a name="aliased-usages"></a>エイリアスの使用法
+### <a name="aliased-usages"></a>エイリアス使用
 
-1 つ以上の使用量を指定できます、 [**リンク コレクション**](link-collections.md)または HID コントロール。 このような使用法のグループ、特定のコレクションやコントロールは、別のエイリアスですと呼ばれます*エイリアスの使用法*します。 項目の区切り記号を使用すると、別名の使用法を指定します。 [使用状況の範囲](#usage-range)エイリアスにすることはできません。
+[**リンクコレクション**](link-collections.md)または HID コントロールに複数の使用方法を指定できます。 特定のコレクションまたはコントロールについては、このような使用のグループは相互の別名であり、*別名使用*と呼ばれます。 区切り記号項目は、エイリアス化された使用法を指定するために使用されます。 [使用範囲](#usage-range)を別名にすることはできません。
 
-最上位のコレクションの機能の配列でエイリアスの使用法を指定する方法については、次を参照してください。[ボタン機能配列](button-capability-arrays.md)と[値機能配列](value-capability-arrays.md)します。
+最上位レベルのコレクションの機能配列にエイリアス使用法を指定する方法については、「[ボタン機能配列](button-capability-arrays.md)と[値機能](value-capability-arrays.md)配列」を参照してください。
 
  
 
