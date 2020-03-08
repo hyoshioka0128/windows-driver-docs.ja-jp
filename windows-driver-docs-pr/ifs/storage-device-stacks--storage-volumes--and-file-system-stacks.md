@@ -9,17 +9,17 @@ keywords:
 - ボリューム WDK ファイルシステム
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a111ba12590df0bd9be2619fe7a905e9a927fd2
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: bd36ca6cbb6eec8f6359da9c1413c7993566e441
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128454"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910469"
 ---
 # <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、[ファイルシステムミニフィルタードライバー](filter-manager-and-minifilter-driver-architecture.md)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ファイルシステムのレガシフィルタードライバーがファイルシステムとボリュームにどのようにアタッチされるかを調べる前に、記憶域デバイススタック、記憶域ボリューム、およびファイルシステムスタック間の関係を理解する必要があります。
 

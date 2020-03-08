@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e2ce4b80fc5bacd946381a1c9fe975690a5106ef
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841544"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78854021"
 ---
 # <a name="value-capability-arrays"></a>値機能配列
 
@@ -70,7 +70,7 @@ ms.locfileid: "72841544"
 
 ![5つのデータ項目 (それぞれ6ビット) を含む使用状況値の配列を示す図](images/repcount.png)
 
-前の例では、このような使用状況値配列の値機能構造で**Isrange**メンバーが**FALSE**に設定され、その NotRange メンバーが17に、 **reportcount**メンバーが5に設定されてい**ます。** メンバーが6に設定されています。
+前の例では、このような使用状況値配列の値機能構造では、 **Isrange**メンバーが**FALSE**に設定され、その**NotRange**メンバーが17に、 **reportcount**メンバーが5に設定され、 **bitsize**メンバーが6に設定されています。
 
 使用状況のレポート数が1である場合は、 **Hidp\_Getusage value**を使用して使用状況の値を抽出します。 使用状況のレポートカウントが1より大きい場合、 **Hidp\_Getusage value**は使用状況の値の配列の最初のデータ項目のみを返します。 使用状況値配列内のすべてのデータ項目を抽出するには、 [**Hidp\_GetUsageValueArray**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagevaluearray)を使用します。
 

@@ -9,17 +9,17 @@ keywords:
 - ボリューム WDK ファイルシステム、マウント
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 877bcd8160fa65cb6f2b65fb7c9176f4742d678a
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 9d66e976134eb96690ef3db760dd7534ac1352c8
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128462"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910448"
 ---
 # <a name="volume-mount-example"></a>ボリュームのマウントの例
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、[ファイルシステムミニフィルタードライバー](filter-manager-and-minifilter-driver-architecture.md)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 次の図は、ボリュームをマウントする前に、CDFS がどのように見えるかを示しています。 この例では、2つのフィルターが CDF コントロールデバイスオブジェクトに関連付けられています。 (注: CDFS コントロールデバイスオブジェクトを含むグローバルファイルシステムキューは表示されません)。
 

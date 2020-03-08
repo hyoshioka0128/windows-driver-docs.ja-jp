@@ -15,16 +15,16 @@ keywords:
 - DefaultInstall セクション WDK ファイルシステム
 - SourceDisksNames セクション WDK ファイルシステム
 - DestinationDirs セクション WDK ファイルシステム
-- バージョンセクション WDK ファイルシステム
+- WDK のファイル システムのバージョン
 - INF ファイルの作成 (WDK ファイルシステム)
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 806436a8465574e16ec17bcc34e549b2fd4f87aa
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 917ba3860872f8b2e17cc4f085b14cdf8630b30c
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128468"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910473"
 ---
 # <a name="installing-a-file-system-driver"></a>ファイル システム ドライバーのインストール
 
@@ -74,25 +74,25 @@ INF ファイルを使用してレジストリから情報を読み取ったり�
 
 一般に、ファイルシステムドライバーの INF ファイルには、次のセクションが含まれています。
 
-- [バージョン (必須)](##version-section-(reqired))
+- [バージョン (必須)](#version-section-required)
 
-- [DestinationDirs (省略可能ですが推奨)](##destinationdirs-section-(optional-but-recommended))
+- [DestinationDirs (省略可能ですが推奨)](#destinationdirs-section-optional-but-recommended)
 
-- [SourceDisksNames (必須)](##sourcedisksnames-section-(required))
+- [SourceDisksNames (必須)](#sourcedisksnames-section-required)
 
-- [SourceDisksFiles (必須)](##sourcedisksfiles-section-(required))
+- [SourceDisksFiles (必須)](#sourcedisksfiles-section-required)
 
-- [DefaultInstall (必須)](##defaultinstall-section-(required))
+- [DefaultInstall (必須)](#defaultinstall-section-required)
 
-- [DefaultInstall (必須)](##defaultinstall.services-section-(required))
+- [DefaultInstall (必須)](#defaultinstallservices-section-required)
 
-- [ServiceInstall (必須)](##serviceinstall-section-(required))
+- [ServiceInstall (必須)](#serviceinstall-section-required)
 
-- [DefaultUninstall (省略可能)](##defaultuninstall-section-(optional))
+- [DefaultUninstall (省略可能)](#defaultuninstall-section-optional)
 
-- [DefaultUninstall. Services (省略可能)](##defaultuninstall.services-section-(optional))
+- [DefaultUninstall. Services (省略可能)](#defaultuninstallservices-section-optional)
 
-- [文字列 (必須)](##strings-section-(required))
+- [文字列 (必須)](#strings-section-required)
 
 ### <a name="version-section-required"></a>Version セクション (必須)
 
@@ -108,7 +108,7 @@ CatalogFile =
 
 次の表に、[[**バージョン**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)] セクションでファイルシステムフィルタードライバーによって指定される値を示します。
 
-| エントリ | Value |
+| エントリ | 値 |
 | ----- | ----- |
 | **折本** | "$WINDOWS NT $" |
 | **Provider** | 独自の INF ファイルでは、Microsoft 以外のプロバイダーを指定する必要があります。 |
@@ -206,7 +206,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**エントリは、サービスの種類を指定します。 次の表に、 **ServiceType**に使用できる値と、対応するサービスの種類を示します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
 | 0x00000001 | SERVICE_KERNEL_DRIVER (デバイスドライバーサービス) |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER (ファイルシステムまたはファイルシステムフィルタードライバーサービス) |
@@ -217,9 +217,9 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **Starttype**エントリは、サービスをいつ開始するかを指定します。 次の表に、 **Starttype**とそれに対応する開始の種類に使用できる値を示します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
-| ― | SERVICE_BOOT_START |
+| 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
 | 0x00000002 | SERVICE_AUTO_START |
 | 0x00000003 | SERVICE_DEMAND_START |
@@ -233,9 +233,9 @@ X64 ベースの Windows Vista システム以降では、ブート開始ドラ�
 
 **Errorcontrol**エントリは、システムの起動時にサービスを開始できなかった場合に実行するアクションを指定します。 次の表に、 **errorcontrol**に使用できる値と、それに対応するエラー制御値の一覧を示します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
-| ― | SERVICE_ERROR_IGNORE (エラーをログに記録し、システムの起動を続行します。) |
+| 0x00000000 | SERVICE_ERROR_IGNORE (エラーをログに記録し、システムの起動を続行します。) |
 | 0x00000001 | SERVICE_ERROR_NORMAL (エラーをログに記録し、ユーザーにメッセージを表示して、システムの起動を続行します)。 |
 | 0x00000002 | SERVICE_ERROR_SEVERE (レジストリの [前回の制御セット] に切り替え、システムの起動を続行します。 |
 | 0x00000003 | SERVICE_ERROR_CRITICAL (システムスタートアップがレジストリの正常でないコントロールセットを使用していない場合は、[正常起動時] に切り替えて、もう一度やり直してください。 まだ起動できない場合は、バグチェックルーチンを実行します。 システムを起動するために必要なドライバーだけが、INF ファイルにこの値を指定する必要があります。) |
@@ -245,7 +245,7 @@ X64 ベースの Windows Vista システム以降では、ブート開始ドラ�
 [**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)は、新しくインストールされたサービスのレジストリに格納される情報を含む、1つまたは複数の INF ライターで定義された**addregistry**セクションを参照します。
 
 >[!NOTE]
-> 初期インストール後に INF ファイルがドライバーのアップグレードにも使用される場合、 **Addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 次に、例を示します。
+> 初期インストール後に INF ファイルがドライバーのアップグレードにも使用される場合、 **Addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 例 :
 
 ```cpp
 [ExampleFileSystem.AddRegistry]

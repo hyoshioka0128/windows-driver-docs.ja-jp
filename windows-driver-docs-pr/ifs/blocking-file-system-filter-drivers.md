@@ -1,127 +1,74 @@
 ---
 title: レガシ ファイル システム フィルター ドライバーのブロック
-description: 以降で Windows 10 version 1607 では、管理者およびドライバー開発者が使用できますレジストリ設定従来のファイル システム フィルター ドライバーをブロックします。
+description: Windows 10 バージョン1607以降では、管理者とドライバー開発者はレジストリ設定を使用して、レガシファイルシステムフィルタードライバーをブロックできます。
 ms.assetid: 90A562FB-D616-4D38-8D4F-7EFCDF9E617F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b9069f8556b9bb888400ec47d4e048c0e3d1e2ca
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1710ab4d6187d6bb9c5453ea7bb41ca1008fe08b
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387243"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910389"
 ---
 # <a name="blocking-legacy-file-system-filter-drivers"></a>レガシ ファイル システム フィルター ドライバーのブロック
 
-以降で Windows 10 version 1607 では、管理者およびドライバー開発者が使用できますレジストリ設定従来のファイル システム フィルター ドライバーをブロックします。 *従来のファイル システム フィルター ドライバー*はファイル システムに接続されているドライバー スタックを直接とフィルター マネージャーを使用しないでください。 このトピックでは、ブロックとブロック解除のレガシ ファイル システム フィルター ドライバーのレジストリ設定について説明します。 従来のファイル システム フィルターがブロックされたときに、システム イベント ログに入力されたイベントと従来のファイル システム ドライバーが実行されている OS を確認する方法についても説明します。
+Windows 10 バージョン1607以降では、管理者とドライバー開発者はレジストリ設定を使用して、レガシファイルシステムフィルタードライバーをブロックできます。 *レガシファイルシステムフィルタードライバー*は、ファイルシステムスタックに直接アタッチされるドライバーであり、フィルターマネージャーは使用しません。 このトピックでは、レガシファイルシステムフィルタードライバーをブロックおよびブロック解除するためのレジストリ設定について説明します。 また、レガシファイルシステムフィルターがブロックされたときにシステムイベントログに入力されたイベントについて説明し、OS でレガシファイルシステムドライバーが実行されているかどうかを確認する方法についても説明します。
 
-<div class="alert">
-<strong>注</strong>最適な信頼性とパフォーマンスは、使用はお勧め<a href="filter-manager-and-minifilter-driver-architecture.md" data-raw-source="[file system minifilter drivers](filter-manager-and-minifilter-driver-architecture.md)">ファイル システム ミニフィルター ドライバー</a>従来のファイル システム フィルター ドライバーの代わりにします。 また、従来のファイル システム フィルター ドライバーは、directaccess (DAX) ボリュームにアタッチできません。 詳細については、ファイル システム ミニフィルター ドライバーは、次を参照してください。<a href="advantages-of-the-filter-manager-model.md" data-raw-source="[Advantages of the Filter Manager Model](advantages-of-the-filter-manager-model.md)">フィルター マネージャー モデルの利点</a>します。 ミニフィルター ドライバーは従来、ドライバーを移植するには、次を参照してください。<a href="guidelines-for-porting-legacy-filter-drivers.md" data-raw-source="[Guidelines for Porting Legacy Filter Drivers](guidelines-for-porting-legacy-filter-drivers.md)">レガシ フィルター ドライバーを移植するためのガイドライン</a>します。
-</div>
- 
+> [!NOTE]
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
-## <a name="span-idhowtoblocklegacydriversspanspan-idhowtoblocklegacydriversspanspan-idhowtoblocklegacydriversspanhow-to-block-legacy-drivers"></a><span id="How_to_block_legacy_drivers"></span><span id="how_to_block_legacy_drivers"></span><span id="HOW_TO_BLOCK_LEGACY_DRIVERS"></span>従来のドライバーをブロックする方法
+## <a name="how-to-block-legacy-drivers"></a>レガシドライバーをブロックする方法
 
+**IoBlockLegacyFsFilters**レジストリキーを使用して、システムがレガシファイルシステムフィルタードライバーをブロックするかどうかを指定します。 ブロックされると、すべてのレガシファイルシステムフィルタードライバーの読み込みがブロックされます。 レジストリの変更を有効にするには、システムの再起動を実行します。
 
-使用して、 **IoBlockLegacyFsFilters**レジストリ キーをシステムが従来のファイル システム フィルター ドライバーをブロックするかどうかを指定します。 ブロックされると、すべてのレガシ ファイル システム フィルター ドライバーの読み込みがブロックされます。 レジストリ変更を有効にするには、システムの再起動を実行します。
-
-次のレジストリ パス、レジストリ キーを作成する必要があります。
+レジストリキーは、次のレジストリパスの下に作成する必要があります。
 
 ``` syntax
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 ```
 
-有効な DWORD の値を**IoBlockLegacyFsFilters**キーは、次のとおり。
+**IoBlockLegacyFsFilters**キーの有効な DWORD 値は次のとおりです。
 
 | **IoBlockLegacyFsFilters**値 | 説明                                                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------|
-| **1**                            | 従来のファイル システム フィルター ドライバーは、読み込みまたは記憶域ボリュームへのアタッチからブロックされます。       |
-| **0**                            | 従来のファイル システム フィルター ドライバーはブロックされません。 このリリースでは、既定の動作です。 |
+| **1**                            | レガシファイルシステムフィルタードライバーは、記憶域ボリュームへの読み込みまたはアタッチがブロックされています。       |
+| **0**                            | レガシファイルシステムフィルタードライバーはブロックされません。 このリリースでは、これが既定の動作です。 |
 
- 
+レジストリエディターでは、次のようなキーが表示されます。
 
-これは、キーがどのようにレジストリ エディターで。
+![ioblocklegacyfsfilters レジストリキーを編集しています。](images/ioblockregkey.png)
 
-![ioblocklegacyfsfilters レジストリ キーを編集します。](images/ioblockregkey.png)
+## <a name="example-when-a-legacy-driver-is-blocked-from-loading"></a>例: レガシドライバーの読み込みがブロックされている場合
 
-## <a name="span-idexamplewhenalegacydriverisblockedfromloadingspanspan-idexamplewhenalegacydriverisblockedfromloadingspanspan-idexamplewhenalegacydriverisblockedfromloadingspanexample-when-a-legacy-driver-is-blocked-from-loading"></a><span id="Example__when__a_legacy_driver_is_blocked_from_loading"></span><span id="example__when__a_legacy_driver_is_blocked_from_loading"></span><span id="EXAMPLE__WHEN__A_LEGACY_DRIVER_IS_BLOCKED_FROM_LOADING"></span>例: 従来のドライバーがブロックされた場合の読み込み
+次に示すように、レガシファイルシステムフィルタードライバーの読み込みがブロックされると、**エラー**イベントがシステムイベントログに記録されます。
 
+| イベントプロパティ | 説明 |
+| -------------- | ----------- |
+| ログの名前       | System      |
+| ソース         | Microsoft-Windows-カーネル-IO |
+| 日付           | 12/29/2015 2:55:05 PM |
+| イベント ID       | 1205         |
+| タスク カテゴリ  | なし         |
+| Level          | エラー        |
+| キーワード       |              |
+| ユーザー           | CONTOSO\user |
+| コンピューター       | user.domain.corp.contoso.com |
+| 説明    | Windows は、レガシファイルシステムフィルターをブロックするように構成されています。 フィルター名: \Driver\sfilter |
 
-**エラー**イベントは、システム イベント ログに記録から読み込み、従来のファイル システム フィルター ドライバーがブロックされたときに次のようにします。
+## <a name="how-to-check-if-legacy-drivers-are-running"></a>レガシドライバーが実行されているかどうかを確認する方法
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">イベント プロパティ</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">ログの名前</td>
-<td align="left">System</td>
-</tr>
-<tr class="even">
-<td align="left">Source</td>
-<td align="left">Microsoft-Windows-Kernel-IO</td>
-</tr>
-<tr class="odd">
-<td align="left">日付</td>
-<td align="left">2015 年 12 月 29 日午後 2時 55分: 05</td>
-</tr>
-<tr class="even">
-<td align="left">イベント ID</td>
-<td align="left">1205</td>
-</tr>
-<tr class="odd">
-<td align="left">タスク カテゴリ</td>
-<td align="left">なし</td>
-</tr>
-<tr class="even">
-<td align="left">レベル</td>
-<td align="left">エラー</td>
-</tr>
-<tr class="odd">
-<td align="left">キーワード</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">ユーザー</td>
-<td align="left">CONTOSO\user</td>
-</tr>
-<tr class="odd">
-<td align="left">コンピューター</td>
-<td align="left">user.domain.corp.contoso.com</td>
-</tr>
-<tr class="even">
-<td align="left">説明</td>
-<td align="left">従来のファイル システム フィルターをブロックするには、Windows が構成されます。 フィルター名: \Driver\sfilter</td>
-</tr>
-</tbody>
-</table>
+どのフィルターがレガシファイルシステムフィルタードライバーであるかがわからない場合、または実行されていないことを確認するには、次の操作を実行します。
 
- 
+1. **Cmd.exe**アイコンを右クリックし、 **[管理者として実行]** をクリックして、管理者特権でのコマンドプロンプトを開きます。
+2. 種類: `fltmc filters`
+3. レガシドライバーを検索します。これは、**フレーム**値が **&lt;レガシ&gt;** のものです。
 
-## <a name="span-idhowtocheckiflegacydriversarerunningspanspan-idhowtocheckiflegacydriversarerunningspanspan-idhowtocheckiflegacydriversarerunningspanhow-to-check-if-legacy-drivers-are-running"></a><span id="How_to_check_if_legacy_drivers_are_running"></span><span id="how_to_check_if_legacy_drivers_are_running"></span><span id="HOW_TO_CHECK_IF_LEGACY_DRIVERS_ARE_RUNNING"></span>従来のドライバーが実行されているかどうかを確認する方法
-
-
-フィルターのレガシ ファイル システム フィルター ドライバーをまたは実行していないことを確認する不明な場合は、次を実行できます。
-
-**従来のファイル システム フィルター ドライバーを実行しているかどうかを確認するには**
-
-1.  右クリックし、管理者特権でコマンド プロンプトを開き、 **cmd.exe**アイコンをクリックすると**管理者として実行**します。
-2.  種類: `fltmc filters`
-3.  従来のドライバーを探して、これらは、あるものを**フレーム**の値 **&lt;レガシ&gt;** します。
-
-この例で AVLegacy EncryptionLegacy、という、従来のファイル システム フィルター ドライバーが付いて、 **&lt;レガシ&gt;** フレームの値。 AVMiniFilter という名前のファイル システム ドライバーがない、 **&lt;レガシ&gt;** ミニフィルター ドライバー (は直接接続、ファイル システム スタックにないと、フィルター マネージャーを使用) であるフレームの値。
+この例では、AVLegacy および EncryptionLegacy という名前のレガシファイルシステムフィルタードライバーは、 **&lt;従来の&gt;** フレーム値でマークされています。 AVMiniFilter という名前のファイルシステムドライバーには、ミニフィルタードライバー (ファイルシステムスタックに直接アタッチされず、フィルターマネージャーを使用) であるため、 **&lt;レガシ&gt;** フレーム値がありません。
 
 ``` syntax
 C:\Windows\system32>fltmc filters
- 
+
 Filter Name                     Num Instances    Altitude    Frame
 ------------------------------  -------------  ------------  -----
 AVLegacy                                        389998.99   <Legacy>
@@ -129,14 +76,6 @@ EncryptionLegacy                                149998.99   <Legacy>
 AVMiniFilter                           3        328000         0
 ```
 
-従来のファイル システム フィルター ドライバーをブロックした後に引き続きレガシ ドライバーが実行されている場合は、設定した後、システムを再起動するように、 **IoBlockLegacyFsFilters**レジストリ キー。 設定には、再起動後はなりません。
+レガシドライバーが実行中であることがわかっている場合は、従来のファイルシステムフィルタードライバーをブロックした後で、 **IoBlockLegacyFsFilters**レジストリキーを設定した後にシステムを再起動してください。 この設定は、再起動後に有効になります。
 
-システムのレガシ ファイル システム フィルター ドライバーの場合、ファイル システム ドライバーのミニフィルターのバージョンを取得するそれぞれの Isv を使用します。 フィルター マネージャー モデルを使用するミニフィルター ドライバーへのレガシ ファイル システム フィルター ドライバーの移植方法の詳細については、次を参照してください。[レガシ フィルター ドライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)します。
-
- 
-
- 
-
-
-
-
+システムでレガシファイルシステムフィルタードライバーが使用されている場合は、それぞれの Isv と連携して、ファイルシステムドライバーのミニフィルターバージョンを取得します。 フィルターマネージャーモデルを使用するミニフィルタードライバーに従来のファイルシステムフィルタードライバーを移植する方法の詳細については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。

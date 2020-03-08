@@ -1,6 +1,6 @@
 ---
-title: IRP ディスパッチルーチンの記述
-description: IRP ディスパッチルーチンの記述
+title: IRP ディスパッチ ルーチンの記述
+description: IRP ディスパッチ ルーチンの記述
 ms.assetid: 8ce88932-cba6-4261-a938-d38133c20355
 keywords:
 - フィルタードライバー WDK ファイルシステム、IRP ディスパッチルーチン
@@ -12,37 +12,31 @@ keywords:
 - Irp WDK ファイルシステム
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3f5128c8b133858d14c514627d849dab3756d3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0cd694852f16cb242e427cb3ccc9e3ce8844e0f9
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840922"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910441"
 ---
-# <a name="writing-irp-dispatch-routines"></a>IRP ディスパッチルーチンの記述
+# <a name="writing-irp-dispatch-routines"></a>IRP ディスパッチ ルーチンの記述
 
-
-## <span id="ddk_writing_irp_dispatch_routines_if"></span><span id="DDK_WRITING_IRP_DISPATCH_ROUTINES_IF"></span>
-
-
-<div class="alert">
-<strong>メモ</strong>  最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、<a href="filter-manager-and-minifilter-driver-architecture.md" data-raw-source="[file system minifilter drivers](filter-manager-and-minifilter-driver-architecture.md)">ファイルシステムミニフィルタードライバー</a>を使用することをお勧めします。 また、レガシファイルシステムフィルタードライバーは、直接アクセス (DAX) ボリュームにアタッチできません。 ファイルシステムミニフィルタードライバーの詳細については、「<a href="advantages-of-the-filter-manager-model.md" data-raw-source="[Advantages of the Filter Manager Model](advantages-of-the-filter-manager-model.md)">フィルターマネージャーモデルの利点</a>」を参照してください。 レガシドライバーをミニフィルタードライバーに移植する方法については、「<a href="guidelines-for-porting-legacy-filter-drivers.md" data-raw-source="[Guidelines for Porting Legacy Filter Drivers](guidelines-for-porting-legacy-filter-drivers.md)">レガシフィルタードライバーを移植するためのガイドライン</a>」を参照してください。
-</div>
- 
+> [!NOTE]
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ファイルシステムフィルタードライバーは、デバイスドライバーで使用されるものと似たディスパッチルーチンを使用します。 *ディスパッチルーチン*は、1つまたは複数の種類の irp を処理します。 (IRP の*種類*は、主要な関数コードによって決まります)。ドライバーの[driverentry](initializing-a-file-system-filter-driver.md)ルーチンは、ディスパッチルーチンのエントリポイントをドライバーオブジェクトのディスパッチテーブルに格納することによって*登録*します。 IRP がドライバーに送信されると、i/o サブシステムは、IRP の主要な関数コードに基づいて適切なディスパッチルーチンを呼び出します。
 
 各 IRP ディスパッチルーチンは、次のように定義されます。
 
 ```cpp
-NTSTATUS 
-(*PDRIVER_DISPATCH) ( 
-    IN PDEVICE_OBJECT DeviceObject, 
-    IN PIRP Irp 
-    ); 
+NTSTATUS
+(*PDRIVER_DISPATCH) (
+    IN PDEVICE_OBJECT DeviceObject,
+    IN PIRP Irp
+    );
 ```
 
-ファイルシステムフィルタードライバーのディスパッチルーチンは、通常、i/o 要求を発生させたスレッドのコンテキスト (通常はユーザーモードのアプリケーションスレッド) で、IRQL パッシブ\_レベルで呼び出されます。 ただし、このルールにはいくつかの例外があります。 たとえば、ページフォールトが発生すると、読み取りおよび書き込みのディスパッチルーチンが IRQL APC\_レベルで呼び出されます。 これらの例外は、[ディスパッチルーチンの IRQL とスレッドコンテキスト](dispatch-routine-irql-and-thread-context.md)の表にまとめられています。 残念ながら、現時点では、フィルターチェーン内のドライバーによって、&gt; パッシブ\_レベル (たとえば、スピンロックや高速ミューテックスの解放に失敗した場合など) に[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)が呼び出されないようにすることはできません。 ただし、フィルターディスパッチルーチンは、呼び出されたのと同じ IRQL で常に**IoCallDriver**を呼び出すことを強くお勧めします。
+ファイルシステムフィルタードライバーのディスパッチルーチンは、通常、ユーザーモードのアプリケーションスレッドである i/o 要求を発生させたスレッドのコンテキストで、IRQL PASSIVE_LEVEL で呼び出されます。 ただし、このルールにはいくつかの例外があります。 たとえば、ページフォールトでは、読み取りおよび書き込みのディスパッチルーチンが IRQL APC_LEVEL で呼び出されます。 これらの例外は、[ディスパッチルーチンの IRQL とスレッドコンテキスト](dispatch-routine-irql-and-thread-context.md)の表にまとめられています。 残念ながら、現時点では、フィルターチェーンのドライバーが IRQL > PASSIVE_LEVEL で[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)を呼び出さないようにすることはできません (たとえば、スピンロックや高速ミューテックスの解放に失敗するなど)。 ただし、フィルターディスパッチルーチンは、呼び出されたのと同じ IRQL で常に**IoCallDriver**を呼び出すことを強くお勧めします。
 
 ディスパッチルーチンは、カーネルモードドライバーアーキテクチャ設計ガイドの「[ドライバーのページング](https://docs.microsoft.com/windows-hardware/drivers/kernel/making-drivers-pageable)を変更する」セクションで説明されている条件を満たす場合に、ページング可能にすることができます。
 
@@ -61,11 +55,3 @@ NTSTATUS
 [ディスパッチルーチンの制約](constraints-on-dispatch-routines.md)
 
 [ディスパッチルーチンの IRQL とスレッドコンテキスト](dispatch-routine-irql-and-thread-context.md)
-
- 
-
- 
-
-
-
-

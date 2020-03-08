@@ -15,12 +15,12 @@ api_type:
 - HeaderDef
 ms.date: 11/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 47faceae0f2f1c87f86db4c8653a80bcf3717976
-ms.sourcegitcommit: bc6a10b69a465787894dc62b50bbf5c6c8225ac6
+ms.openlocfilehash: b55abb049cb8f4a28e73acc8aee2b88303d16812
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73882434"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910475"
 ---
 # <a name="oplock_key_ecp_context-structure"></a>OPLOCK_KEY_ECP_CONTEXT 構造体
 
@@ -43,7 +43,7 @@ Oplock キーの GUID。 この GUID は、異なるハンドル間で共有さ�
 **確保**  
 予約済み。 を0に設定する必要があります。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 ファイルの作成時に ECPs を使用して追加情報をファイルに関連付ける方法については、「 [IRP_MJ_CREATE 操作での追加の作成パラメーターの使用](https://docs.microsoft.com/windows-hardware/drivers/ifs/using-extra-create-parameters-with-an-irp-mj-create-operation)」を参照してください。
 
@@ -55,16 +55,16 @@ Oplock は、ストリームが開かれるときにストリームハンドル�
 
 Oplock キーは、ハンドルが作成されるときにハンドルに関連付けられます。 Oplock が付与されていない場合でも、ハンドルを oplock キーに関連付けることができます。
 
-Oplock キーと oplock キーの詳細については、「 [Oplock セマンティクスの概要](https://docs.microsoft.com/windows-hardware/drivers/ifs/overview)」を参照してください。
+Oplock キーと oplock キーの詳細については、「 [Oplock セマンティクスの概要](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-overview)」を参照してください。
 
 ## <a name="requirements"></a>要件
 
 |   |   |
 | - | - |
 | バージョン | この構造体は Windows 7 以降で使用でき、Windows 8 以降のバージョンでは廃止されています。 |
-| Header | *Ntifs* (Ntifs または Ntddk を含む) |
+| ヘッダー | *Ntifs* (Ntifs または Ntddk を含む) |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [DUAL_OP_LOCK_KEY_ECP_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ifs/dual-oplock-key-ecp-context)
 

@@ -3,51 +3,37 @@ title: IRP と高速 I/O のフィルタリング
 description: IRP と高速 I/O のフィルタリング
 ms.assetid: fad124b0-525d-4ff9-8f2c-3817fc76685c
 keywords:
-- フィルター ドライバー WDK のファイル システム、IRP がフィルター処理
-- ファイル システム フィルター ドライバー WDK、IRP がフィルター処理
-- Irp WDK ファイル システム
-- Irp WDK ファイル システムをフィルター処理
-- 高速の I/O の WDK ファイル システムをフィルター処理
-- WDK のファイル システムをフィルター処理、高速な I/O
-- ファイル システムの I/O の WDK
-- ディスパッチ ルーチン WDK ファイル システム
-- I/O 要求の WDK ファイル システム
+- フィルタードライバー WDK ファイルシステム、IRP フィルター
+- ファイルシステムフィルタードライバー WDK、IRP フィルタリング
+- Irp WDK ファイルシステム
+- Irp WDK ファイルシステムのフィルター処理
+- 高速 i/o WDK ファイルシステムのフィルター処理
+- 簡易 i/o フィルタリング (WDK ファイルシステム)
+- I/o WDK ファイルシステム
+- ディスパッチルーチン WDK ファイルシステム
+- I/o 要求 (WDK ファイルシステム)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84b309bdb20036e4d89a7cd2b6df275bddcd3df3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 468d295adf699c27e54d38c2eb9d047492964249
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380388"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910435"
 ---
 # <a name="filtering-irps-and-fast-io"></a>IRP と高速 I/O のフィルタリング
 
+> [!NOTE]
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
-## <span id="ddk_filtering_irps_and_fast_io_if"></span><span id="DDK_FILTERING_IRPS_AND_FAST_IO_IF"></span>
+ファイルシステムフィルタードライバーは、1つまたは複数のファイルシステムまたはファイルシステムボリュームの i/o 要求をフィルター処理します。 各 i/o 要求は、i/o 要求パケット (IRP) または高速 i/o 要求として表示されます。 Irp は、ドライバーの IRP ディスパッチルーチンによって処理される i/o システム構造です。 高速 i/o 要求は、ドライバーの高速 i/o コールバックルーチンによって処理されます。
 
+フィルタードライバーが初期化されると、その**Driverentry**ルーチンによって、フィルタードライバーの IRP ディスパッチルーチンと高速 i/o コールバックルーチンが登録されます。 これらのルーチンのセットは、フィルタードライバーごとに1つだけ登録できます。
 
-<div class="alert">
-<strong>注</strong>最適な信頼性とパフォーマンスは、使用はお勧め<a href="filter-manager-and-minifilter-driver-architecture.md" data-raw-source="[file system minifilter drivers](filter-manager-and-minifilter-driver-architecture.md)">ファイル システム ミニフィルター ドライバー</a>従来のファイル システム フィルター ドライバーの代わりにします。 また、従来のファイル システム フィルター ドライバーは、directaccess (DAX) ボリュームにアタッチできません。 詳細については、ファイル システム ミニフィルター ドライバーは、次を参照してください。<a href="advantages-of-the-filter-manager-model.md" data-raw-source="[Advantages of the Filter Manager Model](advantages-of-the-filter-manager-model.md)">フィルター マネージャー モデルの利点</a>します。 ミニフィルター ドライバーは従来、ドライバーを移植するには、次を参照してください。<a href="guidelines-for-porting-legacy-filter-drivers.md" data-raw-source="[Guidelines for Porting Legacy Filter Drivers](guidelines-for-porting-legacy-filter-drivers.md)">レガシ フィルター ドライバーを移植するためのガイドライン</a>します。
-</div>
- 
-
-ファイル システム フィルター ドライバーは、ファイル システムまたはファイル システム ボリュームの 1 つまたは複数の I/O 要求をフィルター処理します。 I/O 要求ごとでは、I/O 要求パケット (IRP) または高速の I/O 要求が表示されます。 Irp は、ドライバーの IRP ディスパッチ ルーチンによって処理される I/O システム構造です。 高速の I/O 要求は、ドライバーの高速な I/O コールバック ルーチンによって処理されます。
-
-フィルター ドライバーが初期化されると、その**DriverEntry**ルーチンが、フィルター ドライバーの IRP ディスパッチ ルーチンおよび高速の I/O コールバック ルーチンを登録します。 フィルター ドライバーごとにこれらのルーチンのセットを 1 つだけを登録することができます。
-
-Irp の種類によって、高速の I/O 対応していくつかの高速の I/O 要求 IRP の相当します。 ただし、Irp がさまざまな種類の高速な I/O できません I/O を処理します。 また、特定の特殊化された高速な I/O ルーチンは、IRP を作成しなくても、キャッシュ マネージャーまたはメモリ マネージャーのファイル システム リソースを preacquire に使用されます。 そのため、ほとんどの場合、Irp や高速の I/O 要求で実行する個別のロールの I/O 操作。
+一部の種類の Irp は、高速 i/o に相当します。また、一部の高速 i/o 要求には、対応する IRP があります。 しかし、Irp は、高速 i/o ではできないさまざまな種類の i/o を処理します。 また、特定の特化した高速 i/o ルーチンを使用して、IRP を作成せずに、キャッシュマネージャーまたはメモリマネージャーのファイルシステムリソースを事前に取得します。 そのため、ほとんどの場合、Irp と高速 i/o 要求は i/o 操作で個別のロールを実行します。
 
 このセクションでは、次のトピックについて説明します。
 
-[Irp が高速な I/O によって異なる](irps-are-different-from-fast-i-o.md)
+[Irp は、高速 i/o とは異なります。](irps-are-different-from-fast-i-o.md)
 
-[ファイル システム フィルター ドライバーのデバイス オブジェクトの種類](types-of-device-objects-used-by-file-system-filter-drivers.md)
-
- 
-
- 
-
-
-
-
+[ファイルシステムフィルタードライバーデバイスオブジェクトの種類](types-of-device-objects-used-by-file-system-filter-drivers.md)

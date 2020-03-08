@@ -3,7 +3,7 @@ title: FSCTL_REQUEST_OPLOCK 制御コード
 description: FSCTL\_要求\_OPLOCK 制御コードは、ファイルに対して便宜的ロック (oplock) を要求するか、oplock の解除が発生したことを確認します。
 ms.assetid: a36f2a13-d450-4903-b999-6ba574ab3f6e
 keywords:
-- FSCTL_REQUEST_OPLOCK 制御コードのインストール可能なファイルシステムドライバー
+- FSCTL_REQUEST_OPLOCK コントロールコードのインストール可能なファイルシステムドライバー
 topic_type:
 - apiref
 api_name:
@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183ea154d8e53243c22056c5532349e0a71451a5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5dd7c871d8eea9311ba3cfd5bcde9317a9d0084d
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841255"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910387"
 ---
 # <a name="fsctl_request_oplock-control-code"></a>FSCTL\_要求\_OPLOCK 制御コード
 
@@ -45,7 +45,7 @@ IRP\_MJ\_ファイル\_システム\_CONTROL FSCTL 要求の IRP へのポイン
 関連付けられた oplock 操作のビットマスク。 ファイルシステムまたはフィルタードライバーは、ビットを設定して[**FsRtlOplockFsctrlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrlex)の動作を指定します。 *Flags*パラメーターには、次のオプションがあります。
 
 <a href="" id="oplock-fsctrl-flag-all-keys-match--0x00000001-"></a>OPLOCK\_FSCTRL\_フラグ\_すべての\_\_キーに一致する (0x00000001)  
-現在開いているハンドルですべての便宜的ロックキーが一致することをファイルシステムが検証したことを示します。 このフラグを指定することにより、oplock パッケージは、ファイルに対して複数の開いているハンドルが存在する場合に、レベル RW または RWH の oplock を与えることができます。 Oplock の種類の詳細については、「[概要](https://docs.microsoft.com/windows-hardware/drivers/ifs/overview)」を参照してください。
+現在開いているハンドルですべての便宜的ロックキーが一致することをファイルシステムが検証したことを示します。 このフラグを指定することにより、oplock パッケージは、ファイルに対して複数の開いているハンドルが存在する場合に、レベル RW または RWH の oplock を与えることができます。 Oplock の種類の詳細については、「[概要](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-overview)」を参照してください。
 
 <a name="status-block"></a>ステータス ブロック
 ------------
@@ -65,7 +65,7 @@ IRP\_MJ\_ファイル\_システム\_CONTROL FSCTL 要求の IRP へのポイン
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>あります</strong></p></td>
+<td align="left"><p><strong>STATUS_PENDING</strong></p></td>
 <td align="left"><p>Oplock が付与されました。 これは成功コードです。</p></td>
 </tr>
 <tr class="even">
@@ -91,13 +91,13 @@ IRP\_MJ\_ファイル\_システム\_CONTROL FSCTL 要求の IRP へのポイン
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
+<td align="left"><p>ヘッダー</p></td>
 <td align="left">Ntifs (Ntifs または Fltkernel .h を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 
 [**FsRtlOplockFsctrlEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtloplockfsctrlex)

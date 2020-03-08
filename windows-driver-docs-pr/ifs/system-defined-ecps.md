@@ -4,49 +4,49 @@ description: システム定義の ECP
 ms.assetid: 6acb4be4-a7aa-431d-b2d8-3ef6d41cb4ef
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ea2cd09d4295e932faca4413802c036e2e840d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 85b9b23152e693824c6f0092315e8074762a571a
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371310"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910472"
 ---
 # <a name="system-defined-ecps"></a>システム定義の ECP
 
 
-オペレーティング システムで次の ECPs の定義、 *Ntifs.h*ヘッダー ファイル。 これらのシステム定義の ECPs に指定した追加情報をアタッチする、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)ファイルを操作します。 ファイル システム スタックの要素の追加情報について ECPs を照会できます。
+オペレーティングシステムでは、 *Ntifs*ヘッダーファイルに次の ecps が定義されています。 これらのシステム定義の ECPs は、指定された追加情報を、ファイルに対する[**IRP\_MJ\_CREATE**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)操作にアタッチします。 ファイルシステムスタックの要素は、追加情報を ECPs に照会できます。
 
-通常、フィルター処理、 [ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)ファイルしまで下にあるフィルター ファイルのアタッチし、次のいずれかになりすます必要がありますいないパスの操作システム定義に ECPs、 **IRP\_MJ\_作成**ファイルで操作します。 処理し、IRP を発行するカーネル モード ドライバーに同様に、\_MJ\_ファイルに対する操作を作成する必要がありますいないアタッチし、IRP を次のシステム定義 ECPs のいずれかになりすます\_MJ\_作成操作で、ファイル。 次のシステム定義 ECPs は読み取り専用です。 それらを使用して、情報のみを取得する必要があります。
+通常、 [**irp\_\_MJ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)を処理してファイルに対して作成操作を実行し、その下のフィルターにファイルを渡すフィルターは、ファイルに対する**irp\_MJ\_CREATE**操作に、次のシステム定義の ecps をアタッチしてスプーフィングする必要があります。 同様に、IRP\_MJ を処理および発行するカーネルモードドライバーは、ファイルに対して作成操作を実行\_、次のシステム定義のすべての ECPs を、IRP\_MJ\_ファイルに対する作成操作にアタッチして偽装することはできません。 次のシステム定義の ECPs は読み取り専用です。 情報を取得するためにのみ使用する必要があります。
 
-1 つの例外が次のシステム定義 ECPs のいずれかをアタッチするフィルター ドライバーを制限することには、フィルター ドライバーは、階層型ファイル システムを実装している場合です。 これは、ファイル オブジェクトを所有し、独自に発行して[ **IRP\_MJ\_作成**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create) IRP への応答でそのフィルターの下のファイルに対する操作\_MJ\_ファイル フィルター ドライバーは、独自のファイル オブジェクトのサービスを作成する操作。 フィルター ドライバーがこのような ECP コンテキスト構造体のリストを反映する必要があります (ECP\_リスト) 元の IRP から\_MJ\_IRP のファイルの作成操作\_MJ\_作成操作をフィルター ドライバーその下の問題です。 これらの ECP リストを伝達することで、フィルター ドライバーにより、IRP を発行するフィルターの下のすべてのフィルター\_MJ\_作成操作は元の IRP のコンテキストを認識\_MJ\_作成操作です。
+フィルタードライバーが次のシステム定義の ECPs のいずれかをアタッチしないように制限する例外の1つは、フィルタードライバーがレイヤーファイルシステムを実装する場合です。 これを行うには、ファイルオブジェクトを所有し、独自の[**irp\_\_MJ**](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)を発行して、そのフィルターの下にあるファイルに対して、IRP\_MJ\_create 操作に応答して、そのファイルオブジェクトでフィルタードライバーがサービスを実行することによって、ファイルオブジェクトを所有します。 このようなフィルタードライバーは、ファイルに対する元の IRP\_MJ\_作成操作から、フィルタードライバーによって発行された IRP\_MJ\_CREATE 操作に、すべての ECP コンテキスト構造リスト (ECP\_リスト) を伝達する必要があります。 これらの ECP リストを伝達することにより、フィルタードライバーは、IRP\_MJ\_CREATE 操作を発行するフィルターの下にあるフィルターが、元の IRP\_MJ\_CREATE 操作のコンテキストを認識していることを確認します。
 
 <span id="GUID_ECP_OPLOCK_KEY"></span><span id="guid_ecp_oplock_key"></span>GUID\_ECP\_OPLOCK\_キー  
-識別する GUID、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-key-ecp-context)構造体であり、oplock のキーをファイルを開く要求にアタッチするために使用します。 Oplock キーには、アプリケーションのアプリケーションの oplock を損なうことがなく、同じストリームへの複数のハンドルを開くことができます。
+[ **\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-key-ecp-context)構造を識別する GUID。この GUID を使用して、oplock キーが open file 要求にアタッチされます。 Oplock キーを使用すると、アプリケーション独自の oplock を損なうことなく、同じストリームに対して複数のハンドルを開くことができます。
 
-各 oplock と oplock のキーの詳細については、次を参照してください。 [Oplock セマンティクス概要](overview.md)します。
+Oplock キーと oplock キーの詳細については、「 [Oplock セマンティクスの概要](oplock-overview.md)」を参照してください。
 
-<span id="GUID_ECP_NETWORK_OPEN_CONTEXT"></span><span id="guid_ecp_network_open_context"></span>GUID\_ECP\_ネットワーク\_オープン\_コンテキスト  
-識別する GUID、 [**ネットワーク\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff550896)構造体し、ネットワーク リダイレクターの余分な情報をアタッチするために使用します。 この GUID も識別、 [**ネットワーク\_オープン\_ECP\_コンテキスト\_V0** ](https://msdn.microsoft.com/library/windows/hardware/ff550899)ドライバーが Windows 7 および以降のバージョンで動作するための構造Windows および Windows Vista に存在するファイルをネットワーク ECP コンテキストを解釈する必要があります。
+<span id="GUID_ECP_NETWORK_OPEN_CONTEXT"></span><span id="guid_ecp_network_open_context"></span>GUID\_ECP\_ネットワーク\_開いている\_コンテキスト  
+ネットワーク\_を識別する GUID [ **\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff550896)構造を開き、ネットワークリダイレクターの追加情報をアタッチするために使用されます。 また、この GUID は、windows 7 以降のバージョンの Windows で実行され、Windows Vista 上に存在するファイルでネットワーク ECP コンテキストを解釈する必要があるドライバーに対して、 [ **\_ECP\_コンテキスト\_V0 構造を開くネットワーク\_** ](https://msdn.microsoft.com/library/windows/hardware/ff550899)も識別します。
 
-<span id="GUID_ECP_PREFETCH_OPEN"></span><span id="guid_ecp_prefetch_open"></span>GUID\_ECP\_プリフェッチ\_開く  
-識別する GUID、 [**プリフェッチ\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff551843)構造体。
+<span id="GUID_ECP_PREFETCH_OPEN"></span><span id="guid_ecp_prefetch_open"></span>\_プリフェッチ\_の GUID\_ECP  
+[ **\_ECP\_コンテキスト構造を開く\_のプリフェッチ**](https://msdn.microsoft.com/library/windows/hardware/ff551843)を識別する GUID。
 
-プリフェッチャは、ディスク アクセスをより効率的に行うし、パフォーマンスが向上するには、キャッシュ マネージャーとメモリ マネージャーと緊密に統合されているオペレーティング システムのコンポーネントです。 その他のコンポーネントに干渉プリフェッチャ場合、システムのパフォーマンスが低下し、デッドロックの可能性があります。 プリフェッチャがプリフェッチをアタッチするため、\_開く\_ECP\_コンテキスト通信プリフェッチャがファイルで、オープンの要求を実行するために、ファイル構造体。 このオープン要求がで指定された、**コンテキスト**プリフェッチのメンバー\_開く\_ECP\_コンテキスト。 その他のコンポーネントでは、次のように、ファイル システム フィルター ドライバー、プリフェッチするかどうかを調べる\_オープン\_ECP\_ファイルとし、適切なアクションを実行するコンテキストが接続されています。
+Prefetcher は、キャッシュマネージャーおよびメモリマネージャーと緊密に統合されているオペレーティングシステムのコンポーネントであり、ディスクへのアクセス効率を高め、パフォーマンスを向上させます。 他のコンポーネントが prefetcher に干渉する場合、システムのパフォーマンスが低下し、デッドロックが発生する可能性があります。 このため、prefetcher は\_ECP\_コンテキスト構造を開いているプリフェッチ\_をファイルにアタッチして、ファイルに対して開いている要求を prefetcher が実行することを通知します。 このオープンな要求は、\_ECP\_コンテキスト\_開いているプリフェッチの**コンテキスト**メンバーによって指定されます。 ファイルシステムフィルタードライバーなどの他のコンポーネントでは、プリフェッチ\_開いている\_ECP\_コンテキストがファイルに添付されているかどうかを判断し、適切なアクションを実行できます。
 
-<span id="GUID_ECP_NFS_OPEN"></span><span id="guid_ecp_nfs_open"></span>GUID\_ECP\_NFS\_開く  
-識別する GUID、 [ **NFS\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff550942)構造体。 Network File System (NFS) サーバー、NFS をアタッチします\_開く\_ECP\_ファイルを開く要求にコンテキストの構造体。 NFS サーバーは、NFS サーバーはクライアント要求を満たすために、すべてのファイルを開く要求で、この GUID を使用します。 ファイル システム スタックを確認できるかどうか NFS\_開く\_ECP\_コンテキストが開いているファイルの要求に添付します。 NFS の情報に基づいて\_オープン\_ECP\_コンテキスト、ファイル システム スタックは、ファイルが開かれることを要求したクライアントを判断できますとその理由です。
+<span id="GUID_ECP_NFS_OPEN"></span><span id="guid_ecp_nfs_open"></span>\_NFS\_の GUID\_ECP  
+[ **\_ECP\_コンテキスト構造を開く\_NFS**](https://msdn.microsoft.com/library/windows/hardware/ff550942)を識別する GUID。 ネットワークファイルシステム (NFS) サーバーは、開いているファイル要求に対して、\_ECP\_の\_開いている NFS をアタッチします。 Nfs サーバーは、NFS サーバーがクライアント要求を満たすために使用するすべての開いているファイル要求で、この GUID を使用します。 その後、ファイルシステムスタックは、\_ECP\_コンテキストが開いているファイルの要求にアタッチされて\_いるかどうかを確認できます。 NFS の情報に基づいて\_ECP\_コンテキストを開く\_、ファイルシステムスタックは、ファイルのオープンを要求したクライアントとその理由を特定できます。
 
-<span id="GUID_ECP_SRV_OPEN"></span><span id="guid_ecp_srv_open"></span>GUID\_ECP\_SRV\_開く  
-識別する GUID、 [ **SRV\_オープン\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/ff556749)構造体。 サーバーが、SRV をアタッチします\_開く\_ECP\_ファイルを開く要求にコンテキストの構造体。 サーバーは、条件付きのクライアント要求を満たすために、サーバーを使用するすべてのファイルを開く要求でこの GUID を使用します。 ファイル システム スタックを確認できるかどうか SRV\_開く\_ECP\_コンテキストが開いているファイルの要求に添付します。 SRV の情報に基づいて\_オープン\_ECP\_コンテキスト、ファイル システム スタックは、ファイルが開かれることを要求したクライアントを判断できますとその理由です。
+<span id="GUID_ECP_SRV_OPEN"></span><span id="guid_ecp_srv_open"></span>\_ECP\_SRV\_開いている GUID  
+[ **\_ECP\_コンテキスト構造を開く\_SRV**](https://msdn.microsoft.com/library/windows/hardware/ff556749)を識別する GUID。 サーバーは、開いているファイル要求に対して\_ECP\_コンテキスト構造を開いている\_SRV をアタッチします。 サーバーは、条件付きクライアント要求を満たすためにサーバーが行うすべての開いているファイル要求で、この GUID を使用します。 その後、ファイルシステムスタックは、SRV\_開いている\_ECP\_コンテキストが open file 要求にアタッチされているかどうかを判断できます。 SRV の情報に基づいて\_ECP\_コンテキストを開く\_、ファイルシステムスタックは、ファイルのオープンを要求したクライアントとその理由を特定できます。
 
-<span id="GUID_ECP_DUAL_OPLOCK_KEY"></span><span id="guid_ecp_dual_oplock_key"></span>GUID\_ECP\_デュアル\_OPLOCK\_キー  
-識別する GUID、 [**デュアル OPLOCK\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/dual-oplock-key-ecp-context)構造体。 ように、 [ **OPLOCK\_キー\_ECP\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-key-ecp-context)構造、**デュアル OPLOCK\_キー\_ECP\_コンテキスト**oplock のキーをファイルを開く要求にアタッチするために使用します。 **デュアル OPLOCK\_キー\_ECP\_コンテキスト**、ただし、親キーも設定できますターゲット ファイルのディレクトリに oplock を提供します。
+<span id="GUID_ECP_DUAL_OPLOCK_KEY"></span><span id="guid_ecp_dual_oplock_key"></span>GUID\_ECP\_2\_OPLOCK\_キー  
+[ **\_ECP\_コンテキスト構造の2つの\_キー**](https://docs.microsoft.com/windows-hardware/drivers/ifs/dual-oplock-key-ecp-context)を識別する GUID。 [**Oplock\_キー\_ecp\_コンテキスト**](https://docs.microsoft.com/windows-hardware/drivers/ifs/oplock-key-ecp-context)構造と同様に、**デュアル oplock\_キー\_ecp\_context**を使用して、open file 要求に oplock キーをアタッチします。 **\_キー\_ECP\_コンテキスト**では、親キーを設定して、ターゲットファイルのディレクトリに対して oplock を指定することもできます。
 
 <span id="GUID_ECP_IO_DEVICE_HINT"></span><span id="guid_ecp_io_device_hint"></span>GUID\_ECP\_IO\_デバイス\_ヒント  
-識別する GUID、 **IO\_デバイス\_ヒント\_ECP\_コンテキスト**構造体。 デバイスのヒントは、新しいデバイスを再解析対象の追跡プロバイダー ミニフィルター ドライバーの名前を支援するために使用されます。
+**IO\_デバイス\_ヒント\_ECP\_コンテキスト**構造を識別する GUID。 デバイスヒントは、新しいデバイスへの再解析ターゲットを追跡するときに、名前プロバイダーのミニフィルタードライバーを支援するために使用されます。
 
-<span id="GUID_ECP_NETWORK_APP_INSTANCE"></span><span id="guid_ecp_network_app_instance"></span>GUID\_ECP\_ネットワーク\_アプリ\_インスタンス  
-識別する GUID、 [**ネットワーク\_アプリ\_インスタンス\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/hh439443)構造体。 フェールオーバー クラスター内のクライアント アプリケーションでは、クラスター内のノードで開いたファイルのセットがあります。 インスタンス識別子で、ファイル オブジェクトをアプリケーションにタグが付けられた、**ネットワーク\_アプリ\_インスタンス\_ECP\_コンテキスト**構造体。 フェールオーバー時は、セカンダリ ノードは、開いているファイルを以前にキャッシュされたアプリケーションのインスタンス識別子を使用するクライアント アプリケーションのアクセスを検証できます。
+<span id="GUID_ECP_NETWORK_APP_INSTANCE"></span><span id="guid_ecp_network_app_instance"></span>\_ネットワーク\_アプリ\_インスタンスの GUID\_ECP  
+[**ネットワーク\_アプリ\_インスタンス\_ECP\_コンテキスト**](https://msdn.microsoft.com/library/windows/hardware/hh439443)構造を識別する GUID。 フェールオーバークラスター内のクライアントアプリケーションは、クラスター内のノードで開かれた一連のファイルを持つことができます。 ファイルオブジェクトは、**ネットワーク\_アプリ\_インスタンス\_ECP\_コンテキスト**構造のインスタンス識別子によってアプリケーションにタグ付けされます。 フェールオーバーでは、セカンダリノードは、以前にキャッシュされたアプリケーションインスタンス識別子を使用して、開いているファイルへのクライアントアプリケーションのアクセスを検証できます。
 
  
 

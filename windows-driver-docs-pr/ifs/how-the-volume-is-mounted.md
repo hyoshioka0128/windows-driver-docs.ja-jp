@@ -9,17 +9,17 @@ keywords:
 - ボリューム WDK ファイルシステム、マウント
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0cfddf9d0de893b2bc37a30fa6276de95d1937d
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: e2811ce791586f419b957cc574eb151a8f047a47
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128494"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910437"
 ---
 # <a name="how-the-volume-is-mounted"></a>ボリュームのマウント方法
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、[ファイルシステムミニフィルタードライバー](filter-manager-and-minifilter-driver-architecture.md)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ボリュームが[認識され](how-the-volume-is-recognized.md)た後、ボリュームがマウントされる方法は、ファイルシステムと、以前にボリュームがマウントされているかどうかによって異なります。
 

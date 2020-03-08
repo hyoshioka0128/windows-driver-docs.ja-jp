@@ -3,23 +3,23 @@ title: C++ の数値と演算子
 description: C++ の数値と演算子
 ms.assetid: e5d3ac7f-fd79-48bb-b927-9ad72570dcbe
 keywords:
-- 式では、C++ 式の構文
-- C++ の式、数値
-- C++ の式、演算子
+- 式、 C++式の構文
+- C++式、数値
+- C++式、演算子
 - 数値式、C++
-- C++ の演算子
-- 優先順位の規則 (C++)
+- 通信C++
+- 優先順位規則C++()
 - メソッド
 - メソッド、構文
 - クラスのメンバー
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ed27e35ac9226f05d5dd2cdc59b41026f73ab7
-ms.sourcegitcommit: 6dff49ca5880466c396be5b889c44481dfed44ec
+ms.openlocfilehash: 01c862f6f1d0d3b49c5286ea47a7a4356ca40bd8
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67161450"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910392"
 ---
 # <a name="c-numbers-and-operators"></a>C++ の数値と演算子
 
@@ -27,51 +27,51 @@ ms.locfileid: "67161450"
 ## <span id="ddk_c_numbers_and_operators_dbg"></span><span id="DDK_C_NUMBERS_AND_OPERATORS_DBG"></span>
 
 
-C++ の式パーサーには、C++ 式の構文のすべての形式がサポートしています。 (ポインター、浮動小数点数、および配列を含む) すべてのデータ型とすべての C++ 単項および二項演算子、構文が含まれます。
+式C++パーサーでは、すべてのC++形式の式構文がサポートされます。 構文には、すべてのデータ型 (ポインター、浮動小数点数、および配列を含む) C++と、すべての単項演算子と二項演算子が含まれます。
 
-### <a name="span-idnumbersincexpressionsspanspan-idnumbersincexpressionsspannumbers-in-c-expressions"></a><span id="numbers_in_c___expressions"></span><span id="NUMBERS_IN_C___EXPRESSIONS"></span>C++ の式内の番号
+### <a name="span-idnumbers_in_c___expressionsspanspan-idnumbers_in_c___expressionsspannumbers-in-c-expressions"></a><span id="numbers_in_c___expressions"></span><span id="NUMBERS_IN_C___EXPRESSIONS"></span>式のC++数値
 
-C++ の式内の番号は、別の方法でそれらを指定しない限りの 10 進数として解釈されます。 16 進数の整数を指定する追加**0 x**番号の前にします。 8 進数の整数を指定する追加**0**番号の前に (0)。
+式のC++数値は、別の方法で指定しない限り、10進数として解釈されます。 16進数の整数を指定するには、数値の前に**0x**を追加します。 8進数の整数を指定するには、数値の前に**0** (ゼロ) を追加します。
 
-既定のデバッガーの基数は、C++ の式を入力する方法には影響しません。 2 進数を直接入力することはできません (C++ の式内での MASM 式の入れ子にしてを除く)。
+既定のデバッガー基数は、式の入力C++方法には影響しません。 2つの数値を直接入力することはできません ( C++式内に MASM 式を入れ子にする場合を除きます)。
 
-16 進数の 64 ビット値を入力することができます、 <em>xxxxxxxx</em> **\`** <em>xxxxxxxx</em>形式。 (アクサン グラーブ記号を省略することもできます ( **\`** ).)両方の形式は、同じ値を生成します。
+\`<em>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</em><em>形式の</em>16 進数の64ビット値を入力できます。 (アクサングラーブ ( **\`** ) を省略することもできます)。どちらの形式でも同じ値が生成されます。
 
-使用することができます、 **L**、 **U**と**I64**サフィックスを整数値を使用します。 作成される数の実際のサイズは、サフィックスと、入力した番号に依存します。 この解釈の詳細については、C++ 言語のリファレンスを参照してください。
+整数値では、 **L**、 **U**、および**I64**の各サフィックスを使用できます。 作成される数値の実際のサイズは、入力したサフィックスと番号によって異なります。 この解釈の詳細については、 C++ 「言語リファレンス」を参照してください。
 
-*出力*C++ の式エバリュエーターが式の C++ 規則を指定するデータ型を保持します。 ただし、コマンドの引数としてこの式を使用する場合、キャスト常に行われます。 たとえば、コマンド引数内のアドレスとして使用している場合は、ポインターに整数値をキャストする必要はありません。 式の値は、お持ちのお客様、整数またはポインターにキャストできません、構文エラーが発生します。
+式エバリュエーターのC++出力には、 C++式ルールで指定されているデータ型が保持されます。 ただし、この式をコマンドの引数として使用すると、常にキャストが行われます。 たとえば、コマンド引数でアドレスとして使用されている場合、整数値をポインターにキャストする必要はありません。 式の値を整数またはポインターに対して有効なキャストできない場合、構文エラーが発生します。
 
-使用することができます、 **0n**一部 (10 進数) のプレフィックス*出力*が、C++ 式の入力に使用することはできません。
+一部の*出力*には**0n** (10 進数) プレフィックスを使用できますが、式入力C++には使用できません。
 
-### <a name="span-idcharactersandstringsincexpressionsspanspan-idcharactersandstringsincexpressionsspancharacters-and-strings-in-c-expressions"></a><span id="characters_and_strings_in_c___expressions"></span><span id="CHARACTERS_AND_STRINGS_IN_C___EXPRESSIONS"></span>文字と C++ の式の文字列
+### <a name="span-idcharacters_and_strings_in_c___expressionsspanspan-idcharacters_and_strings_in_c___expressionsspancharacters-and-strings-in-c-expressions"></a><span id="characters_and_strings_in_c___expressions"></span><span id="CHARACTERS_AND_STRINGS_IN_C___EXPRESSIONS"></span>式に含まC++れる文字と文字列
 
-文字を入力するには、単一引用符 (') で囲みます。 C++ の標準のエスケープ文字が許可されます。
+単一引用符 (') で囲んで文字を入力できます。 標準C++のエスケープ文字を使用できます。
 
-リテラル文字列を入力するには、二重引用符 (") で囲みます。 使用することができます **\\"** このような文字列内のエスケープ シーケンスとして。 ただし、文字列なしにとって意味を持つ、[式エバリュエーター](evaluating-expressions.md)します。
+文字列リテラルは、二重引用符 (") で囲んで入力できます。 **\\"** は、このような文字列内のエスケープシーケンスとして使用できます。 ただし、文字列は[式エバリュエーター](evaluating-expressions.md)には意味がありません。
 
-### <a name="span-idsymbolsincexpressionsspanspan-idsymbolsincexpressionsspansymbols-in-c-expressions"></a><span id="symbols_in_c___expressions"></span><span id="SYMBOLS_IN_C___EXPRESSIONS"></span>C++ の式内のシンボル
+### <a name="span-idsymbols_in_c___expressionsspanspan-idsymbols_in_c___expressionsspansymbols-in-c-expressions"></a><span id="symbols_in_c___expressions"></span><span id="SYMBOLS_IN_C___EXPRESSIONS"></span>式にC++含まれる記号
 
-C++ の式では、各シンボルはその型に従って解釈されます。 によって、シンボルが参照する対象、整数、データ構造体、関数ポインター、またはその他の任意のデータ型として解釈可能性があります。 C++ 式の中で (変更されていないモジュール名) など、C++ データ型に対応していないシンボルを使用する場合は、構文エラーが発生します。
+C++式では、各記号はその型に従って解釈されます。 シンボルが参照する内容に応じて、整数、データ構造体、関数ポインター、またはその他のデータ型として解釈される場合があります。 C++式内のC++データ型 (変更されていないモジュール名など) に対応しないシンボルを使用すると、構文エラーが発生します。
 
-場合は、シンボルが不明確な場合、モジュール名と感嘆符を追加することができます ( **!** ) または記号の前に感嘆符のみです。 シンボルの認識の詳細については、次を参照してください。[シンボルの構文と一致するシンボル](symbol-syntax-and-symbol-matching.md)します。
+シンボルがあいまいになる可能性がある場合は、モジュール名と感嘆符 ( **!** )、または記号の前にある感嘆符だけを指します。 シンボル認識の詳細については、「[シンボルの構文と記号の一致](symbol-syntax-and-symbol-matching.md)」を参照してください。
 
-アクサン グラーブを使用することができます ( **\`** ) またはアポストロフィ ( **'** ) 感嘆符シンボル名の前に、モジュール名を追加する場合にのみ、シンボル名。
+シンボル名の前にモジュール名と感嘆符を追加した場合にのみ、シンボル名にアクサングラーブ ( **\`** ) またはアポストロフィ ( **'** ) を使用できます。
 
-追加すると、 **&lt;** と **&gt;** 区切り記号テンプレート名の後に、これらの区切り記号の間にスペースを追加することができます。
+テンプレート名の後に **&lt;** と **&gt;** の区切り記号を追加すると、これらの区切り記号の間にスペースを追加できます。
 
-### <a name="span-idoperatorsincexpressionsspanspan-idoperatorsincexpressionsspanoperators-in-c-expressions"></a><span id="operators_in_c___expressions"></span><span id="OPERATORS_IN_C___EXPRESSIONS"></span>C++ の式の演算子
+### <a name="span-idoperators_in_c___expressionsspanspan-idoperators_in_c___expressionsspanoperators-in-c-expressions"></a><span id="operators_in_c___expressions"></span><span id="OPERATORS_IN_C___EXPRESSIONS"></span>式のC++演算子
 
-常に、かっこを使用して、優先順位の規則を上書きすることができます。
+常にかっこを使用して、優先順位規則をオーバーライドできます。
 
-C++ の式の一部をかっこで囲み、2 つのアットを追加する場合 ( **@@** )、式の前に、式が MASM 式の規則に従って解釈されます。 アット マークから 2 つと左かっこの間にスペースを追加することはできません。 この式の最終的な値は、C++ の式エバリュエーターに ULONG64 値として渡されます。 使用して、式エバリュエーターを指定することもできます **@@c+ ([...])。** または **@@masm([...])** .
+式のC++一部をかっこで囲み、式の前に2つのアット記号 ( **@@** ) を追加した場合、この式は MASM の式の規則に従って解釈されます。 2つのアット記号と左かっこの間にスペースを追加することはできません。 この式の最終的な値は、ULONG64 値C++として式エバリュエーターに渡されます。 式エバリュエーターは、 **@@c+ + (...)** または **@@masm(.** ..) を使用して指定することもできます。
 
-データ型は、通常どおり、C++ 言語で示されます。 配列を示す記号 ( **\[ \]** )、ポインターのメンバー ( **- &gt;** )、UDT のメンバー (**します。** )、およびクラスのメンバー ( **::** ) はすべて認識します。 代入演算子と副作用の演算子を含む、すべての算術演算子をサポートします。 ただし、使用することはできません、**新しい**、**削除**、および**スロー**演算子、およびするにより実際に、関数が呼び出すことはできません。
+データ型は、 C++言語で通常どおりに示されます。 配列 ( **\[ \]** )、ポインターメンバー ( **-&gt;** )、UDT メンバー () を示すシンボル **。** )、およびクラス ( **::** ) のメンバーがすべて認識されます。 代入演算子と副作用演算子を含む、すべての算術演算子がサポートされています。 ただし、 **new**、 **delete**、および**throw**演算子は使用できません。実際に関数を呼び出すことはできません。
 
-オフセットが正しく拡大縮小およびポインターの算術演算がサポートされます。 関数ポインターへのオフセットを追加できないことに注意してください。 (関数ポインターにオフセットを追加する場合は、キャスト文字ポインターのオフセットまず。)
+ポインター演算がサポートされており、オフセットが正しくスケーリングされています。 関数ポインターにオフセットを追加することはできません。 (関数ポインターにオフセットを追加する必要がある場合は、最初にオフセットを文字ポインターにキャストします)。
 
-C++ では、ように、無効なデータ型で演算子を使用する場合は、構文エラーが発生します。 デバッガーの C++ 式パーサーがほとんどの C++ コンパイラよりも少し緩和された規則を使用しますが、すべての主要な規則が適用されます。 たとえば、整数以外の値を移動することはできません。
+C++と同様に、無効なデータ型の演算子を使用すると、構文エラーが発生します。 デバッガーのC++式パーサーでは、ほとんどC++のコンパイラよりもやや緩やかなルールが使用されますが、すべての主要なルールが適用されます。 たとえば、整数以外の値をシフトすることはできません。
 
-次の演算子を使用することができます。 各セルに演算子は、下のセルよりも優先されます。 同じセルで演算子が同じ優先順位の左から右に解析されます。 式の評価は、C++ と同様、その値がわかっている場合を終了します。 この終了などの式を効果的に使用できます。 **?? myPtr & & \*myPtr**します。
+次の演算子を使用できます。 各セルの演算子は、下位のセルの演算子よりも優先されます。 同じセル内の演算子は同じ優先順位を持ち、左から右に解析されます。 とC++同様に、式の評価は値がわかっている場合に終了します。 このようにすることで、 **myptr \*&** のよう & な式を効果的に使用できるようになります。
 
 <table>
 <colgroup>
@@ -87,174 +87,175 @@ C++ では、ように、無効なデータ型で演算子を使用する場合�
 <tbody>
 <tr class="odd">
 <td align="left"><p><em>式</em> <strong>//</strong> <em>コメント</em></p></td>
-<td align="left"><p>後続のすべてのテキストを無視します。</p></td>
+<td align="left"><p>後続のテキストをすべて無視する</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>クラス</em> <strong>:。</strong><em>Member</em></p>
-<p><em>クラス</em> <strong>:: ~</strong><em>メンバー</em></p>
-<p><strong>::</strong><em>名前</em></p></td>
+<td align="left"><p><em>Class</em> <strong>::</strong> <em>Member</em></p>
+<p><em>Class</em> <strong>:: ~</strong><em>Member</em></p>
+<p><strong>::</strong> <em>名前</em></p></td>
 <td align="left"><p>クラスのメンバー</p>
-<p>クラス (デストラクター) のメンバー</p>
+<p>クラスのメンバー (デストラクター)</p>
 <p>グローバル</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>構造体</em><strong>します。</strong> <em>フィールド</em></p>
-<p><em>ポインター</em> <strong>- &gt;</strong> <em>フィールド</em></p>
-<p><em>Name</em> <strong>[</strong><em>integer</em><strong>]</strong></p>
-<p><em>LValue</em> <strong>++</strong></p>
-<p><em>LValue</em> <strong>--</strong></p>
-<p><strong>dynamic_cast &lt;</strong><em>type</em><strong>&gt;(</strong><em>Value</em><strong>)</strong></p>
-<p><strong>static_cast &lt;</strong><em>type</em><strong>&gt;(</strong><em>Value</em><strong>)</strong></p>
-<p><strong>reinterpret_cast &lt;</strong><em>type</em><strong>&gt;(</strong><em>Value</em><strong>)</strong></p>
-<p><strong>const_cast &lt;</strong> <em>型</em><strong>&gt;(</strong><em>値</em><strong>)</strong></p></td>
-<td align="left"><p>構造内のフィールド</p>
-<p>参照先の構造体のフィールド</p>
+<td align="left"><p><em>構造体</em> <strong>。</strong> <em>フィールド</em></p>
+<p><em>ポインター</em> <strong>-&gt;</strong> <em>フィールド</em></p>
+<p><em>名前</em> <strong>[</strong><em>整数</em><strong>]</strong></p>
+<p><em>左辺</em>値の<strong>++</strong></p>
+<p><em>左辺</em>値の<strong>--</strong></p>
+<p><strong>dynamic_cast &lt;</strong><em>型</em><strong>&gt;(</strong><em>値</em><strong>)</strong></p>
+<p><strong>static_cast &lt;</strong><em>型</em><strong>&gt;(</strong><em>値</em><strong>)</strong></p>
+<p><strong>reinterpret_cast &lt;</strong><em>型</em><strong>&gt;(</strong><em>値</em><strong>)</strong></p>
+<p><strong>const_cast &lt;</strong><em>型</em><strong>&gt;(</strong><em>値</em><strong>)</strong></p></td>
+<td align="left"><p>構造体のフィールド</p>
+<p>参照された構造体のフィールド</p>
 <p>配列の添字</p>
-<p>増分 (後の評価)</p>
-<p>デクリメント (後の評価)</p>
-<p>(常に実行されます) を型キャスト</p>
-<p>(常に実行されます) を型キャスト</p>
-<p>(常に実行されます) を型キャスト</p>
-<p>(常に実行されます) を型キャスト</p></td>
+<p>インクリメント (評価後)</p>
+<p>デクリメント (評価後)</p>
+<p>型キャスト (常に実行される)</p>
+<p>型キャスト (常に実行される)</p>
+<p>型キャスト (常に実行される)</p>
+<p>型キャスト (常に実行される)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>(</strong><em>型</em><strong>)</strong> <em>値</em></p>
-<p><strong>sizeof</strong> <em>value</em></p>
-<p><strong>sizeof(</strong> <em>type</em> <strong>)</strong></p>
-<p><strong>++</strong> <em>LValue</em></p>
-<p><strong>--</strong> <em>LValue</em></p>
+<p><strong>sizeof</strong> <em>値</em></p>
+<p><strong>sizeof (</strong> <em>型</em> <strong>)</strong></p>
+<p><strong>++</strong> <em>左辺</em>値</p>
+<p><strong>--</strong> <em>左辺</em>値</p>
 <p><strong>~</strong> <em>値</em></p>
-<p><strong>\!</strong> <em>値</em></p>
+<p><strong>!</strong> <em>値</em></p>
 <p><em>値</em></p>
-<p><strong>+</strong> <em>値</em></p>
-<p><strong>&</strong> <em>LValue</em></p>
-<p><strong><em></strong> <em>値</em></p></td>
-<td align="left"><p>(常に実行されます) を型キャスト</p>
+<p><strong>+</strong><em>値</em></p>
+<p><strong>&</strong> <em>左辺</em>値</p>
+<p><strong><em></strong><em>値</em></p></td>
+<td align="left"><p>型キャスト (常に実行される)</p>
 <p>式のサイズ</p>
 <p>データ型のサイズ</p>
-<p>(評価) の前にインクリメント</p>
-<p>(評価) の前にデクリメントします。</p>
+<p>インクリメント (評価前)</p>
+<p>デクリメント (評価前)</p>
 <p>ビット補数</p>
-<p>しない (ブール値)</p>
+<p>Not (ブール値)</p>
 <p>単項マイナス</p>
 <p>単項プラス</p>
 <p>データ型のアドレス</p>
-<p>逆参照します。</p></td>
+<p>間接</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>構造体</em><strong>します。 <em></strong> <em>ポインター</em></p>
-<p><em>ポインター</em> <strong>- &gt;  *</strong> <em>ポインター</em></p></td>
+<td align="left"><p><em>構造体</em><strong>。 <em></strong><em>ポインター</em></p>
+<p><em>ポインター</em> <strong>-&gt; *</strong> <em>ポインター</em></p></td>
 <td align="left"><p>構造体のメンバーへのポインター</p>
-<p>参照先の構造体のメンバーへのポインター</p></td>
+<p>参照された構造体のメンバーへのポインター</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>値</em> <strong> </em></strong> <em>値</em></p>
-<p><em>Value</em> <strong>/</strong> <em>Value</em></p>
-<p><em>Value</em> <strong>%</strong> <em>Value</em></p></td>
-<td align="left"><p>乗算</p>
+<td align="left"><p><em>値</em><strong></em></strong><em>値</em></p>
+<p><em>値</em> <strong>/</strong> <em>値</em></p>
+<p><em>値</em> <strong>%</strong> <em>値</em></p></td>
+<td align="left"><p>数学</p>
 <p>Division (部門)</p>
 <p>剰余</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>値</em> <strong> +</strong> <em>値</em></p>
-<p><em>値</em> <strong> -</strong> <em>値</em></p></td>
-<td align="left"><p>追加</p>
+<td align="left"><p><em>値</em> <strong>+</strong>の<em>値</em></p>
+<p><em>値</em> <strong>-</strong>の<em>値</em></p></td>
+<td align="left"><p>加わっ</p>
 <p>減算</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>値</em> <strong>&lt; &lt;</strong> <em>値</em></p>
-<p><em>値</em> <strong>&gt; &gt;</strong> <em>値</em></p></td>
-<td align="left"><p>ビットごとのシフト左</p>
-<p>適切なビットごとのシフト</p></td>
+<td align="left"><p><em>値</em> <strong>&lt;&lt;</strong> <em>値</em></p>
+<p><em>値</em> <strong>&gt;&gt;</strong> <em>値</em></p></td>
+<td align="left"><p>ビットごとのシフト (左)</p>
+<p>ビットごとのシフト右</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>Value</em> <strong>&lt;</strong> <em>Value</em></p>
-<p><em>値</em> <strong>&lt; =</strong> <em>値</em></p>
-<p><em>Value</em> <strong>&gt;</strong> <em>Value</em></p>
-<p><em>値</em> <strong>&gt; =</strong> <em>値</em></p></td>
-<td align="left"><p>(比較) より小さい</p>
-<p>小さい以上 (比較)</p>
-<p>(比較) より大きい</p>
-<p>大きい以上 (比較)</p></td>
+<td align="left"><p><em>値</em> <strong>&lt;</strong> <em>値</em></p>
+<p><em>値</em> <strong>&lt;=</strong> <em>値</em></p>
+<p><em>値</em> <strong>&gt;</strong> <em>値</em></p>
+<p><em>値</em> <strong>&gt;=</strong> <em>値</em></p></td>
+<td align="left"><p>より小さい (比較)</p>
+<p>以下 (比較)</p>
+<p>より大きい (比較)</p>
+<p>以上 (比較)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>Value</em> <strong>==</strong> <em>Value</em></p>
+<td align="left"><p><em>値</em> <strong>==</strong> <em>値</em></p>
 <p><em>値</em> <strong>! =</strong> <em>値</em></p></td>
 <td align="left"><p>等しい (比較)</p>
 <p>等しくない (比較)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>Value</em> <strong>&</strong> <em>Value</em></p></td>
+<td align="left"><p><em>値</em> <strong>&</strong> <em>値</em></p></td>
 <td align="left"><p>ビットごとの AND</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>Value</em> <strong>^</strong> <em>Value</em></p></td>
+<td align="left"><p><em>値</em> <strong>^</strong> <em>値</em></p></td>
 <td align="left"><p>ビットごとの XOR (排他的 OR)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>Value</em> <strong>|</strong> <em>Value</em></p></td>
+<td align="left"><p><em>値</em> <strong>|</strong> <em>値</em></p></td>
 <td align="left"><p>ビットごとの OR</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>Value</em> <strong>&&</strong> <em>Value</em></p></td>
+<td align="left"><p><em>値</em> <strong>&&</strong> <em>値</em></p></td>
 <td align="left"><p>論理 AND</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>Value</em> <strong>||</strong> <em>Value</em></p></td>
+<td align="left"><p><em>値</em> <strong>||</strong> <em>値</em></p></td>
 <td align="left"><p>論理 OR</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>LValue</em> <strong>=</strong><em>Value</em></p>
-<p><em>LValue</em> <strong></em>=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>/=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>%=</strong><em>Value</em></p>
-<p><em>LValue</em> <strong>+=</strong><em>Value</em></p>
-<p><em>LValue</em> <strong>-=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>&lt;&lt;=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>&gt;&gt;=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>&=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>|=</strong> <em>Value</em></p>
-<p><em>LValue</em> <strong>^=</strong> <em>Value</em></p></td>
-<td align="left"><p>割り当てる</p>
-<p>乗算して代入.</p>
-<p>除算して代入</p>
-<p>剰余を割り当てると</p>
+<td align="left">
+<p><em>左辺</em>値<strong>=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>*=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>/=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>%=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>+=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>-=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>&lt;&lt;=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>&gt;&gt;=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>&=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>|=</strong> <em>値</em></p>
+<p><em>左辺</em>値<strong>^=</strong> <em>値</em></p></td>
+<td align="left"><p>割り当て</p>
+<p>乗算して代入</p>
+<p>分割して割り当てる</p>
+<p>剰余と代入</p>
 <p>追加して割り当てる</p>
 <p>減算して代入</p>
-<p>左にシフトし、割り当てる</p>
-<p>右にシフトして、割り当てる</p>
-<p>して割り当てる</p>
-<p>または割り当てます</p>
-<p>XOR と割り当て</p></td>
+<p>左にシフトして割り当てる</p>
+<p>右へシフトして割り当てる</p>
+<p>AND と assign</p>
+<p>または、割り当て</p>
+<p>XOR と代入</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>値</em><strong>でしょうか。</strong> <em>値</em> <strong>:</strong><em>値</em></p></td>
+<td align="left"><p><em>値</em> <strong>?</strong> <em>値</em> <strong>:</strong> <em>値</em></p></td>
 <td align="left"><p>条件付き評価</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>値</em> <strong>、</strong> <em>値</em></p></td>
-<td align="left"><p>すべての値を評価し、右端の値を除くすべてを破棄し、</p></td>
+<td align="left"><p><em>Value</em> <strong>、</strong> <em>value</em></p></td>
+<td align="left"><p>すべての値を評価し、右端の値以外はすべて破棄します</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idregistersandpseudoregistersincexpressionsspanspan-idregistersandpseudoregistersincexpressionsspanregisters-and-pseudo-registers-in-c-expressions"></a><span id="registers_and_pseudo_registers_in_c___expressions"></span><span id="REGISTERS_AND_PSEUDO_REGISTERS_IN_C___EXPRESSIONS"></span>レジスタと C++ の式での擬似レジスタ
+### <a name="span-idregisters_and_pseudo_registers_in_c___expressionsspanspan-idregisters_and_pseudo_registers_in_c___expressionsspanregisters-and-pseudo-registers-in-c-expressions"></a><span id="registers_and_pseudo_registers_in_c___expressions"></span><span id="REGISTERS_AND_PSEUDO_REGISTERS_IN_C___EXPRESSIONS"></span>式でのC++レジスタと擬似レジスタ
 
-レジスタと C++ の式内の擬似レジスタを使用することができます。 追加する必要があります、アット マーク ( **@** ) 登録または擬似レジスタの前にします。
+式内でC++は、レジスタと擬似レジスタを使用できます。 レジスタまたは擬似レジスタの前にアットマーク ( **@** ) を追加する必要があります。
 
-式エバリュエーターでは、適切なキャストが自動的に実行します。 実際のレジスタおよび整数値の擬似レジスタは、ULONG64 にキャストされます。 すべてのアドレスは、PUCHAR にキャスト **$thread** ETHREAD にキャストされます\*、 **$proc** 」プロセスにキャスト\*、 **$teb** TEBにキャスト\*、および **$peb** PEB にキャスト\*します。
+式エバリュエーターは、自動的に適切なキャストを実行します。 実際のレジスタと整数値の擬似レジスタは ULONG64 にキャストされます。 すべてのアドレスが PUCHAR にキャストされます。 **$thread**は ethread\*にキャストされ **$PROC**は ethread\*にキャストされ、 **$teb**は teb\*にキャストされ、$peb は peb\*に**キャストされ**ます。
 
-登録または擬似レジスタ割り当てまたは副作用演算子によってを変更することはできません。 使用する必要があります、 [ **r (レジスタ)** ](r--registers-.md)これらの値を変更するコマンド。
+代入演算子または副作用演算子によってレジスタまたは擬似レジスタを変更することはできません。 これらの値を変更するには、 [**r (レジスタ)** ](r--registers-.md)コマンドを使用する必要があります。
 
-レジスタおよび擬似レジスタの詳細については、次を参照してください。[登録構文](register-syntax.md)と[擬似レジスタ構文](pseudo-register-syntax.md)します。
+レジスタと擬似レジスタの詳細については、「 [Register 構文](register-syntax.md)」と「[擬似レジスタ構文](pseudo-register-syntax.md)」を参照してください。
 
-### <a name="span-idmacrosincexpressionsspanspan-idmacrosincexpressionsspanmacros-in-c-expressions"></a><span id="macros_in_c___expressions"></span><span id="MACROS_IN_C___EXPRESSIONS"></span>C++ の式内のマクロ
+### <a name="span-idmacros_in_c___expressionsspanspan-idmacros_in_c___expressionsspanmacros-in-c-expressions"></a><span id="macros_in_c___expressions"></span><span id="MACROS_IN_C___EXPRESSIONS"></span>マクロ ( C++式の)
 
-C++ の式内のマクロを使用することができます。 シャープ記号を追加する必要があります (\#)、マクロの前にします。
+マクロは、式のC++中で使用できます。 マクロの前に番号記号 (\#) を追加する必要があります。
 
-次のマクロを使用することができます。 これらのマクロは、同じ名前の Microsoft Windows マクロとして同じの定義を指定します。 (Windows マクロは、Winnt.h で定義されます)。
+次のマクロを使用できます。 これらのマクロは、同じ名前を持つ Microsoft Windows マクロと同じ定義を持ちます。 (Windows マクロは、Winnt.h で定義されています)。
 
 <table>
 <colgroup>
@@ -269,28 +270,28 @@ C++ の式内のマクロを使用することができます。 シャープ記
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>#CONTAINING_RECORD (<em>アドレス</em>、<em>型</em>、<em>フィールド</em>)</p></td>
-<td align="left"><p>構造体の種類と、構造内のフィールドのアドレス指定構造体のインスタンスのベース アドレスを返します。</p></td>
+<td align="left"><p>#CONTAINING_RECORD (<em>Address</em>、 <em>Type</em>、 <em>Field</em>)</p></td>
+<td align="left"><p>構造体の型と構造体内のフィールドのアドレスを指定して、構造体のインスタンスのベースアドレスを返します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>#数値フィールド オフセット (<em>型</em>、<em>フィールド</em>)。</p></td>
-<td align="left"><p>既知の構造体の型では、名前付きフィールドのバイト オフセットを返します。</p></td>
+<td align="left"><p>#FIELD_OFFSET (<em>型</em>、<em>フィールド</em>)</p></td>
+<td align="left"><p>既知の構造体型の名前付きフィールドのバイトオフセットを返します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>#RTL_CONTAINS_FIELD (<em>構造体</em>、<em>サイズ</em>、<em>フィールド</em>)</p></td>
-<td align="left"><p>指定したバイト サイズが、必要なフィールドを含むかどうかを示します。</p></td>
+<td align="left"><p>指定されたバイトサイズに必要なフィールドが含まれているかどうかを示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>#RTL_FIELD_SIZE (<em>型</em>、<em>フィールド</em>)</p></td>
-<td align="left"><p>フィールドの型を必要とせず、既知の型の構造体のフィールドのサイズを返します。</p></td>
+<td align="left"><p>フィールドの型を必要としない、既知の型の構造体のフィールドのサイズを返します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>#RTL_NUMBER_OF(<em>Array</em>)</p></td>
-<td align="left"><p>静的にサイズの配列内の要素の数を返します。</p></td>
+<td align="left"><p>#RTL_NUMBER_OF (<em>配列</em>)</p></td>
+<td align="left"><p>静的にサイズ設定された配列内の要素の数を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>#RTL_SIZEOF_THROUGH_FIELD (<em>型</em>、<em>フィールド</em>)</p></td>
-<td align="left"><p>指定したフィールドも含めてを既知の型の構造体のサイズを返します。</p></td>
+<td align="left"><p>指定されたフィールドを含む、既知の型の構造体のサイズを返します。</p></td>
 </tr>
 </tbody>
 </table>

@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 10ca74747da95df1881856c430c48f6a0ebbe102
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: 785c11da3aca5d2c757d8526fc2fafa6b29c5204
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072237"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910381"
 ---
 # <a name="flt_parameters-for-irp_mj_query_ea-union"></a>IRP_MJ_QUERY_EA 共用体の FLT_PARAMETERS
 
@@ -62,7 +62,7 @@ typedef union _FLT_PARAMETERS {
 拡張属性リストのスキャンを開始する位置のエントリのインデックス。 操作の FLT_IO_PARAMETER_BLOCK 構造で SL_INDEX_SPECIFIED フラグが設定されていない場合、または**Ealist**が空でないリストを指している場合、このパラメーターは無視されます。
 
 **EaBuffer**  
-拡張属性値が返される、呼び出し元が指定した[**FILE_FULL_EA_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)構造の出力バッファーへのポインター。 このメンバーは省略可能であり、MDL が**Mdladdress**に指定されている場合は NULL にすることができます。 「**解説**」を参照してください。
+拡張属性値が返される、呼び出し元が指定した[**FILE_FULL_EA_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)構造の出力バッファーへのポインター。 このメンバーは省略可能であり、MDL が**Mdladdress**に指定されている場合は**NULL**にすることができます。 「**解説**」を参照してください。
 
 **MdlAddress**  
 **EaBuffer**が指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは省略可能であり、 **EaBuffer**でバッファーが指定されている場合は**NULL**にすることができます。 「**解説**」を参照してください。

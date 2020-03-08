@@ -22,17 +22,17 @@ keywords:
 - FsRec
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d74d4861ea0b386f03c5257644192517663ef373
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 740187d7bdfa5770d7bde74d6804beb9c7cc643d
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128470"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910443"
 ---
 # <a name="what-happens-to-file-systems-during-system-boot"></a>システム起動時のファイル システムの状態
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、[ファイルシステムミニフィルタードライバー](filter-manager-and-minifilter-driver-architecture.md)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ファイルシステムは、システムの起動プロセス中に初期化されます。具体的には、i/o システムの初期化中に発生します。 I/o マネージャーは、グローバルファイルシステムキューを作成し、オペレーティングシステム (OS) ローダーと PnP マネージャーによって読み込まれたファイルシステムとレガシフィルタードライバーを初期化します。
 

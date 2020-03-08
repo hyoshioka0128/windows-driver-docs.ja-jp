@@ -19,17 +19,17 @@ keywords:
 - ブート開始ドライバー WDK ファイルシステム
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eaab9ad4ffc1ecd107dade126a9fa3b13152fee6
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 101f4ddb8d7fa6f255808551bbc91738ea1c974d
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128465"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910445"
 ---
 # <a name="what-determines-when-a-driver-is-loaded"></a>ドライバーのロード時期の決定方法
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、[ファイルシステムミニフィルタードライバー](filter-manager-and-minifilter-driver-architecture.md)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 システムのブートシーケンス中にファイルシステムドライバーが読み込まれるタイミングと方法を調べる前に、ドライバーの開始の種類と読み込み順序のグループについて理解しておく必要があります。
 
