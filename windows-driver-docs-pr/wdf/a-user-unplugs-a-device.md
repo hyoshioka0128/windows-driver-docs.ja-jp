@@ -1,6 +1,6 @@
 ---
-title: デバイスを Unplugs するユーザー
-description: デバイスを Unplugs するユーザー
+title: ユーザーがデバイスを取り外す
+description: ユーザーがデバイスを取り外す
 ms.assetid: 85e69401-0128-4641-aa0f-fd7c4f22f395
 keywords:
 - PnP WDK KMDF、取り外しデバイス
@@ -14,13 +14,13 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e03da077748558cedb46da32145f2e56847aaf46
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841672"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402532"
 ---
-# <a name="a-user-unplugs-a-device"></a>デバイスを Unplugs するユーザー
+# <a name="a-user-unplugs-a-device"></a>ユーザーがデバイスを取り外す
 
 
 システムが実行されている間、ユーザーは2つの方法のいずれかでデバイスを削除できます。*つまり、デバイス*が削除されようとしていることをシステムに通知します (たとえば、プラグまたは取り出しハードウェアプログラムを使用して)。または、*突然削除*することによって、ユーザーがシステムに通知せずにデバイスを unplugs することになります。 バスで突然の削除 (USB など) がサポートされている場合、デバイスのドライバーはデバイスの突然の消失を処理できる必要があります。
@@ -43,7 +43,7 @@ ms.locfileid: "72841672"
 
 3.  ハードウェアとドライバーが DMA をサポートしている場合、フレームワークは、作成された各 DMA チャネルに対して、ドライバーの[*EvtDmaEnablerSelfManagedIoStop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_selfmanaged_io_stop)、 [*EvtDmaEnablerFlush*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_flush)、および[*EvtDmaEnablerDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/nc-wdfdmaenabler-evt_wdf_dma_enabler_disable)のコールバック関数 (存在する場合) を呼び出します。
 
-4.  フレームワークは、ドライバーの[*EvtDeviceD0ExitPreInterruptsDisabled*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit_pre_interrupts_disabled) callback 関数 (存在する場合) を呼び出し、各割り込みに対してドライバーの[*EvtInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)コールバック関数 (存在する場合) を呼び出して、ドライバーが無効にできるようにします。デバイスの割り込み。
+4.  フレームワークは、ドライバーの[*EvtDeviceD0ExitPreInterruptsDisabled*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit_pre_interrupts_disabled) callback 関数 (存在する場合) を呼び出し、各割り込みに対してドライバーの[*EvtInterruptDisable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_disable)コールバック関数 (存在する場合) を呼び出して、ドライバーがデバイスの割り込みを無効にできるようにします。
 
 5.  フレームワークは、ドライバーの[*EvtDeviceD0Exit*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_exit)コールバック関数 (存在する場合) を呼び出します。
 
@@ -79,7 +79,7 @@ ms.locfileid: "72841672"
 
 9.  ドライバーが自己管理型 i/o を使用している場合、フレームワークは、ドライバーの[*Evtdeviceselfmanagediocleanup*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_self_managed_io_cleanup)コールバック関数を呼び出します。
 
-デバイスは、いつでも予期せず削除される可能性があることに注意してください。 したがって、フレームワークは、前の手順で示したのとは別の方法で、ドライバーの[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) callback 関数を呼び出す場合があります。 たとえば、ユーザーが[低電力状態に入っ](a-device-enters-a-low-power-state.md)ている間にデバイスを予期せず unplugs た場合、フレームワークは[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) callback 関数を呼び出した後に[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) callback 関数を呼び出す可能性があります. [*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)コールバック関数は、それが特定のシーケンスで呼び出されることを前提としてコーディングしないでください。
+デバイスは、いつでも予期せず削除される可能性があることに注意してください。 したがって、フレームワークは、前の手順で示したのとは別の方法で、ドライバーの[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) callback 関数を呼び出す場合があります。 たとえば、ユーザーが[低電力状態に入っ](a-device-enters-a-low-power-state.md)ている間にデバイスを予期せず unplugs た場合、フレームワークは[*EvtDeviceReleaseHardware*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_release_hardware) callback 関数を呼び出した後に[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) callback 関数を呼び出す可能性があります。 [*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)コールバック関数は、それが特定のシーケンスで呼び出されることを前提としてコーディングしないでください。
 
 さらに、このフレームワークは、デバイスの[*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal)コールバック関数と、そのデバイスの前の手順で示されているコールバック関数を同期しません。 したがって、 [*EvtDeviceSurpriseRemoval*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_surprise_removal) callback 関数は、前述のコールバック関数が実行されている間に実行される可能性があります。
 

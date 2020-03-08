@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d152ede92254bf463182300c9a9c2f6c167b6669
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837021"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402430"
 ---
 # <a name="creating-a-resource-manager"></a>リソース マネージャーの作成
 
@@ -59,7 +59,7 @@ ms.locfileid: "72837021"
 
 8.  トランザクション通知の受信を有効にします。
 
-    リソースマネージャーは[**Zwgetnotificationresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)を呼び出して通知を同期的に取得できます。または、 [**Tmenablecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)を呼び出して、 *ResourceManagerNotification*コールバックルーチンを登録し、通知を利用できます。
+    リソースマネージャーは[**Zwgetnotificationresourcemanager**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ntgetnotificationresourcemanager)を呼び出して通知を同期的に取得できます。または、 [**Tmenablecallbacks**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-tmenablecallbacks)を呼び出して、通知が使用可能になるたびに KTM が呼び出す*ResourceManagerNotification*コールバックルーチンを登録できます。
 
 9.  クライアントからのサービスリソースへのアクセス要求ですが、変更は永続的ではありません。
 
@@ -96,7 +96,7 @@ ms.locfileid: "72837021"
 
 リソースマネージャーで**ZwReadOnlyEnlistment**を呼び出す必要がある理由は2つあります。
 
--   リソースマネージャーがトランザクションに参加しています。トランザクションを受信する前に、コミット通知\_通知\_トランザクションを受け取ると、リソースマネージャーは、トランザクションのコミットに参加する必要がなくなったと判断します。運用.
+-   リソースマネージャーがトランザクションに参加しています。トランザクションを受信する前に、コミット通知\_通知\_トランザクションを受け取ると、リソースマネージャーは、トランザクションのコミット操作に参加する必要がなくなったと判断します。
 
     たとえば、リソースマネージャーがトランザクションを受信して、通知を準備\_通知\_場合、トランザクションの操作によってリソースマネージャーのデータベースが変更されていないと判断されることがあります。 リソースマネージャーは、 **ZwZwReadOnlyEnlistment complete**の代わりにを呼び出して、トランザクションから自身を削除できます。
 
