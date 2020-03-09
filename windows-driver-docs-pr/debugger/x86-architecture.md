@@ -4,18 +4,18 @@ description: x86 アーキテクチャ
 ms.assetid: 42c62647-7c9a-496e-839f-91283db73a29
 keywords:
 - x86 プロセッサ、アーキテクチャ
-- レジスタ、x86 プロセッサ
-- x86 プロセッサを登録します
-- x86 プロセッサ、呼び出し規則
+- x86 プロセッサ上のレジスタ
+- x86 プロセッサ、レジスタ
+- x86 プロセッサ、呼び出し規約
 - x86 プロセッサ、データ型
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7da158a055960451e60d2275f2b26333db1fadc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381914"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402332"
 ---
 # <a name="x86-architecture"></a>x86 アーキテクチャ
 
@@ -23,15 +23,15 @@ ms.locfileid: "63381914"
 ## <span id="ddk_x86_architecture_dbg"></span><span id="DDK_X86_ARCHITECTURE_DBG"></span>
 
 
-Intel x86 プロセッサでは、大量の汎用レジスタではなく、専用のレジスタの適度な数があることを意味する複雑な命令セット コンピューター (CISC) アーキテクチャを使用します。 また、複雑な手順については特別な用途は predominate することも意味します。
+Intel x86 プロセッサでは、複雑な命令セットコンピューター (CISC) アーキテクチャが使用されています。つまり、大量の汎用レジスタではなく、特別な用途のレジスタがいくつか存在します。 また、複雑な特別な命令を優位にすることもできます。
 
-X86 プロセッサでは、その遺産を少なくともトレースは、8 ビット intel 8080 プロセッサをバックアップします。 多くの特殊命令セットがそのプロセッサ (とその新た Z-80 バリアントで) は、旧バージョンとの互換性のためには、x86。
+X86 プロセッサは、少なくとも8ビット Intel 8080 プロセッサと比べて、そのようなものをトレースします。 X86 命令セットの多くの問題は、そのプロセッサとの下位互換性 (および Zilog の Z-80 variant) によるものです。
 
-使用して x86 プロセッサを Microsoft Win32 *32 ビット フラット モード*します。 このドキュメントでは、フラット モードのみ焦点を当てます。
+Microsoft Win32 では、 *32 ビットのフラットモード*で x86 プロセッサを使用します。 このドキュメントでは、フラットモードのみに焦点を当てています。
 
-### <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>レジスタ
+### <a name="span-idregistersspanspan-idregistersspanspan-idregistersspanregisters"></a><span id="Registers"></span><span id="registers"></span><span id="REGISTERS"></span>Register
 
-X86 アーキテクチャは、次の特権のない整数で構成されますが登録されます。
+X86 アーキテクチャは、次の特権のない整数レジスタで構成されています。
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ X86 アーキテクチャは、次の特権のない整数で構成されます�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ebx</strong></p></td>
-<td align="left"><p>登録を基本します。</p></td>
+<td align="left"><p>基本レジスタ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ecx</strong></p></td>
@@ -53,30 +53,30 @@ X86 アーキテクチャは、次の特権のない整数で構成されます�
 </tr>
 <tr class="even">
 <td align="left"><p><strong>edx</strong></p></td>
-<td align="left"><p>データ レジスタが使用できる I/O ポートへのアクセスおよび算術関数</p></td>
+<td align="left"><p>データレジスタ-i/o ポートアクセスと算術関数に使用できます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>esi</strong></p></td>
-<td align="left"><p>ソース インデックス レジスタ</p></td>
+<td align="left"><p>ソースインデックスレジスタ</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>edi</strong></p></td>
-<td align="left"><p>ターゲット インデックス レジスタ</p></td>
+<td align="left"><p><strong>修飾子</strong></p></td>
+<td align="left"><p>コピー先のインデックスレジスタ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ebp</strong></p></td>
-<td align="left"><p>基本ポインター レジスタ</p></td>
+<td align="left"><p>ベースポインターレジスタ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>esp</strong></p></td>
-<td align="left"><p>スタック ポインター</p></td>
+<td align="left"><p>スタックポインター</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-すべての整数レジスタは、32 ビットです。 ただし、それらの多くは 16 ビットまたは 8 ビット subregisters があります。
+すべての整数レジスタは32ビットです。 ただし、その多くには、16ビットまたは8ビットのサブレジスタがあります。
 
 <table>
 <colgroup>
@@ -85,81 +85,81 @@ X86 アーキテクチャは、次の特権のない整数で構成されます�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Ax</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>eax</strong></p></td>
+<td align="left"><p><strong>ax</strong></p></td>
+<td align="left"><p><strong>Eax</strong>の下位16ビット</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bx</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>ebx</strong></p></td>
+<td align="left"><p><strong>Ebx</strong>の下位16ビット</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>cx</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>ecx</strong></p></td>
+<td align="left"><p><strong>シリーズ</strong></p></td>
+<td align="left"><p><strong>Ecx</strong>の下位16ビット</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dx</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>edx</strong></p></td>
+<td align="left"><p><strong>Edx</strong>の下位16ビット</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>si</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>esi</strong></p></td>
+<td align="left"><p><strong>Esi</strong>の下位16ビット</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>di</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>edi</strong></p></td>
+<td align="left"><p>下位16ビットの<strong>edi</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bp</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>ebp</strong></p></td>
+<td align="left"><p>低16ビットの<strong>ebp</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>sp</strong></p></td>
-<td align="left"><p>16 ビットを低<strong>esp</strong></p></td>
+<td align="left"><p><strong>プロセッサー</strong></p></td>
+<td align="left"><p>低16ビットの<strong>esp</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Al</strong></p></td>
-<td align="left"><p>8 ビットの低<strong>eax</strong></p></td>
+<td align="left"><p><strong>ウムアルクラ</strong></p></td>
+<td align="left"><p><strong>Eax</strong>の下位8ビット</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ah</strong></p></td>
-<td align="left"><p>上位の 8 ビット<strong>ax</strong></p></td>
+<td align="left"><p>高8ビットの<strong>ax</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>bl</strong></p></td>
-<td align="left"><p>8 ビットの低<strong>ebx</strong></p></td>
+<td align="left"><p><strong>Ebx</strong>の低8ビット</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>bh</strong></p></td>
-<td align="left"><p>上位の 8 ビット<strong>bx</strong></p></td>
+<td align="left"><p>高8ビットの<strong>bx</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>cl</strong></p></td>
-<td align="left"><p>8 ビットの低<strong>ecx</strong></p></td>
+<td align="left"><p><strong>付い</strong></p></td>
+<td align="left"><p><strong>Ecx</strong>の低8ビット</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ch</strong></p></td>
-<td align="left"><p>上位の 8 ビット<strong>cx</strong></p></td>
+<td align="left"><p><strong>ハーフ</strong></p></td>
+<td align="left"><p>高8ビットの<strong>cx</strong></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>dl</strong></p></td>
-<td align="left"><p>8 ビットの低<strong>edx</strong></p></td>
+<td align="left"><p><strong>Edx</strong>の下位8ビット</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>dh</strong></p></td>
-<td align="left"><p>上位の 8 ビット<strong>dx</strong></p></td>
+<td align="left"><p>高8ビットの<strong>dx</strong></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Subregister のみと、subregister の外側の部分のいずれも、subregister で動作に影響します。 格納するなど、 **ax**レジスタの上位 16 ビットのまま、 **eax**変更なしに登録します。
+Subregister での操作は、subregister にのみ影響し、サブレジスタの外部にあるパーツは一切影響を及ぼしません。 たとえば、 **ax**レジスタに格納すると、 **eax**レジスタの上位16ビットが変更されずに残ります。
 
-使用する場合、 [**でしょうか。(式の評価)** ](---evaluate-expression-.md)コマンド、レジスタは"at"記号を付ける必要があります ( **@** )。 たとえば、使用する必要があります<strong>でしょうか。@ax</strong> なく **? ax**します。 これにより、デバッガーが認識している**ax**シンボルではなくレジスタとして。
+を使用する場合[ **(式の評価)** ](---evaluate-expression-.md)コマンドでは、登録の先頭に "at" 記号 ( **@** ) を付ける必要があります。 たとえば、? **ax**ではなく、 <strong>? @ax</strong>を使用する必要があります。 これにより、デバッガーは、シンボルではなくレジスタとして**ax**を認識します。
 
-ただし、(@) では必要ありません、 [ **r (レジスタ)** ](r--registers-.md)コマンド。 たとえば、 **r ax = 5**常に正しく解釈されます。
+ただし、 [**r (レジスタ)** ](r--registers-.md)コマンドでは、(@) は必要ありません。 たとえば、 **r ax = 5**は常に正しく解釈されます。
 
-その他の 2 つのレジスタは、プロセッサの現在の状態に対して重要です。
+他の2つのレジスタは、プロセッサの現在の状態にとって重要です。
 
 <table>
 <colgroup>
@@ -172,7 +172,7 @@ Subregister のみと、subregister の外側の部分のいずれも、subregis
 <td align="left"><p>命令ポインター</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>flags</strong></p></td>
+<td align="left"><p><strong>示す</strong></p></td>
 <td align="left"><p>flags</p></td>
 </tr>
 </tbody>
@@ -180,43 +180,43 @@ Subregister のみと、subregister の外側の部分のいずれも、subregis
 
  
 
-命令ポインターは、実行されている命令のアドレスです。
+命令ポインターは、実行される命令のアドレスです。
 
-フラグ レジスタは、単一のビット フラグのコレクションです。 多くの命令では、命令の結果を示すフラグを変更します。 これらのフラグは、条件付きのジャンプ先の手順でテストできます。 参照してください[x86 フラグ](#x86-flags)詳細についてはします。
+Flags register は、1ビットのフラグのコレクションです。 命令の結果を記述するために、多くの命令によってフラグが変更されます。 これらのフラグは、条件付きジャンプ命令によってテストできます。 詳細については、「 [X86 フラグ](#x86-flags)」を参照してください。
 
-### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>呼び出し規則
+### <a name="span-idcalling_conventionsspanspan-idcalling_conventionsspanspan-idcalling_conventionsspancalling-conventions"></a><span id="Calling_Conventions"></span><span id="calling_conventions"></span><span id="CALLING_CONVENTIONS"></span>呼び出し規約
 
-X86 アーキテクチャにいくつかの異なる呼び出し規則があります。 さいわい、これらはすべてエラーは、同じのレジスタ保存および関数の戻り値の規則に従います。
+X86 アーキテクチャには、いくつかの異なる呼び出し規約があります。 幸いにも、これらはすべて同じレジスタの保存と関数の戻り値に従います。
 
--   関数は、以外のすべてのレジスタを保持する必要が**eax**、 **ecx**、および**edx**、関数の呼び出しの間で変更できますと**esp**、これは、呼び出し規則に従って更新する必要があります。
+-   関数は、 **eax**、 **ecx**、および**edx**を除くすべてのレジスタを保持する必要があります。これは関数呼び出しで変更でき、 **esp**は呼び出し規約に従って更新する必要があります。
 
--   **Eax**結果が 32 ビットの場合、レジスタが関数の戻り値を受け取るまたは小さくします。 結果は 64 ビット、しで結果が格納されているかどうか、 **edx:eax**ペア。
+-   結果が32ビット以下の場合、 **eax**レジスタは関数の戻り値を受け取ります。 結果が64ビットの場合、結果は**edx: eax**ペアに格納されます。
 
-呼び出し、x86 上で使用される規則の一覧を次にアーキテクチャ。
+X86 アーキテクチャで使用される呼び出し規則の一覧を次に示します。
 
 -   Win32 ( **\_\_stdcall**)
 
-    関数のパラメーターは、左、右プッシュ、スタックに渡され、呼び出し先がスタックを消去します。
+    関数のパラメーターはスタックで渡され、右から左にプッシュされ、呼び出し先がスタックを消去します。
 
--   ネイティブ C++ メソッドの呼び出し (thiscall とも呼ばれます)
+-   ネイティブC++メソッド呼び出し (thiscall とも呼ばれます)
 
-    関数のパラメーターは、左に右プッシュ、スタックに渡される、"this"ポインターが渡された、 **ecx**レジスタ、および呼び出し先がスタックを消去します。
+    関数のパラメーターはスタックで渡され、右から左にプッシュされ、"this" ポインターが**ecx**レジスタに渡され、呼び出し先がスタックを消去します。
 
--   COM ( **\_\_stdcall** C++ メソッドの呼び出し)
+-   COM (メソッド呼び出しのC++ **\_\_stdcall** )
 
-    関数のパラメーターは、左、右プッシュ、スタックで渡され、"this"ポインターがスタックにプッシュし、関数が呼び出されています。 呼び出し先がスタックを消去します。
+    関数のパラメーターはスタックで渡され、右から左にプッシュされた後、"this" ポインターがスタックにプッシュされた後、関数が呼び出されます。 呼び出し先がスタックを消去します。
 
 -   **\_\_fastcall**
 
-    最初の 2 つの DWORD またはより小さい引数が渡された、 **ecx**と**edx**を登録します。 残りのパラメーターは、左に右プッシュ、スタックに渡されます。 呼び出し先がスタックを消去します。
+    最初の2つの DWORD または小さい引数は、 **ecx**および**edx**レジスタに渡されます。 残りのパラメーターはスタックで渡され、右から左にプッシュされます。 呼び出し先がスタックを消去します。
 
 -   **\_\_cdecl**
 
-    関数のパラメーターは、左、右プッシュ、スタックに渡され、呼び出し元がスタックを消去します。 **\_\_Cdecl**可変長のパラメーターを持つすべての関数の使用は、呼び出し規約。
+    関数のパラメーターはスタックで渡され、右から左にプッシュされ、呼び出し元がスタックを消去します。 **\_\_cdecl**呼び出し規約は、可変長パラメーターを持つすべての関数に使用されます。
 
-### <a name="span-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>デバッガーのレジスタとフラグの表示
+### <a name="span-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspanspan-iddebugger_display_of_registers_and_flagsspandebugger-display-of-registers-and-flags"></a><span id="Debugger_Display_of_Registers_and_Flags"></span><span id="debugger_display_of_registers_and_flags"></span><span id="DEBUGGER_DISPLAY_OF_REGISTERS_AND_FLAGS"></span>レジスタとフラグのデバッガー表示
 
-サンプル デバッガーの登録の表示を次に示します。
+デバッガーレジスタの表示の例を次に示します。
 
 ```dbgcmd
 eax=00000000 ebx=008b6f00 ecx=01010101 edx=ffffffff esi=00000000 edi=00465000
@@ -224,95 +224,95 @@ eip=77f9d022 esp=05cffc48 ebp=05cffc54 iopl=0         nv up ei ng nz na po nc
 cs=001b  ss=0023  ds=0023  es=0023  fs=0038  gs=0000             efl=00000286
 ```
 
-ユーザー モードのデバッグでは無視できます、**に対しては iopl**とデバッガーの表示の全体の最後の行。
+ユーザーモードのデバッグでは、 **iopl**と、デバッガー表示の最後の行全体を無視できます。
 
-### <a name="span-idx86-flagsspanspan-idx86_flagsspanx86-flags"></a><span id="x86-flags"></span><span id="X86_FLAGS"></span>x86 フラグします。
+### <a name="span-idx86-flagsspanspan-idx86_flagsspanx86-flags"></a><span id="x86-flags"></span><span id="X86_FLAGS"></span>x86 フラグ
 
-2 番目の行の最後に 2 文字コードは、前の例では、*フラグ*します。 これらは単一ビット レジスタであり、さまざまな使用を持っています。
+前の例では、2行目の末尾にある2文字のコードが*フラグ*です。 これらはシングルビットレジスタで、さまざまな用途があります。
 
-次のテーブルのリスト、x86 フラグ:
+次の表に、x86 フラグの一覧を示します。
 
-コードのフラグ名値フラグ状態の状態の説明をフラグ**の**
+フラグコードフラグ名値フラグステータスステータス**の**説明
 
-オーバーフロー フラグ
+オーバーフローフラグ
 
 0 1 **nvov**
 
-オーバーフローなしオーバーフロー **df**
+オーバーフローオーバーフロー **df**なし
 
 方向フラグ
 
 0 1 **updn**
 
-下方向の方向**場合**
+**If**の方向方向
 
 割り込みフラグ
 
 0 1 **diei**
 
-割り込みを有効にする割り込みを無効になっている**sf**
+無効な割り込みが有効になっている**sf**
 
-記号フラグ
+符号フラグ
 
 0 1 **plng**
 
-正の値 (または 0) 負**な zf**
+正 (またはゼロ) のマイナス**zf**
 
-0 個のフラグ
+ゼロフラグ
 
 0 1 **nzzr**
 
-0 以外の場合 0 **af**
+0以外の**af**
 
-補助キャリー フラグ
+補助キャリーフラグ
 
 0 1 **naac**
 
-補助を持たない補助キャリー **pf**
+補助キャリーのキャリー **pf**がありません
 
-パリティ フラグ
+パリティフラグ
 
 0 1 **pepo**
 
-パリティ偶数のパリティ奇数**cf**
+パリティ**偶数パリティ (奇数)**
 
-フラグを実行します。
+キャリーフラグ
 
 0 1 **nccy**
 
-いない繰キャリー **tf**
+キャリー**を受けて**いません
 
-トラップ フラグ
+トラップフラグ
 
-場合**tf** 1 と等しい、プロセッサが状態を発生させる\_単一\_1 つの命令の実行後にステップの例外。 このフラグは、シングル ステップのトレースを実装するために、デバッガーによって使用されます。 他のアプリケーションで使用する必要がありますされません。
+**Tf**が1に等しい場合、プロセッサは1つの命令の実行後に1つの\_ステップの例外\_状態を生成します。 このフラグは、シングルステップのトレースを実装するためにデバッガーによって使用されます。 他のアプリケーションでは使用できません。
 
-**に対しては iopl**
+**iopl**
 
-I/O の特権レベル
+I/o 特権レベル
 
-これは、0 ~ 3 の範囲の値を持つ、two-bit の整数です。 ハードウェアへのアクセスを制御する、オペレーティング システムによって使用されます。 アプリケーションで使用する必要がありますされません。
+これは、0 ~ 3 の値を持つ2ビット整数です。 これは、ハードウェアへのアクセスを制御するためにオペレーティングシステムによって使用されます。 アプリケーションでは使用しないでください。
 
  
 
-レジスタは、デバッガー コマンド ウィンドウでいくつかのコマンドの結果として表示される、ときに、*フラグの状態*が表示されます。 ただし、フラグを使用して変更する場合、 [ **r (レジスタ)** ](r--registers-.md)コマンドを使用することによってを参照してください、*コード フラグを設定*します。
+デバッガーコマンドウィンドウの一部のコマンドの結果としてレジスタが表示される場合は、表示されている*フラグの状態*になります。 ただし、 [**r (レジスタ)** ](r--registers-.md)コマンドを使用してフラグを変更する場合は、*フラグコード*でそれを参照する必要があります。
 
-WinDbg の [レジスタ] ウィンドウでは、フラグ コードを使用して、表示またはフラグを変更します。 フラグの状態がサポートされていません。
+WinDbg の [レジスタ] ウィンドウでは、フラグコードを使用してフラグを表示または変更します。 フラグの状態はサポートされていません。
 
-次に例を示します。 上記の「登録フラグ状態の表示、 **ng**が表示されます。 これは、記号のフラグが 1 に設定されて現在いることを意味します。 これを変更するには、次のコマンドを使用します。
+次に例を示します。 上記のレジスタ表示には、フラグステータス**ng**が表示されます。 これは、符号フラグが現在1に設定されていることを意味します。 これを変更するには、次のコマンドを使用します。
 
 ```dbgcmd
 r sf=0
 ```
 
-記号のフラグを 0 に設定します。 別のレジスタ表示を行う場合、 **ng**状態コードは表示されません。 代わりに、 **pl**状態コードが表示されます。
+これにより、符号フラグが0に設定されます。 別の登録を表示した場合、 **ng**ステータスコードは表示されません。 代わりに、 **pl**ステータスコードが表示されます。
 
-記号フラグ、0 フラグ、および伝達フラグは一般的に使用されるフラグです。
+Sign フラグ、0フラグ、およびキャリーフラグは、最も一般的に使用されるフラグです。
 
-### <a name="span-idconditionsspanspan-idconditionsspanspan-idconditionsspanconditions"></a><span id="Conditions"></span><span id="conditions"></span><span id="CONDITIONS"></span>条件
+### <a name="span-idconditionsspanspan-idconditionsspanspan-idconditionsspanconditions"></a><span id="Conditions"></span><span id="conditions"></span><span id="CONDITIONS"></span>照明
 
-A*条件*の 1 つまたは複数のフラグの状態について説明します。 X86 上のすべての条件付き操作の条件で表現されます。
+*条件*は、1つまたは複数のフラグの状態を表します。 X86 でのすべての条件付き操作は、条件に基づいて表現されます。
 
-アセンブラーでは、1 つまたは 2 つの文字の略語を使用して、条件を表します。 条件は、複数の省略形で表現できます。 たとえば、AE ("上記 or equal") は、NB (「いない下記」) と同じ条件です。 次の表は、いくつかの一般的な条件とその意味を示します。
+アセンブラーは、1文字または2文字の省略形を使用して条件を表します。 条件は、複数の省略形で表すことができます。 たとえば、AE ("上または等しい") は、NB と同じ条件です ("次の値ではありません")。 次の表に、一般的な条件とその意味を示します。
 
 <table>
 <colgroup>
@@ -324,56 +324,56 @@ A*条件*の 1 つまたは複数のフラグの状態について説明しま�
 <tr class="header">
 <th align="left">条件名</th>
 <th align="left">フラグ</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>Z</p></td>
-<td align="left"><p>な ZF = 1</p></td>
-<td align="left"><p>最後の操作の結果には 0 でした。</p></td>
+<td align="left"><p>ZF = 1</p></td>
+<td align="left"><p>最後の操作の結果が0でした。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>NZ</p></td>
-<td align="left"><p>な ZF = 0</p></td>
-<td align="left"><p>最後の操作の結果はゼロではありませんでした。</p></td>
+<td align="left"><p>ZF = 0</p></td>
+<td align="left"><p>最後の操作の結果が0ではありませんでした。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>C</p></td>
 <td align="left"><p>CF = 1</p></td>
-<td align="left"><p>最後の操作は実行に必要なまたは借用します。 (符号なし整数の場合、これを示すオーバーフロー。)</p></td>
+<td align="left"><p>最後の操作には、キャリーまたは借りるが必要です。 符号なし整数の場合は、オーバーフローを示します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>NC</p></td>
+<td align="left"><p>加工</p></td>
 <td align="left"><p>CF = 0</p></td>
-<td align="left"><p>最後の操作の実行が必要または借用していません。 (符号なし整数の場合、これを示すオーバーフロー。)</p></td>
+<td align="left"><p>最後の操作では、キャリーまたは借りるは必要ありませんでした。 符号なし整数の場合は、オーバーフローを示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>S</p></td>
 <td align="left"><p>SF = 1</p></td>
-<td align="left"><p>最後の操作の結果は、設定、高ビットを持ちます。</p></td>
+<td align="left"><p>最後の操作の結果には、上位ビットが設定されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>NS</p></td>
 <td align="left"><p>SF = 0</p></td>
-<td align="left"><p>最後の操作の結果は、クリア、高ビットを持ちます。</p></td>
+<td align="left"><p>最後の操作の結果は、高いビットクリアになります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>O</p></td>
-<td align="left"><p>1 を =</p></td>
-<td align="left"><p>符号付き整数の操作として扱われます場合、最後の操作には、オーバーフローまたはアンダー フローが発生しました。</p></td>
+<td align="left"><p>= 1</p></td>
+<td align="left"><p>符号付き整数演算として処理された場合、最後の操作でオーバーフローまたはアンダーフローが発生しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>使用不可</p></td>
-<td align="left"><p>0 を =</p></td>
-<td align="left"><p>符号付き整数の操作として扱われます、ときに、最後の操作が発生しなかったオーバーフローまたはアンダー フロー。</p></td>
+<td align="left"><p>= 0</p></td>
+<td align="left"><p>符号付き整数演算として処理された場合、最後の操作でオーバーフローまたはアンダーフローは発生しませんでした。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-条件が 2 つの値を比較することもできます。 **Cmp**命令が 2 つのオペランドを比較し、他の 1 つのオペランドを減算する場合と同様にフラグを設定します。 次の条件は、の結果を確認するために使用できます**cmp** *value1*、 *value2*します。
+条件を使用して、2つの値を比較することもできます。 **Cmp**命令は、2つのオペランドを比較し、一方のオペランドをもう一方のオペランドから減算した場合と同様にフラグを設定します。 次の条件を使用して、 **cmp** *value1*, *value2*の結果を確認できます。
 
 <table>
 <colgroup>
@@ -385,101 +385,101 @@ A*条件*の 1 つまたは複数のフラグの状態について説明しま�
 <tr class="header">
 <th align="left">条件名</th>
 <th align="left">フラグ</th>
-<th align="left">CMP 操作後に意味します。</th>
+<th align="left">CMP 操作後の意味です。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>E</p></td>
-<td align="left"><p>な ZF = 1</p></td>
-<td align="left"><p><em>value1</em> == <em>value2</em>します。</p></td>
+<td align="left"><p>ZF = 1</p></td>
+<td align="left"><p><em>value1</em> == <em>value2</em>。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>NE</p></td>
-<td align="left"><p>な ZF = 0</p></td>
-<td align="left"><p><em>value1</em> != <em>value2</em>.</p></td>
+<td align="left"><p>ZF = 0</p></td>
+<td align="left"><p><em>value1</em> ! = <em>value2</em>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
 GE NL</td>
-<td align="left"><p>SF の =</p></td>
+<td align="left"><p>SF = OF</p></td>
 <td align="left"><p></p>
-<em>value1</em> &gt; =  <em>value2</em>します。
-値は、符号付き整数として扱われます。</td>
+<em>value1</em> &gt;= <em>value2</em>です。
+値は符号付き整数として扱われます。</td>
 </tr>
 <tr class="even">
 <td align="left"><p></p>
 LE NG</td>
-<td align="left"><p>な ZF = 1 または SF! = の</p></td>
-<td align="left"><p><em>value1</em> &lt; =  <em>value2</em>します。 値は、符号付き整数として扱われます。</p></td>
+<td align="left"><p>ZF = 1 または SF! = OF</p></td>
+<td align="left"><p><em>value1</em> &lt;= <em>value2</em>です。 値は符号付き整数として扱われます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
 G NLE</td>
-<td align="left"><p>な ZF = 0 と SF を =</p></td>
-<td align="left"><p><em>value1</em> &gt; <em>value2</em>します。 値は、符号付き整数として扱われます。</p></td>
+<td align="left"><p>ZF = 0 および SF = OF</p></td>
+<td align="left"><p><em>value1</em> &gt; <em>value2</em>。 値は符号付き整数として扱われます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p></p>
 L NGE</td>
-<td align="left"><p>SF! =</p></td>
-<td align="left"><p><em>value1</em> &lt; <em>value2</em>します。 値は、符号付き整数として扱われます。</p></td>
+<td align="left"><p>SF! = OF</p></td>
+<td align="left"><p><em>value1</em> &lt; <em>value2</em>。 値は符号付き整数として扱われます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
 AE NB</td>
 <td align="left"><p>CF = 0</p></td>
-<td align="left"><p><em>value1</em> &gt; =  <em>value2</em>します。 値は、符号なし整数として扱われます。</p></td>
+<td align="left"><p><em>value1</em> &gt;= <em>value2</em>です。 値は符号なし整数として扱われます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p></p>
-NA をします。</td>
-<td align="left"><p>CF = 1 またはな ZF = 1</p></td>
-<td align="left"><p><em>value1</em> &lt; =  <em>value2</em>します。 値は、符号なし整数として扱われます。</p></td>
+NA</td>
+<td align="left"><p>CF = 1 または ZF = 1</p></td>
+<td align="left"><p><em>value1</em> &lt;= <em>value2</em>です。 値は符号なし整数として扱われます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
-と、</td>
-<td align="left"><p>CF = 0 およびな ZF = 0</p></td>
-<td align="left"><p><em>value1</em> &gt; <em>value2</em>します。 値は、符号なし整数として扱われます。</p></td>
+NBE</td>
+<td align="left"><p>CF = 0 および ZF = 0</p></td>
+<td align="left"><p><em>value1</em> &gt; <em>value2</em>。 値は符号なし整数として扱われます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p></p>
 B NAE</td>
 <td align="left"><p>CF = 1</p></td>
-<td align="left"><p><em>value1</em> &lt; <em>value2</em>します。 値は、符号なし整数として扱われます。</p></td>
+<td align="left"><p><em>value1</em> &lt; <em>value2</em>。 値は符号なし整数として扱われます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-条件は、通常の結果を操作に使用する**cmp**または**テスト**命令。 以下に例を示します。
+通常、条件は、 **cmp**または**テスト**命令の結果を操作するために使用されます。 以下に例を示します。
 
 ```asm
 cmp eax, 5
 jz equal
 ```
 
-比較、 **eax** 、式を計算して数 5 に対して登録 (**eax** - 5) 結果に従ったフラグの設定。 減算の結果が 0 の場合、 **zr**フラグが設定されます、 **jz**ジャンプが実行されるため、条件が true になります。
+式 (**eax** -5) を計算し、結果に従ってフラグを設定することによって、 **eax**レジスタを数値5と比較します。 減算の結果が0の場合は、 **zr**フラグが設定され、 **jz**条件は true になり、ジャンプが実行されます。
 
 ### <a name="span-iddata_typesspanspan-iddata_typesspanspan-iddata_typesspandata-types"></a><span id="Data_Types"></span><span id="data_types"></span><span id="DATA_TYPES"></span>データ型
 
--   バイト。8 ビット
+-   byte: 8 ビット
 
 -   word:16 ビット
 
 -   dword:32 ビット
 
--   qword:64 ビット (2 倍の浮動小数点を含む)
+-   qword:64 ビット (浮動小数点 double を含む)
 
--   tword:80 ビット (拡張の倍精度浮動小数点数を含む)
+-   tword:80 ビット (浮動小数点拡張 double を含む)
 
--   oword:128 ビット
+-   oword: 128 ビット
 
-### <a name="span-idnotationspanspan-idnotationspanspan-idnotationspannotation"></a><span id="Notation"></span><span id="notation"></span><span id="NOTATION"></span>表記法
+### <a name="span-idnotationspanspan-idnotationspanspan-idnotationspannotation"></a><span id="Notation"></span><span id="notation"></span><span id="NOTATION"></span>表し
 
-次の表では、アセンブリ言語命令を記述するために使用する表記法を示します。
+次の表は、アセンブリ言語の手順を説明するために使用される表記法を示しています。
 
 <table>
 <colgroup>
@@ -488,91 +488,91 @@ jz equal
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">表記法</th>
-<th align="left">説明</th>
+<th align="left">表し</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>r</strong>、 <strong>r1</strong>、 <strong>r2</strong>.</p></td>
+<td align="left"><p><strong>r</strong>、 <strong>r1</strong>、 <strong>r2</strong>...</p></td>
 <td align="left"><p>レジスタ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>m</p></td>
-<td align="left"><p>メモリ アドレス (詳細については、後続のアドレッシング モード」を参照してください)。</p></td>
+<td align="left"><p>メモリアドレス (詳細については、「次のアドレス指定モード」を参照してください)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>#n</p></td>
-<td align="left"><p>イミディ エイト定数</p></td>
+<td align="left"><p>イミディエイト定数</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>r</strong>/m</p></td>
-<td align="left"><p>登録またはメモリ</p></td>
+<td align="left"><p>レジスタまたはメモリ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>r</strong>/#n</p></td>
-<td align="left"><p>登録または即時定数</p></td>
+<td align="left"><p>Register または immediate 定数</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>r</strong>/m/#n</p></td>
-<td align="left"><p>レジスタ、メモリ、または即時定数</p></td>
+<td align="left"><p>Register、memory、または immediate 定数</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><em>cc</em></p></td>
-<td align="left"><p>上記の条件のセクションに記載する条件コードです。</p></td>
+<td align="left"><p><em>問い合わせ</em></p></td>
+<td align="left"><p>前の条件セクションに一覧表示されている条件コード。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><em>T</em></p></td>
-<td align="left"><p>"B"、"W"または"D"(バイト、ワード、dword)</p></td>
+<td align="left"><p><em>\T</em></p></td>
+<td align="left"><p>"B"、"W"、"D" (バイト、単語、または dword)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>acc<em>T</em></p></td>
-<td align="left"><p>サイズ<em>T</em>アキュムレータ: <strong>al</strong>場合<em>T</em> ="B"、 <strong>ax</strong>場合<em>T</em> ="W"または<strong>eax</strong>場合<em>T</em> "D"を =</p></td>
+<td align="left"><p>Size <em>t</em>アキュムレータ: <strong>al</strong> If <em>t</em> = "B"、 <strong>ax</strong> if <em>t</em> = "W"、または<strong>eax</strong> if <em>t</em> = "D"</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>アドレッシング モード
+### <a name="span-idaddressing_modesspanspan-idaddressing_modesspanspan-idaddressing_modesspanaddressing-modes"></a><span id="Addressing_Modes"></span><span id="addressing_modes"></span><span id="ADDRESSING_MODES"></span>アドレス指定モード
 
-いくつかの別のアドレッシング モードがありますが、フォームを受け取る**T ptr \[expr\]** ここで、 **T**一部のデータ (データ型の前のセクションを参照してください) を入力および**expr**定数およびレジスタに関連するいくつかの式です。
+アドレス指定モードはいくつかありますが、すべての形式は**t ptr \[expr\]** になります。ここで、 **t**は一部のデータ型で、 **expr**は定数とレジスタを含む式です。
 
-それほど難しくないほとんどのモードの表記法を推測できます。 たとえば、**バイト PTR \[esi + edx\*8 + 3\]** 意味"の値を取得、 **esi**登録、8 回の値を追加して、 **edx**を登録し、3 つの追加、結果として得られるアドレスにあるバイトにアクセスします"。
+ほとんどのモードの表記は、かなり難しいことなく推測できます。 たとえば、**バイト PTR \[esi + edx\*8 + 3\]** は、" **esi**レジスタの値を取得し、 **edx**レジスタの値の8倍に追加し、3を加算した後、結果のアドレスのバイトにアクセスすることを意味します。"
 
-### <a name="span-idpipeliningspanspan-idpipeliningspanspan-idpipeliningspanpipelining"></a><span id="Pipelining"></span><span id="pipelining"></span><span id="PIPELINING"></span>パイプライン処理
+### <a name="span-idpipeliningspanspan-idpipeliningspanspan-idpipeliningspanpipelining"></a><span id="Pipelining"></span><span id="pipelining"></span><span id="PIPELINING"></span>処理
 
-Pentium は、1 つのクロックのティックで最大 2 つのアクションを実行できることを意味するデュアル問題です。 ただし、一度に 2 つのアクションの処理を実行できる場合の規則 (と呼ばれる*ペアリング*) が非常に複雑です。
+Pentium はデュアル問題です。つまり、1つのクロック目盛りで最大2つのアクションを実行できます。 ただし、2つのアクション (*ペアリング*と呼ばれます) を同時に実行できる場合の規則は非常に複雑です。
 
-X86 が CISC プロセッサであるために、ジャンプ遅延スロットについて心配する必要はありません。
+X86 は CISC プロセッサであるため、ジャンプ遅延スロットについて心配する必要はありません。
 
-### <a name="span-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspansynchronized-memory-access"></a><span id="Synchronized_Memory_Access"></span><span id="synchronized_memory_access"></span><span id="SYNCHRONIZED_MEMORY_ACCESS"></span>同期されたメモリへのアクセス
+### <a name="span-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspanspan-idsynchronized_memory_accessspansynchronized-memory-access"></a><span id="Synchronized_Memory_Access"></span><span id="synchronized_memory_access"></span><span id="SYNCHRONIZED_MEMORY_ACCESS"></span>同期されたメモリアクセス
 
-読み込み、変更、および格納指示が受け取れる、**ロック**プレフィックスで、次のように命令を変更します。
+読み込み、変更、および格納の命令は、次のように命令を変更する**ロック**プレフィックスを受け取ることができます。
 
-1.  命令を発行する前に、CPU は一貫性を確保するすべての保留中のメモリ操作をフラッシュします。 すべてのデータのプリフェッチが破棄されました。
+1.  命令を発行する前に、CPU はすべての保留中のメモリ操作をフラッシュして一貫性を確保します。 すべてのデータプリフェッチが破棄されます。
 
-2.  命令を発行する際に、CPU はバスへの排他アクセスがあります。 これにより、読み込み/変更/ストア操作の原子性です。
+2.  命令の発行時に、CPU はバスに排他的にアクセスできます。 これにより、読み込み/変更/ストア操作の原子性が確保されます。
 
-**Xchg**メモリを持つ値が交換されるたびに、前の規則が命令によって自動的に従います。
+**Xchg**命令は、メモリで値を交換するたびに、前の規則に自動的に従います。
 
-既定でその他のすべての命令 nonlocking します。
+その他のすべての命令は、既定で非ロックに設定されます。
 
-### <a name="span-idjump_predictionspanspan-idjump_predictionspanspan-idjump_predictionspanjump-prediction"></a><span id="Jump_Prediction"></span><span id="jump_prediction"></span><span id="JUMP_PREDICTION"></span>予測をジャンプします。
+### <a name="span-idjump_predictionspanspan-idjump_predictionspanspan-idjump_predictionspanjump-prediction"></a><span id="Jump_Prediction"></span><span id="jump_prediction"></span><span id="JUMP_PREDICTION"></span>ジャンプ予測
 
-無条件ジャンプを予測して、実行します。
+無条件のジャンプは予想されます。
 
-未受講または実行すると予測されます。 条件付きのジャンプ、実行された最終時刻を作成したかどうかによって異なります。 ジャンプの履歴を記録するため、キャッシュ サイズが制限されています。
+条件付きジャンプは、前回の実行時に取得されたかどうかによって、取得されるかどうかが予測されます。 ジャンプ履歴を記録するためのキャッシュのサイズは制限されています。
 
-CPU が条件付きのジャンプを取得またはが実行された最終時刻になっていないかどうかの記録を持たない場合、旧バージョンと条件付きのジャンプを予測として扱わし、実行しない条件付きのジャンプを転送します。
+条件付きジャンプが実行されたかどうか、または前回の実行時に取得されていないことを示す記録が CPU にない場合は、前の条件付きジャンプが実行されたと予測され、条件付きジャンプは実行されません。
 
 ### <a name="span-idalignmentspanspan-idalignmentspanspan-idalignmentspanalignment"></a><span id="Alignment"></span><span id="alignment"></span><span id="ALIGNMENT"></span>配置
 
-X86 プロセッサでは、パフォーマンスの低下にアラインされていないメモリへのアクセスを自動的に修正されます。 例外は発生しません。
+X86 プロセッサは、パフォーマンスが低下したときに、自動的に整列されていないメモリアクセスを修正します。 例外は発生しません。
 
-メモリ アクセスは、アドレスが整数である場合の配置と見なされます、オブジェクトのサイズの倍数です。 たとえば、バイトのすべてのアクセスを配置 (整数すべてが 1 の倍数)、アドレスを均等に WORD へのアクセスが揃えられ、DWORD アドレス配置するには 4 の倍数である必要があります。
+アドレスがオブジェクトサイズの倍数の整数である場合、メモリアクセスはアラインされたと見なされます。 たとえば、すべてのバイトアクセスがアラインされている (すべてが1の整数の倍数)、WORD による偶数のアドレスへのアクセスがアラインされ、DWORD アドレスは4の倍数である必要があります。
 
-**ロック**アラインされていないメモリ アクセスのプレフィックスを使用しない必要があります。
+固定されていないメモリアクセスには、**ロック**プレフィックスを使用しないでください。
 
  
 
