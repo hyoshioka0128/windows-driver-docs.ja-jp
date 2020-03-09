@@ -3,16 +3,16 @@ title: プリンター INF ファイル エントリ
 description: プリンター INF ファイル エントリ
 ms.assetid: 897072bb-e481-4c8d-a2bf-57b19c69ac0e
 keywords:
-- WDK の INF ファイルを印刷するエントリ
-- WDK プリンターの依存ファイル
+- INF ファイル WDK print、エントリ
+- 依存ファイル WDK プリンター
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 812dff15cb58d8d0901c33a73cd6c9044c8bfbe1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356047"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402545"
 ---
 # <a name="printer-inf-file-entries"></a>プリンター INF ファイル エントリ
 
@@ -20,96 +20,96 @@ ms.locfileid: "67356047"
 
 
 
-プリント サーバーにプリンターをインストールするインストール アプリケーションは、呼び出す必要があります、スプーラーの**AddPrinterDriverEx**関数を呼び出して、スプーラーのドライバー ファイルを読み込んで**AddPrinter**関数プリンターをサーバーで使用できるようにします。
+プリントサーバーにプリンターをインストールするインストールアプリケーションでは、スプーラの**Addprinter Driverex**関数を呼び出してドライバーファイルを読み込み、スプーラの**addprinter**関数を呼び出してプリンターをサーバーで使用できるようにする必要があります。
 
-**AddPrinterDriverEx**関数には、ドライバーが必要です\_情報\_、入力として 3 つの構造と**AddPrinter**関数に必要なプリンター\_情報\_。入力として 2 つの構造体。 既定の Windows 2000 またはそれ以降のプリンター クラスのインストーラー、Ntprint.dll、関数が呼び出される前に、これらの構造体に配置する必要があります文字列値を取得するプリンターの INF ファイルを読み取ります。
+**Addprinter Driverex**関数では、入力として DRIVER\_info\_3 構造体が必要です。また、 **addprinter**関数では、入力として、プリンター\_情報\_2 の構造を必要とします。 既定の Windows 2000 以降のプリンタークラスインストーラー Ntprint.inf は、プリンターの INF ファイルを読み取って、関数が呼び出される前にこれらの構造体に配置する必要がある文字列値を取得します。
 
 
-**AddPrinterDriverEx**と**AddPrinter**関数は、ドライバーと\_情報\_3 とプリンターの\_情報\_2 つの構造は、Microsoft Windows SDK のドキュメントで説明します。
+**Addprinter Driverex**および**addprinter**関数と、ドライバー\_INFO\_3 および PRINTER\_info\_2 の構造については、Microsoft Windows SDK のドキュメントを参照してください。
 
-Ntprint.dll を認識するプリンター ドライバーの INF ファイルのエントリのセットが定義されています。 これらのエントリには、次の形式があります。
+Ntprint.inf が認識するプリンタードライバーの一連の INF ファイルエントリが定義されています。 これらのエントリの形式は次のとおりです。
 
-*EntryName* = *Value*
+*EntryName* = *値*
 
-場所*EntryName*エントリを識別する文字列と*値*エントリに割り当てられている文字列値です。
+ここで、 *EntryName*はエントリを識別する文字列であり、*値*はエントリに割り当てられた文字列値です。
 
-次の表には、プリンターの INF ファイルに含める必要がある INF ファイルのエントリが一覧表示します。 各エントリでは、テーブルには、次が含まれています。
+次の表に、プリンターの INF ファイルに含める必要がある INF ファイルのエントリを示します。 各エントリについて、テーブルには次のものが含まれます。
 
--   この値は、エントリに割り当てる必要があります。
+-   エントリに割り当てられる値。
 
--   Ntprint.dll が、エントリが定義されていない場合に使用する既定値。
+-   エントリが定義されていない場合に Ntprint.inf が使用する既定値。
 
--   Ntprint.dll エントリの値へのポインターを格納する構造体のメンバー。
+-   Ntprint.inf がエントリ値へのポインターを配置する構造体メンバー。
 
-| INF ファイルのエントリ       |Value|(エントリが指定されていない) 場合、既定値|構造体のメンバー |
+| INF ファイルのエントリ       |値|既定値 (エントリが指定されていない場合)|構造体メンバー |
 |----------------------|-----|-------------|-----------------------------------------|
-| ConfigFile           | ドライバーの名前[プリンター インターフェイス DLL](printer-interface-dll.md)します。 | DriverFile 指定された値。 | **pConfigFile**ドライバーのメンバー\_情報\_3 つの構造 (Windows SDK のドキュメントで説明) |
-| データ ファイル             | PPD ファイルなどのドライバーの関連するデータ ファイルの名前。 | INF ファイル内のドライバーのセクション名。 | **pDataFile**ドライバーのメンバー\_情報\_3 構造 |
-| DefaultDataType      | NT-ベースのオペレーティング システムで使用できません。 |||
-| DriverCategory       | 参照してください**注 1**、次のテーブル。 | INF ファイルは、(ほとんど v3 ドライバー) などのカテゴリでドライバーを指定しない場合、ドライバーのカテゴリは、ことが前提です**PrintFax.Printer**します。 | なし |
-| DriverFile           | ドライバーの名前[プリンター グラフィックス DLL](printer-graphics-dll.md)します。 | INF ファイル内のドライバーのセクション名。 | **pDriverPath**ドライバーのメンバー\_情報\_3 構造 |
-| ExcludeFromSelect    | 参照してください**注 2**、次のテーブル。 | なし | なし |
-| HelpFile             | インターフェイスの DLL のヘルプ ファイルの名前。 | なし。 ヘルプ ファイルが指定されていません。 | **pHelpFile**ドライバーのメンバー\_情報\_3 構造 |
-| LanguageMonitor      | プリンタ ドライバに関連する言語モニターの名前。 参照してください、 **LanguageMonitor 値形式**セクション。 | なし。 言語モニターが指定されていません。 | **pMonitorName**ドライバーのメンバー\_情報\_3 構造 |
-| PrintProcessor       | プリンター キューに関連するプリント プロセッサの名前。 参照してください、 **PrintProcessor 値形式**セクション。 | 既定のプリント プロセッサ (WinPrint) が使用されます。 | **pPrintProcessor**ドライバーのメンバー\_情報\_2 の構造 (Windows SDK のドキュメントで説明) |
-| VendorSetup          | 処理するベンダーから提供された DLL 内の関数の名前、[プリンター セットアップの操作をカスタマイズ](customized-printer-setup-operations.md)します。 | なし。 参照してください**注 3**、次のテーブル。 | なし |
-| InboxVersionRequired | INF を参照するすべてのコア ドライバーの許容される最小バージョン。 InboxVersionRequired の詳細については、次を参照してください。 [INF InboxVersionRequired ディレクティブ](inf-inboxversionrequired-directive.md)します。 | なし | なし |
+| ConfigFile           | ドライバーの[プリンターインターフェイス DLL](printer-interface-dll.md)の名前。 | DriverFile に指定された値。 | ドライバー\_INFO\_3 構造の**pConfigFile**メンバー (Windows SDK のドキュメントを参照) |
+| DataFile             | ドライバーに関連付けられたデータファイルの名前 (PPD ファイルなど)。 | INF ファイル内のドライバーのセクション名。 | ドライバー\_INFO\_3 構造体の**Pdatafile ファイル**メンバー |
+| DefaultDataType      | NT ベースのオペレーティングシステムでは使用されません。 |||
+| DriverCategory       | この表の後にある**注 1**を参照してください。 | INF ファイルでドライバーカテゴリが指定されていない場合 (ほとんどの v3 ドライバーと同様)、ドライバーのカテゴリが**Printfax. Printer**であることが前提となります。 | なし |
+| DriverFile           | ドライバーの[プリンターグラフィックス DLL](printer-graphics-dll.md)の名前。 | INF ファイル内のドライバーのセクション名。 | **pDriverPath**のドライバー\_INFO\_3 構造体のメンバー |
+| ExcludeFromSelect    | この表の後にある**注 2**を参照してください。 | なし | なし |
+| HelpFile             | インターフェイス DLL のヘルプファイルの名前。 | [なし]。 ヘルプファイルが指定されていません。 | DRIVER\_INFO\_3 構造体の**Phelpfile**メンバー |
+| LanguageMonitor      | プリンタドライバに関連付けられる言語モニタの名前。 「 **LanguageMonitor Value Format** 」セクションを参照してください。 | [なし]。 言語モニターが指定されていません。 | DRIVER\_INFO\_3 構造体の**Pmonitorname**メンバー |
+| PrintProcessor       | プリンターキューに関連付けられるプリントプロセッサの名前。 「 **Printprocessor 値の形式**」セクションを参照してください。 | 既定のプリントプロセッサ (WinPrint) が使用されます。 | DRIVER\_INFO\_2 構造体の**Pprintprocessor**メンバー (Windows SDK のドキュメントを参照) |
+| VendorSetup          | カスタマイズされた[プリンターセットアップ操作](customized-printer-setup-operations.md)を処理する、ベンダーが提供する DLL 内の関数の名前。 | [なし]。 次の表に従って、**メモ 3**を参照してください。 | なし |
+| 受信トレイ Versionrequired | INF が参照するすべてのコアドライバーに対して許容される最小バージョン。 受信トレイ Versionrequired の詳細については、「 [INF の Versionrequired ディレクティブ](inf-inboxversionrequired-directive.md)」を参照してください。 | なし | なし |
 
  
 
- **注**  **1 (DriverCategory)** :これらは、許可されている値、INF ファイルでは、カテゴリを指定する場合 (0 ~ 5 それぞれ) カテゴリを指定します。
+ **メモ**  **1 (DRIVERCATEGORY)** : INF ファイルでカテゴリが指定されている場合は、カテゴリを指定するために次の値が許可されます (それぞれ 0 ~ 5)。
  
  
-| ドライバー カテゴリ          | Value | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ドライバーカテゴリ          | 値 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| PrintFax.Printer         | 0     | 印刷キューを表すか、プリンターをコンピューターに接続 (を通じて、ローカルまたはネットワーク プロトコル)、または別のコンピューター上の物理プリンターへのプロキシ。 ユーザーが物理プリンターに印刷、用紙に印刷されたドキュメントになります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| PrintFax.Fax             | 1     | Fax の物理または仮想マシンを表す印刷キューです。 ユーザーが fax プリンターに印刷 (可能性があるユーザーの関与) した後、結果は fax が送信されることが。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| PrintFax.Printer.File    | 2     | ドキュメントの論理的なコピーを生成する印刷キューです。 ユーザーがファイルのプリンターに印刷し、ユーザーが、ファイル名を入力する必要があります最初、スプーラーは、そのファイルに印刷出力を送信するし。 ファイルのプリンターは常にファイル名が必要ですが、他のユーザー入力は不要します。 ユーザーがファイル名を指定するためのオプションがない場合に、アプリは、スプーラーに使用可能になるファイル名を生成します。 ファイルのプリンターの一般的な例は、Microsoft XPS ドキュメント ライター (MXDW) と PDF のライターです。                                                                                                                                                                                                                                                 |
-| PrintFax.Printer.Virtual | 3     | 印刷キューが不透明に印刷スプーラーは印刷データに対して何らかの操作を実行するためのドライバーです。 ユーザーが仮想プリンターに印刷、いくつかの可能な結果には、コンピューターが別のアプリケーションに送信される、または電子メールで送信されるどこかに保存されている印刷したドキュメントが含まれます。 仮想プリンターで印刷の一般的な例は、Microsoft Office OneNote のプリンターに印刷されるドキュメントの送信先のシナリオです。 ユーザーが仮想プリンターに印刷すると、ときに、ドライバーまたはその他のいくつかのドライバー コンポーネントによって開始された、それ以上のユーザーの対話の必要性があります。 詳細については、次を参照してください。[プリンター INF ファイルでの仮想プリンター](virtual-printers-in-printer-inf-files.md)します。 |
-| PrintFax.Printer.Service | 4     | 印刷サービスを表す印刷キューです。 サービスに印刷するユーザーを選択するときに、結果 (可能性があるユーザーの関与) した後は、サードパーティの印刷サービスが、印刷コンテンツを受信できます。 ユーザーはことができますし、印刷出力を取得するビジネスの物理的な場所に移動します。                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| PrintFax.Printer.3D      | 5     | 3D プリンターのデータ ストリームを表す印刷キューです。 2D プリンター (通常プリンター) のこのカテゴリを誤って指定すると場合、2D のプリンターは単にデータ ストリームの 2D のコンテンツを出力します。 このカテゴリは、3 D プリンターを正しく指定されて、2 D のデータ ストリームが 3D のプリンターに送信される場合、3 D プリンターでは、この出力は生成されません。                                                                                                                                                                                                                                                                                                                                                                |
+| PrintFax.Printer         | 0     | コンピューターに接続されているプリンター (ローカルまたはネットワークプロトコル経由)、または別のコンピューター上の物理プリンターへのプロキシのいずれかを表す印刷キュー。 ユーザーが物理プリンターに印刷すると、その結果、ドキュメントが印刷された紙になります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| PrintFax.Fax             | 1     | 物理または仮想 fax コンピューターを表す印刷キュー。 ユーザーが fax プリンターに印刷すると、(ユーザーがさらに操作を行った後で) fax が送信されるという結果になります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| PrintFax. Printer. ファイル    | 2     | ソフトコピードキュメントを生成する印刷キュー。 ユーザーがファイルプリンターに印刷すると、ユーザーはまずファイル名を入力する必要があり、スプーラはそのファイルに出力を送信します。 ファイルプリンターは常にファイル名を必要としますが、他のユーザー入力は必要ありません。 ユーザーがファイル名を指定するオプションがない場合、アプリはスプーラで使用可能なファイル名を生成します。 ファイルプリンターの一般的な例として、Microsoft XPS Document Writer (MXDW) と PDF ライターがあります。                                                                                                                                                                                                                                                 |
+| PrintFax. Printer. Virtual | 3     | 印刷スプーラーに対して非透過の印刷データに対して何らかの操作を実行するドライバーを持つ印刷キュー。 ユーザーが仮想プリンターに出力するときに、結果として、印刷されたドキュメントがコンピューター上のどこかに保存されているか、別のアプリケーションに送信されているか、電子メールで送信されている可能性があります。 仮想プリンターへの印刷の一般的な例として、印刷されたドキュメントが Microsoft Office OneNote プリンターに送信されるというシナリオがあります。 ユーザーが仮想プリンターに印刷することを選択した場合、ドライバーまたはその他のドライバーコンポーネントによって開始される、さらにユーザーの操作が必要になることがあります。 詳細については、「[プリンターの INF ファイルの仮想プリンター](virtual-printers-in-printer-inf-files.md)」を参照してください。 |
+| PrintFax. Printer. Service | 4     | 印刷サービスを表す印刷キュー。 ユーザーがサービスへの印刷を選択すると、その結果 (ユーザーがさらに操作を行った後)、サードパーティの印刷サービスが印刷されたコンテンツを受け取ることになります。 ユーザーは、物理的な事業所に移動して、印刷出力を取得できます。                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| PrintFax.Printer.3D      | 5     | 3D プリンターのデータストリームを表す印刷キュー。 このカテゴリが、誤って2D プリンター (通常使うプリンター) に指定されている場合、2D プリンターは単にデータストリームの2D コンテンツを出力します。 3D プリンターに対してこのカテゴリが正しく指定されていても、2D データストリームが3D プリンターに送信された場合、3D プリンターは出力を生成しません。                                                                                                                                                                                                                                                                                                                                                                |
 
  
 
-V4 印刷ドライバーがマニフェスト ファイルを使用することにも注意してください。 詳細については、次を参照してください。 [V4 ドライバー マニフェスト](v4-driver-manifest.md)します。
+また、v4 印刷ドライバーはマニフェストファイルを使用することにも注意してください。 詳細については、「 [V4 ドライバーマニフェスト](v4-driver-manifest.md)」を参照してください。
 
  
 
-**注**  **2 (ExcludeFromSelect)** :*デバイス ID*で表示しないデバイスの**デバイスの**ダイアログまたは プリンターの追加ウィザード。 このプリンターを INF ファイルで重複するデバイスの説明を持つデバイスのすべての PnP エントリが含まれていますたとえば、赤外線および並列列挙のため、または別のバスの複数のエントリがあるデバイスです。 この表で、他のすべてとは異なり、ExcludeFromSelect エントリは、INF ファイルの制御フラグ セクションに表示する必要があります。 参照してください[ **INF ControlFlags セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)詳細についてはします。
+**注**  **2 (ExcludeFromSelect)** : **[デバイスの選択**] ダイアログまたはプリンターの追加ウィザードに表示されないデバイスの*デバイス ID* 。 プリンタの場合、これには、デバイスの説明が重複しているデバイスのすべての PnP エントリが INF ファイルに含まれます。たとえば、赤外線と並列の列挙、または別のバス用の複数のエントリを持つデバイスなどです。 ExcludeFromSelect エントリは、このテーブル内の他のすべてのものとは異なり、INF ファイルのコントロールフラグセクションに表示される必要があります。 詳細については、「 [**INF ControlFlags」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)を参照してください。
 
  
 
-**注**  **3 (VendorSetup)** :VendorSetup エントリが指定されていない場合は、カスタマイズされたセットアップ操作は実行されません。 具体的には、ユーザー インターフェイスは許可されていませんプリント プロセッサ、印刷のモニター、またはプリンター ドライバーのインストール中を除く VendorSetup INF エントリを使用しています。 このエントリの詳細については、次を参照してください。[プリンター セットアップの操作のカスタマイズ](customized-printer-setup-operations.md)します。
+**メモ**  **3 (VendorSetup)** : VendorSetup エントリが指定されていない場合は、カスタマイズされたセットアップ操作は実行されません。 特に、VendorSetup INF エントリを使用する場合を除き、プリントプロセッサ、印刷モニター、またはプリンタードライバーのインストール中にユーザーインターフェイスを使用することはできません。 このエントリの詳細については、「カスタマイズされた[プリンターセットアップ操作](customized-printer-setup-operations.md)」を参照してください。
 
  
 
-**重要な**  :VendorSetup が現在は非推奨し、で使用する必要がありますいない*新しい*v3 または v4 ドライバーを開発します。 既にこの INF ディレクティブを使用している既存の v3 ドライバーのメンテナンスのみ、または、参照のこの VendorSetup に関する情報が提供されます。
+**重要**  : VendorSetup は現在非推奨とされており、開発した*新しい*v3 または v4 ドライバーでは使用できません。 この VendorSetup に関する情報は、参照専用、または既にこの INF ディレクティブを使用している既存の v3 ドライバーのメンテナンスのために提供されています。
 
  
 
-プリンター INF ファイルのエントリが内で指定された通常[プリンター INF ファイルのデータ セクション](printer-inf-file-data-sections.md)します。 例については、次を参照してください。、[サンプル プリンター INF ファイル](sample-printer-inf-files.md)します。
+プリンターの INF ファイルのエントリは、通常、[プリンターの inf ファイルのデータセクション](printer-inf-file-data-sections.md)内で指定されます。 例については、「[プリンターの INF ファイルのサンプル](sample-printer-inf-files.md)」を参照してください。
 
 ### <a href="" id="ddk-languagemonitor-value-format-gg"></a>LanguageMonitor 値の形式
 
-LanguageMonitor エントリは、プリンターの INF ファイルに含めるとき、値の形式のとおりです。
+プリンターの INF ファイルに LanguageMonitor エントリが含まれている場合、値の形式は次のようになります。
 
-LanguageMonitor=" *MonitorName* , *MonitorDLLName* "
+LanguageMonitor = " *Monitorname* , *MonitorDLLName* "
 
-場所*モニター*モニターの表示名を表すテキスト文字列と*MonitorDLLName*モニター DLL のファイルの名前です。
+ここで、 *Monitorname*は、モニターの表示名を表すテキスト文字列です。 *MonitorDLLName*は、モニター DLL のファイル名です。
 
 ### <a href="" id="ddk-printprocessor-value-format-gg"></a>PrintProcessor 値の形式
 
-PrintProcessor エントリは、プリンターの INF ファイルに含めるとき、値の形式のとおりです。
+PrintProcessor エントリがプリンターの INF ファイルに含まれている場合、値の形式は次のようになります。
 
-PrintProcessor=" *PrintProcessorName* , *PrintProcessorDLLName* "
+PrintProcessor = " *Printprocessorname* , *PrintProcessorDLLName* "
 
-場所*PrintProcessorName*プリント プロセッサの表示名を表すテキスト文字列と*PrintProcessorDLLName* DLL のファイルの名前です。
+*Printprocessorname*は、印刷プロセッサの表示名を表すテキスト文字列で、 *PrintProcessorDLLName*は DLL のファイル名です。
 
 ### <a href="" id="ddk-dependent-files-gg"></a>依存ファイル
 
-依存ファイルに含まれているプリンタ ドライバ ファイルは、Windows 2000 以降で、[プリンター INF ファイル インストール セクション](printer-inf-file-install-sections.md)で、 [dirid](printer-dirids.md) 66000 が DriverFile、DataFile、ConfigFile に割り当てられていません、またはヘルプ ファイルのエントリ。
+Windows 2000 以降では、依存ファイルはプリンタードライバーファイルであり、プリンターの INF ファイルの[インストールセクション](printer-inf-file-install-sections.md)には[66000 があり](printer-dirids.md)ますが、driverfile、データファイル、ConfigFile、または HelpFile エントリには割り当てられません。
 
-次の例では、(指定されている、ディレクトリに dirid 66000 によって)、プリンター ドライバー ディレクトリにコピーして、次の 3 つの依存ファイルをインストールする INF ファイルからの抜粋を示します。
+次の例では、3つの依存ファイルをインストールする INF ファイルからの抜粋を示しています。これは、プリンタードライバーのディレクトリ (つまり、dirid 66000 で指定されたディレクトリ) にコピーすることによって行います。
 
 ```cpp
 [Contoso]
@@ -125,19 +125,19 @@ DefaultDestDir=66000
 PRINTER_MODEL_123 = "Contoso Printer Model 123"
 ```
 
-この例で Contoso.ini はプリンターの INI ファイル、Contoso.xml は双方向の拡張ファイル、および Contoso.dll はカスタマイズされたコンポーネント。 プリンターの INI ファイル、双方向の拡張ファイル、およびカスタマイズされたコンポーネントに関する詳細については、次を参照してください。[カスタマイズされたドライバー コンポーネントをインストール](installing-customized-driver-components.md)と[双方向通信スキーマ](bidirectional-communication-schema.md)します。
+この例では、Contoso .ini はプリンターの INI ファイルであり、contoso .xml は bidi 拡張ファイルであり、Contoso .dll はカスタマイズされたコンポーネントです。 プリンター INI ファイル、bidi 拡張ファイル、およびカスタマイズされたコンポーネントの詳細については、「カスタマイズされた[ドライバーコンポーネント](installing-customized-driver-components.md)と[双方向通信スキーマ](bidirectional-communication-schema.md)のインストール」を参照してください。
 
-[ポイント アンド プリント](introduction-to-point-and-print.md)操作は、ドライバーと、クライアント ドライバーに依存するファイルの両方をインストールします。
+[ポイントアンドプリント](introduction-to-point-and-print.md)操作では、ドライバーとドライバーに依存するファイルの両方がクライアントにインストールされます。
 
-プリンター モデルごとに最大で 64 の依存ファイルを指定できます。
+各プリンターモデルには、最大64の依存ファイルを指定できます。
 
 ## <a name="related-topics"></a>関連トピック
-[双方向通信のスキーマ](bidirectional-communication-schema.md)  
+[双方向通信スキーマ](bidirectional-communication-schema.md)  
 [**INF ControlFlags セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-controlflags-section)  
-[カスタマイズされたドライバー コンポーネントをインストールします。](installing-customized-driver-components.md)  
-[ポイント アンド プリント](introduction-to-point-and-print.md)  
-[プリンター INF ファイルのインストールのセクション](printer-inf-file-install-sections.md)  
-[V4 ドライバー マニフェスト](v4-driver-manifest.md)  
+[カスタマイズされたドライバーコンポーネントのインストール](installing-customized-driver-components.md)  
+[ポイントアンドプリント](introduction-to-point-and-print.md)  
+[プリンタ INF ファイルインストールセクション](printer-inf-file-install-sections.md)  
+[V4 ドライバーマニフェスト](v4-driver-manifest.md)  
 
 
 
