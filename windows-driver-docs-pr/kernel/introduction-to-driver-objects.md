@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5736566d6b407690ceea71b2d7d78a92cff7bc2c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838629"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402425"
 ---
 # <a name="introduction-to-driver-objects"></a>ドライバー オブジェクトの概要
 
@@ -36,7 +36,7 @@ I/o マネージャーがドライバーの[**Driverentry**](https://docs.micros
 
 ![driver オブジェクトを示す図](images/24drvobj.png)
 
-I/o マネージャーは、ドライバーオブジェクトの種類を定義し、ドライバーオブジェクトを使用して、読み込まれたドライバーのイメージに関する情報を登録および追跡します。 Driver オブジェクトのディスパッチエントリポイント ( **dddispatch * * * Xxx*から**Dddispatch * **Yyy*)*** は、の i/o スタックの場所で渡される主な関数コード (IRP\_MJ\_xxx * * *) に対応していることに注意してください。Irp.
+I/o マネージャーは、ドライバーオブジェクトの種類を定義し、ドライバーオブジェクトを使用して、読み込まれたドライバーのイメージに関する情報を登録および追跡します。 Driver オブジェクトのディスパッチエントリポイント ( **dddispatch * * * Xxx*から**Dddispatch * **Yyy*)*** は、irp の i/o スタックの場所で渡される主な関数コード (irp\_MJ\_Xxx * * *) に対応します。
 
 I/o マネージャーは、各 IRP をドライバーが提供するディスパッチルーチンに最初にルーティングします。 一般に、最下位レベルのドライバーのディスパッチルーチンは、ドライバーの[*StartIo*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_startio)ルーチンに有効な引数を持つ各 IRP をキューに入れて (または成功させる)、i/o サポートルーチン ([**iostartpacket**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iostartpacket)) を呼び出します。 *StartIo*ルーチンは、特定のデバイスで要求された i/o 操作を開始します。 通常、上位レベルのドライバーには*StartIo*ルーチンがありませんが、できます。
 

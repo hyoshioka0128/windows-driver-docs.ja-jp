@@ -3,24 +3,24 @@ title: トレース セッション
 description: トレース セッション
 ms.assetid: 50a8cc64-5127-4abe-a6a8-514ca5db63ab
 keywords:
-- WDK のトレース セッション
-- トレース セッションの詳細については、トレース セッション WDK、
-- セッションの WDK ソフトウェア トレース
-- WDK のプライベート トレース セッション
-- WDK のバッファー内のトレース セッション
-- WDK のリアルタイムのトレース セッション
-- WDK のトレース ログ セッション
-- ユーザー モード トレース セッション WDK
-- WDK のトレース セッションを処理します。
-- WDK の予約済みのトレース セッション
+- トレースセッション WDK
+- トレースセッション WDK、トレースセッションについて
+- セッション WDK ソフトウェアのトレース
+- プライベートトレースセッション WDK
+- バッファーされるトレースセッション WDK
+- リアルタイムトレースセッション WDK
+- トレースログセッション WDK
+- ユーザーモードのトレースセッション WDK
+- トレースセッションのプロセス WDK
+- 予約済みのトレースセッション WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8007a394639abeb3d5382ab7aaa13222958d62eb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63392693"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402437"
 ---
 # <a name="trace-session"></a>トレース セッション
 
@@ -28,47 +28,47 @@ ms.locfileid: "63392693"
 ## <span id="ddk_trace_session_tools"></span><span id="DDK_TRACE_SESSION_TOOLS"></span>
 
 
-A*トレース セッション*は、期間、[トレース プロバイダー](trace-provider.md)トレース メッセージを生成します。 システムでは、一連のトレース セッション (「フラッシュされた」) が配信されるまで、トレース メッセージを保存するバッファーを維持する、[トレース ログ](trace-log.md)または[トレース コンシューマー](trace-consumer.md)します。
+トレース*セッション*は、トレース[プロバイダー](trace-provider.md)がトレースメッセージを生成する期間です。 トレースセッションがトレース[ログ](trace-log.md)または[トレースコンシューマー](trace-consumer.md)に配信 ("フラッシュ") されるまで、トレースメッセージを格納するためのバッファーのセットがシステムによって保持されます。
 
-トレース セッションの 3 つの基本的な種類があります。 トレース ログ セッション、リアルタイムのトレース セッション、およびバッファー内のトレース セッション。 1 つのトレース セッション トレースのログ セッション、リアルタイムのトレース セッションの場合、またはその両方を使用できます。 バッファー内のトレース セッションは排他的です。
+トレースセッションには、トレースログセッション、リアルタイムトレースセッション、バッファリングされたトレースセッションの3種類があります。 1つのトレースセッションには、トレースログセッション、リアルタイムトレースセッション、またはその両方を指定できます。 バッファーされたトレースセッションは排他的です。
 
-さらに、あるプライベート トレース セッションと予約済みのトレース セッションをなど、[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)と[グローバル ロガー トレース セッション](global-logger-trace-session.md)、ログ セッションとして実行またはリアルタイムセッションです。 これらのセッションを制御し、結果のトレース メッセージを表示するのには、標準のツールを使用できます。
+さらに、プライベートトレースセッションや、 [NT カーネルロガートレース](nt-kernel-logger-trace-session.md)セッションや[グローバルロガートレースセッション](global-logger-trace-session.md)などの予約済みのトレースセッションがあります。これは、ログセッションまたはリアルタイムセッションとして実行できます。 標準ツールを使用すると、これらのセッションを制御し、結果のトレースメッセージを表示できます。
 
-### <a name="span-idddktracelogsessionstoolsspanspan-idddktracelogsessionstoolsspantrace-log-sessions"></a><span id="ddk_trace_log_sessions_tools"></span><span id="DDK_TRACE_LOG_SESSIONS_TOOLS"></span>ログのトレース セッション
+### <a name="span-idddk_trace_log_sessions_toolsspanspan-idddk_trace_log_sessions_toolsspantrace-log-sessions"></a><span id="ddk_trace_log_sessions_tools"></span><span id="DDK_TRACE_LOG_SESSIONS_TOOLS"></span>トレースログセッション
 
-*トレース ログ セッション*、トレース メッセージは、トレース バッファーからバイナリ形式でログ ファイルに書き込まれます。 これは、標準的な既定のトレース セッションの種類です。
+トレース*ログセッション*では、トレースメッセージは、トレースバッファーからバイナリ形式でログファイルに書き込まれます。 これは、標準の既定のトレースセッションの種類です。
 
-### <a name="span-idddkrealtimetracesessionstoolsspanspan-idddkrealtimetracesessionstoolsspanreal-time-trace-sessions"></a><span id="ddk_real_time_trace_sessions_tools"></span><span id="DDK_REAL_TIME_TRACE_SESSIONS_TOOLS"></span>リアルタイムのトレース セッション
+### <a name="span-idddk_real_time_trace_sessions_toolsspanspan-idddk_real_time_trace_sessions_toolsspanreal-time-trace-sessions"></a><span id="ddk_real_time_trace_sessions_tools"></span><span id="DDK_REAL_TIME_TRACE_SESSIONS_TOOLS"></span>リアルタイムトレースセッション
 
-*リアルタイム トレース セッション*、トレース メッセージがなどのトレース コンシューマーに直接配信される[traceview で](traceview.md)または[Tracefmt](tracefmt.md)の代わりに、または、に加えて、送信されます。ログ ファイル。
+*リアルタイムのトレースセッション*では、トレースメッセージは、ログファイルに送信されるのではなく、 [Traceview](traceview.md)や[tracefmt](tracefmt.md)などのトレースコンシューマーに直接配信されます。
 
-### <a name="span-idddkbufferedtracesessionstoolsspanspan-idddkbufferedtracesessionstoolsspanbuffered-trace-sessions"></a><span id="ddk_buffered_trace_sessions_tools"></span><span id="DDK_BUFFERED_TRACE_SESSIONS_TOOLS"></span>バッファー内のトレース セッション
+### <a name="span-idddk_buffered_trace_sessions_toolsspanspan-idddk_buffered_trace_sessions_toolsspanbuffered-trace-sessions"></a><span id="ddk_buffered_trace_sessions_tools"></span><span id="DDK_BUFFERED_TRACE_SESSIONS_TOOLS"></span>バッファーされるトレースセッション
 
-*トレース セッションのバッファー*、トレース メッセージ トレース バッファーに残ります。 には書き込まれません、[トレース ログ](trace-log.md)に配信または、[トレース コンシューマー](trace-consumer.md)します。 バッファーは循環ファイルのように維持されます。 完全なは、最新のトレース メッセージはバッファー内の最も古いトレース メッセージを上書きします。
+バッファーされた*トレースセッション*では、トレースメッセージはトレースバッファーに残ります。[トレースログ](trace-log.md)に書き込まれたり、[トレースコンシューマー](trace-consumer.md)に配信されたりすることはありません。 バッファーは、循環ファイルと同じように保持されます。 いっぱいになると、最新のトレースメッセージによってバッファー内の最も古いトレースメッセージが上書きされます。
 
-バッファー内のトレース セッションは、Windows Vista および Windows の以降のバージョンでのみサポートされます。
+バッファーされたトレースセッションは、Windows Vista 以降のバージョンの Windows でのみサポートされます。
 
-ソフトウェア トレース、一般に、非常にわずかなオーバーヘッドが発生した場合はバッファー内のトレース セッションはすべてのトレース セッションの種類の最小限のオーバーヘッドがあります。 長期間にトレースすることができ、次に、興味深い問題が発生した場合、デバッガーを使用して、現在のバッファーの内容を確認したり、トレース ログの現在のバッファーの内容を保存します。
+一般に、ソフトウェアのトレースではオーバーヘッドはほとんど発生しませんが、バッファリングされたトレースセッションでは、すべての種類のトレースセッションのオーバーヘッドが最小限に抑えられます。 長期間トレースして、興味深い問題が発生した場合は、デバッガーを使用して現在のバッファーの内容を調べたり、現在のバッファーの内容をトレースログに保存したりできます。
 
-トレース バッファー内のトレース メッセージを表示する、 **! wmitrace**デバッガー拡張機能を特殊化します。 この拡張機能については、次を参照してください。*ツールを Windows のデバッグ*します。
+トレースバッファー内のトレースメッセージを表示するには、 **! wmitrace**の特殊化されたデバッガー拡張機能を使用します。 この拡張機能の詳細については、「 *Windows 用デバッグツール*」を参照してください。
 
-コンテンツ バッファーのフラッシュ、[トレース ログ](trace-log.md)を使用して、 **-f**のパラメーター、 **tracelog-フラッシュ**コマンド。
+バッファーの内容を[トレースログ](trace-log.md)にフラッシュするには、**トレースログ-flush**コマンドの **-f**パラメーターを使用します。
 
-バッファー内のトレース セッションを開始するには、使用、 **-バッファリング**のパラメーター、 **tracelog-開始**コマンド。 詳細については、次を参照してください。 [ **Tracelog コマンド構文**](tracelog-command-syntax.md)します。
+バッファーされたトレースセッションを開始するには、**トレースログ-start**コマンドの **-バッファリング**パラメーターを使用します。 詳細については、「 [**Tracelog コマンドの構文**](tracelog-command-syntax.md)」を参照してください。
 
-### <a name="span-idddkprivatetracesessionstoolsspanspan-idddkprivatetracesessionstoolsspanprivate-trace-sessions"></a><span id="ddk_private_trace_sessions_tools"></span><span id="DDK_PRIVATE_TRACE_SESSIONS_TOOLS"></span>プライベート トレース セッション
+### <a name="span-idddk_private_trace_sessions_toolsspanspan-idddk_private_trace_sessions_toolsspanprivate-trace-sessions"></a><span id="ddk_private_trace_sessions_tools"></span><span id="DDK_PRIVATE_TRACE_SESSIONS_TOOLS"></span>プライベートトレースセッション
 
-A*プライベート トレース セッション*はそれを追跡するユーザー モード プロセスの一環として、ユーザー モードで実行されているトレース セッションです。 (標準のトレース セッションは、カーネルで実行)。プライベートのトレース セッションとも呼ばれます*ユーザー モード トレース セッション*または*トレース セッションを処理*します。
+*プライベートトレースセッション*は、ユーザーモードでトレースするユーザーモードプロセスの一部として実行されるトレースセッションです。 (標準のトレースセッションはカーネルで実行されます)。プライベートトレースセッションは、*ユーザーモードのトレース*セッションまたは*プロセストレースセッション*とも呼ばれます。
 
-一度に 1 つ以上のプライベート トレース セッションを実行できますが、プロセスごとに 1 つだけのプライベート トレース セッションを実行することができます。
+複数のプライベートトレースセッションを同時に実行することはできますが、各プロセスで実行できるプライベートトレースセッションは1つだけです。
 
-プライベートのトレース セッションのトレースをリアルタイムで行うことはできません。 トレース メッセージは、ログに書き込ま 必要があります。
+プライベートトレースセッションのリアルタイムトレースを実行することはできません。 トレースメッセージをログに書き込む必要があります。
 
-プライベート トレース セッションで使用されるバッファーは、ページングは常にします。 これらのバッファー ページまたは非ページ メモリを指定することはできません。
+プライベートトレースセッションで使用されるバッファーは、常にページング可能です。 これらのバッファーには、ページングメモリまたは非ページメモリを指定できません。
 
-デバッガーをプライベートのトレース セッションからのトレース メッセージを送信できません。 WMI のトレース拡張機能 (**! wmitrace**) は、プライベートのトレース セッションをサポートしていません。
+トレースメッセージをプライベートトレースセッションからデバッガーに送信することはできません。 WMI トレース拡張機能 ( **! wmitrace**) では、プライベートトレースセッションはサポートされていません。
 
-プライベート イベント トレース セッションの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
+プライベートイベントのトレースセッションの詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
  
 
