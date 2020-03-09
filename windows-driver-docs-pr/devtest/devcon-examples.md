@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: c96013d8cc2ec547a687ece45189caba95771e97
-ms.sourcegitcommit: 9dbb1ef59c3e797bfc3cc418dd2b9bdc44940d14
+ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71284926"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78402445"
 ---
 # <a name="device-console-devconexe-examples"></a>デバイス コンソール (DevCon.exe) の例
 
@@ -1037,8 +1037,8 @@ devcon /r classfilter DiskDrive upper !Disklog =@PartMgr +Disklog
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">変更前</th>
-<th align="left">クリック後</th>
+<th align="left">実行前</th>
+<th align="left">後</th>
 </tr>
 </thead>
 <tbody>
