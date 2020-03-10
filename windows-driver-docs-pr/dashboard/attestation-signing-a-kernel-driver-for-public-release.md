@@ -5,12 +5,12 @@ ms.assetid: A292B15D-37FD-407E-998C-728D9423E712
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa573aff7307e8a2a81917fa2d4e68b0f3c85d01
-ms.sourcegitcommit: 4184cb3bb6737762b2768cd8b9b2233297fc64cc
+ms.openlocfilehash: fcf71a3bf01640c99fadd035e5ea41b6ea3ade91
+ms.sourcegitcommit: e5c36bcb678ca42ac30e89408c139f2ba0207549
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74820388"
+ms.lasthandoff: 02/29/2020
+ms.locfileid: "78180970"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名
 
@@ -21,7 +21,7 @@ ms.locfileid: "74820388"
 > - 構成証明署名は、Windows 10 デスクトップのカーネル モード ドライバーとユーザー モード ドライバーをサポートしています。 Windows 10 では、ユーザー モード ドライバーは Microsoft による署名を必要としませんが、ユーザー モード ドライバーとカーネル モード ドライバーの両方で同じ構成証明プロセスを使うことができます。
 > - 構成証明署名は、**ELAM** または **Windows Hello** PE バイナリについて、適切な PE レベルを返しません。  これらは、追加の署名属性を受け取るために、テストして .hlkx パッケージとして提出する必要があります。
 > - 構成証明署名では、EV 証明書を使ってパートナー センターでドライバーを申請する必要があります。
-> - **構成証明署名されたドライバーは、Windows 10 および Windows Server 2016 以降で動作します。それより前のバージョンの Windows (Windows 8.1 や Windows 7 など) では機能しません。**
+> - **構成証明署名されたドライバーは、Windows 10 で動作します。Windows 8.1 や Windows 7 など、より古いバージョンの Windows では動作せず、Windows Server 2016 以降ではサポートされていません。サポート ポリシーの詳細については、[Windows の構成証明プロセスを使用して署名されたサードパーティ製のカーネルレベル ソフトウェアのサポート ポリシー](https://support.microsoft.com/help/4519013/support-policy-3rd-party-kernel-level-attestation-signed-software)** をご覧ください。
 > - 構成証明署名を行うには、ドライバー フォルダー名に特殊文字や UNC ファイル共有パスを使用せず、 40 文字未満のフォルダー名にする必要があります。
 
 ## <a name="attestation-signing-a-kernel-mode-driver"></a>カーネル モード ドライバーへの構成証明署名
@@ -200,7 +200,7 @@ C:\Echo> SignTool verify /pa /ph /v /d Echo.Sys
 ```
 
 4. ドライバーの EKU を確認するには、次の手順を実行します。
-a. エクスプローラーを開き、バイナリ ファイルを探します。 そのファイルを右クリックし、 **[プロパティ]** を選びます。
+a。 エクスプローラーを開き、バイナリ ファイルを探します。 そのファイルを右クリックし、 **[プロパティ]** を選びます。
 b. **[デジタル署名]** タブの [署名の一覧] で、示されている項目を選びます。
 c. **[詳細]** ボタンを選び、 **[証明書の表示]** を選びます。
 d. **[詳細]** タブで、 **[拡張キー使用法]** フィールドを選びます。
