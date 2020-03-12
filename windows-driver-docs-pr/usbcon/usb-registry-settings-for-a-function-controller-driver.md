@@ -1,46 +1,46 @@
 ---
-Description: Oem は、自分のデバイスがコンピューターに接続されている場合は、正しいメタデータを持つ列挙ことを確認するいくつかのレジストリ値を設定する必要があります。
+Description: Oem は、コンピューターに接続されたときに、デバイスが正しいメタデータを使用して列挙できるように、いくつかのレジストリ値を設定する必要があります。
 title: 機能コントローラー ドライバー用 USB レジストリ設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 18bf5bde14e3a9fc21d2ae1842ec19281e81a099
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce5546ca1c7ee20beb181252f6b26256af0939fc
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377206"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083152"
 ---
 # <a name="usb-registry-settings-for-a-function-controller-driver"></a>機能コントローラー ドライバー用 USB レジストリ設定
 
 
 **要約**
 
--   レジストリ キーの USB ディスクリプターを定義する Oem によって設定する必要があります。
+-   USB 記述子を定義するために Oem によって設定される必要があるレジストリキー。
 
 **適用対象:**
 
 -   Windows 10
 
-**最終更新日。**
+**最終更新日時:**
 
 -   2015 年 11 月
 
-Oem は、自分のデバイスがコンピューターに接続されている場合は、正しいメタデータを持つ列挙ことを確認するいくつかのレジストリ値を設定する必要があります。 これらの値のデバイスと構成の記述子の指定、 [Windows での USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)します。 作成し、独自のインターフェイスは、Oem は、そのインターフェイスをロードして使用するために追加のレジストリ値を設定する必要があります。
+Oem は、コンピューターに接続されたときに、デバイスが正しいメタデータを使用して列挙できるように、いくつかのレジストリ値を設定する必要があります。 これらの値は、 [Windows の USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)のデバイス記述子と構成記述子を指定します。 独自のインターフェイスを作成して含める Oem は、インターフェイスを読み込んで使用するために、追加のレジストリ値を設定する必要があります。
 
-デバイス側の USB ドライバーに関連するレジストリ キーは下です。
+デバイス側の USB ドライバーに関連するレジストリキーは次のとおりです。
 
-**HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control**\\**USBFN**
+**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\USBFN**
 
-このトピックでは、前のキーとデバイス、構成、およびデバイスのインターフェイスの記述子を定義するサブキーの設定について説明します。
+このトピックでは、デバイスのデバイス、構成、およびインターフェイス記述子を定義する、前のキーとサブキーの設定について説明します。
 
-## <a name="usbfn-registry-key"></a>USBFN レジストリ キー
+## <a name="usbfn-registry-key"></a>USBFN レジストリキー
 
 
-USB デバイスの構成情報は、下は。
+USB デバイスの構成情報は次のとおりです。
 
-**HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control**\\**USBFN**
+**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\USBFN**
 
-このテーブルには、Oem は、このキーの下で変更できるサブキーがについて説明します。 詳細についてはサポートされている各サブキーの値の詳細については、以下のセクションで提供されます。
+次の表では、そのサブキーについて説明します。 これらの一部は Oem によって変更される場合があります。 各サブキーでサポートされている値の詳細については、以下のセクションで説明します。
 
 <table>
 <colgroup>
@@ -55,56 +55,54 @@ USB デバイスの構成情報は、下は。
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>代替</strong></td>
-<td>このサブキーには、1 つまたは複数の代替設定を持つインターフェイスについて説明する追加のサブキーが含まれています。
-<p><strong>Hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;交互に設定</strong></p></td>
+<td><strong>切り替える</strong></td>
+<td>このサブキーには、1つまたは複数の代替設定を持つインターフェイスを説明する追加のサブキーが含まれています。</td>
 </tr>
 <tr class="even">
-<td><strong>関連付け</strong></td>
-<td>このサブキーは、インターフェイスの関連付け記述子 (Iad) を定義します。 各 IAD は、1 つの関数にグループ化する複数のインターフェイスを使用できます。 各サブキーは異なる IAD を表し、Oem は、それらのサブキーの値を変更できます。
-<p><strong>Hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;の関連付け</strong></p></td>
+<td><strong>連盟</strong></td>
+<td>このサブキーは、インターフェイスの関連付け記述子 (IADs) を定義します。 各 IAD では、複数のインターフェイスを1つの関数にグループ化することができます。 各サブキーは別の IAD を表し、Oem はそれらのサブキーの値を変更できます。</td>
 </tr>
 <tr class="odd">
-<td><strong>Default</strong></td>
-<td>このサブキーには、VID と PID などのデバイスに固有の設定の記述に使用される既定値が含まれています。 これは、Microsoft が所有しているサブキーの値は、親キーでによってオーバーライドされます。
-<p><strong>Hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong></p></td>
+<td><strong>既定</strong></td>
+<td>このサブキーには、VID や PID などのデバイス固有の設定を記述するために使用される既定値が含まれています。 これは、値が親キーの値によってオーバーライドされる Microsoft 所有のサブキーです。</td>
 </tr>
 <tr class="even">
 <td><strong>構成</strong></td>
-<td>このサブキーには、USB の列挙中に使用される構成記述子の値が含まれているその他のサブキーが含まれています。 標準のテスト構成が存在するなど、 <strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;構成</strong>&lt;強力な&gt;TestConfigClassic</strong>します。</td>
+<td>このサブキーには、USB 列挙中に使用される構成記述子の値を含むサブキーが含まれています。 たとえば、標準のテスト構成が<strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn\configurations\testconfig</strong>の下に存在する場合があります。</td>
 </tr>
 <tr class="odd">
-<td><strong>Configurations\Default</strong></td>
-<td>このサブキーには、既定の構成の値が含まれています。 既定の構成でインターフェイスが現在の構成の前に追加表示するときに、 <strong>IncludeDefaultCfg</strong>で値を設定、 <strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>キー。</td>
+<td><strong>既定値 (既定)</strong></td>
+<td>これは、Microsoft が所有するサブキーです。 既定の構成の値が含まれています。 <strong>HKEY_LOCAL_MACHINE \System\CurrentControlSet\Control\USBFN キーの下で<strong>Includedefaultcfg</strong>値が1に設定されている場合、既定の構成のインターフェイスは、現在の構成の前に追加されます。</td>
 </tr>
 <tr class="even">
 <td><strong>Interfaces</strong></td>
-<td>このサブキーには、特定のインターフェイスの記述子を記述するその他のサブキーが含まれています。 たとえば、IP over USB 構成もという名前のサブキーの下に存在する<strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;インターフェイス</strong>&lt;強力な&gt;IpOverUsb</strong>します。 インターフェイスには、このサブキーの名前は、クラス ドライバーのハードウェア ID が決まります。 例の USB 経由で IP、ロード PDO の _HID には、 <strong>USBFN\IpOverUsb</strong>します。</td>
+<td>このサブキーには、特定のインターフェイス記述子を説明する追加のサブキーが含まれています。 たとえば、IP over USB インターフェイスは<strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn\interfaces\ipoverusb</strong>の下に存在する場合があります。 このインターフェイスサブキーの名前は、USBFn クラスドライバーを読み込むための USBFN 子デバイスのハードウェア ID としても使用されます。 IP over USB の例では、USBFN 子デバイスのハードウェア ID は<strong>USBFN\IpOverUsb</strong>になります。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-次の表に Oem が変更できる値の説明、 **HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**キー。 この表に記載されていない値には、Microsoft によって定義された既定値が前提としています**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール** \\ **USBFN**\\**既定**します。
+次の表では、 **\_ローカル\_コンピューター\\システム\\CurrentControlSet\\コントロール\\USBFN**キーで oem が定義できる値について説明します。 このキーで定義されていない値は、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\コントロール\\USBFN\\default**の下で、Microsoft によって定義された既定値を前提としています。
 
-すべての Oem を設定する必要があります、 **idVendor**、 **idProduct**、 **ManufacturerString**、および**ProductString**値。 作成し、独自のインターフェイスを設定する必要がありますも追加する Oem**設定になっています**の下のサブキーの名前に**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\**USBFN**\\**構成**でそのインターフェイスを含む**InterfaceList**します。
+すべての Oem は**Idvendor**、 **idvendor**、 **ManufacturerString**、および**productstring**の値を設定する必要があります。 また、独自のインターフェイスを作成して追加するには、[HKEY] の下のサブキーの名前に**Currentconfiguration**を設定する必要があります。これは、 **interfacelist**内のインターフェイスを含む **\_ローカル\_コンピューター\\システム\\CurrentControlSet\\コントロール\\usbfn\\構成**です。
 
-| 値                    | 種類       | 所有者 | 説明                                                                                                                                                                                                                                                                                                                |
-|--------------------------|------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **idVendor**             | REG\_DWORD | OEM   | 列挙中に、ホストに送信されるデバイス記述子の仕入先の識別子です。                                                                                                                                                                                                                               |
-| **idProduct**            | REG\_DWORD | OEM   | 列挙中に、ホストに送信されるデバイス記述子の製品識別子。                                                                                                                                                                                                                              |
-| **ManufacturerString**   | REG\_SZ    | OEM   | デバイスの製造元を識別するために、ホストに送信される製造元の文字列。                                                                                                                                                                                                                               |
-| **ProductString**        | REG\_SZ    | OEM   | 製品としてデバイスを説明する文字列。 既定値は、Windows 10 Mobile デバイスです。 この値は、接続されているコンピューターのユーザー インターフェイスでデバイスの表示名として使用されます。 Oem は、この値が PhoneModelName DeviceTargetingInfo サブキーの下の値と一致することを確認してください。 |
-| **iSerialNumber**        | REG\_DWORD | OEM   | この値が 0 に設定されている場合そのデバイスには、シリアル番号項目がありません。 存在しないまたは値が 0 以外の場合、シリアル番号が生成されます一意にデバイスごと。                                                                                                                                            |
-| **CurrentConfiguration** | REG\_SZ    | OEM   | この文字列は、構成のサブキーの名前に対応する必要があります。 この文字列は、USB デバイスの列挙の構成記述子の構築に使用するには、どの構成を決定します。                                                                                                                                       |
+| 値 | 種類 | 所有者 | 説明|
+|--|--|--|--|
+| **IncludeDefaultCfg** | REG\_DWORD | OEM | Oem が IpOverUsb や MTP などの既定の構成のインターフェイスを含める場合は、を1に設定します。 |
+| **idVendor** | REG\_DWORD | OEM | 列挙中にホストに送信されるデバイス記述子のベンダー識別子。 |
+| **idProduct** | REG\_DWORD | OEM | 列挙中にホストに送信されるデバイス記述子の製品識別子。 |
+| **ManufacturerString** | REG\_SZ| OEM | デバイスの製造元を識別するためにホストに送信される製造元文字列。 |
+| **ProductString** | REG\_SZ| OEM | デバイスを製品として記述する文字列。 既定値は Windows 10 Mobile デバイスです。 この値は、接続されているコンピューターのユーザーインターフェイスのデバイスの表示名として使用されます。 Oem は、この値が DeviceTargetingInfo サブキーの下にある PhoneModelName の値と一致することを確認する必要があります。 |
+| **iSerialNumber**| REG\_DWORD | OEM | この値が0に設定されている場合、デバイスにはシリアル番号がありません。 この値が0以外の場合、または存在しない場合、シリアル番号はデバイスごとに一意に生成されます。 |
+| **CurrentConfiguration** | REG\_SZ | OEM | この文字列は、構成サブキーの名前に対応している必要があります。 この文字列は、USB デバイス列挙の構成記述子の作成に使用する構成を決定します。 |
 
  
 
-## <a name="usbfnconfigurations-registry-key"></a>USBFN\\レジストリ キーの構成
+## <a name="usbfnconfigurations-registry-key"></a>USBFN\\構成のレジストリキー
 
 
-Oem は、下のサブキーを変更できる値を表**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**構成**します。 各サブキーは、別の USB 構成を表します。 OEM が独自のインターフェイスを作成する場合は、OEM を使用するインターフェイスを含む新しい構成を定義する必要があります。 これを行うには、下のサブキーを作成**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\**USBFN**\\**構成**を構成の名前を使用し、このテーブル内の値とサブキーを作成します。 さらに、新しい構成を使用する USB ドライバーを**設定になっています**値 (上記の表で説明) は、構成のサブキーの名前に設定する必要があります。
+次の表では、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\コントロール\\USBFN\\構成**のサブキーに対して oem が定義できる値について説明します。 各サブキーは、異なる USB 構成を表します。 OEM が独自のインターフェイスを作成する場合は、使用するインターフェイスを含む新しい構成を OEM が定義する必要があります。 これを行うには、HKEY の下にサブキーを作成し **\_LOCAL\_MACHINE\\System\\CurrentControlSet\\** 構成の名前を使用してサブキーにこのテーブルの値を設定します。\\\\ さらに、USB ドライバーで新しい構成を使用するには、前の表に記載されている**Currentconfiguration**値を構成サブキーの名前に設定する必要があります。
 
 <table>
 <colgroup>
@@ -126,89 +124,89 @@ Oem は、下のサブキーを変更できる値を表**HKEY\_ローカル\_マ
 <td><strong>InterfaceList</strong></td>
 <td>REG_MULTI_SZ</td>
 <td>OEM または Microsoft</td>
-<td><p>インターフェイスのサブキーに対応するインターフェイス名の一覧を含む<strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;インターフェイス</strong>、下で定義されている IAD 関連付け<strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;アソシエーション</strong>とで定義されている代替インターフェイス<strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>&lt;強力な&gt;代替</strong>します。 これらのキーは、複合構成記述子の記述に使用するインターフェイスを決定します。</p>
-<p>場合、 <strong>IncludeDefaultCfg</strong>値、 <strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong>キーが 1 に設定されている、この一覧は、デバイスを列挙するために使用するインターフェイスの完全な一覧を作成する既定の Microsoft が所有しているインターフェイスの一覧に追加されます。</p></td>
+<td><p><strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn\interfaces</strong>の下のインターフェイスサブキー、 <strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn\associations</strong>で定義されている iad アソシエーション、および<strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn\alternates</strong>で定義されている代替インターフェイスに対応するインターフェイス名の一覧が含まれています。 これらのキーは、複合構成記述子の記述に使用されるインターフェイスを決定します。</p>
+<p><strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn</strong>キーの<strong>includedefaultcfg</strong>値が1に設定されている場合、この一覧は、デバイスが列挙に使用する完全なインターフェイスリストを作成するために、Microsoft が所有する既定のインターフェイスリストに追加されます。</p></td>
 </tr>
 <tr class="even">
 <td><strong>MSOSCompatIdDescriptor</strong></td>
 <td>REG_BINARY</td>
 <td>OEM または Microsoft</td>
-<td><p>(省略可能)。 記述子を定義する拡張互換性 ID OS 機能の構成。 場合、 <strong>IncludeDefaultCfg</strong>値、 <strong>hkey_local_machine \system\currentcontrolset\control</strong>&lt;強力な&gt;USBFN</strong> 1、関数にキーが設定されています。この記述子では、関数と既定の構成でインターフェイスに追加されます。</p></td>
+<td><p>省略可。 構成の拡張された Compat ID OS 機能記述子を定義します。 <strong>HKEY_LOCAL_MACHINE \system\currentcontrolset\control\usbfn</strong>キーの<strong>includedefaultcfg</strong>値が1に設定されている場合、この記述子の関数は、既定の構成の関数とインターフェイスに追加されます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="usbfninterfaces-registry-key"></a>USBFN\\インターフェイスのレジストリ キー
+## <a name="usbfninterfaces-registry-key"></a>USBFN\\インターフェイスのレジストリキー
 
 
-Oem は、下のサブキーを変更できる値を表**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**インターフェイス**します。
+次の表では、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\コントロール\\USBFN\\インターフェイス**のサブキーについて、oem が変更できる値について説明します。
 
-各サブキーは、別の USB インターフェイスを表します。 インターフェイスを定義するには、下のサブキーを作成**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**インターフェイス**インターフェイスの名前を使用し、次の表の値を設定します。 さらに、インターフェイスにのみ含まれるインターフェイスがの一部である場合、 **InterfaceList**の**設定になっています**します。
+各サブキーは、異なる USB インターフェイスを表します。 インターフェイスを定義するには、HKEY の下にサブキーを作成し **\_LOCAL\_MACHINE\\System\\CurrentControlSet\\** インターフェイスの名前を使用して usbfn\\インターフェイスを作成し、次の表の値を設定します。\\ さらに、インターフェイスは、インターフェイスが**Currentconfiguration**の**interfacelist**の一部である場合にのみ含まれます。
 
 | 値                              | 種類        | 所有者            | 説明                                                                                                                                                                                                                                                                                                  |
 |------------------------------------|-------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **InterfaceDescriptor**            | REG\_バイナリ | OEM または Microsoft | USB の列挙中に、ホストに送信する、インターフェイスの記述子のバイナリ表現です。 **BInterfaceNumber**と**iInterface**値が、USB 関数のスタックで他のインターフェイスとの競合を回避するために完全な構成記述子をコンパイルした後、自動的に設定されます記述子。 |
-| **InterfaceGUID**                  | REG\_SZ     | OEM または Microsoft | バスのインターフェイスを一意に識別する GUID です。                                                                                                                                                                                                                                                     |
-| **InterfaceNumber**                | REG\_DWORD  | OEM または Microsoft | 任意。 この値は、固定のインターフェイスの数。 関数に割り当てに使用されます。 インターフェイス番号 0-1 f はレガシ関数の予約済み、20-3 f は、Microsoft 用に予約されておよび 40 5 f は、使用するため、Oem で予約されています。                                                                                           |
-| **MSOSExtendedPropertyDescriptor** | REG\_バイナリ | OEM または Microsoft | 任意。 拡張 OS 機能のプロパティ記述子、インターフェイスを定義します。                                                                                                                                                                                                                              |
+| **InterfaceDescriptor**            | REG\_バイナリ | OEM または Microsoft | USB 列挙中にホストに送信するインターフェイス記述子のバイナリ表現。 **BInterfaceNumber**値と**iinterface**値は、他のインターフェイス記述子との競合を避けるために、完全な構成記述子をコンパイルした後、USB 関数スタックによって自動的に設定されます。 |
+| **InterfaceGUID**                  | REG\_SZ     | OEM または Microsoft | バス上のインターフェイスを一意に識別する GUID。                                                                                                                                                                                                                                                     |
+| **InterfaceNumber**                | REG\_DWORD  | OEM または Microsoft | 省略可。 この値は、関数に固定のインターフェイス番号を割り当てるために使用されます。 インターフェイス番号 0-1F はレガシ関数用に予約されており、20-3F は Microsoft 用に予約されており、40 5F (は Oem が使用するために予約されています。                                                                                           |
+| **MSOSExtendedPropertyDescriptor** | REG\_バイナリ | OEM または Microsoft | 省略可。 インターフェイスの拡張プロパティ OS 機能記述子を定義します。                                                                                                                                                                                                                              |
 
  
 
-## <a name="usbfnalternates-registry-key"></a>USBFN\\代替レジストリ キー
+## <a name="usbfnalternates-registry-key"></a>USBFN\\代替レジストリキー
 
 
-代替のサブキーを使用して、1 つのインターフェイスを持つ 1 つ以上の代替インターフェイスを定義します。 Oem は、下のサブキーを変更できる値を表**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**代替**します。
+代替サブキーは、1つまたは複数の代替インターフェイスを持つ1つのインターフェイスを定義するために使用されます。 次の表では、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control\\USBFN\\代替**のサブキーに対して oem が変更できる値について説明します。
 
-各サブキーは、別のインターフェイスを表します。 代替の設定でインターフェイスを定義するには、下のサブキーを作成**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**代替**で、インターフェイスの名前を使用して、次の表の値を入力します。
+各サブキーは、異なるインターフェイスを表します。 代替設定を使用してインターフェイスを定義するには、HKEY の下にサブキーを作成し **\_LOCAL\_MACHINE\\System\\CurrentControlSet\\コントロール\\USBFN\\** インターフェイスの名前を使用して代替を行い、次の表に示す値を設定します。
 
 | 値                              | 種類           | 所有者            | 説明                                                                                                                                                                                                                                                                                                                                                        |
 |------------------------------------|----------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **InterfaceList**                  | REG\_マルチ\_SZ | OEM または Microsoft | 2 つの下で定義されているインターフェイスに対応する複数のインターフェイス名の一覧**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\**USBFN**\\**インターフェイス**します。 そのキーは、まとめての代替設定を持つインターフェイスを定義します。 最初のインターフェイスに対応する 2 番目のインターフェイスが別の設定に対応して代替 0 を設定、1 という具合です。 |
-| **InterfaceNumber**                | REG\_DWORD     | OEM または Microsoft | 任意。 この値は、固定のインターフェイスの数。 関数に割り当てに使用されます。 インターフェイス番号 0-1 f はレガシ関数の予約済み、20-3 f は、Microsoft 用に予約されておよび 40 5 f は、使用するため、Oem で予約されています。                                                                                                                                                 |
-| **MSOSExtendedPropertyDescriptor** | REG\_バイナリ    | OEM または Microsoft | (省略可能)。 拡張 OS 機能のプロパティ記述子、インターフェイスを定義します。                                                                                                                                                                                                                                                                                    |
+| **InterfaceList**                  | REG\_複数\_SZ | OEM または Microsoft | HKEY で定義されているインターフェイスに対応する2つ以上のインターフェイス名のリスト。 **\_LOCAL\_MACHINE\\System\\CurrentControlSet\\コントロール\\USBFN\\インターフェイス**。 このキーは、別の設定を使用してインターフェイスをまとめて定義します。 1番目のインターフェイスは、別の設定0、2番目のインターフェイスが別の設定1などに対応します。 |
+| **InterfaceNumber**                | REG\_DWORD     | OEM または Microsoft | 省略可。 この値は、関数に固定のインターフェイス番号を割り当てるために使用されます。 インターフェイス番号 0-1F はレガシ関数用に予約されており、20-3F は Microsoft 用に予約されており、40 5F (は Oem が使用するために予約されています。                                                                                                                                                 |
+| **MSOSExtendedPropertyDescriptor** | REG\_バイナリ    | OEM または Microsoft | 省略可。 インターフェイスの拡張プロパティ OS 機能記述子を定義します。                                                                                                                                                                                                                                                                                    |
 
  
 
-## <a name="usbfnassociations-registry-key"></a>USBFN\\レジストリ キーの関連付け
+## <a name="usbfnassociations-registry-key"></a>USBFN\\Association レジストリキー
 
 
-Oem は、インターフェイスの関連付け記述子 (Iad) を定義することで、アソシエーションを指定できます。 各 IAD は、1 つの関数にグループ化する複数のインターフェイスを使用できます。 Oem は、下のサブキーを変更できる値を表**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**アソシエーション**します。
+Oem は、インターフェイスの関連付け記述子 (IADs) を定義することで、関連付けを指定できます。 各 IAD では、複数のインターフェイスを1つの関数にグループ化することができます。 次の表では、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\コントロール\\USBFN\\関連付け**のサブキーについて、oem が変更できる値について説明します。
 
-各サブキーは、さまざまな IAD を表します。 アソシエーションを定義するには、サブキーを作成**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール**\\ **USBFN**\\**アソシエーション**で、IAD の名を使用し、次の表の値を設定します。
+各サブキーは、異なる IAD を表します。 アソシエーションを定義するには、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control\\USBFN\\association**の名前を使用して、次の表の値を設定してサブキーを作成します。
 
 | 値                              | 種類           | 所有者            | 説明                                                                                                                                                                                                                 |
 |------------------------------------|----------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **InterfaceList**                  | REG\_マルチ\_SZ | OEM または Microsoft | インターフェイス、または USB 関数に関連付けられている代替インターフェイスの一覧。 リストのサイズが 2 未満の場合は、関数のドライバー スタックは読み込みに失敗します。 他の関数またはインターフェイスは、読み込みを続行します。 |
-| **bFunctionClass**                 | REG\_DWORD     | OEM または Microsoft | 関数のクラスのコードは、02 に設定します。                                                                                                                                                                                  |
-| **bFunctionSubClass**              | REG\_DWORD     | OEM または Microsoft | 関数のサブクラス コードは、0 d に設定します。                                                                                                                                                                               |
-| **bFunctionProtocol**              | REG\_DWORD     |                  | 関数のプロトコルのコードは 01 に設定します。                                                                                                                                                                               |
-| **MSOSExtendedPropertyDescriptor** | REG\_バイナリ    | OEM または Microsoft | 任意。 拡張 OS 機能のプロパティ記述子、インターフェイスを定義します。                                                                                                                                             |
+| **InterfaceList**                  | REG\_複数\_SZ | OEM または Microsoft | USB 関数に関連付けられているインターフェイスまたは代替インターフェイスの一覧。 リストのサイズが2未満の場合は、関数ドライバースタックの読み込みに失敗します。 その他の関数またはインターフェイスは引き続き読み込まれます。 |
+| **bFunctionClass**                 | REG\_DWORD     | OEM または Microsoft | 関数のクラスコード。02に設定されます。                                                                                                                                                                                  |
+| **bFunctionSubClass クラス**              | REG\_DWORD     | OEM または Microsoft | 0d に設定されている関数のサブクラスコード。                                                                                                                                                                               |
+| **bFunctionProtocol**              | REG\_DWORD     |                  | 01に設定された関数のプロトコルコード。                                                                                                                                                                               |
+| **MSOSExtendedPropertyDescriptor** | REG\_バイナリ    | OEM または Microsoft | 省略可。 インターフェイスの拡張プロパティ OS 機能記述子を定義します。                                                                                                                                             |
 
  
 
-**ユース ケース。MirrorLink を有効にします。**
+**ユースケース: MirrorLink の有効化**
 
-MirrorLink は、モバイル デバイスと車インフォテインメント システム間の統合が可能にする相互運用性標準です。 デバイスは、MirrorLink クライアントに USB CDC NCM インターフェイスを公開する必要があります。 通信デバイス クラス (CDC) デバイスとしてインターフェイスの関連付け記述子 (IAD) または CDC 関数の共用体の記述子を使用してデータのインターフェイスを記述することが必要です。
+MirrorLink は、モバイルデバイスと車のシステム間の統合を可能にする相互運用性の標準です。 デバイスは、MirrorLink クライアントに対して USB CDC NCM インターフェイスを公開する必要があります。 通信デバイスクラス (CDC) デバイスとして、インターフェイスの関連付け記述子 (IAD) と CDC 関数の共用体のいずれかの記述子を使用して、データインターフェイスを記述する必要があります。
 
-Windows 10 Mobile デバイスに接続して MirrorLink を有効にするには、OEM は、IAD を公開するこれらの変更をようにする必要があります。
+Windows 10 Mobile デバイスで MirrorLink 接続を有効にするには、OEM は IAD を公開するためにこれらの変更を行う必要があります。
 
--   インターフェイスでの通信やデータの関連付けを作成するには、上記の表に示すようにレジストリ値を設定してインターフェイスの関連付け記述子 (IAD) を使用します。
--   レジストリ設定に加えには、このレジストリ値を 0 以外の値に設定します。
+-   インターフェイス関連付け記述子 (IAD) を使用して、前の表に示したレジストリ値を設定することにより、通信インターフェイスとデータインターフェイスの関連付けを作成します。
+-   レジストリ設定に加えて、このレジストリ値を0以外の値に設定します。
 
     | 値          | 種類       | 所有者            | 説明                                                                                                                     |
     |----------------|------------|------------------|---------------------------------------------------------------------------------------------------------------------------------|
-    | **MirrorLink** | REG\_DWORD | OEM または Microsoft | 0 以外の値は、インターフェイス MirrorLink のサポートを示します。 USB 関数のスタックは MirrorLink USB コマンドを停止できません。 |
+    | **MirrorLink** | REG\_DWORD | OEM または Microsoft | 0以外の値は、インターフェイスが MirrorLink をサポートしていることを示します。 USB 関数スタックは、MirrorLink USB コマンドを停止しません。 |
 
      
 
--   クラスに固有の記述子は、レジストリで定義されているインターフェイス記述子のセットに含めることができます。 USB ドライバー スタック関数が正確に解析するため、これらの記述子でサイズ フィールドを設定する必要があります。
+-   クラス固有の記述子は、レジストリで定義されているインターフェイス記述子セットに含めることができます。 サイズフィールドは、USB 関数ドライバースタックが正確に解析できるように、これらの記述子で設定する必要があります。
 
-また、CDC 関数の共用体記述子もとして定義できますクラス固有のインターフェイス記述子。ただし、共用体の記述子によって指定されたインターフェイスの番号は静的とはできません、USB 機能ドライバー スタックで割り当てられ、共用体の記述子の存在に 1 つの子の PDO を関連付けることによって記述されたインターフェイスは発生しません。 IAD は、関連付けを表す必要があります。
+また、CDC 関数の共用体記述子をクラス固有のインターフェイス記述子として定義することもできます。ただし、共用体記述子によって指定されたインターフェイス番号は静的であり、USB 関数ドライバースタックによって割り当てられることはありません。共用体記述子が存在しても、それによって記述されたインターフェイスが1つの子 PDO に関連付けられることはありません。 その関連付けには IAD が必要です。
 
 ## <a name="related-topics"></a>関連トピック
-[Windows での USB デバイス側のドライバー](usb-device-side-drivers-in-windows.md)  
+[Windows の USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)  
 [USB ファンクション コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)  
 
 

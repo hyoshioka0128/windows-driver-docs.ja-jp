@@ -10,11 +10,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 851ec3f35cf3d147fc872c15989b5003fcce8d4e
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78854025"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083184"
 ---
 # <a name="button-capability-arrays"></a>ボタン機能配列
 

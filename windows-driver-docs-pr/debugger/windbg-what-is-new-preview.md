@@ -6,12 +6,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: cc6c0e84b91a791e23674fc35fda72a5c6774552
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: d67408c7cbbe05083c7a0d299b6b76e9c3e2e26c
+ms.sourcegitcommit: e0afb1b273c34caba8bda1cb78db9d1c8d8cdada
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256728"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79131205"
 ---
 # <a name="windbg-preview---whats-new"></a>WinDbg プレビュー - 新機能
 
@@ -39,7 +39,7 @@ ms.locfileid: "76256728"
 
 **TTD 呼び出しオブジェクトの機能強化に**より、[クエリを呼び出す](https://docs.microsoft.com/windows-hardware/drivers/debugger/time-travel-debugging-calls-objects) - 、パラメーター名、型、値が含まれるようになりました。 関数呼び出しのトレースに対してクエリを実行すると、完全に型指定されたパラメーターとその値を取得できるため、パラメーターによって結果を簡単にフィルター処理できます。
 
-Open**エンクレーブのサポート**-WinDbg Preview で open エンクレーブ (OE) アプリケーションをデバッグできるようになりました。これを実行する方法については、 [open エンクレーブのドキュメント](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/GettingStarted.Windows.md)を参照してください。
+Open**エンクレーブのサポート**-WinDbg Preview で open エンクレーブ (OE) アプリケーションをデバッグできるようになりました。これを実行する方法については、 [open エンクレーブのドキュメント](https://github.com/openenclave/openenclave/blob/master/docs/GettingStartedDocs/Windows_windbg.md)を参照してください。
 
 **VS Code 拡張機能**-Open エンクレーブの開発を容易にするために、基本的な VS Code 拡張機能をリリースしました。これにより、より迅速な内部ループを実現できます。 [変数]、[ウォッチ]、[呼び出し履歴] の各ウィンドウでは、ブレークポイントとソースウィンドウだけでなく、コンソールウィンドウを使用する必要があります。
  
@@ -98,7 +98,7 @@ Open**エンクレーブのサポート**-WinDbg Preview で open エンクレ�
 
 **デバッガーデータモデルC++ヘッダー** -新しいC++ヘッダー (dbgmodel .h) があります。これは、を介しC++てデバッガーデータモデルを拡張するための Windows SDK の一部として含まれています。 詳細については、 [「デバッガーデータC++モデルの概要](https://docs.microsoft.com/windows-hardware/drivers/debugger/data-model-cpp-overview)」を参照してください。 このリリースには、"dx" コマンド、JavaScript、および新しい DbgModel. h ヘッダーを使用してアクセスできるデバッガーデータモデルに、いくつかの "API スタイル" 機能を追加する新しい拡張機能が含まれています。 この拡張機能は、デバッガーを使用して、アセンブリとコードの実行に関するナレッジを含むようにデータモデルを拡張します。ユーティリティ。[コード](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-code)の名前空間、およびローカルファイルシステムを使用[します。](https://docs.microsoft.com/windows-hardware/drivers/debugger/dbgmodel-namespace-file-system)
 
-**統合型の拡張機能**この新しい API 拡張機能を使用すると、GitHub リポジトリに新しいサンプルが作成されました (https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes )。 この JavaScript 拡張機能は、基本 C ヘッダーファイルを読み取り、ヘッダーで定義されている構造体と共用体の合成型情報を定義します。 Dx コマンドを使用すると、これらの型の型情報を含む PDB があるかのように、メモリを構造化して表示できます。
+**統合型の拡張機能**この新しい API 拡張機能を使用すると、GitHub リポジトリに新しいサンプルが作成されました (https://github.com/Microsoft/WinDbg-Samples/tree/master/SyntheticTypes)。 この JavaScript 拡張機能は、基本 C ヘッダーファイルを読み取り、ヘッダーで定義されている構造体と共用体の合成型情報を定義します。 Dx コマンドを使用すると、これらの型の型情報を含む PDB があるかのように、メモリを構造化して表示できます。
 
 その他の変更とバグ修正:
 
@@ -284,7 +284,7 @@ API バージョン1.1 の変更点は次のとおりです。
 
 このバージョンは、WinDbg Preview の最初のリリースでした。 WinDbg Preview で使用できる機能に関する全般的な情報については、「 [Windbg Preview を使用したデバッグ](debugging-using-windbg-preview.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WinDbg プレビュー - インストール](windbg-install-preview.md)
 
