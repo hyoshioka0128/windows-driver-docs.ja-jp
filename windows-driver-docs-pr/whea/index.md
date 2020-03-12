@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
-ms.openlocfilehash: 5a72e96de0677e80657a37a45edc50ffa7654e88
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: d35e9561036a90667c9c7da5876c2dd7add3efd1
+ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210158"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78947424"
 ---
 # <a name="windows-hardware-error-architecture-whea-design-guide"></a>Windows Hardware Error Architecture (WHEA) 設計ガイド
 
@@ -31,8 +31,6 @@ ms.locfileid: "75210158"
 - プラットフォーム固有ハードウェア エラー ドライバー (PSHED) プラグインを開発および配布する方法。詳細については、「[Platform-Specific Hardware Error Driver Plug-Ins (プラットフォーム固有ハードウェア エラー ドライバー プラグイン)](platform-specific-hardware-error-driver-plug-ins2.md)」を参照してください。
 
 - ユーザーモード アプリケーションが WHEA プラットフォームと通信する方法。 詳細については、「[Windows Hardware Error Architecture-Aware User-Mode Applications (Windows Hardware Error Architecture 対応のユーザーモード アプリケーション)](windows-hardware-error-architecture-aware-user-mode-applications.md)」を参照してください。
-
-WHEA に関する詳細と、WHEA のハードウェア プラットフォームへの実装方法については、**WHEA プラットフォーム 設計ガイド**をご覧ください。 プラットフォーム ベンダーは、<wheafb@microsoft.com> に電子メールを送信してこの設計ガイドを入手できます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
