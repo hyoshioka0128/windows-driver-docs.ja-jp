@@ -36,6 +36,10 @@
           items:
             - name: ドライバー インストールの測定値
               items:
+                - name: WU がダウンロードの成功を報告したマシンの割合
+                  href: pct-machines-wu-success-download.md
+                - name: WU がインストールの成功を報告したマシンの割合
+                  href: pct-machines-wu-success-install.md
                 - name: ドライバー インストール プロセスが正常に完了したマシンの割合
                   href: pct-machines-where-driver-install-completes-successfully.md
                 - name: ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
@@ -218,7 +222,7 @@
       href: limit-driver-distribution.md
     - name: テスト配布用の公開
       href: publishing-for-test-distribution.md
-    - name: ドライバー配布の段階的なロールアウト
+    - name: 段階的なロールアウト
       href: gradual-rollout.md
 - name: ハードウェア ダッシュボード API
   items:
