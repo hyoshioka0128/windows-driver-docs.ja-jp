@@ -4,22 +4,22 @@ description: この測定値は、ドライバーが正常にインストール�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ad66bde87ea9efd250eb622c9fc932fcc8f427
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.openlocfilehash: 3f2f1868566b73cf4d65204bf302f58979d9f69d
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017022"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083126"
 ---
 # <a name="percent-of-machines-where-the-driver-install-process-completes-successfully"></a>ドライバー インストール プロセスが正常に完了したマシンの割合
 
 ## <a name="description"></a>説明
 
-ドライバーが正しくインストールされなかった場合、対象のコンポーネントの機能が失われ、ユーザーがコンポーネントの機能にアクセスできなくなる可能性があります。 機能を回復するには、ユーザーが問題のトラブルシューティングを行う必要があります。 PnP エラー コードの一覧については、「[デバイス マネージャーの問題コード](https://docs.microsoft.com/windows-hardware/drivers/debugger/device-manager-problem-codes)」および [Windows サポート](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)のページを参照してください。
+ドライバーが正しくインストールされなかった場合、対象のコンポーネントの機能が失われ、ユーザーがコンポーネントの機能にアクセスできなくなる可能性があります。 機能を回復するには、ユーザーが問題のトラブルシューティングを行う必要があります。 PnP エラー コードの一覧については、「[デバイス マネージャーの問題コード](https://docs.microsoft.com/windows-hardware/drivers/install/device-manager-error-messages)」および [Windows サポート](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows)のページを参照してください。
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|展開|
 |**期間**|30 日間のスライディング ウィンドウ|

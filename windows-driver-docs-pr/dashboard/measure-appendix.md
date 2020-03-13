@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: dbaff20d8857aaac03331fd3df5a403fc008e07b
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71016984"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243057"
 ---
 # <a name="appendix-for-the-microsoft-driver-measure-dictionary"></a>Microsoft ドライバーの測定に関する辞書の付録
 
@@ -26,13 +26,13 @@ ms.locfileid: "71016984"
 |Microsoft Solitaire Collection|ゲーム|
 |OneDrive|クラウドの記憶域|
 |Windows コンポーネント|Windows コンポーネント|
-|Microsoft Edge|Browser|
+|Microsoft Edge|ブラウザー|
 |Microsoft Windows DVD プレーヤー|エンターテイメント|
 |Microsoft Zune Video|メディア|
 |Msaccess.exe|開発者ツール|
 |Outlook|生産性|
 |Excel|生産性|
-|Internet Explorer|Browser|
+|Internet Explorer|ブラウザー|
 |Msvsmon.exe|開発者ツール|
 |Minecraft: Windows 10 Edition Beta|ゲーム|
 |Powershell_Ise.exe|開発者ツール|
