@@ -7,11 +7,11 @@ keywords:
 ms.date: 03/15/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2682d58e6b246ad9ff142094c8e078e123a5a733
-ms.sourcegitcommit: f89a978ee23b9d2f925b13ea56b2c6cd48b4603a
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68948123"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242741"
 ---
 # <a name="mobile-operator-account-management-in-windows-10"></a>Windows 10 での携帯電話会社アカウント管理
 
@@ -31,7 +31,7 @@ ms.locfileid: "68948123"
 上記のオプションには、次の設定が適用されます。
 
 - *AccountExperienceURL*。 このパラメーターは、web ページを定義します。
-- *AppID*。 このパラメーターは、どのアプリを起動するかを定義します。 モバイルプランアプリを使用するには、OneConnect_8wekyb3d8bbwe! を構成し _。
+- *AppID*。 このパラメーターは、どのアプリを起動するかを定義します。 モバイルプランアプリを使用するには、 _Microsoft OneConnect_8wekyb3d8bbwe を構成します。アプリ_。
 
 次の図は、ネットワークのフライアウトの例を示しています。
 
@@ -49,13 +49,13 @@ ms.locfileid: "68948123"
 
 ### <a name="network-flyout-user-experience"></a>ネットワークフライアウトのユーザーエクスペリエンス
 
-API 呼び出しから`GetBalance`受信した情報によっては、ネットワークのフライアウトの動作が異なり、ユーザーエクスペリエンスが向上します。
+`GetBalance` API 呼び出しから受信した情報によっては、ネットワークのフライアウトの動作が異なり、ユーザーエクスペリエンスが向上します。
 
 ネットワークフライアウトには、次の要素があります。
 
 1. データプランを使用して接続します。 これにより、モバイルプランアプリが起動します。
 2. 自分のアカウントを表示します。 [基本的なアカウント管理エクスペリエンス](#basic-account-management-experience)に基づいて動作します。
-3. 残高情報。 `GetBalance`応答で提供される使用可能な残高を示します。
+3. 残高情報。 `GetBalance` の応答で提供される使用可能な残高を示します。
 
 次の図は、これらのネットワークフライアウト要素を示しています。 データプランを使用した接続は、に対応します。 [アカウントの表示] は B と対応し、残高情報は C と対応しています。
 
@@ -63,7 +63,7 @@ API 呼び出しから`GetBalance`受信した情報によっては、ネット�
 
 ネットワークのフライアウトに適切な情報を提供するために、MOs は[Getbalance API](#getbalance-api)セクションで定義されているように、*型*と*バランス*(dataRemainingMB および timeRemaining) の情報を提供します。
 
-次の表は、 `GetBalance`応答の種類と、ネットワークのフライアウトに表示される内容との間の参照を示しています。
+次の表に、`GetBalance` 応答の種類と、ネットワークのフライアウトに表示される内容との間の参照を示します。
 
 | GetBalance 応答の種類 | ネットワークフライアウトの表示... |
 | --- | --- |
@@ -77,7 +77,7 @@ API 呼び出しから`GetBalance`受信した情報によっては、ネット�
 > [!IMPORTANT]
 > Windows で[残高を取得できるようにするには、windows COSA の更新プログラム](#how-to-enable-get-balance-in-windows-cosa)を要求してください。
 
-この`GetBalance` API は、現在のサブスクリプションの状態を照会し、モバイルプランのエクスペリエンスがデバイスで利用可能かどうかを制御し、前払いサブスクリプションのネットワークフライアウトで残りのデータと時間を表示します。 次の図は、 `GetBalance` API の大まかな流れを示しています。
+`GetBalance` API は、現在のサブスクリプションの状態を照会し、モバイルプランのエクスペリエンスがデバイスで利用可能かどうかを制御し、前払いサブスクリプションのネットワークのフライアウトで残りのデータと時間を表示します。 次の図は、`GetBalance` API の高レベルのフローを示しています。
 
 <img src="images/mobile_plans_get_balance_api_flow.png" alt="GetBalance API flow" title="GetBalance API フロー" width="600" />
 
@@ -101,7 +101,7 @@ API 呼び出しから`GetBalance`受信した情報によっては、ネット�
 | JSON プロパティ | 種類 | 説明 |
 | --- | --- | --- |
 |id |String| トランザクションを追跡するための携帯電話会社の内部 id |
-種類 | 列挙型 | 設定可能な値: <ul><li>MODIRECT:ユーザーの残高が MO ダイレクトであるかどうかを示します。</li><li>MODIRECTPAYG:ユーザーの残高が MO Direct PAYG かどうかを示します。</li><li>存在ユーザーに残高がないことを示します。 残りの残高が0でも、プランの有効期限が切れていない場合は、ユーザーがデータプランを購入できるように "NONE" を受け取ることになります。</li><li>NOTSUPPORTEDSIM がモバイルプランのエクスペリエンスでサポートされていないことを示します。 "NOTSUPPORTED" は、SIM が * モバイルプランでサポートされている範囲内にない場合に使用されます。 ここでは、ネットワークフライアウトのモバイルプランのエクスペリエンスを無効にして、この種類の受信時にモバイルプランアプリで一般的なエラーメッセージを返します。</li></ul> |
+種類 | Enum | 次の値を使用できます。 <ul><li>MODIRECT: ユーザーのバランスが MO ダイレクトかどうかを示します。</li><li>MODIRECTPAYG: ユーザーのバランスが MO ダイレクト PAYG かどうかを示します。</li><li>NONE: ユーザーに残高がないことを示します。 残りの残高が0でも、プランの有効期限が切れていない場合は、ユーザーがデータプランを購入できるように "NONE" を受け取ることになります。</li><li>NOTSUPPORTED: SIM がモバイルプランのエクスペリエンスでサポートされていないことを示します。 "NOTSUPPORTED" は、SIM が * モバイルプランでサポートされている範囲内にない場合に使用されます。 ここでは、ネットワークフライアウトのモバイルプランのエクスペリエンスを無効にして、この種類の受信時にモバイルプランアプリで一般的なエラーメッセージを返します。</li></ul> |
 | dataRemainingInMB | Double | 現在のユーザープランの残りのデータ (MB 単位)。 |
 | timeRemaining | String | [ISO 8601](https://go.microsoft.com/fwlink/p/?linkid=866182)で指定された期間。 |
 
@@ -109,7 +109,7 @@ API 呼び出しから`GetBalance`受信した情報によっては、ネット�
 
 次のヘッダーは、モバイルプランサービスからモバイルプロバイダーのエンドポイントへのすべての要求に含まれる場合があります。
 
-| ヘッダー名 | Value | 説明 |
+| ヘッダー名 | 値 | 説明 |
 | --- | --- | --- |
 | X-y-TransactionId | String | Mobile plan サービスと MO サービス間のこの要求/応答の相互作用を一意に識別する TransactionId。 |
 | 承認 (省略可能) | String | オプションで、MO によって提供される基本認証文字列。 |
@@ -132,7 +132,7 @@ API 呼び出しから`GetBalance`受信した情報によっては、ネット�
 
 ### <a name="getbalance-api-specification"></a>GetBalance API 仕様
 
-この`GetBalance` API は、Windows デバイスにネットワークフライアウトが表示されたときに呼び出されます。 Mobile plan サービスは、この通信のプロキシです。
+`GetBalance` API は、Windows デバイスにネットワークフライアウトが表示されたときに呼び出されます。 Mobile plan サービスは、この通信のプロキシです。
 
 この呼び出しは、HTTP 要求を使用して行われます。 *Mobaseurl*は、MO でホストされるサービスのエンドポイントであり、 *SIM id*は ICCID です。
 
@@ -142,15 +142,15 @@ GET https://{moBaseUrl}/sims/{sim id}/balances?fieldsTemplate=basic&limit=1&loca
 
 クエリパラメーター:
 
-| クエリパラメーター名 | Value | 説明 |
+| クエリパラメーター名 | 値 | 説明 |
 | --- | --- | --- |
-| location | String | (省略可能)。 ユーザーのバランスがクエリされる場所。 指定しない場合は、すべてのアクティブな残高が想定されます。 **メモ**Location パラメーターでは、大文字と小文字が区別されます。 |
-| limit | 整数型 |(省略可能)。 返される残高の最大数。 指定しない場合は、すべての残高が返されます。 |
-| fieldsTemplate | 列挙型 |リソースで返される必要があるフィールドのリストを指定します。 <p>設定可能な値:</p><ul><li>基本: Balance リソースの*type*、 *DataRemainingInMB*、および*timeRemaining*が返される必要があります。</li><li>全角残高リソースのすべてのプロパティを返す必要があります。</li></ul> |
+| 位置 | String | 省略可。 ユーザーのバランスがクエリされる場所。 指定しない場合は、すべてのアクティブな残高が想定されます。 **メモ**Location パラメーターでは、大文字と小文字が区別されます。 |
+| limit | 整数型 |省略可。 返される残高の最大数。 指定しない場合は、すべての残高が返されます。 |
+| fieldsTemplate | Enum |リソースで返される必要があるフィールドのリストを指定します。 <p>次の値を使用できます。</p><ul><li>基本: Balance リソースの*type*、 *DataRemainingInMB*、および*timeRemaining*が返される必要があります。</li><li>Full: 残高リソースのすべてのプロパティを返す必要があります。</li></ul> |
 
-次の一連の例は、 `GetBalance` API の呼び出しフローを示しています。
+次の一連の例は、`GetBalance` API の呼び出しフローを示しています。
 
-#### <a name="example-1-returning-the-first-balance-that-is-available-for-the-user-in-us"></a>例 1 : 米国でユーザーに対して使用可能な最初の残高を取得する
+#### <a name="example-1-returning-the-first-balance-that-is-available-for-the-user-in-us"></a>例 1: 米国でユーザーに対して使用可能な最初の残高を取得する
 
 ```HTTP
 GET https://moendpoint.com/v1/sims/iccid: 8988247000100003319/balances?fieldsTemplate=basic&limit=1&location=us HTTP/1.1
@@ -180,11 +180,11 @@ X-MS-DM-TransactionId: “12345”
 
 応答 JSON:
 
-| データ | 種類 | 説明 |
+| Data | 種類 | 説明 |
 | --- | --- | --- |
-| 分散 | コレクション | 残高のコレクション。 |
+| 残高 | [コレクション] | 残高のコレクション。 |
 
-#### <a name="example-2-the-expected-response-for-a-sim-that-is-in-the-cosa-iccid-range-but-should-not-be-supported-by-mobile-plans"></a>例 2:COSA ICCID 範囲に含まれているが、モバイルプランではサポートされていない SIM に対する予期される応答
+#### <a name="example-2-the-expected-response-for-a-sim-that-is-in-the-cosa-iccid-range-but-should-not-be-supported-by-mobile-plans"></a>例 2: COSA ICCID 範囲に含まれているが、モバイルプランではサポートされていない SIM に対する予期される応答
 
 HTTP 要求:
 

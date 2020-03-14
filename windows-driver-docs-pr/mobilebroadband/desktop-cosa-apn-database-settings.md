@@ -5,11 +5,11 @@ ms.assetid: 860B8587-1D70-466A-A6E7-836380AA4DFA
 ms.date: 01/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 35cd4a2c3c52ad09012a316ada8a1da7a35842c1
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402454"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243013"
 ---
 # <a name="desktop-cosaapn-database-settings"></a>デスクトップ COSA/APN データベースの設定
 

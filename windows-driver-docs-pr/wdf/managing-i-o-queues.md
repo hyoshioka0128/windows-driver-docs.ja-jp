@@ -26,11 +26,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f615f67236b5691246b6183c731b92bd4f4f2f7
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402442"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242737"
 ---
 # <a name="managing-io-queues"></a>I/O キューの管理
 

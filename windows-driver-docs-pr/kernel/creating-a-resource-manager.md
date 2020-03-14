@@ -14,11 +14,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d152ede92254bf463182300c9a9c2f6c167b6669
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402430"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243047"
 ---
 # <a name="creating-a-resource-manager"></a>リソース マネージャーの作成
 

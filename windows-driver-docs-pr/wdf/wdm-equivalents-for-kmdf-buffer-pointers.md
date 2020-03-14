@@ -5,11 +5,11 @@ ms.assetid: 7923A3CA-479A-4C7D-B428-F57C9701906E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d74318e20729b8155e818d5fd585f722f7337ed
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842793"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242959"
 ---
 # <a name="wdm-equivalents-for-wdf-buffer-pointers"></a>WDM で WDF のバッファー ポインターに相当するもの
 

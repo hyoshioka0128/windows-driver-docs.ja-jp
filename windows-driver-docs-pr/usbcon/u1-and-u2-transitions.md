@@ -4,11 +4,11 @@ title: U1 と U2 の移行
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e8cc5f049fcc6da78c0fb140f81e7bcece05522
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402450"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242751"
 ---
 # <a name="u1-and-u2-transitions"></a>U1 と U2 の移行
 

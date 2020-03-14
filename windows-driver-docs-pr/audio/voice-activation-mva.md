@@ -2,14 +2,14 @@
 title: 複数の音声アシスタント
 description: 複数の音声アシスタントプラットフォームでは、Cortana 以外の追加の音声アシスタントがサポートされています。
 ms.assetid: 48a7e96b-58e8-4a49-b673-14036d4108d5
-ms.date: 09/26/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c595ae582994d2aff2d8f8a6d0acaa4b824473ca
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 3e193b41abce9aa0c77f0be5ce927d39fda2c91c
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74860564"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79216605"
 ---
 # <a name="multiple-voice-assistant"></a>複数の音声アシスタント
 
@@ -78,20 +78,22 @@ KWS がデバイスを低電力状態からウェイクアップする場合、�
     -   AGC
     -   NS
 -   音声処理モードの効果は、MFX APO によって報告される必要があります。
--   APO は、MFX として形式変換を実行する場合があります。   
--   APO は、次の形式を出力する必要があります。 
+-   APO は、MFX として形式変換を実行する場合があります。
+-   APO は、次の形式を出力する必要があります。
     -   16 kHz、mono、FLOAT。
 -   必要に応じて、オーディオキャプチャプロセスを拡張するカスタム APOs を設計します。 詳細については、「 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)」を参照してください。
 
 ハードウェアオフロードキーワードスポットライン (HW KWS) WoV の要件
-- HW KWS WoV は、S0 の動作中にサポートされています。また、S0 スリープ状態は、"最新のスタンバイ" とも呼ばれます。  
+- HW KWS WoV は、S0 の動作中にサポートされています。また、S0 スリープ状態は、"最新のスタンバイ" とも呼ばれます。
 - HW KWS WoV は S3 からはサポートされていません。  
 
 **AEC**
 
-AEC は、バーストオーディオがキャプチャされたときに DSP によって実行されるか、ソフトウェア APO を介して後で実行できます。 KWS バーストデータを含むソフトウェア AEC を実行するには、バーストデータがキャプチャされた時点から対応するループバックオーディオを用意する必要があります。 これを行うために、バースト出力に対してカスタムオーディオ形式が作成されました。これにより、ループバックオーディオはバーストオーディオデータになります。 Microsoft AEC APO は、このインターリーブ形式を認識し、それを使用して AEC を実行できます。 詳細については、「 [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)」を参照してください。 
+AEC は、バーストオーディオがキャプチャされたときに DSP によって実行されるか、ソフトウェア APO を介して後で実行できます。 KWS バーストデータを含むソフトウェア AEC を実行するには、バーストデータがキャプチャされた時点から対応するループバックオーディオを用意する必要があります。 これを行うために、バースト出力に対してカスタムオーディオ形式が作成されました。これにより、ループバックオーディオはバーストオーディオデータになります。
 
-**検証**
+Windows バージョン20H1 以降では、Microsoft AEC APO はこのインターリーブ形式を認識し、それを使用して AEC を実行できます。 詳細については、「 [KSPROPERTY_INTERLEAVEDAUDIO_FORMATINFORMATION](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-interleavedaudio-formatinformation)」を参照してください。
+
+**検査**
 
 [Voice Activation Manager 2 テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/5119a80f-8aae-49bb-aa59-8eaa7e7b1fad)を使用して[KSPROPSETID_SOUNDDETECTOR2](kspropsetid-sounddetector2.md)プロパティの HW サポートを検証します。
 
@@ -235,7 +237,7 @@ KSSTATE\_実行される前にキャプチャされたデータをバースト�
 1. ストリームが KSK 状態に遷移し\_実行された後、ドライバーは、既に使用可能なデータがあるため、バッファー通知イベントを直ちに設定します。
 2. このイベントでは、OS は GetReadPacket () を呼び出して、使用可能なデータに関する情報を取得します。
 
-    」を参照します。 ドライバーは、有効なキャプチャされたデータのパケット番号を返します (KSK\_状態から KSK 状態に遷移した後の最初のパケットの場合は 0\_実行)。これにより、OS は WaveRT バッファー内のパケット位置と、ストリームの開始を基準としたパケットの位置を取得できます。
+    a. ドライバーは、有効なキャプチャされたデータのパケット番号を返します (KSK\_状態から KSK 状態に遷移した後の最初のパケットの場合は 0\_実行)。これにより、OS は WaveRT バッファー内のパケット位置と、ストリームの開始を基準としたパケットの位置を取得できます。
 
     b. また、ドライバーは、パケット内の最初のサンプルのサンプリングの瞬間に対応するパフォーマンスカウンターの値を返します。 このパフォーマンスカウンターの値は、ハードウェアまたはドライバー内でバッファーに格納されているキャプチャデータの量によっては、比較的古いものであることに注意してください。
 

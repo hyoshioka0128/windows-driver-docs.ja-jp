@@ -6,11 +6,11 @@ keywords: マルチプロセッサコンピューター、マルチプロセッ�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c76c200699c287359f4d50167f4a8d58175b2da
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402335"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242791"
 ---
 # <a name="multiprocessor-syntax"></a>マルチプロセッサの構文
 

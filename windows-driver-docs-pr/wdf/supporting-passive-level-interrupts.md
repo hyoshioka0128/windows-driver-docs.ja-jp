@@ -5,16 +5,16 @@ ms.assetid: E464F885-928C-40BC-A09F-7A7921F8FF37
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 24d99eadcc8999e3dd2daec4e7639f3a67f221c9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831727"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242941"
 ---
 # <a name="supporting-passive-level-interrupts"></a>パッシブ レベルの割り込みのサポート
 
 
-Framework バージョン1.11 以降では、Windows 8 以降のバージョンのオペレーティングシステムで実行されているカーネルモードドライバーフレームワーク (KMDF) とユーザーモードドライバーフレームワーク (UMDF) ドライバーは、パッシブレベルの処理を必要とする割り込みオブジェクトを作成できます。 ドライバーがパッシブレベルの割り込み処理のために割り込みオブジェクトを構成した場合、フレームワークは、ドライバーの interrupt service ルーチン (ISR) およびその他の[割り込みオブジェクトイベントコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/)を IRQL = パッシブ\_レベルで呼び出します。パッシブレベルの割り込みロック。
+Framework バージョン1.11 以降では、Windows 8 以降のバージョンのオペレーティングシステムで実行されているカーネルモードドライバーフレームワーク (KMDF) とユーザーモードドライバーフレームワーク (UMDF) ドライバーは、パッシブレベルの処理を必要とする割り込みオブジェクトを作成できます。 ドライバーがパッシブレベルの割り込み処理用に割り込みオブジェクトを構成した場合、フレームワークは、パッシブレベルの割り込みロックを保持しながら、ドライバーの interrupt service ルーチン (ISR) およびその他の[割り込みオブジェクトイベントコールバック関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/)を IRQL = パッシブ\_レベルで呼び出します。
 
 チップ (SoC) プラットフォーム上のシステム用のフレームワークベースのドライバーを開発している場合は、パッシブモードの割り込みを使用して、(I ² C、SPI、UART などの) 高速バス経由で SoC 以外のデバイスと通信することができます。
 
@@ -29,7 +29,7 @@ Framework バージョン1.11 以降では、Windows 8 以降のバージョン�
 
 -   "設定のない**ve"** メンバーを TRUE に設定します。
 -   [*EvtInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_isr) callback 関数を指定します。このコールバック関数は、パッシブレベルで呼び出されます。
--   必要に応じて、自動**シリアル化**を TRUE に設定します。 ドライバーが自動**シリアル化**を TRUE に設定すると、フレームワークは、割り込みオブジェクトの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数の実行を、他のオブジェクトのコールバック関数と同期します。は、割り込みの親オブジェクトの下にあります。
+-   必要に応じて、自動**シリアル化**を TRUE に設定します。 ドライバーが自動**シリアル化**を TRUE に設定した場合、フレームワークは、割り込みオブジェクトの[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc)または[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数と、その割り込みの親オブジェクトの下にある他のオブジェクトからのコールバック関数の実行を同期します。
 -   必要に応じて、ドライバーは、IRQL = パッシブ\_レベルで呼び出される[*EvtInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_workitem)コールバック関数を提供したり、IRQL = DISPATCH\_レベルで呼び出される[*EvtInterruptDpc*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/nc-wdfinterrupt-evt_wdf_interrupt_dpc) callback 関数を提供したりすることができます。
 
 構成構造の上のメンバーを設定する方法の詳細については、「 [**WDF\_INTERRUPT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)」を参照してください。

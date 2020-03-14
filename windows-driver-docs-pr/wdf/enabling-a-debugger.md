@@ -3,109 +3,109 @@ title: UMDF ドライバーのデバッグを有効にする方法
 description: UMDF ドライバーのデバッグを有効にする方法
 ms.assetid: ea37eb7b-09fa-4c8d-aff7-273b07bc0007
 keywords:
-- WDK UMDF をデバッガーします。
-- デバッガーを有効にする、WDK UMDF
-- ユーザー モード ドライバー フレームワーク WDK は、デバッガーを有効にします。
-- UMDF WDK、デバッガーを有効にします。
-- ユーザー モード ドライバー WDK UMDF、デバッガーを有効にします。
-- デバッガーを有効にすると、WDK UMDF ドライバーのデバッグ
-- デバッグ、デバッガーを有効にすると、WDK UMDF ドライバー
+- デバッガー WDK UMDF
+- デバッガー WDK UMDF、有効化
+- ユーザーモードドライバーフレームワーク WDK、デバッガーの有効化
+- UMDF WDK、デバッガーの有効化
+- ユーザーモードドライバー WDK UMDF、デバッガーの有効化
+- ドライバーのデバッグ WDK UMDF、デバッガーの有効化
+- ドライバーのデバッグ WDK UMDF、デバッガーの有効化
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: afaf1f6e452ecbf784907f87842f6ee64b2e0aac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67368729"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242889"
 ---
 # <a name="how-to-enable-debugging-of-a-umdf-driver"></a>UMDF ドライバーのデバッグを有効にする方法
 
 
-次の構成を使用して、ユーザー モード ドライバー フレームワーク (UMDF) ドライバーをデバッグすることができます。 すべての構成には、2 つのマシン、ホストとターゲットが含まれます。 ホスト コンピューターでは、ドライバーのビルドをインストールして、ターゲット コンピューターでドライバーをテストするには、Microsoft Visual Studio と Windows Driver Kit (WDK) を実行するとします。
+次の構成を使用して、ユーザーモードドライバーフレームワーク (UMDF) ドライバーをデバッグできます。 すべての構成には、ホストとターゲットという2台のコンピューターが含まれます。 Microsoft Visual Studio と Windows Driver Kit (WDK) を実行して、ホストコンピューターでドライバーを構築し、ターゲットコンピューターにドライバーをインストールしてテストします。
 
--   (「展開」) をコピーする Visual Studio を使用してターゲットを開始するには、ホストで Visual Studio 内でのデバッグ セッションをユーザー モード ドライバー。
--   手動でドライバーをターゲットにコピーします。 ターゲットでユーザー モードのデバッグを実行します。 このシナリオでは、適用する手動でターゲットで実行されているドライバーのホスト プロセスのインスタンスにします。
--   ターゲットにドライバーを手動でコピーし、ホストからカーネル モードのデバッグを実行します。
+-   Visual Studio を使用してドライバーをターゲットにコピー ("配置") し、ホスト上の Visual Studio 内でユーザーモードのデバッグセッションを開始します。
+-   ドライバーをターゲットに手動でコピーします。 ターゲットでユーザーモードのデバッグを実行します。 このシナリオでは、ターゲットで実行されているドライバーホストプロセスのインスタンスに手動で接続します。
+-   ドライバーをターゲットに手動でコピーし、ホストからカーネルモードのデバッグを実行します。
 
-一緒に使用する後者の 2 つの構成、ターゲット上のユーザー モード デバッガーとカーネル モード デバッガーの両方をホストで実行されています。
+後者の2つの構成を一緒に使用して、ターゲットでのユーザーモードのデバッガーとホスト上のカーネルモードのデバッガーの両方を実行できます。
 
-## <a href="" id="bp"></a>ベスト プラクティス
+## <a href="" id="bp"></a>ベストプラクティス
 
 
-すべての UMDF ドライバーのカーネル デバッガーをアタッチでのテストを実行することをお勧めします。
+カーネルデバッガーをアタッチして、すべての UMDF ドライバーテストを実行することをお勧めします。
 
-推奨の設定を以下にします。 これらを手動で設定したり、使用して、 [WDF Verifier コントロール アプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)(WDFVerifier.exe) ツールで、WDK を表示またはこれらの設定を変更します。
+推奨される設定は次のとおりです。 これらの設定を手動で設定することも、WDK の[WDF Verifier コントロールアプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)(wdfverifier) ツールを使用してこれらの設定を表示または変更することもできます。
 
--   WUDFHost.exe で Application Verifier を有効にします。
+-   WUDFHost .exe でアプリケーション検証ツールを有効にします。
 
     ```cpp
     AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHost.exe
     ```
 
-    例外が発生した場合 Application Verifier はデバッガーに診断メッセージを送信しで中断されます。
+    例外が発生した場合、アプリケーション検証ツールによってデバッガーに診断メッセージが送信され、が中断されます。
 
--   有効にする[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。 開く、**コマンド プロンプト**ウィンドウ (**管理者として実行**)。 ドライバー検証ツール マネージャーを開くことの検証方法を入力します。
--   カーネル モードのデバッグ セッションを使用している場合は、設定**HostFailKdDebugBreak**リフレクターが、ドライバーのホスト プロセスを終了する前にカーネル モード デバッガーを中断できるようにします。 この設定は、UMDF バージョン 1.11 以降を既定で有効です。
+-   [ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)を有効にします。 **コマンドプロンプト**ウィンドウを開きます ( **[管理者として実行]** )。 「Verifier」と入力して、Driver Verifier マネージャーを開きます。
+-   カーネルモードのデバッグセッションを使用している場合は、ドライバーホストプロセスを終了する前に、 **HostFailKdDebugBreak**を設定して、リフレクターがカーネルモードのデバッガーを中断するようにします。 この設定は、既定では、UMDF バージョン1.11 以降で有効になっています。
 
--   設定してプールを無効に**UmdfHostProcessSharing**に**ProcessSharingDisabled**します。 については、次を参照してください。 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)します。
--   既定では、UMDF デバイスが失敗したときに、フレームワークの設定は最大 5 回再起動を試行します。 自動再起動をオフに設定して**DebugModeFlags** 0x01 にします。 詳細については、次を参照してください。[デバッグ WDF のドライバーのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
--   お使いのコンピューターを再起動します。
+-   **Umdfhostprocesssharing**を**processsharingdisabled**に設定して、プーリングを無効にします。 詳細については、「 [INF ファイルでの WDF ディレクティブの指定](specifying-wdf-directives-in-inf-files.md)」を参照してください。
+-   既定では、UMDF デバイスで障害が発生すると、フレームワークは最大5回、再起動を試みます。 自動再起動を無効にするには、 **DebugModeFlags**を0x01 に設定します。 詳細については、「 [WDF Drivers をデバッグするためのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)」を参照してください。
+-   コンピューターを再起動します。
 
-## <a name="using-visual-studio-with-f5-to-attach-automatically-user-mode-debugging"></a>F5 キーを押して Visual Studio を使用して自動的にアタッチする (ユーザー モードのデバッグ)
-
-
-WDK で Visual Studio を使用して、テスト コンピューター上のドライバーをデバッグすることができます、最初を設定してテスト マシンを構成します。 これを行う方法については、次を参照してください。[テスト コンピューターにドライバーを展開する](https://docs.microsoft.com/windows-hardware/drivers)します。
-
-テスト用コンピューターを構成した後、ホスト コンピューターで Visual Studio を使用して、ドライバーにブレークポイントを設定します。 F5 キーを押すと、Visual Studio は、ドライバーをビルド、対象のコンピューターに展開しますされ、ユーザー モードのデバッグ セッションを開始します。
-
-この手法を使用して、UMDF ドライバーを展開するときに、Visual Studio がオン*UMDF デバッグ モード*ドライバー。 既定では、デバッグ モードはことを意味します。
-
--   ドライバーは、独自の専用のホスト プロセスで起動します。 [デバイスのプール](using-device-pooling-in-umdf-drivers.md)は無効になります。
--   ドライバー クラッシュ後にデバイスが自動的に再起動しないと、エラー報告を無効にします。
--   フレームワークで説明されているタイムアウトは強制されません[UMDF でホスト プロセスのタイムアウト](how-umdf-enforces-time-outs.md)します。
--   UMDF ホスト プロセスまたはフレームワーク verifier は、無効な操作を検出する場合、UMDF はユーザー モード デバッガーを中断します。
-
-デバッグ モードを使用して、ドライバーのインストールには、再起動が必要です。 場合でも、UMDF ドライバーをデバッグすることができます。 生体認証、スマート カード、または入力例で、ユーザーがログオンする前に開始するユーザー モード ドライバーをデバッグすることもできます。
-
-## <a name="using-windbg-to-attach-manually-user-mode-debugging"></a>WinDbg を使用して手動でアタッチする (ユーザー モードのデバッグ)
+## <a name="using-visual-studio-with-f5-to-attach-automatically-user-mode-debugging"></a>F5 キーを押して Visual Studio を使用して自動的にアタッチする (ユーザーモードのデバッグ)
 
 
-ターゲット コンピューターでは、ドライバーをホストする WUDFHost のインスタンスに WinDbg を手動でアタッチできます。 アタッチすると、デバッガーを中断して、ドライバーでブレークポイントを設定することができます。
+WDK と共に Visual Studio を使用してテストコンピューターのドライバーをデバッグするには、まずテストコンピューターをセットアップして構成する必要があります。 これを行う方法については、「[テストコンピューターへのドライバーの展開](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。
 
-ドライバーの初期化の直後に発生するため WUDFHost を読み込む、初期化コードをデバッグする時間を手動でアタッチすることはできません。 代わりに、ホスト プロセスがいくつかのホストの初期化またはドライバーの読み込み時に秒の待機にレジストリ値を設定することができます。 この遅延は、WinDbg を WUDFHost プロセスの適切なインスタンスにアタッチする時間を示します。
+テストコンピューターを構成したら、ホストコンピューターで Visual Studio を使用して、ドライバーにブレークポイントを設定します。 F5 キーを押すと、Visual Studio によってドライバーがビルドされ、対象のコンピューターに配置され、ユーザーモードのデバッグセッションが開始されます。
+
+この手法を使用して UMDF ドライバーを配置すると、Visual Studio によってそのドライバーの*umdf デバッグモード*が有効になります。 既定では、デバッグモードは次のことを意味します。
+
+-   ドライバーは、独自の専用ホストプロセスで開始されます。 [デバイスプーリング](using-device-pooling-in-umdf-drivers.md)はオフになっています。
+-   ドライバーがクラッシュした後、デバイスは自動的に再起動されず、エラー報告は無効になります。
+-   フレームワークは、「 [UMDF でのホストプロセスタイムアウト](how-umdf-enforces-time-outs.md)」で説明されているタイムアウトを適用しません。
+-   UMDF ホストプロセスまたはフレームワーク検証ツールによって無効な操作が検出された場合、UMDF はユーザーモードのデバッガーに中断します。
+
+ドライバーのインストールに再起動が必要な場合でも、デバッグモードを使用して、UMDF ドライバーをデバッグできます。 ユーザーがログインする前に開始されるユーザーモードドライバー (生体認証、スマートカード、入力など) をデバッグすることもできます。
+
+## <a name="using-windbg-to-attach-manually-user-mode-debugging"></a>WinDbg を使用して手動でアタッチする (ユーザーモードのデバッグ)
+
+
+ターゲットコンピューターでは、そのドライバーをホストする WUDFHost のインスタンスに対して、手動で WinDbg をアタッチできます。 アタッチすると、デバッガーが中断され、ドライバーにブレークポイントを設定できます。
+
+ドライバーの初期化は、WUDFHost が読み込まれた直後に発生するため、手動でアタッチして初期化コードをデバッグすることはできません。 代わりに、ホストの初期化時またはドライバーの読み込み時に、ホストプロセスが数秒間待機するようにレジストリ値を設定できます。 この遅延により、WinDbg を WUDFHost プロセスの正しいインスタンスにアタッチする時間が与えられます。
 
 次の手順に従います。
 
-1.  ターゲット コンピューターのレジストリに次のように設定します。 **HostProcessDbgBreakOnStart**または**HostProcessDbgBreakOnDriverLoad**秒と再起動のいくつかの数。
-2.  対象のコンピューターに管理者として、WinDbg を開きます。
-3.  **ファイル**] メニューの [選択**プロセスにアタッチ**します。 選択**実行可能ファイルによって**WUDFHost.exe (できない可能性がありますいずれか) という名前のすべてのプロセスを見つけます。 WUDFHost.exe という名前のプロセスがある場合は、今後の参照用のプロセス id を書き留めます。
-4.  デバイス マネージャーでは、ドライバーを有効にします。
-5.  手順 2 を繰り返し、WUDFHost.exe の新しいインスタンスを検索します。 WUDFHost.exe の新しいインスタンスが表示されない場合はクリックして**キャンセル**、選択**プロセスにアタッチ**もう一度です。 WUDFHost.exe の新しいインスタンスを検索するときに選択し、をクリックして**OK**します。
+1.  ターゲットコンピューターのレジストリで、 **Hostprocessdbgbreakonstart**または**Hostprocessdbgbreakondriverload**をいくつかの秒数に設定し、再起動します。
+2.  ターゲットコンピューターで、[管理者として WinDbg] を開きます。
+3.  **[ファイル]** メニューの **[プロセスにアタッチ]** をクリックします。 **[実行可能ファイル]** を選択し、WUDFHost .exe という名前のすべてのプロセスを検索します (存在しない可能性があります)。 WUDFHost .exe という名前のプロセスがある場合は、後で参照できるようにプロセスの識別子を書き留めておきます。
+4.  デバイスマネージャーで、ドライバーを有効にします。
+5.  手順2を繰り返し、WUDFHost の新しいインスタンスを見つけます。 WUDFHost .exe の新しいインスタンスが表示されない場合は、 **[キャンセル]** をクリックし、 **[プロセスにアタッチ]** をもう一度クリックします。 WUDFHost .exe の新しいインスタンスを見つけたら、それを選択し、 **[OK]** をクリックします。
 
-場合[デバイス プール](using-device-pooling-in-umdf-drivers.md)はセット内に使用して、 **HostProcessDbgBreakOnDriverLoad**レジストリ値、その他のドライバーの読み込み中にデバッガーを中断表示可能性があります。 UMDF デバッグ モードを使用してデバイスのプールを無効にすることができます。
+[デバイスプール](using-device-pooling-in-umdf-drivers.md)が使用されていて、 **Hostprocessdbgbreakondriverload**レジストリ値を設定している場合は、他のドライバーの読み込みによってデバッガーが中断する可能性があります。 UMDF デバッグモードを使用して、デバイスプールを無効にすることができます。
 
-デバッグ モードを使用する、Visual Studio で f5 キーを押してオプションを使用するか設定、 **DebugModeFlags**と**DebugModeBinaries**レジストリの値。
+デバッグモードを使用するには、Visual Studio で F5 オプションを使用するか、レジストリで**DebugModeFlags**と**Debugmodebinaries バイナリ**値を設定します。
 
-UMDF レジストリ値の詳細については、次を参照してください。[デバッグの WDF ドライバー (KMDF および UMDF) のレジストリ値](registry-values-for-debugging-kmdf-drivers.md)します。
+UMDF レジストリ値の詳細については、「 [WDF Drivers (KMDF および UMDF) をデバッグするためのレジストリ値](registry-values-for-debugging-kmdf-drivers.md)」を参照してください。
 
-## <a href="" id="kd"></a>WinDbg を使用して (カーネル モードのデバッグ) ホスト コンピューターからリモートでデバッグするには
+## <a href="" id="kd"></a>WinDbg を使用したホストコンピューターからのリモートデバッグ (カーネルモードデバッグ)
 
 
-リモート ホストからカーネル モードのデバッグ セッションを確立し、ドライバーをホストしている Wudfhost のインスタンスに現在のプロセスを設定します。 リモート カーネル デバッガーからデバッグする場合は設定できます**HostProcessDbgBreakOnDriverStart**または**HostProcessDbgBreakOnDriverLoad** 0x80000000 のタイムアウトを指定しないが、カーネルに分割するにはデバッガー。
+リモートホストからカーネルモードのデバッグセッションを確立し、現在のプロセスを、ドライバーをホストしている Wudfhost のインスタンスに設定します。 リモートカーネルデバッガーからデバッグしている場合は、 **Hostprocessdbgbreakondriverstart**または**Hostprocessdbgbreakondriverstart**を0x80000000 に設定してタイムアウトを指定せずに、カーネルデバッガーを中断することができます。
 
-UMDF 1.11 以降では、カーネル デバッガーを分割する前に、reflector は自動的に切り替わりますプロセスのコンテキストのホスト プロセス。 最初に発行することがなく UMDF デバッガー拡張機能のコマンドをすぐに使用する結果として、 [ **.process** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process--set-process-context-)プロセスのコンテキストを変更するコマンド。
+UMDF 1.11 以降では、カーネルデバッガーを中断する前に、リフレクターはプロセスコンテキストをホストプロセスのコンテキストに自動的に切り替えます。 その結果、最初に. process コマンドを発行してプロセスコンテキストを変更しなくても、UMDF デバッガー拡張コマンドをすぐに使用でき[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-process--set-process-context-)
 
-これらの手順に従います。
+次の手順を使用します。
 
-1. プールを無効にします。 オンにする**DebugModeFlags**一覧で、ドライバーと**DebugModeBinaries**
-2. ドライバーは、UMDF 1.11 以降を使用している場合**HostFailKdDebugBreak**既定で有効です。 この手順をスキップします。
+1. プーリングを無効にします。 **DebugModeFlags**を有効にし、 **debugmodebinaries**でドライバーを一覧表示する
+2. ドライバーで UMDF 1.11 以降が使用されている場合、 **HostFailKdDebugBreak**は既定で有効になっています。 この手順をスキップします。
 
-   ドライバーは、UMDF 1.9 またはそれ以前を使用している場合は、設定**HostFailKdDebugBreak**を 1 にします。
+   ドライバーで UMDF 1.9 以前を使用している場合は、 **HostFailKdDebugBreak**を1に設定します。
 
-3. タイムアウトに関連する問題をデバッグする場合は、オフにする**HostProcessDbgBreakOnDriverStart**と**HostProcessDbgBreakOnDriverLoad**します。 (と**HostProcessDbgBreakOnDriverStart**または**HostProcessDbgBreakOnDriverLoad** 0 以外の場合は、フレームワーク、reflector は、ユーザー モード中にホストを終了しないように、タイムアウトを無効にします。デバッガーがアタッチされているホスト プロセスにします。)これら 2 つの値を使用する代わりに、ドライバーの初期化コードをデバッグする必要がある場合、ドライバーの読み込み前に、WinDbg で次のコマンドの発行を再試行してください: **sxe ld:** <em>MyDriver.dll</em> (モジュールの読み込み時に中断)
-4. レジストリの変更を加えた場合に再起動します。
-5. 上記で作成した、選択に応じてドライバーをロードまたはアンロード、ターゲットの場合、リモートのカーネル デバッガーを中断します。
+3. タイムアウトに関連する問題をデバッグしている場合は、 **Hostprocessdbgbreakondriverstart**と**Hostprocessdbgbreakondriverstart**をオフにします。 ( **Hostprocessdbgbreakondriverstart**または**Hostprocessdbgbreakondriverstart**が0以外の場合、フレームワークはタイムアウトを無効にして、ユーザーモードのデバッガーがホストプロセスにアタッチされている間にリフレクターがホストを終了しないようにします。)ドライバー初期化コードをデバッグする必要がある場合は、これら2つの値を使用する代わりに、次のコマンドを WinDbg で発行してみてください: **sxe ld:** <em>mydriver .dll</em> (モジュールの負荷で中断)
+4. レジストリを変更した場合は、再起動します。
+5. 上で選択した内容に応じて、リモートカーネルデバッガーは、ターゲットでドライバーが読み込まれるかアンロードされるときに中断されます。
 
  
 

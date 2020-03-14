@@ -5,11 +5,11 @@ ms.assetid: 10BD17C9-E8FE-41E0-BD8C-E622B60E6BB6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: bea222904b76ab9ccc782d50cb31308310d7871a
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402387"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242841"
 ---
 # <a name="acpi-defined-devices"></a>ACPI で定義されたデバイス
 

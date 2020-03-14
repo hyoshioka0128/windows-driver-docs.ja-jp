@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f69f7c9b294b7e66b39b67492ed3e3c5ecf2f347
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845623"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242877"
 ---
 # <a name="controlling-device-access-in-kmdf-drivers"></a>KMDF ドライバーでのデバイス アクセスの制御
 
@@ -46,7 +46,7 @@ WDM ドライバーおよびフレームワークベースのドライバーは�
 
 -   デバイスオブジェクトの既定のセキュリティ記述子を提供するオペレーティングシステム (「[デバイスアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)」を参照)。
 
--   既定のセキュリティ記述子を提供するフレームワーク。ドライバーが[**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出してデバイスオブジェクトに名前を割り当てる場合 (sddl\_devobj\_SYS\_ALL\_ADM\_すべての値) を使用します (「sddl」を参照してください)。 [デバイスオブジェクトの場合](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects))。
+-   既定のセキュリティ記述子を提供するフレームワーク。ドライバーが[**Wdfdeviceinitassign name**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignname)を呼び出してデバイスオブジェクトに名前を割り当てる場合 (デバイスオブジェクトの場合は「sddl」を参照してください) は、(「[デバイスオブジェクトの sddl](https://docs.microsoft.com/windows-hardware/drivers/kernel/sddl-for-device-objects)」を参照してください)\_\_\_\_\_します。
 
 -   ドライバー。 [**Wdfdeviceinit割り当て Sddlstring**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitassignsddlstring)を呼び出すことによって、フレームワークの既定のセキュリティ記述子をオーバーライドできます。
 
@@ -60,7 +60,7 @@ INF ファイルでセキュリティ記述子を指定する方法の詳細に�
 
 デバイスで使用するセキュリティ記述子をオペレーティングシステムがどのように判断するかについては、「[デバイスアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)」を参照してください。
 
-フレームワークは、デバイスオブジェクトを作成するとき、常にファイル\_デバイス\_セキュリティで保護された\_OPEN フラグを設定します。これにより、オペレーティングシステムはデバイスのセキュリティ記述子を確認してから、アプリケーションがデバイス内の任意の名前にアクセスできるようになります。空間. ファイル\_デバイス\_セキュリティで保護された\_オープンフラグとデバイスの名前空間の詳細については、「[デバイスの名前空間へのアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)」を参照してください。
+フレームワークは、デバイスオブジェクトを作成するときに、常にファイル\_デバイス\_セキュリティで保護された\_OPEN フラグを設定します。これにより、アプリケーションがデバイスの名前空間内の任意の名前にアクセスできるようになる前に、オペレーティングシステムがデバイスのセキュリティ記述子を確認できるようになります。 ファイル\_デバイス\_セキュリティで保護された\_オープンフラグとデバイスの名前空間の詳細については、「[デバイスの名前空間へのアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)」を参照してください。
 
  
 

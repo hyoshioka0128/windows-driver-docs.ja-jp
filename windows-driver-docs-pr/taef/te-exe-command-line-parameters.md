@@ -5,17 +5,17 @@ ms.assetid: E9A9292D-FA30-410d-9322-BD0F321314F9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ffa356f4be919e6615888f064b727de299c74a36
-ms.sourcegitcommit: 645e42f3d8c59e249247d101d63681093f6522ee
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71705403"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242753"
 ---
 # <a name="teexe-command-options"></a>Te.exe のコマンド オプション
 
-## <a name="usage"></a>使用方法
+## <a name="usage"></a>使用法
 
-**te.exe** \<[テスト\_バイナリ](#test_binaries)> \[[/appendWttLogging](#appendwttlogging)\] \[[/breakOnCreate](#breakoncreate)\] \[[/breakOnError](#breakonerror)\] \[[/breakOnInvoke](#breakoninvoke)\] \[[/coloredConsoleOutput](#coloredconsoleoutputtruefalse)\] \[ [/console:flushWrites](#consoleflushwrites)\] \[[/console:position=\[x,y | 現在の\]](#consolepositionxy--current-) \[[/console:size=&lt;x,y&gt;\]](#consolesize-xy--current-) \[ [/console:最上位 \]](#consoletopmost) [\[/defaultAppDomain\]](#defaultappdomain) \[[/disableConsoleのログ](#disableconsolelogging)\] \[[/disableタイムアウト](#disabletimeouts)\] \[[/dpiaware](#dpiaware) \] \[[/enableWttLogging](#enablewttlogging)\] \[[/inproc](#inproc)\] \[[/isolationLevel](#isolationlevellevel)\] \[[/labMode](#labmode)\] \[[/list](#list)\] \[[/listProperties](#listproperties)\] \[[/logFile:&lt;名前&gt;](#logfilename)\] \[[/logOutput:&lt;モード&gt;](#logoutputmode)\] \[[/miniDumpOnCrash](#minidumponcrash)\] \[[/miniDumpOnError](#minidumponerror)\] \[[/name:&lt;testname&gt;](#nametestname)\] \[[/outputFolder:&lt;folderName&gt;](#outputfolderfoldername)\] \[[/p:&lt;ParamName&gt;=&lt;ParamValue&gt;](#pparamnameparamvalue)\] \[[/並列](#parallel)\] \[[/persistPict結果](#persistpictresults)\] \[[/pict:&lt;OptionName&gt;=&lt;OptionValue&gt;](#pictoptionnameoptionvalue)\] [\[/rebootStateFile\]](#rebootstatefile) \[[/reportLoadingIssue](#reportloadingissue)\] \[[/runas:&lt;RunAsType&gt;](#runasrunastype)\] \[[/runIgnoredTests](#runignoredtests)\] \[[/runon:&lt;MachineName&gt;](#runonmachinename)\] \[[/screenCaptureOnError](#screencaptureonerror)\] \[[/select:&lt;query&gt;](#selectquery)\] \[[/sessionTimeout:&lt;value&gt;](#sessiontimeoutvalue)\] \[[/stackFrameCount:&lt;value&gt;](#stackframecountvalue)\] \[[/stackTraceOnError](#stacktraceonerror)\] \[[/terminateOnFirstFailure](#terminateonfirstfailure)\] \[[/testDependencies:&lt;files&gt;](#testdependenciesfiles)\] \[[/testmode:Loop](#testmodeloop)\] \[[/testmode:Stress](#testmodestress)\] \[[/testTimeout:&lt;value&gt;](#testtimeoutvalue)\] \[[/unicodeOutput:&lt;true/false&gt;](#unicodeoutputtruefalse)\] [\[/version\]](#version) \[[/wttDeviceString:&lt;value&gt;](#wttdevicestringvalue)\] \[[/wttDeviceStringSuffix:&lt;value&gt;](#wttdevicestringsuffixvalue)\]
+**te.exe** \<[test\_binaries](#test_binaries)> \[[/appendWttLogging](#appendwttlogging)\] \[[/breakOnCreate](#breakoncreate)\] \[[/breakOnError](#breakonerror)\] \[[/breakOnInvoke](#breakoninvoke)\] \[[/coloredConsoleOutput](#coloredconsoleoutputtruefalse)\] \[ [/console:flushWrites](#consoleflushwrites)\] \[[/console:position=\[x,y | current\]](#consolepositionxy--current-) \[[/console:size=&lt;x,y&gt;\]](#consolesize-xy--current-) \[ [/console:topmost \]](#consoletopmost) [\[/defaultAppDomain\]](#defaultappdomain) \[[/disableConsoleLogging](#disableconsolelogging)\] \[[/disableTimeouts](#disabletimeouts)\] \[[/dpiaware](#dpiaware) \] \[[/enableWttLogging](#enablewttlogging)\] \[[/inproc](#inproc)\] \[[/isolationLevel](#isolationlevellevel)\] \[[/labMode](#labmode)\] \[[/list](#list)\] \[[/listProperties](#listproperties)\] \[[/logFile:&lt;name&gt;](#logfilename)\] \[[/logOutput:&lt;mode&gt;](#logoutputmode)\] \[[/miniDumpOnCrash](#minidumponcrash)\] \[[/miniDumpOnError](#minidumponerror)\] \[[/name:&lt;testname&gt;](#nametestname)\] \[[/outputFolder:&lt;folderName&gt;](#outputfolderfoldername)\] \[[/p:&lt;ParamName&gt;=&lt;ParamValue&gt;](#pparamnameparamvalue)\] \[[/parallel](#parallel)\] \[[/persistPictResults](#persistpictresults)\] \[[/pict:&lt;OptionName&gt;=&lt;OptionValue&gt;](#pictoptionnameoptionvalue)\] [\[/rebootStateFile\]](#rebootstatefile) \[[/reportLoadingIssue](#reportloadingissue)\] \[[/runas:&lt;RunAsType&gt;](#runasrunastype)\] \[[/runIgnoredTests](#runignoredtests)\] \[[/runon:&lt;MachineName&gt;](#runonmachinename)\] \[[/screenCaptureOnError](#screencaptureonerror)\] \[[/select:&lt;query&gt;](#selectquery)\] \[[/sessionTimeout:&lt;value&gt;](#sessiontimeoutvalue)\] \[[/stackFrameCount:&lt;value&gt;](#stackframecountvalue)\] \[[/stackTraceOnError](#stacktraceonerror)\] \[[/terminateOnFirstFailure](#terminateonfirstfailure)\] \[[/testDependencies:&lt;files&gt;](#testdependenciesfiles)\] \[[/testmode:Loop](#testmodeloop)\] \[[/testmode:Stress](#testmodestress)\] \[[/testTimeout:&lt;value&gt;](#testtimeoutvalue)\] \[[/unicodeOutput:&lt;true/false&gt;](#unicodeoutputtruefalse)\] [\[/version\]](#version) \[[/wttDeviceString:&lt;value&gt;](#wttdevicestringvalue)\] \[[/wttDeviceStringSuffix:&lt;value&gt;](#wttdevicestringsuffixvalue)\]
 
 ## <a name="selectionexecution-commands"></a>選択/実行コマンド
 
@@ -270,11 +270,11 @@ al.exe \*. .dll: TestMachine1
 
 各テストバイナリからテストを選択するときに使用する選択条件。 選択条件は、次の1つ以上で構成されます。
 
-\[プロパティ名\] = \[値を文字列として @\]
-@プロパティ名 \[\] &gt;= 値を float または整数に \[\]
-@プロパティ名 \[\] &gt; 値を float または整数として \[\]値を float または整数 
-@\[\]プロパティ名\] &lt; \[値を float または整数として指定\]&lt;= \[\]
-@\[
+@\[プロパティ名\] = \[値を文字列\]
+@\[プロパティ名\] &gt;= \[値を float または整数として\]
+@\[プロパティ名\] &gt; \[プロパティ名\]
+@\[値を float または整数として\] &lt;値を float または整数として = \[整数\]\]
+@\[\]&lt;\[
 
 * *文字列としてのプロパティ値は、単一引用符で囲む必要があります。*
 * *複合選択条件は、"and"、"or"、および "not" を使用して指定できます (大文字と小文字は区別されません)。*

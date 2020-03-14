@@ -11,11 +11,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e03e3a3578167f44d7fb55f97d0c0b5152058d70
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402520"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243019"
 ---
 # <a name="working-with-usb-interfaces"></a>USB インターフェイスの使用
 

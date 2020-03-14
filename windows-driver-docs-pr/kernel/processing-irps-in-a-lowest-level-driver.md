@@ -18,11 +18,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 26448d746e4e6e729f5cd254a0c3a612fbcdf4f0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827610"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242949"
 ---
 # <a name="processing-irps-in-a-lowest-level-driver"></a>最下位レベル ドライバーでの IRP の処理
 
@@ -52,7 +52,7 @@ ms.locfileid: "72827610"
 
 ### <a name="calling-iogetcurrentirpstacklocation"></a>Iogetを呼び出しています。
 
-IRP パラメーターを必要とするドライバールーチンでは、 [**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)を呼び出して、ドライバーの[i/o スタックの場所](i-o-stack-locations.md)を取得する必要があります。 このようなルーチンには、複数の主要 i/o 関数コード (<strong>irp\_MJ\_* XXX</strong>) を処理するディスパッチルーチン<em>、マイナー関数をサポートする関数 (</em><em>irp\_</em>によって処理される\_XXX<strong><em>)、またはデバイス i/o を処理するディスパッチルーチンが含まれます。[</em></strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>) irp を処理する他のすべてのドライバールーチンと共に、制御要求 (* irp\_MJ\_デバイス\_制御や[**IRP\_MJ\_内部\_デバイス\_コントロール**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control))。
+IRP パラメーターを必要とするドライバールーチンでは、 [**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)を呼び出して、ドライバーの[i/o スタックの場所](i-o-stack-locations.md)を取得する必要があります。 このようなルーチンには、複数の主要 i/o 関数コード (<strong>IRP\_MJ\_* XXX</strong>) を処理するディスパッチルーチンが含まれ<em>ます。副関数 (</em><em>irp\_\_</em>XXX) をサポートしている関数、<strong><em>またはデバイス[</em>の I/O 制御要求 (* Irp\_MJ\_デバイス\_コントロール</strong>](<https://msdn.microsoft.com/library/windows/hardware/ff550744>)または[**irp\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-internal-device-control)\_コントロール) を処理し、その他のすべてのドライバールーチンを irp を処理する関数を処理します。\_\_
 
 このドライバーの i/o スタックの場所は、最も低いものであり、より高レベルのドライバーの i/o スタックの場所が影付きで表示されます。 わかりやすくするために、 [*DispatchReadWrite*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_dispatch)、 *StartIo*、 *adaptercontrol*、および[*DpcForIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)の各ルーチンから**ioget**を呼び出すための呼び出しは、前の図には記載されていません。
 
@@ -78,7 +78,7 @@ IRP パラメーターを必要とするドライバールーチンでは、 [**
 
 ### <a name="calling-allocateadapterchannel-and-maptransfer"></a>AllocateAdapterChannel と MapTransfer の呼び出し
 
-図に示されているように、最下位レベルのドライバールーチンを介した IRP パスを示す*StartIo*ルーチンが、転送要求を1つの DMA 操作で実行できると判断した場合、 *StartIo*ルーチンはを呼び出し[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)ドライバーの*adaptercontrol*ルーチンと IRP のエントリポイントを持つ AllocateAdapterChannel。
+下の図に示すように、最下位レベルのドライバールーチンを介した IRP パスを示す*StartIo*ルーチンが、転送要求を1つの DMA 操作で実行できることを確認した場合、 *StartIo*ルーチンは、ドライバーの*adaptercontrol*ルーチンと IRP のエントリポイントを使用して[**allocateadapterchannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pallocate_adapter_channel)を呼び出します。
 
 システム DMA コントローラーが使用可能な場合は、i/o マネージャーがドライバーの*Adaptercontrol*ルーチンを呼び出して転送操作を設定します。 *Adaptercontrol*ルーチンは、システム DMA コントローラーを設定するために[**maptransfer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-pmap_transfer)を呼び出します。 次に、ドライバーは DMA 操作用にデバイスをプログラムし、を返します。 (DMA とアダプタオブジェクトの使用方法の詳細については、「[入出力技法](i-o-programming-techniques.md)」を参照してください)。
 
@@ -106,7 +106,7 @@ IRP パラメーターを必要とするドライバールーチンでは、 [**
 
 次に低いドライバーに送信せずに IRP を完了するすべての上位レベルのドライバーでは、 **IoCompleteRequest**を呼び出す前に、その irp の i/o 状態ブロックも設定する必要があります。 全体的な i/o スループットを向上させるには、上位レベルのドライバーで各 IRP の専用の i/o スタックの場所にあるパラメーターを確認し、パラメーターが無効な場合は i/o 状態ブロックを設定して要求自体を完了する必要があります。 可能な限り、ドライバーは、チェーン内の下位のドライバーに対して無効な要求を渡すことを避ける必要があります。
 
-前の図の転送操作が成功した場合、図に示されている*DpcForIsr*ルーチンは、最下位レベルのドライバールーチンを介した IRP パスを示しています。状態が成功に設定されていることを示す**状態とバイト**数を\_設定します。IRP の i/o 状態ブロックの**情報**が転送されました。
+前の図の転送操作が成功したと仮定した場合、図に示されている*DpcForIsr*ルーチンは、最下位レベルのドライバールーチンを介した IRP パスを示しています **。状態が**[成功] に設定され、irp の I/o 状態ブロックの**情報**に転送されたバイト数が\_設定されます。
 
 標準ドライバールーチンの多くは、NTSTATUS 型の値も返します。 ステータス\_成功などの NTSTATUS 定数の詳細については、「[ログエラー](logging-errors.md)」を参照してください。
 

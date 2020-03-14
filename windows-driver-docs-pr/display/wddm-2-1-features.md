@@ -5,11 +5,11 @@ ms.assetid: 7dc0d0ad-98da-4bd6-bed9-f70525b682bc
 ms.date: 01/10/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c579c6bfc9a3ded30a9212a828827b26adb3ef0
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74862973"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242995"
 ---
 # <a name="wddm-21-features"></a>WDDM 2.1 の機能
 
@@ -22,13 +22,13 @@ WDDM 2.1 自体は省略可能です。 実装されている場合は、必須�
 
 | 機能 | 適用条件 |
 | --- | --- |
-| オファーと回収の改善 | Mandatory |
-| ビデオメモリの管理 | オプション |
+| オファーと回収の改善 | 必須 |
+| ビデオメモリの管理 | ［オプション］ |
 | HW 保護されたコンテンツの信頼性の向上 | ハードウェアの選択 |
-| Windows のサポートを使用したアプリケーションのサポート | Mandatory |
+| Windows のサポートを使用したアプリケーションのサポート | 必須 |
 | 間接表示 | ハードウェアの選択 |
-| ドライバーストアとサイドバイサイドインストール | Mandatory |
-| カメラ/キャプチャシナリオ用の DirectX メモリ表面共有 | Mandatory|
+| ドライバーストアとサイドバイサイドインストール | 必須 |
+| カメラ/キャプチャシナリオ用の DirectX メモリ表面共有 | 必須|
 
 WDDM 2.1 では、D3D9、D3D10、D3D 10.1、D3D11、D3D11、D3D12 の各 D3D バージョンがサポートされています。
 
@@ -170,7 +170,7 @@ KMD の DDI インターフェイスのバージョンは次のとおりです�
 
 ## <a name="graphics-inf-requirements"></a>グラフィックス INF の要件
 
-Wddm 2.1 グラフィックスドライバーには、WDDM 2.0 以前のドライバーと比較した場合とは異なる INF 要件があります。 それらを次に示します。
+Wddm 2.1 グラフィックスドライバーには、WDDM 2.0 以前のドライバーと比較した場合とは異なる INF 要件があります。 これらの設定は、次のとおりです。
 
 1. WDDM 2.1 では、WDDM 2.0 グラフィックスドライバー (D1) と同一の特徴スコアを持っている必要があります。
 

@@ -1,71 +1,71 @@
 ---
 title: WDF ドライバーのビルドと読み込み
-description: このトピックでは、Visual Studio で、対象のオペレーティング システムとドライバーのプロジェクトのフレームワークのバージョンを選択する方法について説明します。 共同インストーラーとかどうか、ドライバー パッケージにこのコンポーネントを含める必要がありますを決定する方法についても説明します。
+description: このトピックでは、Visual Studio でドライバープロジェクトの対象となるオペレーティングシステムとフレームワークのバージョンを選択する方法について説明します。 また、共同インストーラーと、このコンポーネントをドライバーパッケージに含める必要があるかどうかを判断する方法についても説明します。
 ms.assetid: 82c77b1f-4bf0-46d9-bae3-822e9be5a7fb
 keywords:
-- カーネル モード ドライバー WDK KMDF、ドライバーの構築
-- KMDF WDK、ドライバーの構築
-- カーネル モード ドライバー フレームワーク WDK は、ドライバーの構築
-- カーネル モード ドライバー WDK KMDF、ドライバーの読み込み
-- KMDF WDK、ドライバーの読み込み
-- カーネル モード ドライバー フレームワーク WDK は、ドライバーの読み込み
-- ドライバー WDK、KMDF 構築
-- WDK KMDF ドライバーの読み込み
-- WDK、KMDF のユーティリティを構築します。
-- KMDF ドライバー WDK KMDF、構築
+- カーネルモードドライバー WDK KMDF、ドライバーのビルド
+- KMDF WDK, ドライバーのビルド
+- カーネルモードドライバーフレームワーク WDK、ドライバーのビルド
+- カーネルモードドライバー WDK KMDF、ドライバーの読み込み
+- KMDF WDK, ドライバーの読み込み
+- カーネルモードドライバーフレームワーク WDK、ドライバーの読み込み
+- ドライバーの構築 (WDK、KMDF)
+- ドライバー WDK KMDF を読み込んでいます
+- ビルドユーティリティ WDK、KMDF
+- KMDF ドライバー WDK KMDF、ビルド
 - KMDF ドライバー WDK KMDF、読み込み
 ms.date: 05/16/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 73b5cb4a3e48a09a617980e4c81f23b0ef20682e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359125"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242931"
 ---
 # <a name="building-and-loading-a-wdf-driver"></a>WDF ドライバーのビルドと読み込み
 
 
-このトピックでは、Visual Studio で、対象のオペレーティング システムとドライバーのプロジェクトのフレームワークのバージョンを選択する方法について説明します。
+このトピックでは、Visual Studio でドライバープロジェクトの対象となるオペレーティングシステムとフレームワークのバージョンを選択する方法について説明します。
 
-かどうかは、ドライバー パッケージに再頒布可能パッケージのフレームワークのコンポーネントを含める必要があります。 を確認するには、を参照してください。[再頒布可能フレームワーク コンポーネント](installation-components-for-kmdf-drivers.md)します。
+再頒布可能フレームワークコンポーネントをドライバーパッケージに含める必要があるかどうかを判断するには、「[再頒布可能フレームワークコンポーネント](installation-components-for-kmdf-drivers.md)」を参照してください。
 
 
-## <a name="which-framework-version-should-i-use"></a>フレームワーク バージョンを使用する必要がありますか。
+## <a name="which-framework-version-should-i-use"></a>どのフレームワークのバージョンを使用する必要がありますか。
 
-*   Windows XP を対象とするには、WDF 1.9 またはそれ以前を使用します。
-*   Windows Vista、Windows 7、または Windows 8 を対象には、WDF 1.11 またはそれ以前を使用します。
-*   Windows 8.1 をターゲットに KMDF 1.13 以前または UMDF を使用して、1.x では、または UMDF 2.0。
-*   Windows 10 バージョン 1507、ターゲットに KMDF 1.15 以前または UMDF 使用 1.x では、または UMDF 2.15 またはそれ以前。
+*   Windows XP を対象にするには、WDF 1.9 以前を使用します。
+*   Windows Vista、Windows 7、または Windows 8 を対象とするには、WDF 1.11 以前を使用します。
+*   Windows 8.1 を対象にするには、KMDF 1.13 以前、または UMDF 1.x (umdf 2.0) を使用します。
+*   Windows 10 バージョン1507を対象にするには、KMDF 1.15 以前、または UMDF 1.x または UMDF 2.15 以前を使用します。
 
-KMDF および UMDF バージョンに関する詳細については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)と[UMDF バージョン履歴](umdf-version-history.md)します。
+KMDF と UMDF バージョンの詳細については、「 [Kmdf のバージョン履歴](kmdf-version-history.md)」と「 [umdf version history](umdf-version-history.md)」を参照してください。
 
-* [KMDF バージョン履歴](kmdf-version-history.md)
+* [KMDF のバージョン履歴](kmdf-version-history.md)
 * [UMDF バージョン履歴](umdf-version-history.md)
 
-## <a name="how-do-i-set-the-versions-in-visual-studio"></a>Visual Studio のバージョンを設定する方法
+## <a name="how-do-i-set-the-versions-in-visual-studio"></a>Visual Studio でバージョンを設定操作方法には
 
 
-最新バージョンの Windows と最新 KMDF または UMDF バージョンのドライバー プロジェクトをビルドしている場合は、既定値のままし、この手順をスキップできます。
+最新バージョンの Windows と最新の KMDF または UMDF バージョンのドライバープロジェクトをビルドしている場合は、既定値をそのまま使用して、この手順を省略できます。
 
-それ以外の場合、これらの手順に従います。
+それ以外の場合は、次の手順を実行します。
 
--   ソリューションを右クリックして**Configuration Manager**します。  設定**プロジェクト構成**に目的の値 (たとえば**デバッグ**)。
--   ドライバーのプロジェクトを右クリックして**プロパティ**します。  開いている**構成プロパティには、ドライバーが]-> [設定]、[ドライバー モデル**します。  変更、 **KMDF マイナー バージョン (ターゲットのバージョン)** または**UMDF マイナー バージョン (ターゲットのバージョン)** 値、[ドライバー モデル設定](../develop/driver-model-settings-properties-for-driver-projects.md)に目的の値。  詳細については**KMDF マイナー バージョン (最低限必要です)** と**UMDF マイナー バージョン (最低限必要です)** を参照してください[を指定する必要な最小](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows#specifying-minimum-required)します。
+-   ソリューションを右クリックし、 **[Configuration Manager]** を選択します。  **プロジェクト構成**を目的の値 (**デバッグ**など) に設定します。
+-   ドライバープロジェクトを右クリックし、 **[プロパティ]** を選択します。  **[構成プロパティ-> ドライバーの設定-> ドライバーモデル]** を開きます。  [ドライバーモデル設定](../develop/driver-model-settings-properties-for-driver-projects.md)の**Kmdf バージョン Minor (ターゲットバージョン)** 値または**UMDF version minor (ターゲットバージョン)** 値を目的の値に変更します。  **Kmdf のマイナーバージョン (最小要件)** と**UMDF バージョンマイナー (最小要件)** については、「最小要件の[指定](https://docs.microsoft.com/windows-hardware/drivers/wdf/building-a-wdf-driver-for-multiple-versions-of-windows#specifying-minimum-required)」を参照してください。
 
-UMDF および KMDF 1.9 1.29 のドライバーをビルドする Windows 10 の 1.9 2.29 ドライバーに付属している Windows Driver Kit (WDK) を使用することができます。
+Windows 10 に付属する Windows Driver Kit (WDK) を使用して、KMDF 1.9-1.29 ドライバーと、UMDF 1.9-2.29 ドライバーをビルドできます。
 
-KMDF および UMDF バージョンに関する詳細については、次を参照してください。 [KMDF バージョン履歴](kmdf-version-history.md)と[UMDF バージョン履歴](umdf-version-history.md)します。
+KMDF と UMDF バージョンの詳細については、「 [Kmdf のバージョン履歴](kmdf-version-history.md)」と「 [umdf version history](umdf-version-history.md)」を参照してください。
 
-* [KMDF バージョン履歴](kmdf-version-history.md)
+* [KMDF のバージョン履歴](kmdf-version-history.md)
 * [UMDF バージョン履歴](umdf-version-history.md)
 
 ## <a name="linking-and-loading"></a>リンクと読み込み
 
 
-適切なフレームワーク ライブラリ、ライブラリのローダー、およびスタブ ファイルは、ドライバーを Windows Driver Frameworks (WDF) MSBuild へのリンクである Microsoft Visual Studio でプロジェクトをビルドするとすべての WDK に含まれます。 (ライブラリとローダーは、framework には含まれるも[共同インストーラー](installing-the-framework-s-co-installer.md)があり、ドライバー パッケージに配布できます必要に応じて、します)。
+Microsoft Visual Studio で Windows Driver Framework (WDF) プロジェクトをビルドすると、MSBuild によってドライバーが適切なフレームワークライブラリ、ライブラリのローダー、およびスタブファイルにリンクされます。これらはすべて WDK に含まれています。 (ライブラリとローダーも、必要に応じてドライバーパッケージと一緒に配布できるように、フレームワークの[共同インストーラー](installing-the-framework-s-co-installer.md)に含まれています)。
 
-スタブ ファイルには、特殊なエントリ ポイントのルーチンが含まれています。**FxDriverEntry**します。 MSBuild の設定、スタブの**FxDriverEntry** framework ベースのドライバーの初期のエントリ ポイントとしてルーチン。
+スタブファイルには、 **Fxdriverentry**という特殊なエントリポイントルーチンが含まれています。 MSBuild は、スタブの**Fxdriverentry**ルーチンをフレームワークベースのドライバーの最初のエントリポイントとして設定します。
 
-オペレーティング システムでは、framework ベースのドライバーが読み込まれたら、スタブ ファイルとライブラリのローダーも読み込みます。 次に、システムが、スタブ ファイルを呼び出す**FxDriverEntry**ルーチン。 このルーチンは、ローダーを呼び出します。 ローダーは、ドライバーが必要ですし、適切なロード framework ライブラリのバージョンを決定します。[ライブラリのバージョン](framework-library-versioning.md)(これはまだ読み込まれていない) 場合は、カーネル モード サービスとして。 ライブラリのドライバーの呼び出す最後に、 [ **DriverEntry** ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチン。
+オペレーティングシステムは、フレームワークベースのドライバーを読み込むときに、スタブファイルとライブラリのローダーも読み込みます。 次に、システムはスタブファイルの**Fxdriverentry**ルーチンを呼び出します。 次に、このルーチンはローダーを呼び出します。 ローダーは、ドライバーが必要とするフレームワークライブラリのバージョンを判断し、正しい[バージョンのライブラリ](framework-library-versioning.md)をカーネルモードサービスとして読み込みます (まだ読み込まれていない場合)。 最後に、ライブラリはドライバーの[**Driverentry**](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンを呼び出します。
 

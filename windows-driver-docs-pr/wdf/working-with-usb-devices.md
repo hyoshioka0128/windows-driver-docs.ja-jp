@@ -18,18 +18,18 @@ keywords:
 ms.date: 06/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5b5eab473fd32aecae832c702267c6aaa1bafa
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823517"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243023"
 ---
 # <a name="working-with-usb-devices"></a>USB デバイスの使用
 
 
 このトピックでは、バージョン2以降のカーネルモードドライバーフレームワーク (KMDF) またはユーザーモードドライバーフレームワーク (UMDF) ドライバーが、Windows ドライバーフレームワーク (WDF) によって提供される USB デバイスオブジェクトメソッドを使用して実行できる操作について説明します。
 
-次のセクションが含まれています。
+このトピックは、次のセクションで構成されています。
 
 -   [USB デバイスオブジェクトの作成](#creating-a-framework-usb-device-object)
 -   [USB デバイスの構成](#selecting-a-device-configuration)
@@ -44,7 +44,7 @@ ms.locfileid: "72823517"
 ## <a href="" id="creating-a-framework-usb-device-object"></a>USB デバイスオブジェクトの作成
 
 
-フレームワークの USB i/o ターゲットオブジェクト (WDFUSBDEVICE、WDFUSBINTERFACE、WDFUSBPIPE) を使用するには、クライアントドライバーがまず[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)を呼び出して、usb デバイスオブジェクトを作成する必要があります。 通常、ドライバーは、 [*EvtdeviceWdfUsbTargetDeviceCreateWithParameters ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数からを呼び出します。
+フレームワークの USB i/o ターゲットオブジェクト (WDFUSBDEVICE、WDFUSBINTERFACE、WDFUSBPIPE) を使用するには、クライアントドライバーがまず[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)を呼び出して、usb デバイスオブジェクトを作成する必要があります。 通常、ドライバーは、 [*EvtdeviceWdfUsbTargetDeviceCreateWithParameters ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)コールバック関数から**WdfUsbTargetDeviceCreateWithParameters**を呼び出します。
 
 ドライバーが[**WdfUsbTargetDeviceCreateWithParameters**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicecreatewithparameters)を呼び出すと、フレームワークは WDFUSBDEVICE オブジェクトを作成し、USB デバイスを表す FDO に関連付けます。 メソッドは、USB クライアントドライバーが物理デバイスとの通信に使用できる新しいフレームワーク USB デバイスオブジェクトへのハンドルを返します。
 

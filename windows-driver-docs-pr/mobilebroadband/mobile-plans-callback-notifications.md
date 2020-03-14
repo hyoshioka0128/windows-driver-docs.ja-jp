@@ -7,11 +7,11 @@ keywords:
 ms.date: 05/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 594e2d1b372e5ca58fbac760cd3f00830c925db6
-ms.sourcegitcommit: f89a978ee23b9d2f925b13ea56b2c6cd48b4603a
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68948054"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242747"
 ---
 # <a name="mobile-plans-callback-notifications"></a>モバイルプランのコールバック通知
 
@@ -72,27 +72,27 @@ PuchaseMetadata オブジェクトの詳細については、「[購入メタデ
 
 ### <a name="listening-for-network-registration-changes"></a>ネットワーク登録の変更をリッスンしています
 
-ネットワーク登録の変更`MobilePlansInlineProfileDownload.registrationChangedScript`をリッスンするには、をに文字列`registrationArgs`を受け取る Javascript 関数の名前である文字列に設定する必要があります。
+ネットワーク登録の変更をリッスンするには、`MobilePlansInlineProfileDownload.registrationChangedScript` を、`registrationArgs`の文字列を受け取る Javascript 関数の名前である文字列に設定する必要があります。
 
 登録引数は、JSON オブジェクトを表す文字列です。
 
 #### <a name="profileregistrationcompleteargs"></a>ProfileRegistrationCompleteArgs
 
-| プロパティ名 | 型 | 説明 |
+| プロパティ名 | 種類 | 説明 |
 | --- | --- | -- |
-| networkRegistrationState | String | 現在のネットワーク登録状態を表す文字列。 このプロパティの値は、で`MobilePlansNetworkRegistrationState`確認できます。 |
-| iccid | String | ネットワーク登録状態が変更された ICCID。 |
+| networkRegistrationState | String | 現在のネットワーク登録状態を表す文字列。 このプロパティの値は `MobilePlansNetworkRegistrationState`で確認できます。 |
+| Iccid | String | ネットワーク登録状態が変更された ICCID。 |
 
 #### <a name="mobileplansnetworkregistrationstate"></a>MobilePlansNetworkRegistrationState
 
-| プロパティ名 | 型 | 説明 |
+| プロパティ名 | 種類 | 説明 |
 | --- | --- | -- |
-| none | String | 接続がありません。 |
+| なし | String | 接続がありません。 |
 | 解除 | String | デバイスが登録されていないため、ネットワークプロバイダーを検索していません。 |
 | 検索 | String | デバイスは登録されていないため、ネットワークプロバイダーを検索しています。 |
-| 出張 | String | デバイスはホームネットワークプロバイダー上にあります。 |
+| ホーム | String | デバイスはホームネットワークプロバイダー上にあります。 |
 | ローミング | String | デバイスはローミングネットワークプロバイダー上にあります。 |
-| パートナー (partner) | String | デバイスは、ローミングパートナーネットワークプロバイダー上にあります。 |
+| パートナー | String | デバイスは、ローミングパートナーネットワークプロバイダー上にあります。 |
 | 拒否 | String | デバイスの登録が拒否されました。 |
 
 次の Javascript の例は、ネットワーク登録変更イベントのリスナーを実装する方法を示しています。
@@ -111,22 +111,22 @@ function onRegistrationChanged(registrationArgs) {
 
 ### <a name="listening-for-profile-activation"></a>プロファイルのアクティブ化を待機しています
 
-プロファイルのアクティブ化イベント`MobilePlansInlineProfileDownload.profileActivationCompleteScript`をリッスンするには、をに文字列`activationArgs`を受け取る Javascript 関数の名前である文字列に設定する必要があります。
+プロファイルのアクティブ化イベントをリッスンするには、`MobilePlansInlineProfileDownload.profileActivationCompleteScript` を、`activationArgs`の文字列を受け取る Javascript 関数の名前である文字列に設定する必要があります。
 
-`activationArgs`は、JSON オブジェクトを表す文字列です。
+`activationArgs` は、JSON オブジェクトを表す文字列です。
 
 #### <a name="profileactivationcompleteargs"></a>ProfileActivationCompleteArgs
 
-| プロパティ名 | 型 | 説明 |
+| プロパティ名 | 種類 | 説明 |
 | --- | --- | -- |
-| activationResult | String | アクティブ化の結果。 このプロパティの値は、で`MobilePlansActivationError`確認できます。 |
-| iccid | String | アクティブ化されたプロファイルの ICCID。 |
+| activationResult | String | アクティブ化の結果。 このプロパティの値は `MobilePlansActivationError`で確認できます。 |
+| Iccid | String | アクティブ化されたプロファイルの ICCID。 |
 
 #### <a name="mobileplansactivationerror"></a>MobilePlansActivationError
 
-| プロパティ名 | 型 | 説明 |
+| プロパティ名 | 種類 | 説明 |
 | --- | --- | -- |
-| 成功 | String | 操作が成功したことを示します。 |
+| success | String | 操作が成功したことを示します。 |
 | notAuthorized | String | 操作が承認されていないことを示します。 |
 | notFound | String | 指定された eSIM プロファイルが見つからなかったことを示します。 |
 | policyViolation | String | 操作がポリシーに違反していることを示します。 |
@@ -138,7 +138,7 @@ function onRegistrationChanged(registrationArgs) {
 | confirmationCodeMaxRetriesExceeded | String | 操作中に間違った確認コードが指定されたこと、および再試行が許可されていないことを示します。 |
 | カードが削除されました | String | SIM カードが削除されたことを示します。 |
 | cardBusy | String | SIM カードがビジー状態であることを示します。 |
-| その他 | String | より具体的なステータスによって考慮されていない状態を示します。 |
+| other | String | より具体的なステータスによって考慮されていない状態を示します。 |
 | Cardの一般エラー | String | ダウンロード、インストール、またはその他の操作が正常に完了できないようにするカードエラーが発生したことを示します。 |
 | confirmationCodeMissing | String | ESIM プロファイルをダウンロードするために確認コードが必要であることを示します。 |
 | invalidMatchingId | String | アクティベーションコードまたは検出されたイベントの一致する ID が拒否されたことを示します。 |
@@ -186,7 +186,7 @@ function onActivationComplete(activationArgs) {
 | --- | --- |
 | MobilePlansOperationContext | この一意のダウンロード操作と一致する識別子を持つオブジェクト。
 
-制御は、呼び出しの直後にモバイルオペレーターポータルに返されます。 プロファイルが後でインストールされることをユーザーに通知するための UI が表示されます。 `downloadDelay`分が経過すると、ユーザーに通知が表示され、プロファイルのダウンロードプロセスを開始するように招待されます。
+制御は、呼び出しの直後にモバイルオペレーターポータルに返されます。 プロファイルが後でインストールされることをユーザーに通知するための UI が表示されます。 `downloadDelay` 分が経過すると、ユーザーに通知が表示され、プロファイルのダウンロードプロセスを開始するよう招待されます。
 
 次の Javascript 関数は、遅延のあるプロファイルのダウンロードを開始する必要があることをアプリケーションに通知する API の例を示しています。
 
@@ -245,7 +245,7 @@ var purchaseMetaData = MobilePlans.createPurchaseMetaData();
 
 ![モバイルプランの遅延接続シーケンス図](images/dynamo_async_connectivity_flow.png)
 
-ユーザーがアクティブ化フローを正常に完了すると、web ポータルは、 `MobilePlans.notifyPurchaseWithProfileDownload` API を使用して遅延接続フローをトリガーする必要があることをモバイルプランアプリに通知します。
+ユーザーがアクティブ化フローを正常に完了すると、web ポータルは、`MobilePlans.notifyPurchaseWithProfileDownload` API を使用して遅延接続フローをトリガーする必要があることをモバイルプランアプリに通知します。
 
 ### <a name="mobileplansnotifypurchasewithprofiledownload"></a>MobilePlans.notifyPurchaseWithProfileDownload
 
@@ -273,7 +273,7 @@ PuchaseMetadata オブジェクトの詳細については、「[購入メタデ
 
 ## <a name="adding-balance"></a>残高の追加
 
-ユーザーが既存のアカウントに残高を追加することによって web ポータルで購入を完了すると、web ポータル`MobilePlansInlineOperations.notifyBalanceAddition`は API 復帰制御を呼び出して、Mobile plan アプリに戻ります。 これは、デバイスに既にインストールされている*物理 SIM*または*eSIM プロファイル*に使用できます。
+ユーザーが既存のアカウントに残高を追加することによって web ポータルで購入を完了すると、web ポータルは、Mobile plan アプリに `MobilePlansInlineOperations.notifyBalanceAddition` API return コントロールを呼び出す必要があります。 これは、デバイスに既にインストールされている*物理 SIM*または*eSIM プロファイル*に使用できます。
 
 次の図は、モバイルプランアプリがバランスの追加をサポートする方法の大まかな流れを示しています。
 
@@ -289,7 +289,7 @@ PuchaseMetadata オブジェクトの詳細については、「[購入メタデ
 | --- | --- |
 | MobilePlansOperationContext | この一意のダウンロード操作と一致する識別子を持つオブジェクト。
 
-携帯電話会社が特定のアカウントに残高を追加する場合、web ポータルは`MobilePlansInlineOperations.notifyBalanceAddition` API を呼び出す必要があります。
+携帯電話会社が特定のアカウントに残高を追加する場合、web ポータルは `MobilePlansInlineOperations.notifyBalanceAddition` API を呼び出す必要があります。
 
 次の Javascript 関数は、バランスの追加が行われたことをアプリケーションに通知する API の例を示しています。
 
@@ -305,11 +305,11 @@ function NotifyMobilePlans() {
 }
 ```
 
-オブジェクトの詳細については、 `puchaseMetadata` 「[購入メタデータのプロパティ](#purchase-metadata-properties-details)」を参照してください。
+`puchaseMetadata` オブジェクトの詳細については、「[購入メタデータのプロパティ](#purchase-metadata-properties-details)」を参照してください。
 
 ## <a name="adding-balance-and-activate-esim-profile"></a>[残高の追加] と [eSIM プロファイルのアクティブ化]
 
-ユーザーが既存のアカウントにデータを追加して web ポータルで再生を完了すると、web ポータルは`MobilePlansInlineOperations.notifyBalanceAddition` API のリターンコントロールを呼び出して、モバイルプランアプリに戻る必要があります。 これは、デバイスに既にインストールされている*eSIM プロファイル*に使用できます。 ICCID パラメーターは、どの eSIM プロファイルをアクティブ化する必要があるかを示します。
+ユーザーが既存のアカウントにデータを追加して web ポータルで再生を完了すると、web ポータルは、Mobile plan アプリに `MobilePlansInlineOperations.notifyBalanceAddition` API return コントロールを呼び出す必要があります。 これは、デバイスに既にインストールされている*eSIM プロファイル*に使用できます。 ICCID パラメーターは、どの eSIM プロファイルをアクティブ化する必要があるかを示します。
 
 次の図は、Mobile plan アプリが iccid 情報による残高の追加をサポートする方法の呼び出しフローを示しています。
 
@@ -320,13 +320,13 @@ function NotifyMobilePlans() {
 | パラメーター名 | 種類 | 説明 |
 | --- | --- | -- |
 | purchaseMetadata | オブジェクト | このオブジェクトには、ユーザーの購入に関するメタデータが含まれています。 これには、ユーザーアカウント、購入方法またはインストルメント、ユーザーが新しい行を追加する場合の詳細、ユーザーが購入したプランの名前などの詳細が含まれます。 これらはすべてレポートに使用されます。 |
-| iccid | String | 残高の追加後にアクティブにする必要がある ICCID
+| Iccid | String | 残高の追加後にアクティブにする必要がある ICCID
 
 | 戻り値の型 | 説明 |
 | --- | --- |
 | MobilePlansOperationContext | この一意のダウンロード操作と一致する識別子を持つオブジェクト。
 
-また、プロファイルの ICCID がわかっている場合は、非アクティブなプロファイルに均衡を加えることもできます。 を ICCID `MobilePlansInlineOperations.notifyBalanceAddition`と共に使用すると、バランスの追加をアプリに通知するだけでなく、指定された ICCID に対応するプロファイルにアクティブなプロファイルを切り替えることができます。
+また、プロファイルの ICCID がわかっている場合は、非アクティブなプロファイルに均衡を加えることもできます。 ICCID を使用して `MobilePlansInlineOperations.notifyBalanceAddition` を使用すると、バランスの追加をアプリに通知するだけでなく、指定された ICCID に対応するプロファイルにアクティブなプロファイルを切り替えることができます。
 
 次の Javascript 関数は、バランスの追加が行われたことをアプリケーションに通知する API の例を示しています。
 
@@ -342,11 +342,11 @@ function NotifyMobilePlans() {
 }
 ```
 
-オブジェクトの詳細については、 `puchaseMetadata` 「[購入メタデータのプロパティ](#purchase-metadata-properties-details)」を参照してください。
+`puchaseMetadata` オブジェクトの詳細については、「[購入メタデータのプロパティ](#purchase-metadata-properties-details)」を参照してください。
 
 ## <a name="canceling-purchase-flow"></a>購入フローを取り消しています
 
-ユーザーが web ポータルでアクティブ化フローをキャンセルした場合、ポータルは`MobilePlans.notifyCancelledPurchase` API を呼び出して、モバイルプランアプリに制御を戻す必要があります。
+ユーザーが web ポータルでアクティブ化フローをキャンセルした場合、ポータルは `MobilePlans.notifyCancelledPurchase` API を呼び出して、モバイルプランアプリに制御を戻す必要があります。
 
 ### <a name="mobileplansnotifycancelledpurchase"></a>MobilePlans の購入
 
@@ -368,18 +368,18 @@ function finishPurchaseWithCancellation() {
     }
 ```
 
-オブジェクトの詳細については、 `puchaseMetadata` 「[購入メタデータのプロパティ](#purchase-metadata-properties-details)」を参照してください。
+`puchaseMetadata` オブジェクトの詳細については、「[購入メタデータのプロパティ](#purchase-metadata-properties-details)」を参照してください。
 
 ## <a name="purchase-metadata-properties-details"></a>購入メタデータプロパティの詳細
 
 次の表では、購入メタデータで使用される詳細について説明します。
 
-| プロパティ名 | 型 | 説明 | 例 |
+| プロパティ名 | 種類 | 説明 | 例 |
 | --- | --- | --- | --- |
-| userAccount | String | 設定可能な値: <ul><li>新規:新しいユーザーアカウントがユーザーによって作成されたことを示します。</li><li>既存ユーザーが既存のユーザーアカウントを使用してログオンしたことを示します。</li><li>一言おじさんユーザーがこのステップで購入フローを終了したことを示します。</li><li>None:ユーザーがこのステップに届かなかったことを示します。</li></ul> | "userAccount": "New" |
-| purchaseInstrument | String | 設定可能な値: <ul><li>新規:新しいユーザーアカウントがユーザーによって作成されたことを示します。</li><li>既存ユーザーが既存のユーザーアカウントを使用してログオンしたことを示します。</li><li>一言おじさんユーザーがこのステップで購入フローを終了したことを示します。</li><li>None:ユーザーがこのステップに届かなかったことを示します。</li></ul> | "purchaseInstrument": "New" |
-| 直線 | String | 設定可能な値: <ul><li>新規:SIM カードがユーザーアカウントによって追加されたことを示します。</li><li>既存ユーザーが既存の行をデバイスに転送したことを示します。</li><li>一言おじさんユーザーがこのステップで購入フローを終了したことを示します。</li><li>None:ユーザーがこのステップに届かなかったことを示します。</li></ul> | "line": New " |
-| moDirectStatus | String | 設定可能な値: <ul><li>完了ユーザーが購入を正常に完了したことを示します。</li><li>ServiceError:ユーザーが、MO サービスエラーのために購入を完了できなかったことを示します。</li><li>InvalidSIM:ポータルに渡された ICCID が正しくないことを示します。</li><li>LogOnFailed: ユーザーが MO ポータルにログインできなかったことを示します。</li><li>PurchaseFailed:課金エラーが原因で購入が失敗したことを示します。</li><li>ClientError無効な引数がポータルに渡されたことを示します。</li>すべてのエラー:ユーザーの請求にエラーがあったことを示します。</li></ul> | "moDirectStatus": "Complete" |
+| userAccount | String | 次の値を使用できます。 <ul><li>新規: 新しいユーザーアカウントがユーザーによって作成されたことを示します。</li><li>Existing: ユーザーが既存のユーザーアカウントでログオンしたことを示します。</li><li>一言おじさん: ユーザーがこのステップで購入フローを終了したことを示します。</li><li>None: ユーザーがこのステップに届かなかったことを示します。</li></ul> | "userAccount": "New" |
+| purchaseInstrument | String | 次の値を使用できます。 <ul><li>新規: 新しいユーザーアカウントがユーザーによって作成されたことを示します。</li><li>Existing: ユーザーが既存のユーザーアカウントでログオンしたことを示します。</li><li>一言おじさん: ユーザーがこのステップで購入フローを終了したことを示します。</li><li>None: ユーザーがこのステップに届かなかったことを示します。</li></ul> | "purchaseInstrument": "New" |
+| 折れ線 | String | 次の値を使用できます。 <ul><li>新規: SIM カードがユーザーアカウントによって追加されたことを示します。</li><li>Existing: ユーザーがデバイスに既存の行を転送したことを示します。</li><li>一言おじさん: ユーザーがこのステップで購入フローを終了したことを示します。</li><li>None: ユーザーがこのステップに届かなかったことを示します。</li></ul> | "line": New " |
+| moDirectStatus | String | 次の値を使用できます。 <ul><li>Complete: ユーザーが購入を正常に完了したことを示します。</li><li>ServiceError: ユーザーが、MO サービスエラーのために購入を完了できなかったことを示します。</li><li>InvalidSIM: ポータルに渡された ICCID が正しくないことを示します。</li><li>LogOnFailed: ユーザーが MO ポータルにログインできなかったことを示します。</li><li>PurchaseFailed: 課金エラーが原因で購入が失敗したことを示します。</li><li>ClientError: 無効な引数がポータルに渡されたことを示します。</li>複数のエラー: ユーザーの請求にエラーがあったことを示します。</li></ul> | "moDirectStatus": "Complete" |
 | planName | String | トランザクションが成功した場合、このフィールドを空にすることはできません。また、説明的なプラン名を指定する必要があります。 トランザクションが失敗した場合、このフィールドは空の文字列である必要があります。 | "プラン名": "2 GB の月"|
 
 ## <a name="legacy-callback-notifications"></a>レガシ コールバック通知

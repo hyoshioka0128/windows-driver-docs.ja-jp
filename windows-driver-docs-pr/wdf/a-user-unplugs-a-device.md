@@ -14,11 +14,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e03da077748558cedb46da32145f2e56847aaf46
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402532"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242955"
 ---
 # <a name="a-user-unplugs-a-device"></a>ユーザーがデバイスを取り外す
 

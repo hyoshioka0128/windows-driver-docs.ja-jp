@@ -1,138 +1,138 @@
 ---
-title: '[全般] の付録のモバイルの計画'
-description: このトピックでは、Mobile プラン プログラムの付録の情報について説明します。
+title: モバイルプランの概要 (付録)
+description: このトピックでは、モバイルプランプログラムの付録情報について説明します。
 ms.assetid: B3B478DB-78F4-4031-B041-DCBAACC15D6F
 keywords:
-- Windows Mobile プラン付録、Mobile のプランの付録モバイル演算子
+- Windows Mobile プラン付録、モバイルプラン付録モバイルオペレーター
 ms.date: 07/05/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a1af5c5101a1493efedce5339a32495e632aa50
-ms.sourcegitcommit: 6f74454e7ed5e703e4e4b363b6816652950e6a51
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2019
-ms.locfileid: "67608550"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242745"
 ---
-# <a name="mobile-plans-general-appendix"></a>[全般] の付録のモバイルの計画
+# <a name="mobile-plans-general-appendix"></a>モバイルプランの概要 (付録)
 
-## <a name="web-portal-flow-and-reference-design"></a>Web ポータルのフローと参照設計
+## <a name="web-portal-flow-and-reference-design"></a>Web ポータルのフローと参照のデザイン
 
-この参照設計は、独自のブランドと製品を最適に表すには変更可能なテンプレートです。 この参照設計では、場所、および機能の web サイトをブランド化のナビゲーション要素を持つことをお勧めの UX デザインを示します。
+この参照設計は、お客様のブランドと製品を最適に表すために変更できるテンプレートです。 この参照設計は、ナビゲーション要素、ブランド化の場所、および web サイトの機能を備えた、推奨される UX 設計を示しています。
 
-### <a name="mo-direct-reference-site-walkthrough"></a>月の直接参照サイトのチュートリアル
+### <a name="mo-direct-reference-site-walkthrough"></a>MO ダイレクトリファレンスサイトのチュートリアル
 
-1. [続行] ボタンをクリックしたユーザー。
+1. ユーザーは、[続行] ボタンをクリックします。
 
-    <img src="images/dynamo_appendix_mo_direct_1_continue.png" alt="MO Direct walkthrough: user clicks on the continue button" title="MO 直接チュートリアル: ユーザーが [続行] ボタンをクリックして" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_1_continue.png" alt="MO Direct walkthrough: user clicks on the continue button" title="MO ダイレクトチュートリアル: ユーザーが [続行] ボタンをクリックする" width="600" />
 
-    - このダイアログ ボックスは、プランのモバイル アプリによって求められます。
+    - このダイアログは、モバイルプランアプリによって求められます。
 
-2. ユーザーは、MO 直接ポータルを入力し、その月のアカウントでサインインします。
+2. ユーザーが MO Direct ポータルに入り、MO アカウントを使用してサインインします。
 
-    <img src="images/dynamo_appendix_mo_direct_2_sign_in.png" alt="MO Direct walkthrough: user enters MO Direct portal and signs in with their MO account" title="MO 直接チュートリアル: ユーザーが直接 MO ポータルと、MO アカウントを使ってサインイン入力" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_2_sign_in.png" alt="MO Direct walkthrough: user enters MO Direct portal and signs in with their MO account" title="MO ダイレクトチュートリアル: ユーザーが MO Direct ポータルに入り、MO アカウントでサインインする" width="600" />
 
-    - ページ レイアウトは、すべてのページ全体で一貫性のあります。 たとえば、ロゴおよびブランド要素は左、上であり、ナビゲーション要素が下部にあります。
-    - サインイン ページは、新しいアカウントのサインアップをリンクできます。
-    - 「パスワードを忘れた場合」は省略可能です。 Walled Garden に、ユーザーが、プランのモバイル アプリのみがインターネットにアクセスできることに注意してください。 MO 直接ポータルから、パスワード リセットをサポートする場合は、ことユーザー リセットできます 2 つまたは 3 つの手順で、ブラウザーまたはデバイスの電子メール アプリを起動しなくてもを確認します。
+    - ページレイアウトは、すべてのページにわたって一貫しています。 たとえば、ロゴ要素とブランド要素は左上にあり、ナビゲーション要素は下部にあります。
+    - サインインページをリンクして、新しいアカウントにサインアップすることができます。
+    - "パスワードを忘れた" は省略可能です。 ユーザーは Walled 庭園にあり、モバイルプランアプリのみがインターネットにアクセスできることに注意してください。 MO ダイレクトポータルでのパスワードのリセットをサポートする場合は、ユーザーがデバイスでブラウザーまたは電子メールアプリを起動せずに、2 ~ 3 つの手順でリセットできることを確認してください。
 
-3. ユーザーは、オプションを取得します。
+3. ユーザーは、次のオプションを選択します。
 
-    <img src="images/dynamo_appendix_mo_direct_3_options.png" alt="MO Direct walkthrough: user picks an option" title="MO 直接チュートリアル: ユーザーは、オプションを取得" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_3_options.png" alt="MO Direct walkthrough: user picks an option" title="MO Direct チュートリアル: ユーザーがオプションを選択する" width="600" />
 
-    - 最も重要なコンテンツ、使用可能なサービス、ページの中心を紹介します。
-    - ロゴおよびブランド要素は左上隅です。
-    - ナビゲーション ボタンは、右下隅には。
-    - タイトルと、サービス カテゴリの簡単な説明と、使用可能なオプションには、大規模なタイルを使用します。
-    - [次へ]、[キャンセル] ボタンの両方を前方に移動または終了するユーザーを利用できます。 MO 直接想定データ サービスのカテゴリは、プリペイド プランを含めることができます月間プランは、定期的な既存のプランに新しいデバイスをアタッチします。
+    - ページの中央に、最も重要なコンテンツ (利用可能なサービス) を提示します。
+    - ロゴとブランド化の要素は、左上隅にあります。
+    - ナビゲーションボタンは右下隅にあります。
+    - 使用可能なオプションには大きなタイルを使用し、サービスカテゴリのタイトルと短い説明を使用します。
+    - [次へ] と [キャンセル] の両方のボタンを使用して、ユーザーが前方または exit を参照できます。 MO Direct の予期されるデータサービスカテゴリには、前払いプラン、定期的な月単位のプラン、および既存のプランへの新しいデバイスの接続が含まれている場合があります。
 
-4. ユーザーは、注文を送信します。
+4. ユーザーが注文を送信します。
 
-    <img src="images/dynamo_appendix_mo_direct_4_submit_order.png" alt="MO Direct walkthrough: user submits an order" title="MO 直接チュートリアル: ユーザーが注文を送信します。" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_4_submit_order.png" alt="MO Direct walkthrough: user submits an order" title="MO ダイレクトチュートリアル: ユーザーが注文を送信する" width="600" />
 
-    - ページ レイアウトは、すべてのページ全体で一貫性のあります。 たとえば、ロゴおよびブランド要素は左、上であり、ナビゲーション要素が下部にあります。
-    - サービス利用規約のリンクは、web ページに表示である必要があります。
-    - 注文の確認 ページには、ユーザーは、データ サービス、支払い方法、支払いなどの量の詳細を含む、注文を送信する前に確認する重要な情報が一覧表示します。
+    - ページレイアウトは、すべてのページにわたって一貫しています。 たとえば、ロゴ要素とブランド要素は左上にあり、ナビゲーション要素は下部にあります。
+    - サービスの利用規約リンクは、web ページに表示される必要があります。
+    - 注文の確認ページには、データサービスの詳細、支払い方法、支払い額など、注文を送信する前にユーザーが確認する重要な情報が表示されます。
 
-5. 場合は、ユーザーは、いつでも、MO を直接フローをキャンセルします。
+5. ユーザーがいつでも MO ダイレクトフローをキャンセルした場合は、次のようになります。
 
-    <img src="images/dynamo_appendix_mo_direct_5_cancel.png" alt="MO Direct walkthrough: user cancels MO Direct flow" title="MO 直接チュートリアル: ユーザーが月を直接フローをキャンセル" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_5_cancel.png" alt="MO Direct walkthrough: user cancels MO Direct flow" title="MO Direct チュートリアル: ユーザーが MO ダイレクトフローをキャンセルする" width="600" />
 
-    - 月の直接のエクスペリエンスのままにする確認のダイアログ ボックスは、プランのモバイル アプリで求められます。
+    - MO Direct エクスペリエンスを終了するための確認ダイアログには、Mobile plan アプリによってメッセージが表示されます。
 
-6. 注文を完了するとします。
+6. 注文が完了しました:
 
-    <img src="images/dynamo_appendix_mo_direct_6_order_complete.png" alt="MO Direct walkthrough: order complete" title="MO 直接チュートリアル: 注文完了" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_6_order_complete.png" alt="MO Direct walkthrough: order complete" title="MO ダイレクトチュートリアル: 注文完了" width="600" />
 
-    - これは、携帯電話会社ポータルの一部であるトランザクションの確認の例を示します。
-    - 注文が処理されると正常にし、この場合、[続行] をクリックした後、購入の結果、esim 状のライセンス認証コード、および API で必要なその他の情報を使用してアプリを Mobile プランに通知を投稿する必要があります。 ユーザーは、プランのモバイル アプリ PDP (製品の詳細 ページ) に自動的にリダイレクトされます。
-    - 作業中の eSIM プロファイルが物理 SIM カード用では、トランザクション、または、バックエンドでプランがアクティブ化する必要があります。
-    - トランザクションでは、新しいプロファイルをダウンロードする必要がある場合は、次の手順に移動します。
+    - これは、モバイルオペレーターポータルの一部であるトランザクション確認の例を示しています。
+    - 注文が正常に処理され、この場合、[Continue (続行)] をクリックした後、通知は、購入結果、eSIM ライセンス認証コード、API で必要なその他の情報を使用して、モバイルプランアプリに投稿されます。 ユーザーは、モバイルプランアプリの PDP (製品の詳細ページ) に自動的にリダイレクトされます。
+    - トランザクションが物理的な SIM カード用であるか、アクティブな eSIM プロファイルが配置されている場合は、バックエンドでプランをアクティブ化する必要があります。
+    - トランザクションで新しいプロファイルをダウンロードする必要がある場合は、次の手順に進みます。
 
-7. (該当する) 場合、eSIM プロファイルのダウンロード。
+7. ESIM プロファイルをダウンロードしています (該当する場合):
 
-    <img src="images/dynamo_appendix_mo_direct_7_downloading_esim_profile.png" alt="MO Direct walkthrough: downloading an eSIM profile (if applicable)" title="MO 直接チュートリアル: (該当する) 場合、eSIM プロファイルのダウンロード" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_7_downloading_esim_profile.png" alt="MO Direct walkthrough: downloading an eSIM profile (if applicable)" title="MO ダイレクトチュートリアル: eSIM プロファイルのダウンロード (該当する場合)" width="600" />
 
-    - Esim 状のプロファイルをダウンロードしています。
+    - ESIM プロファイルをダウンロードしています。
 
-8. MO Direct のプランがアクティブ化されます。
+8. MO Direct プランがアクティブ化されます。
 
-    <img src="images/dynamo_appendix_mo_direct_8_activated.png" alt="MO Direct walkthrough: MO Direct plan is activated" title="MO 直接チュートリアル:MO Direct プランをアクティブ化します。" width="600" />
+    <img src="images/dynamo_appendix_mo_direct_8_activated.png" alt="MO Direct walkthrough: MO Direct plan is activated" title="MO Direct チュートリアル: MO Direct プランがアクティブ化されている" width="600" />
 
-    - デバイスが接続されています。
-    - ユーザーは、アクティブな月ダイレクト アカウントです。
+    - デバイスは接続されています。
+    - ユーザーは、アクティブな MO ダイレクトアカウントを持っています。
 
-### <a name="hyperlink-experience"></a>ハイパーリンクのエクスペリエンス
+### <a name="hyperlink-experience"></a>ハイパーリンクエクスペリエンス
 
-MO 直接ポータルと、ユーザーがクリックで新しいページを指すハイパーリンクにする場合は、web ビューのコントロールは、同じウィンドウで、そのページに表示されます。 ユーザーは、前のページに戻るにプランのモバイル アプリで [戻る] ボタンをクリックする必要があります。
+MO ダイレクトポータルで新しいページを指すハイパーリンクがあり、ユーザーがそれをクリックすると、web ビューコントロールによってそのページが同じウィンドウに表示されます。 ユーザーは、モバイルプランアプリの [戻る] ボタンをクリックして、前のページに戻る必要があります。
 
-また、WebView コントロールのコンテキスト内でのダイアログを起動するのにハイパーリンクを使用する可能性があります。
+または、ハイパーリンクを使用して、WebView コントロールのコンテキスト内でダイアログを起動することもできます。
 
-### <a name="back-button-experience"></a>戻るボタンのエクスペリエンス
+### <a name="back-button-experience"></a>戻るボタンの操作
 
-プランのモバイル アプリのメニュー バーで [戻る] ボタンは、web ブラウザーで前のページにユーザーと同じように移動されます。 
+Mobile plan アプリのメニューバーの [戻る] ボタンをクリックすると、web ブラウザーの場合と同じように、ユーザーが前のページに移動します。 
 
 > [!IMPORTANT]
-> 場合は、ユーザーが入力したすべてのデータを失うことがなく、以前の状態に戻るには、ショッピング カートの操作を構築している場合に、MO 直接ポータルを構築します。
+> ユーザーが入力したデータを失うことなく前の状態に戻るようにする場合は、ショッピングカートのエクスペリエンスを構築する場合と同様に、MO ダイレクトポータルを構築します。
 
-<img src="images/dynamo_appendix_mo_direct_9_back_button.png" alt="MO Direct walkthrough: back button example" title="MO 直接チュートリアル: [戻る] ボタンの例" width="600" />
+<img src="images/dynamo_appendix_mo_direct_9_back_button.png" alt="MO Direct walkthrough: back button example" title="MO ダイレクトチュートリアル: [戻る] ボタンの例" width="600" />
 
-### <a name="error-while-loading-the-mo-direct-experience"></a>月の直接のエクスペリエンスの読み込み中にエラー
+### <a name="error-while-loading-the-mo-direct-experience"></a>MO Direct エクスペリエンスの読み込み中にエラーが発生しました
 
-ハンドルされないエラーがあるかまたは MO 直接読み込みに失敗するプランのモバイル アプリを原因となる、MO 直接ポータルでの例外が発生したときに、次のエラーが表示されます。
+MO ダイレクトポータルで未処理のエラーまたは例外が発生し、モバイルプランアプリが MO Direct エクスペリエンスの読み込みに失敗すると、次のエラーが表示されます。
 
-<img src="images/dynamo_appendix_mo_direct_10_error.png" alt="MO Direct walkthrough: error example" title="MO 直接チュートリアル: エラーの例" width="600" />
+<img src="images/dynamo_appendix_mo_direct_10_error.png" alt="MO Direct walkthrough: error example" title="MO ダイレクトチュートリアル: エラーの例" width="600" />
 
-## <a name="high-level-integration-schedule"></a>高レベルの統合のスケジュール
+## <a name="high-level-integration-schedule"></a>高レベルの統合スケジュール
 
-次の表の大まかな概要、 *Mobile プラン*プロジェクト スケジュールの統合。
+次の表に、*モバイルプラン*プロジェクトの統合スケジュールの概要を示します。
 
-| フェーズ | アクティビティ | 所有者 | 推定所要時間 |
+| フェーズ | 活動 | 所有者 | 推定時間 |
 | --- | --- | --- | --- |
-| 実装 | esim 状のプロファイルが Windows デバイスにインストール可能です。 使用して SMDP + ステージング環境と運用環境の使用をテストします。 | 月 |  |
-|                | ステージング環境のサービス構成を含め、オンボード チェックリスト ドキュメントを提供します。 | 月 |  |
-|                | 通信事業者のステージング環境を有効にするのに、 *Mobile プラン*ステージング環境 | MSFT | 構成の更新がすべての月の 1 番目と 3 番目の金曜日に発生します。 |
-|                | COSA データベースの更新を送信します。 | 月 | 約 3 か月 |
-|                | MO 直接ポータル開発の開始 |  |
-|                | `GetBalance` API の開発の開始 |  |
-| 統合 | 高い庭を有効にします。 | 月 |  |
-|             | 更新プログラムを COSA 検証します。 | 月 |  |
-|             | MO 直接ポータル開発の完了 | 月 |  |
-|             | `GetBalance` 完全な API の開発 | 月 |  |
-|             | 月の開発が完了 - コードの完了 (チェックポイント) | 月 |  |
-|             | 検証`GetBalance`API の機能 | 月 |  |
-|             | エンド ツー エンドのエクスペリエンスがステージング環境の月 (チェックポイント) の機能 | 月 |  |
-|             | 更新サービスの構成ドキュメントの運用環境の設定を反映するように (指定されていない場合以前) | 月 |  |
-|             | 提供するためにいる Iccid`GetBalance`ロード テスト | 月 |  |
-|             | 通信事業者で環境を運用環境を有効にする*Mobile プラン*ステージング環境 | MSFT | 構成の更新がすべての月の 1 番目と 3 番目の金曜日に発生します。 |
-|             | エンド ツー エンドのエクスペリエンスが運用環境の月 (チェックポイント) で機能 | 月 |  |
-| 検証 | 終了条件のテスト_ケースを完了します。 | 月 |  |
-|           | テスト_ケースの結果を確認します。 | MSFT |  |
-|           | サインオフ (チェックポイント) のテストします。 | MSFT |  |
-| ロールアウト | `GetBalance` API のロード テスト | MSFT と MO | 1 週間 |
-|         | 場所で監視とエスカレーション パス | MSFT | 1 週間 |
-|         | インプレース カスタマー サポート | MSFT と MO |  |
-|         | 商用の契約が完了しました | 月 |  |
-|         | Windows で利用可能な COSA 更新 | MSFT |  |
-|         | 続行/中止 (最後のチェックポイント) | MSFT と MO |  |
-|         | 月の実稼働環境環境構成*Mobile プラン*実稼働環境 | MSFT |  |
-|         | Launch | MSFT と MO | 起動の日付と時刻はローカル検証の動作を確実に合意する必要があります。 |
+| 実装 | Windows デバイスにインストール可能な eSIM プロファイル。 SMDP + を使用してテストし、ステージング環境と運用環境に使用します。 | 月 |  |
+|                | ステージング環境のサービス構成を含むオンボードのチェックリストドキュメントを提供する | 月 |  |
+|                | モバイル*プラン*ステージング環境でモバイルオペレーターステージング環境を有効にする | MF | 毎月第1および第3金曜日に構成の更新が行われます。 |
+|                | COSA データベース更新の送信 | 月 | 約3か月 |
+|                | MO ダイレクトポータル開発の開始 |  |
+|                | `GetBalance` API 開発の開始 |  |
+| Integration | Walled 庭園を有効にする | 月 |  |
+|             | COSA 更新プログラムの検証 | 月 |  |
+|             | MO ダイレクトポータルの開発完了 | 月 |  |
+|             | `GetBalance` API 開発の完了 | 月 |  |
+|             | MO 開発完了-コード完了 (チェックポイント) | 月 |  |
+|             | `GetBalance` API 機能の検証 | 月 |  |
+|             | エンドツーエンドのエクスペリエンスは、MO ステージング環境 (チェックポイント) で機能します。 | 月 |  |
+|             | 運用環境の設定を反映するようにサービス構成ドキュメントを更新する (以前に提供されていない場合) | 月 |  |
+|             | `GetBalance` ロードテストに使用する ICCIDs を指定する | 月 |  |
+|             | モバイル*プラン*ステージング環境でモバイルオペレーターの運用環境環境を有効にする | MF | 毎月第1および第3金曜日に構成の更新が行われます。 |
+|             | エンドツーエンドのエクスペリエンスは、MO 運用環境 (チェックポイント) で機能します。 | 月 |  |
+| 検証 | 終了条件のテストケース完了 | 月 |  |
+|           | テストケースの結果の確認 | MF |  |
+|           | サインオフのテスト (チェックポイント) | MF |  |
+| 段階的 | `GetBalance` API のロードテスト | MSFT と MO | 1 週間 |
+|         | 監視とエスカレーションのパス | MF | 1 週間 |
+|         | カスタマーサポートが実施される | MSFT と MO |  |
+|         | コマーシャル契約が完了しました | 月 |  |
+|         | Windows で使用可能な COSA 更新プログラム | MF |  |
+|         | ゴー/いいえ (最終的なチェックポイント) | MSFT と MO |  |
+|         | *モバイルプラン*運用環境での MO 運用環境環境の構成 | MF |  |
+|         | Launch | MSFT と MO | ローカル検証が確実に行われるようにするには、起動日時に同意する必要があります |

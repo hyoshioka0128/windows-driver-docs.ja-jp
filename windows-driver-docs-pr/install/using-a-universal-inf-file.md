@@ -5,11 +5,11 @@ ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 517479adc9d31562812a27e2555839c2c55435e0
-ms.sourcegitcommit: 7aa0dc2d0465f815438dcbb5335fd6a77a0fd630
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73432669"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242993"
 ---
 # <a name="using-a-universal-inf-file"></a>ユニバーサル INF ファイルの使用
 

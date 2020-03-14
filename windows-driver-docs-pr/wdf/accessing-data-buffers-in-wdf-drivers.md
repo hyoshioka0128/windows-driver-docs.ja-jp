@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ed05fb46f85d09394f4d093521d3c53c668c95dd
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845515"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242851"
 ---
 # <a name="accessing-data-buffers-in-wdf-drivers-kmdf-or-umdf"></a>WDF ドライバー (KMDF または UMDF) でのデータ バッファーへのアクセス
 
@@ -57,7 +57,7 @@ UMDF ドライバーでは、デバイスごとに[**Wdfdeviceinitsetiotypeex**]
 
 KMDF と UMDF の間の Ioctl に対するバッファーアクセス手法の違いに注意してください。 KMDF ドライバーでは、Ioctl のバッファーアクセス方法は指定されませんが、UMDF ドライバーは Ioctl のバッファーアクセス方法を指定します。
 
-I/o ターゲットが使用する i/o メソッドに対して不適切な手法を使用して、WDF ドライバーで i/o 要求のバッファーが記述されている場合、フレームワークはバッファーの説明を修正します。 たとえば、ドライバーが MDL を使用して[**Wdfiotargetsendreadsynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)渡されるバッファーを記述し、i/o ターゲットがバッファー i/o を使用する場合 (mdls ではなく仮想アドレスを使用してバッファーを指定する必要がある場合)、フレームワークバッファーの説明を MDL から仮想アドレスおよび長さに変換します。 ただし、ドライバーで正しい形式のバッファーを指定した方が効率的です。
+I/o ターゲットが使用する i/o メソッドに対して不適切な手法を使用して、WDF ドライバーで i/o 要求のバッファーが記述されている場合、フレームワークはバッファーの説明を修正します。 たとえば、ドライバーが、 [**Wdfiotargetsendreadsynchronously**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetsendreadsynchronously)渡されるバッファーを記述するために mdl を使用する場合、および i/o ターゲットがバッファー I/o (mdls ではなく仮想アドレスを使用してバッファーを指定する必要があります) を使用している場合、フレームワークは、バッファーの説明を MDL から仮想アドレスと長さに変換します。 ただし、ドライバーで正しい形式のバッファーを指定した方が効率的です。
 
 フレームワークメモリオブジェクト、ルックアサイドリスト、MDLs、およびローカルバッファーの詳細については、「[メモリバッファーの使用](using-memory-buffers.md)」を参照してください。
 
@@ -95,11 +95,11 @@ UMDF ドライバーでバッファー i/o が使用されている場合、ド�
 
 <a href="" id="kmdf-drivers"></a>**KMDF ドライバー**  
 
-ドライバーが直接 i/o を使用している場合、i/o マネージャーは、i/o 要求の発信元 (通常はユーザーモードアプリケーション) によって指定されたバッファー領域のアクセシビリティを確認し、バッファー領域を物理メモリにロックして、次のようにドライバーを提供します。バッファー領域に直接アクセスします。
+ドライバーが直接 i/o を使用している場合、i/o マネージャーは、i/o 要求の発信元 (通常はユーザーモードアプリケーション) によって指定されたバッファー領域のアクセシビリティを検証し、バッファー領域を物理メモリにロックして、バッファー領域への直接アクセスをドライバーに提供します。
 
 <a href="" id="umdf-drivers"></a>**UMDF ドライバー**  
 
-ドライバーでダイレクト i/o の優先順位が指定されており、ダイレクト i/o のすべての UMDF 要件が満たされている場合 (「 [Umdf ドライバーでのバッファーアクセスメソッドの管理](managing-buffer-access-methods-in-umdf-drivers.md)」を参照)、フレームワークは、受信したメモリバッファーを i/o マネージャーから直接マップします。ドライバーのホストプロセスのアドレス空間。これにより、ドライバーはバッファー領域に直接アクセスできるようになります。
+ドライバーでダイレクト i/o の優先順位が指定されており、ダイレクト i/o のすべての UMDF 要件が満たされている場合 (「 [UMDF ドライバーでのバッファーアクセスメソッドの管理](managing-buffer-access-methods-in-umdf-drivers.md)」を参照してください)、フレームワークは、i/o マネージャーから受信したメモリバッファーをドライバーのホストプロセスのアドレス空間に直接マップします。
 
 バッファー領域を表すフレームワークメモリオブジェクトへのハンドルを取得するために、ドライバーは[**WdfRequestRetrieveInputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveinputmemory)または[**WdfRequestRetrieveOutputMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nf-wdfrequest-wdfrequestretrieveoutputmemory)を呼び出します。 ドライバーは、 [**WdfMemoryGetBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorygetbuffer)を呼び出すことによって、バッファーへのポインターを取得できます。 バッファーの読み取りと書き込みを行うには、ドライバーは[**Wdfmemorycopyfrombuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopyfrombuffer)または[**wdfmemorycopyfrombuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfmemory/nf-wdfmemory-wdfmemorycopytobuffer)を呼び出します。
 
@@ -112,7 +112,7 @@ UMDF ドライバーでバッファー i/o が使用されている場合、ド�
 
 <a href="" id="kmdf-drivers"></a>**KMDF ドライバー**  
 
-お使いのドライバーが、バッファーに格納された*i/o メソッドまたは直接 i/o メソッド*(または "どちらでもありません" 方法) として知られているバッファーアクセス方法を使用している場合、i/o マネージャーは単に、i/o 要求の発信元である仮想アドレスをドライバーに提供します。要求のバッファー領域に対して指定されます。 I/o マネージャーは、i/o 要求のバッファー領域を検証しません。そのため、ドライバーは、バッファー領域がアクセス可能であることを確認し、バッファー領域を物理メモリにロックする必要があります。
+お使いのドライバーが、バッファーに格納された*i/o メソッドまたは直接 i/o メソッド*(または "どちらでもありません") として知られているバッファーアクセス方法を使用している場合、i/o マネージャーは単に、要求のバッファー領域に対して指定された i/o 要求の発信元によってドライバーを提供します。 I/o マネージャーは、i/o 要求のバッファー領域を検証しません。そのため、ドライバーは、バッファー領域がアクセス可能であることを確認し、バッファー領域を物理メモリにロックする必要があります。
 
 I/o マネージャーによって提供される仮想アドレスには、i/o 要求の発信元のプロセスコンテキストでのみアクセスできます。 ドライバースタック内の最上位レベルのドライバーのみが、発信元のプロセスコンテキストで実行されることが保証されています。
 

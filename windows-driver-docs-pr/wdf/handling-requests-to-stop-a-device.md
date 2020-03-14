@@ -15,11 +15,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 095f190f07ef38e22b496081ca73ba136487e01a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845219"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242911"
 ---
 # <a name="handling-requests-to-stop-a-device"></a>デバイス停止要求の処理
 
@@ -38,7 +38,7 @@ ms.locfileid: "72845219"
 
 -   各停止試行を個別に評価して処理するために、ドライバーは[*Evtdevicequerystop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_stop)および[*Evtdevicequerystop*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_query_remove)コールバック関数を提供できます。
 
-デバイスが特別なファイルをサポートしていない場合、デバイスの停止または削除がドライバーまたはデバイスで問題にならない場合、ドライバーは*Evtdevicequerystop*および*Evtdevicequerystop*コールバック関数を提供せず、呼び出し**を行いません。WdfDeviceSetStaticStopRemove**。 この場合、PnP マネージャーは、ドライバーで許可されているかどうかを最初に確認せずに、常にデバイスを停止します。
+デバイスが特別なファイルをサポートしていない場合、デバイスの停止または削除がドライバーまたはデバイスで問題にならない場合、ドライバーは*Evtdevicequerystop*および*evtdevicequerystop*コールバック関数を提供せず、 **Wdfdevicesetstaticstopremove**を呼び出しません。 この場合、PnP マネージャーは、ドライバーで許可されているかどうかを最初に確認せずに、常にデバイスを停止します。
 
 ### <a href="" id="redistributing-resources"></a>リソースの再配布
 
@@ -52,9 +52,9 @@ PnP マネージャーがデバイスを停止してリソースを再配布す�
 
 ### <a href="" id="a-user-removes-or-disables-a-device"></a>ユーザーがデバイスを削除または無効にする
 
-ユーザーは、一部のデバイスを削除または無効にすることができます。 次に、例を示します。
+ユーザーは、一部のデバイスを削除または無効にすることができます。 例 :
 
--   ドライバーがデバイスの[**WDF\_デバイス\_PNP\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)の構造の**リムーバブル**メンバー ( **SurpriseRemovalOK**メンバーではない) を設定している場合、ユーザーは取り外しまたは取り出しハードウェアプログラムを実行できます。デバイスを取り外します。
+-   ドライバーがデバイスの[**WDF\_デバイス\_PNP\_機能**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_pnp_capabilities)の構造の**リムーバブル**メンバー ( **SurpriseRemovalOK**メンバーではない) を設定している場合、ユーザーは、デバイスを取り外したり取り出したりすることができます。
 
 -   ドライバーがデバイスの[**WDF\_デバイス\_状態**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/ns-wdfdevice-_wdf_device_state)構造の**notdisableable**メンバーを設定していない場合、ユーザーはデバイスマネージャーを使用してデバイスを無効にすることができます。
 

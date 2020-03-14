@@ -1,75 +1,75 @@
 ---
 title: インジケーター テスト
-description: このトピックでは、インジケーターの一般的な手順の手順と例について説明します。
+description: このトピックでは、一般的なインジケーターの手順と例について説明します。
 ms.assetid: 8FD5728C-30E3-4998-A01D-80894BDB379A
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 5ea28fcbc8e85286083521fe4cf00cb8ddd5747b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323275"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242915"
 ---
 # <a name="indicator-testing"></a>インジケーター テスト
 
 
-このトピックでは、インジケーターの一般的な手順の手順と例について説明します。
+このトピックでは、一般的なインジケーターの手順と例について説明します。
 
-## <a name="span-idtouchkbdspanspan-idtouchkbdspantouch-keyboard-deployment-steps"></a><span id="touchkbd"></span><span id="TOUCHKBD"></span>タッチ キーボードの展開手順
-
-
-次の手順では、タッチ キーボードが自動的に (ではなく、ユーザーは、タスク バーから開くこと) が開くかどうかをテストします。 テストによって「を実行するタッチ キーボードの配置手順」するように指示するたびに、次の手順を適用します。
-
-1.  移動する Windows ボタンを押して**開始**します。
-2.  表示するスライド、**チャーム**メニュー選択し、**検索**します。
-3.  編集フィールドにタップします。
-
-## <a name="span-idconvspanspan-idconvspanslatelaptop-mode-conversion-steps"></a><span id="conv"></span><span id="CONV"></span>スレート/ラップトップ モード変換手順
+## <a name="span-idtouchkbdspanspan-idtouchkbdspantouch-keyboard-deployment-steps"></a><span id="touchkbd"></span><span id="TOUCHKBD"></span>タッチキーボード展開の手順
 
 
-テストで示されている、スレート (またはラップトップ) に変換します。
+次の手順では、ユーザーがタスクバーから開くのではなく、タッチキーボードを自動的に開くかどうかをテストします。 テストで "タッチキーボード展開の手順を実行する" ように指示するたびに、次の手順を適用します。
 
-**注**  場合は、システムは、1 つ以上のメソッドを使用してスレート モードに変換できる、各メソッドのテスト ステップを繰り返してください。
+1.  Windows ボタンを押して **[スタート]** に移動します。
+2.  スライドして **[Charms]** メニューを表示し、 **[検索]** を選択します。
+3.  [編集] フィールドをタップします。
 
-次のように、変換のさまざまな方法についてさまざまなフォーム ファクターを許可します。
+## <a name="span-idconvspanspan-idconvspanslatelaptop-mode-conversion-steps"></a><span id="conv"></span><span id="CONV"></span>スレート/ラップトップモードの変換手順
 
--   アタッチまたはデタッチ キーボード
--   画面を反転します。
--   画面の回転
--   説明またはキーボードを明らかに、画面をスライドします。
+
+テストで示されているようにスレート (またはラップトップ) に変換します。
+
+**注**   複数の方法を使用してシステムをスレートモードに変換できる場合は、メソッドごとにテストステップを繰り返してください。
+
+さまざまなフォームファクターで、次のようなさまざまな変換方法を使用できます。
+
+-   キーボードの接続または切断
+-   画面を反転する
+-   画面を回転させる
+-   画面をスライドしてキーボードを覆う、または見つける
 
 **変換の例:**
 
-![キーボードのアタッチし、デタッチを変換できます。](images/keyboardattachdetachconvertible.jpg)
+![変換可能なキーボードのアタッチとデタッチ](images/keyboardattachdetachconvertible.jpg)
 
-**図 1 キーボードは、アタッチし、デタッチの変換**
+**図1キーボードのアタッチとデタッチの変換**
 
-![画面の回転の変換](images/screenswivelconvertible.jpg)
+![画面の回転を変換可能](images/screenswivelconvertible.jpg)
 
-**図 2 画面の回転の変換**
+**図2画面の回転の変換**
 
  
 
 **スレートの例:**
 
--   キーボードのデタッチ
--   キーボードの入力を快適に存在するもののアクセスできません。
-    -   キーボードの下にある flapped
-    -   下にスライドします。
+-   キーボードがデタッチされました
+-   キーボードは存在しますが、入力しやすいようにアクセスできません
+    -   キーボード flapped の下
+    -   スライドの下
     -   Swivelled
 
-**ラップトップ モード:**
+**ラップトップモード:**
 
-キーボードでは、存在し、アクセスを快適に入力します。
+キーボードは存在し、入力しやすくするために使用できます。
 
-## <a name="span-idlaptopslatemodeindicatorscenariosspanspan-idlaptopslatemodeindicatorscenariosspanspan-idlaptopslatemodeindicatorscenariosspanlaptopslate-mode-indicator-scenarios"></a><span id="Laptop_slate_mode_indicator_scenarios"></span><span id="laptop_slate_mode_indicator_scenarios"></span><span id="LAPTOP_SLATE_MODE_INDICATOR_SCENARIOS"></span>ラップトップ/スレート モードのインジケーターのシナリオ
+## <a name="span-idlaptop_slate_mode_indicator_scenariosspanspan-idlaptop_slate_mode_indicator_scenariosspanspan-idlaptop_slate_mode_indicator_scenariosspanlaptopslate-mode-indicator-scenarios"></a><span id="Laptop_slate_mode_indicator_scenarios"></span><span id="laptop_slate_mode_indicator_scenarios"></span><span id="LAPTOP_SLATE_MODE_INDICATOR_SCENARIOS"></span>ノート pc/スレートモードインジケーターのシナリオ
 
 
-エンド ツー エンドのインジケーター コンバーチブル次の領域における潜在的な問題を公開するためのテストを実行する必要があります。
+コンバーチブルのエンドツーエンドのインジケーターテストを実行して、次の領域で潜在的な問題を明らかにすることが重要です。
 
--   システムを 1 つのモードから別のモードを変換する際のさまざまなタイミングです。
--   機械の詳細、変換可能なのです。
+-   システムをあるモードから別のモードに変換するときのさまざまなタイミング。
+-   変換可能なの機械的な仕様。
 
  
 

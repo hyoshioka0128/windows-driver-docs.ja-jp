@@ -10,11 +10,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e8c09d6fc664ea51fd2dacb1bd00b2cba36e425
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838406"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242929"
 ---
 # <a name="state-transitions-for-pnp-devices"></a>PnP デバイスの状態遷移
 
@@ -36,7 +36,7 @@ PnP システムでは、デバイスは、構成されている、開始され�
 
 PnP マネージャーから\_デバイスの要求を開始して、ドライバーが[**IRP\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)を受け取ると、ドライバーはデバイスを起動し、デバイスの i/o 要求を処理する準備が整います。 **\_デバイス要求の開始\_IRP\_** を処理する方法の詳細については、「[デバイスを開始する](starting-a-device.md)」を参照してください。
 
-PnP マネージャーは、アクティブなデバイスのハードウェアリソースを再構成する必要がある場合、 [**irp\_\_クエリを送信し\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)と[**IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)を停止し、デバイスのドライバーへのデバイス要求を停止\_停止します。 ハードウェアリソースを再起動した後、PnP マネージャーは、デバイスを再起動するようにドライバーに指示します。これを行うには、 [**IRP\_完了\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)の要求を開始します。 停止 Irp の処理の詳細については、「[デバイスを停止する](stopping-a-device.md)」を参照してください。 (ブートによって構成されたデバイスのドライバーは、デバイスを起動する前に **\_\_デバイス**と**irp\_** \_を停止する\_クエリを実行することで、irp\_を完了することができます。」を参照してください)。
+PnP マネージャーは、アクティブなデバイスのハードウェアリソースを再構成する必要がある場合、 [**irp\_\_クエリを送信し\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-stop-device)と[**IRP\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)を停止し、デバイスのドライバーへのデバイス要求を停止\_停止します。\_ ハードウェアリソースを再起動した後、PnP マネージャーは、デバイスを再起動するようにドライバーに指示します。これを行うには、 [**IRP\_完了\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)の要求を開始します。 停止 Irp の処理の詳細については、「[デバイスを停止する](stopping-a-device.md)」を参照してください。 (ブートによって構成されたデバイスのドライバーは、 **irp\_\_クエリ\_\_停止**し、デバイスが開始される前にデバイスの要求 **\_停止**\_ますが、この手順は前の図には示されていません)。\_
 
 Windows 98/Me では、PnP マネージャーは、デバイスが無効にされている場合に\_デバイスの要求を停止\_停止する\_デバイスと**irp\_** を**停止する\_\_クエリ**を実行することで、irp\_を送信します。 また、これらのシステム上のドライバーは、障害が発生した開始後にデバイスの要求 **\_\_停止する IRP\_** を受け取ります。
 

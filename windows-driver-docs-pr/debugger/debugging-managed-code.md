@@ -6,11 +6,11 @@ keywords: デバッグ、デバッグ、Windbg、マネージコードデバッ�
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 64b25e9c0822a8f5e4350d9dc844bafcb0541c65
-ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76910350"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242819"
 ---
 # <a name="debugging-managed-code-using-the-windows-debugger"></a>Windows デバッガーを使用したマネージド コードのデバッグ
 
@@ -36,8 +36,8 @@ CLR は、.NET Framework が更新されるたびに更新されることはあ�
 | 2.0                    | 2.0         | mscorwks.dll |
 | 3.0                    | 2.0         | mscorwks.dll |
 | 3.5                    | 2.0         | mscorwks.dll |
-| 4.0                    | 4.0         | clr .dll      |
-| 4.5                    | 4.0         | clr .dll      |
+| 4.0                    | 4.0         | clr.dll      |
+| 4.5                    | 4.0         | clr.dll      |
 
  
 

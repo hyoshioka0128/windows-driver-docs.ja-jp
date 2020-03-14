@@ -8,11 +8,11 @@ ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2d0d800e5ab51fe0de76f7b077a3bd7de4dcca9c
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209008"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243029"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>NDIS ミニポート ドライバーの NetAdapterCx への移植
 
@@ -24,8 +24,8 @@ WDF に関する一般情報については、 [WDF ドライバー開発ガイ�
 
 Visual Studio で既存の NDIS ミニポートドライバープロジェクトを開き、次の手順を使用してそれを KMDF プロジェクトに変換します。
 
-1. 最初に、[**構成プロパティ-> ドライバーの設定-> ドライバーモデル**] に移動し、**ドライバーの種類**が kmdf に設定されていること、および**kmdf バージョンのメジャー**と**kmdf バージョンのマイナー**が両方とも空であることを確認します。
-2. [プロジェクトのプロパティ] で、[**ドライバーの設定-> ネットワークアダプタードライバー** ] を開き、[**ネットワークアダプター] クラス拡張へのリンクを** **[はい]** に設定します。
+1. 最初に、 **[構成プロパティ-> ドライバーの設定-> ドライバーモデル]** に移動し、**ドライバーの種類**が kmdf に設定されていること、および**kmdf バージョンのメジャー**と**kmdf バージョンのマイナー**が両方とも空であることを確認します。
+2. プロジェクトのプロパティ で、**ドライバーの設定-> ネットワークアダプタードライバー** を開き、**ネットワークアダプター クラス拡張へのリンクを** **はい**に設定します。
    * 変換されたドライバーが引き続き NDIS Api を呼び出す場合は、引き続き `ndis.lib`に対するリンクを作成します。
 3. `NDIS650_MINIPORT=1`などの NDIS プリプロセッサマクロを削除します。
 4. すべてのソースファイル (または、共通/プリコンパイル済みヘッダー) に次のヘッダーを追加します。

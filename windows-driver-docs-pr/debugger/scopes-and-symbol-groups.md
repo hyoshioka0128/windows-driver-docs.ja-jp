@@ -10,11 +10,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1f96f9a37d258c9ded57e205d320dc186dc5bb
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838815"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242777"
 ---
 # <a name="scopes-and-symbol-groups"></a>スコープとシンボルのグループ
 
@@ -24,7 +24,7 @@ ms.locfileid: "72838815"
 
 *シンボルグループ*には、グループとして効率的に操作するためのシンボルのセットが含まれています。 シンボルグループは、手動で作成して設定することも、ローカル変数や関数の引数など、構文のスコープ内のシンボルに基づいて自動的に生成および更新することもできます。 インターフェイス[IDebugSymbolGroup](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nn-dbgeng-idebugsymbolgroup)は、シンボルグループを表すために使用されます。
 
-シンボルグループを作成するには、次の2つの方法があります。 空のシンボルグループが "GetScopeSymbolGroup"[**グループ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-createsymbolgroup)によって返され、現在の構文のスコープのシンボルグループが[](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscopesymbolgroup)によって返されます。
+シンボルグループを作成するには、次の2つの方法があります。 空のシンボルグループが "GetScopeSymbolGroup"[**グループ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-createsymbolgroup)によって返され、現在の構文のスコープのシンボルグループが[**GetScopeSymbolGroup**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugsymbols3-getscopesymbolgroup)によって返されます。
 
 現在のスコープから生成されたシンボルグループがローカル変数のスナップショットである   に**注意**してください。 ターゲットで実行が行われると、シンボルが正確ではなくなる可能性があります。 また、現在のスコープが変更された場合、シンボルグループは*現在*のスコープを表すものではなくなります (これは、作成されたスコープを引き続き表すためです)。
 

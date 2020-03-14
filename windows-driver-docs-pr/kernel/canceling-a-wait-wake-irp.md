@@ -15,11 +15,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: eabf931baf7b34d4a082c0477c6e8c4116341558
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828550"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242975"
 ---
 # <a name="canceling-a-waitwake-irp"></a>待機/ウェイク IRP のキャンセル
 
@@ -31,7 +31,7 @@ ms.locfileid: "72828550"
 
 ドライバーは、次のような状況で、保留中の待機/ウェイク IRP をキャンセルする必要がある場合があります。
 
--   ドライバーは、\_デバイス、irp\_[ **\_停止**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)し、\_[**デバイスを削除\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)、 [**irp\_\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)を削除\_、PnP irp\_を受信します。、または IRP\_、デバイスの削除要求を[ **\_驚く\_削除**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)します。 ドライバーは、デバイスの再起動後に、待機/ウェイク IRP ([**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)) を再実行する必要があります。
+-   ドライバーは、 [ **\_デバイス\_停止する PnP irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-stop-device)を受信します。 [**irp\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-remove-device)は、\_デバイスの削除、irp [ **\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-remove-device)\_\_デバイスの削除、または irp\_、デバイスに対する\_の[**突然**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-surprise-removal)の削除要求を実行します。\_\_\_ ドライバーは、デバイスの再起動後に、待機/ウェイク IRP ([**PoRequestPowerIrp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-porequestpowerirp)) を再実行する必要があります。
 
 -   システムはスリープ状態になりますが、システムのスリープ状態を解除するためにデバイスを有効にしないでください。
 

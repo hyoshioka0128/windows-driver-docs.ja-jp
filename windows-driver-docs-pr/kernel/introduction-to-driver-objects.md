@@ -11,11 +11,11 @@ keywords:
 ms.date: 06/16/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5736566d6b407690ceea71b2d7d78a92cff7bc2c
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402425"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242997"
 ---
 # <a name="introduction-to-driver-objects"></a>ドライバー オブジェクトの概要
 

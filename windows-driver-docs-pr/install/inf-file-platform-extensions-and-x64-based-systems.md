@@ -3,56 +3,56 @@ title: INF ファイル プラットフォーム拡張機能および x64 ベー
 description: INF ファイル プラットフォーム拡張機能および x64 ベースのシステム
 ms.assetid: 062c58f7-3519-4835-9597-ab6be5ff5fe8
 keywords:
-- x64 INF ファイル プラットフォーム拡張機能 WDK デバイスのインストール
+- x64 INF ファイルプラットフォーム拡張機能、WDK デバイスのインストール
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ac311ac10eb3a2188309d0382392bd3a7401ef6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391995"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243033"
 ---
 # <a name="inf-file-platform-extensions-and-x64-based-systems"></a>INF ファイル プラットフォーム拡張機能および x64 ベースのシステム
 
 
-### <a href="" id="platform-extensions-and-x64-based-systems--windows-xp-and-later-"></a> プラットフォームの拡張機能と x64 ベース システム (Windows XP 以降)
+### <a href="" id="platform-extensions-and-x64-based-systems--windows-xp-and-later-"></a>プラットフォーム拡張機能と x64 ベースシステム (Windows XP 以降)
 
-Windows Server 2003 Service Pack 1 (SP1) と、後で、 **.ntamd64**プラットフォーム拡張機能が必要です、 [ **INF モデル セクション**](inf-models-section.md)します。 **.Ntamd64**または **.nt**プラットフォーム拡張機能をサポートするその他のすべてのセクションで、プラットフォームの拡張機能は省略可能です。
+Windows Server 2003 Service Pack 1 (SP1) 以降では、 **ntamd64**プラットフォーム拡張機能が[**INF モデルセクション**](inf-models-section.md)に必要です。 プラットフォーム拡張機能をサポートするその他すべてのセクションでは、 **ntamd64**または**nt**プラットフォーム拡張機能は省略可能です。
 
-省略可能なプラットフォーム拡張機能をサポートするセクションでは、Windows は、次のように処理するには、どのセクションを選択します。
+オプションのプラットフォーム拡張機能をサポートするセクションでは、次のように、処理するセクションが Windows によって選択されます。
 
-1. Windows をチェック、<em>セクション名</em>**.ntamd64**セクションし、1 つが存在する場合はそれを処理します。 Windows をチェック、 **.ntamd64**いずれかで処理されている INF ファイルの拡張子には、INF ファイルが含まれている (に含まれている INF ファイルは、 **Include**エントリ)。
+1. Windows<em>では</em>**ntamd64**セクションがチェックされ、存在する場合は処理されます。 Windows は、処理されている INF ファイルと、含まれているすべての INF ファイル (つまり、**インクルード**エントリに含まれているすべての inf ファイル) で、 **ntamd64**拡張子があるかどうかを確認します。
 
-2. 場合、<em>セクション名</em>**.ntamd64**チェック Windows にセクションが存在しない、<em>セクション名</em>**.nt** INF ファイル、またはそのいずれかのセクションINF ファイルが含まれています。 Windows の処理、存在する場合、<em>セクション名</em>**.nt**セクション。
+2. **Ntamd64**セクションが存在しない場合、WINDOWS は inf ファイルまたは含まれている inf ファイルに<em>セクション名</em> **. nt**セクションがあるかどうかを確認<em>します。</em> 存在する場合、Windows は<em>セクション-name</em> **. nt**セクションを処理します。
 
-3. 場合、<em>セクション名</em>**.nt**セクションが存在しないか、Windows の処理、*セクション名*セクション プラットフォーム拡張機能が含まれていません。
+3. <em>セクション名</em> **. nt**セクションが存在しない場合、Windows はプラットフォーム拡張機能を含まない*セクション名*セクションを処理します。
 
-### <a href="" id="testing-installation-on-x64-based-systems--windows-server-2003-sp1-and"></a> X64 ベース システムのインストールのテスト (Windows Server 2003 SP1 以降)
+### <a href="" id="testing-installation-on-x64-based-systems--windows-server-2003-sp1-and"></a>X64 ベースのシステムでのインストールのテスト (Windows Server 2003 SP1 以降)
 
-テストのみを目的として、要件を[ **INF モデル セクション**](inf-models-section.md)名に含める、 **.ntamd64**拡張を抑制することができます。 この要件を抑制するサブキーの下では、次のレジストリ値エントリを作成**HKLM\\ソフトウェア\\Microsoft\\Windows\\CurrentVersion\\セットアップ**し、このエントリを 1 つに設定します。
+テスト目的の場合のみ、 [**INF モデルセクション**](inf-models-section.md)名に **. ntamd64**拡張子が含まれているという要件を抑制できます。 この要件を抑制するには、次のレジストリ値のエントリをサブキー **HKLM\\ソフトウェア\\Microsoft\\Windows\\CurrentVersion\\Setup**に作成し、この値エントリに1を設定します。
 
 ```ini
 DisableDecoratedModelsRequirement:REG_DWORD
 ```
 
-設定した後、 **DisableDecoratedModelsRequirement**エントリを 1 つの値、システムを再起動し、デバイスをインストールします。
+**DisableDecoratedModelsRequirement** value エントリを1に設定したら、システムを再起動してから、デバイスをインストールします。
 
-プラットフォーム拡張機能の要件を復元するには、削除、 **DisableDecoratedModelsRequirement**エントリの値または 0 に設定し、システムを再起動します。
+プラットフォーム拡張機能の要件を復元するには、 **DisableDecoratedModelsRequirement** value エントリを削除するか、ゼロに設定してから、システムを再起動します。
 
-### <a href="" id="creating-inf-files-for-x64-based-systems--windows-xp-and-later-"></a> X64 ベース システム用の INF ファイルを作成する (Windows XP 以降)
+### <a href="" id="creating-inf-files-for-x64-based-systems--windows-xp-and-later-"></a>X64 ベースシステム用の INF ファイルの作成 (Windows XP 以降)
 
-一般に、オペレーティング システムのバージョンに基づくデバイスのインストール環境間で区別する、1 つの INF ファイルを使用することはできません。 たとえば、ファイルやデバイスをサポートするレジストリ設定は、x64 ベースのオペレーティング システムのバージョン間で異なる場合、バージョンごとに、オペレーティング システムに固有の INF ファイルを作成する必要があります。
+一般に、オペレーティングシステムのバージョンに基づいたデバイスのインストールを区別する単一の INF ファイルを使用することはできません。 たとえば、デバイスをサポートするファイルまたはレジストリ設定が x64 ベースのオペレーティングシステムのバージョンによって異なる場合は、バージョンごとにオペレーティングシステム固有の INF ファイルを作成する必要があります。
 
-ただし、デバイスに、オペレーティング システムに固有のインストールが必要としない場合は、Windows XP を実行する x64 ベース システム用の 1 つのオペレーティング システム INF ファイルを作成できます以降。
+ただし、デバイスがオペレーティングシステム固有のインストールを必要としない場合は、Windows XP 以降を実行している x64 ベースのシステム用に1つのオペレーティングシステムのシステム INF ファイルを作成できます。
 
-ため、Windows Server 2003 SP1 後を必要と、 **.ntamd64**プラットフォーム拡張機能、 [ **INF モデル セクション**](inf-models-section.md) 、名前が、その他のセクションでは、この拡張機能を必要としません。含める名前、作成して、x64 ベース システム用のクロスプラット フォーム システム INF ファイルを維持するためには、最も簡単な方法は、 **.ntamd64**拡張機能の名前にのみ*モデル*セクション。
+Windows Server 2003 SP1 以降では、 [**INF モデルセクション**](inf-models-section.md)名に**ntamd64**プラットフォーム拡張機能が必要ですが、他のセクション名にはこの拡張機能は必要ありません。そのため、x64 ベースシステム用のオペレーティングシステム以外のシステム INF ファイルを作成して維持するための最も簡単な方法は、[*モデル*の名前] セクションの**ntamd64**拡張子だけです。
 
-このようなクロスプラット フォーム システム INF ファイルを作成するには、次の操作を行います。
+このようなクロスオペレーティングシステムの INF ファイルを作成するには、次の手順を実行します。
 
-1. 」の説明に従って、すべての INF ファイルで必要とされる汎用のエントリを含む有効な INF ファイルを作成する[INF ファイルの一般的なガイドライン](general-guidelines-for-inf-files.md)します。
+1. 「 [Inf ファイルの一般的なガイドライン](general-guidelines-for-inf-files.md)」で説明されているように、すべての inf ファイルで必要とされる汎用エントリを含む有効な inf ファイルを作成します。
 
-2. 含める、INF**製造元**セクションが含まれる、*製造元識別子*を指定する、 [ **INF モデル セクション**](inf-models-section.md)名デバイス用を指定します、 **.ntamd64**プラットフォーム拡張機能。 たとえば、次**製造元**セクションでは、INF を指定*モデル*Abc デバイス"AbcModelSection"のセクション名、および **.ntamd64**プラットフォーム拡張機能。
+2. デバイスの[**Inf モデルセクション**](inf-models-section.md)名を指定し、 **ntamd64**プラットフォーム拡張機能を指定する*製造元識別子*を含む inf**製造元**セクションをインクルードします。 たとえば、次の**製造元**のセクションでは、Abc デバイスの場合は "AbcModelSection" という名前の INF*モデル*セクション名を指定し、 **ntamd64**プラットフォーム拡張機能を指定します。
 
    ```ini
    [Manufacturer]
@@ -60,14 +60,14 @@ DisableDecoratedModelsRequirement:REG_DWORD
    %ManufacturerName%=AbcModelSection,ntamd64
    ```
 
-3. 含める、<em>モデル</em>**.ntamd64**セクションの名前に一致する、*モデル*によって指定されるセクション名、*製造元識別子*で、**製造元**セクション。 次の AbcModelSection など<strong>.ntamd64</strong>セクションが含まれています、Abc デバイスには、*デバイスの説明*を指定する、*インストール セクション名*の"AbcInstallSection。"
+3. **製造元のセクションで***製造元の識別子*で指定された*モデル*セクション名と一致する名前を持つ**ntamd64** <em>セクションをインクルードします。</em> たとえば、Abc デバイスの次の AbcModelSection<strong>ntamd64</strong>セクションには、"AbcInstallSection" という*インストールセクション*を指定する*デバイスの説明*が含まれています。
 
    ```ini
    [AbcModelSection.ntamd64]
    %AbcDeviceName%=AbcInstallSection,Abc-hw-id
    ```
 
-4. 含める、 *DDInstall*セクションの名前に一致する、*インストール セクション名*で指定された、*モデル*セクション。 たとえば、*デバイス説明*AbcModelSection のセクションでは、Abc デバイスの場合は、次の AbcInstallSection セクションを指定します。
+4. [*モデル*] セクションで指定された*インストールセクション名*と一致する名前を持つ*ddinstall*セクションを含めます。 たとえば、AbcModelSection セクションの*デバイスの説明*では、Abc デバイスの次の AbcInstallSection セクションを指定しています。
 
    ```ini
    [AbcInstallSection]
@@ -75,9 +75,9 @@ DisableDecoratedModelsRequirement:REG_DWORD
    ...
    ```
 
-5. 例では、デバイスのインストールに必要なその他のデバイス固有セクションが含まれて、 **.ntamd64**プラットフォーム拡張機能は、これらのセクションの名前。 INF ファイルのセクションとディレクティブの詳細については、次を参照してください。 [INF セクションの概要](summary-of-inf-sections.md)と[INF ディレクティブの概要](summary-of-inf-directives.md)します。
+5. デバイスのインストールに必要なその他のデバイス固有のセクションを含めますが、これらのセクションの名前には**ntamd64**プラットフォーム拡張機能を含めないでください。 INF ファイルのセクションとディレクティブの詳細については、「 [Inf セクションの概要](summary-of-inf-sections.md)」および「 [Inf ディレクティブの概要](summary-of-inf-directives.md)」を参照してください。
 
-すべてのプラットフォームの種類の 1 つのオペレーティング システム INF を作成する方法については、次を参照してください。[クロスプラット フォーム対応の INF ファイル](cross-platform-inf-files.md)します。
+すべてのプラットフォームの種類に対して単一のクロスオペレーティングシステム INF を作成する方法については、「[クロスプラットフォーム Inf ファイル](cross-platform-inf-files.md)」を参照してください。
 
  
 

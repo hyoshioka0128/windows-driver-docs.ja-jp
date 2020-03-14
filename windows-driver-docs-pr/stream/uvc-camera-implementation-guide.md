@@ -4,11 +4,11 @@ description: 受信トレイドライバーを使用して、USB ビデオクラ
 ms.date: 08/16/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 54b87f5f4ec0d42376246e22417851a8640a9b14
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881894"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79243051"
 ---
 # <a name="windows-10-uvc-camera-implementation-guide"></a>Windows 10 UVC カメラ実装ガイド
 
@@ -20,10 +20,10 @@ Windows 10 は、USB ビデオクラス仕様 (バージョン1.0 から 1.5) �
 |----------------------|------------------------------------------------------------------------------|
 | UVC                  | USB ビデオクラス                                                              |
 | UVC ドライバー           | OS に付属している USBVideo ドライバー                                   |
-| IR                   | 赤外線                                                                     |
+| ―                   | 赤外線                                                                     |
 | カラーカメラ         | カラーストリームを出力するカメラ (RGB や YUV カメラなど)      |
 | センサーカメラ        | 非カラーストリームを出力するカメラ (IR カメラや深度カメラなど) |
-| BOS                  | バイナリデバイスオブジェクトストア                                                   |
+| BO                  | バイナリデバイスオブジェクトストア                                                   |
 | MS OS 2.0 記述子 | Microsoft プラットフォーム固有の BOS デバイス機能記述子                 |
 
 ## <a name="sensor-cameras"></a>センサーカメラ
@@ -73,7 +73,7 @@ Windows 受信トレイ USB ビデオクラス (UVC) ドライバーは、YUV �
 
 次の形式の種類の Guid は、WDK ksmedia .h ヘッダーファイルで定義されているストリームビデオ形式記述子で指定する必要があります。
 
-| タスクバーの検索ボックスに | 説明 |
+| 種類 | 説明 |
 | --- | --- |
 | KSDATAFORMAT\_のサブタイプ\_L8\_IR |  非圧縮8ビットのルミナンス平面。 この型は、 [Mfvideoformat\_L8](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)にマップされます。 |
 | KSDATAFORMAT\_サブタイプ\_L16\_IR | 16ビットの非圧縮平面。 この型は[\_、L16](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)にマップされます。 |
@@ -111,7 +111,7 @@ typedef struct _VIDEO_FORMAT_FRAME
 
 Windows 受信トレイ USB ビデオクラスドライバーは、深度ストリームを生成するカメラをサポートしています。 これらのカメラは、シーンの深度情報 (たとえば、フライト時間) をキャプチャし、その深度マップを非圧縮の YUV フレームとして USB 上に送信します。 次の形式の種類の GUID は、WDK ksmedia .h ヘッダーファイルで定義されているストリームビデオ形式記述子で指定する必要があります。
 
-| タスクバーの検索ボックスに | 説明 |
+| 種類 | 説明 |
 | --- | --- |
 | KSDATAFORMAT\_サブタイプ\_D16 |  16ビット深度マップの値。 この型は、 [D16\_の Mfvideoformat](https://docs.microsoft.com/windows/desktop/medfound/video-subtype-guids#luminance-and-depth-formats)と同じです。 値はミリメートル単位です。 |
 
@@ -297,7 +297,7 @@ Windows 10 バージョン1703以降では、Windows には、オプトインで
 
 | Platform DMFT でサポートされる機能 | Windows リリース |
 |-------------------------------------|-----------------|
-| ROI 対応の USB カメラで3A 調整を行うために、面ベースの領域 (ROI) を有効にします。 | Windows 10 バージョン 1703 |
+| ROI 対応の USB カメラで3A 調整を行うために、面ベースの領域 (ROI) を有効にします。 | Windows 10 Version 1703 |
 
 > [!NOTE]
 > カメラで UVC 1.5 ベースの ROI がサポートされていない場合、PDMFT を使用するデバイスが選択されていても、PDMFT は読み込まれません。
@@ -368,25 +368,25 @@ Windows 10 RS5 では、Windows Hello サポートを使用するすべてのカ
 
 ヘッダーセクションでは、1つのカスタムプロパティ (Face Auth Profile) について説明します。
 
-| Offset | フィールド      | サイズ (バイト) | Value  | 説明                     |
+| [オフセット] | フィールド      | サイズ (バイト) | 値  | 説明                     |
 | ------ | ---------- | ------------ | ------ | ------------------------------- |
-| 0      | dwLength   | ホーム フォルダーが置かれているコンピューターにアクセスできない            | \<\>   |                                 |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない      | bcdVersion | 2            | 0x0100 | バージョン 1.0                     |
-| 6      | wIndex     | 2            | 0x0005 | 拡張プロパティの OS 記述子 |
+| 0      | dwLength   | 4            | \<\>   |                                 |
+| 4      | bcdVersion | 2            | 0x0100 | バージョン 1.0                     |
+| 6      | WIndex     | 2            | 0x0005 | 拡張プロパティの OS 記述子 |
 | 8      | wCount     | 2            | 0x0001 | 1つのカスタムプロパティ             |
 
 #### <a name="microsoft-os-10-descriptor-custom-property-section"></a>Microsoft OS 1.0 記述子カスタムプロパティセクション
 
-| Offset | フィールド                | サイズ (バイト) | Value                 | 説明                                |
+| [オフセット] | フィールド                | サイズ (バイト) | 値                 | 説明                                |
 | ------ | -------------------- | ------------ | --------------------- | ------------------------------------------ |
-| 0      | dwSize               | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 0x00000036 (54)       | このプロパティの合計サイズ (バイト単位)。   |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない      | dwPropertyDataType   | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 0x00000004            | REG\_DWORD\_リトル\_エンディアン                 |
+| 0      | dwSize               | 4            | 0x00000036 (54)       | このプロパティの合計サイズ (バイト単位)。   |
+| 4      | dwPropertyDataType   | 4            | 0x00000004            | REG\_DWORD\_リトル\_エンディアン                 |
 | 8      | wPropertyNameLength  | 2            | 0x00000024 (36)       | プロパティ名のサイズ (バイト単位)。      |
 | 10     | bPropertyName        | 36           | UVC-CPV2FaceAuth      | Unicode の "UVC-CPV2FaceAuth" 文字列。      |
-| 46     | dwPropertyDataLength | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 0x00000004            | プロパティデータ (sizeof (DWORD)) の場合は4バイト。 |
-| 50     | bPropertyData        | ホーム フォルダーが置かれているコンピューターにアクセスできない            | 以下のデータスキーマをご覧ください。 | 以下のデータスキーマを参照してください。                     |
+| 46     | dwPropertyDataLength | 4            | 0x00000004            | プロパティデータ (sizeof (DWORD)) の場合は4バイト。 |
+| 50     | bPropertyData        | 4            | 以下のデータスキーマをご覧ください。 | 以下のデータスキーマを参照してください。                     |
 
-##### <a name="payload-schema"></a>ペイロード スキーマ
+##### <a name="payload-schema"></a>ペイロードスキーマ
 
 UVC CPV2FaceAuth データペイロードは、32ビットの符号なし整数です。 上位16ビットは、RGB pin によって公開されるメディアの種類の一覧の0から始まるインデックスを表します。 下位16ビットは、IR pin によって公開されるメディアの種類の一覧の0から始まるインデックスを表します。
 
@@ -473,7 +473,7 @@ UCHAR Example2_MSOS20DescriptorSet_UVCFaceAuthForFutureWindows[0x3C] =
 }
 ```
 
-UVC-CPV2FaceAuth レジストリエントリを追加すると、デバイスは、次のドキュメントの説明に従って、EnableDshowRedirection レジストリエントリを発行する必要はありません: https://docs.microsoft.com/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices 。
+UVC-CPV2FaceAuth レジストリエントリを追加すると、デバイスは、次のドキュメントの説明に従って、EnableDshowRedirection レジストリエントリを発行する必要はありません: https://docs.microsoft.com/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices。
 
 ただし、デバイスベンダーが古いバージョンの Windows をサポートする必要がある場合や、フレームサーバー内で MJPEG の圧縮解除を有効にする必要がある場合は、EnableDshowRedirection レジストリエントリを追加する必要があります。
 
@@ -525,24 +525,24 @@ UVC 準拠カメラは、 [MICROSOFT OS 2.0 の記述子](https://docs.microsoft
 
 ### <a name="microsoft-os-20-descriptor-set-header"></a>Microsoft OS 2.0 記述子セットヘッダー
 
-| Offset | フィールド            | サイズ (バイト) | 説明                                                                  |
+| [オフセット] | フィールド            | サイズ (バイト) | 説明                                                                  |
 | ------ | ---------------- | ------------ | ---------------------------------------------------------------------------- |
 | 0      | wLength          | 2            | このヘッダーの長さ (バイト単位) は10である必要があります。                                  |
 | 2      | W記述子の種類  | 2            | MSOS20\_\_ヘッダー\_記述子の設定                                              |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない      | dwWindowsVersion | ホーム フォルダーが置かれているコンピューターにアクセスできない            | Windows のバージョン。                                                             |
+| 4      | dwWindowsVersion | 4            | Windows のバージョン。                                                             |
 | 8      | wTotalLength     | 2            | このヘッダーサイズを含む、MS OS 2.0 記述子セット全体のサイズ。 |
 
 ### <a name="microsoft-os-20-registry-property-descriptor"></a>Microsoft OS 2.0 レジストリプロパティ記述子
 
-| Offset | フィールド               | サイズ (バイト) | 説明                        |
+| [オフセット] | フィールド               | サイズ (バイト) | 説明                        |
 | ------ | ------------------- | ------------ | ---------------------------------- |
 | 0      | wLength             | 2            | この記述子の長さ (バイト単位) |
 | 2      | W記述子の種類     | 2            | MS\_OS\_20\_機能\_REG\_プロパティ |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない      | wPropertyDataType   | 2            | 0x04 (REG\_DWORD\_リトル\_エンディアン)  |
+| 4      | wPropertyDataType   | 2            | 0x04 (REG\_DWORD\_リトル\_エンディアン)  |
 | 6      | wPropertyNameLength | 2            | プロパティ名の長さ。   |
-| 8      | PropertyName        | 変数     | レジストリプロパティの名前。 |
+| 8      | PropertyName        | [Variable]     | レジストリプロパティの名前。 |
 | 8 + M    | wPropertyDataLength | 2            | プロパティデータの長さ。   |
-| 10 + M   | PropertyData        | 変数     | プロパティデータ                      |
+| 10 + M   | PropertyData        | [Variable]     | プロパティデータ                      |
 
 ファームウェアに有効な MS OS 2.0 記述子が指定されている場合、USB スタックは、次の表に示すデバイスの HW レジストリキーに構成値をコピーします。
 
@@ -558,7 +558,7 @@ UVC ドライバーは、デバイスのハードウェアレジストリキー�
 
 ## <a name="currently-supported-configuration-values-through-bos-descriptor"></a>現在サポートされている構成値 (BOS 記述子を使用)
 
-| 構成名 | タスクバーの検索ボックスに | 説明 |
+| 構成名 | 種類 | 説明 |
 | --- | --- | --- |
 | SensorCameraMode                              | REG\_DWORD | 特定のカテゴリの下にカメラを登録します。  |
 | UVC-FSSensorGroupID<br>UVC-FSSensorGroupName  | REG\_SZ    | 同じ UVC-FSSensorGroupID でカメラをグループ化する |
@@ -624,7 +624,7 @@ BOS 記述子が表示された後、USB スタックは、MS OS 2.0 記述子�
 
 MS OS 2.0 ベンダー固有の記述子を取得するためのコントロール要求の形式:
 
-| bmRequestType | BRequest            | wValue | WIndex | wLength | データ                                   |
+| bmRequestType | BRequest            | wValue | WIndex | wLength | Data                                   |
 |---------------|---------------------|--------|--------|---------|----------------------------------------|
 | 1100 0000B    | **bMS\_VendorCode** | 0x00   | 0x07   | 長さ  | MS OS 2.0 記述子セット blob が返されました |
 

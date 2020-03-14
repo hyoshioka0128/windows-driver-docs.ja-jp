@@ -2,14 +2,14 @@
 title: 割り当て済み高度
 description: 割り当て済み高度
 ms.assetid: EC1993FB-5219-4C0C-A76A-05937A461C5A
-ms.date: 04/20/2017
+ms.date: 03/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 703112d39982e4a4fef84d62fbcbed2f38a16131
-ms.sourcegitcommit: 5e257e7d54d77649b4981a55a7d61676a3b25f00
+ms.openlocfilehash: ed036373bf51371a47b5b425634f3a8b99957273
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73064151"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79216609"
 ---
 # <a name="allocated-altitudes"></a>割り当て済み高度
 
@@ -17,33 +17,36 @@ ms.locfileid: "73064151"
 
 ミニフィルターの高度な数値を要求するには、「[ミニフィルターの高度な要求](minifilter-altitude-request.md)」を参照してください。
 
-現在の標高割り当ては、次の各読み込み順序グループについて以下に示します。
+このページの発行日の時点で割り当てられた標高割り当ては、次の各読み込み順序グループについて以下の一覧に記載されています (注: このページは、1年あたり1-2 回更新されます)。
 
 ## <a name="span-id420000_-_429999__filterspanspan-id420000_-_429999__filterspanspan-id420000_-_429999__filterspan420000---429999-filter"></a><span id="420000_-_429999__Filter"></span><span id="420000_-_429999__filter"></span><span id="420000_-_429999__FILTER"></span>42万-429999: フィルター
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| ntoskrnl.exe | 425500 | [Microsoft] |
-| ntoskrnl.exe | 425000 | [Microsoft] |
+|-----------------------------|----------|-----------------------------------------|
+| ntoskrnl.exe | 425500 | マイクロソフト |
+| ntoskrnl.exe | 425000 | マイクロソフト |
 
 ## <a name="span-id400000_-_409999__fsfilter_topspanspan-id400000_-_409999__fsfilter_topspanspan-id400000_-_409999__fsfilter_topspan400000---409999-fsfilter-top"></a><span id="400000_-_409999__FSFilter_Top"></span><span id="400000_-_409999__fsfilter_top"></span><span id="400000_-_409999__FSFILTER_TOP"></span>40万-409999: FSFilter Top
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| wcnfs .sys | 409900 | [Microsoft] |
-| bindflt | 409800 | [Microsoft] |
-| cldflt | 409500 | [Microsoft] |
-| iorate | 409010 | [Microsoft] |
-| ioqos .sys | 409000 | [Microsoft] |
-| fsdepends .sys に依存します | 407000 | [Microsoft] |
-| sftredir | 406000 | [Microsoft] |
-| dfs-r | 405000 | [Microsoft] |
+|-----------------------------|----------|-----------------------------------------|
+| wcnfs .sys | 409900 | マイクロソフト |
+| bindflt | 409800 | マイクロソフト |
+| cldflt | 409500 | マイクロソフト |
+| iorate | 409010 | マイクロソフト |
+| ioqos .sys | 409000 | マイクロソフト |
+| fsdepends .sys に依存します | 407000 | マイクロソフト |
+| sftredir | 406000 | マイクロソフト |
+| dfs-r | 405000 | マイクロソフト |
+| VeeamFCT. sys | 404920 | Veeam ソフトウェア |
 | tracker | 404910 | Acronis |
-| csvnsflt | 404900 | [Microsoft] |
-| csvflt | 404800 | [Microsoft] |
-| Uev. AgentDriver. .sys | 404710 | [Microsoft] |
-| AppvVfs | 404700 | [Microsoft] |
-| CCFFilter .sys | 404600 | [Microsoft] |
+| csvnsflt | 404900 | マイクロソフト |
+| csvflt | 404800 | マイクロソフト |
+| Uev. AgentDriver. .sys | 404710 | マイクロソフト |
+| AppvVfs | 404700 | マイクロソフト |
+| CCFFilter .sys | 404600 | マイクロソフト |
+| U-Agentdrv .sys | 402110 | 膨大な制限 GmbH |
+| mrigflt | 402100 | 最重要ソフトウェア Ltd. |
 | dciogrd | 402010 | Datacloak Tech |
 | Dewdrv .sys | 402000 | Dell テクノロジ |
 | zsusbstorfilt | 401910 | Zshield Inc. |
@@ -64,27 +67,42 @@ ms.locfileid: "73064151"
 | edevmon | 400800 | ESET spol。 s r.o. |
 | vmwflstor .sys | 400700 | VMware, Inc. |
 | TsQBDrv .sys | 400600 | Tencent テクノロジ |
-| WRAEKernel | 400500 | Webroot Inc. |
+| PolyPortFlt | 400490 | PolyPort Inc. |
+| Dscdriver .sys | 400300 | Dell Technologies Inc. |
 
 ## <a name="span-id360000_-_389999__fsfilter_activity_monitorspanspan-id360000_-_389999__fsfilter_activity_monitorspanspan-id360000_-_389999__fsfilter_activity_monitorspan360000---389999-fsfilter-activity-monitor"></a><span id="360000_-_389999__FSFilter_Activity_Monitor"></span><span id="360000_-_389999__fsfilter_activity_monitor"></span><span id="360000_-_389999__FSFILTER_ACTIVITY_MONITOR"></span>36万-389999: FSFilter 利用状況モニター
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | klboot | 389510 | Kaspersky ラボ |
 | klfdefsf | 389500 | Kaspersky ラボ |
+| SeRdr. sys | 389450 | rhipe オーストラリア Pty |
+| storagedrv .sys | 389400 | SMTechnology Co。 |
+| path8flt | 389320 | Telefónica デジタル |
+| NgScan | 389310 | Acronis |
+| icrlmonitor | 389300 | 工業技術 |
+| gibepcore .sys | 389290 | グループ-IB LTD. |
+| enmon | 389280 | OpenText Corp |
+| RansomDetect | 389270 | WidgetNuri Corp |
+| cbfsfilter2017 | 389260 | モバイルコンテンツ管理 |
 | CBFSFilter2017 | 389250 | SecureLink Inc. |
+| cbfsfilter2017 | 389245 | 南京 Geomarking |
 | NWEDriver .sys | 389240 | Dell テクノロジ |
 | cytmon. sys | 389230 | Cytrence Inc. |
 | SophosED | 389220 | Sophos |
 | .Sys | 389210 | Somma Inc. |
 | IFS64 | 389200 | Ashampoo 開発 |
+| TSTFsReDir | 389192 | ThinScale Tech |
+| Tstreグリーンディレクトリ .sys | 389191 | ThinScale Tech |
 | TSTFilter | 389190 | ThinScale Tech |
 | VrnsFilter .sys | 389180 | Varonis Ltd. |
+| slb_guard .sys | 389175 | Lenovo 北京 |
 | lrtp. sys | 389170 | Lenovo 北京 |
 | ipcomfltr | 389160 | Bluzen Inc. |
 | SvCBT | 389150 | Spハーソフトテクノロジ |
 | mbamshuriken. sys | 389140 | Malwarebytes |
 | ContainerMonitor | 389130 | 水色のセキュリティ |
+| cmflt | 389125 | Certero |
 | SaMFlt | 389120 | DreamCrafts |
 | RuiMinispy | 389117 | このように |
 | RuiFileAccess | 389115 | このように |
@@ -93,6 +111,8 @@ ms.locfileid: "73064151"
 | windd .sys | 389110 | Comae 技術 |
 | cbfsfilter2017 | 389105 | ネットワークでの base |
 | taobserveflt | 389100 | ThinAir Labs Inc. |
+| bsrfsflt | 389096 | Man テクノロジ Inc. |
+| fsrfilter .sys | 389094 | Man テクノロジ Inc. |
 | vollock .sys | 389092 | Man テクノロジ Inc. |
 | drbdlock | 389090 | Man テクノロジ Inc. |
 | dcfsgrd | 389085 | Datacloak Tech |
@@ -109,7 +129,7 @@ ms.locfileid: "73064151"
 | CSBFilter .sys | 389060 | Carbonite Inc. |
 | ChemometecFilter | 389050 | ChemoMetec |
 | SentinelMonitor | 389040 | SentinelOne |
-| DhWatchdog | 389030 | [Microsoft] |
+| DhWatchdog | 389030 | マイクロソフト |
 | edrsensor .sys | 389025 | Bitdefender SRL |
 | bdprivmon | 389022 | Bitdefender SRL |
 | NpEtw. sys | 389020 | お金 |
@@ -122,8 +142,10 @@ ms.locfileid: "73064151"
 | drsfile | 388970 | MRY います。 |
 | CbFltFs4 | 388966 | Simopro テクノロジ |
 | CrUnCopy | 388964 | Shenzhen CloudRiver |
-| aictracedrv_am | 388960 | AI コンサルティング |
+| aictracedrv_am .sys | 388960 | AI コンサルティング |
 | fiopolicyfilter | 388954 | SanDisk Inc. |
+| sodatpfl .sys | 388951 | SODATSW spol。 s r.o. |
+| sodatpfl .sys | 388950.2 | SODATSW |
 | fcontrol .sys | 388950 | SODATSW spol。 s r.o. |
 | qfilter .sys | 388940 | クォーラムラボ |
 | Redlight .sys | 388930 | Trustware Ltd. |
@@ -139,6 +161,7 @@ ms.locfileid: "73064151"
 | dsflt | 388876 | cEncrypt |
 | bfaccess .sys | 388872 | bitFence Inc. |
 | xcpl. sys | 388870 | X-クラウドシステム |
+| DFMFilter .sys | 388867 | ManageEngine Zoho |
 | DCFAFilter .sys | 388866 | ManageEngine Zoho |
 | RMPHVMonitor .sys | 388865 | ManageEngine Zoho |
 | FAPMonitor .sys | 388864 | ManageEngine Zoho |
@@ -151,7 +174,12 @@ ms.locfileid: "73064151"
 | トレース .sys | 388831 | Fitsec Ltd. |
 | SandDriver | 388830 | Fitsec Ltd. |
 | dskmn | 388820 | Honeycomb テクノロジ |
+| offsm. sys | 388811 | Jiransoft Co、Ltd. |
 | xkfsfd .sys | 388810 | Jiransoft Co、Ltd. |
+| J、sys | 388808 | Jiransoft Co、Ltd. |
+| JKPPXK. sys | 388807 | Jiransoft Co、Ltd. |
+| JKPPPF .sys | 388806 | Jiransoft Co、Ltd. |
+| J、sys | 388805 | Jiransoft Co、Ltd. |
 | pcpifd .sys | 388800 | Jiransoft Co、Ltd. |
 | NNTInfo .sys | 388790 | 新しいネットテクノロジが制限されています |
 | FsMonitor .sys | 388780 | IBM |
@@ -205,13 +233,14 @@ ms.locfileid: "73064151"
 | ThreatStackFIM | 388380 | 脅威スタック |
 | BOsCmFlt | 388370 | Barkly は Inc. を保護します。 |
 | BOsFsFltr | 388370 | Barkly は Inc. を保護します。 |
+| Asgard | 388365 | KNET EOOD |
 | FeKern。 sys | 388360 | 焼討 |
 | libwamf | 388350 | OPSWAT Inc. |
 | SZEDRDrv .sys | 388346 | 安全です。 |
 | szシャード | 388345 | 安全です。 |
 | szpcmdrv | 388341 | 安全です。 |
 | szdfmdrv .sys | 388340 | 安全です。 |
-| szdfmdrv_usb | 388331 | 安全です。 |
+| szdfmdrv_usb .sys | 388331 | 安全です。 |
 | sprtdrv | 388330 | 安全です。 |
 | SWFsFltrv2 | 388321 | お金 |
 | SWFsFltr | 388320 | お金 |
@@ -246,7 +275,7 @@ ms.locfileid: "73064151"
 | scensemon | 387950 | AppiXoft |
 | ruaff | 387940 | RUNEXY |
 | bbfilter .sys | 387930 | derivo GmbH |
-| Bfmon | 387920 | Baidu (香港特別行政区) 限定 |
+| Bfmon | 387920 | Baidu (香港) 限定 |
 | bdsysmon | 387912 | Baidu Online ネットワーク |
 | BdRdFolder .sys | 387910 | Baidu (北京) |
 | ml、.sys | 387901 | RUNEXY |
@@ -259,6 +288,7 @@ ms.locfileid: "73064151"
 | uamflt | 387700 | Sevtechnotrans |
 | ehdrv .sys | 387600 | ESET、spol。 s r.o. |
 | DattoFSF | 387560 | Datto Inc. |
+| RubrikFileAudit | 387552 | Rubrik Inc. |
 | FileSystemCBT | 387550 | Rubrik Inc. |
 | Snilog .sys | 387500 | Systemneeds 必要性, Inc. |
 | tss | 387400 | Tiversa Inc |
@@ -287,11 +317,12 @@ ms.locfileid: "73064151"
 | ScAuthIoDrv .sys | 386700 | セキュリティコードの例 |
 | mfeaskm | 386610 | McAfee Inc. |
 | mfencfilter .sys | 386600 | McAfee |
-| WinFLAHdrv | 386540 | NewSoftwares&#x2024;Net, inc. |
-| WinFLAdrv. sys | 386530 | NewSoftwares&#x2024;Net, inc. |
-| WinDBdrv .sys | 386520 | NewSoftwares&#x2024;Net, inc. |
-| WinFLdrv .sys | 386510 | NewSoftwares&#x2024;Net, inc. |
-| WinFPdrv. sys | 386500 | NewSoftwares&#x2024;Net, inc. |
+| WinFLAHdrv | 386540 | NewSoftwares。 net, Inc. |
+| WinFLAdrv. sys | 386530 | NewSoftwares。 net, Inc. |
+| WinDBdrv .sys | 386520 | NewSoftwares。 net, Inc. |
+| WinFLdrv .sys | 386510 | NewSoftwares。 net, Inc. |
+| WinFPdrv. sys | 386500 | NewSoftwares。 net, Inc. |
+| varpffmon. sys | 386486 | Varlook Ltd. |
 | SkyWPDrv | 386435 | スカイ Co., Ltd. |
 | SkyRGDrv | 386431 | スカイ Co., LTD. |
 | SkyAMDrv | 386430 | スカイ Co., LTD. |
@@ -325,27 +356,28 @@ ms.locfileid: "73064151"
 | immflex | 385910 | Immidio B.V. |
 | StegoProtect | 385900 | Stegosystems Inc. |
 | brfilter .sys | 385890 | Bromium Inc. |
-| BrCow_x_x_x_x | 385889 | Bromium Inc. |
+| BrCow_x_x_x_x .sys | 385889 | Bromium Inc. |
 | BemK | 385888 | Bromium Inc. |
 | secRMM .sys | 385880 | Squadra テクノロジ |
 | dgfilter | 385870 | DataGravity Inc. |
-| WFP_MRT | 385860 | 焼討アイ Inc. |
+| WFP_MRT .sys | 385860 | 焼討アイ Inc. |
 | klrsps | 385815 | Kaspersky ラボ |
 | klsnsr | 385810 | Kaspersky ラボ |
 | TaniumRecorderDrv | 385800 | Tanium |
-| mssecflt | 385600 | [Microsoft] |
-| Backupreader | 385500 | [Microsoft] |
-| MsixPackagingToolMonitor | 385410 | [Microsoft] |
-| AppVMon | 385400 | [Microsoft] |
-| DpmFilter .sys | 385300 | [Microsoft] |
-| Procmon11 | 385200 | [Microsoft] |
-| minispy-Top | 385100 | [Microsoft] |
-| fdrtrace | 385001 | [Microsoft] |
-| filetrace .sys | 385000 | [Microsoft] |
-| uwfreg .sys | 384910 | [Microsoft] |
-| uwfs .sys | 384900 | [Microsoft] |
-| locksmith. sys | 384800 | [Microsoft] |
-| winload .sys | 384700 | [Microsoft] |
+| CdsgFsFilter | 385700 | CRU データセキュリティグループ |
+| mssecflt | 385600 | マイクロソフト |
+| Backupreader | 385500 | マイクロソフト |
+| MsixPackagingToolMonitor | 385410 | マイクロソフト |
+| AppVMon | 385400 | マイクロソフト |
+| DpmFilter .sys | 385300 | マイクロソフト |
+| Procmon11 | 385200 | マイクロソフト |
+| minispy-Top | 385100 | マイクロソフト |
+| fdrtrace | 385001 | マイクロソフト |
+| filetrace .sys | 385000 | マイクロソフト |
+| uwfreg .sys | 384910 | マイクロソフト |
+| uwfs .sys | 384900 | マイクロソフト |
+| locksmith. sys | 384800 | マイクロソフト |
+| winload .sys | 384700 | マイクロソフト |
 | SFPMonitor .sys-Top | 383350 | SonicWall Inc. |
 | FilrDriver .sys | 383340 | マイクロフォーカス |
 | rwの場合 | 383330 | Rackware |
@@ -360,7 +392,7 @@ ms.locfileid: "73064151"
 | groundling64 | 383200 | Dell Secureworks |
 | avgtpx86 | 383190 | 平均テクノロジ CS-CZ |
 | avgtpx64 | 383190 | 平均テクノロジ CS-CZ |
-| DataNow_Driver | 383182 | AppSense Ltd. |
+| DataNow_Driver .sys | 383182 | AppSense Ltd. |
 | UcaFltDriver | 383180 | AppSense Ltd. |
 | YFSD2 | 383170 | Yokogawa Corpration |
 | Kisknl | 383160 | 王国 |
@@ -374,13 +406,13 @@ ms.locfileid: "73064151"
 | GUMHFilter .sys | 382910 | Glarysoft Ltd. |
 | PsAcFileAccessFilter .sys | 382902 | 富士通のソフトウェア |
 | FJGSDis2 | 382900 | 富士通限定 |
-| secure_os | 382890 | 富士通のソーシャルサイエンス |
+| secure_os .sys | 382890 | 富士通のソーシャルサイエンス |
 | ibr2fsk | 382880 | 富士通工学 |
 | FJSeparettiFilterRedirect | 382860 | 富士通限定 |
 | Fsw31rj1 | 382855 | 富士通限定 |
-| da_ctl | 382850 | 富士通限定 |
+| da_ctl .sys | 382850 | 富士通限定 |
 | zqFilter .sys | 382800 | magrasoft Ltd. |
-| ntps_fa | 382700 | NTP ソフトウェア |
+| ntps_fa .sys | 382700 | NTP ソフトウェア |
 | sConnect .sys | 382600 | I/O データデバイス |
 | AdaptivaClientCache32 | 382500 | Adaptiva |
 | AdaptivaclientCache64 | 382500 | Adaptiva |
@@ -422,7 +454,7 @@ ms.locfileid: "73064151"
 | qfmon | 381190 | 品質 Corporation |
 | flyfs | 381160 | NEC ソフト |
 | serfs | 381150 | NEC ソフト |
-| hdrfs | 381140 | NEC ソフト |
+| hdrfs | 381140  | NEC ソフト |
 | UVMCIFSF | 381130 | NEC Corporation |
 | ICFClientFlt | 381120 | NEC システムテクノロジ、Ltd. |
 | IccFileIoAd | 381110 | NEC システムテクノロジ、Ltd. |
@@ -430,6 +462,7 @@ ms.locfileid: "73064151"
 | IccFilterSc | 381090 | InfoCage |
 | Sefo. sys-Top | 381010 | お金 |
 | mtsvcdf .sys | 381000 | 境界 |
+| SDDrvLdr | 380970 | の aksander Lebiadzevich |
 | SQLsafeFilterDriver .sys | 380901 | Idera ソフトウェア |
 | IderaFilterDriver .sys | 380900 | Idera |
 | cbfsfilter2017 | 380850 | SN Systems Ltd. |
@@ -440,6 +473,7 @@ ms.locfileid: "73064151"
 | PkgFilter .sys | 380700 | スケーラブルなソフトウェア Inc. |
 | snimg. sys | 380600 | Softnext テクノロジ |
 | SK | 380520 | ヒートソフトウェア |
+| cbfsfilter2017 | 380515 | キット Ltd. |
 | mpxmon | 380510 | 肯定的テクノロジ |
 | filenamevalidator | 380502 | Infotecs |
 | KC3 | 380500 | Infotecs |
@@ -452,36 +486,39 @@ ms.locfileid: "73064151"
 | srminifilterdrv .sys | 380450 | Citrix システム |
 | zzpensys | 380440 | Jshan Jing an |
 | tedrdrv .sys | 380430 | Palo Alto Networks |
-| fangcloud_autolock_driver | 380420 | Hangzhou Yifangyun |
-| CbSampleDrv .sys | 380020 | [Microsoft] |
-| CbSampleDrv .sys | 380010 | [Microsoft] |
-| CbSampleDrv .sys | 38万 | [Microsoft] |
-| 簡略化した担当者 | 371100 | [Microsoft] |
-| 変更、.sys | 370160 | [Microsoft] |
-| delete_flt | 370150 | [Microsoft] |
-| SmbResilFilter | 370140 | [Microsoft] |
-| usbtest | 370130 | [Microsoft] |
-| NameChanger | 370120 | [Microsoft] |
-| failMount .sys | 370110 | [Microsoft] |
-| failAttach .sys | 370100 | [Microsoft] |
-| stest | 370090 | [Microsoft] |
-| cdo .sys | 370080 | [Microsoft] |
-| ctx | 370070 | [Microsoft] |
-| fmm .sys | 370060 | [Microsoft] |
-| cancelSafe | 370050 | [Microsoft] |
-| メッセージ .sys | 370040 | [Microsoft] |
-| パススルー | 370030 | [Microsoft] |
-| nullFilter .sys | 370020 | [Microsoft] |
-| ntest. sys | 370010 | [Microsoft] |
-| minispy-中間 | 37万 | [Microsoft] |
+| fangcloud_autolock_driver .sys | 380420 | Hangzhou Yifangyun |
+| FASDriver | 380410 | 技術研究 |
+| CbSampleDrv .sys | 380020 | マイクロソフト |
+| CbSampleDrv .sys | 380010 | マイクロソフト |
+| CbSampleDrv .sys | 38万 | マイクロソフト |
+| 簡略化した担当者 | 371100 | マイクロソフト |
+| 変更、.sys | 370160 | マイクロソフト |
+| delete_flt .sys | 370150 | マイクロソフト |
+| SmbResilFilter | 370140 | マイクロソフト |
+| usbtest | 370130 | マイクロソフト |
+| NameChanger | 370120 | マイクロソフト |
+| failMount .sys | 370110 | マイクロソフト |
+| failAttach .sys | 370100 | マイクロソフト |
+| stest | 370090 | マイクロソフト |
+| cdo .sys | 370080 | マイクロソフト |
+| ctx | 370070 | マイクロソフト |
+| fmm .sys | 370060 | マイクロソフト |
+| cancelSafe | 370050 | マイクロソフト |
+| メッセージ .sys | 370040 | マイクロソフト |
+| パススルー | 370030 | マイクロソフト |
+| nullFilter .sys | 370020 | マイクロソフト |
+| ntest. sys | 370010 | マイクロソフト |
+| minispy-中間 | 37万 | マイクロソフト |
+| AvaPsFD | 368540 | Avanite 制限付き |
 | isecureflt | 368530 | iSecure Ltd. |
 | SFPMonitor .sys-中央 | 368520 | SonicWall Inc. |
-| wats_se | 368510 | Fujian Shen |
-| secure_os_mf | 368500 | HAURI |
+| wats_se .sys | 368510 | Fujian Shen |
+| secure_os_mf .sys | 368500 | HAURI |
 | FileMonitor | 368470 | Cygna Labs |
 | asiofms .sys | 368460 | テクノロジを奨励する |
 | cbfsfilter2017 | 368450 | 絶対ソフトウェア |
 | FileHubAgent | 368440 | SmartFile の場合 |
+| pfracdrv | 368430 | NURILAB |
 | nrcomgrdki | 368420 | NURILAB |
 | nrcomgrdka | 368420 | NURILAB |
 | nrpmonki | 368410 | NURILAB |
@@ -497,6 +534,8 @@ ms.locfileid: "73064151"
 | SfdFilter .sys | 368350 | Sandoll 通信 |
 | phdcbtdrv .sys | 368340 | PHD Virtual Tech Inc. |
 | sysdiag .sys | 368330 | HeroBravo テクノロジ |
+| WntGPDrv. sys | 368327 | Winicssec Ltd. |
+| edrdrv .sys | 368325 | Nurd Yaza.s. m |
 | CmdCwagt | 368322 | Comodo Security Solutions Inc. |
 | cfrmd. sys | 368320 | Comodo Security Solutions Inc. |
 | repdrv | 368310 | ビジョンソリューション |
@@ -514,13 +553,14 @@ ms.locfileid: "73064151"
 | dsfltfs .sys | 367760 | Digitalsense Co |
 | soidriver .sys | 367750 | Sophos Plc |
 | drvhookcsmf | 367700 | GrammaTech, Inc. |
-| drvhookcsmf_amd64 | 367700 | GrammaTech, Inc. |
+| drvhookcsmf_amd64 .sys | 367700 | GrammaTech, Inc. |
+| RevoNetDriver. sys | 367650 | J のコミュニケーション Co。 |
 | avipbb .sys | 367600 | AGmbH |
 | FileSightMF | 367500 | PA ファイルの視野 |
 | csaam .sys | 367400 | Cisco システム |
 | FSMon | 367300 | 1mill |
 | filefilter. sys | 367100 | 北京 Zhong Jiaxin Computer テクノロジ Co., Ltd. |
-| iiscache .sys | 367000 | [Microsoft] |
+| iiscache .sys | 367000 | マイクロソフト |
 | nowonmf | 366993 | Diskeeper Corporation |
 | dktlfsmf .sys | 366992 | Diskeeper Corporation |
 | DKDrv .sys | 366991 | Diskeeper Corporation |
@@ -539,7 +579,9 @@ ms.locfileid: "73064151"
 | hiofs .sys | 366782 | Condusiv テクノロジ |
 | intmfs | 366781 | CondusivTechnologies |
 | excfs | 366780 | CondusivTechnologies |
-| zampit_ml | 366700 | Zampit |
+| zampit_ml .sys | 366700 | Zampit |
+| TenRSafe2 | 366669 | Tencent テクノロジ |
+| tesxporter | 366667 | Tencent テクノロジ |
 | tesxnginx | 366666 | Tencent テクノロジ |
 | rflog .sys | 366600 | AppStream, Inc. |
 | csmon | 366582 | CyberSight Inc. |
@@ -578,15 +620,16 @@ ms.locfileid: "73064151"
 | ssrfsf | 365210 | Symantec |
 | emxdrv2 | 365200 | Symantec |
 | reghook .sys | 365150 | Symantec |
-| symevnt .sys | 365110 | Symantec |
 | spbbcdrv .sys | 365100 | Symantec |
 | bhdrvx86 | 365100 | Symantec |
 | bhdrvx64 | 365100 | Symantec |
+| symevnt .sys | 365090 | Broadcom |
+| symevnt32 | 365090 | Broadcom |
 | SISIPSFileFilter | 365010 | Symantec |
 | symevent | 365000 | Symantec |
-| wrpfv .sys | 364900 | [Microsoft] |
+| wrpfv .sys | 364900 | マイクロソフト |
 | Upguシャード | 364810 | UpGuard |
-| usbl_ifsfltr | 364800 | SecureAxis |
+| usbl_ifsfltr .sys | 364800 | SecureAxis |
 | ntfsf | 364700 | Sun & ムーン |
 | BssAudit .sys | 364600 | ByStorm |
 | GPMiniFIlter フィルター sys | 364500 | Kalpataru |
@@ -594,14 +637,14 @@ ms.locfileid: "73064151"
 | FSAFilter .sys | 364300 | ScriptLogic |
 | GcfFilter .sys | 364200 | GemacmbH |
 | FFCFILT.SYS.DATABASES | 364100 | FFC 限定 |
-| msnfsflt | 364000 | [Microsoft] |
+| msnfsflt | 364000 | マイクロソフト |
 | mblmon | 363900 | Packeteer |
 | amsfilter | 363800 | Axur 情報 (Sec)。 |
 | rswctrl. sys | 363713 | Douzone Bizon Co |
 | mcstrg .sys | 363712 | Douzone Bizon Co |
 | fmkkc | 363711 | Douzone Bizon Co |
 | nmlhssrv01 | 363710 | Douzone Bizon Co |
-| equ8_helper | 363705 | Int3 Software AB |
+| equ8_helper .sys | 363705 | Int3 Software AB |
 | strapvista .sys (廃止) | 363700 | AvSoft テクノロジ |
 | SAFE-Agent | 363636 | 安全-Cyberdefense |
 | EstPrmon | 363610 | ESTsoft corp。 |
@@ -614,15 +657,18 @@ ms.locfileid: "73064151"
 | サンタ .sys | 363510 | Saf の終了 |
 | vfdrv .sys | 363500 | Viewfinfin |
 | topdogfsfilt | 363450 | ManTech |
-| xhunter64 | 363400 | Wellbia&#x2024;com |
-| アン未確認 | 363390 | Wellbia&#x2024;com |
+| xhunter64 | 363400 | Wellbia.com |
+| アン未確認 | 363390 | Wellbia.com |
 | AuditFlt | 363313 | Ionx Solutions p |
 | SPIMiniFilter | 363300 | ソフトウェアのいいね。 |
-| mracdrv .sys | 363230 | メール&#x2024;Ru |
+| mracdrv .sys | 363230 | Mail.Ru |
 | BEDaisy | 363220 | BattlEye イノベーション |
+| MPKernel .sys | 363210 | Lovelace Network Tech |
 | Net、Ctrl. sys | 363200 | リンク co。 |
 | NetAccCtrl64 | 363200 | リンク co。 |
+| bzsenth. sys | 363140 | BiZone のお金 |
 | hpreg | 363130 | HP |
+| QMON. sys | 363122 | Qualys Inc. |
 | qfimdvr .sys | 363120 | Qualys Inc. |
 | QDocumentREF. sys | 363110 | BicDroid Inc. |
 | dsfemon | 363100 | トポロジ Ltd. |
@@ -635,10 +681,11 @@ ms.locfileid: "73064151"
 | Cybカーネルトラッカー | 362960 | CyberArk ソフトウェア |
 | filemon | 362950 | Temasoft S.R.L. |
 | Scaは .sys | 362940 | Sogou Ltd.。 |
-| fpifp_minifilter | 362930 | ForcePoint の参照。 |
+| ep_minifilter .sys | 362930 | ForcePoint の参照。 |
 | klifks | 362902 | Kaspersky ラボ |
 | klifaa .sys | 362901 | Kaspersky ラボ |
 | Klifsm | 362900 | Kaspersky ラボ |
+| スポットライト .sys | 362870 | Cigent テクノロジ Inc. |
 | nxrmflt | 362860 | NextLabs |
 | 大規模な .sys | 362850 | PolyLogyx の場合 |
 | AALProtect | 362840 | AlphaAntiLeak |
@@ -646,13 +693,14 @@ ms.locfileid: "73064151"
 | RsFlt | 362820 | Redstor 制限 |
 | CentrifyFSF | 362810 | Centrify Corp |
 | Sefo. sys-Bottom | 362800 | お金 |
+| proggerdriver | 362790 | WaikatoLink Ltd. |
 | SFPMonitor .sys-Bottom | 362700 | SonicWall Inc. |
-| minispy-Bottom | 361000 | [Microsoft] |
+| minispy-Bottom | 361000 | マイクロソフト |
 
 ## <a name="span-id340000_-_349999__fsfilter_undeletespanspan-id340000_-_349999__fsfilter_undeletespanspan-id340000_-_349999__fsfilter_undeletespan340000---349999-fsfilter-undelete"></a><span id="340000_-_349999__FSFilter_Undelete"></span><span id="340000_-_349999__fsfilter_undelete"></span><span id="340000_-_349999__FSFILTER_UNDELETE"></span>34万-349999: FSFilter の削除の取り消し
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | BSSFlt | 346000 | ブルーシューズソフトウェアの靴 |
 | ThinIO | 345900 | ThinScale テクノロジ |
 | hmpalert. sys | 345800 | 右へ |
@@ -675,13 +723,16 @@ ms.locfileid: "73064151"
 ## <a name="span-id320000_-_329998__fsfilter_anti-virusspanspan-id320000_-_329998__fsfilter_anti-virusspanspan-id320000_-_329998__fsfilter_anti-virusspan320000---329998-fsfilter-anti-virus"></a><span id="320000_-_329998__FSFilter_Anti-Virus"></span><span id="320000_-_329998__fsfilter_anti-virus"></span><span id="320000_-_329998__FSFILTER_ANTI-VIRUS"></span>32万-329998: FSFilter ウイルス対策
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
+| ReveFltMgr | 329350 | ウイルス対策 |
+| ReveProcProtection | 329340 | ウイルス対策 |
 | zwPxeSvr .sys | 329330 | SecureLink Inc. |
 | Zて Atom. sys | 329320 | SecureLink Inc. |
 | wscm. sys | 329310 | 富士通のソーシャルサイエンス |
 | IMFFilter .sys | 329300 | IObit 情報技術 |
 | CSFlt | 329290 | ConeSecurity Inc. |
-| ospfile_mini | 329230 | OKUMA Corp |
+| オシリスの .sys | 329240 | バイナリ防御システム |
+| ospfile_mini .sys | 329230 | OKUMA Corp |
 | SoftFilterxxx .sys | 329222 | WidgetNuri Corp |
 | RansomDefensexxx | 329220 | WidgetNuri Corp |
 | RanPodFS | 329210 | システムの管理 |
@@ -696,12 +747,13 @@ ms.locfileid: "73064151"
 | ECATDriver .sys | 329120 | ジャパン |
 | pfkrnl | 329110 | FXSEC LTD. |
 | E鳥フィルター .sys | 329100 | 非表示のリフレックス |
+| EdnemFsFilter | 329090 | ダコタ州大学 |
 | b9kernel | 329050 | Bit9 Inc. |
-| eeCtrl | 329010 | Symantec |
-| 消しゴム .sys (廃止) | 329010 | Symantec |
-| SRTSP. sys | 329000 | Symantec |
-| SRTSPIT-ia64 システム | 329000 | Symantec |
-| SRTSP64.SYS-x64 システム | 329000 | Symantec |
+| eeCtrl | 329010 | symantec |
+| 消しゴム .sys (廃止) | 329010 | symantec |
+| SRTSP. sys | 329000 | symantec |
+| SRTSPIT-ia64 システム | 329000 | symantec |
+| SRTSP64.SYS-x64 システム | 329000 | symantec |
 | a2ertpx86 | 328920 | Emsi Software GmbH |
 | a2ertpx64 | 328920 | Emsi Software GmbH |
 | a2gffx86-x86 | 328910 | Emsi Software GmbH |
@@ -710,12 +762,13 @@ ms.locfileid: "73064151"
 | a2acc | 328900 | Emsi Software GmbH |
 | x64 システムでの a2acc64 | 328900 | Emsi Software GmbH |
 | フライトレコーダー | 328850 | Malwarebytes Corp. |
-| si32_file | 328810 | Scargo Inc. |
-| si64_file | 328810 | Scargo Inc. |
+| si32_file .sys | 328810 | Scargo Inc. |
+| si64_file .sys | 328810 | Scargo Inc. |
 | mbam .sys | 328800 | Malwarebytes Corp. |
+| lnvscenter. sys | 328780 | Lenovo |
 | Enigmafilのドライバー (.sys) | 328770 | Enigoft Oft |
 | KUBWKSP | 328750 | Netlor SAS |
-| hcp_kernel_acq | 328740 | 参照アクションポイント |
+| hcp_kernel_acq .sys | 328740 | 参照アクションポイント |
 | SegiraFlt | 328730 | Segira の場合 |
 | wdocsafe | 328722 | Cheetah Mobile Inc. |
 | lbprotect | 328720 | Cheetah Mobile Inc. |
@@ -725,11 +778,12 @@ ms.locfileid: "73064151"
 | MaxProtector。 sys | 328610 | セキュリティで保護されたソフトウェアの最大数 |
 | maxcryptmon | 328601 | セキュリティで保護されたソフトウェアの最大数 |
 | SDActMon | 328600 | セキュリティで保護されたソフトウェアの最大数 |
+| TmKmSnsr | 328550 | Trend Micro Inc. |
 | fileflt | 328540 | Trend Micro Inc. |
 | TmEsFlt | 328530 | Trend Micro Inc. |
 | TmEyes. sys | 328520 | Trend Micro Inc. |
 | tmevtmgr | 328510 | Trend Micro Inc. |
-| tmpreflt | 328500 | 加算 |
+| tmpreflt | 328500 | 傾向 |
 | vcMFilter .sys | 328400 | SGRI Co., LTD. |
 | SAFsFilter | 328300 | ライトスピードシステム Inc. |
 | vsepflt | 328200 | VMware, Inc. |
@@ -737,13 +791,14 @@ ms.locfileid: "73064151"
 | sfavflt | 328130 | テクノロジの sang |
 | sfavflt | 328120 | テクノロジの sang |
 | drivesentryfilterdriver2lite | 328100 | ドライブエントリ Inc. |
-| WdFilter .sys | 328010 | [Microsoft] |
-| mpFilter .sys | 328000 | [Microsoft] |
+| WdFilter .sys | 328010 | マイクロソフト |
+| mpFilter .sys | 328000 | マイクロソフト |
 | vrSDetri | 327801 | ETRI |
 | vrSDetrix | 327800 | ETRI |
 | AhkSvPro .sys | 327720 | Ahkun。 |
 | AhkUsbFW. sys | 327710 | Ahkun。 |
 | AhkAMFlt | 327700 | Ahkun。 |
+| majoradvapi | 327680 | 北京 Majorsec |
 | PSINPROC。SYS.DATABASES | 327620 | パンダのセキュリティ |
 | PSINFILE。SYS.DATABASES | 327610 | パンダのセキュリティ |
 | amfsm .sys-Windows XP/2003 x64 | 327600 | パンダのセキュリティ |
@@ -755,20 +810,22 @@ ms.locfileid: "73064151"
 | easyanticheat | 327530 | EasyAntiCheat ソリューション |
 | 5nine. cbt. .sys | 327520 | 5nine ソフトウェア Inc. |
 | caavFltr | 327510 | コンピューターのアソシエーション |
-| ino_fltr | 327500 | コンピューターのアソシエーション |
-| SECOne_USB | 327426 | GRGBanking 機器 |
-| SECOne_Proc10 | 327424 | GRGBanking 機器 |
-| SECOne_REG10 | 327422 | GRGBanking 機器 |
-| SECOne_FileMon10 | 327420 | GRGBanking 機器 |
+| ino_fltr .sys | 327500 | コンピューターのアソシエーション |
+| SECOne_USB .sys | 327426 | GRGBanking 機器 |
+| SECOne_Proc10 .sys | 327424 | GRGBanking 機器 |
+| SECOne_REG10 .sys | 327422 | GRGBanking 機器 |
+| SECOne_FileMon10 .sys | 327420 | GRGBanking 機器 |
 | WCSDriver | 327410 | ホワイトクラウドのセキュリティ |
 | 360qpesv | 327404 | 360ソフトウェア (北京) |
 | dsark | 327402 | Qihoo 360 |
 | 360avflt | 327400 | Qihoo 360 |
+| sciptflt | 327334 | SECUI Corporation |
 | scifsflt | 327333 | SECUI Corporation |
 | ANVfsm .sys | 327310 | Arcdo |
 | CDrRSFlt | 327300 | Arcdo |
 | mfdriver .sys | 327250 | Imperva Inc. |
 | EPSMn .sys | 327200 | 中 |
+| TxFileFilter. sys | 327160 | 北京 Venus |
 | VTSysFlt | 327150 | 北京 Venus |
 | TesMon. sys | 327130 | Tencent |
 | QQSysMonX64 | 327125 | Tencent |
@@ -779,7 +836,7 @@ ms.locfileid: "73064151"
 | BDFileDefend | 326916 | Baidu (北京) |
 | BDsdKit .sys | 326914 | Baidu オンラインネットワークテクノロジ (北京) Co。 |
 | bd0003 | 326912 | Baidu オンラインネットワークテクノロジ (北京) Co。 |
-| Bfilter. sys | 326910 | Baidu (香港特別行政区) 限定 |
+| Bfilter. sys | 326910 | Baidu (香港) 限定 |
 | NeoKerbyFilter | 326900 | NeoAutus |
 | egnfsflt | 326830 | Egnyte Inc. |
 | RsFlt | 326820 | Redstor 制限 |
@@ -892,7 +949,7 @@ ms.locfileid: "73064151"
 | SCFltr | 323300 | SecurityCoverage, Inc. |
 | fildds. sys | 323200 | Filseclab |
 | fsfilter .sys | 323100 | MastedCode Ltd. |
-| fpav_rtp | 323000 | f 保護 |
+| fpav_rtp .sys | 323000 | f 保護 |
 | cwdriver .sys | 322900 | Leith |
 | AYFilter .sys | 322810 | ESTsoft |
 | Rtw | 322800 | ESTsoft |
@@ -927,6 +984,7 @@ ms.locfileid: "73064151"
 | PZDrvXP | 321600 | VisionPower Co., Ltd. |
 | ggc | 321510 | クイック回復 TechnologiesPvt。 社. |
 | catflt | 321500 | クイック回復 TechnologiesPvt。 社. |
+| snsrflt | 321495 | 迅速な回復テクノロジ Pvt。 社. |
 | bdsflt | 321490 | 迅速な回復テクノロジ Pvt。 社. |
 | arwflt | 321480 | 迅速な回復テクノロジ Pvt。 社. |
 | csagent .sys | 321410 | CrowdStrike Ltd. |
@@ -946,6 +1004,7 @@ ms.locfileid: "73064151"
 | dgsafe | 320950 | 王国 |
 | issfltr | 320900 | ISS |
 | hbflt | 320840 | BitDefender SRL |
+| vlflt | 320832 | BitDefender SRL |
 | bdsvm .sys | 320830 | Bitdefender |
 | gzflt | 320820 | BitDefender SRL |
 | bddevflt | 320812 | BitDefender SRL |
@@ -958,9 +1017,12 @@ ms.locfileid: "73064151"
 | AVC3.SYS.DATABASES | 320780 | BitDefender SRL |
 | TRUFOS.SYS.DATABASES | 320770 | BitDefender SRL |
 | aswmonflt | 320700 | Alwil |
+| kavnsi | 320650 | AVNOS |
 | HookCentre | 320602 | G データ |
 | Pk、.sys | 320601 | G データ |
 | MiniIcpt. sys | 320600 | G データ |
+| acdrv. sys | 320520 | OnMoon 企業のお客様 |
+| tmfsdrv2 | 320510 | Teramind |
 | avgntflt | 320500 | AGmbH |
 | klam | 320450 | Kaspersky ラボ |
 | klbg | 320440 | Kaspersky |
@@ -972,24 +1034,33 @@ ms.locfileid: "73064151"
 | klam | 320350 | Kaspersky ラボ |
 | hsmltwhl | 320340 | Hitachi ソリューション |
 | hssfwhl .sys | 320330 | Hitachi ソリューション |
+| DeepInsFS | 320323 | Deep 性質 Ltd.。 |
+| DeepInsFS | 320322 | Deep 性質 Ltd.。 |
+| DeepInsFS | 320321 | Deep 性質 Ltd.。 |
 | DeepInsFS | 320320 | Deep 性質 Ltd.。 |
 | avfsmn | 320310 | Anvisoft |
 | lbd. sys | 320300 | Lavasoft AB |
 | pavdrv | 320210 | Panzor サイバーセキュリティ |
 | rvsmon | 320200 | CJSC Returnil ソフトウェア |
-| WRKrn | 320110 | Webroot Inc. |
+| KawachFsMinifilter システム | 320160 | Sequretek IT |
+| securoFSD_x64 .sys | 320150 | knowwheresoft Ltd. |
+| WRAEKernel | 320112 | Webroot Inc. |
+| WRKrn | 320111 | Webroot Inc. |
+| WRCore .sys | 320110 | Webroot Inc. |
 | ssfmonm .sys | 320100 | Webroot Software, Inc. |
-| vk_fsf | 320050 | AxBx |
+| ODFsFimFilter | 320070 | Odyssey サイバーセキュリティ |
+| ODFsFilter | 320060 | Odyssey サイバーセキュリティ |
+| vk_fsf .sys | 320050 | AxBx |
 | VirtualAgent .sys | 320005 | Symantec |
 
 ## <a name="span-id300000_-_309998__fsfilter_replicationspanspan-id300000_-_309998__fsfilter_replicationspanspan-id300000_-_309998__fsfilter_replicationspan300000---309998-fsfilter-replication"></a><span id="300000_-_309998__FSFilter_Replication"></span><span id="300000_-_309998__fsfilter_replication"></span><span id="300000_-_309998__FSFILTER_REPLICATION"></span>30万-309998: FSFilter レプリケーション
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | IntelCAS | 309100 | Intel Corporation |
 | mvfs. sys | 309000 | IBM Corporation |
 | frxccd | 306000 | FSLogix Inc. |
-| fsrecord .sys | 305000 | [Microsoft] |
+| fsrecord .sys | 305000 | マイクロソフト |
 | InstMon | 304201 | Numecent Inc. |
 | StreamingFSD | 304200 | Numecent Inc. |
 | ubcminifilterdriver .sys | 304100 | Ullmore Ltd. |
@@ -1005,7 +1076,7 @@ ms.locfileid: "73064151"
 | bkbmfd64 (x64) | 303200 | BakBone Software, Inc. |
 | mblvn | 303100 | Packeteer |
 | AV12NFNT | 303000 | AhnLab |
-| mDP_win_mini | 302900 | マクロの影響 |
+| mDP_win_mini .sys | 302900 | マクロの影響 |
 | ctxubs | 302800 | Citrix Systems Inc. |
 | rrepfsf | 302700 | Rose-Ems Inc. |
 | cbfsfilter2017 | 301900 | スーパー柔軟なソフトウェア |
@@ -1022,7 +1093,8 @@ ms.locfileid: "73064151"
 ## <a name="span-id280000_-_289998__fsfilter_continuous_backupspanspan-id280000_-_289998__fsfilter_continuous_backupspanspan-id280000_-_289998__fsfilter_continuous_backupspan280000---289998-fsfilter-continuous-backup"></a><span id="280000_-_289998__FSFilter_Continuous_Backup"></span><span id="280000_-_289998__fsfilter_continuous_backup"></span><span id="280000_-_289998__FSFILTER_CONTINUOUS_BACKUP"></span>28万-289998: FSFilter 連続バックアップ
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
+| File_monitor .sys | 289000 | Acronis |
 | Klcdp | 288900 | Kaspersky ラボ |
 | splitinfmon | 288800 | 分割無限大 |
 | versamatic | 288700 | Acertant Tech |
@@ -1034,20 +1106,20 @@ ms.locfileid: "73064151"
 | HyperBacCA | 285000 | Red Gate Software Ltd. |
 | ZMSFsFltr | 284400 | Zenith の InfoTech |
 | AlfaSC | 284300 | Alfa Corporation |
-| hie_ifs | 284200 | Hie エレクトロニクス, Inc. |
+| hie_ifs .sys | 284200 | Hie エレクトロニクス, Inc. |
 | AAFs. sys | 284100 | AppAssure ソフトウェア |
-| defilter .sys (old) | 284000 | [Microsoft] |
+| defilter .sys (old) | 284000 | マイクロソフト |
 | aFsvDrv .sys | 283100 | ITSTATION Inc. |
 | tilana | 283000 | Tilana Sys |
 | VmDPFilter .sys | 282900 | マクロの影響 |
 | LbFilter | 281700 | リンク文 S.r.l. |
 | fbsfd .sys | 281600 | Ferro ソフトウェア |
 | du、emf | 281500 | S.L.、SPI、 |
-| file_tracker | 281420 | Acronis Inc. |
+| file_tracker .sys | 281420 | Acronis Inc. |
 | exbackup. sys | 281410 | Acronis Inc. |
 | afcdp. sys | 281400 | Acronis Inc. |
 | dcefltr | 281300 | Cofio Software Ltd. |
-| ipmrsync_mfilter | 281200 | OpenMars 企業 |
+| ipmrsync_mfilter .sys | 281200 | OpenMars 企業 |
 | cascade | 281100 | JP ソフトウェア |
 | filearchive. sys | 281000 | コードの分析 |
 | syscdp | 280900 | システム OK AB |
@@ -1056,7 +1128,7 @@ ms.locfileid: "73064151"
 | hpchgflt | 280800 | HP |
 | VirtFile | 280700 | Veritas |
 | DeqoCPS .sys | 280600 | Deqo |
-| LV_Tracker | 280500 | LiveVault |
+| LV_Tracker .sys | 280500 | LiveVault |
 | cpbak. sys | 280410 | チェックポイントソフトウェア |
 | tdmonxp | 280400 | TimeData |
 | nvfr_cpd | 280310 | Bakbone Software Inc. |
@@ -1067,7 +1139,12 @@ ms.locfileid: "73064151"
 ## <a name="span-id260000_-_269998__fsfilter_content_screenerspanspan-id260000_-_269998__fsfilter_content_screenerspanspan-id260000_-_269998__fsfilter_content_screenerspan260000---269998-fsfilter-content-screener"></a><span id="260000_-_269998__FSFilter_Content_Screener"></span><span id="260000_-_269998__fsfilter_content_screener"></span><span id="260000_-_269998__FSFILTER_CONTENT_SCREENER"></span>26万-269998: FSFilter コンテンツスクリーナー
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
+| taExeScanner sys | 268350 | ITSTATION Inc. |
+| GuardFSFlt | 268340 | ProShield |
+| usbguard. sys | 268330 | HangZhou 見る Tech |
+| gibepdevflt | 268320 | グループ-IB LTD. |
+| EffeDriver | 268310 | 「VA」 |
 | Klshadow | 268300 | Kaspersky ラボ |
 | TN28 | 268290 | ID 認証技術 |
 | PGDriver .sys | 268280 | Avecto Ltd. |
@@ -1120,9 +1197,9 @@ ms.locfileid: "73064151"
 | GagSecurity | 265120 | 北京 Shu Yan サイエンス |
 | PrintDriver .sys | 265110 | 北京 Shu Yan サイエンス |
 | アクティブな | 265100 | Rapidware Pty Ltd. |
-| avscan. sys | 265010 | [Microsoft] |
-| スキャナー .sys | 265000 | [Microsoft] |
-| DI_fs | 264910 | ソフト SB |
+| avscan. sys | 265010 | マイクロソフト |
+| スキャナー .sys | 265000 | マイクロソフト |
+| DI_fs .sys | 264910 | ソフト SB |
 | wgnpos. sys | 264900 | Orchestria |
 | odfltr | 264810 | NetClean テクノロジ |
 | ncpafltr | 264800 | NetClean テクノロジ |
@@ -1151,8 +1228,8 @@ ms.locfileid: "73064151"
 | システムのリダイレクト | 263110 | Soliton システム |
 | solitkm | 263100 | Soliton システム |
 | ipcfs | 263000 | NetVeda |
-| netgateav_access | 262910 | NETGATE 技術。 s.r.o. |
-| spyemrg_access | 262900 | NETGATE 技術。 s.r.o. |
+| netgateav_access .sys | 262910 | NETGATE 技術。 s.r.o. |
+| spyemrg_access .sys | 262900 | NETGATE 技術。 s.r.o. |
 | pxrmcet | 262800 | Proxure Inc. |
 | EgisTecFF | 262700 | これはテクノロジの Inc. です。 |
 | fgcpac | 262600 | Fortres の Corp Corp. |
@@ -1165,17 +1242,17 @@ ms.locfileid: "73064151"
 | psepfilter | 262100 | 絶対ソフトウェア |
 | SAMDriver .sys | 262000 | サミット IT |
 | emrcore .sys | 261920 | Ivanti Inc. |
-| wire_fsfilter | 261910 | ThreatSpike Labs |
+| wire_fsfilter .sys | 261910 | ThreatSpike Labs |
 | AMFileSystemFilter .sys | 261900 | AppSense Ltd. |
 | mtflt | 261880 | mTalos Inc. |
 | nxrmflt | 261680 | NextLabs, Inc. |
-| oc_fsfilter | 261300 | Raiffeisen Bank Aval |
+| oc_fsfilter .sys | 261300 | Raiffeisen Bank Aval |
 | hdlpflt | 261200 | McAfee Inc. |
-| CCFFilter .sys | 261160 | [Microsoft] |
-| cbafilt | 261150 | [Microsoft] |
-| SmbBandwidthLimitFilter | 261110 | [Microsoft] |
-| DfsrRo | 261100 | [Microsoft] |
-| DataScrn | 261000 | [Microsoft] |
+| CCFFilter .sys | 261160 | マイクロソフト |
+| cbafilt | 261150 | マイクロソフト |
+| SmbBandwidthLimitFilter | 261110 | マイクロソフト |
+| DfsrRo | 261100 | マイクロソフト |
+| DataScrn | 261000 | マイクロソフト |
 | ldusbro .sys | 260900 | LANDesk Inc. |
 | FileScreenFilter .sys | 260800 | Veritas |
 | cpAcOnPnP | 260720 | conpal GmbH |
@@ -1186,7 +1263,8 @@ ms.locfileid: "73064151"
 | symefasi | 260610 | Symantec Corporation |
 | symefa | 260600 | Symantec |
 | symefa64 | 260600 | Symantec |
-| aictracedrv_cs | 260500 | AI コンサルティング |
+| apdFSF sys | 260550 | Cyberbit Ltd. |
+| aictracedrv_cs .sys | 260500 | AI コンサルティング |
 | DWFIxxxx .sys | 260410 | SciencePark Corporation |
 | DWFIxxxx .sys | 260400 | SciencePark Corporation |
 | DSDriver .sys | 260330 | ManageEngine Zoho Corp |
@@ -1201,40 +1279,43 @@ ms.locfileid: "73064151"
 ## <a name="span-id240000_-_249999__fsfilter_quota_managementspanspan-id240000_-_249999__fsfilter_quota_managementspanspan-id240000_-_249999__fsfilter_quota_managementspan240000---249999-fsfilter-quota-management"></a><span id="240000_-_249999__FSFilter_Quota_Management"></span><span id="240000_-_249999__fsfilter_quota_management"></span><span id="240000_-_249999__FSFILTER_QUOTA_MANAGEMENT"></span>24万-249999: FSFilter クォータの管理
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| ntps_qfs | 245100 | NTP ソフトウェア |
+|-----------------------------|----------|-----------------------------------------|
+| ntps_qfs .sys | 245100 | NTP ソフトウェア |
 | PSSFsFilter | 245000 | PSS システム |
 | Sptqmg | 245300 | Saf の終了 |
-| storqosflt | 244000 | [Microsoft] |
+| storqosflt | 244000 | マイクロソフト |
 
 ## <a name="span-id220000_-_229999__fsfilter_system_recoveryspanspan-id220000_-_229999__fsfilter_system_recoveryspanspan-id220000_-_229999__fsfilter_system_recoveryspan220000---229999-fsfilter-system-recovery"></a><span id="220000_-_229999__FSFilter_System_Recovery"></span><span id="220000_-_229999__fsfilter_system_recovery"></span><span id="220000_-_229999__FSFILTER_SYSTEM_RECOVERY"></span>22万-229999: FSFilter システムの回復
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| file_protector | 227000 | Acronis |
-| fbwf .sys | 226000 | [Microsoft] |
+|-----------------------------|----------|-----------------------------------------|
+| file_protector .sys | 227000 | Acronis |
+| fbwf .sys | 226000 | マイクロソフト |
 | Klsysrec | 221500 | Kaspersky ラボ |
 | SFDRV.SYS.DATABASES | 221400 | Utixo の場合 |
-| sp_prot | 221300 | Xacti Corporation |
+| sp_prot .sys | 221300 | Xacti Corporation |
 | nsfilep .sys | 221200 | Netsupport 制限付き |
 | syscow | 221100 | システム OK AB |
-| fsredir | 221000 | [Microsoft] |
+| fsredir | 221000 | マイクロソフト |
 
 ## <a name="span-id200000_-_209999__fsfilter_cluster_file_systemspanspan-id200000_-_209999__fsfilter_cluster_file_systemspanspan-id200000_-_209999__fsfilter_cluster_file_systemspan200000---209999-fsfilter-cluster-file-system"></a><span id="200000_-_209999__FSFilter_Cluster_File_System"></span><span id="200000_-_209999__fsfilter_cluster_file_system"></span><span id="200000_-_209999__FSFILTER_CLUSTER_FILE_SYSTEM"></span>20万-209999: FSFilter クラスターファイルシステム
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | CVCBT .sys | 203400 | CommVault Systems, Inc. |
-| ResumeKeyFilter | 202000 | [Microsoft] |
+| ResumeKeyFilter | 202000 | マイクロソフト |
+| VeeamFCT. sys | 201900 | Veeam ソフトウェア |
+| ShadowVirtualStorage | 201800 | ブレードの SAS |
 
 ## <a name="span-id180000_-_189999__fsfilter_hsmspanspan-id180000_-_189999__fsfilter_hsmspanspan-id180000_-_189999__fsfilter_hsmspan180000---189999-fsfilter-hsm"></a><span id="180000_-_189999__FSFilter_HSM"></span><span id="180000_-_189999__fsfilter_hsm"></span><span id="180000_-_189999__FSFILTER_HSM"></span>18万-189999: FSFilter HSM
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| wcifs. sys | 189900 | [Microsoft] |
-| prjflt | 189800 | [Microsoft] |
-| gameflt | 189750 | [Microsoft] |
+|-----------------------------|----------|-----------------------------------------|
+| wcifs. sys | 189900 | マイクロソフト |
+| prjflt | 189800 | マイクロソフト |
+| gameflt | 189750 | マイクロソフト |
 | nvmsqrd. sys | 188900 | NVIDIA Corporation |
+| Ghost_file .sys | 188800 | Acronis |
 | RsFlt | 187000 | Redstor 制限 |
 | mnefs .sys | 186800 | Nippon Techno Lab |
 | Svfsf | 186700 | Spハーソフトテクノロジ |
@@ -1243,21 +1324,23 @@ ms.locfileid: "73064151"
 | gwmemory. sys | 186600 | Macrotec の場合 |
 | cteraflt. sys | 186550 | CTERA Networks Ltd. |
 | dbx. sys | 186500 | Dropbox Inc. |
+| iMDrvFlt | 186450 | iManage のオンライン |
 | quaddrasi .sys | 186400 | Quaddra ソフトウェア |
 | gdrive .sys | 186300 | 同社 |
 | CoreSyncFilter | 186250 | Adobe Systems Inc. |
 | EaseTag | 186200 | EaseVault テクノロジ Inc. |
+| HSFilter | 186150 | HubStor Inc. |
 | hcminifilter | 186100 | すばらしい Cloud Inc. |
 | PDFsFilter .sys | 186000 | Raxco Sfotware Inc. |
 | camino | 185900 | CaminoSoft Corp |
-| C2C_AF1R.SYS.DATABASES | 185810 | C2C システム |
+| C2C_AF1R。SYS.DATABASES | 185810 | C2C システム |
 | DFdriver .sys | 185800 | DataFirst Corporation |
 | amfadrv .sys | 185700 | Quest ソフトウェア Inc. |
 | HSMdriver | 185600 | Wim Vervoorn |
 | kdfilter | 185555 | Komprise Inc. |
 | htdafd. sys | 185500 | ブリッジヘッドソフト |
-| odphflt | 180455 | [Microsoft] |
-| cldflt | 180451 | [Microsoft] |
+| odphflt | 180455 | マイクロソフト |
+| cldflt | 180451 | マイクロソフト |
 | SymHsm | 185400 | Symantec |
 | evmf. sys | 185100 | Symantec |
 | otfilter .sys | 185000 | 過剰な雰囲気ソフト |
@@ -1267,19 +1350,19 @@ ms.locfileid: "73064151"
 | acahsm | 184600 | 自律企業 |
 | zlhsm .sys | 184500 | ZL テクノロジ |
 | CFileProtect | 184100 | Zhejiang セキュリティ技術 |
-| stc_restore_filter | 184000 | StorageCraft テクノロジ |
-| dvfilter .sys | 183003 | [Microsoft] |
-| システム化 | 183002 | [Microsoft] |
-| Changetracker. sys | 183001 | [Microsoft] |
-| Fer. sys | 183000 | [Microsoft] |
+| stc_restore_filter .sys | 184000 | StorageCraft テクノロジ |
+| dvfilter .sys | 183003 | マイクロソフト |
+| システム化 | 183002 | マイクロソフト |
+| Changetracker. sys | 183001 | マイクロソフト |
+| Fer. sys | 183000 | マイクロソフト |
 | hsmcdpflt | 182700 | Metalogix |
 | archivmgr | 182690 | Metalogix |
-| ntps_oddm | 182600 | NTP ソフトウェア |
+| ntps_oddm .sys | 182600 | NTP ソフトウェア |
 | XDFileSys | 182500 | XenData 制限あり |
 | upmjit. sys | 182400 | Citrix システム |
 | AtmosFS | 182310 | EMC Corporation |
 | DxSpy. sys | 182300 | EMC Software Inc. |
-| car_hsmflt | 182200 | Caringo, Inc. |
+| car_hsmflt .sys | 182200 | Caringo, Inc. |
 | BRDriver .sys | 182100 | BitRaider |
 | BRDriver64 | 182100 | BitRaider |
 | autnhsm | 182000 | 自律企業 |
@@ -1300,60 +1383,64 @@ ms.locfileid: "73064151"
 | BkfMap | 181200 | データストレージグループ |
 | hsmfilter | 181100 | GRAU Data Storage AG |
 | mwilcflt | 181020 | Moonwalk Universal P/L |
+| mwildflt | 181015 | Moonwalk |
 | mwilsflt | 181010 | Moonwalk Universal P/L |
 | mwidmflt | 181000 | Moonwalk Universal P/L |
 | HcpAwfs | 181960 | Hitachi データシステム |
 | sdrefltr | 180950 | Hitachi データシステム |
 | fltasm | 180900 | グローバル360 |
-| cnet_hsm | 180850 | Carroll-Net Inc. |
+| cnet_hsm .sys | 180850 | Carroll-Net Inc. |
 | pntvolflt | 180800 | ソフトウェア & システムのポイント |
-| appxstrm | 180710 | [Microsoft] |
-| wimmount | 180700 | [Microsoft] |
-| hsmflt | 180600 | [Microsoft] |
-| dfsrflt | 180500 | [Microsoft] |
-| Storagesyncguard.sys | 180465 | [Microsoft] |
-| Storagesync.sys | 180460 | [Microsoft] |
-| 重複除去. sys | 180450 | [Microsoft] |
-| dfmflt | 180410 | [Microsoft] |
-| sis .sys | 180400 | [Microsoft] |
-| rbt_wfd | 180300 | Riverbed テクノロジ、Inc. |
+| appxstrm | 180710 | マイクロソフト |
+| wimmount | 180700 | マイクロソフト |
+| hsmflt | 180600 | マイクロソフト |
+| dfsrflt | 180500 | マイクロソフト |
+| Storagesyncguard.sys | 180465 | マイクロソフト |
+| Storagesync.sys | 180460 | マイクロソフト |
+| 重複除去. sys | 180450 | マイクロソフト |
+| dfmflt | 180410 | マイクロソフト |
+| sis .sys | 180400 | マイクロソフト |
+| rbt_wfd .sys | 180300 | Riverbed テクノロジ、Inc. |
 
 ## <a name="span-id170000_-_174999__fsfilter_imaging_ex_zipspanspan-id170000_-_174999__fsfilter_imaging_ex_zipspanspan-id170000_-_174999__fsfilter_imaging_ex_zipspan170000---174999-fsfilter-imaging-ex-zip"></a><span id="170000_-_174999__*FSFilter_Imaging_(ex:_.ZIP)"></span><span id="170000_-_174999__*fsfilter_imaging_(ex:_.zip)"></span><span id="170000_-_174999__*FSFILTER_IMAGING_(EX:_.ZIP)"></span>17万-174999: * FSFilter Imaging (例:ZIP
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | pfmfs_???.sys.databases | 172100 | Pismo Technic Inc. |
-| virtual_file | 172000 | Acronis |
-| Wimfltr.sys | 170500 | [Microsoft] |
+| virtual_file .sys | 172000 | Acronis |
+| Wimfltr.sys | 170500 | マイクロソフト |
 
 ## <a name="span-id160000_-_169999__fsfilter_compressionspanspan-id160000_-_169999__fsfilter_compressionspanspan-id160000_-_169999__fsfilter_compressionspan160000---169999-fsfilter-compression"></a><span id="160000_-_169999__FSFilter_Compression"></span><span id="160000_-_169999__fsfilter_compression"></span><span id="160000_-_169999__FSFILTER_COMPRESSION"></span>16万-169999: FSFilter 圧縮
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | CmgFFC | 166000 | Credant テクノロジ |
-| .sys を圧縮する | 165000 | [Microsoft] |
-| cmpflt | 162000 | [Microsoft] |
+| .sys を圧縮する | 165000 | マイクロソフト |
+| cmpflt | 162000 | マイクロソフト |
 | IridiumIO | 161700 | # O |
 | logcompressor. sys | 161600 | VelociSQL Inc. |
 | GcfFilter .sys | 161500 | GemacmbH |
 | ssddoubler | 161400 | Sinan Karaca |
 | Sptcmp | 161300 | Saf の終了 |
-| wimfsf | 161000 | [Microsoft] |
+| wimfsf | 161000 | マイクロソフト |
 | GEFCMP .sys | 160100 | Symantec |
 
 ## <a name="span-id140000_-_149999__fsfilter_encryptionspanspan-id140000_-_149999__fsfilter_encryptionspanspan-id140000_-_149999__fsfilter_encryptionspan140000---149999-fsfilter-encryption"></a><span id="140000_-_149999__FSFilter_Encryption"></span><span id="140000_-_149999__fsfilter_encryption"></span><span id="140000_-_149999__FSFILTER_ENCRYPTION"></span>14万-149999: FSFilter の暗号化
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
+| AAFS. sys | 149110 | ViGero |
 | FJSeparettiFilterRamMon | 149100 | 富士通限定 |
+| trsxefs | 149060 | このようになります。 |
 | psatfilter. sys | 149050 | ProYuga |
 | RdFilter .sys | 149040 | CyberEye Research Labs |
-| gisfile_decryption | 149030 | 中国の通信 |
+| gisfile_decryption .sys | 149030 | 中国の通信 |
 | TIFSFilter .sys | 149020 | SG Corporation |
 | OsrDt2 | 149010 | 情報セキュリティ Corp |
 | EasyKryptMF | 149000 | SoftKrypt の場合 |
 | 南京錠 (.sys) | 148910 | IntSoft Inc. |
 | ffecore | 148900 | Winmagic |
+| bkfs | 148880 | Hangzhou JoyBlock Ltd. |
 | fangcloud .sys | 148860 | Hangzhou Yifangyun |
 | klvfs | 148810 | Kaspersky ラボ |
 | Klfle | 148800 | Kaspersky ラボ |
@@ -1373,7 +1460,7 @@ ms.locfileid: "73064151"
 | clcxcore .sys | 148210 | AFORE ソリューション Inc. |
 | OrisLPDrv .sys | 148200 | CGS 発行技術 |
 | nlemsys | 148100 | NETLIB |
-| prvflder | 148000 | [Microsoft] |
+| prvflder | 148000 | マイクロソフト |
 | ssefs | 147900 | SecuLution GmbH |
 | SePSed | 147800 | Humming Head, Inc. |
 | dlmfencx .sys | 147700 | Data Encryption Ltd. |
@@ -1456,6 +1543,7 @@ ms.locfileid: "73064151"
 | Fcfileio sys | 143100 | Brainzsquare, Ltd. |
 | cpdrm. sys | 143000 | Pikewerks |
 | vmfiltr .sys | 142900 | Vormetric Inc. |
+| Sfntpffd | 142890 | Thales CPL |
 | VFSEnc. sys | 142811 | Symantec |
 | pgpfs .sys | 142810 | Symantec |
 | システム | 142800 | Symantec |
@@ -1463,12 +1551,13 @@ ms.locfileid: "73064151"
 | cpefs .sys | 142600 | 暗号化-Pro |
 | dekfs .sys | 142500 | KasherLab co., ltd. |
 | qlockfilter .sys | 142400 | Binqsoft Inc. |
-| RRFilterDriverStack_d3 | 142300 | 合理的に保持 |
+| RRFilterDriverStack_d3 .sys | 142300 | 合理的に保持 |
 | cve. sys | 142200 | 絶対ソフトウェア Corp。 |
 | spcflt | 142100 | 富士通 BSC Inc. |
 | ldsecusb .sys | 142000 | LANDesk Inc. |
 | fencr sys | 141900 | SODATSW spol。 s.r.o. |
 | RubiFlt | 141800 | Hitachi |
+| NCrypt | 141700 | Nimshi Corp |
 | mfild sys | 141660 | Penta セキュリティシステム |
 | cbfsfilter2017 | 141635 | オートマトン Inc. |
 | cbfsfilter2017 | 141634 | オートマトン Inc. |
@@ -1489,20 +1578,22 @@ ms.locfileid: "73064151"
 | DWENxxxx .sys | 141400 | SciencePark Corporation |
 | hdFileSentryDrv32 | 141300 | He/g の防御 |
 | hdFileSentryDrv64 | 141300 | He/g の防御 |
-| CovertxFilter .sys | 141240 | マイクロフォーカス |
+| pnpfs. sys | 141250 | PNP SECURE INC. |
+| SmartCipherFilter | 141240 | マイクロフォーカス |
 | cplcdt2 | 141230 | conpal GmbH |
 | asCryptoFilter .sys | 141220 | 適用されたセキュリティ GmbH |
 | NetCryptKR | 141210 | NetCrypt Pty Ltd. |
 | BHFilter | 141200 | スピアソリューション |
-| Filecrypt | 141100 | [Microsoft] |
-| http.sys の暗号化 | 141010 | [Microsoft] |
-| swapBuffers. sys | 141000 | [Microsoft] |
+| Filecrypt | 141100 | マイクロソフト |
+| http.sys の暗号化 | 141010 | マイクロソフト |
+| swapBuffers. sys | 141000 | マイクロソフト |
 
 ## <a name="span-id130000_-_139999__fsfilter_virtualizationspanspan-id130000_-_139999__fsfilter_virtualizationspanspan-id130000_-_139999__fsfilter_virtualizationspan130000---139999-fsfilter-virtualization"></a><span id="130000_-_139999__FSFilter_Virtualization"></span><span id="130000_-_139999__fsfilter_virtualization"></span><span id="130000_-_139999__FSFILTER_VIRTUALIZATION"></span>13万-139999: FSFilter 仮想化
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | Klvirt | 138100 | Kaspersky ラボ |
+| thsmmf. sys | 138060 | Talon ストレージソリューション |
 | VMagic .sys | 138050 | AI コンサルティング |
 | GetSAS .sys | 138040 | SAS 協会 Inc. |
 | rqtNos | 138030 | Reアク Ta Ltd. |
@@ -1536,6 +1627,7 @@ ms.locfileid: "73064151"
 | pszmf. sys | 136430 | Sony Corporation |
 | sxsudfmf | 136410 | Sony Corporation |
 | vfammf | 136400 | Sony Corporation |
+| lwfsflt | 136300 | Liquidware Labs |
 | VHDFlt | 136240 | Dell |
 | VHDFlt | 136230 | Dell |
 | VHDFlt | 136220 | Dell |
@@ -1543,19 +1635,19 @@ ms.locfileid: "73064151"
 | ncfsfltr | 136200 | NComputing Inc. |
 | cmdguard | 136100 | COMODO Security Solutions Inc. |
 | hpfsredir | 136000 | HP |
-| svhdxflt | 135100 | [Microsoft] |
-| luafv .sys | 135000 | [Microsoft] |
+| svhdxflt | 135100 | マイクロソフト |
+| luafv .sys | 135000 | マイクロソフト |
 | ivm .sys | 134000 | RingCube テクノロジ |
 | ivm .sys | 133990 | Citrix システム |
 | frxdrvvt | 132700 | FSLogix Inc. |
 | pfmfs_???.sys.databases | 132600 | Pismo Technic Inc. |
 | Stcvhdmf | 132600 | StorageCraft Tech Corp |
 | appdrv01 | 132500 | 保護テクノロジ |
-| virtual_file | 132400 | Acronis |
+| virtual_file .sys | 132400 | Acronis |
 | pdiFsFilter | 132300 | 位 Data Inc. |
 | avgvtx86 | 132200 | 平均テクノロジ CS-CZ |
 | avgvtx64 | 132200 | 平均テクノロジ CS-CZ |
-| DataNet_Driver | 132100 | AppSense Ltd. |
+| DataNet_Driver .sys | 132100 | AppSense Ltd. |
 | EgenPage .sys | 132000 | Eebcdic a, Inc. |
 | unidrive-old | 131900 | Unidesk |
 | ivm. sys. old | 131800 | RingCube テクノロジ |
@@ -1567,32 +1659,36 @@ ms.locfileid: "73064151"
 | Sptvrt | 131300 | Saf の終了 |
 | rswf のアンチ .sys | 131210 | Panzor サイバーセキュリティ |
 | aicvirt | 131200 | AI コンサルティング |
-| sfo .sys | 130100 | [Microsoft] |
-| DeVolume | 13万 | [Microsoft] |
+| sfo .sys | 130100 | マイクロソフト |
+| DeVolume | 13万 | マイクロソフト |
 
 ## <a name="span-id120000_-_129999__fsfilter_physical_quota_managementspanspan-id120000_-_129999__fsfilter_physical_quota_managementspanspan-id120000_-_129999__fsfilter_physical_quota_managementspan120000---129999-fsfilter-physical-quota-management"></a><span id="120000_-_129999__FSFilter_Physical_Quota_management"></span><span id="120000_-_129999__fsfilter_physical_quota_management"></span><span id="120000_-_129999__FSFILTER_PHYSICAL_QUOTA_MANAGEMENT"></span>12万-129999: FSFilter 物理クォータ管理
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
-| クォータ. sys | 125000 | [Microsoft] |
+|-----------------------------|----------|-----------------------------------------|
+| クォータ. sys | 125000 | マイクロソフト |
 | qafilter | 124000 | Veritas |
 | DroboFlt | 123900 | データロボット |
 
 ## <a name="span-id100000_-_109999__fsfilter_open_filespanspan-id100000_-_109999__fsfilter_open_filespanspan-id100000_-_109999__fsfilter_open_filespan100000---109999-fsfilter-open-file"></a><span id="100000_-_109999__FSFilter_Open_File"></span><span id="100000_-_109999__fsfilter_open_file"></span><span id="100000_-_109999__FSFILTER_OPEN_FILE"></span>10万-109999: FSFilter 開いているファイル
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | insyncmf | 105000 | InSync |
 | SPILock8 | 100900 | ソフトウェアのいいね。 |
 | Klbackupflt | 100800 | Kaspersky |
 | repkap | 100700 | ビジョンソリューション |
 | symrg | 100600 | Symantec |
 | adsfilter | 100500 | PolyServ |
+| FMonitor .sys | 100490 | Safetica |
 
 ## <a name="span-id80000_-_89999__fsfilter_security_enhancerspanspan-id80000_-_89999__fsfilter_security_enhancerspanspan-id80000_-_89999__fsfilter_security_enhancerspan80000---89999-fsfilter-security-enhancer"></a><span id="80000_-_89999__FSFilter_Security_Enhancer"></span><span id="80000_-_89999__fsfilter_security_enhancer"></span><span id="80000_-_89999__FSFILTER_SECURITY_ENHANCER"></span>8万-89999: FSFilter セキュリティ言え
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
+| pfcflt | 88240 | PNP SECURE INC. |
+| pegasus | 88230 | 情報セキュリティの保証 |
+| RSBDrv .sys | 88220 | SMTechnology Co。 |
 | psprotf | 88210 | Panzor サイバーセキュリティ |
 | システム (l) | 88100 | Randtronics Pty |
 | dsbwnck | 88000 | Easy Solution Inc. |
@@ -1618,7 +1714,7 @@ ms.locfileid: "73064151"
 | ikfsmflt | 87300 | IronKey Inc. |
 | Klsec | 87200 | Kaspersky ラボ |
 | XtimUSBFsFilterDrv .sys | 87190 | Dalian CP-SDT |
-| RGFLT_FM | 87180 | Hauri inc. |
+| RGFLT_FM .sys | 87180 | Hauri inc. |
 | flockflt | 87170 | Ahranta Inc. |
 | ZdCore .sys | 87160 | Zends の技術的ソリューション |
 | dcrypt | 87150 | ReactOS Foundation |
@@ -1682,14 +1778,15 @@ ms.locfileid: "73064151"
 | cpAcOnPnP | 81910 | conpal GmbH |
 | cpsgfsmf | 81900 | conpal GmbH |
 | ndevsec .sys | 81800 | Norman ASA |
-| ViewIntus_RTDG | 81700 | Pentego Technologies Ltd. |
+| ViewIntus_RTDG .sys | 81700 | Pentego Technologies Ltd. |
+| BKSandFS | 81640 | Binklac ワークステーション |
 | エアロック .sys | 81630 | エアロックデジタル Pty Ltd. |
 | zam .sys | 81620 |  |
 | ANXfsm | 81610 | Arcdo |
 | CDrSDFlt | 81600 | Arcdo |
 | crnselfdefence32 | 81500 | Coranti Inc. |
 | crnselfdefence64 | 81500 | Coranti Inc. |
-| zlock_drv | 81400 | セキュリティ |
+| zlock_drv .sys | 81400 | セキュリティ |
 | f101fs | 81300 | Fortres の Corp Corp. |
 | sysgar | 81200 | 中核データ回復 |
 | EmbargoM | 81100 | ScriptLogic |
@@ -1712,7 +1809,7 @@ ms.locfileid: "73064151"
 ## <a name="span-id60000_-_69999__fsfilter_copy_protectionspanspan-id60000_-_69999__fsfilter_copy_protectionspanspan-id60000_-_69999__fsfilter_copy_protectionspan60000---69999-fsfilter-copy-protection"></a><span id="60000_-_69999__FSFilter_Copy_Protection"></span><span id="60000_-_69999__fsfilter_copy_protection"></span><span id="60000_-_69999__FSFILTER_COPY_PROTECTION"></span>6万-69999: FSFilter のコピー保護
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | d3clock | 67000 | D3CRYPT3D の場合 |
 | cbfltfs4 | 66500 | I3D テクノロジ Inc. |
 | CkProcess | 66100 | KASHU SYSTEM DESIGN INC. |
@@ -1722,12 +1819,13 @@ ms.locfileid: "73064151"
 | rgasdev | 65500 | Macrovision |
 | SkyFPDrv | 65410 | 空のコロケーション。 |
 | SkyLWP | 65400 | 空のコロケーション。 |
+| SkySDVRF. sys | 65390 | 空のコロケーション。 |
 | SnEraser ゴム | 65300 | の場合 |
 | vfilter .sys | 65200 | RSJ Software GmbH |
 | COGOFlt32 | 65100 | Fortium Technologies Ltd. |
 | COGOFlt64 | 65100 | Fortium Technologies Ltd. |
 | COGOFLTia64 | 65100 | Fortium Technologies Ltd. |
-| 削除機能 | 65000 | [Microsoft] |
+| 削除機能 | 65000 | マイクロソフト |
 | BRDriver .sys | 64000 | BitRaider の場合 |
 | BRDriver64 | 64000 | BitRaider の場合 |
 | X7Ex | 62500 | Exent Technologies Ltd. |
@@ -1736,7 +1834,7 @@ ms.locfileid: "73064151"
 | sds | 62000 | 送信ソフトウェア |
 | TotalSystemAuditor .sys | 61600 | ANRC のオンライン |
 | MBAMApiary .sys | 61500 | Malwarebytes Corp. |
-| WA_FSW | 61400 | Programas Admin Aci&#243;n y Mejoramiento |
+| WA_FSW .sys | 61400 | Programas Admin Aci&#243;n y Mejoramiento |
 | ViewIntus_RTAS | 61300 | Pentego テクノロジ |
 | tffac .sys | 61200 | 東芝 Corporation |
 | tccp .sys | 61100 | TrusCont Ltd. |
@@ -1745,7 +1843,7 @@ ms.locfileid: "73064151"
 ## <a name="span-id40000_-_49999__fsfilter_bottomspanspan-id40000_-_49999__fsfilter_bottomspanspan-id40000_-_49999__fsfilter_bottomspan40000---49999-fsfilter-bottom"></a><span id="40000_-_49999__FSFilter_Bottom"></span><span id="40000_-_49999__fsfilter_bottom"></span><span id="40000_-_49999__FSFILTER_BOTTOM"></span>4万-49999: 下位の FSFilter
 
 | ミニ                  | 対地 | Company                                 |
-------------------------------|----------|-----------------------------------------|
+|-----------------------------|----------|-----------------------------------------|
 | RMPFileMounter | 48000 | ManageEngine Zoho |
 | cbfsfilter2017 | 47400 | 12d Synergy |
 | pfmfs_???.sys.databases | 47300 | Pismo Technic Inc. |
@@ -1753,19 +1851,19 @@ ms.locfileid: "73064151"
 | hsmltlib | 47110 | Hitachi ソリューション |
 | hskdlib. sys | 47100 | Hitachi ソリューション |
 | acmnlib | 47090 | Hitachi ソリューション |
-| aictracedrv_b | 47000 | AI コンサルティング |
+| aictracedrv_b .sys | 47000 | AI コンサルティング |
 | hhdcfltr | 46900 | Seagate テクノロジ |
-| Npsvctrig | 46000 | [Microsoft] |
+| Npsvctrig | 46000 | マイクロソフト |
 | klvfs | 44900 | Kaspersky ラボ |
 | Klbackupflt | 44890 | Kaspersky ラボ |
-| rsfxdrv .sys | 41000 | [Microsoft] |
-| defilter .sys | 40900 | [Microsoft] |
-| AppVVemgr | 40800 | [Microsoft] |
-| wofadk. sys | 40730 | [Microsoft] |
-| wof. sys | 40700 | [Microsoft] |
-| fileinfo | 40500 | [Microsoft] |
-| WinSetupBoot .sys | 40400 | [Microsoft] |
+| rsfxdrv .sys | 41000 | マイクロソフト |
+| defilter .sys | 40900 | マイクロソフト |
+| AppVVemgr | 40800 | マイクロソフト |
+| wofadk. sys | 40730 | マイクロソフト |
+| wof. sys | 40700 | マイクロソフト |
+| fileinfo | 40500 | マイクロソフト |
+| WinSetupBoot .sys | 40400 | マイクロソフト |
 
 ## <a name="span-id20000_-_29999__fsfilter_systemspanspan-id20000_-_29999__fsfilter_systemspanspan-id20000_-_29999__fsfilter_systemspan20000---29999-fsfilter-system"></a><span id="20000_-_29999__FSFilter_System"></span><span id="20000_-_29999__fsfilter_system"></span><span id="20000_-_29999__FSFILTER_SYSTEM"></span>2万-29999: FSFilter システム
 
-なし。
+[なし]。
