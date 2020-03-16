@@ -28,7 +28,7 @@
           href: advantages-of-the-filter-manager-model.md
         - name: ミニフィルター ドライバーに対するフィルター マネージャーのサポート
           items:
-            - name: ロードとアンロード
+            - name: 読み込みとアンロード
               href: loading-and-unloading.md
             - name: I/O 操作の処理
               href: processing-i-o-operations.md
@@ -56,7 +56,7 @@
       items:
         - name: ミニフィルター ドライバーのインストール
           href: installing-a-minifilter-driver.md
-        - name: INF ファイルを作成する
+        - name: INF ファイルの作成
           href: creating-an-inf-file-for-a-minifilter-driver.md
         - name: 読み込み順序グループと高度
           href: load-order-groups-and-altitudes-for-minifilter-drivers.md
@@ -66,7 +66,7 @@
           href: minifilter-altitude-request.md
         - name: 再解析ポイント タグ要求
           href: reparse-point-tag-request.md
-    - name: ミニフィルター DriverEntry ルーチン
+    - name: ミニフィルターの DriverEntry ルーチン
       items:
         - name: DriverEntry ルーチンの記述
           href: writing-a-driverentry-routine-for-a-minifilter-driver.md
@@ -74,13 +74,13 @@
           href: registering-the-minifilter-driver.md
         - name: フィルタリングの開始
           href: initiating-filtering.md
-        - name: 返される状態
+        - name: 状態を返す
           href: returning-status-from-a-minifilter-driverentry-routine.md
-    - name: ミニフィルター FilterUnloadCallback ルーチン
+    - name: ミニフィルターの FilterUnloadCallback ルーチン
       items:
         - name: FilterUnloadCallback ルーチンの登録
           href: registering-a-filterunloadcallback-routine.md
-        - name: FilterUnloadCallback が呼び出されるとき
+        - name: FilterUnloadCallback が呼び出された場合
           href: when-the-filterunloadcallback-routine-is-called.md
         - name: 実装
           items:
@@ -92,7 +92,7 @@
               href: unregistering-the-minifilter.md
             - name: グローバル クリーンアップの実行
               href: performing-global-cleanup.md
-            - name: FilterUnloadCallback ルーチンから返される状態
+            - name: FilterUnloadCallback ルーチンから状態を返す
               href: returning-status-from-a-filterunloadcallback-routine.md
     - name: 操作前と操作後のコールバック ルーチン
       items:
@@ -108,7 +108,7 @@
               href: writing-preoperation-callback-routines.md
             - name: I/O 操作を渡す
               items:
-                - name: 下のミニフィルター ドライバー インスタンス スタックへ I/O 操作を渡す
+                - name: ミニフィルター ドライバー インスタンス スタックへ I/O 操作を渡す
                   href: passing-an-i-o-operation-down-the-minifilter-driver-instance-stack.md
                 - name: FLT_PREOP_SUCCESS_WITH_CALLBACK が返される場合
                   href: returning-flt-preop-success-with-callback.md
@@ -120,7 +120,7 @@
               href: completing-an-i-o-operation-in-a-preoperation-callback-routine.md
             - name: 操作前コールバック ルーチン内で高速 I/O 操作を許可しない
               href: disallowing-a-fast-i-o-operation-in-a-preoperation-callback-routine.md
-            - name: 操作前コールバック ルーチン内で I/O 操作を保留にする
+            - name: 操作前コールバック ルーチン内で高速 I/O 操作を保留にする
               href: pending-an-i-o-operation-in-a-preoperation-callback-routine.md
         - name: 操作後のコールバックの実装
           items:
@@ -134,7 +134,7 @@
                   href: ensuring-that-completion-processing-is-performed-at-safe-irql.md
             - name: 操作後コールバック ルーチン内で I/O 操作を保留にする
               href: pending-an-i-o-operation-in-a-postoperation-callback-routine.md
-            - name: 操作後コールバック ルーチン内で I/O 操作を失敗とする
+            - name: 操作後コールバック ルーチン内で I/O 操作が失敗する
               href: failing-an-i-o-operation-in-a-postoperation-callback-routine.md
         - name: I/O 操作用のパラメーターの修正
           href: modifying-the-parameters-for-an-i-o-operation.md
@@ -186,9 +186,21 @@
           href: file-system-support-for-contexts.md
         - name: 推奨する運用方法
           href: best-practices.md
+    - name: IRP_MJ_CREATE 操作の ECP
+      items:
+        - name: 追加のパラメーターの作成の概要
+          href: introduction-to-extra-create-parameters.md
+        - name: KM ドライバーで開始された IRP_MJ_CREATE 操作に ECP をアタッチする
+          href: attaching-ecps-to-irp-mj-create-operations-that-a-kernel-mode-driver-o.md
+        - name: ミニフィルター ドライバーで ECP を使用して IRP_MJ_CREATE 操作を処理する
+          href: using-ecps-to-process-irp-mj-create-operations-in-a-file-system-minifilter.md
+        - name: ユーザー定義の ECP
+          href: user-defined-ecps.md
+        - name: システム定義の ECP
+          href: system-defined-ecps.md
 - name: ファイル システム レガシ フィルター ドライバー
   items:
-    - name: ファイル システム レガシ フィルター ドライバーについて
+    - name: レガシ フィルター ドライバーについて
       href: about-file-system-legacy-filter-drivers.md
     - name: レガシ フィルター ドライバーのファイル システムの概念
       items:
@@ -210,7 +222,7 @@
           items:
             - name: レガシ フィルター ドライバーのインストール
               href: installing-a-file-system-filter-driver.md
-            - name: INF ファイルを作成する
+            - name: INF ファイルの作成
               href: creating-an-inf-file-for-a-file-system-filter-driver.md
             - name: 読み込み順序グループ
               href: load-order-groups-for-file-system-filter-drivers.md
@@ -234,11 +246,11 @@
               href: registering-fsfilter-callback-routines.md
             - name: その他必要な初期化の実行
               href: performing-any-other-needed-initialization.md
-            - name: '省略可能] コールバック ルーチンの登録'
+            - name: コールバック ルーチンの登録
               href: '-optional--registering-callback-routines.md'
-            - name: '省略可能] レジストリ パス文字列のコピーの保存'
+            - name: レジストリ パス文字列のコピーの保存
               href: '-optional--saving-a-copy-of-the-registry-path-string.md'
-            - name: 返される状態
+            - name: 状態を返す
               href: returning-status.md
         - name: レガシ フィルターの添付ファイル
           items:
@@ -376,7 +388,7 @@
               href: routines-provided-by-rdbss.md
             - name: RDBSS が定義するマクロ
               href: macros-defined-by-rdbss.md
-            - name: ドライバーの登録と開始/停止制御
+            - name: ドライバーの登録と開始や停止の制御
               href: driver-registration-and-start-stop-control.md
             - name: プールの割り当てとフリー ルーチン
               href: pool-allocation-and-free-routines.md
@@ -472,7 +484,7 @@
           items:
             - name: セキュリティ脅威モデル
               href: designing-with-security-threat-models.md
-            - name: なりすまし
+            - name: ID 偽装
               href: spoofing-identity.md
             - name: データの改ざん
               href: tampering-with-data.md
@@ -548,7 +560,7 @@
           items:
             - name: 概要
               href: security-checks.md
-            - name: デバイス オブジェクトに対するセキュリティ記述子の摘要
+            - name: デバイス オブジェクトに対するセキュリティ記述子の適用
               href: applying-security-descriptors-on-the-device-object.md
             - name: IRP_MJ_CREATE ディスパッチ ルーチン
               items:
@@ -560,7 +572,7 @@
                   href: checking-for-other-special-cases--on-irp-mj-create.md
                 - name: IRP_MJ_CREATE での監査の追加
                   href: adding-auditing-on-irp-mj-create.md
-                - name: IRP_MJ_CREATE でのアクセス制御リストの確認
+                - name: IRP_MJ_CREATE でのアクセス制御リストの管理
                   href: management-of-access-control-lists-on-irp-mj-create.md
                 - name: IRP_MJ_CREATE での新規ファイルへのセキュリティの割り当て
                   href: assigning-security-to-a-new-file-on-irp-mj-create.md
@@ -580,19 +592,19 @@
               href: process-and-thread-termination-issues.md
     - name: ファイル システム フィルター ドライバーのセキュリティに関する考慮事項
       items:
-        - name: ファイル システム フィルター ドライバーでのプロキシ操作
+        - name: プロキシ操作
           href: proxy-operations-in-file-system-filter-drivers.md
-        - name: ファイル システム フィルター ドライバーでの偽装
+        - name: 偽装
           href: impersonation-in-a-file-system-filter-driver.md
         - name: 他のファイル システム フィルター ドライバーとの共存
           href: coexistence-with-other-file-system-filter-drivers.md
-        - name: ファイル システム フィルター ドライバーのメモリ マップ ファイル
+        - name: メモリ マップ ファイル
           href: memory-mapped-files-in-a-file-system-filter-driver.md
-        - name: ファイル システム フィルター ドライバーの再解析ポイント
+        - name: 再解析ポイント
           href: reparse-points-in-a-file-system-filter-driver.md
 - name: その他の情報
   items:
-    - name: Windows コンテナー用のウイルス対策最適化
+    - name: Windows コンテナー用のウイルス対策の最適化
       href: anti-virus-optimization-for-windows-containers.md
     - name: オフロード データ転送
       href: offloaded-data-transfers.md

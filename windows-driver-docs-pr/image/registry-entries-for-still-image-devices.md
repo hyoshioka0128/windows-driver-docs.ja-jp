@@ -1,17 +1,17 @@
 ---
-title: 静止イメージデバイスのレジストリエントリ
-description: 静止イメージデバイスのレジストリエントリ
+title: 静止画像デバイスのレジストリ エントリ
+description: 静止画像デバイスのレジストリ エントリ
 ms.assetid: cedc8afc-54c4-485e-989c-481fe30d899b
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e6534f3acdd55c0f4d7fa029b4367bb3344ce6f4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840756"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242953"
 ---
-# <a name="registry-entries-for-still-image-devices"></a>静止イメージデバイスのレジストリエントリ
+# <a name="registry-entries-for-still-image-devices"></a>静止画像デバイスのレジストリ エントリ
 
 
 
@@ -31,9 +31,9 @@ Microsoft STI ではいくつかのレジストリエントリを使用します
 </colgroup>
 <thead>
 <tr class="header">
-<th>常時</th>
+<th>定数</th>
 <th>値の名前文字列</th>
-<th>定義</th>
+<th>Definition</th>
 </tr>
 </thead>
 <tbody>
@@ -45,7 +45,7 @@ Microsoft STI ではいくつかのレジストリエントリを使用します
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_ISIS_NAME</p></td>
 <td><p>"ISISDriverName"</p></td>
-<td><p>"Pxn" など、デバイスの ISIS ドライバー名を含む REG_SZ 型。</p></td>
+<td><p>デバイスの ISIS ドライバー名を含む REG_SZ の種類 ("pxn" など)。</p></td>
 </tr>
 <tr class="odd">
 <td><p>STI_DEVICE_VALUE_TIMEOUT</p></td>
@@ -55,7 +55,7 @@ Microsoft STI ではいくつかのレジストリエントリを使用します
 <tr class="even">
 <td><p>STI_DEVICE_VALUE_TWAIN_NAME</p></td>
 <td><p>"Tw"</p></td>
-<td><p>"HP PictureScan 3.0" など、デバイスの TWAIN データソースの名前が付いた REG_SZ 型。</p></td>
+<td><p>"HP PictureScan 3.0" など、デバイスの TWAIN データソースの名前を含む REG_SZ 型。</p></td>
 </tr>
 </tbody>
 </table>
@@ -82,7 +82,7 @@ Microsoft STI ではいくつかのレジストリエントリを使用します
 <thead>
 <tr class="header">
 <th>レジストリ キー</th>
-<th>定義</th>
+<th>Definition</th>
 </tr>
 </thead>
 <tbody>
