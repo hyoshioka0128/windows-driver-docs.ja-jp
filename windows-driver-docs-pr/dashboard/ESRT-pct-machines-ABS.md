@@ -4,12 +4,12 @@ description: この測定値は、28 日間のスライディング ウィンド
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f51fa24ee67d8d5fd1133e0c6853f54e834576cd
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: f187ba2825d358813ced6b38054acf71aa86c91d
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097492"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083144"
 ---
 # <a name="percent-of-machines-with-abnormal-shutdown-not-due-to-bugcheck-or-power-button"></a>バグチェックまたは電源ボタンによるものではない異常なシャットダウンが発生したマシンの割合
 
@@ -21,13 +21,13 @@ ms.locfileid: "74097492"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|小売と内部関係者|
 |**期間**|28 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
 |**最小インスタンス**|250|
-|**合格基準**|50% を上回る|
+|**合格基準**|<= 20%|
 |**測定 ID**|20431908|
 
 ## <a name="calculation"></a>計算

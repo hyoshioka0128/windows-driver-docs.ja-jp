@@ -4,14 +4,14 @@ description: この測定値は、28 日間のスライディング ウィンド
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f38e1329e47918ad5b0ec1d6abfcc4d7d3852d
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: 7c9b46519daeb40725267ac9d285a1442bfd611b
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097506"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083123"
 ---
-# <a name="percent-of-machines-with-whea-error-after-firmware-installation"></a>ファームウェアのインストール後に WHEA エラーが発生したマシンの割合
+# <a name="percent-of-machines-with-windows-hardware-error-architecture-whea-error-after-firmware-installation"></a>ファームウェアのインストール後に Windows Hardware Error Architecture (WHEA) エラーが発生したマシンの割合
 
 ## <a name="description"></a>説明
 
@@ -23,7 +23,7 @@ WHEA イベントは 20H1 ビルドからのみ発生します。そのため、
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|小売と内部関係者|
 |**期間**|28 日間のスライディング ウィンドウ|

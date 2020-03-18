@@ -4,12 +4,12 @@ description: この測定値は、28 日間のスライディング ウィンド
 ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5591405275835f2a00aa9e2d11c56444bdf3e1cc
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.openlocfilehash: 3c684f0f77439a5732f7036873c2457fbd105b0e
+ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74097504"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083129"
 ---
 # <a name="percent-of-machines-with-pending-firmware-updates-due-to-bitlocker-risk"></a>Bitlocker のリスクが原因で、ファームウェアの更新が保留中のマシンの割合
 
@@ -19,13 +19,13 @@ ms.locfileid: "74097504"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|小売と内部関係者|
 |**期間**|28 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
 |**最小インスタンス**|250|
-|**合格基準**|90% 以上|
+|**合格基準**|<= 10%|
 |**測定 ID**|23153969|
 
 ## <a name="calculation"></a>計算
