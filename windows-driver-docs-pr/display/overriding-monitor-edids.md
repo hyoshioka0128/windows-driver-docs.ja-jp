@@ -1,81 +1,81 @@
 ---
-title: モニター EDIDs、INF をオーバーライドします。
-description: INF ファイルを使用して、拡張 Display Identification Data (EDID) のいずれかのモニターを上書きできます。
+title: INF でモニター EDIDs を上書きする
+description: INF ファイルを使用すると、任意のモニターの拡張ディスプレイ識別データ (EDID) を上書きできます。
 ms.assetid: AA7DC29B-54D5-461A-8252-600D84F0F581
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a84fb6212511a8ceb06b532c30509519dd166a74
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 1ce33823e5d8bf7a586e087c0f95e5c6b913ed54
+ms.sourcegitcommit: 347bd952a4164fd75fd2e4c56d46973bbb90e5a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394111"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79504409"
 ---
-# <a name="overriding-monitor-edids-with-an-inf"></a>モニター EDIDs、INF をオーバーライドします。
+# <a name="overriding-monitor-edids-with-an-inf"></a>INF でモニター EDIDs を上書きする
 
 
-INF ファイルを使用して、拡張 Display Identification Data (EDID) のいずれかのモニターを上書きできます。 Monsamp.inf、これを行う方法を示すサンプル INF ファイルから Windows 7 (WDK バージョン 7600) Windows Driver Kit (WDK) とが指定されています。 Monsamp.inf がここに再掲します。
+INF ファイルを使用すると、任意のモニターの拡張ディスプレイ識別データ (EDID) を上書きできます。 この方法を示すサンプル INF ファイル Monsamp は、windows 7 (WDK バージョン 7600) を通じて Windows Driver Kit (WDK) に付属しています。 Monsamp がここで再現されます。
 
-使用して、および Monsamp.inf を変更する方法については、次を参照してください。 [INF ファイルのセクションではモニター](monitor-inf-file-sections.md)します。
+Monsamp を使用および変更する方法の詳細については、「 [MONITOR Inf File」セクション](monitor-inf-file-sections.md)を参照してください。
 
-## <a name="span-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanspan-idapproachestocorrectingedidsspanapproaches-to-correcting-edids"></a><span id="Approaches_to_correcting_EDIDs"></span><span id="approaches_to_correcting_edids"></span><span id="APPROACHES_TO_CORRECTING_EDIDS"></span>EDIDs を修正する方法
-
-
-すべてのモニター、アナログまたはデジタル、EDID で、モニターの識別子、製造元のデータ、ハードウェア id、タイミングについては、具合などの情報が含まれていますをサポートする必要があります。 このデータは、ビデオ Electronics Standards アソシエーション (VESA) によって指定された形式で、モニターの EEPROM に格納されます。
-
-モニタでは、Microsoft Windows のコンポーネントに EDID の提供、ドライバー、および一部のユーザー モード アプリケーションを表示します。 たとえば、初期化中にモニター ドライバーはその明るさクエリ インターフェイスおよびデバイス ドライバー インターフェイス (DDI) のサポート、EDID 内にある Windows Display Driver Model (WDDM) ドライバーを照会します。 モニターの EEPROM に正しくないか、無効な EDID の情報したがって、不適切な表示モードを設定するなどの問題につながります。
-
-EDIDs を修正する 2 つの方法はあります。
-
--   標準的なソリューションでは、お客様に、モニターをユーザーに適切な EDID EEPROM reflashes を顧客にモニターを返します、製造元に送信します。
--   優れたソリューションでは、ここで説明するには、メーカー側では、適切な EDID 情報を含む INF ファイルを実装するためには、およびお客様に、モニターに接続されているコンピューターにダウンロードします。 Windows では、INF から EDID の最新の情報を抽出し、EEPROM EDID を効果的にオーバーライド、EEPROM EDID から、情報の代わりにコンポーネントを提供します。
-
-」の説明に従って EDID 情報の置き換え、に加えて仕入先は名前とディスプレイの解像度、モニターの上書きを提供できます。 このようなオーバーライドは Windows Update または梱包された箱でデジタル メディアを使用して顧客を頻繁に提供されます。 このようなオーバーライドでは、ここで説明した EDID オーバーライドより高い優先順位を受け取ります。 これを実現するためのガイドラインが記載[INF ファイルのセクションではモニター](monitor-inf-file-sections.md)します。
-
-## <a name="span-idedidformatspanspan-idedidformatspanspan-idedidformatspanedid-format"></a><span id="EDID_format"></span><span id="edid_format"></span><span id="EDID_FORMAT"></span>EDID 形式
+## <a name="span-idapproaches_to_correcting_edidsspanspan-idapproaches_to_correcting_edidsspanspan-idapproaches_to_correcting_edidsspanapproaches-to-correcting-edids"></a><span id="Approaches_to_correcting_EDIDs"></span><span id="approaches_to_correcting_edids"></span><span id="APPROACHES_TO_CORRECTING_EDIDS"></span>EDIDs を修正する方法
 
 
-EDID データは、1 つまたは複数の 128 バイトのブロックとして書式設定します。
+すべてのモニター (アナログまたはデジタル) は EDID をサポートする必要があります。これには、モニターの識別子、製造元のデータ、ハードウェア識別子、タイミング情報などの情報が含まれます。 このデータは、ビデオエレクトロニクス標準協会 (VESA) によって指定された形式でモニターの EEPROM に格納されます。
 
--   EDID バージョン 1.0 ~ 1.2 は、VESA 仕様ごとのデータの 1 つのブロックで構成されます。
--   EDID version 1.3 または強化された EDID (E EDID) では、製造元は、主要なブロックだけでなく、1 つ以上の拡張機能ブロックを指定できます。
+モニターは、EDID を Microsoft Windows コンポーネント、ディスプレイドライバー、および一部のユーザーモードアプリケーションに提供します。 たとえば、初期化中に、モニタードライバーは Windows Display Driver Model (WDDM) ドライバーに対して、その明るさクエリインターフェイスと、EDID にあるデバイスドライバーインターフェイス (DDI) のサポートを照会します。 モニターの EEPROM の EDID 情報が正しくないか無効なため、表示モードの設定が正しくないなどの問題が発生する可能性があります。
 
-各ブロックは、最初のブロックの 0 から始まる番号が。 EDID 情報を更新するには、製造元の INF は、更新するブロックの数を指定し、128 バイトの元のブロックを置き換える EDID データを提供します。 モニター ドライバーでは、レジストリから、更新されたデータの修正後のブロックを取得し、残りのブロックの EEPROM データを使用します。
+EDIDs を修正するには、次の2つの方法があります。
 
-## <a name="span-idupdatinganedidspanspan-idupdatinganedidspanspan-idupdatinganedidspanupdating-an-edid"></a><span id="Updating_an_EDID"></span><span id="updating_an_edid"></span><span id="UPDATING_AN_EDID"></span>EDID を更新しています
+-   標準的な解決策は、お客様がモニターを製造元に送り返すようにすることです。この場合、reflashes が正しい EDID で EEPROM を取得し、モニターを顧客に返します。
+-   ここでは、製造元が正しい EDID 情報を含む INF ファイルを実装し、モニターに接続されているコンピューターにダウンロードすることをお勧めします。 Windows は、更新された EDID 情報を INF から抽出し、EEPROM EDID からの情報ではなくコンポーネントに提供して、EEPROM EDID を効果的にオーバーライドします。
+
+ここで説明されているように、EDID 情報を置き換えるだけでなく、ベンダーはモニター名と推奨される表示解像度を上書きすることができます。 このような上書きは、出荷ボックスの Windows Update またはデジタルメディアを使用して、多くの場合、顧客に提供されます。 このようなオーバーライドは、ここで説明した EDID の上書きよりも優先順位が高くなります。 これを実現するためのガイドラインについては、「 [MONITOR INF File」セクション](monitor-inf-file-sections.md)を参照してください。
+
+## <a name="span-idedid_formatspanspan-idedid_formatspanspan-idedid_formatspanedid-format"></a><span id="EDID_format"></span><span id="edid_format"></span><span id="EDID_FORMAT"></span>EDID 形式
 
 
-INF を使用して、EDID を更新します。
+EDID データは1つ以上の128バイトのブロックとして書式設定されます。
 
-1.  モニターの製造元は、INF を EDID の最新の情報を含み、ユーザーのコンピューターにファイルがダウンロードを実装します。 これは、Windows Update またはモニターの CD を送付して実行できます。
-2.  Monitor クラスのインストーラーは、INF から EDID の最新の情報を抽出し、このレジストリ キーの値として、情報を格納します。
+-   EDID のバージョン1.0 から1.2 は、VESA 仕様に従って、1つのデータブロックで構成されています。
+-   EDID バージョン1.3 または拡張 EDID (E EDID) を使用すると、製造元はプライマリブロックに加えて、1つまたは複数の拡張ブロックを指定できます。
+
+各ブロックには、最初のブロックに対して0から始まる番号が付けられます。 EDID 情報を更新するには、製造元の INF で、更新するブロックの番号を指定します。また、元のブロックを置き換えるために、128バイトの EDID データを提供します。 モニタドライバは、修正されたブロックの更新されたデータをレジストリから取得し、残りのブロックには EEPROM データを使用します。
+
+## <a name="span-idupdating_an_edidspanspan-idupdating_an_edidspanspan-idupdating_an_edidspanupdating-an-edid"></a><span id="Updating_an_EDID"></span><span id="updating_an_edid"></span><span id="UPDATING_AN_EDID"></span>EDID の更新
+
+
+INF を使用して EDID を更新するには、次のようにします。
+
+1.  モニターの製造元は、更新された EDID 情報を含む INF を実装し、ファイルをユーザーのコンピューターにダウンロードします。 これを行うには Windows Update を使用するか、モニターを使用して CD を発送します。
+2.  Monitor クラスインストーラーは、更新された EDID 情報を INF から抽出し、その情報を次のレジストリキーの値として格納します。
 
     ```registry
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\DISPLAY
     ```
 
-    各 EDID オーバーライドは、個別のキーの下に格納されます。 例:
+    各 EDID オーバーライドは、個別のキーの下に格納されます。 次に、例を示します。
 
     ```registry
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\DISPLAY\DELA007\
           5&1608c50f&0&10000090&01&20\Device Parameters\EDID_Override
     ```
 
-3.  モニター ドライバーでは、初期化中にレジストリを確認し、EEPROM に対応する情報ではなく保管されている任意の EDID 情報を使用します。 常に、レジストリに追加されている EDID 情報 EEPROM EDID 情報よりも優先されます。
-4.  Windows コンポーネントとユーザー モードのアプリは、更新された EDID 情報を使用します。
+3.  モニタードライバーは、初期化中にレジストリを確認し、EEPROM に対応する情報ではなく、そこに格納されている EDID 情報を使用します。 レジストリに追加された EDID 情報は、常に EEPROM の EDID 情報よりも優先されます。
+4.  Windows コンポーネントとユーザーモードアプリは、更新された EDID 情報を使用します。
 
-## <a name="span-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanspan-idoverridinganedidwithaninfspanoverriding-an-edid-with-an-inf"></a><span id="Overriding_an_EDID_with_an_INF"></span><span id="overriding_an_edid_with_an_inf"></span><span id="OVERRIDING_AN_EDID_WITH_AN_INF"></span>INF、EDID をオーバーライドします。
+## <a name="span-idoverriding_an_edid_with_an_infspanspan-idoverriding_an_edid_with_an_infspanspan-idoverriding_an_edid_with_an_infspanoverriding-an-edid-with-an-inf"></a><span id="Overriding_an_EDID_with_an_INF"></span><span id="overriding_an_edid_with_an_inf"></span><span id="OVERRIDING_AN_EDID_WITH_AN_INF"></span>SYSPREP.INF を使用した EDID のオーバーライド
 
 
-EDID をオーバーライドするには、 [ **AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)次の形式で、無効にする各ブロックに対して、INF で。
+EDID をオーバーライドするには、次の形式で、オーバーライドする各ブロックの INF に[**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を含めます。
 
 ```inf
-HKR, EDID_OVERRIDE, BlockNumber, Byte 1, Byte 2, Byte 3, Byte 4,...
+HKR, EDID_OVERRIDE, BlockNumber, 0x1, Byte 1, Byte 2, Byte 3, Byte 4,...
 ```
 
-ブロックの数には、バイナリ EDID データが含まれている 128 の 16 進数の整数が続きます。
+ブロック番号は、オーバーライドする EDID ブロックの0から始まるインデックス値です。 データバイトは、バイナリ EDID データを含む 128 16 進数の整数として書式設定する必要があります。 ブロック番号の後の "0x1" 値は、このレジストリ値にバイナリデータ (FLG_ADDREG_BINVALUETYPE) が含まれていることを示すフラグです。
 
-製造元は、正しくない EDID ブロックだけを更新する必要があります。 システムでは、EEPROM から、残りの要素を取得します。 次の例では、0、4、および 5 EDID ブロックを更新する、INF の関連セクションを示します。 モニター ドライバーでは、ブロック EEPROM から 5 のブロックに続く 1 ~ 3 と任意の拡張機能のブロックを取得します。
+製造元は、正しくない EDID ブロックだけを更新する必要があります。 システムは、残りのブロックを EEPROM から取得します。 次の例は、EDID ブロック0、4、および5を更新する INF の関連セクションを示しています。 モニタードライバーは、ブロック5に続くすべての拡張ブロックを EEPROM から 1-3 取得します。
 
 ```inf
 [ABC.DDInstall.HW]
@@ -88,7 +88,7 @@ HKR, EDID_OVERRIDE, 5, 1, 24, 5C, ..., 2D
 ...
 ```
 
-一般に、Inf の詳細について、 **AddReg**と**DDInstall**具体的を参照してください[INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/hid/creating-an-inf-file)します。
+一般的な Inf、特に**AddReg**と**ddinstall**の詳細については、「 [inf ファイルの作成](https://docs.microsoft.com/windows-hardware/drivers/hid/creating-an-inf-file)」を参照してください。
 
 ```inf
 ; monsamp.INF
