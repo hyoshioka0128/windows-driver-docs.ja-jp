@@ -4,12 +4,12 @@ description: Microsoft Visual Studio が実行する自動 INF 検証の結果�
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e05d940a773577bcda0ce3d7364dd3c68fa966ba
-ms.sourcegitcommit: 649f6fc79ea79bbafba85f0ffaa384a57f55580b
+ms.openlocfilehash: 41f6076de7493669ea26a8096abcb876553bf430
+ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79452244"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080143"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF の検証エラーと警告
 
@@ -223,6 +223,11 @@ AddService = MyFilterDriver,, My-Service-Install-Section
 AddService = ,2
 </pre>
 
+</td>
+</tr>
+<tr>
+<td><strong>1297: デバイスドライバーはどのデバイスにもインストールされません。これが目的の場合は、プリミティブドライバーを使用してください。</strong></td>
+<td>これは、INF ファイルがデバイスドライバであることを示していますが、デバイスドライバとして使用されていません。 これにより、ドライバーストアによるドライバーの処理方法で問題が発生する可能性があります。 意図しない場合は、INF を調べて、ハードウェア Id が正しく指定されていることを確認してください。 ドライバーをデバイスにインストールすることを意図していない場合は、それをプリミティブドライバーに変換します。  詳細については、こちらの<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver">ドキュメント</a>を参照してください。
 </td>
 </tr>
 </tbody>

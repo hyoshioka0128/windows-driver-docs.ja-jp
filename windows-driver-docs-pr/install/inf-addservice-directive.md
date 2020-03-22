@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d82e9ce6809ba0ac558e78f3cb6e9c724a7cade
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0ea2f9a49c4abb1f7a7b0af298609d2ae13bfae8
+ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828799"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080167"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService ディレクティブ
 
@@ -100,7 +100,7 @@ AddService = ,2.
 <a href="" id="eventname"></a>*EventName*  
 必要に応じて、イベントログに使用する名前を指定します。 省略した場合は、指定した*ServiceName*に既定値が設定されます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 システム定義および大文字と小文字を区別しない拡張機能は、 <em>Ddinstall</em>に挿入でき**ます。** プラットフォーム固有または OS 固有のインストールを指定するために、クロスオペレーティングシステムまたはクロスプラットフォームの INF ファイルに**addservice**ディレクティブを含む Services セクション。
@@ -125,6 +125,9 @@ ServiceBinary=path-to-service
 [LoadOrderGroup=load-order-group-name]
 [Dependencies=depend-on-item-name[,depend-on-item-name]
 [Security="security-descriptor-string"]...]
+[ServiceSidType=value]
+[DelayedAutoStart=true/false]
+[AddTrigger=service-trigger-install-section[, service-trigger-install-section, ...]]
 ```
 
 ここに示すように、各*サービスのインストールセクション*には、少なくとも**ServiceType**、 **starttype**、 **errorcontrol**、および**servicebinary**の各エントリが必要です。 ただし、残りのエントリは省略可能です。
@@ -241,6 +244,80 @@ SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 
 セキュリティ記述子を指定する方法の詳細については、「セキュリティ[で保護されたデバイスのインストールの作成](creating-secure-device-installations.md)」を参照してください。
 
+<a href="" id="description-description-string"></a>**サービス id の種類**=*値*
+
+**注:** この値は*Win32 サービス*に対してのみ使用でき、Windows 10 バージョン2004以降でのみ使用できます。
+
+このエントリは、「 [SERVICE_SID_INFO](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_sid_info)」で説明されているように、任意の有効な値を使用できます。
+
+<a href="" id="description-description-string"></a>**Delayedautostart**=*true/false*
+
+**注:** この値は*Win32 サービス*に対してのみ使用でき、Windows 10 2004 以降でのみ使用できます。
+
+自動開始サービスの遅延自動開始設定が含まれています。
+
+このメンバーが TRUE の場合、サービスは、他の自動開始サービスが開始された後、短い遅延が発生した後に開始されます。 それ以外の場合は、システムの起動時にサービスが開始されます。
+
+サービスが自動開始サービスでない限り、この設定は無視されます。
+
+詳細については、[このページ](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_delayed_auto_start_info)を参照してください。
+
+<a href="" id="description-description-string"></a>**Addtrigger**=*service-trigger-install-section [, service-trigger-section,...]*
+
+トリガーイベントが発生したときにサービスを開始または停止できるように、Win32 サービスに登録するトリガーイベントを指定します。 サービストリガーイベントの詳細については、「[サービストリガーイベント](https://docs.microsoft.com/windows/desktop/Services/service-trigger-events)」を参照してください。
+
+AddTrigger ディレクティブによって参照される、それぞれの名前付きサービストリガー-インストールセクションには、次の形式があります。
+
+```
+[service-trigger-install-section]
+
+TriggerType=trigger-type
+Action=action-type
+SubType=trigger-subtype
+[DataItem=data-type,data]
+...
+```
+
+### <a name="service-trigger-install-section-entries-and-values"></a>Service-Trigger-Install Section のエントリと値:
+**Triggertype**=*トリガー-型*
+
+次の表に示すように、10進数またはのいずれかの数値で表される、サービストリガーイベントの種類を指定します。
+
+**0x1** (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) は、指定されたデバイスインターフェイスクラスのデバイスがシステムの起動時に到着するか存在するときに、そのイベントがトリガーされることを示します。 
+
+詳細については、「 [SERVICE_TRIGGER 構造体](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)」を参照してください。
+
+**アクション**=*アクションの種類*
+
+指定されたトリガーイベントが発生したときに実行するアクションを指定します。
+
+**0x1** (SERVICE_TRIGGER_ACTION_SERVICE_START) は、指定されたトリガーイベントが発生したときにサービスを開始します。
+
+**0x2** (SERVICE_TRIGGER_ACTION_SERVICE_STOP) は、指定されたトリガーイベントが発生したときにサービスを停止します。
+
+詳細については、「 [SERVICE_TRIGGER 構造体](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)」を参照してください。
+
+**サブタイプ**=*トリガー-サブタイプ*
+
+トリガーイベントのサブタイプを識別する GUID を指定します。 値は、 **Triggertype**の値によって異なります。 
+
+**Triggertype**が**0x1** (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) の場合、 **SubType**はデバイスインターフェイスクラスを識別する GUID を指定します。
+
+詳細については、「 [SERVICE_TRIGGER 構造](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)」を参照してください。
+
+**DataItem**=*データ型、データ*
+
+必要に応じて、サービストリガーイベントのトリガー固有のデータを指定します。 
+
+**Triggertype**が**0x1** (SERVICE_TRIGGER_TYPE_DEVICE_INTERFACE_ARRIVAL) の場合、オプションの DataItem をデータ型**0x2** (SERVICE_TRIGGER_DATA_TYPE_STRING) で指定して、デバイスインターフェイスクラスのスコープを特定のハードウェア ID または互換性のある id にすることができます。
+
+詳細については、「 [SERVICE_TRIGGER_SPECIFIC_DATA_ITEM 構造体](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger_specific_data_item)」を参照してください。
+
+**Addtrigger**ディレクティブを使用する場合のベストプラクティスは、デバイスインターフェイスへの到着時にサービスの開始をトリガーすることです。 詳細については、「[デバイスと対話する Win32 サービス](https://docs.microsoft.com/windows-hardware/drivers/install/best-practices-win32services-interacting-with-devices)」を参照してください。
+
+**注: AddTrigger**構文は、 **Windows 10 バージョン 2004**以降でのみ使用できます。
+
+
 ### <a name="specifying-driver-load-order"></a>ドライバーの読み込み順序の指定
 
 オペレーティングシステムは、次のように、*サービスのインストールセクション*の  **starttype**値に従ってドライバーを読み込みます。
@@ -307,9 +384,9 @@ HKR,,TypesSupported,0x00010001,7
 
 -   **EventMessageFile**という名前の値のエントリは、FLG_ADDREG_TYPE_EXPAND_SZ 値の**0x00020000**によって指定された[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。 二重引用符 (") で囲まれた値は、システムによって提供される*Iologmsg .dll*を関連付けます (ただし、別のログ dll に関連付けることもできます)。 通常、これらの各ファイルへのパスは次のように指定されます。
 
-    *%%SystemRoot%%\\System32\\IoLogMsg.dll*
+    *%% SystemRoot%%\\System32\\IoLogMsg .dll*
 
-    *%%SystemRoot%%\\System32\\drivers\\driver.sys*
+    *%% SystemRoot%%\\System32\\ドライバー\\driver .sys*
 
 -   **サポートさ**れている名前付きの値のエントリは、FLG_ADDREG_TYPE_DWORD 値**0x00010001**で指定されている[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。
 
@@ -369,7 +446,7 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [*Ddinstall * のリファレンスの例 **。** ](inf-ddinstall-hw-section.md)前に説明した HW セクションでは、PnP 上位フィルタードライバーを設定するために**addservice**ディレクティブによって参照されるサービスインストールセクションも表示されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 
 [**AddReg**](inf-addreg-directive.md)
@@ -378,9 +455,9 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [**CopyFiles**](inf-copyfiles-directive.md)
 
-[* **DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
+[***Ddinstall *.HW**](inf-ddinstall-hw-section.md)
 
-[* **DDInstall *。サービス**](inf-ddinstall-services-section.md)
+[***Ddinstall *.サービス**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 
