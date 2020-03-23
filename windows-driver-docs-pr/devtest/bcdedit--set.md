@@ -1,33 +1,33 @@
 ---
 title: BCDEdit /set
-description: BCDEdit]、[set コマンドは、Windows ブート構成データ ストア (BCD) の Windows 7、Windows Server 2008、Windows 8、Windows 8.1、Windows 10、Windows Server 2012、および Windows Server 2012 R2 のブート エントリ オプション値を設定します。
+description: BCDEdit /set コマンドでは、Windows 7、Windows Server 2008、Windows 8、Windows 8.1、Windows 10、Windows Server 2012、Windows Server 2012 R2 の Windows ブート構成データ ストア (BCD) のブート エントリ オプション値を設定します。
 ms.assetid: e66d9c55-9a44-4de2-a1a4-634c7d550735
 ms.date: 02/07/2018
 keywords:
-- BCDEdit/set ドライバー開発ツール
+- BCDEdit /set ドライバー開発ツール
 topic_type:
 - apiref
 api_name:
 - BCDEdit /set
 api_type:
 - NA
-ms.localizationpriority: medium
-ms.openlocfilehash: 7137391bf4ff88f4339fc0e1adf3b0017aeef1f4
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 3c4af5a4b1bc932be78717700253f3ba15db8360
+ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393786"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78335952"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
-**BCDEdit/set**コマンドでは、Windows ブート構成データ ストア (BCD) のブート エントリ オプション値を設定します。 使用して、 **BCDEdit/set**カーネル デバッガーの設定、メモリのオプション、またはテスト署名されたカーネル モード コードまたは負荷代替ハードウェア アブストラクション レイヤー (HAL) を有効にするオプションなどの特定のブート エントリの要素を構成するコマンドとカーネル ファイル。 ブート エントリのオプションを削除するには、使用、 [ **BCDEdit/deletevalue** ](bcdedit--deletevalue.md)コマンド。
+**BCDEdit /set** コマンドでは、Windows ブート構成データ ストア (BCD) のブート エントリ オプション値を設定します。 **BCDEdit /set** コマンドは、カーネル デバッガーの設定、メモリ オプション、テスト署名されたカーネル モード コードを有効にするオプション、代替ハードウェア アブストラクション レイヤー (HAL) やカーネル ファイルを読み込むオプションなど、特定のブート エントリ要素を構成するために使用します。 ブート エントリ オプションを削除するには、[**BCDEdit /deletevalue**](bcdedit--deletevalue.md) コマンドを使用します。
 
 > [!CAUTION]
-> BCDEdit を使用して BCD を変更するには、管理者特権が必要です。 使用してオプションのいくつかのブート エントリを変更、 **BCDEdit/set**コマンドしなくなる可能性コンピューター。 代わりに、システム構成ユーティリティ (MSConfig.exe) を使用して、ブート設定を変更します。
+> BCD を変更するために BCDEdit を使用するには、管理者特権が必要です。 **BCDEdit /set** コマンドを使用して一部のブート エントリ オプションを変更すると、コンピューターが動作しなくなる可能性があります。 別の方法として、システム構成ユーティリティ (MSConfig.exe) を使用してブート設定を変更します。
 
 > [!NOTE]
-> BCDEdit のオプションを設定する前に、無効にするか、またはコンピューターの BitLocker とセキュア ブートを中断する必要があります。
+> BCDEdit のオプションを設定する前に、コンピューターで BitLocker とセキュア ブートを無効にするか中断することが必要になる場合があります。
 
 ```syntax
 bcdedit  /set [{ID}] datatype value
@@ -36,89 +36,89 @@ bcdedit  /set [{ID}] datatype value
 ## <a name="parameters"></a>パラメーター
 
 \[ **{ID}** \]  
-**{ID}** ブート エントリに関連付けられた GUID です。 指定しない場合、 **{ID}** のコマンドは、現在のオペレーティング システムのブート エントリを変更します。 ブート エントリに関連付けられた GUID を中かっこで囲む必要がありますブート エントリが指定されている場合 **{}** します。 すべてのアクティブなブート エントリの GUID 識別子を表示する、 **bcdedit/enum**コマンド。 現在のブート エントリの識別子は **{現在}** します。 このオプションの詳細については、次のコマンドを使用: **bcdedit/でしょうか。ID**
+**{ID}** は、ブート エントリに関連付けられている GUID です。 **{ID}** を指定しなかった場合、このコマンドで現在のオペレーティング システムのブート エントリが変更されます。 ブート エントリを指定する場合は、ブート エントリに関連付けられている GUID を中かっこ **{ }** で囲む必要があります。 すべてのアクティブ ブート エントリの GUID 識別子を表示するには、**bcdedit /enum** コマンドを使用します。 現在のブート エントリの識別子は **{current}** です。 このオプションの詳細を表示するには、次のコマンドを使用します。**bcdedit /? ID**
 
 > [!NOTE]
-> 使用する場合[Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518)、たとえばブート エントリの識別子を囲む引用符を使用する必要があります: **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** または **"{current}"** .
+> [Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518) を使用している場合は、ブート エントリ識別子を引用符で囲む必要があります。たとえば、 **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** または **"{current}"** です。
 
 *datatype* *value*  
 
-以下に示すいくつかの便利な*datatypes*と関連付けられた*値*します。
+次の一覧に、いくつかの便利な *datatype* とそれに関連付けられた *value* を示します。
 
 **bootlog** \[ **yes** | **no** \]  
-システムの初期化ログを有効にします。 このログは、%WINDIR% ディレクトリで Ntbtlog.txt ファイルに格納されます。 テキスト形式で読み込まれ、アンロードされたドライバーの一覧が含まれています。
+システム初期化ログを有効にします。 このログは、%WINDIR% ディレクトリの Ntbtlog.txt ファイルに記録されます。 読み込まれたドライバーとアンロードされたドライバーの一覧がテキスト形式で示されます。
 
-**bootmenupolicy** \[ **レガシ** | **標準** \]  
-システムは、使用するブート メニューの種類を定義します。 既定では ForWindows 10、Windows 8.1、Windows 8 および Windows RT**標準**します。 Windows Server 2012 R2、Windows Server 2012 では、既定値は**レガシ**します。 ときに**レガシ**が選択されている、高度なオプション メニュー (**F8**) は使用できます。 ときに**標準**が選択されている特定の状況でのみ、ブート メニューが表示されます: たとえば、起動している場合の修復のディスクまたはインストール メディアから複数のブート エントリを構成している場合、起動時に障害がある場合、、または高度なスタートアップを使用するコンピューターを手動で構成した場合。 ときに**標準**が選択されている、 **F8**キーは、ブート時に無視されます。 Windows 8 Pc すばやく起動キーを押してに十分な時間がないように**F8**します。 詳細については、次を参照してください。 [(セーフ モードなど)、Windows スタートアップ設定](https://go.microsoft.com/fwlink/p/?linkid=313921)します。
+**bootmenupolicy** \[ **Legacy** | **Standard** \]  
+システムによって使用されるブート メニューの種類を定義します。 Windows 10、Windows 8.1、Windows 8、Windows RT の既定値は **Standard** です。 Windows Server 2012 R2、Windows Server 2012 の場合、既定値は **Legacy** です。 **Legacy** を選択した場合、[詳細オプション] メニュー (**F8** キー) を使用できます。 **Standard** を選択すると、ブート メニューは表示されますが、特定の状況に限られます。たとえば、起動時にエラーが発生した場合、修復ディスクまたはインストール メディアから起動している場合、複数のブート エントリを構成した場合、またはカスタマイズした起動を使用するようにコンピューターを手動で構成した場合などがあります。 **Standard** を選択した場合、ブート中に **F8** キーは無視されます。 Windows 8 PC は高速に起動するので、**F8** キーを押す十分な時間がありません。 詳細については、「[Windows のスタートアップ設定 (セーフ モードなど)](https://go.microsoft.com/fwlink/p/?linkid=313921)」を参照してください。
 
 > [!NOTE]
-> オプションは、Windows 8 および Windows Server 2012 以降から使用できます。 使用することも、 **onetimeadvancedoptions**高度なオプションを使用する (**F8**) メニュー (**レガシ**) 次のブート時に 1 回です。
+> このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。 また、**onetimeadvancedoptions** を使用して、次回の起動時に [詳細オプション] (**F8** キー) メニュー (**Legacy**) を 1 回使用することもできます。
 
 **bootstatuspolicy** *policy*
 
-ブートの状態のポリシーを制御します。 ブート状態*ポリシー*次のいずれかを指定できます。
+ブート状態ポリシーを制御します。 ブート状態 "*ポリシー*" は、次のいずれかにすることができます。
 
-- `DisplayAllFailures`:失敗したブート、失敗したシャット ダウン、または失敗したチェックポイントがある場合は、すべてのエラーが表示されます。 コンピューターの再起動時に Windows 回復環境にフェールオーバーされます。
+- `DisplayAllFailures`:起動の失敗、シャットダウンの失敗、またはチェックポイントの失敗があった場合に、すべてのエラーを表示します。 コンピューター再起動時に Windows 回復環境へフェールオーバーします。
 
-- `IgnoreAllFailures`:失敗したブート、失敗したシャット ダウン、または失敗したチェックポイントがある場合は、エラーを無視します。 コンピューターは、エラーの発生後に通常どおりにブートしようとします。
+- `IgnoreAllFailures`:起動の失敗、シャットダウンの失敗、またはチェックポイントの失敗があった場合に、すべてのエラーを無視します。 エラー発生後、コンピューターの通常どおりの起動が試みられます。
 
-- `IgnoreShutdownFailures`:のみ障害が発生したシャット ダウンがある場合は、エラーを無視します。 失敗したシャット ダウンされた場合は、コンピューターに自動的にフェールオーバーしないの再起動時に Windows 回復環境にします。 これは、Windows 8 の既定の設定です。
+- `IgnoreShutdownFailures`:シャットダウンに失敗した場合にのみ、エラーを無視します。 シャットダウンに失敗した場合、コンピューター再起動時に Windows 回復環境へ自動的にフェールオーバーしません。 これは Windows 8 の既定の設定です。
 
-- `IgnoreBootFailures`:だけ、失敗したブートがある場合は、エラーを無視します。 失敗したブートがある場合、コンピューターに自動的にフェールオーバーしないの再起動時に Windows 回復環境にします。
+- `IgnoreBootFailures`:起動に失敗した場合にのみ、エラーを無視します。 起動に失敗した場合、コンピューター再起動時に Windows 回復環境へ自動的にフェールオーバーしません。
 
-- `IgnoreCheckpointFailures`:のみ障害が発生したチェックポイントがある場合は、エラーを無視します。 失敗したチェックポイントがある場合、コンピューターに自動的にフェールオーバーしないの再起動時に Windows 回復環境にします。 オプションは、Windows 8 および Windows Server 2012 以降から使用できます。
+- `IgnoreCheckpointFailures`:チェックポイントが失敗した場合にのみ、エラーを無視します。 失敗したチェックポイントがある場合、コンピューター再起動時に Windows 回復環境へ自動的にフェールオーバーしません。 このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
-- `DisplayShutdownFailures`:失敗したシャット ダウンがある場合は、エラーを表示します。 失敗したシャット ダウンがある場合、コンピューターは経由での再起動時に Windows 回復環境では失敗します。 起動エラー、および失敗したチェックポイントを無視します。 オプションは、Windows 8 および Windows Server 2012 以降から使用できます。
+- `DisplayShutdownFailures`:失敗したシャットダウンがある場合は、エラーを表示します。 シャットダウンが失敗した場合、コンピューター再起動時に Windows 回復環境へフェールオーバーします。 起動の失敗と失敗したチェックポイントを無視します。 このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
-- `DisplayBootFailures`:失敗したブートがある場合は、エラーを表示します。 失敗したブートがある場合、コンピューターは経由での再起動時に Windows 回復環境では失敗します。 シャット ダウン エラーや障害が発生したチェックポイントを無視します。 オプションは、Windows 8 および Windows Server 2012 以降から使用できます。
+- `DisplayBootFailures`:起動が失敗した場合は、エラーを表示します。 起動が失敗した場合、コンピューター再起動時に Windows 回復環境へフェールオーバーします。 シャットダウンの失敗と失敗したチェックポイントを無視します。 このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
-- `DisplayCheckpointFailures`:失敗したチェックポイントがある場合は、エラーを表示します。 失敗したチェックポイントがある場合、コンピューターは経由での再起動時に Windows 回復環境では失敗します。 起動とシャット ダウンの障害を無視します。 オプションは、Windows 8 および Windows Server 2012 以降から使用できます。
+- `DisplayCheckpointFailures`:失敗したチェックポイントがある場合は、エラーを表示します。 失敗したチェックポイントがある場合、コンピューター再起動時に Windows 回復環境へフェールオーバーします。 起動およびシャットダウンの失敗を無視します。 このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
 **bootux** \[ **disabled** | **basic** | **standard** \]  
-起動画面のアニメーションを制御します。 使用可能な値は、無効になっている、basic、および標準です。
+起動画面のアニメーションを制御します。 有効な値は、disabled、basic、standard です。
 
 > [!NOTE]
-> Windows 8 および Windows Server 2012 でサポートされていません。
+> Windows 8 および Windows Server 2012 ではサポートされていません。
 
-**disabledynamictick** \[ **はい** | **なし** \]  
-有効にし、動的タイマーのティックの機能を無効にします。 
-
-> [!NOTE]
-> このオプションは、デバッグにのみ使用する必要があります。
-
-**disableelamdrivers** \[ **はい** | **なし** \]  
-早期起動マルウェア対策 (ELAM) ドライバーの読み込みを制御します。 OS ローダーは、セキュリティ上の理由には、このエントリを削除します。 このオプションは、F8 メニューを使用してのみトリガーされます。 このオプションをトリガーする (コンピューター) に物理的にユーザーがする必要があります。
+**disabledynamictick** \[ **yes** | **no** \]  
+動的タイマー ティック機能を有効または無効にします。 
 
 > [!NOTE]
-> このオプションは、デバッグにのみ使用する必要があります。 
+> このオプションは、デバッグのためにのみ使用してください。
+
+**disableelamdrivers** \[ **yes** | **no** \]  
+起動時マルウェア対策 (ELAM) ドライバーの読み込みを制御します。 セキュリティ上の理由から、このエントリは OS ローダーによって削除されます。 このオプションは、F8 メニューを使用することによってのみトリガーできます。 このオプションをトリガーするには、だれかが (コンピューターに) 物理的に存在している必要があります。
+
+> [!NOTE]
+> このオプションは、デバッグのためにのみ使用してください。 
 
 **forcelegacyplatform** \[ **yes** | **no** \]  
-強制的に従来の PC デバイスの存在を想定する OS などの点で CMO やキーボード コント ローラー。
+OS で CMOS やキーボード コントローラーなどのレガシ PC デバイスの存在が強制的に想定されるようにします。
 
 > [!NOTE]
-> このオプションは、デバッグにのみ使用する必要があります。 
+> このオプションは、デバッグのためにのみ使用してください。 
 
-**サイズ** *maxsize* 、1 つのプロセッサ グループ内の論理プロセッサの最大数を設定、 *maxsize*は 1 ~ 64 の範囲での 2 の累乗します。 既定では、プロセッサ グループは、64 の論理プロセッサの最大サイズをあります。 このブート構成をテスト目的で、コンピューターのプロセッサ グループの構成とサイズをオーバーライドする設定を使用することができます。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)を 64 論理プロセッサを超えるコンピューターのサポートを提供します。 このブート オプションは、Windows 7 および Windows Server 2008 R2 の 64 ビット バージョンおよびそれ以降のバージョンで使用可能です。 このブート オプションには、Windows 7 の 32 ビット バージョンへの影響はありません。
+**groupsize** *maxsize*: 1 つのプロセッサ グループに含まれる論理プロセッサの最大数を設定します。ここで *maxsize* は、1 から 64 まで (両端を含む) の 2 の累乗です。 既定では、プロセッサ グループの最大サイズは 64 論理プロセッサです。 このブート構成設定を使用して、テスト目的でコンピューターのプロセッサ グループのサイズと構成をオーバーライドすることができます。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このブート オプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。
 
-使用して、**サイズ**場合、複数のグループを強制して、コンピューターに 64 個以下のアクティブな論理プロセッサ オプションを選択します。 詳細については、このオプションを使用して、次を参照してください。[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)します。
+**groupsize** オプションは、複数のグループに強制的に適用する必要があり、コンピューターのアクティブな論理プロセッサが 64 個以下である場合に使用します。 このオプションの使用方法の詳細については、「[ドライバーの複数プロセッサ グループのサポートをテストするためのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)」を参照してください。
 
 **groupaware** \[ **on** | **off** \]  
-強制的にドライバーを使用して、複数のプロセッサ グループ環境で複数のグループに注意してください。 このオプションを使用して、ドライバーおよびコンポーネントでのグループ間の非互換性を公開します。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)を 64 論理プロセッサを超えるコンピューターのサポートを提供します。 このブート オプションは、Windows 7 および Windows Server 2008 R2 の 64 ビット バージョンおよびそれ以降のバージョンで使用可能です。 このブート オプションには、Windows 7 の 32 ビット バージョンへの影響はありません。 使用することができます、 **groupaware**オプションと**サイズ**コンピューターで 64 個以下のアクティブな論理プロセッサが関数に複数のグループのドライバーの互換性をテストするオプション。
+複数のプロセッサ グループがある環境において、複数のグループをドライバーに強制的に認識させます。 このオプションを使用すると、グループ間のドライバーとコンポーネントの非互換性を明らかにするのに役立ちます。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このブート オプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。 **groupaware** オプションと **groupsize** オプションを使用すると、コンピューターのアクティブな論理プロセッサが 64 個以下である場合に、複数のグループで機能するようにドライバーの互換性をテストできます。
 
-**で groupaware**設定グループ 0 以外のプロセスが開始されているようになります。 これにより、ドライバーとコンポーネント間のグループ間の相互作用の機会が増えます。 オプションでは、従来の関数の動作も変更されます**KeSetTargetProcessorDpc**、 **KeSetSystemAffinityThreadEx**、および**KeRevertToUserAffinityThreadEx**、常にアクティブな論理プロセッサを含む最上位の番号付きグループで動作できるようにします。 呼び出すグループ対応、対応する従来これらの関数のいずれかを呼び出すドライバーを変更する必要があります (**KeSetTargetProcessorDpcEx**、 **KeSetSystemGroupAffinityThread**、および**KeRevertToUserGroupAffinityThread**)。
+**groupaware on** に設定すると、プロセスは確実にグループ 0 以外のグループで開始されます。 これにより、ドライバーとコンポーネントの間でグループ間の相互作用が生じる可能性が高くなります。 また、このオプションを選択すると、レガシ関数である **KeSetTargetProcessorDpc**、**KeSetSystemAffinityThreadEx**、**KeRevertToUserAffinityThreadEx** の動作が変更され、アクティブな論理プロセッサを含む最も大きい番号のグループで常に操作が実行されるようになります。 これらのレガシ関数のいずれかを呼び出すドライバーは、対応するグループ対応関数 (**KeSetTargetProcessorDpcEx**、**KeSetSystemGroupAffinityThread**、**KeRevertToUserGroupAffinityThread**) を呼び出すように変更する必要があります。
 
-詳細については、このオプションを使用して、次を参照してください。[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)します。
+このオプションの使用方法の詳細については、「[ドライバーの複数プロセッサ グループのサポートをテストするためのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)」を参照してください。
 
-**hal** *ファイル*オペレーティング システム ローダーで代替 HAL ファイルを読み込むように指示します。 指定したファイルは %systemroot% になければなりません\\system32 ディレクトリ。
+**hal** *file*: 代替の HAL ファイルを読み込むようにオペレーティング システム ローダーに指示します。 指定されたファイルは %SystemRoot%\\system32 ディレクトリに存在する必要があります。
 
 **hypervisorbusparams** *Bus.Device.Function*  
-PCI バス、デバイス、およびデバッグのデバイス数の関数を定義します。 たとえば、1.5.0 では、bus 1、5、関数 0 のデバイスでデバッグ デバイスをについて説明します。 デバッグするために、1394 ケーブルまたは USB 2.0 または 3.0 の USB デバッグ ケーブルを使用している場合は、このオプションを使用します。
+デバッグ デバイスの PCI バス、デバイス、関数の番号を定義します。 たとえば、1.5.0 は、バス 1、デバイス 5、関数 0 のデバッグ デバイスを表します。 このオプションは、デバッグ用に 1394 ケーブルか USB 2.0 または USB 3.0 デバッグ ケーブルを使用している場合に使用します。
 
-**hypervisordebug** \[ **で** | **オフ** \]  
-ハイパーバイザーのデバッガーが有効になっているかどうかを制御します。
+**hypervisordebug** \[ **On** | **Off** \]  
+ハイパーバイザー デバッガーが有効かどうかを制御します。
 
 **シリアル**  
-デバッグ用のシリアル接続を指定します。 ときに、**シリアル**オプションを指定すると、設定することも、 **hypervisordebugport**と**hypervisorbaudrate**オプション。
+デバッグ用のシリアル接続を指定します。 **Serial** オプションを指定した場合は、**hypervisordebugport** オプションと **hypervisorbaudrate** オプションも設定します。
 
 ``` syntax
 bcdedit /set hypervisordebugtype serial
@@ -129,212 +129,212 @@ bcdedit /set hypervisorlaunchtype auto
 ```
 
 **1394**  
-デバッグの IEEE 1394 (FireWire) 接続を指定します。 このオプションを使用する場合、 **hypervisorchannel**オプションも設定する必要があります。
+デバッグ用の IEEE 1394 (FireWire) 接続を指定します。 このオプションを使用する場合は、**hypervisorchannel** オプションも設定する必要があります。
 
 > [!IMPORTANT]
-> 1394 トランスポートは、Windows 10 バージョン 1607 およびそれ以前で使用できます。 以降のバージョンの Windows でご利用いただけません。 イーサネットを使用して KDNET などの他のトランスポートにプロジェクトを移行する必要があります。 トランスポートの詳細については、次を参照してください。[設定を KDNET ネットワーク カーネル デバッグを自動的に](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)します。
+> 1394 トランスポートは、Windows 10 バージョン 1607 およびそれ以前で使用できます。 それより後のバージョンの Windows では使用できません。 イーサネットを使用して KDNET などの他のトランスポートにプロジェクトを移行する必要があります。 そのトランスポートの詳細については、「[KDNET ネットワーク カーネル デバッグの自動設定](https://docs.microsoft.com/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically)」を参照してください。
 
 
 **Net**  
-デバッグするためのイーサネット ネットワーク接続を指定します。 このオプションを使用する場合、 **hypervisorhostip**オプションが設定されていないこともあります。
+デバッグ用のイーサネット ネットワーク接続を指定します。 このオプションを使用する場合は、**hypervisorhostip** オプションも設定する必要があります。
 
-**hypervisorhostip** *IP アドレス*(使用される場合にのみ、 **hypervisordebugtype**は**Net**)。ハイパーバイザーをデバッグするには、ネットワーク接続経由で、ホストのデバッガーの IPv4 アドレスを指定します。 HYPER-V でのデバッグ方法の詳細については、次を参照してください。 [、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)です。
+**hypervisorhostip** *IP address* (**hypervisordebugtype** が **Net** の場合にのみ使用されます)。ネットワーク接続経由でハイパーバイザーをデバッグする場合は、ホスト デバッガーの IPv4 アドレスを指定します。 Hyper-V のデバッグの詳細については、「[Hyper-V による仮想マシンの作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)」を参照してください。
 
 **hypervisorhostport** \[ *port* \]  
-(使用される場合にのみ、 **hypervisordebugtype**は**Net**)。ネットワークのデバッグにも、ホストのデバッガーとの通信にポートを指定します。 49152 またはそれ以降にする必要があります。
+(**hypervisordebugtype** が **Net** の場合にのみ使用されます。) ネットワーク デバッグの場合は、ホスト デバッガーの通信ポートを指定します。 49152 以上である必要があります。
 
 **hypervisordhcp** \[ **yes** | **no** \]  
-ハイパーバイザーで使用するネットワーク デバッガーでは、DHCP の使用を制御します。 これを設定**ありません**の自動プライベート IP アドレス指定 (APIPA) のローカル リンクの IP アドレスを取得する使用を強制します。
+ハイパーバイザーで使用するネットワーク デバッガーによる DHCP の使用を制御します。 これを **no** に設定すると、強制的に自動プライベート IP アドレス指定 (APIPA) を使用してローカル リンク IP アドレスが取得されます。
 
-**hypervisoriommupolicy** \[ **既定** | **を有効にする** | **を無効にします。** \]  
-ハイパーバイザーが、入力出力メモリ管理ユニット (IOMMU) を使用するかどうかを制御します。
+**hypervisoriommupolicy** \[ **default** | **enable** | **disable**\]  
+ハイパーバイザーで入出力メモリ管理ユニット (IOMMU) を使用するかどうかを制御します。
 
-**hypervisorlaunchtype** \[ **オフ** | **自動** \]  
-ハイパーバイザーの起動オプションを制御します。 ターゲット コンピューターで HYPER-V をデバッグするデバッガーを設定する場合は、このオプションを設定**自動**ターゲット コンピューターにします。 詳細については、次を参照してください。 [、Hyper-v と仮想マシンを作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)です。
+**hypervisorlaunchtype** \[ **Off** | **Auto** \]  
+ハイパーバイザー起動オプションを制御します。 対象のコンピューターで Hyper-V をデバッグするようにデバッガーを設定する場合は、このオプションをターゲット コンピューターで **Auto** に設定します。 詳細については、「[Hyper-V による仮想マシンの作成](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine)」を参照してください。
 
-**hypervisorloadoptions NOFORCESNOOP** \[ **はい** | **なし** \]  
-ハイパーバイザーがシステム IOMMUs snoop 制御を適用する必要があるかどうかを指定します。
+**hypervisorloadoptions NOFORCESNOOP** \[ **Yes** | **No** \]  
+ハイパーバイザーでシステムの IOMMU にスヌープ制御を強制的に適用するかどうかを指定します。
 
 **hypervisornumproc** *number*  
 ハイパーバイザーで開始できる論理プロセッサの合計数を指定します。
 
 **hypervisorrootproc** *number*  
-ルート パーティション内の仮想プロセッサの最大数を指定して、開始はハイパーバイザー内での論理プロセッサを持つことができる分割後の Non-uniform Memory アーキテクチャ (NUMA) ノードの数を制限します。
+ルート パーティション内の仮想プロセッサの最大数を指定し、ハイパーバイザーで論理プロセッサを開始できる分割後の NUMA (Non-Uniform Memory Architecture) ノードの数を制限します。
 
 **hypervisorrootprocpernode** *number*  
-ルート パーティションに事前に分割、Non-uniform Memory アーキテクチャ (NUMA) ノード内で開始できる仮想プロセッサの合計数を指定します。
+分割前の NUMA (Non-Uniform Memory Architecture) ノード内で開始できる、ルート パーティション内の仮想プロセッサの合計数を指定します。
 
-**hypervisorusekey** \[ *キー* \]  
-(使用される場合にのみ、 **hypervisordebugtype**は**Net**)。ネットワークのデバッグにも、接続の暗号化に使用するキーを指定します。 \[0 ~ 9\]と\[a ~ z\]のみ許可します。
+**hypervisorusekey** \[ *key* \]  
+(**hypervisordebugtype** が **Net** の場合にのみ使用されます。) ネットワーク デバッグの場合、接続の暗号化に使用するキーを指定します。 使用できるのは \[0 - 9\] および \[a - z\] のみです。
 
-**hypervisoruselargevtlb** \[ **はい** | **ありません**変換ルック アサイド バッファー (TLB) の仮想領域サイズが増加します。
+**hypervisoruselargevtlb** \[ **yes** | **no**: 仮想変換ルックアサイド バッファー (TLB) のサイズを増やします。
 
-**increaseuserva** *メガバイト*ユーザー モード仮想アドレス領域のメガバイト単位でメモリの量を指定します。
+**increaseuserva** *Megabytes*: ユーザー モードの仮想アドレス空間のメモリ量を MB 単位で指定します。
 
-Windows の 32 ビット エディションで 4 ギガバイト (GB) の使用可能な仮想アドレス領域があるアプリケーション。 2 GB は、アプリケーションで使用できると、その他の 2 GB はシステムでのみ使用できるように、仮想アドレス空間が分割されます。
+Windows の 32 ビット版では、アプリケーションで 4 GB の仮想アドレス空間を使用できます。 仮想アドレス空間は、2 GB をアプリケーションで使用できるように分割され、他の 2 GB はシステムでのみ使用できます。
 
-有効になっている、4 ギガバイトのチューニング機能、 **increaseuserva**オプションを使用すると、アプリケーションに提供される仮想アドレス領域を増やす 3 GB まで、1 と 2 の間にシステムで利用できる量を減らしますGB。 **BCEdit/set increaseuserva** *メガバイト*コマンドは、2048 (2 GB) から 3072 (3 GB) までの値を指定できますメガバイト単位の 10 進表記でします。 Windows では、カーネル モード アドレス空間として残りのアドレス空間 (指定された量の 4 GB) を使用します。
+**increaseuserva** オプションで有効になる 4 GB のチューニング機能を使用すると、アプリケーションで使用可能な仮想アドレス空間を最大 3 GB まで増やすことができます。これにより、システムで使用可能な量は 1 GB から 2 GB の間にまで減ります。 **BCEdit /set increaseuserva** *Megabytes* コマンドでは、10 進表記で 2048 (2 GB) から 3072 (3 GB) MB までの任意の値を指定できます。 残りのアドレス空間 (4 GB から指定した量を引いたもの) が Windows でカーネル モードのアドレス空間として使用されます。
 
-参照してください[4 ギガバイトのチューニング (Windows)](https://docs.microsoft.com/windows/desktop/Memory/4-gigabyte-tuning)詳細については、この機能はします。
+この機能の詳細については、「[4 GB のチューニング (Windows)](https://docs.microsoft.com/windows/desktop/Memory/4-gigabyte-tuning)」を参照してください。
 
-**カーネル***ファイル*オペレーティング システム ローダーで代替のカーネルを読み込むように指示します。 指定したファイルは %systemroot% になければなりません\\system32 ディレクトリ。
+**kernel** *file*: 代替カーネルを読み込むようにオペレーティング システムに指示します。 指定されたファイルは %SystemRoot%\\system32 ディレクトリに存在する必要があります。
 
-**loadoptions busparams**=*Bus.Device.Function*複数のコント ローラーが存在する場合は、ターゲット コント ローラーを指定します。 この構文は、デバッグを 1394 ケーブルまたは USB 2.0 デバッグ ケーブルを使用する場合に適しています。 *バス*バス番号を指定します*デバイス*デバイス番号を指定し、*関数*関数の数を指定します。
+**loadoptions busparams**=*Bus.Device.Function*: 複数のコントローラーが存在する場合にターゲット コントローラーを指定します。 この構文は、デバッグ用に 1394 ケーブルまたは USB 2.0 デバッグ ケーブルを使用する場合に適しています。 *Bus* でバス番号、*Device* でデバイス番号、*Function* で関数番号を指定します。
 
 > [!NOTE]
-> 1394 デバッグ、バス パラメーターを構成している Windows のバージョンに関係なく、10 進数で指定する必要があります。 USB 2.0 のデバッグに使用されるバス パラメーターの形式は、Windows のバージョンによって異なります。 Windows Server 2008 では、16 進数で、USB 2.0 bus パラメーターを指定してください。 Windows 7 および Windows Server 2008 R2 以降のバージョンの Windows では、10 進数で、USB 2.0 バスのパラメーターを指定する必要があります。
+> 1394 デバッグでは、構成する Windows のバージョンに関係なく、バス パラメーターを 10 進数で指定する必要があります。 USB 2.0 デバッグに使用するバス パラメーターの形式は、Windows のバージョンによって異なります。 Windows Server 2008 では、USB 2.0 バスパラメーターを 16 進数で指定する必要があります。 Windows 7 および Windows Server 2008 R2 以降のバージョンの Windows では、USB 2.0 バス パラメーターを 10 進数で指定する必要があります。
 
 **maxgroup** \[ **on** | **off** \]  
-プロセッサ グループの構成で作成されたグループの数を最大化します。
+プロセッサ グループ構成で作成されるグループの数を最大化します。
 
-**で maxgroup**設定では、特定のコンピューターのグループの数を最大化する方法でグループに NUMA ノードが割り当てられます。 作成されたグループの数がコンピューターが NUMA ノードの数またはこのバージョンの Windows でサポートされているグループの最大数、小さい方です。 既定の動作 (**オフ maxgroup)** としていくつかのグループに限り、NUMA ノードを緊密にパックされます。
+**maxgroup on** に設定すると、特定のコンピューターのグループ数が最大化されるように NUMA ノードをグループに割り当てることができます。 作成されるグループの数は、コンピューターの NUMA ノードの数、またはこのバージョンの Windows でサポートされているグループの最大数のいずれか小さい方です。 既定の動作 (**maxgroup off)** では、NUMA ノードをできるだけ少ないグループにまとめてパックします。
 
-複数のグループを使用する、コンピューターが 64 個以下のアクティブな論理プロセッサと、コンピューターに複数の NUMA ノードが既にある場合は、このオプションを使用します。 このオプションは、64 を超える論理プロセッサを搭載したコンピューターの既定のグループの構成を変更することも使用できます。
+複数のグループを使用するとき、コンピューターのアクティブな論理プロセッサが 64 個以下で、コンピューターに複数の NUMA ノードが既に存在する場合に、このオプションを使用します。 このオプションを使用すると、64 を超える数の論理プロセッサを搭載したコンピューターの既定のグループ構成を変更することもできます。
 
-[プロセッサ グループ](https://docs.microsoft.com/windows/desktop/ProcThread/processor-groups)を 64 論理プロセッサを超えるコンピューターのサポートを提供します。 このオプションは、Windows 7 および Windows Server 2008 R2 の 64 ビット バージョンおよびそれ以降のバージョンで利用できます。 このブート オプションには、Windows 7 の 32 ビット バージョンへの影響はありません。
+[プロセッサ グループ](https://docs.microsoft.com/windows/desktop/ProcThread/processor-groups)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このオプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。
 
-詳細については、このオプションを使用して、次を参照してください。[テスト ドライバは、複数のプロセッサ グループのサポートのブート パラメーター](boot-parameters-to-test-drivers-for-multiple-processor-group-support.md)します。
+このオプションの使用方法の詳細については、「[ドライバーの複数プロセッサ グループのサポートをテストするためのブート パラメーター](boot-parameters-to-test-drivers-for-multiple-processor-group-support.md)」を参照してください。
 
-**nointegritychecks** \[ **で** | **オフ**\]整合性チェックを無効にします。 セキュア ブートが有効な場合は設定できません。 この値は、Windows 7 と Windows 8 によって無視されます。
+**nointegritychecks** \[ **on** | **off** \]: 整合性チェックを無効にします。 セキュア ブートが有効な場合は設定できません。 この値は、Windows 7 および Windows 8 では無視されます。
 
-**nolowmem** \[ **で** | **オフ**\]メモリ不足の使用を制御します。 ときに**で nolowmem**が指定されて、このオプションはオペレーティング システム、デバイス ドライバー、およびすべてのアプリケーションを 4 GB の境界より上のアドレスにロードし、4 GB の境界上にあるすべてのメモリ プールの割り当てを Windows に指示します。 なお、 **nolowmem** Windows 8、Windows Server 2012、および以降のバージョンの Windows のオプションは無視されます。
+**nolowmem** \[ **on** | **off** \]: 下位メモリの使用を制御します。 **nolowmem on** を指定した場合、このオプションが選択されるとオペレーティング システム、デバイス ドライバー、すべてのアプリケーションが 4 GB 境界より上のアドレスに読み込まれ、すべてのメモリ プールが Windows によって 4 GB 境界より上のアドレスに割り当てられるようになります。 **nolowmem** オプションは、Windows 8、Windows Server 2012、およびそれ以降のバージョンの Windows では無視されることにご注意ください。
 
-**novesa** \[ **で** | **オフ** \] VGA ドライバーが VESA BIOS の呼び出しを避ける必要があるかどうかを示します。 Windows 8 および Windows Server 2012 では、オプションは無視されます。
+**novesa** \[ **on** | **off** \]: VGA ドライバーで VESA BIOS 呼び出しを回避する必要があるかどうかを示します。 Windows 8 と Windows Server 2012 では、このオプションは無視されます。
 
-**novga** \[ **で** | **オフ** \] OS の VGA モードの使用を無効にします。 オプションは、Windows 8 および Windows Server 2012 以降を使用します。
+**novga** \[ **on** | **off** \]: OS での VGA モードの使用が無効になります。 このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
 **nx** \[**Optin |OptOut | AlwaysOn |AlwaysOff**\]  
-有効にし、無効化、データ実行防止 (DEP)、一連のハードウェアとソフトウェアのテクノロジを有害なコードが保護されたメモリの場所で実行されていることを防ぐために設計されていますを構成します。 DEP 設定については、次を参照してください。[データ実行防止](https://docs.microsoft.com/windows/desktop/Memory/data-execution-prevention)します。
+データ実行防止 (DEP) を有効化、無効化、構成します。DEP は、保護されたメモリの場所で有害なコードが実行されないように設計された、一連のハードウェア テクノロジとソフトウェア テクノロジです。 DEP 設定の詳細については、「[データ実行防止](https://docs.microsoft.com/windows/desktop/Memory/data-execution-prevention)」を参照してください。
 
 **Optin**  
-DEP は、Windows カーネルやドライバーなど、オペレーティング システムのコンポーネントに対してのみ使用できます。 管理者は、Application Compatibility Toolkit (ACT) を使用して、選択した実行可能ファイルで DEP を有効にできます。
+Windows カーネルとドライバーを含むオペレーティング システム コンポーネントに対してのみ DEP を有効にします。 管理者は、Application Compatibility Toolkit (ACT) を使用して、選択した実行可能ファイルに対して DEP を有効にすることができます。
 
 **Optout**  
-オペレーティング システムと Windows カーネルやドライバーなど、すべてのプロセスの DEP を使用できます。 管理者が選択されている実行可能ファイルに DEP を無効を使用して、**システム**で**コントロール パネルの** します。
+オペレーティング システムおよび Windows カーネルとドライバーを含むすべてのプロセスに対して DEP を有効にします。 ただし、管理者は **[コントロール パネル]** の **[システム]** を使用して、選択した実行可能ファイルの DEP を無効にすることができます。
 
 **AlwaysOn**  
-オペレーティング システムと Windows カーネルやドライバーなど、すべてのプロセスの DEP を使用できます。 DEP を無効にする試行をすべてが無視されます。
+オペレーティング システムおよび Windows カーネルとドライバーを含むすべてのプロセスに対して DEP を有効にします。 DEP を無効にしようとする試みは、すべて無視されます。
 
 **AlwaysOff**  
-DEP. を無効にします。 選択的に DEP を有効にしようとは無視されます。
+DEP を無効にします。 DEP を選択的に有効にしようとしても無視されます。
 
-Windows vista では、このパラメーターには、物理アドレス拡張 (PAE) も無効にします。 このパラメーターは、Windows Server 2008 で、PAE を無効にできません。
+Windows Vista では、このパラメーターによって物理アドレス拡張 (PAE) も無効になります。 Windows Server 2008 では、このパラメーターを指定しても PAE は無効になりません。
 
 **onecpu** \[ **on** | **off** \]  
-ブートの 1 つ以上の論理プロセッサを搭載したコンピューターで使用される CPU のみを強制します。
+複数の論理プロセッサを持つコンピューターで、強制的にブート CPU のみを使用します。
 
-たとえば、次のコマンドは、1 つのプロセッサを使用して、現在のオペレーティング システム ローダーを構成します。
+たとえば、次のコマンドは、現在のオペレーティング システム ローダーで 1 つのプロセッサを使用するように構成します。
 
 ```syntax
 bcdedit /set onecpu on
 ```
 
 **onetimeadvancedoptions** \[ **on** | **off** \]  
-次の起動時には、従来のメニュー (F8 メニュー) に、システムで起動したかどうかを制御します。
+次回の起動時に、システムをレガシ メニュー (F8 メニュー) で起動するかどうかを制御します。
 
 > [!NOTE]
-> オプションは、Windows 8 および Windows Server 2012 以降を使用します。
+> このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
 ```syntax
 bcdedit /set {current} onetimeadvancedoptions on
 ```
 
-**pae** \[ **既定** | **ForceEnable** | **ForceDisable** \]  
-有効または、物理アドレス拡張 (PAE) を無効にします。 PAE を有効にすると、システムは、PAE カーネルのバージョン、Windows を読み込みます。
+**pae** \[ **Default** | **ForceEnable** | **ForceDisable** \]  
+物理アドレス拡張 (PAE) を有効または無効にします。 PAE を有効にすると、システムに Windows カーネルの PAE バージョンが読み込まれます。
 
-**Pae**パラメーターは、x86 ベースおよび x64 ベース プロセッサを搭載したコンピューターで実行される Windows の 32 ビット バージョンのブート エントリでのみ有効です。 (Windows 8) より前の Windows の 32 ビット バージョンでは、PAE は既定で無効になります。 ただし、Windows に自動的にコンピューターが構成されている場合、PAE を有効にホット アド メモリ デバイス 4 GB の領域を超えるメモリ範囲で静的リソース アフィニティ テーブル (SRAT) で定義されています。 *ホット アド メモリ*メモリ デバイスの再起動またはコンピューターをオフにすることがなく追加することができますをサポートします。 ここでは、システムの起動時に、PAE を有効にする必要があります、ため、それを有効に自動的にように、システムは、再起動の間で追加される拡張のメモリに迅速に対応できます。 ホット アド メモリが、Datacenter Edition、Windows Server 2008 でのみサポートされます。Windows Server 2008 for Itanium-based Systems;上のすべての以降のバージョンの Windows Server datacenter および enterprise エディションとします。 さらに、Windows Server 2008 より前の Windows のバージョンは、ホット アド メモリが、ACPI BIOS、x86 コンピューターでのみサポートされているプロセッサ、および特殊なハードウェア。 Windows Server 2008 と Windows Server の以降のバージョンでは、すべてのプロセッサ アーキテクチャのことができます。
+**pae** パラメーターは、x86 ベースおよび x64 ベースのプロセッサを搭載したコンピューターで実行される 32 ビット版の Windows のブート エントリでのみ有効です。 32 ビット版の Windows (Windows 8 より前) では、PAE は既定で無効になっています。 ただし、静的リソース アフィニティ テーブル (SRAT) で定義された 4 GB 領域を超えるメモリ範囲でコンピューターがホットアド メモリ デバイス用に構成されている場合は、Windows で自動的に PAE が有効になります。 "*ホットアド メモリ*" では、コンピューターの再起動や電源オフを行うことなく追加できるメモリ デバイスがサポートされます。 この場合、システムの起動時に PAE を有効にする必要があるため、再起動と再起動の間に追加された拡張メモリにシステムがすぐに対応できるように、PAE が自動的に有効になります。 ホットアド メモリは、Windows Server 2008 Datacenter Edition および Windows Server 2008 for Itanium-Based Systems と、以降のすべてのバージョンの Windows Server Datacenter Edition および Enterprise Edition でのみサポートされています。 さらに、Windows Server 2008 より前のバージョンの Windows では、ホットアド メモリは、ACPI BIOS、x86 プロセッサ、および特殊なハードウェアを搭載したコンピューターでのみサポートされています。 Windows Server 2008 以降のバージョンの Windows Server の場合、すべてのプロセッサ アーキテクチャでサポートされています。
 
-ハードウェアが有効なデータ実行防止 (DEP) をサポートし、DEP をサポートする Windows オペレーティング システムの 32 ビット バージョンを実行しているコンピューターで PAE は自動的にで有効に DEP が有効にすると、動作する Windows のすべての 32 ビット バージョンDEP. を無効にすると、Windows Server 2003 SP1、PAE を除く、システムが無効になっています DEP を無効にするには、PAE を有効にする、する必要があります有効にする PAE、明示的を使用して **/set nx AlwaysOff**と **/set pae ForceEnable**します。 DEP の詳細については、次を参照してください。 [DEP の構成と PAE のブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-configure-dep-and-pae)します。
+ハードウェア対応のデータ実行防止 (DEP) をサポートし、DEP がサポートされている 32 ビット版の Windows オペレーティング システムを実行するコンピューターでは、DEP が有効になっていると、PAE が自動的に有効になります。また、すべての 32 ビット版の Windows オペレーティング システム (Windows Server 2003 SP1 を除く) では、DEP を無効にすると、PAE は無効になります。 DEP が無効になっているときに PAE を有効にするには、 **/set nx AlwaysOff** と **/set pae ForceEnable** を使用して、PAE を明示的に有効にする必要があります。 DEP の詳細については、「[DEP と PAE を構成するためのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-configure-dep-and-pae)」を参照してください。
 
-使用しての詳細については、 **pae**パラメーターと PAE の構成に影響する他のパラメーターを参照してください。 [DEP の構成と PAE のブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-configure-dep-and-pae)します。
+**pae** パラメーターと、PAE 構成に影響するその他のパラメーターの使用方法の詳細については、「[DEP と PAE を構成するためのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-configure-dep-and-pae)」を参照してください。
 
 **pciexpress** \[ **default** | **forcedisable**\]  
-有効または、PCI Express 機能を無効にします。 コンピューターのプラットフォームが、PCI Express 機能と、ACPI をサポートしているか\_OSC メソッドは、Windows により、高度な機能で (これは、既定値)、PCI Express のネイティブ コントロール機能という、オペレーティング システムへの機能の制御を許可します。 使用して、 **forcedisable**高度な PCI Express 機能を変更し、PCI Express の従来の動作を使用するオプション。 詳細については、次を参照してください。[を有効にする PCI Express 内のネイティブ コントロール Windows](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn631753(v=vs.85))します。
+PCI Express 機能を有効または無効にします。 コンピューター プラットフォームで PCI Express 機能がサポートされていて、ACPI \_OSC メソッドによって機能の制御がオペレーティング システムに許可されている場合、Windows で PCI Express ネイティブ コントロール機能を使用して高度な機能が有効化されます (これが既定です)。 **forcedisable** オプションは、PCI Express の高度な機能を無効にし、レガシ PCI Express の動作を使用する場合に使用します。 詳細については、「[Windows での PCI Express ネイティブ コントロールの有効化](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn631753(v=vs.85))」を参照してください。
 
 **quietboot** \[ **on** | **off** \]  
-Windows 起動画面の表示とアニメーションの代わりに高解像度ビットマップの表示を制御します。 Windows Vista では、以前のオペレーティング システムで、**選択する**と同様の機能を提供します。
+Windows 起動画面の表示とアニメーションの代わりの高解像度ビットマップの表示を制御します。 Windows Vista より前のオペレーティング システムでは、 **/noguiboot** によって同様の機能が提供されます。
 
 > [!NOTE]
-> 使用しないでください、 **quietboot** Windows 8 のオプションだけでなくすべてのブート グラフィックスのバグ チェックのデータの表示ができなくなります。
+> Windows 8 では **quietboot** オプションを使用しないでください。使用すると、すべてのブート グラフィックスだけでなくバグ チェック データも表示されなくなります。
 
-**removememory** *メガバイト*からオペレーティング システムが使用できる使用可能なメモリの合計メモリを削除します。
+**removememory** *Megabytes*: オペレーティング システムで使用できる使用可能メモリの合計からメモリを削除します。
 
-たとえば、次のコマンドは、指定されたブート エントリに関連付けられたオペレーティング システムに使用可能な総から 256 MB のメモリを削除します。
+たとえば、次のコマンドは、指定されたブート エントリに関連付けられた、オペレーティング システムで使用可能なメモリの合計から 256 MB のメモリを削除します。
 
 ``` syntax
 bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} removememory 256
 ```
 
 **sos** \[ **on** | **off** \]  
-ブート プロセス中に、読み込み時に、ドライバーの名前の表示を制御します。 使用**で sos**名を表示します。 使用**オフ sos**を表示しないようにします。
+ドライバーがブート プロセス中に読み込まれるときのドライバーの名前の表示を制御します。 名前を表示するには **sos on** を使用します。 表示を抑制するには、**sos off** を使用します。
 
 **testsigning** \[ **on** | **off** \]  
-Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、または Windows Vista があらゆる種類のテスト署名されたカーネル モード コードを読み込むかどうかを制御します。 64 ビット バージョンの Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008 では、どの意味テスト署名されたカーネル モード ドライバーに、このオプションはない、既定で設定して、Windows Vista は、既定では読み込まれません。 BCDEdit のコマンドを実行した後は、変更を反映できるようにコンピューターを再起動します。 詳細については、次を参照してください。[テスト署名の概要](https://docs.microsoft.com/windows-hardware/drivers/install/introduction-to-test-signing)します。
+Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、または Windows Vista で、テスト署名された任意の種類のカーネル モード コードを読み込むかどうかを制御します。 このオプションは既定では設定されていません。つまり、64 ビット版の Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2008、Windows Vista でテスト署名されたカーネル モード ドライバーは、既定では読み込まれません。 BCDEdit コマンドを実行した後、コンピューターを再起動して変更を有効にします。 詳細については、「[テスト署名の概要](https://docs.microsoft.com/windows-hardware/drivers/install/introduction-to-test-signing)」を参照してください。
 
 > [!NOTE]
-> BCDEdit のオプションを設定する前に、無効にするか、またはコンピューターの BitLocker とセキュア ブートを中断する必要があります。
+> BCDEdit のオプションを設定する前に、コンピューターで BitLocker とセキュア ブートを無効にするか中断することが必要になる場合があります。
 
-**tpmbootentropy** \[ **既定** | **ForceEnable** | **ForceDisable**\]  
-エントロピがトラステッド プラットフォーム モジュール (TPM) ため、オペレーティング システムの乱数ジェネレーターのシードから収集されたかどうかを判断します。
+**tpmbootentropy** \[ **default** | **ForceEnable** | **ForceDisable**\]  
+オペレーティング システムの乱数ジェネレーターのシードを設定するために、トラステッド プラットフォーム モジュール (TPM) からエントロピを収集するかどうかを決定します。
 
-**truncatememory** *アドレス*Windows で使用できる物理メモリの量を制限します。 このオプションを使用する場合、Windows は、指定された物理アドレス以上のすべてのメモリを無視します。 指定、*アドレス*(バイト単位)。
+**truncatememory** *address*: Windows で使用可能な物理メモリの量を制限します。 このオプションを使用すると、指定した物理アドレス以上のすべてのメモリが Windows で無視されます。 *address* はバイト単位で指定します。
 
-たとえば、次のコマンドは、1 GB で、物理アドレスの制限を設定します。 (1073741824) を 10 進数または 16 進数 (0x40000000) アドレスを指定することができます。
+たとえば、次のコマンドは、物理アドレスの上限を 1 GB に設定します。 アドレスは 10 進数 (1073741824) または 16 進数 (0x40000000) で指定できます。
 
 ``` syntax
 bcdedit /set {49916baf-0e08-11db-9af4-000bdbd316a0} truncatememory 0x40000000
 ```
 
-**tscsyncpolicy** \[ **既定** | **レガシ** | **拡張** \]  
-コントロール、時刻、タイムスタンプ カウンター同期ポリシー。 このオプションは、デバッグにのみ使用する必要があります。
+**tscsyncpolicy** \[ **Default** | **Legacy** | **Enhanced** \]  
+タイムスタンプ カウンターの同期ポリシーを制御します。 このオプションは、デバッグのためにのみ使用してください。
 
 > [!NOTE]
-> オプションは、Windows 8 および Windows Server 2012 以降を使用します。
+> このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
 **usefirmwarepcisettings** \[ **yes** | **no** \]  
-有効または、BIOS 構成されている周辺機器コンポーネント相互接続 (PCI) リソースの使用を無効にします。
+BIOS で構成されている PCI (Peripheral Component Interconnect) リソースの使用を有効または無効にします。
 
 **useplatformclock** \[ **yes** | **no** \]  
-システムのパフォーマンス カウンターとしてのプラットフォームのクロックの使用を強制します。
+プラットフォーム クロックをシステムのパフォーマンス カウンターとして強制的に使用します。
 
 > [!NOTE]
-> このオプションは、デバッグにのみ使用する必要があります。
+> このオプションは、デバッグのためにのみ使用してください。
 
 **uselegacyapicmode** \[ **yes** | **no** \]  
-拡張 APIC モードをサポートしているプロセッサ、チップセット場合でも、以前のバージョンの APIC モードを強制的に使用します。
+プロセッサとチップセットが拡張 APIC モードをサポートしている場合でも、レガシ APIC モードを強制するために使用します。
 
-**useplatformtick** \[ **はい** | **なし** \]  
-合成のタイマーは許可されていません、プラットフォーム ソースでバックアップするクロックを強制します。 オプションは、Windows 8 および Windows Server 2012 以降を使用します。
+**useplatformtick** \[ **yes** | **no** \]  
+プラットフォーム ソースによってクロックが強制的にサポートされるようにします。合成タイマーは許可されません。 このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。
 
 > [!NOTE]
-> このオプションは、デバッグにのみ使用する必要があります。
+> このオプションは、デバッグのためにのみ使用してください。
 
 **vga** \[ **on** | **off** \]  
-安全な解像度の使用を強制します。 たとえばを Windows 7 を実行するコンピューターこのオプションは 640 x 480 の解像度の使用を強制します。 Windows 8 を実行するコンピューターでは、このオプションは、800 x 600 の解像度がある場合または 640 x 480 の使用をしない強制します。
+安全な解像度を強制的に使用します。 たとえば、Windows 7 を実行しているコンピューターでは、このオプションを使用すると 640 x 480 の解像度が強制的に使用されます。 Windows 8 を実行しているコンピューターでは、このオプションを使用すると、使用可能な場合は 800 x 600 の解像度、そうでない場合は 640 x 480 が使用されます。
 
 **xsavedisable** \[ **0** | **1** \]  
-ときにゼロ (0) 以外の値に設定するには、カーネルで XSAVE プロセッサ機能が無効にします。
+ゼロ (0) 以外の値に設定すると、カーネルの XSAVE プロセッサ機能が無効になります。
 
 **x2apicpolicy** \[ **enable** | **disable** \]  
-有効またはサポートされている場合は、拡張の APIC モードの使用を無効にします。 使用するシステムの既定値は拡張可能な場合の APIC モードです。
+拡張 APIC モードの使用を有効または無効にします (サポートされている場合)。 既定では、使用可能な場合は拡張 APIC モードが使用されます。
 
-### <a name="comments"></a>コメント
+### <a name="comments"></a>備考
 
-BCD の特定の要素とブート オプションの詳細については、コマンドを使用することができます**BCDEdit/でしょうか。OSLOADER**と**BCDEdit/でしょうか。型の OSLOADER**します。
+特定の BCD 要素とブート オプションの詳細を表示するには、次のコマンドを使用します。**BCDEdit /?OSLOADER** および **BCDEdit/? TYPES OSLOADER**
 
-現在のブート エントリとその設定を表示する、 **bcdedit/enum**コマンド。 このコマンドは、アクティブなブート エントリは、関連付けられているグローバル一意識別子 (GUID) を表示できます。 識別子を使用して、 **/set**コマンドは、特定のブート エントリのオプションを構成します。
+現在のブート エントリとその設定を表示するには、**bcdedit /enum** コマンドを使用します。 このコマンドにより、アクティブなブート エントリと、エントリに関連付けられているグローバル一意識別子 (GUID) が表示されます。 その識別子を **/set** コマンドで使用して、特定のブート エントリのオプションを構成します。
 
-設定したブート オプションの値を削除するには、使用、 **/deletevalue**オプション。 コマンドの構文は次のとおりです。
+設定したブート オプションの値を削除するには、 **/deletevalue** オプションを使用します。 このコマンドの構文は次のとおりです。
 
 **bcdedit** /**deletevalue** \[ **{ID}** \] *datatatype*
 
-たとえば、プロセッサ グループ オプションを変更する**サイズ**をテスト用の新しい値を目的として、次のコマンドを入力し、コンピューターを再起動して、64 の既定値に戻すことができます。
+たとえば、**groupsize** というプロセッサ グループ オプションをテスト目的で新しい値に変更した場合は、次のコマンドを入力してコンピューターを再起動することで、既定値の 64 に戻すことができます。
 
 ``` syntax
 bcdedit /deletevalue groupsize
 ```
 
-ブート オプションの変更には、再起動を有効にする必要があります。 一般的に使用される BCDEdit のコマンドについては、次を参照してください。[ブート構成データ エディターに関してよく寄せられる質問](https://go.microsoft.com/fwlink/p/?linkid=155086)します。
+ブート オプションに対するどのような変更も、有効にするには再起動することが必要です。 一般的に使用される BCDEdit コマンドの詳細については、「[ブート構成データ エディターに関してよく寄せられる質問](https://go.microsoft.com/fwlink/p/?linkid=155086)」を参照してください。
 
 ## <a name="requirements"></a>要件
 
@@ -346,4 +346,4 @@ bcdedit /deletevalue groupsize
 
 ## <a name="see-also"></a>関連項目
 
-- [BCDEdit/deletevalue](bcdedit--deletevalue.md)
+- [BCDEdit /deletevalue](bcdedit--deletevalue.md)

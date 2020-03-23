@@ -1,8 +1,8 @@
 ---
 title: バグ チェック (ブルー スクリーン)
-description: このトピックでは、バグチェック (ブルースクリーン) について説明します。
+description: このトピックでは、バグ チェック (ブルー スクリーン) について説明します
 ms.assetid: 6ACE4AD9-5318-4c96-A560-D247033CB500
-keywords: バグチェック、ブルースクリーン、カーネルエラー、停止エラー、停止コード
+keywords: バグ チェック, ブルー スクリーン, カーネル エラー, 停止エラー, 停止コード
 ms.date: 05/23/2017
 ms.localizationpriority: high
 ms.openlocfilehash: fc65ad7f26f895d449f61853c304b124d39d04a3
@@ -18,15 +18,15 @@ ms.locfileid: "78402394"
 ## <span id="ddk_bug_checks_blue_screens__dbg"></span><span id="DDK_BUG_CHECKS_BLUE_SCREENS__DBG"></span>
 
 
-ここでは、次の内容について説明します。
+このセクションの内容:
 
-[ブルースクリーンの一般的なヒント](general-troubleshooting-tips.md)
+[ブルー スクリーンの一般的なヒント](general-troubleshooting-tips.md)
 
-[ブルースクリーンデータ](blue-screen-data.md)
+[ブルー スクリーンのデータ](blue-screen-data.md)
 
-[バグチェックコードリファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
-これらの**トピック  、** プログラマ向けです。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)」を参照してください。
+**注**  これらのトピックは、プログラマを対象としています。 コンピューターの使用中にブルー スクリーン エラー コードが表示される場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)」を参照してください。
 
  
 
