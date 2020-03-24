@@ -4,25 +4,27 @@ description: PnPUtil
 ms.assetid: 3678fd41-c3ee-4538-b783-6f099ac104a6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 183f37ceb8bc6c1e6ec8a0a1ab119e803dc96fec
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: f9d3487b8b43407bd3050888960d9581ca4ce4c2
+ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363842"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080131"
 ---
 # <a name="pnputil"></a>PnPUtil
 
 
-PnPUtil (PnPUtil.exe) は、管理者に次の操作を実行できるコマンド ライン ツール[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages):
+PnPUtil (PnPUtil) は、管理者が[ドライバーパッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/driver-packages)に対してアクションを実行できるようにするコマンドラインツールです。  たとえば、次のものがあります。
 
--   ドライバー パッケージを追加、[ドライバー ストア](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)します。
+-   ドライバーパッケージを[ドライバーストア](https://docs.microsoft.com/windows-hardware/drivers/install/driver-store)に追加します。
 
--   コンピューターのドライバー パッケージをインストールします。
+-   コンピューターにドライバーパッケージをインストールします。
 
--   ドライバー ストアからドライバー パッケージを削除します。
+-   ドライバーストアからドライバーパッケージを削除します。
 
--   現在、ドライバー ストア内にあるドライバー パッケージを列挙します。 ボックス内のパッケージではない唯一のドライバー パッケージの一覧が表示されます。 *インボックス*ドライバー パッケージは Windows またはそのサービス パックの既定のインストールに含まれている 1 つ。
+-   現在ドライバーストアにあるドライバーパッケージを列挙します。 インボックスパッケージ以外のドライバーパッケージのみが一覧表示されます。 *インボックス*ドライバーパッケージは、Windows またはそのサービスパックの既定のインストールに含まれています。
+
+サポートされているすべてのアクションの一覧については、「 [PnP コマンド構文](https://review.docs.microsoft.com/en-us/windows-hardware/drivers/devtest/pnputil-command-syntax)」を参照してください。
 
 <table>
 <colgroup>
@@ -30,18 +32,18 @@ PnPUtil (PnPUtil.exe) は、管理者に次の操作を実行できるコマン�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Pnputil ツールはどこでダウンロードできますか。</th>
+<th align="left">PnPUtil はどこでダウンロードできますか。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>PnPUtil (PnPUtil.exe) は、Windows、Windows Vista (%windir%\system32 ディレクトリ) 内からのすべてのバージョンに含まれます。 個別の pnputil ツールのダウンロード パッケージはありません。</p>
+<td align="left"><p>PnPUtil (PnPUtil) は、windows Vista (%windir%\system32 ディレクトリ内) 以降のすべてのバージョンの Windows に含まれています。 個別の PnPUtil ダウンロードパッケージがありません。</p>
 <ul>
-<li>開く、<strong>コマンド プロンプト</strong>ウィンドウ (<strong>管理者として実行</strong>)。</li>
-<li>型<strong>pnputil/でしょうか。</strong> コマンド オプションを表示します。 参照してください<a href="pnputil-command-syntax.md" data-raw-source="[&lt;strong&gt;PnPUtil Command Syntax&lt;/strong&gt;](pnputil-command-syntax.md)"> <strong>PnPUtil コマンド構文</strong></a>詳細についてはします。</li>
+<li><strong>コマンドプロンプト</strong>ウィンドウを開きます ([<strong>管理者として実行</strong>])。</li>
+<li>「 <strong>Pnputil/?」と入力します。</strong> コマンドオプションを表示します。 詳細については、「 <a href="pnputil-command-syntax.md" data-raw-source="[&lt;strong&gt;PnPUtil Command Syntax&lt;/strong&gt;](pnputil-command-syntax.md)"><strong>PnPUtil コマンドの構文</strong></a>」を参照してください。</li>
 </ul>
 <div class="alert">
-<strong>注</strong>pnputil ツールは、Windows Vista および以降のバージョンの Windows でサポートされます。 Pnputil ツールを使用して Windows XP には、ただし、使用することができます、 <a href="https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines" data-raw-source="[Driver Install Frameworks (DIFx)](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)">Driver Install Frameworks (DIFx)</a>ツールを作成し、ドライバー パッケージのインストールをカスタマイズします。
+<strong>メモ</strong> PnPUtil は、Windows Vista 以降のバージョンの Windows でサポートされています。 Windows XP では、PnPUtil は使用できませんが、<a href="https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines" data-raw-source="[Driver Install Frameworks (DIFx)](https://docs.microsoft.com/windows-hardware/drivers/install/difx-guidelines)">ドライバーインストールフレームワーク (DIFx)</a>ツールを使用して、ドライバーパッケージのインストールを作成およびカスタマイズすることができます。
 </div>
 <div>
  
@@ -52,11 +54,11 @@ PnPUtil (PnPUtil.exe) は、管理者に次の操作を実行できるコマン�
 
  
 
-このセクションで、次のとおりです。
+このセクションの内容は次のとおりです。
 
 [PnPUtil コマンドの構文](pnputil-command-syntax.md)
 
-[PnPUtil 例](pnputil-examples.md)
+[PnPUtil の例](pnputil-examples.md)
 
  
 
