@@ -952,6 +952,8 @@
       href: configuring-windows-to-rank-driver-signatures-equally.md
     - name: ドライバー パッケージの更新バージョンのインストール
       href: installing-the-updated-version-of-the-driver-package.md
+    - name: デバイスと対話するように、Win32 サービスを作成
+      href: best-practices-win32services-interacting-with-devices.md
 - name: トラブルシューティング
   items:
     - name: デバイスとドライバーのインストールのトラブルシューティング

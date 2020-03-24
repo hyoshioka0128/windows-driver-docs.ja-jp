@@ -1,36 +1,36 @@
 ---
 title: Windows デバイス コンソール (Devcon.exe)
-description: DevCon (Devcon.exe)、デバイス コンソールは、Windows を実行するコンピューターでデバイスの詳細情報を表示するコマンド ライン ツールです。
+description: デバイス コンソールである DevCon (Devcon.exe) は、Windows を実行しているコンピューター上のデバイスに関する詳細情報を表示するコマンドライン ツールです。
 ms.assetid: ac74200e-e2ae-40db-9fb7-5ea2e7760613
 keywords:
 - DevCon WDK
 - デバイス コンソール WDK
-- driver DevCon、WDK のテスト
-- ドライバー WDK、DevCon のテスト
+- ドライバー テスト WDK、DevCon
+- ドライバーのテスト WDK、DevCon
 - デバイス情報 WDK DevCon
-- WDK DevCon を検索します。
-- デバイス情報を表示します。
-- WDK DevCon デバイスの構成を変更します。
-- WDK DevCon のデバイスを操作します。
-- WDK DevCon を状態します。
-- デバイスを再起動します。
+- 検索 WDK DevCon
+- デバイス情報の表示
+- デバイス構成の変更 WDK DevCon
+- デバイスの操作 WDK DevCon
+- 状態の変更 WDK DevCon
+- デバイスの再起動
 - デバイス管理 WDK DevCon
-- WDK のデバイス情報を一覧表示します。
+- デバイス情報の一覧表示 WDK
 ms.date: 04/20/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 1298d1f2c410bcbeb23989ba44c121d07b129552
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: d5c3e1418e05d8ffc0a852d626dbefbe1433dc72
+ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371512"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78335946"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows デバイス コンソール (Devcon.exe)
 
 
-DevCon (Devcon.exe)、デバイス コンソールは、Windows を実行するコンピューターでデバイスの詳細情報を表示するコマンド ライン ツールです。 DevCon を使用して、有効にする、無効にする、インストール、構成、およびデバイスを削除することができます。
+デバイス コンソールである DevCon (Devcon.exe) は、Windows を実行しているコンピューター上のデバイスに関する詳細情報を表示するコマンドライン ツールです。 DevCon を使用して、デバイスを有効化、無効化、インストール、構成、および削除できます。
 
-DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で動作します。
+DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で実行されます。
 
 ## <span id="ddk_devcon_tools"></span><span id="DDK_DEVCON_TOOLS"></span>
 
@@ -46,13 +46,13 @@ DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で動�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、DevCon (Devcon.exe) が含まれます。 キットのダウンロード方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>します。</p>
-<p><strong>Windows Driver Kit (WDK) 8 と Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
+<td align="left"><p>DevCon (Devcon) は、デスクトップ アプリ用の WDK、Visual Studio、Windows SDK をインストールするときに組み込まれます。 キットのダウンロードの詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>に関するページを参照してください。</p>
+<p><strong>Windows Driver Kit (WDK) 8 および Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
 <p>%WindowsSdkDir%\tools\x64\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\arm\devcon.exe</p>
 <div class="alert">
-<strong>注</strong>WindowsSdkDir %、Visual Studio 環境変数では、パスを表す Windows キット ディレクトリに、キットがインストールされている、たとえば、C:\Program Files (x86) \windows kits \8.1 です。
+<strong>注</strong> Visual Studio 環境変数 %WindowsSdkDir% では、キットがインストールされる Windows キット ディレクトリへのパスが表されます (たとえば、C:\Program Files (x86)\Windows Kits\8.1)。
 </div>
 <div>
  
@@ -67,56 +67,56 @@ DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で動�
 
 [DevCon コマンド](devcon-general-commands.md)
 
-[DevCon 例](devcon-examples.md)
+[DevCon の例](devcon-examples.md)
 
-## <a name="span-idwhatyoucandowithdevconspanspan-idwhatyoucandowithdevconspanspan-idwhatyoucandowithdevconspanwhat-you-can-do-with-devcon"></a><span id="What_you_can_do_with_DevCon"></span><span id="what_you_can_do_with_devcon"></span><span id="WHAT_YOU_CAN_DO_WITH_DEVCON"></span>DevCon で行うことができます。
+## <a name="span-idwhat_you_can_do_with_devconspanspan-idwhat_you_can_do_with_devconspanspan-idwhat_you_can_do_with_devconspanwhat-you-can-do-with-devcon"></a><span id="What_you_can_do_with_DevCon"></span><span id="what_you_can_do_with_devcon"></span><span id="WHAT_YOU_CAN_DO_WITH_DEVCON"></span>DevCon でできること
 
 
-Windows ドライバー開発者およびテスト担当者は、DevCon を使用して、ドライバーがインストールされ、正しい INF ファイル、ドライバー スタック、ドライバー ファイル、およびドライバー パッケージを含むが正しく構成されていることを確認します。 DevCon コマンドを使用することもできます (有効にする、無効にする、インストール、開始、停止、および継続) ドライバーをテストするためのスクリプトでします。
+Windows ドライバーの開発者およびテスト担当者は、DevCon を使用することで、ドライバーのインストールおよび構成が正しく行われていること (INF ファイル、ドライバー スタック、ドライバー ファイル、ドライバー パッケージが適切であることなど) を確認できます。 また、スクリプト内に DevCon コマンド (enable、disable、install、start、stop、continue) を使用してドライバーをテストすることもできます。
 
-DevCon は、ローカル コンピューターおよびリモート コンピューターをデバイス管理機能を実行するコマンド ライン ツールです。
+DevCon は、ローカル コンピューターとリモート コンピューターでデバイス管理機能を実行するためのコマンドライン ツールです。
 
-**注**DevCon コマンドをリモート コンピューターで実行する、グループ ポリシー設定がリモート コンピューターで実行するプラグ アンド プレイ サービスを許可する必要があります。 Windows Vista および Windows 7 を実行するコンピューター、グループ ポリシーには、既定では、サービスへのリモート アクセスが無効にします。 WDK 8 WDK 8.1 を実行するコンピューターでリモート アクセスでは使用できません。
+**注**  リモート コンピューターで DevCon コマンドを実行するには、リモート コンピューター上でのプラグアンドプレイ サービスの実行がグループ ポリシー設定によって許可されている必要があります。 Windows Vista および Windows 7 を実行しているコンピューターでは、このサービスへのリモート アクセスがグループ ポリシーによって既定で無効にされています。 WDK 8.1 および WDK 8 を実行するコンピューターでは、リモート アクセスを使用できません。
 
  
 
-Devcon 機能は次のとおりです。
+DevCon 機能は次のとおりです。
 
--   **ドライバーとデバイスの情報を表示する**DevCon は、ローカル コンピューターおよびリモート コンピューターにドライバーとデバイスの次のプロパティを表示することができます (Windows XP を実行している以前のバージョン)。
-    -   ハードウェア Id、互換性 Id、およびデバイス インスタンス Id。 これらの識別子がで詳しく説明されている[識別文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)します。
+-   **ドライバーとデバイスの情報を表示する** DevCon を使用すれば、ローカル コンピューターと、リモート コンピューター (Windows XP およびそれ以前を実行している) 上のドライバーとデバイスの次のプロパティを表示できます。
+    -   ハードウェア ID、互換性 ID、デバイス インスタンス ID。 これらの識別子の詳細については「[デバイスの識別用文字列](https://docs.microsoft.com/windows-hardware/drivers/install/device-identification-strings)」を参照してください。
     -   [デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)
-    -   デバイスのデバイス セットアップ クラス
-    -   INF ファイルとデバイスのドライバー ファイル
-    -   詳細[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)
+    -   デバイス セットアップ クラス内のデバイス
+    -   INF ファイルとデバイス ドライバー ファイル
+    -   [ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)の詳細
     -   ハードウェア リソース
     -   デバイスの状態
-    -   必要なドライバー スタック
-    -   ドライバー ストアにサード パーティ製のドライバー パッケージ
--   **デバイスの検索**DevCon ハードウェア ID、デバイス インスタンス ID、またはデバイス セットアップ クラスが、ローカルまたはリモート コンピューターにインストールされ、インストールされていないデバイスを検索できます。
+    -   期待されるドライバー スタック
+    -   ドライバー ストア内のサードパーティ製ドライバー パッケージ
+-   **デバイスを検索する** DevCon を使用すると、ハードウェア ID、デバイス インスタンス ID、またはデバイス セットアップ クラスによって、ローカル コンピューターまたはリモート コンピューター上でインストールされた、およびアンインストールされたデバイスを検索できます。
 
--   **デバイスの設定を変更する**DevCon は次の方法で、状態またはローカル コンピューターのプラグ アンド プレイ (PnP) デバイスの構成を変更できます。
-    -   デバイスを有効にします。
-    -   デバイスを無効にします。
-    -   (対話型と非対話型) ドライバーを更新します。
-    -   デバイスをインストールする (devnode を作成およびソフトウェアのインストール)
-    -   デバイス ツリーからデバイスを削除し、そのデバイス スタックを削除
-    -   プラグ アンド プレイ デバイスを再スキャンします。
-    -   追加、削除、およびルートで列挙されるデバイスのハードウェア Id の順序を変更
-    -   デバイス セットアップ クラスの上限と下限のフィルター ドライバーを変更します。
-    -   追加して、サード パーティ製のドライバー パッケージをドライバー ストアから削除
--   **デバイスまたはコンピューターの再起動**DevCon は、ローカルのデバイスを再起動して、必要に応じて、ローカル システムを再起動、または別 DevCon 操作に必要な場合は、ローカル システムを再起動します。
+-   **デバイスの設定を変更する** DevCon を使用すると、ローカル コンピューター上のプラグ アンド プレイ (PnP) デバイスの状態または構成を次の方法で変更できます。
+    -   デバイスを有効にする
+    -   デバイスを無効にする
+    -   ドライバーを更新する (対話型および非対話型)
+    -   デバイスをインストールする (devnode を作成してソフトウェアをインストールする)
+    -   デバイス ツリーからデバイスを削除し、そのデバイス スタックを削除する
+    -   プラグ アンド プレイ デバイスを再スキャンする
+    -   ルート列挙デバイスのハードウェア ID を追加、削除、および順序変更する
+    -   デバイス セットアップ クラス用の上位および下位のフィルター ドライバーを変更する
+    -   ドライバー ストアに対してサードパーティ製ドライバー パッケージの追加および削除を行う
+-   **デバイスまたはコンピューターを再起動する** DevCon を使用すると、ローカル デバイスの再起動、オンデマンドでのローカル システムの再起動、または別の DevCon 操作で必要になった場合のローカル システムの再起動を行うことができます。
 
-## <a name="span-iddevconsourcecodespanspan-iddevconsourcecodespanspan-iddevconsourcecodespandevcon-source-code"></a><span id="DevCon_source_code"></span><span id="devcon_source_code"></span><span id="DEVCON_SOURCE_CODE"></span>DevCon ソース コード
+## <a name="span-iddevcon_source_codespanspan-iddevcon_source_codespanspan-iddevcon_source_codespandevcon-source-code"></a><span id="DevCon_source_code"></span><span id="devcon_source_code"></span><span id="DEVCON_SOURCE_CODE"></span>DevCon ソース コード
 
 
-DevCon のソース コードを使用できるは、DevCon を使用して取得し、セットアップと構成データを変更する方法を確認するようにもです。 DevCon の使用方法を示します[関数の一般的なセットアップ](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))、[デバイスのインストール機能](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))、および[PnP の Configuration Manager 機能](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))します。 ソース コード、[デバイス コンソール (DevCon) ツール](https://go.microsoft.com/fwlink/p/?LinkId=617966)で使用できるは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+また、DevCon で使用する、セットアップおよび構成のデータを取得および変更するための方法を調べることができるように、DevCon ソース コードも提供されています。 DevCon では、[一般的なセットアップ関数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))、[デバイス インストール関数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))、[PnP 構成マネージャー関数](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))の使用法が示されます。 [デバイス コンソール (DevCon) ツール](https://go.microsoft.com/fwlink/p/?LinkId=617966)用のソース コードは、GitHub 上の [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507) リポジトリにあります。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [DevCon コマンド](devcon-general-commands.md)
 
-[DevCon 例](devcon-examples.md)
+[DevCon の例](devcon-examples.md)
 
  
 
