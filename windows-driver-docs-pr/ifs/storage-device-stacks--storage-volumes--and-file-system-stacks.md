@@ -9,12 +9,12 @@ keywords:
 - ボリューム WDK ファイルシステム
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bd36ca6cbb6eec8f6359da9c1413c7993566e441
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: 056a1c6c402894367d938e31d455848be73d22ab
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910469"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226523"
 ---
 # <a name="storage-device-stacks-storage-volumes-and-file-system-stacks"></a>ストレージ デバイス スタック、ストレージ ボリューム、ファイル システム スタック
 
@@ -25,7 +25,7 @@ ms.locfileid: "78910469"
 
 ## <a name="storage-device-stacks"></a>ストレージ デバイス スタック
 
-ほとんどの記憶装置ドライバーは pnp デバイスドライバーであり、PnP マネージャーによって読み込まれて管理されます。 記憶装置は、コンピューター上の物理デバイスまたは論理デバイスごとに、デバイスノード ( *devnode*) を含む PnP*デバイスツリー*で表されます。 ファイルシステムとファイルシステムフィルタードライバーは PnP デバイスドライバーではないことに注意してください。そのため、PnP[デバイスツリー]((https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree))にはそれらの devnodes が含まれていません。
+ほとんどの記憶装置ドライバーは pnp デバイスドライバーであり、PnP マネージャーによって読み込まれて管理されます。 記憶装置は、コンピューター上の物理デバイスまたは論理デバイスごとに、デバイスノード ( *devnode*) を含む PnP*デバイスツリー*で表されます。 ファイルシステムとファイルシステムフィルタードライバーは PnP デバイスドライバーではないことに注意してください。そのため、PnP[デバイスツリー](https://docs.microsoft.com/windows-hardware/drivers/kernel/device-tree)にはそれらの devnodes が含まれていません。
 
 特定の記憶装置の devnode には、デバイスの*記憶装置スタック*が含まれます。これは、デバイスの記憶装置ドライバーを表す、アタッチされたデバイスオブジェクトのチェーンです。 記憶域デバイス (ディスクなど) には論理ボリューム (パーティションまたはダイナミックボリューム) が1つ以上含まれている場合があるため、多くの場合、記憶域デバイススタック自体はスタックよりもツリーのように見えます。 このツリーのルートは、記憶域アダプターまたは記憶域スタックと統合されている別のデバイススタックの機能デバイスオブジェクト (FDO) です。 このツリーのリーフは、ファイルシステムボリュームをマウントできる論理ボリューム (*記憶域ボリューム*とも呼ばれます) の物理デバイスオブジェクト (pdos) です。
 

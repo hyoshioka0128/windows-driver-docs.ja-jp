@@ -1,6 +1,6 @@
 ---
-title: ファイルシステムフィルタードライバーについて
-description: ファイルシステムフィルタードライバーについて
+title: ファイル システム フィルター ドライバーについて
+description: ファイル システム フィルター ドライバーについて
 ms.assetid: 4bff8ad6-624a-429d-b9ec-3f96c3c7c99d
 keywords:
 - フィルタードライバー WDK ファイルシステム、ファイルシステムフィルタードライバーについて
@@ -9,14 +9,14 @@ keywords:
 - ファイルシステムフィルタードライバーはデバイスドライバーではありません
 ms.date: 02/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7a7ec42d175f08d35ee9fa412884b231efcae8
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: 61d74ef606eda5f0acfa25018f7bdf92edc201b4
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910519"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226530"
 ---
-# <a name="about-file-system-filter-drivers"></a>ファイルシステムフィルタードライバーについて
+# <a name="about-file-system-filter-drivers"></a>ファイル システム フィルター ドライバーについて
 
 ## <a name="file-system-filter-drivers-on-windows"></a>Windows 上のファイルシステムフィルタードライバー
 
@@ -31,7 +31,7 @@ Windows には、次の2つのファイルシステムフィルターモデル�
 - [レガシファイルシステムフィルターモデル](https://docs.microsoft.com/windows-hardware/drivers/ifs/about-file-system-legacy-filter-drivers)
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ## <a name="file-system-filter-drivers-are-not-device-drivers"></a>ファイルシステムフィルタードライバーはデバイスドライバーではありません
 

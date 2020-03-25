@@ -14,17 +14,17 @@ keywords:
 - I/o 要求 (WDK ファイルシステム)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 468d295adf699c27e54d38c2eb9d047492964249
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: c7fb38239f20d5bfe66ea14b71d6aadbfd8dbe00
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910435"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226521"
 ---
 # <a name="filtering-irps-and-fast-io"></a>IRP と高速 I/O のフィルタリング
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ファイルシステムフィルタードライバーは、1つまたは複数のファイルシステムまたはファイルシステムボリュームの i/o 要求をフィルター処理します。 各 i/o 要求は、i/o 要求パケット (IRP) または高速 i/o 要求として表示されます。 Irp は、ドライバーの IRP ディスパッチルーチンによって処理される i/o システム構造です。 高速 i/o 要求は、ドライバーの高速 i/o コールバックルーチンによって処理されます。
 

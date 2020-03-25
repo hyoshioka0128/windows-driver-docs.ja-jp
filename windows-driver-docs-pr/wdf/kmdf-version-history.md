@@ -6,15 +6,15 @@ keywords:
 - カーネルモードドライバー WDK KMDF、リビジョン履歴
 - KMDF WDK、リビジョン履歴
 - カーネルモードドライバーフレームワーク WDK、リビジョン履歴
-ms.date: 10/02/2018
+ms.date: 03/29/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6fccda5aa4af89d1ec1ad81c48175d5ef5c1197d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7214a358e1ddcd49c4c7e2e6895575c1e9ed8cb0
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843156"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226529"
 ---
 # <a name="kmdf-version-history"></a>KMDF のバージョンの履歴
 
@@ -75,8 +75,8 @@ Windows 10 での KMDF ドライバーの新機能の詳細については、「
 ## <a name="kmdf-version-119"></a>KMDF バージョン1.19
 
 * [ **Wdfdmatransactionsetsingletransferrequirement 要件**を追加しました](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactionsetsingletransferrequirement)
-* [**WDF_DMA_ENABLER_CONFIG_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)に**WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**フラグを追加しました
-* [**Wdfdmatransactioninitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)および[**WdfdmatransactiondmacomSTATUS_WDF_TOO_MANY_TRANSFERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)の戻り値が追加されました
+* **WDF_DMA_ENABLER_CONFIG_REQUIRE_SINGLE_TRANSFER**フラグが[**WDF_DMA_ENABLER_CONFIG_FLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmaenabler/ne-wdfdmaenabler-_wdf_dma_enabler_config_flags)に追加されました
+* [**Wdfdmatransactioninitialize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactioninitialize)と[**Wdfdmatransactiondmacomの**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdmatransaction/nf-wdfdmatransaction-wdfdmatransactiondmacompleted)戻り値**STATUS_WDF_TOO_MANY_TRANSFERS**追加されました
 * 1回の転送出力の出力メッセージを[ **! wdfkd. wdfdmatransaction**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmatransaction)と[ **! wdfdmaenabler**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdmaenabler)に追加しました
 * シングル転送 DMA の詳細については、「[シングル転送 dma の使用](using-single-transfer-dma.md)」を参照してください。
 

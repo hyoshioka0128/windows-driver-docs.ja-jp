@@ -4,19 +4,19 @@ description: Windows 10 バージョン1607以降では、管理者とドライ�
 ms.assetid: 90A562FB-D616-4D38-8D4F-7EFCDF9E617F
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1710ab4d6187d6bb9c5453ea7bb41ca1008fe08b
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: ff3df20bcec1b04ecf7159ef6a1c020a9e326174
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910389"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226524"
 ---
 # <a name="blocking-legacy-file-system-filter-drivers"></a>レガシ ファイル システム フィルター ドライバーのブロック
 
 Windows 10 バージョン1607以降では、管理者とドライバー開発者はレジストリ設定を使用して、レガシファイルシステムフィルタードライバーをブロックできます。 *レガシファイルシステムフィルタードライバー*は、ファイルシステムスタックに直接アタッチされるドライバーであり、フィルターマネージャーは使用しません。 このトピックでは、レガシファイルシステムフィルタードライバーをブロックおよびブロック解除するためのレジストリ設定について説明します。 また、レガシファイルシステムフィルターがブロックされたときにシステムイベントログに入力されたイベントについて説明し、OS でレガシファイルシステムドライバーが実行されているかどうかを確認する方法についても説明します。
 
 > [!NOTE]
-> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー]((https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts))を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
+> 最適な信頼性とパフォーマンスを得るには、従来のファイルシステムフィルタードライバーではなく、フィルターマネージャーをサポートする[ファイルシステムミニフィルタードライバー](https://docs.microsoft.com/windows-hardware/drivers/ifs/filter-manager-concepts)を使用します。 レガシドライバーをミニフィルタードライバーに移植する方法については、「[レガシフィルタードライバーを移植するためのガイドライン](guidelines-for-porting-legacy-filter-drivers.md)」を参照してください。
 
 ## <a name="how-to-block-legacy-drivers"></a>レガシドライバーをブロックする方法
 
@@ -46,11 +46,11 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 | イベントプロパティ | 説明 |
 | -------------- | ----------- |
 | ログの名前       | System      |
-| ソース         | Microsoft-Windows-カーネル-IO |
+| Source         | Microsoft-Windows-カーネル-IO |
 | 日付           | 12/29/2015 2:55:05 PM |
 | イベント ID       | 1205         |
 | タスク カテゴリ  | なし         |
-| Level          | エラー        |
+| レベル          | エラー        |
 | キーワード       |              |
 | ユーザー           | CONTOSO\user |
 | コンピューター       | user.domain.corp.contoso.com |
@@ -61,7 +61,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System
 どのフィルターがレガシファイルシステムフィルタードライバーであるかがわからない場合、または実行されていないことを確認するには、次の操作を実行します。
 
 1. **Cmd.exe**アイコンを右クリックし、 **[管理者として実行]** をクリックして、管理者特権でのコマンドプロンプトを開きます。
-2. 種類: `fltmc filters`
+2. 型: `fltmc filters`
 3. レガシドライバーを検索します。これは、**フレーム**値が **&lt;レガシ&gt;** のものです。
 
 この例では、AVLegacy および EncryptionLegacy という名前のレガシファイルシステムフィルタードライバーは、 **&lt;従来の&gt;** フレーム値でマークされています。 AVMiniFilter という名前のファイルシステムドライバーには、ミニフィルタードライバー (ファイルシステムスタックに直接アタッチされず、フィルターマネージャーを使用) であるため、 **&lt;レガシ&gt;** フレーム値がありません。

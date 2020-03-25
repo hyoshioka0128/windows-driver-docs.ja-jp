@@ -7,15 +7,15 @@ keywords:
 - UMDF WDK、バージョン情報
 - リビジョン履歴 WDK UMDF
 - バージョン情報 WDK UMDF
-ms.date: 10/02/2018
+ms.date: 03/29/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 180774b7ef048abac3ea4eb8d9ca05cf1bb63b3a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0b2d6925905add88771007370104055068b96d80
+ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843113"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80226527"
 ---
 # <a name="umdf-version-history"></a>UMDF バージョン履歴
 
@@ -123,7 +123,7 @@ UMDF Version 2.19 の変更や追加はありません。
 -   次の UMDF のみのルーチン。
 
     -   [*EvtRequestImpersonate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate)
-    -   [**WDF\_IO\_ターゲット\_OPEN\_PARAMS\_FILE\_OPEN\_ファイルによって開く**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)
+    -   [**WDF\_IO\_ターゲット\_OPEN\_PARAMS\_FILE\_OPEN\_ファイルによって開く**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)\_
     -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
     -   [**Wdfdevice割り当て Interfaceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
     -   [**WdfDeviceGetDeviceStackIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestackiotype)
@@ -195,7 +195,7 @@ UMDF Version 2.19 の変更や追加はありません。
 
 -   [UMDF ドライバーでのデバイスプールの使用](using-device-pooling-in-umdf-drivers.md)
 
--   「INF で WDF ディレクティブを指定する」で説明されているように、 **Umdfhostprocesssharing**、 **UmdfDirectHardwareAccess**、 **umdfhostprocesssharing**、 **Umdfhostprocesssharing**、および**UmdfFsContextUsePolicy**ディレクティブを追加しました。 [ファイル](specifying-wdf-directives-in-inf-files.md)
+-   「 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)」で説明されているように、 **Umdfhostprocesssharing**、 **UmdfDirectHardwareAccess**、 **umdfhostprocesssharing**、 **umdfhostprocesssharing**、および**UmdfFsContextUsePolicy**ディレクティブを追加しました。
 
 -   [UMDF ドライバーの既知のセキュリティ識別子 (SID)](controlling-device-access.md)
 
