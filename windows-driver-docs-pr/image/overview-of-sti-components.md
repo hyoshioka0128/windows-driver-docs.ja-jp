@@ -5,11 +5,11 @@ ms.assetid: 30aaa622-fb86-42dc-a417-df61e0093db3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d05bb8c82a75bff2d98352b8120cb7a6250633ee
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840776"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242755"
 ---
 # <a name="overview-of-sti-components"></a>STI コンポーネントの概要
 
@@ -21,17 +21,17 @@ ms.locfileid: "72840776"
 
 ![microsoft sti コンポーネントを示す図](images/sticomp.png)
 
-### <a href="" id="ddk-imaging-application-si"></a>イメージングアプリケーション
+### <a name="imaging-application"></a><a href="" id="ddk-imaging-application-si"></a>イメージングアプリケーション
 
 イメージングアプリケーションでは、通常、キャプチャされた静止イメージの受信、表示、および編集を行うことができます。 イメージ取得 API (TWAIN など) を呼び出すことで、イメージを取得します。 これらのユーザーは、 [ISTILLIMAGE COM インターフェイス](istillimage-com-interface.md)を使用して、それ自体を静止イメージイベントモニターに登録する必要があります。 詳細については、「[プッシュモデル対応アプリケーションの作成](creating-push-model-aware-applications.md)」を参照してください。
 
-### <a href="" id="ddk-image-acquisition-api-si"></a>イメージ取得 API
+### <a name="image-acquisition-api"></a><a href="" id="ddk-image-acquisition-api-si"></a>イメージ取得 API
 
 画像取得 Api の例としては、TWAIN、ISIS、Adobe Systems の取得などがあります。 この図は、TWAIN を示しています。 ベンダーが提供する TWAIN データソースは、静止イメージデバイスと通信する、デバイス固有のオペレーティングシステム固有のコンポーネントです。
 
-Microsoft STI では、TWAIN データソースは、IStillImage インターフェイスと[i デバイス](istidevice-com-interface.md)インターフェイスによって提供されるメソッドを呼び出します。 [](istillimage-com-interface.md) 詳細については、「[イメージ取得 api 用のデバイス固有のコンポーネントの作成](creating-device-specific-components-for-image-acquisition-apis.md)」を参照してください。
+Microsoft STI では、TWAIN データソースは、[IStillImage](istillimage-com-interface.md) インターフェイスと[i デバイス](istidevice-com-interface.md)インターフェイスによって提供されるメソッドを呼び出します。 詳細については、「[イメージ取得 api 用のデバイス固有のコンポーネントの作成](creating-device-specific-components-for-image-acquisition-apis.md)」を参照してください。
 
-### <a href="" id="ddk-scanners-and-cameras-control-panel-si"></a>スキャナーとカメラのコントロールパネル
+### <a name="scanners-and-cameras-control-panel"></a><a href="" id="ddk-scanners-and-cameras-control-panel-si"></a>スキャナーとカメラのコントロールパネル
 
 [スキャナーとカメラ] コントロールパネルでは、ユーザーは次の操作を実行できます。
 
@@ -43,7 +43,7 @@ Microsoft STI では、TWAIN データソースは、IStillImage インターフ
 
 -   [静止イメージデバイスイベント](still-image-device-events.md)を特定のアプリケーションに割り当てます。
 
-### <a href="" id="ddk-still-image-event-monitor-si"></a>静止画像イベントモニタ
+### <a name="still-image-event-monitor"></a><a href="" id="ddk-still-image-event-monitor-si"></a>静止画像イベントモニタ
 
 静止画像イベントモニタは、静止画像サーバープロセスに存在します。 これにより、すべての静止イメージデバイス (プラグアンドプレイ互換のデバイスと、ハードウェアの追加ウィザードを使用してインストールされたデバイスの両方) のデータベースが保持されます。 また、登録されたアプリケーションのデータベースとイメージデバイスイベントも保持します。
 
@@ -51,7 +51,7 @@ Microsoft STI では、TWAIN データソースは、IStillImage インターフ
 
 静止画像イベントモニターの詳細については、Microsoft Windows SDK のドキュメントの「*静止画像*」を参照してください。
 
-### <a href="" id="ddk-com-interfaces-for-still-image-si"></a>静止イメージ用の COM インターフェイス
+### <a name="com-interfaces-for-still-image"></a><a href="" id="ddk-com-interfaces-for-still-image-si"></a>静止イメージ用の COM インターフェイス
 
 Microsoft STI は、さまざまな Microsoft STI コンポーネント間で通信パスを提供する一連の COM インターフェイスを定義します。 次の COM インターフェイスが定義されています。
 
@@ -63,11 +63,11 @@ Microsoft STI は、さまざまな Microsoft STI コンポーネント間で通
 
 [I、Devicecontrol COM インターフェイス](istidevicecontrol-com-interface.md)
 
-### <a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>ユーザーモード静止イメージミニドライバー
+### <a name="user-mode-still-image-minidrivers"></a><a href="" id="ddk-user-mode-still-image-minidrivers-si"></a>ユーザーモード静止イメージミニドライバー
 
 ユーザーモード静止イメージミニドライバーは、デバイス固有のユーザーモードインターフェイスを適切なカーネルモードドライバーに提供する、ベンダーが提供するコンポーネントです。 これらの各ユーザーモードドライバーは、 [Ia USD COM インターフェイス](istiusd-com-interface.md)を実装する必要があります。 これらは、 [**CreateFile**](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-createfilea)、 **ReadFile**、 **WriteFile**、 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)の各 Win32 関数 (Microsoft Windows SDK のドキュメントで説明) を呼び出すことによって、カーネルモードドライバーと通信します。 詳細については、「[ユーザーモードでのイメージの作成ミニドライバー](creating-a-user-mode-still-image-minidriver.md)」を参照してください。
 
-### <a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>カーネルモードのイメージドライバー
+### <a name="kernel-mode-still-image-drivers"></a><a href="" id="ddk-kernel-mode-still-image-drivers-si"></a>カーネルモードのイメージドライバー
 
 カーネルモードでも、特定の種類のバスに接続されているイメージデバイスに配信するためのパッケージデータがイメージドライバーによってパッケージ化されます。 Microsoft は、USB および SCSI バスのイメージドライバーである WDM ベースのカーネルモードを提供しています。 詳細については、「[イメージデバイス用のカーネルモードドライバーへのアクセス](accessing-kernel-mode-drivers-for-still-image-devices.md)」を参照してください。
 
@@ -75,7 +75,7 @@ Microsoft STI は、さまざまな Microsoft STI コンポーネント間で通
 
 デバイスに Microsoft が提供するドライバーとの互換性がない場合、ベンダーはカーネルモードのイメージドライバーのみを提供する必要があります。
 
-### <a href="" id="ddk-kernel-mode-bus-driver-stacks-si"></a>カーネルモードバスドライバースタック
+### <a name="kernel-mode-bus-driver-stacks"></a><a href="" id="ddk-kernel-mode-bus-driver-stacks-si"></a>カーネルモードバスドライバースタック
 
 Microsoft では、次のように、SCSI、USB、パラレル、IEEE 1394 互換、およびシリアルバスに接続されたイメージデバイスと、インフラストラクチャレッドインターフェイスに接続されているデバイスをサポートしています。
 

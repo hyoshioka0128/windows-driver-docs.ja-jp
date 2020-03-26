@@ -9,11 +9,11 @@ keywords:
 ms.date: 05/23/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b32d6288bf4dbaca93fb9257a71484269e67849e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838807"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79242739"
 ---
 # <a name="using-input-and-output"></a>入力と出力の使用
 
@@ -45,7 +45,7 @@ ms.locfileid: "72838807"
 
 クライアントは、*出力マスク*を使用して、目的の出力の種類を示します。 エンジンによって出力が生成されるたびに、出力の種類を指定するマスクが付随します。 出力の種類がクライアントの出力マスクと一致する場合、クライアントは出力を受け取ります。 出力マスクは、 [**Setoutputmask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputmask)を呼び出し、 [**getoutputmask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputmask)を使用してクエリを行うことによって設定できます。 出力マスクの値の詳細については、「 [**DEBUG\_output\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-output-xxx) 」を参照してください。
 
-エンジンが出力を送信するクライアントの一覧は、*出力コントロール*によって制御されます。 通常、出力コントロールは、すべてのクライアントに出力を送信するように設定されています。ただし、 [*ControlControlledOutputVaList output*](https://msdn.microsoft.com/library/windows/hardware/ff539248)と[](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)を使用して一時的に変更することができます。 出力制御値の詳細については、「 [**DEBUG\_OUTCTL\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-outctl-xxx) 」を参照してください。
+エンジンが出力を送信するクライアントの一覧は、*出力コントロール*によって制御されます。 通常、出力コントロールは、すべてのクライアントに出力を送信するように設定されています。ただし、 [*ControlledOutput*](https://msdn.microsoft.com/library/windows/hardware/ff539248)と[*ControlledOutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)を使用して一時的に変更することができます。 出力制御値の詳細については、「 [**DEBUG\_OUTCTL\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-outctl-xxx) 」を参照してください。
 
 エンジンによって出力がバッファリングされる場合があります。 複数の出力がエンジンに渡されると、それらを収集して、1つの大きな部分でクライアントに送信する場合があります。 このバッファーをフラッシュするには、 [**Flushcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-flushcallbacks)を使用します。
 
