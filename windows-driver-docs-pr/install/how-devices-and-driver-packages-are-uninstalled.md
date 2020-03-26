@@ -4,12 +4,12 @@ description: デバイスとドライバー パッケージのアンインスト
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4512c45a1a4d82ecbe9ce17d4a93014e92090619
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: a54bde8a616e73ea31ea4115f2f1899a3caebbb5
+ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080164"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261284"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>デバイスとドライバー パッケージのアンインストール方法
 
@@ -26,7 +26,7 @@ ms.locfileid: "80080164"
 
 -   [ドライバーストアからドライバーパッケージを削除する](#deleting-a-driver-package-from-the-driver-store)
 
--   [インストールされているドライバーのバイナリファイルを削除する](#deleting-the-binary-files-of-the-installed-driver)
+-   インストールされているドライバーのバイナリファイルを削除する
 
 これらの操作を順番に実行する必要は  ない**ことに注意**してください。
 

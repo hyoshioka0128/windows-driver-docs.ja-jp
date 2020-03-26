@@ -1,3 +1,16 @@
+---
+title: デバイスと対話する Win32 サービス
+description: デバイスと対話する Win32 サービス
+ms.assetid: 0ecc6979-25b3-41eb-8d6f-9eee3b80a56f
+ms.date: 03/02/2020
+ms.localizationpriority: medium
+ms.openlocfilehash: 853e18f3890faa9e90349f41695be6f099740cf5
+ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261286"
+---
 # <a name="win32-services-interacting-with-devices"></a>デバイスと対話する Win32 サービス
 
 ## <a name="motivation"></a>動機

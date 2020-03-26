@@ -8,17 +8,17 @@ keywords:
 - UMDF WDK、リフレクターはホストプロセスを終了します
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0820f51e5e878c27ebadb7875248fa83f918c21d
-ms.sourcegitcommit: 9355a80229bb2384dd45493d36bdc783abdd8d7a
+ms.openlocfilehash: 33c5b269e780b4b25993fea88a26800390e230e4
+ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694244"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261288"
 ---
 # <a name="determining-why-the-reflector-terminated-the-host-process"></a>リフレクターがホスト プロセスを終了した理由の特定
 
 
-このトピックでは、リフレクターがドライバーホストプロセス (WUDFHost .exe) を終了した理由を分析する方法について説明します。
+このトピックでは、リフレクターがドライバーホストプロセス (WUDFHost .exe) を終了した理由、またはドライバーホストプロセスがクラッシュした理由を分析する方法について説明します。
 
 リフレクターがホストプロセスを終了する最も一般的な理由は、UMDF[ホストプロセスタイムアウト](how-umdf-enforces-time-outs.md)の有効期限です。
 
@@ -28,16 +28,13 @@ ms.locfileid: "75694244"
 AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHost.exe
 ```
 
-## <a name="using-dump-files"></a>ダンプ ファイルの使用
+## <a name="using-dump-files"></a>ダンプファイルの使用
 
 
-多くのクラッシュについては、ダンプファイルの詳細で、終了が発生した原因を特定するだけで十分です。 ダンプファイルの情報を確認するには、次の手順を実行します。
+UMDF ドライバーがクラッシュするか、問題が発生すると、カーネルデバッガーでブレークが報告されます。 これらの問題は、ユーザーモードの例外がカーネルデバッガーで報告されるときにデバッグする必要があります。 カーネルデバッガーの中断は、問題のある (応答していない) UMDF ドライバーが原因でドライバーホストプロセスを終了する前に、WudfRd .sys によっても報告されます。 次の場所で報告されるログとヒープダンプも表示されます。 UMDF によってキャプチャされたダンプファイルを確認するには、次の手順を実行します。
 
-1.  % Windir%\\system32\\ログファイル\\WUDF ディレクトリにある最新の .dmp ファイルを見つけます。
-
-    **  UMDF** 2.15 以降では、ログディレクトリは *% programdata%* \\Microsoft\\WDF になります。
-
-     
+1.  Microsoft\\WDF ディレクトリの *% Programdata%* \\にある最新の .dmp ファイルを見つけます。
+    Windows 10 1507 に同梱されている UMDF 2.15 より前のログディレクトリは、WUDF\\% windir%\\system32\\ログディレクトリにあります。
 
 2.  次のコマンドを使用して、最新の .dmp ファイルをデバッガーに読み込みます。
     ```cpp
@@ -46,8 +43,14 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
 
 3.  終了時のスレッドの状態を確認します。
 
-## <a name="using-the-debugger"></a>デバッガーを使用する
+ヒープダンプをキャプチャする必要がある場合は、テスト時に次のレジストリ値を設定し、テストを実行する前にテストシステムを再起動します。 %SystemRoot%\System32\Winevt\Logs\Application.evtx で、システムのアプリケーションイベントログから Windows エラー報告履歴を調べることもできます。 
 
+```cpp
+reg add "HKLM\Software\Microsoft\windows NT\CurrentVersion\Wudf" /v LogMinidumpType /t REG_DWORD /d 0x1122
+reg add "HKLM\Software\Microsoft\windows NT\CurrentVersion\Wudf" /v LogEnable /t REG_DWORD /d 1 
+```
+
+## <a name="using-the-debugger"></a>デバッガーの使用
 
 また、場合によっては、ライブカーネルモードターゲットにアタッチして、リフレクターがホストプロセスを終了した理由を特定する必要があります。 デバッグセッションを設定するには、「 [UMDF ドライバーのデバッグを有効にする方法](enabling-a-debugger.md#kd)」で説明されている手順に従います。
 
@@ -65,8 +68,3 @@ AppVerif –enable Heaps Exceptions Handles Locks Memory TLS Leak –for WudfHos
  
 
  
-
-
-
-
-
