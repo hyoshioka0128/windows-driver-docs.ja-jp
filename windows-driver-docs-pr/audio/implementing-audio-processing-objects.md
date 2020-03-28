@@ -2,28 +2,26 @@
 title: オーディオ処理オブジェクトの実装
 description: このトピックでは、オーディオ処理オブジェクト (APO) を実装する方法について説明します。 APOs に関する一般的な情報については、「オーディオ処理オブジェクトのアーキテクチャ」を参照してください。
 ms.assetid: 822FAF10-DAB3-48D1-B782-0C80B072D3FB
-ms.date: 06/19/2018
+ms.date: 03/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b4776c61bffb31fd5df8266a535514750b24b66e
-ms.sourcegitcommit: 36b7db40d5a91d8726feb2e2d9d4ece1fb484051
+ms.openlocfilehash: c153272cefea02a61ed411feb3e70c6a44b794c7
+ms.sourcegitcommit: c81abcddfd3e819ee105db5adc7937dda96b7fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591005"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359897"
 ---
 # <a name="implementing-audio-processing-objects"></a>オーディオ処理オブジェクトの実装
-
 
 このトピックでは、オーディオ処理オブジェクト (APO) を実装する方法について説明します。 APOs に関する一般的な情報については、「[オーディオ処理オブジェクトのアーキテクチャ](audio-processing-object-architecture.md)」を参照してください。
 
 ## <a name="span-idimplementing_custom_aposspanspan-idimplementing_custom_aposspanspan-idimplementing_custom_aposspanimplementing-custom-apos"></a><span id="Implementing_Custom_APOs"></span><span id="implementing_custom_apos"></span><span id="IMPLEMENTING_CUSTOM_APOS"></span>カスタム APOs を実装する
 
-
 カスタム APOs はインプロセス COM オブジェクトとして実装されているため、ユーザーモードで実行し、ダイナミックリンクライブラリ (DLL) にパッケージ化します。 "APO" は、信号処理グラフに挿入される場所に基づいて3種類あります。
 
--   ストリーム効果 (SFX)
--   モードの効果 (MFX)
--   エンドポイント効果 (EFX)
+- ストリーム効果 (SFX)
+- モードの効果 (MFX)
+- エンドポイント効果 (EFX)
 
 各論理デバイスは、種類ごとに1つの APO に関連付けることができます。 モードと効果の詳細については、「[オーディオ信号処理モード](audio-signal-processing-modes.md)」を参照してください。
 
@@ -31,19 +29,17 @@ APO を実装するには、カスタムクラスの基本クラスを使用し�
 
 カスタム APOs を実装するには、次の手順を実行します。
 
-1.  必要なオーディオ処理を提供するカスタムの APO com オブジェクトを作成します。
-2.  必要に応じて、を使用してカスタム APOs を構成するためのユーザーインターフェイスを作成します。
-3.  APOs およびカスタムユーザーインターフェイスをインストールして登録するための INF ファイルを作成します。
-
+1. 必要なオーディオ処理を提供するカスタムの APO com オブジェクトを作成します。
+2. 必要に応じて、を使用してカスタム APOs を構成するためのユーザーインターフェイスを作成します。
+3. APOs およびカスタムユーザーインターフェイスをインストールして登録するための INF ファイルを作成します。
 
 ## <a name="span-iddesign_considerations_for_custom_apo_developmentspanspan-iddesign_considerations_for_custom_apo_developmentspanspan-iddesign_considerations_for_custom_apo_developmentspandesign-considerations-for-custom-apo-development"></a><span id="Design_Considerations_for_Custom_APO_Development"></span><span id="design_considerations_for_custom_apo_development"></span><span id="DESIGN_CONSIDERATIONS_FOR_CUSTOM_APO_DEVELOPMENT"></span>カスタム APO 開発の設計に関する考慮事項
 
-
 すべてのカスタム APOs には、次の一般的な特性が必要です。
 
--   APO には、1つの入力と1つの出力接続が必要です。 これらの接続はオーディオバッファーであり、複数のチャネルを持つことができます。
--   APO は、 [**Iaudioprocessingの Trt:: アポストロフィプロセス**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)ルーチンを通じて渡されるオーディオデータのみを変更できます。 APO は、基になる論理デバイス (KS トポロジを含む) の設定を変更できません。
--   IUnknown に加えて、APOs は次のインターフェイスを公開する必要があります。
+- APO には、1つの入力と1つの出力接続が必要です。 これらの接続はオーディオバッファーであり、複数のチャネルを持つことができます。
+- APO は、 [**Iaudioprocessingの Trt:: アポストロフィプロセス**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)ルーチンを通じて渡されるオーディオデータのみを変更できます。 APO は、基になる論理デバイス (KS トポロジを含む) の設定を変更できません。
+- IUnknown に加えて、APOs は次のインターフェイスを公開する必要があります。
 
     - [Iaudioprocessingobject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 初期化や形式ネゴシエーションなどのセットアップタスクを処理するインターフェイス。
 
@@ -65,10 +61,7 @@ APO を実装するには、カスタムクラスの基本クラスを使用し�
 
 **注**  必要なインターフェイスの詳細については、Windows キット\\&lt;ビルド番号&gt;\\um フォルダーを含める」を参照してください。\\
 
- 
-
 ## <a name="span-idusing_sample_code_to_accelerate_the_development_processspanspan-idusing_sample_code_to_accelerate_the_development_processspanspan-idusing_sample_code_to_accelerate_the_development_processspanusing-sample-code-to-accelerate-the-development-process"></a><span id="Using_Sample_Code_to_Accelerate_the_Development_Process"></span><span id="using_sample_code_to_accelerate_the_development_process"></span><span id="USING_SAMPLE_CODE_TO_ACCELERATE_THE_DEVELOPMENT_PROCESS"></span>サンプルコードを使用して開発プロセスを高速化する
-
 
 SYSVAD Swap APO コードサンプルをテンプレートとして使用すると、カスタムの APO 開発プロセスを高速化できます。 Swap サンプルは、オーディオ処理オブジェクトの一部の機能を示すために開発されたサンプルです。 Swap APO サンプルでは、左チャネルと右チャネルを交換し、SFX 効果と MFX 効果の両方を実装します。 チャネルスワップのオーディオ効果を有効または無効にするには、[プロパティ] ダイアログを使用します。
 
@@ -106,22 +99,18 @@ SYSVAD サンプルには5つのプロジェクトがあります。そのうち
 
 |                    |                                       |
 |--------------------|---------------------------------------|
-| **プロジェクト**        | **説明**                       |
+| **作品**        | **説明**                       |
 | SwapAPO            | APO の例のサンプルコードです。       |
-
- 
 
 Sysvad サンプル内の他のプロジェクトは、以下にまとめられています。
 
 |                        |                                            |
 |------------------------|--------------------------------------------|
-| **プロジェクト**            | **説明**                            |
+| **作品**            | **説明**                            |
 | 電話のオーディオサンプル       | モバイルオーディオドライバーのサンプルコードです。     |
 | TabletAudioSample      | 代替オーディオドライバーのサンプルコードです。 |
 | KeywordDetectorAdapter | キーワード検出アダプターのサンプルコード |
 | EndpointsCommon        | 一般的なエンドポイントのサンプルコードです。          |
-
- 
 
 SwapAPO サンプルのプライマリヘッダーファイルは、swapapo. h です。 その他の主要なコード要素を以下にまとめます。
 
@@ -136,10 +125,7 @@ SwapAPO サンプルのプライマリヘッダーファイルは、swapapo. h �
 | Swapアポストロフィ | スワップ APO 機能のインターフェイスと型の定義。    |
 | swapアポストロフィ (def)       | COM エクスポートの定義                                           |
 
- 
-
 ## <a name="span-idimplementing_the_com_object_audio_processing_codespanspan-idimplementing_the_com_object_audio_processing_codespanspan-idimplementing_the_com_object_audio_processing_codespanimplementing-the-com-object-audio-processing-code"></a><span id="Implementing_the_COM_Object_Audio_Processing_Code"></span><span id="implementing_the_com_object_audio_processing_code"></span><span id="IMPLEMENTING_THE_COM_OBJECT_AUDIO_PROCESSING_CODE"></span>COM オブジェクトのオーディオ処理コードの実装
-
 
 システムによって提供される APO をラップするには、カスタムクラスを**cbaseaudioprocessingobject**基本クラスに基づいて指定します。これは、baseaudioprocessingobject .h ファイルで宣言されています。 この方法では、 **Cbaseaudioprocessingobject**基底クラスに新しい機能を導入し、カスタマイズされた APO を作成します。 **Cbaseaudioprocessingobject**基底クラスは、APO が必要とする機能の多くを実装します。 これは、3つの必須インターフェイスのほとんどのメソッドに既定の実装を提供します。 主な例外は、 [**Iaudioprocessingの Trt:: アポストロフィ process**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)メソッドです。
 
@@ -147,7 +133,7 @@ SwapAPO サンプルのプライマリヘッダーファイルは、swapapo. h �
 
 **Cbaseaudioprocessingobject**クラスに基づいて APOs を開発するには、次の手順を実行します。
 
-1.  **Cbaseaudioprocessingobject**から継承するクラスを作成します。
+1. **Cbaseaudioprocessingobject**から継承するクラスを作成します。
 
     次C++のコード例は、 **Cbaseaudioprocessingobject**から継承するクラスを作成する方法を示しています。 この概念の実際の実装については、「**オーディオ処理オブジェクトドライバーのサンプル**」の手順に従ってスワップのサンプルにアクセスし、次に*swapapo .h*ファイルを参照してください。
 
@@ -163,15 +149,13 @@ SwapAPO サンプルのプライマリヘッダーファイルは、swapapo. h �
 
     **注**   SFX APO によって実行されるシグナル処理は、mfx または EFX APO によって実行される信号処理とは異なるため、それぞれに個別のクラスを作成する必要があります。
 
-     
+2. 次の3つのメソッドを実装します。
 
-2.  次の3つのメソッドを実装します。
+    - [**Iaudioprocessingobject:: IsInputFormatSupported**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)。 このメソッドは、オーディオエンジンを使用した形式ネゴシエーションを処理します。
 
-    -   [**Iaudioprocessingobject:: IsInputFormatSupported**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)。 このメソッドは、オーディオエンジンを使用した形式ネゴシエーションを処理します。
+    - [**Iaudioprocessingの Trt:: アポストロフィプロセス**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)。 このメソッドは、カスタムアルゴリズムを使用してシグナル処理を実行します。
 
-    -   [**Iaudioprocessingの Trt:: アポストロフィプロセス**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)。 このメソッドは、カスタムアルゴリズムを使用してシグナル処理を実行します。
-
-    -   **Validateandcacheconnectioninfo**。 このメソッドは、チャネル数、サンプリングレート、サンプルの深さ、チャネルマスクなどの形式の詳細を格納するためにメモリを割り当てます。
+    - **Validateandcacheconnectioninfo**。 このメソッドは、チャネル数、サンプリングレート、サンプルの深さ、チャネルマスクなどの形式の詳細を格納するためにメモリを割り当てます。
 
 次C++のコード例は、手順 1. で作成したサンプルクラスの[**アポストロフィ process**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)メソッドの実装を示しています。 この概念の実際の実装については、「 **Audio Processing Objects Driver sample** 」セクションの手順に従ってスワップサンプルにアクセスし、 *Swapapolfx*ファイルを参照してください。
 
@@ -199,12 +183,9 @@ HRESULT CSwapAPOGFX::ValidateAndCacheConnectionInfo( ... )
 
 クラスが**Cbaseaudioprocessingobject**から継承する残りのインターフェイスとメソッドについては、Audioenginebaseapo ファイルで詳しく説明されています **。  **
 
- 
-
 デスクトップ Pc の場合は、カスタム APO に追加した機能を構成するためのユーザーインターフェイスを提供できます。 詳細については、「 [APOs を構成するための UI の実装](implementing-a-ui-for-configuring-sapos.md)」を参照してください。
 
 ## <a name="span-idreplacing_system-supplied_aposspanspan-idreplacing_system-supplied_aposspanspan-idreplacing_system-supplied_aposspanreplacing-system-supplied-apos"></a><span id="Replacing_System-supplied_APOs"></span><span id="replacing_system-supplied_apos"></span><span id="REPLACING_SYSTEM-SUPPLIED_APOS"></span>システム指定の APOs を置き換える
-
 
 APO インターフェイスを実装する場合、2つの方法があります。独自の実装を記述することも、受信トレイ APOs を呼び出すこともできます。
 
@@ -234,28 +215,26 @@ CMyFromScratchAPO::IsInputFormatSupported {
 
 COM コンポーネントに対して、次のインターフェイスとメソッドを実装します。
 
--   [Iaudioprocessingobject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 このインターフェイスに必要なメソッドは、 [**Initialize**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)と[**IsInputFormatSupported です。** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
--   [Iaudioprocessingobjectconfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 このインターフェイスに必要なメソッドは、 [**Lockforprocess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)と[**UnlockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-unlockforprocess)です。
--   [Iaudioprocessingの Trt](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 このインターフェイスに必要なメソッドは、"[**アポストロフィ**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)" であり、DSP アルゴリズムを実装するメソッドです。
--   [Iaudiosystemeffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)。 このインターフェイスにより、オーディオエンジンは DLL を APO と認識します。
+- [Iaudioprocessingobject](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobject)。 このインターフェイスに必要なメソッドは、 [**Initialize**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-initialize)と[**IsInputFormatSupported です。** ](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobject-isinputformatsupported)
+- [Iaudioprocessingobjectconfiguration](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectconfiguration)。 このインターフェイスに必要なメソッドは、 [**Lockforprocess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)と[**UnlockForProcess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-unlockforprocess)です。
+- [Iaudioprocessingの Trt](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudioprocessingobjectrt)。 このインターフェイスに必要なメソッドは、"[**アポストロフィ**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectrt-apoprocess)" であり、DSP アルゴリズムを実装するメソッドです。
+- [Iaudiosystemeffects](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nn-audioenginebaseapo-iaudiosystemeffects)。 このインターフェイスにより、オーディオエンジンは DLL を APO と認識します。
 
 ## <a name="span-idworking_with_visual_studio_and_aposspanspan-idworking_with_visual_studio_and_aposspanspan-idworking_with_visual_studio_and_aposspanworking-with-visual-studio-and-apos"></a><span id="Working_with_Visual_Studio_and_APOs"></span><span id="working_with_visual_studio_and_apos"></span><span id="WORKING_WITH_VISUAL_STUDIO_AND_APOS"></span>Visual Studio と APOs の使用
 
-
 Visual Studio で APOs を使用する場合は、各 APO プロジェクトに対してこれらのタスクを実行します。
 
-**CRT へのリンク**
+### <a name="link-to-the-crt"></a>CRT へのリンク
 
 Windows 10 を対象とするドライバーは、ユニバーサル CRT に動的にリンクする必要があります。
 
 Windows 8、1をサポートする必要がある場合は、プロジェクトのプロパティを C/C++、コード生成で設定して、静的リンクを有効にします。 リリースビルドの場合は "Runtime Library" を */mt*に、デバッグビルドの場合は */MTd*に設定します。 この変更が加えられました。ドライバーの場合、MSVCRT.DLL&lt;n&gt;バイナリに再配布するのは困難です。 この解決策は、libcmt.lib を静的にリンクすることです。 詳細については[、「/md、/mt、/ld (ランタイムライブラリの使用)](https://docs.microsoft.com/cpp/build/reference/md-mt-ld-use-run-time-library) 」を参照してください。
 
-**埋め込みマニフェストの使用を無効にする**
+### <a name="disable-use-of-an-embedded-manifest"></a>埋め込みマニフェストの使用を無効にする
 
 APO プロジェクトのプロジェクトプロパティを設定して、埋め込みマニフェストの使用を無効にします。 **[マニフェストツール]** 、 **[入力および出力]** を選択します。 次に、[埋め込みマニフェスト] を既定の *[はい]* から [*いいえ*] に変更します。 埋め込みマニフェストがある場合は、保護された環境内で禁止されている特定の Api の使用がトリガーされます。 つまり、APO は DisableProtectedAudioDG = 1 で実行されますが、このテストキーが削除されると、WHQL に署名されている場合でも、APO の読み込みに失敗します。
 
 ## <a name="span-idpackaging_your_apo_with_a_driverspanspan-idpackaging_your_apo_with_a_driverspanspan-idpackaging_your_apo_with_a_driverspanpackaging-your-apo-with-a-driver"></a><span id="Packaging_your_APO_with_a_Driver"></span><span id="packaging_your_apo_with_a_driver"></span><span id="PACKAGING_YOUR_APO_WITH_A_DRIVER"></span>ドライバーを使用して APO をパッケージ化する
-
 
 独自のオーディオドライバーを開発し、システムによって提供される APOs をラップまたは交換するときは、ドライバーと APOs をインストールするためのドライバーパッケージを用意する必要があります。 Windows 10 については、「[オーディオ用ユニバーサル Windows ドライバー](audio-universal-drivers.md)」を参照してください。 オーディオ関連のドライバーパッケージは、そこで詳細に説明されているポリシーとパッケージングモデルに従う必要があります。  
 
@@ -263,10 +242,9 @@ APO プロジェクトのプロジェクトプロパティを設定して、埋�
 
 次の段落および INF ファイルフラグメントは、標準の INF ファイルを使用して APOs をコピーおよび登録するために必要な変更を示しています。
 
-Sysvad サンプルに含まれている tabletaudiosample および audiosample .inf ファイルは、SwapApo .dll APOs の登録方法を示しています。
+Sysvad サンプルに含まれている inf ファイルは、SwapApo .dll APOs の登録方法を示しています。
 
 ## <a name="span-id_registering_apos_for_processing_modes_and_effects_in_the_inf_filespanspan-id_registering_apos_for_processing_modes_and_effects_in_the_inf_filespanspan-id_registering_apos_for_processing_modes_and_effects_in_the_inf_filespan-registering-apos-for-processing-modes-and-effects-in-the-inf-file"></a><span id="_Registering_APOs_for_Processing_Modes_and_Effects_in_the_INF_File"></span><span id="_registering_apos_for_processing_modes_and_effects_in_the_inf_file"></span><span id="_REGISTERING_APOS_FOR_PROCESSING_MODES_AND_EFFECTS_IN_THE_INF_FILE"></span>ファイルの処理モードと効果を INF ファイルに登録しています
-
 
 レジストリキーの許可されている組み合わせを使用して、特定のモードの APOs を登録できます。 使用できる効果と APOs に関する一般的な情報の詳細については、「[オーディオ処理オブジェクトのアーキテクチャ](audio-processing-object-architecture.md)」を参照してください。
 
@@ -286,16 +264,16 @@ Sysvad サンプルに含まれている tabletaudiosample および audiosample
 
 次の INF ファイルのサンプルは、特定のモードのオーディオ処理オブジェクト (APOs) を登録する方法を示しています。 これらの例では、この一覧から使用可能な組み合わせを示します。
 
--   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
--   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
--   PKEY\_FX\_PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
--   PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
+- PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
+- PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+- PKEY\_FX\_PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+- PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
 
 これらのサンプルでは、有効な組み合わせが1つ追加されています。
 
--   PKEY\_FX\_EndpointEffectClsid と PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされて\_
+- PKEY\_FX\_EndpointEffectClsid と PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
-**SYSVAD タブレットマルチモードストリーミング効果 APO INF サンプル**
+### <a name="sysvad-tablet-multi-mode-streaming-effect-apo-inf-sample"></a>SYSVAD タブレットマルチモードストリーミング効果 APO INF サンプル
 
 このサンプルでは、SYSVAD タブレット INF ファイルの AddReg エントリを使用して登録されているマルチモードのストリーミング効果を示します。
 
@@ -303,9 +281,8 @@ Sysvad サンプルに含まれている tabletaudiosample および audiosample
 
 このサンプルでは、次のシステム効果の組み合わせを示します。
 
--   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
-
--   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+- PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
+- PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
 
 ```inf
 [SWAPAPO.I.Association0.AddReg]
@@ -331,7 +308,7 @@ HKR,FX\0,%PKEY_MFX_ProcessingModes_Supported_For_Streaming%,%REG_MULTI_SZ%,%AUDI
 
 サンプルの INF ファイルでは、"EFX\_Streaming" プロパティがコメントアウトされています。これは、オーディオ処理がそのレイヤー上のカーネルモードに遷移したためです。ストリーミングプロパティは必要なく、使用されません。 検出を目的として PKEY\_FX\_EndpointEffectClsid を指定することは有効ですが、\_ストリーミングでサポートされている\_\_PKEY\_EFX\_ProcessingModes を指定するとエラーになります。 これは、モードミックス/t がスタックの下位に発生し、エンドポイント APO を挿入できないためです。
 
-**コンポーネント APO のインストール**
+### <a name="componentized-apo-installation"></a>コンポーネント APO のインストール
 
 Windows 10 以降のリリース1809では、オーディオエンジンによる APO 登録で、コンポーネント化されたオーディオドライバーモデルが使用されています。 Audio コンポーネント化を使用すると、より滑らかで信頼性の高いインストールエクスペリエンスが実現し、コンポーネントサービスのサポートが強化されます。 詳細については、「[コンポーネント化オーディオドライバーのインストールの作成](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)」を参照してください。
 
@@ -351,7 +328,11 @@ Description = "Audio Proxy APO Sample"
 Capabilities = 0x00000008 ; SWDeviceCapabilitiesDriverRequired
 ```
 
-この APO デバイスは、SYSVAD サンプルの2番目の部分である APO INF をトリガーします。これは ComponentizedApoSample で行われます。 この INF ファイルは、APO デバイス専用です。 これは、デバイスクラスを AudioProcessingObject として指定し、CLSID 登録のすべての APO プロパティを追加し、オーディオエンジンに登録します。 
+この APO デバイスは、SYSVAD サンプルの2番目の部分である APO INF をトリガーします。これは ComponentizedApoSample で行われます。 この INF ファイルは、APO デバイス専用です。 これは、デバイスクラスを AudioProcessingObject として指定し、CLSID 登録のすべての APO プロパティを追加し、オーディオエンジンに登録します。
+
+>[!NOTE]
+> INF ファイルのサンプルでは、ほとんどの場合、HKR レジストリキーを使用して、状態の分離をサポートしています。 前のサンプルでは、HKCR を使用して永続的な値を格納していました。 例外は、コンポーネントオブジェクトモデル (COM) オブジェクトの登録です。キーは HKCR の下に記述できます。
+詳細については、「[ユニバーサル INF ファイルの使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)」を参照してください。
  
 ```inf
 [Version]
@@ -373,16 +354,15 @@ HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%S
 ...
 ```
 
-この INF によってコンポーネント APO がインストールされると、デスクトップシステムの "オーディオ処理オブジェクト" が Windows デバイスマネージャーに表示されます。 
+この INF によってコンポーネント APO がインストールされると、デスクトップシステムの "オーディオ処理オブジェクト" が Windows デバイスマネージャーに表示されます。
 
-
-**Bluetooth オーディオサンプル APO INF サンプル**
+### <a name="bluetooth-audio-sample-apo-inf-sample"></a>Bluetooth オーディオサンプル APO INF サンプル
 
 このサンプルでは、次のシステム効果の組み合わせを示します。
 
--   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
+- PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
--   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+- PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
 
 このサンプルコードでは、Bluetooth ハンズフリーおよびステレオデバイスがサポートされています。
 
@@ -412,15 +392,15 @@ PKEY_MFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92
 AUDIO_SIGNALPROCESSINGMODE_DEFAULT = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
 ```
 
-**APO INF オーディオサンプル**
+### <a name="apo-inf-audio-sample"></a>APO INF オーディオサンプル
 
 このサンプル INF ファイルは、次のシステム効果の組み合わせを示しています。
 
--   PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
+- PKEY\_FX\_StreamEffectClsid と PKEY\_SFX\_ProcessingModes\_\_Streaming でサポートされて\_
 
--   PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
+- PKEY\_FX\_ModeEffectClsid と PKEY\_MFX\_ProcessingModes\_\_Streaming の\_
 
--   PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
+- PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
 
 ```inf
 [MyDevice.Interfaces]
@@ -442,7 +422,7 @@ HKR,"FX\\0",%PKEY_SFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNA
 HKR,"FX\\0",%PKEY_MFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%,%AUDIO_SIGNALPROCESSINGMODE_MOVIE%,%AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS%
 ```
 
-**カスタム APO および CLSID APO INF サンプルを定義する**
+### <a name="define-a-custom-apo-and-clsid-apo-inf-sample"></a>カスタム APO および CLSID APO INF サンプルを定義する
 
 このサンプルでは、カスタム APO 用に独自の CLSID を定義する方法を示します。 このサンプルでは、MsApoFxProxy CLSID {ABAD-4004-BF0A-BC7BB825E166} を使用します。 この GUID を CoCreate すると、MsApoFxProxy 内のクラスがインスタンス化されます。このクラスは IAudioProcessingObject インターフェイスを実装し、基になるドライバーに対して KSK PROPSETID\_Audio Discovery プロパティセットを使用してクエリを行います。
 
@@ -450,7 +430,7 @@ HKR,"FX\\0",%PKEY_MFX_ProcessingModes_For_Streaming%,%REG_MULTI_SZ%,%AUDIO_SIGNA
 
 この INF ファイルのサンプルでは、このシステム効果の組み合わせの使用方法も示しています。
 
--   PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
+- PKEY\_FX\_EndpointEffectClsid を使用しない PKEY\_EFX\_ProcessingModes\_\_Streaming でサポートされている\_
 
 ```inf
 ;wdma_bt.inf
@@ -471,38 +451,50 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 #endif
 ```
 
-このサンプル INF ファイルでは、\[の MsApoFxProxy\] と \[MsApoFxProxy\] セクションを示します。 これにより、\[の MsApoFxProxy\] セクションを使用して、既知の GUID が COM に登録されます。 このセクションでは、MsApoFxProxy を C:\\Windows\\system32 にコピーします。
+### <a name="sample-apo-effect-registration"></a>APO エフェクト登録のサンプル
+
+このサンプルでは、Sysvad ComponentizedApoSample inx の\] Apo_AddReg \[を示します。 このセクションでは、スワップストリーム GUID を COM に登録し、スワップストリームの APO 効果を登録します。 \[Apo_CopyFiles\] セクションでは、swapapo .dll を C:\\Windows\\system32 にコピーします。
 
 ```inf
-; wdmaudio.inf – this is where WmaLfxGfxDsp.dll is registered
-...
-;; MsApoFxProxy.Registration section can be called by OEM's to install the discover-effects APO
-[MsApoFxProxy.Registration]
-AddReg = MsApoFxProxy.AddReg
-CopyFiles = MsApoFxProxy.CopyList
+; ComponentizedApoSample.inx
 
-[MsApoFxProxy.CopyList]
-MsApoFxProxy.dll,,,0x100
 ...
-[MsApoFxProxy.AddReg]
-; Discover Effects APO COM registration
-HKCR,CLSID\%FX_DISCOVER_EFFECTS_APO_CLSID%,,,%FX_DiscoverEffectsApo_FriendlyName%
-HKCR,CLSID\%FX_DISCOVER_EFFECTS_APO_CLSID%\InProcServer32,,,%11%\MsApoFxProxy.dll
-HKCR,CLSID\%FX_DISCOVER_EFFECTS_APO_CLSID%\InProcServer32,ThreadingModel,,"Both"
 
-; Discover Effects APO registration
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "FriendlyName", ,%FX_DiscoverEffectsApo_FriendlyName%
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "Copyright", ,%MsCopyRight%
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MajorVersion", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MinorVersion", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "Flags", 0x00010001, 0x0000000d
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MinInputConnections", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MaxInputConnections", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MinOutputConnections", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MaxOutputConnections", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "MaxInstances", 0x00010001, 0xffffffff
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "NumAPOInterfaces", 0x00010001, 1
-HKCR,AudioEngine\AudioProcessingObjects\%FX_DISCOVER_EFFECTS_APO_CLSID%, "APOInterface0", ,"{FD7F2B29-24D0-4B5C-B177-592C39F9CA10}"
+[ApoComponent_Install]
+CopyFiles = Apo_CopyFiles
+AddReg    = Apo_AddReg
+
+[Apo_CopyFiles]
+swapapo.dll
+
+...
+
+[Apo_AddReg]
+; Swap Stream effect APO COM registration
+HKCR,CLSID\%SWAP_FX_STREAM_CLSID%,,,%SFX_FriendlyName%
+HKCR,CLSID\%SWAP_FX_STREAM_CLSID%\InProcServer32,,0x00020000,%13%\swapapo.dll
+HKCR,CLSID\%SWAP_FX_STREAM_CLSID%\InProcServer32,ThreadingModel,,"Both"
+
+'''
+; Swap Stream effect APO registration
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%SFX_FriendlyName%
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"Copyright",,%Copyright%
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MajorVersion",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MinorVersion",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"Flags",0x00010001,%APO_FLAG_DEFAULT%
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MinInputConnections",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MaxInputConnections",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MinOutputConnections",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MaxOutputConnections",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"MaxInstances",0x00010001,0xffffffff
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"NumAPOInterfaces",0x00010001,1
+HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"APOInterface0",,"{FD7F2B29-24D0-4B5C-B177-592C39F9CA10}"
+...
+
+[Strings]
+; Driver developers would replace these CLSIDs with those of their own APOs
+SWAP_FX_STREAM_CLSID   = "{B48DEA3F-D962-425a-8D9A-9A5BB37A9904}"
+
 ...
 ```
 
@@ -532,7 +524,7 @@ PKEY\_FX\_Association (効果プロパティストアの場合) または PKEY\_
 
 Microsoft 受信トレイクラスドライバー (サードパーティの開発者がラップできるドライバー) のみ、MSEP と MSFX を使用する必要があります。すべてのサードパーティのドライバーは、EP と FX を使用する必要があります。
 
-**APO ノード型の互換性**
+### <a name="apo-node-type-compatibility"></a>APO ノード型の互換性
 
 次の INF ファイルのサンプルでは、PKEY\_FX\_Association キーを、APO に関連付けられている GUID に設定しています。
 
@@ -571,33 +563,36 @@ HKR,"FX\\0",%PKEY_FX_Association%,,%KSNODETYPE_SPEAKER%
 
 ## <a name="span-idtroubleshooting_apo_load_failuresspanspan-idtroubleshooting_apo_load_failuresspanspan-idtroubleshooting_apo_load_failuresspantroubleshooting-apo-load-failures"></a><span id="Troubleshooting_APO_Load_Failures"></span><span id="troubleshooting_apo_load_failures"></span><span id="TROUBLESHOOTING_APO_LOAD_FAILURES"></span>APO 読み込みエラーのトラブルシューティング
 
-
 次の情報は、APOs の障害がどのように監視されるかを理解するのに役立ちます。 この情報を使用すると、オーディオグラフへの組み込みに失敗した問題のトラブルシューティングを行うことができます。
 
 オーディオシステムは、APO リターンコードを監視して、APOs がグラフに正常に組み込まれているかどうかを判断します。 指定されたメソッドのいずれかによって返される HRESULT 値を追跡することで、リターンコードを監視します。 システムは、グラフに組み込まれている SFX、MFX、および EFX APO ごとに個別のエラー数の値を保持します。
 
 オーディオシステムは、次の4つのメソッドから返された HRESULT 値を監視します。
 
--   CoCreateInstance
+- CoCreateInstance
 
--   IsInputFormatSupported
+- IsInputFormatSupported
 
--   サポートされている isoutputformat
+- サポートされている isoutputformat
 
--   LockForProcess
+- LockForProcess
 
 これらのメソッドの1つがエラーコードを返すたびに、APO に対してエラー数の値が増加します。 APO がオーディオグラフに正常に組み込まれたことを示すコードを返した場合、エラー数は0にリセットされます。 [**Lockforprocess**](https://docs.microsoft.com/windows/desktop/api/audioenginebaseapo/nf-audioenginebaseapo-iaudioprocessingobjectconfiguration-lockforprocess)メソッドを正常に呼び出すことは、APO が正常に組み込まれたことを示しています。
 
 特に、 [**CoCreateInstance**](https://docs.microsoft.com/windows/desktop/api/combaseapi/nf-combaseapi-cocreateinstance)では、返される HRESULT コードがエラーを示す可能性があります。 主な理由は次の3つです。
 
--   グラフで保護されたコンテンツが実行されていますが、APO に正しく署名されていません。
+- グラフで保護されたコンテンツが実行されていますが、APO に正しく署名されていません。
 
--   APO が登録されていません。
+- APO が登録されていません。
 
--   APO の名前が変更されたか、改ざんされています。
+- APO の名前が変更されたか、改ざんされています。
 
 また、SFX、MFX、または EFX APO の失敗数の値がシステムによって指定された制限に達した場合、SFX、MFX、および EFX APOs は、PKEY\_エンド\_ポイントを設定することによって無効にし、SysFx レジストリキー\_を ' 1 ' に設定することによって無効にします。 システム指定の制限は、現在、10の値です。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)  
+[Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)
+
+[ユニバーサル INF ファイルの使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-a-universal-inf-file)
+
+[コンポーネント化オーディオドライバーのインストールの作成](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-universal-drivers#creating-a-componentized-audio-driver-installation)

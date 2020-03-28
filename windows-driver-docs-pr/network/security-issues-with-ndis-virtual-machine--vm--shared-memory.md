@@ -4,12 +4,12 @@ description: NDIS 仮想マシン (VM) 共有メモリのセキュリティ上�
 ms.assetid: 42b903b0-6729-4314-9305-9345fff9b2ba
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 506040eca4172570cfa0013383f4218118f27c6b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a00716ad8429137e9f6093b97a978a6d5ab24e48
+ms.sourcegitcommit: 7135ca169cc274543fbe170330c054ee18573134
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841988"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367630"
 ---
 # <a name="security-issues-with-ndis-virtual-machine-vm-shared-memory"></a>NDIS 仮想マシン (VM) 共有メモリのセキュリティ上の問題
 
@@ -17,7 +17,7 @@ ms.locfileid: "72841988"
 
 
 
-このトピックでは、仮想マシン (VM) からの共有メモリの割り当てに関連する潜在的なセキュリティの問題について説明します。 このトピックには、次のセクションが含まれています。
+このトピックでは、仮想マシン (VM) からの共有メモリの割り当てに関連する潜在的なセキュリティの問題について説明します。 このトピックは次のセクションで構成されます。
 
 -   [VM 共有メモリに関するセキュリティの問題の概要](#overview)
 
@@ -29,7 +29,7 @@ ms.locfileid: "72841988"
 
  
 
-### <a href="" id="overview"></a>VM 共有メモリに関するセキュリティの問題の概要
+### <a name="overview-of-the-security-issues-with-vm-shared-memory"></a><a href="" id="overview"></a>VM 共有メモリに関するセキュリティの問題の概要
 
 Vm は信頼されたソフトウェアエンティティではありません。 つまり、悪意のある VM は、Hyper-v の親パーティションで実行されている他の Vm または管理オペレーティングシステムと干渉することはできません。 ここでは、ドライバーの作成者が VMQ のセキュリティの問題と共有メモリの要件を理解できるように、背景情報と要件について説明します。 共有メモリの詳細については、「 [VMQ ドライバーの作成](writing-vmq-drivers.md)」セクションの「[共有メモリリソースの割り当て](shared-memory-resource-allocation.md)」を参照してください。
 
@@ -41,7 +41,7 @@ VM に接続されている Hyper-v 拡張可能スイッチポートに関連�
 
 ただし、VMQ が共有メモリを使用するように構成されている場合、ネットワークアダプターは DMA を使用して受信フレームを VM アドレス空間に直接転送します。 この転送では、拡張可能スイッチによって必要な VLAN フィルターが適用されるのを待たずに、受信したフレームの内容を VM が調べることができるセキュリティの問題が発生します。
 
-### <a href="" id="ndis620"></a>Windows Server 2008 R2 でのセキュリティの問題への対処方法
+### <a name="how-windows-server2008r2-addresses-the-security-issue"></a><a href="" id="ndis620"></a>Windows Server 2008 R2 でのセキュリティの問題への対処方法
 
 Windows Server 2008 R2 では、VSP が vm アドレス空間から割り当てられた共有メモリを使用するように VM キューを構成する前に、キューに対して次のフィルターテストを使用します。
 
@@ -77,7 +77,7 @@ VMQ 共有メモリのこれらの要件を満たすためのメカニズムが�
 
 ネットワークアダプターがいずれかの方法で VMQ 共有メモリの要件を満たしていない場合、VSP は、ホストアドレス空間から VMQ 受信バッファーにメモリを割り当て、ネットワークアダプターの受信バッファーから VM アドレスに受信したパケットをコピーします。行間.
 
-### <a href="" id="ndis630"></a>Windows Server 2012 以降のバージョンでのセキュリティの問題への対処方法
+### <a name="how-windows-server2012-and-later-versions-address-the-security-issue"></a><a href="" id="ndis630"></a>Windows Server 2012 以降のバージョンでのセキュリティの問題への対処方法
 
 Windows Server 2012 以降、VSP は、VMQ 受信バッファー用に VM から共有メモリを割り当てません。 代わりに、VSP は、ホストアドレス空間から VMQ 受信バッファーにメモリを割り当て、受信したパケットをネットワークアダプターの受信バッファーから VM アドレス空間にコピーします。
 
@@ -89,7 +89,7 @@ Windows Server 2012 以降のバージョンの Windows で実行される VMQ �
 
     -   ミニポートドライバーでは、**フラグ**メンバーで **\_フィルター\_先読み\_分割\_サポートされている**フラグを受け取るように、NDIS\_受信するように設定することはできません。
 
-    -   ミニポートドライバーでは、 **Minlook Aヘッドの splitsize**メンバーと**Minlook Aヘッドの splitsize**メンバーを0に設定する必要があります。
+    -   ミニポートドライバーでは、 **Minlook Aヘッドの splitsize**メンバーと**Maxlook Aヘッドの splitsize**メンバーをゼロに設定する必要があります。
 
     VMQ 機能を登録する方法の詳細については、「[ネットワークアダプターの Vmq 機能の決定](determining-the-vmq-capabilities-of-a-network-adapter.md)」を参照してください。
 
