@@ -8,12 +8,12 @@ keywords:
 - NDIS WDK、インターフェイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fce0c042aca1937373c49f0785554f48eb90723b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cb23de4c820cc1d77763332d9696e730c67546b7
+ms.sourcegitcommit: 078e2dfac6c18f65ff923d1e55bff4a23e02a824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843545"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80400471"
 ---
 # <a name="ndis-interface-information"></a>NDIS インターフェイス情報
 
@@ -30,7 +30,7 @@ NDIS では、Management Instrumentation (WMI) のサポートが強化されて
 ## <a name="related-topics"></a>関連トピック
 
 
-[**NDIS\_インターフェイス\_情報**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-_ndis_interface_information)
+[**NDIS\_インターフェイス\_情報**](https://docs.microsoft.com/windows/desktop/api/ifdef/ns-ifdef-ndis_interface_information)
 
  
 

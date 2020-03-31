@@ -4,12 +4,12 @@ description: このトピックでは、Windows Update (WU) サービスを使�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 31dec967a4e3c18787f0e857fee450201afd99e8
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6e9a680809c2c62e7f9fecd5a101eea915443bd8
+ms.sourcegitcommit: 078e2dfac6c18f65ff923d1e55bff4a23e02a824
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828702"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80400472"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>Windows Update を使用したデバイス ファームウェアの更新
 
@@ -26,7 +26,7 @@ WU はソフトウェアを実行できないため、ファームウェア更�
 * デバイスの起動時、またはドライバーの[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバック関数では、次のようになります。
 
     1. デバイスが接続されているデバイスを特定します。
-    2. ドライバーに、デバイス上のバージョンよりも新しいバージョンのファームウェアがあるかどうかを確認します。
+    2. ドライバーのファームウェアのバージョンが、デバイスハードウェアで現在フラッシュされているファームウェアのバージョンよりも新しいものであるかどうかを確認します。
     3. ファームウェアの更新が必要な場合は、イベントタイマーを設定して更新をスケジュールします。
     4. それ以外の場合は、ドライバーが再起動されるまで何も行いません。
 
