@@ -2,16 +2,21 @@
 ms.assetid: 79AB7242-72D6-4198-9AF0-482CBFB756C7
 title: ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
 description: Windows Driver Kit (WDK) for Windows 8 を使って、独自のドライバー テストを作成したり、提供されているテストの一部をカスタマイズしたりします。
-ms.date: 04/20/2017
+ms.date: 03/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18018c827e51d24f06e099dd28fad9eb066e2dce
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 40dafed4d6fa901505fcc57fa82c0d74b7a3de18
+ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370740"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327567"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
+
+> [!NOTE]
+> このトピックでは、Visual Studio 2013 でのみ使用できる機能について説明します。 以前の WDK および Visual Studio のエディションの詳細については、「[その他の WDK のダウンロード](../other-wdk-downloads.md)」を参照してください。
+> 
+
 
 Windows Driver Kit (WDK) for Windows 8 を使って、独自のドライバー テストを作成したり、提供されているテストの一部をカスタマイズすることができます。 Microsoft Visual Studio Ultimate 2012 用に WDK で提供されているドライバー テスト フレームワークを使って、作成したテストをリモート テスト コンピューターに展開できます。
 
@@ -32,7 +37,7 @@ WDK には、C++、C\#、スクリプト (JScript) で Windows ドライバー �
 
 
 1.  **[ファイル]** メニューの **[新規作成] &gt; [プロジェクト]** をクリックします。
-2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、 **[Visual C\#] &gt; [Windows Driver]\(Windows ドライバー\)** の順に選びます。
+2.  **[新しいプロジェクト]** ダイアログ ボックスのインストール済みのテンプレートの一覧で、 **[Visual C]\# &gt;[Windows Driver]\(Windows ドライバー\)** の順に選びます。
 3.  **[Windows Driver Test in C\#]\(C# での Windows ドライバーのテスト\)** を選びます。
 4.  ドライバー テスト プロジェクトの名前と場所を指定します (または既定値を使います)。
 5.  **[Windows Driver Test] (Windows ドライバーのテスト)** ダイアログ ボックスで、含めるテスト ケースか、空のドライバー テストを選択します。 テスト ケースについて詳しくは、「[Windows ドライバーのテスト ケース](#windows_driver_test_cases)」をご覧ください。

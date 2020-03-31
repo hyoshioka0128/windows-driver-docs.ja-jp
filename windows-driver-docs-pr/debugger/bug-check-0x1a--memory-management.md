@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 7d9ad86f32d620e87b940a7ed5c7a8c1895a70f4
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.openlocfilehash: aa8f9ccbbf1c8f8e979072dea177ef3202cb8ef3
+ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78402349"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327571"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>バグ チェック 0x1A:MEMORY\_MANAGEMENT
 
@@ -153,12 +153,11 @@ MEMORY\_MANAGEMENT バグ チェックの値は、0x0000001A です。 これは
 <td align="left"><p>メモリ ストア コンポーネントのプライベート メモリの範囲が破損しているため、アクセスできなくなりました。 パラメーター 2 は、返された状態です。  パラメーター 3 は、ストアのプライベート メモリの範囲内にある仮想アドレスです。 パラメーター 4 は MemoryDescriptorList です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0x8884</p></td>
-<td align="left"><p>(Windows 7 のみ)。 ページ優先順位の値が同じであると想定されていたスタンバイ リスト上の 2 つのページが、実際には、同じページ優先順位値ではありません。 異なる値は、パラメーター 4 にキャプチャされます。</p></td>
+<td align="left"><p>0x8884</p><p>0x8885</p><p>0x8886</p><p>0x8887</p></td>
+<td align="left"><p>(Windows 7 以降)。 ページ優先順位の値が同じであると想定されていたスタンバイ リスト上の 2 つのページが、実際には、同じページ優先順位値ではありません。 異なる値は、パラメーター 4 にキャプチャされます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0x8888</p>
-<p>0x8889</p></td>
+<td align="left"><p>0x8888</p><p>0x8889</p></td>
 <td align="left"><p>内部のメモリ管理構造が破損しています。</p></td>
 </tr>
 <tr class="even">
