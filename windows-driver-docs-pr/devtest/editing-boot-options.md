@@ -10,21 +10,21 @@ keywords:
 - ブートエントリ WDK
 ms.date: 04/23/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c305b2c8acf6ba04acaeb997da8da1a7d5d2289
-ms.sourcegitcommit: 2c8c13ed8d8f11eccf4c4ffb492c64099003b6a9
+ms.openlocfilehash: 9d06f21d2b022a2ee8028e94d09b976388a8d542
+ms.sourcegitcommit: a2d1c389f0f413cc967068cbde22a5598e5a5d57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681889"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80516775"
 ---
 # <a name="editing-boot-options"></a>ブート オプションの編集
 
 このセクションでは、Windows Server 2008、Windows Server 2012、または Windows 7 以降を実行しているコンピューターでブートオプションを編集するための実用的なガイドを示します。 ブートオプションの基本要素をカスタマイズするための詳細な手順について説明します。
 
-このセクションでは、オペレーティングシステムに付属のツールである BCDEdit を使用する方法について説明します。 BCDEdit コマンドの構文の詳細については、「 **bcdedit/?」と**入力してください。 または**bcdedit/?** コマンドプロンプトウィンドウのトピック。 詳細については、「 [BCD ブートオプションリファレンス](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)」を参照してください。
+このセクションでは、オペレーティングシステムに付属のツールである BCDEdit を使用する方法について説明します。 BCDEdit コマンドの構文の詳細については、「 **bcdedit/?」と**入力してください。 または**bcdedit/?** コマンドプロンプトウィンドウのトピック。 詳細については、「 [BCDEdit Options Reference](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference) 」を参照してください。
 
 > [!NOTE]
-> BCDEdit オプションを設定する前に、コンピューターで BitLocker とセキュアブートを無効にしたり、中断したりすることが必要になる場合があります。
+> BCDEdit のオプションを設定する前に、コンピューターで BitLocker とセキュア ブートを無効にするか中断することが必要になる場合があります。
 
 ブートエントリパラメーターを編集して Windows の機能を有効または無効にする方法については、「[ブートパラメーターの使用](using-boot-parameters.md)」を参照してください。
 
@@ -46,4 +46,4 @@ ms.locfileid: "74681889"
  [BCDEdit のコマンドラインオプション](https://docs.microsoft.com/windows-hardware/manufacture/desktop/bcdedit-command-line-options)
 
 > [!CAUTION]
-> BCDEdit を使用して BCD を変更するには、管理者特権が必要です。 **BCDEdit/set**コマンドを使用して一部のブートエントリオプションを変更すると、コンピューターが動作しなくなる可能性があります。 別の方法として、システム構成ユーティリティ (Msconfig.exe) を使用してブート設定を変更することもできます。
+> BCD を変更するために BCDEdit を使用するには、管理者特権が必要です。 **BCDEdit /set** コマンドを使用して一部のブート エントリ オプションを変更すると、コンピューターが動作しなくなる可能性があります。 別の方法として、システム構成ユーティリティ (MSConfig.exe) を使用してブート設定を変更します。
