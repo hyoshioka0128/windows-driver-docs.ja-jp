@@ -25,7 +25,7 @@ ms.locfileid: "78402348"
 SYSTEM\_SERVICE\_EXCEPTION バグ チェックの値は 0x0000003B です。 これは、特権のないコードから特権コードに遷移するルーチンの実行中に例外が発生したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルー スクリーン エラー コードが表示される場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
+> このトピックはプログラマーを対象としています。 ユ―ザーとしてコンピューターを使用しているときにブルー スクリーン エラー コードが表示される場合は、[ブルー スクリーン エラーのトラブルシューティング](https://www.windows.com/stopcode)を参照してください。
 
 
 ## <a name="system_service_exception-parameters"></a>SYSTEM\_SERVICE\_EXCEPTION パラメーター
@@ -106,7 +106,7 @@ WinDbg および **!analyze** の詳細については、次のトピックを�
 
 ### <a name="identify-the-driver"></a>ドライバーを特定する
 
-エラーの原因となったドライバーを特定できる場合は、その名前がブルー スクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver** に格納されます。 [**dx** (デバッガー オブジェクト モデル式の表示)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-) デバッガーコマンドを使用して、`dx KiBugCheckDriver` を表示できます。
+エラーの原因となったドライバーを特定できる場合は、その名前がブルー スクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver** に格納されます。 これを表示するには、[**dx** (デバッガー オブジェクト モデル式の表示)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-) デバッガーコマンドを使用します: `dx KiBugCheckDriver`。
 
 [ **!error**](-error.md) 拡張機能を使用して、パラメーター 1 の例外コードに関する情報を表示します。 **!error** からの出力の例を次に示します。
 
