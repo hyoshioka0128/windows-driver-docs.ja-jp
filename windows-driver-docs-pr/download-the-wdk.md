@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b29587e696774e5095fab420b280ba9f030d2a9b
-ms.sourcegitcommit: 3923846999792f1ba971e949f5961b06121d40e5
+ms.openlocfilehash: 3bf551387fac640f83b6560f3b2055b54dbeeb33
+ms.sourcegitcommit: ea6aa4fc28576dd47359d0a09ea63ce414d5f6b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79429578"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538117"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -46,15 +46,19 @@ Visual Studio 2019 のインストール時に、 **[C++ によるデスクト�
 
 既に Visual Studio 2019 がインストールされている場合は、Visual Studio のインストールで **[変更]** ボタンを使用して Windows 10 Preview SDK (10.0.18362.0) をインストールできます。
 
+x86/x64 用の MSVC v142 ビルド ツールの正しいバージョンがインストールされていることを確認するには、以下の手順に従ってください。 
+1. **[個別のコンポーネント]** を選択します。
+1. **[コンパイラ、ビルド ツール、およびランタイム]** で、オプション **[MSVC v142 - VS 2019 C++ x64/x86 ビルド ツール (v14.21)]** ボックスがオンになっていることを確認し、オンになっていない場合はオンにしてください。
+
 ARM/ARM64 ドライバー開発の場合、以下の操作を行います。 
 
 1. **[個別のコンポーネント]** を選択します。 
-1. **[コンパイラ、ビルド ツール、およびランタイム]** で **[ARM/ARM64 用 Visual Studio C++ コンパイラとライブラリ]** を選択します。
+1. **[コンパイラ、ビルド ツール、およびランタイム]** で、 **[MSVC v142 - VS 2019 C++ ARM ビルド ツール (v14.21)]** と **[MSVC v142 - VS 2019 C++ ARM64 ビルド ツール (v14.21)]** を選択します。
 
-ドライバーを構築するアーキテクチャごとに、以下の操作を行います。 
-
-1. **[個別のコンポーネント]** を使用して、Spectre 軽減ライブラリをインストールします。 
-1. **[コンパイラ、ビルド ツール、およびランタイム]** で **[MSVC v142 - VS 2019 C+ x64/x86 Spectre 軽減ライブラリ (v14.21)]** を選択します。
+ドライバーをビルドするアーキテクチャごとに、Spectre 軽減ライブラリをインストールする必要があります。 **[個々のコンポーネント]** タブに移動し、見出し **[コンパイラ、ビルド ツール、およびランタイム]** で、以下を実行します。
+  * x86 と x64 の場合は、 **[MSVC v142 - VS 2019 C++ x64/x86 Spectre 軽減ライブラリ (v14.21)]** を選択します。
+  * ARM の場合は、 **[MSVC v142 - VS 2019 C++ ARM Spectre 軽減ライブラリ (v14.21)]** を選択します。
+  * ARM64 の場合は、 **[MSVC v142 - VS 2019 C++ ARM64 Spectre 軽減ライブラリ (v14.21)]** を選択します。
 
 ### <a name="download-icon-step-2-install-wdk-for-windows-10-version-1903"></a>![ダウンロード アイコン](images/download-install.png) 手順 2:WDK for Windows 10 Version 1903 のインストール
 
