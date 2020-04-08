@@ -4,12 +4,12 @@ description: Microsoft Visual Studio が実行する自動 INF 検証の結果�
 ms.assetid: E021D8F8-BFDA-4F71-B8EA-0997096761FB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f6076de7493669ea26a8096abcb876553bf430
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: 5d8fd642761e39cf25d6f9c1f56a6888fc6cd1a8
+ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080143"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80807612"
 ---
 # <a name="inf-validation-errors-and-warnings"></a>INF の検証エラーと警告
 
@@ -74,7 +74,7 @@ InfVerif failure はドライバーの送信に失敗することを意味しま
 <tbody>
 <tr>
 <td><strong>1100: DriverStore の Copyfile 名が一致しません</strong></td>
-<td>このエラーは、ファイルが元のドライバーストア名と場所から、ドライバーストア内の別の名前と場所にコピーまたは名前が変更された場合に発生します。  例 :
+<td>このエラーは、ファイルが元のドライバーストア名と場所から、ドライバーストア内の別の名前と場所にコピーまたは名前が変更された場合に発生します。  次に、例を示します。
 <pre>
 [SourceDisksFiles]
 DriverFile.sys=1,x64  
@@ -179,7 +179,7 @@ CatalogFile=wudf.cat
 <tr>
 <td><strong>1235: 文字列トークンが [文字列] に定義されていません</strong></td>
 <td>指定された文字列トークンには、[Strings] セクションに定義がありません。 たとえば、INF ファイルでは、AddReg ディレクティブで指定された<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive"><strong>AddReg</strong></a> <em>セクション</em>に<em>% REG_DWORD%</em>が指定されていますが、対応する REG_DWORD = 0x00010001 は<a href="https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section">[文字列]</a>セクションにありません。
-<p>このエラーは、INF ファイルで環境変数を含むレジストリ値が指定されている場合に頻繁に発生します。 例 :</p>
+<p>このエラーは、INF ファイルで環境変数を含むレジストリ値が指定されている場合に頻繁に発生します。 次に、例を示します。</p>
 <pre>
 [MyAddReg]
 HKR,,DllPath,%SystemRoot%\System32\myDll.sys
@@ -227,7 +227,7 @@ AddService = ,2
 </tr>
 <tr>
 <td><strong>1297: デバイスドライバーはどのデバイスにもインストールされません。これが目的の場合は、プリミティブドライバーを使用してください。</strong></td>
-<td>これは、INF ファイルがデバイスドライバであることを示していますが、デバイスドライバとして使用されていません。 これにより、ドライバーストアによるドライバーの処理方法で問題が発生する可能性があります。 意図しない場合は、INF を調べて、ハードウェア Id が正しく指定されていることを確認してください。 ドライバーをデバイスにインストールすることを意図していない場合は、それをプリミティブドライバーに変換します。  詳細については、こちらの<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver">ドキュメント</a>を参照してください。
+<td>これは、INF ファイルがデバイスドライバであることを示していますが、デバイスドライバとして使用されていません。 これにより、ドライバーストアによるドライバーの処理方法で問題が発生する可能性があります。 意図しない場合は、INF を調べて、ハードウェア Id が正しく指定されていることを確認してください。 ドライバーをデバイスにインストールすることを意図していない場合は、それをプリミティブドライバーに変換します。  詳細については、「<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-primitive-driver#converting-from-a-device-driver-inf">デバイスドライバー INF からの変換</a>」を参照してください。
 </td>
 </tr>
 </tbody>
@@ -262,7 +262,7 @@ AddService = ,2
 </tr>
 <tr>
 <td><strong>1303: 共同インストーラーを定義する従来の操作が見つかりました</strong></td>
-<td>エラー1303は、AddReg 操作で共同インストーラーが指定されていることを示します。 例 :
+<td>エラー1303は、AddReg 操作で共同インストーラーが指定されていることを示します。 次に、例を示します。
 <pre>
 AddReg = HKR,,CoInstallers32,0x00010000,"MyCoinstaller.dll"
 </pre>
