@@ -1,10 +1,10 @@
 ---
 title: HRESULT の値
-description: 次に関数とメソッド、およびその通常の意味に共通の戻り値の一覧を示します。
+description: 次に示すのは、関数とメソッドの一般的な戻り値の一覧と、通常の意味です。
 ms.assetid: 713f3ee2-2f5b-415e-9908-90f5ae428b43
-ms.date: 10/30/2017
+ms.date: 12/07/2017
 keywords:
-- HRESULT 値の Windows デバッグ
+- HRESULT 値 Windows デバッグ
 topic_type:
 - apiref
 api_name:
@@ -14,59 +14,59 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 810363c67df37c350560ed1b32b6fbf6253e7071
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b20726a1d9d65d37cc890337ceb3b12b898b741c
+ms.sourcegitcommit: 329eee396e727bbd1b2a096a5c7bb0c4b78f52e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361324"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81007810"
 ---
 # <a name="hresult-values"></a>HRESULT の値
 
 
-次に関数とメソッド、およびその通常の意味に共通の戻り値の一覧を示します。
+次に示すのは、関数とメソッドの一般的な戻り値の一覧と、通常の意味です。
 
 ## <span id="ddk_return_values_dbx"></span><span id="DDK_RETURN_VALUES_DBX"></span>
 
 
-**成功した結果。** これらの値は、WinError.h で定義されます。
+**成功した結果。** これらの値は、Winerror.h で定義されています。
 
-<span id="S_OK"></span><span id="s_ok"></span>S\_OK  
-正常に完了します。
+<span id="S_OK"></span><span id="s_ok"></span>\_OK  
+正常に完了しました。
 
 <span id="S_FALSE"></span><span id="s_false"></span>S\_FALSE  
-エラーを発生させずに完了しましたが、のみ部分的な結果が得られました。
+エラーなしで完了しましたが、結果は部分的にしか取得されませんでした。
 
-返される情報が S、バッファーに収まるように切り捨てられる多くの場合、バッファーに返される情報を保持するのに十分な大きさでない場合\_メソッドから FALSE が返されます。
+バッファーが、返された情報を格納するのに十分な大きさではない場合、多くの場合、返された情報はバッファーに格納されるように切り捨てられ、S\_FALSE がメソッドから返されます。
 
-**エラーが発生します。** これらの値は、WinError.h で定義されます。
+**エラーの結果。** これらの値は、Winerror.h で定義されています。
 
 <span id="E_FAIL"></span><span id="e_fail"></span>E\_失敗  
-操作は実行されませんでした。
+操作を実行できませんでした。
 
 <span id="E_INVALIDARG"></span><span id="e_invalidarg"></span>E\_INVALIDARG  
-渡された引数のいずれかが無効です。
+渡された引数の1つが無効です。
 
 <span id="E_NOINTERFACE"></span><span id="e_nointerface"></span>E\_NOINTERFACE  
-検索のオブジェクトが見つかりませんでした。
+検索対象のオブジェクトが見つかりませんでした。
 
 <span id="E_OUTOFMEMORY"></span><span id="e_outofmemory"></span>E\_OUTOFMEMORY  
-メモリ割り当ての試行が失敗しました。
+メモリ割り当ての試行に失敗しました。
 
-<span id="E_UNEXPECTED"></span><span id="e_unexpected"></span>E\_予期しません。  
-ターゲットがアクセス可能で、または、エンジンは、関数やメソッドを処理ができる状態ではありませんでした。
+<span id="E_UNEXPECTED"></span><span id="e_unexpected"></span>予期しない E\_  
+ターゲットにアクセスできなかったか、エンジンが関数またはメソッドを処理できた状態ではありませんでした。
 
 <span id="E_NOTIMPL"></span><span id="e_notimpl"></span>E\_NOTIMPL  
 実装されていません。
 
-<span id="HRESULT_FROM_WIN32_ERROR_ACCESS_DENIED_"></span><span id="hresult_from_win32_error_access_denied_"></span>HRESULT\_FROM\_WIN32 (エラー\_アクセス\_が拒否されました)  
-デバッガーがあるため、操作が拒否された[保護モード](https://docs.microsoft.com/windows-hardware/drivers/debugger/secure-mode)します。
+<span id="HRESULT_FROM_WIN32_ERROR_ACCESS_DENIED_"></span><span id="hresult_from_win32_error_access_denied_"></span>\_WIN32 からの HRESULT\_(エラー\_アクセス\_拒否)  
+デバッガーが[保護モード](https://docs.microsoft.com/windows-hardware/drivers/debugger/secure-mode)であるため、操作が拒否されました。
 
-**NT エラーが発生します。** 状態など、他のエラー コード\_コントロール\_C\_終了と状態\_いいえ\_詳細\_エントリが発生する可能性があります。 これらの結果は、HRESULT に渡される\_FROM\_WinError.h で返される前に定義されている NT マクロ。
+**NT エラーの結果。** ステータス\_制御\_C\_終了、状態\_その他の\_エントリがないなど、他のエラーコードが発生する場合があります。\_ これらの結果は、返される前に、Winerror.h で定義されている\_NT マクロから HRESULT\_に渡されます。
 
-**Win32 エラーが発生します。** エラーなど、他のエラー コード\_読み取り\_障害ドメインとエラー\_書き込み\_場合があります、障害が発生します。 これらの結果は、HRESULT に渡される\_FROM\_WinError.h で返される前に定義されている WIN32 マクロ。
+**Win32 エラーの結果。** エラー\_READ\_FAULT、ERROR\_WRITE\_FAULT などの他のエラーコードが発生することがあります。 これらの結果は、返される前に、Winerror.h で定義されている\_WIN32 マクロから HRESULT\_に渡されます。
 
-<a name="requirements"></a>必要条件
+<a name="requirements"></a>要件
 ------------
 
 <table>
@@ -76,8 +76,8 @@ ms.locfileid: "67361324"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Header</p></td>
-<td align="left">DbgEng.h (DbgEng.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">DbgEng .h (DbgEng .h を含む)</td>
 </tr>
 </tbody>
 </table>

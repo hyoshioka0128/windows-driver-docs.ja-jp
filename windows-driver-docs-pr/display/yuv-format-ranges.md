@@ -9,12 +9,12 @@ keywords:
 - YUV 形式と WMF サポート WDK ディスプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d8708358822f78f55563b1ff0120e10f86f9837e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a8cace8c30123178e15027200daf0729cd3c2bd3
+ms.sourcegitcommit: 329eee396e727bbd1b2a096a5c7bb0c4b78f52e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829130"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81007814"
 ---
 # <a name="yuv-format-ranges-in-windows81"></a>Windows 8.1 の YUV 形式の範囲
 
@@ -49,7 +49,7 @@ Windows 8.1 以降では、ビデオ入力の YUV 形式が拡張範囲内にあ
 ## <a name="span-idextended-range_yuv_interfacespanspan-idextended-range_yuv_interfacespanspan-idextended-range_yuv_interfacespanextended-range-yuv-interface"></a><span id="Extended-range_YUV_interface"></span><span id="extended-range_yuv_interface"></span><span id="EXTENDED-RANGE_YUV_INTERFACE"></span>拡張範囲の YUV インターフェイス
 
 
-Windows 8.1 する前に、サポートされている studio の輝度範囲だけをメディアファンデーションします。そのため、上の最初の図に示すように、拡張範囲のイメージを解釈すると、コントラストが向上しました。 Windows 8.1 以降、メディアファンデーションパイプラインは、これらの構造と列挙体を使用して、拡張範囲または studio 範囲の YUV コンテンツが再生されているかどうかにかかわらず、Windows Display Driver Model (WDDM) 1.3 以降のユーザーモード表示ドライバーに指示します。れ
+Windows 8.1 する前に、サポートされている studio の輝度範囲だけをメディアファンデーションします。そのため、上の最初の図に示すように、拡張範囲のイメージを解釈すると、コントラストが向上しました。 Windows 8.1 以降、メディアファンデーションパイプラインは、これらの構造と列挙を使用して、拡張範囲または studio 範囲の YUV コンテンツが再生またはキャプチャされているかどうかを Windows Display Driver Model (WDDM) 1.3 以降のユーザーモード表示ドライバーに示します。
 
 ### <a name="span-idnew_enumerationsspanspan-idnew_enumerationsspanspan-idnew_enumerationsspannew-enumerations"></a><span id="New_enumerations"></span><span id="new_enumerations"></span><span id="NEW_ENUMERATIONS"></span>新しい列挙型
 

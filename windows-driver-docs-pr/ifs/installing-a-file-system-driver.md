@@ -19,12 +19,12 @@ keywords:
 - INF ファイルの作成 (WDK ファイルシステム)
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 917ba3860872f8b2e17cc4f085b14cdf8630b30c
-ms.sourcegitcommit: 8c898615009705db7633649a51bef27a25d72b26
+ms.openlocfilehash: c0edc01d03438ac5030f83b77b825eb136d2ece4
+ms.sourcegitcommit: 329eee396e727bbd1b2a096a5c7bb0c4b78f52e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910473"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81007812"
 ---
 # <a name="installing-a-file-system-driver"></a>ファイル システム ドライバーのインストール
 
@@ -34,7 +34,7 @@ ms.locfileid: "78910473"
 
 インストールプロセスは INF ファイルによって制御されます。 INF ファイルの詳細については、次を参照してください。
 
-- ファイルシステムドライバー固有の INF ファイル情報については、[以下](##creating-an-inf-file-for-a-file-system-driver)を参照してください。
+- ファイルシステムドライバー固有の INF ファイル情報については、[以下](#creating-an-inf-file-for-a-file-system-driver)を参照してください。
 
 - 一般的なドライバーのインストール (ドライバーパッケージ、INF ファイル、ドライバーの署名に関する情報を含む) の詳細については、「[デバイスとドライバーのインストール](https://docs.microsoft.com/windows-hardware/drivers/install/)」を参照してください。
 
