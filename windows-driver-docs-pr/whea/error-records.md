@@ -12,19 +12,19 @@ keywords:
 - エラーレコードセクション WDK WHEA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1ea1c1e4ac6a34690afa23b471e36cbcd6bdc9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3e1c414e5a40b02ba0e41906bfc592f5768a9613
+ms.sourcegitcommit: d2ea284edaf31a517948e625630e065dfbb57367
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844414"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119186"
 ---
 # <a name="error-records"></a>エラー レコード
 
 
 Windows ハードウェアエラーアーキテクチャ (WHEA) は、標準のエラーレコード形式を使用して、すべてのプラットフォームハードウェアエラーを表します。 その結果、システムファームウェア、Windows オペレーティングシステム、およびユーザーモードアプリケーションは、すべて同じエラーレコード形式に基づいてハードウェアエラー報告と復旧メカニズムを設計できます。
 
-WHEA によって使用されるエラーレコードの形式は、「 [Unified Extensible Firmware Interface (UEFI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=69484)のバージョン2.2 の付録 N」で説明されている*一般的なプラットフォームエラーレコード*に基づいています。
+WHEA によって使用されるエラーレコードの形式は、「 [Unified Extensible Firmware Interface (UEFI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=69484)のバージョン2.2 の付録 N」で説明されている*Common Platform error レコード*(cper) に基づいています。
 
 次の図は、エラーレコードの一般的な形式を示しています。
 
@@ -34,7 +34,7 @@ WHEA によって使用されるエラーレコードの形式は、「 [Unified
 
 エラーレコードには、エラーレコードセクションとセクション記述子を動的に追加するための追加のバッファー領域を含めることができます。 追加のバッファー領域を使用して、既存のエラーレコードセクションのサイズを動的に増やすこともできます。
 
-エラーレコードは、 [**whea\_エラー\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record)の構造によって記述されます。エラーレコードヘッダーは、 [**whea\_エラー\_レコード\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_header)構造によって記述され、エラーレコードのセクション記述子はそれぞれ[**WHEA\_エラー\_レコード\_セクション\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)の構造によって記述されます。
+エラーレコードは、 [**whea\_エラー\_レコード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record)の構造によって説明されています。エラーレコードヘッダーは、 [**whea\_エラー\_レコード\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_header)構造で記述されており、エラーレコードセクション記述子はそれぞれ、 [**whea\_エラー\_記録\_セクション\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_whea_error_record_section_descriptor)構造によって記述されています。
 
 各エラーレコードセクションには、次のセクションの種類のいずれかを指定できます。
 
