@@ -1,30 +1,27 @@
 ---
 title: NDIS/WIFI 検証
-description: NDIS/WIFI の確認オプションは、NDIS かどうかを決定します。 または、Windows オペレーティング システムのカーネルと WIFI のドライバーが適切にやり取りします。
+description: NDIS/WIFI 検証オプションは、NDIS または WIFI ドライバーが Windows オペレーティングシステムのカーネルと正しく通信するかどうかを決定します。
 ms.assetid: EB553449-9460-403D-8ED2-343048C4B38C
-ms.date: 04/20/2017
+ms.date: 04/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2591d071020b5859f49c57291d56c1d60fb9f470
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b12907ab66033600c98bb34f1d55f711e3eeb28d
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355068"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208133"
 ---
 # <a name="ndiswifi-verification"></a>NDIS/WIFI 検証
 
+NDIS/WIFI 検証オプションは、NDIS または WIFI ドライバーが Windows オペレーティングシステムのカーネルと正しく通信するかどうかを決定します。
 
-NDIS/WIFI の確認オプションは、NDIS かどうかを決定します。 または、Windows オペレーティング システムのカーネルと WIFI のドライバーが適切にやり取りします。
+**注**  このオプションは Windows 8.1 以降で使用できます。
 
-**注**  このオプションは、Windows 8.1 以降から使用できます。
+NDIS/WIFI 検証オプションは、ドライバーがさまざまなコンテキストで Oid を正しく処理し、Microsoft が推奨するベストプラクティスに従っていることを確認するための規則を適用します。
 
- 
+このオプションがアクティブで、ドライバーの検証ツールが NDIS または WIFI の規則のいずれかに違反していることを検出した場合、ドライバーの検証ツールはバグチェック 0xC4 (パラメーター1は特定のコンプライアンス規則の識別子と同じ) を発行します。
 
-NDIS/WIFI の確認オプションには、ドライバーが正しくさまざまなコンテキストで Oid を処理し、Microsoft が推奨されるベスト プラクティスに依存していることを確認するためのルールが適用されます。
-
-Driver Verifier では、このオプションがアクティブで、Driver Verifier は、ドライバーが違反 NDIS または WIFI の規則のいずれかを検出 (パラメーター 1 が特定のコンプライアンス規則の識別子に等しい) でのバグ チェック 0xC4 が発行されます。
-
-検証ルールの一覧、次のとおりです。
+検証規則の一覧には、次のものが含まれます。
 
 [**NdisOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoidcomplete)
 
@@ -37,6 +34,8 @@ Driver Verifier では、このオプションがアクティブで、Driver Ver
 [**NdisTimedDataSend**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimeddatasend)
 
 [**NdisTimedOidComplete**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndistimedoidcomplete)
+
+[**WlanAssert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassert)
 
 [**WlanAssociation**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassociation)
 
@@ -54,27 +53,27 @@ Driver Verifier では、このオプションがアクティブで、Driver Ver
 
 [**WlanTimedLinkQuality**](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedlinkquality)
 
-## <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
+## <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="Activating_this_option"></span><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
 
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーの NDIS/WIFI 検証の機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。 NDIS/WIFI の確認オプションをアクティブ化またはコンピューターを再起動する必要があります。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーの NDIS/WIFI 検証機能をアクティブにすることができます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。 NDIS/WIFI 検証オプションをアクティブ化または非アクティブ化するには、コンピューターを再起動する必要があります。
 
 -   **コマンドラインで**
 
-    によって表される NDIS/WIFI 検証、コマンドラインで**verifier/flags 0x200000** (21 ビット)。 NDIS/WIFI の検証を有効にするには、0x200000 のフラグの値を使用して、または 0x200000 をフラグ値に追加します。 次に、例を示します。
+    コマンドラインでは、NDIS/WIFI 検証は**ベリファイア/flags 0x200000** (ビット 21) で表されます。 NDIS/WIFI 検証をアクティブにするには、フラグ値0x200000 を使用するか、または0x200000 をフラグ値に追加します。 例 :
 
     ```
     verifier /flags 0x200000 /driver MyDriver.sys
     ```
 
-    この機能は、[次へ] の起動後にアクティブになります。
+    この機能は、次回の起動時にアクティブになります。
 
--   **ドライバー検証マネージャーを使用します。**
+-   **ドライバー検証マネージャーの使用**
 
-    1.  ドライバー検証マネージャーを起動します。 型**Verifier**コマンド プロンプト ウィンドウでします。
-    2.  選択 **(コード開発者) 用のカスタム設定を作成する**順にクリックします**次**します。
-    3.  選択**完全な一覧から個々 の設定を選択します。** します。
-    4.  選択 (チェック) **NDIS/WIFI 検証**です。
+    1.  ドライバー検証マネージャーを起動します。 コマンドプロンプトウィンドウで「 **Verifier** 」と入力します。
+    2.  [**カスタム設定の作成] (コード開発者向け)** を選択し、 **[次へ]** をクリックします。
+    3.  [**完全な一覧から個々の設定を選択]** を選択します。
+    4.  **[NDIS/WIFI の検証]** を選択します。
     5.  コンピューターを再起動します。
 
  

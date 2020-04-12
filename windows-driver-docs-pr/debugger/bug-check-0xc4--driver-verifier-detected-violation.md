@@ -5,7 +5,7 @@ ms.assetid: 7814f827-05fc-419b-b428-4565978bbb52
 keywords:
 - バグチェック 0xC4 DRIVER_VERIFIER_DETECTED_VIOLATION
 - DRIVER_VERIFIER_DETECTED_VIOLATION
-ms.date: 01/28/2020
+ms.date: 04/10/2020
 topic_type:
 - apiref
 api_name:
@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c5b33af05f23102b994a738f6a1d30e9ff750729
-ms.sourcegitcommit: 70c8e83900015eaea013fb742e5e137cfd08ca98
+ms.openlocfilehash: 1bea9f491fc810e4fab972a2fb740b34d8a6b6ca
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885361"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208125"
 ---
 # <a name="bug-check-0xc4-driver_verifier_detected_violation"></a>バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反
 
 ドライバー\_VERIFIER\_検出されました\_違反バグチェックの値は0x000000C4 です。 これは、ドライバーの検証ツールによって検出された致命的なエラーの一般的なバグチェックコードです。 詳細については、「[ドライバーの検証機能が有効になっている場合のバグチェックの処理](handling-a-bug-check-when-driver-verifier-is-enabled.md)」を参照してください。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルー スクリーン エラー コードが表示される場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 ## <a name="driver_verifier_detected_violation-parameters"></a>DRIVER\_VERIFIER\_検出された\_違反パラメーター
 
@@ -37,9 +37,9 @@ ms.locfileid: "76885361"
 
 ### <a name="0x00-to-0x70"></a>0x00 から0x70 へ
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
-|0x00|現在の IRQL|プールの種類|バイト数|ドライバーがゼロバイトプール割り当てを要求しました。|
+|0x00|現在の IRQL|プールの種類|[バイト数]|ドライバーがゼロバイトプール割り当てを要求しました。|
 |0x01|現在の IRQL|プールの種類|割り当てのサイズ (バイト単位)|ドライバーは、IRQL > APC_LEVEL でページングされたメモリを割り当てようとしました。|
 |0x02|現在の IRQL|プールの種類|割り当てのサイズ (バイト単位)|ドライバーは、IRQL > DISPATCH_LEVEL で非ページメモリを割り当てようとしました。|
 |0x03| | | |呼び出し元は、の複数のページを割り当てようとしていますが、プールを成功させる必要がありますが、1ページはこの API で許可されている最大数です。 |
@@ -59,10 +59,10 @@ ms.locfileid: "76885361"
 |0x36|現在の IRQL|スピンロック番号|古い IRQL|カーネルは、DISPATCH_LEVEL と等しくない IRQL を持つキューに置かれたスピンロックを解放しました。|
 |0x37|現在の IRQL|スレッド APC の無効化カウント|リソース|ドライバーはリソースを取得しようとしましたが、Apc が無効になっていません。|
 |0x38|現在の IRQL|スレッド APC の無効化カウント|リソース|ドライバーはリソースを解放しようとしましたが、Apc は無効になっていません。|
-|0x39)|現在の IRQL|スレッド APC の無効化カウント|ロック|ドライバーは、エントリの APC_LEVEL と等しくない IRQL を持つミューテックス "unsafe" を取得しようとしました。|
-|0x3A|現在の IRQL|スレッド APC の無効化カウント|ロック|ドライバーは、エントリの APC_LEVEL と等しくない IRQL を持つミューテックス "unsafe" を解放しようとしました。|
+|0x39)|現在の IRQL|スレッド APC の無効化カウント|ミューテックス|ドライバーは、エントリの APC_LEVEL と等しくない IRQL を持つミューテックス "unsafe" を取得しようとしました。|
+|0x3A|現在の IRQL|スレッド APC の無効化カウント|ミューテックス|ドライバーは、エントリの APC_LEVEL と等しくない IRQL を持つミューテックス "unsafe" を解放しようとしました。|
 |0x3B|現在の IRQL|待機するオブジェクト|タイムアウトパラメーター|KeWaitXxx ルーチンは DISPATCH_LEVEL 以降で呼び出されています。|
-|0X3c です|ルーチンに渡されたハンドル|［オブジェクトの種類］|0|ドライバーは、不適切なハンドルで[Obreferenceobjectbyhandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)を呼び出しました。|
+|0x3C|ルーチンに渡されたハンドル|オブジェクトの種類|0|ドライバーは、不適切なハンドルで[Obreferenceobjectbyhandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)を呼び出しました。|
 |0x3D|0|0|無効なリソースのアドレス|ドライバーが不適切な (整列されていない) リソースを[ExAcquireResourceExclusive](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)に渡しました。|
 |0x3E|0|0|0|このドライバーは、現在クリティカルなリージョンに存在しないスレッドの[KeLeaveCriticalRegion](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-keleavecriticalregion)を呼び出しました。|
 |0x3F|オブジェクトのアドレス|新しいオブジェクト参照の数。 -1: 逆参照ケース 1: 参照ケース|0|ドライバーは、参照カウントが0のオブジェクトに[Obreferenceobject](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obfreferenceobject)を適用しました。または、 [ObDereferenceObject](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)が参照カウントが0のオブジェクトに適用されたドライバーです。|
@@ -71,7 +71,7 @@ ms.locfileid: "76885361"
 |0x42|現在の IRQL|スピンロックアドレス|0|[KeAcquireSpinLock](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)というドライバーは、IRQL > DISPATCH_LEVEL を呼び出しました。|
 |0x51|割り当てのベースアドレス|割り当てを超える参照のアドレス|課金されるバイト数|割り当ての終了後に書き込んだ後に、ドライバーがメモリを解放しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
 |0x52|割り当てのベースアドレス|ハッシュエントリ|課金されるバイト数|割り当ての終了後に書き込んだ後に、ドライバーがメモリを解放しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
-|0x53|割り当てのベースアドレス|Header|予約済み|割り当ての終了後に書き込んだ後に、ドライバーがメモリを解放しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
+|0x53|割り当てのベースアドレス|ヘッダー|予約済み|割り当ての終了後に書き込んだ後に、ドライバーがメモリを解放しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
 |0x54|割り当てのベースアドレス|予約済み|プールのハッシュサイズ|割り当ての終了後に書き込んだ後に、ドライバーがメモリを解放しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
 |0x59|割り当てのベースアドレス|Listindex|予約済み|割り当ての終了後に書き込んだ後に、ドライバーがメモリを解放しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
 |0x60|ページプールから割り当てられたバイト数|非ページプールから割り当てられたバイト数|解放されなかった割り当ての合計数|ドライバーは、最初にプール割り当てを解放せずにアンロードされています。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのプール追跡オプションがアクティブな場合にのみ行われます。|
@@ -81,12 +81,12 @@ ms.locfileid: "76885361"
 
 ### <a name="0x70-to-0x91"></a>0x70 を0x91 に
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x70|現在の IRQL|MDL アドレス|アクセスモード|[MmProbeAndLockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprobeandlockpages)というドライバーは、IRQL > DISPATCH_LEVEL を呼び出しました。|
 |0x71|現在の IRQL|MDL アドレス|プロセスアドレス|MmProbeAndLockProcessPages というドライバーは、IRQL > DISPATCH_LEVEL を呼び出しました。|
 |0x72|現在の IRQL|MDL アドレス|プロセスアドレス|MmProbeAndLockSelectedPages というドライバーは、IRQL > DISPATCH_LEVEL を呼び出しました。|
-|0x73|現在の IRQL|32ビット Windows:64 ビット Windows での物理アドレスの低32ビット:64 ビットの物理アドレス|バイト数|IRQL > DISPATCH_LEVEL の[Mmmapiospace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)というドライバーが使用されています。|
+|0x73|現在の IRQL|32ビット Windows:64 ビット Windows での物理アドレスの低32ビット:64 ビットの物理アドレス|[バイト数]|IRQL > DISPATCH_LEVEL の[Mmmapiospace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmapiospace)というドライバーが使用されています。|
 |0x74|現在の IRQL|MDL アドレス|アクセスモード|ドライバーは、IRQL > DISPATCH_LEVEL を使用してカーネルモードで[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)を呼び出しました。|
 |0x75|現在の IRQL|MDL アドレス|アクセスモード|ドライバーは、IRQL > APC_LEVEL を持つユーザーモードでの[MmMapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpages)を呼び出しました。|
 |0x76|現在の IRQL|MDL アドレス|アクセスモード|ドライバーは、IRQL > DISPATCH_LEVEL を使用してカーネルモードで[MmMapLockedPagesSpecifyCache](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)を呼び出しました。|
@@ -94,7 +94,7 @@ ms.locfileid: "76885361"
 |0x78|現在の IRQL|MDL アドレス|0|[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)というドライバーは、IRQL > DISPATCH_LEVEL を呼び出しました。|
 |0x79|現在の IRQL|マップされていない仮想アドレス|MDL アドレス|ドライバーは、IRQL > DISPATCH_LEVEL を使用してカーネルモードで[MmUnmapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages)を呼び出しました。|
 |0X7a)|現在の IRQL|マップされていない仮想アドレス|MDL アドレス|ドライバーは、IRQL > APC_LEVEL を持つユーザーモードでの[MmUnmapLockedPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmaplockedpages)を呼び出しました。|
-|0x7B|現在の IRQL|マップされていない仮想アドレス|バイト数|[Mmunmapiospace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace)と IRQL > APC_LEVEL というドライバーが使用されています。|
+|0x7B|現在の IRQL|マップされていない仮想アドレス|[バイト数]|[Mmunmapiospace](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunmapiospace)と IRQL > APC_LEVEL というドライバーが使用されています。|
 |0x7C|MDL アドレス|MDL フラグ|0|このドライバーは[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)という名前で、ページが正常にロックされていない MDL を渡しました。|
 |0x7D|MDL アドレス|MDL フラグ|0|このドライバーは[MmUnlockPages](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmunlockpages)という名前で、ページプールからのページを含む MDL を渡しました。 (ロックを解除することはできません)。|
 |0x7E|現在の IRQL|DISPATCH_LEVEL|0|[MmAllocatePagesForMdl](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdl)、 [MmAllocatePagesForMdlEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmallocatepagesformdlex)、または[mmfreeDISPATCH_LEVEL](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmfreepagesfrommdl)というドライバーは、IRQL > と呼ばれていました。|
@@ -109,7 +109,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0xa0-to-0x140"></a>0xA0 ~ 0xa0
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0xA0|読み取りまたは書き込み要求を行っている IRP へのポインター|下位デバイスのデバイスオブジェクト|エラーが検出されたセクターの数|ハードディスクで巡回冗長検査 (CRC) エラーが検出されました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのディスク整合性チェックオプションがアクティブな場合にのみ行われます。|
 |0xA1|読み取りまたは書き込み要求を行っている IRP のコピー。 (実際の IRP は完了しています)。|下位デバイスのデバイスオブジェクト|エラーが検出されたセクターの数|セクター (非同期) で CRC エラーが検出されました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのディスク整合性チェックオプションがアクティブな場合にのみ行われます。|
@@ -154,8 +154,8 @@ ms.locfileid: "76885361"
 |0xE6 |Zw API 呼び出しを行うドライバー内のアドレス|現在の IRQL|特殊なカーネル Apc。|カーネル Zw API が IRQL = PASSIVE_LEVEL で呼び出されませんでした。特殊なカーネル Apc が有効になっています。|
 |0xEA |現在の IRQL|スレッドの APC の無効化カウント|Pushlock のアドレス|Apc が有効になっている間に、ドライバーが pushlock を取得しようとしました。|
 |0xEB |現在の IRQL|スレッドの APC の無効化カウント|Pushlock のアドレス|Apc が有効になっている間に、ドライバーが pushlock を解放しようとしました。|
-|0Xf0 です |コピー先のバッファーのアドレス|ソースバッファーのアドレス|コピーするバイト数|コピー元とコピー先のバッファーが重複する memcpy 関数を呼び出したドライバー。|
-|0xF5 |NULL ハンドルのアドレス|［オブジェクトの種類］|予約済み|ドライバーが[Obreferenceobjectbyhandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)に NULL ハンドルを渡しました。|
+|0xF0 |コピー先のバッファーのアドレス|ソースバッファーのアドレス|コピーするバイト数|コピー元とコピー先のバッファーが重複する memcpy 関数を呼び出したドライバー。|
+|0xF5 |NULL ハンドルのアドレス|オブジェクトの種類|予約済み|ドライバーが[Obreferenceobjectbyhandle](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreferenceobjectbyhandle)に NULL ハンドルを渡しました。|
 |0xF6 |参照されている値の処理|現在のプロセスのアドレス|無効な参照を実行するドライバー内のアドレス|ドライバーは、カーネルモードとしてユーザーモードハンドルを参照します。|
 |0xF7 |呼び出し元によって指定された値を処理します|呼び出し元によって指定されたオブジェクトの種類|呼び出し元によって指定された AccessMode|ドライバーがシステムプロセスのコンテキストでカーネルハンドルのユーザーモード参照を試行しています。|
 |0xFA |完了ルーチンアドレス。|完了ルーチンを呼び出す前の IRQL 値|完了ルーチンを呼び出した後の現在の IRQL 値|IRP の完了ルーチンが、ルーチンが呼び出された IRQL と異なる IRQL で返されました。|
@@ -164,7 +164,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0x105-to-0x140"></a>0x105 を0x140 に
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x105 |IRP のアドレス|0|0|ドライバーは、IoFreeIrp ではなく ExFreePool を使用して IRP を解放します。|
 |0x10A |0|0|0|ドライバーは、アイドル状態のプロセスに対してプールクォータの課金を試行します。|
@@ -192,7 +192,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0x1000-to-0x100b---deadlocks"></a>0x1000 から 0x100B-デッドロック
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x1000 |リソースのアドレス|予約済み|予約済み|自己デッドロック: 現在のスレッドがリソースを再帰的に取得しようとしました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのデッドロック検出オプションがアクティブな場合にのみ行われます。|
 |0x1001 |デッドロックの最終的な原因であるリソースのアドレス|予約済み|予約済み|デッドロック: ロック階層違反が見つかりました。 このパラメーターを使用したバグチェックは、ドライバー検証ツールのデッドロック検出オプションがアクティブな場合にのみ行われます。 (詳細については、 [! デッドロック](-deadlock.md)拡張機能を使用してください。)|
@@ -212,7 +212,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0x2000-to-0x2005---code-integrity-issues"></a>0x2000 から 0x2005-コードの整合性の問題
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x2000 |エラーが検出されたドライバーのコード内のアドレス。 |プールの種類。 | プールタグ (指定されている場合)。|コードの整合性の問題: 呼び出し元が実行可能なプールの種類を指定しました。 (必要な値: NonPagedPoolNx) |
 |0x2001 |エラーが検出されたドライバーのコード内のアドレス。 |ページ保護 (WIN32_PROTECTION_MASK)。 | 0 |コードの整合性の問題: 呼び出し元が実行可能ページの保護を指定しました。 (必要なのは、消去された PAGE_EXECUTE * ビット) |
@@ -223,7 +223,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0xa001-to-0xa00d---vm-switch-issues"></a>0xA001 から 0xA00D-VM スイッチの問題
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0xA001 |NetBufferList オブジェクトへのポインター|仮想スイッチオブジェクトへのポインター (NULL 以外の場合)|予約済み (未使用)|VM スイッチ: 呼び出し元が指定した NetBufferList の SourceHandle を設定する必要があります。 [AllocateNetBufferListForwardingContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)ルーチンを参照してください。|
 |0xA002 |NetBufferList オブジェクトへのポインター|仮想スイッチオブジェクトへのポインター (NULL 以外の場合)。|予約済み (未使用)|VM スイッチ: 呼び出し元によって指定された NetBufferList の転送詳細が0ではありません。 [AllocateNetBufferListForwardingContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-ndis_switch_allocate_net_buffer_list_forwarding_context)ルーチンを参照してください。|
@@ -242,7 +242,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0x00020002-to-0x00020022---ddi-compliance-rule-violations"></a>0x00020002 0x00020022-DDI コンプライアンス規則違反
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x00020002 |違反した規則条件を説明する文字列へのポインター。|ルールの状態変数へのポインター (省略可能)。|予約済み|このドライバーは、DDI コンプライアンス規則[IrqlApcLte](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlapclte)に違反しました。 この規則は、IRQL < = APC_LEVEL の場合にのみ、ドライバーが[Obgetobjectsecurity](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obgetobjectsecurity)および[obgetobjectsecurity](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obreleaseobjectsecurity)を呼び出す必要があることを指定します。|
 |0x00020003 |違反した規則条件を説明する文字列へのポインター。|ルールの状態変数へのポインター (省略可能)。|予約済み|このドライバーは、DDI コンプライアンス規則[Irqldispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqldispatch)に違反しました。 IrqlDispatch ルールでは、ドライバーが特定のルーチンを呼び出す必要があることを指定します。 IRQL = DISPATCH_LEVEL|
@@ -270,13 +270,13 @@ ms.locfileid: "76885361"
 |0x0002001E |違反した規則条件を説明する文字列へのポインター。|ルールの状態変数へのポインター (省略可能)。|予約済み|このドライバーは、DDI コンプライアンス規則[IrqlRtlPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlrtlpassive)に違反しました。 IrqlRtlPassive 規則は、IRQL = PASSIVE_LEVEL 場合にのみ、ドライバーが[RtlDeleteRegistryValue](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-rtldeleteregistryvalue)を呼び出す必要があることを指定します。|
 |0x0002001F |違反した規則条件を説明する文字列へのポインター。|ルールの状態変数へのポインター (省略可能)。|予約済み|このドライバーは、DDI コンプライアンス規則[IrqlZwPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlzwpassive)に違反しました。 IrqlZwPassive 規則は、IRQL = PASSIVE_LEVEL 場合にのみ、ドライバーが[Zwclose](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出す必要があることを指定します。|
 |0x00020022 |違反した規則条件を説明する文字列へのポインター。|予約済み (未使用)|予約済み (未使用)|このドライバーは、DDI コンプライアンス規則[IrqlIoDispatch](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqliodispatch)に違反しました。|
-|0x00020023 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)。 |予約済み (未使用)。 |このドライバーは、DDI コンプライアンス規則[IrqlIoRtlZwPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)に違反しました。 IrqlIoRtlZwPassive 規則は、ドライバーが IRQL = PASSIVE_LEVEL で実行されている場合にのみ、規則に記載されている DDIs を呼び出すように指定します。|
-|0x00020024 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)。 |予約済み (未使用)。 |このドライバーは、DDI コンプライアンス規則[Irqlntifsapcpassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)に違反しています。 IrqlNtifsApcPassive 規則では、ドライバーが IRQL = PASSIVE_LEVEL または IRQL < = APC_LEVEL のいずれかで実行されている場合にのみ、規則に記載されている DDIs を呼び出すように指定します。|
-|0x00020025 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)。 |予約済み (未使用)。 |このドライバーは、DDI コンプライアンス規則[IrqlKeMore](https://docs.microsoft.com/windows-hardware/drivers/devtest/irql-rule-set--wdm-)に違反しました。 IrqlKeMore 規則は、これらの DDIs に必要な IRQL の規則に示されている DDIs をドライバーが呼び出すことを指定します。|
+|0x00020023 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)。 |予約済み (未使用)。 |このドライバーは、DDI コンプライアンス規則[IrqlIoRtlZwPassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqliortlzwpassive)に違反しました。 IrqlIoRtlZwPassive 規則は、ドライバーが IRQL = PASSIVE_LEVEL で実行されている場合にのみ、規則に記載されている DDIs を呼び出すように指定します。|
+|0x00020024 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)。 |予約済み (未使用)。 |このドライバーは、DDI コンプライアンス規則[Irqlntifsapcpassive](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlntifsapcpassive)に違反しています。 IrqlNtifsApcPassive 規則では、ドライバーが IRQL = PASSIVE_LEVEL または IRQL < = APC_LEVEL のいずれかで実行されている場合にのみ、規則に記載されている DDIs を呼び出すように指定します。|
+|0x00020025 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)。 |予約済み (未使用)。 |このドライバーは、DDI コンプライアンス規則[IrqlKeMore](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlkemore)に違反しました。 IrqlKeMore 規則は、これらの DDIs に必要な IRQL の規則に示されている DDIs をドライバーが呼び出すことを指定します。|
 
 ### <a name="0x00040003-to-0x00043006---ddi-compliance-rule-violations"></a>0x00040003 から 0x00043006-DDI コンプライアンス規則違反
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x00040003 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[CriticalRegions](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-criticalregions)に違反しました。|
 |0x00040006 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[QueuedSpinLock](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-queuedspinlock)に違反しました。|
@@ -290,7 +290,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0x00081001-to-0x00082005---avstream-driver-compliance-rule-violations"></a>0x00081001 ~ 0x00081001-AVStream ドライバーのコンプライアンス規則違反
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x00081001 |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[KsDeviceMutex](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksdevicemutex)に違反しました。|
 |0x00081002 |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI のコンプライアンス規則[Ksstreamポインタの複製](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksstreampointerclone)に違反しました。|
@@ -303,7 +303,7 @@ ms.locfileid: "76885361"
 |0x00081009 |違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)|予約済み (未使用)|このドライバーは、DDI コンプライアンス規則[KsIrqlDDIs](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksirqlddis)に違反しました。|
 |0x0008100A |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[Ksfiltermutex](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksfiltermutex)に違反しました。|
 |0x0008100B |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[Ksprocessingmutex](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksprocessingmutex)に違反しました。|
-|0x0008100C |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[Ksinvalidstreampointer](https://docs.microsoft.com/windows-hardware/drivers/devtest/rules-for-avstream-drivers)に違反しました。|
+|0x0008100C |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[Ksinvalidstreampointer](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-ksinvalidstreampointer)に違反しました。|
 |0x00082001 |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[KsTimedPinSetDeviceState](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-kstimedpinsetdevicestate)に違反しました。|
 |0x00082002 |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[KsTimedDeviceCallbacks](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-kstimeddevicecallbacks)に違反しました。|
 |0x00082003 |違反した規則条件を説明する文字列へのポインター。 |内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[KsTimedFilterCallbacks](https://docs.microsoft.com/windows-hardware/drivers/devtest/ks-kstimedfiltercallbacks)に違反しました。|
@@ -313,7 +313,7 @@ ms.locfileid: "76885361"
 
 ### <a name="0x00091001-to-0x0009400c---ndis-ddi-compliance-rule-violations"></a>0x00091001 から 0X00091001-NDIS DDI コンプライアンス規則違反
 
-|パラメーター1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
+|パラメーター 1|パラメータ 2|パラメーター3|パラメーター4|エラーの原因|
 |--- |--- |--- |--- |--- |
 |0x00091001 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[NdisOidComplete](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoidcomplete)に違反しました。|
 |0x00091002 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|このドライバーは、DDI コンプライアンス規則[NdisOidDoubleComplete](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoiddoublecomplete)に違反しました。|
@@ -327,7 +327,7 @@ ms.locfileid: "76885361"
 |0x00093004 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|ドライバーが NDIS/WIFI 検証ルール[WlanAssociation](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassociation)に違反しました。|
 |0x00093005 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|ドライバーが NDIS/WIFI 検証ルール[WlanConnectionRoaming](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanconnectionroaming)に違反しました。|
 |0x00093006 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|ドライバーが NDIS/WIFI 検証ルール[WlanDisassociation](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlandisassociation)に違反しました。|
-|0x00093101|違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)|予約済み (未使用)|ドライバーが NDIS/WIFI 検証ルール[WlanAssert](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wifi-verification-rule-set)に違反しました。|
+|0x00093101|違反した規則条件を説明する文字列へのポインター。 |予約済み (未使用)|予約済み (未使用)|ドライバーが NDIS/WIFI 検証ルール[WlanAssert](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlanassert)に違反しました。|
 |0x00094007 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|ドライバーが NDIS/WIFI 検証ルール[WlanTimedAssociation](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedassociation)に違反しました。|
 |0x00094008 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|ドライバーが NDIS/WIFI 検証ルール[WlanTimedConnectionRoaming](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedconnectionroaming)に違反しました。|
 |0x00094009 |違反した規則条件を説明する文字列へのポインター。|内部規則の状態のアドレス (! ruleinfo の2番目の引数)。|補足状態のアドレス (! ruleinfo の3番目の引数)。|ドライバーが NDIS/WIFI 検証ルール[WlanTimedConnectRequest](https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-wlantimedconnectrequest)に違反しました。|
@@ -339,7 +339,7 @@ ms.locfileid: "76885361"
 
 原因の説明については、「Parameters」セクションの各コードの説明を参照してください。 詳細については、 [ **! analyze-v**](-analyze.md)拡張機能を使用して取得できます。
 
-<a name="resolution"></a>解像度
+<a name="resolution"></a>解決方法
 ----------
 
 このバグチェックは、ドライバーの検証ツールで1つ以上のドライバーを監視するように指示されている場合にのみ発生します。 ドライバーの検証ツールを使用しない場合は、非アクティブ化する必要があります。 また、この問題の原因となったドライバーを削除することも考えられます。
@@ -348,7 +348,7 @@ ms.locfileid: "76885361"
 
 ドライバーの検証機能の詳細については、「 [Driver verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 \_プール\_型コードは Ntddk で列挙されます。 特に、 **0** (ゼロ) は非ページプールを示し、 **1** (1) はページプールを示します。
