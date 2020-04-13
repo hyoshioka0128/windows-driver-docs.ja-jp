@@ -586,9 +586,9 @@
       items:
         - name: ドライバーの検証ツール
           href: driver-verifier.md
-        - name: 'ドライバーの検証ツール: 新着情報'
+        - name: 'ドライバーの検証ツール: 新機能'
           items:
-            - name: 'ドライバーの検証ツール: 新着情報'
+            - name: 'ドライバーの検証ツール: 新機能'
               href: driver-verifier--what-s-new.md
             - name: ドライバーの検証ツールのコマンド構文
               href: verifier-command-line.md
@@ -736,6 +736,8 @@
               href: ks-ksdevicemutex.md
             - name: KsFilterMutex
               href: ks-ksfiltermutex.md
+            - name: KsInvalidStreamPointer
+              href: ks-ksinvalidstreampointer.md
             - name: KsIrqlDDIs
               href: ks-ksirqlddis.md
             - name: KsIrqlDeviceCallbacks
@@ -994,6 +996,8 @@
                   href: wdm-irqliopassive4.md
                 - name: IrqlIoPassive5
                   href: wdm-irqliopassive5.md
+                - name: rqlIoRtlZwPassive
+                  href: wdm-irqliortlzwpassive.md
                 - name: IrqlKeApcLte1
                   href: wdm-irqlkeapclte1.md
                 - name: IrqlKeApcLte2
@@ -1016,6 +1020,8 @@
                   href: wdm-irqlmmapclte.md
                 - name: IrqlMmDispatch
                   href: wdm-irqlmmdispatch.md
+                - name: IrqlNtifsApcPassive
+                  href: wdm-irqlntifsapcpassive.md
                 - name: IrqlObPassive
                   href: wdm-irqlobpassive.md
                 - name: IrqlPsPassive
@@ -1584,6 +1590,8 @@
                   href: ndis-ndistimeddatasend.md
                 - name: NdisTimedOidComplete
                   href: ndis-ndistimedoidcomplete.md
+                - name: WlanAssert
+                  href: ndis-wlanassert.md
                 - name: WlanAssociation
                   href: ndis-wlanassociation.md
                 - name: WlanConnectionRoaming
@@ -2160,21 +2168,21 @@
               href: tracelog-examples.md
             - name: '例 1:基本的な開始コマンド'
               href: example-1--basic-start-command.md
-            - name: '例 2:プロバイダーを指定した基本的な開始コマンド'
+            - name: '例 2: プロバイダーを指定した基本的な開始コマンド'
               href: example-2--basic-start-command-with-provider.md
             - name: '例 3: 一般的な開始コマンド'
               href: example-3--typical-start-command.md
-            - name: '例 4: トレース セッションの更新'
+            - name: '例 4:トレース セッションの更新'
               href: example-4--updating-a-trace-session.md
-            - name: '例 5: トレース プロバイダーの有効化'
+            - name: '例 5:トレース プロバイダーの有効化'
               href: example-5--enabling-trace-providers.md
-            - name: '例 6: トレース セッションの停止'
+            - name: '例 6:トレース セッションの停止'
               href: example-6--stopping-a-trace-session.md
-            - name: '例 7: すべてのトレース セッションの停止'
+            - name: '例 7:すべてのトレース セッションの停止'
               href: example-7--stopping-all-trace-sessions.md
-            - name: '例 8: トレース バッファーの構成'
+            - name: '例 8:トレース バッファーの構成'
               href: example-8--configuring-trace-buffers.md
-            - name: '例 9: トレース ログ ファイルのカスタマイズ'
+            - name: '例 9:トレース ログ ファイルのカスタマイズ'
               href: example-9--customizing-the-trace-log-file.md
             - name: '例 10: リアルタイム トレース セッションの開始'
               href: example-10--starting-a-real-time-trace-session.md
@@ -2222,7 +2230,7 @@
               href: tracefmt-examples.md
             - name: '例 1:パラメーターなし'
               href: example-1--no-parameters.md
-            - name: '例 2:基本的なコマンド'
+            - name: '例 2: 基本的なコマンド'
               href: example-2--basic-command.md
             - name: '例 3: TMF ファイルの指定'
               href: example-3--specifying-a-tmf-file.md
@@ -2254,7 +2262,7 @@
               href: logging-to-the-global-logger-session.md
             - name: グローバル ロガー セッションにログ記録する方法
               href: how-to-log-to-the-global-logger-session.md
-            - name: '以下に例を示します。グローバル ロガー プロバイダー '
+            - name: '例:グローバル ロガー プロバイダー '
               href: example--global-logger-provider.md
     - name: WPP ソフトウェア トレース
       items:
