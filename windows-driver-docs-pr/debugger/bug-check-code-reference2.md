@@ -2,29 +2,60 @@
 title: バグ チェック コード リファレンス
 description: このセクションでは、ブルー スクリーンに渡される一般的なバグ チェックを、パラメーターを含め、説明します。
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
-ms.date: 02/12/2020
+ms.date: 04/03/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 6bc00100240975a3dbd07beb97ded2720e529583
-ms.sourcegitcommit: 347bd952a4164fd75fd2e4c56d46973bbb90e5a5
+ms.openlocfilehash: 89c0fb22f5c6232ab237eea4a8cc5609fcfa0a27
+ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79504412"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80812510"
 ---
 # <a name="bug-check-code-reference"></a>バグ チェック コード リファレンス
 
-このセクションでは、青のバグ チェック画面にエラー コードと共に表示されるパラメーターを含む、一般的なバグ チェック コードについて説明します。 このセクションでは、バグ チェックに至った障害を診断する方法と、エラーに対処するために取り得る手段も説明します。
+このセクションでは、バグ チェックのブルー スクリーンに表示される、一般的なバグ チェック コードについて説明します。 また、Windows デバッガーで [ **!analyze**](-analyze.md) 拡張機能を使用して、バグ チェック コードに関する情報を表示する方法についても説明します。
 
-> [!NOTE] 
+> [!NOTE]
 > このトピックはプログラマーを対象としています。 カスタマーのシステムでブルー スクリーンとバグ チェック コードが表示された場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)」を参照してください。
 
-特定のバグ チェック コードがこのリファレンスにない場合は、Windows Debugger (WinDbg) の [ **!analyze**](-analyze.md) 拡張機能を (カーネル モードで) ご使用ください。次の構文に従い、`<code>` をバグ チェック コードで置き換えます。
+## <a name="using-windbg-to-display-stop-code-information"></a>WinDbg を使用して停止コード情報を表示する
+
+特定のバグ チェック コードがこのトピックにない場合は、Windows Debugger (WinDbg) の [ **!analyze**](-analyze.md) 拡張機能を (カーネル モードで) ご使用ください。次の構文に従い、`<code>` をバグ チェック コードで置き換えます。
 
 `!analyze -show <code>`
 
 このコマンドを入力すると、指定されたバグ チェック コードに関する情報が WinDbg によって表示されます。 既定の基数が 16 ではない場合、`<code>` の前に **0x** を付けます。
 
-次の表に、各バグ チェック コードのコードと名前を示します。
+停止コードのパラメーターを !analyze コマンドに指定し、利用可能なパラメーターの情報を表示します。 たとえば、[Bug Check 0x9F:DRIVER_POWER_STATE_FAILURE](bug-check-0x9f--driver-power-state-failure.md) で、パラメーター 1 に 0x3 の値を指定した場合の情報を表示するには、次に示すように `!analyze -show 0x9F 0x3` を使用します。  
+
+```dbgcmd
+1: kd> !analyze -show 0x9F 0x3
+DRIVER_POWER_STATE_FAILURE (9f)
+A driver has failed to complete a power IRP within a specific time.
+Arguments:
+Arg1: 0000000000000003, A device object has been blocking an Irp for too long a time
+Arg2: 0000000000000000, Physical Device Object of the stack
+Arg3: 0000000000000000, nt!TRIAGE_9F_POWER on Win7 and higher, otherwise the Functional Device Object of the stack
+Arg4: 0000000000000000, The blocked IRP
+```
+
+WinDbg をダウンロードするには、「[Windows 用デバッグ ツールのダウンロード](debugger-download-tools.md)」を参照してください。 WinDbg 開発ツールの詳細情報については、「[Windows のデバッグの概要](getting-started-with-windows-debugging.md)」を参照してください。
+
+## <a name="bug-check-dump-files"></a>バグ チェックのダンプ ファイル
+
+バグ チェックが発生した場合、停止コードが発生した際のメモリの内容に関する追加の情報を含むダンプ ファイルを利用できる場合があります。 エラーの際のメモリの内容を理解するには、プロセッサのメモリ レジスタとアセンブリの知識が必要になります。
+
+詳細については、次のドキュメントを参照してください。
+
+- [WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+
+- [!analyze](-analyze.md)
+
+- [プロセッサ アーキテクチャ](processor-architecture.md)
+
+## <a name="bug-check-codes"></a>バグ チェック コード
+
+次の表は、バグ チェック コードへのリンクです。
 
 | コード       | 名前                                                                                                                                              |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -4,12 +4,12 @@ description: プリミティブ ドライバーは、INF ベースのインス�
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e1588c5d17710faa91f4c13890988944cec860b5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.openlocfilehash: 5605ea9a1e13ca0bb1094cc17827645c98f3da63
+ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63382422"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80807610"
 ---
 # <a name="creating-a-new-primitive-driver"></a>新しいプリミティブ ドライバーの作成
 
@@ -73,3 +73,52 @@ LegacyUninstall=1
 \[DefaultInstall\] および \[DefaultUninstall\] セクションは、**引き続きアーキテクチャで装飾されている必要があります**。ただし、`LegacyUninstall=1` を含めることで、Windows で \[DefaultUninstall\] セクションが無視されます (Windows 10 バージョン 1903 以降)。 これを行うことにより、INF にそのセクションを含めることができ、これを従来のアプリケーションのインストール/アンインストールで使用して、プリミティブ ドライバー パッケージをアンインストールすることができます。
 
 Windows 10 バージョン 1903 以降は、アーキテクチャで装飾された \[DefaultInstall\] または \[DefaultUninstall\] セクションを setupapi.dll で [InstallHInfSection](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-installhinfsectionw) API に渡す場合、ドライバー パッケージがプリミティブ ドライバーの機能をサポートしているかどうかがチェックされます。 プリミティブ ドライバーの機能をサポートしている場合は、指定されたセクションを従来の方法で処理するのではなく、[DiInstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diinstalldrivera) または [DiUninstallDriver](https://docs.microsoft.com/windows/desktop/api/newdev/nf-newdev-diuninstalldriverw) の適切な方に INF が渡されます。 これにより、1 つのインストーラーで、互換性のある OS バージョンではプリミティブ ドライバーを使用し、以前の OS バージョンのサポートも維持することができます。
+
+## <a name="converting-from-a-device-driver-inf"></a>デバイス ドライバー INF からの変換
+
+\[Manufacturer\] を使用する INF を \[DefaultInstall\] を使用するように変換するには、INF への小さな変更が必要です。 \[Manufacturer\] セクションとは違い、\[DefaultInstall\] セクションはエントリ ポイントであり、インストール セクションでもあります。 これは、\[Manufacturer\]、\[Models\]、\[DDInstall\] セクションを概念的に 1 つにまとめるものです。
+
+次のようなデバイス ドライバー INF を考えてみましょう。
+
+```ini
+[Manufacturer]
+%Company% = Driver, NTx86, NTamd64
+
+[Driver.NTx86]
+%DeviceDesc% = InstallSection_32,
+
+[Driver.NTamd64]
+%DeviceDesc% = InstallSection_64,
+
+[InstallSection_64]
+CopyFiles = MyCopyFiles_64
+AddReg = MyAddReg
+
+[InstallSection_64.Services]
+AddService = MyService,, MyService_Install
+
+[InstallSection_32]
+CopyFiles = MyCopyFiles_x86
+AddReg = MyAddReg
+
+[InstallSection_32.Services]
+AddService = MyService,, MyService_Install
+```
+
+どのハードウェアにもインストールされないため、この INF では [InfVerif](../devtest/infverif.md) で 1297 エラーが発生します。 この INF は、次に示すように \[DefaultInstall\] ベースの INF に変換できます。
+
+```ini
+[DefaultInstall.NTamd64]
+CopyFiles = MyCopyFiles_64
+AddReg = MyAddReg
+
+[DefaultInstall.NTamd64.Services]
+AddService = MyService,, MyService_Install
+
+[DefaultInstall.NTx86]
+CopyFiles = MyCopyFiles_x86
+AddReg = MyAddReg
+
+[DefaultInstall.NTx86.Services]
+AddService = MyService,, MyService_Install
+```

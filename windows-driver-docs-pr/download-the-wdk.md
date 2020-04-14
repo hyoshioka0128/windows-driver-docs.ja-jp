@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3bf551387fac640f83b6560f3b2055b54dbeeb33
-ms.sourcegitcommit: ea6aa4fc28576dd47359d0a09ea63ce414d5f6b0
+ms.openlocfilehash: fb64e0e87ad62c4da101f066378d17f48002a2ca
+ms.sourcegitcommit: 3794904c6f741bdc407dfe22341080646602f972
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80538117"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80807615"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -41,14 +41,15 @@ WDK には Visual Studio が必要です。 Visual Studio のシステム要件�
 Visual Studio 2019 のインストール時に、 **[C++ によるデスクトップ開発]** ワークロードを選択します。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。 WDK for Windows 10 バージョン 1903 と互換性のある SDK のバージョンは、既定の SDK でない可能性があることに注意してください。 正しい SDK を選択するには:
 
 1. **Visual Studio インストーラー**の **[ワークロード]** タブの **[インストールの詳細]** で、 **[ユニバーサル Windows プラットフォーム開発]** を展開します。
-1. **[オプション]** で **[Windows 10 Preview SDK (10.0.18362.0) ]** を選択します。
+1. **[オプション]** で **[Windows 10 SDK (10.0.18362.0)]** を選択します。
 1. インストールを続行します。
 
-既に Visual Studio 2019 がインストールされている場合は、Visual Studio のインストールで **[変更]** ボタンを使用して Windows 10 Preview SDK (10.0.18362.0) をインストールできます。
+既に Visual Studio 2019 がインストールされている場合は、Visual Studio のインストールで **[変更]** ボタンを使用して Windows 10 SDK (10.0.18362.0) をインストールできます。
 
 x86/x64 用の MSVC v142 ビルド ツールの正しいバージョンがインストールされていることを確認するには、以下の手順に従ってください。 
 1. **[個別のコンポーネント]** を選択します。
 1. **[コンパイラ、ビルド ツール、およびランタイム]** で、オプション **[MSVC v142 - VS 2019 C++ x64/x86 ビルド ツール (v14.21)]** ボックスがオンになっていることを確認し、オンになっていない場合はオンにしてください。
+1. より新しいバージョンの MSVC ビルド ツールが既にインストールされている場合、VS 内のプロジェクトのプロパティで、MSVC バージョンを設定する必要があります。 **[構成プロパティ]** 、 **[詳細]** に移動し、 **[MSVC ツールセット バージョン]** を「**14.21.XXXX**」に設定します。 コマンド ラインを使用する場合は、この [VS へのリンク](https://docs.microsoft.com/cpp/build/building-on-the-command-line?view=vs-2019)を参照してください。
 
 ARM/ARM64 ドライバー開発の場合、以下の操作を行います。 
 

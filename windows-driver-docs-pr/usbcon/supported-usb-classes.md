@@ -3,12 +3,12 @@ Description: このトピックでは、サポートされている USB デバ�
 title: Windows に含まれる USB デバイス クラス ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: 4b8f1c109ce0a6a934402e6a4e760bc77908743e
-ms.sourcegitcommit: c9e5aa086b72ae9c1a31bf952d0711383cfd4bbd
+ms.openlocfilehash: ce0646add1764f938ce2931262492afcb2fa03ca
+ms.sourcegitcommit: 287f4572fea735e99525ec3a7d08f80d908a2b21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77575208"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80998074"
 ---
 # <a name="usb-device-class-drivers-included-in-windows"></a>Windows に含まれる USB デバイス クラス ドライバー
 
@@ -134,7 +134,7 @@ USB デバイス用の 2 つの重要なデバイス セットアップ クラ�
          <td>サブクラス (06) とプロトコル (62)</br>Uaspstor.sys</br>Uaspstor.inf</td>
          <td>Windows 10 デスクトップ エディション</br>Windows 10 Mobile</br>Windows 8.1</br>Windows 8</td>
          <td>Uaspstor.sys は、一括ストリーム エンドポイントをサポートする SuperSpeed USB デバイス用のクラス ドライバーです。 詳細については、次のトピックを参照してください。 <ul>
-           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">xHCI へのクラス ドライバーとしての UASP ストレージ ドライバーの読み込み</a></li><li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642113(v=vs.85)">Windows 8 用の USB 接続 SCSI (UAS) のベスト プラクティス</li></ul></td>
+           <li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642103(v=vs.85)">xHCI へのクラス ドライバーとしての UASP ストレージ ドライバーの読み込み</a></li><li><a href="https://docs.microsoft.com/previous-versions/windows/hardware/design/dn642113(v=vs.85)">Windows 8 用の USB 接続 SCSI (UAS) のベスト プラクティス</a></li></ul></td>
         </tr>
     </tr>
     <tr>
