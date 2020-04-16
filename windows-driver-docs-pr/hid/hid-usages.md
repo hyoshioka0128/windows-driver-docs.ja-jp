@@ -20,12 +20,12 @@ keywords:
 - 使用状況 WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 43f88332071171ce90e145e9abfacb36d4c26e61
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: b120368916b603000602e0a1074ab1fbf124011e
+ms.sourcegitcommit: f8c3585ec7b1bdfcd65f7f2cc9aa688655de4d20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243035"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81396306"
 ---
 #  <a name="hid-usages"></a>HID の使用状況
 
@@ -59,15 +59,36 @@ HIDClass デバイスでサポートされている使用状況を確認する�
 
 [HID レポートの解釈](interpreting-hid-reports.md)
 
-業界標準の HID 使用法の詳細については、 [Usb 実装フォーラム](https://go.microsoft.com/fwlink/?linkid=830142)の web サイトにある Universal Serial BUS (usb) 仕様の*hid 使用表*を参照してください。 (このリソースは、一部の言語および国では使用できません。)
+業界標準の HID 使用法の詳細については、 [Usb 実装フォーラム](https://www.usb.org/hid)の web サイトにある Universal Serial BUS (usb) 仕様の**hid 使用表**を参照してください。
 
 ### <a name="usage-page"></a>[使用状況] ページ
 
-HID の使用は、関連するコントロールの*使用状況ページ*にまとめられています。 特定のコントロールの使用方法は、使用状況ページ、[使用 ID](#usage-id)、名前、および説明で定義されています。 使用例としては、一般的なデスクトップコントロール、ゲームコントロール、Led、ボタンなどがあります。 汎用デスクトップコントロールの [使用状況] ページに表示されるコントロールの例としては、ポインター、マウスとキーボードデバイス、ジョイスティックなどがあります。 使用状況ページの値は16ビットの符号なしの値です。
+HID の使用は、関連するコントロールの*使用状況ページ*にまとめられています。 特定のコントロールの使用方法は、使用状況ページ、[使用 ID](#usage-id)、名前、および説明で定義されています。 使用状況ページの値は16ビットの符号なしの値です。
+
+使用状況ページの例を次に示します。
+
+| ページ ID | ページ名                | *hidusage. h*定数  |
+|:-------:|--------------------------|------------------------|
+| 0x01    | 汎用デスクトップコントロール | HID_USAGE_PAGE_GENERIC |
+| 0x05    | ゲームコントロール            | HID_USAGE_PAGE_GAME    |
+| 0x08    | Led                     | HID_USAGE_PAGE_LED     |
+| 0x09    | ボタン                   | HID_USAGE_PAGE_BUTTON  |
 
 ### <a name="usage-id"></a>使用状況 ID
 
 使用状況ページのコンテキストでは、有効な使用 id (使用状況*id*) が使用状況ページで使用されていることを示します。 使用状況 ID 0 は予約されています。 使用 ID 値は16ビットの符号なしの値です。
+
+**汎用デスクトップコントロール**の [使用状況] ページに表示されるコントロールの例を次に示します。
+
+| 使用状況 ID | 使用法の名前            | *hidusage. h*定数                    |
+|:--------:|-----------------------|------------------------------------------|
+| 0x01     | ポインター               | HID_USAGE_GENERIC_POINTER                |
+| 0x02     | マウス                 | HID_USAGE_GENERIC_MOUSE                  |
+| 0x04     | ジョイ              | HID_USAGE_GENERIC_JOYSTICK               |
+| 0x05     | ゲームパッド              | HID_USAGE_GENERIC_GAMEPAD                |
+| 0x06     | キーボード              | HID_USAGE_GENERIC_KEYBOARD               |
+| 0x07     | キーパッド                | HID_USAGE_GENERIC_KEYPAD                 |
+| 0x08     | 複数の軸を持つコントローラー | HID_USAGE_GENERIC_MULTI_AXIS_CONTROLLER  |
 
 ### <a name="extended-usage"></a>拡張使用量
 

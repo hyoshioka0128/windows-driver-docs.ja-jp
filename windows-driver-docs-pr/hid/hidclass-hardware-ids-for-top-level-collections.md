@@ -1,214 +1,142 @@
 ---
 title: 最上位のコレクションの HIDClass ハードウェア ID
-description: このセクションでは、ハードウェア、HID クラス ドライバーが最上位のコレクション用に生成する Id を指定します。
+description: このセクションでは、HID クラスドライバーが最上位レベルのコレクションに対して生成するハードウェア Id を指定します。
 ms.assetid: a90eea17-0a63-4786-a31f-740bcc670c2a
 keywords:
-- ヒューマン インターフェイス デバイス WDK、ハードウェア Id
+- ヒューマンインターフェイスデバイス WDK、ハードウェア Id
 - HID WDK、ハードウェア Id
-- 対話型の入力デバイス WDK、ハードウェア Id
+- 対話型入力デバイス WDK、ハードウェア Id
 - 入力デバイス WDK、ハードウェア Id
-- ベンダーのハードウェア Id WDK を非表示
-- ハードウェア Id WDK を非表示
-- ID は、WDK を非表示に書式設定します。
-- ヒューマン インターフェイス デバイス WDK、コレクション
+- ベンダーハードウェア Id WDK HID
+- ハードウェア Id WDK HID
+- ID 形式 WDK HID
+- ヒューマンインターフェイスデバイス WDK、コレクション
 - HID WDK、コレクション
 - 対話型の入力デバイス WDK、コレクション
-- デバイス コレクション、WDK を入力します。
-- WDK を非表示にハードウェア Id のコレクション
-- WDK を非表示に最上位のコレクション
+- 入力デバイス WDK、コレクション
+- コレクション WDK HID、ハードウェア Id
+- 最上位のコレクション WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 697277bf4f3e3de70e04242c87fb22c7d545d718
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f8e1000cfa7e1d111dadf415af2428edd6e1f2ae
+ms.sourcegitcommit: f8c3585ec7b1bdfcd65f7f2cc9aa688655de4d20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388786"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81396310"
 ---
 # <a name="hidclass-hardware-ids-for-top-level-collections"></a>最上位のコレクションの HIDClass ハードウェア ID
 
 
-このセクションでは、ハードウェア、HID クラス ドライバーが最上位のコレクション用に生成する Id を指定します。
+このセクションでは、HID クラスドライバーが最上位レベルのコレクションに対して生成するハードウェア Id を指定します。
 
-仕入先として指定されている形式を使用する必要があります*ベンダーのハードウェア ID の形式*最上位のコレクションを識別するためにします。 他のすべての*デバイス ID*形式は内部使用専用に予約されています。
+ベンダーは、最上位レベルのコレクションを識別するために、*ベンダーのハードウェア ID 形式*として指定された形式を使用する必要があります。 その他のすべての*デバイス ID*形式は、内部使用専用として予約されています。
 
+HID クラスドライバーが devnode に対して生成するハードウェア Id は、次のことに依存します。
 
-
-
-ハードウェア devnode 用 HID クラス ドライバーに生成する Id は、次に依存します。
-
-1.  基になるトランスポートによってサポートされる関数の数
+1.  基になるトランスポートでサポートされている関数の数
 2.  レポート記述子の最上位レベルのコレクションの数
 
-これらの要因に基づいて、ハードウェア Id の 4 つのカテゴリがあります。
+これらの要因に基づいて、ハードウェア Id には4つのカテゴリがあります。
 
-|                 | 1 つ TLC | 複数の TLC |
+|                 | 単一 TLC | 複数の TLC |
 |-----------------|------------|--------------|
-| 単一関数 | ケース 1     | ケース 2       |
-| 複数の関数  | ケース 3     | ケース 4       |
+| 単一関数 | ケース1     | ケース2       |
+| 複数の関数  | ケース3     | ケース4       |
 
  
 
-## <a name="case-1-single-function-device-with-single-tlc"></a>ケース 1:単一関数のデバイス シングル TLC を
+## <a name="case-1-single-function-device-with-single-tlc"></a>ケース 1: 単一関数デバイスと単一の TLC
 
 
-このハードウェア ID の形式を使用する条件:
+このハードウェア ID 形式が使用される条件:
 
-1.  基になるトランスポートによってサポートされる関数の数 = 1 (& a) (& a)
-2.  TLC の数 = 1
+1.  基になる transport = 1 & & でサポートされている関数の数
+2.  TLC = 1 の数
 
 ハードウェア ID の形式:
 
--   HID\\Vid\_v(4) & Pid\_d(4) & Rev\_r(4)
--   HID\\Vid\_v(4) & Pid\_d(4)
--   HID\_デバイス\_UP:p(4)\_U:u(4)
+-   HID\\Vid\_v (4) & Pid\_d (4) & リビジョン\_r (4)
+-   HID\\Vid\_v (4) & Pid\_d (4)
+-   HID\_デバイスの\_: p (4)\_U: U (4)
 -   HID\_デバイス
 
-## <a name="case-2-single-function-device-with-multiple-tlc"></a>ケース 2:複数 TLC でデバイスを単一関数
+## <a name="case-2-single-function-device-with-multiple-tlc"></a>ケース 2: 複数の TLC を持つ単一関数デバイス
 
 
-このハードウェア ID の形式を使用する条件:
+このハードウェア ID 形式が使用される条件:
 
-1.  基になるトランスポートによってサポートされる関数の数 = 1 (& a) (& a)
-2.  TLC 数&gt;1
-
-ハードウェア ID の形式:
-
--   HID\\Vid\_v(4) & Pid\_d(4) & Rev\_r(4) & Colb(2)
--   HID\\Vid\_v(4) & Pid\_d(4) & Colb(2)
--   HID\_デバイス\_UP:p(4)\_U:u(4) \[WINDOWS Inf のみ用に予約されています\]
--   HID\_デバイス\[WINDOWS Inf のみ用に予約されています\]
-
-## <a name="case-3-multi-function-device-with-single-tlc"></a>ケース 3:単一 TLC の多機能デバイス
-
-
-このハードウェア ID の形式を使用する条件:
-
-1.  基になるトランスポートによってサポートされる関数の数&gt;1 (& a) (& a)
-2.  TLC の数 = 1
+1.  基になる transport = 1 & & でサポートされている関数の数
+2.  TLC > 1 の数
 
 ハードウェア ID の形式:
 
--   HID\\Vid\_v(4) & Pid\_d(4) & Rev\_r(4) & MI\_z(2)
--   HID\\Vid\_v(4) & Pid\_d(4) & MI\_z(2)
--   HID\_デバイス\_UP:p(4)\_U:u(4) \[WINDOWS Inf のみ用に予約されています\]
--   HID\_デバイス\[WINDOWS Inf のみ用に予約されています\]
+-   HID\\Vid\_v (4) & Pid\_d (4) & Rev\_r (4) & Colb (2)
+-   HID\\Vid\_v (4) & Pid\_d (4) & Colb (2)
+-   HID\_デバイス\_UP: p (4)\_U: U (4) \[WINDOWS Inf 専用に予約\]
+-   HID\_デバイス \[WINDOWS Inf 専用に予約\]
 
-## <a name="case-4-multi-function-device-with-multiple-tlc"></a>ケース 4:複数 TLC の多機能デバイス
+## <a name="case-3-multi-function-device-with-single-tlc"></a>ケース 3: 単一の TLC を持つマルチ関数デバイス
 
 
-このハードウェア ID の形式を使用する条件:
+このハードウェア ID 形式が使用される条件:
 
-1.  基になるトランスポートによってサポートされる関数の数&gt;1 (& a) (& a)
-2.  TLC 数&gt;1
+1.  基になるトランスポート > 1 & でサポートされている関数の数 &
+2.  TLC = 1 の数
 
 ハードウェア ID の形式:
 
--   HID\\Vid\_v(4)&Pid\_d(4)&Rev\_r(4)&MI\_z(2)&Colb(2)
--   HID\\Vid\_v(4)&Pid\_d(4)&MI\_z(2)&Colb(2)
--   HID\_デバイス\_UP:p(4)\_U:u(4) \[WINDOWS Inf のみ用に予約されています\]
--   HID\_デバイス\[WINDOWS Inf のみ用に予約されています\]
+-   HID\\Vid\_v (4) & Pid\_d (4) & リビジョン\_r (4) & MI\_z (2)
+-   HID\\Vid\_v (4) & Pid\_d (4) & MI\_z (2)
+-   HID\_デバイス\_UP: p (4)\_U: U (4) \[WINDOWS Inf 専用に予約\]
+-   HID\_デバイス \[WINDOWS Inf 専用に予約\]
 
-## <a name="special-purpose-hardware-id"></a>特殊な目的のハードウェア ID
+## <a name="case-4-multi-function-device-with-multiple-tlc"></a>ケース 4: 複数の TLC を持つマルチ関数デバイス
 
 
-次にハードウェア Id (内部使用のみ) の既定のシステム機能を提供する Windows を使用します。
+このハードウェア ID 形式が使用される条件:
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>デバイスの種類</th>
-<th>使用状況 ページ</th>
-<th>使用方法</th>
-<th>Hardware ID (ハードウェア ID)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ポインター</p></td>
-<td><p>0x01</p></td>
-<td><p>0x01</p></td>
-<td><p>HID_DEVICE_SYSTEM_MOUSE</p></td>
-</tr>
-<tr class="even">
-<td><p>マウス</p></td>
-<td><p>0x01</p></td>
-<td><p>0x02</p></td>
-<td><p>HID_DEVICE_SYSTEM_MOUSE</p></td>
-</tr>
-<tr class="odd">
-<td><p>ジョイスティック</p></td>
-<td><p>0x01</p></td>
-<td><p>0x04</p></td>
-<td><p>HID_DEVICE_SYSTEM_GAME</p></td>
-</tr>
-<tr class="even">
-<td><p>ゲーム パッド</p></td>
-<td><p>0x01</p></td>
-<td><p>0x05</p></td>
-<td><p>HID_DEVICE_SYSTEM_GAME</p></td>
-</tr>
-<tr class="odd">
-<td><p>キーボード</p></td>
-<td><p>0x01</p></td>
-<td><p>0x06</p></td>
-<td><p>HID_DEVICE_SYSTEM_KEYBOARD</p></td>
-</tr>
-<tr class="even">
-<td><p>キーパッド</p></td>
-<td><p>0x01</p></td>
-<td><p>0x07</p></td>
-<td><p>HID_DEVICE_SYSTEM_KEYBOARD</p></td>
-</tr>
-<tr class="odd">
-<td><p>システム コントロール</p></td>
-<td><p>0x01</p></td>
-<td><p>0x80</p></td>
-<td><p>HID_DEVICE_SYSTEM_CONTROL</p></td>
-</tr>
-<tr class="even">
-<td><p>コンシューマー オーディオ コントロール</p></td>
-<td><p>0x0C</p></td>
-<td><p>0x01</p></td>
-<td><p>HID_DEVICE_SYSTEM_CONSUMER</p></td>
-</tr>
-</tbody>
-</table>
+1.  基になるトランスポート > 1 & でサポートされている関数の数 &
+2.  TLC > 1 の数
 
- 
+ハードウェア ID の形式:
+
+-   HID\\Vid\_v (4) & Pid\_d (4) & Rev\_r (4) & MI\_z (2) & Colb (2)
+-   HID\\Vid\_v (4) & Pid\_d (4) & MI\_z (2) & Colb (2)
+-   HID\_デバイス\_UP: p (4)\_U: U (4) \[WINDOWS Inf 専用に予約\]
+-   HID\_デバイス \[WINDOWS Inf 専用に予約\]
+
+## <a name="special-purpose-hardware-id"></a>特別な目的のハードウェア ID
+
+
+次に示すのは、Windows が既定のシステム機能を提供するために使用するハードウェア Id (内部使用のみ) です。
+
+| デバイスの種類            | [使用状況] ページ | 使用法 | Hardware ID (ハードウェア ID)                   |
+|------------------------|:----------:|:-----:|-------------------------------|
+| ポインター                | 0x01       | 0x01  | HID\_デバイス\_システム\_マウス    |
+| マウス                  | 0x01       | 0x02  | HID\_デバイス\_システム\_マウス    |
+| ジョイ               | 0x01       | 0x04  | HID\_デバイス\_システム\_ゲーム     |
+| ゲームパッド               | 0x01       | 0x05  | HID\_デバイス\_システム\_ゲーム     |
+| キーボード               | 0x01       | 0x06  | HID\_デバイス\_システム\_キーボード |
+| キーパッド                 | 0x01       | 0x07  | HID\_デバイス\_システム\_キーボード |
+| システムコントロール         | 0x01       | 0x80  | HID\_デバイス\_システム\_コントロール  |
+| コンシューマーオーディオコントロール | 0x0C       | 0x01  | HID\_デバイス\_システム\_コンシューマー |
 
 重要な注意事項:
 
--   HIDClass によって生成された互換性 Id がないです。
--   仕入先のサード パーティの Inf は、ハードウェア Id に対してのみ一致する必要があります。
--   ハードウェア Id を含む HID\_デバイス\_システム\_\*に使用するため、オペレーティング システムを開く「特殊な」デバイスします。 これらの特殊なハードウェア Id の INF に一致しないベンダーが提供されています。
--   ベンダーは、サード パーティの HID トランスポート ミニドライバーは、HIDClass が適切なハードウェア Id を生成できることを確認するフィールドが以下に指定する必要があります提供されています。
+-   HIDClass によって生成された互換性 Id がありません
+-   ベンダーのサードパーティ製の Inf はハードウェア Id とのみ一致しなければなりません
+-   HID\_デバイス\_システム\_\* を含むハードウェア Id は、オペレーティングシステムが使用するために開く "特殊な" デバイスです。 ベンダーが提供する INF は、これらの特殊なハードウェア Id では一致しません。
+-   ベンダーが提供するサードパーティ製 HID transport ミニドライバーは、以下に示すフィールドを指定して、HIDClass が適切なハードウェア Id を生成できるようにする必要があります。
 
 凡例:
 
-|       |                 |                   |                                                          |
-|-------|-----------------|-------------------|----------------------------------------------------------|
-| フィールド | Contains        | 16 進数の値 | 説明                                                  |
-| v(4)  | 次の 4 つの 16 進数です。 | 0x0000-0 xffff     | ベンダ ID                                                |
-| d(4)  | 次の 4 つの 16 進数です。 | 0x0000-0 xffff     | 製品 ID                                               |
-| r(4)  | 次の 4 つの 16 進数です。 | 0x0000-0 xffff     | リビジョン番号                                          |
-| z(2)  | 2 つの 16 進数です。  | 0x00-0 xff の場合         | インターフェイスの数 (だけ使用複合 USB デバイスの使用)。 |
-| b(2)  | 2 つの 16 進数です。  | 0x00-0 xff の場合         | コレクションの数 (デバイスでしか使用複数 TLC。) |
-| p(4)  | 次の 4 つの 16 進数です。 | 0x0000-0 xffff     | TLC の使用状況 ページの数                                |
-| u(4)  | 次の 4 つの 16 進数です。 | 0x0000-0 xffff     | TLC の使用状況の数                                      |
-
- 
-
- 
-
- 
-
-
-
-
+| フィールド | Contains        | 16進数値 | 意味                                                  |
+|:-----:|-----------------|-------------------|----------------------------------------------------------|
+| v (4)  | 4桁の16進数 | 0x0000 ~ 0xFFFF     | ベンダー ID                                                |
+| d (4)  | 4桁の16進数 | 0x0000 ~ 0xFFFF     | 製品 ID                                               |
+| r (4)  | 4桁の16進数 | 0x0000 ~ 0xFFFF     | リビジョン番号                                          |
+| z (2)  | 2桁の16進数  | 0x00 ~ 0xFF         | インターフェイス番号 (複合 USB デバイスでのみ使用) |
+| b (2)  | 2桁の16進数  | 0x00 ~ 0xFF         | コレクション番号 (複数の TLC デバイスでのみ使用されます。) |
+| p (4)  | 4桁の16進数 | 0x0000 ~ 0xFFFF     | TLC の使用状況ページ番号                                |
+| u (4)  | 4桁の16進数 | 0x0000 ~ 0xFFFF     | TLC の使用数                                      |

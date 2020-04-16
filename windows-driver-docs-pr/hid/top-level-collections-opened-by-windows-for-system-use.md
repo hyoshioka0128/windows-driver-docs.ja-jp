@@ -3,107 +3,27 @@ title: Windows によって開かれる最上位のコレクション (システ
 description: Windows によって開かれる最上位のコレクション (システムで使用)
 ms.assetid: e489ce46-379e-4ba9-a0e3-5848b1f4a17b
 keywords:
-- WDK を非表示に最上位のコレクション
+- 最上位のコレクション WDK HID
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80f4c7794f4dada8b79d887a7b334539e40771f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 310793a6853c78fd7382274cb7353d697d9c4dd4
+ms.sourcegitcommit: f8c3585ec7b1bdfcd65f7f2cc9aa688655de4d20
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384355"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81396312"
 ---
 # <a name="top-level-collections-opened-by-windows-for-system-use"></a>Windows によって開かれる最上位のコレクション (システムで使用)
 
+Windows では、システム使用のために次の[最上位レベルのコレクション](top-level-collections.md)が開きます。
 
-
-
-
-Windows は、次を開く[最上位のコレクション](top-level-collections.md)システムを使用します。
-
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>デバイスの種類</th>
-<th>使用状況 ページ</th>
-<th>使用状況 ID</th>
-<th>Windows クライアント</th>
-<th>アクセス モード</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ポインター</p></td>
-<td><p>0x01</p></td>
-<td><p>0x01</p></td>
-<td><p>Win32 サブシステム</p></td>
-<td><p>［排他］</p></td>
-</tr>
-<tr class="even">
-<td><p>マウス</p></td>
-<td><p>0x01</p></td>
-<td><p>0x02</p></td>
-<td><p>Win32 サブシステム</p></td>
-<td><p>［排他］</p></td>
-</tr>
-<tr class="odd">
-<td><p>ジョイスティック</p></td>
-<td><p>0x01</p></td>
-<td><p>0x04</p></td>
-<td><p>DirectInput</p></td>
-<td><p>共有</p></td>
-</tr>
-<tr class="even">
-<td><p>ゲーム パッド</p></td>
-<td><p>0x01</p></td>
-<td><p>0x05</p></td>
-<td><p>DirectInput</p></td>
-<td><p>共有</p></td>
-</tr>
-<tr class="odd">
-<td><p>キーボード</p></td>
-<td><p>0x01</p></td>
-<td><p>0x06</p></td>
-<td><p>Win32 サブシステム</p></td>
-<td><p>［排他］</p></td>
-</tr>
-<tr class="even">
-<td><p>キーパッド</p></td>
-<td><p>0x01</p></td>
-<td><p>0x07</p></td>
-<td><p>Win32 サブシステム</p></td>
-<td><p>［排他］</p></td>
-</tr>
-<tr class="odd">
-<td><p>システム コントロール</p></td>
-<td><p>0x01</p></td>
-<td><p>0x80</p></td>
-<td><p>Win32 サブシステム</p></td>
-<td><p>共有</p></td>
-</tr>
-<tr class="even">
-<td><p>コンシューマー オーディオ コントロール</p></td>
-<td><p>0x0C</p></td>
-<td><p>0x01</p></td>
-<td><p>Windows 2000 および Microsoft Windows xp (SVC ホスト サービスの 1 つ) hidserv.dll hidserv.exe</p></td>
-<td><p>共有</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+| デバイスの種類            | [使用状況] ページ | 使用状況 ID | Windows クライアント                                                                                     | アクセス モード |
+|------------------------|:----------:|:--------:|----------------------------------------------------------------------------------------------------|-------------|
+| ポインター                | 0x01       | 0x01     | Win32 サブシステム                                                                                    | ［排他］   |
+| マウス                  | 0x01       | 0x02     | Win32 サブシステム                                                                                    | ［排他］   |
+| ジョイ               | 0x01       | 0x04     | DirectInput                                                                                        | Shared      |
+| ゲームパッド               | 0x01       | 0x05     | DirectInput                                                                                        | Shared      |
+| キーボード               | 0x01       | 0x06     | Win32 サブシステム                                                                                    | ［排他］   |
+| キーパッド                 | 0x01       | 0x07     | Win32 サブシステム                                                                                    | ［排他］   |
+| システム コントロール         | 0x01       | 0x80     | Win32 サブシステム                                                                                    | Shared      |
+| コンシューマーオーディオコントロール | 0x0C       | 0x01     | Microsoft Windows XP の Windows 2000 および hidserv (SVC ホストサービスの1つ) での hidserv | Shared      |

@@ -2,14 +2,14 @@
 title: ドライバーのセキュリティ チェックリスト
 description: この記事では、ドライバー開発者向けのドライバーセキュリティチェックリストについて説明します。
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
-ms.date: 04/02/2019
+ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d2336302cae77e9a4690f0afd20e1b77ac7e0212
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: 813d92b86f130091c03a18f30db163809ed16d9b
+ms.sourcegitcommit: c169ed9a2b5939858c5578aa8d1f363eaecb7494
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528978"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81398335"
 ---
 # <a name="driver-security-checklist"></a>ドライバーのセキュリティ チェックリスト
 
@@ -21,7 +21,7 @@ ms.locfileid: "77528978"
 
 ただし、ドライバーがリリースされた後、攻撃者は、セキュリティの欠陥を調査して特定することができます。 開発者は、このような脆弱性の可能性を最小限に抑えるために、設計および実装フェーズでこれらの問題を考慮する必要があります。 目標は、ドライバーがリリースされる前に、既知のセキュリティの欠陥をすべて排除することです。
 
-より安全なドライバーを作成するには、システム設計者 (意識的の潜在的な脅威について考えてみてください)、コードを実装する開発者 (防御の攻撃の原因となる一般的な操作)、およびテストを連携させる必要があります。チーム (弱点と脆弱性を積極的に発見しようとしています)。 これらのすべてのアクティビティを適切に調整することで、ドライバーのセキュリティが大幅に向上します。
+より安全なドライバーを作成するには、システム設計者 (意識的の脅威に対する潜在的な脅威の考え)、コードを実装する開発者、(悪用の原因となる一般的な操作のコーディング)、およびテストチーム (弱点と脆弱性の検出を積極的に試みる) が必要です。 これらのすべてのアクティビティを適切に調整することで、ドライバーのセキュリティが大幅に向上します。
 
 攻撃されるドライバーに関連する問題を回避することに加えて、カーネルメモリをより正確に使用するなど、説明する手順の多くでは、ドライバーの信頼性が向上します。 これにより、サポートコストが削減され、お客様の製品の満足度が向上します。 以下のチェックリストのタスクを完了すると、これらのすべての目標を達成するのに役立ちます。
 
@@ -55,7 +55,7 @@ ms.locfileid: "77528978"
 
 ![空のチェックボックス](images/checkbox.png)[静的ドライバーの検証ツールを使用して脆弱性を確認する](#sdv)
 
-空のチェックボックス](images/checkbox.png)[を ![Binscope バイナリアナライザーを使用してコードを確認](#binscope)する
+空のチェックボックス](images/checkbox.png)[を ![BinSkim Binary Analyzer でコードを確認](#binskim)する
 
 ![空のチェックボックス](images/checkbox.png)[コード検証ツールを使用する](#codevalidationtools)
 
@@ -271,8 +271,6 @@ Irp を正しく処理する方法の詳細については、「 [irp の処理�
 
 C とC++セキュリティで保護されたコーディングの詳細については、この記事の最後にある「[安全なコーディングリソース](#securecodingresources)」を参照してください。
 
-
-
 ## <a name="span-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanmanage-driver-access-control"></a><span id="ManagingDriverAccessControl"></span><span id="managingdriveraccesscontrol"></span><span id="MANAGINGDRIVERACCESSCONTROL"></span>ドライバーアクセス制御の管理
 
 **セキュリティチェックリスト項目 \#7:** *アクセスを適切に制御していることを確認するために、ドライバーを確認*してください。
@@ -487,96 +485,163 @@ SDV の詳細については、サンプルドライバー (たとえば、お�
 
 8. 各警告をクリックして SDV レポートページを読み込み、コードの脆弱性に関連する情報を確認します。 レポートを使用して、検証結果を調査し、SDV 検証に失敗したドライバーのパスを特定します。 詳細については、「 [Static Driver Verifier Report](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)」を参照してください。
 
-## <a name="span-idbinscopespanspan-idbinscopespanspan-idbinscopespancheck-code-with-binscope-binary-analyzer"></a><span id="BinScope"></span><span id="binscope"></span><span id="BINSCOPE"></span>BinScope バイナリアナライザーを使用したコードの確認
+## <a name="span-idbinskimspanspan-idbinskimspanspan-idbinskimspancheck-code-with-the-binskim-binary-analyzer"></a><span id="BinSkim"></span><span id="binskim"></span><span id="BINSKIM"></span>BinSkim Binary Analyzer を使用してコードを確認する
 
-**セキュリティチェックリスト項目 \#15:** *binscope を使用して、コンパイルおよびビルドオプションが既知のセキュリティ問題を最小限に抑えるように構成されていることを確認するには、次の手順を実行します。*
+**セキュリティチェックリスト項目 \#15:** *binskim を使用して、コンパイルおよびビルドオプションが既知のセキュリティ問題を最小限に抑えるように構成されていることを確認するには、次の手順に従います。*
 
-BinScope を使用して、アプリケーションのバイナリファイルを調査し、アプリケーションが攻撃に対して脆弱である可能性がある、または攻撃ベクトルとして使用される可能性のあるコーディングおよび作成プラクティスを特定します。
+BinSkim を使用してバイナリファイルを調査し、バイナリを脆弱にする可能性があるコーディングと作成の手法を特定します。
 
-詳細については、「[新しいバージョンの BinScope Binary Analyzer](https://www.microsoft.com/security/blog/2014/11/20/new-binscope-released/) 」と、ツールのダウンロードに含まれているユーザーとファーストステップガイドを参照してください。
+ビンの詳細チェック:
+
+- 古いコンパイラツールセットの使用-バイナリは、最新のコンパイラツールセットに対してコンパイルし、現在のコンパイラレベルと OS によって提供されるセキュリティの軽減策を最大限に活用できるようにする必要があります。
+- 安全でないコンパイル設定-バイナリは、OS によって提供されるセキュリティの緩和策を有効にし、コンパイラエラーや実行可能な警告の報告を最大化するために、最も安全な設定を使用してコンパイルする必要があります。
+- 署名に関する問題-署名付きバイナリは、暗号強度の高いアルゴリズムで署名する必要があります。
+
+BinSkim はオープンソースツールであり、静的な分析結果交換形式 ([SARIF](https://github.com/oasis-tcs/sarif-spec)) 形式を使用する出力ファイルを生成します。 ビンの説明は、前の[Binskim](https://www.microsoft.com/security/blog/2014/11/20/new-binscope-released/)ツールに代わるものです。
+
+ビンの詳細については、「 [Binskim ユーザーガイド](https://github.com/microsoft/binskim/blob/master/docs/UserGuide.md)」を参照してください。
 
 次の手順に従って、配布するコードでセキュリティコンパイルオプションが適切に構成されていることを確認します。
 
-1. BinScope Analyzer および関連ドキュメントは、<https://www.microsoft.com/download/details.aspx?id=44995>からダウンロードできます。
+1. クロスプラットフォーム[.NET Core SDK](https://dotnet.microsoft.com/download)をダウンロードしてインストールします。
 
-2. ダウンロードした*Binscope はじめに Guide*を確認します。
+2. ビンの表示をダウンロードするには、NuGet パッケージなど、いくつかのオプションがあります。 この例では、<https://github.com/microsoft/binskim> から BinSkim を含む zip ファイルをダウンロードし、64ビットの Windows PC にインストールします。
 
-3. MSI ファイルを使用して、検証するコンパイル済みコードを含むターゲットテストコンピューターに BinScope をインストールします。
+3. <https://github.com/microsoft/binskim> の **[複製またはダウンロード]** ボタンをクリックし、 **[download Zip]** \ (Zip のダウンロード \) を選択します。
 
-4. コマンドプロンプトウィンドウを開き、次のコマンドを実行してコンパイル済みのドライバーバイナリを確認します。 コンパイルされた driver .sys ファイルを指すようにパスを更新します。
+4. ダウンロードした zip ファイルをクリックして解凍します。たとえば、`C:\binskim-master`します。
 
-```cpp
-C:\Program Files\Microsoft BinScope 2014>binscope "C:\Samples\KMDF_Echo_Driver\echo.sys" /verbose /html /logfile c:\mylog.htm
+5. Visual Studio がインストールされていることを確認します。 Visual Studio のダウンロードとインストールの詳細については、「 [Visual studio のインストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019)」を参照してください。
+
+6. Visual Studio の開発者コマンドプロンプトウィンドウを開き、ファイルを解凍したディレクトリに移動します。  
+
+```console
+C:\> Cd \binskim-master
 ```
 
-5. ブラウザーを使用して BinScope レポートを確認し、すべてのチェックが (PASS) とマークされていることを確認します。
+7. 参加リストのルートで**Buildandtest. cmd**を実行して、リリースビルドが成功し、すべてのテストが成功することを確認します。
 
-既定では、HTML レポートは \\ユーザー\\&lt;ユーザー名&gt;\\BinScope に書き込まれ\\
+```console
+C:\binskim-master> BuildAndTest.cmd
 
-ログファイルには、次の3つのカテゴリが出力される場合があります。
+Welcome to .NET Core 3.1!
+---------------------
+SDK Version: 3.1.101
 
-- 失敗したチェック \[失敗\]
-- エラー \[完了しなかったことを確認し\]
-- 成功したチェック \[成功\]
+...
 
-既定では、渡されたチェックはログに書き込まれず、/verbose スイッチを使用して有効にする必要があることに注意してください。
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64\BinSkim.Sdk.dll
+1 File(s) copied
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\linux-x64\BinSkim.Sdk.dll
+1 File(s) copied
 
-```cpp
-Results for Microsoft BinScope 2014 run on MyPC at 2017-01-28T00:18:48.3828242Z
+...
 
-Failed Checks
-No failed checks.
-Passed Checks
-
-• C:\Samples\KMDF_Echo_Driver\echo.sys - ATLVersionCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - ATLVulnCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - CompilerVersionCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - DBCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - DefaultGSCookieCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - ExecutableImportsCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - GSCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - GSFriendlyInitCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - GSFunctionSafeBuffersCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - HighEntropyVACheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - NXCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - RSA32Check (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - SafeSEHCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - SharedSectionCheck (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - VB6Check (PASS)
-• C:\Samples\KMDF_Echo_Driver\echo.sys - WXCheck (PASS)
-
-Checks Executed:
-• ATLVersionCheck
-• ATLVulnCheck
-• CompilerVersionCheck
-• DBCheck
-• DefaultGSCookieCheck
-• ExecutableImportsCheck
-• GSCheck
-• GSFriendlyInitCheck
-• GSFunctionSafeBuffersCheck
-• HighEntropyVACheck
-• NXCheck
-• RSA32Check
-• SafeSEHCheck
-• SharedSectionCheck
-• VB6Check
-• WXCheck
-
-All Scanned Items
-
-• C:\Samples\KMDF_Echo_Driver\echo.sys
 ```
+
+8. ビルドプロセスでは、BinSkim 実行可能ファイルを含む一連のディレクトリが作成されます。 Win-x64 ビットのビルド出力ディレクトリに移動します。  
+
+```console
+C:\binskim-master> Cd \binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64>
+```
+
+9. [分析] オプションのヘルプを表示します。
+
+```console
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim help analyze
+
+BinSkim PE/MSIL Analysis Driver 1.6.0.0
+
+  --sympath                      Symbols path value, e.g., SRV*http://msdl.microsoft.com/download/symbols or Cache*d:\symbols;Srv*http://symweb. See
+                                 https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/advanced-symsrv-use for syntax information. Note that BinSkim will clear the
+                                 _NT_SYMBOL_PATH environment variable at runtime. Use this argument for symbol information instead.
+
+  --local-symbol-directories     A set of semicolon-delimited local directory paths that will be examined when attempting to locate PDBs.
+
+  -o, --output                   File path to which analysis output will be written.
+
+  --verbose                      Emit verbose output. The resulting comprehensive report is designed to provide appropriate evidence for compliance scenarios.
+
+...
+  
+```
+
+**シンボルパスの設定**
+
+BinSkim on を実行しているコンピューターで分析しているすべてのコードをビルドする場合は、通常、シンボルパスを設定する必要はありません。 これは、コンパイルしたローカルボックスでシンボルファイルを使用できるためです。 より複雑なビルドシステムを使用している場合や、シンボルを (コンパイルされたバイナリではなく) 別の場所にリダイレクトしている場合は、`--local-symbol-directories` を使用して、シンボルファイルの検索にこれらの場所を追加します。
+コードがコードに含まれていないコンパイル済みバイナリを参照している場合は、これらのコード依存関係のセキュリティを確認するために、ウィンドウデバッガー sympath を使用してシンボルを取得できます。 これらの依存関係で問題が見つかった場合は、修正できない可能性があります。 ただし、これらの依存関係を使用して、受け入れている可能性のあるセキュリティリスクを認識しておくと役立つ場合があります。
+
+> [!TIP]
+>ネットワークシンボルサーバーを参照するシンボルパスを追加する場合は、ローカルキャッシュの場所を追加して、シンボルをキャッシュするローカルパスを指定します。 この操作を行わないと、ビンのざっとのパフォーマンスが著しく低下する可能性があります。 次の例では、d:\symbols. でローカルキャッシュを指定します。
+`--sympath Cache*d:\symbols;Srv*http://symweb`
+Sympath の詳細については、「 [Windows デバッガーのシンボルパス](https://docs.microsoft.com/windows-hardware/drivers/debugger/symbol-path)」を参照してください。
+
+10. 次のコマンドを実行して、コンパイル済みのドライバーバイナリを分析します。 コンパイルされた driver .sys ファイルを指すようにターゲットパスを更新します。
+
+```console
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim analyze "C:\Samples\KMDF_Echo_Driver\echo.sys"
+```
+
+11. 詳細については、次のような verbose オプションを追加してください。
+
+```console
+C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim analyze "C:\Samples\KMDF_Echo_Driver\osrusbfx2.sys" --verbose
+```
+> [!NOTE]
+>--Verbose オプションを指定すると、すべてのチェックに対して明示的な合格/不合格の結果が生成されます。 詳細を指定しない場合は、ビンの表示で検出された不具合のみが表示されます。 ログファイルのサイズが大きくなるため、--verbose オプションは通常、実際のオートメーションシステムには推奨されません。これは、多くの "成功" の結果の途中で埋め込まれるため、個々のエラーが発生したときに個別のエラーを取得するのが困難になるためです。
+
+12. コマンドの出力を確認して、考えられる問題を探します。 この例の出力は、成功した3つのテストを示しています。 BA2002 など、ルールに関する追加情報については、 [Binskim ユーザーガイド](https://github.com/microsoft/binskim/blob/master/docs/UserGuide.md)を参照してください。
+
+```console
+Analyzing...
+Analyzing 'osrusbfx2.sys'...
+...
+
+C:\Samples\KMDF_Echo_Driver\osrusbfx2.sys\Debug\osrusbfx2.sys: pass BA2002: 'osrusbfx2.sys' does not incorporate any known vulnerable dependencies, as configured by current policy.
+C:\Samples\KMDF_Echo_Driver\Debug\osrusbfx2.sys: pass BA2005: 'osrusbfx2.sys' is not known to be an obsolete binary that is vulnerable to one or more security problems.
+C:\Samples\KMDF_Echo_Driver\osrusbfx2.sys: pass BA2006: All linked modules of 'osrusbfx2.sys' generated by the Microsoft front-end satisfy configured policy (compiler minimum version 17.0.65501.17013).
+```
+
+13. この出力は、ドライバーが ELF バイナリではないことを示すためにテスト BA3001 が実行されないことを示しています。
+
+```console
+...
+C:\Samples\KMDF_Echo_Driver\Debug\osrusbfx2.sys: notapplicable BA3001: 'osrusbfx2.sys' was not evaluated for check 'EnablePositionIndependentExecutable' as the analysis is not relevant based on observed metadata: image is not an ELF binary.
+```
+
+14. この出力は、テスト BA2007 のエラーを示しています。
+
+```console
+...
+
+C:\Samples\KMDF_Echo_Driver\Debug\osrusbfx2.sys: error BA2007: 'osrusbfx2.sys' disables compiler warning(s) which are required by policy.
+A compiler warning is typically required if it has a high likelihood of flagging memory corruption, information disclosure, or double-free vulnerabilities.
+To resolve this issue, enable the indicated warning(s) by removing /Wxxxx switches (where xxxx is a warning id indicated here) from your command line, and resolve any warnings subsequently raised during compilation.
+```
+
+Visual Studio でこれらの警告を有効にするにC++は、プロジェクトのプロパティページの [C/] で、[特定の警告を**無効**にする] で除外しない値を削除します。
+
+![Visual Studio 2019 で特定の警告を無効にするためのダイアログボックス](images/disable-specific-warnings-dialog.png)
+
+ドライバープロジェクト用の Visual Studio の既定のコンパイルオプションでは、次のような警告を無効にすることができます。 これらの警告は、BinSkim によって報告されます。
+
+[C4603-' name ': マクロが定義されていないか、プリコンパイル済みヘッダーの使用後に定義が異なります](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4603)
+
+[C4627-' description ': プリコンパイル済みヘッダーの使用を検索しているときにスキップされました](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4627)
+
+[C4986-' 宣言 ': 例外指定が前の宣言と一致しません](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warning-c4986)
+
+コンパイラの警告の詳細については、「コンパイラの[バージョン別のコンパイラ警告](https://docs.microsoft.com/cpp/error-messages/compiler-warnings/compiler-warnings-by-compiler-version?view=vs-2019)」を参照してください。
 
 ## <a name="span-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanuse-additional-code-validation-tools"></a><span id="CodeValidationTools"></span><span id="codevalidationtools"></span><span id="CODEVALIDATIONTOOLS"></span>追加のコード検証ツールを使用する
 
 **セキュリティチェックリスト項目 \#16:** *これらの追加のツールを使用して、コードがセキュリティに関する推奨事項に準拠しているかどうかを検証し、開発プロセスで欠落しているギャップを調べることができます。*
 
-上記で説明した[Visual Studio Code 分析](#use-code-analysis)、[静的ドライバー検証ツール](#sdv)、 [binscope](#binscope)に加えて、次のツールを使用して、開発プロセスで欠落しているギャップを調査します。
+前に説明した[Visual Studio Code 分析](#use-code-analysis)、[静的ドライバー検証](#sdv)ツール、 [binskim](#binskim)に加えて、次のツールを使用して、開発プロセスで欠落したギャップを調査します。
 
-**ドライバーの検証ツール**
+**ドライバー検証ツール**
 
-ドライバーの検証ツールを使用すると、ドライバーをライブテストできます。 ドライバーの検証ツールは、Windows カーネルモード ドライバーとグラフィックス ドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。 ドライバーの検証ツールでは、Windows ドライバーがさまざまなストレスとテストを受けて、不適切な動作を見つけることができます。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
+ドライバーの検証ツールを使用すると、ドライバーをライブテストできます。 ドライバーの検証ツールは、Windows カーネルモード ドライバーとグラフィックス ドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。 ドライバーの検証ツールでは、Windows ドライバーがさまざまなストレスとテストを受けて、不適切な動作を見つけることができます。 詳細については、「[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
 **ハードウェア互換性プログラムテスト**
 
@@ -604,7 +669,7 @@ All Scanned Items
 
 **カスタムおよびドメイン固有のテストツール**
 
-ドメイン固有のカスタムセキュリティテストの開発を検討します。 追加のテストを開発するには、ソフトウェアの元の設計者からの入力と、開発中の特定の種類のドライバーによく使用されている関連のない開発リソース、およびセキュリティの侵入の分析と防ぐ.
+ドメイン固有のカスタムセキュリティテストの開発を検討します。 追加のテストを開発するには、ソフトウェアの元の設計者からの入力と、開発中の特定の種類のドライバーによく使用されている関連のない開発リソース、およびセキュリティの侵入の分析と防止についてよく知られている1人以上の開発リソースを収集します。
 
 ## <a name="span-iddebuggerspanspan-iddebuggerspanspan-iddebuggerspanreview-debugger-techniques-and-extensions"></a><span id="Debugger"></span><span id="debugger"></span><span id="DEBUGGER"></span>デバッガーの手法と拡張機能の確認
 
@@ -724,5 +789,3 @@ Windows ドライバーのクラスルームトレーニングは、次のよう
 - コードスキャンユーティリティを使用して既知のコードの脆弱性を検索し、特定された問題を修復します。
 - 知識のあるコードレビュー担当者に相談して、問題が発生した可能性のある問題を探します。
 - ドライバー検証を使用し、コーナーケースを含む複数の入力でドライバーをテストします。
-
-[この記事に関するコメントを Microsoft に送信する](mailto:wsddocfb@microsoft.com?subject=Documentation%20feedback%20[hw_design/hw_design]:%20Driver%20security%20checklist%20%20RELEASE:%20%286/16/2017%29&body=%0A%0APRIVACY%20STATEMENT%0A%0AWe%20use%20your%20feedback%20to%20improve%20the%20documentation.%20We%20don't%20use%20your%20email%20address%20for%20any%20other%20purpose,%20and%20we'll%20remove%20your%20email%20address%20from%20our%20system%20after%20the%20issue%20that%20you're%20reporting%20is%20fixed.%20While%20we're%20working%20to%20fix%20this%20issue,%20we%20might%20send%20you%20an%20email%20message%20to%20ask%20for%20more%20info.%20Later,%20we%20might%20also%20send%20you%20an%20email%20message%20to%20let%20you%20know%20that%20we've%20addressed%20your%20feedback.%0A%0AFor%20more%20info%20about%20Microsoft's%20privacy%20policy,%20see%20 https://privacy.microsoft.com/default.aspx. "このトピックに関するコメントを Microsoft に送信する")
