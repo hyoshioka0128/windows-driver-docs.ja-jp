@@ -275,7 +275,7 @@ ms.locfileid: "79216609"
 | scensemon | 387950 | AppiXoft |
 | ruaff | 387940 | RUNEXY |
 | bbfilter .sys | 387930 | derivo GmbH |
-| Bfmon | 387920 | Baidu (香港) 限定 |
+| Bfmon | 387920 | Baidu (香港特別行政区) 限定 |
 | bdsysmon | 387912 | Baidu Online ネットワーク |
 | BdRdFolder .sys | 387910 | Baidu (北京) |
 | ml、.sys | 387901 | RUNEXY |
@@ -836,7 +836,7 @@ ms.locfileid: "79216609"
 | BDFileDefend | 326916 | Baidu (北京) |
 | BDsdKit .sys | 326914 | Baidu オンラインネットワークテクノロジ (北京) Co。 |
 | bd0003 | 326912 | Baidu オンラインネットワークテクノロジ (北京) Co。 |
-| Bfilter. sys | 326910 | Baidu (香港) 限定 |
+| Bfilter. sys | 326910 | Baidu (香港特別行政区) 限定 |
 | NeoKerbyFilter | 326900 | NeoAutus |
 | egnfsflt | 326830 | Egnyte Inc. |
 | RsFlt | 326820 | Redstor 制限 |

@@ -5,14 +5,14 @@ ms.assetid: f251fe07-e68e-4d93-9aa5-9a0bc818756d
 keywords:
 - Driver Verifier WDK、オプションの一覧
 - エラー WDK ドライバーの検証ツール
-ms.date: 04/20/2017
+ms.date: 04/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cce9f32bc71bab128496970d053b3ef0158a6e9e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 95f9bec69d0bfa4d54f1dadce31c5db2cfb55b38
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840280"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208135"
 ---
 # <a name="driver-verifier-options-and-rule-classes"></a>ドライバーの検証ツールのオプションと規則クラス
 
@@ -38,7 +38,7 @@ Windows 10 以降のバージョン17627以降では、次の構文を使用し�
 | -- | -- |
 | 特別なプール        | 1 |
 | 強制 IRQL 検査 | 2 |
-| プールのトラック       | ホーム フォルダーが置かれているコンピューターにアクセスできない |
+| プールのトラック       | 4 |
 | I/O の検証    | 5 |
 | デッドロックの検出  | 6 |
 | DMA チェック | 8 |
@@ -65,11 +65,12 @@ Windows 10 以降のバージョン17627以降では、次の構文を使用し�
 | カーネル同期遅延ファジー テスト | 24 |
 | VM スイッチ検証 | 25 |
 | コードの整合性チェック | 26 |
+| 追加の IRQL チェック | 35 |
 
-## <a name="optional-feature-and-rule-class-descriptions"></a>オプションの機能とルールクラスの説明 
+## <a name="optional-feature-and-rule-class-descriptions"></a>オプションの機能とルールクラスの説明
 
 [特別なプール](special-pool.md)
-    
+
 このオプションが有効になっている場合、ドライバーの検証ツールは、ドライバーのメモリ要求の大部分を特別なプールから割り当てます。 この特別なプールでは、メモリ オーバーラン、メモリ アンダーラン、既に解放されたメモリへのアクセスが監視されます。
 
 [強制 IRQL チェック](force-irql-checking.md)
@@ -94,7 +95,7 @@ Windows 10 以降のバージョン17627以降では、次の構文を使用し�
 
 [強化された i/o 検証](enhanced-i-o-verification.md)
 
-(Windows XP 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、複数の i/o マネージャールーチンの呼び出しを監視し、PnP Irp、停電、および WMI Irp のストレステストを実行します。 Windows 7 以降のバージョンの Windows オペレーティングシステムでは、拡張 i/o 検証のすべての機能が[I/o 検証](i-o-verification.md)の一部として含まれています。また、このオプションをドライバー検証マネージャーまたはから選択する必要もありません。コマンドライン。
+(Windows XP 以降)このオプションが有効になっている場合、ドライバーの検証ツールは、複数の i/o マネージャールーチンの呼び出しを監視し、PnP Irp、停電、および WMI Irp のストレステストを実行します。 Windows 7 以降のバージョンの Windows オペレーティングシステムでは、拡張 i/o 検証のすべての機能が[I/o 検証](i-o-verification.md)の一部として含まれています。また、ドライバー検証マネージャーまたはコマンドラインでこのオプションを選択する必要もありません。
 
 [DMA の検証](dma-verification.md)
 
@@ -174,8 +175,13 @@ Windows 10 以降のバージョン17627以降では、次の構文を使用し�
 
 [WDF の検証](wdf-verification.md)
 
-WDF 検証では、カーネルモードドライバーがカーネルモードドライバーフレームワーク (KMDF) の要件に適切に従っているかどうかを確認します。 
+WDF 検証では、カーネルモードドライバーがカーネルモードドライバーフレームワーク (KMDF) の要件に適切に従っているかどうかを確認します。
 
+[追加の IRQL チェック]()
+
+追加の IRQL チェックにより、PASSIVE_LEVEL に対して DDI 準拠チェックの IRQL 規則が強化されます。 次の2つの規則で構成されます。
+- [IrqlIoRtlZwPassive](wdm-irqliortlzwpassive.md)規則は、ドライバーが IRQL = PASSIVE_LEVEL で実行されている場合にのみ、規則に記載されている DDIs を呼び出すように指定します。
+- [Irqlntifsapcpassive](wdm-irqlntifsapcpassive.md)規則では、ドライバーが irql = PASSIVE_LEVEL または irql < = APC_LEVEL のいずれかで実行されている場合にのみ、規則に記載されている DDIs を呼び出すように指定します。
 
 ## <a name="standard-settings"></a>標準設定
 
@@ -222,10 +228,7 @@ WDF 検証では、カーネルモードドライバーがカーネルモード�
 </tbody>
 </table>
 
- 
-
 ## <a name="driver-verifier-options-that-require-io-verification"></a>I/o 検証を必要とするドライバーの検証ツールオプション
-
 
 先に [I/O の検証](i-o-verification.md)を有効にする必要がある 4 つのオプションがあります。 I/O の検証が有効化されていない場合は、これらのオプションも有効になりません。
 
@@ -233,12 +236,3 @@ WDF 検証では、カーネルモードドライバーがカーネルモード�
 -   [IRP ログ](irp-logging.md)
 -   [不変な MDL のスタック用検査](invariant-mdl-checking-for-stack.md)
 -   [不変な MDL のドライバー用検査](invariant-mdl-checking-for-driver.md)
-
- 
-
- 
-
-
-
-
-

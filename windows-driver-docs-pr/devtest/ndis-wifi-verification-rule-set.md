@@ -1,15 +1,15 @@
 ---
 title: NDIS/WIFI 検証の規則セット
-description: 注 Windows 8.1 で始まるこれらの規則を使用して、NDIS/WIFI ドライバーをテストすることができます。 .
+description: 注 Windows 8.1 で始まるこれらの規則を使用して、NDIS/WIFI ドライバーをテストすることができます。 。
 ms.assetid: B856F42E-E4AD-4178-AF71-3E68A23209C9
 ms.date: 05/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f7ece175abda9d298922787cd24f4ce34187d3e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5d80ae833baf07af952d6fb55b169359d5de6b02
+ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840072"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81208127"
 ---
 # <a name="ndiswifi-verification-rule-set"></a>NDIS/WIFI 検証の規則セット
 
@@ -79,6 +79,10 @@ ms.locfileid: "72840072"
 <td align="left"><p><a href="ndis-ndistimedoidcomplete.md" data-raw-source="[&lt;strong&gt;NdisTimedOidComplete&lt;/strong&gt;](ndis-ndistimedoidcomplete.md)"><strong>NdisTimedOidComplete</strong></a>規則は、NDIS ミニポートドライバーが、12秒以内に OID 要求を完了することを指定します。</p></td>
 </tr>
 <tr class="even">
+<td align="left"><p><a href="ndis-wlanassert.md" data-raw-source="[&lt;strong&gt;WlanAssert&lt;/strong&gt;](ndis-wlanassert.md)"><strong>WlanAssert</strong></a></p></td>
+<td align="left"><p><a href="ndis-wlanassert.md" data-raw-source="[&lt;strong&gt;WlanAssociation&lt;/strong&gt;](ndis-wlanassert.md)"><strong>WlanAssert</strong></a>規則には、WDIWIFI ドライバー内で検証された一連のチェックが含まれています。</p></td>
+</tr>
+<tr class="even">
 <td align="left"><p><a href="ndis-wlanassociation.md" data-raw-source="[&lt;strong&gt;WlanAssociation&lt;/strong&gt;](ndis-wlanassociation.md)"><strong>WlanAssociation</strong></a></p></td>
 <td align="left"><p><a href="ndis-wlanassociation.md" data-raw-source="[&lt;strong&gt;WlanAssociation&lt;/strong&gt;](ndis-wlanassociation.md)"><strong>WlanAssociation</strong></a>ルールは、ミニポートドライバーがネイティブ802.11 ワイヤレス LAN (WLAN) アソシエーションシーケンスに従っていることを確認します。</p></td>
 </tr>
@@ -108,7 +112,7 @@ ms.locfileid: "72840072"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="ndis-wlantimedlinkquality.md" data-raw-source="[&lt;strong&gt;WlanTimedLinkQuality&lt;/strong&gt;](ndis-wlantimedlinkquality.md)"><strong>WlanTimedLinkQuality</strong></a></p></td>
-<td align="left"><p><a href="ndis-wlantimedlinkquality.md" data-raw-source="[&lt;strong&gt;WlanTimedLinkQuality&lt;/strong&gt;](ndis-wlantimedlinkquality.md)"><strong>WlanTimedLinkQuality</strong></a>ルールでは、NDIS_STATUS_DOT11_ASSOCIATION_COMPLETION が成功してから15秒後に NDIS_STATUS_DOT11_LINK_QUALITY が示されることを指定します。</p></td>
+<td align="left"><p><a href="ndis-wlantimedlinkquality.md" data-raw-source="[&lt;strong&gt;WlanTimedLinkQuality&lt;/strong&gt;](ndis-wlantimedlinkquality.md)"><strong>WlanTimedLinkQuality</strong></a>規則は、NDIS_STATUS_DOT11_ASSOCIATION_COMPLETION が成功した後、15秒以内に NDIS_STATUS_DOT11_LINK_QUALITY を示すように指定します。</p></td>
 </tr>
 </tbody>
 </table>
