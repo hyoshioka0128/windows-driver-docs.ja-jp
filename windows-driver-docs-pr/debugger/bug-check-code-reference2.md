@@ -4,12 +4,12 @@ description: このセクションでは、ブルー スクリーンに渡され
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 04/03/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 89c0fb22f5c6232ab237eea4a8cc5609fcfa0a27
-ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
+ms.openlocfilehash: ea3c330f00fc893fad1cadc70fd2c3bd94937ff3
+ms.sourcegitcommit: 8adf72e64e6eddb62b8b7de01f79a748a2112f62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80812510"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81224688"
 ---
 # <a name="bug-check-code-reference"></a>バグ チェック コード リファレンス
 
@@ -452,7 +452,7 @@ WinDbg をダウンロードするには、「[Windows 用デバッグ ツール
 | 0x000001D7 | [**EFS\_FATAL\_ERROR**](bug-check-0x1d7--efs-fatal-error.md)                                                                                      |
 | 0x000001D8 | [**UCMUCSI\_FAILURE**](bug-check-0x1d8--ucmucsi-failure.md)                                                                                       |
 | 0x000001D9 | [**HAL\_IOMMU\_INTERNAL\_ERROR**](bug-check-0x1d8--ucmucsi-failure.md)                                                                            |  
-| 0x000001DA | [**HAL\_BLOCKED\_PROCESSOR\_INTERNAL\_ERROR **](bug-check-0x1da--hal-blocked-processor-internal-error.md)                                         |
+| 0x000001DA | [**HAL\_BLOCKED\_PROCESSOR\_INTERNAL\_ERROR**](bug-check-0x1da--hal-blocked-processor-internal-error.md)                                         |
 | 0x000001DB | [**IPI\_WATCHDOG\_TIMEOUT**](bug-check-0x1db--ipi-watchdog-timeout.md)                                                                            |
 | 0x000001DC | [**DMA_COMMON_BUFFER_VECTOR_ERROR**](bug-check-0x1dc--dma-common-buffer-vector-error.md)                                                          |
 | 0x00000356 | [**XBOX\_ERACTRL\_CS\_TIMEOUT**](bug-check-0x356--xbox-eractrl-cs-timeout.md)                                                                     |
