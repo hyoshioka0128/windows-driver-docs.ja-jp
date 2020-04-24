@@ -5,10 +5,10 @@ description: このトピックでは、Windows Driver Kit (WDK) でドライバ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db6f4fa3a257c04f317ad5569b3d9c444dc1dc0
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261422"
 ---
 # <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>Visual Studio と WDK でのドライバーのビルド
@@ -18,8 +18,8 @@ ms.locfileid: "74261422"
 Microsoft Visual Studio 2015 では、Microsoft Visual Studio Community 2015 を含む任意のエディションを使って、次のシステム用のドライバーをビルドできます。
 
 -   Windows 10
--   Windows 8.1
--   Windows 7
+-   Windows 8.1
+-   Windows 7
 
 **重要**  Windows Driver Kit (WDK) 8 以降では、Windows ビルド ユーティリティ (Build.exe) は MSBuild に置き換えられました。 現在の WDK は、Visual Studio プロジェクトをビルドする場合と同じコンパイラとビルド ツールを使います。 以前のバージョンの WDK でビルドしたドライバー プロジェクトは、Visual Studio 環境で動作するように変換する必要があります。 変換ユーティリティは、コマンド ラインから実行できます。既にあるソースから新しい Visual Studio プロジェクトを作成することによって、既にあるドライバーを変換することもできます。 詳しくは、「[既にあるソース ファイルからのドライバーの作成](creating-a-driver-from-existing-source-files.md)」と「[WDK と Visual Studio のビルド環境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)」をご覧ください。
 
@@ -98,7 +98,7 @@ WDK には、[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devt
 <thead>
 <tr class="header">
 <th align="left">ドライバー プロジェクトのプロパティ</th>
-<th align="left">ドライバー パッケージのプロパティ</th>
+<th align="left">ドライバ パッケージのプロパティ</th>
 </tr>
 </thead>
 <tbody>

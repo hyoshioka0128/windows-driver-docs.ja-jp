@@ -5,10 +5,10 @@ description: Windows 8 用 WDK には、Device Fundamental テストと呼ば�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 155e3e4d792052db0e7bb4a24fb439bb8eefcf69
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72839613"
 ---
 # <a name="how-to-select-and-configure-the-device-fundamentals-tests"></a>Device Fundamental テストを選んで構成する方法
@@ -244,22 +244,22 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">テスト</th>
+<th align="left">Server1</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Display_devices_that_have_WDTF_Simple_I_O_plug-ins"></span><span id="display_devices_that_have_wdtf_simple_i_o_plug-ins"></span><span id="DISPLAY_DEVICES_THAT_HAVE_WDTF_SIMPLE_I_O_PLUG-INS"></span>WDTF シンプル I/O プラグインを持つデバイスの表示</p></td>
-<td align="left"><p><strong>パラメータ:</strong>なし</p></td>
+<td align="left"><p><strong>パラメータ:</strong>None</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Display_devices_that_have_Driver_Verifier_enabled"></span><span id="display_devices_that_have_driver_verifier_enabled"></span><span id="DISPLAY_DEVICES_THAT_HAVE_DRIVER_VERIFIER_ENABLED"></span>ドライバーの検証ツールが有効になっているデバイスの表示</p></td>
-<td align="left"><p><strong>パラメータ:</strong>なし</p></td>
+<td align="left"><p><strong>パラメータ:</strong>None</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Display_devices"></span><span id="display_devices"></span><span id="DISPLAY_DEVICES"></span>ディスプレイ デバイス</p></td>
-<td align="left"><p><strong>パラメータ:</strong>なし</p></td>
+<td align="left"><p><strong>パラメータ:</strong>None</p></td>
 </tr>
 </tbody>
 </table>
@@ -276,7 +276,7 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">テスト</th>
+<th align="left">Server1</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -284,7 +284,7 @@ WDTF_SIMPLE_IO            :INFO  :  - Open(KMDFTest Device ROOT\SAMPLE\0000 ) Tr
 <tr class="odd">
 <td align="left"><p><span id="Disable_Driver_Verifier"></span><span id="disable_driver_verifier"></span><span id="DISABLE_DRIVER_VERIFIER"></span>Disable Driver Verifier (ドライバーの検証ツールの無効化)</p></td>
 <td align="left"><p>テスト コンピューターで<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>を無効にします。</p>
-<p><strong>パラメータ:</strong>なし</p></td>
+<p><strong>パラメータ:</strong>None</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Enable_Driver_Verifier"></span><span id="enable_driver_verifier"></span><span id="ENABLE_DRIVER_VERIFIER"></span>Enable Driver Verifier (ドライバーの検証ツールの有効化)</p></td>

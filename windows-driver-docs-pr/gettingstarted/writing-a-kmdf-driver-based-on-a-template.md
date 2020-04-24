@@ -6,12 +6,12 @@ keywords:
 - KMDF ドライバーの作成
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 93b1d7ec9576a9ec817ef6f7aa1f64797a5fa1f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf1f284a64b66737bed3cd89bc9ffbd04c22aa6c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359295"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81679076"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
 
@@ -60,7 +60,7 @@ ms.locfileid: "67359295"
 1. 「[ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)](provision-a-target-computer-wdk-8-1.md)」の手順に従ってください。
 
     > [!TIP]
-    > 手順に従って、ネットワーク ケーブルを使用して自動的に対象のコンピューターをプロビジョニングする場合は、ポートとキーを書き留めます。 デバッグの手順の後半でそれを使用します。 この例では、ポートに **50000**、キーに **1.2.3.4** を使用します。
+    > 手順に従って、ネットワーク ケーブルを使用して自動的にターゲットコンピューターをプロビジョニングする場合は、ポートとキーを書き留めます。 デバッグの手順の後半でそれを使用します。 この例では、ポートに **50000**、キーに **1.2.3.4** を使用します。
     >
     > 実際のドライバー デバッグのシナリオでは、KDNET で生成されたキーを使用することをお勧めします。 KDNET を使用してランダム キーを生成する方法の詳細については、[ドライバーのデバッグ - ステップ バイ ステップ ラボ (Sysvad カーネル モード)](../debugger/debug-universal-drivers--kernel-mode-.md)のトピックを参照してください。
 
@@ -97,7 +97,7 @@ ms.locfileid: "67359295"
 
     DevCon ツールをリモート コンピューターにコピーします。
 
-2. 対象のコンピューターでは、ドライバー ファイルを含むフォルダーに移動し、DevCon ツールを実行してドライバーをインストールします。
+2. ターゲットコンピューターでは、ドライバー ファイルを含むフォルダーに移動し、DevCon ツールを実行してドライバーをインストールします。
     1. ここで示しているのは、ドライバーのインストールに使う devcon ツールの一般的な構文です。
 
         *devcon install \<INF ファイル\> \<ハードウェア ID\>*
@@ -107,7 +107,7 @@ ms.locfileid: "67359295"
 
         **devcon install kmdfdriver.inf root\\kmdfdriver**
 
-        *devcon* が認識されないというエラー メッセージが表示された場合は、*devcon* ツールへのパスを追加してみてください。 たとえば、ターゲットコンピューター上の *C:\\Tools* という名前のフォルダーにコピーする場合は、次のコマンドを使ってみてください。
+        *devcon* が認識されないというエラー メッセージが表示された場合は、*devcon* ツールへのパスを追加してみてください。 たとえば、ターゲットコンピューター上の *C:\\Tools* という名前のフォルダーにコピーする場合は、次のコマンドを使ってみます。
 
         **c:\\tools\\devcon install kmdfdriver.inf root\kmdfdriver**
 
@@ -123,7 +123,7 @@ ms.locfileid: "67359295"
 
     *C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64*
 
-2. 次のコマンドを使用して、対象のコンピューターで WinDbg を起動してカーネル デバッグ セッションに接続します。 ポートとキーの値は、対象のコンピューターをプロビジョニングするために使用したものと同じである必要があります。 ポートに **50000**、キーに **1.2.3.4** を使用します。これは展開の手順で使用した値です。 *k* フラグは、これがカーネル デバッグ セッションであることを示します。
+2. 次のコマンドを使用して、対象のコンピューターで WinDbg を起動してカーネル デバッグ セッションに接続します。 ポートとキーの値は、ターゲットコンピューターをプロビジョニングするために使用したものと同じである必要があります。 ポートに **50000**、キーに **1.2.3.4** を使用します。これは展開の手順で使用した値です。 *k* フラグは、これがカーネル デバッグ セッションであることを示します。
 
     **WinDbg -k net:port=50000,key=1.2.3.4**
 
@@ -144,7 +144,7 @@ ms.locfileid: "67359295"
 
 ドライバー デバッグ プロセスの詳細な手順については、「[ユニバーサル ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)」を参照してください。
 
-リモート デバッグの詳細については、「[WinDbg を使用したリモート デバッグ](../debugger/remode-debugging-using-windbg.md)」を参照してください。
+リモート デバッグの詳細については、「[WinDbg を使用したリモート デバッグ](../debugger/remote-debugging-using-windbg.md)」を参照してください。
 
 ## <a name="using-the-driver-module-framework-dmf"></a>Driver Module Framework (DMF) の使用
 

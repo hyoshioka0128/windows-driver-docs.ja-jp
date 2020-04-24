@@ -2,14 +2,14 @@
 title: 製品データの取得
 description: Microsoft ハードウェア API の以下のメソッドは、デベロッパー センター アカウントに登録されているハードウェア製品のデータを取得します。
 ms.topic: article
-ms.date: 04/05/2018
+ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d881ea71051ac1c65c2c06207cef7ebab7953b1
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 426ef28c766ff2f052253021528efc6fc9a688fd
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243069"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82039812"
 ---
 # <a name="get-product-data"></a>製品データの取得
 
@@ -42,11 +42,11 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 ```json
 {
-  "id”: 9007199267351834,
-  “sharedProductId”: 1152921504606971100,
-  “links”: [
+  "id": 9007199267351834,
+  "sharedProductId": 1152921504606971100,
+  "links": [
     {
-      “href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
+      "href": "https:// manage.devcenter.microsoft.com/api/v2.0/hardware/products/9007199267351834",
       "rel": "self",
       "method": "GET"
     },
@@ -91,7 +91,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | isCommitted | ブール型 | 製品に少なくとも 1 つのコミットされた申請があるかどうかを示します  |
 | isExtensionInf | ブール型 | (非推奨) 製品が拡張ドライバーかどうかを示します。 このフィールドは非推奨です。今後は使用しないでください。 isExtensionInf は申請レベルのプロパティに移動されました。 |
 | deviceMetadataIds | GUID の配列 | デバイス メタデータの提出をドライバーにマップする GUID |
-| deviceType | String | デバイスの種類を示します。 設定可能な値は、次のとおりです。<ul><li>“internal” - 内部コンポーネント、システムの一部として PC 内部に接続されるデバイス</li><li>“external” - 外部コンポーネント、PC に接続される外部デバイス (周辺機器)</li><li>“internalExternal” - その両方、内部的に (PC 内で) 接続できるほか、外部的にも (周辺機器として) 接続できるデバイス</li><li>“notSet” – データが存在しない</li></ul>|
+| deviceType | String | デバイスの種類を示します。 設定可能な値は、次のとおりです。<ul><li>"internal" - 内部コンポーネント、システムの一部として PC 内部に接続されるデバイス</li><li>"external" - 外部コンポーネント、PC に接続される外部デバイス (周辺機器)</li><li>"internalExternal" - その両方、内部的に (PC 内で) 接続できるほか、外部的にも (周辺機器として) 接続できるデバイス</li><li>"notSet" – データが存在しない</li></ul>|
 | isTestSign | ブール型 | 製品がテスト署名されたドライバーかどうかを示します。 ドライバー パッケージのテスト署名の詳細については、「[WHQL Test Signature Program](https://docs.microsoft.com/windows-hardware/drivers/install/whql-test-signature-program)」(WHQL テスト署名プログラム) を参照してください。  |
 | isFlightSign | ブール型 | 製品がフライト署名されたドライバーかどうかを示します。 フライト署名されたドライバーは、Windows Update を通じて公開できるテスト ドライバーです。 これらは、Windows Insider Program 用にサインアップしているコンピューターにのみ公開/インストールできます。 これらは、セキュア ブートを無効にすることなく、コンピューターにインストールできます。 これらは、Windows Insider Program の一部ではない、製品版のコンピューターにはインストールできません。|
 | marketingNames | 文字列の配列 | 製品のマーケティング名またはエイリアス |
@@ -199,7 +199,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | 値 | 種類 | 説明 |
 |:--|:--|:--|
 | 項目 | array | ダウンロードの種類と、それぞれの URL の配列です。 詳細については、以下を参照してください。 |
-| 種類 | string | ダウンロード可能なパッケージの種類。 設定可能な値は、次のとおりです。<ul><li>“initialPackage” – ユーザーがアップロードしたパッケージ (新しい申請の場合、パッケージのアップロードに使用する SAS URI をポイントします)</li><li>“derivedPackage” – 派生申請のためのシェル</li><li>“signedPackage” – Microsoft によって署名されているパッケージ</li><li>“certificationReport” – 署名された製品の認定レポート</li></ul>|
+| 種類 | string | ダウンロード可能なパッケージの種類。 設定可能な値は、次のとおりです。<ul><li>"initialPackage" – ユーザーがアップロードしたパッケージ (新しい申請の場合、パッケージのアップロードに使用する SAS URI を指します)</li><li>"derivedPackage" – 派生申請のためのシェル</li><li>"signedPackage" – Microsoft によって署名されているパッケージ</li><li>"certificationReport" – 署名された製品の認定レポート</li></ul>|
 | Messages | array | ダウンロード可能なファイルについてのメッセージを提供する文字列の配列 |
 
 ### <a name="link-object"></a>リンク オブジェクト
@@ -396,6 +396,10 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
 | Windows_v100_19H1 | Windows 10 19H1 更新プログラム |
+| Windows_v100_VB | Windows 10 の今後の更新プログラム |
+
+>[!NOTE]
+>Windows_v100_VB オペレーティング システム ファミリのコードは、その更新プログラムがリリースされるまで有効ではありません。
 
 ### <a name="list-of-operating-system-codes"></a>オペレーティング システム コードの一覧
 
@@ -456,6 +460,12 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |WINDOWS_v100_19H1_FULL |Windows 19H1 クライアント x86 |
 |WINDOWS_v100_X64_19H1_FULL |Windows 19H1 クライアント x64 |
 |WINDOWS_v100_ARM64_19H1_FULL | Windows 19H1 クライアント ARM64 |
+|WINDOWS_v100_VB_FULL | Windows 10 (次の更新) クライアント x86 |
+|WINDOWS_v100_X64_VB_FULL | Windows (次の更新) クライアント x64 |
+|WINDOWS_v100_ARM64_VB_FULL | Windows (次の更新) クライアント ARM64 |
+
+>[!NOTE]
+>3 つの \*_VB\* オペレーティング システム コードは、その更新プログラムがリリースされるまで有効ではありません。
 
 ## <a name="error-codes"></a>エラー コード
 

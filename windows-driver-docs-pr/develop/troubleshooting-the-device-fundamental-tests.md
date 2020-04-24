@@ -5,10 +5,10 @@ description: このトピックでは、WDK を使って Device Fundamental テ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ab5a9eecc731f01f5b93e966ffed3a3fa0be69c7
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364202"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>ドライバーの展開、テスト、およびデバッグに関する構成のトラブルシューティング

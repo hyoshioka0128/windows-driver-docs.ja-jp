@@ -5,10 +5,10 @@ description: カウンター マニフェストの解析と検証を行う CTRPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: f33684b24b51557b594f9153c82048a3e396cae3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370819"
 ---
 # <a name="counters-manifest-preprocessor-properties-for-driver-projects"></a>ドライバー プロジェクトのカウンター マニフェスト プリプロセッサ プロパティ
@@ -31,7 +31,7 @@ ms.locfileid: "67370819"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>

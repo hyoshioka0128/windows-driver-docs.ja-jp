@@ -5,17 +5,17 @@ description: ApiValidator.exe ツールを使うと、ドライバーから呼�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 78b5827d01525464f5660e863bf48c7a3e66ae21
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344036"
 ---
 # <a name="validating-universal-windows-drivers"></a>ユニバーサル Windows ドライバーの検証
 
 ApiValidator.exe ツールを使うと、バイナリから呼び出される API が、ユニバーサル Windows ドライバーにとって有効であるかどうかを確認できます。 ユニバーサル Windows ドライバーにとって有効な API セットの外部にある API をバイナリが呼び出すと、エラーが返されます。 このツールは、Windows Driver Kit (WDK) for Windows 10 の一部です。
 
-## <a name="span-idrunningapivalidatorinvisualstudiospanspan-idrunningapivalidatorinvisualstudiospanspan-idrunningapivalidatorinvisualstudiospanrunning-apivalidator-in-visual-studio"></a><span id="Running_ApiValidator_in_Visual_Studio"></span><span id="running_apivalidator_in_visual_studio"></span><span id="RUNNING_APIVALIDATOR_IN_VISUAL_STUDIO"></span>Visual Studio での ApiValidator の実行
+## <a name="span-idrunning_apivalidator_in_visual_studiospanspan-idrunning_apivalidator_in_visual_studiospanspan-idrunning_apivalidator_in_visual_studiospanrunning-apivalidator-in-visual-studio"></a><span id="Running_ApiValidator_in_Visual_Studio"></span><span id="running_apivalidator_in_visual_studio"></span><span id="RUNNING_APIVALIDATOR_IN_VISUAL_STUDIO"></span>Visual Studio での ApiValidator の実行
 
 
 ドライバー プロジェクトの **[ターゲット プラットフォーム]** プロパティが **[ユニバーサル]** に設定されていれば、Visual Studio はビルド後の手順として自動的に ApiValidator を実行します。

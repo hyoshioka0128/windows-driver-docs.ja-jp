@@ -5,10 +5,10 @@ ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c146762cf55ceb51c081c0852fa966424e6df221
-ms.sourcegitcommit: 459c7928a7917609afb68bafb65c2fcc1d9040ff
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "69887197"
 ---
 # <a name="device-filter-driver-ordering"></a>デバイス フィルター ドライバーの順序
@@ -103,7 +103,7 @@ AddFilter = <FilterName>, [Flags], FilterSection
 
 FilterLevel または FilterPosition は 2 つの方法のいずれかで指定できます。
 
-**選択肢 1:**
+**選択肢 1**
 
 ```INF
 [FilterSection]

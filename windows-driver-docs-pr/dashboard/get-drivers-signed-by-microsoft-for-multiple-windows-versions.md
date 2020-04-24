@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6d70012306391ab0b95550962673213e43d1d3
-ms.sourcegitcommit: cdb75f4fae5b4da47c860205e407c5a7a44b89b6
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68446388"
 ---
 # <a name="get-drivers-signed-by-microsoft-for-multiple-windows-versions"></a>複数の Windows バージョンで Microsoft によって署名されたドライバーを取得する
@@ -36,7 +36,7 @@ ms.locfileid: "68446388"
 
 ダッシュボードで申請機能にアクセスするには、会社にバインドされた EV 証明書が必要です。
 
-[ハードウェア デベロッパー センター (Sysdev)](dashboard-services.md) 内で、組織の識別に使う証明書を確認するには、組織のアカウントの管理者としてログインする必要があります。 **[管理]** &gt; **[Upload a new digital certificate]** (新しいデジタル証明書をアップロード) の順にクリックします。
+[ハードウェア デベロッパー センター (Sysdev)](dashboard-services.md) 内で、組織の識別に使う証明書を確認するには、組織のアカウントの管理者としてログインする必要があります。 **[管理]** &gt; **[Upload a new digital certificate]\(新しいデジタル証明書をアップロード\)** の順に選択します。
 
 パートナー センター内で、組織の識別に使う証明書を確認する場合は、「[コード署名証明書の更新](https://docs.microsoft.com/windows-hardware/drivers/dashboard/update-a-code-signing-certificate)」をご覧ください。
 
@@ -98,7 +98,7 @@ HLK テストの結果をダッシュボードに提出する方法を次に示�
 
 ハードウェア デベロッパー センター (Sysdev) に提出した WLK 提出、システム提出、または構成証明署名済みドライバーの場合:
 
-- **[ハードウェアの互換性]** &gt; **[送信の管理]** &gt; の順に選択したときに、 **[Summary and Tasks]** (概要とタスク) タブの [状態] が **[承認済み]** になっていた場合は、申請を取得する準備ができています。 画面の右下隅の **[ダウンロード]** の下の **[Signed driver package]** (署名済みドライバー パッケージ) をクリックします。 Microsoft では、署名済みの申請を含むインメモリ zip ファイルをストリーム配信します。
+- **[ハードウェアの互換性]** &gt; **[送信の管理]** &gt; の順に選択したときに、 **[Summary and Tasks]\(概要とタスク\)** タブの [状態] が **[承認済み]** になっていた場合は、申請を取得する準備ができています。 画面の右下隅の **[ダウンロード]** の下の **[Signed driver package]** (署名済みドライバー パッケージ) をクリックします。 Microsoft では、署名済みの申請を含むインメモリ zip ファイルをストリーム配信します。
 
 申請フォルダーにはパッケージ ファイルが含まれます。 これらのファイルは、Microsoft によって署名されています。 パートナーは、返されたペイロードに署名する必要はありません。 Microsoft は、常に、承認済みの申請に .cat ファイルを添付して返します。 パートナーが独自の .cat ファイルを含めた場合は、 Microsoft はこれを破棄し、Microsoft の署名済み .cat ファイルを返します。
 

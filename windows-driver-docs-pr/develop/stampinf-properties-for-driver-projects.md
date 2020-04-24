@@ -5,10 +5,10 @@ description: Stampinf ツール用のプロパティを設定します。 ドラ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 75d7d9cb94387f22ccc82fc7f7ee48c0d5e66ce8
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393070"
 ---
 # <a name="stampinf-properties-for-driver-projects"></a>ドライバー プロジェクトの Stampinf プロパティ

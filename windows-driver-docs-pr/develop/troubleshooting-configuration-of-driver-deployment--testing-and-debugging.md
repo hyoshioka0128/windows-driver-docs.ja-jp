@@ -5,10 +5,10 @@ description: ドライバー展開用の Visual Studio のプロビジョニン�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 92c41da624e1f1285e0a2cc60c47cec5e3f9cb60
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364211"
 ---
 # <a name="troubleshooting-configuration-of-driver-deployment-testing-and-debugging"></a>ドライバーの展開、テスト、およびデバッグに関する構成のトラブルシューティング

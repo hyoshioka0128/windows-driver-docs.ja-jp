@@ -5,10 +5,10 @@ description: Message Compiler (MC.exe) ツール用のプロパティを設定�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f5cbea73bb79d260dc703c226a5898c2784ecf5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364258"
 ---
 # <a name="message-compiler-properties-for-driver-projects"></a>ドライバー プロジェクトのメッセージ コンパイラ プロパティ
@@ -33,7 +33,7 @@ ms.locfileid: "67364258"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -150,7 +150,7 @@ ms.locfileid: "67364258"
 <tr class="even">
 <td align="left"><p><span id="Unicode_Message_In_Bin_File"></span><span id="unicode_message_in_bin_file"></span><span id="UNICODE_MESSAGE_IN_BIN_FILE"></span><strong>Unicode Message In Bin File (Bin ファイル内の Unicode メッセージ)</strong></p></td>
 <td align="left"><p>出力 .bin ファイル内のメッセージが Unicode であることを指定します。 (<strong>-U</strong>)</p>
-<p>これが既定値です。</p></td>
+<p>これは既定です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Use_Base_Name_Of_Input"></span><span id="use_base_name_of_input"></span><span id="USE_BASE_NAME_OF_INPUT"></span><strong>Use Base Name Of Input (入力のベース名を使う)</strong></p></td>

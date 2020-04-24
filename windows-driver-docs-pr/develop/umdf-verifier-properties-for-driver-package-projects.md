@@ -5,10 +5,10 @@ description: テスト コンピューター上の UMDF 検証ツールのプロ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a35afe6236b5018df0cf51f4384d9d81cf8fc6c
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364204"
 ---
 # <a name="umdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの UMDF 検証ツール プロパティ
@@ -33,13 +33,13 @@ UMDF ドライバーのデバッグについて詳しくは、「[UMDF ドライ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="_Deploy_UMDF_Verifier"></span><span id="_deploy_umdf_verifier"></span><span id="_DEPLOY_UMDF_VERIFIER"></span><strong>Deploy UMDF Verifier (UMDF 検証ツールを展開する)</strong></p></td>
+<td align="left"><p><span id="_Deploy_UMDF_Verifier"></span><span id="_deploy_umdf_verifier"></span><span id="_DEPLOY_UMDF_VERIFIER"></span> <strong>Deploy UMDF Verifier (UMDF 検証ツールを展開する)</strong></p></td>
 <td align="left"><p>テスト コンピューターで UMDF 検証ツールの設定を有効にします。</p></td>
 </tr>
 <tr class="even">
