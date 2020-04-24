@@ -5,10 +5,10 @@ description: Windows Server 2012 ハードウェア認定プログラムでは�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e21d7f99c4c8c27402e0624152e79c8151bc8df
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370791"
 ---
 # <a name="creating-a-log-file-for-the-code-analysis-tool"></a>コード分析ツールのログ ファイルの作成
@@ -23,7 +23,7 @@ Windows Server 2012 [ハードウェア認定プログラム](https://go.micros
 
 ドライバーのコード分析ツールでは、ビルド構成およびプロジェクトのプラットフォームのサブディレクトリ (たとえば \\Windows 8Release\\x64) の vc.nativecodeanalysis.all.xml ファイルに結果が書き込まれます。
 
-## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>解説
+## <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
 ドライバーのコード分析は、C/C++ プログラムの基本的なコーディング エラーをコンパイル時に検出する静的検証ツールです。(主に) カーネル モード ドライバーのコードからエラーを検出することを目的に特化されたモジュールが備わっています。 以前のバージョンの WDK では、コード分析用のドライバー固有のモジュールが、PREfast for Drivers (PFD) と呼ばれるスタンドアロン ツールに組み込まれていました。
@@ -34,7 +34,7 @@ Windows Server 2012 [ハードウェア認定プログラム](https://go.micros
 "C:\Program Files\Microsoft Visual Studio 11.0\VC\vcvarsall.bat" x64
 ```
 
-\- または -
+-または-
 
 ```cpp
 "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat" x64

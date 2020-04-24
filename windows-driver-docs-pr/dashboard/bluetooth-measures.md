@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 77288a6a95e0df582c011403ab0c148cc7b1576b
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017086"
 ---
 # <a name="bluetooth-measures"></a>Bluetooth の測定値

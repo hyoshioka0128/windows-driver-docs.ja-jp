@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: e9926776d8e700eadd0a1ab1fe0511e645a3e231
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016950"
 ---
 # <a name="percent-of-internet-connection-failures-from-the-top-95-percent-of-device-and-access-point-pairs-that-have-greater-than-50-percent-signal-quality"></a>インターネット接続エラーの割合 (信号品質が 50% を超えるデバイスとアクセスポイントのペアの上位 95% から)
@@ -19,9 +19,9 @@ ms.locfileid: "71016950"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日|
 |**測定基準**|インスタンスの集計|
 |**最小インスタンス**|3,000|
@@ -32,7 +32,7 @@ ms.locfileid: "71016950"
 
 1. この測定値は、**デバイスが Wi-Fi 経由でインターネットに接続できなかったインスタンスの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 
-   a. インスタンスは、マシンと一意の AP のペアリングです。この測定値は、デバイスと AP のペアごとに、1 つのデータ ポイントとして、Wi-Fi 経由によるインターネットへの接続の全試行を集計したものです。
+   a。 インスタンスは、マシンと一意の AP のペアリングです。この測定値は、デバイスと AP のペアごとに、1 つのデータ ポイントとして、Wi-Fi 経由によるインターネットへの接続の全試行を集計したものです。
 
    b. この測定値では、シグナルの強さが 50% 未満のデバイスと AP のペアは集計されません。
 

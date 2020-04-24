@@ -5,10 +5,10 @@ description: WDK には、ネットワーク上のテスト コンピュータ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b913f148d2430c7068b16cb582d42dfe7e02708c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72839609"
 ---
 # <a name="how-to-test-a-driver-at-runtime-from-a-command-prompt"></a>コマンド プロンプトから実行時にドライバーをテストする方法
@@ -26,7 +26,7 @@ WDK 8.1 以降、コマンド スクリプトを使って、テスト コンピ�
 <a name="instructions"></a>手順
 ------------
 
-### <a name="span-idcopy_the_tests_to_the_test_computerspanspan-idcopy_the_tests_to_the_test_computerspanspan-idcopy_the_tests_to_the_test_computerspanstep-1-copy-the-tests-to-the-test-computer"></a><span id="Copy_the_tests_to_the_test_computer"></span><span id="copy_the_tests_to_the_test_computer"></span><span id="COPY_THE_TESTS_TO_THE_TEST_COMPUTER"></span>ステップ 1:テスト コンピューターにテストをコピーする
+### <a name="span-idcopy_the_tests_to_the_test_computerspanspan-idcopy_the_tests_to_the_test_computerspanspan-idcopy_the_tests_to_the_test_computerspanstep-1-copy-the-tests-to-the-test-computer"></a><span id="Copy_the_tests_to_the_test_computer"></span><span id="copy_the_tests_to_the_test_computer"></span><span id="COPY_THE_TESTS_TO_THE_TEST_COMPUTER"></span>手順 1: テスト コンピューターにテストをコピーする
 
 -   [Device Fundamental のテスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)を開発用のコンピューターからコピーします。 フォルダー %ProgramFiles%\\Windows Kits\\8.0\\Testing\\Tests\\Device Fundamentals をテスト コンピューターにコピーします。
 
@@ -38,7 +38,7 @@ WDK 8.1 以降、コマンド スクリプトを使って、テスト コンピ�
 Te.exe [/name:<Test Method>] [<Test Name>.dll | <Test Name.wsc> ]  [/rebootStateFile=<file> ] [/enablewttlogging]  [/P:"DQ= <>" ]  
 ```
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 テスト バイナリ (.dll) ファイルまたはスクリプト (.wsc) ファイルを指定する必要があります。 テスト メソッド ( **/name:** _&lt;テスト メソッド&gt;_ ) は省略可能です。 テスト名とテスト メソッドについては、「[Device Fundamental のテスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)」をご覧ください。 テスト パラメーターの指定方法については、「[Device Fundamental テストのパラメーター](how-to-select-and-configure-the-device-fundamental-tests.md)」と「[Te.exe のコマンド オプション](https://docs.microsoft.com/windows-hardware/drivers/taef/te-exe-command-line-parameters)」をご覧ください。

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4410cd826e6735d7b5ad57033f5d06e3a3d3d83c
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017082"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>カメラの初期化エラー率
@@ -19,9 +19,9 @@ ms.locfileid: "71017082"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|インスタンスの集計|
 |**最小母集団**|10 個のインスタンス|
@@ -32,11 +32,11 @@ ms.locfileid: "71017082"
 
 1. この測定値は、**カメラ デバイスで初期化が失敗したインスタンスの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 
-   a. 一意のデバイスで、1 時間あたり 1 つの初期化インスタンスがカウントされます。
+   a。 一意のデバイスで、1 時間あたり 1 つの初期化インスタンスがカウントされます。
 
 2. インスタンスの種類:
 
-   a. "*成功した初期化イベント = 0% の失敗*"
+   a。 "*成功した初期化イベント = 0% の失敗*"
 
        i. MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0
 

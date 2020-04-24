@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 19542734f4689dc23db5f87f211aadb34b15e7ef
-ms.sourcegitcommit: 8486945726d87cf983a7035360059d9f9ab765a7
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68808266"
 ---
 # <a name="errors-and-solutions-when-submitting-device-metadata-experiences"></a>デバイス メタデータ エクスペリエンスを申請する際のエラーと解決方法
@@ -22,7 +22,7 @@ ms.locfileid: "68808266"
 
 ### <a name="to-solve-common-errors"></a>一般的なエラーを解決するには
 
-|エラー|推奨される解決策|
+|Error|推奨される解決策|
 |----|----|
 |:::no-loc text="\[CategoryName] Category id is incorrect in Behavior.xml. Correct Category id is \[CategoryId]"::: | 詳しくは、[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658) に関するページをご覧ください。 |
 |:::no-loc text="\[CategoryName] Guid \[CategoryId] is required for your device in Behavior.xml.":::|詳しくは、[Microsoft Device Experience Development Kit](https://go.microsoft.com/fwlink/p/?LinkId=241658) に関するページをご覧ください。|
@@ -114,7 +114,7 @@ ms.locfileid: "68808266"
 
 ## <a name="related-topics"></a>関連トピック
 
-[デバイス メタデータ エクスペリエンスの作成](https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-device-metadata-experience)
+[デバイス メタデータ エクスペリエンスを作成する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/create-a-device-metadata-experience)
 
 [デバイス メタデータ パッケージを申請する (ダッシュボード ヘルプ)](https://docs.microsoft.com/windows-hardware/drivers/dashboard/submit-a-device-metadata-package--dashboard-help-)
 

@@ -5,10 +5,10 @@ description: ドライバーのテスト
 ms.date: 06/28/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fa185c23d5d2b7c3f99e74d27482ff065f4d2c
-ms.sourcegitcommit: 46654c090f937923d9712de114fdebe7deffeaaf
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67427688"
 ---
 # <a name="testing-a-driver"></a>ドライバーのテスト

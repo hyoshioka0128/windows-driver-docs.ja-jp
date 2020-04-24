@@ -4,10 +4,10 @@ description: ユニバーサル Windows ドライバーで使用できるデバ�
 ms.date: 08/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 863cd334378d325f815e7704bd9078e2b53357cc
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020679"
 ---
 # <a name="debugging-a-universal-windows-driver"></a>ユニバーサル Windows ドライバーのデバッグ 

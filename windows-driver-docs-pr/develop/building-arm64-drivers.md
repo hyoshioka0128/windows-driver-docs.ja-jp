@@ -4,10 +4,10 @@ description: このトピックでは、Windows Driver Kit (WDK) で ARM64 ド�
 ms.date: 01/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f087caa719f84620358aafbcb1904e30835824e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370364"
 ---
 # <a name="building-arm64-drivers-with-the-wdk"></a>WDK を使った ARM64 ドライバーのビルド

@@ -5,10 +5,10 @@ description: Windows Server 2012 ハードウェア認定プログラムでは�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 630db8890a4710b71178e3357bffa819bd4cc902
-ms.sourcegitcommit: c9e5aa086b72ae9c1a31bf952d0711383cfd4bbd
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77575204"
 ---
 # <a name="creating-a-driver-verification-log"></a>ドライバー検証ツール ログの作成

@@ -5,10 +5,10 @@ description: ここでは、Version 8.0 の Windows Driver Kit (WDK) を使っ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cdf440bc787828d3d5bda4db778d6a08a843a79
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364174"
 ---
 # <a name="what-happens-when-you-provision-a-computer-wdk-80"></a>コンピューターのプロビジョニングで実行される処理 (WDK 8.0)

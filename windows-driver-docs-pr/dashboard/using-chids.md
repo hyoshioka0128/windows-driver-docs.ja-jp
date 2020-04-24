@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad7467b621ce12ca4429506be87f9a30c763b56
-ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68483068"
 ---
 # <a name="using-computer-hardware-ids-chids"></a>コンピューター ハードウェア ID (CHID) の使用
@@ -27,7 +27,7 @@ Windows 10 では、ベースボード製造元とベースボード製品情報
 <thead>
 <tr class="header">
 <th>HWID</th>
-<th>目次</th>
+<th>内容</th>
 </tr>
 </thead>
 <tbody>

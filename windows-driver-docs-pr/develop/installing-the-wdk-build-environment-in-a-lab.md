@@ -5,10 +5,10 @@ description: Windows Driver Kit (WDK) 8.1 では、Visual Studio と WDK のコ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 5072737d94c1546f29953147edbdf8b44304929d
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344855"
 ---
 # <a name="installing-the-wdk-81-build-environment-in-a-lab"></a>ラボに WDK 8.1 ビルド環境をインストールする
@@ -20,7 +20,7 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
 **注**  この機能を使用できるのは、C および C++ を使うドライバーやアプリケーションをビルドする場合だけです。 マネージ コードや UWP アプリで使うことはできません。
 
 
-## <a name="1-download-the-visual-studio-and-wdk-and-sdk-setup-files"></a>1. Visual Studio、WDK、SDK のセットアップ ファイルのダウンロード
+## <a name="1-download-the-visual-studio-and-wdk-and-sdk-setup-files"></a>1.Visual Studio、WDK、SDK のセットアップ ファイルのダウンロード
 
 
 この機能を有効にするセットアップ スクリプトを実行するには、Visual Studio と WDK のセットアップ ファイルのパスを指定する必要があります。 これらのファイルを (インストールするのではなく) 保存してください。
@@ -29,7 +29,7 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
 2.  スタンドアロンの [SDK](https://go.microsoft.com/fwlink/p/?linkid=323507) をダウンロードします。 sdksetup.exe を実行するか保存するかを確認するメッセージが表示されたら、 **[実行]** をクリックし、ダウンロードの場所として **C:\\Kits\\SDK** を指定します。 **[次へ]** をクリックし、指示に従ってスタンドアロンの SDK をダウンロードします。
 3.  [WDK 8.1](https://go.microsoft.com/fwlink/p/?linkid=317353) をダウンロードします。 wdksetup.exe を実行するか保存するかを確認するメッセージが表示されたら、 **[実行]** をクリックし、ダウンロードの場所として **C:\\Kits\\WDK** を指定します。 **[次へ]** をクリックし、指示に従って WDK をダウンロードします。 コンピューターに既に WDK がインストールされている場合は、コンピューターにインストールされている機能は最新であるというメッセージが Web インストール プログラムから表示されます。 ビルド環境に配置できるように WDK セットアップ ファイルをダウンロードするには、 **[次へ]** をクリックし、**C:\\Kits\\WDK** というパスを指定します。
 
-## <a name="span-iddownloadscriptspanspan-iddownloadscriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.BuildLabSupport ファイルのダウンロード
+## <a name="span-iddownload_scriptspanspan-iddownload_scriptspan2-download-the-buildlabsupport-files"></a><span id="download_script"></span><span id="DOWNLOAD_SCRIPT"></span>2.BuildLabSupport ファイルのダウンロード
 
 
 ラボ内のコンピューターに WDK ビルド環境をインストールできるようにするには、まず、お使いのコンピューターにビルド ラボ サポート ファイルをダウンロードする必要があります。
@@ -37,7 +37,7 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
 1.  [BuildLabSupportfiles.zip](https://go.microsoft.com/fwlink/p/?linkid=321805) をダウンロードします。
 2.  圧縮ファイルの内容をコンピューターに展開します。 展開されたファイルの中に BuildLabSupport ディレクトリがあり、必要なセットアップ ファイルとユーティリティが含まれています。
 
-## <a name="span-idinstallscriptspanspan-idinstallscriptspan3-install-the-wdk81-build-environment"></a><span id="install_script"></span><span id="INSTALL_SCRIPT"></span>3.WDK 8.1 ビルド環境のインストール
+## <a name="span-idinstall_scriptspanspan-idinstall_scriptspan3-install-the-wdk81-build-environment"></a><span id="install_script"></span><span id="INSTALL_SCRIPT"></span>3.WDK 8.1 ビルド環境のインストール
 
 
 ビルド ラボ サポート ファイルには、**setup.ps1** PowerShell コマンド ファイル含まれています。このコマンドは、必要な Visual Studio と WDK のコンポーネントを展開して、ターゲット ディレクトリ (フォルダー) にコピーします。 その後、このディレクトリを別の場所にコピーし、そこから、Visual Studio コマンド ライン インターフェイス (CLI) 開発環境でプロジェクトをビルドできます。
@@ -76,20 +76,20 @@ WDK をビルド プロセスに統合する必要がある場合や、ビルド
     xpansionRoot C:\BuildLabInstall -CatalogFile  files.xml
     ```
 
-## <a name="span-idbuildstepspanspan-idbuildstepspan4-build-windows-driver-projects-and-solutions"></a><span id="build_step"></span><span id="BUILD_STEP"></span>4.Windows ドライバー プロジェクトとソリューションのビルド
+## <a name="span-idbuild_stepspanspan-idbuild_stepspan4-build-windows-driver-projects-and-solutions"></a><span id="build_step"></span><span id="BUILD_STEP"></span>4.Windows ドライバー プロジェクトとソリューションのビルド
 
 
 **ビルド環境のコマンド スクリプトを使う**
 
 1.  コマンド プロンプト ウィンドウを開きます。 ターゲット ディレクトリ (C:\\BuildLabInstall など) にある LaunchBuildEnv.cmd ファイルを探します。
 2.  **LaunchBuildEnv.cmd** を実行して、ビルド環境を起動します。
-3.  MSBuild コマンドを使って、ドライバー プロジェクトとソリューションをビルドします。 次に、例を示します。
+3.  MSBuild コマンドを使って、ドライバー プロジェクトとソリューションをビルドします。 たとえば、次のように入力します。
 
     ```cpp
     msbuild /t:clean /t:build .\MyDriver.vcxproj /p:Configuration="Win8.1 Debug" /p:Platform=Win32
     ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [ドライバーのビルド](building-a-driver.md)

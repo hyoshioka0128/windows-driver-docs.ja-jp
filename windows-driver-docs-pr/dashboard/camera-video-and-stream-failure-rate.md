@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1365dc8641cb6a5b4d7d0bd8f9856c281c368174
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017075"
 ---
 # <a name="percent-of-camera-video-and-stream-failures"></a>カメラのビデオおよびストリーム エラー率
@@ -19,9 +19,9 @@ ms.locfileid: "71017075"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|インスタンスの集計|
 |**最小母集団**|10 個のインスタンス|
@@ -32,11 +32,11 @@ ms.locfileid: "71017075"
 
 1. この測定値は、**カメラ デバイスでビデオおよびストリーミング機能の使用が失敗したインスタンスの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 
-   a. この測定では、単一のデバイスで複数のビデオおよびストリーミング インスタンスがカウントされる場合があります。
+   a。 この測定では、単一のデバイスで複数のビデオおよびストリーミング インスタンスがカウントされる場合があります。
 
 2. インスタンスの種類:
 
-   a. "*成功したビデオおよびストリーミングのイベント = 0% の失敗*"  
+   a。 "*成功したビデオおよびストリーミングのイベント = 0% の失敗*"  
 
        i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STARTED)
 

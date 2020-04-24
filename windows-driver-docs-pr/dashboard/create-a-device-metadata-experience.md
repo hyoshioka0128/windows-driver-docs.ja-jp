@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 47ae6c7fdeeb735b1a2c827804cd147527206d36
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364466"
 ---
 # <a name="create-a-device-metadata-experience"></a>デバイス メタデータ エクスペリエンスの作成

@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 619f566be357fd74d462213ff6d05f69bf8b94bb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364404"
 ---
 # <a name="submit-a-multiple-locale-device-manifest-package"></a>複数ロケールのデバイス マニフェスト パッケージの提出
@@ -84,7 +84,7 @@ Cabarc ツールを使って、このような CAB パッケージを作成で�
 
 Cabarc ツールを使って \*.devicemanifest-ms ファイルを作成した場合、ローカル ディレクトリを作成して、そのルートにデバイス メタデータ パッケージ (\*.devicemetadata-ms) と LocaleInfo XML ドキュメントを格納する必要があります。
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>コメント
 
 * .devicemanifest -ms と .devicemetadata-ms のファイル名で指定する GUID は、中かっこ ({}) で区切らないでください。
 

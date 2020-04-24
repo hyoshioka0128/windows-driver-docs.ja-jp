@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 7034bdbaa669ba0d4e5de6386a7969f23769559e
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017012"
 ---
 # <a name="percent-of-wi-fi-sessions-ending-in-an-unexpected-disconnect"></a>予期しない切断で終了した Wi-Fi セッションの割合 
@@ -19,9 +19,9 @@ ms.locfileid: "71017012"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日|
 |**測定基準**|インスタンスの集計|
 |**最小インスタンス**|1,000 個のインスタンス|
@@ -32,13 +32,13 @@ ms.locfileid: "71017012"
 
 1. この測定値は、**予期せずデバイスが Wi-Fi から切断されたインスタンスの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 
-   a. この測定値は、1 つのデータ ポイントとして、デバイスと AP の同じペアの複数のインスタンスを集計したものです。
+   a。 この測定値は、1 つのデータ ポイントとして、デバイスと AP の同じペアの複数のインスタンスを集計したものです。
 
    b. この測定値では、シグナルの強さが 50% 未満のデバイスと AP のペアは集計されません。
 
 2. 予期される切断とは次のとおりです。
 
-   a. ユーザーによる切断、マシンの電源オフ、低電力状態に起因する切断、またはイーサネットへの切り替え。
+   a。 ユーザーによる切断、マシンの電源オフ、低電力状態に起因する切断、またはイーサネットへの切り替え。
 
 3. 予期しない切断は "100" とカウントされ、成功したセッションは "0" とカウントされます
 

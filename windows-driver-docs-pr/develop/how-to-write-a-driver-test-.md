@@ -5,10 +5,10 @@ description: Windows Driver Kit (WDK) for Windows 8 を使って、独自のド
 ms.date: 03/26/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: 40dafed4d6fa901505fcc57fa82c0d74b7a3de18
-ms.sourcegitcommit: 063827f0253d6d14cd928b4e4ebf5e3b9c30dc6f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80327567"
 ---
 # <a name="how-to-write-a-driver-test-using-a-driver-test-template"></a>ドライバー テスト テンプレートを使ってドライバー テストを作成する方法

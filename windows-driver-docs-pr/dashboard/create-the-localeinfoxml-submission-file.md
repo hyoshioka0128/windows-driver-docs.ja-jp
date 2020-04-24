@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f65d958e15445b0a5c492d546795f8bbe500bd3
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209248"
 ---
 # <a name="create-the-localeinfoxml-submission-file"></a>LocaleInfo.xml サブミッション ファイルの作成
@@ -50,12 +50,12 @@ LocaleInfo XML スキーマの名前空間は次のようになります: `http:
 <tr class="odd">
 <td><p>MultipleLocale</p></td>
 <td><p>xs:boolean</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 </tr>
 <tr class="even">
 <td><p>LocaleDeclaredInPackageInfo</p></td>
 <td><p>tns:LocaleDeclaredInPackageInfoType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 </tr>
 <tr class="odd">
 <td><p>既定</p></td>
@@ -65,12 +65,12 @@ LocaleInfo XML スキーマの名前空間は次のようになります: `http:
 <tr class="even">
 <td><p>SupportedLocaleList</p></td>
 <td><p>tns:SupportedLocaleListType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 </tr>
 <tr class="odd">
-<td><p>ロケール</p></td>
+<td><p>Locale</p></td>
 <td><p>xs:string</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 </tr>
 </tbody>
 </table>
@@ -128,7 +128,7 @@ LocaleInfo XML スキーマには、以下の要素と属性が定義されて�
 
    -   SupportedLocaleList
 
-       - ロケール
+       - Locale
 
 ### <a name="multiplelocale-element"></a>MultipleLocale 要素
 

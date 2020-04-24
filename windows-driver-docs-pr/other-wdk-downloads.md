@@ -10,10 +10,10 @@ ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c328c2aca85819449910d3334d6870b95096abb1
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75210848"
 ---
 # <a name="other-wdk-downloads"></a>その他の WDK のダウンロード

@@ -5,10 +5,10 @@ description: ドライバー検証ツールは、ドライバーのテストの�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f53baf932735ec28168f437aeebad78c69eeac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72839611"
 ---
 # <a name="driver-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトのドライバーの検証ツール プロパティ
@@ -43,7 +43,7 @@ ms.locfileid: "72839611"
 ドライバーの検証ツールが、リモート テスト コンピューターにインストールされているすべてのドライバーを検証するように指定します。
 
 <span id="Project_Output"></span><span id="project_output"></span><span id="PROJECT_OUTPUT"></span>**Project Output (プロジェクトの出力)**  
-ドライバーの検証ツールが、リモート テスト コンピューターにインストールされているドライバー プロジェクトを検証するように指定します。 これは既定のオプションです。
+ドライバーの検証ツールが、リモート テスト コンピューターにインストールされているドライバー プロジェクトを検証するように指定します。 これは既定のオプションです
 
 <span id="Driver_List"></span><span id="driver_list"></span><span id="DRIVER_LIST"></span>**Driver List (ドライバーの一覧)**  
 ドライバー検証ツールがリモート テスト コンピューター上で検証するドライバー、またはドライバーの一覧を指定します。 たとえば、特定のデバイスに関連付けられているすべてのドライバーの一覧を作ることができます。 ドライバーの指定は、バイナリ名で行います (たとえば Driver.sys)。 ドライバーの一覧は、セミコロンで区切ります。 ワイルドカード値 (たとえば、*n\*.sys*) は、サポートされていません。

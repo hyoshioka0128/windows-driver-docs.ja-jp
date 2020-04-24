@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c684f0f77439a5732f7036873c2457fbd105b0e
-ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79083129"
 ---
 # <a name="percent-of-machines-with-pending-firmware-updates-due-to-bitlocker-risk"></a>Bitlocker のリスクが原因で、ファームウェアの更新が保留中のマシンの割合

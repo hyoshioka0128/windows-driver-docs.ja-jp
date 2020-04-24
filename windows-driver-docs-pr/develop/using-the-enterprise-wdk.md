@@ -5,10 +5,10 @@ author: Dansimp
 ms.date: 08/25/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ff60bb0abbb7107fe94bff95aa5923f8e3f8bba
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364184"
 ---
 # <a name="using-the-enterprise-wdk-10"></a>Enterprise WDK 10 の使用
@@ -19,14 +19,14 @@ Enterprise WDK には、ドライバーと基本的な Win32 ドライバー テ
 
 
 
-## <a name="getting-started"></a>作業の開始
+## <a name="getting-started"></a>はじめに
 
 > [!NOTE] 
 > Windows 10 バージョン 1709 以降、Enterprise WDK は ISO ベースです。  まず、ISO をダウンロードしてマウントした後、`LaunchBuildEnv` を実行します。
 
 1.  次の場所から EWDK をダウンロードします: [WDK と EWDK のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)
 2.  .zip ファイルを適切な名前のディレクトリ (d:\ewdk など) に展開します。
-3.  管理者コマンド プロンプトから前の手順で展開したフォルダーに移動し、**LaunchBuildEnvcmd** を実行してビルド環境を作成します。 次に、例を示します。**D:\EWDK\LaunchBuildEnv**
+3.  管理者コマンド プロンプトから前の手順で展開したフォルダーに移動し、**LaunchBuildEnvcmd** を実行してビルド環境を作成します。 たとえば、次のように入力します。**D:\EWDK\LaunchBuildEnv**
 
 ビルド環境を作成した後は、それを使ってファイルを操作したり、Visual Studio プロジェクトをビルドしたりできます。 次に例を示します。  
 *   Cd *directory_containing_project_files*

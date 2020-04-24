@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: fcf71a3bf01640c99fadd035e5ea41b6ea3ade91
-ms.sourcegitcommit: e5c36bcb678ca42ac30e89408c139f2ba0207549
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/29/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78180970"
 ---
 # <a name="attestation-signing-a-kernel-driver-for-public-release"></a>一般リリースのためのカーネル ドライバーへの構成証明署名

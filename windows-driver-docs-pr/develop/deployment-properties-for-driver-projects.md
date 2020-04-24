@@ -5,10 +5,10 @@ description: プロジェクトの各構成で、リモート テスト コン�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a8670f7bb647998ee7cc7b88e636034b5256b86e
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020656"
 ---
 # <a name="deployment-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの展開プロパティ

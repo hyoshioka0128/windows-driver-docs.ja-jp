@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: be0a92b0c9d72640b4dfaf615be8d8dc35cbb1a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364463"
 ---
 # <a name="how-to-limit-or-expand-a-drivers-distribution-based-on-windows-version"></a>ドライバーの配布を Windows のバージョンに基づいて制限または拡張する方法

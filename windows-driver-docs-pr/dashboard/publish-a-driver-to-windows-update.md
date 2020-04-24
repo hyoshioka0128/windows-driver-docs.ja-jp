@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6684c1ca80719a6f2ab7de13b678ea0f32b21bfe
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67392030"
 ---
 # <a name="publish-a-driver-to-windows-update"></a>Windows Update にドライバーを公開する

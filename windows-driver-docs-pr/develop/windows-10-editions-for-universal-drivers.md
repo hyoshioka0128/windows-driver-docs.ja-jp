@@ -5,10 +5,10 @@ description: Microsoft ドライバー リファレンス ページの下部に�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf53562619c2fff7f444a36373553cc7f5b6b70
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344037"
 ---
 # <a name="target-platform-on-driver-reference-pages"></a>ドライバー リファレンス ページでのターゲット プラットフォーム
@@ -42,7 +42,7 @@ Microsoft ドライバー リファレンス ページの下部にある要件�
 <ul>
 <li>Windows 10 デスクトップ エディション (Home、Pro、Enterprise)</li>
 <li>S モードの Windows 10</li>
-<li>Windows 10 Mobile</li>
+<li>Windows 10 Mobile</li>
 <li>Windows 10 IoT Core</li>
 <li>Windows Server 2016</li>
 </ul>

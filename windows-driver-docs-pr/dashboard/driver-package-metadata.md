@@ -6,10 +6,10 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 7906f735d41a063b329ca2b66ad0bf2a95721654
-ms.sourcegitcommit: 257850d61aa5d1db707dc2f30721319b650e47f6
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "73801164"
 ---
 # <a name="driver-package-metadata"></a>ドライバー パッケージ メタデータ
@@ -58,7 +58,7 @@ ms.locfileid: "73801164"
 
 ファイルに含まれる値は次のとおりです。
 
-| Value | 種類 | 説明 |
+| 値 | 種類 | 説明 |
 |:--|:--|:--|
 |BundleInfoMap|オブジェクト|これは親です。 GUID で示され、ドライバー バンドルに関するすべての詳細が含まれています。 この値は、[ハードウェア ID オブジェクト](get-shipping-labels.md#hardware-id-object)の *bundleID* にマップします|
 |ロケール|文字列の配列|バンドルに該当するロケールの配列|

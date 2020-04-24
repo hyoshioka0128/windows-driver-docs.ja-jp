@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 49e8753557fc5229f659f8d6b237ffcce20767c2
-ms.sourcegitcommit: 6e839d8f12eafd93d357b6896e0671cb69f7ecfa
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72962186"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
@@ -21,7 +21,7 @@ ms.locfileid: "72962186"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|エコシステム|
 |**期間**|7 日間のスライディング ウィンドウ|

@@ -5,10 +5,10 @@ ms.assetid: 7519235c-46c5-49aa-8b11-9e9ac5a51026
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 107cc59327605255a735af304d8637f93cfcb5c0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72825152"
 ---
 # <a name="writing-drivers-for-different-versions-of-windows"></a>異なるバージョンの Windows に対するドライバーの作成

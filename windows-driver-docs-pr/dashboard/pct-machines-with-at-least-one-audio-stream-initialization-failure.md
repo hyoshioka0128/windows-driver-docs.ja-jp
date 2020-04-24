@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c67e56efcc044c7aebe7840a450581a233daa7f
-ms.sourcegitcommit: 9f6f7d9e327ac3bd34643d8b062e11958a0fe05f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71195763"
 ---
 # <a name="percent-of-machines-with-at-least-one-audio-stream-initialization-failure"></a>少なくとも 1 つのオーディオ ストリーム初期化エラーが発生したマシンの割合
@@ -19,9 +19,9 @@ ms.locfileid: "71195763"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
 |**最小母集団**|50 台のマシン|

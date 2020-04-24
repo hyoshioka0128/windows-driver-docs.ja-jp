@@ -7,10 +7,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 42ec2df44588dff7f2a37f70f861720c46b5e267
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371358"
 ---
 # <a name="concepts-for-all-driver-developers"></a>すべてのドライバー開発者のための概念

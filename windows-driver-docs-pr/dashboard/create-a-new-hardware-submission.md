@@ -6,10 +6,10 @@ ms.date: 04/20/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d0d90055be8c79438ff4985119678c66f46235
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67353939"
 ---
 # <a name="create-a-new-hardware-submission"></a>新しいハードウェア申請の作成
@@ -26,7 +26,7 @@ Windows 10 用の Windows ハードウェア互換性プログラム (または�
 
 1. パートナー センターにサインインし、 **[Submit new hardware]\(新しいハードウェアの申請\)** を選択します。 これにより、提出を作成するためのウィザードが読み込まれます。
 
-2. **[Packages and signing properties]** (パッケージと署名プロパティ) セクションで、ドライバー提出の名前を選びます。 この名前は、ドライバー提出の検索と整理に使うことができます。 注:別の会社とドライバーを共有する場合、この名前が表示されます。
+2. **[Packages and signing properties]** (パッケージと署名プロパティ) セクションで、ドライバー提出の名前を選びます。 この名前は、ドライバー提出の検索と整理に使うことができます。 注: 別の会社とドライバーを共有する場合、この名前が表示されます。
 
 3. 提出する **.hlkx/.hckx** ファイルをドラッグ アンド ドロップするか、参照します。 ファイルのアップロードが開始されます。
    ![ドライバー名フィールドを示すスクリーンショット](images/drivers-name.png)

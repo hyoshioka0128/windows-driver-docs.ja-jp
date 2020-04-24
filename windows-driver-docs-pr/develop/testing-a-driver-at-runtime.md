@@ -5,10 +5,10 @@ description: Visual Studio の WDK 拡張機能を使うと、ネットワーク
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e4f024d689ef60087d854418cb247c8ff28e0265
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261417"
 ---
 # <a name="how-to-test-a-driver-at-runtime-using-visual-studio"></a>Visual Studio を使って実行時にドライバーをテストする方法
@@ -26,7 +26,7 @@ WDK 拡張機能は Visual Studio にドライバー テスト インターフ�
 <a name="instructions"></a>手順
 ------------
 
-### <a name="span-idconfigure_computers_for_testingspanspan-idconfigure_computers_for_testingspanspan-idconfigure_computers_for_testingspanstep-1-configure-computers-for-testing"></a><span id="Configure_computers_for_testing"></span><span id="configure_computers_for_testing"></span><span id="CONFIGURE_COMPUTERS_FOR_TESTING"></span>ステップ 1:テスト用にコンピューターを構成する
+### <a name="span-idconfigure_computers_for_testingspanspan-idconfigure_computers_for_testingspanspan-idconfigure_computers_for_testingspanstep-1-configure-computers-for-testing"></a><span id="Configure_computers_for_testing"></span><span id="configure_computers_for_testing"></span><span id="CONFIGURE_COMPUTERS_FOR_TESTING"></span>手順 1: テスト用にコンピューターを構成する
 
 Visual Studio から、テスト用のコンピューターの構成とプロビジョニングを行うことができます。 テスト コンピューターを構成すると、WDK ドライバー テスト フレームワークは自動的にテスト コンピューターのリモート デバッグを有効にして、必要なテスト バイナリとサポート ファイルを転送します。
 
@@ -39,7 +39,7 @@ Visual Studio から、テスト用のコンピューターの構成とプロビ
 
 Visual Studio 以外でテストを実行することもできます。詳しくは、「[コマンド プロンプトから実行時にドライバーをテストする方法](how-to-test-a-driver-at-runtime-from-a-command-prompt.md)」をご覧ください。 WDK 8.1 以降、コマンド スクリプトを使って、テスト コンピューターで HCK テスト スイートをコピーおよび実行できるようになりました。 「[WDK 8.1 の HCK テスト スイートを実行する方法](run-the-hck-test-suites-in-the-wdk.md)」をご覧ください。
 
-### <a name="span-idselect_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__81_spanspan-idselect_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__81_spanspan-idselect_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__81_spanstep-2-select-an-hck-test-suite-to-run-on-the-test-computer-using-wdk-81"></a><span id="Select_an_HCK_Test_Suite_to_run_on_the_test_computer__using_WDK__8.1_"></span><span id="select_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__8.1_"></span><span id="SELECT_AN_HCK_TEST_SUITE_TO_RUN_ON_THE_TEST_COMPUTER__USING_WDK__8.1_"></span>ステップ 2:テスト コンピューターで実行する HCK テスト スイートを選択する (WDK 8.1 を使う場合)
+### <a name="span-idselect_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__81_spanspan-idselect_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__81_spanspan-idselect_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__81_spanstep-2-select-an-hck-test-suite-to-run-on-the-test-computer-using-wdk-81"></a><span id="Select_an_HCK_Test_Suite_to_run_on_the_test_computer__using_WDK__8.1_"></span><span id="select_an_hck_test_suite_to_run_on_the_test_computer__using_wdk__8.1_"></span><span id="SELECT_AN_HCK_TEST_SUITE_TO_RUN_ON_THE_TEST_COMPUTER__USING_WDK__8.1_"></span>手順 2: テスト コンピューターで実行する HCK テスト スイートを選択する (WDK 8.1 を使う場合)
 
 WDK 8.1 以降では、テスト コンピューターで実行する HCK テスト スイートを選択できるようになりました。 HCK テスト スイートには、[Device Fundamentals テスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/device-fundamentals-tests)や、グラフィックス、イメージング、ワイヤレス LAN、モバイル ブロードバンド (CDMA と GSM)、WiFi Direct デバイス用の Windows ハードウェア認定キット (HCK) テストが含まれています。
 
@@ -83,7 +83,7 @@ WDK 8.1 以降では、テスト コンピューターで実行する HCK テス
 
 -   **[ドライバー]** メニューで、 **[テスト] &gt; [テストの実行]** の順にクリックします。 [テストの実行] は既定で、現在選択されているテスト グループのすべてのテストを実行します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
 ドライバー テストとテスト カテゴリについて詳しくは、「[Device Fundamental テストを選んで構成する方法](how-to-select-and-configure-the-device-fundamental-tests.md)」をご覧ください。 テスト フレームワークについて詳しくは、「[Test Authoring and Execution Framework](https://docs.microsoft.com/windows-hardware/drivers/taef/index) (TAEF)」と「[Windows ドライバー テスト フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdtf/index) (WDTF)」をご覧ください。

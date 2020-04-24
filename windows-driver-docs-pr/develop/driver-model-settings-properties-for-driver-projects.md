@@ -5,10 +5,10 @@ description: WDF ライブラリのバージョン、プリプロセッサ定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: e0dcb1641d50051d2d743e313fe09bf601857237
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370750"
 ---
 # <a name="driver-model-settings-properties-for-driver-projects"></a>ドライバー プロジェクトのドライバー モデル設定プロパティ

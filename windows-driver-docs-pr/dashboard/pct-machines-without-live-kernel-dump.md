@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d02ee5456656e9d39f5c49cb93301f3a9958e4c
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017017"
 ---
 # <a name="percent-of-machines-without-a-live-kernel-dump"></a>ライブ カーネル ダンプなしのマシンの割合
@@ -19,9 +19,9 @@ ms.locfileid: "71017017"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|14 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
 |**最小母集団**|100 台のマシン|

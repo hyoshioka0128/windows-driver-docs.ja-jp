@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c2649bac3fe5edf312fa80683ba72d674e4e51b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63337130"
 ---
 # <a name="managing-hardware-submissions-in-the-partner-center"></a>パートナー センターでのハードウェア申請の管理
@@ -39,6 +39,6 @@ DUA シェルから DUA 申請を作成する方法については、「[ドラ�
 
 ## <a name="related-topics"></a>関連トピック
 
-- [新しいハードウェア申請の作成](create-a-new-hardware-submission.md)
+- [新しいハードウェア申請を作成する](create-a-new-hardware-submission.md)
 - [複数の Windows バージョンで Microsoft によって署名されたドライバーを取得する](get-drivers-signed-by-microsoft-for-multiple-windows-versions.md)
 - [ドライバーのフライティング](driver-flighting.md)

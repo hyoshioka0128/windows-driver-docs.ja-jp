@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a5428bfce09d725cd1bd781d393054faa0f0de2c
-ms.sourcegitcommit: c466ccb35634d7b57a97326764db6d7bff232cf2
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68533205"
 ---
 # <a name="hardware-dashboard-faq"></a>ハードウェア ダッシュボードに関する FAQ
@@ -77,7 +77,7 @@ Windows 10 では、パフォーマンスに影響を与えずに安全性を�
 
 * URL で使用される ID 番号とそれらの ID を確認できる場所は次のとおりです。
 
-| Component | 説明 |
+| コンポーネント | 説明 |
 | ---       | ---         |
 |SellerID   | パートナー アカウントの ID 番号。 アカウント管理ページの **[アカウント設定]** の下に表示されます。 |
 |PrivateProductID | 各製品の作成に伴って生成される ID 番号。 製品のドライバーの詳細ページで確認できます。 詳しくは、「[ダッシュボード ID 定義](https://docs.microsoft.com/windows-hardware/drivers/dashboard/id-definitions)」をご覧ください。 |

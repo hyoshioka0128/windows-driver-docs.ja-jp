@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 32e6692b5b895ecb11224d62561e306a083d37a7
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017077"
 ---
 # <a name="percent-of-camera-preview-failures"></a>カメラのプレビュー エラー率
@@ -19,9 +19,9 @@ ms.locfileid: "71017077"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|インスタンスの集計|
 |**最小母集団**|10 個のインスタンス|
@@ -32,11 +32,11 @@ ms.locfileid: "71017077"
 
 1. この測定値は、**カメラ デバイスでプレビュー機能の使用が失敗したインスタンスの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 
-   a. この測定では、単一のデバイスで複数のプレビュー インスタンスがカウントされる場合があります。
+   a。 この測定では、単一のデバイスで複数のプレビュー インスタンスがカウントされる場合があります。
 
 2. インスタンスの種類:
 
-   a. "*成功したプレビュー イベント = 0% の失敗*"
+   a。 "*成功したプレビュー イベント = 0% の失敗*"
 
        MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT == 0
        MFCaptureEnginePreviewSinkFirstFrame (MF_CAPTURE_ENGINE_PREVIEW_STARTED)

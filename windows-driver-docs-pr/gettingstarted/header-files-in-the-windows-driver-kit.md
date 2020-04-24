@@ -14,10 +14,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b2613202fb101bcd13bd6cbc2d76c1ab39b7766f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72825156"
 ---
 # <a name="header-files-in-the-windows-driver-kit"></a>Windows Driver Kit (WDK) のヘッダー ファイル
@@ -54,7 +54,7 @@ WDK 中のヘッダー ファイルには、Windows オペレーティング シ
 </tr>
 <tr class="even">
 <td align="left"><p>NTDDI_WINBLUE</p></td>
-<td align="left"><p>Windows 8.1</p></td>
+<td align="left"><p>Windows 8.1</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>NTDDI_WIN8</p></td>

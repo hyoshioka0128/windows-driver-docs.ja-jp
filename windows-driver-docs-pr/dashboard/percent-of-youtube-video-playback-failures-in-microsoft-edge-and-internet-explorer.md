@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 74a0af946d837fe120dd6dc7fe34086b661cadab
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016942"
 ---
 # <a name="percent-of-youtube-video-playback-failures-in-microsoft-edge-and-internet-explorer"></a>Microsoft Edge と Internet Explorer での YouTube ビデオ再生エラーの割合
@@ -19,9 +19,9 @@ ms.locfileid: "71016942"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
-|**オーディエンス**|標準 |
+|**オーディエンス**|Standard |
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|インスタンスの集計|
 |**最小インスタンス**|50 回 (YouTube での再生回数)|
@@ -33,7 +33,7 @@ ms.locfileid: "71016942"
 1. この測定値は、**Microsoft Edge または Internet Explorer での YouTube 再生エラーの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 2. *セッション = YouTube メディア リソースを HTML5 \<video> 要素に読み込む 1 つのインスタンス*
 
-   a. 1 台のマシンで複数のセッションが許可されます。
+   a。 1 台のマシンで複数のセッションが許可されます。
 
 3. 再生エラー数 = Microsoft Edge または Internet Explorer で YouTube \<video>.error 要素が発生した回数
 

@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d741c3a3a5be5e86e828c292ef16c00e947ed69
-ms.sourcegitcommit: cf8f0b13f33dfe97a94c8587f1f6797db24d1746
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77075640"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン 
@@ -21,7 +21,7 @@ ms.locfileid: "77075640"
 
 |属性|値|
 |----|----|
-|**オーディエンス**|標準|
+|**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
 |**最小母集団**|10,000 台のマシン|

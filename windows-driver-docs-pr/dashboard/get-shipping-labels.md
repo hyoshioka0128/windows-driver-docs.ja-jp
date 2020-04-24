@@ -4,10 +4,10 @@ description: Microsoft Hardware API のこれらのメソッドでは、デベ�
 ms.topic: article
 ms.date: 10/03/2019
 ms.openlocfilehash: f4795fa7a29071c1eb2c83051cf68a2052caa447
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79243059"
 ---
 # <a name="get-shipping-label-data"></a>配送先住所ラベルのデータを取得する

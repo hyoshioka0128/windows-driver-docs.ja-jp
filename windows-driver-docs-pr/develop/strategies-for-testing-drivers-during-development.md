@@ -5,10 +5,10 @@ description: テストを開始するタイミング。 ドライバーの要件
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a0964ab68748c3a9af7fdcf21aa0f0eccda0e534
-ms.sourcegitcommit: 46853426563bfac36651565181d7edac339f63af
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74261420"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>開発中のドライバーのテストに関するヒント

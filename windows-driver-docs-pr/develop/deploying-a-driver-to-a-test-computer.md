@@ -5,10 +5,10 @@ description: Visual Studio では、WDK が提供するテスト機能を使っ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f336f87cdc4e6151c9026d5695f9a316936afd
-ms.sourcegitcommit: 2231d322eb4e9597ad7f537a4aa82b83422bd46a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70020673"
 ---
 # <a name="deploying-a-driver-to-a-test-computer"></a>テスト コンピューターへのドライバーの展開

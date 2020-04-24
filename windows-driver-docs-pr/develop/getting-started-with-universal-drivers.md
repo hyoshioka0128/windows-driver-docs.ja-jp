@@ -4,12 +4,12 @@ title: ユニバーサル Windows ドライバーの概要
 description: ユニバーサル Windows ドライバーを使用すると、組み込みシステムからタブレットや PC まで、複数の種類のデバイスで動作する 1 つのドライバーを作成できます。
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f54d52ae032ef66a7d48c0c08e6502ac556f7a84
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: 002d94ce8fc322445109b04dd13b64e181739da9
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861261"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81772733"
 ---
 # <a name="getting-started-with-universal-windows-drivers"></a>ユニバーサル Windows ドライバーの概要
 
@@ -32,8 +32,6 @@ ms.locfileid: "74861261"
 IHV は、*ドライバー パッケージの分離*の設計ベスト プラクティスに従い、サービス操作に関するドライバーの信頼性と堅牢性を確保します。
 
 IHV がベース ドライバーを認定したら、すべての OEM システムで展開できます。 ベース ドライバーは、ハードウェア部分を共有するすべてのシステム全体で使用できるため、Microsoft では、特定のコンピューターに配布を限定するのではなく、Windows Insider の*ドライバー フライティング*を使用してベース ドライバーを広範にテストできます。
-
-IHV がベース ドライバー パッケージを認定したら、すべての OEM システムで展開できます。 ベース ドライバー パッケージは、ハードウェア部分を共有するすべてのシステム全体で使用できるため、Microsoft では、特定のマシンに配布を限定するのではなく、Windows Insider のフライティングを介してベース ドライバー パッケージを広範にテストできます。 
 
 OEM は、OEM システムに対して提供するオプションのカスタマイズのみを検証します。
 
@@ -67,7 +65,7 @@ OEM は、OEM システムに対して提供するオプションのカスタマ
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
-*  Visual Studio で Windows Driver Kit (WDK) を使用している場合は、ドライバー プロジェクト プロパティの **[ターゲット プラットフォーム]** の値を `Universal` に設定します。  これによって、正しいライブラリが自動的に追加され、ユニバーサル INF 検証と APiValidator がビルドの一部として実行されます。  これには、次の手順を実行します。
+*  Visual Studio で Windows Driver Kit (WDK) を使用している場合は、ドライバー プロジェクト プロパティの **[ターゲット プラットフォーム]** の値を `Universal` に設定します。  これによって、正しいライブラリが自動的に追加され、ユニバーサル INF 検証と APiValidator がビルドの一部として実行されます。  そのためには、次の手順に従います。
 
     1. ドライバー プロジェクトのプロパティを開きます。
     2. **[ドライバーの設定]** を選択します。

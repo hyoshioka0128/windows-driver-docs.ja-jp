@@ -5,10 +5,10 @@ description: テスト コンピューターにドライバー パッケージ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 34688d9e3b765f505c0fce0105b2c1d20449a7c5
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63382536"
 ---
 # <a name="how-to-create-a-custom-driver-installation-script"></a>カスタム ドライバー インストール スクリプトを作成する方法
@@ -23,7 +23,7 @@ ms.locfileid: "63382536"
 <a name="instructions"></a>手順
 ------------
 
-### <a name="span-idtorunyourowncustomcommandscriptsuponinstallationspanspan-idtorunyourowncustomcommandscriptsuponinstallationspanspan-idtorunyourowncustomcommandscriptsuponinstallationspanstep-1-to-run-your-own-custom-command-scripts-upon-installation"></a><span id="To_run_your_own_custom_command_scripts_upon_installation"></span><span id="to_run_your_own_custom_command_scripts_upon_installation"></span><span id="TO_RUN_YOUR_OWN_CUSTOM_COMMAND_SCRIPTS_UPON_INSTALLATION"></span>ステップ 1:インストール時に独自のカスタム コマンド スクリプトを実行するには
+### <a name="span-idto_run_your_own_custom_command_scripts_upon_installationspanspan-idto_run_your_own_custom_command_scripts_upon_installationspanspan-idto_run_your_own_custom_command_scripts_upon_installationspanstep-1-to-run-your-own-custom-command-scripts-upon-installation"></a><span id="To_run_your_own_custom_command_scripts_upon_installation"></span><span id="to_run_your_own_custom_command_scripts_upon_installation"></span><span id="TO_RUN_YOUR_OWN_CUSTOM_COMMAND_SCRIPTS_UPON_INSTALLATION"></span>ステップ 1:インストール時に独自のカスタム コマンド スクリプトを実行するには
 
 ドライバー パッケージのプロジェクト プロパティ ページで、テスト コンピューターにドライバー パッケージを自動的に展開するかどうかを構成できます。 これらのページからカスタム インストール スクリプトを実行することもできます。 各構成でドライバー ソリューションをビルドするたびに、自動的にドライバーが展開されるようにすることができます。 展開について詳しくは、「[テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)」と「[ドライバー プロジェクトの展開プロパティ](deployment-properties-for-driver-projects.md)」をご覧ください。
 
@@ -37,7 +37,7 @@ ms.locfileid: "63382536"
 
 5.  **[Additional Files]** (追加ファイル) ボックスで、テスト コンピューターにコピーするコマンド スクリプトとその他のインストール ファイルを追加します。 ドライバーが展開されると、追加のファイルはリモート コンピューターの *%Systemdrive%* \\drivertest\\drivers フォルダーにコピーされます。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [テスト コンピューターへのドライバーの展開](deploying-a-driver-to-a-test-computer.md)

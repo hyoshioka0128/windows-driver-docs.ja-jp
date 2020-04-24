@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 57b45861821e33ac7426dedbf3f940adca4bfd4b
-ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "73589234"
 ---
 # <a name="get-a-code-signing-certificate"></a>コード署名証明書の取得
@@ -53,7 +53,7 @@ ms.locfileid: "73589234"
 > [!NOTE]
 > 証明書の取得には、同じコンピューターとブラウザーを使う必要があります。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - 新しいパートナー センター アカウントを設定する場合は、「[ハードウェア プログラムの登録](register-for-the-hardware-program.md)」の手順を実行します。
 
@@ -118,16 +118,16 @@ ms.locfileid: "73589234"
 |                                    |                                |                                    |                                                                                |
 |------------------------------------|--------------------------------|------------------------------------|--------------------------------------------------------------------------------|
 |                                    | *構成証明ダッシュボード署名* | *HLK テストに合格したダッシュボード署名* | *2015 年 7 月 29 日より前に発行された SHA-1 証明書を使ったクロス署名*         |
-| Windows Vista                      | X                             | 〇                                | 〇                                                                            |
-| Windows 7                          | X                             | 〇                                | 〇                                                                            |
-| Windows 8 / 8.1                    | X                             | 〇                                | 〇                                                                            |
-| Windows 10                         | 〇                            | 〇                                | X (Windows 10 1809 以降)                                                                            |
+| Windows Vista                      | いいえ                             | はい                                | はい                                                                            |
+| Windows 7                          | いいえ                             | はい                                | はい                                                                            |
+| Windows 8 / 8.1                    | いいえ                             | はい                                | はい                                                                            |
+| Windows 10                         | はい                            | はい                                | X (Windows 10 1809 以降)                                                                            |
 | Windows 10 - DG 有効            | \*構成による      | \*構成による          | \*構成による                                                      |
-| Windows Server 2008 R2             | X                             | 〇                                | 〇                                                                            |
-| Windows Server 2012 R2             | X                             | 〇                                | 〇                                                                            |
-| Windows Server 2016 以降             | X                             | 〇                                | 〇                                                                            |
+| Windows Server 2008 R2             | いいえ                             | はい                                | はい                                                                            |
+| Windows Server 2012 R2             | いいえ                             | はい                                | はい                                                                            |
+| Windows Server 2016 以降             | いいえ                             | はい                                | はい                                                                            |
 | Windows Server 2016 以降 – DG 有効| \*構成による      | \*構成による          | \*構成による                                                      |
-| Windows IoT Enterprise             | 〇                            | 〇                                | 〇                                                                            |
+| Windows IoT Enterprise             | はい                            | はい                                | はい                                                                            |
 | Windows IoT Enterprise - DG 有効 | \*構成による      | \*構成による          | \*構成による                                                      |
 | Windows IoT Core(1)                | 要 (必須ではない)             | 要 (必須ではない)                 | 要 (2015 年 7 月 29 日以降後に発行された証明書ではクロス署名も機能します) |
 

@@ -5,10 +5,10 @@ description: ドライバーを手動で展開する前に、ターゲット コ
 ms.date: 06/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 05e6555eac639bd53677f12d393404b156200a42
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63378466"
 ---
 # <a name="preparing-a-computer-for-manual-driver-deployment"></a>コンピューターの手動ドライバー展開の準備

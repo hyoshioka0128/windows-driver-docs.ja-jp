@@ -5,10 +5,10 @@ ms.assetid: D86546BB-B613-4CEE-9A76-3FD269137EE9
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 05949ca727d68333f60016df1ef8e06797a5f980
-ms.sourcegitcommit: 19ba939a139e8ad62b0086c30b2fe772a2320663
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72681934"
 ---
 # <a name="sharks-cove-hardware-development-board"></a>Sharks Cove ハードウェア開発ボード

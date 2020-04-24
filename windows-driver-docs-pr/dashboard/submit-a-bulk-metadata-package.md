@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 852fcca8b1f2b0601172a7babd9b05cb5d033459
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209164"
 ---
 # <a name="submit-a-bulk-metadata-package"></a>バルク メタデータ パッケージの提出
@@ -163,7 +163,7 @@ PcMetadataSubmission XML スキーマの名前空間は、次のようになり�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Experience</p></td>
+<td><p>エクスペリエンス</p></td>
 <td><p>ExperienceType</p></td>
 <td><p>必須</p></td>
 </tr>
@@ -175,7 +175,7 @@ PcMetadataSubmission XML スキーマの名前空間は、次のようになり�
 <tr class="odd">
 <td><p>ExperienceId</p></td>
 <td><p>tns:GUIDType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 </tr>
 <tr class="even">
 <td><p>PackageList</p></td>
@@ -205,7 +205,7 @@ PcMetadataSubmission XML スキーマの名前空間は、次のようになり�
 <tr class="odd">
 <td><p>LogoSubmissionIDList</p></td>
 <td><p>tns:LogoSubmissionIDListType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 </tr>
 <tr class="even">
 <td><p>LogoSubmissionID</p></td>
@@ -307,7 +307,7 @@ BulkMetadataSubmission XML スキーマで定義される要素と属性は以�
 
 -   BulkMetadataSubmission
 
-    -   Experience
+    -   エクスペリエンス
 
         -   ExperienceName
 
@@ -358,7 +358,7 @@ Experience 要素では、単一のエクスペリエンスの情報を指定し
 </xs:complexType>
 ```
 
-注釈
+コメント
 
 複数の Experience 要素を使って複数のエクスペリエンスを指定できます。 これにより、異なるデバイスに対応する複数のパッケージを 1 回の申請に含めることができます。
 
@@ -446,7 +446,7 @@ PackageFileName 要素では、単一のデバイス メタデータ パッケ�
 </xs:complexType>
 ```
 
-注釈
+コメント
 
 ダッシュボードは、PackageFileName 要素の preview 属性と locale 属性に基づいて、既にあるライブ パッケージを新しく提出されたパッケージで更新します。
 
@@ -543,7 +543,7 @@ LogoSubmissionID 要素は、デバイスの個々のロゴ認定を指定しま
 <xs:element name="LogoSubmissionID" type="xs:integer"  maxOccurs="unbounded" />
 ```
 
-注釈
+コメント
 
 複数の LogoSubmissionID 要素を使って、単一のデバイスの複数のロゴ認定を示すことができます。 ユーザーは、リスト内のデバイスに対してすべてのロゴ認定を指定する必要があります。 複数のロゴ認定が指定された例を次に示します。
 

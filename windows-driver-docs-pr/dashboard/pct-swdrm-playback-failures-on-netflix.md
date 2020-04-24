@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 12/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: d554310e46af4968dc104be366ce4728249cb3bf
-ms.sourcegitcommit: 90faff267098e5ff04e3c4ffdb63447f2f97df50
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75737322"
 ---
 # <a name="percent-of-swdrm-playback-failures-on-netflix"></a>Netflix での SWDRM 再生エラーの割合
@@ -43,7 +43,7 @@ ms.locfileid: "75737322"
 3.  さらに、次のメトリックに基づいて、異常値の出ているデバイスが識別され、除外されます。  これにより、測定に使用される最終的なデータセットから、結果を (肯定的または否定的に) ゆがめる可能性のあるデバイスが除外されます。  デバイスの結果メトリックが特定のパーセンタイル条件内にある場合、そのデバイスはフィルターで除外されます。 
     *   90 日の期間におけるデバイスあたりのセッション数が 95 パーセンタイル以上
     *   90 日の期間におけるセッションのあった日数が 97.5 パーセンタイル以上
-    *   90 日の期間におけるセッションのあった日についての 1 日あたりのセッション数の平均が 97.5 パーセンタイル以上
+    *   90 日の期間におけるセッションのあった日について 1 日あたりのセッション数の平均が 97.5 パーセンタイル以上
     *   90 日の期間におけるデバイス上のすべてのセッションの失敗率が 95 パーセンタイル以上
 
 

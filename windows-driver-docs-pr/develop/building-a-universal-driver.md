@@ -4,10 +4,10 @@ description: ユニバーサル ドライバーのビルド方法のガイド
 ms.date: 10/03/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 555cdead7ae3e80fc5835e9c724ad0552825da86
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370371"
 ---
 # <a name="building-a-universal-windows-driver"></a>ユニバーサル Windows ドライバーのビルド
@@ -36,7 +36,7 @@ Microsoft Visual Studio 2015 と Windows Driver Kit (WDK) 10 を使うと、デ�
     手動でドライバー モデルを変更するには、ドライバー プロジェクトを右クリックし、[プロパティ] をクリックします。 **[構成プロパティ] -&gt; [ドライバーの設定] -&gt; [全般]** の順にクリックし、 **[ターゲット プラットフォーム]** のエントリを検索します。 **[ユニバーサル]** 、 **[デスクトップ]** 、または **[モバイル]** をクリックします。 Microsoft Visual Studio はこの設定を使って、リンクするライブラリを決定します。
 
     **注**  Windows 10 より前のバージョンの Windows 用のユニバーサル Windows ドライバーをビルドすることはできません。
-3.  必要に応じて .inf ファイルを変更して、INF ファイルの [**Strings**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section) セクションにプロバイダーを指定します。%*ManufacturerName*% トークンとして指定されたプロバイダーは、後でこのセクションの定義に従って展開されます。 次に、例を示します。
+3.  必要に応じて .inf ファイルを変更して、INF ファイルの [**Strings**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-strings-section) セクションにプロバイダーを指定します。%*ManufacturerName*% トークンとして指定されたプロバイダーは、後でこのセクションの定義に従って展開されます。 たとえば、次のように入力します。
 
     ```cpp
     Provider="Contoso"

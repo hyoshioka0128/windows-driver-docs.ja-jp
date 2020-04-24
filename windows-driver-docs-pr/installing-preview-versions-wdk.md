@@ -11,10 +11,10 @@ ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: aa0665e141954bb04e37335657e0bee9f731d4a0
-ms.sourcegitcommit: 2c3b8e0ea0e75b72067d2e22dc530390bc19b11e
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70174698"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>プレビュー バージョンの Windows Driver Kit (WDK) のインストール
@@ -25,7 +25,7 @@ ms.locfileid: "70174698"
 
 ## <a name="install-windows-driver-kit-wdk-insider-preview"></a>Windows Driver Kit (WDK) Insider Preview をインストールする
 
-### <a name="1-install-visual-studio"></a>1. Visual Studio をインストールする
+### <a name="1-install-visual-studio"></a>1.Visual Studio をインストールする
 
 - WDK では、Visual Studio 2019 がサポートされるようになっています。  すべてのエディションがサポートされます。  WDK では、Visual Studio 2017 はサポートされなくなりました。 
 - [https://visualstudio.microsoft.com/vs/preview/](https://visualstudio.microsoft.com/vs/preview/) からダウンロードします。 
@@ -33,7 +33,7 @@ ms.locfileid: "70174698"
 - ARM: ARM ドライバーをビルドするには、さらにコンポーネントをインストールする必要があります: [個別のコンポーネント] -> [コンパイラ、ビルド ツール、およびランタイム] -> [ARM 用 Visual Studio C++ コンパイラとライブラリ]。 
 - ARM64: 現在サポートされていません。 
 
-### <a name="2-disable-strong-name-validation"></a>2. 厳密な名前の検証を無効にする
+### <a name="2-disable-strong-name-validation"></a>2.厳密な名前の検証を無効にする
 
 現在、WDK の Visual Studio 拡張機能は厳密な名前で署名されていません。 管理者特権のコマンド プロンプトで次のコマンドを実行して、厳密な名前の検証を無効にします。 
 
@@ -47,7 +47,7 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 [SDK Insider Preview を入手する](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 
-### <a name="4-install-wdk-insider-preview"></a>4。WDK Insider Preview のインストール
+### <a name="4-install-wdk-insider-preview"></a>4.WDK Insider Preview のインストール
 
 [WDK Insider Preview を入手する](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
 

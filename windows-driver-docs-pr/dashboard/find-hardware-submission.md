@@ -1,16 +1,15 @@
 ---
 title: ハードウェア申請の検索と管理
-author: dimanjar
 description: テキストを使って検索するか、キーワード検索でドライバー属性を選択することで、特定の Windows ハードウェア申請を検索する方法について説明します。
 ms.topic: article
 ms.date: 09/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 77c5d52709ce09bd674de5dba00a2700674863fe
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: 19f8a7f74a143e93f1cf49d2e1007f0c6be65e7c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601711"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81679114"
 ---
 # <a name="find-a-hardware-submission"></a>ハードウェア申請を検索する
 

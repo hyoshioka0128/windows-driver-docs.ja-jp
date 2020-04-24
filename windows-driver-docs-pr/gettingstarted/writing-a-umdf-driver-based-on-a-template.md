@@ -7,10 +7,10 @@ keywords:
 ms.date: 04/20/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d87ddd88af414359d0f792cb4bc21987db7e4b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67359293"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (UMDF 2) の作成

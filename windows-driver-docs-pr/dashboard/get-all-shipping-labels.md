@@ -6,10 +6,10 @@ ms.author: balapv
 ms.topic: article
 ms.date: 08/21/2018
 ms.openlocfilehash: 4f5f1626ee3cb79eec1e8ee76e7cdaa752b13668
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77072203"
 ---
 # <a name="get-all-shipping-labels"></a>すべての配送先住所ラベルを取得する

@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: b26a9cdea2a31f4a04486ed09b5bcb694c128509
-ms.sourcegitcommit: 7773f6edfc981865c8b0255f858e0f6c0cff5213
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "68483073"
 ---
 # <a name="hardware-submissions"></a>ハードウェアの提出
@@ -204,7 +204,7 @@ DUA シェル パッケージをダウンロードするには、 **[Download DU
 <td><p>出荷ラベル作成者の<strong>発行者表示名</strong>。 これにより、どのビジネス パートナーがドライバーを送信したのかを簡単に追跡できます。</p></td>
 </tr>
 <tr class="odd">
-<td><p>宛先</p></td>
+<td><p>Destination</p></td>
 <td><p>Windows Update 出荷ラベルの場合、配布先は "Windows Update" です。</p>
 <p>共有ドライバーの場合、配布先は出荷ラベルの作成時に <strong>[Who is publishing?]</strong> (公開元はだれですか?) で選んだ会社の<strong>発行者の表示名</strong>です。 これにより、ドライバーを共有したすべての会社を簡単に表示できます。</p></td>
 </tr>

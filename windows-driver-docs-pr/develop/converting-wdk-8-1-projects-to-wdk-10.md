@@ -5,10 +5,10 @@ description: Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1 を
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d3fa096f10d2cfe3a6bc592c0c98f21317fd68b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63382484"
 ---
 # <a name="converting-wdk-81-projects-to-wdk-10"></a>WDK 8.1 プロジェクトから WDK 10 への変換

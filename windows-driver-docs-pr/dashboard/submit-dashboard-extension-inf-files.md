@@ -5,10 +5,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.openlocfilehash: 6803f0632e501678688a48a50fc457dfa58fb359
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364416"
 ---
 # <a name="working-with-extension-infs-in-the-partner-center"></a>パートナー センターでの拡張 INF の使用
@@ -158,7 +158,7 @@ ExtensionID は、生成する GUID で、ドライバーの系列 ID とバー�
 
 #### <a name="can-two-systems-share-the-same-extension-inf-if-their-customizations-are-the-same"></a>2 つのシステムのカスタマイズが同じ場合、2 つのシステムで同じ拡張 INF を共有できますか?
 
-[はい]。  複数のシステムで同じ設定を使用する場合、またはより広範なデバイス間で設定をカスタマイズする場合は、1 つの拡張 INF で十分です。  これを行うには、適用可能な 4 部構成のハードウェア ID を拡張 INF に追加します。 詳細については、「拡張 INF ファイルの使用」を参照してください。
+はい。  複数のシステムで同じ設定を使用する場合、またはより広範なデバイス間で設定をカスタマイズする場合は、1 つの拡張 INF で十分です。  これを行うには、適用可能な 4 部構成のハードウェア ID を拡張 INF に追加します。 詳細については、「拡張 INF ファイルの使用」を参照してください。
 
 ## <a name="related-pages"></a>関連するページ
 

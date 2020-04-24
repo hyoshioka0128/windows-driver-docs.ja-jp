@@ -5,10 +5,10 @@ description: リモート コンピューター上の KMDF 検証ツールのプ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b319b3c54012151bc2f27f2504ea471fe85937a
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67393450"
 ---
 # <a name="kmdf-verifier-properties-for-driver-package-projects"></a>ドライバー パッケージ プロジェクトの KMDF 検証ツール プロパティ
@@ -31,7 +31,7 @@ ms.locfileid: "67393450"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">構成方法</th>
+<th align="left">オプション</th>
 <th align="left">説明</th>
 </tr>
 </thead>

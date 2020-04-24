@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cec191850f774186b0c564eecd36137881217e7
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209250"
 ---
 # <a name="hardware-dashboard-api"></a>ハードウェア ダッシュボード API
@@ -76,7 +76,7 @@ Azure AD アクセス トークンを取得したら、Microsoft ハードウェ
 
 | シナリオ | 説明 |
 |:--|:--|
-| ドライバー | パートナー センター アカウントに登録されているドライバーを取得、作成、更新します。 これらのメソッドについて詳しくは、次の記事をご覧ください。<ul><li>[製品データを取得する](get-product-data.md)</li><li>[製品申請を管理する](manage-product-submissions.md)</li><li>[配送先住所ラベルのデータを取得する](get-shipping-labels.md)</li><li>[配送先住所ラベルを管理する](manage-shipping-labels.md)</li></ul>|
+| Drivers | パートナー センター アカウントに登録されているドライバーを取得、作成、更新します。 これらのメソッドについて詳しくは、次の記事をご覧ください。<ul><li>[製品データを取得する](get-product-data.md)</li><li>[製品申請を管理する](manage-product-submissions.md)</li><li>[配送先住所ラベルのデータを取得する](get-shipping-labels.md)</li><li>[配送先住所ラベルを管理する](manage-shipping-labels.md)</li></ul>|
 
 ## <a name="code-examples"></a>コード例
 

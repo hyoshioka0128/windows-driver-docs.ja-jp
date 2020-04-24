@@ -5,10 +5,10 @@ description: 64 ビット バージョンの Windows で実行されるすべて
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: af4e7e65df105ae2951d5ad9165552efb68250db
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "64368649"
 ---
 # <a name="signing-a-driver"></a>ドライバーへの署名

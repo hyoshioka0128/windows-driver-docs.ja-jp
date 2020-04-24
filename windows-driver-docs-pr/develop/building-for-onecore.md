@@ -5,15 +5,15 @@ description: 1 つのバイナリのビルドで、Windows 10 以前のエディ
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 0aefa62ad1fbf120ffb6b905c9aafbdb5b44f5ab
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63382491"
 ---
 # <a name="building-for-onecore"></a>OneCore をターゲットとしたビルド
 
-Visual Studio を使用して Windows 10 のユーザーモード コードをビルドするときに、特定のバージョンの Windows をターゲットとするようにリンカー オプションをカスタマイズできます。  カスタマイズにあたっては、次の点を検討してください。
+Visual Studio を使用して Windows 10 のユーザーモード コードをビルドするときに、特定のバージョンの Windows をターゲットとするようにリンカー オプションをカスタマイズできます。  次の要因について検討します。
 
 * ビルドしたバイナリは、Windows の最新バージョンのみで実行されますか?  それとも、以前のバージョン (Windows 7 など) でも実行できますか。  
 
@@ -23,7 +23,7 @@ Visual Studio を使用して Windows 10 のユーザーモード コードを�
 
 ただし、要件によっては、代わりに `OneCore.lib` をリンクすることができます。 次の表は、各ライブラリに対応するシナリオを示したものです。
 
-|Library|シナリオ|
+|ライブラリ|シナリオ|
 |-|-|
 |`OneCore.lib`|Windows 7 以降のすべてのエディション (UWP のサポートなし)|
 |`OneCoreUAP.lib`|Windows 7 以降、Windows 10 の UWP エディション (デスクトップ、IoT、HoloLens。ただし、Nano Server を除く)|
@@ -35,7 +35,7 @@ Windows API のサブセットは正常にコンパイルされますが、デ�
 
 たとえば、[**InstallApplication**](https://docs.microsoft.com/windows/desktop/api/appmgmt/nf-appmgmt-installapplication) 関数は、デスクトップ以外の OneCore エディションで `ERROR_ NOT_SUPPORTED` を返します。  これらの問題は [ApiValidator](validating-universal-drivers.md)ツールでも報告されます。 次のセクションでは、この問題を修正する方法について説明します。
 
-## <a name="fixing-apivalidator-errors-by-using-isapisetimplementedhttpsdocsmicrosoftcomwindowsdesktopapiapiquery2nf-apiquery2-isapisetimplemented"></a>[**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) を使用して ApiValidator のエラーを修正する
+## <a name="fixing-apivalidator-errors-by-using-isapisetimplemented"></a>[**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) を使用して ApiValidator のエラーを修正する
 
 コードで非ユニバーサル API を呼び出すと、次の [ApiValidator](validating-universal-drivers.md) エラーが返される場合があります。
 
@@ -143,7 +143,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 }
 ```
 
-## <a name="recommended-actions"></a>推奨されるアクション
+## <a name="recommended-actions"></a>推奨される操作
 
 * 上記のリンカー オプションを確認し、それに応じて、Visual Studio プロジェクトを更新します。
 * WDK の [ApiValidator](validating-universal-drivers.md) ツールを使います。  このツールは、Visual Studio でのドライバーのビルド時に自動的に実行されます。

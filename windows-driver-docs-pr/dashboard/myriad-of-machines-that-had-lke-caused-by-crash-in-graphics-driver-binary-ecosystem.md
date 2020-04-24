@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c53dbdb8e3c0678349a926d9c215f817ae33140
-ms.sourcegitcommit: fe0b8b8b162c6fc0afd82dd03e83d41be0bc5d12
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72980747"
 ---
 # <a name="myriad-of-machines-that-had-an-lke-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
@@ -21,7 +21,7 @@ ms.locfileid: "72980747"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|エコシステム|
 |**期間**|7 日間のスライディング ウィンドウ|

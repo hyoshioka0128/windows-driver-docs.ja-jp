@@ -5,10 +5,10 @@ description: このトピックでは、Visual Studio を使って新しいデ�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d023d9883cb92acd21636a7ff89f73a926c0b65f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67370790"
 ---
 # <a name="creating-a-new-device-function-driver"></a>新しいデバイス ファンクション ドライバーの作成

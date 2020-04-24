@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: da04406434d834d2daf2a7528ec1557152e50703
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364473"
 ---
 # <a name="device-metadata-business-rules"></a>デバイス メタデータのビジネス規則
@@ -197,7 +197,7 @@ PC メタデータ パッケージを提出する方法については、「[PC 
 </colgroup>
 <thead>
 <tr class="header">
-<th>開発者</th>
+<th>Developer</th>
 <th>自動インストール アプリの制限</th>
 <th>特権アプリの制限</th>
 </tr>

@@ -5,10 +5,10 @@ ms.assetid: 9988ff75-f84e-404e-8c2b-0f8325fbbc63
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 370f5ef3e5e1b9a5880646e551cdf5e5af37b224
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371194"
 ---
 # <a name="user-mode-and-kernel-mode"></a>ユーザー モードとカーネル モード
@@ -26,7 +26,7 @@ Windows を実行しているコンピューターのプロセッサには、"*�
 
 ![ユーザー モードとカーネル モードのコンポーネントのブロック図](images/userandkernelmode01.png)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [仮想アドレス領域](virtual-address-spaces.md)

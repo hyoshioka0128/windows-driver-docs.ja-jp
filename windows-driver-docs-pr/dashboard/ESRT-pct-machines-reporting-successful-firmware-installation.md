@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a9e4b1c9fe858e37ab4559ba4090638010f61c0
-ms.sourcegitcommit: 07b2926c15f4782e1914e8d3cf6c5c511a3a6111
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74097526"
 ---
 # <a name="percent-of-machines-reporting-successful-firmware-installation-from-esrt"></a>ESRT から正常にファームウェアがインストールされたことを報告しているマシンの割合
@@ -25,7 +25,7 @@ ms.locfileid: "74097526"
 
 マシンが一時的なエラー (UEFI.SYS からの一時的なエラーは以下の一覧に示します) を報告している場合、それは母集団に含まれません
 
-|エラー コード|Value|
+|エラー コード|値|
 |----|----|
 |3221225659| STATUS_NOT_SUPPORTED|
 |3221226195| STATUS_POWER_STATE_INVALID|
@@ -45,7 +45,7 @@ ms.locfileid: "74097526"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|小売と内部関係者|
 |**期間**|28 日間のスライディング ウィンドウ|

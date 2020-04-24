@@ -5,10 +5,10 @@ description: Windows 10 より前のリリースの Windows と Windows Phone �
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ad62d7c13888eaf8210f0d3f2b8d1315662def93
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76980703"
 ---
 # <a name="driver-convergence-model-for-windows10"></a>Windows 10 のドライバーの収束モデル

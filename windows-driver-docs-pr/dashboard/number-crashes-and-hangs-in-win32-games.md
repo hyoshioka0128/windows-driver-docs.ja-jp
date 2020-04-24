@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 4abe4352bf55da2b31992bf3ba87563185185761
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016980"
 ---
 # <a name="number-of-crashes-and-hangs-in-win32-games-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Win32 ゲームにおけるクラッシュとハングの数を使用量で正規化した値がベースライン目標と同じかそれより小さい
@@ -21,7 +21,7 @@ ms.locfileid: "71016980"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|エコシステム|
 |**期間**|7 日間のスライディング ウィンドウ|

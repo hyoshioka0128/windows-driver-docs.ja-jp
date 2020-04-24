@@ -6,13 +6,13 @@ ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 0d75b697082a08b8c7b87c25586e1b058dd24c17
-ms.sourcegitcommit: 96f94bffe426b7f92913fa0ffff1918c76e0e52c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76980707"
 ---
-# <a name="top"></a>ドライバー開発に関する最新情報
+# <a name="whats-new-in-driver-development"></a><a name="top"></a>ドライバー開発に関する最新情報
 
 このセクションでは、Windows 10 での Windows ドライバー開発に関する新機能と更新された機能について説明します。
 
@@ -290,7 +290,7 @@ DFx のテストについては、以下のページを参照してください�
 
 [ページのトップへ](#top)
 
-### <a name="audio-1903"></a>オーディオ
+### <a name="audio"></a><a name="audio-1903"></a>オーディオ
 
 Windows 10 Version 1903 の新機能と更新されたオーディオ機能の一覧を次に示します。
 
@@ -302,7 +302,7 @@ Windows 10 Version 1903 の新機能と更新されたオーディオ機能の�
     
 * [USB オーディオ 2.0 ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/usb-2-0-audio-drivers)の新しいジャックの説明情報。
 
-### <a name="camera-1903"></a>カメラ
+### <a name="camera"></a><a name="camera-1903"></a>カメラ
 
 Windows 10 Version 1903 で追加された新しいカメラ ドライバーのドキュメントと機能を次に示します。
 
@@ -313,7 +313,7 @@ Windows 10 Version 1903 で追加された新しいカメラ ドライバーの�
   * MSXU_CONTROL_METADATA
   * MSUX_CONTROL_IR_TORCH
 
-### <a name="display-1903"></a>ディスプレイ
+### <a name="display"></a><a name="display-1903"></a>ディスプレイ
 
 Windows 10 Version 1903 では、ディスプレイ ドライバー開発に関する次の更新が行われました。
 
@@ -327,7 +327,7 @@ Windows 10 Version 1903 では、ディスプレイ ドライバー開発に関�
 
 * **ドライバーのホット更新** OS コンポーネントを更新する必要がある場合に、サーバーのダウンタイムを可能な限り短縮します。 [DXGKDDI_SAVEMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_savememoryforhotupdate) と [DXGKDDI_RESTOREMEMORYFORHOTUPDATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddi_restorememoryforhotupdate) を参照してください。
 
-### <a name="networking-1903"></a>ネットワーク
+### <a name="networking"></a><a name="networking-1903"></a>ネットワーク
 
 #### <a name="netadaptercx"></a>NetAdapterCx
 
@@ -374,7 +374,7 @@ NetAdapterCx コンテンツの更新の一覧を次に示します。
 
 * [モバイル プラン](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/mobile-plans)
 
-### <a name="mobilebroadband-1903"></a>モバイル ブロードバンド
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1903"></a>モバイル ブロードバンド
 
 Windows 10 Version 1903 のモバイル ブロードバンドに次の機能が追加されました。
 
@@ -383,7 +383,7 @@ Windows 10 Version 1903 のモバイル ブロードバンドに次の機能が�
 * 新しい [DSS によるモデムのログ記録](https://docs.microsoft.com/windows-hardware/drivers/network/mb-modem-logging-with-dss)機能。
 * 新しい [5G データ クラスのサポート](https://docs.microsoft.com/windows-hardware/drivers/network/mb-5g-data-class-support)機能。
 
-### <a name="print-1903"></a>印刷
+### <a name="print"></a><a name="print-1903"></a>印刷
 
 Windows 10 Version 1903 で追加された新しい印刷ドライバーのドキュメントと機能を次に示します。
 
@@ -395,13 +395,13 @@ Windows 10 Version 1903 で追加された新しい印刷ドライバーのド�
 
 * 新しい **fpRegeneratePrintDeviceCapabilities** [PRINTPROVIDER](https://docs.microsoft.com/windows-hardware/drivers/ddi/winsplp/ns-winsplp-_printprovidor) 構造体メンバーと更新されたドキュメント。
 
-### <a name="sensors-1903"></a>センサー
+### <a name="sensors"></a><a name="sensors-1903"></a>センサー
 
 Windows 10 Version 1903 のセンサー ドライバー開発の新機能には、画面の明るさをテストして調整するための [MALT (Microsoft Ambient Light Tool) ツール](https://docs.microsoft.com/windows-hardware/drivers/sensors/testing-malt-building-a-light-testing-tool)が含まれています。
 
 Ambient Color OEM ホワイトペーパーも更新されました。
 
-### <a name="storage-1903"></a>ストレージ
+### <a name="storage"></a><a name="storage-1903"></a>ストレージ
 
 Windows 10 Version 1903 には次のストレージ機能が追加されました。
 
@@ -421,7 +421,7 @@ Windows 10 Version 1903 では、WHEA へのインターフェイスが簡単に
 * [*WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_uninitialize_device_driver)
 * [*WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nc-ntddk-_whea_error_source_initialize_device_driver)
 
-### <a name="wifi-1903"></a>Wi-Fi
+### <a name="wi-fi"></a><a name="wifi-1903"></a>Wi-Fi
 
 新しい Wi-Fi ドライバーの開発ドキュメントと機能を次に示します。
 
@@ -442,17 +442,17 @@ Windows 10 Version 1903 では、WHEA へのインターフェイスが簡単に
 
 [ページのトップへ](#top)
 
-### <a name="audio-1809"></a>オーディオ
+### <a name="audio"></a><a name="audio-1809"></a>オーディオ
 
 新しい [sidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/sidebandaudio/) ヘッダーと [usbsidebandaudio](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbsidebandaudio/) ヘッダーに関するドキュメントが公開されました。
 
-### <a name="bluetooth-1809"></a>Bluetooth
+### <a name="bluetooth"></a><a name="bluetooth-1809"></a>Bluetooth
 
 * HCI_VS_MSFT_Read_Supported_Features が更新され、セキュリティで保護されたシンプルなペアリング プロセスのための新しいフラグが追加されました。 「[Microsoft-defined Bluetooth HCI commands and events (Microsoft が定義した Bluetooth HCI のコマンドとイベント)](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/microsoft-defined-bluetooth-hci-commands-and-events#hcivsmsftreadsupportedfeatures)」をご覧ください。
 
 * Windows 10 Version 1809 の新しい QDID はこちら([108589](https://launchstudio.bluetooth.com/ListingDetails/55701)) で確認できます。 すべてのリリースの全 QD ID の一覧については、「[Bluetooth](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)」をご覧ください。
 
-### <a name="display-1809"></a>ディスプレイ
+### <a name="display"></a><a name="display-1809"></a>ディスプレイ
 
 Windows 10 Version 1809 では、ディスプレイ ドライバー開発に関する次の更新が行われました。
 
@@ -494,7 +494,7 @@ Windows 10 Version 1809 では、ディスプレイ ドライバー開発に関�
 
 * **SDR ホワイト レベル** カーネル モードのデバイス ドライバー インターフェイスに既存の DDI への新しいパラメーターが追加されました。これにより、グラフィックス ドライバーは、HDR モードで実行しているディスプレイについて、OS のコンポジターがすべての SDR コンテンツに適用している "SDR ホワイト レベル" の値を知ることができます。 「_DXGK_COLORIMETRY」を参照してください。
 
-### <a name="kernel-1809"></a>Windows カーネル
+### <a name="windows-kernel"></a><a name="kernel-1809"></a>Windows カーネル
 
 コア カーネルに新しい API がいくつか追加されています。
 
@@ -515,7 +515,7 @@ Windows 10 Version 1809 では、ディスプレイ ドライバー開発に関�
 * [KzLowerIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzlowerirql) と [KzRaiseIrql](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kzraiseirql) は、フォワーダに依存してインライン関数の特殊なケースをインスタンス化するのではなく、Windows 8 以降のバージョンをターゲットとするカーネル コンポーネントでサポートされる extern forceinline に移動されました。
 * PCI の Flattening Portal Bridge (FPB) がサポートされるようになりました。 詳しくは、[正式な仕様](https://pcisig.com/sites/default/files/specification_documents/ECN_FPB_9_Feb_2017.pdf)をご覧ください。 新しい API (_PCI_FPB_*) が [Ntddk.h](https://review.docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/) で宣言されています。
 
-### <a name="networking-1809"></a>ネットワーク
+### <a name="networking"></a><a name="networking-1809"></a>ネットワーク
 
 #### <a name="netadaptercx"></a>NetAdapterCx
 
@@ -538,7 +538,7 @@ Windows 10 Version 1809 では、ディスプレイ ドライバー開発に関�
 
 [Receive Side Scaling バージョン 2 (RSSv2)](https://docs.microsoft.com/windows-hardware/drivers/network/receive-side-scaling-version-2-rssv2-) がバージョン 1.01 に更新されました。
 
-### <a name="mobilebroadband-1809"></a>モバイル ブロードバンド
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1809"></a>モバイル ブロードバンド
 
 * MBB デバイスのマルチ パケット データ プロトコル (MPDP) インターフェイスをサポートする新しい [OID](https://docs.microsoft.com/windows-hardware/drivers/network/oid-wwan-mpdp) と DDI。
 * MBB デバイスとドライバーのリセット回復の信頼性を高める新しい[デバイスベースのリセットと回復](https://docs.microsoft.com/windows-hardware/drivers/network/mb-device-based-reset-and-recovery)機能。
@@ -553,7 +553,7 @@ Windows 10 Version 1803 では MBBCx のプレビュー コンテンツが提供
 
 [AutoConnectOrder 設定](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings#apn-database-and-desktop-cosa-settings)がデスクトップ COSA でサポートされるようになりました。
 
-### <a name="sensors-1809"></a>センサー
+### <a name="sensors"></a><a name="sensors-1809"></a>センサー
 
 明るさの自動調整機能のサポート:
 
@@ -561,7 +561,7 @@ Windows 10 Version 1803 では MBBCx のプレビュー コンテンツが提供
 
 詳しくは、「[Light sensor data fields (光センサー データ フィールド)](https://docs.microsoft.com/windows-hardware/drivers/sensors/light-sensor-data-fields)」をご覧ください。
 
-### <a name="usb-1809"></a>USB
+### <a name="usb"></a><a name="usb-1809"></a>USB
 
 **USB Type-C ドライバー開発者向けの新機能:**
 
@@ -588,7 +588,7 @@ Windows 10 Version 1803 では MBBCx のプレビュー コンテンツが提供
 
 * [EVT_UCX_USBDEVICE_DISABLE](https://docs.microsoft.com/windows-hardware/drivers/ddi/ucxusbdevice/nc-ucxusbdevice-evt_ucx_usbdevice_disable)
 
-### <a name="wifi-1809"></a>Wi-Fi
+### <a name="wi-fi"></a><a name="wifi-1809"></a>Wi-Fi
 
 WLAN デバイス ドライバー インターフェイス (WDI) 仕様がバージョン 1.1.7 に更新されました。
 
@@ -601,15 +601,15 @@ WLAN デバイス ドライバー インターフェイス (WDI) 仕様がバー
 
 [ページのトップへ](#top)
 
-### <a name="acpi-1803"></a>ACPI
+### <a name="acpi"></a><a name="acpi-1803"></a>ACPI
 
 Windows 10 Version 1803 では、プラットフォームの機能と物理デバイスの位置情報をサポートするために、ACPI の DDI が更新されています。
 
-### <a name="audio-1803"></a>オーディオ
+### <a name="audio"></a><a name="audio-1803"></a>オーディオ
 
 [音声による有効化](https://docs.microsoft.com/windows-hardware/drivers/audio/voice-activation)に関するトピックが更新され、APO 要件に関する情報が追加されました。
 
-### <a name="bluetooth-1803"></a>Bluetooth
+### <a name="bluetooth"></a><a name="bluetooth-1803"></a>Bluetooth
 
 Windows 10 Version 1803 では、クイック ペアリングのサポートが導入されます。 ユーザーが設定アプリに移動して、ペア設定する周辺機器を検索する必要がなくなりました。 使用可能な新しい周辺機器が近くで検出されると、Windows によって通知がポップアップ表示されます。 お使いの周辺機器をクイック ペアリングに確実に対応させるには、2 つの要件セットがあります。 1 つは周辺機器の動作に関するもので、もう 1 つは Microsoft が定義したベンダーのアドバタイズ セクションの構造と値に関するものです。 詳細については、次のドキュメントを参照してください。
 
@@ -618,14 +618,14 @@ Windows 10 Version 1803 では、クイック ペアリングのサポートが�
 
 Windows 10 Version 1803 では Bluetooth バージョン 5.0 がサポートされます。 プロファイルのサポートについては、「[Bluetooth Version and Profile Support in Windows 10 (Windows 10 での Bluetooth バージョンとプロファイルのサポート)](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/general-bluetooth-support-in-windows)」をご覧ください。
 
-### <a name="camera-1803"></a>カメラ
+### <a name="camera"></a><a name="camera-1803"></a>カメラ
 
 カメラ ドライバーの開発では、次の更新が行われました。
 
 * [DShow Bridge implementation guidance for UVC devices (UVC デバイス向け DShow (DirectShow) ブリッジ実装ガイド)](https://docs.microsoft.com/windows-hardware/drivers/stream/dshow-bridge-implementation-guidance-for-usb-video-class-devices) - USB ビデオ クラス (UVC) 仕様に準拠しているカメラとデバイス向けに DShow ブリッジを構成するための実装ガイド。 このプラットフォームは、USB バス標準から Microsoft OS 記述子を使って DShow ブリッジを構成します。 拡張プロパティ OS 記述子は USB の標準的な記述子の拡張機能です。標準仕様では有効にされない Windows 固有のデバイス プロパティを返すために、USB デバイスによって使用されます。
 * [360 カメラのビデオ キャプチャ](https://docs.microsoft.com/windows-hardware/drivers/stream/360-camera-video-capture) - 既存の MediaCapture API を使い、360 カメラのプレビュー、キャプチャ、録画のサポートを提供します。 これにより、プラットフォームで球面のフレーム ソース (正距円筒図法のフレームなど) を公開することができ、アプリで 360 カメラのビデオ ストリームを検出して処理するだけでなく、360 キャプチャ エクスペリエンスを提供することが可能になります。
 
-### <a name="display-1803"></a>ディスプレイ
+### <a name="display"></a><a name="display-1803"></a>ディスプレイ
 
 Windows 10 Version 1803 では、ディスプレイ ドライバー開発に関する次の更新が行われました。
 
@@ -668,11 +668,11 @@ Windows 10 Version 1803 では、ディスプレイ ドライバー開発に関�
 
 * **共有テクスチャの機能強化** - プロセスや D3D デバイス間で共有可能なテクスチャの種類が増えました。 この設計により、最小限のメモリのコピーだけで、フレーム サーバーの OS コンポーネントでモノクロがサポートされるようになります。
 
-### <a name="security-1803"></a>ドライバーのセキュリティ
+### <a name="driver-security"></a><a name="security-1803"></a>ドライバーのセキュリティ
 
 [Windows ドライバー セキュリティ ガイダンス](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/)と、ドライバー開発者向けにドライバー セキュリティのチェックリストを提供する[ドライバー セキュリティ チェックリスト](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/driver-security-checklist)が更新されました。
 
-### <a name="kernel-1803"></a>Windows カーネル
+### <a name="windows-kernel"></a><a name="kernel-1803"></a>Windows カーネル
 
 このセクションでは、Windows 10 Version 1803 での Windows カーネル ドライバー開発に関する新機能と更新された機能について説明します。
 
@@ -696,7 +696,7 @@ NT サービスおよびカーネル モードとユーザー モードのドラ
 
 アクティブ セッションの変更通知に登録して、通知が発生したときにコールバックを取得できるようになりました。 この通知の一環として、一部のデータが呼び出し元で共有されます。 この関連付けられているデータは、[PO_SPR_ACTIVE_SESSION_DATA 構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntpoapi/ns-ntpoapi-_po_spr_active_session_data)を介して配信されます。
 
-### <a name="networking-1803"></a>ネットワーク
+### <a name="networking"></a><a name="networking-1803"></a>ネットワーク
 
 このセクションでは、Windows 10 Version 1803 での Windows ネットワーク ドライバー開発に関する新機能と強化された機能について簡単に説明します。
 
@@ -720,7 +720,7 @@ NDIS では次の更新が行われました。
   * [Writing an MBBCx client driver (MBBCx クライアント ドライバーの作成)](https://docs.microsoft.com/windows-hardware/drivers/netcx/writing-an-mbbcx-client-driver)
   * [MBBCx API リファレンス](https://docs.microsoft.com/windows-hardware/drivers/netcx/mbbcx-api-reference)
 
-### <a name="mobilebroadband-1803"></a>モバイル ブロードバンド
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1803"></a>モバイル ブロードバンド
 
 モバイル ブロードバンドについては、[MB 低レベル UICC アクセス](https://docs.microsoft.com/windows-hardware/drivers/network/mb-low-level-uicc-access)について詳しく説明した新しいトピックが追加されました。
 
@@ -728,7 +728,7 @@ NDIS では次の更新が行われました。
 
 新しいホットスポットと AppID の設定が[デスクトップ COSA](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings#desktop-cosa-only-settings) の一部になりました。 通信事業者が [Sysdev メタデータ パッケージ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/service-metadata)を使ってブロードバンド アプリ エクスペリエンスのアプリを提供している場合は、[MO UWP アプリ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/uwp-mobile-broadband-apps)と [COSA データベース](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/desktop-cosa-apn-database-settings)に移行することを強くお勧めします。
 
-### <a name="pci-1803"></a>PCIe
+### <a name="pcie"></a><a name="pci-1803"></a>PCIe
 
 次のモダン スタンバイと PCI ホット プラグのシナリオをサポートするために、新しい ACPI _DSD メソッドが追加されました。
 
@@ -738,15 +738,15 @@ NDIS では次の更新が行われました。
 
 詳しくは、「[ACPI Interface:Device Specific Data (_DSD) for PCIe Root Ports (ACPI インターフェイス: PCIe ルート ポートのデバイス固有のデータ (_DSD))](https://docs.microsoft.com/windows-hardware/drivers/pci/dsd-for-pcie-root-ports)」をご覧ください。
 
-### <a name="sensors-1803"></a>センサー
+### <a name="sensors"></a><a name="sensors-1803"></a>センサー
 
 接続の種類のプロパティを明確にするために、[SENSOR_CONNECTION_TYPES 列挙](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ne-sensorsdef-sensor_connection_types)が追加されました。
 
-### <a name="usb-1803"></a>USB
+### <a name="usb"></a><a name="usb-1803"></a>USB
 
 共有コネクタのデタッチをシミュレートするための新しい API が追加されました。 USB デバイスがホストに接続されているか共有コネクタを持っている場合、スタックが削除されるときにデバイスがホストに接続されているか共有コネクタを持っていれば、デタッチ イベントをシミュレートできます。 この時点ですべてのアタッチ/デタッチ通知メカニズムが無効になります。 詳しくは、「[UfxDeviceNotifyFinalExit 関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/ufxclient/nf-ufxclient-ufxdevicenotifyfinalexit)」をご覧ください。
 
-### <a name="wifi-1803"></a>Wi-Fi
+### <a name="wi-fi"></a><a name="wifi-1803"></a>Wi-Fi
 
 Wi-Fi ドライバーの開発では、[高度な電源管理機能である Nic Auto Power Saver (NAPS) の TLV](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-tlv-os-power-management-features) が新たに追加され、プラットフォーム レベルのデバイス回復サービス (PLDR) が更新されています。
 
@@ -756,7 +756,7 @@ Wi-Fi ドライバーの開発では、[高度な電源管理機能である Nic
 
 [ページのトップへ](#top)
 
-### <a name="audio-1709"></a>オーディオ
+### <a name="audio"></a><a name="audio-1709"></a>オーディオ
 
 Windows 10 Version 1709 では、Windows オーディオ ドライバーの開発に関する次の更新が行われました。
 
@@ -768,7 +768,7 @@ Windows 10 Version 1709 では、Windows オーディオ ドライバーの開�
   * 更新されたキーワード システムの概要
   * 音声によるスリープ解除に関する最新情報
 
-### <a name="acpi-1709"></a>ACPI
+### <a name="acpi"></a><a name="acpi-1709"></a>ACPI
 
 以下は、入力/出力バッファーをサポートする新しい ACPI (Advanced Configuration and Power Interface) DDI の一覧です。
 
@@ -793,11 +793,11 @@ Windows 10 Version 1709 では、Windows オーディオ ドライバーの開�
 * [ACPI_METHOD_ARGUMENT_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpiioct/ns-acpiioct-_acpi_method_argument_v2)
 * [GIC_ITS](https://docs.microsoft.com/windows-hardware/drivers/ddi/acpitabl/ns-acpitabl-_gic_its)
 
-### <a name="biometric-1709"></a>生体認証
+### <a name="biometric"></a><a name="biometric-1709"></a>生体認証
 
 Windows 生体認証ドライバーの署名の要件が追加されました。 詳しくは、「[Signing WBDI Drivers (WBDI ドライバーへの署名)](https://docs.microsoft.com/windows-hardware/drivers/biometric/signing-wbdi-drivers)」をご覧ください。
 
-### <a name="display-1709"></a>ディスプレイ
+### <a name="display"></a><a name="display-1709"></a>ディスプレイ
 
 Windows 10 Version 1709 では、Windows ディスプレイ ドライバーの開発に関する次の新機能が追加されました。
 
@@ -808,14 +808,14 @@ Windows 10 Version 1709 では、Windows ディスプレイ ドライバーの�
     2. コンテンツの保護
     3. ビデオの処理
 
-### <a name="hardware-notifications-1709"></a>ハードウェア通知
+### <a name="hardware-notifications"></a><a name="hardware-notifications-1709"></a>ハードウェア通知
 
 Windows 10 Version 1709 には、通知コンポーネント (LED、振動のメカニズムなど) のハードウェアに依存しないサポートのためのサポートがあります。 詳細については、次のドキュメントを参照してください。
 
 * [Hardware notifications support (ハードウェア通知のサポート)](https://docs.microsoft.com/windows-hardware/drivers/gpiobtn/hardware-notifications-support)
 * [ハードウェア通知リファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gpiobtn/)
 
-### <a name="kernel-1709"></a>Windows カーネル
+### <a name="windows-kernel"></a><a name="kernel-1709"></a>Windows カーネル
 
 Windows 10 Version 1709 では、ドライバーの Windows カーネルに新しいルーチンがいくつか追加されています。
 
@@ -837,7 +837,7 @@ Windows 10 Version 1709 では、ドライバーの Windows カーネルに新�
   * [RtlInitializeCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlinitializecorrelationvector)
   * [RtlValidateCorrelationVector](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-rtlvalidatecorrelationvector)
 
-### <a name="mobilebroadband-1709"></a>モバイル ブロードバンド
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1709"></a>モバイル ブロードバンド
 
 Windows 10 Version 1709 では、ドライバー開発に関する Windows モバイル ブロードバンドと通信事業者のシナリオに次の新機能が追加されました。
 
@@ -849,7 +849,7 @@ Windows 10 Version 1709 では、ドライバー開発に関する Windows モ�
 Windows 10 Version 1709 では、[デスクトップ COSA のドキュメント](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/planning-your-desktop-cosa-apn-database-submission)が更新され、ブランド関連のフィールドが新たに追加されました。
 通信事業者のシナリオに関するその他の変更については、[非推奨の機能](#deprecated-features)の一覧をご覧ください。
 
-### <a name="networking-1709"></a>ネットワーク
+### <a name="networking"></a><a name="networking-1709"></a>ネットワーク
 
 このセクションでは、Windows 10 Version 1709 での Windows ネットワーク ドライバー開発に関する新機能と強化された機能について簡単に説明します。
 
@@ -865,11 +865,11 @@ Windows 10 Version 1709 では、[デスクトップ COSA のドキュメント]
 * [NDIS 6.80 の概要](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-6-80)
 * [NDIS 6.x ドライバーの NDIS 6.80 への移植](https://docs.microsoft.com/windows-hardware/drivers/network/porting-ndis-6-x-drivers-to-ndis-6-80)
 
-### <a name="pci-1709"></a>仮想化 PCI
+### <a name="virtualized-pci"></a><a name="pci-1709"></a>仮想化 PCI
 
 PCI Express シングルルート I/O 仮想化 (SR-IOV) 仕様に準拠するデバイスの物理機能ドライバーを作成するための新しいプログラミング インターフェイスがあります。 このインターフェイスは Pcivirt.h で宣言されます。 詳しくは、「[PCI virtualization (PCI の仮想化)](https://docs.microsoft.com/windows-hardware/drivers/ddi/pcivirt/)」をご覧ください。
 
-### <a name="pwm-1709"></a>パルス幅変調 (PWM) コントローラー
+### <a name="pulse-width-modulation-pwm-controllers"></a><a name="pwm-1709"></a>パルス幅変調 (PWM) コントローラー
 
 Windows 10 Version 1709 では、SoC の一部であるパルス幅変調 (PWM) コントローラーへのアクセスと SoC アドレス空間へのメモリ マップを提供するために、カーネル モードのドライバーを作成する必要があります。 詳しくは、「[PWM driver for an on-SoC PWM module (on-SoC PWM モジュールの PWM ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/spb/pulse-width-controller%20driver?branch=spb)」をご覧ください。
 
@@ -877,7 +877,7 @@ PIN のパスを解析して検証し、PIN 番号を抽出するには、カー
 
 アプリは [PWM IOCTL](https://docs.microsoft.com/windows-hardware/drivers/spb/pulse-width-controller%20driver#pwm-ioctl-requests) 要求を送信することで、コントローラー ドライバーに要求を送ることができます。
 
-### <a name="storage-1709"></a>ストレージとファイル システム
+### <a name="storage-and-file-systems"></a><a name="storage-1709"></a>ストレージとファイル システム
 
 ファイル システムとストレージでは、Universal Flash Storage に追加のサポートを提供するために、ufs.h ヘッダーが Windows 10 Version 1709 に追加されました。
 
@@ -895,7 +895,7 @@ Windows 10 Version 1709 で更新されたヘッダーは次のとおりです�
 * scsi.h
 * storport.h
 
-### <a name="usb-1709"></a>USB
+### <a name="usb"></a><a name="usb-1709"></a>USB
 
 このセクションでは、Windows 10 Version 1709 での USB に関する新機能について説明します。
 
@@ -961,7 +961,7 @@ IOCTL_UCMTCPCI_PORT_CONTROLLER_DISPLAYPORT_DISPLAY_OUT_STATUS_CHANGED 要求を�
 
 [ページのトップへ](#top)
 
-### <a name="audio-1703"></a>オーディオ
+### <a name="audio"></a><a name="audio-1703"></a>オーディオ
 
 Windows 10 Version 1703 では、Windows オーディオ ドライバーの開発に関する次のトピックが新たに追加されました。
 
@@ -971,7 +971,7 @@ Windows 10 Version 1703 では、Windows オーディオ ドライバーの開�
   * [KSPROPERTY_AUDIOMODULE_COMMAND](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-audiomodule-command) プロパティ - オーディオ モジュールのクライアントがカスタム コマンドを送信して、オーディオ モジュールに対してクエリを実行してパラメーターを設定できるようにします。
   * [IPortClsNotifications](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsnotifications) - オーディオ モジュールの通信をサポートするために、ミニポートへの通知ヘルパーを提供する新しいポート クラスの通知。
 
-### <a name="bluetooth-1703"></a>Bluetooth
+### <a name="bluetooth"></a><a name="bluetooth-1703"></a>Bluetooth
 
 Windows 10 Version 1703 では、Bluetooth に関する次の更新が行われました。
 
@@ -981,7 +981,7 @@ Windows 10 Version 1703 では、Bluetooth に関する次の更新が行われ�
 
 Bluetooth の新機能について詳しくは、「[Bluetooth](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth)」および「[Bluetooth LE pre-pairing (Bluetooth LE の事前ペアリング)](https://docs.microsoft.com/windows-hardware/design/component-guidelines/bluetooth-prepairing)」をご覧ください。
 
-### <a name="camera-1703"></a>カメラ
+### <a name="camera"></a><a name="camera-1703"></a>カメラ
 
 Windows 10 Version 1703 では、カメラ ドライバーの開発に関する次の更新が行われました。
 
@@ -993,11 +993,11 @@ Windows 10 Version 1703 では、カメラ ドライバーの開発に関する�
   * [KSCATEGORY_SENSOR_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-sensor-camera)
   * [KSCATEGORY_VIDEO_CAMERA](https://docs.microsoft.com/windows-hardware/drivers/install/kscategory-video-camera)
 
-### <a name="kernel-1703"></a>Windows カーネル
+### <a name="windows-kernel"></a><a name="kernel-1703"></a>Windows カーネル
 
 [Windows カーネル モードのプロセスとスレッド マネージャー](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-kernel-mode-process-and-thread-manager) - Windows 10 Version 1703 以降、Windows Subsystem for Linux (WSL) により、他の Windows アプリケーションと共に、ネイティブの Linux ELF64 バイナリを Windows で実行できるようになりました。 バイナリの実行に必要な WSL アーキテクチャと、ユーザー モードとカーネル モードのコンポーネントについて詳しくは、[Windows Subsystem for Linux](https://blogs.msdn.microsoft.com/wsl/) ブログの投稿をご覧ください。
 
-### <a name="mobilebroadband-1703"></a>モバイル ブロードバンド
+### <a name="mobile-broadband"></a><a name="mobilebroadband-1703"></a>モバイル ブロードバンド
 
 [**モバイル ブロードバンド (MB)** ](https://docs.microsoft.com/windows-hardware/drivers/network/mobile-broadband--mb--design-guide) の更新には、[LTE アタッチ機能](https://docs.microsoft.com/windows-hardware/drivers/network/mb-lte-attach-operations)の向上、[マルチ SIM 操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-multi-sim-operations)のサポート、モデムへの[コンテキストのプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/network/mb-provisioned-context-operations)のサポート、[SAR (比吸収率) プラットフォーム](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support)のサポート、[ネットワーク ブラックリスト登録](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)のサポートなどがあります。
 
@@ -1007,11 +1007,11 @@ Windows 10 Version 1703 では、カメラ ドライバーの開発に関する�
 * [Submitting the COSA/APN database update (COSA/APN データベースの更新の提出)](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/submitting-the-desktop-cosa-apn-database-update)
 * [Testing your COSA/APN database submission (COSA/APN データベースの提出のテスト)](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission)
 
-### <a name="networking-1703"></a>ネットワーク
+### <a name="networking"></a><a name="networking-1703"></a>ネットワーク
 
 Windows 10 Version 1703 でのネットワーク ドライバー開発に対する更新では、ストリーム ソケットと呼ばれる新しい種類のソケットが追加されました。これにより、Windows で Linux ネットワーク アプリケーションがサポートされます。 詳しくは、[**Winsock カーネル**](https://docs.microsoft.com/windows-hardware/drivers/network/winsock-kernel-socket-categories)に関する記事をご覧ください。 [WskConnectEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_connect_ex)、[WskListen](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_listen)、[WSK_CLIENT_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_client_stream_dispatch)、[WSK_PROVIDER_STREAM_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_stream_dispatch) などの新しい関数や構造体が追加されています。
 
-### <a name="pos-1703"></a>POS
+### <a name="pos"></a><a name="pos-1703"></a>POS
 
 Windows 10 Version 1703 では、POS に関する次のトピックが新たに追加されました。
 
@@ -1021,7 +1021,7 @@ Windows 10 Version 1703 では、POS に関する次のトピックが新たに�
 
 [BarcodeSymbology 列挙](https://docs.microsoft.com/windows-hardware/drivers/ddi/pointofservicecommontypes/ne-pointofservicecommontypes-_barcodesymbology)に対する新しい Gs1DWCode シンボル体系があります。
 
-### <a name="usb-1703"></a>USB
+### <a name="usb"></a><a name="usb-1703"></a>USB
 
 Windows 10 Version 1703 では、USB Type-C ポート コントローラー インターフェイス仕様をサポートする新しいクラス拡張機能 (UcmTcpciCx.sys) が提供されます。 USB Type-C コネクタ ドライバーで内部の PD/Type-C 状態を保持しておく必要はありません。 USB Type-C コネクタと USB 電源供給 (PD) ステート マシンの複雑な管理はシステムによって処理されます。 必要なのは、クラス拡張機能を介してハードウェアのイベントをシステムに通信するクライアント ドライバーを作成することだけです。 詳しくは、[USB Type-C コントローラー インターフェイスのドライバー クラス拡張機能のリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt805826(v=vs.85))をご覧ください。
 
@@ -1031,7 +1031,7 @@ Windows 10 Version 1703 では、USB Type-C ポート コントローラー イ�
 
 このセクションでは、Windows 10 Version 1607 でのドライバー開発に関する新機能と強化された機能について説明します。
 
-### <a name="audio-1607"></a>オーディオ
+### <a name="audio"></a><a name="audio-1607"></a>オーディオ
 
 Windows 10 Version 1607 では、Windows オーディオ ドライバーの開発に関する次のトピックが新たに追加されました。
 
@@ -1042,7 +1042,7 @@ Windows 10 Version 1607 では、Windows オーディオ ドライバーの開�
   * [**KSAUDIO\_PACKETSIZE\_CONSTRAINTS2**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints2)
 * [PKEY\_AudioEndpoint\_Default\_VolumeInDb](https://docs.microsoft.com/windows-hardware/drivers/audio/pkey-audioendpoint-default-volumeindb) &ndash; オーディオ信号に適切な増幅または減衰が適用されたときにより良いユーザー エクスペリエンスを提供する INF キー。
 
-### <a name="camera-1607"></a>カメラ
+### <a name="camera"></a><a name="camera-1607"></a>カメラ
 
 Windows 10 Version 1607 では、Windows Hello と顔認証をサポートするために、カメラ ドライバーの開発に関するトピックが追加および更新されています。
 
@@ -1050,7 +1050,7 @@ Windows 10 Version 1607 では、Windows Hello と顔認証をサポートする
 * [拡張カメラ コントロール](https://docs.microsoft.com/windows-hardware/drivers/stream/standardized-extended-controls-)
 * [**KSPROPERTY\_CAMERACONTROL\_EXTENDED\_FACEAUTH\_MODE**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-faceauth-mode)
 
-### <a name="location-1607"></a>位置情報
+### <a name="location"></a><a name="location-1607"></a>位置情報
 
 Windows 10 Version 1607 では、ロケーション ドライバーの開発に関する次の全地球航法衛星システム (GNSS) Breadcrumb DDI が新たに追加されています。
 
@@ -1063,11 +1063,11 @@ Windows 10 Version 1607 では、ロケーション ドライバーの開発に�
 * [**IOCTL\_GNSS\_START\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_start_breadcrumbing)
 * [**IOCTL\_GNSS\_STOP\_BREADCRUMBING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/gnssdriver/ni-gnssdriver-ioctl_gnss_stop_breadcrumbing)
 
-### <a name="print-1607"></a>印刷
+### <a name="print"></a><a name="print-1607"></a>印刷
 
 Windows 10 Version 1607 でのプリンター ドライバー開発には、コマンド ライン ツールの [JSConstraintsDebug](https://docs.microsoft.com/windows-hardware/drivers/devtest/jsconstraintsdebug) が含まれています。これにより、V4 プリンター ドライバー開発時の JavaScript 制限のデバッグがサポートされます。
 
-### <a name="wlan-1607"></a>WLAN
+### <a name="wlan"></a><a name="wlan-1607"></a>WLAN
 
 Windows 10 Version 1607 では、WLAN デバイス ドライバー インターフェイス (WDI) バージョン 1.0.21 に関するトピックが追加および更新されています。 詳しくは、[WDI ドキュメントの変更履歴](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-doc-change-history)をご覧ください。
 
@@ -1077,7 +1077,7 @@ Windows 10 Version 1607 では、WLAN デバイス ドライバー インター�
 
 このセクションでは、Windows 10 でのドライバー開発に関する新機能と更新された機能について説明します。
 
-### <a name="bluetooth-1507"></a>Bluetooth
+### <a name="bluetooth"></a><a name="bluetooth-1507"></a>Bluetooth
 
 Windows 10 では、[Microsoft が定義した Bluetooth HCI 拡張機能](https://docs.microsoft.com/windows-hardware/drivers/bluetooth/microsoft-defined-bluetooth-hci-commands-and-events)が新しく追加されています。
 
@@ -1085,7 +1085,7 @@ Windows 10 では、[Microsoft が定義した Bluetooth HCI 拡張機能](https
 
 OneCoreUAP ベースの Windows エディションには、SPB (Simple Peripheral Bus) 用のドライバー プログラミング インターフェイスとインボックス ドライバー (I2C、SPI、GPIO など) が含まれています。 これらのドライバーは、Windows 10 デスクトップ エディションと Windows 10 Mobile の両方、およびその他のバージョンの Windows 10 で実行されます。
 
-### <a name="camera-1507"></a>カメラ
+### <a name="camera"></a><a name="camera-1507"></a>カメラ
 
 カメラ ドライバーの DDI は、新しい[カメラ DDI](https://docs.microsoft.com/windows-hardware/drivers/stream/windows-10-technical-preview-camera-drivers-reference) を含むユニバーサル Windows ドライバー モデルに収束されました。 次のような追加機能も含まれています。
 
@@ -1104,34 +1104,34 @@ OneCoreUAP ベースの Windows エディションには、SPB (Simple Periphera
 
 Windows 10 の[携帯電話のアーキテクチャと実装](https://docs.microsoft.com/windows-hardware/drivers/network/cellular-architecture-and-driver-model)が更新されました。
 
-### <a name="display-1507"></a>ディスプレイ
+### <a name="display"></a><a name="display-1507"></a>ディスプレイ
 
 Windows 8.1 と Windows Phone の[ディスプレイ ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_display/)は、Windows 10 の統一モデルに収束されました。
 
 各 GPU にプロセスごとに仮想アドレス空間を割り当てる新しいメモリ モデルが実装されています。 WDDMv2 では、ビデオ メモリの直接アドレス指定も引き続きサポートされ、それを必要とするグラフィックス ハードウェアに対応していますが、これはレガシ ケースと見なされます。 IHV は、仮想アドレス指定をサポートする新しいハードウェアを開発する必要があります。 この新しいメモリ モデルを有効にするために、DDI に対して大きな変更が加えられています。
 
-### <a name="human-interface-device"></a>ヒューマン インターフェイス デバイス (HID)
+### <a name="human-interface-device-hid"></a><a name="human-interface-device"></a>ヒューマン インターフェイス デバイス (HID)
 
 新しい仮想 HID フレームワーク (VHF) により、カーネルモード トランスポート ミニドライバーを作成する必要がなくなりました。 このフレームワークは、ドライバーで使用されるプログラミング要素を公開するための、Microsoft が提供する静的ライブラリ (Vhfkm.lib) で構成されます。 また、1 つまたは複数の子デバイスを列挙し、仮想の[ヒューマン インターフェイス デバイス](https://docs.microsoft.com/windows-hardware/drivers/hid/) (HID) ツリーを構築する、Microsoft が提供するインボックス ドライバー (Vhf.sys) も含まれています。
 
 * [仮想 HID フレームワーク (VHF) を使って HID ソース ドライバーを作成する](https://docs.microsoft.com/windows-hardware/drivers/hid/virtual-hid-framework--vhf-)
 * [仮想 HID フレームワーク](https://docs.microsoft.com/windows-hardware/drivers/ddi/vhf/)
 
-### <a name="location-1507"></a>位置情報
+### <a name="location"></a><a name="location-1507"></a>位置情報
 
 全地球航法衛星システム (GNSS) ドライバーの DDI は、[GNSS ユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/ddi/_gnss/) (UMDF 2.0) に収束されました。
 
-### <a name="near-field-communication"></a>近距離無線通信 (NFC)
+### <a name="near-field-communication-nfc"></a><a name="near-field-communication"></a>近距離無線通信 (NFC)
 
 [NFC DDI](https://docs.microsoft.com/windows-hardware/drivers/ddi/_nfpdrivers/) は、モバイルおよびデスクトップのソリューションをサポートする新しいドライバー モデルに収束されました。
 
 [NFC クラス拡張機能](https://docs.microsoft.com/windows-hardware/drivers/nfc/nfc-class-extension-):新しい NFC クラス拡張機能ドライバーを利用できます。 NFC クラス拡張機能ドライバーは、NFC コントローラー、セキュリティで保護された要素、およびリモート RF エンドポイントと対話するために、Windows 定義のすべての DDI を実装します。
 
-### <a name="networking-1507"></a>ネットワーク
+### <a name="networking"></a><a name="networking-1507"></a>ネットワーク
 
 新しい [PacketDirect プロバイダー インターフェイス (PDPI)](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-ndis-pdpi) は、既存の NDIS ミニポート ドライバー モデルの拡張機能として利用できます。 PDPI は、アプリケーションが独自のバッファーの管理、プロセッサのポーリング、ミニポート アダプターでのパケット送受信の直接管理を行うための I/O モデルを提供します。 これらの機能の組み合わせにより、アプリケーションは自身のコンテキストを全面的に制御し、はるかに高いパケット/秒 (pps) レートを実現できます。
 
-### <a name="print-1507"></a>印刷
+### <a name="print"></a><a name="print-1507"></a>印刷
 
 プリンター ドライバーの更新では、v4 プリンター ドライバーの機能強化と変更が行われ、モバイル デバイスからのワイヤレス印刷がサポートされるようになりました。また、次の点も強化されています。
 
@@ -1149,7 +1149,7 @@ Windows 10 には、複雑なドライバー操作を処理する新しいクラ
 * [スマート カード クライアント ドライバーのイベント コールバック関数](https://docs.microsoft.com/previous-versions/dn946583(v=vs.85))
 * [スマート カード クライアント ドライバーのサポート メソッド](https://docs.microsoft.com/previous-versions/dn946584(v=vs.85))
 
-### <a name="storage-1507"></a>ストレージ
+### <a name="storage"></a><a name="storage-1507"></a>ストレージ
 
 Windows 10 では、アプリがネイティブのデバイス プロトコルを使用してストレージ デバイスと通信できるように、新しいプロトコル固有のインターフェイスが追加されました。 これらの更新には、次のものが含まれます。
 
@@ -1160,7 +1160,7 @@ Windows 10 では、アプリがネイティブのデバイス プロトコル�
 
 [GUID\_DEVICE\_RESET\_INTERFACE\_STANDARD](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_device_reset_interface_standard) インターフェイスは、正常に機能しないデバイスのリセットと復旧をファンクション ドライバーが試行するための標準的な方法を定義します。
 
-### <a name="usb-1507"></a>USB
+### <a name="usb"></a><a name="usb-1507"></a>USB
 
 Windows 10 の USB には次の新機能があります。 詳しくは、「[Windows 10:What's new for USB (Windows 10: USB の新機能)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/windows-10--what-s-new-for-usb)」をご覧ください。
 
@@ -1170,7 +1170,7 @@ Windows 10 の USB には次の新機能があります。 詳しくは、「[Wi
 * XHCI の仕様に準拠していないホスト コントローラーまたは仮想ホスト コントローラー用のドライバー作成のサポート。 このようなドライバーを作成する方法については、「[Developing Windows drivers for USB host controllers (USB ホスト コントローラー用 Windows ドライバーの作成)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/developing-windows-drivers-for-usb-host-controllers)」をご覧ください。
 * USB ファンクション クラス拡張機能 (UFX) の使用によるファンクション コントローラー ドライバー作成のサポート。 「[Developing Windows drivers for USB function controllers (USB ファンクション コントローラー用の Windows ドライバーの開発)](https://docs.microsoft.com/windows-hardware/drivers/usbcon/developing-windows-drivers-for-usb-function-controllers)」をご覧ください。
 
-### <a name="wlan-1507"></a>WLAN
+### <a name="wlan"></a><a name="wlan-1507"></a>WLAN
 
 WDI (WLAN デバイス ドライバー インターフェイス) は、Windows 10 デスクトップ エディションと Windows 10 Mobile の WLAN ドライバーを収束する新しい [WLAN ユニバーサル Windows ドライバー モデル](https://docs.microsoft.com/windows-hardware/drivers/network/wifi-universal-driver-model)です。
 

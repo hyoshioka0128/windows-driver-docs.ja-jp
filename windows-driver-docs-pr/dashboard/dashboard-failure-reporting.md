@@ -5,10 +5,10 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 04/05/2018
 ms.openlocfilehash: 28bb769ea30b7a8f14e0f68a506f128671d21b24
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63335041"
 ---
 # <a name="hardware-failure-reporting"></a>ハードウェア障害レポート

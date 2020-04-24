@@ -5,10 +5,10 @@ description: このトピックでは、Windows 8 および Windows 8.1 用の�
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fef7a8ac858884e1be68e5b0fc7f61ca014d2e
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63344031"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>ユーザー モード ドライバーとデスクトップ アプリでの Microsoft C ランタイムの使用
@@ -16,12 +16,12 @@ ms.locfileid: "63344031"
 
 このトピックでは、Windows 8 および Windows 8.1 用のアプリケーションとドライバーを使って C ランタイム ライブラリを配布する方法について説明します。 ユーザー モード ドライバーとデスクトップ アプリケーションの作成者がコードをコンパイルし、必要な C ランタイム ライブラリと共に再頒布できるようにパッケージ化するためのガイドラインを示します。
 
-## <a name="span-idthecruntimelibrariescrtarenolongershippedasawindowssharedcomponentspanspan-idthecruntimelibrariescrtarenolongershippedasawindowssharedcomponentspanspan-idthecruntimelibrariescrtarenolongershippedasawindowssharedcomponentspanthe-c-runtime-libraries-crt-are-no-longer-shipped-as-a-windows-shared-component"></a><span id="The_C_runtime_libraries__CRT__are_no_longer_shipped_as_a_Windows_shared_component"></span><span id="the_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_component"></span><span id="THE_C_RUNTIME_LIBRARIES__CRT__ARE_NO_LONGER_SHIPPED_AS_A_WINDOWS_SHARED_COMPONENT"></span>C ランタイム ライブラリ (CRT) の Windows 共有コンポーネントへの付属停止
+## <a name="span-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanspan-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanspan-idthe_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_componentspanthe-c-runtime-libraries-crt-are-no-longer-shipped-as-a-windows-shared-component"></a><span id="The_C_runtime_libraries__CRT__are_no_longer_shipped_as_a_Windows_shared_component"></span><span id="the_c_runtime_libraries__crt__are_no_longer_shipped_as_a_windows_shared_component"></span><span id="THE_C_RUNTIME_LIBRARIES__CRT__ARE_NO_LONGER_SHIPPED_AS_A_WINDOWS_SHARED_COMPONENT"></span>C ランタイム ライブラリ (CRT) の Windows 共有コンポーネントへの付属停止
 
 
 以前は、C ランタイム ライブラリ (CRT) が Window 共有システム コンポーネントとして配布されていました。 以前のバージョンの WDK では、ドライバーや従来型の Windows アプリをビルドするときに、コードを Windows システム バージョンの CRT とリンクできました。 Windows 8 リリースでは、C ランタイム ライブラリがシステム コンポーネントとは見なされなくなったため、ユーザー モード ドライバーやデスクトップ アプリケーションと共に再頒布可能バージョンの CRT を出荷する必要があります。 このトピックでは、この変更の理由、C ランタイムの新しいコンポーネント、デスクトップ アプリやドライバーをビルドして CRT を再頒布するための戦略について説明します。
 
-## <a name="span-idwhydidmicrosoftmakethischangespanspan-idwhydidmicrosoftmakethischangespanspan-idwhydidmicrosoftmakethischangespanwhy-did-microsoft-make-this-change"></a><span id="Why_did_Microsoft_make_this_change_"></span><span id="why_did_microsoft_make_this_change_"></span><span id="WHY_DID_MICROSOFT_MAKE_THIS_CHANGE_"></span>Microsoft がこの変更を行った理由
+## <a name="span-idwhy_did_microsoft_make_this_change_spanspan-idwhy_did_microsoft_make_this_change_spanspan-idwhy_did_microsoft_make_this_change_spanwhy-did-microsoft-make-this-change"></a><span id="Why_did_Microsoft_make_this_change_"></span><span id="why_did_microsoft_make_this_change_"></span><span id="WHY_DID_MICROSOFT_MAKE_THIS_CHANGE_"></span>Microsoft がこの変更を行った理由
 
 
 C ランタイムのバージョンは、2 つになりました。 1 つは内部 Windows コンポーネントです。もう 1 つはアプリケーション開発者とドライバー開発者が使うバージョンで、Visual Studio に付属します。 この変更を行った主な理由は、一貫性を保ち、顧客への CRT の提供をサポートするためです。
@@ -32,12 +32,12 @@ C ランタイムのバージョンは、2 つになりました。 1 つは内�
 
 msvcrt.dll は、Windows によって所有およびビルドされるシステム コンポーネントになりました。 これは、システム レベルのコンポーネントだけが使います。 msvcr110.dll ファイル (Visual Studio 2012) や msvcr120.dll ファイル (Microsoft Visual Studio 2013) は、新しい公開バージョンの CRT であり、デスクトップ アプリケーションとユーザー モード ドライバーの開発者が使います。
 
-## <a name="span-idbuildingyourcodewiththecruntimespanspan-idbuildingyourcodewiththecruntimespanspan-idbuildingyourcodewiththecruntimespanbuilding-your-code-with-the-c-runtime"></a><span id="Building_your_code_with_the_C_runtime"></span><span id="building_your_code_with_the_c_runtime"></span><span id="BUILDING_YOUR_CODE_WITH_THE_C_RUNTIME"></span>C ランタイムを使ったコードのビルド
+## <a name="span-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanspan-idbuilding_your_code_with_the_c_runtimespanbuilding-your-code-with-the-c-runtime"></a><span id="Building_your_code_with_the_C_runtime"></span><span id="building_your_code_with_the_c_runtime"></span><span id="BUILDING_YOUR_CODE_WITH_THE_C_RUNTIME"></span>C ランタイムを使ったコードのビルド
 
 
 Visual C++ は、最新バージョンの CRT を開発システム上の System32 ディレクトリにインストールします。 これは、開発者の利便性のためにインストールされます。 インストールされていないと、Visual C++ を使ってビルドされ、共有 CRT とリンクされたすべてのプロジェクトをデバッグして実行するために、DLL のコピーがビルド ディレクトリに必要になります。 msvcr120.dll は、Windows 8.1 および Windows 8 と以前のバージョンの Windows (Windows Vista 以降) を対象とするドライバーに使うことができます。
 
-## <a name="span-idredistributingthecruntimespanspan-idredistributingthecruntimespanspan-idredistributingthecruntimespanredistributing-the-c-runtime"></a><span id="Redistributing_the_C_Runtime_"></span><span id="redistributing_the_c_runtime_"></span><span id="REDISTRIBUTING_THE_C_RUNTIME_"></span>C ランタイムの再頒布
+## <a name="span-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanspan-idredistributing_the_c_runtime_spanredistributing-the-c-runtime"></a><span id="Redistributing_the_C_Runtime_"></span><span id="redistributing_the_c_runtime_"></span><span id="REDISTRIBUTING_THE_C_RUNTIME_"></span>C ランタイムの再頒布
 
 
 Microsoft Visual Studio でユーザー モード ドライバーや従来型のデスクトップ アプリケーションをビルドするときに、アプリケーションによって C ランタイム ライブラリ (CRT) が使われる場合、適切な CRT ダイナミック リンク ライブラリを配布する必要があります。
@@ -50,7 +50,7 @@ Visual C/C++ の再頒布可能パッケージ (VCRedist\_\*.exe) は、アプ�
 
 ドライバーが CRT コンポーネントを System32 にコピーして、別のプログラムが再頒布パッケージを実行した場合、問題が発生する可能性があります (ドライバーによってインストールされたバージョンが上書きされます)。 逆の場合も問題となります。 プログラムが再頒布可能パッケージを実行して、ドライバーがそれより前のバージョンの CRT コンポーネントを System32 にコピーした場合、アプリケーションが停止する可能性があります。 INF のインストール プロセスでは、インストールするライブラリのバージョン番号と、System32 に既に存在するライブラリのバージョン番号が比較されるだけのため、異なる場合は上書きされます。
 
-## <a name="span-idrecommendedstrategiesspanspan-idrecommendedstrategiesspanspan-idrecommendedstrategiesspanrecommended-strategies"></a><span id="Recommended_Strategies"></span><span id="recommended_strategies"></span><span id="RECOMMENDED_STRATEGIES"></span>推奨される戦略
+## <a name="span-idrecommended_strategiesspanspan-idrecommended_strategiesspanspan-idrecommended_strategiesspanrecommended-strategies"></a><span id="Recommended_Strategies"></span><span id="recommended_strategies"></span><span id="RECOMMENDED_STRATEGIES"></span>推奨される戦略
 
 
 ドライバーやアプリケーションと共に C/C++ ランタイム コンポーネントを再頒布する場合は、次の戦略を使います。
@@ -86,7 +86,7 @@ UMDF ドライバーの場合
 
 -   ドライバーを CRT に静的にリンクして、ランタイムをライブラリに含めます。 この場合、CRT を再頒布する必要はありません。
 
-## <a name="span-idlinkingyourcodewiththecruntimelibrariesspanspan-idlinkingyourcodewiththecruntimelibrariesspanspan-idlinkingyourcodewiththecruntimelibrariesspanlinking-your-code-with-the-c-runtime-libraries"></a><span id="Linking_your_code_with_the_C_Runtime_libraries"></span><span id="linking_your_code_with_the_c_runtime_libraries"></span><span id="LINKING_YOUR_CODE_WITH_THE_C_RUNTIME_LIBRARIES"></span>C ランタイム ライブラリとのコードのリンク
+## <a name="span-idlinking_your_code_with_the_c_runtime_librariesspanspan-idlinking_your_code_with_the_c_runtime_librariesspanspan-idlinking_your_code_with_the_c_runtime_librariesspanlinking-your-code-with-the-c-runtime-libraries"></a><span id="Linking_your_code_with_the_C_Runtime_libraries"></span><span id="linking_your_code_with_the_c_runtime_libraries"></span><span id="LINKING_YOUR_CODE_WITH_THE_C_RUNTIME_LIBRARIES"></span>C ランタイム ライブラリとのコードのリンク
 
 
 次のライブラリには、C ランタイム ライブラリ関数が含まれています。
@@ -130,7 +130,7 @@ UMDF ドライバーの場合
 
 Visual Studio に含まれているすべてのファイルを再頒布することはできません。[Visual Studio 2013 Preview および Visual Studio 2013 SDK Preview 用再頒布可能コードに関するページ](https://go.microsoft.com/fwlink/p/?linkid=320999)に記載されているファイルのみ再頒布することができます。 アプリケーションのデバッグ バージョンと各種 Visual C++ ダイナミック リンク ライブラリは、再頒布できません。
 
-## <a name="span-idsummary-whatyouneedtodospanspan-idsummary-whatyouneedtodospanspan-idsummary-whatyouneedtodospansummary---what-you-need-to-do"></a><span id="Summary_-_What_you_need_to_do"></span><span id="summary_-_what_you_need_to_do"></span><span id="SUMMARY_-_WHAT_YOU_NEED_TO_DO"></span>まとめ: 必要な作業
+## <a name="span-idsummary_-_what_you_need_to_dospanspan-idsummary_-_what_you_need_to_dospanspan-idsummary_-_what_you_need_to_dospansummary---what-you-need-to-do"></a><span id="Summary_-_What_you_need_to_do"></span><span id="summary_-_what_you_need_to_do"></span><span id="SUMMARY_-_WHAT_YOU_NEED_TO_DO"></span>まとめ: 必要な作業
 
 
 可能であれば、インストール プロセスの一部として Visual C++ の再頒布可能パッケージ (VCRedist\_x86.exe、VCRedist\_x64.exe、VCRedist\_arm.exe) の VCRedist.msi を使います。
@@ -139,7 +139,7 @@ Visual Studio に含まれているすべてのファイルを再頒布するこ
 
 UMDF ドライバーの場合、CRT をドライバー コードに静的にリンクします。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 * [再頒布する DLL の特定](https://go.microsoft.com/fwlink/p/?linkid=321001)

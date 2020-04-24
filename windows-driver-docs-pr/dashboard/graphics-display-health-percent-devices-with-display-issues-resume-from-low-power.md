@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: faa827ff80942ed5acfbde3c84e7eda5f77bf1fb
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71017068"
 ---
 # <a name="percent-of-machines-with-display-issues-when-resume-from-low-power-state"></a>低電力状態からの再開時に表示の問題が発生したマシンの割合
@@ -19,7 +19,7 @@ ms.locfileid: "71017068"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|エコシステム|
 |**期間**|7 日間のスライディング ウィンドウ|

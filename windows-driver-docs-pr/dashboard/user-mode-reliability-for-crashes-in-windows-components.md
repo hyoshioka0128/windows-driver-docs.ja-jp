@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 08/08/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c09cc623b49d7c5aba506da836ca5f95ed39c4
-ms.sourcegitcommit: b33dff0fc9b5b90ee8bd07f62713c58c5f60b40f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71016918"
 ---
 # <a name="number-of-user-mode-reliability-for-crashes-in-windows-components-photos-app-normalized-by-population-is-less-than-or-equal-to-the-baseline-goal"></a>Windows コンポーネント フォト アプリにおけるユーザー モードの信頼性を示すクラッシュ数を母集団で正規化した値がベースライン目標と同じかそれより小さい
@@ -19,7 +19,7 @@ ms.locfileid: "71016918"
 
 ## <a name="measure-attributes"></a>測定値の属性
 
-|属性|Value|
+|属性|値|
 |----|----|
 |**オーディエンス**|展開|
 |**期間**|7 日間のスライディング ウィンドウ|

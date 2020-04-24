@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 6243b76e8c7011e368fdbdbeb39b20edd8824413
-ms.sourcegitcommit: 387de60712790691970924e059b0564325e211bc
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79083128"
 ---
 # <a name="percent-of-machines-updated-and-successfully-unlocked-bitlocker-recovery"></a>更新され、Bitlocker 回復が正常にロック解除されたマシンの割合

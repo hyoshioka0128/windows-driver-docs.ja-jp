@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: ee3457c572ff8bff7aab72ed613da0a4416729aa
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63323243"
----
 # <a name="contributing-to-windows-driver-documentation"></a>Windows ドライバー ドキュメントへの投稿
 
 このページでは、Windows ドライバー ドキュメントへの投稿の基本的な手順について説明します。
@@ -28,7 +20,7 @@ Microsoft の従業員の場合は、必ず [GitHub アカウントとエイリ�
 1. Docs.microsoft.com のページを表示している場合は、ページの右上にある **[編集]** ボタンをクリックします。  [GitHub リポジトリ](https://github.com/MicrosoftDocs/windows-driver-docs)内の対応するマークダウン ソース ファイルにリダイレクトされます。  既に [GitHub リポジトリ](https://github.com/MicrosoftDocs/windows-driver-docs)を表示している場合は、変更したいソース ファイルに移動するだけです。
 2. GitHub アカウントがまだない場合は、右上の **[サインアップ]** をクリックして新しいアカウントを作成します。
 3. 変更したい GitHub ページで、鉛筆アイコンをクリックします。
-4. ファイルを変更し、[プレビュー] タブを使って変更内容に問題がないことを確認します。
+4. ファイルを変更し、[Preview] タブを使って変更内容に問題がないことを確認します。
 5. 完了したら、変更をコミットし、プル要求を開きます。
 
 プル要求が作成されると、Windows ドライバー ドキュメント チームのメンバーによって変更内容が確認されます。 
@@ -49,7 +41,7 @@ Microsoft の従業員がプライベート環境で共同作業する必要が�
 
 必ずトピックのタイトルとページの URL を含めてください。
 
-## <a name="resources"></a>参考資料
+## <a name="resources"></a>参照情報
 
 Markdown の編集には、使い慣れたテキスト エディターを使用できます。  Microsoft の無料の軽量オープン ソース エディター、[Visual Studio Code](https://code.visualstudio.com/) をお勧めします。
 

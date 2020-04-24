@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 147d3c944141cbcc8075f7ab2d47193d599ba2ee
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75209161"
 ---
 # <a name="submit-a-pc-device-manifest-package"></a>PC デバイス マニフェスト パッケージの提出
@@ -182,49 +182,49 @@ PcMetadataSubmission XML スキーマの名前空間は、以下のとおりで�
 <tr class="odd">
 <td><p>SystemFamily</p></td>
 <td><p>tns:SMBIOSStringType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>コンピューターの製造元のファミリ名を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>SystemProductName</p></td>
 <td><p>tns:SMBIOSStringType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>製品 (コンピューター) の名前を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>BIOSVendor</p></td>
 <td><p>tns:SMBIOSStringType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>BIOS の製造元の名前を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>BIOSVersion</p></td>
 <td><p>tns:SMBIOSStringType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>BIOS のバージョン番号を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>SystemBIOSMajorRelease</p></td>
 <td><p>tns:BIOSReleaseType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>BIOS の MajorRelease バージョンを指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>SystemBIOSMinorRelease</p></td>
 <td><p>tns:BIOSReleaseType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>BIOS の MinorRelease バージョンを指定します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>Enclosuretype</p></td>
 <td><p>tns:TypeofEnclosureType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>コンピューターの筐体の種類を指定します。</p></td>
 </tr>
 <tr class="even">
 <td><p>SKUNumber</p></td>
 <td><p>v2:SMBIOSStringType</p></td>
-<td><p>省略可能</p></td>
+<td><p>オプション</p></td>
 <td><p>コンピューターの SKU 番号を指定します。</p></td>
 </tr>
 </tbody>
@@ -410,7 +410,7 @@ SystemManufacturer 属性によって指定される値は、ターゲット PC 
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -467,13 +467,13 @@ SystemFamily 属性によって指定される値は、ターゲット PC の SM
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Family (ファミリ)</p></td>
+<td><p>Family</p></td>
 <td><p>システム情報 (タイプ 1)</p></td>
 <td><p>2.4+</p></td>
 <td><p>1Ah</p></td>
@@ -524,7 +524,7 @@ SystemProductName 属性によって指定される値は、ターゲット PC �
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -581,13 +581,13 @@ BIOSVendor 属性によって指定される値は、ターゲット PC の SMBI
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Vendor (ベンダー)</p></td>
+<td><p>ベンダー</p></td>
 <td><p>BIOS 情報 (タイプ 0)</p></td>
 <td><p>2.0</p></td>
 <td><p>04h</p></td>
@@ -638,7 +638,7 @@ BIOSVersion 属性によって指定される値は、ターゲット PC の SMB
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -695,7 +695,7 @@ SystemBIOSMajorRelease 属性によって指定される値は、ターゲット
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -752,7 +752,7 @@ SystemBIOSMinorRelease 属性によって指定される値は、ターゲット
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -808,7 +808,7 @@ Enclosuretype 属性によって指定される値は、ターゲット PC の S
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -865,7 +865,7 @@ SKUNumber 要素によって指定される値は、ターゲット PC の SMBIO
 <th>SMBIOS 仕様のバージョン</th>
 <th>Offset</th>
 <th>長さ</th>
-<th>Value</th>
+<th>値</th>
 <th>説明</th>
 </tr>
 </thead>

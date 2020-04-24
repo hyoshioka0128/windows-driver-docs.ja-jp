@@ -5,10 +5,10 @@ ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a6cf66d1d57bc66da2f732db121470f17240709b
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63335119"
 ---
 # <a name="driver-flighting"></a>ドライバーのフライティング
@@ -76,7 +76,7 @@ ms.locfileid: "63335119"
 
 ## <a name="reasons-a-driver-may-be-rejected"></a>ドライバーが却下される場合がある理由
 
-ドライバーの却下には、いくつかの理由が考えられます。 ほとんどの場合、却下の原因はドライバーのターゲットの問題です。 次のようなクラスがあります。
+ドライバーの却下には、いくつかの理由が考えられます。 ほとんどの場合、却下の原因はドライバーのターゲットの問題です。 具体的な内容は次のとおりです。
 
 - Windows 10 だけでなく、以前のバージョンの Windows を併せてターゲットとしている。
 - ターゲットとするデバイス クラスに、適切に従わなかった特定の CHID ターゲット要件がある可能性がある。  一部のデバイス クラスで Firmware のような CHID を必要とし、その他のクラスでは、Display のような CHID の使用が禁止されている。  情報を正しく入力したことを確認してください。

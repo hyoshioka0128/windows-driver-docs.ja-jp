@@ -5,17 +5,17 @@ description: この情報は、Windows 用のカーネル モード ドライバ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2f017367c211eb8020ea8ee3f29d29509467ee
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63359487"
 ---
 # <a name="avoiding-floating-point-errors-in-custom-build-environments"></a>カスタム ビルド環境での浮動小数点エラーの回避
 
 この情報は、Windows 用のカーネル モード ドライバーをコンパイルする開発者とビルド エンジニア向けです。 Microsoft Visual Studio Professional 2012 では、Visual C++ (VC++) コンパイラの既定のアーキテクチャが IA32 からストリーム SIMD 拡張機能 2 (SSE2) 命令セットに変更されました。 この変更のために、実行時にバイナリに組み込まれた SSE2 浮動小数点 (FP) 命令は、対処されていない場合、浮動小数点エラーを生成することがあります。 この問題が発生する可能性があるのは、Microsoft VC++ コンパイラを使うか、Windows ドライバーの開発にカスタム ビルド環境を使う場合です。 Microsoft Visual Studio 開発環境を使うか、ドライバーのビルドに、変更していないツールセットで MSbuild ユーティリティを使う場合、問題は発生しません。
 
-## <a name="span-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanspan-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanspan-idfloatingpointerrorscancausedatacorruptionorcomputercrashesspanfloating-point-errors-can-cause-data-corruption-or-computer-crashes"></a><span id="Floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="FLOATING_POINT_ERRORS_CAN_CAUSE_DATA_CORRUPTION_OR_COMPUTER_CRASHES_"></span>浮動小数点エラーによりデータの破損やコンピューターのクラッシュが発生する可能性がある
+## <a name="span-idfloating_point_errors_can_cause_data_corruption_or_computer_crashes_spanspan-idfloating_point_errors_can_cause_data_corruption_or_computer_crashes_spanspan-idfloating_point_errors_can_cause_data_corruption_or_computer_crashes_spanfloating-point-errors-can-cause-data-corruption-or-computer-crashes"></a><span id="Floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="floating_point_errors_can_cause_data_corruption_or_computer_crashes_"></span><span id="FLOATING_POINT_ERRORS_CAN_CAUSE_DATA_CORRUPTION_OR_COMPUTER_CRASHES_"></span>浮動小数点エラーによりデータの破損やコンピューターのクラッシュが発生する可能性がある
 
 
 WDK、Visual Studio、Windows ドライバー用に推奨されるプラットフォーム ツールセット (**WindowsKernelModeDriver8.0**) を*使わずに*ドライバーをコンパイルした場合、エラーなしでコンパイルできたとしても、小数点操作を適切に管理できない場合があります。

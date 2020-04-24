@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c6e9dab46eef01a358b95133672e6cb10008eeb
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63334955"
 ---
 # <a name="manage-device-metadata-experiences"></a>デバイス メタデータ エクスペリエンスの管理
@@ -110,25 +110,25 @@ ms.locfileid: "63334955"
     <td><p>個別の各パッケージを提出した日付が表示されます。</p></td>
     </tr>
     <tr class="odd">
-    <td><p>Preview</p></td>
+    <td><p>［プレビュー］</p></td>
     <td><p>パッケージがプレビュー状態で、リリースされていない場合、このチェック ボックスはオンになっています。</p></td>
     </tr>
     <tr class="even">
-    <td><p>ロケール</p></td>
+    <td><p>Locale</p></td>
     <td><p>ここには、パッケージが対象としている国または地域が一覧表示されます。</p></td>
     </tr>
     <tr class="odd">
-    <td><p>Default</p></td>
+    <td><p>既定</p></td>
     <td><p><strong>[Yes]</strong> (はい) の場合は、既定のパッケージとして指定されたパッケージであることを示しています。</p></td>
     </tr>
     <tr class="even">
-    <td><p>状況</p></td>
+    <td><p>状態</p></td>
     <td><p>この値は、選択されたパッケージの現在の状態を示しており、次のいずれかです。</p>
     <ul>
     <li><p>保留中:パッケージはアップロードされ、現在は検証中です。</p></li>
     <li><p>[To Be Published] (公開準備済み):パッケージは検証され、メタデータ サーバーに送信されるのを待機しています。 パッケージの検証済みコピーをダウンロードできます。パッケージは 24 時間以内にライブになり、ユーザーが利用できるようになります。</p></li>
     <li><p>[Live] (ライブ):パッケージは、ユーザーがダウンロードできる状態になっています。</p></li>
-    <li><p>エラー:検証中に 1 つ以上のエラーが見つかりました。 詳しい情報については、セクションを展開してください。</p></li>
+    <li><p>エラー: 検証中に 1 つ以上のエラーが見つかりました。 詳しい情報については、セクションを展開してください。</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -157,7 +157,7 @@ ms.locfileid: "63334955"
 
 ## <a name="related-topics"></a>関連トピック
 
-- [デバイス メタデータ エクスペリエンスの作成](create-a-device-metadata-experience.md)
+- [デバイス メタデータ エクスペリエンスを作成する](create-a-device-metadata-experience.md)
 
 - [バルク メタデータ パッケージの提出](submit-a-bulk-metadata-package.md)
 

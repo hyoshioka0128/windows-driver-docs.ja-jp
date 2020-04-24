@@ -5,10 +5,10 @@ description: Windows Driver Kit (WDK) と Test Authoring and Execution Framework
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d28281ed52474270cdd340d9bd9cf7e03db7e4a2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "67364208"
 ---
 # <a name="how-to-add-test-metadata"></a>テスト メタデータを追加する方法

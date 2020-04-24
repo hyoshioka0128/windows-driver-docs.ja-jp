@@ -6,10 +6,10 @@ ms.date: 09/01/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5afb3cf56642ec6a28827ee3d6df0afcd2b10874
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63337282"
 ---
 # <a name="bulk-download-failure-cabs"></a>エラー CAB の一括ダウンロード
@@ -20,7 +20,7 @@ ms.locfileid: "63337282"
 
 ### <a name="request-syntax"></a>要求の構文
 
-|メソッド|要求 URI|
+|認証方法|要求 URI|
 |----|----|
 |取得|`https://manage.devcenter.microsoft.com/v1.0/my/analytics/driver/cabdownloadbatch`|
 
@@ -34,12 +34,12 @@ ms.locfileid: "63337282"
 
 |パラメーター|種類|説明|必須|
 |----|----|----|----|
-|applicationId|string|エラー データを取得するドライバーの製品 ID です。|〇|
-|failureHash|string|取得する詳細情報の対象となるエラーの一意の ID です。|〇|
-|startDate|date|取得するエラー報告データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。|X|
-|endDate|date|取得するエラー報告データの日付範囲の終了日です。 既定値は現在の日付です。|X|
-|top|int|要求で返すデータの行数です。 最大値および指定しない場合の既定値は 100 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。|X|
-|skip|int|クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=100 と skip=0 を指定すると、データの最初の 100 行が取得され、top=100 と skip=100 を指定すると、データの次の 100 行が取得されます。|X|
+|applicationId|string|エラー データを取得するドライバーの製品 ID です。|はい|
+|failureHash|string|取得する詳細情報の対象となるエラーの一意の ID です。|はい|
+|startDate|日付|取得するエラー報告データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。|いいえ|
+|endDate|日付|取得するエラー報告データの日付範囲の終了日です。 既定値は現在の日付です。|いいえ|
+|top|int|要求で返すデータの行数です。 最大値および指定しない場合の既定値は 100 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。|いいえ|
+|skip|int|クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=100 と skip=0 を指定すると、データの最初の 100 行が取得され、top=100 と skip=100 を指定すると、データの次の 100 行が取得されます。|いいえ|
 
 ### <a name="request-example"></a>要求の例
 
@@ -84,4 +84,4 @@ Authorization: Bearer <your access token>
 
 - [分析レポート API (Swagger)](https://apidocs.microsoft.com/services/analyticsreportingapis)
 
-- [エラー CAB のダウンロード](download-failure-cabs.md)
+- [エラー CAB をダウンロードする](download-failure-cabs.md)

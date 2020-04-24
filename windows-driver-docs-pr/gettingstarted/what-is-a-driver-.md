@@ -8,10 +8,10 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: a79779e6d34b80a250b1d176a8085cfdf5e23bbc
-ms.sourcegitcommit: dabd74b55ce26f2e1c99c440cea2da9ea7d8b62c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "63371235"
 ---
 # <a name="what-is-a-driver"></a>ドライバーとは
@@ -21,7 +21,7 @@ ms.locfileid: "63371235"
 
 ![アプリケーション、オペレーティング システム、ドライバーの関係図](images/whatisadriver01.png)
 
-## <a name="span-idexpandingthedefinitionspanspan-idexpandingthedefinitionspanspan-idexpandingthedefinitionspanexpanding-the-definition"></a><span id="Expanding_the_definition"></span><span id="expanding_the_definition"></span><span id="EXPANDING_THE_DEFINITION"></span>定義の拡大
+## <a name="span-idexpanding_the_definitionspanspan-idexpanding_the_definitionspanspan-idexpanding_the_definitionspanexpanding-the-definition"></a><span id="Expanding_the_definition"></span><span id="expanding_the_definition"></span><span id="EXPANDING_THE_DEFINITION"></span>定義の拡大
 
 
 ここまでの説明は、次のような点でかなり簡略化されています。
@@ -38,7 +38,7 @@ ms.locfileid: "63371235"
 
 したがって、"*ドライバー*" とは、オペレーティング システムとデバイス間のやり取りの監視や、これに関与するあらゆるソフトウェア コンポーネントであると定義することにより、その意味を拡大解釈することができます。
 
-## <a name="span-idsoftwaredriversspanspan-idsoftwaredriversspanspan-idsoftwaredriversspansoftware-drivers"></a><span id="Software_drivers"></span><span id="software_drivers"></span><span id="SOFTWARE_DRIVERS"></span>ソフトウェア ドライバー
+## <a name="span-idsoftware_driversspanspan-idsoftware_driversspanspan-idsoftware_driversspansoftware-drivers"></a><span id="Software_drivers"></span><span id="software_drivers"></span><span id="SOFTWARE_DRIVERS"></span>ソフトウェア ドライバー
 
 
 拡大解釈した定義はかなり正確ですが、ドライバーによってはハードウェア デバイスにまったく関与しないものあるという意味で、まだ完全ではありません。 たとえば、カーネル モードでコードを実行しない限りアクセスできないオペレーティング システムのコア データ構造にアクセスするツールを作る例を考えてみます。 これは、ツールを 2 つのコンポーネントに分割することで可能になります。 1 つ目のコンポーネントは、ユーザー モードで実行され、ユーザー インターフェイスを提供します。 2 つ目のコンポーネントはカーネル モードで実行され、オペレーティング システムのコア データにアクセスします。 ユーザー モードで実行されるコンポーネントをアプリケーション、またカーネル モードで実行されるコンポーネントを*ソフトウェア ドライバー*と呼びます。 ソフトウェア ドライバーはハードウェア デバイスに関連付けられません。 プロセッサ モードについて詳しくは、「[ユーザー モードとカーネル モード](user-mode-and-kernel-mode.md)」をご覧ください。
@@ -47,7 +47,7 @@ ms.locfileid: "63371235"
 
 ![アプリケーションとソフトウェア ドライバーの関係図](images/whatisadriver03.png)
 
-## <a name="span-idadditionalnotesspanspan-idadditionalnotesspanspan-idadditionalnotesspanadditional-notes"></a><span id="Additional_notes"></span><span id="additional_notes"></span><span id="ADDITIONAL_NOTES"></span>追加説明
+## <a name="span-idadditional_notesspanspan-idadditional_notesspanspan-idadditional_notesspanadditional-notes"></a><span id="Additional_notes"></span><span id="additional_notes"></span><span id="ADDITIONAL_NOTES"></span>追加説明
 
 
 ソフトウェア ドライバーは常にカーネル モードで実行されます。 ソフトウェア ドライバーを作る主な理由は、カーネル モードでのみ利用可能な保護データへのアクセスを取得することです。 とはいえ、デバイス ドライバーがカーネル モードのデータやリソースへのアクセスを常に必要とするわけではありません。 そのため、一部のデバイス ドライバーはユーザー モードで実行されます。
