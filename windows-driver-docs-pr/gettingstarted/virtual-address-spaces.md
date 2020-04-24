@@ -2,14 +2,14 @@
 title: 仮想アドレス領域
 description: 仮想アドレス領域
 ms.assetid: 5A3E1918-E5A4-4129-B0C2-45B6EEB7EFB3
-ms.date: 04/20/2017
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f945bd59b717c7e242ce46398ea33f2ae76f1582
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e9c9ba03e89cf2d6436b1d99f88582f0516b9b52
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77146510"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82122237"
 ---
 # <a name="virtual-address-spaces"></a>仮想アドレス領域
 
@@ -41,9 +41,7 @@ Notepad.exe や MyApp.exe などのプロセスはユーザー モードで実�
 
 32 ビット Windows の場合は、2 GB を超える空間をユーザー空間として割り当てるようにブート時に指定することができます。 このように指定すると、システム空間に割り当てられる仮想アドレスの容量が少なくなります。 ユーザー空間のサイズは、3 GB まで拡張することができます。この場合、システム空間として利用できる容量はわずか 1 GB になります。 ユーザー空間のサイズを増やすには、[**BCDEdit /set increaseuserva**](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcdedit--set) を使います。
 
-64 ビット Windows の場合、仮想アドレス領域の容量は理論上、2^64 バイト (16 エクサバイト) になりますが、実際に使うのは 16 エクサバイトの範囲のうちわずかにすぎません。 ユーザー空間には、0x000'00000000 ～ 0x7FF'FFFFFFFF の 8 TB 分が使われます。システム空間には 0xFFFF0800'00000000 ～ 0xFFFFFFFF'FFFFFFFF の 248 TB 分が使われます。
-
-![ページ プールと非ページ プールの図](images/virtualaddressspace03.png)
+64 ビット Windows の場合、仮想アドレス領域の容量は理論上、2^64 バイト (16 エクサバイト) になりますが、実際に使うのは 16 エクサバイトの範囲のうちわずかにすぎません。
 
 ユーザー モードで実行されるコードは、ユーザー空間にアクセスできますが、システム空間にはアクセスできません。 この制限により、保護されたオペレーティング システムのデータ構造がユーザー モードのコードによって読み取られたり、変更されたりすることがなくなります。 カーネル モードで実行されるコードは、ユーザー空間とシステム空間の両方にアクセスできます。 つまり、カーネル モードで実行されるコードからは、システム空間と、現在実行されているユーザー モード プロセスの仮想アドレス領域にアクセスできます。
 
