@@ -1366,7 +1366,7 @@
                       href: const5.md
                     - name: Installed (WSD)
                       href: installed.md
-                    - name: 一覧
+                    - name: List
                       href: list.md
                     - name: Value (WSD)
                       href: value.md
@@ -1452,11 +1452,11 @@
                   href: numberup2.md
                 - name: PagesPerSheet
                   href: pagespersheet2.md
-                - name: Direction
+                - name: 方向
                   href: direction2.md
             - name: Orientation
               href: orientation2.md
-            - name: 解決策
+            - name: 解決方法
               href: resolutions.md
             - name: InputBins
               items:
@@ -1476,7 +1476,7 @@
               items:
                 - name: Staple
                   href: staple3.md
-                - name: Location
+                - name: インストール先
                   href: location3.md
                 - name: Angle
                   href: angle2.md
@@ -1486,7 +1486,7 @@
                   href: holepunch3.md
                 - name: '[パターン]'
                   href: pattern2.md
-                - name: Location
+                - name: インストール先
                   href: location2.md
             - name: OutputBins
               items:
@@ -1504,11 +1504,11 @@
       items:
         - name: ステータス セクション
           href: status-section.md
-        - name: 状況
+        - name: 状態
           items:
-            - name: 状況
+            - name: 状態
               href: status.md
-            - name: 概要
+            - name: 要約
               href: summary.md
             - name: '[詳細]'
               items:
@@ -1518,7 +1518,7 @@
                   items:
                     - name: 'イベント ###'
                       href: event---.md
-                    - name: Component
+                    - name: コンポーネント
                       href: component2.md
     - name: 双方向通信エラー コード
       href: bidi-error-codes.md
@@ -1538,7 +1538,7 @@
               href: iprinterbidischemaelement-biditype.md
             - name: 名前
               href: iprinterbidischemaelement-name.md
-            - name: Value
+            - name: 値
               href: iprinterbidischemaelement-value.md
         - name: IPrinterBidiSchemaResponses
           items:
@@ -1888,9 +1888,9 @@
               href: iasphelp-methods.md
             - name: CalcJobETA
               href: iasphelp-calcjobeta.md
-            - name: Close
+            - name: 閉じる
               href: iasphelp-close.md
-            - name: Open
+            - name: 開く
               href: iasphelp-open.md
         - name: Iasphelp プロパティ Get 操作
           items:
@@ -1902,7 +1902,7 @@
               href: iasphelp-avgjobsize.md
             - name: AvgJobSizeUnit
               href: iasphelp-avgjobsizeunit.md
-            - name: 色
+            - name: Color
               href: iasphelp-color.md
             - name: コミュニティ
               href: iasphelp-community.md
@@ -1948,7 +1948,7 @@
               href: iasphelp-snmpdevice.md
             - name: SNMPSupported
               href: iasphelp-snmpsupported.md
-            - name: 状況
+            - name: 状態
               href: iasphelp-status.md
     - name: IOleCvt 自動化インターフェイス
       items:
@@ -1974,7 +1974,7 @@
           items:
             - name: ISNMP メソッド
               href: isnmp-methods.md
-            - name: Close
+            - name: 閉じる
               href: isnmp-close.md
             - name: 取得
               href: isnmp-get.md
@@ -1986,7 +1986,7 @@
               href: isnmp-gettree.md
             - name: OIDFromString
               href: isnmp-oidfromstring.md
-            - name: Open
+            - name: 開く
               href: isnmp-open.md
             - name: 設定
               href: isnmp-set.md

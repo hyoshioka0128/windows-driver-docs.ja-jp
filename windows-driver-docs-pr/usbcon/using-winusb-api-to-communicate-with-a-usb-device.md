@@ -4,10 +4,10 @@ title: WinUSB 関数を使用して USB デバイスにアクセスする方法
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 214dfc6d36eef05f533aa4eed749ef1a998d1bc8
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79437067"
 ---
 # <a name="how-to-access-a-usb-device-by-using-winusb-functions"></a>WinUSB 関数を使用して USB デバイスにアクセスする方法
@@ -32,7 +32,7 @@ Microsoft Visual Studio 2013 を使用している場合は、WinUSB テンプ�
 
 **注**  WinUSB 関数には、Windows XP 以降が必要です。 これらの関数を C/C++ アプリケーションで使用して、USB デバイスと通信することができます。 Microsoft は WinUSB 用のマネージ API を提供していません。
 
-## <a href="" id="pre"></a>前提条件
+## <a name="prerequisites"></a><a href="" id="pre"></a>前提条件
 
 
 このチュートリアルには、次の項目が適用されます。
@@ -41,7 +41,7 @@ Microsoft Visual Studio 2013 を使用している場合は、WinUSB テンプ�
 -   デバイスの関数ドライバーとして Winusb.sys をインストールしている必要があります。 このプロセスの詳細については、「[WinUSB (Winusb.sys) のインストール](winusb-installation.md)」を参照してください。
 -   このトピックの例は、[OSR USB FX2 Learning Kit デバイス](https://www.osronline.com/)に基づいています。 これらの例を使用して、手順を他の USB デバイスに拡張できます。
 
-## <a href="" id="setup"></a>手順 1: WinUSB テンプレートに基づいてスケルトン アプリを作成する
+## <a name="step-1-create-a-skeleton-app-based-on-the-winusb-template"></a><a href="" id="setup"></a>手順 1: WinUSB テンプレートに基づいてスケルトン アプリを作成する
 
 
 USB デバイスにアクセスするには、まず、Windows Driver Kit (WDK) と Microsoft Visual Studio の統合環境 (Debugging Tools for Windows を含む) に含まれる WinUSB テンプレートに基づいてスケルトン アプリを作成します。
@@ -50,7 +50,7 @@ USB デバイスにアクセスするには、まず、Windows Driver Kit (WDK) 
 
 このテンプレートは、[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi) ルーチンを使用してデバイスを列挙し、デバイスのファイル ハンドルを開いて、以降のタスクに必要な WinUSB インターフェイス ハンドルを作成します。 デバイス ハンドルを取得してデバイスを開くコード例については、[テンプレート コードの説明](how-to-write-a-windows-desktop-app-that-communicates-with-a-usb-device.md)に関するページを参照してください。
 
-## <a href="" id="query"></a>手順 2: デバイスに USB 記述子を照会する
+## <a name="step-2-query-the-device-for-usb-descriptors"></a><a href="" id="query"></a>手順 2: デバイスに USB 記述子を照会する
 
 
 次に、デバイスに USB 固有の情報 (デバイスの速度、インターフェイス記述子、関連するエンドポイント、そのパイプなど) を照会します。 この手順は、USB デバイス ドライバーが使用する手順とよく似ています。 ただし、アプリケーションは、[**WinUsb\_GetDescriptor**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_getdescriptor) を呼び出してデバイス クエリを実行します。
@@ -194,7 +194,7 @@ done:
 }
 ```
 
-## <a href="" id="control"></a>手順 3: 既定のエンドポイントにコントロール転送を送信する
+## <a name="step-3-send-control-transfer-to-the-default-endpoint"></a><a href="" id="control"></a>手順 3: 既定のエンドポイントにコントロール転送を送信する
 
 
 次に、既定のエンドポイントに制御要求を発行してデバイスと通信します。
@@ -263,7 +263,7 @@ done:
 }
 ```
 
-## <a href="" id="io"></a>手順 4: I/O 要求を発行する
+## <a name="step-4-issue-io-requests"></a><a href="" id="io"></a>手順 4: I/O 要求を発行する
 
 
 次に、データをデバイスのバルクイン エンドポイントとバルクアウト エンドポイントに送信します。これらはそれぞれ、要求の読み取りと書き込みに使用できます。 OSR USB FX2 デバイスでは、これらの 2 つのエンドポイントは、ループバック用に構成されるため、デバイスはデータをバルクイン エンドポイントからバルクアウト エンドポイントに移動します。 これにより、データの値が変更されたり、新しいデータが追加されたりすることはありません。 ループバック構成の場合、読み取り要求は、最新の書き込み要求で送信されたデータを読み取ります。 WinUSB には、書き込み要求と読み取り要求を送信するための次の関数が用意されています。

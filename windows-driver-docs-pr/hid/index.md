@@ -12,10 +12,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: ad35eabb019b12b4367c7413cc22db98dacd1940
-ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "78166682"
 ---
 # <a name="introduction-to-human-interface-devices-hid"></a>ヒューマン インターフェイス デバイス (HID) の概要

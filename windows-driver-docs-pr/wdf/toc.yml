@@ -476,7 +476,7 @@
       href: i-o-queue-states.md
     - name: I/O キューの使用例
       href: example-uses-of-i-o-queues.md
-- name: レジストリ
+- name: Registry
   items:
     - name: ドライバーのレジストリ キーの概要
       href: introduction-to-registry-keys-for-drivers.md

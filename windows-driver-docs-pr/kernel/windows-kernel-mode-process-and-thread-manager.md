@@ -5,10 +5,10 @@ ms.assetid: 4053c73e-190d-4ffe-8db2-f531d120ba81
 ms.localizationpriority: High
 ms.date: 10/17/2018
 ms.openlocfilehash: 45a1cc4822a98ef0c9cbd3b1528c215dcfe517fc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72835713"
 ---
 # <a name="windows-kernel-mode-process-and-thread-manager"></a>Windows カーネル モード プロセスとスレッド マネージャー

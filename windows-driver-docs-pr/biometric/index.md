@@ -8,10 +8,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 32b3fefefc3c90ae1269fc0e20fb29f83db9c81d
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473445"
 ---
 # <a name="biometric-devices-design-guide"></a>生体認証デバイス設計ガイド
@@ -22,7 +22,7 @@ ms.locfileid: "68473445"
 
 このセクションでは、Windows 生体認証ドライバー インターフェイス (WBDI) と連携するユーザー モード ドライバーを作成する方法について説明します。 WBDI は、Windows 生体認証フレームワーク (WBF) のドライバー インターフェイスです。 WBF は、Windows 7 以降のバージョンの Windows オペレーティング システムに付属しています。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 -   [生体認証ドライバーの概要](getting-started-with-biometric-drivers.md)

@@ -248,15 +248,15 @@
           items:
             - name: セグメンテーション フィルターの例
               href: segmentation-filter-examples.md
-            - name: 以下に例を示します。既定のセグメンテーション フィルター
+            - name: '例:既定のセグメンテーション フィルター'
               href: example--default-segmentation-filter.md
-            - name: 以下に例を示します。シンプル セグメンテーション フィルター
+            - name: '例:シンプル セグメンテーション フィルター'
               href: example--simple-segmentation-filter.md
-            - name: 以下に例を示します。セグメンテーション フィルターを使用するアプリケーション
+            - name: '例:セグメンテーション フィルターを使用するアプリケーション'
               href: example--application-using-a-segmentation-filter.md
-            - name: 以下に例を示します。DetectSubregions
+            - name: '例:DetectSubregions'
               href: example--detectsubregions.md
-            - name: 以下に例を示します。DownloadPreviewImage
+            - name: '例:DownloadPreviewImage'
               href: example--downloadpreviewimage.md
 - name: WIA 項目ツリー
   items:
@@ -1648,7 +1648,7 @@
                   href: activeconditions.md
                 - name: ClearTime
                   href: cleartime.md
-                - name: Component
+                - name: コンポーネント
                   href: component.md
                 - name: ConditionHistory
                   href: conditionhistory.md
@@ -1734,9 +1734,9 @@
                   href: compressionqualityfactor.md
                 - name: ContentType
                   href: contenttype.md
-                - name: Contrast
+                - name: この例を、
                   href: contrast.md
-                - name: ドキュメント
+                - name: マニュアル名の正式名称
                   href: document.md
                 - name: DocumentDescription
                   href: documentdescription.md

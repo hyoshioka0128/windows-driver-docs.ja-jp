@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: c161f61dd3a5b08aa69dcfa8edb170eb31612dae
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402346"
 ---
 # <a name="bug-check-0x50-page_fault_in_nonpaged_area"></a>バグ チェック 0x50:PAGE\_FAULT\_IN\_NONPAGED\_AREA
@@ -49,7 +49,7 @@ PAGE\_FAULT\_IN\_NONPAGED\_AREA バグ チェックの値は 0x00000050 です�
 <td align="left"><p>参照されているメモリ アドレス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>2</p></td>
+<td align="left"><p>2 で保護されたプロセスとして起動されました</p></td>
 <td align="left">
 <p><i>Windows 1507 (TH1) バージョン以降 - x64 </i> </p>
 <p><strong>0:</strong> 読み取り操作</p>

@@ -640,6 +640,8 @@
           href: indirect-display-driver-model-overview.md
         - name: IddCx オブジェクト
           href: iddcx-objects.md
+        - name: デバッグ
+          href: indirect-display-debugging.md
     - name: Windows Display Driver Model (WDDM) のタスク
       items:
         - name: Windows Display Driver Model (WDDM) のタスク

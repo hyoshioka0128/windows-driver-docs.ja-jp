@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: 8180a3a7470771ccdb5204580f380267ada803db
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402348"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>バグ チェック 0x3B:SYSTEM\_SERVICE\_EXCEPTION
@@ -47,7 +47,7 @@ SYSTEM\_SERVICE\_EXCEPTION バグ チェックの値は 0x0000003B です。 こ
 <td align="left"><p>バグ チェックの原因となった例外 </p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>2</p></td>
+<td align="left"><p>2 で保護されたプロセスとして起動されました</p></td>
 <td align="left"><p>バグ チェックの原因となった命令のアドレス</p></td>
 </tr>
 <tr class="odd">

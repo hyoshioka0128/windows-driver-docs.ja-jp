@@ -967,7 +967,7 @@
         - name: WinDbg でのシンボルと実行可能イメージ パスの設定
           href: setting-symbol-and-source-paths-in-windbg.md
         - name: WinDbg を使用したリモート デバッグ
-          href: remode-debugging-using-windbg.md
+          href: remote-debugging-using-windbg.md
         - name: WinDbg でのデバッガー コマンドの入力
           href: debugger-command-window.md
         - name: WinDbg でのコマンド ブラウザー ウィンドウの使用

@@ -13,10 +13,10 @@ api_type:
 ms.date: 04/20/2017
 ms.localizationpriority: high
 ms.openlocfilehash: aeff1990d5695440e0f7431334f26e7782863027
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335944"
 ---
 # <a name="device-console-devconexe-commands"></a>デバイス コンソール (DevCon.exe) のコマンド

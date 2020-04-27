@@ -1096,7 +1096,7 @@
                       href: condis-miniport-driver-status-indications.md
                     - name: CoNDIS プロトコル ドライバーでの状態表示の処理
                       href: handling-status-indications-in-a-condis-protocol-driver.md
-            - name: リセット
+            - name: リモート アクセスの
               href: reset.md
     - name: NDIS ネットワーク インターフェイス
       items:

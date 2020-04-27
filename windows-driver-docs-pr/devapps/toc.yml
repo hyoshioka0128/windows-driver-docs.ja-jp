@@ -1,10 +1,10 @@
 - name: UWP デバイス アプリ
   href: index.md
-- name: 新着情報
+- name: 新機能
   href: what-s-new.md
-- name: 概要
+- name: はじめに
   items:
-    - name: 概要
+    - name: はじめに
       href: getting-started.md
     - name: UWP デバイス アプリの概要
       href: meet-UWP-device-apps.md

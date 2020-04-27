@@ -8,10 +8,10 @@ keywords:
 ms.date: 04/09/2020
 ms.localizationpriority: High
 ms.openlocfilehash: 65136ac7f480e07fa1f8e4bd588fcba88e03d6dc
-ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81208032"
 ---
 # <a name="download-debugging-tools-for-windows"></a>Windows 用デバッグ ツールのダウンロード

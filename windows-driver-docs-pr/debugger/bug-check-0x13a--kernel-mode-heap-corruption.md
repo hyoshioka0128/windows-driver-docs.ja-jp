@@ -14,10 +14,10 @@ api_type:
 - NA
 ms.localizationpriority: high
 ms.openlocfilehash: 986f5e5684c586579ca6766c8b114eae58affac0
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402352"
 ---
 # <a name="bug-check-0x13a-kernel_mode_heap_corruption"></a>バグ チェック 0x13A:KERNEL\_MODE\_HEAP\_CORRUPTION
@@ -46,7 +46,7 @@ The KERNEL\_MODE\_HEAP\_CORRUPTION バグ チェックの値は、0x0000013A で
 <td align="left"><p>検出された破損の種類 (下記の一覧を参照)</p></td>
 </tr>
 <tr class="even">
-<td align="left">2</td>
+<td align="left">2 で保護されたプロセスとして起動されました</td>
 <td align="left">破損を報告したヒープのアドレス</td>
 </tr>
 <tr class="odd">

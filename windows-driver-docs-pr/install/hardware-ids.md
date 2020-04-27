@@ -5,10 +5,10 @@ ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: cd75a09e4dc79c36d9abfc75f02d8238a5a98447
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72828816"
 ---
 # <a name="hardware-id"></a>Hardware ID (ハードウェア ID)
