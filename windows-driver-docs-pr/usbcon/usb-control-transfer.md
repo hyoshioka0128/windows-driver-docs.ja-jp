@@ -4,10 +4,10 @@ title: USB コントロール転送の送信方法
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 23cf718b0797d6ca04ea4f96a91b59b1564e3d39
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72844834"
 ---
 # <a name="how-to-send-a-usb-control-transfer"></a>USB コントロール転送の送信方法
@@ -109,8 +109,8 @@ ms.locfileid: "72844834"
     <thead>
     <tr class="header">
     <th>フィールド</th>
-    <th>サイズ</th>
-    <th>Value</th>
+    <th>Size</th>
+    <th>値</th>
     <th>説明</th>
     </tr>
     </thead>
@@ -131,20 +131,20 @@ ms.locfileid: "72844834"
     </tr>
     <tr class="odd">
     <td><strong>wValue</strong> (表 9-5 参照)</td>
-    <td>2</td>
+    <td>2 で保護されたプロセスとして起動されました</td>
     <td>0x0100</td>
     <td>要求値は、記述子の種類が DEVICE であることを示します。</td>
     </tr>
     <tr class="even">
     <td><strong>wIndex</strong>(セクション 9.3.4 を参照)</td>
-    <td>2</td>
+    <td>2 で保護されたプロセスとして起動されました</td>
     <td>0x0000</td>
     <td><p>方向はホストからデバイスです (D7 は 1)。</p>
     <p>エンドポイント番号は 0 です。</p></td>
     </tr>
     <tr class="odd">
     <td><strong>wLength</strong> (セクション 9.3.5 を参照)</td>
-    <td>2</td>
+    <td>2 で保護されたプロセスとして起動されました</td>
     <td>0x0012</td>
     <td>要求は 18 バイトを取得することです。</td>
     </tr>
@@ -193,18 +193,18 @@ ms.locfileid: "72844834"
 
     統合データ パケットをデバイス記述子の構造にマップすることで (表 9-8 参照)、次のフィールドと値が表示されます。
 
-    | フィールド                  | サイズ | Value  | 説明                                                                       |
+    | フィールド                  | Size | 値  | 説明                                                                       |
     |------------------------|------|--------|-----------------------------------------------------------------------------------|
     | **bLength**            | 1    | 0x12   | デバイス記述子の長さ (18 バイト)。                               |
     | **bDescriptorType**    | 1    | 0x01   | 記述子の種類はデバイスです。                                                    |
-    | **bcdUSB**             | 2    | 0x0100 | 仕様バージョン番号は 1.00 です。                                         |
+    | **bcdUSB**             | 2 で保護されたプロセスとして起動されました    | 0x0100 | 仕様バージョン番号は 1.00 です。                                         |
     | **bDeviceClass**       | 1    | 0x00   | デバイス クラスは 0 です。 構成内の各インターフェイスにはクラス情報が与えられます。 |
     | **bDeviceSubClass**    | 1    | 0x00   | デバイス クラスが 0 のため、サブクラスは 0 です。                                          |
     | **bProtocol**          | 1    | 0x00   | プロトコルは 0 です。 このデバイスでは、いかなるクラス固有プロトコルも使用されません。             |
     | **bMaxPacketSize0**    | 1    | 0x08   | エンドポイントの最大パケット サイズは 8 バイトです。                               |
-    | **idVendor**           | 2    | 0x0562 | テレックス通信。                                                             |
-    | **idProduct**          | 2    | 0x0002 | USB マイク。                                                                   |
-    | **bcdDevice**          | 2    | 0x0100 | デバイスのリリース番号を示します。                                              |
+    | **idVendor**           | 2 で保護されたプロセスとして起動されました    | 0x0562 | テレックス通信。                                                             |
+    | **idProduct**          | 2 で保護されたプロセスとして起動されました    | 0x0002 | USB マイク。                                                                   |
+    | **bcdDevice**          | 2 で保護されたプロセスとして起動されました    | 0x0100 | デバイスのリリース番号を示します。                                              |
     | **iManufacturer**      | 1    | 0x01   | 製造元文字列。                                                              |
     | **iProduct**           | 1    | 0x02   | 製品文字列。                                                                   |
     | **iSerialNumber**      | 1    | 0x03   | シリアル番号。                                                                    |
@@ -648,7 +648,7 @@ VOID  GetFirmwareVersion(
 }  
 ```
 
-##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>GET\_STATUS のコントロール転送を送信する方法 - UMDF
+##<a name="how-to-send-a-control-transfer-for-get_status---umdf"></a><a name="how-to-send-a-control-transfer-for-get_status---umdf"></a>GET\_STATUS のコントロール転送を送信する方法 - UMDF
 
 
 この手順からは、GET\_STATUS コマンドの場合にクライアント ドライバーでコントロール転送を送信するしくみがわかります。 要求の受信者はデバイスであり、要求によりビット D1-D0 の情報が取得されます。 詳細については、USB 仕様の図 9-4 を参照してください。
@@ -800,7 +800,7 @@ CDevice::SendControlTransferSynchronously(
 }  
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 
 デバイスの関数ドライバーとして Winusb.sys を使用している場合、アプリケーションからコントロール転送を送信できます。 WinUSB のセットアップ パケットをフォーマットするには、このトピックの表で説明されている、UMDF のヘルパー マクロと構造体を使用します。 要求を送信するには、[**WinUsb\_ControlTransfer**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_controltransfer) 関数を呼び出します。

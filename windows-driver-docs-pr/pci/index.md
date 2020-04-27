@@ -19,10 +19,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: dde045c85fac221b0118cae05046ab40d99b0443
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473510"
 ---
 # <a name="pci-driver-programming-guide"></a>PCI ドライバー プログラミング ガイド
@@ -66,37 +66,37 @@ ms.locfileid: "68473510"
 </tr><td><p>Optimized Buffer Flush/Fill (OBFF)</p>
 <p>セクション 6.19 をご覧ください。</p></td>
 <td><p>Windows 8</p>
-<p>Windows Server 2012</p></td>
+<p>Windows Server 2012</p></td>
 </tr>
 <tr class="even">
 <td><p>Latency Tolerance Reporting (LTR) 機能</p>
 <p>セクション 7.25 をご覧ください。</p></td>
 <td><p>Windows 8</p>
-<p>Windows Server 2012</p></td>
+<p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
 <td><p>Alternative Routing-ID Interpretation (ARI)</p>
 <p>セクション 6.13 をご覧ください。</p></td>
 <td><p>Windows 8</p>
-<p>Windows Server 2012</p></td>
+<p>Windows Server 2012</p></td>
 </tr>
 <tr class="even">
 <td><p>Message Signaled Interrupt (MSI/MSI-X) のサポート</p>
 <p>セクション 6.1.4 をご覧ください。</p></td>
 <td><p>Windows Vista</p>
-<p>Windows Server 2008 R2</p></td>
+<p>Windows Server 2008 R2</p></td>
 </tr>
 <tr class="odd">
 <td><p>TLP Processing Hints (TPH)</p>
 <p>セクション 6.17 をご覧ください。</p></td>
 <td><p>Windows 8</p>
-<p>Windows Server 2012</p></td>
+<p>Windows Server 2012</p></td>
 </tr>
 <tr class="even">
 <td><p>シングル ルート I/O 仮想化 (SR-IOV)</p>
 <p>「<a href="https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-" data-raw-source="[Single Root I/O Virtualization (SR-IOV)](https://docs.microsoft.com/windows-hardware/drivers/network/single-root-i-o-virtualization--sr-iov-)">Single Root I/O Virtualization (SR-IOV) (シングル ルート I/O 仮想化 (SR-IOV))</a>」をご覧ください。</p></td>
 <td><p>Windows 8</p>
-<p>Windows Server 2012</p></td>
+<p>Windows Server 2012</p></td>
 </tr>
 </tbody>
 </table>

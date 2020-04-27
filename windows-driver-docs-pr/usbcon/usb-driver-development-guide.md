@@ -4,10 +4,10 @@ title: USB デバイス用 Windows クライアント ドライバー開発の�
 ms.date: 01/07/2019
 ms.localizationpriority: High
 ms.openlocfilehash: a34a004df40b1c5b8bf8e7a0445047d7931a1a11
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72843459"
 ---
 # <a name="overview-of-developing-windows-client-drivers-for-usb-devices"></a>USB デバイス用 Windows クライアント ドライバー開発の概要

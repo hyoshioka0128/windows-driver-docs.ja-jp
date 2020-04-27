@@ -5,10 +5,10 @@ ms.assetid: 8ef4b4bb-5f4e-4095-b4ab-1182c0f75619
 ms.localizationpriority: High
 ms.date: 10/17/2018
 ms.openlocfilehash: 1b19187224fcfb23dcd82370c4aeb9ed2e3e3492
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72828687"
 ---
 # <a name="specifying-access-rights"></a>アクセス権の指定
@@ -29,7 +29,7 @@ typedef ULONG  ACCESS_MASK;
 </colgroup>
 <thead>
 <tr class="header">
-<th>Flag</th>
+<th>フラグ</th>
 <th>説明</th>
 </tr>
 </thead>
@@ -70,7 +70,7 @@ typedef ULONG  ACCESS_MASK;
 </colgroup>
 <thead>
 <tr class="header">
-<th>Flag</th>
+<th>フラグ</th>
 <th>説明</th>
 </tr>
 </thead>
