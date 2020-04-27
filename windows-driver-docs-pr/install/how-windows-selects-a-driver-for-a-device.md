@@ -7,10 +7,10 @@ keywords:
 ms.date: 03/02/2020
 ms.localizationpriority: High
 ms.openlocfilehash: 6dcd25c57c9f9625a77987a23822c049c4546c73
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79437059"
 ---
 # <a name="how-windows-selects-a-driver-for-a-device"></a>Windows のデバイスのためのドライバーの選択方法
@@ -32,7 +32,7 @@ Windows 8 より以前の Windows バージョンの場合、ドライバーの�
 |検索フェーズ|Windows 7 の照合順序|Windows 8、Windows 10 の照合順序|
 |--- |--- |--- |
 |ドライバーをインストールする前|**DevicePath**、Windows Update、[ドライバー ストア](driver-store.md)|[ドライバー ストア](driver-store.md)|
-|最初のドライバーを選択した後|適用できません|**DevicePath**、Windows Update|
+|最初のドライバーを選択した後|該当なし|**DevicePath**、Windows Update|
 
 
 > [!NOTE]

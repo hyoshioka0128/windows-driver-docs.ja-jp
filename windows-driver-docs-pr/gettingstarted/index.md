@@ -11,10 +11,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 1621b74fc69388bda4dd23cbafb43e7bf2d6d881
-ms.sourcegitcommit: 85d02ecf7cbcfd802f41f68cea4cd4434284bdaa
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "68473456"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows ドライバーの概要
@@ -24,7 +24,7 @@ ms.locfileid: "68473456"
 
 既に [C プログラミング言語](https://docs.microsoft.com/cpp/c-language/c-language-reference)について理解していることと、関数ポインター、コールバック関数、イベント ハンドラーの概念を理解していることが必要です。 ユーザー モード ドライバー フレームワーク 1.x に基づくドライバーを作る場合は、[C++ と COM](https://go.microsoft.com/fwlink/p?LinkID=317460) について理解している必要があります。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
 -   [ドライバーとは](what-is-a-driver-.md)
@@ -36,7 +36,7 @@ ms.locfileid: "68473456"
 -   [ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)](provision-a-target-computer-wdk-8-1.md)
 -   [すべてのドライバー開発者のための概念](concepts-and-knowledge-for-all-driver-developers.md)
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/)

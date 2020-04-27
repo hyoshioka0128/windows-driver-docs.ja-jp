@@ -17,10 +17,10 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: fe8a87c9a313c930c8b7204a0368fe7717b1b6b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "67386381"
 ---
 # <a name="multifunction-device-driver-design-guide"></a>多機能デバイス ドライバー設計ガイド

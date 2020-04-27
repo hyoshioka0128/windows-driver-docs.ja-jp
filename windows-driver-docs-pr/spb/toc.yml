@@ -1,6 +1,6 @@
-- name: SPB (Simple Peripheral Bus) ドライバー設計ガイド
+- name: Simple Peripheral Bus (SPB) ドライバー設計ガイド
   items:
-    - name: SPB (Simple Peripheral Bus) ドライバー設計ガイド
+    - name: Simple Peripheral Bus (SPB) ドライバー設計ガイド
       href: index.md
     - name: SPB コントローラー ドライバー
       items:

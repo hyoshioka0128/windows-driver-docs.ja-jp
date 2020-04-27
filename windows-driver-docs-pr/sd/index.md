@@ -13,10 +13,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 author: EliotSeattle
 ms.openlocfilehash: 52b8d72daa37b4e369da27c63f61552dea54569c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "72824742"
 ---
 # <a name="sd-bus-driver-design-guide"></a>SD バス ドライバー設計ガイド
@@ -43,7 +43,7 @@ SD コンボ (多機能) カード上の関数を管理するセキュア デジ
 
 - 別のデバイス スタックの関数番号を指定する SD I/O コマンド。
 
-SD デバイス ドライバーでは、型 SDRF\_GET\_PROPERTY および SDRF\_SET\_PROPERTY の関数要求を使用して [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbussubmitrequest) を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)」をご覧ください。
+SD デバイス ドライバーでは、型 SDRF[GET**PROPERTY および SDRF**SET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbussubmitrequest)PROPERTY の関数要求を使用して \_\_SdBusSubmitRequest\_\_ を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)」をご覧ください。
 
 ## <a name="sd-bus-sample"></a>SD バスのサンプル
 

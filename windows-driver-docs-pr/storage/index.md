@@ -1,16 +1,16 @@
 ---
-title: はじめに
-description: はじめに
+title: 概要
+description: 概要
 ms.assetid: 0AEFA19D-C270-4777-8C08-E6056FBB6BC5
 ms.date: 12/15/2019
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.openlocfilehash: c1ab472469eb0ecc8eb66fb6fc42561f19ea4823
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75606428"
 ---
 # <a name="storage-driver-design-guide"></a>記憶装置ドライバー設計ガイド

@@ -4,10 +4,10 @@ title: USB シリアル ドライバー (Usbser.sys)
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: 2e54bba6c5ba56376f41693ab12050d9932738aa
-ms.sourcegitcommit: 05c2f94fa2fe77276ca7000c1ff8e1bbe7a67b6a
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76892195"
 ---
 # <a name="usb-serial-driver-usbsersys"></a>USB シリアル ドライバー (Usbser.sys)
@@ -20,7 +20,7 @@ ms.locfileid: "76892195"
 **OS バージョン**
 
 -   Windows 10
--   Windows 8.1
+-   Windows 8.1
 
 **適用対象**
 
@@ -40,7 +40,7 @@ Windows 10 では、ドライバーが[カーネルモード ドライバー フ
 
 通信および CDC 制御デバイス用の Microsoft 提供のインボックス ドライバー (Usbser.sys) を読み込みます。
 
-**注  ** Windows に含まれている USB デバイス クラス ドライバーをインストールしようとしている場合は、ドライバーをダウンロードする必要はありません。 これらは自動的にインストールされます。 自動的にインストールされない場合は、デバイス製造元にお問い合わせください。 Windows に含まれる USB デバイス クラス ドライバーのリストについては、「[Windows に含まれる USB デバイス クラス ドライバー](supported-usb-classes.md)」を参照してください。
+**注**  Windows に含まれている USB デバイス クラス ドライバーをインストールしようとしている場合は、ドライバーをダウンロードする必要はありません。 これらは自動的にインストールされます。 自動的にインストールされない場合は、デバイス製造元にお問い合わせください。 Windows に含まれる USB デバイス クラス ドライバーのリストについては、「[Windows に含まれる USB デバイス クラス ドライバー](supported-usb-classes.md)」を参照してください。
 
  
 
@@ -113,7 +113,7 @@ USB CDC デバイス用の Usbser.sys をインストールする場合、アプ
 
 -   Windows 10 以降では、Windows アプリで [**SerialCommunication**](https://docs.microsoft.com/uwp/api/Windows.Devices.SerialCommunication) 名前空間を使用して、Usbser.sys に要求を送信することができます。 シリアル ポート、またはシリアル ポートの何らかの抽象化を介して USB CDC デバイスと通信するために使用できる、Windows ランタイム クラスが定義されます。 クラスでは、このようなシリアル デバイスを検出し、データの読み取りと書き込みを行い、フロー制御のためのシリアル固有のプロパティ (ボー レートの設定、シグナルの状態など) を制御するための機能が提供されます。
 
--   Windows 8.1 以前のバージョンでは、仮想 COM ポートを開き、デバイスと通信する Windows デスクトップ アプリケーションを作成できます。 詳細については、次のドキュメントを参照してください。
+-   Windows 8.1 以前のバージョンでは、仮想 COM ポートを開き、デバイスと通信する Windows デスクトップ アプリケーションを作成できます。 詳しくは、次のトピックをご覧ください。
 
     Win32 プログラミング モデル:
 

@@ -1,23 +1,23 @@
 ---
-title: WinDbg の概要 (ユーザー モード)
+title: WinDbg ドライバーの概要 (ユーザー モード)
 description: WinDbg は、Debugging Tools for Windows に含まれているカーネルモードおよびユーザーモードのデバッガーです。 ここでは、ユーザーモードのデバッガーとして WinDbg の使用を開始する際に役立つ実践的な演習を提供します。
 ms.assetid: 8C2D2D0C-7E54-4711-A6FD-970E040F1C50
 ms.date: 02/20/2020
 ms.localizationpriority: high
 ms.openlocfilehash: d2d4cd70f8fa02914ce07661bcbf51479aeeceaf
-ms.sourcegitcommit: 29d9e97439f19d2c5a090006640e4e5659e56412
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78335961"
 ---
-# <a name="getting-started-with-windbg-user-mode"></a>WinDbg の概要 (ユーザー モード)
+# <a name="getting-started-with-windbg-user-mode"></a>WinDbg ドライバーの概要 (ユーザー モード)
 
 WinDbg は、Debugging Tools for Windows に含まれているカーネルモードおよびユーザーモードのデバッガーです。 ここでは、ユーザーモードのデバッガーとして WinDbg の使用を開始する際に役立つ実践的な演習を提供します。
 
 Debugging Tools for Windows を取得する方法については、「[Debugging Tools for Windows (WinDbg、KD、CDB、NTSD)](https://go.microsoft.com/fwlink/p?linkid=223405)」を参照してください。 
 
-デバッグ ツールをインストールしたら、64 ビット (x64) および 32 ビット (x86) バージョンのツールのインストール ディレクトリを検索します。 たとえば、次のように入力します。
+デバッグ ツールをインストールしたら、64 ビット (x64) および 32 ビット (x86) バージョンのツールのインストール ディレクトリを検索します。 次に、例を示します。
 
 -   C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64
 -   C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x86

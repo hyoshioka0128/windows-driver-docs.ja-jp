@@ -4,10 +4,10 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 01/16/2020
 ms.localizationpriority: High
 ms.openlocfilehash: 319542f71ee71f5d3c1913484eab29d752e30fdb
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76256705"
 ---
 # <a name="debugging-using-windbg-preview"></a>WinDbg プレビューを使用したデバッグ
@@ -154,7 +154,7 @@ Ctrl + Tab を押すだけで、キーボードだけでウィンドウ間を簡
 - [デフラグ ツール #185](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-185-Time-Travel-Debugging-Introduction) - James と Ivette による、Time Travel Debugging の紹介。
 - [デフラグ ツール #186](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-186-Time-Travel-Debugging-Advanced) - James と JCAB による、Time Travel Debugging の高度な使用方法の説明。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 最新リリースの新機能については、「[WinDbg プレビュー - 新機能](windbg-what-is-new-preview.md)」を参照してください。
 

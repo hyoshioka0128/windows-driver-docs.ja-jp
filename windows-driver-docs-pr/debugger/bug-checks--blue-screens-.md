@@ -6,10 +6,10 @@ keywords: バグ チェック, ブルー スクリーン, カーネル エラー
 ms.date: 05/23/2017
 ms.localizationpriority: high
 ms.openlocfilehash: fc65ad7f26f895d449f61853c304b124d39d04a3
-ms.sourcegitcommit: e1cfed28850a8208ea27e7a6a336de88c48e9948
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78402394"
 ---
 # <a name="bug-checks-blue-screens"></a>バグ チェック (ブルー スクリーン)
@@ -26,7 +26,7 @@ ms.locfileid: "78402394"
 
 [バグ チェック コード リファレンス](bug-check-code-reference2.md)
 
-**注**  これらのトピックは、プログラマを対象としています。 コンピューターの使用中にブルー スクリーン エラー コードが表示される場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)」を参照してください。
+**注**  これらのトピックは、プログラマを対象としています。 ユ―ザーとしてコンピューターを使用しているときにブルー スクリーン エラー コードが表示される場合は、[ブルー スクリーン エラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)を参照してください。
 
  
 

@@ -4,10 +4,10 @@ description: このセクションでは、WinDbg プレビュー デバッガ�
 ms.date: 03/30/2020
 ms.localizationpriority: High
 ms.openlocfilehash: 32d4efebef4cfff9698f51d55de3a6b7536ebe26
-ms.sourcegitcommit: 071200c3366dbb26985dd7077bd6c4cb96e969c2
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80812514"
 ---
 # <a name="windbg-preview---installation"></a>WinDbg プレビュー - インストール
