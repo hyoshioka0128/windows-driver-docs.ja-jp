@@ -72,8 +72,6 @@
                   href: supporting-autoplay.md
             - name: MTP セットアップ情報 (.inf) ファイル
               href: the-mtp-setup-information---inf--file.md
-            - name: セットアップ情報ファイルの構造と構文の確認
-              href: verifying-structure-and-syntax-for-setup-information-files.md
             - name: COM コンポーネント ファイル
               href: the-com-component-files.md
             - name: Windows Driver Framework ファイル
@@ -140,9 +138,9 @@
                       href: property-value-retrieval.md
                     - name: プロパティ値の設定
                       href: setting-property-values.md
-                - name: 参考資料
+                - name: 参照情報
                   items:
-                    - name: 参考資料
+                    - name: 参照情報
                       href: resources.md
                     - name: サポートされているリソース一覧の取得
                       href: retrieving-a-list-of-supported-resources.md
