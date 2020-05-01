@@ -16,10 +16,10 @@ ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
 ms.openlocfilehash: d2a7da20e127757192cc0dd88fd0c70cb213b5dc
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "75210818"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 の WDF ドライバーの新機能
@@ -120,7 +120,7 @@ UMDF 1 ドライバーは、Windows 10 デスクトップ エディションと�
 
     -   デバッガーを接続している場合、[ **!wdfkd.wdflogdump**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdflogdump) を発行することでドライバーとフレームワークの両方の IFR ログにアクセスできます。
 
-    -   デバッガーを接続していない場合でも両方のログにアクセスできます。  方法については、「[ デバッガーなしでドライバー IFR ログにアクセスする](video--accessing-driver-ifr-logs-without-a-debugger.md)」 を参照してください。
+    -   デバッガーを接続していない場合でも両方のログにアクセスできます。  方法については、「[デバッガーなしでドライバー IFR ログにアクセスする](video--accessing-driver-ifr-logs-without-a-debugger.md)」 を参照してください。
 
     -   UMDF ドライバーをデバッグするとき、 **!wdfkd.wdflogdump** *&lt;drivername.dll&gt;* **-m** を発行することでフレームワーク ログとドライバー ログを結合できます。
 

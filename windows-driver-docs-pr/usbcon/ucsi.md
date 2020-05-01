@@ -1,13 +1,13 @@
 ---
-Description: Microsoft は、USB タイプの C コネクタシステムソフトウェアインターフェイス (UCSI) 仕様に準拠したドライバーを提供しています。
+Description: Microsoft では、USB Type-C コネクタ システム ソフトウェア インターフェイス (UCSI) 仕様に準拠したドライバーを提供しています。
 title: USB Type-C Connector System Software Interface (UCSI) ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: High
 ms.openlocfilehash: bb4c1969370147e8298eabd32aef3befb2cee2e6
-ms.sourcegitcommit: c73954a5909ec8c7e189f77fd5813f2eb749687c
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72007630"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB Type-C Connector System Software Interface (UCSI) ドライバー
@@ -15,123 +15,123 @@ ms.locfileid: "72007630"
 
 **要約**
 
--   組み込みコントローラーを備えた USB タイプ C システム用の組み込みの UCSI ドライバー。
+-   Microsoft が提供する、組み込みコントローラーを備えた USB Type-C システム用のインボックス UCSI ドライバー。
 
-**最終更新日時**
+**最終更新日**
 
 -   2018 年 10 月
 
-**Windows のバージョン**
+**Windows バージョン**
 
 -   Windows 10 デスクトップ エディション (Home、Pro、Enterprise、Education)
--   Windows 10 Mobile
+-   Windows 10 Mobile
 
 **公式の仕様**
 
--   [UCSI の Intel BIOS 実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)
--   [USB タイプ-C コネクタシステムソフトウェアインターフェイスの仕様](https://go.microsoft.com/fwlink/p/?LinkId=703713)
--   [ハードウェア設計: 内蔵コントローラーを備えたシステム用の USB タイプ C コンポーネント](hardware-design-of-a-usb-type-c-system.md#emb)
+-   [Intel BIOS Implementation of UCSI](https://go.microsoft.com/fwlink/p/?LinkId=760658)
+-   [USB Type-C Connector System Software Interface Specification](https://go.microsoft.com/fwlink/p/?LinkId=703713)
+-   [ハードウェアの設計:埋め込みコントローラーを備えたシステム用 USB Type-C コンポーネント](hardware-design-of-a-usb-type-c-system.md#emb)
 
 
-Microsoft は、ACPI トランスポート用の USB タイプ C コネクタシステムソフトウェアインターフェイス (UCSI) 仕様準拠のドライバーを提供しています。 設計に ACPI トランスポートが組み込まれたコントローラーが含まれている場合は、システムの BIOS/EC に UCSI を実装し、インボックス UCSI ドライバー (UcmUcsiCx および UcmUcsiAcpiClient) を読み込みます。
+Microsoft では、ACPI トランスポート用の USB Type-C コネクタ システム ソフトウェア インターフェイス (UCSI) 仕様に準拠したドライバーを提供しています。 設計に ACPI トランスポートがある組み込みのコントローラーが含まれている場合は、システムの BIOS/EC に UCSI を実装し、インボックス UCSI ドライバー (UcmUcsiCx.sys および UcmUcsiAcpiClient.sys) を読み込みます。
 
-UCSI 準拠のハードウェアが ACPI 以外のトランスポートを使用している場合は、 [ucsi クライアントドライバーを記述](write-a-ucsi-driver.md)する必要があります。
+UCSI 準拠のハードウェアが ACPI 以外のトランスポートを使用している場合は、[UCSI クライアント ドライバー](write-a-ucsi-driver.md)を作成する必要があります。
 
-## <a name="drivers-for-supporting-usb-type-c-components-for-systems-with-embedded-controllers"></a>埋め込みコントローラーを備えたシステムの USB タイプ C コンポーネントをサポートするためのドライバー
+## <a name="drivers-for-supporting-usb-type-c-components-for-systems-with-embedded-controllers"></a>埋め込みコントローラーを備えたシステム用 USB Type-C コンポーネントをサポートするためのドライバー
 
-コントローラーが埋め込まれているシステムの例を次に示します。
+埋め込みコントローラーを備えたシステムの例を次に示します。
 
-![usb タイプ-c ソフトウェアコンポーネント](images/ucsiarch.png)
+![USB Type-C ソフトウェア コンポーネント](images/ucsiarch.png)
 
-前の例では、システムのファームウェアで USB 役割の切り替えが処理され、USB 役割スイッチドライバースタックが読み込まれていません。 別のシステムでは、デュアルロールがサポートされていないため、ドライバースタックが読み込まれない可能性があります。
+上記の例では、USB ロール スイッチはシステムのファームウェアで処理され、USB Role Switch ドライバー スタックは読み込まれていません。 別のシステムでは、デュアル ロールがサポートされていないため、ドライバー スタックが読み込まれない可能性があります。
 
-上の図では、
+上の図において、
 
 -   **USB デバイス側ドライバー**
 
-    [USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)は、機能/デバイス/周辺機器を処理します。 USB 関数コントローラークラス拡張は、MTP (メディア転送プロトコル) をサポートし、BC 1.2 充電器を使用して課金します。 Microsoft には、Synopsys USB 3.0 および ChipIdea USB 2.0 コントローラー用のインボックスクライアントドライバーが用意されています。 関数コントローラー用のカスタムクライアントドライバーは、 [USB 関数コントローラークライアントドライバーのプログラミングインターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))を使用して作成できます。 詳細については、「 [USB 機能コントローラー用の Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)」を参照してください。
+    [USB デバイス側ドライバー](usb-device-side-drivers-in-windows.md)は、機能、デバイス、周辺機器に対応します。 USB 関数コントローラーのクラス拡張機能は、MTP (メディア転送プロトコル)、および BC 1.2 充電器を使用した充電に対応しています。 Microsoft では、Synopsys USB 3.0 および ChipIdea USB 2.0 コントローラー用のインボックス クライアント ドライバーが提供されています。 [USB 関数コントローラー クライアント ドライバーのプログラミング インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188010(v=vs.85))を使用して、関数コントローラー用のカスタム クライアント ドライバーを作成できます。 詳細については、[USB 関数コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-function-controllers.md)に関する記事を参照してください。
 
-    SoC ベンダは、USB 機能であるチャージャー検出用の下位フィルタードライバーを提供する場合があります。 インボックス Synopsys USB 3.0 または ChipIdea USB 2.0 クライアントドライバーを使用している場合は、独自のフィルタードライバーを実装できます。
+    SoC ベンダーは、充電器検出用の USB 関数の下位フィルター ドライバーを提供している場合があります。 インボックス Synopsys USB 3.0 または ChipIdea USB 2.0 クライアント ドライバーを使用している場合は、独自のフィルター ドライバーを実装できます。
 
 -   **USB ホスト側ドライバー**
 
-    USB ホスト側ドライバーは、EHCI または XHCI 準拠の USB ホストコントローラーで動作するドライバーのセットです。 ドライバーは、役割スイッチドライバーがホストの役割を列挙した場合に読み込まれます。 ホストコントローラーが仕様に準拠していない場合は、 [USB ホストコントローラー拡張 (UCX) プログラミングインターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))を使用してカスタムドライバーを作成できます。 詳細については、「 [USB ホストコントローラー用の Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)」を参照してください。
+    USB ホスト側ドライバーは、EHCI または XHCI 準拠の USB ホスト コントローラーで動作する一連のドライバーです。 ドライバーは、ロール スイッチ ドライバーがホストのロールを列挙した場合に読み込まれます。 ホスト コントローラーが仕様に準拠していない場合は、[USB ホスト コントローラー 拡張 (UCX) プログラミング インターフェイス](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/mt188009(v=vs.85))を使用して、カスタム ドライバーを作成できます。 詳細については、[USB ホスト コントローラー用 Windows ドライバーの開発](developing-windows-drivers-for-usb-host-controllers.md)に関する記事を参照してください。
 
-    **注**  Windows 10 Mobile では、[一部の USB デバイスクラス](supported-usb-classes.md)がサポートされていないことに注意してください。
+    **注**  [すべての USB デバイス クラス](supported-usb-classes.md)が Windows 10 Mobile でサポートされているわけではありません。
 
      
 
--   **USB コネクタマネージャー**
+-   **USB コネクタ マネージャー**
 
-    Microsoft では、[ここ](https://go.microsoft.com/fwlink/p/?LinkId=703713)で使用可能な ucsi 仕様で定義されている機能を実装する、Windows (UcmUcsiCx) を使用する ucsi インボックスドライバーを提供しています。 この仕様では、UCSI の機能について説明し、ハードウェアコンポーネントデザイナー、システムビルダー、およびデバイスドライバーの開発者のためのレジスタとデータ構造について説明します。
+    Microsoft では、[こちら](https://go.microsoft.com/fwlink/p/?LinkId=703713)で確認できる UCSI 仕様で定義されている機能を実装する Windows (UcmUcsiCx.sys) を備えた UCSI インボックス ドライバーを提供しています。 この仕様では、UCSI の機能、およびハードウェア コンポーネント デザイナー、システム ビルダー、およびデバイス ドライバーの開発者向けにレジスタとデータ構造について説明します。
 
-    このドライバーは、コントローラーが組み込まれているシステムを対象としています。 このドライバーは、Microsoft 提供の USB コネクタマネージャークラス拡張ドライバー (Ucmcx .sys) のクライアントです。 ドライバーは、ファームウェアへの要求を開始してデータまたは電源の役割を変更し、ユーザーにトラブルシューティングメッセージを提供するために必要な情報を取得するなどのタスクを処理します。
+    このドライバーは、埋め込みコントローラーを備えたシステムを対象としています。 このドライバーは、Microsoft が提供する USB コネクタ マネージャーのクラス拡張機能ドライバー (Ucmcx.sys) のクライアントです。 ドライバーでは、ファームウェアへの要求を開始してデータまたは電源ロールを変更し、ユーザーにトラブルシューティング メッセージを提供するために必要な情報を取得するなどのタスクが処理されます。
 
 ## <a name="ucsi-commands-required-by-windows"></a>Windows で必要な UCSI コマンド
 
 
-すべての UCSI 実装で "必須" になっているコマンドについては、UCSI の仕様を参照してください。
+すべての UCSI 実装で "Required" (必須) になっているコマンドについては、UCSI の仕様を参照してください。
 
-"Required" とマークされているコマンドに加えて、Windows には次のコマンドが必要です。
+"Required" とマークされているコマンドの他に、Windows では次のコマンドが必須です。
 
--   代替\_モードの取得\_
--   サポートされている\_CAM\_を取得する
--   \_PDOS を取得する
--   設定\_NOTIFICATION\_有効にする: システムまたはコントローラーは、SET\_NOTIFICATION で次の通知をサポートする必要があります\_有効にします。
-    -   サポートされているプロバイダーの機能の変更
-    -   ネゴシエートされる電源レベルの変更
--   \_コネクタの\_の状態を取得する: システムまたはコントローラーは、GET\_CONNECTOR\_の状態で、これらのコネクタの状態の変更をサポートする必要があります。
-    -   サポートされているプロバイダーの機能の変更
-    -   ネゴシエートされる電源レベルの変更
+-   GET\_ALTERNATE\_MODES
+-   GET\_CAM\_SUPPORTED
+-   GET\_PDOS
+-   SET\_NOTIFICATION\_ENABLE:システムまたはコントローラーでは、SET\_NOTIFICATION\_ENABLE の次の通知がサポートされている必要があります。
+    -   Supported Provider Capabilities Change (サポートされているプロバイダー機能の変更)
+    -   Negotiated Power Level Change (ネゴシエートされる電源レベルの変更)
+-   GET\_CONNECTOR\_STATUS:システムまたはコントローラーでは、GET\_CONNECTOR\_STATUS のコネクタの状態の変更がサポートされている必要があります。
+    -   Supported Provider Capabilities Change (サポートされているプロバイダー機能の変更)
+    -   Negotiated Power Level Change (ネゴシエートされる電源レベルの変更)
 
-BIOS で UCSI を実装するために必要なタスクの詳細については、「 [INTEL bios による ucsi の実装](https://go.microsoft.com/fwlink/p/?LinkId=760658)」を参照してください。
+BIOS で UCSI を実装するために必要なタスクの詳細については、「[Intel BIOS Implementation of UCSI](https://go.microsoft.com/fwlink/p/?LinkId=760658)」を参照してください。
 
 ## <a name="example-flow-for-ucsi"></a>UCSI のフローの例
 
 
-このセクションで示す例では、USB タイプ C ハードウェア/ファームウェア、UCSI ドライバー、およびオペレーティングシステム間の相互作用について説明します。
+このセクションで示す例では、USB Type-C ハードウェアまたはファームウェア、UCSI ドライバー、およびオペレーティング システム間の相互作用について説明します。
 
 ### <a name="drp-role-detection"></a>DRP ロールの検出
 
-1.  USB タイプ-C ハードウェア/ファームウェアはデバイスアタッチイベントを検出し、最初に Windows 10 システムの DRP システムが UFP ロールになります。
-    1.  ファームウェアは、コネクタが変更されたことを示す通知を送信します。
-    2.  UCSI ドライバーは、GET\_CONNECTOR\_STATUS 要求を送信します。
+1.  USB Type-C ハードウェアまたはファームウェアでデバイス アタッチ イベントが検出され、最初に Windows 10 システムの DRP システムが UFP ロールになります。
+    1.  ファームウェアで、コネクタが変更されたことを示す通知が送信されます。
+    2.  UCSI ドライバーにより、GET\_CONNECTOR\_STATUS 要求が送信されます。
     3.  ファームウェアによって、Connect Status = 1 および Connector Partner Type = DFP という応答が返されます。 
-2.  USB 関数スタック内のドライバーは、列挙体に応答します。
-3.  USB コネクタマネージャークラス拡張は、USB 関数スタックが読み込まれたことを認識しているため、システムの状態が正しくありません。 このメソッドは、設定された USB 操作の役割を送信し、電源の方向の役割要求をファームウェアに設定するように UCSI ドライバーに指示します。
-4.  USB タイプ-C ハードウェア/ファームウェアは、DFP を使用してロールスワップ操作を開始します。
+2.  USB 関数スタック内のドライバーが、列挙に応答します。
+3.  USB コネクタ マネージャーのクラス拡張機能で、USB 関数スタックが読み込まれたことによりシステムの状態が正しくないことが認識されます。 これは、Set USB Operation Role 要求および Set Power Direction Role 要求をファームウェアに送信するように UCSI ドライバーに指示します。
+4.  USB Type-C ハードウェアまたはファームウェアで、DFP を使用してロールスワップ操作が開始されます。
 
-### <a name="detecting-a-charger-mismatch-error--condition"></a>チャージャーの不一致エラー条件の検出
+### <a name="detecting-a-charger-mismatch-error-condition"></a><a name="detecting-a-charger-mismatch-error--condition"></a>充電器の不一致エラー条件の検出
 
-1.  USB タイプ-C ハードウェア/ファームウェアは、チャージャーが接続されていることを検出し、既定の電源コントラクトをネゴシエートします。 また、チャージャーがシステムに十分な電力を供給していないことを観察します。
-2.  USB タイプ-C ハードウェア/ファームウェアは、低速充電ビットを設定します。
-    1.  ファームウェアは、コネクタが変更されたことを示す通知を送信します。
-    2.  UCSI ドライバーは、GET\_CONNECTOR\_STATUS 要求を送信します。
-    3.  ファームウェアは、Connect Status = 1、Connector Partner Type = DFP、およびバッテリの充電状態 = 低速/トリクルで応答します。
+1.  USB Type-C ハードウェアまたはファームウェアで充電器が接続されていることが検出され、既定の電源コントラクトのネゴシエーションが開始されます。 また、充電器からシステムに十分な電力が供給されていないことが確認されます。
+2.  USB Type-C ハードウェアまたはファームウェアにより、低速充電されている部分が設定されます。
+    1.  ファームウェアで、コネクタが変更されたことを示す通知が送信されます。
+    2.  UCSI ドライバーにより、GET\_CONNECTOR\_STATUS 要求が送信されます。
+    3.  ファームウェアによって、Connect Status = 1、Connector Partner Type = DFP、および Battery Charging Status = Slow/Trickle という応答が返されます。
     
-3.  USB コネクタマネージャークラス拡張は、充電の不一致のトラブルシューティングメッセージを表示するために、UI に通知を送信します。
+3.  充電器の不一致のトラブルシューティング メッセージを表示するため、USB コネクタ マネージャーのクラス拡張機能によって UI に通知が送信されます。
 
 ## <a name="how-to-test-ucsi"></a>UCSI のテスト方法
 
 
-UCSI 実装をテストするには、いくつかの方法があります。 UCSI BIOS/EC 実装で個々のコマンドをテストするには、 [MUTT ソフトウェアパック](mutt-software-package.md)に用意されている UCSIControl を使用します。 UCSI の完全実装をテストするには、Windows Hardware Lab Kit (HLK) に含まれている UCSI テストと、[タイプ C の手動による相互運用手順](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)の手順を使用します。
+UCSI 実装をテストするには、いくつかの方法があります。 UCSI BIOS/EC 実装で個々のコマンドをテストするには、[MUTT Software Pack](mutt-software-package.md) で提供されている UCSIControl.exe を使用します。 完全な UCSI の実装をテストするには、Windows Hardware Lab Kit (HLK) に含まれている UCSI テストと、[Type-C の手動での相互運用機能の手順](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)に関する記事に記載されている手順を使用します。
 
-**UCSIControl**
+**UCSIControl.exe**
 
-UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテストできます。 このツールを使用すると、ucsi ドライバーを使用して、UCSI コマンドをファームウェアに送信できます。 ドライバーが読み込まれ、実行されていること、およびドライバーのテストインターフェイスが有効になっていることが必要です。 既定では、このインターフェイスは有効になっていないため、リテールシステムの未承認ユーザーがアクセスできないようにします。
+UCSIControl.exe を使用して、UCSI BIOS/EC 実装で個々のコマンドをテストできます。 このツールを使用すると、UCSI ドライバーを使用して、UCSI コマンドをファームウェアに送信できます。 ドライバーが読み込まれて実行されていること、およびドライバーのテスト インターフェイスが有効になっていることが必要です。 このインターフェイスはリテール システムの承認されていないユーザーがアクセスできないよう、既定では有効になっていません。
 
-1.  **Ucsi USB コネクタマネージャー**という名前のデバイスノードをデバイスマネージャー (devmgmt.msc) に配置します。 ノードは、 **[ユニバーサルシリアルバスコントローラー]** カテゴリの下にあります。
-2.  デバイスを右クリックし、 **[プロパティ]** をクリックして、 **[詳細]** タブを開きます。
-3.  ドロップダウンから **[デバイスインスタンスのパス]** を選択し、プロパティの値をメモします。
+1.  **UCSI USB コネクタ マネージャー**という名前のデバイス マネージャー (devmgmt.msc) でデバイス ノードを見つけます。 ノードは **[ユニバーサル シリアル バス コントローラー]** カテゴリにあります。
+2.  デバイスを右クリックし、 **[プロパティ]** を選択して、 **[詳細]** タブを開きます。
+3.  ドロップダウンから **[デバイス インスタンス パス]** を選択し、プロパティの値を書き留めます。
 4.  レジストリ エディター (regedit.exe) を開きます。
-5.  このキーの下にあるデバイスインスタンスのパスに移動します。
+5.  このキーの配下にあるデバイス インスタンス パスに移動します。
 
-    HKEY\_ローカル\_マシン\\System\\CurrentControlSet\\列挙型\\&lt;デバイスパラメーター&gt;デバイスパラメーター\\
+    HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Enum\\&lt;device-instance-path&gt;\\Device Parameters
 
-6.  **Testinterfaceenabled**という名前の DWORD 値を作成し、値を0x1 に設定します。
-7.  デバイスマネージャーのデバイスノードで **[無効]** オプションを選択し、 **[有効に]** する を選択して、デバイスを再起動します。 または、単に PC を再起動することもできます。
+6.  **TestInterfaceEnabled** という名前の DWORD 値を作成し、値を 0x1 に設定します。
+7.  デバイス マネージャーのデバイス ノードで **[無効]** オプションを選択してから **[有効]** 選択し、デバイスを再起動します。 または、単に PC を再起動することもできます。
 
-ヘルプを表示するには、 **UcsiControl/?** を実行します。
+ヘルプを表示するには、**UcsiControl.exe /?** を実行します。
 
 一般的なコマンドを次に示します。
 
@@ -143,65 +143,65 @@ UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテ�
 <thead>
 <tr class="header">
 <th>UCSI コマンド</th>
-<th>UcsiControl コマンド</th>
+<th>UcsiControl.exe コマンド</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>PPM のリセット</td>
-<td><strong>UcsiControl Send 0 1</strong></td>
+<td>PPM Reset</td>
+<td><strong>UcsiControl.exe Send 0 1</strong></td>
 </tr>
 <tr class="even">
-<td>コネクタのリセット</td>
-<td><p>ソフトリセット: <strong>UcsiControl Send 0 10003</strong></p>
-<p>ハードリセット: <strong>UcsiControl Send 0 810003</strong></p></td>
+<td>Connector Reset</td>
+<td><p>ソフト リセット:<strong>UcsiControl.exe Send 0 10003</strong></p>
+<p>ハード リセット:<strong>UcsiControl.exe Send 0 810003</strong></p></td>
 </tr>
 <tr class="odd">
-<td>通知の有効化の設定</td>
-<td><p>すべての通知: <strong>UcsiControl Send 0 ffff0005</strong></p>
-<p>コマンドの完了のみ: <strong>UcsiControl Send 0 00010005</strong></p>
-<p>通知なし: <strong>UcsiControl Send 0 00000005</strong></p></td>
+<td>Set Notification Enable</td>
+<td><p>すべての通知:<strong>UcsiControl.exe Send 0 ffff0005</strong></p>
+<p>コマンドの完了のみ:<strong>UcsiControl.exe Send 0 00010005</strong></p>
+<p>通知なし:<strong>UcsiControl.exe Send 0 00000005</strong></p></td>
 </tr>
 <tr class="even">
-<td>機能の取得</td>
-<td><strong>UcsiControl Send 0 6</strong></td>
+<td>Get Capability</td>
+<td><strong>UcsiControl.exe Send 0 6</strong></td>
 </tr>
 <tr class="odd">
-<td>コネクタ機能の取得</td>
-<td><strong>UcsiControl Send 0 10007</strong></td>
+<td>Get Connector Capability</td>
+<td><strong>UcsiControl.exe Send 0 10007</strong></td>
 </tr>
 <tr class="even">
-<td>UOM の設定</td>
-<td><p><strong>DFP: UcsiControl Send 0 810008</strong></p>
-<p><strong>UFP: UcsiControl Send 0 1010008</strong></p>
-<p><strong>DRP: UcsiControl Send 0 2010008</strong></p></td>
+<td>Set UOM</td>
+<td><p><strong>DFP:UcsiControl.exe Send 0 810008</strong></p>
+<p><strong>UFP:UcsiControl.exe Send 0 1010008</strong></p>
+<p><strong>DRP:UcsiControl.exe Send 0 2010008</strong></p></td>
 </tr>
 <tr class="odd">
-<td>UOR を設定する</td>
-<td><p><strong>DFP: UcsiControl Send 0 810009</strong></p>
-<p><strong>UFP: UcsiControl Send 0 1010009</strong></p>
-<p><strong>Accept: UcsiControl Send 0 2010009</strong></p></td>
+<td>Set UOR</td>
+<td><p><strong>DFP:UcsiControl.exe Send 0 810009</strong></p>
+<p><strong>UFP:UcsiControl.exe Send 0 1010009</strong></p>
+<p><strong>許可:UcsiControl.exe Send 0 2010009</strong></p></td>
 </tr>
 <tr class="even">
-<td>民主共和国の設定</td>
-<td><p><strong>プロバイダー: UcsiControl Send 0 81000B</strong></p>
-<p><strong>コンシューマー: UcsiControl Send 0 101000B</strong></p>
-<p><strong>承諾: UcsiControl Send 0 201000B</strong></p></td>
+<td>Set PDR</td>
+<td><p><strong>プロバイダー:UcsiControl.exe Send 0 81000B</strong></p>
+<p><strong>コンシューマー:UcsiControl.exe Send 0 101000B</strong></p>
+<p><strong>許可:UcsiControl.exe Send 0 201000B</strong></p></td>
 </tr>
 <tr class="odd">
-<td>PDOs を取得する</td>
-<td><p><strong>ローカルソース: UcsiControl Send 7 00010010</strong></p>
-<p><strong>ローカルシンク: UcsiControl Send 3 00010010</strong></p>
-<p><strong>リモートソース: UcsiControl Send 7 00810010</strong></p>
-<p><strong>リモートシンク: UcsiControl Send 3 00810010</strong></p></td>
+<td>Get PDOs</td>
+<td><p><strong>ローカル ソース:UcsiControl.exe Send 7 00010010</strong></p>
+<p><strong>ローカル シンク:UcsiControl.exe Send 3 00010010</strong></p>
+<p><strong>リモート ソース:UcsiControl.exe Send 7 00810010</strong></p>
+<p><strong>リモート シンク:UcsiControl.exe Send 3 00810010</strong></p></td>
 </tr>
 <tr class="even">
-<td>コネクタの状態の取得</td>
-<td><strong>UcsiControl Send 0 010012</strong></td>
+<td>Get Connector Status</td>
+<td><strong>UcsiControl.exe Send 0 010012</strong></td>
 </tr>
 <tr class="odd">
-<td>エラー状態の取得</td>
-<td><strong>UcsiControl Send 0 13</strong></td>
+<td>Get Error Status</td>
+<td><strong>UcsiControl.exe Send 0 13</strong></td>
 </tr>
 </tbody>
 </table>
@@ -209,7 +209,7 @@ UCSIControl を使用して、UCSI BIOS/EC 実装で個々のコマンドをテ�
  
 
 ## <a name="related-topics"></a>関連トピック
-[アーキテクチャ: Windows システム向けの USB タイプ C 設計](architecture--usb-type-c-in-a-windows-system.md)  
+[アーキテクチャ:Windows システム向け USB Type-C デザイン](architecture--usb-type-c-in-a-windows-system.md)  
 
 
 

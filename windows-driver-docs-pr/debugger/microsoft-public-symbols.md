@@ -9,17 +9,17 @@ keywords:
 - Microsoft シンボル ストア
 ms.date: 04/26/2018
 ms.localizationpriority: High
-ms.openlocfilehash: bc3e794ba35bb3cef1a8db136a9bea2ce0eaef35
-ms.sourcegitcommit: fe0b8b8b162c6fc0afd82dd03e83d41be0bc5d12
+ms.openlocfilehash: 01d18916e96b2d96aab3b839e85b0fdfb7a7dcaf
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "72980745"
 ---
 # <a name="microsoft-public-symbol-server"></a>Microsoft パブリック シンボル サーバー
 
 
-**サーバーの状態:** MSDL サービスの中断 <br> すべてのリージョンでエラーが報告されました。 お客様はパブリック シンボルを解決できない可能性があります。 チームが調査と解決に取り組んでおります。  <br>
+**サーバーの状態:** 既知の問題はありません :white_check_mark: <br> Microsoft パブリック シンボル サーバーは完全に動作しています。 <br>
 既知の問題については、[windbgfb@microsoft.com](mailto:windbgfb@microsoft.com) にご報告ください。 
 
 ---

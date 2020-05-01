@@ -76,6 +76,14 @@
                   href: camera-photo-failure-rate.md
                 - name: カメラのビデオおよびストリーム エラー率
                   href: camera-video-and-stream-failure-rate.md
+            - name: Fingerprint
+              items:
+                - name: 指紋の測定
+                  href: fingerprint-measures.md
+                - name: 指紋登録の成功率
+                  href: success-rate-fingerprint-enrollment.md
+                - name: 指紋サインイン エクスペリエンスの成功率
+                  href: success-rate-fingerprint-signin-experience.md
             - name: ファームウェア
               items:
                 - name: ファームウェアの測定値
@@ -144,36 +152,6 @@
                       href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
                     - name: Windows コンポーネントでのユーザー モード クラッシュの数
                       href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
-                    - name: Netflix での SWDRM 再生エラーの割合
-                      href: pct-swdrm-playback-failures-on-netflix.md
-                    - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合
-                      href: graphics-display-health-percent-devices-with-display-issues-resume-from-low-power.md
-                    - name: エコシステム Netflix HWDRM 品質比較
-                      href: ecosystem-netflix-hwdrm-quality-comparison.md
-                - name: Wi-Fi
-                  items:
-                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
-                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-discrete-ecosystem.md
-                    - name: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示された統合 GPU の無数のマシン
-                      href: myriad-of-machines-that-had-blue-screen-caused-by-crash-in-graphics-driver-binary-integrated-ecosystem.md
-                    - name: グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
-                      href: myriad-of-machines-that-had-lke-caused-by-crash-in-graphics-driver-binary-ecosystem.md
-                    - name: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した無数のマシン
-                      href: myriad-of-machines-that-had-tdr-caused-by-crash-in-graphics-driver-binary-ecosystem.md
-                    - name: Microsoft Edge でのユーザー モード クラッシュの数
-                      href: user-mode-crashes-in-microsoft-edge-normalized-by-usage-in-a-year-long-scale.md
-                    - name: Microsoft のトップ アプリでのユーザー モード クラッシュの数
-                      href: number-of-user-mode-crashes-in-top-microsoft-apps-normalized-by-usage-in-year-long-scale.md
-                    - name: クリエイティブ アプリケーションでのユーザー モード クラッシュの数
-                      href: graphics-drivers-health-user-mode-reliability-for-crashes-in-creative-apps.md
-                    - name: Microsoft フォト アプリでのユーザー モード クラッシュの数
-                      href: user-mode-reliability-for-crashes-in-microsoft-photos-app.md
-                    - name: Windows コンポーネントでのユーザー モード クラッシュの数
-                      href: user-mode-reliability-for-crashes-in-windows-components-ecosystem.md
-                    - name: UWP ゲームでのクラッシュとハングの数
-                      href: number-crashes-and-hangs-in-uwp-games.md
-                    - name: Win32 ゲームでのクラッシュとハングの数
-                      href: number-crashes-and-hangs-in-win32-games.md
                     - name: Netflix での SWDRM 再生エラーの割合
                       href: pct-swdrm-playback-failures-on-netflix.md
                     - name: 低電力状態からの再開時に表示の問題が発生したマシンの割合

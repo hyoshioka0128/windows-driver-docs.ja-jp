@@ -118,5 +118,7 @@
               href: testing-BTP-tests-pairing.md
             - name: Bluetooth HID のテスト
               href: testing-BTP-tests-hid.md
+            - name: Bluetooth オーディオのテスト
+              href: testing-BTP-tests-audio.md
 - name: Bluetooth 無線のリセットと回復
   href: bluetooth-radio-error-recovery.md
