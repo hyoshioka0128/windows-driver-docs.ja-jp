@@ -4,12 +4,12 @@ description: ハードウェア ID は、デバイスを INF ファイルと対�
 ms.assetid: 9eb894d6-4e83-4c08-8165-f30d6636da75
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: cd75a09e4dc79c36d9abfc75f02d8238a5a98447
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 090018971c02b7de68642c6afe03af296f55e193
+ms.sourcegitcommit: 43797a92ac6d2a37d2284d990d5cc4ca730afa00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72828816"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82588365"
 ---
 # <a name="hardware-id"></a>Hardware ID (ハードウェア ID)
 
@@ -21,7 +21,7 @@ ms.locfileid: "72828816"
 
 ハードウェア ID には、次のいずれかの一般的な形式があります。
 
-`<enumerator>\\<enumerator-specific-device-ID>`
+`<enumerator>\<enumerator-specific-device-ID>`
 
 これは、1 つの列挙子でプラグ アンド プレイ (PnP) マネージャーに報告される個々の PnP デバイスの最も一般的な形式です。 新しい列挙子には、この形式または次の形式を使用する必要があります。 列挙子固有のデバイス ID の詳細については、「[デバイス識別子の形式](device-identifier-formats.md)」を参照してください。
 
@@ -49,9 +49,9 @@ NULL ターミネーターを除くハードウェア ID の文字数は、MAX_D
 
 以下の中で、最初の例は PnP デバイスの[汎用識別子](generic-identifiers.md)であり、2 つ目の例は [PCI デバイスの識別子](identifiers-for-pci-devices.md)です。
 
-root\\\*PNP0F08
+`root\*PNP0F08`
 
-PCI\\VEN_1000&DEV_0001&SUBSYS_00000000&REV_02
+`PCI\VEN_1000&DEV_0001&SUBSYS_00000000&REV_02`
 
 
 
