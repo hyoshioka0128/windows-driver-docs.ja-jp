@@ -1,9 +1,9 @@
 ---
 title: INF ProfileItems ディレクティブ
-description: に対するプロファイル-項目のセクションの詳細を含むアイテムや追加、または [スタート] メニューから削除するグループまたは ProfileItems ディレクティブは、いずれかの一覧に INF DDInstall セクションで使用されます。
+description: '[INF DDInstall] セクションでは、[スタート] メニューに追加または削除する項目またはグループを含む1つまたは複数のプロファイル項目セクションを一覧表示するために、ProfileItems ディレクティブが使用されます。'
 ms.assetid: 8cdd6dcd-de5d-4652-8842-6b0be6f5fb59
 keywords:
-- INF ProfileItems ディレクティブ デバイスとドライバーのインストール
+- INF ProfileItems ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,32 +12,32 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 604a781f1f8cf400d73783ae1af5132bb6b88e5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e74eeb050677a3e8f7267f2288dff0e17e7df5d
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335254"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223130"
 ---
 # <a name="inf-profileitems-directive"></a>INF ProfileItems ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-A **ProfileItems**にディレクティブを使用する[ **INF *DDInstall*セクション**](inf-ddinstall-section.md)を 1 つまたは複数のリストに*プロファイルのセクションの項目*アイテムや追加、または [スタート] メニューから削除するグループが含まれています。
+[ [**INF *ddinstall* ] セクション**](inf-ddinstall-section.md)では、[スタート] メニューに追加または削除する項目またはグループを含む1つまたは複数の*プロファイル項目セクション*を一覧表示するために、 **profileitems**ディレクティブが使用されます。
 
-```ini
+```inf
 [DDInstall] 
  
 ProfileItems=profile-items-section[,profile-items-section]...
 ...
 ```
 
-セクションによって参照される各名前付き、 **ProfileItems**ディレクティブは、次の形式。
+**Profileitems**ディレクティブによって参照される名前付きセクションには、次の形式があります。
 
-```ini
+```inf
 [profile-items-section]
  
 Name=link-name[,name-attributes]
@@ -51,110 +51,110 @@ CmdLine=dirid,[subdir],filename
 [DisplayResource="ResDllPath\ResDll",ResID]
 ```
 
-このディレクティブは、Windows XP および Windows の以降のバージョンでサポートされます。
+このディレクティブは、windows XP 以降のバージョンの Windows でサポートされています。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="name-link-name--name-attributes-"></a>**Name=**<em>link-name</em>\[**,**<em>name-attributes</em>\]  
-*リンク名*メニュー項目またはグループのリンクの名前を指定せず、 *.lnk*拡張機能。 この値は文字列または %*strkey*% トークンで定義されている、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。 場合、 **DisplayResource**エントリが指定されていない*リンク名*も表示文字列です。
+<a href="" id="name-link-name--name-attributes-"></a>**名前 =**<em>リンク-名前</em>\[**、**<em>名前属性</em>\]  
+*リンク名*には、メニュー項目またはグループのリンクの名前を指定し*ます。 .lnk*拡張子はありません。 この値には、文字列または INF ファイルの[**文字列**](inf-strings-section.md)セクションで定義されている%*strkey*% トークンを指定できます。 **Displayresource**エントリが指定されていない場合は、*リンク名*も表示文字列になります。
 
-省略可能な*名属性*値がメニュー項目の動作に影響する 1 つまたは複数のフラグを指定します。 この値は、システム定義のフラグの値の論理和のビットマスクとして表されます。 使用できるフラグを以下に示します。
+省略可能*な名前-属性*の値は、メニュー項目の操作に影響を与える1つ以上のフラグを指定します。 この値は、システム定義のフラグ値のビットマスクとして表されます。 使用できるフラグは次のとおりです。
 
 <a href="" id="0x00000001--flg-profitem-currentuser-"></a>**0x00000001** (FLG_PROFITEM_CURRENTUSER)  
-作成または現在のユーザーのプロファイルでスタート メニュー項目を削除する Windows に指示します。 このフラグが指定されていない場合、Windows は、すべてのユーザーの項目を処理します。
+現在のユーザーのプロファイルの [スタート] メニュー項目を作成または削除するように Windows に指示します。 このフラグが指定されていない場合、Windows はすべてのユーザーの項目を処理します。
 
 <a href="" id="0x00000002---flg-profitem-delete-"></a>**0x00000002** (FLG_PROFITEM_DELETE)  
-メニュー項目を削除する Windows に指示します。 このフラグが指定されていない場合、項目が作成されます。
+メニュー項目を削除するように Windows に指示します。 このフラグが指定されていない場合は、項目が作成されます。
 
 <a href="" id="0x00000004--flg-profitem-group-"></a>**0x00000004** (FLG_PROFITEM_GROUP)  
-作成または開始 [スタート] メニューのグループを削除する Windows に指示\\プログラム。 このフラグが指定されていない場合、Windows は作成またはメニュー グループではなく、メニュー項目を削除します。
+[スタート\\プログラム] の [スタート] メニューグループを作成または削除するように Windows に指示します。 このフラグが指定されていない場合、Windows はメニューグループではなく、メニュー項目を作成または削除します。
 
-フラグが指定されていない場合、Windows は、すべてのユーザーのメニュー項目を作成します。
+フラグが指定されていない場合、Windows はすべてのユーザーのメニュー項目を作成します。
 
-<a href="" id="cmdline-dirid--subdir--filename"></a>**CmdLine =**<em>dirid</em>**、**\[*subdir*\]**、**<em>ファイル名</em>  
-*Dirid*コマンド プログラムが存在するディレクトリを識別する値を指定します。 たとえば、 *dirid* 11 のシステム ディレクトリを示します。 使用可能な*dirid*値の説明に表示されます、 *dirid*値、 [ **DestinationDirs** ](inf-destinationdirs-section.md)セクション。
+<a href="" id="cmdline-dirid--subdir--filename"></a>**CmdLine =**<em>dirid</em>**、**\[*subdir*\]**、**<em>filename</em>  
+*Dirid*は、コマンドプログラムが存在するディレクトリを識別する値を指定します。 たとえば、値が11の*dirid*は、システムディレクトリを示します。 使用可能な*dirid*値は、 [**destinationdirs**](inf-destinationdirs-section.md)セクションの*dirid*値の説明に記載されています。
 
-場合、 *subdir*文字列が存在する、コマンドのプログラムによって参照されるディレクトリのサブディレクトリにある*dirid*します。 *Subdir*サブディレクトリを指定します。 ない場合は*subdir*を指定すると、プログラムがによって参照されるディレクトリでは*dirid*します。
+*Subdir*文字列が存在する場合、コマンドプログラムは*dirid*によって参照されるディレクトリのサブディレクトリにあります。 *Subdir*は、サブディレクトリを指定します。 *Subdir*が指定されていない場合、プログラムは*dirid*によって参照されるディレクトリにあります。
 
-*Filename*メニュー項目に関連付けられているプログラムの名前を指定します。
+*Filename*は、メニュー項目に関連付けられているプログラムの名前を指定します。
 
 <a href="" id="subdir-path"></a>**SubDir =**<em>パス</em>  
-この省略可能なエントリが 開始サブディレクトリ (サブメニューで開く) を指定します\\メニュー項目が存在するプログラムします。 このエントリを省略すると、パスの開始既定\\プログラム。
+この省略可能なエントリは、メニュー項目が存在\\する [スタートプログラム] の下にサブディレクトリ (サブメニュー) を指定します。 このエントリが省略されている場合、パス\\は既定で [プログラムの開始] になります。
 
-たとえば場合、*プロファイル-section 項目*エントリがあります"Subdir = [アクセサリ]\\ゲーム"、メニュー項目がされているし、作成または削除、[スタート] 内\\プログラム\\アクセサリ\\ゲーム サブメニューで開く。
+たとえば、"Subdir = アクセサリー\\ゲーム" というエントリ*が含まれている*場合、メニュー項目は [スタート\\プログラム\\] [アクセサリ\\ゲーム] サブメニューで作成または削除されます。
 
-**注**  場合 FLG_PROFITEM_GROUP が指定されて*名属性*、 **SubDir**エントリは無視されます。
+**注**  *名前属性*に FLG_PROFITEM_GROUP が指定されている場合、 **SubDir**エントリは無視されます。
 
  
 
-<a href="" id="workingdir-wd-dirid--wd-subdir-"></a>**WorkingDir =**<em>wd dirid</em>\[**、**<em>wd subdir</em>\]  
-この省略可能なエントリには、コマンド ライン プログラム用の作業ディレクトリを指定します。 このエントリを省略した場合、コマンド ライン プログラムが存在するディレクトリを作業ディレクトリが既定値です。
+<a href="" id="workingdir-wd-dirid--wd-subdir-"></a>**WorkingDir =**<em>wd-dirid</em>\[**,**<em>wd-subdir</em>\]  
+この省略可能なエントリは、コマンドプログラムの作業ディレクトリを指定します。 このエントリを省略した場合、作業ディレクトリは、コマンドプログラムが存在するディレクトリに既定で設定されます。
 
-*Wd dirid*値は、作業ディレクトリを識別します。 候補のリストの*dirid*値を参照してください[を使用して Dirids](using-dirids.md)します。
+*Wd-dirid*値は、作業ディレクトリを識別します。 使用可能な*dirid*値の一覧については、「 [Dirid の使用](using-dirids.md)」を参照してください。
 
-*Wd subdir*文字列、存在する場合、指定のサブディレクトリ*wd dirid*を作業ディレクトリ。 このパラメーターを使用して、システム定義していないディレクトリを指定する*dirid*します。 このパラメーターを省略した場合、 *wd dirid*値だけでは、作業ディレクトリを指定します。
+*Subdir*文字列 (存在する場合) は、 *wd-dirid*のサブディレクトリを作業ディレクトリに指定します。 システム定義の*dirid*がないディレクトリを指定するには、このパラメーターを使用します。 このパラメーターを省略した場合、 *wd-dirid*値だけが作業ディレクトリを指定します。
 
-<a href="" id="iconpath-icon-dirid--icon-subdir--icon-filename"></a>**IconPath =**<em>アイコン dirid</em>**、**\[*アイコン subdir*\]**、** <em>アイコンのファイル名</em>  
-この省略可能なエントリでは、メニュー項目のアイコンを含むファイルの場所を指定します。
+<a href="" id="iconpath-icon-dirid--icon-subdir--icon-filename"></a>**Iconpath =**<em>icon-dirid</em>**、**\[*icon-subdir*\]**、**<em>icon-filename</em>  
+この省略可能なエントリは、メニュー項目のアイコンを含むファイルの場所を指定します。
 
-*アイコン dirid*アイコンを含む DLL のディレクトリを識別する文字列。 候補のリストの*dirid*値を参照してください[を使用して Dirids](using-dirids.md)します。
+*Icon-dirid*文字列は、アイコンが含まれている DLL のディレクトリを識別します。 使用可能な*dirid*値の一覧については、「 [Dirid の使用](using-dirids.md)」を参照してください。
 
-*アイコン subdir*値、存在する場合、あることを示します、DLL のサブディレクトリに*アイコン dirid*します。 *アイコン subdir*値をサブディレクトリを指定します。
+*Subdir*値 (存在する場合) は、DLL が*icon-dirid*のサブディレクトリにあることを示します。 *Subdir*値は、サブディレクトリを指定します。
 
-*アイコンのファイル名*アイコンを含む DLL を指定します。
+*アイコン-filename*値は、アイコンを含む DLL を指定します。
 
-このエントリを省略すると、Windows 検索で指定されたファイルのアイコン、 **CmdLine**エントリ。
+このエントリを省略した場合、Windows は、 **CmdLine**エントリで指定されたファイル内のアイコンを検索します。
 
-<a href="" id="iconindex-index-value"></a>**IconIndex=**<em>index-value</em>  
-この省略可能なエントリでは、メニュー項目に使用する DLL のアイコンを指定します。 DLL 内のアイコンのインデックスを作成する方法については、Microsoft Windows SDK のドキュメントを参照してください。
+<a href="" id="iconindex-index-value"></a>**IconIndex =**<em>インデックス-値</em>  
+この省略可能なエントリは、メニュー項目に使用する DLL 内のアイコンを指定します。 DLL 内のアイコンのインデックスを作成する方法の詳細については、Microsoft Windows SDK のドキュメントを参照してください。
 
-場合、 **IconPath**エントリが指定されて、*インデックス値*その DLL へのインデックス。 この値で指定されたファイルにインデックスを作成、それ以外の場合、 **CmdLine**エントリ。
+**Iconpath**エントリが指定されている場合、*インデックス値*はその DLL にインデックスを付けます。 それ以外の場合、この値は、 **CmdLine**エントリで指定されたファイルにインデックスを付けます。
 
-<a href="" id="hotkey-hotkey-value"></a>**ホットキー =**<em>ホットキー値</em>  
-この省略可能なエントリでは、メニュー項目のキーボード ショートカット キーを指定します。
+<a href="" id="hotkey-hotkey-value"></a>**ホットキー =**<em>ホットキー-値</em>  
+この省略可能なエントリは、メニュー項目のキーボードアクセスキーを指定します。
 
-ホット キーの詳細については、Windows SDK のドキュメントを参照してください。
+ホットキーの詳細については、Windows SDK のドキュメントを参照してください。
 
-<a href="" id="infotip-info-tip"></a>**ヒント =**<em>に関するヒント</em>  
-この省略可能なエントリでは、メニュー項目の情報のヒントを指定します。
+<a href="" id="infotip-info-tip"></a>ヒント **=**<em>ヒント</em>  
+この省略可能なエントリは、メニュー項目の情報ヒントを指定します。
 
-この値は文字列または %*strkey*% トークンで定義されている、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。
+この値には、文字列または INF ファイルの[**文字列**](inf-strings-section.md)セクションで定義されている%*strkey*% トークンを指定できます。
 
-*に関するヒント*として値を指定することも **"@**<em>ResDllPath</em>**\\**<em>ResDll</em> **、-**<em>ResID</em>**"** ここで、 *ResDllPath*と*ResDll*パスを指定リソース DLL のファイル名と、*resID*リソース ID を表す負の値は、
+*Info-tip*値は、 **"@**<em>resdllpath</em>**\\**<em>resdllpath</em>**,-**<em>ResID</em>**"** として指定することもできます。ここで、 *resdllpath*と*resdllpath*はリソース DLL のパスとファイル名を指定し、-*ResID*はリソース ID を表す負の値です。
 
-この形式を使用して、Windows Multilingual User Interface (MUI) をサポートします。 例は次のとおりです。
+Windows の多言語ユーザーインターフェイス (MUI) をサポートするには、この形式を使用します。 例を次に示します。
 
-```ini
+```inf
 InfoTip = "@%11%\shell32.dll,-22531"
 ```
 
-<a href="" id="displayresource--resdllpath-resdll--resid"></a>**DisplayResource="**<em>ResDllPath\\ResDll</em>**",**<em>ResID</em>  
-この省略可能なエントリでは、[スタート] メニューのショートカットまたはグループの表示名として使用する、ローカライズ可能な文字列を識別する文字列リソースを指定します。
+<a href="" id="displayresource--resdllpath-resdll--resid"></a>**Displayresource = "**<em>resdllpath\\resdllpath</em>**",**<em>ResID</em>  
+この省略可能なエントリは、ショートカットまたはグループの表示名として [スタート] メニューで使用する、ローカライズ可能な文字列を識別する文字列リソースを指定します。
 
-*ResDllPath*と*ResDll*リソース DLL のパスとファイル名を指定し、 *resID*リソース ID を表す正の値は、 例は次のとおりです。
+*Resdllpath*と*RESDLLPATH*はリソース DLL のパスとファイル名を指定し、 *resID*はリソース ID を表す正の値です。 例を次に示します。
 
-```ini
+```inf
 DisplayResource="%11%\shell32.dll",22019
 ```
 
-このエントリは、Windows Multilingual User Interface (MUI) をサポートするために使用します。 文字列が指定されたこのエントリを使用しない場合、**名前**エントリが表示されます。
+Windows の多言語ユーザーインターフェイス (MUI) をサポートするには、このエントリを使用します。 このエントリが使用されていない場合は、 **Name**エントリによって指定された文字列が表示されます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-指定された*プロファイル-section 項目*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+特定の*プロファイル項目セクション*名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-各*プロファイル-section 項目*作成または 1 つのスタート メニュー項目またはグループを削除する詳細な情報が含まれます。 1 つ以上のメニュー項目または、INF からグループを操作するには、1 つ以上を作成*プロファイル-section 項目*セクションでは、ボックスの一覧と、 **ProfileItems**ディレクティブ。
+各*プロファイル項目-セクション*には、1つのスタートメニュー項目またはグループを作成または削除するための詳細情報が含まれています。 1つの INF から複数のメニュー項目またはグループを操作するには、複数の*プロファイル項目セクション*を作成し、 **profileitems**ディレクティブのセクションを一覧表示します。
 
-指定された文字列パラメーターのいずれか、*プロファイル-section 項目*% を使用してエントリを指定できます*strkey*% トークン、」の説明に従って[INF ファイルに関する一般的な構文規則](general-syntax-rules-for-inf-files.md).
+*「* [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」で説明されているように、%*strkey*% トークンを使用して指定された文字列パラメーターのいずれかを指定できます。
 
 <a name="examples"></a>例
 --------
 
-次の INF ファイルの抜粋は、使用する方法を示します、*プロファイル-section 項目*電卓を [スタート] メニューに追加します。
+次の INF ファイルの抜粋では、[*プロファイル-項目] セクション*を使用して、電卓を [スタート] メニューに追加する方法を示しています。
 
-```ini
+```inf
 [CalcInstallItems]
 Name = %Calc_DESC%
 CmdLine = 11,, calc.exe
@@ -169,9 +169,9 @@ Calc_DESC = "Calculator"
 Calc_TIP = "Performs basic arithmetic tasks with an on-screen calculator"
 ```
 
-次の INF ファイルの抜粋を使用して、同じソフトウェアをインストールする方法を示しています、 **DisplayResource**ローカライズされたメニュー項目を作成するエントリ。
+次の INF ファイルの抜粋は、 **Displayresource**エントリを使用して、ローカライズされたメニュー項目を作成することによって、同じソフトウェアをインストールする方法を示しています。
 
-```ini
+```inf
 [CalcInstallItems]
 Name = %Calc_DESC%
 CmdLine = 11,, calc.exe

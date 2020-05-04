@@ -1,9 +1,9 @@
 ---
 title: INF ClassInstall32.Services セクション
-description: ClassInstall32 セクションは、新しいクラスでのデバイス向けの新しいデバイス セットアップ クラス (と可能性があるクラスのインストーラー) をインストールします。
+description: ClassInstall32 セクションでは、新しいクラスにデバイス用の新しいデバイスセットアップクラス (および場合によってはクラスインストーラー) をインストールします。
 ms.assetid: 602cf407-f3c0-4342-9e59-87481a0f41ef
 keywords:
-- INF ClassInstall32.Services セクションのデバイスとドライバーのインストール
+- INF ClassInstall32 セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a7b4a1e8c5978474b5121eac5626cea06b79d09
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 994acabafaf442dc479d579fa31f33b62a51cbbc
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330917"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223270"
 ---
 # <a name="inf-classinstall32services-section"></a>INF ClassInstall32.Services セクション
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このセクションが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージを作成する場合、このセクションは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-A **ClassInstall32**セクションは、新しいインストール[デバイス セットアップ クラス](device-setup-classes.md)(およびクラスのインストーラー可能性があります)、新しいクラスでのデバイス向けです。
+**ClassInstall32**セクションでは、新しいクラスにデバイス用の新しい[デバイスセットアップクラス](device-setup-classes.md)(および場合によってはクラスインストーラー) をインストールします。
 
-```ini
+```inf
 [ClassInstall32.Services] | 
 [ClassInstall32.nt.Services] | 
 [ClassInstall32.ntx86.Services] | 
@@ -44,37 +44,37 @@ AddService=ServiceName,[flags],service-install-section
 [Needs=inf-section-name[,inf-section-name]...]
 ```
 
-各**ClassInstall32.Services**セクションは、1 つ以上含まれています。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md) INF ライター定義の追加のセクションで、INF ファイルを参照します。
+各**ClassInstall32**セクションには、inf ファイルで追加の inf ライター定義セクションを参照する1つ以上の[**inf addservice ディレクティブ**](inf-addservice-directive.md)が含まれています。
 
-INF ファイルを使用して、通常、 **ClassInstall32.Services**に少なくとも 1 つのセクション**AddService**特定のデバイス クラスのサービスが読み込まれる方法とタイミングを制御するディレクティブ、すべての依存関係が可能性がありますが、他のサービスになど。 必要に応じて、デバイス クラスのイベント ログ サービスも設定ができます。
+通常、INF ファイルでは、 **ClassInstall32**セクションに少なくとも1つの**addservice**ディレクティブを使用して、特定のデバイスクラスのサービスの読み込み方法とタイミング、および他のサービスに対する依存関係を制御します。 必要に応じて、デバイスクラスのイベントログサービスを設定することもできます。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="addservice-servicename--flags--service-install-section"></a>**AddService =**<em>ServiceName</em>、\[*フラグ*\]**、**<em>サービス-インストール セクション</em>  
+<a href="" id="addservice-servicename--flags--service-install-section"></a>**Addservice =**<em>ServiceName</em>、\[*flags*\]**、**<em>service-section</em>  
 
-<a href="" id="----------------------------------------event-log-install-section---eventlogtype---eventname------"></a>                                      \[**,**<em>event-log-install-section</em>\[**,**\[*EventLogType*\]\[**,**<em>EventName</em>\]\]\]...  
-このディレクティブは、INF ライターで定義されているサービスのインストール-セクションと、場合によっては、イベントのログ-インストールのセクションで対応するデバイス クラスのドライバーの INF ファイルで別の場所を参照、 [ **ClassInstall32**](inf-classinstall32-section.md)セクション。 詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
+<a href="" id="----------------------------------------event-log-install-section---eventlogtype---eventname------"></a>                                      \[**、**<em>イベントログ-セクション</em>\[**、**\[*EventLogType*\]\[**、**\]<em>EventName</em>\]...\]  
+このディレクティブは、inf ライターで定義されたサービスのインストールセクションを参照します。また、場合によっては、INF ファイル内の他の場所で、 [**ClassInstall32**](inf-classinstall32-section.md)セクションでカバーされているデバイスクラスのドライバーを参照します。 詳細については、「 [**INF AddService ディレクティブ**](inf-addservice-directive.md)」を参照してください。
 
-<a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**DelService =**<em>ServiceName</em>\[**、**\[*フラグ*\]\[**、**\[ *EventLogType*\]\[**、**<em>EventName</em> \] \] \]...  
-このディレクティブは、対象のコンピューターから、以前にインストールされたサービスを削除します。 このディレクティブが使用される非常にまれです。 詳細については、次を参照してください。 [ **INF DelService ディレクティブ**](inf-delservice-directive.md)します。
+<a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**Delservice =**<em>ServiceName</em>\[**、**\[*flags*\]\[*EventLogType***,**<em>EventName</em>**,**\]、EventLogType\]、EventName\]...\]\[\[  
+このディレクティブは、以前にインストールされたサービスをターゲットコンピューターから削除します。 このディレクティブはほとんど使用されません。 詳細については、「 [**INF DelService ディレクティブ**](inf-delservice-directive.md)」を参照してください。
 
-<a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
-この省略可能なエントリでは、1 つまたは複数追加システムが指定した名前付き INF ファイルをこのデバイス クラスをインストールするために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。
+<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =**<em>filename</em>**. .inf**\[**,**<em>filename2</em>**.inf**\]...  
+この省略可能なエントリは、このデバイスクラスをインストールするために必要なセクションを含む、システムによって指定された、追加の名前付き INF ファイルを1つ以上指定します。 このエントリが指定されている場合は、通常、**必要**なエントリです。
 
-詳細については、 **Include**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
+**インクルード**エントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf セクション名</em>\[**、**<em>inf セクション名</em>\].  
-この省略可能なエントリでは、特定のセクションでこのデバイス クラスのインストール中に処理する必要があるという名前を指定します。 通常、このような名前付きセクションは、 **ClassInstall32.Services**セクションに記載されているシステム指定の INF ファイル内で、 **Include**エントリ。 ただし、このような内で参照されている任意のセクションがあります、 **ClassInstall32.Services**セクション。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf-name</em>\[**,**<em>inf-name</em>\]...  
+この省略可能なエントリは、このデバイスクラスのインストール中に処理する必要がある特定の名前付きセクションを指定します。 通常、このような名前付きセクションは、**インクルード**エントリに記載されているシステム提供の INF ファイル内の**ClassInstall32**セクションです。 ただし、このような**ClassInstall32**セクション内で参照される任意のセクションを指定できます。
 
-**必要がある**エントリを入れ子にすることはできません。 (の詳細については、**必要がある**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md))。
+**必要**なエントリを入れ子にすることはできません。 (**必要**なエントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください)。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**ClassInstall32.Services**のセクションでは、それに関連として同じプラットフォームとオペレーティング システムの装飾が必要[ **ClassInstall32 セクション**](inf-classinstall32-section.md)します。 たとえば、 **ClassInstall32.ntx86**セクションは、対応する必要が**ClassInstall32.ntx86.Services**セクション。
+**ClassInstall32**セクションには、関連する[**ClassInstall32 セクション**](inf-classinstall32-section.md)と同じプラットフォームとオペレーティングシステムの装飾が必要です。 たとえば、ntx86 セクションには、対応する**ClassInstall32**セクションが**ClassInstall32**ます。
 
-大文字、 **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64**に拡張機能を挿入できる、 **ClassInstall32.Services**正式な構文のステートメントのように、クロス プラットフォームの INF ファイルの名前をセクションします。 詳細については、次を参照してください。 [INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+大文字と小文字は区別され**ません。 nt**、 **ntx86**、. **ntia64**、. **ntamd64**、 **. ntarm**、および**ntarm64**の各拡張子は、正式な構文ステートメントで示されているように、クロスプラットフォームの INF ファイルの**ClassInstall32**セクション名に挿入できます。 詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -4,12 +4,12 @@ description: デバイスとドライバー パッケージのアンインスト
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a54bde8a616e73ea31ea4115f2f1899a3caebbb5
-ms.sourcegitcommit: 7dff2005387294dbfeeec45c801bf6b4a4cb9319
+ms.openlocfilehash: fdf01743fdb97a60dda18192583b7cb1f344ab7b
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80261284"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173552"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>デバイスとドライバー パッケージのアンインストール方法
 
@@ -20,15 +20,13 @@ ms.locfileid: "80261284"
 
 -   [Setupapi.log](setupapi.md)および[デバイスのインストール](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))機能を呼び出すデバイスインストールアプリケーション。
 
-次の操作はその例です。
+必要となる操作には、次のようなものがあります。
 
 -   [デバイスをアンインストールしています](#uninstalling-the-device)
 
 -   [ドライバーストアからドライバーパッケージを削除する](#deleting-a-driver-package-from-the-driver-store)
 
--   インストールされているドライバーのバイナリファイルを削除する
-
-これらの操作を順番に実行する必要は  ない**ことに注意**してください。
+**注**  これらのアクションは、順番に実行する必要はありません。
 
  
 
@@ -46,7 +44,7 @@ ms.locfileid: "80261284"
 
 このアンインストール操作では、インストール処理中に実行されたすべての操作が元に戻されるわけではありません。 たとえば、ドライバーパッケージまたは*共同インストーラー* (およびその他のいくつかのレジストリ操作) は変更されません。
 
-**注**  このアンインストール操作の完了後は、デバイスの devnode が存在しなくなりますが、ドライバー[パッケージ](driver-packages.md)は[ドライバーストア](driver-store.md)にまだ存在しています。 PnP マネージャーがデバイスを再列挙した場合 (デバイスが取り外されてから再び接続された場合など)、PnP マネージャーはそれを新しいデバイスインスタンスとして扱い、ドライバーストアからドライバーパッケージをインストールします。
+**注**  このアンインストール操作が完了すると、デバイスの devnode は存在しなくなりますが、ドライバー[パッケージ](driver-packages.md)は[ドライバーストア](driver-store.md)にまだ存在しています。 PnP マネージャーがデバイスを再列挙した場合 (デバイスが取り外されてから再び接続された場合など)、PnP マネージャーはそれを新しいデバイスインスタンスとして扱い、ドライバーストアからドライバーパッケージをインストールします。
 
  
 
@@ -58,7 +56,7 @@ ms.locfileid: "80261284"
 
 ドライバーパッケージをドライバーストアから削除する前に、そのパッケージを使用しているすべてのデバイスをアンインストールしてください。
 
-**重要**  ドライバー[パッケージ](driver-packages.md)を[ドライバーストア](driver-store.md)から手動で削除することはできません。 これにより、INF xfs、ドライバーストアカタログ、およびドライバーストア内のドライバーの間で不整合が発生する可能性があります。 また、同じドライバーパッケージをドライバーストアにステージングできない場合もあります。
+**重要**  ドライバー[パッケージ](driver-packages.md)を[ドライバーストア](driver-store.md)から手動で削除することはできません。 これにより、INF ファイル、ドライバーストアカタログ、およびドライバーストア内のドライバーの間で不整合が発生する可能性があります。 また、同じドライバーパッケージをドライバーストアにステージングできない場合もあります。
 
  
 

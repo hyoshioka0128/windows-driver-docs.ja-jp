@@ -4,12 +4,12 @@ description: 複数のインターフェイステストツール (MITT) を使�
 ms.assetid: 268217FF-0F0B-4175-B2DE-A45FAF94EA79
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ede3e1a75dab3a7918bb0366edacf19cb9d59771
-ms.sourcegitcommit: 73a693bf52f07169f38e6a2a68bccaa8db8faf2a
+ms.openlocfilehash: 0abb517e4e77807ec4a5f98215d73e9268f84fde
+ms.sourcegitcommit: 43797a92ac6d2a37d2284d990d5cc4ca730afa00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68341194"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82588367"
 ---
 # <a name="buy-hardware-for-using-mitt"></a>MITT を使用するためのハードウェアの購入
 
@@ -24,25 +24,25 @@ ms.locfileid: "68341194"
 
 -   **UART/SPI アダプタボード**
 
-    「 [JJG テクノロジの UART/SPI アダプタボード」を](http://www.jjgtechnologies.com/UART-SPI)参照してください。
+    「 [JJG テクノロジの UART/SPI アダプタボード」を](http://www.jjgtechnologies.com/UART-SPI.htm)参照してください。
 
     ![uart アダプターボード](images/uart1.png)
 
 -   **GPIO アダプターボード**
 
-    「 [JJG テクノロジの GPIO アダプターボード」を](http://www.jjgtechnologies.com/GPIO)参照してください。
+    「 [JJG テクノロジの GPIO アダプターボード」を](http://www.jjgtechnologies.com/GPIO.htm)参照してください。
 
     ![mitt 用の gpio アダプター](images/gpioadapter.jpg)
 
 -   **I2C アダプターボード**
 
-    「 [JJG テクノロジの I2C アダプターボード」を](http://www.jjgtechnologies.com/I2C)参照してください。
+    「 [JJG テクノロジの I2C アダプターボード」を](http://www.jjgtechnologies.com/I2C.htm)参照してください。
 
     ![mitt 用の i2c アダプター](images/i2cadapter.jpg)
 
 -   **MCATT 拡張ボード**
 
-    [JJG テクノロジの Mcatt 拡張ボードを](http://www.jjgtechnologies.com/mcatt)ご覧ください。
+    [JJG テクノロジの Mcatt 拡張ボードを](http://www.jjgtechnologies.com/mcatt.htm)ご覧ください。
 
     ![mcatt 拡張ボード](images/mcatt-exp.jpg)
 

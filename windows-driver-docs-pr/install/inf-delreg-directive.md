@@ -1,9 +1,9 @@
 ---
 title: INF DelReg ディレクティブ
-description: ディレクティブは、1 つまたは複数 INF ライター定義について説明するセクションのキーまたはレジストリから削除する値のエントリを参照します。
+description: DelReg ディレクティブは、レジストリから削除するキーや値のエントリを記述する1つ以上の INF ライターで定義されたセクションを参照します。
 ms.assetid: a456327f-9b2c-42e6-a575-47ad788aa8b1
 keywords:
-- INF してディレクティブ デバイスとドライバーのインストール
+- INF DelReg ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fbde52ab47f5eb3f99f5f3bf83103c674125d41a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c929a0d61dbf14eca0cb8fa27af2643127fe9cc3
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358812"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223182"
 ---
 # <a name="inf-delreg-directive"></a>INF DelReg ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-A**して**ディレクティブが 1 つまたは複数 INF ライター定義について説明するセクションのキーまたはレジストリから削除する値のエントリを参照します。
+**Delreg**ディレクティブは、レジストリから削除するキーや値のエントリを記述する1つ以上の INF ライターで定義されたセクションを参照します。
 
-```ini
+```inf
 [DDInstall] | 
 [DDInstall.CoInstallers] | 
 [ClassInstall32] | 
@@ -42,109 +42,109 @@ A**して**ディレクティブが 1 つまたは複数 INF ライター定義�
 DelReg=del-registry-section[,del-registry-section]...
 ```
 
-各*del-section レジストリ*によって参照される、**して**ディレクティブは、次の形式。
+**Delreg**ディレクティブによって参照される各*del-registry セクション*には、次の形式があります。
 
-```ini
+```inf
 [del-registry-section]
 reg-root-string,subkey[,value-entry-name][,flags][,value]
 reg-root-string,subkey[,value-entry-name][,flags][,value]
 ...
 ```
 
-A *del-section レジストリ*それぞれ別々 の行に任意の数のエントリを持つことができます。
+*Del レジストリセクション*には、任意の数のエントリを含めることができます。各エントリは個別の行にあります。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="reg-root-string"></a>*reg-root-string*  
-このエントリで指定されたその他の値のレジストリ ツリーのルートを識別します。 値は次のいずれかになります。
+<a href="" id="reg-root-string"></a>*reg-root 文字列*  
+このエントリに指定されている他の値のレジストリツリーのルートを識別します。 値は次のいずれかになります。
 
 <a href="" id="hkcr"></a>**HKCR**  
-省略形**HKEY_CLASSES_ROOT**します。
+**HKEY_CLASSES_ROOT**の省略形。
 
 <a href="" id="hkcu"></a>**HKCU**  
-省略形**HKEY_CURRENT_USER**します。
+**HKEY_CURRENT_USER**の省略形。
 
 <a href="" id="hklm"></a>**HKLM**  
-省略形**HKEY_LOCAL_MACHINE**します。
+**HKEY_LOCAL_MACHINE**の省略形。
 
 <a href="" id="hku"></a>**HKU**  
-省略形**HKEY_USERS**します。
+**HKEY_USERS**の省略形。
 
 <a href="" id="hkr"></a>**HKR**  
-この省略形を使用して指定されているキーがこの INF セクションに関連付けられたレジストリ キーを基準との相対のルート**して**ディレクティブが表示されたら、次の表に記載されています。
+相対ルート。この省略形を使用して指定されたキーは、次の表に示すように、この**Delreg**ディレクティブが表示される INF セクションに関連付けられているレジストリキーを基準としています。
 
-| %NF セクションを含む AddReg ディレクティブ                                     | HKR によって参照されるレジストリ キー                                                        |
+| AddReg ディレクティブを含む NF Section                                     | HKR によって参照されるレジストリキー                                                        |
 |----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| INF ***DDInstall*** |
-| INF ***DDInstall *。ハードウェア** |
-| INF [ * **DDInstall *。サービス**](inf-ddinstall-services-section.md)セクション | **サービス**キー                                                                  |
+| INF ***Ddinstall*** |
+| INF ***Ddinstall *。HW** |
+| INF [ *ddinstall *。サービス](inf-ddinstall-services-section.md)セクション | **サービス**キー                                                                  |
 
  
 
-**注**  **HKR**では使用できません、 *del-section レジストリ*から参照されている、 [ **INF DefaultInstall セクション**](inf-defaultinstall-section.md)します。
+**注**  **Hkr**は、 [**INF DefaultInstall セクション**](inf-defaultinstall-section.md)から参照される*del レジストリセクション*では使用できません。
 
  
 
-下に格納されているドライバー情報の詳細については、 **HKEY_LOCAL_MACHINE**ルートは、「[レジストリ ツリーとデバイスとドライバーのキー](registry-trees-and-keys.md)します。
+**HKEY_LOCAL_MACHINE**ルートの下に格納されているドライバー情報の詳細については、「[デバイスとドライバーのレジストリツリーとキー](registry-trees-and-keys.md)」を参照してください。
 
 <a href="" id="subkey"></a>*サブキー*  
-このオプションの値の形式を % として*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF または下のレジストリ パスとして、指定された*reg ルート*(<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...)、次のいずれかを指定します。
+この省略可能な値は、INF の[**Strings**](inf-strings-section.md)セクションで定義された%*strkey*% token として、または指定された*reg ルート*(<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...) の下のレジストリパスとして、次のいずれかを指定します。
 
--   指定されたレジストリ パスの最後に、レジストリから削除するサブキー
--   元の特定値のエントリの名前は削除するのには、既存のサブキー
+-   指定されたレジストリパスの最後にあるレジストリから削除されるサブキー
+-   指定されたエントリ名の削除元となる既存のサブキー
 
-<a href="" id="value-entry-name"></a>*value-entry-name*  
-この値は、指定したサブキーから削除する名前付きの値のエントリを識別します。 レジストリからサブキー自体が削除される場合、この値は、その前のコンマは省略する必要があります。
+<a href="" id="value-entry-name"></a>*値-エントリ名*  
+この値は、指定されたサブキーから削除される名前付きの値のエントリを識別します。 サブキー自体がレジストリから削除されている場合は、この値とその前のコンマを省略する必要があります。
 
-<a href="" id="flags"></a>*フラグ*  
-(Windows XP および Windows の以降のバージョン。)この省略可能な 16 進値、下位ワードのシステム定義の上位ワード フラグの論理和のビットマスク値、値のエントリのデータ型を定義または削除レジストリ操作を制御として表されます。 場合*フラグ*が指定されていない、*値のエントリ名*(選択した場合のみ) または*サブキー*は削除されます。
+<a href="" id="flags"></a>*示す*  
+(Windows XP 以降のバージョンの Windows)。この省略可能な16進値は、システム定義の小さい単語と大きい単語のフラグ値のビットマスクとして表現されるか、値エントリのデータ型を定義するか、またはレジストリ削除操作を制御します。 *フラグ*が指定されていない場合は、*値-エントリ名*(指定されている場合) または*サブキー*が削除されます。
 
-これらのフラグのビットマスク値は次のとおりです。
+これらの各フラグのビットマスク値は次のとおりです。
 
 <a href="" id="0x00002000--flg-delreg-keyonly-common---"></a>**0x00002000** (FLG_DELREG_KEYONLY_COMMON)   
-全体のサブキーを削除します。
+サブキー全体を削除します。
 
 <a href="" id="0x00004000---flg-delreg-32bitkey-"></a>**0x00004000** (FLG_DELREG_32BITKEY)  
-32 ビットのレジストリで指定された変更を加えます。 指定しない場合は、ネイティブのレジストリに変更が行わします。
+32ビットレジストリで、指定された変更を行います。 指定しない場合、ネイティブレジストリに変更が加えられます。
 
 <a href="" id="0x00018002--flg-delreg-multi-sz-delstring-"></a>**0x00018002** (FLG_DELREG_MULTI_SZ_DELSTRING)  
-複数行文字列レジストリ エントリの値で指定された文字列値に一致するすべての文字列を削除します。 場合は無視されます。
+値によって指定された文字列値に一致する文字列をすべて削除します。 Case は無視されます。
 
-<a href="" id="value"></a>*値*  
-(Windows XP および Windows の以降のバージョン。)場合に、レジストリ値を指定します*フラグ*レジストリ値が必要であることを示します。
+<a href="" id="value"></a>*value*  
+(Windows XP 以降のバージョンの Windows)。レジストリ値が必要であることを*フラグ*が示す場合は、レジストリ値を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-A**して**上記の正式な構文のステートメントで次のセクションのいずれかのディレクティブを指定できます。 このディレクティブは、INF ライター定義の次のセクションのいずれかも指定できます。
+**Delreg**ディレクティブは、上記の仮構文ステートメントに示されているいずれかのセクションの下で指定できます。 このディレクティブは、次の INF ライターで定義されたセクションのいずれかで指定することもできます。
 
--   A*サービス-インストール セクション*または*インストール ログ イベントが*セクションによって参照される、 [ **AddService** ](inf-addservice-directive.md)ディレクティブで、 [ **INF *DDInstall*します。サービス セクション**](inf-ddinstall-services-section.md)します。
--   *追加インターフェイス セクション*によって参照される、 [ **AddInterface** ](inf-addinterface-directive.md)ディレクティブで、 [ **INF *DDInstall*.インターフェイス セクション**](inf-ddinstall-interfaces-section.md)します。
--   *インストール-section インターフェイス*で参照されている、 [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)します。
+-   INF Ddinstall で[**addservice**](inf-addservice-directive.md)ディレクティブによって参照される、*サービスのインストール*セクションまたは*イベントログのインストール*セクション[**。 *DDInstall*サービスセクション**](inf-ddinstall-services-section.md)。
+-   INF Ddinstall で[**addinterface**](inf-addinterface-directive.md)ディレクティブによって参照される、*インターフェイスの追加セクション* [** *DDInstall*。インターフェイスセクション**](inf-ddinstall-interfaces-section.md)。
+-   [**INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)で参照される*インストールインターフェイスセクション*。
 
-一般に、INF では、サブキーまたはシステム コンポーネントによって、またはその他のデバイスの INF ファイルによって設定された既存のサブキー内の値のエントリを削除する試みる必要があることはありません。 目的を*delete レジストリ セクション*同じプロバイダーによって提供される新しい INF ファイルを使用して以前のインストールから古いレジストリ情報をクリーンアップします。
+一般に、システムコンポーネントまたは他のデバイスの INF ファイルによって設定された既存のサブキー内のサブキーまたは値エントリの削除は、INF では行わないでください。 *削除レジストリセクション*の目的は、同じプロバイダーによって提供される新しい INF ファイルを使用して、以前のインストールから古いレジストリ情報をクリーンアップすることです。
 
-各*del-section レジストリ*名は、INF ファイルに固有である必要がありますが、それを参照できます**して**同じ INF の他のセクション ディレクティブ。 各セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*del レジストリセクション*名は inf ファイルに対して一意である必要がありますが、同じ inf の他のセクションの**delreg**ディレクティブで参照できます。 各セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-Windows XP より前のオペレーティング システムのバージョンは、キーを削除する唯一の方法は、次を指定することです。
+Windows XP より前のバージョンのオペレーティングシステムでは、キーを削除する唯一の方法は、次のように指定することです。
 
-```ini
+```inf
 reg-root-string, subkey
 ```
 
-Windows XP と Windows の以降のバージョンでは、次を許可 (32 ビット レジストリの指定)。
+Windows XP 以降のバージョンの Windows では、次のことも許可されます (32 ビットレジストリを指定する場合)。
 
-```ini
+```inf
 reg-root-string, subkey,,0x4000
 ```
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-この例では、どのシステム提供の COM と LPT ポート クラス インストーラーの INF 削除古い NT 固有レジストリ情報レジストリから COM ポートについてを示します。
+この例では、システム指定の COM/LPT ポートクラスインストーラーの INF が、COM ポートに関する古い NT 固有のレジストリ情報をレジストリから削除する方法を示します。
 
-```ini
+```inf
 [ComPort.NT]
 CopyFiles=ComPort.NT.Copy
 AddReg=ComPort.AddReg, ComPort.NT.AddReg
@@ -179,11 +179,11 @@ HKR,,UpperFilters
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
+[***DDInstall *。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
 [***DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
 
-[***DDInstall *。サービス**](inf-ddinstall-services-section.md)
+[***DDInstall *。サーヴィス**](inf-ddinstall-services-section.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 

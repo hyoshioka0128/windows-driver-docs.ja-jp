@@ -1,56 +1,56 @@
 ---
-title: Windows Vista より前に、のデバイス プロパティを変更する INF ファイル エントリの値
-description: Windows Vista より前に、のデバイス プロパティを変更する INF ファイル エントリの値
+title: Windows Vista より前にデバイスのプロパティを変更する INF ファイルエントリ値
+description: Windows Vista より前にデバイスのプロパティを変更する INF ファイルエントリ値
 ms.assetid: b2a1f265-fc9b-47fb-83af-b4f66d79da83
 keywords:
-- デバイスのプロパティを変更する、WDK デバイスのインストール
+- デバイスのプロパティ WDK デバイスのインストール、変更
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b3abf1f8e5e5eda729eeb2f77ab755daae4661
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 64d99683a14a399284ae7b1c995484179661c8ed
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365850"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223150"
 ---
-# <a name="inf-file-entry-values-that-modify-device-properties-before-windows-vista"></a>Windows Vista より前に、のデバイス プロパティを変更する INF ファイル エントリの値
+# <a name="inf-file-entry-values-that-modify-device-properties-before-windows-vista"></a>Windows Vista より前にデバイスのプロパティを変更する INF ファイルエントリ値
 
 
-以下は、Windows Server 2003、Windows XP、および Windows 2000 でデバイスのプロパティを変更する INF ファイル エントリの値です。
+Windows Server 2003、Windows XP、および Windows 2000 のデバイスプロパティを変更する INF ファイルエントリ値を次に示します。
 
--   デバイスのプロパティを設定する INF ファイル エントリの値に対応して、[デバイスのシステム定義プロパティ](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))はの一部である、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)Windows Vista およびそれ以降のバージョンのWindows。
+-   Windows Vista 以降のバージョンの Windows で、統合された[デバイスのプロパティモデル](unified-device-property-model--windows-vista-and-later-.md)に含まれる[システム定義のデバイス](https://docs.microsoft.com/previous-versions/ff553413(v=vs.85))プロパティに対応するデバイスプロパティを設定する INF ファイルエントリ値。
 
--   [**INF AddReg ディレクティブ**](inf-addreg-directive.md)と[ **INF してディレクティブ**](inf-delreg-directive.md)設定またはデバイスのシステム定義のプロパティに対応するシステム定義のレジストリ エントリの値を削除します。Windows Vista およびそれ以降のバージョンで統一されたデバイス プロパティのモデルの一部であります。
+-   [**Inf AddReg ディレクティブ**](inf-addreg-directive.md)および[**inf delreg ディレクティブ**](inf-delreg-directive.md)。システム定義のレジストリエントリの値を設定または削除します。この値は、Windows Vista 以降のバージョンで統合されたデバイスのプロパティモデルに含まれるシステム定義のデバイスプロパティに対応します。
 
--   INF **AddReg**ディレクティブと INF**して**ディレクティブが設定またはカスタムのデバイスのプロパティに対応するカスタム レジストリ エントリの値を削除します。
+-   INF **AddReg**ディレクティブと Inf **delreg**ディレクティブ。カスタムのデバイスプロパティに対応するカスタムレジストリエントリ値を設定または削除します。
 
-概要については、INF ファイルのセクションでは、デバイスのインスタンスをインストールする[デバイス セットアップ クラス](device-setup-classes.md)、[デバイス インターフェイス クラス](device-interface-classes.md)、し、デバイスのインターフェイスは、次のトピックを参照してください。
+デバイスインスタンス、[デバイスセットアップクラス](device-setup-classes.md)、[デバイスインターフェイスクラス](device-interface-classes.md)、デバイスインターフェイスをインストールする INF ファイルのセクションに関する一般的な情報については、次のトピックを参照してください。
 
-[**INF *DDInstall*セクション**](inf-ddinstall-section.md)
+[**INF *Ddinstall*セクション**](inf-ddinstall-section.md)
 
 [**INF ClassInstall32 セクション**](inf-classinstall32-section.md)
 
 [**INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)
 
-[**INF *DDInstall*します。インターフェイス セクション**](inf-ddinstall-interfaces-section.md)
+[**INF *Ddinstall*。インターフェイスセクション**](inf-ddinstall-interfaces-section.md)
 
-### <a href="" id="inf-file-entry-values-that-correspond-to-system-defined-device-propert"></a>デバイスのシステム定義のプロパティに対応する INF ファイル エントリの値
+### <a name="inf-file-entry-values-that-correspond-to-system-defined-device-properties"></a><a href="" id="inf-file-entry-values-that-correspond-to-system-defined-device-propert"></a>システム定義のデバイスプロパティに対応する INF ファイルエントリ値
 
-いくつかの INF ファイル エントリの値は、Windows はデバイス インスタンスのプロパティとデバイスのインターフェイスのプロパティに対応するエントリの値をシステム定義のレジストリに設定を使用して情報を提供します。 次に、このような INF ファイル エントリの値によって提供されるレジストリ エントリの値のいくつかの例を示します。
+一部の INF ファイルエントリの値は、デバイスインスタンスのプロパティとデバイスインターフェイスのプロパティに対応するシステム定義のレジストリエントリの値を設定するために Windows が使用する情報を提供します。 次に、このような INF ファイルエントリ値によって提供されるレジストリエントリ値の例をいくつか示します。
 
--   [ **INF モデル セクション**](inf-models-section.md) 、INF にはファイルが含まれています、*デバイス説明*エントリの値。 この値に対応、 [ **DEVPKEY_Device_DeviceDesc** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-devicedesc)統一されたデバイス プロパティのプロパティをモデルし、呼び出すことによって取得できる[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)と設定、*プロパティ*SPDRP_DEVICEDESC パラメーター。
+-   INF ファイルの [ [**Inf モデル] セクション**](inf-models-section.md)には、*デバイスの説明*のエントリ値が含まれます。 この値は、統合されたデバイスプロパティモデルの[**DEVPKEY_Device_DeviceDesc**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-devicedesc)プロパティに対応しており、 [**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)を呼び出して*プロパティ*パラメーターを SPDRP_DEVICEDESC に設定することによって取得できます。
 
--   INF**クラス**のディレクティブを[ **INF バージョン セクション**](inf-version-section.md)が含まれています、*クラス名*エントリの値をの名前を提供する[デバイス セットアップ クラス](device-setup-classes.md)します。 この値に対応、 [ **DEVPKEY_DeviceClass_ClassName** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceclass-classname)統一されたデバイス プロパティのモデルのプロパティ。 呼び出してデバイス セットアップ クラスのクラス名を取得できる[ **SetupDiClassNameFromGuid**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)、呼び出すことによって、デバイスのインスタンスのクラス名を取得できると[ **SetupDiGetDeviceRegistryProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)と設定、*プロパティ*SPDRP_CLASS パラメーター。
+-   [**Inf バージョンセクション**](inf-version-section.md)の inf**クラス**ディレクティブには、[デバイスセットアップクラス](device-setup-classes.md)の名前を指定する*クラス名*エントリ値が含まれています。 この値は、統合されたデバイスプロパティモデルの[**DEVPKEY_DeviceClass_ClassName**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceclass-classname)プロパティに対応します。 デバイスセットアップクラスのクラス名は、 [**SetupDiClassNameFromGuid**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiclassnamefromguida)を呼び出すことによって取得できます。デバイスインスタンスのクラス名は、 [**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)を呼び出して*プロパティ*パラメーターを SPDRP_CLASS に設定することによって取得できます。
 
--   [ **INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)が含まれています、 *InterfaceClassGuid*デバイス インターフェイスの GUID を提供するエントリの値。 この値は、統一されたデバイス プロパティのモデルで DEVPKEY_DeviceInterface_ClassGuid プロパティに対応します。 クラスのルートを呼び出すことによって開くことができるインターフェイス キーのサブキーのクエリを実行して取得できるインストール済みのデバイスのインターフェイスの Guid [ **SetupDiOpenClassRegKeyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa) の設定*ClassGuid*パラメーターを**NULL**と*フラグ*DIOCR_INTERFACE パラメーター。 デバイス インターフェイスの GUID を呼び出すことによって取得できる[ **SetupDiEnumDeviceInterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)、どの取得、 [ **SP_DEVICE_INTERFACE_DATA** ](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)デバイス インスタンスに関連付けられているデバイスのインターフェイスの構造体。 **InterfaceClassGuid** SP_DEVICE_INTERFACE_DATA 構造体のメンバーがインターフェイス クラス GUID を識別します。
+-   [**INF InterfaceInstall32 セクション**](inf-interfaceinstall32-section.md)には、デバイスインターフェイスの GUID を提供する*InterfaceClassGuid*エントリ値が含まれています。 この値は、統合されたデバイスプロパティモデルの DEVPKEY_DeviceInterface_ClassGuid プロパティに対応します。 インストールされているデバイスインターフェイスクラスの Guid を取得するには、インターフェイスキーのルートのサブキーを照会します。これは、 [**Setupdiopenclassregkeyex**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopenclassregkeyexa)を呼び出すことによって開くことができます。また、 *Classguid*パラメーターを**NULL**に設定し、 *Flags*パラメーターを DIOCR_INTERFACE に設定することもできます。 デバイスインターフェイスの GUID は、 [**Setupdienumdeviceinterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)を呼び出すことによって取得できます。このインターフェイスは、デバイスインスタンスに関連付けられているデバイスインターフェイスの[**SP_DEVICE_INTERFACE_DATA**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)構造を取得します。 SP_DEVICE_INTERFACE_DATA 構造体の**InterfaceClassGuid**メンバーは、インターフェイスクラス GUID を識別します。
 
-### <a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>INF AddReg ディレクティブとデバイスのシステム定義のプロパティを変更する INF してディレクティブ
+### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-defined-device-properties"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-system-def"></a>INF AddReg ディレクティブと INF DelReg ディレクティブ (システム定義のデバイスプロパティを変更する)
 
-多くのシステム定義のデバイス プロパティでは、対応するシステム定義のレジストリ エントリの値があります。 デバイスのプロパティを使用して、対応するレジストリ エントリ値を持つ、 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)対応するレジストリを追加するエントリの値は、対応するデバイスのプロパティを設定します。 同様を使用して、 [ **INF してディレクティブ**](inf-delreg-directive.md)を対応するレジストリを削除するエントリの値では、対応するデバイスのプロパティも削除されます。
+システム定義のデバイスプロパティの多くには、対応するシステム定義のレジストリエントリ値があります。 対応するレジストリエントリ値を持つデバイスプロパティの場合、 [**INF AddReg ディレクティブ**](inf-addreg-directive.md)を使用して対応するレジストリエントリ値を追加すると、対応するデバイスプロパティが設定されます。 同様に、 [**INF DelReg ディレクティブ**](inf-delreg-directive.md)を使用して、対応するレジストリエントリ値を削除すると、対応するデバイスプロパティも削除されます。
 
-INF など**AddReg** "Abc_Device_Install.HW"セクションの設定は、次のディレクティブ、 **DeviceCharacteristics**デバイス インスタンスのレジストリ エントリの値。
+たとえば、次の "Abc_Device_Install" セクションの INF **AddReg**ディレクティブは、デバイスインスタンスの**DeviceCharacteristics**レジストリエントリの値を設定します。
 
-```ini
+```inf
 [Abc_Device_Install.HW]
 ...
 AddReg = Xxx_AddReg
@@ -61,15 +61,15 @@ AddReg = Xxx_AddReg
 ] 
 ```
 
-**DeviceCharacteristics**レジストリ エントリの値に対応して、 [ **DEVPKEY_Device_Characteristics** ](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-characteristics)プロパティ、[統一されたデバイスプロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)Windows Vista および Windows の以降のバージョン。
+**DeviceCharacteristics**レジストリエントリの値は、windows Vista 以降のバージョンの windows では、統合された[デバイスプロパティモデル](unified-device-property-model--windows-vista-and-later-.md)の[**DEVPKEY_Device_Characteristics**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-device-characteristics)プロパティに対応しています。
 
-### <a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-custom-reg"></a>INF AddReg ディレクティブとカスタム レジストリ エントリの値を変更する INF してディレクティブ
+### <a name="inf-addreg-directives-and-inf-delreg-directives-that-modify-custom-registry-entry-values"></a><a href="" id="inf-addreg-directives-and-inf-delreg-directives-that-modify-custom-reg"></a>カスタムレジストリエントリ値を変更する INF AddReg ディレクティブおよび INF DelReg ディレクティブ
 
-Windows では、システム定義のレジストリ エントリの値とデバイスのシステム定義のプロパティ間の通信を管理します。 ただし、Windows では、カスタムのレジストリ エントリの値とカスタムのデバイスのプロパティ間の通信は管理しません。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)または[ **INF してディレクティブ**](inf-delreg-directive.md)カスタムを変更するレジストリ エントリの値には影響しません、Windows を管理するシステム定義のプロパティ。
+Windows は、システム定義のレジストリエントリ値とシステム定義のデバイスプロパティの対応を管理します。 ただし、Windows では、カスタムレジストリエントリ値とカスタムデバイスプロパティの対応は管理しません。 [**Inf AddReg ディレクティブ**](inf-addreg-directive.md)、またはカスタムレジストリエントリ値を変更する[**inf delreg ディレクティブ**](inf-delreg-directive.md)は、Windows が管理するシステム定義のプロパティには影響しません。
 
-次の例に示すように設定されているデバイスのカスタム インスタンスのプロパティを呼び出すことによって取得できる[ **SetupDiGetCustomDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetcustomdevicepropertya)します。
+次の例に示すように設定されているカスタムデバイスインスタンスのプロパティは、 [**SetupDiGetCustomDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetcustomdevicepropertya)を呼び出すことによって取得できます。
 
-```ini
+```inf
 [XxxDDInstall.HW]
 ...
 AddReg = Xxx_AddReg
@@ -80,7 +80,7 @@ AddReg = Xxx_AddReg
 ] 
 ```
 
-対応するカスタム レジストリ エントリの値を持つカスタムのデバイスのプロパティにアクセスする方法の詳細については、次を参照してください。[へのアクセスのカスタム デバイス プロパティ](accessing-custom-device-properties.md)します。
+対応するカスタムレジストリエントリ値を持つカスタムデバイスプロパティにアクセスする方法の詳細については、「[カスタムデバイスプロパティ](accessing-custom-device-properties.md)へのアクセス」を参照してください。
 
 
 

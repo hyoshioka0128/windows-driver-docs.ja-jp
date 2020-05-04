@@ -1,9 +1,9 @@
 ---
 title: INF FeatureScore ディレクティブ
-description: FeatureScore ディレクティブは、ドライバーをドライバーがサポートする機能に基づいて、追加の順位付け条件を提供します。
+description: Features Core ディレクティブは、ドライバーがサポートする機能に基づいて、ドライバーの追加の順位付け条件を提供します。
 ms.assetid: 78e1c2cf-b3e9-43ea-b435-979360cc3e28
 keywords:
-- INF FeatureScore ディレクティブ デバイスとドライバーのインストール
+- INF の主要なディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,63 +12,63 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1263574f3266e452e0970eb90e095d1a453a2737
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 631a9b80dae40aa5cf9fba4ae5379b1c488c6582
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356999"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223162"
 ---
 # <a name="inf-featurescore-directive"></a>INF FeatureScore ディレクティブ
 
 
-**FeatureScore**ディレクティブのドライバーをドライバーがサポートする機能に基づいて、追加の順位付け条件を提供します。 特徴のスコアを定義できますなど、[デバイス セットアップ クラス](device-setup-classes.md)クラスに固有の条件に基づくドライバーを識別するためです。
+Features **core**ディレクティブは、ドライバーがサポートする機能に基づいて、ドライバーの追加の順位付け条件を提供します。 たとえば、クラス固有の条件に基づくドライバーを区別する[デバイスセットアップクラス](device-setup-classes.md)に対して、機能スコアが定義されている場合があります。
 
-```ini
+```inf
 [DDInstall]
   
 FeatureScore=featurescore
 ```
 
-**FeatureScore**ディレクティブは、Windows Vista および以降のバージョンの Windows でサポートされます。
+Windows Vista 以降のバージョンの Windows**では、このディレクティブは**サポートされています。
 
-**警告**  、 **FeatureScore**ディレクティブが処理されるで直接指定した場合のみ、 **\[DDInstall\]** セクション。
+**警告**  - **[ \[ddinstall\] ** ] セクションで直接指定されている場合にのみ、[領域の**コア**] ディレクティブが処理されます。
 
  
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="featurescore"></a>*featurescore*  
-この値は、その機能の内容に基づいて、ドライバーのランク付けのスコアを指定します。 このエントリは、0x00 と 0 xff までの間の 1 バイトの 16 進数です。
+<a href="" id="featurescore"></a>*特長コア*  
+この値は、ドライバーの機能の内容に基づいた順位付けスコアを指定します。 このエントリは、0x00 から0xFF までの1バイトの16進数です。
 
-低い*featurescore*値より優れた機能を 0x00 が最適な特徴のスコア順位、スコアのランクを指定します。 場合、 **FeatureScore**ディレクティブが指定されていない、Windows は、ドライバーの 0 xff の既定機能スコアのランクを使用します。
+特徴の*コア*値が小さいほど、特徴スコアランクが向上します。ここで、0x00 は最適な特徴スコアランクです。 機能**コア**ディレクティブが指定されていない場合、Windows では、ドライバーに対して既定の特徴スコアランク0xff を使用します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-Windows では、同じデバイスに対して複数のドライバーを検出する場合は、最初をインストールする最適なドライバーをドライバーを確認しする必要があります。 これを実現するには、Windows は、全体的なランク付けがいくつかの要因、または、次のように、スコアに基づいて各ドライバーを割り当てます。
+Windows が同じデバイスに対して複数のドライバーを検出した場合は、まず、どのドライバーがインストールに最適なドライバーであるかを判断する必要があります。 これを実現するために、Windows は、次のようないくつかの要素またはスコアに基づいて、各ドライバーに全体的なランクを割り当てます。
 
--   ドライバーの署名のスコア付け ([*署名スコア*](signature-score--windows-vista-and-later-.md) ) かどうかに、ドライバーが署名されているかどうかに基づいて、します。
--   ドライバーの特徴のスコア ([*特徴スコア*](feature-score--windows-vista-and-later-.md)) ドライバーの機能のデバイス用の別のドライバーと比較したランクに基づいて、します。
--   ハードウェア識別子のスコア付け ([*識別子スコア*](identifier-score--windows-vista-and-later-.md))、に基づいてどの程度プラグ アンド プレイ (PnP) デバイスの識別文字列はドライバーによって報告された、バスとが一致するデバイスを[デバイスの識別文字列](device-identification-strings.md)、INF で[***モデル***](inf-models-section.md) INF ファイルのセクション。
+-   ドライバーが署名されているかどうかに基づくドライバー署名スコア ([*署名スコア*](signature-score--windows-vista-and-later-.md))。
+-   ドライバーの機能スコア ([*機能スコア*](feature-score--windows-vista-and-later-.md))。ドライバーの機能のランクとデバイスの別のドライバーとの比較に基づいています。
+-   ハードウェア識別子スコア ([*識別子スコア*](identifier-score--windows-vista-and-later-.md))。デバイスのバスドライバーによって報告されたプラグアンドプレイ (PnP) デバイス識別文字列が、inf ファイルの [inf[***モデル***](inf-models-section.md)] セクションの[デバイス id 文字列](device-identification-strings.md)と一致するかどうかに基づいて決まります。
 
-特徴のスコアは、ドライバーをサポートする機能に基づいてランクのドライバーを方法を提供します。 特徴のスコアを定義できますなど、[デバイス セットアップ クラス](device-setup-classes.md)クラスに固有の条件に基づいてドライバーを識別するためです。
+機能スコアは、ドライバーがサポートする機能に基づいてドライバーに順位を付ける方法を提供します。 たとえば、クラス固有の条件に基づいてドライバーを区別する[デバイスセットアップクラス](device-setup-classes.md)に対して、機能スコアが定義されている場合があります。
 
-特徴のスコアは、ドライバー作成者より簡単かつ正確には明確に定義された条件に基づいているデバイスのさまざまなドライバーを区別することができます識別子スコアを補足します。
+特徴スコアは識別子スコアを補足します。これにより、ドライバーの作成者は、明確に定義された条件に基づいて、デバイスのさまざまなドライバーをより簡単かつ正確に識別できるようになります。
 
-ドライバーが順位付けされる方法の詳細については、次を参照してください。[どの Windows ランクのドライバー (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)します。
+ドライバーの順位付けの詳細については、「Windows がドライバーをランク付けする[方法 (Windows Vista 以降)](how-setup-ranks-drivers--windows-vista-and-later-.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 
-[特徴のスコア](feature-score--windows-vista-and-later-.md)
+[機能スコア](feature-score--windows-vista-and-later-.md)
 
-[識別子のスコア](identifier-score--windows-vista-and-later-.md)
+[識別子スコア](identifier-score--windows-vista-and-later-.md)
 
 [***モデル***](inf-models-section.md)
 
-[署名のスコア](signature-score--windows-vista-and-later-.md)
+[署名スコア](signature-score--windows-vista-and-later-.md)
 
  
 

@@ -4,12 +4,12 @@ description: Windows のすべてのバージョンで、シリアルコント�
 ms.assetid: 1EA0221E-0F68-429B-9DA5-4AE2D3394A09
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 548be9f69b02f116234f41eb1159605c5a51c9b0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f4ad1a5b693e8c78a927b744c9618df95d40042b
+ms.sourcegitcommit: 6b09412f7bf562f7c01ffa94ac44a3d0ea895e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845391"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086718"
 ---
 # <a name="serial-controller-drivers-overview"></a>シリアル コントローラー ドライバーの概要
 
@@ -19,7 +19,7 @@ Windows のすべてのバージョンで、シリアルコントローラーデ
 
 Windows 2000 以降、システム提供のシリアルドライバーであるシリアルドライバーは、スタンドアロンのシリアルポート、 [COM ポート](configuration-of-com-ports.md)、およびマルチポートボードをサポートしています。 システム提供のシリアル列挙ドライバーである Serenum.sys は、シリアルポートに接続されているデバイスのうち、Serial .sys または互換性のあるシリアルポートドライバーによって制御されるものを列挙します。 通常、Windows を実行している PC の場合は、通常は COM1 や COM2 などという名前の COM ポートを制御します。 これらのポートは RS-232 標準に緩く準拠していますが、さらに、Pc をサポートするために進化した事実上標準 (電圧レベル、ピン接続、ハードウェアフロー制御など) も組み込まれています。 詳細については、「 [Using Serial .sys And serenum.sys](using-serial-sys-and-serenum-sys.md)」を参照してください。
 
-GitHub の Windows ドライバーサンプルリポジトリには、[シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)および[serenum.sys](https://go.microsoft.com/fwlink/p/?LinkId=617961)ドライバーのサンプルのソースコードが含まれています。これらのサンプルは、と同様に動作し、受信トレイのシリアルドライバーと serenum.sys ドライバーの代わりにインストールできます。
+GitHub の Windows ドライバーサンプルリポジトリには、[シリアル](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)および[serenum.sys](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum)ドライバーのサンプルのソースコードが含まれています。これらのサンプルは、と同様に動作し、受信トレイのシリアルドライバーと serenum.sys ドライバーの代わりにインストールできます。
 
 ## <a name="sercx-and-sercx2"></a>SerCx と SerCx2
 
@@ -46,11 +46,11 @@ SerCx2 の詳細については、「 [Serial Framework Extension (SerCx2) の�
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="serial-i-o-request-interface.md" data-raw-source="[Serial I/O Request Interface](serial-i-o-request-interface.md)">直列 i/o 要求インターフェイス</a></p></td>
+<td><p><a href="serial-i-o-request-interface.md" data-raw-source="[Serial I/O Request Interface](serial-i-o-request-interface.md)">シリアル I/O 要求インターフェイス</a></p></td>
 <td><p>シリアルコントローラー上のポートに接続されている周辺機器を制御するために、クライアントアプリケーションまたは周辺機器ドライバーが i/o 要求をポートに送信します。</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="differences-between-sercx2-and-serial-sys.md" data-raw-source="[Differences Between SerCx2.sys and Serial.sys](differences-between-sercx2-and-serial-sys.md)">SerCx2 と http.sys の違い</a></p></td>
+<td><p><a href="differences-between-sercx2-and-serial-sys.md" data-raw-source="[Differences Between SerCx2.sys and Serial.sys](differences-between-sercx2-and-serial-sys.md)">SerCx2.sys と Serial.sys の違い</a></p></td>
 <td><p>受信トレイ Sercx2 とシリアルドライバーコンポーネントの両方で<a href="serial-i-o-request-interface.md" data-raw-source="[serial I/O request interface](serial-i-o-request-interface.md)">シリアル i/o 要求インターフェイス</a>が実装されていますが、これらのコンポーネントは交換できません。 これらは、さまざまな要件のセットを満たすように設計されています。</p></td>
 </tr>
 </tbody>

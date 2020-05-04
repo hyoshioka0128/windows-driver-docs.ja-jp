@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a4e9600064587711bb24c7e8f030090a552cc9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e5600f34c5dde18bed03ea1b4bb5a3bee0091b6b
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837475"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223242"
 ---
 # <a name="inf-ddinstallinterfaces-section"></a>INF DDInstall.Interfaces セクション
 
 
 各モデルの<em>Ddinstall がインストール</em>**します。Interface**セクションには、特定のデバイスまたはドライバーがサポートするデバイスインターフェイスの数に応じて、1つまたは複数の[**addinterface**](inf-addinterface-directive.md)ディレクティブを含めることができます。
 
-```ini
+```inf
 [install-section-name.Interfaces] |
 [install-section-name.nt.Interfaces] | 
 [install-section-name.ntx86.Interfaces] |
@@ -47,36 +47,36 @@ AddInterface={InterfaceClassGUID} [, [reference string] [,[add-interface-section
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="addinterface--interfaceclassguid------reference-string-----add-interface-section----flags-------"></a>**Addinterface = {** <em>InterfaceClassGUID</em> **}** \[ **、** \[*参照文字列*\] \[ **、** \[*追加インターフェイスセクション*\] \[ **、** \]\]\]フラグ...  
+<a href="" id="addinterface--interfaceclassguid------reference-string-----add-interface-section----flags-------"></a>**Addinterface = {**<em>InterfaceClassGUID</em>**}** \[ **、** \[*参照文字列*\] \[ **、**\[*追加インターフェイスセクション*\] \[ **、**\] <em>フラグ</em>\] ...\]  
 このディレクティブは、ドライバーが上位レベルのコンポーネントにエクスポートする、指定された*InterfaceClassGUID*値によって指定されるデバイスインターフェイスクラスのサポートをインストールします。 通常、inf ファイル内の他の場所で INF ライターによって定義された*インターフェイスセクション*も参照します。 このディレクティブを指定する方法の詳細については、「 [**INF AddInterface ディレクティブ**](inf-addinterface-directive.md)」を参照してください。
 
-<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =** <em>filename</em> **\[** **,** <em>filename2</em> **\].** ..  
+<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =**<em>filename</em>**. .inf**\[**,**<em>filename2</em>**.inf**\]...  
 この省略可能なエントリは、このデバイス/ドライバーでサポートされているインターフェイスクラスを登録するために必要なセクションを含む、追加のシステム提供の INF ファイルを1つ以上指定します。 このエントリが指定されている場合は、通常、**必要**なエントリです。
 
 **インクルード**エントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =** <em>inf-name</em>\[ **,** <em>inf-name</em>\]...  
-この省略可能なエントリは、このデバイスのインストール中に処理する必要がある特定のセクションを指定します。 通常、このような名前付きセクションは、 <em>Ddinstall</em>**です。** **インクルード**エントリに一覧表示されている、システム提供の INF ファイル内のインターフェイスセクション。 ただし、このような<em>Ddinstall</em>内で参照される任意のセクションを指定でき**ます。** インクルードされている INF のインターフェイスセクション。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf-name</em>\[**,**<em>inf-name</em>\]...  
+この省略可能なエントリは、このデバイスのインストール中に処理する必要がある特定のセクションを指定します。 通常、このような名前付きセクションは、 <em>Ddinstall</em>**です。****インクルード**エントリに一覧表示されている、システム提供の INF ファイル内のインターフェイスセクション。 ただし、このような<em>Ddinstall</em>内で参照される任意のセクションを指定でき**ます。** インクルードされている INF のインターフェイスセクション。
 
 **必要**なエントリを入れ子にすることはできません。 **必要**なエントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-*Ddinstall*セクション名は、INF ファイルの "製造元別*モデル*" セクションのデバイス/モデル固有のエントリで参照されている必要があります。 クロスプラットフォームの INF ファイルで、システムで定義された**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能を使用する方法については、「[複数のプラットフォーム用の INF ファイルの作成」と「オペレーティングシステム](creating-inf-files-for-multiple-platforms-and-operating-systems.md)。
+*Ddinstall*セクション名は、INF ファイルの "製造元別*モデル*" セクションのデバイス/モデル固有のエントリで参照されている必要があります。 クロスプラットフォームの INF ファイルで、システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能を使用する方法については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
-指定した **{** <em>InterfaceClassGUID</em> **}** がまだインストールされていない場合、オペレーティングシステムのセットアップコードによって、そのデバイスインターフェイスクラスがシステムにインストールされます。 1つまたは複数の新しいデバイスインターフェイスクラスを INF ファイルでインストールする場合は、新しいクラスの GUID を識別する **\[InterfaceInstall32\]** セクションもあります。「」を参照してください。
+指定した **{**<em>InterfaceClassGUID</em>**}** がまだインストールされていない場合、オペレーティングシステムのセットアップコードによって、そのデバイスインターフェイスクラスがシステムにインストールされます。 1つまたは複数の新しいデバイスインターフェイスクラスを INF ファイルでインストールする場合は、新しいクラスの GUID を識別する** \[InterfaceInstall32\] **セクションもあります。「」を参照してください。
 
 GUID を作成する方法の詳細については、「[ドライバーでの guid の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-guids-in-drivers)」を参照してください。 システム定義のインターフェイスクラス Guid については、カーネルストリームインターフェイスクラス GUID の*Ks*など、システムによって提供される適切なヘッダーを参照してください。
 
-ドライバーが読み込まれるときに、INF の<em>ddinstall</em>に指定されている **{** <em>InterfaceClassGUID</em> **}** の値ごとに[**iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)を呼び出す必要があり**ます。** 上位レベルのコンポーネントによって実行時に使用されるインターフェイスを有効にするために、ドライバーが基になるデバイスでサポートするインターフェイスセクション。 デバイスドライバーは、デバイスインターフェイスのサポートを INF に登録する代わりに、 [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出してから**Iosetdeviceinterfacestate**への最初の呼び出しを行うことができます。 通常、PnP 関数またはフィルタードライバーは、 [**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンからこの呼び出しを行います。
+ドライバーが読み込まれるときに、INF の<em>ddinstall</em>に指定されている **{**<em>InterfaceClassGUID</em>**}** の値ごとに[**iosetdeviceinterfacestate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)を呼び出す必要があり**ます。** 上位レベルのコンポーネントによって実行時に使用されるインターフェイスを有効にするために、ドライバーが基になるデバイスでサポートするインターフェイスセクション。 デバイスドライバーは、デバイスインターフェイスのサポートを INF に登録する代わりに、 [**IoRegisterDeviceInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterdeviceinterface)を呼び出してから**Iosetdeviceinterfacestate**への最初の呼び出しを行うことができます。 通常、PnP 関数またはフィルタードライバーは、 [**AddDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_add_device)ルーチンからこの呼び出しを行います。
 
 <a name="examples"></a>例
 --------
 
-この例は、 <em>Ddinstall</em> **. nt を示しています。** システムが提供する WDM オーディオデバイス/ドライバーの inf ファイルのインターフェイスセクション。 [**Inf *ddinstall*セクション**](inf-ddinstall-section.md)と inf ddinstall の例として示されて[**います。サービスセクション**](inf-ddinstall-services-section.md)。
+この例は、 <em>Ddinstall</em>**. nt を示しています。** システムが提供する WDM オーディオデバイス/ドライバーの inf ファイルのインターフェイスセクション。 [**Inf *ddinstall*セクション**](inf-ddinstall-section.md)と inf ddinstall の例として示されて[**います。 *DDInstall*サービスセクション**](inf-ddinstall-services-section.md)。
 
-```ini
+```inf
 ;
 ; following AddInterface= are all single lines (without 
 ; backslash line continuators) in the system-supplied INF file
@@ -114,7 +114,7 @@ KSNAME_Topology = "Topology"
 
 [**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)
 
-[***モジュール***](inf-models-section.md)
+[***モデル***](inf-models-section.md)
 
  
 

@@ -1,10 +1,10 @@
 ---
 title: INF DDInstall.Events セクション
 author: andylsn
-description: 各モデルあたり DDInstall.Events セクションには、INF ファイルに追加の INF ライター定義セクションを参照する 1 つまたは複数の INF AddEventProvider ディレクティブが含まれています。
+description: 各モデルの DDInstall. Events セクションには、inf ファイルで追加の INF ライター定義セクションを参照する1つ以上の INF AddEventProvider ディレクティブが含まれています。
 ms.assetid: ''
 keywords:
-- INF DDInstall.Events セクションのデバイスとドライバーのインストール
+- INF DDInstall. Events セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -13,18 +13,18 @@ api_type:
 - NA
 ms.date: 06/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b878adfab32765453510d6fd17632e14a5d0dd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7fd15c052eb52af092f84c80a19601f4e056cd7c
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385917"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223254"
 ---
 # <a name="inf-ddinstallevents-section"></a>INF DDInstall.Events セクション
 
-各ごとのモデル<em>DDInstall</em>**します。イベント**セクションは、1 つ以上含まれています。 [ **INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md) INF ライター定義の追加のセクションで、INF ファイルを参照します。 このセクションでは、Windows 10 は 1809 およびそれ以降のバージョンでサポートされます。
+各モデルの<em>Ddinstall がインストール</em>**します。Events**セクションには、inf ファイルで追加の inf ライター定義セクションを参照する1つ以上の[**inf AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)が含まれています。 このセクションは、Windows 10 バージョン1809以降でサポートされています。
 
-```ini
+```inf
 [install-section-name.Events] |
 [install-section-name.nt.Events] |
 [install-section-name.ntx86.Events] |
@@ -38,38 +38,38 @@ AddEventProvider={ProviderGUID},event-provider-install-section
 [Needs=inf-section-name[,inf-section-name]...] 
 ```
 
-行うことができます、 <em>DDInstall</em>**します。イベント**に少なくとも 1 つのセクション**AddEventProvider**を登録するディレクティブ[Windows のイベント トレース](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)(ETW) プロバイダーです。
+<em>Ddinstall</em>を提供でき**ます。** [Windows イベントトレーシング](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing)(ETW) プロバイダーを登録するための**AddEventProvider**ディレクティブが少なくとも1つある Events セクション。
 
 ## <a name="entries"></a>エントリ
 
-<a href="" id="addeventprovider--providerguid--event-provider-install-section"></a>**AddEventProvider=** {*ProviderGUID*},*event-provider-install-section*  
-このディレクティブは、INF ライターの定義を参照*イベント プロバイダーのインストール セクション*この対象となるデバイスのドライバーの INF ファイルの他の場所で*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)します。
+<a href="" id="addeventprovider--providerguid--event-provider-install-section"></a>**AddEventProvider =**{*providerguid*}、*イベントプロバイダー-インストール-セクション*  
+このディレクティブは、この*Ddinstall*セクションでカバーされているデバイスのドライバーについて、inf ファイル内の他の場所にある inf ライターが定義した*イベントプロバイダーのインストールセクション*を参照します。 詳細については、「 [**INF AddEventProvider ディレクティブ**](inf-addeventprovider-directive.md)」を参照してください。
 
-<a href="" id="include-filename-inf--filename2-inf----"></a>**含める =** <em>filename</em> **.inf**\[ **、** <em>filename2</em> **.inf**\]...  
-この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 このエントリが指定されている場合、**必要がある**エントリも通常は必要です。
+<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =**<em>filename</em>**. .inf**\[**,**<em>filename2</em>**.inf**\]...  
+この省略可能なエントリは、このデバイスをインストールするために必要なセクションを含む、システムが提供する追加の INF ファイルを1つ以上指定します。 このエントリが指定されている場合は、**必要**なエントリも通常必要です。
 
-詳細については、 **Include**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
+**インクルード**エントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =** <em>inf セクション名</em>\[ **、** <em>inf セクション名</em>\].  
-この省略可能なエントリでは、このデバイスのインストール中に処理する必要があるセクションを指定します。 セクションは、通常、 <em>DDInstall</em>**します。イベント**セクションに記載されているシステム指定の INF ファイル内で、 **Include**エントリ。 ただし、内で参照されている任意のセクションがあります、 <em>DDInstall</em>**します。イベント**セクション。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf-name</em>\[**,**<em>inf-name</em>\]...  
+この省略可能なエントリは、このデバイスのインストール中に処理する必要があるセクションを指定します。 通常、このセクションは<em>Ddinstall</em>**です。****インクルード**エントリに一覧表示されているシステム提供の INF ファイル内の Events セクション。 ただし、 <em>Ddinstall</em>内で参照される任意のセクションを指定でき**ます。イベント**セクション。
 
-**必要がある**エントリを入れ子にすることはできません。 詳細については、**必要がある**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
+**必要**なエントリを入れ子にすることはできません。 **必要**なエントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-<em>DDInstall</em>**します。イベント**のセクションでは、それに関連として同じプラットフォームとオペレーティング システムの装飾が必要[ ***DDInstall*** ](inf-ddinstall-section.md)セクション。 たとえば、<em>インストール セクション名</em> **.ntx86**セクションは、対応する必要が<em>インストール セクション名</em> **.ntx86 します。イベント**セクション。
+<em>Ddinstall</em>**。イベント**セクションには、関連する[***ddinstall***](inf-ddinstall-section.md)セクションと同じプラットフォームとオペレーティングシステムの装飾が必要です。 たとえば、**ntx86**セクション<em>には</em>、対応する ntx86 という<em>名前</em>が付いています。**イベント**セクション。
 
-指定した*DDInstall* - 製造元でデバイス/モデルに固有のエントリでは、セクションを参照する必要があります*モデル*INF ファイルのセクション。 大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 <em>DDInstall</em>**します。イベント**クロスプラット フォーム対応の INF ファイルでセクション名。
+指定された*Ddinstall*セクションは、INF ファイルの "製造元別*モデル*" セクションのデバイス/モデル固有のエントリで参照されている必要があります。 正式な構文のステートメントに示されている*インストールセクション名*の大文字と小文字を区別しない拡張機能は、このような<em>ddinstall</em>に挿入でき**ます。** クロスプラットフォームの INF ファイルの Events セクション名。
 
-詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能の使用方法の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-この例では、<em>インストール セクション名</em>**します。イベント**セクションとそのイベントのプロバイダーのインストール-セクションで、INF ファイルでします。
+この例は、<em>インストールセクション名</em>を示して**います。** INF ファイルの Events セクションとそのイベントプロバイダーのインストールセクション。
 
-```ini
+```inf
 [Device_Inst.NT.Events]
 AddEventProvider={071acb53-ccfb-42e0-9a68-5336b7301507},foo_Event_Provider_Inst
 AddEventProvider={6d3fd9ef-bcbb-42d7-9fbd-1bf2d926b394},bar_Event_Provider_Inst

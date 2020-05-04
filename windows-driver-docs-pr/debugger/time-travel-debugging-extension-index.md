@@ -1,27 +1,27 @@
 ---
-title: Time Travel Debugging Extension !index Command
-description: The !index extension indexes time travel traces or displays index status information.
+title: タイムトラベルデバッグ拡張機能! index コマンド
+description: '! インデックス拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。'
 ms.date: 01/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: efde351e74b6ea40b3b27c8872459ff0adc9ca32
-ms.sourcegitcommit: ee70846334ab6710ec0f9143e9f3a3754bc69f98
+ms.openlocfilehash: 1bf90bce0697f9ee2af48d00e55abeacde85a4c4
+ms.sourcegitcommit: 2b170ea901c8d8c8a2070b84a5eed1a38deb39d4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706946"
+ms.lasthandoff: 04/25/2020
+ms.locfileid: "82157998"
 ---
-# <a name="index"></a>!index
+# <a name="index"></a>! インデックス
 
 ![時計を示す短いタイムトラベルロゴ](images/ttd-time-travel-debugging-logo.png)
 
-The **!index** extension indexes time travel traces or displays index status information.
+**! インデックス**拡張インデックスは、タイムトラベルをトレースしたり、インデックスの状態情報を表示したりします。
 
 ```dbgsyntax
 !index [-status] [-force]
 ```
 
 
-現在のトレースに対してインデックス作成パスを実行するには、`!index` を使用します。 
+現在`!index`のトレースに対してインデックス作成パスを実行するには、を使用します。 
 
 ```dbgcmd
 0:000> !index
@@ -43,18 +43,18 @@ Successfully created the index in 0ms.
 
 **-状態**
 
-トレースインデックスの状態をレポートするには、`!index -status` を使用します。
+トレース`!index -status`インデックスの状態を報告するには、を使用します。
 
 ```dbgcmd
-0:000> index -status
+0:000> !index -status
 Index file loaded.
 ```
 **-force**
 
-読み込めないインデックスファイルがディスク上に存在する場合でも、`!index -force` を使用してトレースのインデックスを再作成します。
+読み込めない`!index -force`インデックスファイルがディスク上に存在する場合でも、を使用してトレースのインデックスを再作成します。
 
 ```dbgcmd
-0:000> index -force
+0:000> !index -force
 Successfully created the index in 152ms.
 ```
 
@@ -67,6 +67,6 @@ ttdext
 
 この拡張機能は、タイムトラベルトレースでのみ機能します。 タイムトラベルの詳細については、「[タイムトラベルデバッグ-概要](time-travel-debugging-overview.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[タイムトラベルデバッグ-拡張コマンド](time-travel-debugging-extension-commands.md)
+[Time Travel Debugging - 拡張コマンド](time-travel-debugging-extension-commands.md)

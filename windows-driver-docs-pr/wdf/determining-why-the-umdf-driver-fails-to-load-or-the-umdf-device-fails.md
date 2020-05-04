@@ -11,12 +11,12 @@ keywords:
 - UMDF WDK、デバイスを開始しないシナリオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef23e04d8451fc3b058b2cc6e2c228a75980a0b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dae98201f8cb6ec71b1f6de61b3443451f5ca547
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833673"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173520"
 ---
 # <a name="determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails-to-start"></a>UMDF ドライバーの読み込み失敗または UMDF デバイスの起動失敗の理由の特定
 
@@ -28,9 +28,9 @@ ms.locfileid: "72833673"
 1.  次のファイルが正しいことを確認して、セットアップを確認します。
     -   ドライバーの INF ファイル。
 
-        [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)ツールを使用して、ドライバーの INF ファイルを検証します。
+        [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)ツールを使用して、ドライバーの INF ファイルを検証します。
 
-    -   % windir%\\inf\\setupapi.log (Windows XP の場合)、% windir%\\setupact .log、および% windir%\\temp\\wudf\_更新 .log ファイルになります。
+    -   % windir%\\inf\\setupapi.log (Windows XP の場合は setupapi.log)、% windir\\% setupact .log、および% windir%\\temp\\wudf\_更新プログラム .log ファイル。
 
 2.  セットアップの問題が見つからない場合は、 [WDF Verifier コントロールアプリケーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdf-verifier-control-application)(wdfverifier) を使用して**Hostprocessdbgbreakonstart**レジストリエントリを有効にします。 **Hostprocessdbgbreakonstart**を有効にすることにより、デバイス (wudfhost .exe) のドライバーホストプロセスは、wudfhost .exe が開始されてからドライバー DLL が読み込まれる前に、デバッガーに中断されるようになります。
 
@@ -51,13 +51,13 @@ ms.locfileid: "72833673"
 
         UMDF version 2 の場合は、ドライバーの[*Evtdriverdeviceadd*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)関数が呼び出されていることを確認します。 関数がデバイスを作成し、正常に返されたことを確認します (たとえば、bu Foo!MyDriverDeviceAdd)。
 
-    5.  UMDF バージョン1の場合は、ドライバーの[**IPnpCallbackHardware:: OnIPnpCallback hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)または[ **:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)メソッドが呼び出されていることを確認します。 メソッドが正常に返されたことを確認します (例、bu Foo!CMyDevice:: On Hardware または Foo!CMyDevice::OnD0Entry).
+    5.  UMDF バージョン1の場合は、ドライバーの[**IPnpCallbackHardware:: OnIPnpCallback hardware**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware-onpreparehardware)または[**:: OnD0Entry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallback-ond0entry)メソッドが呼び出されていることを確認します。 メソッドが正常に返されたことを確認します (例、bu Foo!CMyDevice:: On Hardware または Foo!CMyDevice::OnD0Entry).
 
-        UMDF version 2 の場合は、ドライバーの[*EvtdeviceEvtDeviceD0Entry ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)または[](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が呼び出されていることを確認します。 関数が正常に返されたことを確認します (例、bu Foo!Mydevice(ハードウェアまたは Foo)MyDeviceD0Entry).
+        UMDF version 2 の場合は、ドライバーの[*EvtdeviceEvtDeviceD0Entry ハードウェア*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware)または[*EvtDeviceD0Entry*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nc-wdfdevice-evt_wdf_device_d0_entry)関数が呼び出されていることを確認します。 関数が正常に返されたことを確認します (例、bu Foo!Mydevice(ハードウェアまたは Foo)MyDeviceD0Entry).
 
     6.  前の各操作が正常に実行されても、次の操作が実行されない場合は、次の項目を確認する必要があります。
         1.  ユーザーモードスタック内のドライバーよりも前のすべてのドライバーが、これらの操作を正常に実行できることを確認します。
-        2.  ドライバーの下にあるカーネルスタックが正常に[**irp\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)と[**irp\_\_** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)完了したことを確認します。これにより、デバイスの irp が\_開始されます。
+        2.  ドライバーの下にあるカーネルスタックが、 [**irp\_MJ\_PNP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-pnp)と irp [**\_の\_開始\_デバイス**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-start-device)の irp を正常に完了していることを確認します。
 
  
 

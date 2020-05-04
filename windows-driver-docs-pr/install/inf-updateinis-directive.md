@@ -1,9 +1,9 @@
 ---
 title: INF UpdateInis ディレクティブ
-description: UpdateInis ディレクティブでは、対象のコンピュータで同じ名前の既存の INI ファイルに適用する」セクションの読み取り元となる、INI ファイルを指定します。
+description: UpdateInis ディレクティブは、ターゲットコンピューター上の同じ名前の既存の INI ファイルに適用するセクションの読み取り元となる INI ファイルを指定します。
 ms.assetid: c4717b6c-dc2d-45ba-8b39-3fc33e49466e
 keywords:
-- INF UpdateInis ディレクティブ デバイスとドライバーのインストール
+- INF UpdateInis ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a67243a4c387317b5d5b60bab28915d27b52221d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e7cda0992c275158fea20bd3a0394e15375a23c
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363222"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223092"
 ---
 # <a name="inf-updateinis-directive"></a>INF UpdateInis ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-**UpdateInis**ディレクティブが 1 つまたは複数の名前付きセクションで、INI ファイルを指定するを参照する特定のセクションまたは行があるが読み取られ、ターゲット コンピューターで同じ名前の既存の INI ファイルに適用します。 必要に応じて、1 行ずつ変更から、このような INI ファイルを指定できます、 *update-section ini*します。
+**Updateinis**ディレクティブは、1つまたは複数の名前付きセクションを参照します。このとき、特定のセクションまたは行を読み取り、ターゲットコンピューター上の同じ名前の既存の ini ファイルに適用する ini ファイルを指定します。 必要に応じて、そのような INI ファイルからの行ごとの変更を、 *.ini セクション*で指定できます。
 
-```ini
+```inf
 [DDInstall] | 
 [DDInstall.CoInstallers] | 
 [ClassInstall32] | 
@@ -43,42 +43,42 @@ ms.locfileid: "63363222"
 UpdateInis=update-ini-section[,update-ini-section]...
 ```
 
-INI ファイルの必要性がないのために、Windows のインストール用のファイルの INF では、このディレクティブは指定はほとんどありません。 ただし、 **UpdateInis**および INF ライター定義のセクションで参照されている正式な構文のステートメントで次のセクションのいずれかのディレクティブが正しく、 **AddInterface**ディレクティブまたは参照されている、 **InterfaceInstall32**セクション。
+このディレクティブは、Windows にインストールするための INF ファイルではほとんど指定されていません。これは、INI ファイルの必要性がないためです。 ただし、 **Updateinis**ディレクティブは、仮構文ステートメントに示されているすべてのセクション、および**addinterface**ディレクティブによって参照されるか、 **InterfaceInstall32**セクションで参照されている INF ライターで定義されたセクションで有効です。
 
-セクションによって参照される各名前付き、 **UpdateInis**ディレクティブは、次の形式。
+**Updateinis**ディレクティブによって参照される名前付きセクションには、次の形式があります。
 
-```ini
+```inf
 [update-ini-section]
  
 ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 ...
 ```
 
-*Update-section ini* INF ライター決定エントリの数をそれぞれ個別の行に持つことができます。
+*更新プログラムの .ini セクション*には、任意の数のエントリ (それぞれ別の行) を指定できます。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="ini-file"></a>*ini ファイル*  
-ソース メディア、暗黙的に、あるターゲット コンピューターに更新する INI ファイルの指定された INI ファイルの名前を指定します。 としてこの値を表すことが、 *filename*または % として*strkey*% トークンで定義されている、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。
+<a href="" id="ini-file"></a>*ini-ファイル*  
+ソースメディアで提供される INI ファイルの名前を指定します。また、暗黙的に、ターゲットコンピュータ上で更新する INI ファイルの名前を指定します。 この値は、*ファイル名*として、または INF ファイルの[**文字列**](inf-strings-section.md)セクションで定義されている%*strkey*% token として表すことができます。
 
-<a href="" id="ini-section"></a>*ini セクション*  
-指定された INI ファイル内のセクションの名前を指定します。 次の 2 つの値を指定する場合、このセクションには、エントリ変更するにはが含まれています。 場合、 *ini エントリの古い*を省略するしますが、*新しい ini エントリ*が指定されて、新しいエントリは、このセクションは読み取り専用として追加します。
+<a href="" id="ini-section"></a>*ini-セクション*  
+指定された INI ファイル内のセクションの名前を指定します。 次の2つの値を指定した場合、このセクションには変更するエントリが含まれます。 *前の .ini エントリ*が省略されていても、*新しい ini*エントリが指定されている場合は、このセクションが読み取られたときに新しいエントリが追加されます。
 
-<a href="" id="old-ini-entry"></a>*古い-entry ini*  
-この省略可能な値内のエントリの名前を指定する、指定された*ini セクション*、通常は、次の形式で表されます。
+<a href="" id="old-ini-entry"></a>*以前の ini エントリ*  
+この省略可能な値は、指定された*ini セクション*内のエントリの名前を指定します。通常は、次の形式で表されます。
 
-```ini
+```inf
 "key=value"
 ```
 
-いずれかまたは両方の*キー*と*値*% を表した*strkey*% のトークンで定義されている、**文字列**INF ファイルのセクション。 アスタリスク (**\\**<em>) のいずれか、ワイルドカードとして指定できる、* キー</em>または*値*します。
+*キー*と*値*のどちらかまたは両方を、INF ファイルの**文字列**セクションで定義されている%*strkey*% token として表すことができます。 アスタリスク (**\\**) は、* キーまたは*値*の<em>いずれかのワイルドカードとして指定でき</em>ます。
 
-<a href="" id="new-ini-entry"></a>*new-ini-entry*  
-この省略可能な値への変更を指定する、指定された*ini エントリの古い*や、新しいエントリの追加。 この値と同じ方法で表現できる*ini エントリの古い*します。
+<a href="" id="new-ini-entry"></a>*新しい .ini-エントリ*  
+この省略可能な値は、指定した*前の ini エントリ*に対する変更、または新しいエントリの追加を指定します。 この値は、*前の ini エントリ*と同じ方法で表現できます。
 
-<a href="" id="flags"></a>*フラグ*  
-この省略可能な値の解釈を制御する、指定された*ini エントリの古い*や*新しい ini エントリ*します。 *フラグ*エントリは、数値の値は次のいずれかを指定できます。
+<a href="" id="flags"></a>*示す*  
+この省略可能な値は、指定された*旧バージョンの ini エントリ*または *.ini*エントリの解釈を制御します。 *Flags*エントリには、次の数値のいずれかを指定できます。
 
 <table>
 <colgroup>
@@ -87,36 +87,36 @@ ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[値]</th>
-<th align="left">説明</th>
+<th align="left">値</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><strong>0</strong></td>
-<td align="left"><p>これは、既定値、<em>フラグ</em>エントリを省略した場合。</p>
-<p>場合、指定された<em>ini エントリの古い</em>キーは、INI ファイルに存在する、交換する<em>キー = 値</em>を指定した新しい-ini-エントリ。 INI ファイル内のキーのみが一致する必要があります。 このような各キーの対応する値は無視されます。</p>
-<p>追加する、<em>新しい ini エントリ</em>無条件先 INI ファイルで、省略、 <em>ini エントリの古い</em>内のエントリの値、<em>更新 ini</em> INF のセクション。</p>
-<p>無条件で移行先の INI ファイルから古い-ini-エントリを削除、省略、<em>新しい ini エントリ</em>値。</p></td>
+<td align="left"><p>これは、<em>フラグ</em>エントリが省略されている場合の既定値です。</p>
+<p>指定された<em>旧-ini エントリ</em>キーが ini ファイルに存在する場合は、その<em>キー = 値</em>を指定された新しい .ini エントリに置き換えます。 INI ファイル内のキーのみが一致している必要があります。 このようなキーの対応する値は無視されます。</p>
+<p>コピー先の INI ファイルに無条件に<em>新しい .ini エントリ</em>を追加するには、INF の<em>.ini</em>セクションにあるエントリから、<em>以前の ini エントリ</em>の値を省略します。</p>
+<p>コピー先の INI ファイルから前の ini エントリを無条件で削除するには、<em>新しい ini エントリ</em>の値を省略します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>1</strong></td>
-<td align="left"><p>場合、指定された<em>ini エントリの古い</em>(<em>キー = 値</em>) が存在するを持つ移行先の INI ファイル内に置き換える、INI ファイルで、指定された<em>新しい ini エントリ</em>。 両方の<em>キー</em>と<em>値</em>の指定した<em>ini エントリの古い</em>の前の場合と、キーだけでなく、実現、このような交換は、INIファイルの一致する必要があります<em>フラグ</em>値。</p></td>
+<td align="left"><p>指定された<em>前の .ini エントリ</em>(<em>キー = 値</em>) が ini ファイルに存在する場合は、指定され<em>た .ini ファイル</em>のコピー先の ini ファイルで置き換えます。 前の<em>flags</em>値のキーだけでなく、指定した<em>旧バージョンの ini エントリ</em>のキーと<em>値</em>の両方が、ini ファイル内の<em>キー</em>と一致する必要があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>2</strong></td>
-<td align="left"><p>場合、<em>キー</em>に指定されている<em>ini エントリの古い</em>変換先の INI ファイルを参照して、何もしないことはできません。 指定されたキーは、INI ファイルの一致に依存して行われた変更を検出するそれ以外の場合、 <em>ini エントリの古い</em>と<em>新しい ini エントリ</em>、次のようにします。</p>
+<td align="left"><p>以前の ini<em>エントリ</em>に指定された<em>キー</em>がコピー先の ini ファイルに見つからない場合は、何もしません。 それ以外の場合、変更は、次のように、<em>以前の ini エントリ</em>と<em>.ini エントリ</em>の指定されたキーについて、ini ファイルで見つかった一致に依存します。</p>
 <ol>
-<li><p>場合、<em>キー</em>の<em>ini エントリの古い</em>INI ファイル内に存在するが、これは、<em>キー</em>の<em>新しい ini エントリ</em>、古い ini エントリを置き換える<em>新しい ini エントリ</em>先 INI ファイルし、その後、削除、余分な<em>新しい ini エントリ</em>INI ファイルから。</p></li>
-<li><p>場合、<em>キー</em>の<em>ini エントリの古い</em>INI ファイル内のキーが存在する、<em>新しい ini エントリ</em>は、置換、 <em>ini エントリの古い</em>  <em>キー</em>のものと、<em>新しい ini エントリ</em>先 INI ファイルしますが、の値を受け入れ、 <em>ini エントリの古い</em>変更されません。</p></li>
+<li><p><em>旧バージョンの ini</em>エントリの<em>キー</em>が ini ファイルに存在していても、そのキーが .ini ファイルの<em>キー</em>である場合<em>は、以前</em>の ini エントリをコピー先の ini ファイルの<em>.ini エントリに</em>置き換えて、その ini ファイルから余分な<em>新しい ini エントリ</em>を削除します。</p></li>
+<li><p><em>旧バージョンの ini</em>エントリの<em>キー</em>が ini ファイルに存在していても、<em>新しい ini</em>エントリのキーがではない場合は、<em>以前</em>の INI エントリの  <em>キー</em>をコピー先の ini ファイルの<em>.ini エントリ</em>のものに置き換えます。ただし、<em>以前の ini エントリ</em>の値は変更せずに残しておきます。</p></li>
 </ol></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>3</strong></td>
-<td align="left"><p>場合、<em>キー</em>と<em>値</em>向けに指定された<em>ini エントリの古い</em>INI ファイル、何もしないことはできません。 INI ファイルの一致に依存して行われた変更がそれ以外の場合、見つかった、指定された<em>キー</em>と<em>値</em>の<em>ini エントリの古い</em>と<em>新しい ini--entry</em>、次のようにします。</p>
+<td align="left"><p><em>以前の ini エントリ</em>に指定された<em>キー</em>と<em>値</em>が ini ファイルに見つからない場合は、何もしません。 それ以外の変更は、次のように、指定された<em>キー</em>と、以前の<em>ini エントリ</em>と<em>新しい .ini エントリ</em>の<em>値</em>について、ini ファイルで見つかった一致に依存します。</p>
 <ol>
-<li><p>場合、<em>キー = 値</em>の<em>ini エントリの古い</em>INI ファイル内に存在するが、これは、<em>キー = 値</em>の<em>新しい ini エントリ</em>、置換、<em>ini エントリの古い</em>で、<em>新しい ini エントリ</em>先 INI ファイルし、その後、削除、余分な<em>新しい ini エントリ</em>INI ファイルから。</p></li>
-<li><p>場合、<em>キー = 値</em>の<em>ini エントリの古い</em>INI ファイル内に存在するが、<em>新しい ini エントリ</em>は、置換、 <em>ini エントリの古い</em><em>新しい ini エントリ</em>先 INI ファイルしますが、の値を受け入れ、 <em>ini エントリの古い</em>変更されません。</p></li>
+<li><p><em>以前</em>の ini エントリの<em>キー = 値</em>が ini ファイルに存在するが、<em>新しい ini エントリ</em>の<em>キー = 値</em>を使用している場合は、<em>以前の ini エントリ</em>をコピー先の ini ファイルの<em>新しい .ini エントリ</em>に置き換え、その後、その ini ファイルから不要な<em>新しい ini</em>エントリを削除します。</p></li>
+<li><p><em>以前</em>の ini エントリの<em>キー = 値</em>が ini ファイルに存在していても、<em>新しい ini</em>エントリには存在しない場合は<em>、以前の</em>ini エントリをコピー先の ini ファイルの<em>新しい .ini エントリ</em>に置き換えます。ただし、前の<em>ini エントリ</em>の値は変更せずに残しておきます。</p></li>
 </ol></td>
 </tr>
 </tbody>
@@ -124,17 +124,17 @@ ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-指定された*update-section ini*名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+*.Ini セクション*名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-完全なパスを提供する、INF、指定された*ini ファイル*配布メディアの次のいずれかの。
+INF は、次のいずれかの方法で、配布メディアに指定された*ini ファイル*の完全なパスを提供します。
 
--   使用して、IHV と OEM 提供の INF ファイルで、 [ **SourceDisksNames** ](inf-sourcedisksnames-section.md)と[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)にこの INF のセクションでは明示的に配布メディアのルート ディレクトリ (またはディレクトリ) ではない各名前付きのソース ファイルの完全なパスを指定します。
--   1 つまたは複数追加 INF ファイルで特定の指定した INF システムが指定したファイルの**LayoutFile**内のエントリ、 [**バージョン**](inf-version-section.md) INF ファイルのセクション。
+-   IHV/OEM が提供する INF ファイルで、この INF の[**Sourcedisksnames**](inf-sourcedisksnames-section.md)セクションと[**sourcedisksnames**](inf-sourcedisksfiles-section.md)セクションを使用して、配布メディアのルートディレクトリ (またはディレクトリ) にない各名前付きソースファイルの完全パスを明示的に指定します。
+-   システムが提供する INF ファイルで、1つまたは複数の追加の INF ファイルを指定します。これは、INF ファイルの[**バージョン**](inf-version-section.md)セクションにある**layoutfile**エントリで確認できます。
 
-すべて*filename*内で指定された、 *ini エントリの古い*または*新しい ini エントリ*ファイルを含む変換先のディレクトリを指定する必要があります。 このような変換先のディレクトリ パスを*ファイル名*で、 *update-section ini*としてエントリを指定する必要があります、 *dirid*します。 候補のリストの*dirid*値を参照してください[を使用して Dirids](using-dirids.md)します。
+*以前の ini エントリ*または*新しい .ini エントリ*内で指定されたファイル*名*は、そのファイルを含む宛先ディレクトリを指定する必要があります。 *.Ini セクション*エントリ内の*ファイル名*の保存先ディレクトリパスは、 *dirid*として指定する必要があります。 使用可能な*dirid*値の一覧については、「 [Dirid の使用](using-dirids.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
@@ -145,7 +145,7 @@ ini-file,ini-section[,old-ini-entry][,new-ini-entry][,flags]
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
+[***DDInstall *。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
 [**DestinationDirs**](inf-destinationdirs-section.md)
 

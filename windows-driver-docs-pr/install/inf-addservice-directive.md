@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ea2f9a49c4abb1f7a7b0af298609d2ae13bfae8
-ms.sourcegitcommit: 4058fcb136cfb8255ca7bec68e8597c89f7b68cd
+ms.openlocfilehash: 71b10ff9b4ccf967176911bdff3fb58173ef014c
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080167"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223280"
 ---
 # <a name="inf-addservice-directive"></a>INF AddService ディレクティブ
 
 
-**注**  このディレクティブは、モデムやディスプレイモニターなど、ドライバーを必要としないデバイスをインストールする INF ファイルでは使用されません。
+**注:**  このディレクティブは、モデムやディスプレイモニターなど、ドライバーを必要としないデバイスをインストールする INF ファイルでは使用されません。
 
  
 
 **Addservice**ディレクティブは、 [**INF *ddinstall*内で使用されます。サービスセクション**](inf-ddinstall-services-section.md)または[**INF DefaultInstall セクション**](inf-defaultinstall-services-section.md)。 これは、サービスの読み込み方法やタイミングなど、ドライバーに関連付けられているサービスの特性、およびその他の基になるレガシドライバーまたはサービスへの依存関係を指定します。 必要に応じて、このディレクティブはデバイスのイベントログサービスも設定します。
 
-```ini
+```inf
 [DDInstall.Services] 
  
 AddService=ServiceName,[flags],service-install-section
@@ -100,7 +100,7 @@ AddService = ,2.
 <a href="" id="eventname"></a>*EventName*  
 必要に応じて、イベントログに使用する名前を指定します。 省略した場合は、指定した*ServiceName*に既定値が設定されます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
 システム定義および大文字と小文字を区別しない拡張機能は、 <em>Ddinstall</em>に挿入でき**ます。** プラットフォーム固有または OS 固有のインストールを指定するために、クロスオペレーティングシステムまたはクロスプラットフォームの INF ファイルに**addservice**ディレクティブを含む Services セクション。
@@ -109,7 +109,7 @@ AddService = ,2.
 
 **Addservice**ディレクティブは、INF ファイル内の他の場所にある、名前付き*サービスの install セクション*を参照する必要があります。 各セクションには、次の形式があります。
 
-```ini
+```inf
 [service-install-section]
  
 [DisplayName=name]
@@ -137,14 +137,14 @@ ServiceBinary=path-to-service
 <a href="" id="displayname-name"></a>**DisplayName**=*名*  
 サービス/ドライバーのフレンドリ名を指定します。これは通常、ローカライズを容易にするために、INF ファイルの[**文字列**](inf-strings-section.md)セクションで定義された%*strkey*% トークンとして表現されます。
 
-<a href="" id="description-description-string"></a>**説明**=説明 *-文字列*  
+<a href="" id="description-description-string"></a>**説明**=*の説明-文字列*  
 必要に応じて、サービスを説明する文字列を指定します。この文字列は、通常、INF ファイルの**文字列**セクションで定義されている%*strkey*% token として表現されます。
 
 この文字列は、サービスに関する詳細情報を**DisplayName**よりも多くのユーザーに提供します。 たとえば、 **DisplayName**は "DHCP クライアント" のようなものであり、"IP アドレスと DNS 名の登録と更新によってネットワーク構成を管理する" のような説明が表示されることがあります。
 
 *説明文字列*は、わかりやすくするために十分な長さである必要がありますが、それほど厄介ではありません。 *説明文字列*に%*strkey*% トークンが含まれている場合、各トークンは最大511文字を表すことができます。 文字列トークンの置換後の合計文字列は、1024文字を超えないようにする必要があります。
 
-<a href="" id="servicetype-type-code"></a>**ServiceType**=*タイプコード*  
+<a href="" id="servicetype-type-code"></a>**ServiceType**=*の種類-コード*  
 カーネルモードデバイスドライバーの種類コードを 0x00000001 (SERVICE_KERNEL_DRIVER) に設定する必要があります。
 
 デバイスにインストールされている Microsoft Win32 サービスの*種類コード*は、 **0x00000010** (SERVICE_WIN32_OWN_PROCESS) または**0x00000020** (SERVICE_WIN32_SHARE_PROCESS) に設定する必要があります。 Win32 サービスがデスクトップと対話できる場合は、型コードの値を**0x00000100** (SERVICE_INTERACTIVE_PROCESS) と組み合わせる必要があります。
@@ -185,7 +185,7 @@ SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 
 **Starttype**の詳細については、「[ドライバーの読み込み順序の指定](specifying-driver-load-order.md)」を参照してください。
 
-<a href="" id="errorcontrol-error-control-level"></a>**Errorcontrol**=*エラー制御レベル*  
+<a href="" id="errorcontrol-error-control-level"></a>**Errorcontrol**=*エラー-コントロールレベル*  
 次の一覧に示すように、10進形式またはで表される、次の数値のいずれかの数値としてのエラー制御レベルを指定します。
 
 <a href="" id="0x0--service-error-ignore-"></a>**0x0** (SERVICE_ERROR_IGNORE)  
@@ -203,25 +203,25 @@ SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 **正常**に実行されているときにスタートアップが失敗する場合は、バグチェックルーチンを実行します。 (システムでブートするのに必要なデバイス/ドライバー*のみ*が INF ファイルにこの値を指定します)。
 
 <a href="" id="servicebinary-path-to-service"></a>**Servicebinary**=*パスからサービスへのパス*  
-サービスのバイナリのパスを指定します。このパスは *% dirid%\\filename*で表されます。
+サービスのバイナリのパスを、 *% dirid\\% filename*で指定します。
 
 *Dirid*番号は、カスタムディレクトリ識別子、または「 [Dirid の使用](using-dirids.md)」で説明されているシステム定義のディレクトリ識別子のいずれかです。 指定されたファイル*名*によって、ソース配布メディアからターゲットコンピューター上のそのディレクトリに転送されたファイル ( [**INF の CopyFiles ディレクティブ**](inf-copyfiles-directive.md)を参照) が指定されます。
 
-<a href="" id="startname-driver-object-name"></a>**StartName**=*driver-オブジェクト名*  
+<a href="" id="startname-driver-object-name"></a>**StartName**=*-name*  
 この省略可能なエントリは、このデバイス/ドライバーを表すドライバーオブジェクトの名前を指定します。 *型コード*で**1** (SERVICE_KERNEL_DRIVER) または**2** (SERVICE_FILE_SYSTEM_DRIVER) が指定されている場合、この名前は、i/o マネージャーがドライバーを読み込むために使用するドライバーオブジェクトの名前になります。
 
-<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**= *\[* 、レジストリセクション\]**を**<em>追加</em>します...  
-新しくインストールされたサービスに関連するレジストリ情報が設定されている、1つまたは複数の INF ライターで定義された*レジストリセクション*を参照します。 このような*add registry セクション*の**hkr**仕様では、 **HKLM\\System\\CurrentControlSet\\Services\\ServiceName**レジストリキーが指定されています。 詳細については、「 [**INF AddReg ディレクティブ**](inf-addreg-directive.md)」を参照してください。
+<a href="" id="addreg-add-registry-section--add-registry-section----"></a>**AddReg**=*add-registry-section*\]**,** AddReg を追加します。レジストリ-セクション...<em>add-registry-section</em>\[  
+新しくインストールされたサービスに関連するレジストリ情報が設定されている、1つまたは複数の INF ライターで定義された*レジストリセクション*を参照します。 このような*add レジストリセクション*の**hkr**仕様では、 **HKLM\\System\\CurrentControlSet\\Services\\ServiceName**レジストリキーが指定されています。 詳細については、「 [**INF AddReg ディレクティブ**](inf-addreg-directive.md)」を参照してください。
 
 このディレクティブは、サービスのインストールセクションではほとんど使用されません。
 
-<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**Delreg**=*del-registry-section*\[ **、** <em>del-section</em>\]...  
-既にインストールされているサービスに関連するレジストリ情報が削除される、1つまたは複数の INF ライター定義の*del キーセクション*を参照します。 このような CurrentControlSet*セクション*の**hkr**仕様では、 **HKLM\\System\\\\Services\\ServiceName**レジストリキーが指定されています。 詳細については、「 [**INF DelReg ディレクティブ**](inf-delreg-directive.md)」を参照してください。
+<a href="" id="delreg-del-registry-section--del-registry-section----"></a>**Delreg**=*del-registry-section*\[**-section**<em>del-registry-section</em>\]...  
+既にインストールされているサービスに関連するレジストリ情報が削除される、1つまたは複数の INF ライター定義の*del キーセクション*を参照します。 このような*del レジストリセクション*の**hkr**仕様では、 **HKLM\\System\\CurrentControlSet\\Services\\ServiceName**レジストリキーが指定されています。 詳細については、「 [**INF DelReg ディレクティブ**](inf-delreg-directive.md)」を参照してください。
 
 このディレクティブは、ほとんどの場合、*サービスのインストールセクション*では使用されませんが、同じデバイス/ドライバーサービスの以前のインストールのためにレジストリを "更新" する INF で使用されることがあります。
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**Bitreg**=*ビットレジストリ-セクション*\[ **、** <em>ビットレジストリ-セクション</em>\]...  
-は、サービスの*インストールセクション*では有効ですが、ほとんど使用されません。 また、このような*ビットレジストリセクション*の**hkr**仕様では、 **HKLM\\System\\CurrentControlSet\\Services\\ServiceName**レジストリキーも指定されています。
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**Bitreg**=*ビットレジストリ-セクション*\[**、**<em>ビットレジストリ-セクション</em>\]...  
+は、サービスの*インストールセクション*では有効ですが、ほとんど使用されません。 このような*ビットレジストリセクション*の**hkr**仕様では、 **HKLM\\System\\CurrentControlSet\\Services\\ServiceName**レジストリキーも指定されています。
 
 <a href="" id="loadordergroup-load-order-group-name"></a>**Loadordergroup**=の*読み込み順序-グループ名*  
 この省略可能なエントリは、このドライバーがメンバーとなっている読み込み順序グループを識別します。 **SCSI**クラスや**NDIS**など、"標準" の読み込み順序グループのいずれかになります。
@@ -230,7 +230,7 @@ SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 
 **Loadordergroup**の詳細については、「[ドライバーの読み込み順序の指定](specifying-driver-load-order.md)」を参照してください。
 
-<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>依存**関係**=に依存しています-*名前*\[ **、** <em>依存している項目名</em>\]...  
+<a href="" id="dependencies-depend-on-item-name--depend-on-item-name----"></a>**依存関係**=は*項目名*\[に依存\]しており **、** 項目名が<em>依存して</em>います...  
 依存関係の一覧にあるそれぞれの*項目に依存する名前*の項目は、デバイスまたはドライバーが依存するサービスまたは負荷順序グループの名前を指定します。
 
 依存し*ている項目名*がサービスを指定している場合は、このドライバーを開始する前に実行する必要があるサービスを指定します。 たとえば、システムによって提供される Win32 TCP/IP 印刷サービスの INF は、基盤となる (カーネルモードの) TCP/IP トランスポートスタックのサポートに依存します。 その結果、TCP/IP 印刷サービスの INF は、このエントリを**依存関係 = TCPIP**として指定します。
@@ -238,13 +238,13 @@ SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 依存する-*項目名*は、このデバイス/ドライバーが依存している読み込み順序グループを指定できます。 このようなドライバーは、指定したグループの少なくとも1つのメンバーが開始された場合にのみ開始されます。 グループ名の前にプラス記号 (+) を付けます。 たとえば、システム RAS サービス INF には、負荷順序グループとサービスの両方を一覧表示する**Dependencies = + NetBIOSGroup の**ようなエントリが含まれている場合があります。
 
 <a href="" id="security--security-descriptor-string-"></a>**Security**= "*セキュリティ記述子-文字列*"  
-サービスに適用されるセキュリティ記述子を指定します。 このセキュリティ記述子は、サービスの開始、停止、構成などの操作を実行するために必要なアクセス許可を指定します。 *セキュリティ記述子文字列*の値は、DACL (**D:** ) セキュリティコンポーネントを示すトークンを含む文字列です。
+サービスに適用されるセキュリティ記述子を指定します。 このセキュリティ記述子は、サービスの開始、停止、構成などの操作を実行するために必要なアクセス許可を指定します。 *セキュリティ記述子文字列*の値は、DACL (**D:**) セキュリティコンポーネントを示すトークンを含む文字列です。
 
 セキュリティ記述子の文字列の詳細については、「[セキュリティ記述子定義言語 (Windows)](https://docs.microsoft.com/windows/desktop/SecAuthZ/security-descriptor-definition-language)」を参照してください。 セキュリティ記述子文字列の形式の詳細については、「セキュリティ記述子定義言語 (Windows)」を参照してください。
 
 セキュリティ記述子を指定する方法の詳細については、「セキュリティ[で保護されたデバイスのインストールの作成](creating-secure-device-installations.md)」を参照してください。
 
-<a href="" id="description-description-string"></a>**サービス id の種類**=*値*
+<a href="" id="description-description-string"></a>**サービス id の種類**=の*値*
 
 **注:** この値は*Win32 サービス*に対してのみ使用でき、Windows 10 バージョン2004以降でのみ使用できます。
 
@@ -260,9 +260,9 @@ SERVICE_xxxx 定数は、 *Wdm*および*Ntddk*で定義されています。
 
 サービスが自動開始サービスでない限り、この設定は無視されます。
 
-詳細については、[このページ](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_delayed_auto_start_info)を参照してください。
+詳細については、 [こちらのページ](https://docs.microsoft.com/windows/win32/api/winsvc/ns-winsvc-service_delayed_auto_start_info)をご覧ください。
 
-<a href="" id="description-description-string"></a>**Addtrigger**=*service-trigger-install-section [, service-trigger-section,...]*
+<a href="" id="description-description-string"></a>**Addtrigger**=*service-trigger-section [, service-trigger-section,...]*
 
 トリガーイベントが発生したときにサービスを開始または停止できるように、Win32 サービスに登録するトリガーイベントを指定します。 サービストリガーイベントの詳細については、「[サービストリガーイベント](https://docs.microsoft.com/windows/desktop/Services/service-trigger-events)」を参照してください。
 
@@ -287,7 +287,7 @@ SubType=trigger-subtype
 
 詳細については、「 [SERVICE_TRIGGER 構造体](https://docs.microsoft.com/windows/desktop/api/winsvc/ns-winsvc-_service_trigger)」を参照してください。
 
-**アクション**=*アクションの種類*
+**アクション**=*アクション-種類*
 
 指定されたトリガーイベントが発生したときに実行するアクションを指定します。
 
@@ -323,7 +323,7 @@ SubType=trigger-subtype
 オペレーティングシステムは、次のように、*サービスのインストールセクション*の  **starttype**値に従ってドライバーを読み込みます。
 
 -   システムブートの開始段階では、オペレーティングシステムはすべての**0x0** (SERVICE_BOOT_START) ドライバーを読み込みます。
--   システムの開始フェーズでは、オペレーティングシステムはまず、PnP マネージャーがレジストリ内のデバイスノード (*devnodes*) を検出するすべての WDM および pnp ドライバーを読み込み**ます。\\列挙**ツリー (INF ファイルで、SERVICE_DEMAND_START の SERVICE_SYSTEM_START または**0x03**に**0x01**が指定されているかどうか)。その後、オペレーティングシステムは、残りのすべての SERVICE_SYSTEM_START ドライバーを読み込みます。
+-   システムの開始段階では、オペレーティングシステムは、PnP マネージャーがレジストリ内のデバイスノード (*devnodes*) を検出するすべての WDM および pnp ドライバーを最初に読み込み**ます。列挙\\**ツリー (INF ファイルが SERVICE_DEMAND_START に対して SERVICE_SYSTEM_START または**0x03**に**0x01**を指定するかどうか)。その後、オペレーティングシステムは、残りのすべての SERVICE_SYSTEM_START ドライバーを読み込みます。
 -   システムの自動開始フェーズでは、オペレーティングシステムによって残りのすべての SERVICE_AUTO_START ドライバーが読み込まれます。
 
 **依存関係**の詳細については、「[ドライバーの読み込み順序の指定](specifying-driver-load-order.md)」を参照してください。
@@ -350,7 +350,7 @@ SubType=trigger-subtype
 
 *Service-install セクション*には、次の一般的な形式があります。
 
-```ini
+```inf
 [service-install-section]
 AddReg=add-registry-section
 ...
@@ -363,7 +363,7 @@ HKR,,BootFlags,0x00010003,0x14 ; CM_SERVICE_USB3_DISK_BOOT_LOAD|CM_SERVICE_USB_D
 
 また、 **Addservice**ディレクティブは、INF ファイル内の他の場所で、*イベントログのインストールセクション*を参照することもできます。 各セクションには、次の形式があります。
 
-```ini
+```inf
 [event-log-install-section]
  
 AddReg=add-registry-section[, add-registry-section]... 
@@ -372,9 +372,9 @@ AddReg=add-registry-section[, add-registry-section]...
  ...
 ```
 
-一般的なデバイス/ドライバーの INF ファイルの場合、 **AddReg**ディレクティブのみを使用してドライバーのイベントログメッセージファイルを*設定します*。 **CurrentControlSet\\Services\\EventLog\\** <em>EventLogType</em> **\\** <em>EventName</em>レジストリキー*を指定する*と、によって、\\System の\\HKLM **r**仕様が指定されます。 このイベントログの*追加-セクション*には、次の一般的な形式があります。
+一般的なデバイス/ドライバーの INF ファイルの場合、 **AddReg**ディレクティブのみを使用してドライバーのイベントログメッセージファイルを*設定します*。 CurrentControlSet*セクション*の**hkr**仕様では、 **HKLM\\System\\\\Services\\EventLog\\**<em>EventLogType</em>**\\**<em>EventName</em>レジストリキーが指定されています。 このイベントログの*追加-セクション*には、次の一般的な形式があります。
 
-```ini
+```inf
 [drivername_EventLog_AddReg]
 HKR,,EventMessageFile,0x00020000,"path\IoLogMsg.dll;path\driver.sys"
 HKR,,TypesSupported,0x00010001,7 
@@ -384,9 +384,9 @@ HKR,,TypesSupported,0x00010001,7
 
 -   **EventMessageFile**という名前の値のエントリは、FLG_ADDREG_TYPE_EXPAND_SZ 値の**0x00020000**によって指定された[REG_EXPAND_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。 二重引用符 (") で囲まれた値は、システムによって提供される*Iologmsg .dll*を関連付けます (ただし、別のログ dll に関連付けることもできます)。 通常、これらの各ファイルへのパスは次のように指定されます。
 
-    *%% SystemRoot%%\\System32\\IoLogMsg .dll*
+    *%% SystemRoot%%\\System32\\iologmsg .dll*
 
-    *%% SystemRoot%%\\System32\\ドライバー\\driver .sys*
+    *%% SystemRoot%%\\System32\\drivers\\driver .sys*
 
 -   **サポートさ**れている名前付きの値のエントリは、FLG_ADDREG_TYPE_DWORD 値**0x00010001**で指定されている[REG_DWORD](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types)型です。
 
@@ -399,9 +399,9 @@ HKR,,TypesSupported,0x00010001,7
 <a name="examples"></a>例
 --------
 
-この例では、 **Addservice**ディレクティブによって参照される、 [*ddinstall * の例で既に示したように、サービスインストールセクションとイベントログインストールセクションを示し**ます。サービス**](inf-ddinstall-services-section.md)。
+この例では、 **addservice**ディレクティブによって参照される、 [ *ddinstall * の例で既に説明したように、サービスインストールセクションとイベントログインストールセクションを示します。サービス](inf-ddinstall-services-section.md)。
 
-```ini
+```inf
 [sermouse_Service_Inst]
 DisplayName    = %sermouse.SvcDesc%
 ServiceType    = 1                   ; = SERVICE_KERNEL_DRIVER
@@ -444,9 +444,9 @@ sermouse.SvcDesc = "Serial Mouse Driver"
 mouclass.SvcDesc = "Mouse Class Driver"
 ```
 
-[*Ddinstall * のリファレンスの例 **。** ](inf-ddinstall-hw-section.md)前に説明した HW セクションでは、PnP 上位フィルタードライバーを設定するために**addservice**ディレクティブによって参照されるサービスインストールセクションも表示されます。
+この例では、 [ *ddinstall * を参照してください。](inf-ddinstall-hw-section.md)前に説明した HW セクションでは、PnP 上位フィルタードライバーを設定するために**addservice**ディレクティブによって参照されるサービスインストールセクションも表示されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 
 [**AddReg**](inf-addreg-directive.md)
@@ -455,9 +455,9 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [**CopyFiles**](inf-copyfiles-directive.md)
 
-[***Ddinstall *.HW**](inf-ddinstall-hw-section.md)
+[***DDInstall *。ハードウェア**](inf-ddinstall-hw-section.md)
 
-[***Ddinstall *.サービス**](inf-ddinstall-services-section.md)
+[***DDInstall *。サーヴィス**](inf-ddinstall-services-section.md)
 
 [**DelReg**](inf-delreg-directive.md)
 
@@ -465,7 +465,7 @@ mouclass.SvcDesc = "Mouse Class Driver"
 
 [**DestinationDirs**](inf-destinationdirs-section.md)
 
-[**Strings**](inf-strings-section.md)
+[**文字列**](inf-strings-section.md)
 
  
 

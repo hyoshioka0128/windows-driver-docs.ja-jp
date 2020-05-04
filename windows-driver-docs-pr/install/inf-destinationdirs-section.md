@@ -1,9 +1,9 @@
 ---
 title: INF DestinationDirs セクション
-description: DestinationDirs セクションは、ターゲット先ディレクトリを指定またはすべてのディレクトリをコピー、削除、または、INF ファイルで別の場所の名前で参照されているファイルに対する操作の名前を変更します。
+description: DestinationDirs セクションでは、INF ファイル内の他の場所で参照されるファイルのすべてのコピー、削除、または名前変更操作の対象となるターゲットディレクトリを指定します。
 ms.assetid: fadebcb9-da4b-4daf-9e84-822447e5cb2a
 keywords:
-- INF DestinationDirs セクションのデバイスとドライバーのインストール
+- INF DestinationDirs セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e0df8123a9ab861b102b87e72d62d43f0eb7b6d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 81c8c448a6f5c8d5aef5ce87fe965ec7deea8fb4
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380744"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223178"
 ---
 # <a name="inf-destinationdirs-section"></a>INF DestinationDirs セクション
 
 
-A **DestinationDirs**セクションでは、ターゲットのインストール先ディレクトリを指定します。 または、すべてのディレクトリをコピー、削除、または、INF ファイルで別の場所の名前で参照されているファイルに対する操作の名前を変更します。
+**Destinationdirs**セクションでは、INF ファイル内の他の場所で参照されるファイルのすべてのコピー、削除、または名前変更操作の対象となるターゲットディレクトリを指定します。
 
-```ini
+```inf
 [DestinationDirs]
 
 [DefaultDestDir=dirid[,subdir]] 
@@ -35,44 +35,44 @@ A **DestinationDirs**セクションでは、ターゲットのインストー�
 
 
 <a href="" id="defaultdestdir-dirid--subdir-"></a>**DefaultDestDir =**<em>dirid</em>\[**、**<em>subdir</em>\]  
-すべてのコピー、削除、またはに明示的に示されていないファイルの名前変更操作の既定の出力先ディレクトリを指定します、*ファイルのセクション一覧*他のエントリは、ここで参照します。 ファイル操作常に発生ように、適切なディレクトリに、INF ファイルに次が含まれています。 **Include**と**必要がある**エントリは、既定の変換先ディレクトリを指定しないでください。 詳細については、「解説」を参照してください。
+他のエントリによって参照されるファイル*リストセクション*に明示的にリストされていないファイルに対するすべてのコピー、削除、または名前変更操作の既定の宛先ディレクトリをここに指定します。 ファイルの操作が常に正しいディレクトリで行われるようにするには、 **Include**エントリと**必要**なエントリを含む INF ファイルで、既定の保存先ディレクトリを指定しないでください。 詳細については、「解説」を参照してください。
 
-<a href="" id="file-list-section-dirid--subdir--------------"></a><em>file-list-section</em>**=**<em>dirid</em>\[**,**<em>subdir</em>\]\] ...   
-INF ライター決定によって参照されるセクションの名前を指定します、 [ **CopyFiles**](inf-copyfiles-directive.md)、 [ **RenFiles**](inf-renfiles-directive.md)、または[ **DelFiles** ](inf-delfiles-directive.md)ディレクティブ INF ファイルで別の場所。 このようなエントリの場合、このセクションでは省略可能ですが、 **DefaultDestDir**エントリとこの INF で指定されたすべてのファイルのコピー操作がある同じのターゲット。 ただし、すべて*ファイルのセクション一覧*によって参照される、 **RenFiles**または**DelFiles** INF で別の場所ディレクティブがここに表示する必要があります。
+<a href="" id="file-list-section-dirid--subdir--------------"></a><em>ファイルリストセクション</em>**=**<em>dirid</em>\[**,**<em>subdir</em> \] \] ...   
+Inf ファイル内の別の場所にある、 [**CopyFiles**](inf-copyfiles-directive.md)、 [**RenFiles**](inf-renfiles-directive.md)、または[**delfiles**](inf-delfiles-directive.md)ディレクティブによって参照されるセクションの inf ライターによって決定される名前を指定します。 このセクションに**DefaultDestDir**エントリがあり、この INF に指定されているすべてのコピーファイル操作のターゲットが同一である場合、このエントリは省略可能です。 ただし、 **RenFiles**または**delfiles**ディレクティブによって参照されている INF 内の他の場所にある*ファイルリストセクション*は、ここに記載されている必要があります。
 
-<a href="" id="dirid"></a>*Dirid*  
-名前付きの可能性がある、名前で参照されているファイルに対する操作のターゲット ディレクトリのディレクトリ識別子を指定します*ファイルのセクション一覧*INF の。 一般的に使用されるの一覧については*dirids*を参照してください[を使用して Dirids](using-dirids.md)します。
+<a href="" id="dirid"></a>*dirid*  
+名前によって参照されるファイルに対する操作用のターゲットディレクトリのディレクトリ識別子を指定します。これは、INF の名前付き*ファイルリストセクション*内で使用できます。 一般的に使用される*dirids*の一覧については、「 [Dirids の使用](using-dirids.md)」を参照してください。
 
 <a href="" id="subdir"></a>*subdir*  
-サブディレクトリを指定します (で識別されたディレクトリの下で、存在する場合、そのパスの残りの部分と*dirid*) でのファイル操作のコピー先にする、指定された*ファイルのセクション一覧*。
+指定された*ファイルリストセクション*内のファイル操作の出力先となるサブディレクトリ ( *dirid*によって識別されるディレクトリの中にある場合は、そのパスの残りの部分) を指定します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**DestinationDirs**セクションが使用するすべての INF ファイルで必要な[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)を参照するか、*ファイル リスト セクション*、かどうかを**CopyFiles**、 [ **DelFiles**](inf-delfiles-directive.md)、または[ **RenFiles** ](inf-renfiles-directive.md)ディレクティブ。
+**Destinationdirs**セクションは、Inf の[**copyfiles ディレクティブ**](inf-copyfiles-directive.md)を使用するか、または、 **copyfiles**、 [**delfiles**](inf-delfiles-directive.md)、または[**RenFiles**](inf-renfiles-directive.md)ディレクティブが指定されているかどうかにかかわらず、*ファイルリストセクション*を参照するすべての inf ファイルに必要です。
 
-場合*Abc.inf*に含まれる別の INF ファイルからセクション*Def.inf*、両方の INF ファイルを含めると、 **DefaultDestDir**ファイルのコピー、ファイル名の変更、またはファイルの削除のエントリ操作では、Windows で指定されている既定の保存先ディレクトリに対応するすべてのファイル操作を実行します。 Def.inf で指定されている既定のインストール ディレクトリは無視されます*Abc.inf*します。
+*Abc*に別の inf ファイルのセクションが含まれてい*て、両方*の inf ファイルにファイルのコピー、ファイル名の変更、またはファイルの削除操作の**DefaultDestDir**エントリが含まれている場合、Windows は、.def に指定されている既定の宛先ディレクトリを無視し、対応するすべてのファイル操作を、 *Abc*で指定されている既定の
 
-ファイル操作常に発生ように、適切なディレクトリに、INF ファイルに次が含まれています**Include**と**必要がある**エントリを含めないでください、 **DefaultDestDir** 。内のエントリを**DestinationDirs**セクション。 代わりに、このような INF ファイルを明示的に参照すべて、*ファイルのセクション一覧*名前によって指定される[ **CopyFiles**](inf-copyfiles-directive.md)、 [ **RenFiles**](inf-renfiles-directive.md)、および[ **DelFiles** ](inf-delfiles-directive.md)ディレクティブ、 **DestinationDirs**セクション。
+ファイルの操作が常に正しいディレクトリで行われるようにするには、 **Include**エントリと**必要**なエントリを含む INF ファイルで**destinationdirs**セクションに**DefaultDestDir**エントリを含めないようにする必要があります。 代わりに、このような INF ファイルでは、 **Destinationdirs**セクションの[**CopyFiles**](inf-copyfiles-directive.md)、 [**RenFiles**](inf-renfiles-directive.md)、および[**delfiles**](inf-delfiles-directive.md)ディレクティブで指定されているすべての*ファイルリストセクション*名を明示的に参照する必要があります。
 
-INF ファイルが含まれていない場合**Include**と**必要がある**項目を INF を使用して、 **DefaultDestDir**コピーは、既定の出力先を指定するエントリの名前変更、およびファイルを削除INF ファイルの場所に表示される操作:
+INF ファイルに**インクルード**および**必要**なエントリが含まれていない場合、inf は**DefaultDestDir**エントリを使用して、inf ファイル内の他の場所に表示されるコピー、名前の変更、およびファイルの削除操作の既定の宛先を指定できます。
 
--   [**CopyFiles** ](inf-copyfiles-directive.md)直接コピーを使用するディレクティブ (@*filename*) 表記する必要がありますが、 **DefaultDestDir**内のエントリ、 **DestinationDirs**の INF を直接コピー エントリが表示されます。
--   **CopyFiles**、 [ **RenFiles**](inf-renfiles-directive.md)、または[ **DelFiles** ](inf-delfiles-directive.md)で直接参照されていないセクション、 **DestinationDirs**セクションがあります、 **DefaultDestDir**内のエントリ、 **DestinationDirs**のコピー、名前の変更、および削除ファイルのセクションを表示する INF セクション。
+-   直接コピー (@*filename*) 表記を使用する[**CopyFiles**](inf-copyfiles-directive.md)ディレクティブには、 **DefaultDestDir**エントリが INF の**destinationdirs**セクションに含まれている必要があります。このエントリは、直接コピーエントリが表示されます。
+-   **Destinationdirs**セクションで直接参照されていない**CopyFiles**、 [**RenFiles**](inf-renfiles-directive.md)、または[**delfiles**](inf-delfiles-directive.md)の各セクションには、[コピー]、[名前の変更]、および [ファイルの削除] セクションが表示される INF の**destinationdirs**セクションに**DefaultDestDir**エントリが必要です。
 
 <a name="examples"></a>例
 --------
 
-この例では、すべてのファイルのコピー、削除、ファイル、およびファイルの名前の変更操作の既定のターゲット ディレクトリを設定します。 このような単純な**DestinationDirs**セクションは、このような INF は、ターゲット コンピューター上の 1 つのディレクトリにソース ファイルのセットをコピーする通常だけなので新しいの周辺機器の INF ファイルに共通します。
+この例では、すべてのファイルのコピー、ファイルの削除、およびファイル名の変更操作の既定のターゲットディレクトリを設定します。 このような単純**Destinationdirs**セクションは、新しい周辺機器の inf ファイルに共通です。このような inf は通常、ソースファイルのセットをターゲットコンピューター上の単一のディレクトリにコピーするだけであるためです。
 
-```ini
+```inf
 [DestinationDirs]
 DefaultDestDir = 12 ; dirid = \Drivers on WinNT platforms
 ```
 
-この例の一部を示して、 **DestinationDirs**の表示/ビデオ ドライバーの INF セクション。
+この例は、表示/ビデオドライバーの INF の**Destinationdirs**セクションのフラグメントを示しています。
 
-```ini
+```inf
 [DestinationDirs]
 DefaultDestDir     = 11 ; dirid = \system32 on WinNT platforms
 
@@ -108,7 +108,7 @@ xga.Display      = 11
 
 [**SourceDisksNames**](inf-sourcedisksnames-section.md)
 
-[**Dirids を使用します。**](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids)
+[**Dirids の使用**](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids)
 
 [**バージョン**](inf-version-section.md)
 

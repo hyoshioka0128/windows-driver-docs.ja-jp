@@ -1,9 +1,9 @@
 ---
 title: INF DDInstall.Services セクション
-description: 各モデルあたり DDInstall.Services セクションには、INF ファイルに追加の INF ライター定義セクションを参照する 1 つまたは複数の INF AddService ディレクティブが含まれています。
+description: 各モデルの DDInstall. Services セクションには、inf ファイルで追加の INF ライター定義セクションを参照する1つ以上の INF AddService ディレクティブが含まれています。
 ms.assetid: 30efb094-cc18-4c01-8851-4bc5dba1ae1d
 keywords:
-- INF DDInstall.Services セクションのデバイスとドライバーのインストール
+- INF DDInstall. Services セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: efb03b5b2f1243d6230941206526f119761f4861
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72c40dedf327b19ce636ab1ed0d04a00bb439537
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370585"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223224"
 ---
 # <a name="inf-ddinstallservices-section"></a>INF DDInstall.Services セクション
 
 
-各ごとのモデル<em>DDInstall</em>**します。サービス**セクションは、1 つ以上含まれています。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md) INF ライター定義の追加のセクションで、INF ファイルを参照します。
+各モデルの<em>Ddinstall がインストール</em>**します。Services**セクションには、inf ファイルで追加の inf ライター定義セクションを参照する1つ以上の[**Inf addservice ディレクティブ**](inf-addservice-directive.md)が含まれています。
 
-```ini
+```inf
 [install-section-name.Services] |
 [install-section-name.nt.Services] |
 [install-section-name.ntx86.Services] |
@@ -40,43 +40,43 @@ AddService=ServiceName,[flags],service-install-section
 [Needs=inf-section-name[,inf-section-name]...] 
 ```
 
-行うことができます、 <em>DDInstall</em>**します。サービス**に少なくとも 1 つのセクション**AddService**特定のドライバーのサービスが読み込まれる方法と、他のサービスまたはドライバーへの依存関係を制御するためのディレクティブ。 必要に応じて、イベント ログ サービスを指定することもできます。
+<em>Ddinstall</em>を提供でき**ます。サービス**セクション。特定のドライバーのサービスの読み込み方法とタイミング、および他のサービスやドライバーへの依存関係などを制御するための**addservice**ディレクティブが少なくとも1つあります。 必要に応じて、イベントログサービスを指定することもできます。
 
 ## <a name="entries"></a>エントリ
 
 <a href="" id="addservice-servicename--flags--service-install-section"></a>
 <a href="" id="------------------------------------------------event-log-install-section---eventlogtype---eventname-------"></a>
-**AddService =**<em>ServiceName</em>、\[*フラグ*\]**、**<em>サービス-インストール セクション</em>\[、*イベント ログ-インストール セクション*\[**、**\[*EventLogType* \] \[ **、**<em>EventName</em>\]\]\].\]  
-このディレクティブは、INF ライターの定義を参照*サービス-インストール セクション*と、おそらく、*イベント ログ-インストール セクション*別の場所、INF、デバイスのドライバーのファイルで覆われてこの*DDInstall*セクション。 詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
+**Addservice =**<em>ServiceName</em>、\[*flags*\]**、**<em>service-install-section</em>\[EventLogType、*イベントログ-セクション*\[**,**\[*EventLogType*\]\[**、**<em>EventName</em>\]EventName\]......\]\]  
+このディレクティブは、inf ライターで定義された*サービスのインストール*セクションを参照します。また、この*ddinstall*セクションでカバーされているデバイスのドライバーの inf ファイルの別の場所で、場合によっては、*イベントログのインストール*セクションを参照します。 詳細については、「 [**INF AddService ディレクティブ**](inf-addservice-directive.md)」を参照してください。
 
-<a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**DelService =**<em>ServiceName</em>\[**、**\[*フラグ*\]\[**、**\[ *EventLogType*\]\[**、**<em>EventName</em> \] \] \]...  
-このディレクティブは、対象のコンピューターから、以前にインストールされたサービスを削除します。 このディレクティブが使用される非常にまれです。 詳細については、次を参照してください。 [ **INF DelService ディレクティブ**](inf-delservice-directive.md)します。
+<a href="" id="delservice-servicename---flags----eventlogtype---eventname------"></a>**Delservice =**<em>ServiceName</em>\[**、**\[*flags*\]\[*EventLogType***,**<em>EventName</em>**,**\]、EventLogType\]、EventName\]...\]\[\[  
+このディレクティブは、以前にインストールされたサービスをターゲットコンピューターから削除します。 このディレクティブはほとんど使用されません。 詳細については、「 [**INF DelService ディレクティブ**](inf-delservice-directive.md)」を参照してください。
 
-<a href="" id="include-filename-inf--filename2-inf----"></a>**含める =**<em>filename</em>**.inf**\[**、**<em>filename2</em>**.inf**\]...  
-この省略可能なエントリでは、1 つまたは複数追加システムが指定した INF ファイルをこのデバイスをインストールするために必要なセクションが含まれているを指定します。 通常、このエントリが指定されている場合は、**必要がある**エントリ。
+<a href="" id="include-filename-inf--filename2-inf----"></a>**Include =**<em>filename</em>**. .inf**\[**,**<em>filename2</em>**.inf**\]...  
+この省略可能なエントリは、このデバイスをインストールするために必要なセクションを含む、システムが提供する追加の INF ファイルを1つ以上指定します。 このエントリが指定されている場合は、通常、**必要**なエントリです。
 
-詳細については、 **Include**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
+**インクルード**エントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf セクション名</em>\[**、**<em>inf セクション名</em>\].  
-この省略可能なエントリでは、このデバイスのインストール中に処理する必要があるセクションを指定します。 セクションは、通常、 <em>DDInstall</em>**します。サービス**セクションに記載されているシステム指定の INF ファイル内で、 **Include**エントリ。 ただし、内で参照されている任意のセクションがあります、 <em>DDInstall</em>**します。サービス**セクション。
+<a href="" id="needs-inf-section-name--inf-section-name----"></a>**必要な =**<em>inf-name</em>\[**,**<em>inf-name</em>\]...  
+この省略可能なエントリは、このデバイスのインストール中に処理する必要があるセクションを指定します。 通常、このセクションは<em>Ddinstall</em>**です。****インクルード**エントリに記載されている、システム提供の INF ファイル内の Services セクション。 ただし、 <em>Ddinstall</em>内で参照される任意のセクションを指定でき**ます。サービス**セクション。
 
-**必要がある**エントリを入れ子にすることはできません。 詳細については、**必要がある**エントリと、その使用に関する制限事項を参照してください。[デバイス ファイルのソースとターゲットの場所を指定する](specifying-the-source-and-target-locations-for-device-files.md)します。
+**必要**なエントリを入れ子にすることはできません。 **必要**なエントリとその使用に関する制限の詳細については、「[デバイスファイルのソースとターゲットの場所の指定](specifying-the-source-and-target-locations-for-device-files.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-<em>DDInstall</em>**します。サービス**のセクションでは、それに関連として同じプラットフォームとオペレーティング システムの装飾が必要[ ***DDInstall*** ](inf-ddinstall-section.md)セクション。 たとえば、<em>インストール セクション名</em>**.ntx86**セクションは、対応する必要が<em>インストール セクション名</em>**.ntx86 します。サービス**セクション。
+<em>Ddinstall</em>**。サービス**のセクションには、関連する[***ddinstall***](inf-ddinstall-section.md)セクションと同じプラットフォームとオペレーティングシステムの装飾が必要です。 たとえば、**ntx86**セクション<em>には</em>、対応する ntx86 という<em>名前</em>が付いています。**サービス**セクション。
 
-指定した*DDInstall* - 製造元でデバイス/モデルに固有のエントリでは、セクションを参照する必要があります*モデル*INF ファイルのセクション。 大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 <em>DDInstall</em>**します。サービス**クロスプラット フォーム対応の INF ファイルでセクション名。
+指定された*Ddinstall*セクションは、INF ファイルの "製造元別*モデル*" セクションのデバイス/モデル固有のエントリで参照されている必要があります。 正式な構文のステートメントに示されている*インストールセクション名*の大文字と小文字を区別しない拡張機能は、このような<em>ddinstall</em>に挿入でき**ます。** クロスプラットフォームの INF ファイルのサービスセクション名。
 
-詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能の使用方法の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-この例では、 <em>DDInstall</em>**します。サービス**のセクション、 **Ser_Inst**セクションの例を示した、 [ **INF *DDInstall*セクション**](inf-ddinstall-section.md)します。
+この例は、 <em>Ddinstall</em>を示して**います。** **Ser_Inst**セクションのサービスセクションは、 [**INF *ddinstall*セクション**](inf-ddinstall-section.md)の例として示されています。
 
-```ini
+```inf
 [Ser_Inst.Services]
 AddService=sermouse, 0x00000002, sermouse_Service_Inst,\
                 sermouse_EventLog_Inst 
@@ -101,9 +101,9 @@ AddService = mouclass,, mouclass_Service_Inst, mouclass_EventLog_Inst
 ; ...
 ```
 
-この例では、<em>インストール セクション名</em>**します。NT します。サービス**セクションと、そのサービスのインストール-セクション、INF ファイル、システムによって提供される WDM オーディオ デバイス/ドライバーの例を示した、 [ **INF *DDInstall*セクション**](inf-ddinstall-section.md).
+この例は、<em>インストールセクション名</em>を示して**います。R.**「 [**Inf *ddinstall* 」セクション**](inf-ddinstall-section.md)の例として、システムによって提供される WDM オーディオデバイス/ドライバーの inf ファイルにあるサービスセクションとそのサービスインストールセクション。
 
-```ini
+```inf
 [WDMPNPB003_Device.NT.Services]
 AddService = wdmaud,0x00000000,wdmaud_Service_Inst
 AddService = swmidi,0x00000000,swmidi_Service_Inst
@@ -136,7 +136,7 @@ ServiceBinary = %10%\system32\drivers\mssb16.sys
 %sndblst.SvcDesc%="WDM Sample Driver for SB16"
 ```
 
-参照してください[ **INF DDInstall.HW セクション**](inf-ddinstall-hw-section.md)の例について<em>DDInstall</em>**します。サービス**いくつかのセクションでは*サービス インストール*-セクションによって参照される、 [ **AddService** ](inf-addservice-directive.md)ディレクティブ。 PnP フィルター ドライバーのいずれかが含まれています。
+<em>Ddinstall</em>のその他の例については、「 [**INF DDINSTALL. HW」セクション**](inf-ddinstall-hw-section.md)を参照してください **。サービスセクション。** [**addservice**](inf-addservice-directive.md)ディレクティブによって参照される*サービスインストール*セクションがあります。 これには、PnP フィルタードライバーの1つが含まれます。
 
 ## <a name="see-also"></a>関連項目
 

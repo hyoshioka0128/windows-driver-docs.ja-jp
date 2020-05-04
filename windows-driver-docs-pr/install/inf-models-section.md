@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a78f7a024ed52f03866d794d746efe9af4578fb
-ms.sourcegitcommit: 631cd4a65d49a071596920d764eeb660ad25ce7f
+ms.openlocfilehash: 82192c109d14ff783586df81590281127983bdd6
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74953966"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223134"
 ---
 # <a name="inf-models-section"></a>INF Models セクション
 
@@ -26,7 +26,7 @@ ms.locfileid: "74953966"
 
 [製造元別*モデル*] セクションのエントリでは、初期ハードウェア ID で指定されたデバイスと互換性があり、同じドライバーによって制御されるモデルに対して、1つまたは複数の追加のデバイス id を指定することもできます。
 
-```ini
+```inf
 [models-section-name] |
 [models-section-name.TargetOSVersion]  (Windows XP and later versions of Windows)
 
@@ -41,7 +41,7 @@ device-description=install-section-name,[hw-id][,compatible-id...]
 
 
 <a href="" id="device-description"></a>*デバイス-説明*  
-インストールするデバイスを識別します。これは、表示文字の一意の組み合わせ、または[**INF 文字列セクション**](inf-strings-section.md)で定義されている **%** <em>strkey</em> **%** トークンとして表現されます。 デバイスの説明の最大文字数は LINE_LEN。
+インストールするデバイスを識別します。これは、表示文字の一意の組み合わせと**%** して、または[**INF 文字列セクション**](inf-strings-section.md)で定義されている<em>strkey</em> **%** トークンとして表現されます。 デバイスの説明の最大文字数は LINE_LEN。
 
 <a href="" id="install-section-name"></a>*install-section-name*  
 デバイス (および互換性のあるデバイスのモデル (存在する場合)) に使用する INF インストールセクションの非装飾名を指定します。 詳細については、「 [**INF *ddinstall* 」セクション**](inf-ddinstall-section.md)を参照してください。
@@ -49,11 +49,11 @@ device-description=install-section-name,[hw-id][,compatible-id...]
 <a href="" id="hw-id"></a>*hw id*  
 デバイスを識別するベンダー定義の[ハードウェア ID](hardware-ids.md)文字列を指定します。この文字列は、PnP マネージャーがこのデバイスの INF ファイルの一致を検索するために使用します。 このようなハードウェア ID には、次のいずれかの形式があります。
 
-<a href="" id="enumerator-enumerator-specific-device-id"></a>*列挙子\\列挙子-デバイス id*  
-は、1つの列挙子によって PnP マネージャーに報告される個々の PnP デバイスの一般的な形式です。 たとえば、`USB\VID_045E&PID_00B` は、USB バス上の Microsoft HID キーボードデバイスを識別します。 列挙子に応じて、このような仕様には、デバイスのハードウェアリビジョン番号を含めることもできます (たとえば、`PCI\VEN_1011&DEV_002&SUBSYS_00000000&REV_02`)。
+<a href="" id="enumerator-enumerator-specific-device-id"></a>*列挙\\子列挙子-デバイス id*  
+は、1つの列挙子によって PnP マネージャーに報告される個々の PnP デバイスの一般的な形式です。 たとえば、は`USB\VID_045E&PID_00B` 、USB バス上の Microsoft HID キーボードデバイスを識別します。 列挙子によっては、などのように、デバイスのハードウェアリビジョン番号を指定することも`PCI\VEN_1011&DEV_002&SUBSYS_00000000&REV_02`できます。
 
-<a href="" id="-enumerator-specific-device-id"></a> *\*列挙子-デバイス id*  
-デバイスが複数の列挙子によってサポートされていることをアスタリスク (\*) で示します。 たとえば、`*PNP0F01` は Microsoft のシリアルマウスを識別します。これには、`SERENUM\PNP0F01`と互換性のある id が指定されています。
+<a href="" id="-enumerator-specific-device-id"></a>*\*列挙子-デバイス id*  
+デバイスが複数の列挙\*子によってサポートされていることをアスタリスク () で示します。 たとえば、は`*PNP0F01` Microsoft のシリアルマウスを識別します。これには、と互換性`SERENUM\PNP0F01`のある id が指定されています。
 
 <a href="" id="device-class-specific-id"></a>*デバイスクラス固有 ID*  
 は、バスのハードウェア仕様で説明されている i/o バス固有の形式で、その種類の i/o バス上のすべての周辺機器のハードウェア Id を示します。
@@ -61,9 +61,9 @@ device-description=install-section-name,[hw-id][,compatible-id...]
 1つのデバイスに複数の*hw id*値を割り当てることができることに注意してください。 PnP マネージャーは、このような各*hw id*値を使用します。これらの値は通常、基になるバスによって子デバイスが列挙されるときに提供され、registry **Enum**分岐でそのような各デバイスのサブキーを作成します。 手動でインストールされたデバイスの場合、システムのセットアップコードは、それぞれの INF ファイルで指定されている*ハードウェア id*の値を使用して、このようなレジストリサブキーを作成します。
 
 <a href="" id="compatible-id"></a>*互換性-id*  
-互換性のあるデバイスを識別する、ベンダー定義の[互換性のある ID](compatible-ids.md)文字列を指定します。 [*モデル*] セクションのエントリには、任意の数の*互換性のある id*値を指定できます。各エントリは、次のコンマ ( **,** ) で区切られます。 このような互換性のあるすべてのデバイスまたはデバイスモデルは、初期の*hw id*で指定されたデバイスと同じドライバーによって制御されます。
+互換性のあるデバイスを識別する、ベンダー定義の[互換性のある ID](compatible-ids.md)文字列を指定します。 [*モデル*] セクションのエントリには、任意の数の*互換性のある id*値を指定できます。各エントリは、次のコンマ (**,**) で区切られます。 このような互換性のあるすべてのデバイスまたはデバイスモデルは、初期の*hw id*で指定されたデバイスと同じドライバーによって制御されます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
 各*モデル-セクション名*は、inf ファイルの[**inf 製造元セクション**](inf-manufacturer-section.md)に記載されている必要があります。 特定の製造元に対して INF ファイルをインストールするデバイス (およびドライバー) の数によっては、製造元ごとの*モデル*セクションに1つ以上のエントリが存在する場合があります。
@@ -76,7 +76,7 @@ INF ファイルを使用してインストールされたデバイスとドラ�
 
 *モデルセクション名*には、 *TargetOSVersion*装飾を含めることができます。 この装飾の詳細については、「 [**INF の製造元」セクション**](inf-manufacturer-section.md)、特に「解説」を参照してください。
 
-**重要**  Windows SERVER 2003 SP1 以降では、inf ファイルは、関連する inf*モデル*セクション名と共に、 **ntia64**または**ntamd64**プラットフォーム拡張機能を使用して、[inf の**製造元**] セクションの [*名前*] エントリを修飾し、非 x86 ターゲットオペレーティングシステムのバージョンを指定する必要があります。 これらのプラットフォーム拡張機能は、x86 ベースのターゲットオペレーティングシステムのバージョンまたは非 PnP ドライバーの INF ファイル (x64 ベースのアーキテクチャ用のファイルシステムドライバーの INF ファイルなど) の INF ファイルには必要ありません。 *モデル*セクション内の各エントリは、"*ドライバーノード*" と呼ばれることがあります。
+**重要**  Windows Server 2003 SP1 以降では、inf ファイルは、関連する inf モデル**セクション名**と共に、関連する inf*モデル*セクション名と共に、 **ntia64**または**ntamd64**プラットフォーム拡張機能を使用して、*モデル-セクション名*のエントリを装飾して、x86 以外のバージョンのオペレーティングシステムバージョンを指定する必要があります。 これらのプラットフォーム拡張機能は、x86 ベースのターゲットオペレーティングシステムのバージョンまたは非 PnP ドライバーの INF ファイル (x64 ベースのアーキテクチャ用のファイルシステムドライバーの INF ファイルなど) の INF ファイルには必要ありません。 *モデル*セクション内の各エントリは、"*ドライバーノード*" と呼ばれることがあります。
 
  
 
@@ -85,7 +85,7 @@ INF ファイルを使用してインストールされたデバイスとドラ�
 
 この例では、一部のデバイス/モデルに対して[***Ddinstall***](inf-ddinstall-section.md)セクションを定義して、システムマウスクラスインストーラーの INF ファイルのいくつかの代表的なエントリを含む、製造元別*モデル*のセクションを示します。
 
-```ini
+```inf
 [Manufacturer]
 %StdMfg%    =StdMfg         ; (Standard types)
 %MSMfg%     =MSMfg          ; Microsoft
@@ -108,7 +108,7 @@ INF ファイルを使用してインストールされたデバイスとドラ�
 
 [**Manufacturer**](inf-manufacturer-section.md)
 
-[**Strings**](inf-strings-section.md)
+[**文字列**](inf-strings-section.md)
 
  
 

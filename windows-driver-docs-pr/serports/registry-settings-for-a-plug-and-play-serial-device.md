@@ -3,17 +3,17 @@ title: PnP シリアル デバイス用のレジストリ設定
 description: PnP シリアル デバイス用のレジストリ設定
 ms.assetid: 57bd090a-20fe-41c6-b730-0479f6ae0982
 keywords:
-- シリアル ドライバー WDK、プラグ アンド プレイ デバイス
-- プラグ アンド プレイ シリアル デバイス WDK
-- シリアル デバイス WDK、プラグ アンド プレイ
+- Serial driver WDK、プラグアンドプレイデバイス
+- プラグアンドプレイシリアルデバイス WDK
+- シリアルデバイス WDK、プラグアンドプレイ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e60723543d8165daf522242b232913250b8ea986
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ccaee2b5098c67d149060a57a2d4eeafe1e9d09c
+ms.sourcegitcommit: 6b09412f7bf562f7c01ffa94ac44a3d0ea895e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382551"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086722"
 ---
 # <a name="registry-settings-for-a-plug-and-play-serial-device"></a>PnP シリアル デバイス用のレジストリ設定
 
@@ -21,56 +21,56 @@ ms.locfileid: "63382551"
 
 
 
-このトピックでは、プラグ アンド プレイ シリアル デバイスのシリアルが関数ドライバーとして使用するレジストリ設定について説明します。 これらの設定は、低レベル デバイス フィルター ドライバーとして 16550 UART と互換性のあるインターフェイスを必要とするデバイスのシリアルによっても使用します。
+このトピックでは、シリアルでプラグアンドプレイシリアルデバイスの関数ドライバーとして使用されるレジストリ設定について説明します。 また、シリアルは、16550 UART 互換インターフェイスを必要とするデバイスの下位レベルのデバイスフィルタードライバーとして、これらの設定を使用します。
 
-シリアルは、デバイスを追加するときに、これらのレジストリ エントリ値を照会します。 デバイスに固有のエントリの値が存在しない場合、シリアルはシリアル サービス値を使用します。
+シリアルは、デバイスを追加するときにこれらのレジストリエントリの値を照会します。 デバイス固有のエントリ値が存在しない場合、Serial はシリアルサービス値を使用します。
 
-次のレジストリ設定は、デバイスのプラグ アンド プレイのレジストリ キーの下です。
+次のレジストリ設定は、デバイスのプラグアンドプレイレジストリキーの下にあります。
 
 <a href="" id="portname--reg-sz-"></a>**PortName** (REG\_SZ)  
-デバイスの名前を指定します。 通常、デバイスの名前には COM<em>&lt;n&gt;、</em>場所 *&lt;n&gt;* COM ポートの番号からインストーラーを取得するには、 [COMポート データベース](com-port-database.md)します。 ただし、デバイスは、NULL 以外の任意の文字列に設定できます。 として、デバイスが構成されている場合、 [COM ポート](configuration-of-com-ports.md)、シリアル ポート名を使用して、デバイスのシンボリック リンクの名前を作成します。 既定値**PortName**空の文字列します。
+デバイスの名前を指定します。 通常、デバイスの名前は com<em>&lt;n&gt;</em>です。ここ* &lt;で&gt; 、n*は、インストーラーが[com ポートデータベース](com-port-database.md)から取得する com ポート番号です。 ただし、デバイスを NULL 以外の文字列に設定することはできます。 デバイスが[COM ポート](configuration-of-com-ports.md)として構成されている場合、シリアルはポート名を使用してデバイスのシンボリックリンク名を作成します。 **PortName**の既定値は空の文字列です。
 
 <a href="" id="identifier--reg-sz-"></a>**識別子**(REG\_SZ)  
-デバイスの名前を指定します。 サポート、**識別子**エントリの値は一部のレガシ PCMCIA デバイスとの互換性を提供します。 使用**識別子**は廃止され、Microsoft Windows 2000 と以降のドライバーでは使用しない必要があります。 詳細については、次を参照してください。、 **PortName**エントリの値。
+デバイスの名前を指定します。 **識別子**エントリ値のサポートは、一部のレガシ PCMCIA デバイスとの互換性のために用意されています。 **識別子**の使用は廃止されており、Microsoft Windows 2000 以降のドライバーでは使用できません。 説明については、 **PortName**エントリの値を参照してください。
 
-<a href="" id="multiportdevice--reg-dword-"></a>**MultiportDevice** (REG\_DWORD)  
-シリアル ポートがマルチポート デバイス上のデバイスであるかどうかを示すブール型のフラグを指定します。 場合**MultiportDevice** 0x00000000、シリアル ポートがスタンドアロン デバイス; マルチポート デバイスのシリアル ポートは、それ以外の場合、します。 既定値**MultiportDevice** 0x00000000 します。
+<a href="" id="multiportdevice--reg-dword-"></a>**Multiportdevice** (REG\_DWORD)  
+シリアルポートがマルチポートデバイス上のデバイスであるかどうかを示すブール型フラグを指定します。 **Multiportdevice**が0x00000000 の場合、シリアルポートはスタンドアロンデバイスです。それ以外の場合、シリアルポートはマルチポートデバイス上にあります。 **Multiportdevice**の既定値は0x00000000 です。
 
-<a href="" id="portindex--reg-dword-"></a>**PortIndex** (REG\_DWORD)  
-マルチポート デバイスのシリアル ポートのインデックス番号を指定します。 **インデックス**エントリの値は、ポートとは、ビットマップ、またはインデックス付きかどうかを指定します。 既定値**PortIndex** 0x00000000 します。
+<a href="" id="portindex--reg-dword-"></a>**Portindex** (REG\_DWORD)  
+マルチポートデバイスのシリアルポートのインデックス番号を指定します。 **インデックス付き**エントリの値は、ポートがビットマップ形式であるか、インデックスが作成されるかを指定します。 **Portindex**の既定値は0x00000000 です。
 
-<a href="" id="clockrate--reg-dword-"></a>**ClockRate** (REG\_DWORD)  
-UART のクロック速度を指定します。 既定値**ClockRate** 1,843,200 ヘルツです。
+<a href="" id="clockrate--reg-dword-"></a>**Clockrate** (REG\_DWORD)  
+UART のクロックレートを指定します。 **Clockrate**の既定値は1843200ヘルツです。
 
-<a href="" id="indexed--reg-dword-"></a>**インデックス付き**(REG\_DWORD)  
-マルチポート デバイスのポートがあるかどうかを示すブール フラグを指定します*ビットマップ*または*インデックス*します。 場合**インデックス**は、ポートのインデックスが 0 以外。 それ以外のポートはビットマップ。 **インデックス付き**と組み合わせて使用は、 **PortIndex**エントリの値。 既定値**インデックス**0x00000000 します。
+<a href="" id="indexed--reg-dword-"></a>**インデックス付き**(\_REG DWORD)  
+マルチポートデバイスのポートに*ビットマップ*または*インデックス*を作成するかどうかを示すブール値フラグを指定します。 **インデックス**が0以外の場合、ポートのインデックスが作成されます。それ以外の場合、ポートはビットマップになります。 **インデックス**は、 **portindex**エントリ値と組み合わせて使用されます。 **インデックス**の既定値は0x00000000 です。
 
-<a href="" id="disableport--reg-dword-"></a>**DisablePort** (REG\_DWORD)  
-デバイスを無効にするかどうかを指定するブール型のフラグ。 場合**DisablePort**が 0 以外の場合、デバイスはシリアルに無効には、それ以外の場合、デバイスを有効にします。 使用、 **DisablePort**エントリの値は廃止され、Windows 2000 およびそれ以降のドライバーでは使用しない必要があります。 Windows 2000 では、汎用的な手動メソッドを通じて、GUI のデバイス マネージャーを有効にし、デバイスを無効に提供します。 既定値**DisablePort** 0x00000000 します。 無効になっているデバイスにフラグを設定しないわけでは、デバイスが存在しないことに注意してください。 シリアルは、まだ無効になっているデバイスの存在を検出しようとします。 無効になっているように、デバイスが指定されて場合シリアルが状態を返します\_いいえ\_かかる\_デバイスへの応答、 **IRP\_MN\_開始\_デバイス**要求。 開始要求が失敗した後、プラグ アンド プレイ マネージャは、削除要求を送信します。
+<a href="" id="disableport--reg-dword-"></a>**Disableport** (REG\_DWORD)  
+デバイスを無効にするかどうかを指定するブール型のフラグ。 **Disableport**が0以外の場合、シリアルはデバイスを無効にします。それ以外の場合は、デバイスが有効になります。 **Disableport**エントリ値の使用は廃止されており、Windows 2000 以降のドライバーでは使用できません。 Windows 2000 では、デバイスを有効または無効にするためのデバイスマネージャーの GUI を使用して、汎用的な手動の方法を提供しています。 **Disableport**の既定値は0x00000000 です。 デバイスを無効としてフラグを設定しても、デバイスが存在しないということではないことに注意してください。 シリアルは、無効になっているデバイスの存在を検出しようとします。 デバイスが無効として指定されている\_場合\_、\_シリアルは、 **IRP\_\_\_** が発生したデバイスの開始要求に応答してそのようなデバイスがない状態を返します。 開始要求が失敗すると、プラグアンドプレイマネージャーが削除要求を送信します。
 
-<a href="" id="forcefifoenable--reg-dword-"></a>**ForceFifoEnable** (REG\_DWORD)  
-Fifo を使用するシリアルを強制するかどうかを示すブール フラグを指定します。 場合**ForceFifoEnable**が 0 以外の場合、Fifo を使用するシリアルが Fifo の存在を検出するかどうかに関係なく。 それ以外の場合、Fifo は、シリアルが検出できる場合にのみ使用します。 既定値**ForceFifoEnable**シリアル サービスの設定値です。 (シリアル サービスの既定値は、0x00000001 です)。
+<a href="" id="forcefifoenable--reg-dword-"></a>**Forcefion enable** (REG\_DWORD)  
+直列が Fifo を使用するように強制するかどうかを示すブール型のフラグを指定します。 **Forcefiが enable**が0以外の場合、直列が fifo の存在を検出できるかどうかに関係なく、fifo が使用されます。 それ以外の場合、Fifo は直列が検出できる場合にのみ使用されます。 **Forcefia enable**の既定値は、シリアルサービスに対して設定された値です。 (シリアルサービスの既定値は0x00000001 です)。
 
 <a href="" id="rxfifo--reg-dword-"></a>**RxFIFO** (REG\_DWORD)  
-シリアル ポートの割り込みをトリガーする FIFO の受信バイト数を指定します。 有効な値は、Serial.h ヘッダー ファイルで定義されている定数を参照してください、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でします。 既定値**RxFIFO**シリアル サービスの設定値です。 (シリアル サービスの既定値は 8 バイトです)。
+シリアルポートの割り込みをトリガーする receive FIFO のバイト数を指定します。 有効な値については、GitHub の[シリアルドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)で、serial .h ヘッダーファイルで定義されている定数を参照してください。 **RxFIFO**の既定値は、シリアルサービスに対して設定された値です。 (シリアルサービスの既定値は8バイトです)。
 
-<a href="" id="txfifo--reg-dword-"></a>**TxFIFO** (REG\_DWORD)  
-シリアル デバイス割り込みをトリガーする FIFO の送信バイト数を指定します。 有効な値は、Serial.h ヘッダー ファイルで定義されている定数を参照してください、[シリアル ドライバーのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=617962)GitHub でします。 既定値**TxFIFO**シリアル サービスの設定値です。 (シリアル サービスの既定値は、14 バイトです)。
+<a href="" id="txfifo--reg-dword-"></a>**Txfifo** (REG\_DWORD)  
+シリアルデバイスの割り込みをトリガーする、転送 FIFO のバイト数を指定します。 有効な値については、GitHub の[シリアルドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)で、serial .h ヘッダーファイルで定義されている定数を参照してください。 既定値の**Txfifo**は、シリアルサービスに対して設定された値です。 (シリアルサービスの既定値は14バイトです)。
 
 <a href="" id="maskinverted--reg-dword-"></a>**MaskInverted** (REG\_DWORD)  
-シリアル デバイスのハードウェア割り込み状態のレジスタの内容を反転するかどうかを示すブール フラグを指定します。 場合**MaskInverted** 0 以外の場合、割り込み状態のレジスタが反転されます。 それ以外の場合、割り込み状態レジスタではありませんが反転します。 既定値**MaskInverted** 0x00000000 します。
+シリアルデバイスハードウェアが割り込みステータスレジスタの内容を反転するかどうかを示すブールフラグを指定します。 **MaskInverted**が0以外の場合、割り込みステータスレジスタは反転されます。それ以外の場合、割り込みステータスレジスタは反転されません。 **MaskInverted**の既定値は0x00000000 です。
 
 <a href="" id="serialskipexternalnaming--reg-dword-"></a>**SerialSkipExternalNaming** (REG\_DWORD)  
-シリアルとしてデバイスを構成するかどうかを示すブール フラグを指定します、 [COM ポート](configuration-of-com-ports.md)します。 場合**SerialSkipExternalNaming**設定は、0x00000000 に、シリアルは COM ポートとして、デバイスを構成します。 それ以外の場合、シリアルがいないデバイスとして構成する COM ポート。 既定値**SerialSkipExternalNaming** 0x00000000 します。 COM ポートとして、シリアルがデバイスを構成する方法の詳細については、次を参照してください。[外部名前付けの COM ポート](external-naming-of-com-ports.md)します。
+シリアルによってデバイスが[COM ポート](configuration-of-com-ports.md)として構成されるかどうかを示すブール型のフラグを指定します。 **SerialSkipExternalNaming**が0x00000000 に設定されている場合、シリアルはデバイスを COM ポートとして構成します。それ以外の場合、シリアルはデバイスを COM ポートとして構成しません。 **SerialSkipExternalNaming**の既定値は0x00000000 です。 シリアルによってデバイスが COM ポートとして構成される方法の詳細については、「 [Com ポートの外部名前付け](external-naming-of-com-ports.md)」を参照してください。
 
 <a href="" id="serialrelinquishpowerpolicy--reg-dword-"></a>**SerialRelinquishPowerPolicy** (REG\_DWORD)  
-シリアルがシリアル デバイス スタックの電源ポリシーの所有者であるかどうかを示すブール型のフラグを指定します。 場合**SerialRelinquishPowerPolicy**は 0、シリアル電源ポリシー所有者は、シリアルはいない電源ポリシーの所有者。 既定値**SerialRelinquishPowerPolicy** 0x00000000 します。
+シリアルがシリアルデバイススタックの電源ポリシーの所有者であるかどうかを示すブール型のフラグを指定します。 **SerialRelinquishPowerPolicy**が0の場合、Serial は電源ポリシーの所有者です。それ以外の場合、Serial は電源ポリシーの所有者ではありません。 **SerialRelinquishPowerPolicy**の既定値は0x00000000 です。
 
-<a href="" id="share-system-interrupt--reg-dword-"></a>**システムの割り込みを共有**(REG\_DWORD)  
-システムをデバイスで使用される割り込みの共有を許可するかどうかを指定するブール型のフラグ。 場合**共有システムの割り込み**が 0 以外の場合、割り込みを共有できます。 それ以外の場合、割り込みを共有することはできません。 既定値**共有システムの割り込み**設定された値には、 **PermitShare**シリアル サービスのエントリの値。 (の既定のサービス値**PermitShare** 0x00000000)。
+<a href="" id="share-system-interrupt--reg-dword-"></a>**共有システム割り込み**(REG\_DWORD)  
+デバイスが使用する割り込みをシステムが共有することを許可するかどうかを指定するブール型のフラグです。 **共有システムの割り込み**が0以外の場合は、割り込みを共有できます。それ以外の場合は、割り込みを共有できません。 **共有システム割り込み**の既定値は、シリアルサービスの**PermitShare**エントリ値に設定された値です。 ( **PermitShare**の既定のサービス値は0x00000000 です)。
 
 <a href="" id="serialioresourcesindex--reg-dword-"></a>**SerialIoResourcesIndex** (REG\_DWORD)  
-シリアルを使用してデバイスのシリアル レジスタの I/O のアドレスを決定するリソースの部分的な記述子のインデックスを指定します。 既定値**SerialIoResourceIndex** 0x00000000 します。
+シリアル化によってデバイスのシリアルレジスタセットの i/o アドレスを決定するために使用される部分的なリソース記述子のインデックスを指定します。 **系列**の既定値は0x00000000 です。
 
  
 

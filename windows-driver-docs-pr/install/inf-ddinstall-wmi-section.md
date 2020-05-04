@@ -1,9 +1,9 @@
 ---
 title: INF DDInstall.WMI セクション
-description: INF DDInstall.WMI セクションには、ドライバーを提供する各 WMI クラスの特性を指定する 1 つまたは複数の WMIInterface ディレクティブが含まれています。
+description: INF DDInstall. WMI セクションには、ドライバーが提供する各 WMI クラスの特性を指定する、1つ以上のインターフェイスディレクティブが含まれています。
 ms.assetid: 8c4f6b2b-c2b4-4579-9dce-4436e041ebbc
 keywords:
-- INF DDInstall.WMI セクションのデバイスとドライバーのインストール
+- INF DDInstall. WMI セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f02b590e141faf4a96dc6aef12d4bafdd19cb15
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea23fc30240c2839742bff609d963556c306dd00
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370578"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223220"
 ---
 # <a name="inf-ddinstallwmi-section"></a>INF DDInstall.WMI セクション
 
 
-INF *DDInstall*.**WMI**セクションは、1 つ以上含まれています。 **WMIInterface**ディレクティブが、ドライバーを提供する各 WMI クラスの特性を指定します。
+INF *Ddinstall*。**Wmi**セクションには、ドライバーが提供する各 WMI クラスの特性を指定する、1つ以上の**インターフェイス**ディレクティブが含まれています。
 
-```ini
+```inf
 [install-section-name.WMI] |
 [install-section-name.nt.WMI] | 
 [install-section-name.ntx86.WMI] |
@@ -42,39 +42,39 @@ WMIInterface={WmiClassGUID},[flags,]WMI-class-section
 <a href="" id="wmiclassguid"></a>*WmiClassGUID*  
 WMI クラスを識別する GUID 値を指定します。
 
-<a href="" id="flags"></a>*フラグ*  
-次のビット フラグのいずれかを指定します。
+<a href="" id="flags"></a>*示す*  
+次のビットマスクフラグのいずれかを指定します。
 
 <a href="" id="0x00000001--scwmi-clobber-security-"></a>0x00000001 (SCWMI_CLOBBER_SECURITY)  
-場合設定すると、既存のセキュリティ記述子は INF ファイルで指定された 1 つに置き換え、レジストリのセキュリティ記述子が既に存在する場合があるとします。 ない場合、レジストリのセキュリティ記述子が既に存在する場合、既存のセキュリティ記述子は INF ファイルで指定された 1 つではなく使用されます。
+設定されていて、セキュリティ記述子が既にレジストリに存在する場合、既存のセキュリティ記述子は INF ファイルで指定されているものに置き換えられます。 設定されていない場合、およびセキュリティ記述子が既にレジストリに存在する場合は、INF ファイルで指定されているものではなく、既存のセキュリティ記述子が使用されます。
 
-<a href="" id="wmi-class-section"></a>*WMI-section クラス*  
-WMI クラスの特性を設定するためのディレクティブを含む INF ファイルのセクションを指定します。
+<a href="" id="wmi-class-section"></a>*WMI クラスセクション*  
+WMI クラスの特性を設定するためのディレクティブを含む INF ファイルセクションを指定します。
 
-内で、次のディレクティブを指定することができます、*セクション クラス-WMI-*:
+次のディレクティブは、 *WMI クラスセクション*内で指定できます。
 
-<a href="" id="security--security-descriptor-string-"></a>**Security="**<em>security-descriptor-string</em>**"**  
-レジストリに格納されているで指定された GUID に適用するセキュリティ記述子を指定します*WmiClassGUID*します。 このセキュリティ記述子には、クラスに関連付けられたアクセスのデータ ブロックするために必要なアクセス許可を指定します。 *セキュリティ記述子の文字列*値は、トークンの DACL を示す文字列 (**d:**) セキュリティ コンポーネント。
+<a href="" id="security--security-descriptor-string-"></a>**Security = "**<em>セキュリティ記述子-文字列</em>**"**  
+レジストリに格納され、 *WmiClassGUID*によって指定された GUID に適用されるセキュリティ記述子を指定します。 このセキュリティ記述子は、クラスに関連付けられたデータブロックにアクセスするために必要なアクセス許可を指定します。 *セキュリティ記述子文字列*の値は、DACL (**D:**) セキュリティコンポーネントを示すトークンを含む文字列です。
 
-1 つだけ**セキュリティ**エントリが存在することができます。 1 つ以上の場合**セキュリティ**エントリが存在する、WMI クラスのセキュリティが設定されていません。
+**セキュリティ**エントリは1つだけ存在できます。 複数の**セキュリティ**エントリが存在する場合は、WMI クラスにセキュリティが設定されていません。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-INF <em>DDInstall</em>**します。WMI**セクションは、Microsoft Windows Server 2003 およびそれ以降のバージョンのオペレーティング システムで使用します。
+INF <em>Ddinstall</em>**。WMI**セクションは、Microsoft Windows Server 2003 以降のバージョンのオペレーティングシステムで使用できます。
 
-セキュリティ記述子は、各 WMI GUID に関連付けられます。 Windows XP や以前のオペレーティング システム バージョンは、WMI の Guid の既定のセキュリティ記述子は、すべてのユーザーへのフル アクセスを許可します。 Windows Server 2003 と以降のバージョンでは、既定のセキュリティ記述子は管理者のみにアクセスできます。
+セキュリティ記述子は、すべての WMI GUID に関連付けられています。 Windows XP 以前のバージョンのオペレーティングシステムでは、WMI Guid の既定のセキュリティ記述子により、すべてのユーザーにフルアクセスが許可されます。 Windows Server 2003 以降のバージョンでは、既定のセキュリティ記述子により、管理者のみにアクセスが許可されます。
 
-既定の記述子を使用して、含めるたくない場合と、ドライバーには、WMI クラスが定義されている場合、 <em>DDInstall</em>**します。WMI**セクションは、レジストリに格納され、システムの既定の記述子をオーバーライドするセキュリティ記述子を指定します。
+ドライバーが WMI クラスを定義していて、既定の記述子を使用しない場合は、 <em>Ddinstall</em>を含め**ます。WMI**セクションでは、レジストリに格納されているセキュリティ記述子を指定し、システムの既定の記述子を上書きします。
 
-INF ファイルのセキュリティ記述子を指定する方法の詳細については、次を参照してください。[セキュリティで保護されたデバイスのインストールを作成する](creating-secure-device-installations.md)します。
+INF ファイルでセキュリティ記述子を指定する方法の詳細については、「[セキュリティで保護されたデバイスのインストールの作成](creating-secure-device-installations.md)」を参照してください。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-次の例は、1 つ<em>DDInstall</em>**します。WMI**を含む 2 つのセクション**WMIInterface**ディレクティブ。 各ディレクティブを WMI クラスを識別および指定、*セクション クラス-WMI-* クラス。
+次の例は、単一の<em>Ddinstall</em>を示して**います。** 2 つの Wmi**インターフェイス**ディレクティブを含む WMI セクション。 各ディレクティブは、WMI クラスを識別し、クラスの*wmi クラスセクション*を指定します。
 
-```ini
+```inf
 [InstallA.NT.WMI]
 WMIInterface = {99999999-4cf9-11d2-ba4a-00a0c9062910},,WMISecurity1
 WMIInterface = {99999998-4cf9-11d2-ba4a-00a0c9062910},1,WMISecurity2

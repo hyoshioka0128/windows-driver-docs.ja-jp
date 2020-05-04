@@ -1,9 +1,9 @@
 ---
 title: INF Ini2Reg ディレクティブ
-description: Ini2Reg ディレクティブでは、レジストリに行または指定された INI ファイルからセクションを移動します。 1 つまたは複数の名前付きセクションを参照します。 これを作成または指定したキーの下で 1 つまたは複数の値のエントリを置き換えます。
+description: Ini2Reg ディレクティブは、指定された INI ファイルの行またはセクションがレジストリに移動される1つ以上の名前付きセクションを参照します。 これにより、指定されたキーの下に1つ以上の値エントリが作成または置換されます。
 ms.assetid: 82c7ffb5-7e49-4256-b10a-d7be5df2336a
 keywords:
-- INF Ini2Reg ディレクティブ デバイスとドライバーのインストール
+- INF Ini2Reg ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 500f422a91baa313947e5d4e2127857b89eba7ea
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 45c9d90b7beac0e813b27722e59b4c81b94012dd
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365844"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223286"
 ---
 # <a name="inf-ini2reg-directive"></a>INF Ini2Reg ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-**Ini2Reg**ディレクティブでは、レジストリに行または指定された INI ファイルからセクションを移動します。 1 つまたは複数の名前付きセクションを参照します。 これを作成または指定したキーの下で 1 つまたは複数の値のエントリを置き換えます。
+**Ini2Reg**ディレクティブは、指定された INI ファイルの行またはセクションがレジストリに移動される1つ以上の名前付きセクションを参照します。 これにより、指定されたキーの下に1つ以上の値エントリが作成または置換されます。
 
-```ini
+```inf
         [
         DDInstall
         ] | 
@@ -45,63 +45,63 @@ ms.locfileid: "67365844"
 Ini2Reg=ini-to-registry-section[,ini-to-registry-section]...
 ```
 
-セクションによって参照される各名前付き、 **Ini2Reg**ディレクティブは、次の形式。
+**Ini2Reg**ディレクティブによって参照される名前付きセクションには、次の形式があります。
 
-```ini
+```inf
 [ini-to-registry-section]
  
 ini-file,ini-section,[ini-key],reg-root,subkey[,flags]
 ...
 ```
 
-*セクション レジストリ ini* INF ライター決定エントリの数をそれぞれ個別の行に持つことができます。
+*Ini からレジストリへのセクション*には、任意の数のエントリ (それぞれ別の行) を指定できます。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="ini-file"></a>*ini ファイル*  
-ソース メディアに、INI ファイルの名前を指定します。 としてこの値を表すことが、 *filename*または % として*strkey*% トークンで定義されている、 [**文字列**](inf-strings-section.md) INF ファイルのセクション。
+<a href="" id="ini-file"></a>*ini-ファイル*  
+ソースメディアで提供される INI ファイルの名前を指定します。 この値は、*ファイル名*として、または INF ファイルの[**文字列**](inf-strings-section.md)セクションで定義されている%*strkey*% token として表すことができます。
 
-<a href="" id="ini-section"></a>*ini セクション*  
-コピーするレジストリ情報が含まれる指定された INI ファイル内のセクションの名前を指定します。
+<a href="" id="ini-section"></a>*ini-セクション*  
+コピーするレジストリ情報を含む、指定した INI ファイル内のセクションの名前を指定します。
 
-<a href="" id="ini-key"></a>*ini-key*  
-INI ファイル、レジストリにコピーするには、キーの名前を指定します。 この値を省略した場合、全体*ini セクション*が指定されたレジストリに転送される*サブキー*します。
+<a href="" id="ini-key"></a>*ini-キー*  
+レジストリにコピーする INI ファイル内のキーの名前を指定します。 この値を省略した場合、 *ini セクション*全体が指定されたレジストリ*サブキー*に転送されます。
 
-<a href="" id="reg-root"></a>*レジストリ ルート*  
-このエントリで指定されたその他の値のレジストリ ツリーのルートを識別します。 詳しくは、リファレンスを参照してください、 [ **AddReg ディレクティブ**](inf-addreg-directive.md)します。
+<a href="" id="reg-root"></a>*reg-ルート*  
+このエントリに指定されている他の値のレジストリツリーのルートを識別します。 詳細については、 [**AddReg ディレクティブ**](inf-addreg-directive.md)のリファレンスを参照してください。
 
 <a href="" id="subkey"></a>*サブキー*  
-値を受け取るサブキーを指定 % として表される*strkey*% のトークンで定義されている、 [**文字列**](inf-strings-section.md)セクション、INF のか、明示的なレジストリ パス (<em>key1</em> **\\** <em>key2</em> **\\** <em>key3</em>...) から、指定されました。*reg ルート*します。
+値を受け取るサブキーを識別します。これは、INF の[**文字列**](inf-strings-section.md)セクションで定義された%*strkey*% トークン、または指定された*reg ルート*からの明示的なレジストリパス (<em>key1</em>**\\**<em>key2</em>**\\**<em>key3</em>...) として表現されます。
 
-<a href="" id="flags"></a>*フラグ*  
-転送後に指定された情報をレジストリにや (ビット 1) で次のように、既存のレジストリ情報を上書きするかどうか、INI ファイルを処理する方法 (ビット 0) で指定します。
+<a href="" id="flags"></a>*示す*  
+次のように、指定された情報をレジストリに転送した後、またはビット1で既存のレジストリ情報を上書きするかどうかにかかわらず、INI ファイルを処理する方法をビット0で指定します。
 
-<a href="" id="bit-zero---0"></a>ビット 0 = **0**  
-レジストリにコピーした後で、INI ファイルから指定された情報を削除しないでください。 既定値です。
+<a href="" id="bit-zero---0"></a>ビットゼロ = **0**  
+指定された情報をレジストリにコピーした後は、INI ファイルから削除しないでください。 既定値です。
 
-<a href="" id="bit-zero---1"></a>ビット 0 = **1**  
-レジストリに移動した後は、INI ファイルから指定された情報を削除します。
+<a href="" id="bit-zero---1"></a>ビットゼロ = **1**  
+指定された情報をレジストリに移動した後、INI ファイルから削除します。
 
 <a href="" id="bit-one---0"></a>ビット 1 = **0**  
-レジストリで指定したサブキーが既に存在する場合では、これに INI が指定した情報は転送しないで*サブキー*します。 それ以外の場合、指定された作成*サブキー*この INI が指定した情報としてその値のエントリでレジストリにします。 既定値です。
+指定したサブキーがレジストリに既に存在する場合は、INI によって指定された情報をこの*サブキー*に転送しないでください。 それ以外の場合は、この INI が指定した情報を値のエントリとして使用して、指定された*サブキー*をレジストリに作成します。 既定値です。
 
 <a href="" id="bit-one---1"></a>ビット 1 = **1**  
-レジストリで指定したサブキーが存在する場合は、INI が指定した情報でその値のエントリを置き換えます。
+指定したサブキーがレジストリに既に存在する場合は、その値のエントリを INI によって指定された情報に置き換えます。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-**Ini2Reg**ディレクティブは、正式な構文のステートメントで次のセクションのいずれかで無効です。 このディレクティブは、INF ライター定義のセクションで参照されているは有効ではまた、 [ **AddInterface** ](inf-addinterface-directive.md)ディレクティブまたはで参照されている、 [ **InterfaceInstall32**](inf-interfaceinstall32-section.md)セクション。
+**Ini2Reg**ディレクティブは、正式な構文ステートメントに示されているいずれかのセクションで有効です。 このディレクティブは、 [**Addinterface**](inf-addinterface-directive.md)ディレクティブによって参照されるか、 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)セクションで参照される、INF ライターで定義されたセクションでも有効です。
 
-INF ファイルにはする必要がありますが含まれていない場合は、INF ファイルを使用するには、Windows XP および以降のバージョンの Windows デバイスをインストールすると、 **Ini2Reg**ディレクティブ。 INF ファイルが含まれている**Ini2Reg**ディレクティブに合格しない["Windows 用に設計されています"のロゴ テスト](https://docs.microsoft.com/windows-hardware/drivers)、デジタル署名は表示されず、そのため、Windows によって信頼されます (を参照してください[方法Windows ドライバーを選択します。](how-setup-selects-drivers.md))。
+Windows XP 以降のバージョンの Windows にデバイスをインストールするために INF ファイルが使用されている場合、INF ファイルに**Ini2Reg**ディレクティブを含めることはできません。 **Ini2Reg**ディレクティブが含まれている INF ファイルは、 ["Windows 用に設計" のロゴテスト](https://docs.microsoft.com/windows-hardware/drivers)に合格しません。デジタル署名を受信せず、windows によって信頼されないことになります (「 [Windows がドライバーを選択する方法](how-setup-selects-drivers.md)」を参照してください)。
 
-各*セクション レジストリ ini*名は、INF ファイルに一意である必要があります。 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各 *.ini-レジストリセクション*名は、INF ファイルに対して一意である必要があります。 各 INF ライターで作成されたセクション名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-完全なパスを提供する、INF、指定された*ini ファイル*配布メディアの次のいずれかの。
+INF は、次のいずれかの方法で、配布メディアに指定された*ini ファイル*の完全なパスを提供します。
 
--   使用して、IHV と OEM 提供の INF ファイルで、 [ **SourceDisksNames** ](inf-sourcedisksnames-section.md)と、おそらく[ **SourceDisksFiles** ](inf-sourcedisksfiles-section.md)にこの INF セクション配布メディアのルート ディレクトリ (またはディレクトリ) ではない各名前付きのソース ファイルの完全なパスを明示的に指定します。
--   1 つまたは複数追加 INF ファイルで特定の指定した INF システムが指定したファイルの**LayoutFile**内のエントリ、 [**バージョン**](inf-version-section.md) INF ファイルのセクション。
+-   IHV/OEM が提供する INF ファイルで、この INF の[**Sourcedisksnames**](inf-sourcedisksnames-section.md)セクションと (場合によっては) [**Sourcedisksnames**](inf-sourcedisksfiles-section.md)セクションを使用して、配布メディアのルートディレクトリ (またはディレクトリ) にない各名前付きソースファイルの完全パスを明示的に指定します。
+-   システムが提供する INF ファイルで、1つまたは複数の追加の INF ファイルを指定します。これは、INF ファイルの[**バージョン**](inf-version-section.md)セクションにある**layoutfile**エントリで確認できます。
 
 ## <a name="see-also"></a>関連項目
 
@@ -114,7 +114,7 @@ INF ファイルにはする必要がありますが含まれていない場合�
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
+[***DDInstall *。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 

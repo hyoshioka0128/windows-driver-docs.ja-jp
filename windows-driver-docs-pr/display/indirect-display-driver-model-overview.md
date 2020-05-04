@@ -4,12 +4,12 @@ description: 間接ディスプレイドライバーモデルは、従来の GPU
 ms.assetid: E2E64500-5F99-42A7-8945-B496026EA142
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 75b124798a900a4b185975f582cf5dc79e64a9e2
-ms.sourcegitcommit: 7135ca169cc274543fbe170330c054ee18573134
+ms.openlocfilehash: c319e4a330fe5c0bfccd40af2cdd4686a08a8874
+ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80367628"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104616"
 ---
 # <a name="indirect-display-driver-model-overview"></a>間接的な Display Driver Model の概要
 
@@ -38,7 +38,7 @@ ms.locfileid: "80367628"
 
 間接表示ドライバーは、カーネルモードコンポーネントがサポートされていないユーザーモードのみのモデルであるため、ドライバーは、デスクトップイメージを処理するために任意の DirectX API を使用できます。 実際、IddCx は DirectX サーフェイスでエンコードするデスクトップイメージを提供します。
 
-  間接ディスプレイドライバーは、複数の Windows プラットフォームで使用できるようにユニバーサル windows ドライバーとして構築する必要がある**ことに注意**してください。
+**注**  間接ディスプレイドライバーは、複数の windows プラットフォームで使用できるように、ユニバーサル windows ドライバーとしてビルドする必要があります。
 
  
 
@@ -46,7 +46,8 @@ ms.locfileid: "80367628"
 
 次のセクションでは、間接ディスプレイドライバーモデルについて説明します。
 
-[IddCx オブジェクト](iddcx-objects.md)
+[IddCx オブジェクト](iddcx-objects.md)  
+[デバッグ](indirect-display-debugging.md)
  
 ## <a name="sample-code"></a>サンプル コード
 

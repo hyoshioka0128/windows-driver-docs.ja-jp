@@ -3,12 +3,12 @@ title: WinDbg Preview-リモート、プロセスサーバー、およびダン�
 description: ここでは、WinDbg preview デバッガーを使用して、リモート、プロセスサーバー、およびダンプファイルセッションを開始する方法について説明します。
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1328d6f2d7d72469474292f529f186d320260f9b
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: 1a204734b8a2dcaccfc9be1306ca3bcd763838e8
+ms.sourcegitcommit: 44bccc9788690ae636b17d7d1cc576b8a17c9916
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258612"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81679219"
 ---
 # <a name="windbg-preview---start-a-remote-process-server-and-dump-file-session"></a>WinDbg プレビュー-リモート、プロセスサーバー、ダンプファイルセッションの開始
 
@@ -24,7 +24,7 @@ ms.locfileid: "76258612"
 
 リモートデバッグには、2つの異なる場所で実行される2つのデバッガーが含まれます。 デバッグを実行するデバッガーは、デバッグサーバーと呼ばれます。 デバッグクライアントと呼ばれる2番目のデバッガーは、リモートの場所からデバッグセッションを制御します。 リモートセッションを確立するには、まずデバッグサーバーをセットアップしてから、デバッグクライアントを使用してそれに接続する必要があります。
 
-リモートセッションの詳細については、「 [WinDbg を使用したリモートデバッグ](remode-debugging-using-windbg.md)」を参照してください。
+リモートセッションの詳細については、「 [WinDbg を使用したリモートデバッグ](remote-debugging-using-windbg.md)」を参照してください。
 
 ## <a name="process-debug-server"></a>プロセスデバッグサーバー
 
@@ -40,6 +40,6 @@ ms.locfileid: "76258612"
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

@@ -1,9 +1,9 @@
 ---
 title: INF AddProperty ディレクティブ
-description: AddProperty ディレクティブは、デバイス インスタンス、デバイス セットアップ クラスをデバイス インターフェイス クラス、またはデバイスのインターフェイスに設定されているデバイスのプロパティを変更する 1 つまたは複数の INF ファイルでセクションを参照します。
+description: AddProperty ディレクティブは、デバイスインスタンス、デバイスセットアップクラス、デバイスインターフェイスクラス、またはデバイスインターフェイスに設定されているデバイスプロパティを変更する1つ以上の INF ファイルセクションを参照します。
 ms.assetid: 8fcb1355-f13d-4d96-aa73-62a094a52267
 keywords:
-- INF AddProperty ディレクティブ デバイスとドライバーのインストール
+- INF AddProperty ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,19 +12,19 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dba13879b6abf665e527858b34da41b5312d4273
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5b91ae3fbc4c7b2164499e5a121658523a0c47f0
+ms.sourcegitcommit: ea42499bb6c405abaa8b1093afa741cd3910da66
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385931"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619776"
 ---
 # <a name="inf-addproperty-directive"></a>INF AddProperty ディレクティブ
 
 
-**AddProperty**ディレクティブを変更する 1 つまたは複数の INF ファイルでセクションを参照して、[デバイス プロパティ](device-properties.md)デバイス インスタンスの場合に設定されている、[デバイス セットアップ クラス](device-setup-classes.md)、 [デバイス インターフェイス クラス](device-interface-classes.md)、またはデバイスのインターフェイス。
+**Addproperty**ディレクティブは、デバイスインスタンス、[デバイスセットアップクラス](device-setup-classes.md)、[デバイスインターフェイスクラス](device-interface-classes.md)、またはデバイスインターフェイスに設定されている[デバイスプロパティ](device-properties.md)を変更する1つ以上の INF ファイルセクションを参照します。
 
-```ini
+```inf
 [DDInstall] |
 [DDInstall.nt] |
 [DDInstall.ntx86] |
@@ -52,45 +52,47 @@ AddProperty=add-property-section[,add-property-section]...  (Windows Vista and l
 ...
 ```
 
-各*追加プロパティ セクション*以下を実行するエントリがあることができます。
+各*プロパティセクション*には、次の操作を行うためのエントリを含めることができます。
 
--   デバイスのプロパティを追加し、プロパティの値を初期化します。
--   既存のデバイス プロパティの値を変更します。
+-   デバイスプロパティを追加し、プロパティの値を初期化します。
+-   既存のデバイスプロパティの値を変更します。
 
-*追加プロパティ セクション*によって参照される、 **AddProperty**ディレクティブは、次の形式。
+**Addproperty**ディレクティブによって参照される*追加のプロパティセクション*には、次の形式があります。
 
-```ini
+```inf
 [add-property-section]
 (property-name, , , [flags], value]) | 
 ({property-category-guid}, property-pid, type, [flags], value)
 ...
 ```
 
-追加のプロパティ セクションでは、任意の数を持つことができます*プロパティ名*エントリまたは*プロパティ guid*項目と、それぞれ別々 の行にします。
+[プロパティの追加] セクションには、任意の数の*プロパティ名*エントリまたは*プロパティ guid*エントリを含めることができます。それぞれの行は別個の行にあります。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="property-name"></a>*property-name*  
-次のプロパティのいずれかのインスタンスの名前を表す、デバイス[ドライバー パッケージ](driver-packages.md)プロパティ。
+<a href="" id="property-name"></a>*プロパティ名*  
+デバイスインスタンス[ドライバーパッケージ](driver-packages.md)のプロパティを表す、次のプロパティ名のいずれかです。
 
 -   **DeviceModel**
 -   **DeviceVendorWebsite**
 -   **DeviceDetailedDescription**
--   **DeviceDocumentationLink**
+-   **Devicedocumentation のリンク**
 -   **DeviceIcon**
 -   **DeviceBrandingIcon**
 
-<a href="" id="property-category-guid"></a>*property-category-guid*  
-プロパティのカテゴリを識別する GUID 値。 GUID 値は、デバイスのインスタンスのプロパティのカテゴリのいずれかを示すシステム定義の GUID を指定できます、[デバイス セットアップ クラス](device-setup-classes.md)、[デバイス インターフェイス クラス](device-interface-classes.md)、またはデバイスのインターフェイス。 同じ GUID 値を持つすべてのプロパティは、同じカテゴリのメンバーです。 これらのプロパティのカテゴリが定義されている*Devpkey.h*します。
+カスタムデバイスアイコンの追加の詳細については、「[デバイスのアイコンの提供](providing-vendor-icons-for-the-shell-and-autoplay.md)」を参照してください。
 
-GUID 値には、カスタム プロパティのカテゴリを識別する GUID 値をカスタムことができます。
+<a href="" id="property-category-guid"></a>*プロパティ-カテゴリ-guid*  
+プロパティカテゴリを識別する GUID 値。 GUID 値には、デバイスインスタンス、デバイス[セットアップクラス](device-setup-classes.md)、[デバイスインターフェイスクラス](device-interface-classes.md)、またはデバイスインターフェイスのプロパティカテゴリの1つを識別するシステム定義の guid を指定できます。 同じ GUID 値を持つすべてのプロパティは、同じカテゴリのメンバーです。 これらのプロパティカテゴリは、 *Devpkey*で定義されています。
 
-<a href="" id="property-pid"></a>*プロパティの pid*  
-プロパティの識別子で示されるプロパティのカテゴリ内の特定のプロパティを示す、*プロパティ カテゴリの guid*値。 内部システム上の理由から、プロパティの識別子が 2 つ以上である必要があります。
+GUID 値には、カスタムプロパティカテゴリを識別するカスタム GUID 値を指定することもできます。
 
-<a href="" id="type"></a>型  
-数値、10 進数または 16 進数の形式での[プロパティ データ型識別子](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))プロパティで指定されている、*プロパティ カテゴリの guid*値と*プロパティ pid*値。 次のオプションのみ[**基本データ型**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))はサポートされています。
+<a href="" id="property-pid"></a>*プロパティ-pid*  
+プロパティカテゴリ内の特定のプロパティを示すプロパティ識別子。このプロパティは、*カテゴリ guid*値によって示されます。 内部システムの理由により、プロパティ識別子は2以上である必要があります。
+
+<a href="" id="type"></a>各種  
+プロパティ- *category-guid*値および*プロパティ-pid*値で指定されたプロパティの[データ型識別子](https://docs.microsoft.com/previous-versions/ff541476(v=vs.85))の、10進数形式または16進数形式の数値。 次の[**基本データ型**](https://docs.microsoft.com/previous-versions/ff537793(v=vs.85))のみがサポートされています。
 
 -   DEVPROP_TYPE_STRING
 -   DEVPROP_TYPE_STRING_LIST
@@ -98,50 +100,50 @@ GUID 値には、カスタム プロパティのカテゴリを識別する GUID
 -   DEVPROP_TYPE_BOOLEAN
 -   DEVPROP_TYPE_UINT32
 
-たとえば、DEVPROP_TYPE_STRING データ型の 10 進数の値は 18 (0x00000012) と DEVPROP_TYPE_STRING_LIST データ型の 10 進値は 2066 (0x00002012)。
+たとえば、DEVPROP_TYPE_STRING データ型の10進値は 18 (0x00000012) で、DEVPROP_TYPE_STRING_LIST データ型の10進値は 2066 (0x00002012) です。
 
-<a href="" id="flags"></a>*フラグ*  
-オプションに 16 進数の値は、次の追加操作を制御するフラグのビットごとの OR:
+<a href="" id="flags"></a>*示す*  
+追加操作を制御する次のフラグのビットごとの OR である、省略可能な16進値。
 
 <a href="" id="0x00000001--flg-addproperty-noclobber--"></a>**0x00000001** (FLG_ADDPROPERTY_NOCLOBBER)   
-値エントリの値が既存のプロパティ値を置換することを防止するフラグ。 ドライバー開発者がプロパティをオーバーライドすることを加えるかどうか**Include**と**必要がある**ディレクティブ、ライターは、そのプロパティには、このフラグを指定する必要があります。 これは、Windows によって参照されている INF セクションを処理するため**Include**と**必要がある**ディレクティブ、を含むINFセクション内の他のすべてのディレクティブを処理した後Windows**Include**と**必要がある**ディレクティブ。
+値のエントリ値によって既存のプロパティ値が置換されないようにするフラグ。 **インクルード**および**必要**なディレクティブを使用してプロパティをオーバーライドできるようにする場合、ライターはそのプロパティに対してこのフラグを指定する必要があります。 これは、 **windows が**インクルードおよび**必要**なディレクティブを含む inf セクション内の他のすべてのディレクティブを処理した後に、 **include** **ディレクティブに**よって参照されている inf セクションを windows が処理するためです。
 
 <a href="" id="0x00000002--flg-addproperty-overwriteonly--"></a>**0x00000002** (FLG_ADDPROPERTY_OVERWRITEONLY)   
-指定したプロパティが既に存在する場合にのみ、値のエントリの値にプロパティ値を設定するフラグ。
+指定したプロパティが既に存在する場合にのみ、プロパティ値を値のエントリ値に設定するフラグ。
 
 <a href="" id="0x00000004--flg-addproperty-append--"></a>**0x00000004** (FLG_ADDPROPERTY_APPEND)   
-既存のプロパティの値のエントリの値に追加されるフラグは文字列値です。 このフラグは、プロパティのデータ型が DEVPROP_TYPE_STRING_LIST である場合にのみ有効です。 指定された文字列は、指定された文字列が既に既存の文字列値である場合、既存のプロパティの文字列値には追加されません。
+既存のプロパティ文字列値の値エントリ値を追加するフラグ。 このフラグは、プロパティのデータ型が DEVPROP_TYPE_STRING_LIST 場合にのみ有効です。 指定された文字列が既存の文字列値に既に存在する場合、指定された文字列は既存のプロパティ文字列値に追加されません。
 
 <a href="" id="0x00000008--flg-addproperty-or-"></a>**0x00000008** (FLG_ADDPROPERTY_OR)  
-既存のプロパティ値の値のエントリの値のビットごとの OR を実行するフラグ。 このフラグは、プロパティのデータ型が DEVPROP_TYPE_UINT32 である場合にのみ有効です。
+値エントリ値のビットごとの OR を、既存のプロパティ値との間で実行するフラグ。 このフラグは、プロパティのデータ型が DEVPROP_TYPE_UINT32 場合にのみ有効です。
 
 <a href="" id="0x00000010--flg-addproperty-and-"></a>**0x00000010** (FLG_ADDPROPERTY_AND)  
-既存のプロパティ値の値のエントリの値のビットごとの AND を実行するフラグ。 このフラグは、プロパティのデータ型が DEVPROP_TYPE_UINT32 である場合にのみ有効です。
+値エントリ値のビットごとの AND を、既存のプロパティ値との間で実行するフラグ。 このフラグは、プロパティのデータ型が DEVPROP_TYPE_UINT32 場合にのみ有効です。
 
-<a href="" id="value"></a>*値*  
-追加操作を使用してプロパティのデータ型との値によって、プロパティの値を変更する値、*フラグ*エントリ。
+<a href="" id="value"></a>*value*  
+プロパティのデータ型および*flags*エントリの値に応じて、プロパティ値を変更するために追加操作が使用する値。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**AddProperty**ディレクティブを使用して、デバイスのシステム定義プロパティ、またはカスタムのデバイス プロパティを変更することができます。 このディレクティブは、上記の正式な構文のステートメントで次のセクションのいずれかで指定できます。
+**Addproperty**ディレクティブは、システム定義のデバイスプロパティまたはカスタムデバイスプロパティを変更するために使用できます。 このディレクティブは、上記の仮構文ステートメントに示されているいずれかのセクションの下で指定できます。
 
-各*追加プロパティ セクション*名は、INF ファイル内で一意である必要がありますが、1 つ以上のセクションを参照できます**AddProperty**同じ INF ファイルでディレクティブ。 各セクション名が記載されているセクション名を定義する一般的な規則に従う必要があります[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*追加プロパティセクション*の名前は、inf ファイル内で一意である必要がありますが、同じ inf ファイル内の複数の**addproperty**ディレクティブでセクションを参照することはできます。 各セクション名は、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」で説明されているセクション名を定義するための一般的な規則に従う必要があります。
 
-詳細については、INF を使用する方法についての**AddProperty**ディレクティブを参照してください[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
+INF **Addproperty**ディレクティブの使用方法の詳細については、「 [Inf addproperty ディレクティブと Inf Delproperty ディレクティブの使用](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-追加のプロパティ セクションの次の例には、2 つの行エントリが含まれています。 最初の行エントリのセット、 **DeviceModel**プロパティ名、および 2 番目の行エントリをカスタム プロパティ キー GUID を指定することによってカスタム デバイス プロパティを設定します。
+Add property セクションの次の例には、2つの行エントリが含まれています。最初の行のエントリは、 **DeviceModel**プロパティを名前で設定し、2行目のエントリはカスタムプロパティキー GUID を指定することによってカスタムデバイスプロパティを設定します。
 
-最初の行が含まれています、*プロパティ名*エントリの値"DeviceModel"および*値*エントリの値「サンプル デバイス モデル名」。
+最初の行には、*プロパティ名*のエントリ値 "DeviceModel" と*値*のエントリ値 "サンプルデバイスモデル名" が含まれています。
 
-2 番目の行エントリは、カスタム プロパティのカテゴリのカスタム プロパティを設定します。 プロパティのカテゴリの guid エントリの値は"c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e"とプロパティ識別子のエントリの値は「2」です。
+2行目のエントリは、カスタムプロパティカテゴリのカスタムプロパティを設定します。 プロパティ-category-guid エントリの値は "c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e" で、プロパティ識別子のエントリ値は "2" です。
 
-省略可能な*フラグ*エントリの値が存在しないと、型エントリの値が「18」(DEVPROP_TYPE_STRING)。 値のエントリの値は「プロパティが 1 の文字列値」
+省略可能な*フラグ*エントリの値が存在せず、型エントリの値が "18" (DEVPROP_TYPE_STRING) です。 値のエントリ値は、"プロパティ1の文字列値" です。
 
-```ini
+```inf
 [SampleAddPropertySection]
 DeviceModel,,,,"Sample Device Model Name"
 {c22189e4-8bf3-4e6d-8467-8dc6d95e2a7e}, 2, 18,, "String value for property 1"

@@ -3,39 +3,37 @@ title: KSNODETYPE\_PEAKMETER
 description: KSNODETYPE\_PEAKMETER
 ms.assetid: 11c886eb-dd63-44dd-9bca-dd19a8dd6948
 keywords:
-- KSNODETYPE_PEAKMETER オーディオ デバイス
+- KSNODETYPE_PEAKMETER オーディオデバイス
 topic_type:
 - apiref
 api_name:
 - KSNODETYPE_PEAKMETER
 api_type:
 - NA
-ms.date: 11/28/2017
+ms.date: 04/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a49e0580d4525ec9aef7d98f9da4cbac45ab470
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8ab731f662f2efaa2785bc9bcbd8d609b7993aa9
+ms.sourcegitcommit: 8f27122409dea11ef0635afbbe5788a648066a1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359023"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81772737"
 ---
-# <a name="ksnodetypepeakmeter"></a>KSNODETYPE\_PEAKMETER
-
+# <a name="ksnodetype_peakmeter"></a>KSNODETYPE\_PEAKMETER
 
 ## <span id="ddk_ksnodetype_peakmeter_ks"></span><span id="DDK_KSNODETYPE_PEAKMETER_KS"></span>
 
+**KSNODETYPE\_peakmeter**ノードは、ハードウェア peakmeter を表します。 KS peakmeter ノードには1つの入力ピンと1つの出力ピンがあり、2つのピンは同じデータ形式を共有します。
 
-KSNODETYPE\_PEAKMETER ノードは、ハードウェア peakmeter を表します。 KS peakmeter ノードが 1 つの入力ピンと 1 つの出力ピン、2 つの pin が同じデータ形式を共有します。
+KS peakmeter は、最後に peakmeter がゼロにリセットされた後のオーディオ信号の最大値を内部的にログに記録します。 Peakmeter は、 [**ksk プロパティ\_AUDIO\_PEAKMETER2**](ksproperty-audio-peakmeter2.md)プロパティを取得\_する\_ために、IOCTL KS プロパティの要求の後に自動的に0にリセットされます。
 
-KS peakmeter は、前回、peakmeter はゼロにリセットされた後、オーディオ信号の最大値を内部的に記録します。 Peakmeter、自動的にそれ自体を 0 にリセット IOCTL 後\_KS\_プロパティの取得要求を[ **KSPROPERTY\_オーディオ\_PEAKMETER** ](ksproperty-audio-peakmeter.md)プロパティ。
+Peakmeter では、ハードウェアのサポートが必要です。 ソフトウェアの peakmeter は実現可能ではありません。これは、アダプタードライバーが、再生チャネルと混合されている、ライン入力、マイク、またはその他の入力に存在する信号にアクセスできないためです。
 
-Peakmeter には、ハードウェアのサポートが必要です。 ソフトウェア peakmeter は現実的ではないと、これは、アダプターのドライバーでは、行で、マイク、または再生チャネルとが混在するその他の入力の上に存在する信号にアクセスできないためです。
+Microsoft では、フィルター内でストリームが渡される最後のノードに peakmeter ノードを作成することをお勧めします。 レンダリングストリームでは、通常、オーディオアダプターはマスター出力[**KSNODETYPE\_ミュート**](ksnodetype-mute.md)ノードまたは[**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)ノードの後に peakmeter ノードを接続します。 この方法は、キャプチャストリームまたはフィルターに peakmeter ノードが組み込まれているその他のストリームにも当てはまります。
 
-Peakmeter ノードに、ストリームは、フィルター内で渡されます。 最後のノードを作成することをお勧めします。 レンダリング ストリームにオーディオのアダプターの通常の接続 peakmeter ノード マスター出力後[ **KSNODETYPE\_ミュート**](ksnodetype-mute.md)ノードまたは[ **KSNODETYPE\_ボリューム**](ksnodetype-volume.md)ノード。 同じアプローチは、キャプチャ ストリームまたは peakmeter ノードは、フィルターが組み込まれています. その他の任意のストリームに適用されます。
+オーディオアダプターは、peakmeter ノード KSK の名前\_を peakmeter にする必要があります。
 
-オーディオのアダプターの名前 peakmeter ノード KSAUDFNAME\_PEAKMETER します。
-
-Peakmeter ノードは、プロパティのフラグのプロパティ ハンドラーを用意する必要があります (を参照してください[ **KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)))、次の表に表示されます。
+Peakmeter ノードでは、次の表に示すプロパティフラグ ( [**Ksk プロパティ**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))を参照) のプロパティハンドラーが提供されている必要があります。
 
 <table>
 <colgroup>
@@ -45,26 +43,27 @@ Peakmeter ノードは、プロパティのフラグのプロパティ ハンド
 <thead>
 <tr class="header">
 <th align="left">フラグ名</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>KSPROPERTY_TYPE_GET</p></td>
-<td align="left"><p>ハードウェア peakmeter の現在の値を返します。</p></td>
+<td align="left"><p>ハードウェアの peakmeter の現在の値を返します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>KSPROPERTY_TYPE_BASICSUPPORT</p></td>
-<td align="left"><p>16 ビットのデジタル オーディオのデータの範囲である 32767 の間、-32768 からのデータ範囲を返します。</p></td>
+<td align="left"><p>
+KSPROPERTY_AUDIO_PEAKMETER-では、0x8000 から、16ビットのデジタルオーディオのデータ範囲である0x8000 までのデータ範囲が返されます。 オペレーティングシステムが正の値を受け取ることができるように、上位16ビットを0に設定する必要があります。 KSPROPERTY_AUDIO_PEAKMETER は非推奨とされ、代わりに KSPROPERTY_AUDIO_PEAKMETER2 を使用する必要があることに注意してください。</p>
+<p>KSPROPERTY_AUDIO_PEAKMETER2-LONG_MAX する LONG_MIN のデータ範囲を返します。</p>
+</td>
 </tr>
 </tbody>
 </table>
 
- 
+プロパティハンドラーは、入力パラメーターと左および右のチャネル情報を検証する必要があります。
 
-プロパティ ハンドラーの入力パラメーターを確認する必要があり、左へ、チャネル情報を右します。
-
-Peakmeter ノードでは、次の表に、プロパティもサポートする必要があります。
+Peakmeter ノードでは、次の表のプロパティもサポートする必要があります。
 
 <table>
 <colgroup>
@@ -79,23 +78,12 @@ Peakmeter ノードでは、次の表に、プロパティもサポートする�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="ksproperty-audio-peakmeter.md" data-raw-source="[&lt;strong&gt;KSPROPERTY_AUDIO_PEAKMETER&lt;/strong&gt;](ksproperty-audio-peakmeter.md)"><strong>KSPROPERTY_AUDIO_PEAKMETER</strong></a></p></td>
+<td align="left"><p><a href="ksproperty-audio-peakmeter2.md" data-raw-source="[&lt;strong&gt;KSPROPERTY_AUDIO_PEAKMETER2&lt;/strong&gt;](ksproperty-audio-peakmeter2.md)"><strong>KSPROPERTY_AUDIO_PEAKMETER2</strong></a></p></td>
 <td align="left"><p>Peakmeter コントロールを表します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="ksproperty-audio-cpu-resources.md" data-raw-source="[&lt;strong&gt;KSPROPERTY_AUDIO_CPU_RESOURCES&lt;/strong&gt;](ksproperty-audio-cpu-resources.md)"><strong>KSPROPERTY_AUDIO_CPU_RESOURCES</strong></a></p></td>
-<td align="left"><p>指定したノードの機能では、ホストの CPU の使用によってかどうかを示します。</p></td>
+<td align="left"><p>指定したノードの機能がホストの CPU を使用しているかどうかを示します。</p></td>
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-
-

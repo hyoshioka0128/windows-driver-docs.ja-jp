@@ -11,16 +11,16 @@ keywords:
 - DefaultInstall セクション WDK ファイルシステム
 - SourceDisksNames セクション WDK ファイルシステム
 - DestinationDirs セクション WDK ファイルシステム
-- WDK のファイル システムのバージョン
+- バージョンセクション WDK ファイルシステム
 - INF ファイルの作成 (WDK ファイルシステム)
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 06340df1d9191a9c1375f999d546ba1e38174a97
-ms.sourcegitcommit: 2a1c24db881ed843498001493c3ce202c9aa03f1
+ms.openlocfilehash: 9525c91f77c7724f9a92abeeee71e1f2b6cb9c58
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74128486"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173554"
 ---
 # <a name="creating-an-inf-file-for-a-file-system-driver"></a>ファイル システム ドライバー用の INF ファイルの作成
 
@@ -34,7 +34,7 @@ INF ファイルとその作成方法の詳細については、「 [Inf ファ�
 
 64ビットバージョンの Windows Vista 以降では、ファイルシステムドライバー (ファイルシステム、レガシフィルター、ミニフィルタードライバー) などの非 PnP (プラグアンドプレイ) ドライバーを含むすべてのカーネルモードコンポーネントが、読み込んで実行するために署名されている必要があります。 これらのバージョンの Windows オペレーティングシステムでは、次の一覧に、ファイルシステムドライバーに関連する情報を示します。
 
-- ファイルシステムドライバーを含む、PnP 以外のドライバーの INF ファイルには、\[の製造元\] または \[モデル\] セクションを含める必要はありません。
+- ファイルシステムドライバーを含む、PnP 以外のドライバーの INF ファイルに\[は、製造元\]または\[モデル\]のセクションを含める必要はありません。
 
 - [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンドラインツール (WDK インストールディレクトリの \bin\SelfSign ディレクトリにあります) を使用して、ドライバー SYS 実行可能ファイルに "sign" を直接埋め込むことができます。 パフォーマンス上の理由から、ブート開始ドライバーには、埋め込み署名が含まれている必要があります。
 
@@ -50,7 +50,7 @@ INF ファイルを使用してレジストリから情報を読み取ったり�
 
 INF ファイルを作成した後、通常はセットアップアプリケーションのソースコードを記述します。 セットアップアプリケーションは、ユーザーモードのセットアップ関数を呼び出して、INF ファイル内の情報にアクセスし、インストール操作を実行します。
 
-独自のファイルシステムドライバーの INF ファイルを作成するには、次の情報をガイドとして使用します。 [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)ツールを使用して、INF ファイルの構文を確認できます。
+独自のファイルシステムドライバーの INF ファイルを作成するには、次の情報をガイドとして使用します。 [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)ツールを使用して、INF ファイルの構文を確認できます。
 
 一般に、ファイルシステムドライバーの INF ファイルには、次のセクションが含まれています。
 
@@ -88,10 +88,10 @@ CatalogFile =
 
 次の表に、[[**バージョン**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-version-section)] セクションでファイルシステムフィルタードライバーによって指定される値を示します。
 
-| エントリ | Value |
+| エントリ | 値 |
 | ----- | ----- |
 | **折本** | "$WINDOWS NT $" |
-| **Provider** | 独自の INF ファイルでは、Microsoft 以外のプロバイダーを指定する必要があります。 |
+| **プロバイダー** | 独自の INF ファイルでは、Microsoft 以外のプロバイダーを指定する必要があります。 |
 | **DriverVer** | 「 [ **INF DriverVer ディレクティブ**」を参照してください。](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive) |
 | **CatalogFile** | このエントリを空白のままにします。 将来、署名されたドライバーの WHQL が提供したカタログファイルの名前が含まれます。 |
 
@@ -99,7 +99,7 @@ CatalogFile =
 
 [**Destinationdirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションでは、ファイルシステムドライバーファイルのコピー先のディレクトリを指定します。
 
-このセクションで、 **ServiceInstall** セクションで、システム定義の数値を使用してよく知られているシステムのディレクトリを指定することができます。 これらの値の一覧については、「 [**INF DestinationDirs」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)を参照してください。 次のコード例では、値 "12" は Drivers ディレクトリ (%windir%\system32\drivers) を参照します。
+このセクションと**Serviceinstall**セクションでは、システム定義の数値を使用して、既知のシステムディレクトリを指定できます。 これらの値の一覧については、「 [**INF DestinationDirs」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)を参照してください。 次のコード例では、値 "12" は Drivers ディレクトリ (%windir%\system32\drivers) を参照します。
 
 ```cpp
 [DestinationDirs]
@@ -131,7 +131,7 @@ examplefilesystem.sys = 1
 
 ### <a name="defaultinstall-section-required"></a>DefaultInstall セクション (必須)
 
-[ **DefaultInstall** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section) セクションで、 [ **CopyFiles** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、先に、ファイル システム ドライバーのドライバー ファイルをコピーします。指定された、 [ **DestinationDirs** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクション。
+[**DefaultInstall**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-section)セクションでは、 [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブによって、 [**destinationdirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)セクションで指定された宛先にファイルシステムドライバーのドライバーファイルがコピーされます。
 
 > [!NOTE]
 > [**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive)ディレクティブは、カタログファイルまたは INF ファイル自体を参照することはできません。これらのファイルは、Setupapi.log によって自動的にコピーされます。
@@ -151,7 +151,7 @@ examplefilesystem.sys
 
 ### <a name="defaultinstallservices-section-required"></a>DefaultInstall セクション (必須)
 
-DefaultInstall セクションには、特定のドライバーのサービスが読み込まれる方法とタイミングを制御する[**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブが含まれてい[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
+DefaultInstall セクションには、特定のドライバーのサービスが読み込まれる方法とタイミングを制御する[**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブが含まれてい[**ます。**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
 
 次のコード例では、 [**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブによってファイルシステムサービスがオペレーティングシステムに追加されます。 % ServiceName% トークンには、INF ファイルの**Strings**セクションで定義されているサービス名の文字列が含まれています。 例 Filesystem. Service は、ファイルシステムドライバーの**Serviceinstall**セクションの名前です。
 
@@ -186,7 +186,7 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **ServiceType**エントリは、サービスの種類を指定します。 次の表に、 **ServiceType**に使用できる値と、対応するサービスの種類を示します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
 | 0x00000001 | SERVICE_KERNEL_DRIVER (デバイスドライバーサービス) |
 | 0x00000002 | SERVICE_FILE_SYSTEM_DRIVER (ファイルシステムまたはファイルシステムフィルタードライバーサービス) |
@@ -197,9 +197,9 @@ AddReg         = ExampleFileSystem.AddRegistry
 
 **Starttype**エントリは、サービスをいつ開始するかを指定します。 次の表に、 **Starttype**とそれに対応する開始の種類に使用できる値を示します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
-| ― | SERVICE_BOOT_START |
+| 0x00000000 | SERVICE_BOOT_START |
 | 0x00000001 | SERVICE_SYSTEM_START |
 | 0x00000002 | SERVICE_AUTO_START |
 | 0x00000003 | SERVICE_DEMAND_START |
@@ -213,9 +213,9 @@ X64 ベースの Windows Vista システム以降では、ブート開始ドラ�
 
 **Errorcontrol**エントリは、システムの起動時にサービスを開始できなかった場合に実行するアクションを指定します。 次の表に、 **errorcontrol**に使用できる値と、それに対応するエラー制御値の一覧を示します。
 
-| Value | 説明 |
+| 値 | 説明 |
 | ----- | ----------- |
-| ― | SERVICE_ERROR_IGNORE (エラーをログに記録し、システムの起動を続行します。) |
+| 0x00000000 | SERVICE_ERROR_IGNORE (エラーをログに記録し、システムの起動を続行します。) |
 | 0x00000001 | SERVICE_ERROR_NORMAL (エラーをログに記録し、ユーザーにメッセージを表示して、システムの起動を続行します)。 |
 | 0x00000002 | SERVICE_ERROR_SEVERE (レジストリの [前回の制御セット] に切り替え、システムの起動を続行します。 |
 | 0x00000003 | SERVICE_ERROR_CRITICAL (システムスタートアップがレジストリの正常でないコントロールセットを使用していない場合は、[正常起動時] に切り替えて、もう一度やり直してください。 まだ起動できない場合は、バグチェックルーチンを実行します。 システムを起動するために必要なドライバーだけが、INF ファイルにこの値を指定する必要があります。) |
@@ -224,7 +224,7 @@ X64 ベースの Windows Vista システム以降では、ブート開始ドラ�
 
 [**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)は、新しくインストールされたサービスのレジストリに格納される情報を含む、1つまたは複数の INF ライターで定義された**addregistry**セクションを参照します。
 
-**注**   初期インストール後に、ドライバーのアップグレードに INF ファイルが使用される場合は、 **addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 次に、例を示します。
+**注**  初期インストール後に INF ファイルを使用してドライバーをアップグレードする場合は、 **addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 次に例を示します。
 
 ```cpp
 [ExampleFileSystem.AddRegistry]

@@ -4,12 +4,12 @@ description: BTP セットアップ
 ms.date: 2/14/2020
 ms.assetid: 85ac7c5b-b5f7-49e0-85f8-72e191c00974
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d1ed88ea816d5b08bb74afc48871881826949e2
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: ce704690920609c319b6cbfe89f36c5dbe7135fb
+ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528915"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138643"
 ---
 # <a name="setting-up-the-bluetooth-test-platform-btp"></a>Bluetooth テストプラットフォーム (BTP) の設定 #
 
@@ -38,9 +38,9 @@ Traduci には、テスト周辺機器に 4 12 のピンポート (JA、JC、JD)
 
 1. [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk#download-icon-step-2-install-wdk-for-windows-10-version-1903)をダウンロードします。
 
-2. WDK がインストールされる[と、テストの作成と実行フレームワーク (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/)のインストールファイル (* .msi ファイルと * .cab ファイル) が `%ProgramFiles%\Windows Kits\8.0\Testing\Runtimes` ディレクトリに配置されます。
+2. WDK のインストールが完了する[と、テストの作成と実行フレームワーク (TAEF)](https://docs.microsoft.com/windows-hardware/drivers/taef/)のインストールファイル (* .msi ファイルと * .cab ファイル) が`%ProgramFiles%\Windows Kits\10\Testing\Runtimes`ディレクトリに配置されます。
 
-3. [BTP ソフトウェアパッケージ](testing-BTP-software-package.md)をダウンロードします。これにより、必要なすべてのファイルが `C:\BTP` ディレクトリにインストールされます。
+3. [BTP ソフトウェアパッケージ](testing-BTP-software-package.md)をダウンロードします。これにより、必要な`C:\BTP`すべてのファイルがディレクトリにインストールされます。
 
 4. [セキュアブート](https://docs.microsoft.com/windows-hardware/design/device-experiences/oem-secure-boot)が**無効になっ**ていることを確認します。
 
@@ -48,7 +48,7 @@ Traduci には、テスト周辺機器に 4 12 のピンポート (JA、JC、JD)
 
 6. Traduci ボードが SUT に接続されていることを確認します。
 
-7. SUT で管理者特権のコマンドラインから `C:\BTP` ディレクトリに移動し、`ConfigureMachineForBTP.bat` を実行してテストコンピューターを構成します。 再起動が必要な場合があります。
+7. SUT の管理者特権でのコマンドラインで、 `C:\BTP`ディレクトリに移動し`ConfigureMachineForBTP.bat` 、を実行してテストコンピューターを構成します。 再起動が必要な場合があります。
 
 8. パッケージでのテストスクリプトの実行については、「 [BTP テスト](testing-BTP-Tests.md)」を参照してください。
 

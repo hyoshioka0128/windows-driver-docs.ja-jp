@@ -1,9 +1,9 @@
 ---
 title: INF ClassInstall32 セクション
-description: ClassInstall32 セクションは、新しいクラスでのデバイス向けの新しいデバイス セットアップ クラス (と可能性があるクラスのインストーラー) をインストールします。
+description: ClassInstall32 セクションでは、新しいクラスにデバイス用の新しいデバイスセットアップクラス (および場合によってはクラスインストーラー) をインストールします。
 ms.assetid: c1da44ca-3b99-43de-99ef-56fbe67b46c2
 keywords:
-- INF ClassInstall32 セクションのデバイスとドライバーのインストール
+- INF ClassInstall32 セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d27bf8a39f2ffdfae32e04345c5726360934c200
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 672538c83dfcc0af374d6eaebe23467070e89a28
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365856"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223272"
 ---
 # <a name="inf-classinstall32-section"></a>INF ClassInstall32 セクション
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このセクションが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージを作成する場合、このセクションは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-A **ClassInstall32**セクションは、新しいインストール[デバイス セットアップ クラス](device-setup-classes.md)(およびクラスのインストーラー可能性があります)、新しいクラスでのデバイス向けです。
+**ClassInstall32**セクションでは、新しいクラスにデバイス用の新しい[デバイスセットアップクラス](device-setup-classes.md)(および場合によってはクラスインストーラー) をインストールします。
 
-```ini
+```inf
 [ClassInstall32] | 
 [ClassInstall32.nt] | 
 [ClassInstall32.ntx86] |
@@ -53,97 +53,97 @@ AddReg=add-registry-section[,add-registry-section]...
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="addreg-add-registry-section--add-registry-section-----"></a>**AddReg=** <em>add</em>-*registry*-*section*\[ **,** <em>add</em>-*registry*-*section*\] ...  
-レジストリに書き込まれるエントリをクラスに固有の値が含まれる 1 つまたは複数の名前付きセクションを参照します。 通常、これは新しいデバイス セットアップ クラスが、他のコンポーネントが後で、レジストリから取得し、使用して、任意のデバイス クラスの新しいインストーラーやプロパティ ページに「インストール」するこの新しいデバイス クラスのインストールされているデバイスを開く、には少なくとも、フレンドリ名を指定に使用されます。このデバイス セットアップ クラス、やなどのためのプロバイダー。
+<a href="" id="addreg-add-registry-section--add-registry-section-----"></a>**AddReg =**<em>add</em>-*レジストリ*\[**,**<em>add</em>-*registry**section*-*section*セクションの追加、レジストリセクション\]の追加...-  
+レジストリに書き込まれるクラス固有の値エントリを含む、1つまたは複数の名前付きセクションを参照します。 通常、これは、新しいデバイスセットアップクラスに、その他のコンポーネントが後でレジストリから取得し、この新しいデバイスクラスのインストールされているデバイスを開くために使用し、このデバイスセットアップクラスの新しいデバイスクラスインストーラーやプロパティページプロバイダーを "インストール" するために使用するフレンドリ名を指定するために使用されます。
 
-**HKR**いずれかで仕様*追加レジストリ セクション*指定、 **.クラス\\{** <em>SetupClassGUID</em> **}** レジストリ キー。 詳細については、次を参照してください。**解説**セクション。
+すべての*レジストリセクション*で**hkr**仕様を指定すると、 **..クラス\\{**<em>setupclassguid</em>**}** レジストリキー。 詳細については、次の「**解説**」を参照してください。
 
-詳細については、次を参照してください。 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)します。
+詳細については、「 [**INF AddReg ディレクティブ**](inf-addreg-directive.md)」を参照してください。
 
-<a href="" id="addproperty-add-property-section--add-property-section-----"></a>**AddProperty=** <em>add-property-section</em>\[ **,** <em>add-property-section</em>\] ...  
-(Windows Vista および Windows の以降のバージョン)変更を 1 つまたは複数の INF ファイルでセクションを参照して[デバイス プロパティ](device-properties.md)用に設定されている、[デバイス セットアップ クラス](device-setup-classes.md)します。 使用する必要があります、 [ **INF AddProperty ディレクティブ**](inf-addproperty-directive.md) Windows Vista またはそれ以降のバージョンの Windows オペレーティング システムを新たに導入されたデバイス セットアップ クラスのプロパティを設定するだけです。
+<a href="" id="addproperty-add-property-section--add-property-section-----"></a>**Addproperty =**<em>add</em>\[-property **-section-**<em>section</em> \] ...  
+(Windows Vista 以降のバージョンの Windows)[デバイスセットアップクラス](device-setup-classes.md)に設定されている[デバイスプロパティ](device-properties.md)を変更する1つ以上の INF ファイルセクションを参照します。 Windows Vista 以降のバージョンの Windows オペレーティングシステムで新しく追加されたデバイスセットアップクラスのプロパティを設定する場合にのみ、 [**INF AddProperty ディレクティブ**](inf-addproperty-directive.md)を使用する必要があります。
 
-デバイス クラス プロパティの以前 Windows Server 2003、Windows XP、または Windows 2000 で導入された、対応するレジストリ エントリの値がある場合を使用する続行する必要があります[ **INF AddReg ディレクティブ**](inf-addreg-directive.md)デバイス セットアップ クラスのプロパティを設定します。 システム定義プロパティとカスタム プロパティに次のガイドラインが適用されます。
+Windows Server 2003、Windows XP、または Windows 2000 で以前に導入され、対応するレジストリエントリ値を持つデバイスクラスのプロパティについては、引き続き[**INF AddReg ディレクティブ**](inf-addreg-directive.md)を使用して、デバイスセットアップクラスのプロパティを設定する必要があります。 これらのガイドラインは、システム定義のプロパティとカスタムプロパティに適用されます。
 
-使用する方法についての詳細、 **AddProperty**ディレクティブを参照してください[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
+**Addproperty**ディレクティブの使用方法の詳細については、「 [Inf addproperty ディレクティブと Inf Delproperty ディレクティブの使用](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)」を参照してください。
 
-<a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**Copyfiles=@** <em>filename</em> | *file*-*list*-*section*\[ **,** <em>file</em>-*list*-*section*\] ...  
-先のソース メディアからコピーされる 1 つの名前付きファイルを指定します。 または、変換先に転送するため、元のメディアのクラスに関連するファイルを指定する 1 つまたは複数の名前付きセクションを参照します。 **DefaultDestDir**内のエントリ、 [ **DestinationDirs** ](inf-destinationdirs-section.md) INF のセクションがコピーされる 1 つのクラスに固有ファイルの保存先ディレクトリを指定します。
+<a href="" id="copyfiles--filename---file-list-section--file-list-section-----"></a>**Copyfiles = @**<em>filename</em> | *ファイル*-*リスト*-*セクション*-*list***,**<em>file</em>\] 、ファイルリスト-*セクション*...\[  
+は、ソースメディアから転送先にコピーする名前付きのファイルを指定するか、ソースメディア上のクラス関連ファイルが転送先に転送するように指定する1つ以上の名前付きセクションを参照します。 INF の[**Destinationdirs**](inf-destinationdirs-section.md)セクションの**DefaultDestDir**エントリは、コピーするクラス固有の1つのファイルのコピー先ディレクトリを指定します。
 
-詳細については、次を参照してください。 [ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)します。
+詳細については、「 [**INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)」を参照してください。
 
-**注**  デバイス セットアップ クラス (およびクラスのインストーラー) 用のシステム提供の INF ファイルには、このセクションでこのディレクティブは使用しないでください。
+**メモ**  デバイスセットアップクラス (およびクラスインストーラー) 用のシステム提供の INF ファイルでは、このセクションではこのディレクティブを使用しないことに注意してください。
 
  
 
-<a href="" id="delreg-del-registry-section--del-registry-section-----"></a>**DelReg=** <em>del</em>-*registry*-*section*\[ **,** <em>del</em>-*registry*-*section*\] ...  
-どちらの値では、クラスのインストーラーのインストール中に、レジストリから削除するエントリまたはキーを指定します。 1 つまたは複数の名前付きセクションを参照します。
+<a href="" id="delreg-del-registry-section--del-registry-section-----"></a>**Delreg =**<em>del</em>-*レジストリ*-*セクション*\[**、**<em>del</em>-*section* *registry*レジストリセクション\] ...-  
+クラスインストーラーのインストール中に値エントリまたはキーがレジストリから削除されるように指定されている、1つまたは複数の名前付きセクションを参照します。
 
-ただし、特定 **{** <em>SetupClassGUID</em> **}** レジストリのサブキーが存在する **.クラス**ブランチ、システムのセットアップ コードは、その後は無視されます、 **ClassInstall32**で同じ GUID 値を指定する任意の INF のセクションでその**バージョン**セクション。 その結果、INF を既存のクラスのインストーラーを置換またはからその動作を変更ことはできません、 **ClassInstall32**セクション。 既存のクラスのインストーラーの動作を変更するには、クラス固有の共同インストーラーを使用します。
+ただし、特定の **{**<em>setupclassguid</em>**}** サブキーがレジストリに存在する場合は**です。クラス**の分岐では、システムセットアップコードは、その**バージョン**セクションで同じ GUID 値を指定するすべての INF の**ClassInstall32**セクションを無視します。 そのため、INF は、既存のクラスインストーラーを置き換えることや、 **ClassInstall32**セクションから動作を変更することはできません。 既存のクラスインストーラーの動作を変更するには、クラス固有の共同インストーラーを使用します。
 
-詳細については、次を参照してください。 [ **INF してディレクティブ**](inf-delreg-directive.md)します。
+詳細については、「 [**INF DelReg ディレクティブ**](inf-delreg-directive.md)」を参照してください。
 
-<a href="" id="delproperty-del-property-section--del-property-section-----"></a>**DelProperty=** <em>del-property-section</em>\[ **,** <em>del-property-section</em>\] ...  
-(Windows Vista および Windows の以降のバージョン)削除する 1 つまたは複数の INF ファイルでセクションを参照して[デバイス プロパティ](device-properties.md)用に設定されている、[デバイス セットアップ クラス](device-setup-classes.md)します。 使用する必要があります、 [ **INF DelProperty ディレクティブ**](inf-delproperty-directive.md)のみを Windows Vista またはそれ以降のバージョンの Windows オペレーティング システムを新たに導入されたデバイス セットアップ クラスのプロパティを削除します。
+<a href="" id="delproperty-del-property-section--del-property-section-----"></a>**Delproperty =**<em>del-property</em>\[-section **,**<em>delete-section</em> \] ...  
+(Windows Vista 以降のバージョンの Windows)[デバイスセットアップクラス](device-setup-classes.md)に設定されている[デバイスプロパティ](device-properties.md)を削除する1つ以上の INF ファイルセクションを参照します。 [**INF delproperty ディレクティブ**](inf-delproperty-directive.md)は、windows Vista 以降のバージョンの windows オペレーティングシステムで新しく追加されたデバイスセットアップクラスのプロパティを削除する場合にのみ使用してください。
 
-デバイス クラス プロパティの以前 Windows Server 2003、Windows XP、または Windows 2000 で導入された、対応するレジストリ エントリの値がある場合を使用する続行する必要があります[ **INF してディレクティブ**](inf-delreg-directive.md)デバイス セットアップ クラスのプロパティを削除します。 システム定義プロパティとカスタム プロパティに次のガイドラインが適用されます。
+Windows Server 2003、Windows XP、または Windows 2000 で以前に導入され、対応するレジストリエントリ値を持つデバイスクラスのプロパティについては、引き続き[**INF DelReg ディレクティブ**](inf-delreg-directive.md)を使用して、デバイスセットアップクラスのプロパティを削除する必要があります。 これらのガイドラインは、システム定義のプロパティとカスタムプロパティに適用されます。
 
-使用する方法についての詳細、 **DelProperty**ディレクティブを参照してください[INF AddProperty ディレクティブと INF DelProperty ディレクティブを使用して](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)します。
+**Delproperty**ディレクティブの使用方法の詳細については、「 [Inf addproperty ディレクティブと Inf Delproperty ディレクティブの使用](using-the-inf-addproperty-directive-and-the-inf-delproperty-directive.md)」を参照してください。
 
-<a href="" id="delfiles-file-listsection--file-list-section-----"></a>**Delfiles =** <em>ファイル listsection</em>\[ **、** <em>ファイル</em>-*一覧*-*セクション*\] .  
-削除対象を 1 つまたは複数の名前付きセクションがインストールされていた移行先のクラスに関連するファイルの参照が指定されます。
+<a href="" id="delfiles-file-listsection--file-list-section-----"></a>**Delfiles =**<em>ファイル-listsection</em>\[**、**<em>ファイル</em>-*リスト*-*セクション*\] ...  
+ターゲットに既にインストールされているクラス関連ファイルが削除対象として指定されている、1つまたは複数の名前付きセクションを参照します。
 
-詳細については、次を参照してください。 [ **INF DelFiles ディレクティブ**](inf-delfiles-directive.md)します。
+詳細については、「 [**INF DelFiles ディレクティブ**](inf-delfiles-directive.md)」を参照してください。
 
-<a href="" id="renfiles-file-list-section--file-list-section-----"></a>**Renfiles =** <em>ファイルのセクション一覧</em>\[ **、** <em>ファイル</em>-*一覧*-*セクション*\] .  
-参照先の名前を変更するクラスに関連するファイルの 1 つまたは複数の名前付きセクションの一覧が表示されます。
+<a href="" id="renfiles-file-list-section--file-list-section-----"></a>**Renfiles =**<em>file-list-section</em>\[**,**<em>file</em>\] *list*ファイルリストの*セクション*...--  
+転送先で名前を変更するクラス関連ファイルが一覧表示される1つ以上の名前付きセクションを参照します。
 
-詳細については、次を参照してください。 [ **INF RenFiles ディレクティブ**](inf-renfiles-directive.md)します。
+詳細については、「 [**INF RenFiles ディレクティブ**](inf-renfiles-directive.md)」を参照してください。
 
-<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**BitReg =** <em>ビットのレジストリ セクション</em>\[ **、** <em>ビットのレジストリ セクション</em>\].  
-このセクションでは有効ですが、ほとんどない使用されます。
+<a href="" id="bitreg-bit-registry-section--bit-registry-section----"></a>**Bitreg =**<em>ビットレジストリ-セクション</em>\[**、**<em>ビットレジストリ-セクション</em>\]...  
+はこのセクションでは有効ですが、ほとんど使用されていません。
 
-詳細については、次を参照してください。 [ **INF BitReg ディレクティブ**](inf-bitreg-directive.md)します。
+詳細については、「 [**INF BitReg ディレクティブ**](inf-bitreg-directive.md)」を参照してください。
 
-<a href="" id="updateinis-update-ini-section--update-ini-section------"></a>**UpdateInis**=*update-section ini\[、update-section ini\]* .   
-このセクションでは有効ですが、ほとんどない使用されます。
+<a href="" id="updateinis-update-ini-section--update-ini-section------"></a>**Updateinis**=*.ini-\[セクション、更新プログラム-ini-セクション\]*...   
+はこのセクションでは有効ですが、ほとんど使用されていません。
 
-詳細については、次を参照してください。 [ **INF UpdateInis ディレクティブ**](inf-updateinis-directive.md)します。
+詳細については、「 [**INF UpdateInis ディレクティブ**](inf-updateinis-directive.md)」を参照してください。
 
-<a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =** <em>update-section inifields</em>\[ **、** <em>update-section inifields</em>\].  
-このセクションでは有効ですが、ほとんどない使用されます。
+<a href="" id="updateinifields-update-inifields-section--update-inifields-section----"></a>**UpdateIniFields =**<em>inifields-section</em>\[**,**<em>inifields-section</em>\]...  
+はこのセクションでは有効ですが、ほとんど使用されていません。
 
-詳細については、次を参照してください。 [ **INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)します。
+詳細については、「 [**INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)」を参照してください。
 
-<a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =** <em>セクション レジストリ ini</em>\[ **、** <em>セクション レジストリ ini</em>\].  
-このセクションでは有効ですが、ほとんどない使用されます。
+<a href="" id="ini2reg-ini-to-registry-section--ini-to-registry-section----"></a>**Ini2Reg =**<em>ini</em>\[-セクション **、**<em>ini からレジストリへ</em>\]のセクション...  
+はこのセクションでは有効ですが、ほとんど使用されていません。
 
-詳細については、次を参照してください。 [ **INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)します。
+詳細については、「 [**INF UpdateIniFields ディレクティブ**](inf-updateinifields-directive.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-含める必要があります、 **ClassInstall32**新しいカスタム デバイス セットアップ クラスをインストールにのみデバイス INF ファイルのセクション。 インストールされているクラスで、デバイスの INF ファイルかどうかを[システム提供のデバイス セットアップ クラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))またはカスタムのクラスを含めないでください、 **ClassInstall32**セクション。 システムが処理されるため、 **ClassInstall32**セクションだけで、クラスが既にインストールされていない場合は使用できません、 **ClassInstall32**セクションを再インストールするか、既にあるクラスの設定を変更するにはインストールされています。 具体的には、使用することはできません、 **ClassInstall32**クラス共同インストーラーまたは既にインストールされているクラスのクラスのフィルター ドライバーを追加するセクション。 共同インストーラーをインストールして、ドライバーをフィルター処理する方法については、次を参照してください。[共同インストーラーの作成](writing-a-co-installer.md)と[フィルター ドライバーをインストールする](installing-a-filter-driver.md)します。
+新しいカスタムデバイスセットアップクラスをインストールする場合にのみ、デバイスの INF ファイルに**ClassInstall32**セクションを含める必要があります。 インストールされているクラスのデバイスの INF ファイル。[システムが提供するデバイスセットアップクラス](https://docs.microsoft.com/previous-versions/ff553419(v=vs.85))またはカスタムクラスに**ClassInstall32**セクションを含めることはできません。 **ClassInstall32**セクションは、クラスがまだインストールされていない場合にのみ、システムによって処理されるため、 **ClassInstall32**セクションを使用して、既にインストールされているクラスの設定を再インストールまたは変更することはできません。 特に、 **ClassInstall32**セクションを使用して、既にインストールされているクラスのクラスの共同インストーラーまたはクラスフィルタードライバーを追加することはできません。 共同インストーラーとフィルタードライバーをインストールする方法の詳細については、「[共同インストーラーを作成](writing-a-co-installer.md)する」および「[フィルタードライバーをインストール](installing-a-filter-driver.md)する」を参照してください。
 
-通常、 **ClassInstall32**セクションには 1 つまたは複数**AddReg**システム提供の下にエントリを追加するディレクティブ*SetupClassGUID*レジストリのサブキー。 これらのエントリは、クラス固有の「表示名、」を含めることができますクラスのインストーラーのパス、クラスのアイコン、プロパティ ページのプロバイダー、およびなど。
+通常、 **ClassInstall32**セクションには、レジストリのシステム指定の*setupclassguid*サブキーの下にエントリを追加するための**AddReg**ディレクティブが1つ以上含まれています。 これらのエントリには、クラス固有の "表示名"、"クラスインストーラーパス"、"クラスアイコン"、"プロパティページプロバイダー" などを含めることができます。
 
-除く**AddReg**と**CopyFiles**、表示されるその他のディレクティブは、ここではほとんど使われません、 **ClassInstall32**セクション。
+**AddReg**と**CopyFiles**を除き、ここで示す他のディレクティブは、 **ClassInstall32**セクションではほとんど使用されません。
 
-ドライバー ファイルのマルチプラット フォーム対応の配布をサポートするプラットフォームに固有の構築**ClassInstall32**セクション。 たとえば、そのプロセスの機能すべてのシステム SetupAPI、 **ClassInstall32**最初のセクションでは検索、 **ClassInstall32.ntx86** x86 セクション プラットフォームのみ非装飾のを調べると**ClassInstall32**セクションが見つけられない場合、 **ClassInstall32.ntx86**セクション。 詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+ドライバーファイルのマルチプラットフォーム配布をサポートするには、プラットフォーム固有の**ClassInstall32**セクションを構築します。 たとえば、 **ClassInstall32**セクションを処理するすべてのシステムの機能は、最初に x86 プラットフォームの ClassInstall32 セクションを検索し、 **ntx86**セクションが見つからない場合にのみ、装飾されていない**ClassInstall32**セクションを**調べます。** システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能の使用方法の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
-**注**  、 **ClassInstall32**セクション名は 64 ビット プラットフォーム上のインストールでも使用されます。
+**注**   **ClassInstall32**セクション名は、64ビットプラットフォームでのインストールにも使用されます。
 
  
 
-Windows 2000 以降、インストールされているすべてのデバイスに関連付けられている、[デバイス セットアップ クラス](device-setup-classes.md)レジストリにします。 デバイスの INF をインストールするのには、新しいデバイスのクラスのインストーラーに関連付けられていない場合、または場合その**ClassGUID =** 内の指定、**バージョン**セクションは、システム定義のセットアップ クラス GUID と一致しませんそのデバイスのレジストリ サブキーの下に作成 **.クラス\\{** <em>UnknownClassGUID</em> **}** します。
+Windows 2000 以降では、インストールされているすべてのデバイスが、レジストリ内の[デバイスセットアップクラス](device-setup-classes.md)に関連付けられています。 インストールするデバイスの INF が新しいデバイスクラスインストーラーに関連付けられていない場合、または**Version**セクションの**classguid =** specification がシステム定義のセットアップクラス GUID と一致しない場合は、そのデバイスのレジストリサブキーが. の下に作成され**ます。クラス\\{**<em>UnknownClassGUID</em>**}**。
 
-通常、任意のデバイス クラスのインストーラーの INF には、 **AddReg**ディレクティブでその**ClassInstall32**セクションで、その種類のデバイスのフレンドリ名を作成するには少なくとも 1 つの名前付きセクションを定義します。 セットアップ コードが自動的に作成、 *SetupClassGUID*に指定された値からレジストリ サブキー、 **ClassGUID =** INF の内のエントリ**バージョン**セクションときに、(新規) そのセットアップ クラスの最初のデバイスがインストールされています。
+デバイスクラスインストーラーの INF には、通常、 **ClassInstall32**セクションに**AddReg**ディレクティブがあり、デバイスの種類のフレンドリ名を作成する名前付きセクションを少なくとも1つ定義します。 セットアップコードは、(新しい) セットアップクラスの最初のデバイスがインストールされるときに、INF の**Version**セクションの**classguid =** エントリに指定された値からレジストリに*setupclassguid*サブキーを自動的に作成します。
 
-この*SetupClassGUID*サブキー、そのような INF レジストリの情報も提供*モデル*の追加を使用して特定のサブキー **AddReg**そのディレクティブ*DDInstall*セクション。 INF がで参照されている追加レジストリ セクションを使用してさらに、その**ClassInstall32**セクション プロパティ ページのプロバイダーを指定して、そのクラスのデバイスのユーザー インターフェイスでの処理方法を制御します。
+この*Setupclassguid*サブキーの下では、このような INF は、 *ddinstall*セクションで追加の**AddReg**ディレクティブを使用して、*モデル*固有のサブキーのレジストリ情報も提供します。 さらに、INF は、 **ClassInstall32**セクションで参照されているレジストリの追加セクションを使用して、プロパティページプロバイダーを指定したり、ユーザーインターフェイスでのデバイスのクラスの処理方法を制御したりすることができます。
 
-このようなクラスに固有の追加レジストリ セクションでは、次の一般的な形式があります。
+このようなクラス固有の追加レジストリのセクションには、次の一般的な形式があります。
 
-```ini
+```inf
 [SetupClassAddReg]
  
 HKR,,,,%DevClassName% ; device-class friendly name 
@@ -155,28 +155,28 @@ HKR,,Icon,,"icon-number"
 [HKR,,NoDisplayClass,,1]
 ```
 
-システムでは、指定されたアイコンを使用して、ユーザーに、インストーラーを表します。
+システムは、指定されたアイコンを使用して、ユーザーに対するインストーラーを表します。
 
--   アイコンの値が正の場合は、リソースのリソース識別子を表します。 リソースは、EnumPropPages32 キーが指定されている場合、クラスのインストーラー Installer32 キーが指定されている場合、DLL からまたはプロパティ ページの DLL から抽出されます。 値「0」は、DLL の最初のアイコンを表します。 値「1」は予約されています。
--   アイコンの値が負の場合、絶対値、SetupApi.DLL にあるアイコンのリソース識別子です。
+-   アイコンの値が正の値の場合は、リソースのリソース識別子を表します。 Installer32 キーが指定されている場合、またはプロパティページ DLL から、EnumPropPages32 キーが指定されている場合、リソースはクラスインストーラー DLL から抽出されます。 値 "0" は、DLL 内の最初のアイコンを表します。 値 "1" は予約されています。
+-   アイコンの値が負の場合、absolute の値は、Setupapi.log のアイコンのリソース識別子になります。
 
-定義済み設定**SilentInstall**、 **NoDisplayClass**、および**NoInstallClass**クラス固有のレジストリ キー内のエントリをブール値が次の影響。
+クラス固有のレジストリキー**に定義済み**の NoInstallClass、 **nodisplayclass**、および**NoInstallClass**ブール値のエントリを設定すると、次のような影響があります。
 
--   その後 DDInstall セクションでは、クラスのインストーラーの INF ファイルのまたはに個別の INF ファイルを指定するかどうか、このクラスのデバイスのインストール中に応答を要求するユーザーにポップアップ メッセージを送信しないインストーラーに指示 SilentInstall の設定インストールされている同じ ClassGuid を設定してこのクラスの宣言デバイス = {ClassGUID} 仕様の対応するバージョン セクションでします。 たとえば、CD-ROM とディスクのデバイスのシステム クラスのインストーラーとシステム パラレル ポートのクラスのインストーラーは、これらそれぞれのレジストリ キーで SilentInstall を設定します。
+-   このクラスのデバイスをインストールするときに、クラスインストーラーの INF ファイルの DDInstall セクションで指定されているかどうか、また、このクラスを宣言する後にインストールされるデバイス用に、それぞれのバージョンセクションで同じ ClassGuid = {ClassGUID} 仕様を設定することによって、このクラスのデバイスのインストール中に、応答を必要と たとえば、CD-ROM およびディスクデバイスのシステムクラスインストーラーと、システムパラレルポートクラスインストーラーによって、それぞれのレジストリキーに "ドライブのインストール" が設定されています。
 
-    クラスに固有のインストーラーには、コンピューターにインストールされる任意のデバイスの再起動が必要とする場合、INF でクラスに固有の追加レジストリ セクションこのエントリことはできません。
+    クラス固有のインストーラーで、インストールするデバイスに対してコンピューターを再起動する必要がある場合、その INF のクラス固有の追加レジストリセクションにこの値のエントリを含めることはできません。
 
--   デバイス マネージャーでこのクラスのすべてのデバイスのユーザーに表示される表示を抑制 NoDisplayClass を設定します。 たとえば、プリンターとネットワーク ドライバーが (クライアント、サービス、およびプロトコルを含む) のシステム クラスのインストーラーは、それぞれのレジストリ キーで NoDisplayClass を設定します。
--   NoInstallClass の設定は、この種類のデバイスはこれまでは必要ありません手動インストール エンドユーザーによることを示します。 たとえば、プラグ アンド プレイ (PnP) デバイス専用のシステム クラスのインストーラーは、それぞれのレジストリ キーで NoInstallClass を設定します。
+-   NoDisplayClass を設定すると、デバイスマネージャーによって、このクラスのすべてのデバイスのユーザーに表示される表示が抑制されます。 たとえば、プリンターおよびネットワークドライバー (クライアント、サービス、プロトコルを含む) のシステムクラスインストーラーは、それぞれのレジストリキーで NoDisplayClass を設定します。
+-   NoInstallClass を設定すると、この種類のデバイスがエンドユーザーによる手動インストールを必要としないことを示します。 たとえば、プラグアンドプレイ (PnP) デバイスのシステムクラスインストーラーでは、それぞれのレジストリキーに NoInstallClass が設定されています。
 
-A **ClassInstall32**セクションに含めることができます**AddReg**を設定するディレクティブ、 **DeviceType**、 **DeviceCharacteristics**、および**セキュリティ**そのセットアップ クラスのデバイス用です。 参照してください、 [ **INF AddReg ディレクティブ**](inf-addreg-directive.md)詳細についてはします。
+**ClassInstall32**セクションには、セットアップクラスのデバイスに **(devicetype**、 **DeviceCharacteristics**、および**セキュリティ**を設定する**AddReg**ディレクティブを含めることができます。 詳細については、 [**INF AddReg ディレクティブ**](inf-addreg-directive.md)を参照してください。
 
 <a name="examples"></a>例
 --------
 
-この例では、 **ClassInstall32**セクションで、と共に、名前付きセクションの参照と、 [ **AddReg ディレクティブ**](inf-addreg-directive.md)システムの INF のクラスを表示インストーラー。
+この例では、 **ClassInstall32**セクションと、 [**AddReg ディレクティブ**](inf-addreg-directive.md)を使用して参照する名前付きセクションを、システム表示クラスインストーラーの INF に示します。
 
-```ini
+```inf
 [ClassInstall32] 
 AddReg=display_class_addreg
 
@@ -186,9 +186,9 @@ HKR,,Installer32,,"Desk.Cpl,DisplayClassInstaller"
 HKR,,Icon,,"-1"
 ```
 
-これに対し、この例はシステム CD-ROM INF の参照の追加レジストリ セクション**ClassInstall32**セクション。 これは、インストール CD-ROM デバイス/ドライバーのクラスに固有のプロパティ ページのプロバイダーを設定します。 またこの INF を設定、 **SilentInstall**と**NoInstallClass**に CD-ROM クラス キーのエントリの値**TRUE** (**1**)。
+これに対して、この例では、システムの CD-ROM INF の**ClassInstall32**セクションで参照されている [レジストリの追加] セクションを示しています。 インストールする CD-ROM デバイス/ドライバー用のクラス固有のプロパティページプロバイダーを設定します。 また、この INF は **、cd-rom**クラスキーの**NoInstallClass**値エントリを**TRUE** (**1**) に設定します。
 
-```ini
+```inf
 [cdrom_class_addreg]
 HKR,,,,%CDClassName%
 HKR,,EnumPropPages32,,"SysSetup.Dll,CdromPropPageProvider"
@@ -222,7 +222,7 @@ HKR,,Icon,,"101"
 
 [**RenFiles**](inf-renfiles-directive.md)
 
-[**SetupDiBuildClassInfoListEx**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa)
+[**Setupdibuildclassinの Istex**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdibuildclassinfolistexa)
 
 [**UpdateIniFields**](inf-updateinifields-directive.md)
 

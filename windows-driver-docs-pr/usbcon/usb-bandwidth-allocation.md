@@ -2,13 +2,14 @@
 Description: このセクションでは、USB 帯域幅の慎重な管理に関するガイダンスを提供します。
 title: USB 帯域幅割り当て
 ms.date: 04/20/2017
+ms.assetid: a1533825-a28f-45eb-9a54-c7298022c385
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff231a0d5cb904b0e409d2aa3d2276a609071f0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4106b9ef1de2141b2479397963d50a83e3e6fd7d
+ms.sourcegitcommit: 8084a046ca9d4c29a58b25ffcdea5d8387e9f538
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844333"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81625281"
 ---
 # <a name="usb-bandwidth-allocation"></a>USB 帯域幅割り当て
 
@@ -17,7 +18,7 @@ ms.locfileid: "72844333"
 
 使用される USB 帯域幅を最小限に抑えるために、すべての USB クライアントドライバーの役割を担い、未使用の帯域幅をできるだけ迅速に解放します。
 
-ここでは、次のトピックについて説明します。
+このセクションには、次のトピックが含まれます。
 
 ## <a name="why-is-my-usb-driver-getting-out-of-bandwidth-errors"></a>USB ドライバーの帯域幅のエラーが発生するのはなぜですか。
 
@@ -30,7 +31,7 @@ USB バスの帯域幅の競合は、ハードウェアとソフトウェアの�
 
 USB 2.0 仕様では、既定のインターフェイス設定で、アイソクロナスデバイスの帯域幅がゼロに設定されている必要があります。 これにより、関数ドライバーが既定以外のインターフェイスを開くまで、デバイス用に帯域幅が予約されないようにすることができます。これにより、デバイスの構成中に、過剰な帯域幅の要求によって発生する列挙エラーを防ぐことができます。 ただし、デバイスを構成した後にクライアントドライバーが過剰な帯域幅を割り当てないようにして、他のデバイスが正常に機能しなくなるのを防ぐことはできません。
 
-帯域幅を適切に管理するには、アイソクロナス転送を行うシステム内のすべての USB デバイスが、アイソクロナスエンドポイントを含むインターフェイスごとに複数の代替 (Alt) 設定を提供する必要があります。また、クライアントドライバーは、これらのAlt の設定。 クライアントドライバーは、最大の帯域幅でインターフェイスの設定を要求することから開始する必要があります。 要求が失敗した場合、クライアントドライバーは、要求が成功するまで、小さい帯域幅と小さい帯域幅でインターフェイス設定を要求する必要があります。
+帯域幅を適切に管理するには、アイソクロナス転送を行うシステム内のすべての USB デバイスが、アイソクロナスエンドポイントを含むインターフェイスごとに複数の代替 (Alt) 設定を提供する必要があります。また、クライアントドライバーは、これらの Alt 設定を慎重に使用する必要があります。 クライアントドライバーは、最大の帯域幅でインターフェイスの設定を要求することから開始する必要があります。 要求が失敗した場合、クライアントドライバーは、要求が成功するまで、小さい帯域幅と小さい帯域幅でインターフェイス設定を要求する必要があります。
 
 たとえば、web カメラのデバイスに次のようなインターフェイスがあるとします。
 
@@ -78,11 +79,11 @@ USB コントローラーの帯域幅の使用量を報告するデバイスマ�
 
 *最大転送サイズ*は、USB ドライバースタックのハードコーディングされた制限を指定します。 システムリソースの制限により、これらの制限を下回る転送サイズが失敗する可能性があります。 この種のエラーを回避し、すべてのバージョンの Windows で互換性を確保するには、USB 転送に大きな転送サイズを使用しないでください。
 
-> **注:**  
+> **注**  
 >
-> Windows XP、Windows Server 2003、およびそれ以降のバージョンでは、 [**USBD\_PIPE\_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体の**MaximumTransferSize**メンバーは廃止されています。 USB ドライバースタックは、複合デバイスと非複合デバイスの両方の**MaximumTransferSize**の値を無視します。
+> Windows XP、Windows Server 2003、およびそれ以降のバージョンでは、 [**USBD\_\_パイプ情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造の**MaximumTransferSize**メンバーは廃止されています。 USB ドライバースタックは、複合デバイスと非複合デバイスの両方の**MaximumTransferSize**の値を無視します。
 >
-> Windows 2000 では、USB ドライバースタックは**MaximumTransferSize**を\_USBD に初期化し、既定\_最大\_転送\_サイズに初期化します。 クライアントドライバーは、デバイスの構成中により小さい値を設定できます。 複合デバイスの場合、各関数のクライアントドライバーは、既定以外のインターフェイス設定のパイプの**MaximumTransferSize**のみを変更できます。
+> Windows 2000 では、USB ドライバースタックに**MaximumTransferSize**よって MaximumTransferSize\_が\_既定\_の\_最大転送サイズ USBD に初期化されます。 クライアントドライバーは、デバイスの構成中により小さい値を設定できます。 複合デバイスの場合、各関数のクライアントドライバーは、既定以外のインターフェイス設定のパイプの**MaximumTransferSize**のみを変更できます。
 
 USB 転送のサイズには、次の制限があります。
 
@@ -100,7 +101,7 @@ USB 転送のサイズには、次の制限があります。
 <th>Windows 8.1、Windows 8</th>
 <th>Windows 7、Windows Vista</th>
 <th>Windows XP、Windows Server 2003</th>
-<th>Windows 2000</th>
+<th>Windows 2000</th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +122,7 @@ USB 転送のサイズには、次の制限があります。
 <td>妨害</td>
 <td><p>4 MB、SuperSpeed、高、フル、低速度 (xHCI、EHCI、UHCI、OHCI)</p></td>
 <td><p>4 MB (高、最大、低速度) (EHCI、UHCI、OHCI)</p></td>
-<td>[無制限]</td>
+<td>無制限</td>
 <td><p>未確定 (OHCI)</p></td>
 </tr>
 <tr class="odd">
@@ -139,8 +140,8 @@ USB 転送のサイズには、次の制限があります。
 </tr>
 <tr class="even">
 <td>アイソクロナス</td>
-<td><p>1024<em><strong>Wbytesperinterval</strong> (SUPERSPEED を参照) (xHCI) については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor)"><strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>」を参照してください。</p>
-<p>1024</em> <strong>MaximumPacketSize</strong> (XHCI, EHCI)</p>
+<td><p>1024<em>SUPERSPEED (xHCI) の<strong>wbytesperinterval</strong> ( <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor" data-raw-source="[&lt;strong&gt;USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/usbspec/ns-usbspec-_usb_superspeed_endpoint_companion_descriptor)"><strong>USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR</strong></a>を参照)</p>
+<p>1024</em> <strong>MaximumPacketSize</strong> (xHCI, EHCI)</p>
 <p>256 * <strong>MaximumPacketSize</strong>の全速度 (XHCI、EHCI)</p>
 <p>64K (全速度) (UHCI、OHCI)</p></td>
 <td><p>1024 * 高速 (EHCI) の<strong>MaximumPacketSize</strong></p>
@@ -156,17 +157,17 @@ USB 転送のサイズには、次の制限があります。
 
  
 
-**MaximumTransferSize**を使用して転送サイズを制限しても、デバイスが消費する帯域幅の量に直接影響はありません。 クライアントドライバーは、インターフェイスの設定を変更するか、 [**USBD\_パイプ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)の**MaximumPacketSize**メンバーで設定された最大パケットサイズを制限する必要があります\_情報。
+**MaximumTransferSize**を使用して転送サイズを制限しても、デバイスが消費する帯域幅の量に直接影響はありません。 クライアントドライバーは、インターフェイス設定を変更するか、 [**USBD\_\_パイプ情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)の**MaximumPacketSize**メンバーで設定された最大パケットサイズを制限する必要があります。
 
 ### <a name="maximum-packet-size"></a>最大パケットサイズ
 
 
 *最大パケットサイズ*は、エンドポイント記述子の**wMaxPacketSize**フィールドによって定義されます。 クライアントドライバーは、デバイスに対する選択インターフェイス要求で USB パケットサイズを制御できます。 この値を変更しても、デバイスの**wMaxPacketSize**は変更されません。
 
-要求の[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)は、パイプの[**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体です。 この構造体では、
+要求の[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)では、パイプの[**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体が使用されます。 この構造体では、
 
 -   [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体の**MaximumPacketSize**メンバーを変更します。 現在のインターフェイス設定のデバイスファームウェアで定義されている**wMaxPacketSize**の値以下の値に設定します。
--   USBD\_PF\_CHANGE\_MAX\_PACKET フラグを設定します。これには、 **PipeFlags**メンバー [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造体が含まれます。
+-   **PipeFlags** member [**USBD\_パイプ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_usbd_pipe_information)構造\_体で、USBD\_PF\_CHANGE\_MAX パケットフラグを設定します。
 
 インターフェイス設定の選択の詳細については、「 [USB デバイスの構成を選択する方法](how-to-select-a-configuration-for-a-usb-device.md)」を参照してください。
 
@@ -175,15 +176,15 @@ USB 転送のサイズには、次の制限があります。
 
 クライアントドライバーが読み取り要求を行う場合、転送バッファーは最大パケットサイズの倍数である必要があります。 ドライバーが最大パケットサイズよりも小さいデータを必要とする場合でも、パケット全体を要求する必要があります。 デバイスが最大サイズ (短いパケット) 未満のパケットを送信すると、転送が完了したことが示されます。
 
-**注:**  
+**注**  
 
-古いコントローラーでは、クライアントドライバーは動作をオーバーライドできます。 データ転送の[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)の**transferflags**メンバーでは、クライアントドライバーは、USBD\_SHORT\_transfer\_OK フラグを設定する必要があります。 このフラグは、デバイスが**wMaxPacketSize**より小さいパケットを送信することを許可します。
+古いコントローラーでは、クライアントドライバーは動作をオーバーライドできます。 データ転送の URB の**Transferflags**メンバーで[**URB**](https://docs.microsoft.com/windows-hardware/drivers/ddi/usb/ns-usb-_urb)は、クライアントドライバーは\_USBD SHORT\_transfer\_OK フラグを設定する必要があります。 このフラグは、デバイスが**wMaxPacketSize**より小さいパケットを送信することを許可します。
 
-XHCI ホストコントローラーでは、一括エンドポイントと割り込みエンドポイントでは、USBD\_SHORT\_TRANSFER\_OK は無視されます。 EHCI コントローラーでの短いパケットの転送では、エラー状態は発生しません。
+XHCI ホストコントローラーでは、\_一括\_エンド\_ポイントと割り込みエンドポイントでは USBD SHORT TRANSFER OK が無視されます。 EHCI コントローラーでの短いパケットの転送では、エラー状態は発生しません。
 
-EHCI ホストコントローラーでは、一括エンドポイントと割り込みエンドポイントでは、USBD\_SHORT\_TRANSFER\_OK は無視されます。
+EHCI ホストコントローラーでは、\_bulk\_および\_INTERRUPT エンドポイントでは、USBD SHORT TRANSFER OK は無視されます。
 
-UHCI および OHCI ホストコントローラーで、\_転送\_OK が一括または割り込み転送用に設定されていない\_場合、短いパケット転送によってエンドポイントが停止し、転送に対してエラーコードが返されます。
+UHCI および OHCI ホストコントローラーで、一括転送\_また\_は\_割り込み転送に USBD short transfer OK が設定されていない場合、短いパケット転送によってエンドポイントが停止し、転送のエラーコードが返されます。
 
 ### <a name="delimiting-write-transfers-with-short-packets"></a>短いパケットでの書き込み転送の区切り
 

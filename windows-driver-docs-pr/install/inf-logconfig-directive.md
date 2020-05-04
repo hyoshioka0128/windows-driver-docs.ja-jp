@@ -1,9 +1,9 @@
 ---
 title: INF LogConfig ディレクティブ
-description: LogConfig ディレクティブは、1 つまたは複数 INF ライター定義のセクションでは、それぞれ指定するハードウェア リソースの論理構成を参照します。
+description: LogConfig ディレクティブは、1つまたは複数の INF ライターで定義されたセクションを参照し、それぞれがハードウェアリソースの論理構成を指定します。
 ms.assetid: 6b60c3eb-bf70-42f7-bed7-a856fd626d8c
 keywords:
-- INF LogConfig ディレクティブ デバイスとドライバーのインストール
+- INF LogConfig ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,36 +12,36 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d52edef707ffbe8745d32a0d4b8fafeedd57d21
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf30685d53937cacc96590473d9f3ff5f78b5397
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370052"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223144"
 ---
 # <a name="inf-logconfig-directive"></a>INF LogConfig ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-A **LogConfig**ディレクティブは、1 つまたは複数 INF ライター定義のセクションでは、ハードウェア リソース − の論理構成を指定の割り込み要求の行を参照、メモリの範囲、I/O ポート、および DMA いるチャネルがあることができますデバイスによって使用されます。 各*ログの構成 セクションで*代替デバイスで使用できるバス相対ハードウェア リソースのセットを指定します。
+**Logconfig**ディレクティブは、1つまたは複数の INF ライターで定義されたセクションを参照します。各セクションは、ハードウェアリソースの論理構成 (割り込み要求行、メモリ範囲、i/o ポート、およびデバイスで使用できる DMA チャネル) を指定します。 各*ログ構成セクション*では、デバイスで使用できるバス相対ハードウェアリソースの代替セットを指定します。
 
-```ini
+```inf
 [DDInstall] | 
 [DDInstall.LogConfigOverride] 
   
 LogConfig=log-config-section[,log-config-section]...
 ```
 
-非 PnP デバイスの INF ファイルでは、このディレクティブを使用して、基本的な構成を作成します。
+PnP 以外のデバイスの INF ファイルこのディレクティブを使用して、基本的な構成を作成します。
 
-PnP デバイスの INF ファイルは、上書きの構成を作成する場合にのみ、このディレクティブを使用します。
+PnP デバイス用の INF ファイルこのディレクティブは、上書き構成を作成する場合にのみ使用します。
 
-セクションによって参照される各名前付き、 **LogConfig**ディレクティブは、次の形式。
+**Logconfig**ディレクティブによって参照される名前付きセクションには、次の形式があります。
 
-```ini
+```inf
 [log-config-section]
  
 ConfigPriority=priority-value[,config-type]
@@ -57,183 +57,183 @@ ConfigPriority=priority-value[,config-type]
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="configpriority-priority-value"></a>**ConfigPriority =** <em>優先度値</em>  
-次のいずれかとして、この論理構成での優先順位の値を指定します。
+<a href="" id="configpriority-priority-value"></a>**Configpriority =**<em>priority-値</em>  
+次のいずれかの論理構成の優先順位値を指定します。
 
-<a href="" id="desired"></a>必要な  
-論理的な構成、最適です。
+<a href="" id="desired"></a>望む  
+ソフト構成、最適。
 
-<a href="" id="normal"></a>標準  
-論理的な構成済みより少ない最適な DESIRED します。 これは、一般的な設定です。
+<a href="" id="normal"></a>通常  
+ソフトに構成されており、必要以上に最適化されていません。 これは、一般的な設定です。
 
-場合、標準を指定する必要があります、*ログの構成 セクションで*で定義された、 [* **DDInstall *。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md)セクション、および no *config 型*値を指定することができます。
+通常は、 *log-config-section* [ *ddinstall * でログ構成セクションが定義されている場合に指定する必要があります。LogConfigOverride](inf-ddinstall-logconfigoverride-section.md)セクション。 *config 型の*値を指定することはできません。
 
-<a href="" id="suboptimal"></a>最適ではないです。  
-論理的な構成済みより少ない最適な法線。
+<a href="" id="suboptimal"></a>最適で  
+ソフト構成、通常よりも最適化されていません。
 
 <a href="" id="hardreconfig"></a>HARDRECONFIG  
 ジャンパー変更を再構成する必要があります。
 
 <a href="" id="hardwired"></a>固定  
-変更することはできません。
+を変更することはできません。
 
-<a href="" id="restart"></a>再起動  
-再起動を有効にする必要があります。
+<a href="" id="restart"></a>一度  
+再起動が有効になる必要があります。
 
 <a href="" id="reboot"></a>再起動  
-これは、再起動と同じです。
+これは再起動と同じです。
 
-<a href="" id="poweroff"></a>電源オフ  
+<a href="" id="poweroff"></a>保管済み  
 電源サイクルを有効にする必要があります。
 
-<a href="" id="disabled"></a>無効になっています。  
-ハードウェアまたはデバイスが無効です。
+<a href="" id="disabled"></a>無効に  
+ハードウェア/デバイスが無効になっています。
 
-<a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**DMAConfig =** \[*DMAattrs:* \]*DMANum*\[<strong>、</strong>DMANum\].\]  
-*DMAattrs*デバイスが唯一の 8 ビット DMA チャネルを持つバスに接続されているし、デバイスは、標準のシステム DMA を使用する場合は省略可能です。 それ以外の場合、次の文字のいずれかを指定できます。
+<a href="" id="dmaconfig--dmaattrs--dmanum--dmanum-----"></a>**Dmaconfig =**\[*DMAattrs:*\]*dmanum*\[<strong>、</strong>dmanum\]...\]  
+*DMAattrs*は、デバイスが8ビットの dma チャネルのみを搭載し、デバイスが標準のシステム DMA を使用するバス上で接続されている場合は省略可能です。 それ以外の場合は、次のいずれかの文字を使用できます。
 
-| Letter | 説明    |
+| 文字 | 意味    |
 |--------|------------|
-| **D**  | 32 ビットの DMA |
-| **W**  | 16 ビット DMA |
-| **N**  | 8 ビット DMA  |
+| **D**  | 32ビット DMA |
+| **W**  | 16ビット DMA |
+| **N**  | 8ビット DMA  |
 
  
 
-使用する必要がある、デバイスは、バス マスター DMA を使用している場合**M**使用 DMA チャネルの種類を示す次の (相互に排他的) 文字のいずれかの。**A**、 **B**、または**F**します。どちらの場合**A**、 **B**、または**F**は指定すると、標準の DMA チャネルが使用されます。
+デバイスでバスマスタ DMA を使用する場合は、使用する DMA チャネルの種類 ( **A**、 **B**、または**F**) を示す、次の (相互に排他的な) 文字のいずれかを使用して**M**を使用する必要があります。**A**、 **B**、または**F**のいずれも指定しない場合は、標準の DMA チャネルが想定されます。
 
-*DMANum*コンマ (,) で次の各区切りの 10 進数として 1 つまたは複数のバス相対 DMA チャネルを指定します。
+*Dmanum*は、1つまたは複数のバス相対 DMA チャネルを10進数として指定し、それぞれが次のコンマ (,) で区切られます。
 
-<a href="" id="ioconfig-io-range--io-range----"></a>**IOConfig =** <em>io 範囲</em>\[ **、** <em>io 範囲</em>\].  
-形式は次のいずれかで、デバイスの 1 つまたは複数の I/O ポート範囲を指定します。
+<a href="" id="ioconfig-io-range--io-range----"></a>**Ioconfig =**<em>io 範囲</em>\[**、**<em>io 範囲</em>\]...  
+次のいずれかの形式で、デバイスの1つ以上の i/o ポート範囲を指定します。
 
-<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*開始から終了*\[ **(** \[*デコード マスク*\]\[ *: エイリアス オフセット*\]\[ *: attr*\] **)** \] (種類 1 の I/O の範囲)  
+<a href="" id="start-end---decode-mask---alias-offset---attr------type-1-i-o-range-"></a>*start-end*\[**(**\[*デコードマスク*\]\[*: エイリアス-オフセット*\]\[*: attr*\]**)** \] (Type 1 i/o range)  
 
-<a href="" id="start"></a>*開始*  
-64 ビットの 16 進数のアドレスとして、I/O ポートの範囲の開始アドレスを指定します。
+<a href="" id="start"></a>*着手*  
+I/o ポート範囲の開始アドレスを、64ビットの16進アドレスとして指定します。
 
 <a href="" id="end"></a>*終わり*  
-64 ビットの 16 進数のアドレスとしても、I/O ポートの範囲の終了アドレスを指定します。
+I/o ポート範囲の終了アドレスを、64ビットの16進数アドレスとして指定します。
 
-<a href="" id="decode-mask"></a>*デコード マスク*  
-別名型を定義して、次のいずれかを指定できます。
+<a href="" id="decode-mask"></a>*デコード-マスク*  
+エイリアスの種類を定義します。次のいずれかを指定できます。
 
-| マスクの値 | 説明         | IOR_Alias 値 |
+| マスク値 | 意味         | IOR_Alias 値 |
 |------------|-----------------|------------------|
-| **3ff**    | 10 ビットをデコードします。   | 0x04             |
-| **fff**    | 12 ビットをデコードします。   | 0x10             |
-| **ffff**   | 16 ビットをデコードします。   | 0x00             |
-| **0**      | 正の値をデコードします。 | 0 xff の場合             |
+| **3ff**    | 10ビットデコード   | 0x04             |
+| **fff**    | 12ビットデコード   | 0x10             |
+| **ffff**   | 16ビットデコード   | 0x00             |
+| **0**      | 正のデコード | 0xFF             |
 
  
 
-<a href="" id="alias-offset-"></a>*エイリアスのオフセット値*   
+<a href="" id="alias-offset-"></a>*エイリアス-オフセット*   
 使用されていません。
 
 <a href="" id="attr"></a>*attr*  
-文字を指定**M**システム メモリ内の特定の範囲がある場合。 省略した場合、特定の範囲は I/O ポートの領域では。
+指定された範囲がシステムメモリ内にある場合は、文字**M**を指定します。 省略した場合、指定された範囲は i/o ポート領域にあります。
 
-<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>サイズ</em> **@** <em>最小-最大</em>\[ **%** <em>align マスク</em>\] \[ **(** \[*デコード マスク*\]\[ **:** <em>エイリアス オフセット</em>\] \[ **:** <em>attr</em>\])\] (種類 2 の I/O の範囲)  
+<a href="" id="size-min-max--align-mask----decode-mask---alias-offset---attr------type-2-i-o-range-"></a><em>サイズ</em>**@**<em>の最小値と最大値</em>\[**%** の<em>調整マスク</em>\]\[**(**\[*デコードマスク*\]\[**:**<em>エイリアス-オフセット</em>\]\[**:**<em>attr</em>\])\] (型2の i/o 範囲)  
 
-<a href="" id="size"></a>*サイズ*  
-32 ビット 16 進数の値として、I/O ポートの範囲に必要なバイト数を指定します。
+<a href="" id="size"></a>*幅*  
+I/o ポート範囲に32ビットの16進値として必要なバイト数を指定します。
 
-<a href="" id="min"></a>*最小値*  
-64 ビットの 16 進数のアドレスとして I/O ポートの範囲の最小可能な開始アドレスを指定します。
+<a href="" id="min"></a>*」*  
+I/o ポート範囲の使用可能な最小の開始アドレスを、64ビットの16進アドレスとして指定します。
 
-<a href="" id="max"></a>*最大*  
-64 ビットの 16 進数のアドレスとして、I/O ポートの範囲の終了アドレス可能な最高レベルを指定します。
+<a href="" id="max"></a>*制限*  
+I/o ポート範囲の有効な最大終了アドレスを64ビットの16進アドレスとして指定します。
 
-<a href="" id="align-mask"></a>*align マスク*  
-ビットごとの AND 演算を整数 (通常、32 ビットまたは 64 ビット) のアドレスの境界上の I/O ポートの範囲の開始を配置するために使用される 64 ビットマスクを指定します。
+<a href="" id="align-mask"></a>*アラマスク*  
+必要に応じて、整数 (通常は32ビットまたは64ビット) アドレス境界の i/o ポート範囲の開始を揃えるためにビットごとの AND 演算で使用される64ビットマスクを指定します。
 
-<a href="" id="decode-mask"></a>*デコード マスク*  
-別名型を定義して、次のいずれかを指定できます。
+<a href="" id="decode-mask"></a>*デコード-マスク*  
+エイリアスの種類を定義します。次のいずれかを指定できます。
 
-| マスクの値 | 説明         | IOR_Alias 値 |
+| マスク値 | 意味         | IOR_Alias 値 |
 |------------|-----------------|------------------|
-| **3ff**    | 10 ビットをデコードします。   | 0x04             |
-| **fff**    | 12 ビットをデコードします。   | 0x10             |
-| **ffff**   | 16 ビットをデコードします。   | 0x00             |
-| **0**      | 正の値をデコードします。 | 0 xff の場合             |
+| **3ff**    | 10ビットデコード   | 0x04             |
+| **fff**    | 12ビットデコード   | 0x10             |
+| **ffff**   | 16ビットデコード   | 0x00             |
+| **0**      | 正のデコード | 0xFF             |
 
  
 
-<a href="" id="alias-offset-"></a>*エイリアスのオフセット値*   
+<a href="" id="alias-offset-"></a>*エイリアス-オフセット*   
 使用されていません。
 
 <a href="" id="attr"></a>*attr*  
-文字を指定**M**システム メモリ内の特定の範囲がある場合。 省略した場合、特定の範囲は I/O ポートの領域では。
+指定された範囲がシステムメモリ内にある場合は、文字**M**を指定します。 省略した場合、指定された範囲は i/o ポート領域にあります。
 
-<a href="" id="memconfig-mem-range--mem-range----"></a>**MemConfig =** <em>メモリ範囲</em>\[ **、** <em>メモリ範囲</em>\].  
-次の形式のいずれかでは、デバイスの 1 つ以上のメモリ範囲を指定します。
+<a href="" id="memconfig-mem-range--mem-range----"></a>**Memconfig =**<em>メモリ</em>\[範囲 **、**<em>メモリ範囲</em>\]...  
+次のいずれかの形式で、デバイスの1つ以上のメモリ範囲を指定します。
 
-```ini
+```inf
 start-end[(attr)] | size@min-max[%align-mask][(attr)]
 ```
 
-<a href="" id="start"></a>*開始*  
-64 ビットの 16 進値として、デバイスのメモリの範囲の開始 (バス単位) の物理アドレスを指定します。
+<a href="" id="start"></a>*着手*  
+デバイスメモリ範囲の開始 (バス相対) 物理アドレスを、64ビットの16進値として指定します。
 
 <a href="" id="end"></a>*終わり*  
-64 ビットの 16 進値としても、メモリの範囲の終了の物理アドレスを指定します。
+メモリ範囲の終了物理アドレスを指定します。これは、64ビットの16進値としても指定します。
 
 <a href="" id="attr"></a>*attr*  
-1 つまたは複数の次の文字として、メモリ範囲の属性を指定します。
+メモリ範囲の属性を、次の1つ以上の文字として指定します。
 
-| Letter | 説明                                             |
+| 文字 | 意味                                             |
 |--------|-----------------------------------------------------|
-| **R**  | 読み取り専用です。                                           |
-| **W**  | 書き込みのみ                                          |
+| **R**  | 読み取り専用                                           |
+| **W**  | 書き込み専用                                          |
 | **RW** | 読み取り/書き込み                                          |
-| **C**  | 結合の書き込みが許可されています。                              |
+| **C**  | 結合書き込み許可                              |
 | **H**  | キャッシュ可能                                           |
-| **F**  | プリフェッチ可能です                                        |
-| **D**  | カードのデコードの代わりに 32 ビット アドレス指定が 24 ビット |
+| **F**  | プリフェッチ可能                                        |
+| **D**  | カードデコードのアドレス指定は、24ビットではなく32ビットです。 |
 
  
 
-両方**R**と**W**が指定されてか、どちらも指定しない場合、読み取り/書き込みが想定されています。
+**R**と**W**の両方が指定されている場合、またはどちらも指定されていない場合は、読み取り/書き込みが想定されます。
 
-<a href="" id="size-"></a>*サイズ*   
-32 ビット 16 進数の値として、メモリ範囲で必要なバイト数を指定します。
+<a href="" id="size-"></a>*幅*   
+メモリ範囲に32ビットの16進値として必要なバイト数を指定します。
 
-<a href="" id="min--"></a>*最小値*   
-64 ビットの 16 進値として、デバイスのメモリの範囲の最小可能な開始アドレスを指定します。
+<a href="" id="min--"></a>*」*   
+64ビットの16進値として、デバイスのメモリ範囲の最小有効開始アドレスを指定します。
 
-<a href="" id="max"></a>*最大*  
-64 ビットの 16 進値として、メモリ範囲の終了アドレス可能な最高レベルを指定します。
+<a href="" id="max"></a>*制限*  
+メモリ範囲の最大有効終了アドレスを64ビットの16進値として指定します。
 
-<a href="" id="align-mask-"></a>*align マスク*   
-ビットごとの AND 演算を整数 (通常は 64 ビット) のアドレスの境界上のデバイスのメモリの範囲の開始を配置するために使用される 64 ビットマスクを指定します。
+<a href="" id="align-mask-"></a>*アラマスク*   
+必要に応じて、整数 (通常は64ビット) アドレス境界のデバイスメモリ範囲の開始位置を揃えるためにビットごとの AND 演算で使用される64ビットマスクを指定します。
 
-Align マスクを省略すると、メモリの既定の配置は、4 K の境界 (FFFFF000) では。
+アラマスクを省略した場合、既定のメモリアラインメントは4K 境界 (FFFFF000) になります。
 
-<a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =** \[*IRQattrs:* \]*IRQNum*\[ **、** <em>IRQNum</em>\]...  
-*IRQattrs*デバイス bus 相対の edge によってトリガーされる IRQ を使用している場合を省略するとします。 それ以外の場合、指定**L**レベルによってトリガーされる IRQ を示すと **%.ls**場合は、デバイスは、このエントリに記載の IRQ ラインを共有できます。
+<a href="" id="irqconfig--irqattrs--irqnum--irqnum----"></a>**IRQConfig =**\[*IRQattrs:*\]*IRQNum*\[**、**<em>IRQNum</em>IRQNum\]...  
+デバイスがバスによって、エッジによってトリガーされた IRQ を使用する場合、 *IRQattrs*は省略されます。 それ以外の場合は、このエントリに示されている IRQ 行をデバイスが共有できる場合は、 **L**を指定して、レベルでトリガーされる Irq と**LS**を指定します。
 
-*IRQNum*デバイスを 10 進数として使用できる 1 つまたは複数のバス相対 Irq を指定します、次のコンマ (,) で区切っています。
+*IRQNum*は、デバイスが次のコンマ (,) で区切られた10進数として使用できるバス相対 irq を1つ以上指定します。
 
-<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**PcCardConfig=** <em>ConfigIndex</em>\[ **:** \[*MemoryCardBase1*\]\[ **:** <em>MemoryCardBase2</em>\]\]\[ **(** <em>attrs</em> **)** \]  
-CardBus レジスタを構成します。 または、デバイスの属性の領域にマップされる最大 2 つの永続的なメモリ ウィンドウを作成します。 ドライバーは、[メモリ] ウィンドウを使用して、ISR. から属性の領域にアクセスすることができます。 すべての数値を 16 進形式で指定します。
+<a href="" id="pccardconfig-configindex---memorycardbase1---memorycardbase2----attrs--"></a>**Pccardconfig =**<em>configindex</em>\[**:**\[*MemoryCardBase1*\]\[**:**<em>MemoryCardBase2</em>\]MemoryCardBase2\]**(**<em>attrs</em>(attrs **)** )\[\]  
+は、CardBus レジスタを構成します。または、デバイスの属性空間にマップされる永続的なメモリウィンドウを最大2つ作成します。 ドライバーは、メモリウィンドウを使用して、ISR から属性空間にアクセスできます。 すべての数値を16進数形式で指定します。
 
-要素を**PcCardConfig**エントリは、次のとおり。
+**Pccardconfig**エントリの要素は次のとおりです。
 
 <a href="" id="configindex"></a>*ConfigIndex*  
-PCMCIA バス上のデバイスの 8 ビット PCMCIA 構成のインデックスを指定します。
+PCMCIA バス上のデバイスの8ビット PCMCIA 構成インデックスを指定します。
 
 <a href="" id="memorycardbase1"></a>*MemoryCardBase1*  
-最初の [メモリ] ウィンドウの 32 ビットのベース アドレスを指定します。
+必要に応じて、最初のメモリウィンドウの32ビットベースアドレスを指定します。
 
 <a href="" id="memorycardbase2"></a>*MemoryCardBase2*  
-必要に応じて 2 つ目の [メモリ] ウィンドウの 32 ビットのベース アドレスを指定します。
+必要に応じて、2番目のメモリウィンドウの32ビットベースアドレスを指定します。
 
-<a href="" id="attrs"></a>*属性*  
-必要に応じてスペースで区切られた、デバイスの 1 つまたは複数の属性を指定します。 無効な属性指定子は、全体を無効に**PcCardConfig**エントリ。 特定の属性の 1 つ以上の指定子が指定されている場合、属性は、個々 の I/O またはデバイスの [メモリ] ウィンドウに適用されます。 のみ 1 つの指定子を指定すると、その属性は、(次の例を参照してください)、すべてのウィンドウに適用されます。
+<a href="" id="attrs"></a>*attrs*  
+必要に応じて、デバイスの1つまたは複数の属性をスペースで区切って指定します。 無効な属性指定子により、 **Pccardconfig**エントリ全体が無効になります。 特定の属性に対して複数の指定子が指定されている場合、属性はデバイスの個々の i/o ウィンドウまたはメモリウィンドウに適用されます。 指定子が1つしか指定されていない場合は、その属性がすべてのウィンドウに適用されます (次の例を参照してください)。
 
-具体的には、複数の指定子が指定されている場合、最初の指定子左から右への読み取りは、最初のウィンドウと 2 番目のウィンドウに適用される次の指定子に適用されますが見つかりました。 1 つで 2 つの I/O ウィンドウと 2 つのメモリ ウィンドウの最大数を制御することが**PcCardConfig**エントリ。 デバイスに 3 つ以上のメモリ windows し、1 秒あたり場合、 **PcCardConfig**エントリを含める必要があります。
+具体的には、複数の指定子が指定されている場合、最初の指定子が左から右に読み取られ、2番目のウィンドウに次の指定子が適用されます。 最大2つの i/o ウィンドウと2つのメモリウィンドウは、1つの**Pccardconfig**エントリによって制御できます。 デバイスに3つ以上のメモリウィンドウがある場合は、2番目の**Pccardconfig**エントリを含める必要があります。
 
-属性は次のとおりです。
+次の属性があります。
 
 <table>
 <colgroup>
@@ -249,163 +249,163 @@ PCMCIA バス上のデバイスの 8 ビット PCMCIA 構成のインデック�
 <tbody>
 <tr class="odd">
 <td align="left"><strong>W</strong></td>
-<td align="left"><p>16 ビットの I/O のデータのパス。</p>
-<p>既定値は 8 ビット、INF が指定されている場合、 <strong>LogConfig</strong>ディレクティブ。 ない場合は<strong>LogConfig</strong>ディレクティブを指定すると、ドライバーは 16 ビットの I/O を使用します。</p></td>
+<td align="left"><p>16ビット i/o データパス。</p>
+<p>INF で<strong>Logconfig</strong>ディレクティブが指定されている場合、既定値は8ビットです。 <strong>Logconfig</strong>ディレクティブが指定されていない場合、ドライバーは16ビットの i/o を使用します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>S</strong><em>n</em></td>
-<td align="left"><p>~ IOCS16 ソース。</p>
-<p>場合<em>n</em>は 0 です。 ~ IOCS16 が datasize ビットの値に基づきます。 N が 1、~ IOCS16 がに基づいて、~、デバイスから IOIS16 信号。 既定値は<strong>S</strong>1.</p></td>
+<td align="left"><p>~ IOCS16 source。</p>
+<p><em>N</em>が0の場合、~ IOCS16 は datasize ビットの値に基づいています。 N が1の場合、~ IOCS16 はデバイスからの ~ IOIS16 信号に基づいています。 既定値は<strong>S</strong>です。1.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>Z</strong><em>n</em></td>
-<td align="left"><p>8 ビット、I/O 待機状態は 0。</p>
-<p>場合<em>n</em> 0 個の追加の待機状態で 8 ビットの I/O アクセスが発生する 1 に設定されています。 場合<em>n</em> 0 の場合は、多少の待機状態でアクセスが発生します。 このフラグには、16 ビットの I/O の意味はありません。 既定値は<strong>Z</strong>0.</p></td>
+<td align="left"><p>I/o 8 ビット、待機状態をゼロにします。</p>
+<p><em>N</em>が1の場合、8ビットの i/o アクセスは、追加の待機状態がゼロの場合に発生します。 <em>N</em>が0の場合、追加の待機状態でアクセスが発生します。 このフラグは、16ビットの i/o には意味がありません。 既定値は<strong>Z</strong>です。0.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Xl</strong><em>n</em></td>
-<td align="left"><p>I/O 待機の状態。</p>
-<p>N が 1 の場合は、1 つの追加の待機状態で 16 ビットのシステムへのアクセスが発生します。 既定値は<strong>Xl</strong>1.</p></td>
+<td align="left"><p>I/o 待機状態。</p>
+<p>N が1の場合、1つの追加の待機状態で16ビットシステムアクセスが発生します。 既定値は<strong>Xl</strong>です。1.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>M</strong></td>
-<td align="left">16 ビットのメモリ データのパス。 既定では 8 ビットです。</td>
+<td align="left">16ビットメモリデータパス。 既定値は8ビットです。</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>M8</strong></td>
-<td align="left">8 ビットのメモリ データのパス。</td>
+<td align="left">8ビットメモリデータパス。</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>XM</strong><em>n</em></td>
-<td align="left"><p>メモリは待機状態、0、1、2 または 3 n を使用できる場所です。</p>
-<p>この値は、[メモリ] ウィンドウへのアクセスを 16 ビットの多少の待機状態の数を決定します。 既定値は<strong>XM</strong>3.</p></td>
+<td align="left"><strong>Xm</strong><em>n</em></td>
+<td align="left"><p>メモリ待機状態。 n には0、1、2、または3を指定できます。</p>
+<p>この値は、メモリウィンドウへの16ビットアクセスに対する追加の待機状態の数を決定します。 既定値は<strong>Xm</strong>です。3.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>A</strong></td>
-<td align="left">メモリの属性としてマップするメモリの範囲です。</td>
+<td align="left">属性メモリとしてマップされるメモリ範囲。</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>C</strong></td>
-<td align="left">一般的なメモリ (既定値) としてマップするメモリの範囲です。</td>
+<td align="left">共通メモリとしてマップされるメモリ範囲 (既定値)。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-たとえば、(WB CA M XM1 XI0) の属性値は、次に変換されます。
+たとえば、attrs 値 (WB CA M XM1 XI0) は次のように変換されます。
 
-1 日の I/O ウィンドウは、16 ビット
+1番目の i/o ウィンドウは16ビットです
 
-2 番目の I/O ウィンドウ 8 ビット
+2番目の i/o ウィンドウ8ビット
 
-第 1 の [メモリ] ウィンドウは共通
+最初のメモリウィンドウは共通
 
-2 番目の [メモリ] ウィンドウは、属性
+2番目のメモリウィンドウは属性です
 
-メモリが 16 ビットです。
+メモリは16ビットです。
 
-[メモリ] ウィンドウで 1 つの待機の状態
+メモリウィンドウで1つの待機状態
 
-ゼロ待機 I/O windows 上の状態
+I/o ウィンドウの待機状態がゼロの場合
 
-<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**MfCardConfig =** <em>ConfigRegBase</em> **:** <em>ConfigOptions</em>\[ **:** <em>IoResourceIndex</em>\]\[ **(** <em>属性</em> **)** \].次のように登録、多機能端末の 1 つの関数の構成のセットの属性、メモリの場所を指定します。
+<a href="" id="mfcardconfig-configregbase-configoptions--ioresourceindex---attrs-----"></a>**Mfcardconfig =**<em>configregbase</em>**:**<em>configoptions</em>\[**:**<em>IoResourceIndex</em>\]\[**(**<em>attrs</em>**)**\]...次に示すように、多機能デバイスの1つの機能に対して、一連の構成レジスタの属性メモリの場所を指定します。
 
 <a href="" id="configregbase"></a>*ConfigRegBase*  
-構成の多機能デバイスには、この関数のレジスタの属性のオフセットを指定します。
+多機能デバイスのこの機能の構成レジスタの属性オフセットを指定します。
 
 <a href="" id="configoptions-"></a>*ConfigOptions*   
-8 ビット PCMCIA の構成オプションのレジスタを指定します。
+8ビットの PCMCIA 構成オプションの登録を指定します。
 
 <a href="" id="ioresourceindex-"></a>*IoResourceIndex*   
-インデックスを指定、 **IOConfig**バス ドライバーの構成の基本 I/O をプログラミングで使用して、レジスタの制限を入力します。 このインデックスは 0 から始まる、ゼロによる初期の指定は、 **IOConfig**このエントリ*ログの構成 セクションで*します。
+構成 i/o ベースのプログラミングとレジスタの制限に使用するバスドライバーの**Ioconfig**エントリのインデックスを指定します。 このインデックスは0から始まります。つまり、0は、この*ログ構成セクション*の初期**ioconfig**エントリを指定します。
 
-<a href="" id="attrs-"></a>*属性*   
-場合、文字に設定**A**、構成および状態のレジスタにオーディオの有効化を有効にする PCMCIA バス ドライバーに指示します。
+<a href="" id="attrs-"></a>*attrs*   
+文字**A**に設定されている場合、は、構成および状態のレジスタで audio enable をオンにするように PCMCIA バスドライバーに指示します。
 
-各**MfCardConfig**エントリは、多機能デバイスの 1 つの関数についての情報を提供します。 ときに一連の **LogConfig**各ディレクティブを個別参照 *ログの構成 セクションで* INF ので [* **DDInstall *。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md) セクションの各 *ログの構成 セクションで* など、そのエントリがあります。 **MfCardConfig**エントリ、同じ順序で一覧表示します。
+各**Mfcardconfig**エントリは、多機能デバイスの1つの機能に関する情報を提供します。 一連の**logconfig**ディレクティブが、それぞれが INF の*log-config-section* [ *ddinstall * の個別のログ構成セクションを参照している場合。LogConfigOverride](inf-ddinstall-logconfigoverride-section.md)セクションでは、各*ログ構成セクション*に、同じ順序で一覧表示される、 **mfcardconfig**エントリを含むエントリが含まれている必要があります。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-A **LogConfig**すべてあたり-の製造元、モデルごとでディレクティブを指定することができます [**INF *DDInstall*セクション**](inf-ddinstall-section.md)または [**INF *DDInstall*します。LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)します。
+**Logconfig**ディレクティブは、製造元ごと、モデルごとの[**inf *ddinstall*セクション**](inf-ddinstall-section.md)、または[**inf *ddinstall*で指定できます。LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)。
 
-通常いくつかの代替論理構成をサポートする非 PnP デバイスに対して、INF のセットを定義する*ログ-構成-セクション*下、 *DDInstall*セクション。 各*ログの構成 セクションで*個別の論理構成リソースのセットを指定します。 含まれています、 **ConfigPriority**各論理構成に従って、デバイスとドライバーのパフォーマンスに対するその影響をランク付けのエントリが、初期化の容易さなどです。
+複数の代替論理構成をサポートする非 PnP デバイス用の INF では、通常、 *Ddinstall*セクションの下に一連の*ログ構成セクション*が定義されています。 各*ログ構成セクション*では、個別の論理構成リソースのセットを指定します。 また、 **Configpriority**エントリも含まれています。これは、デバイスとドライバーのパフォーマンスに対する影響、初期化の容易さなどに基づいて各論理構成にランクを付けます。
 
-PnP デバイスの場合は、PnP マネージャーは、一連の論理ハードウェア リソースを各 PnP デバイスに割り当てます。 つまり、PnP マネージャー、システム バス ドライバーのクエリを実行デバイス当たりの I/O バス構成リソースのレポートを使用してで受信、このようなすべてのリソースの使用量のシステム全体の最適なバランスを実現するために論理ハードウェア リソースのセットをデバイスごとの代入.
+Pnp デバイスの場合、PnP マネージャーは各 PnP デバイスに論理ハードウェアリソースのセットを割り当てます。 つまり、PnP マネージャーは、システムバスドライバーに対してクエリを実行し、デバイスごとの i/o バス構成リソースが使用されていることをレポートします。また、論理ハードウェアリソースのデバイスごとのセットを割り当てて、そのようなリソースすべての使用において最適なシステム全体のバランスを実現します。
 
-結果として、 **LogConfig** ディレクティブを*DDInstall* PnP デバイスは、セクションは無視されます。 PnP デバイスのバスによって報告されたリソースをオーバーライドするには、 **LogConfig** ディレクティブを[ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md)セクション。 ここで指定のリソース、*ログの構成 セクションで*バスによって報告された代わりに使用されます。
+その結果、PnP デバイスの場合、 *Ddinstall*セクションの**logconfig**ディレクティブは無視されます。 PnP デバイス用にバスによって報告されたリソースを上書きするには、 **logconfig**ディレクティブを[ *ddinstall * の下に追加します。LogConfigOverride](inf-ddinstall-logconfigoverride-section.md)セクション。 この場合、バスによって報告されたリソースではなく、*ログ構成セクション*で指定されたリソースが使用されます。
 
-プラットフォーム拡張機能に追加できる、 *DDInstall*を含むセクションを**LogConfig**ディレクティブ、または、 [* **DDInstall *。LogConfigOverride**](inf-ddinstall-logconfigoverride-section.md) セクションで、プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、次を参照してください。 [INF ファイルを作成する](overview-of-inf-files.md)します。
+プラットフォーム拡張機能は、 **logconfig**ディレクティブを含む*ddinstall*セクション、または[ *ddinstall * に追加できます。LogConfigOverride](inf-ddinstall-logconfigoverride-section.md)セクション。プラットフォーム固有または OS 固有の論理構成を指定します。 詳細については、「 [INF ファイルの作成](overview-of-inf-files.md)」を参照してください。
 
-指定された*ログの構成 セクションで*名は、INF ファイルに固有である必要がありますが、それを参照できます**LogConfig**他 INF でディレクティブ*DDInstall*セクションに、同じデバイス. 各 INF ライター作成セクション名は、INF ファイル内で一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+指定された*ログ構成セクション*名は inf ファイルに対して一意である必要がありますが、同じデバイスの他の INF *Ddinstall*セクションの**logconfig**ディレクティブで参照できます。 各 INF ライターで作成されたセクション名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-1 つだけ**ConfigPriority**エントリは、それぞれで使用できる*ログの構成 セクションで*します。 ありますの各デバイスのハードウェア リソース要件に応じて、その他のエントリの 1 つ以上。
+各*ログ構成セクション*で使用できる**configpriority**エントリは1つだけです。 デバイスのハードウェアリソース要件に応じて、他の各エントリの1つ以上を指定できます。
 
-1 つまたは複数**MfCardConfig =** エントリでのみ表示されます、*ログの構成 セクションで*によって参照される、 **LogConfig**ディレクティブで、 <em>DDInstall</em> **.LogConfigOverride**の多機能デバイスに対して、INF セクション。 多機能デバイスの INF ファイルの詳細については、次を参照してください。[多機能デバイスをサポートしている](https://docs.microsoft.com/windows-hardware/drivers/multifunction/index)します。
+1つ以上の**Mfcardconfig =** エントリは、 <em>Ddinstall</em>の**logconfig**ディレクティブによって参照されている*ログ構成セクション*でのみ使用でき**ます。** 多機能デバイス用の INF の LogConfigOverride セクション。 多機能デバイスの INF ファイルの詳細については、「[多機能デバイスのサポート](https://docs.microsoft.com/windows-hardware/drivers/multifunction/index)」を参照してください。
 
-### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig 参照セクションのエントリと値
+### <a name="logconfig-referenced-section-entries-and-values"></a>LogConfig-参照されたセクションのエントリと値
 
-*ログの構成 セクションで*システムのインストーラーがバイナリ論理構成レコードを作成し、レジストリに格納します。
+*ログ構成セクション*から、システムインストーラーはバイナリ論理構成レコードを構築し、レジストリに格納します。
 
-デバイスごとの任意の数を含めることができます、INF ファイル*ログ-構成-セクション*します。 ただし、このような各セクションでは、1 つのデバイスをインストールするための完全な情報を含める必要があります。 一般に、INF はの各エントリを指定する必要があります、*ログ-構成-セクション*同じ順序で。 INF ドライバーがそのデバイスを初期化する方法に適した最高の順序でエントリの各セットを指定する必要があります。
+INF ファイルには、デバイスごとの*ログ構成セクション*をいくつでも含めることができます。 ただし、各セクションには、1つのデバイスをインストールするための完全な情報が含まれている必要があります。 一般に、INF は各*ログ構成セクション*のエントリを同じ順序で指定する必要があります。 INF は、ドライバーがデバイスを初期化する方法に最も適した順序でエントリの各セットを指定する必要があります。
 
-1 つ以上の場合*ログの構成 セクションで*インストール中に、特定のデバイス INF セクションではこれらの 1 つだけが使用されますが、存在します。 このような INF ファイルでこのようなセクションが使用されるコントロールでは部分的に、 **ConfigPriority**でこれらの各提供値*ログの構成 セクションで*します。 つまり、システムのインストーラーは、INF ファイルですべての構成の優先度を使用しようとしますを既にインストールされているデバイスとの競合が見つかった場合、下のランク付けされた論理構成を選択可能性があります。
+特定のデバイスに複数の*ログ構成セクション*が存在する場合、インストール時には、これらの INF セクションのうち1つだけが使用されます。 このような INF ファイルでは、このようなセクションが、このような各*ログ構成セクション*で提供される**configpriority**値と共に使用されます。 つまり、システムインストーラーは INF ファイル内の構成の優先順位を使用しようとしますが、既にインストールされているデバイスとの競合が見つかった場合は、低いランクの論理構成を選択することがあります。
 
-インストール中に、内の各エントリからリソースを 1 つだけを指定した*ログの構成 セクションで*を選択し、特定のデバイスに割り当てられています。 その型のエントリのセットを使用する必要があります、特定のデバイスでは、同じ型の 1 つ以上のリソースを必要とする場合、*ログ-構成-セクション*します。
+インストール中、特定の*ログ構成セクション*内の各エントリのリソースが1つだけ選択され、特定のデバイスに割り当てられます。 特定のデバイスに同じ種類のリソースが複数必要な場合は、その種類のエントリのセットをその*ログ構成セクション*で使用する必要があります。
 
-たとえば、特定のデバイス用の 2 つの I/O ポート範囲を確認する 2 つ**IOConfig =** エントリを指定する必要があります、*ログの構成 セクションで*デバイスにします。 その一方で、デバイスに IRQ が必要としない場合、INF を省略できます、 **IRQConfig**エントリから、*ログ-構成-セクション*します。
+たとえば、特定のデバイスに対して2つの i/o ポート範囲を確保するには、そのデバイスの*ログ構成セクション*で2つの**ioconfig =** エントリを指定する必要があります。 一方、デバイスに IRQ が必要でない場合*は、その*INF で**IRQConfig**エントリを省略できます。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-この例がいくつか有効では**PcCardConfig** PCMCIA デバイス用のエントリ。
+この例では、PCMCIA デバイスの有効な**Pccardconfig**エントリをいくつか示します。
 
-```ini
+```inf
 PcCardConfig=0:E0000:F0000(W)
 PcCardConfig=0:E0000(M)
 PcCardConfig=0::(W)
 PcCardConfig=0(W)
 ```
 
-この例での型 1 I/O 範囲指定、 **IOConfig**エントリ。 これには、I/O ポート領域、1F8、2F8、または 3F8 で開始できますが、サイズ 8 バイトを指定します。
+次の例では、 **Ioconfig**エントリで型1の i/o 範囲を指定しています。 I/o ポート領域を指定します。サイズは8バイトで、1F8、2F8、または3F8 から開始できます。
 
-```ini
+```inf
 IOConfig=1F8-1FF, 2F8-2FF, 3F8-3FF
 ```
 
-これに対し、この例での型の 2 I/O 範囲指定、 **IOConfig**エントリ。 これには、I/O ポート領域、300、308、310、318、320、または 328 で開始できますが、サイズ 8 バイトを指定します。
+これに対し、この例では、 **Ioconfig**エントリに型2の i/o 範囲が指定されています。 I/o ポート領域は8バイトで、300、308、310、318、320、または328で開始できます。
 
-```ini
+```inf
 IOConfig=8@300-32F%FF8
 ```
 
-この例のセットを示しています。 **IOConfig** 4 ポート デバイスのエントリは、I/O を指定する各ポートを次から 0x400 バイト オフセットである範囲。
+次の例では、4つのポートのデバイスの**Ioconfig**エントリのセットを示しています。各デバイスは、次の中から0x400 バイトでオフセットされた i/o ポート範囲を指定しています。
 
-```ini
+```inf
 IoConfig=0x200-0x21f
 IoConfig=0x600-0x61f
 IoConfig=0xA00-0xA1f
 IoConfig=0xE00-0xE1f
 ```
 
-次の 2 つの例を表示する一般的な**MemConfig**エントリ。
+次の2つの例は、一般的な**Memconfig**エントリを示しています。
 
-この例では、C0000 または D0000 のいずれかで始まる 32 K バイトのメモリ領域を指定します。
+この例では、C0000 または D0000 のいずれかで開始できる32K バイトのメモリ領域を指定します。
 
-```ini
+```inf
 MemConfig=C0000-C7FFF, D0000-D7FFF
 ```
 
-この例では、64 K の境界上で 32 k バイトのメモリ領域を指定します。
+この例では、64K 境界で始まる32k バイトのメモリ領域を指定します。
 
-```ini
+```inf
 MemConfig=8000@C0000-D7FFF%F0000
 ```
 
-この例では、いくつかのシステム HDC クラス INF ファイルを設定する方法*ログ-構成-セクション*の汎用の ESDI ハード ディスク コント ローラーとは、 [ * **DDInstall *。LogConfigOverride** ](inf-ddinstall-logconfigoverride-section.md) IDE コント ローラーの特定のセクション。
+この例では、システム HDC クラス INF ファイルが汎用の ESDI ハードディスクコントローラーのいくつかの*ログ構成セクション*を設定し、 [ *ddinstall * を使用する方法を示します。](inf-ddinstall-logconfigoverride-section.md)特定の IDE コントローラーの LogConfigOverride セクション。
 
-```ini
+```inf
 [MS_HDC] ; per-manufacturer Models section
 %FujitsuIdePccard.DeviceDesc% = 
           atapi_fujitsu_Inst, PCMCIA\FUJITSU-IDE-PC_CARD-DDF2
@@ -451,14 +451,14 @@ IRQConfig=14,15,5,7,9,11,12,3
 PcCardConfig=1:0:0(W)
 ```
 
-方法の例をいくつかの**MfCardConfig**エントリが使用されるを参照してください[をサポートしている PC カードことがある不完全な登録アドレス構成](https://docs.microsoft.com/windows-hardware/drivers/multifunction/supporting-pc-cards-that-have-incomplete-configuration-register-addres)します。
+**Mfcardconfig**エントリを使用する方法の例については、「[不完全な構成レジスタアドレスを持つ PC カードのサポート](https://docs.microsoft.com/windows-hardware/drivers/multifunction/supporting-pc-cards-that-have-incomplete-configuration-register-addres)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall*.FactDef**](inf-ddinstall-factdef-section.md)
+[***DDInstall *。FactDef**](inf-ddinstall-factdef-section.md)
 
  
 

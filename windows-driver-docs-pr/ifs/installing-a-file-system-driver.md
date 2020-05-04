@@ -15,16 +15,16 @@ keywords:
 - DefaultInstall セクション WDK ファイルシステム
 - SourceDisksNames セクション WDK ファイルシステム
 - DestinationDirs セクション WDK ファイルシステム
-- WDK のファイル システムのバージョン
+- バージョンセクション WDK ファイルシステム
 - INF ファイルの作成 (WDK ファイルシステム)
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0edc01d03438ac5030f83b77b825eb136d2ece4
-ms.sourcegitcommit: 329eee396e727bbd1b2a096a5c7bb0c4b78f52e5
+ms.openlocfilehash: 01fa546bf59aa82595d962a3a237cdad1cab94e0
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81007812"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173548"
 ---
 # <a name="installing-a-file-system-driver"></a>ファイル システム ドライバーのインストール
 
@@ -42,9 +42,9 @@ INF ファイルを作成した後、通常はセットアップアプリケー�
 
 ファイルシステムフィルタードライバーのインストールとアンインストールに関する次の情報は、ファイルシステムドライバーにも適用されます。
 
-- [INF ファイルを使用したファイルシステムフィルタードライバーのインストール](using-an-inf-file-to-install-a-file-system-filter-driver.md)
+- [INF ファイルを使用したファイル システム フィルター ドライバーのインストール](using-an-inf-file-to-install-a-file-system-filter-driver.md)
 
-- [INF ファイルを使用したファイルシステムフィルタードライバーのアンインストール](using-an-inf-file-to-uninstall-a-file-system-filter-driver.md)
+- [INF ファイルを使用したファイル システム フィルター ドライバーのアンインストール](using-an-inf-file-to-uninstall-a-file-system-filter-driver.md)
 
 ## <a name="creating-an-inf-file-for-a-file-system-driver"></a>ファイル システム ドライバー用の INF ファイルの作成
 
@@ -54,7 +54,7 @@ INF ファイルを作成した後、通常はセットアップアプリケー�
 
 64ビットバージョンの Windows Vista 以降では、ファイルシステムドライバー (ファイルシステム、レガシフィルター、ミニフィルタードライバー) などの非 PnP (プラグアンドプレイ) ドライバーを含むすべてのカーネルモードコンポーネントが、読み込んで実行するために署名されている必要があります。 これらのバージョンの Windows オペレーティングシステムでは、次の一覧に、ファイルシステムドライバーに関連する情報を示します。
 
-- ファイルシステムドライバーを含む、PnP 以外のドライバーの INF ファイルには、\[の製造元\] または \[モデル\] セクションを含める必要はありません。
+- ファイルシステムドライバーを含む、PnP 以外のドライバーの INF ファイルに\[は、製造元\]または\[モデル\]のセクションを含める必要はありません。
 
 - [**SignTool**](https://docs.microsoft.com/windows-hardware/drivers/devtest/signtool)コマンドラインツール (WDK インストールディレクトリの \bin\SelfSign ディレクトリにあります) を使用して、ドライバー SYS 実行可能ファイルに "sign" を直接埋め込むことができます。 パフォーマンス上の理由から、ブート開始ドライバーには、埋め込み署名が含まれている必要があります。
 
@@ -70,7 +70,7 @@ INF ファイルを使用してレジストリから情報を読み取ったり�
 
 ## <a name="sections-in-a-file-system-driver-inf-file"></a>ファイルシステムドライバーの INF ファイルのセクション
 
-独自のファイルシステムドライバーの INF ファイルを作成するには、次の情報をガイドとして使用します。 [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf)ツールを使用して、INF ファイルの構文を確認できます。
+独自のファイルシステムドライバーの INF ファイルを作成するには、次の情報をガイドとして使用します。 [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)ツールを使用して、INF ファイルの構文を確認できます。
 
 一般に、ファイルシステムドライバーの INF ファイルには、次のセクションが含まれています。
 
@@ -111,7 +111,7 @@ CatalogFile =
 | エントリ | 値 |
 | ----- | ----- |
 | **折本** | "$WINDOWS NT $" |
-| **Provider** | 独自の INF ファイルでは、Microsoft 以外のプロバイダーを指定する必要があります。 |
+| **プロバイダー** | 独自の INF ファイルでは、Microsoft 以外のプロバイダーを指定する必要があります。 |
 | **DriverVer** | 「 [ **INF DriverVer ディレクティブ**」を参照してください。](https://docs.microsoft.com/windows-hardware/drivers/install/inf-driverver-directive) |
 | **CatalogFile** | このエントリを空白のままにします。 将来、署名されたドライバーの WHQL が提供したカタログファイルの名前が含まれます。 |
 
@@ -171,7 +171,7 @@ examplefilesystem.sys
 
 ### <a name="defaultinstallservices-section-required"></a>DefaultInstall セクション (必須)
 
-DefaultInstall セクションには、特定のドライバーのサービスが読み込まれる方法とタイミングを制御する[**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブが含まれてい[**ます。** ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
+DefaultInstall セクションには、特定のドライバーのサービスが読み込まれる方法とタイミングを制御する[**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブが含まれてい[**ます。**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-defaultinstall-services-section)
 
 次のコード例では、 [**Addservice**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addservice-directive)ディレクティブによってファイルシステムサービスがオペレーティングシステムに追加されます。 % ServiceName% トークンには、INF ファイルの**Strings**セクションで定義されているサービス名の文字列が含まれています。 例 Filesystem. Service は、ファイルシステムドライバーの**Serviceinstall**セクションの名前です。
 
@@ -245,7 +245,7 @@ X64 ベースの Windows Vista システム以降では、ブート開始ドラ�
 [**AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)は、新しくインストールされたサービスのレジストリに格納される情報を含む、1つまたは複数の INF ライターで定義された**addregistry**セクションを参照します。
 
 >[!NOTE]
-> 初期インストール後に INF ファイルがドライバーのアップグレードにも使用される場合、 **Addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 例 :
+> 初期インストール後に INF ファイルがドライバーのアップグレードにも使用される場合、 **Addregistry**セクションに含まれているエントリで、0x00000002 (FLG_ADDREG_NOCLOBBER) フラグを指定する必要があります。 このフラグを指定すると、後続のファイルがインストールされたときに HKLM\CurrentControlSet\Services のレジストリエントリが保持されます。 次に例を示します。
 
 ```cpp
 [ExampleFileSystem.AddRegistry]

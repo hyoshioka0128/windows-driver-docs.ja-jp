@@ -1,20 +1,20 @@
 ---
 title: INF DDInstall.Components セクション
-description: DDInstall.Components セクションには、ドライバー パッケージ INF ファイルに追加の INF ライター定義セクションを参照する 1 つまたは複数の INF AddComponent ディレクティブが含まれています。
+description: DDInstall. Components セクションには、ドライバーパッケージの INF ファイルで追加の INF ライター定義セクションを参照する1つ以上の INF AddComponent ディレクティブが含まれています。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7aadabb3e1d97e76e18196290a20eb37a87278f7
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 26b6169180d49a7d1a43d0eedacbe79a54758c1d
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56535582"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223258"
 ---
 # <a name="inf-ddinstallcomponents-section"></a>INF DDInstall.Components セクション
 
-このオプションのセクションには、1 つまたは複数が含まれています[ **INF AddComponent ディレクティブ**](inf-addcomponent-directive.md) INF ライター定義の追加のセクションでは、ドライバー パッケージ INF ファイルを参照します。  このセクションには、Windows 10 バージョン 1703 以降はサポートされています。
+この省略可能なセクションには、ドライバーパッケージ INF ファイルで追加の INF ライター定義セクションを参照する1つ以上の[**Inf AddComponent ディレクティブ**](inf-addcomponent-directive.md)が含まれています。  このセクションは、Windows 10 バージョン1703以降でサポートされています。
 
-```ini
+```inf
 [install-section-name.Components] |
 [install-section-name.nt.Components] |
 [install-section-name.ntx86.Components] |
@@ -26,25 +26,25 @@ ms.locfileid: "56535582"
 AddComponent=ComponentName,[flags],component-install-section
 ```
 
-行うことができます、 *DDInstall*.**コンポーネント**1 つまたは複数のセクション**AddComponent**シンボリック ドライバー パッケージおよびソフトウェア コンポーネントの任意の数の間でリレーションシップを作成するディレクティブ。
+*Ddinstall*を提供できます。ドライバーパッケージと任意の数のソフトウェアコンポーネントの間にシンボリックリレーションシップを作成するための1つ以上の**Addcomponent**ディレクティブを含む**Components**セクション。
 
 ## <a name="entries"></a>エントリ
 
-**AddComponent**=*ComponentName を [flags] コンポーネントのインストール-セクション*
+**Addcomponent**=*ComponentName、[flags]、component-install-section*
 
-このディレクティブは、INF ライター定義コンポーネントのインストール-セクションこの対象となるデバイスのドライバーの INF ファイルで別の場所を参照*DDInstall*セクション。  詳細については、[ **INF AddComponent ディレクティブ**](inf-addcomponent-directive.md)を参照してください。
+このディレクティブは、この*Ddinstall*セクションで取り上げられているデバイスのドライバーについて、inf ファイル内の他の場所にある inf ライターで定義されたコンポーネントを参照します。  詳細については、「 [**INF AddComponent ディレクティブ**](inf-addcomponent-directive.md)」を参照してください。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
-*DDInstall*.**コンポーネント**のセクションでは、それに関連として同じプラットフォームとオペレーティング システムの装飾が必要*DDInstall*セクション。  たとえば、*インストール セクション名*.**ntx86**セクションが、対応する、*インストール セクション名*.**ntx86.Components**セクション。
+*Ddinstall*。**コンポーネント**のセクションには、関連する*ddinstall*セクションと同じプラットフォームとオペレーティングシステムの装飾が必要です。  たとえば、 *「」* と指定します。**ntx86**セクションには、対応する*インストールセクション名*があります。**ntx86**セクション。
 
-指定した*DDInstall* - 製造元でデバイス/モデルに固有のエントリでは、セクションを参照する必要があります*モデル*INF ファイルのセクション。  大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 *DDInstall*.**コンポーネント**クロスプラット フォーム対応の INF ファイルでセクション名。
+指定された*Ddinstall*セクションは、INF ファイルの "製造元別*モデル*" セクションのデバイス/モデル固有のエントリで参照されている必要があります。  正式な構文のステートメントに示されている*インストールセクション名*の大文字と小文字を区別しない拡張機能は、このような*ddinstall*に挿入できます。クロスプラットフォームの INF ファイルの**コンポーネント**セクション名。
 
-詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能の使用方法の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
 ## <a name="examples"></a>例
 
-```ini
+```inf
 [ContosoGrfx.NT.Components]
 AddComponent = ContosoControlPanel,,Component_Inst
 

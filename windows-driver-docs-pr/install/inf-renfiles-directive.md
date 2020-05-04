@@ -1,9 +1,9 @@
 ---
 title: INF RenFiles ディレクティブ
-description: RenFiles ディレクティブは、他の場所に名前を変更するファイルの一覧を参照元 RenFiles ディレクティブが指定されているセクションに対する操作のコンテキストでは、INF ファイルでの INF ライター定義のセクションを参照します。
+description: RenFiles ディレクティブは、INF ファイル内の他の場所で INF ライターによって定義されたセクションを参照します。これにより、参照元の RenFiles ディレクティブが指定されているセクションで、操作のコンテキストでファイルの一覧の名前が変更されます。
 ms.assetid: 269171f7-88f6-47bb-9997-8fdcbe3fa688
 keywords:
-- INF RenFiles ディレクティブ デバイスとドライバーのインストール
+- INF RenFiles ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,23 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 091ef81745c7af19203f6d45dd16d0638a176193
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: cf0cceb47cc656d0b8884241b0a24501b868fdd8
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56538896"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223208"
 ---
 # <a name="inf-renfiles-directive"></a>INF RenFiles ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-A **RenFiles**ディレクティブが他の場所に名前を変更するファイルの一覧をセクションに対する操作のコンテキストでは、INF ファイルでの INF ライター定義のセクションを参照、参照元**RenFiles**ディレクティブを指定します。
+**RenFiles**ディレクティブは、inf ファイル内の他の場所で inf ライターによって定義されたセクションを参照します。これにより、参照元の**RenFiles**ディレクティブが指定されているセクションで、操作のコンテキストでファイルの一覧の名前が変更されます。
 
-```ini
+```inf
 [DDInstall] | 
 [DDInstall.CoInstallers] | 
 [ClassInstall32] | 
@@ -43,57 +43,57 @@ A **RenFiles**ディレクティブが他の場所に名前を変更するファ
 Renfiles=file-list-section[,file-list-section]...
 ```
 
-A **RenFiles**いずれかのセクションでは、正式な構文のステートメントに示すように、ディレクティブを指定することができます。 このディレクティブは、INF ライター定義の次のセクションの中でも指定できます。
+**RenFiles**ディレクティブは、正式な構文ステートメントに示されている任意のセクション内で指定できます。 このディレクティブは、次のいずれかの INF ライターで定義されたセクション内で指定することもできます。
 
--   *追加インターフェイス セクション*によって参照される、 [ **AddInterface** ](inf-addinterface-directive.md)ディレクティブで、 [ * **DDInstall *。インターフェイス**](inf-ddinstall-interfaces-section.md)セクション。
--   *インストール-section インターフェイス*で参照されている、 [ **InterfaceInstall32** ](inf-interfaceinstall32-section.md)セクション。
+-   Ddinstall * で[**addinterface**](inf-addinterface-directive.md)ディレクティブによって参照される*インターフェイスセクション*。 [ *インターフェイス](inf-ddinstall-interfaces-section.md)セクション。
+-   [**InterfaceInstall32**](inf-interfaceinstall32-section.md)セクションで参照される*インストールインターフェイスセクション*。
 
-セクションによって参照される各名前付き、 **RenFiles**ディレクティブは、次の形式の 1 つまたは複数のエントリ。
+**RenFiles**ディレクティブによって参照される各名前付きセクションには、次の形式の1つ以上のエントリがあります。
 
-```ini
+```inf
 [file-list-section]
  
 new-dest-file-name,old-source-file-name 
 ...
 ```
 
-A*ファイルのセクション一覧*それぞれ別々 の行に任意の数のエントリを持つことができます。
+*ファイルリストセクション*には任意の数のエントリを含めることができ、それぞれが個別の行に表示されます。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="new-dest-file-name"></a>*new-dest-file-name*  
-先にファイルに指定する新しい名前を指定します。
+<a href="" id="new-dest-file-name"></a>*新しい-dest-ファイル名*  
+転送先のファイルに指定する新しい名前を指定します。
 
-<a href="" id="old-source-file-name"></a>*古いソース ファイル名*  
+<a href="" id="old-source-file-name"></a>*古い-ソース-ファイル名*  
 ファイルの古い名前を指定します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-**重要な**  このディレクティブを慎重に使用する必要があります。 使用しないことを強くお勧め、 **RenFiles**プラグ アンド プレイの INF ファイルでディレクティブ (PnP) ドライバーに機能します。
+**重要**  このディレクティブは、慎重に使用する必要があります。 プラグアンドプレイ (PnP) 関数ドライバーの INF ファイルでは、 **RenFiles**ディレクティブを使用しないことを強くお勧めします。
 
  
 
-すべて*ファイルのセクション一覧*名は、INF ファイルに固有である必要がありますが、それを参照できます[ **CopyFiles**](inf-copyfiles-directive.md)、 **DelFiles**、または**RenFiles**他の場所で同じ INF ディレクティブ。 このような INF ライター定義セクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、[INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)を参照してください。
+すべての*ファイルリストセクション*名は inf ファイルに対して一意である必要がありますが、同じ inf 内の他の場所では、 [**CopyFiles**](inf-copyfiles-directive.md)、 **Delfiles**、または**RenFiles**ディレクティブで参照できます。 このような INF ライターで定義されたセクション名は、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-**RenFiles**ディレクティブが修飾をサポートしていません、*ファイルのセクション一覧*システム定義のプラットフォームの拡張機能の名前 (**.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、または **.ntarm64**)。
+**RenFiles**ディレクティブは、*ファイルリストセクション*名とシステム定義のプラットフォーム拡張機能 (**. nt**, **. ntx86**, **. ntia64**,. **ntamd64**, **. ntarm**,. **ntarm64**) を装飾することをサポートしていません。
 
-[ **DestinationDirs** ](inf-destinationdirs-section.md)をすべてファイル名の変更を含む特定のセクションに関係なく、操作、INF ファイルのセクションは、変換先を制御**RenFiles**ディレクティブ。 次の規則では、ファイルの名前変更操作について説明します。
+INF ファイルの[**Destinationdirs**](inf-destinationdirs-section.md)セクションは、特定の**RenFiles**ディレクティブを含むセクションに関係なく、すべてのファイル名変更操作の対象を制御します。 次の規則は、ファイル名の変更操作を示しています。
 
--   場合によって参照される名前付きセクションを**RenFiles**ディレクティブ対応するエントリを持つ、 [ **DestinationDirs** ](inf-destinationdirs-section.md)エントリを明示的に指定する同じの INF セクション、ターゲットのインストール先ディレクトリ。 これらのソース ファイルがコピーされる前に、名前付きセクションに記載されているすべてのファイルが、先に変更されます。
--   名前付きセクションが表示されていない場合、 **DestinationDirs**セクションで、Windows は、 *DefaultDestDir*内のエントリ、 **DestinationDirs** INF のセクション。
+-   **RenFiles**ディレクティブによって参照される名前付きセクションに、同じ INF の[**destinationdirs**](inf-destinationdirs-section.md)セクション内に対応するエントリがある場合、そのエントリはターゲットの宛先ディレクトリを明示的に指定します。 これらのソースファイルがコピーされる前に、名前付きセクションに示されているすべてのファイルの名前が変換先で変更されます。
+-   **Destinationdirs**セクションに名前付きセクションが表示されていない場合、WINDOWS は INF の**Destinationdirs**セクションの*DefaultDestDir*エントリを使用します。
 
-**注**  % を使用することはできません*strkey*% トークンは、新しいまたは古いファイル名を指定します。 % の詳細については*strkey*% のトークンを参照してください[ **INF 文字列セクション**](inf-strings-section.md)します。
+**メモ**  %*strkey*% トークンを使用して、新しいファイル名または古いファイル名を指定することはできません。 %*Strkey*% トークンの詳細については、「 [**INF Strings」セクション**](inf-strings-section.md)を参照してください。
 
  
 
 <a name="examples"></a>例
 --------
 
-この例で参照されているセクションを示しています、 **RenFiles**ディレクティブ。
+この例は、 **RenFiles**ディレクティブによって参照されるセクションを示しています。
 
-```ini
+```inf
 [RenameOldFilesSec]
 devfile41.sav, devfile41.sys
 ```
@@ -109,10 +109,10 @@ devfile41.sav, devfile41.sys
 
 [***DDInstall***](inf-ddinstall-section.md)
 
-[***DDInstall *。共同インストーラー**](inf-ddinstall-coinstallers-section.md)
+[***DDInstall *。CoInstallers**](inf-ddinstall-coinstallers-section.md)
 
-**DelFiles**
-[**DestinationDirs**](inf-destinationdirs-section.md)
+**Delfiles**
+[**destinationdirs**](inf-destinationdirs-section.md)
 
 [**InterfaceInstall32**](inf-interfaceinstall32-section.md)
 

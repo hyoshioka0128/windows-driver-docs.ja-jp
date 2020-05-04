@@ -1,9 +1,9 @@
 ---
 title: INF SourceDisksFiles セクション
-description: SourceDisksFiles セクション名はソース ファイル、インストール ディスク、およびインストール時に使用するディレクトリ パスです。
+description: SourceDisksFiles セクションには、ソースファイル、インストールディスク、およびインストール時に使用されるディレクトリパスの名前が付いています。
 ms.assetid: 4a20b2e7-3371-47c1-8f51-bcc7af044382
 keywords:
-- INF SourceDisksFiles セクションのデバイスとドライバーのインストール
+- INF SourceDisksFiles セクションデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,21 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 410a84f32309842a2437d6c6fdd9572dd5b28b01
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e0f5dc83b15c522ac25546f773ad1cfdb1dca6f
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380216"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223206"
 ---
 # <a name="inf-sourcedisksfiles-section"></a>INF SourceDisksFiles セクション
 
 
-**SourceDisksFiles**セクションのインストール時に使用されるソース ファイルの名前、それらのファイルが含まれているインストール ディスクを識別およびを含むパッケージ内のディスクに存在する場合は、ディレクトリのパスを提供します個々 のファイル。
+**Sourcedisksfiles**セクションは、インストール中に使用されるソースファイルの名前を指定し、それらのファイルが含まれているインストールディスクを識別します。また、個々のファイルを含むディストリビューションディスクにディレクトリパスがあれば、それらを提供します。
 
-ドライバー ファイルまたはアプリケーション ファイルの署名の一部として含まれるため[ドライバー パッケージ](driver-packages.md)、ファイルは、対応する INF をいる必要があります**SourceDisksFiles**セクション エントリと対応する[ **INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)します。
+ドライバーファイルまたはアプリケーションファイルが署名付き[ドライバーパッケージ](driver-packages.md)の一部として含まれるようにするには、そのファイルに、対応する Inf **Sourcedisksfiles**セクションエントリと、対応する[**inf CopyFiles ディレクティブ**](inf-copyfiles-directive.md)が必要です。
 
-```ini
+```inf
 [SourceDisksFiles] | 
 [SourceDisksFiles.x86] | 
 [SourceDisksFiles.arm] | (Windows 8 and later versions of Windows)
@@ -41,43 +41,43 @@ filename=diskid[,[ subdir][,size]]
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="filename"></a>*ファイル名*  
-ソース ディスク上のファイルの名前を指定します。
+<a href="" id="filename"></a>*/db*  
+ソースディスク上のファイルの名前を指定します。
 
-<a href="" id="diskid"></a>*ディスク id*  
-ファイルを含むソースのディスクを識別する整数を指定します。 この値は、最初と*subdir*(ectory) パス (指定されている場合) を含む名前付きのファイルで定義する必要があります、 [ **SourceDisksNames** ](inf-sourcedisksnames-section.md)の同じ INF セクション。
+<a href="" id="diskid"></a>*diskid*  
+ファイルが格納されているソースディスクを識別する整数を指定します。 この値は、名前付きファイルを含む最初の*subdir*(ectory) パスと共に、同じ INF の[**Sourcedisksnames**](inf-sourcedisksnames-section.md)セクションに定義されている必要があります。
 
 <a href="" id="subdir"></a>*subdir*  
-この省略可能な値をサブディレクトリを指定します (を基準とする、*パス*の値、 **SourceDisksNames**セクションで、存在する場合)、名前付きのファイルがある、ソース ディスク上です。
+この省略可能な値は、名前付きファイルが存在するソースディスク上のサブディレクトリを指定します ( **Sourcedisksnames**セクションの*パス*値に対して相対的です)。
 
-名前付きのソース ファイルにあると想定エントリからこの値を省略した場合、*パス*で指定されたディレクトリ、 **SourceDisksFiles**特定のディスクのセクションまたは、ない場合は*パス*でディレクトリが指定されて、*インストール ルート*します。
+エントリからこの値を省略した場合、指定されたソースファイルは、指定されたディスクの**Sourcedisksfiles**セクションで指定された*パス*ディレクトリ、または*パス*ディレクトリが指定されていない場合は、*インストールルート*に存在すると見なされます。
 
-<a href="" id="size"></a>*サイズ*  
-この省略可能な値は、指定されたファイルのバイト単位で圧縮前のサイズを指定します。
+<a href="" id="size"></a>*幅*  
+この省略可能な値は、指定したファイルの圧縮されていないサイズ (バイト単位) を指定します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-A **SourceDisksFiles**セクションは、任意の数の配布のディスク上の各ファイルのエントリを持つことができます。 INF、 **SourceDisksFiles**セクションがあります、 [ **INF SourceDisksNames セクション**](inf-sourcedisksnames-section.md)します。 慣例により、 **SourceDisksNames**と**SourceDisksFiles**以下のセクションでは、 [ **INF バージョン セクション**](inf-version-section.md)します。 (これらのセクションでは、代わりを指定しますシステム提供の INF から省略、 **LayoutFile**エントリでその**バージョン**セクションです。)。
+**Sourcedisksfiles**セクションには、ディストリビューションディスク上の各ファイルに1つずつ、任意の数のエントリを含めることができます。 **Sourcedisksfiles**セクションを含むすべての inf には、 [**Inf Sourcedisksfiles セクション**](inf-sourcedisksnames-section.md)も必要です。 慣例により、 **Sourcedisksnames**セクションと**Sourcedisksnames**セクションは、 [**「INF バージョン」セクション**](inf-version-section.md)に従います。 (これらのセクションは、システムによって提供されている INF には含まれていません。代わりに、**バージョン**セクションで**layoutfile**エントリが指定されます)。
 
-各*filename*エントリがソース ディスク上のファイルの正確な名前を指定する必要があります。 % を使用することはできません*strkey*% トークン ファイル名を指定します。 % の詳細については*strkey*% のトークンを参照してください[ **INF 文字列セクション**](inf-strings-section.md)します。
+各*ファイル名*エントリには、ソースディスク上のファイルの正確な名前を指定する必要があります。 %*Strkey*% トークンを使用してファイル名を指定することはできません。 %*Strkey*% トークンの詳細については、「 [**INF Strings」セクション**](inf-strings-section.md)を参照してください。
 
-複数のシステム アーキテクチャにドライバー ファイルの配布をサポートするには、アーキテクチャ固有を指定できます**SourceDisksFiles**セクションを追加することで、 **.x86**、 **.ia64**、 **.amd64**、 **.arm**、または **.arm64**拡張機能を**SourceDisksFiles**します。 注意してくださいをなどの他のセクションとは異なり、 ***DDInstall***セクションで、プラットフォームの拡張機能、 **SourceDisksFiles**セクションがない **.ntx86**、**します。ntia64**、または **.ntamd64**します。
+複数のシステムアーキテクチャでのドライバーファイルの配布をサポートするには、" **x86**"、" **ia64**"、" **amd64** **"、"** arm64"、または " **...** " の拡張子を**Sourcedisksfiles**に追加して、アーキテクチャ固有の**sourcedisksfiles**セクションを指定します。 ただし、 ***Ddinstall***セクションなどの他のセクションとは異なり、 **Sourcedisksfiles**セクションのプラットフォーム拡張機能は、 **ntx86**、 **. ntia64**、または**ntamd64**のいずれでもありません。
 
-たとえば、ソース ディスク システムの x86 ベースのセクションの名前を指定するには、使用して、 **SourceDisksFiles.x86**セクションではなく、 **SourceDisksFiles.ntx86**セクション。 同様に、使用、 **SourceDisksFiles.ia64** 、Itanium ベース システムを指定するセクションと**SourceDisksFiles.amd64** x64 ベースのシステムを指定するセクション。
+たとえば、x86 ベースのシステムの [ソースディスク名] セクションを指定するには、Sourcedisksfiles. **ntx86**セクションではなく、 **sourcedisksfiles. x86**セクションを使用します。 同様に、[ **Sourcedisksfiles. ia64** ] セクションを使用して、Itanium ベースのシステムと**sourcedisksfiles. amd64**セクションを指定し、x64 ベースのシステムを指定します。
 
-インストール中に、SetupAPI 関数の参照アーキテクチャに固有の**SourceDisksFiles**セクションでは、汎用のセクションを使用する前にします。 たとえばかどうかは、x86 ベースのプラットフォームでのインストール時に Windows がファイルをコピーするという*ルート*、ファイルの説明で検索されます **[SourceDisksFiles.x86]** で検索する前に **[SourceDisksFiles]**。
+インストール時に、Setupapi.log 関数は、ジェネリックセクションを使用する前に、アーキテクチャ固有の**Sourcedisksfiles**セクションを検索します。 たとえば、x86 ベースのプラットフォームにインストールしているときに、Windows が*driver*という名前のファイルをコピーする場合、[**sourcedisksfiles**] を調べる前に、[**sourcedisksfiles. x86**] でファイルの説明を検索します。
 
-**重要な**  使用しないでください、 **SourceDisksFiles** INF ファイルをコピーするセクション。 INF ファイルをコピーする方法の詳細については、次を参照してください。[コピー Inf](copying-inf-files.md)します。
+**重要**   **sourcedisksfiles**セクションを使用して INF ファイルをコピーしないでください。 INF ファイルをコピーする方法の詳細については、「 [inf のコピー](copying-inf-files.md)」を参照してください。
 
  
 
 <a name="examples"></a>例
 --------
 
-次の例は、 [ **SourceDisksNames** ](inf-sourcedisksnames-section.md)セクションと、対応する SourceDisksFiles セクション。  この例ではのみに注意してください、 **SourceDisksFiles.x86**  セクションで、x86 の場合、ファイルを指定するアーキテクチャです。  別のアーキテクチャをサポートする、INF は、対応する必要があります**SourceDisksFiles**そのアーキテクチャでは、または、非装飾の使用セクション **[SourceDisksFiles]** セクションで、すべての操作をサポートしていますアーキテクチャ。
+次の例は、 [**Sourcedisksnames**](inf-sourcedisksnames-section.md)セクションと対応する Sourcedisksnames セクションを示しています。  この例には、x86 アーキテクチャ用のファイルを指定する**Sourcedisksfiles. x86**セクションのみが含まれています。  別のアーキテクチャをサポートする INF には、そのアーキテクチャに対応する**Sourcedisksfiles**セクション、またはすべてのアーキテクチャをサポートする、装飾されていない [**sourcedisksfiles**] セクションが必要です。
 
-```ini
+```inf
 [SourceDisksNames]
 ;
 ; diskid = description[, [tagfile] [, <unused>, subdir]]
@@ -93,7 +93,7 @@ aha154x.sys = 1,\x86 ; on distribution disk 1, in subdir \WinNT\x86
 ## <a name="see-also"></a>関連項目
 
 
-[**CopyFiles、**](inf-copyfiles-directive.md)
+[**CopyFiles**](inf-copyfiles-directive.md)
 
 [**DestinationDirs**](inf-destinationdirs-section.md)
 

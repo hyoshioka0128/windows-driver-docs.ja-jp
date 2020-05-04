@@ -16,12 +16,12 @@ keywords:
 - フィルタードライバー WDK シリアルデバイス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3d0f5889c868b8a0221e268204008a08b49f14c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cad3d6fc38a5d257cadcebfbf49de09901e72aba
+ms.sourcegitcommit: 6b09412f7bf562f7c01ffa94ac44a3d0ea895e3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845385"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82086716"
 ---
 # <a name="using-serialsys-and-serenumsys"></a>Serial.sys および Serenum.sys の使用
 
@@ -36,11 +36,11 @@ ms.locfileid: "72845385"
     シリアルおよび Serenum.sys の操作の詳細については、次のトピックを参照してください。
 
     - [シリアル コントローラー ドライバーの概要](serial-drivers-overview.md)
-    - [Serial および Serenum.sys の機能](features-of-serial-and-serenum.md)
-    - [シリアルデバイスとドライバーの構成](configuration-of-serial-devices-and-drivers.md)
-    - [Serenum.sys とシリアルの操作](operation-of-serenum-and-serial.md)
-    - [シリアルのレジストリ設定](registry-settings-for-serial.md)
-    - [Serenum.sys のレジストリ設定](registry-settings-for-serenum.md)
+    - [シリアルと Serenum の機能](features-of-serial-and-serenum.md)
+    - [シリアル デバイスとドライバーの構成](configuration-of-serial-devices-and-drivers.md)
+    - [Serenum とシリアルの操作](operation-of-serenum-and-serial.md)
+    - [シリアル用のレジストリ設定](registry-settings-for-serial.md)
+    - [Serenum 用のレジストリ設定](registry-settings-for-serenum.md)
     - [シリアルドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
     - [Serenum.sys ドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
     - WDK の Ntddser ヘッダーファイル内のデータ定義。
@@ -53,7 +53,7 @@ ms.locfileid: "72845385"
 
 - COM ポート[デバイスインターフェイスクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)
 
-    Com ポートにアクセスするには、COM ポートのデバイスインターフェイスを使用する必要があります。 (COM ポートデバイスインターフェイスクラスの GUID は、 [**guid\_DEVINTERFACE\_COMPORT**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport)です)。
+    Com ポートにアクセスするには、COM ポートのデバイスインターフェイスを使用する必要があります。 (COM ポートデバイスインターフェイスクラスの GUID は[**guid\_\_devinterface comport**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-devinterface-comport)です)。
 
 - [Com ポートデータベース](com-port-database.md)と[com ポートデータベースのサポートルーチン](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
@@ -67,8 +67,8 @@ ms.locfileid: "72845385"
 
 これらのサンプルはシリアルドライバーを示しています。
 
-- [シリアル](https://go.microsoft.com/fwlink/p/?LinkId=617962)サンプルでは、シリアルデバイス用の関数ドライバーをビルドします。
-- この[serenum.sys](https://go.microsoft.com/fwlink/p/?LinkId=617961)サンプルには、RS-232 ポート用のバスドライバーのプラグアンドプレイ機能が用意されています。
+- [シリアル](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serial)サンプルでは、シリアルデバイス用の関数ドライバーをビルドします。
+- この[serenum.sys](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/serenum)サンプルには、RS-232 ポート用のバスドライバーのプラグアンドプレイ機能が用意されています。
 - 単純な仮想シリアルドライバー (ComPort) とコントローラーレスモデムドライバー (FakeModem)。
-    -   [仮想シリアルドライバーのサンプル (UMDF 1.0)](https://go.microsoft.com/fwlink/p/?LinkId=617963)
-    -   [Virtual serial2 driver サンプル (KMDF)](https://go.microsoft.com/fwlink/p/?LinkId=722209)
+    -   [仮想シリアルドライバーのサンプル (UMDF 1.0)](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/VirtualSerial)
+    -   [Virtual serial2 driver サンプル (KMDF)](https://github.com/Microsoft/Windows-driver-samples/tree/master/serial/VirtualSerial2)

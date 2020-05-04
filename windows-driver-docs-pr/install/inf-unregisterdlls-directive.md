@@ -1,9 +1,9 @@
 ---
 title: INF UnregisterDlls ディレクティブ
-description: UnregisterDlls ディレクティブは、OLE コントロールは、(自己の削除) を自己登録解除を必要とするファイルを指定するために使用する 1 つまたは複数の INF セクションを参照します。
+description: UnregisterDlls ディレクティブは、OLE コントロールであり、自己登録解除 (自己削除) を必要とするファイルを指定するために使用される1つ以上の INF セクションを参照します。
 ms.assetid: 11d29c7f-9bd8-4097-9842-ce7431389241
 keywords:
-- INF UnregisterDlls ディレクティブ デバイスとドライバーのインストール
+- INF UnregisterDlls ディレクティブデバイスとドライバーのインストール
 topic_type:
 - apiref
 api_name:
@@ -12,78 +12,78 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c015891175f687d8035116efa48e5a30e2e170a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 171c09d7f432d20853dd65e9a5c395808a1808e7
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325804"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223086"
 ---
 # <a name="inf-unregisterdlls-directive"></a>INF UnregisterDlls ディレクティブ
 
 
-**注**  ユニバーサルまたはモバイルのドライバー パッケージを作成している場合は、このディレクティブが無効です。 参照してください[ユニバーサル INF ファイルを使用して](using-a-universal-inf-file.md)します。
+**注**  ユニバーサルまたはモバイルのドライバーパッケージをビルドする場合、このディレクティブは無効です。 「[ユニバーサル INF ファイルの使用」を](using-a-universal-inf-file.md)参照してください。
 
  
 
-**UnregisterDlls**ディレクティブが OLE コントロールは、(自己の削除) を自己登録解除を必要とするファイルを指定するために使用する 1 つまたは複数の INF セクションを参照します。
+**Unregisterdlls**ディレクティブは、OLE コントロールであり、自己登録解除 (自己削除) を必要とするファイルを指定するために使用される1つ以上の INF セクションを参照します。
 
-```ini
+```inf
 [DDInstall]
   
 UnregisterDlls=unregister-dll-section[,unregister-dll-section]...
 ```
 
-によって参照される各 INF セクション、 **UnregisterDlls**ディレクティブは、次のエントリの形式である必要があります。
+**Unregisterdlls**ディレクティブによって参照される各 INF セクションは、次のエントリ形式である必要があります。
 
-```ini
+```inf
 [unregister-dll-section] 
   
 dirid,[subdir],filename,registration-flags[,[timeout][,argument]] 
 ```
 
-*の登録を解除 dll セクション*それぞれ別々 の行に任意の数のエントリを持つことができます。
+*登録解除 dll セクション*には、任意の数のエントリを含めることができます。それぞれ個別の行になります。
 
 ## <a name="entries"></a>エントリ
 
 
-<a href="" id="dirid"></a>*Dirid*  
-登録解除するファイルの変換先のディレクトリ ID を指定します。 詳細については、次を参照してください。[を使用して Dirids](using-dirids.md)します。
+<a href="" id="dirid"></a>*dirid*  
+登録を解除するファイルの保存先ディレクトリ ID を指定します。 詳細については、「 [Dirids の使用](using-dirids.md)」を参照してください。
 
 <a href="" id="subdir"></a>*subdir*  
-登録解除するファイルを現在のディレクトリに対する相対パスを指定します。 指定されていない場合、ファイルは、現在のディレクトリです。
+登録を解除するファイルへの、現在のディレクトリを基準とした相対ディレクトリパスを指定します。 指定しない場合、ファイルは現在のディレクトリにあります。
 
-<a href="" id="filename"></a>*ファイル名*  
-登録解除する OLE コントロールのファイル名を識別します。
+<a href="" id="filename"></a>*/db*  
+登録を解除する OLE コントロールのファイル名を指定します。
 
-<a href="" id="registration-flags"></a>*登録フラグ*  
-OLE コントロールで実行する登録操作を示します。 次のフラグの一方または両方を指定する必要があります。
+<a href="" id="registration-flags"></a>*登録-フラグ*  
+OLE コントロールに対して実行する登録操作を示します。 次のフラグの一方または両方を指定する必要があります。
 
 <a href="" id="0x00000001--flg-regsvr-dllregister-"></a>**0x00000001** (FLG_REGSVR_DLLREGISTER)  
-呼び出す、 **DllUnRegisterServer**関数 (Windows SDK のドキュメントで説明)。
+Windows SDK のドキュメントで説明されているように、 **DllUnRegisterServer**関数を呼び出します。
 
 <a href="" id="0x00000002--flg-regsvr-dllinstall--"></a>**0x00000002** (FLG_REGSVR_DLLINSTALL)   
-呼び出す OLE コントロールの**DllInstall**関数 (Windows SDK のドキュメントで説明)。
+Windows SDK のドキュメントで説明されているように、OLE コントロールの**DllInstall**関数を呼び出します。
 
 <a href="" id="timeout"></a>*タイムアウト*  
-指定した登録解除の呼び出しを完了する OLE コントロールの秒単位で、タイムアウトを指定します。 既定のタイムアウトは、60 秒です。
+OLE コントロールが指定された登録解除呼び出しを完了するためのタイムアウト (秒単位) を指定します。 既定のタイムアウトは60秒です。
 
 <a href="" id="argument"></a>*引数*  
-コントロールが実行可能ファイルの場合は、これは、実行可能ファイルに渡されるコマンド文字列になります。 既定の引数は **/UnRegServer**します。
+コントロールが実行可能ファイルの場合、これは実行可能ファイルに渡されるコマンド文字列です。 既定の引数は **/UnRegServer**です。
 
-コントロールが実行可能ファイルでない場合に渡すコマンドライン引数を指定します、 **DllInstall**関数。
+コントロールが実行可能ファイルでない場合は、 **DllInstall**関数に渡すコマンドライン引数を指定します。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-各*の登録を解除 dll セクション*名は、INF ファイルに一意である必要があり、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、次を参照してください。 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)します。
+各*登録解除 dll セクション*名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。 これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
-OLE コントロールと自己登録を解除する方法の詳細については、Windows SDK のドキュメントを参照してください。
+OLE コントロールと自己登録解除の詳細については、Windows SDK のドキュメントを参照してください。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-```ini
+```inf
 [Dialer]
 RegisterDlls = DialerRegSvr
 

@@ -1,20 +1,20 @@
 ---
 title: INF DDInstall.Software セクション
-description: DDInstall.Software セクションには、ソフトウェア コンポーネントの INF ファイルに追加の INF ライター定義セクションを参照する 1 つまたは複数の INF AddSoftware ディレクティブが含まれています。
+description: DDInstall. Software セクションには、ソフトウェアコンポーネントの INF ファイルで追加の INF ライター定義セクションを参照する1つ以上の INF AddSoftware ディレクティブが含まれています。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 834120ca5ae4fc2c96f1e0f7ea0d30ffafe36340
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a942b1f394261f106a63363c8bb3da61b1046610
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370674"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223222"
 ---
 # <a name="inf-ddinstallsoftware-section"></a>INF DDInstall.Software セクション
 
-各ごとのモデル*DDInstall*.**ソフトウェア**セクションは、1 つ以上含まれています。 [ **INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md) INF ライター定義の追加のセクションでは、ソフトウェア コンポーネントの INF ファイルを参照します。  このセクションには、Windows 10 バージョン 1703 以降はサポートされています。
+各モデルの*Ddinstall がインストール*します。**Software**セクションには、ソフトウェアコンポーネントの inf ファイルで追加の inf ライター定義セクションを参照する1つ以上の[**inf addsoftware ディレクティブ**](inf-addsoftware-directive.md)が含まれています。  このセクションは、Windows 10 バージョン1703以降でサポートされています。
 
-```ini
+```inf
 [install-section-name.Software] |
 [install-section-name.nt.Software] |
 [install-section-name.ntx86.Software] |
@@ -26,27 +26,27 @@ ms.locfileid: "63370674"
 AddSoftware=SoftwareName,[flags],software-install-section
 ```
 
-行うことができます、 *DDInstall*.**ソフトウェア**に少なくとも 1 つのセクション[AddSoftware ディレクティブ](inf-addsoftware-directive.md)ソフトウェア コンポーネントからソフトウェアをインストールします。
+*Ddinstall*を提供できます。ソフトウェアコンポーネントからソフトウェアをインストールするための、 [Addsoftware ディレクティブ](inf-addsoftware-directive.md)が1つ以上含まれている**ソフトウェア**セクション。
 
-ソフトウェアのインストールは、非対話型である必要があります。
+ソフトウェアのインストールは非対話型である必要があります。
 
 ## <a name="entries"></a>エントリ
 
-**AddSoftware**=*SoftwareName,[flags],software-install-section*
+**Addsoftware**=*SoftwareName、[flags]、software-install-section*
 
-このディレクティブは、INF ライターの定義を参照*ソフトウェアのインストール-セクション*ソフトウェア コンポーネントの INF ファイルに別の場所。  詳細については、次を参照してください。 [ **INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md)します。
+このディレクティブは、ソフトウェアコンポーネントの INF ファイルの別の場所にある INF ライターで定義された*ソフトウェアのインストールセクション*を参照します。  詳細については、「 [**INF AddSoftware ディレクティブ**](inf-addsoftware-directive.md)」を参照してください。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
-*DDInstall*.**ソフトウェア**のセクションでは、それに関連として同じプラットフォームとオペレーティング システムの装飾が必要*DDInstall*セクション。  たとえば、*インストール セクション名*.**ntx86**セクションが、対応する、*インストール セクション名*.**ntx86 します。ソフトウェア**セクション。
+*Ddinstall*。**ソフトウェア**セクションには、関連する*ddinstall*セクションと同じプラットフォームとオペレーティングシステムの装飾が必要です。  たとえば、 *「」* と指定します。**ntx86**セクションには、対応する*インストールセクション名*があります。**ntx86。ソフトウェア**セクション。
     
-指定した*DDInstall* - 製造元でデバイス/モデルに固有のエントリでは、セクションを参照する必要があります*モデル*INF ファイルのセクション。 大文字の拡張機能を*インストール セクション名*に示すように正式な構文でステートメントを挿入できる、 <em>DDInstall</em>**します。ソフトウェア**クロスプラット フォーム対応の INF ファイルでセクション名。
+指定された*Ddinstall*セクションは、INF ファイルの "製造元別*モデル*" セクションのデバイス/モデル固有のエントリで参照されている必要があります。 正式な構文のステートメントに示されている*インストールセクション名*の大文字と小文字を区別しない拡張機能は、このような<em>ddinstall</em>に挿入でき**ます。** クロスプラットフォームの INF ファイルのソフトウェアセクション名。
 
-詳細については、システム定義を使用する方法についての **.nt**、 **.ntx86**、 **.ntia64**、 **.ntamd64**、 **.ntarm**、および **.ntarm64** 、拡張機能を参照してください[INF ファイルを複数のプラットフォームやオペレーティング システムを作成する](creating-inf-files-for-multiple-platforms-and-operating-systems.md)します。
+システム定義の**nt**、 **ntx86**、. **ntia64**、. **ntamd64**、. **ntarm**、および**ntarm64**の各拡張機能の使用方法の詳細については、「[複数のプラットフォームおよびオペレーティングシステム用の INF ファイルの作成](creating-inf-files-for-multiple-platforms-and-operating-systems.md)」を参照してください。
 
 ## <a name="examples"></a>例
 
-```ini
+```inf
 [ContosoCtrlPnl.NT.Software]
 AddSoftware = ContosoGrfx1CtrlPnl,, Software_Inst
 
@@ -59,6 +59,6 @@ SoftwareVersion = 1.0.0.0
 
 ## <a name="see-also"></a>関連項目
 
-[コンポーネントの INF ファイルを使用して](using-a-component-inf-file.md)します。
+[コンポーネントの INF ファイルを使用](using-a-component-inf-file.md)します。
 
 [INF AddSoftware ディレクティブ](inf-addsoftware-directive.md)

@@ -6,12 +6,12 @@ keywords:
 - x86 INF ファイルプラットフォーム拡張機能 (WDK)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b100a09c2f2c2794963404030e95260e9727d6da
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 782ad30f4a755c4bd6119a1fb54a18c438b17f44
+ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243031"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82223146"
 ---
 # <a name="inf-file-platform-extensions-and-x86-based-systems"></a>INF ファイル プラットフォーム拡張機能および x86 ベースのシステム
 
@@ -69,7 +69,7 @@ X86 ベースのシステムでプラットフォーム拡張機能を使用す�
 
 [X86 ベースのシステム用の INF ファイルの作成 (Windows 2000 以降)](#creating-inf-files-for-x86-based-systems--windows-2000-and-later-)
 
-### <a href="" id="platform-extensions-and-x86-based-systems--windows-2000-and-later-"></a>プラットフォーム拡張機能と x86 ベースシステム
+### <a name="platform-extensions-and-x86-based-systems"></a><a href="" id="platform-extensions-and-x86-based-systems--windows-2000-and-later-"></a>プラットフォーム拡張機能と x86 ベースシステム
 
 Windows XP 以降のバージョンの Windows では、*モデル*セクション名とプラットフォーム拡張機能をサポートする他のセクションの名前に対して、省略可能な**nt**または**ntx86**プラットフォーム拡張機能がサポートされています。
 
@@ -79,11 +79,11 @@ Windows 2000 は、 [**INF*モデル*セクション**](inf-models-section.md)�
 
 1. Windows<em>では</em>**ntx86**セクションがチェックされ、存在する場合は処理されます。 Windows は、処理されている INF ファイルと、含まれているすべての INF ファイル (つまり、**インクルード**エントリに含まれているすべての inf ファイル) で、 **ntx86**拡張子があるかどうかを確認します。
 
-2. **Ntx86**セクションが存在しない場合、WINDOWS は inf ファイルまたは含まれている inf ファイルに<em>セクション名</em> **. nt**セクションがあるかどうかを確認<em>します。</em> 存在する場合、Windows は<em>セクション-name</em> **. nt**セクションを処理します。
+2. **Ntx86**セクションが存在しない場合、WINDOWS は inf ファイルまたは含まれている inf ファイルに<em>セクション名</em>**. nt**セクションがあるかどうかを確認<em>します。</em> 存在する場合、Windows は<em>セクション-name</em>**. nt**セクションを処理します。
 
-3. <em>セクション名</em> **. nt**セクションが存在しない場合、Windows はプラットフォーム拡張機能を含まない*セクション名*セクションを処理します。
+3. <em>セクション名</em>**. nt**セクションが存在しない場合、Windows はプラットフォーム拡張機能を含まない*セクション名*セクションを処理します。
 
-### <a href="" id="creating-inf-files-for-x86-based-systems--windows-2000-and-later-"></a>X86 ベースのシステム用の INF ファイルの作成
+### <a name="creating-inf-files-for-x86-based-systems"></a><a href="" id="creating-inf-files-for-x86-based-systems--windows-2000-and-later-"></a>X86 ベースのシステム用の INF ファイルの作成
 
 一般に、オペレーティングシステムのバージョンに基づいたデバイスのインストールを区別する単一の INF ファイルを使用することはできません。 たとえば、デバイスをサポートするファイルまたはレジストリ設定が、x86 ベースのオペレーティングシステムのバージョンによって異なる場合は、バージョンごとにオペレーティングシステム固有の INF ファイルを作成する必要があります。
 
@@ -97,7 +97,7 @@ Windows 2000 以降のバージョンの Windows を実行する x86 ベース�
 
 2.  デバイスの [*モデル*] セクションの名前を指定する*製造元の識別子*を含む INF **manufacturer**セクションを含めますが、省略可能な**nt**または**ntx86**プラットフォーム拡張機能は指定しません。 たとえば、次の**製造元**のセクションでは、Abc デバイスに対して "AbcModelSection" という*モデル*セクション名を指定しています。
 
-    ```ini
+    ```inf
     [Manufacturer]
     ; The manufacturer-identifier for the Abc device.
     %ManufacturerName%=AbcModelSection
@@ -105,14 +105,14 @@ Windows 2000 以降のバージョンの Windows を実行する x86 ベース�
 
 3.  **製造元のセクションで***製造元の識別子*によって指定された*モデル*セクション名と一致する名前を持つ*モデル*セクションを含めます。 たとえば、Abc デバイスの次の AbcModelSection セクションには、"AbcInstallSection" の*インストールセクション名*を指定する*デバイスの説明*が含まれています。
 
-    ```ini
+    ```inf
     [AbcModelSection]
     %AbcDeviceName%=AbcInstallSection,Abc-hw-id
     ```
 
 4.  [*モデル*] セクションで指定された*インストールセクション名*と一致する名前を持つ*ddinstall*セクションを含めます。 たとえば、AbcModelSection セクションの*デバイスの説明*では、Abc デバイスの次の AbcInstallSection セクションを指定しています。 Windows では、windows 2000 以降のバージョンの Windows を実行している x86 ベースのシステムに Abc デバイスをインストールするために、このセクションを処理します。
 
-    ```ini
+    ```inf
     [AbcInstallSection]
     ; Install section entries go here.
     ...

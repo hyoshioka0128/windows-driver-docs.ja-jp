@@ -4,12 +4,12 @@ description: Windows 64-bit edition では、ドライバーを含め、カー�
 ms.assetid: 52F309E4-9553-456B-BBD6-217318FC7222
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 024e304efda69539f416d0f7998f4f32b394ff72
-ms.sourcegitcommit: 17052bc92153522fbd05aed21cee87ff037cfeca
+ms.openlocfilehash: 8947b9a122f807309d66b41e30c27705745d7906
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70301191"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173556"
 ---
 # <a name="test-signing"></a>テスト署名
 
@@ -19,9 +19,9 @@ Windows Vista 以降では、x64 ベースのバージョンの Windows では�
 ## <a name="installing-an-unsigned-driver-during-development-and-test"></a>開発中およびテスト中の署名されていないドライバーのインストール
 
 
-*抜粋*[開発およびテスト中の署名](installing-an-unsigned-driver-during-development-and-test.md)されていないドライバーのインストール:
+[開発およびテスト中の署名](installing-an-unsigned-driver-during-development-and-test.md)されていないドライバー*のインストールの抜粋*:
 
-既定では、Windows Vista 以降のバージョンの windows では64、カーネルがドライバーの署名を確認できる場合にのみ、カーネルモードドライバーが読み込まれます。 ただし、初期のドライバーの開発時や自動テスト以外の場合は、この既定の動作を無効にすることができます。 開発者は、次のいずれかのメカニズムを使用して、有効なドライバー署名の読み込み時の適用を一時的に無効にすることができます。 ただし、プラグアンドプレイ (PnP) によってインストールされたドライバーのテストを完全に自動化するには、ドライバーの[カタログファイル](catalog-files.md)が署名されている必要があります。 Windows Vista 以降のバージョンの Windows では、署名されていないドライバーに対して、システム管理者がドライバーのインストールを承認する必要があるドライバー署名ダイアログボックスが表示されるため、ドライバーの署名が必要になります。ドライバーのインストールとデバイスの使用に必要な特権。 Windows Vista 以降のバージョンの Windows では、この PnP ドライバーのインストール動作を無効にすることはできません。
+既定では、Windows Vista 以降のバージョンの windows では64、カーネルがドライバーの署名を確認できる場合にのみ、カーネルモードドライバーが読み込まれます。 ただし、初期のドライバーの開発時や自動テスト以外の場合は、この既定の動作を無効にすることができます。 開発者は、次のいずれかのメカニズムを使用して、有効なドライバー署名の読み込み時の適用を一時的に無効にすることができます。 ただし、プラグアンドプレイ (PnP) によってインストールされたドライバーのテストを完全に自動化するには、ドライバーの[カタログファイル](catalog-files.md)が署名されている必要があります。 Windows Vista 以降のバージョンの Windows では、ドライバーのインストールを承認するためにシステム管理者が必要とする署名されていないドライバーに対して [ドライバーの署名] ダイアログボックスが表示されるので、ドライバーをインストールする必要があります。 Windows Vista 以降のバージョンの Windows では、この PnP ドライバーのインストール動作を無効にすることはできません。
 
 ### <a name="use-the-f8-advanced-boot-option"></a>**F8 の詳細ブートオプションを使用する**
 
@@ -31,7 +31,7 @@ Windows Vista 以降のバージョンの Windows では、[ドライバー署�
 
 ![f8 の詳細ブートオプションを示すスクリーンショット](images/tutorialf8.png)
 
-### <a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a>カーネルデバッガーをアタッチして署名の検証を無効にする
+### <a name="attach-a-kernel-debugger-to-disable-signature-verification"></a><a href="" id="attach-a-kernel-debugger-to-disable-signature-verification"></a>カーネルデバッガーをアタッチして署名の検証を無効にする
 
 アクティブなカーネルデバッガーを開発またはテスト用コンピューターにアタッチすると、カーネルモードドライバーの読み込み時の署名の適用が無効になります。 このデバッグ構成を使用するには、次のコマンドを実行して、開発用コンピューターまたはテスト用コンピューターにデバッグコンピューターをアタッチし、開発またはテスト用コンピューターでカーネルデバッグを有効にします。
 
@@ -39,16 +39,16 @@ Windows Vista 以降のバージョンの Windows では、[ドライバー署�
 bcdedit -debug on
 ```
 
-BCDEdit を使用するには、ユーザーがシステムの Administrators グループのメンバーであり、管理者特権でのコマンドプロンプトからコマンドを実行する必要があります。 管理者特権でのコマンドプロンプトウィンドウを開くには、 *cmd.exe*へのデスクトップショートカットを作成し、ショートカットを右クリックして、 **[管理者として実行]** を選択します。
+BCDEdit を使用するには、ユーザーがシステムの Administrators グループのメンバーであり、管理者特権でのコマンドプロンプトからコマンドを実行する必要があります。 管理者特権でのコマンドプロンプトウィンドウを開くには、 *cmd.exe*へのデスクトップショートカットを作成し、ショートカットを右クリックして、[**管理者として実行**] を選択します。
 
-ただし、開発者がカーネルデバッガーをアタッチする必要がある場合もありますが、ロード時の署名の強制を維持する必要もあります。 「 [付録 1:カーネルモード署名の検証をカーネルデバッグモード](appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md)で実行し、これを実現する方法について説明します。
+ただし、開発者がカーネルデバッガーをアタッチする必要がある場合もありますが、ロード時の署名の強制を維持する必要もあります。 これを実現する方法については、「[付録 1: カーネルデバッグモードでカーネルモード署名の検証を適用](appendix-1--enforcing-kernel-mode-signature-verification-in-kernel-debugging-mode.md)する」を参照してください。
 
 ## <a name="test-sign-a-driver-package"></a>ドライバーパッケージのテスト署名
 
 
 上記の2つの方法を使用してドライバー署名の強制要件を回避するのではなく、ドライバーパッケージの署名をテストすることをお勧めします。 テスト署名とドライバーのインストールは開発用コンピューターで実行できますが、2台のコンピューター (1 つは開発と署名用、もう1つはテスト用) が必要になる場合があります。
 
-*抜粋*[ドライバパッケージのテスト署名方法](how-to-test-sign-a-driver-package.md):
+[ドライバーパッケージのテスト署名方法](how-to-test-sign-a-driver-package.md)*からの抜粋*:
 
 <a href="" id="signing-computer"></a>**署名コンピューター**  
 これは、Windows Vista 以降のバージョンの Windows でドライバーパッケージをテストするために使用されるコンピューターです。 このコンピューターでは、Windows XP SP2 以降のバージョンの Windows が実行されている必要があります。 [ドライバー署名ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/tools-for-signing-drivers)を使用するには、このコンピューターに windows Vista 以降のバージョンの Windows driver KIT (WDK) がインストールされている必要があります。 開発用コンピューターにすることもできます。
@@ -76,14 +76,14 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 
 最も一般的な "開発者コマンドプロンプト for VS2013" を選択できます。 ショートカットをタスクバーにピン留めして、簡単にアクセスできるようにすることができます。
 
-**メモ** ただし、Visual Studio では、ドライバーの署名のコマンドツールのアプローチではなく、Visual Studio 2013 開発環境 (IDE とも呼ばれます) を使用してドライバーパッケージに署名することもできます。 付録2を[参照してください。詳細については](appendix-2--signing-drivers-with-visual-studio.md) 、「Visual Studio でドライバーに署名する」を参照してください。
+**メモ** ただし、Visual Studio では、ドライバーの署名のコマンドツールのアプローチではなく、Visual Studio 2013 開発環境 (IDE とも呼ばれます) を使用してドライバーパッケージに署名することもできます。 詳細については、 [「付録 2: Visual Studio でのドライバー](appendix-2--signing-drivers-with-visual-studio.md)への署名」を参照してください。
 
 
 
 
 2.  ドライバーパッケージフォルダーを作成し、ドライバーファイルをコピーして、必要なサブディレクトリ (C:\\drivertestpackage など) を保持します。
-3.  ドライバーパッケージ用の inf ファイルを作成します。 Inf ファイルの日付が、Vista の場合は08/21/2006 以前ではなく、Windows 8.0、Windows 8.1、Windows 7.0 および Windows 7.1 の場合は、その後の日付であることを確認してください。 Inf ファイルの chkinf ツールを使用して inf ファイルをテストし、エラーが報告されないようにすることをお勧めします。 プリンタードライバーの場合は、ツール chkinf を使用して inf ファイルをテストし、WDK からを実行します。
-4.  *抜粋*[テスト証明書の作成](creating-test-certificates.md):
+3.  ドライバーパッケージ用の inf ファイルを作成します。 Inf ファイルの WDK から[InfVerif](../devtest/infverif.md)ツールを使用して inf ファイルをテストし、エラーが報告されないようにします。
+4.  [テスト証明書の作成](creating-test-certificates.md)*の抜粋*:
 
     次のコマンドラインの例では、MakeCert を使用して、次のタスクを実行します。
 
@@ -99,7 +99,7 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
     makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) ContosoTest.cer
     ```
 
-    各項目の意味は次のとおりです。
+    各値の説明:
 
     -   **-R**オプションを指定すると、同じ発行者とサブジェクト名を持つ自己署名証明書が作成されます。
 
@@ -111,11 +111,11 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 
     -   *ContosoTest*は、テスト証明書 (Contoso .com) のコピーを含むファイル名です。 証明書ファイルは、信頼されたルート証明機関の証明書ストアおよび信頼された発行元の証明書ストアに証明書を追加するために使用されます。
 
-    *抜粋*[テスト証明書の表示](viewing-test-certificates.md):
+    [テスト証明書の表示](viewing-test-certificates.md)*の抜粋*:
 
     証明書が作成され、証明書ストアにコピーが格納されたら、Microsoft 管理コンソール (MMC) の証明書スナップインを使用して証明書を表示できます。 MMC**証明書**スナップインを使用して証明書を表示するには、次の手順を実行します。
 
-    1.  **スタート** をクリックし、検索の開始 をクリックします。
+    1.  [**スタート**] をクリックし、[検索の開始] をクリックします。
 
     2.  証明書スナップインを開始するには、「Certmgr.exe」と入力し、 **enter**キーを押します。
 
@@ -129,9 +129,9 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 
     ![contoso.com (テスト) 証明書に関する全般的な情報を表示している [証明書] ウィンドウのスクリーンショット](images/tutorialcertificategeneraltab.png)
 
-    [証明書] ダイアログボックスに次のような状態が表示されます。"この CA ルート証明書は信頼されていません。 信頼を有効にするには、この証明書を [信頼されたルート証明機関] ストアにインストールします。 これは想定される動作です。 Windows が発行機関 "Contoso .com (Test)" を既定で信頼していないため、証明書を検証できません。
+    [証明書] ダイアログボックスに "この CA ルート証明書は信頼されていません。 信頼を有効にするには、この証明書を [信頼されたルート証明機関] ストアにインストールします。 これは正しい動作です。 Windows が発行機関 "Contoso .com (Test)" を既定で信頼していないため、証明書を検証できません。
 
-5.  カタログファイル (.cat 拡張子) を作成します。 次のように inf2cat ツールを使用して、カタログファイルを作成します。 スイッチにはスペースを使用できないことに注意して&lt;ください。&gt;/driver:&gt;空白&lt;の完全パス&lt;、/os&gt;::&gt;no space&lt; &lt;os1 name、:space&gt;&gt;os2 の名前がありません。&lt;
+5.  カタログファイル (.cat 拡張子) を作成します。 次のように inf2cat ツールを使用して、カタログファイルを作成します。 スイッチにはスペースを使用できないことに注意して&lt;ください。&gt;&lt;/driver:&gt;空白の完全な&lt;パス、&gt;&lt;/os:&gt;: no&lt;space os1&gt;&lt;name、&gt;: space os2 name。
 
     ```cpp
     inf2cat  /v  /driver:C:\DriverTestPackage  /os:7_64,7_x86 ,XP_X86
@@ -143,7 +143,7 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
     /os:2000,XP_X86,XP_X64,Server2003_X64,Vista_X64,Vista_X86,7_x86,7_64,Server2008_x86,Server2008_x64,Sever2008_IA64,Server2008R2_x86,Server2008R2_x64,Server2008R2_IA64,8_x86,8_x64, 8_ARM, Server8_x64
     ```
 
-    新しい 8.1 WDK から更新された inf2cat には、/os のオプション値として、663X86、63X64、633ARM、および SERVER_6_3_X64 があります。
+    新しい 8.1 WDK から更新された inf2cat には、6_3_X86、6_3_X64、6_3_ARM、および SERVER_6_3_X64 の/os オプション値があります。
 
     Version セクションの INF ファイルの例。
 
@@ -161,13 +161,13 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 
     /Driver (または/drv) オプションは、1つまたは複数の INF ファイルを含むディレクトリを指定します。 このディレクトリ内で、1つまたは複数の CatalogFile ディレクティブが含まれている INF ファイルに対して、カタログファイルが作成されます。 カタログファイル名は、8.3 の名前に制限されていません。
 
-    コマンドライン引数/os: 7Inf2Cat が使用されている場合、カタログファイル tstamd64.cat が作成されます。 同様に、Server2008R2_IA64 の場合と同様に、/os: XP_X86, オプションが使用されている場合、このツールはカタログファイル toastx86.cat を作成します。 1つのカタログファイルのみが必要な場合は、次に示すように、INF ファイル内のエントリは1つだけで十分です。
+    コマンドライン引数/os: 7_X64 が使用されている場合、Inf2Cat はカタログファイル tstamd64.cat を作成します。 同様に、Server2008R2_IA64 の場合と同様に、/os: XP_X86 オプションが使用されている場合は、カタログファイル toastx86.cat が作成されます。 1つのカタログファイルのみが必要な場合は、次に示すように、INF ファイル内のエントリは1つだけで十分です。
 
     ```cpp
     CatalogFile.NT  = toaster.cat
     ```
 
-    または
+    または、
 
     ```cpp
     CatalogFile = toaster.cat
@@ -193,7 +193,7 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 
     Cat ファイルをチェックして、ドライバーファイルと選択した Os が含まれていることを確認することをお勧めします。 ドライバーファイルを追加または削除した場合はいつでも、INF ファイルが変更されているため、cat ファイルを再作成して再度署名する必要があります。 ここで省略した場合、インストールエラーが発生します。これは、セットアップログファイル (Vista 以降の場合は setupapi.log、XP の場合は setupapi.log ファイル) で報告されます。
 
-6.  *抜粋*[ドライバーパッケージのカタログファイルのテスト署名](test-signing-a-driver-package-s-catalog-file.md):
+6.  [ドライバーパッケージのカタログファイルのテスト署名](test-signing-a-driver-package-s-catalog-file.md)*の抜粋*:
 
     次のコマンドラインは、SignTool を実行して次の操作を実行する方法を示しています。
 
@@ -209,7 +209,7 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
     Signtool sign /v /s PrivateCertStore /n Contoso.com(Test) /t http://timestamp.digicert.com tstamd64.cat
     ```
 
-    各項目の意味は次のとおりです。
+    各値の説明:
 
     -   **Sign**コマンドは、指定されたカタログファイル tstamd64.cat に署名するように SignTool を構成します。
 
@@ -219,7 +219,7 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 
     -   **/N**オプションは、指定された証明書ストアにインストールされている証明書 (*Contoso .com (Test))* の名前を指定します。
 
-    -   **/T**オプションは、デジタル署名のタイムスタンプ *http://timestamp.digicert.com* となる TSA () の URL を指定します。
+    -   **/T**オプションは、デジタル署名のタイムスタンプ*http://timestamp.digicert.com*となる TSA () の URL を指定します。
         **重要**  タイムスタンプを含めると、署名者のコード署名の秘密キーが侵害された場合にキーを失効させるために必要な情報が提供されます。
 
 
@@ -230,7 +230,7 @@ BCDEdit を使用するには、ユーザーがシステムの Administrators �
 tstamd64.cat は、デジタル署名されるカタログファイルの名前を指定します。 前の説明に従って、cat ファイルを開くことができます。
 
 
-7.  *変更*された抜粋[埋め込み署名を使用したドライバーのテスト署名](test-signing-a-driver-through-an-embedded-signature.md):
+7.  [埋め込み署名を使用したドライバーのテスト署名](test-signing-a-driver-through-an-embedded-signature.md)*からの変更*された抜粋:
 
     -   Windows Vista 以降のバージョンの windows 64 では、カーネルモードのコード署名の要件には、埋め込まれた署名が必要です。 これは、ドライバーのドライバーパッケージにデジタル署名されたカタログファイルがあるかどうかに関係なく必要です。
 
@@ -242,7 +242,7 @@ tstamd64.cat は、デジタル署名されるカタログファイルの名前�
 
     amd64\\トースターは、埋め込み署名されるカーネルモードバイナリファイルの名前を指定します。
 
-    WDK 7.1 インストールディレクトリ内では、トースターサンプルは src\\general\\トースター\\toastpkg\\toastpkg\\ディレクトリにあります。 Windows 8 または 8.1 WDK のサンプルは、Microsoft ダウンロードサイトからダウンロードされます。 これらのサンプルには、Windows 8 または 8.1 Windows Driver Kit は付属していません。
+    WDK 7.1 インストールディレクトリ内では、トースターサンプル\\は src general\\トースター\\toastpkg\\toastpkg\\ディレクトリにあります。 Windows 8 または 8.1 WDK のサンプルは、Microsoft ダウンロードサイトからダウンロードされます。 これらのサンプルには、Windows 8 または 8.1 Windows Driver Kit は付属していません。
 
     Windows エクスプローラーでファイルをダブルクリックしてカタログファイルを開くと、次のスクリーンショットが表示されます。 [署名の表示] が強調表示されていることに注意してください。
 
@@ -254,7 +254,7 @@ tstamd64.cat は、デジタル署名されるカタログファイルの名前�
 
     ![証明書に関する一般的な情報を示すスクリーンショット](images/tutorialcertificategeneraltab.png)
 
-これで、署名コンピューターまたはテストコンピューターでドライバーをテストできるようになりました。 テストコンピューターを使用している場合は、ファイル構造をそのまま維持した状態で、ドライバーパッケージをコンピューターにコピーします。 ツール certmgr.exe もテストコンピューターにコピーする必要があります。 テストコンピューターを使用する場合は、テスト署名された toastpkg ドライバーパッケージを c\\: トースター一時フォルダーにコピーします。
+これで、署名コンピューターまたはテストコンピューターでドライバーをテストできるようになりました。 テストコンピューターを使用している場合は、ファイル構造をそのまま維持した状態で、ドライバーパッケージをコンピューターにコピーします。 ツール certmgr.exe もテストコンピューターにコピーする必要があります。 テストコンピューターを使用する場合は、テスト署名された Toastpkg ドライバーパッケージを c\\: トースター一時フォルダーにコピーします。
 
 次の手順では、どちらのコンピューターでもドライバーをテストするために使用する手順について説明します。
 
@@ -266,9 +266,10 @@ tstamd64.cat は、デジタル署名されるカタログファイルの名前�
 
     コンピューターを再起動します。
 
-2.  *選択された抜粋の開始*[Certmgr.exe を使用してテストコンピューターにテスト証明書をインストールするに](using-certmgr-to-install-test-certificates-on-a-test-computer.md)は:
 
-    ドライバーの[テスト署名](test-signing-driver-packages.md)に使用された証明書 ( *.cer*) ファイルをテストコンピューターにコピーします。 証明書ファイルは、テストコンピューター上の任意のディレクトリにコピーできます。
+2.  [Certmgr.exe を使用してテストコンピューターにテスト証明書をインストールする方法](using-certmgr-to-install-test-certificates-on-a-test-computer.md)*の抜粋を選択しました*。
+
+    ドライバーの[テスト署名](test-signing-driver-packages.md)に使用された証明書 (*.cer*) ファイルをテストコンピューターにコピーします。 証明書ファイルは、テストコンピューター上の任意のディレクトリにコピーできます。
 
     次の Certmgr.exe コマンドは、証明書ファイル*Certificatefilename .cer*の証明書を、テストコンピューターの信頼されたルート証明機関の証明書ストアに追加します。
 
@@ -294,13 +295,14 @@ tstamd64.cat は、デジタル署名されるカタログファイルの名前�
 
     /r RegistryLocation
 
-    システムストアのレジストリの場所が HKEY_LOCAL_MACHINE の下にあることを指定します。
+    システムストアのレジストリの場所が HKEY_LOCAL_MACHINE であることを指定します。
 
     CertificateStore
 
     証明書ストアを指定します。 trustedpublisher は、"localMachine root" の場合と同様です。
 
-    コンピューターを再起動します。 これで、Certmgr.exe を実行して、上の2つの場所に ContosoTest が表示されていることを確認できます。 証明書が表示されない場合、証明書をインストールするもう1つの方法として、証明書を開き、上記の2つのノードにインストールして、もう一度確認します。
+    コンピューターを再起動します。
+ これで、Certmgr.exe を実行して、上の2つの場所に ContosoTest が表示されていることを確認できます。 証明書が表示されない場合、証明書をインストールするもう1つの方法として、証明書を開き、上記の2つのノードにインストールして、もう一度確認します。
 
 3.  Cat ファイルと sys ファイルの署名を確認します。 管理者特権のコマンドウィンドウを開き、コンピューターで signtool が使用可能であることを前提として、cat、inf、および sys ファイルが配置されているドライバーパッケージディレクトリに移動します。 適切なディレクトリで次のコマンドを実行します。
 
@@ -359,7 +361,7 @@ Dpinst と Pnputil によってドライバーパッケージがインストー�
 
     上記のコマンドは、すべての inf ファイルに対応するすべてのドライバーをインストールします。 "." を使用することもできます。 現在のディレクトリからの引用符がありません。 "dpinst/?" このツールのすべてのスイッチを表示します。
 
-    ドライバーの inf ファイルにある/u スイッチを使用すると、ドライバーパッケージが driverstore の FileRepository (% SystemRoot\\%\\ System32 driverstore\\FileRepository) ディレクトリから削除されます。ドライバーが削除されました。 Dpinst ツールを使用すると、ドライバーの inf ファイルを参照するだけでドライバーを削除できます。
+    ドライバーの inf ファイルの/U スイッチを使用すると、ドライバーに関連付けられているデバイスが削除\\さ\\れた\\場合に、Driverstore の FileRepository (% SystemRoot% System32 driverstore FileRepository) ディレクトリからドライバーパッケージが削除されます。 Dpinst ツールを使用すると、ドライバーの inf ファイルを参照するだけでドライバーを削除できます。
 
     ```cpp
     dpinst.exe  /U  toaster.inf
@@ -374,7 +376,7 @@ Dpinst と Pnputil によってドライバーパッケージがインストー�
     devcon.exe  install <inf> <hwid>
     ```
 
-    &lt;Hwid&gt;の周りに引用符を使用することをお勧めします。 トースターサンプルの場合、次のようになります。
+    Hwid &lt;&gt;の周りに引用符を使用することをお勧めします。 トースターサンプルの場合、次のようになります。
 
     ```cpp
     devcon.exe  install  c:\toaster\toaster.inf  “{b85b7c50-6a01-11d2-b841-00c04fad5171}\MsToaster”
@@ -455,7 +457,7 @@ Dpinst と Pnputil によってドライバーパッケージがインストー�
 5.  [ディスクを含める] オプションを選択します。
 6.  C: トースター driver パッケージが格納されている\\フォルダーへのパスを入力します。
 7.  Inf ファイルを選択し、[開く] をクリックします。
-8.  [OK] をクリックします。
+8.  [OK] をクリックします
 9.  次の2つのページで [次へ] をクリックし、[完了] をクリックしてインストールを完了します。
 
 **テスト署名されたドライバーが正しく動作していることを確認する**
