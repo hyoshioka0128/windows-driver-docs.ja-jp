@@ -130,7 +130,7 @@
           href: opening-and-closing-an-inf-file.md
         - name: INF ファイルからの情報の取得
           href: retrieving-information-from-an-inf-file.md
-        - name: シェルと自動再生用のベンダー アイコンの提供
+        - name: デバイス用アイコンの提供
           href: providing-vendor-icons-for-the-shell-and-autoplay.md
     - name: Driver Signing (ドライバーの署名)
       items:
