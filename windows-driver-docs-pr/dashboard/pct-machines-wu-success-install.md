@@ -4,18 +4,22 @@ description: この測定値は、28 日間のスライディング ウィンド
 ms.topic: article
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b68b3037cfb77e5d7d66cada1284b04c77ac876
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1bfe9a06d3d90ee124cadc9c8cfa252ea8557352
+ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79083192"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138639"
 ---
 # <a name="percent-of-machines-that-wu-reported-a-successful-installation-within-the-last-28-days"></a>過去 28 日以内に WU がインストールの成功を報告したマシンの割合
 
 ## <a name="description"></a>説明
 
-過去 28 日以内に WU がインストールの成功を報告したマシンの割合
+過去 28 日以内に WU がインストールの成功を報告したマシンの割合 
+
+Windows Update エラー コードの詳細については次を参照してください。
+* [コンポーネント別の Windows Update エラーコード](https://docs.microsoft.com/windows/deployment/update/windows-update-error-reference)
+* [Windows Update の一般的なエラーと軽減策](https://docs.microsoft.com/windows/deployment/update/windows-update-errors)
 
 ## <a name="measure-attributes"></a>測定値の属性
 

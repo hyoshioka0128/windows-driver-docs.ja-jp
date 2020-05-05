@@ -4,12 +4,12 @@ title: ドライバー コードとドライバー パッケージのテスト�
 description: テストを開始するタイミング。 ドライバーの要件がある場合はすぐに、テスト ケースの設計を開始して、重要な要件が実装されていることをテストできます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a0964ab68748c3a9af7fdcf21aa0f0eccda0e534
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8a240fa574c407c81c48149e6e55470f2e6c1367
+ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74261420"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173550"
 ---
 # <a name="tips-for-testing-drivers-during-development"></a>開発中のドライバーのテストに関するヒント
 
@@ -32,7 +32,7 @@ ms.locfileid: "74261420"
 
 -   開発プロセスの初期段階で INF ファイルとドライバー パッケージを作成して、テスト中に使います。
 
--   [ChkINF](https://docs.microsoft.com/windows-hardware/drivers/devtest/chkinf) ツールを使って INF ファイルの構造と構文を確認し、INF ファイルとその他のインストール関連の問題の診断に役立てます。
+-   [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif) ツールを使って INF ファイルの構造と構文を確認し、INF ファイルとその他のインストール関連の問題の診断に役立てます。
 
 -   [  **Inf2Cat**](https://docs.microsoft.com/windows-hardware/drivers/devtest/inf2cat) ツールを ( **/nocat** オプションを指定して) 使用し、追加の INF ファイルの確認を行います。 **Inf2Cat** を使うと、INF で参照されているファイルが存在し、INF が想定するパッケージ ディレクトリに配置されていることを確認できます。
 
