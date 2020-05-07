@@ -1,6 +1,6 @@
 ---
-title: レジストリキーオブジェクトへのハンドルの使用
-description: レジストリキーオブジェクトへのハンドルの使用
+title: レジストリ キー オブジェクトのハンドルの使用
+description: レジストリ キー オブジェクトのハンドルの使用
 ms.assetid: 25982249-31dc-4542-9ebb-139991619b40
 keywords:
 - レジストリキーオブジェクト WDK カーネルに対するハンドル
@@ -10,14 +10,14 @@ keywords:
 - レジストリキーオブジェクト WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b61185a0f3fedc83065b10f0e47823cee4a48c01
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fa2b11c0202b8ee8ff4a0d34a333487cfd3fce5b
+ms.sourcegitcommit: 63402c9cd10f909e355172037f9bd2d58813303c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838370"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82883718"
 ---
-# <a name="using-a-handle-to-a-registry-key-object"></a>レジストリキーオブジェクトへのハンドルの使用
+# <a name="using-a-handle-to-a-registry-key-object"></a>レジストリ キー オブジェクトのハンドルの使用
 
 
 
@@ -32,7 +32,7 @@ ms.locfileid: "72838370"
 </colgroup>
 <thead>
 <tr class="header">
-<th>操作</th>
+<th>Operation</th>
 <th>呼び出すルーチン</th>
 </tr>
 </thead>
@@ -70,9 +70,9 @@ ms.locfileid: "72838370"
 
  
 
-ドライバーが操作を完了したら、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出してハンドルを閉じる必要があります (キーを削除するために**zwdeletekey**が既に呼び出されている場合を除く)。 (キーが削除されると、それに対する開いているハンドルはすべて無効になります。この場合、ドライバーはハンドルを閉じないようにする必要があります)。
+ドライバーが操作を完了したら、 [**Zwclose**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntclose)を呼び出してハンドルを閉じる必要があります。これは、キーを削除するために既に**Zwdeletekey**が呼び出されている場合でも同様です。 (キーが削除されると、開いているハンドルはすべて無効になりますが、ドライバーはハンドルを閉じる必要があります)。
 
-次のコード例では、 **\\Registry\\コンピューター\\ソフトウェア\\** <em>MyCompany</em>\\*MyApp*に指定されたキーのハンドルを開き、キーデータを取得してハンドルを閉じる方法を示します。
+次のコード例は、 ** \\\\Registry Machine\\Software\\**<em>MyCompany</em>\\*MyApp*という名前のキーのハンドルを開き、キーデータを取得してハンドルを閉じる方法を示しています。
 
 ```cpp
 //

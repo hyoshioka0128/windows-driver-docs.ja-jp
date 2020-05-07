@@ -3,16 +3,16 @@ title: 可変長バッファーの検証失敗
 description: 可変長バッファーの検証失敗
 ms.assetid: 0cc4be22-8197-421a-a5a6-2e7b89a79a38
 keywords:
-- 入力バッファーの WDK カーネル
-- 入力バッファーの可変長の WDK カーネル
+- 入力バッファー WDK カーネル
+- 可変長入力バッファー WDK カーネル
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: be723319ea8d6b2419f40e83068f0e6d0e6f0bb6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e9497c5944dcf88bc301d2421b621967bf59bc34
+ms.sourcegitcommit: 6e2986506940c203a6a834a927a774b7efa6b86e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359985"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82800093"
 ---
 # <a name="failure-to-validate-variable-length-buffers"></a>可変長バッファーの検証失敗
 
@@ -20,7 +20,7 @@ ms.locfileid: "63359985"
 
 
 
-ドライバーは、固定ヘッダーと末尾の次の例のように、可変長のデータの入力バッファーを受け付けることがあります。
+ドライバーは、次の例のように、固定ヘッダーと末尾の可変長データを含む入力バッファーを受け取ることがよくあります。
 
 ```cpp
    typedef struct _WAIT_FOR_BUFFER {
@@ -44,7 +44,7 @@ ms.locfileid: "63359985"
    }
 ```
 
-場合**WaitBuffer -&gt;NameLength**は整数のオーバーフローが起こる可能性のオフセットを追加する、非常に大きな ULONG 値です。 代わりに、ドライバーはオフセットを減算する必要があります、 **InputBufferLength**とで結果を比較**WaitBuffer -&gt;NameLength**、次の例。
+NameLength が非常に大きな ULONG 値である場合、それをオフセットに追加すると、整数オーバーフローが発生する可能性があります。 **&gt;** 代わりに、次の例に示すように、ドライバーは**Inputbufferlength** (buffer size) からオフセット (固定ヘッダーサイズ) を減算し、結果が**&gt;NameLength** (可変長データ) に対して十分な領域を残しているかどうかをテストする必要があります。
 
 ```cpp
    if (InputBufferLength < sizeof(WAIT_FOR_BUFFER)) {
@@ -55,16 +55,18 @@ ms.locfileid: "63359985"
    WaitBuffer = Irp->AssociatedIrp.SystemBuffer;
 
    if ((InputBufferLength -
-         FIELD_OFFSET(WAIT_FOR_BUFFER, Name[0])  >
+         FIELD_OFFSET(WAIT_FOR_BUFFER, Name[0])  <
          WaitBuffer->NameLength) {
       IoCompleteRequest( Irp, STATUS_INVALID_PARAMETER );
       return( STATUS_INVALID_PARAMETER );
    }
 ```
 
-に、上記の減算がアンダー フローをできません最初**場合**ステートメントにより、 **InputBufferLength**のサイズ以上**待機\_の\_バッファー**します。
+つまり、バッファーサイズから固定ヘッダーサイズを引いた値が、可変長データに必要なバイト数よりも少ない場合、エラーが返されます。
 
-複雑なオーバーフロー問題を次に示します。
+最初の**if**ステートメントでは、 **inputbufferlength**が**\_BUFFER の\_待機**のサイズ以上であることが保証されるため、上記の減算はアンダーフローできません。
+
+次に、より複雑なオーバーフローの問題を示します。
 
 ```cpp
    case IOCTL_SET_VALUE:
@@ -84,7 +86,7 @@ ms.locfileid: "63359985"
       }
 ```
 
-この例では、整数のオーバーフローを乗算中に発生します。 場合のサイズ、**設定\_値\_情報**構造体が 2 の倍数を**NumEntries**値のビットがときに、オーバーフロー 0x80000000 結果を中に左にシフトなど乗算します。 ただし、バッファー サイズはそれでも検証テストに合格、オーバーフローを引き起こします**dwSize**を非常に小さく表示されます。 この問題を避けるためには、前の例と長さを減算、除算**sizeof**(**設定\_値\_情報**) を使って結果を比較し、 **NumEntries**します。
+この例では、乗算中に整数オーバーフローが発生する可能性があります。 **SET\_VALUE\_INFO**構造体のサイズが2の倍数の場合、0x80000000 のような**numentries**値はオーバーフローになり、乗算中にビットが左にシフトされます。 ただし、オーバーフローによって**dwSize**が非常に小さく表示されるため、バッファーサイズは検証テストに合格します。 この問題を回避するには、前の例のように長さを減算し、 **sizeof**(**値\_\_の設定**) で除算して、結果と**numentries**を比較します。
 
  
 

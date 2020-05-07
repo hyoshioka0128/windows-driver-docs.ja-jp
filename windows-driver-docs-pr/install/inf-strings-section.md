@@ -12,12 +12,12 @@ api_type:
 - NA
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8ae4fe2aecf6284e2fa493406d6ab1306b2ca7
-ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
+ms.openlocfilehash: 9d7b9c2a137f5cd12ef7f912a450f983b9851c03
+ms.sourcegitcommit: 6e2986506940c203a6a834a927a774b7efa6b86e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82223110"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82800095"
 ---
 # <a name="inf-strings-section"></a>INF Strings セクション
 
@@ -93,6 +93,9 @@ INF ファイルには、**文字列**セクションを1つだけ含めるこ�
 Windows は、インストールのすべての%*strkey*% トークンを変換するために使用される単一の**文字列**セクションを選択します。 Windows は、特定のコンピューターの現在のロケールに応じて、次の方法で**文字列**セクションを選択します。
 
 1.  Windows では、まず、を検索*します。* コンピューターに割り当てられている現在のロケールに一致する INF の値を LanguageID します。 完全に一致するものが見つかった場合、Windows はその**LanguageID** inf セクションを使用して、inf 内で定義されているすべての%*strkey*% トークンを翻訳します。
+
+    すべての文字列トークンをすべての文字列で複製する必要があり**ます。**<i>*</i>**]** セクション、ローカライズする必要がない数値/固定定数もあります。
+
 2.  それ以外の場合、Windows は、SUBLANG_*xxx*として SUBLANG_NEUTRAL の値を使用して LANG_*XXX*値に一致することを確認します。 このような一致が見つかった場合、Windows はその INF セクションを使用して、INF 内で定義されているすべての%*strkey*% トークンを翻訳します。
 3.  それ以外の場合、Windows は次に、同じ LANG_*xxx*ファミリの LANG_*xxx*値と有効な SUBLANG_*xxx*に一致するものを探します。 このような部分的な一致が見つかった場合は、LanguageID INF セクションを使用して、INF 内で定義されているすべての%*strkey*% トークンを翻訳します。
 4.  それ以外の場合、Windows は、非装飾文字列セクションを使用して、INF 内で定義されているすべての%*strkey*% トークンを変換します。
@@ -157,7 +160,7 @@ E = "In particular, Microsoft assumes no liability for any damages that may resu
 
 [**SourceDisksNames**](inf-sourcedisksnames-section.md)
 
-[**バージョン**](inf-version-section.md)
+[**Version**](inf-version-section.md)
 
  
 

@@ -4,12 +4,12 @@ description: デバイスとドライバー パッケージのアンインスト
 ms.assetid: 0f4f0bbf-ca8f-47ef-b70b-d023bba9b842
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fdf01743fdb97a60dda18192583b7cb1f344ab7b
-ms.sourcegitcommit: b3bcd94c24b19b4c76c3b49672e237af03b3a7f6
+ms.openlocfilehash: 4f209df90a9ee1d600a37e0f2ebd073783276860
+ms.sourcegitcommit: 6e2986506940c203a6a834a927a774b7efa6b86e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173552"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82800098"
 ---
 # <a name="how-devices-and-driver-packages-are-uninstalled"></a>デバイスとドライバー パッケージのアンインストール方法
 
@@ -56,7 +56,7 @@ ms.locfileid: "82173552"
 
 ドライバーパッケージをドライバーストアから削除する前に、そのパッケージを使用しているすべてのデバイスをアンインストールしてください。
 
-**重要**  ドライバー[パッケージ](driver-packages.md)を[ドライバーストア](driver-store.md)から手動で削除することはできません。 これにより、INF ファイル、ドライバーストアカタログ、およびドライバーストア内のドライバーの間で不整合が発生する可能性があります。 また、同じドライバーパッケージをドライバーストアにステージングできない場合もあります。
+**重要**  ドライバー[パッケージ](driver-packages.md)を[ドライバーストア](driver-store.md)から手動で削除すると、予期しない動作が発生する可能性があります。
 
  
 
