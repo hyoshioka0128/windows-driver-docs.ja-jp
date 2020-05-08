@@ -12,12 +12,12 @@ keywords:
 - WDK オーディオドライバーの共通部分
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df808e25dd63b9fd399abeb357371e9c5ba9027
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 251ab44242d47cde57eb08ac81636b17e7ef746c
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830114"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925513"
 ---
 # <a name="specifying-pin-data-ranges"></a>ピン データ範囲の指定
 
@@ -56,16 +56,8 @@ static KSDATARANGE_AUDIO PinDataRangesPcm[] =
 };
 ```
 
-前の例の `PinDataRangesPcm` 配列には、 [ **\_AUDIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)型の単一のデータ範囲記述子が含まれていることに注意してください。 一般に、データ範囲配列には任意の数の記述子を含めることができます。 たとえば、PCM 以外の wave 出力ピンでは、AC-3 over S/PDIF と WMA Pro over-S/PDIF 形式の両方がサポートされている場合があります。 これら2つの形式はそれぞれ、個別のデータ範囲記述子によって指定されます。 このため、pin のデータ範囲配列には、少なくとも2つの\_のオーディオ構造体が含まれます。
+前の例`PinDataRangesPcm`の配列には、 [**ksk datarの\_AUDIO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)型の単一のデータ範囲記述子が含まれていることに注意してください。 一般に、データ範囲配列には任意の数の記述子を含めることができます。 たとえば、PCM 以外の wave 出力ピンでは、AC-3 over S/PDIF と WMA Pro over-S/PDIF 形式の両方がサポートされている場合があります。 これら2つの形式はそれぞれ、個別のデータ範囲記述子によって指定されます。 このため、pin のデータ範囲配列には、少なくとも2つの\_ksdatarange 構造体が含まれます。
 
-DirectMusic を使用するアプリケーションの音楽ストリーム形式をサポートする構成可能な pin、または Windows マルチメディア midiIn*xxx*と Midiin*xxx*関数では、型が ksk のデータ範囲記述子として[ **\_ミュージック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)を使用します。
+DirectMusic を使用するアプリケーションの音楽ストリーム形式をサポートする構成可能な pin、または Windows マルチメディア midiIn*xxx*と Midiin*xxx*関数では、 [**ksk\_**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_music)の型のデータ範囲記述子を使用します。
 
-ポートドライバーは、ミニポートドライバーからデータ範囲情報を取得し、可能な限りこの情報を使用して、各 pin がサポートできるデータ形式に関する情報の要求を処理します。 単純な PCM データ範囲のピンの場合、ポートドライバーはその pin の共通部分要求を処理できます。 共通の要求では、クライアントは、ストリームに対して使用可能なデータ形式を表すデータ範囲のセットを提供します。 可能であれば、ポートドライバーの交差ハンドラーは、要求内のデータ範囲から特定のデータ形式を選択し、その pin のデータ範囲内にも含まれます。 この形式は、データ範囲の2つのセットの積集合を表します。 このため、クライアントと pin の両方でこの形式のストリームを処理できます。 より複雑なデータ範囲の場合、ミニポートドライバーは独自の共通部分ハンドラーを提供できます。これは、ポートドライバーが独自の既定のハンドラーの代わりに使用します。 ミニポートドライバーの共通部分ハンドラーを使用すると、データ範囲の配列としてポートドライバーを表現するのが困難な場合があります。 詳細については、「[データの交差ハンドラー](data-intersection-handlers.md)」を参照してください。 詳細については、[オーディオテクノロジ](https://go.microsoft.com/fwlink/p/?linkid=8751)web サイトの「*複数チャネルオーディオデータと WAVE ファイル」と*いうホワイトペーパーを参照してください。
-
- 
-
- 
-
-
-
-
+ポートドライバーは、ミニポートドライバーからデータ範囲情報を取得し、可能な限りこの情報を使用して、各 pin がサポートできるデータ形式に関する情報の要求を処理します。 単純な PCM データ範囲のピンの場合、ポートドライバーはその pin の共通部分要求を処理できます。 共通の要求では、クライアントは、ストリームに対して使用可能なデータ形式を表すデータ範囲のセットを提供します。 可能であれば、ポートドライバーの交差ハンドラーは、要求内のデータ範囲から特定のデータ形式を選択し、その pin のデータ範囲内にも含まれます。 この形式は、データ範囲の2つのセットの積集合を表します。 このため、クライアントと pin の両方でこの形式のストリームを処理できます。 より複雑なデータ範囲の場合、ミニポートドライバーは独自の共通部分ハンドラーを提供できます。これは、ポートドライバーが独自の既定のハンドラーの代わりに使用します。 ミニポートドライバーの共通部分ハンドラーを使用すると、データ範囲の配列としてポートドライバーを表現するのが困難な場合があります。 詳細については、「[データ共通ハンドラー](data-intersection-handlers.md) 」と「[複数チャネルオーディオデータと WAVE ファイル](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653308(v=vs.85))」を参照してください。

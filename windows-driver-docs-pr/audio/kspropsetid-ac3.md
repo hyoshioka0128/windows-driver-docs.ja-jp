@@ -6,44 +6,44 @@ keywords:
 - KSPROPSETID_AC3
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e14507ab50297e4e77f191c059239e9d250427
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ebf120c907b890d06b8747bb78578b280b42fc0c
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332558"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925549"
 ---
-# <a name="kspropsetidac3"></a>KSPROPSETID\_AC3
+# <a name="kspropsetid_ac3"></a>KSPROPSETID\_AC3
 
 
 ## <span id="ddk_kspropsetid_ac3_ks"></span><span id="DDK_KSPROPSETID_AC3_KS"></span>
 
 
-`KSPROPSETID_AC3`プロパティ セットが AC 3 デコードとエンコードされたオーディオ デバイス ドライバーの機能を公開します。
+プロパティ`KSPROPSETID_AC3`セットは、オーディオデバイスドライバーの AC 3 デコード機能とエンコード機能を公開します。
 
-Ac-3 形式をサポートするオーディオ ドライバーには、幅広い ac-3 デコーダーとエンコーダーの機能を制御するためのプロパティを公開できます。 さらに、ストリームのプロパティを照会すると、AC で 3 でエンコードされたオーディオの特性が決まります。
+AC 3 形式をサポートするオーディオドライバーでは、AC 3 デコーダー/エンコーダーの機能を制御するためのさまざまなプロパティを公開できます。 さらに、ストリームのプロパティを照会して、AC 3 でエンコードされたオーディオの特性を確認できます。
 
-オーディオ ハードウェアが特定の機能をサポートしていない場合、そのハードウェアのドライバーには、指定された関数を実行する別の方法を見つける必要がありますが、上位層のドライバーに通知するために、get および set プロパティの呼び出しは失敗します。 たとえば、ダイナミック レンジ圧縮をサポートしていないデコーダーのドライバーでは上位レイヤーは圧縮方法を次の ac-3 デコーダー ストリームに挿入する必要があることを認識できるようにその機能への呼び出しが失敗する必要があります。
+オーディオハードウェアが特定の機能をサポートしていない場合、そのハードウェアのドライバーは get と set プロパティの呼び出しに失敗し、指定された関数を実行する別の方法を検索する必要があることを上位層ドライバーに通知します。 たとえば、ダイナミックレンジ圧縮がサポートされていないデコーダーのドライバーは、その機能に対する呼び出しを失敗させる必要があります。そのため、AC 3 デコーダーの後のストリームに圧縮を挿入する必要があることが上位レイヤーで認識されるようになります。
 
-Ac-3 圧縮については、ある ac-3 仕様を参照してください、 [Dolby Laboratories](https://go.microsoft.com/fwlink/p/?linkid=8730) web サイト。 仕様のタイトルは*デジタル オーディオの圧縮標準 (ac-3)* します。
+AC 3 圧縮の詳細については、 [Dolby 研究所](https://www.dolby.com/us/en/index.html)web サイトの「ac 3 仕様」を参照してください。 この仕様には、 *Digital Audio Compression Standard (AC-3)* というタイトルが付いています。
 
-このセット内のプロパティ項目が KSPROPERTY によって指定された\_AC3 列挙値。
+このセット内のプロパティ項目は、KSPROPERTY\_AC3 列挙値によって指定されます。
 
-KSPROPSETID\_AC3 プロパティ セットには、次のプロパティが含まれています。
+KSPROPSETID\_AC3 プロパティセットには、次のプロパティが含まれています。
 
-[**KSPROPERTY\_AC3\_代替\_オーディオ**](ksproperty-ac3-alternate-audio.md)
+[**KSK プロパティ\_AC3\_代替\_オーディオ**](ksproperty-ac3-alternate-audio.md)
 
-[**KSPROPERTY\_AC3\_ビット\_ストリーム\_モード**](ksproperty-ac3-bit-stream-mode.md)
+[**KSK プロパティ\_AC3\_ビット\_ストリーム\_モード**](ksproperty-ac3-bit-stream-mode.md)
 
-[**KSPROPERTY\_AC3\_ダイアログ\_レベル**](ksproperty-ac3-dialogue-level.md)
+[**KSK プロパティ\_AC3\_ダイアログ\_レベル**](ksproperty-ac3-dialogue-level.md)
 
-[**KSPROPERTY\_AC3\_ミックス ダウン**](ksproperty-ac3-downmix.md)
+[**KSK プロパティ\_の\_AC3 ダウンミックス**](ksproperty-ac3-downmix.md)
 
-[**KSPROPERTY\_AC3\_エラー\_の非表示**](ksproperty-ac3-error-concealment.md)
+[**KSK プロパティ\_AC3\_エラー\_CONCEALMENT**](ksproperty-ac3-error-concealment.md)
 
-[**KSPROPERTY\_AC3\_言語\_コード**](ksproperty-ac3-language-code.md)
+[**KSK プロパティ\_AC3\_言語\_コード**](ksproperty-ac3-language-code.md)
 
-[**KSPROPERTY\_AC3\_ルーム\_型**](ksproperty-ac3-room-type.md)
+[**KSK プロパティ\_AC3\_ルーム\_の種類**](ksproperty-ac3-room-type.md)
 
  
 

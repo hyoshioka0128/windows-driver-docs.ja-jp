@@ -1,68 +1,74 @@
 ---
 title: IRP_MN_QUERY_STOP_DEVICE
-description: すべての PnP ドライバーでは、この IRP を処理する必要があります。
+description: すべての PnP ドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 22f58964-23a0-4307-a748-9c1620e30871
 keywords:
-- IRP_MN_QUERY_STOP_DEVICE カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_QUERY_STOP_DEVICE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 14c43846bb6b27b1b09a8a5e79bcb1f9d36a1f93
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: df734894a12efe91ae0257aa03ff95b07382d992
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370850"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922523"
 ---
-# <a name="irpmnquerystopdevice"></a>IRP\_MN\_クエリ\_停止\_デバイス
+# <a name="irp_mn_query_stop_device"></a>IRP\_の\_全\_クエリ\_の停止デバイス
 
 
-すべての PnP ドライバーでは、この IRP を処理する必要があります。
+すべての PnP ドライバーは、この IRP を処理する必要があります。
+
+## <a name="value"></a>値
+
+0x05
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
-PnP マネージャーでは、リソースを再調整するデバイスを停止できるかどうかに、この IRP がクエリを送信します。
+PnP マネージャーは、この IRP を送信して、リソースを再調整するためにデバイスを停止できるかどうかを照会します。
 
-Windows 98 で、PnP マネージャーも送信この IRP のデバイスを無効にされているとします。
+Windows 98/Me では、デバイスが無効になっているときにも、PnP マネージャーによってこの IRP が送信されます。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストで\_この IRP を IRQL パッシブレベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし
+None
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-なし
+None
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功または適切なエラーの状態にします。 ドライバーがデバイスを停止できない場合、ドライバーは設定**Irp -&gt;IoStatus.Status**ステータス\_失敗しました。
+ドライバーは、 **Irp-&gt;iostatus**を、status\_が SUCCESS または適切なエラー状態に設定します。 ドライバーがデバイスを停止できない場合、ドライバーは**Irp-&gt;iostatus**を status に\_設定します。
 
-バス ドライバーを設定できます**Irp -&gt;IoStatus.Status**ステータス\_リソース\_要件\_成功を示す IRP が要求を PnP マネージャー requery CHANGED停止 IRP を送信する前に、デバイスのリソース要件。
+バスドライバーでは、 **irp-&gt;iostatus**を\_\_設定できます。状態\_は、irp の成功を示すように変更されました。また、PnP マネージャーがデバイスのリソース要件を再実行してから、stop Irp を送信するように要求することもできます。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
-この IRP では、デバイス スタックの上部にあるドライバーによって最初に処理され、各スタックの下位のドライバーに渡されます。
+この IRP は、デバイススタックの一番上にあるドライバーによって最初に処理され、スタック内の下位の各ドライバーに渡されます。
 
-この IRP に応答して、Windows 2000 およびそれ以降のドライバーを示してのリソースの負荷を分散デバイスを停止しても安全だかどうか。
+この IRP に応答して、Windows 2000 以降のドライバーは、リソースの再調整のためにデバイスを安全に停止できるかどうかを示します。
 
-Windows 98 でリソースが再調整時にだけでなくこの IRP が送信されますがもときに、デバイスは無効化/。 ドライバーがこれら 2 つの状況を識別できないため、デバイスを無効にするのを続行するようにします。 デバイスに開いているハンドルがある場合は、ドライバーはこの IRP に失敗します。 」の説明に従って、ドライバーを続行する開いているハンドルがない場合は、 [IRP の処理\_MN\_クエリ\_停止\_デバイス要求 (Windows 98/Me)](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-stop-device-request--windows-98-me-)します。
+Windows 98/Me では、この IRP はリソースの再調整時だけでなく、デバイスが無効になっているときにも送信されます。 ドライバーはこれらの2つの状況を区別できないため、デバイスが無効になっているかのように処理を続行する必要があります。 デバイスに対して開いているハンドルがある場合、ドライバーはこの IRP を失敗させる必要があります。 ハンドルが開いていない場合は、「 [IRP\_の全\_クエリ\_の停止\_デバイス要求の処理 (Windows 98/Me)](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-stop-device-request--windows-98-me-)」で説明されているように、ドライバーを続行する必要があります。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)処理のための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+[プラグアンドプレイの小さな irp](plug-and-play-minor-irps.md)を処理するための一般的な規則については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システムで使用するために予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -72,8 +78,8 @@ Windows 98 でリソースが再調整時にだけでなくこの IRP が送信�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -81,13 +87,13 @@ Windows 98 でリソースが再調整時にだけでなくこの IRP が送信�
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_CANCEL\_STOP\_DEVICE**](irp-mn-cancel-stop-device.md)
+[**\_IRP\_が\_終了し\_たときにデバイスを停止する**](irp-mn-cancel-stop-device.md)
 
-[**IRP\_MN\_デバイス\_使用状況\_通知**](irp-mn-device-usage-notification.md)
+[**IRP\_\_デバイス\_使用量\_の通知**](irp-mn-device-usage-notification.md)
 
-[**IRP\_MN\_START\_DEVICE**](irp-mn-start-device.md)
+[**IRP\_の\_全\_開始デバイス**](irp-mn-start-device.md)
 
-[**IRP\_MN\_停止\_デバイス**](irp-mn-stop-device.md)
+[**IRP\_の\_全\_停止デバイス**](irp-mn-stop-device.md)
 
  
 

@@ -6,34 +6,40 @@ ms.assetid: b9a6f06b-07d9-4539-bd41-21cdccdc4b25
 keywords:
 - IRP_MN_QUERY_RESOURCES カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: df4f147781b3311c10cf5a62bf42c589995d1fda
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b55cd29d442dcb238f99741b273252162d02b407
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838567"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922563"
 ---
-# <a name="irp_mn_query_resources"></a>IRP\_\_クエリ\_リソース
+# <a name="irp_mn_query_resources"></a>IRP\_の\_全\_クエリリソース
 
 
 PnP マネージャーは、この IRP を使用して、デバイスのブート構成リソースを取得します。
 
 バスドライバーは、ハードウェアリソースを必要とする子デバイスに対して、この要求を処理する必要があります。 関数ドライバーとフィルタードライバーは、この IRP を処理しません。
 
+## <a name="value"></a>値
+
+0x0A
+
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
 PnP マネージャーは、デバイスが列挙されたときにこの IRP を送信します。
 
-PnP マネージャーは、任意のスレッドコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
+PnP マネージャーは、任意のスレッドコンテキストで\_この IRP を IRQL パッシブレベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし
+None
 
 ## <a name="output-parameters"></a>出力パラメーター
 
@@ -43,16 +49,16 @@ I/o 状態ブロックで返されます。
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-この IRP を処理するバスドライバーは、 **irp&gt;iostatus. status**を STATUS\_SUCCESS または適切なエラー状態に設定します。
+この IRP を処理するバスドライバーは、 **irp&gt;-iostatus を設定します。** 状態は\_SUCCESS または適切なエラー状態に設定されます。
 
-正常に完了すると、バスドライバーは、要求された情報を含む[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)へのポインターに、 **Irp&gt;iostatus**を設定します。 エラーが発生した場合、バスドライバーは**Irp&gt;IoStatus. 情報**をゼロに設定します。
+正常に完了すると、バスドライバーは、要求された情報を含む[**CM\_\_リソースリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)へのポインターに**Irp-&gt;iostatus**を設定します。 エラーが発生した場合、バスドライバーは**Irp-&gt;Iostatus. 情報**を0に設定します。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
-バスドライバーは、この IRP に応答してリソースリストを返すと、ページメモリから[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)を割り当てます。 不要になったときに、PnP マネージャーによってバッファーが解放されます。
+この IRP に応答してバスドライバーがリソースリストを返す場合、ページメモリ[**から\_CM\_リソースリスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)が割り当てられます。 不要になったときに、PnP マネージャーによってバッファーが解放されます。
 
-デバイスがハードウェアリソースを必要としない場合、デバイスの親バスドライバーは、 **irp&gt;IoStatus. Status**または**Irp-&gt;Iostatus. Information**を変更せずに、irp ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
+デバイスがハードウェアリソースを必要としない場合、デバイスの親バスドライバーは、irp **-&gt;iostatus. Status**または**Irp-&gt;iostatus. INFORMATION**を変更せずに、irp ([**IoCompleteRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocompleterequest)) を完了します。
 
 関数ドライバーとフィルタードライバーは、この IRP を受信しません。
 
@@ -60,11 +66,11 @@ I/o 状態ブロックで返されます。
 
 **この IRP を送信しています**
 
-システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
+システムで使用するために予約されています。 ドライバーは、この IRP を送信することはできません。
 
 ドライバーは、 [**Iogetdeviceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)を呼び出して、未加工のフォームと変換されたフォームの両方で、デバイスのブート構成を取得できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -74,8 +80,8 @@ I/o 状態ブロックで返されます。
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +89,7 @@ I/o 状態ブロックで返されます。
 ## <a name="see-also"></a>関連項目
 
 
-[**CM\_リソース\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)
+[**CM\_リソース\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_cm_resource_list)
 
 [**IoGetDeviceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceproperty)
 

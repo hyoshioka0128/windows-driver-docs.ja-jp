@@ -3,25 +3,25 @@ title: ビットマップまたはアイコンを使用してコントロール 
 description: ビットマップまたはアイコンを使用してコントロール パネルをブランド化する
 ms.assetid: 1520cf9e-6813-41aa-aa88-39a1a6c27f74
 keywords:
-- オーディオ アダプター WDK、コントロール パネルのブランド化
-- アダプターのドライバー WDK オーディオ、コントロール パネルのブランド化
-- ポート クラス オーディオ アダプター WDK、コントロール パネルのブランド化
-- コントロール パネルのブランド化 WDK オーディオ
-- ブランド化デバイス コントロールの WDK オーディオ
-- 場合サードパーティ ブランドの WDK オーディオ
-- ベンダーのブランド化 WDK オーディオ
-- ロゴ ブランド化の WDK オーディオ
-- アイコンの WDK オーディオ
-- ビットマップのブランド化の WDK オーディオ
-- WDK オーディオのブランド イメージ
+- オーディオアダプター WDK、コントロールパネルのブランド化
+- アダプタードライバー WDK オーディオ、コントロールパネルのブランド化
+- ポートクラスオーディオアダプター WDK、コントロールパネルのブランド化
+- コントロールパネルのブランド化 WDK オーディオ
+- ブランドデバイスコントロール WDK オーディオ
+- サードパーティブランドの WDK オーディオ
+- ベンダブランド化 WDK オーディオ
+- ロゴブランド WDK オーディオ
+- アイコン WDK audio
+- ビットマップブランド化 WDK オーディオ
+- イメージブランド化 WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b1528a4f32b56473d2b0da84a26b6693d709126
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d38c1ad44a6afd6e938134011365e1fa545b46fe
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355613"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925609"
 ---
 # <a name="branding-control-panel-with-bitmaps-or-icons"></a>ビットマップまたはアイコンを使用してコントロール パネルをブランド化する
 
@@ -29,23 +29,23 @@ ms.locfileid: "67355613"
 ## <span id="control_panel_branding_by_vendors"></span><span id="CONTROL_PANEL_BRANDING_BY_VENDORS"></span>
 
 
-Windows XP と Windows の以降のバージョンでは、コントロール パネルの サウンドのアプリケーションは、サード パーティ製のオーディオ デバイス コントロールのブランド化をサポートします。 独立系ハードウェア ベンダー (Ihv) は、オーディオ デバイスのコントロールの横にある次の項目を表示できます。
+Windows XP 以降のバージョンの Windows では、コントロールパネルの [サウンド] アプリケーションで、オーディオデバイスコントロールのサードパーティブランドがサポートされています。 独立系ハードウェアベンダー (Ihv) は、オーディオデバイスのコントロールの横に次の項目を表示できます。
 
 -   会社のロゴ
 
 -   独自のデバイス名
 
-デバイス ドライバーをインストールする INF ファイルは、レジストリにも、コントロール パネルのカスタマイズのデータを読み込みます。 インストールされているドライバー ファイル自体は、会社のロゴのビットマップ イメージに格納されます。
+デバイスドライバーをインストールする INF ファイルでは、コントロールパネルのカスタマイズデータもレジストリに読み込まれます。 会社のロゴのビットマップ画像は、インストールされているドライバーファイル自体に含まれています。
 
-Windows xp の場合、ブランド情報は、プログラムの次の場所でユーザーに表示されます。
+Windows XP では、次のプログラムの場所にあるユーザーにブランド情報が表示されます。
 
--   **ボリューム**のページ、**サウンドとオーディオ デバイス**コントロール パネル (Mmsys.cpl)
+-   コントロールパネルの [**サウンドとオーディオデバイス**] アプリケーションの [**ボリューム**] ページ (mmsys .cpl)
 
--   SndVol32 プログラム (Sndvol32.exe)
+-   SndVol32 プログラム (Sndvol32)
 
-Windows Vista では、ブランド情報でユーザーに表示されて、**再生**と**記録**のページ、*サウンド*コントロール パネル (Mmsys.cpl)。
+Windows Vista では、ブランド情報は、コントロールパネルの [*サウンド*] アプリケーションの [**再生**と**記録**] ページでユーザーに表示されます (mmsys .cpl)。
 
-ブランド化の情報がレジストリに格納されている、**ブランド**media クラス キーの下にある、オーディオ デバイスのルート キーの下のサブキー。 **ブランド**サブキーは、1 つ以上の登録に含めることができます\_次の表に示す SZ 値。
+ブランド情報は、オーディオデバイスのルートキーの下にある**ブランド**化サブキーのレジストリに格納されます。これは、メディアクラスキーの下にあります。 **ブランド**化サブキーには、次の表に\_示す REG SZ 値を1つ以上含めることができます。
 
 <table>
 <colgroup>
@@ -60,31 +60,31 @@ Windows Vista では、ブランド情報でユーザーに表示されて、**�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>アイコン●あいこん○</p></td>
-<td align="left"><p>SndVol32 コントロールのメニューで使用されるアイコンを含むファイルの名前。</p></td>
+<td align="left"><p>icon</p></td>
+<td align="left"><p>SndVol32 コントロールメニューで使用されるアイコンを含むファイルの名前。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ビットマップ</p></td>
-<td align="left"><p>表示される、32 ~ 32 でビットマップを含むファイルの名前、<strong>ボリューム</strong>のページ、<strong>サウンドとオーディオ デバイス</strong>コントロール パネルの アプリケーション。</p></td>
+<td align="left"><p>コントロールパネルの [<strong>サウンドとオーディオデバイス</strong>] アプリケーションの [<strong>ボリューム</strong>] ページに表示される 32/32 ビットマップを含むファイルの名前。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-これらの値は、追加レジストリ セクション内のディレクティブで、レジストリに追加されます (を参照してください[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)) のデバイス ドライバーをインストールする INF ファイル。 コントロール パネルの不足している任意の値の既定値を使用して、**ブランド**サブキー。
+これらの値は、デバイスドライバーをインストールする INF ファイルのレジストリセクション ( [**Inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を参照) 内のディレクティブによってレジストリに追加されます。 コントロールパネルでは、**ブランド**サブキーにないすべての値に既定値が使用されます。
 
-上部にある独自のデバイス名の左側に"bitmap"ロゴが表示される、**ボリューム**ページ。 SndVol32 コントロール メニューの左上隅にある「アイコン」ロゴが表示されます。
+**ボリューム**ページの上部にある専用デバイス名の左側に "ビットマップ" ロゴが表示されます。 SndVol32 コントロールメニューの左上隅に "icon" ロゴが表示されます。
 
-前に説明したページに表示される独自のデバイス名とは、デバイスのフレンドリ名です。 このフレンドリ名は、追加のレジストリのセクションで、デバイスをインストールする INF ファイルのディレクティブによって指定されます。 例で示すように、このディレクティブが"FriendlyName"キーワードを含む[ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。 Windows xp の場合、**ボリューム**ページと SndVol32 名の文字列の最初の 31 文字のみを表示します。 長い文字列は切り捨てられます。 Windows Vista および Windows の以降のバージョンでは、コントロール パネルの デバイス名が表示されるときにこの 31 文字に制限が削除されます。 たとえば、Windows Vista より前のバージョンの Windows でサポートされていた Api を使用すると[MCI\_GetDevCaps](https://go.microsoft.com/fwlink/p/?linkid=149692)、31 文字の制限がまだ API に指定したデバイス名に適用します。
+前述のページに記載されている独自のデバイス名は、デバイスのフレンドリ名です。 このフレンドリ名は、デバイスをインストールする INF ファイルの [レジストリの追加] セクションのディレクティブで指定します。 このディレクティブには、 [**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)の例に示すように、キーワード "FriendlyName" が含まれています。 Windows XP では、**ボリューム**ページと SndVol32 には名前文字列の最初の31文字のみが表示されます。 これより長い文字列は切り詰められます。 Windows Vista 以降のバージョンの Windows では、コントロールパネルにデバイス名を表示したときにこの31文字の制限が削除されます。 Windows Vista より前のバージョンの Windows でサポートされていた Api (たとえば[、\_MCI getdevcaps](https://docs.microsoft.com/windows/win32/multimedia/mci-getdevcaps)) を使用すると、api に対して指定したデバイス名に31文字の制限が適用されます。
 
-**重要な**  で Windows Vista と以降のバージョンの Windows での使用のビットマップ画像を保存のサード パーティ製のブランド化はサポートされていません。 サード パーティ製のオーディオ ドライバー開発者が、オーディオ デバイスのコントロールをブランド化する場合は、アイコンを使用する必要があります。 これらのアイコンのサポートされているピクセル寸法とは、32 x 32 または 48 x 48 です。
+**重要**   windows Vista 以降のバージョンの windows では、サードパーティブランドのビットマップイメージの使用はサポートされなくなりました。 オーディオデバイスコントロールをブランド化するサードパーティのオーディオドライバー開発者は、アイコンを使用する必要があります。 これらのアイコンに対してサポートされているピクセルディメンションは、32x32 または 48 x 48 です。
 
  
 
-### <a name="span-idexample1spanspan-idexample1spanspan-idexample1spanexample-1"></a><span id="Example_1"></span><span id="example_1"></span><span id="EXAMPLE_1"></span>例 1
+### <a name="span-idexample_1spanspan-idexample_1spanspan-idexample_1spanexample-1"></a><span id="Example_1"></span><span id="example_1"></span><span id="EXAMPLE_1"></span>例1
 
-次の例では、いくつかの追加-レジストリのセクションから仕入先の INF ファイルのディレクティブを示します。
+次の例では、ベンダーの INF ファイルの [レジストリの追加] セクションにある2つのディレクティブを示します。
 
 ```inf
   [XYZ-Audio-Device.AddReg]
@@ -92,15 +92,15 @@ Windows Vista では、ブランド情報でユーザーに表示されて、**�
   HKR,Branding,bitmap,,"c:\mydir\myimage.bmp"
 ```
 
-これらのディレクティブは、コントロール パネルのブランド情報をレジストリに追加します。 HKR がレジストリでのオーディオ デバイスのルート キーを表します**ブランド**ルート キーのパス名を基準としたサブキーが指定されています。 文字列値、**アイコン**または**ビットマップ**キーは 2 つの形式のいずれかで指定できます。"ファイル, resourceid"または"イメージ ファイル"。 前の例では、最初のディレクティブは、「ファイル, resourceid」の形式を使用します。 ディレクティブに割り当てます、**アイコン**キー ファイル名、foo.sys、および 102 のリソース ID を含む文字列値。 ファイル名とリソース ID は、(スペースなし) をコンマで区切られます。 ファイル foo.sys には、アイコン リソースが含まれています。 "Imagefile"への文字列を書式設定前の例の割り当てで 2 つ目のディレクティブ、**ビットマップ**キーは、文字列には、ビットマップを含む .bmp ファイルの完全なパス名が含まれています。
+これらのディレクティブは、コントロールパネルのブランド情報をレジストリに追加します。 HKR は、レジストリ内のオーディオデバイスのルートキーを表します。**ブランド**サブキーは、ルートキーのパス名を基準にして指定されます。 **アイコン**または**ビットマップ**キーの文字列値は、"file, resourceid" または "イメージファイル" という2つの形式のいずれかで指定できます。 前の例の最初のディレクティブでは、"file, resourceid" 形式が使用されています。 ディレクティブは、ファイル名、foo、およびリソース ID 102 を含む文字列値を**アイコン**キーに割り当てます。 ファイル名とリソース ID はコンマで区切られます (スペースは含まれません)。 ファイル foo には、アイコンリソースが含まれています。 前の例の2番目のディレクティブでは、**ビットマップ**キーに "イメージ化" 形式の文字列を割り当てます。文字列には、ビットマップを含む .bmp ファイルの完全なパス名が含まれています。
 
-例のディレクティブを**アイコン**"imagefile"の形式を使用する値を変更できますが、ここでは、文字列値は .ico ファイル名拡張子の付いたファイルのパス名を含める必要があります。
+**Icon**値の example ディレクティブは、"イメージファイル" 形式を使用するように変更できますが、この例では、文字列値に拡張子が .ico のファイルのパス名を含める必要があります。
 
-コントロール パネルのソフトウェアが同じとして検索パスの一覧を検索する「ファイル, resourceid」の形式の場合、 **LoadLibrary**関数 (Microsoft Windows SDK のドキュメントで説明)。 ソフトウェアでは、ドライバーのディレクトリを検索もこのパスの一覧にファイルが含まれていない場合 (を参照してください[ **INF DestinationDirs セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section))。 この形式は、ドライバー ファイル自体を INF ファイルの絶対パス名を指定することを必要とせずに簡単に格納されるイメージをできます。
+"File, resourceid" 形式の場合、コントロールパネルソフトウェアは、同じ検索パスのリストを**LoadLibrary**関数として検索します (Microsoft Windows SDK のドキュメントを参照)。 このパスリストにファイルが含まれていない場合、ソフトウェアは drivers ディレクトリも検索します (「 [**INF DestinationDirs」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section)を参照してください)。 この形式を使用すると、INF ファイルで絶対パス名を指定しなくても、イメージを簡単にドライバーファイル自体に格納できます。
 
-### <a name="span-idexample2spanspan-idexample2span-example-2"></a><span id="example_2"></span><span id="EXAMPLE_2"></span> 例 2
+### <a name="span-idexample_2spanspan-idexample_2span-example-2"></a><span id="example_2"></span><span id="EXAMPLE_2"></span> 例 2
 
-次の例は、Windows Vista 以降のバージョンの Windows に適用されます。 この例では、追加のレジストリのセクションから仕入先の INF ファイルのディレクティブを使用します。 この例では、"イメージのファイル"形式を使用します。
+次の例は、windows Vista 以降のバージョンの Windows に適用されます。 この例では、ベンダーの INF ファイルのレジストリの追加セクションからディレクティブを示します。 この例では、"イメージファイル" 形式を使用します。
 
 ```inf
 [ABC-Audio-Device.AddReg]

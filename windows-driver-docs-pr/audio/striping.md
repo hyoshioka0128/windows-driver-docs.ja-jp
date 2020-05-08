@@ -13,12 +13,12 @@ keywords:
 - 帯域幅の割り当て
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a002afac326d572af80849061048870fa59a651
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 71a555d4d503c169621692d2f2b3bf9717472e0b
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830105"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925515"
 ---
 # <a name="striping"></a>ストライピング
 
@@ -27,7 +27,7 @@ HD オーディオアーキテクチャは*ストライピング*と呼ばれる
 
 関数ドライバーは、 [**AllocateRenderDmaEngine**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_render_dma_engine)ルーチンの*ストライプ*呼び出しパラメーターを使用してストライピングを有効にします。
 
-ストライピングの詳細については、intel [HD audio](https://go.microsoft.com/fwlink/p/?linkid=42508) web サイトの「 *Intel High Definition audio Specification* 」を参照してください。
+ストライピングの詳細については、intel [HD audio](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html) web サイトの「 *Intel High Definition audio Specification* 」を参照してください。
 
  
 

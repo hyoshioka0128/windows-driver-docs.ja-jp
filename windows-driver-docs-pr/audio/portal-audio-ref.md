@@ -1,42 +1,42 @@
 ---
-title: オーディオ デバイス DDI 参照
-description: このセクションには、オーディオ処理オブジェクト用のインターフェイスを Windows Driver Model (WDM) とリファレンスのページに準拠しているオーディオ ドライバーのリファレンス ページが含まれています。
+title: オーディオデバイス DDI リファレンス
+description: このセクションには、オーディオ処理オブジェクトのインターフェイスの Windows Driver Model (WDM) とリファレンスページに準拠するオーディオドライバーの参照ページが含まれています。
 ms.assetid: 41a45180-4635-4d5d-befa-3e57467d4e33
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bd8997e925fa468159203b5db6f319cbd8f4d38d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8be63c24d8fdd3b4d6deb33f2f480f2665fe6279
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328800"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925539"
 ---
-# <a name="audio-devices-ddi-reference"></a>オーディオ デバイス DDI 参照
+# <a name="audio-devices-ddi-reference"></a>オーディオデバイス DDI リファレンス
 
 
-このセクションには、オーディオ処理オブジェクト用のインターフェイスを Windows Driver Model (WDM) とリファレンスのページに準拠しているオーディオ ドライバーのリファレンス ページが含まれています。
+このセクションには、オーディオ処理オブジェクトのインターフェイスの Windows Driver Model (WDM) とリファレンスページに準拠するオーディオドライバーの参照ページが含まれています。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 
--   [オーディオ ドライバーの列挙型](audio-drivers-enumerations.md)
+-   [オーディオ ドライバーの列挙](audio-drivers-enumerations.md)
 -   [オーディオ ドライバーのプロパティ セット](audio-drivers-property-sets.md)
--   [オーディオ ドライバーのイベントのセット](audio-drivers-event-sets.md)
--   [オーディオのトポロジのノード](audio-topology-nodes.md)
--   [オーディオ ドライバー構造体](audio-drivers-structures.md)
--   [オーディオ ドライバー インターフェイス](audio-drivers-interfaces.md)
+-   [オーディオ ドライバーのイベント セット](audio-drivers-event-sets.md)
+-   [オーディオ トポロジ ノード](audio-topology-nodes.md)
+-   [オーディオ ドライバーの構造体](audio-drivers-structures.md)
+-   [オーディオ ドライバーのインターフェイス](audio-drivers-interfaces.md)
 -   [Bluetooth HFP DDI 参照](bluetooth-hfp-ddi-reference.md)
--   [高解像度オーディオ DDI 参照](high-definition-audio-ddi-reference.md)
--   [DRM 関数](drm-functions.md)
+-   [High Definition Audio DDI リファレンス](high-definition-audio-ddi-reference.md)
+-   [DRM の関数](drm-functions.md)
 -   [MIDI のオーディオ デバイス メッセージ](audio-device-messages-for-midi.md)
--   [従来のオーディオ デバイス メッセージ](legacy-audio-device-messages.md)
--   [Media クラス INF の拡張機能](media-class-inf-extensions.md)
+-   [レガシ オーディオ デバイス メッセージ](legacy-audio-device-messages.md)
+-   [メディアクラスの INF 拡張機能](media-class-inf-extensions.md)
 -   [ポート クラス オーディオ ドライバー リファレンス](port-class-audio-driver-reference.md)
 
-## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>その他のリソース
+## <a name="span-idadditional_resourcesspanadditional-resources"></a><span id="additional_resources"></span>その他の情報
 
 
-オーディオ デバイスのドライバーの開発全般については、次を参照してください。[オーディオ デバイスの設計ガイド](https://go.microsoft.com/fwlink/p/?LinkID=822637)します。
+オーディオデバイス用のドライバーの開発に関する一般的な情報については、「[オーディオデバイス設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/audio/)」を参照してください。
 
  
 

@@ -6,14 +6,14 @@ ms.assetid: f00c0021-a909-4d76-9114-6710e1aa4307
 keywords:
 - IRP_MN_POWER_SEQUENCE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 70cbc1f1ea39ecd512b4c6cce9780de7d00f6c2e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7780e8ded4c29646520fa95ae8243ec5bdd86bcd
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828045"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922463"
 ---
-# <a name="irp_mn_power_sequence"></a>IRP\_\_電源\_シーケンス
+# <a name="irp_mn_power_sequence"></a>IRP\_の\_出力\_シーケンス
 
 
 この IRP は、デバイスの電源シーケンス値を返します。
@@ -21,24 +21,26 @@ ms.locfileid: "72828045"
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_の電源**](irp-mj-power.md)送信時
+[**IRP\_MJ\_の電源**](irp-mj-power.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
 ドライバーは、この IRP を最適化として送信し、デバイスが実際に特定の電源状態を入力したかどうかを判断します。 この IRP のサポートは省略可能です。
 
-この IRP を送信するには、ドライバーは[**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)を呼び出して、irp を割り当てる必要があります。これには、主な Irp コード[**irp\_MJ\_POWER**](irp-mj-power.md)および minor irp code **IRP\_全\_の電源\_シーケンス**を指定します。 次に、ドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) (windows Vista) または[**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (Windows SERVER 2003、Windows XP、および windows 2000) を呼び出して、IRP を次の下位のドライバーに渡す必要があります。 電源マネージャーは、この IRP を送信できません。
+この IRP を送信するには、ドライバーは[**Ioallocateirp**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioallocateirp)を呼び出して、irp を割り当てる必要があります。これは、主要な Irp code [**\_IRP MJ\_power**](irp-mj-power.md)および minor irp code irp **\_の\_出力\_シーケンス**を指定します。 次に、ドライバーは[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) (windows Vista) または[**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver) (Windows SERVER 2003、Windows XP、および windows 2000) を呼び出して、IRP を次の下位のドライバーに渡す必要があります。 電源マネージャーは、この IRP を送信できません。
 
 この IRP の送信者は、IRQL &lt;= ディスパッチ\_レベルで実行されている必要があります。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし。
+ありません。
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-**Parameters。 PowerSequence**は、次のメンバーを持つ**POWER\_のシーケンス**構造を指します。
+**Parameters。 PowerSequence**は、次のメンバーを持つ**\_電源シーケンス**構造を指します。
 
 <a href="" id="sequenced1"></a>**SequenceD1**  
 デバイスの電源状態が D1 以下の回数。
@@ -56,9 +58,9 @@ ms.locfileid: "72828045"
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーは、 **irp&gt;iostatus. status**を STATUS\_SUCCESS に設定して、要求された情報が返されたことを示します。または、この irp がサポートされていないことを示すために実装\_されていない状態\_します。
+ドライバーは、 **irp-&gt;Iostatus. status**を status\_に設定して、要求された情報を返したこと\_を\_示します。または、この irp がサポートされていないことを示すステータスが実装されていないことを示します。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 この IRP は、デバイスの電源シーケンス値を返します。 バスドライバーは必要に応じて処理できます。関数とフィルタードライバーは必要に応じて送信できます。
@@ -69,7 +71,7 @@ ms.locfileid: "72828045"
 
 たとえば、デバイスが D2 状態に達したときに電力を復元するのに長い時間がかかる場合、ドライバーはデバイスの状態を D2 以下に設定する前に**SequenceD2**の値を格納できます。 その後、電源がデバイスに復元されるときに、ドライバーは新しい**SequenceD2**の値と格納されている値を比較して、デバイスの状態が D2 未満で実際に削除されたかどうかを判断できます。 値が一致した場合、デバイスは実際には電力状態 D2 またはそれよりも低い状態になることはなく、ドライバーはデバイスの再初期化を回避できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -79,8 +81,8 @@ ms.locfileid: "72828045"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,12 @@ description: 圧縮されたオーディオ形式のサブ形式 GUID
 ms.assetid: f9595d6c-952c-4266-8eb5-5c8581051d28
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 389a791ead4e2aeff2e374245a20d3d206865420
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0d9bd4029d2cf5a21c3d3a3b6fdad4a484f8a46f
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830107"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925627"
 ---
 # <a name="subformat-guids-for-compressed-audio-formats"></a>圧縮されたオーディオ形式のサブ形式 GUID
 
@@ -18,11 +18,11 @@ Windows 7 では、新しいサブフォーマット Guid が Ksmedia .h ヘッ�
 
 CEA-861-D 標準の結果として、CEA デバイスでサポートされていないオーディオ形式は、このようなデバイスに転送されないようにする必要があります。 高解像度のマルチメディアインターフェイス (HDMI) と[DisplayPort](https://www.displayport.org/)は、CEA デバイスの例です。
 
-ユーザーモードアクセスの場合、Guid は[WAVEFORMATEXTENSIBLE](https://go.microsoft.com/fwlink/p/?linkid=142020)の**Subformat**メンバーと[WAVEFORMATEXTENSIBLE\_IEC61937](https://go.microsoft.com/fwlink/p/?linkid=142021)の**formatext**メンバーで指定されます。 オーディオドライバーのカーネルモードアクセスの場合、Guid は、 [**Ksk datarange\_audio**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造体の**datarange**メンバーに指定されています。
+ユーザーモードアクセスの場合、Guid は[WAVEFORMATEXTENSIBLE](https://docs.microsoft.com/windows/win32/api/mmreg/ns-mmreg-waveformatextensible)の**Subformat**メンバーと[WAVEFORMATEXTENSIBLE\_IEC61937](https://docs.microsoft.com/windows/win32/coreaudio/representing-formats-for-iec-61937-transmissions)の**formatext**メンバーで指定されます。 オーディオドライバーのカーネルモードアクセスの場合、Guid は、 [**Ksk datarange\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-ksdatarange_audio)構造体の**datarange**メンバーに指定されます。
 
 次の表に、使用可能な圧縮されたオーディオ形式の Guid を示します。
 
-使用可能なすべての形式が Windows 7 HD audio クラスドライバーでサポートされているわけではありませ**ん  。** Windows 7 でサポートされている形式は、テーブルにアスタリスク (\*) が示されています。
+**注**   Windows 7 HD audio class driver では、使用可能なすべての形式がサポートされているわけではありません。 Windows 7 でサポートされている形式は、テーブルにアスタリスク (\*) が付いて示されています。
 
  
 
@@ -129,7 +129,7 @@ CEA-861-D 標準の結果として、CEA デバイスでサポートされてい
 <td align="left"><p>0x0c</p></td>
 <td align="left"><p>0000000c-0cea-0010-8000-00aa00389b71</p>
 <p>KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_MLP</p></td>
-<td align="left"><p>台紙 (MLP)<em>- 経線ロスレスパッキング (Dolby Digital True HD-24 ビット 196KHz/最大 18M bps、8チャネル)</p></td>
+<td align="left"><p>台紙 (MLP)<em> -経線ロスレスパッキング (Dolby Digital True HD-24 ビット 196khz/最大 18m bps、8チャネル)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x0e</p></td>
@@ -181,9 +181,9 @@ CEA-861-D 標準の結果として、CEA デバイスでサポートされてい
 
  
 
-次のコード例では、オーディオミニポートドライバーが、完全に機能する Dolby Digital Plus デコーダーを持つ HDMI シンクで使用するために、 [**Ksk datarの\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造を定義および初期化する方法を示します。 この型のシンクは、44.1 と 48 KHz の転送速度をサポートしています。
+次のコード例は、オーディオミニポートドライバーが、完全に機能する Dolby Digital Plus デコーダーを持つ HDMI シンクで使用するために、 [**Ksk datarの\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造を定義および初期化する方法を示しています。 この型のシンクは、44.1 と 48 KHz の転送速度をサポートしています。
 
-サンプリングレートが 48 KHz の場合、オーディオミニポートドライバーは、次のコードを使用して、 [**Ksk datarの\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造体を定義し、初期化します。 このコードは、オーディオミニポートドライバーが公開するデータ範囲を示しています。
+サンプリングレートが 48 KHz の場合、オーディオミニポートドライバーは、次のコードを使用して、 [**Ksdatarange\_オーディオ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksdatarange_audio)構造体を定義および初期化します。 このコードは、オーディオミニポートドライバーが公開するデータ範囲を示しています。
 
 ```cpp
 //Define and initialize KSDATARANGE_AUDIO structure

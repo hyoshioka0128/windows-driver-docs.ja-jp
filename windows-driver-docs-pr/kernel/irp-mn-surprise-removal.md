@@ -1,66 +1,72 @@
 ---
 title: IRP_MN_SURPRISE_REMOVAL
-description: すべての PnP ドライバーでは、この IRP を処理する必要があります。
+description: すべての PnP ドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 19d6847c-6b64-4552-b8b8-fef1d9b13fc7
 keywords:
-- IRP_MN_SURPRISE_REMOVAL Kernel-Mode Driver Architecture
+- IRP_MN_SURPRISE_REMOVAL カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d329cbedfa11ccc0f0c9aecd362ad4e633cd75
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 29406ccc147c510639ebc87943a31eec165013e4
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67376456"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922553"
 ---
-# <a name="irpmnsurpriseremoval"></a>IRP\_MN\_SURPRISE\_REMOVAL
+# <a name="irp_mn_surprise_removal"></a>IRP\_の\_突然\_の削除
 
 
-すべての PnP ドライバーでは、この IRP を処理する必要があります。
+すべての PnP ドライバーは、この IRP を処理する必要があります。
+
+## <a name="value"></a>値
+
+0x17
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
-PnP マネージャーでは、この IRP に、デバイスの I/O 操作に使用できるがなくなったことをデバイスのドライバーに通知を送信します。 Windows 2000 以降のシステムだけでは、この IRP が送信されます。
+PnP マネージャーは、デバイスが i/o 操作に使用できなくなったことをデバイスに通知するために、この IRP を送信します。 この IRP は、Windows 2000 以降のシステムでのみ送信されます。
 
-PnP マネージャーは、ユーザー モード アプリケーションやその他のカーネル モード コンポーネントに通知する前に、この IRP を送信します。 この IRP の完了後、PnP マネージャーに通知登録済みのアプリケーションとドライバー デバイスが削除されています。
+PnP マネージャーは、ユーザーモードアプリケーションやその他のカーネルモードコンポーネントに通知する前に、この IRP を送信します。 この IRP が完了すると、デバイスが削除されたことを示す登録済みアプリケーションとドライバーが PnP マネージャーに通知されます。
 
-PnP マネージャーは、この IRP を送信するとき、デバイスは、PnP 状態にできます。
+PnP マネージャーがこの IRP を送信すると、デバイスは任意の PnP 状態になることがあります。
 
-Windows 98/Windows Me で PnP マネージャーでは、この IRP は送信しません。
+Windows 98/Windows Me では、PnP マネージャーはこの IRP を送信しません。
 
-PnP マネージャー IRQL でこの IRP の送信 = パッシブ\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストでこの\_IRP を IRQL = パッシブレベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし
+None
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-なし
+None
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーを設定する必要があります**Irp -&gt;IoStatus.Status**ステータス\_成功します。 ドライバーでは、この IRP が失敗する必要があります。
+ドライバーでは、 **Irp-&gt;iostatus**を設定する必要\_があります。状態は SUCCESS に設定されます。 ドライバーは、この IRP を失敗させることはできません。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
-この IRP では、デバイス スタックの上部にあるドライバーによって最初に処理され、各スタックの下位のドライバーに渡されます。
+この IRP は、デバイススタックの一番上にあるドライバーによって最初に処理され、スタック内の下位の各ドライバーに渡されます。
 
-この IRP の詳細については、次を参照してください。 [IRP の処理\_MN\_突然\_削除要求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request)します。 デバイスの削除のサポートに関する詳細については、次を参照してください。[デバイスを削除する](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)します。
+この IRP の詳細については、「 [irp\_の\_突然\_の削除要求の処理](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-surprise-removal-request)」を参照してください。 デバイスの削除のサポートの詳細については、「[デバイスの削除](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システムで使用するために予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -70,8 +76,8 @@ PnP マネージャー IRQL でこの IRP の送信 = パッシブ\_システム
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -79,7 +85,7 @@ PnP マネージャー IRQL でこの IRP の送信 = パッシブ\_システム
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_REMOVE\_DEVICE**](irp-mn-remove-device.md)
+[**IRP\_の\_すべて\_のデバイスの削除**](irp-mn-remove-device.md)
 
  
 

@@ -17,12 +17,12 @@ keywords:
 - カテゴリ Guid WDK オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d7d6de7bd67a5fa5cad50a6f9ee13a7beeb5c60
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d40df929079c3176e10a9000a0a21a4ade40d2b3
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830247"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925543"
 ---
 # <a name="pin-category-property"></a>ピン カテゴリのプロパティ
 
@@ -30,9 +30,9 @@ ms.locfileid: "72830247"
 ## <span id="pin_category_property"></span><span id="PIN_CATEGORY_PROPERTY"></span>
 
 
-USB オーディオデバイス用の Microsoft Windows Driver Model (WDM) オーディオドライバー、IEEE 1394 オーディオデバイス、内部バス上のオーディオデバイスはすべて、デバイスを、ピン付きの KS フィルターとして表します。 WDM オーディオドライバーは、サポートする各 pin の種類に対して1つの[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造を保持します。 この構造内では、ドライバーは、ピンの種類の[Ksk Propsetid\_pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)プロパティを格納します。 これらのプロパティの中には、 [ **\_CATEGORY プロパティ\_"Ksk" プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)があります。 このプロパティの要求では、 **Kspin\_記述子**構造体の**カテゴリ**メンバーから KS pin カテゴリ GUID を取得します。 この GUID は、pin によって提供される機能の一般的なカテゴリを示します。 たとえば、特定のピンカテゴリ GUID (KSNODETYPE\_ヘッドホン) は、ヘッドホンの出力ジャックとして pin を識別します。
+USB オーディオデバイス用の Microsoft Windows Driver Model (WDM) オーディオドライバー、IEEE 1394 オーディオデバイス、内部バス上のオーディオデバイスはすべて、デバイスを、ピン付きの KS フィルターとして表します。 WDM オーディオドライバーは、サポートする各 pin の種類に対して1つの[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造を保持します。 この構造内では、ドライバーは、pin の種類の[Kspropsetid\_pin](https://docs.microsoft.com/windows-hardware/drivers/stream/kspropsetid-pin)プロパティを格納します。 これらのプロパティの中には、 [**Ksk プロパティ\_の "ピン\_カテゴリ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)" プロパティがあります。 このプロパティの要求では、 **Kspin\_記述子**構造の**カテゴリ**メンバーから KS ピンカテゴリ GUID を取得します。 この GUID は、pin によって提供される機能の一般的なカテゴリを示します。 たとえば、特定の pin カテゴリ GUID (KSNODETYPE\_ヘッドホン) は、ヘッドホンの出力ジャックとして pin を識別します。
 
-内部バス上の wave オーディオデバイス (PCI など) の場合、PortCls ミニポートドライバーにはピン記述子の配列が含まれており、それぞれがデバイスを表すフィルターのピンの種類を表します。 各 pin 記述子は、ピンカテゴリ GUID を持つ埋め込みの[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造を含む[**PCPIN\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcpin_descriptor)構造体です。 クライアントからの[ **\_CATEGORY**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)プロパティの要求を\_、ksk プロパティを受け取ると、ポートドライバーは、指定されたピンの種類について、ミニポートドライバーの pin 記述子から pin カテゴリの GUID を取得します。 ピン記述子の詳細については、「[ファクトリのピン留め](pin-factories.md)」を参照してください。
+内部バス上の wave オーディオデバイス (PCI など) の場合、PortCls ミニポートドライバーにはピン記述子の配列が含まれており、それぞれがデバイスを表すフィルターのピンの種類を表します。 各 pin 記述子は、ピンカテゴリ GUID を持つ埋め込みの[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造を含む[**pcpin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcpin_descriptor)構造体です。 クライアントから[**ksproperty\_pin\_category**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-pin-category)プロパティ要求を受信すると、ポートドライバーは、指定されたピンの種類について、ミニポートドライバーの PIN 記述子から pin カテゴリの GUID を取得します。 ピン記述子の詳細については、「[ファクトリのピン留め](pin-factories.md)」を参照してください。
 
 USB オーディオデバイスには、デジタルストリームとアナログ信号がデバイスを出入りできるいくつかの端末があります。 USB オーディオデバイスを表す KS フィルターを構築する場合、 [usbaudio クラスのシステムドライバー](kernel-mode-wdm-audio-components.md#usbaudio_class_system_driver)は、デバイス上のターミナルをフィルターのピンに変換します。 ヘッダーファイル Ksmedia. h は、各 USB ターミナルの種類の識別子の割り当てを、KS pin カテゴリの GUID に定義します。 次の6つの表は、ターミナルの種類の識別子とそれに対応する pin カテゴリの Guid を示しています。
 
@@ -338,19 +338,19 @@ USB オーディオデバイスには、デジタルストリームとアナロ�
 
  
 
-USB ターミナルの種類の識別子の詳細については、「*ユニバーサルシリアルバスデバイスクラスのターミナルの種類の定義*(リリース 1.0)」を参照してください。このクラスは、 [Usb 実装者フォーラム](https://go.microsoft.com/fwlink/p/?linkid=8780)の web サイトから入手できます。
+USB ターミナルの種類の識別子の詳細については、「*ユニバーサルシリアルバスデバイスクラスのターミナルの種類の定義*(リリース 1.0)」を参照してください。このクラスは、 [Usb 実装者フォーラム](https://www.usb.org/)の web サイトから入手できます。
 
-前の表のすべてのピンカテゴリ Guid には、KSNODETYPE\_*XXX*という形式のパラメーター名があります。 KS ノード型 Guid には、KSNODETYPE\_*XXX*パラメーター名も含まれることに注意してください。 この名前付け規則により、pin カテゴリの Guid とノードの種類の Guid が混同される可能性があります。 幸いにも、ほぼすべての KSNODETYPE\_*XXX*パラメーターでは、ピンカテゴリまたはノードの種類を識別しますが、両方は指定しません。 ルールの1つの例外は、 [**KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)です。これは、コンテキストに応じて、ピンカテゴリまたはノードの種類のいずれかを識別できます。 ノードの種類の Guid の一覧については、「[オーディオトポロジノード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)」を参照してください。
+前の表のすべてのピンカテゴリ guid には、KSNODETYPE\_*XXX*という形式のパラメーター名があります。 KS ノード型 guid には、KSNODETYPE\_*XXX*パラメーター名も含まれることに注意してください。 この名前付け規則により、pin カテゴリの Guid とノードの種類の Guid が混同される可能性があります。 幸いなことに、\_ほぼすべての KSNODETYPE*XXX*パラメーターでは、ピンカテゴリまたはノードの種類のいずれかが識別されますが、両方を指定することはできません。 ルールの例外は[**KSNODETYPE\_シンセサイザー**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksnodetype-synthesizer)です。これは、コンテキストに応じて、ピンカテゴリまたはノードの種類のいずれかを識別できます。 ノードの種類の Guid の一覧については、「[オーディオトポロジノード](https://docs.microsoft.com/windows-hardware/drivers/audio/audio-topology-nodes)」を参照してください。
 
-USB オーディオデバイスをインスタンス化する場合、USBAudio クラスシステムドライバーは、その端末を含む内部トポロジのデバイスを照会します。 この情報を使用すると、USBAudio ドライバーはデバイスを表すフィルターを構築し、各ターミナルをフィルターの対応するピンに変換します。 この処理中、ドライバーは各 USB 端末の種類の識別子を、前の表の Guid の1つである、対応する KS pin カテゴリ GUID に変換します。 ドライバーは、ピンを記述する[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造を構築し、ピンカテゴリ GUID を構造体に書き込みます。
+USB オーディオデバイスをインスタンス化する場合、USBAudio クラスシステムドライバーは、その端末を含む内部トポロジのデバイスを照会します。 この情報を使用すると、USBAudio ドライバーはデバイスを表すフィルターを構築し、各ターミナルをフィルターの対応するピンに変換します。 この処理中、ドライバーは各 USB 端末の種類の識別子を、前の表の Guid の1つである、対応する KS pin カテゴリ GUID に変換します。 ドライバーは、ピンを記述する[**Kspin\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kspin_descriptor)構造体を構築し、ピンカテゴリ GUID を構造体に書き込みます。
 
 PortCls ミニポートドライバーは、前の6つのテーブルに出現するカテゴリ Guid のみを使用するとは限りません。 たとえば、ドライバーはカスタム pin カテゴリ GUID を定義して使用し、機能カテゴリがテーブル内のカテゴリの外部にある pin の種類を表すことができます。 当然ながら、カスタム pin カテゴリ GUID は、GUID を認識するクライアントにのみ有効です。
 
-オーディオサブシステムでは、システムレジストリにピンカテゴリ Guid とそれに関連付けられたフレンドリ名の一覧が保持されます。 Guid とフレンドリ名は、レジストリパス HKLM\\SYSTEM\\CurrentControlSet\\Control\\MediaCategories に格納されます。 Media クラスインストーラは、メインの Windows フォルダーの Inf サブフォルダーにある Ks ファイル (たとえば、C:\\Windows\\Inf\\Ks) から、GUID と名前のペアをレジストリにコピーします。
+オーディオサブシステムでは、システムレジストリにピンカテゴリ Guid とそれに関連付けられたフレンドリ名の一覧が保持されます。 Guid とフレンドリ名は、レジストリパス\\HKLM SYSTEM\\CurrentControlSet\\Control\\MediaCategories に格納されます。 Media クラスのインストーラーは、Windows のメインフォルダー (たとえば、C:\\Windows\\inf\\Ks .inf) の inf サブフォルダーにある Ks ファイルから、GUID と名前のペアをレジストリにコピーします。
 
 Windows Vista 以降では、オペレーティングシステムはピン留めカテゴリを使用して、フレンドリ名をオーディオエンドポイントデバイスに関連付けます。 フレンドリ名をオーディオエンドポイントデバイスに関連付ける方法の詳細については、「[オーディオエンドポイントデバイスのフレンドリ名](friendly-names-for-audio-endpoint-devices.md)」を参照してください。
 
-Windows XP、Windows 2000、および Windows Millennium Edition では、オペレーティングシステムで pin カテゴリの使用が制限されています。 [WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)は、ミキサー API の代わりとして機能し、クライアントアプリケーションで使用するために、ピンカテゴリ GUID を MIXERLINE\_componenttype\_*XXX*値に変換します。 WDMAud は、前の6つのテーブルに出現するピンカテゴリの Guid のサブセットのみを認識します。 また、履歴上の理由により、WDMAud は、テーブルには表示されない2つのピンカテゴリ Guid、KSCATEGORY\_AUDIO および PINNAME\_CAPTURE を認識します。 ピン留めカテゴリをミキサー線に変換する方法の詳細については、「[トポロジピン](topology-pins.md)」を参照してください。 ミキサ API の詳細については、Windows SDK のドキュメントを参照してください。
+Windows XP、Windows 2000、および Windows Millennium Edition では、オペレーティングシステムで pin カテゴリの使用が制限されています。 [WDMAud システムドライバー](user-mode-wdm-audio-components.md#wdmaud_system_driver)は、クライアントアプリケーションで使用するために、ピンカテゴリ guid を MIXERLINE\_componenttype\_*XXX*値に変換するために、ミキサー API の代わりに動作します。 WDMAud は、前の6つのテーブルに出現するピンカテゴリの Guid のサブセットのみを認識します。 さらに、履歴上の理由により、WDMAud は、テーブルに\_は表示され\_ない2つのピンカテゴリ guid (KSCATEGORY AUDIO と pinname CAPTURE) を認識します。 ピン留めカテゴリをミキサー線に変換する方法の詳細については、「[トポロジピン](topology-pins.md)」を参照してください。 ミキサ API の詳細については、Windows SDK のドキュメントを参照してください。
 
  
 

@@ -4,29 +4,29 @@ description: 動詞を HD オーディオ コーデックとやり取りする
 ms.assetid: d93013fa-5b09-4616-bc71-5d3838337717
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe04cc596357f1e42a7ba1353b94db1a563a0f6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 724d4265ae5a4b63d1b8ffb22566bb265fefdbd0
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355585"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925606"
 ---
 # <a name="communicating-verbs-with-the-hd-audio-codec"></a>動詞を HD オーディオ コーデックとやり取りする
 
 
-IOCTL\_AZALIABUS\_オーディオ アダプターのサウンドのトポロジを定義するときに、SENDVERBS IOCTL が Hdau.exe 暗証番号 (pin) の構成ツールによって使用されます。 他の目的は、この IOCTL を使用しないでください。 この IOCTL について\_AZALIABUS\_SENDVERBS がドキュメントの設計と実装だけに提供されます。 この IOCTL は、Windows 7 Hdaudio.sys オーディオ クラス ドライバーでサポートされます。
+IOCTL\_azyour abus\_sendverbs ioctl は、オーディオアダプターのサウンドトポロジを定義するときに、hdau の pin 構成ツールによって使用されます。 他の目的では、この IOCTL を使用しないでください。 IOCTL\_az氏 abus\_sendverbs に関するこの情報は、設計と実装のみを文書化するために提供されています。 この IOCTL は、Windows 7 Hdaudio クラスドライバーでサポートされています。
 
-高精細 (HD) オーディオ コーデックでは、動詞に応答を受信できます。 これらの動詞とこれらの動詞をコーデックの応答がの一部として記載されている[、HD オーディオ仕様](https://go.microsoft.com/fwlink/p/?linkid=169394)します。
+High definition (HD) オーディオコーデックは、動詞の受信と応答を行うことができます。 これらの動詞とコーデックの応答は、 [HD オーディオ仕様](https://www.intel.com/content/www/us/en/products/docs/chipsets/high-definition-audio.html)の一部として記載されています。
 
-Windows 7 および Windows オペレーティング システムの以降のバージョンでは、HD オーディオ クラス ドライバーは、IOCTL を使用して\_AZALIABUS\_SENDVERBS IOCTL 動詞オーディオ コーデックとの通信にします。 IOCTL\_AZALIABUS\_SENDVERBS は次の例に示すように定義されます。
+Windows 7 以降のバージョンの Windows オペレーティングシステムでは、HD audio クラスドライバーは IOCTL\_azの\_sendverbs ioctl を使用して、オーディオコーデックと動詞をやり取りします。 IOCTL\_az氏 abus\_sendverbs は、次の例に示すように定義されています。
 
 ```cpp
 #define IOCTL_AZALIABUS_SENDVERBS CTL_CODE(FILE_DEVICE_UNKNOWN, 1, METHOD_BUFFERED, FILE_ANY_ACCESS)
 ```
 
-ファイルの詳細については\_デバイス\_不明、メソッド\_バッファーに格納された、およびファイル\_ANY\_アクセス、Windows SDK の Devioctl.h ヘッダー ファイルを参照してください。
+ファイル\_\_デバイスの不明、\_メソッドのバッファー、およびファイル\_\_へのアクセスの詳細については、Windows SDK の Devioctl ヘッダーファイルを参照してください。
 
-クラス ドライバーが呼び出しオーディオ コーデックとの通信を開始するのには、 [DeviceIoControl](https://go.microsoft.com/fwlink/p/?linkid=124239)関数は次のパラメーター。
+オーディオコーデックとの通信を開始するために、クラスドライバーは、次のパラメーターを使用して[DeviceIoControl](https://docs.microsoft.com/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)関数を呼び出します。
 
 ```cpp
 BOOL DeviceIoControl(
@@ -41,11 +41,11 @@ BOOL DeviceIoControl(
 );
 ```
 
-場合に呼び出し[ **DeviceIoControl** ](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)が成功すると、0 以外の値はすべて返します。 呼び出しが故障したかが保留されています (処理されませんすぐに)、 **DeviceIoControl**ゼロ値を返します。 クラスのドライバーを呼び出すことができます[GetLastError](https://go.microsoft.com/fwlink/p/?linkid=169416)より詳細なエラー メッセージ。
+[**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)の呼び出しが成功した場合、0以外の値が返されます。 呼び出しが失敗した場合、または待機状態になっている (直ちに処理されない) 場合、 **DeviceIoControl**は0の値を返します。 クラスドライバーは、より詳細なエラーメッセージを表示するために、 [GetLastError](https://docs.microsoft.com/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror)を呼び出すことができます。
 
-IOCTL を使用できるとき、オーディオ ドライバーには、暗証番号 (pin) の既定の設定を変更する必要があります、\_AZALIABUS\_SENDVERBS 送受信するように設定し、オーディオ コーデックから動詞を取得します。 オーディオ コーデックとの通信は、pin の構成の詳細については、オーディオ コーデックはのみ Get 動詞に応答します。
+オーディオドライバーで pin 構成の既定値を変更する必要がある\_場合は、IOCTL\_azの abus sendverbs を使用して、設定されたオーディオコーデックの動詞を送受信できます。 オーディオコーデックとの通信が pin 構成に関するものではない場合、オーディオコーデックは Get 動詞にのみ応答します。
 
-次の例では、パラメーターとして AzCorbeEntry 構造体と、ハンドルを取得し、コーデックから、AzRirbResponse を返す関数を示します。
+次の例は、AzCorbeEntry 構造体とハンドルをパラメーターとして受け取り、コーデックから Azcorbeentry を返す関数を示しています。
 
 ```cpp
 AzRirbEntry SendVerb(HANDLE handle, AzCorbEntry verb)
@@ -75,9 +75,9 @@ BOOL rc = DeviceIoControl(handle, IOCTL_AZALIABUS_SENDVERBS, &c, sizeof(c), &r, 
 }
 ```
 
-データ型と上記のコード例で使用される構造は、次の例で定義されます。
+前のコード例で使用されているデータ型と構造体は、次の例で定義されています。
 
-### <a name="span-idazcorbentryspanspan-idazcorbentryspan-azcorbentry"></a><span id="azcorbentry"></span><span id="AZCORBENTRY"></span> AzCorbEntry
+### <a name="span-idazcorbentryspanspan-idazcorbentryspan-azcorbentry"></a><span id="azcorbentry"></span><span id="AZCORBENTRY"></span>AzCorbEntry
 
 ```cpp
 struct AzCorbEntry
@@ -100,7 +100,7 @@ struct AzCorbEntry
 };
 ```
 
-### <a name="span-idazrirbentryspanspan-idazrirbentryspan-azrirbentry"></a><span id="azrirbentry"></span><span id="AZRIRBENTRY"></span> AzRirbEntry
+### <a name="span-idazrirbentryspanspan-idazrirbentryspan-azrirbentry"></a><span id="azrirbentry"></span><span id="AZRIRBENTRY"></span>AzRirbEntry
 
 ```cpp
 struct AzRirbEntry
@@ -137,9 +137,9 @@ struct AzRirbEntry
 };
 ```
 
-次の 2 つの構造はコマンドを有効にする動詞転送 IOCTL と共に使用され、応答は、オーディオ ドライバーと HD オーディオ コーデック間で転送。
+次の2つの構造体を動詞転送 IOCTL と共に使用して、オーディオドライバーと HD オーディオコーデック間でコマンドおよび応答の転送を有効にします。
 
-### <a name="span-idusermodecodeccommandpacketspanspan-idusermodecodeccommandpacketspan-usermodecodeccommandpacket"></a><span id="usermodecodeccommandpacket"></span><span id="USERMODECODECCOMMANDPACKET"></span> UserModeCodecCommandPacket
+### <a name="span-idusermodecodeccommandpacketspanspan-idusermodecodeccommandpacketspan-usermodecodeccommandpacket"></a><span id="usermodecodeccommandpacket"></span><span id="USERMODECODECCOMMANDPACKET"></span>UserModeCodecCommandPacket
 
 ```cpp
 typedef struct _UserModeCodecCommandPacket
@@ -149,7 +149,7 @@ typedef struct _UserModeCodecCommandPacket
 } UserModeCodecCommandPacket;
 ```
 
-### <a name="span-idusermodecodecresponsepacketspanspan-idusermodecodecresponsepacketspan-usermodecodecresponsepacket"></a><span id="usermodecodecresponsepacket"></span><span id="USERMODECODECRESPONSEPACKET"></span> UserModeCodecResponsePacket
+### <a name="span-idusermodecodecresponsepacketspanspan-idusermodecodecresponsepacketspan-usermodecodecresponsepacket"></a><span id="usermodecodecresponsepacket"></span><span id="USERMODECODECRESPONSEPACKET"></span>UserModeCodecResponsePacket
 
 ```cpp
 typedef struct _UserModeCodecResponsePacket

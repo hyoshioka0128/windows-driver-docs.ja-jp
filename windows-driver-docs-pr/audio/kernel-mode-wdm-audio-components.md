@@ -23,12 +23,12 @@ keywords:
 - WDM オーディオコンポーネント WDK
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 85056150cd27c1d6c0f9246549c73a5bdd32e812
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 9aa1ef986683bd43247e3e27f99d4becbce29cec
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242837"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925557"
 ---
 # <a name="kernel-mode-wdm-audio-components"></a>カーネル モード WDM オーディオ コンポーネント
 
@@ -70,7 +70,7 @@ AVCAudio クラスシステムドライバー
 
 ### <a name="span-idsysaudio_system_driverspanspan-idsysaudio_system_driverspansysaudio-system-driver"></a><span id="sysaudio_system_driver"></span><span id="SYSAUDIO_SYSTEM_DRIVER"></span>SysAudio システムドライバー
 
-SysAudio システムドライバー (Sysaudio .sys) は、オーディオコンテンツを表示およびキャプチャするフィルターグラフを作成します。 SysAudio ドライバーは、[仮想オーディオデバイス](virtual-audio-devices.md)としてのオーディオフィルターグラフを表し、各仮想オーディオデバイスを KSCATEGORY\_AUDIO\_デバイスデバイスインターフェイスのインスタンスとして登録します。 (アダプタードライバーは、SysAudio 専用に予約されているこのカテゴリに自身を登録しないでください)。たとえば、仮想 MIDI デバイスは、SWMidi ドライバー、KMixer ドライバー、およびポート/ミニポートドライバーを接続することによって作成されるフィルターグラフを表す場合があります。 クライアントは、仮想オーディオデバイスを構成する個々のデバイスではなく、仮想オーディオデバイスとのみ通信します。 クライアントに対して透過的に、SysAudio ドライバーは、接続されているフィルターグラフ内のすべての KS フィルターを構成して、仮想オーディオデバイスを形成します。 次のオーディオストリームソースは、SysAudio がビルドするグラフを使用します。
+SysAudio システムドライバー (Sysaudio .sys) は、オーディオコンテンツを表示およびキャプチャするフィルターグラフを作成します。 SysAudio ドライバーは、[仮想オーディオデバイス](virtual-audio-devices.md)としてのオーディオフィルターグラフを表し、各仮想オーディオデバイスを KSCATEGORY\_オーディオ\_デバイスデバイスインターフェイスのインスタンスとして登録します。 (アダプタードライバーは、SysAudio 専用に予約されているこのカテゴリに自身を登録しないでください)。たとえば、仮想 MIDI デバイスは、SWMidi ドライバー、KMixer ドライバー、およびポート/ミニポートドライバーを接続することによって作成されるフィルターグラフを表す場合があります。 クライアントは、仮想オーディオデバイスを構成する個々のデバイスではなく、仮想オーディオデバイスとのみ通信します。 クライアントに対して透過的に、SysAudio ドライバーは、接続されているフィルターグラフ内のすべての KS フィルターを構成して、仮想オーディオデバイスを形成します。 次のオーディオストリームソースは、SysAudio がビルドするグラフを使用します。
 
 -   DirectSound (Microsoft Windows SDK のドキュメントを参照してください。)
 
@@ -164,7 +164,7 @@ AVCAudio クラスシステムドライバー (Avcaudio .sys) は、IEEE 1394 �
 
 -   現在処理中の AV/C オーディオサブユニット仕様に対する更新
 
-これらの仕様は、 [1394 貿易 Association](https://go.microsoft.com/fwlink/p/?linkid=8728) web サイトから入手できます。 AVCAudio ドライバーは、これらの仕様で説明されている機能のサブセットをサポートしています。
+これらの仕様は、 [1394 貿易 Association](https://1394ta.org/) web サイトから入手できます。 AVCAudio ドライバーは、これらの仕様で説明されている機能のサブセットをサポートしています。
 
 オーディオデバイスがプラグアンドプレイデバイスの列挙中に IEEE 1394 準拠のオーディオデバイスとして識別すると、システムは AVCAudio ドライバーを自動的に読み込み、デバイスをドライブにします。 AVCAudio は、専用のアダプタードライバーを使用せずに、デバイスを直接ドライブにします。 これは、適切な IEEE 1394 仕様に準拠しているデバイスには、専用のアダプタードライバーが必要ないことを意味します。
 
@@ -178,7 +178,7 @@ AVCAudio クラスシステムドライバー (Avcaudio .sys) は、IEEE 1394 �
 
 [AVStream の概要](https://docs.microsoft.com/windows-hardware/drivers/stream/avstream-overview)
 
-[AV/C クライアントドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
+[AV/C クライアント ドライバー](https://docs.microsoft.com/windows-hardware/drivers/ddi/_stream/index)
 
 [IEEE 1394 バス](https://developer.microsoft.com/windows/hardware)
 

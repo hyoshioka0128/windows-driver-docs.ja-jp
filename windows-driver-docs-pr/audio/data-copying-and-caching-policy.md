@@ -13,12 +13,12 @@ keywords:
 - WDK オーディオのデータコピー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4683f20185d2e178d1a5f205860d8a4b78e3606f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 4449e4328b31b23eec5ca6086ae3974fcab6af28
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833583"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925611"
 ---
 # <a name="data-copying-and-caching-policy"></a>データのコピーおよびキャッシュのポリシー
 
@@ -41,9 +41,9 @@ WaveCyclic ミニポートドライバーは、HD audio controller ハードウ�
 
 関数ドライバーが DMA バッファーとの間でコピーを行うデータのブロックは、書き込み結合バッファー境界で開始または終了する必要はありません。また、サイズは書き込み結合バッファーサイズの倍数 (通常は32または64バイト) である必要はありません。
 
-[**Hdaudio\_BUS\_インターフェイス\_BDL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)バージョンの DDI を使用するコーデック関数ドライバーの場合、 [**ALLOCATECONTIGUOUSDMABUFFER**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer)ルーチンは DMA バッファーメモリの割り当てとマッピングの両方を実行します。 このルーチンは常に、バッファーのキャッシュの種類を**Mmwritecombined**に設定します。
+[**Hdaudio\_BUS\_インターフェイス\_bdl**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/ns-hdaudio-_hdaudio_bus_interface_bdl)バージョンの DDI を使用するコーデック関数ドライバーの場合、 [**AllocateContiguousDmaBuffer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pallocate_contiguous_dma_buffer)ルーチンは DMA バッファーメモリの割り当てとマッピングの両方を実行します。 このルーチンは常に、バッファーのキャッシュの種類を**Mmwritecombined**に設定します。
 
-書き込み結合の詳細については、 [intel](https://go.microsoft.com/fwlink/p/?linkid=38518)の web サイトにある IA-32 Intel Architecture Software Developer'S のマニュアルを参照してください。
+書き込み結合の詳細については、 [intel](https://www.intel.com/content/www/us/en/homepage.html)の web サイトにある IA-32 Intel Architecture Software Developer'S のマニュアルを参照してください。
 
  
 

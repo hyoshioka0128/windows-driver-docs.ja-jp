@@ -10,12 +10,12 @@ keywords:
 ms.author: eliotgra
 ms.date: 07/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: aa0665e141954bb04e37335657e0bee9f731d4a0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3be1a9d7c92062aef7cf0420ecd5b1856d02611a
+ms.sourcegitcommit: 8af4ad1d9829787d07f9c413ba3e5a24947cf0cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "70174698"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872935"
 ---
 # <a name="installing-preview-versions-of-the-windows-driver-kit-wdk"></a>プレビュー バージョンの Windows Driver Kit (WDK) のインストール
 
@@ -45,11 +45,11 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 ### <a name="3-install-sdk-insider-preview"></a>3.SDK Insider Preview をインストールする 
 
-[SDK Insider Preview を入手する](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+[SDK Insider Preview を入手する](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
 ### <a name="4-install-wdk-insider-preview"></a>4.WDK Insider Preview のインストール
 
-[WDK Insider Preview を入手する](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+[WDK Insider Preview を入手する](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
 > [!Note]   
 > インストールの間に、Visual Studio インストーラーによる WDK Visual Studio 拡張機能のインストールの状況が表示されます。 
@@ -58,7 +58,7 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\StrongName\Verificatio
 
 EWDK は、ドライバーを構築するためのスタンドアロン自己完結型コマンドライン環境です。  Build Tools for Visual Studio 2019、SDK、WDK、および ARM64 ドライバー開発のサポートが含まれています。 詳しくは、[Installing the Enterprise WDK (Enterprise WDK のインストール)](https://docs.microsoft.com/windows-hardware/drivers/develop/installing-the-enterprise-wdk) に関する記事をご覧ください。 
 
-[Enterprise Windows Driver Kit (EWDK) Insider Preview を入手する](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+[Enterprise Windows Driver Kit (EWDK) Insider Preview を入手する](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 
 最初に、ISO をマウントして、LaunchBuildEnv をクリックします。 
 

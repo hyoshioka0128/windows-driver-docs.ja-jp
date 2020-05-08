@@ -12,12 +12,12 @@ keywords:
 - 時計 WDK オーディオ、HD オーディオ
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dafa786794355780325ab8ddc52d96300717d4ab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7d206f2a04c487f7f847e1505e31fd0fc6a3807b
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829987"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925623"
 ---
 # <a name="wall-clock-and-link-position-registers"></a>ウォール クロックとリンク位置のレジスタ
 
@@ -30,7 +30,7 @@ HD オーディオコントローラーには、HD オーディオリンクの�
 
 -   キャプチャストリームでは、リンク位置レジスタは、DMA エンジンがリンクを介してコーデックから受信する次のバイトの、循環バッファーオフセットを示します。
 
-循環バッファーオフセットは、単に、循環バッファーの先頭からの現在の読み取り位置または書き込み位置のバイト単位のオフセットです。 バッファーの末尾に達すると、バッファーの先頭に位置がラップされ、循環バッファーオフセットが0にリセットされます。 循環バッファーはシステムメモリに存在します。 詳細については、 [INTEL HD audio](https://go.microsoft.com/fwlink/p/?linkid=42508) web サイトの「 *Intel High Definition audio Specification* 」を参照してください。
+循環バッファーオフセットは、単に、循環バッファーの先頭からの現在の読み取り位置または書き込み位置のバイト単位のオフセットです。 バッファーの末尾に達すると、バッファーの先頭に位置がラップされ、循環バッファーオフセットが0にリセットされます。 循環バッファーはシステムメモリに存在します。 詳細については、 [INTEL HD audio](https://www.intel.com/content/www/us/en/standards/intel-standards-and-initiatives.html) web サイトの「 *Intel High Definition audio Specification* 」を参照してください。
 
 カーネルモードの関数ドライバーは、ウォールクロックとリンク位置のレジスタを直接読み取ることができます。 直接アクセスを有効にするために、HD オーディオバスドライバーは、レジスタを含む物理メモリをシステム仮想メモリにマップします。 関数ドライバーは、 [**GetWallClockRegister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pget_wall_clock_register)または[**getlinkpositionregister**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hdaudio/nc-hdaudio-pget_link_position_register)ルーチンを呼び出して、ウォールクロックレジスタまたはリンク位置登録へのシステム仮想アドレスポインターを取得します。 これら2つのルーチンは、HD Audio DDI の両方のバージョンで使用できます。
 

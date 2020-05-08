@@ -1,64 +1,70 @@
 ---
 title: IRP_MN_CANCEL_STOP_DEVICE
-description: すべての PnP ドライバーでは、この IRP を処理する必要があります。
+description: すべての PnP ドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 7047c266-84b4-4260-ad75-d56c87c8c9ef
 keywords:
-- IRP_MN_CANCEL_STOP_DEVICE Kernel-Mode Driver Architecture
+- IRP_MN_CANCEL_STOP_DEVICE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a077ad80a4c11379ff0e3bfa1751d3793a4faae
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0bb8725f947a76624611861d7e2e28f78e273ef7
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67382251"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922532"
 ---
-# <a name="irpmncancelstopdevice"></a>IRP\_MN\_キャンセル\_停止\_デバイス
+# <a name="irp_mn_cancel_stop_device"></a>\_IRP\_が\_終了し\_たときにデバイスを停止する
 
 
-すべての PnP ドライバーでは、この IRP を処理する必要があります。
+すべての PnP ドライバーは、この IRP を処理する必要があります。
+
+## <a name="value"></a>値
+
+0x06
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
-PnP マネージャーでは、この IRP を送信した後は、ある時点で、 [ **IRP\_MN\_クエリ\_停止\_デバイス**](irp-mn-query-stop-device.md)デバイスのドライバーに通知するが、デバイスが無効 (Windows 98/自分のみ) またはリソースの再構成のために停止します。
+PnP マネージャーは、 [**\_irp が可能な\_\_クエリの停止\_**](irp-mn-query-stop-device.md)後、ある時点でこの irp を送信し、デバイスが無効にならない (Windows 98/Me のみ) か、リソースの再構成のために停止されていないデバイスをドライバーに通知します。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストで\_この IRP を IRQL パッシブレベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし
+None
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-なし
+None
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーを設定する必要があります**Irp -&gt;IoStatus.Status**ステータス\_この IRP の成功します。 ドライバーには、この IRP が失敗した場合、デバイスは一貫性のない状態のままです。
+ドライバーでは、この IRP の状態が\_SUCCESS に設定**&gt;され**ている必要があります。 ドライバーがこの IRP に失敗した場合、デバイスは不整合な状態のままになります。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
-この IRP は、デバイスの親のバス ドライバー、続いてデバイス スタックの各以上のドライバー最初に処理する必要があります。
+この IRP は、デバイスの親バスドライバーによって最初に処理され、その後、デバイススタック内の上位の各ドライバーによって処理される必要があります。
 
-この IRP に応答してでは、ドライバーは、デバイスを開始状態に戻ります。 ドライバーは、デバイスが保留中の停止の状態の中に格納されていた任意の Irp を開始します。
+この IRP に応答して、ドライバーはデバイスを開始状態に戻します。 ドライバーは、デバイスが停止保留中の状態にあったときに保持されていたすべての Irp を開始します。
 
-場合は、デバイスがまだアクティブな状態で、ドライバーは、この IRP を受信すると、関数またはフィルター ドライバーは単に状態を成功に設定し、[次へ] のドライバーを IRP を渡します。 親のバス ドライバーは IRP を完了します。 このようなキャンセル停止 IRP では、関数またはフィルター ドライバーは完了ルーチンを設定しない必要があります。
+ドライバーがこの IRP を受信したときにデバイスが既にアクティブ状態になっている場合、関数またはフィルタードライバーは単に status を success に設定し、IRP を次のドライバーに渡します。 親バスドライバーが IRP を完了します。 このようなキャンセル停止の IRP の場合、関数またはフィルタードライバーは、完了ルーチンを設定する必要はありません。
 
-参照してください[プラグ アンド プレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)停止 Irp の処理の詳細については、すべてを処理するための一般的な規則[プラグ アンド プレイ マイナー Irp](plug-and-play-minor-irps.md)します。
+停止 Irp の処理の詳細については、「[プラグアンドプレイ](https://docs.microsoft.com/windows-hardware/drivers/kernel/implementing-plug-and-play)」を参照してください。また、すべての[プラグアンドプレイ軽微な irp](plug-and-play-minor-irps.md)を処理するための一般的な規則をご覧ください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システムで使用するために予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -68,8 +74,8 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -77,7 +83,7 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_クエリ\_停止\_デバイス**](irp-mn-query-stop-device.md)
+[**IRP\_の\_全\_クエリ\_の停止デバイス**](irp-mn-query-stop-device.md)
 
  
 

@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0c2ad5dfabdac0585bfaef7ee1c19c863bc3aa0d
-ms.sourcegitcommit: 774d42aa3392ae88f4890d901dbd3e8945cb2658
+ms.openlocfilehash: 3566ba43991838496746a21b920ac9f2c1d576ed
+ms.sourcegitcommit: 8af4ad1d9829787d07f9c413ba3e5a24947cf0cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82138651"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872937"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -24,7 +24,7 @@ WDK は、Windows ドライバーの開発、テスト、展開に使用しま�
 * [ドライバー開発の新着情報を見る](what-s-new-in-driver-development.md)
 * [既知の問題を確認する](https://go.microsoft.com/fwlink/?linkid=872986)
 
-[Windows Insider Program に参加](https://insider.windows.com/)して [WDK Insider Preview ビルド](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)を入手してください。 Windows Insider Preview ビルドのインストール手順については、「[プレビュー バージョンの Windows Driver Kit (WDK) のインストール](installing-preview-versions-wdk.md)」をご覧ください。
+[Windows Insider Program に参加](https://insider.windows.com/)して [WDK Insider Preview ビルド](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)を入手してください。 Windows Insider Preview ビルドのインストール手順については、「[プレビュー バージョンの Windows Driver Kit (WDK) のインストール](installing-preview-versions-wdk.md)」をご覧ください。
 
 ## <a name="wdk-for-windows-10-version-1903"></a>WDK for Windows 10 Version 1903
 
@@ -100,7 +100,7 @@ Windows 7|Windows Server 2008 R2 SP1|
 
 ## <a name="related-downloads"></a>関連するダウンロード
 
-* [WDK Insider Preview のダウンロード](https://www.microsoft.com/software-download/windowsinsiderpreviewWDK)
+* [WDK Insider Preview のダウンロード](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)
 * [以前のバージョンの WDK のダウンロード](other-wdk-downloads.md)
 * [Windows アセスメント & デプロイメント キット (Windows ADK) のダウンロード](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
 * [Windows HLK のダウンロード](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)

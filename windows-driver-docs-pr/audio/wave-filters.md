@@ -19,12 +19,12 @@ keywords:
 - WaveCyclic、フィルター
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: de2f2f2ff05625bb7ae421a7918e22804e0fc412
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f8264ef7e4d007d006d05c5924890e4d74876ad8
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72829993"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925629"
 ---
 # <a name="wave-filters"></a>ウェーブ フィルター
 
@@ -63,7 +63,7 @@ WaveRT フィルターは、ポート/ミニポートドライバーのペアと
 
 -   WaveRT ミニポートドライバーオブジェクトをインスタンス化します。
 
--   このメソッドは、GUID 値**CLSID\_PortWaveRT**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、walport ドライバーオブジェクトをインスタンス化します。
+-   このメソッドは、GUID 値**CLSID\_PortWaveRT**を持つ[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、wastport ドライバーオブジェクトをインスタンス化します。
 
 -   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
@@ -97,11 +97,11 @@ WavePci フィルターは、ポート/ミニポートドライバーのペア�
 
 -   WavePci ミニポートドライバーオブジェクトをインスタンス化します。
 
--   WavePci port driver オブジェクトをインスタンス化するには、GUID 値**CLSID\_PortWavePci**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出します。
+-   このメソッドは、GUID 値**CLSID\_PortWavePci**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、WavePci port driver オブジェクトをインスタンス化します。
 
 -   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
-[サブデバイス作成](subdevice-creation.md)のコード例では、このプロセスを示しています。 ポートとミニポートドライバーは、 [IPortWavePci](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff536905(v=vs.85))インターフェイスと[IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)インターフェイスを使用して相互に通信します。
+[サブデバイス作成](subdevice-creation.md)のコード例では、このプロセスを示しています。 ポートとミニポートドライバーは、 [IPortWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportwavepci)インターフェイスと[IMiniportWavePci](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iminiportwavepci)インターフェイスを使用して相互に通信します。
 
 詳細については、「 [WavePci Devices の実装に関する問題](implementation-issues-for-wavepci-devices.md)」を参照してください。
 
@@ -113,7 +113,7 @@ WaveCyclic フィルターは、ポート/ミニポートドライバーのペ�
 
 -   WaveCyclic ミニポートドライバーオブジェクトをインスタンス化します。
 
--   WaveCyclic port driver オブジェクトをインスタンス化するには、GUID 値**CLSID\_PortWaveCyclic**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出します。
+-   このメソッドは、GUID 値**CLSID\_PortWaveCyclic**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、WaveCyclic port driver オブジェクトをインスタンス化します。
 
 -   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
@@ -133,7 +133,7 @@ WaveCyclic ミニポートドライバーは、既定の DMA チャネルオブ�
 
 アダプタードライバーのカスタム[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)実装では、特殊なハードウェア制約を満たすためにデータのカスタム処理を実行できます。 たとえば、Windows マルチメディア関数では、16ビットのサンプルが常に符号付きの値である wave 形式が使用されますが、オーディオレンダリングハードウェアは、16ビットの符号なしの値を代わりに使用するように設計されている場合があります。 この場合、ドライバーのカスタム[**IDmaChannel:: CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto)メソッドを記述して、署名されたソース値を、ハードウェアが必要とする符号なしのターゲット値に変換することができます。 この手法は、ハードウェア設計の欠陥を回避するのに役立ちますが、ソフトウェアのオーバーヘッドに大きなコストがかかることもあります。
 
-独自の DMA チャネルオブジェクトを実装するドライバーの例については、「Sb16 sample audio adapter in the WDK」を参照してください。 \_DMA\_チャネルが**TRUE**になるように定義されている場合は、ソースコード内の条件付きコンパイルステートメントによって、独自の[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)オブジェクトを実装できます。このオブジェクトは、ドライバーがIPortWaveCyclic:: New*Xxx*DmaChannel 呼び出しの既定の IDmaChannel オブジェクト。
+独自の DMA チャネルオブジェクトを実装するドライバーの例については、「Sb16 sample audio adapter in the WDK」を参照してください。 定数\_オーバーライド DMA\_チャネルが**TRUE**に定義されている場合、ソースコード内の条件付きコンパイルステートメントによって、独自の[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)オブジェクトを実装できるようになります。このオブジェクトは、ドライバーが IPortWaveCyclic:: New*Xxx*DmaChannel 呼び出しの既定の IDmaChannel オブジェクトの代わりに使用します。
 
  
 

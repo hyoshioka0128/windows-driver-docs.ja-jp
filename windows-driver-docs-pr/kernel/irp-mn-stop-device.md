@@ -6,48 +6,54 @@ ms.assetid: a5c81db0-e753-4d91-97e4-c58ea05f5ce8
 keywords:
 - IRP_MN_STOP_DEVICE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 03bc3143324d86265bac7855dc3a7727d2569b7f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34e33779bd4965696f599fdbacb1cb221ead4796
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72827949"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922515"
 ---
-# <a name="irp_mn_stop_device"></a>IRP\_\_\_デバイスの停止
+# <a name="irp_mn_stop_device"></a>IRP\_の\_全\_停止デバイス
 
 
 すべての PnP ドライバーは、この IRP を処理する必要があります。
 
+## <a name="value"></a>値
+
+0x04
+
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP**](irp-mj-pnp.md)送信時
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
 PnP マネージャーは、この IRP を送信してデバイスを停止し、デバイスのハードウェアリソースを再構成できるようにします。
 
-Windows 2000 以降のシステムでは、PnP マネージャーがこの IRP を送信するのは、前の[**irp\_\_クエリ\_\_デバイスの停止**](irp-mn-query-stop-device.md)が正常に完了した場合のみです。
+Windows 2000 以降のシステムでは、この IRP は、前の[**\_irp の完全な\_クエリ\_\_**](irp-mn-query-stop-device.md)が正常に終了した場合にのみ、この irp を送信します。
 
-Windows 98/Me では、デバイスが無効になっている場合や、デバイススタックが Irp\_に失敗した場合に、デバイスの要求 **\_開始\_** ことによって、この irp も送信されます。 開始に失敗した場合は、PnP マネージャーがこの IRP を送信する前に、前の[**irp\_を\_クエリ\_\_デバイス**](irp-mn-query-stop-device.md)要求を停止します。
+Windows 98/Me では、デバイスが無効になっている場合や、デバイススタックが**irp\_\_\_** を使用した開始デバイスの要求に失敗した場合にも、PnP マネージャーがこの IRP を送信します。 開始に失敗した場合、この IRP は、前の[**irp\_を使用し\_た\_クエリ\_停止デバイス**](irp-mn-query-stop-device.md)要求なしでこの irp を送信します。
 
-PnP マネージャーは、システムスレッドのコンテキストでこの IRP を IRQL パッシブ\_レベルで送信します。
+PnP マネージャーは、システムスレッドのコンテキストで\_この IRP を IRQL パッシブレベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし
+None
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-なし
+None
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーでは、 **Irp&gt;iostatus. status**を STATUS\_SUCCESS に設定する必要があります。
+ドライバーでは、 **Irp-&gt;iostatus**を設定する必要\_があります。状態は SUCCESS に設定されます。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
 この IRP は、デバイススタックの一番上にあるドライバーによって最初に処理され、スタック内の下位の各ドライバーに渡されます。
@@ -64,9 +70,9 @@ Windows 98/Me では、stop IRP は、開始に失敗した場合と、デバイ
 
 **この IRP を送信しています**
 
-システム用に予約されています。 ドライバーは、この IRP を送信することはできません。
+システムで使用するために予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -76,8 +82,8 @@ Windows 98/Me では、stop IRP は、開始に失敗した場合と、デバイ
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm (Wdm .h、Ntddk、または Ntifs を含む)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -85,9 +91,9 @@ Windows 98/Me では、stop IRP は、開始に失敗した場合と、デバイ
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_\_クエリ\_\_デバイスの停止**](irp-mn-query-stop-device.md)
+[**IRP\_の\_全\_クエリ\_の停止デバイス**](irp-mn-query-stop-device.md)
 
-[ **\_デバイスを起動\_IRP\_** ](irp-mn-start-device.md)
+[**IRP\_の\_全\_開始デバイス**](irp-mn-start-device.md)
 
 [**IoSetDeviceInterfaceState**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iosetdeviceinterfacestate)
 

@@ -4,29 +4,29 @@ description: ジャック説明のプロパティ
 ms.assetid: 6398efc9-4435-4234-bd72-1ed0f96c9f9f
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dfea9a4cb1a229d997435ff597fc11d233117705
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 1a8819a32468c03827b09d1571ac8103fb9733d7
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833195"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925568"
 ---
 # <a name="jack-description-property"></a>ジャック説明のプロパティ
 
 
-Windows Vista 以降では、 [**Ksk プロパティ\_ジャック\_DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)プロパティは、オーディオアダプターまたはオーディオアダプター上のその他の物理コネクタを記述します。 プロパティ値は、ジャックの色、ジャックの物理的な位置、コネクタの種類、およびその他のジャック機能を表します。 この情報の目的は、マイク、ヘッドホン、スピーカーなどのオーディオエンドポイントデバイスに接続するための適切なジャックをユーザーが見つけることができるようにすることです。 詳細については、「[オーディオエンドポイントデバイス](https://go.microsoft.com/fwlink/p/?linkid=130876)」を参照してください。
+Windows Vista 以降では、 [**Ksk\_プロパティジャック\_の DESCRIPTION**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)プロパティにオーディオジャックまたはオーディオアダプターのその他の物理コネクタが記述されます。 プロパティ値は、ジャックの色、ジャックの物理的な位置、コネクタの種類、およびその他のジャック機能を表します。 この情報の目的は、マイク、ヘッドホン、スピーカーなどのオーディオエンドポイントデバイスに接続するための適切なジャックをユーザーが見つけることができるようにすることです。 詳細については、「[オーディオエンドポイントデバイス](https://docs.microsoft.com/windows/win32/coreaudio/audio-endpoint-devices)」を参照してください。
 
-オーディオアダプターの KS フィルターで、KSK プロパティ\_ジャック\_DESCRIPTION プロパティがサポートされている場合、Windows マルチメディアコントロールパネルである Mmsys が、フィルターのブリッジピンのジャック情報を表示します。 ブリッジ pin は、オーディオエンドポイントデバイスへの接続 (通常はジャック) を表します。 プロパティ値には、pin (または pin に関連付けられているジャック) に関する情報が含まれていますが、プロパティは、pin ではなく、フィルターのプロパティです。 ブリッジピンの詳細については、「[オーディオフィルターグラフ](audio-filter-graphs.md)」を参照してください。 フィルターのプロパティとピンのプロパティの詳細については、「[フィルター、ピン留め、およびノードのプロパティ](filter--pin--and-node-properties.md)」を参照してください。
+オーディオアダプターの KS フィルターで、KSK プロパティ\_ジャック\_の DESCRIPTION プロパティがサポートされている場合、Windows マルチメディアコントロールパネルの [mmsys. cpl] には、フィルターのブリッジピンのジャック情報が表示されます。 ブリッジ pin は、オーディオエンドポイントデバイスへの接続 (通常はジャック) を表します。 プロパティ値には、pin (または pin に関連付けられているジャック) に関する情報が含まれていますが、プロパティは、pin ではなく、フィルターのプロパティです。 ブリッジピンの詳細については、「[オーディオフィルターグラフ](audio-filter-graphs.md)」を参照してください。 フィルターのプロパティとピンのプロパティの詳細については、「[フィルター、ピン留め、およびノードのプロパティ](filter--pin--and-node-properties.md)」を参照してください。
 
-オーディオアプリケーションでは、DeviceTopology API で**IKsJackDescription:: GetJackDescription**メソッドを呼び出すことによって、オーディオエンドポイントデバイスの ksk プロパティ\_ジャック\_DESCRIPTION プロパティ値を取得できます。 たとえば、アプリケーションでは、ジャック情報を使用して、オレンジ色の XLR ジャックに接続されているマイクから、緑色の XLR ジャックに接続されているマイクを区別することができます。 DeviceTopology API の詳細については、「[デバイストポロジ](https://go.microsoft.com/fwlink/p/?linkid=130878)」を参照してください。
+オーディオアプリケーションでは、DeviceTopology API\_で\_ **IKsJackDescription:: GetJackDescription**メソッドを呼び出すことによって、オーディオエンドポイントデバイスの ksk プロパティジャックの説明プロパティ値を取得できます。 たとえば、アプリケーションでは、ジャック情報を使用して、オレンジ色の XLR ジャックに接続されているマイクから、緑色の XLR ジャックに接続されているマイクを区別することができます。 DeviceTopology API の詳細については、「[デバイストポロジ](https://docs.microsoft.com/windows/win32/coreaudio/device-topologies)」を参照してください。
 
-Microsoft HD audio クラスドライバーは、HD オーディオコーデックのピン構成レジスタから読み取るデータから、KSK プロパティ\_JACK\_DESCRIPTION プロパティ値を自動的に構築します。 ただし、すべての KS ベースのオーディオドライバーは、フィルター自動化テーブルにこのプロパティのサポートを実装できます。 HD オーディオクラスドライバーの詳細については、「 [hd audio AND UAA](hd-audio-and-uaa.md)」を参照してください。 Pin 構成レジスタの詳細については、「[高解像度オーディオデバイス用の Pin 構成ガイドライン](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PinConfig.doc)」ホワイトペーパーを参照してください。
+Microsoft HD audio クラスドライバーは、HD オーディオコーデックの\_ピン\_構成レジスタから読み取るデータから、ksk プロパティのジャックの説明のプロパティ値を自動的に構築します。 ただし、すべての KS ベースのオーディオドライバーは、フィルター自動化テーブルにこのプロパティのサポートを実装できます。 HD オーディオクラスドライバーの詳細については、「 [hd audio AND UAA](hd-audio-and-uaa.md)」を参照してください。 Pin 構成レジスタの詳細については、「[高解像度オーディオデバイスの Pin 構成ガイドライン](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/PinConfig.doc)」ホワイトペーパーを参照してください。
 
 オーディオエンドポイントデバイスは、1つまたは複数のジャックを介してブリッジピンに接続できます。 たとえば、一連の (2 チャネル) ステレオスピーカーには1つのジャックが必要ですが、5.1 のサラウンドサウンドスピーカーのセットには3つのジャックが必要です (各ジャックが6チャネルのうち2つを処理することを前提としています)。
 
-各ジャックの説明は、 [**Ksk ジャック\_description**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)構造体に含まれています。 たとえば、1つのジャックを持つオーディオエンドポイントデバイスの KSK プロパティ\_ジャック\_DESCRIPTION プロパティ値には、1つの KSK ジャック\_DESCRIPTION 構造体が含まれていますが、3つのジャックを持つエンドポイントデバイスのプロパティ値には3つの KSK ジャックが含まれています\_説明の構造体。 どちらの場合も、プロパティ値に含まれる KSK ジャック\_DESCRIPTION 構造体または構造体の前に、プロパティ値のサイズを指定する[**Ksjack\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)構造体が付きます。 詳細については、「 [**Ksk プロパティ\_ジャック\_の説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)」を参照してください。
+各ジャックの説明は、 [**ksjack\_description**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description)構造体に含まれています。 たとえば、1つのジャック\_を\_持つオーディオエンドポイントデバイスの ksk プロパティジャックの description プロパティ値には\_、1つの ksk ジャック記述構造が含まれていますが、3つ\_のジャックを持つエンドポイントデバイスのプロパティ値には、3つの ksk ジャック記述構造体が含まれています。 どちらの場合も、プロパティ値\_の ksk ジャックの説明の構造体または構造体の前に、プロパティ値のサイズを指定する[**ksjack\_ITEM**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksmultiple_item)構造体が付加されます。 詳細については、「 [**Ksk\_プロパティジャック\_の説明**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksproperty-jack-description)」を参照してください。
 
-ジャック情報は、マルチチャンネルスピーカー構成に接続するジャックをユーザーが区別できるようにするために特に役立ちます。 次のコード例は、5.1 サラウンドスピーカーのセットの3つのジャックを説明するためにオーディオドライバーが使用する KSK ジャック\_記述構造体の配列を示しています。
+ジャック情報は、マルチチャンネルスピーカー構成に接続するジャックをユーザーが区別できるようにするために特に役立ちます。 次のコード例は、5.1 サラウンドスピーカーの\_セットの3つのジャックを説明するためにオーディオドライバーで使用される ksk ジャック記述構造体の配列を示しています。
 
 ```cpp
 KSJACK_DESCRIPTION ar_5dot1_Jacks[] =
@@ -66,7 +66,7 @@ KSJACK_DESCRIPTION ar_5dot1_Jacks[] =
 
 オーディオハードウェアがデバイスが接続されているかどうかを検出できる場合、ドライバーはこのメンバーの値を動的に更新して、デバイスが現在接続されている (**TRUE**) か、または取り外されている (**FALSE**) かを示します。
 
-前のコード例では、各配列要素の**IsConnected**メンバーは、エンドポイントデバイスがジャックに接続されていることを示すために**TRUE**に設定されています。 ただし、ハードウェアにジャックの存在が検出されない場合は、ジャックにデバイスが接続されているかどうかにかかわらず、 **IsConnected**を常に**TRUE**に設定する必要があります。 **真**の戻り値のこの2つの意味の結果として得られるあいまいさを解消するために、クライアントアプリケーションは[IKsJackDescription2:: GetJackDescription2](https://go.microsoft.com/fwlink/p/?linkid=143698)を呼び出して、 [**Ksjack\_DESCRIPTION2**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)の JackCapabilities フラグを読み取ることができます。データ. このフラグによって\_機能ビットセット\_検出された場合は、エンドポイントが\_ジャックのプレゼンス検出をサポートしていることを示します。 その場合、 **IsConnected**メンバーの値は、ジャックの挿入状態を正確に反映したものとして解釈できます。
+前のコード例では、各配列要素の**IsConnected**メンバーは、エンドポイントデバイスがジャックに接続されていることを示すために**TRUE**に設定されています。 ただし、ハードウェアにジャックの存在が検出されない場合は、ジャックにデバイスが接続されているかどうかにかかわらず、 **IsConnected**を常に**TRUE**に設定する必要があります。 **真**の戻り値のこの2つの意味の結果としてあいまいさを解消するために、クライアントアプリケーションは[IKsJackDescription2:: GetJackDescription2](https://docs.microsoft.com/windows/win32/api/devicetopology/nf-devicetopology-iksjackdescription2-getjackdescription2)を呼び出して、 [**\_ksjack DESCRIPTION2**](https://docs.microsoft.com/windows-hardware/drivers/audio/ksjack-description2)構造体の JackCapabilities フラグを読み取ることができます。 このフラグに JACKDESC2\_プレゼンス\_検出\_機能ビットが設定されている場合は、エンドポイントが、実際にはジャックのプレゼンス検出をサポートしていることを示します。 その場合、 **IsConnected**メンバーの値は、ジャックの挿入状態を正確に反映したものとして解釈できます。
 
 前の構造体に表示される RGB マクロは、Windows SDK のヘッダーファイルウィング Di で定義されています。
 
@@ -98,9 +98,9 @@ KSJACK_DESCRIPTION ar_SPDIF_Jacks[] =
 };
 ```
 
-前のコード例では、2つの KSK ジャック\_DESCRIPTION 構造体の**Channelmapping**メンバーの値は同一です。
+前のコード例では、2つの KSK ジャック\_記述構造体の**channelmapping**メンバーの値は同一です。
 
-WDK の "Simple" MSVAD サンプルドライバー (サンプルディレクトリ Src\\Audio\\Msvad\\Simple) は、KSK プロパティ\_ジャック\_DESCRIPTION プロパティをサポートするように調整できます。 このサンプルドライバーは、実際のハードウェアを必要としないため、プロパティの使用方法を示すのに便利です。 そのため、Windows を実行している任意のコンピューターにインストールできます。 (ただし、Windows Vista 以降のオペレーティングシステムでは、KSK プロパティ\_ジャック\_DESCRIPTION プロパティが完全にサポートされています)。このサンプルの詳細については、「 [Windows Driver Kit Samples](https://docs.microsoft.com/windows-hardware/drivers/samples/index)」を参照してください。
+WDK の "Simple" MSVAD サンプルドライバー (サンプルの\\ディレクトリ Src Audio\\MSVAD\\Simple) は、ksk プロパティ\_ジャック\_の DESCRIPTION プロパティをサポートするように調整できます。 このサンプルドライバーは、実際のハードウェアを必要としないため、プロパティの使用方法を示すのに便利です。 そのため、Windows を実行している任意のコンピューターにインストールできます。 (ただし、KSK プロパティ\_ジャック\_の DESCRIPTION プロパティは、Windows Vista 以降のオペレーティングシステムによって完全にサポートされています)。このサンプルの詳細については、「 [Windows Driver Kit Samples](https://docs.microsoft.com/windows-hardware/drivers/samples/index)」を参照してください。
 
 Simple MSVAD サンプルのトポロジフィルターでは、3つのブリッジピンが定義されています。 これらの pin を次の表に示します。
 
@@ -298,9 +298,9 @@ PropertyHandler_TopoFilter(IN PPCPROPERTY_REQUEST PropertyRequest)
 }
 ```
 
-前のコード例では、前に定義した3つの KSK ジャック\_説明変数-SynthIn\_ジャック、MicIn\_Jack、LineOut\_ジャックを参照しています。 クライアントは、有効な pin のジャックの説明に対してフィルターにクエリを実行しますが、1つはブリッジピンではなく (したがって、ジャックの説明がない)、クエリは成功しますが (状態コードの状態\_SUCCESS)、プロパティハンドラーは空のジャックの説明を返します。KSMULTIPLE\_ITEM 構造体で構成されます。 クライアントが無効な pin ID (存在しない pin を識別する) を指定した場合、ハンドラーはステータスコードの状態\_無効な\_パラメーターとして返します。
+前のコード例では、前に定義\_した3つの\_ksk ジャック記述変数\_(synthin Jack\_、micin ジャック、LineOut ジャック) を参照しています。 クライアントは、有効な pin のジャックの説明に対してフィルターに対してクエリを実行しますが、ブリッジピンではなく (したがってジャックの説明がない)、クエリ\_は成功しますが、プロパティハンドラーは、ksmultiple\_ITEM 構造で構成される空のジャックの説明を返します。 クライアントが無効な pin ID (存在しない pin を識別する) を指定した場合、ハンドラー\_は\_ステータスコードの状態無効パラメーターを返します。
 
-KSK プロパティ\_JACK\_DESCRIPTION プロパティをサポートするには、単純な MSVAD サンプルに対する2つの追加の変更が必要です。 それらを次に示します。
+KSK プロパティ\_ジャック\_の DESCRIPTION プロパティをサポートするには、単純な MSVAD サンプルに対する2つの追加の変更が必要です。 次のとおりです。
 
 -   前のコード例の**PropertyHandlerJackDescription**メソッドの宣言を、ヘッダーファイル Mintopo .H の CMiniportTopology クラス定義に追加します。
 
@@ -322,7 +322,7 @@ static PCPROPERTY_ITEM PropertiesTopoFilter[] =
 DEFINE_PCAUTOMATION_TABLE_PROP(AutomationTopoFilter, PropertiesTopoFilter);
 ```
 
-前のコード例では、 [**Pcproperty\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)構造体の**ハンドラー**メンバーに、前の手順で mintopo .cpp に追加されたプロパティハンドラーへの関数ポインターが含まれています。 ヘッダーファイルからプロパティハンドラーにアクセスできるようにするには、ヘッダーファイルの先頭に PropertyHandler\_TopoFilter の**extern**関数宣言を挿入します。
+前のコード例では、 [**Pcproperty\_項目**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-pcproperty_item)構造体の**ハンドラー**メンバーに、前の手順で mintopo .cpp に追加されたプロパティハンドラーへの関数ポインターが含まれています。 ヘッダーファイルからプロパティハンドラーにアクセスできるようにするには**extern** 、ヘッダーファイルの先頭に\_propertyhandler TopoFilter の extern 関数宣言を挿入します。
 
 "ジャックの説明" プロパティの詳細については、「[動的オーディオサブデバイスのジャックの説明](jack-descriptions-for-dynamic-audio-subdevices.md)」を参照してください。
 

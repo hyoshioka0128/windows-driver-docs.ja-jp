@@ -4,12 +4,12 @@ description: オーディオ処理オブジェクト (APOs) は、Windows オー
 ms.assetid: 2F57B4C7-8C83-4DDF-BFAF-B9308752E91D
 ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f89a0c8a87f4f071610eec6021c0016decdd4c0
-ms.sourcegitcommit: 9ebed9a7909b0e39a0efb1c23a5435bf36688d05
+ms.openlocfilehash: 928ca414f75dfdb4f23ff24590558f194a1eb9b8
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898493"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925527"
 ---
 # <a name="audio-processing-object-architecture"></a>オーディオ処理オブジェクトのアーキテクチャ
 
@@ -21,7 +21,7 @@ Windows では、Oem およびサードパーティのオーディオハード�
 
 オーディオ処理オブジェクト (APOs) は、Windows オーディオストリームに対してソフトウェアベースのデジタル信号処理を提供します。 APO は、特定のデジタル信号処理 (DSP) 効果を提供するために記述されたアルゴリズムを含む COM ホストオブジェクトです。 この機能は、"オーディオ効果" として非公式に知られています。 APOs には、グラフィック equalizers、リバーブ、tremolo、音響エコーキャンセル (AEC)、自動ゲイン制御 (AGC) などがあります。 APOs は、COM ベースのリアルタイムのインプロセスオブジェクトです。
 
-このドキュメントに記載されている説明と用語は、ほとんどの場合、出力デバイスを指し**て   ます**。 ただし、テクノロジは対称であり、基本的には入力デバイスに対して逆に機能します。
+**注**  このドキュメントの説明と用語は、主に出力デバイスを示しています。 ただし、テクノロジは対称であり、基本的には入力デバイスに対して逆に機能します。
 
 **ソフトウェア APOs とハードウェア DSP**
 
@@ -35,8 +35,8 @@ Windows では、Oem およびサードパーティのオーディオハード�
 
 ハードウェア DSP に適用されたすべての効果は、プロキシ APO 経由でアドバタイズされる必要があります。 Microsoft では、既定のプロキシ APO (MsApoFxProxy) を提供しています。 Microsoft が提供する APO を使用するには、このプロパティセットとプロパティがサポートされている必要があります。
 
--   [KSPROPSETID\_Audioの効果の検出](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
--   [KSK プロパティ\_AUDIO効果 DISCOVERY\_の効果リスト](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
+-   [KSPROPSETID\_audioの検出](https://docs.microsoft.com/windows-hardware/drivers/audio/kspropsetid-audioeffectsdiscovery)
+-   [KSK プロパティ\_AUDIO効果検出\_の効果リスト](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/dn457706(v=vs.85))
 
 必要に応じて、独自のプロキシ APO を実装することもできます。
 
@@ -76,7 +76,7 @@ APOs のサポートに関するオーディオの要件については、「[�
 
 "オーディオ効果検出サンプル" を使用して、利用可能なオーディオ効果を調べることができます。 このサンプルでは、オーディオデバイスのレンダリングとキャプチャに関するオーディオ効果を照会する方法と、オーディオ効果を使用して変更を監視する方法を示します。 SDK サンプルの一部として含まれており、次のリンクを使用してダウンロードできます。
 
-[オーディオエフェクト検出のサンプル](https://go.microsoft.com/fwlink/p/?linkid=2112597)
+[オーディオエフェクト検出のサンプル](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Audio%20effects%20discovery%20sample)
 
 **アプリケーションオーディオ効果の認識**
 
@@ -117,7 +117,7 @@ APOs のサポートに関するオーディオの要件については、「[�
 
 ![複数のアプリケーションが、ストリーム、モード、およびエンドポイントの apo 効果の複数の組み合わせにアクセスする方法を示す図](images/audio-apo-software-effects-1.png)
 
-このページの一番下にあるスクロールバーを使用して、この図をすべて**表示  こと**ができます。
+**Note**  このページの下部にあるスクロールバーを使用すると、この図をすべて表示できます。
 
 **レンダリングとキャプチャのためのソフトウェアモード効果とハードウェアエンドポイント効果**
 

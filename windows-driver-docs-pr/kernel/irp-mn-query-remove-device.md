@@ -1,62 +1,68 @@
 ---
 title: IRP_MN_QUERY_REMOVE_DEVICE
-description: すべての PnP ドライバーでは、この IRP を処理する必要があります。
+description: すべての PnP ドライバーは、この IRP を処理する必要があります。
 ms.date: 08/12/2017
 ms.assetid: 95ec9ed8-014f-4d01-bed7-3aeb29cd9e73
 keywords:
-- IRP_MN_QUERY_REMOVE_DEVICE カーネル モード ドライバーのアーキテクチャ
+- IRP_MN_QUERY_REMOVE_DEVICE カーネルモードドライバーのアーキテクチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4e6c8e515785d6629a8281cde1d406aa676305
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 60ee3539877e440b40533b3a97fe0510bbeedaaa
+ms.sourcegitcommit: 7681ac46c42782602bd3449d61f7ed4870ef3ba7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67370859"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82922599"
 ---
-# <a name="irpmnqueryremovedevice"></a>IRP\_MN\_クエリ\_削除\_デバイス
+# <a name="irp_mn_query_remove_device"></a>IRP\_を\_実行\_する\_クエリデバイスの削除
 
 
-すべての PnP ドライバーでは、この IRP を処理する必要があります。
+すべての PnP ドライバーは、この IRP を処理する必要があります。
+
+## <a name="value"></a>値
+
+0x01
 
 <a name="major-code"></a>主要コード
 ----------
 
-[**IRP\_MJ\_PNP** ](irp-mj-pnp.md)送信されるときに
+[**IRP\_MJ\_PNP**](irp-mj-pnp.md)
+
+<a name="when-sent"></a>送信時
 ---------
 
-PnP マネージャーでは、デバイスは、コンピューターを中断することに、デバイスを削除できるかどうか、およびクエリをコンピューターから削除される直前に、ドライバーに通知するには、この IRP を送信します。 PnP マネージャーは、デバイスのドライバーを更新するユーザーが要求した場合にもこの IRP を送信します。
+PnP マネージャーは、この IRP を送信して、デバイスがコンピューターから削除されようとしていること、およびコンピューターを中断せずにデバイスを削除できるかどうかを問い合わせます。 また、この IRP は、ユーザーがデバイスのドライバーを更新するように要求した場合にも送信されます。
 
-PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_システム スレッドのコンテキスト内のレベル。
+PnP マネージャーは、システムスレッドのコンテキストで\_この IRP を IRQL パッシブレベルで送信します。
 
 ## <a name="input-parameters"></a>入力パラメーター
 
 
-なし
+None
 
 ## <a name="output-parameters"></a>出力パラメーター
 
 
-なし
+None
 
 ## <a name="io-status-block"></a>I/O ステータス ブロック
 
 
-ドライバーの設定**Irp -&gt;IoStatus.Status**ステータス\_成功や状態などの適切なエラー状態に\_失敗しました。
+ドライバーは、 **Irp-&gt;iostatus**を、status が\_SUCCESS に設定されているか、状態\_が "失敗" などの適切なエラー状態に設定されています。
 
-<a name="operation"></a>操作
+<a name="operation"></a>Operation
 ---------
 
-この IRP では、デバイス スタックの上部にあるドライバーによって最初に処理され、各スタックの下位のドライバーに渡されます。
+この IRP は、デバイススタックの一番上にあるドライバーによって最初に処理され、スタック内の下位の各ドライバーに渡されます。
 
-この IRP に応答して、ドライバーは、コンピューターを中断することに、デバイスを削除できるかどうかを示します。
+この IRP に応答して、ドライバーは、コンピューターを邪魔せずにデバイスを削除できるかどうかを示します。
 
-この IRP の処理の詳細については、次を参照してください。 [IRP の処理\_MN\_クエリ\_削除\_デバイス要求](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-remove-device-request)します。 デバイスの削除のサポートに関する概要については、次を参照してください。[デバイスを削除する](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)します。
+この IRP の処理の詳細については、次を参照してください。 [irp\_を処理する\_クエリ\_を処理するデバイス要求を削除\_](https://docs.microsoft.com/windows-hardware/drivers/kernel/handling-an-irp-mn-query-remove-device-request)します。 デバイスの削除に関する一般的な情報については、「[デバイスの削除](https://docs.microsoft.com/windows-hardware/drivers/kernel/removing-a-device)」を参照してください。
 
-**この IRP を送信します。**
+**この IRP を送信しています**
 
-システムの使用に予約されています。 ドライバーは、この IRP を送信する必要があります。
+システムで使用するために予約されています。 ドライバーは、この IRP を送信することはできません。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -66,8 +72,8 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Header</p></td>
-<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h など)</td>
+<td><p>ヘッダー</p></td>
+<td>Wdm.h (Wdm.h、Ntddk.h、Ntifs.h を含む)</td>
 </tr>
 </tbody>
 </table>
@@ -75,11 +81,11 @@ PnP マネージャーでは、この IRP を送信 IRQL パッシブで\_シス
 ## <a name="see-also"></a>関連項目
 
 
-[**IRP\_MN\_CANCEL\_REMOVE\_DEVICE**](irp-mn-cancel-remove-device.md)
+[**\_IRP\_を終了\_する\_デバイスの削除**](irp-mn-cancel-remove-device.md)
 
-[**IRP\_MN\_デバイス\_使用状況\_通知**](irp-mn-device-usage-notification.md)
+[**IRP\_\_デバイス\_使用量\_の通知**](irp-mn-device-usage-notification.md)
 
-[**IRP\_MN\_REMOVE\_DEVICE**](irp-mn-remove-device.md)
+[**IRP\_の\_すべて\_のデバイスの削除**](irp-mn-remove-device.md)
 
  
 

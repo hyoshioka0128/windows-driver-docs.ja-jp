@@ -3,112 +3,112 @@ title: オーディオ ドライバーのサンプル
 description: オーディオ ドライバーのサンプル
 ms.assetid: bea50e70-e1ec-4a66-9bfc-8bd644b07ce7
 keywords:
-- WDM オーディオ ドライバー WDK サンプル ドライバー
-- オーディオ ドライバー WDK サンプル ドライバー
-- サンプル ドライバー WDK オーディオ
-- Ac97 サンプル オーディオ ドライバー WDK オーディオ
-- Dmusuart サンプル オーディオ ドライバー WDK オーディオ
-- Fmsynth サンプル オーディオ ドライバー WDK オーディオ
-- Gfx サンプル オーディオ ドライバー WDK オーディオ
-- Mpu401 サンプル オーディオ ドライバー WDK オーディオ
-- Msvad サンプル オーディオ ドライバー WDK オーディオ
-- Sb16 サンプル オーディオ ドライバー WDK オーディオ
-- Stdunk サンプル オーディオ ドライバー WDK オーディオ
+- WDM オーディオドライバー WDK、サンプルドライバー
+- オーディオドライバー WDK、サンプルドライバー
+- サンプルドライバー WDK オーディオ
+- Ac97 サンプル audio driver WDK audio
+- Dマス uart サンプル audio driver WDK audio
+- Fmsynth サンプル audio driver WDK audio
+- Gfx サンプル audio driver WDK audio
+- Mpu401 サンプル audio driver WDK audio
+- Msvad サンプル audio driver WDK audio
+- Sb16 サンプル audio driver WDK audio
+- Stdunk サンプル audio driver WDK audio
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6fb728afe77ad0c6c4b8aff8c7047c72d56e7f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9242bb43973280df23a142e33f86d53f411ab811
+ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67355271"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925537"
 ---
 # <a name="sample-audio-drivers"></a>オーディオ ドライバーのサンプル
 
 
-## <a name="span-idsysvadaudiosamplespanspan-idsysvadaudiosamplespanspan-idsysvadaudiosamplespansysvad-audio-sample"></a><span id="SYSVAD_Audio_Sample"></span><span id="sysvad_audio_sample"></span><span id="SYSVAD_AUDIO_SAMPLE"></span>SYSVAD オーディオ サンプル
+## <a name="span-idsysvad_audio_samplespanspan-idsysvad_audio_samplespanspan-idsysvad_audio_samplespansysvad-audio-sample"></a><span id="SYSVAD_Audio_Sample"></span><span id="sysvad_audio_sample"></span><span id="SYSVAD_AUDIO_SAMPLE"></span>SYSVAD Audio サンプル
 
 
-**システム オーディオの仮想デバイス ドライバーのサンプル (SYSVAD)**
+**システム仮想オーディオデバイスドライバーのサンプル (SYSVAD)**
 
-SYSVAD ドライバーには、WDM オーディオ アーキテクチャの多くの重要な機能が強調表示されます。 これらは、独自のオーディオ デバイス用のカスタム ドライバーを作成するための開始点として使用できるソース コードで実装を作業しています。
+SYSVAD ドライバーは、WDM オーディオアーキテクチャの多くの重要な機能を取り上げています。 これらは、独自のオーディオデバイス用のカスタムドライバーを作成するための出発点として使用できるソースコードと共に動作する実装です。
 
-*Sysvad*ソリューション ファイルには、次のプロジェクトが含まれています。
+*Sysvad*ソリューションファイルには、次のプロジェクトが含まれています。
 
 -   **TabletAudioSample**
 
-    *TabletAudioSample*プロジェクトは、複数のオーディオ デバイスのサポートを公開している WDM オーディオ ドライバーを開発する方法を示します。 プラグ可能な他のユーザーは、システムの埋め込み (スピーカー、マイク配列) は一部のオーディオ デバイス (ヘッドホンによる立体音響スピーカー/mic、Bluetooth ヘッドセット スピーカー/mic)。 ドライバーは WaveRT および表示デバイスのオーディオのオフロードを使用します。 ドライバーは、実際のハードウェア ベースのアダプターではなく「仮想オーディオ デバイス」を使用し、WDM オーディオ ドライバーのアーキテクチャがオフロードされたオーディオのさまざまな側面が強調表示されます。 Windows オーディオ エンジンの詳細については、次を参照してください。 [Hardware-Offloaded オーディオ処理 (Windows ドライバー)](hardware-offloaded-audio-processing.md)します。
+    *TabletAudioSample*プロジェクトは、複数のオーディオデバイスのサポートを公開する WDM オーディオドライバーを開発する方法を示しています。 これらのオーディオデバイスの中には、システムに埋め込まれているものがあります (スピーカー、mic 配列など)。 ドライバーは、レンダリングデバイスに WaveRT と audio オフロードを使用します。 ドライバーは、実際のハードウェアベースアダプターではなく "仮想オーディオデバイス" を使用し、オーディオオフロード WDM オーディオドライバーアーキテクチャのさまざまな側面を強調表示します。 Windows オーディオエンジンの詳細については、「[ハードウェアオフロードオーディオ処理 (Windows ドライバー)](hardware-offloaded-audio-processing.md)」を参照してください。
 
--   **PhoneAudioSample**
+-   **電話のオーディオサンプル**
 
-    *PhoneAudioSample*プロジェクトのとよく似ていますが、 *TabletAudioSample*プロジェクト。 これには、モバイル デバイス向けの最適化が含まれます。
+    *TabletAudioSample* *プロジェクトとよく似てい*ます。 モバイルデバイスの最適化が含まれています。
 
 -   **EndpointsCommon**
 
-    *EndpointsCommon*プロジェクトには、電話とタブレットの両方に共通のコードが含まれています。 詳細については、次を参照してください。[オーディオのユニバーサル Windows ドライバー](audio-universal-drivers.md)します。
+    *Endpointscommon*プロジェクトには、タブレットとスマートフォンの両方に共通のコードが含まれています。 詳細については、「[ユニバーサル Windows Drivers For Audio](audio-universal-drivers.md)」を参照してください。
 
 -   **SwapAPO**
 
-    *SwapAPO*プロジェクトは、オーディオ処理オブジェクトを開発する方法を示します。 登録して、オーディオ処理オブジェクトの登録を解除する方法を示すサンプル コードが含まれていて、オブジェクトの処理で使用できる機能を反映するようにコントロール パネルの プロパティ ページをカスタマイズする方法についても説明します。 詳細については、次を参照してください。 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)します。
+    *Swapapo*プロジェクトは、オーディオ処理オブジェクトを開発する方法を示しています。 これには、オーディオ処理オブジェクトの登録と登録解除の方法を示すサンプルコードが含まれています。また、処理オブジェクトで使用可能な機能を反映するようにコントロールパネルのプロパティページをカスタマイズする方法も示しています。 詳細については、「 [Windows オーディオ処理オブジェクト](windows-audio-processing-objects.md)」を参照してください。
 
 -   **KeywordDetectorAdapter**
 
-    *KeywordDetectorAdapter*プロジェクトは、キーワード detector アダプターを開発する方法を示します。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
+    *KeywordDetectorAdapter*プロジェクトは、キーワード検出アダプターを開発する方法を示しています。 詳細については、「[音声ライセンス認証](voice-activation.md)」を参照してください。
 
-**ダウンロードして、GitHub から Sysvad オーディオ サンプルを抽出**
+**GitHub から Sysvad audio サンプルをダウンロードして抽出する**
 
-SYSVAD オーディオ サンプルで使用できる、 [Windows ドライバーのサンプル GitHub](https://github.com/Microsoft/Windows-driver-samples)します。
+SYSVAD audio サンプルは、 [Windows Driver Samples GitHub](https://github.com/Microsoft/Windows-driver-samples)で入手できます。
 
-Sysvad オーディオ サンプルは、ここを参照できます。
+Sysvad audio サンプルは次の場所で参照できます。
 
 <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
-以下の手順をダウンロードして SYSVAD サンプルを開きます。
+SYSVAD サンプルをダウンロードして開くには、次の手順に従います。
 
-a. GitHub ツールを使用して、サンプルを使用することができます。 1 つの zip ファイルに汎用ドライバー サンプルをダウンロードすることもできます。
+a. GitHub ツールを使用して、サンプルを操作できます。 また、ユニバーサルドライバーのサンプルを1つの zip ファイルにダウンロードすることもできます。
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b. Master.zip ファイルをローカル ハード ドライブにダウンロードします。
+b. マスター .zip ファイルをローカルハードドライブにダウンロードします。
 
-c. 右クリックして*Windows ドライバーのサンプル-master.zip*、選択**すべて展開**します。 新しいフォルダーを指定するか、抽出したファイルを保存する既存のサブスクリプションへの参照します。 たとえば、指定する*c:\\DriverSamples\\* として新しいファイルの抽出先フォルダーです。
+c. *Windows-driver-samples-master*を右クリックし、[**すべて展開**] を選択します。 新しいフォルダーを指定するか、抽出されたファイルを格納する既存のフォルダーを参照します。 たとえば、ファイルを抽出する新しいフォルダーとして*C:\\driversamples\\ *を指定することができます。
 
-d. ファイルが抽出されると、次のサブフォルダーに移動します。
+d. ファイルが抽出されたら、次のサブフォルダーに移動します。
 
-*C:\\DriverSamples\\オーディオ\\Sysvad*
+*C:\\driversamples\\Audio\\Sysvad*
 
-**Visual Studio でのドライバー ソリューションを開く**
+**Visual Studio でドライバーソリューションを開く**
 
-Microsoft Visual Studio]、[クリックして**ファイル** &gt; **オープン** &gt; **プロジェクト/ソリューション.** を抽出したファイルを含むフォルダーに移動します (たとえば、 *c:\\DriverSamples\\オーディオ\\Sysvad*)。 ダブルクリックして、 *Sysvad*ソリューション ファイルを開きます。
+Microsoft Visual Studio で、[**ファイル** &gt; ] [**開く** &gt; ] [**プロジェクト/ソリューション...** ] の順にクリックし、抽出したファイルが格納されているフォルダー (例 *: C:\\driversamples\\Audio\\Sysvad*) に移動します。 *Sysvad*ソリューションファイルをダブルクリックして開きます。
 
-Visual Studio では、ソリューション エクスプ ローラーを見つけます。 (これがまだ開いていない場合は、選択**ソリューション エクスプ ローラー**から、**ビュー**メニュー)。ソリューション エクスプ ローラーでは、6 つのプロジェクトを含む 1 つのソリューションを確認できます。
+Visual Studio で、ソリューションエクスプローラーを見つけます。 (まだ開いていない場合は、[**表示**] メニューの [**ソリューションエクスプローラー** ] をクリックします)。ソリューションエクスプローラーには、6つのプロジェクトを持つソリューションが1つ表示されます。
 
-## <a name="span-idsampleaudiodriversspanspan-idsampleaudiodriversspanarchived-audio-samples"></a><span id="sample_audio_drivers"></span><span id="SAMPLE_AUDIO_DRIVERS"></span>アーカイブされたオーディオ サンプル
+## <a name="span-idsample_audio_driversspanspan-idsample_audio_driversspanarchived-audio-samples"></a><span id="sample_audio_drivers"></span><span id="SAMPLE_AUDIO_DRIVERS"></span>アーカイブされたオーディオのサンプル
 
 
-これらのオーディオ サンプルでは、以前のバージョンの Microsoft Windows Driver Kit (WDK) をサポートします。 利用できる使用可能な zip ファイルのダウンロードの一環として[ここ](https://go.microsoft.com/fwlink/p/?LinkId=618052)します。
+これらのオーディオサンプルでは、以前のバージョンの Microsoft Windows Driver Kit (WDK) がサポートされています。 これらは、[こちらで](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)入手できる zip ファイルのダウンロードの一部として入手できます。
 
--   **Microsoft 仮想のオーディオ デバイス ドライバーのサンプル (Msvad)**
+-   **Microsoft 仮想オーディオデバイスドライバーのサンプル (Msvad)**
 
 -   **AC97 ドライバー (Ac97)**
 
--   **DirectMusic UART ドライバー サンプル (Dmusuart)**
+-   **DirectMusic UART Driver サンプル (Dマス Uart)**
 
--   **DirectMusic ソフトウェア シンセサイザー サンプル (ddksynth)**
+-   **DirectMusic ソフトウェアシンセサイザーのサンプル (ddksynth)**
 
 -   **FM シンセサイザー (Fmsynth)**
 
--   **オーディオのアダプターのサンプル**
+-   **オーディオアダプターのサンプル**
 
-**処理のオーディオ コーデックのサンプル**
+**オーディオ処理コーデックのサンプル**
 
--   **Msfilter サンプル コーデック (MsFilter)**
+-   **Msfilter サンプルコーデック (MsFilter)**
 
--   **Msgsm610 サンプル コーデック (gsm610)**
+-   **.Msgsm610 サンプルコーデック (gsm610)**
 
-詳細については、各 WDK でこれらのサンプルに付属する readme ドキュメントを参照してください。
+詳細については、WDK の各サンプルに付属している readme ドキュメントを参照してください。
 
-WDK サンプルについては、次を参照してください。 [Windows ドライバー キット サンプル パック (Windows ドライバー)。](https://docs.microsoft.com/windows-hardware/drivers/samples/index)
+WDK のサンプルについては、「 [Windows Driver Kit Samples Pack (Windows ドライバー)](https://docs.microsoft.com/windows-hardware/drivers/samples/index) 」を参照してください。
 
  
 
