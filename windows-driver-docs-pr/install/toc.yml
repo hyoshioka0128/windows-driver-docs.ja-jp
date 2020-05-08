@@ -58,8 +58,8 @@
           href: driver-rank-example--windows-vista-and-later-.md
         - name: SetupAPI ログ内のドライバーのランク情報
           href: driver-rank-information-in-the-setupapi-log.md
-        - name: AllSignersEqual グループ ポリシー
-          href: allsignersequal-group-policy--windows-vista-and-later-.md
+        - name: AllSigningEqual グループ ポリシー
+          href: allsigningequal-group-policy.md
 - name: 概念
   items:
     - name: ドライバー パッケージ
