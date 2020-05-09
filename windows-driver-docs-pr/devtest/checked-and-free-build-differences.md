@@ -6,22 +6,22 @@ keywords:
 - チェックされたビルドの WDK、無料のビルド
 - 無料ビルド WDK
 - 製品版ビルド WDK
-ms.date: 09/26/2019
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fdc411da56c9aa4f14e31de833a0bda1cec4ae3
-ms.sourcegitcommit: f018b0ab82aae3e3779128d3c4420222ddc0f4ac
+ms.openlocfilehash: ffa44c1773dc1b58c6734387bd14fe07ad650c26
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329600"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999053"
 ---
 # <a name="checked-and-free-build-differences"></a>チェック ビルドと無料ビルドの違い
 
 使用できる NT ベースのオペレーティングシステムには、free (リテール) と checked (debug) の2つの異なるビルドがあります。 部分チェックされた*ビルドと呼ば*れる3番目のオプションは、2つの要素を結合したものです。
 
-- [チェックされたビルドとフリービルドの相違点](#differences-between-the-checked-and-free-builds)
-- [Windows のチェックされたビルドの検索場所](#where-to-find-a-checked-build-of-windows)
-- [チェックを行うビルドまたは部分チェックされたビルドを使用する場合](#when-to-use-the-checked-build-or-partial-checked-build)
+> [!NOTE]
+> チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
+> Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。
 
 ## <a name="differences-between-the-checked-and-free-builds"></a>チェックされたビルドとフリービルドの相違点
 

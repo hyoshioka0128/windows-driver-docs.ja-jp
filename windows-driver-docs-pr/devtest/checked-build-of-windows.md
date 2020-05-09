@@ -3,43 +3,33 @@ title: Windows のチェック ビルド
 description: Windows のチェック ビルド
 ms.assetid: c0e5ccc4-78fc-4c48-a6d7-2f9825aa7de2
 keywords:
-- ビルド ドライバー WDK、チェックを確認しています
-- チェック ドライバーの検証、WDK をビルドします。
-- チェック ビルド WDK
-- デバッグ ビルドの WDK
-ms.date: 04/20/2017
+- 検証 (WDK)、チェックされたビルド
+- ドライバー検証 WDK、チェックされたビルド
+- チェック済みビルドの WDK
+- デバッグビルドの WDK
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a311c298d7b1a73fc9baf8faeebef8baa4fdcc7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4c7caa16c497f8826c37100bdf8a8e2564c55295
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343974"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999071"
 ---
 # <a name="checked-build-of-windows"></a>Windows のチェック ビルド
 
-
 ## <span id="ddk_using_the_checked_build_of_windows_tools"></span><span id="DDK_USING_THE_CHECKED_BUILD_OF_WINDOWS_TOOLS"></span>
 
+> [!NOTE]
+> チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
+> Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。
 
-このセクションについて説明しますどの Microsoft Windows*チェック済みビルド*(とも呼ばれます、*デバッグ ビルド*) NT ベースのオペレーティング システムと異なる、*フリー ビルド*(も呼ばれる、*リテール ビルド*) このオペレーティング システム。 セクションでは、開発および x86 と x64 プラットフォーム上のドライバーをデバッグ チェックのビルドの一意の機能がどのように役立つことができますかについて説明します。 セクションには、インストールしチェック ビルドを使用して、別のドライバーの開発とデバッグ環境のいくつかのメソッドも一覧表示されます。
+このセクションでは、Windows オペレーティングシステムの Microsoft Windows*チェックビルド*(*デバッグビルド*とも呼ばれます) が、このオペレーティングシステムの*無料ビルド*(*リテールビルド*とも呼ばれます) と異なる方法について説明します。 このセクションでは、x86 および x64 プラットフォームでのドライバーの開発とデバッグに、チェックされたビルドの固有の機能がどのように役立つかについて説明します。 また、さまざまなドライバーの開発およびデバッグ環境でチェックされたビルドをインストールおよび使用するためのいくつかの方法についても説明します。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
-
--   [Checked と無料のビルドの違い](checked-and-free-build-differences.md)
--   [Windows のチェック ビルドを使用します。](using-the-checked-build.md)
--   [Windows のチェック ビルドをインストールします。](installing-the-checked-build.md)
--   [チェック ビルド ブレークポイントとメッセージ](checked-build-breakpoints-and-messages.md)
--   [チェック ビルド アサート](checked-build-asserts.md)
-
-このセクションでは、Itanium ベース システムについては説明しませんも、Windows 98 は対象/me.
-
- 
-
- 
-
-
-
-
-
+-   [チェック ビルドと無料ビルドの違い](checked-and-free-build-differences.md)
+-   [Windows のチェック ビルドの使用](using-the-checked-build.md)
+-   [Windows のチェック ビルドのインストール](installing-the-checked-build.md)
+-   [チェック ビルドのブレークポイントとメッセージ](checked-build-breakpoints-and-messages.md)
+-   [チェック ビルドの ASSERT](checked-build-asserts.md)

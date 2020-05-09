@@ -3,18 +3,18 @@ title: デッドロックの検出
 description: デッドロックの検出
 ms.assetid: ecda3e19-218d-484a-973d-8406bed8d820
 keywords:
-- デッドロック検出機能 WDK Driver Verifier
-- デッドロック WDK Driver Verifier
-- ロックされたリソース WDK Driver Verifier
-- スレッドのロック WDK Driver Verifier
+- デッドロック検出機能 WDK ドライバー検証ツール
+- デッドロック WDK ドライバー検証ツール
+- ロックされたリソース WDK ドライバーの検証ツール
+- スレッドが WDK ドライバー検証ツールをロックする
 ms.date: 07/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d71f2f32444a0d363bb818efc1ed46cc5a9ffc31
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: de7979d72bdc6899b51b83eae388d51476b3a690
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371439"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999077"
 ---
 # <a name="deadlock-detection"></a>デッドロックの検出
 
@@ -22,18 +22,18 @@ ms.locfileid: "67371439"
 ## <span id="ddk_deadlock_detection_tools"></span><span id="DDK_DEADLOCK_DETECTION_TOOLS"></span>
 
 
-デッドロックの検出では、リソースをロックする--迅速に作成する必要があるロック、ミュー テックス、および高速なミュー テックスのドライバーの使用を監視します。 このドライバーの検証オプションでは、今後ある時点でデッドロックが発生する可能性があるコード ロジックを検出します。
+デッドロック検出は、ロックする必要があるリソース (スピンロック、ミューテックス、高速ミューテックス) をドライバーが使用しているかを監視します。 この Driver Verifier オプションは、将来のある時点でデッドロックを引き起こす可能性のあるコードロジックを検出します。
 
-ドライバーの検証ツールのデッドロック検出オプションと共に、 **! デッドロック**カーネル デバッガー拡張機能は有効なツールとこれらのリソースの不適切な使用を回避するので、コードを確認してください。
+Driver Verifier のデッドロック検出オプションは、 **! デッドロック**カーネルデバッガー拡張機能と共に、コードがこれらのリソースの不適切な使用を回避するための効果的なツールです。
 
-デッドロックの検出は、Windows XP および Windows の以降のバージョンでのみサポートされます。
+デッドロック検出は、Windows XP 以降のバージョンの Windows でのみサポートされています。
 
 
-### <a name="span-idcausesofdeadlocksspanspan-idcausesofdeadlocksspancauses-of-deadlocks"></a><span id="causes_of_deadlocks"></span><span id="CAUSES_OF_DEADLOCKS"></span>デッドロックの原因
+### <a name="span-idcauses_of_deadlocksspanspan-idcauses_of_deadlocksspancauses-of-deadlocks"></a><span id="causes_of_deadlocks"></span><span id="CAUSES_OF_DEADLOCKS"></span>デッドロックの原因
 
-A*デッドロック*が 2 つまたは複数のスレッドが実行することはできません、このような方法で、いくつかのリソースの競合に付属している場合に発生します。
+*デッドロック*は、複数のスレッドがいくつかのリソースを競合している場合に発生します。このような方法では実行できません。
 
-最も一般的な形式のデッドロックは、2 つまたは複数のスレッドが他のスレッドによって所有されているリソースを待機しているときに発生します。 これは、次のように示します。
+最も一般的な形式のデッドロックは、2つ以上のスレッドが他のスレッドによって所有されているリソースを待機しているときに発生します。 次に例を示します。
 
 <table>
 <colgroup>
@@ -42,118 +42,116 @@ A*デッドロック*が 2 つまたは複数のスレッドが実行するこ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">スレッド 1</th>
-<th align="left">スレッド 2</th>
+<th align="left">スレッド1</th>
+<th align="left">スレッド2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>ロック A</p></td>
-<td align="left"><p>ロック B</p></td>
+<td align="left"><p>ロックを取得します。</p></td>
+<td align="left"><p>ロック B を取得します</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>要求ロック B</p></td>
-<td align="left"><p>要求ロック A</p></td>
+<td align="left"><p>ロック B を要求する</p></td>
+<td align="left"><p>ロック A を要求する</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-同時に両方のシーケンスする場合は、スレッド 1 られるロック B 2 のスレッドによって所有されていると、スレッド 2 は 1 のスレッドによって所有されているため、ロック A 取得しないためです。 停止すると、関連するスレッドの原因最高と最低 at により、システムは、応答を停止します。
+両方のシーケンスが同時に発生した場合、スレッド1はスレッド2によって所有されているため、ロック B は取得されず、スレッド1が所有しているため、スレッド2はロックを取得しません。 これにより、関係するスレッドが停止し、最悪の場合、システムは応答を停止します。
 
-デッドロックは、2 つのスレッドと 2 つのリソースに限定されません。 3 ウェイ デッドロックと 3 つのロックの 3 つのスレッド間では、共通--と 5 部構成または 6 部もデッドロックが生じる。 これらのデッドロックがある程度の「縁起が悪い」を必要と多くの同時に発生することに依存しているためです。 ただし、距離、ロックの取得は、可能性が高くようになります。
+デッドロックは、2つのスレッドと2つのリソースに限定されません。 3つのスレッドと3つのロックの間の3方向のデッドロックは一般的ですが、5部構成または6部構成のデッドロックが発生することもあります。 これらのデッドロックでは、同時に発生するさまざまな処理に依存しているため、"悪い運" が必要になることがあります。 ただし、ロックの取得がさらに離れているほど、これらがになる可能性が高くなります。
 
-シングル スレッドのデッドロックは、スレッドが既に所有しているロックを取得しようとしたときに発生します。
+スレッドが既に所有しているロックを取得しようとすると、シングルスレッドのデッドロックが発生する可能性があります。
 
-すべてのデッドロックの間で共通分母は、ロック階層が守られていないことです。 を、一度に 1 つ以上のロックする必要があるたびに、各ロックは、クリアの優先順位が必要です。 階層に A から B、C が B の前に 1 つのポイントと B が C の前に別の A を実行するされた場合 つまり、C. 後 B または C、B を取得する必要がありますいない後しない必要がありますが獲得すること
+すべてのデッドロックの共通分母は、ロック階層が尊重されないことです。 一度に複数のロックを取得する必要がある場合は常に、各ロックに明確な優先順位を設定する必要があります。 A が B の前にあり、B の前に A がある場合、階層は A-B-C になります。 これは、B または C の後にを取得する必要がなく、C の後に B を取得する必要がないことを意味します。
 
-ロック階層は、コードを保守するプロセスでは、デッドロックを誤って導入を簡単になりますので、デッドロックの可能性がない場合でも従う必要があります。
+デッドロックが発生する可能性がない場合でも、ロック階層に従う必要があります。コードを保持するプロセスでは、デッドロックが誤って発生することが簡単になるためです。
 
-### <a name="span-idresourcesthatcancausedeadlocksspanspan-idresourcesthatcancausedeadlocksspanresources-that-can-cause-deadlocks"></a><span id="resources_that_can_cause_deadlocks"></span><span id="RESOURCES_THAT_CAN_CAUSE_DEADLOCKS"></span>デッドロックを引き起こす可能性のあるリソース
+### <a name="span-idresources_that_can_cause_deadlocksspanspan-idresources_that_can_cause_deadlocksspanresources-that-can-cause-deadlocks"></a><span id="resources_that_can_cause_deadlocks"></span><span id="RESOURCES_THAT_CAN_CAUSE_DEADLOCKS"></span>デッドロックの原因となる可能性のあるリソース
 
-最も明確なデッドロックの結果である*所有*リソース。 これらには、スピン ロック、ミュー テックス、高速なミュー テックス、および ERESOURCEs が含まれます。
+最も明確なデッドロックは、*所有*しているリソースの結果です。 これには、スピンロック、ミューテックス、高速ミューテックス、および ERESOURCEs が含まれます。
 
-(イベントや LPC ポート) を取得するのではなく、シグナル状態にはリソースは、はるかにあいまいなデッドロックが発生する傾向があります。 可能であり、一般的すぎるではもちろん、このような方法でこれらのリソースを誤って使用するコードの相互を完了するまで無期限に待機する 2 つのスレッドが終了します。 ただし、これらのリソースが実際には、1 つのスレッドが所有していないためには、確実に滞納スレッドを識別することはできません。
+(イベントや LPC ポートなどで) 取得されるのではなく、シグナル状態になっているリソースは、よりあいまいなデッドロックの原因となる傾向があります。 もちろん、これらのリソースは、2つのスレッドが完了するまで無期限に待機してしまうような方法で、コードによって誤用される可能性があります。 ただし、これらのリソースは実際には1つのスレッドによって所有されていないため、滞納スレッドを明確に区別することはできません。
 
-Driver Verifier のデッドロック検出オプションは、スピン ロック、ミュー テックス、および高速なミュー テックスを伴う可能性のあるデッドロックを検索します。 ERESOURCEs の使用を監視しませんもは nonowned リソースの使用を監視します。
+ドライバー検証ツールのデッドロック検出オプションは、スピンロック、ミューテックス、および高速ミューテックスに関連する可能性のあるデッドロックを検索します。 ERESOURCEs の使用を監視したり、所有されていないリソースの使用を監視したりすることはありません。
 
-### <a name="span-ideffectsofdeadlockdetectionspanspan-ideffectsofdeadlockdetectionspaneffects-of-deadlock-detection"></a><span id="effects_of_deadlock_detection"></span><span id="EFFECTS_OF_DEADLOCK_DETECTION"></span>デッドロック検出の効果
+### <a name="span-ideffects_of_deadlock_detectionspanspan-ideffects_of_deadlock_detectionspaneffects-of-deadlock-detection"></a><span id="effects_of_deadlock_detection"></span><span id="EFFECTS_OF_DEADLOCK_DETECTION"></span>デッドロック検出の影響
 
-Driver Verifier のデッドロックの検出ルーチンでは、必ずしも同時ではない階層違反ロックを検索します。 ほとんどの場合、これらの違反は、遷移時にデッドロックが発生するコード パスを特定します。
+ドライバー検証ツールのデッドロック検出ルーチンは、必ずしも同時ではないロック階層違反を検出します。 ほとんどの場合、これらの違反は、確率が指定されるとデッドロックするコードパスを識別します。
 
-潜在的なデッドロックを見つけるには、Driver Verifier は、リソース取得順のグラフを構築し、for ループ チェックします。 リソースごとにノードを作成する前に、別の時間の 1 つのロックが取得される矢印を描画する場合は、パスのループはロック階層の違反を表します。
+潜在的なデッドロックを検出するために、ドライバー検証ツールはリソース取得順序のグラフを作成し、ループを確認します。 リソースごとに1つのノードを作成し、別のロックが取得されるたびに矢印を描画する場合、パスループはロック階層違反を表します。
 
-Driver Verifier はこれらの違反が検出されたときのバグ チェックを発行します。 これは、すべて実際のデッドロックが発生する前に発生します。
+これらの違反のいずれかが検出されると、ドライバーの検証ツールはバグチェックを発行します。 これは、実際のデッドロックが発生する前に発生します。
 
-**注**  場合でも、競合するコード パスが同時に実行できることはありません、書き直す必要がまだありますロック階層の違反が含まれる場合。 このようなコードは、「デッドロックの発生を待機している」実際のデッドロックを引き起こす可能性、コードが多少記述し直す場合。
+**ただし**   、競合するコードパスが同時に発生しない場合でも、ロック階層違反が含まれている場合は、コードパスを書き直す必要があります。 このようなコードは、コードが若干書き換えられた場合に、実際のデッドロックを引き起こす可能性がある "デッドロックの発生を待機しています" です。
 
  
 
-デッドロックの検出には、違反が検出されると、バグ チェック 0xC4 を発行します。 このバグ チェックの最初のパラメーターでは、正確な違反を示します。 違反は次のとおりです。
+デッドロック検出によって違反が検出されると、バグチェック0xC4 が発行されます。 このバグチェックの最初のパラメーターは、正確な違反を示します。 次のような違反が考えられます。
 
--   ロック階層の違反に関連する 2 つまたは複数のスレッド
+-   ロック階層違反に含まれる2つ以上のスレッド
 
--   シーケンスからリリースされているリソース
+-   シーケンスから解放されるリソース
 
--   同じリソースは 2 回 (を自己デッドロック) を取得しようとするスレッド
+-   同じリソースを2回取得しようとするスレッド (自己デッドロック)
 
--   最初に取得されていることなしにリリースされているリソース
+-   最初に取得されずに解放されるリソース
 
--   取得したものとは異なるスレッドでリリースされているリソース
+-   取得したものとは異なるスレッドによって解放されたリソース
 
--   2 回以上初期化またはすべての初期化されていないリソース
+-   2回以上初期化されていないか、まったく初期化されていないリソース
 
--   リソースをまだ所有している削除されたスレッド
+-   リソースをまだ所有しているときに削除されるスレッド
 
--   Windows 7 以降、Driver Verifier はデッドロックの可能性を予測できます。 たとえば、同じ KSPIN を使用しよう\_正規スピン ロックとスタックの両方のロックのデータ構造には、スピン ロックがキューに登録します。
+-   Windows 7 以降では、ドライバーの検証ツールでデッドロックが発生する可能性があります。 たとえば、通常のスピンロックとスタックキューに\_格納されたスピンロックの両方として、同じ kspin lock データ構造体を使用しようとしているとします。
 
 
-参照してください[**バグ チェック 0xC4** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー\_VERIFIER\_検出\_違反)、バグの一覧については、パラメーターを確認します。
+バグチェックパラメーターの一覧につい\_て\_は\_、「[**バグチェック 0xc4**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (ドライバー検証ツールが検出された違反)」を参照してください。
 
-### <a name="span-idmonitoringdeadlockdetectionspanspan-idmonitoringdeadlockdetectionspanmonitoring-deadlock-detection"></a><span id="monitoring_deadlock_detection"></span><span id="MONITORING_DEADLOCK_DETECTION"></span>デッドロックの検出を監視します。
+### <a name="span-idmonitoring_deadlock_detectionspanspan-idmonitoring_deadlock_detectionspanmonitoring-deadlock-detection"></a><span id="monitoring_deadlock_detection"></span><span id="MONITORING_DEADLOCK_DETECTION"></span>デッドロック検出の監視
 
-デッドロックの検出、違反を検出すると、 **! デッドロック**カーネル デバッガーの拡張機能を使用して何が発生した正確に調査できます。 ロックが取得された最初の時点で、ロック階層のトポロジと各スレッドの呼び出し履歴を表示できます。
+デッドロック検出によって違反が検出されると、 **! デッドロック**カーネルデバッガー拡張機能を使用して、何が発生したかを正確に調べることができます。 ロック階層トポロジ、およびロックが最初に取得されたときの各スレッドの呼び出し履歴を表示できます。
 
-最良の結果をドライバーの問題の上で実行される、Windows のチェック ビルドより完全な実行時のスタック トレースを取得するカーネルを利用できるためです。
+[**! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)拡張の詳細な例と、デバッガー拡張機能に関する一般的な情報については、「Windows 用デバッグツール」パッケージのドキュメントを参照してください。 詳細については、「 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)」を参照してください。
 
-詳細な例は、 [ **! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)拡張機能とツールを Windows のデバッグ パッケージ内のドキュメントで、デバッガーの拡張機能に関する一般的な情報。 参照してください[Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)詳細についてはします。
+### <a name="span-idactivating_this_optionspanspan-idactivating_this_optionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブにする
 
-### <a name="span-idactivatingthisoptionspanspan-idactivatingthisoptionspanactivating-this-option"></a><span id="activating_this_option"></span><span id="ACTIVATING_THIS_OPTION"></span>このオプションをアクティブ化します。
-
-ドライバー検証マネージャーまたは Verifier.exe コマンドラインを使用して、1 つまたは複数のドライバーのデッドロック検出機能をアクティブにできます。 詳細については、次を参照してください。[ドライバー検証ツールのオプションの選択](selecting-driver-verifier-options.md)します。
+ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーのデッドロック検出機能をアクティブにすることができます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
 
 -   **コマンドラインで**
 
-    、コマンドラインでは、デッドロックの検出 オプションで表される**ビット 5 (0x20)** します。 デッドロックの検出を有効にするには、0x20 のフラグの値を使用して、または 0x20 をフラグ値に追加します。 次に、例を示します。
+    コマンドラインでは、デッドロック検出オプションは**ビット 5 (0x20)** で表されます。 デッドロック検出をアクティブにするには、フラグ値0x20 を使用するか、フラグ値に0x20 を追加します。 次に例を示します。
 
     ```
     verifier /flags 0x20 /driver MyDriver.sys
     ```
 
-    この機能は、[次へ] の起動後にアクティブになります。
+    この機能は、次回の起動時にアクティブになります。
 
-    Windows Vista と Windows の以降のバージョンでもアクティブ化し、デッドロックの検出を追加することで、コンピューターを再起動しなくても非アクティブ化することができます、 **/volatile**パラメーターをコマンド。 次に、例を示します。
+    Windows Vista 以降のバージョンの Windows では、 **/volatile**パラメーターをコマンドに追加することで、コンピューターを再起動しなくても、デッドロック検出をアクティブ化および非アクティブ化することができます。 次に例を示します。
 
     ```
     verifier /volatile /flags 0x20 /adddriver MyDriver.sys
     ```
 
-    この設定は、すぐに有効は、シャット ダウンするか、コンピューターを再起動すると失われます。 詳細については、次を参照してください。[揮発性の設定を使用する](using-volatile-settings.md)します。
+    この設定は直ちに有効になりますが、コンピューターをシャットダウンまたは再起動すると失われます。 詳細については、「 [Volatile 設定の使用](using-volatile-settings.md)」を参照してください。
 
-    デッドロック検出機能は、標準の設定にも含まれます。 次に、例を示します。
+    デッドロック検出機能も、標準設定に含まれています。 次に例を示します。
 
     ```
     verifier /standard /driver MyDriver.sys
     ```
 
--   **ドライバー検証マネージャーを使用します。**
+-   **ドライバー検証マネージャーの使用**
 
-    1.  選択 **(コード開発者) 用のカスタム設定を作成する**順にクリックします**次**します。
-    2.  選択**完全な一覧から個々 の設定を選択します。** します。
-    3.  選択 (チェック)**デッドロックの検出**します。
+    1.  [**カスタム設定の作成] (コード開発者向け)** を選択し、[**次へ**] をクリックします。
+    2.  [**完全な一覧から個々の設定を選択]** を選択します。
+    3.  **デッドロック検出**を選択 (チェック) します。
 
-    デッドロック検出機能は、標準の設定にも含まれます。 この機能では、ドライバー検証マネージャーでを使用する をクリックして**標準設定の作成**です。
+    デッドロック検出機能も、標準設定に含まれています。 この機能を使用するには、ドライバー検証マネージャーで [**標準設定の作成**] をクリックします。
 
  
 

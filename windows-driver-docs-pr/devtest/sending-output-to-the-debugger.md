@@ -11,12 +11,12 @@ keywords:
 - ルーチン WDK デバッグ、出力
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3af364cfd1c4f1d6b1354b5c1ebd239dc63c33d5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 97f6967d38ee6805dc8445a612aa3a9474793ba0
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840037"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999081"
 ---
 # <a name="sending-output-to-the-debugger"></a>デバッガーへの出力の送信
 
@@ -48,15 +48,4 @@ VOID OutputDebugString(
 
 **注**   windows Vista 以降のバージョンの windows では、 **dbgprint**でもタグ付きメッセージが生成されます。 以前のバージョンの Windows では、 **Dbgprint**はタグなしのメッセージを生成しました。
 
- 
-
 [**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)マクロと[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)マクロは、チェックされたビルド環境でコンパイルされると、それぞれ**Dbgprint**および**dbgprintex**と同じです。 無料のビルド環境でコンパイルした場合、影響はありません。
-
- 
-
- 
-
-
-
-
-

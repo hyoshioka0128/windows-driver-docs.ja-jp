@@ -10,20 +10,22 @@ keywords:
 - デバッガーメッセージ WDK
 - メッセージ WDK チェック済みビルド
 - WDK チェックされたビルドのエラー
-ms.date: 04/20/2017
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d29a0a891a6a24a5ae89229f0a86c3a8a39ab82
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3234192f15cbd2e365536918e73d5370d540df65
+ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840265"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82999065"
 ---
 # <a name="how-the-checked-build-indicates-a-problem"></a>チェック ビルドで問題が示される方法
 
-
 ## <span id="ddk_how_the_checked_build_indicates_a_problem_tools"></span><span id="DDK_HOW_THE_CHECKED_BUILD_INDICATES_A_PROBLEM_TOOLS"></span>
 
+> [!NOTE]
+> チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
+> Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。
 
 オペレーティングシステムのチェックされたビルドでは、さまざまな方法を使用して、検出された問題を通知します。 これらのメソッドには、アサートエラー、ブレークポイント、およびデバッガーメッセージが含まれます。 これらのメソッドはすべて、カーネルデバッガーからの出力になります。 そのため、有効にするには、カーネルモードのデバッガー (WinDbg、KD など) が接続されているチェックを実行する必要があります。
 
@@ -52,9 +54,9 @@ ntkrnlmp!DbgBreakPoint:
 
 デバッガーの出力に示されているように、ユーザーは "中断、無視、プロセスの終了、またはスレッドの終了" を求められます。 ユーザーは "b" を入力して応答しました。これにより、デバッガーはブレークポイントによるシステムの実行を停止します。 その結果、ユーザーは、検出された問題のデバッグを続行できるようになります。
 
-失敗したアサートがシステムに与える影響は、さまざまな要因によって異なります。 Windows Vista より前のバージョンの Windows では、システムのスタートアッププロセス中にオペレーティングシステムに対してデバッグが有効にされている場合、システムはデバッガーを中断します (接続されている場合)。または、デバッガーが接続されるのを待機しています。 デバッグが有効になっていない場合、システムは[**バグチェック 0x1e**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) (kmode\_EXCEPTION\_\_処理されません) とパラメーター1の0x80000003 の値でクラッシュします。 Windows Vista 以降では、デバッガーが接続されている場合にのみ、システムはデバッガーを中断します。 デバッグが有効になっていない場合、またはデバッグが有効になっていて、デバッガーが接続されていない場合は、失敗したアサーションは報告されません (ただし、アサーションチェックは実行されます)。 デバッグが有効になっていてもデバッガーが接続されていない場合に、ドライバーを開発しているときにデバッガーをランダムに中断する場合は、コード内で[**Dbgbreakpoint ポイント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)ステートメントを使用できます。
+失敗したアサートがシステムに与える影響は、さまざまな要因によって異なります。 Windows Vista より前のバージョンの Windows では、システムのスタートアッププロセス中にオペレーティングシステムに対してデバッグが有効にされている場合、システムはデバッガーを中断します (接続されている場合)。または、デバッガーが接続されるのを待機しています。 デバッグが有効になっていない場合、パラメーター1の値が0x80000003 で\_ある\_[**バグチェック 0x1e**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1e--kmode-exception-not-handled) (kmode 例外は処理されません\_) でシステムがクラッシュします。 Windows Vista 以降では、デバッガーが接続されている場合にのみ、システムはデバッガーを中断します。 デバッグが有効になっていない場合、またはデバッグが有効になっていて、デバッガーが接続されていない場合は、失敗したアサーションは報告されません (ただし、アサーションチェックは実行されます)。 デバッグが有効になっていてもデバッガーが接続されていない場合に、ドライバーを開発しているときにデバッガーをランダムに中断する場合は、コード内で[**Dbgbreakpoint ポイント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgbreakpoint)ステートメントを使用できます。
 
-一部の[**アサート**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))エラーの前に、追加の[**dbgprint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)出力があります。 この種類の assert の一般的な例の1つは、ntddk と wdm で定義されていて、チェックを行うドライバーのビルドで使用する、次のようなページングされた[ **\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロです。
+一部の[**アサート**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff542107(v=vs.85))エラーの前に、追加の[**dbgprint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)出力があります。 この種類のアサートの一般的な例の1つは、次のように ntddk と wdm で定義されている、チェックを行うドライバーのビルドで使用する、次の[**ページ\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロです。
 
 ```
 #define PAGED_CODE() \
