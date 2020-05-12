@@ -4,12 +4,12 @@ description: Microsoft ハードウェア API の以下のメソッドは、デ�
 ms.topic: article
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 426ef28c766ff2f052253021528efc6fc9a688fd
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 78d591e217b677454753aac7efef13c06cf11726
+ms.sourcegitcommit: 2efaa8f233b1d19e18faa3387a9c11ef69fe790f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82039812"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82777895"
 ---
 # <a name="get-product-data"></a>製品データの取得
 
@@ -396,10 +396,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 | Windows_v100_RS5 | Windows 10 RS5 x86 |
 | Windows_v100_RS5 | Windows 10 RS5 x64 |
 | Windows_v100_19H1 | Windows 10 19H1 更新プログラム |
-| Windows_v100_VB | Windows 10 の今後の更新プログラム |
-
->[!NOTE]
->Windows_v100_VB オペレーティング システム ファミリのコードは、その更新プログラムがリリースされるまで有効ではありません。
+| Windows_v100_VB | Windows 10 バージョン 2004 |
 
 ### <a name="list-of-operating-system-codes"></a>オペレーティング システム コードの一覧
 
@@ -460,12 +457,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 |WINDOWS_v100_19H1_FULL |Windows 19H1 クライアント x86 |
 |WINDOWS_v100_X64_19H1_FULL |Windows 19H1 クライアント x64 |
 |WINDOWS_v100_ARM64_19H1_FULL | Windows 19H1 クライアント ARM64 |
-|WINDOWS_v100_VB_FULL | Windows 10 (次の更新) クライアント x86 |
-|WINDOWS_v100_X64_VB_FULL | Windows (次の更新) クライアント x64 |
-|WINDOWS_v100_ARM64_VB_FULL | Windows (次の更新) クライアント ARM64 |
-
->[!NOTE]
->3 つの \*_VB\* オペレーティング システム コードは、その更新プログラムがリリースされるまで有効ではありません。
+|WINDOWS_v100_VB_FULL | Windows 10 バージョン 2004 クライアント x86 |
+|WINDOWS_v100_X64_VB_FULL | Windows バージョン 2004 クライアント x64 |
+|WINDOWS_v100_ARM64_VB_FULL | Windows バージョン 2004 クライアント ARM64 |
 
 ## <a name="error-codes"></a>エラー コード
 
