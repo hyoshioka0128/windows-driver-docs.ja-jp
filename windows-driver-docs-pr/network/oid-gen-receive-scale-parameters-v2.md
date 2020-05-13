@@ -5,16 +5,16 @@ ms.assetid: 3897A898-2B00-45DF-AC05-7EC719EB7353
 keywords: OID_GEN_RECEIVE_SCALE_PARAMETERS_V2、OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b11da5dced57bb7240b713eeb7d79cb27a6a7ddf
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 311829906f8ce32b51fd76e3cbd2681454db6e4c
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210860"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235349"
 ---
-[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
-
 # <a name="oid_gen_receive_scale_parameters_v2"></a>OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
+
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 OID は、スケーリングエンティティに対して間接テーブル以外の実行時パラメーターを設定するために[RSSv2](receive-side-scaling-version-2-rssv2-.md)対応ミニポートドライバーに送信されます。 OID_GEN_RECEIVE_SCALE_PARAMETERS_V2 は、 [OID_GEN_RECEIVE_SCALE_PARAMETERS](oid-gen-receive-scale-parameters.md) OID を RSSv1 から置き換えます。 ndis 6.80 の前に、Ndis ライトウェイトフィルター (LWFs) には表示されません。 この OID は通常の OID であり、クエリまたは設定要求として発行できます。 これは、IRQL = = PASSIVE_LEVEL で発行されます。 *NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID*フラグが NIC スイッチの作成時に設定されている場合、特定の vport をターゲットにすることができます。 それ以外の場合は、ネイティブの RSS ケースで物理 NIC を対象とします。
 
@@ -26,7 +26,7 @@ NDIS およびそれ以降のドライバーは、クエリとして OID_GEN_REC
 - RSS を有効または無効にします。
 - RSS モードでは、スケールエンティティのハッシュキー、ハッシュの種類とハッシュ関数、キューの数、間接テーブルエントリの数など、タイミングが重要ではない管理機能を実行します。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 RSS の有効化と RSS パラメーターの設定は、1回の手順で実行できます。 この OID を使用して、上位レイヤーで RSS を有効にした後、スケーリングエンティティの初期状態は次のようになります。
 
@@ -39,7 +39,7 @@ RSS を有効にすると、 [OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES](oid-gen
 
 RSS を無効にするプロセスでは、この OID を呼び出して RSS を無効にする前に、上位層がすべてのがプライマリプロセッサをポイントします。 この時点以降、受信トラフィックはプライマリプロセッサを対象とする必要があります。 ただし、ミニポートドライバーでは、VPort を削除する前に RSS を無効にする必要はありません。 上位レイヤーでは、VPort の受信フィルターをゼロに設定して、受信トラフィックが VPort を通過しないようにしてから、RSS を無効にせずに VPort の削除に進みます。
 
-上位層は、管理機能を実行する前に、重要な不変条件に違反しないようにします。 次に、例を示します。
+上位層は、管理機能を実行する前に、重要な不変条件に違反しないようにします。 次に例を示します。
 
 - キューの数を変更する前に、上位層では、間接テーブルが、VPort 用に構成されているよりも多くのプロセッサを参照していないことを確認します。
 VMMQ アダプターの間接参照テーブルのエントリ数を変更する前に、上位層によって、間接テーブルの内容が2の累乗に正規化されます。
@@ -48,19 +48,19 @@ VMMQ アダプターの間接参照テーブルのエントリ数を変更する
 
 この OID は、エラーが発生したときに次の状態コードを返します。
 
-| 状態コード | エラー状況 |
+| status code | エラー状態 |
 | --- | --- |
 | NDIS_STATUS_INVALID_LENGTH | OID の形式が正しくありません。 |
 | NDIS_STATUS_NO_QUEUES | RSS が有効になっているときにキューの数が変更されていますが、現在の間接テーブルでは、新しいキューの数より多くのプロセッサが参照されています。 |
 | NDIS_STATUS_INVALID_DATA | <ul><li>間接テーブルのサイズが縮小されていますが、2回の繰り返しパターンが含まれていません。</li><li>RSS 状態遷移 ( *on*または*off*) 中に、*アクティブ*になるステアリングパラメーターのプロセッサは、アダプターの RSS プロセッサセットに属していません。 *非アクティブ*なステアリングパラメーターはプロセッサへの書き込みを追跡するだけであり、強制されないことに注意してください。 適用は、パラメーターが*アクティブ*になったときに RSS 状態の移行中に行われます。</li></ul> |
 | NDIS_STATUS_INVALID_PARAMETER | ヘッダーまたは OID 自体にある他のフィールドには、無効な値が含まれています。 |
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |
 | バージョン | Windows 10 バージョン 1709 |
-| Header | Ntddndis (Ndis .h を含む) |
+| ヘッダー | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 

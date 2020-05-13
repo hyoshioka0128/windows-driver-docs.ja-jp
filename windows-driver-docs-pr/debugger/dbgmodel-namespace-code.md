@@ -1,31 +1,32 @@
 ---
-title: デバッガーのデータ モデル - コードの Namespace
-description: コードと dissasembly の属性が含まれています。
+title: Debugger Data Model - コード名前空間
+description: コードと dissasembly 属性が含まれています。
 ms.date: 12/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 268c3439d37765fea71e1068f91e7e597464e101
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: f2c7fdf532d8d7ed2040819297ec6a795c412e7e
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56532786"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235340"
 ---
-> [!IMPORTANT]
->  このインターフェイスは開発と、変更されます。
->
-# <a name="the-code-namespace"></a>コードの Namespace
+# <a name="the-code-namespace"></a>コードの名前空間
 
-## <a name="summary"></a>概要
-コード名前空間には、コードとの逆アセンブルの属性が含まれています。 指定されたアドレスまたは関数の逆アセンブルしたり場合があります、アセンブリに関する詳細情報と、変数またはソース情報を提供するオブジェクトを逆アセンブラーを作成できるように、利用可能な。
+> [!IMPORTANT]
+>  このインターフェイスは、アクティブな開発中であり、変更されます。
+>
+
+## <a name="summary"></a>まとめ
+コードの名前空間には、コードと逆アセンブリの属性が含まれています。 これにより、指定されたアドレスまたは関数を逆アセンブルできる逆アセンブラーオブジェクトを作成し、そのアセンブリに関する詳細情報と、使用可能な場合は変数またはソース情報を提供できます。
 
 ## <a name="sample"></a>サンプル
-方法のエンド ツー エンドの例についてはこの名前空間およびオブジェクトを使用して、アカウントを github のサンプル https://github.com/Microsoft/WinDbg-Samples/tree/master/CodeFlow 
+この名前空間とオブジェクトの使用方法のエンドツーエンドの例については、GitHub のサンプルを確認してください。https://github.com/Microsoft/WinDbg-Samples/tree/master/CodeFlow 
 
-## <a name="object-methods"></a>オブジェクトのメソッド
+## <a name="object-methods"></a>オブジェクト メソッド
 |名前|戻り値の型|署名|説明|
 |--- |--- |--- |--- |
-|CreateDisassembler| [逆アセンブラー](dbgmodel-object-disassembler.md)|CreateDisassembler([architecture])|指定したアーキテクチャの逆アセンブラーを作成します。 アーキテクチャは、"ARM"、"ARM64"、"X64"、または"X86"のいずれかの可能性があります。 アーキテクチャが指定されていない場合は、X64 が使用されます。 |
-|TraceDataFlow|[コレクション](dbgmodel-namespace-collections.md)の[手順](dbgmodel-object-instruction.md)|TraceDataFlow([address])|指定した命令を見て*アドレス*(または現在の命令ポインター アドレスが指定されていない場合) とすべてのソース オペランド。 このメソッドは、トレースされる命令のソース オペランドに影響を与えたの任意の命令を探して、関数の制御フローを経て内を後方に向かってについて説明します。 **このメソッドは、見つかった CodeFlow 拡張機能を読み込む必要があります[ここ](https://github.com/Microsoft/WinDbg-Samples/tree/master/CodeFlow)します。**|
+|CreateDisassembler アセンブラー| [アセンブリ](dbgmodel-object-disassembler.md)|CreateDisassembler アセンブラー ([アーキテクチャ])|指定されたアーキテクチャの逆アセンブラーオブジェクトを作成します。 アーキテクチャは、"ARM"、"ARM64"、"X64"、または "X86" のいずれかです。 アーキテクチャが指定されていない場合、X64 が想定されます。 |
+|TraceDataFlow フロー|[命令](dbgmodel-object-instruction.md)の[コレクション](dbgmodel-namespace-collections.md)|TraceDataFlow フロー ([アドレス])|指定した*アドレス*(または、アドレスが指定されていない場合は現在の命令ポインター) の命令、およびそのすべてのソースオペランドを参照します。 このメソッドは、トレースされた命令のソースオペランドに影響を受ける命令を検索する関数の制御フローを後方にウォークします。 **このメソッドでは、[ここ](https://github.com/Microsoft/WinDbg-Samples/tree/master/CodeFlow)に記載されている CodeFlow 拡張機能を読み込む必要があります。**|
 
-## <a name="remarks"></a>注釈
-CreateDisassembler の既定値は当面、この動作は、現在のスレッドの命令ポインターでモジュールのアーキテクチャをプルする変更がいくつかの時点では、"X64"です。
+## <a name="remarks"></a>Remarks
+CreateDisassembler アセンブラーの既定値は "X64" です。この動作は、現在のスレッドの命令ポインターでモジュールのアーキテクチャをプルするように変更されます。

@@ -5,16 +5,16 @@ ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b43ae8403d5201ccc60a043743d8bf14483d34
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: a50c3deb16aade12857130a8d9ac30b0984fd0ef
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210525"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235449"
 ---
-[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
-
 # <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
+
+[!include[RSSv2 Beta Prerelease](../includes/rssv2-beta-prerelease.md)]
 
 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID は、個々の間接テーブルエントリの移動を実行するために[RSSv2](receive-side-scaling-version-2-rssv2-.md)対応ミニポートドライバーに送信されます。 この OID は[同期 oid](synchronous-oid-request-interface-in-ndis-6-80.md)であるため、NDIS_STATUS_PENDING を返すことはできません。 このメソッドは、IRQL = = DISPATCH_LEVEL でメソッド要求のみとして発行されます。 
 
@@ -22,7 +22,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID は、個々の間接テーブル�
 
 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES は、 [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)構造を使用して、一連のアクションを同期的に実行するようにミニポートアダプターに指示します。各アクションは、指定された VPORT の RSS 間接テーブルの1つのエントリを、指定された CPU に移動します。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 この OID は、それを発行したプロセッサコンテキストで実行され、完了する必要があります。 ミニポートドライバーは、NDIS_STATUS_SUCCESS を上位層に返すときに、この OID を完全に実行する必要があります。 これは、最初の移動が NDIS_STATUS_SUCCESS で終了した直後に新しいプロセッサで複数のデバイスを移動するために、バックツーバックの OID 要求を受信するようにミニポートドライバーで準備する必要があることを意味します。 
 
@@ -73,7 +73,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは、次のよ
 
 - "すべて移動" コマンドの一部として、上位層が一緒に実行されるコマンドは、バッチ全体に連続して配置されます。
 - ミニポートドライバーは、"すべて移動" の方法で、さまざまな VPorts をターゲットにすることがあるコマンドバッチ全体を実行しようとすることはできません。 同じ VPort (同じ**Switchid + VPortId** pair でタグ付けされたもの) を対象とするコマンドのグループのみ、"すべて移動" セマンティクスに準拠して実行する必要があります。
-- 上位層が "すべて移動" セマンティクスを考慮しない場合、コマンドが異なる VPort に対してコマンドを使用して同じ VPort にインターリーブされる可能性があります。 この場合、"キューの数" 違反が原因で同じ VPort に対して2番目のコマンドグループを実行できない場合、ミニポートドライバーは、対応するステータスコード (NDIS_STATUS_NO_QUEUES) を持つグループをマークし、上位層は、際.
+- 上位層が "すべて移動" セマンティクスを考慮しない場合、コマンドが異なる VPort に対してコマンドを使用して同じ VPort にインターリーブされる可能性があります。 この場合、"キューの数" 違反が原因で同じ VPort に対する2番目のコマンドグループを実行できない場合、ミニポートドライバーは、対応するステータスコード (NDIS_STATUS_NO_QUEUES) を持つグループをマークし、上位層が復旧に責任を持ちます。
 
 たとえば、上層のプロトコルが次のような一連のコマンドを実行しているとします。
 
@@ -81,7 +81,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは、次のよ
 - `VPort=2 ITE[0]`
 - `VPort=1 ITE[2]`
 
-ミニポートドライバーは、4つの move コマンドすべて、または `VPort=1` (`ITE[0,1,2]`) の3つの移動コマンドすべてをアトミックに実行する必要はありません。 "すべて移動" の方法で `VPort=1 ITE[0,1]` グループを実行する必要があるだけで、`VPort=2 ITE[0]` グループを `VPort=1 ITE[2]`ます。 3つのコマンドグループはすべて、結果が異なる場合があります。 たとえば、`VPort=1 ITE[0,1]` と `VPort=2 ITE[0]` のグループは成功する可能性があり、`VPort=1 ITE[2]` グループは失敗する可能性があります。 結果は、各コマンド構造の対応する**Entrystatus**メンバーに反映される必要があります。 このように、ミニポートドライバーは、バッチ全体を安全に実行するための対策を講じる必要はありません (たとえば、アダプター全体をロックするなど)。 特定の VPort を対象とするコマンドのみをシリアル化し、より詳細な VPort ロックを使用することができます。また、特定のデッドロックが回避されます。
+ミニポートドライバーでは、4つの move コマンドすべて、または () の3つの move コマンドすべてをアトミックに実行する必要はありません `VPort=1` `ITE[0,1,2]` 。 グループを実行する必要があるのは、 `VPort=1 ITE[0,1]` "すべて移動" の方法だけです。その後、グループを実行する必要があり `VPort=2 ITE[0]` `VPort=1 ITE[2]` ます。 3つのコマンドグループはすべて、結果が異なる場合があります。 たとえば、とのグループは `VPort=1 ITE[0,1]` `VPort=2 ITE[0]` 成功する可能性があり、グループは失敗する可能性があり `VPort=1 ITE[2]` ます。 結果は、各コマンド構造の対応する**Entrystatus**メンバーに反映される必要があります。 このように、ミニポートドライバーは、バッチ全体を安全に実行するための対策を講じる必要はありません (たとえば、アダプター全体をロックするなど)。 特定の VPort を対象とするコマンドのみをシリアル化し、より詳細な VPort ロックを使用することができます。また、特定のデッドロックが回避されます。
 
 > [!NOTE]
 > コマンドエントリのグループ全体を同じエントリ状態でマークする必要があります。
@@ -90,17 +90,17 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは、次のよ
 
 この OID は、エラーが発生したときに次の状態コードを返します。
 
-| 状態コード | エラー状況 |
+| status code | エラー状態 |
 | --- | --- |
 | NDIS_STATUS_INVALID_LENGTH | OID の形式が正しくありません。 |
 | NDIS_STATUS_INVALID_PARAMETER | ヘッダーまたは OID 自体に含まれるその他のフィールド (個々のコマンドエントリではありません) には、無効な値が含まれています。 |
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 | | |
 | --- | --- |
 | バージョン | Windows 10 バージョン 1709 |
-| Header | Ntddndis (Ndis .h を含む) |
+| ヘッダー | Ntddndis (Ndis .h を含む) |
 
 ## <a name="see-also"></a>関連項目
 

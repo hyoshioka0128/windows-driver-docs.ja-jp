@@ -3,18 +3,18 @@ title: INF AddSoftware ディレクティブ
 description: AddSoftware ディレクティブは、スタンドアロンソフトウェアのインストールについて説明します。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 26de0aa0f35add9159a49f457fb76c9786b7dd56
-ms.sourcegitcommit: a55489992dbf0a7e9d09f237e13514799711647a
+ms.openlocfilehash: 8feed269e6a8dece71f4d6d644e6cced72c06aa4
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82223276"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235439"
 ---
 # <a name="inf-addsoftware-directive"></a>INF AddSoftware ディレクティブ
 
 各**addsoftware**ディレクティブは、スタンドアロンソフトウェアのインストールについて説明します。  このディレクティブは、**ソフトウェアコンポーネント**セットアップクラスの INF ファイルで使用します。 ソフトウェアコンポーネントの詳細については、「[コンポーネント INF ファイルの使用](using-a-component-inf-file.md)」を参照してください。  このディレクティブは、Windows 10 バージョン1703以降でサポートされています。
 
-有効なインストールの種類は、[ターゲットプラットフォーム](../develop/windows-10-editions-for-universal-drivers.md)によって異なります。 たとえば、デスクトップでは MSI インストーラーとセットアップ Exe がサポートされています。  **注**: 種類2はユニバーサルドライバーでサポートされています。種類1はデスクトップのみです。
+有効なインストールの種類は、[ターゲットプラットフォーム](../develop/target-platforms.md)によって異なります。 たとえば、デスクトップでは MSI インストーラーとセットアップ Exe がサポートされています。  **注**: 種類2はユニバーサルドライバーでサポートされています。種類1はデスクトップのみです。
 
 ソフトウェアコンポーネントの INF ファイルで**Addsoftware**を指定すると、デバイスのインストール後にインストールされるソフトウェアがシステムによってキューに追加されます。  ソフトウェアがインストールされるかどうかは保証されません。
 参照されているソフトウェアのインストールに失敗した場合、参照元のソフトウェアコンポーネントが更新されると、システムによって再試行されます。
@@ -30,7 +30,7 @@ AddSoftware=SoftwareName,[flags],software-install-section
 
 *SoftwareName*
 
-インストールするソフトウェアの名前を指定します。  この名前は、ソフトウェアを一意に識別します。  **Addsoftware**ディレクティブの処理では、任意のドライバーパッケージの**addsoftware**ディレクティブによって、同じ名前でインストールされた以前のソフトウェアに対してバージョンがチェックされます。  SoftwareName の前に、ベンダー名を付けることをお`ContosoControlPanel`勧めします。たとえば、のようにします。
+インストールするソフトウェアの名前を指定します。  この名前は、ソフトウェアを一意に識別します。  **Addsoftware**ディレクティブの処理では、任意のドライバーパッケージの**addsoftware**ディレクティブによって、同じ名前でインストールされた以前のソフトウェアに対してバージョンがチェックされます。  SoftwareName の前に、ベンダー名を付けることをお勧めします。たとえば、のようにし `ContosoControlPanel` ます。
 
 *flags*
 
@@ -46,7 +46,7 @@ AddSoftware=SoftwareName,[flags],software-install-section
 
 ソフトウェアのインストールに関する情報を含む INF ライターで定義されたセクションを参照します。
     
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 各 INF ライターで作成されたセクション名は、INF ファイル内で一意である必要があります。また、セクション名を定義するための一般的な規則に従う必要があります。  これらの規則の詳細については、「 [INF ファイルの一般的な構文規則](general-syntax-rules-for-inf-files.md)」を参照してください。
 
@@ -165,7 +165,7 @@ Windows 10 バージョン1709以降、値2は、関連付けられているソ�
 
 `SoftwareID={x.y.z}`
 
-Microsoft Store 識別子と識別子の種類を指定します。  現時点では、パッケージファミリ名 (PFN) のみがサポートされています。  PFN を使用して、フォーム`pfn://<x.y.z>`を使用してユニバーサル WINDOWS プラットフォーム (UWP) アプリを参照します。
+Microsoft Store 識別子と識別子の種類を指定します。  現時点では、パッケージファミリ名 (PFN) のみがサポートされています。  PFN を使用して、フォームを使用してユニバーサル Windows プラットフォーム (UWP) アプリを参照し `pfn://<x.y.z>` ます。
 
 >[!NOTE]
 >**ソフトウェア id**のエントリと値に対する制約の詳細については、「[**ソフトウェアの種類**](#software-install-section-softwaretype)」を参照してください。

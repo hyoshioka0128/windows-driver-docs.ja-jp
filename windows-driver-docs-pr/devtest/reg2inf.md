@@ -1,27 +1,27 @@
 ---
 title: Reg2inf
-description: Reg2inf は、ドライバー パッケージをユニバーサルにするレジストリ キーに変換するツールです。
+description: Reg2inf は、ドライバーパッケージを universal にするためにレジストリキーを変換するツールです。
 ms.assetid: e43a137e-c08a-4715-84f7-32cda67399e3
-ms.date: 08/23/2017
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 788a4a0288461f79e1f26a1ea3a128f643bd5e32
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b815eff7e077562b89c237bdacbb756ec6f50c23
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356388"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235287"
 ---
 # <a name="reg2inf"></a>Reg2inf
  
-ドライバー パッケージ INF レジストリ変換ツール (`reg2inf.exe`) ツールは、レジストリ キーとその値、または実装する COM .dll に変換します、 [ **DllRegisterServer** ](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver)を一連の定期的な[。INF AddReg ディレクティブ](../install/inf-addreg-directive.md)ドライバー パッケージ INF ファイルに組み込むことです。  このツールは、既存の変換する際に特に役立ちます[INF RegisterDlls ディレクティブ](../install/inf-registerdlls-directive.md)ように、INF ファイル ユニバーサル INF AddReg ディレクティブにします。  ユニバーサル INF ファイルに関する詳細については、次を参照してください。[ユニバーサル INF ファイルを使用して](../install/using-a-universal-inf-file.md)します。
+ドライバーパッケージ INF レジストリ変換ツール ( `reg2inf.exe` ) ツールは、 [**DllRegisterServer**](https://docs.microsoft.com/windows/desktop/api/olectl/nf-olectl-dllregisterserver)ルーチンを実装するレジストリキーとその値または COM .dll を、ドライバーパッケージの inf ファイルに含めるための一連の[INF AddReg ディレクティブ](../install/inf-addreg-directive.md)に変換します。  このツールは、INF ファイルをユニバーサルにするために、既存の[Inf RegisterDlls ディレクティブ](../install/inf-registerdlls-directive.md)を inf AddReg ディレクティブに変換する場合に特に便利です。  ユニバーサル INF ファイルの詳細については、「 [UNIVERSAL Inf ファイルの使用](../install/using-a-universal-inf-file.md)」を参照してください。
  
-このツールは Windows 10 バージョン 1709 以降、WDK 10 のインストールの一部として同梱されています。 検索、これを WDK 10 のインストールの \tools サブディレクトリにたとえば`c:\Program Files(x86)\Windows Kits\10\tools\`します。 
+Windows 10 バージョン1709以降、ツールは WDK 10 インストールの一部として出荷されます。 これは、たとえば、WDK 10 インストールの \ tools サブディレクトリに `c:\Program Files(x86)\Windows Kits\10\tools\` あります。 
 
-Reg2inf が COM 登録を生成しようとすると、COM 登録を提供する完全なレジストリ状態が取り込みません可能性があります。 いつものように、完全性と正確性、ツールの出力を検査し、結果をテストしてください。 
+Reg2inf は COM 登録の生成を試みますが、COM 登録によって提供される完全なレジストリ状態をキャプチャすることはできません。 常に、ツールの出力で完全性と正確性を検査し、結果をテストする必要があります。 
 
-## <a name="running-reg2inf-from-the-command-line"></a>コマンドラインから実行中の Reg2inf 
+## <a name="running-reg2inf-from-the-command-line"></a>コマンドラインからの Reg2inf の実行 
  
-このセクションでは、Reg2inf のコマンド ライン オプションを示します。
+このセクションでは、Reg2inf のコマンドラインオプションの一覧を示します。
 
 ```
 USAGE: reg2inf.exe [/key <path> | /dll <filename>] [/targetkey <path>]
@@ -34,4 +34,16 @@ USAGE: reg2inf.exe [/key <path> | /dll <filename>] [/targetkey <path>]
     Remap target registry key to be under a different base key path, e.g.: reg2inf /key HKLM\SYSTEM\Temp /targetkey HKR\Parameters
 ```
 
-**注**Reg2inf では、完全なパスの長さが 259 文字を超えないことが必要です。 
+**メモ**Reg2inf では、完全パスの長さが259文字を超えないようにする必要があります。 
+
+## <a name="registering-a-com-component-in-an-inf-file"></a>INF ファイルに COM コンポーネントを登録する
+
+次のスニペットは、Reg2inf によって生成されるように、INF AddReg 構文を使用して単純な COM クラスを登録する方法を示しています。
+
+```cpp
+[ComClass_AddReg]
+HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084},,,"Sample Class"
+HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084}\InprocServer32,,%REG_EXPAND_SZ%,"%13%\comobj.dll"
+HKCR,CLSID\{92FCF37F-F6C7-4F8A-AA09-1A14BA118084}\InprocServer32,ThreadingModel,,"Both"
+```
+

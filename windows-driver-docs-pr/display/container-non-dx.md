@@ -4,12 +4,12 @@ description: DX 以外の Api はドライバーとカーネルをより直接�
 ms.assetid: 6c4a6974-c67b-4710-80c6-48a5b378e088
 ms.date: 05/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ff36feabf97cd65aaa7e3b14b2a996a9c7442b23
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34681000436867dae50f9c838e96412679138384
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839792"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235398"
 ---
 # <a name="container-support-for-non-dx-apis"></a>DX 以外の Api のコンテナーサポート
 
@@ -29,20 +29,31 @@ Windows 10 では、DX 以外の Api に大きな影響を与える機能がい�
 - CopyToVmWhenNewerWow64
 
 前のサブキーによって system32 ディレクトリが変更されますが、後者のサブキーでは、syswow64 ディレクトリが変更されます。
-__新しい__は、ファイルの[changetime](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_basic_information)を比較することによって定義されます。
-サブキーの下にある各値の型は、REG_MULTI_SZ または REG_SZ である必要があります。 値の型が REG_MULTI_SZ の場合、値には最大2つの文字列が必要です。 これは、各値が stings のペアを定義することを意味します。2番目の文字列は空にすることができます。
+サブキーの下にある各値の型は、REG_MULTI_SZ または REG_SZ である必要があります。 値の型が REG_MULTI_SZ 場合、値には最大2つの文字列が必要です。 これは、各値が stings のペアを定義することを意味します。2番目の文字列は空にすることができます。
 ペアの最初の名前は、ドライバーストア内のファイルへのパスです。 パスは、ドライバーストアのルートを基準とした相対パスであり、サブディレクトリを含むことができます。
 ペアの2番目の名前は、system32 または syswow64 ディレクトリに表示されるファイルの名前です。
 2番目の名前は、パスを含まないファイル名だけにする必要があります。 2番目の名前が空の場合、ファイル名はドライバーストアと同じです (サブディレクトリは除く)。
 これにより、ドライバーはホストドライバーストアとゲストに異なる名前を付けることができます。 
 
+**Copytovmwhennewer**グラフィックアダプターレジストリサブキー **CopyToVmWhenNewerWow64**の下に一覧表示されるファイルは、"新しい" 条件を満たしている場合にのみ、対象のファイルを上書きします。
+
+Windows 10 バージョン2004では、"新しい" 条件によって次の2つの情報が比較されます。
+- [FileVersion](https://docs.microsoft.com/windows/desktop/api/verrsrc/ns-verrsrc-vs_fixedfileinfo)
+- [最終書き込み時刻](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)
+
+コピー先のファイルの末尾が .dll または .exe の場合、最も重要な比較値として**FileVersion**が使用されます。この場合、最大バージョンは "新しい" と見なされます。
+
+コピー先のファイルの末尾が .dll でも .exe でもない場合、または2つの**FileVersion**が等しい場合、 **lastwritetime**は、後の日付/時刻が "より新しい" と見なされる、最も重要度の高い比較値として使用されます。
+
+2004より前のバージョンの Windows 10 では、"新しい" 条件によってファイルの[Changetime](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_file_basic_information)のみが比較されていました。
+
 ### <a name="example-1"></a>例 1:
 INF [DDInstall] セクション  
 HKR、"softgpukmd\CopyToVmOverwrite"、SoftGpuFiles、% REG_MULTI_SZ%、"Copytovm\ softgpufiles dll"、"softgpu2"  
 
-ディレクティブによって、ソフトウェア (アダプター) キーにレジストリキーが作成されます。 "HKLM\SYSTEM\CurrentControlSet\Control\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\\<番号 > \CopyToVmOverwrite"、SoftGpuFiles = REG_MULTI_SZ、"Copytovm\ Softgpu1.6 dll", "softgpu2"
+ディレクティブによって、ソフトウェア (アダプター) キーにレジストリキーが作成されます。 "HKLM\SYSTEM\CurrentControlSet\Control\Class \\ {4d36e968-e325-11ce-bfc1-08002be10318} \\ \< number> \Copytovmoverwrite"、SoftGpuFiles = REG_MULTI_SZ、"copytovm"、"softgpu2"
 
-OS は \<DriverStorePath > \ Copytovm%windir%\system32\softgpu2.dll にコピーします。
+OS は \< driverstorepath> \ Copytovm\ Softgpu%windir%\system32\softgpu2.dll dll を
 
 ### <a name="example-2"></a>例 2:
 INF [DDInstall] セクション:  
@@ -50,19 +61,19 @@ HKR、"CopyToVmOverwrite"、SoftGpuFiles1、% REG_MULTI_SZ%、"softgpu1"、"soft
 HKR、"CopyToVmOverwrite"、SoftGpuFiles2、% REG_SZ%、"softgpu2"  
 
 ディレクティブによって、ソフトウェア (アダプター) キーにレジストリキーが作成されます。  
-"HKLM\SYSTEM\CurrentControlSet\Control\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\\<番号 > \CopyToVmOverwrite"、SoftGpuFiles1 = REG_MULTI_SZ、"softgpu1"、"softgpu .dll"  
-"HKLM\SYSTEM\CurrentControlSet\Control\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\\<番号 > \CopyToVmOverwrite"、SoftGpuFiles = REG_SZ、"softgpu2"  
+"HKLM\SYSTEM\CurrentControlSet\Control\Class \\ {4d36e968-e325-11ce-bfc1-08002be10318} \\ \< number> \Copytovmoverwrite", SoftGpuFiles1 = REG_MULTI_SZ, "softgpu1", "softgpu .dll"  
+"HKLM\SYSTEM\CurrentControlSet\Control\Class \\ {4d36e968-e325-11ce-bfc1-08002be10318} \\ \< number> \Copytovmoverwrite", SoftGpuFiles = REG_SZ, "softgpu2"  
 
-OS は \<DriverStorePath > を%windir%\system32\softgpu.dll にコピーし、DriverStorePath >、\<を%windir%\system32\softgpu2.dll にコピーします。
+OS は \< driverstorepath> \ softgpu1. dll を%windir%\system32\softgpu.dll にコピーし、 \< driverstorepath> を%windir%\system32\softgpu2.dll にコピーします。
 
-### <a name="example-3"></a>例 3:
+### <a name="example-3"></a>例 3: 
 INF [DDInstall] セクション:  
 HKR、"CopyToVmOverwriteWow64"、SoftGpuFiles、% REG_MULTI_SZ%、"Subdir1\Subdir2\softgpu2wow64.dll"、"softgpu .dll"  
 
 ディレクティブによって、ソフトウェア (アダプター) キーにレジストリキーが作成されます。  
-"HKLM\SYSTEM\CurrentControlSet\Control\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}\\\<number > \CopyToVmOverwriteWow64"、SoftGpuFiles = REG_MULTI_SZ、"Subdir1\Subdir2\softgpu2wow64.dll"、"softgpu .dll"  
+"HKLM\SYSTEM\CurrentControlSet\Control\Class \\ {4d36e968-e325-11ce-bfc1-08002be10318} \\ \< number> \Copytovmoverwritewow64"、SoftGpuFiles = REG_MULTI_SZ、"Subdir1\Subdir2\softgpu2wow64.dll"、"softgpu .dll"  
 
-OS は \<DriverStorePath > \Subdir1\Subdir2\softgpu2wow64.dll を%windir%\syswow64\softgpu.dll にコピーします。
+OS は \< driverstorepath> \subdir1\subdir2\softgpu2wow64.dll を%windir%\syswow64\softgpu.dll にコピーします。
 
 ## <a name="driver-modifications-to-registry-and-file-paths"></a>レジストリおよびファイルパスに対するドライバーの変更
 コンテナー内では、ドライバーストアは、通常と同じ標準的なパスには存在しません。
@@ -78,11 +89,16 @@ DXGI[は、Idxgiadapter:: GetDesc](https://docs.microsoft.com/windows/desktop/ap
 ## <a name="dchu-design-modifications"></a>DCHU のデザインの変更
 では、可能な限り多くの[ユニバーサルドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)設計プリンシパルを使用します。これは、サポートされているデバイスによって異なる場合があります。
 
-## <a name="wdk-dependency"></a>WDK の依存関係
+## <a name="d3dkmt-headers"></a>D3DKMT ヘッダー
+前述のメソッドと型を含むヘッダーは、WDK で排他的に使用できるようにするのではなく、Windows 10 バージョン2004以降の Windows SDK で使用できます。
 
-前述したメソッドと型の多くは、WDK でのみ使用できます。
-WDK は主にドライバーを構築するために使用されますが、ドライバーにバンドルされているコンポーネントの下位レベルのインターフェイスも提供します。
-DX 以外の Api に WDK を含めたり、非 DX ランタイムまたはドライバーローダーに対して WDK の依存関係をローカライズしたりするために煩雑しすぎる場合は、Microsoft は、WDK の依存関係を効果的にサーバーに提供するために、非 DX API プロジェクトのアクセス許可を付与します。
-WDK の依存関係は、Microsoft のパブリックドキュメントを使用して、バイナリ互換性のある型と関数宣言をプロジェクトに作成することによって、切り離される場合があります。
-これらの typenames は、他のユーザーが非 DX API プロジェクトで WDK を意図的に使用している場合に、名前の競合を避けるために、Microsoft が使用するものと同じにすることはできません。
-
+必要なヘッダーを明確に含めるためのオプションの1つに、次のようなものがあります。
+その他のオプションも存在する場合があります。
+```cpp
+// Turn off NTSTATUS codes within windows.h, so that the more exhaustive ntstatus.h can be used.
+#define UMDF_USING_NTSTATUS
+#include <windows.h> // For the vast majority of Windows functionality
+#include <winternl.h> // For NT_SUCCESS
+#include <ntstatus.h> // For the most exhaustive list of NTSTATUS codes
+#include <d3dkmthk.h> // For D3DKMT support
+```

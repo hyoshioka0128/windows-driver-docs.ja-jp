@@ -7,15 +7,15 @@ keywords:
 - UMDF WDK、バージョン情報
 - リビジョン履歴 WDK UMDF
 - バージョン情報 WDK UMDF
-ms.date: 03/29/2019
+ms.date: 04/28/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0b2d6925905add88771007370104055068b96d80
-ms.sourcegitcommit: 677a9aeb3fb0c29fd8984f271fd803f15182fdb2
+ms.openlocfilehash: 7e29d819ac11e1ed55160f1e463c49e42bfaca59
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226527"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235442"
 ---
 # <a name="umdf-version-history"></a>UMDF バージョン履歴
 
@@ -26,17 +26,18 @@ ms.locfileid: "80226527"
 
 |UMDF バージョン|Release メソッド|このバージョンの Windows に含まれています|これを使用するドライバーは、で実行できます。|
 |--- |--- |--- |--- |
-|2.29|WDK でリリースされていません|Windows 10、バージョン 1903 (2019 年3月更新、19H1)|Windows 10 バージョン1903以降|
+|2.31|Windows 10 バージョン 2004 WDK|Windows 10、バージョン 2004 (2020 更新プログラム、Vibranium)|Windows 10 バージョン2004以降|
+|2.29|WDK でリリースされていません|Windows 10、バージョン 1903 (2019 年3月更新、19H1)|Windows 10 バージョン 1903 以降|
 |2.27|Windows 10 バージョン 1809 WDK|Windows 10、バージョン 1809 (2018 年10月の更新プログラム、Redstone 5)|Windows 10 バージョン1809以降|
 |2.25|Windows 10 バージョン 1803 WDK|Windows 10、バージョン 1803 (2018 年4月更新、Redstone 4)|Windows 10 バージョン1803以降|
-|2.23|Windows 10 バージョン 1709 WDK|Windows 10、バージョン 1709 (作成者の更新プログラム、Redstone 3)|Windows 10 バージョン1709以降|
-|2.21|Windows 10 バージョン 1703 WDK|Windows 10、バージョン 1703 (作成者の更新、Redstone 2)|Windows 10 バージョン1703以降|
+|2.23|Windows 10 バージョン 1709 WDK|Windows 10、バージョン 1709 (作成者の更新プログラム、Redstone 3)|Windows 10 バージョン 1709 以降|
+|2.21|Windows 10 バージョン 1703 WDK|Windows 10、バージョン 1703 (作成者の更新、Redstone 2)|Windows 10 バージョン 1703 以降|
 |2.19|Windows 10 バージョン 1607 WDK|Windows 10、バージョン 1607 (記念日更新、Redstone 1)|Windows 10 バージョン1607、Windows Server 2016 以降|
 |2.17|Windows 10 バージョン 1511 WDK|Windows 10 バージョン 1511 (11 月の更新プログラム、しきい値 2)|Windows 10 バージョン1511、Windows Server 2016 以降|
 |2.15|Windows 10 WDK|Windows 10 バージョン 1507 (しきい値 1)|Windows 10 バージョン1507、Windows Server 2016 以降|
-|2.0|Windows Driver Kit (WDK) 8.1|Windows 8.1|Windows 8.1 以降|
+|2.0|Windows Driver Kit (WDK) 8.1|Windows 8.1|Windows 8.1 以降|
 |1.11|Windows Driver Kit (WDK) 8|Windows 8|Windows Vista 以降|
-|1.9|Windows 7 WDK|Windows 7|Windows XP 以降|
+|1.9|Windows 7 WDK|Windows 7|Windows XP 以降|
 |1.7|Windows Server 2008 WDK|Windows Vista Service Pack 1 (SP1)、Windows Server 2008|Windows XP 以降|
 |1.5|Windows Vista WDK|Windows Vista|Windows XP 以降|
 
@@ -46,6 +47,12 @@ Windows Driver Kit (WDK) と Microsoft Visual Studio 2017 を使用して、Wind
 使用する WDF のバージョンを確認する方法については、「[使用する必要があるフレームワークのバージョン](building-and-loading-a-kmdf-driver.md#which-framework-version-should-i-use)」を参照してください。
 
 Windows 10 での UMDF ドライバーの新機能の詳細については、「 [WDF drivers の新](index.md)機能」を参照してください。
+
+## <a name="umdf-version-231"></a>UMDF バージョン2.31
+
+* 新しい API [ **Wdfdevicesetdeviceinterfacestateex**を追加しました](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicesetdeviceinterfacestateex)
+* 強化された既存の API [ **WdfDeviceGetSystemPowerAction**](/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetsystempoweraction)
+* ドライバーごとの**Hostprocessdbgbreakondriverload**レジストリ値が追加されました。 詳細については、「 [WDF ドライバーをデバッグするためのレジストリ値](https://docs.microsoft.com/windows-hardware/drivers/wdf/registry-values-for-debugging-kmdf-drivers)」を参照してください。
 
 ## <a name="umdf-version-229"></a>UMDF バージョン2.29
 
@@ -57,7 +64,7 @@ Windows 10 での UMDF ドライバーの新機能の詳細については、「
 
 ## <a name="umdf-version-225"></a>UMDF バージョン2.25
 
-* [複数のバージョンの Windows の WDF ドライバーをビルドする](building-a-wdf-driver-for-multiple-versions-of-windows.md)
+* [複数のバージョンの Windows 用の WDF ドライバーの構築](building-a-wdf-driver-for-multiple-versions-of-windows.md)
 * [**WdfDeviceRetrieveDeviceDirectoryString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceretrievedevicedirectorystring)
 
 ## <a name="umdf-version-223"></a>UMDF バージョン2.23
@@ -88,7 +95,7 @@ UMDF Version 2.19 の変更や追加はありません。
 
 バージョン2.15 の更新された DDIs の一覧を次に示します。
 
--   新しい[**WdfDeviceOpenDevicemapKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)メソッドを使用すると、ドライバーは**HKEY\_ローカル\_マシン\\ハードウェア\\DEVICEMAP**のサブキーと値にアクセスできます。
+-   新しい[**WdfDeviceOpenDevicemapKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceopendevicemapkey)メソッドを使用すると、ドライバーは**HKEY \_ LOCAL \_ MACHINE \\ HARDWARE \\ DEVICEMAP**のサブキーと値にアクセスできます。
 
 -   UMDF ドライバーは、 [**WdfIoTargetWdmGetTargetFileHandle**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdfiotargetwdmgettargetfilehandle)を呼び出して、スタック内の次に低いカーネルモードドライバーへのファイルハンドルを取得できます。 ドライバーは、ローカル i/o ターゲットに i/o を送信するためのフレームワークの抽象化をバイパスして、そのハンドルにデータを書き込むことができます。
 
@@ -102,28 +109,28 @@ UMDF Version 2.19 の変更や追加はありません。
 [はじめに「umdf WITH umdf](getting-started-with-umdf-version-2.md)」で説明されている共有機能に加えて、次のように、umdf version 2.0 が追加されます。
 
 -   システムが低電力状態のときにシステムをスリープ解除しない場合のタイマーのサポート。 詳細については、「[タイマーの使用](using-timers.md)」を参照してください。
--   **CanWakeDevice**メンバーを[**WDF\_INTERRUPT\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体に追加して、デバイスを低電力の Dx 状態から完全な D0 状態に戻すために使用できる割り込みをサポートするようになりました。 詳細については、「[割り込みを使用したデバイスのスリープ解除](using-an-interrupt-to-wake-a-device.md)」を参照してください。
+-   **CanWakeDevice**メンバーを[**WDF \_ INTERRUPT \_ CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfinterrupt/ns-wdfinterrupt-_wdf_interrupt_config)構造体に追加して、デバイスを低電力の Dx 状態から完全な D0 状態に戻すために使用できる割り込みをサポートするようになりました。 詳細については、「[割り込みを使用したデバイスのスリープ解除](using-an-interrupt-to-wake-a-device.md)」を参照してください。
 -   UMDF ドライバーの単一コンポーネントのシングルステート (F0) 電源管理。 詳細については、「 [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)」を参照してください。
 
 -   これで、Wdfkd のいくつかのデバッガー拡張コマンドを、UMDF 2.0 ドライバーにも使用できるようになりました。 拡張ライブラリには、UMDF 2.0 ドライバーのデバッグ専用に設計された次の新しい拡張コマンドも含まれています。
 
-    -   [ **! wdfkd. wdfumdevstack**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)
-    -   [ **! wdfkd. wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)
-    -   [ **! wdfkd. wdfumdownirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdownirp)
-    -   [ **! wdfkd. wdfumfile**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile)
-    -   [ **! wdfkd. wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp)
-    -   [ **! wdfkd. wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)
-    -   [ **! wdfkd. wdfdevice割込み**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdeviceinterrupts)
+    -   [**!wdfkd.wdfumdevstack**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstack)
+    -   [**!wdfkd.wdfumdevstacks**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdevstacks)
+    -   [**!wdfkd.wdfumdownirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumdownirp)
+    -   [**!wdfkd.wdfumfile**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumfile)
+    -   [**!wdfkd.wdfumirp**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirp)
+    -   [**!wdfkd.wdfumirps**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfumirps)
+    -   [**!wdfkd.wdfdeviceinterrupts**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-wdfkd-wdfdeviceinterrupts)
 
     拡張機能コマンドとフレームワークの適用性の一覧については、「[デバッガー拡張機能](debugger-extensions-for-kmdf-drivers.md)」を参照してください。
 
 -   [フレームワークのイベントロガー](using-the-framework-s-event-logger.md)または*インフライトレコーダー* (IFR) は、UMDF 2.0 ドライバーで動作するように更新されました。
 -   他の WDF デバッガー拡張機能が、UMDF 2.0 ドライバーで動作するように更新されました。 どのフレームワークに適用されるかに関する情報など、拡張機能コマンドの完全な一覧については、「 [Debugger Extensions FOR WDF Drivers](debugger-extensions-for-kmdf-drivers.md)」を参照してください。
--   **WdfIoTargetOpenLocalTargetByFile**を[**WDF\_IO\_ターゲット\_開いて\_の種類を開き**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type)、UMDF ドライバーが、関連付けられているファイルオブジェクトを必要とする下位ターゲットにドライバーで作成された要求を送信できるようにしました。 詳細については、「 **WDF\_IO\_TARGET\_OPEN\_TYPE**」を参照してください。
+-   **WdfIoTargetOpenLocalTargetByFile**を[**WDF \_ IO ターゲットの \_ \_ オープン \_ タイプ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/ne-wdfiotarget-_wdf_io_target_open_type)に追加し、UMDF ドライバーが、関連付けられているファイルオブジェクトを必要とする下位ターゲットにドライバーで作成された要求を送信できるようにしました。 詳細については、「 **WDF \_ IO \_ TARGET \_ OPEN \_ TYPE**」の「解説」を参照してください。
 -   次の UMDF のみのルーチン。
 
     -   [*EvtRequestImpersonate*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfrequest/nc-wdfrequest-evt_wdf_request_impersonate)
-    -   [**WDF\_IO\_ターゲット\_OPEN\_PARAMS\_FILE\_OPEN\_ファイルによって開く**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)\_
+    -   [**WDF \_ IO \_ ターゲット \_ オープン \_ パラメーター \_ INIT \_ OPEN \_ BY \_ FILE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfiotarget/nf-wdfiotarget-wdf_io_target_open_params_init_open_by_file)
     -   [**WdfDeviceAllocAndQueryInterfaceProperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceallocandqueryinterfaceproperty)
     -   [**Wdfdevice割り当て Interfaceproperty**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)
     -   [**WdfDeviceGetDeviceStackIoType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdevicegetdevicestackiotype)
@@ -158,8 +165,8 @@ UMDF Version 2.19 の変更や追加はありません。
     -   **WdfUsbTargetDeviceSelectConfigTypeMultiInterface**
     -   **WdfUsbTargetDeviceSelectConfigTypeInterfacesPairs**
 -   [**WdfUsbTargetDeviceQueryUsbCapability**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfusb/nf-wdfusb-wdfusbtargetdevicequeryusbcapability)での次の機能の種類のクエリのサポート:
-    -   **GUID\_USB\_機能\_デバイス\_接続\_高い\_速度\_互換性**
-    -   **GUID\_USB\_機能\_デバイス\_接続\_非常\_速度\_互換性があります**
+    -   **GUID \_ USB \_ 機能 \_ デバイス \_ 接続 \_ の \_ 高速 \_ 互換**
+    -   **GUID \_ USB \_ 機能 \_ デバイス \_ 接続の \_ 超 \_ 高速 \_ 互換**
 -   [WDF レジスタ/ポートアクセス関数](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfhwaccess/)を追加しました
 
 ## <a name="umdf-version-111"></a>UMDF バージョン1.11
@@ -193,7 +200,7 @@ UMDF Version 2.19 の変更や追加はありません。
 
 -   [ハードウェアへのアクセスと割り込みの処理](accessing-hardware-and-handling-interrupts.md)
 
--   [UMDF ドライバーでのデバイスプールの使用](using-device-pooling-in-umdf-drivers.md)
+-   [UMDF ドライバーでデバイス プールの使用](using-device-pooling-in-umdf-drivers.md)
 
 -   「 [INF ファイルで WDF ディレクティブを指定する](specifying-wdf-directives-in-inf-files.md)」で説明されているように、 **Umdfhostprocesssharing**、 **UmdfDirectHardwareAccess**、 **umdfhostprocesssharing**、 **umdfhostprocesssharing**、および**UmdfFsContextUsePolicy**ディレクティブを追加しました。
 

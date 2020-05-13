@@ -1,84 +1,84 @@
 ---
-title: アプリ開発者のためのハードウェア サポート アプリ (HSA) の手順
-description: カスタムの機能を備えたハードウェア サポート アプリ (HSA) の開発ガイドします。
+title: アプリ開発者向けのハードウェアサポートアプリ (HSA) の手順
+description: カスタム機能でハードウェアサポートアプリ (HSA) を開発するためのガイド
 keywords:
-- ユーザー設定 機能
+- カスタム、機能
 - UWP アプリ
-- カスタムの機能
+- カスタム機能
 - UWP
 - ハードウェア
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f362f1de55cd44db984bd28926f2bd42c4add3d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ed2ed079ee815762a788ec37c62cbb53f1efd621
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369385"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235425"
 ---
-# <a name="hardware-support-app-hsa-steps-for-app-developers"></a>ハードウェア サポート アプリ (HSA):アプリ開発者向けの手順
+# <a name="hardware-support-app-hsa-steps-for-app-developers"></a>ハードウェアサポートアプリ (HSA): アプリ開発者向けの手順
 
-このトピックでは、ドライバーを使用して、デバイス固有のアプリに関連付ける方法を説明しますまたは[RPC (リモート プロシージャ コール)](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)エンドポイント。  このような形で組み合わせると、ハードウェア サポート アプリ (HSA) として、アプリを参照します。  配布し、Microsoft Store を通じてハードウェア サポートのアプリを更新できます。
+このトピックでは、デバイス固有のアプリをドライバーまたは[RPC (リモートプロシージャコール)](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)エンドポイントに関連付ける方法について説明します。  この方法でペアにすると、アプリはハードウェアサポートアプリ (HSA) と呼ばれます。  Microsoft Store を使用して、ハードウェアサポートアプリを配布および更新できます。
 
-いずれかで始まり、[ユニバーサル Windows プラットフォーム (UWP) アプリ](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)またはデスクトップ (Win32) アプリです。  デスクトップ アプリを使用する場合を使用して、[デスクトップ ブリッジ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)ストアにアップロードできる Windows アプリ パッケージを作成します。
+[ユニバーサル Windows プラットフォーム (UWP) アプリ](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)またはデスクトップ (Win32) アプリから開始します。  デスクトップアプリを使用する場合は、[デスクトップブリッジ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)を使用して、ストアにアップロードできる Windows アプリパッケージを作成します。
 
-このページは、UWP アプリでは、手順を説明しますが、手順は Win32 オプションに似ています。 
+このページでは、UWP アプリの手順について説明しますが、手順は Win32 オプションの場合と似ています。 
 
-ドライバー開発者向けの手順が記載されて[ハードウェア サポート アプリ (HSA)。Steps for Driver Developers (ハードウェア サポート アプリ (HSA): ドライバー開発者向け手順)](hardware-support-app--hsa--steps-for-driver-developers.md)」をご覧ください。
+ドライバー開発者向けの手順については、「[ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](hardware-support-app--hsa--steps-for-driver-developers.md)」を参照してください。
 
 ## <a name="getting-started"></a>作業の開始
 
-まず、Visual Studio の最新バージョンをインストールし、UWP アプリ プロジェクトを作成します。  カスタム機能を使った UWP アプリをビルドするには、Windows SDK バージョン 10.0.15063 追加されたため (Windows 10 Creators Update) を必要がありますまたはそれ以降。 プロジェクト ファイルは、バージョン 10.0.15063 追加されたためを指定する必要がありますもまたはそれ以降。 構成の取得の詳細については、次を参照してください。[開発の UWP アプリの Visual Studio を使用して](/windows/uwp/develop/)します。
+まず、Visual Studio の最新バージョンをインストールし、UWP アプリプロジェクトを作成します。  カスタム機能を備えた UWP アプリをビルドするには Windows SDK バージョン 10.0.15063 (Windows 10 の作成者の更新) 以降が必要です。 プロジェクトファイルでは、バージョン10.0.15063 以上も指定する必要があります。 構成の詳細については、「 [Visual Studio を使用した UWP アプリの開発](/windows/uwp/develop/)」を参照してください。
 
-Windows 10 バージョン 1709 以降、特定のドライバーが存在する場合に、ユニバーサル Windows プラットフォーム (UWP) アプリがのみ読み込むことを指定できます。  学習する方法についてを参照してください[UWP アプリでのドライバーをペアリング](../install/pairing-app-and-driver-versions.md)します。
+Windows 10 バージョン1709以降では、特定のドライバーが存在する場合にのみ、ユニバーサル Windows プラットフォーム (UWP) アプリを読み込むように指定できます。  詳細については、「[ドライバーと UWP アプリのペアリング](../install/pairing-app-and-driver-versions.md)」を参照してください。
 
-## <a name="create-a-microsoft-store-account"></a>Microsoft Store アカウントを作成します。
+## <a name="create-a-microsoft-store-account"></a>Microsoft Store アカウントを作成する
 
-Microsoft Store での開発者アカウントが必要です。 ハードウェア パートナーには、そのハードウェア パートナーのアカウントとは異なる Microsoft Store のアカウントが必要です。 アプリケーション マニフェストと後の手順でデバイスのメタデータを作成するときに、発行元名が必要があります。 ストアのプロファイルを作成したら、アプリの名前を予約することもできます。
+Microsoft Store の開発者アカウントが必要です。 ハードウェアパートナーには、ハードウェアパートナーアカウントとは異なる Microsoft Store アカウントが必要です。 後の手順でアプリマニフェストとデバイスメタデータを作成するときに、発行者名が必要になります。 ストアプロファイルを作成したら、アプリの名前を予約することもできます。
 
-Microsoft Store アカウントを作成するには、 [UWP アプリのサインアップ ページ](https://go.microsoft.com/fwlink/p/?LinkId=302197)します。 詳細については、次を参照してください。[開発者アカウントを開く](https://docs.microsoft.com/windows/uwp/publish/opening-a-developer-account)します。
+Microsoft Store アカウントを作成するには、 [UWP アプリのサインアップページ](https://go.microsoft.com/fwlink/p/?LinkId=302197)にアクセスします。 詳細については、「[開発者アカウントを開く](https://docs.microsoft.com/windows/uwp/publish/opening-a-developer-account)」を参照してください。
 
 ## <a name="choosing-a-programming-language-for-the-app"></a>アプリのプログラミング言語の選択
 
-使用することができる場合、アプリは、ドライバーと通信、 [Windows.Devices.Custom](https://docs.microsoft.com/uwp/api/windows.devices.custom)、これは、WinRT API の一部であるため、JavaScript では、使用可能なC#、および C++。
+アプリがドライバーと通信する場合は、WinRT API の一部である[Windows. Devices. Custom](https://docs.microsoft.com/uwp/api/windows.devices.custom)を使用できます。そのため、JavaScript、C#、および C++ で使用できます。
 
-場合は、アプリは、NT サービスと通信、RPC Api を使用する必要があります。  RPC Api は、WinRT では使用できない Win32 Api であるため、C++ を使用するか、.NET interop (PInvoke) を使用して RPC 呼び出しをラップする必要があります。  詳細については、次を参照してください。[マネージ コードからネイティブ関数の呼び出し](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)します。
+アプリが NT サービスと通信する場合は、RPC Api を使用する必要があります。  RPC Api は WinRT では使用できない Win32 Api なので、C++ を使用するか、.NET interop (PInvoke) を使用して RPC 呼び出しをラップする必要があります。  詳細については、「[マネージコードからのネイティブ関数の呼び出し](https://docs.microsoft.com/cpp/dotnet/calling-native-functions-from-managed-code)」を参照してください。
 
-## <a name="contact-the-custom-capability-owner"></a>カスタムの機能の所有者にお問い合わせください。
+## <a name="contact-the-custom-capability-owner"></a>カスタム機能の所有者に問い合わせる
 
-機能の所有者からカスタムの機能にアクセスを要求する準備ができました。  次の情報を収集する必要があります。
+これで、機能所有者からカスタム機能へのアクセスを要求する準備ができました。  次の情報を収集する必要があります。
 
--   Microsoft Store からアプリの PFN (パッケージ ファミリ名)
--   カスタムの機能の名前
--   Certutil.exe を使用して、.cer ファイルから生成される証明書の署名、アプリの署名ハッシュです。 証明書は、sha-256 である必要があります。
+-   Microsoft Store からの App PFN (パッケージファミリ名)
+-   カスタム機能の名前
+-   アプリケーション署名証明書の署名ハッシュ。 certutil を使用して .cer ファイルから生成できます。 証明書は SHA-256 である必要があります。
 
-署名のハッシュを生成するには、実行`C:\Windows\System32\certutil.exe -dump CertificateName.cer`します。
+署名ハッシュを生成するには、を実行 `C:\Windows\System32\certutil.exe -dump CertificateName.cer` します。
 
-下部に表示される署名のハッシュを SHA256 になったことを確認します。  それ以外の場合、SHA256 証明書を使用してアプリに署名します。  このよう、結果になります。
+下部の近くにある署名ハッシュを探し、SHA256 であることを確認します。  それ以外の場合は、SHA256 証明書を使用してアプリに署名します。  結果は次のようになります。
 
 ```cpp
 Signature Hash:
 ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 ```
 
-機能の所有者では、この情報を使用して、生成、[カスタム機能の記述子を署名](hardware-support-app--hsa--steps-for-driver-developers.md#sccd-xml-schema)ファイルを開き、アプリ開発者にこのファイルを送信します。
+機能の所有者は、この情報を使用して、署名された[カスタム機能記述子](hardware-support-app--hsa--steps-for-driver-developers.md#sccd-xml-schema)ファイルを生成し、このファイルをアプリの開発者に送信します。
 
-アプリ開発者は、要求を承認する機能の所有者の待機中に開発者モードでカスタム機能を使用してアプリの開発を続行できます。 たとえば、次を使用してでデスクトップ PC で SCCD で[開発者モード](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development):
+アプリ開発者は、機能所有者が要求を承認するまでの間、開発者モードでカスタム機能を使用してアプリを開発し続けることができます。 たとえば、[開発者モード](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)のデスクトップ PC では、SCCD で次のコードを使用します。
 
--   SCCD 内のエントリをカタログします。
+-   SCCD のカタログエントリ。
 
     ```xml
     <Catalog>FFFF</Catalog>
     ```
--   承認されたエンティティのエントリ、SCCD で証明書署名ハッシュです。 適用も、検証には、中に 64 文字のシーケンスに配置してください。
+-   SCCD の承認されたエンティティエントリの証明書署名ハッシュ。 強制も検証もされていませんが、64-char シーケンスを入力してください。
 
     ```xml
     <AuthorizedEntity AppPackageFamilyName="MicrosoftHSATest.Microsoft.SDKSamples.Hsa.CPP_q536wpkpf5cy2" CertificateSignatureHash="ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4"></AuthorizedEntity>
     ```
 
-## <a name="add-a-custom-capability-to-the-app-package-manifest"></a>アプリ パッケージのマニフェストにカスタム機能を追加します。
+## <a name="add-a-custom-capability-to-the-app-package-manifest"></a>アプリケーションパッケージマニフェストにカスタム機能を追加する
 
-次に、変更、[アプリ パッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)ソース ファイル (`Package.appxmanifest`) 機能の属性を含める。
+次に、[アプリパッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)ソースファイル () を変更して、 `Package.appxmanifest` 機能属性を含めます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,40 +92,40 @@ ca9fc964db7e0c2938778f4559946833e7a8cfde0f3eaa07650766d4764e86c4
 </Package>
 ```
 
-Appx パッケージのパッケージ ルートに SCCD ファイルをコピーします。 Visual Studio のソリューション エクスプ ローラーで右クリック"プロジェクト -&gt;追加 -&gt;既存のアイテムの..." SCCD をプロジェクトに追加します。
+次に、SCCD ファイルを appx パッケージのパッケージルートにコピーします。 Visual Studio のソリューションエクスプローラーで、[プロジェクト- &gt; &gt; 既存項目の追加...] を右クリックします。 SCCD をプロジェクトに追加します。
 
-![Appx パッケージに SCCD ファイルを追加します。](images/addSCCDToAppx.png)
+![SCCD ファイルを appx パッケージに追加する](images/addSCCDToAppx.png)
 
-マーク SCCD ファイルを右クリックし、変更によってコンテンツをビルドとして SCCD**コンテンツ**に**True**します。  C#プロジェクトで、プロパティを使用して`Build Action = Content`、JavaScript プロジェクトの場合は、使用および`Package Action = Content`します。 
+SCCD ファイルを右クリックし、[**コンテンツ**] を [ **True**] に変更して、ビルドコンテンツとして SCCD をマークします。  C# プロジェクトの場合は、プロパティ `Build Action = Content` を使用します。 JavaScript プロジェクトの場合は、を使用し `Package Action = Content` ます。 
 
-![SCCD をコンテンツとしてマークします。](images/markSCCDAsContent.png)
+![SCCD をコンテンツとしてマークする](images/markSCCDAsContent.png)
 
-最後に、プロジェクトを右クリックし、選択**ストア**、し**アプリ パッケージの作成**です。
+最後に、プロジェクトを右クリックし、[**ストア**]、[**アプリパッケージの作成**] の順に選択します。
 
-**注意**:モバイル プラットフォームでのカスタム機能を備えた UWP アプリのサポートはありません。
+**注**: モバイルプラットフォームにカスタム機能を持つ UWP アプリはサポートされていません。
 
-## <a name="install-the-app"></a>アプリをインストールします。
+## <a name="install-the-app"></a>アプリをインストールする
 
-使用済みのカスタム機能を使った UWP アプリをインストールする[DISM - Deployment Image Servicing and Management](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)します。
+カスタム機能を備えた UWP アプリを事前にインストールするには、 [DISM-展開イメージのサービスと管理](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows)を使用します。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-開発者モードで、ターゲット マシンがある場合は、アプリの登録エラーをデバッグするには、次の手順を実行できます。
+ターゲットコンピューターが開発者モードの場合は、次の手順を実行して、アプリの登録エラーをデバッグできます。
 
-1.  AppX マニフェストからのカスタム機能のエントリを削除します。
-2.  アプリをビルドして展開します。
-3.  PowerShell ウィンドウで、入力`Get-AppxPackage`します。
-4.  一覧で、アプリを検索し、アプリと同じパッケージ ファミリ名を確認します。
-5.  パッケージ ファミリ名を持つ、SCCD を更新します。
-6.  AppX マニフェストにカスタム機能のエントリを追加します。
-7.  再構築して展開します。 
+1.  AppX マニフェストからカスタム機能のエントリを削除します。
+2.  アプリをビルドしてデプロイします。
+3.  PowerShell ウィンドウで、「」と入力 `Get-AppxPackage` します。
+4.  一覧でアプリを探し、アプリの厳密なパッケージファミリ名を確認します。
+5.  パッケージファミリ名を使用して SCCD を更新します。
+6.  カスタム機能のエントリを AppX マニフェストに再び追加します。
+7.  リビルドとデプロイ。 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-* [ハードウェア サポート アプリ (HSA):ドライバー開発者向け手順](hardware-support-app--hsa--steps-for-driver-developers.md)
-* [開発用にデバイスを有効にします。](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
-* [カスタムの機能のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)
-* [ユニバーサル Windows ドライバーの概要](../develop/getting-started-with-universal-drivers.md)
-* [ユニバーサル Windows プラットフォーム (UWP) アプリとドライバーのペアリング](../install/pairing-app-and-driver-versions.md)
+* [ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](hardware-support-app--hsa--steps-for-driver-developers.md)
+* [デバイスを開発用に有効にする](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+* [カスタム機能のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)
+* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [ドライバーとユニバーサル Windows プラットフォーム (UWP) アプリとのペアリング](../install/pairing-app-and-driver-versions.md)
 * [ユニバーサル Windows プラットフォームの紹介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)

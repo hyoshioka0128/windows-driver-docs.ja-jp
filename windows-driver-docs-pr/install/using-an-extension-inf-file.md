@@ -1,69 +1,69 @@
 ---
 title: 拡張 INF ファイルの使用
-description: Windows 10 以降できます機能を拡張するドライバー パッケージ INF ファイルの拡張子 INF と呼ばれる追加の INF ファイルを提供することで。
+description: Windows 10 以降では、拡張機能 INF と呼ばれる追加の INF ファイルを提供して、ドライバーパッケージの INF ファイルの機能を拡張できます。
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: faed1e66952e25d1b5b6e1d3340a500365768451
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2d3bc985429956fd791eb458f6f3e9a3b2fe22da
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384777"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235385"
 ---
 # <a name="using-an-extension-inf-file"></a>拡張 INF ファイルの使用
 
-Windows 10 では、以前は、Windows は、特定のデバイスをインストールする 1 つのドライバー パッケージを選択します。  結果として、大規模で複雑なドライバー パッケージのすべてのシナリオと構成をコードに含まれてし、必要なドライバー パッケージ全体の更新プログラムを各マイナー更新します。  Windows 10 以降、それぞれが処理されていない独立して、複数のコンポーネントに INF 機能を分割できます。  ドライバー パッケージの INF ファイルの機能を拡張するには、個別のドライバー パッケージに拡張子 INF を提供します。  INF 拡張子:
+Windows 10 より前の Windows では、特定のデバイスにインストールするドライバーパッケージが1つだけ選択されていました。  この結果、すべてのシナリオと構成のコードを含む大規模で複雑なドライバーパッケージが生成され、各マイナー更新でドライバーパッケージ全体を更新する必要がありました。  Windows 10 以降では、INF 機能を複数のコンポーネントに分割することができ、それぞれを個別に処理することができます。  ドライバーパッケージの INF ファイルの機能を拡張するには、別のドライバーパッケージに拡張機能の INF を提供します。  拡張機能の INF:
 
-* 別の会社によって提供され、基本の INF から独立して更新できます。
-* 基本 INF と同じに見えますが、カスタマイズまたは特殊化の基本 INF を拡張することができます。
-* デバイスの価値を向上しますが、ベースのドライバーが動作する必要はありません。
-* 必要があります、[ユニバーサル INF ファイル](../install/using-a-universal-inf-file.md)します。
+* は、別の会社によって提供され、ベース INF から独立して更新できます。
+* は基本 INF と同じように見えますが、カスタマイズまたは特殊化のためにベース INF を拡張できます。
+* はデバイスの値を拡張しますが、基本ドライバーが動作するためには必要ありません。
+* は、[ユニバーサル INF ファイル](../install/using-a-universal-inf-file.md)である必要があります。
 
-すべてのデバイスでは、1 つの基本 INF があり、必要に応じて、1 つまたは複数の拡張子 Inf を関連付けられています。
+すべてのデバイスは1つのベース INF を持つ必要があり、必要に応じて1つまたは複数の拡張機能の Inf を関連付けることができます。
 
-拡張子 INF を使う場合の一般的なシナリオは次のとおりです。
+拡張機能の INF を使用する一般的なシナリオは次のとおりです。
 
-* デバイスのフレンドリ名をカスタマイズまたはハードウェア構成の設定を変更するなどの基本 INF で提供された設定を変更します。
-* 指定することで 1 つまたは複数のソフトウェア コンポーネントの作成、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)を提供して、[コンポーネント INF ファイル](using-a-component-inf-file.md)します。
+* デバイスのフレンドリ名をカスタマイズしたり、ハードウェア構成設定を変更したりするなど、基本 INF に用意されている設定を変更する。
+* [Inf AddComponent ディレクティブ](inf-addcomponent-directive.md)を指定し、[コンポーネントの inf ファイル](using-a-component-inf-file.md)を指定して、1つまたは複数のソフトウェアコンポーネントを作成します。
 
-このページでは、以下の例では、これらシナリオのサンプル コードが表示されます。  参照してください[ユニバーサル ドライバー シナリオ](../develop/universal-driver-scenarios.md)、について説明する方法、 [DCHU ユニバーサル ドライバー サンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)拡張子 Inf を使用して。
+これらのシナリオのサンプルコードについては、このページの次の例を参照してください。  また、「[ユニバーサルドライバーのシナリオ](../develop/universal-driver-scenarios.md)」も参照してください。このシナリオでは、 [dchu ユニバーサルドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)が拡張機能の inf を使用する方法を説明します
 
-次の図では、2 つの会社は点線で示されている、同じデバイスの個別のドライバー パッケージを作成しました。  最初には、INF、拡張機能だけが含まれています。 と 2 番目にはコンポーネントの INF と従来のソフトウェア モジュールが含まれています。  図には、拡張子 INF が有効にする参照ソフトウェア モジュールをインストールするにはコンポーネント INF を参照する方法も示します。
+次の図では、2つの異なる企業が同じデバイス用に個別のドライバーパッケージを作成しています。これらは点線で示されています。  最初のは拡張機能の INF のみを含み、2つ目の要素にはコンポーネント INF とレガシソフトウェアモジュールが含まれています。  また、この図は、拡張機能の INF がコンポーネント INF を参照する方法も示しています。これは、ソフトウェアモジュールを参照してインストールすることができます。
 
-![拡張機能とコンポーネント INF の階層構造](images/extension-component-inf-hierarchy.png)
+![拡張機能とコンポーネントの INF 階層](images/extension-component-inf-hierarchy.png)
 
-## <a name="how-extension-inf-and-base-inf-work-together"></a>拡張子 INF ベース INF 連携させる方法
+## <a name="how-extension-inf-and-base-inf-work-together"></a>拡張機能 INF とベース INF の連携のしくみ
 
-基本 INF で設定した後、拡張子 INF の設定が適用されます。 結果として、拡張子 INF と基本 INF は、同じ設定を指定して、拡張子 INF のバージョンに適用されます。 同様に、基本の INF を変更する場合、拡張子 INF ままになり、新しい基本 INF に適用します。
+拡張機能 INF の設定は、基本 INF の設定後に適用されます。 その結果、拡張機能の INF とベース INF で同じ設定が指定されている場合、拡張機能 INF のバージョンが適用されます。 同様に、ベース INF が変更された場合、拡張機能の INF はそのままで、新しい基本 INF に適用されます。
 
-## <a name="specifying-extensionid"></a>ExtensionId を指定します。
+## <a name="specifying-extensionid"></a>ExtensionId の指定
 
-呼ばれる特殊な GUID を生成する拡張子 INF を記述するときに、 **ExtensionId**、INF の内のエントリは **\[バージョン\]** セクション。
+拡張機能の INF を記述するときに、 **Extensionid**と呼ばれる特殊な GUID を生成します。これは、inf の** \[ Version \] **セクションのエントリです。
 
-システム ハードウェア ID およびに拡張子 INF で指定されているデバイスの互換性 Id を照合して、特定のデバイスの可能な拡張子 Inf を識別する、 [**モデル**](inf-models-section.md)セクションに適用されます。そのシステム。
+システムは、デバイスのハードウェア ID と互換性のある Id を、そのシステムに適用される[**モデル**](inf-models-section.md)セクションの拡張機能の INF に指定されているものと照合することで、特定のデバイスで使用可能な拡張機能の inf を識別します。
 
-すべての可能な拡張機能、同じを指定する Inf の間で**ExtensionId**値、システムをインストールする 1 つだけを選択し、基本の INF の経由でその設定を適用します。  ドライバーの日付と、INF で指定されたドライバーのバージョンを使用して、順番に同じ複数の拡張子 Inf の間で 1 つの INF を選択**ExtensionId**します。
+同じ**Extensionid**値を指定するすべての拡張機能の inf の中で、システムは1つだけを選択して、基本 INF の設定をインストールし、その設定を適用します。  INF に指定されているドライバーの日付とドライバーのバージョンをこの順序で使用して、同じ**Extensionid**を持つ複数の拡張機能の inf 間で単一の inf を選択します。
 
-を示すためには、次の 3 つの拡張子 Inf しているすべての仮想デバイスを含む次のシナリオを検討してください。
+例として、次のようなシナリオでは、3つの拡張機能の Inf がある仮定のデバイスが含まれています。
 
-![ダイアグラムの表示方法の基本 INF と拡張子 Inf を選択します。](images/extension-base-inf-example.png)
+![基本 INF と拡張機能の Inf を選択する方法を示す図](images/extension-base-inf-example.png)
 
-**ExtensionId**に中かっこ、および各ドライバーの値が表示[ランク](how-setup-ranks-drivers--windows-vista-and-later-.md)バナーのリボンに表示されます。
+**Extensionid**の値は中かっこで示され、各ドライバーの[ランク](how-setup-ranks-drivers--windows-vista-and-later-.md)はバナーリボンに表示されます。
 
-最初に、システムは、最新バージョンおよび最高ランクのドライバーを選択します。
+最初に、システムは最新のバージョンとランクが最も高いドライバーを選択します。
 
-次に、システムは、使用可能な拡張子 Inf を処理します。  2 つが**ExtensionId**値`{B}`、いずれかが**ExtensionId**値`{A}`します。  最初の 2 つからとドライバーの日付が同じであります。  次の条件はドライバーのバージョンは、システムが v2.0 に拡張子 INF を選択します。
+次に、使用可能な拡張機能の Inf がシステムによって処理されます。  2つは**Extensionid**値を持ち、 `{B}` 1 つは**extensionid**値を持ち `{A}` ます。  最初の2つは、ドライバーの日付が同じであるとします。  次の tiebreaker はドライバーのバージョンであるため、システムは v2.0 を使用して拡張機能の INF を選択します。
 
-一意に拡張子 INF **ExtensionId**値が選択されていることもできます。  システムは、デバイスの基本 INF を適用し、そのデバイスの 2 つの拡張子 Inf を適用します。
+[固有の**Extensionid**値を持つ拡張機能 INF も選択されます。  システムによってデバイスのベース INF が適用され、そのデバイスの2つの拡張 Inf が適用されます。
 
-基本の INF の後に拡張子 INF ファイルが常に適用されているが、拡張子 Inf を適用する特定の順序がないことに注意してください。
+拡張機能の INF ファイルは常にベース INF の後に適用されますが、拡張機能の inf が適用される順序は決まっていないことに注意してください。
 
-## <a name="creating-an-extension-inf"></a>拡張子 INF を作成します。
+## <a name="creating-an-extension-inf"></a>拡張機能の INF を作成する
 
-INF の拡張機能として、INF を定義する必要があるエントリを次に示します。
+INF を拡張機能の INF として定義するために必要なエントリを次に示します。
 
-1.  これらの値を指定**クラス**と**ClassGuid**で、 [**バージョン**](inf-version-section.md)セクション。 セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)します。
+1.  [[**バージョン**](inf-version-section.md)] セクションで**クラス**および**classguid**にこれらの値を指定します。 セットアップクラスの詳細については、「[ベンダーが使用できるシステム定義のデバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)」を参照してください。
 
     ```cpp
     [Version]
@@ -72,46 +72,46 @@ INF の拡張機能として、INF を定義する必要があるエントリを
     ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
     ```
 
-2.  提供、 **ExtensionId**内のエントリ、 [ **\[バージョン\]** ](inf-version-section.md)セクション。 初期拡張子 INF の後続の更新プログラムの最後の GUID を再利用または INF、拡張機能の初期バージョンの新しい GUID を生成します。
+2.  [ [** \[ バージョン \] **](inf-version-section.md) ] セクションに**extensionid**エントリを入力します。 拡張機能の初期バージョンの新しい GUID を生成するか、最初の拡張機能の INF の後続の更新に対して最後の GUID を再利用します。
 
     ```cpp
     ExtensionId = {zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz} ; replace with your own GUID
     ```
 
-組織でのみ使用できますが、 **ExtensionID**所有します。  拡張機能 ID を登録する方法の詳細については、次を参照してください。 [Windows ハードウェア デベロッパー センター ダッシュ ボードでのハードウェアの提出を管理する](../dashboard/manage-your-hardware-submissions.md)します。     
+組織が所有する**Extensionid**のみを使用できることに注意してください。  拡張機能 ID の登録については、「 [Windows Hardware デベロッパーセンターダッシュボードでのハードウェアの送信の管理](../dashboard/manage-your-hardware-submissions.md)」を参照してください。     
 
-3.  拡張子 INF を更新する場合は、保持、 **ExtensionId**同じで、バージョン、または日付 (またはその両方) を指定のインクリメント、 [ **DriverVer** ](inf-driverver-directive.md)ディレクティブ。 指定された**ExtensionId**値には、PnP 選択最高 INF **DriverVer**。
+3.  拡張機能の INF を更新する場合は、 **Extensionid**を同じにし、 [**DriverVer**](inf-driverver-directive.md)ディレクティブで指定されたバージョンまたは日付 (またはその両方) をインクリメントします。 指定された**Extensionid**値に対して、PnP は**DriverVer**が最も高い INF を選択します。
 
 >[!NOTE]
-> INF 拡張機能が Windows 10 S を対象とする場合は、次を参照してください。 [S モード ドライバーの要件での Windows 10](https://docs.microsoft.com/windows-hardware/drivers/install/windows10sdriverrequirements)そのバージョンの Windows でドライバーのインストールについて。
+> 拡張機能の INF が Windows 10 S を対象としている場合は、そのバージョンの Windows でのドライバーのインストールに関する情報について、「 [windows 10 In S モードドライバーの要件](https://docs.microsoft.com/windows-hardware/drivers/install/windows10sdriverrequirements)」を参照してください。
 
-4.  [ **INF モデル セクション**](inf-models-section.md)、1 つまたは複数のハードウェアとターゲット デバイスのものと一致する互換性 Id を指定します。  これらのハードウェアと互換性のある Id が行う基本 INF のものと一致する必要がないことに注意してください。  通常、INF の拡張機能では、特定のドライバーの構成をさらに専門の目的で、基本の INF よりもより特定のハードウェア ID が一覧表示します。  たとえば、基本 INF は 2 つの部分の PCI ハードウェア ID を使用可能性がありますに拡張子 INF を次のように、4 部構成の PCI ハードウェア ID を指定します。
+4.  [ [**INF モデル] セクション**](inf-models-section.md)で、ターゲットデバイスのハードウェア id と互換性のある id を1つ以上指定します。  これらのハードウェアおよび互換性のある Id は、ベース INF のものと一致する必要がないことに注意してください。  通常、拡張機能の INF には、特定のドライバー構成をさらに特殊化することを目的とした、基本 INF よりも具体的なハードウェア ID が一覧表示されます。  たとえば、ベース INF は2つの部分で構成される PCI ハードウェア ID を使用しますが、拡張機能の INF は次のように4つの部分で構成される PCI ハードウェア ID を指定します。
     
     ```cpp
     [DeviceExtensions.NTamd64]
     %Device.ExtensionDesc% = DeviceExtension_Install, PCI\VEN_XXXX&DEV_XXXX&SUBSYS_XXXXXXXX&REV_XXXX
     ```
 
-    または、拡張子 INF が基本の INF と同じハードウェア ID をインスタンスのリスト、デバイスが既に非常に限定対象となるか、基本 INF が既に特定のハードウェア ID を一覧表示
+    または、拡張機能の INF によって、ベース INF と同じハードウェア ID が一覧表示される場合があります。たとえば、デバイスの対象が既に狭い場合や、ベース INF に特定のハードウェア ID が既に含まれている場合などです。
     
-    場合によっては、拡張子 INF 可能性がありますより広範な一連のデバイス間での設定をカスタマイズするにはより一般的なデバイス ID、互換性 ID などを提供します。
+    場合によっては、拡張機能の INF では、より多くのデバイスで設定をカスタマイズするために、互換性のある ID のような特定のデバイス ID が提供されることがあります。
 
-5.  使用済みのサービスを定義しない`SPSVCINST_ASSOCSERVICE`します。  ただし、INF の拡張機能では、デバイスのフィルター ドライバーなどの他のサービスを定義できます。  サービスを指定する方法の詳細については、次を参照してください。 [ **INF AddService ディレクティブ**](inf-addservice-directive.md)します。
+5.  でサービスを定義しないで `SPSVCINST_ASSOCSERVICE` ください。  ただし、拡張機能の INF では、デバイスのフィルタードライバーなど、他のサービスを定義できます。  サービスの指定の詳細については、「 [**INF AddService ディレクティブ**](inf-addservice-directive.md)」を参照してください。
 
-ほとんどの場合に提出する INF 拡張機能パッケージ ハードウェア デベロッパー センターとは別にドライバー パッケージから。  パッケージの拡張機能、Inf とサンプル コードへのリンクの例についてを参照してください。[ユニバーサル ドライバー シナリオ](../develop/universal-driver-scenarios.md)します。
+ほとんどの場合、基本ドライバーパッケージとは別に、拡張機能の INF パッケージをハードウェアデベロッパーセンターに送信します。  拡張機能の Inf をパッケージ化する方法の例と、サンプルコードへのリンクについては、「[ユニバーサルドライバーのシナリオ](../develop/universal-driver-scenarios.md)」を参照してください。
 
-ドライバーの検証と送信のプロセスは、拡張機能と正規表現の Inf Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
+ドライバーの検証と送信のプロセスは、通常の Inf と同様に拡張機能の Inf と同じです。 詳細については、「 [WINDOWS HLK はじめに](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)」を参照してください。
 
-## <a name="uninstalling-an-extension-driver"></a>拡張機能、ドライバーのアンインストール
+## <a name="uninstalling-an-extension-driver"></a>拡張機能ドライバーのアンインストール
 
-拡張機能ドライバーをアンインストールする前に、ベースのデバイスをアンインストールする必要があります。  次に、拡張子 INF を pnputil ツールを実行します。
+拡張機能ドライバーをアンインストールする前に、まず基本デバイスをアンインストールする必要があります。  次に、拡張機能の INF で [PnPUtil] を実行します。
 
-ドライバー パッケージを削除する使用`pnputil /delete-driver oem0.inf`します。
-強制的にドライバー パッケージを削除を使用して、`pnputil /delete-driver oem1.inf /force`します。
+ドライバーパッケージを削除するには、を使用 `pnputil /delete-driver oem0.inf` します。
+ドライバーパッケージを強制的に削除するには、を使用し `pnputil /delete-driver oem1.inf /force` ます。
 
-## <a name="example-1-using-an-extension-inf-to-set-the-device-friendly-name"></a>例 1:拡張子 INF を使用して、デバイスのフレンドリ名を設定するには
+## <a name="example-1-using-an-extension-inf-to-set-the-device-friendly-name"></a>例 1: 拡張機能の INF を使用してデバイスのフレンドリ名を設定する
 
-1 つの一般的なシナリオで基本のドライバーと基本 INF では、デバイスの製造元 (IHV) が提供と、システム ビルダー (OEM) 拡張子 INF を補足するものし、場合によっては、構成と基本 INF の設定の上書きを示します。  次のスニペットは、完全な拡張子 INF をデバイスのフレンドリ名を設定する方法を示します。
+1つの一般的なシナリオでは、デバイスの製造元 (IHV) によって基本ドライバーとベース INF が提供されます。その後、システムビルダー (OEM) は、を補完する拡張機能の INF を提供し、場合によってはベース INF の構成と設定を上書きします。  次のスニペットは、デバイスのフレンドリ名を設定する方法を示す完全な拡張機能の INF です。
 
 ```cpp
 [Version]
@@ -143,11 +143,11 @@ CONTOSO              = "Contoso"
 Device.ExtensionDesc = "Sample Device Extension"
 ```
 
-## <a name="example-2-using-an-extension-inf-to-install-additional-software"></a>例 2:拡張子 INF を使用して、追加のソフトウェアをインストールするには
+## <a name="example-2-using-an-extension-inf-to-install-additional-software"></a>例 2: 拡張機能 INF を使用して追加のソフトウェアをインストールする
 
-次のスニペットは、完全な拡張子 INF に含まれている、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)します。  この例では[INF AddComponent ディレクティブ](inf-addcomponent-directive.md)サービスおよび実行可能ファイルをインストールするコンポーネントを作成します。  コンポーネントの INF で実行できる操作についての詳細については、次を参照してください。[コンポーネントの INF ファイルを使用して](using-a-component-inf-file.md)します。
+次のスニペットは、[汎用ドライバーのドライバーパッケージインストールツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)に含まれている完全な拡張機能の INF です。  この例では、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)を使用して、サービスと実行可能ファイルをインストールするコンポーネントを作成します。  コンポーネント INF で実行できる操作の詳細については、「[コンポーネント Inf ファイルの使用](using-a-component-inf-file.md)」を参照してください。
 
-このファイルをオンラインにアクセスするを参照してください。 [ `osrfx2_DCHU_extension.inx`](https://github.com/Microsoft/Windows-driver-samples/blob/master/general/DCHU/osrfx2_DCHU_extension_loose/osrfx2_DCHU_extension/osrfx2_DCHU_extension.inx)します。
+オンラインでこのファイルにアクセスするには、「」を参照してください [`osrfx2_DCHU_extension.inx`](https://github.com/Microsoft/Windows-driver-samples/blob/master/general/DCHU/osrfx2_DCHU_extension_loose/osrfx2_DCHU_extension/osrfx2_DCHU_extension.inx) 。
 
 ```cpp
 ;/*++
@@ -230,15 +230,15 @@ OsrFx2.ExtensionDesc = "OsrFx2 DCHU Device Extension"
 REG_EXPAND_SZ = 0x00020000
 FLG_ADDREG_KEYONLY = 0x00000010
 ```
-拡張子 INF を使用して、フィルター ドライバーをインストールする、次を参照してください[このページ](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)の拡張子 INF を使用して、フィルター ドライバーを正しく登録する方法について詳しく説明します。
+拡張機能 INF を使用してフィルタードライバーをインストールするには、[このページ](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)を参照してください。拡張機能 inf を使用してフィルタードライバーを適切に登録する方法について説明しています。
 
-##  <a name="submitting-an-extension-inf-for-certification"></a>証明書の拡張子 INF を送信します。
+##  <a name="submitting-an-extension-inf-for-certification"></a>認定のために拡張機能の INF を送信する
 
-ハードウェア デベロッパー センターに拡張子 Inf を使用する方法の詳細についてを参照してください[Windows ハードウェア デベロッパー センター ダッシュ ボードに拡張子 Inf を扱う](../dashboard/submit-dashboard-extension-inf-files.md)します。
+ハードウェアデベロッパーセンターで拡張機能の Inf を操作する方法の詳細については、 [Windows Hardware デベロッパーセンターのダッシュボードの「拡張機能](../dashboard/submit-dashboard-extension-inf-files.md)の使用」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [ユニバーサル ドライバーのシナリオ](../develop/universal-driver-scenarios.md)
 * [ユニバーサル INF ファイルの使用](using-a-universal-inf-file.md)
-* [ユニバーサル ドライバーの概要](../develop/getting-started-with-universal-drivers.md)
-* [ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)
+* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [ユニバーサルドライバー用ドライバーパッケージインストールツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)

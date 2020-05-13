@@ -1,25 +1,25 @@
 ---
-title: ユニバーサル INF ファイルの使用
+title: Using a Universal INF File (ユニバーサル INF ファイルの使用)
 description: ユニバーサルまたはモバイルのドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
-ms.date: 04/20/2017
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 517479adc9d31562812a27e2555839c2c55435e0
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 7b099889203e9d3e00e0eb16348ef67d8bb9b256
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242993"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235393"
 ---
-# <a name="using-a-universal-inf-file"></a>ユニバーサル INF ファイルの使用
+# <a name="using-a-universal-inf-file"></a>Using a Universal INF File (ユニバーサル INF ファイルの使用)
 
-ユニバーサルまたはモバイルのドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。 デスクトップドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要はありませんが、パフォーマンス上の利点があるため、この方法をお勧めします。
+[Windows ドライバー](../develop/getting-started-with-windows-drivers.md)パッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要があります。 Windows デスクトップドライバーパッケージを作成する場合は、ユニバーサル INF ファイルを使用する必要はありませんが、パフォーマンス上の利点があるため、この方法をお勧めします。
 
 ユニバーサル INF ファイルでは、Windows ドライバーで使用できる[inf 構文](inf-file-sections-and-directives.md)のサブセットを使用します。 ユニバーサル INF ファイルは、ドライバーをインストールし、デバイスハードウェアを構成しますが、他の操作 (共同インストーラーの実行など) を実行しません。
 
 ## <a name="why-is-a-universal-inf-file-required-on-non-desktop-editions-of-windows"></a>Windows のデスクトップ以外のエディションではユニバーサル INF ファイルが必要なのはなぜですか。
 
-Windows 10 Mobile など、Windows の一部のエディションでは、ドライバーのインストールにプラグアンドプレイメカニズムがサポートされていません。 そのため、ドライバーのインストールは、ターゲットシステムのオフラインイメージで実行されます。 Microsoft Visual Studio は、このようなターゲットシステムのドライバーをビルドするときに、適用されるすべてのレジストリ設定を含む XML ベースの構成ファイルを生成します。 そのため、このようなシステムの INF ファイルでは、システムの実行時の動作に依存しない加法操作のみを実行する必要があります。 このような制限された構文を含む INF ファイルは、universal INF ファイルと呼ばれます。
+Windows 10 など、windows の一部のエディションでは、Windows 10 Desktop で利用できるドライバーインストール方法のサブセットのみを使用します。 デスクトップ以外のバージョンの Windows の INF ファイルでは、システムの実行時の動作に依存しない加法操作のみを実行する必要があります。 このような制限された構文を含む INF ファイルは、universal INF ファイルと呼ばれます。
 
 ユニバーサル INF ファイルは、毎回同じ結果を使用して、予想どおりにインストールされます。 インストールの結果は、システムの実行時の動作に依存しません。 たとえば、追加の DLL 内のコードはオフラインシステムで実行できないため、ユニバーサル INF ファイルでは、共同インストーラー参照は無効です。
 
@@ -32,9 +32,9 @@ Windows 10 Mobile など、Windows の一部のエディションでは、ドラ
 次の場合を除き、ユニバーサル INF ファイルでは任意の INF セクションを使用できます。
 
 -   [**INF ClassInstall32 セクション**](inf-classinstall32-section.md)
--   [**INF DDInstall. CoInstallers セクション**](inf-ddinstall-coinstallers-section.md)
--   [**INF DDInstall. FactDef セクション**](inf-ddinstall-factdef-section.md)
--   [**INF DDInstall. LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)
+-   [**INF DDInstall.CoInstallers セクション**](inf-ddinstall-coinstallers-section.md)
+-   [**INF DDInstall.FactDef セクション**](inf-ddinstall-factdef-section.md)
+-   [**INF DDInstall.LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)
 
 **TargetOSVersion**デコレーションに**ProductType**フラグまたは**suitemask**フラグが含まれていない限り、 [**INF の製造元セクション**](inf-manufacturer-section.md)は有効です。
 
@@ -70,15 +70,15 @@ Windows 10 Mobile など、Windows の一部のエディションでは、ドラ
 
 -   [**INF CopyFiles ディレクティブ**](inf-copyfiles-directive.md)は、[コピー先のディレクトリ](inf-destinationdirs-section.md)が次のいずれかの場合にのみ有効です。
 
-    -   11 (% WINDIR%\\System32) に対応
-    -   12 (% WINDIR%\\System32\\ドライバー) に対応
-    -   13 (ドライバーが格納されている% WINDIR%\\System32\\DriverStore\\FileRepository の下のディレクトリに対応)  
+    -   11 (% WINDIR% System32 に対応 \\ )
+    -   12 (% WINDIR% \\ System32 ドライバーに対応 \\ )
+    -   13 ( \\ ドライバーが格納されている% WINDIR% System32 \\ driverstore FileRepository の下のディレクトリに対応 \\ )  
             **注:** CopyFiles は、 **Destinationdirs**に*dirid* 13 が含まれているファイルの名前を変更するために使用することはできません。 また、 *dirid* 13 は、デバイスのインストールシナリオの限られたサブセットについてのみ、Windows 10 製品で有効です。  詳細については、特定のデバイスクラスのガイダンスとサンプルを参照してください。
-    -   10、SysWOW64 (% WINDIR%\\SysWOW64 に対応)
+    -   10、SysWOW64 (% WINDIR% syswow64 に対応 \\ )
     -   10、*ベンダー固有のサブディレクトリ名*  
             **注:** Windows 10 バージョン1709では、ベンダー固有のサブディレクトリ名で*dirid* 10 を使用することは、 [InfVerif](../devtest/infverif.md)ツールを使用して測定されたユニバーサル INF で有効です。  今後のリリースでは、この値はサポートされない可能性があります。  *Dirid* 13 に移行することをお勧めします。
 
 ## <a name="see-also"></a>参照
 
-* [ユニバーサル Windows ドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)
-* [InfVerif](https://docs.microsoft.com/windows-hardware/drivers/devtest/infverif)
+* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [InfVerif](../devtest/infverif.md)

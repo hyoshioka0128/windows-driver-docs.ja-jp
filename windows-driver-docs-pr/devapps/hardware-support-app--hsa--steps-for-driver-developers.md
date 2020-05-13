@@ -1,68 +1,68 @@
 ---
-title: ドライバー開発者向けのハードウェア サポート アプリ (HSA) の手順
-description: 対になるドライバーのハードウェア サポート アプリ (HSA) でカスタム機能を作成します。
+title: ドライバー開発者向けのハードウェアサポートアプリ (HSA) の手順
+description: ドライバーとハードウェアサポートアプリをペアリングするカスタム機能の作成 (HSA)
 keywords:
-- ユーザー設定 機能
+- カスタム、機能
 - UWP アプリ
-- カスタムの機能
+- カスタム機能
 - UWP
 - ハードウェア
 ms.date: 08/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fe3ab8127550a8b16e36859f0a6d1d9002ee6e8
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c18ff9030cd7dcdc95e747e8736a641016d1a793
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369372"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235424"
 ---
-# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>ハードウェア サポート アプリ (HSA):ドライバー開発者向けの手順
+# <a name="hardware-support-app-hsa-steps-for-driver-developers"></a>ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順
 
-ハードウェア サポート アプリ (HSA) は、特定のドライバーとペアになっているデバイスに固有のアプリまたは[RPC (リモート プロシージャ コール)](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)エンドポイント。
+ハードウェアサポートアプリ (HSA) は、特定のドライバーまたは[RPC (リモートプロシージャコール)](https://docs.microsoft.com/windows/desktop/Rpc/rpc-start-page)エンドポイントとペアになっているデバイス固有のアプリです。
 
-ドライバーを使用して、ストア アプリを関連付けるには、カスタム機能と呼ばれる特殊な値を最初に予約します。 機能を提供し、機能を提供して、アプリ開発者にアプリへのアクセスを許可します。  このページは、ドライバー開発者向けの次の手順を説明します。
+ストアアプリをドライバーに関連付けるには、まず、カスタム機能と呼ばれる特別な値を予約します。 次に、機能を提供するアプリへのアクセスを許可し、アプリの開発者に機能を提供します。  このページでは、ドライバーの開発者向けの手順について説明します。
 
-アプリ開発者向けの手順が記載されて[ハードウェア サポート アプリ (HSA)。Steps for App Developers (ハードウェア サポート アプリ (HSA): アプリ開発者向け手順)](hardware-support-app--hsa--steps-for-app-developers.md)」をご覧ください。
+アプリ開発者向けの手順については、「[ハードウェアサポートアプリ (HSA): アプリ開発者向けの手順](hardware-support-app--hsa--steps-for-app-developers.md)」を参照してください。
 
-HSA の 4 つ ("DCHU") の設計原則の 1 つ[ユニバーサル Windows ドライバー](../develop/getting-started-with-universal-drivers.md)します。
+HSA は、 [Windows ドライバー](../develop/getting-started-with-windows-drivers.md)の3つの ("dch") 設計原則の1つです。
 
-## <a name="reserving-a-custom-capability"></a>カスタムの機能を予約します。
+## <a name="reserving-a-custom-capability"></a>カスタム機能の予約
 
-最初に、カスタム機能を予約します。
+まず、カスタム機能を予約します。
 
-1.  Microsoft ハードウェア サポート アプリ レビューのメール (<HSAReview@microsoft.com>)、次の情報。
+1.  Microsoft ハードウェアサポートアプリのレビュー ( <HSAReview@microsoft.com> ) について、次の情報を電子メールでお読みください。
 
     * 連絡先情報
     * 会社名
-    * 機能の名前 (する必要がありますで一意であるし、所有者を参照)
-    * どのようなリソースにアクセスする機能が必要ですか。
-    * セキュリティやプライバシー上の問題
-    * パートナーにどのようなデータ イベントが処理されるでしょうか。
-      * ユーザーの正確な場所などの個人識別子が含まれます、イベントには、パスワード、IP アドレス、ユーザー名、PUID、デバイス ID、CID および連絡先データ) でしょうか。
-      * ユーザーのデバイスで長時間のデータ イベントまたはに送信パートナーですか?
-    * データ機能をでへのアクセスを提供しますか。
-    * この機能のエンド ユーザーにとってのメリットは何ですか。
-    * Microsoft Store アプリの発行元 ID が含まれます  いずれかを取得するには、Microsoft Store のページで、アプリのスケルトン エントリを作成します。 アプリの PFN の予約の詳細については、次を参照してください。[の名前を予約することで、アプリを作成する](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。
+    * 機能の名前 (一意であり、所有者を参照する必要があります)
+    * 機能にはどのようなリソースにアクセスする必要がありますか。
+    * セキュリティまたはプライバシーの問題
+    * どのようなデータイベントがパートナーに処理されますか。
+      * イベントには、正確なユーザーの場所、パスワード、IP アドレス、PUID、デバイス ID、CID、ユーザー名、連絡先データなどの個人識別子が含まれますか。
+      * データイベントはユーザーのデバイスにとどまりますか、それともパートナーに送信されますか?
+    * 機能によってどのようなデータにアクセスできるか。
+    * この機能のエンドユーザーにはどのような利点がありますか。
+    * Microsoft Store アプリの発行元 ID を含めます。  1つを取得するには、[Microsoft Store] ページでスケルトンアプリエントリを作成します。 アプリの PFN を予約する方法の詳細については、「[名前を予約してアプリを作成](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)する」を参照してください。
 
-2.  Microsoft の電子メール要求を承認すると場合、は、バックアップの形式でカスタム機能の一意の文字列名**CompanyName.capabilityName\_PublisherID**します。
+2.  要求が承認された場合、Microsoft は、 **capabilityName \_ PublisherID**の形式で一意のカスタム機能文字列名を返します。
 
-現在、RPC エンドポイントまたはドライバーにアクセスできるように、カスタム機能を使用できます。
+これで、カスタム機能を使用して、RPC エンドポイントまたはドライバーへのアクセスを許可できるようになりました。
 
-## <a name="allowing-access-to-an-rpc-endpoint-to-a-uwp-app-using-the-custom-capability"></a>カスタムの機能を使用して UWP アプリへの RPC エンドポイントへのアクセスを許可します。
+## <a name="allowing-access-to-an-rpc-endpoint-to-a-uwp-app-using-the-custom-capability"></a>カスタム機能を使用して UWP アプリへの RPC エンドポイントへのアクセスを許可する
 
-カスタム機能を持つ UWP アプリへの RPC エンドポイントへのアクセスを許可するのには、次の手順を実行します。
+カスタム機能を持つ UWP アプリへの RPC エンドポイントへのアクセスを許可するには、次の手順を実行します。
 
-1.  呼び出す[ **DeriveCapabilitySidsFromName** ](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname)セキュリティ ID (SID) にカスタム機能名を変換します。
-2.  許可されていると共に、RPC エンドポイントのセキュリティ記述子のために必要なその他の Sid の ACE のアクセスに SID を追加します。
-3.  セキュリティ記述子から情報を使用して RPC エンドポイントを作成します。
+1.  [**DeriveCapabilitySidsFromName**](https://docs.microsoft.com/windows/desktop/api/securitybaseapi/nf-securitybaseapi-derivecapabilitysidsfromname)を呼び出して、カスタム機能名をセキュリティ ID (SID) に変換します。
+2.  アクセスが許可されている ACE に SID を追加し、RPC エンドポイントのセキュリティ記述子に必要なその他の Sid を追加します。
+3.  セキュリティ記述子の情報を使用して RPC エンドポイントを作成します。
 
-上記の実装を確認できます、 [RPC サーバー コード](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomCapability/Service/Server/RpcServer.cpp)で、[カスタム機能サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)します。
+上記の実装については、「[カスタム機能のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)」の[RPC サーバーコード](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomCapability/Service/Server/RpcServer.cpp)を参照してください。
 
-## <a name="allowing-access-to-a-driver-to-a-uwp-app-using-the-custom-capability"></a>カスタムの機能を使用して UWP アプリへのドライバーへのアクセスを許可します。
+## <a name="allowing-access-to-a-driver-to-a-uwp-app-using-the-custom-capability"></a>カスタム機能を使用して UWP アプリへのドライバーのアクセスを許可する
 
-カスタム機能を使った UWP アプリへのドライバーへのアクセスを許可するのには、INF ファイルまたはドライバーのソースのいずれかに、いくつかの行を追加します。
+カスタム機能を備えた UWP アプリへのドライバーのアクセスを許可するには、INF ファイルまたはドライバーソースのいずれかに数行を追加します。
 
-INF ファイルで、カスタム機能をよう指定します。
+INF ファイルで、次のようにカスタム機能を指定します。
 
 ```cpp
 [WDMPNPB003_Device.NT.Interfaces] 
@@ -76,7 +76,7 @@ AddProperty= AddInterfaceSection.AddProps
 {026e516e-b814-414b-83cd-856d6fef4822}, 8, 0x2012,, "CompanyName.myCustomCapabilityNameTBD_MyStorePubId"
 ```
 
-または、ドライバーでは、次の操作を行います。
+または、ドライバーで次の操作を実行します。
 
 ```c++
 WDF_DEVICE_INTERFACE_PROPERTY_DATA PropertyData = {}; 
@@ -96,15 +96,15 @@ Status = WdfDeviceAssignInterfaceProperty(
 
 ```
 
-置換`zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz`を公開するインターフェイスの guid。  置換*CompanyName*を自分の会社名、 *myCustomCapabilityNameTBD* 、会社内で一意の名前を持つと*MyStorePubId*パブリッシャーとストア id。 
+`zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz`を公開するインターフェイスの GUID で置き換えます。  *CompanyName*を会社名、 *myCustomCapabilityNameTBD*を会社内で一意の名前に、 *mystorepubid*を発行元ストア ID に置き換えます。 
 
-上述のドライバー コードの例は、次を参照してください。、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)します。
+上に示したドライバーコードの例については、「[ドライバーパッケージインストールツールキット (ユニバーサルドライバー用](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU))」を参照してください。
 
-## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>署名済みのカスタム機能記述子 (SCCD) ファイルの準備
+## <a name="preparing-the-signed-custom-capability-descriptor-sccd-file"></a>署名されたカスタム機能記述子 (SCCD) ファイルを準備しています
 
-署名済みのカスタム機能記述子 (SCCD) ファイルは、符号付きの XML ファイルが 1 つまたは複数のカスタム機能の使用を承認します。  ドライバーまたは RPC エンドポイントの所有者は、このファイルを提供することで、アプリ開発者にカスタム機能を付与します。
+署名されたカスタム機能記述子 (SCCD) ファイルは、1つまたは複数のカスタム機能の使用を承認する署名付き XML ファイルです。  ドライバーまたは RPC エンドポイントの所有者は、このファイルを提供することで、アプリ開発者にカスタム機能を付与します。
 
-SCCD ファイルを準備するには、カスタム機能の文字列をまず更新します。  開始点として、次の例を使用します。
+SCCD ファイルを準備するには、まず、カスタム機能文字列を更新します。  次の例を出発点として使用します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -119,19 +119,19 @@ SCCD ファイルを準備するには、カスタム機能の文字列をまず
 </CustomCapabilityDescriptor>
 ```
 
-次に、カスタム機能の所有者は、パッケージ ファミリ名 (PFN) と署名ハッシュをアプリ開発者から取得し、SCCD ファイルでこれらの文字列を更新します。
+次に、カスタム機能の所有者は、アプリ開発者からパッケージファミリ名 (PFN) と署名ハッシュを取得し、SCCD ファイル内のこれらの文字列を更新します。
 
-**注:** アプリが直接、証明書で署名する必要はありませんが、指定された証明書は、アプリケーションに署名する証明書チェーンの一部である必要があります。
+**注:** アプリは証明書を使用して直接署名する必要はありませんが、指定された証明書は、アプリに署名する証明書チェーンの一部である必要があります。
 
-SCCD を完了すると、機能の所有者にメールで送信 Microsoft の署名します。  Microsoft では、機能の所有者に符号付き SCCD を返します。
+SCCD が完了すると、機能所有者は署名のために Microsoft に電子メールを受け取ります。  Microsoft は、署名された SCCD を機能所有者に返します。
 
-次に、機能の所有者は、アプリ開発者に、SCCD を送信します。  アプリ開発者には、アプリケーション マニフェストの署名 SCCD が含まれています。  行う必要があるアプリの開発者については、次を参照してください。[ハードウェア サポート アプリ (HSA)。Steps for App Developers (ハードウェア サポート アプリ (HSA): アプリ開発者向け手順)](hardware-support-app--hsa--steps-for-app-developers.md)」をご覧ください。
+次に、機能所有者が SCCD をアプリ開発者に送信します。  アプリの開発者は、署名された SCCD をアプリケーションマニフェストに含めます。  アプリ開発者が行う必要がある操作については、「[ハードウェアサポートアプリ (HSA): アプリ開発者向けの手順](hardware-support-app--hsa--steps-for-app-developers.md)」を参照してください。
 
-## <a name="limiting-the-scope-of-an-sccd"></a>SCCD のスコープを制限します。
+## <a name="limiting-the-scope-of-an-sccd"></a>SCCD のスコープを制限する
 
-テスト目的で、カスタム機能の所有者は、開発者モードでコンピューターにハードウェアのサポートのアプリのインストールを制限できます。
+テストを目的として、カスタム機能の所有者は、ハードウェアサポートアプリのインストールを開発者モードのコンピューターに制限することができます。
 
-Microsoft によって署名された SCCD を取得する前に、これには、次のように追加します**DeveloperModeOnly**:。
+これを行うには、Microsoft によって署名された SCCD を取得する前に、 **DeveloperModeOnly**を追加します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -147,11 +147,11 @@ Microsoft によって署名された SCCD を取得する前に、これには�
 </CustomCapabilityDescriptor>
 ```
 
-内のデバイスにのみ SCCD works を署名結果[開発者モード](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)します。 
+生成された署名付き SCCD は、[開発者モード](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)のデバイスでのみ動作します。 
 
-## <a name="allowing-any-app-to-use-a-custom-capability"></a>カスタムの機能を使用するすべてのアプリを許可します。
+## <a name="allowing-any-app-to-use-a-custom-capability"></a>すべてのアプリにカスタム機能の使用を許可する
 
-カスタムの機能を使用して許可されているエンティティ (アプリ) を指定することをお勧めします。 場合によっては、ただし、可能性がある、SCCD を含む任意のアプリを許可します。  Windows 10 バージョンは 1809 以降、これを行う追加して**AllowAny** AuthorizedEntities 要素にします。 使用するための妥当性を指定してください、SCCD ファイルで許可されているエンティティを宣言することをお勧め、ため**AllowAny** SCCD に Microsoft の署名を送信する場合。
+カスタム機能を使用できる承認済みエンティティ (アプリ) を指定することをお勧めします。 ただし、場合によっては、すべてのアプリに SCCD を含めることを許可する必要があります。  Windows 10 バージョン1809以降では、 **Allowany**を AuthorizedEntities 要素に追加することによってこれを行うことができます。 ベストプラクティスとして、SCCD ファイルで承認済みエンティティを宣言することをお勧めします。 Microsoft によって署名されるように SCCD を送信する場合は、 **Allowany**を使用する理由を指定してください。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -164,36 +164,36 @@ Microsoft によって署名された SCCD を取得する前に、これには�
 </CustomCapabilityDescriptor>
 ```
 
-結果の符号付き SCCD は任意のアプリ パッケージで検証します。 
+結果として得られる署名付き SCCD は、任意のアプリケーションパッケージで検証します。 
 
 ## <a name="multiple-sccds"></a>複数の SCCDs
 
-アプリは、Windows 10 バージョン 1803 以降、1 つまたは複数の SCCD ファイルからカスタムの機能を宣言できます。 アプリ パッケージのルートに SCCD ファイルを配置します。
+Windows 10 バージョン1803以降では、アプリは1つ以上の SCCD ファイルからカスタム機能を宣言できます。 SCCD ファイルをアプリケーションパッケージのルートに配置します。
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>まとめ
 
-次の図は、上述の手順をまとめたものです。
+次の図は、上で説明したシーケンスの概要を示しています。
 
-![署名済み、SCCD を取得します。](images/signsccd.png)
+![SCCD 署名を取得する](images/signsccd.png)
 
 ## <a name="see-also"></a>参照
 
-* [ユニバーサル Windows ドライバーの概要](../develop/getting-started-with-universal-drivers.md)
+* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
 * [ユニバーサル Windows プラットフォームの紹介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
 * [アプリの機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
-* [Visual Studio を使用して UWP アプリを開発します。](https://docs.microsoft.com/windows/uwp/develop/)
-* [ユニバーサル Windows プラットフォーム (UWP) アプリとドライバーのペアリング](../install/pairing-app-and-driver-versions.md)
-* [UWP アプリの開発](https://docs.microsoft.com/windows/uwp/develop/)
-* [Desktop App Converter (デスクトップ ブリッジ) を使用してアプリをパッケージ化](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
-* [カスタムの機能のサンプル アプリ](https://go.microsoft.com/fwlink/p/?LinkId=846904)
-* [カスタムの機能のドライバーのサンプル](https://aka.ms/customcapabilitydriversample )
-* [Windows 10 でアプリをサイドロードします。](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-* [カスタムの機能に関する FAQ](FAQ-on-custom-capabilities.md)
+* [Visual Studio を使用して UWP アプリを開発する](https://docs.microsoft.com/windows/uwp/develop/)
+* [ドライバーとユニバーサル Windows プラットフォーム (UWP) アプリとのペアリング](../install/pairing-app-and-driver-versions.md)
+* [UWP アプリを開発する](https://docs.microsoft.com/windows/uwp/develop/)
+* [Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+* [カスタム機能のサンプルアプリ](https://go.microsoft.com/fwlink/p/?LinkId=846904)
+* [カスタム機能ドライバーのサンプル](https://aka.ms/customcapabilitydriversample )
+* [Windows 10 でのアプリのサイドローディング](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
+* [カスタム機能に関する FAQ](FAQ-on-custom-capabilities.md)
 
 ## <a name="sccd-xml-schema"></a>SCCD XML スキーマ
 
-SCCD ファイルの正式な XML XSD スキーマを次に示します。  このスキーマを使用すると、確認を送信する前に、SCCD を検証します。  参照してください[スキーマ キャッシュ](https://docs.microsoft.com/visualstudio/xml-tools/schema-cache)と[XML ドキュメントの検証](https://docs.microsoft.com/visualstudio/xml-tools/xml-document-validation)スキーマをインポートして、IntelliSense と検証に関する情報について。
+SCCD ファイルの正式な XML XSD スキーマを次に示します。  このスキーマを使用して、確認のために送信する前に SCCD を検証します。  スキーマのインポートと IntelliSense による検証の詳細については、「[スキーマキャッシュ](https://docs.microsoft.com/visualstudio/xml-tools/schema-cache)と[XML ドキュメントの検証](https://docs.microsoft.com/visualstudio/xml-tools/xml-document-validation)」を参照してください。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +294,7 @@ SCCD ファイルの正式な XML XSD スキーマを次に示します。  こ�
 </xs:schema>
 ```
 
-次のスキーマは、Windows 10、バージョンは 1809 時点で有効でもできます。  承認済みのエンティティである任意のアプリ パッケージを宣言する SCCD できます。 
+次のスキーマは、Windows 10 バージョン1809以降でも有効です。  これにより、SCCD は、承認されたエンティティとなるアプリケーションパッケージを宣言できます。 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

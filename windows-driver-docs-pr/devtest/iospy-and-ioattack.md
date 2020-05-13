@@ -4,17 +4,19 @@ description: IoSpy と IoAttack
 ms.assetid: 4cc5bf5c-f9e4-43d4-8532-dd7813b6f2a0
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ee226ee52ab9754fc21be11fa9406dea3ce144
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: fcf4b33dc20e9e668a39f2ae7c1deceb94967011
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356520"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235288"
 ---
+# <a name="iospy-and-ioattack"></a>IoSpy と IoAttack
+
 > [!NOTE]
-> IoSpy と IoAttack は Windows 10 バージョン 1703 後は WDK に含まれて使用できなくします。
+> IoSpy と Iospy は、Windows 10 バージョン1703以降の WDK では利用できなくなりました。
 >
-> これらのツールを別の方法として、HLK で使用可能なファジー化のテストを使用して検討してください。 次に考慮すべきいくつか示します。
+> これらのツールの代わりに、HLK で使用可能なファジーテストの使用を検討してください。 次に、考慮すべき点をいくつか示します。
 > 
 > [DF - ランダム IOCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 >
@@ -26,22 +28,18 @@ ms.locfileid: "63356520"
 >
 > [DF - Misc API のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 >
-> 使用することも、[カーネル同期遅延ファジー テスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)Driver Verifier に含まれます。
+> また、ドライバー検証ツールに含まれている[カーネル同期遅延ファジー化](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)を使用することもできます。
 >
 
+IoSpy と Iospy は、カーネルモードドライバーで IOCTL および WMI ファジーテストを実行するツールです。 これらのツールを使用すると、ドライバーの IOCTL および WMI コードによってデータバッファーとバッファー長が正しく検証されるようにすることができます。 これにより、システムが不安定になる可能性があるバッファーオーバーランを回避できます。
 
-# <a name="iospy-and-ioattack"></a>IoSpy と IoAttack
+*ファジーテスト*では、ドライバー内の欠陥を特定するために、ランダムなデータ (*ファジー*) を使用してドライバーを提示します。 IOCTL インターフェイスまたは WMI インターフェイスに対するファジーテストは新しいものではありません。 ただし、ほとんどのテストスイートは、一般的な*ブラックボックス*のファジーテストで、ドライバーの ioctl インターフェイスまたは wmi インターフェイスへの外部アクセスだけを検証するか、ドライバー内の特定の IOCTL および wmi パスをテストするように記述されています。
 
+IoSpy と Iospy は、ファジーテストのための*ホワイトボックス*アプローチの多くを使用します。 デバイスでファジーテストが有効になっている場合、デバイスのドライバーに送信された IOCTL および WMI 要求をキャプチャし、それらの要求の属性をデータファイル内に記録します。 その後、IoAttack は、このデータファイルから属性を読み取り、これらの属性を使用して IOCTL または WMI 要求をドライバーに送信する前に、さまざまな方法でそれらを*ファジー*化またはランダムに変更します。 これにより、IOCTL または WMI 固有のテストを記述することなく、ドライバーのバッファー検証コードにさらに入力できます。
 
-IoSpy と IoAttack、IOCTL および WMI を実行するツールがカーネル モード ドライバーのテストをファジー化です。 これらのツールを使用すると、そのドライバーの IOCTL ことを確認できるし、データ バッファーとバッファーの長さが正しく検証 WMI コード。 これにより、システムが不安定につながるバッファー オーバーランを回避します。
+IoSpy と Iospy は、windows Vista 以降のバージョンの Windows オペレーティングシステムを実行するシステムでサポートされています。 これらのツールは、[デバイスの基本テスト](device-fundamentals-tests.md)の一環として、の一部として WDK に含まれています。「[侵入テスト (デバイスの基礎)](coverage-tests--device-fundamentals-.md)」を参照してください。 これらのテストを選択するには、[**ドライバーテストの追加または削除**] ダイアログボックスの [基本 \\ デバイスの基本 \\ 侵入 \\ iospy & 攻撃フォルダー] をクリックします。
 
-*ファジー テスト*と呼ばれる、ランダム データでドライバーを表示します。*ファジー*、ドライバー内で欠陥を決定するためにします。 ファジー テスト IOCTL または WMI インターフェイス上では、新しいではありません。 ただし、ほとんどのテスト スイートでは、ジェネリック*ブラック_ボックス*ファジー テストのみドライバーの IOCTL または WMI インターフェイスへの外部アクセスを確認します。 または、テスト、ドライバー内で特定の IOCTL および WMI パスに書き込まれます。
-
-IoSpy と IoAttack 使用の詳細は、*ホワイト ボックス*ファジー テストする方法。 ファジー テストでデバイスを有効にすると、IoSpy は、デバイスのドライバーに送信された IOCTL および WMI の要求をキャプチャし、データ ファイル内でこれらの要求の属性を記録します。 IoAttack: このデータ ファイルからの属性の読み取りし、これらの属性を使用して*ファジー*、またはランダムにドライバーに送信する前に、さまざまな方法で IOCTL または WMI 要求を変更します。 これはにより IOCTL または WMI に固有のテストを記述することがなく、ドライバーのバッファーの検証コードへのエントリではさらにできます。
-
-IoSpy と IoAttack は、Windows Vista または Windows オペレーティング システムの以降のバージョンを実行するシステムでサポートされます。 これらのツールは、同様の一部として WDK に含まれるの一部、[デバイス基礎テスト](device-fundamentals-tests.md)を参照してください[侵入テスト (デバイスの基本)](coverage-tests--device-fundamentals-.md)します。 これらのテストを選択することができます、**追加または削除するドライバーのテスト**ダイアログ ボックスの Basic\\デバイス基礎\\侵入\\IoSpy と攻撃のフォルダー。
-
-**重要な**   IoSpy と IoAttack をカーネル モードのデバッグを既に準備しているテスト システムで実行する必要があります。
+**重要**   IoSpy と Iospy は、以前にカーネルモードデバッグ用に準備されたテストシステムで実行する必要があります。
 
  
 
@@ -51,7 +49,7 @@ IoSpy と IoAttack は、Windows Vista または Windows オペレーティン�
 
 [IoAttack](ioattack.md)
 
-[IoSpy IoAttack と実行のファジー テストする方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)
+[IoSpy と Iospy でファジーテストを実行する方法](how-to-perform-fuzz-tests-with-iospy-and-ioattack.md)
 
  
 

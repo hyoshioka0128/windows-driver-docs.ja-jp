@@ -3,91 +3,91 @@ title: サンプル カーネルモード ドライバー
 description: サンプル カーネルモード ドライバー
 ms.assetid: 09d08e07-e991-458f-aedf-018a0dd20af5
 keywords:
-- カーネル モード ドライバー WDK サンプル
-- サンプル ドライバー WDK のカーネル モード
+- カーネルモードドライバー WDK、サンプル
+- サンプルドライバー WDK カーネルモード
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e07cfefcf800ca14704e1b13d65e424d525807
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 66c41f15c1baf14e98b7b1457de82b44d74a7506
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373384"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235437"
 ---
 # <a name="sample-kernel-mode-drivers"></a>サンプル カーネルモード ドライバー
 
-WDK は、さまざまなサンプルのカーネル モード ドライバーを提供します。 WDK をインストールした後、`src\general`サブディレクトリには、すべてのカーネル モード ドライバーに適用できるサンプル ドライバーのコードが含まれています。 サンプルは、オンラインも保持されます。 これらのサンプルを以下に示します。
+WDK には、さまざまなサンプルカーネルモードドライバーが用意されています。 WDK をインストールした後、 `src\general` サブディレクトリには、すべてのカーネルモードドライバーに適用できるサンプルドライバーコードが含まれています。 サンプルもオンラインで保持されています。 これらのサンプルには次のものが含まれます。
 
 [**DCHU**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)
 
-適用、DCHU[設計原則](../develop/getting-started-with-universal-drivers.md)(宣言型、Componentized、アプリのハードウェア サポート [HSA]、およびユニバーサル API 対応)。  実際のユニバーサル ドライバー パッケージのモデルとして使うことができます。
+DCH design の[原則](../develop/getting-started-with-windows-drivers.md)(宣言型、コンポーネント、およびハードウェアサポートアプリ [HSA]) を適用します。  独自の Windows ドライバーパッケージのモデルとして使用できます。
 
 [**PLX9x5x**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/PLX9x5x)
 
-このサンプルでは、Windows Driver Framework を使用してジェネリック PCI デバイス ドライバーを作成する方法を示します。
+このサンプルでは、Windows ドライバーフレームワークを使用して、汎用 PCI デバイス用のドライバーを作成する方法を示します。
 
 [**SimpleMediaSource**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/SimpleMediaSource)
 
-このサンプルでは、カメラとしてインストールすることができます、フレームを生成するカスタム メディア ソースとドライバー パッケージを作成する方法を示します。
+このサンプルでは、カスタムメディアソースとドライバーパッケージを作成して、カメラとしてインストールし、フレームを生成する方法を示します。
 
 [**SystemDma/wdm**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/SystemDma/wdm)
 
-このサンプルでは、V3 システム DMA の使用状況を示します。 どのドライバーは、DMA を使用してハードウェアの場所にデータを書き込むの Windows でサポートされているシステム DMA コント ローラーを使用可能性がありますが表示されます。
+このサンプルでは、V3 システム DMA の使用方法を示します。 Windows でサポートされているシステム DMA コントローラーを使用して、ドライバーが DMA を使用してハードウェアの場所にデータを書き込む方法を示します。
 
 [**WinHEC 2017 ラボ**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/WinHEC%202017%20Lab)
 
-[**Windows のパフォーマンスの WinHEC 2017/最適化**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/WinHEC%202017/Optimizing%20Windows%20Performance)
+[**WinHEC 2017/Windows パフォーマンスの最適化**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/WinHEC%202017/Optimizing%20Windows%20Performance)
 
-[**キャンセル**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/cancel)  
+[**cancel**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/cancel)  
 
-使用方法を示します[キャンセル セーフ IRP キュー](cancel-safe-irp-queues.md)します。
+[キャンセルセーフな IRP キュー](cancel-safe-irp-queues.md)の使用方法を示します。
 
 [**エコー**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo)
 
-[**イベント**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/event)  
+[**場合**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/event)  
 
-アプリケーションが通知を要求した場合、ハードウェアのイベントのアプリケーションに通知するカーネル モード ドライバーが使用できるテクニックを示します。 1 つの方法を使用して[イベント オブジェクト](event-objects.md)、もう一方が依存して[キュー](queuing-and-dequeuing-irps.md)イベントが発生するまで、通知要求。
+アプリケーションが通知を要求した場合に、カーネルモードドライバーがハードウェアイベントをアプリケーションに通知するために使用できる技法を示します。 1つの手法で[イベントオブジェクト](event-objects.md)を使用し、もう1つの方法は、イベントが発生するまで通知要求の[キュー](queuing-and-dequeuing-irps.md)に依存します。
 
 [**filehistory**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/filehistory)
 
-FileHistory サンプルは、定期的なバックアップのスケジュールが停止している場合、ファイル履歴サービスを開始するコンソール アプリケーションです。 アプリケーションには、既定のバックアップ ターゲットとして使用する記憶装置のパス名が、コマンド ライン パラメーターとして必要です。
+FileHistory サンプルは、停止している場合はファイル履歴サービスを開始し、定期的なバックアップをスケジュールするコンソールアプリケーションです。 アプリケーションでは、コマンドラインパラメーターとして、既定のバックアップターゲットとして使用するストレージデバイスのパス名を指定する必要があります。
 
 [**IOCTL サンプル**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/ioctl)
 
-ドライバーが I/O 制御コードをサポートする方法について説明します。
+ドライバーで i/o 制御コードをサポートする方法を示します。
 
 [**obcallback**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/obcallback)
 
-ObCallback サンプル ドライバーでは、プロセスの保護のための登録済みのコールバックの使用を示します。 ドライバーは、プロセスの作成時と呼ばれるコントロールのコールバックを登録します。
+ObCallback サンプルドライバーは、プロセス保護のための登録済みコールバックの使用方法を示しています。 ドライバーは、プロセスの作成時に呼び出されるコントロールのコールバックを登録します。
 
 [**pcidrv**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/pcidrv)
 
-このサンプルでは、PCI デバイス KMDF ドライバーを作成する方法を示します。 Intel 82557/82558 でサンプルの動作は、PCI Ethernet アダプター (10/100) および Intel 互換に基づいています。
+このサンプルでは、PCI デバイス用の KMDF ドライバーを記述する方法を示します。 このサンプルは、Intel 82557/82558 ベースの PCI イーサネットアダプター (10/100) と Intel 互換機と連携して動作します。
 
 [**perfcounters/kcs**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/perfcounters/kcs)
 
-Kcs サンプル ドライバーでは、カーネル モードのパフォーマンスのライブラリの使用を示します。
+Kcs サンプルドライバーは、カーネルモードのパフォーマンスライブラリの使用方法を示しています。
 
-[**registry/regfltr**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/registry/regfltr)
+[**レジストリ/regfltr**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/registry/regfltr)
 
-RegFltr サンプルでは、レジストリのフィルター ドライバーを作成する方法を示します。
+RegFltr サンプルは、レジストリフィルタードライバーを記述する方法を示しています。
 
-[**トースター**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster)  
+[**toaster**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster)  
 
-準拠しているドライバーの一連のサンプル コードを提供、 [Windows Driver Model](windows-driver-model.md) (WDM)。 このサンプルでは、サンプルのインストール ソフトウェアも含まれています。
+[Windows Driver Model](windows-driver-model.md) (WDM) に準拠した一連のドライバーのサンプルコードを提供します。 このサンプルには、サンプルのインストールソフトウェアも含まれています。
 
 [**tracedrv**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)  
 
-使用する方法を示します[WPP ソフトウェア トレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)します。
+[WPP ソフトウェアのトレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)を使用する方法について説明します。
 
-[**UMDF ドライバーのスケルトン サンプル**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/umdfSkeleton)
+[**UMDF ドライバースケルトンのサンプル**](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/umdfSkeleton)
 
-このサンプルでは、ユーザー モード ドライバー フレームワークのバージョン 1 を使用して、最小限のドライバーを作成する方法を示します。
+このサンプルでは、ユーザーモードドライバーフレームワークのバージョン1を使用して、最小限のドライバーを記述する方法を示します。
 
-[**HID デバイスの firefly KMDF フィルター ドライバー** ](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly)フィルター ドライバーを記述する方法を示すと共に、このサンプルではリモートの I/O ターゲット インターフェイスを使用してカーネル モードで HID コレクションを開き、設定および取得する IOCTL 要求を送信する方法を示します。機能のレポートだけでなく、アプリケーションが WMI インターフェイスを使用して、フィルター ドライバーにコマンドを送信する方法。
+[**HID デバイス用 Firefkmdf フィルタードライバー**](https://github.com/Microsoft/Windows-driver-samples/tree/master/hid/firefly)このサンプルでは、フィルタードライバーの記述方法を説明すると共に、リモート i/o ターゲットインターフェイスを使用して、HID コレクションをカーネルモードで開き、IOCTL 要求を送信して機能レポートを設定および取得する方法に加えて、アプリケーションが WMI インターフェイスを使用してフィルタードライバーにコマンドを送信する方法を示します。
 
-その他のサブディレクトリ、`\src`ディレクトリには、さまざまな種類のハードウェア用のカーネル モード ドライバーのサンプル コードが含まれます。
+ディレクトリの他のサブディレクトリには、 `\src` さまざまな種類のハードウェアのカーネルモードドライバー用のサンプルコードが含まれています。
 
 ## <a name="see-also"></a>関連項目
 
-[Microsoft Windows ドライバー サンプル](https://github.com/Microsoft/Windows-driver-samples)github
+GitHub の[Microsoft Windows ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples)

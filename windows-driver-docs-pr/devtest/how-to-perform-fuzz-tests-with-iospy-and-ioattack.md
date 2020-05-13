@@ -1,20 +1,22 @@
 ---
 title: IoSpy と IoAttack でファジー テストを実行する方法
-description: このトピックでは、IoSpy IoAttack ツールを使用して、ファジー テストを実行する方法を説明します
+description: このトピックでは、IoSpy および Iospy ツールを使用してファジーテストを実行する方法について説明します。
 ms.assetid: f800e962-2a0f-4039-a479-395a62428b06
 ms.date: 07/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 646c9b4592b3cc23fde1305a14398d761e46f026
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5376d23b3cfaf6b67e045415c8fdb12b711eb0de
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330692"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235300"
 ---
+# <a name="how-to-perform-fuzz-tests-with-iospy-and-ioattack"></a>IoSpy と IoAttack でファジー テストを実行する方法
+
 > [!NOTE]
-> IoSpy と IoAttack は Windows 10 バージョン 1703 後は WDK に含まれて使用できなくします。
+> IoSpy と Iospy は、Windows 10 バージョン1703以降の WDK では利用できなくなりました。
 >
-> これらのツールを別の方法として、HLK で使用可能なファジー化のテストを使用して検討してください。 次に考慮すべきいくつか示します。
+> これらのツールの代わりに、HLK で使用可能なファジーテストの使用を検討してください。 次に、考慮すべき点をいくつか示します。
 > 
 > [DF - ランダム IOCTL のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/236b8ad5-0ba1-4075-80a6-ae9dafb71c94)
 >
@@ -26,37 +28,35 @@ ms.locfileid: "63330692"
 >
 > [DF - Misc API のファジー テスト (信頼性)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/fb305d04-6e8c-4dfc-9984-9692df82fbd8)
 >
-> 使用することも、[カーネル同期遅延ファジー テスト](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)Driver Verifier に含まれます。
+> また、ドライバー検証ツールに含まれている[カーネル同期遅延ファジー化](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)を使用することもできます。
 >
 
-# <a name="how-to-perform-fuzz-tests-with-iospy-and-ioattack"></a>IoSpy と IoAttack でファジー テストを実行する方法
 
+[Iospy](iospy.md)と[iospy](ioattack.md)を使用してファジーテストを実行するには、次の手順を実行します。
 
-使用して、ファジー テストを実行する[IoSpy](iospy.md)と[IoAttack](ioattack.md)次の操作を行います。
+1.  [Iospy](iospy.md)のインストール:
 
-1.  インストール[IoSpy](iospy.md):
+    IoSpy をインストールし、特定のデバイスでファジーテストを有効にするには、 **enable I/o Spy**テストを実行します。 *DQ*パラメーターは、iospy フィルタードライバーがインストールされているデバイスを制御します。
 
-    IoSpy をインストールし、特定のデバイスにファジー テストを有効にするには実行、**を有効にする I/O スパイ**をテストします。 *DQ*パラメーターは、IoSpy フィルター ドライバーがインストールされているデバイスを制御します。
+2.  指定されたデバイスで IOCTL および WMI テストを実行します。
 
-2.  指定したデバイス IOCTL および WMI のテストを実行します。
+    テストシステムを再起動した後、 [Iospy](iospy.md)は、IOCTL および WMI 要求を、ファジーテストが有効になっているデバイスにフィルター処理する準備ができています。 ここで、適切なテストを使用して、これらのデバイスのドライバーで IOCTL および WMI コードパスを実行する必要があります。 これにより、IoSpy は、これらの IOCTL および WMI 要求に基づいて、可能な限り多くの詳細情報を記録することができます。 IoSpy は、これらの詳細を[Iospy データファイル](iospy.md)に保存します。
 
-    テスト システムを再起動した後[IoSpy](iospy.md)ファジー テストの有効化されたデバイスに IOCTL および WMI の要求をフィルター処理する準備ができました。 IOCTL を今すぐ行うことが必要し、するすべてのテストを使用してこれらのデバイス用のドライバーでの WMI コード パスが適切です。 これにより、これらの IOCTL および WMI の要求に基づいてできるだけ多くの詳細を記録する IoSpy できます。 IoSpy でこれらの詳細を保存する、 [IoSpy データファイル](iospy.md)します。
+3.  IoSpy のアンインストール:
 
-3.  IoSpy をアンインストールします。
+    IOCTL および WMI コードパスを完全に実行したら、IoSpy を事前にアンインストールしてから、ファジーテストを実行する必要があります。 [Iospy](iospy.md)をアンインストールするには、 **Disable i/o spy**テストを実行します。
 
-    IOCTL および WMI のコード パスを完全に演習するが後、ファジー テストを実行する IoAttack を実行する前に IoSpy をまずアンインストールする必要があります。 アンインストールする[IoSpy](iospy.md)、実行、 **I/O スパイを無効にする**をテストします。
+    このコマンドは、ファジーテストが有効にされたすべてのデバイスから[Iospy](iospy.md)フィルタードライバーを削除します。 コマンドを実行した後、メモリから IoSpy フィルタードライバーをアンロードするために、テストシステムを再起動します。
 
-    このコマンドを削除、 [IoSpy](iospy.md)ファジー テストを有効にしていたすべてのデバイスからのフィルター ドライバー。 コマンドを実行すると、メモリから IoSpy フィルター ドライバーをアンロードするために、テスト システムを再起動します。
-
-    **注**  IoSpy をアンインストールすると、IoSpy データ ファイルは削除されません。 このファイルの場所が設定されて、 *DFD*パラメーターを**I/O スパイを有効にする**をテストします。 既定の場所は %systemdrive%\\DriverTest\\IoSpy します。 詳細については、次を参照してください。 [IoSpy データファイル](iospy.md)します。
+    **メモ**   IoSpy をアンインストールしても、IoSpy データファイルは削除されません。 このファイルの場所は、 *DFD*パラメーターによって、 **Enable i/o Spy**テストに設定されます。 既定の場所は% SystemDrive% \\ drivertest \\ iospy です。 詳細については、「 [Iospy データファイル](iospy.md)」を参照してください。
 
      
 
-4.  実行[IoAttack](ioattack.md):
+4.  [Ioattack](ioattack.md)を実行する:
 
-    テスト システムを実行して、ファジー テストを実行する準備ができました、 **I/O 攻撃の実行**をテストします。 IoAttack を実行する方法の詳細については、次を参照してください。 [IoAttack](ioattack.md)します。
+    テストシステムは、**実行 I/o 攻撃**テストを実行して、ファジーテストを実行する準備ができました。 IoAttack の実行方法の詳細については、「 [ioattack](ioattack.md)」を参照してください。
 
-    **注**  ドライバーの IOCTL および WMI インターフェイスのアクセス権限を確認するために実行する必要があります[IoAttack](ioattack.md) guest アカウントや管理者などのさまざまな権限を持つアカウントアカウント。
+    **メモ**   お使いのドライバーの IOCTL および WMI インターフェイスのアクセス特権を確認するには、ゲストアカウントや管理者アカウントなど、さまざまな権限を持つ[Ioattack](ioattack.md)アカウントを実行する必要があります。
 
      
 

@@ -1,25 +1,25 @@
 ---
 title: コマンドラインからの InfVerif の実行
-description: このトピックでは、コマンドラインから InfVerif.exe を実行するときに使用できるオプションを使用します。
+description: このトピックでは、コマンドラインから InfVerif を実行するときに使用できるオプションの一覧を示します。
 ms.assetid: CC2DB624-FFEE-4049-ACE7-4A24B330BADB
-ms.date: 04/20/2017
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c2686122d1c695c1b99b691115c45289947ead84
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b7f868f8bc9d7633e2644d226a579a4c9ac6b84
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340222"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235298"
 ---
 # <a name="running-infverif-from-the-command-line"></a>コマンドラインからの InfVerif の実行
 
 
-このトピックでは、コマンドラインから InfVerif.exe を実行するときに使用できるオプションを使用します。
+このトピックでは、コマンドラインから InfVerif を実行するときに使用できるオプションの一覧を示します。
 > [!NOTE]
-> InfVerif では、各結合されたパスとファイル名は 260 文字未満である必要がありますが必要です。
+> InfVerif では、各パスとファイル名を260文字未満にする必要があります。
 
 ```
-USAGE: InfVerif.exe [/v] [/u | /universal] [/k] [/info] [/stampinf] [/l <path>]
+USAGE: InfVerif.exe [/v] [/u | /universal] [/w] [/k] [/info] [/stampinf] [/l <path>]
                     [/osver TargetOSVersion>] [/product <ias file>] <files>
 
 /v
@@ -30,6 +30,9 @@ USAGE: InfVerif.exe [/v] [/u | /universal] [/k] [/info] [/stampinf] [/l <path>]
 
 /u
         Reports errors if INF is not Universal. (mode)
+
+/w
+        Reports Windows Driver compatibility. See below. (mode)
 
 /info
         Displays INF summary information.
@@ -58,9 +61,17 @@ USAGE: InfVerif.exe [/v] [/u | /universal] [/k] [/info] [/stampinf] [/l <path>]
 Only one mode option may be passed at a time.
 ```
 
-例については*TargetOSVersion* 「解説」を参照してください、書式設定セクションの[INF 製造元セクション](../install/inf-manufacturer-section.md)します。
+Verbose オプションは、INF が有効かどうかを指定する行を出力に追加します。  特定の引数はモードとしてタグ付けされ、1つだけを渡す必要があります。
 
-/Verbose オプションは、INF が有効かどうかを指定する出力に行を追加します。  特定の引数は、モードとしてタグ付けされて 1 つだけを渡す必要があります。
+*TargetOSVersion*書式設定の例については、「 [INF Manufacturer」セクション](../install/inf-manufacturer-section.md)の「解説」を参照してください。
 
-*Windows 10 バージョン 1703: の新機能*ヒント オプションは、INF の適用性を確認する方が便利です。  有効なアーキテクチャと最小 OS バージョンには、各サポートされているハードウェア ID を報告します。  OS のバージョンとアーキテクチャの間で INF の適用性を検証するのに、/info と/osver をまとめて使用できます。
+*Windows 10 バージョン1703の新バージョン:* Info オプションは、INF の適用性を確認する場合に特に役立ちます。  サポートされている各ハードウェア ID と、有効なアーキテクチャおよび最小 OS バージョンを報告します。  /Info と/osver を一緒に使用して、OS のバージョンとアーキテクチャ全体で INF の適用性を検証することができます。
 
+*Windows 10 バージョン1809の新バージョン:* *Windows ドライバー*を開発している場合は、(では) を使用して、 `infverif /w` `/v` [dch Design 原則](dch-principles-best-practices.md)の**宣言 (D)** の原則との互換性を判断します。  また、このフラグは、 `/w` INF が[Windows ドライバーとはじめに](getting-started-with-windows-drivers.md)の[ドライバーパッケージ分離](driver-isolation.md)要件に準拠しているかどうかも確認します。
+
+複数の INF ファイルを検証するには、複数のファイル名を指定するか、ワイルドカードを使用します。
+
+```
+infverif.exe /w test1.inf test2.inf
+infverif.exe /w test*.inf
+```

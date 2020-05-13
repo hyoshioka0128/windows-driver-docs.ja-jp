@@ -4,20 +4,19 @@ description: AllowStandardUserPinUnlock
 ms.assetid: 3fb6de78-662b-46d0-bf0c-9efde15b0861
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e60bc78d534ae988f8569a46bf3fa3ff6f6d2ff7
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 8cc86418798a74818008867cd11837c7cb340566
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72323645"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235303"
 ---
+# <a name="allowstandarduserpinunlock"></a>AllowStandardUserPinUnlock
+
 [!include[MBAE deprecation warning](mbae-deprecation-warning.md)]
 
 > [!IMPORTANT]
 > Windows 10 バージョン1507以降では、この要素は非推奨とされており、今後のバージョンの Windows ではサポートされない可能性があります。
-
-# <a name="allowstandarduserpinunlock"></a>AllowStandardUserPinUnlock
-
 
 AllowStandardUserPinUnlock 要素は、標準ユーザーが PIN のロック解除操作を実行できるかどうかを指定します。
 

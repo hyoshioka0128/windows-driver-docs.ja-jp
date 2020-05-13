@@ -4,18 +4,18 @@ description: このトピックでは、Windows Update (WU) サービスを使�
 ms.assetid: 778c5ab5-572f-43b9-8e9a-9dd608de17a9
 ms.date: 08/24/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9a680809c2c62e7f9fecd5a101eea915443bd8
-ms.sourcegitcommit: 078e2dfac6c18f65ff923d1e55bff4a23e02a824
+ms.openlocfilehash: 902a765ed4680cb210f3d9ac5e671b1d8bf63e84
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80400472"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235405"
 ---
 # <a name="updating-device-firmware-using-windows-update"></a>Windows Update を使用したデバイス ファームウェアの更新
 
 このトピックでは、Windows Update (WU) サービスを使用して、リムーバブルデバイスまたはシャーシ内のデバイスのファームウェアを更新する方法について説明します。  システムファームウェアの更新の詳細については、「 [WINDOWS UEFI ファームウェア更新プラットフォーム](../bringup/windows-uefi-firmware-update-platform.md)」を参照してください。
 
-これを行うには、ファームウェアペイロードを含む、デバイスドライバーとして実装されている更新機構を提供します。  デバイスでベンダーから提供されたドライバーを使用している場合は、既存の関数ドライバーにファームウェア更新ロジックとペイロードを追加するか、別のファームウェア更新ドライバーパッケージを提供するかを選択できます。  デバイスで Microsoft が提供するドライバーを使用している場合は、個別のファームウェア更新ドライバーパッケージを提供する必要があります。  どちらの場合も、ファームウェア更新ドライバーパッケージはユニバーサルである必要があります。  ユニバーサルドライバーの詳細については、「[ユニバーサル Windows ドライバーでのはじめに](../develop/getting-started-with-universal-drivers.md)」を参照してください。  ドライバーバイナリでは、 [Kmdf](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md) 、または[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)を使用できます。 
+これを行うには、ファームウェアペイロードを含む、デバイスドライバーとして実装されている更新機構を提供します。  デバイスでベンダーから提供されたドライバーを使用している場合は、既存の関数ドライバーにファームウェア更新ロジックとペイロードを追加するか、別のファームウェア更新ドライバーパッケージを提供するかを選択できます。  デバイスで Microsoft が提供するドライバーを使用している場合は、個別のファームウェア更新ドライバーパッケージを提供する必要があります。  どちらの場合も、ファームウェア更新ドライバーパッケージはユニバーサルである必要があります。  ユニバーサルドライバーの詳細については、「 [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)」を参照してください。  ドライバーバイナリでは、 [Kmdf](../wdf/index.md)、 [UMDF 2](../wdf/getting-started-with-umdf-version-2.md) 、または[Windows Driver Model](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)を使用できます。 
 
 WU はソフトウェアを実行できないため、ファームウェア更新ドライバーは、インストールのためにファームウェアをプラグアンドプレイ (PnP) に渡す必要があります。
 
@@ -73,7 +73,7 @@ AddComponent=ComponentName,,AddComponentSection
 ComponentIDs = ComponentDeviceId
 ```
 
-上記の INF サンプルでは、`ComponentIDs = ComponentDeviceId` は、子デバイスのハードウェア ID が `SWC\ComponentDeviceId`であることを示しています。  この INF をインストールすると、次のデバイス階層が作成されます。
+上記の INF サンプルでは、 `ComponentIDs = ComponentDeviceId` 子デバイスのハードウェア ID がであることを示して `SWC\ComponentDeviceId` います。  この INF をインストールすると、次のデバイス階層が作成されます。
 
 ![親デバイス、プライマリデバイス、AddComponent デバイス](images/component-device-hierarchy.png)
 

@@ -1,56 +1,56 @@
 ---
 title: コンポーネント INF ファイルの使用
-description: ソフトウェア コンポーネントを使用して、デバイスに固有のユーザー モード ソフトウェアを追加する方法について説明します。
+description: ソフトウェアコンポーネントを使用して、デバイスに固有のユーザーモードソフトウェアを組み込む方法について説明します。
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: eeda366397fc82430a1667da4adaebdddf872cbb
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1aa780491548e6c4859166faefed37b19f3085aa
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67380450"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235396"
 ---
 # <a name="using-a-component-inf-file"></a>コンポーネント INF ファイルの使用
 
-Windows 10 デバイスで使用するためのユーザー モード ソフトウェアを含める場合は、作成するには、次のオプションがある、 [DCHU 準拠ユニバーサル ドライバー](../develop/getting-started-with-universal-drivers.md):
+Windows 10 のデバイスで使用するユーザーモードソフトウェアを含める場合は、次のオプションを使用して[Dch 準拠のドライバー](../develop/getting-started-with-windows-drivers.md)を作成できます。
     
 |メソッド|シナリオ|
 |---|---|
-|[アプリ (HSA) のハードウェア サポート](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md) | デバイスのアドオン ソフトウェア配信され、Microsoft Store からサービスを提供する UWP アプリとしてパッケージ化します。  推奨される方法です。 |
-|ソフトウェア コンポーネント|デバイス アドオン ソフトウェアは、MSI または EXE のバイナリは、Win32 サービス、または AddReg と CopyFiles を使用してインストールされているソフトウェアです。  参照先のバイナリは、デスクトップのエディション (Home、Pro、および Enterprise) でのみ実行されます。  参照先のバイナリは、Windows 10 では実行されません。|
+|[ハードウェアサポートアプリ (HSA)](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md) | Microsoft Store から配信および提供される UWP アプリとしてパッケージ化されたデバイスアドオンソフトウェア。  推奨される方法。 |
+|ソフトウェア コンポーネント|デバイスアドオンソフトウェアは、MSI または EXE バイナリ、Win32 サービス、または AddReg と CopyFiles を使用してインストールされたソフトウェアです。  参照されるバイナリは、デスクトップのエディション (Home、Pro、および Enterprise) でのみ実行されます。  参照されるバイナリは Windows 10 では実行されません。|
 
-ソフトウェア コンポーネントとは独立したスタンドアロン ドライバー パッケージを 1 つまたは複数のソフトウェア モジュールをインストールできます。  インストールされているソフトウェアは、デバイスの価値を向上し、基本的なデバイス機能の必要はありませんが、関連付けられている関数のドライバー サービスは必要ありません。  
+ソフトウェアコンポーネントは、1つまたは複数のソフトウェアモジュールをインストールできる独立したスタンドアロンのドライバーパッケージです。  インストールされているソフトウェアはデバイスの価値を高めますが、基本的なデバイス機能には必要ありません。また、関連付けられた関数ドライバーサービスは必要ありません。  
 
-このページは、ソフトウェア コンポーネントの使用に関するガイドラインを提供します。
+このページでは、ソフトウェアコンポーネントの使用に関するガイドラインを示します。
 
-## <a name="getting-started"></a>概要
+## <a name="getting-started"></a>作業の開始
 
-コンポーネントを作成する、[拡張子 INF ファイル](using-an-extension-inf-file.md)を指定します、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)で 1 つまたは複数回、 [INF DDInstall.Components](inf-ddinstall-components-section.md)セクション。  拡張子 INF ファイルで参照されているソフトウェアのコンポーネントのソフトウェア列挙子の仮想デバイスが作成されます。  1 つ以上のドライバー パッケージには、同じソフトウェア コンポーネントを参照できます。 
+コンポーネントを作成するために、[拡張機能の inf ファイル](using-an-extension-inf-file.md)で Inf [ddinstall ディレクティブ](inf-addcomponent-directive.md)が1回以上指定されています[。](inf-ddinstall-components-section.md)  拡張機能の INF ファイルで参照される各ソフトウェアコンポーネントについて、仮想ソフトウェアで列挙される子デバイスが作成されます。  複数のドライバーパッケージが同じソフトウェアコンポーネントを参照できます。 
 
-仮想デバイスの子ことができます依存せずに更新、他のデバイスと同じように限り、親デバイスが起動されます。  多くのさまざまなグループからの観点でのサービスと各グループの 1 つのソフトウェア コンポーネントを作成し、妥当なに機能を分離することをお勧めします。
+仮想デバイスの子は、親デバイスが起動されている限り、他のデバイスと同様に個別に更新できます。  サービスの観点からわかるように、機能をさまざまなグループに分け、グループごとに1つのソフトウェアコンポーネントを作成することをお勧めします。
 
-各ソフトウェア コンポーネントに対して、INF ファイルを提供します。
+各ソフトウェアコンポーネントの INF ファイルを提供します。
 
-ソフトウェア コンポーネント INF が指定されている場合、 [ **AddSoftware**ディレクティブ](inf-addsoftware-directive.md)コンポーネントの INF:
+ソフトウェアコンポーネント INF で[ **addsoftware**ディレクティブ](inf-addsoftware-directive.md)が指定されている場合、コンポーネント inf は次のようになります。
 
-* 必要があります、[ユニバーサル INF ファイル](../install/using-a-universal-inf-file.md)します。
-* 指定する必要があります、 **SoftwareComponent**クラスをセットアップします。
+* は、[ユニバーサル INF ファイル](../install/using-a-universal-inf-file.md)である必要があります。
+* **ソフトウェアコンポーネント**のセットアップクラスを指定する必要があります。
 
-指定することができます、 [ **AddSoftware**ディレクティブ](inf-addsoftware-directive.md)1 回以上。
+[ **Addsoftware**ディレクティブ](inf-addsoftware-directive.md)は1回以上指定できます。
 
 >[!NOTE]
->種類 2 の AddSoftware ディレクティブを使用して、コンポーネント INF を使用する必要はありません。  ディレクティブは、任意の INF で正常に使用できます。  ただし、型の 1 の AddSoftware ディレクティブは、コンポーネント INF から使用する必要があります。
+>AddSoftware ディレクティブの Type 2 を使用する場合、コンポーネントの INF を利用する必要はありません。  ディレクティブは、どの INF でも正常に使用できます。  ただし、型1の AddSoftware ディレクティブは、コンポーネント INF から使用する必要があります。
 
-さらに、任意の INF (コンポーネントかどうか) ソフトウェア コンポーネントのデバイスで一致します。
+また、ソフトウェアコンポーネントデバイスでのすべての INF (コンポーネントまたは not) の照合:
 
-* Win32 のユーザーのサービスを使用して指定できます、 [AddService ディレクティブ](inf-addservice-directive.md)します。
-* 使用したソフトウェアをインストールすることができます、 [INF AddReg ディレクティブ](inf-addreg-directive.md)と[INF CopyFiles ディレクティブ](inf-copyfiles-directive.md)します。
-* 関数のドライバー サービスは必要ありません。
-* ユーザーとは独立して、親デバイスからアンインストールできます。
+* [Addservice ディレクティブ](inf-addservice-directive.md)を使用して、Win32 ユーザーサービスを指定できます。
+* [Inf AddReg ディレクティブ](inf-addreg-directive.md)および[inf CopyFiles ディレクティブ](inf-copyfiles-directive.md)を使用してソフトウェアをインストールできます。
+* 関数ドライバーサービスは必要ありません。
+* 親デバイスとは別に、ユーザーがアンインストールできます。
 
-コンポーネント INF の例を見つけることができます、[ユニバーサル ドライバーのドライバー パッケージのインストール ツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)します。
+コンポーネント INF の例については、「[ドライバーパッケージインストールツールキット (ユニバーサルドライバー用](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU))」を参照してください。
 
-**注意**:関数へのコンポーネントのソフトウェアで列挙されるデバイスで、その親を開始する必要があります。 親デバイスで利用できるドライバーがない場合、ドライバー開発者向けは独自に作成し、必要に応じて"umpass.sys"パススルーのドライバーを利用できます。 このドライバーが Windows に含まれ、実際は何も以外のデバイスを起動します。 Umpass.sys を使用するには、開発者がで Include/Needs INF ディレクティブを使用する必要があります、 [DDInstall セクション](inf-ddinstall-section.md)の可能性のある各 [DDInstall\*] セクションで、対応する [UmPass。\*] セクションに示すよう。次に関係なくかどうか、INF ディレクティブを指定、そのセクションのか。
+**注**: ソフトウェアで列挙されたコンポーネントデバイスを機能させるには、その親が開始されている必要があります。 親デバイスに使用できるドライバーがない場合、ドライバー開発者は独自のドライバーを作成できます。また、必要に応じて、パススルードライバー "umpass .sys" を利用することもできます。 このドライバーは Windows に含まれており、実質的には、デバイスを起動する以外には何も行いません。 Umpass を使用するには、次に示すように、使用可能な各 [DDInstall.] セクションの [ [ddinstall](inf-ddinstall-section.md) .] セクションで、必要に \* 応じて、該当する [umpass.] セクションに、該当するセクションのいずれかの \* ディレクティブが指定されているかどうかに関係なく、インクルード/ニーズ inf ディレクティブを使用します。
 
 ```cpp
 [DDInstall]
@@ -74,29 +74,29 @@ Needs=UmPass.Services
 ; also include any existing any DDInstall.Services directives
 ```
 
-## <a name="accessing-a-device-from-a-software-component"></a>ソフトウェアのコンポーネントからデバイスへのアクセス
+## <a name="accessing-a-device-from-a-software-component"></a>ソフトウェアコンポーネントからのデバイスへのアクセス
 
-ソフトウェアのコンポーネントに関連付けられているデバイスのデバイス インスタンス ID を取得する、 **SoftwareArguments**値、 [INF AddSoftware ディレクティブ](inf-addsoftware-directive.md)セクションで、`<<DeviceInstanceID>>`ランタイムコンテキスト変数を指定します。
+ソフトウェアコンポーネントに関連付けられているデバイスのデバイスインスタンス ID を取得するには、[ [INF AddSoftware ディレクティブ](inf-addsoftware-directive.md)] セクションの [software **arguments** ] 値を、ランタイムコンテキスト変数と共に使用し `<<DeviceInstanceID>>` ます。
 
-実行可能ファイルは、その入力された引数リストからソフトウェア コンポーネントのデバイス インスタンス ID を取得できます。  
+その後、実行可能ファイルは、入力された引数リストからソフトウェアコンポーネントのデバイスインスタンス ID を取得できます。  
 
-次に、ソフトウェア コンポーネントが汎用を対象とする場合[ターゲット プラットフォーム](../develop/windows-10-editions-for-universal-drivers.md)、次の手順します。
+次に、ソフトウェアコンポーネントがユニバーサル[ターゲットプラットフォーム](../develop/target-platforms.md)を対象としている場合は、次の手順を実行します。
 
-1. 呼び出す[ **CM_Locate_DevNode** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_locate_devnodea)デバイスにデバイス ハンドルを取得するソフトウェア コンポーネントの ID をインスタンス化します。
-2. 呼び出す[ **CM_Get_Parent** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)をそのデバイスの親を識別するハンドルを取得します。  この親が使用するソフトウェア コンポーネントを追加するデバイスでは、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)します。
-3. 次に、親のデバイス インスタンス ID を取得する呼び出し[ **CM_Get_Device_ID** ](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)からハンドル[ **CM_Get_Parent**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)します。
+1. デバイスハンドルを取得するには、ソフトウェアコンポーネントのデバイスインスタンス ID を使用して[**CM_Locate_DevNode**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_locate_devnodea)を呼び出します。
+2. [**CM_Get_Parent**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)を呼び出して、そのデバイスの親へのハンドルを取得します。  この親は、 [INF AddComponent ディレクティブ](inf-addcomponent-directive.md)を使用してソフトウェアコンポーネントを追加したデバイスです。
+3. 次に、親のデバイスインスタンス ID を取得するには、 [**CM_Get_Parent**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_parent)からのハンドルで[**CM_Get_Device_ID**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_idw)を呼び出します。
 
-ソフトウェア コンポーネントが、デスクトップを対象とする場合[ターゲット プラットフォーム](../develop/windows-10-editions-for-universal-drivers.md)のみ、次の手順を使用します。
+ソフトウェアコンポーネントがデスクトップ[ターゲットプラットフォーム](../develop/target-platforms.md)のみを対象としている場合は、次の手順を使用します。
 
-1. 呼び出す[ **SetupDiCreateDeviceInfoList** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfolist)空のデバイス情報を作成するには設定します。
-2. 呼び出す[ **SetupDiOpenDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)ソフトウェア コンポーネントのデバイスのデバイスとインスタンス id。
-3. 呼び出す[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)で`DEVPKEY_Device_Parent`親デバイス インスタンス ID を取得します。
+1. [**Setupdicreatedeviceinを**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdicreatedeviceinfolist)呼び出して、空のデバイス情報セットを作成します。
+2. ソフトウェアコンポーネントデバイスのデバイスインスタンス ID を使用して[**SetupDiOpenDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdiopendeviceinfoa)を呼び出します。
+3. を使用して[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出し、 `DEVPKEY_Device_Parent` 親のデバイスインスタンス ID を取得します。
 
 ## <a name="example"></a>例
 
-次の例では、実行可能ファイルを使用して、グラフィックス カードのコントロール パネル をインストールするソフトウェア コンポーネントを使用する方法を示します。
+次の例は、ソフトウェアコンポーネントを使用して、グラフィックスカードの実行可能ファイルを使用してコントロールパネルをインストールする方法を示しています。
 
-### <a name="driver-package-inf-file"></a>ドライバー パッケージ INF ファイル
+### <a name="driver-package-inf-file"></a>ドライバーパッケージ INF ファイル
 
 ```cpp
 [Version]
@@ -128,7 +128,7 @@ CONTOSO = "Contoso Inc."
 ContosoGrfx.DeviceDesc = "Contoso Graphics Card Extension"
 ```
 
-### <a name="software-component-inf-file"></a>ソフトウェア コンポーネントの INF ファイル
+### <a name="software-component-inf-file"></a>ソフトウェアコンポーネントの INF ファイル
 
 ```cpp
 [Version]
@@ -178,9 +178,9 @@ CONTOSO = "Contoso"
 ContosoCtrlPnl.DeviceDesc = "Contoso Control Panel" 
 ```
 
-ドライバーの検証と送信のプロセスは、通常 Inf とコンポーネント Inf のと同じです。 詳細については、次を参照してください。 [Windows HLK Getting Started](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)します。
+ドライバーの検証と送信のプロセスは、通常の Inf の場合と同じように、コンポーネントの Inf と同じです。 詳細については、「 [WINDOWS HLK はじめに](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)」を参照してください。
 
-セットアップ クラスの詳細については、次を参照してください。[ベンダー デバイス セットアップ クラスできるベンダー](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)します。
+セットアップクラスの詳細については、「[ベンダーが使用できるシステム定義のデバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
