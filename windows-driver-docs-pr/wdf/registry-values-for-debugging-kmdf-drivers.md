@@ -1,5 +1,5 @@
 ---
-title: WDF ドライバー (KMDF および UMDF) をデバッグするためのレジストリ値
+title: WDF ドライバーをデバッグするためのレジストリ値
 description: このトピックでは、Windows Driver Framework (WDF) ドライバーで設定できるレジストリ値について説明します。 これは、UMDF version 2 以降のカーネルモードドライバーフレームワーク (KMDF) ドライバーとユーザーモードドライバーフレームワーク (UMDF) ドライバーに適用されます。
 ms.assetid: d54bdc6c-b409-4973-9b29-16967a4d83fb
 keywords:
@@ -7,41 +7,70 @@ keywords:
 - デバッグドライバーのレジストリ値 WDK KMDF
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 340014ae79571adb7f49a6921a8dc1a70179fa32
-ms.sourcegitcommit: 8973457113e00a5f4a0848a1b3165a42b975e81c
+ms.openlocfilehash: 9db25f9a9a3580b207aece1dc9e41b7ae890f98e
+ms.sourcegitcommit: b54d49545599b0a64f64e4e4b9fd78c8d9198094
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83349886"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83383915"
 ---
-# <a name="registry-values-for-debugging-wdf-drivers-kmdf-and-umdf"></a>WDF ドライバー (KMDF および UMDF) をデバッグするためのレジストリ値
+# <a name="registry-values-for-debugging-wdf-drivers"></a>WDF ドライバーをデバッグするためのレジストリ値
 
 
-この記事では、Windows Driver Framework (WDF) ドライバーで設定できるレジストリ値について説明します。 これは、UMDF version 2 以降のカーネルモードドライバーフレームワーク (KMDF) ドライバーとユーザーモードドライバーフレームワーク (UMDF) ドライバーに適用されます。
+この記事では、WDF ドライバーで設定できるレジストリ値について説明します。 これは、UMDF バージョン2以降の KMDF ドライバーおよび UMDF ドライバーに適用されます。
 
+以下のセクションで特に指定されていない限り、次のレジストリ値はドライバーのサブキーの下にあり `Parameters\Wdf` ます。
 
-次のレジストリ値は、ドライバーの**Parameters \\ Wdf**サブキーの下に存在できます。 KMDF ドライバーの場合、このサブキーは、ドライバーのサービス名の下にある**HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services**にあります。 UMDF ドライバーの場合、このサブキーは、 **HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ wudf \\ Services**のドライバーのサービス名の下にあります。 ドライバーのファイル名とサービス名が異なる場合でも、ドライバーのサブキーは常にドライバーのサービス名を使用します。
+* KMDF ドライバーの場合、このサブキーは `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services` 、ドライバーのサービス名の下のにあります。
+* UMDF ドライバーの場合、このサブキーは `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services` 、ドライバーのサービス名の下のにあります。
+
+ドライバーのファイル名とサービス名が異なる場合でも、ドライバーのサブキーは常にドライバーのサービス名を使用します。
 
 
 ## <a name="dbgbreakonerror"></a>DbgBreakOnError
 
 *REG \_ DWORD*
 
-0以外の値に設定すると、ドライバーが[**WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)を呼び出したときに、フレームワークがデバッガーに分割されます。 ( **VerifierOn**値が設定されている場合、 **dbgbreakonerror**の値が存在しない場合でも、フレームワークはデバッガーに中断します。)上記のコード例を参照してください。
+0以外の値に設定すると、ドライバーが[**WdfVerifierDbgBreakPoint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfverifier/nf-wdfverifier-wdfverifierdbgbreakpoint)を呼び出したときに、フレームワークがデバッガーに分割されます。 ( **VerifierOn**値が設定されている場合、 **dbgbreakonerror**の値が存在しない場合でも、フレームワークはデバッガーに中断します。)[**VerifierOn**](#verifieron)セクションのコード例を参照してください。
 
 ## <a name="dbgprinton"></a>DbgPrintOn
 
 *REG \_ DWORD*
 
-0以外の値に設定されている場合、フレームワークのローダーは、ドライバーを読み込んで、フレームワークライブラリのバージョンにバインドするとき、またはドライバーのアンロード中に、さまざまなメッセージをカーネルデバッガーに送信します。
+* KMDF ドライバーの場合は、レジストリキーの下にこの値を設定 `HKLM\SYSTEM\CurrentControlSet\Control\Wdf\Kmdf\Diagnostics` します。
+* UMDF ドライバーの場合は、レジストリキーの下にこの値を設定し `HKLM\System\CurrentControlSet\Control\Wdf\Umdf\Diagnostics` ます。
 
-KMDF ドライバーの場合は、 **HKLM \\ SYSTEM \\ CurrentControlSet \\ Control \\ Wdf \\ kmdf \\ Diagnostics**レジストリキーの下にこの値を設定します。 UMDF ドライバーの場合は、 **HKLM \\ System \\ CurrentControlSet \\ Control \\ Wdf \\ UMDF \\ Diagnostics**レジストリキーの下にこの値を設定します。 ドライバーは、オプションの**診断**サブキーを作成する必要がある場合があります。
+ドライバーは、オプションの**診断**サブキーを作成する必要がある場合があります。
+
+0以外の値に設定されている場合、フレームワークのローダーは、ドライバーを読み込んで、フレームワークライブラリのバージョンにバインドするとき、またはドライバーのアンロード中に、さまざまなメッセージをカーネルデバッガーに送信します。
 
 ## <a name="dbgwaitforsignaltimeoutinsec"></a>DbgWaitForSignalTimeoutInSec
 
 *REG \_ DWORD、framework バージョン1.11 以降*
 
 Windows 8 以降では、 **VerifierOn**と**dbgbreakonerror**が0以外の値に設定されている場合、ドライバーは**DbgWaitForSignalTimeoutInSec**を設定することによって、デバッガーを中断する既定のタイムアウト期間を変更できます。
+
+## <a name="debugmodebinaries"></a>DebugModeBinaries
+
+*REG \_ マルチ \_ SZ、UMDF のみ*
+
+このレジストリ値はにあり `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\DebugMode` ます。
+
+この値は、デバッグモードで読み込まれるドライバーバイナリの名前を指定します。 たとえば、ドライバーバイナリの X .DLL、.dll、および Z .DLL のデバッグモードを有効にするには、この値をに設定 `X.DLL\0Y.DLL\0Z.DLL\0\0` します。
+
+## <a name="debugmodeflags"></a>DebugModeFlags
+
+*REG \_ DWORD、UMDF のみ*
+
+このレジストリ値はにあり `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\DebugMode` ます。
+
+|値|説明|
+|--- |--- |
+|0x01|デバッグモードを有効にします。 この設定は、「 [UMDF ドライバーでのデバイスプールの使用](using-device-pooling-in-umdf-drivers.md)」で説明されている自動再起動機能を無効にします。|
+|0x02|デバイスプーリングを無効にします。 デバイスプールの詳細については、「 [UMDF ドライバーでのデバイスプールの使用](using-device-pooling-in-umdf-drivers.md)」を参照してください。|
+|0x04|タイムアウトを無効にします。|
+ 
+Microsoft Visual Studio で F5 オプションを使用すると、展開されたドライバーに対して3つのフラグがすべて設定されます。
 
 ## <a name="enhancedverifieroptions"></a>EnhancedVerifierOptions
 
@@ -67,20 +96,59 @@ Windows 8 以降では、 **VerifierOn**と**dbgbreakonerror**が0以外の値�
 
 を0以外の値に設定すると、フレームワークによってイベントロガーの情報がクラッシュダンプファイルに含まれます。
 
-## <a name="hostprocessdbgbreakondriverload-driver-specific"></a>HostProcessDbgBreakOnDriverLoad ドライバー固有
+## <a name="hostfailkddebugbreak"></a>HostFailKdDebugBreak
 
-*REG \_DWORD*、umdf のみ、umdf 2.31 以降 *
+*REG \_ DWORD、UMDF のみ*
 
-> [!NOTE]
-> この値は、指定された UMDF ドライバーにのみ影響します。
+このレジストリ値はにあり `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF` ます。
 
-このレジストリ値はにあり `HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\WUDF\\Services\\<service name>\\Parameters\\Wdf` ます。
+この値がゼロ以外で、カーネルデバッガーがコンピューターに接続されている場合、リフレクタはホストプロセスを終了する前にカーネルデバッガーに中断します。 **HostFailKdDebugBreak**は、Windows 7 以前のオペレーティングシステムでは既定で無効になっています。 Windows 8 以降では、 **HostFailKdDebugBreak**は既定で有効になっています。
+
+リフレクターは、ホストプロセスが予期せず終了した場合 (たとえば、非 UMDF コンポーネントまたはハンドルされない例外が原因で)、カーネルデバッガーにも中断します。 終了しようとしているホストプロセスに複数のデバイススタックがプールされている場合、リフレクタは、ホストプロセスで読み込まれたデバイススタックごとに1回、デバッガーに複数回中断します。
+
+
+## <a name="hostprocessdbgbreakondriverload-driver-specific"></a>HostProcessDbgBreakOnDriverLoad (ドライバー固有)
+
+*REG \_DWORD*(umdf のみ) は、[バージョン 2.31](umdf-version-history.md)以降のバージョンのターゲットコンピューターで実行されているすべての umdf 1.x/2.x ドライバーで動作します。
+
+このレジストリ値はにあり `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\<service name>\Parameters\Wdf` ます。
+
+この値は、指定された UMDF ドライバーにのみ影響します。
 
 秒単位の遅延値を格納します。 ドライバーが読み込まれた後、指定した秒数の間、WUDFHost がデバッガーに接続しようとします。
 
 指定された遅延期間中、ホストプロセスはユーザーモードのデバッガーを1回だけ検索し、接続されている場合はを中断します。 この期間内にユーザーモードのデバッガーがアタッチされておらず、の high ビットが (0x80000000) に設定されている場合、フレームワークはカーネルモードのデバッガーの中断を1回試みます。 例については、上記の**Hostprocessdbgbreakonstart**に関するセクションを参照してください。
 
 UMDF レジストリ値の変更を有効にするには、コンピューターを再起動する必要があります。
+
+
+## <a name="hostprocessdbgbreakondriverload-global"></a>HostProcessDbgBreakOnDriverLoad (グローバル)
+
+*REG \_ DWORD、UMDF のみ*
+
+このレジストリ値はにあり `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\{193a1820-d9ac-4997-8c55-be817523f6aa}` ます。 これは、WDK で[WDF Verifier ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)(wdfverifier) を使用して設定できます。 この値は、システム上のすべての UMDF ドライバーに影響します。
+
+秒単位の遅延値を格納します。 ドライバーが読み込まれてから、指定した秒数が経過するまで、WUDFHost が発生します。 **Hostprocessdbgbreakondriverload**の動作は、 **Hostprocessdbgbreakonstart**に記述されているものと同じです。
+
+**Hostprocessdbgbreakonstart**または**Hostprocessdbgbreakondriverload**を指定すると、フレームワークによって他の UMDF タイムアウト (プラグアンドプレイ操作など) が無効になります。 これは、ドライバーで過剰なタイムアウトが発生した場合に、これらの値を使用すると、ドライバーによってターゲット上で致命的なクラッシュが発生する可能性があることを意味します。
+
+
+## <a name="hostprocessdbgbreakonstart"></a>HostProcessDbgBreakOnStart
+
+*REG \_ DWORD、UMDF のみ*
+
+このレジストリ値はにあり `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\{193a1820-d9ac-4997-8c55-be817523f6aa}` ます。 これは、WDK で[WDF Verifier ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)(wdfverifier) を使用して設定できます。 この値は、システム上のすべての UMDF ドライバーに影響します。
+
+秒単位の遅延値を格納します。 指定された遅延期間中、ホストプロセスはユーザーモードのデバッガーを1回だけ検索し、接続されている場合はを中断します。 この期間内にユーザーモードのデバッガーがアタッチされておらず、 **Hostprocessdbgbreakonstart** (0x80000000) の上位ビットが設定されている場合 (0x80000000)、このフレームワークはカーネルモードのデバッガーの中断を1回試みます。 次に例を示します。
+
+|[値]|結果|
+|--- |--- |
+|0x00000004|フレームワークは、4秒間に1回、ユーザーモードのデバッガーへの接続を試みます。 このフレームワークは、カーネルモードのデバッガーへの接続を試行しません。|
+|0x80000000|フレームワークは、ユーザーモードのデバッガーへの接続を1回試行します。 ユーザーモードのデバッガーがアタッチされていない場合、フレームワークはカーネルモードのデバッガーに接続しようとします。|
+|0x80000004|フレームワークは、4秒間に1回、ユーザーモードのデバッガーへの接続を試みます。 ユーザーモードのデバッガーが4秒以内にアタッチされていない場合、フレームワークはカーネルモードのデバッガーに接続しようとします。|
+
+このレジストリ値は、WDK に含まれている[WDF Verifier ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)(wdfverifier) を使用して設定することもできます。
+
 
 ## <a name="logpages"></a>LogPages
 
@@ -114,7 +182,7 @@ HKR, Parameters\Wdf, LogPages,   0x00010001, 3 ; KMDF IFR size
 
 *REG \_ DWORD*
 
-0以外の値に設定されている場合、フレームワークの[イベントロガー](using-the-framework-s-event-logger.md)は、ドライバーのデバッグに役立つ追加情報を記録します。たとえば、内部コードパスにエントリを挿入したり、内部コードパスから終了したりすることができます。 この値は、ドライバーの開発中にのみ設定する必要があります。 上記のコード例を参照してください。
+0以外の値に設定されている場合、フレームワークの[イベントロガー](using-the-framework-s-event-logger.md)は、ドライバーのデバッグに役立つ追加情報を記録します。たとえば、内部コードパスにエントリを挿入したり、内部コードパスから終了したりすることができます。 この値は、ドライバーの開発中にのみ設定する必要があります。 [**VerifierOn**](#verifieron)のコード例を参照してください。
 
 
 ## <a name="verifierallocatefailcount"></a>VerifierAllocateFailCount
@@ -165,71 +233,3 @@ HKR, Parameters\Wdf,DbgBreakOnError,0x00010001,1
 
 
 
-
-**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ wudf \\ Services \\ {193a1820-d9ac-4997-8c55-be817523f6aa}** で、次のレジストリ値を設定することもできます。 これらの値は、システム上のすべての UMDF ドライバーに影響します。
-
-## <a name="hostprocessdbgbreakonstart"></a>HostProcessDbgBreakOnStart
-
-*REG \_ DWORD、UMDF のみ*
-
-秒単位の遅延値を格納します。 指定された遅延期間中、ホストプロセスはユーザーモードのデバッガーを1回だけ検索し、接続されている場合はを中断します。 この期間内にユーザーモードのデバッガーがアタッチされておらず、 **Hostprocessdbgbreakonstart** (0x80000000) の上位ビットが設定されている場合 (0x80000000)、このフレームワークはカーネルモードのデバッガーの中断を1回試みます。 次に例を示します。
-
-|[値]|結果|
-|--- |--- |
-|0x00000004|フレームワークは、4秒間に1回、ユーザーモードのデバッガーへの接続を試みます。 このフレームワークは、カーネルモードのデバッガーへの接続を試行しません。|
-|0x80000000|フレームワークは、ユーザーモードのデバッガーへの接続を1回試行します。 ユーザーモードのデバッガーがアタッチされていない場合、フレームワークはカーネルモードのデバッガーに接続しようとします。|
-|0x80000004|フレームワークは、4秒間に1回、ユーザーモードのデバッガーへの接続を試みます。 ユーザーモードのデバッガーが4秒以内にアタッチされていない場合、フレームワークはカーネルモードのデバッガーに接続しようとします。|
-
-
-## <a name="hostprocessdbgbreakondriverload-global"></a>HostProcessDbgBreakOnDriverLoad グローバル
-
-*REG \_ DWORD、UMDF のみ*
-
-秒単位の遅延値を格納します。 ドライバーが読み込まれてから、指定した秒数が経過するまで、WUDFHost が発生します。 **Hostprocessdbgbreakondriverload**の動作は、 **Hostprocessdbgbreakonstart**に記述されているものと同じです。
-
-**Hostprocessdbgbreakonstart**または**Hostprocessdbgbreakondriverload**を指定すると、フレームワークによって他の UMDF タイムアウト (プラグアンドプレイ操作など) が無効になります。 これは、ドライバーで過剰なタイムアウトが発生した場合に、これらの値を使用すると、ドライバーによってターゲット上で致命的なクラッシュが発生する可能性があることを意味します。
-
-> [!NOTE]
-> UMDF 2.31 以降では、ドライバーごとの**Hostprocessdbgbreakondriverload**を設定できます。  詳細については、上記を参照してください。
-
-
-これらのレジストリ値は、WDK に含まれている WDF Verifier ツール (WdfVerifier) を使用して設定することもできます。 このツールと UMDF ドライバーの使用の詳細については、「 [WDF verifier を使用した Umdf 検証機能の設定の管理](https://docs.microsoft.com/windows-hardware/drivers/devtest/global-wdf-settings-tab)」を参照してください。
-
-また、次の値は**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ wudf \\ DebugMode**にあります。
-
-## <a name="debugmodeflags"></a>DebugModeFlags
-
-*REG \_ DWORD、UMDF のみ*
-
-|[値]|説明|
-|--- |--- |
-|0x01|デバッグモードを有効にします。 この設定は、「 [UMDF ドライバーでのデバイスプールの使用](using-device-pooling-in-umdf-drivers.md)」で説明されている自動再起動機能を無効にします。|
-|0x02|デバイスプーリングを無効にします。 デバイスプールの詳細については、「 [UMDF ドライバーでのデバイスプールの使用](using-device-pooling-in-umdf-drivers.md)」を参照してください。|
-|0x04|タイムアウトを無効にします。|
- 
-
-Microsoft Visual Studio で F5 オプションを使用すると、展開されたドライバーに対して3つのフラグがすべて設定されます。
-
-## <a name="debugmodebinaries"></a>DebugModeBinaries
-
-*REG \_ マルチ \_ SZ、UMDF のみ*
-
-この値は、デバッグモードで読み込まれるドライバーバイナリの名前を指定します。 たとえば、ドライバーバイナリの X .DLL、.dll、および Z .DLL のデバッグモードを有効にするには、この値を「 *x .Dll 0y」に設定します \\ 。DLL \\ 0z .dll \\ 0 \\ 0*.
-
-**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ wudf**では、次の値を設定することもできます。
-
-## <a name="hostfailkddebugbreak"></a>HostFailKdDebugBreak
-
-*REG \_ DWORD、UMDF のみ*
-
-この値がゼロ以外で、カーネルデバッガーがコンピューターに接続されている場合、リフレクタはホストプロセスを終了する前にカーネルデバッガーに中断します。 **HostFailKdDebugBreak**は、Windows 7 以前のオペレーティングシステムでは既定で無効になっています。 Windows 8 以降では、 **HostFailKdDebugBreak**は既定で有効になっています。
-
-リフレクターは、ホストプロセスが予期せず終了した場合 (たとえば、非 UMDF コンポーネントまたはハンドルされない例外が原因で)、カーネルデバッガーにも中断します。 終了しようとしているホストプロセスに複数のデバイススタックがプールされている場合、リフレクタは、ホストプロセスで読み込まれたデバイススタックごとに1回、デバッガーに複数回中断します。
-
-
-**HKLM \\ SOFTWARE \\ Microsoft \\ Windows NT \\ CurrentVersion \\ wudf \\ Services \\ <service name> \\ Parameters \\ Wdf**に、次のレジストリ値を設定することもできます。 
-
-
-
-
- 
