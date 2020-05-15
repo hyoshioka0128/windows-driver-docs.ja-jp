@@ -6,16 +6,16 @@ keywords:
 - ドライバーの検証ツールのコードの整合性チェック
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0dad7dd96c1d84d3f3591615fb55ca543264954
-ms.sourcegitcommit: 46b135fe70134bba6cbb8111ce0def7100eed027
+ms.openlocfilehash: 52c3d83fcbe3627aebb24666c9d96b5c175de1fd
+ms.sourcegitcommit: b35469bbcabee996af70bcbd8564184f547a8c57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82973285"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83406248"
 ---
 # <a name="code-integrity-checking"></a>コード整合性チェック
 
-[ハイパーバイザーで保護されたコードの整合性](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/use-device-guard-readiness-tool)では、ハードウェアテクノロジと仮想化を使用して、コード整合性 (CI) の意思決定機能を Windows オペレーティングシステムの他の部分から分離できます。 仮想化ベースのセキュリティを使用してコードの整合性を分離する場合、カーネルメモリを実行可能ファイルにする唯一の方法は、コードの整合性を検証することです。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックによって、これらのコード整合性規則の互換性が確保され、次の違反が検出されます。
+[ハイパーバイザーで保護されたコードの整合性](https://docs.microsoft.com/windows/security/threat-protection/device-guard/enable-virtualization-based-protection-of-code-integrity)では、ハードウェアテクノロジと仮想化を使用して、コード整合性 (CI) の意思決定機能を Windows オペレーティングシステムの他の部分から分離できます。 仮想化ベースのセキュリティを使用してコードの整合性を分離する場合、カーネルメモリを実行可能ファイルにする唯一の方法は、コードの整合性を検証することです。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。 コードの整合性チェックによって、これらのコード整合性規則の互換性が確保され、次の違反が検出されます。
 
 <table>
   <tr>

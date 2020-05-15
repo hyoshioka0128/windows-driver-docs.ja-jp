@@ -4,12 +4,12 @@ title: WDK 8.1 プロジェクトから WDK 10 への変換
 description: Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1 を使って作成したドライバー プロジェクトを、Microsoft Visual Studio 2015 と Windows Driver Kit (WDK) 10 でビルドするドライバー プロジェクトに変換する方法を説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d3fa096f10d2cfe3a6bc592c0c98f21317fd68b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 4be525014290284e1c90d7053f1a97556860b945
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63382484"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235402"
 ---
 # <a name="converting-wdk-81-projects-to-wdk-10"></a>WDK 8.1 プロジェクトから WDK 10 への変換
 
@@ -47,7 +47,7 @@ Visual Studio 2015 では、コンパイラに新しい警告とエラーが追
 
     ApiValidator について詳しくは、「[ユニバーサル Windows ドライバーの検証](validating-universal-drivers.md)」をご覧ください。
 
-    特定の DDI のターゲット プラットフォームを判断する方法については、「[ドライバー リファレンス ページでのターゲット プラットフォーム](windows-10-editions-for-universal-drivers.md)」をご覧ください。
+    特定の DDI のターゲット プラットフォームを判断する方法については、「[ドライバー リファレンス ページでのターゲット プラットフォーム](target-platforms.md)」をご覧ください。
 
  
 
