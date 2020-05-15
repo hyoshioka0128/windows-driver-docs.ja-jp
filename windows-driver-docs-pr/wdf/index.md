@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: d2a7da20e127757192cc0dd88fd0c70cb213b5dc
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 05368cddd6534c4507a569a3387d657e23b3ca85
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75210818"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235343"
 ---
 # <a name="whats-new-for-wdf-drivers-in-windows10"></a>Windows 10 の WDF ドライバーの新機能
 
@@ -34,6 +34,10 @@ Windows 10、バージョン 1903 (2019 年 3 月更新、19H1) には、カー�
 -   Windows Server、バージョン 1809
 
 バージョン履歴については、「[KMDF バージョン履歴](kmdf-version-history.md)」と「[UMDF バージョン履歴](umdf-version-history.md)」を参照してください。 注記のあるものを除き、このページの UMDF 参照は、UMDF バージョン 1 では利用できないバージョン 2 の機能を表します。
+
+## <a name="new-in-wdf-for-windows-10-version-2004"></a>Windows 10 バージョン 2004 用の WDF の新機能
+
+「[KMDF バージョン履歴](kmdf-version-history.md)」と「[UMDF バージョン履歴](umdf-version-history.md)」を参照してください。
 
 ## <a name="new-in-wdf-for-windows-10-version-1903"></a>Windows 10、バージョン 1903 の WDF の新機能
 

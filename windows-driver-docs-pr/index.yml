@@ -11,12 +11,12 @@ metadata:
   ms.date: 01/14/2020
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinHW
-  ms.openlocfilehash: 76d9b55b5e2b645fc567db0e576fb0f1f75ee93d
-  ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+  ms.openlocfilehash: 83d3b0cfbd341712161de579064d61931d85d22d
+  ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "80544087"
+  ms.lasthandoff: 05/12/2020
+  ms.locfileid: "83235446"
 highlightedContent:
   items:
   - title: Windows Driver Kit を入手する
@@ -58,7 +58,7 @@ conceptualContent:
     - text: Debugging Tools for Windows のダウンロード - WinDbg
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools
       itemType: download
-    - text: ユニバーサル ドライバーのデバック
+    - text: Windows ドライバーのデバッグ
       url: https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-
       itemType: tutorial
   - title: API リファレンス
@@ -85,10 +85,10 @@ additionalContent:
   sections:
   - title: タスク
     items:
-    - title: ユニバーサル Hello World ドライバーの作成
-      summary: KMDF を使用して、非常に小さいユニバーサル Windows ドライバーを作成する方法について説明します。
+    - title: Hello World Windows ドライバーの書き込み
+      summary: KMDF を使用して非常に小さな Windows ドライバーを書き込む方法について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/writing-a-very-small-kmdf--driver
-    - title: ユニバーサル Windows ドライバーの概要
+    - title: Windows ドライバーの概要
       summary: 複数のデバイス タイプで動作する 1 つのドライバー パッケージを作成します。
       url: https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers
     - title: ブート エントリの追加
@@ -109,12 +109,12 @@ additionalContent:
     - title: コード署名証明書の取得
       summary: デジタル情報を保護するためのコード署名証明書を取得する方法について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-a-code-signing-certificate
-  - title: 参考資料
+  - title: 参照情報
     items:
     - title: Windows ハードウェアのパートナー センター
       summary: システムおよびドライバーの申請を迅速かつ容易に作成して管理する方法について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/dashboard/
-    - title: 新機能と更新プログラム
+    - title: What's new in driver development
       summary: Windows 10 の最新のドライバー開発機能について説明します。
       url: https://docs.microsoft.com/windows-hardware/drivers/what-s-new-in-driver-development
     - title: ドライバー テクノロジの概要

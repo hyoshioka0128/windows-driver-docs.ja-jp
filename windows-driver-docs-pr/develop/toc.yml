@@ -1,25 +1,23 @@
 - name: ドライバーの開発
   href: index.md
-- name: ユニバーサル ドライバー
+- name: Windows ドライバー
   items:
-    - name: ユニバーサル ドライバーの概要
-      href: getting-started-with-universal-drivers.md
+    - name: Windows ドライバーの概要
+      href: getting-started-with-windows-drivers.md
+    - name: DCH のデザイン原則とベスト プラクティス
+      href: dch-principles-best-practices.md
     - name: ドライバー パッケージの分離
       href: driver-isolation.md
-    - name: ユニバーサル Windows ドライバーのビルド
-      href: building-a-universal-driver.md
-    - name: ユニバーサル ドライバーの検証
-      href: validating-universal-drivers.md
-    - name: OneCore をターゲットとしたビルド
-      href: building-for-onecore.md
-    - name: ユニバーサル ドライバーのシナリオ
-      href: universal-driver-scenarios.md
-    - name: ユニバーサル ドライバーのデバッグ
-      href: debugging-a-universal-driver.md
-    - name: ドライバー リファレンス ページでのターゲット プラットフォーム
-      href: windows-10-editions-for-universal-drivers.md
-    - name: "Windows\_10 のドライバーの収束モデル"
-      href: driver-model-convergence.md
+    - name: API レイヤー
+      href: api-layering.md
+    - name: Windows ドライバーの構築
+      href: building-a-windows-driver.md
+    - name: Windows ドライバーの検証
+      href: validating-windows-drivers.md
+    - name: DCH 準拠のドライバー パッケージの例
+      href: dch-example.md
+    - name: Windows ドライバーのデバッグ
+      href: debugging-a-windows-driver.md
 - name: ドライバーのビルド
   items:
     - name: 新しいデバイス ファンクション ドライバーの作成
@@ -36,6 +34,8 @@
       href: creating-a-driver-from-existing-source-files.md
     - name: WDK を使ったドライバーのビルド
       href: building-a-driver.md
+    - name: OneCore をターゲットとしたビルド
+      href: building-for-onecore.md
     - name: 異なるバージョンの Windows に対するドライバーのビルド
       href: building-drivers-for-different-versions-of-windows.md
     - name: WDK を使った ARM64 ドライバーのビルド
@@ -60,6 +60,10 @@
       href: stampinf-properties-for-driver-projects.md
     - name: WDK 8.1 プロジェクトから WDK 10 への変換
       href: converting-wdk-8-1-projects-to-wdk-10.md
+    - name: "Windows\_10 のドライバーの収束モデル"
+      href: driver-model-convergence.md
+    - name: ドライバー リファレンス ページでのターゲット プラットフォーム
+      href: target-platforms.md
     - name: コード分析ツールと検証ツールを使ったドライバーの分析
       href: analyzing-driver-quality-by-using-code-analysis-tools.md
     - name: コンピューターの手動ドライバー展開の準備

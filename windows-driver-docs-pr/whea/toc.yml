@@ -4,6 +4,8 @@
       href: index.md
     - name: Windows Hardware Error Architecture の基本
       href: introduction-to-the-windows-hardware-error-architecture.md
+    - name: Windows 10 で WHEA を使用する
+      href: using-whea-on-windows-10.md
     - name: Windows Hardware Error Architecture の新情報
       items:
         - name: Windows Hardware Error Architecture の新情報

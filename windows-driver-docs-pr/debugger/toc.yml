@@ -54,7 +54,7 @@
           href: configuring-tools-ini.md
         - name: KDbgCtrl の使用
           href: using-kdbgctrl.md
-    - name: ユニバーサル ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)
+    - name: Windows ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)
       href: debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md
     - name: ドライバーのデバッグ - ステップ バイ ステップ ラボ (Sysvad カーネルモード)
       href: debug-universal-drivers--kernel-mode-.md

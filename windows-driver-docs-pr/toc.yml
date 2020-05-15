@@ -1,13 +1,23 @@
-- name: Windows Driver Kit の概要
-  href: index.yml
-- name: What's new in driver development
-  href: what-s-new-in-driver-development.md
-- name: Windows Driver Kit (WDK) のダウンロード
-  href: download-the-wdk.md
-- name: 以前のバージョンの WDK のインストール
-  href: installing-preview-versions-wdk.md
-- name: その他の WDK のダウンロード
-  href: other-wdk-downloads.md
+- name: 新機能
+  items:
+    - name: Windows 10 バージョン 2004 の新機能
+      href: what-s-new-in-driver-development.md
+    - name: Windows 10 バージョン 1903 の新機能
+      href: driver-changes-for-windows-10-version-1903.md
+    - name: Windows 10 バージョン 1809 の新機能
+      href: driver-changes-for-windows-10-version-1809.md
+    - name: Windows 10 バージョン 1803 の新機能
+      href: driver-changes-for-windows-10-version-1803.md
+    - name: Windows 10 バージョン 1709 の新機能
+      href: driver-changes-for-windows-10-version-1709.md
+- name: ダウンロード
+  items:
+    - name: Windows Driver Kit (WDK) のダウンロード
+      href: download-the-wdk.md
+    - name: 以前のバージョンの WDK のインストール
+      href: installing-preview-versions-wdk.md
+    - name: その他の WDK のダウンロード
+      href: other-wdk-downloads.md
 - name: 起動ガイド
   href: bringup/index.md
 - name: ドライバーの開発、テスト、および展開
