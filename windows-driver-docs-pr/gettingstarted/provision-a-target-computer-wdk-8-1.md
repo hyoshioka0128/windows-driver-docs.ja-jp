@@ -2,14 +2,14 @@
 title: ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
 description: ターゲット コンピューターやテスト コンピューターのプロビジョニングは、自動ドライバー展開、テスト、デバッグ用にコンピューターを構成するプロセスです。 コンピューターをプロビジョニングするには、Microsoft Visual Studio を使います。
 ms.assetid: A2615EE9-316E-4AE2-BBAA-B9E153090016
-ms.date: 02/24/2020
+ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5201f216036949b968d2c5b162bd1e7a602f808d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8e496cedc09143109d499602003188e0cb4df20c
+ms.sourcegitcommit: b1cdfbad7118bdeadff2e2003d59771b689c0553
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77601734"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82991953"
 ---
 # <a name="provision-a-computer-for-driver-deployment-and-testing-wdk-10"></a>ドライバーの展開およびテストのためのコンピューターのプロビジョニング (WDK 10)
 
@@ -17,30 +17,32 @@ ms.locfileid: "77601734"
 
 テスト環境とデバッグ環境には、*ホスト コンピューター*と*ターゲット コンピューター*という、2 台のコンピューターがあります。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーの開発とビルドは、ホスト コンピューター上の Visual Studio で行います。 デバッガーはホスト コンピューター上で実行され、Visual Studio のユーザー インターフェイスで利用できます。 ドライバーのテストとデバッグを行うときは、ドライバーをターゲット コンピューター上で実行します。
 
-ホスト コンピューターとターゲット コンピューターが、名前によって相互に ping できる必要があります。 ホスト コンピューターとターゲット コンピューターの両方が同じワークグループまたは同じネットワーク ドメインに参加している場合、この ping は簡単に行うことができます。 お使いのコンピューターがワークグループに属している場合は、ハブやスイッチではなくルーターにコンピューターを接続することをお勧めします。 
+ホスト コンピューターとターゲット コンピューターが、名前によって相互に ping できる必要があります。 ホスト コンピューターとターゲット コンピューターの両方が同じワークグループまたは同じネットワーク ドメインに参加している場合、この ping は簡単に行うことができます。 お使いのコンピューターがワークグループに属している場合は、ハブやスイッチではなくルーターにコンピューターを接続することをお勧めします。
 
 > [!TIP]
 > WDK および既知の問題に関する最新情報については、[WDK サポート フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wdk)を参照してください。
 
-## <a name="span-idpreparing_the_target_computer_for_provisioningspanspan-idpreparing_the_target_computer_for_provisioningspanprepare-the-target-computer-for-provisioning"></a><span id="preparing_the_target_computer_for_provisioning"></span><span id="PREPARING_THE_TARGET_COMPUTER_FOR_PROVISIONING"></span>ターゲット コンピューターのプロビジョニングの準備
+## <a name="prepare-the-target-computer-for-provisioning"></a>ターゲット コンピューターのプロビジョニングの準備
 
 1. ターゲット コンピューターには、ドライバーの実行とテストに使うオペレーティング システムをインストールします。
 
-2. x86 または x64 ターゲット コンピューターでセキュア ブートが有効になっている場合は無効にします。 Unified Extensible Firmware Interface (UEFI) とセキュア ブートについては、[UEFI ファームウェア](https://go.microsoft.com/fwlink/p/?LinkID=309386)に関するページをご覧ください。
+2. [WDK をインストールします](../download-the-wdk.md)。 Visual Studio をインストール必要はありません (ただし、ターゲット コンピューターでドライバーの開発を行う予定の場合に限ります)。
+
+3. x86 または x64 ターゲット コンピューターでセキュア ブートが有効になっている場合は無効にします。 Unified Extensible Firmware Interface (UEFI) とセキュア ブートについては、[UEFI ファームウェア](https://go.microsoft.com/fwlink/p/?LinkID=309386)に関するページをご覧ください。
 
     ターゲット コンピューターが ARM プロセッサを使っている場合は、Windows デバッグ ポリシーをインストールします。 これを実行できるのは、Microsoft またはターゲット コンピューターの製造元だけです。 セキュア ブートを無効にする必要はありません。
 
-3. ターゲット コンピューターで、ターゲット コンピューターのプラットフォームに適合する WDK Test Target Setup MSI を実行します。 MSI は、Windows Driver Kit (WDK) インストール ディレクトリの Remote にあります。
+4. ターゲット コンピューターで、ターゲット コンピューターのプラットフォームに適合する WDK Test Target Setup MSI を実行します。 MSI は、Windows Driver Kit (WDK) インストール ディレクトリの Remote にあります。
 
     例:C:\\Program Files (x86)\\Windows Kits\\10\\Remote\\x64\\WDK Test Target Setup x64-x64\_en-us.msi
 
-4. ターゲット コンピューターで N または KN バージョンの Windows を実行している場合、N バージョンと KN バージョンの Windows に対応した Media Feature Pack をインストールします。
+5. ターゲット コンピューターで N または KN バージョンの Windows を実行している場合、N バージョンと KN バージョンの Windows に対応した Media Feature Pack をインストールします。
 
     - [N バージョンと KN バージョンの Windows 8.1 用の Media Feature Pack](https://go.microsoft.com/fwlink/p?linkid=329737)
     - [N バージョンと KN バージョンの Windows 8 用の Media Feature Pack](https://go.microsoft.com/fwlink/p?linkid=329738)
     - [N バージョンと KN バージョンの Windows 7 用の Media Feature Pack](https://go.microsoft.com/fwlink/p?linkid=329739)
 
-5. ターゲット コンピューターで Windows Server を実行している場合、WDK Test Target Setup MSI で作った DriverTest フォルダーを探します (例: c:\\DriverTest)。 **[DriverTest]** フォルダーを右クリックし、 **[プロパティ]** をクリックします。 **[セキュリティ]** タブで、 **[Authenticated Users]** グループに **[変更]** のアクセス許可を設定します。
+6. ターゲット コンピューターで Windows Server を実行している場合、WDK Test Target Setup MSI で作った DriverTest フォルダーを探します (例: c:\\DriverTest)。 **[DriverTest]** フォルダーを右クリックし、 **[プロパティ]** をクリックします。 **[セキュリティ]** タブで、 **[Authenticated Users]** グループに **[変更]** のアクセス許可を設定します。
 
 ホスト コンピューターとターゲット コンピューターが互いに ping できることを確認します。 コマンド プロンプト ウィンドウを開き、「**ping** *コンピューター名*」と入力します。
 
@@ -51,7 +53,7 @@ ms.locfileid: "77601734"
 3. 受信の規則の一覧で、アクティブなネットワークのネットワーク探索の規則をすべて特定します (たとえば、 **[プロファイル]** が **[プライベート]** になっているネットワーク探索の規則をすべて特定します)。それらの各規則をダブルクリックし、 **[スコープ]** タブを開きます。 **[リモート IP アドレス]** で、 **[任意の IP アドレス]** をクリックします。
 4. 受信の規則の一覧で、アクティブなファイルとプリンターの共有の規則をすべて特定します。 それらの規則ごとに、規則をダブルクリックし、 **[スコープ]** タブを開きます。 **[リモート IP アドレス]** で、 **[任意の IP アドレス]** をクリックします。
 
-## <a name="span-idprovision_the_target_computerspanspan-idprovision_the_target_computerspanspan-idprovision_the_target_computerspanprovision-the-target-computer"></a><span id="Provision_the_target_computer"></span><span id="provision_the_target_computer"></span><span id="PROVISION_THE_TARGET_COMPUTER"></span>ターゲット コンピューターのプロビジョニング
+## <a name="provision-the-target-computer"></a>ターゲット コンピューターのプロビジョニング
 
 ホスト コンピューター上の Visual Studio でターゲット コンピューターをプロビジョニングする準備ができました。
 

@@ -4,15 +4,17 @@ title: ユーザー モード ドライバーとデスクトップ アプリで�
 description: このトピックでは、Windows 8 および Windows 8.1 用のアプリケーションとドライバーを使って C ランタイム ライブラリを配布する方法について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fef7a8ac858884e1be68e5b0fc7f61ca014d2e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d09e7c264713d5eb3c7cc4be7b80a28d131343b8
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63344031"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235316"
 ---
 # <a name="using-the-microsoft-c-runtime-with-user-mode-drivers-and-desktop-apps"></a>ユーザー モード ドライバーとデスクトップ アプリでの Microsoft C ランタイムの使用
-[このトピックはデスクトップ ドライバーのみに適用され、ユニバーサル ドライバーには適用されません。]
+
+> [!NOTE]
+> このトピックは Windows デスクトップ ドライバーのみに適用され、Windows ドライバーには適用されません。  その違いについては、「[Windows ドライバーの概要](getting-started-with-windows-drivers.md)」を参照してください。
 
 このトピックでは、Windows 8 および Windows 8.1 用のアプリケーションとドライバーを使って C ランタイム ライブラリを配布する方法について説明します。 ユーザー モード ドライバーとデスクトップ アプリケーションの作成者がコードをコンパイルし、必要な C ランタイム ライブラリと共に再頒布できるようにパッケージ化するためのガイドラインを示します。
 

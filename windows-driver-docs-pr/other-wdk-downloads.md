@@ -9,12 +9,12 @@ keywords:
 ms.date: 05/07/2018
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c328c2aca85819449910d3334d6870b95096abb1
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a42836b29a0692ab201e4473b1252f7ea822ba9b
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75210848"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235293"
 ---
 # <a name="other-wdk-downloads"></a>その他の WDK のダウンロード
 
@@ -30,12 +30,13 @@ Windows Driver Kit (WDK) は、Windows ドライバーの開発、テスト、�
 
 | Windows の対象バージョン      | Visual Studio のエディション            |
 |--------------------------|----------------------------------------|
+|Windows 10 バージョン 1903|[Visual Studio Community 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16) <br/>[Visual Studio Professional 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=16) <br/>[Visual Studio Enterprise 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=16)|
 | Windows 10 Version 1809 <br/>Windows 10 バージョン 1803 <br/>Windows 10 バージョン 1709 | [Visual Studio Community 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) <br/>[Visual Studio Professional 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Professional&rel=15) <br/>[Visual Studio Enterprise 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Enterprise&rel=15) |
 | Windows 10 Version 1703 <br/>Windows 10 Version 1607 | [Visual Studio Express 2015 for Desktop](https://go.microsoft.com/fwlink/?linkid=875331) <br/>[Visual Studio Community 2015](https://go.microsoft.com/fwlink/p/?LinkId=534599) <br/>[Visual Studio Professional 2015](https://go.microsoft.com/fwlink/p/?LinkId=619628) <br/>[Visual Studio Enterprise 2015](https://go.microsoft.com/fwlink/p/?LinkId=619629) |
 | Windows 8.1 Update <br/>Windows 8.1 | [Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=875331) |
 | Windows 8                | [Visual Studio Professional 2012](https://go.microsoft.com/fwlink/p/?LinkID=255976) <br/>[Visual Studio Ultimate 2012](https://go.microsoft.com/fwlink/p/?LinkID=255982) |
 
-### <a name="configure-visual-studio-for-windows-10-versions-1709-1803-and-1809"></a>Windows 10 バージョン 1709、1803 および 1809用の Visual Studio を構成する
+### <a name="configure-visual-studio-for-windows-10-versions-1709-1803-1809-and-1903"></a>Windows 10 バージョン 1709、1803、1809、1903 用の Visual Studio を構成する
 
 Visual Studio のインストール時に、 **[C++ によるデスクトップ開発]** ワークロードを選びます。 Windows 10 ソフトウェア開発キット (SDK) が自動的に含められ、右側の **[概要]** ウィンドウに表示されます。
 
@@ -63,6 +64,7 @@ WDK は Visual Studio および Debugging Tools for Windows (WinDbg) と統合�
 
 | Windows のバージョン      | WDK と関連するダウンロード                       |
 |--------------------------|-------------------------------------------------|
+| Windows 10 バージョン 1903 | [WDK for Windows 10 バージョン 1903](https://go.microsoft.com/fwlink/?linkid=2085767) |
 | Windows 10 Version 1809 | [WDK for Windows 10 Version 1809](https://go.microsoft.com/fwlink/?linkid=2026156) |
 | Windows 10 バージョン 1803 | [WDK for Windows 10 Version 1803](https://go.microsoft.com/fwlink/?linkid=873060) |
 | Windows 10 バージョン 1709 | [WDK for Windows 10 Version 1709](https://go.microsoft.com/fwlink/p/?linkid=859232) |
@@ -90,6 +92,7 @@ EWDK の詳細については、「[Enterprise WDK 10 の使用](https://docs.mi
 
 | Windows のバージョン               | EWDK                              |
 |-----------------------------------|-----------------------------------|
+| Windows 10 バージョン 1903          | [EWDK for Windows 10 バージョン 1903](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019) |
 | Windows 10 Version 1809          | [EWDK for Windows 10 Version 1809](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
 | Windows 10 バージョン 1803          | [EWDK for Windows 10 Version 1803](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |
 | Windows 10 バージョン 1709          | [EWDK for Visual Studio with Build Tools 15.6](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) (推奨) <br/>[EWDK for Visual Studio with Build Tools 15.4](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) <br/>[EWDK for Visual Studio with Build Tools 15.2](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2017) |

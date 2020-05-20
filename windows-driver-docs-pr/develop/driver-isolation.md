@@ -1,18 +1,24 @@
 ---
 title: ドライバー パッケージの分離
+description: このページでは、Windows ドライバーの要件であるドライバーの分離について説明します。
 ms.date: 10/01/2019
-ms.openlocfilehash: 2e964ee5e43b0f42faf55f84e2d8d3fdaa8655b4
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.assetid: 3955fb29-ee49-4c3e-ac6d-700dcba3f884
+ms.localizationpriority: medium
+ms.openlocfilehash: e6b6b1704252cd436ba137f939f09d48818cd65e
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80080157"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235323"
 ---
 # <a name="driver-package-isolation"></a>ドライバー パッケージの分離
 
-ドライバー パッケージの分離には、外部の変更に対するドライバーの柔軟性を高め、更新を容易にし、インストールをよりわかりやすいものにするための一連のベスト プラクティスが含まれています。
+ドライバー パッケージの分離は、外部の変更に対するドライバーの回復性を高め、更新を容易にし、インストールをよりわかりやすいものにする、Windows ドライバーの要件です。
 
-次の表のうち、左の列は現在は推奨されないドライバーに関する従来の手法、右の列は推奨されるベスト プラクティスを示しています。
+> [!NOTE]
+> ドライバー パッケージの分離は Windows ドライバーで必須ですが、Windows デスクトップ ドライバーでも回復性とサービス性の向上を通じてメリットが得られます。
+
+次の表では、Windows ドライバーで使用できなくなった従来のドライバー手法を左の列に、Windows ドライバーで必須の動作を右の列に示します。
 
 |分離されていないドライバー|分離されているドライバー|
 |-|-|
@@ -26,6 +32,18 @@ ms.locfileid: "80080157"
 
 分離されているすべてのドライバー パッケージでは、ドライバー パッケージ ファイルがドライバー ストアに配置されます。 つまり、インストール時のドライバー パッケージ ファイルの場所を指定するため、INF に [**DIRID 13**](https://docs.microsoft.com/windows-hardware/drivers/install/using-dirids) と指定されるということです。
 
+ドライバー ストアから実行されているカーネル モード ドライバーは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を呼び出してそのパスを使用し、パスを基準として構成ファイルを見つけます。  カーネル モード ドライバーが KMDF ドライバーの場合、[**WdfDriverWdmGetDriverObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nf-wdfdriver-wdfdriverwdmgetdriverobject) を使用して、IoQueryFullDriverPath に渡す WDM ドライバー オブジェクトを取得できます。 UMDF ドライバーは、[**GetModuleHandleExW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulehandleexw) および [**GetModuleFileNameW**](https://docs.microsoft.com/windows/desktop/api/libloaderapi/nf-libloaderapi-getmodulefilenamew) を使用してドライバーがどこから読み込まれたかを特定できます。  たとえば、次のように入力します。
+
+```cpp
+bRet = GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS,
+                         (PCWSTR)&DriverEntry,
+                         &handleModule);
+if (bRet) {
+   winErr = GetModuleFileNameW(handleModule,
+                               path,
+                               pathLength);
+     …
+```
 
 ドライバー ストアから実行されていて、ドライバー パッケージの他のファイルにアクセスする必要がある WDM または KMDF ドライバーでは、[**IoQueryFullDriverPath**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-ioqueryfulldriverpath) を使用してそのパスを見つけ、読み込み元のディレクトリ パスを取得し、そのパスから見て相対的な場所にある構成ファイルを探します。
 
@@ -37,7 +55,65 @@ INF によってペイロードされたファイルの場合、INF 内のその
 
 [**SourceDisksFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section) エントリにファイル名が同じ複数のエントリを含めることはできず、かつ CopyFiles をファイルの名前変更に使用することはできないため、INF が参照する各ファイルは、一意のファイル名を持つ必要があります。
 
-ドライバー ストアからファイルを見つけて読み込む方法の詳細については、「[ユニバーサル ドライバーのシナリオ](https://docs.microsoft.com/windows-hardware/drivers/develop/universal-driver-scenarios#dynamically-finding-and-loading-files-from-the-driver-store)」を参照してください。
+### <a name="dynamically-finding-and-loading-files-from-the-driver-store"></a>ドライバー ストアから動的にファイルを見つけて読み込む
+
+ドライバー パッケージには、別のドライバー パッケージのバイナリまたはユーザー モード コンポーネントによって読み込まれるファイルが含まれている場合があります。
+
+次にいくつかの例を示します。
+
+* ユーザー モード DLL が、ドライバー パッケージ内のドライバーと通信するためのインターフェイスを提供する。
+* 拡張ドライバー パッケージには、ベース ドライバー パッケージ内のドライバーによって読み込まれる構成ファイルが含まれています。
+
+このような場合、ドライバー パッケージでは、デバイスによって開示される、ファイルのパスまたはデバイス インターフェイスを示す状態を設定する必要があります。
+
+たとえば、ドライバー パッケージで HKR [**AddReg**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive) を使用してこの状態を設定できます。 この例では、`ExampleFile.dll` について、ドライバー パッケージは *subdir* のない [**SourceDisksFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-sourcedisksfiles-section) エントリを持つとします。  この結果、このファイルはドライバー パッケージの root に存在し、[**CopyFiles**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-copyfiles-directive) ディレクティブの [**DestinationDirs**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-destinationdirs-section) には **dirid** 13 が指定されます。
+
+デバイスの状態としてこれを設定する INF の例を次に示します。
+
+```cpp
+[ExampleDDInstall.HW]
+AddReg = Example_DDInstall.AddReg
+
+[Example_DDInstall.AddReg]
+HKR,,ExampleValue,,%13%\ExampleFile.dll
+```
+
+デバイス インターフェイスの状態としてこれを設定する INF の例は次のようになります。
+
+```cpp
+[ExampleDDInstall.Interfaces]
+AddInterface = {<fill in an interface class GUID for an interface exposed by the device>},,Example_Add_Interface_Section
+
+[Example_Add_Interface_Section]
+AddReg = Example_Add_Interface_Section.AddReg
+
+[Example_Add_Interface_Section.AddReg]
+HKR,,ExampleValue,,%13%\ExampleFile.dll
+```
+
+前の例では、空のフラグ値が使用されているため、REG_SZ レジストリ値になります。 これにより、 **%13%** が完全修飾ユーザー モード ファイル パスに変換されます。 多くの場合、このパスは環境変数の相対パスであることが望ましいです。 フラグ値 **0x20000** を使用すると、レジストリ値はタイプ REG_EXPAND_SZ となり、 **%13%** は適切な環境変数で変換され、パスの場所が抽象化されます。 このレジストリ値を取得する場合、[**ExpandEnvironmentStrings**](https://docs.microsoft.com/windows/desktop/api/rrascfg/nn-rrascfg-ieapproviderconfig) を呼び出して、パスの環境変数を解決します。
+
+カーネル モード コンポーネントによってこの値を読み取る必要がある場合、値は REG_SZ 値でなければなりません。 カーネル モード コンポーネントはこの値を読み取るときに、先頭に `\??\` を付けてから、[**ZwOpenFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwopenfile) などの API に渡す必要があります。
+
+この設定がデバイスの状態の一部である場合にアクセスするには、まずアプリケーションはデバイスの ID を検索する必要があります。  ユーザー モード コードでは、[**CM_Get_Device_ID_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用してデバイスの一覧 (必要に応じて、フィルタ適用) を取得できます。 このデバイスの一覧には複数のデバイスが含まれている場合があるため、デバイスから状態を読み取る前に、適切なデバイスを検索します。 たとえば、特定の条件に一致するデバイスを検索するときに、[**CM_Get_DevNode_Property**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_devnode_propertyw) を呼び出して、そのデバイスのプロパティを取得します。
+
+適切なデバイスが見つかったら、[**CM_Open_DevNode_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_devnode_key) を呼び出して、デバイスの状態が格納されたレジストリの場所へのハンドルを取得します。
+
+カーネル モード コードでは、PDO (物理デバイス オブジェクト) を取得し、[**IoOpenDeviceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceregistrykey) を呼び出す必要があります。
+
+デバイス インターフェイスの状態の場合にこの設定にアクセスするために、ユーザー モード コードで [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizea) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を呼び出すことができます。
+
+また、デバイス インターフェイスの接続や削除の通知を受けるために、[**CM_Register_Notification**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_register_notification) を使用できます。これにより、コードではインターフェイスが有効化されたときに通知を受け、状態を取得できます。 上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、設定を読み込むために適切なインターフェイスを特定します。
+
+適切なインターフェイスが見つかったら、[**CM_Open_Device_Interface_Key**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_open_device_interface_keyw) を呼び出します。
+
+カーネル モード コードでは、状態を取得するデバイス インターフェイスのシンボリック リンク名を取得できます。 そのためには、[**IoRegisterPlugPlayNotification**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioregisterplugplaynotification) を呼び出して、適切なデバイス インターフェイス クラスでデバイス インターフェイス通知に登録します。  別の方法として、システム上の現在のデバイス インターフェイスの一覧を取得するために [**IoGetDeviceInterfaces**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetdeviceinterfaces) を呼び出すこともできます。  上記の API で使用されるデバイス インターフェイス クラスには、複数のデバイス インターフェイスがある可能性があります。  これらのインターフェイスを確認し、読み込まれる設定を持つ適切なインターフェイスを特定します。
+
+適切なシンボリック リンク名が見つかったら、[**IoOpenDeviceInterfaceRegistryKey**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioopendeviceinterfaceregistrykey) を呼び出して、デバイス インターフェイスの状態が格納されたレジストリの場所へのハンドルを取得します。
+
+> [!NOTE]
+> **CM_GETIDLIST_FILTER_PRESENT** フラグと [CM_Get_Device_ID_List_Size](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_list_sizea) および [**CM_Get_Device_ID_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_id_lista) を使用するか、**CM_GET_DEVICE_INTERFACE_LIST_PRESENT** フラグと [**CM_Get_Device_Interface_List_Size**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_list_sizew) および [**CM_Get_Device_Interface_List**](https://docs.microsoft.com/windows/desktop/api/cfgmgr32/nf-cfgmgr32-cm_get_device_interface_lista) を使用します。 これにより、ハードウェアが存在し、通信の準備ができていることを確認します。
+
 
 ## <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
 

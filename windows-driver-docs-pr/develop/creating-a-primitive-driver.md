@@ -4,12 +4,12 @@ description: プリミティブ ドライバーは、INF ベースのインス�
 ms.date: 04/16/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5605ea9a1e13ca0bb1094cc17827645c98f3da63
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 05ed44d21291a17a3bc532550ef1ff47d1c3b9fd
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80807610"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235399"
 ---
 # <a name="creating-a-new-primitive-driver"></a>新しいプリミティブ ドライバーの作成
 
@@ -43,7 +43,7 @@ Windows 10 バージョン 1903 以前は、INF ベースのインストール�
 
   * **ClassGuid** ディレクティブを入力する必要があります。
 
-* ドライバーが[ユニバーサル](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers)要件に準拠している必要があります。
+* ドライバーは [DCH 準拠](dch-principles-best-practices.md)である必要があります。
 
 * \[Manufacturer\] セクションがない場合もあります。
 

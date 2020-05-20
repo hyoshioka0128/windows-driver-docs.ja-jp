@@ -1,15 +1,15 @@
 ---
-ms.assetid: ee46801a-4fa5-465a-aa81-5e76eb83d315
 title: OneCore をターゲットとしたビルド
 description: 1 つのバイナリのビルドで、Windows 10 以前のエディションと OneCore エディションをターゲットとすることができます。
-ms.date: 10/02/2018
+ms.assetid: ee46801a-4fa5-465a-aa81-5e76eb83d315
+ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aefa62ad1fbf120ffb6b905c9aafbdb5b44f5ab
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: bf8bf6e343b296b6dcb7ab13135d2fe148a79a36
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63382491"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235403"
 ---
 # <a name="building-for-onecore"></a>OneCore をターゲットとしたビルド
 
@@ -45,7 +45,7 @@ Windows API のサブセットは正常にコンパイルされますが、デ�
 
 * `Error: <Binary Name> has a dependency on <Module Name><Api Name> but is missing: IsApiSetImplemented("<contract-name-for-Module>)`
     
-    上記のカテゴリの API 呼び出しは正常にコンパイルされますが、対象のオペレーティング システムによっては、実行時に想定どおりの動作をしない可能性があります。 [DCHU](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-universal-drivers#design-principles) の U の要件に適合させるには、これらの呼び出しを [**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) でラップします。
+    上記のカテゴリの API 呼び出しは正常にコンパイルされますが、対象のオペレーティング システムによっては、実行時に想定どおりの動作をしない可能性があります。 [Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers/develop/getting-started-with-windows-drivers)の [API レイヤー化](api-layering.md)要件をパスするには、[**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) を使用してこれらの呼び出しをラップします。
 
 これにより、コードをエラーなくコンパイルすることができます。  その後の実行時に、ターゲット コンピューターに必要な API がない場合は、[**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) で FALSE が返されます。
 
@@ -55,7 +55,7 @@ Windows API のサブセットは正常にコンパイルされますが、デ�
 
 このコードは、Windows 10 より前のバージョンの Windows では正しく動作しますが、Windows 10 の OneCore エディションで実行すると、WTSEnumerateSessions エラー :78 または ERROR_CALL_NOT_IMPLEMENTED 120 (0x78) が返されます。
 
-このコード サンプルは DCHU の U 部分に適合していないため、実行すると [ApiValidator](validating-universal-drivers.md) エラーが返されます。
+このコード サンプルは、Windows ドライバーの [API レイヤー化](api-layering.md)要件を満たさず、次の [ApiValidator](validating-universal-drivers.md) エラーが表示されます。
 
 ```cpp
 ApiValidation: Error: FlexLinkTest.exe has a dependency on 'wtsapi32.dll!WTSEnumerateSessionsW' but is missing: IsApiSetImplemented("ext-ms-win-session-wtsapi32-l1-1-0")
@@ -97,7 +97,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 
 ## <a name="code-sample-direct-usage-of-api-after-evaluating-for-existence"></a>コード サンプル:API の有無を評価した後に API を直接使用する
 
-このサンプルは、[**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) を呼び出す方法を示したものです。 このサンプルは DCHU の U 部分に適合しており、実行すると次の [ApiValidator](validating-universal-drivers.md) 出力が返されます。
+このサンプルは、[**IsApiSetImplemented**](https://docs.microsoft.com/windows/desktop/api/apiquery2/nf-apiquery2-isapisetimplemented) を呼び出す方法を示したものです。 このサンプルは、Windows ドライバーの [API レイヤー化](api-layering.md)要件を満たし、次の [ApiValidator](validating-universal-drivers.md) 出力が表示されます。
 
 ```cpp
 ApiValidation: All binaries are Universal
@@ -151,7 +151,7 @@ int __cdecl wmain(int /* argc */, PCWSTR /* argv */ [])
 
 ## <a name="see-also"></a>参照
 
-* [ユニバーサル Windows ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/develop/validating-universal-drivers)
+* [Windows ドライバーの検証](validating-windows-drivers.md)
 * [OneCore](https://docs.microsoft.com/windows-hardware/get-started/what-s-new-in-windows)
 
 <!--API BOILERPLATE: Compiles using OneCore.lib but returns ERROR_CALL_NOT_IMPLEMENTED on non-Desktop OneCore editions.-->

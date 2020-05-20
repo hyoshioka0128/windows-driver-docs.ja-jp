@@ -4,12 +4,12 @@ description: このセクションには、サポートされている各 Window
 ms.assetid: 1ef3e216-1322-42c3-b070-94cddfb2133c
 ms.date: 01/30/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5c8ed9dc26adca1c411ff0ca108a294d744c12
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a1ed585772441720df42307670137810354e1a85
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77144692"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235314"
 ---
 # <a name="overview-of-driver-technologies"></a>ドライバー テクノロジの概要
 
@@ -17,9 +17,9 @@ ms.locfileid: "77144692"
 
 ドライバー技術情報の大部分は、Windows 10 のすべてのエディションに関するものと同じです。 Windows の特定のエディション (Windows 10 Mobile など) について特別な考慮事項がある場合は、それらの技術領域に明示的な説明を添えています。
 
-## <a name="universal-windows-drivers"></a>ユニバーサル Windows ドライバー
+## <a name="windows-drivers"></a>Windows ドライバー
 
-ユニバーサル Windows ドライバー (Windows ドライバーで利用できるインターフェイスのサブセットを使用したドライバー) を作成すると、Windows 10 のすべてのエディションでそのドライバーを実行できます。 可能であれば、ユニバーサル Windows ドライバーを使用して、ドライバーを複数のデバイスで展開できるようにしてください。 Windows 10 のユニバーサル Windows ドライバーをビルド、インストール、展開、デバッグする方法については、「[ユニバーサル Windows ドライバーの概要](develop/getting-started-with-universal-drivers.md)」と「[テスト コンピューターへのドライバーの展開](develop/deploying-a-driver-to-a-test-computer.md)」をご覧ください。
+Windows ドライバー (利用できるインターフェイスのサブセットを使用したドライバー) を作成して、Windows 10 のすべてのエディションで実行できます。 可能であれば、Windows ドライバーを使用して、ドライバーを複数のデバイスで展開できるようにしてください。 Windows 10 の Windows ドライバーをビルド、インストール、展開、デバッグする方法については、「[Windows ドライバーの概要](develop/getting-started-with-windows-drivers.md)」と「[テスト コンピューターへのドライバーの展開](develop/deploying-a-driver-to-a-test-computer.md)」をご覧ください。
 
 ## <a name="device-drivers-and-windows-10-for-desktop-computers"></a>デスクトップ コンピューター向けデバイス ドライバーと Windows 10
 

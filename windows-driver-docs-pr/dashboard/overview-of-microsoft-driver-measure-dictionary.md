@@ -2,14 +2,14 @@
 title: Microsoft ドライバーの測定値
 description: 発行元と作成者は、Microsoft ドライバーの測定値の説明を読むと、Microsoft がドライバーのフライティング中にドライバーの品質を評価する際に使用する基準をより深く理解できます
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2963c128edce3c0df1b546aa057b5c3edc6e4bb1
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 86813b4c730ff62fea0f2eeeb2568065178b8bd1
+ms.sourcegitcommit: 85a89ea01c5018bc09e508dadaace5e6b428555b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017028"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394012"
 ---
 # <a name="overview-of-the-microsoft-driver-measures"></a>Microsoft ドライバーの測定値の概要
 
@@ -45,6 +45,16 @@ Microsoft による承認を受けるために提出されたドライバーは�
 
 測定値の現在の値が合格基準に満たない場合は、不合格となり、調査が開始されます。その結果、フライトの却下や市場内有効期限の設定などの対応が行われる場合があります。
 
+## <a name="evaluating-by-targeting-cohort"></a>ターゲット コーホートによる評価
+
+ドライバーは、複数のシステムとデバイスに対応するよう開発できます。 すべてのターゲット デバイス全体でドライバーの品質の測定結果を集計するのでは、必ずしも十分または正確でない場合があります (下記のターゲット コーホートの定義を参照)。 ターゲット コーホートで十分な成果を得るために、測定要件を満たさないものをすべて見つけられるようコーホートを分析します。 すべてのドライバー測定値は、ターゲット コーホートによる評価に対応しており、ターゲット コーホートによるドライバーの品質評価に使用されます。 新しい測定値属性 `cohort-capable` については、個別の測定値定義ページを参照してください。 測定値が `cohort-capable` とマークされている場合、その測定値はターゲット コーホートによる評価に対応しています。
+
+### <a name="targeting-cohortsclusters-definition"></a>ターゲット コーホート (クラスター) の定義
+ターゲット コーホート (クラスター) は、出荷ラベルによって同じターゲット属性 (HWID、CHID、OS バージョン) が指定、共有される Windows システムおよびデバイスのセットとして定義されます。
+
+### <a name="cohort-evaluation-passfail-criteria"></a>コーホート評価の合格/不合格の基準
+合格条件を満たしていないドライバー測定が 1 つでもあると、ターゲット コーホートは合格になりません (不合格となります)。 **1 つ以上のターゲット コーホートで 1 つ以上の不合格が検出されると、ドライバーを拒否できます。**  コーホートの最少インスタンスは、有効化時に測定値定義ページに追加されます。
+
 ## <a name="data-sources-for-measures"></a>測定値のデータ ソース
 
 ドライバーの品質を評価するために、測定値には、2 つの異なる顧客グループ内で実行されているマシンからのデータが組み込まれます。**Windows Insider Program (WIP)** と**リテール**です。
@@ -62,6 +72,8 @@ Microsoft では、一意の計算ロジック、一連の属性、サンプリ�
 [Bluetooth の測定値](bluetooth-measures.md)
 
 [カメラの測定値](camera-measures.md)
+
+[指紋の測定](fingerprint-measures.md)
 
 [ファームウェアの測定値](firmware-measures.md)
 

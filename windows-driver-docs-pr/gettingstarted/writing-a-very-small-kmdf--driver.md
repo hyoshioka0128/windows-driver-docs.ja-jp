@@ -1,19 +1,19 @@
 ---
-title: ユニバーサル Hello World ドライバー (KMDF) の作成
-description: このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使ってユニバーサル Windows ドライバーを作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
+title: Hello World Windows ドライバーの作成 (KMDF)
+description: このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って Windows ドライバーを作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
 ms.assetid: B4200732-67B5-4BD9-8852-81387912A9A4
 keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d4e8ef4e012d9f09ec0b60bad6bc2910a1ce253b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 454ff276b4da0cc590509f947dc804ed301ce040
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81679415"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235284"
 ---
-# <a name="write-a-universal-hello-world-driver-kmdf"></a>ユニバーサル Hello World ドライバー (KMDF) の作成
+# <a name="write-a-hello-world-windows-driver-kmdf"></a>Hello World Windows ドライバーの作成 (KMDF)
 
 
 このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って非常に小さい[ユニバーサル Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers)を作成し、ドライバーをインストールして個別のコンピューターに展開する方法について説明します。 
