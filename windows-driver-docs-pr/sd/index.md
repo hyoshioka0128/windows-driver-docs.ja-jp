@@ -43,7 +43,7 @@ SD コンボ (多機能) カード上の関数を管理するセキュア デジ
 
 - 別のデバイス スタックの関数番号を指定する SD I/O コマンド。
 
-SD デバイス ドライバーでは、型 SDRF[GET**PROPERTY および SDRF**SET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbussubmitrequest)PROPERTY の関数要求を使用して \_\_SdBusSubmitRequest\_\_ を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)」をご覧ください。
+SD デバイス ドライバーでは、型 SDRF\_GET\_PROPERTY および SDRF\_SET\_PROPERTY の関数要求を使用して [**SdBusSubmitRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/nf-ntddsd-sdbussubmitrequest) を呼び出すことで、ホスト コントローラーの一般的なレジスタ セットとデバイスの状態を管理できます。 これらの関数要求の型の説明については、「[**SD\_REQUEST\_FUNCTION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddsd/ne-ntddsd-sd_request_function)」をご覧ください。
 
 ## <a name="sd-bus-sample"></a>SD バスのサンプル
 
