@@ -4,22 +4,17 @@ title: WDK を使ったドライバーのビルド
 description: このトピックでは、Windows Driver Kit (WDK) でドライバーをビルドする方法について説明します。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1db6f4fa3a257c04f317ad5569b3d9c444dc1dc0
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 72474a7d1a705041b480674d2dba2866bc831864
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74261422"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235418"
 ---
-# <a name="building-a-driver-with-visual-studio-and-the-wdk"></a>Visual Studio と WDK でのドライバーのビルド
+# <a name="using-visual-studio-or-msbuild-to-build-a-driver"></a>Visual Studio または MSBuild を使用したドライバーのビルド
 
-このトピックでは、Windows Driver Kit (WDK) でドライバーをビルドする方法について説明します。 WDK 10 は、Microsoft Visual Studio と完全に統合されています。 ドライバーのビルドは、Visual Studio 開発環境を使って行うか、Microsoft Build Engine ([MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)) を使ってコマンド ラインから直接行うことができます。
 
-Microsoft Visual Studio 2015 では、Microsoft Visual Studio Community 2015 を含む任意のエディションを使って、次のシステム用のドライバーをビルドできます。
-
--   Windows 10
--   Windows 8.1
--   Windows 7
+このトピックでは、Visual Studio 開発環境を使ってドライバーをビルドする方法、または Microsoft Build Engine ([MSBuild](https://go.microsoft.com/fwlink/p/?linkid=262804)) を使ってコマンド ラインからドライバーをビルドする方法について説明します。
 
 **重要**  Windows Driver Kit (WDK) 8 以降では、Windows ビルド ユーティリティ (Build.exe) は MSBuild に置き換えられました。 現在の WDK は、Visual Studio プロジェクトをビルドする場合と同じコンパイラとビルド ツールを使います。 以前のバージョンの WDK でビルドしたドライバー プロジェクトは、Visual Studio 環境で動作するように変換する必要があります。 変換ユーティリティは、コマンド ラインから実行できます。既にあるソースから新しい Visual Studio プロジェクトを作成することによって、既にあるドライバーを変換することもできます。 詳しくは、「[既にあるソース ファイルからのドライバーの作成](creating-a-driver-from-existing-source-files.md)」と「[WDK と Visual Studio のビルド環境](https://docs.microsoft.com/windows-hardware/drivers/devtest/wdk-and-visual-studio-build-environment)」をご覧ください。
 
@@ -30,7 +25,7 @@ Microsoft Visual Studio 2015 では、Microsoft Visual Studio Community 2015 を
 
 ドライバーのビルドは、Visual Studio でプロジェクトまたはソリューションをビルドする方法と同じです。 Windows ドライバー テンプレートを使って新しいドライバー プロジェクトを作成する場合は、テンプレートによって既定の (アクティブな) プロジェクト構成と既定の (アクティブな) ソリューション ビルド構成が定義されます。
 
-**注**  WDK 8 や Windows Driver Kit (WDK) 8.1 を使って作成したプロジェクトやソリューションを、Windows Driver Kit (WDK) 10 と Visual Studio 2015 で動作するように変換できます。 プロジェクトやソリューションを開く前に、[ProjectUpgradeTool](https://docs.microsoft.com/windows-hardware/drivers/devtest/projectupgradetool) を実行してください。 ProjectUpgradeTool はプロジェクトとソリューションを変換し、WDK 10 を使って構築できるようにします。
+**注**  WDK 8 や Windows Driver Kit (WDK) 8.1 を使って作成したプロジェクトやソリューションを、Windows Driver Kit (WDK) 10 と Visual Studio 2019 で動作するように変換できます。 プロジェクトやソリューションを開く前に、[ProjectUpgradeTool](https://docs.microsoft.com/windows-hardware/drivers/devtest/projectupgradetool) を実行してください。 ProjectUpgradeTool はプロジェクトとソリューションを変換し、WDK 10 を使って構築できるようにします。
 
  
 
@@ -55,7 +50,7 @@ Microsoft Visual Studio 2015 では、Microsoft Visual Studio Community 2015 を
 
 **Visual Studio のコマンド プロンプト ウィンドウを使ってドライバーをビルドするには**
 
-1.  **[開発者コマンド プロンプト for VS2015]** ウィンドウを開きます。
+1.  **[開発者コマンド プロンプト for VS2019]** ウィンドウを開きます。
 
     このウィンドウで MSBuild.exe を使い、プロジェクト (.VcxProj) またはソリューション (.Sln) ファイルを指定して、任意の Visual Studio プロジェクトをビルドできます。
 
@@ -73,7 +68,7 @@ Microsoft Visual Studio 2015 では、Microsoft Visual Studio Community 2015 を
     msbuild /t:clean /t:build ProjectFile /p:Configuration=<Debug|Release> /p:Platform=architecture /p:TargetPlatformVersion=a.b.c.d /p:TargetVersion=OS    
     ```
 
-    たとえば、次のコマンドでは、構成が "Debug" でプラットフォームが "Win32" の、Windows 10 を対象としたユニバーサル Windows ドライバーをビルドします。
+    たとえば、次のコマンドでは、構成が "Debug" でプラットフォームが "Win32" の、Windows 10 を対象としたドライバーをビルドします。
 
     ```cpp
     msbuild /t:clean /t:build .\MyDriver.vcxproj /p:Configuration="Debug" /p:Platform=Win32 /p:TargetVersion=”Windows10” /p:TargetPlatformVersion=”10.0.10010.0”

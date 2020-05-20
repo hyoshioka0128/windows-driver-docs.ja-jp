@@ -4,12 +4,12 @@ title: Windows 10 のドライバーの収束モデル
 description: Windows 10 より前のリリースの Windows と Windows Phone にデバイスを対応させるには、多くの場合、2 つの異なるドライバーを作成する必要がありました。たとえば、Windows 8.1 用のドライバーと Windows Phone 8.1 用のドライバーが必要となりました。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad62d7c13888eaf8210f0d3f2b8d1315662def93
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6f8758a3390d9c9331815e85679fffa50101fa4a
+ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76980703"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235321"
 ---
 # <a name="driver-convergence-model-for-windows10"></a>Windows 10 のドライバーの収束モデル
 
@@ -102,7 +102,7 @@ Windows 10 より前のリリースの Windows と Windows Phone にデバイ�
 <tr class="even">
 <td align="left">Windows Driver Framework (WDF)</td>
 <td align="left">はい</td>
-<td align="left"><p>Windows 10 には、KMDF 1.15、UMDF 2.15、UMDF 1.11、および以前のバージョンのフレームワークが付属しています。 また、Windows 10 Mobile にも、KMDF 1.15、UMDF 2.15、および以前のバージョンのフレームワークが付属しています。 ただし、UMDF Version 1 は Windows 10 Mobile では利用できません。 <a href="getting-started-with-universal-drivers.md" data-raw-source="[Universal Windows drivers](getting-started-with-universal-drivers.md)">ユニバーサル Windows ドライバー</a>の作成に使用できるのは、KMDF と UMDF Version 2 だけです。</p></td>
+<td align="left"><p>Windows 10 には、KMDF 1.15、UMDF 2.15、UMDF 1.11、および以前のバージョンのフレームワークが付属しています。 また、Windows 10 Mobile にも、KMDF 1.15、UMDF 2.15、および以前のバージョンのフレームワークが付属しています。 ただし、UMDF Version 1 は Windows 10 Mobile では利用できません。 <a href="getting-started-with-windows-drivers.md" data-raw-source="[Windows drivers](getting-started-with-windows-drivers.md)">Windows ドライバー</a>の作成に使用できるのは、KMDF と UMDF Version 2 だけです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">WLAN</td>
