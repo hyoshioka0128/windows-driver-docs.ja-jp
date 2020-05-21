@@ -1,6 +1,6 @@
 ---
-title: KSK プロパティ\_AUDIO\_VOLUMELEVEL
-description: KSK プロパティ\_AUDIO\_VOLUMELEVEL プロパティは、ボリュームノード (KSNODETYPE\_ボリューム) 内のチャネルのボリュームレベルを指定します。
+title: KSK プロパティ \_ AUDIO \_ VOLUMELEVEL
+description: KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL プロパティは、ボリュームノード (KSNODETYPE ボリューム) 内のチャネルのボリュームレベルを指定し \_ ます。
 ms.assetid: 5b420c71-fc82-413d-a93d-e8f3408cc8d7
 keywords:
 - KSPROPERTY_AUDIO_VOLUMELEVEL オーディオデバイス
@@ -14,17 +14,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 86829ec7980313c0e9c4a3ca3f661c6996729464
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 19771178e6302931490019fb2dd39ee6ac3a8085
+ms.sourcegitcommit: 7ee048ef0b2928b5fd372d6fe5d6c0c008462180
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830930"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83729552"
 ---
-# <a name="ksproperty_audio_volumelevel"></a>KSK プロパティ\_AUDIO\_VOLUMELEVEL
+# <a name="ksproperty_audio_volumelevel"></a>KSK プロパティ \_ AUDIO \_ VOLUMELEVEL
 
 
-KSK プロパティ\_AUDIO\_VOLUMELEVEL プロパティは、ボリュームノード ([**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)) 内のチャネルのボリュームレベルを指定します。
+KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL プロパティは、ボリュームノード ([**KSNODETYPE \_ ボリューム**](ksnodetype-volume.md)) 内のチャネルのボリュームレベルを指定します。
 
 ## <span id="ddk_ksproperty_audio_volumelevel_ks"></span><span id="DDK_KSPROPERTY_AUDIO_VOLUMELEVEL_KS"></span>
 
@@ -41,8 +41,8 @@ KSK プロパティ\_AUDIO\_VOLUMELEVEL プロパティは、ボリュームノ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[購入]</th>
-<th align="left">設定</th>
+<th align="left">取得</th>
+<th align="left">オン</th>
 <th align="left">対象</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
@@ -50,11 +50,11 @@ KSK プロパティ\_AUDIO\_VOLUMELEVEL プロパティは、ボリュームノ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[はい]</p></td>
-<td align="left"><p>[はい]</p></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>はい</p></td>
 <td align="left"><p>フィルターまたは Pin インスタンスを使用したノード</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel" data-raw-source="[&lt;strong&gt;KSNODEPROPERTY_AUDIO_CHANNEL&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)"><strong>KSNODEPROPERTY_AUDIO_CHANNEL</strong></a></p></td>
-<td align="left"><p>長い</p></td>
+<td align="left"><p>LONG</p></td>
 </tr>
 </tbody>
 </table>
@@ -67,9 +67,10 @@ KSK プロパティ\_AUDIO\_VOLUMELEVEL プロパティは、ボリュームノ�
 
 -2147483647 は-32767.99998474 デシベル (減衰)、および
 
-\+ 2147483647 は + 32767.99998474 デシベル (ゲイン) です。
++ 2147483647 は + 32767.99998474 デシベル (ゲイン) です。
 
-&gt; \[!\] &gt; デシベル範囲は-2147483648 ~ + 2147483647 の整数値で表されます。このスケールでは、1/65536 デシベルが解決されます。
+> [!Note]
+> デシベル範囲は、-2147483648 ~ + 2147483647 の整数値によって表されます。このスケールでは、1/65536 デシベルが解決されます。
 
  
 
@@ -77,9 +78,9 @@ KSK プロパティ\_AUDIO\_VOLUMELEVEL プロパティは、ボリュームノ�
 
 ### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-KSK プロパティ\_AUDIO\_VOLUMELEVEL property 要求は、正常に完了したことを示すステータス\_成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
+KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL property 要求は、 \_ 正常に完了したことを示すステータス成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
 このプロパティのプロパティ記述子は、チャネル番号を指定します。 ボリュームノードを通過するストリームに*n 個*のチャネルが含まれている場合、チャネルには 0 ~ *n*-1 の番号が付けられます。 詳細については、「[マルチチャネルノードの公開](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-multichannel-nodes)」を参照してください。
@@ -105,11 +106,11 @@ KSK プロパティ\_AUDIO\_VOLUMELEVEL property 要求は、正常に完了し�
 
 [既定のオーディオボリューム設定のカスタマイズ](https://docs.microsoft.com/windows-hardware/drivers/audio/customizing-default-audio-volume-settings)
 
-[既定のオーディオボリューム設定](https://docs.microsoft.com/windows-hardware/drivers/audio/default-audio-volume-settings)
+[既定のオーディオ音量の設定](https://docs.microsoft.com/windows-hardware/drivers/audio/default-audio-volume-settings)
 
-[**KSNODEPROPERTY\_AUDIO\_CHANNEL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
+[**KSNODEPROPERTY \_ オーディオ \_ チャネル**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksnodeproperty_audio_channel)
 
-[**KSNODETYPE\_ボリューム**](ksnodetype-volume.md)
+[**KSNODETYPE \_ ボリューム**](ksnodetype-volume.md)
 
  
 
