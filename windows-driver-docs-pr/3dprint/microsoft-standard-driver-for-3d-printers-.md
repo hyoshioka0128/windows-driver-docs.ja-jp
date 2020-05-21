@@ -1,73 +1,49 @@
 ---
-title: ファースト ステップ ガイド - Microsoft 標準のドライバーの 3D プリンター
-description: Microsoft の標準のドライバーの 3D プリンターでは、Windows 10 と互換性のある自社のプリンターを簡単に作成できます。
+title: ファーストステップガイド-Microsoft Standard Driver for 3D プリンター
+description: Microsoft Standard Driver for 3D プリンターを使用すると、開発者は簡単にプリンターを Windows 10 と互換性があります。
 ms.assetid: DAFC5B26-09BA-483C-B964-1DA96E77765F
-ms.date: 04/20/2017
+ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0faefc875791e74ed3e8c8b6498a046a58640d2f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e0daf596f9417895fb604312ab61eea11d04293
+ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328917"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83553335"
 ---
-# <a name="getting-started-guide---microsoft-standard-driver-for-3d-printers"></a>ファースト ステップ ガイド - Microsoft 標準のドライバーの 3D プリンター
+# <a name="getting-started-guide---microsoft-standard-driver-for-3d-printers"></a>ファーストステップガイド-Microsoft Standard Driver for 3D プリンター
 
+Microsoft Standard Driver for 3D プリンターを使用すると、開発者は簡単にプリンターを Windows 10 と互換性があります。 Microsoft OS 記述子を使用するすべてのプリンターは、互換性のある3D プリンターとして認識されます。 この記事では、具体的な例を使用して、デバイスを Windows 10 で3D プリンターとして認識し、印刷機能を通信できるようにするファームウェアを作成する方法について説明します。
 
-Microsoft の標準のドライバーの 3D プリンターでは、Windows 10 と互換性のある自社のプリンターを簡単に作成できます。 Microsoft OS ディスクリプターを使用するすべてのプリンターは、互換性のある 3D プリンターとして認識できます。 具体的な例を使用して、この記事では、デバイスの Windows 10 での 3D プリンターとして認識され、その印刷機能を通信しているファームウェアを作成する方法を説明します。
+## <a name="introduction"></a>はじめに
 
-## <a name="introduction"></a>概要
+Microsoft 標準ドライバーは、3D プリンターに Windows 10 との互換性を持たせる独立系ハードウェアベンダー (Ihv) から独自のドライバーを作成する負担を軽減します。 Microsoft OS 記述子を認識している Windows のバージョンでは、制御要求を使用して情報を取得し、それを使用してユーザーの操作を必要とせずにデバイスをインストールおよび構成します。
 
+Windows 10 で動作する3D プリンターを取得する一般的なプロセスには、次の手順が含まれます。
 
-Microsoft 標準のドライバーでは、希望する Windows 10 と互換性がある 3D プリンターは、独立系ハードウェア ベンダー (Ihv) から独自のドライバーの書き込みの負担を軽減します。 Microsoft OS ディスクリプターを認識している Windows のバージョンでは、に対する制御要求を使用して、情報を取得し、それを使用して、インストールして、ユーザーの介入を必要とせずにデバイスを構成します。
+1. **互換性のある ID**。 独立系ハードウェアベンダー (IHV) は、プリンターのファームウェアに "3D 印刷" と互換性のある ID を含める必要があります。 これにより、デバイスを3D プリンターとして認識できるようになります。
 
-Windows 10 での作業 3 D プリンターを取得する一般的なプロセスには、次の手順が含まれています。
+2. **標準ドライバー**。 デバイスが接続されると、Windows Update は3D 印刷標準ドライバーをダウンロードし、現在のデバイスを、既定の構成を使用する3D プリンターとして検出します。
 
-1.  **互換性のある ID**します。 独立系ハードウェア ベンダー (IHV) は、プリンターのファームウェアで「3D 印刷」互換性 ID を含める必要があります。 これにより、3 D プリンターとして認識されるデバイスです。
+3. **拡張プロパティ記述子**。 3D プリンターのいくつかの基本構成は、標準ドライバーの一部として利用可能になります。 そのため、開発者は、3D プリンターに一致する基本構成を選択できます。 基本構成を選択した上で、開発者は、3D プリンターに一致するようにプロパティの一部をオーバーライドし、新しいファームウェアに含めることができます。
 
-2.  **標準のドライバー**します。 は、デバイスが接続されていると Windows 更新プログラムが 3D 印刷標準のドライバーをダウンロードし、既定の構成を使用する 3D プリンターとして現在のデバイスを検出します。
+4. **プラグアンドプレイ**。 ファームウェアが3D プリンターのフラッシュメモリに書き込まれると、ユーザーが Windows 10 コンピューターに接続するたびに、標準ドライバーが自動的にダウンロードされ、開発者が選択したカスタム印刷機能が使用されます。
 
-3.  **拡張プロパティの記述子**します。 3D プリンターのいくつかの基本構成が可能な標準のドライバーの一部として。 開発者は自社の 3D プリンターに一致する基本構成を選択したがってできます。 基本構成を選択すると、上に、開発者は自社の 3D プリンターより適切な一致するプロパティの一部をオーバーライドし、新しいファームウェアに含めることがことができます。
+以下のセクションでは、具体的な例を使用して、これらの各手順について説明します。
 
-4.  **プラグ アンド プレイ**します。 ファームウェアの 3D のプリンターのフラッシュ メモリに書き込み時に、ユーザーは、Windows 10 コンピューターに接続するたびと標準のドライバーが自動的にダウンロードするは、開発者が選択したカスタム印刷機能を使用します。
-
-次のセクションでの具体的な例を使用して各手順を表していますが。
-
-詳細については、次を参照してください。 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)します。
+詳細については、「 [MICROSOFT OS 記述子](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))」を参照してください。
 
 ## <a name="compatible-id"></a>互換性 ID
 
+現在3D プリンターを使用していることを Windows オペレーティングシステムに指定するには、適切な互換性 ID を使用する必要があります。 Microsoft 互換性 ID の一覧については、「 [MICROSOFT OS 記述子](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))」を参照してください。
 
-現在使用されている 3D プリンターを Windows オペレーティング システムを指定するに右互換性 ID を使用する必要は Microsoft 互換性 ID の一覧については、「 [Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)します。
+次の表に、3D プリンターの互換性のある ID を示します。
 
-3D プリンターの互換性のある ID が次の表に表示されます。
+| 互換性 ID | 下位互換性 ID | Description |
+| --- | --- | --- |
+| "3DPRINT"<br><br>(0x33 0x44 0x50 0x52 0x44 0X44 0x52 0x00) | 不定 | MS3DPRINT G-コードプリンター |
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>互換性 ID</th>
-<th>下位互換性のある ID</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>"3DPRINT"</p>
-<p>(0x33 0x44 0x50 0x52 0x49 0x4E 0x54 0x00)</p></td>
-<td><p>不定</p></td>
-<td><p>MS3DPRINT G コード プリンター</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-3D プリンターのファームウェアに含まれているヘッダー ファイルで次に示すよう、IHV が互換性のある ID を指定する必要があります。
+3D プリンターファームウェアに含まれるヘッダーファイルでは、次に示すように、IHV は互換性のある ID を指定する必要があります。
 
 ```cpp
 #define MS3DPRINT_CONFIG_SIZE 232
@@ -80,7 +56,7 @@ Windows 10 での作業 3 D プリンターを取得する一般的なプロセ�
         ((uint32_t)__size) & 0xFF,        \
         (((uint32_t)__size)>>8) & 0xFF,   \
         (((uint32_t)__size)>>16) & 0xFF,  \
-        (((uint32_t)__size)>>24) & 0xFF 
+        (((uint32_t)__size)>>24) & 0xFF
 
 // CompatibleID and SubCompatibleID
 static const uint8_t PROGMEM ms3dprint_descriptor[40] = {
@@ -99,31 +75,28 @@ static const uint8_t PROGMEM ms3dprint_descriptor[40] = {
 };
 ```
 
-上記のコードでは、この行は、3 D プリンターの互換性のある ID を示します。
+上記のコードの次の行は、3D プリンターの互換性のある ID です。
 
 `'3', 'D', 'P', 'R', 'I', 'N', 'T', 0x00,         // compatibleID ("3DPRINT")`
 
-この特定の構成では、Ihv はファームウェアをコンパイルし、デバイスをフラッシュします。 デバイスが接続された場合、3 D の標準の印刷ドライバーが Windows Update から自動的にダウンロードを取得します。
+この特定の構成では、Ihv はファームウェアをコンパイルし、デバイスをフラッシュできます。 その後、デバイスが接続されると、3D Print Standard ドライバーが Windows Update から自動的にダウンロードされます。
 
-この段階で、プリンターは標準のドライバーの既定の構成を使用して、既定の構成で使用されるパラメーターは %systemroot% フォルダーでアクセスできる\\System32\\MS3DPrint StandardGCode.xml ファイル。 さらに、開発者が別の基本構成を使用することができます、基本構成の一覧と同じフォルダーの %SYSTEMROOT% で使用できる\\System32\\MS3DPrint します。 この一覧は定期的にこの新しい 3D プリンターが市場に登場にも、新しい構成で格納されます。
+この段階で、プリンターは標準のドライバーの既定の構成を使用しています。既定の構成で使用されるパラメーターは、 \\ \\ ファイル StandardGCode .xml の% SYSTEMROOT% System32 MS3DPrint フォルダーでアクセスできます。 また、開発者は別の基本構成の使用を選択できます。基本構成の一覧は、同じフォルダー% SYSTEMROOT% \\ System32 \\ MS3DPrint にあります。 この一覧には、新しい3D プリンターが市場で登場すると、新しい構成が定期的に設定されます。
 
-## <a name="extended-properties-os-feature-descriptor"></a>OS 機能記述子のプロパティの拡張
+## <a name="extended-properties-os-feature-descriptor"></a>拡張プロパティ OS 機能記述子
 
+前のセクションで説明したように、Ihv はいくつかの基本構成にアクセスできます。 これには、プリンターのフラッシュメモリに格納する必要がある情報の量を最小限に抑えるという利点があります。 開発者は、使用可能な基本構成を調査し、プリンターに最も近い基本構成を選択できます。 この例では、SD カードの基本構成を選択し、次のパラメーターを使用していくつかのプロパティをオーバーライドします。
 
-前のセクションで説明したように、Ihv はいくつかの基本構成へのアクセスがあります。 これにより、プリンターのフラッシュ メモリに格納される情報の量を最小限に抑えることの利点があります。 開発者は、使用できる基本構成を検査し、自分のプリンターに最も近いものを選択できます。 この例では、SD カードの基本構成を選択し、以下のパラメーターのプロパティの一部をオーバーライドするいきます。
+| パラメーター | 値 |
+| --- | --- |
+| Job3DOutputAreaWidth | 250000 |
+| Job3DOutputAreaDepth | 26万 |
+| Job3DOutputAreaHeight | 27万 |
+| Filamentdiameter | 2850 |
 
-| パラメーター            | 値  |
-|-----------------------|--------|
-| Job3DOutputAreaWidth  | 250000 |
-| Job3DOutputAreaDepth  | 260000 |
-| Job3DOutputAreaHeight | 270000 |
-| Filamentdiameter      | 2850   |
+これらのパラメーターの詳細については、 [3D 印刷 SDK (MSI ダウンロード)](https://go.microsoft.com/fwlink/p/?LinkId=394375)のドキュメントの*MS3DPrint Standard G-コードドライバー .docx*ドキュメントを参照してください。
 
- 
-
-これらのパラメーターの詳細についてを参照してください、 *MS3DPrint Standard G コード Driver.docx*に文書化、 [3D 印刷 SDK](https://go.microsoft.com/fwlink/p/?LinkId=394375)ドキュメント。
-
-基本構成を使用して上書きするパラメーターを指定するには、開発者は、次に示すように拡張プロパティの OS 機能記述子を指定するが。
+使用する基本構成とオーバーライドするパラメーターを指定するには、次に示すように、拡張プロパティの OS 機能記述子で開発者が指定する必要があります。
 
 ```cpp
 // Modifiers to the base configuration
@@ -132,7 +105,7 @@ static const uint8_t PROGMEM ms3dprint_properties_descriptor[] = {
     0x00, 0x01,                                         // bcdVersion
     0x05, 0x00,                                         // wIndex
     0x01, 0x00,                                         // wCount
-    
+
     SIZE_TO_DW(MS3DPRINT_OSP_SIZE),                     // dwSize
     0x07, 0x00, 0x00, 0x00,                             // dwPropertyDataType  (1=REG_SZ, 4=REG_DWORD, 7=REG_MULTI_SZ)
 
@@ -163,56 +136,46 @@ static const uint8_t PROGMEM ms3dprint_properties_descriptor[] = {
 };
 ```
 
-OS の拡張プロパティの機能の記述子に関する情報は、 *OS\_Desc\_Ext\_Prop.doc*ファイル。 参照してください[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)詳細についてはします。
+拡張プロパティの OS 機能記述子に関する情報は、 *os \_ Desc \_ Ext \_ Prop. doc*ファイルにあります。 詳細については、「 [MICROSOFT OS 記述子](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))」を参照してください。
 
-## <a name="verifying-the-print-capabilities"></a>印刷機能を確認しています
+## <a name="verifying-the-print-capabilities"></a>印刷機能の確認
 
+デバイスのファームウェアがフラッシュメモリに書き込まれると、デバイスは Windows 10 によって自動的に検出され、印刷機能はレジストリに格納されます。
 
-デバイスがファームウェアをフラッシュ メモリに書き込むと、Windows 10 では、デバイスが自動的に検出して、印刷機能は、レジストリに格納されます。
+![互換性3d プリンターをインストールしています ](images/installing-compatible-3d-printer.png)
 
-![プレリリースの 3d プリンターをインストールします。 ](images/installing-compatible-3d-printer.png)
+IHV がデバイスの VID/PID を独自のものに変更することは非常に重要です。 オペレーティングシステムは、VID と PID が OS 記述子よりも優先されるため、デバイスを正しく検出できないため、別の既存のデバイスのベンダー ID (VID) または製品 ID (PID) は使用しないでください。
 
-IHV が独自にデバイスの VID/PID を変更する非常に重要です。 オペレーティング システムでは、VID と PID よりも優先 OS 記述子とデバイスが正しく検出できません、仕入先 ID (VID) または既存のデバイスを別の製品 ID (PID) を使用しないでください必要があります。
+デバイスが正しくインストールされている場合は、[**デバイスとプリンター**] にデバイスが一覧表示されます。
 
-デバイスがで表示される場合は、デバイスが正しくインストールされて**デバイスとプリンター**します。
+![デバイスとプリンター](images/devices-and-printers-3d.png)
 
-![「デバイスとプリンター」](images/devices-and-printers-3d.png)
+**デバイスマネージャー**では、一致するデバイス id と互換性のある id を確認できます。
 
-**デバイス マネージャー**、一致するデバイス id と互換性のある id を検証できます。
+![デバイスマネージャー](images/device-manager-3d.png)
 
-![デバイス マネージャー](images/device-manager-3d.png)
+![デバイスマネージャーの [詳細] タブ-一致するデバイス id](images/device-manager-details-3d.png)
 
-![デバイス マネージャーの詳細 タブ - デバイス id に一致します。](images/device-manager-details-3d.png)
+![デバイスマネージャーの [詳細] タブ互換 id](images/device-manager-details2-3d.png)
 
-![デバイス マネージャーの詳細 タブ - 互換性 id](images/device-manager-details2-3d.png)
+USB ドライバーのプロパティを取得するには、 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ USB**でレジストリにアクセスします。
 
-USB ドライバーのプロパティでレジストリにアクセスして取得できます**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\Enum\\USB**.
+![usb レジストリの複数文字列値の編集](images/usb-registry-3d.png)
 
-![usb のレジストリでの複数行文字列値を編集します。](images/usb-registry-3d.png)
+3D 印刷ドライバーのプロパティを取得するには、 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Control \\ Print \\ Printers**でレジストリにアクセスします。
 
-3D 印刷ドライバーのプロパティでレジストリにアクセスして取得できます**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\の印刷\\プリンター**します。
-
-![レジストリの 3d 印刷ドライバーのプロパティを表示します。](images/printers-registry-3d.png)
+![レジストリで3d 印刷ドライバーのプロパティを表示する](images/printers-registry-3d.png)
 
 ## <a name="additional-resources"></a>その他の技術情報
 
-
 詳細については、次のドキュメントとリソースを参照してください。
 
-[Windows での 3D 印刷](https://go.microsoft.com/fwlink/p/?LinkId=534206)
+[Windows での 3D 印刷](https://www.microsoft.com/3d-print/windows-3d-printing)
 
-[3D 印刷 SDK (MSI のダウンロード)](https://go.microsoft.com/fwlink/p/?LinkId=394375)
+[3D 印刷 SDK (MSI ダウンロード)](https://go.microsoft.com/fwlink/p/?LinkId=394375)
 
-[Microsoft OS ディスクリプター](https://go.microsoft.com/fwlink/p/?LinkId=533944)
+[Microsoft OS 記述子](https://docs.microsoft.com/previous-versions/gg463179(v=msdn.10))
 
-[USB 2.0 仕様](https://go.microsoft.com/fwlink/p/?linkid=533945)
+[USB 2.0 仕様](https://www.usb.org/documents)
 
-Microsoft 3D 印刷チームに連絡することもできます[3D 印刷に関する質問をしたり](https://go.microsoft.com/fwlink/p/?LinkId=534751)(ask3dprint@microsoft.com)。
-
- 
-
- 
-
-
-
-
+Microsoft 3D 印刷チーム () に問い合わせて、「 [3D 印刷に関する質問](https://go.microsoft.com/fwlink/p/?LinkId=534751)」 () にアクセスすることもでき ask3dprint@microsoft.com ます。

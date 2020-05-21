@@ -1,57 +1,57 @@
 ---
-title: バグを発見する 12 の例を使用してヒープのページ検証
-description: バグを発見する 12 の例を使用してヒープのページ検証
+title: ページヒープ検証を使用してバグを検出する例12
+description: ページヒープ検証を使用してバグを検出する例12
 ms.assetid: aa3f5c53-8522-48be-a3cd-49b740803fe3
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a541f8ef5e454d73afebb0fd1ee48b251f453068
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5dc76e4c73a8ce64b24b2506e1b38248724f7de0
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347775"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435377"
 ---
-# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>例 12:ページ ヒープ検証を使用してバグを発見する
+# <a name="example-12-using-page-heap-verification-to-find-a-bug"></a>例 12: ページヒープ検証を使用したバグの検出
 
 
 ## <span id="ddk_example_12___using_page_heap_verification_to_find_a_bug_dtools"></span><span id="DDK_EXAMPLE_12___USING_PAGE_HEAP_VERIFICATION_TO_FIND_A_BUG_DTOOLS"></span>
 
 
-次の一連のコマンドでは、GFlags と NTSD デバッガーのページ ヒープの検証機能を使用して、ヒープ メモリの使用エラーを検出する方法を示します。 この例で、プログラマは疑わする架空のアプリケーション、pheap buggy.exe、ヒープ エラーが発生し、一連のエラーを識別するためのテストを実行します。
+次の一連のコマンドは、GFlags および NTSD デバッガーのページヒープ検証機能を使用して、ヒープメモリ使用のエラーを検出する方法を示しています。 この例では、架空のアプリケーション pheap-buggy にはヒープエラーがあり、一連のテストを実行してエラーを特定します。
 
-NTSD について詳しくは、次を参照してください。[デバッグを使用して CDB、NTSD](debugging-using-cdb-and-ntsd.md)します。
+NTSD の詳細については、「 [CDB と Ntsd を使用](debugging-using-cdb-and-ntsd.md)したデバッグ」を参照してください。
 
-### <a name="span-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanspan-idstep1enablestandardpageheapverificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>手順 1: 標準的なページ ヒープの検証を有効にします。
+### <a name="span-idstep_1__enable_standard_page_heap_verificationspanspan-idstep_1__enable_standard_page_heap_verificationspanspan-idstep_1__enable_standard_page_heap_verificationspanstep-1-enable-standard-page-heap-verification"></a><span id="Step_1__Enable_standard_page_heap_verification"></span><span id="step_1__enable_standard_page_heap_verification"></span><span id="STEP_1__ENABLE_STANDARD_PAGE_HEAP_VERIFICATION"></span>手順 1: 標準ページヒープの検証を有効にする
 
-次のコマンドにより、pheap の標準的なページ ヒープの検証-buggy.exe:
+次のコマンドは、pheap-buggy の標準のページヒープ検証を有効にします。
 
 ```console
 gflags /p /enable pheap-buggy.exe
 ```
 
-### <a name="span-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanspan-idstep2verifythatpageheapisenabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>手順 2: そのページ ヒープが有効になっていることを確認します。
+### <a name="span-idstep_2__verify_that_page_heap_is_enabledspanspan-idstep_2__verify_that_page_heap_is_enabledspanspan-idstep_2__verify_that_page_heap_is_enabledspanstep-2-verify-that-page-heap-is-enabled"></a><span id="Step_2__Verify_that_page_heap_is_enabled"></span><span id="step_2__verify_that_page_heap_is_enabled"></span><span id="STEP_2__VERIFY_THAT_PAGE_HEAP_IS_ENABLED"></span>手順 2: ページヒープが有効になっていることを確認する
 
-次のコマンドでは、ヒープのページ検証が有効になっているイメージ ファイルが表示されます。
+次のコマンドは、ページヒープ検証が有効になっているイメージファイルを一覧表示します。
 
 ```console
 gflags /p
 ```
 
-応答、GFlags は、次のプログラムの一覧を表示します。 この画面で、**トレース**標準ページ ヒープの検証を示すと**完全なトレース**完全ページ ヒープの検証を示します。 Pheap buggy.exe が記載されているこの例では、**トレース**、意図したとおり、標準的なページ ヒープの検証が有効になっていることを示します。
+これに対して、GFlags は次のプログラムの一覧を表示します。 この画面では、**トレース**は標準のページヒープの検証を示し、**完全なトレース**はページヒープの完全な検証を示します。 この場合、pheap-buggy は**トレース**と共に一覧表示され、意図したとおりに標準ページヒープの検証が有効になっていることを示します。
 
 ```console
 pheap-buggy.exe: page heap enabled with flags (traces )
 ```
 
-### <a name="span-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanspan-idstep3runthedebuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>手順 3: デバッガーを実行します。
+### <a name="span-idstep_3__run_the_debuggerspanspan-idstep_3__run_the_debuggerspanspan-idstep_3__run_the_debuggerspanstep-3-run-the-debugger"></a><span id="Step_3__Run_the_debugger"></span><span id="step_3__run_the_debugger"></span><span id="STEP_3__RUN_THE_DEBUGGER"></span>手順 3: デバッガーを実行する
 
-次のコマンドを実行、 **CorruptAfterEnd** pheap-buggy.exe で NTSD での関数、 **-g** (最初のブレークポイントを無視する) と **-x** (セカンド チャンスの中断に設定アクセス違反例外) のパラメーター:
+次のコマンドは、 **-g** (最初のブレークポイントを無視) および **-x** (アクセス違反例外に対して2回目を設定) パラメーターを使用して、pheap-buggy の**CorruptAfterEnd**関数を実行します。
 
 ```console
 ntsd -g -x pheap-buggy CorruptAfterEnd
 ```
 
-NTSD アプリケーションが失敗すると、次の表示は pheap でエラーが検出されたことを示しますが生成されます-buggy.exe:
+アプリケーションに障害が発生すると、NTSD は次の表示を生成します。これは、pheap-buggy でエラーが検出されたことを示しています。
 
 ```dbgcmd
 ===========================================================
@@ -71,13 +71,13 @@ ntdll!DbgBreakPoint:
 77f7e098 cc               int     3
 ```
 
-ヘッダー情報が破損したブロックをヒープのアドレスが含まれています (00 C 81000。ヒープのハンドル)、破損したブロックのアドレス (00D81EB0:ヒープ ブロック)、および割り当てのサイズ (00000100。ブロック サイズの場合)。
+ヘッダー情報には、破損したブロック (00C81000: ヒープハンドル) を持つヒープのアドレス、破損したブロックのアドレス (00D81EB0: Heap block)、および割り当てのサイズ (00000100: Block size) が含まれます。
 
-「破損したサフィックス パターン」メッセージは、アプリケーションが GFlags が pheap buggy.exe ヒープ割り当ての終了後に挿入されたデータの整合性のパターンに違反したことを示します。
+"破損したサフィックスパターン" メッセージは、pheap-buggy ヒープ割り当ての終了後に、GFlags によって挿入されたデータ整合性パターンにアプリケーションが違反したことを示します。
 
-### <a name="span-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanspan-idstep4displaythecallstackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>手順 4: 呼び出し履歴を表示します。
+### <a name="span-idstep_4__display_the_call_stackspanspan-idstep_4__display_the_call_stackspanspan-idstep_4__display_the_call_stackspanstep-4-display-the-call-stack"></a><span id="Step_4__Display_the_call_stack"></span><span id="step_4__display_the_call_stack"></span><span id="STEP_4__DISPLAY_THE_CALL_STACK"></span>手順 4: 呼び出し履歴を表示する
 
-次の手順で、エラーの原因となった関数を検索する NTSD を報告したアドレスを使用します。 次の 2 つのコマンドでは、行番号の表示の行番号、呼び出し履歴、デバッガーでのダンプを有効にします。
+次の手順では、NTSD に報告されたアドレスを使用して、エラーの原因となった関数を見つけます。 次の2つのコマンドは、デバッガーで行番号のダンプを有効にし、行番号を含む呼び出し履歴を表示します。
 
 ```dbgcmd
 C:\>.lines
@@ -101,41 +101,41 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 0006fff0 00000000 0100149c 00000000 78746341 kernel32!DosPathToSessionPathA+0x204
 ```
 
-その結果、デバッガーでは、行番号を pheap buggy.exe の呼び出し履歴を表示します。 呼び出し履歴の表示を示しますエラー発生したときに、 **TestCorruptAfterEnd** pheap buggy.exe で関数が呼び出すことによって 0x00c80000 で割り当てを解放しよう**選択肢**へのリダイレクト**RtlFreeHeap**します。
+その結果、デバッガーは pheap-buggy の呼び出し履歴を行番号と共に表示します。 呼び出し履歴の表示では、pheap-buggy の**TestCorruptAfterEnd**関数が**heapfree**を呼び出して0x00c80000 で割り当てを解放しようとしたときに、エラーが発生したことを示しています。 **rtlfreeheap**へのリダイレクトです。
 
-このエラーの最も可能性の高い原因は、この関数では、割り当てられているバッファーの末尾を越えたプログラムが記述したことです。
+このエラーの最も可能性が高い原因は、プログラムが、この関数で割り当てられたバッファーの末尾を越えて書き込んだことです。
 
-### <a name="span-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanspan-idstep5enablefullpageheapverificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>手順 5: 完全ページ ヒープの検証を有効にします。
+### <a name="span-idstep_5__enable_full_page_heap_verificationspanspan-idstep_5__enable_full_page_heap_verificationspanspan-idstep_5__enable_full_page_heap_verificationspanstep-5-enable-full-page-heap-verification"></a><span id="Step_5__Enable_full_page_heap_verification"></span><span id="step_5__enable_full_page_heap_verification"></span><span id="STEP_5__ENABLE_FULL_PAGE_HEAP_VERIFICATION"></span>手順 5: ページヒープの完全な検証を有効にする
 
-標準的なページ ヒープの検証とは異なり完全ページ ヒープの検証は発生するとすぐにこのヒープ バッファーの誤用をキャッチできます。 次のコマンドにより、pheap の完全ページ ヒープの検証-buggy.exe:
+標準のページヒープ検証とは異なり、完全なページヒープ検証では、このヒープバッファーが発生するとすぐに誤用をキャッチすることができます。 次のコマンドを実行すると、pheap-buggy のページヒープの完全な検証が有効になります。
 
 ```console
 gflags /p /enable pheap-buggy.exe /full
 ```
 
-### <a name="span-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanspan-idstep6verifythatfullpageheapisenabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>手順 6: その完全ページ ヒープが有効になっていることを確認します。
+### <a name="span-idstep_6__verify_that_full_page_heap_is_enabledspanspan-idstep_6__verify_that_full_page_heap_is_enabledspanspan-idstep_6__verify_that_full_page_heap_is_enabledspanstep-6-verify-that-full-page-heap-is-enabled"></a><span id="Step_6__Verify_that_full_page_heap_is_enabled"></span><span id="step_6__verify_that_full_page_heap_is_enabled"></span><span id="STEP_6__VERIFY_THAT_FULL_PAGE_HEAP_IS_ENABLED"></span>手順 6: ページヒープ全体が有効になっていることを確認する
 
-次のコマンドには、ヒープのページ検証が有効になっているプログラムが一覧表示されます。
+次のコマンドは、ページヒープ検証が有効になっているプログラムを一覧表示します。
 
 ```console
 gflags /p
 ```
 
-応答、GFlags は、次のプログラムの一覧を表示します。 この画面で、**トレース**標準ページ ヒープの検証を示すと**完全なトレース**完全ページ ヒープの検証を示します。 Pheap buggy.exe が記載されているこの例では、**完全なトレース**、意図したとおり完全ページ ヒープの検証が有効になっていることを示します。
+これに対して、GFlags は次のプログラムの一覧を表示します。 この画面では、**トレース**は標準のページヒープの検証を示し、**完全なトレース**はページヒープの完全な検証を示します。 この場合、pheap-buggy は**完全なトレース**と共に一覧表示され、完全なページヒープの検証が有効になっていることを示しています。
 
 ```console
 pheap-buggy.exe: page heap enabled with flags (full traces )
 ```
 
-### <a name="span-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanspan-idstep7runthedebuggeragainspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>手順 7: デバッガーをもう一度実行します。
+### <a name="span-idstep_7__run_the_debugger_againspanspan-idstep_7__run_the_debugger_againspanspan-idstep_7__run_the_debugger_againspanstep-7-run-the-debugger-again"></a><span id="Step_7__Run_the_debugger_again"></span><span id="step_7__run_the_debugger_again"></span><span id="STEP_7__RUN_THE_DEBUGGER_AGAIN"></span>手順 7: デバッガーを再実行する
 
-次のコマンドを実行、 **CorruptAfterEnd** pheap-buggy.exe NTSD デバッガーでの関数、 **-g** (最初のブレークポイントを無視する) と **-x** (設定アクセス違反例外でのセカンド チャンス中断) のパラメーター。
+次のコマンドは、pheap-buggy の**CorruptAfterEnd**関数を、 **-g** (最初のブレークポイントを無視) および **-x** (アクセス違反例外に対して2回目の設定) パラメーターを使用して、NTSD デバッガーで実行します。
 
 ```console
 ntsd -g -x pheap-buggy CorruptAfterEnd
 ```
 
-NTSD アプリケーションが失敗すると、次の表示は pheap でエラーが検出されたことを示しますが生成されます-buggy.exe:
+アプリケーションに障害が発生すると、NTSD は次の表示を生成します。これは、pheap-buggy でエラーが検出されたことを示しています。
 
 ```console
 Page heap: process 0x5BC created heap @ 00880000 (00980000, flags 0x3)
@@ -152,9 +152,9 @@ pheap-buggy!TestCorruptAfterEnd+1f:
 01001398 889801010000     mov     [eax+0x101],bl          ds:0023:00c87001=??
 ```
 
-完全ページ ヒープの検証が有効になっている、デバッガーは、アクセス違反で中断されます。 アクセス違反の正確な場所を検索するには、行番号のダンプを有効にして、コール スタック トレースを表示します。
+ページヒープの完全な検証が有効になっている場合、デバッガーはアクセス違反時に中断します。 アクセス違反の正確な場所を検索するには、行番号のダンプを有効にし、呼び出し履歴トレースを表示します。
 
-番号付きのコール スタック トレースは次のようです。問題を表示する行は、太字で表示されます。
+番号付きコールスタックトレースは、次のように表示されます。 
 
 ```console
 ChildEBP RetAddr  Args to Child
@@ -165,11 +165,11 @@ WARNING: Stack unwind information not available. Following frames may be wrong.
 0006fff0 00000000 0100149c 00000000 78746341 kernel32!DosPathToSessionPathA+0x204
 ```
 
-行 184 pheap buggy.exe で問題が発生するスタック トレースを示しています。 完全ページ ヒープの検証が有効になっているため、呼び出し履歴は、システム DLL ではなく、プログラム コードで開始します。 その結果、違反は、これが発生した場合、ヒープ ブロックが解放されたのではなく検出されました。
+スタックトレースは、pheap-buggy の184行目で問題が発生していることを示しています。 ページヒープの完全な検証が有効になっているため、呼び出し履歴はシステム DLL ではなくプログラムコードで開始されます。 その結果、ヒープブロックが解放されたときではなく、違反が発生した場所でキャッチされました。
 
-### <a name="span-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanspan-idstep8locatetheerrorinthecodespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>手順 8: コードで、エラーを見つけてください。
+### <a name="span-idstep_8__locate_the_error_in_the_codespanspan-idstep_8__locate_the_error_in_the_codespanspan-idstep_8__locate_the_error_in_the_codespanstep-8-locate-the-error-in-the-code"></a><span id="Step_8__Locate_the_error_in_the_code"></span><span id="step_8__locate_the_error_in_the_code"></span><span id="STEP_8__LOCATE_THE_ERROR_IN_THE_CODE"></span>手順 8: コードでエラーを見つける
 
-クイック検査では、問題の原因が表示されます。プログラムは、256 バイトの (0x100) バッファーの一般的なものではオフ エラー 257 バイト (0x101) への書き込みを試みます。
+クイック検査では、問題の原因が明らかになります。プログラムは、一般的な1つずつのエラーである256バイト (0x100) バッファーの257th バイト (0x101) への書き込みを試みます。
 
 ```console
 *((PCHAR)Block + 0x100) = 0;

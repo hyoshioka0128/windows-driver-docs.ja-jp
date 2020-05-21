@@ -170,7 +170,7 @@ SCCD が完了すると、機能所有者は署名のために Microsoft に電�
 
 Windows 10 バージョン1803以降では、アプリは1つ以上の SCCD ファイルからカスタム機能を宣言できます。 SCCD ファイルをアプリケーションパッケージのルートに配置します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 次の図は、上で説明したシーケンスの概要を示しています。
 
@@ -178,13 +178,13 @@ Windows 10 バージョン1803以降では、アプリは1つ以上の SCCD フ�
 
 ## <a name="see-also"></a>参照
 
-* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [Windows ドライバーの概要](../develop/getting-started-with-windows-drivers.md)
 * [ユニバーサル Windows プラットフォームの紹介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)
 * [アプリの機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)
 * [Visual Studio を使用して UWP アプリを開発する](https://docs.microsoft.com/windows/uwp/develop/)
 * [ドライバーとユニバーサル Windows プラットフォーム (UWP) アプリとのペアリング](../install/pairing-app-and-driver-versions.md)
-* [UWP アプリを開発する](https://docs.microsoft.com/windows/uwp/develop/)
+* [UWP アプリの開発](https://docs.microsoft.com/windows/uwp/develop/)
 * [Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 * [カスタム機能のサンプルアプリ](https://go.microsoft.com/fwlink/p/?LinkId=846904)
 * [カスタム機能ドライバーのサンプル](https://aka.ms/customcapabilitydriversample )

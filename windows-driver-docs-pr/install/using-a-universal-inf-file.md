@@ -80,5 +80,5 @@ Windows 10 など、windows の一部のエディションでは、Windows 10 De
 
 ## <a name="see-also"></a>参照
 
-* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [Windows ドライバーの概要](../develop/getting-started-with-windows-drivers.md)
 * [InfVerif](../devtest/infverif.md)

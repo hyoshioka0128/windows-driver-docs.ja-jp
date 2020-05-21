@@ -4,12 +4,12 @@ description: このトピックでは、コマンドラインから InfVerif を
 ms.assetid: CC2DB624-FFEE-4049-ACE7-4A24B330BADB
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b7f868f8bc9d7633e2644d226a579a4c9ac6b84
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 8486fabd13756ad7fcc9eee3688f992988e7b8db
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235298"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435366"
 ---
 # <a name="running-infverif-from-the-command-line"></a>コマンドラインからの InfVerif の実行
 
@@ -67,7 +67,7 @@ Verbose オプションは、INF が有効かどうかを指定する行を出�
 
 *Windows 10 バージョン1703の新バージョン:* Info オプションは、INF の適用性を確認する場合に特に役立ちます。  サポートされている各ハードウェア ID と、有効なアーキテクチャおよび最小 OS バージョンを報告します。  /Info と/osver を一緒に使用して、OS のバージョンとアーキテクチャ全体で INF の適用性を検証することができます。
 
-*Windows 10 バージョン1809の新バージョン:* *Windows ドライバー*を開発している場合は、(では) を使用して、 `infverif /w` `/v` [dch Design 原則](dch-principles-best-practices.md)の**宣言 (D)** の原則との互換性を判断します。  また、このフラグは、 `/w` INF が[Windows ドライバーとはじめに](getting-started-with-windows-drivers.md)の[ドライバーパッケージ分離](driver-isolation.md)要件に準拠しているかどうかも確認します。
+*Windows 10 バージョン1809の新バージョン:* *Windows ドライバー*を開発している場合は、(では) を使用して、 `infverif /w` `/v` [dch Design 原則](../develop/dch-principles-best-practices.md)の**宣言 (D)** の原則との互換性を判断します。  また、このフラグは、 `/w` INF が[Windows ドライバーとはじめに](../develop/getting-started-with-windows-drivers.md)の[ドライバーパッケージ分離](../develop/driver-isolation.md)要件に準拠しているかどうかも確認します。
 
 複数の INF ファイルを検証するには、複数のファイル名を指定するか、ワイルドカードを使用します。
 

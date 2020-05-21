@@ -16,7 +16,7 @@ ms.locfileid: "83235370"
 
 この情報は、次のオペレーティングシステムに適用されます。
 
-- Windows 10 バージョン2004
+- Windows 10 バージョン 2004
 - Windows 10 バージョン 1903
 - Windows 10 Version 1809
 - Windows 10 バージョン 1803
@@ -54,7 +54,7 @@ OSI メソッドは次のように \_ 定義されています。
 
 ### <a name="argument"></a>引数
 
-各オペレーティングシステムに対して定義された文字列。 次に例を示します。
+各オペレーティングシステムに対して定義された文字列。 たとえば、次のように入力します。
 
 - Windows 8.1 および Windows Server 2012 R2 の場合は "windows 2013"
 - Windows 8 および Windows Server 2012 の場合は "windows 2012"
@@ -98,12 +98,12 @@ Windows オペレーティングシステムでは、OSI メソッドの引数�
 | Windows 2018        | Windows 10 バージョン 1803      |
 | Windows 2018.2      | Windows 10 Version 1809      |
 | Windows 2019        | Windows 10 バージョン 1903      |
-| Windows 2020        | Windows 10 バージョン2004      |
+| Windows 2020        | Windows 10 バージョン 2004      |
 
 ### <a name="implementation-note"></a>実装に関する注意
 
 オペレーティングシステムを識別するルーチンを SB スコープの下にある INI メソッドに配置して、 \_ \\ \_ \_ OSI ができるだけ早く実行されるようにします。 この配置は、オペレーティングシステムによって、OSI メソッドの文字列引数に基づいて機能が利用可能になるため、重要です \_ 。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の技術情報
 
 [高度な構成と電源インターフェイスの仕様](https://uefi.org/specifications)

@@ -26,7 +26,7 @@ ms.locfileid: "83235425"
 
 ドライバー開発者向けの手順については、「[ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](hardware-support-app--hsa--steps-for-driver-developers.md)」を参照してください。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="getting-started"></a>はじめに
 
 まず、Visual Studio の最新バージョンをインストールし、UWP アプリプロジェクトを作成します。  カスタム機能を備えた UWP アプリをビルドするには Windows SDK バージョン 10.0.15063 (Windows 10 の作成者の更新) 以降が必要です。 プロジェクトファイルでは、バージョン10.0.15063 以上も指定する必要があります。 構成の詳細については、「 [Visual Studio を使用した UWP アプリの開発](/windows/uwp/develop/)」を参照してください。
 
@@ -125,7 +125,7 @@ SCCD ファイルを右クリックし、[**コンテンツ**] を [ **True**] �
 * [ハードウェアサポートアプリ (HSA): ドライバー開発者向けの手順](hardware-support-app--hsa--steps-for-driver-developers.md)
 * [デバイスを開発用に有効にする](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 * [カスタム機能のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability)
-* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [Windows ドライバーの概要](../develop/getting-started-with-windows-drivers.md)
 * [ドライバーとユニバーサル Windows プラットフォーム (UWP) アプリとのペアリング](../install/pairing-app-and-driver-versions.md)
 * [ユニバーサル Windows プラットフォームの紹介](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 * [ユニバーサル Windows プラットフォーム (UWP)](https://docs.microsoft.com/windows/uwp/design/basics/design-and-ui-intro)

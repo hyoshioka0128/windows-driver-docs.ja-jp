@@ -5,7 +5,7 @@ ms.assetid: 5F62DEEA-D192-46ED-827C-021A749D7091
 keywords:
 - バグチェック 0x20001 HYPERVISOR_ERROR
 - HYPERVISOR_ERROR
-ms.date: 04/12/2019
+ms.date: 05/15/2020
 topic_type:
 - apiref
 api_name:
@@ -13,15 +13,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b3822317651aa3d6a1b0293f2561e70d371551f9
-ms.sourcegitcommit: b35469bbcabee996af70bcbd8564184f547a8c57
+ms.openlocfilehash: 067d8df4d045e11eb96de2a78d10923333f4b6b1
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83406246"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435370"
 ---
 # <a name="bug-check-0x20001-hypervisor_error"></a>バグチェック 0x20001: ハイパーバイザー \_ エラー
-
 
 ハイパーバイザー \_ エラーのバグチェックには、0x00020001 の値が含まれています。 これは、ハイパーバイザーで致命的なエラーが発生したことを示します。
 
@@ -33,11 +32,11 @@ ms.locfileid: "83406246"
 
 | パラメーター | 説明 |
 |-----------|-------------|
-| 1         | 予約されています。    |
-| 2         | 予約されています。    |
-| 3         | 予約されています。    |
-| 4         | 予約されています。    |
+| 1         | 予約済み    |
+| 2         | 予約済み    |
+| 3         | 予約済み    |
+| 4         | 予約済み    |
 
-## <a name="resolution"></a>解像度 
+## <a name="resolution"></a>解決方法
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに非常に役立ちます。
+! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
