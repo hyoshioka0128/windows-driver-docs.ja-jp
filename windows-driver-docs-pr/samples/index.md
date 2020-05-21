@@ -15,7 +15,7 @@ ms.locfileid: "74782609"
 ---
 # <a name="windows-driver-samples"></a>Windows ドライバー サンプル
 
-[Microsoft サンプル ポータル](https://docs.microsoft.com/samples/browse/?products=windows-wdk)では、個々の Windows 10 ドライバーのサンプルを参照してダウンロードできます。 また、GitHub の [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) リポジトリを複製、フォーク、またはダウンロードすることもできます。
+[Microsoft サンプル ポータル](https://docs.microsoft.com/samples/browse/?products=windows-wdk)では、個々の Windows 10 ドライバーのサンプルを参照してダウンロードできます。 また、GitHub の [Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) リポジトリをクローン、フォーク、またはダウンロードすることもできます。
 
 以前のバージョンの Windows ドライバー サンプルは、GitHub 上の Microsoft Archive にアーカイブされています。
 
