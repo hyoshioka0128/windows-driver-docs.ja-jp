@@ -18,12 +18,12 @@ keywords:
 - デバイス情報の一覧表示 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: high
-ms.openlocfilehash: d5c3e1418e05d8ffc0a852d626dbefbe1433dc72
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 94b709bf27910f9bd6a4aba7d94b9f55d5af3a28
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335946"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769626"
 ---
 # <a name="windows-device-console-devconexe"></a>Windows デバイス コンソール (Devcon.exe)
 
@@ -46,7 +46,7 @@ DevCon は、Microsoft Windows 2000 以降のバージョンの Windows で実�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>DevCon (Devcon) は、デスクトップ アプリ用の WDK、Visual Studio、Windows SDK をインストールするときに組み込まれます。 キットのダウンロードの詳細については、<a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>に関するページを参照してください。</p>
+<td align="left"><p>DevCon (Devcon) は、デスクトップ アプリ用の WDK、Visual Studio、Windows SDK をインストールするときに組み込まれます。 キットのダウンロードの詳細については、<a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">Windows ハードウェア ダウンロード</a>に関するページを参照してください。</p>
 <p><strong>Windows Driver Kit (WDK) 8 および Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
 <p>%WindowsSdkDir%\tools\x64\devcon.exe</p>
 <p>%WindowsSdkDir%\tools\x86\devcon.exe</p>
@@ -109,7 +109,7 @@ DevCon 機能は次のとおりです。
 ## <a name="span-iddevcon_source_codespanspan-iddevcon_source_codespanspan-iddevcon_source_codespandevcon-source-code"></a><span id="DevCon_source_code"></span><span id="devcon_source_code"></span><span id="DEVCON_SOURCE_CODE"></span>DevCon ソース コード
 
 
-また、DevCon で使用する、セットアップおよび構成のデータを取得および変更するための方法を調べることができるように、DevCon ソース コードも提供されています。 DevCon では、[一般的なセットアップ関数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))、[デバイス インストール関数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))、[PnP 構成マネージャー関数](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))の使用法が示されます。 [デバイス コンソール (DevCon) ツール](https://go.microsoft.com/fwlink/p/?LinkId=617966)用のソース コードは、GitHub 上の [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507) リポジトリにあります。
+また、DevCon で使用する、セットアップおよび構成のデータを取得および変更するための方法を調べることができるように、DevCon ソース コードも提供されています。 DevCon では、[一般的なセットアップ関数](https://docs.microsoft.com/previous-versions/ff544985(v=vs.85))、[デバイス インストール関数](https://docs.microsoft.com/previous-versions/ff541299(v=vs.85))、[PnP 構成マネージャー関数](https://docs.microsoft.com/previous-versions/ff549713(v=vs.85))の使用法が示されます。 [デバイス コンソール (DevCon) ツール](https://github.com/Microsoft/Windows-driver-samples/tree/master/setup/devcon)用のソース コードは、GitHub 上の [Windows ドライバー サンプル](https://github.com/Microsoft/Windows-driver-samples) リポジトリにあります。
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 

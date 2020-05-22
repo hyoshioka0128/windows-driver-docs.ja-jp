@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4af5a4b1bc932be78717700253f3ba15db8360
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 05a0fff08f9416c372f08371ab0ed3a8078bfb30
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335952"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769688"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -39,7 +39,7 @@ bcdedit  /set [{ID}] datatype value
 **{ID}** は、ブート エントリに関連付けられている GUID です。 **{ID}** を指定しなかった場合、このコマンドで現在のオペレーティング システムのブート エントリが変更されます。 ブート エントリを指定する場合は、ブート エントリに関連付けられている GUID を中かっこ **{ }** で囲む必要があります。 すべてのアクティブ ブート エントリの GUID 識別子を表示するには、**bcdedit /enum** コマンドを使用します。 現在のブート エントリの識別子は **{current}** です。 このオプションの詳細を表示するには、次のコマンドを使用します。**bcdedit /? ID**
 
 > [!NOTE]
-> [Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=108518) を使用している場合は、ブート エントリ識別子を引用符で囲む必要があります。たとえば、 **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** または **"{current}"** です。
+> [Windows PowerShell](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/?view=powershell-6) を使用している場合は、ブート エントリ識別子を引用符で囲む必要があります。たとえば、 **"{49916baf-0e08-11db-9af4-000bdbd316a0}"** または **"{current}"** です。
 
 *datatype* *value*  
 
@@ -49,7 +49,7 @@ bcdedit  /set [{ID}] datatype value
 システム初期化ログを有効にします。 このログは、%WINDIR% ディレクトリの Ntbtlog.txt ファイルに記録されます。 読み込まれたドライバーとアンロードされたドライバーの一覧がテキスト形式で示されます。
 
 **bootmenupolicy** \[ **Legacy** | **Standard** \]  
-システムによって使用されるブート メニューの種類を定義します。 Windows 10、Windows 8.1、Windows 8、Windows RT の既定値は **Standard** です。 Windows Server 2012 R2、Windows Server 2012 の場合、既定値は **Legacy** です。 **Legacy** を選択した場合、[詳細オプション] メニュー (**F8** キー) を使用できます。 **Standard** を選択すると、ブート メニューは表示されますが、特定の状況に限られます。たとえば、起動時にエラーが発生した場合、修復ディスクまたはインストール メディアから起動している場合、複数のブート エントリを構成した場合、またはカスタマイズした起動を使用するようにコンピューターを手動で構成した場合などがあります。 **Standard** を選択した場合、ブート中に **F8** キーは無視されます。 Windows 8 PC は高速に起動するので、**F8** キーを押す十分な時間がありません。 詳細については、「[Windows のスタートアップ設定 (セーフ モードなど)](https://go.microsoft.com/fwlink/p/?linkid=313921)」を参照してください。
+システムによって使用されるブート メニューの種類を定義します。 Windows 10、Windows 8.1、Windows 8、Windows RT の既定値は **Standard** です。 Windows Server 2012 R2、Windows Server 2012 の場合、既定値は **Legacy** です。 **Legacy** を選択した場合、[詳細オプション] メニュー (**F8** キー) を使用できます。 **Standard** を選択すると、ブート メニューは表示されますが、特定の状況に限られます。たとえば、起動時にエラーが発生した場合、修復ディスクまたはインストール メディアから起動している場合、複数のブート エントリを構成した場合、またはカスタマイズした起動を使用するようにコンピューターを手動で構成した場合などがあります。 **Standard** を選択した場合、ブート中に **F8** キーは無視されます。 Windows 8 PC は高速に起動するので、**F8** キーを押す十分な時間がありません。 詳細については、「[Windows のスタートアップ設定 (セーフ モードなど)](https://support.microsoft.com/help/17076/windows-8-startup-settings-safe-mode)」を参照してください。
 
 > [!NOTE]
 > このオプションは、Windows 8 および Windows Server 2012 以降で使用できます。 また、**onetimeadvancedoptions** を使用して、次回の起動時に [詳細オプション] (**F8** キー) メニュー (**Legacy**) を 1 回使用することもできます。
@@ -98,12 +98,12 @@ OS で CMOS やキーボード コントローラーなどのレガシ PC デバ
 > [!NOTE]
 > このオプションは、デバッグのためにのみ使用してください。 
 
-**groupsize** *maxsize*: 1 つのプロセッサ グループに含まれる論理プロセッサの最大数を設定します。ここで *maxsize* は、1 から 64 まで (両端を含む) の 2 の累乗です。 既定では、プロセッサ グループの最大サイズは 64 論理プロセッサです。 このブート構成設定を使用して、テスト目的でコンピューターのプロセッサ グループのサイズと構成をオーバーライドすることができます。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このブート オプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。
+**groupsize** *maxsize*: 1 つのプロセッサ グループに含まれる論理プロセッサの最大数を設定します。ここで *maxsize* は、1 から 64 まで (両端を含む) の 2 の累乗です。 既定では、プロセッサ グループの最大サイズは 64 論理プロセッサです。 このブート構成設定を使用して、テスト目的でコンピューターのプロセッサ グループのサイズと構成をオーバーライドすることができます。 [プロセッサ グループ](https://docs.microsoft.com/windows/win32/procthread/processor-groups)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このブート オプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。
 
 **groupsize** オプションは、複数のグループに強制的に適用する必要があり、コンピューターのアクティブな論理プロセッサが 64 個以下である場合に使用します。 このオプションの使用方法の詳細については、「[ドライバーの複数プロセッサ グループのサポートをテストするためのブート パラメーター](https://docs.microsoft.com/windows-hardware/drivers/devtest/boot-parameters-to-test-drivers-for-multiple-processor-group-support)」を参照してください。
 
 **groupaware** \[ **on** | **off** \]  
-複数のプロセッサ グループがある環境において、複数のグループをドライバーに強制的に認識させます。 このオプションを使用すると、グループ間のドライバーとコンポーネントの非互換性を明らかにするのに役立ちます。 [プロセッサ グループ](https://go.microsoft.com/fwlink/p/?linkid=155063)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このブート オプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。 **groupaware** オプションと **groupsize** オプションを使用すると、コンピューターのアクティブな論理プロセッサが 64 個以下である場合に、複数のグループで機能するようにドライバーの互換性をテストできます。
+複数のプロセッサ グループがある環境において、複数のグループをドライバーに強制的に認識させます。 このオプションを使用すると、グループ間のドライバーとコンポーネントの非互換性を明らかにするのに役立ちます。 [プロセッサ グループ](https://docs.microsoft.com/windows/win32/procthread/processor-groups)では、64 を超える数の論理プロセッサを搭載したコンピューターがサポートされます。 このブート オプションは、64 ビット版の Windows 7 および Windows Server 2008 R2 以降のバージョンで使用できます。 このブート オプションは、32 ビット版の Windows 7 には無効です。 **groupaware** オプションと **groupsize** オプションを使用すると、コンピューターのアクティブな論理プロセッサが 64 個以下である場合に、複数のグループで機能するようにドライバーの互換性をテストできます。
 
 **groupaware on** に設定すると、プロセスは確実にグループ 0 以外のグループで開始されます。 これにより、ドライバーとコンポーネントの間でグループ間の相互作用が生じる可能性が高くなります。 また、このオプションを選択すると、レガシ関数である **KeSetTargetProcessorDpc**、**KeSetSystemAffinityThreadEx**、**KeRevertToUserAffinityThreadEx** の動作が変更され、アクティブな論理プロセッサを含む最も大きい番号のグループで常に操作が実行されるようになります。 これらのレガシ関数のいずれかを呼び出すドライバーは、対応するグループ対応関数 (**KeSetTargetProcessorDpcEx**、**KeSetSystemGroupAffinityThread**、**KeRevertToUserGroupAffinityThread**) を呼び出すように変更する必要があります。
 
@@ -334,7 +334,7 @@ BIOS で構成されている PCI (Peripheral Component Interconnect) リソー�
 bcdedit /deletevalue groupsize
 ```
 
-ブート オプションに対するどのような変更も、有効にするには再起動することが必要です。 一般的に使用される BCDEdit コマンドの詳細については、「[ブート構成データ エディターに関してよく寄せられる質問](https://go.microsoft.com/fwlink/p/?linkid=155086)」を参照してください。
+ブート オプションに対するどのような変更も、有効にするには再起動することが必要です。 一般的に使用される BCDEdit コマンドの詳細については、「[ブート構成データ エディターに関してよく寄せられる質問](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc721886(v=ws.10))」を参照してください。
 
 ## <a name="requirements"></a>要件
 
