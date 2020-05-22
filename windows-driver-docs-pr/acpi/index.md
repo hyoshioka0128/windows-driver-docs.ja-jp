@@ -2,20 +2,22 @@
 title: ACPI 設計ガイド
 description: このセクションでは、デバイス ドライバーと Advanced Configuration and Power Interface (ACPI) デバイスのインターフェイス方法について説明します。 ACPI デバイスは、Advanced Configuration and Power Interface (ACPI) 仕様で定義されています。
 ms.assetid: 294f4b43-2b3e-4afa-8fa8-74a6719131c7
-ms.date: 01/24/2018
+ms.date: 05/19/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 1f40bc64dfb40c28426bc7b7d0da04f1d219784f
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 0cf838fbf0571d879c15b41215f8f2b059d1e388
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "72827242"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769340"
 ---
 # <a name="acpi-design-guide"></a>ACPI 設計ガイド
 
-このセクションでは、デバイス ドライバーと Advanced Configuration and Power Interface (ACPI) デバイスのインターフェイス方法について説明します。 ACPI デバイスは、[Advanced Configuration and Power Interface (ACPI) 仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)で定義されています。
+このセクションでは、デバイス ドライバーと Advanced Configuration and Power Interface (ACPI) デバイスのインターフェイス方法について説明します。
+
+ACPI デバイスは、[Advanced Configuration and Power Interface (ACPI) 仕様](https://uefi.org/specifications)で定義されています。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

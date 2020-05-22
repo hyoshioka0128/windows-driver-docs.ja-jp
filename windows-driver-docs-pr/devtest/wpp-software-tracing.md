@@ -13,12 +13,12 @@ keywords:
 - WDK のトレース、WPP
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c484639102f09bad1aae022f2a1dc801911fac5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb1772fa4a4ccfbedd739a610d1bae7207aa4d92
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839083"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769652"
 ---
 # <a name="wpp-software-tracing"></a>WPP ソフトウェア トレース
 
@@ -62,7 +62,7 @@ WPP ソフトウェアトレースは、Microsoft Windows 2000 以降のバー�
 
 WPP ソフトウェアトレースをドライバーまたはアプリケーションに追加するための基本的なプロセスには、次の手順が含まれます。 WDF ドライバーを作成するために WDK に用意されているいずれかの Visual Studio テンプレートを使用すると、多くの作業が行われます。
 
--   [トレースプロバイダー](trace-provider.md)としてドライバーまたはアプリケーションを一意に識別するコントロールの GUID を定義します。 プロバイダーは、 [WPP\_制御\_guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロの定義、および[tracelog](tracelog.md)や別の[トレースコントローラー](trace-controller.md)によって使用される関連するコントロールファイルにこの GUID を指定します。
+-   [トレースプロバイダー](trace-provider.md)としてドライバーまたはアプリケーションを一意に識別するコントロールの GUID を定義します。 プロバイダーは、 [WPP \_ 制御 \_ guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロの定義、および[Tracelog](tracelog.md)または別の[トレースコントローラー](trace-controller.md)で使用される関連するコントロールファイルにこの GUID を指定します。
 
 -   「Windows ドライバーおよび[Wpp ソフトウェアトレースリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556205(v=vs.85))[への wpp ソフトウェアトレースの追加](adding-wpp-software-tracing-to-a-windows-driver.md)」の説明に従って、必要な wpp 関連の C プリプロセッサディレクティブおよび wpp マクロ呼び出しをプロバイダーのソースファイルに追加します。
 
@@ -73,15 +73,16 @@ WPP ソフトウェアトレースをドライバーまたはアプリケーシ�
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [Windows ドライバーに WPP ソフトウェアトレースを追加する](adding-wpp-software-tracing-to-a-windows-driver.md)
--   [トレースログのトレースレコーダー](using-wpp-recorder.md)
--   [トレースプロバイダーでの WPP ソフトウェアトレースの使用](using-wpp-software-tracing-in-a-trace-provider.md)
--   [トレースプロバイダーへの WPP マクロの追加](adding-wpp-macros-to-a-trace-provider.md)
+-   [Windows ドライバーへの WPP ソフトウェア トレースの追加](adding-wpp-software-tracing-to-a-windows-driver.md)
+-   [トレースのログ記録用のインフライト トレース レコーダー](using-wpp-recorder.md)
+-   [トレース プロバイダーでの WPP ソフトウェア トレースの使用](using-wpp-software-tracing-in-a-trace-provider.md)
+-   [トレース プロバイダーへの WPP マクロの追加](adding-wpp-macros-to-a-trace-provider.md)
 -   [WPP プリプロセッサ](wpp-preprocessor.md)
--   [WDF ドライバーのトレースと Diagnosability](tracing-and-diagnosability-for-wdf-drivers.md)
+-   [WDF ドライバーのトレースと診断能力](tracing-and-diagnosability-for-wdf-drivers.md)
 
-**注**   WINDOWS イベントトレーシング (ETW) と WPP では、ほとんどの種類のカーネルモードドライバーとユーザーモードドライバーがサポートされています。 ただし、ETW および WPP は、ミニポートドライバーなど、特定の種類のドライバーで使用できない型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断するには、ドライバーに基本的な WPP マクロを追加します。たとえば、 [wpp\_INIT\_TRACING](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))や[wpp\_クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))などです。 使用されている型が定義されていないためにコードがコンパイルされない場合、ETW および WPP はドライバーの種類をサポートできません。
-ETW の詳細については、Windows SDK のドキュメントの「[イベントトレース](https://go.microsoft.com/fwlink/p/?linkid=179202)」を参照してください。
+**メモ**   Windows イベントトレーシング (ETW) と WPP では、ほとんどの種類のカーネルモードドライバーとユーザーモードドライバーがサポートされています。 ただし、ETW および WPP は、ミニポートドライバーなど、特定の種類のドライバーで使用できない型を使用します。 特定のドライバーの種類がサポートされているかどうかを判断するには、 [wpp \_ 初期化 \_ トレース](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556191(v=vs.85))や[wpp \_ クリーンアップ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556179(v=vs.85))など、基本的な wpp マクロをドライバーに追加します。 使用されている型が定義されていないためにコードがコンパイルされない場合、ETW および WPP はドライバーの種類をサポートできません。
+
+ETW の詳細については、「 [Windows イベントトレーシング](https://docs.microsoft.com/windows-hardware/test/wpt/event-tracing-for-windows)」を参照してください。
 
 **メモ**WPP トレースプロバイダーは、一度に1つのトレースセッションでのみ有効にすることができます。 詳細については、「 [WPP プロバイダー](https://docs.microsoft.com/windows/desktop/ETW/about-event-tracing#providers) 」を参照してください。
 

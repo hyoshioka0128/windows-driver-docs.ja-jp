@@ -4,13 +4,13 @@ description: Microsoft は3D ハードウェアパートナーと協力して、
 ms.assetid: A361DBE6-FD12-4BE1-B239-E3ED3715C126
 ms.date: 05/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 26db18f2edff4eb6ae1a256a88e7906647f2ead9
-ms.sourcegitcommit: 32f42241991d57032e5d39ee9f2a3ab4a66ae396
+ms.openlocfilehash: e89a49be068bf2c1f7eec54f218439b2d802de53
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83553325"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769332"
 ---
 # <a name="3d-hardware-partners"></a>3D ハードウェア パートナー
 
-Microsoft は3D ハードウェアパートナーと協力して、Windows 10 を使用するすべてのユーザーがエンドツーエンドの3D 製造を利用できるようにしました。 パートナーとデバイスの最新情報については、「 [3d 印刷パートナー](https://www.microsoft.com/en-us/3d-print/printing-partners)」を参照してください。
+Microsoft は3D ハードウェアパートナーと協力して、Windows 10 を使用するすべてのユーザーがエンドツーエンドの3D 製造を利用できるようにしました。 パートナーとデバイスの最新情報については、「 [3d 印刷パートナー](https://www.microsoft.com/3d-print/printing-partners)」を参照してください。

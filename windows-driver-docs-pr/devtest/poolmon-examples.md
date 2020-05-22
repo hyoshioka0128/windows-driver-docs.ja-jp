@@ -4,16 +4,16 @@ description: PoolMon の例
 ms.assetid: aff0abdd-7d68-49b8-b9a1-71ab866c8487
 keywords:
 - PoolMon WDK、例
-- メモリ プール モニタ WDK の例
+- メモリプールモニタ WDK、例
 - WDK PoolMon の例
 ms.date: 07/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb6caa7e3d4773a60f19f324e7dd87e1f04452d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f033c410126cc798d1106aafdbbd570f49f85e56
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327242"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769374"
 ---
 # <a name="poolmon-examples"></a>PoolMon の例
 
@@ -21,91 +21,91 @@ ms.locfileid: "63327242"
 ## <span id="ddk_poolmon_examples_tools"></span><span id="DDK_POOLMON_EXAMPLES_TOOLS"></span>
 
 
-このトピックでは、PoolMon 使用の次の例を示します。
+このトピックには、次の PoolMon の使用例が含まれています。
 
-例 1:表示と並べ替え PoolMon 出力
+例 1: PoolMon の出力を表示および並べ替える
 
-例 2:ドライバー名を表示します。
+例 2: ドライバー名を表示する
 
-例 3: メモリ リークを検出します。
+例 3: メモリリークを検出する
 
-例 4:プールのメモリ リークを調べる
+例 4: プールのメモリリークを調べる
 
-例 5:ターミナル サーバー セッションを監視します。
+例 5: ターミナルサーバーセッションを監視する
 
-### <a name="span-idddkexample1displayandsortpoolmonoutputtoolsspanspan-idddkexample1displayandsortpoolmonoutputtoolsspanexample-1-display-and-sort-poolmon-output"></a><span id="ddk_example_1_display_and_sort_poolmon_output_tools"></span><span id="DDK_EXAMPLE_1_DISPLAY_AND_SORT_POOLMON_OUTPUT_TOOLS"></span>例 1:表示と並べ替え PoolMon 出力
+### <a name="span-idddk_example_1_display_and_sort_poolmon_output_toolsspanspan-idddk_example_1_display_and_sort_poolmon_output_toolsspanexample-1-display-and-sort-poolmon-output"></a><span id="ddk_example_1_display_and_sort_poolmon_output_tools"></span><span id="DDK_EXAMPLE_1_DISPLAY_AND_SORT_POOLMON_OUTPUT_TOOLS"></span>例 1: PoolMon の出力を表示および並べ替える
 
-この例では、PoolMon 画面を構成するさまざまな方法について説明します。 既定では、PoolMon はカーネル メモリの割り当てがすべてアルファベット順でタグ値で表示します。 コマンドラインで、または PoolMon の実行中にディスプレイの並べ替え順序を変更できます。
+この例では、PoolMon の表示を構成するさまざまな方法について説明します。 既定では、PoolMon はタグ値によって、すべてのカーネルメモリ割り当てを英数字順に表示します。 コマンドラインまたは PoolMon の実行中に、表示の並べ替え順序を変更できます。
 
-次のコマンドは、PoolMon を開始します。
+次のコマンドを実行すると、PoolMon が開始されます。
 
 ```
 poolmon
 ```
 
-次のコマンドは、PoolMon が起動し、無料の操作の数で表示を並べ替えます。
+次のコマンドは、PoolMon を起動し、空き操作の数で表示を並べ替えます。
 
 ```
 poolmon /f
 ```
 
-Poolmon の実行中には、表示を変更するのに、実行時のコマンドを使用できます。 たとえば、表示の使用バイト数で並べ替えに押します**b**します。 割り当てあたりのバイト数で並べ替えるには、キーを押して**m**します。
+Poolmon の実行中は、実行時コマンドを使用して表示を変更できます。 たとえば、使用されているバイト数で表示を並べ替えるには、 **b**キーを押します。 割り当てごとにバイトで並べ替えるには、 **m**キーを押します。
 
-次のコマンドは、PoolMon を起動し、非ページ プールから割り当てのみが表示されます。
+次のコマンドは、PoolMon を起動し、非ページプールからの割り当てのみを表示します。
 
 ```
 poolmon /p
 ```
 
-PoolMon の実行中にキーを押して**p**ページ プール、非ページ プール、またはその両方からの割り当てを切り替える。
+PoolMon が実行されている間に、 **p**キーを押して、ページプール、非ページプール、またはその両方からの割り当てを切り替えることができます。
 
-PoolMon を起動し、特定のタグの割り当てのデータを表示、使用、 **/i**パラメーター。 次のコマンドの表示を割り当て、 **AfdB**タグ (タグのデータ バッファーの afd.sys で使用)。
+PoolMon を開始し、特定のタグを持つ割り当てのデータを表示するには、 **/i**パラメーターを使用します。 次のコマンドは、 **Afdb**タグ (データバッファー用に afd.sys によって使用されるタグ) の割り当てを表示します。
 
 ```
 poolmon /iAfdB
 ```
 
-特定のタグを割り当て、除外するを使用して、 **/x**パラメーター。 次のコマンドがないすべての割り当てを表示する、 **AfdB**タグ。
+特定のタグを持つ割り当てを除外するには、 **/x**パラメーターを使用します。 次のコマンドは、 **Afdb**タグを持たないすべての割り当てを表示します。
 
 ```
 poolmon /xAfdB
 ```
 
-アスタリスクを使用することができます (\*) や疑問符 (?) を同じ文字のタグのセットを指定します。 次のコマンドは、以降では、プール タグの割り当てを表示します**Afd**、afd.sys; で使用されるタグ。
+アスタリスク ( \* ) や疑問符 (?) を使用して、同じ文字でタグのセットを指定できます。 次のコマンドは、 **afd**で始まるプールタグを持つ割り当てを表示します。これは、afd.sys によって使用されるタグです。
 
 ```
 poolmon /iAfd*
 ```
 
-PoolMon スタートアップ コマンドは、複数を含めることができます **/i**と **/x**パラメーター。 次のコマンドで始まるタグの割り当てを表示する**Aud**以降では 4 文字のタグと**Cc**と割り当てを除く、 **CcBc**タグ。
+PoolMon スタートアップコマンドには、複数の **/i**および **/x**パラメーターを含めることができます。 次のコマンドでは、 **Ccbc**タグを使用した割り当てを除いて、" **Aud** " で始まるタグと、 **Cc**で始まる4文字のタグを持つ割り当てを表示します。
 
 ```
 poolmon /iAud* /iCc?? /xCcBc
 ```
 
-更新プログラムの間の値を変更して、PoolMon 表示を並べ替えることもできます。 **/(** パラメーターは、並べ替えの変更によってモードに PoolMon を配置します。
+また、更新間の値の変更によって、PoolMon の表示を並べ替えることもできます。 **/(** パラメーターを指定すると、PoolMon は変更モードで並べ替えられます。
 
-次のコマンドで始まるタグの割り当てを表示する**Afd**割り当ての変更によって並べ替えます。 使用して、 **/a**割り当ての数で並べ替えるにパラメーターおよび **/)** 割り当ての数の変更を並べ替えるにはパラメーター。
+次のコマンドは、 **Afd**で始まるタグの割り当てを表示し、割り当ての変更によって並べ替えます。 **/A**パラメーターを使用して割り当ての数で並べ替え、 **/)** パラメーターを使用して割り当ての数の変化によって並べ替えます。
 
 ```
 poolmon /iAfd* /( /a
 ```
 
-**/(** パラメーターと、かっこキーは、トグル スイッチ。 PoolMon がモードの並べ替えの変更によって、値の変更を並べ替えるにはコマンドとして並べ替えのすべてのコマンドを解釈します。 もう一度かっこキーを押すと場合、値によって並べ替えます。
+**/(** パラメーターとかっこのキーはトグルスイッチです。 PoolMon が変更モードである場合、すべての並べ替えコマンドが、値の変更によって並べ替えられるようにコマンドとして解釈されます。 もう一度かっこのキーを押すと、値で並べ替えられます。
 
-### <a name="span-idddkexample2displaydrivernamestoolsspanspan-idddkexample2displaydrivernamestoolsspanexample-2-display-driver-names"></a><span id="ddk_example_2_display_driver_names_tools"></span><span id="DDK_EXAMPLE_2_DISPLAY_DRIVER_NAMES_TOOLS"></span>例 2:ドライバー名を表示します。
+### <a name="span-idddk_example_2_display_driver_names_toolsspanspan-idddk_example_2_display_driver_names_toolsspanexample-2-display-driver-names"></a><span id="ddk_example_2_display_driver_names_tools"></span><span id="DDK_EXAMPLE_2_DISPLAY_DRIVER_NAMES_TOOLS"></span>例 2: ドライバー名を表示する
 
-PoolMon を使用する **/g**と一般的な Windows コンポーネントの名前を表示するパラメーターは、各プール タグを割り当てることがドライバーを使用します。 この機能で特定のタグの割り当てに問題がある場合、問題が発生したコンポーネントまたはドライバーを識別できます。
+PoolMon **/g**パラメーターを使用すると、各プールタグを割り当てる Windows コンポーネントと一般的に使用されるドライバーの名前を表示できます。 特定のタグを持つ割り当てに問題が見つかった場合、この機能は問題のあるコンポーネントまたはドライバーを特定するのに役立ちます。
 
-コンポーネントとドライバーが、マップ先で表示されている\_ドライバー列、ディスプレイの右端の列。 マップ済みデータ\_ドライバー列 pooltag.txt、PoolMon にインストールされているファイルに由来します。
+コンポーネントとドライバーは、画面の右端の列である [マップされたドライバー] 列に一覧表示され \_ ます。 マップされたドライバーの列のデータは、 \_ PoolMon と共にインストールされるファイルである pooltag .txt から取得されます。
 
-次のコマンドで始まるタグで割り当てられたメモリを表示する**NtF**します。 (疑問符 () 文字を使用して (**?**) をワイルドカードとして)。**/G**パラメーターの追加、マップ済み\_ドライバー列。
+次のコマンドは、 **Ntf**で始まるタグで割り当てられたメモリを表示します。 (疑問符文字 (**?**) をワイルドカードとして使用します)。**/G**パラメーターを指定すると、マップされたドライバーの列が追加され \_ ます。
 
 ```
 poolmon /iNtF? /g
 ```
 
-結果の表示の開始タグと割り当てを一覧表示**NtF**します。 ディスプレイ画面の右端の列にマップされている\_ドライバーは、NTFS ファイル システムのドライバー、ntfs.sys、によって、メモリが割り当てられたことを示しています。 この場合、表示がさらに詳細な pooltag.txt に NTFS 割り当てのソース ファイルが含まれるためです。
+結果の表示には、 **Ntf**で始まるタグを使用した割り当てが一覧表示されます。 [マップされたドライバーの表示] の右端の列は、メモリが ntfs \_ ファイルシステムのドライバーである ntfs.sys によって割り当てられたことを示しています。 この場合、pooltag .txt には NTFS 割り当てのソースファイルが含まれているため、表示はさらに具体的です。
 
 ```
  Memory:  260620K Avail:   65152K  PageFlts:    85   InRam Krnl: 2116K P:19560K
@@ -128,17 +128,17 @@ poolmon /iNtF? /g
  NtFv Paged       551 (   0)       551 (   0)     0       0 (     0)      0 [ntfs.sys  -  ViewSup.c]
 ```
 
-Pooltag.txt が大きいが、Windows で使用されるすべてのタグの完全な一覧ではありません。 Pooltag.txt では、画面に表示するタグが含まれていない、PoolMon が、マップ先で「不明なドライバー」が表示されます\_タグのドライバーの列。 これが発生したときに使用できます、 **/c**パラメーターをローカル システムでドライバーを検索し、タグを割り当てることがあるかどうかを判断します。
+Pooltag .txt は広く使用されていますが、Windows で使用されているすべてのタグの完全な一覧ではありません。 表示に表示されているタグが pooltag .txt に含まれていない場合、タグの [マップされたドライバー] 列に "不明なドライバー" と表示され \_ ます。 この場合、 **/c**パラメーターを使用してローカルシステム上のドライバーを検索し、タグが割り当てられているかどうかを判断できます。
 
-次の例では、このメソッドを示します。
+このメソッドの例を次に示します。
 
-次のコマンドを使用して、 **/i**パラメーターをメモリ最適化の終了タグの割り当てを一覧します。 **/G**パラメーター pooltag.txt ファイルから、表示するため、ドライバー名を追加します。
+次のコマンドでは、 **/i**パラメーターを使用して、メモリ内で終了するタグの割り当てを一覧表示します。 **/G**パラメーターは、ドライバー名を pooltag .txt ファイルから表示に追加します。
 
 ```
 poolmon /i?MEM /g
 ```
 
-結果の表示では、メモリ最適化の終了タグの割り当てを一覧表示します。 ただし、メモリ最適化のタグが pooltag.txt で含まれていないため、「不明なドライバー」は、マップ先に表示されます\_ドライバー名の代わりにドライバー列。
+結果の表示には、メモリ内で終了タグがある割り当てが一覧表示されます。 ただし、メモリタグは pooltag に含まれていないため、 \_ ドライバー名の代わりに [マップされたドライバー] 列に "不明なドライバー" が表示されます。
 
 ```
  Tag  Type        Allocs          Frees      Diff   Bytes      Per Alloc    Mapped_Driver
@@ -148,15 +148,15 @@ poolmon /i?MEM /g
  3MEM Nonp       3 (   0)         0 (   0)     3     248 (     0)     82   Unknown Driver
 ```
 
-この場合、使用することができます、 **/c**パラメーターをローカルのドライバーと割り当てることも、タグの一覧をコンパイルして、マップ先のローカルのドライバーの名前を表示する\_ドライバー列。
+この場合、 **/c**パラメーターを使用して、ローカルドライバーの一覧と割り当てられたタグをコンパイルし、[マップされたドライバー] 列にローカルドライバーの名前を表示でき \_ ます。
 
-次のコマンドは、PoolMon を開始します。 使用して、 **/i**でメモリ最適化では、終了タグの割り当てを一覧にパラメーターおよび **/c**ローカル ドライバー、タグの割り当てを表示するパラメーター。
+次のコマンドを実行すると、PoolMon が開始されます。 **/I**パラメーターを使用して、メモリで終わるタグの割り当てを一覧表示し、 **/c**パラメーターを使用してタグを割り当てるローカルドライバーを表示します。
 
 ```
 poolmon /i?MEM /c
 ```
 
-タグのローカル ファイルと PoolMon localtag.txt ファイルを見つけることができませんを指定しない場合が作成されます、次の画面のメッセージで示すように。 (PoolMon は、64 ビット版 Windows 上のローカル タグ ファイルを生成できません)
+ローカルタグファイルを指定せず、PoolMon で localtag .txt ファイルが見つからない場合は、次の画面メッセージに示すように、そのファイルが作成されます。 (PoolMon は、64ビットバージョンの Windows でローカルタグファイルを生成することはできません)。
 
 ```
 d:\tools\poolmon>poolmon /?MEM /c
@@ -164,7 +164,7 @@ PoolMon: No localtag.txt in current directory
 PoolMon: Creating localtag.txt in current directory......
 ```
 
-結果の表示を新しく作成された localtag.txt ファイルからコンテンツを使用して、マップ済みで、ローカル ドライバー名を示しています\_ドライバー列。
+新しく作成された localtag .txt ファイルのコンテンツを使用して、[マップされたドライバー] 列にローカルドライバー名が表示され \_ ます。
 
 ```
  Memory:  260620K Avail:   57840K  PageFlts:   162   InRam Krnl: 2116K P:19448K
@@ -177,13 +177,13 @@ PoolMon: Creating localtag.txt in current directory......
  3MEM Nonp          3 (   0)         0 (   0)        3     248 (     0)     82 [el90xbc5]
 ```
 
-包括的なドライバーの名前の表示を組み合わせることができます、 **/c**と **/g**コマンドのパラメーター。 (パラメーターの順序は、出力を変更はありません)。次のコマンドで始まるタグの割り当てを一覧表示**Ip**します。 使用して、 **/c** localtag.txt、マップ済みファイルの内容を使用して、パラメーター\_ドライバー列、および **/g** pooltag.txt、マップ済みファイルの内容を使用して、パラメーター\_ドライバー列。
+包括的なドライバー名の表示では、コマンドで **/c**パラメーターと **/g**パラメーターを組み合わせることができます。 (パラメーターの順序によって出力が変更されることはありません)。次のコマンドは、 **Ip**で始まるタグの割り当てを一覧表示します。 **/C**パラメーターを使用します。これは、[マップされたドライバー] 列の localtag .txt ファイルの内容を使用し、/g パラメーターを使用します。このパラメーターは、[マップされ \_ **/g**たドライバー] \_ 列にある pooltag .txt ファイルの内容を使用します。
 
 ```
 poolmon /iIp* /c /g
 ```
 
-結果の表示、マップ先で\_ドライバー列には localtag.txt と pooltag.txt の両方のファイルからのデータが含まれています。
+結果の表示では、[マップされたドライバー] 列に、 \_ localtag .txt ファイルと pooltag .txt ファイルの両方のデータが含まれています。
 
 ```
  Memory:  130616K Avail:   23692K  PageFlts:   146   InRam Krnl: 2108K P: 9532K
@@ -201,49 +201,49 @@ poolmon /iIp* /c /g
  IpTI Nonp          3 (   0)         0 (   0)        3    5400 (     0)   1800 [ipsec][ipsec.sys    -  timers]
 ```
 
-### <a name="span-idddkexample3detectmemoryleakagetoolsspanspan-idddkexample3detectmemoryleakagetoolsspanexample-3-detect-memory-leakage"></a><span id="ddk_example_3_detect_memory_leakage_tools"></span><span id="DDK_EXAMPLE_3_DETECT_MEMORY_LEAKAGE_TOOLS"></span>例 3:メモリ リークを検出します。
+### <a name="span-idddk_example_3_detect_memory_leakage_toolsspanspan-idddk_example_3_detect_memory_leakage_toolsspanexample-3-detect-memory-leakage"></a><span id="ddk_example_3_detect_memory_leakage_tools"></span><span id="DDK_EXAMPLE_3_DETECT_MEMORY_LEAKAGE_TOOLS"></span>例 3: メモリリークを検出する
 
-この例では、PoolMon を使用して、メモリ リークを検出するための手順を提案します。
+この例では、PoolMon を使用してメモリリークを検出する手順を示します。
 
-1.  パラメーターを使用して PoolMon をスタート **/p/p** (ページ プールから割り当てのみを表示) と **/b** (バイト数で並べ替え) します。
+1.  パラメーター **/p/p** (ページングプールからの割り当てのみを表示) と **/b** (バイト数で並べ替え) を使用して PoolMon を開始します。
     ```
     poolmon /p /p /b
     ```
 
-2.  PoolMon、数時間実行することができます。 開始 PoolMon にデータが変更されたために、前に、データは信頼性の高い、安定した状態を回復する必要があります。
+2.  PoolMon を数時間実行します。 PoolMon を開始するとデータが変更されるため、データの信頼性を確保するには安定した状態になる必要があります。
 
-3.  スクリーン ショット、または、コマンド ウィンドウからコピーしてメモ帳に貼り付けて PoolMon、生成した情報を保存します。
+3.  PoolMon によって生成された情報をスクリーンショットとして保存するか、コマンドウィンドウからコピーしてメモ帳に貼り付けます。
 
-4.  PoolMon に戻って、キーを押して、 **p**非ページ プールから割り当てのみを表示するには、2 回のキー。
+4.  PoolMon に戻り、 **p**キーを2回押して、非ページプールからの割り当てのみを表示します。
 
-5.  手順 3 と 4 30 分に約 2 時間以上のたびにページおよび非ページ プールの表示を切り替える.
+5.  少なくとも2時間は30分ごとに手順3と4を繰り返し、ページングされたプールと非ページプールを切り替えるたびに切り替えます。
 
-6.  データ収集が完了したら、確認、相違点 (無料の操作-割り当て操作) とバイト数 (解放されるバイト数-割り当てられたバイト数) の各値がタグ、および増加し続けることに注意してください。
+6.  データ収集が完了したら、各タグについて、差分 (割り当て操作から解放操作を差し引いた値から解放されたバイト数を引いた値) を確認し、継続的に増加しているものがないかどうかを確認します。
 
-7.  次に、PoolMon を停止し、数時間待って、して PoolMon を再起動します。
+7.  次に、PoolMon を停止し、数時間待ってから、PoolMon を再起動します。
 
-8.  割り当てを増やすと、バイトが解放されるかどうかを判断するを確認します。 考えられる原因は、割り当てがまだ解放されていないか、サイズが増加し続けているです。
+8.  増加している割り当てを確認し、バイトが解放されたかどうかを判断します。 原因としては、まだ解放されていないか、またはサイズが増加し続けている割り当てが考えられます。
 
 
-### <a name="span-idddkexample4examineapoolmemoryleaktoolsspanspan-idddkexample4examineapoolmemoryleaktoolsspanexample-4-examine-a-pool-memory-leak"></a><span id="ddk_example_4_examine_a_pool_memory_leak_tools"></span><span id="DDK_EXAMPLE_4_EXAMINE_A_POOL_MEMORY_LEAK_TOOLS"></span>例 4:プールのメモリ リークを調べる
+### <a name="span-idddk_example_4_examine_a_pool_memory_leak_toolsspanspan-idddk_example_4_examine_a_pool_memory_leak_toolsspanexample-4-examine-a-pool-memory-leak"></a><span id="ddk_example_4_examine_a_pool_memory_leak_tools"></span><span id="DDK_EXAMPLE_4_EXAMINE_A_POOL_MEMORY_LEAK_TOOLS"></span>例 4: プールのメモリリークを調べる
 
-次の例では、疑いのあるプリンター ドライバーからプールのメモリ リークを調査する PoolMon を使用してを示します。 この例では、PoolMon は、Windows が Dsrd タグを持つメモリの割り当てについて収集するデータを表示します。
+次の例では、PoolMon を使用して、疑わしいプリンタードライバーからプールメモリリークを調査します。 この例では、Windows が Dsrd タグを使用してメモリ割り当てについて収集したデータを表示します。
 
-プリンター ドライバーは、グラフィック デバイス インターフェイス (GDI) オブジェクトと関連付けられているメモリを割り当て、ときに、Drsd タグを割り当てます。 プリンター ドライバーに、オブジェクトのリークがある場合は、Drsd タグに割り当てられるメモリもリークが発生します。
+プリンタードライバーは、グラフィカルデバイスインターフェイス (GDI) オブジェクトと関連付けられたメモリを割り当てるときに Drsd タグを割り当てます。 プリンタドライバにオブジェクトリークがある場合、Drsd タグを使用して割り当てられたメモリにもリークが発生します。
 
-**注**  この例では、手順を実行する前に完了するまで使用しているプリンターは中断されないことを確認します。 それ以外の場合、結果は有効でない可能性があります。
+**メモ**   この例の手順を実行する前に、使用しているプリンターが完了するまで中断されないようにしてください。 それ以外の場合は、結果が無効になることがあります。
 
  
 
-コマンド ラインで、次のように入力します。
+コマンドラインで、次のように入力します。
 
 ```
 poolmon /iDrsd
 ```
 
-このコマンドでは、PoolMon Drsd タグの割り当ての情報を表示するように指示します。 (プール タグは大文字小文字を区別、あるため、正確に示すように、コマンドを入力してください)。
+このコマンドは、Drsd タグを使用した割り当ての情報を表示するように PoolMon に指示します。 (プールタグでは大文字と小文字が区別されます。そのため、必ず示されているとおりにコマンドを入力してください)。
 
-Diff およびバイト列の値を記録します。 次のサンプル表示での相違の値は 21 とは 17472 のバイト数。
+[Diff] 列と [Bytes] 列に値を記録します。 次のサンプルの表示では、Diff の値は21、バイト数は17472です。
 
 ```
 Memory:  130480K Avail:   91856K  PageFlts:  1220   InRam Krnl: 2484K P: 7988K
@@ -253,7 +253,7 @@ Tag  Type        Allocs           Frees           Diff  Bytes           Per Allo
 Drsd Paged       560 ( 177)       539 ( 171)       21   17472 (  4992)    832 
 ```
 
-ジョブをプリンターに送信を返すには、通常、Windows を簡単に待つし、Diff およびバイト列の値を記録しています。
+プリンターにジョブを送信し、Windows が正常に戻るまでしばらく待ってから、Diff と Bytes 列の値を記録します。
 
 ```
 Memory:  130480K Avail:   91808K  PageFlts:  1240   InRam Krnl: 2488K P: 7996K
@@ -263,23 +263,23 @@ Tag  Type        Allocs           Frees           Diff  Bytes          Per Alloc
 Drsd Paged       737 (   0)       710 (   0)       27   22464 (     0)    832  
 ```
 
-プリンター ドライバーのメモリ管理が正常に動作して、相違の値は、印刷後に元の値は 21 に返す必要があります。 ただし、上記の出力としてに示した、27 と 22464 に rose のバイト数には差分の値。 初期およびそれ以降の出力間の差 4992 (バイト単位) の合計で 6 つの Drsd ブロックが印刷中にリークすることを意味します。
+プリンタードライバーのメモリ管理が正常に機能している場合、差分の値は、印刷後の元の値21に戻ります。 ただし、上記の出力に示すように、Diff の値は27になり、バイト数は22464になります。 最初と2番目の出力の違いは、6つの Drsd ブロック (合計4992バイト) が印刷中にリークしていることを意味します。
 
-### <a name="span-idformoreinformationspanspan-idformoreinformationspanspan-idformoreinformationspanfor-more-information"></a><span id="For_More_Information"></span><span id="for_more_information"></span><span id="FOR_MORE_INFORMATION"></span>詳細については
+### <a name="span-idfor_more_informationspanspan-idfor_more_informationspanspan-idfor_more_informationspanfor-more-information"></a><span id="For_More_Information"></span><span id="for_more_information"></span><span id="FOR_MORE_INFORMATION"></span>詳細情報
 
-リークしているドライバーを特定したと思われる場合は、 [Microsoft サポート](https://go.microsoft.com/fwlink/p/?linkid=8713)web サイトおよび関連する記事の検索、ナレッジ ベース。
+ドライバーがリークしていると思われる場合は、 [Microsoft サポート](https://support.microsoft.com/)の web サイトにアクセスして、サポート技術情報の記事を検索してください。
 
-### <a name="span-idddkexample5monitoraterminalserversessiontoolsspanspan-idddkexample5monitoraterminalserversessiontoolsspanexample-5-monitor-a-terminal-server-session"></a><span id="ddk_example_5_monitor_a_terminal_server_session_tools"></span><span id="DDK_EXAMPLE_5_MONITOR_A_TERMINAL_SERVER_SESSION_TOOLS"></span>例 5:ターミナル サーバー セッションを監視します。
+### <a name="span-idddk_example_5_monitor_a_terminal_server_session_toolsspanspan-idddk_example_5_monitor_a_terminal_server_session_toolsspanexample-5-monitor-a-terminal-server-session"></a><span id="ddk_example_5_monitor_a_terminal_server_session_tools"></span><span id="DDK_EXAMPLE_5_MONITOR_A_TERMINAL_SERVER_SESSION_TOOLS"></span>例 5: ターミナルサーバーセッションを監視する
 
-この例では、ターミナル サービス セッションのプールから割り当てを表示するいくつかの方法を示します。 使用例を示します、 **/s**コマンド ライン パラメーター、および**s**、 *TSSessionID*、および**は**パラメーターを実行しています。
+この例では、ターミナルサービスのセッションプールから割り当てを表示するいくつかの方法を示します。 **/S**コマンドラインパラメーター、 **s**、 *tssessionid*、および**i**を実行するパラメーターの使用方法を示します。
 
-次のコマンドは、すべてのターミナル サービス セッションのプールから割り当てを表示します。 この例で、セッションをホストしているローカルのコンピューターは、ターミナル サーバーとして構成して、ホストに接続するリモート デスクトップ機能を使用しているクライアント コンピューター。
+次のコマンドは、すべてのターミナルサービスセッションプールからの割り当てを表示します。 この例では、ターミナルサーバーとして構成されているローカルコンピューターがセッションをホストしており、クライアントコンピューターがリモートデスクトップ機能を使用してホストに接続しています。
 
 ```
 poolmon /s
 ```
 
-応答、PoolMon はセッションのすべてのプールから割り当てを表示します。 ヘッダーに「すべてのセッション プール情報」のタイトルに注意してください。
+応答として、PoolMon はすべてのセッションプールからの割り当てを表示します。 ヘッダーの "すべてのセッションプール情報" タイトルに注意してください。
 
 ```
 Memory:  523572K Avail:  233036K  PageFlts:   344   InRam Krnl: 1828K P:18380K
@@ -306,13 +306,13 @@ All sessions pool information
  ...
 ```
 
-特定のセッションのプールから割り当てを表示するには、セッション ID を入力した直後に、 **/s**パラメーターは、次のコマンドで示すようにします。 このコマンドは、ターミナル サービス セッション 0 のセッションのプール割り当てを表示します。
+特定のセッションプールからの割り当てを表示するには、次のコマンドに示すように、 **/s**パラメーターの直後にセッション ID を入力します。 このコマンドは、ターミナルサービスセッション0のセッションプールの割り当てを表示します。
 
 ```
 poolmon /s0
 ```
 
-応答として、PoolMon はターミナル サービス セッション 0 のセッションのプールから割り当てを表示します。 ヘッダーに「Session 0 プール情報」のタイトルに注意してください。
+応答として、PoolMon は、ターミナルサービスセッション0のセッションプールからの割り当てを表示します。 ヘッダーの "Session 0 pool information" タイトルに注意してください。
 
 ```
 Memory:  523572K Avail:  233024K  PageFlts:   525   InRam Krnl: 1828K P:18384K
@@ -339,7 +339,7 @@ Memory:  523572K Avail:  233024K  PageFlts:   525   InRam Krnl: 1828K P:18384K
  ...
 ```
 
-セッションのプールからメモリの割り当ては、ドライバーやコンポーネントを確認するためには、追加、 **/g**パラメーターは、次のコマンドで示すようにします。 **/G**パラメーターの追加、マップ済み\_ドライバー列に、Windows のコンポーネントと各タグを割り当てることがドライバーを表示します。
+セッションプールからメモリを割り当てているドライバーとコンポーネントを特定するには、次のコマンドに示すように、 **/g**パラメーターを追加します。 **/G**パラメーターを \_ 指定すると、各タグを割り当てる Windows コンポーネントとドライバーを一覧表示する、マップされたドライバーの列が追加されます。
 
 ```
 poolmon /s0 /g
@@ -367,9 +367,9 @@ Gcsl Paged         1 (   0)         0 (   0)        1     488 (     0)    488 [G
 Gdbr Paged      6972 (   0)      6965 (   0)        7    2184 (     0)    312 [Gdi driver brush realization]
 ```
 
-PoolMon の実行中には、ターミナル サービス セッションのプールの表示を構成することもできます。 次の表では、一連の順序で入力された、および結果として得られる PoolMon 表示で、コマンドの実行を示します。
+また、PoolMon の実行中にターミナルサービスセッションプールの表示を構成することもできます。 次の表に、一連の実行中のコマンドを入力順に示し、結果の PoolMon を表示します。
 
-系列は、PoolMon を起動するコマンドから始まります。 PoolMon の実行中に、その他のすべてのパラメーターが入力されます。
+シリーズは、PoolMon を開始するコマンドで始まります。 他のすべてのパラメーターは、PoolMon の実行中に入力されます。
 
 ```
 poolmon
@@ -391,67 +391,67 @@ poolmon
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>s</strong></p></td>
-<td align="left"><p>セッションのすべてのプールを表示します。</p></td>
+<td align="left"><p>すべてのセッションプールを表示します。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>s</strong></p></td>
-<td align="left"><p>システム プールが表示されます。</p></td>
-<td align="left"><p><strong>S</strong>パラメーターは、システム プールと、ターミナル サービス セッションのプールの表示を切り替えます。</p></td>
+<td align="left"><p><strong>2$s</strong></p></td>
+<td align="left"><p>システムプールを表示します。</p></td>
+<td align="left"><p><strong>S</strong>パラメーターを指定すると、システムプールとターミナルサービスセッションプールの間の表示が切り替わります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>0</strong></p></td>
-<td align="left"><p>セッション 0 プールが表示されます。</p></td>
-<td align="left"><p>システム プールを表示するときに、セッション ID を入力できます。</p></td>
+<td align="left"><p>セッション0のプールを表示します。</p></td>
+<td align="left"><p>システムプールを表示しているときに、セッション ID を入力できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>7</strong></p></td>
-<td align="left"><p>セッションの 7 プールが表示されます。</p></td>
+<td align="left"><p>セッション7プールを表示します。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>a</strong></p></td>
-<td align="left"><p>割り当ての数で並べ替えられますセッション、7 のプール割り当てを表示します。</p></td>
-<td align="left"><p>すべての標準実行中のパラメーターは、セッション プールの表示に対して有効です。</p></td>
+<td align="left"><p><strong>ある</strong></p></td>
+<td align="left"><p>セッション7のプール割り当てを、割り当ての数で並べ替えて表示します。</p></td>
+<td align="left"><p>すべての標準の実行パラメーターは、セッションプールの表示に対して有効です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>0</strong></p></td>
-<td align="left"><p>割り当ての数によって並べ替えられて、セッション 0 の割り当てを表示します。</p></td>
+<td align="left"><p>割り当ての数によって並べ替えられた、セッション0の割り当てを表示します。</p></td>
 <td align="left"><p>セッションおよび並べ替えのオプションは、変更されるまで保持されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>s</strong></p></td>
-<td align="left"><p>システム プールが表示されます。</p></td>
+<td align="left"><p><strong>2$s</strong></p></td>
+<td align="left"><p>システムプールを表示します。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>s</strong></p></td>
-<td align="left"><p>割り当ての数によって並べ替えられて、セッション 0 の割り当てを表示します。</p></td>
-<td align="left"><p>セッション オプションが保持されます。</p></td>
+<td align="left"><p><strong>2$s</strong></p></td>
+<td align="left"><p>割り当ての数によって並べ替えられた、セッション0の割り当てを表示します。</p></td>
+<td align="left"><p>セッションオプションは保持されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>10ENTER</strong></p></td>
-<td align="left"><p>セッション 1 の割り当てを表示し、セッション 0 の割り当てを表示します。</p></td>
-<td align="left"><p>せず<strong>は</strong>、セッション Id 0 ~ 9 のみを入力することができます。</p></td>
+<td align="left"><p>セッション1の割り当てを表示し、セッション0の割り当てを表示します。</p></td>
+<td align="left"><p><strong>I</strong>を使用しない場合は、セッション id 0 ~ 9 のみを入力できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>i</strong></p></td>
-<td align="left"><p>ターミナル サーバー セッションの ID のプロンプト</p></td>
+<td align="left"><p>ターミナルサーバーのセッション ID の入力を求めます。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>"<strong>10</strong>"</p></td>
-<td align="left"><p>セッションの 10 の割り当てを表示します。</p></td>
+<td align="left"><p>セッション10の割り当てを表示します。</p></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>i</strong></p></td>
-<td align="left"><p>ターミナル サーバー セッションの ID のプロンプト</p></td>
-<td align="left"><p>セッションのすべてのプールを表示するには、キーを押します<strong>は</strong>し、ENTER キーを押します。</p></td>
+<td align="left"><p>ターミナルサーバーのセッション ID の入力を求めます。</p></td>
+<td align="left"><p>すべてのセッションプールを表示するには、 <strong>i</strong>キーを押して enter キーを押します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>入力します</strong></p></td>
-<td align="left"><p>セッションのすべてのプールを表示します。</p></td>
+<td align="left"><p><strong>を入力し</strong></p></td>
+<td align="left"><p>すべてのセッションプールを表示します。</p></td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -459,15 +459,15 @@ poolmon
 
  
 
-ターミナル サーバーとして構成されているシステムのみでは、セッションのプールからメモリを割り当てます。 ターミナル サーバーではないコンピューターでセッションのプールを表示する PoolMon を使用する場合、または Windows に存在しないセッション ID を入力する場合は、PoolMon では、この割り当ては表示されません。 代わりに、全般的なメモリのデータに見出しだけが表示されます。
+ターミナルサーバーとして構成されているシステムのみがセッションプールからメモリを割り当てます。 PoolMon を使用して、ターミナルサーバーではないコンピューターにセッションプールを表示した場合、または Windows に存在しないセッション ID を入力した場合、PoolMon に割り当ては表示されません。 代わりに、一般的なメモリデータを含む見出しだけが表示されます。
 
-次のコマンドでは、ターミナル サービス セッションのすべてのプールからの割り当てが表示されます。
+次のコマンドは、すべてのターミナルサービスセッションプールからの割り当てを表示します。
 
 ```
 poolmon /s
 ```
 
-次の図に、PoolMon ディスプレイを表す場合、 **/s**ターミナル サーバーとして構成できませんでした Windows XP を実行するコンピューターに送信されたコマンド。
+次の図は、ターミナルサーバーとして構成できなかった Windows XP を実行しているコンピューターに **/s**コマンドが送信された場合に発生する PoolMon の表示を示しています。
 
 ```
  Memory:  260620K Avail:   44956K  PageFlts:   308   InRam Krnl: 2744K P:20444K

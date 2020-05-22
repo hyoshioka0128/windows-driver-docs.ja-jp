@@ -2,54 +2,43 @@
 title: EFI_USB_SUPERSPEED_INTERFACE_INFO
 description: EFI_USB_SUPERSPEED_INTERFACE_INFO
 ms.assetid: 1B0C04D0-5254-4B9A-A94D-4FF1CEAD4627
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d7e4b98501f0e99df7bec364d6ff1a91ff2d47d9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5b25187ba0193cd30e58316f6caa7780faa6f83e
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337753"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778324"
 ---
-# <a name="efiusbsuperspeedinterfaceinfo"></a>EFI\_USB\_SUPERSPEED\_インターフェイス\_情報
+# <a name="efi_usb_superspeed_interface_info"></a>EFI \_ USB \_ SUPERSPEED \_ インターフェイス \_ 情報
 
-
-**EFI\_USB\_SUPERSPEED\_インターフェイス\_情報**構造体がインターフェイスを定義する、サポートされている USB SuperSpeed USB 機能ドライバーを使用します。
+**EFI \_ usb \_ SUPERSPEED \_ interface \_ INFO**構造体は、usb 関数ドライバーに対してサポートされている usb SUPERSPEED インターフェイスを定義するために使用されます。
 
 ## <a name="syntax"></a>構文
-
 
 ```cpp
 typedef struct
 {
     EFI_USB_INTERFACE_DESCRIPTOR            *InterfaceDescriptor;
-    EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR  **EndpointDescriptorTable; 
+    EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR  **EndpointDescriptorTable;
 } EFI_USB_SUPERSPEED_INTERFACE_INFO;
 ```
 
 ## <a name="members"></a>メンバー
 
+### <a name="interfacedescriptor"></a>InterfaceDescriptor
 
-<a href="" id="interfacedescriptor"></a>**InterfaceDescriptor**  
-EFI\_USB\_インターフェイス\_USB 関数のインターフェイスを記述する記述子構造体。
+\_ \_ \_ Usb 関数インターフェイスを記述する EFI usb インターフェイス記述子の構造体。
 
-<a href="" id="endpointdescriptortable"></a>**EndpointDescriptorTable**  
-[EFI\_USB\_SUPERSPEED\_エンドポイント\_記述子](efi-usb-superspeed-endpoint-descriptor.md)USB SuperSpeed エンドポイントを記述する構造体。
+### <a name="endpointdescriptortable"></a>Endpoint記述子テーブル
 
-## <a name="remarks"></a>注釈
+USB SuperSpeed エンドポイントを記述する[EFI \_ usb \_ SUPERSPEED \_ エンドポイント \_ 記述子](efi-usb-superspeed-endpoint-descriptor.md)構造体。
 
+## <a name="remarks"></a>解説
 
-**EFI\_USB\_インターフェイス\_記述子**構造体は、UEFI 仕様バージョン 2.3 で定義されている以降。 詳細については、次を参照してください。、 [UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526) web サイト。
+**EFI \_ USB \_ インターフェイス \_ 記述子**の構造は、UEFI 仕様バージョン2.3 以降で定義されています。 詳細については、 [UEFI.org](https://uefi.org/specifications)の web サイトを参照してください。
 
 ## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成

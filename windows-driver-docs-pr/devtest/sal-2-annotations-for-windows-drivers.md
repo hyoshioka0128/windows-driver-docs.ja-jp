@@ -4,19 +4,19 @@ description: Microsoft ソースコード注釈言語 (SAL) には、Windows ド
 ms.assetid: 2CD181B8-4E1D-457A-9FF9-DAB3AB932730
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: acca2d23ee7aee79847d90282c11b276e17b8b89
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5f8190ca3fff8f6daeec928d033d25529335152a
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840043"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769718"
 ---
 # <a name="sal-20-annotations-for-windows-drivers"></a>Windows ドライバーの SAL 2.0 注釈
 
 
 Microsoft ソースコード注釈言語 (SAL) には、Windows ドライバーおよび関連するカーネルコードの分析に固有の注釈が含まれています。 注釈言語は、関数、パラメーター、戻り値、構造体、および構造体の各フィールドのプロパティを記述する方法を提供します。 注釈は、コードに追加するコメントに似ており、コンパイラでは無視されますが、静的分析ツールで使用されます。 注釈を使用すると、開発者の有効性が向上し、静的な分析によって得られる結果の精度が向上し、特定のバグが存在するかどうかをツールがより適切に判断できるようになります。 ドライバーの注釈は、ドライバー以外のコードまたは非カーネル関連のコードで使用するためのものではありません。 ドライバーの注釈は Driverspecs. h で定義されています。
 
-**注**  Windows 8 では、sal 1.0 を置き換える sal 2.0 が導入されています。 SAL 2.0 の詳細については、「 [Sal 注釈を使用C++して C/コードの欠陥を減らす](https://go.microsoft.com/fwlink/p/?linkid=247283)」を参照してください。 Sal 2.0 が SAL 1.0 に置き換えられます。 SAL 2.0 は、windows 8 用 Windows Driver Kit (WDK) 8 で使用する必要があります。 ドライバーの SAL 1.0 に関する情報が必要な場合は、Windows 7 用の WDK に付属のドキュメントを参照してください。
+**メモ**   Windows 8 では、sal 1.0 を置き換える SAL 2.0 が導入されています。 SAL 2.0 の詳細については、「 [Sal 注釈を使用して C/c + + コードの欠陥を減らす](https://docs.microsoft.com/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)」を参照してください。 Sal 2.0 が SAL 1.0 に置き換えられます。 SAL 2.0 は、windows 8 用 Windows Driver Kit (WDK) 8 で使用する必要があります。 ドライバーの SAL 1.0 に関する情報が必要な場合は、Windows 7 用の WDK に付属のドキュメントを参照してください。
 
  
 
@@ -30,7 +30,7 @@ Microsoft ソースコード注釈言語 (SAL) には、Windows ドライバー�
 <tr class="header">
 <th align="left">ドライバーの注釈</th>
 <th align="left">カテゴリ</th>
-<th align="left">使用</th>
+<th align="left">用途</th>
 </tr>
 </thead>
 <tbody>
@@ -95,7 +95,7 @@ Microsoft ソースコード注釈言語 (SAL) には、Windows ドライバー�
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[C/C++ コードの欠陥を減らすための SAL 注釈の使用](https://go.microsoft.com/fwlink/p/?linkid=247283)
+[C/C++ コードの欠陥を減らすための SAL 注釈の使用](https://docs.microsoft.com/cpp/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)
 
  
 

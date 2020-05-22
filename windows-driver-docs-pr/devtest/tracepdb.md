@@ -3,19 +3,19 @@ title: Tracepdb
 description: Tracepdb
 ms.assetid: da7658a8-5fc3-409c-8a34-2aa134b9823b
 keywords:
-- トレースの WDK、Tracepdb ソフトウェア
+- ソフトウェアトレース WDK、Tracepdb
 - Tracepdb WDK
 - TMF ファイル WDK、Tracepdb
-- トレース WDK、Tracepdb
-- トレース メッセージのフォーマット ファイル WDK
+- WDK のトレース、Tracepdb
+- トレースメッセージフォーマットファイル WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8715acbeb626c7efb7915aa683902214593b0285
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d559734dd426890d3e88abdeb3d192dc3ba62f0
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369679"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769448"
 ---
 # <a name="tracepdb"></a>Tracepdb
 
@@ -23,11 +23,11 @@ ms.locfileid: "63369679"
 ## <span id="ddk_tracepdb_tools"></span><span id="DDK_TRACEPDB_TOOLS"></span>
 
 
-Tracepdb (Tracepdb.exe) を作成するコマンド ライン ツールは、[トレース メッセージの形式 (.tmf) ファイル](trace-message-format-file.md)トレース メッセージを抽出することで、フルまたはプライベートからの指示を書式設定[PDB シンボル ファイル](pdb-symbol-files.md)をの[トレース プロバイダー](trace-provider.md) WPP ソフトウェア トレース マクロを使用します。
+Tracepdb (Tracepdb) は、コマンドラインツールです。このツールは、WPP ソフトウェアトレースマクロを使用する[トレースプロバイダー](trace-provider.md)の完全またはプライベートの[PDB シンボルファイル](pdb-symbol-files.md)からトレースメッセージの書式設定命令を抽出することによって、トレースメッセージ[形式 (tmf) ファイル](trace-message-format-file.md)を作成します。
 
-トレース プロバイダーのプライベート PDB シンボル ファイルを提供できます。 または Tracepdb はディレクトリまたは内部シンボル サーバーを使用して、プロバイダーのプライベート PDB シンボル ファイルを検索できます。 Tracepdb は、Windows 2000 以降のバージョンの Windows で動作します。
+トレースプロバイダーまたは Tracepdb のプライベート PDB シンボルファイルを指定すると、ディレクトリまたは内部シンボルサーバーを使用して、プロバイダーのプライベート PDB シンボルファイルを見つけることができます。 Tracepdb は、Windows 2000 以降のバージョンの Windows で実行されます。
 
-**注**  [Tracefmt](tracefmt.md)、し、トレース メッセージを表示します。 ツールは、PDB シンボル ファイルから TMF ファイルを作成もできます。 については、Tracefmt を参照してください。
+**注**トレースメッセージを書式設定して表示するためのツールである  [TRACEFMT](tracefmt.md)は、PDB シンボルファイルから tmf ファイルを作成することもできます。 詳細については、「Tracefmt」を参照してください。
 
  
 
@@ -37,17 +37,17 @@ Tracepdb (Tracepdb.exe) を作成するコマンド ライン ツールは、[�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Tracepdb を見いだすことのできるでしょうか。</th>
+<th align="left">Tracepdb はどこで入手できますか。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、Tracepdb (Tracepdb.exe) が含まれます。 キットのダウンロード方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>します。</p>
-<p><strong>Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
+<td align="left"><p>Tracepdb (Tracepdb .exe) は、デスクトップアプリの WDK、Visual Studio、および Windows SDK をインストールするときに含まれます。 キットのダウンロードの詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">Windows ハードウェアのダウンロード</a>」を参照してください。</p>
+<p><strong>Windows Driver Kit (WDK) 8.1</strong> (インストールパス)</p>
 <p>%WindowsSdkDir%\bin\x64\Tracepdb.exe</p>
 <p>%WindowsSdkDir%\bin\x86\Tracepdb.exe</p>
 <div class="alert">
-<strong>注</strong>  WindowsSdkDir %、Visual Studio 環境変数では、パスを表す Windows キット ディレクトリに、キットがインストールされている、たとえば、C:\Program Files (x86) \windows kits \8.1 です。
+<strong>メモ</strong>   Visual Studio 環境変数% WindowsSdkDir% は、キットがインストールされている Windows kit ディレクトリへのパスを表します。たとえば、C:\Program Files (x86) \Windows Kits\8.1 です。のようになります。
 </div>
 <div>
  
@@ -62,4 +62,4 @@ Tracepdb (Tracepdb.exe) を作成するコマンド ライン ツールは、[�
 
 [Tracepdb の概要](tracepdb-overview.md)
 
-[**Tracepdb コマンド**](tracepdb-commands.md)
+[**Tracepdb のコマンド**](tracepdb-commands.md)

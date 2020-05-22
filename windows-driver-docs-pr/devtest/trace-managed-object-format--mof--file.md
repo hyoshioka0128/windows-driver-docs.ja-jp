@@ -4,28 +4,28 @@ description: トレース管理オブジェクト フォーマット (MOF) フ�
 ms.assetid: e0ef452b-042d-42d0-be0f-b36e7bf47285
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c59746b7db6531087f94418e8ebefb17a612a5d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0de160d0af0595a07fe826cf0f4a859791ab66d7
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63343063"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769650"
 ---
 # <a name="trace-managed-object-format-mof-file"></a>トレース管理オブジェクト フォーマット (MOF) ファイル
 
 
-トレース[マネージ オブジェクト形式](https://go.microsoft.com/fwlink/p/?linkid=74565)(MOF) ファイルは、各コントロールの GUID を含むテキスト ファイル[トレース プロバイダー](trace-provider.md) PDB ファイルで表されます。 MOF ファイルの名前は、.mof ファイル名拡張子を続けて、トレースのプロデューサーのモジュールの名前です。
+トレース[管理オブジェクトフォーマット](https://docs.microsoft.com/windows/win32/wmisdk/managed-object-format--mof-)(MOF) ファイルは、PDB ファイルで表される各[トレースプロバイダー](trace-provider.md)のコントロール GUID を含むテキストファイルです。 MOF ファイルの名前は、トレースプロデューサーのモジュール名と、その後に .mof ファイル名拡張子を付けたものです。
 
-[Tracepdb](tracepdb.md)と[BinPlace](binplace.md) PDB ファイルに書式設定の手順からトレース メッセージの形式 (.tmf) ファイルを作成するときに、各トレース プロバイダーの MOF ファイルを作成します。
+[Tracepdb](tracepdb.md)と[BINPLACE](binplace.md)は、PDB ファイルの書式設定手順からトレースメッセージ形式 (tmf) ファイルを作成するときに、各トレースプロバイダーの MOF ファイルを作成します。
 
-トレースの MOF ファイルには、次の情報も含まれています。
+トレース MOF ファイルには、次の情報も含まれています。
 
 -   PDB ファイルのパスとファイル名。
 
--   日付と PDB ファイルが作成された時刻。
+-   PDB ファイルが作成された日付と時刻。
 
--   トレース プロバイダーごとにコントロールの GUID。
+-   各トレースプロバイダーのコントロール GUID。
 
--   トレース プロバイダーによって定義されているトレース フラグ。
+-   トレースプロバイダーによって定義されたトレースフラグ。
 
-Logman やパフォーマンス モニターは、各プロバイダーのトレース フラグを検索するのに MOF ファイルを使用できます。 MOF ファイルは、コントロールのトレース プロバイダーの GUID のクイック リファレンスとして使用できます。
+Logman と Perfmon は、MOF ファイルを使用して、各プロバイダーのトレースフラグを見つけることができます。 MOF ファイルは、トレースプロバイダーのコントロール GUID のクイックリファレンスとして使用できます。

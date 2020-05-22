@@ -4,36 +4,36 @@ description: デバイス メタデータ作成ウィザードのインストー
 ms.assetid: 3DA5F7E8-B33B-4D05-9506-DDEE06773A5D
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfccd8ecc17c0b79be0200b1f13c72279b24d92
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ea8a1d3355ce58451e5ed818d0b892d71befd769
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350544"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769612"
 ---
 # <a name="installing-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードのインストール
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
+\[このトピックでは、Windows Driver Kit (WDK) 8 に用意されているデバイスメタデータ Authoring tool について説明します。 Windows 8.1 用のデバイスエクスペリエンスを開発している場合は、 [Microsoft Visual Studio 2013 および Windows Driver Kit (WDK) 8.1](https://www.microsoft.com/download/details.aspx?id=42273)で使用できるデバイスメタデータ作成ウィザードを使用します。
 
-デバイス メタデータの作成ウィザードには、Windows® Driver Kit (WDK) でにあります。
+デバイスメタデータの作成ウィザードは、Windows® Driver Kit (WDK) にあります。
 
-をダウンロードして、WDK をインストールするのには、を参照してください。 [Windows Driver Kit](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。
+WDK をダウンロードしてインストールする方法については、「 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)」を参照してください。
 
-**注**  ツールを使用して、全体の WDK をインストールする必要があります。
-
- 
-
-インストールし、WDK の起動後にをクリックして、**ドライバー**選択である Microsoft Visual Studio でメニュー**デバイス メタデータ**、次の操作のいずれかの実行。
-
-**注**  場合、**ドライバー**メニューが不足している Visual Studio 11 の Ultimate または Professional エディションがあり、その WDK がインストールされているかどうかを確認してください。
+**メモ**   このツールを使用するには、WDK 全体をインストールする必要があります。
 
  
 
--   デバイス メタデータ パッケージを作成するには、次のように選択します。 **Authoring**します。
--   モバイル ブロード バンド サービス メタデータ パッケージを作成するには、次のように選択します。**モバイル ブロード バンド**します。
+WDK をインストールして起動したら、Microsoft Visual Studio の [**ドライバー** ] メニューをクリックし、[**デバイスメタデータ**] を選択して、次のいずれかの操作を実行します。
 
-**メタデータの作成ウィザードへようこそ**画面が表示されたら、およびメタデータ パッケージの作成を開始する準備ができました。
+**メモ**   [**ドライバー** ] メニューが表示されていない場合は、Visual Studio 11 の Ultimate または Professional エディション、および WDK がインストールされていることを確認してください。
+
+ 
+
+-   デバイスメタデータパッケージを作成するには、 **[作成] を選択し**ます。
+-   モバイルブロードバンドサービスメタデータパッケージを作成するには、[**モバイルブロードバンド**] を選択します。
+
+[**メタデータ作成ウィザードへようこそ**] 画面が表示され、メタデータパッケージの作成を開始できます。
 
  
 

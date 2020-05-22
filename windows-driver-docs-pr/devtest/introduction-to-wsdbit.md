@@ -3,54 +3,54 @@ title: WSDBIT の概要
 description: WSDBIT の概要
 ms.assetid: 8a8ee9de-95b2-43df-ba96-3b09fcd5751c
 keywords:
-- WSDBIT について、WDK をツールします。
-- WSDAPI の基本的な相互運用性について、WDK のツール
-- デバイス API の WDK のサービスを web について
-- WSDAPI WDK, 概要
-- WDK WSDBIT のテストの相互運用性
+- WSDBIT ツール WDK、概要
+- WSDAPI 基本相互運用性ツール WDK, 概要
+- デバイス用 Web サービス API WDK、概要
+- WSDAPI WDK、概要
+- WDK WSDBIT の相互運用性テスト
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad97975e0ead86529c1b5891ea8ad691f3d9b63d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0e5a04f18df6fad3b0376bb02f583d9858f74989
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63356552"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769654"
 ---
 # <a name="introduction-to-wsdbit"></a>WSDBIT の概要
 
 
-Web Services for Devices (WSD) API (WSDAPI) は、次の種類のメッセージ交換を有効にします。
+Web Services for Devices (WSD) API (WSDAPI) では、次の種類のメッセージ交換を行うことができます。
 
--   DPWS デバイスを検出します。
+-   DPWS デバイスを検出しています。
 
--   DPWS デバイスを記述します。 呼ばれる、*メタデータ交換*します。
+-   DPWS デバイスについて説明します。 これは、*メタデータ交換*と呼ばれます。
 
--   DPWS サービスとの間は、バイナリの添付ファイルと共に、サービス固有のメッセージを送信します。
+-   バイナリ添付ファイルと共に、サービス固有のメッセージを DPWS サービスとの間で送信します。
 
--   サブスクライブし、DPWS サービスからイベントを受信します。
+-   DPWS サービスからのイベントのサブスクライブと受信。
 
-次の図に示すように WSDAPI の基本的な相互運用性ツール (WSDBIT) は、DPWS メッセージを送受信する WSDAPI を使用します。 WSDBIT を使用して、クライアントとデバイスで実行されている DPWS スタックで実行されている WSDAPI 間の相互運用性をテストできます。
+次の図に示すように、WSDAPI の基本的な相互運用性ツール (WSDBIT) では、WSDAPI を使用して DPWS メッセージを送受信します。 WSDBIT を使用すると、クライアントで実行されている WSDAPI と、デバイスで実行されている DPWS スタック間の相互運用性をテストできます。
 
-![wsdapi 基本的な相互運用性ツール (wsdbit) と関連コンポーネントを示す図](images/wsdbit2.png)
+![wsdapi 基本相互運用性ツール (wsdbit) と関連コンポーネントを示す図](images/wsdbit2.png)
 
-[相互運用性シナリオ](client-scenarios-for-wsdbit.md)前のメッセージ交換で使用されるプロトコルとメッセージ形式を確認する対象としています。 シナリオでは、クライアントの観点から定義され、次のカテゴリに分類されます。
+[相互運用性のシナリオ](client-scenarios-for-wsdbit.md)は、前のメッセージ交換で使用されているプロトコルと共にメッセージ形式を確認することを目的としています。 これらのシナリオは、クライアントの観点から定義され、次のカテゴリに分類されます。
 
--   *デバイスとサービスの検査*をテストし、DPWS デバイスの検出とメタデータの交換のことを確認します。
+-   *デバイスとサービスの検査*では、dpws デバイスの検出とメタデータの交換をテストおよび検証します。
 
--   *単純なと高度な制御*をテストし、サービス固有のメッセージを確認します。
+-   *単純なコントロールと高度なコントロール*は、サービス固有のメッセージをテストして検証します。
 
--   *添付ファイル*をテストして、メッセージの添付ファイルで定義されている、 [SOAP Message Transmission Optimization Mechanism (MTOM)](https://go.microsoft.com/fwlink/p/?linkid=81254)仕様。
+-   *添付ファイル*は、 [SOAP メッセージ伝送最適化メカニズム (MTOM)](https://www.w3.org/TR/2005/REC-soap12-mtom-20050125/)の仕様で定義されているように、メッセージの添付ファイルをテストおよび検証します。
 
--   *イベント*をテストして[Web サービスのイベント処理](https://go.microsoft.com/fwlink/p/?linkid=81245)します。
+-   *イベント*をテストし、 [Web サービスのイベント](https://docs.microsoft.com/previous-versions/ms951233(v=msdn.10))を確認します。
 
--   *セキュリティ保護された通信*前に示したすべてのシナリオの要素が含まれます。
+-   *セキュリティで保護された通信*には、上記のすべてのシナリオの要素が含まれます。
 
-相互運用性のテストの特定のニーズに応じて、デバイス、クライアント、またはその両方を実装できます。
+相互運用性テストの特定のニーズに応じて、デバイス、クライアント、またはその両方を実装できます。
 
-セクションでは、テスト_ケースの選択的に実装できます。 のみを実装できますなど、[デバイスとサービスの検査](device-and-service-inspection-scenarios.md)と[シンプルで高度なコントロール](device-control-scenarios.md)テスト_ケースの相互運用性。
+テストケースのセクションを選択して実装することもできます。 たとえば、[デバイスとサービスの検査](device-and-service-inspection-scenarios.md)と、[単純および高度なコントロール](device-control-scenarios.md)の相互運用性テストケースのみを実装できます。
 
-**注**  には、少なくとも他のテスト_ケースで必要なために、デバイスとサービスの検査の相互運用性のテスト ケースを実装する必要があります。
+**メモ**   少なくとも、デバイスとサービス検査の相互運用性テストケースを実装する必要があります。これは、他のテストケースで必要になるためです。
 
  
 

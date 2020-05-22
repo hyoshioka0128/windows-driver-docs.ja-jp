@@ -2,22 +2,20 @@
 title: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
 description: EFI_USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
 ms.assetid: 5449A10A-17BC-40CB-A8FC-19F867CFC9D0
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f5536405e92ac5b1b938f4c60389a09c92f051
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e7e6e3d081ecb3a815a965d5773cf9a99330d281
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337774"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778331"
 ---
-# <a name="efiusbsuperspeedendpointcompaniondescriptor"></a>EFI\_USB\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子
+# <a name="efi_usb_superspeed_endpoint_companion_descriptor"></a>EFI \_ USB \_ SUPERSPEED \_ エンドポイント \_ コンパニオン \_ 記述子
 
-
-**EFI\_USB\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子**構造体は、USB 関数に SuperSpeed エンドポイント コンパニオンの記述子を提供します。ドライバー。
+**EFI \_ usb \_ SUPERSPEED \_ エンドポイント \_ コンパニオンの \_ 記述子**構造体は、Usb 関数ドライバーに SUPERSPEED エンドポイントコンパニオン記述子を提供します。
 
 ## <a name="syntax"></a>構文
-
 
 ```cpp
 typedef struct
@@ -40,37 +38,34 @@ typedef struct
 
 ## <a name="members"></a>メンバー
 
+### <a name="length"></a>長さ
 
-<a href="" id="length"></a>**長さ**  
-この記述子 (バイト単位) のサイズ。
+この記述子のサイズ (バイト単位)。
 
-<a href="" id="descriptortype"></a>**DescriptorType**  
-記述子の型を指定します。 SUPERSPEED に設定する必要があります\_USB\_エンドポイント\_付属します。
+### <a name="descriptortype"></a>記述子の型
 
-<a href="" id="maxburst"></a>**MaxBurst**  
-エンドポイントは送信したり、バーストの一部として受信パケットの最大数。
+記述子の種類を指定します。 SUPERSPEED \_ USB エンドポイントコンパニオンに設定する必要があり \_ \_ ます。
 
-<a href="" id="asuchar"></a>**AsUchar**  
+### <a name="maxburst"></a>MaxBurst
+
+バーストの一部として、エンドポイントが送信または受信できるパケットの最大数。
+
+### <a name="asuchar"></a>AsUchar
+
 構造体の長さを指定します。
 
-<a href="" id="maxstreams"></a>**MaxStreams**  
-一括エンドポイントでサポートされているストリームの最大数を指定します。
+### <a name="maxstreams"></a>MaxStreams
 
-<a href="" id="reserved1"></a>**Reserved1**  
-予約済み。 使わないでください。
+一括エンドポイントでサポートされるストリームの最大数を指定します。
 
-<a href="" id="bytesperinterval"></a>**BytesPerInterval**  
-合計数バイトのこのエンドポイントは、すべてのサービス期間 (SI) に転送します。
+### <a name="reserved1"></a>Reserved1
+
+予約済み。 使用しないでください。
+
+### <a name="bytesperinterval"></a>BytesPerInterval
+
+このエンドポイントがすべてのサービス間隔 (SI) に転送するバイト数の合計です。
 
 ## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成

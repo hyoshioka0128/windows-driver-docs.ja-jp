@@ -1,26 +1,25 @@
 ---
-title: トレースのサンプルの場所
-description: トレースのサンプルの場所
+title: トレースサンプルの場所
+description: トレースサンプルの場所
 ms.assetid: 68882242-4956-4492-b3ac-e93b67a993a2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 94e09b26cb81bb68ee327a038ef8df30da0ff756
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 85facb07e7fc9d3f068f8c3eae6a9ad5eb8a12fb
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379132"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769586"
 ---
 # <a name="where-are-the-tracing-samples"></a>トレース サンプルの場所
 
+[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)は、WPP ソフトウェアのトレースを示すために設計されたサンプルドライバーです。 TraceDrv は、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリで入手できます。
 
-[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)は WPP ソフトウェア トレースを示すように設計されたサンプルのドライバーです。 TraceDrv が表示されます、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507 )GitHub リポジトリにあります。
+TraceDrv サンプルには、TraceDrv を起動してトレースメッセージを生成するアプリケーションである TraceCtl も含まれています。
 
-TraceDrv サンプルには、TraceCtl、TraceDrv を起動し、トレース メッセージを生成すると、そのアプリケーションも含まれています。
+[トースターサンプルドライバー](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/toaster-sample-driver/)(WDK の一般的なサンプルドライバー) は、 [WPP ソフトウェアトレース](wpp-software-tracing.md)にもインストルメント化されています。
 
-[トースター](https://go.microsoft.com/fwlink/p/?linkid=256195)、用に、WDK の一般的なサンプル ドライバーがインストルメント化も[WPP ソフトウェア トレース](wpp-software-tracing.md)します。 使用可能なも[Windows ハードウェア開発のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=618052)します。
-
-[Eventdrv](https://go.microsoft.com/fwlink/p/?LinkId=617724)を実装する方法を示すサンプルは、 [Event Tracing for Windows (ETW)](event-tracing-for-windows--etw-.md)ドライバー。 ETW カーネル モードの API は、Windows Vista で導入され、は、以前のオペレーティング システムではサポートされていません。
+[Eventdrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/evntdrv)は、ドライバーで[Windows イベントトレーシング (ETW)](event-tracing-for-windows--etw-.md)を実装する方法を示すサンプルです。 ETW カーネルモード API は Windows Vista で導入されましたが、以前のオペレーティングシステムではサポートされていません。
 
  
 

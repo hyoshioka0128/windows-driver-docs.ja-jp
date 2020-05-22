@@ -1,24 +1,24 @@
 ---
-title: PwrTest 要求のシナリオ
+title: PwrTest の要求シナリオ
 description: PwrTest Requests シナリオでは、システムで実行されているプロセスとサービスからの電力要求が発生したときにログに記録されます。
 ms.assetid: 4B082680-5C43-45F6-9A0E-0C23E9B1F282
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d2d4606985b66b0dc6d5ae4721655881dd4713
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2685134af91507fdf9b08bd69977825db0c9691a
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839331"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769658"
 ---
-# <a name="pwrtest-requests-scenario"></a>PwrTest 要求のシナリオ
+# <a name="pwrtest-requests-scenario"></a>PwrTest の要求シナリオ
 
 
 PwrTest Requests シナリオでは、システムで実行されているプロセスとサービスからの電力要求が発生したときにログに記録されます。
 
 PwrTest 要求シナリオを使用すると、コンピューターがスリープ状態にならない原因、またはモニターが常時稼働している理由を診断できます。
 
-また、管理者ツール[powercfg](https://go.microsoft.com/fwlink/p/?linkid=294568) (powercfg) をこの目的に使用することもできます (powercfg **/要求**)。 PowerCfg は Windows (Windows\\System32 ディレクトリ) に含まれています。 ただし、Powercfg は、ツールの実行時にアクティブな電源要求のみをキャプチャします。 これに対して、PwrTest Requests シナリオは、指定された時間に実行され、作成および終了時には電力要求をログに記録するため、ツールの実行時に要求をアクティブにする必要はありません。
+また、管理者ツール[powercfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options) (powercfg) をこの目的に使用することもできます (powercfg **/要求**)。 PowerCfg は Windows (Windows System32 ディレクトリ) に含まれてい \\ ます。 ただし、Powercfg は、ツールの実行時にアクティブな電源要求のみをキャプチャします。 これに対して、PwrTest Requests シナリオは、指定された時間に実行され、作成および終了時には電力要求をログに記録するため、ツールの実行時に要求をアクティブにする必要はありません。
 
 ## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>文
 
@@ -27,7 +27,7 @@ PwrTest 要求シナリオを使用すると、コンピューターがスリー
 pwrtest /requests [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span> **/t:** <em>n</em>  
+<span id="_t_n"></span><span id="_T_N"></span>**/t:**<em>n</em>  
 シナリオが実行されるまでの合計時間 (分) を指定します ( *n*の既定値は30分です)。
 
 **例**
@@ -102,14 +102,14 @@ pwrtest /requests  /t:60
 <tbody>
 <tr class="odd">
 <td align="left"><strong>&lt;PowerRequests&gt;</strong></td>
-<td align="left"><p>すべての異なる電源要求イベントを格納します。 PwrTest ログファイルには、 <strong>&lt;PowerRequests&gt;</strong>要素が1つだけ存在できます。</p></td>
+<td align="left"><p>すべての異なる電源要求イベントを格納します。 PwrTest ログファイルには、 <strong> &lt; powerrequests &gt; </strong>要素を1つだけ指定できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;タイムスタンプ&gt;</strong></td>
 <td align="left"><p>特定のイベントのタイムスタンプ。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;呼び出し元&gt;</strong></td>
+<td align="left"><strong>&lt;Caller&gt;</strong></td>
 <td align="left"><p>要求元の名前。</p></td>
 </tr>
 <tr class="even">
@@ -121,7 +121,7 @@ pwrtest /requests  /t:60
 <td align="left"><p>イベントの要求オブジェクト。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;の種類&gt;</strong></td>
+<td align="left"><strong>&lt;Type&gt;</strong></td>
 <td align="left"><p>呼び出し元の数値型。</p>
 <p>0 = ドライバー</p>
 <p>1 = プロセス</p>
@@ -136,7 +136,7 @@ pwrtest /requests  /t:60
 <td align="left"><p>プロセスの場合は、呼び出し元のセッション ID。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>レガシ&gt;の&lt;</strong></td>
+<td align="left"><strong>&lt;従来&gt;</strong></td>
 <td align="left"><p>呼び出し元が従来の<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate" data-raw-source="[&lt;strong&gt;SetThreadExecutionState function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-setthreadexecutionstate)"><strong>SetThreadExecutionState 関数 (windows)</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate" data-raw-source="[&lt;strong&gt;PoSetSystemState&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-posetsystemstate)"><strong>Posetsystemstate</strong></a> Api または新しい<a href="https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest" data-raw-source="[&lt;strong&gt;PowerSetRequest function (Windows)&lt;/strong&gt;](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-powersetrequest)"><strong>powersetrequest 関数 (Windows)</strong></a>または<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest" data-raw-source="[&lt;strong&gt;PoSetPowerRequest&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-posetpowerrequest)"><strong>posetsystemstate</strong></a> api を使用している場合は、True または False を報告します。</p></td>
 </tr>
 <tr class="even">
@@ -152,7 +152,7 @@ pwrtest /requests  /t:60
 <td align="left"><p>この呼び出し元に対して、退席モード要求が許可されているかどうかを報告します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>&lt;Perf部首 Stallowed&gt;</strong></td>
+<td align="left"><strong>&lt;PerfBoostAllowed&gt;</strong></td>
 <td align="left"><p>この呼び出し元に対してパフォーマンス向上要求が許可されているかどうかを報告します。</p></td>
 </tr>
 <tr class="even">
@@ -196,12 +196,12 @@ pwrtest /requests  /t:60
 
  
 
-## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連項目
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[PwrTest 構文](pwrtest-syntax.md)
+[PwrTest の構文](pwrtest-syntax.md)
 
-[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568)
+[PowerCfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)
 
  
 

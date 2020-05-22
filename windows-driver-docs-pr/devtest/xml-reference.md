@@ -3,28 +3,26 @@ title: XML リファレンス
 description: XML リファレンス
 ms.assetid: 54ACDF08-D3EA-4AAD-AE5D-4E2FC4D40E87
 keywords:
-- デバイス メタデータ XML のリファレンス
+- デバイスメタデータ XML リファレンス
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b3b34e966a1db56f3fce020d16dddaa6f11fd37c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e16c61e1298f1ef3e84f45431d58b752481a575f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63358044"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769400"
 ---
 # <a name="xml-reference"></a>XML リファレンス
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
+\[このトピックでは、Windows Driver Kit (WDK) 8 に用意されているデバイスメタデータ Authoring tool について説明します。 Windows 8.1 用のデバイスエクスペリエンスを開発している場合は、 [Microsoft Visual Studio 2013 および Windows Driver Kit (WDK) 8.1](https://www.microsoft.com/download/details.aspx?id=42273)で使用できるデバイスメタデータ作成ウィザードを使用します。 \]
 
-デバイス メタデータ パッケージを作成するコマンド ライン ツールを作成することができます。 XML スキーマと要素の詳細についてを参照してください。
+独自のコマンドラインツールを作成して、デバイスメタデータパッケージを作成できます。 XML スキーマと要素の詳細については、次を参照してください。
 
--   [Windows 8 向けデバイス メタデータ パッケージ スキーマ リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=226753)
--   [Windows 8 向けサービス メタデータ パッケージ スキーマ リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=226755)
+-   [Windows 8 のデバイスメタデータパッケージスキーマリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
 
- 
-
+-  [デバイス メタデータ パッケージの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-metadata-packages)
  
 
 

@@ -1,26 +1,26 @@
 ---
 title: Tracelog
-description: トレース ログ (Tracelog.exe) は、コマンド プロンプト ウィンドウで実行されているイベント トレース コント ローラーです。 ここでは、トレース ログについて説明します、そのコマンドの構文について説明しに使用するための実用的な例を示します。
+description: Tracelog (Tracelog .exe) は、コマンドプロンプトウィンドウで実行されるイベントトレースコントローラーです。 このセクションでは、Tracelog について説明し、そのコマンド構文について説明し、実際の使用例を示します。
 ms.assetid: aa3c144d-260b-44d2-b41c-d18be40ba541
 keywords:
 - Tracelog WDK
-- ソフトウェアの WDK、トレース ログのトレース
-- WDK、トレース ログのトレース
-- WDK のトレース ログをコント ローラー イベントのトレース
-- WDK のトレース ログ トレース セッションの管理
+- ソフトウェアトレース WDK、Tracelog
+- WDK のトレース、Tracelog
+- イベントトレースコントローラー WDK トレースログ
+- トレースセッション管理の WDK Tracelog
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1505480232f53ad163fb5204c5d0375a8e0f0ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 72c16147dcc2390c6437060a92d692b91fec241f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63369716"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769566"
 ---
 # <a name="tracelog"></a>Tracelog
 
 
-トレース ログ (Tracelog.exe) は、コマンド プロンプト ウィンドウで実行されているイベント トレース コント ローラーです。 ここでは、トレース ログについて説明します、そのコマンドの構文について説明しに使用するための実用的な例を示します。
+Tracelog (Tracelog .exe) は、コマンドプロンプトウィンドウで実行されるイベントトレースコントローラーです。 このセクションでは、Tracelog について説明し、そのコマンド構文について説明し、実際の使用例を示します。
 
 <table>
 <colgroup>
@@ -28,20 +28,20 @@ ms.locfileid: "63369716"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">トレース ログはどこで入手できますか。</th>
+<th align="left">Tracelog はどこで入手できますか。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>WDK、Visual Studio、およびデスクトップ アプリ用の Windows SDK をインストールするときに、トレース ログ (Tracelog.exe) が含まれます。 キットのダウンロード方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?linkid=290798" data-raw-source="[Windows Hardware Downloads](https://go.microsoft.com/fwlink/p/?linkid=290798)">Windows ハードウェア ダウンロード</a>します。</p>
-<p><strong>Windows Driver Kit (WDK) 8</strong> (インストール パス)</p>
+<td align="left"><p>トレースログ (Tracelog .exe) は、デスクトップアプリの WDK、Visual Studio、および Windows SDK をインストールするときに含まれます。 キットのダウンロードの詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Hardware Downloads](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">Windows ハードウェアのダウンロード</a>」を参照してください。</p>
+<p><strong>Windows Driver Kit (WDK) 8</strong> (インストールパス)</p>
 <p>%WindowsSdkDir%\tools\x64\tracelog.exe</p>
 <p>%WindowsSdkDir%\tools\x86\tracelog.exe</p>
-<p><strong>Windows Driver Kit (WDK) 8.1</strong> (インストール パス)</p>
+<p><strong>Windows Driver Kit (WDK) 8.1</strong> (インストールパス)</p>
 <p>%WindowsSdkDir%\bin\x64\tracelog.exe</p>
 <p>%WindowsSdkDir%\bin\x86\tracelog.exe</p>
 <div class="alert">
-<strong>注</strong>  WindowsSdkDir %、Visual Studio 環境変数では、パスを表す Windows キット ディレクトリに、キットがインストールされている、たとえば、C:\Program Files (x86) \windows kits \8.1 です。
+<strong>メモ</strong>   Visual Studio 環境変数% WindowsSdkDir% は、キットがインストールされている Windows kit ディレクトリへのパスを表します。たとえば、C:\Program Files (x86) \Windows Kits\8.1 です。のようになります。
 </div>
 </td>
 </tr>
@@ -50,39 +50,39 @@ ms.locfileid: "63369716"
 
  
 
-## <a name="span-idwhatyoucandowithtracelogspanspan-idwhatyoucandowithtracelogspanspan-idwhatyoucandowithtracelogspanwhat-you-can-do-with-tracelog"></a><span id="What_you_can_do_with_Tracelog"></span><span id="what_you_can_do_with_tracelog"></span><span id="WHAT_YOU_CAN_DO_WITH_TRACELOG"></span>トレース ログで行うことができます。
+## <a name="span-idwhat_you_can_do_with_tracelogspanspan-idwhat_you_can_do_with_tracelogspanspan-idwhat_you_can_do_with_tracelogspanwhat-you-can-do-with-tracelog"></a><span id="What_you_can_do_with_Tracelog"></span><span id="what_you_can_do_with_tracelog"></span><span id="WHAT_YOU_CAN_DO_WITH_TRACELOG"></span>Tracelog でできること
 
 
-トレース ログは、イベント トレースのコント ローラーとしてコマンド プロンプト ウィンドウで使用できます。
+イベントトレースコントローラーとして、コマンドプロンプトウィンドウで Tracelog を使用できます。
 
-**注**  トレース セッションを制御するには、Performance Log Users グループまたはコンピューターの Administrators グループのメンバーである (**管理者として実行**)。
+**メモ**   トレースセッションを制御するには、コンピューターの Performance Log Users グループまたは Administrators グループのメンバーである必要があります (**管理者として実行**)。
 
-トレース ログの機能は次のとおりです。
+Tracelog の機能は次のとおりです。
 
--   開始し、停止を[トレース セッション](trace-session.md)、プライベートのトレース セッションを含む[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)、および[グローバル ロガー トレース セッション](global-logger-trace-session.md)
+-   プライベートトレースセッション、 [NT カーネルロガートレースセッション](nt-kernel-logger-trace-session.md)、[グローバルロガートレースセッション](global-logger-trace-session.md)など、[トレースセッション](trace-session.md)を開始または停止します。
 
--   構成し、トレース セッションのプロパティを変更
+-   トレースセッションのプロパティを構成および変更します。
 
--   無効にでき[トレース プロバイダー](trace-provider.md)
+-   [トレースプロバイダー](trace-provider.md)を有効または無効にします
 
--   フラッシュ トレース セッション バッファー
+-   トレースセッションバッファーをフラッシュします
 
--   (リアルタイム) のトレース セッションを実行しているリスト
+-   実行中の (リアルタイムの) トレースセッションを一覧表示します
 
--   一覧表示[トレース プロバイダーの登録](registered-provider.md)
+-   [登録済みのトレースプロバイダー](registered-provider.md)を一覧表示します
 
--   遅延プロシージャに費やされた時間を計測呼び出し (Dpc) および割り込みサービス ルーチン (Isr)
+-   遅延プロシージャ呼び出し (Dpc) と割り込みサービスルーチン (Isr) に費やされた時間を計測します
 
-トレース ログは、トレース セッション中に、プロバイダーによって生成されたトレース メッセージを含むイベント トレース ログ (.etl) ファイルを生成します。 メッセージは、バイナリ形式のファイルに格納されます。 読みやすい形式で、トレース メッセージを表示する使用[traceview で](traceview.md)または[Tracefmt](tracefmt.md)します。
+Tracelog は、トレースセッション中にプロバイダーによって生成されたトレースメッセージを含むイベントトレースログ (.etl) ファイルを生成します。 メッセージは、ファイルにバイナリ形式で格納されます。 トレースメッセージを読み取り可能な形式で表示するには、 [Traceview](traceview.md)または[tracefmt](tracefmt.md)を使用します。
 
-トレース ログなどのコントロールのカーネル モードとプライベート (ユーザー モード) トレース セッション、および特殊なセッション、[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)と[グローバル ロガー トレース セッション](global-logger-trace-session.md)します。
+Tracelog は、カーネルモードおよびプライベート (ユーザーモード) のトレースセッション、および[NT カーネルロガートレース](nt-kernel-logger-trace-session.md)セッションや[グローバルロガートレースセッション](global-logger-trace-session.md)などの特別なセッションを制御します。
 
-トレース ログは、Windows 7 以降のバージョンの Windows で動作します。
+Tracelog は、windows 7 以降のバージョンの Windows で実行されます。
 
-使用可能なトレース ログの機能の多くはも[traceview で](traceview.md)、コマンド ライン インターフェイスだけでなくグラフィカル ユーザー インターフェイスを持つ Windows Driver Kit (WDK) で含まれているツールです。
+Tracelog の機能の多くは、コマンドラインインターフェイスに加えてグラフィカルユーザーインターフェイスを備えた Windows Driver Kit (WDK) に含まれるツールである[Tracelog](traceview.md)でも利用できます。
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
--   [**Tracelog コマンドの構文**](tracelog-command-syntax.md)
--   [トレース ログが表示されます。](tracelog-displays.md)
--   [トレース ログの例](tracelog-examples.md)
+-   [**Tracelog のコマンド構文**](tracelog-command-syntax.md)
+-   [Tracelog の表示](tracelog-displays.md)
+-   [Tracelog の例](tracelog-examples.md)

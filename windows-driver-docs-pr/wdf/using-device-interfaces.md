@@ -9,12 +9,12 @@ keywords:
 - デバイスインターフェイスクラス WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 87439df215c57b4957265fdf0b28fdadc702fa10
-ms.sourcegitcommit: 8973457113e00a5f4a0848a1b3165a42b975e81c
+ms.openlocfilehash: 19d76515a1ec5e9cf28f844a21abb5bfce23363e
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83349884"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769454"
 ---
 # <a name="using-device-interfaces"></a>デバイス インターフェイスの使用
 
@@ -22,9 +22,9 @@ ms.locfileid: "83349884"
 
 
 
-*デバイスインターフェイス*は、アプリケーションがデバイスにアクセスするために使用できるプラグアンドプレイ (PnP) デバイスへのシンボリックリンクです。 ユーザーモードアプリケーションは、インターフェイスのシンボリックリンク名を API 要素 (Microsoft Win32 **CreateFile**関数など) に渡すことができます。 デバイスインターフェイスのシンボリックリンク名を取得するために、ユーザーモードアプリケーションは**Setupdi**関数を呼び出すことができます。 **Setupdi**関数の詳細については、「[デバイスインターフェイス関数の使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)」を参照してください。
+*デバイスインターフェイス*は、アプリケーションがデバイスにアクセスするために使用できるプラグアンドプレイ (PnP) デバイスへのシンボリックリンクです。 ユーザーモードアプリケーションは、インターフェイスのシンボリックリンク名を API 要素 (Microsoft Win32 **CreateFile**関数など) に渡すことができます。 デバイスインターフェイスのシンボリックリンク名を取得するために、ユーザーモードアプリケーションは**Setupdi**関数を呼び出すことができます。 **Setupdi**関数の詳細については、「[デバイスインストール機能の使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)」を参照してください。
 
-各デバイスインターフェイスは、*デバイスインターフェイスクラス*に属しています。 たとえば、CD-ROM デバイスのドライバースタックは、GUID devinterface CDROM クラスに属するインターフェイスを提供する場合があり \_ \_ ます。 CD-ROM デバイスのドライバーの1つで、GUID \_ devinterface CDROM クラスのインスタンスが登録 \_ され、cd-rom デバイスが使用可能であることをシステムとアプリケーションに通知します。 デバイスインターフェイスクラスの詳細については、「[デバイスインターフェイスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)」を参照してください。
+各デバイスインターフェイスは、*デバイスインターフェイスクラス*に属しています。 たとえば、CD-ROM デバイスのドライバースタックは、GUID devinterface CDROM クラスに属するインターフェイスを提供する場合があり \_ \_ ます。 CD-ROM デバイスのドライバーの1つで、GUID \_ devinterface CDROM クラスのインスタンスが登録 \_ され、cd-rom デバイスが使用可能であることをシステムとアプリケーションに通知します。 デバイスインターフェイスクラスの詳細については、「[デバイスインターフェイスクラスの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-interface-classes)」を参照してください。
 
 ### <a name="registering-a-device-interface"></a>デバイスインターフェイスの登録
 

@@ -3,19 +3,19 @@ title: サマリー メッセージ ファイル
 description: サマリー メッセージ ファイル
 ms.assetid: 90d82aee-5836-4f69-8e52-48400e1445cc
 keywords:
-- Tracefmt WDK、概要メッセージ ファイル
-- 概要メッセージ ファイルの WDK Tracefmt
-- WDK Tracefmt ファイル
-- .sum ファイル
+- Tracefmt WDK、概要メッセージファイル
+- 概要メッセージファイル WDK Tracefmt
+- ファイル WDK Tracefmt
+- . sum ファイル
 - 合計ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dce1d04a7dc1035e0959339aa2e7ff86dde467f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 785baa8f875ea0567ec22bcbaf8b1b5621f2a785
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67360938"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769714"
 ---
 # <a name="summary-message-file"></a>サマリー メッセージ ファイル
 
@@ -23,31 +23,31 @@ ms.locfileid: "67360938"
 ## <span id="ddk_summary_message_file_tools"></span><span id="DDK_SUMMARY_MESSAGE_FILE_TOOLS"></span>
 
 
-概要メッセージ ファイルは、ソフトウェア トレースに関する情報を含むテキスト ファイルです。 Tracefmt を作成、*概要メッセージ (.sum) ファイル*トレース ログにメッセージを処理またはセッションのトレースの後にします。
+概要メッセージファイルは、ソフトウェアトレースに関する情報を含むテキストファイルです。 Tracefmt は、トレースログまたはトレースセッションでメッセージを処理した後に、*概要メッセージ (. sum) ファイル*を作成します。
 
-概要メッセージ ファイルには、統計サマリーで、次のデータが含まれます。
+概要メッセージファイルには、統計概要に次のデータが含まれています。
 
--   処理されるバッファーの数
+-   処理されたバッファーの数
 
--   メッセージの数が処理され、失われました。
+-   処理されて失われたメッセージの数
 
--   経過時間 (マイクロ秒)、トレース セッションの
+-   トレースセッションの経過時間 (マイクロ秒)
 
-次の統計情報の要約は、トレースで表される各トレース メッセージの 1 つの行で構成されるテーブルです。 テーブルの各列は、トレース メッセージの詳細については、次の情報を提供します。
+統計の概要に従うと、トレースで表されるトレースメッセージごとに1つの行で構成されるテーブルになります。 テーブルの各列には、トレースメッセージに関する次の情報が表示されます。
 
 <span id="EventCount"></span><span id="eventcount"></span><span id="EVENTCOUNT"></span>**EventCount**  
-トレースにトレース メッセージのインスタンスの数。
+トレース内のトレースメッセージのインスタンスの数。
 
 <span id="EventName"></span><span id="eventname"></span><span id="EVENTNAME"></span>**EventName**  
-フレンドリ名、 [GUID をメッセージ](message-guid.md)トレース メッセージ。 既定では、メッセージの GUID のフレンドリ名には、トレース プロバイダーが作成されたディレクトリの名前が使用して別の表示名を指定することができます、 **-p**実行するようにパラメーター\_WPP または Tracewpp.exe します。 については、実行を参照してください。\_WPP オプション。 (**EventName** %1 の変数と同じ値を持つ、[トレース メッセージのプレフィックス](trace-message-prefix.md))。
+トレースメッセージの[メッセージ GUID](message-guid.md)のフレンドリ名。 既定では、メッセージ GUID のフレンドリ名は、トレースプロバイダーがビルドされたディレクトリの名前ですが、 **-p**パラメーターを使用して、 \_ Wpp または TRACEWPP を実行することで、別のフレンドリ名を指定できます。 詳細については、「実行する WPP オプション」を参照してください \_ 。 (**EventName**には、[トレースメッセージプレフィックス](trace-message-prefix.md)の %1 変数と同じ値が指定されています)。
 
-<span id="EventType"></span><span id="eventtype"></span><span id="EVENTTYPE"></span>**イベントの種類**  
-トレース メッセージのフレンドリ名。 既定では、トレース メッセージの表示名は、ソース ファイルとトレース メッセージを生成したコードの行番号の名前です。 (**EventType** %2 の変数と同じ値を持つ、[トレース メッセージのプレフィックス](trace-message-prefix.md))。
+<span id="EventType"></span><span id="eventtype"></span><span id="EVENTTYPE"></span>**EventType**  
+トレースメッセージのフレンドリ名。 既定では、トレースメッセージの表示名は、ソースファイルの名前と、トレースメッセージを生成したコードの行番号です。 (**EventType**の値は、[トレースメッセージのプレフィックス](trace-message-prefix.md)の %2 変数と同じです)。
 
 <span id="GUID"></span><span id="guid"></span>**GUID**  
-メッセージ トレース メッセージの GUID。
+トレースメッセージのメッセージ GUID。
 
-次の例では、Tracedrv、トレース用にインストルメント化サンプル ドライバーによって生成される testtrace.etl トレース ログの概要メッセージ ファイルを示します。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレースのように設計されたドライバーのサンプルは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+次の例は、トレース用にインストルメント化されたサンプルドライバーである Tracedrv によって生成される testtrace .etl トレースログの概要メッセージファイルを示しています。 ソフトウェアトレース用に設計された[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)は、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリから入手できます。
 
 ```
 Files Processed:
@@ -65,9 +65,9 @@ Elapsed Time            122 sec
 +---------------------------------------------------------------------------------+
 ```
 
-Tracedrv がヘッダー メッセージおよび 2 つのトレース メッセージが生成される前の概要を示しています。 によって 1 つのトレース メッセージが生成された、 [ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85)) 264 の行と、その他のステートメントは行 258 DoTraceMessage ステートメントによって生成されます。 このトレース ログには、最初のトレース メッセージの場合は 1700 インスタンスと 2 つ目のトレース メッセージのインスタンス数は 17 があります。
+前の概要では、Tracedrv がヘッダーメッセージと2つのトレースメッセージを生成することを示しています。 264行目の[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))ステートメントによって1つのトレースメッセージが生成され、もう一方は258行目の DoTraceMessage ステートメントによって生成されます。 このトレースログには、最初のトレースメッセージのインスタンス1700と2番目のトレースメッセージの17個のインスタンスがあります。
 
-概要メッセージ ファイルはソフトウェアのトレースをデバッグするには、主に使用され、その形式が変更される可能性が。
+概要メッセージファイルは、主にソフトウェアのトレースをデバッグするために使用され、その形式は変更される可能性があります。
 
  
 

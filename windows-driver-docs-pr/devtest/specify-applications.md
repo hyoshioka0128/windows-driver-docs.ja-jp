@@ -6,35 +6,33 @@ keywords:
 - デバイス メタデータ作成ウィザードでのアプリケーションの指定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd76aa954f2063e228e33e48627207e1ba9bdc1
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 3498cc6c1979dd7edfd47e21f1a1c389bae26aa9
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391958"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769510"
 ---
 # <a name="specify-applications-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのアプリケーションの指定
 
 
-Microsoft Store デバイス アプリと特権を持つアプリケーションを含む、デバイスのさまざまなアプリケーションを指定できます。
+デバイスのさまざまなアプリケーション (Microsoft Store デバイスアプリや特権アプリケーションなど) を指定できます。
 
-UWP デバイスのアプリがダウンロードされ、ユーザーが初めてデバイスを接続時にインストールします。 特権を持つアプリケーションでは、デバイスへのアクセスがあります。 それぞれ 1 つだけ指定できます。
+UWP デバイスアプリは、ユーザーが最初にデバイスに接続したときにダウンロードされ、インストールされます。 特権のあるアプリケーションには、デバイスへの特別なアクセス権があります。 1つだけを指定できます。
 
-UWP デバイス アプリと特権を持つアプリケーションの詳細については、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)します。
-
-## <a name="span-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>Microsoft Store デバイス アプリを指定するには
+## <a name="span-idto_specify_the_windows_store_device_appspanspan-idto_specify_the_windows_store_device_appspanspan-idto_specify_the_windows_store_device_appspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>Microsoft Store デバイスアプリを指定するには
 
 
 1.  **[アプリケーション]** タブをクリックします。
 2.  次のフィールドに入力します。
-    -   **パッケージ名**します。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Name 属性の値を入力します。 パッケージ名入手してくださいに Microsoft Store アプリの提出を作成した後、Microsoft Store の送信プロセスにより、パッケージ名が変更されたため。 参照してください[UWP デバイス アプリのライフ サイクル](https://go.microsoft.com/fwlink/p/?linkid=246571)Microsoft Store アプリを関連付けるし、アプリ マニフェストに更新された値をコピーする方法の詳細についてはします。
-    -   **発行元**。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Publisher 属性の値を入力します。 発行元名には、開発者の 1 つと同じである必要があります証明書が、パッケージと、メタデータの署名に使用します。
-    -   **アプリ ID**します。 アプリケーション マニフェストの Application 要素内の ID 属性の値を入力します。
-    -   **通知ハンドラー**します。 通知ハンドラーについては、次を参照してください。[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)します。
+    -   **パッケージ名**。 アプリケーションマニフェストの Package 要素の Identity 要素に Name 属性の値を入力します。 パッケージ名は、Microsoft Store の送信プロセスによって変更されるため、Microsoft Store へのアプリの送信後に取得する必要があります。 アプリを Microsoft Store に関連付け、更新された値をアプリマニフェストにコピーする方法の詳細については、「 [UWP デバイスアプリのビルド](https://docs.microsoft.com/windows-hardware/drivers/devapps/the-workflow)」を参照してください。
+    -   **発行元**。 アプリケーションマニフェストの Package 要素で、Identity 要素の Publisher 属性の値を入力します。 発行元の名前は、パッケージとメタデータの署名に使用される開発者証明書の名前と同じである必要があります。
+    -   **アプリ ID**。 アプリケーションマニフェストの Application 要素に ID 属性の値を入力します。
+    -   **通知ハンドラー**。 通知ハンドラーの詳細については、「[デバイスメタデータスキーマリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/ff541452(v=vs.85))」を参照してください。
 
-**パッケージ名**、**パブリッシャー**、および**アプリ ID**アプリ パッケージの .appxmanifest 情報に一致する必要があります。
+**パッケージ名**、**発行元**、**アプリ ID**は、アプリケーションパッケージ package.appxmanifest の情報と一致する必要があります。
 
-アプリケーション マニフェストの例を次に示します。
+アプリケーションマニフェストの例を次に示します。
 
 ```
 <?xml version="1.0" encoding="utf-8" ?> 
@@ -52,39 +50,39 @@ UWP デバイス アプリと特権を持つアプリケーションの詳細に
   <Application Id="Microsoft.SDKSamples.MoFx2App" DisplayName="MoFx2App" Logo="images\tile-sdk.png" SmallLogo="images\tile-sdk.png" EntryPointType="startPage" EntryPoint="default.html">
 ```
 
-## <a name="span-idtoseethepackagenameandpublisherspanspan-idtoseethepackagenameandpublisherspanspan-idtoseethepackagenameandpublisherspanto-see-the-package-name-and-publisher"></a><span id="To_see_the_Package_name_and_Publisher_"></span><span id="to_see_the_package_name_and_publisher_"></span><span id="TO_SEE_THE_PACKAGE_NAME_AND_PUBLISHER_"></span>パブリッシャーとパッケージの名前を表示するには
+## <a name="span-idto_see_the_package_name_and_publisher_spanspan-idto_see_the_package_name_and_publisher_spanspan-idto_see_the_package_name_and_publisher_spanto-see-the-package-name-and-publisher"></a><span id="To_see_the_Package_name_and_Publisher_"></span><span id="to_see_the_package_name_and_publisher_"></span><span id="TO_SEE_THE_PACKAGE_NAME_AND_PUBLISHER_"></span>パッケージ名と発行元を表示するには
 
 
 1.  Visual Studio でアプリ ソリューションを開きます。
-2.  ソリューション エクスプ ローラーで、アプリ マニフェストをクリックします。
+2.  ソリューションエクスプローラーでアプリケーションマニフェストをクリックします。
 3.  Package.appxmanifest をダブルクリックします。
-4.  **パッケージ**タブで、確認、**パッケージ名**と**パブリッシャー**フィールド。
+4.  [パッケージ**化**] タブで、**パッケージ名**と**発行元**フィールドを確認します。
 
-## <a name="span-idtoseetheappidspanspan-idtoseetheappidspanspan-idtoseetheappidspanto-see-the-app-id"></a><span id="To_see_the_App_ID_"></span><span id="to_see_the_app_id_"></span><span id="TO_SEE_THE_APP_ID_"></span>アプリ ID を表示するには
+## <a name="span-idto_see_the_app_id_spanspan-idto_see_the_app_id_spanspan-idto_see_the_app_id_spanto-see-the-app-id"></a><span id="To_see_the_App_ID_"></span><span id="to_see_the_app_id_"></span><span id="TO_SEE_THE_APP_ID_"></span>アプリ ID を表示するには
 
 
 1.  Visual Studio でアプリ ソリューションを開きます。
-2.  ソリューション エクスプ ローラーで、アプリ マニフェストをクリックします。
+2.  ソリューションエクスプローラーでアプリケーションマニフェストをクリックします。
 3.  Package.appxmanifest を右クリックします。
-4.  選択**コードを表示**します。
+4.  [**コードの表示**] を選択します。
 
-## <a name="span-idprivilegedapplicationsspanspan-idprivilegedapplicationsspanspan-idprivilegedapplicationsspanprivileged-applications"></a><span id="Privileged_applications"></span><span id="privileged_applications"></span><span id="PRIVILEGED_APPLICATIONS"></span>特権を持つアプリケーション
-
-
-特権を持つデバイスのインターフェイスにアクセスするための Microsoft Store デバイス アプリでは、アプリを指定する必要があります**特権を持つアプリケーション**します。
-
-次のフィールドに入力して特権を持つアプリケーションを指定する**特権アプリケーション**:
-
-**注:**  
-特権のあるデバイスのインターフェイス プロパティのキーの詳細については、次を参照してください。 [DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)します。
+## <a name="span-idprivileged_applicationsspanspan-idprivileged_applicationsspanspan-idprivileged_applicationsspanprivileged-applications"></a><span id="Privileged_applications"></span><span id="privileged_applications"></span><span id="PRIVILEGED_APPLICATIONS"></span>特権のあるアプリケーション
 
 
+Microsoft Store デバイスアプリが特権のあるデバイスインターフェイスにアクセスできるようにするには、[**特権**のあるアプリケーション] でアプリを指定する必要があります。
 
--   **パッケージ名**します。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Name 属性の値を入力します。
--   **発行元**。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Publisher 属性の値を入力します。
--   特権のアプリケーションがカスタム ドライバーにアクセスする場合は、選択**AccessCustomDriver**します。
+特権のあるアプリケーションを指定するには、[**特権アプリケーション**] の下の次のフィールドに入力します。
 
-アプリケーション マニフェスト、デバイス メタデータの作成ウィザードに入力した Id の名前、発行元、およびアプリケーション Id のフィールドの表示の例を次に示します。
+**注**  
+Privileged Device Interface プロパティキーの詳細については、「 [DEVPKEY \_ deviceinterface \_ Restricted](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)」を参照してください。
+
+
+
+-   **パッケージ名**。 アプリケーションマニフェストの Package 要素の Identity 要素に Name 属性の値を入力します。
+-   **発行元**。 アプリケーションマニフェストの Package 要素で、Identity 要素の Publisher 属性の値を入力します。
+-   特権のあるアプリケーションがカスタムドライバーにアクセスする場合は、[ **Accesscustomdriver**] を選択します。
+
+次に、デバイスメタデータ作成ウィザードに入力された Id 名、発行元、およびアプリケーション Id のフィールドを示すアプリケーションマニフェストの例を示します。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -125,7 +123,7 @@ UWP デバイス アプリと特権を持つアプリケーションの詳細に
 </Package>
 ```
 
-アプリケーション マニフェストのフィールドに対応するデバイス メタデータの作成ウィザードによって生成される XML 内の要素の例を次に示します。
+次に、アプリケーションマニフェストのフィールドに対応する、デバイスメタデータ作成ウィザードによって生成される XML の要素の例を示します。
 
 ```XML
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -157,10 +155,10 @@ UWP デバイス アプリと特権を持つアプリケーションの詳細に
 </SoftwareInfo>
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバイス メタデータのスキーマ リファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
+[デバイスメタデータスキーマのリファレンス](https://docs.microsoft.com/previous-versions/windows/hardware/metadata/dn465877(v=vs.85))
 
 
 

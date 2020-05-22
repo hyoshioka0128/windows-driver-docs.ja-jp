@@ -2,25 +2,23 @@
 title: EFI_USB_CONFIG_INFO
 description: EFI_USB_CONFIG_INFO
 ms.assetid: 74d5cb02-2648-4bd1-990e-61156b5dc8cd
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b7db5cab0dc38e26f692b13f69f52e47c277ec9d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 10ae4734244bc6fa4f5f1ae6d0cdb8511a5788c6
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337787"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778332"
 ---
-# <a name="efiusbconfiginfo"></a>EFI\_USB\_CONFIG\_情報
+# <a name="efi_usb_config_info"></a>EFI \_ USB \_ 構成 \_ 情報
 
-
-**EFI\_USB\_CONFIG\_情報**構造を使用して、サポートされている USB ポートの構成を定義します。
+**EFI \_ usb \_ 構成 \_ 情報**の構造を使用して、サポートされている usb ポート構成を定義します。
 
 ## <a name="syntax"></a>構文
 
-
 ```cpp
-typedef struct 
+typedef struct
 {
     EFI_USB_CONFIG_DESCRIPTOR           *ConfigDescriptor;
     EFI_USB_INTERFACE_INFO              **InterfaceInfoTable;
@@ -29,27 +27,18 @@ typedef struct
 
 ## <a name="members"></a>メンバー
 
+### <a name="configdescriptor"></a>ConfigDescriptor
 
-<a href="" id="configdescriptor"></a>**ConfigDescriptor**  
-EFI\_USB\_CONFIG\_関数の USB デバイスの構成情報を含む記述子構造体。
+\_ \_ \_ Usb 機能デバイスの構成情報を含む EFI usb 構成記述子の構造体。
 
-<a href="" id="interfaceinfotable"></a>**InterfaceInfoTable**  
-[EFI\_USB\_インターフェイス\_情報](efi-usb-interface-info.md)サポートされているインターフェイスに関する情報を含む構造体。
+### <a name="interfaceinfotable"></a>InterfaceInfoTable
 
-## <a name="remarks"></a>注釈
+サポートされているインターフェイスに関する情報を含む[EFI \_ USB \_ インターフェイス \_ 情報](efi-usb-interface-info.md)構造体。
 
+## <a name="remarks"></a>解説
 
-構造体**USB\_CONFIG\_記述子**2.3 の UEFI 仕様で定義されています。 詳細については、次を参照してください。、 [UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526) web サイト。
+構造体の**USB \_ 構成 \_ 記述子**は、UEFI 仕様2.3 で定義されています。 詳細については、 [UEFI.org](https://uefi.org/specifications)の web サイトを参照してください。
 
 ## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成

@@ -3,110 +3,110 @@ title: デバイスとサービスの検査のシナリオ
 description: デバイスとサービスの検査のシナリオ
 ms.assetid: 25e6ed92-e01c-4349-a614-b71bb08d71cd
 keywords:
-- WSDBIT ツール WDK、テスト シナリオ
-- WSDAPI 基本的な相互運用性ツール WDK、テスト シナリオ
+- WSDBIT ツール WDK、テストシナリオ
+- WSDAPI 基本的な相互運用性ツール WDK、テストシナリオ
 - WDK WSDBIT のシナリオ
-- WDK WSDBIT のシナリオをテストします。
-- デバイスとサービスの検査シナリオ WDK WSDBIT
+- テストシナリオの WDK WSDBIT
+- デバイスとサービスの検査のシナリオ WDK WSDBIT
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ee6870686ffc84ece4e16b5dc6b522defddff198
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 03e99fa225a7d6784529272b413b81f406c5558c
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63329688"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769628"
 ---
 # <a name="device-and-service-inspection-scenarios"></a>デバイスとサービスの検査のシナリオ
 
 
-デバイスとサービスの検査のシナリオでは、デバイスの検出とそれ以降のデバイスとサービスの検査をテストします。
+デバイスとサービスの検査シナリオでは、デバイス検出とそれ以降のデバイスとサービス検査をテストします。
 
-デバイスとホスト型サービスの探索の基本的なシナリオの残りの部分のインフラストラクチャを提供します。
+デバイスとホステッドサービスの基本的な検出は、残りのシナリオのインフラストラクチャを提供します。
 
-デバイスを使用する必要があります**xs:anyURI testdevice**として、 **wsd:Scopes**検出用の要素。
+デバイスは、検出のために、wsd: **anyURI testdevice**を**wsd: スコープ**要素として使用する必要があります。
 
-次の表では、このシナリオについて説明します。
+次の表で、このシナリオについて説明します。
 
-クライアント アクション サーバー アクションの不合格条件ステップ**1.1**
+ステップクライアントアクションサーバーアクション成功-失敗条件**1.1**
 
-**TestDevice ブート\\シャット ダウン**
+**TestDevice ブートの \\ シャットダウン**
 
 1.1.1
 
-なし
+Nothing
 
-TestDevice は起動し、こんにちはを送信します。
+TestDevice が起動し、Hello が送信されます。
 
-こんにちはクライアントで正常に受信します。
+クライアントで Hello が正しく受信されました。
 
 1.1.2
 
-なし
+Nothing
 
-TestDevice はシャット ダウンされ、Bye を送信します。
+TestDevice がシャットダウンし、Bye を送信します。
 
-クライアントで正常に受信 bye します。 **Wsa:EndpointReference/wsa: アドレス**1.1.1 の手順で使用されるものと同じである必要があります。
+Bye がクライアントで正しく受信されました。 **Wsa: EndpointReference/wsa: アドレス**は、手順1.1.1 で使用したものと同じである必要があります。
 
 1.1.3
 
-なし
+Nothing
 
-TestDevice では、もう一度起動し、こんにちはを送信します。
+TestDevice が再び開始され、Hello が送信されます。
 
-こんにちは 1.1.1 で同じメタデータのバージョンで正常に受信します。 **Wsa:EndpointReference/wsa: アドレス**1.1.1 の手順で使用されるものと同じである必要があります。
+Hello は、1.1.1 で同じメタデータバージョンを使用して正常に受信されました。 **Wsa: EndpointReference/wsa: アドレス**は、手順1.1.1 で使用したものと同じである必要があります。
 
 **1.2**
 
-**解決するには、TestDevice の**
+**TestDevice の解決**
 
 1.2.1
 
-解決を送信します。
+解決策を送信します。
 
-ResolveMatches で応答します。
+ResolveMatches を使用して応答します。
 
-1.2.2 の手順に進みます。
+手順1.2.2 に進みます。
 
 1.2.2
 
-TestDevice、GetMetadaRequest を送信します。
+GetMetadaRequest を TestDevice に送信します。
 
 GetMetadatResponse で応答します。
 
-1.2.3 の手順に進みます。
+手順1.2.3 に進みます。
 
 1.2.3
 
-ThisDevice メタデータを表示します。
+このデバイスのメタデータを表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.2.4
 
-ようなモデルのメタデータを表示します。
+このモデルメタデータを表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.2.5
 
-ホスト、HostedService、EndpointReference を表示します。
+Host、HostedService、EndpointReference を表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.2.6
 
-Urn: uuid:00000000 の解決の送信-0000-0000-0000-000000000000 (これは、i、 **wsa:EndpointReference/wsa: アドレス**デバイスの)。
+Urn: uuid: 00000000-0000-0000-0000-000000000000 の解決策を送信します (これは、デバイスの**wsa: EndpointReference/wsa: アドレス**です)。
 
-なし。 このデバイスに一致しないため**wsa:EndpointReference/wsa: アドレス**も応答する必要があります
+Nothing。 デバイスがこの**wsa: EndpointReference/wsa: アドレス**と一致しないため、応答しません。
 
-サーバーは、任意の ResolveMatches メッセージで応答しません。
+サーバーは、どの ResolveMatches メッセージでも応答しません。
 
 **1.3**
 
@@ -114,169 +114,169 @@ Urn: uuid:00000000 の解決の送信-0000-0000-0000-000000000000 (これは、i
 
 1.3.1
 
-ワイルドカードのプローブを送信するには。
+ワイルドカードプローブを送信します。
 
 -   既定の照合ルールを使用します。
 
--   いいえ**wsd:Types**要素。
+-   **Wsd: Types**要素がありません。
 
--   いいえ**wsd:Scopes**要素。
+-   **Wsd: スコープ**要素がありません。
 
-ProbeMatches で応答します。
+ProbeMatches を使用して応答します。
 
-1.3.2 (または 1.3.3) の手順に進みます。
+手順 1.3.2 (または 1.3.3) にアクセスします。
 
-1.3.2 (省略可能です。 この手順は場合にのみ必要ない**wsd:XAddrs** 1.3.1 の ProbeMatches が指定されました)。
+1.3.2 (省略可能)。 この手順が必要なのは、1.3.1 の ProbeMatches に**wsd: XAddrs**が指定されていない場合のみです)。
 
-すると解決の送信、 **wsa:EndpointReference/wsa:Addres**1.2.1 から ProbeMatches で指定されています。
+1.2.1 から ProbeMatches に指定されている**wsa: EndpointReference/wsa: Addres**s に解決策を送信します。
 
-ResolveMatches で応答します。
+ResolveMatches を使用して応答します。
 
-1.3.3 の手順に進みます。
+手順1.3.3 に進みます。
 
 1.3.3
 
-TestDevice、GetMetadataRequest を送信します。
+GetMetadataRequest を TestDevice に送信します。
 
 GetMetadataResponse で応答します。
 
-1.3.4 の手順に進みます。
+手順1.3.4 に進みます。
 
 1.3.4
 
-ThisDevice メタデータを表示します。
+このデバイスのメタデータを表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.3.5
 
-ようなモデルのメタデータを表示します。
+このモデルメタデータを表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.3.6
 
-ホスト、HostedService、EndpointReference を表示します。
+Host、HostedService、EndpointReference を表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.3.7
 
-次を指定するプローブを送信するには。
+次のものを指定するプローブを送信します。
 
 -   既定の照合ルールを使用します。
 
--   一致する型: **wsdp:Device**します。 (.参照名前空間、上の表と、デバイス プロファイルで R1020 Web サービス用)。
+-   照合する型: **wsdp: Device**。 (.上記の名前空間の表と、Web サービスのデバイスプロファイルの R1020 を参照してください。)
 
--   Wsd:Scopes 要素がありません。
+-   Wsd: スコープ要素がありません。
 
-ProbeMatches で応答します。
+ProbeMatches を使用して応答します。
 
-値、 **wsa:EndpointReference/wsa: アドレス**1.2.1 手順と同様です。
+**Wsa: EndpointReference/wsa: アドレス**の値は、手順1.2.1 と同じです。
 
 1.3.8
 
-次を指定するプローブを送信するには。
+次のものを指定するプローブを送信します。
 
--   使用されている、対応するルールが定義されている、 [Web Services Dynamic Discovery (Ws-discovery)](https://go.microsoft.com/fwlink/p/?linkid=81240)仕様。
+-   [Web サービスの動的検出 (ws-atomictransaction)](http://schemas.xmlsoap.org/ws/2005/04/discovery/)仕様で定義されている照合ルールを使用します。
 
--   Wsd:Types 要素がありません。
+-   Wsd: Types 要素がありません。
 
--   次を使用して、スコープとして*testdevice*します。
+-   スコープの*testdevice*として次を使用します。
 
-ProbeMatches で応答します。
+ProbeMatches を使用して応答します。
 
-値、 **wsa:EndpointReference/wsa: アドレス**1.2.1 手順と同様です。
+**Wsa: EndpointReference/wsa: アドレス**の値は、手順1.2.1 と同じです。
 
 1.3.9
 
-次を指定するプローブを送信するには。
+次のものを指定するプローブを送信します。
 
--   使用して、 [Web サービスのデバイス プロファイル](https://go.microsoft.com/fwlink/p/?linkid=163864)照合ルール。
+-   [Web サービス照合ルールのデバイスプロファイル](http://schemas.xmlsoap.org/ws/2006/02/devprof/)を使用します。
 
--   いいえ**wsd:Types**要素。
+-   **Wsd: Types**要素がありません。
 
--   次を使用して、スコープとして*testDEVICE*します。
+-   スコープの*Testdevice*として次を使用します。
 
-なし。 このテストは、ProbeMatches に応答しません。
+Nothing。 このテストは、ProbeMatches では応答しません。
 
-メッセージは受信されませんでした。10 秒間待ちます。
+メッセージは受信されません。10秒間待機します。
 
 1.3.10
 
-次を指定するプローブを送信するには。
+次のものを指定するプローブを送信します。
 
 -   既定の照合ルールを使用します。
 
--   照合する架空の型を使用して、: (たとえば、 http://example.org/this/wont/work:Device)します。
+-   次のように、架空の型を使用して照合します (例:) http://example.org/this/wont/work:Device) 。
 
--   いいえ**wsd:Scopes**要素。
+-   **Wsd: スコープ**要素がありません。
 
-なし。 このテストは、ProbeMatches に応答しません。
+Nothing。 このテストは、ProbeMatches では応答しません。
 
-メッセージは受信されませんでした。10 秒間待ちます。
+メッセージは受信されません。10秒間待機します。
 
 **1.4**
 
-**有向プローブ**
+**指示されたプローブ**
 
 1.4.1
 
-HTTP 要求としてワイルドカード プローブを送信します。
+ワイルドカードプローブを HTTP 要求として送信します。
 
 -   既定の照合ルールを使用します。
 
--   いいえ**wsd:Types**要素。
+-   **Wsd: Types**要素がありません。
 
--   いいえ**wsd:Scopes**要素。
+-   **Wsd: スコープ**要素がありません。
 
--   HTTP アドレスを指定します。
+-   HTTP アドレスが指定されています。
 
 HTTP 応答を使用する ProbeMatches で応答します。
 
-いることを確認、 **wsa:EndpointReference/wsa: アドレス**TestDevice が正しい。
+TestDevice の**wsa: EndpointReference/wsa: アドレス**が正しいことを確認します。
 
 **1.5**
 
-**検出なしのメタデータの取得**
+**検出せずにメタデータを取得する**
 
 1.5.1
 
-TestDevice、GetMetadataRequest を送信します。
+GetMetadataRequest を TestDevice に送信します。
 
 GetMetadataResponse で応答します。
 
-1.5.2 の手順に進みます。
+手順1.5.2 に進みます。
 
 1.5.2
 
-ThisDevice メタデータを表示します。
+このデバイスのメタデータを表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.5.3
 
-ようなモデルのメタデータを表示します。
+このモデルメタデータを表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
 1.5.4
 
-ホスト、HostedService、EndpointReference を表示します。
+Host、HostedService、EndpointReference を表示します。
 
-なし
+Nothing
 
-送信された内容に対応します。 クライアントからの出力の例は、次を参照してください。[メタデータ応答のサンプル出力](sample-metadata-response-output.md)します。
+送信された内容に対応します。 クライアント出力の例については、「[サンプルメタデータ応答の出力](sample-metadata-response-output.md)」を参照してください。
 
  
 

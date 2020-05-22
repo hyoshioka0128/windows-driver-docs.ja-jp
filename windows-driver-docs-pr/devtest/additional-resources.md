@@ -1,34 +1,32 @@
 ---
-title: その他の資料
-description: その他の資料
+title: その他の技術情報
+description: その他の技術情報
 ms.assetid: 3C4D4D58-7B81-4791-A040-903BED94B46E
 keywords:
-- デバイス メタデータ リソース
-- デバイス エクスペリエンスのリソース
-- UWP デバイス アプリのリソース
+- デバイスメタデータのリソース
+- デバイスエクスペリエンスのリソース
+- UWP デバイスアプリのリソース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: bf05a8e53e694087677dfb35b0d96677c08f6898
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e378fadf0dc8d468ad2599ddc09cc7d4ffa05ec3
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332025"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769502"
 ---
-# <a name="additional-resources"></a>その他の資料
+# <a name="additional-resources"></a>その他の技術情報
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
+\[このトピックでは、Windows Driver Kit (WDK) 8 に用意されているデバイスメタデータ Authoring tool について説明します。 Windows 8.1 用のデバイスエクスペリエンスを開発している場合は、 [Microsoft Visual Studio 2013 および Windows Driver Kit (WDK) 8.1](https://www.microsoft.com/download/details.aspx?id=42273)で使用できるデバイスメタデータ作成ウィザードを使用します。\]
 
-Windows 8 デバイス エクスペリエンスの詳細については、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)と[デバイス メタデータ パッケージのパイプラインのホワイト ペーパー](https://go.microsoft.com/fwlink/p/?LinkId=242246)します。
+UWP デバイスアプリの詳細については、以下を参照してください。
 
-UWP デバイス アプリの詳細についてを参照してください。
-
--   [UWP デバイス アプリのライフ サイクル](https://go.microsoft.com/fwlink/p/?LinkId=226757)
--   [カメラ用の UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkId=241445)
--   [モバイル ブロード バンド:UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkId=241446)
--   [プリンター:UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkId=241444)
--   [特殊化されたデバイス:UWP デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkId=241447)
+-   [UWP デバイスアプリのライフサイクル](https://docs.microsoft.com/windows-hardware/drivers/devapps/the-workflow)
+-   [カメラ用 UWP デバイスアプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-webcams)
+-   [モバイルブロードバンド: UWP デバイスアプリ](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/uwp-mobile-broadband-apps)
+-   [プリンター: UWP デバイスアプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-printers)
+-   [専用デバイス: UWP デバイスアプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)
 
  
 

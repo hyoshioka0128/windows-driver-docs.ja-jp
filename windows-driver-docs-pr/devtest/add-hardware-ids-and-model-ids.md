@@ -6,41 +6,41 @@ keywords:
 - デバイス メタデータ作成ウィザードでのハードウェア ID とモデル ID の追加
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e77e7073e38b0cd567b058fe8e11b30803f30aa2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ec93357dc51fa5c5dea5c036d28e9ac22e8aab1b
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332061"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769410"
 ---
 # <a name="add-hardware-and-model-ids-in-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードでのハードウェア ID とモデル ID の追加
 
 
-ハードウェア Id では、bus 固有の値に基づくハードウェアの機能を識別して、デバイス ドライバーをデバイスにマップするために使用できます。 たとえば、同じハードウェア ID を持つ 2 つのデバイスは、同じドライバーによって使用される機能インターフェイスを共有します。 デバイス メタデータ パッケージを特定のバスまたはインターフェイス上のデバイスのインスタンスにマップするハードウェア Id が使用されます。
+ハードウェア Id は、バス固有の値に基づいてハードウェアの機能を識別し、デバイスドライバーをデバイスにマップするために使用できます。 たとえば、同じハードウェア ID を持つ2つのデバイスは、同じドライバーによって使用される機能インターフェイスを共有します。 ハードウェア Id は、デバイスメタデータパッケージを特定のバスまたはインターフェイスのデバイスインスタンスにマップするために使用されます。
 
-モデル Id は、バスまたはインターフェイスのテクノロジの独立した物理デバイスを一意に識別するには、Original Equipment Manufacturer (OEM) または独立系ハードウェア ベンダー (IHV) を許可します。 たとえば、別のモデル Id を持つ 2 つのデバイスには、そのコンポーネントの同じハードウェア Id があります。 デバイス メタデータ パッケージをデバイスがコンピューターに接続する方法に関係なく、物理デバイスにマップするモデル Id が使用されます。
+モデル Id を使用すると、相手先ブランド供給 (OEM) または独立系ハードウェアベンダー (IHV) は、バスやインターフェイスのテクノロジに依存しない物理デバイスを一意に識別できます。 たとえば、異なるモデル Id を持つ2つのデバイスは、そのコンポーネントに対して同じハードウェア Id を持つことができます。 モデル Id は、デバイスがコンピューターに接続する方法に関係なく、デバイスメタデータパッケージを物理デバイスにマップするために使用されます。
 
-デバイス メタデータ パッケージのハードウェア Id およびモデルの Id を関連付けるにはクリックして、**アソシエーション**タブ。
+デバイスメタデータパッケージのハードウェア Id とモデル Id を関連付けるには、[**関連付け**] タブをクリックします。
 
-### <a name="span-idtoaddahardwareidspanspan-idtoaddahardwareidspanspan-idtoaddahardwareidspanto-add-a-hardware-id"></a><span id="To_add_a_Hardware_ID_"></span><span id="to_add_a_hardware_id_"></span><span id="TO_ADD_A_HARDWARE_ID_"></span>ハードウェア ID を追加するには
+### <a name="span-idto_add_a_hardware_id_spanspan-idto_add_a_hardware_id_spanspan-idto_add_a_hardware_id_spanto-add-a-hardware-id"></a><span id="To_add_a_Hardware_ID_"></span><span id="to_add_a_hardware_id_"></span><span id="TO_ADD_A_HARDWARE_ID_"></span>ハードウェア ID を追加するには
 
-1.  をクリックして、**アソシエーション**タブ。
-2.  横に**ハードウェア ID**、クリックして、**プラス記号 (+)** します。
-3.  表示されるボックスで、ハードウェア ID を入力します
-    **注**  会社のベンダーの id を格納する値を使用して、可能であれば、。 次に、例を示します。USB\\VID\_045E &AMP; PID\_0047
+1.  [**関連付け**] タブをクリックします。
+2.  [**ハードウェア ID**] の横に**あるプラス記号 (+)** をクリックします。
+3.  表示されるボックスに、ハードウェア ID を入力します。
+    **メモ**   可能であれば、会社のベンダー ID を含む値を使用します。 例: USB \\ VID \_ 045e&PID \_ 0047
 
      
 
 4.  **[OK]** をクリックします。
 
-### <a name="span-idtoaddamodelidspanspan-idtoaddamodelidspanspan-idtoaddamodelidspanto-add-a-model-id"></a><span id="To_add_a_Model_ID_"></span><span id="to_add_a_model_id_"></span><span id="TO_ADD_A_MODEL_ID_"></span>モデル ID を追加するには
+### <a name="span-idto_add_a_model_id_spanspan-idto_add_a_model_id_spanspan-idto_add_a_model_id_spanto-add-a-model-id"></a><span id="To_add_a_Model_ID_"></span><span id="to_add_a_model_id_"></span><span id="TO_ADD_A_MODEL_ID_"></span>モデル ID を追加するには
 
-1.  をクリックして、**アソシエーション**タブ。
-2.  横に**モデル ID**、クリックして、**プラス記号 (+)** します。
-3.  表示されるボックスで、モデル ID の GUID 値を入力します。
+1.  [**関連付け**] タブをクリックします。
+2.  [**モデル ID**] の横に**あるプラス記号 (+)** をクリックします。
+3.  表示されたボックスに、モデル ID の GUID 値を入力します。
 4.  **[OK]** をクリックします。
 
-各デバイスのスタイルのハードウェア ID の詳細については、次を参照してください。、[デバイス メタデータ パッケージ スキーマ リファレンス for Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=226753)します。
+各デバイススタイルのハードウェア ID の詳細については、「[デバイスメタデータパッケージの概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-device-metadata-packages)」を参照してください。
 
  
 

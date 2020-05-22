@@ -1,50 +1,50 @@
 ---
-title: 16 の例をデバッガーでのトレース メッセージの表示
-description: 16 の例をデバッガーでのトレース メッセージの表示
+title: 例16デバッガーでトレースメッセージを表示する
+description: 例16デバッガーでトレースメッセージを表示する
 ms.assetid: c548643c-ae0c-47e7-af0a-0d89ed78f281
 keywords:
-- WDK を表示するトレース メッセージ
-- トレース メッセージを表示します。
+- WDK を表示するトレースメッセージ
+- トレースメッセージの表示
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 393da6d1968da18c793ce9000a441c546d03e067
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2c86e9a266e069c79a62b1c74e7f05c44caf1d0
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344678"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769678"
 ---
-# <a name="example-16-viewing-trace-messages-in-a-debugger"></a>例 16: デバッガーでのトレース メッセージの表示
+# <a name="example-16-viewing-trace-messages-in-a-debugger"></a>例 16: デバッガーでのトレースメッセージの表示
 
 
 ## <span id="ddk_viewing_trace_messages_in_a_debugger_tools"></span><span id="DDK_VIEWING_TRACE_MESSAGES_IN_A_DEBUGGER_TOOLS"></span>
 
 
-この例では、WinDbg、KD にトレース メッセージをリダイレクトする方法を示します。
+この例では、トレースメッセージを KD または WinDbg にリダイレクトする方法を示します。
 
-トレース セッションを開始する前に Wmitrace.dll と Traceprt.dll がホスト コンピューターで、デバッガーの検索パスを確認します。 これらの Dll が含まれている[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)で、 \\Program Files\\ツールを Windows のデバッグ\\winxp ディレクトリ。 (ディレクトリの名前に関係なく、ファイル操作 Windows 2000 と Windows の以降のバージョン)。
+トレースセッションを開始する前に、ホストコンピューター上のデバッガーの検索パスに Wmitrace と Traceprt があることを確認します。 これらの Dll は、windows[のデバッグツール](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)の \\ \\ windows Winxp ディレクトリのプログラムファイルデバッグツールに含まれてい \\ ます。 (ディレクトリ名にかかわらず、ファイルは windows 2000 以降のバージョンの Windows で動作します)。
 
-また、いることを確認、[トレース メッセージの形式のファイル](trace-message-format-file.md)(TMF) トレース プロバイダーは、デバッガーの検索パス。
+また、トレースプロバイダーの[トレースメッセージフォーマットファイル](trace-message-format-file.md)(tmf) がデバッガーの検索パスにあることを確認します。
 
-デバッガーの検索パスを設定するには、使用、! wmitrace.searchpath デバッガー拡張機能を特殊化または % のトレースの値を設定\_形式\_検索\_%path% 環境変数。 次に、例を示します。
+デバッガーの検索パスを設定するには、wmitrace の searchpath 特殊化されたデバッガー拡張機能を使用するか、% TRACE \_ FORMAT \_ search \_ path% 環境変数の値を設定します。 次に例を示します。
 
 ```
 set TRACE_FORMAT_SEARCH_PATH=c:\tracing
 ```
 
-次に、デバッガーを起動します。 トレース ログのコマンドを送信する場合、 **-kd**パラメーター、およびデバッガーが実行されていない、トレース ログが応答しなくなる (「ハングアップ」)。
+次に、デバッガーを起動します。 **-Kd**パラメーターを指定して tracelog コマンドを送信するときに、デバッガーが実行されていない場合、tracelog は応答を停止します ("ハング")。
 
-次のコマンドは、トレース セッションを開始し、Windbg、KD からか、トレース メッセージを送信しますがアタッチされているいずれか。
+次のコマンドは、トレースセッションを開始し、のトレースメッセージを KD または Windbg に送信します (どちらか一方がアタッチされている場合)。
 
 ```
 tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 ```
 
-**Tracelog-開始**コマンドには、トレース セッションを開始するセッションの名前が含まれています。 使用して、 **- guid**プロバイダー ファイルを識別するパラメーター。 また、使用、 **-rt**デバッガーとログ ファイルにトレース メッセージが送信されるように、リアルタイムのトレース セッションを開始するパラメーター。
+**トレースログ-start**コマンドには、トレースセッションを開始するためのセッション名が含まれています。 この例では、 **-guid**パラメーターを使用してプロバイダーファイルを識別します。 また、 **-rt**パラメーターを使用してリアルタイムのトレースセッションを開始し、トレースメッセージがログファイルではなくデバッガーに送信されるようにします。
 
-応答では、トレース ログは、セッションが開始されたことを報告します。 トレース プロバイダーは、メッセージを生成するときは、デバッガーで、メッセージが表示されます。
+応答として、Tracelog はセッションを開始したことを報告します。 トレースプロバイダーがメッセージを生成すると、メッセージがデバッガーに表示されます。
 
-デバッガーでのメッセージを表示するには、WMI のトレース拡張機能を使用します。 詳しくは、次を参照してください。[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)します。
+デバッガーでメッセージを表示するには、WMI トレース拡張機能を使用します。 詳細については、「 [Windows 用デバッグツール](https://docs.microsoft.com/windows-hardware/drivers/debugger/)」を参照してください。
 
  
 

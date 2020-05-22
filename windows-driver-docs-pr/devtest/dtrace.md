@@ -13,12 +13,12 @@ keywords:
 - トレースメッセージフォーマットファイル WDK
 ms.date: 11/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a4bc59edb1a22e863a2cc68a4fb8a3523395b3b9
-ms.sourcegitcommit: 6997fcbd0ad57e189c4b7c6b490632d1d53b6b26
+ms.openlocfilehash: b2d9d7a700553aad3c6881d451d2389a2dc6bd17
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822820"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769682"
 ---
 # <a name="dtrace-on-windows"></a>Windows 上の DTrace
 
@@ -35,9 +35,9 @@ DTrace on Windows Github サイトは次の場所にあります。
   
 DTrace の詳細については、ケンブリッジの大学の[OpenDTrace 仕様バージョン 1.0](https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-924.pdf)を参照してください。
 
-プライマリ GitHub サイトは[https://github.com/opendtrace/](https://github.com/opendtrace/)にあります。
+プライマリ GitHub サイトは、にあり [https://github.com/opendtrace/](https://github.com/opendtrace/) ます。
 
-一連の便利なスクリプトは、 [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit)で入手できます。
+には、便利なスクリプトのセットが用意されて [https://github.com/opendtrace/toolkit](https://github.com/opendtrace/toolkit) います。
 
 [DTrace.Org](http://dtrace.org)は、元の開発者の多くがヒントと秘訣を提供する web サイトです。
 
@@ -53,7 +53,7 @@ DTrace: Brendan Gregg と Jim Mauro による*Oracle Solaris、Mac OS X およ�
 
 フィードバックハブを使用して、新しい機能を要求したり、Windows DTrace に関する問題やバグを報告したりします。
 
-1. このリンク[https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053)をクリックして、Windows PC からフィードバックハブを起動します。
+1. このリンクをクリックして、Windows PC からフィードバックハブを起動し [https://windows-feedback:?contextid=1053](https://windows-feedback:?contextid=1053) ます。
 2. [*新しいフィードバックの追加*] を選択します。
 3. 問題または提案の詳細な具体的な説明を入力します。
 
@@ -71,7 +71,7 @@ Windows で使用可能なプロバイダーとその機能を次に示します
 
 ### <a name="syscall"></a>SYSCALL
 
-SYSCALL は、システム呼び出しごとにプローブのペアを提供します。システムコールが入力される前に起動されるエントリプローブと、システム呼び出しが完了した後、制御がユーザーレベルに戻される前に発生する戻りプローブです。 すべての SYSCALL プローブでは、関数名はインストルメント化されたシステム呼び出しの名前に設定され、モジュール名は関数が存在するモジュールになります。 SYSCALL プロバイダーによって提供されるシステム呼び出しの名前は、コマンドプロンプトから `dtrace.exe -l -P syscall` コマンドを入力することによって見つけることができます。 プローブ名は、大文字と小文字を区別しないことに注意してください。 コマンド `dtrace -ln syscall:::` には、syscall プロバイダーから取得できるすべてのプローブとそのパラメーターも表示されます。
+SYSCALL は、システム呼び出しごとにプローブのペアを提供します。システムコールが入力される前に起動されるエントリプローブと、システム呼び出しが完了した後、制御がユーザーレベルに戻される前に発生する戻りプローブです。 すべての SYSCALL プローブでは、関数名はインストルメント化されたシステム呼び出しの名前に設定され、モジュール名は関数が存在するモジュールになります。 SYSCALL プロバイダーによって提供されるシステム呼び出しの名前は、コマンドプロンプトからコマンドを入力することによって見つけることができ `dtrace.exe -l -P syscall` ます。 プローブ名は、大文字と小文字を区別しないことに注意してください。 また、このコマンドは、 `dtrace -ln syscall:::` syscall プロバイダーから取得できるすべてのプローブとそのパラメーターの一覧を表示します。
 
 ```dtrace
 C:\> dtrace -ln syscall:::
@@ -118,7 +118,7 @@ C:\> dtrace -lvn syscall:::
 
  DTrace には、既存のマニフェストプローブとトレースログ記録 ETW プローブのサポートが含まれています。 ETW イベントは、イベントの発生時に同期的にインストルメント化、フィルター処理、解析することができます。 さらに、DTrace を使用して、さまざまなイベントやシステムの状態を組み合わせて、複雑なエラー状況のデバッグに役立つ統合された出力ストリームを提供できます。  
 
-コマンド `dtrace -ln etw:::` には、syscall プロバイダーから取得できるすべてのプローブとそのパラメーターが一覧表示されます。
+コマンドを `dtrace -ln etw:::` 実行すると、syscall プロバイダーから取得できるすべてのプローブとそのパラメーターが一覧表示されます。
 
 ```dtrace
   C:\> dtrace -ln etw:::
@@ -138,7 +138,7 @@ C:\> dtrace -lvn syscall:::
 
 各命令セットには、他の関数を呼び出さず、FBT によってインストルメント化できないコンパイラ (いわゆるリーフ関数) によって高度に最適化された関数の数が少なくなっています。 これらの関数のプローブは、DTrace には存在しません。
 
-コマンド `dtrace -ln fbt:nt::` には、nt モジュールで使用できるすべてのプローブとそのパラメーターの一覧が表示されます。 使用可能なすべてのモジュールを一覧表示するには、デバッガーの [ [lm] (読み込まれたモジュールの一覧)](https://docs.microsoft.com/windows-hardware/drivers/debugger/lm--list-loaded-modules-)コマンドを使用します。
+コマンドを `dtrace -ln fbt:nt::` 実行すると、nt モジュールで使用できるすべてのプローブとそのパラメーターが一覧表示されます。 使用可能なすべてのモジュールを一覧表示するには、デバッガーの [ [lm] (読み込まれたモジュールの一覧)](https://docs.microsoft.com/windows-hardware/drivers/debugger/lm--list-loaded-modules-)コマンドを使用します。
 
 ```dtrace
 C:\>dtrace -ln "fbt:nt::"
@@ -152,7 +152,7 @@ C:\>dtrace -ln "fbt:nt::"
 ```
 
 > [!NOTE]
-> Nt では何千もの呼び出しを利用できますが、データをログに記録する DTrace コマンドを実行するときは、関数名を空のままにすることはお勧めしません。 パフォーマンスへの影響を回避するために推奨される方法は、`fbt:nt:*Timer*:entry`などの関数名の一部を指定することです。
+> Nt では何千もの呼び出しを利用できますが、データをログに記録する DTrace コマンドを実行するときは、関数名を空のままにすることはお勧めしません。 パフォーマンスへの影響を回避するための推奨される方法は、などの関数名の一部を指定することです `fbt:nt:*Timer*:entry` 。
 
 ### <a name="pid"></a>PID
 
@@ -178,7 +178,7 @@ Traceext (trace extension) は、Windows カーネル拡張機能ドライバー
 
 1. サポートされているバージョンの Windows を実行していることを確認してください。 DTrace の現在のダウンロードは、バージョン18980および Windows Server Insider Preview ビルド18975後の 20H1 Windows の Insider ビルドでサポートされています。 *このバージョンの DTrace を古いバージョンの Windows にインストールすると、システムが不安定になり、推奨されません。*
 
-   アーカイブされたバージョンの DTrace on 19H1 は、「 [Windows 上の Dtrace ダウンロード DTrace](https://www.microsoft.com/en-us/download/58091)」で入手できます。 このバージョンの DTrace はサポートされなくなったことに注意してください。
+   アーカイブされたバージョンの DTrace on 19H1 は、「 [Windows 上の Dtrace ダウンロード DTrace](https://www.microsoft.com/download/58091)」で入手できます。 このバージョンの DTrace はサポートされなくなったことに注意してください。
 
 
 1. MSI インストールファイルは、Microsoft ダウンロードセンターからダウンロードしてください。 [Windows で DTrace をダウンロード](https://www.microsoft.com/download/details.aspx?id=100441)してください。
@@ -199,9 +199,9 @@ bcdedit /set dtrace ON
 新しい Windows Insider build に更新する場合は、dtrace bcdedit オプションをもう一度設定する必要があります。
 
 > [!NOTE]
-> BitLocker を使用している場合は、ブート値を変更するときに無効にします。 この操作を行わないと、BitLocker 回復キーの入力を求められる場合があります。 この状況から回復する方法の1つとして、回復コンソールを起動して、bcdedit の値を `bcdedit /set {default} dtrace on`復元する方法があります。 OS 更新プログラムによって値が削除され、に追加された場合、OS を回復するには、bcdedit を使用して値を削除し、`bcdedit /deletevalue {default} dtrace`します。 次に、BitLocker を無効にしてから、`bcdedit /set dtrace ON`を再度有効にします。
+> BitLocker を使用している場合は、ブート値を変更するときに無効にします。 この操作を行わないと、BitLocker 回復キーの入力を求められる場合があります。 この状況から回復する方法の1つは、回復コンソールを起動して、bcdedit の値を復元することです `bcdedit /set {default} dtrace on` 。 OS 更新プログラムによって値が削除され、に追加された場合、OS を回復するには、bcdedit を使用して値を削除し `bcdedit /deletevalue {default} dtrace` ます。 次に、BitLocker を無効にし、dtrace を再び有効にし `bcdedit /set dtrace ON` ます。
 
-"HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" を1に設定して、VSM と Secure を有効にすることで、カーネル関数境界トレース (FBT) を有効にするために、コンピューターで VSM (仮想セキュアモード) を構成します。カーネル.
+"HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\DeviceGuard\EnableVirtualizationBasedSecurity" を1に設定して、VSM とセキュリティで保護されたカーネルを有効にすることにより、コンピューター上で VSM (仮想セキュアモード) を構成します。
 
 これを行うには、次のように REG Add コマンドを使用します。
 
@@ -220,7 +220,7 @@ set _NT_SYMBOL_PATH=srv*C:\symbols*https://msdl.microsoft.com/download/symbols
 
 ### <a name="using-dtrace-inside-of-a-virtual-machine"></a>仮想マシン内での DTrace の使用
 
-Vm で DTrace を実行している場合は、vm が停止しているときに、次の PowerShell コマンドを使用して、vm をサポートしているマシンで入れ子になった仮想化を有効にします。 DTrace を実行している VM の `<VMName>` を指定します。 管理者として PowerShell ウィンドウを開きます。
+Vm で DTrace を実行している場合は、vm が停止しているときに、次の PowerShell コマンドを使用して、vm をサポートしているマシンで入れ子になった仮想化を有効にします。 DTrace を `<VMName>` 実行している VM のを指定します。 管理者として PowerShell ウィンドウを開きます。
 
 ```powershell
 Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
@@ -272,7 +272,7 @@ C:\>  dtrace -l
 
 まず、管理者コマンドプロンプトから次のコマンドを実行します。
 
-このコマンドは、5秒間のプログラム別の syscall 概要を表示します。 Tick-5sec パラメーターは、期間を指定します。 終了 (0);コマンドプロンプトに戻ったときにコマンドを終了させます。 出力は `[pid,execname] = count();` 使用して指定されます。これにより、プロセス ID (PID)、実行可能ファイルの名前、および最後の5秒間のカウントが表示されます。
+このコマンドは、5秒間のプログラム別の syscall 概要を表示します。 Tick-5sec パラメーターは、期間を指定します。 終了 (0);コマンドプロンプトに戻ったときにコマンドを終了させます。 出力には、 `[pid,execname] = count();` プロセス ID (PID)、実行可能ファイルの名前、および最後の5秒間のカウントが表示されます。
 
 ``` dtrace
 C:\> dtrace -Fn "tick-5sec {exit(0);} syscall:::entry{ @num[pid,execname] = count();} "  
@@ -403,12 +403,12 @@ C:\> dtrace -qn "pid$target:::entry { @k[probemod] = count();} tick-10s{printa(@
 
 ```
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 [DTrace の Windows プログラミング](dtrace-programming.md)
 
 [DTrace ETW](dtrace-etw.md)
 
-[DTrace ライブダンプ](dtrace-live-dump.md)
+[DTrace ライブ ダンプ](dtrace-live-dump.md)
 
 [DTrace Windows コードサンプル](dtrace-code-samples.md)

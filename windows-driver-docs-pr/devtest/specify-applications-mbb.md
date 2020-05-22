@@ -6,34 +6,32 @@ keywords:
 - モバイル ブロードバンド メタデータ作成ウィザードでのアプリケーションの指定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a2b5f8d3483f58e4b3ac3171373eb0d14472e654
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ac71728e58f7cc123f4a67c9478258770ab39159
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387921"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769522"
 ---
 # <a name="specify-applications-in-the-mobile-broadband-metadata-authoring-wizard"></a>モバイル ブロードバンド メタデータ作成ウィザードでのアプリケーションの指定
 
 
-デバイス アプリを Microsoft Store および特権のアプリケーションを含む、サービスのさまざまなアプリケーションを指定する をクリックして、**アプリケーション**タブ。
+Microsoft Store デバイスアプリや特権アプリケーションなど、サービスのさまざまなアプリケーションを指定するには、[**アプリケーション**] タブをクリックします。
 
-UWP デバイスのアプリがダウンロードされ、ユーザーが初めてデバイスを接続時にインストールします。 特権を持つアプリケーションでは、デバイスへのアクセスがあります。 それぞれ 1 つだけ指定できます。
+UWP デバイスアプリは、ユーザーが最初にデバイスに接続したときにダウンロードされ、インストールされます。 特権のあるアプリケーションには、デバイスへの特別なアクセス権があります。 1つだけを指定できます。
 
-詳細については、UWP デバイス アプリと特権を持つアプリケーションは、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=227312)します。
-
-## <a name="span-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanspan-idtospecifythewindowsstoredeviceappspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>Microsoft Store デバイス アプリを指定するには
+## <a name="span-idto_specify_the_windows_store_device_appspanspan-idto_specify_the_windows_store_device_appspanspan-idto_specify_the_windows_store_device_appspanto-specify-the-microsoft-store-device-app"></a><span id="To_specify_the_Windows_Store_device_app"></span><span id="to_specify_the_windows_store_device_app"></span><span id="TO_SPECIFY_THE_WINDOWS_STORE_DEVICE_APP"></span>Microsoft Store デバイスアプリを指定するには
 
 
 アプリを指定するには、次のフィールドに入力します。
 
--   **パッケージ名**します。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Name 属性の値を入力します。
--   **発行元**。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Publisher 属性の値を入力します。 この値は、PC にインストールされている発行元証明書と一致する必要があります。
--   **アプリ ID**します。 アプリケーション マニフェストの Application 要素内の ID 属性の値を入力します。
+-   **パッケージ名**。 アプリケーションマニフェストの Package 要素の Identity 要素に Name 属性の値を入力します。
+-   **発行元**。 アプリケーションマニフェストの Package 要素で、Identity 要素の Publisher 属性の値を入力します。 この値は、PC にインストールされている発行元の証明書と一致している必要があります。
+-   **アプリ ID**。 アプリケーションマニフェストの Application 要素に ID 属性の値を入力します。
 
-**パッケージ名**、**パブリッシャー**、および**アプリ ID**アプリの package.appxmanifest の情報は、すべて一致する必要があります。
+**パッケージ名**、**発行元**、**アプリ ID**はすべて、アプリケーションパッケージ package.appxmanifest の情報と一致している必要があります。
 
-アプリケーション マニフェストの例を次に示します。
+アプリケーションマニフェストの例を次に示します。
 
 ```
 <?xml version="1.0" encoding="utf-8" ?> 
@@ -51,37 +49,37 @@ UWP デバイスのアプリがダウンロードされ、ユーザーが初め�
   <Application Id="Microsoft.SDKSamples.MoFx2App" DisplayName="MoFx2App" Logo="images\tile-sdk.png" SmallLogo="images\tile-sdk.png" EntryPointType="startPage" EntryPoint="default.html">
 ```
 
-## <a name="span-idtoseethepackagenameandpublisherspanspan-idtoseethepackagenameandpublisherspanspan-idtoseethepackagenameandpublisherspanto-see-the-package-name-and-publisher"></a><span id="To_see_the_Package_name_and_Publisher"></span><span id="to_see_the_package_name_and_publisher"></span><span id="TO_SEE_THE_PACKAGE_NAME_AND_PUBLISHER"></span>パブリッシャーとパッケージの名前を表示するには
+## <a name="span-idto_see_the_package_name_and_publisherspanspan-idto_see_the_package_name_and_publisherspanspan-idto_see_the_package_name_and_publisherspanto-see-the-package-name-and-publisher"></a><span id="To_see_the_Package_name_and_Publisher"></span><span id="to_see_the_package_name_and_publisher"></span><span id="TO_SEE_THE_PACKAGE_NAME_AND_PUBLISHER"></span>パッケージ名と発行元を表示するには
 
 
 1.  Visual Studio でアプリ ソリューションを開きます。
-2.  ソリューション エクスプ ローラーで、アプリ マニフェストをクリックします。
+2.  ソリューションエクスプローラーでアプリケーションマニフェストをクリックします。
 3.  Package.appxmanifest をダブルクリックします。
-4.  **パッケージ**タブで、確認、**パッケージ名**と**パブリッシャー**フィールド。
+4.  [パッケージ**化**] タブで、**パッケージ名**と**発行元**フィールドを確認します。
 
-## <a name="span-idtoseetheappidspanspan-idtoseetheappidspanspan-idtoseetheappidspanto-see-the-app-id"></a><span id="To_see_the_App_ID_"></span><span id="to_see_the_app_id_"></span><span id="TO_SEE_THE_APP_ID_"></span>アプリ ID を表示するには
+## <a name="span-idto_see_the_app_id_spanspan-idto_see_the_app_id_spanspan-idto_see_the_app_id_spanto-see-the-app-id"></a><span id="To_see_the_App_ID_"></span><span id="to_see_the_app_id_"></span><span id="TO_SEE_THE_APP_ID_"></span>アプリ ID を表示するには
 
 
 1.  Visual Studio でアプリ ソリューションを開きます。
-2.  ソリューション エクスプ ローラーで、アプリ マニフェストをクリックします。
+2.  ソリューションエクスプローラーでアプリケーションマニフェストをクリックします。
 3.  Package.appxmanifest を右クリックします。
-4.  選択**コードを表示**します。
+4.  [**コードの表示**] を選択します。
 
-## <a name="span-idprivilegedapplicationsspanspan-idprivilegedapplicationsspanspan-idprivilegedapplicationsspanprivileged-applications"></a><span id="Privileged_applications"></span><span id="privileged_applications"></span><span id="PRIVILEGED_APPLICATIONS"></span>特権を持つアプリケーション
+## <a name="span-idprivileged_applicationsspanspan-idprivileged_applicationsspanspan-idprivileged_applicationsspanprivileged-applications"></a><span id="Privileged_applications"></span><span id="privileged_applications"></span><span id="PRIVILEGED_APPLICATIONS"></span>特権のあるアプリケーション
 
 
-指定する必要な特権を持つモバイル ブロード バンド インターフェイスにアクセスする Microsoft Store デバイス アプリでは、**特権を持つアプリケーション**します。
+Microsoft Store デバイスアプリが特権のあるモバイルブロードバンドインターフェイスにアクセスするには、[特権のある**アプリケーション**] で指定する必要があります。
 
-次のフィールドに入力して特権を持つアプリケーションを指定する**特権アプリケーション**:
+特権のあるアプリケーションを指定するには、[**特権アプリケーション**] の下の次のフィールドに入力します。
 
-**注**  、次のフィールドの詳細については、次を参照してください。 [Windows 8 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?LinkId=242009)します。 特権のあるデバイスのインターフェイス プロパティのキーについては、次を参照してください。 [DEVPKEY\_DeviceInterface\_Restricted](https://go.microsoft.com/fwlink/p/?linkid=256362)します。
+**メモ**   Privileged Device Interface プロパティキーの詳細については、「 [DEVPKEY \_ deviceinterface \_ Restricted](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)」を参照してください。
 
  
 
--   **パッケージ名**します。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Name 属性の値を入力します。
--   **発行元**。 アプリケーション マニフェストのパッケージ要素の Identity 要素の Publisher 属性の値を入力します。
+-   **パッケージ名**。 アプリケーションマニフェストの Package 要素の Identity 要素に Name 属性の値を入力します。
+-   **発行元**。 アプリケーションマニフェストの Package 要素で、Identity 要素の Publisher 属性の値を入力します。
 
-アプリケーション マニフェストの例を次に示します。
+アプリケーションマニフェストの例を次に示します。
 
 ```
 <?xml version="1.0" encoding="utf-8" ?> 
@@ -99,12 +97,12 @@ UWP デバイスのアプリがダウンロードされ、ユーザーが初め�
   <Application Id="Microsoft.SDKSamples.MoFx2App" DisplayName="MoFx2App" Logo="images\tile-sdk.png" SmallLogo="images\tile-sdk.png" EntryPointType="startPage" EntryPoint="default.html">
 ```
 
-## <a name="span-iddevicenotificationhandlerspanspan-iddevicenotificationhandlerspanspan-iddevicenotificationhandlerspandevice-notification-handler"></a><span id="Device_Notification_Handler"></span><span id="device_notification_handler"></span><span id="DEVICE_NOTIFICATION_HANDLER"></span>デバイスの通知ハンドラー
+## <a name="span-iddevice_notification_handlerspanspan-iddevice_notification_handlerspanspan-iddevice_notification_handlerspandevice-notification-handler"></a><span id="Device_Notification_Handler"></span><span id="device_notification_handler"></span><span id="DEVICE_NOTIFICATION_HANDLER"></span>デバイス通知ハンドラー
 
 
-モバイル ブロード バンドのプラットフォームでは、受信して、通知を表示する MNO 管理 SMS または USSD、データ使用量が上限、海外ローミング、および残り少ないに近づいてなどの拡張機能を提供します。 データ使用量に対応するための機能を提供し、接続、切断、またはモバイル ネットワーク プロバイダーの UWP アプリでバック グラウンド イベントをローミングできます。
+モバイルブロードバンドプラットフォームは、データ使用量の上限、国際ローミング、低残高など、MNO の管理 SMS または USSD 通知を受信して表示するための拡張機能を提供します。 また、モバイルネットワークプロバイダーの UWP アプリで、データの使用状況や接続、切断、ローミングのバックグラウンドイベントに応答するための機能も提供します。
 
-Windows では、Microsoft Store アプリが実行されていない場合でも、イベントへの応答でいくつかのコードを実行する UWP アプリ用のブローカー機能を提供します。 通知ハンドラーを実装する方法の詳細については、次を参照してください。 [mobile operator notifications とシステム イベントを有効にする](https://go.microsoft.com/fwlink/p/?linkid=242062)します。
+Windows には、Microsoft Store アプリが実行されていない場合でも、イベントに応答してコードを実行するための UWP アプリのブローカー機能が用意されています。 通知ハンドラーの実装の詳細については、「[モバイルオペレーター通知とシステムイベントの有効化の概要](https://docs.microsoft.com/windows-hardware/drivers/mobilebroadband/enabling-mobile-operator-notifications-and-system-events)」を参照してください。
 
  
 

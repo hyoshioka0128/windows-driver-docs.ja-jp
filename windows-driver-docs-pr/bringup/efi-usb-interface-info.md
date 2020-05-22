@@ -2,25 +2,23 @@
 title: EFI_USB_INTERFACE_INFO
 description: EFI_USB_INTERFACE_INFO
 ms.assetid: d20b78bd-8369-4f50-b161-e8ad0bb4c52f
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af735b385de3b47075f1eebf938a2129c902991
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8c1381d2350fe162607816011e5b4fa9393783c3
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337762"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778334"
 ---
-# <a name="efiusbinterfaceinfo"></a>EFI\_USB\_インターフェイス\_情報
+# <a name="efi_usb_interface_info"></a>EFI \_ USB \_ インターフェイス \_ 情報
 
-
-**EFI\_USB\_インターフェイス\_情報**サポートされている USB インターフェイスを定義するには、使用されている構造体します。
+サポートされている USB インターフェイスを定義するために使用される**EFI \_ USB \_ インターフェイス \_ 情報**構造。
 
 ## <a name="syntax"></a>構文
 
-
 ```cpp
-typedef struct 
+typedef struct
 {
     EFI_USB_INTERFACE_DESCRIPTOR        *InterfaceDescriptor;
     EFI_USB_ENDPOINT_DESCRIPTOR         **EndpointDescriptorTable;
@@ -29,27 +27,18 @@ typedef struct
 
 ## <a name="members"></a>メンバー
 
+### <a name="interfacedescriptor"></a>InterfaceDescriptor
 
-<a href="" id="interfacedescriptor"></a>**InterfaceDescriptor**  
-EFI\_USB\_インターフェイス\_USB 関数インターフェイスに関する情報を含む記述子構造体。 参照してください**解説**します。
+\_ \_ \_ Usb 関数インターフェイスに関する情報を含む EFI usb インターフェイス記述子の構造体。
 
-<a href="" id="endpointdescriptortable"></a>**EndpointDescriptorTable**  
-EFI\_USB\_エンドポイント\_サポートされているエンドポイントに関する情報を含む記述子構造体。 参照してください**解説**します。
+### <a name="endpointdescriptortable"></a>Endpoint記述子テーブル
 
-## <a name="remarks"></a>注釈
+\_ \_ サポートされて \_ いるエンドポイントに関する情報を格納している EFI USB エンドポイント記述子の構造体。
 
+## <a name="remarks"></a>解説
 
-**USB\_インターフェイス\_記述子**と**USB\_エンドポイント\_記述子**構造体は、UEFI 仕様 2.3 で定義されます。 詳細については、次を参照してください。、 [UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526) web サイト。
+**Usb \_ インターフェイス \_ 記述子**と**usb \_ エンドポイント \_ 記述子**の構造は、UEFI 仕様2.3 で定義されています。 詳細については、 [UEFI.org](https://uefi.org/specifications)の web サイトを参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成

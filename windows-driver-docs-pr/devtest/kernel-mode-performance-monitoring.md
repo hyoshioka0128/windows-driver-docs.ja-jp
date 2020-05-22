@@ -4,22 +4,22 @@ description: カーネル モードのパフォーマンスの監視
 ms.assetid: 317d2f9d-db50-4513-8bbd-28f429236877
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 447859191174145b0981b2ac2eb7a75b08b5258b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b7517d8f8c437a7189f61471c4074db209f8e02f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839543"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769428"
 ---
 # <a name="kernel-mode-performance-monitoring"></a>カーネル モードのパフォーマンスの監視
 
-Microsoft Windows オペレーティングシステムでは、システムコンポーネントとサードパーティがパフォーマンス[カウンター](https://go.microsoft.com/fwlink/p/?linkid=144442)を使用して、標準的な方法でパフォーマンスメトリックを公開できます。
+Microsoft Windows オペレーティングシステムでは、システムコンポーネントとサードパーティがパフォーマンス[カウンター](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal)を使用して、標準的な方法でパフォーマンスメトリックを公開できます。
 
 ここでは、次のトピックについて説明します。
 
-[カーネルモードのパフォーマンスカウンターについて](about-kernel-mode-performance-counters.md)
+[カーネル モードのパフォーマンス カウンターについて](about-kernel-mode-performance-counters.md)
 
-[カーネルモードのパフォーマンスカウンターの使用](using-kernel-mode-performance-counters.md)
+[カーネル モードのパフォーマンス カウンターの使用](using-kernel-mode-performance-counters.md)
 
 カーネルモードパフォーマンスカウンターでは、次の DDIs を使用します。
 

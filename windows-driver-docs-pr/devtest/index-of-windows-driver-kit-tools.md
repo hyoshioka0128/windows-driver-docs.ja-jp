@@ -20,19 +20,19 @@ keywords:
 - Guidgen.exe WDK
 ms.date: 05/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 33cdaf80ef88dd61f3f8c1971366bc7a0058ce0d
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 8ba7bd8c3943a7b40e3f8b231c9dd9c197b87f8f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209458"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769338"
 ---
 # <a name="index-of-windows-driver-kit-tools"></a>Windows Driver Kit のツールの索引
 
 
 このトピックでは、Windows Driver Kit (WDK) に含まれるツールに関する基本的な情報を提供します。 このトピックには、ドライバーの開発に役立つその他のツールへの参照も含まれています。 これらの他のツールは、オペレーティングシステムの一部として使用することも、個別のダウンロードとして入手することもできます。 各ツールの詳細については、このトピックのツールに関するドキュメントを参照してください。
 
-最新の WDK を入手する方法については、「 [Windows Driver Kit (wdk)](https://go.microsoft.com/fwlink/p/?linkid=261797)」を参照してください。
+最新の WDK を入手する方法については、「 [Windows Driver Kit (wdk)](https://developer.microsoft.com/windows/hardware/)」を参照してください。
 
 このトピックの内容は次のとおりです。
 
@@ -52,13 +52,13 @@ ms.locfileid: "75209458"
 -   [Windows ポータブルデバイス (WPD) ドライバー](#tech-wpd)
 -   [プリンタードライバー](#tech-printer)
 -   [センサー](#tech-sensors)
--   [すべてのドライバー](#tech-all)
+-   [All Drivers (すべてのドライバー)](#tech-all)
 
-**注**  Visual Studio 環境変数% WindowsSdkDir% は、このバージョンの WDK がインストールされている windows kit ディレクトリへのパスを表します。たとえば、C:\\Program Files (x86)\\windows kit\\8.1 です。
+**メモ**   Visual Studio 環境変数% WindowsSdkDir% は、このバージョンの WDK がインストールされている Windows kit ディレクトリへのパス (たとえば、C: \\ Program Files (x86) \\ windows kit 8.1) を表し \\ ます。
 
  
 
-### テクノロジ: オーディオ/ビデオドライバー<a name="tech-audio-video"></a>
+### <a name="technology-audio--video-drivers"></a>テクノロジ: オーディオ/ビデオドライバー<a name="tech-audio-video"></a>
 
 <table>
 <colgroup>
@@ -86,16 +86,16 @@ ms.locfileid: "75209458"
 <td align="left"><p>%WindowsSdkDir%\tools\x86\graphedt.exe</p>
 <p>%WindowsSdkDir%\tools\x64\graphedt.exe</p></td>
 <td align="left"><p>フィルターグラフをビルドして、ストリーミングオーディオ/ビデオキャプチャドライバーをテストします。</p>
-<p>書</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=9230" data-raw-source="[Overview of GraphEdit](https://go.microsoft.com/fwlink/p/?linkid=9230)">GraphEdit の概要</a></p></td>
+<p>ドキュメント</p>
+<p><a href="https://docs.microsoft.com/windows/win32/directshow/simulating-graph-building-with-graphedit" data-raw-source="[Overview of GraphEdit](https://docs.microsoft.com/windows/win32/directshow/simulating-graph-building-with-graphedit)">GraphEdit の概要</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KSStudio (KsStudio .exe)</p>
 <p><strong>WDK ツール:</strong>うん</p></td>
 <td align="left"><p>%WindowsSdkDir%\tools\x86\KsStudio.exe</p>
 <p>%WindowsSdkDir%\tools\x64\KsStudio.exe</p>
-<div class="alert">このツールは、管理者特権を持つユーザーが実行する必要
-<strong>が   ます</strong>。
+<div class="alert">
+<strong>メモ</strong>   このツールは、管理者特権を持つユーザーが実行する必要があります。
 </div>
 <div>
  
@@ -111,14 +111,14 @@ ms.locfileid: "75209458"
 <td align="left"><p>%WindowsSdkDir%\tools\x86\Usbview.exe</p>
 <p>%WindowsSdkDir%\tools\x64\Usbview.exe</p></td>
 <td align="left"><p>USB ホストコントローラー、USB ハブ、および接続されている USB デバイスを列挙し、デバイスに関する情報をレジストリから、および USB 要求を介してデバイスに照会できます。</p>
-<p>USB デバイスビューアーのソースコードは、コードギャラリーから入手できます。「 <a href="https://go.microsoft.com/fwlink/p/?linkid=256205" data-raw-source="[USBVIEW Sample Application](https://go.microsoft.com/fwlink/p/?linkid=256205)">Usbview サンプルアプリケーション</a>」を参照してください。</p></td>
+<p>USB デバイスビューアーのソースコードは、コードギャラリーから入手できます。「 <a href="https://docs.microsoft.com/samples/microsoft/windows-driver-samples/usbview-sample-application/" data-raw-source="[USBVIEW Sample Application](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/usbview-sample-application/)">Usbview サンプルアプリケーション</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### テクノロジ: Bluetooth ドライバー<a name="tech-bluetooth"></a>
+### <a name="technology-bluetooth-drivers"></a>テクノロジ: Bluetooth ドライバー<a name="tech-bluetooth"></a>
 
 <table>
 <colgroup>
@@ -141,14 +141,14 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x64\Sdpverifiy.exe</p></td>
 <td align="left"><p>Windows によって解釈される Bluetooth デバイスの問い合わせレコードを表示します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="bluetooth-inquiry-record-verifier.md" data-raw-source="[Bluetooth Inquiry Record Verifier](bluetooth-inquiry-record-verifier.md)">Bluetooth の問い合わせレコードの検証</a></p></td>
+<p><a href="bluetooth-inquiry-record-verifier.md" data-raw-source="[Bluetooth Inquiry Record Verifier](bluetooth-inquiry-record-verifier.md)">Bluetooth Inquiry Record Verifier</a></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### テクノロジ: Windows イメージ取得 (WIA) ドライバー<a name="tech_wia"></a>
+### <a name="technology-windows-image-acquisition-wia-drivers"></a>テクノロジ: Windows イメージ取得 (WIA) ドライバー<a name="tech_wia"></a>
 
 <table>
 <colgroup>
@@ -171,7 +171,7 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x64\wiadbgcfg.exe</p></td>
 <td align="left"><p>WIA ドライバーのログ記録を有効にします (Windows Server 2008 以降のバージョンの Windows)。</p>
 <div class="alert">
-<strong>注</strong>   以前のバージョンの Windows では、WIALogCfg を使用します。
+<strong>メモ</strong>   以前のバージョンの Windows では、WIALogCfg を使用します。
 </div>
 <div>
  
@@ -220,7 +220,7 @@ ms.locfileid: "75209458"
 
  
 
-### テクノロジ: Windows ポータブルデバイス (WPD) ドライバー<a name="tech-wpd"></a>
+### <a name="technology-windows-portable-devices-wpd-drivers"></a>テクノロジ: Windows ポータブルデバイス (WPD) ドライバー<a name="tech-wpd"></a>
 
 <table>
 <colgroup>
@@ -243,8 +243,8 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x86\WpdDeviceInspector.exe</p></td>
 <td align="left"><p>は、WPD ドライバーに対してクエリを行い、デバイスとその機能を説明する包括的な HTML レポートを生成します。 たとえば、サポートされているデバイスのコマンドとオブジェクトの一覧を取得するために使用できます。 また、このツールでは、各オブジェクトでサポートされているすべてのプロパティの一覧が生成されます。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows ポータブルデバイス</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD ドライバー開発ツール</a></p></td>
+<p><a href="https://docs.microsoft.com/windows/win32/windows-portable-devices" data-raw-source="[Windows Portable Devices](https://docs.microsoft.com/windows/win32/windows-portable-devices)">Windows ポータブル デバイス</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver" data-raw-source="[WPD Driver Development Tools](https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver)">WPD ドライバー開発ツール</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>WpdInfo (WpdInfo .exe)</p>
@@ -253,24 +253,24 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x86\WpdInfo.exe</p></td>
 <td align="left"><p>デバイスを開く、閉じる、デバイス上のオブジェクトを作成または削除する、デバイスコマンドを発行するなど、一般的な WPD 操作を実行します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows ポータブルデバイス</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD ドライバー開発ツール</a></p></td>
+<p><a href="https://docs.microsoft.com/windows/win32/windows-portable-devices" data-raw-source="[Windows Portable Devices](https://docs.microsoft.com/windows/win32/windows-portable-devices)">Windows ポータブル デバイス</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver" data-raw-source="[WPD Driver Development Tools](https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver)">WPD ドライバー開発ツール</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Microsoft ネットワークモニター (NetMon)</p>
 <p><strong>WDK ツール:</strong>違います</p></td>
-<td align="left"><p>Microsoft ネットワークモニター (NetMon) をダウンロードし<a href="https://go.microsoft.com/fwlink/p/?linkid=248501" data-raw-source="[here](https://go.microsoft.com/fwlink/p/?linkid=248501)">ます。</a></p></td>
+<td align="left"><p>Microsoft ネットワークモニター (NetMon) をダウンロードし<a href=" https://www.microsoft.com/download/details.aspx?displaylang=en&id=4865" data-raw-source="[here]( https://www.microsoft.com/download/details.aspx?displaylang=en&id=4865)">ます。</a></p></td>
 <td align="left"><p>WPD コンポーネントからのトレース情報を表示します。 このツールは、以前のバージョンの WDK に付属していた WpdMon に代わるものです。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=106527" data-raw-source="[Windows Portable Devices](https://go.microsoft.com/fwlink/p/?linkid=106527)">Windows ポータブルデバイス</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262664" data-raw-source="[WPD Driver Development Tools](https://go.microsoft.com/fwlink/p/?linkid=262664)">WPD ドライバー開発ツール</a>、「<a href="https://docs.microsoft.com/previous-versions/hh451296(v=vs.85)" data-raw-source="[Using the Network Monitor Tool](https://docs.microsoft.com/previous-versions/hh451296(v=vs.85))">ネットワークモニターツールの使用</a>」を参照してください。</p></td>
+<p><a href="https://docs.microsoft.com/windows/win32/windows-portable-devices" data-raw-source="[Windows Portable Devices](https://docs.microsoft.com/windows/win32/windows-portable-devices)">Windows ポータブル デバイス</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver" data-raw-source="[WPD Driver Development Tools](https://docs.microsoft.com/windows-hardware/drivers/portable/familiarizing-yourself-with-the-sample-driver)">WPD ドライバー開発ツール</a>、「<a href="https://docs.microsoft.com/windows-hardware/drivers/portable/using-the-netmon-tool" data-raw-source="[Using the Network Monitor Tool](https://docs.microsoft.com/windows-hardware/drivers/portable/using-the-netmon-tool)">ネットワークモニターツールの使用</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### テクノロジ: プリンタードライバー<a name="tech-printer"></a>
+### <a name="technology-printer-drivers"></a>テクノロジ: プリンタードライバー<a name="tech-printer"></a>
 
 <table>
 <colgroup>
@@ -312,7 +312,7 @@ ms.locfileid: "75209458"
 <td align="left"><p>Xps ファイルが XPS および OPC 仕様に準拠しているかどうかを検証します。</p>
 <p>コマンドオプションの詳細については、「」と入力してください。</p>
 <p><strong>isxps/?</strong> コマンドプロンプトウィンドウに表示されます。</p>
-<p>詳細については、「 <a href="https://go.microsoft.com/fwlink/p/?linkid=150004" data-raw-source="[isXPS Conformance Tool](https://go.microsoft.com/fwlink/p/?linkid=150004)">Isxps 適合性ツール</a>」を参照してください。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/previous-versions/aa348104(v=vs.110)" data-raw-source="[isXPS Conformance Tool](https://docs.microsoft.com/previous-versions/aa348104(v=vs.110))">Isxps 適合性ツール</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ルック sgood (Look Sgood .exe)</p>
@@ -330,8 +330,8 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x86\makentf.exe</p></td>
 <td align="left"><p>Adobe Font Metrics (AFM) ファイルと東アジア言語のフォント AFM ファイルを Windows フォントファイル (ntf) に変換します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files" data-raw-source="[Converting AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files)">AFM ファイルから NTF ファイルへの変換</a></p>
-<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files)">東アジアの AFM ファイルから NTF ファイルへの変換</a></p></td>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files" data-raw-source="[Converting AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-afm-files-to-ntf-files)">AFM ファイルを NTF ファイルに変換する</a></p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files" data-raw-source="[Converting East Asian AFM Files to NTF Files](https://docs.microsoft.com/windows-hardware/drivers/print/converting-east-asian-afm-files-to-ntf-files)">東アジア AFM ファイルを NTF ファイルに変換する</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>PPDCheck (Ppdcheck .exe)</p>
@@ -365,7 +365,7 @@ ms.locfileid: "75209458"
 
  
 
-### テクノロジ: センサー<a name="tech-sensors"></a>
+### <a name="technology-sensors"></a>テクノロジ: センサー<a name="tech-sensors"></a>
 
 <table>
 <colgroup>
@@ -384,8 +384,8 @@ ms.locfileid: "75209458"
 <tr class="odd">
 <td align="left"><p>センサー診断ツール (sensordiagnostictool)</p>
 <p><strong>WDK ツール:</strong>うん</p></td>
-<td align="left"><p>%WindowsSdkDir%\tools\x64&lt;/p&gt;
-<p>%WindowsSdkDir%\tools\x86&lt;/p&gt;</td>
+<td align="left"><p>%WindowsSdkDir%\tools\x64 &lt; /p&gt;
+<p>%WindowsSdkDir%\tools\x86 &lt; /p&gt;</td>
 <td align="left"><p>センサーと場所の機能について、ドライバー、ファームウェア、およびハードウェアをテストします。 このツールでは、センサーと場所 API を呼び出して、データの取得、イベント処理、レポート間隔、変更の感度、プロパティの取得をテストします。</p>
 <p>WDK のドキュメント:</p>
 <p><a href="https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool" data-raw-source="[Testing sensor functionality with the Sensor Diagnostic Tool](https://docs.microsoft.com/windows-hardware/drivers/sensors/the-sensor-diagnostic-tool)">センサー診断ツールを使用したセンサー機能のテスト</a></p></td>
@@ -395,7 +395,7 @@ ms.locfileid: "75209458"
 
  
 
-### テクノロジ: すべてのドライバー<a name="tech-all"></a>
+### <a name="technology-all-drivers"></a>テクノロジ: すべてのドライバー<a name="tech-all"></a>
 
 <table>
 <colgroup>
@@ -417,15 +417,15 @@ ms.locfileid: "75209458"
 <td align="left"><p>%WindowsSdkDir%\bin\x86\binplace.exe</p></td>
 <td align="left"><p>ファイルの移動、実行可能ファイルからのシンボルの抽出、およびシンボルファイルからのプライベートシンボルの削除によって、大規模なコードプロジェクトを管理します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="binplace.md" data-raw-source="[BinPlace](binplace.md)">ビンの位置</a></p></td>
+<p><a href="binplace.md" data-raw-source="[BinPlace](binplace.md)">BinPlace</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ドライバーのコード分析</p>
 <p><strong>WDK ツール:</strong>うん</p></td>
 <td align="left"><p>コード分析ツールは Visual Studio に含まれています。 ドライバー固有のコンポーネントは、WDK をインストールするときに追加されます。</p></td>
-<td align="left"><p>C およびC++コードエラーを検出する静的な検証ツール。 このバージョンは、カーネルモードドライバーのエラーを検出するように特別に設計されています。</p>
+<td align="left"><p>C および C++ のコードエラーを検出する静的な検証ツール。 このバージョンは、カーネルモードドライバーのエラーを検出するように特別に設計されています。</p>
 <div class="alert">
-<strong>注</strong>  以前のバージョンの WDK では、この機能は oacr に含まれており、スタンドアロンツールのドライバー用 PREfast としても使用できました。 Visual Studio 2012 以降、この機能は Visual Studio に統合されました。
+<strong>メモ</strong>   以前のバージョンの WDK では、この機能は OACR に含まれており、スタンドアロンツールのドライバー用 PREfast としても使用できました。 Visual Studio 2012 以降、この機能は Visual Studio に統合されました。
 </div>
 <div>
  
@@ -465,7 +465,7 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\bin\arm\ComputerHardwareIds.exe</p></td>
 <td align="left"><p>コンピューターのハードウェア Id を SMBIOS 情報から派生します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="computerhardwareids.md" data-raw-source="[ComputerHardwareIds](computerhardwareids.md)">コンピューターのハードウェア Id</a></p></td>
+<p><a href="computerhardwareids.md" data-raw-source="[ComputerHardwareIds](computerhardwareids.md)">ComputerHardwareIds</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>DC2WMIParser (DC2WMIParser)</p>
@@ -473,8 +473,8 @@ ms.locfileid: "75209458"
 <td align="left"><p>%WindowsSdkDir%\tools\x64\DC2WMIParser.exe</p>
 <p>%WindowsSdkDir%\tools\x86\DC2WMIParser.exe</p></td>
 <td align="left"><p>DC2WMIParser は、ドライバーの検証ツールによって作成された WMI IRP レコードを収集し、このログをテキストファイルに変換するツールです。</p>
-<p>書</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?LinkId=698758" data-raw-source="[IRP Logging](https://go.microsoft.com/fwlink/p/?LinkId=698758)">IRP ログ</a></p></td>
+<p>ドキュメント</p>
+<p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/irp-logging" data-raw-source="[IRP Logging](https://docs.microsoft.com/windows-hardware/drivers/devtest/irp-logging)">IRP ログ</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>依存関係のウォーカー (.exe)</p>
@@ -508,13 +508,13 @@ ms.locfileid: "75209458"
 <td align="left"><p>%Windir%\system32\verifier.exe</p></td>
 <td align="left"><p>カーネルモードドライバーとグラフィックスドライバーを監視して、無効な関数呼び出しまたはシステムを破損する可能性があるアクションを検出します。 ドライバーがさまざまなストレスを受け、不適切な動作を検出するテストを行うことができます。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="driver-verifier.md" data-raw-source="[Driver Verifier](driver-verifier.md)">ドライバー検証ツール</a></p></td>
+<p><a href="driver-verifier.md" data-raw-source="[Driver Verifier](driver-verifier.md)">ドライバーの検証ツール</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>ドライバー検証ログ (DVL)</p>
 <p><strong>WDK ツール:</strong>うん</p></td>
 <td align="left"><p>Microsoft Visual Studio と WDK が必要です。 [<strong>ドライバー</strong> ] メニューの [<strong>ドライバー検証ログの作成</strong>...] をクリックします。</p></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=227016" data-raw-source="[Windows Server 2012 Hardware Certification Program](https://go.microsoft.com/fwlink/p/?linkid=227016)">Windows Server 2012 ハードウェア認定プログラム</a>では、該当するすべてのドライバー送信にドライバー検証ログ (dvl) が必要です。 DVL には、コード分析と静的ドライバー検証ツールのログ ファイルからの結果の要約が含まれています。 「<a href="https://docs.microsoft.com/windows-hardware/drivers" data-raw-source="[Creating a Driver Verification Log](https://docs.microsoft.com/windows-hardware/drivers)">ドライバー検証ログの作成」を</a>参照してください。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae" data-raw-source="[Static Tools Logo Test](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6ab6df93-423c-4af6-ad48-8ea1049155ae)">静的ツールロゴテスト</a>では、適用可能なすべてのドライバー送信にドライバー検証ログ (dvl) が必要です。 DVL には、コード分析と静的ドライバー検証ツールのログ ファイルからの結果の要約が含まれています。 「<a href="https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-verification-log" data-raw-source="[Creating a Driver Verification Log](https://docs.microsoft.com/windows-hardware/drivers/develop/creating-a-driver-verification-log)">ドライバー検証ログの作成」を</a>参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>拡張ストレージ証明書管理ツール (EhStorCertMgrCmd)</p>
@@ -523,7 +523,7 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x86\ehstorcertmgrcmd.exe</p></td>
 <td align="left"><p>IEEE 1667 標準に準拠している USB 記憶装置の証明書を管理します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="enhanced-storage-certificate-management-tool.md" data-raw-source="[Enhanced Storage Certificate Management Tool](enhanced-storage-certificate-management-tool.md)">拡張ストレージ証明書管理ツール</a></p></td>
+<p><a href="enhanced-storage-certificate-management-tool.md" data-raw-source="[Enhanced Storage Certificate Management Tool](enhanced-storage-certificate-management-tool.md)">Enhanced Storage Certificate Management Tool</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>イベントおよびパフォーマンスカウンターマニフェストジェネレーターツール (ECManGen)</p>
@@ -531,13 +531,6 @@ ms.locfileid: "75209458"
 <td align="left"><p>%WindowsSdkDir%\bin\x64\ECManGen.exe</p>
 <p>%WindowsSdkDir%\bin\x86\ECManGen.exe</p></td>
 <td align="left"><p>XML タグを使用しなくても、イベントまたはパフォーマンスカウンターマニフェスト (* 男性) をゼロから作成するためのツール。 マニフェストファイルの作成の詳細については、「<a href="https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest" data-raw-source="[Writing an Instrumentation Manifest (Windows)](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)">インストルメンテーションマニフェスト (Windows) の記述</a>」と「<a href="adding-event-tracing-to-kernel-mode-drivers.md" data-raw-source="[Adding Event Tracing to Kernel-Mode Drivers](adding-event-tracing-to-kernel-mode-drivers.md)">カーネルモードドライバーへのイベントトレースの追加</a>」を参照してください。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Guidgen.exe (Guidgen.exe)</p>
-<p><strong>WDK ツール:</strong>違います</p></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=121586" data-raw-source="[Microsoft Exchange Server GUID Generator](https://go.microsoft.com/fwlink/p/?linkid=121586)">Microsoft Exchange SERVER GUID ジェネレーター</a>からダウンロード可能</p></td>
-<td align="left"><p>クラス、オブジェクト、およびインターフェイスを識別するために使用できるグローバル一意識別子 (GUID) を生成します。 生成された GUID は、ソースコードに挿入できるように、4つの形式のいずれかでクリップボードにコピーされます。</p>
-<p>GUIDGEN.EXE (ダウンロードパッケージに含まれています)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Inf2Cat (Inf2cat)</p>
@@ -551,8 +544,8 @@ ms.locfileid: "75209458"
 <tr class="even">
 <td align="left"><p>InfVerif (InfVerif)</p>
 <p><strong>WDK ツール:</strong>うん</p></td>
-<td align="left"><p>c:\Program Files(x86)\Windows Kits\10\tools\arm\infverif.exe</p>
-<p>c:\Program Files(x86)\Windows Kits\10\tools\arm64\infverif.exe</p>
+<td align="left"><p>c:\Program Files (x86) \Windows Kits\10\tools\arm\infverif.exe</p>
+<p>c:\Program Files (x86) \Windows Kits\10\tools\arm64\infverif.exe</p>
 <p>c:\Program Files (x86) \Windows Kits\10\tools\x86\infverif.exe</p>
 <p>c:\Program Files (x86) \Windows Kits\10\tools\x64\infverif.exe</p>
 <td align="left"><p>ドライバーの INF ファイルをテストします。 Inf 構文の問題を報告するだけでなく、INF ファイルがユニバーサルであるかどうかが報告されます。</p>
@@ -584,7 +577,7 @@ ms.locfileid: "75209458"
 <p><strong>WDK ツール:</strong>違います</p></td>
 <td align="left"><p>Visual Studio と共にインストールされます。</p></td>
 <td align="left"><p>Microsoft WDK で提供されるサンプル、ドライバー、および関連するソフトウェアコンポーネントを構築します。</p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=262804" data-raw-source="[MSBuild]( https://go.microsoft.com/fwlink/p/?linkid=262804)">MSBuild</a></p></td>
+<p><a href="https://docs.microsoft.com/visualstudio/msbuild/msbuild?view=vs-2015" data-raw-source="[MSBuild]( https://docs.microsoft.com/visualstudio/msbuild/msbuild?view=vs-2015)">MSBuild</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>PnpCpu (PnPCpu)</p>
@@ -620,7 +613,7 @@ ms.locfileid: "75209458"
 <td align="left"><p>システムのエネルギー効率を評価するために使用されるコマンドラインツールです。</p>
 <p>このツールは、windows 7 以降のバージョンの Windows で使用できます。</p>
 <p>デベロッパーセンターのドキュメント:</p>
-<a href="https://download.microsoft.com/download/7/E/7/7E7662CF-CBEA-470B-A97E-CE7CE0D98DC2/PowerCfg.docx" data-raw-source="[Using PowerCfg to Evaluate System Energy Efficiency](https://download.microsoft.com/download/7/E/7/7E7662CF-CBEA-470B-A97E-CE7CE0D98DC2/PowerCfg.docx)">PowerCfg を使用したシステムエネルギー効率の評価</a>
+<a href="https://download.microsoft.com/download/7/E/7/7E7662CF-CBEA-470B-A97E-CE7CE0D98DC2/PowerCfg.docx" data-raw-source="[Using PowerCfg to Evaluate System Energy Efficiency](https://download.microsoft.com/download/7/E/7/7E7662CF-CBEA-470B-A97E-CE7CE0D98DC2/PowerCfg.docx)">PowerCfg を使用してシステムのエネルギー効率を評価する</a>
 <p>コマンドオプションの詳細については、「」と入力してください。</p>
 <p></p>
 <p><strong>PowerCfg/?</strong></p></td>
@@ -666,8 +659,8 @@ ms.locfileid: "75209458"
 <p><strong>WDK ツール:</strong>うん</p></td>
 <td align="left"><p>%WindowsSdkDir%\tools\SDV</p>
 <p></p>
-<div class="alert">Visual Studio の [<strong>ドライバー</strong> ] メニューから [Static driver Verifier] を
-<strong>起動  ます</strong>。
+<div class="alert">
+<strong>メモ</strong>   Visual Studio の [<strong>ドライバー</strong> ] メニューから、静的ドライバー検証ツールを起動します。
 </div>
 <div>
  
@@ -725,13 +718,13 @@ ms.locfileid: "75209458"
 <td align="left"><p>Windows Software Trace プリプロセッサ (WPP) を実行します。</p>
 <p>WDK のドキュメント:</p>
 <p><a href="wpp-preprocessor.md" data-raw-source="[WPP Preprocessor](wpp-preprocessor.md)">WPP プリプロセッサ</a></p>
-<p><a href="survey-of-software-tracing-tools.md" data-raw-source="[Survey of Software Tracing Tools](survey-of-software-tracing-tools.md)">ソフトウェアトレースツールの調査</a></p></td>
+<p><a href="survey-of-software-tracing-tools.md" data-raw-source="[Survey of Software Tracing Tools](survey-of-software-tracing-tools.md)">ソフトウェア トレース ツールの調査</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WDF Tester</p>
 <p><strong>WDK ツール:</strong>うん</p></td>
-<td align="left"><p>%WindowsSdkDir%\tools\x64&lt;/p&gt;
-<p>%WindowsSdkDir%\tools\x86&lt;/p&gt;</td>
+<td align="left"><p>%WindowsSdkDir%\tools\x64 &lt; /p&gt;
+<p>%WindowsSdkDir%\tools\x86 &lt; /p&gt;</td>
 <td align="left"><p>WDF ドライバーをテスト、検証、およびデバッグするために使用できる一連のツール。 ツールセットには、スクリプトまたはコンパイル済みアプリケーションで使用できる WMI プログラミングインターフェイスが用意されています。</p>
 <p>WDK のドキュメント:</p>
 <p><a href="wdftester--wdf-driver-testing-toolset.md" data-raw-source="[WdfTester: WDF Driver Testing Toolset](wdftester--wdf-driver-testing-toolset.md)">WdfTester: WDF Driver テストツールセット</a></p></td>
@@ -743,7 +736,7 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\tools\x86\wdfverifier.exe</p></td>
 <td align="left"><p>KMDF および UMDF ドライバーのフレームワークの検証機能に使いやすいインターフェイスを提供します。</p>
 <p>WDK のドキュメント:</p>
-<p><a href="wdf-verifier-control-application.md" data-raw-source="[WDF Verifier Control Application](wdf-verifier-control-application.md)">WDF 検証コントロールアプリケーション</a></p></td>
+<p><a href="wdf-verifier-control-application.md" data-raw-source="[WDF Verifier Control Application](wdf-verifier-control-application.md)">WDF 検証ツール制御アプリケーション</a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Web Services on devices (WSD) 基本的な相互運用性ツール (WSDBIT)</p>
@@ -754,7 +747,7 @@ ms.locfileid: "75209458"
 <p><strong>WSDBIT サーバー:</strong></p>
 <p>%WindowsSdkDir%\tools\x64\ wsdbit_server</p>
 <p>%WindowsSdkDir%\tools\x86\ wsdbit_server</p></td>
-<td align="left"><p><a href="https://go.microsoft.com/fwlink/p/?linkid=81255" data-raw-source="[Device Profile for Web Services (DPWS)](https://go.microsoft.com/fwlink/p/?linkid=81255)">Web サービス (DPWS) のデバイスプロファイル</a>の実装が、WSDAPI で動作することを確認します。</p>
+<td align="left"><p>Web サービス (DPWS) のデバイスプロファイルの実装が、WSDAPI で動作することを確認します。</p>
 <p>WDK のドキュメント:</p>
 <p><a href="wsdapi-basic-interoperability-tool.md" data-raw-source="[WSD Interoperability Tool](wsdapi-basic-interoperability-tool.md)">WSD 相互運用性ツール</a></p></td>
 </tr>
@@ -784,7 +777,7 @@ ms.locfileid: "75209458"
 <td align="left"><p>Web サービスコントラクトに基づいてプロキシとスタブを自動的に生成します。 主に、このツールを使用してクライアントアプリケーションを作成できます。 ただし、テストに使用したり、ユーザーモードドライバーを作成したりすることはできます。</p>
 <p>バイナリ MOF ファイル (bmf) で指定されたクラス、プロパティ、メソッド、およびイベントが WMI での使用に対して有効であることを確認します。 MOF サポートファイルを生成します。</p>
 <p>Windows SDK：</p>
-<p>「<a href="https://go.microsoft.com/fwlink/p/?linkid=81407" data-raw-source="[Web Services on Devices](https://go.microsoft.com/fwlink/p/?linkid=81407)">デバイスの Web サービス</a>」セクションを参照してください。</p></td>
+<p>「<a href="https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal" data-raw-source="[Web Services on Devices](https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal)">デバイスの Web サービス</a>」セクションを参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>WSDDebug_client と WSDDebug_host</p>
@@ -797,14 +790,14 @@ ms.locfileid: "75209458"
 <p>%WindowsSdkDir%\bin\x86\ WSDDebug_host</p></td>
 <td align="left"><p>これらのツールは、デバイスまたはアプリケーションのトラブルシューティングに使用できるソフトデバイスとクライアントです。</p>
 <p>Windows SDK：</p>
-<p>「<a href="https://go.microsoft.com/fwlink/p/?linkid=81407" data-raw-source="[Web Services on Devices](https://go.microsoft.com/fwlink/p/?linkid=81407)">デバイスの Web サービス</a>」セクションを参照してください。</p></td>
+<p>「<a href="https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal" data-raw-source="[Web Services on Devices](https://docs.microsoft.com/windows/win32/wsdapi/wsd-portal)">デバイスの Web サービス</a>」セクションを参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### WDK for Windows 8.1 の新機能<a name="what-s-new-in-the-wdk-for-windows8-1"></a>
+### <a name="whats-new-in-the-wdk-for-windows81"></a>WDK for Windows 8.1 の新機能<a name="what-s-new-in-the-wdk-for-windows8-1"></a>
 
 WDK 8.1 では、次のツールが追加または変更されています。
 
@@ -814,7 +807,7 @@ WDK 8.1 では、次のツールが追加または変更されています。
 -   [Pwrtest](pwrtest.md): 更新されたドキュメント、新しいテストシナリオ (コネクトスタンバイ電源状態のサポートなど)。
 -   [Tracelog](tracelog.md)-新しいオプション。
 
-### Windows 8 用 WDK の新機能<a name="what-s-new-in-the-wdk-for-windows8"></a>
+### <a name="whats-new-in-the-wdk-for-windows8"></a>Windows 8 用 WDK の新機能<a name="what-s-new-in-the-wdk-for-windows8"></a>
 
 Windows 8 用の WDK には、次のツールが追加されています。
 
@@ -824,7 +817,7 @@ Windows 8 用の WDK には、次のツールが追加されています。
 
 -   センサー診断ツール (sensordiagnostictool)
 
-### Windows 8 用 WDK の変更点<a name="what-s-changed-in-the-wdk-for-windows8"></a>
+### <a name="whats-changed-in-the-wdk-for-windows8"></a>Windows 8 用 WDK の変更点<a name="what-s-changed-in-the-wdk-for-windows8"></a>
 次のツールは、Microsoft WDK for Windows 7 に含まれていましたが、Windows 8 用 WDK には含まれていません。
 
 -   Windows 生体認証フレームワークツール (BioTest、WBDIDriverTest)
@@ -833,7 +826,7 @@ Windows 8 用の WDK には、次のツールが追加されています。
 
 -   IoSpy と Iospy (IoSpyCmd、Iospy .exe)。 現在、デバイスの基本的なテストの一部です。
 
--   Kernrate (Kernrate .exe) Kernrate はサポートされなくなりました。 代わりに、 [Windows Performance Analysis Toolkit](https://go.microsoft.com/fwlink/p/?linkid=294280)を使用してください。
+-   Kernrate (Kernrate .exe) Kernrate はサポートされなくなりました。 代わりに、 [Windows パフォーマンスツールキット](https://docs.microsoft.com/windows-hardware/test/wpt/)を使用します。
 
 -   Microsoft 自動コードレビュー (OACR) (ドライバーコンポーネントが Visual Studio のコード分析ツールの一部になりました)
 
@@ -847,7 +840,7 @@ Windows 8 用の WDK には、次のツールが追加されています。
 
 WDK 8.1 は、次のバージョンの Windows で実行されるドライバーの開発をサポートしています。
 
--   Windows 8.1 と Windows 8
+-   Windows 8.1 および Windows 8
 
 -   Windows Server 2012 R2 および Windows Server 2012
 
@@ -859,7 +852,7 @@ WDK 8.1 は、次のバージョンの Windows で実行されるドライバー
 
 これらのバージョンの Windows では、統合された Visual Studio ドライバー開発環境を実行できます。
 
--   Windows 8.1 と Windows 8
+-   Windows 8.1 および Windows 8
 
 -   Windows Server 2012 R2 および Windows Server 2012
 

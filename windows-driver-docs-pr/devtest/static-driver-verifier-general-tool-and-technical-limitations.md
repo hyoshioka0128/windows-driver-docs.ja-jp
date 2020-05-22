@@ -8,12 +8,12 @@ keywords:
 - SDV WDK、制限事項
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 143276aaa7c9235343a78a641c0432a5eedfe7f2
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3520a0c33bfcecc3b2a074efe3a485b91aec5dfe
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839315"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769726"
 ---
 # <a name="static-driver-verifier-general-tool-and-technical-limitations"></a>静的ドライバー検証ツールの一般的なツールと技術的な制限
 
@@ -38,7 +38,7 @@ SDV[検証エンジン](verification-engine.md)には、一部のドライバー
     static DRIVER_UNLOAD Unload;
     ```
 
-    Sdv には、*楽しい\_DriverUnload*の通常のエントリは含まれません。
+    Sdv には、*楽しい \_ driverunload*の通常のエントリは含まれません。
 
     ```
     #define fun_DriverUnload Unload
@@ -94,7 +94,7 @@ SDV[検証エンジン](verification-engine.md)には、一部のドライバー
 
     **Try/except**ステートメントと**try/finally**ステートメントの両方について、sdv は**leave**ステートメントを無視します。
 
-    Try **/except**ステートメントと**try/finally**ステートメントの両方で、 **try**ブロックからジャンプすると、 **except**または**finally**ステートメントの分析ができなくなります。 Leave ステートメントを使用できるように書き換える方法の詳細については、「コンパイラの警告[C6242](https://go.microsoft.com/fwlink/p/?linkid=153317)」を参照してください。
+    Try **/except**ステートメントと**try/finally**ステートメントの両方で、 **try**ブロックからジャンプすると、 **except**または**finally**ステートメントの分析ができなくなります。 Leave ステートメントを使用できるように書き換える方法の詳細については、「コンパイラの警告[C6242](https://docs.microsoft.com/cpp/code-quality/c6242?view=vs-20)」を参照してください。
 
 -   ポインター演算を無視します。 たとえば、ポインターがインクリメントまたはデクリメントされた状況を見逃すことがあります。 この制限により、偽陽性と偽陽性の結果が返される可能性があります。
 

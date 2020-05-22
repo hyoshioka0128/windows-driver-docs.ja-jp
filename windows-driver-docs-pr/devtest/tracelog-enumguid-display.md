@@ -3,49 +3,49 @@ title: Tracelog Enumguid の表示
 description: Tracelog Enumguid の表示
 ms.assetid: 9bb93238-98f7-4422-8434-b4dc105ec008
 keywords:
-- Tracelog WDK、プロバイダー
-- プロバイダーの WDK ソフトウェア トレース
-- WDK、プロバイダーのトレース
+- Tracelog WDK、providers
+- プロバイダー WDK ソフトウェアトレース
+- WDK のトレース, プロバイダ
 - -enumguid コマンド
 - enumguid コマンド
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e94a41767a6fe440f0db0f45e1f47108d2f4d112
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 36450bb7e1d880260b09d4dfbd312b694cf54fbc
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56581568"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769698"
 ---
 # <a name="tracelog-enumguid-display"></a>Tracelog Enumguid の表示
 
-送信するとき、 **tracelog enumguid**コマンド、トレース ログを実行していているトレース プロバイダーの一覧が表示されます。[登録](registered-provider.md)を Event Tracing for Windows (ETW)。 表示が非常に便利ですが、多くの場合、誤って解釈されます。
+**トレースログ-enumguid**コマンドを送信すると、トレースログには、Windows イベントトレーシング (ETW) に[登録](registered-provider.md)されている、実行中のトレースプロバイダーの一覧が表示されます。 表示は非常に便利ですが、誤って解釈されることがよくあります。
 
-### <a name="span-idwhichprovidersappearinthedisplayspanspan-idwhichprovidersappearinthedisplayspanwhich-providers-appear-in-the-display"></a><span id="which_providers_appear_in_the_display_"></span><span id="WHICH_PROVIDERS_APPEAR_IN_THE_DISPLAY_"></span>プロバイダーは、表示で表示されますか。
+### <a name="span-idwhich_providers_appear_in_the_display_spanspan-idwhich_providers_appear_in_the_display_spanwhich-providers-appear-in-the-display"></a><span id="which_providers_appear_in_the_display_"></span><span id="WHICH_PROVIDERS_APPEAR_IN_THE_DISPLAY_"></span>ディスプレイに表示されるプロバイダー
 
-Tracelog enumguid 表示は、トレース セッションを有効にできるプロバイダーの一部を示しますが、完全な一覧ではありません。 実行しているし、ETW に登録されているトレース プロバイダーのみが含まれています。
+Tracelog enumguid 表示には、トレースセッションに対して有効にできるプロバイダーの一部が一覧表示されますが、完全な一覧ではありません。 これには、を実行していて、ETW に登録されているトレースプロバイダーだけが含まれます。
 
-表示では、次のプロバイダーは含まれません。
+表示には、次のプロバイダーは含まれていません。
 
-実行されていないため、通常は、システムで使用できますが、登録されていないプロバイダーをトレースします。
+システムで使用できるが、通常は実行されていないために登録されていないトレースプロバイダー。
 
-トレース プロバイダーのトレース セッションを有効になっているが、現在実行中ではないです。 (これらは多くの場合と呼ばれる*あらかじめ有効になっている*または*に事前登録された*プロバイダー)。これには、実行されている継続的に、Dll が読み込まれ、必要に応じて、アンロードなどのプロバイダーが含まれます。
+トレースセッションに対して有効になっているが、現在実行されていないトレースプロバイダー。 (これらは、*事前有効化*または*事前登録*されたプロバイダーと呼ばれることがよくあります)。これには、必要に応じて読み込みおよびアンロードされる Dll など、継続的に実行されないプロバイダーが含まれます。
 
-システム セッションとのプロバイダーのプロバイダーを含む、Windows に組み込まれているプロバイダー、[グローバル ロガー トレース セッション](global-logger-trace-session.md)と[トレース セッションの NT Kernel Logger](nt-kernel-logger-trace-session.md)します。
+[グローバルロガートレースセッション](global-logger-trace-session.md)および[NT カーネルロガートレースセッション](nt-kernel-logger-trace-session.md)用のシステムセッションおよびプロバイダーのプロバイダーを含む、Windows に組み込まれたプロバイダー。
 
-### <a name="span-idthelogmanqueryprovidersdisplayspanspan-idthelogmanqueryprovidersdisplayspanthe-logman-query-providers-display"></a><span id="the_logman_query_providers_display"></span><span id="THE_LOGMAN_QUERY_PROVIDERS_DISPLAY"></span>Logman クエリ プロバイダーを表示します。
+### <a name="span-idthe_logman_query_providers_displayspanspan-idthe_logman_query_providers_displayspanthe-logman-query-providers-display"></a><span id="the_logman_query_providers_display"></span><span id="THE_LOGMAN_QUERY_PROVIDERS_DISPLAY"></span>Logman クエリプロバイダーが表示されます。
 
-Tracelog enumguid 表示は、Logman のクエリ プロバイダーの表示とは大きく異なります (**logman クエリ プロバイダー**)、多くの場合は、表示、混乱します。
+Tracelog enumguid の表示は、Logman (**logman クエリプロバイダー**) に表示されるクエリプロバイダーとは大きく異なりますが、表示は混同されることがよくあります。
 
-Logman (logman.exe) は、トレース イベントとパフォーマンス カウンターのトレース コント ローラーです。 Windows XP および Windows の以降のバージョンに含まれています。
+Logman (logman) は、トレースイベントとパフォーマンスカウンターのトレースコントローラーです。 Windows XP 以降のバージョンの Windows に含まれています。
 
-Logman プロバイダーのクエリ (**logman クエリ プロバイダー**) wmi 管理オブジェクト フォーマット (MOF) ファイルを登録したプロバイダーの一覧を表示します。 Logman 表示では WMI にも登録した場合を除き、ソフトウェア トレースのインストルメント化されているプロバイダーは含まれません。
+Logman プロバイダークエリ (**logman クエリプロバイダー**) には、管理オブジェクトフォーマット (MOF) ファイルが WMI に登録されているプロバイダーの一覧が表示されます。 Logman 表示には、WMI にも登録されていない限り、ソフトウェアのトレース用にインストルメント化されたプロバイダーは含まれません。
 
-開発者がときどきそのプロバイダーを見つけられるようにする場合は、プロバイダー、Logman 表示するために、MOF ファイルを登録します。 残念ながら、Logman クエリ プロバイダーの表示も Tracelog enumguid 表示は、システム上のすべてのトレース プロバイダーの完全なリストです。 Logman の詳細については、ヘルプとサポート センターで"Logman"を参照してください。
+ユーザーがプロバイダーを検索できるようにする開発者は、プロバイダーが Logman 画面に表示されるように MOF ファイルを登録することが必要になる場合があります。 残念ながら、Logman クエリプロバイダーの表示も Tracelog enumguid の表示も、システム上のすべてのトレースプロバイダーの完全な一覧ではありません。 Logman の詳細については、ヘルプとサポートセンターの「Logman」を参照してください。
 
-### <a name="span-idelementsoftheenumguiddisplayspanspan-idelementsoftheenumguiddisplayspanelements-of-the-enumguid-display"></a><span id="elements_of_the_enumguid_display"></span><span id="ELEMENTS_OF_THE_ENUMGUID_DISPLAY"></span>Enumguid 表示の要素
+### <a name="span-idelements_of_the_enumguid_displayspanspan-idelements_of_the_enumguid_displayspanelements-of-the-enumguid-display"></a><span id="elements_of_the_enumguid_display"></span><span id="ELEMENTS_OF_THE_ENUMGUID_DISPLAY"></span>Enumguid 表示の要素
 
-Tracelog enumguid 表示内のテーブルには、次の列が含まれています。
+Tracelog enumguid 表示の表には、次の列が含まれています。
 
 <table>
 <colgroup>
@@ -60,36 +60,36 @@ Tracelog enumguid 表示内のテーブルには、次の列が含まれてい�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>guid</strong></p></td>
-<td align="left"><p><a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">コントロール GUID</a>トレース プロバイダーの</p></td>
+<td align="left"><p><strong>Guid</strong></p></td>
+<td align="left"><p>トレースプロバイダーの<a href="control-guid.md" data-raw-source="[control GUID](control-guid.md)">コントロール GUID</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>Enabled</strong></p></td>
-<td align="left"><p>プロバイダーが現在有効になっているかどうかを示しています (<strong>TRUE</strong>) またはの登録が有効になっていません (<strong>FALSE</strong>)。</p></td>
+<td align="left"><p>プロバイダーが現在有効になっている (<strong>TRUE</strong>) か、登録されているが有効になっていない (<strong>FALSE</strong>) かを示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>LoggerId</strong></p></td>
-<td align="left"><p>トレース セッションを識別します。</p></td>
+<td align="left"><p>トレースセッションを識別します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>レベル</strong></p></td>
-<td align="left"><p>現在、プロバイダー設定されているレベル。 プロバイダーが有効になっている場合にのみ有効です。</p></td>
+<td align="left"><p><strong>Level</strong></p></td>
+<td align="left"><p>プロバイダーに対して現在設定されているレベル。 プロバイダーが有効になっている場合にのみ有効です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>フラグ</strong></p></td>
-<td align="left"><p>プロバイダーの現在、フラグを設定します。 プロバイダーが有効になっている場合にのみ有効です。</p></td>
+<td align="left"><p>プロバイダーに対して現在設定されているフラグ。 プロバイダーが有効になっている場合にのみ有効です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
-Enumguid 表示が、対応するエントリに表示されるかどうかは、プロバイダーの登録が有効になっていない、**有効**列が**FALSE**します。
+プロバイダーが登録されていても有効になっていない場合は、enumguid 画面に表示されますが、[**有効**] 列のエントリは [ **FALSE**] になります。
 
-プロバイダーがある場合は有効になっているが、現在実行されていないが、そのため、登録されていない には表示されません enumguid 表示にします。
+プロバイダーが有効になっていても、まだ実行されていないため、登録されていない場合は、enumguid 表示に表示されません。
 
-### <a name="span-idsampleenumguiddisplayspanspan-idsampleenumguiddisplayspansample-enumguid-display"></a><span id="sample_enumguid_display"></span><span id="SAMPLE_ENUMGUID_DISPLAY"></span>サンプル Enumguid の表示
+### <a name="span-idsample_enumguid_displayspanspan-idsample_enumguid_displayspansample-enumguid-display"></a><span id="sample_enumguid_display"></span><span id="SAMPLE_ENUMGUID_DISPLAY"></span>Enumguid 表示のサンプル
 
-次の enumguid 表示は、Windows Server 2003 を実行しているコンピューターからコピーされました。 登録され、実行中のプロバイダーの一覧が表示されます。 トレースでは、1 つのプロバイダー、Tracedrv サンプル ドライバーは有効です。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレースのように設計されたドライバーのサンプルが記載されて、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+次の enumguid 表示は、Windows Server 2003 を実行しているコンピューターからコピーされました。 表示には、登録されて実行されているプロバイダーが一覧表示されます。 追跡のために、Tracedrv サンプルドライバーの1つのプロバイダーが有効になっています。 ソフトウェアトレース用に設計された[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)は、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリで入手できます。
 
 ```
 c:\Tracelog>tracelog -enumguid

@@ -1,34 +1,36 @@
 ---
 title: UEFI 環境からのデバイス I/O
-description: Windows OS ローダー UpdateCapsule 関数を呼び出すと、CapsuleHeaderArray に含まれる各 capsule が実行されます。
+description: Windows OS ローダーが UpdateCapsule 関数を呼び出すと、CapsuleHeaderArray に含まれる各カプセルが実行されます。
 ms.assetid: 843B177F-CD1F-47E6-8F35-0A0FFA8FA192
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 04ee06201013d4f4874021c3a1211b8586026dc5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 87f54e308f84c6b96fb7b6564ab0197e7da577ba
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328064"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769384"
 ---
 # <a name="device-io-from-the-uefi-environment"></a>UEFI 環境からのデバイス I/O
 
+Windows OS ローダーが UpdateCapsule 関数を呼び出すと、CapsuleHeaderArray に含まれる各カプセルが実行されます。 カプセル実行の順序は、UEFI ファームウェアの実装に依存します。また、カプセルは、他の capsules に対して実行の順序を想定したり、他の capsules に依存関係を取得したりすることはできません。 各カプセルは自己完結型のペイロードで、更新プログラムとファームウェアイメージを管理するための実行可能な UEFI コードの両方で構成されています。
 
-Windows OS ローダー UpdateCapsule 関数を呼び出すと、CapsuleHeaderArray に含まれる各 capsule が実行されます。 Capsule の実行順序は、UEFI ファームウェアの実装に依存したり、カプセルことはできませんカプセル他の基準としたことを実行の順序に関して何らかの仮定カプセル他に、依存します。 各 capsule では、UEFI コード、更新プログラムと、ファームウェア イメージを管理する実行可能である両方を構成する、自己完結型ペイロードを示します。
+カプセルが呼び出されると、カプセルに含まれる実行可能コードは、ターゲットデバイスとの通信チャネルを開く役割を担います。 適切なチャネルは、システムのデバイストポロジ、ターゲットデバイスの機能、および特定の UEFI 実装によって提供される UEFI ブートサービスとドライバーによって異なります。 カプセル化の実装では、対象となる UEFI 環境で利用できるオプションについて、UEFI BIOS ベンダーに問い合わせる必要がある場合があります。 通常、通信は、特定のデバイスに対して UEFI デバイスドライバーを使用することによって確立されます。 このドライバーは、適切なプロトコルを使用して既知のデバイスパス経由でデバイスにバインドするように、カプセル化更新コードを有効にします。
 
-ターミネータが呼び出されたときに、ターゲット デバイスとの通信チャネルを開くため、capsule に含まれる実行可能コードが担当します。 適切なチャネルは、システムのデバイス トポロジでは、対象デバイス、および UEFI ブート サービスと特定の UEFI の実装によって提供されるドライバーの機能によって異なります。 Capsule 実装者は、対象の UEFI 環境で使用できるオプションについては、UEFI BIOS ベンダーに相談する必要があります。 通常、通信は、特定のデバイスの UEFI デバイス ドライバーを利用することで確立されます。 このドライバーは、適切なプロトコルを使用して、よく知られているデバイスのパスを使用してデバイスにバインドする capsule 更新コードになります。
+通信が確立されると、更新管理コードは、ターゲットデバイスにファームウェアイメージを書き込みます。 更新が完了すると、適切なリターンステータスコードが ESRT のデバイスのファームウェアリソースエントリに書き込まれます。 更新管理コードは、UpdateCapsule 関数に制御を戻します。
 
-通信が確立されると、更新プログラム管理のコードは、対象となるデバイスにファームウェア イメージを書き込みます。 更新を完了すると、適切な状態の戻り値のコードは、デバイスのファームウェア リソース エントリ、ESRT に書き込まれます。 更新プログラム管理のコードは、コントロールを UpdateCapsule 関数に戻します。
-
-構造、capsule、および UEFI ブート サービス ドライバーと、プロトコルは UpdateCapsule 関数について詳しくを参照してください、 [UEFI 仕様](https://go.microsoft.com/fwlink/p/?LinkId=218221)します。
+UpdateCapsule 関数、カプセルの構造、および UEFI ブートサービスのドライバーとプロトコルの詳細については、 [uefi 仕様](https://uefi.org/specifications)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
+
 [ESRT テーブルの定義](esrt-table-definition.md)  
+
 [プラグ アンド プレイ デバイス](plug-and-play-device.md)  
-[更新プログラムのドライバー パッケージの作成](authoring-an-update-driver-package.md)  
-[更新プログラムの処理](processing-updates.md)  
-[シームレスな危機防止と回復](seamless-crisis-prevention-and-recovery.md)  
-[ファームウェアの更新状態](firmware-update-status.md)  
 
+[更新プログラム ドライバー パッケージの作成](authoring-an-update-driver-package.md)  
 
+[更新プログラムの処理](processing-updates.md)
 
+[シームレスな危機防止と回復](seamless-crisis-prevention-and-recovery.md)
+
+[ファームウェア更新の状態](firmware-update-status.md)  

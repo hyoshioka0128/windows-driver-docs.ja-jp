@@ -4,24 +4,24 @@ description: 'DCHU ドライバーのサンプルで、DCH 設計原則 (Declara
 ms.assetid: f46f0ea6-d855-49d2-8c09-a6ad56084742
 ms.date: 04/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f173334421b5a41aac7ca65c64d35b6925bc561
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: d0894525905e2ecbf5fc3e635a17350fbb91b48e
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270469"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435380"
 ---
 # <a name="dch-compliant-driver-package-example"></a>DCH 準拠のドライバー パッケージの例
 
-このトピックでは、[DCHU ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)で [DCH 設計原則](dch-design-principles-best-practices.md)がどのように適用されるのかについて説明します。  これをモデルとして使用し、ご自分のドライバー パッケージに DCH 設計原則を適用できます。  
+このトピックでは、[DCHU ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)で [DCH 設計原則](dch-principles-best-practices.md)がどのように適用されるのかについて説明します。  これをモデルとして使用し、ご自分のドライバー パッケージに DCH 設計原則を適用できます。  
 
 サンプル リポジトリのローカル コピーが必要な場合は、[Windows-driver-samples](https://github.com/Microsoft/Windows-driver-samples) から複製できます。
 
-このサンプルの一部では、特定のバージョンの Windows 10 以降でのみ使用できるディレクティブと API を使用する場合があります。  特定のディレクティブがサポートされている OS バージョンを確認するには、「[INF のディレクティブ](../install/inf-directives)」を参照してください。
+このサンプルの一部では、特定のバージョンの Windows 10 以降でのみ使用できるディレクティブと API を使用する場合があります。  特定のディレクティブがサポートされている OS バージョンを確認するには、「[INF のディレクティブ](../install/inf-directives.md)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
-このセクションを読む前に、[DCH 設計原則](dch-design-principles-best-practices.md)を理解しておく必要があります。
+このセクションを読む前に、[DCH 設計原則](dch-principles-best-practices.md)を理解しておく必要があります。
 
 ## <a name="overview"></a>概要
 

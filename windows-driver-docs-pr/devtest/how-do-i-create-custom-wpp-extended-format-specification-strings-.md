@@ -1,36 +1,36 @@
 ---
-title: 作成する方法カスタム WPP 拡張書式指定文字列
-description: 作成する方法カスタム WPP 拡張書式指定文字列
+title: カスタムの WPP 拡張書式指定文字列を作成操作方法には
+description: カスタムの WPP 拡張書式指定文字列を作成操作方法には
 ms.assetid: 6c4c47c6-71b2-48a0-bab3-8498029b8244
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57fac7ac4e0fdd36248b1df4787ce3ad8a8917b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3fb181e34a13f1cd3c4810a70cc0c836f55f9741
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358297"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769440"
 ---
 # <a name="how-do-i-create-custom-wpp-extended-format-specification-strings"></a>カスタムの WPP 拡張書式指定文字列を作成する方法
 
 
-定義を使用してカスタム WPP 拡張形式仕様の文字列を作成する\_CPLX\_マクロ。 このマクロを使用する方法の詳細については、次を参照してください。[定義の種類の複雑な構文とは何ですか?](what-is-the-syntax-of-the-complex-types-definition-.md)します。
+カスタムの WPP 拡張書式指定文字列は、DEFINE \_ cplx 型マクロを使用して作成し \_ ます。 このマクロの使用方法の詳細については、「[複合型の定義の構文](what-is-the-syntax-of-the-complex-types-definition-.md)」を参照してください。
 
-このトピックでは、以下を行う方法を説明する例を示します。
+このトピックでは、次の操作方法を示す例について説明します。
 
-- [仕様の文字列形式を拡張するカスタム WPP トレース固定長文字列](#trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings)
+- [カスタムの WPP 拡張書式指定文字列を使用して固定長文字列をトレースする](#trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings)
 
-- [カスタム拡張 WPP 形式仕様の文字列を使用して可変長文字列をトレースします。](#trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings)
+- [カスタムの WPP 拡張書式指定文字列を使用して可変長文字列をトレースする](#trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings)
 
-これらの例の各定義の定義のカスタム WPP 構成ファイルの使用を示しています\_CPLX\_マクロ。 これらの例では、構成ファイルを LocalWpp.ini と呼びます。 カスタム WPP 構成ファイルを使用する方法の詳細については、次を参照してください。[カスタム データ型を定義する方法でしょうか。](how-do-you-define-custom-data-types-.md)します。
+これらの各例では、cplx TYPE マクロの定義にカスタムの WPP 構成ファイルを使用する方法を示して \_ \_ います。 これらの例では、構成ファイルの名前は LocalWpp .ini です。 カスタム WPP 構成ファイルの使用方法の詳細については、「[カスタムデータ型を定義する方法](how-do-you-define-custom-data-types-.md)」を参照してください。
 
-## <a name="trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings"></a>仕様の文字列形式を拡張するカスタム WPP トレース固定長文字列
+## <a name="trace-fixed-length-strings-through-custom-wpp-extended-format-specification-strings"></a>カスタムの WPP 拡張書式指定文字列を使用して固定長文字列をトレースする
 
-この例では、カスタム WPP を使用して、ネットワーク アドレス拡張書式指定文字列トレース インターネット プロトコル バージョン 6 (IPv6) にする方法を示しています。 IPv6 ネットワーク アドレスを in6 で定義されている\_addr 構造体を 16 バイトの固定長の長さであります。
+この例では、カスタムの WPP 拡張書式指定文字列を使用して、インターネットプロトコルバージョン 6 (IPv6) ネットワークアドレスをトレースする方法を示します。 In6 addr 構造体で定義されている IPv6 ネットワークアドレスには、 \_ 16 バイトの固定長の長さがあります。
 
-この例では、複雑なデータ型 (IPV6ADDR) が定義されて、% として使用できます。IPV6ADDR! ソース コード内の指定の文字列をフォーマットします。
+この例では、複合データ型 (IPV6ADDR) が定義されています。これは%! として使用できます。IPV6ADDR! ソースコード内の指定文字列を書式設定します。
 
-IPV6ADDR 複雑なデータ型を作成するには、LocalWpp.ini 構成ファイルに次のステートメントを追加します。
+IPV6ADDR 複合データ型を作成するには、次のステートメントを LocalWpp 構成ファイルに追加します。
 
 1.  <span codelanguage=""></span>
     <table>
@@ -44,9 +44,9 @@ IPV6ADDR 複雑なデータ型を作成するには、LocalWpp.ini 構成ファ�
     </tbody>
     </table>
 
-    このステートメントは、定義を使用して\_CPLX\_マクロの引数の型など、その属性と共に、複合型 (IPV6ADDR) を定義する (in6\_addr \*) とサイズ (16)。
+    このステートメントでは、cplx 型の定義マクロを使用して、 \_ \_ 引数の型 (in6 \_ addr \* ) やサイズ (16) などの属性と共に複合型 (IPV6ADDR) を定義します。
 
-    ステートメントでは、ヘルパー マクロの名前も指定します (WPP\_LOGIPV6) のソース コード内の IPV6ADDR 複合型を解析するとき、WPP プリプロセッサによって使用される、[トレース プロバイダー](trace-provider.md)します。
+    また、ステートメントでは、 \_ IPV6ADDR 複合型を[トレースプロバイダー](trace-provider.md)のソースコードで解析するときに、wpp プリプロセッサによって使用されるヘルパーマクロ (wpp LOGIPV6) の名前も指定します。
 
 2.  <span codelanguage=""></span>
     <table>
@@ -60,28 +60,28 @@ IPV6ADDR 複雑なデータ型を作成するには、LocalWpp.ini 構成ファ�
     </tbody>
     </table>
 
-    このステートメントに渡されると、IPV6 の引数の長さ/アドレスの組み合わせを書式設定に使用されるヘルパー マクロの定義、 [TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)関数。
+    このステートメントは、 [TraceMessage](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-tracemessage)関数に渡されるときに IPV6 引数の長さとアドレスのペアを書式設定するために使用されるヘルパーマクロを定義します。
 
-Visual Studio でプロジェクトのプロパティ ページを開きます。 **WPP トレース**、**ファイル オプション**、LocalWpp.ini としてを指定、**追加の構成ファイル**します。 参照してください[WPP プリプロセッサ](wpp-preprocessor.md)詳細についてはします。
+Visual Studio で、プロジェクトの [プロパティ] ページを開きます。 [ **WPP トレース**] の [**ファイルオプション**] で、**追加の構成ファイル**として「localwpp. ini」と指定します。 詳細については、「 [WPP プリプロセッサ](wpp-preprocessor.md)」を参照してください。
 
-次のサンプル ソース コードに示す方法、[トレース プロバイダー](trace-provider.md) % を使用して、IPv6 ネットワーク アドレスをトレースすることができます。IPV6ADDR! 書式指定文字列:
+次のサンプルソースコードは、[トレースプロバイダー](trace-provider.md)が%! を使用して IPv6 ネットワークアドレスをトレースする方法を示しています。IPV6ADDR! 書式指定文字列:
 
 ```
 struct in6_addr IPAddressV6 = {0};
 DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
 ```
 
-**注**  トレース固定長のメディア アクセス制御 (MAC) アドレスの複合型 (MACADDR) を作成することができます。 IPV6ADDDR 複合型を使用した手順を実行して、この複合型を指定できます。
+**メモ**   固定長のメディアアクセス制御 (MAC) アドレスをトレースするための複合型 (MACADDR) を作成できます。 この複合型は、IPV6ADDDR 複合型に使用された手順に従って指定できます。
 
  
 
-## <a name="trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings"></a>カスタム拡張 WPP 形式仕様の文字列を使用して可変長文字列をトレースします。
+## <a name="trace-variable-length-strings-through-custom-wpp-extended-format-specification-strings"></a>カスタムの WPP 拡張書式指定文字列を使用して可変長文字列をトレースする
 
-この例では、書式指定文字列を拡張するカスタム WPP を使用してデータの可変長バッファーをトレースする方法を示します。
+この例では、カスタムの WPP 拡張書式指定文字列を使用して、データの可変長バッファーをトレースする方法を示します。
 
-この例で、% として、使用できる複合データ型 (16 進ダンプ) が定義されています!16 進ダンプ。 ソース コード内の指定の文字列をフォーマットします。
+この例では、複合データ型 (HEXDUMP) が定義されています。これは、HEXDUMP! ソースコード内の指定文字列を書式設定します。
 
-16 進ダンプの複雑なデータ型を作成するには、LocalWpp.ini 構成ファイルに次のステートメントを追加します。
+HEXDUMP 複合データ型を作成するには、次のステートメントを LocalWpp 構成ファイルに追加します。
 
 1.  <span codelanguage=""></span>
     <table>
@@ -95,9 +95,9 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    このステートメントは、定義を使用して\_CPLX\_マクロの引数の型など、その属性と共に、複合型 (16 進ダンプ) を定義する (const [xstr]\_t &)に渡されるパラメーターの数と**TraceMessage** (2)。 この複合型が可変長データは、マクロの使用されるため、**サイズ**要素が 0 に設定します。
+    このステートメントでは、DEFINE \_ cplx TYPE マクロを使用して、 \_ 引数の型 (const xstr \_ t&) や**TraceMessage**に渡されるパラメーターの数 (2) などの属性と共に複合型 (HEXDUMP) を定義します。 この複合型は可変長データに使用されるため、マクロの**サイズ**要素は0に設定されます。
 
-    ステートメントでは、ヘルパー マクロの名前も指定します (WPP\_LOGHEXDUMP) のソース コード内の 16 進ダンプの複合型を解析するとき、WPP プリプロセッサによって使用される、[トレース プロバイダー](trace-provider.md)します。
+    また、ステートメントでは、 \_ HEXDUMP 複合型を[トレースプロバイダー](trace-provider.md)のソースコードで解析するときに、wpp プリプロセッサによって使用されるヘルパーマクロ (wpp LOGHEXDUMP) の名前も指定します。
 
 2.  <span codelanguage=""></span>
     <table>
@@ -115,7 +115,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    このステートメントは、長さと可変長バッファーのアドレスを保存するために使用する構造体を定義します。 ログにこの構造体が初期化されて\_LENSTR のマクロの呼び出しごとにローカルと[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))内を使用する 16 進ダンプの複合型、 *FormatString*パラメーター。
+    このステートメントは、可変長バッファーの長さとアドレスを保存するために使用される構造体を定義します。 この構造体は、LOG LENSTR マクロで初期化され、 \_ HEXDUMP 複合型が*FormatString*パラメーター内で使用される[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))の各呼び出しに対してローカルです。
 
 3.  <span codelanguage=""></span>
     <table>
@@ -129,7 +129,7 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    このステートメントは、[xstr] を初期化するために使用されるマクロを定義します。\_可変長バッファーの t の構造体。 このマクロを使用して、内の可変長バッファーを渡す必要があります、 *VariableList*パラメーターの[ **DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))します。
+    このステートメントは、可変長バッファーの xstr t 構造体を初期化するために使用されるマクロを定義 \_ します。 このマクロを使用して、可変長バッファーを[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))の変数*リスト*パラメーターに渡す必要があります。
 
 4.  <span codelanguage=""></span>
     <table>
@@ -143,27 +143,27 @@ DoTraceMessage(Noise, "IN6_ADDR  = %!IPV6ADDR!", &IPAddressV6);
     </tbody>
     </table>
 
-    このステートメントに渡されると、可変長バッファー引数の長さ/アドレスの組み合わせを書式設定に使用されるヘルパー マクロの定義、 [TraceMessage](https://go.microsoft.com/fwlink/p/?linkid=179214)関数。
+    このステートメントは、 [TraceMessage](https://docs.microsoft.com/windows/win32/api/evntrace/nf-evntrace-tracemessage)関数に渡されるときに可変長バッファー引数の長さとアドレスのペアを書式設定するために使用されるヘルパーマクロを定義します。
 
-    可変長の引数には、2 つの長さ/アドレスの組み合わせが必要です。 その結果、WPP\_LOGHEXDUMP マクロは、WPP 2 つの呼び出しを定義します。\_LOGPAIR 次のようにします。
+    可変長の引数には、2つの長さとアドレスのペアが必要です。 その結果、WPP \_ LOGHEXDUMP マクロは、次の方法で、wpp logpair への2回の呼び出しを定義し \_ ます。
 
-    -   最初の呼び出し WPP\_LOGPAIR は可変長バッファーのサイズを渡します。
-    -   WPP の 2 番目の呼び出し\_LOGPAIR 自体のバッファーのアドレスを渡します。
+    -   WPP logpair の最初の呼び出しでは、 \_ 可変長バッファーのサイズが渡されます。
+    -   WPP logpair の2回目の呼び出しでは、 \_ バッファー自体のアドレスが渡されます。
 
-    **注**  このマクロである必要があります、[xstr]\_t 構造がログへの呼び出しで、可変長バッファーの初期化されて\_LENSTR します。 その結果、可変長バッファーを渡す必要があります[ **DoTraceMessage** ](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))ログを通じて\_LENSTR マクロ。
+    **メモ**   このマクロでは、 \_ LOG LENSTR を呼び出すことによって、可変長バッファーに対して xstr t 構造体が初期化されている必要があり \_ ます。 そのため、LENSTR マクロを使用して、可変長バッファーを[**DoTraceMessage**](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff544918(v=vs.85))に渡す必要があり \_ ます。
 
      
 
-Visual Studio でプロジェクトのプロパティ ページを開きます。 **WPP トレース**、**ファイル オプション**、LocalWpp.ini としてを指定、**追加の構成ファイル**します。 参照してください[WPP プリプロセッサ](wpp-preprocessor.md)詳細についてはします。
+Visual Studio で、プロジェクトの [プロパティ] ページを開きます。 [ **WPP トレース**] の [**ファイルオプション**] で、**追加の構成ファイル**として「localwpp. ini」と指定します。 詳細については、「 [WPP プリプロセッサ](wpp-preprocessor.md)」を参照してください。
 
-次のサンプル ソース コードに示す方法、[トレース プロバイダー](trace-provider.md) % を使用してデータのバッファーをトレースすることができます。16 進ダンプ。 書式指定文字列:
+次のサンプルソースコードは、[トレースプロバイダー](trace-provider.md)が%! を使用してデータのバッファーをトレースする方法を示しています。HEXDUMP! 書式指定文字列:
 
 ```
 CHAR HexDump[1024] = {0, 1, 2, 3, 4, 5, 6, 7} ;
 DoTraceMessage(Noise, "HEXDUMP: %!HEXDUMP! ", LOG_LENSTR(sizeof(HexDump),(PCHAR)HexDump));
 ```
 
-**注**  可変長バッファーをトレースするため、複合型 (HEXBYTES) を作成することができます。 16 進ダンプの複合型を使用した手順を実行して、この複合型を指定できます。 
+**メモ**   可変長バッファーのトレース用に複合型 (HEXBYTES) を作成できます。 この複合型は、HEXDUMP 複合型に使用された手順に従って指定できます。 
 
 
 

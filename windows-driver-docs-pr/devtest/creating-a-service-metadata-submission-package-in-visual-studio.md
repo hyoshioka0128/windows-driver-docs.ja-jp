@@ -6,59 +6,59 @@ keywords:
 - Visual Studio でのサービス メタデータ申請パッケージの作成
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ad5168e4e74f1fb56cdd6c4cb92dd548ff857cc0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cef866f572eeeeb80afab105a978bf36cadeb669
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381013"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769532"
 ---
 # <a name="creating-a-service-metadata-submission-package-in-visual-studio"></a>Visual Studio でのサービス メタデータ申請パッケージの作成
 
 
-提出パッケージを作成するのにには、Microsoft Visual Studio での送信ツールを使用します。
+送信パッケージを作成するには、Microsoft Visual Studio の送信ツールを使用します。
 
-### <a name="span-idtocreateasubmissionpackagespanspan-idtocreateasubmissionpackagespanspan-idtocreateasubmissionpackagespanto-create-a-submission-package"></a><span id="To_create_a_submission_package"></span><span id="to_create_a_submission_package"></span><span id="TO_CREATE_A_SUBMISSION_PACKAGE"></span>提出パッケージを作成するには
+### <a name="span-idto_create_a_submission_packagespanspan-idto_create_a_submission_packagespanspan-idto_create_a_submission_packagespanto-create-a-submission-package"></a><span id="To_create_a_submission_package"></span><span id="to_create_a_submission_package"></span><span id="TO_CREATE_A_SUBMISSION_PACKAGE"></span>送信パッケージを作成するには
 
-1.  をクリックして、**ドライバー**メニューの **デバイス メタデータ**、し、**送信**します。
-2.  クリックして**メタデータ パッケージの追加**および検索、およびメタデータ パッケージを選択し、順にクリックします**オープン**します。
-3.  確認、**パッケージ名**と**モデル名**、し、**プレビュー**パッケージをプレビューする場合。
+1.  [**ドライバー** ] メニューをクリックし、[**デバイスメタデータ**] を選択して、[**送信**] を選択します。
+2.  [**メタデータパッケージの追加**] をクリックし、メタデータパッケージを検索して選択し、[**開く**] をクリックします。
+3.  パッケージ**名**と**モデル名**を確認し、パッケージをプレビューする場合は [**プレビュー** ] を選択します。
 
-    **注**  、**モデル名**フィールドは、**サービス プロバイダー**サービス メタデータ パッケージの一部として指定されている名前。
+    **メモ**   [**モデル名**] フィールドは、サービスメタデータパッケージの一部として指定された**サービスプロバイダー**名です。
 
      
 
 4.  **[次へ]** をクリックします。
-5.  レビュー、**モデル名**、**ハードウェア Id**、および**ID エクスペリエンス**します。
-6.  横に**エクスペリエンス名前**経験の名前を入力します。
-    **注**  サブミッション パッケージのすべては、この手順が必要です。
+5.  **モデル名**、**ハードウェア Id**、および**エクスペリエンス ID**を確認します。
+6.  [**エクスペリエンス名**] の横に、エクスペリエンスの名前を入力します。
+    **メモ**   この手順は、すべてのパッケージの送信に必要です。
 
      
 
-7.  横に**認定**を選択します**このデバイスには、関連付けられているロゴまたは unclassified 送信**一覧から。
-8.  前に、パッケージが送信される場合は、選択**更新プログラムのエクスペリエンス**します。
+7.  [**修飾**] の横にある [**このデバイスには、関連付けられたロゴまたは未分類の送信が**ある] を選択します。
+8.  パッケージが前に送信されている場合は、[**更新エクスペリエンス**] を選択します。
 9.  **[次へ]** をクリックします。
-10. モバイル ブロード バンド プロバイダーの情報を確認するには、ハードウェア ID の情報 (IMSI または ICCID など) を再入力します。 プレーン テキストのハードウェア ID の情報は、メタデータ パッケージで指定されたハッシュのハードウェア Id を確認する、Windows デベロッパー センター ハードウェア ダッシュ ボードで使用されます。
-11. パッケージが署名していない場合は、署名にこれらの手順に従います。
+10. ハードウェア ID 情報 (IMSI や ICCID など) を再入力して、モバイルブロードバンドプロバイダーの情報を確認します。 プレーンテキストのハードウェア ID 情報は、Windows デベロッパーセンターのハードウェアダッシュボードで、メタデータパッケージに指定されているハッシュされたハードウェア Id を確認するために使用されます。
+11. パッケージに署名していない場合は、次の手順に従って署名します。
 
-    1.  証明書ファイルを検索し、ダブルクリックしてインストールします。
-    2.  ユーザー ストアに格納され、コンピューター ストアではなく、証明書ファイルをインストールすることを確認します。
-    3.  クリックして**署名ウィザードを起動して**します。
-    4.  クリックして**選択ストア**します。
-    5.  ダイアログ ボックスから、証明書を選択します。
-        **注**  署名ウィザード内のファイル名は、受信したものを送信メタデータのウィザードの完了後します。 したがって、特定の理由がある場合は、しない限り変更しないでファイル名またはパス。
+    1.  証明書ファイルを探し、ダブルクリックしてインストールします。
+    2.  証明書ファイルは、コンピューターストアではなく、ユーザーストアにインストールしてください。
+    3.  [**署名ウィザードの起動**] をクリックします。
+    4.  [**ストアの選択] を**クリックします。
+    5.  ダイアログボックスから証明書を選択します。
+        **メモ**   署名ウィザードのファイル名は、メタデータの送信ウィザードの完了後に表示されます。 そのため、特定の理由がない限り、ファイル名またはパスを変更しないでください。
 
          
 
     6.  署名プロセスを完了します。
 
-12. をクリックしてパッケージを送信する準備ができたら、**起動 Windows デベロッパー センター - ハードウェア ダッシュ ボード**します。
+12. パッケージを送信する準備ができたら、[ **Windows デベロッパーセンターの起動-ハードウェアダッシュボード**] をクリックします。
 
-パッケージを送信する方法の詳細については、次を参照してください。[デバイス メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=226302)します。
+パッケージを送信する方法の詳細については、「[デバイスメタデータパッケージを送信](https://docs.microsoft.com/windows-hardware/drivers/dashboard/submit-a-device-metadata-package--dashboard-help-)する」を参照してください。
 
-Devicemanifest ファイルに関する詳細については、次を参照してください。[モバイル ブロード バンドの UWP アプリを送信](https://go.microsoft.com/fwlink/p/?linkid=248426)します。
+デバイスマニフェストファイルの詳細については、「[モバイルブロードバンドデバイスマニフェストパッケージを送信する](https://docs.microsoft.com/windows-hardware/drivers/dashboard/submit-a-mobile-broadband-device-manifest-package)」を参照してください。
 
-Bulkmetadata ファイルに関する詳細については、次を参照してください。[バルク メタデータ パッケージの申請](https://go.microsoft.com/fwlink/p/?linkid=248427)します。
+Bulkmetadata ファイルの詳細については、「[一括メタデータパッケージの送信](https://docs.microsoft.com/windows-hardware/drivers/dashboard/submit-a-bulk-metadata-package)」を参照してください。
 
  
 

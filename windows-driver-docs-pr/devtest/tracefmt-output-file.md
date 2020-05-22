@@ -3,30 +3,30 @@ title: Tracefmt の出力ファイル
 description: Tracefmt の出力ファイル
 ms.assetid: 55c8964c-992f-468c-83ea-0316fcb12110
 keywords:
-- Tracefmt WDK では、出力ファイル
-- 出力ファイルは、WDK Tracefmt
-- WDK Tracefmt ファイル
-- .out ファイル
-- ファイルを
+- Tracefmt WDK、出力ファイル
+- 出力ファイル WDK Tracefmt
+- ファイル WDK Tracefmt
+- out ファイル
+- out ファイル
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 98132e51949b9c29b8affce8bc458fb4db42a04d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d5dee9ffeb1a8b5b7c70c37526fcb4af762ee533
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373106"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769580"
 ---
 # <a name="tracefmt-output-file"></a>Tracefmt の出力ファイル
 
 
-Tracefmt (.out) を出力ファイルは、人間が判読できる形式で、トレース ログまたはトレースのリアルタイムのセッションからのトレース メッセージを表示するテキスト ファイルです。 各トレース メッセージは、カスタマイズ可能な付いている[トレース メッセージのプレフィックス](trace-message-prefix.md)します。
+Tracefmt 出力 (out) ファイルは、ユーザーが判読できる形式でトレースログまたはリアルタイムトレースセッションからのトレースメッセージを表示するテキストファイルです。 各トレースメッセージの前には、カスタマイズ可能な[トレースメッセージのプレフィックス](trace-message-prefix.md)が付いています。
 
-Tracefmt 出力ファイルは省略可能です。 、トレース メッセージの表示が、出力ファイルを作成またはトレース メッセージを表示して、出力ファイルに記録する Tracefmt を指示することができます。
+Tracefmt 出力ファイルは省略可能です。 トレースメッセージを表示するように Tracefmt に指示できますが、出力ファイルを作成することはできません。また、トレースメッセージを表示して出力ファイルに記録することもできます。
 
-Tracefmt 出力ファイルが分析およびトレース メッセージをフィルター処理する他のプログラムへの入力としてよく使用されます。
+Tracefmt 出力ファイルは、トレースメッセージを分析およびフィルター処理する他のプログラムへの入力としてよく使用されます。
 
-Tracedrv、ソフトウェア トレース用にインストルメント化サンプル ドライバーでのトレース セッションが Tracefmt 出力ファイルの内容の抜粋を次に示します。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレースのように設計されたドライバーのサンプルが記載されて、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+次に示すのは、ソフトウェアトレース用にインストルメント化されたサンプルドライバーである Tracefmt で、トレースセッションの Tracefmt 出力ファイルの内容を抜粋したものです。 ソフトウェアトレース用に設計された[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)は、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリで入手できます。
 
 ```
 EventTrace

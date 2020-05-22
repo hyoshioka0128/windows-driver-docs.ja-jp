@@ -4,12 +4,12 @@ description: 静的ドライバー検証ツールでの KMDF 関数の宣言
 ms.assetid: 1623f3a4-e318-41b3-bbcf-d443202f31e6
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: de7ad984002ae400f44c22793d64aee8930f6303
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8f83a1cc992ea8a506b9226afdde03e95615b63e
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839314"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769530"
 ---
 # <a name="static-driver-verifier-kmdf-function-declarations"></a>静的ドライバー検証ツールでの KMDF 関数の宣言
 
@@ -476,9 +476,9 @@ EVT_WDF_DRIVER_DEVICE_ADD EvtDriverDeviceAdd
 
 ### <a name="span-idfunction_role_types_and_i_o_queuesspanspan-idfunction_role_types_and_i_o_queuesspanfunction-role-types-and-io-queues"></a><span id="function_role_types_and_i_o_queues"></span><span id="FUNCTION_ROLE_TYPES_AND_I_O_QUEUES"></span>関数ロールの種類と i/o キュー
 
-KMDF フレームワークに依存する[要求ハンドラー](https://go.microsoft.com/fwlink/p/?linkid=153345)およびコールバック関数を宣言するときには、次の関数ロール型を使用します。この関数は、i/o 要求をドライバーに配信します (順次または並行ディスパッチの場合)。 既定のキューから他のキューに手動で要求を転送する関数 (手動ディスパッチ) では、これらの関数の役割の種類を使用しないでください。 SDV では、あるキューから別のキューへの要求を追跡するためのメモリモデルはサポートされていません。
+KMDF フレームワークに依存する[要求ハンドラー](https://docs.microsoft.com/windows-hardware/drivers/wdf/request-handlers)およびコールバック関数を宣言するときには、次の関数ロール型を使用します。この関数は、i/o 要求をドライバーに配信します (順次または並行ディスパッチの場合)。 既定のキューから他のキューに手動で要求を転送する関数 (手動ディスパッチ) では、これらの関数の役割の種類を使用しないでください。 SDV では、あるキューから別のキューへの要求を追跡するためのメモリモデルはサポートされていません。
 
-I/o キューの詳細については、「 [I/o キューの作成](https://go.microsoft.com/fwlink/p/?linkid=153346)」を参照してください。
+I/o キューの詳細については、「 [I/o キューの作成](https://docs.microsoft.com/windows-hardware/drivers/wdf/creating-i-o-queues)」を参照してください。
 
 <table>
 <colgroup>
@@ -545,7 +545,7 @@ I/o キューの詳細については、「 [I/o キューの作成](https://go.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>デバイスオブジェクト</p></td>
+<td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>EVT_WDF_DEVICE_CONTEXT_CLEANUP</p></td>
 </tr>
 <tr class="even">
@@ -553,11 +553,11 @@ I/o キューの詳細については、「 [I/o キューの作成](https://go.
 <td align="left"><p>EVT_WDF_IO_QUEUE_CONTEXT_CLEANUP_CALLBACK</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ファイルオブジェクト</p></td>
+<td align="left"><p>File オブジェクト</p></td>
 <td align="left"><p>EVT_WDF_FILE_CONTEXT_CLEANUP_CALLBACK</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>その他のすべてのオブジェクト</p></td>
+<td align="left"><p>他のすべてのオブジェクト</p></td>
 <td align="left"><p>EVT_WDF_OBJECT_CONTEXT_CLEANUP</p></td>
 </tr>
 </tbody>
@@ -578,7 +578,7 @@ I/o キューの詳細については、「 [I/o キューの作成](https://go.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>デバイスオブジェクト</p></td>
+<td align="left"><p>デバイス オブジェクト</p></td>
 <td align="left"><p>EVT_WDF_DEVICE_CONTEXT_DESTROY</p></td>
 </tr>
 <tr class="even">
@@ -586,11 +586,11 @@ I/o キューの詳細については、「 [I/o キューの作成](https://go.
 <td align="left"><p>EVT_WDF_IO_QUEUE_CONTEXT_DESTROY_CALLBACK</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ファイルオブジェクト</p></td>
+<td align="left"><p>File オブジェクト</p></td>
 <td align="left"><p>EVT_WDF_FILE_CONTEXT_DESTROY_CALLBACK</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>その他のすべてのオブジェクト</p></td>
+<td align="left"><p>他のすべてのオブジェクト</p></td>
 <td align="left"><p>EVT_WDF_OBJECT_CONTEXT_DESTROY</p></td>
 </tr>
 </tbody>

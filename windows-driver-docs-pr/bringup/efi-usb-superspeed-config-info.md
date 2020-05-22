@@ -2,22 +2,20 @@
 title: EFI_USB_SUPERSPEED_CONFIG_INFO
 description: EFI_USB_SUPERSPEED_CONFIG_INFO
 ms.assetid: 9827B0A9-AC69-43FA-922F-384E3AE140F7
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f336370023fff9ddd185c6c4f2b56140499240a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82dd63ae4989f03550f11d4d1a37aff86db994df
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337749"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778326"
 ---
-# <a name="efiusbsuperspeedconfiginfo"></a>EFI\_USB\_SUPERSPEED\_CONFIG\_情報
+# <a name="efi_usb_superspeed_config_info"></a>EFI \_ USB \_ SUPERSPEED \_ 構成 \_ 情報
 
-
-**EFI\_USB\_SUPERSPEED\_CONFIG\_情報**USB 機能ドライバーをサポートされている USB SuperSpeed ポートの構成を定義する構造を使用します。
+**EFI \_ usb \_ SUPERSPEED \_ CONFIG \_ INFO**構造体は、usb 関数ドライバーに対してサポートされている usb SUPERSPEED ポート構成を定義するために使用されます。
 
 ## <a name="syntax"></a>構文
-
 
 ```cpp
 typedef struct
@@ -29,27 +27,18 @@ typedef struct
 
 ## <a name="members"></a>メンバー
 
+### <a name="configdescriptor"></a>ConfigDescriptor
 
-<a href="" id="configdescriptor"></a>**ConfigDescriptor**  
-EFI\_USB\_CONFIG\_関数の USB デバイスの構成記述子を含む記述子構造体。
+\_ \_ \_ Usb 機能デバイスの構成記述子を含む EFI USB 構成記述子の構造体。
 
-<a href="" id="interfaceinfotable"></a>**InterfaceInfoTable**  
-[EFI\_USB\_SUPERSPEED\_インターフェイス\_情報](efi-usb-superspeed-interface-info.md)サポートされている USB SuperSpeed インターフェイスを記述する構造体。
+### <a name="interfaceinfotable"></a>InterfaceInfoTable
 
-## <a name="remarks"></a>注釈
+サポートされている USB SuperSpeed インターフェイスを記述する[EFI \_ USB \_ SUPERSPEED \_ INTERFACE \_ INFO](efi-usb-superspeed-interface-info.md)構造体。
 
+## <a name="remarks"></a>解説
 
-**EFI\_USB\_CONFIG\_記述子**構造体は、UEFI 仕様バージョン 2.3 で定義されている以降。 詳細については、次を参照してください。、 [UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526) web サイト。
+**EFI \_ USB \_ 構成 \_ 記述子**の構造は、UEFI 仕様バージョン2.3 以降で定義されています。 詳細については、 [UEFI.org](https://uefi.org/specifications)の web サイトを参照してください。
 
 ## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成

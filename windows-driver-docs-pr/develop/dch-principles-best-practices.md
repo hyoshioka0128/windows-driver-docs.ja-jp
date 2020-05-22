@@ -4,12 +4,12 @@ title: DCH 設計原則とベスト プラクティス
 description: Windows ドライバーの DCH 原則について説明します。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d2c96949ba71ad4a77d036fc98989a150b6c5117
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 6505f9bda33e2bc9a543314e5d62cfdee81468a2
+ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270467"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435376"
 ---
 # <a name="dch-design-principles-and-best-practices"></a>DCH 設計原則とベスト プラクティス
 
@@ -67,6 +67,6 @@ DCH 設計原則に従うドライバー パッケージを作成するには、
    
 *  INF がターゲット プラットフォームに依存するカスタム セットアップ アクションを実行する場合は、それらのアクションを拡張 INF に分離することを検討してください。 拡張 INF はベース ドライバー パッケージとは独立して更新できるので、堅牢性とサービス性が向上します。 詳細については、「[拡張 INF ファイルの使用](../install/using-an-extension-inf-file.md)」を参照してください。
 *  お客様のデバイスで動作するアプリケーションを提供する場合は、UWP アプリを含めてください。 詳しくは、「[ハードウェア サポート アプリ (HSA):ドライバー開発者向け手順](../devapps/hardware-support-app--hsa--steps-for-driver-developers.md)」を参照してください。  OEM は [DISM (展開イメージのサービスと管理)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism---deployment-image-servicing-and-management-technical-reference-for-windows) を使ってそのようなアプリを事前に読み込むことができます。 または、ユーザーは Microsoft Store からアプリを手動でダウンロードすることもできます。
-*  [**INF の DestinationDirs セクション**](../install/inf-destinationdirs-section.md)で、対象ディレクトリを [dirid 13](../install/using-dirids) に設定して、ドライバーを[ドライバー ストア](driver-isolation.md#run-from-driver-store)から実行します。 一部のデバイスでは、この設定は機能しません。
+*  [**INF の DestinationDirs セクション**](../install/inf-destinationdirs-section.md)で、対象ディレクトリを [dirid 13](../install/using-dirids.md) に設定して、ドライバーを[ドライバー ストア](driver-isolation.md#run-from-driver-store)から実行します。 一部のデバイスでは、この設定は機能しません。
 
 

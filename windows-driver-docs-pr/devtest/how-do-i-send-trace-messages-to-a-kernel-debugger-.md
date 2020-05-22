@@ -1,62 +1,62 @@
 ---
-title: カーネル デバッガーにトレース メッセージを送信する方法
-description: カーネル デバッガーにトレース メッセージを送信する方法
+title: トレースメッセージをカーネルデバッガーに送信操作方法には
+description: トレースメッセージをカーネルデバッガーに送信操作方法には
 ms.assetid: 867791a7-30a5-4539-be85-61f1716c279a
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2783a065d9dce8080d559cefb394c47c5d29d483
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 956f11355ab3a1cfee8484a0f06680ee5b91d91d
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63347720"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769620"
 ---
 # <a name="how-do-i-send-trace-messages-to-a-kernel-debugger"></a>カーネル デバッガーにトレース メッセージを送信する方法
 
 
-いくつかのメソッドを使用して、トレース メッセージをカーネル モードのデバッガーにリダイレクトすることができます。 ここでは、いくつかについて説明します。
+複数のメソッドを使用して、カーネルモードのデバッガーにトレースメッセージをリダイレクトできます。 ここでは、いくつかについて説明します。
 
-トレース メッセージをリダイレクトするには、Windbg、KD からか、どちらがアタッチされています。 デバッグ (ヌル モデム) ケーブルを使用して COM ポートを使用または IEEE 1394 ケーブルで 1394 ("firewire") のポートを介して、デバッガーをアタッチする必要があります。 NTSD などの他のカーネル デバッガーには、トレース メッセージをリダイレクトすることはできません。
+トレースメッセージは、接続されているいずれかの場合に、KD または Windbg にリダイレクトできます。 デバッガーは、デバッグ (null モデム) ケーブルを使用する COM ポート、または IEEE 1394 ケーブルを使用した 1394 ("firewire") ポートを介してアタッチする必要があります。 トレースメッセージを他のカーネルデバッガー (NTSD など) にリダイレクトすることはできません。
 
-デバッガーでのトレース メッセージを表示するには、wmitrace.dll と traceprt.dll する必要がありますにホスト コンピューターで、デバッガーの検索パス。 これらの Dll が含まれている[ツールを Windows のデバッグ](https://go.microsoft.com/fwlink/p/?linkid=8708)も、検索するデバッガーを有効にする、[トレース メッセージの形式 (.tmf) ファイル](trace-message-format-file.md)、トレース メッセージの TMF ファイルは、デバッガーの検索である必要がありますホスト コンピューター上のパス。 デバッガーの検索パスを設定するには、使用、! wmitrace.searchpath デバッガー拡張機能を特殊化または % のトレースの値を設定\_形式\_検索\_%path% 環境変数。
+デバッガーでトレースメッセージを表示するには、wmitrace と traceprt がホストコンピューター上のデバッガーの検索パスに存在している必要があります。 これらの Dll は、[デバッグツール (Windows の](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-tools)場合) にも含まれています。デバッガーがトレースメッセージの[トレースメッセージ形式 (tmf) ファイル](trace-message-format-file.md)を検索できるようにするには、ホストコンピューター上のデバッガーの検索パスに tmf ファイルが含まれている必要があります。 デバッガーの検索パスを設定するには、wmitrace の searchpath 特殊化されたデバッガー拡張機能を使用するか、% TRACE \_ FORMAT \_ search \_ path% 環境変数の値を設定します。
 
-詳細については、検索 **! wmitrace**で*ツールを Windows のデバッグ*します。
+詳細については、「 *Windows 用デバッグツール*」で **! wmitrace**を検索してください。
 
 ### <a name="span-idlogmanspanspan-idlogmanspanlogman"></a><span id="logman"></span><span id="LOGMAN"></span>Logman
 
-トレース メッセージをカーネル モードのデバッガーにリダイレクトするのにには、Logman の次のコマンドを使用します。
+カーネルモードのデバッガーにトレースメッセージをリダイレクトするには、次の Logman コマンドを使用します。
 
 ```
 logman start TraceSession -ets -mode KernelFilter -bs 3
 ```
 
-**-Ets**パラメーターは、パフォーマンス ログと警告サービスによって管理されていないイベント トレース セッションを開始します。 **-モード**パラメーターなど、高度なオプションがアクティブになります、 **KernelFilter**オプション。
+**-** 引数を指定すると、パフォーマンスログと警告サービスによって制御されないイベントトレースセッションが開始されます。 **-Mode**パラメーターを指定すると、詳細オプション (**カーネルフィルター**オプションを含む) がアクティブになります。
 
-**-Bs**パラメーターは 3 KB、デバッガーの最大バッファー サイズをトレース セッションのバッファー サイズを設定します。 このパラメーターを省略した場合、デバッガー セッションが正しく動作しません。
+**-Bs**パラメーターを指定すると、トレースセッションのバッファーサイズがデバッガーの最大バッファーサイズである 3 KB に設定されます。 このパラメーターを省略した場合、デバッガーセッションは正常に動作しません。
 
-Windows XP および Windows の以降のバージョンので Logman が含まれます。
+Logman は、windows XP 以降のバージョンの Windows に含まれています。
 
-### <a name="span-idtracelogspanspan-idtracelogspantracelog"></a><span id="tracelog"></span><span id="TRACELOG"></span>トレース ログ
+### <a name="span-idtracelogspanspan-idtracelogspantracelog"></a><span id="tracelog"></span><span id="TRACELOG"></span>トレースログ
 
-次を使用して、 [Tracelog](tracelog.md)コマンド、カーネル モードのデバッガーへのリダイレクト トレース メッセージ。
+次の[Tracelog](tracelog.md)コマンドを使用して、カーネルモードのデバッガーにトレースメッセージをリダイレクトします。
 
 ```
 tracelog -start MyTrace -guid MyProvider.ctl -rt -kd
 ```
 
-**- Guid**パラメーターを指定します、[トレース プロバイダー](trace-provider.md)します。 **-Rt**パラメーターは、リアルタイムのトレース セッションを指定します。 **-Kd**パラメーターは、カーネル デバッガーにトレース メッセージをリダイレクトし、最大バッファー サイズは 3 KB、デバッガーの最大値を設定します。
+**-Guid**パラメーターは、[トレースプロバイダー](trace-provider.md)を指定します。 **-Rt**パラメーターは、リアルタイムのトレースセッションを指定します。 **-Kd**パラメーターを指定すると、トレースメッセージがカーネルデバッガーにリダイレクトされ、最大バッファーサイズがデバッガーの最大値である 3 KB に設定されます。
 
-例については、次を参照してください。[例 16。デバッガーでのトレース メッセージを表示する](example-16--viewing-trace-messages-in-a-debugger.md)します。
+例については、「[例 16: デバッガーでのトレースメッセージの表示](example-16--viewing-trace-messages-in-a-debugger.md)」を参照してください。
 
-トレース ログは、ツールにある\\トレース\\*&lt;プラットフォーム&gt;* 、WDK のサブディレクトリで*&lt;プラットフォーム&gt;* i386、amd64、または ia64 のいずれかです。
+Tracelog は、 \\ WDK の tools tracing \\ * &lt; Platform &gt; *サブディレクトリにあります。 * &lt; プラットフォーム &gt; *は、i386、amd64、ia64 のいずれかです。
 
-### <a name="span-idtraceviewspanspan-idtraceviewspantraceview"></a><span id="traceview"></span><span id="TRACEVIEW"></span>Traceview で
+### <a name="span-idtraceviewspanspan-idtraceviewspantraceview"></a><span id="traceview"></span><span id="TRACEVIEW"></span>TraceView
 
-[Traceview で](traceview.md)はグラフィカル ユーザー インターフェイスがあります。
+[Traceview](traceview.md)にはグラフィカルユーザーインターフェイスがあります。
 
-トレース セッションを作成するときに、カーネル デバッガーにトレース メッセージをリダイレクトできます。 **ログ セッション オプション** ページで **ログ セッション オプションの高度な**、 をクリックして、**ログ セッションのパラメーター オプション**タブをクリックし、の値を変更し、**Windbg**オプションを**TRUE**します。 トレース セッションの実行中に、このオプションを変更することはできません。
+トレースセッションを作成するときに、トレースメッセージをカーネルデバッガーにリダイレクトすることができます。 [**ログセッションオプション**] ページで、[ログセッションの**詳細オプション**] をクリックし、[**ログセッションパラメーターのオプション**] タブをクリックして、[ **Windbg** ] オプションの値を**TRUE**に変更します。 トレースセッションの実行中にこのオプションを変更することはできません。
 
-Traceview では、ツールである\\トレース\\*&lt;プラットフォーム&gt;* 、WDK のサブディレクトリで*&lt;プラットフォーム&gt;* i386、amd64、または ia64 のいずれかです。
+Traceview は、 \\ WDK の tools tracing \\ * &lt; Platform &gt; *サブディレクトリにあります。ここで、 * &lt; Platform &gt; *は i386、amd64、ia64 のいずれかです。
 
  
 

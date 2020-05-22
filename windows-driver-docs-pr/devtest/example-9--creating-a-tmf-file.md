@@ -1,64 +1,64 @@
 ---
-title: 例 9 TMF ファイルを作成します。
-description: 例 9 TMF ファイルを作成します。
+title: 例 9 TMF ファイルを作成する
+description: 例 9 TMF ファイルを作成する
 ms.assetid: bf66431b-7937-4a98-96cf-e06d28793401
 keywords:
 - Tracefmt WDK、TMF ファイル
 - TMF ファイル WDK、Tracefmt
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a4a49d75f47d4f1a194952d376f357e2227a0b9
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 9e6acce66011268d3bd0ddac50ff16014cd0db2f
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56557980"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769672"
 ---
-# <a name="example-9-creating-a-tmf-file"></a>例 9:TMF ファイルを作成します。
+# <a name="example-9-creating-a-tmf-file"></a>例 9: TMF ファイルを作成する
 
 
-次のコマンドでは、書式設定および Tracedrv.etl、Tracedrv によって生成されるトレース ログにトレース メッセージを表示する Tracefmt よう指示します。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレースのように設計されたドライバーのサンプルが記載されて、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+次のコマンドは、Tracefmt に対して、tracefmt によって生成されるトレースログである Tracefmt のトレースメッセージを書式設定して表示するように指示します。 ソフトウェアトレース用に設計された[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)は、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリで入手できます。
 
-コマンドが含まれています、 **-i** Tracefmt Tracedrv の TMF ファイルを作成するように指示するパラメーター。
+コマンドには、 **-i**パラメーターが含まれています。これにより、Tracefmt は Tracefmt の tmf ファイルを作成するように指示します。
 
 ```
 tracefmt d:\tracedrv\tracedrv.etl -i d:\tracedrv\tracedrv.sys -r d:\tracedrv 
 -p d:\tracedrv\tmfs -o d:\tracedrv\tracedrv1.txt -v
 ```
 
-コマンドを使用して、 **-i** Tracedrv、wdk の Tracedrv.sys をイメージ ファイルへの完全修飾パスを示すパラメーターです。
+このコマンドは、 **-i**パラメーターを使用して、WDK の tracedrv のイメージファイルへの完全修飾パスを指定します。
 
 ```
 -i d:\tracedrv\tracedrv.sys
 ```
 
-使用して、 **-r** Tracedrv、Tracedrv.pdb PDB シンボル ファイルの完全なバージョンへの完全修飾パスを示すパラメーターです。 このパラメーターは、ファイル名ではなく指定したパスを指定することに注意してください。 Tracefmt 検索で指定されたイメージ ファイルに基づくシンボル ファイルの正しいバージョン **-i**します。
+この例では、 **-r**パラメーターを使用して、Tracedrv の pdb シンボルファイルの完全修飾パスを示しています。 このパラメーターを使用してパスを指定することに注意してください。ただし、ファイル名は指定しないでください。 Tracefmt は、 **-i**によって指定されたイメージファイルに基づいて、正しいバージョンのシンボルファイルを検索します。
 
 ```
 -r d:\tracedrv
 ```
 
-コマンドを使用して、 **-p**で Tracedrv を作成する TMF ファイルを配置する Tracefmt に出力するためのパラメーター、 **d:\\tracedrv\\tmfs**ディレクトリ。
+このコマンドは、 **-p**パラメーターを使用して Tracefmt に対して、tracefmt 用に作成された tmf ファイルを**d: \\ tracefmt \\ tmfs**ディレクトリに配置するように指示します。
 
 ```
 -p d:\tracedrv\tmfs
 ```
 
-コマンドを使用して、 **-o**パラメーターの出力ファイルを配置する Tracefmt に出力するためにトレース メッセージを書式設定、 **d:\\tracedrv\\tracedrv1.txt**ファイル。 このパラメーターは、Tracedrv.txt.sum ファイル名と同じディレクトリにも概要ファイルを配置します。
+このコマンドは、 **-o**パラメーターを使用して、トレースメッセージの出力ファイルを**d: \\ tracefmt \\ tracedrv1**ファイルに配置するように tracefmt に指示します。 また、このパラメーターを指定すると、同じディレクトリ内に Tracedrv ファイル名で概要ファイルが配置されます。
 
 ```
 -o d:\tracedrv\tracedrv1.txt
 ```
 
-**-V**パラメーターは、詳細 (verbose) メッセージを要求します。
+**-V**パラメーターは詳細な (詳細) メッセージを要求します。
 
-このコマンドに応答してで Tracefmt が検索され、d: で Tracedrv.sys の PDB ファイルが見つかった\\tracedrv ディレクトリ。 手順については、PDB ファイルの書式設定するトレース メッセージを抽出し、ステートメントのように、次の出力で太字で TMF ファイルに保存します。 TMF ファイルの名前は、 [GUID をメッセージ](message-guid.md)Tracedrv でトレース プロバイダーの。 Tracefmt もトレース メッセージのコントロール (TMC) ファイルを作成し、同じディレクトリに配置します。
+このコマンドに応答して、Tracefmt は d: \\ tracefmt ディレクトリで Tracefmt の PDB ファイルを検索して検索します。 次の出力の太字で示されているように、PDB ファイルからトレースメッセージの書式設定命令を抽出し、TMF ファイルに格納します。 TMF ファイルの名前は、Tracedrv のトレースプロバイダーの[メッセージ GUID](message-guid.md)です。 また、tracefmt はトレースメッセージ制御 (TMC) ファイルを作成し、同じディレクトリに配置します。
 
-Tracefmt TMF ファイルで作成された後、Tracedrv.etl トレース ログにトレース メッセージの書式設定命令を検索するファイルを読み取ります。 Default.tmf ファイルと検索、TMf ファイル d: で作成されたことを確認して開始\\tracedrv\\tmfs ディレクトリ。
+Tracefmt によって TMF ファイルが作成された後、ファイルが読み取られ、Tracefmt トレースログ内のトレースメッセージの書式設定手順が検索されます。 最初に、既定の tmf ファイルから、d: \\ tracedrv tmfs ディレクトリに作成された TMf ファイルを検索します。 \\
 
-データが書式設定、前に、Tracefmt はトレース ログのデータを表示します。 データが始まり、**ログ ファイルの d:\\tracedrv\\tracedrv.etl**ステートメント。
+データを書式設定する前に、Tracefmt はトレースログに関するデータを表示します。 データは、 **Logfile d: \\ tracedrv \\ tracステートメント**で始まります。
 
-出力の最後のステートメントでは、Tracefmt が正常に 13 のイベント トレース ログを書式設定し、Tracedrv1.txt と Tracedrv1.txt.sum ファイルを作成したことを示しています。
+出力の最後のステートメントは、Tracefmt がトレースログで13個のイベントを正常にフォーマットし、Tracedrv1 ファイルと Tracedrv1 ファイルを作成したことを示しています。
 
 ```
 Setting log file to: d:\tracedrv\tracedrv.etl
@@ -90,7 +90,7 @@ Event traces dumped to d:\tracedrv\tracedrv1.txt
 Event Summary dumped to d:\tracedrv\tracedrv1.txt.sum
 ```
 
-この Tracefmt 実行のプライマリ出力は、Tracedrv.txt、Tracedrv.etl 内のトレース メッセージの書式設定されたバージョンを含むテキスト ファイルです。 次のテキストは、Tracedrv.txt の内容を示しています。
+この Tracefmt 実行の主な出力は Tracefmt .txt です。これは、Tracefmt のトレースメッセージの書式設定されたバージョンを含むテキストファイルです。 次のテキストは Tracedrv の内容を示しています。
 
 ```
 EventTrace

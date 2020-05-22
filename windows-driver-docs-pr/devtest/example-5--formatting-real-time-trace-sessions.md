@@ -1,41 +1,41 @@
 ---
-title: 例 5 の書式設定のリアルタイムのトレース セッション
-description: 例 5 の書式設定のリアルタイムのトレース セッション
+title: 例5リアルタイムトレースセッションの書式設定
+description: 例5リアルタイムトレースセッションの書式設定
 ms.assetid: 340453ab-4736-4191-b9d4-08ee7d9190fe
 keywords:
-- Tracefmt WDK、リアルタイムのトレース セッション
-- WDK のリアルタイムのトレース セッション
+- Tracefmt WDK、リアルタイムトレースセッション
+- リアルタイムトレースセッション WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f27ca23fe8c86b7f62b523a0fb8d919b256d9ec8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e13b16211e937a9dd5b9681c3070d9850413b302
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63344660"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769696"
 ---
-# <a name="example-5-formatting-real-time-trace-sessions"></a>例 5:リアルタイム トレース セッションの書式設定
+# <a name="example-5-formatting-real-time-trace-sessions"></a>例 5: リアルタイムのトレースセッションの書式設定
 
 
-トレース ログ ファイルに加えてリアルタイム トレース セッションから、トレース メッセージの形式に Tracefmt を使用できます。
+トレースログファイルに加えて、トレースメッセージをリアルタイムのトレースセッションから書式設定するには、Tracefmt を使用します。
 
-次の一連のコマンドは[Tracelog](tracelog.md) Tracefmt とします。 最初のコマンドでは、トレース ログを使用して、Tracedrv サンプル トレース プロバイダーとリアルタイムのトレース セッションを開始します。 [TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレースのように設計されたドライバーのサンプルが記載されて、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507 )GitHub リポジトリにあります。
+次の一連のコマンドでは、 [Tracelog](tracelog.md)と Tracefmt を使用します。 最初のコマンドは、Tracelog を使用して、Tracedrv サンプルトレースプロバイダーとのリアルタイムトレースセッションを開始します。 ソフトウェアトレース用に設計された[Tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)は、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリで入手できます。
 
 ```
 tracelog -start MyTrace -guid tracedrv.ctl -flag 1 -rt
 ```
 
-このコマンドは、MyTrace と呼ばれるトレース セッションを開始します。 使用して、-**guid**その制御 GUID ファイルを使用して、Tracedrv.sys のトレース プロバイダーを識別するためにパラメーター tracedrv.ctl します。 使用して、 **-フラグ**を設定するパラメーター、[トレース フラグ](trace-flags.md)値を**1**します。 使用して、 **-rt**パラメーター Tracefmt などのトレース コンシューマーに直接メッセージを配信するトレース セッションを開始します。 なし、 **-rt**パラメーター、トレース プロバイダーは送信メッセージのログ ファイルにのみです。
+このコマンドは、MyTrace という名前のトレースセッションを開始します。 この例では、-**guid**パラメーターを使用して、トレースプロバイダーである tracedrv を識別します。そのためには、コントロール guid ファイルである tracedrv を使用します。 [トレースフラグ](trace-flags.md)の値を**1**に設定するには、 **-flag**パラメーターを使用します。 この例では、 **-rt**パラメーターを使用して、Tracefmt などのトレースコンシューマーにメッセージを直接配信するトレースセッションを開始します。 **-Rt**パラメーターを指定しない場合、トレースプロバイダーはログファイルにのみメッセージを送信します。
 
-次のコマンドは、MyTrace トレース セッション中に Tracedrv によって生成されたメッセージの書式設定 Tracefmt を使用します。
+次のコマンドは、Tracefmt を使用して、MyTrace トレースセッション中に Tracefmt によって生成されるメッセージを書式設定します。
 
 ```
 tracefmt -rt MyTrace -p c:\tracing -o mytrace.txt
 ```
 
-この Tracefmt コマンドを使用して、 **-rt** MyTrace、リアルタイムのトレース セッションを識別するためにパラメーターおよび **-p** Tracedrv.sys の TMF ファイルが配置されているディレクトリを指定するパラメーター。 **-O**パラメーターは、ローカル ディレクトリに mytrace.txt ファイルに出力を転送します。
+この Tracefmt コマンドは、 **-rt**パラメーターを使用して、リアルタイムのトレースセッション、mytrace、および **-p**パラメーターを識別し、TRACEFMT の tmf ファイルが配置されているディレクトリを指定します。 **-O**パラメーターを指定すると、出力がローカルディレクトリの mytrace .txt ファイルに送られます。
 
-このコマンドに応答して、Tracefmt はリアルタイムでのトレース メッセージを書式設定を準備します。 次のステータス メッセージが表示されますが、コマンド プロンプトに戻るはありません。
+このコマンドに応答して、Tracefmt はトレースメッセージをリアルタイムで書式設定することを準備します。 次のステータスメッセージが表示されますが、コマンドプロンプトに戻りません。
 
 ```
 c:\tracetools>tracefmt -rt mytrace -display -o mytrace.txt
@@ -43,13 +43,13 @@ Setting RealTime mode for  mytrace
 Getting guids from c:\tracetools\default.tmf
 ```
 
-トレース ログの次のコマンドは、MyTrace トレース セッションを停止します。 別のコマンド プロンプト ウィンドウでコマンドを入力する必要があります。
+次の Tracelog コマンドは、MyTrace トレースセッションを停止します。 別のコマンドプロンプトウィンドウでコマンドを入力する必要があります。
 
 ```
 tracelog -stop mytrace
 ```
 
-トレース セッションが停止したら、Tracefmt は出力ファイルにしてから、コマンド プロンプトに返しますにトレース メッセージを記述したことを報告します。
+トレースセッションが停止すると、Tracefmt は、出力ファイルにトレースメッセージを書き込んだことを報告してから、コマンドプロンプトに戻ります。
 
 ```
 Event traces dumped to mytrace.txt

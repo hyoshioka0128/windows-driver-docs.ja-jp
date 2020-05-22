@@ -2,25 +2,23 @@
 title: EFI_USBFN_PORT_TYPE
 description: EFI_USBFN_PORT_TYPE
 ms.assetid: 2596dd4f-26bd-454b-9550-a89c7e1f790b
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dea889b1b34bf22dcc97311dcb0693b54681e60f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c1cf7fe654a7fdfef36ba8c0b00f3eee0caba7b9
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337671"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778343"
 ---
-# <a name="efiusbfnporttype"></a>EFI\_USBFN\_ポート\_型
+# <a name="efi_usbfn_port_type"></a>EFI \_ USBFN \_ ポートの \_ 種類
 
-
-この列挙体には、USB ポートの種類を指定します。
+この列挙体は、USB ポートの種類を指定します。
 
 ## <a name="syntax"></a>構文
 
-
 ```cpp
-typedef enum _EFI_USBFN_PORT_TYPE 
+typedef enum _EFI_USBFN_PORT_TYPE
 {
     EfiUsbUnknownPort = 0,
     EfiUsbStandardDownstreamPort,
@@ -32,58 +30,18 @@ typedef enum _EFI_USBFN_PORT_TYPE
 
 ## <a name="constants"></a>定数
 
+| 値 | 説明 |
+| --- | --- |
+| EfiUsbUnknownPort | 不明なポート-ドライバー内部の既定のポートの種類。これは、成功状態コードを含むドライバーからは返されません。 |
+| EfiUsbStandardDownstreamPort | 標準ダウンストリームポート-標準 USB ホスト。 |
+| EfiUsbChargingDownstreamPort | ダウンストリームポート-標準 USB ホストを充電しています。 |
+| EfiUsbDedicatedChargingPort | 専用充電ポート– USB ホストではなく、壁面チャージャーです。 |
+| EfiUsbInvalidDedicatedChargingPort | 無効な専用充電ポート-USB ホストまたは専用の充電ポートではありません。 |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>値</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>EfiUsbUnknownPort</strong></p></td>
-<td><p>不明なポート - ドライバー内部の既定のポートの種類。これは、ドライバー、成功状態コードでは返されません。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>EfiUsbStandardDownstreamPort</strong></p></td>
-<td><p>標準のダウン ストリームのポート - 標準の USB host.for 詳細についてを参照してください<strong>解説</strong>します。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>EfiUsbChargingDownstreamPort</strong></p></td>
-<td><p>標準の USB ホスト - ダウン ストリームのポートを課金します。 詳細については、次を参照してください<strong>解説。</strong></p></td>
-</tr>
-<tr class="even">
-<td><p><strong>EfiUsbDedicatedChargingPort</strong></p></td>
-<td><p>専用の充電中ポート – 壁充電器、USB ホストではありません。 詳細については、次を参照してください<strong>解説。</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>EfiUsbInvalidDedicatedChargingPort</strong></p></td>
-<td><p>無効な専用充電中ポート – USB ホストまたは専用ポートを課金されません。</p></td>
-</tr>
-</tbody>
-</table>
+## <a name="remarks"></a>解説
 
- 
-
-## <a name="remarks"></a>注釈
-
-
-「バッテリの充電リビジョン 1.1 の仕様」を参照、 [USB.org](https://go.microsoft.com/fwlink/p/?linkid=64124) web サイト。
+詳細については、 [USB.org](https://www.usb.org/documents) web サイトの「バッテリ充電仕様、リビジョン1.1」を参照してください。
 
 ## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成

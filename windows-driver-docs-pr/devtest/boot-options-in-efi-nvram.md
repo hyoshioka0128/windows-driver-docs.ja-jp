@@ -1,38 +1,38 @@
 ---
-title: EFI NVRAM にブート オプション
-description: NVRAM のファームウェア ストア ブート オプションを拡張ファームウェア インターフェイス (EFI) を持つコンピューターは、コンピューターをオフにする場合でも、状態が保持されます。
+title: EFI NVRAM でのブート オプション
+description: 拡張ファームウェアインターフェイス (EFI) ファームウェアが搭載されたコンピューターは、ブートオプションを NVRAM に格納しますが、コンピューターの電源をオフにしても状態を保持します。
 ms.assetid: 99247d03-1723-4a2b-8ef4-c1f39687642f
 keywords:
-- NVRAM ブート オプション WDK
-- EFI NVRAM ブート オプション WDK
-- ブート オプション WDK、EFI NVRAM
-- 拡張ファームウェア インターフェイスの WDK ブート オプション
-- Itanium プロセッサ ブート オプション WDK
+- NVRAM ブートオプション WDK
+- EFI NVRAM ブートオプション WDK
+- ブートオプション WDK、EFI NVRAM
+- 拡張ファームウェアインターフェイスの WDK ブートオプション
+- Itanium プロセッサブートオプション WDK
 ms.date: 07/03/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: abeb2d396114f1e244215f200846eeb9ecdf5602
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: a57af80def6935acf594b7123282cffd6b64acd9
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56560003"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769684"
 ---
-# <a name="boot-options-in-efi-nvram"></a>EFI NVRAM にブート オプション
+# <a name="boot-options-in-efi-nvram"></a>EFI NVRAM でのブート オプション
 
 
 > [!IMPORTANT] 
-> このトピックでは、Windows XP および Windows Server 2003 でサポートされるブート オプションについて説明します。 Windows の最新バージョンのブート オプションを変更する場合は、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
+> このトピックでは、Windows XP と Windows Server 2003 でサポートされているブートオプションについて説明します。 Windows の最新バージョンのブートオプションを変更する場合は、「 [windows のブートオプション](boot-options-in-windows.md)」を参照してください。
 
-拡張ファームウェア インターフェイス (EFI) のファームウェア、Intel Itanium 2 プロセッサなどのコンピューターでは、NVRAM、編集できますが、コンピューターをオフにする場合でも、その状態を保持するストレージ メディアでブート オプションを格納します。 EFI ファームウェアが BIOS ファームウェア、として同じ目的を果たしますが、従来の BIOS の多くの制限を克服します。 X86 ベースのシステムで BIOS およびブート マネージャー (NTLDR) で実装されるスタートアップ関数は、EFI コンポーネント、つまり、EFI の BIOS と EFI ブート マネージャによって処理されます。
+Intel Itanium 2 プロセッサなど、拡張ファームウェアインターフェイス (EFI) ファームウェアを搭載したコンピューターでは、ブートオプションが NVRAM に格納されます。この記憶域メディアは編集できますが、コンピューターの電源をオフにしても状態を保持します。 EFI ファームウェアは BIOS ファームウェアと同じ目的で機能しますが、従来の BIOS の多くの制限を克服します。 X86 ベースシステムの BIOS およびブートマネージャー (NTLDR) で実装されるスタートアップ関数は、efi コンポーネント、つまり efi BIOS と EFI ブートマネージャーによって処理されます。
 
-ドライバーのデバッグと Windows XP、Windows Server 2003、およびその先行タスクを実行している (EFI) ベースのシステム テストに関連する機能を構成するには、NVRAM にブート オプションを編集する必要があります。 次のセクションでは、簡単な EFI NVRAM にブート オプションについて説明し、ブート オプションは、このテクノロジを使用するシステムに固有の側面について説明します。
+Windows XP、Windows Server 2003、およびその前に実行されている EFI ベースのシステムでのドライバーのデバッグとテストに関連する機能を構成するには、NVRAM でブートオプションを編集する必要があります。 以下のセクションでは、EFI NVRAM のブートオプションについて簡単に説明し、このテクノロジを使用するシステムに固有のブートオプションの側面について説明します。
 
-Windows Vista および Windows の以降のバージョンでは、BIOS および EFI ベースのコンピューター上のブート オプションが格納されている*ブート構成データ*(BCD)、ブート オプションのファームウェアに依存しない構成と記憶域システム。 詳細については、[Windows Vista 以降のブート オプション](boot-options-in-windows-vista-and-later.md)を参照してください。
+Windows Vista 以降のバージョンの Windows では、BIOS ベースおよび EFI ベースのコンピューターのブートオプションは*ブート構成データ*(BCD) に格納されます。これは、ブートオプション用のファームウェアに依存しない構成および記憶域システムです。 詳細については、「 [Windows Vista 以降のブートオプション](boot-options-in-windows-vista-and-later.md)」を参照してください。
 
-Itanium ベース システムのブート オプションの詳細については、拡張ファームウェア インターフェイスの仕様を参照してください。 更新された仕様のコピーをダウンロードすることができます、 [Intel Extensible Firmware Interface](https://go.microsoft.com/fwlink/p/?linkid=10596) web サイト。
+Itanium ベースシステムでのブートオプションの詳細については、「拡張ファームウェアインターフェイスの仕様」を参照してください。 更新された仕様のコピーは、 [Intel 拡張ファームウェアインターフェイス](https://www.intel.com/content/www/us/en/architecture-and-technology/unified-extensible-firmware-interface/efi-homepage-general-technology.html)の web サイトからダウンロードできます。
 
-このセクションの内容:
+ここでは、以下の内容について説明します。
 
-- [Efi ブート オプションの概要](overview-of-boot-options-in-efi.md)
-- [Efi ブート オプションの編集](editing-boot-options-in-efi.md)
-- [Efi ブート オプションをバックアップします。](backing-up-boot-options-in-efi.md)
+- [EFI でのブート オプションの概要](overview-of-boot-options-in-efi.md)
+- [EFI でのブート オプションの編集](editing-boot-options-in-efi.md)
+- [EFI でのブート オプションのバックアップ](backing-up-boot-options-in-efi.md)

@@ -4,12 +4,12 @@ description: ドライバーの検証ツールは、Windows 2000 以降のすべ
 ms.assetid: EAC30108-F8A2-4914-9218-2E0672982B7E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d7caa464c9032c594587ce77ba1b2f1aef5437f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6fb106ab5afe776bdb9560fe7c3ace600b7ee3ce
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839563"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769716"
 ---
 # <a name="driver-verifier-whats-new"></a>ドライバーの検証ツール: 新機能
 
@@ -27,15 +27,15 @@ ms.locfileid: "72839563"
 > [!IMPORTANT]
 > Windows 10 1803 以降のバージョンでは、ドライバーの検証ツールを実行すると、Windows Driver Framework (WDF) の検証が自動的に有効になりなくなりました。 以下の点に注意してください。
 
-* WDF の検証は、ドライバー検証ツールの `/standard` フラグの一部として有効にすることもできます。 詳細については、「 [Driver Verifier コマンド構文](https://docs.microsoft.com/windows-hardware/drivers/devtest/verifier-command-line)」を参照してください。
-* WDF の検証は自動的に有効にならないため、この変更は、構文 `/flags 0x209BB` で DV を有効にする場合に影響を与えます。
+* ドライバー検証ツールのフラグの一部として、WDF の検証を有効にすることもでき `/standard` ます。 詳細については、「 [Driver Verifier コマンド構文](https://docs.microsoft.com/windows-hardware/drivers/devtest/verifier-command-line)」を参照してください。
+* この変更は、 `/flags 0x209BB` WDF の検証が自動的に有効にならないように、DV で構文を有効にする場合に影響を与えます。
 
 Windows 10 以降、driver verifier には、次のテクノロジの新しいドライバー検証規則が含まれています。
 
-* [オーディオドライバーの新しい規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
-* [AVStream ドライバーの新しい規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
-* [KMDF ドライバーに関する](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)4 つの新しい規則
-* [NDIS ドライバーに関する](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)3 つの新しい規則
+* 新しい[オーディオ ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+* 新しい [AVStream ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+* 4 つの新しい [KMDF ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
+* 3 つの新しい [NDIS ドライバーの規則](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)
 
 ## <a name="driver-verifier-in-windows-8-1-updated-june-17-2013"></a>Windows 8-1 のドライバーの検証 (*更新日: 6 月 2013 17 日*)
 
@@ -56,15 +56,13 @@ Windows 8 以降では、ドライバーの検証ツールで、エラーを検�
 
 * [ [Power Framework 遅延ファジー](concurrency-stress-test.md) ] オプションを選択すると、ランダムな実行遅延が挿入され、電源管理フレームワーク (pofx) を使用するドライバーの同時実行のバグを検出できます。 実行の遅延には、上限があります。 このオプションは、電源管理フレームワーク (PoFx) を直接利用しないドライバーには推奨されません。
 * [ [Ddi 準拠の確認](ddi-compliance-checking.md)] オプションでは、[静的ドライバーの検証ツール](static-driver-verifier.md)が使用するのと同じデバイスドライバーインターフェイス (DDI) の使用規則を適用して、ドライバーが関数に対して必要な IRQL で関数呼び出しを行うかどうかを確認します。 DDI 準拠の確認は、標準ドライバーの検証ツールのオプションの一部として実行されます。
-* [インバリアントな Mdl チェックスタック](invariant-mdl-checking-for-stack.md)オプションは、ドライバーがドライバースタック全体で不変の mdl バッファーを処理する方法を監視します。
-* [インバリアントな Mdl チェックドライバー](invariant-mdl-checking-for-driver.md)オプションは、ドライバーがドライバー単位で不変の mdl バッファーを処理する方法を監視します。
+* [[不変な MDL のスタック用検査]](invariant-mdl-checking-for-stack.md) は、不変の MDL バッファーがドライバーでどのように処理されているかをドライバー スタック全体を対象に監視するオプションです。
+* [[不変な MDL のドライバー用検査]](invariant-mdl-checking-for-driver.md) は、不変の MDL バッファーがドライバーでどのように処理されているかをドライバー単位で監視するオプションです。
 * [スタックベースのエラー挿入](stack-based-failure-injection.md)オプションにより、カーネルモードドライバーにリソース割り当てエラーが挿入されます。
 
 Visual Studio 2012 および WDK for Windows 8 を使用してドライバーをビルド、配置、およびテストする場合、テスト用にドライバーを展開するときに、ドライバーの検証ツールをテストコンピューターで実行するように構成することもできます。
 
 ## <a name="driver-verifier-in-windows-7-updated-october-22-2012"></a>Windows 7 のドライバーの検証ツール (*更新日: 2012 年10月22日*)
-
-Windows 7 で追加された新機能の詳細については、「Windows 7 のホワイトペーパー[ドライバーの検証ツール]( https://go.microsoft.com/fwlink/p/?linkid=309793)」を参照してください。
 
 Windows 7 では、ドライバーの検証ツールが、一般的なドライバーのバグの多くのクラスを公開できるようにする新しいテストと機能によって、ドライバーの検証機能が強化されています。
 
@@ -83,15 +81,15 @@ Windows 7 では、ドライバーの検証ツールによって、キューに�
 
 * IRQL 値を下げる必要がある操作 ( [**KeReleaseInStackQueuedSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kereleaseinstackqueuedspinlock)など) が実際には irql 値を生成していないことを確認しています。
 
-* [FORCE Irql チェック](force-irql-checking.md)オプションが有効になっている場合に、システムプロセスのワーキングセットをトリミングします。\_レベル以上のディスパッチに irql が発生している場合は、ドライバーが昇格された状態で実行されている間に、ページング可能なメモリへの参照を公開しようとします。IRQL.
+* [強制 Irql チェック](force-irql-checking.md)オプションが有効になっている場合、IRQL がディスパッチレベル以上になっているときにシステムプロセスのワーキングセットをトリミング \_ すると、ドライバーが昇格された irql で実行されている間に、ページング可能なメモリへの参照を公開しようとします。
 
 * デッドロック検出オプションが有効になっている場合にデッドロックが発生する可能性を予測する。
 
-* 同じ KSPIN\_使用しようとすると、デッドロック検出オプションが有効になっているときに、スピンロックとして、およびスタックキューに格納されたスピンロックとしてデータ構造をロックします。
+* \_デッドロック検出オプションが有効になっている場合、スピンロックとしてもスタックキューとしても、同じ KSPIN lock データ構造を使用しようとしています。
 
 * スピンロックアドレスとして使用されるユーザーモード仮想アドレスなど、明らかに間違ったポインター値を確認しています。
 
-* Driver Verifier IRQL ログの IRQL 遷移をログに記録します。 この情報は、Windows デバッガーの **! verifier 8**拡張機能を使用するときに表示されます。 「 [ **! Verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)」を参照してください。
+* Driver Verifier IRQL ログの IRQL 遷移をログに記録します。 この情報は、Windows デバッガーの **! verifier 8**拡張機能を使用するときに表示されます。 「 [**! Verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)」を参照してください。
 
 ## <a name="additional-debugging-information"></a>追加のデバッグ情報
 
@@ -115,17 +113,15 @@ IRQL 遷移ログに有効なスタックトレースがあります。 この�
 
 ## <a name="driver-verifier-in-windows-vista-updated-february-9-2009"></a>Windows Vista のドライバーの検証ツール (*更新日: 2009 年2月9日*)
 
-Windows Vista で追加された新機能の詳細については、「Windows Vista のホワイトペーパー[ドライバーの検証ツール]( https://go.microsoft.com/fwlink/p/?linkid=309794)」を参照してください。
-
 Windows Vista では、新しいテストと機能によってドライバーの検証機能が強化されています。
 
 * ドライバーの検証を有効にし、再起動せずに設定を変更する
 * 強化された低リソースシミュレーション
-* 保留中の i/o 要求を強制する
-* セキュリティチェック
+* 保留中の I/O 要求を強制する
+* セキュリティ チェック
 * より詳細な i/o 検証
 * 拡張 IRQL チェック
-* その他のチェック
+* その他の検査
 * ロックされたメモリページの追跡
 * その他の自動チェック
 
@@ -139,14 +135,14 @@ Driver Verifier は、Windows カーネルモードドライバーとグラフ�
 * スタック切り替えの監視の新しい自動チェック
 * DMA 検証 (HAL 検証とも呼ばれます)、デッドロック検出、SCSI 検証用の新しいドライバー検証ツールオプション
 * "レベル 1" と "レベル 2" のテストを組み合わせた i/o 検証の変更、オプションの拡張 i/o 検証テスト
-* 新しいデバッガー拡張機能[ **! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)と[ **! dma**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-dma)
-* 新しいバグチェック: 0xE6 (ドライバー\_VERIFIER\_DMA\_違反) と 0xF1 (SCSI\_検証ツール\_検出された\_違反)
+* 新しいデバッガー拡張機能[**! デッドロック**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-deadlock)と[**! dma**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-dma)
+* 新しいバグチェック: 0xE6 (ドライバーの \_ 検証ツール \_ \_ の DMA 違反) と 0XF1 (SCSI \_ 検証ツールが \_ 検出された \_ 違反)
 * 既存のバグチェックコードの追加サブコード0xC4 および0Xc4
 
 ドライバーの検証機能には次のものも含まれます。
 
 * **新しい検証ツールのコマンドラインオプション**Ngen.exe ユーティリティには、新しいパラメーター *VolatileDriverList*があります。このパラメーターは、 **/adddriver**キーワードと共に使用して、揮発性設定に追加するドライバーの一覧を指定できます。 *VolatileDriverList*を **/removedriver**キーワードと共に使用して、削除するドライバーの一覧を指定できます。
-* **新しい! verifier 拡張機能**新しい[ **! 検証ツール**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)の拡張機能では、リソースの不足または IRQL の監視時に、追加のログ情報が表示されます。 オンラインヘルプも利用できます。
+* **新しい! verifier 拡張機能**新しい[**! 検証ツール**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)の拡張機能では、リソースの不足または IRQL の監視時に、追加のログ情報が表示されます。 オンラインヘルプも利用できます。
   * 0x4 で設定された*フラグ*により、リソース不足のシミュレーション中にドライバーの検証ツールによって挿入されたエラーのログが表示されます
   * 0x8 で設定された*フラグ*を使用すると、検証するドライバーによって行われた最新の IRQL の変更のログが表示されます。
   * *フラグ*が0x4 または0x8 と等しい場合、Quantity パラメーターは、表示に含めるレコードまたはログエントリの数を指定します。
@@ -157,4 +153,4 @@ Driver Verifier は、Windows カーネルモードドライバーとグラフ�
 
 * Driver verifier manager のオンラインヘルプドライバー検証マネージャーのオンラインヘルプは、次のいずれかの方法で表示できます。
   * [Driver Verifier マネージャー] ウィンドウで項目を右クリックし、ポップアップメニューから [何を選択します**か?** ] を選択します。
-  * ウィンドウの右上隅にある疑問符 ( **?** ) をクリックし、[Driver Verifier マネージャー] ウィンドウで項目をクリックします。
+  * ウィンドウの右上隅にある疑問符 (**?**) をクリックし、[Driver Verifier マネージャー] ウィンドウで項目をクリックします。

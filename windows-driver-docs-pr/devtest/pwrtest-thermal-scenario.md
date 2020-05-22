@@ -1,39 +1,39 @@
 ---
 title: PwrTest の温度シナリオ
-description: PwrTest 熱のシナリオでは、ACPI 熱のゾーンの情報と統計情報を監視します。
+description: PwrTest Thermal シナリオでは、ACPI の温度ゾーン情報と統計情報を監視します。
 ms.assetid: C6941A50-EA0F-4C46-A290-8CAAD292E156
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 92add792882c0a50b7697b1976181fbf2e2a10c5
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f3d9e86da55a505ad8dd6835e15d32a8ad3a4347
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380958"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769572"
 ---
 # <a name="pwrtest-thermal-scenario"></a>PwrTest の温度シナリオ
 
 
-PwrTest 熱のシナリオでは、ACPI 熱のゾーンの情報と統計情報を監視します。 このシナリオは、温度のゾーンと気温の変化を報告するシステムでのみサポートされます。
+PwrTest Thermal シナリオでは、ACPI の温度ゾーン情報と統計情報を監視します。 このシナリオは、サーマルゾーンと温度の変化を報告するシステムでのみサポートされています。
 
-**注**このシナリオは、オペレーティング システムに温度データを報告するシステムでのみ機能します。
+**メモ** このシナリオは、オペレーティングシステムに対して温度データを報告するシステムでのみ機能します。
 
  
 
-## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>構文
+## <a name="span-idsyntaxspanspan-idsyntaxspanspan-idsyntaxspansyntax"></a><span id="Syntax"></span><span id="syntax"></span><span id="SYNTAX"></span>文
 
 
 ```
 pwrtest /thermal [/t:n] [/?] 
 ```
 
-<span id="_t_n"></span><span id="_T_N"></span>**t:**<em>n</em>  
-シナリオの実行を合計時間 (分) を指定します (既定値の*n*は 30 分です)。
+<span id="_t_n"></span><span id="_T_N"></span>**/t:**<em>n</em>  
+シナリオが実行されるまでの合計時間 (分) を指定します ( *n*の既定値は30分です)。
 
-<span id="_temp_kcf"></span><span id="_TEMP_KCF"></span>**/temp:**{**k**|**c**|**f**}  
-ケルビンの温度尺度を指定します (**k**)、摂氏 (**c**)、華氏 (**f**) すべての出力とログ記録を使用する (既定値はケルビン)。
+<span id="_temp_kcf"></span><span id="_TEMP_KCF"></span>**/一時:**{**k** | **c** | **f**}  
+すべての出力とログに使用する気温 (**k**)、摂氏 (**c**)、華氏 (**f**) を指定します (既定値はケルビン)。
 
-**使用例**
+**例**
 
 ```
 pwrtest /thermal  
@@ -47,7 +47,7 @@ pwrtest /thermal  /t:30
 pwrtest /thermal  /t:30 /temp:f
 ```
 
-### <a name="span-idxmllogfileoutputspanspan-idxmllogfileoutputspanspan-idxmllogfileoutputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML ログ ファイルの出力
+### <a name="span-idxml_log_file_outputspanspan-idxml_log_file_outputspanspan-idxml_log_file_outputspanxml-log-file-output"></a><span id="XML_log_file_output"></span><span id="xml_log_file_output"></span><span id="XML_LOG_FILE_OUTPUT"></span>XML ログファイルの出力
 
 ```XML
 <PwrTestLog>
@@ -105,7 +105,7 @@ pwrtest /thermal  /t:30 /temp:f
 </PwrTestLog> 
 ```
 
-次の表では、ログ ファイルに表示される XML 要素について説明します。
+次の表では、ログファイルに表示される XML 要素について説明します。
 
 <table>
 <colgroup>
@@ -120,72 +120,72 @@ pwrtest /thermal  /t:30 /temp:f
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>&lt;ThermalEvents&gt;</strong></td>
-<td align="left"><p>すべての別の温度のイベントが含まれています。 1 つのみ<strong>&lt;ThermalEvents&gt;</strong> PwrTest ログ ファイル内の要素。</p></td>
+<td align="left"><strong>&lt;悪意のあるイベント&gt;</strong></td>
+<td align="left"><p>すべての異なる温度イベントが含まれます。 PwrTest ログファイル内に存在できるのは、1つのテストの<strong> &lt; イベント &gt; </strong>要素だけです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;EnteringCS&gt;</strong></td>
-<td align="left"><p>接続されたスタンバイ (CS) の開始、システムにエントリが CS とすぐに表示をオフになった入力が無効になっています。</p></td>
+<td align="left"><p>コネクトスタンバイ (CS) エントリが開始されました。システムは、ディスプレイがオフになり、入力が無効になるとすぐに CS にあります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ExitingCS&gt;</strong></td>
-<td align="left"><p>CS 終了を開始します。</p></td>
+<td align="left"><p>CS の終了を開始しました。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;ExitedCS&gt;</strong></td>
-<td align="left"><p>CS 終了が完了しました。</p></td>
+<td align="left"><p>CS の終了が完了しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;AbortingCS&gt;</strong></td>
-<td align="left"><p>CS エントリを中止し、最下位のフェーズに入る前に終了します。</p></td>
+<td align="left"><p>最も深いフェーズに入る前に CS エントリが中止され、終了します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;AbortedCS&gt;</strong></td>
-<td align="left"><p>CS 終了が中止されたエントリの後に完了しました。</p></td>
+<td align="left"><p>中止されたエントリの後に CS 終了が完了しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;InputDisabled&gt;</strong></td>
-<td align="left"><p>ローカルのコンソールで、ユーザー入力が無効にされました。</p></td>
+<td align="left"><p>ユーザー入力がローカルコンソールで無効になっています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;InputEnabled&gt;</strong></td>
-<td align="left"><p>ユーザー入力は、ローカルのコンソールで有効にされました。</p></td>
+<td align="left"><p>ローカルコンソールでユーザー入力が有効になりました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;PhaseEnter&gt;</strong></td>
-<td align="left"><p>CS フェーズは、入力された名前の属性が CS フェーズの名前。</p></td>
+<td align="left"><p>CS フェーズが入力されました。 name 属性は CS フェーズの名前です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;PhaseExit&gt;</strong></td>
-<td align="left"><p>CS フェーズが終了した、名前の属性が CS フェーズの名前。</p></td>
+<td align="left"><p>CS フェーズが終了しました。 name 属性は CS フェーズの名前です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;ExecutionRequiredSet&gt;</strong></td>
-<td align="left"><p>プロセスには、ダム フェーズの完了をブロックする実行の必要な要求が行われます。</p></td>
+<td align="left"><p>プロセスが実行が必要な要求を実行しました。これにより、DAM フェーズの完了がブロックされます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>&lt;ExecutionRequiredCleared&gt;</strong></td>
-<td align="left"><p>プロセスでは、ダム フェーズの完了にブロックを解除する実行の必要な要求をクリアします。</p></td>
+<td align="left"><strong>&lt;ExecutionRequiredCleared クリアされました&gt;</strong></td>
+<td align="left"><p>プロセスが、DAM フェーズの完了をブロックする実行が必要な要求を消去しました。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>&lt;PlatformIdleStats&gt;</strong></td>
-<td align="left"><p>アイドル状態の統計情報ブロックのプラットフォームです。</p></td>
+<td align="left"><p>Platform idle statistics block。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>&lt;状態&gt;</strong></td>
-<td align="left"><p>以前のプラットフォームのアイドル状態の統計情報ブロックのためのプラットフォームのアイドル状態の遷移の数。</p></td>
+<td align="left"><p>以前のプラットフォームアイドル統計ブロック以降のプラットフォームアイドル状態の移行回数。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[PwrTest 構文](pwrtest-syntax.md)
+[PwrTest の構文](pwrtest-syntax.md)
 
-[PowerCfg](https://go.microsoft.com/fwlink/p/?linkid=294568)
+[PowerCfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options)
 
  
 

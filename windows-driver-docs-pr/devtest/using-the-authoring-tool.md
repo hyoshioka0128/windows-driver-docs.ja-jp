@@ -6,27 +6,26 @@ keywords:
 - デバイス メタデータ作成ウィザードの使用
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d1af4e0acb7c91b6135c487eaec1531eeaf39c1c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dc768bba5a782d112bc20849b5a0e2fcf687d1b
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325423"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769470"
 ---
 # <a name="using-the-device-metadata-authoring-wizard"></a>デバイス メタデータ作成ウィザードの使用
 
 
-\[このトピックでは、デバイス メタデータの Authoring tool で、Windows Driver Kit (WDK) 8 の提供について説明します。 Windows 8.1 のデバイス エクスペリエンスを開発する場合は、デバイス メタデータの作成ウィザードで使用可能なを使用して[Microsoft Visual Studio 2013 と Windows Driver Kit (WDK) 8.1](https://go.microsoft.com/fwlink/p/?LinkId=226411)します。 詳細については、次を参照してください。 [Windows 8.1 のデバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=325561)します。 \]
+\[このトピックでは、Windows Driver Kit (WDK) 8 に用意されているデバイスメタデータ Authoring tool について説明します。 Windows 8.1 用のデバイスエクスペリエンスを開発している場合は、 [Microsoft Visual Studio 2013 および Windows Driver Kit (WDK) 8.1](https://www.microsoft.com/download/details.aspx?id=42273)で使用できるデバイスメタデータ作成ウィザードを使用します。  \]
 
-## <a name="span-idgettingstartedspanspan-idgettingstartedspanspan-idgettingstartedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>作業の開始
+## <a name="span-idgetting_startedspanspan-idgetting_startedspanspan-idgetting_startedspangetting-started"></a><span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>はじめに
 
 
-起動したら、 **Authoring** 、ツール、**メタデータの作成ウィザードへようこそ**画面が表示されます。 次のいずれかのオプションを選びます。
+**Authoring** tool を起動すると、[**メタデータ作成ウィザードへようこそ**] 画面が表示されます。 次のいずれかのオプションを選択します。
 
--   新しいデバイス メタデータ パッケージを作成するには、次のように選択します。**デバイス メタデータ パッケージの新規作成**、順にクリックします**次**します。
--   既存のデバイス メタデータ パッケージを更新するには、次のように選択します。**既存のデバイス メタデータ パッケージの更新**、 をクリック**参照**、パッケージを選択し、クリックする**次へ**します。
-    **注**  ツールを使用して Device Stage エクスペリエンスを編集することはできません。 ただし、このツールを使用して、パッケージを更新する場合、Device Stage フォルダーは変更されません。 Device Stage の詳細についてを参照してください[Windows 7 デバイス エクスペリエンス](https://go.microsoft.com/fwlink/p/?linkid=221801)します。
-
+-   新しいデバイスメタデータパッケージを作成するには、[**新しいデバイスメタデータパッケージの作成**] を選択し、[**次へ**] をクリックします。
+-   既存のデバイスメタデータパッケージを更新するには、[**既存のデバイスメタデータパッケージを更新**する] を選択し、[**参照**] をクリックしてパッケージを選択し、[**次へ**] をクリックします。
+    **メモ**   ツールを使用してデバイスステージエクスペリエンスを編集することはできません。 ただし、このツールを使用してパッケージを更新する場合、Device Stage フォルダーは変更されません。 
      
 
  

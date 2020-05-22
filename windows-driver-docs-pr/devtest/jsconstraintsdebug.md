@@ -1,20 +1,20 @@
 ---
 title: JSConstraintsDebug
-description: JSConstraintsDebug (JSConstraintsDebug.exe) は、V4 プリンター ドライバーの開発中に JavaScript 制約に対するデバッグのサポートを提供するコマンド ライン ツールです。
+description: JSConstraintsDebug (JSConstraintsDebug) は、V4 プリンタードライバーの開発中に JavaScript の制約のデバッグサポートを提供するコマンドラインツールです。
 ms.assetid: 48C39A2C-7EA6-4BAA-B5E8-3B426C9697B3
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fe2a51979dd2ab3a69eeb553582b1b1a24bd6b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 723202417f7d8e763313e4ce03d4072635b20e63
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67373658"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769436"
 ---
 # <a name="jsconstraintsdebug"></a>JSConstraintsDebug
 
 
-JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポートを提供するコマンド ライン ツールは、 [JavaScript 制約](https://docs.microsoft.com/windows-hardware/drivers/print/javascript-constraints)開発中に、 [V4 プリンター ドライバー](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)します。
+JSConstraintsDebug (JSConstraintsDebug) は、 [V4 プリンタードライバー](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver)の開発中に[JavaScript の制約](https://docs.microsoft.com/windows-hardware/drivers/print/javascript-constraints)のデバッグサポートを提供するコマンドラインツールです。
 
 <table>
 <colgroup>
@@ -27,14 +27,14 @@ JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポー
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>JSConstraintsDebug.exe には、Microsoft Windows Driver Kit (WDK) が含まれています。 WDK の取得方法の詳細については、次を参照してください。 <a href="https://go.microsoft.com/fwlink/p/?LinkId=808351" data-raw-source="[Windows Driver Kit downloads](https://go.microsoft.com/fwlink/p/?LinkId=808351)">Windows Driver Kit のダウンロード</a>します。</p></td>
+<td align="left"><p>JSConstraintsDebug は、Microsoft Windows Driver Kit (WDK) に含まれています。 WDK の入手方法については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk" data-raw-source="[Windows Driver Kit downloads](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)">Windows Driver Kit のダウンロード</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-ツールは、印刷チケットが提供されているユーザーに対して、対象となるドライバーの JavaScript の制約に対して、次の関連するエントリ ポイントの Api の各を実行します。
+ツールは、次の関連するエントリポイント Api を、対象となるドライバーの JavaScript 制約に対して、ユーザーが指定した印刷チケットに対して実行します。
 
 [**PTGetPrintCapabilities**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptgetprintcapabilities)
 
@@ -44,20 +44,20 @@ JSConstraintsDebug (JSConstraintsDebug.exe) に対するデバッグのサポー
 
 [**PTMergeAndValidatePrintTicket**](https://docs.microsoft.com/windows/desktop/api/prntvpt/nf-prntvpt-ptmergeandvalidateprintticket)
 
-実行中に、ツールは Visual Studio など、適切な IDE デバッガー求められます。 選択、制約のソース コードを開くし、する JavaScript デバッガー ステートメントで停止します。
+実行時に、Visual Studio などの適切な IDE デバッガーを入力するように求められます。 選択すると、制約のソースコードが JavaScript デバッガーステートメントで開かれ、停止されます。
 
 JS 制約ファイルをデバッグするには、次の手順を実行します。
 
 1.  コマンド プロンプト ウィンドウを開きます。
 
-2.  JSConstraintsDebug.exe ツールを実行し、最小値、プリンター名、およびテストへのパスでの印刷チケットを指定します。
+2.  JSConstraintsDebug ツールを実行し、少なくともプリンター名とテスト印刷チケットへのパスを指定します。
 
-3.  使用するデバッグ ツールを選択します。
+3.  使用するデバッグツールを選択します。
 
-## <a name="span-idrunningjsconstraintsdebuginusermodespanspan-idrunningjsconstraintsdebuginusermodespanspan-idrunningjsconstraintsdebuginusermodespanrunning-jsconstraintsdebug-in-user-mode"></a><span id="Running_JSConstraintsDebug_in_user_mode"></span><span id="running_jsconstraintsdebug_in_user_mode"></span><span id="RUNNING_JSCONSTRAINTSDEBUG_IN_USER_MODE"></span>ユーザー モードで実行中の JSConstraintsDebug
+## <a name="span-idrunning_jsconstraintsdebug_in_user_modespanspan-idrunning_jsconstraintsdebug_in_user_modespanspan-idrunning_jsconstraintsdebug_in_user_modespanrunning-jsconstraintsdebug-in-user-mode"></a><span id="Running_JSConstraintsDebug_in_user_mode"></span><span id="running_jsconstraintsdebug_in_user_mode"></span><span id="RUNNING_JSCONSTRAINTSDEBUG_IN_USER_MODE"></span>ユーザーモードで JSConstraintsDebug を実行しています
 
 
-JS 関数のデバッグを有効にするのには、管理者特権での特権が必要です。 ユーザー モードで実行するには、JSConstraintsDebug.exe を実行する前に、次のレジストリ キーを設定する必要があります。
+JS 関数のデバッグを有効にするには、昇格された特権が必要です。 ユーザーモードで実行するには、JSConstraintsDebug を実行する前に次のレジストリキーを設定する必要があります。
 
 <table>
 <colgroup>
@@ -67,14 +67,14 @@ JS 関数のデバッグを有効にするのには、管理者特権での特�
 <tbody>
 <tr class="odd">
 <td align="left"><p>キー名</p></td>
-<td align="left"><p>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print</p></td>
+<td align="left"><p>HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\Print</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>値の名前</p></td>
 <td align="left"><p>EnableJavaScriptDebugging</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>型</p></td>
+<td align="left"><p>種類</p></td>
 <td align="left"><p>DWORD</p></td>
 </tr>
 <tr class="even">
@@ -86,12 +86,12 @@ JS 関数のデバッグを有効にするのには、管理者特権での特�
 
  
 
-## <a name="span-idjavascriptdebuggerstatementsspanspan-idjavascriptdebuggerstatementsspanspan-idjavascriptdebuggerstatementsspanjavascript-debugger-statements"></a><span id="JavaScript_debugger_statements"></span><span id="javascript_debugger_statements"></span><span id="JAVASCRIPT_DEBUGGER_STATEMENTS"></span>JavaScript デバッガー ステートメント
+## <a name="span-idjavascript_debugger_statementsspanspan-idjavascript_debugger_statementsspanspan-idjavascript_debugger_statementsspanjavascript-debugger-statements"></a><span id="JavaScript_debugger_statements"></span><span id="javascript_debugger_statements"></span><span id="JAVASCRIPT_DEBUGGER_STATEMENTS"></span>JavaScript デバッガーステートメント
 
 
-ブレークポイントは、デバッガー ステートメントを使用して、JavaScript のソースで作成できます。 これは、ステップ バイ ステップのデバッグは、すべて Visual Studio での操作を一時停止します。 これらのステートメントは、のいずれかに挿入できる、 [JavaScript 制約 Api](https://go.microsoft.com/fwlink/p/?LinkId=808350)します。
+デバッガーステートメントを使用して、JavaScript ソースでブレークポイントを作成できます。 これにより、Visual Studio での操作が一時停止され、ステップバイステップのデバッグが可能になります。 これらのステートメントは、任意の[JavaScript 制約 api](https://docs.microsoft.com/windows-hardware/drivers/print/javascript-constraints)に挿入できます。
 
-例:
+次に例を示します。
 
 ```JavaScript
 function validatePrintTicket(PrintTicket, scriptContext)
@@ -101,14 +101,14 @@ function validatePrintTicket(PrintTicket, scriptContext)
 }
 ```
 
-## <a name="span-idjsconstraintsdebugcommandsyntaxspanspan-idjsconstraintsdebugcommandsyntaxspanspan-idjsconstraintsdebugcommandsyntaxspanjsconstraintsdebug-command-syntax"></a><span id="JSConstraintsDebug_Command_Syntax"></span><span id="jsconstraintsdebug_command_syntax"></span><span id="JSCONSTRAINTSDEBUG_COMMAND_SYNTAX"></span>JSConstraintsDebug コマンドの構文
+## <a name="span-idjsconstraintsdebug_command_syntaxspanspan-idjsconstraintsdebug_command_syntaxspanspan-idjsconstraintsdebug_command_syntaxspanjsconstraintsdebug-command-syntax"></a><span id="JSConstraintsDebug_Command_Syntax"></span><span id="jsconstraintsdebug_command_syntax"></span><span id="JSCONSTRAINTSDEBUG_COMMAND_SYNTAX"></span>JSConstraintsDebug コマンドの構文
 
 
 ```
 JSConstraintsDebug <PrinterName> <PrintTicket> [MergePrintTicket] [Constraints]
 ```
 
-## <a name="span-idcommandparametersspanspan-idcommandparametersspanspan-idcommandparametersspancommand-parameters"></a><span id="Command_parameters"></span><span id="command_parameters"></span><span id="COMMAND_PARAMETERS"></span>コマンドのパラメーター
+## <a name="span-idcommand_parametersspanspan-idcommand_parametersspanspan-idcommand_parametersspancommand-parameters"></a><span id="Command_parameters"></span><span id="command_parameters"></span><span id="COMMAND_PARAMETERS"></span>コマンドパラメーター
 
 
 <table>
@@ -124,47 +124,47 @@ JSConstraintsDebug <PrinterName> <PrintTicket> [MergePrintTicket] [Constraints]
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="PrinterName"></span><span id="printername"></span><span id="PRINTERNAME"></span>プリンター名</p></td>
-<td align="left"><p>必須。 JS 制約のソース ファイルを含む印刷ドライバーの文字列名を指定します。 このドライバーは、すべてのデバッグ操作に使用されます。</p></td>
+<td align="left"><p><span id="PrinterName"></span><span id="printername"></span><span id="PRINTERNAME"></span>PrinterName</p></td>
+<td align="left"><p>必須。 JS 制約のソースファイルを含む印刷ドライバーの文字列名を指定します。 このドライバーは、すべてのデバッグ操作に使用されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="PrintTicket"></span><span id="printticket"></span><span id="PRINTTICKET"></span>PrintTicket</p></td>
-<td align="left"><p>必須。 検証する印刷チケットの XML ファイルの名前とパスを指定します。</p></td>
+<td align="left"><p>必須。 検証する印刷チケット XML ファイルのパスと名前を指定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="MergePrintTicket"></span><span id="mergeprintticket"></span><span id="MERGEPRINTTICKET"></span>MergePrintTicket</p></td>
-<td align="left"><p>任意。 マージ操作を検証するために使用する印刷チケットの XML ファイルの名前とパスを指定します。</p>
-<p>このパラメーターは、マージ変換および検証 API を既定の DevMode 印刷チケットに変換され、渡されるを設定されていません。 場合、</p></td>
+<td align="left"><p>省略可能。 マージ操作の検証に使用される、印刷チケットの XML ファイルのパスと名前を指定します。</p>
+<p>このパラメーターが設定されていない場合、既定の DevMode は印刷チケットに変換され、Merge and Validate API に渡されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>制約</p></td>
-<td align="left"><p>任意。 デバッグする前に対象となるプリンター ドライバーにある既存の制約のソース ファイルを置換する JavaScript 制約ファイルの名前とパスを指定します。</p></td>
+<td align="left"><p><span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>Constraints</p></td>
+<td align="left"><p>省略可能。 デバッグする前に、対象となるプリンタードライバーで見つかった既存の制約ソースファイルを置き換える JavaScript 制約ファイルのパスと名前を指定します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**注**  制約パラメーターを使用して制約ファイルを指定すると、対象となるドライバーに既存のソース コードが上書きされます。
+**メモ**   制約パラメーターを使用して制約ファイルを指定すると、対象のドライバーの既存のソースコードが上書きされます。
 
  
 
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
 
 
-既知のテストの印刷チケットに対して印刷ドライバーをデバッグします。
+既知のテスト印刷チケットに対して、印刷ドライバーをデバッグします。
 
 ```
 JSConstraintsDebug “Contoso Printer” PrintTicket.xml
 ```
 
-既知のテストの印刷チケットに対する新しい制約ソース ファイルでは、印刷ドライバーをデバッグします。
+既知のテスト印刷チケットに対して新しい制約ソースファイルを使用して、印刷ドライバーをデバッグします。
 
 ```
 JSConstraintsDebug “Contoso Printer” PrintTicket.xml Constraints.js
 ```
 
-マージをテストし、2 つのカスタム印刷チケットの間での操作を検証します。
+2つのカスタム印刷チケット間でマージと検証の操作をテストします。
 
 ```
 JSConstraintsDebug “Contoso Printer” PrintTicket.xml PrintTicket2.xml

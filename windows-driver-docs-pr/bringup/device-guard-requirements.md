@@ -1,122 +1,125 @@
 ---
 title: セキュリティで保護された MOR 実装
-description: 動作および MemoryOverwriteRequestControlLock UEFI 変数、リビジョン 2 の使用について説明します。
+description: MemoryOverwriteRequestControlLock UEFI 変数 revision 2 の動作と使用法について説明します。
 ms.assetid: 94F42629-3B76-4EB1-A5FA-4FA13C932CED
-ms.date: 04/20/2017
+ms.date: 01/21/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d2beead842d1b671b84de6eb0ea167d88534417e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 67296395acd0e9a83c2c5dd71b3459854fd59ce1
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328093"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769398"
 ---
 # <a name="secure-mor-implementation"></a>セキュリティで保護された MOR 実装
 
+## <a name="summary"></a>要約
 
-**要約**
+- MorLock の動作、リビジョン2
 
--   MorLock、リビジョン 2 の動作
+## <a name="last-updated"></a>最終更新日
 
-**最終更新日**
+- 2018 年 1 月
 
--   2018 年 1 月
+## <a name="applies-to"></a>適用対象
 
-**適用対象**
+- Windows 10
 
--   Windows 10
--   Windows 10 の Credential Guard 機能をサポートする Oem と BIOS のベンダー。
+- Windows 10 の Credential Guard 機能をサポートする Oem および BIOS ベンダー。
 
-**公式の仕様**
+## <a name="official-specifications"></a>公式の仕様
 
--   [UEFI 仕様に準拠](https://go.microsoft.com/fwlink/p/?LinkId=717873)
--   [PC クライアント作業グループ プラットフォーム リセット攻撃軽減策仕様、バージョン 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)
+- [UEFI 仕様](https://uefi.org/specifications)
 
-**推奨資料**
+- [PC クライアントの作業グループプラットフォームのリセット攻撃の緩和の仕様、バージョン 1.0 (PDF のダウンロード)](https://www.trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)
 
--   [ブログの投稿:コールド攻撃 (およびその他の脅威) から BitLocker の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717871)
--   [ホワイト ペーパー:EDKII で BIOS、UEFI TPM2 サポート外のツアー]( https://go.microsoft.com/fwlink/p/?LinkId=717872)
--   [Credential Guard によるドメインの派生資格情報の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717899)
+## <a name="recommended-reading"></a>推奨資料
 
-使用状況と動作について説明します、 `MemoryOverwriteRequestControlLock` UEFI 変数、リビジョン 2。
+- [ブログの投稿: コールド攻撃 (およびその他の脅威) からの BitLocker の保護](https://docs.microsoft.com/archive/blogs/si_team/protecting-bitlocker-from-cold-attacks-and-other-threats)
 
-高度なメモリを防ぐために攻撃、既存のシステム BIOS のセキュリティ対策**MemoryOverwriteRequestControl**ロック新たな脅威に対する防御をサポートするが向上します。  脅威モデルは、敵対者として、ホスト OS カーネルのように拡張は、したがって ACPI およびカーネルの特権レベルで実行する UEFI ランタイム サービスが信頼されていません。  セキュア ブートの実装と同様に、MorLock は (たとえば、システム管理モード、TrustZone、BMC、およびなど) は、ホスト OS カーネルによって改ざんされない特権ファームウェアの実行コンテキストをで実装する必要があります。  インターフェイスは、UEFI 仕様バージョン 2.5 では、「変数サービス」という名前のセクション 7.2 で説明されている UEFI 変数サービスに基づいて構築されています。
+- [ホワイトペーパー: EDKII での UEFI TPM2 のサポートを備えた BIOS 以外のツアー](https://github.com/tianocore/edk2-platforms/blob/devel-MinPlatform/Platform/Intel/MinPlatformPkg/Docs/A_Tour_Beyond_BIOS_Open_Source_IA_Firmware_Platform_Design_Guide_in_EFI_Developer_Kit_II%20-%20V2.pdf)
 
-**注**  と呼ばれるこの緩和策*MorLock*、すべての新しいシステムに実装されだけでなく、トラステッド プラットフォーム モジュールをシステムに制限する必要があります。 リビジョン 2 は、新しい機能を追加します*のロックを解除*、特に大容量メモリ システムで、ブート パフォーマンスの問題を軽減するためにします。
+- [Credential Guard によるドメインの派生資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
 
-**注 2**  に関する、ACPI \_DSM コントロールのメソッド、されますを設定するビットの状態 (セクション 6 の説明に従って[PC クライアント作業グループ プラットフォーム リセット攻撃軽減策の仕様、バージョン 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)):  
-Microsoft では、これを削除することをお勧め\_DSM メソッド最新の BIOS の実装から。  ただし、これを BIOS が実装されている場合\_DSM メソッド、MorLock の状態を考慮する必要があります。  MorLock がロックされている、またはキーがない場合この\_されますを変更し、「一般的なエラー」に対応する 1 つの値を返す DSM メソッドが失敗する必要があります。  MorLock リビジョン 2 のロックを解除する ACPI メカニズムが定義されていません。  Windows が呼び出されないこと直接この注\_Windows 7 以降の DSM メソッドと、非推奨と見なされます。  一部の BIOS*間接的*これを呼び出す\_DSM メソッドが呼び出す ACPI の Windows と\_されます自動検出のクリーン シャット ダウンの実装として PTS (」の「2.3 の説明に従って[PC クライアントの作業プラットフォームのリセット攻撃軽減策の仕様、バージョン 1.0 をグループ化](https://go.microsoft.com/fwlink/p/?LinkId=717870))。  この ACPI\_されますの自動検出の PTS 実装が不十分なセキュリティとは使用できません。
+## <a name="overview"></a>概要
+
+このトピックでは、UEFI 変数 revision 2 の動作と使用法について説明し `MemoryOverwriteRequestControlLock` ます。
+
+高度なメモリ攻撃を防ぐために、既存のシステム BIOS のセキュリティ対策**MemoryOverwriteRequestControl**が改善され、新しい脅威から保護するためのロックがサポートされるようになりました。  脅威モデルは、ホスト OS カーネルを敵対者として追加するために拡張されているため、カーネル特権レベルで実行されている ACPI および UEFI ランタイムサービスは信頼されていません。  セキュアブート実装と同様に、MorLock は、ホスト OS カーネル (システム管理モード、TrustZone、BMC など) によって改ざんされる特権のあるファームウェア実行コンテキストに実装する必要があります。  このインターフェイスは UEFI 変数サービスに基づいて構築されています。これについては、UEFI 仕様バージョン2.5 で説明されています。 "Variable Services" という名前のセクション7.2 を参照してください。
+
+*Morlock*と呼ばれるこの軽減策は、すべての新しいシステムに実装する必要があり、信頼されたプラットフォームモジュールを持つシステムに限定されるだけではありません。 リビジョン2では、起動時のパフォーマンスの問題を軽減するために、新しい機能である*ロック解除*を追加します。特に、大規模なメモリシステムでは、
+
+\_MOR bit 状態を設定するための ACPI DSM の制御方法については、「 [PC クライアントの作業グループプラットフォームのリセット攻撃の回避仕様、バージョン 1.0 (PDF のダウンロード)](https://www.trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)」で説明されているように、この \_ dsm メソッドを最新の BIOS 実装から削除することをお勧めします。  ただし、BIOS がこの DSM メソッドを実装する場合は、 \_ MorLock の状態を尊重する必要があります。  キーがあるかどうかにかかわらず、MorLock がロックされている場合、この \_ DSM メソッドは MOR を変更できず、"一般エラー" に対応する値1を返す必要があります。  MorLock リビジョン2のロックを解除するための ACPI メカニズムが定義されていません。  
+
+Windows は、windows 7 以降、この DSM メソッドを直接呼び出していないの \_ で、非推奨と見なされることに注意してください。  BIOS に*indirectly*よっ \_ ては、Windows が自動的にクリーンシャットダウンの実装として ACPI ポイントを呼び出すときに、この DSM メソッドが間接的に呼び出さ \_ れます (「 [PC クライアントの作業グループプラットフォームリセット攻撃の仕様、バージョン 1.0 (PDF ダウンロード)](https://www.trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)」のセクション2.3 を参照)。  
+
+この ACPI \_ PTS での MOR 自動検出の実装はセキュリティ短さであるため、使用しないでください。
 
 ## <a name="memoryoverwriterequestcontrollock"></a>MemoryOverwriteRequestControlLock
 
+改善された軽減策を含む BIOS は、初期ブート時にこの UEFI 変数を作成します。
 
-強化された軽減策を含む BIOS では、ブート プロセスの初期中にこの UEFI 変数を作成します。
+**VendorGuid:**`{BB983CCF-151D-40E1-A07B-4A17BE168292}`
 
-**VendorGuid:** `{BB983CCF-151D-40E1-A07B-4A17BE168292}`
+**名前:**`MemoryOverwriteRequestControlLock`
 
-**名:** `MemoryOverwriteRequestControlLock`
+**属性:** NV + BS + RT
 
-**属性:** NV + B キーを押しながら RT
+*データ*パラメーターの**getvariable**値: 0x0 (ロック解除);0x1 (キーなしでロック);0x2 (キーでロック)
 
-**GetVariable**値*データ*パラメーター。0x0 (ロック)。0x1 (キーのないロック)。0x2 (キーを持つロック)
+*データ*パラメーターの**setvariable**値: 0x0 (ロック解除);0x1 (ロック)
 
-**SetVariable**値*データ*パラメーター。0x0 (ロック)。0x1 (ロック)
+## <a name="locking-with-setvariable"></a>SetVariable によるロック
 
-## <a name="locking-with-setvariable"></a>SetVariable のロック
+すべてのブートで、BIOS は `MemoryOverwriteRequestControlLock` ブートデバイス選択 (BDS) フェーズ (ドライバー *unlocked* \# \# \# \# 、SYSPREP \# \# \# \# 、ブート \# \# \# \# 、 \* 回復 \* 、...) の前に、0x00 (ロック解除を示す) の1バイト値に初期化します。 `MemoryOverwriteRequestControlLock`(および) の場合 `MemoryOverwriteRequestControl` 、BIOS は変数と属性の削除を NV + BS + RT に固定する必要があります。
 
+の**Setvariable** `MemoryOverwriteRequestControlLock` が、*データ*で0以外の有効な値を渡すことによって最初に呼び出された場合、との両方のアクセスモード `MemoryOverwriteRequestControlLock` `MemoryOverwriteRequestControl` が読み取り専用に変更され、ロックされていることが示されます。
 
-起動のたびに BIOS が初期化されます`MemoryOverwriteRequestControlLock`0x00 の 1 バイト値に (示す*ロックされていない*) ブート デバイスの選択 (BDS) フェーズの前に (ドライバー\# \# \# \#、SYSPREP\#\#\#\#、ブート\#\#\#\#、 \*RECOVERY\*,...)。 `MemoryOverwriteRequestControlLock` (と`MemoryOverwriteRequestControl`) BIOS が、変数の削除を防ぐものと、属性は、NV + B キーを押しながら RT にピン留めする必要があります。
+Revision 1 の実装では、に対して1バイトの0x00 または0x01 のみを受け入れ `MemoryOverwriteRequestControlLock` ます。
 
-ときに**SetVariable**の`MemoryOverwriteRequestControlLock`で有効な 0 以外の値を渡すことによって最初に呼び出された*データ*、両方のアクセス モード`MemoryOverwriteRequestControlLock`と`MemoryOverwriteRequestControl`読み取り専用を示すにはあるロックされます。
+さらに、リビジョン2では、共有シークレットキーを表す8バイトの値も受け入れられます。 **Setvariable**に他の値が指定されている場合は、status EFI INVALID パラメーターで呼び出しが失敗し \_ \_ ます。 このキーを生成するには、トラステッドプラットフォームモジュールやハードウェアの乱数ジェネレーターなどの高品質のエントロピソースを使用します。
 
-リビジョン 1 実装は 0x00 またはの 0x01 の 1 バイトだけを受け入れる`MemoryOverwriteRequestControlLock`します。
+キーを設定した後、呼び出し元とファームウェアの両方で、このキーのコピーを機密性の保護された場所 (IA32/X64 の場合は SMRAM、保護された記憶域を使用するサービスプロセッサなど) に保存する必要があります。
 
-リビジョン 2 は、さらに、共有シークレット キーを表す 8 バイトの値を受け入れます。 その他の値が指定されている場合**SetVariable**、EFI の状態で失敗する\_無効な\_パラメーター。 そのキーを生成するには、トラステッド プラットフォーム モジュール、またはハードウェア乱数ジェネレーターなど、質の高いエントロピのソースを使用します。
+## <a name="getting-the-system-state"></a>システム状態の取得
 
-キーを設定した後、呼び出し元とファームウェアは SMRAM IA32/X 64 上で保護された記憶域を備えたサービス プロセッサなどの機密性が保護された場所にこのキーのコピーを保存する必要があります。
+リビジョン2では、 `MemoryOverwriteRequestControlLock` 変数と `MemoryOverwriteRequestControl` 変数がロックされている場合、(これらの変数の) **setvariable**の呼び出しは、最初に、定数時間アルゴリズムを使用して、登録されたキーに対してチェックされます。 両方のキーが存在し、一致する場合、変数はロック解除された状態に戻ります。 この最初の試行の後、またはキーが登録されていない場合、この変数を設定しようとすると、 \_ \_ ブルートフォース攻撃を防ぐために EFI アクセス拒否によって失敗します。 その場合、システムの再起動は、変数のロックを解除する唯一の方法である必要があります。
 
-## <a name="getting-the-system-state"></a>システム状態を取得します。
+オペレーティングシステムは、 `MemoryOverwriteRequestControlLock` **getvariable**を呼び出して、とその状態の存在を検出します。 システムは、値を0x1 に設定して、の現在の値をロックでき `MemoryOverwriteRequestControl` `MemoryOverwriteRequestControlLock` ます。 または、シークレットデータがメモリから安全に消去された後で、今後、ロック解除を有効にするキーを指定することもできます。
 
+に対して**Getvariable**を呼び出すと、ロック `MemoryOverwriteRequestControlLock` の解除、キーのないロック、またはキーの状態でロックされていることを示す0x0、0x1、または0x2 が返されます。
 
-リビジョン 2、ときに、`MemoryOverwriteRequestControlLock`と`MemoryOverwriteRequestControl`変数がロックされ、呼び出しの**SetVariable** (これらの変数) の最初に照合登録済みのキー一定時間のアルゴリズムを使用しています。 両方のキーが存在すると一致する場合、変数の移行はロック解除の状態に戻ります。 Efi を搭載したこの最初の試行後、またはキーが登録されていない場合は、この変数を設定する後続の試行が失敗する\_アクセス\_ブルート フォース攻撃を防ぐことが拒否されました。 その場合は、システムの再起動は、変数のロックを解除する唯一の方法になります。
+`MemoryOverwriteRequestControlLock`を設定しても、フラッシュはコミットされません (内部ロック状態を変更するだけです)。 変数を取得すると、内部状態が返され、キーを公開しません。
 
-オペレーティング システムの存在を検出する`MemoryOverwriteRequestControlLock`とその状態を呼び出して**GetVariable**します。 システムの現在の値をロックできます`MemoryOverwriteRequestControl`を設定して、 `MemoryOverwriteRequestControlLock` 0x1 の値。 または、機密データがメモリから安全に削除された後、将来のロック解除を有効にするキーを指定、可能性があります。
-
-呼び出す**GetVariable**の`MemoryOverwriteRequestControlLock`0x0、0x1、または 0x2 を示す、ロックを解除、キーのないロックされているか、キーの状態でロックを返します。
-
-**注**  設定`MemoryOverwriteRequestControlLock`flash にコミットしない (内部ロック状態を変更するだけです)。 変数の取得、内部の状態を返すし、キーは公開されません。 次の図では、想定される動作について説明します。
-
- 
-
-オペレーティング システムでの使用例
+オペレーティングシステムによる使用例:
 
 ```cpp
-if (gSecretsInMemory) 
+if (gSecretsInMemory)
 {
     char data = 0x11;
     SetVariable(MemoryOverwriteRequestControl, sizeof(data), &data);
 }
- 
+
 // check presence
 status = GetVariable(MemoryOverwriteRequestControlLock, &value);  
-    
-if (SUCCESS(status)) 
+
+if (SUCCESS(status))
 {
-    // first attempt to lock and establish a key 
+    // first attempt to lock and establish a key
     // note both MOR and MorLock are locked if successful
 
     GetRNG(8, keyPtr);
-    status = SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr); 
+    status = SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr);
 
-    if (status != EFI_SUCCESS) 
+    if (status != EFI_SUCCESS)
     {
         // fallback to revision 1 behavior
         char data = 0x01;
-        status = SetVariable(MemoryOverwriteRequestControlLock, 1, &data); 
+        status = SetVariable(MemoryOverwriteRequestControlLock, 1, &data);
         if (status != EFI_SUCCESS) { // log error, warn user }
     }
-} 
-else 
+}
+else
 {
     // warn user about potentially unsafe system
 }
@@ -127,41 +130,43 @@ else
 
 // remove secrets from memory, flush caches
 
-SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr)
+SetVariable(MemoryOverwriteRequestControlLock, 8, keyPtr);
 ```
 
-## <a name="morlock-implementation-flow"></a>MorLock 実装のフロー
+## <a name="morlock-implementation-flow"></a>MorLock の実装フロー
 
-
-これらのフローチャートは、実装の想定される動作を示します。
+これらのフローチャートは、実装の予想される動作を示しています。
 
 ### <a name="initialization"></a>初期化
 
-![morlock 初期化](images/morlock.png)
+![morlock の初期化](images/morlock.png)
 
 ### <a name="setvariable-flow"></a>SetVariable フロー
 
-![morlock プログラミング フロー](images/morlock1.png)
+![morlock プログラミングフロー](images/morlock1.png)
 
-### <a name="unlocked-state-flow-for-setvariable"></a>SetVariable のロック解除状態のフロー
+### <a name="unlocked-state-flow-for-setvariable"></a>SetVariable のロック解除状態フロー
 
-![ロックを解除 morlock フロー](images/morlock2.png)
+![morlock のロック解除フロー](images/morlock2.png)
 
-### <a name="locked-state-flow-for-setvariable"></a>SetVariable の状態のフローがロックされています。
+### <a name="locked-state-flow-for-setvariable"></a>SetVariable のロック状態フロー
 
-![ロックされている morlock フロー](images/morlock3.png)
+![morlock ロックフロー](images/morlock3.png)
 
-### <a name="flow-for-getvariable"></a>GetVariable のフロー
+### <a name="flow-for-getvariable"></a>GetVariable の Flow
 
 ![morlock getvariable](images/morlock4.png)
 
-## <a name="related-topics"></a>関連トピック
-[SoC のプラットフォームですべての Windows エディションに適用される UEFI 要件](uefi-requirements-that-apply-to-all-windows-platforms.md#security-requirements)  
-[PC クライアント作業グループ プラットフォーム リセット攻撃軽減策仕様、バージョン 1.0](https://go.microsoft.com/fwlink/p/?LinkId=717870)  
-[コールド攻撃 (およびその他の脅威) から BitLocker の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717871)  
-[EDKII で BIOS、UEFI TPM2 サポート外のツアー]( https://go.microsoft.com/fwlink/p/?LinkId=717872)  
-[Credential Guard によるドメインの派生資格情報の保護]( https://go.microsoft.com/fwlink/p/?LinkId=717899)  
-[UEFI 仕様に準拠](https://go.microsoft.com/fwlink/p/?LinkId=717873)  
+## <a name="see-also"></a>関連項目
 
+[SoC プラットフォーム上のすべての Windows エディションに適用される UEFI 要件](uefi-requirements-that-apply-to-all-windows-platforms.md#security-requirements)
 
+[PC クライアントの作業グループプラットフォームのリセット攻撃の緩和の仕様、バージョン 1.0 (PDF のダウンロード)](https://www.trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)  
 
+[コールド攻撃 (およびその他の脅威) からの BitLocker の保護](https://docs.microsoft.com/archive/blogs/si_team/protecting-bitlocker-from-cold-attacks-and-other-threats)  
+
+[EDKII での UEFI TPM2 サポートを使用した BIOS に関するツアー](https://github.com/tianocore/edk2-platforms/blob/devel-MinPlatform/Platform/Intel/MinPlatformPkg/Docs/A_Tour_Beyond_BIOS_Open_Source_IA_Firmware_Platform_Design_Guide_in_EFI_Developer_Kit_II%20-%20V2.pdf)
+
+[Credential Guard によるドメインの派生資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+
+[UEFI 仕様](https://uefi.org/specifications)  

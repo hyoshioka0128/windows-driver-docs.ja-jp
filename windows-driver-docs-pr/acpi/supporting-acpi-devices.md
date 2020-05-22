@@ -11,17 +11,16 @@ keywords:
 - 操作領域ハンドラー WDK ACPI
 - 関数ドライバー WDK ACPI
 - WDM 関数ドライバー WDK ACPI
-ms.date: 04/20/2017
+ms.date: 05/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f6f7281617d6143c544f67b797f4bfd02b6d567e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ff58e1a5e37f3338f76d2837b3dd039318e04556
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72831443"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769330"
 ---
 # <a name="supporting-acpi-devices"></a>ACPI デバイスをサポートする
-
 
 このセクションでは、ベンダーが Windows の WDM 関数ドライバーを使用して、Advanced Configuration and Power Interface (ACPI) デバイスの機能を強化する方法について説明します。
 
@@ -33,24 +32,24 @@ ACPI デバイスの機能を強化するために、ベンダーは、ドライ
 
 ACPI 操作リージョンを介して通信することにより、関数ドライバーは通常、BIOS によってのみ制御されるデバイスに間接的にアクセスできます。また、BIOS は、ドライバーおよびホストシステムの構成に依存するデバイス固有の操作を呼び出すことができます。 基本的な動作メカニズムは次のとおりです。
 
-1.  ACPI BIOS は、デバイスの操作領域内のデータの読み取りまたは書き込みを行います。
+1. ACPI BIOS は、デバイスの操作領域内のデータの読み取りまたは書き込みを行います。
 
-2.  操作領域にアクセスするために、ACPI ドライバーは関数ドライバーの操作領域ハンドラーを呼び出します。
+1. 操作領域にアクセスするために、ACPI ドライバーは関数ドライバーの操作領域ハンドラーを呼び出します。
 
-3.  操作領域ハンドラーは、アクセスに対してプログラミングされているすべてのアクションを実行し、アクセスに関連付けられている情報を返します。
+1. 操作領域ハンドラーは、アクセスに対してプログラミングされているすべてのアクションを実行し、アクセスに関連付けられている情報を返します。
 
 次の2つの例は、ベンダーが関数ドライバーを使用して、ACPI デバイスの機能を強化する方法を示しています。
 
-1.  ACPI デバイスは、ドライバーが製造元のプレインストールされたソフトウェアでサウンドカードのボリューム制御を有効にする関数ドライバーの操作領域内のインデックスにアクセスできます。
+1. ACPI デバイスは、ドライバーが製造元のプレインストールされたソフトウェアでサウンドカードのボリューム制御を有効にする関数ドライバーの操作領域内のインデックスにアクセスできます。
 
-2.  ドライバーは、バッテリの残りの容量、温度のあるゾーンの温度、および通常 BIOS によってのみアクセスされるその他の処理を監視します。
+1. ドライバーは、バッテリの残りの容量、温度のあるゾーンの温度、および通常 BIOS によってのみアクセスされるその他の処理を監視します。
 
 次のトピックでは、ACPI デバイスの関数ドライバーを指定する方法について説明します。
 
-[ACPI デバイスのデバイススタック](device-stacks-for-an-acpi-device.md)
+[ACPI デバイスのデバイス スタック](device-stacks-for-an-acpi-device.md)
 
-[ACPI デバイス関数ドライバーの操作](operation-of-an-acpi-device-function-driver.md)
+[ACPI デバイス機能ドライバーの操作](operation-of-an-acpi-device-function-driver.md)
 
 ACPI デバイス関数ドライバーをサポートするシステム提供のサポートルーチンの詳細については、「 [Acpi 操作領域ハンドラーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_acpi/index)」を参照してください。
 
-ACPI デバイスと名前空間の詳細については、「 [Advanced Configuration And Power Interface (acpi) の仕様](https://go.microsoft.com/fwlink/p/?linkid=866846)」を参照してください。
+ACPI デバイスと名前空間の詳細については、「 [Advanced Configuration And Power Interface (acpi) の仕様](https://uefi.org/specifications)」を参照してください。

@@ -3,69 +3,69 @@ title: カーネル モード ドライバーへのイベント トレーシン�
 description: カーネル モード ドライバーへのイベント トレーシングの追加
 ms.assetid: 74fdb4b2-aad1-4d8a-b146-40a92e1fdbb5
 keywords:
-- Event Tracing for Windows WDK、カーネル モード
-- ETW の WDK、カーネル モード
-- カーネル モードの ETW WDK ソフトウェア トレース
+- Windows イベントトレーシング WDK、カーネルモード
+- ETW WDK、カーネルモード
+- カーネルモード ETW WDK ソフトウェアトレース
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5e1d2b0a0ab3feffb09c8fc4de591edc7e6e5b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b100f9e1be8712a4b9a43cde86cd2721b048ac42
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67371689"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769506"
 ---
 # <a name="adding-event-tracing-to-kernel-mode-drivers"></a>カーネル モード ドライバーへのイベント トレーシングの追加
 
-このセクションでは、Event Tracing for Windows (ETW) のカーネル モード API を使用して、イベント トレースのカーネル モード ドライバーを追加する方法について説明します。 ETW カーネル モードの API は、Windows Vista で導入され、は、以前のオペレーティング システムではサポートされていません。 使用[WPP ソフトウェア トレース](wpp-software-tracing.md)または[WMI イベントのトレース](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)ドライバーが Windows 2000 以降のトレース機能をサポートする必要がある場合。
+このセクションでは、Windows イベントトレーシング (ETW) カーネルモード API を使用して、カーネルモードドライバーにイベントトレースを追加する方法について説明します。 ETW カーネルモード API は Windows Vista で導入されましたが、以前のオペレーティングシステムではサポートされていません。 ドライバーが Windows 2000 以降のトレース機能をサポートする必要がある場合は、 [WPP ソフトウェアトレース](wpp-software-tracing.md)または[WMI イベントトレース](https://docs.microsoft.com/windows-hardware/drivers/kernel/wmi-event-tracing)を使用します。
 
 > [!TIP]
-> Windows Driver Kit (WDK) 8.1 と Visual Studio を使用して ETW を実装する方法を示すサンプル コードを表示するのを参照してください。、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)します。
+> Windows Driver Kit (WDK) 8.1 および Visual Studio を使用して ETW を実装する方法を示すサンプルコードを表示するには、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)を参照してください。
 
-このセクションの内容
+このセクションの内容は次のとおりです。
 
-- [ワークフロー - カーネル モード ドライバーへのイベントのトレースの追加](#workflow---adding-event-tracing-to-kernel-mode-drivers)
+- [ワークフロー-カーネルモードドライバーへのイベントトレースの追加](#workflow---adding-event-tracing-to-kernel-mode-drivers)
 
-- [1.発生させるイベントとそれらを公開する場所の種類を決める](#1-decide-the-type-of-events-to-raise-and-where-to-publish-them)
+- [1. 発生させるイベントの種類と、イベントを発行する場所を決定します。](#1-decide-the-type-of-events-to-raise-and-where-to-publish-them)
 
-- [2.プロバイダー、イベント、およびチャネルを定義するインストルメンテーション マニフェストを作成します。](#2-create-an-instrumentation-manifest-that-defines-the-provider-the-events-and-channels)
+- [2. プロバイダー、イベント、およびチャネルを定義するインストルメンテーションマニフェストを作成する](#2-create-an-instrumentation-manifest-that-defines-the-provider-the-events-and-channels)
 
-- [3.メッセージ コンパイラ (Mc.exe) を使用して、インストルメンテーション マニフェストをコンパイルします。](#3-compile-the-instrumentation-manifest-by-using-the-message-compiler-mcexe)
+- [3. メッセージコンパイラ (Mc) を使用して、インストルメンテーションマニフェストをコンパイルします。](#3-compile-the-instrumentation-manifest-by-using-the-message-compiler-mcexe)
 
-- [4.発生させる、生成されたコードを追加 (公開)、イベント (登録、登録を解除、およびイベントの書き込み)](#4-add-the-generated-code-to-raise-publish-the-events-register-unregister-and-write-events)
+- [4. 生成されたコードを追加して、イベントの発生 (発行) を行います (イベントの登録、登録解除、および書き込み)](#4-add-the-generated-code-to-raise-publish-the-events-register-unregister-and-write-events)
 
-- [5.ドライバーをビルドします。](#5-build-the-driver)
+- [5. ドライバーをビルドする](#5-build-the-driver)
 
-- [6.マニフェストをインストールします。](#6-install-the-manifest)
+- [6. マニフェストをインストールする](#6-install-the-manifest)
 
-- [7.ETW のサポートを確認するドライバーをテストします。](#7-test-the-driver-to-verify-etw-support)
+- [7. ETW のサポートを確認するためにドライバーをテストする](#7-test-the-driver-to-verify-etw-support)
 
-## <a name="workflow---adding-event-tracing-to-kernel-mode-drivers"></a>ワークフロー - カーネル モード ドライバーへのイベントのトレースの追加
+## <a name="workflow---adding-event-tracing-to-kernel-mode-drivers"></a>ワークフロー-カーネルモードドライバーへのイベントトレースの追加
 
-![カーネル モード ドライバーにイベントのトレースを追加するプロセスの概要です。](images/etw-km-process.png)
+![カーネルモードドライバーにイベントトレースを追加するプロセスの概要。](images/etw-km-process.png)
 
-## <a name="1-decide-the-type-of-events-to-raise-and-where-to-publish-them"></a>1.発生させるイベントとそれらを公開する場所の種類を決める
+## <a name="1-decide-the-type-of-events-to-raise-and-where-to-publish-them"></a>1. 発生させるイベントの種類と、イベントを発行する場所を決定します。
 
-コーディングを開始する前にログを Event Tracing for Windows (ETW) にドライバーをするイベントの種類を決定する必要があります。 たとえばに、ドライバーを配布すると後の問題を診断するのに役立つイベントまたは参考にして、ドライバーを開発中のイベントを記録する可能性があります。 イベントの種類は、チャネルで識別されます。 A*チャネル*が管理者の種類のイベントの名前付きストリーム、運用、分析、またはデバッグのテレビ チャンネルのような特定対象ユーザーにリダイレクトされます。 チャネルは、イベント ログとイベント コンシューマーにイベント プロバイダーからのイベントを配信します。 チャネルとイベントの種類については、次を参照してください。[イベント ログと Windows イベント ログ チャネル](https://go.microsoft.com/fwlink/p/?linkid=62587)します。
+コーディングを開始する前に、ドライバーが Windows イベントトレーシング (ETW) を使用してログに記録するイベントの種類を決定する必要があります。 たとえば、ドライバーの配布後に問題を診断するのに役立つイベントや、ドライバーの開発に役立つイベントをログに記録することができます。 イベントの種類は、チャネルで識別されます。 *チャネル*は、"管理者"、"運用"、"分析"、または "デバッグ" という種類のイベントの名前付きストリームで、テレビチャネルに似ています。 チャネルは、イベントプロバイダーからイベントログとイベントコンシューマーにイベントを配信します。 詳細については、「 [Windows イベントログのリファレンス](https://docs.microsoft.com/windows/win32/wes/windows-event-log-reference)」を参照してください。
 
-開発中は、ほとんどの場合に興味のあるコードをデバッグする際に役立つトレース イベント。 この同じチャネルは、ドライバーを展開した後に表示される問題のトラブルシューティングに役立つ実稼働コードで使用可能性があります。 パフォーマンスを測定するために使用するトレース イベントにすることもこれらのイベントは、IT プロフェッショナルの微調整サーバーのパフォーマンスを向上でき、ネットワークのボトルネックを特定するのに役立ちます。
+開発時には、コードのデバッグに役立つトレースイベントを使用するのが最も一般的です。 この同じチャネルは、ドライバーが展開された後に発生する可能性がある問題のトラブルシューティングを行うために、実稼働コードでも使用できます。 パフォーマンスの測定に使用できるイベントをトレースすることもできます。これらのイベントは、IT プロフェッショナルがサーバーのパフォーマンスを微調整し、ネットワークのボトルネックを特定するのに役立ちます。
 
-## <a name="2-create-an-instrumentation-manifest-that-defines-the-provider-the-events-and-channels"></a>2.プロバイダー、イベント、およびチャネルを定義するインストルメンテーション マニフェストを作成します。
+## <a name="2-create-an-instrumentation-manifest-that-defines-the-provider-the-events-and-channels"></a>2. プロバイダー、イベント、およびチャネルを定義するインストルメンテーションマニフェストを作成する
 
-インストルメンテーション マニフェストは、プロバイダーが発生するイベントの正式な説明を提供する XML ファイルです。 インストルメンテーション マニフェストは、イベント プロバイダーを識別して、チャネルまたは (最大 8 つ)、チャネルを指定します、イベントについて説明し、イベントのテンプレートを使用しています。 インストルメンテーション マニフェストはさらに、トレース メッセージをローカライズするための文字列のローカライズできます。 システムのイベントとイベント コンシューマー利用できます。 構造化された XML のクエリと分析を実行するマニフェストに指定されたデータ。
+インストルメンテーションマニフェストは、プロバイダーが発生させるイベントの正式な説明を提供する XML ファイルです。 インストルメンテーションマニフェストは、イベントプロバイダーを識別し、チャネルまたはチャネル (最大8つ) を指定して、イベントとイベントが使用するテンプレートについて説明します。 さらに、インストルメンテーションマニフェストでは、文字列のローカライズが可能なので、トレースメッセージをローカライズできます。 イベントシステムとイベントコンシューマーは、マニフェストに用意されている構造化 XML データを使用して、クエリと分析を実行できます。
 
-インストルメンテーション マニフェストの詳細については、次を参照してください。[インストルメンテーション マニフェスト (Windows) を記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)と[(Windows) を使用して Windows イベント ログ](https://docs.microsoft.com/windows/desktop/WES/using-windows-event-log)します。
+インストルメンテーションマニフェストの詳細については、「[インストルメンテーションマニフェスト (windows) の作成](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)」および「 [windows イベントログの使用 (windows)](https://docs.microsoft.com/windows/desktop/WES/using-windows-event-log)」を参照してください。
 
 > [!NOTE]
-> インストルメンテーション マニフェストを手動で作成することができますが %windowssdkdir に含まれている ECManGen.exe ツールを使用してを考慮する必要があります\\bin\\x64 %windowssdkdir\\bin\\x86\\フォルダー WDK と Visual Studio をインストールするときにします。 % WindowsSdkDir Windows キット ディレクトリに、WDK のこのバージョンがインストールされている例では、c: パスを表す\\Program Files (x86)\\Windows キット\\8.1。 ECManGen.exe は、XML タグを使用することがなく、最初からマニフェストを作成することを案内するアプリケーションです。 情報は、の知識がなくて、[インストルメンテーション マニフェスト (Windows) を記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)セクションと、 [EventManifest スキーマ (Windows)](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema)セクションは、このツールを使用する場合に役立ちます。
+> インストルメンテーションマニフェストは手動で作成できますが、 \\ \\ \\ \\ \\ WDK と Visual Studio をインストールするときに、% windowssdkdir% Bin x64% windowssdkdir% bin x86 フォルダーに含まれている ECManGen ツールの使用を検討する必要があります。 % WindowsSdkDir% は、このバージョンの WDK がインストールされている Windows kit ディレクトリへのパスを表します。たとえば、C: \\ Program Files (x86) \\ Windows kit \\ 8.1 です。 ECManGen は、XML タグを使用することなく、最初からマニフェストを作成するためのガイドとなるアプリケーションです。 このツールを使用すると、「[インストルメンテーションマニフェスト (windows) の記述](https://docs.microsoft.com/windows/desktop/WES/writing-an-instrumentation-manifest)」セクションおよび「 [eventmanifest スキーマ (windows)](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-schema) 」セクションで情報を把握することができます。
 
-次のインストルメンテーション マニフェストは、「サンプル ドライバー。」という名前を使用したイベント プロバイダーを示しています。 この名前はバイナリのドライバーの名前と同じであるありませんに注意してください。 マニフェストには、プロバイダーと、メッセージおよびリソース ファイルへのパスの GUID も指定します。 メッセージおよびリソース ファイルでは、ETW をデコードし、イベントを報告するために必要なリソースを検索する場所を知ることができます。 これらのパスは、ドライバー (.sys) ファイルの場所をポイントします。 ターゲット コンピューター上の指定されたディレクトリに、ドライバーをインストールする必要があります。
+次のインストルメンテーションマニフェストは、"Sample Driver" という名前を使用するイベントプロバイダーを示しています。 この名前は、ドライバーのバイナリと同じ名前である必要はありません。 マニフェストでは、プロバイダーの GUID と、メッセージとリソースファイルへのパスも指定します。 メッセージとリソースファイルを使用すると、ETW は、イベントのデコードとレポートに必要なリソースの場所を特定できます。 これらのパスは、ドライバー (.sys) ファイルの場所を指します。 ドライバーは、ターゲットコンピューター上の指定されたディレクトリにインストールされている必要があります。
 
-例では、名前付きのチャネルを使用して**システム**、チャネルの種類のイベントを**管理者**します。このチャネルは %windowssdkdir で Windows Driver Kit (WDK) で提供される Winmeta.xml ファイルで定義\\含める\\um ディレクトリ。 **システム**チャネルがシステムのサービス アカウントで実行されているアプリケーションをセキュリティで保護します。 マニフェストに示されている、静的および動的なコンテンツと共に発行時にイベント データの型を記述するイベント テンプレートが含まれています。 このマニフェストの例には、3 つのイベントが定義されています: `StartEvent`、 `SampleEventA`、および`UnloadEvent`します。
+この例では、名前付きチャネル**システム**を使用します。これは、種類が**Admin**のイベントのチャネルです。このチャネルは、Windows Driver Kit (WDK) の% WindowsSdkDir% include um ディレクトリに用意されている Winmeta .xml ファイルで定義されてい \\ \\ ます。 システム**チャネルは**、システムサービスアカウントで実行されているアプリケーションに対してセキュリティで保護されます。 マニフェストには、イベントが発行されたときに提供されたデータの種類と、その静的コンテンツと動的コンテンツを示すイベントテンプレートが含まれています。 このマニフェスト例 `StartEvent` では、、、およびの3つのイベントを定義し `SampleEventA` `UnloadEvent` ます。
 
-チャネルに加えて、レベルとキーワードでイベントを関連付けることができます。 キーワードおよびレベルは、イベントを有効にして、パブリッシュされるときにイベントをフィルター処理するためのメカニズムを提供する方法を提供します。 キーワードは、論理的に関連するイベントをグループ化できます。 レベルは、または情報または、イベント、たとえば、重要なエラー、警告、詳細度を示すために使用できます。 Winmeta.xml ファイルには、イベント属性の定義済みの値が含まれています。
+チャネルに加えて、イベントをレベルとキーワードに関連付けることができます。 キーワードおよびレベルを使用すると、イベントを有効にしたり、イベントがパブリッシュされたときにイベントをフィルター処理するためのメカニズムを提供したりできます。 キーワードを使用すると、論理的に関連するイベントをまとめてグループ化できます。 レベルは、イベントの重大度または詳細度 (重大、エラー、警告、情報など) を示すために使用できます。 Winmeta .xml ファイルには、イベント属性の定義済みの値が含まれています。
 
-イベント ペイロード (イベント メッセージ、およびデータ) のテンプレートを作成するときに、入力と出力の種類を指定する必要があります。 サポートされている型の「解説」セクションに記述されます[ **InputType 複合型 (Windows)** ](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)します。
+イベントペイロード (イベントメッセージ、データ) のテンプレートを作成する場合は、入力と出力の種類を指定する必要があります。 サポートされている型については、「 [**InputType 複合型 (Windows)**](https://docs.microsoft.com/windows/desktop/WES/eventmanifestschema-inputtype-complextype)」の「解説」を参照してください。
 
 ```XML
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
@@ -169,17 +169,17 @@ ms.locfileid: "67371689"
 </instrumentationManifest>
 ```
 
-## <a name="3-compile-the-instrumentation-manifest-by-using-the-message-compiler-mcexe"></a>3.メッセージ コンパイラ (Mc.exe) を使用して、インストルメンテーション マニフェストをコンパイルします。
+## <a name="3-compile-the-instrumentation-manifest-by-using-the-message-compiler-mcexe"></a>3. メッセージコンパイラ (Mc) を使用して、インストルメンテーションマニフェストをコンパイルします。
 
-[メッセージ コンパイラ (Mc.exe)](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)ソース コードをコンパイルする前に実行する必要があります。 メッセージ コンパイラは、Windows Driver Kit (WDK) で含まれています。 メッセージ コンパイラは、イベント プロバイダー、イベント属性、チャネル、およびイベントの定義を含むヘッダー ファイルを作成します。 ソース コードには、このヘッダー ファイルをインクルードする必要があります。 メッセージ コンパイラも、生成されたリソース コンパイラのスクリプトを配置 (\*.rc) ファイルとリソース コンパイラのスクリプトが含まれる生成された .bin ファイル (バイナリ リソース)。
+ソースコードをコンパイルする前に、[メッセージコンパイラ (Mc)](https://docs.microsoft.com/windows/desktop/WES/message-compiler--mc-exe-)を実行する必要があります。 メッセージコンパイラは、Windows Driver Kit (WDK) に含まれています。 メッセージコンパイラは、イベントプロバイダー、イベント属性、チャネル、およびイベントの定義を含むヘッダーファイルを作成します。 ソース コードには、このヘッダー ファイルをインクルードする必要があります。 また、生成されたリソースコンパイラスクリプト ( \* .rc) と、リソースコンパイラスクリプトに含まれる生成された .bin ファイル (バイナリリソース) も、メッセージコンパイラによって配置されます。
 
-この手順は、いくつかの方法でビルド プロセスの一部として含めることができます。
+この手順は、いくつかの方法でビルド処理の一部として含めることができます。
 
-- ドライバーのプロジェクト ファイルへのメッセージ コンパイラ タスクの追加 (ように、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109))。
+- ( [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)に示されているように) メッセージコンパイラタスクをドライバープロジェクトファイルに追加します。
 
-- インストルメンテーション マニフェストを追加して、メッセージ コンパイラ プロパティを構成するのには、Visual Studio を使用します。
+- Visual Studio を使用して、インストルメンテーションマニフェストを追加し、メッセージコンパイラプロパティを構成します。
 
-**プロジェクト ファイルへのメッセージ コンパイラ タスクの追加**ビルド プロセスでメッセージ コンパイラを組み込む方法の例は、見て、プロジェクト ファイル、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)します。 Eventdrv.vcxproj ファイルでは、 **&lt;MessageCompile&gt;** メッセージ コンパイラを呼び出してセクション。 メッセージ コンパイラは、入力として、ヘッダー ファイルの evntdrvEvents.h を生成するのにマニフェスト ファイル (evntdrv.xml) を使用します。 ここでは、生成された RC ファイルのパスを指定し、カーネル モードのログ記録のマクロを有効します。 このセクションをコピーし、ドライバーのプロジェクト ファイル (.vcxproj) に追加できます。
+**メッセージコンパイラタスクをプロジェクトファイルに追加する**ビルドプロセスでメッセージコンパイラを含める方法の例については、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)のプロジェクトファイルを参照してください。 Eventdrv .vcxproj ファイルには、メッセージコンパイラを呼び出す** &lt; MessageCompile &gt; **セクションがあります。 メッセージコンパイラは、マニフェストファイル (evntdrv) を入力として使用して、ヘッダーファイル evntdrvEvents を生成します。 また、生成された RC ファイルのパスを指定し、カーネルモードのログ記録マクロを有効にします。 このセクションをコピーし、ドライバープロジェクトファイル (.vcxproj) に追加することができます。
 
 ```XML
 
@@ -195,51 +195,51 @@ ms.locfileid: "67371689"
     </MessageCompile>
 ```
 
-Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要なイベントのトレース ファイルを作成します。 また、evntdrv.xml マニフェストをドライバーのプロジェクトのリソース ファイルの一覧に追加します。 右クリックして、メッセージ コンパイラ プロパティ ページを表示するマニフェスト。
+Eventdrv サンプルをビルドすると、Visual Studio によってイベントトレースに必要なファイルが作成されます。 また、ドライバープロジェクトのリソースファイルの一覧に evntdrv マニフェストを追加します。 マニフェストを右クリックすると、メッセージコンパイラのプロパティページが表示されます。
 
-### <a name="using-visual-studio-to-add-the-instrumentation-manifest"></a>Visual Studio を使用して、インストルメンテーション マニフェストを追加するには
+### <a name="using-visual-studio-to-add-the-instrumentation-manifest"></a>Visual Studio を使用したインストルメンテーションマニフェストの追加
 
-インストルメンテーション マニフェストをドライバーのプロジェクトに追加でき、必要なリソースとヘッダー ファイルを構築するメッセージ コンパイラ プロパティを構成できます。
+インストルメンテーションマニフェストをドライバープロジェクトに追加し、メッセージコンパイラプロパティを構成して、必要なリソースファイルとヘッダーファイルを作成できます。
 
-### <a name="to-add-the-instrumentation-manifest-to-the-project-using-visual-studio"></a>インストルメンテーション マニフェストを Visual Studio を使用して、プロジェクトに追加するには
+### <a name="to-add-the-instrumentation-manifest-to-the-project-using-visual-studio"></a>Visual Studio を使用してインストルメンテーションマニフェストをプロジェクトに追加するには
 
-1. ソリューション エクスプ ローラーでは、ドライバーのプロジェクトにマニフェスト ファイルを追加します。 右クリックして**リソース ファイル&gt;追加&gt;既存項目の**(evntdrv.xml または mydriver.man など)。
+1. ソリューションエクスプローラーで、マニフェストファイルをドライバープロジェクトに追加します。 [**リソースファイル] [既存の &gt; &gt; 項目の追加**] (たとえば、evntdrv または mydriver. man) を右クリックします。
 
-2. 追加したファイルを右クリックし、プロパティ ページを使用して、項目の種類を変更する**MessageCompile**クリック**適用**します。
+2. 追加したファイルを右クリックし、[プロパティページ] を使用して項目の種類を**MessageCompile**に変更し、[**適用**] をクリックします。
 
-3. メッセージ コンパイラ プロパティが表示されます。 で、**全般**の設定が、次のオプションを設定し、クリックして**適用**します。
+3. メッセージコンパイラのプロパティが表示されます。 [**全般**設定] で、次のオプションを設定し、[**適用**] をクリックします。
 
     | 全般                                 | 設定       |
     |-----------------------------------------|---------------|
-    | **カーネル モードのログ記録のマクロを生成します。** | **[はい] (-km)** |
-    | **入力の基本名を使用して、**              | **[はい] (-b)**  |
+    | **Generate Kernel Mode Logging Macros (カーネル モード ログ記録マクロを生成する)** | **はい (-km)** |
+    | **入力の基本名を使用する**              | **はい (-b)**  |
 
-4. **ファイル オプション**、次のオプションを設定し、クリックして**適用**します。
+4. [**ファイルオプション**] で、次のオプションを設定し、[**適用**] をクリックします。
 
-    | ファイルのオプション                                    | 設定         |
+    | ファイル オプション                                    | 設定         |
     |-------------------------------------------------|-----------------|
-    | **カウンターを格納するためのヘッダー ファイルを生成します。** | **はい**         |
-    | **ヘッダー ファイルのパス**                            | **$ (Intdir)**   |
-    | **RC およびバイナリ メッセージの生成されたファイルのパス**  | **はい**         |
-    | **RC ファイルのパス**                                | **$ (Intdir)**   |
-    | **生成されたファイルのベース名**                   | **$(Filename)** |
+    | **親カウンターのヘッダーファイルを生成します** | **はい**         |
+    | **Header File Path (ヘッダー ファイル パス)**                            | **$(IntDir)**   |
+    | **Generated RC and Binary Message Files Path (生成される RC ファイルとバイナリ メッセージ ファイルのパス)**  | **はい**         |
+    | **RC File Path (RC ファイル パス)**                                | **$(IntDir)**   |
+    | **Generated Files Base Name (生成されるファイルのベース名)**                   | **$ (ファイル名)** |
 
-既定では、メッセージ コンパイラは生成されるファイルのベース名として、入力ファイルの基本名を使用します。 基本名を指定するには、設定、**ファイルの生成された基本名**(-z) フィールド。 Eventdr.sys サンプルでは、基本名に設定されて*evntdrvEvents* evntdrv.c に含まれているヘッダー ファイル evntdrvEvents.h の名前と一致するようにします。
+既定では、メッセージコンパイラは、生成するファイルのベース名として、入力ファイルのベース名を使用します。 ベース名を指定するには、[**生成されたファイルのベース名**(-z)] フィールドを設定します。 Eventdr のサンプルでは、ベース名が*evntdrvEvents*に設定され、evntdrv に含まれるヘッダーファイル evntdrvEvents の名前と一致するようになっています。
 
 > [!NOTE]
-> Visual Studio プロジェクトで生成される .rc ファイルを含めない場合に関するリソースが見つかりません、マニフェスト ファイルをインストールするときにエラー メッセージが表示することがあります。
+> 生成された .rc ファイルを Visual Studio プロジェクトに含めないと、マニフェストファイルのインストール時に見つからないリソースに関するエラーメッセージが表示される場合があります。
 
-## <a name="4-add-the-generated-code-to-raise-publish-the-events-register-unregister-and-write-events"></a>4.発生させる、生成されたコードを追加 (公開)、イベント (登録、登録を解除、およびイベントの書き込み)
+## <a name="4-add-the-generated-code-to-raise-publish-the-events-register-unregister-and-write-events"></a>4. 生成されたコードを追加して、イベントの発生 (発行) を行います (イベントの登録、登録解除、および書き込み)
 
-インストルメンテーション マニフェストでは、イベント プロバイダーは、イベント記述子の名前を定義します。 メッセージ コンパイラを使用してインストルメンテーション マニフェストをコンパイルするときに、メッセージ コンパイラは、リソースの説明し、も、イベントのマクロが定義されたヘッダー ファイルを生成します。 次に、これらのイベントを発生させるドライバーに生成されたコードを追加する必要があります。
+インストルメンテーションマニフェストでは、イベントプロバイダーの名前とイベント記述子を定義しています。 メッセージコンパイラを使用してインストルメンテーションマニフェストをコンパイルすると、メッセージコンパイラによって、リソースを説明するヘッダーファイルが生成され、イベントのマクロも定義されます。 ここで、生成されたコードをドライバーに追加して、これらのイベントを発生させる必要があります。
 
-1. ソース ファイルでは、メッセージ コンパイラ (MC.exe) によって生成されるイベントのヘッダー ファイルが含まれます。 たとえば、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)Evntdrv.c のソース ファイルには、前の手順で生成されたヘッダー ファイル (evntdrvEvents.h) が含まれています。
+1. ソースファイルで、メッセージコンパイラ (MC) によって生成されるイベントヘッダーファイルをインクルードします。 たとえば、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)では、Evntdrv ソースファイルに、前の手順で生成されたヘッダーファイル (evntdrvEvents) が含まれています。
 
    ```c++
    #include "evntdrvEvents.h"  
    ```
 
-2. 登録およびイベント プロバイダーとドライバーの登録を解除できるマクロを追加します。 などのヘッダー ファイルで、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)(evntdrvEvents.h) メッセージ コンパイラは、プロバイダーの名前に基づいたマクロを作成します。 マニフェストで、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)プロバイダーの名前と名前の「サンプル ドライバー」を使用します。 メッセージ コンパイラは、ここでは、プロバイダーを登録するイベントのマクロとプロバイダーの名前を組み合わせて**EventRegisterSample\_ドライバー**します。
+2. ドライバーをイベントプロバイダーとして登録および登録解除するマクロを追加します。 たとえば、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)(evntdrvEvents) のヘッダーファイルでは、メッセージコンパイラはプロバイダーの名前に基づいてマクロを作成します。 マニフェストでは、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)では、プロバイダーの名前として "sample Driver" という名前が使用されています。 メッセージコンパイラは、プロバイダーの名前とイベントマクロを組み合わせて、プロバイダー (この場合は**Eventregistersample \_ ドライバー**) を登録します。
 
    ```ManagedCPlusPlus
    //  This is the generated header file envtdrvEvents.h
@@ -254,7 +254,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
    #endif
    ```
 
-   追加、 **EventRegister\<*プロバイダー* \>** マクロを[ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)関数。 作成し、デバイス オブジェクトを初期化するコードの後に、この関数を追加します。 呼び出しと一致する必要があります、 **EventRegister\<*プロバイダー* \>** 関数を呼び出して**EventUnregister\< *プロバイダー*\>** します。 ドライバーのドライバーの登録を解除できます[ </em>*アンロード** ](<https://msdn.microsoft.com/library/windows/hardware/ff564886>)ルーチン。
+   **Eventregister \< *プロバイダー* \> **マクロを[*driverentry*](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)関数に追加します。 デバイスオブジェクトを作成および初期化するコードの後に、この関数を追加します。 **Eventregister \< *プロバイダー* \> **関数の呼び出しと**eventregister \< *プロバイダー* \> **の呼び出しを一致させる必要があることに注意してください。 ドライバーの[ </em> *アンロード* * ](<https://msdn.microsoft.com/library/windows/hardware/ff564886>)ルーチンでドライバーの登録を解除できます。
 
    ```ManagedCPlusPlus
       // DriverEntry function
@@ -266,9 +266,9 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
        EventRegisterSample_Driver();
     ```
 
-3. 生成されたコードを追加 (生成) を記述するドライバーのソース ファイルへのイベントで指定したマニフェスト。 マニフェストからコンパイルされたヘッダー ファイルには、ドライバーに対して生成されたコードが含まれています。 使用して、 **EventWrite\<*イベント*\>**  ETW にトレース メッセージを発行するヘッダー ファイルで定義された関数。 たとえば、次のコードの evntdrvEvents.h で定義されたイベントのマクロを示しています。、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)します。
+3. 生成されたコードをドライバーのソースファイルに追加して、マニフェストで指定したイベントを書き込み (発生) します。 マニフェストからコンパイルしたヘッダーファイルには、ドライバー用に生成されたコードが含まれています。 トレースメッセージを ETW に発行するには、ヘッダーファイルで定義されている**eventwrite \< *イベント* \> **関数を使用します。 たとえば、次のコードは、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)の evntdrvEvents で定義されているイベントのマクロを示しています。
 
-   これらのイベントを記述するマクロが呼び出されます。 `EventWriteStartEvent`、 `EventWriteSampleEventA`、および`EventWriteUnloadEvent`します。 マクロ定義が含まれています自動的にこれらのマクロの定義でご覧のとおり、 **EventEnabled\<*イベント*\>** マクロ イベントが有効になっているかどうかをチェックします。 チェックでは、イベントが有効でない場合は、ペイロードを構築する必要があります。
+   これらのイベントを記述するマクロは、、、およびと呼ばれ `EventWriteStartEvent` `EventWriteSampleEventA` `EventWriteUnloadEvent` ます。 これらのマクロの定義でわかるように、マクロ定義には、イベントが有効になっているかどうかを確認する**eventenabled \< *イベント* \> **マクロが自動的に含まれています。 イベントが有効になっていない場合、このチェックによってペイロードを作成する必要がなくなります。
 
    ```ManagedCPlusPlus
 
@@ -320,7 +320,7 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
   
     ```
 
-   追加、 **EventWrite\<*イベント*\>** マクロを発生させるイベントのソース コードにします。 たとえば、次のコード例では、 [ *DriverEntry* ](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンから、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)します。 *DriverEntry*にドライバーを ETW に登録するマクロが含まれます (*EventRegisterSample\_ドライバー*) とドライバーのイベントを ETW に書き込むマクロ (*EventWriteStartEvent*)。
+   発生させるイベントのソースコードに**eventwrite \< *イベント* \> **マクロを追加します。 たとえば、次のコードスニペットは、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)の[*driverentry*](https://docs.microsoft.com/windows-hardware/drivers/wdf/driverentry-for-kmdf-drivers)ルーチンを示しています。 *Driverentry*には、ドライバーを Etw (*eventregistersample \_ driver*) に登録するマクロと、ドライバーイベントを Etw に書き込むマクロ (*EventWriteStartEvent*) が含まれています。
 
    ```ManagedCPlusPlus
    NTSTATUS
@@ -431,11 +431,11 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
    }
    ```
 
-追加のすべての**EventWrite\<*イベント*\>** マクロを発生させるイベントのソース コードにします。 調べることができます、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109)にドライバーのソース コードでイベントを他の 2 つのマクロの呼び出し方法を参照してください。
+発生するイベントのソースコードに、すべての**eventwrite \< *イベント* \> **マクロを追加します。 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)を調べて、ドライバーのソースコード内のイベントに対して他の2つのマクロがどのように呼び出されるかを確認できます。
 
-4. 使用するイベント プロバイダーとドライバーの登録を解除、 **EventUnregister\<*プロバイダー* \>** 生成されるヘッダー ファイルからマクロ。
+4. 生成されたヘッダーファイルから**eventunregister 解除 \< *プロバイダー* \> **マクロを使用して、ドライバーをイベントプロバイダーとして登録解除します。
 
-   ドライバー、アンロード ルーチンでは、この関数の呼び出しを配置します。 後のトレースの呼び出しは行われません、 **EventUnregister\<*プロバイダー* \>** マクロが呼び出されます。 プロセスに関連付けられているすべてのコールバック関数が無効になったため、プロセスがアンロードされるとき、イベント プロバイダーを登録解除に失敗したエラーが発生することができます。
+   この関数呼び出しをドライバーのアンロードルーチンに配置します。 **Eventunregister 解除 \< *プロバイダー* \> **マクロが呼び出された後に、トレース呼び出しを行うことはできません。 プロセスに関連付けられているコールバック関数が無効になったため、プロセスがアンロードされると、イベントプロバイダーの登録を解除できない場合にエラーが発生することがあります。
 
    ```ManagedCPlusPlus
        // DriverUnload function
@@ -447,36 +447,36 @@ Eventdrv.sys サンプルをビルドすると、Visual Studio は、必要な�
        EventUnregisterSample_Driver();
    ```
 
-## <a name="5-build-the-driver"></a>5.ドライバーのビルド
+## <a name="5-build-the-driver"></a>5. ドライバーをビルドする
 
-計器マニフェストをプロジェクトに追加し、メッセージ コンパイラ (MC.exe) プロパティを構成する場合は、ドライバーのプロジェクトまたは Visual Studio および MSBuild を使用してソリューションを構築できます。
+インストルメントマニフェストをプロジェクトに追加し、メッセージコンパイラ (MC) のプロパティを構成した場合は、Visual Studio と MSBuild を使用してドライバープロジェクトまたはソリューションをビルドできます。
 
-1. Visual Studio でのドライバー ソリューションを開きます。
+1. Visual Studio でドライバーソリューションを開きます。
 
-2. 選択して、[ビルド] メニューからサンプルをビルド**ソリューションのビルド**します。 ソリューションの構築の詳細については、次を参照してください。[ドライバーをビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)します。
+2. [ビルド] メニューの [**ソリューションのビルド**] をクリックして、サンプルをビルドします。 ソリューションのビルドの詳細については、「[ドライバーのビルド](https://docs.microsoft.com/windows-hardware/drivers/develop/building-a-driver)」を参照してください。
 
-## <a name="6-install-the-manifest"></a>6.マニフェストをインストールします。
+## <a name="6-install-the-manifest"></a>6. マニフェストをインストールする
 
-イベント コンシューマー (たとえば、イベント ログ) は、イベントのメタデータを含むバイナリの場所を検索できるように、ターゲット システムに、マニフェストをインストールする必要があります。 手順 3 でドライバーのプロジェクトに、メッセージ コンパイラ タスクを追加した場合は、インストルメンテーション マニフェストがコンパイルされ、リソース ファイルは、ドライバーをビルドしたときに生成されました。 マニフェストをインストールするのに、Windows イベント コマンド ライン ユーティリティ (Wevtutil.exe) を使用します。 マニフェストをインストールするための構文は次のとおりです。
+イベントコンシューマー (イベントログなど) がイベントメタデータを含むバイナリの場所を見つけることができるように、マニフェストをターゲットシステムにインストールする必要があります。 手順 3. でドライバープロジェクトにメッセージコンパイラタスクを追加した場合、インストルメンテーションマニフェストがコンパイルされ、ドライバーをビルドしたときにリソースファイルが生成されています。 Windows イベントのコマンドラインユーティリティ (Wevtutil) を使用して、マニフェストをインストールします。 マニフェストをインストールする構文は次のとおりです。
 
-**wevtutil.exe im** *drivermanifest*
+**wevtutil im** *drivermanifest*
 
-たとえば、Evntdrv.sys サンプル ドライバーのマニフェストをインストールするには、管理者特権でコマンド プロンプト ウィンドウを開きます (**管理者として実行**) evntdrv.xml ファイルがあるディレクトリに移動し、入力、次のコマンド:
+たとえば、Evntdrv サンプルドライバーのマニフェストをインストールするには、昇格された特権 (**管理者として実行**) を使用してコマンドプロンプトウィンドウを開き、Evntdrv ファイルがあるディレクトリに移動して、次のコマンドを入力します。
 
 ```c++
 Wevtutil.exe im evntdrv.xml
 ```
 
-トレース セッションが完了したら、次の構文を使用してマニフェストをアンインストールします。
+トレースセッションが完了したら、次の構文を使用してマニフェストをアンインストールします。
 
-**wevtutil.exe um** *drivermanifest*
+**wevtutil um** *drivermanifest*
 
-たとえばのマニフェストをアンインストールするため、 [Eventdrv サンプル](https://go.microsoft.com/fwlink/p/?linkid=256109):
+たとえば、 [Eventdrv サンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/eventdrv/)のマニフェストをアンインストールするには、次のようにします。
 
 ```c++
 Wevtutil.exe um evntdrv.xml
 ```
 
-## <a name="7-test-the-driver-to-verify-etw-support"></a>7.ETW のサポートを確認するドライバーをテストします。
+## <a name="7-test-the-driver-to-verify-etw-support"></a>7. ETW のサポートを確認するためにドライバーをテストする
 
-ドライバーをインストールします。 トレース アクティビティを生成するドライバーを実行します。 イベント ビューアーで結果を表示します。 実行することも[Tracelog](tracelog.md)、し、実行[Tracerpt](https://docs.microsoft.com/windows-server/administration/windows-commands/tracerpt_1)トレースのイベントを処理するためのツールのログ、ログを制御、収集、およびイベント トレースを表示します。
+ドライバーをインストールします。 ドライバーを実行してトレースアクティビティを生成します。 イベントビューアーの結果を表示します。 また、 [Tracelog](tracelog.md)を実行し、イベントトレースログを処理するためのツールである[Tracerpt](https://docs.microsoft.com/windows-server/administration/windows-commands/tracerpt_1)を実行して、イベントトレースログを制御、収集、および表示することもできます。

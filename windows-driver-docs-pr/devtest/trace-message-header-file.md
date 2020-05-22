@@ -3,34 +3,34 @@ title: トレース メッセージ ヘッダー ファイル
 description: トレース メッセージ ヘッダー ファイル
 ms.assetid: 835162c0-6596-42ae-bc6d-824dd6c3f69f
 keywords:
-- トレース メッセージのヘッダー ファイル WDK
+- トレースメッセージヘッダーファイル WDK
 - TMH ファイル WDK
-- ファイルの WDK ソフトウェア トレース
+- ファイル WDK ソフトウェアのトレース
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55b9b475ae935e1304ec78fa17f3ea8783428e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 80b432ed8b5dc5f26fd9c57e1a44c42b3ff23966
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381814"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769648"
 ---
 # <a name="trace-message-header-file"></a>トレース メッセージ ヘッダー ファイル
 
 
-A*トレース メッセージのヘッダー* (TMH) ファイルは関数と WPP によって生成されるトレース コードで使用される変数の宣言を含むテキスト ファイルです。 ヘッダー ファイルには、書式の PDB ファイルにトレース メッセージを追加するマクロも含まれています、[トレース プロバイダー](trace-provider.md)、カーネル モード ドライバーまたはユーザー モード アプリケーションなどです。
+*トレースメッセージヘッダー* (tmh) ファイルは、WPP が生成するトレースコードによって使用される関数と変数の宣言が含まれているテキストファイルです。 ヘッダーファイルには、トレースメッセージの書式設定命令を[トレースプロバイダー](trace-provider.md)の PDB ファイル (カーネルモードドライバーやユーザーモードアプリケーションなど) に追加するマクロも含まれています。
 
-WPP TMH ファイルを自動的に生成をコンパイルするとき、[トレース プロバイダー](trace-provider.md) WPP マクロが含まれています。 TMH ファイルは、.tmh ファイル名拡張子が、ソース ファイルと同じ名前を持ちます。 WPP では、ソース ファイルと同じディレクトリにファイルを保存します。
+Wpp マクロを含む[トレースプロバイダー](trace-provider.md)をコンパイルすると、wpp によって自動的に tmh ファイルが生成されます。 TMH ファイルにはソースファイルと同じ名前が付けられていますが、ファイル名拡張子は tmh です。 WPP は、ソースファイルと同じディレクトリにファイルを保存します。
 
-追加する必要があるソース コードを WPP マクロを追加すると、 **\#含める**WPP により生成される TMH ファイルのディレクティブ。 Include ステートメントには、フォームがあります。
+WPP マクロをソースコードに追加する場合は、WPP によって生成される TMH ファイル用の** \# include**ディレクティブも追加する必要があります。 Include ステートメントの形式は次のとおりです。
 
 ```
 #include SourceFileName.tmh
 ```
 
-ステートメントは、これの定義の後に表示する必要があります、 [WPP\_コントロール\_GUID](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロ、WPP マクロへの呼び出しの前にします。
+この include ステートメントは、 [wpp \_ 制御 \_ guid](https://docs.microsoft.com/previous-versions/windows/hardware/previsioning-framework/ff556186(v=vs.85))マクロの定義の後、かつ、wpp マクロを呼び出す前に記述する必要があります。
 
-詳細については、次を参照してください。[トレース プロデューサーに WPP マクロを追加する](adding-wpp-macros-to-a-trace-provider.md)して[TraceDrv](https://go.microsoft.com/fwlink/p/?LinkId=617726)、ソフトウェア トレース用に設計されたサンプル ドライバー。 TraceDrv サンプルは、 [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507)GitHub リポジトリにあります。
+詳細については、「[トレースプロデューサーに WPP マクロを追加する](adding-wpp-macros-to-a-trace-provider.md)」および「 [tracedrv](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/tracing/tracedriver)(ソフトウェアトレース用に設計されたサンプルドライバー)」を参照してください。 TraceDrv サンプルは、GitHub の[Windows ドライバーサンプル](https://github.com/Microsoft/Windows-driver-samples)リポジトリで入手できます。
 
  
 

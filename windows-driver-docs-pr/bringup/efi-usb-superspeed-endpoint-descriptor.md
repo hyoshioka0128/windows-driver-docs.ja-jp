@@ -2,22 +2,20 @@
 title: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
 description: EFI_USB_SUPERSPEED_ENDPOINT_DESCRIPTOR
 ms.assetid: 3254C0F1-85C2-472B-938A-F71645703540
-ms.date: 04/20/2017
+ms.date: 05/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 707369e918301a1b1f3387e6253a8235b078a119
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb9670a81c73ab3f33b0308a1a54a95daf495d94
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337751"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778336"
 ---
-# <a name="efiusbsuperspeedendpointdescriptor"></a>EFI\_USB\_SUPERSPEED\_エンドポイント\_記述子
+# <a name="efi_usb_superspeed_endpoint_descriptor"></a>EFI \_ USB \_ SUPERSPEED \_ エンドポイント \_ 記述子
 
-
-**EFI\_USB\_SUPERSPEED\_エンドポイント\_記述子**構造を使用して USB 機能ドライバーをサポートされている USB SuperSpeed エンドポイントについて説明します。
+**EFI \_ usb \_ SUPERSPEED \_ エンドポイント \_ 記述子**構造は、usb 関数ドライバーに対してサポートされている usb SUPERSPEED エンドポイントを説明するために使用されます。
 
 ## <a name="syntax"></a>構文
-
 
 ```cpp
 typedef struct
@@ -29,27 +27,18 @@ typedef struct
 
 ## <a name="members"></a>メンバー
 
+### <a name="endpointdescriptor"></a>EndpointDescriptor
 
-<a href="" id="endpointdescriptor"></a>**EndpointDescriptor**  
-EFI\_USB\_エンドポイント\_USB エンドポイントを記述する記述子構造体。
+\_ \_ Usb エンドポイントを記述する EFI usb エンドポイント \_ 記述子の構造体。
 
-<a href="" id="endpointcompaniondescriptor"></a>**EndpointCompanionDescriptor**  
-[EFI\_USB\_SUPERSPEED\_エンドポイント\_コンパニオン\_記述子](efi-usb-superspeed-endpoint-companion-descriptor.md)USB SuperSpeed エンドポイント コンパニオンの記述子構造体。
+### <a name="endpointcompaniondescriptor"></a>EndpointCompanionDescriptor
 
-## <a name="remarks"></a>注釈
+USB SuperSpeed エンドポイントのコンパニオン記述子である[EFI \_ USB \_ SUPERSPEED \_ エンドポイント \_ コンパニオン \_ 記述子](efi-usb-superspeed-endpoint-companion-descriptor.md)構造体。
 
+## <a name="remarks"></a>解説
 
-**EFI\_USB\_エンドポイント\_記述子**構造体は、UEFI 仕様バージョン 2.3 で定義されている以降。 詳細については、次を参照してください。、 [UEFI.org](https://go.microsoft.com/fwlink/p/?linkid=109526) web サイト。
+**EFI \_ USB \_ エンドポイント \_ 記述子**の構造は、UEFI 仕様バージョン2.3 以降で定義されています。 詳細については、 [UEFI.org](https://uefi.org/specifications)の web サイトを参照してください。
 
 ## <a name="requirements"></a>要件
 
-
-**ヘッダー:** ユーザーが生成しました。
-
- 
-
- 
-
-
-
-
+**ヘッダー:** ユーザーが生成
