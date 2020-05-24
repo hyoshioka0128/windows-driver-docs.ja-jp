@@ -507,7 +507,7 @@ BinSkim はオープンソースツールであり、静的な分析結果交換
 
 2. ビンの表示をダウンロードするには、NuGet パッケージなど、いくつかのオプションがあります。 この例では、<https://github.com/microsoft/binskim> から BinSkim を含む zip ファイルをダウンロードし、64ビットの Windows PC にインストールします。
 
-3. <https://github.com/microsoft/binskim> の **[複製またはダウンロード]** ボタンをクリックし、 **[download Zip]** \ (Zip のダウンロード \) を選択します。
+3. <https://github.com/microsoft/binskim> の **[Clone or download]\(複製またはダウンロード\)** ボタンをクリックし、 **[download Zip]**\(Zip のダウンロード \) を選択します。
 
 4. ダウンロードした zip ファイルをクリックして解凍します。たとえば、`C:\binskim-master`します。
 
