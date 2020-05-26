@@ -4,12 +4,12 @@ description: このセクションでは、Windows 10 でのドライバー開�
 ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd0be7cb41ffca0b08d838852f937345b915cda
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 678be02ff0d40401e88776b1eef8aa09a921c0ee
+ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235365"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83642594"
 ---
 # <a name="whats-new-in-driver-development"></a><a name="top"></a>ドライバー開発に関する最新情報
 
@@ -32,6 +32,14 @@ Windows ドライバーをビルド、インストール、展開、デバッグ
 ### <a name="windows-hardware-error-architecture-whea"></a>Windows Hardware Error Architecture (WHEA)
 
 WHEA には、新しいインターフェイス (v2) が含まれています。 エラー ソースを登録し、エラーをレポートする方法については、「[Windows 10 で WHEA を使用する](whea/using-whea-on-windows-10.md)」を参照してください。
+
+### <a name="display-and-graphics-drivers"></a>ディスプレイとグラフィック ドライバー
+
+Windows 10 バージョン 2004 では、D3D12 メッシュ シェーダー サポート、サンプラー サポート、レイトレーシング拡張機能、ビデオ モーション予測、およびビデオ保護されたリソース サポートを含む、いくつかの新しい強化されたディスプレイおよびグラフィックス ドライバー機能が利用可能です。 これらの新機能の詳細については、「[Windows 10 ディスプレイおよびグラフィックス ドライバーの新機能](https://docs.microsoft.com/windows-hardware/drivers/display/what-s-new-for-windows-10-display-and-graphics-drivers)」を参照してください。
+
+### <a name="storage-drivers"></a>ストレージ ドライバー
+
+ストレージ ミニポート ドライバーでは、デバイスをリセットする機能など、デバイスの内部状態に関する詳細情報を取得および設定できるようになりました。 まずは、[**IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_device_internal_log) および [**StorPortHardwareReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storporthardwarereset) をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

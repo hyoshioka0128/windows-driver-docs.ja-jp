@@ -4,18 +4,18 @@ description: パートナー センターでドライバーをフライティン
 ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a6cf66d1d57bc66da2f732db121470f17240709b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 53839b5beeb7ec2a73fc1eafc2bd77fcf6cb740e
+ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63335119"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778344"
 ---
 # <a name="driver-flighting"></a>ドライバーのフライティング
 
-パートナー センターでドライバーをフライティングすると、定義した Windows Insider リング内でドライバーを配布して、自動的に監視および評価することができます。 フライトの完了後、ドライバーのパフォーマンス レポートが生成され、それに基づいてドライバーの重要な機能を評価し、シナリオを改善できます。 フライトが成功し、マイクロソフトの承認が得られると、ドライバーが Windows Update を通じて一般ユーザーに配布されます。 
+パートナー センターでドライバーをフライティングすると、定義した Windows Insider リング内でドライバーを配布して、自動的に監視および評価することができます。 フライトの完了後、ドライバーのパフォーマンス レポートが生成され、それに基づいてドライバーの重要な機能を評価し、シナリオを改善できます。 フライトが成功し、マイクロソフトの承認が得られると、ドライバーが Windows Update を通じて一般ユーザーに配布されます。
 
-次のビデオでは、ドライバーのフライティング プログラムの概要をさらに詳しく説明します。 
+次のビデオでは、ドライバーのフライティング プログラムの概要をさらに詳しく説明します。
 <iframe src="https://channel9.msdn.com/Events/WinHEC/WinHEC-Online/Start-Your-Driver-Flighting-The-benefit-of-Driver-Promotion/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="signing-up-for-driver-flighting"></a>ドライバーのフライティングへのサインアップ
@@ -61,7 +61,7 @@ ms.locfileid: "63335119"
 
 4. 次のうち、ドライバーに当てはまる項目を選択します。 この情報は、評価プロセスの迅速化に役立ちます。![フライティング対象のドライバーを説明する選択肢の画像: 選択肢は、"共同エンジニアリング ドライバーである"、"再起動が必要"、"UI やソフトウェアを展開する"、"新しいまたは未リリースのデバイスをサポートする" です](images/driver-flighting-statements.png)
 
-    > [!IMPORTANT] 
+    > [!IMPORTANT]
     > 以下の点に注意してください。
     > * ドライバーのインストール後の再起動は、可能な限り避けてください。 
     > * インストール時に UI やソフトウェアを展開するドライバーは S モードの Windows 10 に準拠しないため、このオペレーティング システムに対するフライティングは実施できません。

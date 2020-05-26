@@ -4,12 +4,12 @@ title: ドライバー リファレンス ページでのターゲット プラ�
 description: Microsoft ドライバー リファレンス ページの下部にある要件ブロックには、ターゲット プラットフォームという名前のエントリが表示されます。
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e824f0536b8aa039a64db8227bb7cea3b65178
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: fc571594ab09e403673c388d3e56669b4849c46b
+ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270455"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83769656"
 ---
 # <a name="target-platform-on-driver-reference-pages"></a>ドライバー リファレンス ページでのターゲット プラットフォーム
 
@@ -25,7 +25,8 @@ Microsoft ドライバー リファレンス ページの下部にある要件�
 
 |用語|説明|
 |--- |--- |
-|ユニバーサル|Windows ドライバーのドライバー バイナリは、このデバイス ドライバー インターフェイス (DDI) を呼び出すことができます。
+|ユニバーサル|Windows ドライバーのドライバー バイナリは、このデバイス ドライバー インターフェイス (DDI) を呼び出すことができます。 詳細については、「[Windows ドライバーの概要](getting-started-with-windows-drivers.md)」を参照してください。|
+|デスクトップ|Windows 10 デスクトップ エディションまたは Windows Server 2016 のドライバー バイナリは、この DDI を呼び出すことができます。|
 
 Windows ドライバーは、次に示す Windows 10 のユニバーサル Windows プラットフォーム (UWP) ベース エディションで動作します。
 
@@ -33,8 +34,5 @@ Windows ドライバーは、次に示す Windows 10 のユニバーサル Windo
 *   S モードの Windows 10
 *   Windows 10 IoT Core
 *   Windows Server 2016
-
-詳細については、「[Windows ドライバーの概要](getting-started-with-windows-drivers.md)」を参照してください。| |デスクトップ|Windows 10 デスクトップ エディションまたは Windows Server 2016 のドライバー バイナリは、この DDI を呼び出すことができます。|
-
 
 
