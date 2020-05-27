@@ -1,8 +1,8 @@
 ---
-title: バグ チェック 1CC EXRESOURCE_TIMEOUT_LIVEDUMP
-description: EXRESOURCE_TIMEOUT_LIVEDUMP のバグ チェックでは、0x000001CC の値を持ちます。
+title: バグチェック 1CC EXRESOURCE_TIMEOUT_LIVEDUMP
+description: EXRESOURCE_TIMEOUT_LIVEDUMP バグチェックの値は0x000001CC です。
 keywords:
-- バグ チェック 0x1CC EXRESOURCE_TIMEOUT_LIVEDUMP
+- バグチェック 0x1CC EXRESOURCE_TIMEOUT_LIVEDUMP
 - EXRESOURCE_TIMEOUT_LIVEDUMP
 ms.date: 04/19/2018
 topic_type:
@@ -12,38 +12,38 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 131d6bfc1076e03d7e940384229218019ca70998
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: b65027cbaa9c47cc30079bb66d6e2fff4eb999da
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519692"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851285"
 ---
-# <a name="bug-check-bug-check-0x1cc-exresourcetimeoutlivedump"></a>チェックのバグ チェック 0x1CC をバグします。EXRESOURCE\_タイムアウト\_LIVEDUMP
+# <a name="bug-check-0x1cc-exresource_timeout_livedump"></a>バグチェック 0x1CC: EXRESOURCE \_ TIMEOUT \_ LIVEDUMP
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-EXRESOURCE_TIMEOUT_LIVEDUMP のバグ チェックでは、0x000001CC の値を持ちます。
+EXRESOURCE_TIMEOUT_LIVEDUMP バグチェックの値は0x000001CC です。
 
-カーネルに次がタイムアウトしました。これは、デッドロック状態またはパフォーマンスの問題の可能性があるため、激しい競合に示していることができます。
+カーネルの資源がタイムアウトしました。これは、パフォーマンスの問題を引き起こす可能性があるデッドロック状態または過剰な競合を示している可能性があります。
 
 
-## <a name="exresourcetimeoutlivedump-parameters"></a>EXRESOURCE\_タイムアウト\_LIVEDUMP パラメーター
+## <a name="exresource_timeout_livedump-parameters"></a>EXRESOURCE \_ TIMEOUT \_ LIVEDUMP パラメーター
 
-次のパラメーターは、ブルー スクリーンに表示されます。
+次のパラメーターがブルースクリーンに表示されます。
 
 パラメーター | 説明 
 |---------|--------------|
-1 | タイムアウトするスケジュールを作成します。
-2 | スレッドのタイムアウトを検出
-3 | 次の競合の数
+1 | タイムアウトした場合は、
+2 | タイムアウトを検出したスレッド
+3 | ÷資源の競合数
 4 | 構成されたタイムアウト (秒)
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

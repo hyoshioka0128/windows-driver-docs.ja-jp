@@ -14,12 +14,12 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 19771178e6302931490019fb2dd39ee6ac3a8085
-ms.sourcegitcommit: 7ee048ef0b2928b5fd372d6fe5d6c0c008462180
+ms.openlocfilehash: 9e1b8a09e046c2c23e7e0211f4f29e298eca522c
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83729552"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851311"
 ---
 # <a name="ksproperty_audio_volumelevel"></a>KSK プロパティ \_ AUDIO \_ VOLUMELEVEL
 
@@ -43,7 +43,7 @@ KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL プロパティは、ボリュームノー�
 <tr class="header">
 <th align="left">取得</th>
 <th align="left">オン</th>
-<th align="left">対象</th>
+<th align="left">移行先</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
@@ -69,7 +69,7 @@ KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL プロパティは、ボリュームノー�
 
 + 2147483647 は + 32767.99998474 デシベル (ゲイン) です。
 
-> [!Note]
+> [!NOTE]
 > デシベル範囲は、-2147483648 ~ + 2147483647 の整数値によって表されます。このスケールでは、1/65536 デシベルが解決されます。
 
  
@@ -80,12 +80,12 @@ KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL プロパティは、ボリュームノー�
 
 KSK PROPERTY \_ AUDIO \_ VOLUMELEVEL property 要求は、 \_ 正常に完了したことを示すステータス成功を返します。 それ以外の場合、要求は適切なエラー状態コードを返します。
 
-<a name="remarks"></a>解説
+<a name="remarks"></a>コメント
 -------
 
 このプロパティのプロパティ記述子は、チャネル番号を指定します。 ボリュームノードを通過するストリームに*n 個*のチャネルが含まれている場合、チャネルには 0 ~ *n*-1 の番号が付けられます。 詳細については、「[マルチチャネルノードの公開](https://docs.microsoft.com/windows-hardware/drivers/audio/exposing-multichannel-nodes)」を参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>

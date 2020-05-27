@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_ONESHOT\_再接続
-description: KSPROPERTY\_ONESHOT\_再接続プロパティは、Bluetooth のオーディオ デバイスに接続しようとするオーディオ ドライバーを使用します。
+title: KSPROPERTY \_ ONESHOT \_ RECONNECT
+description: KSK プロパティ \_ ONESHOT \_ RECONNECT プロパティは、Bluetooth オーディオデバイスへの接続を試行するようにオーディオドライバーに指示するために使用されます。
 ms.assetid: 54122a02-87e9-4953-aa78-4b9b31447a26
 keywords:
-- KSPROPERTY_ONESHOT_RECONNECT オーディオ デバイス
+- KSPROPERTY_ONESHOT_RECONNECT オーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,19 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e67193b50568f82ba438ab89f2f3ed87fb4d3429
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 0e118d902cd77ae09f89be85dcde5a510eed36a4
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391666"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851287"
 ---
-# <a name="kspropertyoneshotreconnect"></a>KSPROPERTY\_ONESHOT\_再接続
+# <a name="ksproperty_oneshot_reconnect"></a>KSPROPERTY \_ ONESHOT \_ RECONNECT
 
 
-**KSPROPERTY\_ONESHOT\_再接続**オーディオの Bluetooth デバイスに接続しようとするオーディオ ドライバーを要求するプロパティを使用します。
+**Ksk プロパティ \_ ONESHOT \_ RECONNECT**プロパティは、Bluetooth オーディオデバイスへの接続を試行するようにオーディオドライバーに指示するために使用されます。
 
-### <a name="span-idusagesummarytablespanspan-idusagesummarytablespanspan-idusagesummarytablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
+### <a name="span-idusage_summary_tablespanspan-idusage_summary_tablespanspan-idusage_summary_tablespanusage-summary-table"></a><span id="Usage_Summary_Table"></span><span id="usage_summary_table"></span><span id="USAGE_SUMMARY_TABLE"></span>使用状況の概要テーブル
 
 <table>
 <colgroup>
@@ -39,17 +39,17 @@ ms.locfileid: "67391666"
 <thead>
 <tr class="header">
 <th align="left">取得</th>
-<th align="left">設定</th>
-<th align="left">対象</th>
+<th align="left">オン</th>
+<th align="left">移行先</th>
 <th align="left">プロパティ記述子の型</th>
 <th align="left">プロパティ値の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>〇</p></td>
-<td align="left"><p>X</p></td>
-<td align="left"><p>フィルター</p></td>
+<td align="left"><p>はい</p></td>
+<td align="left"><p>いいえ</p></td>
+<td align="left"><p>Assert</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)" data-raw-source="[&lt;strong&gt;KSPROPERTY&lt;/strong&gt;](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))"><strong>KSPROPERTY</strong></a></p></td>
 <td align="left"><p>NULL</p></td>
 </tr>
@@ -58,20 +58,21 @@ ms.locfileid: "67391666"
 
  
 
-このプロパティの要求では、プロパティの値は送信されません。
+プロパティの値は、このプロパティの要求と共に送信されません。
 
-### <a name="span-idreturnvaluespanspan-idreturnvaluespanspan-idreturnvaluespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
+### <a name="span-idreturn_valuespanspan-idreturn_valuespanspan-idreturn_valuespanreturn-value"></a><span id="Return_Value"></span><span id="return_value"></span><span id="RETURN_VALUE"></span>戻り値
 
-**KSPROPERTY\_ONESHOT\_再接続**プロパティは、ステータスを返します\_要求が成功した場合は成功します。
+**Ksk プロパティ \_ ONESHOT \_ RECONNECT**プロパティは \_ 、要求が成功した場合に STATUS SUCCESS を返します。
 
-&gt; \[!注\]&gt;要求が成功した場合は、ドライバーがオーディオの Bluetooth デバイスに接続するとしましたが、必ずしも、試行が成功したことを意味します。
+> [!NOTE]
+> 要求が成功した場合、ドライバーは Bluetooth オーディオデバイスに接続しようとしましたが、必ずしも試行が成功したことを意味するわけではありません。
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-実装することができます、 [ **KSPROPERTY\_ジャック\_説明**](ksproperty-jack-description.md)ドライバーのプロパティをピン留めします。 この実装を行った後、エンドポイントの接続の状態を確認できます。、 **KSPROPERTY\_ONESHOT\_再接続**プロパティ要求。
+ドライバーに[**Ksk プロパティジャックの \_ \_ 説明**](ksproperty-jack-description.md)ピンプロパティを実装できます。 この実装では、 **Ksk プロパティ \_ ONESHOT \_ RECONNECT**プロパティ要求を行った後、エンドポイントの接続状態を確認できます。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -84,21 +85,21 @@ ms.locfileid: "67391666"
 <tbody>
 <tr class="odd">
 <td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [**KSPROPERTY**](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85))
 
-[**KSPROPERTY\_ジャック\_の説明**](ksproperty-jack-description.md)
+[**KSK プロパティ \_ ジャックの \_ 説明**](ksproperty-jack-description.md)
 
  
 

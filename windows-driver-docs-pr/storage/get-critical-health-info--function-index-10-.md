@@ -1,33 +1,34 @@
 ---
 title: 正常性に関する重要な情報の取得 (関数インデックス 10)
-description: この関数は、重要な正常性関連の情報を返します。
+description: この関数は、重大な正常性に関連する情報を返します。
 ms.assetid: 2083628D-FB46-4104-9F70-F7124B35DD04
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aa0417aefa8af1ec41b2f9c27f4bbe938069f176
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 019203df61baec312c465bdb82e302477b94bb8d
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355854"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851324"
 ---
 # <a name="get-critical-health-info-function-index-10"></a>正常性に関する重要な情報の取得 (関数インデックス 10)
 
 
-この関数は、重要な正常性関連の情報を返します。 呼び出す[NVDIMM-N ヘルス情報の取得 (関数インデックス 11)](get-nvdimm-n-health-info--function-index-11-.md)と[エネルギー ソース ヘルス情報の取得 (関数インデックス 12)](get-energy-source-health-info--function-index-12-.md)さらに正常性に関する情報を取得します。
+この関数は、重大な正常性に関連する情報を返します。 [GET NVDIMM Health info (関数インデックス 11)](get-nvdimm-n-health-info--function-index-11-.md)を呼び出し、さらに正常性に関連する情報を取得する[エネルギーソース正常性情報 (関数インデックス 12) を取得](get-energy-source-health-info--function-index-12-.md)します。
 
-&gt; \[!注\]    &gt;、星が付いたマークされているすべてのレジスタ (\*) バイト アドレス指定可能なエネルギー バックアップ インターフェイス仕様で定義されているレジスタします。
+> [!NOTE]
+> スター () でマークされたすべてのレジスタ \* は、バイトアドレッシング可能なエネルギーバッキングインターフェイスの仕様で定義されているレジスタです。
 
  
 
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>入力
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>代入
 
 
 ### <a name="span-idargs3spanspan-idargs3spanspan-idargs3spanargs3"></a><span id="Args3"></span><span id="args3"></span><span id="ARGS3"></span>Args3
 
-なし。
+[なし] :
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>出力
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 <table>
@@ -40,38 +41,38 @@ ms.locfileid: "63355854"
 <thead>
 <tr class="header">
 <th align="left">フィールド</th>
-<th align="left">バイトの長さ</th>
+<th align="left">バイト長</th>
 <th align="left">バイト オフセット</th>
 <th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><strong>ステータス</strong></td>
+<td align="left"><strong>状態</strong></td>
 <td align="left">4</td>
 <td align="left">0</td>
-<td align="left"><p>移動して<a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>について。</p></td>
+<td align="left"><p>詳細については、 <a href="-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md" data-raw-source="[_DSM Method Output](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)">_DSM メソッドの出力</a>にアクセスしてください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>重要な正常性の情報</strong></td>
+<td align="left"><strong>重大な正常性の情報</strong></td>
 <td align="left">1</td>
 <td align="left">4</td>
-<td align="left"><p>NVDIMM-N モジュールを使用して問題の高レベルの状態レポート。</p>
-<p>* バイト 0 – <em>MODULE_HEALTH</em> (0, 0xA0)</p></td>
+<td align="left"><p>NVDIMM モジュールに関する問題の高レベルの状態レポート。</p>
+<p>* バイト0– <em>MODULE_HEALTH</em> (0、0xa0)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[NVDIMM-N の正常性の情報 (関数インデックス 11) を取得します。](get-nvdimm-n-health-info--function-index-11-.md)
+[NVDIMM-N の正常性に関する情報の取得 (関数インデックス 11)](get-nvdimm-n-health-info--function-index-11-.md)
 
-[エネルギー ソース ヘルス情報 (関数インデックス 12) を取得します。](get-energy-source-health-info--function-index-12-.md)
+[電力源の正常性に関する情報の取得 (関数インデックス 12)](get-energy-source-health-info--function-index-12-.md)
 
-[\_バイトのアドレス指定可能なエネルギーの DSM インターフェイス関数クラス (関数インターフェイス 1) のバックアップ](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
+[\_バイトアドレッシング可能なエネルギー対応関数クラスの DSM インターフェイス (関数インターフェイス 1)](-dsm-interface-for-byte-addressable-energy-backed-function-class--function-interface-1-.md)
 
  
 

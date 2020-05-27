@@ -1,8 +1,8 @@
 ---
-title: Bug Check 0x1CD INVALID_CALLBACK_STACK_ADDRESS
-description: INVALID_CALLBACK_STACK_ADDRESS のバグ チェックでは、0x000001CD の値を持ちます。
+title: バグチェック 0x1CD INVALID_CALLBACK_STACK_ADDRESS
+description: INVALID_CALLBACK_STACK_ADDRESS バグチェックの値は0x000001CD です。
 keywords:
-- Bug Check 0x1CD INVALID_CALLBACK_STACK_ADDRESS
+- バグチェック 0x1CD INVALID_CALLBACK_STACK_ADDRESS
 - INVALID_CALLBACK_STACK_ADDRESS
 ms.date: 05/23/2018
 topic_type:
@@ -12,22 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6940dab64b24f183087267b9f109522efc2d2b
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: d0f3582aebe8e408c22a63967d97ec4b6a159361
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519695"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851968"
 ---
-# <a name="bug-check-bug-check-0x1cd-invalidcallbackstackaddress"></a>チェックのバグ チェック 0x1CD をバグします。無効な\_コールバック\_スタック\_アドレス 
+# <a name="bug-check-0x1cd-invalid_callback_stack_address"></a>バグチェック 0x1CD: \_ コールバック \_ スタック \_ アドレスが無効です 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-INVALID_CALLBACK_STACK_ADDRESS のバグ チェックでは、0x000001CD の値を持ちます。 コールバックのスタックは、ユーザー モード アドレスは無効です。
+INVALID_CALLBACK_STACK_ADDRESS バグチェックの値は0x000001CD です。 コールバックスタックは、無効なユーザーモードアドレスです。
 
-## <a name="invalidcallbackstackaddress--parameters"></a>無効な\_コールバック\_スタック\_アドレス パラメーター
+## <a name="invalid_callback_stack_address--parameters"></a>\_コールバック \_ スタック \_ アドレスパラメーターが無効です
 
 なし
  

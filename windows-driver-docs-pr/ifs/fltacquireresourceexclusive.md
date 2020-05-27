@@ -15,12 +15,12 @@ api_type:
 - LibDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 268101c49007d70f2255335f6aa73c7b1ecb62c5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34663302454d325037bd1c34cfdea65fca5cf8e9
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841334"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852127"
 ---
 # <a name="fltacquireresourceexclusive-routine"></a>FltAcquireResourceExclusive ルーチン
 
@@ -39,7 +39,7 @@ VOID FltAcquireResourceExclusive(
 <a name="parameters"></a>パラメーター
 ----------
 
-*リソース*\[in、out\]  
+*リソース* \[in、out\]  
 不透明な÷構造体を指すポインターです。 この構造体は、呼び出し元によって非ページプールから割り当てられ、 [**Exinitializer eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exinitializeresourcelite)または[**Exreinitializer eresourcelite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exreinitializeresourcelite)を呼び出すことによって初期化される必要があります。
 
 <a name="return-value"></a>戻り値
@@ -47,7 +47,7 @@ VOID FltAcquireResourceExclusive(
 
 なし
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
 このルーチンは、Windows XP Service Pack 2 (SP2)、Windows Server 2003 Service Pack 1 (SP1)、およびそれ以降のバージョンの Windows で使用できます。
@@ -64,7 +64,8 @@ VOID FltAcquireResourceExclusive(
 
 -   リソースが別のスレッドによって排他的に所有されている場合、または呼び出し元がリソースへの共有アクセスだけを持っている場合は、リソースを取得できるようになるまで、現在のスレッドは待機状態になります。
 
-&gt; \[!2つのスレッドが同じリソースに対して共有ロックを保持していて、共有ロックを解放せずにロックを排他的に取得しようとすると、デッドロックが発生することに注意して\] &gt; ます。 つまり、各スレッドは、他のスレッドがロックに対して共有ホールドを解放するまで待機し、それ以外の場合は共有ホールドを解放しません。
+> [!NOTE]
+> 2つのスレッドが同じリソースに対して共有ロックを保持し、共有ロックを解放せずにロックを排他的に取得しようとすると、デッドロックが発生します。 つまり、各スレッドは、他のスレッドがロックに対して共有ホールドを解放するまで待機し、それ以外の場合は共有ホールドを解放しません。
 
  
 
@@ -82,7 +83,7 @@ VOID FltAcquireResourceExclusive(
 
 ÷の構造体の詳細については、「カーネルアーキテクチャの設計ガイド」の「のについて」[を](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-eresource-routines)参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -92,7 +93,7 @@ VOID FltAcquireResourceExclusive(
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>対象プラットフォーム</p></td>
+<td align="left"><p>ターゲット プラットフォーム</p></td>
 <td align="left"><a href="https://go.microsoft.com/fwlink/p/?linkid=531356" data-raw-source="[Universal](https://go.microsoft.com/fwlink/p/?linkid=531356)">ユニバーサル</a></td>
 </tr>
 <tr class="even">
@@ -104,8 +105,8 @@ VOID FltAcquireResourceExclusive(
 <td align="left">Fltkernel .h (Fltkernel. h を含む)</td>
 </tr>
 <tr class="even">
-<td align="left"><p>Library</p></td>
-<td align="left">fltMgr .lib</td>
+<td align="left"><p>ライブラリ</p></td>
+<td align="left">FltMgr .lib</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>IRQL</p></td>

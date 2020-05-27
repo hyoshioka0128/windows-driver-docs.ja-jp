@@ -1,70 +1,68 @@
 ---
-title: WDI TLV ジェネレーター/パーサーの XML のセマンティクス
-description: TLV ジェネレーター/パーサーの XML ファイルは、メッセージ コンテナー (TLVs) の一覧、プロパティは、(構造体) をグループ化します。 このトピックでは、XML 構文について説明します。
+title: WDI TLV generator/パーサー XML セマンティクス
+description: TLV generator/パーサー XML ファイルは、メッセージ、コンテナー (TLVs)、およびプロパティグループ (構造体) の一覧です。 このトピックでは、XML 構文について説明します。
 ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 7333a5f37d2b9c419daa513d0f2a19f6446fc824
-ms.sourcegitcommit: 0504cc497918ebb7b41a205f352046a66c0e26a7
+ms.openlocfilehash: 756e6c1b2e1d1a09f662e3974369c7c8e354d1e3
+ms.sourcegitcommit: 53cf8b3982c47fa1bbf9f1725ec5fbba2ebc4f42
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405276"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83883441"
 ---
-# <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV ジェネレーター/パーサーの XML のセマンティクス
+# <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV generator/パーサー XML セマンティクス
 
+TLV generator/パーサー XML ファイルは、メッセージ、コンテナー (TLVs)、およびプロパティグループ (構造体) の一覧です。 このトピックでは、XML 構文について説明します。
 
-TLV ジェネレーター/パーサーの XML ファイルは、メッセージ コンテナー (TLVs) の一覧、プロパティは、(構造体) をグループ化します。 このトピックでは、XML 構文について説明します。
-
--   [`<message />`](#message-)
-    -   [Attributes](#attributes)
-    -   [コンテンツ](#content)
-    -   [例](#example)
--   [`<containerRef />`](#containerref-)
-    -   [Attributes](#attributes)
-    -   [コンテンツ](#content)
-    -   [例](#example)
--   [`<containers />`](#containers-)
--   [`<container />`](#container-)
-    -   [Attributes](#attributes)
-    -   [目次](#contents)
-    -   [例](#example)
--   [`<groupRef />`](#groupref-)
-    -   [Attributes](#attributes)
-    -   [コンテンツ](#content)
-    -   [使用例](#examples)
--   [`    <namedType />`](#namedtype-)
-    -   [Attributes](#attributes)
-    -   [コンテンツ](#content)
-    -   [例](#example)
--   [`<aggregateContainer />`](#aggregatecontainer-)
-    -   [Attributes](#attributes)
-    -   [コンテンツ](#content)
-    -   [例](#example)
--   [`<propertyGroups />`](#propertygroups-)
--   [フィールドのプリミティブ型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
-    -   [Attributes](#attributes)
-    -   [目次](#contents)
--   [`<propertyGroup />`](#propertygroup-)
-    -   [Attributes](#attributes)
-    -   [目次](#contents)
-    -   [例](#example)
+- [`<message />`](#message-)
+  - [属性](#attributes)
+  - [コンテンツ](#content)
+  - [例](#example)
+- [`<containerRef />`](#containerref-)
+  - [属性](#attributes)
+  - [コンテンツ](#content)
+  - [例](#example)
+- [`<containers />`](#containers-)
+- [`<container />`](#container-)
+  - [属性](#attributes)
+  - [Contents](#contents)
+  - [例](#example)
+- [`<groupRef />`](#groupref-)
+  - [属性](#attributes)
+  - [コンテンツ](#content)
+  - [例](#examples)
+- [`<namedType />`](#namedtype-)
+  - [属性](#attributes)
+  - [コンテンツ](#content)
+  - [例](#example)
+- [`<aggregateContainer />`](#aggregatecontainer-)
+  - [属性](#attributes)
+  - [コンテンツ](#content)
+  - [例](#example)
+- [`<propertyGroups />`](#propertygroups-)
+- [プリミティブフィールド型 ( `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>` )](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
+  - [属性](#attributes)
+  - [Contents](#contents)
+- [`<propertyGroup />`](#propertygroup-)
+  - [属性](#attributes)
+  - [Contents](#contents)
+  - [例](#example)
 
 ## `<message />`
 
-
-1 つの最上位 WDI メッセージをについて説明します。 これらのメッセージのエントリのパーサー/ジェネレーター関数のみがあります。
+1つの最上位レベルの WDI メッセージを記述します。 これらのメッセージエントリに対してパーサー関数またはジェネレーター関数のみが存在します。
 
 ### <a name="attributes"></a>属性
 
--   `commandId` -Dot11wdi.h で定義する必要がありますシンボリック定数。
--   `type` -(を使用するこの型パーサー/ジェネレーター関数を呼び出すときに) コードに公開される名前を入力します。
--   `description` -コマンドの説明。
--   `direction` – このメッセージに TLV ストリームがについて説明します ("ToIhv"と呼ばれます)、M1 の一部として IHV ミニポートに WDI から移動するとかどうかを示します、M0、M3、または ("FromIhv"といいます)、M4 として WDI に IHV ミニポートから移動するか (と呼ばれる、双方向の移動に TLV ストリームについて説明します "Both")。 参照してください*メッセージの方向*で[WDI TLV パーサー インターフェイスの概要](wdi-tlv-parser-interface-overview.md)します。
+- `commandId`-Dot11wdi で定義する必要があるシンボリック定数。
+- `type`-コードに公開する型の名前 (パーサー/ジェネレーター関数を呼び出すときにこの型を使用します)。
+- `description`-コマンドの説明。
+- `direction`–このメッセージが、WDI から IHV ミニポートに移動するときに TLV ストリームに記述するかどうかを示します ("ToIhv" と呼ばれます)。また、IHV ミニポートから M0、M3、または M4 ("FromIhv" と呼ばれます) として WDI に向かう TLV ストリームを記述します。 「 [WDI TLV parser](wdi-tlv-parser-interface-overview.md)での*メッセージの方向*」の「インターフェイスの概要」を参照してください。
 
-### <a name="content"></a>Content
+### <a name="content"></a>コンテンツ
 
-コンテナーの参照の一覧 (`<containerRef />`)。 これらは、メッセージを構成するさまざまな TLVs です。 定義された型への参照は、`<containers />`セクション。
+コンテナー参照の一覧 ( `<containerRef />` )。 これらは、メッセージを構成する TLVs とは異なります。 これらは、セクションで定義されている型への参照です `<containers />` 。
 
 ### <a name="example"></a>例
 
@@ -85,24 +83,23 @@ TLV ジェネレーター/パーサーの XML ファイルは、メッセージ 
 
 ## `<containerRef />`
 
+`<container />`セクションで定義されているへの参照 `<containers />` 。
 
-参照を`<container />`で定義されている、`<containers />`セクション。
+### <a name="containerref--attributes"></a>`<containerRef />`アトリビュート
 
-### <a name="attributes"></a>属性
+- `id`-Wditypes で定義する必要がある TLV ID。
+- `name`-親構造内の変数の名前。
+- `optional`-省略可能なフィールドであるかどうかを指定します。 既定では false です。 生成されたコードは "省略可能" を適用します。
+- `multiContainer`–生成されたコードが同じ型の複数の TLVs 想定する必要があるかどうかを指定します。 既定では false です。 False の場合、生成されたコードは1つだけが存在することを強制します。
+- `type`-セクション内の特定の要素の "name" 属性への参照 `<containers />` 。
+- `versionAdded`-バージョン管理の一部。 この TLV コンテナーが、この属性で示されているバージョンよりも小さいピアとの間で、バイトストリームに表示されないことを示します。
+- `versionRemoved`-バージョン管理の一部。 この TLV コンテナーが、この属性で示されているもの以上のバージョンのピアとの間で、バイトストリームに表示されないことを示します。
 
--   `id` -TLV ID wditypes.h で定義する必要があります。
--   `name` -親構造体の変数の名前。
--   `optional` -オプションのフィールドがあるかどうかを指定します。 既定で false に設定します。 生成されたコードでは、「省略可能な特性」を適用します。
--   `multiContainer` – 生成されたコードが同じ型の複数の TLVs ことが予想されるかどうかを指定します。 既定で false に設定します。 False の場合、生成されたコードは、1 つだけが存在することを強制します。
--   `type` -特定の要素の"name"属性への参照、`<containers />`セクション。
--   `versionAdded` -バージョン管理の一部です。 この TLV コンテナーする必要がありますに表示されないことをバージョンのピアとの間のバイト ストリーム 1 より小さい、この属性に示されていることを示します。
--   `versionRemoved` -バージョン管理の一部です。 この TLV コンテナーが、この属性に示されている 1 つ以上のバージョンでのピアとの間のバイト ストリームに表示する必要がありますされないことを示します。
+### <a name="containerref--content"></a>`<containerRef />`情報
 
-### <a name="content"></a>Content
+[なし] :
 
-なし。
-
-### <a name="example"></a>例
+### <a name="containerref--example"></a>`<containerRef />` 「例」
 
 ```XML
 <containerRef id="WDI_TLV_P2P_CHANNEL_NUMBER"
@@ -113,27 +110,25 @@ TLV ジェネレーター/パーサーの XML ファイルは、メッセージ 
 
 ## `<containers />`
 
-
-WDI メッセージで使用されるすべてのコンテナー/TLVs について説明します。 コンテナーは、TLV バケットを見なすことができます。 2 種類があります:`<container />`と`<aggregateContainer />`します。
+WDI メッセージで使用されるすべてのコンテナー/TLVs について説明します。 コンテナーは TLV バケットと見なすことができます。 型には、との2種類があり `<container />` `<aggregateContainer />` ます。
 
 ## `<container />`
 
+1つの構造体参照または名前付きの型の TLV コンテナー。 静的にサイズ変更されますが、静的なサイズになっている限り、C スタイルの配列にすることができます。
 
-1 つの構造の参照または名前付きの型の TLV コンテナーです。 静的にサイズしますが、静的にサイズ設定されている限り、C スタイル配列があります。
+### <a name="container--attributes"></a>`<container />`アトリビュート
 
-### <a name="attributes"></a>属性
+- `name`-WDI メッセージ/その他のコンテナーによって参照される ID。
+- `description`-コンテナーの内容についてのわかりやすい説明。
+- `type`–コードに公開される型名。
+- `isCollection`-生成されたコードが同じ TLV (C スタイル配列) 内の同じサイズ要素の多くを期待するかどうかを指定します。 既定値は false です (指定された型の1つの要素のみが想定されます)。
+- `isZeroValid`-が true の場合にのみ有効 `isCollection` です。 ゼロ要素配列が許可されるかどうかを判断します。 これは、TLV ストリームが、存在しないオプションの TLV と存在するが、長さが 0 (Ssid など) であることを区別する必要がある場合に便利です。 この区別はまれであるため、既定値は false です。
 
--   `name` -ID を WDI メッセージによって参照されている/その他のコンテナー。
--   `description` -(コンテナー) の項目の説明。
--   `type` – コードに公開される名前を入力します。
--   `isCollection` -を指定します生成されたかどうかのコードは同じ TLV (C スタイル配列) 内で同じサイズの要素の多くを想定する必要があります。 既定値は false (指定された型の 1 つの要素のみを想定)。
--   `isZeroValid` 唯一の有効な場合に`isCollection`は true。 0 の配列の要素が許可されているかどうかを判断します。 これは、TLV ストリームは、省略可能な TLV は 1 つと存在しないが存在するが、長さが 0 (Ssid) などを区別する必要がある場合に便利です。 この区別はまれであるため、既定値は false です。
+### <a name="container--contents"></a>`<container />`内容
 
-### <a name="contents"></a>目次
+またはのいずれか `<groupRef />` `<namedType />` 。
 
-いずれかの`<groupRef />`または`<namedType />`します。
-
-### <a name="example"></a>例
+### <a name="container--example"></a>`<container />` 「例」
 
 ```XML
 <container name="P2PListenStateContainer"
@@ -147,20 +142,19 @@ WDI メッセージで使用されるすべてのコンテナー/TLVs につい�
 
 ## `<groupRef />`
 
+セクションで定義されているプロパティグループ (構造体) への参照 `<propertyGroups />` 。
 
-定義されたプロパティ グループ (構造体) への参照、`<propertyGroups />`セクション。
+### <a name="groupref--attributes"></a>`<groupRef />`アトリビュート
 
-### <a name="attributes"></a>属性
+- `name`-親構造内の構造体の名前。
+- `ref`-セクション内の名前付き構造体への参照 `<propertyGroups />` 。
+- `description`–構造が使用される対象のわかりやすい記述子。
 
--   `name` -親構造体の構造の名前。
--   `ref` -内の名前付き構造体への参照を`<propertyGroups />`セクション。
--   `description` – 構造体の使用フレンドリ記述子。
+### <a name="groupref--content"></a>`<groupRef />`情報
 
-### <a name="content"></a>Content
+[なし] :
 
-なし。
-
-### <a name="examples"></a>例
+### <a name="groupref--examples"></a>`<groupRef />` 使用例
 
 ```XML
 <container name="WFDChannelContainer"
@@ -172,22 +166,21 @@ WDI メッセージで使用されるすべてのコンテナー/TLVs につい�
 </container>
 ```
 
-## ` <namedType />`
+## `<namedType />`
 
+Wditypes または dot11wdi によって公開されている未加工の型への参照。 既定のシリアライザー (memcpy) を使用するため、埋め込みの問題のため、独自のリスクでを使用します。
 
-Wditypes.hpp または dot11wdi.h により公開される生の型への参照。 使用する既定のシリアライザー (memcpy) ので、使用して、各自の責任でパディングの問題が原因です。
+### <a name="namedtype--attributes"></a>`<namedType />`アトリビュート
 
-### <a name="attributes"></a>属性
+- `name`-親構造内の構造体の名前。
+- `type`-実際のコードで使用する型名。
+- `description`–構造がどのように使用されるかについてのわかりやすい説明。
 
--   `name` -親構造体の構造の名前。
--   `type` -実際のコードで使用する名前を入力します。
--   `description` – どのような構造の説明が使用されます。
+### <a name="namedtype--content"></a>`<namedType />`情報
 
-### <a name="content"></a>Content
+[なし] :
 
-なし。
-
-### <a name="example"></a>例
+### <a name="namedtype--example"></a>`<namedType />` 「例」
 
 ```XML
 <container name="P2PListenStateContainer"
@@ -201,20 +194,19 @@ Wditypes.hpp または dot11wdi.h により公開される生の型への参照�
 
 ## `<aggregateContainer />`
 
+さまざまなコンテナーの TLV コンテナー。 これは、入れ子になった TLVs を処理するために使用されます。
 
-多くの異なるコンテナーの TLV コンテナーです。 これは、入れ子になった TLVs を処理するために使用されます。
+### <a name="-attributes"></a>`<aggregateContainer />`アトリビュート
 
-### <a name="attributes"></a>属性
+- `name`-WDI メッセージ/その他のコンテナーによって参照される ID。
+- `description`–コンテナーの内容についてのわかりやすい説明。
+- `type`-コードに公開する型名。
 
--   `name` -ID を WDI メッセージによって参照されている/その他のコンテナー。
--   `description` – (コンテナー) の項目の説明。
--   `type` -コードに公開される名前を入力します。
+### <a name="-content"></a>`<aggregateContainer />`情報
 
-### <a name="content"></a>Content
+の一覧 `<containerRef />` 。
 
-一覧の`<containerRef />`します。
-
-### <a name="example"></a>例
+### <a name="-example"></a>`<aggregateContainer />` 「例」
 
 ```XML
 <aggregateContainer
@@ -244,52 +236,48 @@ Wditypes.hpp または dot11wdi.h により公開される生の型への参照�
 
 ## `<propertyGroups />`
 
+すべてのコンテナーで使用されるすべての構造体について説明します。 構造体は、によって使用されるか `<container />` 、別の `<propertyGroup />` (入れ子になった構造体) によって参照されることがあります。 これらは、TLVs コンテナーとは別に定義されるため、再利用できます。 TLV ヘッダーはありません。
 
-すべてのコンテナーで使用されるすべての構造について説明します。 構造体で使用できるか、 `<container />`、または別によって参照される`<propertyGroup />`(構造体を入れ子になった)。 再使用できるように TLVs コンテナーとは独立して定義されます。 TLV ヘッダーはありません。
+これらの定義は、構造を使用した埋め込みの問題を解決し、データを解釈する方法についてコードジェネレーターの指示を提供するために必要です。
 
-これらの定義は構造体と埋め込みの問題を解決するのに役立つために必要なし、データの解釈方法については、コード ジェネレーターの手順を説明します。
+>[!NOTE]
+>ここでは順序が重要です。 すべてのデータオフセットは、プロパティグループの説明に基づいて暗黙的に指定され、ここで定義されている順序でデータが書き込まれ、解析されます。 これらの構造体はここで定義する必要があります。
 
-**注**  順序が重要です。 プロパティ グループの説明に基づくすべてのデータ オフセットが含まれ、データはここで、定義した順序で記述された解析です。 ここで定義する必要はこれらの構造体。
+## <a name="primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32"></a>プリミティブフィールド型 ( `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>` )
 
- 
+これらは、使用可能なプリミティブ型であり、生成されたコードによって適切に変換またはマーシャリングされます。
 
-## <a name="primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32"></a>フィールドのプリミティブ型 (`<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`)
+### <a name="attributes-for-primitive-field-types"></a>プリミティブフィールド型の属性
 
+- `name`-親構造内のフィールド名。
+- `description`–プロパティの内容についてのわかりやすい説明。
+- `count`-指定されたプロパティの数。 既定値は1です。 1より大きい値を指定すると、このプロパティはコード内で静的にサイズ設定された配列になります。
 
-これらは、使用可能なプリミティブ型であり、生成されたコードによって適切に変換/マーシャ リングは。
-
-### <a name="attributes"></a>属性
-
--   `name` 親の構造体のフィールド名です。
--   `description` – のプロパティを説明します。
--   `count` の指定したプロパティの多く方法。 既定では、1 つです。 1 より大きい値では、このプロパティをコードに静的にサイズの配列にします。
-
-### <a name="contents"></a>目次
+### <a name="contents-for-primitive-field-types"></a>プリミティブフィールド型の内容
 
 なし
 
 ## `<propertyGroup />`
 
+個々の構造体。
 
-個別の構造体。
+### <a name="propertygroup--attributes"></a>`<propertyGroup />`アトリビュート 
 
-### <a name="attributes"></a>属性
+- `name`-WDI メッセージ/その他のコンテナーによって参照される ID。
+- `description`–プロパティグループの内容についてのわかりやすい説明です。
+- `type`-コードに公開する型名。
 
--   `name` -ID を WDI メッセージによって参照されている/その他のコンテナー。
--   `description` – のプロパティ グループの説明。
--   `type` -コードに公開される名前を入力します。
+### <a name="propertygroup--contents"></a>`<propertyGroup />`内容
 
-### <a name="contents"></a>目次
+いくつかのプロパティの型 (構造体フィールド) を使用できます。
 
-いくつかの可能なプロパティの型 (構造体のフィールド) があります。
+- `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`
 
--   `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>`
+- `<groupRef />`
 
--   `<groupRef />`
+- `<namedType />`
 
--   `<namedType />`
-
-### <a name="example"></a>例
+### <a name="propertygroup--example"></a>`<propertyGroup />` 「例」
 
 ```XML
 <propertyGroup name="P2PDiscoverModeStruct"
@@ -319,12 +307,3 @@ Wditypes.hpp または dot11wdi.h により公開される生の型への参照�
             ref="WFDDeviceType" />
 </propertyGroup>
 ```
-
- 
-
- 
-
-
-
-
-

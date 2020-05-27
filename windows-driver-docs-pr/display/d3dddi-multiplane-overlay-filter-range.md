@@ -1,9 +1,9 @@
 ---
-title: D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_範囲の構造体
-description: システムの使用に予約されています。 ドライバーでは使用しないでください。この構造体は Windows Driver Kit (WDK) 8 付属するバージョンの Windows 8 で提供される D3dumddi.h ヘッダーでのみ使用できますに注意してください。 以降のバージョンのヘッダーから削除されました。 .
+title: D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ 範囲構造
+description: システムで使用するために予約されています。 ドライバーでは使用しないでください。注この構造は、windows 8 に付属している Windows Driver Kit (WDK) バージョン8で提供されている D3dumddi ヘッダーでのみ使用できます。 ヘッダーの新しいバージョンからは削除されています。.
 ms.assetid: 61393cb5-eedc-4186-a321-703b74450ee5
 keywords:
-- D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE 構造体のディスプレイ デバイス
+- D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE 構造の表示デバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,20 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c012dc263fde65fc9f23b2bb8438b0e2ee8752c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8da73872cad56eb05371dbe1a89fe358cc9eb030
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382963"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852159"
 ---
-# <a name="d3dddimultiplaneoverlayfilterrange-structure"></a>D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_範囲の構造体
+# <a name="d3dddi_multiplane_overlay_filter_range-structure"></a>D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ 範囲構造
 
 
-システムの使用に予約されています。 ドライバーでは使用しないでください。
+システムで使用するために予約されています。 ドライバーでは使用しないでください。
 
-&gt; \[!注\]&gt;この構造体は Windows Driver Kit (WDK) 8 付属するバージョンの Windows 8 で提供される D3dumddi.h ヘッダーでのみ使用できます。 以降のバージョンのヘッダーから削除されました。
+> [!NOTE]
+> この構造は、windows 8 に付属している Windows Driver Kit (WDK) バージョン8で提供されている D3dumddi ヘッダーでのみ使用できます。 ヘッダーの新しいバージョンからは削除されています。
 
  
 
@@ -45,13 +46,13 @@ typedef struct D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE {
 <a name="members"></a>メンバー
 -------
 
-**最小値**
+**最小**
 
-**最大値**
+**[最大]**
 
-**Default**
+**[Default]**
 
-**乗数**
+**×**
 
 <a name="requirements"></a>必要条件
 ------------
@@ -68,11 +69,11 @@ typedef struct D3DDDI_MULTIPLANE_OVERLAY_FILTER_RANGE {
 </tr>
 <tr class="even">
 <td align="left"><p>サポートされている最小のサーバー</p></td>
-<td align="left"><p>Windows Server 2012</p></td>
+<td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">D3dumddi.h</td>
+<td align="left">D3dumddi</td>
 </tr>
 </tbody>
 </table>

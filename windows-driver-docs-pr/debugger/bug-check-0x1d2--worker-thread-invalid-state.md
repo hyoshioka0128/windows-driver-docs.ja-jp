@@ -1,8 +1,8 @@
 ---
-title: バグ チェック 0x1D2 WORKER_THREAD_INVALID_STATE
-description: WORKER_THREAD_INVALID_STATE のバグ チェックでは、0x000001D2 の値を持ちます。
+title: バグチェック 0x1D2 WORKER_THREAD_INVALID_STATE
+description: WORKER_THREAD_INVALID_STATE バグチェックの値は0x000001D2 です。
 keywords:
-- バグ チェック 0x1D2 WORKER_THREAD_INVALID_STATE
+- バグチェック 0x1D2 WORKER_THREAD_INVALID_STATE
 - WORKER_THREAD_INVALID_STATE
 ms.date: 05/23/2018
 topic_type:
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fe77d8a1fa7cd63a8ece9b0a6ec607d883079e3d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 1075d939b592b53653f07cc29aeaafe3314747d7
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519665"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851565"
 ---
-# <a name="bug-check-bug-check-0x1d2-workerthreadinvalidstate"></a>チェックのバグ チェック 0x1D2 をバグします。ワーカー\_スレッド\_無効な\_状態 
+# <a name="bug-check-0x1d2-worker_thread_invalid_state"></a>バグチェック 0x1D2: ワーカー \_ スレッドの \_ 状態が無効です \_ 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-ワーカー\_スレッド\_無効な\_状態のバグ チェックが 0x000001D2 の値を持ちます。 
+ワーカー \_ スレッドの \_ 無効な \_ 状態のバグチェックには、0x000001d2 という値が指定されています。 
 
-このエラーは、実行ワーカー スレッドが無効な状態であることを示します。
+このエラーは、executive ワーカースレッドの状態が無効であることを示します。
 
-## <a name="workerthreadinvalidstate-parameters"></a>ワーカー\_スレッド\_無効な\_状態パラメーター
+## <a name="worker_thread_invalid_state-parameters"></a>ワーカー \_ スレッド \_ の \_ 状態パラメーターが無効です
 
 パラメーター | 説明 
 |---------|--------------|
 1 | エラーの種類
-2 | ワーカー スレッドのアドレス
+2 | ワーカースレッドのアドレス
 3 | 予約済み
 4 | 予約済み
 
 
 
-**パラメーター 1 の値**
+**パラメーター1の値**
 
-  0x0 :終了処理中のワーカー スレッドが未処理の I/O
+  0x0: 終了処理中のワーカースレッドに未処理の i/o がある
   
-  2 - ワーカー スレッドのアドレス
+  2-ワーカースレッドのアドレス
   
-  3-予約されています
+  3-予約済み
   
-  4-予約されています
+  4-予約済み

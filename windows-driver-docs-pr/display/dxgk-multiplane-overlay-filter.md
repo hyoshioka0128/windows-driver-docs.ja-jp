@@ -1,10 +1,10 @@
 ---
-title: '\_DXGK\_MULTIPLANE\_オーバーレイ\_フィルターの構造'
-description: システムの使用に予約されています。 ドライバーでは使用しないでください。この構造体は Windows Driver Kit (WDK) 8 付属するバージョンの Windows 8 で提供される D3dkmddi.h ヘッダーでのみ使用できますに注意してください。 以降のバージョンのヘッダーから削除されました。 .
+title: '\_DXGK \_ multiplane \_ オーバーレイ \_ フィルター構造'
+description: システムで使用するために予約されています。 ドライバーでは使用しないでください。注この構造は、windows 8 に付属している Windows Driver Kit (WDK) バージョン8で提供されている D3dkmddi ヘッダーでのみ使用できます。 ヘッダーの新しいバージョンからは削除されています。.
 ms.assetid: db369274-df58-40b0-8f2c-c1963dfa3607
 keywords:
-- _DXGK_MULTIPLANE_OVERLAY_FILTER 構造体のディスプレイ デバイス
-- DXGK_MULTIPLANE_OVERLAY_FILTER 構造体のディスプレイ デバイス
+- _DXGK_MULTIPLANE_OVERLAY_FILTER 構造の表示デバイス
+- DXGK_MULTIPLANE_OVERLAY_FILTER 構造の表示デバイス
 topic_type:
 - apiref
 api_name:
@@ -15,19 +15,20 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c242686c494b3d62813b0a6a19ffdfceea760f1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 93b6148246a304670f97ef5df6886637535a9d91
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63350306"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851733"
 ---
-# <a name="dxgkmultiplaneoverlayfilter-structure"></a>\_DXGK\_MULTIPLANE\_オーバーレイ\_フィルターの構造
+# <a name="_dxgk_multiplane_overlay_filter-structure"></a>\_DXGK \_ multiplane \_ オーバーレイ \_ フィルター構造
 
 
-システムの使用に予約されています。 ドライバーでは使用しないでください。
+システムで使用するために予約されています。 ドライバーでは使用しないでください。
 
-&gt; \[!注\]&gt;この構造体は Windows Driver Kit (WDK) 8 付属するバージョンの Windows 8 で提供される D3dkmddi.h ヘッダーでのみ使用できます。 以降のバージョンのヘッダーから削除されました。
+> [!NOTE]
+>  この構造は、windows 8 に付属している Windows Driver Kit (WDK) バージョン8で提供されている D3dkmddi ヘッダーでのみ使用できます。 ヘッダーの新しいバージョンからは削除されています。
 
  
 
@@ -45,11 +46,11 @@ typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
 <a name="members"></a>メンバー
 -------
 
-**filterType**
+**FilterType**
 
-**有効**
+**Enabled**
 
-**値**
+**Value**
 
 <a name="requirements"></a>必要条件
 ------------
@@ -66,11 +67,11 @@ typedef struct _DXGK_MULITPLANE_OVERLAY_FILTER {
 </tr>
 <tr class="even">
 <td align="left"><p>サポートされている最小のサーバー</p></td>
-<td align="left"><p>Windows Server 2012</p></td>
+<td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">D3dkmddi.h</td>
+<td align="left">D3dkmddi</td>
 </tr>
 </tbody>
 </table>

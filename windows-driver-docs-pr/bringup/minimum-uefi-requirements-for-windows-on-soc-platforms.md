@@ -2,64 +2,30 @@
 title: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
 description: SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
 ms.assetid: 32743d69-83a2-4658-8652-6d624e75e3db
-ms.date: 04/20/2017
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cfb1408e1c2d1a19cb9bd0fd2bc25dd22821568
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ac9e3fc0c1c96f9f7826a96e06fed183fb449ad
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337596"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851737"
 ---
 # <a name="minimum-uefi-requirements-for-windows-on-soc-platforms"></a>SoC プラットフォーム上の Windows に対する最小限の UEFI 要件
 
+Unified Extensible Firmware Interface (UEFI) は、Windows を実行している SoC プラットフォームに必要なブートファームウェアです。 このセクションでは、SoC プラットフォームで Windows を実行するための UEFI 実装要件について説明します。 これらの要件に対する監視と準拠は、Windows の適切な機能を保証するのに役立ちます。
 
-統一された Extensible Firmware Interface (UEFI) では、Windows を実行している SoC プラットフォームの必要なブート ファームウェアです。 このセクションでは、SoC プラットフォームで Windows を実行するための UEFI の実装要件について説明します。 監視とこれらの要件への準拠により、Windows の適切な機能を保証は役立ちます。
+この一連の要件は、すべての SoC ベースのコンピューティングシステムに適用されますが、いくつかの制限があります。 このガイドは、Windows の全機能セットを前提としており、従来の netbook フォームファクターとワイヤレス、マルチタッチのみのモバイルデバイスをサポートしています。 そのため、このようなシステムで広く使用されるテクノロジに限定されます。 このドキュメントで取り上げられていないテクノロジを実装しているシステムについては[、uefi 仕様](https://uefi.org/specifications)の uefi 仕様を参照してください。
 
-SoC ベース コンピューティング システムに、いくつかの制限と、この一連の要件が適用されます。 このガイダンスは、従来 netbook のフォーム ファクターとワイヤレスのマルチタッチ専用のモバイル デバイスの両方のサポートにより、Windows の完全な機能のセットを想定しています。 そのため自体にこのようなシステムで広く使用されるテクノロジに制限されます。 このドキュメントでカバーされないテクノロジを実装するシステム、UEFI 仕様を参照してください[UEFI 仕様](https://go.microsoft.com/fwlink/p/?LinkId=218221)します。
+Windows では、Unified Extensible Firmware Interface (UEFI) バージョン2.3.1 以降に基づくファームウェアのリビジョンがサポートされています。
 
-Windows では、Unified Extensible Firmware Interface (UEFI) Version 2.3.1 に基づいてまたはそれ以降のファームウェアのリビジョンをサポートします。
-
-**注**  Windows UEFI 2.3.1 で定義されている機能のサブセットをサポートする仕様。 Windows の実装には、ファームウェアのリビジョンをより高いを比較する明示的なチェックはありません。 このドキュメントで説明するために必要なサポートが含まれている場合、オペレーティング システムは、ファームウェアのリビジョンをより高いをサポートします。
-
- 
+> [!NOTE]
+> Windows では、UEFI 2.3.1 仕様で定義されている機能のサブセットをサポートしています。 Windows の実装には、ファームウェアのより高いリビジョンに対する明示的なチェックはありません。 このドキュメントで説明されている必要なサポートが含まれている場合、オペレーティングシステムはファームウェアのより高いリビジョンをサポートします。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>トピック</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="uefi-requirements-that-apply-to-all-windows-platforms.md" data-raw-source="[UEFI requirements that apply to all Windows editions on SoC platforms](uefi-requirements-that-apply-to-all-windows-platforms.md)">SoC のプラットフォームですべての Windows エディションに適用される UEFI 要件</a></p></td>
-<td><p>このトピックでは、デスクトップのエディション (Home、Pro、Enterprise、および Education) および Windows 10 Mobile、Windows 10 に適用される UEFI 要件について説明します。</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="uefi-requirements-specific-to-windows-mobile.md" data-raw-source="[UEFI requirements for Windows 10 Mobile](uefi-requirements-specific-to-windows-mobile.md)">Windows 10 Mobile の UEFI 要件</a></p></td>
-<td><p>UEFI 要件だけでなく<a href="uefi-requirements-that-apply-to-all-windows-platforms.md" data-raw-source="[UEFI requirements that apply to all Windows editions](uefi-requirements-that-apply-to-all-windows-platforms.md)">Windows のすべてのエディションに適用される UEFI 要件</a>、Windows 10 Mobile を実行しているデバイスは、このトピックで説明する追加の要件を満たすも必要があります。</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="uefi-requirements-for-usb-flashing-support.md" data-raw-source="[UEFI requirements for USB flashing support](uefi-requirements-for-usb-flashing-support.md)">USB サポートが点滅の UEFI 要件</a></p></td>
-<td><p>Microsoft は、エンジニア リングと、製造環境で使用するためのいくつかの USB ベースの点滅ソリューションを提供します。 これらのツールで使用するデバイスで、デバイスの UEFI 環境は、このトピックに記載の要件を満たす必要があります。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
- 
-
- 
-
-
-
-
+| トピック | 説明 |
+| --- | --- |
+| [SoC プラットフォーム上のすべての Windows エディションに適用される UEFI 要件](uefi-requirements-that-apply-to-all-windows-platforms.md) | デスクトップエディション (Home、Pro、Enterprise、および教育) および Windows 10 Mobile 用の Windows 10 に適用される UEFI の要件について説明します。 |
+| [Windows 10 Mobile に対する UEFI 要件](uefi-requirements-specific-to-windows-mobile.md) | Windows 10 Mobile を実行するデバイスは、このトピックで説明されている追加の要件を満たしている必要があります。 |
+| [USB フラッシング サポートのための UEFI 要件](uefi-requirements-for-usb-flashing-support.md) | Microsoft では、エンジニアリングおよび製造環境で使用するために、USB ベースの点滅ソリューションをいくつか提供しています。 これらのツールでデバイスを使用するには、デバイス上の UEFI 環境が、このトピックに記載されている要件を満たしている必要があります。 |

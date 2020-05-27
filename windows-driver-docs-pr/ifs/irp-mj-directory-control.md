@@ -1,6 +1,6 @@
 ---
 title: IRP_MJ_DIRECTORY_CONTROL
-description: IRP\_MJ\_DIRECTORY\_コントロール
+description: IRP \_ MJ \_ DIRECTORY \_ コントロール
 ms.assetid: cb1bed36-bcb5-419b-87ca-6d9107ece6d1
 keywords:
 - インストール可能なファイルシステムドライバーの IRP_MJ_DIRECTORY_CONTROL
@@ -12,20 +12,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b66cc6167552f49c0ecb8e77f0c893a15a585d6
-ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
+ms.openlocfilehash: ba45995e9a98cb43bebc6f9ec019d982fcda2346
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977683"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852310"
 ---
-# <a name="irp_mj_directory_control"></a>IRP\_MJ\_DIRECTORY\_コントロール
+# <a name="irp_mj_directory_control"></a>IRP \_ MJ \_ DIRECTORY \_ コントロール
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_DIRECTORY\_CONTROL 要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。 たとえば、ユーザーモードアプリケーションが**ReaddirectoryFindNextVolumeMountPoint w**やなどの Microsoft Win32 関数を呼び出したときや、カーネルモードコンポーネントが[**zwquerydirectoryfile**](https://msdn.microsoft.com/library/windows/hardware/ff567047)を呼び出したときなどに送信できます。
+IRP \_ MJ \_ DIRECTORY \_ CONTROL 要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。 たとえば、ユーザーモードアプリケーションが**ReaddirectoryFindNextVolumeMountPoint w**や**FindNextVolumeMountPoint**などの Microsoft Win32 関数を呼び出したときや、カーネルモードコンポーネントが[**zwquerydirectoryfile**](https://msdn.microsoft.com/library/windows/hardware/ff567047)を呼び出したときなどに送信できます。
 
 ## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
@@ -39,7 +39,7 @@ IRP\_MJ\_DIRECTORY\_CONTROL 要求は、i/o マネージャーおよびその他
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">用語</th>
+<th align="left">期間</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -58,7 +58,8 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 
  
 
-&gt; \[!FileQuotaInformation information クラスは互換性のために残されて &gt;\]。 代わりに、 [**IRP\_MJ\_クエリ\_クォータ**](irp-mj-query-quota.md)を使用する必要があります。
+> [!NOTE]
+> FileQuotaInformation information クラスは互換性のために残されています。 [**IRP \_代わりに、MJ \_ クエリ \_ クォータ**](irp-mj-query-quota.md)を使用する必要があります。
 
  
 
@@ -77,19 +78,19 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 <a href="" id="deviceobject"></a>*DeviceObject*  
 ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*  
-最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
+<a href="" id="irp--iostatus"></a>*Irp- &gt; iostatus*  
+最後の完了状態と要求された操作に関する情報を受け取る[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造体へのポインター。
 
-<a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
+<a href="" id="irp--userbuffer"></a>*Irp- &gt; UserBuffer*  
 ディレクトリの内容に関する要求された情報を受け取る、呼び出し元から提供される出力バッファーへのポインター。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_DIRECTORY\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用しないでください。
+*Irpsp- &gt; FileObject*パラメーターには、関連する**FileObject**フィールドへのポインターが含まれています。これは、ファイルオブジェクト構造でも \_ あります。 ファイルオブジェクト構造の関連性の**あるフィールド**は、 \_ IRP MJ DIRECTORY コントロールの処理中は無効である \_ ため、 \_ \_ 使用しないでください。
 
-<a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
-次のフラグは、IRP\_の\_クエリ\_ディレクトリに設定できます。
+<a href="" id="irpsp--flags"></a>*IrpSp- &gt; フラグ*  
+次のフラグは、IRP を使用 \_ したクエリディレクトリに設定でき \_ \_ ます。
 
 <table>
 <colgroup>
@@ -98,14 +99,14 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
-<th align="left">意味</th>
+<th align="left">フラグ</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>SL_INDEX_SPECIFIED</p></td>
-<td align="left"><p><em>Irpsp-&gt;Parameters. QueryDirectory. FileIndex</em>によってインデックスが指定されているディレクトリのエントリでスキャンを開始します。</p></td>
+<td align="left"><p>インデックスが指定されているディレクトリのエントリから、 <em>Irpsp- &gt; Parameters. Querydirectory. fileindex</em>でスキャンを開始します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>SL_RESTART_SCAN</p></td>
@@ -124,7 +125,7 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 
  
 
-次のフラグを設定することができます IRP\_には\_\_ディレクトリの変更を通知\_通知します。
+次のフラグを設定することができます、IRP を \_ \_ 通知する \_ 変更 \_ ディレクトリです。
 
 <table>
 <colgroup>
@@ -133,8 +134,8 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Flag</th>
-<th align="left">意味</th>
+<th align="left">フラグ</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -147,25 +148,25 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 
  
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
-IRP\_MJ\_DIRECTORY\_コントロールを指定します。
+<a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt; MajorFunction*  
+IRP \_ MJ DIRECTORY コントロールを指定し \_ \_ ます。
 
-<a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
+<a href="" id="irpsp--minorfunction"></a>*IrpSp- &gt; minorfunction*  
 次のいずれかです。
 
--   IRP\_\_通知\_\_ディレクトリの変更
--   IRP\_\_クエリ\_ディレクトリ
+-   IRP \_ の \_ \_ 変更通知 \_ ディレクトリ
+-   IRP の全 \_ \_ クエリの \_ ディレクトリ
 
-<a href="" id="irpsp--parameters-notifydirectory-completionfilter"></a>*IrpSp-&gt;Parameters. NotifyDirectory. このフィルター*  
+<a href="" id="irpsp--parameters-notifydirectory-completionfilter"></a>*IrpSp- &gt; Parameters. NotifyDirectory. このフィルター*  
 詳細については、 [**Fsrtlnotifyfullchangedirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)への参照*フィルター*パラメーターの説明を参照してください。
 
-<a href="" id="irpsp--parameters-notifydirectory-length"></a>*IrpSp-&gt;Parameters. NotifyDirectory. Length*  
-*Irp&gt;UserBuffer*が指すバッファーの長さ (バイト単位)。
+<a href="" id="irpsp--parameters-notifydirectory-length"></a>*IrpSp- &gt; Parameters. NotifyDirectory. Length*  
+* &gt; UserBuffer*が指すバッファーの長さ (バイト単位)。
 
-<a href="" id="irpsp--parameters-querydirectory-fileindex"></a>*IrpSp-&gt;Parameters. QueryDirectory. FileIndex*  
-ディレクトリスキャンを開始するファイルのインデックス。 SL\_インデックス\_指定したフラグが設定されていない場合は無視されます。 このパラメーターは、どの Win32 関数またはカーネルモードサポートルーチンでも指定できません。 現在、このファイルは、32ビットの NT ベースのプラットフォームのみに存在する NT 仮想 DOS コンピューター (NTVDM) によってのみ使用されます。 ファイルインデックスは NTFS などのファイルシステムに対して定義されていないことに注意してください。これは、親ディレクトリ内のファイルの位置が固定されておらず、並べ替え順序を維持するためにいつでも変更できることに注意してください。
+<a href="" id="irpsp--parameters-querydirectory-fileindex"></a>*IrpSp- &gt; Parameters. QueryDirectory. FileIndex*  
+ディレクトリスキャンを開始するファイルのインデックス。 指定された SL \_ インデックスフラグが設定されていない場合は無視され \_ ます。 このパラメーターは、どの Win32 関数またはカーネルモードサポートルーチンでも指定できません。 現在、このファイルは、32ビットの NT ベースのプラットフォームのみに存在する NT 仮想 DOS コンピューター (NTVDM) によってのみ使用されます。 ファイルインデックスは NTFS などのファイルシステムに対して定義されていないことに注意してください。これは、親ディレクトリ内のファイルの位置が固定されておらず、並べ替え順序を維持するためにいつでも変更できることに注意してください。
 
-<a href="" id="irpsp--parameters-querydirectory-fileinformationclass"></a>*IrpSp-&gt;Parameters. QueryDirectory. FileInformationClass*  
+<a href="" id="irpsp--parameters-querydirectory-fileinformationclass"></a>*IrpSp- &gt; Parameters. QueryDirectory. FileInformationClass*  
 次に示す値のいずれかを指定します。
 
 <table>
@@ -175,8 +176,8 @@ IRP\_MJ\_DIRECTORY\_コントロールを指定します。
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">意味</th>
+<th align="left">値</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -221,42 +222,42 @@ IRP\_MJ\_DIRECTORY\_コントロールを指定します。
 
  
 
-<a href="" id="irpsp--parameters-querydirectory-filename"></a>*IrpSp-&gt;Parameters. QueryDirectory. FileName*  
+<a href="" id="irpsp--parameters-querydirectory-filename"></a>*IrpSp- &gt; Parameters. QueryDirectory. FileName*  
 指定したディレクトリ内のファイルの名前 (省略可能)。
 
-<a href="" id="irpsp--parameters-querydirectory-length"></a>*IrpSp-&gt;Parameters. QueryDirectory. Length*  
-*Irp&gt;UserBuffer*が指すバッファーの長さ (バイト単位)。
+<a href="" id="irpsp--parameters-querydirectory-length"></a>*IrpSp- &gt; Parameters. QueryDirectory. Length*  
+* &gt; UserBuffer*が指すバッファーの長さ (バイト単位)。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 
-[**ファイル\_\_DIR\_の両方の情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)
+[**\_両方の \_ DIR \_ 情報をファイルにする**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)
 
-[**ファイル\_ディレクトリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_directory_information)
+[**ファイル \_ ディレクトリ \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_directory_information)
 
-[**ファイル\_完全\_DIR\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_full_dir_information)
+[**ファイルの \_ 完全な \_ ディレクトリ \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_full_dir_information)
 
-[**ファイル\_ID\_\_の両方のディレクトリ\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_id_both_dir_information)
+[**ファイル \_ ID \_ 両方の \_ DIR \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_id_both_dir_information)
 
-[**ファイル\_ID\_完全\_ディレクトリの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_id_full_dir_information)
+[**ファイル \_ ID の \_ 完全な \_ ディレクトリ \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_id_full_dir_information)
 
-[**ファイル\_名\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_names_information)
+[**ファイル \_ 名の \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_names_information)
 
-[**ファイル\_OBJECTID\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_objectid_information)
+[**ファイルの \_ OBJECTID \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_objectid_information)
 
-[**ファイル\_再解析\_ポイント\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_reparse_point_information)
+[**ファイルの \_ 再解析 \_ ポイント \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_reparse_point_information)
 
 [**FsRtlNotifyFullChangeDirectory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-_fsrtl_advanced_fcb_header-fsrtlnotifyfullchangedirectory)
 
-[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
+[**IO \_ スタックの \_ 場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
+[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_クエリ\_クォータ**](irp-mj-query-quota.md)
+[**IRP \_ MJ \_ クエリ \_ クォータ**](irp-mj-query-quota.md)
 
 [**ZwQueryDirectoryFile**](https://msdn.microsoft.com/library/windows/hardware/ff567047)
 

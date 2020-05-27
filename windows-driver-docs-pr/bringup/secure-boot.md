@@ -1,25 +1,24 @@
 ---
 title: セキュア ブート
 description: セキュア ブート
-ms.date: 08/06/2018
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d7b555b7660de79c9c8367f98a09f46a0986d2e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 24434249c43f48c1eb7383145c1657fd4f47cc47
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353957"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851739"
 ---
 # <a name="secure-boot"></a>セキュア ブート
 
+セキュアブートは、pc の製造元によって信頼されているソフトウェアのみを使用して PC が起動されるようにするためのプロセスです。 セキュアブートは Microsoft 専用ではなく、UEFI 仕様ドキュメントで定義されています。ただし、Microsoft では、以下のリンクで特定の要件が定義されています。
 
-セキュア ブートは、お使いの PC は、PC の製造元によって信頼されているソフトウェアのみを使用して起動することを確認するプロセスです。 セキュア ブートでは、Microsoft に限定されていないと、Microsoft は、以下のリンクで定義されている特定の要件を持っている場合は、UEFI 仕様のドキュメントで定義します。
+PC が起動すると、ファームウェアは、ファームウェアドライバー (オプション Rom) やオペレーティングシステムなど、各ブートソフトウェアの署名を確認します。 署名が適切な場合、PC が起動され、ファームウェアによってオペレーティングシステムに制御が与えられます。
 
-PC を起動、ファームウェア ブート ソフトウェア、ファームウェア ドライバー (オプション Rom) およびオペレーティング システムを含むの各部分の署名によって確認されます。 署名が適切な場合は、PC が再起動、ファームウェア、オペレーティング システムに制御します。
+Windows オペレーティングシステムでは、セキュアブートが必要です。Windows 8、8.1、10、および UEFI 仕様のドキュメントの一部でもあります。詳細については、27.1 「UEFI 仕様ドキュメントの[セキュアブート](https://uefi.org/sites/default/files/resources/UEFI_2_3_1_C.pdf)」セクションを参照してください。
 
-セキュア ブートは Windows オペレーティング システムに必要です。Windows 8、8.1、および 10、およびも UEFI 仕様ドキュメントの一部です。セクションを参照して[27.1 セキュリティで保護された Boot](https://uefi.org/sites/default/files/resources/UEFI_2_3_1_C.pdf)の詳細については、UEFI 仕様のドキュメント。
-
-セキュア ブートの Windows の要件に関する詳細については、次を参照してください。 **System.Fundamentals.Firmware.UEFISecureBoot**で、 **WHCP システム仕様 1607**以下のリンク。
+セキュアブートの Windows 要件の詳細については、以下の「System.fundamentals.firmware.cs.uefisecureboot.connectedstandby **-1607** 」のリンクにある「**システムの基礎**」を参照してください。
 
 ## <a name="related-resources"></a>関連リソース
 
@@ -27,11 +26,8 @@ PC を起動、ファームウェア ブート ソフトウェア、ファーム
 
 [Windows ハードウェア互換性プログラムの仕様とポリシー](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-specifications-policies)
 
-[WHCP システム仕様 1607](https://go.microsoft.com/fwlink/?linkid=866948)
+[WHCP-Systems-Specification-1607 (ZIP ダウンロード)](https://go.microsoft.com/fwlink/?linkid=866948)
 
-[セキュア ブートとメジャー ブート:マルウェアに対する初期ブート コンポーネントのセキュリティ強化](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653311(v=vs.85))
+[セキュアブートとメジャーブート: マルウェアに対する初期ブートコンポーネントのセキュリティ強化](https://docs.microsoft.com/previous-versions/windows/hardware/design/dn653311(v=vs.85))
 
-[Windows 8.1 のセキュア ブート キーの作成と管理のガイダンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/dn747883(v=win.10))
-
-
-
+[Windows 8.1 セキュアブートキーの作成と管理のガイダンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/dn747883(v=win.10))

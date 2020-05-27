@@ -1,10 +1,10 @@
 ---
-title: KSJACK\_構造の説明
-description: KSJACK\_説明構造体のオーディオ ジャックの物理属性を指定します。
+title: KSJACK \_ DESCRIPTION 構造体
+description: KSJACK \_ DESCRIPTION 構造体は、オーディオジャックの物理属性を指定します。
 ms.assetid: 303bc73a-fe47-499b-97b3-7c49a40e8cfa
 keywords:
-- KSJACK_DESCRIPTION 構造オーディオ デバイス
-- PKSJACK_DESCRIPTION 構造体ポインター オーディオ デバイス
+- KSJACK_DESCRIPTION 構造のオーディオデバイス
+- PKSJACK_DESCRIPTION 構造体ポインターオーディオデバイス
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 - HeaderDef
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e1657777c2466aa50bbbda559ea3f3bb6dd4d09e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d49ffc3703165d9e77cbf87a53a68007a112bc50
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63333381"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851580"
 ---
-# <a name="ksjackdescription-structure"></a>KSJACK\_構造の説明
+# <a name="ksjack_description-structure"></a>KSJACK \_ DESCRIPTION 構造体
 
 
-KSJACK\_説明構造体のオーディオ ジャックの物理属性を指定します。
+KSJACK \_ DESCRIPTION 構造体は、オーディオジャックの物理属性を指定します。
 
 <a name="syntax"></a>構文
 ------
@@ -46,17 +46,18 @@ typedef struct {
 -------
 
 **ChannelMapping**  
-対応するスピーカー位置をオーディオ チャネルのマッピングを指定します。 **ChannelMapping** 、KSAUDIO のビットマスクを\_スピーカー\_*XXX*フラグ (たとえば、スピーカー\_フロント\_左 |スピーカー\_フロント\_右)、Ksmedia.h ヘッダー ファイルで定義されています。 **ChannelMapping**アナログ レンダリング ピンには 0 以外の値にする必要があります。 キャプチャの pin やデジタル レンダリング pin では、このメンバーを 0 に設定します。
+オーディオチャンネルの対応するスピーカーの位置へのマッピングを指定します。 **Channelmapping**は、ksk オーディオスピーカー XXX フラグのビットマスクです \_ \_ *XXX* (たとえば、スピーカーの \_ フロント \_ 左 |スピーカーの \_ フロント \_ 右)。これは、ヘッダーファイル ksmedia. h で定義されています。 **Channelmapping**は、アナログレンダリングの pin の場合にのみ0以外にする必要があります。 キャプチャピンまたはデジタルレンダリングの pin の場合は、このメンバーを0に設定します。
 
-&gt; \[!注\]&gt;最初に定義された Devicetopology.h **ChannelMapping**型の列挙として**EChannelMapping**します。 **EChannelMapping**列挙以降は非推奨とされているし、は、Windows Vista および Windows オペレーティング システムの以降のバージョンでは使用されなくします。
+> [!NOTE]
+> Devicetopology. h は、元々、 **EChannelMapping**型の列挙体として**channelmapping**を定義していました。 **EChannelMapping**列挙体は、非推奨とされたため、windows Vista 以降のバージョンの windows オペレーティングシステムでは使用されなくなりました。
 
  
 
 **色**  
-Jack の色を指定します。 色は、8 ビットの青、緑、および赤のカラー コンポーネントを連結して形成される 32 ビットの RGB 値として表されます。 青のコンポーネントが 8 の最下位ビット (ビット 0 ~ 7) を占有、緑のコンポーネントは 8 ~ 15 のビットを占有および赤のコンポーネントがビット 16-23 を占有します。 8 の最上位ビットは、ゼロです。 ジャック色が不明または物理のコネクタで識別できる色はありません、このメンバーの値は黒、0x00000000 にします。
+ジャックの色を指定します。 色は、8ビットの青、緑、および赤のカラー成分を連結して形成される32ビットの RGB 値として表現されます。 Blue コンポーネントは、最下位8ビット (ビット 0-7) を占有し、緑のコンポーネントはビット8-15 を占有し、赤のコンポーネントはビット16-23 を占有します。 最上位8ビットは0です。 ジャックの色が不明な場合、または物理コネクタの色が特定できない場合、このメンバーの値は0x00000000 になります。これは、黒を表します。
 
 **ConnectionType**  
-この回線のモジュラー ジャックの物理的な接続の種類を指定します。 このメンバーの値は、のいずれか、 **EPcxConnectionType**の次の表に示す列挙値。
+このジャックの物理接続の種類を指定します。 このメンバーの値は、次の表に示す**Epcxconnectiontype**列挙値のいずれかです。
 
 <table>
 <colgroup>
@@ -72,11 +73,11 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 <tbody>
 <tr class="odd">
 <td align="left"><p>eConnTypeUnknown</p></td>
-<td align="left"><p>Unknown</p></td>
+<td align="left"><p>不明</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnType3Point5mm</p></td>
-<td align="left"><p>3.5 mm minijack</p></td>
+<td align="left"><p>3.5 mm ミニジャック</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeQuarter</p></td>
@@ -92,19 +93,19 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeOptical</p></td>
-<td align="left"><p>光のコネクタ</p></td>
+<td align="left"><p>光学式コネクタ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeOtherDigital</p></td>
-<td align="left"><p>一般的なデジタル コネクタ</p></td>
+<td align="left"><p>汎用デジタルコネクタ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeOtherAnalog</p></td>
-<td align="left"><p>一般的なアナログ コネクタ</p></td>
+<td align="left"><p>汎用アナログコネクタ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeMultichannelAnalogDIN</p></td>
-<td align="left"><p>マルチ チャネルのアナログ DIN コネクタ</p></td>
+<td align="left"><p>マルチチャネルアナログ DIN コネクタ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeXlrProfessional</p></td>
@@ -112,7 +113,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </tr>
 <tr class="odd">
 <td align="left"><p>eConnTypeRJ11Modem</p></td>
-<td align="left"><p>RJ11 モデム コネクタ</p></td>
+<td align="left"><p>RJ11 モデムコネクタ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eConnTypeCombination</p></td>
@@ -123,8 +124,8 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 
  
 
-**GeoLocation**  
-ジャックの幾何学的場所です。 このメンバーの値は、のいずれか、 **EPcxGeoLocation**の次の表に示す列挙値。
+**情報**  
+ジャックのジオメトリック位置。 このメンバーの値は、次の表に示す**Epcxgeolocation 位置**情報列挙値のいずれかです。
 
 <table>
 <colgroup>
@@ -134,49 +135,49 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 <thead>
 <tr class="header">
 <th align="left">値</th>
-<th align="left">ジオメトリの場所</th>
+<th align="left">ジオメトリック位置</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>eGeoLocRear</p></td>
-<td align="left"><p>背面</p></td>
+<td align="left"><p>Rear</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocFront</p></td>
-<td align="left"><p>前面</p></td>
+<td align="left"><p>Front</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocLeft</p></td>
-<td align="left"><p>Left</p></td>
+<td align="left"><p>左</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocRight</p></td>
-<td align="left"><p>右</p></td>
+<td align="left"><p>権限</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocTop</p></td>
-<td align="left"><p>Top</p></td>
+<td align="left"><p>上</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocBottom</p></td>
-<td align="left"><p>Bottom</p></td>
+<td align="left"><p>下</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocRearPanel</p></td>
-<td align="left"><p>背面のスライド オープンまたは開いているプル パネル</p></td>
+<td align="left"><p>背面スライド-開く、またはプルオープンパネル</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocRiser</p></td>
-<td align="left"><p>ライザー カード</p></td>
+<td align="left"><p>ライザーカード</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocInsideMobileLid</p></td>
-<td align="left"><p>モバイル コンピューターのカバーを徹底</p></td>
+<td align="left"><p>モバイルコンピューターのカバー内</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>eGeoLocDrivebay</p></td>
-<td align="left"><p>ドライブ ベイ</p></td>
+<td align="left"><p>Egeolocドライブベイ</p></td>
+<td align="left"><p>ドライブベイ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocHDMI</p></td>
@@ -184,7 +185,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocOutsideMobileLid</p></td>
-<td align="left"><p>モバイル コンピューターのカバーを外部</p></td>
+<td align="left"><p>モバイルコンピューターの外部にある</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGeoLocATAPI</p></td>
@@ -192,7 +193,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 </tr>
 <tr class="even">
 <td align="left"><p>eGeoLocNotApplicable</p></td>
-<td align="left"><p>適用できません。 参照してください<strong>解説</strong>セクション。</p></td>
+<td align="left"><p>適用不可。 「<strong>解説</strong>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -200,7 +201,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
  
 
 **GenLocation**  
-ジャックの一般的な場所を指定します。 このメンバーの値は、のいずれか、 **EPcxGenLocation**の次の表に示す列挙値。
+ジャックの一般的な場所を指定します。 このメンバーの値は、次の表に示す**Epcxgenlocation**列挙値のいずれかです。
 
 <table>
 <colgroup>
@@ -216,15 +217,15 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 <tbody>
 <tr class="odd">
 <td align="left"><p>eGenLocPrimaryBox</p></td>
-<td align="left"><p>プライマリのシャーシの</p></td>
+<td align="left"><p>プライマリシャーシ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGenLocInternal</p></td>
-<td align="left"><p>内側のプライマリ シャーシ</p></td>
+<td align="left"><p>プライマリシャーシ内</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>eGenLocSeparate</p></td>
-<td align="left"><p>個別のシャーシの</p></td>
+<td align="left"><p>別のシャーシに</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>eGenLocOther</p></td>
@@ -236,7 +237,7 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
  
 
 **PortConnection**  
-ジャックによって表されるポートの種類を指定します。 このメンバーの値は、のいずれか、 **EPxcPortConnection**の次の表に示す列挙値。
+ジャックによって表されるポートの種類を指定します。 このメンバーの値は、次の表に示す**EPxcPortConnection**列挙値のいずれかになります。
 
 <table>
 <colgroup>
@@ -252,19 +253,19 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 <tbody>
 <tr class="odd">
 <td align="left"><p>ePortConnJack</p></td>
-<td align="left"><p>回線のモジュラー ジャック</p></td>
+<td align="left"><p>ブラック</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ePortConnIntegratedDevice</p></td>
-<td align="left"><p>デバイスの統合のスロット</p></td>
+<td align="left"><p>統合デバイスのスロット</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>ePortConnBothIntegratedAndJack</p></td>
-<td align="left"><p>ジャックと統合された、デバイスのスロットの両方</p></td>
+<td align="left"><p>Eportconnated/Jack</p></td>
+<td align="left"><p>統合デバイスのジャックとスロットの両方</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ePortConnUnknown</p></td>
-<td align="left"><p>Unknown</p></td>
+<td align="left"><p>不明</p></td>
 </tr>
 </tbody>
 </table>
@@ -272,14 +273,14 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
  
 
 **IsConnected**  
-入力ジャックに接続されている外部デバイスがあるかどうかを示します。 オーディオのコント ローラーがこのピンの値のジャック検出をサポートしているか**IsConnected**ジャックが特定の時点、プラグインによって占有されているかどうかを正確に示す必要があります。 この値は常に設定する必要があります**TRUE**ジャック検出をサポートしていないデバイス。
+ジャックに接続されている外部デバイスがあるかどうかを示します。 オーディオコントローラーがこの pin のジャック検出をサポートしている場合、 **IsConnected**の値は、特定の時点のプラグによってそのジャックが占有されているかどうかを正確に示す必要があります。 この値は、ジャック検出をサポートしていないデバイスに対して常に**TRUE**に設定する必要があります。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>コメント
 -------
 
-この構造が使用者、 [ **KSPROPERTY\_ジャック\_説明**](ksproperty-jack-description.md) Windows Vista 以降のプロパティ。 エンドポイント デバイスとオーディオのアダプターのハードウェア デバイス間の接続の一部であるオーディオ ジャックがについて説明します。 ジャックに、エンドポイント デバイスを接続するジャックから取り外すことをユーザーに必要なときにオーディオ アプリケーションできるわかりやすい情報構造で使用ジャックを検索するのにユーザーを支援します。
+この構造体は、Windows Vista 以降の[**Ksk プロパティ \_ ジャックの \_ 説明**](ksproperty-jack-description.md)プロパティによって使用されます。 ここでは、オーディオアダプターのエンドポイントデバイスとハードウェアデバイスとの接続の一部であるオーディオジャックについて説明します。 ユーザーがエンドポイントデバイスをジャックに接続したり、ジャックから取り外したりする必要がある場合、オーディオアプリケーションは構造内の説明情報を使用して、ユーザーがジャックを見つけやすくすることができます。
 
-オーディオ デバイスを使用してオーディオ デバイスが物理的にアクセスできるジャックを公開しない場合、 **eGeoLocNotApplicable**を Windows と Windows ベースのアプリに物理回線のモジュラー ジャックがないことを示す値。 そのため、ありません幾何学的場所か。 たとえば、オーディオ デバイスは、アクセス可能な任意のジャックせず、マザーボードに統合できます。
+オーディオデバイスが物理的にアクセス可能なジャックを公開しない場合、オーディオデバイスは**Egeolocnotapplicable 可能**な値を使用して、Windows と windows ベースのアプリに物理ジャックがないことを示します。 そのため、幾何学的な場所はありません。 たとえば、オーディオデバイスは、アクセス可能なジャックを使用せずに、マザーボードに統合できます。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -292,15 +293,15 @@ Jack の色を指定します。 色は、8 ビットの青、緑、および赤
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ksmedia.h (Ksmedia.h を含む)</td>
+<td align="left">Ksmedia .h (Ksk を含む)</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[**KSPROPERTY\_ジャック\_の説明**](ksproperty-jack-description.md)
+[**KSK プロパティ \_ ジャックの \_ 説明**](ksproperty-jack-description.md)
 
  
 

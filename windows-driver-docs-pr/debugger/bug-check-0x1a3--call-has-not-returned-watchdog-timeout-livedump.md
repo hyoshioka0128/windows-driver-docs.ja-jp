@@ -1,8 +1,8 @@
 ---
-title: バグ チェック 1A3 CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP
-description: CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP ライブ ダンプには、0x000001A3 の値があります。
+title: バグチェック 1A3 CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP
+description: CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP のライブダンプには、0x000001A3 という値が指定されています。
 keywords:
-- バグ チェック 0x1A3 CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP
+- バグチェック 0x1A3 CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP
 - CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP
 ms.date: 05/25/2018
 topic_type:
@@ -12,34 +12,34 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3882b158adcd4e339d2f945edbc25bd69fa2d4
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 5e2b0f62bcef802ca3713653b98fbe0fe3a9af54
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519761"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852316"
 ---
-# <a name="bug-check-bug-check-0x1a3-callhasnotreturnedwatchdogtimeoutlivedump"></a>チェックのバグ チェック 0x1A3 をバグします。呼び出す\_HAS\_いない\_から返された\_ウォッチドッグ\_タイムアウト\_LIVEDUMP 
+# <a name="bug-check-0x1a3-call_has_not_returned_watchdog_timeout_livedump"></a>バグチェック 0x1A3: 呼び出し \_ に \_ より \_ \_ ウォッチドッグ \_ タイムアウト \_ LIVEDUMP が返されませんでした 
 
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-呼び出しがタイムアウト期間内は返されません。
+タイムアウト期間内に呼び出しが返されませんでした。
 
-CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP ライブ ダンプには、0x000001A3 の値があります。 
+CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP のライブダンプには、0x000001A3 という値が指定されています。 
 
 
-## <a name="callhasnotreturnedwatchdogtimeoutlivedump-parameters"></a>呼び出す\_HAS\_いない\_から返された\_ウォッチドッグ\_タイムアウト\_LIVEDUMP パラメーター
+## <a name="call_has_not_returned_watchdog_timeout_livedump-parameters"></a>呼び出し \_ で \_ \_ \_ ウォッチドッグ \_ タイムアウト \_ LIVEDUMP パラメーターが返されませんでした
 
-次のパラメーターは、ブルー スクリーンに表示されます。
+次のパラメーターがブルースクリーンに表示されます。
 
 
 | パラメーター |                        説明                        |
 |-----------|-----------------------------------------------------------|
-|     1     | 呼び出しはすぐに返されませんが、スレッドのプロセス。 |
-|     2     |       スレッドの呼び出しはすぐに返されません。        |
-|     3     |                 タイムアウト (ミリ秒単位)。                  |
-|     4     |    dt nt!_PO_CALL_HAS_NOT_RETURNED_WATCHDOG <address>     |
+|     1     | 呼び出しがすぐに返されないスレッドのプロセス。 |
+|     2     |       呼び出しがすぐに返されないスレッド。        |
+|     3     |                 タイムアウト (ミリ秒)。                  |
+|     4     |    dt nt! _PO_CALL_HAS_NOT_RETURNED_WATCHDOG <address>     |
 

@@ -1,9 +1,9 @@
 ---
-title: D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_種類の列挙型
-description: システムの使用に予約されています。 ドライバーでは使用しないでください。この構造体は Windows Driver Kit (WDK) 8 付属するバージョンの Windows 8 で提供される D3dumddi.h ヘッダーでのみ使用できますに注意してください。 以降のバージョンのヘッダーから削除されました。 .
+title: D3DDDI \_ multiplane \_ オーバーレイ \_ フィルターの \_ 種類の列挙型
+description: システムで使用するために予約されています。 ドライバーでは使用しないでください。注この構造は、windows 8 に付属している Windows Driver Kit (WDK) バージョン8で提供されている D3dumddi ヘッダーでのみ使用できます。 ヘッダーの新しいバージョンからは削除されています。.
 ms.assetid: ceca0ed8-7d46-45e1-86cb-3d0506d26328
 keywords:
-- D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE 列挙ディスプレイ デバイス
+- D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE 列挙ディスプレイデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,19 +14,20 @@ api_type:
 - HeaderDef
 ms.date: 01/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dbbedd2128f5627539b9ad4f27ab9f896aa3294
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 718cfd5e6e6f0cfe54e50aebbc94a21758240877
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63382962"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83852131"
 ---
-# <a name="d3dddimultiplaneoverlayfiltertype-enumeration"></a>D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_種類の列挙型
+# <a name="d3dddi_multiplane_overlay_filter_type-enumeration"></a>D3DDDI \_ multiplane \_ オーバーレイ \_ フィルターの \_ 種類の列挙型
 
 
-システムの使用に予約されています。 ドライバーでは使用しないでください。
+システムで使用するために予約されています。 ドライバーでは使用しないでください。
 
-&gt; \[!注\]&gt;この構造体は Windows Driver Kit (WDK) 8 付属するバージョンの Windows 8 で提供される D3dumddi.h ヘッダーでのみ使用できます。 以降のバージョンのヘッダーから削除されました。
+> [!NOTE]
+> この構造は、windows 8 に付属している Windows Driver Kit (WDK) バージョン8で提供されている D3dumddi ヘッダーでのみ使用できます。 ヘッダーの新しいバージョンからは削除されています。
 
  
 
@@ -46,17 +47,17 @@ typedef enum _D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE {
 <a name="constants"></a>定数
 ---------
 
-<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_BRIGHTNESS"></span><span id="d3dddi_multiplane_overlay_filter_caps_brightness"></span>**D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_CAP\_明るさ**
+<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_BRIGHTNESS"></span><span id="d3dddi_multiplane_overlay_filter_caps_brightness"></span>**D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ キャップの \_ 明るさ**
 
-<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_CONTRAST"></span><span id="d3dddi_multiplane_overlay_filter_caps_contrast"></span>**D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_CAP\_コントラスト**
+<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_CONTRAST"></span><span id="d3dddi_multiplane_overlay_filter_caps_contrast"></span>**D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ キャップの \_ コントラスト**
 
-<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_HUE"></span><span id="d3dddi_multiplane_overlay_filter_caps_hue"></span>**D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_CAP\_HUE**
+<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_HUE"></span><span id="d3dddi_multiplane_overlay_filter_caps_hue"></span>**D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ キャップの \_ 色合い**
 
-<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_SATURATION"></span><span id="d3dddi_multiplane_overlay_filter_caps_saturation"></span>**D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_CAP\_彩度**
+<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_SATURATION"></span><span id="d3dddi_multiplane_overlay_filter_caps_saturation"></span>**D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ キャップの \_ 彩度**
 
-<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_STRETCH_QUALITY"></span><span id="d3dddi_multiplane_overlay_filter_caps_stretch_quality"></span>**D3DDDI\_MULTIPLANE\_オーバーレイ\_フィルター\_CAP\_STRETCH\_品質**
+<span id="D3DDDI_MULTIPLANE_OVERLAY_FILTER_CAPS_STRETCH_QUALITY"></span><span id="d3dddi_multiplane_overlay_filter_caps_stretch_quality"></span>**D3DDDI \_ multiplane \_ オーバーレイ \_ フィルター \_ キャップの \_ ストレッチ \_ 品質**
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -71,11 +72,11 @@ typedef enum _D3DDDI_MULTIPLANE_OVERLAY_FILTER_TYPE {
 </tr>
 <tr class="even">
 <td align="left"><p>サポートされている最小のサーバー</p></td>
-<td align="left"><p>Windows Server 2012</p></td>
+<td align="left"><p>Windows Server 2012</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">D3dumddi.h</td>
+<td align="left">D3dumddi</td>
 </tr>
 </tbody>
 </table>

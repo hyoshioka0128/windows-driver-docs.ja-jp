@@ -1,8 +1,8 @@
 ---
-title: バグ チェック 0x1D1 TELEMETRY_ASSERTS_LIVEDUMP
-description: TELEMETRY_ASSERTS_LIVEDUMP のバグ チェックでは、0x000001D1 の値を持ちます。
+title: バグチェック 0x1D1 TELEMETRY_ASSERTS_LIVEDUMP
+description: TELEMETRY_ASSERTS_LIVEDUMP のバグチェックには、0x000001D1 という値があります。
 keywords:
-- バグ チェック 0x1D1 TELEMETRY_ASSERTS_LIVEDUMP
+- バグチェック 0x1D1 TELEMETRY_ASSERTS_LIVEDUMP
 - TELEMETRY_ASSERTS_LIVEDUMP
 ms.date: 04/19/2018
 topic_type:
@@ -12,28 +12,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a9e7c9ef598a29a9d303ca6e6b89004fc3c235
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 66fdc0b2c6d5792b4ecd9acb40e3e1727dcd844b
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519663"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851265"
 ---
-# <a name="bug-check-bug-check-0x1d1-telemetryassertslivedump"></a>チェックのバグ チェック 0x1D1 をバグします。テレメトリ\_アサート\_LIVEDUMP
+# <a name="bug-check-0x1d1-telemetry_asserts_livedump"></a>バグチェック 0x1D1: テレメトリ \_ アサート \_ LIVEDUMP
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-TELEMETRY_ASSERTS_LIVEDUMP のバグ チェックでは、0x000001D1 の値を持ちます。 
+TELEMETRY_ASSERTS_LIVEDUMP のバグチェックには、0x000001D1 という値があります。 
 
-製品利用統計情報をアサート検証が失敗しました。
+テレメトリアサートの検証に失敗しました。
 
-このコードは、実際のバグチェック; には使用しません。デバイスのテレメトリなどを含むライブのダンプを識別するために使用されます。
+このコードは、実際のバグチェックには使用できません。これは、デバイステレメトリを含むライブダンプを識別するために使用されます。
 
-この問題をトラブルシューティングするには、MICROSOFT_TELEMETRY_ASSERT(expression) 内の式が有効な理由を確認する呼び出し履歴を検査します。
+この問題のトラブルシューティングを行うには、呼び出し履歴を調べて、MICROSOFT_TELEMETRY_ASSERT (式) の式が無効である理由を確認します。
 
-## <a name="telemetryassertslivedump-parameters"></a>テレメトリ\_アサート\_LIVEDUMP パラメーター
+## <a name="telemetry_asserts_livedump-parameters"></a>テレメトリ \_ アサート \_ LIVEDUMP パラメーター
 
 パラメーター | 説明 
 |---------|--------------|
