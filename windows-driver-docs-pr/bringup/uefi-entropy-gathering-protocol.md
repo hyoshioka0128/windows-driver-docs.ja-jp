@@ -1,38 +1,28 @@
 ---
 title: UEFI エントロピー収集プロトコル
-description: プロトコルを収集する UEFI エントロピは、よく知られている方法でランダムな数の生成 (RNG) の値を生成するために使用されます。
+description: UEFI エントロピ収集プロトコルは、よく知られた方法でランダム数値生成 (RNG) 値を生成するために使用されます。
 ms.assetid: 616F178F-B4A0-4B8B-B71D-F7474738EA35
-ms.date: 04/20/2017
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ce227750ac8a71300da634487ad586357a5140
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5e06b39ed9dde5d401fe231c909b35fa70c03d7b
+ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337425"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122681"
 ---
 # <a name="uefi-entropy-gathering-protocol"></a>UEFI エントロピー収集プロトコル
 
+UEFI エントロピ収集プロトコルは、よく知られた方法でランダム数値生成 (RNG) 値を生成するために使用されます。
 
-プロトコルを収集する UEFI エントロピは、よく知られている方法でランダムな数の生成 (RNG) の値を生成するために使用されます。
+このプロトコルを実装する UEFI RNG サービスは、RNG アルゴリズムを識別するオプションの入力値を受け取り、入力値と内部状態 (エントロピソースの状態を含む) に基づいて RNG 値を提供します。 未加工のランダムビットジェネレーター (DRBG) が未加工のエントロピソースの出力で使用される場合、そのセキュリティレベルは少なくとも256ビットである必要があります。
 
-このプロトコルを実装する UEFI RNG サービスは、RNG アルゴリズムを識別し、入力値とのエントロピのソースの状態も含め、内部の状態に基づいて RNG 値を提供する、省略可能な入力値を受け取る。 生のエントロピのソースの出力では、確定的なランダム ビット ジェネレーター (DRBG) を使用するときに、セキュリティ レベルは 256 ビット以上である必要があります。
+このプロトコルで使用される RNG 値を作成するための標準的な方法については、「 [NIST SP 800-90A Rev. 1-決定的ランダムビットジェネレーターを使用した乱数生成の推奨事項](https://csrc.nist.gov/publications/detail/sp/800-90a/rev-1/final)」を参照してください。
 
-このプロトコルで使用する RNG 値を作成する標準的なメソッドについてのガイダンスについては、次を参照してください。[確定的なランダム ビット ジェネレーターを使用して乱数の NIST SP 800-90A に関する推奨事項]( https://go.microsoft.com/fwlink/p/?LinkId=523737)します。
+## <a name="protocol-interface"></a>プロトコルインターフェイス
 
-## <a name="protocol-interface"></a>プロトコル インターフェイス
+- [EFI \_ RNG \_ サービス \_ バインド \_ プロトコル](efi-rng-service-binding-protocol.md)
 
+- [EFI \_ RNG \_ プロトコル](efi-rng-protocol.md)
 
--   [EFI\_RNG\_サービス\_バインド\_プロトコル](efi-rng-service-binding-protocol.md)
-
--   [EFI\_RNG\_プロトコル](efi-rng-protocol.md)
-
--   [**EFI\_RNG\_アルゴリズム\_一覧**](efi-rng-algorithm-list.md)
-
- 
-
- 
-
-
-
-
+- [**EFI \_ RNG \_ アルゴリズムの \_ 一覧**](efi-rng-algorithm-list.md)

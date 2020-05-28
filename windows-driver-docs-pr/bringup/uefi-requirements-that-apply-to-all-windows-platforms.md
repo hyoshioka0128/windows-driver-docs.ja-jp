@@ -2,22 +2,20 @@
 title: Windows の UEFI 要件 (SoC プラットフォーム)
 description: このトピックでは、Windows 10 for desktop エディション (Home、Pro、Enterprise、および教育) と Windows 10 Mobile に適用される UEFI の要件について説明します。
 ms.assetid: 7A0B901E-1252-4F8F-B1CB-BA1AB7B01112
-ms.date: 04/20/2017
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c32694d75dcdd948d93f0fda50674f7fdf3abc55
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 80f670f5646a923e7d3deceb6080f15a4cfd2765
+ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242839"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122696"
 ---
 # <a name="uefi-requirements-for-windows-editions-on-soc-platforms"></a>SoC プラットフォームでの Windows エディションの UEFI 要件
-
 
 このトピックでは、Windows 10 for desktop エディション (Home、Pro、Enterprise、および教育) と Windows 10 Mobile に適用される UEFI の要件について説明します。 Windows 10 Mobile のみに適用されるその他の要件については、「 [windows 10 mobile の UEFI 要件](uefi-requirements-specific-to-windows-mobile.md)」を参照してください。
 
 ## <a name="summary-of-requirements"></a>要件の概要
-
 
 次の表は、uefi 仕様 (UEFI 2.3.1 仕様のセクション 2.6) で定義されている UEFI コンプライアンスの現在の要件をすべて示しています。 この表では、*明示的な windows の要件*という用語は、windows コンポーネントによって直接呼び出されるプロトコルまたはサービスを識別します。 これらのサービスのみが Windows によって明示的に使用されますが、その他のサービスやプロトコルは、コアファームウェア実装、EFI デバイスドライバー、または開発および展開ツールチェーンによって暗黙的または明示的に要求される場合があります。
 
@@ -25,7 +23,7 @@ Microsoft は、この一連の要件について、実装からのフィード�
 
 特定の要件の詳細については、表の後のセクションを参照してください。
 
-| 要件                               | UEFI 仕様セクション | 説明                          |
+| 要件                               | UEFI 仕様セクション | 注                          |
 |-------------------------------------------|----------------------------|--------------------------------|
 | **EFI システムテーブル**                      | 4.3                        | 明示的な Windows 要件   |
 | **EFI ブートサービス**                     | 6.0                        |                                |
@@ -62,13 +60,10 @@ Microsoft は、この一連の要件について、実装からのフィード�
 |   EFI シリアル IO プロトコル                  | 11.8                       |                                |
 |   UEFI ARM バインド                        | 2.3.5                      | 明示的な Windows 要件   |
 | **セキュリティ要件**                 |                            |                                |
-|   セキュアブート                             | 27.0                       | 明示的な Windows 要件   |
+|   セキュア ブート                             | 27.0                       | 明示的な Windows 要件   |
 |   ブートマネージャーの要件               | 3.1、3.3                   | 明示的な Windows 要件   |
 
- 
-
 ## <a name="efi-system-table-requirements"></a>EFI システムテーブルの要件
-
 
 EFI システムテーブルは、実装されているリビジョンレベルの標準定義に準拠している必要があります。 EFI システムテーブルによってポイントされる構成テーブルには、次の表で説明する2つの Guid とそれに関連するポインターが含まれている必要があります。
 
@@ -96,10 +91,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 </tbody>
 </table>
 
- 
-
 ## <a name="efi-boot-services-requirements"></a>EFI ブートサービスの要件
-
 
 次の表は、Windows の EFI ブートサービス要件を示しています。
 
@@ -143,7 +135,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 <li><p>ストール ()</p></li>
 </ul>
 <div class="alert">
-<strong>  、</strong>エラーの修正やキャンセルを確実に実行できるように、決定的な (反復可能な) エラーを発生させるには、ストール () の実装が必要です。
+<strong>メモ</strong>   ストール () の実装では、エラーの修正やキャンセルを確実に実行できるように、決定的な (反復可能な) エラーを持つ必要があります。
 </div>
 <div>
  
@@ -152,10 +144,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 </tbody>
 </table>
 
- 
-
 ## <a name="efi-runtime-services-requirements"></a>EFI ランタイムサービスの要件
-
 
 次の表に、Windows の EFI ランタイムサービスの要件を示します。
 
@@ -178,7 +167,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 <li><p>GetTime ()</p></li>
 <li><p>SetTime ()</p>
 <div class="alert">
-<strong>注</strong>  タイムサービスは、プラットフォームの時間のハードウェアにアクセスするために (ExitBootServices () の前に) 起動中にのみ呼び出されます。
+<strong>メモ</strong>   タイムサービスは、プラットフォームの時間内ハードウェアにアクセスするために (ExitBootServices () の前に) 起動中にのみ呼び出されます。
 </div>
 <div>
  
@@ -194,8 +183,8 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 <td><p>Windows には、次のようなランタイムサービスが必要です。</p>
 <ul>
 <li><p>ResetSystem ()</p>
-<div class="alert">ResetSystem () の実装では、reset オプションと shutdown オプションの両方がサポートされている必要
-<strong>が  ます</strong>。
+<div class="alert">
+<strong>メモ</strong>   ResetSystem () の実装では、reset オプションと shutdown オプションの両方がサポートされている必要があります。
 </div>
 <div>
  
@@ -205,10 +194,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 </tbody>
 </table>
 
- 
-
 ## <a name="protocol-requirements"></a>プロトコルの要件
-
 
 次の表では、ブート中に特定の機能を実行するために Windows に必要な UEFI プロトコルについて説明します。
 
@@ -219,7 +205,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 </colgroup>
 <thead>
 <tr class="header">
-<th>[プロトコル]</th>
+<th>Protocol</th>
 <th>要件</th>
 </tr>
 </thead>
@@ -248,7 +234,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 <td>起動時の入力</td>
 <td><p>EFI Simple Text 入力プロトコルは、ブートを選択したり、キーボードまたは接続されたキーボードが組み込まれているシステムでメニューを選択したりするために必要です。 キーボードレスシステムの場合は、ブート環境で次の3つのボタンを使用することをお勧めします。</p>
 <ul>
-<li><p>[スタート] ボタン</p></li>
+<li><p>スタート ボタン</p></li>
 <li><p>音量アップボタン</p></li>
 <li><p>音量ダウンボタン</p></li>
 </ul>
@@ -266,10 +252,7 @@ EFI システムテーブルは、実装されているリビジョンレベル�
 </tbody>
 </table>
 
- 
-
 ## <a name="security-requirements"></a>セキュリティ要件
-
 
 Windows では、セキュアブート、メジャーブート、暗号化、およびデータ保護の領域にセキュリティ要件があります。 これらの要件については、次の表で詳しく説明します。 さらに、SoC ハードウェアが既存の標準 (TPM、RTC など) に準拠していない領域については、追加の要件があります。 これらの詳細については、表の最後を参照してください。
 
@@ -280,7 +263,7 @@ Windows では、セキュアブート、メジャーブート、暗号化、お
 </colgroup>
 <thead>
 <tr class="header">
-<th>エリア</th>
+<th>領域</th>
 <th>要件</th>
 </tr>
 </thead>
@@ -299,8 +282,8 @@ Windows では、セキュアブート、メジャーブート、暗号化、お
 <li><p>要件 4: 必須。 UEFI の "許可されていない" 署名データベース (EFI_IMAGE_SECURITY_DATABASE1) の存在が必要です。</p></li>
 <li><p>要件 5: 必須。 Microsoft が提供する UEFI KEK は、UEFI KEK データベースに含まれている必要があります。 追加の KEKs は存在しません。 Microsoft は、KEK を EFI_CERT_X509 署名の形式で提供します。</p></li>
 <li><p>要件 6: 必須。 PK<em><sub>pub</sub></em>キーが存在し、ファームウェアフラッシュに格納されている必要があります。</p>
-<div class="alert">  に
-<strong>注意</strong>してください。 pk<em><sub>priv</sub></em> (秘密キーは pk<em><sub>pub</sub></em>に相当する) では、pk<em><sub>Pub</sub></em>によってプロビジョニングされたすべてのデバイスでセキュアブートポリシーを制御します。そのため、その保護と使用は厳重に保護されている必要があります。
+<div class="alert">
+<strong>メモ</strong>   Pk<em><sub>priv</sub></em> (秘密キーが pk<em><sub>pub</sub></em>に対応する秘密キー) は、pk<em><sub>Pub</sub></em>でプロビジョニングされたすべてのデバイスでセキュアブートポリシーを制御するため、その保護と使用は厳密に保護する必要があります。
 </div>
 <div>
  
@@ -327,7 +310,7 @@ Windows では、セキュアブート、メジャーブート、暗号化、お
 <td><p>次の要件は、TCG TPM 実装の必要性を意味するものではありません。ただし、影響を受ける領域に対して同等の機能が必要であることを意味します。</p>
 <p>プラットフォームのサポートは、セキュリティで保護された実行環境で実行されている TPM のファームウェア実装によって提供され、暗号化アクセラレーションエンジンの上にレイヤーが配置され、分離ストレージが活用されます。 Microsoft は、このような TPM 実装に対して、ベンダーが使用するための参照ソフトウェアを提供できる場合があります。 これについては、さらに詳しく説明します。</p>
 <ul>
-<li><p>要件 22: 必須。 プラットフォームは、 <a href="https://go.microsoft.com/fwlink/p/?LinkId=528536" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://go.microsoft.com/fwlink/p/?LinkId=528536)">UEFI の信頼できる実行環境の Efi プロトコル</a>に指定されている efi プロトコルに準拠している必要があります。</p></li>
+<li><p>要件 22: 必須。 プラットフォームは、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI の信頼できる実行環境の Efi プロトコル</a>に指定されている efi プロトコルに準拠している必要があります。</p></li>
 <li><p>要件 23: 必須。 このプラットフォームは、次の追加機能を備えた TCG EFI プラットフォーム仕様に準拠している必要があります。</p>
 <ul>
 <li><p>TrEE EFI プロトコルで定義されているインターフェイスをサポートするプラットフォームでは、PK<em><sub>pub</sub></em>のダイジェストは、EV_EFI_VARIABLE_CONFIG イベントとして TPM PCR [03] に拡張する必要があります。</p></li>
@@ -335,7 +318,7 @@ Windows では、セキュアブート、メジャーブート、暗号化、お
 <li><p>UEFI クライアントは、EFI_IMAGE_SECURITY_DATABASE 変数を使用して証明書の一覧を読み取って解析し、その拡張値に対してダイジェストを検証することができます。</p></li>
 <li><p>TCG_PCR_EVENT のダイジェスト値は、sha-1 ではなく、SHA-256 である必要があります。</p></li>
 </ul></li>
-<li><p>要件 24: 必須。 このプラットフォームでは、 <a href="https://go.microsoft.com/fwlink/p/?LinkId=528539" data-raw-source="[TCG Platform Reset Attack Mitigation Specification](https://go.microsoft.com/fwlink/p/?LinkId=528539)">TCG プラットフォームリセット攻撃の緩和の仕様</a>で定義されている MemoryOverwriteRequestControl を実装する必要があります。</p></li>
+<li><p>要件 24: 必須。 このプラットフォームでは、 <a href="https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf" data-raw-source="[TCG Platform Reset Attack Mitigation Specification](https://trustedcomputinggroup.org/wp-content/uploads/Platform-Reset-Attack-Mitigation-Specification.pdf)">TCG プラットフォームリセット攻撃の緩和の仕様</a>で定義されている MemoryOverwriteRequestControl を実装する必要があります。</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -363,21 +346,17 @@ Windows では、セキュアブート、メジャーブート、暗号化、お
 <li><p>Microsoft では、UEFI プラットフォームからエントロピを収集するためのプロトコルが定義されています。 UEFI の要件ではありませんが、SoC プラットフォームの Windows ではこのプロトコルが必要です。 このプロトコルの詳細については、「 <a href="uefi-entropy-gathering-protocol.md" data-raw-source="[UEFI entropy gathering protocol](uefi-entropy-gathering-protocol.md)">UEFI エントロピ収集プロトコル</a>」を参照してください。</p></li>
 <li><p>UEFI 署名データベースの更新。 認証済み変数を更新するための新しいメカニズムは、UEFI 2.3.1 のセクション27で採用されています。 このメカニズムは、Windows で必要です。</p></li>
 <li><p>信頼された実行環境。 Microsoft は、信頼できる実行環境 (ツリー) と対話するための EFI プロトコルを開発しています。これは、Trusted Computing Group (TCG) トラステッドプラットフォームモジュール (TCG) のサブセットに似ています。 EFI プロトコルは、Trusted Computing Group によって、"TCG EFI Protocol" バージョン1.2 リビジョン 1.00, June 9, 2006 を利用しています。</p>
-<p>詳細については、 <a href="https://go.microsoft.com/fwlink/p/?LinkId=528536" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://go.microsoft.com/fwlink/p/?LinkId=528536)">UEFI の信頼された実行環境 EFI プロトコル</a>に関する説明を参照してください。</p></li>
+<p>詳細については、 <a href="https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85)" data-raw-source="[UEFI Trusted Execution Environment EFI Protocol](https://docs.microsoft.com/previous-versions/windows/hardware/hck/jj923068(v=vs.85))">UEFI の信頼された実行環境 EFI プロトコル</a>に関する説明を参照してください。</p></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ## <a name="firmware-boot-manager-requirements"></a>ファームウェアブートマネージャーの要件
-
 
 ファームウェアブートマネージャーは、仕様のセクション3.3 で定義されている既定のブート動作をサポートしている必要があります。 さらに、マルチブートをサポートするために、グローバルに定義された変数と、仕様のセクション3.1 のブートマネージャーの要件が必要です。
 
 ## <a name="uefi-arm-binding-requirements"></a>UEFI ARM のバインド要件
-
 
 UEFI ARM バインドには、UEFI 仕様に準拠するために必要な ARM プラットフォームに固有の要件が含まれています。 Windows では、ARMv7 に適用される ARM バインド内のすべてが必要です。 Windows では ARMv7 より前のものはサポートされていないため、ARMv6k 以下に固有のバインドの要件は省略可能です。
 
@@ -385,11 +364,9 @@ UEFI ARM バインドには、UEFI 仕様に準拠するために必要な ARM �
 
 ## <a name="uefi-arm-multiprocessor-startup-requirements"></a>UEFI ARM マルチプロセッサのスタートアップ要件
 
-
-Microsoft は、マルチプロセッサの UEFI プラットフォームで複数の ARM コアを開始するためのプロトコルを開発しました。 このプロトコルは、[電源状態調整インターフェイス (PSCI)](https://go.microsoft.com/fwlink/p/?LinkId=528534)をサポートしていない ARM プラットフォームの Windows で必要です。 PSCI をサポートするプラットフォームでは、このプロトコルを使用できません。 このプロトコルの詳細については、「ACPI コンポーネントアーキテクチャ (ACPICA)」 Web サイトの「 [UEFI ARM ベースのプラットフォームでのマルチプロセッサの起動](https://go.microsoft.com/fwlink/p/?LinkId=528533)」を参照してください。
+Microsoft は、マルチプロセッサの UEFI プラットフォームで複数の ARM コアを開始するためのプロトコルを開発しました。 このプロトコルは、[電源状態調整インターフェイス (PSCI)](http://infocenter.arm.com/help/topic/com.arm.doc.den0022d/Power_State_Coordination_Interface_PDD_v1_1_DEN0022D.pdf)をサポートしていない ARM プラットフォームの Windows で必要です。 PSCI をサポートするプラットフォームでは、このプロトコルを使用できません。 このプロトコルの詳細については、「ACPI コンポーネントアーキテクチャ (ACPICA)」 Web サイトの「 [UEFI ARM ベースのプラットフォームでのマルチプロセッサの起動](https://acpica.org/sites/acpica/files/MP Startup for ARM platforms.docx)」を参照してください。
 
 ## <a name="platform-setup-requirements"></a>プラットフォームのセットアップ要件
-
 
 ファームウェアは、OS ローダーに渡す前に、システムハードウェアを適切に定義された状態にする役割を担います。 次の表は、関連するプラットフォームのセットアップ要件を定義しています。
 
@@ -425,25 +402,18 @@ Microsoft は、マルチプロセッサの UEFI プラットフォームで複�
 </tbody>
 </table>
 
- 
-
 ## <a name="installation-requirements"></a>インストール要件
-
 
 Windows では、OS パーティションが GPT パーティション分割されたストレージソリューションに存在している必要があります。 MBR パーティション分割ストレージは、データストレージとして使用できます。 Uefi 仕様で定義されているように、UEFI プラットフォームには専用のシステムパーティションが必要です。 Windows では、この専用システムパーティションが必要です。これは、EFI システムパーティション (ESP) と呼ばれています。
 
 ## <a name="hardware-security-test-interface-hsti-requirement"></a>ハードウェアセキュリティテストインターフェイス (HSTI) の要件
 
-
 プラットフォームは、ハードウェアセキュリティテストインターフェイスを実装する必要があります。プラットフォームは、[ハードウェアセキュリティ](https://docs.microsoft.com/windows-hardware/test/hlk/testref/hardware-security-testability-specification)のテストの容易性の仕様で指定されているドキュメントやツールを共有するために必要です。
 
 ## <a name="related-topics"></a>関連トピック
 
-[SoC プラットフォーム上の Windows の最小 UEFI 要件](minimum-uefi-requirements-for-windows-on-soc-platforms.md)  
+[SoC プラットフォーム上の Windows に対する最小限の UEFI 要件](minimum-uefi-requirements-for-windows-on-soc-platforms.md)  
 
-[Windows 10 Mobile の UEFI 要件](uefi-requirements-specific-to-windows-mobile.md)  
+[Windows 10 Mobile に対する UEFI 要件](uefi-requirements-specific-to-windows-mobile.md)  
 
-[USB フラッシュのサポートに関する UEFI の要件](uefi-requirements-for-usb-flashing-support.md)  
-
-
-
+[USB フラッシング サポートのための UEFI 要件](uefi-requirements-for-usb-flashing-support.md)  

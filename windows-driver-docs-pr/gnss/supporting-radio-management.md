@@ -1,99 +1,91 @@
 ---
 title: 無線管理のサポート
-description: ユーザーが、Windows 8 ラップトップ、ノートブック、または tablet PC 設定で [ワイヤレス] オプションをオンまたはオフ、接続しているワイヤレス デバイスを有効にできます。
+description: ユーザーが Windows 8 のラップトップ、ノートブック、またはタブレットで [PC 設定] の [ワイヤレス] オプションを選択すると、接続されているワイヤレスデバイスのオンとオフを切り替えることができます。
 ms.assetid: AA7AB429-30C5-4C10-AA85-41ED9EAEE69A
 keywords:
-- 無線管理 API
-- 無線管理 API、例
+- ラジオ管理 API
+- radio management API、例
 - 無線管理、例
-- GPS 無線管理
-- GPS 無線管理
+- GPS ラジオの管理
+- ラジオ管理、GPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cd840a2c99a3518d4ea32c58e133bb011515bfe
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 69304e9e86afc1cf3dfc62a69866d127ef4f0338
+ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363619"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122689"
 ---
 # <a name="supporting-radio-management"></a>無線管理のサポート
 
-> [!IMPORTANT] 
-> このドキュメントと Windows 8.1 の地理的位置情報ドライバー サンプルが非推奨とされました。
+> [!IMPORTANT]
+> Windows 8.1 のこのドキュメントと位置情報ドライバーのサンプルは、非推奨とされました。
 
-ユーザーが、Windows 8 ラップトップ、ノートブック、または tablet PC 設定で [ワイヤレス] オプションをオンまたはオフ、接続しているワイヤレス デバイスを有効にできます。 これらのワイヤレス デバイスには、Wi-fi アンテナまたは GPS デバイスを含めることができます。 PC の設定と特定のワイヤレス デバイスの間、内部リンケージを持ちますが、[ラジオ管理 API](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))と特定のデバイスの対応するラジオ管理 DLL。
+ユーザーが Windows 8 のラップトップ、ノートブック、またはタブレットで [PC 設定] の [ワイヤレス] オプションを選択すると、接続されているワイヤレスデバイスのオンとオフを切り替えることができます。 これらのワイヤレスデバイスには、Wi-fi アンテナまたは GPS デバイスを含めることができます。 PC 設定と特定のワイヤレスデバイスとの内部リンケージは、[ラジオ管理 API](https://docs.microsoft.com/previous-versions/windows/hardware/radio/hh406615(v=vs.85))と、特定のデバイスの対応するラジオ管理 DLL です。
 
-ラジオの管理 API は、Windows Driver Kit の一部として出荷されます/Win32 COM インターフェイスのセットです。 これらのインターフェイスにはメソッドが含まれています。
+Radio Management API は、Windows Driver Kit の一部として出荷される COM/Win32 インターフェイスのセットです。 これらのインターフェイスには、次のようなメソッドが含まれます。
 
--   無線デバイスの現在の状態を取得します。
--   無線デバイスに通知イベントをサポートします。
--   (表示名) などのデバイス プロパティを取得します。
+- ラジオデバイスの現在の状態を取得します。
 
-これらのインターフェイスは、アプリケーション開発者ではなく、Oem および Ihv のみを対象としています。
+- ラジオデバイスの通知イベントをサポートする
 
-## <a name="the-radio-management-dynamic-link-library-dll"></a>無線管理ダイナミック リンク ライブラリ (DLL)
+- デバイスのプロパティ (フレンドリ名など) の取得
 
+これらのインターフェイスは、アプリケーション開発者ではなく、Oem および Ihv 向けにのみ用意されています。
 
-無線デバイスの場合、GPS のようなデバイス ドライバーを作成する場合、ドライバーは、追加ダイナミック リンク ライブラリ (DLL、ラジオの管理 API でインターフェイスをサポートする) を含める必要があります。 この DLL の要件を理解するために、Microsoft では、地理的位置情報ドライバー サンプルの一部としてサンプルの Microsoft Visual Studio プロジェクトとソース コードが付属しています。 このサンプル プロジェクト SampleRM.vcxproj はセンサー地理位置情報ドライバー サンプルが見つかりません。\\C++\\ドライバーのサンプルの RadioManagerGPS フォルダー。 C++ ソース ファイルの 7 つ、6 つの C++ ヘッダー ファイル、モジュール定義ファイル、リソース ファイル、2 つの IDL ファイル、レジストリ ファイル (DLL)、登録をおよび、インストール スクリプトが含まれています。
+## <a name="the-radio-management-dynamic-link-library-dll"></a>オプション管理のダイナミックリンクライブラリ (DLL)
 
-次の表は、ラジオの管理 API のメソッドとサンプルの DLL 内の対応するメソッドを示します。
+GPS など、ラジオデバイス用のデバイスドライバーを作成する場合、ドライバーには、ラジオ管理 API のインターフェイスをサポートする追加のダイナミックリンクライブラリ (DLL) を含める必要があります。 この DLL の要件を理解するために、Microsoft は、地理位置情報ドライバーのサンプルの一部として、サンプル Microsoft Visual Studio プロジェクトとソースコードを提供しています。 このサンプルプロジェクト SampleRM は、ドライバーサンプルのセンサー位置情報ドライバーのサンプル \\ C++ \\ RadioManagerGPS フォルダーにあります。 これには、7つの C++ ソースファイル、6つの C++ ヘッダーファイル、モジュール定義ファイル、リソースファイル、2つの IDL ファイル、(DLL を登録するための) レジストリファイル、およびインストールスクリプトが含まれます。
+
+次の表に、ラジオ管理 API のメソッドと、サンプル DLL に含まれる対応するメソッドの一覧を示します。
 
 |                                                     |                                                       |
 |-----------------------------------------------------|-------------------------------------------------------|
-| ラジオ Manager API                                   | ラジオ Manager DLL                                     |
-| IMediaRadioManager::GetRadioInstances               | CSampleRadioManager::GetRadioInstances                |
-| IMediaRadioManager::OnSystemRadioStateChange        | CSampleRadioManager::OnSystemRadioStateChange         |
-| IRadioInstance::GetFriendlyName                     | CSampleRadioInstance::GetFriendlyName                 |
+| Radio Manager API                                   | Radio Manager DLL                                     |
+| ImediarGetRadioInstances Omanager::               | CSampleRadioManager::GetRadioInstances                |
+| ImediarOnSystemRadioStateChange Omanager::        | CSampleRadioManager::OnSystemRadioStateChange         |
+| IRadioInstance:: GetFriendlyName                     | CSampleRadioInstance:: GetFriendlyName                 |
 | IRadioInstance::GetInstanceSignature                | CSampleRadioInstance::GetInstanceSignature            |
 | IRadioInstance::GetRadioManagerSignature            | CSampleRadioInstance::GetRadioManagerSignature        |
 | IRadioInstance::GetRadioState                       | CSampleRadioInstance::GetRadioState                   |
 | IRadioState::IsAssociatingDevice                    | CSampleRadioInstance::IsAssociatingDevice             |
 | IRadioState::IsMultiComm                            | CSampleRadioInstance::IsMultiComm                     |
 | IRadioState::SetRadioState                          | CSampleRadioInstance::SetRadioState                   |
-| IRadioInstanceCollection::GetAt                     | CRadioInstanceCollection::GetAt                       |
-| IRadioInstanceCollection::GetCount                  | CRadioInstanceCollection::GetCount                    |
-| IMediaRadioManagerNotifySink::OnInstanceAdd         | CSampleRadioManager::\_FireEventOnInstanceAdd         |
-| IMediaRadioManagerNotifySink::OnInstanceRadioChange | CSampleRadioManager::\_FireEventOnInstanceRadioChange |
-| IMediaRadioManagerNotifySink::OnInstanceRemove      | CSampleRadioManager::\_FireEventOnInstanceRemove      |
+| IRadioInstanceCollection:: GetAt                     | CRadioInstanceCollection:: GetAt                       |
+| IRadioInstanceCollection:: GetCount                  | CRadioInstanceCollection:: GetCount                    |
+| IMediaRadioManagerNotifySink:: OnInstanceAdd         | CSampleRadioManager:: \_ 焼討 eventoninstanceadd         |
+| IMediaRadioManagerNotifySink::OnInstanceRadioChange | CSampleRadioManager:: \_ FireEventOnInstanceRadioChange |
+| IMediaRadioManagerNotifySink::OnInstanceRemove      | CSampleRadioManager:: \_ FireEventOnInstanceRemove      |
 
- 
+## <a name="communicating-with-the-device-driver"></a>デバイスドライバーとの通信
 
-## <a name="communicating-with-the-device-driver"></a>デバイス ドライバーとの通信
+ラジオ管理 DLL は、ラジオ管理 API から無線状態を取得または設定する要求を受信すると、その要求を IOCTL として対応するデバイスドライバーに転送します。 DLL は、 [DeviceIoControl](https://docs.microsoft.com/windows/win32/api/ioapiset/nf-ioapiset-deviceiocontrol)関数を呼び出すことによって ioctl を送信します。 ラジオ管理に関連する特定の Ioctl は次のとおりです。
 
+- IOCTL \_ GPS \_ ラジオ \_ 管理 \_ の \_ ラジオ \_ 状態の取得
 
-無線管理 DLL を取得または無線管理 API からオプションの状態を設定する要求を受け取ったときに、対応するデバイス ドライバーを IOCTL としてその要求を転送します。 DLL を呼び出すことによって Ioctl の送信、 [DeviceIoControl]( https://go.microsoft.com/fwlink/p/?linkid=256462)関数。 特定の Ioctl ラジオの管理に関連するには。
+- IOCTL \_ GPS \_ ラジオ \_ 管理 \_ の \_ 前の \_ ラジオ \_ 状態の取得
 
--   IOCTL\_GPS\_ラジオ\_管理\_取得\_ラジオ\_状態
--   IOCTL\_GPS\_ラジオ\_管理\_取得\_前\_ラジオ\_状態
--   IOCTL\_GPS\_ラジオ\_管理\_設定\_ラジオ\_状態
--   IOCTL\_GPS\_ラジオ\_管理\_設定\_前\_ラジオ\_状態
+- IOCTL \_ GPS \_ ラジオ \_ 管理 \_ セットの \_ 無線 \_ 状態
 
-サンプルの無線管理の場合、DLL、 **CSensorCommuncation::GetRadioStateHelper**と**CSensorCommunication::SetRadioStateHelper**メソッド転送 Ioctl ようサンプル地理的位置情報ドライバー。
+- IOCTL \_ GPS \_ ラジオ \_ 管理 \_ の \_ 前の \_ ラジオ \_ 状態の設定
 
-## <a name="driver-support-for-radio-management"></a>無線管理のドライバー サポート
+サンプルのラジオ管理 DLL の場合、 **Csensorcommunication:: GetRadioStateHelper**メソッドと**Csensorcommunication:: SetRadioStateHelper**メソッドは、サンプルの地理位置情報ドライバーに ioctl を転送します。
 
+## <a name="driver-support-for-radio-management"></a>ドライバーによるラジオ管理のサポート
 
-無線管理 DLL、だけでなく、DLL からドライバーに送信される 4 つのラジオ管理 Ioctl を処理するために、デバイス ドライバーを変更する必要があります。 これらの Ioctl は、する必要がありますの現在のオプションの状態を取得またはという、デバイスの無線をオンまたはオフにデバイス ドライバーを通知します。
+オプション管理 DLL に加えて、DLL からドライバーに送信される4つのラジオ管理 Ioctl を処理するようにデバイスドライバーを変更する必要もあります。 これらの Ioctl は、現在の無線状態を取得する必要があることをデバイスドライバーに通知します。または、デバイスのラジオをオンまたはオフにします。
 
-デバイス ドライバーを最初に受信して、IOCTL での処理、 **CMyQueue::OnDeviceIoControl**メソッド。 このメソッドは、次の 4 つのラジオ管理 Ioctl のいずれかを識別する場合にその IOCTL を転送、 **CMyDevice::ProcessIoControlRadioManagement**メソッドをさらに処理します。 このメソッドは、さらに IOCTL に転送**CSensorManager::ProcessIoControlRadioManagement**します。 オプションの状態の設定または取得への呼び出しによってこの最後のメソッド内で、 **CSensorDDI**クラス。
+デバイスドライバーは、 **CMyQueue:: OnDeviceIoControl**メソッドの IOCTL を最初に受信して処理します。 このメソッドが4つのラジオ管理 Ioctl のいずれかを識別する場合、後続の処理を行うために、その IOCTL を**CMyDevice::P rocessiocontrolradiomanagement**メソッドに転送します。 次に、このメソッドは、IOCTL を**Csensormanager::P rocessiocontrolradiomanagement**に転送します。 この最後のメソッドでは、 **Csensorddi**クラスへの呼び出しによってオプションの状態が設定または取得されます。
 
-**CSensorDDI**クラスには、オプションの状態を取得する 1 つのメソッドが含まれています (**CSensorDDI::OnGetRadioState**) とオプションの状態を設定する 1 つのメソッド (**CSEnsorDDI::OnSetRadioState**). これは、ハードウェアをエミュレートするサンプルのデバイス ドライバーの IOCTL の最終処理が発生します。 場合は、実際のデバイス ドライバー、 **CSensorDDI::OnGetRadioState**メソッドは、デバイスのファームウェアからオプションの状態を要求し、 **CSensorDDI::OnSetRadioState**メソッドは、発行、状態を設定するファームウェアを要求します。
+**Csensorddi**クラスには、オプションの状態 (**Csensorddi:: OnGetRadioState**) を取得するメソッドと、オプションの状態 (**Csensorddi:: OnSetRadioState**) を設定するメソッドの1つが含まれています。 ここでは、ハードウェアをエミュレートするサンプルデバイスドライバーで、最終的な IOCTL 処理が行われます。 実際のデバイスドライバーの場合、 **Csensorddi:: OnGetRadioState**メソッドはデバイスのファームウェアからオプションの状態を要求し、 **Csensorddi:: OnSetRadioState**メソッドはファームウェアに要求を発行して状態を設定します。
 
-## <a name="debugging-the-radio-management-dll"></a>無線管理 DLL のデバッグ
+## <a name="debugging-the-radio-management-dll"></a>オプション管理 DLL のデバッグ
 
+次の手順を実行して、Visual Studio でラジオ管理 DLL をデバッグできます。
 
-Visual Studio で無線管理 DLL をデバッグするには、次の手順を完了します。
+1. Visual Studio を開き、C++ RadioManagerGPS フォルダーで**SampleRM**を選択します。 \\
 
-1.  1. Visual Studio を開き、選択**SampleRM.vcsproj** C++ で\\RadioManagerGPS フォルダー。
-2.  2. 選択**デバッグ/プロセスにアタッチ**します。 表示される選択可能なプロセスの一覧で、**プロセスにアタッチ**ダイアログ ボックスで、dllhost.exe 選択します。
+1. [**デバッグ]、[プロセスにアタッチ**] の順に選択します。 [**プロセスにアタッチ**] ダイアログボックスに表示される使用可能なプロセスの一覧で、[dllhost.exe] を選択します。
 
-Dllhost.exe の複数のインスタンスが実行されている場合は、無線管理 DLL に関連付けられているプロセスを決定するために削除のプロセスでそれぞれを選択する必要がありますに注意してください。 適切なプロセスにアタッチした後は、Visual Studio でブレークポイントを設定し、デバッグを開始できます。
-
- 
-
- 
-
-
-
-
+Dllhost.exe のインスタンスが複数実行されている場合は、オプション管理 DLL に関連付けられているプロセスを特定するために、削除プロセスでそれぞれを選択する必要があることに注意してください。 適切なプロセスにアタッチしたら、Visual Studio でブレークポイントを設定し、デバッグを開始できます。

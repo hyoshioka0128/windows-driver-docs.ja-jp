@@ -4,12 +4,12 @@ description: TLV generator/パーサー XML ファイルは、メッセージ、
 ms.assetid: AD268E68-B969-45D8-A2F2-4025E827D496
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 756e6c1b2e1d1a09f662e3974369c7c8e354d1e3
-ms.sourcegitcommit: 53cf8b3982c47fa1bbf9f1725ec5fbba2ebc4f42
+ms.openlocfilehash: 2f59ab54c77805620d7e7ad49812399faabe00f2
+ms.sourcegitcommit: 97272cb572d24b1ac72669e51e5051089e1dd2c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/27/2020
-ms.locfileid: "83883441"
+ms.locfileid: "84053282"
 ---
 # <a name="wdi-tlv-generatorparser-xml-semantics"></a>WDI TLV generator/パーサー XML セマンティクス
 
@@ -20,34 +20,34 @@ TLV generator/パーサー XML ファイルは、メッセージ、コンテナ�
   - [コンテンツ](#content)
   - [例](#example)
 - [`<containerRef />`](#containerref-)
-  - [属性](#attributes)
-  - [コンテンツ](#content)
-  - [例](#example)
+  - [属性](#containerref--attributes)
+  - [コンテンツ](#container--contents)
+  - [例](#containerref--example)
 - [`<containers />`](#containers-)
 - [`<container />`](#container-)
-  - [属性](#attributes)
-  - [Contents](#contents)
-  - [例](#example)
+  - [属性](#container--attributes)
+  - [Contents](#container--contents)
+  - [例](#container--example)
 - [`<groupRef />`](#groupref-)
-  - [属性](#attributes)
-  - [コンテンツ](#content)
-  - [例](#examples)
+  - [属性](#groupref--attributes)
+  - [コンテンツ](#groupref--content)
+  - [使用例](#groupref--examples)
 - [`<namedType />`](#namedtype-)
-  - [属性](#attributes)
-  - [コンテンツ](#content)
-  - [例](#example)
+  - [属性](#namedtype--attributes)
+  - [コンテンツ](#namedtype--content)
+  - [例](#namedtype--example)
 - [`<aggregateContainer />`](#aggregatecontainer-)
-  - [属性](#attributes)
-  - [コンテンツ](#content)
-  - [例](#example)
+  - [属性](#aggregatecontainer--attributes)
+  - [コンテンツ](#aggregatecontainer--content)
+  - [例](#aggregatecontainer--example)
 - [`<propertyGroups />`](#propertygroups-)
 - [プリミティブフィールド型 ( `<bool/> <uint8/> <uint16/> <uint32/> <int8/> <int16/> <int32/>` )](#primitive-field-types-bool-uint8-uint16-uint32-int8-int16-int32)
-  - [属性](#attributes)
-  - [Contents](#contents)
+  - [属性](#attributes-for-primitive-field-types)
+  - [Contents](#contents-for-primitive-field-types)
 - [`<propertyGroup />`](#propertygroup-)
-  - [属性](#attributes)
-  - [Contents](#contents)
-  - [例](#example)
+  - [属性](#propertygroup--attributes)
+  - [Contents](#propertygroup--contents)
+  - [例](#propertygroup--example)
 
 ## `<message />`
 
@@ -261,7 +261,7 @@ Wditypes または dot11wdi によって公開されている未加工の型へ�
 
 個々の構造体。
 
-### <a name="propertygroup--attributes"></a>`<propertyGroup />`アトリビュート 
+### <a name="propertygroup--attributes"></a>`<propertyGroup />`アトリビュート
 
 - `name`-WDI メッセージ/その他のコンテナーによって参照される ID。
 - `description`–プロパティグループの内容についてのわかりやすい説明です。
