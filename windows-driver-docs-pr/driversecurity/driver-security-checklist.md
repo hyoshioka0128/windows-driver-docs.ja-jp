@@ -4,12 +4,12 @@ description: この記事では、ドライバー開発者向けのドライバ�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 813d92b86f130091c03a18f30db163809ed16d9b
-ms.sourcegitcommit: c169ed9a2b5939858c5578aa8d1f363eaecb7494
+ms.openlocfilehash: f5fb99a4b7c936136b6e7f5776bf3f0b0982be45
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81398335"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153181"
 ---
 # <a name="driver-security-checklist"></a>ドライバーのセキュリティ チェックリスト
 
@@ -27,19 +27,19 @@ ms.locfileid: "81398335"
 
 **セキュリティチェックリスト:** *これらの各トピックで説明されているセキュリティタスクを完了します。*
 
-![空のチェックボックス](images/checkbox.png)[カーネルドライバーが必要であることを確認する](#confirmkernel)
+![空のチェックボックス](images/checkbox.png)[カーネルドライバーが必要であることを確認します](#confirmkernel)
 
 ![空のチェックボックス](images/checkbox.png)[ドライバーフレームワークを使用する](#confirmkernel)
 
 ![空のチェックボックス](images/checkbox.png)[ソフトウェアのみのドライバーへのアクセスを制御する](#controlsoftwareonly)
 
-![空のチェックボックスをオフにする](images/checkbox.png)[テストドライバーコードをテスト](#donotproductionsign)する
+![空のチェックボックス](images/checkbox.png)[は、テストドライバーコードをテストしません](#donotproductionsign)。
 
-![空のチェックボックス](images/checkbox.png)[脅威分析を実行](#threatanalysis)する
+![空のチェックボックス](images/checkbox.png)[脅威分析の実行](#threatanalysis)
 
 ![空のチェックボックス](images/checkbox.png)[ドライバーの安全なコーディングのガイドラインに従う](#driversecuritycodepractices)
 
-![空のチェックボックス](images/checkbox.png)[Device Guard の互換性を検証](#dgc)する
+![空のチェックボックス](images/checkbox.png)[HVCI 互換性の検証](#dgc)
 
 ![空のチェックボックス](images/checkbox.png)[テクノロジ固有のコードのベストプラクティスに従う](#technologyspecificcodepractices)
 
@@ -49,17 +49,17 @@ ms.locfileid: "81398335"
 
 ![空のチェックボックス](images/checkbox.png)[デバイスのインストールのセキュリティを強化](#enhancedeviceinstallationsecurity)する
 
-空のチェックボックス ![](images/checkbox.png)[適切なリリースドライバーの署名を実行](#releasedriversigning)する
+![空のチェックボックス](images/checkbox.png)[適切なリリースドライバーの署名を実行](#releasedriversigning)する
 
 ![空のチェックボックス](images/checkbox.png)[Visual Studio でコード分析を使用してドライバーのセキュリティを調査する](#use-code-analysis)
 
 ![空のチェックボックス](images/checkbox.png)[静的ドライバーの検証ツールを使用して脆弱性を確認する](#sdv)
 
-空のチェックボックス](images/checkbox.png)[を ![BinSkim Binary Analyzer でコードを確認](#binskim)する
+![空](images/checkbox.png)[の Checkbox チェックコードと BinSkim Binary Analyzer](#binskim)
 
 ![空のチェックボックス](images/checkbox.png)[コード検証ツールを使用する](#codevalidationtools)
 
-![空のチェックボックス](images/checkbox.png)[デバッガーの手法と拡張機能を確認](#debugger)する
+![空のチェックボックス](images/checkbox.png)[デバッガーの手法と拡張機能の確認](#debugger)
 
 ![空のチェックボックス](images/checkbox.png)[セキュリティで保護されたコーディングリソースの確認](#securecodingresources)
 
@@ -67,7 +67,7 @@ ms.locfileid: "81398335"
 
 ## <a name="span-idconfirmkernelspanconfirm-that-a-kernel-driver-is-required"></a><span id="confirmkernel"></span>カーネルドライバーが必要であることを確認する
 
-**セキュリティチェックリスト項目 \#1:** *カーネルドライバーが必要であること、および Windows サービスやアプリなどの低いリスクアプローチが適していないことを確認します。*
+**セキュリティチェックリスト項目 \# 1:** *カーネルドライバーが必要であること、および Windows サービスやアプリなどの低いリスクアプローチが適していないことを確認します。*
 
 ドライバーは Windows カーネル内に存在し、カーネルで実行するときに問題が発生すると、オペレーティングシステム全体が公開されます。 他のオプションが使用可能な場合、新しいカーネルドライバーを作成するよりもコストが低くなり、関連するリスクが少なくなる可能性があります。
 組み込みの Windows ドライバーの使用方法の詳細については、「[ドライバーを作成する必要がありますか?](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/do-you-need-to-write-a-driver-)」を参照してください。
@@ -78,17 +78,17 @@ Windows サービスの使用方法については、「[サービス](https://d
 
 ## <a name="span-idconfirmkernelspanuse-the-driver-frameworks"></a><span id="confirmkernel"></span>ドライバーフレームワークを使用する
 
-**セキュリティチェックリスト項目 \#2:** *ドライバーフレームワークを使用して、コードのサイズを縮小し、信頼性とセキュリティを向上させます。*
+**セキュリティチェックリスト項目 \# 2:** *ドライバーフレームワークを使用して、コードのサイズを縮小し、信頼性とセキュリティを向上させます。*
 
 [Windows ドライバーフレームワーク](https://docs.microsoft.com/windows-hardware/drivers/wdf/)を使用して、コードのサイズを縮小し、信頼性とセキュリティを向上させます。  使用を開始するには、「 [WDF を使用してドライバーを開発する](https://docs.microsoft.com/windows-hardware/drivers/wdf/using-the-framework-to-develop-a-driver)」を参照してください。 低リスクのユーザーモードフレームワークドライバー (UMDF) の使用方法については、「[ドライバーモデルの選択](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/choosing-a-driver-model)」を参照してください。
 
 古い形式の[Windows Driver Model (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)ドライバーを記述する方が時間がかかり、コストがかかり、ほとんどの場合、ドライバーフレームワークで使用可能なコードを再作成する必要があります。
 
-Windows Driver Framework のソースコードはオープンソースであり、GitHub で入手できます。 これは、Windows 10 に付属している WDF ランタイムライブラリを構築するのと同じソースコードです。 ドライバーと WDF のやりとりを追跡できるとき、ドライバーをさらに効果的にデバッグできます。 [https://github.com/Microsoft/Windows-Driver-Frameworks](https://github.com/Microsoft/Windows-Driver-Frameworks)からダウンロードします。
+Windows Driver Framework のソースコードはオープンソースであり、GitHub で入手できます。 これは、Windows 10 に付属する WDF ランタイム ライブラリのソース コードと同じです。 ドライバーと WDF のやりとりを追跡できるとき、ドライバーをさらに効果的にデバッグできます。 からダウンロード [https://github.com/Microsoft/Windows-Driver-Frameworks](https://github.com/Microsoft/Windows-Driver-Frameworks) します。
 
 ## <a name="span-idcontrolsoftwareonlyspancontrol-access-to-software-only-drivers"></a><span id="controlsoftwareonly"></span>ソフトウェアのみのドライバーへのアクセスを制御する
 
-**セキュリティチェックリスト項目 \#3:** *ソフトウェアのみのドライバーを作成する場合は、追加のアクセス制御を実装する必要があります。*
+**セキュリティチェックリスト項目 \# 3:** *ソフトウェア専用ドライバーを作成する場合は、追加のアクセス制御を実装する必要があります。*
 
 ソフトウェアのみのカーネルドライバーは、プラグアンドプレイ (PnP) を使用して特定のハードウェア Id に関連付けられることはなく、任意の PC で実行できます。 このようなドライバーは、最初に意図したもの以外の目的で使用できます。攻撃ベクトルを作成します。
 
@@ -98,7 +98,7 @@ Windows Driver Framework のソースコードはオープンソースであり�
 
 ## <a name="span-iddonotproductionsignspan-do-not-production-sign-test-code"></a><span id="donotproductionsign"></span>テストコードを運用環境に署名しない
 
-**セキュリティチェックリスト項目 \#4:** *実稼働コード署名の開発、テスト、およびカーネルドライバーコードの製造を行いません。*
+**セキュリティチェックリスト項目 \# 4:** *実稼働コード署名の開発、テスト、およびカーネルドライバーコードの製造を行いません。*
 
 開発、テスト、または製造に使用されるカーネルドライバーのコードには、セキュリティ上のリスクをもたらす危険な機能が含まれている可能性があります。  この危険なコードは、Windows によって信頼されている証明書で署名されることはありません。  危険なドライバーコードを実行するための正しいメカニズムは、UEFI セキュアブートを無効にし、BCD "TESTSIGNING" を有効にし、信頼されていない証明書 (たとえば、makecert によって生成されたもの) を使用して開発、テスト、および製造コードに署名することです。
 
@@ -113,7 +113,7 @@ Windows Driver Framework のソースコードはオープンソースであり�
 
 ## <a name="span-idthreatanalysisspanspan-idthreatanalysisspanspan-idthreatanalysisspanperform-threat-analysis"></a><span id="ThreatAnalysis"></span><span id="threatanalysis"></span><span id="THREATANALYSIS"></span>脅威分析を実行する
 
-**セキュリティチェックリスト項目 \#5:** *既存のドライバー脅威モデルを変更するか、ドライバーのカスタム脅威モデルを作成します。*
+**セキュリティチェックリスト項目 \# 5:** *既存のドライバー脅威モデルを変更するか、ドライバーのカスタム脅威モデルを作成します。*
 
 セキュリティを考慮して、一般的な方法としては、可能な攻撃の種類を記述する特定の脅威モデルを作成する方法があります。 この手法は、開発者がドライバーに対する潜在的な攻撃ベクトルを事前に考慮することを強制するため、ドライバーを設計するときに役立ちます。 潜在的な脅威を特定した後、ドライバーの開発者は、ドライバーコンポーネントの全体的なセキュリティを強化ために、これらの脅威に対する防御手段を検討できます。
 
@@ -125,7 +125,7 @@ Windows Driver Framework のソースコードはオープンソースであり�
 
 ## <a name="span-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanspan-iddriversecuritycodepracticesspanfollow-driver-secure-coding-guidelines"></a><span id="DriverSecurityCodePractices"></span><span id="driversecuritycodepractices"></span><span id="DRIVERSECURITYCODEPRACTICES"></span>ドライバーの安全なコーディングのガイドラインに従う
 
-**セキュリティチェックリスト項目 \#6:** *コードを確認し、既知のコードの脆弱性を削除します。*
+**セキュリティチェックリスト項目 \# 6:** *コードを確認し、既知のコードの脆弱性を削除します。*
 
 セキュリティで保護されたドライバーを作成するための主要なアクティビティは、既知のソフトウェアの脆弱性を回避するために変更する必要があるコード内の領域を識別することです。 これらの既知のソフトウェアの脆弱性の多くは、メモリの使用を厳密に追跡して、他のユーザーの問題を回避したり、ドライバーが使用するメモリの場所を上書きしたりしないようにします。
 
@@ -143,11 +143,11 @@ Windows Driver Framework のソースコードはオープンソースであり�
 
 Windows ドライバーの主な役割の1つは、ユーザーモードアプリケーションとシステムデバイス間でデータを転送することです。 次の表に、データバッファーにアクセスするための3つの方法を示します。
 
-|IOCTL バッファーの種類 | 要約                                    | 詳細情報 |  
+|IOCTL バッファーの種類 | まとめ                                    | 詳細情報 |  
 |------------------|--------------------------------------------|-------------------------------------------------------------------------|
-| METHOD_BUFFERED  |ほとんどの situtations に推奨            | [バッファリングされる i/o の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
-| METHOD_IN_DIRECT または METHOD_OUT_DIRECT |一部の高速ハードウェア i/o で使用されます。    |[直接 i/o の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
-| METHOD_NEITHER |可能な限り回避する |[バッファーも直接 i/o も使用しない](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
+| METHOD_BUFFERED  |ほとんどの situtations に推奨            | [バッファー付き I/O の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-buffered-i-o)
+| METHOD_IN_DIRECT または METHOD_OUT_DIRECT |一部の高速ハードウェア i/o で使用されます。    |[ダイレクト I/O の使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-direct-i-o) |
+| METHOD_NEITHER |可能な限り回避する |[バッファー付き I/O とダイレクト I/O のどちらも使用しない](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-neither-buffered-nor-direct-i-o)|
 
 一般に、バッファー内の i/o は、最も安全なバッファリング方法を提供するため、お勧めします。 ただし、バッファリングされた i/o を使用する場合でも、軽減する必要がある埋め込みポインターなどのリスクがあります。
 
@@ -185,9 +185,9 @@ Ioctl でのバッファーの使用の詳細については、「[データバ�
 
 - デバイスドライバーは、カーネル i/o の要求に加えて、さまざまなユーザーモードを正しく処理する必要があります。
 
-ドライバーが HVCI 仮想化をサポートできるようにするには、追加のメモリ要件があります。 詳細については、この記事で後述する「 [Device Guard の互換性](#dgc)」を参照してください。
+ドライバーが HVCI 仮想化をサポートできるようにするには、追加のメモリ要件があります。 詳細については、この記事で後述する「 [Hvci の互換性](#dgc)」を参照してください。
 
-**対応**
+**Handles**
 
 - ユーザーモードとカーネルモードのメモリの間で渡されるハンドルを検証します。 詳細については、「[ハンドル管理](https://docs.microsoft.com/windows-hardware/drivers/ifs/handle-management)と[エラーによるオブジェクトハンドルの検証」を](https://docs.microsoft.com/windows-hardware/drivers/kernel/failure-to-validate-object-handles)参照してください。
 
@@ -209,15 +209,15 @@ WDM ドライバーを作成する場合は、次のガイダンスを確認し�
 
 次の記事では、IRP 入力値の検証に関する情報を提供します。
 
-[バッファーされる i/o を使用した DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-buffered-i-o)
+[バッファー付き I/O を使用した DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-buffered-i-o)
 
-[バッファーされる i/o のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-buffered-i-o)
+[バッファー付き I/O のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-buffered-i-o)
 
-[直接 i/o を使用した DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-direct-i-o)
+[ダイレクト I/O を使用した DispatchReadWrite](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchreadwrite-using-direct-i-o)
 
-[ダイレクト i/o のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)
+[ダイレクト I/O のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-direct-i-o)
 
-[I/o 制御コードに関するセキュリティの問題](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)
+[I/O 制御コードに関するセキュリティの問題](https://docs.microsoft.com/windows-hardware/drivers/kernel/security-issues-for-i-o-control-codes)
 
 バッファーのアドレスや長さなど、IRP に関連付けられている値を検証することを検討してください。
 
@@ -225,7 +225,7 @@ WDM ドライバーを作成する場合は、次のガイダンスを確認し�
 
 **IRP 完了操作を正しく処理する**
 
-Irp を実際にサポートして処理しない限り、状態の値が [成功] の\_IRP を完了することはできません。 IRP の完了操作を処理する正しい方法については、「 [irp の完了](https://docs.microsoft.com/windows-hardware/drivers/kernel/completing-irps)」を参照してください。
+Irp を \_ 実際にサポートして処理しない限り、状態値が SUCCESS の irp は、ドライバーで完了することはできません。 IRP の完了操作を処理する正しい方法については、「 [irp の完了](https://docs.microsoft.com/windows-hardware/drivers/kernel/completing-irps)」を参照してください。
 
 **ドライバーの IRP 保留状態の管理**
 
@@ -239,13 +239,13 @@ Irp を実際にサポートして処理しない限り、状態の値が [成�
 
 **IRP のクリーンアップと終了操作を正しく処理する**
 
-[**Irp\_MJ\_CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)と[**irp\_MJ\_CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)要求の違いを理解していることを確認してください。 クリーンアップ要求は、アプリケーションがファイルオブジェクトのすべてのハンドルを閉じた後に到着しますが、すべての i/o 要求が完了する前に発生することもあります。 Close 要求は、ファイルオブジェクトのすべての i/o 要求が完了または取り消された後に到着します。 詳しくは、次の記事をご覧ください。
+[**Irp \_ MJ \_ CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)要求と[**irp \_ MJ \_ CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)要求の違いを理解していることを確認してください。 クリーンアップ要求は、アプリケーションがファイルオブジェクトのすべてのハンドルを閉じた後に到着しますが、すべての i/o 要求が完了する前に発生することもあります。 Close 要求は、ファイルオブジェクトのすべての i/o 要求が完了または取り消された後に到着します。 詳細については、以下の記事を参照してください。
 
-[DispatchCreate、DispatchClose、および DispatchCreateClose ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines)
+[DispatchCreate、DispatchClose、DispatchCreateClose ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines)
 
 [DispatchCleanup ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcleanup-routines)
 
-[クリーンアップおよび終了操作の処理中に発生したエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-handling-cleanup-and-close-operations)
+[クリーンアップ操作と閉じる操作の処理エラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/errors-in-handling-cleanup-and-close-operations)
 
 Irp を正しく処理する方法の詳細については、「 [irp の処理に関するその他のエラー](https://docs.microsoft.com/windows-hardware/drivers/kernel/additional-errors-in-handling-irps)」を参照してください。
 
@@ -269,11 +269,11 @@ Irp を正しく処理する方法の詳細については、「 [irp の処理�
 
 この記事では、ここで説明する脆弱性に加えて、カーネルモードドライバーコードのセキュリティ強化に関する追加情報を提供します。[信頼できるカーネルモードドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)。
 
-C とC++セキュリティで保護されたコーディングの詳細については、この記事の最後にある「[安全なコーディングリソース](#securecodingresources)」を参照してください。
+C および C++ のセキュリティで保護されたコーディングの詳細については、この記事の最後にある「[安全なコーディングリソース](#securecodingresources)」を参照してください。
 
 ## <a name="span-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanspan-idmanagingdriveraccesscontrolspanmanage-driver-access-control"></a><span id="ManagingDriverAccessControl"></span><span id="managingdriveraccesscontrol"></span><span id="MANAGINGDRIVERACCESSCONTROL"></span>ドライバーアクセス制御の管理
 
-**セキュリティチェックリスト項目 \#7:** *アクセスを適切に制御していることを確認するために、ドライバーを確認*してください。
+**セキュリティチェックリスト項目 \# 7:** *アクセスを適切に制御していることを確認するために、ドライバーを確認*します。
 
 **ドライバーアクセス制御の管理-WDF**
 
@@ -289,7 +289,7 @@ PDO へのアクセスを制御する betters 方法の1つは、INF で SDDL �
 
 アクセス制御の詳細については、次の記事を参照してください。
 
-[KMDF ドライバーでのデバイスアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
+[KMDF ドライバーでのデバイス アクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/wdf/controlling-device-access-in-kmdf-drivers)
 
 [名前、セキュリティ記述子、デバイスクラス-デバイスオブジェクトにアクセスできるようにしています...](https://www.osr.com/nt-insider/2017-issue1/making-device-objects-accessible-safe/)2017 年1月から安全に、 [OSR](https://www.osr.com)で公開され*た NT Insider ニュースレター*です。
 
@@ -297,11 +297,11 @@ PDO へのアクセスを制御する betters 方法の1つは、INF で SDDL �
 
 WDM ドライバーを使用していて、名前付きデバイスオブジェクトを使用している場合は、 [Iocreateデバイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)を使用し、SDDL を指定してセキュリティ保護することができます。 [IocreateDeviceClassGuid](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)を実装するときは、常にカスタムクラス GUID を指定します。 ここでは、既存のクラス GUID を指定しないでください。 これにより、そのクラスに属する他のデバイスのセキュリティ設定または互換性が損なわれる可能性があります。 詳細については、「 [WdmlibIoCreateDeviceSecure](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)」を参照してください。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
-[デバイスアクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)
+[デバイス アクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)
 
-[デバイスの名前空間へのアクセスを制御する](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)
+[デバイスの名前空間アクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-namespace-access)
 
 [ドライバー開発者向けの Windows セキュリティ モデル](windows-security-model.md)
 
@@ -331,19 +331,19 @@ AC (Application Container)
 
 詳細な IOCTL セキュリティ制御を実装しても、上記の手法を使用したドライバーアクセスの管理は不要になります。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
-[I/o 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
+[I/O 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
 
-## <a name="span-iddgcspanspan-iddgcspanvalidate-device-guard-compatibility"></a><span id="DGC"></span><span id="dgc"></span>Device Guard の互換性を検証する
+## <a name="span-iddgcspanspan-iddgcspanvalidate-hvci-compatibility"></a><span id="DGC"></span><span id="dgc"></span>HVCI 互換性の検証
 
-**セキュリティチェックリスト項目 \#8:** *デバイスガードと互換性があるように、ドライバーがメモリを使用していることを確認*します。
+**セキュリティチェックリスト項目 \# 8:** *hvci と互換性があるように、ドライバーがメモリを使用していることを確認*します。
 
-**メモリ使用量とデバイスの保護の互換性**
+**メモリ使用量と HVCI の互換性**
 
-Device Guard は、ハードウェアテクノロジと仮想化を使用して、コード整合性 (CI) の意思決定機能をオペレーティングシステムの他の部分から分離します。 仮想化ベースのセキュリティを使用して CI を分離する場合、カーネルメモリを実行可能ファイルにする唯一の方法は、CI の検証を使用することです。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。
+HVCI は、ハードウェアテクノロジと仮想化を使用して、コード整合性 (CI) の意思決定機能をオペレーティングシステムの他の部分から分離します。 仮想化ベースのセキュリティを使用して CI を分離する場合、カーネルメモリを実行可能ファイルにする唯一の方法は、CI の検証を使用することです。 そのため、カーネル メモリのページは決して書き込み可能または実行可能 (W+X) にならず、実行可能コードを直接変更することはできません。
 
-Device Guard と互換性のあるコードを実装するには、ドライバーコードが次のことを実行していることを確認してください。
+HVCI 互換コードを実装するには、ドライバーコードが次のことを実行するようにします。
 
 - 既定で NX に設定する
 - メモリ割り当てに NX Api/フラグを使用します (NonPagedPoolNx)
@@ -351,17 +351,15 @@ Device Guard と互換性のあるコードを実装するには、ドライバ�
 - 実行可能なシステムメモリを直接変更しません。
 - カーネルで動的コードを使用しない
 - 実行可能ファイルとしてデータファイルを読み込みません
-- セクションのアラインメントは、0x1000 (PAGE\_SIZE) の倍数です。 例: DRIVER\_ALIGNMENT = 0x1000
+- セクションの配置は、0x1000 (ページサイズ) の倍数です \_ 。 例: ドライバーの \_ アラインメント = 0x1000
 
-ツールの使用および互換性のないメモリ呼び出しの一覧については、「 [Device Guard Readiness tool を使用して HVCI ドライバーの互換性を評価する](use-device-guard-readiness-tool.md)」を参照してください。
-
-Device Guard に関する一般的な情報については、「[ドライバーと Windows 10 の Device guard の互換性](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)」を参照してください。
+ツールの使用および互換性のないメモリ呼び出しの一覧については、「 [HVCI ドライバーの互換性を評価](use-device-guard-readiness-tool.md)する」を参照してください。
 
 関連するシステムの基礎セキュリティテストの詳細については、「 [Device guard](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)と[Device Guard の互換性](https://docs.microsoft.com/windows-hardware/test/hlk/testref/driver-compatibility-with-device-guard)テストおよびドライバーの互換性」を参照してください。
 
 ## <a name="span-idtechnologyspecificcodepracticesspanfollow-technology-specific-code-best-practices"></a><span id="technologyspecificcodepractices"></span>テクノロジ固有のコードのベストプラクティスに従う
 
-**セキュリティチェックリスト項目 \#9:** *お使いのドライバーについて、次のテクノロジ固有のガイダンスを確認してください。*
+**セキュリティチェックリスト項目 \# 9:** *次のテクノロジ固有のドライバーに関するガイダンスを確認します。*
 
 *ファイルシステム*
 
@@ -369,11 +367,11 @@ Device Guard に関する一般的な情報については、「[ドライバー
 
 [ファイル システムのセキュリティに関する考慮事項](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-considerations-for-file-systems)
 
-[ファイルシステムのセキュリティに関する問題](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-security-issues)
+[ファイル システムのセキュリティに関する問題](https://docs.microsoft.com/windows-hardware/drivers/ifs/file-system-security-issues)
 
-[ファイルシステムのセキュリティ機能](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-features-for-file-systems)
+[ファイル システム向けのセキュリティ機能](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-features-for-file-systems)
 
-[ファイルシステムフィルタードライバーのセキュリティに関する考慮事項](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-considerations-for-file-system-filter-drivers)
+[ファイル システム フィルター ドライバーのセキュリティに関する考慮事項](https://docs.microsoft.com/windows-hardware/drivers/ifs/security-considerations-for-file-system-filter-drivers)
 
 *NDIS-ネットワーク*
 
@@ -381,9 +379,9 @@ NDIS ドライバーのセキュリティについては、「[ネットワー�
 
 *ディスプレイ*
 
-ディスプレイドライバーのセキュリティについては、「&lt;コンテンツ保留&gt;」を参照してください。
+ディスプレイドライバーのセキュリティについては、「保留中のコンテンツ」を参照してください &lt; &gt; 。
 
-*印刷*
+*プリンター*
 
 プリンタードライバーのセキュリティに関する詳細については、「 [V4 プリンタードライバーのセキュリティに関する考慮事項](https://docs.microsoft.com/windows-hardware/drivers/print/v4-printer-driver-security-considerations)」を参照してください。
 
@@ -393,7 +391,7 @@ WIA のセキュリティについては、「 [Windows イメージ取得 (wia)
 
 ## <a name="span-idenhancedeviceinstallationsecurityspanenhance-device-installation-security"></a><span id="enhancedeviceinstallationsecurity"></span>デバイスのインストールセキュリティを強化する
 
-**セキュリティチェックリスト項目 \#10:** *ドライバー inf の作成とインストールのガイダンスを確認して、ベストプラクティスに従っていることを確認してください。*
+**セキュリティチェックリスト項目 \# 10:** *ドライバー inf の作成とインストールのガイダンスを確認し、ベストプラクティスに従っていることを確認します。*
 
 ドライバーをインストールするコードを作成する場合は、デバイスのインストールが常に安全な方法で実行されるようにする必要があります。 セキュリティで保護されたデバイスのインストールとは、次のようなものです。
 
@@ -404,19 +402,19 @@ WIA のセキュリティについては、「 [Windows イメージ取得 (wia)
 - デバイスの WMI クラスへのアクセスを制限します。
 - Setupapi.log 関数を正しく使用します
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 [セキュリティで保護されたデバイスのインストールの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)
 
-[Setupapi.log を使用するためのガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/guidelines-for-using-setupapi)
+[SetupAPI の使用に関するガイドライン](https://docs.microsoft.com/windows-hardware/drivers/install/guidelines-for-using-setupapi)
 
-[デバイスのインストール機能の使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)
+[デバイス インストール関数の使用](https://docs.microsoft.com/windows-hardware/drivers/install/using-device-installation-functions)
 
-[デバイスとドライバーのインストールの高度なトピック](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-advanced-topics)
+[デバイスとドライバーのインストールに関する高度なトピック](https://docs.microsoft.com/windows-hardware/drivers/install/device-and-driver-installation-advanced-topics)
 
 ## <a name="span-idpeercodereviewspanperform-peer-code-review"></a><span id="peercodereview"></span>ピアコードレビューの実行
 
-**セキュリティチェックリスト項目 \#11:** *ピアコードレビューを実行し、他のツールやプロセスによって表示されない問題を探し*ます
+**セキュリティチェックリスト項目 \# 11:** *ピアコードレビューを実行し、他のツールやプロセスによって表示されない問題を探し*ます。
 
 知識のあるコードレビュー担当者に相談して、問題が発生した可能性のある問題を探します。 2番目の目のセットには、見落とされがちな問題が表示されることがよくあります。
 
@@ -424,13 +422,13 @@ WIA のセキュリティについては、「 [Windows イメージ取得 (wia)
 
 ## <a name="span-idreleasedriversigningspanspan-idreleasedriversigningspanspan-idreleasedriversigningspanexecute-proper-release-driver-signing"></a><span id="ReleaseDriverSigning"></span><span id="releasedriversigning"></span><span id="RELEASEDRIVERSIGNING"></span>適切なリリースドライバーの署名を実行する
 
-**セキュリティチェックリスト項目 \#12:** *Windows パートナーポータルを使用して、配布するドライバーに適切に署名します。*
+**セキュリティチェックリスト項目 \# 12:** *Windows パートナーポータルを使用して、配布するドライバーに適切に署名します。*
 
 ドライバー パッケージを一般にリリースする前に、パッケージの認定依頼を提出することをお勧めします。 詳細については、「[パフォーマンスと互換性のテスト](https://docs.microsoft.com/windows-hardware/test/index)」、「[ハードウェアプログラムの概要](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)」、「[ハードウェアダッシュボードサービス](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-services)」、および「[構成証明](https://docs.microsoft.com/windows-hardware/drivers/dashboard/attestation-signing-a-kernel-driver-for-public-release)」を参照してください。
 
 ## <a name="span-iduse-code-analysisspanuse-code-analysis-in-visual-studio-to-investigate-driver-security"></a><span id="use-code-analysis"></span>Visual Studio でコード分析を使用してドライバーのセキュリティを調査する
 
-**セキュリティチェックリスト項目 \#13:** *Visual Studio のコード分析機能を使用して、ドライバーコードの脆弱性を確認するには、次の手順を実行します。*
+**セキュリティチェックリスト項目 \# 13:** *Visual Studio のコード分析機能を使用して、ドライバーコードの脆弱性を確認するには、次の手順に従います。*
 
 Visual Studio のコード分析機能を使用して、コード内のセキュリティの脆弱性を確認します。 Windows Driver Kit (WDK) は、ネイティブドライバーコードの問題をチェックするように設計された規則セットをインストールします。
 
@@ -438,42 +436,42 @@ Visual Studio のコード分析機能を使用して、コード内のセキュ
 
 詳細については、「[ドライバーのコード分析の概要](https://docs.microsoft.com/windows-hardware/drivers/devtest/code-analysis-for-drivers-overview)」を参照してください。 コード分析の背景の詳細については、「 [Visual Studio 2013 の静的コード分析の詳細](https://blogs.msdn.microsoft.com/hkamel/2013/10/24/visual-studio-2013-static-code-analysis-in-depth-what-when-and-how/)」を参照してください。
 
-コード分析に慣れるには、サンプルドライバーのいずれかを使用できます。たとえば、おすすめのトースターサンプル、<https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured> または ELAM 起動時マルウェア対策サンプル <https://github.com/Microsoft/Windows-driver-samples/tree/master/security/elam>です。
+コード分析に慣れるには、サンプルドライバー (おすすめのトースターサンプル、 <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured> ELAM 起動時マルウェア対策サンプルなど) のいずれかを使用でき <https://github.com/Microsoft/Windows-driver-samples/tree/master/security/elam> ます。
 
 1. Visual Studio でドライバーソリューションを開きます。
 
-2. Visual Studio で、ソリューション内の各プロジェクトについて、目的の規則セットを使用するようにプロジェクトのプロパティを変更します。 例: プロジェクト &gt;&gt; プロパティ &gt;&gt; コード分析 &gt;&gt; 全般 で、*推奨されるドライバー規則* を選択します。 Recommenced ドライバーの規則を使用するだけでなく、"*推奨されるネイティブ規則*" 規則セットを使用します。
+2. Visual Studio で、ソリューション内の各プロジェクトについて、目的の規則セットを使用するようにプロジェクトのプロパティを変更します。 例: プロジェクト &gt; &gt; プロパティ &gt; &gt; コード分析 &gt; &gt; 全般、推奨さ*れるドライバー規則*を選択します。 Recommenced ドライバーの規則を使用するだけでなく、"*推奨されるネイティブ規則*" 規則セットを使用します。
 
-3. ソリューションでコード分析を実行 &gt; には、[ビルド &gt;] を選択します。
+3. &gt; &gt; ソリューションでビルド実行コード分析を選択します。
 
-4. Visual Studio の ビルド出力 ウィンドウの **エラー一覧** タブで警告を表示します。
+4. Visual Studio の [ビルド出力] ウィンドウの [**エラー一覧**] タブで警告を表示します。
 
 各警告の説明をクリックして、コード内の問題のある領域を確認します。
 
 リンク先の警告コードをクリックすると、追加情報が表示されます。
 
-コードを変更する必要があるかどうか、またはコード分析エンジンがコードの意図に適切に従うために注釈を追加する必要があるかどうかを判断します。 コード注釈の詳細については、「 [Sal 注釈を使用しC++ ](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)て、Windows ドライバーの C/コードの欠陥と[Sal 2.0 の注釈](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)を減らす」を参照してください。
+コードを変更する必要があるかどうか、またはコード分析エンジンがコードの意図に適切に従うために注釈を追加する必要があるかどうかを判断します。 コード注釈の詳細については、「SAL 注釈を使用して、Windows ドライバーの[C/c + + のコード障害](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects?view=vs-2015)と[Sal 2.0 の注釈](https://docs.microsoft.com/windows-hardware/drivers/devtest/sal-2-annotations-for-windows-drivers)を減らす」を参照してください。
 
 SAL に関する一般的な情報については、OSR から入手できるこの記事を参照してください。
 [https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/](https://www.osr.com/blog/2015/02/23/sal-annotations-dont-hate-im-beautiful/)
 
 ## <a name="span-idsdvspanspan-idsdvspanuse-static-driver-verifier-to-check-for-vulnerabilities"></a><span id="SDV"></span><span id="sdv"></span>静的ドライバー検証ツールを使用して脆弱性を確認する
 
-**セキュリティチェックリスト項目 \#14:** *Visual Studio で静的ドライバー検証ツール (sdv) を使用して、ドライバーコードの脆弱性を確認するに*は、次の手順に従います。
+**セキュリティチェックリスト項目 \# 14:** *Visual Studio で静的ドライバー検証ツール (sdv) を使用して、ドライバーコードの脆弱性を確認するに*は、次の手順に従います。
 
 静的ドライバー検証ツール (SDV) は、一連のインターフェイス規則とオペレーティングシステムのモデルを使用して、ドライバーが Windows オペレーティングシステムと正しく通信するかどうかを判断します。 SDV は、ドライバーの潜在的なバグを指している可能性のあるドライバーコードの欠陥を検出します。
 
 詳細については、「[静的ドライバー検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/introducing-static-driver-verifier)機能と[静的ドライバー検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)機能の概要」を参照してください。 SDV では、特定の種類のドライバーのみがサポートされていることに注意してください。 SDV で検証できるドライバーの詳細については、「[サポートされ](https://docs.microsoft.com/windows-hardware/drivers/devtest/supported-drivers)ているドライバー」を参照してください。
 
-SDV の詳細については、サンプルドライバー (たとえば、おすすめのトースターサンプル: <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured>) のいずれかを使用できます。
+SDV に慣れるには、サンプルドライバー (たとえば、おすすめのトースターサンプル) のいずれかを使用し <https://github.com/Microsoft/Windows-driver-samples/tree/master/general/toaster/toastDrv/kmdf/func/featured> ます。
 
 1. Visual Studio で対象のドライバーソリューションを開きます。
 
 2. Visual Studio で、ビルドの種類を [*リリース*] に変更します。 静的ドライバーの検証ツールでは、ビルドの種類がデバッグではなくリリースであることが必要です。
 
-3. Visual Studio で、ビルド &gt;&gt; ソリューションのビルド を選択します。
+3. Visual Studio で、[ビルド] [ソリューションのビルド] を選択し &gt; &gt; ます。
 
-4. Visual Studio で、[ドライバー &gt;] を選択し &gt; [静的ドライバー検証ツール] を起動します。
+4. Visual Studio で、[ドライバー] [起動] [静的ドライバーの検証] を選択し &gt; &gt; ます。
 
 5. SDV の [*規則*] タブで、[*規則セット*] の下の [*既定*] を選択します。
 
@@ -487,7 +485,7 @@ SDV の詳細については、サンプルドライバー (たとえば、お�
 
 ## <a name="span-idbinskimspanspan-idbinskimspanspan-idbinskimspancheck-code-with-the-binskim-binary-analyzer"></a><span id="BinSkim"></span><span id="binskim"></span><span id="BINSKIM"></span>BinSkim Binary Analyzer を使用してコードを確認する
 
-**セキュリティチェックリスト項目 \#15:** *binskim を使用して、コンパイルおよびビルドオプションが既知のセキュリティ問題を最小限に抑えるように構成されていることを確認するには、次の手順に従います。*
+**セキュリティチェックリスト項目 \# 15:** *binskim を使用して、コンパイルおよびビルドオプションが既知のセキュリティ問題を最小限に抑えるように構成されていることを確認するには、次の手順に従います。*
 
 BinSkim を使用してバイナリファイルを調査し、バイナリを脆弱にする可能性があるコーディングと作成の手法を特定します。
 
@@ -505,11 +503,11 @@ BinSkim はオープンソースツールであり、静的な分析結果交換
 
 1. クロスプラットフォーム[.NET Core SDK](https://dotnet.microsoft.com/download)をダウンロードしてインストールします。
 
-2. ビンの表示をダウンロードするには、NuGet パッケージなど、いくつかのオプションがあります。 この例では、<https://github.com/microsoft/binskim> から BinSkim を含む zip ファイルをダウンロードし、64ビットの Windows PC にインストールします。
+2. ビンの表示をダウンロードするには、NuGet パッケージなど、いくつかのオプションがあります。 この例では、次の BinSkim を含む zip ファイルをダウンロード <https://github.com/microsoft/binskim> して、64ビットの WINDOWS PC にインストールします。
 
-3. <https://github.com/microsoft/binskim> の **[複製またはダウンロード]** ボタンをクリックし、 **[download Zip]** \ (Zip のダウンロード \) を選択します。
+3. [**複製またはダウンロード**] ボタンをクリックし、[download Zip] \ (Zip の <https://github.com/microsoft/binskim> **ダウンロード**\) を選択します。
 
-4. ダウンロードした zip ファイルをクリックして解凍します。たとえば、`C:\binskim-master`します。
+4. ダウンロードした zip ファイルをクリックして解凍します (たとえば、) `C:\binskim-master` 。
 
 5. Visual Studio がインストールされていることを確認します。 Visual Studio のダウンロードとインストールの詳細については、「 [Visual studio のインストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019)」を参照してください。
 
@@ -568,7 +566,7 @@ BinSkim PE/MSIL Analysis Driver 1.6.0.0
 
 **シンボルパスの設定**
 
-BinSkim on を実行しているコンピューターで分析しているすべてのコードをビルドする場合は、通常、シンボルパスを設定する必要はありません。 これは、コンパイルしたローカルボックスでシンボルファイルを使用できるためです。 より複雑なビルドシステムを使用している場合や、シンボルを (コンパイルされたバイナリではなく) 別の場所にリダイレクトしている場合は、`--local-symbol-directories` を使用して、シンボルファイルの検索にこれらの場所を追加します。
+BinSkim on を実行しているコンピューターで分析しているすべてのコードをビルドする場合は、通常、シンボルパスを設定する必要はありません。 これは、コンパイルしたローカルボックスでシンボルファイルを使用できるためです。 より複雑なビルドシステムを使用している場合や、シンボルを (コンパイルされたバイナリではなく) 別の場所にリダイレクトしている場合は、を使用して、 `--local-symbol-directories` シンボルファイルの検索にこれらの場所を追加します。
 コードがコードに含まれていないコンパイル済みバイナリを参照している場合は、これらのコード依存関係のセキュリティを確認するために、ウィンドウデバッガー sympath を使用してシンボルを取得できます。 これらの依存関係で問題が見つかった場合は、修正できない可能性があります。 ただし、これらの依存関係を使用して、受け入れている可能性のあるセキュリティリスクを認識しておくと役立つ場合があります。
 
 > [!TIP]
@@ -619,7 +617,7 @@ A compiler warning is typically required if it has a high likelihood of flagging
 To resolve this issue, enable the indicated warning(s) by removing /Wxxxx switches (where xxxx is a warning id indicated here) from your command line, and resolve any warnings subsequently raised during compilation.
 ```
 
-Visual Studio でこれらの警告を有効にするにC++は、プロジェクトのプロパティページの [C/] で、[特定の警告を**無効**にする] で除外しない値を削除します。
+Visual Studio でこれらの警告を有効にするには、プロジェクトの [プロパティページ] の [C/c + +] で、[**特定の警告を無効**にする] で除外しない値を削除します。
 
 ![Visual Studio 2019 で特定の警告を無効にするためのダイアログボックス](images/disable-specific-warnings-dialog.png)
 
@@ -635,13 +633,13 @@ Visual Studio でこれらの警告を有効にするにC++は、プロジェク
 
 ## <a name="span-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanspan-idcodevalidationtoolsspanuse-additional-code-validation-tools"></a><span id="CodeValidationTools"></span><span id="codevalidationtools"></span><span id="CODEVALIDATIONTOOLS"></span>追加のコード検証ツールを使用する
 
-**セキュリティチェックリスト項目 \#16:** *これらの追加のツールを使用して、コードがセキュリティに関する推奨事項に準拠しているかどうかを検証し、開発プロセスで欠落しているギャップを調べることができます。*
+**セキュリティチェックリスト項目 \# 16:** *これらの追加のツールを使用して、コードがセキュリティに関する推奨事項に準拠しているかどうかを検証し、開発プロセスで欠落しているギャップを調べることができます。*
 
 前に説明した[Visual Studio Code 分析](#use-code-analysis)、[静的ドライバー検証](#sdv)ツール、 [binskim](#binskim)に加えて、次のツールを使用して、開発プロセスで欠落したギャップを調査します。
 
-**ドライバー検証ツール**
+**ドライバーの検証ツール**
 
-ドライバーの検証ツールを使用すると、ドライバーをライブテストできます。 ドライバーの検証ツールは、Windows カーネルモード ドライバーとグラフィックス ドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。 ドライバーの検証ツールでは、Windows ドライバーがさまざまなストレスとテストを受けて、不適切な動作を見つけることができます。 詳細については、「[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
+ドライバーの検証ツールを使用すると、ドライバーをライブテストできます。 ドライバーの検証ツールは、Windows カーネルモード ドライバーとグラフィックス ドライバーを監視して、無効な関数呼び出しやシステムを破損する可能性があるアクションを検出します。 ドライバーの検証ツールでは、Windows ドライバーがさまざまなストレスとテストを受けて、不適切な動作を見つけることができます。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
 **ハードウェア互換性プログラムテスト**
 
@@ -665,7 +663,7 @@ Visual Studio でこれらの警告を有効にするにC++は、プロジェク
 
 デバイスの基本侵入テストは、セキュリティテストの重要なコンポーネントであるさまざまな形式の入力攻撃を実行します。 攻撃および侵入テストは、ソフトウェアインターフェイスの脆弱性を特定するのに役立ちます。 詳細については、「[侵入テスト (デバイスの基礎)](https://docs.microsoft.com/windows-hardware/drivers/devtest/penetration-tests--device-fundamentals-)」を参照してください。
 
-この記事で説明されている他のツールと共に[Device Guard コンプライアンステスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)を使用して、ドライバーが device guard と互換性があることを確認します。
+この記事で説明されている他のツールと共に[Device Guard コンプライアンステスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/10c242b6-49f6-491d-876c-c39b22b36abc)を使用して、ドライバーが hvci と互換性があることを確認します。
 
 **カスタムおよびドメイン固有のテストツール**
 
@@ -673,13 +671,13 @@ Visual Studio でこれらの警告を有効にするにC++は、プロジェク
 
 ## <a name="span-iddebuggerspanspan-iddebuggerspanspan-iddebuggerspanreview-debugger-techniques-and-extensions"></a><span id="Debugger"></span><span id="debugger"></span><span id="DEBUGGER"></span>デバッガーの手法と拡張機能の確認
 
-**セキュリティチェックリスト項目 \#17:** *これらのデバッガーツールを確認し、開発デバッグワークフローでの使用を検討してください。*
+**セキュリティチェックリスト項目 \# 17:** *これらのデバッガーツールを確認し、開発デバッグワークフローでの使用を検討します。*
 
 **! 利用可能クラッシュアナライザー**
 
 ! の悪用可能なクラッシュアナライザーは、クラッシュログを解析して一意の問題を探す Windows デバッガー拡張機能です。 また、クラッシュの種類を調べ、エラーが悪意のあるハッカーによって悪用される可能性のあるものかどうかを判断しようとします。
 
-Microsoft Security Engineering Center (ミリ秒) は、! の悪用可能クラッシュアナライザーを作成しました。 Codeplex: <https://msecdbg.codeplex.com/>からをダウンロードできます。
+Microsoft Security Engineering Center (ミリ秒) は、! の悪用可能クラッシュアナライザーを作成しました。 Codeplex からをダウンロードできます <https://msecdbg.codeplex.com/> 。
 
 詳細については、「」を参照してください[。悪用可能な crash analyzer バージョン 1.6](https://www.microsoft.com/security/blog/2013/06/13/exploitable-crash-analyzer-version-1-6/)と Channel 9 video [! クラッシュアナライザー](https://channel9.msdn.com/blogs/pdcnews/bang-exploitable-security-analyzer)。
 
@@ -687,23 +685,23 @@ Microsoft Security Engineering Center (ミリ秒) は、! の悪用可能クラ�
 
 ! Acl 拡張機能では、アクセス制御リスト (ACL) の内容を書式設定して表示します。 詳細については、「オブジェクトと acl[の acl の決定](https://docs.microsoft.com/windows-hardware/drivers/debugger/determining-the-acl-of-an-object)」を[**参照して**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-acl)ください。
 
-! Token extension は、セキュリティトークンオブジェクトの書式付きビューを表示します。 詳細については、「 [ **! token**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-token)」を参照してください。
+! Token extension は、セキュリティトークンオブジェクトの書式付きビューを表示します。 詳細については、「 [**! token**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-token)」を参照してください。
 
-! Tokenfields 拡張機能には、アクセストークンオブジェクト (トークン構造) 内のフィールドの名前とオフセットが表示されます。 詳細については、「」[**を参照してください。** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-tokenfields)
+! Tokenfields 拡張機能には、アクセストークンオブジェクト (トークン構造) 内のフィールドの名前とオフセットが表示されます。 詳細については、「」[**を参照してください。**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-tokenfields)
 
-! Sid 拡張子は、指定されたアドレスにあるセキュリティ識別子 (SID) を表示します。 詳細については、「 [ **! sid**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sid)」を参照してください。
+! Sid 拡張子は、指定されたアドレスにあるセキュリティ識別子 (SID) を表示します。 詳細については、「 [**! sid**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sid)」を参照してください。
 
-! Sd 拡張機能は、指定されたアドレスにあるセキュリティ記述子を表示します。 詳細については、「 [ **! sd**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sd)」を参照してください。
+! Sd 拡張機能は、指定されたアドレスにあるセキュリティ記述子を表示します。 詳細については、「 [**! sd**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sd)」を参照してください。
 
 ## <a name="span-idsecurecodingresourcesspanspan-idsecurecodingresourcesspanspan-idsecurecodingresourcesspanreview-secure-coding-resources"></a><span id="SecureCodingResources"></span><span id="securecodingresources"></span><span id="SECURECODINGRESOURCES"></span>安全なコーディングリソースの確認
 
-**セキュリティチェックリスト項目 \#18:** *これらのリソースを確認して、ドライバー開発者に適用されるセキュリティで保護されたコーディングのベストプラクティスについて理解を深めてください。*
+**セキュリティチェックリスト項目 \# 18:** *これらのリソースを確認して、ドライバー開発者に適用されるセキュリティで保護されたコーディングのベストプラクティスについて理解を深めます。*
 
 *ドライバーのセキュリティの詳細については、次のリソースを参照してください。*
 
 **セキュリティで保護されたカーネルモードドライバーのコーディングガイドライン**
 
-[信頼性の高いカーネルモードドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)
+[信頼性の高いカーネルモード ドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)
 
 **安全なコーディング組織**
 
@@ -715,9 +713,9 @@ CERT-[でのセキュリティの構築](https://www.us-cert.gov/bsi)
 
 MITRE- [CERT C Secure コーディング Standard によってアドレス指定される脆弱性](https://cwe.mitre.org/data/definitions/734.html)
 
-成熟度モデル (BSIMM) でのセキュリティの構築- [https://www.bsimm.com/](https://www.bsimm.com/)
+成熟度モデル (BSIMM) でセキュリティを構築する[https://www.bsimm.com/](https://www.bsimm.com/)
 
-Saf Ecode- [https://safecode.org/](https://safecode.org/)
+Saf Ecode-[https://safecode.org/](https://safecode.org/)
 
 **OSR**
 
@@ -735,7 +733,7 @@ Saf Ecode- [https://safecode.org/](https://safecode.org/)
 
 [アラートからドライバーへの脆弱性: Microsoft Defender ATP 調査の特権エスカレーションの欠陥](https://www.microsoft.com/security/blog/2019/03/25/from-alert-to-driver-vulnerability-microsoft-defender-atp-investigation-unearths-privilege-escalation-flaw/)
 
-**参考**
+**書籍**
 
 *ソフトウェアセキュリティの24個の危険な点: プログラミングの欠陥と*、Michael Howard、David Leblanc 著、John 閲覧 ga での修正方法
 
@@ -745,11 +743,11 @@ Saf Ecode- [https://safecode.org/](https://safecode.org/)
 
 *ソフトウェアのセキュリティ評価の最先端: ソフトウェアの脆弱性の特定と防止*、Mark Dowd と John のマクドナルド
 
-*C とC++の安全なコーディング (ソフトウェアエンジニアリングの SEI シリーズ) 第2版*、Robert Seacord
+*C および C++ での安全なコーディング (ソフトウェアエンジニアリングの SEI シリーズ) 第2版*、Robert c. Seacord
 
-*Microsoft Windows Driver Model (第2版)* 、Walter Oney プログラミングする
+*Microsoft Windows Driver Model (第2版)*、Walter Oney プログラミングする
 
-*Windows Driver Foundation (開発者向けリファレンス)* 、少額 Orwick、Guy Smith を使用したドライバーの開発
+*Windows Driver Foundation (開発者向けリファレンス)*、少額 Orwick、Guy Smith を使用したドライバーの開発
 
 **トレーニング**
 
@@ -761,7 +759,7 @@ Windows ドライバーのクラスルームトレーニングは、次のよう
 
 セキュリティで保護されたコーディングオンライントレーニングは、さまざまなソースから入手できます。 たとえば、このコースは coursera から入手できます。
 
-[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security)。
+[https://www.coursera.org/learn/software-security](https://www.coursera.org/learn/software-security).
 
 また、フリートレーニングも用意されています。
 

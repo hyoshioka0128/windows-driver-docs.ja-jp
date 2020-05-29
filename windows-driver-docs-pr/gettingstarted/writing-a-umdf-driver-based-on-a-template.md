@@ -6,12 +6,12 @@ keywords:
 - UMDF ドライバーの作成
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d87ddd88af414359d0f792cb4bc21987db7e4b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 8f48ea2c821c2232dd59fa00272cf67cc52be355
+ms.sourcegitcommit: 97272cb572d24b1ac72669e51e5051089e1dd2c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67359293"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84053288"
 ---
 # <a name="write-a-universal-windows-driver-umdf-2-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (UMDF 2) の作成
 
@@ -93,8 +93,8 @@ DMF は WDF に置き換わるものではありません。 DMF は WDF と共�
 
 ## <a name="related-topics"></a>関連トピック
 
-[ドライバーの開発、テスト、および展開](https://go.microsoft.com/fwlink/p?linkid=399234)
+[ドライバーの開発、テスト、および展開](https://docs.microsoft.com/windows-hardware/drivers/develop/)
 
-[Windows 用デバッグ ツール](https://go.microsoft.com/fwlink/p?linkid=223405)
+[Windows 用デバッグ ツール](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
 
 [初めてのドライバーの作成](writing-your-first-driver.md)

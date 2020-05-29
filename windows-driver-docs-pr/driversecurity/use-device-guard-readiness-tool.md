@@ -1,23 +1,23 @@
 ---
-title: Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
-description: デバイスガード準備ツールを使用して、ドライバーコードの HVCI ドライバーの互換性を評価するには、次の手順に従います。
+title: HVCI ドライバーの互換性を評価する
+description: を使用して、ドライバーコードの HVCI ドライバーの互換性を評価するには、次の手順に従います。
 ms.assetid: ''
-ms.date: 02/22/2017
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f63b97117a4df00fa2af082e400d9ba23cfc4850
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6e1f4331474b7dc9093483ee762e3059f13cce60
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825174"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153164"
 ---
-# <a name="use-the-device-guard-readiness-tool-to-evaluate-hvci-driver-compatibility"></a>Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
+# <a name="evaluate-hvci-driver-compatibility"></a>HVCI ドライバーの互換性を評価する
 
 ## <a name="overview"></a>概要
 
-Device Guard 準備ツールは、さまざまなセキュリティ強化機能をサポートする PC を作成するためのいくつかの要件を確認するように設計されています。 このセクションでは、このツールを使用して、ドライバーがハイパーバイザーで保護されたコード整合性 (HVCI) 環境で実行できるかどうかを評価する方法について説明します。 
+DGReadiness ツールは、さまざまなセキュリティ強化機能をサポートする PC を作成するためのいくつかの要件を確認するように設計されています。 このセクションでは、このツールを使用して、ドライバーがハイパーバイザーで保護されたコード整合性 (HVCI) 環境で実行できるかどうかを評価する方法について説明します。
 
-HVCI ドライバー Device Guard の互換性をテストするための OS とハードウェアの要件:
+HVCI ドライバーの互換性をテストするための OS とハードウェアの要件:
 
 1. Windows: windows Pro、Windows 10 Enterprise、Windows Server、Windows 10 IoT Enterprise (S モードではサポートされていません) など、すべてのバージョンの Windows で使用できます。
 
@@ -27,9 +27,9 @@ HVCI ドライバー Device Guard の互換性をテストするための OS と
 
 関連するデバイスの基本テストの詳細については、「[デバイスの DevFund テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/device-devfund-tests)」を参照してください。
 
-## <a name="implement-device-guard-compatible-code"></a>Device Guard と互換性のあるコードを実装する
+## <a name="implement-hvci-compatible-code"></a>HVCI 互換コードの実装
 
-Device Guard と互換性のあるコードを実装するには、ドライバーコードが次のことを実行していることを確認してください。
+HVCI 互換コードを実装するには、ドライバーコードが次のことを実行するようにします。
 
 - 既定で NX に設定する
 - メモリ割り当てに NX Api/フラグを使用します (NonPagedPoolNx)
@@ -37,7 +37,7 @@ Device Guard と互換性のあるコードを実装するには、ドライバ�
 - 実行可能なシステムメモリを直接変更しません。
 - カーネルで動的コードを使用しない
 - 実行可能ファイルとしてデータファイルを読み込みません
-- セクションのアラインメントは、0x1000 (PAGE\_SIZE) の倍数です。 例: DRIVER\_ALIGNMENT = 0x1000
+- セクションの配置は、0x1000 (ページサイズ) の倍数です \_ 。 例: ドライバーの \_ アラインメント = 0x1000
 
 システムで使用するために予約されていない次の DDIs の一覧は、影響を受ける可能性があります。
 
@@ -61,18 +61,18 @@ Device Guard と互換性のあるコードを実装するには、ドライバ�
 | [**MmMapLockedPagesSpecifyCache**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmmaplockedpagesspecifycache)                              |
 | [**MmProtectMdlSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-mmprotectmdlsystemaddress)                                    |
 | [**ZwAllocateVirtualMemory**](https://msdn.microsoft.com/library/windows/hardware/ff566416)                                        |
-| [**Zw/** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)                                                        |
+| [**Zw/**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)                                                        |
 | [**ZwMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)                                                  |
 | [**Ntています**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwcreatesection)                                                        |
 | [**NtMapViewOfSection**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-zwmapviewofsection)                                                  |
 | [**ClfsCreateMarshallingArea**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-clfscreatemarshallingarea)                                    |
 | NDIS                                                                                                 |
 | [**NdisAllocateMemoryWithTagPriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisallocatememorywithtagpriority)                  |
-| 記憶域                                                                                              |
+| ストレージ                                                                                              |
 | [**StorPortGetDataInBufferSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetdatainbuffersystemaddress)             |
 | [**StorPortGetSystemAddress**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storportgetsystemaddress)                                     |
 | [**ChangerClassAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/mcd/nf-mcd-changerclassallocatepool)                                     |
-| [ディスプレイ]                                                                                              |
+| ディスプレイ                                                                                              |
 | [*DxgkCbMapMemory*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dispmprt/nc-dispmprt-dxgkcb_map_memory)                                                         |
 | [**VideoPortAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/video/nf-video-videoportallocatepool)                                           |
 | オーディオミニポート                                                                                       |
@@ -99,13 +99,13 @@ Device Guard と互換性のあるコードを実装するには、ドライバ�
 | [**WdfRegistryQueryMemory**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfregistry/nf-wdfregistry-wdfregistryquerymemory)                                             |
 
 
-## <a name="using-the-dgr-tool"></a>DGR ツールの使用
+## <a name="using-the-dgreadiness-tool"></a>DGReadiness ツールの使用
 
-Device Guard 準備ツールを使用するには、次の手順を実行します。
+DGReadiness ツールを使用するには、次の手順を実行します。
 
 -   **テスト PC を準備する**
 
-    *コードの整合性の仮想化ベースの保護を有効にする*-システム情報アプリ (msinfo32) を実行します。 "Device Guard Virtualization based security" という項目を探します。 "Running" と表示されます。
+    *コードの整合性の仮想化ベースの保護を有効にする*-システム情報アプリ (msinfo32) を実行します。 "仮想化ベースのセキュリティ" という項目を探します。 "Running" と表示されます。
 
     または、PowerShell で情報を表示するために使用できる管理ツールを使用してチェックするための WMI インターフェイスも用意されています。
 
@@ -113,14 +113,12 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
     Get-CimInstance –ClassName Win32_DeviceGuard –Namespace root\Microsoft\Windows\DeviceGuard
     ```
 
-    表示される出力を中断する方法の詳細については、「[コードの整合性の仮想化ベースの保護を有効に](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/enable-virtualization-based-protection-of-code-integrity)する」を参照してください。
+    *"Device guard" を無効*にする-準備ツールの実行中に、テスト対象の PC で "device guard" を無効にする必要があることに注意してください。これにより、ドライバーが読み込まれない可能性があります。また、ドライバーをテストする準備ツールで使用できなくなります。
 
-    *Device guard を無効*にする-準備ツールの実行中は、デバイスの保護機能によってドライバーの読み込みが妨げられる可能性があるため、テスト対象の PC で device guard を無効にする必要があることに注意してください。
-
-    *記録テスト署名を有効*にする-署名されていない開発ドライバーをインストールできるようにするには、BCDEdit を使用してテスト署名を有効にすることをお勧めします。
+    *必要に応じてテスト署名を有効*にする-署名されていない開発ドライバーをインストールできるようにするには、BCDEdit を使用してテスト署名を有効にする必要があります。
 
     ```console
-    bcdedit /set TESTSIGNING ON 
+    bcdedit /set TESTSIGNING ON
     ```
 
 -   **テストドライバーのインストール**
@@ -131,10 +129,10 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
 
 
 
--   **Device Guard 準備ツールをインストールする**
+-   **DGReadiness ツールをインストールする**
 
     **警告**  
-    Device Guard 準備ツールがレジストリ値を変更し、セキュアブートなどの機能に影響を与える可能性があるため、データやアプリケーションが含まれていないテスト PC を使用します。 テストを実行した後、Windows を再インストールして、必要なセキュリティ構成を再確立することができます。
+    DGReadiness ツールはレジストリ値を変更し、セキュアブートなどの機能に影響を与える可能性があるため、データやアプリケーションが含まれていないテスト PC を使用します。 テストを実行した後、Windows を再インストールして、必要なセキュリティ構成を再確立することができます。
 
     1. こちらからツールをダウンロードしてください。 [Device guard と Credential guard ハードウェア準備ツール](https://www.microsoft.com/download/details.aspx?id=53337)。
 
@@ -180,9 +178,9 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
     | 黄-警告 | このデバイスは、DG/CG の有効化と使用に使用できますが、追加のセキュリティ上の利点はありません。 |
     | 緑-メッセージ  | このデバイスは、DG/CG 要件に完全に準拠しています。                                           |
 
-    既定では、画面への出力に加えて、詳細な出力を含むログファイルは C:\\DGLogs にあります。
+    既定では、画面への出力に加えて、詳細な出力を含むログファイルは C: DGLogs にあります。 \\
 
-    Device Guard 準備ツールの出力には、5つの手順 (またはセクション) があります。 手順 1. には、ドライバーの互換性情報が含まれています。
+    ツールの出力には、5つの手順 (またはセクション) があります。 手順 1. には、ドライバーの互換性情報が含まれています。
 
     ```text
      ====================== Step 1 Driver Compat ====================== 
@@ -203,7 +201,7 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
 
     上に示したサンプルでは、2つのドライバーが互換性なしとして識別されます。 TestDriver1 にメモリセクションアラインメントエラーがあり、TestDriver2 には実行可能メモリ領域を使用するように構成されたプールがあります。
 
-    デバイスドライバーの非互換性の7種類の統計情報は、! verifier デバッガー拡張機能を使用して使用することもできます。 ! Verifier 拡張機能の詳細については、「 [ **! verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)」を参照してください。
+    デバイスドライバーの非互換性の7種類の統計情報は、! verifier デバッガー拡張機能を使用して使用することもできます。 ! Verifier 拡張機能の詳細については、「 [**! verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)」を参照してください。
 
     ```text
             Execute Pool Type Count:                3
@@ -215,11 +213,7 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
             IAT in Executable Section Count:        0
     ```
 
-
-
 次の表を使用して、出力を解釈し、さまざまな種類の HVCI 非互換性を修正するために必要なドライバーコードの変更を決定します。
-
-
 
 <table>
 <colgroup>
@@ -279,7 +273,6 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
 </tbody>
 </table>
 
-
 ---------
 
 サポートされていない Relocs 含ん
@@ -287,8 +280,6 @@ Device Guard 準備ツールを使用するには、次の手順を実行しま�
 <p>Windows 10 バージョン1507では、アドレス空間レイアウトのランダム化 (ASLR) が使用され1607ているため、アドレスの配置とメモリの再配置で問題が発生する可能性があります。  オペレーティングシステムは、リンカーによって既定のベースアドレスが ASLR に割り当てられた実際の場所に設定されている場所からアドレスを再配置する必要があります。 この再配置では、ページの境界をまたがることはできません。  たとえば、ページのオフセット0x3FFC で始まる64ビットアドレス値を考えてみます。 このアドレス値は、オフセット0x0003 の次のページに重なっています。 この種類の重複する relocs 含んは、Windows 10 バージョン1703より前ではサポートされていません。</p>
 
 <p>このような状況は、グローバル構造体型の変数初期化子が、及ぶ再配置を避けるために変数を移動できないようにレイアウトされた別のグローバルへのポインターが不整合になっている場合に発生する可能性があります。 リンカーは変数を移動しようとしますが、それができない場合もあります (たとえば、大規模なミスアライメントの構造体や、ミスアライメントされた構造体の大きな配列など)。 必要に応じて、 <a href="https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking" data-raw-source="[/Gy (COMDAT)](https://docs.microsoft.com/cpp/build/reference/gy-enable-function-level-linking)">/gy (COMDAT)</a>オプションを使用してモジュールを組み立て、リンカーがモジュールコードを可能な限りアラインできるようにする必要があります。</p>
-
-
 
 ```cpp
 #include <pshpack1.h>
@@ -350,10 +341,9 @@ BAD_STRUCT MayHaveStraddleRelocations[4096] = { // as a global variable
 
 ---------
 
-
 ## <a name="script-customization"></a>スクリプトのカスタマイズ
 
-次に示すのは、Regkeys とその値の一覧です。この一覧には、スクリプトをデバイスガードと Credential Guard に対してカスタマイズし、UEFI ロックを使用しないようにしてください。
+次に示すのは、Regkeys の一覧と、スクリプトを HVCI にカスタマイズするための値と、UEFI ロックを使用しない Credential Guard です。
 
 UEFI ロックを使用せずに HVCI と CG を有効にするには:
 
@@ -369,17 +359,11 @@ Driver Verifier コード整合性オプションフラグ (0x02000000) を使�
 ```console
 verifier.exe /flags 0x02000000 /driver <driver.sys>
 ```
+
 検証ツールを使用する場合にこのオプションを選択するには、[*カスタム設定の作成*] (コード開発者向け) を選択し、[*次へ*] を選択して、[_コードの整合性チェック_] を選択します。
 
 Verifier コマンドライン/query オプションを使用して、現在のドライバーの検証ツールの情報を表示できます。
 
 ```console
-verifier /query 
+verifier /query
 ```
-
-
-
-
-
-
-

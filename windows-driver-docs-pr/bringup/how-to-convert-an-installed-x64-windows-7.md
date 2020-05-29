@@ -3,91 +3,91 @@ title: インストールされている x64 Windows 7 システムを変換す�
 description: インストールされている x64 Windows 7 システムを変換する方法
 ms.date: 01/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 418bcffd567917b546a57e598c75e09cb4f464ac
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: d9fbb625f743fb2314a4cc734138833bc1a0c155
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353985"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153179"
 ---
 # <a name="how-to-convert-an-installed-x64-windows-7-system"></a>インストールされている x64 Windows 7 システムを変換する方法
 
-次の手順は、使用するためで、it プロフェッショナルのシナリオでレガシ MBR + CSM から UEFI と GPT に変換する必要があります。 通常、このプロセスは、Windows 7 がインストールされている x64 いるシステムから始まります。
+次の手順は、レガシ MBR + CSM から UEFI + GPT に変換する必要があるシナリオで、It プロフェッショナルで使用することを目的としています。 通常、このプロセスは、Windows 7 x64 がインストールされているシステムで開始されます。
 
-X86 OS システムでは、セクションを参照して、[ファームウェア WEG FAQ](frequently-asked-questions.md)について"何が 32 ビットの vs への依存関係です。64 ビットの UEFI ですか?"。
+X86 OS システムの場合は、「32ビットと64ビットの UEFI の依存関係とは」の「[ファームウェア WEG](frequently-asked-questions.md)に関する FAQ」の「」セクションを参照してください。
 
-CSM が有効な場合、レガシ MBR ブート ディスクに BIOS モードでインストールされていると、知っているかがチェックで、OEM が、システムでは、次のことを確認します。
+CSM が有効になっているレガシ MBR ブートディスクに BIOS モードでインストールされています。また、システムに次のものがあることを確認したか、OEM に確認してください。
 
-1. 機能を有効にし、CSM を無効にします。
-1. UEFI 2.3.1c のファームウェアまたはそれ以降
-1. (セキュア ブート、Device Guard、や Credential Guard) に注目しているセキュリティ機能には、システムに既に構成されているすべての適切なコンポーネントがあります。
+1. CSM を有効または無効にする機能
+1. UEFI ファームウェア 2.3.1 c 以降がある
+1. 関心のあるセキュリティ機能 (セキュアブート、HVCI、Credential Guard) には、システム上で既に構成されているすべての適切なコンポーネントがあります。
     > [!NOTE]
-    > Microsoft には現在、最初のワイプまたは既存のファイル システムをクリーンアップしてクリーン ディスク上に新しいファイル システムを作成することがなく、レガシ MBR ブート ディスクを GPT ディスクに変換するためのメカニズムがありません。
+    > 現在、Microsoft では、既存のファイルシステムをワイプまたはクリーニングし、クリーンディスクに新しいファイルシステムを作成することなく、レガシ MBR ブートディスクを GPT ディスクに変換するメカニズムを備えていません。
 
-Diskpart.exe を使用する必要がありますが、**クリーン**実行する前に、既存のパーティション、 **convert GPT**そのディスクにあるコマンド。 **クリーン**コマンドは、ディスク全体がワイプされます。
+たとえば、Diskpart.exe を使用して、既存のパーティションを**クリーンアップ**してから、そのディスクで [ **GPT の変換**] コマンドを実行する必要があります。 [**クリーン**] コマンドを実行すると、ディスク全体がワイプされます。
 
-1. すべてのデータが、プライマリのブート デバイスからバックアップし、ユーザーまたは it プロフェッショナル向けの主なブート デバイスはディスク 0 が確認を確認します。
-1. プライマリのブート デバイスが完全にサポートされる最大 (ディスク上の残りのすべてのデータは消去されます)
-1. UEFI csm + BIOS (UEFI ブート モードを BIOS ブート モードの切り替えの手順については、製造元にお問い合わせください) の案内スイッチには、再起動します。
-1. X64 を含む USB フラッシュ ドライブ ブート WinPE
-1. コマンド プロンプトで、WinPE で起動: の後
-    1. Diskpart.exe を開く
-    1. ディスク 0 を選択します。
+1. すべてのデータがプライマリブートデバイスからバックアップされていること、およびユーザーまたは It プロフェッショナルがプライマリブートデバイスがディスク0であることを確認していることを確認します。
+1. プライマリブートデバイスが完全にバックアップされている (ディスク上のすべてのデータがワイプされる)
+1. BIOS に再起動します (BIOS ブートモードを UEFI ブートモードに切り替える手順については製造元に問い合わせてください)。また、UEFI + CSM に切り替えます。
+1. X64 WinPE を含む USB フラッシュドライブを起動します。
+1. WinPE を起動した後、コマンドプロンプトで次のコマンドを実行します。
+    1. Diskpart.exe を開きます。
+    1. select disk 0
     1. リスト par
-    1. ボリュームの一覧を表示 < = 既存の OS が割り当てられていることがわかるように、現在のドライブ文字を識別するために (後で使用されている OS のドライブ文字を識別する)
-    1. convert GPT
-    1. パーティション 1 を選択します。
-    1. 作成 par EFI size = 800 (mg)
-    1. フォーマット fs = fat32 ラベル システムを =
-    1. S 文字を割り当てる
-    1. par MSR を作成します。
+    1. ボリュームを一覧表示する <= 既存の OS が割り当てられている場所を把握できるように、現在のドライブ文字を識別します (OS のドライブ文字を指定し、後で使用します)
+    1. GPT の変換
+    1. select partition 1
+    1. par EFI size = 800 (mg) を作成する
+    1. フォーマット fs = fat32 ラベル = システム
+    1. 文字 S の割り当て
+    1. par MSR の作成
     1. リスト par
     1. exit
-1. コマンド プロンプトで次のように入力します。
-    1. %s:
-    1. BCDboot の c:\\windows/s s:/f UEFI
+1. コマンドプロンプトに戻り、次のように入力します。
+    1. :
+    1. BCDboot c: \\ windows/s s:/F UEFI
        > [!NOTE]
-       > これは、特定のドライブ文字 c および d が上記の手順で
+       > これは、上記の手順 c で特定されたドライブ文字です。
     1. dir/a
-    1. %S: を表示する必要があります\\EFI
-    1. 再起動し、オペレーティング システムをブートしようとしてください。
+    1. 次のように表示します。 s: \\ EFI
+    1. 再起動して OS を起動します
 
-## <a name="verify-system-is-booted-in-uefi-mode"></a>システムが UEFI モードで起動したことを確認します。
+## <a name="verify-system-is-booted-in-uefi-mode"></a>システムが UEFI モードで起動されていることを確認する
 
-システムの確認には、次のメソッドのいずれかが UEFI モードで起動に使用します。
+次のいずれかの方法を使用して、システムが UEFI モードで起動されていることを確認します。
 
-### <a name="msinfo32"></a>MSINFO32
+### <a name="msinfo32"></a>MSINFO32.EXE
 
-Windows 10 システム。
+Windows 10 システムの場合:
 
-1. キーを押して\<Windows キー\> + \<R\>を開く、**実行**ダイアログ
-1. Msinfo32 を入力し、クリックして**OK**
+1. キーを押して [ \<Windows key\>  +  \<R\> **実行**] ダイアログを開きます。
+1. 「Msinfo32」と入力し、[ **OK]** をクリックします。
 
-既定では、システムの概要ページが開きます。
+既定では、[システムの概要] ページが開きます。
 
-次の情報になります。
+次の情報を探します。
 
-![システムの概要 ページ](images/system-summary-page.png)
+![[システムの概要] ページ](images/system-summary-page.png)
 
-を管理者として実行するには、次の手順を使用します。
+管理者として実行するには、次の手順に従います。
 
-1. キーを押して\<Windows キー\> + \<R\>を開く、**実行**ダイアログ
+1. キーを押して [ \<Windows key\>  +  \<R\> **実行**] ダイアログを開きます。
 1. 「システム情報」の入力を開始します。
 
-場合**システム情報**が強調表示され、保持\<CTRL\> + \<shift キーを押し\>とヒット\<」と入力\>、またはマウスを使用して、右クリック選択と**管理者として実行**します。
+**システム情報**が強調表示されている場合は、を押したまま \<CTRL\>  +  \<SHIFT\> ヒットし \<ENTER\> ます。または、マウスを使用して右クリックし、[**管理者として実行**] を選択します。
 
-求めユーザー アクセス制御 (UAC) によって、次のメッセージ。**デスクトップを変更するのには、このアプリを作成しますか。**
+ユーザー Access Control (UAC) によって、次のメッセージが表示されます。 [**このアプリをデスクトップに変更しますか?]**
 
 ### <a name="bcdedit"></a>BCDEDIT
 
-Windows 7 およびそれ以降のシステム。
+Windows 7 以降のシステムの場合:
 
-1. 管理者特権のコマンド プロンプトを開始します。
-1. "BCDedit/enum {現在}"の実行します。
+1. 管理者特権でのコマンドプロンプトを開始する
+1. "BCDedit/enum {current}" を実行する
     > [!NOTE]
-    > WinPE から起動されている場合は、BCDedit.exe で"/store"スイッチを使用します。
-    > UEFI がある場合は、パスは、Winload.efi を紹介します。
-    > CSM がある場合は、パスは、出力の例に示すように、Winload.exe を表示します。
+    > WinPE から起動した場合は、BCDedit の "/store" スイッチを使用します。
+    > UEFI を使用している場合は、パスに「Winload. efi」と表示されます。
+    > CSM がある場合、パスはサンプル出力に示されているように Winload .exe を表示します。
 
 #### <a name="sample-output"></a>サンプル出力
 
@@ -99,12 +99,12 @@ device partition=C:
 path \WINDOWS\system32\winload.efi
 ```
 
-### <a name="notepad-and-setupactlog"></a>メモ帳と SETUPACT します。ログ
+### <a name="notepad-and-setupactlog"></a>メモ帳と SETUPACT。出力
 
-1. 管理者特権のコマンド プロンプトを開始します。
-1. 実行"メモ帳の c:\\windows\\panther\\setupact.log"
-1. キーを押して\<CTRL\> + \<F\>検索 (または search)
-1. 検索"コールバック\_BootEnvironmentDetect"
+1. 管理者特権でのコマンドプロンプトを開始する
+1. "Notepad c: \\ windows \\ panther \\ setupact .log" を実行します。
+1. Enter キーを押して検索 \<CTRL\>  +  \<F\> (または検索)
+1. "Callback \_ boot環境検出" を検索します。
 
     - 結果は次のようになります。
 
@@ -122,15 +122,15 @@ path \WINDOWS\system32\winload.efi
         Callback_BootEnvironmentDetect: Detected boot environment: UEFI
         ```
 
-特定のシステムの構成の詳細について OEM に相談する必要があります。
+特定のシステムの構成の詳細については、OEM に問い合わせることが必要になる場合があります。
 
 > [!WARNING]
-> Diskpart.exe またはセットアップを使用して、クリーニングまたはワイプのハード ディスク ドライブ パーティション情報をすべて破棄されますディスク上のデータ。 工場出荷時イメージの回復方法またはデータ バックアップ オプションに関するこれらの変更を行う前に、PC の製造元を参照してください。
+> Diskpart.exe またはセットアップを使用してハードディスクドライブのパーティション情報をクリーニングまたはワイプすると、ディスク上のデータがすべて破棄されます。 これらの変更を行う前に、工場出荷時のイメージの回復方法またはデータバックアップオプションに関する PC の製造元に問い合わせてください。
 
 ## <a name="related-resources"></a>関連リソース
 
-[UEFI ベースのディスク パーティションの構成をお勧めします。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))
+[推奨される UEFI ベースのディスクパーティション構成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd744301(v=ws.10))
 
-[プログラム、システムの設定、およびファイルを戻す Win7](https://support.microsoft.com/help/17127/windows-back-up-restore#1TC=windows-7)
+[Win7 によるプログラム、システム設定、およびファイルのバックアップ](https://support.microsoft.com/help/17127/windows-back-up-restore#1TC=windows-7)
 
-[Win7 は、ファイルと Windows 7 のバックアップを PC を保護します。](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/bg-p/FileCAB)
+[Win7 Windows 7 バックアップを使用してファイルと PC を保護する](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/bg-p/FileCAB)

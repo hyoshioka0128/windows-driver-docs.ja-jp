@@ -1,39 +1,23 @@
 ---
-title: Device Guard と Credential Guard
-description: Device Guard と Credential Guard
-ms.date: 05/07/2018
+title: ハイパーバイザーで保護されたコードの整合性 (HVCI)
+description: ハイパーバイザーで保護されたコードの整合性 (HVCI)
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5909718ab8edb1239ce6e45602430084b8450f3e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 6d159e5da21a587fb8482e434c051eaa15d4f4d2
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364576"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153169"
 ---
-# <a name="device-guard-and-credential-guard"></a>Device Guard と Credential Guard
+# <a name="hypervisor-protected-code-integrity-hvci"></a>ハイパーバイザーで保護されたコードの整合性 (HVCI)
 
-
-Device Guard では、エンタープライズに関連するハードウェア、ファームウェア、およびソフトウェアのセキュリティ機能の組み合わせである Windows セキュリティ機能の 1 つです。 一緒に構成されている場合は、信頼されたアプリケーションだけを実行できるように、デバイスがロックされます。
-
-Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。
-
-Device Guard と Credential Guard は、実装されていると、有効なときに、公開されているを減らす省略可能な機能によって追加の保護機能を必要とするマルウェアの攻撃対象領域がデバイスで有効にします。
+ハイパーバイザーで保護されたコードの整合性では、ハードウェアテクノロジと仮想化を使用して、コード整合性 (CI) の意思決定機能を Windows オペレーティングシステムの他の部分から分離できます。 仮想化ベースのセキュリティを使用してコードの整合性を分離する場合、カーネルメモリを実行可能ファイルにする唯一の方法は、コードの整合性を検証することです。
 
 ## <a name="related-resources"></a>関連リソース
 
-[Device Guard 展開ガイド](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)
+[コード整合性チェック](https://docs.microsoft.com/windows-hardware/drivers/devtest/code-integrity-checking)
 
-[ドライバーの互換性の要件](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
+[ハイパーバイザーコード整合性準備テスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b972fc52-2468-4462-9799-6a1898808c86)
 
-[Credential Guard で新機能](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1507-and-1511)
-
-[ハイパーバイザー コードの整合性の準備のテスト](https://docs.microsoft.com/windows-hardware/test/hlk/testref/b972fc52-2468-4462-9799-6a1898808c86)
-
-[Windows 10 Device Guard とドライバーの互換性](https://techcommunity.microsoft.com/t5/Windows-Hardware-Certification/bg-p/WindowsHardwareCertification)
-
-
-
-
-
-
-
+[Windows 10 の HVCI とのドライバーの互換性](hhttps://techcommunity.microsoft.com/t5/windows-hardware-certification/driver-compatibility-with-device-guard-in-windows-10/ba-p/364865)

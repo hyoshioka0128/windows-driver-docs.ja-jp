@@ -1,43 +1,35 @@
 ---
 title: UEFI のセキュリティ
-description: ガイダンスと実装し、Windows オペレーティング システムのファームウェアのセキュリティ機能を検証するための情報へのポインターを提供します。
-ms.date: 05/07/2018
+description: Windows オペレーティングシステムのファームウェアのセキュリティ機能を実装および検証できるようにするための情報へのガイダンスとポインターを提供します。
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d82013a45be216f1383c0fe2986f612ad98da073
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e14978dba165861dfd1233e1adbb40374b66ee32
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63337380"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153177"
 ---
 # <a name="uefi-security"></a>UEFI のセキュリティ
 
+Windows オペレーティングシステムは、セキュリティで保護された作業環境を提供するために、ファームウェアおよびハードウェアコンポーネントの整合性と構成に依存します。
 
-Windows オペレーティング システムでは、セキュリティで保護された作業環境を提供するために、整合性とファームウェアとハードウェア コンポーネントの構成に依存します。
+このセクションの目的は、Windows オペレーティングシステムのファームウェアのセキュリティ機能を実装および検証するための情報へのリンクを提供することです。
 
-このセクションの目的は、ガイドとして実装し、ファームウェアの Windows オペレーティング システムのセキュリティ機能を検証できるようにする情報へのポインターを提供します。
-
-次のセクションより安全なファームウェア、およびより安全なオペレーティング システムを有効にするために使用するファームウェアのコンポーネントについて説明します。 コンポーネントの重要なポイントをカバーされ、使用可能な場合は、ポインターと既存のオンライン リソースへのリンクが提供されます。
-
-
-
+以下のセクションでは、より安全なファームウェアと、より安全なオペレーティングシステムを有効にするために使用されるファームウェアのコンポーネントについて説明します。 また、コンポーネントのハイライトについて説明し、使用可能な既存のオンラインリソースへのポインターとリンクを示します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[Unified Extensible Firmware Interface (UEFI)](unified-extensible-firmware-interface.md)
+[拡張ファームウェア インターフェイス (UEFI)](unified-extensible-firmware-interface.md)
 
-[Device Guard と Credential Guard](device-guard-and-credential-guard.md)
+[ハイパーバイザーで保護されたコードの整合性 (HVCI)](device-guard-and-credential-guard.md)
 
-[固定 ComBuffer と Windows SMM セキュリティ リスク軽減テーブル (WSMT)](fixed-combuffer-and-windows-smm-security-mitigation-table.md)
+[固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)](fixed-combuffer-and-windows-smm-security-mitigation-table.md)
 
 [ハードウェア セキュリティ テスト インターフェイス (HSTI) 1.1a](hardware-security-test-interface-1-1a.md)
 
-[メモリ上書き要求コントロール (されます) バージョン 2 のロック](memory-overwrite-request-control-lock-version-2.md)
+[メモリ上書き要求制御 (MOR) LOCK バージョン 2](memory-overwrite-request-control-lock-version-2.md)
 
 [セキュア ブート](secure-boot.md)
 
-[信頼されたプラットフォーム モジュール (TPM) に関する考慮事項](trusted-platform-module-considerations.md)
-
-
-
-
+[トラステッド プラットフォーム モジュール (TPM) に関する考慮事項](trusted-platform-module-considerations.md)
