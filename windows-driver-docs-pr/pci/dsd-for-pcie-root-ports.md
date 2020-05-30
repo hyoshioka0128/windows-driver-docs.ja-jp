@@ -5,12 +5,12 @@ ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
 keywords: ACPI、ACPI \_ DSD 方法
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: be8015d4e8d3751cc443fb61bff9cd5db282d90a
-ms.sourcegitcommit: 8973457113e00a5f4a0848a1b3165a42b975e81c
+ms.openlocfilehash: a617fed6a852f33bf00663d9b5f45a4344488618
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83349880"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223570"
 ---
 # <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI インターフェイス: \_ PCIe ルートポート用のデバイス固有データ (DSD)
 
@@ -75,7 +75,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 この ACPI オブジェクトを使用すると、オペレーティングシステムは、ユーザーが簡単にアクセスできる内部の PCIe 階層 (たとえば、ラッチによってアクセスできるラップトップの M. 2 PCIe スロット) を識別し、OS[カーネル DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)メカニズムによる保護を必要とします。 このオブジェクトは、ルートポートの ACPI デバイススコープに実装する必要があります。 
 
-メモ: 
+注: 
 -   この ACPI オブジェクトを使用した PCI ポートの保護は、Windows 10 バージョン1903以降でのみサポートされています。
 -   OS で DSD を解析 \_ し、必要な保護を PCI ポートに適用するためには、システム BIOS/UEFI でカーネル DMA 保護を有効にする必要があります。
 -   このポートに接続されているデバイスのドライバーは、DMA の再マップをサポートする必要があります。それ以外の場合、Windows 10 は、 [Dmaguard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)に応じて、ユーザーがログインするか、または無期限に操作するまで、これらのデバイスの動作をブロックします。
@@ -93,8 +93,25 @@ Package (2) {"UID", 0}, // Property 2: UID of the PCIe port on platform, range i
 )
 ```
 
-## <a name="see-also"></a>参照
+## <a name="identifying-pcie-ports-supporting-d3_cold_aux_power-ecn-interface"></a>D3_COLD_AUX_POWER ECN インターフェイスをサポートする PCIe ポートの識別
+
+この ACPI オブジェクトを使用すると、オペレーティングシステムは[D3_COLD_AUX_POWER ECN インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)をサポートする pcie ポートを識別できます。これによって、pcie デバイスは、既定の375mA の上にある D3 の auxilliary の追加機能から要求を行うことができ @3.3V ます。 この DSD を定義する pci ポート/ブリッジは、以前にネゴシエートされた__補助電力値をプログラミングするときに操作が成功することを保証する必要があり__ます。
+
+```ASL
+Name (_DSD, Package () {
+            ToUUID("6B4AD420-8FD3-4364-ACF8-EB94876FD9EB"),
+            Package () {
+            }
+        }
+)
+
+```
+
+
+## <a name="see-also"></a>関連項目
 
 [Windows での PCI Express ネイティブ コントロールの有効化](enabling-pci-express-native-control.md)
 
 [Thunderbolt™ 3 のカーネル DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+
+[D3COLD_AUX_POWER_AND_TIMING_INTERFACE 構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)
