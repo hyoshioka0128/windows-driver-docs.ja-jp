@@ -1,54 +1,57 @@
 ---
-title: "\"Hello World\"WIA ミニドライバー UI 拡張機能の作成"
-description: "\"Hello World\"WIA ミニドライバー UI 拡張機能の作成"
+title: "\"Hello World\" WIA ミニドライバー UI 拡張機能の作成"
+description: "\"Hello World\" WIA ミニドライバー UI 拡張機能の作成"
 ms.assetid: 8de1f8ca-f618-44d7-b6dd-c02cdee8a556
-ms.date: 04/20/2017
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 30d164e80fab69b0333ba190cf033c3f32437405
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d1082eac8969fdaf51fedb6da972f5adc5bdde84
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386321"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223528"
 ---
-# <a name="creating-a-hello-world-wia-minidriver-ui-extension"></a>"Hello World"WIA ミニドライバー UI 拡張機能の作成
+# <a name="creating-a-hello-world-wia-minidriver-ui-extension"></a>"Hello World" WIA ミニドライバー UI 拡張機能の作成
 
+WIA ミニドライバー UI 拡張機能は、いくつかの関数をエクスポートし、次の4つの COM インターフェイス識別子 (IID) の少なくとも1つを実装する単純な DLL です。
 
+**IID \_ iwi# iextension**
 
+**Iwiの**インターフェイス識別子 (IID) インターフェイス。 これは、マイコンピューターおよびコントロールパネルのミニドライバーデバイスアイコンを置き換えるために使用される標準的な WIA インターフェイスであり、Microsoft common ミニドライバー UI ダイアログを置き換えます。
 
+**IID \_ ishellextinit**
 
-WIA ミニドライバー UI 拡張機能は、いくつかの関数をエクスポートし、4 つ以下 COM インターフェイス識別子 (IID) の少なくとも 1 つを実装する単純な DLL を示します。
+**Ishellextinit**インターフェイスの IID。 これは、プロパティシート、ショートカットメニュー、およびドラッグアンドドロップハンドラー (既定以外のドラッグアンドドロップ操作中にショートカットメニューに項目を追加する拡張機能) のシェル拡張を初期化するために使用される標準の Windows シェルインターフェイスです。
 
-<a href="" id="iid-iwiauiextension"></a>IID\_IWiaUIExtension  
-インターフェイス id (IID)、 **IWiaUIExtension**インターフェイス。 これは、Microsoft の一般的なミニドライバー UI ダイアログをミニドライバー デバイスのアイコンとコントロール パネルで、マイ コンピューターを置き換えるために使用標準 WIA インターフェイスです。
+**IID \_ IContextMenu**
 
-<a href="" id="iid-ishellextinit"></a>IID\_IShellExtInit  
-IID、 **IShellExtInit**インターフェイス。 これは、標準の Windows シェルがプロパティ シート、ショートカット メニューのおよびドラッグ アンド ドロップ ハンドラー (既定以外のドラッグ アンド ドロップ操作中に、ショートカット メニューに項目を追加する拡張) のシェル拡張を初期化するために使用されるインターフェイスです。
+**ContextMenu**インターフェイスの IID。 これは、シェルオブジェクトに関連付けられているショートカットメニューを作成または結合するために使用される標準の Windows シェルインターフェイスです (マイコンピューターおよびコントロールパネルの [WIA ミニドライバー] アイコン)。
 
-<a href="" id="iid-icontextmenu"></a>IID\_IContextMenu  
-IID、 **ContextMenu**インターフェイス。 これは、シェル オブジェクト (WIA ミニドライバーのアイコンとコントロール パネルの マイ コンピューター) に関連付けられたショートカット メニューのマージを作成または使用される標準の Windows シェル インターフェイスです。
+**IID \_ ishellpropsheet**
 
-<a href="" id="iid-ishellpropsheet"></a>IID\_IShellPropSheet  
-IID、 **IShellPropSheet**インターフェイス。 これは、追加または置換するシェル オブジェクト (マイ コンピューター] と [コントロール パネルの WIA ミニドライバーのアイコン) の表示プロパティ シート内のページに使用される標準の Windows シェル インターフェイスです。
+**Ishellpropsheet**インターフェイスの IID。 これは、シェルオブジェクトに対して表示されるプロパティシート内のページを追加または置換するために使用される標準の Windows シェルインターフェイスです (マイコンピューターおよびコントロールパネルの WIA ミニドライバーアイコン)。
 
-"Hello World"WIA ミニドライバー UI 拡張機能は、次のファイルで構成されます。
+"Hello World" WIA ミニドライバー UI 拡張機能は、次のファイルで構成されています。
 
-<a href="" id="hellowld-inf"></a>*hellowld.inf*  
-これは、インストール ファイル (元のこの UI 拡張機能をインストールするように変更*hellowld*サンプル)。
+*/. .inf*
 
-<a href="" id="hellowldui-def"></a>*hellowldui.def*  
-これは、定義ファイルを格納している 2 つの COM エクスポート**DllGetClassObject**と**DllCanUnloadNow** (両方が、Windows SDK のドキュメントで説明)。
+これはインストールファイルです (この UI 拡張機能*を元の*モジュールのサンプルと共にインストールするように変更されています)。
 
-<a href="" id="hellowldui-cpp"></a>*hellowldui.cpp*  
-これは、WIA UI 拡張機能の実装です。
+*hellowldui*
 
-### <a name="installing-wia-ui-extensions"></a>WIA UI 拡張機能のインストール
+これは、 **DllGetClassObject**と**DllCanUnloadNow**という2つの COM エクスポートを含む定義ファイルです (どちらも Windows SDK のドキュメントで説明されています)。
 
-WIA UI 拡張 DLL をインストールする追加**UI クラス ID =**{&lt;UI 拡張機能の DLL の CLSID&gt;} INF ファイルを**DeviceData**セクション。 クライアントの呼び出しにより、この CLSID **CoCreateInstance** (Microsoft Windows SDK のドキュメントで説明)、および、WIA UI 拡張機能のサポートされているインターフェイスを取得します。
+*hellowldui*
 
-次のスニペットの例の INF に WIA ミニドライバー サンプルから派生["Hello World"WIA のミニドライバーを作成する](creating-a---hello-world---wia-minidriver.md)します。 既定で使用される CLSID は、コモン ダイアログ ボックス、アイコン、およびプロパティ ページの CLSID は Microsoft が提供必要があります。
+これは、WIA UI 拡張の実装です。
 
-すべて WIA UI 拡張 Dll する必要があります自己登録をより簡単にインストールの昇格の COM オブジェクトをお勧めします。 このサンプルでは、自動登録の COM オブジェクトは含まれません。
+## <a name="installing-wia-ui-extensions"></a>WIA UI 拡張機能のインストール
+
+WIA UI 拡張 DLL をインストールするには、[ui**クラス ID =**] を追加し、 &lt; [ui 拡張機能の dll の CLSID] を、 &gt; [ **devicedata** ] セクションの下にある INF ファイルに追加します。 この CLSID を使用すると、クライアントは、(Microsoft Windows SDK のドキュメントで説明されている) **CoCreateInstance**を呼び出し、WIA UI 拡張機能でサポートされているインターフェイスを取得できます。
+
+次の例の INF スニペットは、 [' Hello World ' Wia ミニドライバーを作成するとき](creating-a---hello-world---wia-minidriver.md)に、wia ミニドライバーサンプルから派生しています。 既定で使用される CLSID は、コモンダイアログ、アイコン、およびプロパティページに対して、Microsoft が提供する CLSID である必要があります。
+
+インストールを容易にするために、すべての WIA UI 拡張 Dll が COM オブジェクトを自己登録することをお勧めします。 このサンプルには、自己登録 COM オブジェクトが含まれていません。
 
 ```INF
 [WIADevice.DeviceData]
@@ -57,7 +60,7 @@ UI DLL=sti.dll
 UI Class ID={4DB1AD10-3391-11D2-9A33-00C04FA36145}
 ```
 
-次のサンプルは、完全な INF ファイルを設定する、 **UI クラス ID**サブキーの clsid、 *hellowldui* UI 拡張機能のサンプルです。
+次のサンプルは、 **Ui クラス ID**サブキーを*Hellowldui* sample UI 拡張機能の CLSID に設定する完全な INF ファイルです。
 
 ```INF
 ; HELLOWLD.INF  -- Hello World WIA Minidriver setup file (with a WIA UI extension DLL)
@@ -137,7 +140,7 @@ WIADevice.DeviceDesc="Hello World WIA Minidriver"
 Location="Hello World WIA Minidriver Installation Source"
 ```
 
-*Hellowldui.def*ファイルは、次を含める必要があります。
+*Hellowldui*ファイルには、次のものが含まれている必要があります。
 
 ```make
 LIBRARY HELLOWLDUI
@@ -147,7 +150,7 @@ EXPORTS
         DllCanUnloadNow     PRIVATE
 ```
 
-*Hellowldui.cpp*ファイルは、次を含める必要があります。
+*Hellowldui*ファイルには、次のものが含まれている必要があります。
 
 ```cpp
 #ifndef WIN32_LEAN_AND_MEAN
@@ -352,14 +355,6 @@ extern "C" STDAPI DllGetClassObject(REFCLSID rclsid,REFIID riid,LPVOID *ppv)
 }
 ```
 
-### <a name="adding-a-custom-device-icon"></a>カスタム デバイス アイコンの追加
+## <a name="adding-a-custom-device-icon"></a>カスタムデバイスアイコンの追加
 
-上記のサンプルでは、デバイスの既定のアイコンを交換する方法の例を示します。 既定のアイコンを置き換えると、インストールされている 1 つ以上のデバイスがある場合に、適切なデバイスを使用してユーザーをガイドする理想的な方法を指定できます。 アイコンに接続しているデバイスが似ている場合は、ユーザーにとって直感的になります。
-
- 
-
- 
-
-
-
-
+前のサンプルは、デバイスの既定のアイコンを置き換える方法の例です。 既定のアイコンを置き換えることは、複数のデバイスがインストールされている場合に、適切なデバイスを使用するようにユーザーに指示するのに最適な方法です。 アイコンが接続されているデバイスに似ている場合、ユーザーにとって直観的にわかりやすくなります。

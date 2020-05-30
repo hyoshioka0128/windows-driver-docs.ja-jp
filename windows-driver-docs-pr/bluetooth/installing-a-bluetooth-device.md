@@ -3,65 +3,60 @@ title: Bluetooth デバイスのインストール
 description: Bluetooth デバイスのインストール
 ms.assetid: 2bf2b2df-260c-42a5-9ee9-6db91f304036
 keywords:
-- Bluetooth の WDK をインストール
-- クライアント側のプロファイル ドライバー WDK Bluetooth
-- サーバー側のプロファイル ドライバー WDK Bluetooth
+- Bluetooth WDK、bluetooth ドライバーのインストール
+- クライアント側プロファイルドライバー WDK Bluetooth
+- サーバー側プロファイルドライバー WDK Bluetooth
 - INF ファイル WDK Bluetooth
-ms.date: 04/20/2017
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 885bfe978798fda0073865883cd4d92b9cb0a72e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2921c56b2f33c7ffe29fc3cb9ad9f3fb2211fffb
+ms.sourcegitcommit: 5b4742d8983f6a194416fd6bc7ec837a12822565
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364627"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84211981"
 ---
 # <a name="installing-a-bluetooth-device"></a>Bluetooth デバイスのインストール
 
+> [!IMPORTANT]
+> このトピックはプログラマーを対象としています。 Bluetooth デバイスのインストールの問題が発生しているお客様の場合は[、「Windows での bluetooth デバイスのペアリング](https://support.microsoft.com/help/15290/windows-connect-bluetooth-device)」を参照してください。
 
-Bluetooth プロファイル ドライバーのインストールの 2 つの種類があります。
+Bluetooth プロファイルドライバーには、次の2種類のインストールがあります。
 
-1.  クライアント側のインストール
+- リモートデバイスがサービスをアドバタイズし、コンピューターから接続するリモートデバイスの**クライアント側インストール**。 例としては、マウスデバイス、キーボード、プリンターなどがあります。
 
-2.  サーバー側のインストール
+- コンピューターがサービスとリモートデバイスをアドバタイズする**サーバー側のインストール**は、これらのサービスを使用するためにコンピューターに接続できます。 たとえば、ベンダーはサーバー側のインストールを作成して、PDA がコンピューターに接続されているプリンターに印刷できるようにすることができます。
 
-クライアント側のインストールは、リモート デバイス、リモート デバイスがそのサービスをアドバタイズして、そのコンピューターを接続します。 例: マウス デバイス、キーボード、およびプリンターです。
+この2つのインストールの種類には、異なるインストール手順が必要です。
 
-サーバー側のインストールは、コンピューターがサービスやリモート デバイスをそれらのサービスを使用するコンピューターに接続できるをアドバタイズします。 たとえば、仕入先は、PDA、コンピューターに接続されたプリンターに印刷を有効にするサーバー側のインストールを作成できました。
+## <a name="installing-a-client-side-profile-driver"></a>クライアント側プロファイルドライバーのインストール
 
-これらの 2 つのインストールの種類には、別のインストール手順が必要です。
+Bluetooth 対応デバイスを使用するユーザーは、そのデバイスをコンピューターの範囲内に移動し、次のクライアント側プロファイルドライバーのインストールシーケンスを使用して、コンピューターからリモートデバイスへの接続を開始します。
 
-### <a name="span-idinstallingaclientsideprofiledriverspanspan-idinstallingaclientsideprofiledriverspaninstalling-a-client-side-profile-driver"></a><span id="installing_a_client_side_profile_driver"></span><span id="INSTALLING_A_CLIENT_SIDE_PROFILE_DRIVER"></span>**クライアント側のプロファイルのドライバーをインストールします。**
+1. **コントロールパネル**の [Bluetooth デバイス] を起動して、コンピューターの範囲内にあるすべてのデバイスを検索します。
 
-ユーザーは、Bluetooth 対応デバイスを使用する場合、ユーザーが、コンピューターの範囲内にデバイスを更新した後、コンピューターからリモート デバイスへの接続を開始する必要があります。 プロファイルのクライアント側ドライバーのインストールのインストールの順序を次に示します。
+2. ペアリングするデバイスを選択します。
 
-**クライアント側のプロファイルのドライバーをインストールするには**
+3. デバイスをローカルラジオとペアリング (または bond) します。 これには、PIN の交換が必要になる場合と、含まれない場合があります。
 
-1.  Bluetooth デバイスを起動**コントロール パネルの** コンピューターの範囲内のすべてのデバイスを検索します。
+4. ローカルラジオは、リモートデバイスでサポートされているサービスを識別するために SDP の問い合わせを発行します。
 
-2.  ペアにするデバイスを選択します。
+5. **新しいハードウェアの検出ウィザード**では、ローカルハードディスクドライブ、または Windows Update で適切なドライバーが検索されます。
 
-3.  ローカルの無線を使用してデバイスをペアリング (またはサマンサ)。 これは、暗証番号 (pin) exchange しないことがあります。
+6. **新しいハードウェアの検出ウィザード**でデバイスの適切なドライバーが検出されなかった場合は、プロファイルドライバーのデバイスセットアップ情報ファイル (INF ファイル) を含むプロファイルドライバーのインストールメディアを挿入するように求められます。
 
-4.  ローカルのオプションは、リモート デバイスでサポートされているサービスを識別するために、SDP の照会を発行します。
+## <a name="installing-a-server-side-profile-driver"></a>サーバー側プロファイルドライバーのインストール
 
-5.  **新しいハードウェアの検出ウィザード**や Windows Update で、ローカルのハード ディスク ドライブ上の適切なドライバーを検索します。
+Bluetooth ドライバースタックは、Bluetooth SIG で定義されているサービス Guid に加えて、カスタム Guid (つまり、Bluetooth SIG で定義されていない Guid) もサポートしています。
 
-6.  場合、**新しいハードウェアの検出ウィザード**適切なドライバーを見つけることができませんが、デバイスのユーザー プロファイルのドライバーのデバイスのセットアップ情報ファイル (INF ファイル) を含むプロファイル ドライバーのインストール メディアを挿入するように求められます。
+> [!NOTE]
+> Microsoft Windows SDK に用意されている**guidgen.exe**ツールを使用して、カスタム guid を作成できます。
 
-### <a name="span-idinstallingaserversideprofiledriverspanspan-idinstallingaserversideprofiledriverspaninstalling-a-server-side-profile-driver"></a><span id="installing_a_server_side_profile_driver"></span><span id="INSTALLING_A_SERVER_SIDE_PROFILE_DRIVER"></span>**サーバー側のプロファイルのドライバーをインストールします。**
+リモート Bluetooth デバイスで使用できるコンピューター機能を公開するには、ユーザーモードインストールアプリケーションを作成する必要があります。
 
-Bluetooth ドライバー スタックは、カスタム Guid (Bluetooth SIG で定義されていない Guid) と同様に、Bluetooth SIG で定義されているサービスの Guid をサポートします。
+インストールアプリケーションは、Bluetooth ドライバースタックと通信して、公開する機能のサービス GUID を作成する必要があります。 ベンダーは、アプリケーションとデバイスのインストール INF ファイルにサービス GUID を指定します。
 
-**注**  を使用することができます、 *Guidgen.exe*カスタム Guid を作成する Microsoft Windows SDK で提供されるツールです。
-
- 
-
-リモートの Bluetooth デバイスを使用するコンピューターの機能を公開するには、ユーザー モードのインストール アプリケーションを記述する必要があります。
-
-インストール アプリケーションは、サービスを公開する機能の GUID を作成する Bluetooth ドライバー スタックと通信する必要があります。 ベンダーは、アプリケーションで、そのデバイスのインストールの INF ファイルで、サービスの GUID を指定します。
-
-インストール アプリケーションは、ユーザー モード API を呼び出す必要があります**BluetoothSetLocalServiceInfo**します。 ただし、アプリケーションでは、この API を呼び出すことができます、前に、アプリケーションが必要、SE\_ロード\_ドライバー\_セキュリティ特権の名前。 次のコード例では、この特権を取得する方法を示します。 なお、例は、エラー処理を示していません。
+インストールアプリケーションでは、ユーザーモード API [BluetoothSetLocalServiceInfo](https://docs.microsoft.com/windows/win32/api/bluetoothapis/nf-bluetoothapis-bluetoothsetlocalserviceinfo)を呼び出す必要があります。 アプリケーションでこの API を呼び出すには、アプリケーションに "SE \_ LOAD \_ DRIVER NAME" セキュリティ特権が必要 \_ です。 この特権を取得する方法を次のコード例に示します。 この例では、エラー処理を示していないことに**注意**してください。
 
 ```cpp
 HANDLE procToken;
@@ -79,53 +74,44 @@ Tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
 AdjustTokenPrivileges(procToken, FALSE, &tp, sizeof(TOKEN_PRIVILEGES), (PTOKEN_PRIVILEGES) NULL, (PDWORD)NULL)
 ```
 
-### <a name="span-idprofiledriverinffilespanspan-idprofiledriverinffilespanprofile-driver-inf-file"></a><span id="profile_driver_inf_file"></span><span id="PROFILE_DRIVER_INF_FILE"></span>**プロファイルのドライバーの INF ファイル**
+## <a name="profile-driver-inf-file"></a>プロファイルドライバーの INF ファイル
 
-プロファイル ドライバーの INF ファイルには、インストールのクライアント側の Bluetooth デバイスに関する情報が含まれています。 サーバー側インストールでは、INF ファイルには、サービスのインストール アプリケーションで作成された GUID に対応するデバイス ID を指定します。 Bluetooth デバイスのすべてのメンバーである、 **Bluetooth**クラス。 Bluetooth クラスのインストーラー ( *Bthci.dll*) プロファイルのドライバーのインストールに役立ちます。
+プロファイルドライバーの INF ファイルには、クライアント側インストール用の Bluetooth デバイスに関する情報が含まれています。 サーバー側のインストールの場合、INF ファイルは、インストールアプリケーションによって作成されたサービス GUID に対応するデバイス ID を指定します。 すべての Bluetooth デバイスは、 **bluetooth**クラスのメンバーです。 Bluetooth クラスインストーラー (*Bthci .dll*) は、プロファイルドライバーのインストールに役立ちます。
 
-作成と INF ファイルを配布するドライバーのインストールの詳細については、次を参照してください。 [INF ファイルを作成する](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)と[INF ファイルのセクションとディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)します。
+INF ファイルの作成と配布、およびドライバーのインストールの詳細については、「 [Inf ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-inf-files)および inf ファイルの作成」[セクションと「ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-file-sections-and-directives)」を参照してください。
 
-### <a name="span-idplugandplayidsspanspan-idplugandplayidsspanplug-and-play-ids"></a><span id="plug_and_play_ids"></span><span id="PLUG_AND_PLAY_IDS"></span>**プラグ アンド プレイ Id**
+### <a name="plug-and-play-ids"></a>プラグアンドプレイ Id
 
-Bluetooth ドライバー スタックでは、次のテンプレートに従ってハードウェア Id が生成されます。
+Bluetooth ドライバースタックは、次のテンプレートに従ってハードウェア Id を生成します。
 
--   BTHENUM\\{ *ServiceGUID*}\_VID & *nnnnnnnn*
+- BTHENUM \\ { *ServiceGUID*} \_ VID& *nnnnnnnn*
 
--   BTHENUM\\{ *ServiceGUID*}\_VID & *nnnnnnnn*\_PID & *nnnn*
+- BTHENUM \\ { *ServiceGUID*} \_ VID& *nnnnnnnn* \_ PID& *nnnn*
 
--   BTHENUM\\{ *ServiceGUID*}\_LOCALMFG & *nnnn*
+- BTHENUM \\ { *ServiceGUID*} \_ localmfg& *nnnn*
 
-Bluetooth ドライバー スタックには、次のテンプレートに従って互換性 Id が生成されます。
+Bluetooth ドライバースタックは、次のテンプレートに従って、互換性のある Id を生成します。
 
--   BTHENUM\\{ *ServiceGUID*}
+- BTHENUM \\ { *ServiceGUID*}
 
-*ServiceGUID*は 16 ビットの GUID に展開は、128 ビットの GUID では、Bluetooth の仕様で定義されています。 たとえば、{00001124-0000-1000-8000-00805F9B34FB} は、HID デバイスに対応します。
+*ServiceGUID*は、Bluetooth 仕様で定義されているように、128ビット guid に拡張された16ビット guid です。 たとえば、{000011240000-10008-8000-00805F9B34FB} は、HID デバイスに対応しています。
 
-次の 8 桁*VID &* 仕入先 ID コードに対応しています。
+- *VID&* の後の8桁は、ベンダー ID コードに対応しています。
 
-次の 4 桁*PID &* 製品 ID コードに対応しています。
+- *PID&* の4桁の数字は、製品 ID コードに対応しています。
 
-次の 4 桁*LOCALMFG &* ローカル Bluetooth 無線の製造元に対応しています。
+- *Localmfg&* の次の4桁は、ローカル Bluetooth ラジオの製造元に対応しています。
 
-VID/PID と LOCALMFG タグは、相互依存しません。
+- VID/PID タグと LOCALMFG タグは互いに独立しています。
 
-ID が最も一般的なデバイス、 *ServiceGUID*自体。 次に、例を示します。
+最も一般的なデバイス ID は、単独で*ServiceGUID*です。 例:
 
-BTHENUM\\{00001124-0000-1000-8000-00805F9B34FB}
+BTHENUM \\ {000011240000-10008-8000-00805F9b34fb}
 
-プロファイルのドライバーとリモート デバイスと INF ファイルの両方でプラグ アンド プレイ Id を使用してリモート デバイスの特定のリリースでのみ実行するソフトウェアを読み込むには Bluetooth ドライバー スタックを制限することができます。 デバイスは、SDP を使用して、スタックを検出するプラグ アンド プレイ ID を発行した場合のみ、Bluetooth ドライバー スタックは VID/PID ペアを生成します。 注意してください。 次に、例を示します。
+Bluetooth ドライバースタックは、リモートデバイスと INF ファイルの両方でプラグアンドプレイ Id を使用して、リモートデバイスの特定のリリースでのみ実行されるように、プロファイルドライバーとソフトウェアを読み込むように制限できます。 Bluetooth ドライバースタックは、デバイスが SDP を使用して検出できるプラグアンドプレイ ID を発行する場合にのみ、VID と PID のペアを生成することに**注意**してください。 例:
 
-BTHENUM\\{00001124-0000-1000-8000-00805F9B34FB}\_VID& *nnnnnnnn*\_PID& *nnnn*
+BTHENUM \\ {000011240000-10008-8000-00805F9b34fb} \_ VID& *nnnnnnnn* \_ PID& *nnnn*
 
-プロファイルのドライバーと、デバイス ID、INF ファイルに含まれる LOCALMFG タグを指定することによって、特定のローカル Bluetooth 無線でのみ実行するソフトウェアを読み込むには Bluetooth ドライバー スタックを制限することができます。 次に、例を示します。
+Bluetooth ドライバースタックは、特定のローカル Bluetooth ラジオでのみ実行されるプロファイルドライバーとソフトウェアを読み込むように制限できます。これを行うには、INF ファイルのデバイス ID に LOCALMFG タグを指定します。 例:
 
-BTHENUM\\{00001124-0000-1000-8000-00805F9B34FB}\_LOCALMFG& *nnnn*
-
- 
-
- 
-
-
-
-
-
+BTHENUM \\ {000011240000-10008-8000-00805F9b34fb} \_ localmfg& *nnnn*

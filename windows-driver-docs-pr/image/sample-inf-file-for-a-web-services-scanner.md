@@ -2,36 +2,34 @@
 title: Web サービス スキャナーのサンプル INF ファイル
 description: Web サービス スキャナーのサンプル INF ファイル
 ms.assetid: 1e65739f-9216-4962-9108-60ba291ff052
-ms.date: 04/20/2017
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 531b139c8a10339c50d273829fe7c62c676b152c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eea1fda2c71bc8446e4e7492d68d88ff55694bf8
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63381505"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223553"
 ---
 # <a name="sample-inf-file-for-a-web-services-scanner"></a>Web サービス スキャナーのサンプル INF ファイル
 
+次の INF ファイル ( *Sti*) は、WIA ドライバーをインストールする方法を示しています。 *WSDScan*に必要なエントリが強調表示されます。
 
-次の INF ファイル*Sti.inf*、WIA ドライバーをインストールする方法を示しています。 必要なエントリ*WSDScan.sys*が強調表示されます。
-
-**注**  デバイスのハードウェア Id の要件と**鍵\_デバイス\_HardwareIds** INF の次の例で参照されるプロパティが記載されて、[PNP X 実行者ガイド](https://go.microsoft.com/fwlink/p/?linkid=242570)します。
-
- 
+> [!NOTE]
+> 次の INF の例で参照されているデバイスのハードウェア Id と**PKEY \_ device hardware \_ ids**プロパティの要件については、「 [pnp-x 実装者ガイド](https://go.microsoft.com/fwlink/p/?linkid=242570)」で説明されています。
 
 ```INF
 ;
 ; MyWSScanner.inf - sample installation file that shows how
-; to install a WIA driver for a WS scanner by using the inbox 
+; to install a WIA driver for a WS scanner by using the inbox
 ; WSDScan.sys kernel driver
 ;
 [Version]
 Signature="$WINDOWS NT$"
 Class=Image
-ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f} 
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
 Provider=%Mfg%
-DriverVer=1/17/2006,1.0.0.0 ; replace with the actual driver date 
+DriverVer=1/17/2006,1.0.0.0 ; replace with the actual driver date
 ; and version
 
 [SourceDisksFiles.x86]
@@ -59,10 +57,10 @@ DefaultDestDir = 11
 %Mfg%=Models,NTx86,NTamd64,NTia64
 
 ;
-; Replace UMB\PnPX_YourDevice_HardwareID in the three Models 
-; sections below to match the actual hardware IDs and compatible 
-; IDs from the metadata that is supplied by the device, as it 
-; is described in the PNP-X Implementer's Guide for the 
+; Replace UMB\PnPX_YourDevice_HardwareID in the three Models
+; sections below to match the actual hardware IDs and compatible
+; IDs from the metadata that is supplied by the device, as it
+; is described in the PNP-X Implementer's Guide for the
 ; PKEY_Device_HardwareIds property:
 ;
 
@@ -93,21 +91,21 @@ MyWIADriver.dll
 
 ;
 ; Do not forget to replace 00000000-0000-0000-0000-000000000000
-; in the AddReg section below with the actual UUID for your WIA 
+; in the AddReg section below with the actual UUID for your WIA
 ; minidriver:
 ;
 
 [WSDScanDriver.AddReg]
 HKR,,HardwareConfig,1,1 ; generic WDM device
-HKR,,USDClass,,"{00000000-0000-0000-0000-000000000000}" 
+HKR,,USDClass,,"{00000000-0000-0000-0000-000000000000}"
 ; the GUID for the WIA mini-driver
-HKCR,CLSID\{00000000-0000-0000-0000-000000000000},,,"<Description 
+HKCR,CLSID\{00000000-0000-0000-0000-000000000000},,,"<Description
 of your Web Services scanner WIA device>"
 HKCR,CLSID\{00000000-0000-0000-0000-000000000000}\InProcServer32,,,%11%\YourWIADriver.dll
 HKCR,CLSID\{00000000-0000-0000-0000-000000000000}\InProcServer32,ThreadingModel,,"Both"
 
 [WSDScanDriver.DeviceData]
-Server=local           ; the WIA mini-driver runs on the same 
+Server=local           ; the WIA mini-driver runs on the same
 machine as the client application
 
 [WSDScanDriver.Events]
@@ -135,11 +133,3 @@ ScanToFaxEvent.Desc="Scan To Fax"
 ScanToOCREvent.Desc="Scan To OCR"
 ScanToEmailEvent.Desc="Scan To E-mail"
 ```
-
- 
-
- 
-
-
-
-

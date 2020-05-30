@@ -3,14 +3,14 @@ title: PCIe ルート ポートのデバイス固有データ (_DSD)
 description: 最新のスタンバイおよび PCI ホットプラグのシナリオをサポートするための ACPI _DSD 方法
 ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
 keywords: ACPI、ACPI \_ DSD 方法
-ms.date: 04/10/2018
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a617fed6a852f33bf00663d9b5f45a4344488618
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: d7f9f7c218fe3596b261240a3af8a32a8ffeb4cc
+ms.sourcegitcommit: 985439ba501a870675a8bd6867c4b8944cc002d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223570"
+ms.locfileid: "84225969"
 ---
 # <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI インターフェイス: \_ PCIe ルートポート用のデバイス固有データ (DSD)
 
@@ -73,15 +73,17 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 ## <a name="identifying-internal-pcie-ports-accessible-to-users-and-requiring-dma-protection"></a>ユーザーがアクセスできる内部の PCIe ポートを特定し、DMA による保護を必要とする
 
-この ACPI オブジェクトを使用すると、オペレーティングシステムは、ユーザーが簡単にアクセスできる内部の PCIe 階層 (たとえば、ラッチによってアクセスできるラップトップの M. 2 PCIe スロット) を識別し、OS[カーネル DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)メカニズムによる保護を必要とします。 このオブジェクトは、ルートポートの ACPI デバイススコープに実装する必要があります。 
+この ACPI オブジェクトを使用すると、オペレーティングシステムは、ユーザーが簡単にアクセスできる内部の PCIe 階層 (たとえば、ラッチによってアクセスできるラップトップの M. 2 PCIe スロット) を識別し、OS[カーネル DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)メカニズムによる保護を必要とします。 このオブジェクトは、ルートポートの ACPI デバイススコープに実装する必要があります。
 
-注: 
--   この ACPI オブジェクトを使用した PCI ポートの保護は、Windows 10 バージョン1903以降でのみサポートされています。
--   OS で DSD を解析 \_ し、必要な保護を PCI ポートに適用するためには、システム BIOS/UEFI でカーネル DMA 保護を有効にする必要があります。
--   このポートに接続されているデバイスのドライバーは、DMA の再マップをサポートする必要があります。それ以外の場合、Windows 10 は、 [Dmaguard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)に応じて、ユーザーがログインするか、または無期限に操作するまで、これらのデバイスの動作をブロックします。
+重要な注意事項:
 
+- この ACPI オブジェクトを使用した PCI ポートの保護は、Windows 10 バージョン1903以降でのみサポートされています。
 
-```ASL
+- OS で DSD を解析 \_ し、必要な保護を PCI ポートに適用するためには、システム BIOS/UEFI でカーネル DMA 保護を有効にする必要があります。
+
+- このポートに接続されているデバイスのドライバーは、DMA の再マップをサポートする必要があります。それ以外の場合、Windows 10 は、 [Dmaguard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)に応じて、ユーザーがログインするか、または無期限に操作するまで、これらのデバイスの動作をブロックします。
+
+```asl
 Name (_DSD, Package () {  
 
 ToUUID("70D24161-6DD5-4C9E-8070-705531292865"),
@@ -95,9 +97,9 @@ Package (2) {"UID", 0}, // Property 2: UID of the PCIe port on platform, range i
 
 ## <a name="identifying-pcie-ports-supporting-d3_cold_aux_power-ecn-interface"></a>D3_COLD_AUX_POWER ECN インターフェイスをサポートする PCIe ポートの識別
 
-この ACPI オブジェクトを使用すると、オペレーティングシステムは[D3_COLD_AUX_POWER ECN インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)をサポートする pcie ポートを識別できます。これによって、pcie デバイスは、既定の375mA の上にある D3 の auxilliary の追加機能から要求を行うことができ @3.3V ます。 この DSD を定義する pci ポート/ブリッジは、以前にネゴシエートされた__補助電力値をプログラミングするときに操作が成功することを保証する必要があり__ます。
+この ACPI オブジェクトを使用すると、オペレーティングシステムは[D3_COLD_AUX_POWER ECN インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)をサポートする pcie ポートを識別できます。これにより、pcie デバイスは、既定の375mA の上にある D3 の追加の補助電力を使用して要求することができ @3.3V ます。 この DSD を定義している PCI ポートまたはブリッジは、前にネゴシエートされた補助電力値をプログラミングするときに操作が成功することを保証*する必要があり*ます。
 
-```ASL
+```asl
 Name (_DSD, Package () {
             ToUUID("6B4AD420-8FD3-4364-ACF8-EB94876FD9EB"),
             Package () {
@@ -107,11 +109,10 @@ Name (_DSD, Package () {
 
 ```
 
-
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [Windows での PCI Express ネイティブ コントロールの有効化](enabling-pci-express-native-control.md)
 
-[Thunderbolt™ 3 のカーネル DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+[Thunderbolt icon 3 の Kernel DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
 
 [D3COLD_AUX_POWER_AND_TIMING_INTERFACE 構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)

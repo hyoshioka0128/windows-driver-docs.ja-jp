@@ -2,29 +2,17 @@
 title: カメラのミニドライバーのサンプル
 description: カメラのミニドライバーのサンプル
 ms.assetid: 82ed48e9-2e3e-4386-bb89-03e3c5ff92b0
-ms.date: 04/20/2017
+ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6365defddee916dd0e1cae7362aa08fa6b01ac46
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e1b0e4b8a1f66dbcc7217fa7126c09d145158db0
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63373292"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223520"
 ---
 # <a name="camera-minidriver-sample"></a>カメラのミニドライバーのサンプル
 
+[Wia ドライバーサンプル](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/windows-image-acquisition-wia-driver-samples)の wiadriverex ディレクトリには、デジタル静止カメラ用のサンプルの wia ミニドライバーが含まれています。
 
-
-
-
-Wiadriverex ディレクトリ[WIA ドライバー サンプル](https://go.microsoft.com/fwlink/p/?linkid=256210)デジタル カメラのサンプル WIA ミニドライバーの。
-
-このサンプルでは、カメラ、WIA ユーザー モードのミニドライバーを作成する方法を示します。 ハード ディスク上のディレクトリからイメージを参照して、カメラをシミュレートします。 このサンプル ドライバーは、開発の開始点として使用できますが、ドライバーは、カーネル モード ドライバーを Windows に付属のいずれかでカメラのハードウェアにアクセスする必要があります。
-
- 
-
- 
-
-
-
-
+このサンプルでは、カメラ用の WIA ユーザーモードミニドライバーを記述する方法を示します。 ハードディスク上のディレクトリからイメージを読み取ってカメラをシミュレートします。 このサンプルドライバーは、開発の出発点として使用できますが、ドライバーは、Windows で提供されているカーネルモードドライバーのいずれかを使用してカメラハードウェアにアクセスする必要があります。
