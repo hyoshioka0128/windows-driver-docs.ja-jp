@@ -6,12 +6,12 @@ ms.date: 02/23/2017
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: eacdb18cce223d8274968fa518ff824cefeadbec
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 32a702a78c0ad1dc1ac8131fe017ddd22cc1d531
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "63371458"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153165"
 ---
 # <a name="driver-security-guidance"></a>ドライバーのセキュリティ ガイダンス
 
@@ -46,8 +46,8 @@ ms.locfileid: "63371458"
 <td align="left"><p>このトピックでは、Windows セキュリティ モデルがドライバーにどのように適用されるかを説明します。また、ドライバー作成者がデバイスのセキュリティを向上するために実行する必要があることを説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="use-device-guard-readiness-tool.md" data-raw-source="[Use the Device Guard Readiness Tool to evaluate HVCI driver compatibility](use-device-guard-readiness-tool.md)">Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する</a></p></td>
-<td align="left"><p>このトピックでは、このツールを使用して、ハイパーバイザーで保護されたコード整合性 (HVCI) 環境でドライバーを実行する能力を評価する方法について説明します。 </p></td>
+<td align="left"><p><a href="use-device-guard-readiness-tool.md" data-raw-source="[Evaluate HVCI driver compatibility](use-device-guard-readiness-tool.md)">HVCI ドライバーの互換性の評価</a></p></td>
+<td align="left"><p>このトピックでは、ハイパーバイザーで保護されたコード整合性 (HVCI) 環境での、ドライバーの実行能力を評価する方法について説明します。 </p></td>
 </tr>
 </tr>
 </tbody>
