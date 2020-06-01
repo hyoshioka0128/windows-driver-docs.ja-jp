@@ -10,7 +10,7 @@
           href: uefi-security.md
         - name: 拡張ファームウェア インターフェイス (UEFI)
           href: unified-extensible-firmware-interface.md
-        - name: Device Guard と Credential Guard
+        - name: ハイパーバイザーで保護されたコード整合性 (HVCI)
           href: device-guard-and-credential-guard.md
         - name: 固定された ComBuffer と Windows SMM Security Mitigation Table (WSMT)
           href: fixed-combuffer-and-windows-smm-security-mitigation-table.md

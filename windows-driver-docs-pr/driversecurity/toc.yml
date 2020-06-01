@@ -6,5 +6,5 @@
   href: threat-modeling-for-drivers.md
 - name: ドライバー開発者向けの Windows セキュリティ モデル
   href: windows-security-model.md
-- name: Device Guard Readiness Tool を使用して HVCI ドライバーの互換性を評価する
+- name: HVCI ドライバーの互換性の評価
   href: use-device-guard-readiness-tool.md
