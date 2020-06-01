@@ -78,6 +78,8 @@
       href: creating-a-driver-package.md
     - name: デバイス メタデータ パッケージの作成
       href: creating-a-device-metadata-package.md
+    - name: デバイス ドライバーのための DMA 再マッピングを有効にする
+      href: enabling-dma-remapping-for-device-drivers.md
 - name: ドライバーへの署名
   items:
     - name: ドライバーへの署名
