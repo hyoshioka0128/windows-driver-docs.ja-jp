@@ -2,14 +2,14 @@
 title: ドライバー インストール プロセスが正常に完了したマシンの割合
 description: この測定値は、ドライバーが正常にインストールされたマシンの割合として、30 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2f1868566b73cf4d65204bf302f58979d9f69d
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d90a27a98cdf940469a11066070a0aff0ed00d0f
+ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79083126"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84108607"
 ---
 # <a name="percent-of-machines-where-the-driver-install-process-completes-successfully"></a>ドライバー インストール プロセスが正常に完了したマシンの割合
 
@@ -26,6 +26,8 @@ ms.locfileid: "79083126"
 |**測定基準**|マシンの集計|
 |**最小母集団**|100 台のマシン|
 |**合格基準**|ドライバーが正常にインストールされたマシンが 95% 以上|
+|**コーホートが有効**|はい|
+|**コーホートあたりの最小母集団**|500 台のマシン|
 |**測定 ID**|10042840|
 
 ## <a name="calculation"></a>計算

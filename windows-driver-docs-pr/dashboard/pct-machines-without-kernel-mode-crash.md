@@ -2,14 +2,14 @@
 title: カーネル モード クラッシュなしのマシンの割合
 description: この測定値は、カーネル モード クラッシュが発生しなかったマシンの割合として、14 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49540d0393a8423721ce9255c636c0f6c0ce29fa
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3b1ceb40777b29dc24f6f0a28c5539097c964cd0
+ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71016947"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84108613"
 ---
 # <a name="percent-of-machines-without-a-kernel-mode-crash"></a>カーネル モード クラッシュなしのマシンの割合
 
@@ -26,6 +26,8 @@ ms.locfileid: "71016947"
 |**測定基準**|マシンの集計|
 |**最小母集団**|100 台のマシン|
 |**合格基準**|カーネル モード クラッシュが発生しなかったマシンが 96% 以上|
+|**コーホートが有効**|はい|
+|**コーホートあたりの最小母集団**|500 台のマシン|
 |**測定 ID**|19888712|
 
 ## <a name="calculation"></a>計算

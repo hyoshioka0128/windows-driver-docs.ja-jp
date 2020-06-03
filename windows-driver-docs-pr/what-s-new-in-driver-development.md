@@ -2,14 +2,14 @@
 title: What's new in driver development
 description: このセクションでは、Windows 10 でのドライバー開発に関する新機能について説明します。
 ms.assetid: 5502AAF9-2400-4338-A646-C746B29F9A44
-ms.date: 04/28/2020
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 678be02ff0d40401e88776b1eef8aa09a921c0ee
-ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
+ms.openlocfilehash: 6ff12920674c792ddd23ff9a060c03af2d74f782
+ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83642594"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83851221"
 ---
 # <a name="whats-new-in-driver-development"></a><a name="top"></a>ドライバー開発に関する最新情報
 
@@ -40,6 +40,22 @@ Windows 10 バージョン 2004 では、D3D12 メッシュ シェーダー サ�
 ### <a name="storage-drivers"></a>ストレージ ドライバー
 
 ストレージ ミニポート ドライバーでは、デバイスをリセットする機能など、デバイスの内部状態に関する詳細情報を取得および設定できるようになりました。 まずは、[**IOCTL_STORAGE_GET_DEVICE_INTERNAL_LOG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddstor/ni-ntddstor-ioctl_storage_get_device_internal_log) および [**StorPortHardwareReset**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nf-storport-storporthardwarereset) をご覧ください。
+
+### <a name="windows-debugger"></a>Windows デバッガー
+
+#### <a name="windbg-preview"></a>WinDbg プレビュー
+
+[WinDbg プレビュー](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-using-windbg-preview)の更新により、[WinDbg プレビュー - タイムライン](https://docs.microsoft.com/windows-hardware/drivers/debugger/windbg-timeline-preview)などの新機能がカバーされます。 タイム トラベル タイムラインを使用すると、タイム トラベル コード実行トレースを視覚化できます。
+
+#### <a name="stop-codes"></a>停止コード
+
+- [バグ チェック コード リファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-code-reference2)のトピックの更新、[バグ チェック 0x1A: MEMORY_MANAGEMENT](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1a--memory-management) や [バグ チェック 0xC4: DRIVER_VERIFIER_DETECTED_VIOLATION](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) などのトピックへの新しいパラメーターの追加。
+
+- [バグ チェック 0x1DA: HAL_BLOCKED_PROCESSOR_INTERNAL_ERROR](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1da--hal-blocked-processor-internal-error)、[バグ チェック 0x1A2: WIN32K_CALLOUT_WATCHDOG_BUGCHECK](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x1a2--win32k-callout-watchdog-bugcheck)、および[バグ チェック 0x119: VIDEO_SCHEDULER_INTERNAL_ERROR](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0x119---video-scheduler-internal-error) などの新しい停止コード。
+
+### <a name="driver-security"></a>ドライバーのセキュリティ
+
+BinSkim ツールを使用するための[ドライバーのセキュリティ チェックリスト](https://docs.microsoft.com/windows-hardware/drivers/driversecurity/driver-security-checklist) の更新。
 
 ## <a name="related-topics"></a>関連トピック
 

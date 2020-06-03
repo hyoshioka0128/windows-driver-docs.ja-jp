@@ -5,12 +5,12 @@ ms.assetid: 6CF4111A-C645-40F5-8D45-55F46B3C0740
 ms.topic: article
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 57b45861821e33ac7426dedbf3f940adca4bfd4b
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 6aa376e34cb96f62cdab31785874caa60b5a05ee
+ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "73589234"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153171"
 ---
 # <a name="get-a-code-signing-certificate"></a>コード署名証明書の取得
 
@@ -96,9 +96,9 @@ ms.locfileid: "73589234"
 - Windows 10 では、2015 年 7 月 29 日より後に発行された SHA-1 または SHA-256 証明書を使ってクロス署名されたドライバーは推奨されません。
 - SHA-256 証明書への移行作業について詳しくは [Windows における Authenticode コード署名の強制とタイムスタンプに関するページ](https://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx)をご覧ください。
 
-### <a name="device-guard"></a>Device Guard
+### <a name="windows-defender-application-control"></a>Windows Defender アプリケーション制御
 
-- 企業は、Windows 10 Enterprise edition を使って、ドライバーの署名要件を変更する Device Guard ポリシーを実装することができます。 Device Guard では、企業が定義したコードの整合性ポリシーを提供します。このポリシーは、少なくとも構成証明署名されたドライバーを必要とするように構成できます。 Device Guard について詳しくは、「[Device Guard による証明と法令遵守](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)」をご覧ください。
+- 企業は、Windows 10 Enterprise edition を使って、ドライバーの署名要件を変更するポリシーを実装することができます。 Windows Defender Application Control (WDAC) では、企業が定義したコードの整合性ポリシーを提供します。このポリシーは、少なくとも構成証明署名されたドライバーを必要とするように構成できます。 WDAC の詳細については、「[Windows Defender Application Control のデプロイプロセスの計画と作業の開始](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)」を参照してください。
 
 ### <a name="windows-server"></a>Windows Server
 
@@ -131,6 +131,6 @@ ms.locfileid: "73589234"
 | Windows IoT Enterprise - DG 有効 | \*構成による      | \*構成による          | \*構成による                                                      |
 | Windows IoT Core(1)                | 要 (必須ではない)             | 要 (必須ではない)                 | 要 (2015 年 7 月 29 日以降後に発行された証明書ではクロス署名も機能します) |
 
-\*構成による - Windows 10 Enterprise エディションでは、組織は、カスタム ドライバーの署名要件を定義する Device Guard を使えます。 Device Guard について詳しくは、「[Device Guard による証明と法令遵守](https://docs.microsoft.com/windows/keep-secure/device-guard-certification-and-compliance)」をご覧ください。
+\*構成による - Windows 10 Enterprise エディションでは、組織は、カスタム ドライバーの署名要件を定義する Windows Defender Application Control (WDAC) を使えます。 WDAC の詳細については、「[Windows Defender Application Control のデプロイプロセスの計画と作業の開始](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)」を参照してください。
 
 (1) IoT Core を使って小売製品 (開発目的ではない製品) を構築する製造元には、ドライバーの署名が必要です。 承認済みの証明機関 (CA) の一覧については、「[カーネル モードのコード署名用クロス証明書](https://docs.microsoft.com/windows-hardware/drivers/install/cross-certificates-for-kernel-mode-code-signing)」をご覧ください。 UEFI セキュア ブートが有効な場合、ドライバーは署名されている必要があります。

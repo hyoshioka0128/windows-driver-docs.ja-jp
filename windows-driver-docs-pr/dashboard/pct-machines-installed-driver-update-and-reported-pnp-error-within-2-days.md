@@ -2,14 +2,14 @@
 title: ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
 description: この測定値は、ドライバーが正常にインストールされ、インストールから 2 日以内に PnP エラーが発生したマシンの割合として、30 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 416a0b8984055663d6fbedc8eb9b56b55ca482c5
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: f483456c3305ba18395d2f791542d587081daff5
+ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79083137"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84108605"
 ---
 # <a name="percent-of-machines-that-installed-a-driver-update-and-reported-a-pnp-error-code-within-two-days-of-install"></a>ドライバーの更新プログラムがインストールされ、インストールから 2 日以内に PnP エラー コードが報告されたマシンの割合
 
@@ -26,6 +26,8 @@ ms.locfileid: "79083137"
 |**測定基準**|マシンの集計|
 |**最小母集団**|100 台のマシン|
 |**合格基準**|インストール後に PnP エラーが発生したマシンが 5% 以下|
+|**コーホートが有効**|はい|
+|**コーホートあたりの最小母集団**|500 台のマシン|
 |**測定 ID**|10042784|
 
 ## <a name="calculation"></a>計算

@@ -2,14 +2,14 @@
 title: ライブ カーネル ダンプなしのマシンの割合
 description: この測定値は、ライブ カーネル ダンプが発生しなかったマシンの割合として、14 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d02ee5456656e9d39f5c49cb93301f3a9958e4c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d39be63c246f232c0f917a919a9dac06517e8c56
+ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017017"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84108609"
 ---
 # <a name="percent-of-machines-without-a-live-kernel-dump"></a>ライブ カーネル ダンプなしのマシンの割合
 
@@ -26,6 +26,8 @@ ms.locfileid: "71017017"
 |**測定基準**|マシンの集計|
 |**最小母集団**|100 台のマシン|
 |**合格基準**|LKD が発生しなかったマシンが 90% 以上|
+|**コーホートが有効**|はい|
+|**コーホートあたりの最小母集団**|500 台のマシン|
 |**測定 ID**|19888731|
 
 ## <a name="calculation"></a>計算
