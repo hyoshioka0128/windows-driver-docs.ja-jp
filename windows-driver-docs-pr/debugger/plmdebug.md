@@ -1,9 +1,9 @@
 ---
 title: PLMDebug
-description: PLMDebug.exe は、Windows デバッガーを使用して、プロセスのライフ サイクル管理 (PLM) を実行している Windows アプリをデバッグすることができるツールです。
+description: PLMDebug は、Windows デバッガーを使用して、プロセスライフサイクル管理 (PLM) で実行される Windows アプリをデバッグできるツールです。
 ms.assetid: 68BE8F5D-6425-43E2-B5BC-C1D35614AB32
 keywords:
-- デバッグ PLMDebug Windows
+- PLMDebug Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,25 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fab398b359d46a8c2147c2d3d67994a236ee4f52
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 80b57a1136d17374eca7ef24edf3d2b80da6d73d
+ms.sourcegitcommit: 9d57e0d7e4e2b3f5f564fba99c8d71a46f73e7e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63387935"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84318282"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
 
-PLMDebug.exe は、Windows デバッガーを使用して、プロセスのライフ サイクル管理 (PLM) を実行している Windows アプリをデバッグすることができるツールです。 PLMDebug、中断、再開、および Windows アプリを終了して手動で制御するができます。
+PLMDebug は、Windows デバッガーを使用して、プロセスライフサイクル管理 (PLM) で実行される Windows アプリをデバッグできるツールです。 PLMDebug を使用すると、Windows アプリの中断、再開、および終了を手動で制御できます。
 
-**ヒント:**   Windows 10 バージョン 1607 以降では、UWP アプリをデバッグする .createpackageapp など、UWP のコマンドを使用することができます。 詳細については、次を参照してください。 [WinDbg を使用して UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)します。
+**ヒント**   Windows 10 バージョン1607以降では、createpackageapp などの UWP コマンドを使用して UWP アプリをデバッグできます。 詳細については[、「WinDbg を使用した UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)」を参照してください。
 
  
 
-**PLMDebug の入手先**
+**PLMDebug を取得する場所**
 
-含まれている PLMDebug.exe[ツールを Windows のデバッグ](index.md)します。
+PLMDebug は、 [Windows 用のデバッグツール](index.md)に含まれています。
 
 ```console
 plmdebug /query [Package]
@@ -42,69 +42,71 @@ plmdebug /suspend Package
 plmdebug /resume Package
 plmdebug /disableDebug Package
 plmdebug /enumerateBgTasks Package
-plmdebug /activateBgTaskTaskId
+plmdebug /activateBgTaskTaskId "{TaskID}"
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______Package"></span><span id="_______package"></span><span id="_______PACKAGE"></span> *パッケージ*  
-パッケージまたは実行中のプロセスの ID の完全名。
+<span id="_______Package"></span><span id="_______package"></span><span id="_______PACKAGE"></span>*パッケージ*  
+パッケージの完全な名前、または実行中のプロセスの ID。
 
-<span id="_______DebuggerCommandLine"></span><span id="_______debuggercommandline"></span><span id="_______DEBUGGERCOMMANDLINE"></span> *DebuggerCommandLine*  
-デバッガーを開くコマンドラインです。 コマンド ライン デバッガーへの完全パスを含める必要があります。 パスに空白がある場合は、引用符で囲む必要があります。 コマンドラインでは、引数を含めることもできます。 例をいくつか紹介します。
+<span id="_______DebuggerCommandLine"></span><span id="_______debuggercommandline"></span><span id="_______DEBUGGERCOMMANDLINE"></span>*デバッガーのコマンドライン*  
+デバッガーを開くためのコマンドライン。 コマンドラインには、デバッガーへの完全パスが含まれている必要があります。 パスに空白が含まれている場合は、引用符で囲む必要があります。 コマンドラインに引数を含めることもできます。 次に例をいくつか示します。
 
 `"C:\Program Files (x86)\Windows Kits\8.0\Debuggers\x64\WinDbg.exe"`
 
 `"\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"`
 
-<span id="________query_Package"></span><span id="________query_package"></span><span id="________QUERY_PACKAGE"></span> **/query** \[*Package*\]  
-パッケージのインストールの実行中の状態を表示します。 場合*パッケージ*が指定されていない、このコマンドは、インストールされているすべてのパッケージの実行中の状態を表示します。
+<span id="________query_Package"></span><span id="________query_package"></span><span id="________QUERY_PACKAGE"></span>**/query** \[*パッケージ*\]  
+インストールされているパッケージの実行状態を表示します。 *Package*が指定されていない場合、このコマンドは、インストールされているすべてのパッケージの実行状態を表示します。
 
-<span id="________enableDebug_Package_DebuggerCommandLine"></span><span id="________enabledebug_package_debuggercommandline"></span><span id="________ENABLEDEBUG_PACKAGE_DEBUGGERCOMMANDLINE"></span> **/enableDebug** *Package* \[*DebuggerCommandLine*\]  
-パッケージのデバッグの参照カウントをインクリメントします。 0 以外のデバッグがある場合は、パッケージは PLM ポリシーから除外されて参照カウントします。 呼び出しごとに **/enableDebug**への呼び出しと組み合わせて使用する必要があります/**disableDebug**します。 指定した場合*DebuggerCommandLine*、パッケージからのすべてのアプリを起動するときに、デバッガーをアタッチします。
+<span id="________enableDebug_Package_DebuggerCommandLine"></span><span id="________enabledebug_package_debuggercommandline"></span><span id="________ENABLEDEBUG_PACKAGE_DEBUGGERCOMMANDLINE"></span>**/enabledebug** *パッケージ* \[ *デバッガーコマンドライン*\]  
+パッケージのデバッグ参照カウントをインクリメントします。 デバッグ参照カウントが0以外の場合、パッケージは PLM ポリシーから除外されます。 / **Enabledebug**の各呼び出しは、/**disabledebug**の呼び出しと組み合わせて使用する必要があります。 デバッガーの*コマンドライン*を指定すると、パッケージからアプリを起動するときにデバッガーがアタッチされます。
 
-<span id="________terminate_Package"></span><span id="________terminate_package"></span><span id="________TERMINATE_PACKAGE"></span> **/terminate** *パッケージ*  
+<span id="________terminate_Package"></span><span id="________terminate_package"></span><span id="________TERMINATE_PACKAGE"></span>**/終了***パッケージ*  
 パッケージを終了します。
 
-<span id="________forceTerminate_Package"></span><span id="________forceterminate_package"></span><span id="________FORCETERMINATE_PACKAGE"></span> **/forceTerminate** *パッケージ*  
-パッケージの強制的に終了します。
+<span id="________forceTerminate_Package"></span><span id="________forceterminate_package"></span><span id="________FORCETERMINATE_PACKAGE"></span>**/ForceTerminate** *パッケージ*  
+パッケージを強制的に終了します。
 
-<span id="________cleanTerminate_Package"></span><span id="________cleanterminate_package"></span><span id="________CLEANTERMINATE_PACKAGE"></span> **/cleanTerminate** *Package*  
-中断し、パッケージを終了します。
+<span id="________cleanTerminate_Package"></span><span id="________cleanterminate_package"></span><span id="________CLEANTERMINATE_PACKAGE"></span>**/CleanTerminate** *パッケージ*  
+パッケージを中断してから終了します。
 
-<span id="________suspend_Package"></span><span id="________suspend_package"></span><span id="________SUSPEND_PACKAGE"></span> **/suspend** *Package*  
+<span id="________suspend_Package"></span><span id="________suspend_package"></span><span id="________SUSPEND_PACKAGE"></span>**/中断***パッケージ*  
 パッケージを中断します。
 
-<span id="________resume_Package"></span><span id="________resume_package"></span><span id="________RESUME_PACKAGE"></span> **/再開***パッケージ*  
+<span id="________resume_Package"></span><span id="________resume_package"></span><span id="________RESUME_PACKAGE"></span>**/resume** *パッケージ*の再開 (_r)  
 パッケージを再開します。
 
-<span id="________disableDebug_Package"></span><span id="________disabledebug_package"></span><span id="________DISABLEDEBUG_PACKAGE"></span> **/disableDebug** *Package*  
-パッケージのデバッグの参照カウントをデクリメントします。
+<span id="________disableDebug_Package"></span><span id="________disabledebug_package"></span><span id="________DISABLEDEBUG_PACKAGE"></span>**/disabledebug** *パッケージ*  
+パッケージのデバッグ参照カウントをデクリメントします。
 
-<span id="________enumerateBgTasksPackage"></span><span id="________enumeratebgtaskspackage"></span><span id="________ENUMERATEBGTASKSPACKAGE"></span> * */enumerateBgTasks * * * パッケージ*  
-パッケージのバック グラウンド タスクの id を列挙します。
+<span id="________enumerateBgTasksPackage"></span><span id="________enumeratebgtaskspackage"></span><span id="________ENUMERATEBGTASKSPACKAGE"></span>**/EnumerateBgTasks** *パッケージ*  
+パッケージのバックグラウンドタスク id を列挙します。
 
-<span id="________activateBgTaskTaskId"></span><span id="________activatebgtasktaskid"></span><span id="________ACTIVATEBGTASKTASKID"></span> * */activateBgTask***TaskId*  
-バック グラウンド タスクをアクティブにします。 PLMDebug を使用してすべてのバック グラウンド タスクをアクティブにできることに注意してください。
+<span id="________activateBgTaskTaskId"></span><span id="________activatebgtasktaskid"></span><span id="________ACTIVATEBGTASKTASKID"></span>**/activateBgTask**"{*TaskId*}"  
+バックグラウンドタスクをアクティブにします。 PLMDebug を使用してすべてのバックグラウンドタスクをアクティブにできるわけではないことに注意してください。 TaskID は、中かっこと引用符で囲む必要があります。 次に例を示します。
 
-<a name="remarks"></a>注釈
+`plmdebug.exe /activatebgtask "{29421c11-1e1a-47a4-9121-949ce9e25456}"`
+
+<a name="remarks"></a>解説
 -------
 
-呼び出す必要があります**plmdebug/enableDebug**中断のいずれかを呼び出す前に、再開、または関数を終了します。
+中断、再開、または終了の各関数を呼び出す前に、 **plmdebug/enabledebug**を呼び出す必要があります。
 
-メソッドを呼び出して、PLMDebug ツール、 [IPackageDebugSettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)します。 このインターフェイスでは、手動プロセスのライフ サイクル管理、アプリを制御することができます。 このインターフェイスを通じて、その結果、このツールを使用) は、中断して再開、および Windows アプリを終了できます。 注意のメソッド、 [IPackageDebugSettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)パッケージ全体に適用されます。 中断、再開、および、パッケージでアプリを実行中のすべてに影響を終了します。
+PLMDebug ツールは、 [Ipackagedebugsettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)のメソッドを呼び出します。 このインターフェイスを使用すると、アプリのプロセスライフサイクル管理を手動で制御できます。 このインターフェイスを使用して、Windows アプリを中断、再開、および終了することができます (その結果、このツールを使用します)。 [Ipackagedebugsettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)のメソッドは、パッケージ全体に適用されることに注意してください。 中断、再開、および終了は、パッケージ内で現在実行中のすべてのアプリに影響します。
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 **例 1**
 
-**アプリを起動するときにデバッガーをアタッチします。**
+**アプリが起動されたときにデバッガーをアタッチする**
 
-MyApp という名前のパッケージでは MyApp という名前のアプリがあるとします\_1.0.0.0\_x64\_\_tnq5r49etfg3c します。 完全な名前を表示して、インストールされているすべてのパッケージの状態を実行して、パッケージがインストールされていることを確認します。 コマンド プロンプト ウィンドウで、次のコマンドを入力します。
+Myapp という名前のアプリがあるとします。これは、MyApp 1.0.0.0 x64 tnq5r49etfg3c という名前のパッケージに含まれてい \_ \_ \_ \_ ます。 完全な名前を表示し、インストールされているすべてのパッケージを実行して、パッケージがインストールされていることを確認します。 コマンドプロンプトウィンドウで、次のコマンドを入力します。
 
-**plmdebug /query**
+**plmdebug/query**
 
 ```console
 Package full name: 1daa103b-74e1-426d-8193-b6bc7ed66fed_1.0.0.0_x86__tnq5r49etfg3c
@@ -118,58 +120,81 @@ Package state: Terminated
 ...
 ```
 
-パッケージのデバッグの参照カウントをインクリメントし、WinDbg をアプリが起動するときにアタッチすることを指定します。
+パッケージのデバッグ参照カウントをインクリメントし、アプリの起動時に WinDbg をアタッチするように指定します。
 
-**plmdebug /enableDebug MyApp\_1.0.0.0\_x64\_\_tnq5r49etfg3c "C:\\Program Files (x86)\\Windows Kits\\8.0\\Debuggers\\x64\\WinDbg.exe"**
+**plmdebug/enabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c "C: \\ Program Files (x86) \\ Windows kit \\ 8.0 \\ デバッガー \\ x64 \\ WinDbg .exe"**
 
-アプリを起動するときに、WinDbg はアタッチし、分割します。
+アプリを起動すると、WinDbg がアタッチされ、中断されます。
 
-デバッグが完了したら、デバッガーをデタッチします。 パッケージのデバッグの参照カウントをデクリメントします。
+デバッグが完了したら、デバッガーをデタッチします。 次に、パッケージのデバッグ参照カウントをデクリメントします。
 
-**plmdebug/disableDebug MyApp\_1.0.0.0\_x64\_\_tnq5r49etfg3c**
+**plmdebug/disabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
 **例 2**
 
-**既に実行されているアプリにデバッガーをアタッチします。**
+**既に実行中のアプリにデバッガーをアタッチする**
 
-既に実行中の MyApp に WinDbg をアタッチするとします。 WinDbg での**ファイル**] メニューの [選択**プロセスにアタッチする**します。 MyApp のプロセス ID に注意してください。 たとえば、プロセス ID が 4816 とします。
+既に実行されているである、MyApp に WinDbg をアタッチするとします。 [WinDbg] の [**ファイル**] メニューで、[**プロセスにアタッチ**] を選択します。 MyApp のプロセス ID をメモしておきます。 たとえば、プロセス ID が4816であるとします。
 
-MyApp を含むパッケージのデバッグの参照カウントをインクリメントします。
+MyApp を含むパッケージのデバッグ参照カウントをインクリメントします。
 
-**plmdebug/enableDebug 4816**
+**plmdebug/enabledebug 4816**
 
-、WinDbg で、**プロセスにアタッチ** ダイアログ ボックスでは、プロセス 4816、を選択し、クリックして**OK**します。 WinDbg は、MyApp に接続されます。
+[WinDbg] の [**プロセスにアタッチ**] ダイアログボックスで、[プロセス 4816] を選択し、[ **OK**] をクリックします。 WinDbg が MyApp にアタッチされます。
 
-MyApp のデバッグが完了したら、デバッガーをデタッチします。 パッケージのデバッグの参照カウントをデクリメントします。
+MyApp のデバッグが終了したら、デバッガーをデタッチします。 次に、パッケージのデバッグ参照カウントをデクリメントします。
 
-**plmdebug /disableDebug 4816**
+**plmdebug/disabledebug 4816**
 
 **例 3**
 
-**手動で中断し、アプリの再開**
+**アプリを手動で中断して再開する**
 
-手動で中断し、アプリを再開するとします。 最初に、アプリを含むパッケージのデバッグの参照カウントをインクリメントします。
+アプリを手動で中断して再開するとします。 最初に、アプリを含むパッケージのデバッグ参照カウントをインクリメントします。
 
-**plmdebug/enableDebug MyApp\_1.0.0.0\_x64\_\_tnq5r49etfg3c**
+**plmdebug/enabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
-パッケージを中断します。 アプリの中断ハンドラーが呼び出され、これは、デバッグに役立ちます。
+パッケージを中断します。 アプリの中断ハンドラーが呼び出されます。これはデバッグに役立ちます。
 
-**plmdebug MyApp の中断/\_1.0.0.0\_x64\_\_tnq5r49etfg3c**
+**plmdebug/suspend MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
 デバッグが完了したら、パッケージを再開します。
 
-**plmdebug/resume MyApp\_1.0.0.0\_x64\_\_tnq5r49etfg3c**
+**plmdebug/resume MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
-最後に、パッケージのデバッグの参照カウントをデクリメントします。
+最後に、パッケージのデバッグ参照カウントをデクリメントします。
 
-**plmdebug/disableDebug MyApp\_1.0.0.0\_x64\_\_tnq5r49etfg3c**
+**plmdebug/disabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+**例 4**
+
+**バックグラウンドタスクを手動でアクティブ化する**
+
+デバッグのためにバックグラウンドタスクを手動でアクティブ化するとします。 登録されているバックグラウンドタスクの一覧を照会して、plmdebug でアクティブ化することができます。
+
+最初に、登録されたバックグラウンドタスクのセットを照会します。
+
+**plmdebug/enumeratebgtasks MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
+```console
+Package full name is MyApp_1.0.0.0_x64__tnq5r49etfg3c.
+Background Tasks:
+SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
+```
+
+タスクがアクティブになることを保証するには、まずデバッグモードを有効にします。 たとえば、TimeTrigger によってアクティブ化されたタスクのような便宜的なタスクは、システムがバッテリセーバーにある間はアクティブになりません。 パッケージでデバッグモードを有効にすると、アクティブ化を妨げるポリシーがシステムによって無視されます。
+
+**plmdebug/enabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
+
+登録 GUID を使用して、目的のタスクをアクティブ化します。
+
+**plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
+
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[トリガーする方法を中断、再開、およびバック グラウンド イベントを Windows アプリ](https://go.microsoft.com/fwlink/p/?LinkID=267916)
+[Windows アプリで中断イベント、再開イベント、およびバックグラウンドイベントをトリガーする方法](https://go.microsoft.com/fwlink/p/?LinkID=267916)
 
-[Windows 用デバッグ ツールに含まれるツール](extra-tools.md)
+[Debugging Tools for Windows に含まれるツール](extra-tools.md)
 
  
 
