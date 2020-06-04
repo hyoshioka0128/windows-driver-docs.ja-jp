@@ -2,14 +2,14 @@
 title: WinDbg の概要 (カーネル モード)
 description: このトピックでは、WinDbg をカーネルモードのデバッガーとして使用する際に役立つ実践的な演習について説明します。
 ms.assetid: 1B61591F-0D48-4FBD-B242-68BB90D27FAF
-ms.date: 02/20/2020
+ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c6ae75d07f3b62ebf64bb45b88138d95d64ecc06
-ms.sourcegitcommit: 959841f2404a4729b497ceebaf32915f5987cd6f
+ms.openlocfilehash: 2a2ea99d6be59ed31ad8b9fb46c7ddd00c8dae06
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84160312"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84336393"
 ---
 # <a name="getting-started-with-windbg-kernel-mode"></a>WinDbg の概要 (カーネル モード)
 
@@ -405,7 +405,7 @@ Hyper-v 仮想マシンへのデバッガーの接続の詳細については、
 - [bc (ブレークポイントのクリア)](bc--breakpoint-clear-.md)
 - [**デバッグ**] メニューの [**ステップイン**] コマンド (**F11**)
 - [! プロセス](-process.md)
-- [!thread](-thread.md)
+- [! スレッド](-thread.md)
 - [!devnode](-devnode.md)
 - [!devstack](-devstack.md)
 - [!drvobj](-drvobj.md)

@@ -3,48 +3,48 @@ title: システム定義のデバイス プロパティ
 description: システム定義のデバイス プロパティ
 ms.assetid: 9d823a9f-0802-4e92-bf94-abb5b0e7b9ee
 keywords:
-- システム定義のデバイス プロパティ、WDK のデバイスのインストール
+- デバイスのプロパティ WDK デバイスのインストール、システム定義
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: dfa4ae50e99c87c9bbffc4b79125d88f8de92b28
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ca583ca5242add42be6d73c56321d1d2622396b4
+ms.sourcegitcommit: a386cf5ac5a157dfe1041e7c23b6e70a33ca2704
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385863"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330060"
 ---
 # <a name="system-defined-device-properties"></a>システム定義のデバイス プロパティ
 
 
-Windows Vista および Windows での以降のバージョンで、[統一されたデバイス プロパティのモデル](unified-device-property-model--windows-vista-and-later-.md)構成またはデバイスのインスタンスの操作の特性を示すシステム定義のプロパティをサポートしている[デバイス セットアップ クラス](device-setup-classes.md)、[デバイス インターフェイス クラス](device-interface-classes.md)、およびデバイスのインターフェイス。 によって表される各プロパティを[プロパティのキー](property-keys.md)、これはプロパティのカテゴリおよびプロパティの識別子を識別する GUID 値です。 システム定義のプロパティ、主要なカテゴリは、システム専用として予約されています。
+Windows Vista 以降のバージョンの Windows では、デバイスインスタンス、[デバイスセットアップクラス](device-setup-classes.md)、[デバイスインターフェイスクラス](device-interface-classes.md)、デバイスインターフェイスの構成や操作を特徴とするシステム定義のプロパティが[統合デバイスプロパティモデル](unified-device-property-model--windows-vista-and-later-.md)によってサポートされています。 各プロパティはプロパティ[キー](property-keys.md)によって表されます。これは、プロパティのカテゴリとプロパティ識別子を識別する GUID 値です。 システム定義のプロパティのキーカテゴリは、システムでのみ使用するために予約されています。
 
-次のシステム定義のデバイス プロパティのキーが定義されている*Devpkey.h*:
+次のシステム定義のデバイスプロパティキーは、 *Devpkey*で定義されています。
 
--   コンポーネントの名前を表す DEVPKEY_NAME プロパティのキー。 DEVPKEY_NAME プロパティの値を使用して、エンドユーザーにコンポーネントを識別します。 Windows の DEVPKEY_NAME プロパティをサポートする[**デバイス インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-instance-)、 [**デバイス セットアップ クラス**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-setup-class-)、および[ **デバイス インターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-interface-)します。
+-   コンポーネントの名前を表す DEVPKEY_NAME プロパティキーです。 コンポーネントをエンドユーザーに識別には、DEVPKEY_NAME プロパティの値を使用します。 Windows では、[**デバイスインスタンス**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-instance-)、[**デバイスセットアップクラス**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-setup-class-)、[**デバイスインターフェイス**](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-name--device-interface-)の DEVPKEY_NAME プロパティがサポートされています。
 
--   プロパティのキーを表す、 [SPDRP_Xxx 識別子に対応するデバイス インスタンス プロパティ](https://docs.microsoft.com/previous-versions/ff541334(v=vs.85))します。 (、SPDRP_*Xxx*で識別子が定義されている*Setupapi.h*)。
+-   [SPDRP_Xxx の識別子に対応するデバイスインスタンスのプロパティ](https://docs.microsoft.com/previous-versions/ff541334(v=vs.85))を表すプロパティキー。 (SPDRP_*Xxx*識別子は、 *setupapi.log*で定義されています)。
 
--   デバイスを表すプロパティのキーのインスタンスのプロパティを対応する SPDRP_ を持たない*Xxx*識別子。 これには、次のデータが含まれます。
+-   対応する SPDRP_*Xxx*識別子を持たないデバイスインスタンスプロパティを表すプロパティキー。 これには、次の内容が含まれます。
 
-    [デバイスの状態および問題のプロパティ](https://docs.microsoft.com/previous-versions/ff542254(v=vs.85))
+    [デバイスの状態と問題のプロパティ](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-the-status-and-problem-code-for-a-device-instance)
 
-    [デバイスのリレーション プロパティ](https://docs.microsoft.com/previous-versions/ff541498(v=vs.85))親デバイス、デバイスの子、兄弟デバイスなど、
+    [デバイスの関係のプロパティ](https://docs.microsoft.com/previous-versions/ff541498(v=vs.85))(親デバイス、子デバイス、兄弟デバイスなど)
 
-    [デバイス ドライバーのプロパティ](https://docs.microsoft.com/previous-versions/ff541205(v=vs.85))
+    [デバイスドライバーのプロパティ](https://docs.microsoft.com/previous-versions/ff541205(v=vs.85))
 
-    [デバイス ドライバ パッケージのプロパティ](https://docs.microsoft.com/previous-versions/ff541200(v=vs.85))
+    [デバイスドライバーパッケージのプロパティ](https://docs.microsoft.com/previous-versions/ff541200(v=vs.85))
 
-    [その他の他のデバイスのプロパティ](https://docs.microsoft.com/previous-versions/ff549289(v=vs.85))
+    [その他のデバイスのプロパティ](https://docs.microsoft.com/previous-versions/ff549289(v=vs.85))
 
--   プロパティのキーを表す[デバイス セットアップ クラスのプロパティ](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))SPCRP_Xxx 識別子に対応しています。 (で SPCRP_Xxx 識別子が定義されている*Setupapi.h*)。
+-   SPCRP_Xxx の識別子に対応する[デバイスセットアップクラスのプロパティ](https://docs.microsoft.com/previous-versions/ff542239(v=vs.85))を表すプロパティキー。 (SPCRP_Xxx 識別子は、 *setupapi.log*で定義されています)。
 
--   対応する SPCRP_Xxx 識別子がないデバイス セットアップ クラスのプロパティを表すプロパティのキー。
+-   対応する SPCRP_Xxx 識別子を持たないデバイスセットアップクラスのプロパティを表すプロパティキー。
 
--   プロパティのキーを表す[デバイス インターフェイスのクラス プロパティ](https://docs.microsoft.com/previous-versions/ff541406(v=vs.85))します。
+-   [デバイスインターフェイスクラスのプロパティ](https://docs.microsoft.com/previous-versions/ff541406(v=vs.85))を表すプロパティキー。
 
--   プロパティのキーを表す[デバイス インターフェイスのプロパティ](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))します。
+-   [デバイスインターフェイスのプロパティ](https://docs.microsoft.com/previous-versions/ff541409(v=vs.85))を表すプロパティキー。
 
-カスタムのデバイスのプロパティを作成する方法については、次を参照してください。[カスタム デバイス プロパティの作成](creating-custom-device-properties.md)です。
+カスタムデバイスプロパティを作成する方法の詳細については、「[カスタムデバイスプロパティの作成](creating-custom-device-properties.md)」を参照してください。
 
  
 

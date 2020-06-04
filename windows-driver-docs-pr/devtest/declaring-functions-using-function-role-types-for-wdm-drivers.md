@@ -4,19 +4,21 @@ description: WDM ドライバーの関数役割型を使用した関数の宣言
 ms.assetid: 3260b53e-82be-4dbc-8ac5-d0e52de77f9d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 52a42d75ee0447ce0fc250ead2afb40065feaa9e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 8710aff79de9d8772229a6b3b38c8b2efeb07f16
+ms.sourcegitcommit: a386cf5ac5a157dfe1041e7c23b6e70a33ca2704
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840285"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330062"
 ---
 # <a name="declaring-functions-using-function-role-types-for-wdm-drivers"></a>WDM ドライバーの関数役割型を使用した関数の宣言
 
+> [!NOTE]
+> Windows 10 バージョン2004以降、[スタティックドライバー検証ツール](https://review.docs.microsoft.com/en-us/windows-hardware/drivers/devtest/static-driver-verifier)(sdv) では、WDM ドライバーのディスパッチルーチンのロールの種類を識別するための注釈が不要になりました。  このページの「*基本および高度な初期化*」セクションのガイダンスに従ってください。
 
 WDM ドライバーを分析するときにドライバーのエントリポイントについて通知するには、関数ロール型宣言を使用して関数を宣言する必要があります。 関数ロールの種類は、Wdm で定義されています。 WDM ドライバーの*driverentry*ルーチンの各エントリポイントは、対応するロールの種類を指定して宣言する必要があります。 ロールの種類は、WDM ドライバーで認識されたエントリポイントに対応する、定義済みの typedef です。
 
-たとえば、 *CsampUnload*というドライバーの[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンの関数ロール型の宣言を作成するには、定義済みの typedef ドライバー\_アンロードロールの種類の宣言を使用します。 関数の役割の型の宣言は、関数定義の前に記述する必要があります。
+たとえば、 *CsampUnload*というドライバーの[**アンロード**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-driver_unload)ルーチンの関数ロール型の宣言を作成するには、定義済みの typedef ドライバーのアンロードロールの種類の宣言を使用し \_ ます。 関数の役割の型の宣言は、関数定義の前に記述する必要があります。
 
 ```
 DRIVER_UNLOAD CsampUnload;
@@ -66,8 +68,8 @@ SDV は、次の表に示すエントリポイントの種類を認識します�
 </tr>
 <tr class="odd">
 <td align="left"><p></p>
-<strong><em>Dispatch_type</em>(</strong> <em>type</em> <strong>)</strong> DRIVER_DISPATCH</td>
-<td align="left"><p>ドライバーによって使用されるディスパッチルーチン。 「<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-dispatch-routines" data-raw-source="[Writing Dispatch Routines](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-dispatch-routines)">ディスパッチルーチンの記述</a>」を参照してください。 ドライバーエントリポイントを指定するには、  <strong><em>Dispatch_type</em>(</strong><em>型</em><strong>)</strong>注釈を DRIVER_DISPATCH role 型宣言と組み合わせて使用する必要があります。</p></td>
+<strong><em>Dispatch_type</em>(</strong> <em>型</em> <strong>)</strong> DRIVER_DISPATCH</td>
+<td align="left"><p>ドライバーによって使用されるディスパッチルーチン。 「<a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-dispatch-routines" data-raw-source="[Writing Dispatch Routines](https://docs.microsoft.com/windows-hardware/drivers/kernel/writing-dispatch-routines)">ディスパッチルーチンの記述</a>」を参照してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>IO_COMPLETION_ROUTINE</p></td>
@@ -82,7 +84,7 @@ SDV は、次の表に示すエントリポイントの種類を認識します�
 <tr class="even">
 <td align="left"><p>IO_DPC_ROUTINE</p></td>
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"><em>DpcForIsr</em></a></p>
-<p>DpcForIsr ルーチンは、 <em>Io Edpcrequest</em>を呼び出し、関数ポインターを2番目のパラメーターとして<em>DpcForIsr</em>ルーチンに渡すことによって登録されます。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"></a> DPC をキューに接続するには、同じ DPC オブジェクトを使用して、ISR ルーチンから<em>IoQueueDpc</em>を呼び出します。</p></td>
+<p>DpcForIsr ルーチンは、 <em>Io Edpcrequest</em>を呼び出し、関数ポインターを2番目のパラメーターとして<em>DpcForIsr</em>ルーチンに渡すことによって登録されます。 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine" data-raw-source="[&lt;em&gt;DpcForIsr&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_dpc_routine)"><em>DpcForIsr</em></a> DPC をキューに接続するには、同じ DPC オブジェクトを使用して、ISR ルーチンから<em>IoQueueDpc</em>を呼び出します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>KDEFERRED_ROUTINE</p></td>
@@ -100,7 +102,7 @@ SDV は、次の表に示すエントリポイントの種類を認識します�
 </tr>
 <tr class="even">
 <td align="left"><p>WORKER_THREAD_ROUTINE</p></td>
-<td align="left"><p><em>ルーチン</em></p>
+<td align="left"><p><em>ルーチンによって返される値</em></p>
 <p><em>ルーチン</em>は、 <a href="https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl" data-raw-source="[&lt;strong&gt;ExInitializeWorkItem&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/kernel/mmcreatemdl)"><strong>exinitializeworkitem</strong></a>関数の2番目のパラメーターで指定されるコールバックルーチンです。</p>
 <p><em>ルーチン</em>は、ドライバーが<strong>exqueueworkitem</strong>を呼び出して作業項目をシステムキューに追加する場合にのみ、このように宣言する必要があります。</p></td>
 </tr>
@@ -111,83 +113,39 @@ SDV は、次の表に示すエントリポイントの種類を認識します�
 
 ### <a name="span-idannotating_driver_dispatch_routinesspanspan-idannotating_driver_dispatch_routinesspandeclaring-driver-dispatch-routines"></a><span id="annotating_driver_dispatch_routines"></span><span id="ANNOTATING_DRIVER_DISPATCH_ROUTINES"></span>ドライバーディスパッチルーチンの宣言
 
-ディスパッチルーチンの関数ロール型の宣言には、追加情報が必要です。 主要な IRP 関数コードを提供するディスパッチルーチンの宣言で、注釈 **\_ディスパッチ\_型\_(** <em>型</em> **)** を使用します。 この*型*は、主な i/o 関数コードです (たとえば、IRP\_MJ\_CREATE、IRP\_MJ\_CLOSE、IRP\_MJ\_システム\_コントロール)。
+Windows 10 バージョン2004以降では、WDM ドライバーの Driverobject ルーチンの DriverObject->MajorFunction テーブルの初期化に基づいて、ディスパッチルーチンの関数ロール型の宣言が IRP カテゴリに自動的に調整されます。  
 
-ドライバーのディスパッチルーチンを宣言する方法の例については、キャンセルサンプルドライバー (Cancel) のソースコードを参照してください。 ドライバーのヘッダーファイル (Cancel. h) には、 *CsampCleanup*の関数ロール型宣言があります。これは、IRP\_MJ\_クリーンアップ i/o 関数コードを処理するドライバーディスパッチルーチンです。 **\_ディスパッチ\_type\_ (** <em>型</em> **)** 注釈は、ドライバー\_ディスパッチロールの種類の宣言の前にあります。
+ドライバー Foo は、SDV に準拠するために、基本または高度な宣言のスタイルを使用して、ロールの宣言を行う必要があります。  
 
-*CsampCleanup*ルーチンは次のように宣言されます。
+#### <a name="basic-and-advanced-initializations"></a>基本初期化と高度な初期化
 
-```
-_Dispatch_type_(IRP_MJ_CLEANUP)
-DRIVER_DISPATCH CsampCleanup;
-```
-
-Cancel サンプルドライバーには、IRP\_MJ\_CREATE と IRP\_MJ\_CLOSE i/o 関数コードの両方を処理するドライバーディスパッチルーチン*CsampCreateClose*もあります。 *CsampCreateClose*ルーチンは、Cancel. h で宣言されています。 このルーチンは2つの i/o 関数コードを処理するので、ドライバー\_ディスパッチロールの種類の宣言に加えて、2つの **\_ディスパッチ\_型\_** 注釈を必要とします。
+基本スタイルは次の例のようになります (ディスパッチルーチン名 FooCreate と FooCleanup は単純な例であり、適切な名前を使用できます)。
 
 ```
-_Dispatch_type_(IRP_MJ_CREATE)
-_Dispatch_type_(IRP_MJ_CLOSE)
-DRIVER_DISPATCH CsampCreateClose;
+DriverObject->MajorFunction[IRP_MJ_CREATE] = FooCreate; //Basic style
+DriverObject->MajorFunction[IRP_MJ_CLEANUP] = FooCleanup;
 ```
 
-フィルタードライバーに、IRP\_MJ\_CREATE、IRP\_MJ\_CLOSE、IRP\_MJ\_CLEANUP、および IRP\_MJ\_デバイスを処理する、 *FilterDispatchIo*というドライバーディスパッチルーチンがあるとします。I/o 関数コードを制御します。
-
-*FilterDispatchIo*ルーチンは、次のように resource.h で宣言されています。
+必要なリストを短縮するために、より高度な方法を取ることができます。  複数の IRP カテゴリに対して同じディスパッチルーチンが使用されていますが、ドライバーは次のように2つの初期化をエンコードできます。
 
 ```
-_Dispatch_type_(IRP_MJ_CREATE)
-_Dispatch_type_(IRP_MJ_CLOSE)
-_Dispatch_type_(IRP_MJ_CLEANUP)
-_Dispatch_type_(IRP_MJ_DEVICE_CONTROL)
-DRIVER_DISPATCH FilterDispatchIo;
+DriverObject->MajorFunction[IRP_MJ_CREATE] = 
+DriverObject->MajorFunction[IRP_MJ_CLEANUP] = FooCreateCleanup; // Advanced style for a multi-role dispatch routine 
 ```
 
-### <a name="span-idquick_steps__how_to_annotate_a_wdm_driverspanspan-idquick_steps__how_to_annotate_a_wdm_driverspanquick-steps-how-to-annotate-a-wdm-driver"></a><span id="quick_steps__how_to_annotate_a_wdm_driver"></span><span id="QUICK_STEPS__HOW_TO_ANNOTATE_A_WDM_DRIVER"></span>簡単な手順: WDM ドライバーに注釈を付ける方法
-
-関数ロール型を使用して関数を宣言する手順は次のとおりです。
-
-1.  *Driverentry*ルーチンのソースコードを見つけます。
-
-2.  次のポインターに割り当てられているルーチンが、関数ロール型を使用して宣言されていることを確認します。
-
-    ```
-    DriverObject->DriverStartIo
-    DriverObject->Unload
-    DriverObject->DriverExtension->AddDevice 
-    ```
-
-    たとえば、次のコード例は、これらのポインター (*myDriverStartIO*、 *myunload*、および*myAddDevice*) に対応するルーチンの関数ロール型宣言を示しています。
-
-    ```
-    DRIVER_STARTIO myDriverStartIo;
-    DRIVER_UNLOAD myUnload;
-    DRIVER_ADD_DEVICE myAddDevice 
-    ```
-
-3.  次のポインターに割り当てられているルーチンが、ドライバー\_ディスパッチのロールの種類を使用して宣言されていて、 **\_ディスパッチ\_型\_** 注釈を持っていることを確認します。
-
-    ```
-    DriverObject->MajorFunction[IRP_MJ_xxx]
-    ```
-
-    次に、例を示します。
-
-    ```
-    _Dispatch_type_(IRP_MJ_CLEANUP)
-    DRIVER_DISPATCH CsampCleanup;
-    ```
+ドライバーが SDV を正常に実行できるようにするには、**ドライバーは、上に示した*基本*スタイルまたは*高度な*スタイルのいずれかを使用する必要があり**ます。  この2つの方法のいずれかが使用されていない場合、ドライバーの SDV 検証**は想定どおりに動作しません**。
 
 ### <a name="span-idfunction_parameters_and_function_role_typesspanspan-idfunction_parameters_and_function_role_typesspanfunction-parameters-and-function-role-types"></a><span id="function_parameters_and_function_role_types"></span><span id="FUNCTION_PARAMETERS_AND_FUNCTION_ROLE_TYPES"></span>関数のパラメーターと関数のロール型
 
 C プログラミング言語で必要とされるように、関数定義で使用するパラメーター型は、関数プロトタイプのパラメーター型 (この場合は関数ロール型) と一致する必要があります。 SDV は分析のために関数シグネチャに依存しており、署名が一致しない関数は無視されます。
 
-たとえば、IO\_COMPLETION\_ルーチン関数のロールの種類を使用して、 [**Iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを宣言する必要があります。
+たとえば、IO 完了ルーチンの役割の種類を使用して、 [**Iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチンを宣言する必要があり \_ \_ ます。
 
 ```
 IO_COMPLETION_ROUTINE myCompletionRoutine;
 ```
 
-*Mycompletion ルーチン*を実装する場合、パラメーターの型は、IO\_の完了\_ルーチン (つまり、pdevice\_オブジェクト、pirp、pdevice によって使用されるものと一致する必要があります (構文については「 [**iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチン」を参照してください)。
+*Mycompletion ルーチン*を実装する場合、パラメーターの型は、IO \_ 完了ルーチン ( \_ つまり、PDEVICE オブジェクト、PIRP、および pdevice) で使用されているものと一致する必要があり \_ ます (構文については、「 [**iocompletion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-io_completion_routine)ルーチン」を参照してください)。
 
 ```
 NTSTATUS
@@ -204,12 +162,3 @@ myCompletionRoutine(
 
 
 ソースコードが準備されているかどうかを判断するために、[ドライバーのコード分析](code-analysis-for-drivers.md)を実行します。 ドライバーのコード分析では、関数ロールの種類の宣言をチェックします。また、関数定義のパラメーターが関数ロール型のパラメーターと一致しない場合に、失敗した可能性がある関数宣言を識別したり、警告を表示したりすることができます。
-
- 
-
- 
-
-
-
-
-

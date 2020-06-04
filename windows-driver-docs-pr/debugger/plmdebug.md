@@ -4,7 +4,7 @@ description: PLMDebug は、Windows デバッガーを使用して、プロセ�
 ms.assetid: 68BE8F5D-6425-43E2-B5BC-C1D35614AB32
 keywords:
 - PLMDebug Windows のデバッグ
-ms.date: 05/23/2017
+ms.date: 06/03/2020
 topic_type:
 - apiref
 api_name:
@@ -12,21 +12,18 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 80b57a1136d17374eca7ef24edf3d2b80da6d73d
-ms.sourcegitcommit: 9d57e0d7e4e2b3f5f564fba99c8d71a46f73e7e2
+ms.openlocfilehash: 20552b490a3f4a5e15c64554d5fe08b024cdb4c8
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/03/2020
-ms.locfileid: "84318282"
+ms.locfileid: "84336387"
 ---
 # <a name="plmdebug"></a>PLMDebug
-
 
 PLMDebug は、Windows デバッガーを使用して、プロセスライフサイクル管理 (PLM) で実行される Windows アプリをデバッグできるツールです。 PLMDebug を使用すると、Windows アプリの中断、再開、および終了を手動で制御できます。
 
 **ヒント**   Windows 10 バージョン1607以降では、createpackageapp などの UWP コマンドを使用して UWP アプリをデバッグできます。 詳細については[、「WinDbg を使用した UWP アプリのデバッグ](debugging-a-uwp-app-using-windbg.md)」を参照してください。
-
- 
 
 **PLMDebug を取得する場所**
 
@@ -46,7 +43,6 @@ plmdebug /activateBgTaskTaskId "{TaskID}"
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
 
 <span id="_______Package"></span><span id="_______package"></span><span id="_______PACKAGE"></span>*パッケージ*  
 パッケージの完全な名前、または実行中のプロセスの ID。
@@ -97,7 +93,7 @@ plmdebug /activateBgTaskTaskId "{TaskID}"
 
 PLMDebug ツールは、 [Ipackagedebugsettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)のメソッドを呼び出します。 このインターフェイスを使用すると、アプリのプロセスライフサイクル管理を手動で制御できます。 このインターフェイスを使用して、Windows アプリを中断、再開、および終了することができます (その結果、このツールを使用します)。 [Ipackagedebugsettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)のメソッドは、パッケージ全体に適用されることに注意してください。 中断、再開、および終了は、パッケージ内で現在実行中のすべてのアプリに影響します。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
 **例 1**
@@ -170,7 +166,7 @@ MyApp のデバッグが終了したら、デバッガーをデタッチしま�
 
 **バックグラウンドタスクを手動でアクティブ化する**
 
-デバッグのためにバックグラウンドタスクを手動でアクティブ化するとします。 登録されているバックグラウンドタスクの一覧を照会して、plmdebug でアクティブ化することができます。
+デバッグ用にバックグラウンドタスクを手動でアクティブ化するには、登録されているバックグラウンドタスクの一覧を照会して、plmdebug でアクティブ化することができます。
 
 最初に、登録されたバックグラウンドタスクのセットを照会します。
 
@@ -185,23 +181,12 @@ SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
 
 **plmdebug/enabledebug MyApp \_ 1.0.0.0 \_ x64 \_ \_ tnq5r49etfg3c**
 
-登録 GUID を使用して、目的のタスクをアクティブ化します。
+次に、列挙した登録 GUID を使用して、目的のタスクをアクティブ化します。
 
 **plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [Windows アプリで中断イベント、再開イベント、およびバックグラウンドイベントをトリガーする方法](https://go.microsoft.com/fwlink/p/?LinkID=267916)
 
 [Debugging Tools for Windows に含まれるツール](extra-tools.md)
-
- 
-
- 
-
-
-
-
-
-
