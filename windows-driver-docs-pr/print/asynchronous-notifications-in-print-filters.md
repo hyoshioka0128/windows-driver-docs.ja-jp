@@ -7,14 +7,14 @@ keywords:
 - XPS フィルター WDK XPSDrv
 - WDK XPS をフィルター処理します
 - 非同期通知 WDK XPS
-ms.date: 04/20/2017
+ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c56615d841dc7f3080065d3d38fd37af91566b1f
-ms.sourcegitcommit: 3ee05aabaf9c5e14af56ce5f1dde588c2c7eb4ec
+ms.openlocfilehash: 2d2a686c6dea3f9fce5730c8705f500571479ab9
+ms.sourcegitcommit: a2003149edf03fb18c0c9608a010583e9599ebd1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881926"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84418963"
 ---
 # <a name="asynchronous-notifications-in-print-filters"></a>印刷フィルターの非同期通知
 
@@ -38,7 +38,7 @@ VARIANT var;
 VariantInit(&var);
 
 HRESULT hr = pIPropertyBag->GetProperty(
-    XPS_FP_PRINT_CLASS_FACTORY, 
+    XPS_FP_PRINT_CLASS_FACTORY,
     &var);
 
 if (SUCCEEDED(hr))
@@ -103,9 +103,9 @@ if (SUCCEEDED(hr))
 }
 ```
 
-前のコード例では、変数 `pIAsyncCallback` は、 [IPrintAsyncNotifyCallback](https://go.microsoft.com/fwlink/p/?linkid=124755)インターフェイスの呼び出し元の実装へのポインターです。
+前のコード例では、変数 `pIAsyncCallback` は、 [IPrintAsyncNotifyCallback](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifycallback)インターフェイスの呼び出し元の実装へのポインターです。
 
-場合によっては、完了後に双方向通知チャネルを解放する必要があります。 これを行うには、 [IPrintAsyncNotifyChannel](https://go.microsoft.com/fwlink/p/?linkid=124758)で[Release](https://go.microsoft.com/fwlink/p/?linkid=98433)メソッドを呼び出します。 チャネルを解放するタイミングの詳細については、「 [Notification channel](notification-channel.md)」を参照してください。
+場合によっては、完了後に双方向通知チャネルを解放する必要があります。 これを行うには、 [IPrintAsyncNotifyChannel](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychannel)で[Release](https://docs.microsoft.com/windows/win32/api/prnasnot/nn-prnasnot-iprintasyncnotifychanne)メソッドを呼び出します。 チャネルを解放するタイミングの詳細については、「 [Notification channel](notification-channel.md)」を参照してください。
 
 ## <a name="impersonation-and-notification"></a>権限借用と通知
 
@@ -129,7 +129,7 @@ HRESULT hr = m_pPrintClassFactory->GetPrintClassObject(
 if (SUCCEEDED(hr))
 {
     hr = pIAsyncNotify->CreatePrintAsyncNotifyChannel(
- // the same arguments as for 
+ // the same arguments as for
  // RouterCreatePrintAsyncNotificationChannel
         );
 

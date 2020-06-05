@@ -3,32 +3,23 @@ title: チェック ビルドとドライバーの検証ツール
 description: チェック ビルドとドライバーの検証ツール
 ms.assetid: 311a9588-5094-432c-b696-339ff3ff8c35
 keywords:
-- チェック ビルド WDK、Driver Verifier
-- Driver Verifier の WDK チェック ビルドします。
-ms.date: 04/20/2017
+- チェック済みビルド WDK、ドライバー検証ツール
+- Driver Verifier WDK チェック済みビルド
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ab66cf60ab0dc6a0565b1a68b665c51b41a1fcb2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 731403df8386a9374478d287cd5f9ddcbe48fa86
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63391304"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428339"
 ---
 # <a name="the-checked-build-and-driver-verifier"></a>チェック ビルドとドライバーの検証ツール
 
+チェックを実行したビルドと[ドライバーの検証ツール](driver-verifier.md)では、重複するチェックがいくつか行われますが、これらは補完的なレベルのチェックを提供するものと考えることをお勧めします。 チェックを行うビルドを使用したドライバーのテストは、ドライバーの検証ツールを使用したテストに代わるものではありません。 同様に、ドライバー検証ツールを使用したテストでは、チェックされたビルドを使用する場合とまったく同じレベルのテストカバレッジが提供されません。
 
-## <span id="ddk_the_checked_build_and_driver_verifier_tools"></span><span id="DDK_THE_CHECKED_BUILD_AND_DRIVER_VERIFIER_TOOLS"></span>
+チェックされたビルドでドライバー検証ツールを実行すると、問題が検出されると、多くの場合、デバッガーに追加情報が表示されます。 さらに、デバッガーがアタッチされている場合、多くの場合、ドライバー検証ツールはバグチェックでシステムを停止する前にブレークポイントを実行します。 このブレークポイントを使用すると、ドライバー検証ツールによって起動されるシステムクラッシュの前に、システムの状態を確認し、ドライバーをデバッグすることができます。
 
-
-チェック ビルド中に、 [Driver Verifier](driver-verifier.md)重なっているため、のお勧め補完的なレベルのチェックを提供するものとして捉えることをいくつかがチェックを提供します。 チェック ビルドとドライバーのテストは、Driver Verifier でのテストに代わるものではありません。 同様に、ドライバーの検証ツールでのテストは提供されませんチェック ビルドを使用して、テスト カバレッジの正確に同じレベル。
-
-Driver Verifier チェック ビルドで実行されると、多くの場合、デバッガーで追加情報を表示、問題が検出された場合。 さらに、デバッガーがアタッチされると、多くの場合 Driver Verifier 実行バグ チェックでシステムを停止する前にブレークポイント。 このブレークポイントでは、システムの状態を確認し、Driver Verifier 呼び出さシステム クラッシュ前に、ドライバーをデバッグする機会を与えます。
-
- 
-
- 
-
-
-
-
-
+> [!NOTE]
+> チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
+> Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。

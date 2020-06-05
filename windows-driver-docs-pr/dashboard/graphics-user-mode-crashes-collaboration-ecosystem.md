@@ -4,12 +4,12 @@ description: この測定値は、年換算の総実行時間について、グ�
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5946ec2f3c2754f571a670b24b7be4fb00e875e3
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: 318abc2f57cda797b647a9dd6e4b61c90eead082
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84110256"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84336389"
 ---
 # <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal"></a>使用量によって正規化されたコミュニケーションおよびコラボレーション アプリケーションでのユーザー モードのクラッシュ数 <= ベースライン目標
 

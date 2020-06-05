@@ -7,12 +7,12 @@ keywords:
 - デバイスシナリオでのプラグイン WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a5c2b8336d3763cb5e11d0fb87f267d5113f323
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 64c5ccdaa14cdee12c6250133683dc0ba1b79745
+ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210078"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421381"
 ---
 # <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスを接続する
 
@@ -28,10 +28,6 @@ ms.locfileid: "75210078"
 フレームワークは、デバイスをサポートする各 UMDF 関数またはフィルタードライバーに対して、ドライバースタックで最も低いドライバーを使用して、一度に1つのドライバーを処理します。
 
  
-
- 
-
-
 
 
 

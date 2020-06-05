@@ -4,18 +4,14 @@ description: Windows のチェック ビルドの使用
 ms.assetid: 0666cdab-21d3-4eff-ba57-4a73dcbaa742
 ms.date: 05/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f68f563e89812c557fadbbaceaeddd7947f6cf49
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: dc69fdcfb8f8f50bc02d4456b6da83ccee78acb0
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999025"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428343"
 ---
 # <a name="using-the-checked-build-of-windows"></a>Windows のチェック ビルドの使用
-
-
-## <span id="ddk_using_the_checked_build_tools"></span><span id="DDK_USING_THE_CHECKED_BUILD_TOOLS"></span>
-
 
 ここでは、以下の内容について説明します。
 
@@ -32,11 +28,3 @@ ms.locfileid: "82999025"
 > [!NOTE]
 > チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
 > Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。
- 
-
- 
-
-
-
-
-

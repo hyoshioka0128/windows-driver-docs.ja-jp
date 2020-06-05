@@ -3,26 +3,26 @@ title: スマート カード ドライバーのデバッグ
 description: スマート カード ドライバーのデバッグ
 ms.assetid: 701528f6-d8ba-4a73-ad68-cb35497a3474
 keywords:
-- スマート カードのドライバー WDK、デバッグ
-- ドライバー WDK のスマート カードのデバッグ
+- スマートカードドライバー WDK、デバッグ
+- ドライバーのデバッグ WDK スマートカード
 - DebugLevel
-- ベンダーから提供されたドライバー WDK のスマート カードのデバッグ
-ms.date: 04/20/2017
+- ベンダー提供のドライバー WDK スマートカード、デバッグ
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7b6fe3323aa5e44c57bfc9a0f192935837612d
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 5512a2a8bb632abe73d3763dc75634a7a083834c
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67356672"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428325"
 ---
 # <a name="smart-card-driver-debugging"></a>スマート カード ドライバーのデバッグ
 
+> [!NOTE]
+> チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
+> Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。
 
-## <span id="_ntovr_smart_card_driver_debugging"></span><span id="_NTOVR_SMART_CARD_DRIVER_DEBUGGING"></span>
-
-
-スマート カードのドライバー ライブラリでは、いくつかのデバッグ機能をサポートします。 定義されている次の定数のいずれかで表される各デバッグ機能、 *Smclib.h*ヘッダー ファイル。
+スマートカードのドライバーライブラリでは、いくつかのデバッグ機能がサポートされています。 各デバッグ機能は、 *Smclib*ヘッダーファイルで定義されている次の定数のいずれかによって表されます。
 
 ```cpp
 DEBUG_IOCTL
@@ -35,21 +35,17 @@ DEBUG_BREAK
 DEBUG_ALL
 ```
 
-有効なデバッグ機能を組み合わせたセットと呼ばれる値で表される、*デバッグ レベル*します。 この値を計算するには、有効に機能に対応する定数のビットごとの OR を取得します。
+有効なデバッグ機能の組み合わせセットは、*デバッグレベル*と呼ばれる値によって表されます。 この値を計算するには、有効にする機能に対応する定数のビットごとの OR を使用します。
 
-デバッグ レベルを設定する 2 つの方法はあります。 まず、スマート カード ドライバーのテスト プログラムを使用して*Scdrvtst*、Windows Driver Kit (WDK) に付属します。 2 つ目は、使用する、 [ **SmartcardSetDebugLevel** ](https://docs.microsoft.com/previous-versions/ff548960(v=vs.85))スマート カード ドライバーのライブラリ ルーチン。
+デバッグレベルを設定するには、2つの方法があります。 まず、Windows Driver Kit (WDK) に付属しているスマートカードドライバーのテストプログラム*Scdrvtst*を使用できます。 2つ目は、 [**Smartcardsetdebuglevel**](https://docs.microsoft.com/previous-versions/ff548960(v=vs.85))スマートカードドライバーライブラリルーチンを使用することです。
 
-どちらの場合も、プログラムまたはルーチンのデバッグ レベルを設定するとするデバッグ レベルの値を渡す必要があります。 たとえば、スマート カードのライブラリ ルーチンを使用して、ドライバーから デバッグのレベルを設定するには、次の呼び出しを行います。
+どちらの場合も、デバッグレベルを設定するプログラムまたはルーチンに、必要なデバッグレベルの値を渡す必要があります。 たとえば、スマートカードライブラリルーチンを使用してドライバーからデバッグレベルを設定するには、次の呼び出しを行います。
 
 ```cpp
 SmartcardSetDebugLevel(DebugLevel);
 ```
 
-**重要な**  オペレーティング システムのチェック済みバージョンとデバッグ メッセージを取得するドライバーのチェック済みバージョンをインストールする必要があります。
-
- 
-
-リーダーのドライバーをドライバー デバッグ メッセージを書き込むには、次のルーチンを呼び出す必要があります。
+リーダードライバーからデバッグメッセージを書き込むには、ドライバーが次のルーチンを呼び出す必要があります。
 
 ```cpp
 SmartcardDebug(
@@ -58,23 +54,17 @@ SmartcardDebug(
 );
 ```
 
-このルーチンがリモート デバッガーに、次の方法でメッセージを書き込むこともできます。
+> [!IMPORTANT]
+> デバッグメッセージを取得するには、オペレーティングシステムのチェックされたバージョンとドライバーのチェックされたバージョンをインストールする必要があります。
 
--   エラー メッセージを書き込むには、デバッグを使用して\_のエラーの定数、 *DebugLevel*します。
+このルーチンは、次の方法でリモートデバッガーにメッセージを書き込むために使用することもできます。
 
--   標準のドライバーのメッセージを書き込む、デバッグを使用して、\_ドライバーの定数。
+- エラーメッセージを書き込むには、 \_ *DEBUGLEVEL*の DEBUG error 定数を使用します。
 
--   リーダーのドライバーが入力またはルーチンの終了を示すトレース メッセージを書き込むには、デバッグを使用して\_としてトレース、 *DebugLevel*します。
+- 標準のドライバーメッセージを書き込むには、DEBUG driver 定数を使用し \_ ます。
 
-ドライバーの開発中に、スマート カードのドライバー ライブラリのチェック済みバージョンを使用し、デバッグ レベルを使用して、最大値に設定**SmartcardSetDebugLevel**(デバッグ\_すべて) で、 *DriverEntry*ルーチン。
+- リーダードライバーがルーチンを開始または終了したことを示すトレースメッセージを作成するには、デバッグ \_ トレースを*debuglevel*として使用します。
 
-リモート デバッグ セッションの設定の詳細については、次を参照してください。 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)します。
+ドライバーの開発中に、チェックされたバージョンのスマートカードドライバーライブラリを使用し、Driverentry ルーチンで**Smartcardsetdebuglevel**(DEBUG ALL) を使用してデバッグレベルを最大に設定し \_ ます。 *DriverEntry*
 
- 
-
- 
-
-
-
-
-
+リモートデバッグセッションの設定の詳細については、「 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)」を参照してください。

@@ -3,49 +3,40 @@ title: ブート パラメーターの使用
 description: ブート パラメーターの使用
 ms.assetid: f249f312-cfc5-41b2-ad67-75497a929e35
 keywords:
-- WDK のブート エントリ
-- ブート オプション WDK、ブート パラメーター
-- ドライバー WDK ブート オプションをテストします。
-- テスト ドライバー WDK ブート オプション
-- ドライバー WDK ブート オプションのデバッグ
-- ドライバー WDK ブート オプションのデバッグ
-- NVRAM ブート オプション WDK、ブート パラメーター
-- EFI NVRAM ブート オプション WDK、ブート パラメーター
-- Boot.ini ファイル WDK、ブート パラメーター
-ms.date: 04/20/2017
+- ブートエントリ WDK
+- ブートオプション WDK、ブートパラメーター
+- WDK ブートオプションのドライバーテスト
+- ドライバーのテスト WDK ブートオプション
+- デバッグドライバーの WDK ブートオプション
+- ドライバーのデバッグ WDK ブートオプション
+- NVRAM ブートオプション WDK、ブートパラメーター
+- EFI NVRAM ブートオプション WDK、ブートパラメーター
+- Boot.ini ファイルの WDK、ブートパラメーター
+ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ef714add41c730f92f4eb084ce95f6113cd17b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 893aacd257d1333bf1163d5f34faf388c3c1330d
+ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341624"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428345"
 ---
-# <a name="using-boot-parameters"></a>ブート パラメーターの使用
+# <a name="using-boot-parameters"></a>ブートパラメーターの使用
 
+多くの場合、ドライバーの開発者とテスト担当者は、変数の条件に基づいてドライバーをテストするために、ブートエントリのパラメーターを追加、削除、変更する必要があります。 このセクションでは、いくつかの一般的なシナリオについて説明し、boot.ini ファイルと NVRAM でブートパラメーターを構成するための方法を提案します。
 
-## <span id="ddk_using_boot_parameters_tools"></span><span id="DDK_USING_BOOT_PARAMETERS_TOOLS"></span>
+> [!NOTE]
+> チェックを行ったビルドは、Windows 10 バージョン1803より前の古いバージョンの Windows で使用できました。
+> Driver Verifier や GFlags などのツールを使用して、新しいバージョンの Windows でドライバーコードを確認します。
 
+このセクションでは、以下のトピックについて説明します。
 
-ドライバー開発者およびテスト担当者は、多くの場合、追加、削除、および変数の条件下でドライバーをテストするブート エントリのパラメーターを変更する必要があります。 このセクションでは、いくつかの一般的なシナリオについて説明し、NVRAM と Boot.ini ファイルでは、ブート パラメーターを構成するための戦略を提案します。
+[デバッグを有効にするためのブート パラメーター](boot-parameters-to-enable-debugging.md)
 
-このセクションでは、次のトピックについて説明します。
+[メモリを操作するためのブート パラメーター](boot-parameters-to-manipulate-memory.md)
 
-[有効にするデバッグのブート パラメーター](boot-parameters-to-enable-debugging.md)
+[部分チェック ビルドを読み込むためのブート パラメーター](boot-parameters-to-load-a-partial-checked-build.md)
 
-[メモリの操作へのブート パラメーター](boot-parameters-to-manipulate-memory.md)
+[EMS リダイレクトを有効にするためのブート パラメーター](boot-parameters-to-enable-ems-redirection.md)
 
-[ビルドのブート パラメーター チェックの部分を読み込めません](boot-parameters-to-load-a-partial-checked-build.md)
-
-[EMS のリダイレクトを有効にブート パラメーター](boot-parameters-to-enable-ems-redirection.md)
-
-[DEP と PAE を構成するブート パラメーター](boot-parameters-to-configure-dep-and-pae.md)
-
- 
-
- 
-
-
-
-
-
+[DEP と PAE を構成するためのブート パラメーター](boot-parameters-to-configure-dep-and-pae.md)
