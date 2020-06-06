@@ -8,12 +8,12 @@ keywords:
 - ワイヤレス接続の WDK プリンター
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ddcdf0dcc281e7b2e70ac562ba0895bab7fbf46c
-ms.sourcegitcommit: a2003149edf03fb18c0c9608a010583e9599ebd1
+ms.openlocfilehash: bbf317201be82595af1bdf2edd4c4efcd616ca96
+ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84418961"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455564"
 ---
 # <a name="bluetooth-printing"></a>Bluetooth 印刷
 
@@ -28,7 +28,7 @@ ms.locfileid: "84418961"
 
   Windows オペレーティングシステムでは、1284 ID を使用して、複数のバス経由で接続されているデバイスを追跡しません。 プリンターは同じ 1284 ID を使用する必要があるため、オペレーティングシステムは1つの INF エントリを使用して適切なドライバーを読み込むことができます。 プリンタバスドライバは、バスが指定されていない状態で PnP Id を作成します。 たとえば、Bluetooth プリンターは、"BTHPRINT hpdeskje1234" という形式の ID \\ と、"hpdeskje1234" という形式の ID を取得します。 最初の形式はバス固有で、2番目の形式はバスに依存しません。 ドライバーパッケージが完全にバス中立であるかどうかに応じて、これらのいずれかの Id で INF を作成できます。
 
-- デバイスは、Bluetooth ハードコピー交換プロファイル (HCRP) をサポートしている必要があります。 Bluetooth の HCRP の詳細については、 [Bluetooth Web サイト](https://go.microsoft.com/fwlink/p/?linkid=26268)を参照してください。
+- デバイスは、Bluetooth ハードコピー交換プロファイル (HCRP) をサポートしている必要があります。 Bluetooth の HCRP の詳細については、 [Bluetooth Web サイト](https://www.bluetooth.com/specifications/profiles-overview)を参照してください。
 
   > [!NOTE]
-  > Microsoft はシリアルポートプロファイル (SPP) をサポートしていますが、認証が必要です。 ただし、HCRP はユーザーエクスペリエンスを向上させるため、SPP ではなく HCRP を使用することをお勧めします。
+  > Microsoft はシリアルポートプロファイル (SPP) をサポートしていますが、認証が必要です。 HCRP はより優れたユーザーエクスペリエンスを提供するため、SPP ではなく HCRP を使用することをお勧めします。

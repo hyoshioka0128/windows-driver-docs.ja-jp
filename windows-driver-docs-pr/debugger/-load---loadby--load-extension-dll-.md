@@ -16,12 +16,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2580192f7edfffe003737a276843e4d0559ab6ed
-ms.sourcegitcommit: 0a31c9fa18d5bf02373e7c000abd65e3db78b280
+ms.openlocfilehash: bd4128d46781e0558ff58d9489a8652bd3c31ea4
+ms.sourcegitcommit: 581fb777a2376854ca12e767d366e2cb79724b73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76910358"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84461829"
 ---
 # <a name="load-loadby-load-extension-dll"></a>.load、.loadby (拡張機能 DLL の読み込み)
 
@@ -59,8 +59,8 @@ ms.locfileid: "76910358"
 <td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>・</strong></p></td>
-<td align="left"><p>[すべて]</p></td>
+<td align="left"><p><strong>プラットフォーム</strong></p></td>
+<td align="left"><p>All</p></td>
 </tr>
 </tbody>
 </table>
@@ -69,7 +69,7 @@ ms.locfileid: "76910358"
 
 拡張機能の読み込み、アンロード、および制御の方法の詳細については、「[デバッガー拡張 dll の読み込み](loading-debugger-extension-dlls.md)」を参照してください。
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
 **Load**コマンドを使用する場合は、完全なパスを指定する必要があります。
@@ -82,9 +82,9 @@ ms.locfileid: "76910358"
 
 - **Load**または**loadby**コマンドを使用します。
 
-- 完全なを発行して拡張機能を実行し**ます。** <em>DLLName</em> **。** <em>Extensioncommand</em>構文。 デバッガーがまだ*DLLName*を読み込んでいない場合は、現在の dll 検索パスに dll がある場合は、この時点で dll が読み込まれます。
+- 完全なを発行して拡張機能を実行し**ます。**<em>DLLName</em>**。**<em>Extensioncommand</em>構文。 デバッガーがまだ*DLLName*を読み込んでいない場合は、現在の dll 検索パスに dll がある場合は、この時点で dll が読み込まれます。
 
-Chain コマンドを使用して、読み込まれた内容と現在の DLL 検索パスに関する情報を表示します[。]()
+Chain コマンドを使用して、読み込まれた内容と現在の DLL 検索パスに関する情報を表示します[。](-chain--list-debugger-extensions-.md)
 
 ```dbgcmd
 0:000> .chain

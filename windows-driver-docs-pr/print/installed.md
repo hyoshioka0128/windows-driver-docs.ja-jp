@@ -1,67 +1,40 @@
 ---
 title: Installed (WSD)
-description: Devices (WSD) のインストール済みのコンストラクトの Web サービスでは、指定された一連の条件に一致するプリンターの機能がインストールされているかどうかを示します。
+description: Web Services for Devices (WSD) Installed コンストラクトは、特定の条件セットに一致するプリンター機能がインストールされているかどうかを示します。
 ms.assetid: f05add2a-d37e-4eb5-8408-dd5eeef4b13c
 keywords:
-- インストールされているコンス トラクター
-ms.date: 04/20/2017
+- インストールされたコンストラクト
+ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7940468d4083e31ffaee5c7dfd1ff6fa60a8dd6c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 369682a4c24438b204309d86916cf98262f9062d
+ms.sourcegitcommit: 581fb777a2376854ca12e767d366e2cb79724b73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362760"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84461831"
 ---
 # <a name="installed-wsd"></a>Installed (WSD)
 
+Web Services for Devices (WSD) Installed コンストラクトは、特定の条件セットに一致するプリンター機能がインストールされているかどうかを示します。 XPath フィルターが、指定された条件に適用されるときに有効な XML 結果を取得する場合、このアルゴリズムは**TRUE**を返します。 インストールされているコンストラクトは、WsdBidi で定義されています。
 
-Devices (WSD) のインストール済みのコンストラクトの Web サービスでは、指定された一連の条件に一致するプリンターの機能がインストールされているかどうかを示します。 このアルゴリズムを返しますのかどうか、XPath フィルターは、指定された条件に適用する場合は、有効な XML 結果を取得する**TRUE**します。 インストールされているコンス トラクターは、WsdBidi.xsd で定義されます。
+| 属性 | 説明 |
+| --- | --- |
+| **drvPrinterEvent** | Optionalポートモニターがドライバーに通知を送信するかどうかを示すブール値です。 **TRUE**の値は、ポートモニターがドライバーに通知を送信することを示します。**FALSE**は、ポートモニターがドライバーに通知を送信しないことを示します。 |
+| **filter** | クエリで指定された XML ドキュメントに対して WSD モニターが適用する XPath クエリ。 このトピックの後半の説明を参照してください。 |
+| **name** | スキーマ値の名前です。 |
+| **query** | WSD モニターが実行するクエリの種類。 |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>属性</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>drvPrinterEvent</strong></p></td>
-<td><p>(省略可能)ポート モニターが、ドライバーに通知を送信するかどうかを示すブール値。 A <strong>TRUE</strong>値では、ドライバーをポート モニターが通知を送信することを示します<strong>FALSE</strong>ポート モニター ドライバーに、通知が送信しないことを示します。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>フィルター (filter)</strong></p></td>
-<td><p>WSD モニターは、クエリで指定された XML ドキュメントに適用される XPath クエリ。 このトピックで後述を参照してください。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>name</strong></p></td>
-<td><p>スキーマの値の名前。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>query</strong></p></td>
-<td><p>WSD モニターを実行するクエリの型。</p></td>
-</tr>
-</tbody>
-</table>
+Microsoft XML (MSXML) 2.6 以降の Windows に実装されている XPath 言語では、XML ファイル内の要素を簡単に指定できます。 詳細については、「 [XPath リファレンス](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))」を参照してください。
 
- 
+インストールされた構成要素の動作は、その親ノードの定義によって異なります。 インストールされているコンストラクトがパラメーターを使用せずに指定されている場合は、クエリの実行時に常にスキーマが存在します。 インストールされているコンストラクトがパラメーターを使用して指定されている場合、関連付けられているパラメーター値が現在の WSD デバイスクエリで見つかった場合にのみ、スキーマが存在します。 クエリを実行するソフトウェアは、インストールされているスキーマが返されないケースを処理できる必要があります。
 
-Windows の先頭で Microsoft XML (MSXML) 2.6 で実装された、XPath 言語は、XML ファイルに要素を指定する便利な方法を提供します。 Windows SDK に、XML 開発者のガイドを参照してくださいと[XPath リファレンス](https://go.microsoft.com/fwlink/p/?linkid=33165)詳細についてはします。
+インストールされているコンストラクトは、WsdBidi で定義されています。
 
-インストール済みのコンス トラクターの動作は、その親ノードの定義に依存します。 パラメーターを使用せず、インストール済みのコンストラクトを指定すると照会されたときに、スキーマは常に存在します。 パラメーターを使用して、インストールされているコンストラクトが指定されている場合、スキーマは WSD デバイスの現在のクエリで関連するパラメーター値が見つかった場合にのみ存在します。 クエリを行っているソフトウェアは、インストール済みのスキーマが返されていないケースを処理できる必要があります。
+## <a name="code-example"></a>コード例
 
-インストールされているコンス トラクターは、WsdBidi.xsd で定義されます。
+次のコード例では、フィルター検索アルゴリズムで XPath クエリを使用して、ハードディスクがインストールされていることを確認します。
 
-### <a name="code-example"></a>コード例
-
-次のコード例では、フィルター検索アルゴリズムは、ハード_ディスクがインストールされていることを確認するのに XPath クエリを使用します。
-
-```cpp
+```xml
 <Schema>
   <Property name='Printer'>
     <Property name='Configuration'>
@@ -75,16 +48,8 @@ Windows の先頭で Microsoft XML (MSXML) 2.6 で実装された、XPath 言語
 </Schema>
 ```
 
-前の例は、次のクエリ結果します。
+前の例では、次のクエリが実行されます。
 
 ```cpp
 \Printer.Configuration.HardDisk:Installed
 ```
-
- 
-
- 
-
-
-
-

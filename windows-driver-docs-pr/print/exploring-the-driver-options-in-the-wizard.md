@@ -1,108 +1,114 @@
 ---
 title: ウィザードのドライバー オプションの詳細
-description: このトピックでは、v4 印刷ドライバーのウィザードの作成の最初のセクションでドライバーのオプションについて説明します。
+description: このトピックでは、v4 印刷ドライバーの作成ウィザードの最初のセクションのドライバーオプションについて説明します。
 ms.assetid: 48FF0A37-BBAF-49D1-9BDE-128AED00BEEF
-ms.date: 04/20/2017
+ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ae6638618596c5fc88c1d222ec07f8593b41614
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a4964c8846188171e3e730c3bd536cdd1292d9e4
+ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324247"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455554"
 ---
 # <a name="exploring-the-driver-options-in-the-wizard"></a>ウィザードのドライバー オプションの詳細
 
+このトピックでは、 **V4 印刷ドライバーの作成**ウィザードの最初のセクションのドライバーオプションについて説明します。
 
-このトピックでは、v4 印刷ドライバーのウィザードの作成の最初のセクションでドライバーのオプションについて説明します。
+ここでは、さまざまな機能のオプションについて簡単に確認できるように、この情報を概要形式で提供しています。 すべての機能に関する詳細情報が必要な場合は、詳細情報を提供する関連トピックへのリンクを参照してください。
 
-情報は、すばやく機能のさまざまなオプションについて確認するための集約された形式でここで提供されます。 任意の機能の詳細を設定する場合は、提供されたリンクの詳細を提供する関連トピックへに従います。
+## <a name="driver-rendering-type"></a>ドライバーレンダリングの種類
 
-## <a name="driver-rendering-type"></a>ドライバーの表示の種類
+### <a name="v4-print-driver-with-custom-rendering-filters-accepts-xps-only"></a>カスタムレンダリングフィルターを使用した V4 印刷ドライバー (XPS のみを受け入れる)
 
+入力として Microsoft XPS 形式のみを受け入れるプリンタードライバーを作成する場合は、このオプションを選択します。 このドライバーは、 **[DRIVER XPS format の選択**] フィールドでの選択に応じて、xps 形式または OpenXPS 形式で出力を生成することができます。
 
-カスタム表示フィルターを使用した V4 印刷ドライバー (XPS を受け取るのみ)
+### <a name="v4-print-driver-with-class-driver-rendering"></a>V4 印刷ドライバーとクラスドライバーのレンダリング
 
-入力として Microsoft XPS 形式のみを受け入れるプリンター ドライバーを作成する場合は、このオプションを選択します。 このドライバーがで行った選択に基づき、XPS または OpenXPS 形式で出力を生成できることに注意してください、**ドライバー XPS 形式を選択して**フィールド。
-V4 印刷クラス ドライバーのレンダリングとドライバー
+このオプションを選択すると、XPS または OpenXPS のいずれかの形式で入力を受け付けることができるプリンタードライバーを作成します。 また、このドライバーを選択するときに、このウィザードの次のページで、表示に使用する印刷クラスドライバーの名前を指定する必要があります。
 
-このオプションを選択すると、XPS または OpenXPS 形式で入力を受け入れることができるプリンター ドライバーを作成します。 さらに、このドライバーを選択するとこのウィザードにレンダリングに使用する印刷クラス ドライバーの名前の次のページで指定する必要があります。
-PCL6 に Microsoft XPS (だけ XPS を受け入れる) フィルターを表示します。
+### <a name="microsoft-xps-to-pcl6-render-filter-accepts-xps-only"></a>Microsoft XPS to PCL6 render filter (XPS のみを受け入れる)
 
-このオプションを使用すると、フィルター ドライバー モジュールは、入力として XPS 形式を受け入れます、PCL6 への入力を変換のみを作成できます。 このドライバーがで行った選択に基づき、XPS または OpenXPS 形式で出力を生成できることに注意してください、**ドライバー XPS 形式を選択して**フィールド。
-PostScript に Microsoft XPS (だけ XPS を受け入れる) フィルターを表示します。
+このオプションを使用すると、入力として XPS 形式のみを受け入れるフィルタードライバーモジュールを作成し、入力を PCL6 に変換できます。 このドライバーは、 **[DRIVER XPS format の選択**] フィールドでの選択に応じて、xps 形式または OpenXPS 形式で出力を生成することができます。
 
-このオプションを使用すると、フィルター ドライバー モジュールは、入力として XPS 形式を受け入れます、PostScript への入力を変換のみを作成できます。 このドライバーがで行った選択に基づき、XPS または OpenXPS 形式で出力を生成できることに注意してください、**ドライバー XPS 形式を選択して**フィールド。
-## <a name="driver-xps-format"></a>XPS 形式のドライバー
+### <a name="microsoft-xps-to-postscript-render-filter-accepts-xps-only"></a>Microsoft XPS から PostScript へのレンダリングフィルター (XPS のみを受け入れる)
 
+このオプションを使用すると、入力として XPS 形式のみを受け入れるフィルタードライバーモジュールを作成し、入力を PostScript に変換することができます。 このドライバーは、 **[DRIVER XPS format の選択**] フィールドでの選択に応じて、xps 形式または OpenXPS 形式で出力を生成することができます。
 
-XPS
+## <a name="driver-xps-format"></a>Driver XPS 形式
 
-このオプションは、XPS 形式のみで出力を生成するためにドライバーを構成します。
-OpenXPS
+### <a name="xps"></a>XPS
 
-このオプションは、OpenXPS 形式のみで出力を生成するためにドライバーを構成します。
-XPS、OpenXPS
+このオプションは、XPS 形式でのみ出力を生成するようにドライバーを構成します。
 
-このオプションは、XPS、INF ファイルで既定値として設定すると、XPS または OpenXPS 形式で出力を生成するためにドライバーを構成します。
-OpenXPS、XPS
+### <a name="openxps"></a>OpenXPS
 
-このオプションは、INF ファイルで、既定値として設定 OpenXPS と XPS または OpenXPS のいずれかの形式で出力を生成するためにドライバーを構成します。
+このオプションは、OpenXPS 形式でのみ出力を生成するようにドライバーを構成します。
+
+### <a name="xps-openxps"></a>XPS、OpenXPS
+
+このオプションを使用すると、ドライバーは xps 形式または OpenXPS 形式で出力を生成するように構成され、XPS は INF ファイルで既定として設定されます。
+
+### <a name="openxps-xps"></a>OpenXPS、XPS
+
+このオプションは、OpenXPS または XPS 形式の出力を生成するようにドライバーを構成し、INF ファイルでは OpenXPS を既定として設定します。
+
 ## <a name="driver-configuration-type"></a>ドライバーの構成の種類
 
+### <a name="gpd-driver"></a>GPD ドライバー
 
-GPD ドライバー
+このオプションを選択すると、ウィザードによって、プリンタードライバーを含む汎用プリンターの説明 (GPD) 言語ファイルが作成されます。
 
-このオプションは、プリンター ドライバーを使用した一般的なプリンターの説明 (GPD) 言語ファイルを作成するウィザードです。
-PPD ドライバー
+### <a name="ppd-driver"></a>PPD ドライバー
 
-このオプションは、プリンター ドライバーを使用した PostScript プリンター (PPD) の説明の言語ファイルを作成するウィザードです。
+このオプションを選択すると、ウィザードによって、プリンタードライバーを含む PostScript プリンターの説明 (PPD) 言語ファイルが作成されます。
+
 ## <a name="protected-printing"></a>保護された印刷
 
+### <a name="enable-protected-printing"></a>保護された印刷を有効にする
 
-保護された印刷を有効にします。
+プリンターに送信される印刷要求をロックするために PIN を使用できるようにする場合は、このオプションを選択します。 エンドユーザーは、印刷のためにロックされた印刷要求を解放するために、プリンターで同じ PIN を指定する必要があります。 詳細については、「[保護された印刷に対するドライバーのサポート](driver-support-for-protected-printing.md)」を参照してください。
 
-プリンターに送信される印刷要求をロックする PIN を使用する機能が必要な場合は、このオプションを選択します。 エンドユーザーは、プリンターで印刷の場合は、ロックされている印刷要求を解放する同じ pin を入力する必要があります。 詳細については、次を参照してください。[の保護された印刷ドライバーのサポート](driver-support-for-protected-printing.md)します。
-## <a name="additional-functionality"></a>追加機能
+## <a name="additional-functionality"></a>その他の機能
 
+### <a name="driver-property-bag"></a>ドライバープロパティバッグ
 
-ドライバーのプロパティ バッグ
+これは、ドライバープロパティバッグの内容を記述する XML ファイルです。 このファイルで指定されたプロパティと、プロジェクトの ByteArray または IStream フォルダーに追加されたデータファイルで提供される情報は、ドライバープロパティバッグにコンパイルされます。 詳細については、「 [V4 プリンタードライバーのプロパティバッグ](v4-driver-property-bags.md)」を参照してください。
 
-これは、ドライバーのプロパティ バッグの内容を記述する XML ファイルです。 プロジェクトの ByteArray または IStream のフォルダーに追加されたデータ ファイルで提供される情報と同様に、このファイルで指定されたプロパティは、ドライバーのプロパティ バッグにコンパイルされます。 詳細については、次を参照してください。 [V4 プリンター ドライバーのプロパティ バッグ](v4-driver-property-bags.md)します。
+また、ドライバープロパティバッグテンプレートの XML スキーマは、Windows ドライバーキットの次のフォルダーにあります。このフォルダーには、 * \\ Include \\ um \\ printdriverproperties .xml が含ま*れています。
 
-このフォルダーに、Windows Driver Kit でドライバーのプロパティ バッグ テンプレートの XML スキーマを見つけることができます。*\\含める\\um\\printdriverproperties.xml*します。
+### <a name="driver-event-file"></a>ドライバーイベントファイル
 
-ドライバーのイベント ファイル
+このファイルは、ドライバーイベントを発生させる可能性のある Bidi クエリとトリガーを記述するために使用されます。 また、ドライバーイベントは標準の文字列のみをサポートすることに注意してください。 ドライバーイベントと標準文字列の詳細については、「カスタマイズされた[UI のドライバーサポート](driver-support-for-customized-ui.md)」を参照してください。
 
-このファイルを使用して、双方向のクエリとトリガーが発生します。 ドライバーのイベントが発生することを説明します。 ドライバーのイベントでは標準の文字列のみをサポートすることが重要です。 ドライバーのイベントと標準の文字列の詳細については、次を参照してください。 [UI のカスタマイズのドライバー サポート](driver-support-for-customized-ui.md)します。
-DevMode マッピング ファイル
+### <a name="devmode-mapping-file"></a>DevMode マッピングファイル
 
-これは、PrintTicket で使用される XML ファイル&lt; - &gt; JavaScript コードでの DEVMODE 変換します。 このファイルを提供する場合に指定する必要があります、 [V4 ドライバー マニフェスト](v4-driver-manifest.md)します。
-キューのプロパティ バッグ
+これは、JavaScript コードでの PrintTicket < > DEVMODE 変換と共に使用される XML ファイルです。 このファイルを指定する場合は、 [V4 ドライバーマニフェスト](v4-driver-manifest.md)で指定する必要があります。
 
-このテンプレートを使用すると、用紙トレイのマッピングとインストール可能なオプションと同様に、プリンターのプロパティの構成など、キューごとの構成設定を指定できます。 詳細については、次を参照してください。 [V4 プリンター ドライバーのプロパティ バッグ](v4-driver-property-bags.md)します。
-リソース DLL
+### <a name="queue-property-bag"></a>キュープロパティバッグ
 
-このテンプレートでは、外部に保存されたフォント、アイコン、およびその他のビットマップ、およびローカライズ可能なユーザー インターフェイスのテキスト文字列などのリソースの説明を提供できます。 詳細については、次を参照してください。 [、ミニドライバーのリソース Dll を使用して](using-resource-dlls-in-a-minidriver.md)、 [V4 ドライバー マニフェスト](v4-driver-manifest.md)と[V4 プリンター ドライバーのローカリゼーション](v4-driver-localization.md)します。
-JS の制約
+このテンプレートを使用すると、フォームからトレイへのマッピングや、インストール可能なオプションなどのプリンタープロパティの構成など、キューごとの構成設定を行うことができます。 詳細については、「 [V4 プリンタードライバーのプロパティバッグ](v4-driver-property-bags.md)」を参照してください。
 
-このテンプレートは、エントリ ポイント、サポートされているすべての JavaScript 制約メソッド ヘッダーを提供します。 詳細については、次を参照してください。 [JavaScript 制約](javascript-constraints.md)します。
-自動構成 GDL
+### <a name="resource-dll"></a>リソース DLL●りそーすdll○
 
-これは、v4 印刷ドライバーの基本的な自動構成ファイルを提供します。 GDL 構文の自動構成、およびファイルの例については、次を参照してください。、[印刷自動構成サンプル](https://go.microsoft.com/fwlink/p/?LinkId=617938)します。
-TCPMon 双方向の拡張 XML
+このテンプレートを使用すると、外部に格納されているフォント、アイコン、その他のビットマップ、ローカライズ可能なユーザーインターフェイスのテキスト文字列などのリソースの説明を指定できます。 詳細については、「[ミニドライバーでのリソース dll の使用](using-resource-dlls-in-a-minidriver.md)」、「 [v4 ドライバーマニフェスト](v4-driver-manifest.md)」、および「 [v4 プリンタードライバーのローカライズ](v4-driver-localization.md)」を参照してください。
 
-これは、単純な TCP/IP Bidi 拡張ファイルを提供します。 標準の TCP/IP ポート モニタの Bidi 構文の詳細については、次を参照してください。 [TCP/IP スキーマ拡張](tcp-ip-schema-extensions.md)します。
-WSDMon 双方向の拡張 XML
+### <a name="constraints-js"></a>制約 JS
 
-これは、単純な WSD Bidi 拡張ファイルを提供します。 WSDMon の Bidi 構文の詳細については、次を参照してください。 [WSD スキーマ拡張](wsd-schema-extensions.md)します。
-USBMon 双方向の拡張 XML + JS
+このテンプレートは、サポートされているすべての JavaScript 制約エントリポイントのメソッドヘッダーを提供します。 詳細については、「 [JavaScript の制約](javascript-constraints.md)」を参照してください。
 
-これは、単純な USB Bidi 拡張ファイルを提供します。 一致する USB Bidi エクステンダー JavaScript の存在に依存しています。 詳細については、次を参照してください。 [USB Bidi エクステンダー](usb-bidi-extender.md)します。
- 
+### <a name="autoconfiguration-gdl"></a>自動構成 GDL
 
- 
+これにより、v4 印刷ドライバー用の基本的な自動構成ファイルが提供されます。 自動構成の GDL 構文、およびサンプルファイルを調べる方法については、「 [Print Auto Configuration Sample](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/print-auto-configuration-sample)」を参照してください。
 
+### <a name="tcpmon-bidi-extension-xml"></a>TCPMon Bidi 拡張 XML
 
+これにより、単純な TCP/IP Bidi 拡張ファイルが提供されます。 標準 TCP/IP ポートモニターの Bidi 構文の詳細については、「 [Tcp/ip スキーマ拡張](tcp-ip-schema-extensions.md)」を参照してください。
 
+### <a name="wsdmon-bidi-extension-xml"></a>WSDMon Bidi 拡張 XML
 
+これにより、単純な WSD Bidi 拡張ファイルが提供されます。 WSDMon の Bidi 構文の詳細については、「 [WSD スキーマ拡張](wsd-schema-extensions.md)」を参照してください。
+
+### <a name="usbmon-bidi-extension-xml--js"></a>USBMon Bidi 拡張 XML + JS
+
+これにより、シンプルな USB Bidi 拡張ファイルが提供されます。 これは、一致した USB Bidi エクステンダー JavaScript の存在に依存します。 詳細については、「 [USB Bidi Extender](usb-bidi-extender.md)」を参照してください。
