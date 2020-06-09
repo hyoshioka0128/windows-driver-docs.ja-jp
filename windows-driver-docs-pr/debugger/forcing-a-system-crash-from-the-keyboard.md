@@ -38,7 +38,7 @@ ms.locfileid: "84534367"
 
 この機能は、Windows 10 バージョン1903以降のバージョンの Windows オペレーティングシステムで使用できます。
 
-<span id="Configuration"></span> **構成**
+<span id="Configuration"></span>**構成**
 
 キーボードを使用してシステムのクラッシュを有効にするには、次の設定を構成します。
 

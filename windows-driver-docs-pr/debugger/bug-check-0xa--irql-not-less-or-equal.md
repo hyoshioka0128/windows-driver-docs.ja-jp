@@ -162,7 +162,7 @@ NDIS!_EthFilterIndicateReceiveComplete+0x31
 8013ef64 00000246 fe551aa1 ff690268 00000002 elnkii!_ElnkiiRcvInterruptDpc+0x1d0
 ```
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
 このバグチェックを生成するエラーは、通常、障害が発生したデバイスドライバー、システムサービス、または BIOS のインストール後に発生します。

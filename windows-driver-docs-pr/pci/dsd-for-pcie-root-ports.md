@@ -109,7 +109,7 @@ Name (_DSD, Package () {
 
 ```
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
 [Windows での PCI Express ネイティブ コントロールの有効化](enabling-pci-express-native-control.md)
 

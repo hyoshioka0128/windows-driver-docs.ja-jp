@@ -52,7 +52,7 @@ ms.locfileid: "84534913"
 
 Ndiskd .dll
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 **メモ**   「[オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)」を参照して、NET \_ PACKET オブジェクトと NetAdapterCx 内の他のオブジェクトとの関係を説明する図を参照してください。

@@ -63,7 +63,7 @@ LOGENTRY g_Log [LOGSIZE];
 <thead>
 <tr class="header">
 <th align="left">省略形</th>
-<th align="left">Description</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

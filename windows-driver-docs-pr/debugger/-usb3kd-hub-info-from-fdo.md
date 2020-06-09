@@ -39,7 +39,7 @@ ms.locfileid: "84534183"
 
 Usb3kd
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 FDO のアドレスは、 [**! usb \_ ツリー**](-usb3kd-usb-tree.md)の出力から、または他のさまざまなデバッガーコマンドから取得できます。 たとえば、 [**! devstack**](-devstack.md)コマンドは、FDO のアドレスを表示します。 次の例では、FDO のアドレスは fffffa800597a660 です。

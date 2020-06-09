@@ -78,7 +78,7 @@ PoolMon には、さまざまな条件に従って出力を並べ替えるコマ
 <td align="left"><p>タグ名のアルファベット順にタグを並べ替えます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>E</strong></p></td>
+<td align="left"><p><strong>つまり</strong></p></td>
 <td align="left"><p>表示に、ページングされた合計とページングされていない合計を下に含めます。</p></td>
 </tr>
 <tr class="even">
@@ -90,7 +90,7 @@ PoolMon には、さまざまな条件に従って出力を並べ替えるコマ
 <td align="left"><p>自由操作でタグを並べ替えます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>2$s</strong></p></td>
+<td align="left"><p><strong>S</strong></p></td>
 <td align="left"><p>割り当てと解放の違いによってタグを並べ替えます。</p></td>
 </tr>
 <tr class="odd">

@@ -50,7 +50,7 @@ NET RING バッファー内の各要素に関する情報を表示 \_ \_ しま�
 
 Ndiskd .dll
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 **メモ**   「[オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)」を参照して、 \_ \_ NetAdapterCx 内の他のオブジェクトとの NET RING バッファーオブジェクトの関係を説明する図を参照してください。

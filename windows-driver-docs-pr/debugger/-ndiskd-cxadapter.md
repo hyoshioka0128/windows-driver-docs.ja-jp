@@ -49,7 +49,7 @@ NETADAPTER の NETPOWERSETTINGS オブジェクトに関する情報を表示し
 
 Ndiskd .dll
 
-<a name="examples"></a>例
+<a name="examples"></a>使用例
 --------
 
 NETADAPTER オブジェクトのハンドルを取得するには、最初に[**! ndiskd netadapter**](-ndiskd-netadapter.md)コマンドを実行して、システム上のすべての NIC ドライバーと netadapter の一覧を表示します。 次の例では、Realtek PCIe GBE ファミリコントローラー NetAdapter Sample Driver 2 という名前の NetAdapter のハンドルを探し \# ます。 そのハンドルは ffffd1022d048030 です。

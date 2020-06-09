@@ -145,7 +145,7 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 ドライバー検証マネージャーを起動するには、コマンドプロンプトで「 **verifier** 」と入力します。 検証するドライバーを構成できます。 ドライバーを検証するコードは、実行中のオーバーヘッドを追加するので、可能な限り最小のドライバー数を確認してみてください。 詳細については、「 [Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
 Windows デバッガーを使用してこの問題に対処することができない場合は、いくつかの基本的なトラブルシューティング手法を使用できます。
