@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 61137952271875bf69a1654dddf15cc7a4ee0b54
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: 9e7b2f40d71117ec273d399700d55f03dd1fda4e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359589"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534579"
 ---
-# <a name="bug-check-0xa-irql_not_less_or_equal"></a>バグチェックの 0xA: IRQL\_\_より少ない\_または\_等しい
+# <a name="bug-check-0xa-irql_not_less_or_equal"></a>バグチェックの 0xA: IRQL が \_ \_ 少ない \_ か \_ 等しい
 
 
-IRQL\_\_が少ない\_または\_等しいバグチェックの値が0x0000000A になっています。 これは、Microsoft Windows またはカーネルモードドライバーが、発生した割り込み要求レベル (IRQL) で、無効なアドレスのページメモリにアクセスしたことを示します。 これは通常、無効なポインターまたは pageability の問題の結果です。
+IRQL が \_ \_ 低い \_ か \_ 等しいバグチェックの値は、0x0000000a です。 これは、Microsoft Windows またはカーネルモードドライバーが、発生した割り込み要求レベル (IRQL) で、無効なアドレスのページメモリにアクセスしたことを示します。 これは通常、無効なポインターまたは pageability の問題の結果です。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="irql_not_less_or_equal-parameters"></a>IRQL\_より少ない\_または\_等値のパラメーターを\_ない
+## <a name="irql_not_less_or_equal-parameters"></a>IRQL \_ が \_ 少ない \_ か \_ 等しいパラメーター
 
 
 <table>
@@ -47,7 +47,7 @@ IRQL\_\_が少ない\_または\_等しいバグチェックの値が0x0000000A 
 <tr class="odd">
 <td><p>1</p></td>
 <td align="left"><p>アクセスできなかった仮想メモリアドレス。</p>
-<p>このアドレスで<strong><a href="-pool.md" data-raw-source="[!pool](-pool.md)">! pool</a></strong>を使用して、ページプールであるかどうかを確認してください。 これらのコマンドは、エラーに関する情報を収集する場合にも役立ちます。 <strong><a href="-pte.md" data-raw-source="[!pte](-pte.md)">! pte</a></strong>、 <strong><a href="-address.md" data-raw-source="[!address](-address.md)">! address</a></strong>、<strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln</strong> (最も近いシンボルを一覧表示)</a>です。</p></td>
+<p>このアドレスで<strong><a href="-pool.md" data-raw-source="[!pool](-pool.md)">! pool</a></strong>を使用して、ページプールであるかどうかを確認してください。 これらのコマンドは、エラーに関する情報の収集にも役立ちます。 <strong><a href="-pte.md" data-raw-source="[!pte](-pte.md)">! pte</a></strong>、 <strong><a href="-address.md" data-raw-source="[!address](-address.md)">! address</a></strong>、および <strong> <a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln </strong> (最も近いシンボルの一覧表示)</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
@@ -83,7 +83,7 @@ IRQL\_\_が少ない\_または\_等しいバグチェックの値が0x0000000A 
 <tr class="even">
 <td><p>4</p></td>
 <td align="left"><p>エラー発生時の命令ポインター。</p>
-<p>関数の名前を確認するには、このアドレスに対して <strong><a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln</strong> (一番近いシンボルの一覧表示)</a>コマンドを使用します。</p></td>
+<p><strong>関数の名前を確認するには、このアドレスに対して<a href="ln--list-nearest-symbols-.md" data-raw-source="[ln (List Nearest Symbols)](ln--list-nearest-symbols-.md)">ln </strong> (一番近いシンボルの一覧表示)</a>コマンドを使用します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -100,19 +100,19 @@ IRQL\_\_が少ない\_または\_等しいバグチェックの値が0x0000000A 
 
 - パラメーター1が0x1000 未満の場合、問題は NULL ポインターの逆参照である可能性があります。
 
-- [ **! Pool**](-pool.md)によってパラメーター1がページングプール (または他の種類のページング可能なメモリ) であることが報告された場合、IRQL が大きすぎてこのデータにアクセスできません。 低い IRQL で実行するか、データを非ページプールに割り当てます。
+- [**! Pool**](-pool.md)によってパラメーター1がページングプール (または他の種類のページング可能なメモリ) であることが報告された場合、IRQL が大きすぎてこのデータにアクセスできません。 低い IRQL で実行するか、データを非ページプールに割り当てます。
 
 - パラメーター3で、これがページング可能なコードを実行しようとしたことを示している場合、IRQL は高すぎるため、この関数を呼び出すことができません。 低い IRQL で実行するか、コードをページング可能としてマークしません。
 
-- それ以外の場合、これは不適切なポインターである可能性があります。これは、使用が不要な場合や、ビットを反転する場合に発生する可能性があります。 パラメーター1で[ **! pte**](-pte.md)、 [ **! address**](-address.md)、および[ **ln** (最も近いシンボルを一覧表示)](ln--list-nearest-symbols-.md)の有効性を調べます。
+- それ以外の場合、これは不適切なポインターである可能性があります。これは、使用が不要な場合や、ビットを反転する場合に発生する可能性があります。 パラメーター1で[**! pte**](-pte.md)、 [**! address**](-address.md)、および[ **ln** (最も近いシンボルを一覧表示)](ln--list-nearest-symbols-.md)の有効性を調べます。
 
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-カーネルデバッガーが使用可能な場合は、スタックトレースを取得します。 まず、 [ **! analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッガー拡張機能を実行して、バグチェックに関する情報を表示します。 ( **! Analyze**拡張機能は、根本原因を特定するのに役立ちます)。次に、いずれかの[ **k\*** (スタックバックトレースの表示)](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)コマンドを入力して、呼び出し履歴を表示します。
+カーネルデバッガーが使用可能な場合は、スタックトレースを取得します。 まず、 [**! analyze**](-analyze.md)デバッガー拡張機能を実行して、バグチェックに関する情報を表示します。 ( **! Analyze**拡張機能は、根本原因を特定するのに役立ちます)。次に、いずれかの[ **k \* ** (スタックバックトレースの表示)](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンドを入力して、呼び出し履歴を表示します。
 
-### <a name="gather-information"></a>情報の収集
+### <a name="gather-information"></a>情報を集める
 
 青い画面にドライバーが表示されている場合は、その名前を確認します。
 

@@ -3,20 +3,20 @@ title: 処理の停止のデバッグ
 description: 処理の停止のデバッグ
 ms.assetid: 9dff37ed-4843-4e85-8ab3-6a0a37a58c23
 keywords:
-- ストリーミングの停止を処理、デバッグ、ビデオ ストリーム失速カーネル
+- カーネルストリーミングデバッグ, ビデオストリームの停止, 処理の停止
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0051d7ae2a9f4aa5eddc1a7efe3b47bfdcef71d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 088a6a8f5dcb069b0d64ed73ce717aab4fa483df
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324561"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534781"
 ---
 # <a name="debugging-a-processing-stall"></a>処理の停止のデバッグ
 
 
-関連する暗証番号 (pin) を検索することから始めます。 関連するビデオのキャプチャの暗証番号 (pin) がアドレスを仮想的な場合は、 **8160DDE0**ので、使用して、 [ **! ks.dump** ](-ks-dump.md)このアドレスでの拡張機能コマンドの詳細を取得します。
+まず、関連する pin を見つけます。 架空のケースでは、関連するビデオキャプチャピンのアドレスは**80**になります。そのため、このアドレスに対して[**! ks. dump**](-ks-dump.md) extension コマンドを使用して詳細情報を取得します。
 
 ```dbgcmd
 kd> !ks.dump 8160DDE0 7
@@ -30,7 +30,7 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
         And Gate Count           1
 ```
 
-まず、ピンが適切な状態、および処理ミュー テックスを別のスレッドによって保持されているかどうかを決定します。 暗証番号 (pin) の状態は、この場合、 **KSSTATE\_実行**必要があるし、処理のミュー テックスが保持されていない、次に使用して、 [ **! ks.dumpqueue** ](-ks-dumpqueue.md)拡張機能使用可能なフレームがあるかどうかを判断するには。
+まず、pin が適切な状態であるかどうか、および処理ミューテックスが別のスレッドによって保持されているかどうかを確認します。 この場合、pin の状態は**Ksk state \_ RUN**である必要がありますが、処理ミューテックスは保持されていないため、次に[**! ks キュー**](-ks-dumpqueue.md)拡張機能を使用して、使用可能なフレームがあるかどうかを確認します。
 
 ```dbgcmd
 kd> !ks.dumpqueue 8160DDE0 7
@@ -57,15 +57,15 @@ Queue 8172D5D8:
 ...<this part of display not shown>...
 ```
 
-部分的な上の画面で、 **! ks.dumpqueue** 5 つのフレームがあることがわかります出力を待機中、または使用可能な。 これらのフレームの先行またはリーディング エッジの背後にあるか? **! Ks.dumpqueue**を表示するフレームが古いものから順に常に一覧表示します。 この一覧を表示すると、最初のフレーム、最も古いフレームのリーディング エッジのフレームのヘッダーと一致します。 したがって、最先端のすべての利用可能なフレーム、います。
+上の例では、 **! ks キュー**の出力が部分的に表示されています。5つのフレームが待機中であるか、使用可能であることがわかります。 これらのフレームは、先頭のエッジの前または後ろにありますか。 **! Ks キュー**の表示では、フレームは常に古いものから最新のものに一覧表示されます。 先頭のエッジのフレームヘッダーは、最も古いフレームで示されている最初のフレームと一致します。 このため、使用可能なすべてのフレームが最先端になります。
 
-、そうでないこのポインターを複製する期限のカウントの参照を保持するいたし、最先端の背後にあるされたすべてのフレームの代わりに、問題はほとんどの場合、ハードウェアまたはハードウェアのドライバーのプログラミングのいずれかで生成されます。 ハードウェアが (チェックの割り込みおよび Dpc) のバッファー入力候補をシグナル通知するかどうかを確認し、ドライバーが応答している適切にこれらの通知を (たとえば、バッファーの完了時に複製を削除する) ことによって判断します。
+そうではなく、すべてのフレームが先頭エッジの背後にあり、複製ポインターによる参照カウントを持っている場合は、ハードウェアまたはドライバーによるハードウェアのプログラミングに起因する可能性が最も高い問題が発生します。 ハードウェアが、バッファーの入力候補 (割り込みおよび Dpc をチェック) であることを確認し、ドライバーがこれらの通知に適切に応答していることを確認します (たとえば、バッファーの完了時に複製を削除します)。
 
-この例のようにすべてのフレームがリーディング エッジの前、問題、ほぼ間違いなくソフトウェア問題です。 詳細情報は、暗証番号 (pin) を調べることで取得することができ、ゲートします。
+この例に示すように、すべてのフレームが最先端のエッジより前にある場合、問題はほぼ確実にソフトウェアの問題です。 Pin のおよびゲートを確認することで、さらに詳しい情報を得ることができます。
 
-### <a name="span-idinterpretingtheandgatespanspan-idinterpretingtheandgatespaninterpreting-the-and-gate"></a><span id="interpreting_the_and_gate"></span><span id="INTERPRETING_THE_AND_GATE"></span>解釈、およびゲート
+### <a name="span-idinterpreting_the_and_gatespanspan-idinterpreting_the_and_gatespaninterpreting-the-and-gate"></a><span id="interpreting_the_and_gate"></span><span id="INTERPRETING_THE_AND_GATE"></span>およびゲートの解釈
 
-Pin のおよびゲート コントロールを処理します。 ゲートの数が 1 つの場合は、処理が発生することができます。 使用して、and ゲートの現在の状態を取得、 **! ks.dump**拡張機能。
+Pin のおよびゲートは、処理を制御します。 ゲート数が1の場合は、処理が発生する可能性があります。 **! Ks**拡張子を使用して、およびゲートの現在の状態を取得します。
 
 ```dbgcmd
 kd> !ks.dump 8160DDE0 7
@@ -79,11 +79,11 @@ Pin object 8160DDE0 [CKsPin = 8160DD50]
         And Gate Count           1
 ```
 
-ゲート数は、1 つであるため、ゲートは開いています。 この場合、処理の停止の次の潜在的な原因を調べます。
+ゲート数が1であるため、ゲートとゲートが開かれています。 この場合は、処理が停止する可能性のある次の原因を調査してください。
 
--   プロセスのディスパッチで状態が正しく返される\_保留します。
+-   プロセスディスパッチによって、保留中の状態が誤って返されました \_ 。
 
--   データ可用性大文字と小文字が不足している、 [KsPinAttemptProcessing](https://go.microsoft.com/fwlink/p/?linkid=56545)呼び出します。
+-   データの可用性ケースに[KsPinAttemptProcessing](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattemptprocessing)呼び出しがありません。
 
  
 

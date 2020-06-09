@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhcdpow
-description: Usbkd.usbhcdpow コマンドは、ルート ハブまたは USB ホスト コント ローラーの電源状態の履歴を表示します。
+title: usbkd. usbhcdpow
+description: Usbkd-usbhcdpow コマンドは、USB ホストコントローラーまたはルートハブの電源状態の履歴を表示します。
 ms.assetid: 49D803E3-0D65-48D4-98C5-BFE4DB2C2985
 keywords:
-- デバッグ usbkd.usbhcdpow Windows
+- usbkd. usbhcdpow Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 29b6d960aa7e9a448bb44c68fb104d9962205766
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 31e996f7ccb1dd4a8754ce96285746524158ca43
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335573"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534861"
 ---
 # <a name="usbkdusbhcdpow"></a>!usbkd.usbhcdpow
 
 
-**! Usbkd.usbhcdpow**コマンドは、USB ホスト コント ローラーまたはルート ハブの電源状態の履歴を表示します。
+**! Usbkd-usbhcdpow**コマンドは、USB ホストコントローラーまたはルートハブの電源状態の履歴を表示します。
 
 ```dbgcmd
 !usbkd.usbhcdpow DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-次のいずれかのアドレス:
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+次のいずれかのアドレス。
 
--   USB ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能。
--   物理デバイス オブジェクト (PDO) USB ルート ハブにデバイスの拡張機能。
+-   USB ホストコントローラーの機能デバイスオブジェクト (FDO) のデバイス拡張機能。
+-   物理デバイスオブジェクト (PDO) の USB ルートハブのデバイス拡張機能。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-EHCI ホスト コント ローラーの FDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+EHCI ホストコントローラーの FDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -55,9 +55,9 @@ EHCI ホスト コント ローラーの FDO のデバイスの拡張機能の�
      ...
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe00001ca11a0**します。
+上記の出力では、FDO のデバイス拡張機能のアドレスが、 [DML](debugger-markup-language-commands.md)コマンドの引数として表示されます **! ehci \_ info ffffe00001ca11a0**です。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 **! usbhcdpow**コマンド。
+次に、デバイス拡張機能のアドレスを **! usbhcdpow**コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdpow ffffe00001ca11a0
@@ -78,7 +78,7 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
 [07] FdoPwrEv_Rh_Wake                   FdoPwr_WaitSx                      FdoPwr_WaitSx                        dt:25481267 ms
 ```
 
-ルート ハブの PDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+ルートハブの PDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -89,7 +89,7 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
         ...
 ```
 
-上記の出力で、コマンドの引数として表示されるルート ハブの FDO のアドレスを確認できます **! devstack ffffe00002320050**します。 使用して、 [ **! devstack** ](-devstack.md)は PDO とデバイスの PDO 拡張機能のアドレスを検索するコマンド。
+上記の出力には、コマンド **! devstack ffffe00002320050**の引数として表示されるルートハブの FDO のアドレスが表示されます。 [**! Devstack**](-devstack.md)コマンドを使用して、pdo のアドレスと pdo デバイス拡張機能を検索します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -99,9 +99,9 @@ dt USBPORT!_FDO_EXTENSION ffffe00001ca15a0
 ...
 ```
 
-上記の出力で確認できます、pdo ルート ハブのデバイスの拡張機能のアドレスが`ffffe0000213c1a0`します。
+前の出力では、ルートハブの PDO のデバイス拡張機能のアドレスがであることがわかり `ffffe0000213c1a0` ます。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 **! usbhcdpow**コマンド。
+次に、デバイス拡張機能のアドレスを **! usbhcdpow**コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdpow ffffe0000213c1a0
@@ -115,12 +115,12 @@ dt USBPORT!_FDO_EXTENSION ffffe0000213c5a0
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

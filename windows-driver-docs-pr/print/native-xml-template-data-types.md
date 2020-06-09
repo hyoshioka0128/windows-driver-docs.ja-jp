@@ -3,41 +3,40 @@ title: ネイティブ XML テンプレート データ型
 description: ネイティブ XML テンプレート データ型
 ms.assetid: a34dec46-de5d-4f12-8863-2fe6b6e5eed4
 keywords:
-- WDK GDL、データ型のテンプレート
-- WDK GDL、プリミティブのデータ型
-- ネイティブ データ型の WDK GDL
+- テンプレート WDK GDL, データ型
+- データ型 WDK GDL、プリミティブ
+- ネイティブデータ型 WDK GDL
 - XML_TYPE WDK GDL
 - ArrayLabel ディレクティブ WDK GDL
 - XMLDataType ディレクティブ WDK GDL
-ms.date: 04/20/2017
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 719d28be12cb3adaf19fccf2a28d192689855523
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8724ec1b6ce9e7f50657fd35141e35a0504011ab
+ms.sourcegitcommit: d71024c0c782b5c013192d960700802eafc120f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324220"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507099"
 ---
 # <a name="native-xml-template-data-types"></a>ネイティブ XML テンプレート データ型
 
+ネイティブ XML データ型は、XML 型として定義されて \_ います。
 
-ネイティブ XML データ型が XML として定義されている\_型。
+構文は XML によって定義されます。 XML スキーマによって認識される任意のデータ型を定義できます。 パーサーフィルターは XML データ型に依存しないため、現在のパーサーは将来の XML データ型を変更せずにサポートできます。
 
-構文は、XML によって定義されます。 XML スキーマで認識される任意のデータ型を定義できます。 パーサー フィルターは現在のパーサーは何も変更せず、将来の XML データ型をサポートできるように、XML データ型に依存します。
+\***DataType**: **xml \_ 型**により、特定の xml スキーマ定義言語の組み込みの単純データ型にテンプレートが関連付けられます。 インスタンスデータ値は、 **xsi:type** \* このテンプレートによって指定された**xmldatatype**コンストラクトから派生した XSI: type を持つ XML 要素のコンテンツとして出力されます。
 
-\***DataType**:**XML\_型**テンプレートを特定の XML スキーマ定義言語の組み込みの単純データ型に関連付けます。 インスタンス データ値になります出力 XML 要素のコンテンツとして持つ**xsi:type**から派生したが、 \* **XMLDataType**このテンプレートで指定されている構造。
+XML 型のデータ型を定義するには、次のディレクティブを使用し \_ ます。
 
-次のディレクティブは、XML の定義に使用\_型。
+- \*XMLDataType (必須)。 任意の XSD スキーマ組み込みの単純型。 XML スキーマの[World Wide Web コンソーシアム (W3C)](https://www.w3.org/XML/Schema#dev)勧告では、String、normalizedString、token、Byte、unsignedByte、Base64Binary、hexBinary、Integer、PositiveInteger、NegativeInteger、NonNegativeInteger、nonPositiveInteger、int の各組み込みの単純データ型が認識されます。 unsignedInt、Long、unsignedbyte、Short、Unsignedbyte、decimal、float、double、boolean、Time、dateTime、duration、date、Gmonth、Gmonth、GYearMonth、gmonth、Gmonth Day、Name、QName、NCName、anyURI、LANGUAGE、ID、IDREF、IDREFS、ENTITY、ENTITIES、NOTATION、NMTOKEN、および NMTOKENS。 GDL パーサーは、これらのデータ型に限定されておらず、将来の XML データ型を変更せずに処理するように設計されていることに注意してください。
 
--   \*XMLDataType (必須)。 任意の XSD スキーマ組み込み単純型。 [World Wide Web Consortium (W3C)](https://go.microsoft.com/fwlink/p/?linkid=73527) XML スキーマの推奨事項は次の組み込みの単純なデータ型を認識: 文字列、normalizedString、トークン、バイト、unsignedByte、base64Binary、hexBinary、整数、positiveInteger、negativeInteger、nonNegativeInteger、nonPositiveInteger、int、unsignedInt、unsignedLong、short、unsignedShort、decimal、float、double、boolean、時間、dateTime、期間、日付、gMonth、gYear、gYearMonth、gDay、gMonthDay、名、QName、NCName、anyURI、言語、ID、IDREF、IDREFS、エンティティ、エンティティ、表記、NMTOKEN、および NMTOKENS します。 なお GDL パーサーはこれらのデータ型に限定されず、何も変更せず、将来の XML データ型を処理するために設計されています。
+- \*ArrayLabel (省略可能)。 このディレクティブを指定した場合、パーサーフィルターでは、指定された配列ラベルを前に付けた値がかっこで囲まれている必要があります。
 
--   \*ArrayLabel (省略可能)。 このディレクティブを指定した場合パーサー フィルターで、値を指定した配列のラベルに続くかっこで囲む必要があります。
+値の構文は、W3C XML 標準で定義されている特定のデータ型に対して定義されている構文に従う必要があります。 XML 構文が基本的な GDL 構文規則と競合する場合、値 (または競合する部分のみ) を <Begin/EndValue: > コンストラクト内で囲む必要があります。 このような互換性のない構文を持つ XML 値、または、複合データ型によって使用される構文と互換性のない構文を持つ XML 値は、複合データ型のメンバーとして表示できません。 また、GDL パーサーは、開始角かっこ (< または >) やアンパサンド (&) などの特殊な XML 文字をエスケープしません。 値の作成者は、文字データの XML 構文に準拠する役割を担います。
 
-値の構文は、その特定のデータ型の W3C XML 標準を定義する構文に準拠する必要があります。 値 (または競合している部分のみ) で囲む必要があります XML 構文は、基本的な GDL 構文規則と競合している場合&lt;Begin/EndValue:&gt;を構築します。 複合データ型のメンバーとしてこのような互換性のない構文では、使用した XML 値または構文は、複合データ型で使用される構文と互換性がないことはできません。 開く、または終わりかっこのような文字が GDL パーサーは特殊な XML をエスケープしないことに注意してください (&lt;または&gt;) またはアンパサンド (&)。 値の作成者は、文字データの XML 構文に準拠する責任を負います。
+たとえば、次のテンプレートについて考えてみます。
 
-たとえば、次のテンプレートがあるとします。
-
-```cpp
+```console
 *Template:  XML_STRING
 {
     *Type:  DATATYPE
@@ -46,9 +45,9 @@ ms.locfileid: "63324220"
 }
 ```
 
-上記のテンプレートを使用する場合は、次の XML スキーマのエントリが作成されます。 このエントリは最初に、指定された型から派生した新しいデータ型を定義する、 \* **XMLDataType**ディレクティブが、この新しいデータ型が、スナップショットに含まれる XML 属性を追加します。 元のデータ型を使用した場合、元の定義済みの型が XML 属性を表示を許可しないため、スキーマ検証エラーが表示されるは。
+上記のテンプレートを使用すると、次の XML スキーマエントリが作成されます。 このエントリは、最初に xmldatatype ディレクティブによって指定された型から派生する新しいデータ型を定義し \* **XMLDataType**ますが、この新しいデータ型には、スナップショットに表示できる追加の XML 属性が含まれています。 元のデータ型を使用した場合、スキーマ検証エラーが発生します。これは、元の定義済みの型では XML 属性を表示できないためです。
 
-```cpp
+```xml
     <complexType name = "GDLW_string">
         <simpleContent>
             <extension base="string">
@@ -59,15 +58,15 @@ ms.locfileid: "63324220"
     </complexType>
 ```
 
-次の GDL エントリを検討してください。
+次の GDL エントリを考えてみましょう。
 
-```cpp
+```console
 *Text: Hello World
 ```
 
-GDL 属性を宣言する文字列テンプレートを考えてみます\***テキスト**が、 \* **ValueType** XML で定義されている\_でテンプレートの文字列を次のコード例を示しています。
+\* **Text** \* **ValueType** \_ 次のコード例に示すように、XML 文字列テンプレートによって定義された ValueType を持つように GDL 属性テキストを宣言する語句テンプレートについて考えてみます。
 
-```cpp
+```console
 *Template:  PHRASE
 {
     *Name:  "*Text"
@@ -76,18 +75,10 @@ GDL 属性を宣言する文字列テンプレートを考えてみます\***テ
 }
 ```
 
-以前 GDL エントリは、語句のテンプレートを使用して解釈されます、次の XML 出力が発生します。
+前の GDL エントリが語句テンプレートを使用して解釈された場合、次の XML 出力が発生します。
 
-```cpp
+```xml
 <GDL_ATTRIBUTE Name="*Text"  xsi:type="GDLW_string" >Hello World</GDL_ATTRIBUTE>
 ```
 
-XML 属性**xsi:type**スキーマにこの要素の宣言が含まれていないため、この属性の要素によって保持されているデータ型を指定するために使用します。
-
- 
-
- 
-
-
-
-
+XML 属性**xsi: type**は、この属性要素によって保持されるデータ型を指定するために使用されます。これは、スキーマにこの要素の宣言が含まれていないためです。

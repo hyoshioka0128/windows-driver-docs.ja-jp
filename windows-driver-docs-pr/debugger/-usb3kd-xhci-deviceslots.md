@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_deviceslots
-description: Usb3kd.xhci_deviceslots 拡張機能には、USB 3.0 ホスト コント ローラーに接続されたデバイスに関する情報が表示されます。
+title: xhci_deviceslots usb3kd
+description: Xhci_deviceslots usb3kd 拡張機能には、USB 3.0 ホストコントローラーに接続されているデバイスに関する情報が表示されます。
 ms.assetid: 471167EA-F7F8-470D-B09C-8627C5BE9566
 keywords:
-- デバッグ usb3kd.xhci_deviceslots Windows
+- usb3kd Windows デバッグの xhci_deviceslots
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,50 +12,50 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ce2c4b1bd84d16f3169c365e79c6389c30e6646
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 098d97a4f07301b7962c66376e4f80bf74bdee24
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335633"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534123"
 ---
-# <a name="usb3kdxhcideviceslots"></a>! usb3kd.xhci\_deviceslots
+# <a name="usb3kdxhci_deviceslots"></a>! usb3kd. xhci の大 \_ 多数のデバイス
 
 
-[ **! Usb3kd.xhci\_deviceslots** ](-usb3kd-device-info.md)拡張機能は、USB 3.0 ホスト コント ローラーに接続されているデバイスに関する情報を表示します。
+[**! Usb3kd xhci \_ **](-usb3kd-device-info.md)は、USB 3.0 ホストコントローラーに接続されているデバイスに関する情報を表示します。
 
 ```dbgcmd
 !usb3kd.xhci_deviceslots DeviceExtension [SlotNumber] [verbose]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能のアドレス。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+ホストコントローラーの機能デバイスオブジェクト (FDO) のデバイス拡張機能のアドレス。
 
-<span id="_______SlotNumber______"></span><span id="_______slotnumber______"></span><span id="_______SLOTNUMBER______"></span> *SlotNumber*   
-表示するデバイスのスロットの数。 このパラメーターを省略すると、すべてのデバイスが表示されます。
+<span id="_______SlotNumber______"></span><span id="_______slotnumber______"></span><span id="_______SLOTNUMBER______"></span>*SlotNumber*   
+表示されるデバイスのスロット番号。 このパラメーターを省略すると、すべてのデバイスが表示されます。
 
-<span id="_______verbose______"></span><span id="_______VERBOSE______"></span> **verbose**   
-表示は冗長です。
+<span id="_______verbose______"></span><span id="_______VERBOSE______"></span>**詳細**   
+表示は verbose です。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-出力、 **! xhci\_deviceslots**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
+出力の **! xhci は \_ ** 、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
-USB 3.0 ホスト コント ローラーのドライバーは、コント ローラーに接続されているデバイスを表すデータ構造体のリストを保持します。 各データ構造体は、スロット番号によって識別されます。
+USB 3.0 ホストコントローラードライバーは、コントローラーに接続されているデバイスを表すデータ構造の一覧を保持します。 これらの各データ構造体は、スロット番号によって識別されます。
 
 <a name="examples"></a>例
 --------
 
-デバイス拡張機能のアドレスを取得する出力の確認、 [ **! xhci\_dumpall** ](-usb3kd-xhci-dumpall.md)コマンド。 次の例では、デバイスの拡張機能のアドレスは、0xfffffa800536e2d0 です。
+デバイス拡張機能のアドレスを取得するには、 [**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)コマンドの出力を確認します。 次の例では、デバイス拡張機能のアドレスは0xfffffa800536e2d0 です。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -75,7 +75,7 @@ USB 3.0 ホスト コント ローラーのドライバーは、コント ロー
     ...
 ```
 
-デバイスの拡張機能のアドレスを渡すことができますので、 **! usb3kd.xhci\_deviceslots**コマンド。
+これで、デバイス拡張機能のアドレスを **! usb3kd. xhci デバイス \_ ロット**コマンドに渡すことができます。
 
 ```dbgcmd
 3: kd> !xhci_deviceslots 0xfffffa800536e2d0
@@ -122,14 +122,14 @@ DeviceContextBase: VA 0xfffffa8005ab9000 LA 0x1168b9000 !wdfcommonbuffer 0x57ffa
     ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

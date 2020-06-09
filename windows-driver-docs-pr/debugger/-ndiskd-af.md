@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9726e54c499b2eff6ab924f234350fddecfff832
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dd706d7c6be28490605034067d1b7b1024037c4a
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826677"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534235"
 ---
 # <a name="ndiskdaf"></a>!ndiskd.af
 
@@ -31,7 +31,7 @@ ms.locfileid: "72826677"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 必須。 CoNDIS アドレスファミリのハンドル。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -48,7 +48,7 @@ CoNDIS アドレスファミリの詳細については、「[アドレスファ
 <a name="examples"></a>例
 --------
 
-Condis は、VPN への接続などの特定の状況で使用されます。したがって、システム上のミニポートドライバーが CoNDIS 仮想接続を作成してアクティブ化していない限り、 **!** を実行しても結果が表示されません。 次の例は、VPN ネットワークに接続されているコンピューターからの結果を示しています。 最初に、パラメーターを付けずに[ **! ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行して、システム上のミニポートドライバーとミニポートドライバーの一覧を表示します。 次の出力で、Marvell AVASTAR ワイヤレス-AC ネットワークコントローラーネットワークアダプターのミニポートドライバーを探します。 そのハンドルは ffffc804af2e3710 です。
+Condis は、VPN への接続などの特定の状況で使用されます。したがって、システム上のミニポートドライバーが CoNDIS 仮想接続を作成してアクティブ化していない限り、 **!** を実行しても結果が表示されません。 次の例は、VPN ネットワークに接続されているコンピューターからの結果を示しています。 最初に、パラメーターを付けずに[**! ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行して、システム上のミニポートドライバーとミニポートドライバーの一覧を表示します。 次の出力で、Marvell AVASTAR ワイヤレス-AC ネットワークコントローラーネットワークアダプターのミニポートドライバーを探します。 そのハンドルは ffffc804af2e3710 です。
 
 ```console
 1: kd> !ndiskd.netadapter
@@ -117,19 +117,19 @@ CLIENT HANDLERS
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[接続指向の NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
+[接続指向 NDIS](https://docs.microsoft.com/windows-hardware/drivers/network/connection-oriented-ndis)
 
-[アドレスファミリ](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)
+[アドレス ファミリ](https://docs.microsoft.com/windows-hardware/drivers/network/address-families)
 
  
 

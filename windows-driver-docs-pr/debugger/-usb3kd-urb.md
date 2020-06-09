@@ -1,9 +1,9 @@
 ---
-title: usb3kd.urb
-description: Usb3kd.urb 拡張機能では、USB 要求ブロック (URB) に関する情報が表示されます。
+title: usb3kd
+description: Usb3kd 拡張機能には、USB 要求ブロック (URB) に関する情報が表示されます。
 ms.assetid: B4583F32-BBC9-4182-A403-9C43BBD9BA4F
 keywords:
-- デバッグ usb3kd.urb Windows
+- usb3kd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0774c2b36d348ff0c485bd08e9f1e2bb06169dc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 55f149cab615cf496ae91cb861c760b0db372fe0
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335627"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534153"
 ---
 # <a name="usb3kdurb"></a>!usb3kd.urb
 
 
-[ **! Usb3kd.urb** ](-usb3kd-device-info.md)拡張機能は、USB 要求ブロック (URB) に関する情報を表示します。
+[**! Usb3kd**](-usb3kd-device-info.md)拡張機能には、USB 要求ブロック (urb) に関する情報が表示されます。
 
 ```dbgcmd
 !usb3kd.urb UrbAddress
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______UrbAddress______"></span><span id="_______urbaddress______"></span><span id="_______URBADDRESS______"></span> *UrbAddress*   
+<span id="_______UrbAddress______"></span><span id="_______urbaddress______"></span><span id="_______URBADDRESS______"></span>*Urbaddress*   
 URB のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="examples"></a>例
 --------
 
-次の例の出力に URB (0xfffffa8005a2cbe8) のアドレスを示しています、 [ **! xhci\_deviceslots** ](-usb3kd-xhci-deviceslots.md)コマンド。
+次の例では、 [**! xhci 0xfffffa8005a2cbe8 \_ ロット**](-usb3kd-xhci-deviceslots.md)コマンドの出力に含まれる URB () のアドレスを示します。
 
 ```dbgcmd
 3: kd> !xhci_deviceslots 0xfffffa800520d2d0
@@ -61,7 +61,7 @@ DeviceContextBase: VA 0xfffffa8005a64000 LA 0x116864000 !wdfcommonbuffer 0x57ffa
     ...
 ```
 
-次の例では、通過する URB のアドレス、 **! usb3kd.urb**コマンド。
+次の例では、 **usb3kd**コマンドに urb のアドレスを渡します。
 
 ```dbgcmd
 3: kd> !urb 0xfffffa8005a2cbe8
@@ -83,12 +83,12 @@ TransferBuffer:        0xfffffa8005a2cc88
 TransferBufferMDL:     0xfffffa8005848930
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

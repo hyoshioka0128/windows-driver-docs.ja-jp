@@ -1,9 +1,9 @@
 ---
 title: errpkt
-description: Errpkt 拡張機能には、Windows ハードウェア エラー アーキテクチャ (WHEA) ハードウェアのエラー パケットの内容が表示されます。
+description: Errpkt 拡張機能には、Windows Hardware Error Architecture (WHEA) ハードウェアエラーパケットの内容が表示されます。
 ms.assetid: cf4b1dfa-3b15-45d4-b5e2-1da7cdbca350
 keywords:
-- Windows デバッグ errpkt
+- errpkt Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 130f8a2403ce93bc75b19053234372c627ed0b86
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4e9fbcc06b5cd8db3d3cc14c19640c00ef92be9e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336787"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534839"
 ---
 # <a name="errpkt"></a>!errpkt
 
 
-**! Errpkt**拡張機能が Windows ハードウェア エラー アーキテクチャ (WHEA) ハードウェアのエラー パケットの内容を表示します。
+**! Errpkt**拡張機能には、Windows ハードウェアエラーアーキテクチャ (WHEA) ハードウェアエラーパケットの内容が表示されます。
 
 ```dbgcmd
 !errpkt Address 
 ```
 
-## <a name="span-idddkubpdbgspanspan-idddkubpdbgspanparameters"></a><span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>パラメーター
+## <a name="span-idddk__ubp_dbgspanspan-idddk__ubp_dbgspanparameters"></a><span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-ハードウェアのエラー パケットのアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+ハードウェアエラーパケットのアドレスを指定します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -55,24 +55,24 @@ ms.locfileid: "63336787"
 <td align="left"><p>利用不可</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows Vista 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows Vista 以降</strong></p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-この拡張機能は、Windows Vista および Windows の以降のバージョンでのみ使用できます。
+この拡張機能は、Windows Vista 以降のバージョンの Windows でのみ使用できます。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Whea** ](-whea.md)と[ **! errrec** ](-errrec.md) WHEA 情報を表示する拡張機能を使用できます。 WHEA の詳細については、次を参照してください。 [Windows ハードウェア エラー アーキテクチャ (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) ドキュメントです。
+[**! Whea**](-whea.md)および[**! errrec**](-errrec.md)拡張機能を使用して、追加の whea 情報を表示できます。 WHEA に関する一般的な情報については、Windows Driver Kit (WDK) のドキュメントの「 [Windows ハードウェアエラーアーキテクチャ (WHEA)](https://docs.microsoft.com/windows-hardware/drivers/whea/) 」を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-次の例の出力を示しています、 **! errpkt**拡張機能。
+次の例は、 **! errpkt**拡張機能の出力を示しています。
 
 ```dbgcmd
 3: kd> !errpkt fffffa8007cf44da 

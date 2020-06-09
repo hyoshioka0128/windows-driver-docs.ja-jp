@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbportmdportlog
-description: Usbkd.usbportmdportlog コマンド確認が表示されます、し、USBPORT のデバッグ ログが生成されたクラッシュ ダンプに存在する場合、結果としてバグの 0 xfe します。
+title: usbkd. usbportmdportlog
+description: Usbkd. usbportmdportlog コマンドを実行すると、USBKD デバッグログが、バグチェック0xFE の結果として生成されたクラッシュダンプに存在する場合に表示されます。
 ms.assetid: C0E32BDE-8186-4477-AB57-530B0AF6F27F
 keywords:
-- デバッグ usbkd.usbportmdportlog Windows
+- usbkd. usbportmdportlog Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 213152340406a3d87dd90b95901ab530f519a567
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: dbc3e3e9610c15a62a73a0384563ca7088a470c0
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327988"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534681"
 ---
 # <a name="usbkdusbportmdportlog"></a>!usbkd.usbportmdportlog
 
 
-**! Usbkd.usbportmdportlog**がの結果として生成されたクラッシュ ダンプに存在する場合、コマンドは、し、USBPORT デバッグ ログを表示します。 [**バグ チェック 0 xfe**](bug-check-0xfe--bugcode-usb-driver.md)します。
+[**Bug Check 0xfe**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプに存在する場合は、 **! usbkd. usbportmdportlog**コマンドによって usbkd デバッグログが表示されます。
 
 ```dbgcmd
 !usbkd.usbportmdportlog
@@ -31,17 +31,17 @@ ms.locfileid: "63327988"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-結果として生成されたクラッシュ ダンプ ファイルをデバッグしている場合にのみ、このコマンドを使用して[ **0 xfe のバグ チェック。BUGCODE\_USB\_ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)します。
+このコマンドは、[**バグチェック 0xfe: バグコード \_ USB \_ ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプファイルをデバッグする場合にのみ使用します。
 
 <a name="examples"></a>例
 --------
 
-出力の一部の例を次に示します **! usbportmdportlog**します。
+次に、 **! usbportmdportlog**の出力の一部の例を示します。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -107,12 +107,12 @@ Minidump USBPORT DEBUG_LOG buffer size 32768, entries 1024, index 400
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

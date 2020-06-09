@@ -1,9 +1,9 @@
 ---
-title: usbkd.isthisdumpasyncissue
-description: このコマンドは、クラッシュの原因が割り込み USB EHCI ホスト コント ローラーに関連付けられている非同期の高度な問題にするかどうかを確認する、0 xfe クラッシュ ダンプ ファイルを確認します。
+title: usbkd. isit dumpasyncissue
+description: このコマンドは、0xFE クラッシュダンプファイルをチェックして、クラッシュの原因として、USB EHCI ホストコントローラーに関連付けられた非同期の事前の問題が発生していないかどうかを確認します。
 ms.assetid: 1729E52F-F943-4062-94AC-7890C2E25EBF
 keywords:
-- デバッグ usbkd.isthisdumpasyncissue Windows
+- usbkd. isit dumpasyncissue Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b7799b3ecc66f8b22deab723b144a3a46293efc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1939efedae2a1a0fbbc3b3d368f3de228b6c2a5
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334099"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534051"
 ---
 # <a name="usbkdisthisdumpasyncissue"></a>!usbkd.isthisdumpasyncissue
 
 
-**! Usbkd.isthisdumpasyncissue**コマンドによって生成された、クラッシュ ダンプ ファイルを確認します[**バグ チェック 0 xfe**](bug-check-0xfe--bugcode-usb-driver.md)上、クラッシュの原因が、割り込みをしたかどうかを確認するには、。USB EHCI ホスト コント ローラーに関連付けられている非同期の高度な問題です。
+**! Usbkd. isthe dumpasyncissue**コマンドは、[**バグチェック 0xfe**](bug-check-0xfe--bugcode-usb-driver.md)によって生成されたクラッシュダンプファイルをチェックして、クラッシュの原因として、USB EHCI ホストコントローラーに関連付けられている非同期の事前問題があるかどうかを確認します。
 
 ```dbgcmd
 !usbkd.isthisdumpasyncissue
@@ -31,17 +31,17 @@ ms.locfileid: "63334099"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-結果として生成されたクラッシュ ダンプ ファイルをデバッグしている場合にのみ、このコマンドを使用して[ **0 xfe のバグ チェック。BUGCODE\_USB\_ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)します。
+このコマンドは、[**バグチェック 0xfe: バグコード \_ USB \_ ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプファイルをデバッグする場合にのみ使用します。
 
 <a name="examples"></a>例
 --------
 
-出力の例を次に示します **! usbkd.isthisdumpasyncissue**します。
+次に、 **! usbkd**の出力例を示します。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -52,12 +52,12 @@ BUGCODE_USB_DRIVER (fe)
 This is *NOT* Async on Advance Issue because the EndPointData is NULL
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

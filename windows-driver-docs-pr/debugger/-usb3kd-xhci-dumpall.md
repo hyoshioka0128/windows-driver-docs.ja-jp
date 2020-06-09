@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_dumpall
-description: Usb3kd.xhci_dumpall コマンドでは、コンピューターのすべての USB 3.0 ホスト コント ローラーに関する情報が表示されます。 表示は、UsbXhci.sys によって管理されるデータ構造に基づいています。
+title: xhci_dumpall usb3kd
+description: Usb3kd コマンドは、コンピューター上のすべての USB 3.0 ホストコントローラーに関する情報を表示します xhci_dumpall。 表示は、UsbXhci によって管理されるデータ構造に基づいています。
 ms.assetid: D1087DC6-B065-48E3-93B2-EF53AE9DA8C7
 keywords:
-- デバッグ usb3kd.xhci_dumpall Windows
+- usb3kd Windows デバッグの xhci_dumpall
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,23 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7736dba8fbb19b3b0e73e7fe5a2cea85cfa7fae6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bcb79bc5ee5cd41d12d1e835f3d4a0b65f5a97ac
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330853"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534893"
 ---
-# <a name="usb3kdxhcidumpall"></a>! usb3kd.xhci\_dumpall
+# <a name="usb3kdxhci_dumpall"></a>! usb3kd xhci \_ dumpall
 
 
-[ **! Usb3kd.xhci\_dumpall** ](-usb3kd-device-info.md)コマンドは、コンピューターのすべての USB 3.0 ホスト コント ローラーに関する情報を表示します。 表示は、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づいています。
+[**! Usb3kd. xhci \_ dumpall**](-usb3kd-device-info.md)コマンドは、コンピューター上のすべての USB 3.0 ホストコントローラーに関する情報を表示します。 この表示は、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。
 
 ```dbgcmd
 !usb3kd.xhci_dumpall [1]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
 <span id="_____________1"></span> **1**  
@@ -37,46 +37,46 @@ ms.locfileid: "63330853"
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
 
 
-次のスクリーン ショットの出力を表示する、 **! xhci\_dumpall**l コマンド。
+次のスクリーンショットは、 **! xhci \_ dumpall**l コマンドの出力を示しています。
 
-![出力、! xhci\-dumpall コマンドが xhci コント ローラーの情報を表示](images/xhcidumpall01.png)
+![\-xhci controller 情報を示す! xhci dumpall コマンドの出力](images/xhcidumpall01.png)
 
-出力は、1 つの USB 3.0 ホスト コント ローラーがあることを示しています。
+出力には、USB 3.0 ホストコントローラーが1つあることが示されています。
 
-出力を使用して[を使用してデバッガー マークアップ言語 (DML)](debugger-markup-language-commands.md)リンクを提供します。 リンクは、USB 3.0 ホスト コント ローラーのドライバーによって維持されるように、ホスト コント ローラーの状態に関する詳細情報を提供するコマンドを実行します。 たとえば、すれば、ホストの詳細についてコント ローラーの機能をクリックして、 [ **! xhci\_機能**](-usb3kd-xhci-capability.md)リンク。 リンクをクリックする代わりに、コマンドを入力することができます。 たとえば、ホスト コント ローラーのリソース使用状況に関する情報を表示することがコマンドを入力する **! xhci\_resourceusage 0xfffffa800536e2d0**します。
+出力では、[デバッガーマークアップ言語 (DML) を使用して](debugger-markup-language-commands.md)リンクを提供します。 これらのリンクは、USB 3.0 ホストコントローラードライバーによって管理されているホストコントローラーの状態に関する詳細情報を提供するコマンドを実行します。 たとえば、[ [**! xhci \_ 機能**](-usb3kd-xhci-capability.md)] リンクをクリックすると、ホストコントローラーの機能に関する詳細情報を取得できます。 リンクをクリックする代わりに、コマンドを入力することもできます。 たとえば、ホストコントローラーのリソース使用状況に関する情報を表示するには、コマンド **! xhci \_ resourceusage 0xfffffa800536e2d0**を入力します。
 
-**注**  DML の機能は、WinDbg がではなく Visual Studio または KD で使用できます。
+**メモ**   DML 機能は、WinDbg では使用できますが、Visual Studio または KD では使用できません。
 
  
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-**! Xhci\_dumpall**コマンドは、このコマンドのセットの親コマンド。
+**! Xhci \_ dumpall**コマンドは、この一連のコマンドの親コマンドです。
 
--   [**! xhci\_機能**](-usb3kd-xhci-capability.md)
--   [**! xhci\_情報**](-usb3kd-xhci-info.md)
--   [**!xhci\_deviceslots**](-usb3kd-xhci-deviceslots.md)
--   [**!xhci\_commandring**](-usb3kd-xhci-commandring.md)
--   [**!xhci\_eventring**](-usb3kd-xhci-eventring.md)
--   [**!xhci\_transferring**](-usb3kd-xhci-transferring.md)
--   [**! xhci\_trb**](-usb3kd-xhci-trb.md)
--   [**! xhci\_を登録します**](-usb3kd-xhci-registers.md)
--   [**! xhci\_resourceusage**](-usb3kd-xhci-resourceusage.md)
+-   [**! xhci \_ 機能**](-usb3kd-xhci-capability.md)
+-   [**! xhci \_ info**](-usb3kd-xhci-info.md)
+-   [**! xhci \_ デバイスのロット**](-usb3kd-xhci-deviceslots.md)
+-   [**! xhci \_**](-usb3kd-xhci-commandring.md)
+-   [**! xhci \_ eventring**](-usb3kd-xhci-eventring.md)
+-   [**! 転送中の xhci \_**](-usb3kd-xhci-transferring.md)
+-   [**! xhci \_ trb**](-usb3kd-xhci-trb.md)
+-   [**! xhci \_ レジスタ**](-usb3kd-xhci-registers.md)
+-   [**! xhci \_ resourceusage**](-usb3kd-xhci-resourceusage.md)
 
-によって表示される情報、 **! xhci\_dumpall**コマンドのファミリは、USB 3.0 ホスト コント ローラー ドライバーによって管理されるデータ構造に基づいています。 USB 3.0 ホスト コント ローラーのドライバーと USB 3.0 スタック内の他のドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。 USB 3.0 スタック内のドライバーで使用されるデータ構造の詳細については、第 2 部を参照してください、 [Windows 8 の USB デバッグ イノベーション](https://go.microsoft.com/fwlink/p/?LinkID=249153)ビデオ。
+**! Xhci \_ dumpall**コマンドによって表示される情報は、USB 3.0 ホストコントローラードライバーによって管理されるデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB 3.0 スタック内のその他のドライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。 USB 3.0 スタックのドライバーで使用されるデータ構造の詳細については、Windows 8 ビデオの[Usb デバッグイノベーション](https://channel9.msdn.com/Events/BUILD/BUILD2011/HW-258P)のパート2を参照してください。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

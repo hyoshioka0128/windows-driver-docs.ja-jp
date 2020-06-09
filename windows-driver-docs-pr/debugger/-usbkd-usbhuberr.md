@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhuberr
-description: Usbkd.usbhuberr コマンドは、USB ハブ エラー レコードを表示します。
+title: usbkd. usbkd
+description: Usbkd. usbkd [r] コマンドを実行すると、USB ハブのエラーレコードが表示されます。
 ms.assetid: 5BB87FA2-0531-400C-95B3-325EE4DDB649
 keywords:
-- デバッグ usbkd.usbhuberr Windows
+- usbkd. usbkd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b1593b60ec2a846d5ea8703211ba5faaf9881921
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: be0b24214a99f780b30b355fa51ffac7388b30a9
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334063"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534857"
 ---
 # <a name="usbkdusbhuberr"></a>!usbkd.usbhuberr
 
 
-**! Usbkd.usbhuberr**コマンドは、USB ハブ エラー レコードを表示します。
+**! Usbkd. usbkd r**コマンドを実行すると、USB ハブのエラーレコードが表示されます。
 
 ```dbgcmd
 !usbkd.usbhuberr StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**usbhub!\_ハブ\_例外\_レコード**構造体。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbhub のアドレス** \_ハブ \_ 例外 \_ レコード**の構造。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-以下のアドレスを検索する 1 つの方法を示します、 **usbhub!\_ハブ\_例外\_レコード**します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+Usbhub のアドレスを検索する方法の1つを次に示し**ます。 \_ハブ \_ 例外 \_ レコード**。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -52,7 +52,7 @@ Usbkd.dll
       ...
 ```
 
-上記の出力で推奨されるコマンドを確認できます **! devstack ffffe00002320050**します。 次のコマンドを入力します。
+上記の出力には、推奨されるコマンドである**devstack ffffe00002320050**が表示されます。 次のコマンドを入力します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe000011f7050
@@ -63,7 +63,7 @@ Usbkd.dll
 ...
 ```
 
-上記の出力で`ffffe000011f71a0`はハブの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能のアドレスです。 デバイスの拡張機能のアドレスを渡す[ **! usbkd.usbhubext**](-usbkd-usbhubext.md)します。
+前の出力で、 `ffffe000011f71a0` はハブの機能デバイスオブジェクト (FDO) のデバイス拡張機能のアドレスです。 デバイス拡張機能のアドレスを[**! usbhubext**](-usbkd-usbhubext.md)に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000011f71a0
@@ -81,15 +81,15 @@ ExceptionList: !usblist ffffe000011f8498, EL [Empty]
 ...
 ```
 
-上記の出力で`ffffe000011f8498`例外の一覧のアドレスです。 例外の一覧が空でない場合のアドレスが含まれます **\_ハブ\_例外\_レコード**構造体。
+前の出力で、 `ffffe000011f8498` は例外リストのアドレスです。 例外リストが空でない場合は、 ** \_ ハブ \_ 例外 \_ レコード**構造のアドレスが含まれます。
 
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

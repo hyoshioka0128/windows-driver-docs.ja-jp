@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f067172eb8e297d45292ffc5da977772566254
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 72791e1cc75b671a33378b27ecbaa53f364484d3
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837839"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534705"
 ---
-# <a name="usb3kducx_endpoint"></a>! usb3kd\_エンドポイント
+# <a name="usb3kducx_endpoint"></a>! usb3kd \_ エンドポイント
 
 
-[ **! Usb3kd\_endpoint**](-usb3kd-device-info.md)コマンドは、usb [3.0 ツリー](usb-3-extensions.md#usb-3-tree)の usb デバイス上のエンドポイントに関する情報を表示します。 この表示は、USB ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) によって管理されるデータ構造に基づいています。
+[**! Usb3kd \_ エンドポイント**](-usb3kd-device-info.md)コマンドは、usb [3.0 ツリー](usb-3-extensions.md#usb-3-tree)の usb デバイス上のエンドポイントに関する情報を表示します。 この表示は、USB ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) によって管理されるデータ構造に基づいています。
 
 ```dbgcmd
 !usb3kd.ucx_endpoint UcxEndpointPrivContext
@@ -32,7 +32,7 @@ ms.locfileid: "72837839"
 
 
 <span id="_______UcxEndpointPrivContext______"></span><span id="_______ucxendpointprivcontext______"></span><span id="_______UCXENDPOINTPRIVCONTEXT______"></span>*Ucxendpointprivcontext*   
-エンドポイントを表す \_UCXENDPOINT\_PRIVCONTEXT 構造体のアドレス。
+\_エンドポイントを表す ucxendpoint \_ privcontext 構造体のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -42,12 +42,12 @@ Usb3kd
 <a name="remarks"></a>注釈
 -------
 
-Usb ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) は、usb 3.0 ハブドライバーと usb 3.0 ホストコントローラードライバーの間に抽象層を提供します。 拡張機能ドライバーは、ホストコントローラー、デバイス、およびエンドポイントを独自に表現したものです。 **! Ucx\_endpoint**コマンドの出力は、拡張機能ドライバーによって保持されているデータ構造に基づいています。 Usb ホストコントローラー拡張機能ドライバーおよび USB 3.0 ホストコントローラードライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
+Usb ホストコントローラー拡張機能ドライバー (Ucx*バージョン*.sys) は、usb 3.0 ハブドライバーと usb 3.0 ホストコントローラードライバーの間に抽象層を提供します。 拡張機能ドライバーは、ホストコントローラー、デバイス、およびエンドポイントを独自に表現したものです。 出力の **! ucx \_ エンドポイント**コマンドは、拡張機能ドライバーによって保持されているデータ構造に基づいています。 Usb ホストコントローラー拡張機能ドライバーおよび USB 3.0 ホストコントローラードライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-UCX エンドポイントのプライベートコンテキストのアドレスを取得するには、 [ **! ucx\_controller\_list**](-usb3kd-ucx-controller-list.md)コマンドの出力を確認します。 次の例では、2番目のデバイスの最初のエンドポイントのプライベートコンテキストのアドレスは0xfffffa8003694860 です。
+UCX エンドポイントのプライベートコンテキストのアドレスを取得するには、 [**! ucx \_ controller \_ list**](-usb3kd-ucx-controller-list.md)コマンドの出力を確認します。 次の例では、2番目のデバイスの最初のエンドポイントのプライベートコンテキストのアドレスは0xfffffa8003694860 です。
 
 ```dbgcmd
 3: kd> !ucx_controller_list
@@ -69,7 +69,7 @@ UCX エンドポイントのプライベートコンテキストのアドレス�
         .!ucx_endpoint 0xfffffa80036a20c0 [Blk Out], UcxEndpointStateStale
 ```
 
-これで、UCX エンドポイントのプライベートコンテキストのアドレスを **! ucx\_endpoint**コマンドに渡すことができるようになりました。
+これで、UCX エンドポイントのプライベートコンテキストのアドレスを **! ucx \_ エンドポイント**コマンドに渡すことができるようになりました。
 
 ```dbgcmd
 3: kd> !ucx_endpoint 0xfffffa8003694860
@@ -102,9 +102,9 @@ EventCallbacks:
 
 [USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ **! usb3kd\_controller\_list**](-usb3kd-ucx-controller-list.md)
+[**! usb3kd \_ コントローラーの \_ 一覧**](-usb3kd-ucx-controller-list.md)
 
-[ユニバーサルシリアルバス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

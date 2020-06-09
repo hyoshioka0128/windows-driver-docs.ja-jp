@@ -12,58 +12,53 @@ keywords:
 - dbgeng .h ヘッダーファイル、ReadTagged 付き
 - dbgeng .h ヘッダーファイル、StartEnumTagged
 - dbgeng .h ヘッダーファイル、GetNextTagged
-ms.date: 10/25/2018
+ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f9bf09a845b859500307671f202c085214a545
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7f55e1fddf8fb5a3579a565a0274293ad71507b0
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838813"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533905"
 ---
 # <a name="reading-bug-check-callback-data"></a>バグ チェック コールバック データの読み取り
 
-
 多くのドライバーは、*バグチェックコールバックルーチン*を提供します。 Windows がバグチェックを発行すると、システムをシャットダウンする前に、これらのルーチンが呼び出されます。 これらのルーチンは、*コールバックデータ*および*セカンダリコールバックデータ*と呼ばれるメモリの領域を指定して書き込むことができます。
 
-<span id="BugCheckCallback"></span><span id="bugcheckcallback"></span><span id="BUGCHECKCALLBACK"></span>[バグチェックコールバック](https://go.microsoft.com/fwlink/p/?LinkID=254479)  
-このルーチンによって書き込まれたデータは、コールバックデータの一部になります。 データは、クラッシュダンプファイルに含まれていません。 
+**バグチェックコールバック**の使用[KBUGCHECK_CALLBACK_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_callback_routine)  
+このルーチンによって書き込まれたデータは、*コールバックデータ*の一部になります。 データは、クラッシュダンプファイルに含まれていません。
 
-<span id="BugCheckSecondaryDumpDataCallback"></span><span id="bugchecksecondarydumpdatacallback"></span><span id="BUGCHECKSECONDARYDUMPDATACALLBACK"></span>[BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
-このルーチンによって書き込まれたデータは、セカンダリコールバックデータの一部になります。 データは、クラッシュダンプファイルに含まれています。
+**BugCheckSecondaryDumpDataCallback**使用[KBUGCHECK_REASON_CALLBACK_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
+このルーチンによって書き込まれたデータは、*セカンダリコールバックデータ*の一部になります。 データは、クラッシュダンプファイルに含まれています。
 
-<span id="BugCheckAddPagesCallback"></span><span id="bugcheckaddpagescallback"></span><span id="BUGCHECKADDPAGESCALLBACK"></span>[バグチェッカーのコールバック](https://go.microsoft.com/fwlink/p/?LinkID=254480)  
-このルーチンによって指定されたページは、コールバックデータの一部になります。 これらのページのデータは、クラッシュダンプファイルに含まれています。
+**バグチェック Addのコールバック**の使用[KBUGCHECK_REASON_CALLBACK_ROUTINE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)  
+このルーチンによって指定されたページは、*コールバックデータ*の一部になります。 これらのページのデータは、クラッシュダンプファイルに含まれています。
 
 デバッガーで使用できるコールバックとセカンダリコールバックデータの量は、次のいくつかの要因によって異なります。
 
--   クラッシュしたシステムのライブデバッグを実行している場合は、[バグチェックコールバック](https://go.microsoft.com/fwlink/p/?LinkID=254479)によって既に記述されているか、またはバグチェックコール[バック](https://go.microsoft.com/fwlink/p/?LinkID=254480)によって指定されたコールバックデータを使用できます。 セカンダリコールバックデータは、固定メモリの場所に格納されていないため、使用できません。
+- クラッシュしたシステムのライブデバッグを実行している場合は、[バグチェックコールバック](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_callback_routine)によって既に記述されているか、またはバグチェックコール[バック](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)によって指定されたコールバックデータを使用できます。 セカンダリコールバックデータは、固定メモリの場所に格納されていないため、使用できません。
 
--   完全なメモリダンプまたはカーネルメモリダンプをデバッグしている場合は、 [BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)によって書き込まれた、[バグチェッカーのコールバック](https://go.microsoft.com/fwlink/p/?LinkID=254480)とセカンダリコールバックのデータによって指定されたコールバックデータが使用できるようになります。 [バグチェックコールバック](https://go.microsoft.com/fwlink/p/?LinkID=254479)によって書き込まれたコールバックデータは使用できません。 
+- 完全なメモリダンプまたはカーネルメモリダンプをデバッグしている場合は、 [BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nc-wdm-kbugcheck_reason_callback_routine)によって書き込まれた、[バグチェッカーのコールバック](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)とセカンダリコールバックのデータによって指定されたコールバックデータが使用できるようになります。 [バグチェックコールバック](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_callback_routine)によって書き込まれたコールバックデータは使用できません。
 
--   小さいメモリダンプをデバッグする場合、コールバックデータは使用できません。 セカンダリコールバックデータが使用できるようになります。
+- 小さいメモリダンプをデバッグする場合、コールバックデータは使用できません。 セカンダリコールバックデータが使用できるようになります。
 
 これらのさまざまなダンプファイルサイズの詳細については、「[カーネルモードのダンプファイルの種類](varieties-of-kernel-mode-dump-files.md)」を参照してください。
 
+## <a name="displaying-callback-data"></a>コールバックデータの表示
 
-## <span id="ddk_reading_bug_check_callback_data_dbg"></span><span id="DDK_READING_BUG_CHECK_CALLBACK_DATA_DBG"></span>
+バグチェックコールバックデータを表示するには、 [**!**](-bugdump.md)を使用します。
 
+パラメーターを指定しない場合、 [**!**](-bugdump.md)を使用すると、すべてのコールバックのデータが表示されます。
 
-### <a name="span-iddisplaying-callback-dataspanspan-iddisplaying-callback-dataspandisplaying-callback-data"></a><span id="displaying-callback-data"></span><span id="DISPLAYING-CALLBACK-DATA"></span>コールバックデータの表示
+1つの特定のコールバックルーチンのデータを表示するには、 [**!**](-bugdump.md)の KeRegisterBugCheckCallback*コンポーネント*を使用します。ここで、 *component*は、そのルーチンが登録されたときに**KeRegisterBugCheckCallback**に渡されたパラメーターと同じです。
 
-バグチェックコールバックデータを表示するには、 [ **!** ](-bugdump.md)を使用します。
-
-パラメーターを指定しない場合、 [ **!** ](-bugdump.md)を使用すると、すべてのコールバックのデータが表示されます。
-
-1つの特定のコールバックルーチンのデータを表示するには、 [ **!** ](-bugdump.md)の KeRegisterBugCheckCallback*コンポーネント*を使用します。ここで、 *component*は、そのルーチンが登録されたときにに渡されたパラメーターと同じです。
-
-### <a name="span-iddisplaying-secondary-callback-dataspanspan-iddisplaying-secondary-callback-dataspandisplaying-secondary-callback-data"></a><span id="displaying-secondary-callback-data"></span><span id="DISPLAYING-SECONDARY-CALLBACK-DATA"></span>セカンダリコールバックデータの表示
+### <a name="displaying-secondary-callback-data"></a>セカンダリコールバックデータの表示
 
 セカンダリコールバックデータを表示するには、2つの方法があります。 **Enumtag**コマンドを使用することも、独自のデバッガー拡張機能を記述することもできます。
 
-セカンダリコールバックデータの各ブロックは、GUID タグによって識別されます。 このタグは、の**Guid**フィールド **(KBUGCHECK\_セカンダリ\_DUMP\_DATA)** によって指定され、 [BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)に渡されます。
+セカンダリコールバックデータの各ブロックは、GUID タグによって識別されます。 このタグは、 [BugCheckSecondaryDumpDataCallback](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nc-wdm-kbugcheck_reason_callback_routine)に渡される、 **(kbugcheck の \_ セカンダリ \_ ダンプ \_ データ) の理由**によって指定されたデータパラメーターの**Guid**フィールドによって指定されます。
 
-[**Enumtag (2 番目のコールバックデータの列挙)** ](-enumtag--enumerate-secondary-callback-data-.md)コマンドは、正確なインストルメントではありません。 すべてのセカンダリデータブロックが表示され、タグが表示された後、16進形式と ASCII 形式でデータが表示されます。 通常は、セカンダリデータブロックに実際に使用されているタグを特定するだけで役立ちます。
+[**Enumtag (2 番目のコールバックデータの列挙)**](-enumtag--enumerate-secondary-callback-data-.md)コマンドは、正確なインストルメントではありません。 すべてのセカンダリデータブロックが表示され、タグが表示された後、16進形式と ASCII 形式でデータが表示されます。 通常は、セカンダリデータブロックに実際に使用されているタグを特定するだけで役立ちます。
 
 このデータをより実用的な方法で使用するには、独自のデバッガー拡張機能を作成することをお勧めします。 この拡張機能は、dbgeng .h ヘッダーファイル内のメソッドを呼び出す必要があります。 詳細については、「[新しいデバッガー拡張機能の作成](writing-new-debugger-extensions.md)」を参照してください。
 
@@ -112,20 +107,11 @@ STDMETHOD(GetNextTagged)(
 STDMETHOD(EndEnumTagged)(
     THIS_
     IN ULONG64 Handle
-    ) PURE; 
+    ) PURE;
 ```
 
-### <a name="span-iddebugging-callback-routinesspanspan-iddebugging-callback-routinesspandebugging-callback-routines"></a><span id="debugging-callback-routines"></span><span id="DEBUGGING-CALLBACK-ROUTINES"></span>デバッグ (コールバックルーチンを)
+### <a name="debugging-callback-routines"></a>デバッグ (コールバックルーチンを)
 
 コールバックルーチン自体をデバッグすることもできます。 コールバックルーチン内のブレークポイントは、他のブレークポイントと同じように動作します。
 
 コールバックルーチンによって2番目のバグチェックが発生した場合、この新しいバグチェックは最初に処理されます。 ただし、Windows は Stop プロセスの特定の部分を繰り返しません。たとえば、2番目のクラッシュダンプファイルは書き込まれません。 ブルースクリーンに表示されるストップコードは、2番目のバグチェックコードになります。 カーネルデバッガーがアタッチされている場合は、通常、両方のバグチェックに関するメッセージが表示されます。
-
- 
-
- 
-
-
-
-
-

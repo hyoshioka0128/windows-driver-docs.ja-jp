@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbpdos
-description: Usbkd.usbpdos コマンドでは、USB ハブのドライバーによって作成されたすべての物理デバイス オブジェクト (Pdo) に関する情報が表示されます。
+title: usbkd. usbpdos
+description: Usbkd. usbpdos コマンドを実行すると、USB ハブドライバーによって作成されたすべての物理デバイスオブジェクト (PDOs) に関する情報が表示されます。
 ms.assetid: 2EFAC774-C400-4218-BF48-2D5DC557A83B
 keywords:
-- デバッグ usbkd.usbpdos Windows
+- usbkd. usbpdos Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 21eb452333ee30e9dbdb7de32d945e6b26e20a12
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43465ea71580f5105a21701c04dee55be659bc39
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63341175"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534689"
 ---
 # <a name="usbkdusbpdos"></a>!usbkd.usbpdos
 
 
-**! Usbkd.usbpdos**コマンドは、USB ハブのドライバーによって作成されたすべての物理デバイス オブジェクト (Pdo) に関する情報を表示します。
+**! Usbkd. usbpdos**コマンドを実行すると、USB ハブドライバーによって作成されたすべての物理デバイスオブジェクト (pdos) に関する情報が表示されます。
 
 ```dbgcmd
 !usbkd.usbpdos
@@ -31,12 +31,12 @@ ms.locfileid: "63341175"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-出力の例を次に示します、 **! usbpdos**コマンド。
+**! Usbpdos**コマンドの出力の例を次に示します。
 
 ```dbgcmd
 0: kd> !usbkd.usbpdos
@@ -84,12 +84,12 @@ PDO Times:
 ##     Stat: PDO Set_D0 time: 0x0(0) ms
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
 
 

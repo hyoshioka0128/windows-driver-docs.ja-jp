@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0xBFE BC_BLUETOOTH_VERIFIER_FAULT
-description: BC_BLUETOOTH_VERIFIER_FAULT のバグチェックの値は0x00000BFE です。 これは、ドライバーによって違反が発生したことを示します。
+description: BC_BLUETOOTH_VERIFIER_FAULT バグチェックの値は0x00000BFE です。 これは、ドライバーによって違反が発生したことを示します。
 ms.assetid: EC1368CE-46A2-4B69-8405-3118503D35C2
 keywords:
 - バグチェック 0xBFE BC_BLUETOOTH_VERIFIER_FAULT
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ff7466bde88fd16f7d8dad3a62b1ff5bbe948cf7
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: 4c4f1cae3054da3da996647354e4d82a9ef7f474
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916225"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534795"
 ---
-# <a name="bug-check-0xbfe-bc_bluetooth_verifier_fault"></a>バグチェック 0xBFE: BC\_BLUETOOTH\_検証ツール\_エラー
+# <a name="bug-check-0xbfe-bc_bluetooth_verifier_fault"></a>バグチェック 0xBFE: BC \_ BLUETOOTH \_ 検証ツールの \_ エラー
 
 
-BC\_BLUETOOTH\_VERIFIER\_エラーのバグチェックには、0x00000BFE という値があります。 これは、ドライバーによって違反が発生したことを示します。
+BC \_ BLUETOOTH \_ 検証ツールのバグチェックには、 \_ 0x00000bfe という値があります。 これは、ドライバーによって違反が発生したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bc_bluetooth_verifier_fault-parameters"></a>BC\_BLUETOOTH\_検証ツール\_エラーパラメーター
+## <a name="bc_bluetooth_verifier_fault-parameters"></a>BC \_ BLUETOOTH \_ 検証ツールの \_ エラーパラメーター
 
 
 <table>
@@ -95,7 +95,7 @@ BC\_BLUETOOTH\_VERIFIER\_エラーのバグチェックには、0x00000BFE と�
 <td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 <tr class="even">
-<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
+<td align="left">4</td>
 <td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 </tbody>
@@ -106,7 +106,7 @@ BC\_BLUETOOTH\_VERIFIER\_エラーのバグチェックには、0x00000BFE と�
 <a name="resolution"></a>解像度
 ----------
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 パラメーター1は違反の種類を示します。 呼び出し履歴を調べて、動作が不適切なドライバーを特定します。
 
 

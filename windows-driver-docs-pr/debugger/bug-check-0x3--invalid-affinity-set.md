@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x3 INVALID_AFFINITY_SET
-description: INVALID_AFFINITY_SET のバグ チェックでは、0x00000003 の値を持ちます。このバグ チェックが非常に少ない回数が表示されます。
+title: バグチェック 0x3 INVALID_AFFINITY_SET
+description: INVALID_AFFINITY_SET バグチェックの値は0x00000003 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: e58a872e-8cf8-4d3c-ae54-fe19fadcd57e
 keywords:
-- バグ チェック 0x3 INVALID_AFFINITY_SET
+- バグチェック 0x3 INVALID_AFFINITY_SET
 - INVALID_AFFINITY_SET
 ms.date: 05/23/2017
 topic_type:
@@ -13,28 +13,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d2324f925e956051e94697d794012a4ccf03374
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 3b3ab639ca89e17cafaeace38a939ced50e106cf
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519537"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534815"
 ---
-# <a name="bug-check-0x3-invalidaffinityset"></a>バグ チェック 0x3:無効な\_アフィニティ\_設定
+# <a name="bug-check-0x3-invalid_affinity_set"></a>バグチェック 0x3: 無効な \_ アフィニティ \_ セット
 
 
-無効な\_アフィニティ\_セットのバグ チェックが 0x00000003 の値を持ちます。
+無効な \_ アフィニティセットのバグチェックには、0x00000003 という値が設定されてい \_ ます。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解像度
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
  
 

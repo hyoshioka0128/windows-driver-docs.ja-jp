@@ -1,10 +1,10 @@
 ---
 title: verifier
-description: 検証拡張機能は、Driver Verifier とそのアクションの状態を表示します。
+description: 検証ツールの拡張機能には、ドライバーの検証ツールとその操作の状態が表示されます。
 ms.assetid: e84993e1-da10-4041-8fc7-7f40806ee454
 keywords:
 - ドライバーの検証ツール
-- Windows デバッグの検証ツール
+- 検証ツール Windows デバッグ
 ms.date: 05/03/2018
 topic_type:
 - apiref
@@ -13,19 +13,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b6d34dc523b2e22ba854f1d4ade395862c60b29
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: dc02317b658136274865ddeea5f2c8a7e0fc3448
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362418"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534847"
 ---
 # <a name="verifier"></a>!verifier
 
 
-**! Verifier**拡張機能は、Driver Verifier とそのアクションの状態を表示します。
+**! Verifier**拡張機能には、ドライバーの検証ツールとその操作の状態が表示されます。
 
-Driver Verifier は、Windows に含まれます。 オンで、無料のビルドで動作します。 Driver Verifier については、次を参照してください。、 [Driver Verifier](https://go.microsoft.com/fwlink/p/?linkid=120480) Windows Driver Kit (WDK) ドキュメントのトピックです。
+ドライバーの検証ツールは Windows に含まれています。 オンとオフの両方のビルドで動作します。 ドライバーの検証機能の詳細については、Windows Driver Kit (WDK) のドキュメントの[ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)に関するトピックを参照してください。
 
 構文
 
@@ -44,85 +44,85 @@ Driver Verifier は、Windows に含まれます。 オンで、無料のビル�
 !verifier ?
 ```
 
-## <a name="span-idddkverifierdbgspanspan-idddkverifierdbgspanparameters"></a><span id="ddk__verifier_dbg"></span><span id="DDK__VERIFIER_DBG"></span>パラメーター
+## <a name="span-idddk__verifier_dbgspanspan-idddk__verifier_dbgspanparameters"></a><span id="ddk__verifier_dbg"></span><span id="DDK__VERIFIER_DBG"></span>パラメータ
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-このコマンドの出力に表示される情報を指定します。 場合*フラグ*4、8、0x20、値と等しく、0x40、0x80、または 0x100、残りの引数を **! verifier**それらの値に関連付けられている特定の引数に基づいて解釈されます。 場合*フラグ*でもこれらのビットが 1 つ以上設定されている場合のみ、その他の値と等しいが、*フラグ*と*イメージ*引数が許可されます。 *フラグ*以下のビット値の合計を指定できます。 既定値は 0。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*フラグ*   
+このコマンドの出力に表示される情報を指定します。 *Flags*が値4、8、0x20、0x40、0x80、または0x100 と等しい場合、 **! verifier**の残りの引数は、これらの値に関連付けられている特定の引数に基づいて解釈されます。 *フラグ*がその他の値と等しい場合、これらのビットの1つ以上が設定されていても、*フラグ*と*イメージ*の引数のみが許可されます。 *フラグ*には、次のビットの合計を指定できます。既定値は0です。
 
 <span id="Bit_0__0x1_"></span><span id="bit_0__0x1_"></span><span id="BIT_0__0X1_"></span>ビット 0 (0x1)  
-検証されているすべてのドライバーの名前が表示されます。 非ページ プールとページ プールからドライバーごとに現在割り当てられているバイト数も表示されます。
+検証されているすべてのドライバーの名前が表示されます。 ページングされていないプールとページプールから各ドライバーに現在割り当てられているバイト数も表示されます。
 
 <span id="Bit_1__0x2_"></span><span id="bit_1__0x2_"></span><span id="BIT_1__0X2_"></span>ビット 1 (0x2)  
-プール (プールのサイズ、ヘッダー、およびプール タグ) とアンロードされたドライバーを左の未処理のメモリ割り当てに関する情報が表示されます。 ビット 0 (0x1) が設定されてもいない場合は、このフラグを指定しても効果はありません。
+プール (プールサイズ、ヘッダー、およびプールタグ) と、アンロードされたドライバーによって残された未処理のメモリ割り当てに関する情報を表示します。 ビット 0 (0x1) も設定されていない限り、このフラグは無効です。
 
 <span id="Bit_2__0x4_"></span><span id="bit_2__0x4_"></span><span id="BIT_2__0X4_"></span>ビット 2 (0x4)  
-フォールト インジェクションの情報が表示されます。 戻り値のアドレス、シンボル名、および各割り当てを要求するコードの移動距離が表示されます。 場合*フラグ*0x4 正確には、および*数量*パラメーターを含めると、表示されるこれらのレコードの数を選択できます。 それ以外の場合、4 つのレコードが表示されます。
+フォールト挿入情報を表示します。 各割り当てを要求しているコードのリターンアドレス、シンボル名、および置き換えが表示されます。 *フラグ*が完全に0x4 で、 *Quantity*パラメーターが含まれている場合は、表示されているレコードの数を選択できます。 それ以外の場合は、4つのレコードが表示されます。
 
 <span id="Bit_3__0x8_"></span><span id="bit_3__0x8_"></span><span id="BIT_3__0X8_"></span>ビット 3 (0x8)  
-検証されているドライバーによって行われた最新の IRQL 変更を表示します。 古い IRQL、新しい IRQL、プロセッサ、およびタイムスタンプが表示されます。 場合*フラグ*0x8 正確には、および*数量*パラメーターを含めると、表示されるこれらのレコードの数を選択できます。 それ以外の場合、4 つのレコードが表示されます。
+検証されているドライバーによって行われた最新の IRQL の変更を表示します。 古い IRQL、新しい IRQL、プロセッサ、タイムスタンプが表示されます。 *フラグ*が完全に0x8 で、 *Quantity*パラメーターが含まれている場合は、表示されているレコードの数を選択できます。 それ以外の場合は、4つのレコードが表示されます。
 
-**警告**  のいくつかのカーネル関数は IRQL を上げたり下げたりするには、Windows の 64 ビット バージョンがエクスポートされた関数ではなくインライン コードとして実装されます。 Driver Verifier は、IRQL 移行ログが不完全になるドライバーの検証ツールによって生成される可能性がありますので、インライン コードによって行われたレポート IRQL 変更されません。 不足している IRQL 遷移エントリの例については、「解説」を参照してください。
+**警告**   64ビットバージョンの Windows では、IRQL を上げ下げするカーネル関数の中には、エクスポート関数としてではなくインラインコードとして実装されているものがあります。 ドライバーの検証ツールは、インラインコードによって行われた IRQL の変化を報告しないため、ドライバーの検証ツールによって生成された IRQL 遷移ログが不完全になる可能性があります。 IRQL 遷移エントリの不足の例については、「解説」を参照してください。
 
  
 
 <span id="Bit_6__0x40_"></span><span id="bit_6__0x40_"></span><span id="BIT_6__0X40_"></span>ビット 6 (0x40)  
-(Windows Vista 以降)情報が表示されます、 **Force 保留中の I/O 要求**保留中の Irp のログからのトレースを含む、Driver Verifier のオプションの強制します。
+(Windows Vista 以降)強制保留中の Irp のログからのトレースを含め、Driver Verifier の**Force pending I/o Requests**オプションの情報を表示します。
 
-*数量*パラメーターを表示するトレースの数を指定します。 既定では、ログ全体が表示されます。
+*Quantity*パラメーターには、表示するトレースの数を指定します。 既定では、ログ全体が表示されます。
 
 <span id="Bit_7__0x80_"></span><span id="bit_7__0x80_"></span><span id="BIT_7__0X80_"></span>ビット 7 (0x80)  
-(Windows Vista 以降)カーネル プールの割り当て/空きログから情報を表示します。
+(Windows Vista 以降)カーネルプールの割り当て/空きログの情報を表示します。
 
-*数量*パラメーターを表示するトレースの数を指定します。 既定では、ログ全体が表示されます。
+*Quantity*パラメーターには、表示するトレースの数を指定します。 既定では、ログ全体が表示されます。
 
-場合*アドレス*を指定すると、カーネル プールの割り当て/空きログ内の指定したアドレスに関連付けられているトレースだけが表示されます。
+*アドレス*を指定すると、カーネルプールの割り当て/空きログ内の指定されたアドレスに関連付けられているトレースだけが表示されます。
 
 <span id="Bit_8__0x100_"></span><span id="bit_8__0x100_"></span><span id="BIT_8__0X100_"></span>ビット 8 (0x100)  
-(Windows Vista 以降)IoAllocateIrp、IoCompleteRequest および IoCancelIrp 呼び出しのログから情報を表示します。
+(Windows Vista 以降)IoAllocateIrp、IoCompleteRequest、および Ioallocateirp 呼び出しのログの情報を表示します。
 
-数量のパラメーターには、表示するトレースの数を指定します。 既定では、ログ全体が表示されます。
+Quantity パラメーターには、表示するトレースの数を指定します。 既定では、ログ全体が表示されます。
 
-場合*アドレス*を指定すると、指定した IRP アドレスに関連付けられているトレースだけが表示されます。
+*アドレス*が指定されている場合は、指定された IRP アドレスに関連付けられているトレースだけが表示されます。
 
 <span id="Bit_9__0x200_"></span><span id="bit_9__0x200_"></span><span id="BIT_9__0X200_"></span>ビット 9 (0x200)  
-(Windows Vista 以降)クリティカル領域は、ログにエントリを表示します。
+(Windows Vista 以降)クリティカルな領域のログにエントリを表示します。
 
-場合*アドレス*を指定すると、指定されたスレッドのアドレスに関連付けられたエントリだけが表示されます。
+*Address*が指定されている場合、指定されたスレッドアドレスに関連付けられているエントリのみが表示されます。
 
 <span id="Bit_10__0x400_"></span><span id="bit_10__0x400_"></span><span id="BIT_10__0X400_"></span>ビット 10 (0x400)  
-(Windows Vista 以降)表示には、Driver Verifier で現在監視されている Irp が取り消されました。
+(Windows Vista 以降)現在ドライバーの検証ツールによって監視されている取り消し済みの Irp を表示します。
 
-場合*アドレス*を指定すると、指定したアドレス IRP のみが表示されます。
+*アドレス*を指定すると、指定したアドレスを持つ IRP のみが表示されます。
 
-<span id="Bit_11__0x800_"></span><span id="bit_11__0x800_"></span><span id="BIT_11__0X800_"></span>Bit 11 (0x800)  
-(Windows 8.1 以降)選択したときに作成されるフォールト インジェクション ログからエントリを表示、[体系的な低リソース シミュレーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/systematic-low-resource-simulation)オプション。
+<span id="Bit_11__0x800_"></span><span id="bit_11__0x800_"></span><span id="BIT_11__0X800_"></span>ビット 11 (0x800)  
+(Windows 8.1 以降)[体系的な低リソースシミュレーション](https://docs.microsoft.com/windows-hardware/drivers/devtest/systematic-low-resource-simulation)オプションを選択したときに作成されたフォールトインジェクションログのエントリを表示します。
 
-<span id="_______Image______"></span><span id="_______image______"></span><span id="_______IMAGE______"></span> *イメージ*   
-場合*フラグ*は使用され、4、8、または 0x10、等しくない*イメージ*ドライバーの名前を指定します。 *イメージ*によって表示される情報をフィルター処理するために使用*フラグ*0x1 と 0x2 の値。 指定されたドライバーのみを考慮します。 このドライバーは、現在検証する必要があります。
+<span id="_______Image______"></span><span id="_______image______"></span><span id="_______IMAGE______"></span>*イメージ*   
+*フラグ*が使用され、が4、8、または0x10 と等しくない場合、 *Image*はドライバーの名前を指定します。 *Image*は、 *Flags*値が0x1 および0x2 の場合に表示される情報をフィルター処理するために使用されます。指定されたドライバーのみが対象となります。 このドライバーは現在検証されている必要があります。
 
-<span id="_______Quantity______"></span><span id="_______quantity______"></span><span id="_______QUANTITY______"></span> *数量*   
-場合*フラグ*0x4 に正確に一致*数量*表示するフォールト インジェクションのレコードの数を指定します。 場合*フラグ*0x8 に正確に一致*数量*IRQL のログ エントリを表示する数を指定します。 場合*フラグ*0x40 に正確に一致*数量*強制的に保留中のログから表示されるトレースの数を指定します。 Irp します。 フラグが 0x80 に等しい場合は、数量にカーネル プールの割り当て/空きログから表示されるトレースの数を指定します。 フラグが 0x100 に等しい場合は、数量に IoAllocateIrp、IoCompleteRequest および IoCancelIrp 呼び出しのログから表示されるトレースの数を指定します。
+<span id="_______Quantity______"></span><span id="_______quantity______"></span><span id="_______QUANTITY______"></span>*数量*   
+*フラグ*が0x4 と完全に等しい場合、 *Quantity*は、表示するフォールト挿入レコードの数を指定します。 *フラグ*が0x8 と同じである場合、 *Quantity*は表示する IRQL ログエントリの数を指定します。 *フラグ*が0x40 と同じ場合、 *Quantity*は、強制保留中の irp のログから表示されるトレースの数を指定します。 フラグが0x80 と厳密に等しい場合、Quantity はカーネルプールの割り当て/空きログから表示されるトレースの数を指定します。 フラグが0x100 と厳密に等しい場合、Quantity は、IoAllocateIrp、IoCompleteRequest、および Ioallocateirp 呼び出しのログから表示されるトレースの数を指定します。
 
-<span id="_______-disable______"></span><span id="_______-DISABLE______"></span> **-を無効にします。**    
-デバッグ対象の現在のドライバーの検証設定をクリアします。 これらの設定の消去は、再起動後に保持されません。 正常にブートするドライバーの検証設定を無効にする必要がある場合は、nt にブレークポイントを設定します。VerifierInitSystem を使用して、 **! verifier-を無効にする**その時点でコマンドします。
+<span id="_______-disable______"></span><span id="_______-DISABLE______"></span>**-disable**   
+デバッグターゲットの現在のドライバーの検証の設定を消去します。 これらの設定をクリアしても、再起動によって保持されるわけではありません。 ドライバーの検証機能の設定を正常に起動するために無効にする必要がある場合は、nt! にブレークポイントを設定します。VerifierInitSystem を使用して、その時点で **! verifier-disable**コマンドを使用します。
 
-<span id="______________"></span> **?**    
-デバッガー コマンド ウィンドウで、この拡張機能の簡単なヘルプ テキストを表示します。
+<span id="______________"></span> **?**   
+デバッガーコマンドウィンドウにこの拡張機能の簡単なヘルプテキストを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Kdexts.dll
+Kdexts .dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-について[Driver Verifier](https://go.microsoft.com/fwlink/p/?linkid=120480)、Windows Driver Kit (WDK) ドキュメントを参照してください。
+[ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)機能の詳細については、Windows driver KIT (WDK) のドキュメントを参照してください。
 
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-次の例では、Windows の 64 ビット バージョンでは、IRQL の移行のログが常に不完全で示しています。 2 つの項目は、プロセッサ 2 のログの連続するエントリです。 最初のエントリは、2 から 0 へと向かう IRQL を示しています。 2 番目のエントリは、2 から 2 にしようとする IRQL を示しています。 IRQL を 2 に 0 から発生が状況に関する情報がありません。
+次の例は、64ビットバージョンの Windows では、IRQL 遷移ログが必ずしも完全ではないことを示しています。 表示される2つのエントリは、プロセッサ2のログの連続したエントリです。 最初のエントリは、2から0に向かう IRQL を示しています。 2番目のエントリは、2から2に向かう IRQL を示しています。 0から2の IRQL が発生した方法に関する情報がありません。
 
 ```dbgcmd
 Thread:             fffffa80068c9400
@@ -150,17 +150,17 @@ Time stamp:         0000000000000857
     fffff88005f086db nsiproxy!NsippDispatchDeviceControl+0xa3
 ```
 
-Driver Verifier グラフィック ドライバーをテストするを使用するとき、 [ **! gdikdx.verifier** ](-gdikdx-verifier.md)拡張機能の **! verifier**します。
+Driver Verifier を使用してグラフィックスドライバーをテストする場合は、 **! verifier**ではなく、 [**! gdikdx**](-gdikdx-verifier.md)拡張機能を使用します。
 
-値は、4、8、および 0x20、0x40、0x80、0x100 の特殊な値は、*フラグ*します。 これらの値を使用している場合に、特別な引数が記載、**パラメーター**セクションを使用して、表示はそのフラグの値に関連付けられている情報のみが含まれます。
+4、8、および0x20、0x40、0x80、および0x100 の値は、*フラグ*の特殊な値です。 これらの値が使用されている場合は、 **Parameters**セクションに示されている特殊な引数を使用できます。表示には、そのフラグ値に関連付けられている情報のみが含まれます。
 
-値の他の場合は*フラグ*でもこれらのビットが 1 つ以上設定されている場合のみ、使用、*フラグ*と*イメージ*引数が許可されます。 表示されているその他のすべての情報だけでなく、この状況で **! verifier**プールの割り当て、IRQL が発生、スピン ロック、およびトリミングに関する統計情報とともに、アクティブな Driver Verifier のオプションが表示されます。
+*フラグ*に他の値が使用されている場合、これらのビットの1つ以上が設定されていても、*フラグ*と*イメージ*の引数のみが許可されます。 このような状況では、表示される他のすべての情報に加えて、 **! verifier**には、アクティブなドライバーの検証ツールのオプションと、プールの割り当て、IRQL の発生、スピンロック、およびトリムの統計が表示されます。
 
-場合*フラグ*0x20、指定した値に等しい*CompletionTime*、 *CancelTime*、および*ForceCancellation*ドライバーが使用されますDriver Verifier の確認オプションのハングします。 これらの新しい値は、次のブートまで、すぐに有効にし、最後を実行します。 コンピューターを再起動するときに、既定値に元に戻します。
+*フラグ*が0x20 の場合、[実行*時間*]、[ *Canceltime*]、および [ *ForceCancellation* ] に指定された値は、ドライバーの検証ツールの [ドライバーのハング検証] オプションで使用されます。 これらの新しい値は、次の起動時まで即座に有効になります。 再起動すると、既定値に戻ります。
 
-また場合、*フラグ*0x20 に等しい (またはその他のパラメーターを指定せず)、ハングのドライバー検証ログが出力されます。 ログを解釈する方法の詳細については、Driver Verifier のドキュメントを Windows Driver Kit (WDK) ドキュメントでのドライバーのハングの検証セクションを参照してください。
+また、*フラグ*が 0x20 (追加のパラメーターの有無にかかわらず) に等しい場合は、ドライバーのハング検証ログが出力されます。 ログの解釈の詳細については、Windows Driver Kit (WDK) のドキュメントにあるドライバーの検証ツールのドキュメントのドライバーのハング検証に関するセクションを参照してください。
 
-次の例に示します、 **! verifier** Windows 7 コンピューター上で拡張します。
+Windows 7 コンピューターの **! verifier**拡張機能の例を次に示します。
 
 ```dbgcmd
 2: kd> !verifier 0xf
@@ -286,7 +286,7 @@ Time stamp:         000000000000495e
     fffff80002a7bdd6 nt!KiProcessExpiredTimerList+0xc6
 ```
 
-次の例に示します、 **! verifier**ビットがオンの 7 と Windows Vista コンピューター上で拡張と*アドレス*指定します。
+次に示すのは、ビット7がオンになっていて*アドレス*が指定されている Windows Vista コンピューターの **! verifier**拡張機能の例です。
 
 ```dbgcmd
 0: kd> !verifier 80 a2b1cf20

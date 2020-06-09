@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c72e875365c5b04548a0c0baf3598a596581955
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: 8bfbafc51b94911362b94d67ff81956ffe6d5b89
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313783"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534551"
 ---
-# <a name="bug-check-0xd6-driver_page_fault_beyond_end_of_allocation"></a>バグチェック 0xD6: ドライバー\_ページ\_フォールト\_\_割り当ての\_終了\_を超えています
+# <a name="bug-check-0xd6-driver_page_fault_beyond_end_of_allocation"></a>バグチェック 0xD6: \_ \_ \_ \_ \_ 割り当ての終了を超えた \_ ドライバーページフォールト
 
 
-ドライバー\_ページ\_フォールト\_\_\_割り当てバグチェックの値が0x000000D6 になっています。\_ これは、ドライバーがプール割り当ての最後を超えてメモリにアクセスしたことを示します。
+\_ \_ \_ \_ 割り当てバグチェックの終了後のドライバーページフォールトには、 \_ \_ 0x000000D6 の値が含まれています。 これは、ドライバーがプール割り当ての最後を超えてメモリにアクセスしたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_page_fault_beyond_end_of_allocation-parameters"></a>ドライバー\_ページ\_フォールト\_\_割り当てパラメーターの\_エンド\_を超えています
+## <a name="driver_page_fault_beyond_end_of_allocation-parameters"></a>\_ \_ \_ \_ \_ 割り当てパラメーターの末尾を超えたドライバーページのエラー \_
 
 
 <table>
@@ -65,8 +65,8 @@ ms.locfileid: "72313783"
 </table>
 
  
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリに格納されます (PUNICODE\_STRING) *KiBugCheckDriver*。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE \_ 文字列) *KiBugCheckDriver*に格納されます。
 
 <a name="cause"></a>原因
 -----

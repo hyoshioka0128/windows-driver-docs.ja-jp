@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhcdlist
-description: Usbkd.usbhcdlist コマンドでは、USB ポート ドライバー (Usbport.sys) で表される、すべての USB ホスト コント ローラーに関する情報が表示されます。
+title: usbkd. usbhcdlist
+description: USB ポートドライバー (usbkd) によって表されるすべての USB ホストコントローラーに関する情報が表示されます。
 ms.assetid: 877A6361-0DB9-4089-AF85-BABFBED8C440
 keywords:
-- デバッグ usbkd.usbhcdlist Windows
+- usbkd. usbhcdlist Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e0557c1a730c30e416d11f9b861a583bfce97b5
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0386e8e89780cd874a507cfa87e7256f29d518b8
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362440"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534697"
 ---
 # <a name="usbkdusbhcdlist"></a>!usbkd.usbhcdlist
 
 
-[ **! Usbkd.usbhcdlist** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlist)コマンドは、USB ポート ドライバー (Usbport.sys) で表される、すべての USB ホスト コント ローラーに関する情報を表示します。 USB ポート ドライバーと関連付けられているミニポート ドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkId=251983)します。
+[**! Usbkd**](-usbkd-usbhcdlist.md)は、usb ポートドライバー (usbkd) によって表されるすべての usb ホストコントローラーに関する情報が表示されます。 USB ポートドライバーと関連するミニポートドライバーの詳細については、「 [Windows の usb ホスト側ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
 ```dbgcmd
 !usbkd.usbhcdlist
@@ -31,12 +31,12 @@ ms.locfileid: "67362440"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-出力の一部の例を次に示します[ **! usbhcdlist**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlist)します。
+次に、 [**! usbhcdlist**](-usbkd-usbhcdlist.md)の出力の一部の例を示します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist
@@ -64,12 +64,12 @@ MINIPORT List @ fffff80001e5bbd0
     Pending IRP's: 0, Transfers: 0 (Periodic(0), Async(0))
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

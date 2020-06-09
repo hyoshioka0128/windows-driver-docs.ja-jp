@@ -4,12 +4,12 @@ title: Windows ドライバーの概要
 description: Windows ドライバーでは、Windows 10X と Windows デスクトップ両方で実行されるドライバーを 1 つ作成できます。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ca50228667a1622463fe3be7d36ad6123bd349
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 2640310a12a2d111fb1d617e4aa9c5a7413c5fa5
+ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270457"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223513"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows ドライバーの概要
 
@@ -29,10 +29,10 @@ Windows ドライバーは、Windows 10X と Windows 10 デスクトップ エ�
 
 Windows ドライバーが認定オプションになる場合、次の要件が適用されます。
 
-- [DCH 設計原則](dch-principles-best-practices.md)に準拠している
-- [ドライバー パッケージの分離](driver-isolation.md)の原則に従っている
-- [API レイヤー化の要件](api-layering.md)に従っている
-- [ハードウェア ラボ キット](https://docs.microsoft.com/windows-hardware/test/hlk/)を使用して、[Windows ハードウェア互換性プログラムの認定プロセス](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-certification-process)で認定済み
+- [DCH 設計原則](dch-principles-best-practices.md)に準拠している。
+- [ドライバー パッケージの分離](driver-isolation.md)の原則に従っている。
+- [API レイヤー化の要件](api-layering.md)に従っている。
+- [ハードウェア ラボ キット](https://docs.microsoft.com/windows-hardware/test/hlk/)を使用して、[Windows ハードウェア互換性プログラムの認定プロセス](https://docs.microsoft.com/windows-hardware/design/compatibility/whcp-certification-process)で認定されている。 Windows ハードウェア互換性プログラムの認定プロセスの要件は、KMDF と UMDF の両方のドライバーに適用されることに注意してください。
 
 ## <a name="windows-drivers-vs-windows-desktop-drivers"></a>Windows ドライバーとWindows デスクトップ ドライバー
 

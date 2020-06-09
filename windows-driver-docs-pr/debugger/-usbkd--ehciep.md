@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehciep
-description: Usbkd._ehciep コマンドは、usbehci _ENDPOINT_DATA 構造から情報を表示します。 非同期のエンドポイント (つまり、コントロールと一括エンドポイント) に関する情報を表示するのにには、このコマンドを使用します。
+title: usbkd. _ehciep
+description: Usbehci コマンドを実行 _ehciep すると、_ENDPOINT_DATA 構造の情報が表示されます。 このコマンドを使用して、非同期エンドポイント (つまり、コントロールと一括エンドポイント) に関する情報を表示します。
 ms.assetid: 0DA42FDD-41D6-4234-9D9C-36872F0CE0C1
 keywords:
-- Windows デバッグ usbkd._ehciep
+- usbkd. _ehciep Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f93a7583b2ace68d59d3ee632bf89a8efc843f4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 8b5e0699ca34186ddc4813f7984a76a60f777e37
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359776"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534095"
 ---
-# <a name="usbkdehciep"></a>!usbkd.\_ehciep
+# <a name="usbkd_ehciep"></a>! usbkd。 \_ehciep
 
 
-**! Usbkd\_ 。ehciep**コマンドからの情報を表示、 **usbehci!\_エンドポイント\_データ**構造体。 非同期のエンドポイント (つまり、コントロールと一括エンドポイント) に関する情報を表示するのにには、このコマンドを使用します。
+**! Usbkd。 \_ehciep**コマンドを実行すると、usbehci からの情報が表示され**ます。 \_エンドポイント \_ データ**構造体。 このコマンドを使用して、非同期エンドポイント (つまり、コントロールと一括エンドポイント) に関する情報を表示します。
 
 ```dbgcmd
 !usbkd._ehciep StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**usbehci!\_エンドポイント\_データ**構造体。 アドレスを検索する**usbehci!\_エンドポイント\_データ**構造体を使用して、 [ **! usbhcdext** ](-usbkd-usbhcdext.md)と[ **! usblist**](-usbkd-usblist.md)します。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci のアドレス** \_エンドポイント \_ データ**構造体。 Usbehci のアドレスを検索するには** \_エンドポイント \_ データ**構造体では、 [**! usbhcdext**](-usbkd-usbhcdext.md)と[**! usblist**](-usbkd-usblist.md)を使用します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-この例のアドレスを取得する 1 つの方法を示しています、 **usbehci!\_エンドポイント\_データ**構造体。 始まり、 [ **! usb2tree** ](-usbkd-usb2tree.md)コマンド。
+この例は、usbehci のアドレスを取得する方法の1つを示してい**ます。 \_エンドポイント \_ データ**構造体。 [**! Usb2tree**](-usbkd-usb2tree.md)コマンドを使用して開始します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -56,7 +56,7 @@ Usbkd.dll
         Port 4: !port2_info ffffe000026df1c0 
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe0000206e1a0**します。 DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)します。
+上記の出力では、FDO のデバイス拡張機能のアドレスが、 [DML](debugger-markup-language-commands.md)コマンドの引数として表示されます **! ehci \_ info ffffe0000206e1a0**です。 DML コマンドをクリックするか、デバイス拡張機能のアドレスを[**! usbhcdext**](-usbkd-usbhcdext.md)に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe0000206e1a0
@@ -67,7 +67,7 @@ GlobalEndpointList: !usblist ffffe0000206f388, EP
 ...
 ```
 
-上記の出力には、コマンドが表示されます。 **! usblist ffffe0000206f388、EP**します。 このコマンドを使用すると、エンドポイントの一覧を表示できます。
+上記の出力には、コマンド **! usblist ffffe0000206f388、EP**が表示されます。 このコマンドを使用して、エンドポイントの一覧を表示します。
 
 ```dbgcmd
 0: kd> !usblist ffffe0000206f388, EP 
@@ -80,7 +80,7 @@ Device Address: 0x01, ep 0x81 Bulk In Flags: 00000041 dt _USB_ENDPOINT_FLAGS fff
 ...
 ```
 
-上記の出力で`ffffe000026dcc38`のアドレスを**usbehci!\_エンドポイント\_データ**構造体。 このアドレスを渡す **!\_ehciep**します。
+上記の出力で `ffffe000026dcc38` は、は usbehci のアドレスです **。 \_エンドポイント \_ データ**構造体。 このアドレスをに渡して**ください。 \_ehciep**。
 
 ```dbgcmd
 0: kd> !usbkd._ehciep ffffe000026dcc38
@@ -117,12 +117,12 @@ slot[0] dt usbehci!_ENDPOINT_SLOT ffffe000026dcdb8 - slot_NotBusy
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbportmddcontext
-description: Usbkd.usbportmddcontext コマンドを表示し、USBPORT コンテキスト データがバグの結果として生成されたクラッシュ ダンプに存在する場合は、0 xfe を確認します。
+title: usbkd. usbportmddcontext
+description: Usbkd. usbportmddcontext コマンドは、バグチェック0xFE の結果として生成されたクラッシュダンプに存在する場合、USBKD コンテキストデータを表示します。
 ms.assetid: 774C7EAE-A33E-49A6-956F-C0791134C221
 keywords:
-- usbkd.usbportmddcontext Windows Debugging
+- usbkd. usbportmddcontext Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b50928970c5041158147bed443dedd2fc8a850d1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 8dc4c5e0a7363598dcee6a9e14f9c45389988330
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328005"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534849"
 ---
 # <a name="usbkdusbportmddcontext"></a>!usbkd.usbportmddcontext
 
 
-**! Usbkd.usbportmddcontext**コマンドの結果として生成されたクラッシュ ダンプである場合にし、USBPORT コンテキスト データを表示します[**バグ チェック 0 xfe**](bug-check-0xfe--bugcode-usb-driver.md)します。
+[**バグチェック 0xfe**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプに存在する場合、 **! usbkd. usbportmddcontext**コマンドは、usbkd コンテキストデータを表示します。
 
 ```dbgcmd
 !usbkd.usbportmddcontext
@@ -31,19 +31,19 @@ ms.locfileid: "63328005"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-結果として生成されたクラッシュ ダンプ ファイルをデバッグしている場合にのみ、このコマンドを使用して[ **0 xfe のバグ チェック。BUGCODE\_USB\_ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)します。
+このコマンドは、[**バグチェック 0xfe: バグコード \_ USB \_ ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプファイルをデバッグする場合にのみ使用します。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

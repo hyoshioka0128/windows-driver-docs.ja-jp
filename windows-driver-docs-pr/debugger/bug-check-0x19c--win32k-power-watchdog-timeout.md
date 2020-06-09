@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
-description: WIN32K_POWER_WATCHDOG_TIMEOUT のバグ チェックでは、0x0000019C の値を持ちます。 Win32k しなかったにしないこと、モニター適切なタイミングでこれを示します。
+title: バグチェック 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
+description: WIN32K_POWER_WATCHDOG_TIMEOUT バグチェックの値は0x0000019C です。 これは、Win32k が、適切なタイミングでモニターをオンにしなかったことを示します。
 ms.assetid: 55907359-C282-43F0-92FE-5DC248BF9D02
 keywords:
-- バグ チェック 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
+- バグチェック 0x19C WIN32K_POWER_WATCHDOG_TIMEOUT
 - WIN32K_POWER_WATCHDOG_TIMEOUT
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bf61b78baa49b45ba114ed359a95577ec642bb2
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: ae048f4e73c8d518a2471e92e598f377dfac4790
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519785"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534653"
 ---
-# <a name="bug-check-0x19c-win32kpowerwatchdogtimeout"></a>バグ チェック 0x19C:WIN32K\_POWER\_ウォッチドッグ\_タイムアウト
+# <a name="bug-check-0x19c-win32k_power_watchdog_timeout"></a>バグチェック 0x19C: WIN32K \_ 電源 \_ ウォッチドッグ \_ タイムアウト
 
 
-WIN32K\_POWER\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x0000019C の値を持ちます。 Win32k しなかったにしないこと、モニター適切なタイミングでこれを示します。
+WIN32K \_ 電源 \_ ウォッチドッグタイムアウトのバグチェックには、 \_ 0x0000019c という値があります。 これは、Win32k が、適切なタイミングでモニターをオンにしなかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="win32kpowerwatchdogtimeout-parameters"></a>WIN32K\_POWER\_ウォッチドッグ\_タイムアウト パラメーター
+## <a name="win32k_power_watchdog_timeout-parameters"></a>WIN32K \_ 電源 \_ ウォッチドッグの \_ タイムアウトパラメーター
 
 
 <table>
@@ -73,21 +73,21 @@ WIN32K\_POWER\_ウォッチドッグ\_バグ チェックのタイムアウト�
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">パラメーター 1 を参照してください。</td>
+<td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">パラメーター 1 を参照してください。</td>
+<td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">パラメーター 1 を参照してください。</td>
+<td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 
 

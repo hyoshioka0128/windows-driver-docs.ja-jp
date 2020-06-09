@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhcdext
-description: Usbkd.usbhcdext コマンドでは、USB ホスト コント ローラーまたは USB ルート ハブのデバイスの拡張機能からの情報が表示されます。
+title: usbhcdext
+description: Usbhcdext コマンドは、USB ホストコントローラーまたは USB ルートハブのデバイス拡張機能の情報を表示します。
 ms.assetid: 83811F9F-5899-4EC8-83D7-39EE884C0A01
 keywords:
-- デバッグ usbkd.usbhcdext Windows
+- usbhcdext Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a11aa0dfc6432e1367e446a3328a8ab28a7d8f09
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0f318c5dd53465f624fc43e42bcea4cb2e35a313
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362438"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534699"
 ---
 # <a name="usbkdusbhcdext"></a>!usbkd.usbhcdext
 
 
-[ **! Usbkd.usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)コマンドは、USB ホスト コント ローラーまたは USB ルート ハブのデバイスの拡張機能からの情報を表示します。
+[**Usbhcdext**](-usbkd-usbhcdext.md)コマンドは、usb ホストコントローラーまたは usb ルートハブのデバイス拡張機能の情報を表示します。
 
 ```dbgcmd
 !usbkd.usbhcdext DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-次のいずれかのアドレス:
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+次のいずれかのアドレス。
 
--   USB ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能。
--   物理デバイス オブジェクト (PDO) USB ルート ハブにデバイスの拡張機能。
+-   USB ホストコントローラーの機能デバイスオブジェクト (FDO) のデバイス拡張機能。
+-   物理デバイスオブジェクト (PDO) の USB ルートハブのデバイス拡張機能。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-EHCI ホスト コント ローラーの FDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+EHCI ホストコントローラーの FDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -56,9 +56,9 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
  ...
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe00001ca11a0**します。
+上記の出力では、FDO のデバイス拡張機能のアドレスが、 [DML](debugger-markup-language-commands.md)コマンドの引数として表示されます **! ehci \_ info ffffe00001ca11a0**です。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 [ **! usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)コマンド。
+次に、デバイス拡張機能のアドレスを[**! usbhcdext**](-usbkd-usbhcdext.md)コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -90,7 +90,7 @@ BusContextHead: !usblist ffffe00001ca16b0, BC
 ...
 ```
 
-ルート ハブの PDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+ルートハブの PDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -102,7 +102,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
  ...
 ```
 
-上記の出力で、コマンドの引数として表示されるルート ハブの FDO のアドレスを確認できます **! devstack ffffe00002320050**します。 使用して、 [ **! devstack** ](-devstack.md)は PDO とデバイスの PDO 拡張機能のアドレスを検索するコマンド。
+上記の出力には、コマンド **! devstack ffffe00002320050**の引数として表示されるルートハブの FDO のアドレスが表示されます。 [**! Devstack**](-devstack.md)コマンドを使用して、pdo のアドレスと pdo デバイス拡張機能を検索します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -112,9 +112,9 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-上記の出力で確認できます、pdo ルート ハブのデバイスの拡張機能のアドレスが`ffffe0000213c1a0`します。
+前の出力では、ルートハブの PDO のデバイス拡張機能のアドレスがであることがわかり `ffffe0000213c1a0` ます。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 [ **! usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)コマンド。
+次に、デバイス拡張機能のアドレスを[**! usbhcdext**](-usbkd-usbhcdext.md)コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe0000213c1a0
@@ -141,12 +141,12 @@ dt USBPORT!_PDO_EXTENSION ffffe0000213c5a0
 [01] EvPDO_IRP_MN_START_DEVICE      PnpNotStarted       PnpStarted 
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

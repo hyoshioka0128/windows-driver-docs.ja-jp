@@ -18,19 +18,19 @@ keywords:
 - DbgPrint バッファー
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9725654a4f011f072aceb754a0a597a189a51f19
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: 0f3620a5dac393eb6cca43dbbcdd8ba705445855
+ms.sourcegitcommit: 188596c90e03a5619b5cbf0bff4276fc94777253
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428321"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84519849"
 ---
 # <a name="reading-and-filtering-debugging-messages"></a>デバッグメッセージの読み取りとフィルター処理
 
 [**Dbgprintex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)、 [**vdbgprintex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-vdbgprintex)、 [**vdbgprintexwithprefix**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-vdbgprintexwithprefix)、および[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)ルーチンは、指定された条件下でカーネルデバッガーにメッセージを送信します。 この手順では、優先度の低いメッセージを除外できます。
 
 > [!NOTE]
-Microsoft Windows Server 2003 以前のバージョンの Windows では、 [**Dbgprint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)ルーチンと[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)ルーチンは、メッセージを無条件にカーネルデバッガーに送信します。
+> Microsoft Windows Server 2003 以前のバージョンの Windows では、 [**Dbgprint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)ルーチンと[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)ルーチンは、メッセージを無条件にカーネルデバッガーに送信します。
 > Windows Vista 以降のバージョンの Windows では、これらのルーチンは、 **Dbgprintex**や**KdPrintEx**などの条件に応じてメッセージを送信します。
 > どちらのバージョンの Windows を使用している場合でも、 **Dbgprintex**、 **vdbgprintex**、 **vdbgprintexwithprefix**、および**KdPrintEx**を使用する必要があります。これらのルーチンを使用すると、メッセージが送信される条件を制御できます。
 

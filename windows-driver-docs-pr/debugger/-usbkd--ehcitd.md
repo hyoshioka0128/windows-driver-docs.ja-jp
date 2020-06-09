@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehcitd
-description: Usbkd._ehcitd コマンドは、usbehci _TRANSFER_CONTEXT 構造から情報を表示します。
+title: usbkd. _ehcitd
+description: Usbehci コマンドを実行 _ehcitd すると、_TRANSFER_CONTEXT 構造の情報が表示されます。
 ms.assetid: C0EE04CF-E059-4064-9791-3500E66B24FA
 keywords:
-- Windows デバッグ usbkd._ehcitd
+- usbkd. _ehcitd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d4548be97550c059ba74e851a3b23d4b39d4afb9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 57285ec83d7d356a583a84dad40cbc8cdae79275
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334120"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534877"
 ---
-# <a name="usbkdehcitd"></a>! usbkd します。\_ehcitd
+# <a name="usbkd_ehcitd"></a>! usbkd。 \_ehcitd
 
 
-**! Usbkd\_ 。ehcitd**コマンドからの情報を表示、 **usbehci!\_転送\_コンテキスト**構造体。 非同期のエンドポイント (つまり、コントロールと一括エンドポイント) に関する情報を表示するのにには、このコマンドを使用します。
+**! Usbkd。 \_ehcitd**コマンドを実行すると、usbehci からの情報が表示され**ます。 \_\_コンテキスト**構造を転送します。 このコマンドを使用して、非同期エンドポイント (つまり、コントロールと一括エンドポイント) に関する情報を表示します。
 
 ```dbgcmd
 !usbkd._ehcitd StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**usbehci!\_転送\_コンテキスト**構造体。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci のアドレス** \_\_コンテキスト**構造を転送します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-この例のアドレスを取得する 1 つの方法を示しています、 **usbehci!\_転送\_コンテキスト**構造体。 使用[ **!\_ehciep** ](-usbkd--ehciep.md)エンドポイントに関する情報を表示します。
+この例は、usbehci のアドレスを取得する方法の1つを示してい**ます。 \_\_コンテキスト**構造を転送します。 を使用し[**ます。 \_**](-usbkd--ehciep.md)エンドポイントに関する情報を表示するための ehciep。
 
 ```dbgcmd
 0: kd> !_ehciep ffffe000001ab618
@@ -65,7 +65,7 @@ slot[0] dt usbehci!_ENDPOINT_SLOT ffffe000001ab798 - slot_NotBusy
     ....
 ```
 
-上記の出力で`ffffd00021e65100`のアドレスを**usbehci!\_転送\_コンテキスト**構造体。 このアドレスを渡す **!\_ehcitd**します。
+上記の出力で `ffffd00021e65100` は、は usbehci のアドレスです **。 \_\_コンテキスト**構造を転送します。 このアドレスをに渡して**ください。 \_ehcitd**。
 
 ```dbgcmd
 0: kd> !_ehcitd ffffd00021e65100
@@ -106,12 +106,12 @@ AltNextHcdTD: 21e65180
 SlotNextHcdTD: 21e65200
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

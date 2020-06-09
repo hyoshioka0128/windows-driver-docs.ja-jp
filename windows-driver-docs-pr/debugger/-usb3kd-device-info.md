@@ -1,9 +1,9 @@
 ---
-title: usb3kd.device_info
-description: Usb3kd.device_info コマンドでは、USB 3.0 ツリーの中に USB デバイスに関する情報が表示されます。
+title: device_info usb3kd
+description: Device_info usb3kd コマンドは、usb 3.0 ツリーの USB デバイスに関する情報を表示します。
 ms.assetid: BD6D1562-2606-42C1-9EE6-D38D93D685DE
 keywords:
-- デバッグ usb3kd.device_info Windows
+- usb3kd Windows デバッグの device_info
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 86f6872f33878d36433f939c75841de65a9fa4b3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 82bb10b26d035fdafea0d57e8cd6832dd54eb090
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335665"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534903"
 ---
-# <a name="usb3kddeviceinfo"></a>!usb3kd.device\_info
+# <a name="usb3kddevice_info"></a>! usb3kd. デバイス \_ 情報
 
 
-**! Usb3kd.device\_情報**コマンドで USB デバイスに関する情報を表示、 [USB 3.0 ツリー](usb-3-extensions.md#usb-3-tree)します。
+**! Usb3kd \_ **コマンドを実行すると、usb デバイスに関する情報が[usb 3.0 ツリー](usb-3-extensions.md#usb-3-tree)に表示されます。
 
 ```dbgcmd
 !usb3kd.device_info DeviceContext
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceContext______"></span><span id="_______devicecontext______"></span><span id="_______DEVICECONTEXT______"></span> *DeviceContext*   
-アドレス、\_デバイス\_デバイスを表すコンテキスト構造体。
+<span id="_______DeviceContext______"></span><span id="_______devicecontext______"></span><span id="_______DEVICECONTEXT______"></span>*Devicecontext*   
+\_デバイスを表すデバイス \_ コンテキスト構造のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-**! デバイス\_情報**と[ **! ucx\_デバイス**](-usb3kd-ucx-device.md)デバイスに関する情報の両方が表示が表示される情報は異なります。 出力 **! デバイス\_情報**は USB 3.0 ハブのドライバーの point of view およびの出力から **! ucx\_デバイス**USB ホスト コント ローラー拡張機能の観点からは、ドライバー。 たとえば、 **! デバイス\_情報**出力には、構成と記述子にはインターフェイスに関する情報が含まれていますと **! ucx\_デバイス**出力に関する情報が含まれます。エンドポイント。
+**! デバイス \_ 情報**と[**! ucx \_ デバイス**](-usb3kd-ucx-device.md)の両方にデバイスに関する情報が表示されますが、表示される情報は異なります。 **デバイス \_ 情報**の出力は、usb 3.0 hub ドライバーの観点から見たものであり、 **! ucx \_ デバイス**の出力は、usb ホストコントローラー拡張機能ドライバーの観点からのものです。 たとえば、 **! デバイス \_ 情報**出力には、構成記述子とインターフェイス記述子に関する情報が含まれています。また、 **! ucx \_ デバイス**出力には、エンドポイントに関する情報が含まれています。
 
 <a name="examples"></a>例
 --------
 
-デバイス コンテキストの構造体のアドレスを取得するには、出力を調べることで、 [ **! usb\_ツリー** ](-usb3kd-usb-tree.md)コマンド。 次の例では、デバイス コンテキストの構造体のアドレスは、0xfffffa8005abd0c0 です。
+デバイスコンテキスト構造のアドレスを取得するには、 [**! usb \_ ツリー**](-usb3kd-usb-tree.md)コマンドの出力を参照します。 次の例では、デバイスコンテキスト構造のアドレスは0xfffffa8005abd0c0 です。
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -70,7 +70,7 @@ Topology
     ...
 ```
 
-デバイス コンテキストのアドレスを渡すことができますので、 **! デバイス\_情報**コマンド。
+これで、デバイスコンテキストのアドレスを **! device \_ info**コマンドに渡すことができるようになりました。
 
 ```dbgcmd
 3: kd> !device_info 0xfffffa8005abd0c0
@@ -108,14 +108,14 @@ Device Event History:
     ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! usb3kd.device\_情報\_から\_pdo**](-usb3kd-device-info-from-pdo.md)
+[**! usb3kd \_ \_ pdo からのデバイス \_ 情報**](-usb3kd-device-info-from-pdo.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

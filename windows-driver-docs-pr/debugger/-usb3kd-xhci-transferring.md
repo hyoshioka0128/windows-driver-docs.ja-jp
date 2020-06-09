@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_transferring
-description: Usb3kd.xhci_transferring 拡張機能の表示 (USB 3.0 ホスト コント ローラーによって使用される) 転送リングまでサイクル ビットの変更を検出します。
+title: xhci_transferring usb3kd
+description: Xhci_transferring usb3kd 拡張機能は、サイクルビットの変更が検出されるまで、(USB 3.0 ホストコントローラーによって使用される) 転送リングを表示します。
 ms.assetid: BCF6DEF0-FB58-4FE6-88AD-BF778E00F052
 keywords:
-- デバッグ usb3kd.xhci_transferring Windows
+- usb3kd Windows デバッグの xhci_transferring
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,51 +12,51 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9d4a24348284957ddf781bd93382ec4c9fada8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3875fa7074ee6f8296fe14fa35ac54f5b31a3516
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335646"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534887"
 ---
-# <a name="usb3kdxhcitransferring"></a>! usb3kd.xhci\_を転送します。
+# <a name="usb3kdxhci_transferring"></a>! usb3kd. xhci \_ 転送
 
 
-[ **! Usb3kd.xhci\_転送**](-usb3kd-device-info.md)拡張機能の表示 (USB 3.0 ホスト コント ローラーによって使用される) 転送リング サイクル ビットの変更を検出するまでです。
+[**Xhci \_ 転送**](-usb3kd-device-info.md)拡張機能は、サイクルビットの変更が検出されるまで、USB 3.0 ホストコントローラーによって使用される転送リングを表示します。
 
 ```dbgcmd
 !usb3kd.xhci_transferring VirtualAddress
 !usb3kd.xhci_transferring PhysicalAddress 1
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______VirtualAddress______"></span><span id="_______virtualaddress______"></span><span id="_______VIRTUALADDRESS______"></span> *virtualAddress*   
-転送のリングの仮想アドレス。
+<span id="_______VirtualAddress______"></span><span id="_______virtualaddress______"></span><span id="_______VIRTUALADDRESS______"></span>*Virtualaddress*   
+転送リングの仮想アドレス。
 
-<span id="_______PhysicalAddress______"></span><span id="_______physicaladdress______"></span><span id="_______PHYSICALADDRESS______"></span> *PhysicalAddress*   
-転送のリングの物理アドレスです。
+<span id="_______PhysicalAddress______"></span><span id="_______physicaladdress______"></span><span id="_______PHYSICALADDRESS______"></span>*PhysicalAddress*   
+転送リングの物理アドレス。
 
-<span id="_______1______"></span> 1   
-アドレスが物理アドレスを指定します。
+<span id="_______1______"></span>1   
+アドレスが物理アドレスであることを指定します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-出力、 **! xhci\_転送**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
+**! Xhci の \_ 転送**コマンドの出力は、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Windows の usb ホスト側ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
-転送のリングは、転送要求のブロック (TRBs) の一覧を維持するために、USB 3.0 ホスト コント ローラー ドライバーによって使用される構造です。 このコマンドは、転送のリングでは、仮想または物理アドレスを受け取りますが、TRBs の物理アドレスが表示されます。 これは、コマンドが正しくリンク TRBs を走査できるようにします。
+転送リングは、転送要求ブロック (TRBs) の一覧を維持するために USB 3.0 ホストコントローラードライバーによって使用される構造体です。 このコマンドは、転送リングの仮想アドレスまたは物理アドレスを受け取りますが、その物理アドレスを表示します。 これは、コマンドがリンクを正しくスキャンできるようにするためです。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-転送リングのアドレスを取得する出力の確認、 [ **! xhci\_deviceslots** ](-usb3kd-xhci-deviceslots.md)コマンド。 次の例では、転送のリングの仮想アドレスは、0xfffffa8005b2fe00 です。
+転送リングのアドレスを取得するには、 [**! xhci \_ デバイスロット**](-usb3kd-xhci-deviceslots.md)コマンドの出力を確認します。 次の例では、転送リングの仮想アドレスは0xfffffa8005b2fe00 です。
 
 ```dbgcmd
 3: kd> !usb3kd.xhci_deviceslots 0xfffffa800523a2d0
@@ -84,7 +84,7 @@ DeviceContextBase: VA 0xfffffa8005a41000 LA 0x116841000 !wdfcommonbuffer 0x57ffa
                 [0] dt _TRANSFER_DATA 0xfffffa8005b961b0 !urb 0xfffffa8005b52be8 !wdfrequest 0x57ffa469fd8 TransferState_Pending
 ```
 
-転送リングのアドレスを渡すことができますので、 **! xhci\_転送**コマンド。
+これで、転送リングのアドレスを **! xhci \_ ** transfer コマンドに渡すことができます。
 
 ```dbgcmd
 kd> !xhci_transferring 0xfffffa8005b2fe00
@@ -97,14 +97,14 @@ kd> !xhci_transferring 0xfffffa8005b2fe00
         [  5] EVENT_DATA   0x000000011692fe50 CycleBit 1 IOC 1 BEI 0 InterrupterTarget 0 Data  0 0xfffffa8005b96210 TotalBytes 13
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

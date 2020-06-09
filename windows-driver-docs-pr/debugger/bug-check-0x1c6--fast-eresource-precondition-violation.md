@@ -1,8 +1,8 @@
 ---
-title: バグ チェック 0x1C6 FAST_ERESOURCE_PRECONDITION_VIOLATION
-description: FAST_ERESOURCE_PRECONDITION_VIOLATION のバグ チェックでは、0x000001C6 の値を持ちます。 これは、現在のスレッドがリソースの高速ルーチンに無効な呼び出しを実行することを示します。
+title: バグチェック 0x1C6 FAST_ERESOURCE_PRECONDITION_VIOLATION
+description: FAST_ERESOURCE_PRECONDITION_VIOLATION バグチェックの値は0x000001C6 です。 これは、現在のスレッドが高速リソースルーチンへの無効な呼び出しを実行していることを示します。
 keywords:
-- バグ チェック 0x1C6 FAST_ERESOURCE_PRECONDITION_VIOLATION
+- バグチェック 0x1C6 FAST_ERESOURCE_PRECONDITION_VIOLATION
 - FAST_ERESOURCE_PRECONDITION_VIOLATION
 ms.date: 01/11/2019
 topic_type:
@@ -12,30 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b8dd793f18c7a592bd14a8490bb0399d605bb741
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 9660018e02da67455a09f51a8528e5da52b5c4ff
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866506"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534647"
 ---
-# <a name="bug-check-0x1c6-fasteresourcepreconditionviolation"></a>バグ チェック 0x1C6:高速\_÷ リソース\_PRECONDITION\_違反
+# <a name="bug-check-0x1c6-fast_eresource_precondition_violation"></a>バグチェック 0x1C6: FAST \_ ÷の \_ 前提条件 \_ 違反
 
-高速\_÷ リソース\_PRECONDITION\_違反のバグ チェックが 0x000001C6 の値を持ちます。 これは、現在のスレッドがリソースの高速ルーチンに無効な呼び出しを実行することを示します。
+FAST \_ ÷ \_ の前提条件違反のバグチェックには、 \_ 0x000001c6 の値が指定されています。 これは、現在のスレッドが高速リソースルーチンへの無効な呼び出しを実行していることを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
  
 
-## <a name="fasteresourcepreconditionviolation-parameters"></a>高速\_÷ リソース\_PRECONDITION\_違反パラメーター
+## <a name="fast_eresource_precondition_violation-parameters"></a>FAST \_ ÷の \_ 前提条件 \_ 違反パラメーター
 
 |パラメーター|説明|
 |-------- |---------- |
-|1|違反の種類。 次の値を参照してください。 |
-|2| 次の値を参照してください。 |
-|3| 次の値を参照してください。 |
-|4| 次の値を参照してください。 |
+|1|違反の種類。 以下の値を参照してください。 |
+|2| 以下の値を参照してください。 |
+|3| 以下の値を参照してください。 |
+|4| 以下の値を参照してください。 |
 
 **違反の種類**
 
@@ -126,13 +126,13 @@ ms.locfileid: "67866506"
 ## <a name="cause"></a>原因
 -----
 
-現在のスレッドでは、高速リソース ルーチンに無効な呼び出しを実行します。
+現在のスレッドは、高速リソースルーチンへの無効な呼び出しを実行しています。
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 ----------
 
-[バグチェック コード リファレンス](bug-check-code-reference2.md)
+[バグ チェック コード リファレンス](bug-check-code-reference2.md)
 

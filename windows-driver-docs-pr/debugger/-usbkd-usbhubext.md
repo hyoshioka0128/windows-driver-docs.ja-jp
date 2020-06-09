@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhubext
-description: Usbkd.usbhubext コマンドは、USB ハブに関する情報を表示します.
+title: usbhubext
+description: Usbhubext コマンドは、USB ハブに関する情報を表示します。
 ms.assetid: 1EC75753-3743-4384-8068-E796083D8239
 keywords:
-- デバッグ usbkd.usbhubext Windows
+- usbhubext Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d084da9510dbbb863c1eac3ca68b04581e9388
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3aaad955d90957aac80a01f2b3f565f0c7ff5d66
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323579"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534855"
 ---
 # <a name="usbkdusbhubext"></a>!usbkd.usbhubext
 
 
-**! Usbkd.usbhubext**コマンドは、USB ハブに関する情報を表示します。
+**Usbhubext**コマンドは、USB ハブに関する情報を表示します。
 
 ```dbgcmd
 !usbkd.usbhubext DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-次のいずれかのアドレス:
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+次のいずれかのアドレス。
 
--   USB ハブの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能。
--   USB ハブに接続されているデバイスの物理デバイス オブジェクト (PDO) のデバイスの拡張機能。
+-   USB ハブの機能デバイスオブジェクト (FDO) のデバイス拡張機能。
+-   USB ハブに接続されているデバイスの物理デバイスオブジェクト (PDO) のデバイス拡張機能。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-FDO の USB ハブのデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB ハブの FDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -54,7 +54,7 @@ FDO の USB ハブのデバイスの拡張機能のアドレスを検索する 1
     RootHub !hub2_info ffffe000023201a0 !devstack ffffe00002320050
 ```
 
-上記の出力で推奨されるコマンドを確認できます **! devstack ffffe00002320050**します。 次のコマンドを入力します。
+上記の出力には、推奨されるコマンドである**devstack ffffe00002320050**が表示されます。 次のコマンドを入力します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -65,9 +65,9 @@ FDO の USB ハブのデバイスの拡張機能のアドレスを検索する 1
 ...
 ```
 
-上記の出力で確認できます、ハブの FDO のデバイスの拡張機能のアドレスが`ffffe000023201a0`します。
+前の出力では、ハブの FDO のデバイス拡張機能のアドレスがであることがわかり `ffffe000023201a0` ます。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 **! usbkd.usbhubext**コマンド。
+次に、デバイス拡張機能のアドレスを**usbhubext**コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000023201a0
@@ -142,7 +142,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ...
 ```
 
-USB ハブに接続されているデバイスの PDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB ハブに接続されているデバイスの PDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -154,7 +154,7 @@ USB ハブに接続されているデバイスの PDO のデバイスの拡張�
         Port 3: !port2_info ffffe000021c0680 !devstack ffffe00007c882a0
 ```
 
-上記の出力で推奨されるコマンドを確認できます **! devstack ffffe00007c882a0**します。 次のコマンドを入力します。
+上記の出力には、推奨されるコマンドである**devstack ffffe00007c882a0**が表示されます。 次のコマンドを入力します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00007c882a0
@@ -165,9 +165,9 @@ USB ハブに接続されているデバイスの PDO のデバイスの拡張�
 ...
 ```
 
-上記の出力では、デバイス、デバイスの PDO 拡張機能のアドレスがあるを参照できます`ffffe00007c883f0`します。
+前の出力では、デバイスの PDO のデバイス拡張機能のアドレスがであることがわかり `ffffe00007c883f0` ます。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 [ **! usbhcdpnp** ](-usbkd-usbhcdpnp.md)コマンド。
+次に、デバイス拡張機能のアドレスを[**! usbhcdpnp**](-usbkd-usbhcdpnp.md)コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe00007c883f0
@@ -224,12 +224,12 @@ ProductId:Cruzer
     [EMPTY]
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

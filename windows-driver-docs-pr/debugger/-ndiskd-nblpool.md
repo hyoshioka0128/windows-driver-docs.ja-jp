@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: bf10e51debb1dd63c185d759f61dc79277cbb22a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6942e19db80e3866a184c1a4a7e0ecdcda4eeee9
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837586"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534731"
 ---
 # <a name="ndiskdnblpool"></a>!ndiskd.nblpool
 
 
-**! Ndiskd ndiskd**拡張機能には、 [**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure) (NBL) プールに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、システム内の割り当てられているすべての NBL プールの一覧がに表示されます。
+**! Ndiskd ndiskd**拡張機能には、 [**NET \_ BUFFER \_ LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure) (NBL) プールに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、システム内の割り当てられているすべての NBL プールの一覧がに表示されます。
 
 ```console
 !ndiskd.nblpool [-handle <x>] [-basic] [-allocations] [-find <str>] [-findnb <str>] 
@@ -32,31 +32,31 @@ ms.locfileid: "72837586"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 NBL プールのハンドル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 NBL プールに関する基本的な情報を表示します。
 
-<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span> *-割り当て*   
+<span id="_______-allocations______"></span><span id="_______-ALLOCATIONS______"></span>*-割り当て*   
 割り当てられたすべての NBLs を表示します。
 
-<span id="_______-find______"></span><span id="_______-FIND______"></span> *-検索*   
+<span id="_______-find______"></span><span id="_______-FIND______"></span>*-検索*   
 デバッガー式を使用して、割り当てられた NBLs の一覧をフィルター処理します。
 
-<span id="_______-findnb______"></span><span id="_______-FINDNB______"></span> *-findnb*   
-リンクされた[**NET\_BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)s (nbs) によって割り当てられた NBLs の一覧をフィルター処理します。
+<span id="_______-findnb______"></span><span id="_______-FINDNB______"></span>*-findnb*   
+リンクされた[**NET \_ BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)s (nbs) によって割り当てられた NBLs の一覧をフィルター処理します。
 
-<span id="_______-findctx______"></span><span id="_______-FINDCTX______"></span> *-findctx*   
+<span id="_______-findctx______"></span><span id="_______-FINDCTX______"></span>*-findctx*   
 コンテキスト領域で割り当てられた NBLs の一覧をフィルター処理します。
 
-<span id="_______-findctxtype______"></span><span id="_______-FINDCTXTYPE______"></span> *-findctxtype*   
+<span id="_______-findctxtype______"></span><span id="_______-FINDCTXTYPE______"></span>*-findctxtype*   
 コンテキスト領域のデータ型をオーバーライドします。
 
-<span id="_______-findva______"></span><span id="_______-FINDVA______"></span> *-findva*   
+<span id="_______-findva______"></span><span id="_______-FINDVA______"></span>*-findva*   
 指定された仮想アドレスをまたがっする NB を含む NBLs を検索します。
 
-<span id="_______-findpa______"></span><span id="_______-FINDPA______"></span> *-findpa*   
+<span id="_______-findpa______"></span><span id="_______-FINDPA______"></span>*-findpa*   
 指定された物理アドレスをまたがっする NB を含む NBLs を検索します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -161,19 +161,19 @@ ALL ALLOCATED NBLs
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET \_ バッファーの \_ 一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[**NET\_バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
+[**NET \_ バッファー**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure)
 
  
 

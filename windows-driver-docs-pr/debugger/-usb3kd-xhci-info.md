@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_info
-description: Usb3kd.xhci_info 拡張機能では、個々 の USB 3.0 ホスト コント ローラーのすべての XHCI コマンドが表示されます。
+title: xhci_info usb3kd
+description: Usb3kd 拡張子は、個々の USB 3.0 ホストコントローラーのすべての XHCI コマンドを表示し xhci_info ます。
 ms.assetid: C3C3B379-4871-4293-9C35-B64F3A5E1348
 keywords:
-- usb3kd.xhci_info Windows Debugging
+- usb3kd Windows デバッグの xhci_info
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a2c15b15393d1eeca1045222e89884f00edf1feb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1def7d692ba420c23fe1194b835962c58ac425d6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335634"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534113"
 ---
-# <a name="usb3kdxhciinfo"></a>!usb3kd.xhci\_info
+# <a name="usb3kdxhci_info"></a>! usb3kd. xhci \_ info
 
 
-[ **! Usb3kd.xhci\_情報**](-usb3kd-device-info.md)拡張機能には、個々 の USB 3.0 ホスト コント ローラーのすべての XHCI コマンドが表示されます。
+[**! Usb3kd xhci \_ info**](-usb3kd-device-info.md)拡張機能により、個々の USB 3.0 ホストコントローラーのすべての xhci コマンドが表示されます。
 
 ```dbgcmd
 !usb3kd.xhci_info DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能のアドレス。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+ホストコントローラーの機能デバイスオブジェクト (FDO) のデバイス拡張機能のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-出力、 **! usb3kd.xhci\_情報**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
+**Xhci \_ info**コマンドの出力は、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Windows の usb ホスト側ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-デバイスの拡張機能のアドレスを取得することができます、 [ **! xhci\_dumpall** ](-usb3kd-xhci-dumpall.md)コマンドまたはさまざまな他のデバッガー コマンド。 たとえば、 [ **! devstack** ](-devstack.md)コマンドは、デバイスの拡張機能のアドレスを表示します。 次の例では、ホスト コント ローラーの FDO のデバイスの拡張機能のアドレスは、fffffa800536e2d0 です。
+デバイス拡張機能のアドレスは、 [**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)コマンドから、または他のさまざまなデバッガーコマンドから取得できます。 たとえば、 [**! devstack**](-devstack.md)コマンドは、デバイス拡張機能のアドレスを表示します。 次の例では、ホストコントローラーの FDO のデバイス拡張機能のアドレスが fffffa800536e2d0 です。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbxhci
@@ -65,7 +65,7 @@ DevNode 0xfffffa8003df3010 for PDO 0xfffffa8003dd5870
 ...
 ```
 
-デバイスの拡張機能のアドレスを渡すことができますので、 **! xhci\_情報**コマンド。
+これで、デバイス拡張機能のアドレスを **! xhci \_ info**コマンドに渡すことができます。
 
 ```dbgcmd
 3: kd> !xhci_info 0xfffffa80`0536e2d0
@@ -87,14 +87,14 @@ DevNode 0xfffffa8003df3010 for PDO 0xfffffa8003dd5870
     !pci 100 0x30 0x0 0x0
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

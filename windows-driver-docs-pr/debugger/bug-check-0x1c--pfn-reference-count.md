@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x1C PFN_REFERENCE_COUNT
-description: PFN_REFERENCE_COUNT のバグ チェックが非常に少ない回数が表示される確認 0x0000001C.This バグの値を持ちます。
+title: バグチェック 0x1C PFN_REFERENCE_COUNT
+description: PFN_REFERENCE_COUNT バグチェックの値が0x0000001C になっています。このバグチェックは非常に頻繁に行われます。
 ms.assetid: 0fb1cb56-e542-4b9e-9b06-f4dfc7657bb8
 keywords:
-- バグ チェック 0x1C PFN_REFERENCE_COUNT
+- バグチェック 0x1C PFN_REFERENCE_COUNT
 - PFN_REFERENCE_COUNT
 ms.date: 05/23/2017
 topic_type:
@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 49bf19d1cea38a324a831da8bed58e1d4d7a8196
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4dc1aac728bfed299098fe36acb9cee62edec51d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519732"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534649"
 ---
-# <a name="bug-check-0x1c-pfnreferencecount"></a>バグ チェック 0x1C:PFN\_参照\_数
+# <a name="bug-check-0x1c-pfn_reference_count"></a>バグチェック 0x1C: PFN \_ 参照 \_ カウント
 
 
-PFN\_参照\_数のバグ チェックが 0x0000001C の値を持ちます。
+PFN \_ 参照 \_ カウントのバグチェックには、値0x0000001c が指定されています。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 
 
  
 

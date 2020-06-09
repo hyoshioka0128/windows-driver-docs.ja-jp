@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehcisitd
-description: Usbkd._ehcisitd コマンドは、usbehci _HCD_SI_TRANSFER_DESCRIPTOR から情報を表示します。
+title: usbkd. _ehcisitd
+description: Usbehci コマンドを実行すると、からの情報が表示され _HCD_SI_TRANSFER_DESCRIPTOR _ehcisitd
 ms.assetid: FA1F61AE-A9D4-429E-97BC-0CCC3A9AF33E
 keywords:
-- Windows デバッグ usbkd._ehcisitd
+- usbkd. _ehcisitd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,39 +12,39 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e5ea906e61800a416382a7fe35118e5a81f58049
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c6466b430c13d1e5e82eac338d9f0987804c566
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334143"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534879"
 ---
-# <a name="usbkdehcisitd"></a>! usbkd します。\_ehcisitd
+# <a name="usbkd_ehcisitd"></a>! usbkd。 \_ehcisitd
 
 
-**! Usbkd\_ 。ehcisitd**コマンドからの情報を表示、 **usbehci!\_HCD\_SI\_転送\_記述子**
+**! Usbkd。 \_ehcisitd**コマンドを実行すると、usbehci からの情報が表示され**ます。 \_HCD \_ SI \_ 転送 \_ 記述子**
 
 ```dbgcmd
 !usbkd._ehcisitd StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**usbehci!\_HCD\_SI\_転送\_記述子**構造体。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci のアドレス** \_HCD \_ SI \_ 転送 \_ 記述子**の構造体。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

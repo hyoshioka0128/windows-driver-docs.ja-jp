@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 87f44bc8d3187233831bd87e5440515758d41131
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: 9d18dd3f24300037011dc615ae61814ddae10d73
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359585"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534577"
 ---
-# <a name="bug-check-0xd1-driver_irql_not_less_or_equal"></a>バグチェック 0xD1: DRIVER\_IRQL\_\_少ない\_または\_等しい
+# <a name="bug-check-0xd1-driver_irql_not_less_or_equal"></a>バグチェック 0xD1: ドライバー \_ の IRQL が \_ \_ 少ない \_ か \_ 等しい
 
 
-ドライバー\_IRQL\_\_\_が少ないか、\_バグチェックの値が0x000000D1 になっています。 これは、カーネルモードドライバーが、プロセス IRQL が高すぎるときに、ページング可能なメモリにアクセスしようとしたことを示します。 
+ドライバーの \_ IRQL \_ が \_ 低い \_ か \_ 等しいバグチェックには、0x000000D1 の値が含まれています。 これは、カーネルモードドライバーが、プロセス IRQL が高すぎるときに、ページング可能なメモリにアクセスしようとしたことを示します。 
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_irql_not_less_or_equal-parameters"></a>DRIVER\_IRQL\_\_\_または同等のパラメーターで\_はありません
+## <a name="driver_irql_not_less_or_equal-parameters"></a>ドライバー \_ \_ の IRQL \_ が \_ パラメーターの値以下 \_
 
 <table>
 <colgroup>
@@ -71,7 +71,7 @@ ms.locfileid: "72359585"
 <a name="cause"></a>原因
 -----
 
-通常、このエラーが発生した場合、ドライバーは、割り込み要求レベル (IRQL) が高すぎたときに、ページング可能な (または完全に無効な) アドレスにアクセスしようとしました。 これは次のような事項が原因で発生します。
+通常、このエラーが発生した場合、ドライバーは、割り込み要求レベル (IRQL) が高すぎたときに、ページング可能な (または完全に無効な) アドレスにアクセスしようとしました。 考えられる原因を以下に示します。
 
  - DISPATCH_LEVEL 以上の実行中に無効なポインター (NULL または解放されたポインターなど) を逆参照しています。
 
@@ -79,7 +79,7 @@ ms.locfileid: "72359585"
 
  - DISPATCH_LEVEL 以上のページング可能なコードを実行しています。
 
-エラーの原因となっているドライバーを識別できる場合は、その名前がブルースクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver**に格納されます。 Dx KiBugCheckDriver を使用すると、デバッガーコマンドである[ **dx** (display debugger object model expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)を使用して、 **dx**を表示できます。
+エラーの原因となっているドライバーを識別できる場合は、その名前がブルースクリーンに出力され、メモリ内の場所 (PUNICODE \_ 文字列) **KiBugCheckDriver**に格納されます。 Dx KiBugCheckDriver を使用すると、デバッガーコマンドである[ **dx** (display debugger object model expression)](dx--display-visualizer-variables-.md)を使用して、 **dx**を表示できます。
 
 このバグチェックは通常、不適切なメモリアドレスを使用したドライバーによって発生します。
 
@@ -92,12 +92,12 @@ ms.locfileid: "72359585"
 - 無効なポインターであった関数ポインターを使用して関数が呼び出されました。
 
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
 開発中のドライバーが問題の原因である場合は、バグチェックの時点で実行されていた関数が (1) ページング可能としてマークされていないことを確認します。または、(2) は、ページングされている他のインライン関数を呼び出しません。
 
-[ **! Analyze**](-analyze.md)デバッガー拡張機能は、バグチェックに関する情報を表示し、根本原因を特定するのに役立ちます。 次の例は、 **! analyze**からの出力です。
+[**! Analyze**](-analyze.md)デバッガー拡張機能は、バグチェックに関する情報を表示し、根本原因を特定するのに役立ちます。 次の例は、 **! analyze**からの出力です。
 
 ```dbgcmd
 DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)
@@ -112,11 +112,11 @@ Arg3: 0000000000000000, value 0 = read operation, 1 = write operation
 Arg4: fffff808adc386a6, address which referenced memory
 ```
 
-ダンプファイルでトラップフレームが使用可能な場合は、 [ **. trap**](-trap--display-trap-frame-.md)コマンドを使用して、指定されたアドレスにコンテキストを設定します。
+ダンプファイルでトラップフレームが使用可能な場合は、 [**. trap**](-trap--display-trap-frame-.md)コマンドを使用して、指定されたアドレスにコンテキストを設定します。
 
 この種類のバグチェックのデバッグを開始するには、 [ **k**、 **kb**、 **kc**、 **kd**、 **kp**、 **kp**、 **kv** (表示スタックバックトレース)](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)の各コマンドを使用して、スタックトレースを確認します。
 
-デバッガーで[ **! irql**](-irql.md)コマンドを実行して、デバッガーが中断する前にターゲットコンピューター上のプロセッサの irql に関する情報を表示します。 次に、例を示します。
+デバッガーで[**! irql**](-irql.md)コマンドを実行して、デバッガーが中断する前にターゲットコンピューター上のプロセッサの irql に関する情報を表示します。 次に例を示します。
 
 ```dbgcmd
 0: kd> !irql
@@ -129,13 +129,13 @@ Debugger saved IRQL for processor 0x0 -- 2 (DISPATCH_LEVEL)
 
 関数の名前を表示するには、パラメーター4を指定して[ **ln** (一番近くにあるシンボルの一覧)](ln--list-nearest-symbols-.md)を使用します。 また、 **! analyze**出力を調べて、エラーコードが特定されているかどうかを確認します。
 
-パラメーター1のアドレスに対して[ **! pool**](-pool.md)を使用して、ページプールであるかどうかを確認します。 このメモリ領域の詳細については、 [ **! address**](-address.md)と advanced [ **! pte**](-pte.md)コマンドを使用してください。
+パラメーター1のアドレスに対して[**! pool**](-pool.md)を使用して、ページプールであるかどうかを確認します。 このメモリ領域の詳細については、 [**! address**](-address.md)と advanced [**! pte**](-pte.md)コマンドを使用してください。
 
 [[メモリの表示](-db---dc---dd---dp---dq---du---dw.md)] コマンドを使用して、パラメーター1のコマンドで参照されているメモリを確認します。
 
 [ **U**、 **ub**、 **uu** (unassemble)](u--unassemble-.md)の各コマンドを使用して、パラメーター4のメモリを参照しているアドレス内のコードを確認します。
 
-コマンド `lm t n` を使用して、メモリに読み込まれているモジュールを一覧表示します。 [ **! Memusage**](-memusage.md)およびを使用して、システムメモリの一般的な状態を確認します。 
+コマンドを使用して `lm t n` 、メモリに読み込まれているモジュールの一覧を表示します。 [**! Memusage**](-memusage.md)およびを使用して、システムメモリの一般的な状態を確認します。 
 
 
 ### <a name="driver-verifier"></a>ドライバーの検証ツール

@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x2 DEVICE_QUEUE_NOT_BUSY
-description: DEVICE_QUEUE_NOT_BUSY のバグ チェックでは、0x00000002 の値を持ちます。このバグ チェックが非常に少ない回数が表示されます。
+title: バグチェック 0x2 DEVICE_QUEUE_NOT_BUSY
+description: DEVICE_QUEUE_NOT_BUSY のバグチェックには、0x00000002 という値があります。このバグチェックは非常に頻繁に行われません。
 ms.assetid: 04db7272-0c9c-4fb7-a680-efa4c97603b1
 keywords:
-- バグ チェック 0x2 DEVICE_QUEUE_NOT_BUSY
+- バグチェック 0x2 DEVICE_QUEUE_NOT_BUSY
 - DEVICE_QUEUE_NOT_BUSY
 ms.date: 05/23/2017
 topic_type:
@@ -13,28 +13,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18cf3f73efd49ae52bc831af25c8181848de2031
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: a3a21b06ef2d027e07f42e5cd8997b43555c1611
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519611"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534645"
 ---
-# <a name="bug-check-0x2-devicequeuenotbusy"></a>バグ チェック 0x2:デバイス\_キュー\_いない\_ビジー
+# <a name="bug-check-0x2-device_queue_not_busy"></a>バグチェック 0x2: デバイス \_ キューがビジー状態では \_ ありません \_
 
 
-デバイス\_キュー\_いない\_ビジー状態のバグ チェックが 0x00000002 の値を持ちます。
+デバイス \_ キューの \_ ビジー状態のバグチェックには、0x00000002 という \_ 値があります。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解像度
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 

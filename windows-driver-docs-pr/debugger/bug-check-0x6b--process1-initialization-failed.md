@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x6B PROCESS1_INITIALIZATION_FAILED
-description: PROCESS1_INITIALIZATION_FAILED のバグ チェックでは、0x0000006B の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
+title: バグチェック 0x6B PROCESS1_INITIALIZATION_FAILED
+description: PROCESS1_INITIALIZATION_FAILED バグチェックの値は0x0000006B です。 このバグチェックは、Microsoft Windows オペレーティングシステムの初期化に失敗したことを示します。
 ms.assetid: 8680d924-3041-4927-a228-52b281bbc267
 keywords:
-- バグ チェック 0x6B PROCESS1_INITIALIZATION_FAILED
+- バグチェック 0x6B PROCESS1_INITIALIZATION_FAILED
 - PROCESS1_INITIALIZATION_FAILED
 ms.date: 06/27/2018
 topic_type:
@@ -13,26 +13,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d6394d1875ba4e7e81a1752d740b7cf4ac88df
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 8844b140081356f810c6fe10ab3ca2fb266ca992
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519265"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534619"
 ---
-# <a name="bug-check-0x6b-process1initializationfailed"></a>バグ チェック 0x6B:PROCESS1\_初期化\_失敗
+# <a name="bug-check-0x6b-process1_initialization_failed"></a>バグチェック 0x6B: PROCESS1 の \_ 初期化に \_ 失敗しました
 
 
-PROCESS1\_初期化\_失敗のバグ チェックが 0x0000006B の値を持ちます。 このバグ チェックでは、Microsoft Windows オペレーティング システムの初期化が失敗したことを示します。
+PROCESS1 の \_ 初期化に \_ 失敗したバグチェックの値は、0x0000006b です。 このバグチェックは、Microsoft Windows オペレーティングシステムの初期化に失敗したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="process1initializationfailed-parameters"></a>PROCESS1\_初期化\_FAILED パラメーター
+## <a name="process1_initialization_failed-parameters"></a>PROCESS1 の \_ 初期化に \_ 失敗したパラメーター
 
 
-次のパラメーターは、ブルー スクリーンに表示されます。
+次のパラメーターがブルースクリーンに表示されます。
 
 <table>
 <colgroup>
@@ -70,13 +70,13 @@ PROCESS1\_初期化\_失敗のバグ チェックが 0x0000006B の値を持ち�
 <a name="cause"></a>原因
 -----
 
-ディスク サブシステムの任意の部分は、PROCESS1 可能性\_初期化\_失敗のバグ チェック、不良ディスクを含む同じチェーン、またはないので、使用可能なドライブ上の ATA 型デバイスの混在、不正または不適切なケーブルハードウェアの再生成します。
+ディスクサブシステムのどの部分でも、PROCESS1 の初期化に失敗したバグチェックが発生する可能性があります \_ \_ 。これには、不良ディスク、間違ったケーブル、または正しくないケーブル、異なる ATA タイプのデバイスを同じチェーンに混在させる、またはハードウェアの再生成によって使用できないドライブを含めることができます。
 
-このバグ チェックも可能性があります、ブート パーティションから不足しているファイルまたはでユーザーが誤って無効になっているドライバー、**ドライバー**タブ。
+このバグチェックは、ブートパーティションのファイルが見つからないか、[**ドライバー** ] タブでユーザーが誤って無効にしたドライバーによって発生することもあります。
 
  
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。 
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 
 
 
 

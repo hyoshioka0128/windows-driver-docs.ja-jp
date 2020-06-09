@@ -11,12 +11,12 @@ keywords:
 - ダウンストリームストア (シンボルサーバー)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 873b7560fb82b8b3390fbfda004c90fe5aefa28e
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: ec394624406cf4cf4d4844bff2ecd6ec3cc46740
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916254"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533961"
 ---
 # <a name="advanced-symsrv-use"></a>SymSrv の高度な使用方法
 
@@ -52,43 +52,43 @@ set _NT_SYMBOL_PATH = srv*\\Server\Share
 シンボルサーバー DLL の名前を指定します。 SymSrv シンボルサーバーを使用している場合、これは常に symsrv .dll です。
 
 <span id="srv"></span><span id="SRV"></span>**is**  
-これは**symsrv\*** の省略形です。
+これは**symsrv \* symsrv .dll**の短縮形です。
 
 <span id="DownstreamStore"></span><span id="downstreamstore"></span><span id="DOWNSTREAMSTORE"></span>*DownstreamStore*  
 ダウンストリームストアを指定します。 これは、個々のシンボルファイルをキャッシュするために使用されるローカルディレクトリまたはネットワーク共有です。
 
 複数のダウンストリームストアを指定するには、アスタリスクで区切ります。 複数のダウンストリームストアについては、このページの下位にある**カスケードダウンストリームストア**で説明されています。
 
-通常、ダウンストリームストアが指定されている行に2つのアスタリスクを含めると、既定のダウンストリームストアが使用されます。 このストアは、ホームディレクトリの sym サブディレクトリにあります。 ホームディレクトリの既定値は、デバッガーのインストールディレクトリです。これは、 [ **! homedir**](-homedir.md)拡張機能を使用するか、dbghelp\_homedir 環境変数を設定することによって変更できます。
+通常、ダウンストリームストアが指定されている行に2つのアスタリスクを含めると、既定のダウンストリームストアが使用されます。 このストアは、ホームディレクトリの sym サブディレクトリにあります。 ホームディレクトリの既定値は、デバッガーのインストールディレクトリです。これは、 [**! homedir**](-homedir.md)拡張機能を使用するか、dbghelp homedir 環境変数を設定することによって変更でき \_ ます。
 
 *Downstreamstore*に存在しないディレクトリが指定されている場合、SymStore はそれを作成しようとします。
 
 *Downstreamstore*パラメーターが省略されていて、追加のアスタリスクが含まれていない場合 (つまり、1つのアスタリスクまたは**symsrv**が2つのアスタリスクで**srv**を使用する場合、ダウンストリームストアは作成されません)。 デバッガーは、ローカルでキャッシュせずに、すべてのシンボルファイルをサーバーから直接読み込みます。
 
-**注**   HTTP または HTTPS サイトからシンボルにアクセスする場合、またはシンボルストアで圧縮ファイルが使用されている場合は、常にダウンストリームストアが使用されます。 ダウンストリームストアが指定されていない場合は、ホームディレクトリの sym サブディレクトリに1つが作成されます。
+**メモ**   HTTP または HTTPS サイトからシンボルにアクセスする場合、またはシンボルストアで圧縮ファイルが使用されている場合は、常にダウンストリームストアが使用されます。 ダウンストリームストアが指定されていない場合は、ホームディレクトリの sym サブディレクトリに1つが作成されます。
 
  
 
-<span id="__Server_Share"></span><span id="__server_share"></span><span id="__SERVER_SHARE"></span> *\\\\サーバー\\共有*  
+<span id="__Server_Share"></span><span id="__server_share"></span><span id="__SERVER_SHARE"></span>*\\\\サーバー \\ 共有*  
 リモートシンボルストアのサーバーと共有を指定します。
 
-ダウンストリームストアが使用されている場合、デバッガーは最初にこのストア内のシンボルファイルを検索します。 シンボルファイルが見つからない場合、デバッガーは指定された*サーバー*と*共有*からシンボルファイルを見つけ、そのファイルのコピーを下流ストアにキャッシュします。 このファイルは、ツリー内の下にあるツリー内のサブディレクトリにコピーされます *。これは*、[ *\\\\サーバー\\共有*] の下にあるツリー内の場所に対応します。
+ダウンストリームストアが使用されている場合、デバッガーは最初にこのストア内のシンボルファイルを検索します。 シンボルファイルが見つからない場合、デバッガーは指定された*サーバー*と*共有*からシンボルファイルを見つけ、そのファイルのコピーを下流ストアにキャッシュします。 このファイルは、ツリー内の [ * \\ \\ サーバー \\ 共有*] の下*にあるツリー*内のサブディレクトリにコピーされます。
 
 シンボルサーバーは、シンボルパス内の唯一のエントリである必要はありません。 シンボルパスが複数のエントリで構成されている場合、デバッガーは、シンボルサーバーまたは実際のディレクトリの名前が付けられているかどうかに関係なく、必要なシンボルファイルの各エントリを (左から右に) 順番にチェックします。
 
-例をいくつか紹介します。 Mybuilds\\mybuilds でシンボルストアを使用して SymSrv をシンボルサーバーとして使用するには、次のシンボルパスを設定します \\\\ます。
+次に例をいくつか示します。 Mybuilds でシンボルストアを使用して SymSrv をシンボルサーバーとして使用するには \\ \\ \\ 、次のシンボルパスを設定します。
 
 ```console
 set _NT_SYMBOL_PATH= symsrv*symsrv.dll*\\mybuilds\mysymbols
 ```
 
-シンボルパスを設定して、デバッガーが \\上のシンボルストアからシンボルファイルをコピーするようにするには \\mybuilds をローカルディレクトリ c:\\localsymbols に\\、次のように使用します。
+シンボルパスを設定して、 \\ \\ \\ mybuilds on mybuilds をローカルディレクトリ c: localsymbols にコピーし、mybuilds をシンボルストアからコピーするようにシンボルパスを設定するには \\ 、次のように使用します。
 
 ```console
 set _NT_SYMBOL_PATH=symsrv*symsrv.dll*c:\localsymbols*\\mybuilds\mysymbols
 ```
 
-シンボルパスを設定して、デバッガーがシンボルファイルを HTTPS サイトからローカルネットワークディレクトリ `https://www.company.com/manysymbols` \\\\localserver\\myshare\\mycache にコピーするようにするには、次のように使用します。
+シンボルパスを設定して、デバッガーがシンボルファイルを HTTPS サイトから `https://www.company.com/manysymbols` ローカルネットワークディレクトリ localserver myshare mycache にコピーするようにするには \\ \\ \\ \\ 、次のように使用します。
 
 ```console
 set _NT_SYMBOL_PATH=symsrv*symsrv.dll*\\localserver\myshare\mycache*https://www.company.com/manysymbols
@@ -104,7 +104,7 @@ set _NT_SYMBOL_PATH=srv*\\localserver\myshare\mycache*https://www.company.com/ma
 
 ### <a name="span-idcompressed_filesspanspan-idcompressed_filesspancompressed-files"></a><span id="compressed_files"></span><span id="COMPRESSED_FILES"></span>圧縮されたファイル
 
-SymSrv は、圧縮されたファイルを含むシンボルストアと互換性があります。ただし、[ここで](https://go.microsoft.com/fwlink/p/?linkid=239917)使用可能な compress ツールで圧縮が行われている必要があります。 圧縮ファイルには、ファイル拡張子の最後の文字としてアンダースコア (たとえば\_、module2 または\_) が含まれている必要があります。 詳細については、「 [SymStore](symstore.md)」を参照してください。
+SymSrv は、圧縮されたファイルを含むシンボルストアと互換性があります。ただし、[ここで](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=17657)使用可能な compress ツールで圧縮が行われている必要があります。 圧縮ファイルには、ファイル拡張子の最後の文字としてアンダースコア (たとえば、 \_ module2 または) を指定する必要があり \_ ます。 詳細については、「 [SymStore](symstore.md)」を参照してください。
 
 ストアのファイルが圧縮されている場合は、ダウンストリームストアを使用する必要があります。 SymSrv は、ダウンストリームストアにキャッシュする前にすべてのファイルを圧縮解除します。
 
@@ -118,7 +118,7 @@ SymSrv は、圧縮されたファイルを含むシンボルストアと互換�
 
 任意の数のダウンストリームストアをアスタリスクで区切って指定できます。 これらのストアは、*カスケードシンボルストア*として知られています。
 
-最初の**srv\\** * または**symsrv\\** <strong>serverdll</strong>*\** * の後、後続の各トークンはシンボルの場所を表します。 一番遠い方のトークンが最初にチェックされます。 空のトークン。行に2つのアスタリスクが示されるか、文字列の末尾にアスタリスクで示されます。既定の下流ストアを表します。
+最初の**srv \\ *** または**symsrv \\ **<strong>serverdll</strong> * \* * * の後に、後続の各トークンはシンボルの場所を表します。 一番遠い方のトークンが最初にチェックされます。 空のトークン。行に2つのアスタリスクが示されるか、文字列の末尾にアスタリスクで示されます。既定の下流ストアを表します。
 
 次に示すのは、2つの下流ストアを使用して、アクセスされているメインシンボルストアからの情報を保持するシンボルパスの例です。 これらは、マスターストア、中間レベルストア、およびローカルキャッシュと呼ばれることがあります。
 
@@ -126,7 +126,7 @@ SymSrv は、圧縮されたファイルを含むシンボルストアと互換�
 srv*c:\localcache*\\interim\store*https://msdl.microsoft.com/download/symbols
 ```
 
-このシナリオでは、SymSrv は最初にシンボルファイルの c:\\localcache を検索します。 見つかった場合は、パスを返します。 見つからない場合は、\\\\中間\\ストアに表示されます。 シンボルファイルが見つかった場合、SymSrv はそれを c:\\localcache にコピーし、パスを返します。 見つからない場合、SymSrv は <https://msdl.microsoft.com/download/symbols>で[Microsoft パブリックシンボルストア](microsoft-public-symbols.md)を検索します。ファイルが見つかった場合、SymSrv は \\\\中間\\ストアと c:\\localcache の両方にコピーします。
+このシナリオでは、SymSrv は最初に \\ シンボルファイルの c: localcache を検索します。 見つかった場合は、パスを返します。 見つからない場合は、中間ストアに表示され \\ \\ \\ ます。 シンボルファイルが見つかった場合、SymSrv はそれを c: \\ localcache にコピーし、パスを返します。 見つからない場合、SymSrv は[Microsoft パブリックシンボルストア](microsoft-public-symbols.md)をで検索します <https://msdl.microsoft.com/download/symbols> 。ファイルが見つかった場合、symsrv はそれを \\ \\ 中間 \\ ストアと c: localcache の両方にコピーし \\ ます。
 
 同様の動作は、次のパスを使用して取得されます。
 
@@ -134,7 +134,7 @@ srv*c:\localcache*\\interim\store*https://msdl.microsoft.com/download/symbols
 srv**\\interim\store*https://internetsite
 ```
 
-この場合、ローカルキャッシュは既定の下流ストアで、マスターストアはインターネットサイトです。 \\\\中間\\ストアの中間レベルストアが、他の2つの間で使用するように指定されています。
+この場合、ローカルキャッシュは既定の下流ストアで、マスターストアはインターネットサイトです。 中間ストアの中間レベルのストア \\ \\ が、他の \\ 2 つの間で使用するように指定されています。
 
 SymSrv は、カスケードストアを含むパスを処理するときに、読み取りまたは書き込みができないストアをスキップします。 そのため、共有がダウンした場合、見つからないストアから下流のストアにファイルがコピーされ、エラーは発生しません。 このエラーの優れた副作用は、マスターストアが書き込み可能でない限り、1つの下流ストアのストリームをフィードする複数のマスターストアをユーザーが指定できることです。
 
@@ -142,19 +142,19 @@ SymSrv は、カスケードストアを含むパスを処理するときに、�
 
 ### <a name="span-idworking_with_http_and_smb__symbol_server_pathsspanspan-idworking_with_http_and_smb__symbol_server_pathsspanspan-idworking_with_http_and_smb__symbol_server_pathsspanworking-with-http-and-smb-symbol-server-paths"></a><span id="Working_With_HTTP_and_SMB__Symbol_Server_Paths"></span><span id="working_with_http_and_smb__symbol_server_paths"></span><span id="WORKING_WITH_HTTP_AND_SMB__SYMBOL_SERVER_PATHS"></span>HTTP および SMB シンボルサーバーパスの操作
 
-既に説明したように、チェーン (またはカスケード) とは、シンボルパス内の各 "\*" 区切り記号の間に出現するコピーを指します。 シンボルは、左から右への順序で検索されます。 各ミスでは、ファイルが見つかるまで、次の (上流の) シンボルサーバーが照会されます。
+既に説明したように、チェーン (またはカスケード) とは、 \* シンボルパス内の各区切り記号の間に出現するコピーを指します。 シンボルは、左から右への順序で検索されます。 各ミスでは、ファイルが見つかるまで、次の (上流の) シンボルサーバーが照会されます。
 
 見つかった場合は、(アップストリーム) シンボルサーバーから以前の (下流の) シンボルサーバーにファイルがコピーされます。 これは、(下流の) シンボルサーバーごとに繰り返されます。 このようにして、(共有) ダウンストリームシンボルサーバーには、シンボルサーバーを使用するすべてのクライアントの集合的な作業が設定されます。
 
-チェーンされた UNC パスは、SRV\* プレフィックスなしでも使用できますが、symsrv の高度なエラー処理を使用するように SRV\* 指定することをお勧めします。
+チェーンされた UNC パスは、SRV プレフィックスなしでも使用でき \* ますが、 \* symsrv の高度なエラー処理を使用するように srv を指定することをお勧めします。
 
 HTTP シンボルサーバーをパスに含める場合は、1つだけを指定でき (チェーンごとに)、パスの末尾に配置する必要があります (キャッシュとして機能するように書き込むことはできません)。 HTTP ベースのシンボルストアがストアの一覧の中央または左側に配置されている場合、検出されたファイルをコピーしてそのチェーンを破損させることはできません。 さらに、シンボルハンドラーは web サイトからファイルを開くことができないので、HTTP ベースのストアを一番左にしたり、リストにのみ格納したりすることはできません。 SymSrv がこのシンボルパスで表示されている場合、既定の下流ストアがシンボルパスに示されているかどうかに関係なく、ファイルを既定の下流ストアにコピーしてそこから開くことで、回復を試みます。
 
-HTTP は、SRV\* プレフィックス (symsrv .dll シンボルハンドラーによって実装される) を使用する場合にのみサポートされます。
+HTTP は、SRV \* プレフィックス (symsrv シンボルハンドラーによって実装されている) を使用する場合にのみサポートされます。
 
 **HTTP および SMB 共有シンボルサーバーのシナリオ例**
 
-一般的な UNC のみの展開には、すべてのファイル (\\\\MainOffice\\シンボル) をホストする中央オフィス、サブセットをキャッシュするブランチオフィス (\\\\BranchOfficeA\\シンボル)、デスクトップ (C:\\シンボル) が参照するファイルをキャッシュすることが含まれます。
+一般的な UNC のみの展開には、すべてのファイル ( \\ \\ mainoffice シンボル) をホストする中央オフィス、 \\ サブセット (BranchOfficeA シンボル) をキャッシュするブランチオフィス、 \\ \\ \\ および参照するファイルをキャッシュするデスクトップ (C: \\ シンボル) が含まれます。
 
 ```console
 srv*C:\Symbols*\\BranchOfficeA\Symbols*\\MainOffice\Symbols
@@ -187,11 +187,11 @@ srv*C:\Symbols*\\MachineName\Symbols*https://SymProxyName/Symbols
 srv*C:\Symbols*\\Machine1\Symbols*https://SymProxyName/Symbols;srv*C:\WebSymbols* https://msdl.microsoft.com/download/symbols
 ```
 
-### <a name="span-idcache_localsymbolcachespanspan-idcache_localsymbolcachespancachelocalsymbolcache"></a><span id="cache_localsymbolcache"></span><span id="CACHE_LOCALSYMBOLCACHE"></span>cache\**localsymbolcache*
+### <a name="span-idcache_localsymbolcachespanspan-idcache_localsymbolcachespancachelocalsymbolcache"></a><span id="cache_localsymbolcache"></span><span id="CACHE_LOCALSYMBOLCACHE"></span>\**localシンボルキャッシュ*をキャッシュする
 
-シンボルのローカルキャッシュを作成するもう1つの方法は、シンボルパスで**キャッシュ\\** <em>* localsymbol cache</em>文字列を使用することです。 これは、シンボルサーバー要素の一部ではなく、シンボルパス内の個別の要素です。 デバッガーは、指定されたディレクトリ*localsymbol キャッシュ*を使用して、この文字列の右側のシンボルパスに出現する任意の要素から読み込まれたすべてのシンボルを格納します。 これにより、シンボルサーバーによってダウンロードされたシンボルだけでなく、任意の場所からダウンロードしたシンボルに対してローカルキャッシュを使用できます。
+シンボルのローカルキャッシュを作成するもう1つの方法は、シンボルパス内の**cache \\ **<em>* localsymbol cache</em>文字列を使用することです。 これは、シンボルサーバー要素の一部ではなく、シンボルパス内の個別の要素です。 デバッガーは、指定されたディレクトリ*localsymbol キャッシュ*を使用して、この文字列の右側のシンボルパスに出現する任意の要素から読み込まれたすべてのシンボルを格納します。 これにより、シンボルサーバーによってダウンロードされたシンボルだけでなく、任意の場所からダウンロードしたシンボルに対してローカルキャッシュを使用できます。
 
-たとえば、次のシンボルパスでは、 *\\\\someshare*から取得したシンボルはキャッシュされません。 このメソッドは、c:\\mysymbols を使用して *\\\\* 別の共有から取得されたシンボルをキャッシュします。これは、 *\\\\* 別の共有で始まる要素は、**キャッシュ\*c:\\mysymbols**要素の右側に表示されるためです。 また、c:\\mysymbols を使用して、Microsoft パブリックシンボルストアから取得したシンボルをキャッシュします。これは、シンボルサーバーで使用される通常の構文 (2 つ以上のアスタリスクを持つ**srv** ) が原因です。 さらに、後で[**sympath +** ](-sympath--set-symbol-path-.md)コマンドを使用してこのパスに場所を追加すると、これらの新しい要素もキャッシュされます。これは、パスの右側に追加されるためです。
+たとえば、次のシンボルパスでは、 * \\ \\ someshare*から取得したシンボルはキャッシュされません。 他の共有から取得したシンボルをキャッシュするには、c: mysymbols を使用します。これは、別の共有 \\ で始まる要素* \\ \\ * * \\ \\ *が**cache \* c: \\ mysymbols**要素の右側に表示されるためです。 また、c: mysymbols を使用して、 \\ Microsoft パブリックシンボルストアから取得したシンボルをキャッシュします。これは、シンボルサーバーで使用される通常の構文 (2 つ以上のアスタリスクを持つ**srv** ) が原因です。 さらに、後で[**sympath +**](-sympath--set-symbol-path-.md)コマンドを使用してこのパスに場所を追加すると、これらの新しい要素もキャッシュされます。これは、パスの右側に追加されるためです。
 
 ```console
 _NT_SYMBOL_PATH=\\someshare\that\cachestar\ignores;srv*c:\mysymbols*https://msdl.microsoft.com/download/symbols;cache*c:\mysymbols;\\anothershare\that\gets\cached
@@ -199,7 +199,7 @@ _NT_SYMBOL_PATH=\\someshare\that\cachestar\ignores;srv*c:\mysymbols*https://msdl
 
 ### <a name="span-idhow_symsrv_locates_filesspanspan-idhow_symsrv_locates_filesspanhow-symsrv-locates-files"></a><span id="how_symsrv_locates_files"></span><span id="HOW_SYMSRV_LOCATES_FILES"></span>SymSrv がファイルを検索する方法
 
-SymSrv は、目的のシンボルファイルへの完全修飾 UNC パスを作成します。 このパスは、\_NT\_SYMBOL\_PATH 環境変数に記録されたシンボルストアへのパスで始まります。 次に、**シンボルサーバー**ルーチンを使用して、目的のファイルの名前を識別します。この名前は、ディレクトリ名としてパスに追加されます。 2つのパラメーターの連結で構成される別のディレクトリ名*と、* *2*つのパラメーターと*3*つのパラメーターが追加されます。 これらの値のいずれかが0の場合、省略されます。
+SymSrv は、目的のシンボルファイルへの完全修飾 UNC パスを作成します。 このパスは、 \_ NT \_ シンボルパス環境変数に記録されたシンボルストアへのパスで始まり \_ ます。 次に、**シンボルサーバー**ルーチンを使用して、目的のファイルの名前を識別します。この名前は、ディレクトリ名としてパスに追加されます。 2つのパラメーターの連結で構成される別のディレクトリ名*と、* *2*つの**SymbolServer**パラメーターと*3*つのパラメーターが追加されます。 これらの値のいずれかが0の場合、省略されます。
 
 結果として得られるディレクトリでは、シンボルファイルまたはシンボルストアポインターファイルが検索されます。
 

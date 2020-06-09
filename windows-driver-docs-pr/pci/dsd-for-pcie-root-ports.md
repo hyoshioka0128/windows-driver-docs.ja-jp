@@ -5,12 +5,12 @@ ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
 keywords: ACPI、ACPI \_ DSD 方法
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d7f9f7c218fe3596b261240a3af8a32a8ffeb4cc
-ms.sourcegitcommit: 985439ba501a870675a8bd6867c4b8944cc002d2
+ms.openlocfilehash: 51d2e55e01550c726bd2dcd4631d3d27426719fd
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84225969"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533819"
 ---
 # <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI インターフェイス: \_ PCIe ルートポート用のデバイス固有データ (DSD)
 
@@ -81,7 +81,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 - OS で DSD を解析 \_ し、必要な保護を PCI ポートに適用するためには、システム BIOS/UEFI でカーネル DMA 保護を有効にする必要があります。
 
-- このポートに接続されているデバイスのドライバーは、DMA の再マップをサポートする必要があります。それ以外の場合、Windows 10 は、 [Dmaguard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)に応じて、ユーザーがログインするか、または無期限に操作するまで、これらのデバイスの動作をブロックします。
+- このポートに接続されているデバイスのドライバーは、DMA の再[マップ](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)をサポートする必要があります。それ以外の場合、Windows 10 は、 [Dmaguard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)に応じて、ユーザーがログインするか、または無期限に操作するまで、これらのデバイスの動作をブロックします。
 
 ```asl
 Name (_DSD, Package () {  
@@ -114,5 +114,7 @@ Name (_DSD, Package () {
 [Windows での PCI Express ネイティブ コントロールの有効化](enabling-pci-express-native-control.md)
 
 [Thunderbolt icon 3 の Kernel DMA 保護](https://docs.microsoft.com/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)
+
+[デバイス ドライバーのための DMA 再マッピングを有効にする](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)
 
 [D3COLD_AUX_POWER_AND_TIMING_INTERFACE 構造体](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_d3cold_aux_power_and_timing_interface)

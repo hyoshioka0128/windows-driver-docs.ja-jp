@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhubs
-description: Usbkd.usbhubs コマンドでは、USB ハブに関する情報が表示されます。
+title: usbkd. usbkd
+description: Usbkd. usbkd コマンドは、USB ハブに関する情報を表示します。
 ms.assetid: 88642A67-5105-45A4-8374-7E4D01FFAEB6
 keywords:
-- デバッグ usbkd.usbhubs Windows
+- usbkd. usbkd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a6dedc4cfee0966fa678e68f89c0c18c59c2fda
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1862c782a3c2c6f83ef2e60921c25645880d4421
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63325398"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534691"
 ---
 # <a name="usbkdusbhubs"></a>!usbkd.usbhubs
 
 
-**! Usbkd.usbhubs**コマンドは、USB ハブに関する情報を表示します。
+**! Usbkd. usbkd**コマンドは、USB ハブに関する情報を表示します。
 
 ```dbgcmd
 !usbkd.usbhubs a[v]
@@ -30,30 +30,30 @@ ms.locfileid: "63325398"
 !usbkd.usbhubs r[v]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_____________a"></span><span id="_____________A"></span> **A**  
+<span id="_____________a"></span><span id="_____________A"></span>**a**  
 すべてのハブを表示します。
 
-<span id="_____________r"></span><span id="_____________R"></span> **R**  
-ルート ハブに表示されます。
+<span id="_____________r"></span><span id="_____________R"></span>**r**  
+ルートハブを表示します。
 
-<span id="_____________x"></span><span id="_____________X"></span> **X**  
+<span id="_____________x"></span><span id="_____________X"></span>**x**  
 外部ハブを表示します。
 
-<span id="_____________v"></span><span id="_____________V"></span> **v**  
-出力は、冗長です。 たとえば、 **! usbhubs rv**すべてのルート ハブに関する詳細な出力が表示されます。
+<span id="_____________v"></span><span id="_____________V"></span>**v**  
+出力は verbose です。 たとえば、 **! usbhubs rv**には、すべてのルートハブに関する詳細な出力が表示されます。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-詳細な出力の例を次に示します、 **! usbhubs**コマンド。
+**! Usbhubs**コマンドからの詳細出力の例を次に示します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubs rv
@@ -109,12 +109,12 @@ On Host Controller (0x8086, 0x2937)
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

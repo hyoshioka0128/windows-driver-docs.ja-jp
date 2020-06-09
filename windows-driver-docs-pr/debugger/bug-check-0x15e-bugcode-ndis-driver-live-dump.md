@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eaa78f3d89f85e63406ffdfbd25bafe6a934e33
-ms.sourcegitcommit: d2dab8b8bf335835d0341ca3f0a36eab0ec028f5
+ms.openlocfilehash: a70c5c14dcf12ce08b14aecbe618b21ebd06f417
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72892689"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534841"
 ---
-# <a name="bug-check-0x15e-bugcode_ndis_driver_live_dump"></a>バグチェック 0x15E: コード\_NDIS\_ドライバー\_ライブ\_ダンプ
+# <a name="bug-check-0x15e-bugcode_ndis_driver_live_dump"></a>バグチェック 0x15E: バグコード \_ NDIS \_ ドライバー \_ ライブ \_ ダンプ
 
 
-バグコード\_NDIS\_ドライバー\_ライブ\_ダンプバグコードには、0x0000015E という値が指定されています。 このバグコードは、NDIS がライブカーネルダンプをキャプチャしたことを示しています。 この状況では、NDIS はバグチェックを生成しません。
+\_バグコード NDIS \_ ドライバーの \_ ライブ \_ ダンプバグコードには、0x0000015e という値が指定されています。 このバグコードは、NDIS がライブカーネルダンプをキャプチャしたことを示しています。 この状況では、NDIS はバグチェックを生成しません。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bugcode_ndis_driver-parameters"></a>\_NDIS\_ドライバーパラメーターのバグコード
+## <a name="bugcode_ndis_driver-parameters"></a>バグコード \_ NDIS \_ ドライバーパラメーター
 
 
 パラメーター1は違反の種類を示します。 他のパラメーターの意味は、パラメーター1の値によって異なります。 パラメーターの値が "0" の場合、これは使用されないことを意味します。
@@ -44,7 +44,7 @@ ms.locfileid: "72892689"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター1</th>
+<th align="left">パラメーター 1</th>
 <th align="left">パラメーター1の値とエラーの原因</th>
 <th align="left">パラメータ 2</th>
 <th align="left">パラメーター3</th>
@@ -58,13 +58,13 @@ ms.locfileid: "72892689"
 <p>ミニポートドライバーで致命的なエラーが発生し、再列挙が要求されました。</p></td>
 <td align="left"><p>ミニポートブロックのアドレス。 詳細については、このアドレスを使用して<strong><a href="-ndiskd-minidriver.md" data-raw-source="[!ndiskd.minidriver](-ndiskd-minidriver.md)">ミニドライバー</a></strong>を実行してください。</p></td>
 <td align="left"><p>ミニポートの物理デバイスオブジェクト (PDO) のアドレス</p></td>
-<td align="left"><p>このライブダンプが実行される原因となった致命的なエラーです。 設定可能な値:</p>
+<td align="left"><p>このライブダンプが実行される原因となった致命的なエラーです。 指定できる値</p>
 <ol>
 <li>70: ユーザーモードにより発生しました</li>
-<li>71: NdisMRemoveMiniport によって発生しました <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport)"></a></strong></li>
+<li>71: NdisMRemoveMiniport によって発生しました<strong> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport" data-raw-source="[NdisMRemoveMiniport](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismremoveminiport)">NdisMRemoveMiniport</a></strong></li>
 <li>72: <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex" data-raw-source="[NdisIMInitializeDeviceInstanceEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiminitializedeviceinstanceex)">NdisIMInitializeDeviceInstanceEx</a></strong>が失敗したために発生しました</li>
 <li>73: <em><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart" data-raw-source="[MiniportRestart](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_restart)">Miniportrestart</a></em>が失敗したために発生しました</li>
-<li>74: <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (D0)</a>要求が失敗したために発生しました</li>
+<li>74: <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (D0)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (D0)</a>要求が失敗したことが原因で発生しました</li>
 <li>75: <a href="https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power" data-raw-source="[OID_PNP_SET_POWER (Dx)](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)">OID_PNP_SET_POWER (Dx)</a>要求が失敗したために発生しました</li>
 </ol></td>
 </tr>
@@ -74,7 +74,7 @@ ms.locfileid: "72892689"
 <p>ネットワークスタックを管理しようとしましたが、時間がかかりすぎています。 NDIS は他のドライバーを呼び出すと、呼び出しが即座に完了するようにウォッチドッグタイマーを開始します。 呼び出しに時間がかかる場合、NDIS はバグチェックを挿入します。</p>
 <p>これは、単純なデッドロックが原因である可能性があります。 "! Stack 2 ndis" を使用するか、疑わしいと思われるスレッドがあるかどうかを確認します。 NDIS_WATCHDOG_TRIAGE_BLOCK から PrimaryThread に特に注意を払ってください。</p>
 <p>NBLs が失われたことが原因である可能性があります。その場合は、 <strong><a href="-ndiskd-pendingnbls.md" data-raw-source="[!ndiskd.pendingnbls](-ndiskd-pendingnbls.md)">pendingnbls</a></strong>が役に立ちます。 <strong><a href="-ndiskd-oid.md" data-raw-source="[!ndiskd.oid](-ndiskd-oid.md)">! Ndiskd oid</a></strong>を使用してスタックされている oid を確認します。</p></td>
-<td align="left"><p>操作に時間がかかりすぎました。 設定可能な値:</p>
+<td align="left"><p>操作に時間がかかりすぎました。 指定できる値</p>
 <ul>
 <li><p>0x01: NDIS_BUGCHECK_WATCHDOG_PROTOCOL_PAUSE</p>
 <p>プロトコルドライバーの一時停止中にタイムアウトが発生しました。</p></li>
@@ -84,9 +84,9 @@ ms.locfileid: "72892689"
 <p>プロトコルドライバーに状態の通知を配信中にタイムアウトが発生しました。</p></li>
 <li><p>0x04: NDIS_BUGCHECK_WATCHDOG_PROTOCOL_UNBIND</p>
 <p>プロトコルドライバーのバインド解除中にタイムアウトが発生しました。</p></li>
-<li><p>0x11 : NDIS_BUGCHECK_WATCHDOG_FILTER_PAUSE</p>
+<li><p>0x11: NDIS_BUGCHECK_WATCHDOG_FILTER_PAUSE</p>
 <p>フィルタードライバーの一時停止中にタイムアウトが発生しました。</p></li>
-<li><p>0x12 : NDIS_BUGCHECK_WATCHDOG_FILTER_NETPNPEVENT</p>
+<li><p>0x12: NDIS_BUGCHECK_WATCHDOG_FILTER_NETPNPEVENT</p>
 <p>フィルタードライバーに NET_PNP_EVENT_NOTIFICATION を配信中にタイムアウトが発生しました。</p></li>
 <li><p>0x13: NDIS_BUGCHECK_WATCHDOG_FILTER_STATUS_INDICATION</p>
 <p>フィルタードライバーへのステータスの通知を配信中にタイムアウトが発生しました。</p></li>
@@ -105,7 +105,7 @@ ms.locfileid: "72892689"
 <li><p>0x26: NDIS_BUGCHECK_WATCHDOG_CANCEL_IDLE</p>
 <p>ミニポートアダプターでアイドル状態の要求を取り消しているときにタイムアウトが発生しました。</p></li>
 </ul></td>
-<td align="left"><p>Ndis にキャストします。NDIS_WATCHDOG_TRIAGE_BLOCK. 便利なフィールド:</p>
+<td align="left"><p>Ndis にキャストします。NDIS_WATCHDOG_TRIAGE_BLOCK。 便利なフィールド:</p>
 <ul>
 <li><strong>StartTime</strong>は、KeQueryInterruptTime によって返される操作の開始時刻を100ナノ秒単位で表示します。</li>
 <li><strong>Timeoutmilliseconds</strong>は、このバグチェックをトリガーする前に、少なくとも NDIS が待機した時間を示します。</li>
@@ -115,7 +115,7 @@ ms.locfileid: "72892689"
 <td align="left"><p>パラメーター4の値は、パラメーター2の値に依存します。 この一覧の各数値は、パラメーター2の同じ数値に対応しています。</p>
 <ul>
 <li>0x01: 0</li>
-<li>0x02: スタックイベントの NET_PNP_EVENT_CODE。 これらのコードの詳細については、「 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>.」を参照してください。</li>
+<li>0x02: スタックイベントの NET_PNP_EVENT_CODE。 これらのコードの詳細については、「 <strong><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event" data-raw-source="[NET_PNP_EVENT](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_pnp_event)">NET_PNP_EVENT</a></strong>」を参照してください。</li>
 <li>0x03: スタック表示の NDIS_STATUS コード。 <strong><a href="-ndiskd-help.md" data-raw-source="[!ndiskd.help](-ndiskd-help.md)">! Ndiskd help</a></strong>を使用してデコードしてください。</li>
 <li>0x04: 0</li>
 <li>0x11: 0</li>
@@ -146,7 +146,7 @@ ms.locfileid: "72892689"
 <a name="cause"></a>原因
 -----
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 パラメーター1は、バグコード\_NDIS\_ドライバーの特定の原因を示し\_ライブ\_ダンプのバグチェックを行います。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 パラメーター1は、バグコード \_ NDIS \_ ドライバーの \_ ライブダンプのバグチェックの具体的な原因を示し \_ ます。
 
 <a name="remarks"></a>注釈
 -------

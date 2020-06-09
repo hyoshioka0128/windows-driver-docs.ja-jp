@@ -1,9 +1,9 @@
 ---
-title: usbkd.hub2_info_from_fdo
-description: Usbkd.hub2_info_from_fdo コマンドでは、USB ハブに関する情報が表示されます。
+title: usbkd. hub2_info_from_fdo
+description: Hub2_info_from_fdo コマンドは、USB ハブに関する情報を表示します。
 ms.assetid: BB40AEDD-9FDF-43BE-A741-56D06BE2965C
 keywords:
-- デバッグ usbkd.hub2_info_from_fdo Windows
+- usbkd. hub2_info_from_fdo Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 84912ddbe4cc9f21afcfd7489a4cae979e2e88d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1b116a63061d2613dea641e81786560e7df1be77
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334101"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534873"
 ---
-# <a name="usbkdhub2infofromfdo"></a>!usbkd.hub2\_info\_from\_fdo
+# <a name="usbkdhub2_info_from_fdo"></a>! usbkd. hub2 \_ info \_ from \_ fdo
 
 
-**! Usbkd.hub2\_情報\_から\_fdo**コマンドは、USB ハブに関する情報を表示します。
+**Hub2 \_ info \_ from \_ FDO**コマンドは、USB ハブに関する情報を表示します。
 
 ```dbgcmd
 !usbkd.hub2_info_from_fdo FDO
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______FDO______"></span><span id="_______fdo______"></span> *FDO*   
-USB ハブの機能のデバイス オブジェクト (FDO) のアドレス。
+<span id="_______FDO______"></span><span id="_______fdo______"></span>*FDO*   
+USB ハブの機能デバイスオブジェクト (FDO) のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-USB ハブに対する、FDO のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB ハブの FDO のアドレスを検索する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ USB ハブに対する、FDO のアドレスを検索する 1 つの方法を次
     RootHub !hub2_info ffffe000023201a0 !devstack ffffe00002320050
 ```
 
-上記の出力で、ハブの FDO のアドレスは、推奨されるコマンドの引数として表示されます。 **! devstack ffffe00002320050**します。
+上記の出力では、ハブの FDO のアドレスが、提案されたコマンド **! devstack ffffe00002320050**の引数として表示されます。
 
-今すぐに FDO のアドレスを渡す、 **! ハブ 2\_情報\_から\_fdo**コマンド。
+ここで、FDO のアドレスを FDO コマンド** \_ \_ から \_ ! hub2 info**に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.hub2_info_from_fdo ffffe00002320050
@@ -131,12 +131,12 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

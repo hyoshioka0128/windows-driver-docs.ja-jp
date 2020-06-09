@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhubinfo
-description: Usbkd.hubinfo コマンドでは、USB ハブに関する情報が表示されます。
+title: usbhubinfo
+description: Hubinfo.h コマンドは、USB ハブに関する情報を表示します。
 ms.assetid: 01FF5822-0FCF-420F-AFF7-C91448DCBB98
 keywords:
-- デバッグ usbkd.usbhubinfo Windows
+- usbhubinfo Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b020767939eb8e4ea129a0cadfdc09ec16fda9a6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 23e48773de545c00ba3707bc28cca778148cc907
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340601"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534853"
 ---
 # <a name="usbkdusbhubinfo"></a>!usbkd.usbhubinfo
 
 
-**! Usbkd.hubinfo**コマンドは、USB ハブに関する情報を表示します。
+**Hubinfo.h**コマンドは、USB ハブに関する情報を表示します。
 
 ```dbgcmd
 !usbkd.hubinfo FDO
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______FDO______"></span><span id="_______fdo______"></span> *FDO*   
-USB ハブの機能のデバイス オブジェクト (FDO) のアドレス。
+<span id="_______FDO______"></span><span id="_______fdo______"></span>*FDO*   
+USB ハブの機能デバイスオブジェクト (FDO) のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-USB ハブに対する、FDO のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB ハブの FDO のアドレスを検索する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ USB ハブに対する、FDO のアドレスを検索する 1 つの方法を次
     RootHub !hub2_info ffffe000023201a0 !devstack ffffe00002320050
 ```
 
-上記の出力で、ハブの FDO のアドレスは、推奨されるコマンドの引数として表示されます。 **! devstack ffffe00002320050**します。
+上記の出力では、ハブの FDO のアドレスが、提案されたコマンド **! devstack ffffe00002320050**の引数として表示されます。
 
-今すぐに FDO のアドレスを渡す、 **! usbhubinfo**コマンド。
+ここで、FDO のアドレスを **! usbhubinfo**コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubinfo ffffe00002320050
@@ -94,12 +94,12 @@ Power caps (0 = not reported)
      PortPower_HubStatus : 500
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

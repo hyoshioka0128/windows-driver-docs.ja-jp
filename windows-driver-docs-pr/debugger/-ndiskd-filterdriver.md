@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0588f6c6eb7f17bfd461c3573b4fa125d08be79
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5e62d3f12734917cb0eeda417ce0a014200bc9dd
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826664"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534215"
 ---
 # <a name="ndiskdfilterdriver"></a>!ndiskd.filterdriver
 
@@ -31,13 +31,13 @@ ms.locfileid: "72826664"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 NDIS フィルタードライバーのハンドル。
 
-<span id="_______-filters______"></span><span id="_______-FILTERS______"></span> *-フィルター*   
+<span id="_______-filters______"></span><span id="_______-FILTERS______"></span>*-フィルター*   
 このドライバーのフィルターのインスタンスを表示します。
 
-<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span> *-ハンドラー*   
+<span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span>*-ハンドラー*   
 このドライバーのフィルターハンドラーを表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -113,15 +113,15 @@ HANDLERS
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
  
 

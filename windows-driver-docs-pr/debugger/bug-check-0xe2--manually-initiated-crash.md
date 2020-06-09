@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 695b5abc58e27dcc482a6576a7b3218e9c70f84d
-ms.sourcegitcommit: a54b96c52b0c7009dfa05bcc68d210b13711f2ea
+ms.openlocfilehash: 5409bf4e65cce6a514d1dc3b13f2b14af5d6c796
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77601726"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534521"
 ---
-# <a name="bug-check-0xe2-manually_initiated_crash"></a>バグチェック 0xE2: 手動\_開始\_クラッシュ
+# <a name="bug-check-0xe2-manually_initiated_crash"></a>バグチェック 0xE2: 手動で開始された \_ \_ クラッシュ
 
 
-手動\_開始\_クラッシュバグチェックの値は0x000000E2 です。 これは、ユーザーがカーネルデバッガーまたはキーボードから意図的にクラッシュダンプを開始したことを示します。
+手動で開始された \_ \_ クラッシュバグチェックの値は、0x000000e2 です。 これは、ユーザーがカーネルデバッガーまたはキーボードから意図的にクラッシュダンプを開始したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="manually_initiated_crash-parameters"></a>手動\_開始された\_のクラッシュパラメーター
+## <a name="manually_initiated_crash-parameters"></a>手動で開始された \_ \_ クラッシュパラメーター
 
 なし
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-手動で開始したクラッシュダンプの詳細については、「[システムクラッシュの強制](https://docs.microsoft.com/windows-hardware/drivers/debugger/forcing-a-system-crash)」を参照してください。
+手動で開始したクラッシュダンプの詳細については、「[システムクラッシュの強制](forcing-a-system-crash.md)」を参照してください。

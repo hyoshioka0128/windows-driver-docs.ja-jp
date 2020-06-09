@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 45b17f6bfeebce573a847d9c917571b7ee1edf4f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 46671dc50dbed532e2364a0beb2545a9f17591e6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826658"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534929"
 ---
 # <a name="ndiskdifstacktable"></a>!ndiskd.ifstacktable
 
@@ -56,7 +56,7 @@ INTERFACE STACK TABLE
     ffffdf801494c010   16                  17                 ffffdf801494ba20
 ```
 
-Ndis は、ndis ミニポートアダプター、NDIS 5.x フィルター中間ドライバー、および NDIS フィルターモジュールのスタックテーブルを保持します。一方、ndis [MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)ドライバーは、仮想デバイス間の内部インターフェイス関係を指定するために必要です。ミニポートインターフェイスとプロトコル下位インターフェイス。 したがって、ifStackTable は、より複雑な MUX ドライバーがインストールされているシステムで、インターフェイススタックの関係を確認するのに役立ちます。
+Ndis は、NDIS ミニポートアダプター、NDIS 5.x フィルター中間ドライバー、および NDIS フィルターモジュールのスタックテーブルを保持します。一方、 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)ドライバーは、仮想ミニポートインターフェイスとプロトコル低インターフェイスの間の内部インターフェイス関係を指定するために必要です。 したがって、ifStackTable は、より複雑な MUX ドライバーがインストールされているシステムで、インターフェイススタックの関係を確認するのに役立ちます。
 
 この例のシステムには NDIS MUX 中間ドライバーがインストールされていないため、ifStackTable では、NDIS が提供しているスタック関係のみが表示されます。 次の例では、3番目の行の下位インターフェイス (handle ffffdf801494c010、Lower IfIndex 16) のハンドルをクリックすると、QoS パケットスケジューラのインターフェイスが表示されます。
 
@@ -160,26 +160,26 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-これは、WFP 802.3 MAC レイヤーライトウェイトフィルタがネットワークインターフェイススタックの QoS パケット Scheudler フィルタの上にあることを示しています。 これを確認するには、 [ **! ndiskd netreport**](-ndiskd-netreport.md)拡張機能を実行します。これにより、ネットワークスタックが視覚的に表示されます。
+これは、WFP 802.3 MAC レイヤーライトウェイトフィルタがネットワークインターフェイススタックの QoS パケット Scheudler フィルタの上にあることを示しています。 これを確認するには、 [**! ndiskd netreport**](-ndiskd-netreport.md)拡張機能を実行します。これにより、ネットワークスタックが視覚的に表示されます。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **! ndiskd ヘルプ**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[ネットワークインターフェイススタックの保守](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
+[ネットワーク インターフェイス スタックの保守](https://docs.microsoft.com/windows-hardware/drivers/network/maintaining-a-network-interface-stack)
 
 [NDIS MUX 中間ドライバー](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-mux-intermediate-drivers)
 
-[ **! ndiskd netreport**](-ndiskd-netreport.md)
+[**!ndiskd.netreport**](-ndiskd-netreport.md)
 
  
 

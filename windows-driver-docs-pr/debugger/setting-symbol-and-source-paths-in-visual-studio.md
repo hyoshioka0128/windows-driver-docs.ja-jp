@@ -1,42 +1,42 @@
 ---
 title: Visual Studio でのシンボルと実行可能イメージ パスの設定
-description: プロシージャは、シンボルの設定と Visual Studio での実行可能ファイル イメージのパスについて説明します。
+description: この手順では、Visual Studio でシンボルと実行可能イメージのパスを設定します。
 ms.assetid: BFFF9BBC-C926-4974-A43E-C3A2DDA74AA4
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c299b26ce55ddc964c3b26c22e7263b39cca9d3
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 9c2924f07e7d66238d0614b21ae48c19477f787c
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366386"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534769"
 ---
 # <a name="setting-symbol-and-executable-image-paths-in-visual-studio"></a>Visual Studio でのシンボルと実行可能イメージ パスの設定
 
 > [!IMPORTANT]
-> この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
+> この機能は、Windows 10 バージョン1507以降のバージョンの WDK では使用できません。
 >
 
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows ドライバー開発](https://docs.microsoft.com/windows-hardware/drivers/)します。
+このトピックに記載されている手順では、Windows Driver Kit が Visual Studio に統合されている必要があります。 統合環境を利用するには、まず Microsoft Visual Studio をインストールしてから、Windows Driver Kit (WDK) をインストールします。 詳細については、「 [Visual Studio を使用したデバッグ](debugging-using-visual-studio.md)」を参照してください。
 
-## <a name="span-idsettingthesymbolpathbyusingapropertypagespanspan-idsettingthesymbolpathbyusingapropertypagespanspan-idsettingthesymbolpathbyusingapropertypagespansetting-the-symbol-path-by-using-a-property-page"></a><span id="Setting_the_Symbol_Path_by_Using_a_Property_Page"></span><span id="setting_the_symbol_path_by_using_a_property_page"></span><span id="SETTING_THE_SYMBOL_PATH_BY_USING_A_PROPERTY_PAGE"></span>プロパティ ページを使用してシンボル パスの設定
-
-
-1.  Visual Studio で、ホスト コンピューターで次のように選択します。**オプション**から、**ツール**メニュー。
-2.  **オプション**プロパティ ボックスに移動**デバッグ&gt;シンボル**します。
-3.  Microsoft シンボル サーバーからシンボルを取得する場合は、チェック**Microsoft シンボル サーバー**します。
-4.  ホスト コンピューター上のフォルダーからシンボルを取得する場合は、チェック**環境変数。\_NT\_シンボル\_パス**します。 設定し、 \_NT\_シンボル\_パス[環境変数](general-environment-variables.md)します。
-
-## <a name="span-idsettingthesymbolpathbyenteringacommandspanspan-idsettingthesymbolpathbyenteringacommandspanspan-idsettingthesymbolpathbyenteringacommandspansetting-the-symbol-path-by-entering-a-command"></a><span id="Setting_the_Symbol_Path_by_Entering_a_Command"></span><span id="setting_the_symbol_path_by_entering_a_command"></span><span id="SETTING_THE_SYMBOL_PATH_BY_ENTERING_A_COMMAND"></span>コマンドを入力して、シンボル パスの設定
+## <a name="span-idsetting_the_symbol_path_by_using_a_property_pagespanspan-idsetting_the_symbol_path_by_using_a_property_pagespanspan-idsetting_the_symbol_path_by_using_a_property_pagespansetting-the-symbol-path-by-using-a-property-page"></a><span id="Setting_the_Symbol_Path_by_Using_a_Property_Page"></span><span id="setting_the_symbol_path_by_using_a_property_page"></span><span id="SETTING_THE_SYMBOL_PATH_BY_USING_A_PROPERTY_PAGE"></span>プロパティページを使用してシンボルパスを設定する
 
 
-デバッガーのイミディ エイト ウィンドウで、Visual Studio では、入力、 [ **.sympath (シンボル パスの設定)** ](-sympath--set-symbol-path-.md)コマンド。
+1.  ホストコンピューターの Visual Studio で、[**ツール**] メニューの [**オプション**] をクリックします。
+2.  [**オプション**] プロパティボックスで、[**デバッグ &gt; シンボル**] に移動します。
+3.  Microsoft シンボルサーバーからシンボルを取得する場合は、[ **Microsoft シンボルサーバー**] をオンにします。
+4.  ホストコンピューター上のフォルダーからシンボルを取得する場合は、[**環境変数: \_ NT \_ シンボル \_ パス**] をオンにします。 次に、 \_ NT \_ シンボル \_ パス[環境変数](general-environment-variables.md)を設定します。
 
-## <a name="span-idsettingtheexecutableimagepathbyenteringacommandspanspan-idsettingtheexecutableimagepathbyenteringacommandspanspan-idsettingtheexecutableimagepathbyenteringacommandspansetting-the-executable-image-path-by-entering-a-command"></a><span id="Setting_the_Executable_Image_Path_by_Entering_a_Command"></span><span id="setting_the_executable_image_path_by_entering_a_command"></span><span id="SETTING_THE_EXECUTABLE_IMAGE_PATH_BY_ENTERING_A_COMMAND"></span>コマンドを入力して、実行可能イメージのパスを設定します。
+## <a name="span-idsetting_the_symbol_path_by_entering_a_commandspanspan-idsetting_the_symbol_path_by_entering_a_commandspanspan-idsetting_the_symbol_path_by_entering_a_commandspansetting-the-symbol-path-by-entering-a-command"></a><span id="Setting_the_Symbol_Path_by_Entering_a_Command"></span><span id="setting_the_symbol_path_by_entering_a_command"></span><span id="SETTING_THE_SYMBOL_PATH_BY_ENTERING_A_COMMAND"></span>コマンドを入力してシンボルパスを設定する
 
 
-デバッガーのイミディ エイト ウィンドウで、Visual Studio では、入力、 [ **.exepath (実行可能ファイル パスの設定)** ](-exepath--set-executable-path-.md)コマンド。
+Visual Studio のデバッガーの [イミディエイト] ウィンドウで、 [**sympath (シンボルパスの設定)**](-sympath--set-symbol-path-.md)コマンドを入力します。
+
+## <a name="span-idsetting_the_executable_image_path_by_entering_a_commandspanspan-idsetting_the_executable_image_path_by_entering_a_commandspanspan-idsetting_the_executable_image_path_by_entering_a_commandspansetting-the-executable-image-path-by-entering-a-command"></a><span id="Setting_the_Executable_Image_Path_by_Entering_a_Command"></span><span id="setting_the_executable_image_path_by_entering_a_command"></span><span id="SETTING_THE_EXECUTABLE_IMAGE_PATH_BY_ENTERING_A_COMMAND"></span>コマンドを入力して、実行可能イメージのパスを設定する
+
+
+Visual Studio のデバッガーの [イミディエイト] ウィンドウで、 [**exepath (実行可能ファイルパスの設定)**](-exepath--set-executable-path-.md)コマンドを入力します。
 
  
 

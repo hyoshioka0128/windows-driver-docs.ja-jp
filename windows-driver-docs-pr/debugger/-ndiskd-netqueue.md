@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a49ac36a65d06b194152e8c04aa07528de5cd5e4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2a94e3d761fc7437faec4816c40db7aca2f49124
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826549"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534909"
 ---
 # <a name="ndiskdnetqueue"></a>!ndiskd.netqueue
 
@@ -33,10 +33,10 @@ ms.locfileid: "72826549"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 必須。 NETTXQUEUE または NETRXQUEUE のハンドル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 基本情報を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -46,15 +46,15 @@ Ndiskd .dll
 <a name="examples"></a>例
 --------
 
-NetAdapterCx の他のオブジェクトと NETTXQUEUE オブジェクトおよび NETRXQUEUE オブジェクトとの関係を説明する図を表示するには、「[オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)」を参照して**ください  。**
+**メモ**   「[オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)」を参照して、nettxqueue オブジェクトと NETRXQUEUE オブジェクトと NetAdapterCx 内の他のオブジェクトとの関係を説明する図を参照してください。
 
  
 
 NETTXQUEUE または NETRXQUEUE のハンドルを取得するには、次の手順を実行します。
 
-1.  [ **! Ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。
+1.  [**! Ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。
 2.  NetAdapterCx ドライバーがインストールされている NetAdapter のハンドルをクリックします。
-3.  NetAdapter の NETADAPTER オブジェクトの右側にある [詳細情報] リンクをクリックして、 [ **! ndiskd cxadapter**](-ndiskd-cxadapter.md)拡張機能を実行します。
+3.  NetAdapter の NETADAPTER オブジェクトの右側にある [詳細情報] リンクをクリックして、 [**! ndiskd cxadapter**](-ndiskd-cxadapter.md)拡張機能を実行します。
 4.  *-データパス*パラメーターを指定して **! ndiskd cxadapter**コマンドを入力すると、netadapter のデータパスキューが表示されます。
 
 この手順の詳細については、 **! ndiskd cxadapter**のトピックの例を参照してください。
@@ -100,23 +100,23 @@ NETTXQUEUE のハンドルをクリックするか、コマンドラインで **
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
 [オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)
 
-[ **! ndiskd netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[ **! ndiskd cxadapter**](-ndiskd-cxadapter.md)
+[**!ndiskd.cxadapter**](-ndiskd-cxadapter.md)
 
  
 

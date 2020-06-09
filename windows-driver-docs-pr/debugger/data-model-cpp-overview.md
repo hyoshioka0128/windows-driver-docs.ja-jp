@@ -1,37 +1,37 @@
 ---
-title: デバッガーデータモデルC++のインターフェイスの概要
-description: このトピックでは、デバッガーの機能を拡張C++およびカスタマイズするためのデバッガーデータモデルインターフェイスの概要について説明します。
+title: デバッガーデータモデル C++ インターフェイスの概要
+description: このトピックでは、デバッガーの機能を拡張およびカスタマイズするためのデバッガーデータモデル C++ インターフェイスの概要について説明します。
 ms.date: 09/12/2019
-ms.openlocfilehash: b68998897980b48aa60ab2f0c60c691e5057803a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6022c3de0bbf12376403287e7b4e7a4a6e7a13a4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837807"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534493"
 ---
 # <a name="debugger-data-model-c-overview"></a>Debugger Data Model C++ の概要
 
-このトピックでは、デバッガーのデータモデルC++インターフェイスを使用して、デバッガーの機能を拡張およびカスタマイズする方法の概要について説明します。
+このトピックでは、デバッガーのデータモデル C++ インターフェイスを使用して、デバッガーの機能を拡張およびカスタマイズする方法の概要を説明します。
 
-このトピックは、からC++アクセス可能なインターフェイス、それらを使用してC++ベースのデバッガー拡張機能を構築する方法、およびC++データモデル拡張機能から他のデータモデル構造 (JavaScript や NatVis など) を使用する方法について説明したシリーズの一部です.
+このトピックは、c++ からアクセス可能なインターフェイス、それらを使用して c++ ベースのデバッガー拡張機能を構築する方法、および C++ データモデル拡張機能から他のデータモデル構造 (例: JavaScript または NatVis) を使用する方法について説明したシリーズの一部です。
 
-[デバッガーデータモデルC++の概要](data-model-cpp-overview.md)
+[Debugger Data Model C++ の概要](data-model-cpp-overview.md)
 
-[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
+[Debugger Data Model C++ のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
+[Debugger Data Model C++ のオブジェクト](data-model-cpp-objects.md)
 
-[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[Debugger Data Model C++ のその他のインターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
+[Debugger Data Model C++ の概念](data-model-cpp-concepts.md)
 
-[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)
+[Debugger Data Model C++ のスクリプト](data-model-cpp-scripting.md)
 
 ---
 
-## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview"> デバッガーデータモデルC++インターフェイスの概要
+## <a name="span-idoverview-overview-of-the-debugger-data-model-c-interface"></a><span id="overview">デバッガーデータモデル C++ インターフェイスの概要
 
-このデバッガー データ モデルは、新しいデバッガー拡張機能 (JavaScript、NatVis、C++ で記述されたものを含む) でデバッガーからの情報を利用したり、デバッガーや他の拡張機能からアクセスできる情報を生成したりするしくみの中心となる、拡張可能なオブジェクト モデルです。 データモデル Api に書き込まれるコンストラクトは、デバッガーの新しい (dx) 式エバリュエーターだけでなく、JavaScript の拡張機能やC++拡張機能からも使用できます。 
+このデバッガー データ モデルは、新しいデバッガー拡張機能 (JavaScript、NatVis、C++ で記述されたものを含む) でデバッガーからの情報を利用したり、デバッガーや他の拡張機能からアクセスできる情報を生成したりするしくみの中心となる、拡張可能なオブジェクト モデルです。 データモデル Api に書き込まれるコンストラクトは、デバッガーの新しい (dx) 式エバリュエーターだけでなく、JavaScript 拡張機能や C++ 拡張機能からも使用できます。 
 
 デバッガーデータモデルの目標を示すために、この従来のデバッガーコマンドを考えてみましょう。
 
@@ -45,7 +45,7 @@ PROCESS ffffe0007e6a7780
 ```
 デバッガーコマンドはバイナリマスクを使用しており、標準以外の方法でテキストのみの出力を提供します。 テキスト出力は、使用、書式設定、または拡張が困難であり、レイアウトはこのコマンドに固有です。
 
-デバッガーデータモデル[dx (Display Debugger Object Model Expression)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-)コマンドと比較します。
+デバッガーデータモデル[dx (Display Debugger Object Model Expression)](dx--display-visualizer-variables-.md)コマンドと比較します。
 
 ```console
 dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
@@ -55,7 +55,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 特定のオブジェクトに対して論理的な名前のスペーシングと拡張を行うと、デバッガー拡張機能の検出が可能になります。  
 
 > [!TIP]
-> データモデルC++オブジェクトインターフェイスは、完全C++ C++な例外とテンプレートのプログラミングパラダイムを使用するデータモデルの完全なヘルパーライブラリを実装するために、非常に冗長になる可能性があるため、お勧めします。 詳細については、このトピックで後述する「 [DbgModelClientEx ライブラリの使用](#dbgmodelclientex)」を参照してください。
+> データモデル C++ オブジェクトインターフェイスは、完全な C++ 例外を使用するデータモデルの完全な C++ ヘルパーライブラリを実装するために非常に冗長であり、テンプレートのプログラミングパラダイムが推奨されます。 詳細については、このトピックで後述する「 [DbgModelClientEx ライブラリの使用](#dbgmodelclientex)」を参照してください。
 >
 
 データモデルは、新しい[WinDbg Preview](debugging-using-windbg-preview.md)デバッガーが最も多くのことを表示する方法です。 新しい UI の多くの要素は、データモデルが使用されているため、クエリ、拡張、またはスクリプト化が可能です。 詳細については、「 [WinDbg Preview-Data Model](windbg-data-model-preview.md)」を参照してください。
@@ -68,7 +68,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 次の図は、デバッガーデータモデルアーキテクチャの主要な要素をまとめたものです。
 
 - 左側には、オブジェクトへのアクセスを提供し、LINQ クエリなどの機能をサポートする UI 要素が表示されます。  
-- 図の右側には、デバッガーデータモデルにデータを提供するコンポーネントがあります。 これには、カスタムの NatVis C++ 、JavaScript、およびデバッガーデータモデルの拡張機能が含まれます。 
+- 図の右側には、デバッガーデータモデルにデータを提供するコンポーネントがあります。 これには、カスタムの NatVis、JavaScript、および C++ デバッガーのデータモデルの拡張機能が含まれます。 
 
 ![データモデルのアーキテクチャビュー](images/data-model-simple-architectural-view.png)
 
@@ -116,18 +116,18 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 - データモデルマネージャーは、すべてのオブジェクトの中央レジストラーとして機能します。 
 - 左側には、セッションやプロセスなどの標準的なデバッガー要素がどのように登録されているかが示されます。
 - 名前空間ブロックには、中央登録リストが表示されます。
-- ダイアグラムの右側には、2つのプロバイダーが表示されます。1つは一番上C++に NatVis、もう1つは C/拡張です。
+- ダイアグラムの右側には、2つのプロバイダーが表示されます。1つは一番上に NatVis、もう1つは C/c + + の拡張機能です。
 
 ![データモデルのアーキテクチャビュー](images/data-model-manager.png)
 
 
-## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a>デバッガーデータモデルインターフェイスの <span id="summary"> の概要
+## <a name="span-idsummary-summary-of-debugger-data-model-interfaces"></a><span id="summary">デバッガーデータモデルインターフェイスの概要
 
-データモデルのさまざまなC++部分を構成するインターフェイスが多数あります。 これらのインターフェイスを一貫した簡単な方法で解決するために、一般的なカテゴリ別に分類されています。 主な領域は次のとおりです。 
+データモデルのさまざまな部分を構成する C++ インターフェイスが多数あります。 これらのインターフェイスを一貫した簡単な方法で解決するために、一般的なカテゴリ別に分類されています。 主な領域は次のとおりです。 
 
 **一般的なオブジェクトモデル**
 
-最初の最も重要なインターフェイスセットは、コアデータモデルにアクセスする方法と、オブジェクトにアクセスして操作する方法を定義します。 IModelObject は、データモデル内のすべてのオブジェクト (のオブジェクトなどC#) を表すインターフェイスです。 これは、のコンシューマーとデータモデルに対するプロデューサーの両方にとって重要なインターフェイスです。 その他のインターフェイスは、オブジェクトのさまざまな側面にアクセスするための機構です。 このカテゴリには、次のインターフェイスが定義されています。 
+最初の最も重要なインターフェイスセットは、コアデータモデルにアクセスする方法と、オブジェクトにアクセスして操作する方法を定義します。 IModelObject は、データモデル内のすべてのオブジェクトを表すインターフェイスです (C# のオブジェクトと同様)。 これは、のコンシューマーとデータモデルに対するプロデューサーの両方にとって重要なインターフェイスです。 その他のインターフェイスは、オブジェクトのさまざまな側面にアクセスするための機構です。 このカテゴリには、次のインターフェイスが定義されています。 
 
 
 *DbgEng とデータモデル間のブリッジ*
@@ -150,7 +150,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IRawEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-irawenumerator) 
 
-[IModelKeyReference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)  / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
+[Imodelkeyreference](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference)   / [IModelKeyReference2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-imodelkeyreference2) 
 
 *概念インターフェイス*
 
@@ -177,7 +177,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 *一般データモデルマネージャーへのアクセス* 
 
-[IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager)  / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
+[IDataModelManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager)   / [IDataModelManager2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelmanager2) 
 
 *スクリプト管理* 
 
@@ -198,11 +198,11 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostContext](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostcontext) 
 
-[IDebugHostMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory)  / [IDebugHostMemory2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory2) 
+[IDebugHostMemory](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory)   / [IDebugHostMemory2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmemory2) 
 
 [IDebugHostErrorSink](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosterrorsink) 
 
-[IDebugHostEvaluator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator)  / [IDebugHostEvaluator2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator2) 
+[IDebugHostEvaluator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator)   / [IDebugHostEvaluator2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostevaluator2) 
 
 [IDebugHostExtensibility](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostextensibility) 
 
@@ -210,11 +210,11 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostSymbols](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbols) 
 
-[IDebugHostSymbol](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol)  / [IDebugHostSymbol2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol2) 
+[IDebugHostSymbol](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol)   / [IDebugHostSymbol2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostsymbol2) 
 
 [IDebugHostModule](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmodule) 
 
-[IDebugHostType](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype)  / [IDebugHostType2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype2) 
+[IDebugHostType](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype)   / [IDebugHostType2](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughosttype2) 
 
 [IDebugHostConstant](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostconstant) 
 
@@ -222,7 +222,7 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 
 [IDebugHostData](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostdata) 
 
-[IDebugHostBaseClass](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostbaseclass) 
+[IDebugHostBaseClass](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostbaseclass)  
 [IDebugHostPublic](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostpublic) 
 
 [IDebugHostModuleSignature](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idebughostmodulesignature) 
@@ -274,13 +274,13 @@ dx @$cursession.Processes.Where(p => p.Threads.Count() > 5)
 [IDataModelScriptDebugBreakpointEnumerator](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgmodel/nn-dbgmodel-idatamodelscriptdebugbreakpointenumerator) 
 
 
-## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a>DbgModelClientEx ライブラリを使用した <span id="dbgmodelclientex">
+## <a name="span-iddbgmodelclientex-using-the-dbgmodelclientex-library"></a><span id="dbgmodelclientex">DbgModelClientEx ライブラリの使用
 
 **概要**
 
-データモデルへC++のデータモデルオブジェクトインターフェイスは、実装するには非常に詳細にすることができます。 データモデルの完全な操作は可能ですが、データモデルを拡張するには、いくつかの小さなインターフェイスを実装する必要があります (たとえば、追加される動的フェッチ可能なプロパティごとに IModelPropertyAccessor の実装を実装する必要があります)。 これに加えて、HRESULT ベースのプログラミングモデルでは、エラーチェックに使用される大量のボイラープレートコードが追加されています。
+データモデルに対するデータモデルの C++ オブジェクトインターフェイスは、実装するには非常に冗長になる場合があります。 データモデルの完全な操作は可能ですが、データモデルを拡張するには、いくつかの小さなインターフェイスを実装する必要があります (たとえば、追加される動的フェッチ可能なプロパティごとに IModelPropertyAccessor の実装を実装する必要があります)。 これに加えて、HRESULT ベースのプログラミングモデルでは、エラーチェックに使用される大量のボイラープレートコードが追加されています。
 
-この作業の一部を最小限に抑えるために、完全C++ C++な例外とテンプレートのプログラミングパラダイムを使用するデータモデルの完全なヘルパーライブラリが用意されています。 このライブラリを使用すると、データモデルを使用したり拡張したりするときに、より簡潔なコードを使用することをお勧めします。
+この作業の一部を最小限に抑えるために、完全な C++ 例外とテンプレートのプログラミングパラダイムを使用するデータモデル用の完全な C++ ヘルパーライブラリが用意されています。 このライブラリを使用すると、データモデルを使用したり拡張したりするときに、より簡潔なコードを使用することをお勧めします。
 
 ヘルパーライブラリには、次の2つの重要な名前空間があります。
 
@@ -293,9 +293,9 @@ DbgModelClientEx ライブラリの使用方法の詳細については、この
 https://github.com/Microsoft/WinDbg-Libraries/tree/master/DbgModelCppLib
 
 
-**HelloWorld C++サンプル**
+**HelloWorld C++ のサンプル**
 
-DbgModelClientEx ライブラリを使用する方法については、こちらのデータモデルC++の HelloWorld サンプルを参照してください。
+DbgModelClientEx ライブラリを使用する方法については、こちらのデータモデル HelloWorld C++ サンプルを参照してください。
 
 https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
 
@@ -322,12 +322,12 @@ https://github.com/Microsoft/WinDbg-Samples/tree/master/DataModelHelloWorld
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-[デバッガーデータモデルC++のインターフェイス](data-model-cpp-interfaces.md)
+[Debugger Data Model C++ のインターフェイス](data-model-cpp-interfaces.md)
 
-[デバッガーデータモデルC++オブジェクト](data-model-cpp-objects.md)
+[Debugger Data Model C++ のオブジェクト](data-model-cpp-objects.md)
 
-[デバッガーデータモデルC++の追加インターフェイス](data-model-cpp-additional-interfaces.md)
+[Debugger Data Model C++ のその他のインターフェイス](data-model-cpp-additional-interfaces.md)
 
-[デバッガーデータモデルC++の概念](data-model-cpp-concepts.md)
+[Debugger Data Model C++ の概念](data-model-cpp-concepts.md)
 
-[デバッガーデータモデルC++のスクリプト](data-model-cpp-scripting.md)
+[Debugger Data Model C++ のスクリプト](data-model-cpp-scripting.md)

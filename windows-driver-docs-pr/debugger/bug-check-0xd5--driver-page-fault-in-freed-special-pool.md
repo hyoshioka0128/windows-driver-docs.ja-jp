@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f0f882b4e91ac32d838428b8a81a0fe7d5ada730
-ms.sourcegitcommit: f017184b00f59b088df87a5bd85fec51b7aed8b2
+ms.openlocfilehash: d65d5fa367a6c562eaf83a3a8088d22a58a2dbd4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313785"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534555"
 ---
-# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>バグチェック 0xD5: ドライバー\_ページ\_フォールト\_\_解放\_特別\_プール
+# <a name="bug-check-0xd5-driver_page_fault_in_freed_special_pool"></a>バグチェック 0xD5: 解放された \_ \_ \_ \_ \_ 特殊な \_ プールでのドライバーページフォールト
 
 
-ドライバー\_ページ\_フォールト\_\_解放され\_特別な\_プールのバグチェックには0x000000D5 の値が含まれています。 これは、ドライバーが以前に解放されたメモリを参照したことを示します。
+解放された \_ 特殊なプールのバグチェックのドライバーページフォールトには、 \_ \_ \_ \_ \_ 0x000000D5 の値が含まれています。 これは、ドライバーが以前に解放されたメモリを参照したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>ドライバー\_ページ\_障害\_\_\_特別な\_プールパラメーター
+## <a name="driver_page_fault_in_freed_special_pool-parameters"></a>解放された \_ \_ \_ \_ \_ 特殊な \_ プールパラメーターのドライバーページエラー
 
 
 <table>
@@ -65,8 +65,8 @@ ms.locfileid: "72313785"
 </table>
 
  
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリに格納されます (PUNICODE\_STRING) **KiBugCheckDriver**。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE \_ 文字列) **KiBugCheckDriver**に格納されます。
 
 <a name="cause"></a>原因
 -----

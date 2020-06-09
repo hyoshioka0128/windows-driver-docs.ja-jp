@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 067d8df4d045e11eb96de2a78d10923333f4b6b1
-ms.sourcegitcommit: 4d1ed685d198629f792d287619621a87ca42c26f
+ms.openlocfilehash: 0d444d2b7bf0a2c389a7eec049cffb4122db2c5c
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435370"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534643"
 ---
 # <a name="bug-check-0x20001-hypervisor_error"></a>バグチェック 0x20001: ハイパーバイザー \_ エラー
 
@@ -37,6 +37,6 @@ ms.locfileid: "83435370"
 | 3         | 予約済み    |
 | 4         | 予約済み    |
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解像度
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。

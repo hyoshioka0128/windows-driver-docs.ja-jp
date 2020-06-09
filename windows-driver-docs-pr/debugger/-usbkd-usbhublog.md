@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhublog
-description: Usbkd.usbhublog コマンドは、USB ハブのデバッグ ログを表示します。
+title: usbkd. usbkd ブログ
+description: Usbkd. usbkd blog コマンドを実行すると、USB ハブのデバッグログが表示されます。
 ms.assetid: DFDF595E-3452-40C2-A6C7-94FB8954002C
 keywords:
-- デバッグ usbkd.usbhublog Windows
+- usbkd. usbkd ブログ Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a1c337e4e50da85b10860b05d113f122845497
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9f70387f907ffec4f29e28a1ae96a06aa7c93344
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340618"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534695"
 ---
 # <a name="usbkdusbhublog"></a>!usbkd.usbhublog
 
 
-**! Usbkd.usbhublog**コマンドは、USB ハブのデバッグ ログを表示します。
+**! Usbkd ブログ**コマンドを実行すると、USB ハブのデバッグログが表示されます。
 
 ```dbgcmd
 !usbkd.usbhublog DeviceExtension[, NumberOfEntries]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-USB ハブの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能のアドレス。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+USB ハブの機能デバイスオブジェクト (FDO) のデバイス拡張機能のアドレス。
 
-<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span> *NumberOfEntries*   
-表示するログ エントリの数。 全体のログを表示するには、このパラメーターを-1 に設定します。
+<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span>*Numberofentries*   
+表示するログエントリの数。 ログ全体を表示するには、このパラメーターを-1 に設定します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-USB ハブの FDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB ハブの FDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -55,7 +55,7 @@ USB ハブの FDO のデバイスの拡張機能のアドレスを検索する 1
       ...
 ```
 
-上記の出力で推奨されるコマンドを確認できます **! devstack ffffe00002320050**します。 次のコマンドを入力します。
+上記の出力には、推奨されるコマンドである**devstack ffffe00002320050**が表示されます。 次のコマンドを入力します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -66,9 +66,9 @@ USB ハブの FDO のデバイスの拡張機能のアドレスを検索する 1
 ...
 ```
 
-上記の出力で`ffffe000023201a0`ハブの FDO のデバイスの拡張機能のアドレスになります。
+前の出力で、 `ffffe000023201a0` はハブの FDO のデバイス拡張機能のアドレスです。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す **! usbhublog**します。 この例では、2 番目の引数は、10 個のログ エントリを表示を制限します。
+次に、デバイス拡張機能のアドレスを **! usbのブログ**に渡します。 この例では、2番目の引数によって、表示が10個のログエントリに制限されます。
 
 ```dbgcmd
 0: kd> !usbkd.usbhublog ffffe000023201a0, 10
@@ -88,12 +88,12 @@ LOG@: ffffe000023201a0 (usbhub!_DEVICE_EXTENSION_HUB)
 [ 009] ffffe00002321dc0 pqDP 0000000000000000 ffffe000021c11d8 0000000000000006
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

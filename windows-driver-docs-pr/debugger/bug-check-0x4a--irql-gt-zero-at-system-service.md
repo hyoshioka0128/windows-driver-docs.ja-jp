@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x4A IRQL_GT_ZERO_AT_SYSTEM_SERVICE
-description: IRQL_GT_ZERO_AT_SYSTEM_SERVICE のバグ チェックでは、0x0000004A の値を持ちます。 これは、スレッドに返すことユーザー モード システム呼び出しからの IRQL が PASSIVE_LEVEL のまだときを示します。
+title: バグチェック 0x4A IRQL_GT_ZERO_AT_SYSTEM_SERVICE
+description: IRQL_GT_ZERO_AT_SYSTEM_SERVICE バグチェックの値は0x0000004A です。 これは、スレッドが、その IRQL がまだ PASSIVE_LEVEL 上にあるときに、システム呼び出しからユーザーモードに戻ることを示します。
 ms.assetid: 0da64630-d446-426a-a51f-34117fe9daa7
 keywords:
-- バグ チェック 0x4A IRQL_GT_ZERO_AT_SYSTEM_SERVICE
+- バグチェック 0x4A IRQL_GT_ZERO_AT_SYSTEM_SERVICE
 - IRQL_GT_ZERO_AT_SYSTEM_SERVICE
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 141c75154110429660bc5f1a2a24c6ddd0785bb7
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4984386f54ee4fd3e6cf3378ac2bf611327840e6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519415"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534627"
 ---
-# <a name="bug-check-0x4a-irqlgtzeroatsystemservice"></a>バグ チェック 0x4A:IRQL\_GT\_0\_で\_システム\_サービス
+# <a name="bug-check-0x4a-irql_gt_zero_at_system_service"></a>\_ \_ \_ \_ システム \_ サービスでのバグチェック 0x4a: IRQL GT ゼロ
 
 
-IRQL\_GT\_0\_で\_システム\_サービスのバグ チェックが 0x0000004A の値を持ちます。 スレッドを返すことをユーザー モードにシステムの呼び出しからの IRQL がパッシブのまだときにこれを示します\_レベル。
+\_ \_ \_ システムサービスのバグチェックの IRQL GT ゼロには、 \_ \_ 値0x0000004a があります。 これは、その IRQL がまだパッシブレベルを超えている場合に、スレッドがシステム呼び出しからユーザーモードに戻ることを示し \_ ます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="irqlgtzeroatsystemservice-parameters"></a>IRQL\_GT\_0\_で\_システム\_サービス パラメーター
+## <a name="irql_gt_zero_at_system_service-parameters"></a>\_ \_ \_ \_ システムサービスパラメーターでの \_ IRQL GT ゼロ
 
 
 <table>
@@ -46,7 +46,7 @@ IRQL\_GT\_0\_で\_システム\_サービスのバグ チェックが 0x0000004A
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>システム関数 (呼び出しルーチンのシステム) のアドレス</p></td>
+<td align="left"><p>システム関数のアドレス (システム呼び出しルーチン)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -64,8 +64,8 @@ IRQL\_GT\_0\_で\_システム\_サービスのバグ チェックが 0x0000004A
 </table>
 
 
-## <a name="resolution"></a>解決方法 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度 
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0x8 IRQL_NOT_DISPATCH_LEVEL
-description: IRQL_NOT_DISPATCH_LEVEL のバグチェックの値は0x00000008 です。このバグチェックは非常に頻繁に行われません。
+description: IRQL_NOT_DISPATCH_LEVEL バグチェックの値は0x00000008 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: e37a2fa2-2a0c-4259-91cc-bb8ccd411189
 keywords:
 - バグチェック 0x8 IRQL_NOT_DISPATCH_LEVEL
@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: deb045323ece2d0ac1af745e16e1856fa594efec
-ms.sourcegitcommit: 932abe3790449bf60dc31b08255c2cbb94c6684e
+ms.openlocfilehash: add989f8b01a5dd1fa1dad5ee3dc636931dca687
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73589262"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534601"
 ---
-# <a name="bug-check-0x8-irql_not_dispatch_level"></a>バグチェック 0x8: IRQL\_\_ディスパッチ\_レベルではありません
+# <a name="bug-check-0x8-irql_not_dispatch_level"></a>バグチェック 0x8: \_ \_ ディスパッチレベル以外 \_ の IRQL
 
 
-ディスパッチ\_レベルのバグチェックに\_ない IRQL\_には、値0x00000008 が指定されています。
+\_ディスパッチされていない IRQL \_ \_ レベルのバグチェックの値は0x00000008 です。
 
 このバグチェックは非常に頻繁に行われません。
 
@@ -32,7 +32,7 @@ ms.locfileid: "73589262"
 
 
 ## <a name="resolution"></a>解像度
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 
  

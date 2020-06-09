@@ -1,9 +1,9 @@
 ---
-title: usb3kd.usb_tree
-description: Usb3kd.usb_tree 拡張機能では、すべての USB 3.0 コント ローラー、ハブ、およびコンピューター上のデバイスについてのツリー形式で情報が表示されます。
+title: usb_tree usb3kd
+description: Usb3kd 拡張機能には、コンピューター上のすべての USB 3.0 コントローラー、ハブ、およびデバイスに関する情報がツリー形式で表示されます usb_tree。
 ms.assetid: 8E24AD44-7B32-4299-8428-D8E9B36F5848
 keywords:
-- デバッグ usb3kd.usb_tree Windows
+- usb3kd Windows デバッグの usb_tree
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,67 +12,67 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a8fef0d862caa8025ffb7b104746217264364b
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 29e8ab20e02d07e821cde2d22653f1936b5a0dd3
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330783"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534899"
 ---
-# <a name="usb3kdusbtree"></a>! usb3kd.usb\_ツリー
+# <a name="usb3kdusb_tree"></a>! usb3kd \_ ツリー
 
 
-[ **! Usb3kd.usb\_ツリー** ](-usb3kd-device-info.md)拡張機能では、すべての USB 3.0 コント ローラー、ハブ、およびコンピューター上のデバイスについてのツリー形式で情報が表示されます。
+[**! Usb3kd \_ ツリー**](-usb3kd-device-info.md)拡張には、コンピューター上のすべての usb 3.0 コントローラー、ハブ、およびデバイスに関する情報がツリー形式で表示されます。
 
 ```dbgcmd
 !usb3kd.usb_tree [1]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______1______"></span> **1**   
-表示には、ハブおよびポートの状態情報が含まれています。
+<span id="_______1______"></span>**1**   
+表示には、ハブとポートの状態情報が含まれます。
 
 ## <a name="span-idexamplesspanspan-idexamplesspanspan-idexamplesspanexamples"></a><span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
 
 
-次のスクリーン ショットの出力を示しています、 [ **! usb\_ツリー** ](-usb3kd-device-info.md)コマンド。
+次のスクリーンショットは、 [**! usb \_ ツリー**](-usb3kd-device-info.md)コマンドの出力を示しています。
 
-![出力、! usb\-コマンドが表示されたトポロジの列挙されたデバイスとハブのリストをツリー](images/usbtree01.png)
+![\-トポロジで列挙されたデバイスとハブリストを示す! usb ツリーコマンドの出力](images/usbtree01.png)
 
-出力で始まる行で表される 1 つの USB 3.0 ホスト コントがあることを示しています。 [ **! xhci\_情報**](-usb3kd-xhci-info.md)します。 次の行では、ホスト コント ローラーのルート ハブを表します。 次の 4 つの行では、ルート ハブに関連付けられているポートを表します。 2 つのポートに接続されているデバイスがあることを確認できます。
+出力には、USB 3.0 ホストコントローラーが1つあることが示されています。これは、 [**! xhci \_ info**](-usb3kd-xhci-info.md)で始まる行で表されます。 次の行は、ホストコントローラーのルートハブを表します。 次の4つの行は、ルートハブに関連付けられているポートを表します。 2つのポートにデバイスが接続されていることを確認できます。
 
-出力を使用して[を使用してデバッガー マークアップ言語 (DML)](debugger-markup-language-commands.md)リンクを提供します。 リンクは、ツリー内の個々 のオブジェクトについての詳細情報を提供するコマンドを実行します。 たとえばのいずれかをクリックして接続されたデバイスのいずれかに関する情報を取得できます、 [ **! デバイス\_情報**](-usb3kd-device-info.md)リンク。 リンクをクリックする代わりに、コマンドを入力することができます。 たとえば、最初の接続されたデバイスに関する情報を表示することがコマンドを入力する **! デバイス\_情報 0xfffffa8004630690**します。
+出力では、[デバッガーマークアップ言語 (DML) を使用して](debugger-markup-language-commands.md)リンクを提供します。 リンクは、ツリー内の個々のオブジェクトに関する詳細情報を提供するコマンドを実行します。 たとえば、いずれかの[**デバイス \_ 情報**](-usb3kd-device-info.md)リンクをクリックすると、接続されているデバイスの1つに関する情報を取得できます。 リンクをクリックする代わりに、コマンドを入力することもできます。 たとえば、最初に接続されたデバイスに関する情報を表示するには、コマンド「**デバイス \_ 情報 0xfffffa8004630690**」を入力します。
 
-**注**  DML の機能は、WinDbg がではなく Visual Studio または KD で使用できます。
+**メモ**   DML 機能は、WinDbg では使用できますが、Visual Studio または KD では使用できません。
 
  
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-[ **! Usb\_ツリー** ](-usb3kd-device-info.md)コマンドは、このコマンドのセットの親コマンド。
+[**! Usb \_ ツリー**](-usb3kd-device-info.md)コマンドは、この一連のコマンドの親コマンドです。
 
--   [**! ハブ\_情報**](-usb3kd-hub-info.md)
--   [**! ハブ\_情報\_から\_fdo**](-usb3kd-hub-info-from-fdo.md)
--   [**! デバイス\_情報**](-usb3kd-device-info.md)
--   [**! デバイス\_情報\_から\_pdo**](-usb3kd-device-info-from-pdo.md)
--   [**! ポート\_情報**](-usb3kd-port-info.md)
+-   [**! ハブ \_ 情報**](-usb3kd-hub-info.md)
+-   [**! \_ \_ fdo からのハブ情報 \_**](-usb3kd-hub-info-from-fdo.md)
+-   [**! デバイス \_ 情報**](-usb3kd-device-info.md)
+-   [**! \_ \_ pdo からのデバイス情報 \_**](-usb3kd-device-info-from-pdo.md)
+-   [**! ポート \_ 情報**](-usb3kd-port-info.md)
 
-によって表示される情報、 [ **! usb\_ツリー** ](-usb3kd-device-info.md)コマンド ファミリは、USB 3.0 ハブ ドライバーによって維持されるデータ構造に基づきます。 USB 3.0 ハブのドライバーと USB 3.0 スタック内の他のドライバーについては、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。 USB 3.0 スタック内のドライバーで使用されるデータ構造の詳細については、第 2 部を参照してください、 [Windows 8 の USB デバッグ イノベーション](https://go.microsoft.com/fwlink/p/?LinkID=249153)ビデオ。
+[**! Usb \_ ツリー**](-usb3kd-device-info.md)ファミリのコマンドによって表示される情報は、usb 3.0 hub ドライバーによって管理されるデータ構造に基づいています。 Usb 3.0 hub ドライバーおよび USB 3.0 スタックのその他のドライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。 USB 3.0 スタックのドライバーで使用されるデータ構造の詳細については、Windows 8 ビデオの[Usb デバッグイノベーション](https://channel9.msdn.com/Events/BUILD/BUILD2011/HW-258P)のパート2を参照してください。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

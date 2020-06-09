@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x92 UP_DRIVER_ON_MP_SYSTEM
-description: UP_DRIVER_ON_MP_SYSTEM のバグ チェックでは、0x00000092 の値を持ちます。 このバグ チェックでは、マルチプロセッサ システムでユニプロセッサ専用のドライバーが読み込まれたことを示します。
+title: バグチェック 0x92 UP_DRIVER_ON_MP_SYSTEM
+description: UP_DRIVER_ON_MP_SYSTEM バグチェックの値は0x00000092 です。 このバグチェックは、マルチプロセッサシステムにユニプロセッサ専用のドライバーが読み込まれたことを示します。
 ms.assetid: 1e26c7b1-bfa5-4a32-a483-5ce8179ac6b7
 keywords:
-- バグ チェック 0x92 UP_DRIVER_ON_MP_SYSTEM
+- バグチェック 0x92 UP_DRIVER_ON_MP_SYSTEM
 - UP_DRIVER_ON_MP_SYSTEM
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a1e930e56a24521527baafd42b33f167079f4b8c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: e1728ae9a95a4cddc65bf50694d3e6cbe414eaa7
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519123"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534581"
 ---
-# <a name="bug-check-0x92-updriveronmpsystem"></a>バグ チェック 0x92:\_ドライバー\_ON\_MP\_システム
+# <a name="bug-check-0x92-up_driver_on_mp_system"></a>バグチェック 0x92: \_ \_ \_ MP \_ システムの UP DRIVER
 
 
-上向き\_ドライバー\_ON\_MP\_システムのバグ チェックが 0x00000092 の値を持ちます。 このバグ チェックでは、マルチプロセッサ システムでユニプロセッサ専用のドライバーが読み込まれたことを示します。
+\_ \_ \_ MP システムバグチェックの UP DRIVER の \_ 値は、0x00000092 です。 このバグチェックは、マルチプロセッサシステムにユニプロセッサ専用のドライバーが読み込まれたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="updriveronmpsystem-parameters"></a>\_ドライバー\_ON\_MP\_システム パラメーター
+## <a name="up_driver_on_mp_system-parameters"></a>\_ \_ \_ MP \_ システムパラメーターでの UP DRIVER
 
 
 <table>
@@ -46,7 +46,7 @@ ms.locfileid: "67519123"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>ドライバーのベース アドレス</p></td>
+<td align="left"><p>ドライバーのベースアドレス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -68,11 +68,11 @@ ms.locfileid: "67519123"
 <a name="cause"></a>原因
 -----
 
-ユニプロセッサ コンピューターでのみ動作するコンパイルされたドライバーが読み込まれたが、Microsoft Windows オペレーティング システムが 1 つ以上のアクティブなプロセッサを搭載したマルチプロセッサ システムで実行されています。
+ユニプロセッサコンピューターでのみ動作するようにコンパイルされたドライバーが読み込まれましたが、Microsoft Windows オペレーティングシステムが複数のアクティブなプロセッサを搭載したマルチプロセッサシステムで実行されています。
 
  
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 
 

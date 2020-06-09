@@ -1,9 +1,9 @@
 ---
-title: usbkd.ehci_info_from_fdo
-description: Usbkd.ehci_info_from_fdo コマンドでは、USB ホスト コント ローラーに関する情報が表示されます。
+title: usbkd. ehci_info_from_fdo
+description: Usbkd. ehci_info_from_fdo コマンドは、USB ホストコントローラーに関する情報を表示します。
 ms.assetid: C7026EF3-F58D-45EB-83D5-8B4A3E661759
 keywords:
-- Windows デバッグ usbkd.ehci_info_from_fdo
+- usbkd. ehci_info_from_fdo Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8b16221433561d95e3d00a6c494cf57522bb9e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: cf9da8b15c2bfbe6c69a88cf526ed2b4f93778c2
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359778"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534057"
 ---
-# <a name="usbkdehciinfofromfdo"></a>!usbkd.ehci\_info\_from\_fdo
+# <a name="usbkdehci_info_from_fdo"></a>! usbkd. \_ \_ fdo からの ehci 情報 \_
 
 
-[ **! Usbkd.ehci\_情報\_から\_fdo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)コマンドは、USB ホスト コント ローラーに関する情報を表示します。
+[**Fdo コマンド \_ \_ から \_ の! usbkd. EHCI info**](-usbkd-ehci-info-from-fdo.md)は、USB ホストコントローラーに関する情報を表示します。
 
 ```dbgcmd
 !usbkd.ehci_info_from_fdo fdo
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______fdo______"></span><span id="_______FDO______"></span> *fdo*   
-UHCI または EHCI USB ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のアドレス。 出力から、FDO のアドレスを取得することができます、 [ **! usb2tree** ](-usbkd-usb2tree.md)コマンド。
+<span id="_______fdo______"></span><span id="_______FDO______"></span>*fdo*   
+UHCI または EHCI USB ホストコントローラーの機能デバイスオブジェクト (FDO) のアドレス。 [**! Usb2tree**](-usbkd-usb2tree.md)コマンドの出力から FDO のアドレスを取得できます。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-まずを使用して、 [ **! usb2tree** ](-usbkd-usb2tree.md) FDO のアドレスを取得するコマンド。
+最初に、 [**! usb2tree**](-usbkd-usb2tree.md)コマンドを使用して、FDO のアドレスを取得します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -53,7 +53,7 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-上記の出力で確認できます USB ホスト コント ローラーの FDO のアドレスが`ffffe00001ca1050`します。 FDO のアドレスを渡す[ **! ehci\_情報\_から\_fdo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-ehci-info-from-fdo)します。
+上記の出力では、USB ホストコントローラーの FDO のアドレスがであることがわかり `ffffe00001ca1050` ます。 [** \_ \_ \_ FDO から! ehci INFO**](-usbkd-ehci-info-from-fdo.md)のアドレスを FDO に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.ehci_info_from_fdo ffffe00001ca1050
@@ -90,12 +90,12 @@ BusContextHead: !usblist ffffe00001ca16b0, BC
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

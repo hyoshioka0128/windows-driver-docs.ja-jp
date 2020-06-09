@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x5A CRITICAL_SERVICE_FAILED
-description: CRITICAL_SERVICE_FAILED のバグ チェックが非常に少ない回数が表示される確認 0x0000005A.This バグの値を持ちます。
+title: バグチェック 0x5A CRITICAL_SERVICE_FAILED
+description: CRITICAL_SERVICE_FAILED のバグチェックの値が0x0000005A になっています。このバグチェックは非常に頻繁に行われます。
 ms.assetid: 9a0657b0-943b-4c25-bb30-f04377fdaee9
 keywords:
-- バグ チェック 0x5A CRITICAL_SERVICE_FAILED
+- バグチェック 0x5A CRITICAL_SERVICE_FAILED
 - CRITICAL_SERVICE_FAILED
 ms.date: 05/23/2017
 topic_type:
@@ -13,21 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f1e0873096ab1df39655316f0222e4424cf27327
-ms.sourcegitcommit: a39a3f4c9f26968e00317574c0d8530ee8ab6f8b
+ms.openlocfilehash: f705e5c891b34fc1e6f0b012e91a90a3b301c2d4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67894238"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534809"
 ---
-# <a name="bug-check-0x5a-criticalservicefailed"></a>バグ チェック 0x5A:重要な\_サービス\_失敗
+# <a name="bug-check-0x5a-critical_service_failed"></a>バグチェック 0x5A: 重大な \_ サービスが \_ 失敗しました
 
-CRITICAL\_サービス\_失敗のバグ チェックが 0x0000005A の値を持ちます。
+重要な \_ サービスに \_ 失敗したバグチェックの値は、0x0000005a です。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。

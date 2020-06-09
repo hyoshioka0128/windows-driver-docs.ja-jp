@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 36220da276f7c0a7ec79d05a3e30978d1715f990
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 04fb86d17a3a4d0aa3d7655d04965151ca0e1db1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851484"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534833"
 ---
 # <a name="bug-check-0x1d3-wfp_invalid_operation"></a>バグ チェック 0x1D3:WFP_INVALID_OPERATION 
 
@@ -47,8 +47,8 @@ WFP_INVALID_OPERATION のバグチェックには、0x000001D3 という値が�
  4-予約済み。
 
 
-## <a name="resolution"></a>解決方法
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに非常に役立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに非常に役立ちます。
 
  
 

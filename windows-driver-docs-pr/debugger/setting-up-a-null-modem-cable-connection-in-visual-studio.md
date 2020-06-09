@@ -1,115 +1,115 @@
 ---
 title: Visual Studio でのシリアル ケーブル経由でのカーネルモード デバッグの設定
-description: Microsoft Visual Studio を使用して、設定し、ヌル モデム ケーブル経由でのカーネル モードのデバッグを実行することができます。
+description: Microsoft Visual Studio を使用すると、null モデムケーブルでカーネルモードのデバッグを設定して実行できます。
 ms.assetid: 9E50AA5F-92A2-4360-BB21-A9D4F3E9CA83
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b071406763cc5cd65374fc3a1af26da9889d39
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 4beff264eeb3e478f999109ef7eb2ebe98593b21
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366378"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533915"
 ---
-# <a name="span-iddebuggersettingupanull-modemcableconnectioninvisualstudiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>Visual Studio でのシリアル ケーブル経由でのカーネル モードのデバッグのセットアップ
+# <a name="span-iddebuggersetting_up_a_null-modem_cable_connection_in_visual_studiospansetting-up-kernel-mode-debugging-over-a-serial-cable-in-visual-studio"></a><span id="debugger.setting_up_a_null-modem_cable_connection_in_visual_studio"></span>Visual Studio でのシリアル ケーブル経由でのカーネルモード デバッグの設定
 
 > [!IMPORTANT]
-> この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
+> この機能は、Windows 10 バージョン1507以降のバージョンの WDK では使用できません。
 >
 
-Microsoft Visual Studio を使用して、設定し、ヌル モデム ケーブル経由でのカーネル モードのデバッグを実行することができます。 ヌル モデム ケーブルは、2 つのシリアル ポートの間でデータを送信するように構成されているシリアル ケーブルです。 これらは、ほとんどのコンピューター ストアで使用できます。 標準のシリアル ケーブルでヌル モデム ケーブルを混同しないでください。 標準のシリアル ケーブルは、互いにシリアル ポートを接続できません。 方法については、ヌル モデム ケーブルはワイヤード (有線) を参照してください[ヌル モデム ケーブル配線](#null-modem-cable-wiring)します。
+Microsoft Visual Studio を使用すると、null モデムケーブルでカーネルモードのデバッグを設定して実行できます。 ヌルモデムケーブルは、2つのシリアルポート間でデータを送信するように構成されているシリアルケーブルです。 ほとんどのコンピューターストアで使用できます。 ヌルモデムケーブルと標準シリアルケーブルを混同しないでください。 標準のシリアルケーブルでは、シリアルポートが相互に接続されません。 ヌルモデムケーブルを接続する方法の詳細については、「[ヌルモデムケーブル配線](#null-modem-cable-wiring)」を参照してください。
 
-カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
+Visual Studio を使用してカーネルモードのデバッグを行うには、Visual Studio に Windows Driver Kit (WDK) が統合されている必要があります。 統合環境をインストールする方法の詳細については、「 [Visual Studio を使用したデバッグ](debugging-using-visual-studio.md)」を参照してください。
 
-Visual Studio を使用してシリアル デバッグを設定する代わりに、セットアップを手動で行うことができます。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップをシリアル ケーブルを手動で](setting-up-a-null-modem-cable-connection.md)します。
+Visual Studio を使用してシリアルデバッグを設定する代わりに、手動でセットアップを行うこともできます。 詳細については、「[シリアルケーブル経由でカーネルモードのデバッグを手動で設定する](setting-up-a-null-modem-cable-connection.md)」を参照してください。
 
-デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。
+デバッガーを実行するコンピューターは*ホストコンピューター*と呼ばれ、デバッグ中のコンピューターは*ターゲットコンピューター*と呼ばれます。
 
-## <a name="span-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>ホストおよびターゲット コンピュータの構成
-
-
-1.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
-2.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログ ボックスのような場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
-3.  **接続の種類**、選択**シリアル**します。
-
-    ![スクリーン ショットのデバッガーの例を次のフィールドの値の設定を示す: 接続の種類、ターゲットの名前、およびバス パラメーター](images/setupserialvs.png)
-
-    **ボー レート**既定値を受け入れるか、使用するボー レートを入力します。 **ポート**、ホスト コンピューターでデバッグするために使用する COM ポートの名前を入力します。 **ターゲット ポート**、ターゲット コンピューターでデバッグするために使用する COM ポートの名前を入力します。
-
-4.  構成プロセスには数分かかりますが自動的に、コンピューターを再起動ターゲットまたは 2 回。 プロセスが完了したら、クリックして**完了**します。
-
-## <a name="span-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグ セッションの開始
+## <a name="span-idconfiguring_the_host_and_target_computersspanspan-idconfiguring_the_host_and_target_computersspanspan-idconfiguring_the_host_and_target_computersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>ホストとターゲットコンピューターの構成
 
 
-1.  ホストおよびターゲット コンピューターでのデバッグ用に選択した COM ポートには、ヌル モデム ケーブルを接続します。
-2.  Visual Studio で、ホスト コンピューター上で、**ツール**] メニューの [選択**プロセスにアタッチ**します。
-3.  **トランスポート**、選択**Windows カーネル モードのデバッガー**します。
-4.  **修飾子**、以前に構成されているターゲット コンピューターの名前を選択します。
-5.  クリックして**アタッチ**します。
+1.  「[ドライバーの展開およびテスト用にコンピューターをプロビジョニングする (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」の説明に従って、ホストとターゲットコンピューターの構成を開始します。
+2.  ホストコンピューターの Visual Studio で、[コンピューターの構成] ダイアログボックスが表示されたら、[コンピューターのプロビジョニング] を選択し、[**デバッガーの設定**] を選択します。
+3.  [**接続の種類**] で [**シリアル**] を選択します。
 
-## <a name="span-idtroubleshootingtipsfordebuggingoveraserialcablespanspan-idtroubleshootingtipsfordebuggingoveraserialcablespanspan-idtroubleshootingtipsfordebuggingoveraserialcablespantroubleshooting-tips-for-debugging-over-a-serial-cable"></a><span id="Troubleshooting_Tips_for_Debugging_over_a_Serial_Cable"></span><span id="troubleshooting_tips_for_debugging_over_a_serial_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_DEBUGGING_OVER_A_SERIAL_CABLE"></span>シリアル ケーブル経由でのデバッグのトラブルシューティングのヒント
+    ![[接続の種類]、[ターゲット名]、[バスパラメーター] の各フィールドの値を含むデバッガー設定の例を示すスクリーンショット](images/setupserialvs.png)
+
+    [**ボーレート**] では、既定値をそのまま使用するか、使用するボーレートを入力します。 [**ポート**] には、ホストコンピューターでのデバッグに使用する COM ポートの名前を入力します。 [**ターゲットポート**] に、ターゲットコンピューターでデバッグに使用する COM ポートの名前を入力します。
+
+4.  構成プロセスには数分かかり、対象のコンピューターが1回または2回自動的に再起動される場合があります。 プロセスが完了したら、[**完了**] をクリックします。
+
+## <a name="span-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanstarting-the-debugging-session"></a><span id="Starting_the_Debugging_Session"></span><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグセッションを開始しています
 
 
-### <a name="span-idspecifycorrectcomportsandbaudratespanspan-idspecifycorrectcomportsandbaudratespanspan-idspecifycorrectcomportsandbaudratespanspecify-correct-com-ports-and-baud-rate"></a><span id="Specify_correct_COM_ports_and_baud_rate"></span><span id="specify_correct_com_ports_and_baud_rate"></span><span id="SPECIFY_CORRECT_COM_PORTS_AND_BAUD_RATE"></span>適切な COM ポートとボー レートを指定します。
+1.  [Null モデム] ケーブルを、ホストとターゲットコンピューターでデバッグ用に選択した COM ポートに接続します。
+2.  ホストコンピューターで、Visual Studio の [**ツール**] メニューの [**プロセスにアタッチ**] をクリックします。
+3.  [**トランスポート**] で、[ **Windows カーネルモードデバッガー**] を選択します。
+4.  [**修飾子**] で、以前に構成したターゲットコンピューターの名前を選択します。
+5.  **[アタッチ]** をクリックします。
 
-ホストとターゲットのコンピューターでデバッグを使用する COM ポートの数を決定します。 たとえば、ターゲット コンピューター上にホスト コンピューターと COM2 で COM1 に接続されて、ヌル モデム ケーブルがあるとします。 また、115200 のボー レートを選択したとします。
+## <a name="span-idtroubleshooting_tips_for_debugging_over_a_serial_cablespanspan-idtroubleshooting_tips_for_debugging_over_a_serial_cablespanspan-idtroubleshooting_tips_for_debugging_over_a_serial_cablespantroubleshooting-tips-for-debugging-over-a-serial-cable"></a><span id="Troubleshooting_Tips_for_Debugging_over_a_Serial_Cable"></span><span id="troubleshooting_tips_for_debugging_over_a_serial_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_DEBUGGING_OVER_A_SERIAL_CABLE"></span>シリアルケーブルを使用したデバッグのトラブルシューティングのヒント
+
+
+### <a name="span-idspecify_correct_com_ports_and_baud_ratespanspan-idspecify_correct_com_ports_and_baud_ratespanspan-idspecify_correct_com_ports_and_baud_ratespanspecify-correct-com-ports-and-baud-rate"></a><span id="Specify_correct_COM_ports_and_baud_rate"></span><span id="specify_correct_com_ports_and_baud_rate"></span><span id="SPECIFY_CORRECT_COM_PORTS_AND_BAUD_RATE"></span>正しい COM ポートとボーレートを指定してください
+
+ホストとターゲットコンピュータでデバッグに使用している COM ポートの番号を確認します。 たとえば、ヌルモデムケーブルがホストコンピューター上の COM1 に接続されていて、ターゲットコンピューター上に COM2 が接続されているとします。 また、115200のボーレートを選択したとします。
 
 1.  ホスト コンピューター上の Visual Studio の **[ドライバー]** メニューで、 **[Test (テスト)] &gt; [Configure Computers (コンピューターの構成)]** の順に選びます。
-2.  テスト用コンピューターの名前を選択し、クリックして**次**します。
-3.  選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。 **[次へ]** をクリックします。
-4.  使用するかどうか COM1、ホスト コンピューター上の**ポート**com1 を入力します。 使用するかどうか COM2 対象のコンピューターの**ターゲット ポート**com2 を入力します。
-5.  かどうかは、115200 のボー レートを使用した**ボー レート**115200 を入力します。
+2.  テストコンピューターの名前を選択し、[**次へ**] をクリックします。
+3.  [**コンピューターのプロビジョニング**] を選択し、[デバッガーの設定] を選択します。 **[次へ]** をクリックします。
+4.  ホストコンピューターで COM1 を使用している場合は、[**ポート**] に「com1」と入力します。 ターゲットコンピューターで COM2 を使用している場合は、[**ターゲットポート**] に「com2」と入力します。
+5.  ボーレート115200を使用することを選択した場合は **、「115200**」と入力します。
 
-管理者としてコマンド プロンプト ウィンドウを開き、入力して、ターゲット コンピューター上に再確認 COM ポートとボー レートの設定をできます**bcdedit/dbgsettings**します。 対象のコンピュータと 115200 の出力のボー レートを COM2 を使用している場合**bcdedit**表示する必要があります`debugport 2`と`baudrate 115200`します。
+管理者としてコマンドプロンプトウィンドウを開き、 **bcdedit/dbgsettings**を入力することで、ターゲットコンピューターの COM ポートとボーレートの設定を再確認できます。 ターゲットコンピューターで COM2 を使用していて、ボーレートが115200の場合、 **bcdedit**の出力にはとが表示され `debugport 2` `baudrate 115200` ます。
 
-## <a name="span-idnull-modem-cable-wiringspanspan-idnull-modem-cable-wiringspannull-modem-cable-wiring"></a><span id="null-modem-cable-wiring"></span><span id="NULL-MODEM-CABLE-WIRING"></span>ヌル モデム ケーブルを配線
+## <a name="span-idnull-modem-cable-wiringspanspan-idnull-modem-cable-wiringspannull-modem-cable-wiring"></a><span id="null-modem-cable-wiring"></span><span id="NULL-MODEM-CABLE-WIRING"></span>ヌルモデムケーブル配線
 
 
-次の表にどのようにヌル モデム ケーブルを接続します。
+次の表は、ヌルモデムケーブルがどのように結線されるかを示しています。
 
-### <a name="span-id9-pinconnectorspanspan-id9-pinconnectorspan9-pin-connector"></a><span id="9-pin_connector"></span><span id="9-PIN_CONNECTOR"></span>9 ピンのコネクタ
+### <a name="span-id9-pin_connectorspanspan-id9-pin_connectorspan9-pin-connector"></a><span id="9-pin_connector"></span><span id="9-PIN_CONNECTOR"></span>9-コネクタをピン留めする
 
-| コネクタ 1 | コネクタ 2 | 信号        |
+| コネクタ1 | コネクタ2 | シグナル        |
 |-------------|-------------|----------------|
-| 2           | 3           | Tx - Rx        |
-| 3           | 2           | Rx - Tx        |
-| 7           | 8           | RTS - CTS      |
-| 8           | 7           | CTS - RTS      |
-| 4           | 1+6         | DTR - (CD + DSR) |
-| 1+6         | 4           | (CD + DSR) - DTR |
-| 5           | 5           | シグナル地上  |
+| 2           | 3           | Tx-Rx        |
+| 3           | 2           | Rx-Tx        |
+| 7           | 8           | RTS-CTS      |
+| 8           | 7           | CTS-RTS      |
+| 4           | 1 + 6         | DTR-(CD + DSR) |
+| 1 + 6         | 4           | (CD + DSR)-DTR |
+| 5           | 5           | シグナルグラウンド  |
 
  
 
-### <a name="span-id25-pinconnectorspanspan-id25-pinconnectorspan25-pin-connector"></a><span id="25-pin_connector"></span><span id="25-PIN_CONNECTOR"></span>25 ピンのコネクタ
+### <a name="span-id25-pin_connectorspanspan-id25-pin_connectorspan25-pin-connector"></a><span id="25-pin_connector"></span><span id="25-PIN_CONNECTOR"></span>25-コネクタをピン留めする
 
-| コネクタ 1 | コネクタ 2 | 信号       |
+| コネクタ1 | コネクタ2 | シグナル       |
 |-------------|-------------|---------------|
-| 2           | 3           | Tx - Rx       |
-| 3           | 2           | Rx - Tx       |
-| 4           | 5           | RTS - CTS     |
-| 5           | 4           | CTS - RTS     |
-| 6           | 20          | DSR - DTR     |
-| 20          | 6           | DTR - DSR     |
-| 7           | 7           | シグナル地上 |
+| 2           | 3           | Tx-Rx       |
+| 3           | 2           | Rx-Tx       |
+| 4           | 5           | RTS-CTS     |
+| 5           | 4           | CTS-RTS     |
+| 6           | 20          | DSR-DTR     |
+| 20          | 6           | DTR-DSR     |
+| 7           | 7           | シグナルグラウンド |
 
  
 
-### <a name="span-idsignalabbreviationsspanspan-idsignalabbreviationsspanspan-idsignalabbreviationsspansignal-abbreviations"></a><span id="Signal_Abbreviations"></span><span id="signal_abbreviations"></span><span id="SIGNAL_ABBREVIATIONS"></span>シグナルの省略形
+### <a name="span-idsignal_abbreviationsspanspan-idsignal_abbreviationsspanspan-idsignal_abbreviationsspansignal-abbreviations"></a><span id="Signal_Abbreviations"></span><span id="signal_abbreviations"></span><span id="SIGNAL_ABBREVIATIONS"></span>シグナルの省略形
 
 | 省略形 | Signal              |
 |--------------|---------------------|
-| テキサス州           | データを送信します。       |
+| Tx           | データの送信       |
 | Rx           | データの受信        |
-| RTS          | 要求の送信     |
-| テクニカル サポート          | オフにすると、送信       |
-| DTR          | ターミナルのデータを準備します。 |
-| DSR          | データ セットが準備完了      |
-| CD           | 通信事業者を検出します。      |
+| ハンドシェーク          | 送信要求     |
+| CTS          | 送信をクリア       |
+| 信号          | データターミナルの準備完了 |
+| DSR          | データセットの準備完了      |
+| CD           | キャリア検出      |
 
  
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [Visual Studio でのカーネル モード デバッグの設定](setting-up-kernel-mode-debugging-in-visual-studio.md)

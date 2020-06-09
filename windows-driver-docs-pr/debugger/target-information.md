@@ -6,12 +6,12 @@ keywords:
 - デバッガーエンジン API、ターゲット、情報
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a2d4a6608dc80637de8777f63afc2e98fc0cbc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 3f7fe85783098b7611a4290f9ab2f756cf28a809
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838812"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534285"
 ---
 # <a name="target-information"></a>ターゲット情報
 
@@ -24,7 +24,7 @@ ms.locfileid: "72838812"
 
 ターゲットのコンピューターのページサイズは、 [**GetPageSize**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getpagesize)によって返されます。 [**IsPointer64Bit**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-ispointer64bit)は、コンピューターが32ビットまたは64ビットのどちらのアドレスを使用しているかを示します。
 
-**  内部**的には、デバッガーエンジンは常にターゲットの64ビットアドレスを使用します。 ターゲットが32ビットのアドレスのみを使用する場合、エンジンはターゲットと通信するときにそれらを自動的に変換します。
+**メモ**   内部的には、デバッガーエンジンは常にターゲットの64ビットアドレスを使用します。 ターゲットが32ビットのアドレスのみを使用する場合、エンジンはターゲットと通信するときにそれらを自動的に変換します。
 
  
 
@@ -46,11 +46,11 @@ ms.locfileid: "72838812"
 
 プロセッサの種類の名前 (完全および省略形) は、 [**GetProcessorTypeNames**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getprocessortypenames)によって返されます。
 
-ターゲットのコンピューターの現在の時刻が[**Getcurrenttimedate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getcurrenttimedate)によって返されます。 前回の起動以降に、ターゲットのコンピューターが実行されていた時間の[**長さ。** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getcurrentsystemuptime) 時間情報は、すべてのターゲットで使用できるとは限りません。
+ターゲットのコンピューターの現在の時刻が[**Getcurrenttimedate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getcurrenttimedate)によって返されます。 前回の起動以降に、ターゲットのコンピューターが実行されていた時間の[**長さ。**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getcurrentsystemuptime) 時間情報は、すべてのターゲットで使用できるとは限りません。
 
 ### <a name="span-idtarget_versionsspanspan-idtarget_versionsspantarget-versions"></a><span id="target_versions"></span><span id="TARGET_VERSIONS"></span>ターゲットバージョン
 
-ターゲットのコンピューターで実行されている Windows バージョンは[**GetSystemVersionValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionvalues)によって返され、[**要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**デバッグ\_要求\_WIN32\_メジャー\_マイナー\_バージョンを取得**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-request-get-win32-major-minor-versions)し、Windows バージョンの説明を[**GetSystemVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionstring)によって\_取得します。 この情報の一部は、 [**GetSystemVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getsystemversion)によっても返されます。
+ターゲットのコンピューターで実行されている Windows バージョンは[**GetSystemVersionValues**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionvalues)によって返され、[**要求**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugadvanced3-request)操作[**デバッグ \_ 要求は \_ \_ WIN32 \_ メジャー \_ マイナー \_ バージョンを取得**](debug-request-get-win32-major-minor-versions.md)し、Windows バージョンの説明は[**GetSystemVersionString**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol4-getsystemversionstring)によって返されます。 この情報の一部は、 [**GetSystemVersion**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-getsystemversion)によっても返されます。
 
  
 

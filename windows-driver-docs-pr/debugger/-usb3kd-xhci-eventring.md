@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_eventring
-description: Usb3kd.xhci_eventring 拡張機能では、USB 3.0 ホスト コント ローラーに関連付けられているイベントのリングのデータ構造に関する情報が表示されます。
+title: xhci_eventring usb3kd
+description: Xhci_eventring usb3kd 拡張機能は、USB 3.0 ホストコントローラーに関連付けられているイベントリングデータ構造に関する情報を表示します。
 ms.assetid: D3A40372-5473-48B0-94C7-5D3B80801F16
 keywords:
-- デバッグ usb3kd.xhci_eventring Windows
+- usb3kd Windows デバッグの xhci_eventring
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +12,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6063ee93e56eaf37fa4b16a0819d7108097bd877
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 372a6fc85dfa9dae5333386fab515765e02fcf2d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335681"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534115"
 ---
-# <a name="usb3kdxhcieventring"></a>!usb3kd.xhci\_eventring
+# <a name="usb3kdxhci_eventring"></a>! usb3kd. xhci \_ eventring
 
 
-[ **! Usb3kd.xhci\_eventring** ](-usb3kd-device-info.md)拡張機能は、USB 3.0 ホスト コント ローラーに関連付けられているイベント リング データ構造に関する情報を表示します。
+[**Xhci \_ eventring**](-usb3kd-device-info.md)拡張機能には、USB 3.0 ホストコントローラーに関連付けられているイベントリングデータ構造に関する情報が表示されます。
 
 ```dbgcmd
 !usb3kd.xhci_eventring DeviceExtension
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能のアドレス。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+ホストコントローラーの機能デバイスオブジェクト (FDO) のデバイス拡張機能のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-出力 **! xhci\_eventring**コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
+Output **! xhci \_ eventring**コマンドは、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Windows の usb ホスト側ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
-イベントのリングは、ドライバー操作が完了したことを通知するために、USB 3.0 ホスト コント ローラーによって使用される構造です。
+イベントリングは、アクションが完了したことをドライバーに通知するために USB 3.0 ホストコントローラーによって使用される構造体です。
 
 <a name="examples"></a>例
 --------
 
-デバイス拡張機能のアドレスを取得する出力の確認、 [ **! xhci\_dumpall** ](-usb3kd-xhci-dumpall.md)コマンド。 次の例では、デバイスの拡張機能のアドレスは、0xfffffa800536e2d0 です。
+デバイス拡張機能のアドレスを取得するには、 [**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)コマンドの出力を確認します。 次の例では、デバイス拡張機能のアドレスは0xfffffa800536e2d0 です。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -70,7 +70,7 @@ Usb3kd.dll
     ...
 ```
 
-デバイスの拡張機能のアドレスを渡すことができますので、 **! xhci\_eventring**コマンド。
+これで、デバイス拡張機能のアドレスを **! xhci \_ eventring**コマンドに渡すことができます。
 
 ```dbgcmd
 3: kd> !xhci_eventring 0xfffffa800536e2d0
@@ -100,14 +100,14 @@ Usb3kd.dll
         [216] TRANSFER_EVENT      0xfffffa8005373d80 CycleBit 0 SlotId  2 EndpointID  3 EventData 1 Pointer 0xfffffa8005a3d850 CC_SHORT_PACKET
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

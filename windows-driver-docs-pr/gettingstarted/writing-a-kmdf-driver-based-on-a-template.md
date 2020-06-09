@@ -6,20 +6,20 @@ keywords:
 - KMDF ドライバーの作成
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1f284a64b66737bed3cd89bc9ffbd04c22aa6c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 24489cd831fbcefa385e9ded5ec8792ca1e4a6b0
+ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81679076"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84336395"
 ---
 # <a name="write-a-universal-windows-driver-kmdf-based-on-a-template"></a>テンプレートを使ったユニバーサル Windows ドライバー (KMDF) の作成
 
 このトピックでは、カーネルモード ドライバー フレームワーク (KMDF) を使って[ユニバーサル Windows ドライバー](https://docs.microsoft.com/windows-hardware/drivers)を作成する方法について説明します。 Microsoft Visual Studio テンプレートを使って開始し、別のコンピューターにドライバーを展開してインストールします。
 
-最初に、[Microsoft Visual Studio 2015](https://go.microsoft.com/fwlink/p/?LinkId=698539) と [Windows Driver Kit (WDK) 10](https://go.microsoft.com/fwlink/p/?LinkId=733614) がインストールされていることを確認します。
+開始するには、まず最新バージョンの [Microsoft Visual Studio]https://visualstudio.microsoft.com/vs/) と [Windows Driver Kit (WDK)](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) がインストールされていることを確認します。
 
-[Debugging Tools for Windows](https://go.microsoft.com/fwlink/p?linkid=223405) は、WDK のインストールに含まれています。
+[Debugging Tools for Windows](https://docs.microsoft.com/windows-hardware/drivers/debugger/) は、WDK のインストールに含まれています。
 
 ## <a name="create-and-build-a-driver-package"></a>ドライバー パッケージの作成とビルド
 
@@ -53,7 +53,7 @@ ms.locfileid: "81679076"
 
 ## <a name="deploy-the-driver"></a>ドライバーを展開する
 
-通常、ドライバーのテストと展開には、デバッガーとドライバーがそれぞれ別のコンピューター上で実行されます。 デバッガーを実行するコンピューターを*ホスト コンピューター*、ドライバーを実行するコンピューターを*ターゲット コンピューター*と呼びます。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーのデバッグについて詳しくは、[Debugging Tools for Windows に関するページ](https://go.microsoft.com/fwlink/p?linkid=223405)をご覧ください。
+通常、ドライバーのテストと展開には、デバッガーとドライバーがそれぞれ別のコンピューター上で実行されます。 デバッガーを実行するコンピューターを*ホスト コンピューター*、ドライバーを実行するコンピューターを*ターゲット コンピューター*と呼びます。 ターゲット コンピューターは*テスト コンピューター*とも呼ばれます。 ドライバーのデバッグについて詳しくは、[Debugging Tools for Windows に関するページ](https://docs.microsoft.com/windows-hardware/drivers/debugger/)をご覧ください。
 
 ここまでは、ホスト コンピューター上の Visual Studio を使ってドライバーのビルドを行いました。 次にターゲット コンピューターの構成が必要です。
 
@@ -100,7 +100,7 @@ ms.locfileid: "81679076"
 2. ターゲットコンピューターでは、ドライバー ファイルを含むフォルダーに移動し、DevCon ツールを実行してドライバーをインストールします。
     1. ここで示しているのは、ドライバーのインストールに使う devcon ツールの一般的な構文です。
 
-        *devcon install \<INF ファイル\> \<ハードウェア ID\>*
+        *devcon install \<INF file\> \<hardware ID\>*
 
         このドライバーのインストールに必要な INF ファイルは KmdfDriver.inf です。 この INF ファイルには、ドライバーのバイナリ *KmdfDriver.sys* のインストールに必要なハードウェア ID が含まれています。 INF ファイルにあるハードウェア ID は **Root\\KmdfDriver** であることを思い出してください。
     2. 管理者としてコマンド プロンプト ウィンドウを開きます。 ドライバー パッケージのフォルダーに移動し、次のコマンドを入力します。
@@ -131,10 +131,10 @@ ms.locfileid: "81679076"
 
 4. この段階で、**kd&gt;** プロンプトに対してコマンドを入力することにより、デバッガーの操作を試してみることができます。 たとえば、次のようなコマンドを試すことができます。
 
-    * [lm](https://go.microsoft.com/fwlink/p?linkid=399236)
-    * [.sympath](https://go.microsoft.com/fwlink/p?linkid=399238)
-    * [.reload](https://go.microsoft.com/fwlink/p?linkid=399239)
-    * [x KmdfHelloWorld!\*](https://go.microsoft.com/fwlink/p?linkid=399240)
+    * [lm](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/device-nodes-and-device-stacks)
+    * [.sympath](https://docs.microsoft.com/windows-hardware/drivers/debugger/-sympath--set-symbol-path-)
+    * [.reload](https://docs.microsoft.com/windows-hardware/drivers/debugger/-reload--reload-module-)
+    * [x KmdfHelloWorld!\*](https://docs.microsoft.com/windows-hardware/drivers/debugger/x--examine-symbols-)
 
 5. 対象のコンピューターを再び実行するには、 **[デバッグ]** メニューの **[続行]** をクリックするか、または "g" を押してから、Enter キーを押します。
 6. デバッグ セッションを停止するには、 **[デバッグ]** メニューの **[デバッグの停止]** をクリックします。
@@ -158,9 +158,9 @@ DMF は WDF に置き換わるものではありません。 DMF は WDF と共�
 
 ## <a name="related-topics"></a>関連トピック
 
-[ドライバーの開発、テスト、および展開](https://go.microsoft.com/fwlink/p?linkid=399234)
+[ドライバーの開発、テスト、および展開](https://docs.microsoft.com/windows-hardware/drivers/develop/)
 
-[Windows 用デバッグ ツール](https://go.microsoft.com/fwlink/p?linkid=223405)
+[Windows 用デバッグ ツール](https://docs.microsoft.com/windows-hardware/drivers/debugger/)
 
 [ユニバーサル ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)](../debugger/debug-universal-drivers---step-by-step-lab--echo-kernel-mode-.md)
 

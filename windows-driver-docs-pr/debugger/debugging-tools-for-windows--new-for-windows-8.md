@@ -1,46 +1,34 @@
 ---
-title: Windows 8 の新機能 Windows 用デバッグ ツール
-description: Windows 8 の新機能 Windows 用デバッグ ツール
+title: Windows 8 用 Windows 用デバッグツール
+description: Windows 8 用 Windows 用デバッグツール
 ms.assetid: 1AC2595A-800F-4F40-9C9D-61DE5398CBEB
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f11aa48e76b2c64e39b76aff5036af20c250fefe
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a15efcf8076792b276b6aa31be2afa9ccc1c963
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377388"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534455"
 ---
 # <a name="debugging-tools-for-windows-new-for-windows-8"></a>Debugging Tools for Windows:Windows 8 の新機能
 
-
-Windows 8 以降では、開発できます、構築、Microsoft Visual Studio からすべてのカーネル モードとユーザー モードの両方のコンポーネントをデバッグします。 ネットワーク接続または USB 3.0 接続と最適化されているコードとインライン関数のデバッグのサポート強化経由でのデバッグのサポートが追加されます。 詳しくは、次のトピックをご覧ください。
+Windows 8 以降では、カーネルモードとユーザーモードの両方のコンポーネントを Microsoft Visual Studio から開発、ビルド、およびデバッグすることができます。 ネットワーク接続または USB 3.0 接続を介したデバッグのサポートが追加され、最適化されたコードとインライン関数のデバッグがサポートされるようになりました。 詳細については、以下のトピックを参照してください。
 
 -   [Visual Studio を使用したデバッグ](debugging-using-visual-studio.md)
--   [ネットワーク接続を手動で設定](setting-up-a-network-debugging-connection.md)
--   [USB 3.0 接続手動でセットアップ](setting-up-a-usb-3-0-debug-cable-connection.md)
+-   [ネットワーク接続を手動で設定する](setting-up-a-network-debugging-connection.md)
+-   [USB 3.0 接続を手動で設定する](setting-up-a-usb-3-0-debug-cable-connection.md)
 -   [最適化されたコードとインライン関数のデバッグ](debugging-optimized-code-and-inline-functions-external.md)
 
-デバッガーの拡張機能コマンドの 2 つの新しいセットが含まれます。
+2つの新しいデバッガー拡張機能コマンドセットが含まれています。
 
--   [USB 3.0 の拡張機能](usb-3-extensions.md)
+-   [USB 3.0 拡張機能](usb-3-extensions.md)
 -   [RCDRKD 拡張機能](rcdrkd-extensions.md)
 
-だけでなく、Visual Studio は、sse、Windows のデバッガー Windows アプリをデバッグすることができます。 Windows のツールをデバッグ パッケージが含まれている[ **PLMDebug.exe**](plmdebug.md)、中断、再開、デバッグ、および Windows アプリを終了して手動で制御を実行することができます。
+Visual Studio に加えて、windows デバッガーを sse して Windows アプリをデバッグすることもできます。 Windows パッケージ用デバッグツールには、Windows アプリの中断、再開、デバッグ、終了を手動で制御できるようにする[**Plmdebug**](plmdebug.md)が含まれています。
 
-Sos.dll は、マネージ コードのデバッグに使用されるコンポーネントです。 Windows 8 のデバッグ ツールの Windows パッケージでは、sos.dll は含まれません。 Sos.dll を取得する方法については、次を参照してください。 [SOS デバッガー拡張 (sos.dll) を取得する](debugging-managed-code.md#getting-the-sos-debugging-extension)します。
+Sos はマネージコードのデバッグに使用されるコンポーネントです。 Windows 8 用デバッグツールのパッケージには、sos は含まれていません。 Sos を取得する方法の詳細については、「[マネージコードのデバッグ](debugging-managed-code.md)」の「 *sos デバッガー拡張 (Sos) の取得*」を参照してください。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="related-topics"></a>関連トピック
 
-
-[Windows デバッグ](index.md)
-
- 
-
- 
-
-
-
-
-
-
+[Windows のデバッグ](index.md)

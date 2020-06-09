@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0xD4 SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
-description: SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD のバグ チェックでは、0x000000D4 の値を持ちます。 これは、ドライバーがアンロードの前の保留中の操作キャンセルしなかったことを示します。
+title: バグチェック 0xD4 SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
+description: SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD バグチェックの値は0x000000D4 です。 これは、ドライバーがアンロード前に保留中の操作をキャンセルしなかったことを示します。
 ms.assetid: 4c0e69d1-737c-4dd7-b52a-4cd5eeadcbb9
 keywords:
-- バグ チェック 0xD4 SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
+- バグチェック 0xD4 SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
 - SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 755e94d8471b572d9c171596454205af8ff4fade
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 80f123048cf7401d5631084a5c9a7822b8cff495
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518867"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534567"
 ---
-# <a name="bug-check-0xd4-systemscanatraisedirqlcaughtimproperdriverunload"></a>バグ チェック 0xD4:システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロード
+# <a name="bug-check-0xd4-system_scan_at_raised_irql_caught_improper_driver_unload"></a>バグチェック 0xD4: 発生した \_ \_ IRQL のシステムスキャンで、不適切な \_ ドライバーの \_ \_ \_ \_ \_ アンロードが検出されました
 
 
-システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロードのバグ チェックが 0x000000D4 の値を持ちます。 これは、ドライバーがアンロードの前の保留中の操作キャンセルしなかったことを示します。
+\_ \_ \_ \_ \_ \_ 不適切 \_ \_ なドライバーのアンロードのバグチェックでシステムスキャンが発生したときに、0x000000D4 の値が指定されています。 これは、ドライバーがアンロード前に保留中の操作をキャンセルしなかったことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="systemscanatraisedirqlcaughtimproperdriverunload-parameters"></a>システム\_スキャン\_で\_発生\_IRQL\_例外が発生しました\_不適切な\_ドライバー\_アンロード パラメーター
+## <a name="system_scan_at_raised_irql_caught_improper_driver_unload-parameters"></a>発生した \_ \_ IRQL のシステムスキャンで、不適切な \_ ドライバーの \_ \_ \_ \_ \_ アンロードパラメーターが検出されました
 
 
 <table>
@@ -50,35 +50,35 @@ ms.locfileid: "67518867"
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>IRQL の参照時に</p></td>
+<td align="left"><p>参照時の IRQL</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
-<td align="left"><p><strong>0:</strong>Read</p>
-<p><strong>1:</strong>書き込み</p></td>
+<td align="left"><p><strong>0:</strong>込ん</p>
+<p><strong>1:</strong>企画</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>メモリ アドレス</p></td>
+<td align="left"><p>参照されたメモリのアドレス</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-その名前がブルー スクリーンに印刷され、場所のメモリに格納されているドライバーのエラーの原因が識別できる場合 (PUNICODE\_文字列) **KiBugCheckDriver**します。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE \_ 文字列) **KiBugCheckDriver**に格納されます。
 
 <a name="cause"></a>原因
 -----
 
-このドライバーは、ルック アサイド リスト、Dpc、ワーカー スレッド、またはアンロードする前にこのようなその他の項目をキャンセルできませんでした。 その後、システムは、発生した IRQL でドライバーの以前の場所にアクセスしようとしました。
+このドライバーは、アンロードの前に、ルックアサイドリスト、Dpc、ワーカースレッド、またはその他の項目をキャンセルできませんでした。 その後、システムは、発生した IRQL でドライバーの以前の場所にアクセスしようとしました。
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-デバッグを開始するスタック トレースを取得するカーネル デバッガーを使用して、: [ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)デバッグ拡張機能を根本原因を突き止めるに便利ですし、使用、できますしてバグチェックに関する情報が表示されます[**kb (Display Stack Backtrace)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)スタック トレースを取得するコマンド。 エラーが発生したドライバーが指定されている場合は、Driver Verifier をアクティブ化し、このバグをレプリケートしようとしてください。
+デバッグを開始するには、カーネルデバッガーを使用してスタックトレースを取得します。この拡張機能で[**は、バグ**](-analyze.md)チェックに関する情報を表示し、根本原因を特定し、 [**Kb (スタックバックトレースの表示)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンドを使用してスタックトレースを取得します。 エラーの原因となったドライバーが特定されている場合は、ドライバー検証ツールをアクティブ化し、このバグのレプリケートを試みます。
 
-詳細については[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)、Windows Driver Kit を参照してください。
+[ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)機能の詳細については、「Windows driver Kit」を参照してください。
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 11498301e69860be71183593494b7eba4c0b52e4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 68c74aca795441d1715ab965fd65527f98a4d1ee
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826561"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534729"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
 
@@ -31,10 +31,10 @@ ms.locfileid: "72826561"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-outputpath______"></span><span id="_______-OUTPUTPATH______"></span> *-outputpath*   
+<span id="_______-outputpath______"></span><span id="_______-OUTPUTPATH______"></span>*-outputpath*   
 レポートファイルの書き込み先を指定します。
 
-<span id="_______-jsononly______"></span><span id="_______-JSONONLY______"></span> *-jsononly*   
+<span id="_______-jsononly______"></span><span id="_______-JSONONLY______"></span>*-jsononly*   
 では、HTML ではなく生データのみが書き込まれます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -64,7 +64,7 @@ NETWORK STACK REPORT
 
 ![クラッシュダンプからのネットワークデバッグレポート](images/!ndiskd-netreport-crashdump.png)
 
-次の図は、クラッシュダンプファイルではなくアクティブシステムから生成された net レポートを示しています。 HTML ページの下部に [データフローの表示] と [パケットのシミュレート] の2つのオプションがあります。レポートの上部には、"データフロー" の4番目のタブがあります。 デバッグ対象マシンで NBL tracking が有効になっているため、これらのオプションが表示されました。これにより、 **! ndiskd netreport**で NBL 追跡ログを解析し、情報を視覚的に表示できます。 NBL tracking が有効になっていない場合、これらのオプションは表示されません。 NBL tracking と NBL ログの詳細については、「 [ **! ndiskd ndiskd**](-ndiskd-nbllog.md)」を参照してください。
+次の図は、クラッシュダンプファイルではなくアクティブシステムから生成された net レポートを示しています。 HTML ページの下部に [データフローの表示] と [パケットのシミュレート] の2つのオプションがあります。レポートの上部には、"データフロー" の4番目のタブがあります。 デバッグ対象マシンで NBL tracking が有効になっているため、これらのオプションが表示されました。これにより、 **! ndiskd netreport**で NBL 追跡ログを解析し、情報を視覚的に表示できます。 NBL tracking が有効になっていない場合、これらのオプションは表示されません。 NBL tracking と NBL ログの詳細については、「 [**! ndiskd ndiskd**](-ndiskd-nbllog.md)」を参照してください。
 
 [データフローの表示] ボックスをオンにすると、データが流れるパスを確認できます。 [パケットをシミュレートする] ボックスをオンにすると、アニメーション化された円がデータフローパスを上下に移動します。 各円はネットワークパケットを表します。
 
@@ -72,7 +72,7 @@ NETWORK STACK REPORT
 
 アクティブシステムからのこの2番目の例では、クラッシュダンプファイルを使用した最初の例とは別の違いも示しています。 2番目の例のターゲットデバッグ対象マシンは、ネットワーク上でのカーネルデバッグ用にプロビジョニングされています。そのため、データフローが Microsoft カーネルデバッグネットワークアダプターのスタック上のネットワークアダプターを確認できます。 このアダプターは、デバッグ対象マシンでカーネルデバッグが有効になっていない限り、通常は非表示になります。 実際には、カーネルデバッグネットワークアダプターはデバッグセッション用にコンピューターのイーサネットアダプターを予約しているため、トラフィックはイーサネット経由で送信されます。
 
-ネットワークスタックを視覚化し、トラフィックが流れている場所を確認することで、問題が発生している場所をすばやく特定できます。 これは、前の例よりも複雑なネットワーク図を持つ仮想スイッチまたはサーバーに特に便利です。 たとえば、NIC チーミングを使用する Windows Server では、複数のネットワークスタックが相互に分散してトラフィックの負荷を分散し、1つのスタックの一番下に別のスタックに影響を与える問題があるかどうかを確認できます。 これを示すネットワークデバッグレポートの例については、「[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)」を参照してください。 NIC チーミングの詳細については、「 [Nic チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))」を参照してください。
+ネットワークスタックを視覚化し、トラフィックが流れている場所を確認することで、問題が発生している場所をすばやく特定できます。 これは、前の例よりも複雑なネットワーク図を持つ仮想スイッチまたはサーバーに特に便利です。 たとえば、NIC チーミングを使用する Windows Server では、複数のネットワークスタックが相互に分散してトラフィックの負荷を分散し、1つのスタックの一番下に別のスタックに影響を与える問題があるかどうかを確認できます。 これを示すネットワークデバッグレポートの例については、「[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)」を参照してください。 NIC チーミングの詳細については、「 [Nic チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))」を参照してください。
 
 **! ndiskd netreport**には、システム、集計、およびデータフローのページの上部にある他のタブもあります (該当する場合)。 これらのタブには、ネットワークスタックの状態に関する有用な情報が含まれています。 次の図は、[概要] タブの下にある [ネットワークインターフェイス] タブを示しています。このタブの表では、システム内のネットワークインターフェイスの名前と識別子に関する詳細情報を確認できます。
 
@@ -85,17 +85,17 @@ NETWORK STACK REPORT
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[ **!ndiskd.nbllog**](-ndiskd-nbllog.md)
+[**!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
 [NIC チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
 

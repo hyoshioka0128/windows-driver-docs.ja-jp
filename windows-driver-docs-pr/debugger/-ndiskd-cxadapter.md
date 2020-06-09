@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b525a33656b9077ce310ef5d9e1afc0cf72ea797
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7ee92f55f7253cdc1000191113f996908d1c2174
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826680"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534229"
 ---
 # <a name="ndiskdcxadapter"></a>!ndiskd.cxadapter
 
@@ -33,16 +33,16 @@ ms.locfileid: "72826680"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 必須。 NETADAPTER のハンドル。
 
-<span id="_______-basic______"></span><span id="_______-BASIC______"></span> *-基本*   
+<span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 基本情報を表示します。
 
-<span id="_______-power______"></span><span id="_______-POWER______"></span> *-電源*   
+<span id="_______-power______"></span><span id="_______-POWER______"></span>*-power*   
 NETADAPTER の NETPOWERSETTINGS オブジェクトに関する情報を表示します。
 
-<span id="_______-datapath______"></span><span id="_______-DATAPATH______"></span> *-データパス*   
+<span id="_______-datapath______"></span><span id="_______-DATAPATH______"></span>*-データパス*   
 データパスキューに関する情報を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -52,7 +52,7 @@ Ndiskd .dll
 <a name="examples"></a>例
 --------
 
-NETADAPTER オブジェクトのハンドルを取得するには、最初に[ **! ndiskd netadapter**](-ndiskd-netadapter.md)コマンドを実行して、システム上のすべての NIC ドライバーと netadapter の一覧を表示します。 次の例では、Realtek PCIe GBE ファミリコントローラー NetAdapter サンプルドライバー \#2 という名前の NetAdapter のハンドルを探します。 そのハンドルは ffffd1022d048030 です。
+NETADAPTER オブジェクトのハンドルを取得するには、最初に[**! ndiskd netadapter**](-ndiskd-netadapter.md)コマンドを実行して、システム上のすべての NIC ドライバーと netadapter の一覧を表示します。 次の例では、Realtek PCIe GBE ファミリコントローラー NetAdapter Sample Driver 2 という名前の NetAdapter のハンドルを探し \# ます。 そのハンドルは ffffd1022d048030 です。
 
 ```console
 0: kd> !ndiskd.netadapter
@@ -61,7 +61,7 @@ NETADAPTER オブジェクトのハンドルを取得するには、最初に[ *
     ffffd1022ed908e0   ffffd1022e8611a0    Microsoft Kernel Debug Network Adapter
 ```
 
-この NetAdapter のハンドルをクリックするか、 **! ndiskd netadapter-handle**コマンドにコマンドラインでハンドルを入力することにより、netadapter オブジェクトなど、この netadapter の詳細を確認できます。 Realtek PCIe GBE ファミリコントローラーの NetAdapter サンプルドライバー \#2 の NETADAPTER ハンドルは、00002efdd0e5f988 です。
+この NetAdapter のハンドルをクリックするか、 **! ndiskd netadapter-handle**コマンドにコマンドラインでハンドルを入力することにより、netadapter オブジェクトなど、この netadapter の詳細を確認できます。 Realtek PCIe GBE ファミリコントローラー NetAdapter サンプルドライバー \# 2 の netadapter ハンドルは、00002efdd0e5f988 です。
 
 ```console
 0: kd> !ndiskd.netadapter ffffd1022d048030
@@ -144,7 +144,7 @@ MORE INFORMATION
     Diagnostic log
 ```
 
-NETADAPTER オブジェクトは WDF オブジェクトであるため、そのハンドルをクリックすると、デバッガーは[ **! wdfkd. wdfkd**](-wdfkd-wdfhandle.md)コマンドを実行します。これにより、WDF の観点から詳細な情報が得られます。 ネットワークの観点から NETADAPTER に関する詳細情報を表示するには、NETADAPTER のハンドルの右側にある [詳細情報] リンクをクリックして、 **! ndiskd cxadapter**コマンドをハンドルで実行します。
+NETADAPTER オブジェクトは WDF オブジェクトであるため、そのハンドルをクリックすると、デバッガーは[**! wdfkd. wdfkd**](-wdfkd-wdfhandle.md)コマンドを実行します。これにより、WDF の観点から詳細な情報が得られます。 ネットワークの観点から NETADAPTER に関する詳細情報を表示するには、NETADAPTER のハンドルの右側にある [詳細情報] リンクをクリックして、 **! ndiskd cxadapter**コマンドをハンドルで実行します。
 
 ```console
 0: kd> !ndiskd.cxadapter ffffd1022f1a0720
@@ -190,21 +190,21 @@ DATAPATH QUEUES
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワークアダプターの WDF クラス拡張 (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)
 
-[ **! ndiskd netadapter**](-ndiskd-netadapter.md)
+[**!ndiskd.netadapter**](-ndiskd-netadapter.md)
 
-[ **! wdfkd. wdfkd**](-wdfkd-wdfhandle.md)
+[**!wdfkd.wdfhandle**](-wdfkd-wdfhandle.md)
 
  
 

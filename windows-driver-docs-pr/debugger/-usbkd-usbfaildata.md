@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbfaildata
-description: Usbkd.usbfaildata コマンドでは、格納されている USB デバイスの障害データ (該当する場合) が表示されます。
+title: usbkd. usbfaildata
+description: Usbkd. usbfaildata コマンドは、USB デバイス用に格納されているエラーデータ (存在する場合) を表示します。
 ms.assetid: 08FD3F82-73E3-4616-92EB-D562ECAB8A96
 keywords:
-- デバッグ usbkd.usbfaildata Windows
+- usbkd. usbfaildata Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 55fdb43933f08d4ae24f466a86e3fbc99a74d167
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 743172ae48fef183451ef390d2e3d8d276a6739e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334115"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534025"
 ---
 # <a name="usbkdusbfaildata"></a>!usbkd.usbfaildata
 
 
-**! Usbkd.usbfaildata**コマンドが格納されている USB デバイスの障害データ (該当する場合) を表示します。
+**! Usbkd. usbfaildata**コマンドは、USB デバイス用に保存されているエラーデータ (存在する場合) を表示します。
 
 ```dbgcmd
 !usbkd.usbfaildata PDO
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______PDO______"></span><span id="_______pdo______"></span> *PDO*   
-USB ハブに接続されているデバイスの物理デバイス オブジェクト (PDO) のアドレス。
+<span id="_______PDO______"></span><span id="_______pdo______"></span>*PDO*   
+USB ハブに接続されているデバイスの物理デバイスオブジェクト (PDO) のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-USB デバイスの PDO のアドレスを検索する 1 つの方法を次に示します。 入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB デバイスの PDO のアドレスを検索する方法の1つを次に示します。 「 [**! Usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
  kd> !usbkd.usb2tree
@@ -55,16 +55,16 @@ USB デバイスの PDO のアドレスを検索する 1 つの方法を次に�
 ...
 ```
 
-上記の出力で PDO のアドレスは、推奨されるコマンドの引数として表示されます。 **! devstack ffffe00007c882a0**します。
+上記の出力では、PDO のアドレスは、推奨されるコマンドの引数として、 **devstack ffffe00007c882a0**として表示されます。
 
-今すぐに PDO のアドレスを渡す **! usbkd.usbfaildata**します。
+次に、PDO のアドレスを **! usbkd. usbfaildata**に渡します。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

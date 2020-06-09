@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbdevh
-description: Usbkd.usbdevh コマンドでは、USB デバイス ハンドルに関する情報が表示されます。
+title: usbkd. usbdevh
+description: Usbkd. usbdevh コマンドを実行すると、USB デバイスハンドルに関する情報が表示されます。
 ms.assetid: 463DAA72-F3EB-4C76-BB63-DA2EFA1EE9B1
 keywords:
-- デバッグ usbkd.usbdevh Windows
+- usbkd. usbdevh Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5e465b18c753ffabc2e026f045da57cdbc2a0e6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2f804c4c53a3685c660d50f5213e4c6731576663
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67359760"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534867"
 ---
 # <a name="usbkdusbdevh"></a>!usbkd.usbdevh
 
 
-**! Usbkd.usbdevh**コマンドには、USB デバイス ハンドルに関する情報が表示されます。
+**! Usbkd. usbdevh**コマンドを実行すると、USB デバイスハンドルに関する情報が表示されます。
 
 ```dbgcmd
 !usbkd.usbdevh StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**し、usbport!\_USBD\_デバイス\_処理**構造体。 USB ホスト コント ローラーに対するデバイス ハンドルの一覧を取得する、 [ **! usbkd.usbhcdext** ](-usbkd-usbhcdext.md)コマンド。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+**Usbport のアドレス。 \_USBD \_ デバイス \_ ハンドル**構造体。 USB ホストコントローラーのデバイスハンドルリストを取得するには、 [**usbhcdext**](-usbkd-usbhcdext.md)コマンドを使用します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-以下のアドレスを検索する 1 つの方法を示します、**し、usbport!\_USBD\_デバイス\_処理**構造体。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+Usbport のアドレスを確認する方法の1つを次に示し**ます。 \_USBD \_ デバイス \_ ハンドル**構造体。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd.dll
      ...
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe00001ca11a0**します。
+上記の出力では、FDO のデバイス拡張機能のアドレスが、 [DML](debugger-markup-language-commands.md)コマンドの引数として表示されます **! ehci \_ info ffffe00001ca11a0**です。
 
-DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)デバイス ハンドルの一覧を取得します。
+[DML] コマンドをクリックするか、デバイスの拡張子のアドレスを[**! usbhcdext**](-usbkd-usbhcdext.md)に渡して、デバイスハンドルの一覧を取得します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001ca11a0
@@ -72,7 +72,7 @@ DeviceHandleDeletedList: !usblist ffffe00001ca23c8, DL [Empty]
 ...
 ```
 
-使用して、 [ **! usbkd.usblist** ](-usbkd-usblist.md)のアドレスを取得するコマンド**し、usbport!\_USBD\_デバイス\_処理**構造体。
+次に、 [**! usbkd. usbkd**](-usbkd-usblist.md)コマンドを使用して、 **usbkd \_ のアドレスを取得します。USBD \_ デバイス \_ ハンドル**構造体。
 
 ```dbgcmd
 0: kd> !usblist ffffe00001ca23b8, DL
@@ -83,7 +83,7 @@ SSP [IdleReady] (0)
 ...
 ```
 
-上記の出力で`ffffe000020f9590`のアドレスを **\_USBD\_デバイス\_処理**構造体。 このアドレスを渡す **! usbdevh**します。
+前の出力で、 `ffffe000020f9590` は** \_ USBD \_ デバイス \_ ハンドル**構造体のアドレスです。 このアドレスを **! usbdevh**に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbdevh ffffe000020f9590
@@ -123,12 +123,12 @@ Config Information: dt USBPORT!_USBD_CONFIG_HANDLE ffffe000023cd0b0
 [00] dt USBPORT!_USBD_INTERFACE_HANDLE_I ffffe000023bd250
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

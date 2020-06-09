@@ -1,9 +1,9 @@
 ---
-title: usbkd._ehcidd
-description: Usbkd._ehcidd コマンドは、usbehci _DEVICE_DATA 構造から情報を表示します。
+title: usbkd. _ehcidd
+description: Usbehci コマンドを実行 _ehcidd すると、_DEVICE_DATA 構造の情報が表示されます。
 ms.assetid: 8D594564-6506-44A8-A109-A76DA5AE7D89
 keywords:
-- Windows デバッグ usbkd._ehcidd
+- usbkd. _ehcidd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 19dd6101aa5c31de95b634a7bbfa67525de500fc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0612c1ba5c5d33a7665f8163071c1a599c172907
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335644"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534885"
 ---
-# <a name="usbkdehcidd"></a>!usbkd.\_ehcidd
+# <a name="usbkd_ehcidd"></a>! usbkd。 \_ehcidd
 
 
-**! Usbkd\_ 。ehcidd**コマンドからの情報を表示、 **usbehci!\_デバイス\_データ**構造体。
+**! Usbkd。 \_ehcidd**コマンドを実行すると、usbehci からの情報が表示され**ます。 \_デバイスの \_ データ**構造。
 
 ```dbgcmd
 !usbkd._ehcidd StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**usbehci!\_デバイス\_データ**構造体。 アドレスを検索する**usbehci!\_デバイス\_データ**構造体を使用して、 [ **! usbhcdext** ](-usbkd-usbhcdext.md)または[ **! usbhcdlist**](-usbkd-usbhcdlist.md)します。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbehci のアドレス** \_デバイスの \_ データ**構造。 Usbehci のアドレスを検索するには** \_デバイス \_ データ**構造では、 [**! usbhcdext**](-usbkd-usbhcdext.md)または[**! usbhcdlist**](-usbkd-usbhcdlist.md)を使用します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-以下のアドレスを取得する 1 つの方法を示します、 **usbehci!\_デバイス\_データ**構造体。 最初に入力[ **! usbkd.usbhcdlist**](-usbkd-usbhcdlist.md)します。
+Usbehci のアドレスを取得する方法の1つを次に示し**ます。 \_デバイスの \_ データ**構造。 最初に「 [**! usbkd. usbhcdlist**](-usbkd-usbhcdlist.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlist
@@ -61,9 +61,9 @@ MINIPORT List @ fffff80001e5bbd0
     ...
 ```
 
-上記の出力で`ffffe0000781bda0`のアドレスを **\_デバイス\_データ**構造体。
+前の出力で、 `ffffe0000781bda0` は** \_ デバイス \_ データ**構造のアドレスです。
 
-今すぐに構造体のアドレスを渡す **!\_ehcidd**
+ここで、構造体のアドレスをに渡し**ます。 \_ehcidd**
 
 ```dbgcmd
 0: kd> !usbkd._ehcidd ffffe0000781bda0
@@ -80,12 +80,12 @@ AsyncQueueHead ffffd00021cf5000 !_ehciqh ffffd00021cf5000
     PrevQh: ffffd00021cf5000
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

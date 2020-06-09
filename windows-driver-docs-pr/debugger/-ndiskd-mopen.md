@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 018e4917a2049e81bd74b742f99142140c4c2396
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d3407e5f652bf63ecade29eb4552c49d8c02d8da
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837589"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534923"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
 
@@ -31,10 +31,10 @@ ms.locfileid: "72837589"
 ## <a name="span-idddk__ndiskd_mopen_dbgspanspan-idddk__ndiskd_mopen_dbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>パラメータ
 
 
-<span id="_______-handle______"></span><span id="_______-HANDLE______"></span> *-  を処理*します  
+<span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 NDIS オープンバインドのハンドル。
 
-<span id="_______-ref______"></span><span id="_______-REF______"></span> *-ref*   
+<span id="_______-ref______"></span><span id="_______-REF______"></span>*-ref*   
 開いているバインドの refcounts を表示します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -44,7 +44,7 @@ Ndiskd .dll
 <a name="examples"></a>例
 --------
 
-! Ndiskd mopen コマンドを入力して、開いているすべてのバインドの一覧を取得します。 この例では、Microsoft ISATAP アダプター \#2 のミニポートと TCPIP6TUNNEL プロトコルの間のバインドを探します。 そのハンドルは ffff8083e56b8110 です。
+! Ndiskd mopen コマンドを入力して、開いているすべてのバインドの一覧を取得します。 この例では、Microsoft ISATAP アダプター \# 2 のミニポートと TCPIP6TUNNEL プロトコルの間のバインドを探します。 そのハンドルは ffff8083e56b8110 です。
 
 ```console
 3: kd> !ndiskd.mopen
@@ -107,15 +107,15 @@ RECEIVE PATH
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
  
 

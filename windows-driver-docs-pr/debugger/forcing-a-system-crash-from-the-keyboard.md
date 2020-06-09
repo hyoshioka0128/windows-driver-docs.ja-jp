@@ -3,85 +3,85 @@ title: キーボードからのシステム クラッシュの強制実行
 description: キーボードからのシステム クラッシュの強制実行
 ms.assetid: 0c3ec6f3-d233-46e4-b599-1a0f89318ed2
 keywords:
-- 起動プロセス、キーボードからシステムのクラッシュの原因
-- CTRL + SCROLL LOCK
-- キーボードの原因と、システムのクラッシュ
-- キーボードからのバグ チェック
-- キーボードによるシステムのクラッシュ
-- USB キーボードとシステムのクラッシュ
-- Ps/2 キーボードとシステムのクラッシュ
-- キーボードから強制的にシステムのクラッシュ
+- ブートプロセスが原因でキーボードからシステムがクラッシュする
+- CTRL + スクロールロック
+- システムのクラッシュ、キーボードからのクラッシュ
+- バグチェック、キーボードからの発生
+- キーボード-システムクラッシュの原因
+- USB キーボードとシステムクラッシュ
+- PS/2 キーボードとシステムクラッシュ
+- キーボードからのシステムクラッシュの強制
 ms.date: 07/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 48279ae6fcf2cb74371abd44a4beeb41db7116fc
-ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
+ms.openlocfilehash: a57f1daaee2bb7d435ae42931fa1e4cb1dca0254
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67499806"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534367"
 ---
 # <a name="forcing-a-system-crash-from-the-keyboard"></a>キーボードからのシステム クラッシュの強制実行
 
 ## <span id="ddk_forcing_a_system_crash_from_the_keyboard_dbg"></span><span id="DDK_FORCING_A_SYSTEM_CRASH_FROM_THE_KEYBOARD_DBG"></span>
 
-次の種類のキーボードでは、直接システム クラッシュを引き起こすことができます。
+次の種類のキーボードでは、システムのクラッシュが直接発生する場合があります。
 
-<span id="________PS_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________ps_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________PS_2_KEYBOARDS_CONNECTED_ON_I8042PRT_PORTS_______"></span> **I8042prt ポートで ps/2 キーボードが接続されています。**
+<span id="________PS_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________ps_2_keyboards_connected_on_i8042prt_ports_______"></span><span id="________PS_2_KEYBOARDS_CONNECTED_ON_I8042PRT_PORTS_______"></span>**I8042prt ポートで接続されている PS/2 キーボード**
 
-この機能は、Windows 2000 およびそれ以降のバージョンの Windows オペレーティング システムで使用できます。
+この機能は、Windows 2000 以降のバージョンの Windows オペレーティングシステムで使用できます。
 
-<span id="________USB_keyboards_______"></span><span id="________usb_keyboards_______"></span><span id="________USB_KEYBOARDS_______"></span> **USB キーボード**
+<span id="________USB_keyboards_______"></span><span id="________usb_keyboards_______"></span><span id="________USB_KEYBOARDS_______"></span>**USB キーボード**
 
-この機能は、Windows Vista およびそれ以降のバージョンの Windows オペレーティング システムで使用できます。
+この機能は、Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。
 
-<span id="hyper_v_keyboards_______"></span> **HYPER-V のキーボード**
+<span id="hyper_v_keyboards_______"></span>**Hyper-v キーボード**
 
-この機能は、Windows 10 バージョンが 1903 および以降のバージョンの Windows オペレーティング システムで使用できます。
+この機能は、Windows 10 バージョン1903以降のバージョンの Windows オペレーティングシステムで使用できます。
 
 <span id="Configuration"></span> **構成**
 
-有効にするのには、次の設定を構成、キーボードを使用して、システムがクラッシュします。
+キーボードを使用してシステムのクラッシュを有効にするには、次の設定を構成します。
 
-1. このようなダンプ ファイルを有効にする必要があります、書き込まれるクラッシュ ダンプ ファイルを希望する場合、パスとファイル名を選択し、ダンプ ファイルのサイズを選択します。 詳細については、次を参照してください。[カーネル モードのダンプ ファイルを有効にする](enabling-a-kernel-mode-dump-file.md)します。
+1. クラッシュダンプファイルを書き込む場合は、そのようなダンプファイルを有効にし、パスとファイル名を選択して、ダンプファイルのサイズを選択する必要があります。 詳細については、「[カーネルモードダンプファイルの有効化](enabling-a-kernel-mode-dump-file.md)」を参照してください。
 
-2. Ps/2 キーボードでは、レジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\i8042prt\\パラメーター**、という名前の値を作成**します**、21 と等しい設定\_DWORD 値 0x01 になります。
+2. PS/2 キーボードを使用する場合は、レジストリでキーボードによるクラッシュを有効にする必要があります。 レジストリキー **HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services \\ i8042prt \\ Parameters**に**CrashOnCtrlScroll**という名前の値を作成し、それを REG \_ DWORD 値0x01 に設定します。
 
-3. USB キーボードでレジストリにキーボードによるクラッシュを有効にする必要があります。 レジストリ キーに**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\kbdhid\\パラメーター、** を作成します。という名前の値**します**、21 と等しい設定\_DWORD 値 0x01 になります。
+3. USB キーボードを使用する場合は、レジストリでキーボードによるクラッシュを有効にする必要があります。 レジストリキー **HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services \\ kbdhid \\ パラメーター**に、 **CrashOnCtrlScroll**という名前の値を作成し、それを REG \_ DWORD 値0x01 に設定します。
 
-4. HYPER-V のキーボードでキーボードによるレジストリのクラッシュを有効にする必要があります。 レジストリ キーに**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\hyperkbd\Parameters**、という値を作成**します**0x01 の REG_DWORD 値と等しく設定します。
+4. Hyper-v キーボードを使用する場合は、レジストリでキーボードによるクラッシュを有効にする必要があります。 レジストリキー **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\hyperkbd\parameters**に**CrashOnCtrlScroll**という名前の値を作成し、それを0x01 の REG_DWORD 値に設定します。
 
-これらの設定を有効にするためにシステムを再起動する必要があります。
+これらの設定を有効にするには、システムを再起動する必要があります。
 
-これが完了した後は、次のホットキーを使用して、キーボードのクラッシュを開始できます。右端の CTRL キーを押しながら、SCROLLLOCK キーを 2 回押します。
+この操作が完了したら、キーボードのクラッシュを開始するには、次のホットキーシーケンスを使用します。右の CTRL キーを押しながら、スクロールキーを2回押します。
 
-システムを呼び出して**KeBugCheck**と問題[**バグ チェック 0 xe2** ](bug-check-0xe2--manually-initiated-crash.md) (手動で\_INITIATED\_クラッシュ)。 クラッシュ ダンプを無効になっている場合を除き、この時点で、クラッシュ ダンプ ファイルが書き込まれます。
+その後、システムは**Kebugcheck**を呼び出し、[**バグチェック 0xe2**](bug-check-0xe2--manually-initiated-crash.md) (手動で開始されたクラッシュ) を発行し \_ \_ ます。 クラッシュダンプが無効になっていない限り、この時点でクラッシュダンプファイルが書き込まれます。
 
-カーネル デバッガーがクラッシュしたマシンに接続されている場合は、クラッシュ ダンプ ファイルが書き込まれた後、カーネル デバッガーに、マシンが中断されます。
+カーネルデバッガーがクラッシュしたマシンにアタッチされている場合、クラッシュダンプファイルが書き込まれた後、マシンはカーネルデバッガーに中断します。
 
-この機能の使用に関する詳細については、この記事を参照してください[キーボード (KB 244139) を使用して、メモリ ダンプ ファイルを生成](https://go.microsoft.com/fwlink/p/?linkid=106065)します。
+この機能の使用方法の詳細については、「Windows の機能」を参照してください。[キーボードを使用して、メモリダンプファイルを生成する](https://support.microsoft.com/help/244139/windows-feature-lets-you-generate-a-memory-dump-file-by-using-the-keyb)ことができます。
 
-### <a name="span-iddefiningalternatekeyboardshortcutstoforceasystemcrashfromthespanspan-iddefiningalternatekeyboardshortcutstoforceasystemcrashfromthespandefining-alternate-keyboard-shortcuts-to-force-a-system-crash-from-the-keyboard"></a><span id="defining_alternate_keyboard_shortcuts_to_force_a_system_crash_from_the"></span><span id="DEFINING_ALTERNATE_KEYBOARD_SHORTCUTS_TO_FORCE_A_SYSTEM_CRASH_FROM_THE"></span>キーボードからシステムのクラッシュを強制的に代替のキーボード ショートカットを定義します。
+### <a name="span-iddefining_alternate_keyboard_shortcuts_to_force_a_system_crash_from_thespanspan-iddefining_alternate_keyboard_shortcuts_to_force_a_system_crash_from_thespandefining-alternate-keyboard-shortcuts-to-force-a-system-crash-from-the-keyboard"></a><span id="defining_alternate_keyboard_shortcuts_to_force_a_system_crash_from_the"></span><span id="DEFINING_ALTERNATE_KEYBOARD_SHORTCUTS_TO_FORCE_A_SYSTEM_CRASH_FROM_THE"></span>キーボードからのシステムクラッシュを強制する代替キーボードショートカットの定義
 
-メモリ ダンプ ファイルを生成するさまざまなキーボード ショートカットのシーケンスの次のレジストリ サブキーの下に値を構成できます。
+次のレジストリサブキーの下で、メモリダンプファイルを生成するためのさまざまなキーボードショートカットシーケンスの値を構成できます。
 
-- Ps/2 キーボードの場合。
+- PS/2 キーボードの場合:
 
-    **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\i8042prt\\crashdump**
+    **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Services \\ i8042prt \\ クラッシュ**
 
-- USB キーボードの場合。
+- USB キーボードの場合:
 
-    **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\kbdhid\\crashdump**
+    **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Services \\ kbdhid \\ クラッシュ**
 
-- HYPER-V でキーボードの場合。
+- Hyper-v キーボードの場合:
 
-    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\hyperkbd\crashdump**
+    **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\hyperkbd\crashdump**
 
-REG の次のレジストリを作成する必要があります\_これらのサブキーの下に DWORD 値。
+これらのサブキーの下に、次のレジストリ REG DWORD 値を作成する必要があり \_ ます。
 
 <span id="Dump1Keys"></span><span id="dump1keys"></span><span id="DUMP1KEYS"></span>**Dump1Keys**  
-**Dump1Keys**レジストリ値が使用する最初のホット キーのビット マップします。 たとえば、ホット キー シーケンスを開始する最も右にある、CTRL キーを使用する代わりに、最初のホット キーを一番左の SHIFT キーを設定できます。
+**Dump1Keys**レジストリ値は、使用する最初のホットキーのビットマップです。 たとえば、ホットキーシーケンスを開始するために右端の CTRL キーを使用するのではなく、最初のホットキーを左端の SHIFT キーに設定できます。
 
-最初のホット キーの値は、次の表で説明します。
+次の表では、最初のホットキーの値について説明します。
 
 <table>
 <colgroup>
@@ -90,14 +90,14 @@ REG の次のレジストリを作成する必要があります\_これらの�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Value</th>
-<th align="left">キーボード ショートカットのシーケンスで使用される最初のキー</th>
+<th align="left">値</th>
+<th align="left">キーボードショートカットシーケンスで使用される最初のキー</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x01</p></td>
-<td align="left"><p>一番右の SHIFT キー</p></td>
+<td align="left"><p>右の SHIFT キー</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x02</p></td>
@@ -105,27 +105,27 @@ REG の次のレジストリを作成する必要があります\_これらの�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x04</p></td>
-<td align="left"><p>一番右 ALT キー</p></td>
+<td align="left"><p>右端の ALT キー</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>一番左の SHIFT キー</p></td>
+<td align="left"><p>左端の SHIFT キー</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x20</p></td>
-<td align="left"><p>一番左 CTRL キー</p></td>
+<td align="left"><p>左端の CTRL キー</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x40</p></td>
-<td align="left"><p>一番左 ALT キー</p></td>
+<td align="left"><p>左端の ALT キー</p></td>
 </tr>
 </tbody>
 </table>
 
-**注**  割り当てることができます**Dump1Keys**キーボード ショートカットのシーケンスで使用される最初のキーとして 1 つまたは複数のキーを有効にする値。 たとえば、割り当てる**Dump1Keys**キーボード ショートカットのシーケンスの最初のキーとしての右端と左端の両方の SHIFT キーを定義するパターンの値。
+**メモ**   **Dump1Keys**には、キーボードショートカットシーケンスで使用される最初のキーとして1つ以上のキーを有効にする値を割り当てることができます。 たとえば、 **Dump1Keys**の値を0x11 に設定すると、キーボードショートカットシーケンスの最初のキーとして、右端と左端の両方の SHIFT キーが定義されます。
 
 <span id="Dump2Key"></span><span id="dump2key"></span><span id="DUMP2KEY"></span>**Dump2Key**  
-**Dump2Key**レジストリ値は、ターゲット コンピューターのキーボード レイアウト scancode テーブルにインデックス。 ドライバーでは、実際のテーブルを次に示します。
+**Dump2Key**レジストリ値は、対象のコンピューターのキーボードレイアウト用の scancode テーブルのインデックスです。 ドライバーの実際のテーブルを次に示します。
 
 ```cpp
 const UCHAR keyToScanTbl[134] = { 
@@ -145,12 +145,12 @@ const UCHAR keyToScanTbl[134] = {
         0x00,0x7B,0x79,0x70 };
 ```
 
-**注**   84 キーボードに別のスキャン コードがあるために、インデックス 124 (sysreq) は特殊なケースです。
+**メモ**   インデックス 124 (sysreq) は特殊なケースです。これは、84キーのキーボードのスキャンコードが異なるためです。
 
-設定する必要があります、USB、ps/2 キーボードからシステムのクラッシュを強制的に代替のキーボード ショートカットを定義する場合、**します**レジストリ値を 0 またはレジストリから削除します。
+USB または PS/2 キーボードからシステムクラッシュを強制する代替キーボードショートカットを定義する場合は、 **CrashOnCtrlScroll**レジストリ値を0に設定するか、レジストリから削除する必要があります。
 
 ### <a name="span-idlimitationsspanspan-idlimitationsspanlimitations"></a><span id="limitations"></span><span id="LIMITATIONS"></span>制限事項
 
-システム固定キーボード ショートカットのシーケンスは、このような方法で作業することができます。 ただし、非常にまれな場合があります。 キーボード ショートカットのシーケンスを使用して、クラッシュを開始するは、CTRL + ALT + DEL が機能しないという多数のインスタンスであっても機能します。
+キーボードショートカットシーケンスが機能しないようにシステムをフリーズさせることができます。 ただし、これはめったに発生しません。 キーボードショートカットシーケンスを使用してクラッシュを開始することは、CTRL + ALT + DELETE が機能しない多くのインスタンスでも機能します。
 
-キーボードから強制的にシステムがクラッシュしても、コンピューターが高い割り込み要求レベル (IRQL) で応答を停止した場合は機能しません。 この制限は、メモリ ダンプ プロセスの実行をできる Kbdhid.sys ドライバーが i8042prt.sys のドライバーよりも低いかどうかで動作するために存在します。
+コンピューターが高い割り込み要求レベル (IRQL) で応答を停止した場合、キーボードからのシステムクラッシュの強制は機能しません。 この制限は、メモリダンププロセスの実行を許可する Kbdhid .sys ドライバーが、i8042prt ドライバーよりも低い IRQL で動作するために発生します。

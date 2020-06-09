@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 882a6175296b27d3f182065af8bb5db550876445
-ms.sourcegitcommit: 0ba337ab671763e374c79b67f6730f1451c8615e
+ms.openlocfilehash: c69a4233e26bbeca5d5d52141b2b92c29331f7cb
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72041336"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534541"
 ---
-# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>バグチェック 0xD7: ドライバー\_\_無効な\_ビューのマッピング解除
+# <a name="bug-check-0xd7-driver_unmapping_invalid_view"></a>バグチェック 0xD7: \_ \_ 無効なビューのマップ解除 \_
 
 
-ドライバー\_マッピング解除\_無効\_ビューのバグチェックの値が0x000000D7 になっています。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
+無効なビューのマップを解除すると、 \_ \_ \_ バグチェックの値が0x000000D7 になります。 これは、ドライバーが、マップされていないアドレスのマッピングを解除しようとしていることを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_unmapping_invalid_view-parameters"></a>無効な\_ビューパラメーター\_マップ解除\_
+## <a name="driver_unmapping_invalid_view-parameters"></a>\_ \_ 無効な \_ ビューパラメーターのマッピングを解除したドライバー
 
 
 <table>
@@ -69,7 +69,7 @@ ms.locfileid: "72041336"
 <a name="remarks"></a>注釈
 -------
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 [ [**Kb (スタックバックトレースの表示)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-) ] コマンドを使用してスタックトレースを取得します。エラーの原因となったドライバーは、スタックトレースから特定できます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。 [ [**Kb (スタックバックトレースの表示)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) ] コマンドを使用してスタックトレースを取得します。エラーの原因となったドライバーは、スタックトレースから特定できます。
 
  
 

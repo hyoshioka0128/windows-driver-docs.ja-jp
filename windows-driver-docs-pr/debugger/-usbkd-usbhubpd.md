@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhubpd
-description: Usbkd.usbhubpd コマンドでは、USB ポートに関する情報が表示されます。
+title: usbkd. usbbpd
+description: Usbkd. usbbpbpd コマンドを実行すると、USB ポートに関する情報が表示されます。
 ms.assetid: 41D5E65D-76C2-45E0-9AC7-C2B50D806935
 keywords:
-- デバッグ usbkd.usbhubpd Windows
+- usbkd. usbbpbpd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: cdae55164518d2eebca7536d038f55a9d32fc61d
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 5f99c9bfe75c260e269f4cac5a5e9be43114d74b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340608"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533991"
 ---
 # <a name="usbkdusbhubpd"></a>!usbkd.usbhubpd
 
 
-**! Usbkd.usbhubpd**コマンドは、USB ポートに関する情報を表示します。
+**! Usbkd. usbbpbpd**コマンドを実行すると、USB ポートに関する情報が表示されます。
 
 ```dbgcmd
 !usbkd.usbhubpd StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**usbhub!\_ハブ\_ポート\_データ**構造体。 これらの構造体のアドレスを取得する[ **! usbhubext**](-usbkd-usbhubext.md)します。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+Usbhub のアドレス** \_ハブ \_ ポートの \_ データ**構造。 これらの構造体のアドレスを取得するには、 [**! usbhubext**](-usbkd-usbhubext.md)を使用します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-以下のアドレスを検索する 1 つの方法を示します、 **usbhub!\_ハブ\_ポート\_データ**します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+Usbhub のアドレスを検索する方法の1つを次に示し**ます。 \_ハブ \_ ポート \_ データ**。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -52,7 +52,7 @@ Usbkd.dll
         ...
 ```
 
-上記の出力で推奨されるコマンドを確認できます **! devstack ffffe00002320050**します。 次のコマンドを入力します。
+上記の出力には、推奨されるコマンドである**devstack ffffe00002320050**が表示されます。 次のコマンドを入力します。
 
 ```dbgcmd
 0: kd> !kdexts.devstack ffffe00002320050
@@ -63,9 +63,9 @@ Usbkd.dll
 ...
 ```
 
-上記の出力で確認できます、ハブの FDO のデバイスの拡張機能のアドレスが`ffffe000023201a0`します。
+前の出力では、ハブの FDO のデバイス拡張機能のアドレスがであることがわかり `ffffe000023201a0` ます。
 
-デバイスの拡張機能のアドレスを渡す、 [ **! usbhubext** ](-usbkd-usbhubext.md)コマンド。
+デバイス拡張機能のアドレスを[**! usbhubext**](-usbkd-usbhubext.md)コマンドに渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubext ffffe000023201a0
@@ -85,7 +85,7 @@ PortData 1: !port2_info ffffe000021bf000 Port State = PS_WAIT_CONNECT PortChange
 ....
 ```
 
-上記の出力で`ffffe000021bf000`のアドレスを **\_ハブ\_ポート\_データ**構造体。 このアドレスを渡す **! usbhubpd**します。
+前の出力で、 `ffffe000021bf000` は** \_ ハブ \_ ポート \_ データ**構造のアドレスです。 このアドレスを **! usbhubpd**に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhubpd ffffe000021bf000
@@ -118,12 +118,12 @@ PortChangelist: !usblist ffffe000021bf1c8, CL [Empty]
 ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

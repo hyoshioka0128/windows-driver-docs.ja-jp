@@ -1,25 +1,22 @@
 ---
 title: V4 プリンター ドライバー セキュリティ考慮事項
-description: 特権の昇格、なりすましのデバイスや中間者攻撃など、一般的な脅威だけでなく v4 プリンター ドライバーは Internet Explorer 9 などの権限の低いアプリケーションと互換性があるも必要です。
+description: 権限の昇格、なりすましデバイス、注入攻撃などの通常の脅威に加えて、v4 プリンタードライバーも、低い権限のアプリケーションと互換性がある必要があります。
 ms.assetid: 8A1508C1-4856-4E3C-8378-AC5FDD55D118
-ms.date: 04/20/2017
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cf2299bbcf43dd90a02a75ce4ab64059aa280b9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 278aeabac863c9a81a0c4c98188299d0607c348b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324813"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534937"
 ---
 # <a name="v4-printer-driver-security-considerations"></a>V4 プリンター ドライバー セキュリティ考慮事項
 
+権限の昇格、なりすましデバイス、注入攻撃などの通常の脅威に加えて、v4 プリンタードライバーも、低い権限のアプリケーション (Internet Explorer 9 など) と互換性がある必要があります。
 
-特権の昇格、なりすましのデバイスや中間者攻撃など、一般的な脅威だけでなく v4 プリンター ドライバーは Internet Explorer 9 などの権限の低いアプリケーションと互換性があるも必要です。
-
-XPS 表示フィルターと JavaScript ファイルする必要がありますすべてに対して強固で信頼されていないデータのすべてのフォーム アプリケーション、ユーザー、またはからのデータからコンピューターの境界を越えてします。 形式が正しくない PrintTickets、XPS ドキュメント、プロパティ バッグ、およびでも BidiResponses 必要がありますを検証し、慎重に解析し、実行可能コードの格納に使用することはありません。 いるパートナー大雑把なファイルの広範なテストを使用してセキュリティの整合性を損なうことがなくグレースフル障害をことを確認することをお勧めします。
+XPS レンダリングフィルターと JavaScript ファイルはすべて、アプリケーション、ユーザー、またはコンピューターの境界を越えたデータから、信頼されていないデータのすべての形式に対してセキュリティで保護する必要があります。 形式が正しくない PrintTickets、XPS ドキュメント、プロパティバッグ、および BidiResponses は、慎重に検証して解析する必要があり、実行可能コードの保存には使用しないでください。 パートナーは、広範な fuzzed ファイルテストを使用して、セキュリティの整合性を損なうことなく、正常な障害を確実に実現することをお勧めします。
 
 ## <a name="related-topics"></a>関連トピック
-[V4 プリンター ドライバーの開発に関するベスト プラクティス](v4-printer-driver-development-best-practices.md)  
 
-
-
+[V4 プリンター ドライバー開発ベスト プラクティス](v4-printer-driver-development-best-practices.md)  

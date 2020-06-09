@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 978fc7551358d802cad1c75e22a15e5ef2b469ba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6b1839a397dba8aea27c3e7cc8cb0c8dd08c6059
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837643"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534129"
 ---
-# <a name="usb3kdxhci_capability"></a>! usb3kd. xhci\_機能
+# <a name="usb3kdxhci_capability"></a>! usb3kd. xhci \_ 機能
 
 
-[ **! Usb3kd. xhci\_機能**](-usb3kd-device-info.md)拡張により、USB 3.0 ホストコントローラーの機能が表示されます。
+[**! Usb3kd xhci \_ 機能**](-usb3kd-device-info.md)拡張機能には、USB 3.0 ホストコントローラーの機能が表示されます。
 
 ```dbgcmd
 !usb3kd.xhci_capability DeviceExtension
@@ -42,12 +42,12 @@ Usb3kd
 <a name="remarks"></a>注釈
 -------
 
-[ **! Xhci\_機能**](-usb3kd-device-info.md)コマンドの出力は、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
+出力[**! xhci \_ 機能**](-usb3kd-device-info.md)コマンドは、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Usb ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。
 
 <a name="examples"></a>例
 --------
 
-デバイス拡張機能のアドレスを取得するには、 [ **! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)コマンドの出力を確認します。 次の例では、デバイス拡張機能のアドレスは0xfffffa800536e2d0 です。
+デバイス拡張機能のアドレスを取得するには、 [**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)コマンドの出力を確認します。 次の例では、デバイス拡張機能のアドレスは0xfffffa800536e2d0 です。
 
 ```dbgcmd
 3: kd> !xhci_dumpall
@@ -64,7 +64,7 @@ Usb3kd
     ...
 ```
 
-これで、デバイス拡張機能のアドレスを **! xhci\_機能**コマンドに渡すことができます。
+これで、デバイス拡張機能のアドレスを **! xhci \_ 機能**コマンドに渡すことができます。
 
 ```dbgcmd
 3: kd> !xhci_capability 0xfffffa800536e2d0
@@ -117,9 +117,9 @@ Usb3kd
 
 [USB 3.0 拡張機能](usb-3-extensions.md)
 
-[ **! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサルシリアルバス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -3,15 +3,15 @@ title: EngExtCpp 拡張機能の作成
 description: EngExtCpp 拡張機能の作成
 ms.assetid: ac8684f9-26a3-415f-9d96-938ebda29a27
 keywords:
-- EngExtCpp 拡張機能の記述
+- EngExtCpp 拡張機能、書き込み
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 727630953941faf3a5695cfb3b469ac5c40f03b1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e78b99c8deb3e5960f65cb2a2f66e13c3d43e47e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67369388"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534255"
 ---
 # <a name="writing-engextcpp-extensions"></a>EngExtCpp 拡張機能の作成
 
@@ -19,15 +19,15 @@ ms.locfileid: "67369388"
 ## <span id="ddk_writing_dbgeng_extension_code_dbx"></span><span id="DDK_WRITING_DBGENG_EXTENSION_CODE_DBX"></span>
 
 
-EngExtCpp の拡張機能ライブラリには、標準の C++ コードを含めることができます。 Engextcpp.h と dbgeng.h ヘッダー ファイルの C 関数 wdbgexts.h ヘッダー ファイルに表示されるだけでなくに表示される C++ インターフェイス型を含めることもできます。 Dbgeng.h と wdbgexts.h の両方 engextcpp.h から含まれます。
+EngExtCpp 拡張ライブラリには、任意の標準 C++ コードを含めることができます。 また、engextcpp ヘッダーファイルと dbgeng .h ヘッダーファイルに表示される C++ インターフェイスや、wdbgexts ヘッダーファイルに表示される C 関数を含めることもできます。 Engextcpp には、dbgeng. h と wdbgexts の両方が含まれています。
 
-拡張機能コマンドで使用できる dbgeng.h でインターフェイスの一覧については、次を参照してください。[デバッガー エンジンのリファレンス](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-engine-reference)します。
+拡張コマンドで使用できる dbgeng. h のインターフェイスの完全な一覧については、「[デバッガーエンジンリファレンス](debugger-engine-reference.md)」を参照してください。
 
-拡張機能コマンドで使用できる wdbgexts.h 内の関数の一覧については、次を参照してください。 [WdbgExts 関数](https://docs.microsoft.com/windows-hardware/drivers/debugger/wdbgexts-functions)します。 32 ビット版と 64 ビット バージョンにこれらの関数の数が表示されます。 通常、「64」32 ビット バージョンで 64 ビット版の終了があるない数値終了--など**ReadIoSpace64**と**ReadIoSpace**します。 DbgEng 拡張機能から wdbgexts.h 関数を呼び出すときに、常に関数名の拡張子が「64」を使用する必要があります。 これは、ため、[デバッガー エンジン](introduction.md#debugger-engine)64 ビットのポインターは、ターゲット プラットフォームに関係なく内部的には、常に使用します。 Wdbgexts.h を含む、engextcpp.h は API の 64 ビット バージョンを選択します。 **ExtensionApis** WDbgExts API によって使用されるグローバル変数が自動的に EngExtCpp メソッドへのエントリに初期化され、終了時に消去します。
+拡張コマンドで使用できる wdbgexts .h の関数の完全な一覧については、「 [Wdbgexts 関数](wdbgexts-functions.md)」を参照してください。 これらの関数の多くは、32ビットバージョンと64ビットバージョンで表示されます。 通常、64ビットバージョンは "64" で終わり、32ビットバージョンには数値の終わりがありません (たとえば、 **ReadIoSpace64**と**ReadIoSpace**)。 DbgEng 拡張機能から wdbgexts. h 関数を呼び出すときは、必ず "64" で終わる関数名を使用する必要があります。 これは、ターゲットプラットフォームに関係なく、[デバッガーエンジン](introduction.md#debugger-engine)が常に64ビットポインターを内部的に使用するためです。 Wdbgexts. h を含めると、engextcpp は64ビットバージョンの API を選択します。 WDbgExts API によって使用される**extensionapis**グローバル変数は、EngExtCpp メソッドにエントリで自動的に初期化され、終了時に消去されます。
 
-リモートの DbgEng インターフェイスを持つ EngExtCpp 拡張機能を使用する場合、WDbgExts インターフェイスが使用できなくなります、 **ExtensionApis**構造体をゼロに設定することができます。 EngExtCpp 拡張機能のような環境で機能が予想される場合は、WDbgExts API を使用して、避ける必要があります。
+リモートの DbgEng インターフェイスで EngExtCpp 拡張機能を使用すると、WDbgExts インターフェイスを使用できなくなり、 **Extensionapis**構造体をゼロにすることができます。 EngExtCpp 拡張機能がこのような環境で機能することが予想される場合は、WDbgExts API の使用を避ける必要があります。
 
-**注**  デバッガー拡張機能から、DbgHelp または ImageHlp ルーチンを呼び出そうとする必要があります。 これらのルーチンを呼び出すことはサポートされていませんし、さまざまな問題が発生する可能性があります。
+**メモ**   どのデバッガー拡張機能からでも、DbgHelp または Imagehlp.dll ルーチンを呼び出すことはできません。 これらのルーチンの呼び出しはサポートされていないため、さまざまな問題が発生する可能性があります。
 
  
 

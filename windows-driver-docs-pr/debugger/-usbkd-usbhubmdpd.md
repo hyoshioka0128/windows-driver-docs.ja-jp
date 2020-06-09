@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhubmdpd
-description: Usbkd.usbhubmdpd コマンドでは、0 xfe のバグ チェックの結果として生成されたクラッシュ ダンプに存在する場合、usbhub _HUB_PORT_DATA 構造が表示されます。
+title: usbhubmdpd
+description: Usbhubmdpd コマンドは、バグチェック0xFE の結果として生成されたクラッシュダンプに存在する場合、usbhub _HUB_PORT_DATA 構造体を表示します。
 ms.assetid: 128D45A2-A891-42BC-9E3E-FCDC5B4504A2
 keywords:
-- デバッグ usbkd.usbhubmdpd Windows
+- usbhubmdpd Windows のデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +12,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a849afa27ddd2e644f3d0fbe62f1ece3594f563
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 648d96225bf334b9a709a8e45083c00dd63c539d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340616"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534693"
 ---
 # <a name="usbkdusbhubmdpd"></a>!usbkd.usbhubmdpd
 
 
-**! Usbkd.usbhubmdpd**コマンドが表示されます、 **usbhub!\_ハブ\_ポート\_データ**の結果として生成されたクラッシュ ダンプに存在する場合に構造体[**バグ チェック 0 xfe**](bug-check-0xfe--bugcode-usb-driver.md)します。
+**Usbhubmdpd**コマンドを実行すると、 **usbhub \_ が表示されます。\_ \_ ** [**バグチェック 0xfe**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプに存在するハブポートデータ構造。
 
 ```dbgcmd
 !usbkd.usbhubmdpd [PortNum]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______PortNum______"></span><span id="_______portnum______"></span><span id="_______PORTNUM______"></span> *PortNum*   
-USB ポートの番号。 (いずれかが存在する) 場合に、このコマンドが、構造体を表示しますポート番号を指定する場合、指定したポートを表します。 このコマンドを (1 つが存在する) 場合、構造を表示するポート番号を指定しない場合[**バグ チェック 0 xfe** ](bug-check-0xfe--bugcode-usb-driver.md)が開始されました。
+<span id="_______PortNum______"></span><span id="_______portnum______"></span><span id="_______PORTNUM______"></span>*Portnum*   
+USB ポート番号。 ポート番号を指定した場合、このコマンドは、指定されたポートを表す構造体 (存在する場合) を表示します。 ポート番号を指定しない場合、このコマンドは、[**バグチェック 0xfe**](bug-check-0xfe--bugcode-usb-driver.md)が開始された構造 (存在する場合) を表示します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-結果として生成されたクラッシュ ダンプ ファイルをデバッグしている場合にのみ、このコマンドを使用して[ **0 xfe のバグ チェック。BUGCODE\_USB\_ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)します。
+このコマンドは、[**バグチェック 0xfe: バグコード \_ USB \_ ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプファイルをデバッグする場合にのみ使用します。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

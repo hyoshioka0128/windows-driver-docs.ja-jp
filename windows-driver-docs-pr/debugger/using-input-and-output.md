@@ -8,12 +8,12 @@ keywords:
 - 出力
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b32d6288bf4dbaca93fb9257a71484269e67849e
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 37e695f7f9c6bd47f27857bb4f62cd22f98926c5
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79242739"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534755"
 ---
 # <a name="using-input-and-output"></a>入力と出力の使用
 
@@ -37,15 +37,15 @@ ms.locfileid: "79242739"
 
 次に、エンジンは[**IDebugInputCallbacks:: EndInput**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebuginputcallbacks-endinput)を呼び出して、入力の待機を停止したことを示します。
 
-最後に、エンジンは、 [**IDebugOutputCallbacks::** ](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output)\_\_output を使用して、(入力を提供するために使用されたものを除く) すべてのクライアントの登録済み**IDebugOutputCallbacks**オブジェクトにこの入力をエコーします。
+最後に、エンジンは、 [**IDebugOutputCallbacks:: output**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugoutputcallbacks-output)と、デバッグ出力プロンプトに設定されたビットマスクを使用して、この入力をすべてのクライアントの登録済み**IDebugOutputCallbacks**オブジェクトにエコー \_ し \_ ます。
 
-### <a name="span-idoutputspanspan-idoutputspanoutput"></a><span id="output"></span><span id="OUTPUT"></span>Output
+### <a name="span-idoutputspanspan-idoutputspanoutput"></a><span id="output"></span><span id="OUTPUT"></span>出力
 
 出力は、[*出力*](https://msdn.microsoft.com/library/windows/hardware/ff553183)や[*OutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-outputvalist)など、いくつかのクライアントメソッドを使用してエンジンに送信できます。 出力を受け取ると、エンジンはそれをいくつかのクライアントに送信します。
 
-クライアントは、*出力マスク*を使用して、目的の出力の種類を示します。 エンジンによって出力が生成されるたびに、出力の種類を指定するマスクが付随します。 出力の種類がクライアントの出力マスクと一致する場合、クライアントは出力を受け取ります。 出力マスクは、 [**Setoutputmask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputmask)を呼び出し、 [**getoutputmask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputmask)を使用してクエリを行うことによって設定できます。 出力マスクの値の詳細については、「 [**DEBUG\_output\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-output-xxx) 」を参照してください。
+クライアントは、*出力マスク*を使用して、目的の出力の種類を示します。 エンジンによって出力が生成されるたびに、出力の種類を指定するマスクが付随します。 出力の種類がクライアントの出力マスクと一致する場合、クライアントは出力を受け取ります。 出力マスクは、 [**Setoutputmask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-setoutputmask)を呼び出し、 [**getoutputmask**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-getoutputmask)を使用してクエリを行うことによって設定できます。 出力マスクの値の詳細については、「[**デバッグ \_ 出力 \_ XXX**](debug-output-xxx.md) 」を参照してください。
 
-エンジンが出力を送信するクライアントの一覧は、*出力コントロール*によって制御されます。 通常、出力コントロールは、すべてのクライアントに出力を送信するように設定されています。ただし、 [*ControlledOutput*](https://msdn.microsoft.com/library/windows/hardware/ff539248)と[*ControlledOutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)を使用して一時的に変更することができます。 出力制御値の詳細については、「 [**DEBUG\_OUTCTL\_XXX**](https://docs.microsoft.com/windows-hardware/drivers/debugger/debug-outctl-xxx) 」を参照してください。
+エンジンが出力を送信するクライアントの一覧は、*出力コントロール*によって制御されます。 通常、出力コントロールは、すべてのクライアントに出力を送信するように設定されています。ただし、 [*ControlControlledOutputVaList output*](https://msdn.microsoft.com/library/windows/hardware/ff539248)と[*ControlledOutputVaList*](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)を使用して一時的に変更することができます。 出力制御値の詳細については、「 [**DEBUG \_ outctl \_ XXX**](debug-outctl-xxx.md) 」を参照してください。
 
 エンジンによって出力がバッファリングされる場合があります。 複数の出力がエンジンに渡されると、それらを収集して、1つの大きな部分でクライアントに送信する場合があります。 このバッファーをフラッシュするには、 [**Flushcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugclient5-flushcallbacks)を使用します。
 

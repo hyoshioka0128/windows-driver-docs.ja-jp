@@ -1,65 +1,38 @@
 ---
-title: 一覧
-description: 一覧
+title: リスト
+description: リスト
 ms.assetid: 4cf1c1ea-f890-4f9d-96ea-b79790f6bc60
 keywords:
-- リスト構造
-ms.date: 04/20/2017
+- リストコンストラクト
+ms.date: 06/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9504c0a185eec59f7eab3593153eec0d00b67a26
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0131160bf7e15d6dfece9336d374f570ca4b9e66
+ms.sourcegitcommit: d71024c0c782b5c013192d960700802eafc120f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388084"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507101"
 ---
-# <a name="list"></a>一覧
+# <a name="list"></a>リスト
 
+Web Services for Devices (WSD) `List` コンストラクトは、XPath フィルタークエリによって指定されたコンマ区切りの値のリストを構成する文字列型です。 `List`コンストラクトは、WsdBidi で定義されています。
 
-Web Services for Devices (WSD)`List`コンストラクトが XPath フィルターのクエリで指定された値のコンマ区切りの一覧を作成する文字列型。 `List` WsdBidi.xsd でコンス トラクターが定義されています。
+| 属性 | 説明 |
+| --- | --- |
+| **drvPrinterEvent** | Optionalポートモニターがドライバーに通知を送信するかどうかを示すブール値です。 **TRUE**の値は、ポートモニターがドライバーに通知を送信することを示します。**FALSE**は、ポートモニターがドライバーに通知を送信しないことを示します。 |
+| **filter** | クエリで指定された XML ドキュメントに対して WSD モニターが適用する XPath クエリ。 このトピックの後半の説明を参照してください。 |
+| **name** | スキーマ値の名前です。 |
+| **query** | WSD モニターが実行するクエリの種類。 |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>属性</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>drvPrinterEvent</strong></p></td>
-<td><p>(省略可能)ポート モニターが、ドライバーに通知を送信するかどうかを示すブール値。 A <strong>TRUE</strong>値では、ドライバーをポート モニターが通知を送信することを示します<strong>FALSE</strong>ポート モニター ドライバーに、通知が送信しないことを示します。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>フィルター (filter)</strong></p></td>
-<td><p>WSD モニターは、クエリで指定された XML ドキュメントに適用される XPath クエリ。 このトピックで後述を参照してください。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>name</strong></p></td>
-<td><p>スキーマの値の名前。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>query</strong></p></td>
-<td><p>WSD モニターを実行するクエリの型。</p></td>
-</tr>
-</tbody>
-</table>
+Microsoft XML (MSXML) 2.6 以降の Windows に実装されている XPath 言語では、XML ファイル内の要素を簡単に指定できます。 詳細については、「 [XPath リファレンス](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))」を参照してください。
 
- 
+`List`コンストラクトは、WsdBidi で定義されています。
 
-Windows の先頭で Microsoft XML (MSXML) 2.6 で実装された、XPath 言語は、XML ファイルに要素を指定する便利な方法を提供します。 Windows SDK に、XML 開発者のガイドを参照してくださいと[XPath リファレンス](https://go.microsoft.com/fwlink/p/?linkid=33165)詳細についてはします。
+## <a name="code-example"></a>コード例
 
-`List` WsdBidi.xsd でコンス トラクターが定義されています。
+次のコード例では、コンマ区切りのリストが構成されています。この一覧には、"1, 2, 4" のように、N-up 印刷用のシートごとに許容されるページイメージの数が含まれています。
 
-### <a name="code-example"></a>コード例
-
-次のコード例では、1 枚、たとえば「1,2,4」n-up 印刷用ページのイメージの許容数を含むコンマ区切りのリストを構成します。
-
-```cpp
+```xml
 <Property name='Layout'>
   <Property name='NumberUp'>
     <Property name='PagesPerSheet'>
@@ -71,16 +44,8 @@ Windows の先頭で Microsoft XML (MSXML) 2.6 で実装された、XPath 言語
 </Property>
 ```
 
-前の例は、次のクエリ結果します。
+前の例では、次のクエリが実行されます。
 
-```cpp
+```console
 \Printer.Layout.NumberUp.PagesPerSheet:Supported
 ```
-
- 
-
- 
-
-
-
-

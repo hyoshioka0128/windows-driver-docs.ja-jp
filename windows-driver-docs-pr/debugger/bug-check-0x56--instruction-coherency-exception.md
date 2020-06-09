@@ -13,17 +13,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bc4b37f80e12f2d6d155f32379438d618ea8679
-ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
+ms.openlocfilehash: 68afcb41a2d2555a8ba7b5962474e9da21c9c99b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74411171"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534811"
 ---
-# <a name="bug-check-0x56-instruction_coherency_exception"></a>バグチェック 0x56: 命令\_一貫性\_例外
+# <a name="bug-check-0x56-instruction_coherency_exception"></a>バグチェック 0x56: 命令の \_ 一貫性の \_ 例外
 
 
-この命令\_一貫性\_例外のバグチェックには、0x00000056 の値が含まれています。
+命令 \_ の一貫性に関する \_ 例外のバグチェックには、0x00000056 の値が含まれています。
 
 このバグチェックは非常に頻繁に行われません。
 
@@ -31,8 +31,8 @@ ms.locfileid: "74411171"
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="resolution"></a>解決方法 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+## <a name="resolution"></a>解像度 
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 

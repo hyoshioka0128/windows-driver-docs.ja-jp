@@ -1,56 +1,56 @@
 ---
 title: Visual Studio での 1394 ケーブル経由でのカーネルモード デバッグの設定
-description: Microsoft Visual Studio を使用して、設定し、カーネル モードの 1394 (Firewire) ケーブル経由でのデバッグを実行することができます。
+description: Microsoft Visual Studio を使用すると、1394 (Firewire) ケーブルでカーネルモードのデバッグを設定して実行できます。
 ms.assetid: 07784500-83F1-4927-998F-7CEEEADAA2B0
 ms.date: 04/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 65f9dfb5dff6b13fef47ba4112624d6652a4574a
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 0fc1d0e17e9834db3a47bd1ff64fc57b664dc60a
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366390"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534771"
 ---
 # <a name="setting-up-kernel-mode-debugging-over-a-1394-cable-in-visual-studio"></a>Visual Studio での 1394 ケーブル経由でのカーネルモード デバッグの設定
 
 
 > [!IMPORTANT]
-> この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
+> この機能は、Windows 10 バージョン1507以降のバージョンの WDK では使用できません。
 >
 
-Microsoft Visual Studio を使用して、設定し、カーネル モードの 1394 (Firewire) ケーブル経由でのデバッグを実行することができます。 カーネル モードのデバッグを Visual Studio を使用するには、Windows Driver Kit (WDK) の Visual Studio と統合が必要です。 統合環境をインストールする方法については、次を参照してください。 [Windows ドライバー開発](https://go.microsoft.com/fwlink/p?linkid=301383)します。
+Microsoft Visual Studio を使用すると、1394 (Firewire) ケーブルでカーネルモードのデバッグを設定して実行できます。 Visual Studio を使用してカーネルモードのデバッグを行うには、Visual Studio に Windows Driver Kit (WDK) が統合されている必要があります。 統合環境をインストールする方法の詳細については、「 [Visual Studio を使用したデバッグ](debugging-using-visual-studio.md)」を参照してください。
 
-1394 デバッグを設定する Visual Studio を使用する代わりに、セットアップを手動で行うことができます。 詳細については、次を参照してください。[カーネル モード デバッグのセットアップを手動での 1394 ケーブル](setting-up-a-1394-cable-connection.md)します。
+Visual Studio を使用して1394デバッグを設定する代わりに、手動でセットアップを行うこともできます。 詳細については、「 [1394 ケーブル経由でカーネルモードのデバッグを手動で設定する](setting-up-a-1394-cable-connection.md)」を参照してください。
 
-デバッガーを実行しているコンピューターと呼ばれる、*ホスト コンピューター*とは、デバッグ中のコンピューターと呼びます、*対象のコンピュータ*します。 ホストおよびターゲット コンピューターが、それぞれあります 1394 アダプターであります。
+デバッガーを実行するコンピューターは*ホストコンピューター*と呼ばれ、デバッグ対象のコンピューターは*ターゲットコンピューター*と呼ばれます。 ホストとターゲットのコンピューターには、それぞれ1394アダプターが必要です。
 
-## <a name="span-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanspan-idconfiguringthehostandtargetcomputersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>ホストおよびターゲット コンピュータの構成
+## <a name="span-idconfiguring_the_host_and_target_computersspanspan-idconfiguring_the_host_and_target_computersspanspan-idconfiguring_the_host_and_target_computersspanconfiguring-the-host-and-target-computers"></a><span id="Configuring_the_host_and_target_computers"></span><span id="configuring_the_host_and_target_computers"></span><span id="CONFIGURING_THE_HOST_AND_TARGET_COMPUTERS"></span>ホストとターゲットコンピューターの構成
 
 
-1.  ホストおよびターゲット コンピューターでデバッグするため、選択した 1394 コント ローラーには、1394 ケーブルを接続します。
-2.  」の説明に従って、ホストとターゲット コンピューターの構成を開始[ドライバーの展開のためにコンピューターをプロビジョニングし、テスト (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
-3.  Visual Studio で、ホスト コンピューターで、コンピューターの構成 ダイアログに表示される場合が選択**コンピューターをプロビジョニングし、デバッガーの設定を選択**します。
-4.  **接続の種類**、選択**Firewire**します。
+1.  ホストとターゲットコンピュータでデバッグ用に選択した1394コントローラに1394ケーブルを接続します。
+2.  「[ドライバーの展開およびテスト用にコンピューターをプロビジョニングする (WDK 8.1)](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」の説明に従って、ホストとターゲットコンピューターの構成を開始します。
+3.  ホストコンピューターの Visual Studio で、[コンピューターの構成] ダイアログボックスが表示されたら、[コンピューターのプロビジョニング] を選択し、[**デバッガーの設定**] を選択します。
+4.  [**接続の種類**] で、[ **Firewire**] を選択します。
 
-    ![スクリーン ショットのデバッガーの例を次のフィールドの値の設定を示す: 接続の種類、ポート番号、キー、ホストの ip アドレス、およびバス パラメーター](images/setup1394vs.png)
+    ![[接続の種類]、[ポート番号]、[キー]、[ホスト ip]、および [バスパラメーター] の各フィールドの値を含むデバッガー設定の例を示すスクリーンショット](images/setup1394vs.png)
 
-    **チャネル**、1 ~ 62 好きな 10 進数を入力します。
+    [**チャンネル**] には、1 ~ 62 の10進数を入力します。
 
-    **注**  最初のデバッグを設定するも 0 に、チャネルが設定しないでください。 既定のチャネルの値が 0 の場合、ソフトウェアがあると仮定するための変更はなく、設定を更新できません。 0 のチャネルを使用する必要がありますまず別のチャネル (1 ~ 62) を使用してし、し、チャネル 0 に切り替えます。
+    **メモ**   最初にデバッグを設定するときは、チャネルを0に設定しないでください。 既定のチャネル値は0であるため、ソフトウェアでは変更がないと見なされ、設定は更新されません。 チャネル0を使用する必要がある場合は、まず代替チャネル (1 ~ 62) を使用し、次にチャネル0に切り替えます。
 
-    1 つ以上ある場合、対象のコンピューターに 1394 コント ローラーの入力を**Bus パラメーター**の値*b*.*d*.*f*ここで、 *b*、 *d*、および*f*バス、デバイス、および関数の番号でデバッグするために使用する、1394 コント ローラーには、対象のコンピュータ。 バス、デバイス、および関数の番号は 10 進数形式である必要があります (例。4.4.0).
+    ターゲットコンピューターに 1 1394 個を超えるコントローラーがある場合は、**バスパラメーター**値*b*を入力します。*d*。*f*( *b*、 *d*、 *f* ) は、ターゲットコンピューターでのデバッグに使用する1394コントローラーのバス、デバイス、および関数の番号です。 バス、デバイス、および関数の数値は10進数形式にする必要があります (例: 4.4.0)。
 
-5.  構成プロセスには数分かかりますが自動的に、コンピューターを再起動ターゲットまたは 2 回。 プロセスが完了したら、クリックして**完了**します。
+5.  構成プロセスには数分かかり、対象のコンピューターが1回または2回自動的に再起動される場合があります。 プロセスが完了したら、[**完了**] をクリックします。
 
-## <a name="span-idverifyingdbgsettingsonthetargetcomputerspanspan-idverifyingdbgsettingsonthetargetcomputerspanspan-idverifyingdbgsettingsonthetargetcomputerspanverifying-dbgsettings-on-the-target-computer"></a><span id="Verifying_dbgsettings_on_the_Target_Computer"></span><span id="verifying_dbgsettings_on_the_target_computer"></span><span id="VERIFYING_DBGSETTINGS_ON_THE_TARGET_COMPUTER"></span>ターゲット コンピューター上の dbgsettings を確認しています
+## <a name="span-idverifying_dbgsettings_on_the_target_computerspanspan-idverifying_dbgsettings_on_the_target_computerspanspan-idverifying_dbgsettings_on_the_target_computerspanverifying-dbgsettings-on-the-target-computer"></a><span id="Verifying_dbgsettings_on_the_Target_Computer"></span><span id="verifying_dbgsettings_on_the_target_computer"></span><span id="VERIFYING_DBGSETTINGS_ON_THE_TARGET_COMPUTER"></span>ターゲットコンピューターの dbgsettings を確認しています
 
 > [!IMPORTANT]
-> BCDEdit を使用してブート情報を変更する前に、テスト用のコンピューターの BitLocker とセキュア ブートなどの Windows セキュリティ機能を一時的に中断する必要があります。
-> テストが完了すると、これらのセキュリティ機能を再度有効にし、適切なセキュリティ機能を無効にするテスト PC を管理します。
+> BCDEdit を使用してブート情報を変更する前に、テスト PC で BitLocker やセキュアブートなどの Windows のセキュリティ機能を一時的に停止することが必要になる場合があります。
+> セキュリティ機能が無効になっている場合は、テストが完了し、テスト PC を適切に管理するときに、これらのセキュリティ機能を再び有効にします。
 
-対象のコンピューターに管理者としてコマンド プロンプト ウィンドウを開きし、このコマンドを入力します。
+ターゲットコンピューターで、管理者としてコマンドプロンプトウィンドウを開き、次のコマンドを入力します。
 
-**bcdedit /dbgsettings**
+**bcdedit/dbgsettings**
 
 **bcdedit/enum**
 
@@ -65,53 +65,53 @@ busparams               4.0.0
 ...
 ```
 
-いることを確認*debugtype* 1394 および*チャネル*はホスト コンピューターで Visual Studio で指定したチャネルの数です。 値は無視してかまいません*debugport*と*baudrate*; 超える 1394 デバッグには適用されません。
+*Debugtype*が1394で、 *channel*がホストコンピューターの Visual Studio で指定したチャネル番号であることを確認します。 *Debugport*と*ボーレート*の値は無視できます。1394でのデバッグには適用されません。
 
-入力した場合**Bus パラメーター** Visual Studio であることを確認*busparams*指定したバス パラメーターと一致します。
+Visual Studio で**バスパラメーター**を入力した場合は、指定したバスパラメーターと*busparams*が一致していることを確認します。
 
-用に入力した値が表示されない場合**Bus パラメーター**、このコマンドを入力します。
+**バスパラメーター**に入力した値が表示されない場合は、次のコマンドを入力します。
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
+**bcdedit/set "{dbgsettings}" busparams** <em>b</em>**。**<em>d</em>**。**<em>f</em>
 
-場所*b*、 *d*、および*f*は、バス、デバイス、およびデバッグに使用する、選択したターゲット コンピューターに 1394 コント ローラーの関数の数。
+ここで、 *b*、 *d*、および*f*は、デバッグに使用するように選択したターゲットコンピューター上の1394コントローラーのバス、デバイス、および関数番号です。
 
-以下に例を示します。
+次に例を示します。
 
-**bcdedit /set "{dbgsettings}" busparams 4.4.0**
+**bcdedit/set "{dbgsettings}" busparams 4.4.0**
 
-## <a name="span-idstartingadebuggingsessionforthefirsttimespanspan-idstartingadebuggingsessionforthefirsttimespanspan-idstartingadebuggingsessionforthefirsttimespanstarting-a-debugging-session-for-the-first-time"></a><span id="Starting_a_Debugging_Session_for_the_First_Time"></span><span id="starting_a_debugging_session_for_the_first_time"></span><span id="STARTING_A_DEBUGGING_SESSION_FOR_THE_FIRST_TIME"></span>初めてデバッグ セッションの開始
-
-
-1.  ホスト コンピューターには、管理者として Visual Studio を開きます。
-2.  **ツール**] メニューの [選択**プロセスにアタッチ**します。
-3.  **トランスポート**、選択**Windows カーネル モードのデバッガー**します。
-4.  **修飾子**、以前に構成されているターゲット コンピューターの名前を選択します。
-5.  クリックして**アタッチ**します。
-
-この時点では、1394 デバッグ ドライバーが、ホスト コンピューターにインストールを取得します。 これは、ため、Visual Studio を管理者として実行することが重要です。 1394 デバッグ ドライバーがインストールされた後、後続のデバッグ セッションを管理者として実行する必要はありません。
-
-## <a name="span-idstartingthedebuggingsessionspanspan-idstartingthedebuggingsessionspanstarting-a-debugging-session"></a><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグ セッションの開始
+## <a name="span-idstarting_a_debugging_session_for_the_first_timespanspan-idstarting_a_debugging_session_for_the_first_timespanspan-idstarting_a_debugging_session_for_the_first_timespanstarting-a-debugging-session-for-the-first-time"></a><span id="Starting_a_Debugging_Session_for_the_First_Time"></span><span id="starting_a_debugging_session_for_the_first_time"></span><span id="STARTING_A_DEBUGGING_SESSION_FOR_THE_FIRST_TIME"></span>初めてデバッグセッションを開始する
 
 
-1.  Visual Studio で、ホスト コンピューター上で、**ツール**] メニューの [選択**プロセスにアタッチ**します。
-2.  **トランスポート**、選択**Windows カーネル モードのデバッガー**します。
-3.  **修飾子**、以前に構成されているターゲット コンピューターの名前を選択します。
-4.  クリックして**アタッチ**します。
+1.  ホストコンピューターで、管理者として Visual Studio を開きます。
+2.  [**ツール**] メニューの [**プロセスにアタッチ**] をクリックします。
+3.  [**トランスポート**] で、[ **Windows カーネルモードデバッガー**] を選択します。
+4.  [**修飾子**] で、以前に構成したターゲットコンピューターの名前を選択します。
+5.  **[アタッチ]** をクリックします。
 
-## <a name="span-idtroubleshootingtipsfordebuggingovera1394cablespanspan-idtroubleshootingtipsfordebuggingovera1394cablespantroubleshooting-tips-for-debugging-over-a-1394-cable"></a><span id="troubleshooting_tips_for_debugging_over_a_1394_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_DEBUGGING_OVER_A_1394_CABLE"></span>1394 ケーブル経由でのデバッグのトラブルシューティングのヒント
+この時点で、1394デバッグドライバーがホストコンピューターにインストールされます。 このため、Visual Studio を管理者として実行することが重要です。 1394デバッグドライバーをインストールした後は、以降のデバッグセッションで管理者として実行する必要はありません。
+
+## <a name="span-idstarting_the_debugging_sessionspanspan-idstarting_the_debugging_sessionspanstarting-a-debugging-session"></a><span id="starting_the_debugging_session"></span><span id="STARTING_THE_DEBUGGING_SESSION"></span>デバッグセッションの開始
 
 
-1394 デバッグの問題のほとんどは、ホストまたはターゲットのいずれかのコンピューターで複数の 1394 コント ローラーを使用して、発生します。 ホスト コンピューターに 1394 の複数のコント ローラーを使用することはサポートされていません。 ホスト上で実行され、1394 デバッグ ドライバーは、レジストリに列挙された 1394 最初のコント ローラーとのみ通信できます。 カードを削除するか (デバイス マネージャーを使用) を無効にする場合は、マザーボード、および個別の 1394 カードに組み込まれている 1394 コント ローラーがある場合は、組み込みのコント ローラー。
+1.  ホストコンピューターで、Visual Studio の [**ツール**] メニューの [**プロセスにアタッチ**] をクリックします。
+2.  [**トランスポート**] で、[ **Windows カーネルモードデバッガー**] を選択します。
+3.  [**修飾子**] で、以前に構成したターゲットコンピューターの名前を選択します。
+4.  **[アタッチ]** をクリックします。
 
-これは推奨されませんが、ターゲット コンピューター、複数の 1394 コント ローラーことができます。 マザーボード上のターゲット コンピューターに 1394 コント ローラーした場合、デバッグ可能であれば、そのコント ローラーを使用します。 追加 1394 のカードがある場合は、カードを取り外すをオンボード コント ローラーを使用する必要があります。 別のソリューションでは、オンボードの 1394 コント ローラーで、コンピューターの BIOS 設定を無効にします。
+## <a name="span-idtroubleshooting_tips_for_debugging_over_a_1394_cablespanspan-idtroubleshooting_tips_for_debugging_over_a_1394_cablespantroubleshooting-tips-for-debugging-over-a-1394-cable"></a><span id="troubleshooting_tips_for_debugging_over_a_1394_cable"></span><span id="TROUBLESHOOTING_TIPS_FOR_DEBUGGING_OVER_A_1394_CABLE"></span>1394ケーブルでのデバッグに関するトラブルシューティングのヒント
 
-ターゲット コンピューターで有効になって 1394 コント ローラーが複数ある場合は、デバッガーがデバッグの要求をコント ローラーを認識できるように bus パラメーターを指定する必要があります。 デバイス マネージャーを開き、バスのパラメーターを指定し、デバッグに使用する 1394 コント ローラーを見つけます。 コント ローラーのプロパティ ページを開き、バス番号、デバイスの数、および関数の数をメモしておきます。 管理者特権でコマンド プロンプト ウィンドウで、次のコマンドを入力します。 ここ*b*、 *d*、および*f* bus、デバイス、および関数の数値を 10 進数形式では。
 
-**bcdedit /set "{dbgsettings}" busparams** <em>b</em> **.** <em>d</em> **.** <em>f</em>
+1394デバッグの問題のほとんどは、ホストまたはターゲットコンピューターで複数の1394コントローラーを使用した場合に発生します。 ホストコンピューターでの複数の1394コントローラーの使用はサポートされていません。 ホスト上で実行される1394デバッグドライバーは、レジストリで列挙された最初の1394コントローラーとのみ通信できます。 マザーボードに1394コントローラーを内蔵し、別の1394カードを使用している場合は、カードを取り外すか、組み込みのコントローラーを (デバイスマネージャーを使用して) 無効にします。
+
+ターゲットコンピューターは、複数の1394コントローラーを持つことができますが、これは推奨されません。 ターゲットコンピューターのマザーボードに1394コントローラーが搭載されている場合は、可能であれば、そのコントローラーをデバッグに使用します。 1394カードが追加されている場合は、カードを取り外し、オンボードコントローラーを使用する必要があります。 もう1つの解決策は、コンピューターの BIOS 設定で、オンボード1394コントローラーを無効にすることです。
+
+ターゲットコンピューターで複数の1394コントローラーを有効にする場合は、デバッグのために要求するコントローラーをデバッガーが認識できるように、バスパラメーターを指定する必要があります。 バスパラメーターを指定するにはデバイスマネージャーを開き、デバッグに使用する1394コントローラーを探します。 コントローラーのプロパティページを開き、バス番号、デバイス番号、および関数番号をメモしておきます。 管理者特権でのコマンドプロンプトウィンドウで、次のコマンドを入力します。ここで、 *b*、 *d*、および*f*は、10進形式のバス、デバイス、および関数の数値です。
+
+**bcdedit/set "{dbgsettings}" busparams** <em>b</em>**。**<em>d</em>**。**<em>f</em>
 
 ターゲット コンピューターを再起動します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [Visual Studio でのカーネル モード デバッグの設定](setting-up-kernel-mode-debugging-in-visual-studio.md)

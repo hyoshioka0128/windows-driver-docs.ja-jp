@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b78418ca8d6922d9215aaba567773d0d3a5afb
-ms.sourcegitcommit: 6d7f25f280af5fd4f4d9337d131c2a22288847fc
+ms.openlocfilehash: e30b3877219cbe8137fdc96ca3fb44232e452cc1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72359580"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534611"
 ---
-# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>バグチェック 0x7E: システム\_スレッド\_例外\_\_処理されていません
+# <a name="bug-check-0x7e-system_thread_exception_not_handled"></a>バグチェック 0x7E: システム \_ スレッド \_ 例外が \_ 処理されていません \_
 
 
-システム\_スレッド\_例外\_\_処理されていないバグチェックの値は0x0000007E です。 このバグチェックは、エラーハンドラーでキャッチされなかった例外がシステムスレッドによって生成されたことを示します。
+システム \_ スレッド \_ 例外が \_ ハンドルされていません \_ バグチェックの値は0x0000007e です。 このバグチェックは、エラーハンドラーでキャッチされなかった例外がシステムスレッドによって生成されたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="system_thread_exception_not_handled-parameters"></a>システム\_スレッド\_例外\_処理されたパラメーター\_ありません
+## <a name="system_thread_exception_not_handled-parameters"></a>システム \_ スレッドの \_ 例外が \_ 処理されていない \_ パラメーター
 
 <table>
 <colgroup>
@@ -69,25 +69,25 @@ ms.locfileid: "72359580"
 
 一般的な例外コードは次のとおりです。
 
-- 0x80000002: STATUS\_DATATYPE\_ミスアライメントは、整列されていないデータ参照が検出されたことを示します。
+- 0x80000002: ステータス \_ データ型の \_ 不整合は、整列されていないデータ参照が検出されたことを示します。
 
-- 0x80000003: STATUS\_は、カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントまたはアサートが発生したことを示します。
+- 0x80000003: 状態 \_ ブレークポイントは、カーネルデバッガーがシステムにアタッチされていないときに、ブレークポイントが検出されたことを示します。
 
-- 0xC0000005: 状態\_アクセス\_違反は、メモリアクセス違反が発生したことを示します。
+- 0xC0000005: 状態 \_ アクセス \_ 違反は、メモリアクセス違反が発生したことを示します。
 
 例外コードの完全な一覧については、「 [NTSTATUS 値](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55)」を参照してください。 例外コードは、 [Windows Driver Kit](https://docs.microsoft.com/windows-hardware/drivers/)によって提供されるヘッダーファイルである、 *ntstatus*で定義されています。 (詳細については、「 [Windows Driver Kit のヘッダーファイル](../gettingstarted/header-files-in-the-windows-driver-kit.md)」を参照してください)。 
 
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
 この問題のデバッグを計画している場合は、例外アドレス (パラメーター 2) で、この問題の原因となったドライバーまたは機能を特定する必要があります。
 
 バグチェックメッセージ内にドライバーが名前で表示されている場合は、そのドライバーを無効にするか削除します。 問題が1つのドライバーに絞り込まれている場合は、コードでブレークポイントとシングルステップフォワードを設定してエラーを特定し、クラッシュにつながるイベントについて洞察を得ます。
 
-[ **! Analyze**](-analyze.md)デバッガー拡張機能は、バグチェックに関する情報を表示し、根本原因を特定するのに役立ちます。 
+[**! Analyze**](-analyze.md)デバッガー拡張機能は、バグチェックに関する情報を表示し、根本原因を特定するのに役立ちます。 
 
-追加の分析を行うには、 [ **! スレッド**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-thread)拡張機能と、 [ **dds**、 **dps**、および**dqs** (表示語とシンボル)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dds--dps--dqs--display-words-and-symbols-)コマンドを使用します。 これは、WinDbg が "原因として考えられる可能性があります: ntkrnlmp" の場合に合理的な手法です。 
+追加の分析を行うには、 [**! スレッド**](-thread.md)拡張機能と、 [ **dds**、 **dps**、および**dqs** (表示語とシンボル)](dds--dps--dqs--display-words-and-symbols-.md)コマンドを使用します。 これは、WinDbg が "原因として考えられる可能性があります: ntkrnlmp" の場合に合理的な手法です。 
 
 例外コード0x80000003 が発生した場合、ハードコーディングされたブレークポイントまたはアサーションがヒットしましたが、システムは **/NODEBUG**スイッチを使用して起動されました。 この問題は頻繁に発生することはありません。 繰り返し発生する場合は、カーネルデバッガーが接続されていて、システムが **/debug**スイッチで起動されていることを確認します。
 

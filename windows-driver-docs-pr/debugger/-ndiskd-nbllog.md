@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 0898a87ef75f767eecdb38df4bd3c0f99c04f2ac
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 836ec3f84eff5ab53b8b012b2313a2813d2b6909
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826619"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534207"
 ---
 # <a name="ndiskdnbllog"></a>!ndiskd.nbllog
 
 
-**! Ndiskd ndiskd**拡張機能によって、システム上のすべての NBL ([**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) アクティビティのログが表示されます。
+**! Ndiskd ndiskd**拡張機能によって、システム上のすべての NBL ([**NET \_ BUFFER \_ LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) アクティビティのログが表示されます。
 
 ```console
 !ndiskd.nbllog [-stacks] 
@@ -31,7 +31,7 @@ ms.locfileid: "72826619"
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______-stacks______"></span><span id="_______-STACKS______"></span> *-スタック*   
+<span id="_______-stacks______"></span><span id="_______-STACKS______"></span>*-stacks*   
 呼び出し履歴を含めます。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
@@ -41,8 +41,8 @@ Ndiskd .dll
 <a name="remarks"></a>注釈
 -------
 
-**重要**  
- **! ndiskd。 ndiskd**では、デバッグ対象ターゲットコンピューターで NBL の追跡が有効になっている必要があります。 NBL の追跡は、Windows のすべての構成で既定で有効になっていません。 NBL tracking が有効になっていない場合は、次のスニペットに示すように、有効にする方法についての説明があります。
+**重要**   
+ **! ndiskd ndiskd**では、デバッグ対象ターゲットコンピューターで NBL の追跡が有効になっている必要があります。 NBL の追跡は、Windows のすべての構成で既定で有効になっていません。 NBL tracking が有効になっていない場合は、次のスニペットに示すように、有効にする方法についての説明があります。
 
 ```console
 0: kd> !ndiskd.nbllog
@@ -63,7 +63,7 @@ Ndiskd .dll
 
  
 
-NBL ログには、システム上のネットワークトラフィックが表示されます。 [ **! ndiskd netreport**](-ndiskd-netreport.md)は、NBL 追跡ログを解析して、このネットワークトラフィックを視覚的に表示します。 このため、NBL tracking が有効になっていない場合、 **! ndiskd netreport**はこの情報を表示できません。
+NBL ログには、システム上のネットワークトラフィックが表示されます。 [**! ndiskd netreport**](-ndiskd-netreport.md)は、NBL 追跡ログを解析して、このネットワークトラフィックを視覚的に表示します。 このため、NBL tracking が有効になっていない場合、 **! ndiskd netreport**はこの情報を表示できません。
 
 <a name="examples"></a>例
 --------
@@ -102,24 +102,23 @@ NBL ログには、システム上のネットワークトラフィックが表�
     Rerun with the '-force' option to bypass this limit.
 ```
 
-**! Ndiskd ndiskd**の結果を解釈する方法の詳細については、NDIS ブログの「 [! ndiskd nbl-log](https://go.microsoft.com/fwlink/p/?linkid=846176) 」を参照してください。
+**! Ndiskd ndiskd**の結果を解釈する方法の詳細については、NDIS ブログの「 [! ndiskd nbl-log](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-nbl-log) 」を参照してください。
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
-
-[ネットワークドライバーの設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
+[ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
 [Windows Vista 以降のネットワークリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
-[ネットワークスタックのデバッグ](https://go.microsoft.com/fwlink/p/?linkid=845311)
+[ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)** ](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
 
-[ **!ndiskd.help**](-ndiskd-help.md)
+[**!ndiskd.help**](-ndiskd-help.md)
 
-[**NET\_BUFFER\_LIST**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
+[**NET \_ バッファーの \_ 一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
-[! ndiskd nbl-log](https://go.microsoft.com/fwlink/p/?linkid=846176)
+[! ndiskd nbl-log](https://docs.microsoft.com/archive/blogs/ndis/ndiskd-nbl-log)
 
  
 

@@ -3,85 +3,76 @@ title: UMDH の使用の準備
 description: UMDH の使用の準備
 ms.assetid: 9adebe43-3167-4e1a-ac98-db19ace944be
 keywords:
-- UMDH、UMDH を使用する準備
-- UMDH、BSTR のキャッシュを無効にします。
+- UMDH, UMDH の使用の準備
+- UMDH、BSTR キャッシュの無効化
 - SetNoOaCache 関数
 - OANOCACHE 環境変数
-- スタック トレースのデータベース
+- スタックトレースデータベース
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b6614f26f908dea52edbf0b1d8a71bf0ae618135
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4fb3c3bcfeeea51bee9a7d5de5c1dc5228e20bcb
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362410"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534773"
 ---
 # <a name="preparing-to-use-umdh"></a>UMDH の使用の準備
 
+ユーザーモードダンプヒープ (UMDH) を使用してプロセスのヒープ割り当てをキャプチャする前に、このセクションで説明されている構成タスクを完了する必要があります。 コンピューターが正しく構成されていない場合、UMDH は結果を生成しません。または、結果が不完全または不正確になります。
 
-## <span id="ddk_preparing_to_use_umdh_dtools"></span><span id="DDK_PREPARING_TO_USE_UMDH_DTOOLS"></span>
+### <a name="create-the-user-mode-stack-trace-database"></a>ユーザーモードのスタックトレースデータベースを作成する
 
+UMDH を使用してプロセスのヒープ割り当てをキャプチャする前に、スタックトレースをキャプチャするように Windows を構成する必要があります。
 
-ユーザー モード ダンプ ヒープ (UMDH) を使用して、プロセスのヒープ割り当てをキャプチャする前に、このセクションで説明した構成タスクを完了する必要があります。 コンピューターが正しく構成されていない場合 UMDH はすべての結果を生成しませんまたは結果が不完全または不正確になります。
+プロセスに対してスタックトレースのキャプチャを有効にするには、 [GFlags](gflags.md)を使用して、プロセスの**Create user mode stack トレースデータベース**フラグを設定します。 これは、次のいずれかの方法で実行できます。
 
-### <a name="span-idcreatetheusermodestacktracedatabasespanspan-idcreatetheusermodestacktracedatabasespancreate-the-user-mode-stack-trace-database"></a><span id="create_the_user_mode_stack_trace_database"></span><span id="CREATE_THE_USER_MODE_STACK_TRACE_DATABASE"></span>ユーザー モードのスタック トレースのデータベースを作成します。
+-   GFlags グラフィカルインターフェイスで、[**イメージファイル**] タブを選択します。ファイル名拡張子を含むプロセス名を入力します (たとえば notepad.exe)。 **Tab**キーを押して、[**ユーザーモードスタックトレースデータベースの作成**] を選択し、[**適用**] をクリックします。
 
-プロセスのヒープ割り当てをキャプチャする UMDH を使用する前に、スタック トレースをキャプチャする Windows を構成する必要があります。
+-   また、同様に、次の GFlags コマンドラインを使用します。ここで、 *ImageName*はプロセス名 (ファイル名拡張子を含む) です。
 
-プロセスのスタック トレースのキャプチャを有効にするには、 [GFlags](gflags.md)を設定する、**ユーザー モードのスタック トレースのデータベースの作成**プロセスのフラグ。 これは、次のいずれかで実行できます。
+    **gflags/I** *ImageName* **+ ust**
 
--   GFlags、グラフィカル インターフェイスでは、選択、**イメージ ファイル**タブ。ファイル名拡張子 (例: Notepad.exe) を含む、プロセス名を入力します。 キーを押して、**タブ**キーを選択します**ユーザー モードのスタック トレースのデータベースの作成**、 をクリックし、**適用**します。
+既定では、Windows が収集するスタックトレースデータの量は、x86 プロセッサでは 32 MB、x64 プロセッサでは 64 MB に制限されています。 このデータベースのサイズを大きくする必要がある場合は、GFlags グラフィカルインターフェイスの [**イメージファイル**] タブを選択し、プロセス名を入力して、tab キーを押し、[**スタックバックトレース (mb)** **]** チェックボックスをオンにして、関連付けられているテキストボックスに値 (MB) を入力し、[**適用**] をクリックします。
 
--   または、同等に、次の GFlags コマンドラインを使用している*ImageName* (ファイル名拡張子を含む)、プロセス名には。
+**メモ**   Windows リソースが制限される可能性があるため、必要な場合にのみこのデータベースを増やしてください。 より大きなサイズが不要になった場合は、この設定を元の値に戻します。
 
-    **gflags/i** *ImageName* **+ ust**
+これらの設定は、プログラムのすべての新しいインスタンスに影響します。 プログラムの現在実行中のインスタンスには影響しません。
 
-Windows を収集するスタック トレース データの量が x86 32 MB に制限は既定では、プロセッサ、および 64 MB、x64 プロセッサ。 このデータベースのサイズを大きく必要があります場合、選択、**イメージ ファイル**GFlags グラフィック インターフェイスでタブで、プロセス名を入力キーを押して、**タブ**、キーのチェック、 **Stack Backtrace (メガバイト)** チェック ボックスをオン、関連付けられているテキスト ボックスで、(単位は MB) の値を入力してクリックして、**適用**します。
+### <a name="access-the-necessary-symbols"></a>必要なシンボルにアクセスする
 
-**注**  限られた Windows リソースが消費されますが、ため、必要な場合にのみ、このデータベースが向上します。 サイズが大きくなる必要がなくなったには、元の値にこの設定を返します。
+UMDH を使用する前に、アプリケーションの適切なシンボルにアクセスできる必要があります。 UMDH は、環境変数 NT シンボルパスで指定されたシンボルパスを使用し \_ \_ \_ ます。 この変数を、アプリケーションのシンボルを含むパスと同じに設定します。
 
- 
+Windows シンボルへのパスも指定すると、分析がより完全に完了する場合があります。 このシンボルパスの構文は、デバッガーで使用されるものと同じです。詳細については、「[シンボルパス](symbol-path.md)」を参照してください。
 
-これらの設定では、プログラムのすべての新しいインスタンスに影響します。 プログラムの現在実行中のインスタンスには影響しません。
-
-### <a name="span-idaccessthenecessarysymbolsspanspan-idaccessthenecessarysymbolsspanaccess-the-necessary-symbols"></a><span id="access_the_necessary_symbols"></span><span id="ACCESS_THE_NECESSARY_SYMBOLS"></span>必要なシンボルにアクセスします。
-
-UMDH を使用する前に、アプリケーションの適切なシンボルへのアクセスが必要です。 UMDH 環境変数で指定されたシンボル パスを使用して\_NT\_シンボル\_パス。 この変数に格納をアプリケーションのシンボルを含むパスに設定します。
-
-Windows シンボルへのパスを含めることも、分析がより詳細な可能性があります。 このシンボル パスの構文は、デバッガーによって使用されるのと同じ詳細については、次を参照してください。[シンボル パス](symbol-path.md)します。
-
-たとえば、アプリケーションのシンボルは c:\\MyApp\\記号、およびをインストールする Windows シンボル ファイル\\ \\myshare\\winsymbols、以下を使用する場合シンボル パスを設定するコマンド:
+たとえば、アプリケーションのシンボルが C: MyApp シンボルにあり、 \\ \\ Windows シンボルファイルが myshare winsymbols にインストールされている場合、 \\ \\ \\ 次のコマンドを使用してシンボルパスを設定します。
 
 ```console
 set _NT_SYMBOL_PATH=c:\myapp\symbols;\\myshare\winsymbols
 ```
 
-アプリケーションのシンボルが c: である場合は、別の例として\\MyApp\\記号とする、c: を使用して、Windows シンボルのパブリックの Microsoft シンボル ストアを使用する場合\\、ダウン ストリームのストアとして MyCache します。シンボル パスを設定するのに次のコマンドを使用します。
+別の例として、アプリケーションのシンボルが C: MyApp シンボルにあり、 \\ \\ Windows シンボルに対してパブリックな Microsoft シンボルストアを使用する場合、 \\ ダウンストリームストアとして c: mycache を使用します。次のコマンドを使用してシンボルパスを設定します。
 
 ```console
 set _NT_SYMBOL_PATH=c:\myapp\symbols;srv*c:\mycache*https://msdl.microsoft.com/download/symbols
 ```
 
-**重要な**  2 台のコンピューターがあるとします。、*コンピューターへのログオン*UMDH ログを作成すると、*分析コンピューター* UMDH ログを分析します。 分析のコンピューター上のシンボル パスは、ログが行われた時にログ記録のコンピューターに読み込まれている Windows のバージョンのシンボルを指す必要があります。 シンボル サーバーを分析コンピューターにシンボル パスを指していません。 場合は、UMDH は分析のコンピューターで実行されている Windows のバージョンのシンボルを取得し、UMDH に意味のある結果は表示されません。
+**重要**   たとえば、UMDH ログを作成する*ログ記録コンピューター*と、umdh ログを分析する*分析コンピューター*の2つのコンピューターがあるとします。 分析コンピューターのシンボルパスは、ログの作成時にログコンピューターに読み込まれた Windows のバージョンのシンボルをポイントする必要があります。 分析コンピューター上のシンボルパスをシンボルサーバーに指定しないでください。 この場合、UMDH は分析コンピューター上で実行されている Windows のバージョンのシンボルを取得します。また、UMDH では意味のある結果が表示されません。
 
- 
 
-### <a name="span-iddisablebstrcachingspanspan-iddisablebstrcachingspandisable-bstr-caching"></a><span id="disable_bstr_caching"></span><span id="DISABLE_BSTR_CACHING"></span>BSTR のキャッシュを無効にします。
+### <a name="disable-bstr-caching"></a>BSTR キャッシュを無効にする
 
-オートメーション (以前の OLE オートメーション) では、BSTR 文字列によって使用されるメモリをキャッシュします。 これにより、UMDH で正しくメモリ割り当ての所有者を決定するようにできます。 この問題を回避するには、BSTR のキャッシュを無効にする必要があります。
+オートメーション (以前の OLE オートメーション) では、BSTR 文字列によって使用されるメモリがキャッシュされます。 これにより、UMDH がメモリ割り当ての所有者を正しく特定できなくなる可能性があります。 この問題を回避するには、BSTR キャッシュを無効にする必要があります。
 
-BSTR のキャッシュを無効にするには、(1) を 1 に等しい OANOCACHE の環境変数を設定します。 この設定は、その割り当てをトレースするアプリケーションを起動する前に行う必要があります。
+BSTR キャッシュを無効にするには、OANOCACHE 環境変数を1に等しい値に設定します。 この設定は、割り当てがトレースされるアプリケーションを起動する前に行う必要があります。
 
-BSTR のキャッシュから、アプリケーション自体に .NET Framework を呼び出すことによって無効にする代わりに、 **SetNoOaCache**関数。 この方法を選択する場合はこの関数を呼び出す早い段階でため BSTR 割り当て済みのときにキャッシュされている**SetNoOaCache**が呼び出されますがキャッシュに残ったままです。
+または、.NET Framework **SetNoOaCache**関数を呼び出すことによって、アプリケーション自体から BSTR キャッシュを無効にすることもできます。 このメソッドを選択する場合は、 **SetNoOaCache**が呼び出されたときに既にキャッシュされている BSTR 割り当てがキャッシュされたままになるため、この関数を早期に呼び出す必要があります。
 
-サービスによって行われた割り当てを追跡する必要がある場合は、システム環境変数として OANOCACHE を設定しを有効にするこの設定の Windows を再起動する必要があります。
+サービスによって行われた割り当てをトレースする必要がある場合は、OANOCACHE をシステム環境変数として設定してから、Windows を再起動してこの設定を有効にする必要があります。
 
-Windows 2000 では、に加えて OANOCACHE を 1 に、設定する必要がありますも、修正プログラムのインストールで使用可能な[Microsoft サポート記事 139071](https://go.microsoft.com/fwlink/p/?LinkId=241583)します。 この修正プログラムは、Windows XP と Windows の以降のバージョンでは必要ありません。
+### <a name="find-the-process-id"></a>プロセス ID を検索する
 
-### <a name="span-idfindtheprocessidspanspan-idfindtheprocessidspanfind-the-process-id"></a><span id="find_the_process_id"></span><span id="FIND_THE_PROCESS_ID"></span>プロセス ID が見つかりません
-
-UMDH では、そのプロセス id (PID) で、プロセスを識別します。 Tasklist、タスク マネージャーを使用して、実行中のプロセスの PID を検索することができますか[TList](tlist.md)します。
+UMDH はプロセス識別子 (PID) でプロセスを識別します。 実行中のプロセスの PID は、タスクマネージャー、Tasklist、または[tlist.exe](tlist.md)を使用して見つけることができます。
 
  
 

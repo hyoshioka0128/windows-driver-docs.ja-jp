@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x14F PDC_WATCHDOG_TIMEOUT
-description: PDC_WATCHDOG_TIMEOUT のバグ チェックでは、0x0000014F の値を持ちます。 これは、システム コンポーネントが割り当てられた時間の期間内に応答が失敗したことを示します。
+title: バグチェック 0x14F PDC_WATCHDOG_TIMEOUT
+description: PDC_WATCHDOG_TIMEOUT バグチェックの値は0x0000014F です。 これは、システムコンポーネントが、割り当てられた期間内に応答できなかったことを示します。
 ms.assetid: 347D31C2-7027-44BD-A0E8-60C6EC3A2030
 keywords:
-- バグ チェック 0x14F PDC_WATCHDOG_TIMEOUT
+- バグチェック 0x14F PDC_WATCHDOG_TIMEOUT
 - PDC_WATCHDOG_TIMEOUT
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e7959459c193bb608da5b117f105e933810556
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 322991768b03f360017bcea443a9a82001693f53
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67520073"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534655"
 ---
-# <a name="bug-check-0x14f-pdcwatchdogtimeout"></a>バグ チェック 0x14F:PDC\_ウォッチドッグ\_タイムアウト
+# <a name="bug-check-0x14f-pdc_watchdog_timeout"></a>バグチェック 0x14F: PDC \_ ウォッチドッグの \_ タイムアウト
 
 
-PDC\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x0000014F の値を持ちます。 これは、システムが終了するを防ぐ、割り当てられた期間内の応答に失敗しました、システムのコンポーネントがスタンバイに接続されていることを示します。
+PDC \_ ウォッチドッグの \_ タイムアウトのバグチェックには、0x0000014F という値があります。 これは、システムコンポーネントが、割り当てられた時間内に応答できなかったため、システムがコネクトスタンバイを終了できないことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="pdcwatchdogtimeout-parameters"></a>PDC\_ウォッチドッグ\_タイムアウト パラメーター
+## <a name="pdc_watchdog_timeout-parameters"></a>PDC \_ ウォッチドッグの \_ タイムアウトパラメーター
 
 
 <table>
@@ -46,39 +46,39 @@ PDC\_ウォッチドッグ\_バグ チェックのタイムアウトが 0x000001
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">ハングしたコンポーネントのクライアント ID。</td>
+<td align="left">ハング状態のコンポーネントのクライアント ID。</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left"><p>ハングしたコンポーネントのクライアントの種類。</p>
-<p>0x1:通知クライアントが応答に失敗しました。</p>
-3 番目のパラメーター:通知クライアント (PDC_NOTIFICATION_CLIENT) へのポインター。
-パラメーター 4:Pdc へのポインター。PDC_14F_TRIAGE 構造体。
-<p>0x2:回復性クライアントは、応答に失敗しました。</p>
-3 番目のパラメーター:回復性のクライアント (PDC_RESILIENCY_CLIENT) へのポインター。
-パラメーター 4:Pdc へのポインター。PDC_14F_TRIAGE 構造体。
-<p>0x3:アクティベーターをクライアントには、長時間の参照が保持されています。</p>
-3 番目のパラメーター:アクティブ化クライアントへのポインター (pdc! _PDC_ACTIVATOR_CLIENT)。
-パラメーター 4:Pdc へのポインター。PDC_14F_TRIAGE 構造体。
-<p>0x100:Win32k は、適切なタイミングでモニターの要求を完了しませんでした。</p>
-3 番目のパラメーター:この要求の最新の POWER_MONITOR_REQUEST_REASON 値。
-パラメーター 4:内部に、要求を開始する実行パスを示す値。</td>
+<td align="left"><p>ハング状態のコンポーネントのクライアントの種類。</p>
+<p>0x1: 通知クライアントが応答できませんでした。</p>
+パラメーター 3: 通知クライアントへのポインター (PDC_NOTIFICATION_CLIENT)。
+パラメーター 4: pdc へのポインターPDC_14F_TRIAGE 構造体。
+<p>0x2: 回復性クライアントが応答できませんでした。</p>
+パラメーター 3: 回復性クライアント (PDC_RESILIENCY_CLIENT) へのポインター。
+パラメーター 4: pdc へのポインターPDC_14F_TRIAGE 構造体。
+<p>0x3: アクティベータークライアントは、参照を長時間保持していました。</p>
+パラメーター 3: ライセンス認証クライアント (pdc! _PDC_ACTIVATOR_CLIENT) へのポインター。
+パラメーター 4: pdc へのポインターPDC_14F_TRIAGE 構造体。
+<p>0x100: Win32k は、適切なタイミングでモニターオン要求を完了できませんでした。</p>
+パラメーター 3: この要求の最新の POWER_MONITOR_REQUEST_REASON 値。
+パラメーター 4: 要求を開始するために使用される内部パスを示す値。</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">2 番目のパラメーターを参照してください。</td>
+<td align="left">パラメーター2を参照</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">2 番目のパラメーターを参照してください。</td>
+<td align="left">パラメーター2を参照</td>
 </tr>
 </tbody>
 </table>
 
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解像度
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

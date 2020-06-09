@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x2D SCSI_DISK_DRIVER_INTERNAL
-description: SCSI_DISK_DRIVER_INTERNAL のバグ チェックが非常に少ない回数が表示される確認 0x0000002D.This バグの値を持ちます。
+title: バグチェック 0x2D SCSI_DISK_DRIVER_INTERNAL
+description: SCSI_DISK_DRIVER_INTERNAL のバグチェックの値が0x0000002D になっています。このバグチェックは非常に頻繁に行われます。
 ms.assetid: 36956b1b-94e9-42c1-a8e2-09324ea15eca
 keywords:
-- バグ チェック 0x2D SCSI_DISK_DRIVER_INTERNAL
+- バグチェック 0x2D SCSI_DISK_DRIVER_INTERNAL
 - SCSI_DISK_DRIVER_INTERNAL
 ms.date: 05/23/2017
 topic_type:
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 835e6b34eb31467e7da1105c490aa2e314ef8869
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 82d4fe5708b592dc4442b5716251268e27854a64
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519543"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534819"
 ---
-# <a name="bug-check-0x2d-scsidiskdriverinternal"></a>バグ チェック 0x2D:SCSI\_ディスク\_ドライバー\_内部
+# <a name="bug-check-0x2d-scsi_disk_driver_internal"></a>バグチェック 0x2D: SCSI \_ ディスク \_ ドライバーの \_ 内部
 
 
-SCSI\_ディスク\_ドライバー\_内部バグ チェックが 0x0000002D の値を持ちます。
+SCSI \_ ディスク \_ ドライバ \_ の内部バグチェックには、0x0000002d の値が含まれています。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
 
-## <a name="resolution"></a>解決方法 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度 
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 

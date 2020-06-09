@@ -1,9 +1,9 @@
 ---
 title: errrec
-description: Errrec 拡張機能には、Windows ハードウェア エラー アーキテクチャ (WHEA) エラー レコードの内容が表示されます。
+description: Errrec 拡張機能には、Windows ハードウェアエラーアーキテクチャ (WHEA) のエラーレコードの内容が表示されます。
 ms.assetid: 372e4700-0cd7-468d-98e8-b0ead4ebc92f
 keywords:
-- Windows デバッグ errrec
+- errrec Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 31285e2986b7f51e798a17cf8bbddfa9f0b07f9f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef3e272f68bb29fa8851f6f82123653ff54000a1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334513"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534837"
 ---
 # <a name="errrec"></a>!errrec
 
 
-**! Errrec**拡張機能が Windows ハードウェア エラー アーキテクチャ (WHEA) エラー レコードの内容を表示します。
+**! Errrec**拡張機能には、Windows ハードウェアエラーアーキテクチャ (WHEA) のエラーレコードの内容が表示されます。
 
 ```dbgcmd
 !errrec Address 
 ```
 
-## <a name="span-idddkubpdbgspanspan-idddkubpdbgspanparameters"></a><span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>パラメーター
+## <a name="span-idddk__ubp_dbgspanspan-idddk__ubp_dbgspanparameters"></a><span id="ddk__ubp_dbg"></span><span id="DDK__UBP_DBG"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-エラー レコードのアドレスを指定します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+エラーレコードのアドレスを指定します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -55,24 +55,24 @@ ms.locfileid: "63334513"
 <td align="left"><p>利用不可</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows Vista 以降</strong></p></td>
-<td align="left"><p>Kdexts.dll</p></td>
+<td align="left"><p><strong>Windows Vista 以降</strong></p></td>
+<td align="left"><p>Kdexts .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-この拡張機能は、Windows Vista および Windows の以降のバージョンでのみ使用できます。
+この拡張機能は、Windows Vista 以降のバージョンの Windows でのみ使用できます。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Whea** ](-whea.md)と[ **! errpkt** ](-errpkt.md) WHEA 情報を表示する拡張機能を使用できます。 WHEA の詳細については、次を参照してください。 [Windows ハードウェア エラー アーキテクチャ (WHEA)](https://go.microsoft.com/fwlink/p/?linkid=153571) Windows Driver Kit (WDK) ドキュメントです。
+[**! Whea**](-whea.md)および[**! errpkt**](-errpkt.md)拡張機能を使用して、追加の whea 情報を表示できます。 WHEA に関する一般的な情報については、Windows Driver Kit (WDK) のドキュメントの「 [Windows ハードウェアエラーアーキテクチャ (WHEA)](https://docs.microsoft.com/windows-hardware/drivers/whea/) 」を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-次の例は、どのように[ **! whea** ](-whea.md)拡張機能を使用して、エラー レコードのアドレスを取得し、このレコードの内容を表示して [、 **! errrec**拡張機能。
+次の例では、 [**! whea**](-whea.md)拡張を使用してエラーレコードのアドレスを取得する方法を示しています。このレコードの内容は、 **! errrec**拡張機能によって表示できます。
 
 ```dbgcmd
 3: kd> !whea 

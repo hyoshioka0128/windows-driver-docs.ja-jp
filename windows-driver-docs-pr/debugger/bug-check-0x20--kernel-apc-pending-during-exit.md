@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x20 KERNEL_APC_PENDING_DURING_EXIT
-description: KERNEL_APC_PENDING_DURING_EXIT のバグ チェックでは、0x00000020 の値を持ちます。 これは、非同期プロシージャ コール (APC) がまだされたことを示します。 保留中のスレッドが終了しました。
+title: バグチェック 0x20 KERNEL_APC_PENDING_DURING_EXIT
+description: KERNEL_APC_PENDING_DURING_EXIT バグチェックの値は0x00000020 です。 これは、スレッドが終了したときに、非同期プロシージャコール (APC) がまだ保留されていたことを示します。
 ms.assetid: 0ef7c2b2-0864-4206-b786-bac9df9cedc7
 keywords:
-- バグ チェック 0x20 KERNEL_APC_PENDING_DURING_EXIT
+- バグチェック 0x20 KERNEL_APC_PENDING_DURING_EXIT
 - KERNEL_APC_PENDING_DURING_EXIT
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 88311b70bcc13ec2d4dd7d0e23bcc13fe042963a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 4b919df6dd569d53c1a0413a8608bc4dd1709851
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519612"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534827"
 ---
-# <a name="bug-check-0x20-kernelapcpendingduringexit"></a>バグ チェック 0x20:カーネル\_APC\_PENDING\_に\_終了
+# <a name="bug-check-0x20-kernel_apc_pending_during_exit"></a>バグチェック 0x20: \_ \_ \_ 終了中にカーネル APC が保留中です \_
 
 
-カーネル\_APC\_PENDING\_に\_終了のバグ チェックが 0x00000020 の値を持ちます。 これは、非同期プロシージャ コール (APC) がまだされたことを示します。 保留中のスレッドが終了しました。
+\_ \_ 終了バグチェック中に保留中のカーネル APC の \_ \_ 値は0x00000020 です。 これは、スレッドが終了したときに、非同期プロシージャコール (APC) がまだ保留されていたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="kernelapcpendingduringexit-parameters"></a>カーネル\_APC\_PENDING\_に\_終了パラメーター
+## <a name="kernel_apc_pending_during_exit-parameters"></a>\_ \_ \_ 終了パラメーター中に保留中のカーネル APC \_
 
 
 <table>
@@ -46,11 +46,11 @@ ms.locfileid: "67519612"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>保留中の終了時に検出された APC のアドレス</p></td>
+<td align="left"><p>終了中に保留された APC のアドレス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>スレッドの APC の無効化の数</p></td>
+<td align="left"><p>スレッドの APC の無効化カウント</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -68,21 +68,21 @@ ms.locfileid: "67519612"
 <a name="cause"></a>原因
 -----
 
-キーのデータ項目では、APC がスレッドの数 (パラメーター 2) を無効にします。 カウントが 0 以外の場合は、問題の原因が示されます。
+キーデータ項目は、スレッドの APC disable count (パラメーター 2) です。 カウントが0以外の場合は、問題の原因を示します。
 
-APC の無効化カウントがデクリメントされますドライバーを呼び出すたびに**KeEnterCriticalRegion**、 **FsRtlEnterFileSystem**、または、ミュー テックスを取得します。
+APC の disable count は、ドライバーが**KeEnterCriticalRegion**、 **fsrtlenterfilesystem**を呼び出すたび、またはミューテックスを取得するたびにデクリメントされます。
 
-APC の無効化の数には、ドライバーを呼び出すたびがインクリメントされます**KeLeaveCriticalRegion**、 **KeReleaseMutex**、または**FsRtlExitFileSystem**します。
+APC disable count は、ドライバーが**KeLeaveCriticalRegion**、 **KeReleaseMutex**、または**fsrtlexitfilesystem**を呼び出すたびに増分されます。
 
-これらの呼び出しは、ペアで常にする必要があります、APC の無効化の数は、スレッドの終了時に、その 0 にする必要があります。 負の値は、ドライバーにそれらを再度有効にすることがなく APC 呼び出しが無効になっていることを示します。 正の値は、逆が true であることを示します。
+これらの呼び出しは常にペアになっている必要があるため、スレッドの終了時には、APC の disable count を0にする必要があります。 負の値は、ドライバーが再度有効にすることなく、APC の呼び出しを無効にしたことを示します。 正の値は、反転が true であることを示します。
 
-これまでこのエラーが発生した場合は、特に異常であるか非標準のドライバー、マシンにインストールされているすべてのドライバーの非常に疑わしいあります。
+このエラーが発生する場合は、コンピューターにインストールされているすべてのドライバー (特に異常なドライバーまたは非標準ドライバー) について非常に疑わしいことを確認してください。
 
-この現在の IRQL (パラメーター 3) は、0 にする必要があります。 ない場合、ドライバーのキャンセル ルーチンが管理者特権での IRQL で返すことによってこのバグ チェック原因がある可能性があります。 この場合は、慎重に、クラッシュの時点で実行されている (および、何を埋めることでした) は何でしたをメモし、クラッシュ時にインストールされているドライバーのすべてに注意してください。 原因、ドライバーの重大なバグをここでは、通常、します。
+この現在の IRQL (パラメーター 3) は0である必要があります。 そうでない場合は、ドライバーの取り消しルーチンによって、管理者特権での IRQL が返され、このバグチェックが発生する可能性があります。 この場合は、クラッシュ時に実行されていたもの (および終了したもの) を注意深くメモし、クラッシュ時にインストールされているすべてのドライバーをメモしておきます。 この場合の原因は、通常、ドライバーの重大なバグです。
 
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

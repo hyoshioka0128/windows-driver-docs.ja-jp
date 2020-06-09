@@ -1,9 +1,9 @@
 ---
 title: usb3kd-xhci_findowner
-description: Usb3kd.xhci_findowner コマンドは、共通のバッファーに所有者を検索します。
+description: Xhci_findowner usb3kd コマンドは、所有者に共通のバッファーを検索します。
 ms.assetid: 6AA3E41C-5838-4425-B1CE-37A13E8F755E
 keywords:
-- デバッグ usb3kd.xhci_findowner Windows
+- usb3kd Windows デバッグの xhci_findowner
 ms.date: 10/18/2018
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ed0c94f1e05aa891a77ba29406af2d84c4adbef1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f9705fb33ce4f79bd07dee35b1ee5d777db654fc
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330778"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534891"
 ---
-# <a name="usb3kdxhcifindowner"></a>!usb3kd.xhci\_findowner
+# <a name="usb3kdxhci_findowner"></a>! usb3kd. xhci \_ findowner
 
 
-**! Usb3kd.xhci\_findowner**コマンドは、一般的なバッファーの所有者を検索します。
+**! Usb3kd xhci \_ findowner**コマンドは、所有者に共通のバッファーを検索します。
 
 ```dbgcmd
 !usb3kd.xhci_findowner Address
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-一般的なバッファーのアドレスを仮想または物理です。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+共通バッファーの仮想または物理アドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-共通のバッファーは、ハードウェアによってアドレス指定可能な物理的に連続するメモリのブロックです。 USB 3.0 ドライバー スタックは、USB 3.0 ホスト コント ローラーと通信する一般的なバッファーを使用します。 たとえば、システムのクラッシュとバッファー メモリの一般的な場合がありますが疑われるアドレスに遭遇します。 メモリが (場合は、複数の USB 3.0 コント ローラーがあること) に属する場合、アドレスは共通のバッファー メモリでは、このコマンドでは、USB 3.0 ホスト コント ローラーのメモリが使用されます。
+共通バッファーは、ハードウェアによってアドレス指定できる物理的に連続したメモリのブロックです。 USB 3.0 ドライバースタックは、USB 3.0 ホストコントローラーとの通信に共通のバッファーを使用します。 システムがクラッシュし、一般的なバッファーメモリである可能性があると思われるアドレスを越えているとします。 アドレスが共通のバッファーメモリの場合、このコマンドは、メモリが属する USB 3.0 ホストコントローラー (複数の USB 3.0 コントローラーがある場合) とメモリの使用方法を示します。
 
 <a name="examples"></a>例
 --------
 
-次の例では[ **! xhci\_resourceusage** ](-usb3kd-xhci-resourceusage.md)いくつかの一般的なバッファーのアドレスを一覧表示します。
+次の例では、 [**! xhci \_ resourceusage**](-usb3kd-xhci-resourceusage.md)を呼び出して、いくつかの一般的なバッファーのアドレスを一覧表示します。
 
 ```dbgcmd
 0: kd> !usb3kd.xhci_resourceusage 0x867fbff0
@@ -71,7 +71,7 @@ Usb3kd.dll
         [ 3] dt _TRACKING_DATA 0x868d69d4 VA 0x868e4400 LA 0xdb2e4400 -- Owner 0x86801488 Tag: Cmd1 Size 512
 ```
 
-上記の出力に表示されている仮想アドレスの 1 つは、0x868e2000 です。 次の例には、そのアドレスを渡します **! xhci\_findowner**します。 上記の出力に表示されている物理アドレスの 1 つは、0xdb2e4400 です。 次の例に 0xdb2e4440 (オフセット 0x40 0xdb2e4400 からバイト単位) を渡す **! xhci\_findowner**します。
+上記の出力に示されている仮想アドレスの1つは0x868e2000 です。 次の例では、そのアドレスを **! xhci \_ findowner**に渡します。 上記の出力に示されている物理アドレスの1つが 0xdb2e44 00 です。 次の例では、0xdb2e44 40 (0xdb2e44 00 からのオフセット0x40 バイト) を **! xhci \_ findowner**に渡します。
 
 ```dbgcmd
 0: kd> !xhci_findowner 0x868e2000 
@@ -94,7 +94,7 @@ Usb3kd.dll
     !xhci_commandring 0x867fbff0  <-- This memory is used for command ring.
 ```
 
-**! Xhci\_findowner**コマンドは、転送要求のブロック (TRB) で、アドレスを場合し、が属しているデバイスのスロットにそれを追跡したい場合に特に便利です。 次の例で、アドレスのいずれかの出力に表示[ **! xhci\_転送**](-usb3kd-xhci-transferring.md) 0xda452230、これは、TRB の物理アドレスですが。 この例でそのアドレスを渡して **! xhci\_findowner**します。 出力は、デバイスのスロット 8、TRB が属していることを示しています (**! xhci\_deviceslots 0x8551d370 8**)。
+**! Xhci \_ findowner**コマンドは、転送要求ブロック (trb) にアドレスがあり、それをそれが属するデバイススロットに追跡する場合に特に便利です。 次の例では、! xhci の出力に示されて[** \_ **](-usb3kd-xhci-transferring.md)いるアドレスの1つは、trb の物理アドレスである0xda452230 です。 この例では、このアドレスを **! xhci \_ findowner**に渡しています。 出力には、TRB がデバイススロット 8 (**! xhci デバイス \_ ロット 0x8551d370 8**) に属していることが示されています。
 
 ```dbgcmd
 0: kd> !usb3kd.xhci_transferring 0x87652200
@@ -122,14 +122,14 @@ Usb3kd.dll
             [1] dt _TRANSFER_DATA 0x857d0700 !urb 0x85733be8 !wdfrequest 0x7a82f9d8 TransferState_Pending
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x60 PROCESS_INITIALIZATION_FAILED
-description: PROCESS_INITIALIZATION_FAILED のバグ チェックでは、0x00000060 の値を持ちます。このバグ チェックが非常に少ない回数が表示されます。
+title: バグチェック 0x60 PROCESS_INITIALIZATION_FAILED
+description: PROCESS_INITIALIZATION_FAILED バグチェックの値は0x00000060 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: 781190a6-a50f-4b7a-9dea-ac31d2dee325
 keywords:
-- バグ チェック 0x60 PROCESS_INITIALIZATION_FAILED
+- バグチェック 0x60 PROCESS_INITIALIZATION_FAILED
 - PROCESS_INITIALIZATION_FAILED
 ms.date: 05/23/2017
 topic_type:
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d77b89c9b73061b35807956978f1d7a1208822e3
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 47ef46b47afdfd7c016777bed8ec04c9971f6a00
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519317"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534617"
 ---
-# <a name="bug-check-0x60-processinitializationfailed"></a>バグ チェック 0x60:プロセス\_初期化\_失敗
+# <a name="bug-check-0x60-process_initialization_failed"></a>バグチェック 0x60: プロセスの \_ 初期化に \_ 失敗しました
 
 
-プロセス\_初期化\_失敗のバグ チェックが 0x00000060 の値を持ちます。
+プロセスの \_ 初期化に \_ 失敗しましたバグチェックの値は0x00000060 です。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

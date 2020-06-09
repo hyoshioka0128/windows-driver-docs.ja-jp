@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbtx
-description: Usbkd.usbtx コマンドは、し、usbport _HCD_TRANSFER_CONTEXT 構造から情報を表示します。
+title: usbkd. usbkd
+description: Usbkd. usbkd コマンドを実行すると、usbkd _HCD_TRANSFER_CONTEXT 構造の情報が表示されます。
 ms.assetid: 603AD207-69D5-4DED-80B5-ADA21E191D47
 keywords:
-- デバッグ usbkd.usbtx Windows
+- usbkd. usbkd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a815470de80b66646ab420f337c2744bba11e2b
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ebfa930c07a75f0c1ab6b010f6af82bc4733f658
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67367982"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534675"
 ---
 # <a name="usbkdusbtx"></a>!usbkd.usbtx
 
 
-**! Usbkd.usbtx**コマンドからの情報を表示、**し、usbport!\_HCD\_転送\_コンテキスト**構造体。
+**! Usbkd. usbkd**コマンドを実行すると、 **usbkd \_ から情報が表示されます。HCD \_ TRANSFER \_ コンテキスト**構造体。
 
 ```dbgcmd
 !usbkd.usbtx StructAddr
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span> *StructAddr*   
-アドレスを**し、usbport!\_HCD\_転送\_コンテキスト**構造体。 USB ホスト コント ローラーに対する転送リストを取得する、 [ **! usbkd.usbhcdext** ](-usbkd-usbhcdext.md)コマンド。
+<span id="_______StructAddr______"></span><span id="_______structaddr______"></span><span id="_______STRUCTADDR______"></span>*StructAddr*   
+**Usbport のアドレス。 \_HCD \_ TRANSFER \_ コンテキスト**構造体。 USB ホストコントローラーの転送リストを取得するには、 [**! usbhcdext**](-usbkd-usbhcdext.md)コマンドを使用します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-以下のアドレスを検索する 1 つの方法を示します、**し、usbport!\_HCD\_転送\_コンテキスト**構造体。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+Usbport のアドレスを確認する方法の1つを次に示し**ます。 \_HCD \_ TRANSFER \_ コンテキスト**構造体。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0: kd> !usbkd.usb2tree
@@ -51,9 +51,9 @@ Usbkd.dll
 ...
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! uhci\_情報 ffffe00001c8f1a0**します。
+上記の出力では、FDO のデバイス拡張機能のアドレスが、 [DML](debugger-markup-language-commands.md)コマンド **! uhci \_ info ffffe00001c8f1a0**の引数として表示されます。
 
-DML コマンドをクリックするか、デバイスの拡張機能のアドレスを渡す[ **! usbhcdext** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdext)転送リストを取得します。
+[DML] コマンドをクリックするか、デバイス拡張機能のアドレスを[**! usbhcdext**](-usbkd-usbhcdext.md)に渡して、転送リストを取得します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdext ffffe00001c8f1a0
@@ -68,7 +68,7 @@ DML コマンドをクリックするか、デバイスの拡張機能のアド�
     ...
 ```
 
-上記の出力で`ffffe0000653401c`のアドレス、  **\_HCD\_転送\_コンテキスト**構造体。 このアドレスを渡す **! usbtx**します。
+前の出力で、 `ffffe0000653401c` は** \_ HCD \_ TRANSFER \_ コンテキスト**構造のアドレスです。 このアドレスを **! usbtx**に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbtx ffffe0000653401c
@@ -97,12 +97,12 @@ NumberOfElements = 1
      :phys 00000000'ded90000 len 0x00001000(4096)
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

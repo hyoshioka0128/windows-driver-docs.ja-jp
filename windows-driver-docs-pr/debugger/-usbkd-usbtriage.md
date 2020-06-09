@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbtriage
-description: Usbkd.usbtriage コマンドでは、USB ドライバーとデバイス オブジェクトの一覧が表示されます。
+title: usbkd. usbkd
+description: Usbkd. usbkd コマンドを実行すると、USB ドライバーとデバイスオブジェクトの一覧が表示されます。
 ms.assetid: F71F0913-00E1-4647-8AAA-121C6BD6FD36
 keywords:
-- デバッグ usbkd.usbtriage Windows
+- usbkd. usbkd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4acb9d4e21af1dd3c9c69023acc6b5c986627bdc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b8ba17ccbaa96db08e47b28bcaf8c7e7e4fba75
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327981"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534679"
 ---
 # <a name="usbkdusbtriage"></a>!usbkd.usbtriage
 
 
-**! Usbkd.usbtriage**コマンドは、USB ドライバーとデバイス オブジェクトの一覧を表示します。
+**! Usbkd. usbkd**コマンドを実行すると、USB ドライバーとデバイスオブジェクトの一覧が表示されます。
 
 ```dbgcmd
 !usbkd.usbtriage
@@ -31,14 +31,14 @@ ms.locfileid: "63327981"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

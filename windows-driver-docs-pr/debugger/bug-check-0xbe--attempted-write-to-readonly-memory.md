@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0xBE ATTEMPTED_WRITE_TO_READONLY_MEMORY
-description: ATTEMPTED_WRITE_TO_READONLY_MEMORY のバグ チェックでは、0x000000BE の値を持ちます。 ドライバーが読み取り専用メモリ セグメントに書き込もうとしている場合に発行されます。
+title: バグチェック 0xBE ATTEMPTED_WRITE_TO_READONLY_MEMORY
+description: ATTEMPTED_WRITE_TO_READONLY_MEMORY バグチェックの値は0x000000BE です。 これは、ドライバーが読み取り専用のメモリセグメントに書き込もうとした場合に発行されます。
 ms.assetid: d6247828-09ae-4071-9b4f-917af29265bc
 keywords:
-- Bug Check 0xBE ATTEMPTED_WRITE_TO_READONLY_MEMORY
+- バグチェック 0xBE ATTEMPTED_WRITE_TO_READONLY_MEMORY
 - ATTEMPTED_WRITE_TO_READONLY_MEMORY
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd60b8f44e488f621860b0436e2ad681c28d02d
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: be0219f1be94a0355509cf84e226ecad9f5fc563
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518993"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534797"
 ---
-# <a name="bug-check-0xbe-attemptedwritetoreadonlymemory"></a>バグ チェック 0xBE:試行\_書き込み\_TO\_READONLY\_メモリ
+# <a name="bug-check-0xbe-attempted_write_to_readonly_memory"></a>バグチェック 0xBE: \_ \_ \_ 読み取り専用メモリへの書き込みを試行しました \_
 
 
-試行\_書き込み\_TO\_READONLY\_メモリのバグ チェックが 0x000000BE の値を持ちます。 ドライバーが読み取り専用メモリ セグメントに書き込もうとしている場合に発行されます。
+\_読み取り専用メモリへの書き込み試行のバグチェックには、 \_ \_ \_ 値0x000000be が設定されています。 これは、ドライバーが読み取り専用のメモリセグメントに書き込もうとした場合に発行されます。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="attemptedwritetoreadonlymemory-parameters"></a>試行\_書き込み\_TO\_READONLY\_メモリ パラメーター
+## <a name="attempted_write_to_readonly_memory-parameters"></a>\_ \_ \_ 読み取り専用 \_ メモリパラメーターへの書き込みが試行されました
 
 
 <table>
@@ -46,11 +46,11 @@ ms.locfileid: "67518993"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>書き込みの試行の仮想アドレス</p></td>
+<td align="left"><p>書き込み試行の仮想アドレス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
-<td align="left"><p>PTE 内容</p></td>
+<td align="left"><p>PTE の内容</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>3</p></td>
@@ -65,13 +65,13 @@ ms.locfileid: "67518993"
 
  
 
-その名前がブルー スクリーンに印刷され、場所のメモリに格納されているドライバーのエラーの原因が識別できる場合 (PUNICODE\_文字列) **KiBugCheckDriver**します。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE \_ 文字列) **KiBugCheckDriver**に格納されます。
 
 
 <a name="remarks"></a>注釈
 -------
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
 

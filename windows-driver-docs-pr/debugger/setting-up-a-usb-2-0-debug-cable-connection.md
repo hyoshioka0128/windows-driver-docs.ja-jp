@@ -1,43 +1,43 @@
 ---
-title: カーネル モード経由でのデバッグ、USB 2.0 ケーブル手動での設定
-description: デバッグ ツールの Windows カーネルが USB 2.0 ケーブル経由でデバッグをサポートします。 このトピックでは、USB 2.0 を手動でのデバッグを設定する方法について説明します。
+title: USB 2.0 ケーブルを経由のカーネルモード デバッグの手動設定
+description: Windows 用デバッグツールは、USB 2.0 ケーブルでのカーネルデバッグをサポートしています。 このトピックでは、USB 2.0 デバッグを手動で設定する方法について説明します。
 ms.assetid: 8dd0703a-ddcd-461f-b164-1c079a93bb3a
 keywords:
-- USB 2.0 ケーブルの接続のセットアップ
-- USB 2.0 デバッグ ケーブル、ケーブル接続
+- セットアップ、USB 2.0 ケーブル接続の確立
+- ケーブル接続、USB 2.0 デバッグケーブル
 - USB 2.0 デバッグ接続
-- USB 2.0 接続をデバッグ、ハードウェアの設定
-- USB 2.0 のデバッグ接続、ソフトウェアの要件
-ms.date: 07/11/2018
+- USB 2.0 接続のデバッグ、ハードウェアの設定
+- USB 2.0 デバッグ接続、ソフトウェア要件
+ms.date: 02/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b22f16ceaec12ebec4d0f5fc5d72f44e6eeac8b5
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: d796a1fb9bb99d8f0684c916bcf1e8c4204222d1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56528360"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534765"
 ---
-# <a name="setting-up-kernel-mode-debugging-over-a-usb-20-cable-manually"></a>カーネル モード経由でのデバッグ、USB 2.0 ケーブル手動での設定
+# <a name="setting-up-kernel-mode-debugging-over-a-usb-20-cable-manually"></a>USB 2.0 ケーブルを経由のカーネルモード デバッグの手動設定
 
 
-デバッグ ツールの Windows カーネルが USB 2.0 ケーブル経由でデバッグをサポートします。 このトピックでは、USB 2.0 を手動でのデバッグを設定する方法について説明します。
+Windows 用デバッグツールは、USB 2.0 ケーブルでのカーネルデバッグをサポートしています。 このトピックでは、USB 2.0 デバッグを手動で設定する方法について説明します。
 
-デバッガーを実行しているコンピューターが呼び出されます、*ホスト コンピューター*、デバッグ中のコンピューターを呼び出すと、*対象のコンピュータ*します。
+デバッガーを実行するコンピューターは*ホストコンピューター*と呼ばれ、デバッグ中のコンピューターは*ターゲットコンピューター*と呼ばれます。
 
-USB 2.0 ケーブル経由でのデバッグには、次のハードウェアが必要です。
+USB 2.0 ケーブルでのデバッグには、次のハードウェアが必要です。
 
--   デバッグの USB 2.0 ケーブル。 USB2 デバッグ デバイス機能仕様と互換性のあるようにする追加のハードウェア コンポーネントがあるために、このケーブルは、標準の USB 2.0 ケーブルではありません。 これらのケーブル インターネット検索用語の使用を検索する*2.0 の USB デバッグ ケーブル*します。
+-   USB 2.0 デバッグケーブル。 このケーブルは、USB2 デバッグデバイスの機能仕様と互換性のある追加のハードウェアコンポーネントがあるため、標準の USB 2.0 ケーブルではありません。 これらのケーブルは、 *USB 2.0 デバッグケーブル*のインターネット検索で検索できます。
 
--   ホスト コンピューター (USB 2.0) EHCI ホスト コント ローラーで
+-   ホストコンピューターの EHCI (USB 2.0) ホストコントローラー
 
--   対象のコンピューターのデバッグをサポートしています (USB 2.0) EHCI ホスト コント ローラー
+-   ターゲットコンピューターで、デバッグをサポートする EHCI (USB 2.0) ホストコントローラー
 
-## <a name="span-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspanspan-idsettingupthetargetcomputerspansetting-up-the-target-computer"></a><span id="Setting_Up_the_Target_Computer"></span><span id="setting_up_the_target_computer"></span><span id="SETTING_UP_THE_TARGET_COMPUTER"></span>ターゲット コンピューターをセットアップします。
+## <a name="setting-up-the-target-computer"></a>ターゲットコンピューターのセットアップ
 
 
-1.  対象のコンピューターに UsbView ツールを起動します。 Windows ツールのデバッグにはに UsbView ツールが含まれます。
-2.  UsbView、EHCI 仕様と互換性があるホスト コント ローラーのすべてを見つけます。 たとえば、拡張としてリストされているコント ローラーを検索する可能性があります。
-3.  UsbView、EHCI ホスト コント ローラーのノードを展開します。 ホスト コント ローラーがデバッグするをサポートしていることを示す値を検索し、デバッグ ポートの番号を探します。 たとえば、UsbView EHCI ホスト コント ローラー 1 のポートでのデバッグをサポートするためには、この出力を表示します。
+1.  ターゲットコンピューターで、UsbView ツールを起動します。 UsbView ツールは、Windows 用デバッグツールに含まれています。
+2.  [UsbView] で、EHCI 仕様と互換性のあるすべてのホストコントローラーを見つけます。 たとえば、"Enhanced" と表示されているコントローラーを探すことができます。
+3.  [UsbView] で、EHCI ホストコントローラーのノードを展開します。 ホストコントローラーがデバッグをサポートしていることを確認し、デバッグポートの番号を探します。 たとえば、[UsbView] を使用すると、ポート1でのデバッグをサポートする EHCI ホストコントローラーのこの出力が表示されます。
 
     ```console
     Xxx xxx xxx USB2 Enhanced Host Controller - 293A
@@ -46,86 +46,82 @@ USB 2.0 ケーブル経由でのデバッグには、次のハードウェアが
     Bus.Device.Function (in decimal): 0.29.7
     ```
 
-    **注**  多く EHCI ホスト コント ローラーは、EHCI ホスト コント ローラーが、1 は、ポート 2 でのデバッグをサポートするポートでのデバッグをサポートします。
+    **メモ**   多くの EHCI ホストコントローラーはポート1でのデバッグをサポートしていますが、一部の EHCI ホストコントローラーではポート2でのデバッグがサポートされています。
 
      
 
-4.  デバッグに使用する、EHCI コント ローラーには、バス、デバイス、および関数の番号をメモしてをおきます。 UsbView には、これらの数が表示されます。 前の例では、バス番号は 0、デバイス番号は 29、および関数の数は 7 です。
+4.  デバッグに使用する EHCI コントローラーのバス、デバイス、および関数の番号をメモしておきます。 UsbView には、これらの数値が表示されます。 前の例では、バス番号は0、デバイス番号は29、関数番号は7です。
 
-5.  EHCI コント ローラーとデバッグをサポートしているポート番号を特定したら後、次の手順では、正しいポート番号に関連付けられている物理 USB コネクタを検索します。 物理のコネクタを検索するには、ターゲット コンピューター上の任意の USB コネクタに任意の USB 2.0 デバイスを接続します。 デバイスが配置されている UsbView を更新します。 UsbView EHCI ホスト コント ローラーとデバッグ ポートとして指定したポートに接続されているデバイスが表示される場合は、デバッグに使用できる物理 USB コネクタを発見しました。 EHCI コント ローラー上のデバッグ ポートに関連付けられている外部の物理 USB コネクタが存在しない可能性があります。 その場合は、コンピューター内の物理的な USB コネクタ検索することができます。 内部の USB コネクタはカーネル デバッグに適しているかどうかを判断するのと同じ手順を実行します。 物理的な USB コネクタが見つからない場合、デバッグ ポートに関連付けられている (外部または内部) し、USB 2.0 ケーブル経由のデバッグ ターゲットとして、コンピューターを使用することはできません。
+5.  EHCI コントローラーと、デバッグをサポートするポート番号を特定したら、次の手順では、正しいポート番号に関連付けられている物理 USB コネクタを見つけます。 物理コネクタを見つけるには、任意の USB 2.0 デバイスをターゲットコンピューター上の任意の USB コネクタに接続します。 UsbView を更新して、デバイスが配置されている場所を確認します。 [UsbView] に、デバッグポートとして指定した EHCI ホストコントローラーとポートに接続しているデバイスが表示されている場合は、デバッグに使用できる物理 USB コネクタがあります。 EHCI コントローラーのデバッグポートに関連付けられている外部の物理 USB コネクタがない可能性があります。 その場合は、コンピューター内で物理 USB コネクタを探すことができます。 内部 USB コネクタがカーネルデバッグに適しているかどうかを判断するには、同じ手順を実行します。 デバッグポートに関連付けられている物理 USB コネクタ (外部または内部) が見つからない場合は、そのコンピューターを USB 2.0 ケーブルでデバッグするためのターゲットとして使用することはできません。
 
-    **注**  を参照してください[この注釈](#what-if-usbview-shows-a-debug-capable-port)例外。
+    **メモ**   例外については、[このコメント](#what-if-usbview-shows-a-debug-capable-port)を参照してください。
 
 > [!IMPORTANT]
-> Bcdedit を使用してブート情報を変更する前に、テスト用のコンピューターの BitLocker とセキュア ブートなどの Windows セキュリティ機能を一時的に中断する必要があります。 セキュア ブートは、再度有効に完了したらとデバッグは無効になりましたカーネル デバッグします。  
+> Bcdedit を使用してブート情報を変更する前に、テスト PC で BitLocker やセキュアブートなどの Windows のセキュリティ機能を一時的に停止することが必要になる場合があります。 デバッグが完了し、カーネルデバッグを無効にした後、セキュアブートを再度有効にすることができます。  
 
-   
+6. ターゲットコンピューターで、管理者としてコマンドプロンプトウィンドウを開き、次のコマンドを入力します。
 
-6. 対象のコンピューターに管理者としてコマンド プロンプト ウィンドウを開きし、これらのコマンドを入力します。
+   - **bcdedit/debug on**
+   - **bcdedit/dbgsettings usb targetname:**<em>targetname</em>
 
-   - **bcdedit /debug on**
-   - **bcdedit/dbgsettings usb targetname:**<em>TargetName</em>
+   *TargetName*はターゲットコンピューター用に作成する名前です。 *TargetName*はターゲットコンピューターの正式な名前である必要はないことに注意してください。次の制限を満たしている限り、任意の文字列を指定できます。
 
-   場所*TargetName*対象のコンピュータ用に作成した名前を指定します。 なお*TargetName*対象のコンピュータの正式な名前を指定する必要はありませんこれらの制限を満たしている限り、作成した任意の文字列にすることができます。
+   -   文字列では、大文字と小文字の組み合わせで*TargetName*内の任意の場所に "debug" を含めることはできません。 たとえば、targetname 内の任意の場所で "DeBuG" または "DEBUG" を使用すると、デバッグは正しく機能しません。  
+   -   文字列内の文字は、ハイフン (-)、アンダースコア ( \_ )、0 ~ 9 の数字、および文字 A ~ Z (大文字または小文字) のみです。
+   -   文字列の最大長は24文字です。
 
-   -   文字列の最大長は、24 文字です。
-   -   文字列内の唯一の文字はアンダー スコア、ハイフン (-)、(\_)、0 ~ 9 の数字と文字 A ~ Z (大文字または小文字)。
-
-7. ターゲット コンピューターに 1 つ以上の USB ホスト コント ローラーがある場合は、このコマンドを入力します。
+7. ターゲットコンピューターに複数の USB ホストコントローラーがある場合は、次のコマンドを入力します。
 
    <span id="Windows_7_or_later"></span><span id="windows_7_or_later"></span><span id="WINDOWS_7_OR_LATER"></span>Windows 7 以降  
-   **bcdedit /set "{dbgsettings}" busparams** *b.d.f*
+   **bcdedit/set "{dbgsettings}" busparams** *b. d. f*
 
-   場所*b*、 *d*、および*f*バス、デバイス、およびホスト コント ローラーの関数の番号。 バス、デバイス、および関数の番号は 10 進数形式である必要があります (たとえば、 **busparams 0.29.7**)。
+   ここで、 *b*、 *d*、および*f*は、ホストコントローラーのバス、デバイス、および関数の番号です。 バス、デバイス、および関数の数値は、10進形式 ( **busparams 0.29.7**など) である必要があります。
 
    <span id="Windows_Vista"></span><span id="windows_vista"></span><span id="WINDOWS_VISTA"></span>Windows Vista  
-   **bcdedit /set "{current}" loadoptions busparams=**<em>f.d.f</em>
+   **bcdedit/set "{current}" loadoptions busparams =**<em>f. d. f</em>
 
-   場所*b*、 *d*、および*f*バス、デバイス、およびホスト コント ローラーの関数の番号。 バス、デバイス、および関数の数値を 16 進形式である必要があります (たとえば、 **busparams = 0.1 D. 7**)。
+   ここで、 *b*、 *d*、および*f*は、ホストコントローラーのバス、デバイス、および関数の番号です。 バス、デバイス、および関数の番号は16進形式である必要があります (例: **busparams = 0.1 d. 7**)。
 
 8. ターゲット コンピューターを再起動します。
 
-## <a name="span-idsetting-up-the-host-computerspanspan-idsettingupthehostcomputerspanspan-idsettingupthehostcomputerspansetting-up-the-host-computer"></a><span id="Setting-Up-the-Host-Computer"></span><span id="setting_up_the_host_computer"></span><span id="SETTING_UP_THE_HOST_COMPUTER"></span>ホスト コンピューターをセットアップします。
+## <a name="setting-up-the-host-computer"></a>ホストコンピューターのセットアップ
 
 
-1.  USB デバッグのターゲットにするのには、ホスト コンピューターが構成されていないことを確認します。 (必要に応じて、管理者としてコマンド プロンプト ウィンドウを開き、入力**オフ bcdedit/debug**、し、再起動します)。
-2.  ホスト コンピューターには、EHCI ホスト コント ローラーとデバッグをサポートするポートを検索するのに UsbView を使用します。 可能であれば、デバッグをサポートしていない (ホスト コンピューター) 上の EHCI ポートに USB 2.0 のデバッグ ケーブルの一端を差し込みます。 それ以外の場合、ホスト コンピューター上の任意の EHCI ポートにケーブルを接続します。
-3.  ターゲット コンピューターの前に特定したコネクタに USB 2.0 デバッグ ケーブルのもう一方の端を差し込みます。
+1.  ホストコンピューターが、USB デバッグのターゲットとなるように構成されていないことを確認します。 (必要に応じて、管理者としてコマンドプロンプトウィンドウを開き、「 **bcdedit/debug off**」と入力して再起動します)。
+2.  ホストコンピューターで、[UsbView] を使用して、デバッグをサポートする EHCI ホストコントローラーとポートを検索します。 可能であれば、USB 2.0 デバッグケーブルの一端を、デバッグをサポートしていない EHCI ポート (ホストコンピューター上) に接続します。 それ以外の場合は、ホストコンピューターの任意の EHCI ポートにケーブルを接続します。
+3.  USB 2.0 デバッグケーブルのもう一方の端を、ターゲットコンピューターで以前に特定したコネクタに接続します。
 
-## <a name="span-idstarting-a-debugging-session-for-the-first-timespanspan-idstartingadebuggingsessionforthefirsttimespanspan-idstartingadebuggingsessionforthefirsttimespanstarting-a-debugging-session-for-the-first-time"></a><span id="Starting-a-Debugging-Session-for-the-First-Time"></span><span id="starting_a_debugging_session_for_the_first_time"></span><span id="STARTING_A_DEBUGGING_SESSION_FOR_THE_FIRST_TIME"></span>初めてデバッグ セッションの開始
-
-
-1.  ホスト コンピューターで実行されている Windows のビット数 (32 ビットまたは 64 ビット) を決定します。
-2.  ホスト コンピューターでは、ホスト コンピューターで実行されている Windows のビット数に一致する (管理者) として WinDbg のバージョンが開きます。 たとえば、ホスト コンピューターで Windows の 64 ビット版が実行されている場合は、管理者として WinDbg の 64 ビット バージョンを開きます。
-3.  **ファイル**] メニューの [選択**カーネル デバッグ**します。 カーネル デバッグ ダイアログ ボックスで、開く、 **USB**タブ。ターゲット コンピューターをセットアップするときに作成したターゲットの名前を入力します。 **[OK]** をクリックします。
-
-この時点では、USB デバッグのドライバーは、ホスト コンピューターにインストールを取得します。 これは、ため、Windows のビット数に WinDbg のビット数と一致することが重要です。 USB デバッグ ドライバーがインストールされた後は、後続のデバッグ セッション WinDbg の 32 ビットまたは 64 ビット バージョンのいずれかを使用できます。
-
-**注**  USB 2.0 デバッグ ケーブルが途中でドングルを実際に 2 本のケーブル。 ドングルの方向は重要です。一方の側が、デバイスを補強し、もう一方の側はありません。 USB デバッグが機能しない場合は、ドングルの方向をスワップしてみます。 つまり、ドングルから両方のケーブルを取り外します、辺に、ケーブルが接続されているをスワップします。
-
- 
-
-## <a name="span-idstarting-a-debugging-sessionspanspan-idstartingadebuggingsessionspanspan-idstartingadebuggingsessionspanstarting-a-debugging-session"></a><span id="Starting-a-Debugging-Session"></span><span id="starting_a_debugging_session"></span><span id="STARTING_A_DEBUGGING_SESSION"></span>デバッグ セッションの開始
+## <a name="starting-a-debugging-session-for-the-first-time"></a>初めてデバッグセッションを開始する
 
 
-### <a name="span-idusing-windbgspanspan-idusingwindbgspanspan-idusingwindbgspanusing-windbg"></a><span id="Using-WinDbg"></span><span id="using_windbg"></span><span id="USING_WINDBG"></span>WinDbg を使用します。
+1.  ホストコンピューター上で実行されている Windows のビット数 (32 ビットまたは64ビット) を確認します。
+2.  ホストコンピューターで、ホストコンピューター上で実行されている Windows のビットと一致するバージョンの WinDbg (管理者として) を開きます。 たとえば、ホストコンピューターで64ビットバージョンの Windows が実行されている場合は、管理者として、WinDbg の64ビットバージョンを開きます。
+3.  [**ファイル**] メニューの [**カーネルデバッグ**] をクリックします。 [カーネルデバッグ] ダイアログボックスで、[ **USB** ] タブを開きます。ターゲットコンピューターを設定するときに作成したターゲットの名前を入力します。 **[OK]** をクリックします。
 
-ホスト コンピューターでは、WinDbg を開きます。 **ファイル**] メニューの [選択**カーネル デバッグ**します。 カーネル デバッグ ダイアログ ボックスで、開く、 **USB**タブ。ターゲット コンピューターをセットアップするときに作成したターゲットの名前を入力します。 **[OK]** をクリックします。
+この時点で、USB デバッグドライバーがホストコンピューターにインストールされます。 このため、WinDbg のビットと Windows のビットを一致させることが重要です。 USB デバッグドライバーをインストールした後、次のデバッグセッションでは、32ビットまたは64ビットバージョンの WinDbg を使用できます。
 
-コマンド プロンプト ウィンドウで、次のコマンドを入力して、WinDbg でセッションを開始することもできます、 *TargetName*はターゲット コンピューターをセットアップするときに作成したターゲットの名前です。
-
-**windbg /k usb:targetname=**<em>TargetName</em>
-
-### <a name="span-idusingkdspanspan-idusingkdspanspan-idusingkdspanusing-kd"></a><span id="Using_KD"></span><span id="using_kd"></span><span id="USING_KD"></span>KD を使用します。
-
-ホスト コンピューターでは、コマンド プロンプト ウィンドウを開き、次のコマンドを入力して、 *TargetName*はターゲット コンピューターをセットアップするときに作成したターゲット名です。
-
-**kd /k usb:targetname=**<em>TargetName</em>
-
-## <a name="span-idwhat-if-usbview-shows-a-debug-capable-portspanspan-idwhatifusbviewshowsadebugcapableportspanwhat-if-usbview-shows-a-debug-capable-port-but-does-not-show-the-port-mapped-to-any-physical-connector"></a><span id="what-if-usbview-shows-a-debug-capable-port"></span><span id="WHAT_IF_USBVIEW_SHOWS_A_DEBUG_CAPABLE_PORT"></span>USBView がデバッグ対応のポートを示していますが、物理コネクタにマップされているポートが表示されない場合ですか。
+**メモ**   USB 2.0 デバッグケーブルは実際には、ドングルが中央にある2本のケーブルです。 ドングルの方向は重要です。一方はデバイスの電源を入れ、もう一方の側はデバイスの電源を入れません。 USB デバッグが機能しない場合は、ドングルの方向にスワップしてみてください。 つまり、ドングルから両方のケーブルを取り外し、ケーブルが接続されている面を交換します。
 
 
-一部のコンピューターでは、USBView がデバッグ対応のポートを示していますが、物理的な USB コネクタにマップされているポートは表示されません。 たとえば、USBView は eHCI コント ローラーのデバッグ ポート番号としてポート 2 を表示する可能性があります。
+## <a name="starting-a-debugging-session"></a>デバッグセッションの開始
+
+### <a name="using-windbg"></a>WinDbg の使用
+
+ホストコンピューターで、[WinDbg] を開きます。 [**ファイル**] メニューの [**カーネルデバッグ**] をクリックします。 [カーネルデバッグ] ダイアログボックスで、[ **USB** ] タブを開きます。ターゲットコンピューターを設定するときに作成したターゲットの名前を入力します。 **[OK]** をクリックします。
+
+また、コマンドプロンプトウィンドウで次のコマンドを入力して、WinDbg を使用してセッションを開始することもできます。ここで、 *TargetName*はターゲットコンピューターをセットアップしたときに作成したターゲット名です。
+
+**windbg/k usb: targetname =**<em>targetname</em>
+
+### <a name="span-idusing_kdspanspan-idusing_kdspanspan-idusing_kdspanusing-kd"></a><span id="Using_KD"></span><span id="using_kd"></span><span id="USING_KD"></span>KD の使用
+
+ホストコンピューターで、コマンドプロンプトウィンドウを開き、次のコマンドを入力します。 *TargetName*はターゲットコンピューターをセットアップしたときに作成したターゲット名です。
+
+**kd/k usb: targetname =**<em>targetname</em>
+
+## <a name="span-idwhat-if-usbview-shows-a-debug-capable-portspanspan-idwhat_if_usbview_shows_a_debug_capable_portspanwhat-if-usbview-shows-a-debug-capable-port-but-does-not-show-the-port-mapped-to-any-physical-connector"></a><span id="what-if-usbview-shows-a-debug-capable-port"></span><span id="WHAT_IF_USBVIEW_SHOWS_A_DEBUG_CAPABLE_PORT"></span>USBView にデバッグ対応のポートが表示されていても、どの物理コネクタにもマップされているポートが表示されない場合はどうなりますか。
+
+コンピューターによっては、USBView にデバッグ対応のポートが表示されますが、どの物理 USB コネクタにもマップされているポートは表示されません。 たとえば、USBView では、eHCI コントローラーのデバッグポート番号としてポート2が表示される場合があります。
 
 ```console
 ... USB Enhanced Host Controller ...
@@ -134,7 +130,7 @@ Debug Port Number:  2
 Bus.Device.Function (in decimal): 0.29.0
 ```
 
-また、USBView を使用して、個々 のポートを確認すると、デバッグ対応として表示されます。
+また、[USBView] を使用して個々のポートを確認すると、[デバッグ対応] として表示されます。
 
 ```console
 [Port 2]
@@ -147,29 +143,18 @@ Protocols Supported
   USB 3.0      no
 ```
 
-USBView デバッグできるポート (この例ではポート 2) に接続されているデバイス (フラッシュ ドライブ) のように、コンピューター上のすべての USB コネクタに USB 2.0 デバイスを接続するときに表示しません。 USBView は eHCI コント ローラーのデバッグに対応したポートに、外部のコネクタが実際にマップされている場合は、xHCI コント ローラーのポートにマップされている外部コネクタを表示する場合があります。
+しかし、USB 2.0 デバイス (フラッシュドライブなど) をコンピューター上のすべての USB コネクタに接続する場合、USBView は、デバイスがデバッグ対応ポート (この例ではポート 2) に接続されていることを示していません。 USBView では、xHCI コントローラーのポートにマップされた外部コネクタが表示されることがあります。これは、実際には、外部コネクタが eHCI コントローラーのデバッグ対応ポートにマップされるためです。
 
-![xhci と usbview で ehci のスクリーン ショット](images/usbview01.png)
+![xhci と ehci の [usbview] のスクリーンショット](images/usbview01.png)
 
-このような場合は、カーネル モードの USB 2.0 ケーブル経由でのデバッグを確立することがある可能性があります。 ここに示す例では、xHCI コント ローラーのポート 2 にマップされていると表示されるコネクタに、USB 2.0 デバッグ ケーブルを接続します。 バス、デバイス、および関数の数 (この例では、0.29.0) では eHCI コント ローラーに、バス パラメーターを設定します。
+このような場合でも、USB 2.0 ケーブルでカーネルモードのデバッグを確立できる可能性があります。 ここで示されている例では、USB 2.0 デバッグケーブルを、xHCI コントローラーのポート2にマップされていると表示されるコネクタに接続します。 次に、バスパラメーターを eHCI コントローラーのバス、デバイス、および関数番号 (この例では 0.29.0) に設定します。
 
-**bcdedit /set "{dbgsettings}" busparams 0.29.0**
+`bcdedit /set "{dbgsettings}" busparams 0.29.0`
 
-### <a name="span-idsoftware-setupspanspan-idsoftwaresetupspanadditional-support"></a><span id="software-setup"></span><span id="SOFTWARE_SETUP"></span>その他のサポート
+### <a name="additional-support"></a>その他のサポート
 
-トラブルシューティングのヒントとカーネルが USB 経由でデバッグの設定の詳細については、[カーネル デバッグのセットアップと USB 2.0](https://go.microsoft.com/fwlink/p?linkid=389435)を参照してください。
+トラブルシューティングのヒントとその他の情報については、 [MICROSOFT USB ブログ](https://techcommunity.microsoft.com/t5/microsoft-usb-blog/bg-p/MicrosoftUSBBlog)を参照してください。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="related-topics"></a>関連トピック
 
-
-[カーネル モードのデバッグを手動での設定](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)
-
- 
-
- 
-
-
-
-
-
-
+[カーネル モードのデバッグを手動でセットアップする](setting-up-kernel-mode-debugging-in-windbg--cdb--or-ntsd.md)

@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x2B PANIC_STACK_SWITCH
-description: PANIC_STACK_SWITCH のバグ チェックでは、0x0000002B の値を持ちます。 これは、カーネル モード スタックがオーバーランすることを示します。
+title: バグチェック 0x2B PANIC_STACK_SWITCH
+description: PANIC_STACK_SWITCH のバグチェックには、0x0000002B の値が指定されています。 これは、カーネルモードスタックがオーバーランしたことを示します。
 ms.assetid: 0ab28a16-979d-4b40-812a-a31fac3f6be8
 keywords:
-- バグ チェック 0x2B PANIC_STACK_SWITCH
+- バグチェック 0x2B PANIC_STACK_SWITCH
 - PANIC_STACK_SWITCH
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d03cc4d399971a45c02de30fb66c4bd950a0c6a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 7f72d552417809635692772e693f50341a73aecc
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519555"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534823"
 ---
-# <a name="bug-check-0x2b-panicstackswitch"></a>バグ チェック 0x2B:パニック\_スタック\_スイッチ
+# <a name="bug-check-0x2b-panic_stack_switch"></a>バグチェック 0x2B: パニック \_ スタック \_ スイッチ
 
 
-パニック\_スタック\_スイッチのバグ チェックが 0x0000002B の値を持ちます。 これは、カーネル モード スタックがオーバーランすることを示します。
+パニック \_ スタックスイッチのバグチェックには、 \_ 0x0000002b の値が指定されています。 これは、カーネルモードスタックがオーバーランしたことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="panicstackswitch-parameters"></a>パニック\_スタック\_スイッチ パラメーター
+## <a name="panic_stack_switch-parameters"></a>パニック \_ スタック \_ スイッチパラメーター
 
 
 <table>
@@ -46,7 +46,7 @@ ms.locfileid: "67519555"
 <tbody>
 <tr class="odd">
 <td align="left"><p>1</p></td>
-<td align="left"><p>トラップ フレーム</p></td>
+<td align="left"><p>トラップフレーム</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>2</p></td>
@@ -68,11 +68,11 @@ ms.locfileid: "67519555"
 <a name="cause"></a>原因
 -----
 
-このエラーは、通常、カーネル モード ドライバーは、スタック領域が多すぎるを使用する場合に表示されます。 これは、カーネルの重大なデータ破損が発生したときにも表示できます。
+このエラーは通常、カーネルモードドライバーが使用しているスタック領域が多すぎる場合に表示されます。 また、カーネルで深刻なデータ破損が発生した場合にも表示されます。
 
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

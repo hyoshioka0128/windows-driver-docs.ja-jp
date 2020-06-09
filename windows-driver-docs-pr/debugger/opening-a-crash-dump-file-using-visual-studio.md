@@ -1,35 +1,26 @@
 ---
 title: Visual Studio を使用してダンプ ファイルを開く
-description: ダンプ ファイルを使用して Visual Studio を開く手順。
+description: この手順では、Visual Studio を使用してダンプファイルを開きます。
 ms.assetid: 3B7327FE-335F-46FB-94C3-75D5B52A295D
 ms.date: 05/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b48ace7492f6add972c63f95304059be1ee4d5b2
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4eff3a2c1b207b3649387de788c765cc2a0b3508
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330992"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534325"
 ---
 # <a name="opening-a-dump-file-using-visual-studio"></a>Visual Studio を使用してダンプ ファイルを開く
 
 > [!IMPORTANT]
-> この機能は、Windows 10 バージョン 1507、以降のバージョンの WDK でご利用いただけません。
+> この機能は、Windows 10 バージョン1507以降のバージョンの WDK では使用できません。
 >
 
-このトピックで示す手順では、Visual Studio に統合された Windows Driver Kit が必要です。 統合環境を取得するには、最初に、Microsoft Visual Studio をインストールし、Windows Driver Kit (WDK) をインストールします。 詳細については、次を参照してください。 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p?linkid=391063)します。
+このトピックに記載されている手順では、Windows Driver Kit が Visual Studio に統合されている必要があります。 統合環境を利用するには、まず Microsoft Visual Studio をインストールしてから、Windows Driver Kit (WDK) をインストールします。 詳細については、「 [Windows Driver Kit (WDK) のダウンロード](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)」を参照してください。
 
-Visual Studio を使用してダンプ ファイルを開く。
+Visual Studio を使用してダンプファイルを開くには、次のようにします。
 
-1.  <span id="ui_item"></span><span id="UI_ITEM"></span>Visual Studio から、**ファイル**] メニューの [選択**オープン |クラッシュ ダンプ**します。
-2.  開きたいダンプ ファイルに移動します。
-3.  クリックして**開きます。**
-
- 
-
- 
-
-
-
-
-
+1. Visual Studio の [**ファイル**] メニューで、[開く] を選択します。 **クラッシュダンプ**。
+2. 開くダンプファイルに移動します。
+3. [**開く] をクリックします。**

@@ -1,81 +1,62 @@
 ---
 title: USB 3.0 データの構造
-description: このトピックでは、USB 3.0 ホスト コント ローラーのドライバーによって使用されるデータ構造について説明します。
+description: このトピックでは、USB 3.0 ホストコントローラードライバーで使用されるデータ構造について説明します。
 ms.assetid: 39BD7413-48A5-4199-BA8E-D2A77E4D23F1
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e51c35d47e1bd4590fb18515f183bf40ff530755
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a9a5893da22ddbcb113a94af61681a18bb364934
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63368229"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533837"
 ---
 # <a name="usb-30-data-structures"></a>USB 3.0 データの構造
 
+このトピックでは、USB 3.0 ホストコントローラードライバーで使用されるデータ構造について説明します。 これらのデータ構造を理解することで、 [USB 3.0](usb-3-extensions.md)および[Rcdrkd](rcdrkd-extensions.md)デバッガー拡張機能のコマンドを効果的に使用できるようになります。 ここに表示されるデータ構造には、 [USB 3.0 仕様](https://www.usb.org/documents)と一貫性のある名前が付いています。 USB 3.0 仕様に精通していると、拡張コマンドを使用して USB 3.0 ドライバーをデバッグできるようになります。
 
-このトピックでは、USB 3.0 ホスト コント ローラーのドライバーによって使用されるデータ構造について説明します。 これらのデータ構造を理解する際に役立つを使用して、 [USB 3.0](usb-3-extensions.md)と[RCDRKD](rcdrkd-extensions.md)デバッガー拡張機能のコマンドを効果的にします。 ここでは、データ構造と一致する名前がある、 [USB 3.0 仕様](https://go.microsoft.com/fwlink/p?LinkID=224892)します。 仕様により、さらに、USB 3.0 に関する知識は、拡張機能のコマンドを使用して、USB 3.0 ドライバーをデバッグする機能を強化します。
+USB 3.0 ホストコントローラードライバーは、USB 3.0 コアドライバースタックの一部です。 詳細については、「 [USB ドライバースタックアーキテクチャ](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
-USB 3.0 ホスト コント ローラーのドライバーには、コアの USB 3.0 ドライバー スタックの一部です。 詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
+各 USB 3.0 ホストコントローラーは、最大255のデバイスを持つことができ、各デバイスには最大31のエンドポイントを含めることができます。 次の図は、1つのホストコントローラーと接続されているデバイスを表すデータ構造の一部を示しています。
 
-各 USB 3.0 ホスト コント ローラーは最大 255 のデバイスを持つことができ、デバイスごとに最大 31 個のエンドポイントを持つことができます。 次の図は、1 つのホスト コント ローラーと接続されたデバイスを表すデータ構造体の一部を示します。
+![1つのホストコントローラーと、デバイスコンテキストがスロットとエンドポイントのコンテキストを持つ接続されているデバイスを表す usb 3.0 データ構造](images/usb3structures01.png)
 
-![1 つのホスト コント ローラーと接続されたデバイスをデバイス コンテキストを持つをさらに持つスロットと終了点のコンテキストを表す usb 3.0 データ構造体](images/usb3structures01.png)
+## <a name="device-context-base-array"></a>デバイスコンテキストベース配列
 
-## <a name="span-iddevicecontextbasearrayspanspan-iddevicecontextbasearrayspanspan-iddevicecontextbasearrayspandevice-context-base-array"></a><span id="Device_Context_Base_Array"></span><span id="device_context_base_array"></span><span id="DEVICE_CONTEXT_BASE_ARRAY"></span>デバイス コンテキストの基本の配列
+デバイスコンテキストの基本配列は、デバイスコンテキスト構造へのポインターの配列です。 ホストコントローラーに接続されているデバイスごとに1つのデバイスコンテキスト構造があります。 要素 1 ~ 255 は、デバイスコンテキスト構造をポイントします。 要素0は、ホストコントローラーのコンテキスト構造を指します。
 
+## <a name="device-context-and-slot-context"></a>デバイスコンテキストとスロットコンテキスト
 
-デバイス コンテキスト ベースの配列は、デバイス コンテキストの構造体へのポインターの配列です。 ホスト コント ローラーに接続されている各デバイスの 1 つのデバイス コンテキスト構造があります。 要素が 1 255 までからは、デバイス コンテキストの構造体をポイントします。 要素 0 ホスト コント ローラーのコンテキスト構造体をポイントします。
+デバイスコンテキスト構造体は、エンドポイントコンテキスト構造へのポインターの配列を保持します。 デバイス上のエンドポイントごとに1つのエンドポイントコンテキスト構造があります。 要素 1 ~ 31 は、エンドポイントコンテキスト構造を指します。 要素0は、デバイスのコンテキスト情報を保持するスロットコンテキスト構造体を指します。
 
-## <a name="span-iddevicecontextandslotcontextspanspan-iddevicecontextandslotcontextspanspan-iddevicecontextandslotcontextspandevice-context-and-slot-context"></a><span id="Device_Context_and_Slot_Context"></span><span id="device_context_and_slot_context"></span><span id="DEVICE_CONTEXT_AND_SLOT_CONTEXT"></span>デバイス コンテキストとスロットのコンテキスト
+## <a name="command-ring"></a>コマンドリング
 
+コマンドリングは、ホストコントローラーにコマンドを渡すためにソフトウェアによって使用されます。 これらのコマンドの一部はホストコントローラーで行われ、ホストコントローラーに接続されている特定のデバイスで転送されます。
 
-デバイス コンテキストの構造は、エンドポイント コンテキストを構造体へのポインターの配列を保持します。 デバイス上の各エンドポイントの 1 つのエンドポイント コンテキスト構造があります。 要素が 1 31 までからは、エンドポイントの Context 構造体をポイントします。 スロットの Context 構造体は、デバイスのコンテキスト情報を保持するポイントが 0 の要素。
+## <a name="event-ring"></a>イベントリング
 
-## <a name="span-idcommandringspanspan-idcommandringspanspan-idcommandringspancommand-ring"></a><span id="Command_Ring"></span><span id="command_ring"></span><span id="COMMAND_RING"></span>コマンドのリング
+イベントリングは、ソフトウェアにイベントを渡すためにホストコントローラーによって使用されます。 つまり、イベントリングは、アクションが完了したことをドライバーに通知するためにホストコントローラーが使用する構造体です。
 
+## <a name="doorbell-register-array"></a>Doorbell Register 配列
 
-コマンドのリングは、ホスト コント ローラーにコマンドを渡すソフトウェアによって使用されます。 これらのコマンドの一部は、ホスト コント ローラーに転送し、いくつかは、ホスト コント ローラーに接続されている特定のデバイスに転送します。
+Doorbell Register 配列は、ホストコントローラーに接続されているデバイスごとに1つずつ、Doorbell レジスタの配列です。 要素 1 ~ 255 は doorbell レジスタです。 要素0は、コマンドリングに保留中のコマンドがあるかどうかを示します。
 
-## <a name="span-ideventringspanspan-ideventringspanspan-ideventringspanevent-ring"></a><span id="Event_Ring"></span><span id="event_ring"></span><span id="EVENT_RING"></span>イベントのリング
+ソフトウェアは、デバイスの doorbell register にコンテキスト情報を書き込むことによって実行するデバイス関連またはエンドポイント関連の作業があることをホストコントローラーに通知します。
 
+次の図は、前の図の右側に続きます。 これには、単一のエンドポイントを表す追加のデータ構造が表示されます。
 
-イベントのリングは、ソフトウェアにイベントを渡すホスト コント ローラーによって使用されます。 これはイベント リングでは、ホスト コント ローラーは、ドライバー操作が完了したことを通知するために使用する構造があります。
+![データと tds を持つ複数の trbs を持つエンドポイントコンテキストを示す usb 3.0 データ構造](images/usb3structures02.png)
 
-## <a name="span-iddoorbellregisterarrayspanspan-iddoorbellregisterarrayspanspan-iddoorbellregisterarrayspandoorbell-register-array"></a><span id="Doorbell_Register_Array"></span><span id="doorbell_register_array"></span><span id="DOORBELL_REGISTER_ARRAY"></span>ドアベル レジスタ配列
+## <a name="transfer-ring"></a>転送リング
 
+各エンドポイントには1つ以上の転送リングがあります。 転送リングは、転送要求ブロック (TRBs) の配列です。 各 TRB は、1つのユニットとしてハードウェアとメモリの間で転送される連続データ (最大 64 KB) のブロックを指します。
 
-登録ドアベル配列は、ドアベル レジスタは、ホスト コント ローラーに接続されている各デバイスに 1 つの配列です。 1 ~ 255 の要素は、ドアベルのレジスタです。 要素の 0 は、コマンドのリング内の保留中のコマンドがあるかどうかを示します。
+USB 3.0 コアスタックは、USB クライアントドライバーから転送要求を受信すると、転送のエンドポイントコンテキストを識別し、転送要求を1つまたは複数の転送記述子 (TDs) に分割します。 各 TD には、1つ以上の TRBs が含まれています。
 
-デバイスの登録ドアベルにコンテキスト情報を記述することで実行するデバイスに関連する、またはエンドポイントに関連する作業があるホスト コント ローラーのソフトウェアに通知します。
+## <a name="endpoint-context"></a>エンドポイントコンテキスト
 
-次の図は、前の図の右側が続行されます。 1 つのエンドポイントを表す追加のデータ構造が表示されます。
+エンドポイントコンテキスト構造体は、1つのエンドポイントのコンテキスト情報を保持します。 また、**デキュー**と**エンキュー**のメンバーもあります。このメンバーは、ハードウェアによって使用されている場所と、ソフトウェアによって追加される場所を追跡するために使用されます。
 
-![usb 3.0 構造が表示されたエンドポイントを持つデータ コンテキストを持つデータと tds 複数 trbs](images/usb3structures02.png)
+## <a name="related-topics"></a>関連トピック
 
-## <a name="span-idtransferringspanspan-idtransferringspanspan-idtransferringspantransfer-ring"></a><span id="Transfer_Ring"></span><span id="transfer_ring"></span><span id="TRANSFER_RING"></span>リングを転送します。
-
-
-各エンドポイントには 1 つまたは複数の転送の呼び出し回数。 転送のリングは、転送要求のブロック (TRBs) の配列です。 連続したデータのブロックを指す各 TRB (最大 64 KB) をハードウェアと 1 つの単位としてメモリの間で転送されます。
-
-USB 3.0 core スタックは、USB クライアント ドライバーからの転送要求を受信したときに、転送用エンドポイント コンテキストを識別して、転送要求を 1 つまたは複数の転送記述子 (TDs) に分割します。 各 TD には、1 つまたは複数の TRBs が含まれています。
-
-## <a name="span-idendpointcontextspanspan-idendpointcontextspanspan-idendpointcontextspanendpoint-context"></a><span id="Endpoint_Context"></span><span id="endpoint_context"></span><span id="ENDPOINT_CONTEXT"></span>エンドポイント コンテキスト
-
-
-エンドポイント コンテキストを構造体では、1 つのエンドポイントのコンテキスト情報を保持します。 **デキュー**と**エンキュー**メンバーで、ソフトウェアによって TRBs が追加されて、TRBs はハードウェアによって使用されている場所の追跡に使用します。
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-
-
-[USB の Windows 8 における革新的技術をデバッグします。](https://go.microsoft.com/fwlink/p/?LinkID=249153)
-
- 
-
- 
-
-
-
-
-
-
+[Windows 8 の USB デバッグのイノベーション](https://channel9.msdn.com/Events/BUILD/BUILD2011/HW-258P)

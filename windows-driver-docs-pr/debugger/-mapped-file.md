@@ -1,9 +1,9 @@
 ---
 title: mapped_file
-description: Mapped_file 拡張機能では、指定したアドレスを含むファイルのマッピングをバックアップするファイルの名前が表示されます。
+description: Mapped_file 拡張機能には、指定されたアドレスを含むファイルマッピングをバックアップするファイルの名前が表示されます。
 ms.assetid: 1d6d4d14-01ca-47ce-a044-778c9a56e9a5
 keywords:
-- Windows デバッグ mapped_file
+- Windows デバッグの mapped_file
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,27 +12,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a38e66b023c84fa72123bcd6d1f88908f8fc461
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9d1591b541135a81dd416fe5746ead376baeb81b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336112"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534933"
 ---
-# <a name="mappedfile"></a>! マップ\_ファイル
+# <a name="mapped_file"></a>! マップされた \_ ファイル
 
 
-**! マップ\_ファイル**拡張機能は、指定したアドレスを含むファイルのマッピングをバックアップするファイルの名前を表示します。
+**! マップ \_ ファイル**拡張子は、指定されたアドレスを含むファイルマッピングをバックアップするファイルの名前を表示します。
 
 ```dbgcmd
 !mapped_file Address
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
 
-<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span> *アドレス*   
-ファイル マップのアドレスを指定します。 場合*アドレス*はマッピングでは、コマンドが失敗します。
+<span id="_______Address______"></span><span id="_______address______"></span><span id="_______ADDRESS______"></span>*アドレス*   
+ファイルマッピングのアドレスを指定します。 *アドレス*がマッピングに含まれていない場合、コマンドは失敗します。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
@@ -44,27 +44,27 @@ ms.locfileid: "63336112"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Uext.dll</p></td>
+<td align="left"><p>Uext .dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Uext.dll</p></td>
+<td align="left"><p><strong>Windows XP 以降</strong></p></td>
+<td align="left"><p>Uext .dll</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**! マップ\_ファイル**拡張機能は、リモート オブジェクト以外のデバッグ中にのみ使用できます。
+! マップされた** \_ ファイル**の拡張子は、ライブの非リモートデバッグ中にのみ使用できます。
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ファイルのマッピングの詳細については、次を参照してください。 [MapViewOfFile](https://go.microsoft.com/fwlink/p/?linkid=123354) Windows SDK に含まれています。
+ファイルマッピングの詳細については、Windows SDK の「 [MapViewOfFile](https://docs.microsoft.com/windows/win32/api/memoryapi/nf-memoryapi-mapviewoffile) 」を参照してください。
 
 <a name="remarks"></a>注釈
 -------
 
-ここでは、次の 3 つの例です。 使用される最初の 2 つのアドレスは、ファイルからマップされ、3 つ目はありません。
+次に3つの例を示します。 使用される最初の2つのアドレスはファイルからマップされ、3番目のアドレスはファイルから割り当てられません。
 
 ```dbgcmd
 0:000> !mapped_file 4121ec 

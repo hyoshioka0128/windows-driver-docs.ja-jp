@@ -1,9 +1,9 @@
 ---
-title: Bug Check 0xB9 CHIPSET_DETECTED_ERROR
-description: CHIPSET_DETECTED_ERROR のバグ チェックが非常に少ない回数が表示される確認 0x000000B9.This バグの値を持ちます。
+title: バグチェック 0xB9 CHIPSET_DETECTED_ERROR
+description: CHIPSET_DETECTED_ERROR バグチェックの値は0x000000B9 です。このバグチェックは非常に頻繁に行われます。
 ms.assetid: 21d92ea9-dae3-41f1-b0e7-3701c420f7ca
 keywords:
-- Bug Check 0xB9 CHIPSET_DETECTED_ERROR
+- バグチェック 0xB9 CHIPSET_DETECTED_ERROR
 - CHIPSET_DETECTED_ERROR
 ms.date: 05/23/2017
 topic_type:
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: b0cec9a503fca7de4656234b9d316d3ea24ad58d
-ms.sourcegitcommit: b25275c2662bfdbddd97718f47be9bd79e6f08df
+ms.openlocfilehash: 4a89dfd942e2ea3407876965e006029974c466fe
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67866511"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534799"
 ---
-# <a name="bug-check-0xb9-chipsetdetectederror"></a>バグ チェック 0xB9:チップセット\_検出\_エラー
+# <a name="bug-check-0xb9-chipset_detected_error"></a>バグチェック 0xB9: チップセット \_ 検出 \_ エラー
 
-チップセット\_検出\_エラーのバグ チェックが 0x000000B9 の値を持ちます。
+\_検出されたチップセット \_ エラーのバグチェックの値は、0x000000b9 です。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
  
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解像度
 
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるには非常に役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに非常に役立ちます。
  
 
 

@@ -7,12 +7,12 @@ ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: ab6e38dc576599d695e9efdacc267c73a35f909a
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 846802f41117c9a4ee14266142fc4bef4da499b8
+ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "63344137"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421377"
 ---
 # <a name="static-driver-verifier-known-issues"></a>静的ドライバー検証ツールの既知の問題
 
@@ -128,4 +128,4 @@ c:\Program Files\Microsoft Visual Studio\2017\BuildTools\Common7\IDE\VC\VCTarget
 Done executing task "LIB" -- FAILED.
 ```
 
-この問題には Errata 41600 を使用してください。
+これは既知の問題です。 この問題によって WHCP 認定がブロックされている場合は、Errata 41600 を使用してください。

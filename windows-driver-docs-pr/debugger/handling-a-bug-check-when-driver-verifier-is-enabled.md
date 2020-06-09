@@ -1,34 +1,34 @@
 ---
 title: ドライバーの検証ツールが有効な場合のバグ チェックの処理
-description: Driver Verifier は、実行時にドライバー関連のエラーを検出します。 検出され、ドライバー エラーに関する情報を表示、分析のデバッガー コマンドと共に Driver Verifier を使用できます。
+description: ドライバーの検証ツールは、実行時にドライバーのエラーを検出します。 ドライバーの検証ツールと [デバッガーの分析] コマンドを使用すると、ドライバーのエラーに関する情報を検出して表示できます。
 ms.assetid: 4226B62B-0AA5-4D04-A32D-7DD22FD694E3
 keywords:
 - ドライバーの検証ツール
 - 検証方法
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a835eb71d0a959575ae04a7f55970b02d68a89
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f49951abcbd074a30aa1b492fc2aed30b8d8eab4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342080"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534353"
 ---
 # <a name="handling-a-bug-check-when-driver-verifier-is-enabled"></a>ドライバーの検証ツールが有効な場合のバグ チェックの処理
 
 
-[Driver Verifier](https://go.microsoft.com/fwlink/p?LinkID=268663)実行時にドライバー関連のエラーを検出します。 Driver Verifier と共に使用することができます、 [ **! 分析**](-analyze.md)デバッガー コマンドが検出され、ドライバー エラーに関する情報を表示します。
+[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)は、実行時にドライバーのエラーを検出します。 Driver Verifier と[**! analyze**](-analyze.md)デバッガーコマンドを使用すると、ドライバーのエラーに関する情報を検出して表示できます。
 
-Windows 8 で[Driver Verifier](https://go.microsoft.com/fwlink/p?LinkID=268663)などの新しい機能が強化されました[DDI 準拠の検査](https://go.microsoft.com/fwlink/p?LinkID=268676)します。 ここで DDI 準拠の確認を示す例を紹介しました。
+Windows 8 では、[ドライバーの検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)機能が、DDI の[コンプライアンスチェック](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)を含む新機能によって強化されています。 ここでは、DDI のコンプライアンスチェックの例を示します。
 
-設定するには、次の手順を使用します。
+セットアップを行うには、次の手順に従います。
 
-1.  ホストおよびターゲット コンピューターの間でカーネル モードのデバッグ セッションを確立します。
-2.  ターゲット コンピューターに、ドライバーをインストールします。
-3.  ターゲット コンピューターでは、コマンド プロンプト ウィンドウを開き、コマンドを入力して**verifier**します。 使用[ドライバー検証マネージャー](https://go.microsoft.com/fwlink/p?LinkID=268659)ドライバーをドライバーの検証を有効にします。
+1.  ホストとターゲットコンピューターの間でカーネルモードのデバッグセッションを確立します。
+2.  ターゲットコンピューターにドライバーをインストールします。
+3.  ターゲットコンピューターでコマンドプロンプトウィンドウを開き、コマンド**検証ツール**を入力します。 ドライバー[検証マネージャー](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier-manager--windows-xp-and-later-)を使用して、ドライバーのドライバーの検証を有効にします。
 4.  ターゲット コンピューターを再起動します。
 
-Driver Verifier は、エラーを検出すると、バグ チェックが生成されます。 Windows では、デバッガーを中断し、エラーの簡単な説明を表示します。 Driver Verifier がバグの確認を生成する例をここでは[**ドライバー\_VERIFIER\_検出\_違反 (C4)**](bug-check-0xc4--driver-verifier-detected-violation.md)します。
+ドライバーの検証ツールでエラーが検出されると、バグチェックが生成されます。 その後、Windows がデバッガーに分割され、エラーの簡単な説明が表示されます。 次に示すのは、ドライバーの検証ツールがバグチェック[**ドライバーの \_ 検証ツールの \_ 検出 \_ 違反 (C4)**](bug-check-0xc4--driver-verifier-detected-violation.md)を生成する例です。
 
 ```dbgcmd
 Driver Verifier: Extension abort with Error Code 0x20005
@@ -48,7 +48,7 @@ nt!DbgBreakPointWithStatus:
 fffff802`a40ef930 cc              int     3
 ```
 
-デバッガーで、次のように入力します。 [ **。-v を分析**](-analyze.md)エラーの詳細な説明を取得します。
+デバッガーで、「 [**! analyze-v**](-analyze.md) 」と入力して、エラーの詳細な説明を取得します。
 
 ```dbgcmd
 0: kd> !analyze -v
@@ -98,9 +98,9 @@ PROCESS_NAME:  TiWorker.exe
 CURRENT_IRQL:  9
 ```
 
-上記の出力で、ルールの説明と名前を表示できます**IrqlExApcLte1**に違反していた、およびルールを説明するリファレンス ページへのリンクをクリックすることができます:<https://go.microsoft.com/fwlink/p/?linkid=216022>します。 デバッガー コマンド リンクをクリックすることもできます。 **! ruleinfo 0x20005**、ルールに関する情報を取得します。 この場合、ルールの状態を呼び出すことができません[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)割り込み要求レベル (IRQL) が APC より大きいかどうか\_レベル。 出力は、現在の IRQL は 9、および wdm.h で確認できますを示しています。 その APC\_レベルが 1 の値を持ちます。 Irql の詳細については、次を参照してください。[を管理するハードウェアの優先順位](https://go.microsoft.com/fwlink/p?LinkID=268625)します。
+上記の出力には、規則の名前と説明 ( **IrqlExApcLte1**) が表示されます。また、規則について説明している参照ページへのリンクをクリックすることもできます。 <https://docs.microsoft.com/windows-hardware/drivers/devtest/wdm-irqlexapclte1> また、デバッガーのコマンドリンク [ **! ruleinfo 0x20005**] をクリックして、ルールに関する情報を取得することもできます。 この場合、割り込み要求レベル (IRQL) が APC レベルを超えると、 [ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))を呼び出すことができないことがルールによって示され \_ ます。 出力は、現在の IRQL が9であることを示しています。また、wdm では、APC \_ レベルの値が1であることがわかります。 IRQLs の詳細については、「[ハードウェアの優先順位の管理](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities)」を参照してください。
 
-出力[ **! 分析-v** ](-analyze.md)はスタック トレースとエラーの原因となったコードに関する情報を使って続行されます。 次の出力を表示できます、 **OnInterrupt**と呼ばれる MyDriver.sys で日常的な[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)します。 **OnInterrupt** APC より大きい IRQL で実行される割り込みサービス ルーチンは、\_レベルに、このルーチンを呼び出すの違反が発生するように[ExAcquireFastMutex](https://go.microsoft.com/fwlink/p?LinkID=268628)します。
+[**! Analyze-v**](-analyze.md)の出力は、スタックトレースと、エラーの原因となったコードに関する情報を使用して続行されます。 次の出力では、MyDriver. sys の**Oninterrupt**ルーチンが[ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))という名前であることがわかります。 **Oninterrupt**は、APC レベルよりも大きい IRQL で実行される割り込みサービスルーチンです \_ 。そのため、このルーチンで[ExAcquireFastMutex](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff544337(v=vs.85))を呼び出すと、違反となります。
 
 ```dbgcmd
 LAST_CONTROL_TRANSFER:  from fffff802a41f00ea to fffff802a40ef930
@@ -164,10 +164,10 @@ FAILURE_BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 BUCKET_ID:  0xc4_IrqlExApcLte1_XDV_VRF_MyDriver!OnInterrupt
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[静的ドライバー検証ツール](https://go.microsoft.com/fwlink/p?LinkID=268668)
+[静的ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)
 
  
 

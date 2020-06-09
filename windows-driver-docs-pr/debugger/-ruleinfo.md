@@ -1,9 +1,9 @@
 ---
 title: ruleinfo
-description: Ruleinfo コマンドでは、Driver Verifier の規則に関する情報が表示されます。
+description: Ruleinfo コマンドは、ドライバーの検証規則に関する情報を表示します。
 ms.assetid: 025FAAFA-7A5C-462C-9CC2-AA55530CD371
 keywords:
-- Windows デバッグ ruleinfo
+- ruleinfo Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,44 +12,44 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4b75b692992085c20b7988766b4d46b4b49eef
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 04c852ebeca9cf09f0303a60cb957c76d8137391
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63338859"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534709"
 ---
 # <a name="ruleinfo"></a>!ruleinfo
 
 
-**! Ruleinfo**コマンドは、Driver Verifier の規則に関する情報を表示します。
+**! Ruleinfo**コマンドは、ドライバーの検証規則に関する情報を表示します。
 
 ```dbgcmd
 !ruleinfo RuleId [RuleState [SubState]]
 ```
 
-## <a name="span-idddkptovdbgspanspan-idddkptovdbgspanparameters"></a><span id="ddk__ptov_dbg"></span><span id="DDK__PTOV_DBG"></span>パラメーター
+## <a name="span-idddk__ptov_dbgspanspan-idddk__ptov_dbgspanparameters"></a><span id="ddk__ptov_dbg"></span><span id="DDK__PTOV_DBG"></span>パラメータ
 
 
-<span id="_______RuleId______"></span><span id="_______ruleid______"></span><span id="_______RULEID______"></span> *RuleId*   
-検証規則の ID。 これは、最初の引数、 [**ドライバー\_VERIFIER\_検出\_違反**](bug-check-0xc4--driver-verifier-detected-violation.md)バグ チェックします。
+<span id="_______RuleId______"></span><span id="_______ruleid______"></span><span id="_______RULEID______"></span>*RuleId*   
+検証規則の ID。 これは、DRIVER VERIFIER によっ[**て \_ \_ 検出された \_ 違反**](bug-check-0xc4--driver-verifier-detected-violation.md)のバグチェックの最初の引数です。
 
-<span id="_______RuleState______"></span><span id="_______rulestate______"></span><span id="_______RULESTATE______"></span> *RuleState*   
-違反に関する追加の状態情報。 これは、3 番目の引数、**ドライバー\_VERIFIER\_検出\_違反**バグ チェックします。
+<span id="_______RuleState______"></span><span id="_______rulestate______"></span><span id="_______RULESTATE______"></span>*Rulestate*   
+違反に関する追加の状態情報。 これは、**ドライバー \_ 検証ツールで \_ 検出された \_ 違反**バグチェックの3番目の引数です。
 
-<span id="_______SubState______"></span><span id="_______substate______"></span><span id="_______SUBSTATE______"></span> *下位状態*   
-サブ状態の違反に関する情報。 これは、4 番目の引数、**ドライバー\_VERIFIER\_検出\_違反**バグ チェック。
+<span id="_______SubState______"></span><span id="_______substate______"></span><span id="_______SUBSTATE______"></span>*SubState*下位状態   
+違反に関するサブ状態情報。 これは、 **DRIVER \_ VERIFIER で \_ 検出された \_ 違反**バグチェックの4番目の引数です。
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ext.dll
+ext .dll
 
 <a name="remarks"></a>注釈
 -------
 
-このコマンドは、Driver Verifier 拡張; 規則にのみ適用されます。つまり、ルールは 0x10000 以上 ID があります。
+このコマンドは、Driver Verifier 拡張機能のルールにのみ適用されます。つまり、ID が2以上のルールです。
 
-次の例では、4 つの引数を[**ドライバー\_VERIFIER\_検出\_違反**](bug-check-0xc4--driver-verifier-detected-violation.md)バグ チェックします。
+次の例は、[**ドライバー \_ 検証ツールが検出し \_ た \_ 違反**](bug-check-0xc4--driver-verifier-detected-violation.md)バグチェックの4つの引数を示しています。
 
 ```dbgcmd
 DRIVER_VERIFIER_DETECTED_VIOLATION (c4)
@@ -84,7 +84,7 @@ FAILURE_BUCKET_ID:  Xxxx
 ...
 ```
 
-上記の出力として、Arg1 ルール ID (0x91001) が表示されます。 Arg3 と Arg4、ルールの状態と substate 情報のアドレスです。 ルール ID、ルールの状態およびに下位状態を渡すことができます **! ruleinfo**ルールとルールの詳細なドキュメントへのリンクの説明を取得します。
+上記の出力では、ルール ID (0x91001) は Arg1 として表示されます。 Arg3 と Arg4 は、ルールの状態と下位の情報のアドレスです。 ルール ID、ルールの状態、および下位部分を **! ruleinfo**に渡すと、ルールの説明と、ルールの詳細なドキュメントへのリンクを取得できます。
 
 ```dbgcmd
 3: kd> !ruleinfo 0x91001 0xffffe000027b8370 0xffffe000027b83f8
@@ -100,7 +100,7 @@ Check RULE_STATE for Oid ( use !ndiskd.oid ), which can be one of the following:
 2) Pending OID, or
 3) Previous OID if no OID is pending.
 
-MSDN_LINK: https://go.microsoft.com/fwlink/p/?linkid=278802
+MSDN_LINK: https://docs.microsoft.com/windows-hardware/drivers/devtest/ndis-ndisoidcomplete
 
 CONTEXT: Miniport 0xFFFFE0000283F1A0
 

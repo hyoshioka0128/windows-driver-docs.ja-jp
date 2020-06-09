@@ -1,9 +1,9 @@
 ---
-title: usb3kd.xhci_trb
-description: Usb3kd.xhci_trb 拡張機能は、1 つまたは複数の転送要求 (TRBs) によって使用されるブロック、USB 3.0 ホスト コント ローラーを表示します。
+title: xhci_trb usb3kd
+description: Usb3kd 拡張機能は、USB 3.0 ホストコントローラーによって使用される1つ以上の転送要求ブロック (TRBs) を表示し xhci_trb ます。
 ms.assetid: 6EC90908-320E-4908-BE53-1AD01A81B140
 keywords:
-- デバッグ usb3kd.xhci_trb Windows
+- usb3kd Windows デバッグの xhci_trb
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,52 +12,52 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a3a39bb133dc3827b3dc0b94421669c05e9ab2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 60ffcd92318d85827366001e83fc6d2cab3b9699
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335629"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534099"
 ---
-# <a name="usb3kdxhcitrb"></a>! usb3kd.xhci\_trb
+# <a name="usb3kdxhci_trb"></a>! usb3kd. xhci \_ trb
 
 
-[ **! Usb3kd.xhci\_trb** ](-usb3kd-device-info.md)拡張機能は、1 つまたは複数の転送要求 (TRBs) によって使用されるブロック、USB 3.0 ホスト コント ローラーを表示します。
+! Usb3kd 拡張機能は、USB 3.0 ホストコントローラーによって使用される1つ以上の転送要求ブロック ( [** \_ trb**](-usb3kd-device-info.md) ) を表示します。
 
 ```dbgcmd
 !usb3kd.xhci_trb VirtualAddress Count
 !usb3kd.xhci_trb PhysicalAddress Count 1
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______VirtualAddress______"></span><span id="_______virtualaddress______"></span><span id="_______VIRTUALADDRESS______"></span> *virtualAddress*   
+<span id="_______VirtualAddress______"></span><span id="_______virtualaddress______"></span><span id="_______VIRTUALADDRESS______"></span>*Virtualaddress*   
 TRB の仮想アドレス。
 
-<span id="_______PhysicalAddress______"></span><span id="_______physicaladdress______"></span><span id="_______PHYSICALADDRESS______"></span> *PhysicalAddress*   
-TRB の物理アドレスです。
+<span id="_______PhysicalAddress______"></span><span id="_______physicaladdress______"></span><span id="_______PHYSICALADDRESS______"></span>*PhysicalAddress*   
+TRB の物理アドレス。
 
-<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span> *カウント*   
-表示するには連続する TRBs の数を開始位置として*VirtualAddress*または*PhysicalAddress*します。
+<span id="_______Count______"></span><span id="_______count______"></span><span id="_______COUNT______"></span>*カウント*   
+*Virtualaddress*または*PhysicalAddress*を開始位置として、表示する連続した trbs の数。
 
-<span id="_______1______"></span> 1   
-アドレスが物理アドレスを指定します。
+<span id="_______1______"></span>1   
+アドレスが物理アドレスであることを指定します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-出力、 [ **! xhci\_trb** ](-usb3kd-device-info.md)コマンドは、USB 3.0 ホスト コント ローラー ドライバー (UsbXhci.sys) によって管理されるデータ構造に基づきます。 USB 3.0 ホスト コント ローラーのドライバーと USB スタック内の他のドライバーの詳細については、次を参照してください。 [USB ドライバー スタック アーキテクチャ](https://go.microsoft.com/fwlink/p?LinkID=251983)します。
+[**! Xhci \_ trb**](-usb3kd-device-info.md)コマンドの出力は、USB 3.0 ホストコントローラードライバー (UsbXhci) によって管理されているデータ構造に基づいています。 Usb 3.0 ホストコントローラードライバーおよび USB スタック内のその他のドライバーの詳細については、「 [Windows の usb ホスト側ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/usb-3-0-driver-stack-architecture)」を参照してください。
 
-<a name="examples"></a>使用例
+<a name="examples"></a>例
 --------
 
-次の例では、 **0x844d7c00** TRB の仮想アドレスです。 **1**は、数は、表示する数の連続する TRBs を指定します。
+次の例では、 **0x844d7c00**は trb の仮想アドレスです。 **1**はカウントで、表示する連続する連続数を指定します。
 
 ```dbgcmd
 0: kd> !xhci_trb 0x844d7c00 1
@@ -65,7 +65,7 @@ Usb3kd.dll
         [  0] ISOCH        0x844d7c00 CycleBit 1 IOC 0 CH 1 BEI 0 InterrupterTarget 1 TransferLength  2688 TDSize  0 TBC 0 TLBPC 2 Frame 0x3D2
 ```
 
-次の例では、 **0x0dced7c00** TRB の物理アドレスです。 **4**は、数は、表示する数の連続する TRBs を指定します。 **1**アドレスが物理アドレスを指定します。
+次の例では、 **0x0dced7c00**は trb の物理アドレスです。 **4**はカウントで、表示する連続する連続数を指定します。 **1**は、アドレスが物理アドレスであることを指定します。
 
 ```dbgcmd
 0: kd> !xhci_trb 0x0dced7c00 4 1
@@ -76,14 +76,14 @@ Usb3kd.dll
         [  3] NORMAL       0xdced7c30 CycleBit 1 IOC 0 CH 1 BEI 0 InterrupterTarget 1 TransferLength  1336 TDSize  0
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! xhci\_dumpall**](-usb3kd-xhci-dumpall.md)
+[**! xhci \_ dumpall**](-usb3kd-xhci-dumpall.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a3013fc6e6e65b69b86dce54c974690f38ef8bb6
-ms.sourcegitcommit: 4bc550183bc403aee37e7aef2c38fecda1815bff
+ms.openlocfilehash: 295f9f42e0b6cc99fb9acb58713bfafa9d12b5cb
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72038097"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534787"
 ---
-# <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>バグチェック 0xF9:\_ボリューム\_開くための再解析\_の状態\_\_返されたドライバー\_
+# <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>バグチェック 0xF9: ドライバー \_ が \_ \_ \_ \_ オープンボリュームの状態の再解析を返しました \_
 
 
-ドライバー\_、\_ボリューム\_開いているバグチェックの状態\_再解析\_\_返されます。 これは、ドライバーが IRP\_MJ\_CREATE 要求に対して、末尾に名前のない状態\_再解析を返したことを示します。
+ドライバーは \_ 、 \_ \_ \_ ボリュームオープンバグチェックのステータスの再解析に \_ \_ 0x000000f9 の値を返しました。 これは、ドライバーが \_ \_ \_ 名前の末尾がない IRP MJ CREATE 要求へのステータスの再解析を返したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>\_ボリューム\_開いているパラメーターの状態\_再解析\_\_\_ドライバーが返されました
+## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>\_ \_ \_ \_ \_ ボリュームオープンパラメーターの状態の再解析がドライバーによって返されました \_
 
 
 <table>
@@ -68,8 +68,8 @@ ms.locfileid: "72038097"
 <a name="remarks"></a>注釈
 -------
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
-ドライバーが名前空間をサポートしていることを示すため、IRP\_\_MJ の場合にのみ、ステータス\_再解析が返され、末尾に名前の付いた要求が作成されます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+ステータスの \_ 再解析は \_ \_ 、ドライバーが名前空間をサポートしていることを示すため、末尾の名前を持つ IRP MJ CREATE 要求に対してのみ返される必要があります。
 
  
 

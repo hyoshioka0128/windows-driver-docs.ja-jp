@@ -1,11 +1,11 @@
 ---
 title: .cordll (CLR デバッグの制御)
-description: .Cordll コマンド コントロールは、コードのデバッグと Microsoft .NET 共通言語ランタイム (CLR) を管理します。
+description: Cordll コマンドは、マネージコードデバッグと Microsoft .NET 共通言語ランタイム (CLR) を制御します。
 ms.assetid: d46965b3-4f20-4e25-82e6-79e7fb9b4838
 keywords:
-- CLR デバッグ (.cordll) コマンドを制御します。
+- CLR デバッグの制御 (cordll) コマンド
 - CLR (共通言語ランタイム)
-- .cordll (コントロールの CLR のデバッグ) Windows のデバッグ
+- cordll (CLR デバッグの制御) Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -14,65 +14,63 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 74b60e1a937d8f14f0e5a8188afbcf532077c330
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 174b7bea404ef5240d74d16f5403cd60ac1e28e4
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334617"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534239"
 ---
 # <a name="cordll-control-clr-debugging"></a>.cordll (CLR デバッグの制御)
 
-
-**.Cordll**コマンド コントロールはマネージ コードのデバッグと Microsoft .NET 共通言語ランタイム (CLR)。
+**Cordll**コマンドは、マネージコードデバッグと Microsoft .NET 共通言語ランタイム (CLR) を制御します。
 
 ```dbgsyntax
 .cordll [Options]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメーター
+## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
+<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*オプション*   
+次のオプションの1つまたは複数です。
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span> *オプション*   
-1 つまたは複数の次のオプション:
+<span id="-l___lower-case_L_"></span><span id="-l___lower-case_l_"></span><span id="-L___LOWER-CASE_L_"></span>**-l** (小文字の l)  
+CLR デバッグモジュールを読み込みます。
 
-<span id="-l___lower-case_L_"></span><span id="-l___lower-case_l_"></span><span id="-L___LOWER-CASE_L_"></span>**-l** (小文字の L)  
-CLR モジュールのデバッグを読み込みます。
-
-<span id="-I_Module___upper-case_i__"></span><span id="-i_module___upper-case_i__"></span><span id="-I_MODULE___UPPER-CASE_I__"></span>**-I** **** *モジュール*(大文字の i)   
-名前またはデバッグする CLR モジュールのベース アドレスを指定します。 詳細については、「解説」を参照してください。
+<span id="-I_Module___upper-case_i__"></span><span id="-i_module___upper-case_i__"></span><span id="-I_MODULE___UPPER-CASE_I__"></span>**-I**  **** *モジュール*(大文字)   
+デバッグする CLR モジュールの名前またはベースアドレスを指定します。 詳細については、「解説」を参照してください。
 
 <span id="-u"></span><span id="-U"></span>**-u**  
-モジュールのデバッグ、CLR をアンロードします。
+CLR デバッグモジュールをアンロードします。
 
 <span id="-e"></span><span id="-E"></span>**-e**  
-CLR のデバッグを有効にします。
+CLR デバッグを有効にします。
 
-<span id="-d"></span><span id="-D"></span>**-d**  
-CLR のデバッグを無効にします。
+<span id="-d"></span><span id="-D"></span>**-d.ddd...e**  
+CLR デバッグを無効にします。
 
 <span id="-D"></span><span id="-d"></span>**-D**  
-CLR のデバッグを無効にし、CLR デバッグ モジュールをアンロードします。
+CLR デバッグを無効にし、CLR デバッグモジュールをアンロードします。
 
 <span id="-N"></span><span id="-n"></span>**-N**  
-CLR モジュールのデバッグを再読み込みします。
+CLR デバッグモジュールを再読み込みします。
 
-<span id="-lp_Path"></span><span id="-lp_path"></span><span id="-LP_PATH"></span>**-lp** **** *パス*  
-CLR モジュールのデバッグのディレクトリ パスを指定します。
+<span id="-lp_Path"></span><span id="-lp_path"></span><span id="-LP_PATH"></span>**-lp**  **** *パス*  
+CLR デバッグモジュールのディレクトリパスを指定します。
 
-<span id="-se"></span><span id="-SE"></span>**s**  
-CLR モジュールのデバッグの短い名前を使用できるように mscordacwks.dll します。
+<span id="-se"></span><span id="-SE"></span>**-se**  
+CLR デバッグモジュール (mscordacwks) の短い名前を使用できるようにします。
 
 <span id="-sd"></span><span id="-SD"></span>**-sd**  
-CLR モジュールのデバッグの短い名前を使用できないように mscordacwks.dll します。 デバッガーが、CLR デバッグ モジュール mscordacwks の長い名前を使用する代わりに、\_&lt;仕様&gt;.dll です。 短い名前の使用状況をオフにするには、不一致について懸念する場合に使用される、ローカルの CLR を回避することができます。
+CLR デバッグモジュール (mscordacwks) の短い名前の使用を無効にします。 代わりに、デバッガーは CLR デバッグモジュール mscordacwks の長い名前を使用し \_ &lt; &gt; ます。 短い名前の使用を無効にすると、不一致が懸念される場合に、ローカル CLR を使用しないようにすることができます。
 
 <span id="-ve"></span><span id="-VE"></span>**-ve**  
-CLR モジュールの読み込みの詳細モードをオンにします。
+CLR モジュール読み込みの詳細モードをオンにします。
 
 <span id="-vd"></span><span id="-VD"></span>**-vd**  
-CLR モジュールの読み込みの詳細モードをオフにします。
+CLR モジュール読み込みの詳細モードをオフにします。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
 <table>
 <colgroup>
@@ -82,54 +80,43 @@ CLR モジュールの読み込みの詳細モードをオフにします。
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>モード</strong></p></td>
-<td align="left"><p>ユーザー モードでは、カーネル モード</p></td>
+<td align="left"><p>ユーザーモード、カーネルモード</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>ターゲット</strong></p></td>
-<td align="left"><p>ライブ、クラッシュ ダンプ</p></td>
+<td align="left"><p>ライブ、クラッシュダンプ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>プラットフォーム</strong></p></td>
-<td align="left"><p>すべての</p></td>
+<td align="left"><p>すべて</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>注釈
 -------
 
-マネージ アプリケーションをデバッグするには、デバッガーは、アプリケーションが読み込まれている CLR に対応するデータ アクセス コンポーネント (DAC) を読み込む必要があります。 ただし、場合によっては、アプリケーションは 1 つ以上の CLR を読み込みます。 その場合は、使用することができます、**は**パラメーターを指定する DAC をデバッガーに読み込む必要があります。 、Mscorwks.dll の名前は、CLR のバージョン 2 と CLR の version 4 が Clr.dll をという名前です。 次の例では、デバッガーが DAC バージョン 2 (mscorwks) を読み込む必要がありますを指定する方法を示します。
+マネージアプリケーションをデバッグするには、アプリケーションが読み込んだ CLR に対応するデータアクセスコンポーネント (DAC) をデバッガーで読み込む必要があります。 ただし、場合によっては、アプリケーションが複数の CLR を読み込むことがあります。 その場合は、 **I**パラメーターを使用して、デバッガーが読み込む DAC を指定できます。 CLR のバージョン2には Mscorwks.dll という名前が付けられ、CLR のバージョン4は Clr という名前になります。 次の例は、デバッガーがバージョン 2 (mscorwks.dll) の DAC を読み込むように指定する方法を示しています。
 
 ```dbgcmd
 .cordll -I mscorwks -lp c:\dacFolder
 ```
 
-省略した場合、**は**パラメーター、デバッガーは既定では、バージョン 4 を使用します。 たとえば、次の 2 つのコマンドは同等です。
+**I**パラメーターを省略した場合、デバッガーは既定でバージョン4を使用します。 たとえば、次の2つのコマンドは同等です。
 
 ```dbgcmd
 .cordll -lp c:\dacFolder
 .cordll -I clr -lp c:\dacFolder
 ```
 
-Sos.dll は、マネージ コードのデバッグに使用されるコンポーネントです。 Windows のツールのデバッグの現在のバージョンでは、任意のバージョンの sos.dll は含まれません。 Sos.dll を取得する方法については、次を参照してください。 [SOS デバッガー拡張 (sos.dll) を取得する](debugging-managed-code.md#getting-the-sos-debugging-extension)します。
+Sos はマネージコードのデバッグに使用されるコンポーネントです。 Windows 用デバッグツールの現在のバージョンには、どのバージョンの sos .dll も含まれていません。 Sos を取得する方法の詳細については、「 [Windows デバッガーを使用したマネージコードのデバッグ](debugging-managed-code.md)」の「 *sos デバッガー拡張 (Sos) の取得*」を参照してください。
 
-**.Cordll**コマンドがカーネル モードのデバッグでサポートされています。 ただし、必要なメモリがページインしない限り、このコマンドが機能しません。
+**Cordll**コマンドは、カーネルモードのデバッグでサポートされています。 ただし、必要なメモリがページングされていないと、このコマンドは動作しない可能性があります。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="see-also"></a>こちらもご覧ください
 
+[Windows デバッガーを使用したマネージド コードのデバッグ](debugging-managed-code.md)
 
-[マネージ Windows デバッガーを使用してコードのデバッグ](debugging-managed-code.md)
-
-[Sos デバッガー拡張](https://go.microsoft.com/fwlink/p/?linkid=223345)
-
- 
-
- 
-
-
-
-
-
-
+[SOS デバッガー拡張機能](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension)

@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x109 CRITICAL_STRUCTURE_CORRUPTION
-description: CRITICAL_STRUCTURE_CORRUPTION のバグ チェックでは、0x00000109 の値を持ちます。 これは、カーネルの重大なカーネル コードまたはデータの破損が検出されたことを示します。
+title: バグチェック 0x109 CRITICAL_STRUCTURE_CORRUPTION
+description: CRITICAL_STRUCTURE_CORRUPTION バグチェックの値は0x00000109 です。 これは、カーネルが重要なカーネルコードまたはデータの破損を検出したことを示します。
 ms.assetid: 38d4d722-a915-4f17-899b-2a0b4aa69d95
 keywords:
-- バグ チェック 0x109 CRITICAL_STRUCTURE_CORRUPTION
+- バグチェック 0x109 CRITICAL_STRUCTURE_CORRUPTION
 - CRITICAL_STRUCTURE_CORRUPTION
 ms.date: 05/23/2017
 topic_type:
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 92ed8c35d1fbe2ebfcb6bc451296cea3c5b9362a
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 0a1d3a0577d7b6481c146fa1cb7c11c8ae167313
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67521426"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534665"
 ---
-# <a name="bug-check-0x109-criticalstructurecorruption"></a>バグ チェック 0x109:重要な\_構造\_破損
+# <a name="bug-check-0x109-critical_structure_corruption"></a>バグチェック 0x109: 重大な \_ 構造の \_ 破損
 
 
-CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます。 これは、カーネルの重大なカーネル コードまたはデータの破損が検出されたことを示します。
+重大な \_ 構造 \_ 破損のバグチェックには、0x00000109 の値が含まれています。 これは、カーネルが重要なカーネルコードまたはデータの破損を検出したことを示します。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="criticalstructurecorruption-parameters"></a>重要な\_構造\_破損パラメーター
+## <a name="critical_structure_corruption-parameters"></a>重大な \_ 構造の \_ 破損パラメーター
 
 
 <table>
@@ -58,14 +58,14 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="even">
 <td align="left"><p>4</p></td>
-<td align="left"><p>破損した領域の種類。 (参照次の表に、後でこのページ)。</p></td>
+<td align="left"><p>破損した領域の型。 (このページの後の表を参照してください)。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-パラメーター 4 の値では、破損した領域の種類を示します。
+パラメーター4の値は、破損した領域の種類を示します。
 
 <table>
 <colgroup>
@@ -74,14 +74,14 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">パラメーター 4</th>
-<th align="left">破損した領域、種類の破損、またはを実行するアクションの種類の型には、破損が原因となった</th>
+<th align="left">パラメーター4</th>
+<th align="left">破損した領域の種類、破損の種類、または破損の原因となった操作の種類</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>0x0</p></td>
-<td align="left"><p>汎用的なデータのリージョン</p></td>
+<td align="left"><p>汎用データ領域</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1</p></td>
@@ -89,7 +89,7 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x2</p></td>
-<td align="left"><p>プロセッサの割り込みディスパッチ テーブル (IDT)</p></td>
+<td align="left"><p>プロセッサ割り込みディスパッチテーブル (IDT)</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x3</p></td>
@@ -97,19 +97,19 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x4</p></td>
-<td align="left"><p>タイプ 1 プロセスの一覧の破損</p></td>
+<td align="left"><p>種類1のプロセス一覧の破損</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x5</p></td>
-<td align="left"><p>種類 2 のプロセスの一覧の破損</p></td>
+<td align="left"><p>タイプ2のプロセス一覧の破損</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x6</p></td>
-<td align="left"><p>デバッグ ルーチンの変更</p></td>
+<td align="left"><p>デバッグルーチンの変更</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x7</p></td>
-<td align="left"><p>重要な MSR 変更</p></td>
+<td align="left"><p>重要な MSR の変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x8</p></td>
@@ -120,32 +120,32 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 <td align="left"><p>プロセッサ IVT</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 xa</p></td>
-<td align="left"><p>システム サービスの機能の変更</p></td>
+<td align="left"><p>0xA</p></td>
+<td align="left"><p>システムサービス関数の変更</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 xb</p></td>
-<td align="left"><p>汎用的なセッションのデータ領域</p></td>
+<td align="left"><p>0xB</p></td>
+<td align="left"><p>汎用セッションデータ領域</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>0 xc</p></td>
-<td align="left"><p>セッションの関数または .pdata の変更</p></td>
+<td align="left"><p>0xC</p></td>
+<td align="left"><p>セッション関数または pdata の変更</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 xd</p></td>
-<td align="left"><p>インポートのテーブルの変更</p></td>
+<td align="left"><p>0xD</p></td>
+<td align="left"><p>インポートテーブルの変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0xE</p></td>
-<td align="left"><p>セッションのインポート テーブルの変更</p></td>
+<td align="left"><p>セッションインポートテーブルの変更</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>0 xf です.</p></td>
-<td align="left"><p>Ps Win32 コールアウトの変更</p></td>
+<td align="left"><p>0xF</p></td>
+<td align="left"><p>Ps Win32 のコールアウトの変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x10</p></td>
-<td align="left"><p>スイッチの日常的な変更をデバッグします。</p></td>
+<td align="left"><p>デバッグスイッチルーチンの変更</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x11</p></td>
@@ -157,7 +157,7 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="even">
 <td align="left"><p>0x13</p></td>
-<td align="left"><p>IRP の完了ディスパッチャーの変更</p></td>
+<td align="left"><p>IRP 完了ディスパッチャーの変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x14</p></td>
@@ -165,43 +165,43 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="even">
 <td align="left"><p>0x15</p></td>
-<td align="left"><p>プロセッサ レジスタを制御します。</p></td>
+<td align="left"><p>プロセッサコントロールレジスタ</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x16</p></td>
-<td align="left"><p>重要なポイント制御レジスタの変更を浮動小数点</p></td>
+<td align="left"><p>重大な浮動小数点コントロールのレジスタの変更</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x17</p></td>
-<td align="left"><p>ローカルで APIC の変更</p></td>
+<td align="left"><p>ローカルの APIC 変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x18</p></td>
-<td align="left"><p>カーネル通知 callout の変更</p></td>
+<td align="left"><p>カーネル通知の吹き出しの変更</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x19</p></td>
-<td align="left"><p>読み込まれたモジュール一覧の変更</p></td>
+<td align="left"><p>読み込まれたモジュールの一覧の変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1A</p></td>
-<td align="left"><p>タイプの 3 つのプロセスの一覧の破損</p></td>
+<td align="left"><p>種類3プロセス一覧の破損</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1B</p></td>
-<td align="left"><p>タイプ 4 のプロセス一覧の破損</p></td>
+<td align="left"><p>種類4プロセス一覧の破損</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1C</p></td>
-<td align="left"><p>ドライバー オブジェクトの破損</p></td>
+<td align="left"><p>ドライバーオブジェクトの破損</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1D</p></td>
-<td align="left"><p>Executive コールバック オブジェクトの変更</p></td>
+<td align="left"><p>エグゼクティブコールバックオブジェクトの変更</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x1E</p></td>
-<td align="left"><p>モジュールの余白の変更</p></td>
+<td align="left"><p>モジュールの埋め込みの変更</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x1F</p></td>
@@ -209,23 +209,23 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x20</p></td>
-<td align="left"><p>汎用的なデータのリージョン</p></td>
+<td align="left"><p>汎用データ領域</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x21</p></td>
-<td align="left"><p>ページのハッシュが一致しません</p></td>
+<td align="left"><p>ページハッシュが一致しません</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x22</p></td>
-<td align="left"><p>セッション ページ ハッシュが一致しません</p></td>
+<td align="left"><p>セッションページのハッシュが一致しません</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x23</p></td>
-<td align="left"><p>ディレクトリ変更の構成を読み込む</p></td>
+<td align="left"><p>構成ディレクトリの変更の読み込み</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x24</p></td>
-<td align="left"><p>テーブルの逆関数を変更</p></td>
+<td align="left"><p>反転関数テーブルの変更</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x25</p></td>
@@ -233,19 +233,19 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="odd">
 <td align="left"><p>0x26</p></td>
-<td align="left"><p>コントロールを拡張プロセッサを登録します。</p></td>
+<td align="left"><p>拡張プロセッサコントロールレジスタ</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x27</p></td>
-<td align="left"><p>タイプの 1 つのプールの破損</p></td>
+<td align="left"><p>種類1のプールの破損</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x28</p></td>
-<td align="left"><p>種類 2 のプールの破損</p></td>
+<td align="left"><p>タイプ2のプールの破損</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>0x29</p></td>
-<td align="left"><p>タイプの 3 つのプールの破損</p></td>
+<td align="left"><p>種類3プールの破損</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>0x101</p></td>
@@ -253,7 +253,7 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 </tr>
 <tr class="even">
 <td align="left"><p>0x102</p></td>
-<td align="left"><p>Win32k.sys の変更</p></td>
+<td align="left"><p>Win32k の変更</p></td>
 </tr>
 </tbody>
 </table>
@@ -263,40 +263,40 @@ CRITICAL\_構造\_破損バグ チェックが 0x00000109 の値を持ちます�
 <a name="cause"></a>原因
 -----
 
-一般には、このバグ チェックの 3 つのさまざまな原因があります。
+通常、このバグチェックには3つの異なる原因があります。
 
-1.  ドライバーに誤って、または意図的に、クリティカルなカーネル コードまたはデータを変更します。 Microsoft Windows Server 2003 Service Pack 1 (SP1) および x64 ベースのコンピューターに Windows の以降のバージョンでは、承認された Microsoft 主導のホット パッチ適用以外に、カーネルは許可されません。 詳細については、次を参照してください。 [x64 ベース システム用の修正プログラムの適用ポリシー](https://go.microsoft.com/fwlink/p/?linkid=50719)します。
+1.  ドライバーにより、重要なカーネルコードまたはデータが誤って、または故意に変更されました。 Microsoft Windows Server 2003 Service Pack 1 (SP1) 以降のバージョンの x64 ベースのコンピューターでは、Microsoft が開始した修正プログラムを除き、カーネルにパッチを適用することはできません。
 
-2.  開発者は、システムが起動されたときにアタッチされませんでしたをカーネル デバッガーを使用して通常のカーネル ブレークポイントを設定しようとしました。 通常のブレークポイント ([**bp**](bp--bu--bm--set-breakpoint-.md)) 開始時に、デバッガーがアタッチされている場合にのみ設定できます。 プロセッサのブレークポイント ([**ba**](ba--break-on-access-.md)) いつでもでも設定できます。
+2.  開発者が、システムの起動時にアタッチされていないカーネルデバッガーを使用して、通常のカーネルブレークポイントを設定しようとしました。 通常のブレークポイント ([**bp**](bp--bu--bm--set-breakpoint-.md)) は、デバッガーが開始時にアタッチされている場合にのみ設定できます。 プロセッサブレークポイント ([**ba**](ba--break-on-access-.md)) は、いつでも設定できます。
 
-3.  ハードウェアの破損が発生しました。 などのカーネル コードまたはデータが格納されている失敗したメモリ内。
+3.  ハードウェアの破損が発生しました。 たとえば、カーネルコードまたはデータが、失敗したメモリに格納されている可能性があります。
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-[ **! 分析**](-analyze.md)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
-開始するには、スタック トレースを使用してを調べる、 [ **k、kb、kc、kd、kp、kP、kv (Display Stack Backtrace)** ](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンド。 すべてのプロセッサでスタックを確認するプロセッサ数を指定できます。
+開始するには、 [**k、kb、kc、kd、kp、kp、kv (スタックバックトレースの表示)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンドを使用して、スタックトレースを確認します。 プロセッサ番号を指定して、すべてのプロセッサのスタックを調べることができます。
 
-また、この停止コードに至るまで、コードにブレークポイントを設定、エラーが発生したコードをシングル ステップ転送しようし、することができますも。
+また、コード内でこの停止コードまでのブレークポイントを設定し、エラーが発生したコードへのシングルステップフォワードを試行することもできます。
 
 詳細については、以下のトピックを参照してください。
 
-[クラッシュ ダンプ分析の Windows デバッガー (WinDbg) の使用方法](crash-dump-files.md)
+[Windows デバッガー (WinDbg) を使用したクラッシュ ダンプ分析](crash-dump-files.md)
 
-Windows デバッガーを使用してこの問題に取り組むを備えていない場合は、基本的なトラブルシューティングの手法を使用できます。
+Windows デバッガーを使用してこの問題に対処することができない場合は、いくつかの基本的なトラブルシューティング手法を使用できます。
 
--   デバイスまたはこのバグ チェックが原因となっているドライバーの特定に役立つ可能性がある追加のエラー メッセージをイベント ビューアーのシステム ログを確認します。
+-   このバグチェックの原因となっているデバイスまたはドライバーの特定に役立つ可能性のある追加のエラーメッセージについては、イベントビューアーのシステムログを確認してください。
 
 -   バグ チェックのメッセージでドライバーが特定された場合は、そのドライバーを無効にするか、ドライバーの更新状況を製造元に確認します。
 
--   メモリをテストする、Windows メモリ診断ツールを実行します。 コントロール パネルの検索ボックスには、メモリを入力し、クリックして **、コンピューターのメモリの問題を診断**します。テストの実行後は、イベント ビューアーを使用して、システム ログで結果を表示します。 探して、 *MemoryDiagnostics 結果*結果を表示するエントリ。
+-   Windows メモリ診断ツールを実行して、メモリをテストします。 コントロールパネルの検索ボックスに「Memory」と入力し、[**コンピューターのメモリの問題を診断する**] をクリックします。テストの実行後、イベントビューアーを使用して、システムログの下に結果を表示します。 結果を表示するには、 *Memorydiagnostics-results*エントリを探します。
 
--   システム製造元から提供されたハードウェア診断を実行して確認することができます。
+-   システムの製造元から提供されているハードウェア診断を実行できます。
 
--   インストールされている新しいハードウェアが Windows のインストールされているバージョンと互換性があることを確認します。 たとえばに必要なハードウェアに関する情報を取得できます[Windows 10 の仕様](https://www.microsoft.com/windows/windows-10-specifications)します。
+-   インストールされている新しいハードウェアに、インストールされている Windows のバージョンとの互換性があることを確認します。 たとえば、 [Windows 10 の仕様](https://www.microsoft.com/windows/windows-10-specifications)では、必要なハードウェアに関する情報を取得できます。
 
--   その他の一般的なトラブルシューティング情報を参照してください。 [**青い画面データ**](blue-screen-data.md)します。
+-   一般的なトラブルシューティング情報については、「 [**Blue Screen Data**](blue-screen-data.md)」を参照してください。
 
  
 

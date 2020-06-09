@@ -1,36 +1,36 @@
 ---
 title: Windows Update のオフライン シンボル
-description: このトピックでは、操作する方法で行のシンボルを Windows Update のについて説明します。
+description: このトピックでは、Windows Update に対してオフラインシンボルを操作する方法について説明します。
 keywords:
 - シンボル
-- シンボルの設定
+- セットアップ、シンボル
 - シンボル、セットアップ
 ms.date: 10/12/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f861efa47e89d5d855609589ae6b025a9c044ae
-ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
+ms.openlocfilehash: ee63ce37645064ef43c49317f71edf5b536f0118
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67499802"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534297"
 ---
 # <a name="offline-symbols-for-windows-update"></a>Windows Update のオフライン シンボル
 
-このトピックでは、Windows 更新プログラムをオフラインのシンボルを使用する方法について説明します。 これには、Microsoft シンボル サーバーへのアクセス権がないコンピューターで Windows Update ログのデコードに使用できる手順について説明します。 
+このトピックでは、Windows Update のオフラインシンボルを操作する方法について説明します。 ここでは、Microsoft シンボルサーバーにアクセスできないコンピューター上の Windows Update ログをデコードするために使用できる手順について説明します。 
 
-多くの場合、これを実行する必要がある場合は、シンボル サーバーのプロキシ設定が、ネットワークの構成可能な状態が表示されます。 詳細については、次を参照してください。 [SymProxy](https://docs.microsoft.com/windows-hardware/drivers/debugger/symproxy)します。
+これを頻繁に行う必要がある場合は、シンボルプロキシサーバーの設定がネットワーク構成に対して有効かどうかを確認する必要があります。 詳細については、「 [Symproxy](symproxy.md)」を参照してください。
 
-以下のオプションでは、Microsoft のシンボル サーバーに接続し、ログがあるコンピューターからファイルをコピーすることを 1 つのマシンがある必要があります。 シンボル サーバーにアクセスできないコンピューターとして参照される、*オフライン*マシン、およびマシンとしてへのアクセスが、*オンライン*マシン。
+以下のすべてのオプションでは、Microsoft のシンボルサーバーに接続できる1台のコンピューターが必要です。また、ログが保存されているコンピューターとの間でファイルをコピーすることもできます。 シンボルサーバーへのアクセス権がないコンピューターは、*オフライン*コンピューターと呼ばれ、*オンライン*コンピューターとしてアクセスできるコンピューターになります。
 
- WU シンボルのキャッシュは、月ごとを作成し、複数の更新プログラムのリリースから WU シンボルが含まれているために、OS ビルド バージョンごとに 1 つのオンライン マシンを使用することをお勧めします。 
+ WU シンボルキャッシュが月単位でビルドされ、複数の更新プログラムリリースの WU シンボルが含まれるように、OS ビルドバージョンごとに1つのオンラインマシンを使用することをお勧めします。 
  
-オフラインのマシンと同じ正確なパッチ レベルでのオンラインのマシンへのアクセスがある場合は、2 つのオプションを設定します。
+オフラインコンピューターと同じ正確なパッチレベルを持つオンラインマシンにアクセスできる場合は、次の2つの方法があります。
 
-- [オプション 1:ETL のイベント ログをオンラインのマシンにコピーします。](#ETL)
+- [オプション 1: ETL イベントログをオンラインコンピューターにコピーする](#ETL)
 
-- [オプション 2:オフラインのコンピューターにシンボルをコピーします。](#OFFLINE)
+- [オプション 2: オフラインコンピューターにシンボルをコピーする](#OFFLINE)
 
-オンラインおよびオフラインの Pc を実行して、同じバージョン レベル確認`winver`または`ver`両方のコンピューターにします。
+`winver`両方のコンピューターでまたはを実行して、オンラインおよびオフラインの pc が同じバージョンレベルであることを確認し `ver` ます。
 
 ```console
 C:\>ver
@@ -38,14 +38,14 @@ C:\>ver
 Microsoft Windows [Version 10.0.17134.167]
 ```
 
-このトピックの後半で説明、SymChk マニフェスト ファイルを作成する特別な手順を経由する必要があります、同じバージョンのオンラインのマシンへのアクセスを持っていない場合[オプション 3。SymChk マニフェスト ファイルを作成](#SYMCHK)です。
+同じバージョンのオンラインマシンにアクセスできない場合は、追加の手順を実行して SymChk マニフェストファイルを作成する必要があります。詳細については、このトピックで後述する「[オプション 3: SymChk マニフェストファイルを作成](#SYMCHK)する」を参照してください。
 
 
-## <a name="span-idetlspanspan-idetlspanoption-1-copy-the-etl-event-log-to-the-online-machine"></a><span id="etl"></span><span id="ETL"></span>オプション 1:ETL のイベント ログをオンラインのマシンにコピーします。
+## <a name="span-idetlspanspan-idetlspanoption-1-copy-the-etl-event-log-to-the-online-machine"></a><span id="etl"></span><span id="ETL"></span>オプション 1: ETL イベントログをオンラインコンピューターにコピーする
 
-1. Windows Update の ETL ファイルからすべてコピー`C:\Windows\logs\WindowsUpdate\`オンラインのコンピューターにします。
+1. すべてのある windowsupdate.log ETL ファイルをから `C:\Windows\logs\WindowsUpdate\` オンラインコンピューターにコピーします。
 
-2. オンラインのマシンでは、PowerShell プロンプトを開き、次の実行[Get WindowsUpdateLog](https://docs.microsoft.com/powershell/module/windowsupdate/get-windowsupdatelog?view=win10-ps) PowerShell コマンド。 
+2. オンラインコンピューターで PowerShell プロンプトを開き、次の[WindowsUpdateLog](https://docs.microsoft.com/powershell/module/windowsupdate/get-windowsupdatelog?view=win10-ps) powershell コマンドを実行します。 
 
    ```powershell
    Get-WindowsUpdateLog -ETLPath <path to ETLs>
@@ -53,18 +53,18 @@ Microsoft Windows [Version 10.0.17134.167]
    これにより、ログ分析に必要なシンボルがダウンロードされます。
 
 
-## <a name="span-idofflinespanspan-idofflinespanoption-2-copy-the-symbols-to-the-offline-machine"></a><span id="offline"></span><span id="OFFLINE"></span>オプション 2:オフラインのコンピューターにシンボルをコピーします。
+## <a name="span-idofflinespanspan-idofflinespanoption-2-copy-the-symbols-to-the-offline-machine"></a><span id="offline"></span><span id="OFFLINE"></span>オプション 2: オフラインコンピューターにシンボルをコピーする
 
-1. オンラインのマシンでは、PowerShell プロンプトを開き、"Get WindowsUpdateLog"を実行します。 これにより、ログ分析に必要なシンボルをキャッシュします。
+1. オンラインコンピューターで、PowerShell プロンプトを開き、"WindowsUpdateLog" を実行します。 これにより、ログ分析に必要なシンボルがキャッシュされます。
 
-2. オンラインのマシンから %temp%\WindowsUpdateLog\SymCache ですべてのファイルをコピー`%temp%\WindowsUpdateLog\SymCache`オフラインのコンピューター。
+2. %Temp%\WindowsUpdateLog\SymCache のすべてのファイルをオンラインコンピューターからオフラインコンピューターのにコピーし `%temp%\WindowsUpdateLog\SymCache` ます。
 
-3. オフラインのコンピューターで PowerShell プロンプトを開き、"Get WindowsUpdateLog"ログの分析を実行します。
+3. オフラインコンピューターで、PowerShell プロンプトを開き、"WindowsUpdateLog" を実行してログを分析します。
 
 
-## <a name="span-idsymchkspanspan-idsymchkspanoption-3-create-a-symchk-manifest-file"></a><span id="symchk"></span><span id="SYMCHK"></span>オプション 3:SymChk マニフェスト ファイルを作成します。
+## <a name="span-idsymchkspanspan-idsymchkspanoption-3-create-a-symchk-manifest-file"></a><span id="symchk"></span><span id="SYMCHK"></span>オプション 3: SymChk マニフェストファイルを作成する
 
-1.  オフラインのコンピューター上にある手順に従います[SymChk でマニフェスト ファイルの使用](https://docs.microsoft.com/windows-hardware/drivers/debugger/using-a-manifest-file-with-symchk)system32 ディレクトリにこれらのファイルのマニフェストを作成します。
+1.  オフラインコンピューターで、「 [SymChk でマニフェストファイルを使用](using-a-manifest-file-with-symchk.md)する」の手順に従って、system32 ディレクトリにこれらのファイルのマニフェストを作成します。
 
     ```console
     storewuauth.dll
@@ -76,13 +76,13 @@ Microsoft Windows [Version 10.0.17134.167]
     wuuhmobile.dll
     ```
 
-2.  オンラインのコンピューターに、マニフェストをコピーします。
+2.  マニフェストをオンラインコンピューターにコピーします。
 
-3.  マニフェストのファイルを使用して、オンラインの PC にローカル シンボルをダウンロードするのに SymChk を使用します。 
+3.  マニフェストファイルで、SymChk を使用して、オンライン PC にシンボルをローカルでダウンロードします。 
 
-4.  フォルダーと %temp%\WindowsUpdateLog\SymCache オフライン PC で SymChk に渡すシンボルをコピーします。
+4.  SymChk に渡されたフォルダーとシンボルを、オフライン PC の%temp%\WindowsUpdateLog\SymCache にコピーします。
  
-5. オフラインのコンピューターで PowerShell プロンプトを開き、"Get WindowsUpdateLog"ログの分析を実行します。
+5. オフラインコンピューターで、PowerShell プロンプトを開き、"WindowsUpdateLog" を実行してログを分析します。
 
  
 
@@ -90,13 +90,13 @@ Microsoft Windows [Version 10.0.17134.167]
 
 ## <a name="see-also"></a>参照
 
-[シンボル サーバーを使用して](using-a-symbol-server.md)します。
+[シンボルサーバーを使用](using-a-symbol-server.md)します。
 
-[シンボル パス](symbol-path.md) 
+[シンボルパス](symbol-path.md) 
 
-[デバッグのシンボルへのアクセス](accessing-symbols-for-debugging.md)
+[デバッグ用シンボルへのアクセス](accessing-symbols-for-debugging.md)
 
-[デバッグ中にシンボルに関する問題](symbol-problems-while-debugging.md)
+[デバッグ中のシンボルに関する問題](symbol-problems-while-debugging.md)
  
 
 

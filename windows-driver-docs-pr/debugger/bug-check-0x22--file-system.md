@@ -1,9 +1,9 @@
 ---
-title: バグ チェック 0x22 FILE_SYSTEM
-description: FILE_SYSTEM のバグ チェックでは、0x00000022 の値を持ちます。このバグ チェックが非常に少ない回数が表示されます。
+title: バグチェック 0x22 FILE_SYSTEM
+description: FILE_SYSTEM バグチェックの値は0x00000022 です。このバグチェックは非常に頻繁に行われません。
 ms.assetid: 89230b9a-f538-4892-b36e-3410c7adcc81
 keywords:
-- バグ チェック 0x22 FILE_SYSTEM
+- バグチェック 0x22 FILE_SYSTEM
 - FILE_SYSTEM
 ms.date: 05/23/2017
 topic_type:
@@ -13,27 +13,27 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a13f733ae583b342d907d1b12a4e8458d8576e7c
-ms.sourcegitcommit: d03b44343cd32b3653d0471afcdd3d35cb800c0d
+ms.openlocfilehash: 71e953fd24e8fc12d9fe099f2584f603b3b681fa
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67519592"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534641"
 ---
-# <a name="bug-check-0x22-filesystem"></a>バグ チェック 0x22:ファイル\_システム
+# <a name="bug-check-0x22-file_system"></a>バグチェック 0x22: ファイル \_ システム
 
 
-ファイル\_システムのバグ チェックが 0x00000022 の値を持ちます。
+ファイル \_ システムのバグチェックの値は0x00000022 です。
 
-このバグ チェックが非常に少ない回数が表示されます。
+このバグチェックは非常に頻繁に行われません。
 
 > [!IMPORTANT]
-> このトピックはプログラマーを対象としています。 コンピューターを使用しているときに、エラー コードがブルー スクリーンが受信した顧客の場合を参照してください。[トラブルシューティング ブルー スクリーン エラー](https://www.windows.com/stopcode)します。
+> このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
 
-## <a name="resolution"></a>解決方法
-[ **! 分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)バグ チェックに関する情報を表示拡張機能をデバッグおよび根本原因を突き止めるに役に立ちます。
+## <a name="resolution"></a>解像度
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
  
 
  

@@ -1,6 +1,6 @@
 ---
 title: バグチェック 0xBFF BC_BTHMINI_VERIFIER_FAULT
-description: BC_BTHMINI_VERIFIER_FAULT のバグチェックの値は0x00000BFF です。 これは、Bluetooth ミニポート拡張ドライバーの検証ツールが違反をキャッチしたことを示します。
+description: BC_BTHMINI_VERIFIER_FAULT バグチェックの値は0x00000BFF です。 これは、Bluetooth ミニポート拡張ドライバーの検証ツールが違反をキャッチしたことを示します。
 ms.assetid: 4BB54209-89EA-455D-B850-CC2A96A43C87
 keywords:
 - バグチェック 0xBFF BC_BTHMINI_VERIFIER_FAULT
@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 014ce8979258d37187c8733570e559491febeb41
-ms.sourcegitcommit: d2dab8b8bf335835d0341ca3f0a36eab0ec028f5
+ms.openlocfilehash: f4eff575430c3a5375aa4bac160a5031216ad6b1
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72892684"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534793"
 ---
-# <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>バグチェック 0xBFF: BC\_BTHMINI\_検証ツール\_エラー
+# <a name="bug-check-0xbff-bc_bthmini_verifier_fault"></a>バグチェック 0xBFF: BC \_ bthmini \_ 検証ツールの \_ エラー
 
 
-BC\_BTHMINI\_VERIFIER\_の不具合のバグチェックには、0x00000BFF という値があります。 これは、Bluetooth ミニポート拡張ドライバーの検証ツールが違反をキャッチしたことを示します。
+BC \_ bthmini \_ 検証ツールのエラーのバグチェックには、 \_ 0x00000BFF という値があります。 これは、Bluetooth ミニポート拡張ドライバーの検証ツールが違反をキャッチしたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="bc_bthmini_verifier_fault-parameters"></a>BC\_BTHMINI\_VERIFIER\_FAULT パラメーター
+## <a name="bc_bthmini_verifier_fault-parameters"></a>BC \_ bthmini \_ 検証ツールの \_ エラーパラメーター
 
 
 <table>
@@ -71,7 +71,7 @@ BC\_BTHMINI\_VERIFIER\_の不具合のバグチェックには、0x00000BFF と�
 <td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 <tr class="even">
-<td align="left">ホーム フォルダーが置かれているコンピューターにアクセスできない</td>
+<td align="left">4</td>
 <td align="left">「パラメーター1」を参照してください。</td>
 </tr>
 </tbody>
@@ -82,7 +82,7 @@ BC\_BTHMINI\_VERIFIER\_の不具合のバグチェックには、0x00000BFF と�
 <a name="resolution"></a>解像度
 ----------
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 パラメーター1は違反の種類を示します。 呼び出し履歴を調べて、動作が不適切なドライバーを特定します。
 
 

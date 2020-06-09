@@ -1,9 +1,9 @@
 ---
-title: usb3kd.hub_info_from_fdo
-description: Usb3kd.hub_info_from_fdo コマンドでは、USB 3.0 ツリー内のハブに関する情報が表示されます。
+title: hub_info_from_fdo usb3kd
+description: Usb3kd コマンドは、USB 3.0 ツリーのハブに関する情報を表示し hub_info_from_fdo ます。
 ms.assetid: 07A1C3EC-76A9-49A5-8467-53FCE3667203
 keywords:
-- デバッグ usb3kd.hub_info_from_fdo Windows
+- usb3kd Windows デバッグの hub_info_from_fdo
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a0932f332e22ec602b0860685b0ea443f711a5e1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 170537d0d6f6d7235bff1905a52b053592852eb0
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63335648"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534183"
 ---
-# <a name="usb3kdhubinfofromfdo"></a>!usb3kd.hub\_info\_from\_fdo
+# <a name="usb3kdhub_info_from_fdo"></a>! \_ \_ fdo からの usb3kd 情報 \_
 
 
-**! Usb3kd.hub\_情報\_から\_fdo**コマンド内のハブに関する情報を表示、 [USB 3.0 ツリー](usb-3-extensions.md#usb-3-tree)します。
+**Fdo コマンドからの! \_ usb3kd \_ 情報 \_ **は、 [USB 3.0 ツリー](usb-3-extensions.md#usb-3-tree)のハブに関する情報を表示します。
 
 ```dbgcmd
 !usb3kd.hub_info_from_fdo DeviceObject
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-機能のデバイス (FDO) を表すオブジェクトをハブのアドレス。
+<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
+ハブを表す機能デバイスオブジェクト (FDO) のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="examples"></a>例
 --------
 
-出力から、FDO のアドレスを取得できる[ **! usb\_ツリー** ](-usb3kd-usb-tree.md)またはその他のデバッガー コマンドのさまざまな。 たとえば、 [ **! devstack** ](-devstack.md)コマンド、FDO のアドレスを表示します。 次の例では、FDO のアドレスは、fffffa800597a660 です。
+FDO のアドレスは、 [**! usb \_ ツリー**](-usb3kd-usb-tree.md)の出力から、または他のさまざまなデバッガーコマンドから取得できます。 たとえば、 [**! devstack**](-devstack.md)コマンドは、FDO のアドレスを表示します。 次の例では、FDO のアドレスは fffffa800597a660 です。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbhub3
@@ -56,7 +56,7 @@ DevNode 0xfffffa8005981730 for PDO 0xfffffa8004ffc550
 ...
 ```
 
-FDO のアドレスを渡すことができますので、 **! usb3kd.hub\_情報\_から\_fdo**コマンド。
+これで、FDO のアドレスを** \_ FDO コマンド \_ から \_ ! usb3kd 情報**に渡すことができるようになりました。
 
 ```dbgcmd
  3: kd> !hub_info_from_fdo fffffa800597a660
@@ -97,14 +97,14 @@ Hub Event History:
     ...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**!usb3kd.hub\_info**](-usb3kd-hub-info.md)
+[**! usb3kd \_ 情報**](-usb3kd-hub-info.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

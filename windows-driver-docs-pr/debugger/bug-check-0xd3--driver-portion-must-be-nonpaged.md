@@ -13,23 +13,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8576fb13e085fa76a031f57bee0902f365cebd
-ms.sourcegitcommit: 22ab407df553db6d917b5ad3c9531a2dadfafc25
+ms.openlocfilehash: f6e2ee24a40f27a4e5142cce1cbdc754d29845b2
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74411167"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534575"
 ---
-# <a name="bug-check-0xd3-driver_portion_must_be_nonpaged"></a>バグチェック 0xD3: ドライバー\_部分\_は非ページ\_\_必要があります
+# <a name="bug-check-0xd3-driver_portion_must_be_nonpaged"></a>バグチェック 0xD3: ドライバー \_ 部分 \_ \_ は、 \_ 非ページ化されている必要があります
 
 
-\_ドライバーの\_部分は、非ページ化されたバグチェックの値が0x000000D3 になっている\_\_必要があります。 これは、システムが高すぎたプロセス IRQL でページング可能なメモリにアクセスしようとしたことを示します。
+ドライバー \_ の部分は、 \_ \_ 非ページ化さ \_ れたバグチェックの値が0x000000D3 である必要があります。 これは、システムが高すぎたプロセス IRQL でページング可能なメモリにアクセスしようとしたことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
 
-## <a name="driver_portion_must_be_nonpaged-parameters"></a>ドライバー\_部分\_は、非ページパラメーター\_\_必要があります
+## <a name="driver_portion_must_be_nonpaged-parameters"></a>ドライバー \_ 部分 \_ \_ は、 \_ 非ページパラメーターである必要があります
 
 
 <table>
@@ -66,17 +66,17 @@ ms.locfileid: "74411167"
 
  
 
-エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリに格納されます (PUNICODE\_STRING) **KiBugCheckDriver**。
+エラーの原因となっているドライバーを識別できる場合は、その名前が青色の画面に出力され、メモリ内の場所 (PUNICODE \_ 文字列) **KiBugCheckDriver**に格納されます。
 
 <a name="cause"></a>原因
 -----
 
 このバグチェックは通常、独自のコードまたはデータをページング可能としてマークしていないドライバーによって発生します。
 
-<a name="resolution"></a>解決方法
+<a name="resolution"></a>解像度
 ----------
 
-デバッグを開始するには、カーネルデバッガーを使用してスタックトレースを取得します。この拡張機能で[**は、バグ**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)チェックに関する情報を表示し、根本原因を特定し、 [**Kb (スタックバックトレースの表示)** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-)コマンドを使用してスタックトレースを取得します。
+デバッグを開始するには、カーネルデバッガーを使用してスタックトレースを取得します。この拡張機能で[**は、バグ**](-analyze.md)チェックに関する情報を表示し、根本原因を特定し、 [**Kb (スタックバックトレースの表示)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md)コマンドを使用してスタックトレースを取得します。
 
  
 

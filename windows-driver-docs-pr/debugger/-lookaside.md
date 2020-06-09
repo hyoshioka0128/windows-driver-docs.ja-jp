@@ -15,12 +15,12 @@ api_location:
 api_type:
 - DllExport
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4768dc9f371ed7270fcd04260d2da6f3a9f860
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0258a15ffc796429500bb8e95e5ad1d0f3958f3a
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72826681"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534743"
 ---
 # <a name="lookaside"></a>!lookaside
 
@@ -52,15 +52,15 @@ ms.locfileid: "72826681"
 <span id="1"></span>1  
 指定したルックアップリストのカウンターをリセットします。
 
-<span id="2"></span>3  
+<span id="2"></span>2  
 指定したルックアップリストの深さを変更します。 このオプションは、*アドレス*が0以外の場合にのみ使用できます。
 
-<span id="_______Depth______"></span><span id="_______depth______"></span><span id="_______DEPTH______"></span>*深さ*の   
+<span id="_______Depth______"></span><span id="_______depth______"></span><span id="_______DEPTH______"></span>*深さ*   
 指定された検索除外リストの新しい最大深度を指定します。 このパラメーターは、 *Address*が0以外で、*オプション*が2に等しい場合にのみ許可されます。
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-ルックアサイドリストの詳細については、「 [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/p/?linkid=201141) 」のドキュメントと*Microsoft windows の内部*(Mark Russinovich と David ソロモン) を参照してください。
+ルックアサイドリストの詳細については、「[ルックアサイドリスト](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-lookaside-lists)」および「 *Microsoft Windows 内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -95,7 +95,7 @@ Lookaside "" @ 0xfffff88001294f80  Tag(hex): 0x7366744e "Ntfs"
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>DLL</p></td>
+<td align="left"><p>[DLL]</p></td>
 <td align="left">Kdexts .dll</td>
 </tr>
 </tbody>

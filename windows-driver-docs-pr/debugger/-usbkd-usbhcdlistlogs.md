@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhcdlistlogs
-description: Usbkd.usbhcdlistlogs ログとデバッグ ログ (Fdo) のすべての機能のデバイス オブジェクトの一覧が表示されますが、USB ポート ドライバー (Usbport.sys) に関連付けられているコマンドします。
+title: usbkd。 usbhcdlistlogs
+description: USB ポートドライバー (Usbkd) およびデバッグログに関連付けられているすべての機能デバイスオブジェクト (FDOs) の一覧が表示されます。
 ms.assetid: C86646D3-7B39-4C8C-9FDA-FD07AA7A880A
 keywords:
-- デバッグ usbkd.usbhcdlistlogs Windows
+- usbkd. usbhcdlistlogs Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: da59ea96bd8beec1d7d43e5e6e7e32989d10261f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9b9d5aea4ae0528ed5683d95d3c2d95d865c16fe
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334082"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534013"
 ---
 # <a name="usbkdusbhcdlistlogs"></a>!usbkd.usbhcdlistlogs
 
 
-**! Usbkd.usbhcdlistlogs**コマンドは、USB ポート ドライバー (Usbport.sys) に関連付けられている機能のデバイス オブジェクト (Fdo) すべての一覧を表示します。 コマンドには、すべての EHCI ホスト コント ローラーの完全なデバッグ ログも表示されます。
+この**コマンドは**、USB ポートドライバー (usbkd) に関連付けられているすべての機能デバイスオブジェクト (fdos) の一覧を表示します。 このコマンドでは、すべての EHCI ホストコントローラーの完全なデバッグログも表示されます。
 
 ```dbgcmd
 !usbkd.usbhcdlistlogs
@@ -31,12 +31,12 @@ ms.locfileid: "63334082"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-この例の出力の一部を示しています、 **! usbhcdlistlogs**コマンド。
+この例では、 **! usbhcdlistlogs**コマンドの出力の一部を示します。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlistlogs
@@ -69,14 +69,14 @@ LOG@: ffffe00001ca11b8
 [1023] ffffe00002019180 xdB0 ffffe00001ca1b88 ffffe00001ca1050 0000000000000000 
 ```
 
-UHCI ホスト コント ローラーを表す 2 つの Fdo と EHCI ホスト コント ローラーを表す 1 つの FDO コマンドの出力を示しています。 出力には、1 つの EHCI ホスト コント ローラーのデバッグ ログが表示されます。
+コマンドの出力には、UHCI ホストコントロールを表す2つの FDOs と、EHCI ホストコントローラーを表す1つの FDO が示されています。 次に、1つの EHCI ホストコントローラーのデバッグログが出力に表示されます。
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 20552b490a3f4a5e15c64554d5fe08b024cdb4c8
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: cd4f8f2fcd1eab3ec3105890e1580a3d0234449e
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336387"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534437"
 ---
 # <a name="plmdebug"></a>PLMDebug
 
@@ -91,7 +91,7 @@ plmdebug /activateBgTaskTaskId "{TaskID}"
 
 中断、再開、または終了の各関数を呼び出す前に、 **plmdebug/enabledebug**を呼び出す必要があります。
 
-PLMDebug ツールは、 [Ipackagedebugsettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)のメソッドを呼び出します。 このインターフェイスを使用すると、アプリのプロセスライフサイクル管理を手動で制御できます。 このインターフェイスを使用して、Windows アプリを中断、再開、および終了することができます (その結果、このツールを使用します)。 [Ipackagedebugsettings インターフェイス](https://go.microsoft.com/fwlink/p/?LinkID=267918)のメソッドは、パッケージ全体に適用されることに注意してください。 中断、再開、および終了は、パッケージ内で現在実行中のすべてのアプリに影響します。
+PLMDebug ツールは、 [Ipackagedebugsettings インターフェイス](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)のメソッドを呼び出します。 このインターフェイスを使用すると、アプリのプロセスライフサイクル管理を手動で制御できます。 このインターフェイスを使用して、Windows アプリを中断、再開、および終了することができます (その結果、このツールを使用します)。 [Ipackagedebugsettings インターフェイス](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)のメソッドは、パッケージ全体に適用されることに注意してください。 中断、再開、および終了は、パッケージ内で現在実行中のすべてのアプリに影響します。
 
 <a name="examples"></a>例
 --------
@@ -185,8 +185,8 @@ SampleTask : {50DB0363-D722-4E23-A18F-1EF49B226CC3}
 
 **plmdebug/activatebgtask "{50DB0363-D722-4E23-A18F-1EF49B226CC3}"**
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-[Windows アプリで中断イベント、再開イベント、およびバックグラウンドイベントをトリガーする方法](https://go.microsoft.com/fwlink/p/?LinkID=267916)
+[Visual Studio で UWP アプリをデバッグするときに、中断、再開、およびバックグラウンド イベントをトリガーする方法](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 
 [Debugging Tools for Windows に含まれるツール](extra-tools.md)

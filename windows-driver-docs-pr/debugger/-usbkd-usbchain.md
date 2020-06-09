@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbchain
-description: Usbkd.usbchain コマンドでは、指定の PDO から開始し、ルート ハブに戻ると、USB デバイス チェーンが表示されます。
+title: usbkd. usbkd
+description: Usbkd. usbkd コマンドは、指定された PDO から開始し、ルートハブに戻る USB デバイスチェーンを表示します。
 ms.assetid: 0D69E29E-3886-436F-B5EE-E4F297D9CE36
 keywords:
-- デバッグ usbkd.usbchain Windows
+- usbkd. usbkd Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,37 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 73c13d57af32bc852b650a829e9a5148b02adc2a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f5d57b852e76e5261eb7bb35f4737ef10ab7472c
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334102"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534041"
 ---
 # <a name="usbkdusbchain"></a>!usbkd.usbchain
 
 
-**! Usbkd.usbchain**コマンドは、指定の PDO から開始し、ルート ハブに戻ると、USB デバイス チェーンを表示します。
+**! Usbkd. usbkd**コマンドは、指定された PDO から開始し、ルートハブに戻る USB デバイスチェーンを表示します。
 
 ```dbgcmd
 !usbkd.usbchain PDO
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______PDO______"></span><span id="_______pdo______"></span> *PDO*   
-USB ハブに接続されているデバイスの物理デバイス オブジェクト (PDO) のアドレス。
+<span id="_______PDO______"></span><span id="_______pdo______"></span>*PDO*   
+USB ハブに接続されているデバイスの物理デバイスオブジェクト (PDO) のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-USB デバイスの PDO のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB デバイスの PDO のアドレスを検索する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
  kd> !usbkd.usb2tree
@@ -55,7 +55,7 @@ USB デバイスの PDO のアドレスを検索する 1 つの方法を次に�
 ...
 ```
 
-上記の出力では、PDO のアドレスは、推奨されるコマンドの引数 **! devstack ffffe00007c882a0**します。 PDO のアドレスを渡す **! usbkd.usbchain**します。
+上記の出力では、PDO のアドレスは、推奨されるコマンドの引数である **! devstack ffffe00007c882a0**です。 PDO のアドレスを **! usbkd**に渡します。
 
 ```dbgcmd
 0: kd> !usbkd.usbchain ffffe00007c882a0
@@ -69,12 +69,12 @@ VID Xxxx PID Xxxx REV 0100  Xxxx Corporation
         ROOT HUB FDO @ffffe00001ca1050, !usbhcdext ffffe00001ca11a0 PCI Vendor:Device:...
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

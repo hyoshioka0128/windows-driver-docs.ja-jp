@@ -3,43 +3,28 @@ title: カーネルモード ダンプ ファイルの分析
 description: カーネルモード ダンプ ファイルの分析
 ms.assetid: 2bda51c2-b022-4740-8df9-5a2cf2382e3e
 keywords:
-- ダンプ ファイル、カーネル モードのダンプ ファイルの分析
-ms.date: 05/23/2017
+- ダンプファイル、カーネルモードダンプファイルの分析
+ms.date: 06/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af1c6b4306b919504ec2aec70a5c1a9a28e03d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d7c87329b9d90b24ed510d49814dfd2d11380942
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355434"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533919"
 ---
 # <a name="analyzing-a-kernel-mode-dump-file"></a>カーネルモード ダンプ ファイルの分析
 
+ここでは、以下の内容について説明します。
 
-## <span id="ddk_analyzing_a_kernel_mode_dump_file_dbg"></span><span id="DDK_ANALYZING_A_KERNEL_MODE_DUMP_FILE_DBG"></span>
+[KD によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-kd.md)
 
+[WinDbg によるカーネルモード ダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
 
-このセクションの内容:
+### <a name="installing-symbol-files"></a>シンボルファイルのインストール
 
-[KD とカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-kd.md)
+使用するツールに関係なく、ダンプファイルを生成したバージョンの Windows のシンボルファイルをインストールする必要があります。 これらのファイルは、ダンプファイルの分析に使用するように選択したデバッガーによって使用されます。 シンボルファイルの適切なインストールの詳細については、「 [Windows シンボルファイルのインストール](installing-windows-symbol-files.md)」を参照してください。
 
-[WinDbg をカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-windbg.md)
+### <a name="dumpexam"></a>DumpExam
 
-[KAnalyze とカーネル モードのダンプ ファイルの分析](analyzing-a-kernel-mode-dump-file-with-kanalyze.md)
-
-### <a name="span-idinstallingsymbolfilesspanspan-idinstallingsymbolfilesspaninstalling-symbol-files"></a><span id="installing_symbol_files"></span><span id="INSTALLING_SYMBOL_FILES"></span>シンボル ファイルをインストールします。
-
-どのツールを使用するのに関係なくダンプ ファイルを生成した Windows のバージョンのシンボル ファイルをインストールする必要があります。 これらのファイルは、ダンプ ファイルの分析に使用するデバッガーによって使用されます。 シンボル ファイルの適切なインストールの詳細については、次を参照してください。 [Windows シンボル ファイルのインストール](installing-windows-symbol-files.md)します。
-
-### <a name="span-idddkdumpexamdbgspanspan-idddkdumpexamdbgspandumpexam"></a><span id="ddk_dumpexam_dbg"></span><span id="DDK_DUMPEXAM_DBG"></span>DumpExam
-
-DumpExam ツールが廃止されています。 クラッシュ ダンプ ファイルの分析では必要なくなりました。
-
- 
-
- 
-
-
-
-
-
+DumpExam ツールは互換性のために残されています。 クラッシュダンプファイルの分析では、これは不要になりました。

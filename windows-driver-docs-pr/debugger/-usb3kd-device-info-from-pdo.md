@@ -1,9 +1,9 @@
 ---
-title: usb3kd.device_info_from_pdo
-description: Usb3kd.device_info_from_pdo コマンドでは、USB 3.0 ツリーの中に USB デバイスに関する情報が表示されます。
+title: device_info_from_pdo usb3kd
+description: Device_info_from_pdo usb3kd コマンドは、usb 3.0 ツリーの USB デバイスに関する情報を表示します。
 ms.assetid: 74FD68E6-78DF-452F-80C2-91A37877DE52
 keywords:
-- デバッグ usb3kd.device_info_from_pdo Windows
+- usb3kd Windows デバッグの device_info_from_pdo
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,42 +12,42 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 48e5d06b96c0dc41678c9fc30f8c11a7e2d71016
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 645fe27ebbe8557f54c763e878eda1b71f747a12
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63334141"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534905"
 ---
-# <a name="usb3kddeviceinfofrompdo"></a>! usb3kd.device\_情報\_から\_pdo
+# <a name="usb3kddevice_info_from_pdo"></a>! usb3kd \_ \_ pdo からのデバイス \_ 情報
 
 
-**! Usb3kd.device\_情報\_から\_pdo**コマンドで USB デバイスに関する情報を表示、 [USB 3.0 ツリー](usb-3-extensions.md#usb-3-tree)します。
+[ **Usb3kd \_ info \_ from \_ pdo** ] コマンドを実行すると、usb デバイスに関する情報が[usb 3.0 ツリー](usb-3-extensions.md#usb-3-tree)に表示されます。
 
 ```dbgcmd
 !usb3kd.device_info_from_pdo DeviceObject
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span> *DeviceObject*   
-USB デバイスまたはハブの物理デバイス オブジェクト (PDO) のアドレス。
+<span id="_______DeviceObject______"></span><span id="_______deviceobject______"></span><span id="_______DEVICEOBJECT______"></span>*DeviceObject*   
+USB デバイスまたはハブの物理デバイスオブジェクト (PDO) のアドレス。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usb3kd.dll
+Usb3kd
 
 <a name="remarks"></a>注釈
 -------
 
-**! デバイス\_情報\_から\_pdo**と[ **! ucx\_デバイス**](-usb3kd-ucx-device.md)デバイスに関する情報、情報が両方表示表示が異なります。 出力 **! デバイス\_情報\_から\_pdo**は USB 3.0 ハブのドライバーの point of view およびの出力から **! ucx\_デバイス**からは、USB ホスト コント ローラーの拡張機能ドライバーのポイントのビュー。 たとえば、 **! デバイス\_情報\_から\_pdo**出力には、構成と記述子にはインターフェイスに関する情報が含まれていますと **! ucx\_デバイス。** 出力にはエンドポイントに関する情報が含まれています。
+! pdo および[**! ucx \_ デバイス**](-usb3kd-ucx-device.md) ** \_ \_ からの \_ デバイス情報**はどちらもデバイスに関する情報を表示しますが、表示される情報は異なります。 ** \_ \_ \_ P から**の出力は、usb 3.0 ハブドライバーの観点から見たものであり、 **! UCX \_ デバイス**の出力は、usb ホストコントローラー拡張機能ドライバーの観点からのものです。 たとえば、 ** \_ \_ \_ pdo からのデバイス情報**には、構成記述子とインターフェイス記述子に関する情報が含まれています。また、 **! ucx \_ デバイス**の出力には、エンドポイントに関する情報が含まれています。
 
 <a name="examples"></a>例
 --------
 
-出力から、PDO のアドレスを取得できる[ **! usb\_ツリー** ](-usb3kd-usb-tree.md)またはその他のデバッガー コマンドのさまざまな。 たとえば、 [ **! devnode** ](-devnode.md)コマンドは、Pdo のアドレスを表示します。 次の例では、USBSTOR デバイス ノードは、USBHUB3 ノードの直接の子が。 PDO USBSTOR ノードのアドレスは、0xfffffa80059c3800 です。
+P のアドレスは、 [**! usb \_ ツリー**](-usb3kd-usb-tree.md)の出力、または他のさまざまなデバッガーコマンドから取得できます。 たとえば、 [**! devnode**](-devnode.md)コマンドを実行すると、pdos のアドレスが表示されます。 次の例では、USBSTOR.SYS device ノードが USBHUB3 ノードの直接の子になります。 USBSTOR.SYS ノードの PDO のアドレスは、0xfffffa80059c3800 です。
 
 ```dbgcmd
 3: kd> !devnode 0 1 usbhub3
@@ -72,7 +72,7 @@ DevNode 0xfffffa8005981730 for PDO 0xfffffa8004ffc550
       Previous State = DeviceNodeEnumerateCompletion (0x30d)
 ```
 
-PDO のアドレスを渡すことができますので、 **! usb3kd.device\_情報\_から\_pdo**コマンド。
+Pdo のアドレスを、 ** \_ pdo コマンド \_ から \_ の! usb3kd info**に渡すことができるようになりました。
 
 ```dbgcmd
 3: kd> !device_info_from_pdo 0xfffffa80059c3800
@@ -112,7 +112,7 @@ Device Event History:
     ...
 ```
 
-次の例は、出力の一部、 [ **! usb\_ツリー** ](-usb3kd-usb-tree.md)コマンド。 引数としてデバイスの子ノードのいずれかの PDO のアドレスを参照することができます、 [ **! devstack** ](-devstack.md)コマンド。 (**! devstack fffffa80059c3800**)
+次の例は、 [**! usb \_ ツリー**](-usb3kd-usb-tree.md)コマンドの出力の一部を示しています。 子デバイスノードのいずれかの PDO のアドレスは、 [**! devstack**](-devstack.md)コマンドの引数として確認できます。 (**! devstack fffffa80059c3800**)
 
 ```dbgcmd
 3: kd> !usb_tree
@@ -137,14 +137,14 @@ Topology
     !ucx_device 0xfffffa8005992840 !xhci_deviceslots 0xfffffa80051d1940 1
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
-[USB 3.0 の拡張機能](usb-3-extensions.md)
+[USB 3.0 拡張機能](usb-3-extensions.md)
 
-[**! usb3kd.device\_情報**](-usb3kd-device-info.md)
+[**! usb3kd. デバイス \_ 情報**](-usb3kd-device-info.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbhcdlog
-description: Usbkd.usbhcdlog コマンドでは、USB ホスト コント ローラーのデバッグ ログの一部が表示されます。
+title: usbkd. usbhcdlog
+description: Usbkd-usbhcdlog コマンドを実行すると、USB ホストコントローラーのデバッグログの一部が表示されます。
 ms.assetid: 78FDC557-7791-422A-AB7B-5C9B6A1DF481
 keywords:
-- デバッグ usbkd.usbhcdlog Windows
+- usbkd. usbhcdlog Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,40 +12,40 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f4f717e87a9dc35aac053467012d4818ef95e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e6c06943b2b84c373217db2cbe33af27e543889b
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363082"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534865"
 ---
 # <a name="usbkdusbhcdlog"></a>!usbkd.usbhcdlog
 
 
-[ **! Usbkd.usbhcdlog** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-usbkd-usbhcdlog)コマンドは、デバッグ ログを USB ホスト コント ローラーの一部を表示します。
+[**! Usbkd-usbhcdlog**](-usbkd-usbhcdlog.md)コマンドを実行すると、USB ホストコントローラーのデバッグログの一部が表示されます。
 
 ```dbgcmd
 !usbkd.usbhcdlog DeviceExtension[, NumberOfEntries]
 ```
 
-## <a name="span-idddkdevobjdbgspanspan-idddkdevobjdbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメーター
+## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
 
-<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span> *DeviceExtension*   
-UHCI または EHCI USB ホスト コント ローラーの機能のデバイス オブジェクト (FDO) のデバイスの拡張機能のアドレス。
+<span id="_______DeviceExtension______"></span><span id="_______deviceextension______"></span><span id="_______DEVICEEXTENSION______"></span>*Deviceextension*   
+UHCI または EHCI USB ホストコントローラーの機能デバイスオブジェクト (FDO) のデバイス拡張機能のアドレス。
 
-<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span> *NumberOfEntries*   
-表示するログ エントリの数。 全体のログを表示するには、このパラメーターを-1 に設定します。
+<span id="_______NumberOfEntries______"></span><span id="_______numberofentries______"></span><span id="_______NUMBEROFENTRIES______"></span>*Numberofentries*   
+表示するログエントリの数。 ログ全体を表示するには、このパラメーターを-1 に設定します。
 
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="examples"></a>例
 --------
 
-USB ホスト コント ローラーの FDO のデバイスの拡張機能のアドレスを検索する 1 つの方法を次に示します。 最初に入力[ **! usbkd.usb2tree**](-usbkd-usb2tree.md)します。
+USB ホストコントローラーの FDO のデバイス拡張機能のアドレスを確認する方法の1つを次に示します。 最初に「 [**! usbkd**](-usbkd-usb2tree.md)」と入力します。
 
 ```dbgcmd
 0 kd> !usbkd.usb2tree
@@ -57,9 +57,9 @@ EHCI MINIPORT(s) dt usbport!_USBPORT_MINIPORT_DRIVER ffffe00001f48bd0
 ...
 ```
 
-上記の出力の引数として、FDO のデバイスの拡張機能のアドレスを表示、 [DML](debugger-markup-language-commands.md)コマンド **! ehci\_情報 ffffe00001ca11a0**します。
+上記の出力では、FDO のデバイス拡張機能のアドレスが、 [DML](debugger-markup-language-commands.md)コマンドの引数として表示されます **! ehci \_ info ffffe00001ca11a0**です。
 
-今すぐに、デバイスの拡張機能のアドレスを渡す、 **! usbhcdlog**コマンド。 この例では、2 番目の引数は、4 つのログ エントリを表示を制限します。
+次に、デバイス拡張機能のアドレスを **! usbhcdlog**コマンドに渡します。 この例では、2番目の引数によって、表示が4つのログエントリに制限されます。
 
 ```dbgcmd
 0: kd> !usbkd.usbhcdlog ffffe00001ca11a0, 4
@@ -73,12 +73,12 @@ LOG@: ffffe00001ca11b8
 [ 003] ffffe00002019300 gNX0 0000000000000000 0000000000000000 ffffe00001ca1b88 
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

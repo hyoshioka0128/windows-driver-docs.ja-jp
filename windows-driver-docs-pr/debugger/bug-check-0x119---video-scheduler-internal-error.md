@@ -13,25 +13,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b864db5982677a361f6eb57ca6d3277200f074
-ms.sourcegitcommit: 8fce8b22c7437f0aa322c40625d5163e8812ea01
+ms.openlocfilehash: d3432d07a66d36e5cd6c01552924e5b9b2cea37d
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77146508"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534663"
 ---
-# <a name="bug-check-0x119-video_scheduler_internal_error"></a>バグチェック 0x119: VIDEO\_SCHEDULER\_内部\_エラー
+# <a name="bug-check-0x119-video_scheduler_internal_error"></a>バグチェック 0x119: ビデオ \_ スケジューラの \_ 内部 \_ エラー
 
-VIDEO\_SCHEDULER\_内部\_エラーのバグチェックの値は0x00000119 です。 これは、ビデオスケジューラが致命的な違反を検出したことを示します。
+ビデオ \_ スケジューラの \_ 内部エラーのバグチェックには、 \_ 値0x00000119 が含まれています。 これは、ビデオスケジューラが致命的な違反を検出したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-## <a name="video_scheduler_internal_error-parameters"></a>VIDEO\_SCHEDULER\_内部\_エラーパラメーター
+## <a name="video_scheduler_internal_error-parameters"></a>ビデオ \_ スケジューラの \_ 内部 \_ エラーパラメーター
 
 パラメーター1は目的の唯一のパラメーターであり、正確な違反を識別します。
 
-| パラメーター1 | エラーの原因                                       |
+| パラメーター 1 | エラーの原因                                       |
 |-----------|--------------------------------------------------------|
 |0x1|ドライバーが無効なフェンス ID を報告しました。 |
 |0x2| コマンドの送信時にドライバーが失敗しました。|
@@ -43,20 +43,20 @@ VIDEO\_SCHEDULER\_内部\_エラーのバグチェックの値は0x00000119 で�
 |0x1000| これは、通常、メモリの破損やハードウェアの不具合が原因で発生する内部 OS 状態エラーです。|
 |0x10000| これは、通常、メモリの破損やハードウェアの不具合が原因で発生する内部 OS 状態エラーです。|
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解像度
 
-! [デバッグ拡張機能の[**分析**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
+! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 
 ! Analyze 出力に示されているエラーモジュールがビデオドライバーの場合は、そのビデオドライバーで更新プログラムがベンダから入手可能かどうかを調査します。
 
-詳しくは、次のトピックをご覧ください。
+詳細については、次を参照してください。
 
-[コマンドバッファーと DMA バッファーの処理](https://docs.microsoft.com/windows-hardware/drivers/display/handling-command-and-dma-buffers)
+[コマンドおよび DMA バッファーの処理](https://docs.microsoft.com/windows-hardware/drivers/display/handling-command-and-dma-buffers)
 
-[コマンドバッファーの送信](https://docs.microsoft.com/windows-hardware/drivers/display/submitting-a-command-buffer)
+[コマンド バッファーの送信](https://docs.microsoft.com/windows-hardware/drivers/display/submitting-a-command-buffer)
 
-[フェンス識別子の指定](https://docs.microsoft.com/windows-hardware/drivers/display/supplying-fence-identifiers)
+[フェンス識別子の提供](https://docs.microsoft.com/windows-hardware/drivers/display/supplying-fence-identifiers)
 
-[GPU スケジューラクラス](https://docs.microsoft.com/windows-hardware/drivers/display/gpu-scheduler-class)
+[GPU スケジューラ クラス](https://docs.microsoft.com/windows-hardware/drivers/display/gpu-scheduler-class)
 
-[ビデオメモリの直接フリップ](https://docs.microsoft.com/windows-hardware/drivers/display/direct-flip-of-video-memory)
+[ビデオ メモリの直接の反転](https://docs.microsoft.com/windows-hardware/drivers/display/direct-flip-of-video-memory)

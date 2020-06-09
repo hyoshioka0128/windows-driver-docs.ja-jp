@@ -1,9 +1,9 @@
 ---
-title: usbkd.usbportmddevext
-description: 場合 1 つし、usbport _DEVICE_EXTENSION 構造体はされたクラッシュ ダンプに存在する usbkd.usbportmddevext コマンドの表示は、0 xfe のバグ チェックでは、結果として生成します。
+title: usbkd. usbportmddevext
+description: 結果のバグチェック0xFE として生成されたクラッシュダンプに存在する場合は、usbkd. usbportmddevext コマンドによって、usbkd _DEVICE_EXTENSION 構造が表示されます。
 ms.assetid: 07DE5D4A-E909-4D9B-B906-B74C9CC8AE49
 keywords:
-- デバッグ usbkd.usbportmddevext Windows
+- usbkd. usbportmddevext Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fd1a1006d7cc08652a696506e38b191368ab2726
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cc8d97c71f89d97501cafe1aba791587da82af51
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63327983"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534683"
 ---
 # <a name="usbkdusbportmddevext"></a>!usbkd.usbportmddevext
 
 
-**! Usbkd.usbportmddevext**コマンドが表示されます、**し、usbport!\_デバイス\_拡張子**、結果として生成されたクラッシュ ダンプに存在する場合に構造体[**バグ チェック 0 xfe**](bug-check-0xfe--bugcode-usb-driver.md)します。
+**! Usbkd. usbportmddevext**コマンドを実行すると、 **usbkd \_ が表示されます。\_** [**バグチェック 0xfe**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプに1つが存在する場合は、デバイス拡張構造。
 
 ```dbgcmd
 !usbkd.usbportmddevext
@@ -31,17 +31,17 @@ ms.locfileid: "63327983"
 ## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
 
-Usbkd.dll
+Usbkd .dll
 
 <a name="remarks"></a>注釈
 -------
 
-結果として生成されたクラッシュ ダンプ ファイルをデバッグしている場合にのみ、このコマンドを使用して[ **0 xfe のバグ チェック。BUGCODE\_USB\_ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)します。
+このコマンドは、[**バグチェック 0xfe: バグコード \_ USB \_ ドライバー**](bug-check-0xfe--bugcode-usb-driver.md)の結果として生成されたクラッシュダンプファイルをデバッグする場合にのみ使用します。
 
 <a name="examples"></a>例
 --------
 
-出力の例を次に示します **! usbportmddevext**します。
+次に、 **! usbportmddevext**の出力例を示します。
 
 ```dbgcmd
 1: kd> !analyze -v
@@ -108,12 +108,12 @@ Ev_Xdpc_Worker       XDPC_DpcQueued          XDPC_Running
 ...           
 ```
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
 
 [USB 2.0 デバッガー拡張機能](usb-2-0-extensions.md)
 
-[ユニバーサル シリアル バス (USB) ドライバー](https://go.microsoft.com/fwlink/p?LinkID=227351)
+[ユニバーサルシリアルバス (USB) ドライバー](https://docs.microsoft.com/windows-hardware/drivers/usbcon/)
 
  
 

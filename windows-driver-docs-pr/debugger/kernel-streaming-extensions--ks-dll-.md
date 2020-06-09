@@ -8,12 +8,12 @@ keywords:
 - 拡張機能、カーネルストリーミング
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a84edd701f379fbc4eb76f727b46c7264c86ae
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 2529f6e892d4f18a441361c184232cf7ebbdcbc6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209824"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534777"
 ---
 # <a name="kernel-streaming-extensions-ksdll"></a>カーネル ストリーミング拡張機能 (Ks.dll)
 
@@ -22,7 +22,7 @@ ms.locfileid: "75209824"
 
 これらの参照ページのサンプル出力の大部分は、フィルター中心のサンプル Avssamp をデバッグすることによって生成されました。 このサンプルは、Windows Driver Kit に含まれています。
 
-この拡張機能を使用するには、特殊なシンボルが必要です。 詳細については、 [Windows Web サイトのデバッグツール](https://go.microsoft.com/fwlink/p/?linkid=8708)に関するページを参照してください。
+この拡張機能を使用するには、特殊なシンボルが必要です。
 
 引数を指定せずにコマンドをデバッガーに入力するだけで、このセクションの多くの拡張機能コマンドに関する追加情報を取得できます。
 
