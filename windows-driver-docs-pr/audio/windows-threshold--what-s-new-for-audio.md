@@ -1,81 +1,81 @@
 ---
-title: Windows 10 のオーディオ ドライバーには新機能
-description: このトピックでは、高レベルの Windows 10 用のオーディオの新機能新機能の概要を説明します。
+title: Windows 10 オーディオドライバーの新機能
+description: このトピックでは、Windows 10 の audio の新機能の概要について説明します。
 ms.assetid: 9005966A-CCC2-478C-9221-56007B7FADFB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 502b99e61f97df9585478d4a02fda524acdb72fb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 690b278052dd2c46a558208d8961a4f4eaa913be
+ms.sourcegitcommit: 8097a09d2f989a9b3dca250c4e2ffd4cec2172e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63328457"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84563154"
 ---
-# <a name="windows-10-whats-new-for-audio-drivers"></a>Windows 10:オーディオ ドライバーには新機能
+# <a name="windows-10-whats-new-for-audio-drivers"></a>Windows 10: オーディオドライバーの新機能
 
 
-このトピックでは、高レベルの Windows 10 用のオーディオの新機能新機能の概要を説明します。
+このトピックでは、Windows 10 の audio の新機能の概要について説明します。
 
-## <a name="span-idfeaturesummaryspanspan-idfeaturesummaryspanspan-idfeaturesummaryspanfeature-summary"></a><span id="Feature_Summary"></span><span id="feature_summary"></span><span id="FEATURE_SUMMARY"></span>機能の概要
-
-
-Windows 10 の新しいオーディオ機能を示します。
-
--   [オーディオのモジュールの通信を実装します。](implementing-audio-module-communication.md)
-
--   [低待機時間のオーディオ機能強化](#lowlatency)
-
--   [信号処理モードとオーディオのカテゴリ](#signalprocessing)
-
--   [ハードウェア オフロード APO 効果](#hardwareoffloaded)
-
--   [Cortana 音声をアクティブ化](#cortanavoice)
-
--   [オーディオの Windows ユニバーサル ドライバー](#windowsuniversal)
-
--   [オーディオ ドライバーのリソースの管理](#resourcemanagement)
-
--   [オーディオ ドライバーの PNP のバランス調整](#pnprebalance)
-
-## <a name="span-idlowlatencyspanspan-idlowlatencyspanspan-idlowlatencyspanlow-latency-audio-improvements"></a><span id="LowLatency"></span><span id="lowlatency"></span><span id="LOWLATENCY"></span>低待機時間のオーディオ機能強化
+## <a name="span-idfeature_summaryspanspan-idfeature_summaryspanspan-idfeature_summaryspanfeature-summary"></a><span id="Feature_Summary"></span><span id="feature_summary"></span><span id="FEATURE_SUMMARY"></span>機能の概要
 
 
-オーディオの待機時間は、その時点のサウンドの間の遅延が作成され、聞いたときに。 オーディオの待ち時間を持つことは、次のようないくつかの主要なシナリオ、非常に重要です。
+Windows 10 の新しいオーディオ機能を次に示します。
+
+-   [オーディオ モジュール通信の実装](implementing-audio-module-communication.md)
+
+-   [低待機時間のオーディオの改善](#lowlatency)
+
+-   [シグナル処理モードとオーディオカテゴリ](#signalprocessing)
+
+-   [ハードウェアオフロード APO 効果](#hardwareoffloaded)
+
+-   [Cortana 音声のアクティブ化](#cortanavoice)
+
+-   [オーディオ用 Windows ユニバーサルドライバー](#windowsuniversal)
+
+-   [オーディオドライバーのリソース管理](#resourcemanagement)
+
+-   [オーディオドライバーの PNP 再調整](#pnprebalance)
+
+## <a name="span-idlowlatencyspanspan-idlowlatencyspanspan-idlowlatencyspanlow-latency-audio-improvements"></a><span id="LowLatency"></span><span id="lowlatency"></span><span id="LOWLATENCY"></span>低待機時間のオーディオの改善
+
+
+オーディオ待機時間とは、サウンドが作成されてから聞こえたときまでの遅延です。 次のようないくつかの主要なシナリオでは、オーディオの待機時間を短くすることが非常に重要です。
 
 -   Pro オーディオ
--   音楽の作成との混合
+-   音楽の作成とミックス
 -   Skype などの通信
--   仮想および Augmented Reality
+-   仮想および拡張された現実
 -   ゲーム
 
-デバイスの合計待機時間は、次のコンポーネントの待機時間の合計を示します。
+デバイスの待機時間の合計は、次のコンポーネントの待機時間の合計です。
 
 -   オペレーティング システム
 -   オーディオ処理オブジェクト
--   オーディオ ドライバー
--   オーディオ ハードウェア
+-   オーディオドライバー
+-   オーディオハードウェア
 
-Windows 10 では、作業は OS で待機時間を減らす行われました。 ドライバー変更なしで Windows 10 のアプリケーションに 4.5 16 ミリ秒の待ち時間が発生します。 さらに、新しい低待機時間の小さなバッファーを使用して、オーディオ データを処理する Ddi 活用するために、ドライバーが更新された場合、待機時間が引き下げられますより。 場合ドライバー サポート ミリ秒オーディオ バッファー ラウンドト リップの待機時間は約 10 ミリ秒とします。
+Windows 10 では、OS の待機時間を短縮するために作業が行われました。 ドライバーを変更しないと、Windows 10 のアプリケーションでは 4.5-16ms の待機時間が減少します。 さらに、小さなバッファーを使用してオーディオデータを処理する新しい低待機時間 DDIs を利用するようにドライバーが更新されている場合は、待機時間がさらに短縮されます。 ドライバーが3ミリ秒オーディオバッファーをサポートしている場合、ラウンドトリップの待機時間は ~ 10 ミリ秒です。
 
-![アプリ、オーディオ エンジン ドライバーおよびハードウェアを示す短い待機時間オーディオ スタックの図](images/low-latency-audio-stack-diagram-1.png)
+![アプリ、オーディオエンジンドライバー、および h/w を示す低待機時間オーディオスタック図](images/low-latency-audio-stack-diagram-1.png)
 
-オーディオ スタックは、複数のパケット サイズと待機時間と、ユーザーのシナリオに基づく power 間のトレードオフを最適化するために、動的なパケットのサイズ変更をサポートします。 さらに、ストリームは優先順位を設定、優先度の高いストリーム (電話など) が専用のリソースをことを保証するためにします。
+オーディオスタックでは、ユーザーのシナリオに基づいて待機時間と電力のトレードオフを最適化するために、複数のパケットサイズと動的なパケットサイズ変更がサポートされています。 さらに、優先順位の高いストリーム (電話など) が専用のリソースを持つようにするために、ストリームに優先順位が付けられます。
 
-低待機時間をサポートするために、オーディオ ドライバーの順番は、Windows 10 は、次の 3 つの新機能を提供します。
+オーディオドライバーで低待機時間をサポートするために、Windows 10 には次の3つの新機能が用意されています。
 
-1. \[必須\]各モードでサポートされている最小バッファー サイズを宣言します。
-2. \[省略可、ただし推奨\]ドライバーと OS の間のデータ フローの連携を強化します。
-3. \[省略可、ただし推奨\]ドライバー リソース (割り込み、スレッド) を登録し、低待機時間シナリオでの OS で保護するようにします。
-詳細については、次を参照してください。[低待機時間のオーディオ](low-latency-audio.md)します。
+1. \[必須 \] 各モードでサポートされている最小バッファーサイズを宣言します。
+2. \[省略可能ですが、 \] ドライバーと OS の間のデータフローの調整を向上させることをお勧めします。
+3. \[省略可能ですが、 \] 低待機時間シナリオで OS によって保護できるように、ドライバーリソース (割り込み、スレッド) を登録することをお勧めします。
+詳細については、「[低待機時間のオーディオ](low-latency-audio.md)」を参照してください。
 
-## <a name="span-idsignalprocessingspanspan-idsignalprocessingspanspan-idsignalprocessingspansignal-processing-modes-and-audio-categories"></a><span id="SignalProcessing"></span><span id="signalprocessing"></span><span id="SIGNALPROCESSING"></span>信号処理モードとオーディオのカテゴリ
+## <a name="span-idsignalprocessingspanspan-idsignalprocessingspanspan-idsignalprocessingspansignal-processing-modes-and-audio-categories"></a><span id="SignalProcessing"></span><span id="signalprocessing"></span><span id="SIGNALPROCESSING"></span>シグナル処理モードとオーディオカテゴリ
 
 
-**信号処理モード**
+**シグナル処理モード**
 
-ドライバーは、サポートされているオーディオ信号の各デバイスの処理モードを宣言します。
+ドライバーは、各デバイスのサポートされているオーディオシグナル処理モードを宣言します。
 
-オーディオのカテゴリ (アプリケーションで選択) は、オーディオのモード (ドライバーによって定義される) にマップされます。 Windows では、7 つのオーディオ信号処理モードを定義します。 Oem および ihv 側では、どのモードを実装するかを判断できます。 モードは、次の表にまとめます。
+オーディオカテゴリ (アプリケーションによって選択されます) は、(ドライバーによって定義された) オーディオモードにマップされます。 Windows では、7つのオーディオ信号処理モードを定義します。 Oem と Ihv は、どのモードを実装するかを決定できます。 これらのモードの概要を次の表に示します。
 
 <table>
 <colgroup>
@@ -86,120 +86,120 @@ Windows 10 では、作業は OS で待機時間を減らす行われました�
 <tbody>
 <tr class="odd">
 <td align="left"><strong>モード</strong></td>
-<td align="left"><strong>レンダー/キャプチャ</strong></td>
-<td align="left"><strong>[説明]</strong></td>
+<td align="left"><strong>レンダリング/キャプチャ</strong></td>
+<td align="left"><strong>説明</strong></td>
 </tr>
 <tr class="even">
-<td align="left">直接</td>
-<td align="left">どちらもオン</td>
-<td align="left"><p>Raw モードでは、存在しないことをストリームに適用される、信号処理を指定します。</p>
-<p>アプリケーションは完全に変更されず、生のストリームを要求し、独自の信号処理を実行できます。</p></td>
+<td align="left">Raw</td>
+<td align="left">両方</td>
+<td align="left"><p>Raw モードでは、ストリームにシグナル処理を適用しないことを指定します。</p>
+<p>アプリケーションは、まったく手を加えずに独自のシグナル処理を実行する未加工ストリームを要求できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">既定</td>
-<td align="left">どちらもオン</td>
-<td align="left"><p>このモードでは、既定のオーディオの処理を定義します。</p></td>
+<td align="left">Default</td>
+<td align="left">両方</td>
+<td align="left"><p>このモードは、既定のオーディオ処理を定義します。</p></td>
 </tr>
 <tr class="even">
-<td align="left">映画 *</td>
-<td align="left">Render</td>
-<td align="left">ムービー オーディオを再生</td>
+<td align="left">映像</td>
+<td align="left">レンダー</td>
+<td align="left">ムービーオーディオ再生</td>
 </tr>
 <tr class="odd">
-<td align="left">メディア *</td>
-<td align="left">どちらもオン</td>
-<td align="left">音楽のオーディオ再生 (多くのメディア ストリームの既定値)</td>
+<td align="left">用紙</td>
+<td align="left">両方</td>
+<td align="left">音楽オーディオ再生 (ほとんどのメディアストリームでは既定)</td>
 </tr>
 <tr class="even">
-<td align="left">音声 *</td>
+<td align="left">スピーチ</td>
 <td align="left">キャプチャ</td>
-<td align="left">人間の音声のキャプチャ (Cortana への入力など)</td>
+<td align="left">人間の声のキャプチャ (Cortana への入力など)</td>
 </tr>
 <tr class="odd">
-<td align="left">通信 *</td>
-<td align="left">どちらもオン</td>
-<td align="left">VOIP レンダリングとキャプチャ (Skype、Lync など)</td>
+<td align="left">接続</td>
+<td align="left">両方</td>
+<td align="left">VOIP のレンダーとキャプチャ (例: Skype、Lync)</td>
 </tr>
 <tr class="even">
-<td align="left">通知 *</td>
-<td align="left">Render</td>
-<td align="left">着信音、アラーム、アラートなど。</td>
+<td align="left">警告</td>
+<td align="left">レンダー</td>
+<td align="left">着信音、アラーム、アラートなど</td>
 </tr>
 </tbody>
 </table>
 
  
 
-オーディオ デバイス ドライバーは、少なくとも Raw または既定のモードをサポートする必要があります。 追加モードをサポートするは省略可能です。
+オーディオデバイスドライバは、少なくとも Raw モードまたは Default モードをサポートしている必要があります。 追加モードのサポートはオプションです。
 
-音声、ビデオ、音楽、および通信専用モードです。 オーディオ ドライバーでは、オーディオ形式のさまざまな種類を定義できなくなり、ストリームの種類に基づいて、処理します。
+音声、ムービー、音楽、および通信用の専用モード。 オーディオドライバーでは、ストリームの種類に基づいて、さまざまな種類のオーディオ形式と処理を定義できます。
 
-**オーディオのカテゴリ**
+**オーディオカテゴリ**
 
-次の表には、Windows 10 でのオーディオのカテゴリが表示されます。
+次の表は、Windows 10 のオーディオカテゴリを示しています。
 
-アプリケーションでは、オーディオ ストリームの使用方法について、システムを通知するために、ストリームを特定のオーディオ ストリームのカテゴリとタグ付けするオプションがあります。 Windows 10 では、9 つのオーディオ ストリームのカテゴリがあります。
+オーディオストリームの使用状況についてシステムに通知するために、アプリケーションでは、特定のオーディオストリームカテゴリを使用してストリームにタグを付けることができます。 Windows 10 では、9つのオーディオストリームカテゴリがあります。
 
 |                |                                                                                                       |
 |----------------|-------------------------------------------------------------------------------------------------------|
 | **カテゴリ**   | **説明**                                                                                       |
-| ビデオ\*        | ムービー、ビデオのダイアログ ボックス (ForegroundOnlyMedia が置き換えられます)                                              |
-| メディア\*        | メディアの再生 (BackgroundCapableMedia が置き換えられます) の既定のカテゴリ                                 |
-| ゲームのチャット\*    | ユーザー (Windows 10 の新しいカテゴリ) 間のゲーム内の通信                                      |
-| 音声認識\*       | 音声入力 (例: パーソナル アシスタント) と出力 (例: アプリのナビゲーション) (Windows 10 の新しいカテゴリ) |
-| Communications | VOIP、リアルタイムのチャット                                                                                  |
-| オブジェクト エクスプローラーには         | アラーム、着信音、通知                                                                       |
-| サウンド効果  | ビープ音など                                                                                     |
-| ゲームのメディア     | ゲームの音楽                                                                                         |
-| ゲーム効果   | 車のエンジン音、箇条書きなどをはずむボールです。                                                      |
-| その他          | カテゴリ化されていないストリーム                                                                                 |
+| 映画\*        | ムービー、ダイアログ付きビデオ (ForegroundOnlyMedia を置換)                                              |
+| メディア\*        | メディア再生の既定のカテゴリ (BackgroundCapableMedia を置換)                                 |
+| ゲームチャット\*    | ユーザー間のゲーム内通信 (Windows 10 の新しいカテゴリ)                                      |
+| 音声\*       | 音声入力 (例: personal assistant) と出力 (ナビゲーションアプリなど) (Windows 10 の新しいカテゴリ) |
+| 通信 | VOIP、リアルタイムチャット                                                                                  |
+| 警告         | アラーム、リングトーン、通知                                                                       |
+| サウンド効果  | ビープ音、dings、その他                                                                                     |
+| ゲームメディア     | ゲームミュージック                                                                                         |
+| ゲーム効果   | ボールのバウンス、車のエンジンサウンド、箇条書きなど                                                      |
+| その他          | 未カテゴリのストリーム                                                                                 |
 
  
 
-\* Windows 10 の新機能です。
+\*Windows 10 の新。
 
-詳細については、次を参照してください。[オーディオ信号の処理モード](audio-signal-processing-modes.md)と[オーディオ処理オブジェクト アーキテクチャ](audio-processing-object-architecture.md)します。
+詳細については、「[オーディオ信号処理モード](audio-signal-processing-modes.md)」と「[オーディオ処理オブジェクトのアーキテクチャ](audio-processing-object-architecture.md)」を参照してください。
 
-## <a name="span-idhardwareoffloadedspanspan-idhardwareoffloadedspanspan-idhardwareoffloadedspanhardware-offloaded-apo-effects"></a><span id="HardwareOffloaded"></span><span id="hardwareoffloaded"></span><span id="HARDWAREOFFLOADED"></span>ハードウェア オフロード APO 効果
-
-
-Windows 10 には、ハードウェアのオフロード APO 効果がサポートされています。 APOs は、オフロードの暗証番号 (pin) の上に読み込むことができます。 これにより、ソフトウェアとハードウェアの両方で行われるオーディオの処理。 さらに、処理を動的に変更できます。 一部またはすべての処理を十分なハードウェア リソースがある場合に、ソフトウェア APO から DSP に移動してに戻すソフトウェア APO DSP に負荷が増えたときにすることができます。
-
-詳細については、次を参照してください。[ハードウェア オフロード APO 効果の実装](implementing-hardware-offloaded-apo-effects.md)します。
-
-## <a name="span-idcortanavoicespanspan-idcortanavoicespanspan-idcortanavoicespancortana-voice-activation---wake-on-voice"></a><span id="CortanaVoice"></span><span id="cortanavoice"></span><span id="CORTANAVOICE"></span>Cortana 音声のアクティブ化 - 音声でウェイク アップ
-
-Cortana、パーソナル アシスタントのテクノロジは、2013 Microsoft BUILD Developer Conference での最初の demonstarted をしました。 音声をアクティブ化は、コルタナさん」- 特定の語句を言うことにより、さまざまなデバイスの電源の状態からの音声認識エンジンを起動できる機能です。 コルタナさん」音声アクティベーション (VA) 機能では、自分の音声を使用して、自分のアクティブなコンテキストを使用して、(つまり、現在にあるものの画面) の外部でエクスペリエンス (Cortana など) を迅速に情報交換することができます。 機能はシナリオの対象となる画面がオフ、アイドル状態、または完全に有効になります。 ハードウェアでは、バッファリングをサポートする場合のユーザー、連結できます、キー フレーズとコマンドの語句。 これにより、ユーザーのボイス エクスペリエンスでエンド ツー エンドのスリープ解除が向上します。 詳細については、次を参照してください。[音声をアクティブ化](voice-activation.md)します。
-
-## <a name="span-idwindowsuniversalspanspan-idwindowsuniversalspanspan-idwindowsuniversalspanwindows-universal-drivers-for-audio"></a><span id="WindowsUniversal"></span><span id="windowsuniversal"></span><span id="WINDOWSUNIVERSAL"></span>オーディオの Windows ユニバーサル ドライバー
+## <a name="span-idhardwareoffloadedspanspan-idhardwareoffloadedspanspan-idhardwareoffloadedspanhardware-offloaded-apo-effects"></a><span id="HardwareOffloaded"></span><span id="hardwareoffloaded"></span><span id="HARDWAREOFFLOADED"></span>ハードウェアオフロード APO 効果
 
 
-Windows 10 では、スマート フォンやタブレットの小さな画面の PC の 2:1 の動作の 1 つのドライバー モデル、および Windows 10 をサポートします。 つまり、Ihv が 1 つのプラットフォームでは、そのドライバーを開発および、そのドライバーがすべてのデバイス (デスクトップ、ラップトップ、タブレット、携帯電話) で動作します。 開発時間の短縮とコストになります。
+Windows 10 では、ハードウェアオフロードの APO 効果がサポートされています。 APOs はオフロード pin の上に読み込むことができます。 これにより、ソフトウェアとハードウェアの両方でオーディオ処理を行うことができます。 また、処理は動的に変更される可能性があります。 十分なハードウェアリソースがあり、DSP の負荷が増加したときにソフトウェア APO に戻されると、一部またはすべての処理をソフトウェア APO から DSP に移動できます。
 
-ユニバーサルのオーディオ ドライバーを開発するには、次のツールを使用します。
+詳細については、「[ハードウェアオフロード APO 効果の実装](implementing-hardware-offloaded-apo-effects.md)」を参照してください。
 
-1. Visual Studio 2015:新しいドライバーの設定は、マルチプラット フォームのドライバーを作成する"Universal"に設定する「ターゲット プラットフォーム」を許可します。
-2. APIValidator:これは、ドライバーがユニバーサルおよび更新する必要がある呼び出しを強調表示かどうかをチェックする WDK ツールです。
-3. GitHub でのオーディオ サンプル:Sysvad と SwapAPO ユニバーサル ドライバーに変換されました。
-詳細と GitHub のサンプル コードへのポインターは、次を参照してください。[オーディオのユニバーサル Windows ドライバー](audio-universal-drivers.md)します。
+## <a name="span-idcortanavoicespanspan-idcortanavoicespanspan-idcortanavoicespancortana-voice-activation---wake-on-voice"></a><span id="CortanaVoice"></span><span id="cortanavoice"></span><span id="CORTANAVOICE"></span>Cortana ボイスアクティベーション-音声でのスリープ解除
 
-## <a name="span-idresourcemanagementspanspan-idresourcemanagementspanspan-idresourcemanagementspanresource-management-for-audio-drivers"></a><span id="ResourceManagement"></span><span id="resourcemanagement"></span><span id="RESOURCEMANAGEMENT"></span>オーディオ ドライバーのリソースの管理
+Cortana は、2013の Microsoft BUILD Developer カンファレンスで、パーソナルアシスタントテクノロジを初めて使い始めました。 音声のアクティブ化は、ユーザーが特定の語句 ("こんにちは Cortana") を伝えて、さまざまなデバイスの電源状態から音声認識エンジンを呼び出せるようにする機能です。 "Cortana" ボイスアクティベーション (VA) 機能を使用すると、ユーザーは自分の声を使って、アクティブなコンテキスト (つまり、現在画面に表示されているもの) の外部で操作 (Cortana など) をすばやく行うことができます。 この機能は、画面がオフになっている場合、アイドル状態のとき、または完全にアクティブになっている場合のシナリオを対象としています。 ハードウェアでバッファリングがサポートされている場合、ユーザーはキーフレーズとコマンドフレーズを一緒にチェーンすることができます。 これにより、エンドツーエンドの wake on のユーザーエクスペリエンスが向上します。 詳細については、「[音声ライセンス認証](voice-activation.md)」を参照してください。
 
-
-低コストのモバイル デバイスでオーディオの良好なエクスペリエンスを作成する 1 つの課題は、一部のデバイスにさまざまな同時実行の制約があることです。 たとえば、2 のみをサポートするストリームをオフロードすると、デバイスが同時に最大 6 のオーディオ ストリームを再生のみできますです。 モバイル デバイスでアクティブな電話呼び出しがあるときに、デバイスが 2 つだけのオーディオ ストリームをサポートしていること。 デバイスでは、オーディオのキャプチャ時に、デバイスはのみに最大 4 つのオーディオ ストリームを再生できます。
-
-Windows 10 には、優先度の高いオーディオ ストリームと携帯電話の呼び出しができるを再生することを保証する同時実行の制約を表現するためのメカニズムが含まれています。 システムが十分なリソースを持たない場合は、低優先度のストリームが終了します。 このメカニズムでは、携帯電話とタブレットではなくデスクトップやラップトップで使用できるのみです。
-
-詳細については、次を参照してください。[オーディオ ハードウェア リソースの管理](audio-hardware-resource-management.md)します。
-
-## <a name="span-idpnprebalancespanspan-idpnprebalancespanspan-idpnprebalancespanpnp-rebalance-for-audio-drivers"></a><span id="PNPRebalance"></span><span id="pnprebalance"></span><span id="PNPREBALANCE"></span>オーディオ ドライバーの PNP のバランス調整
+## <a name="span-idwindowsuniversalspanspan-idwindowsuniversalspanspan-idwindowsuniversalspanwindows-universal-drivers-for-audio"></a><span id="WindowsUniversal"></span><span id="windowsuniversal"></span><span id="WINDOWSUNIVERSAL"></span>オーディオ用 Windows ユニバーサルドライバー
 
 
-PNP 再調整はシナリオで使用特定 PCI を再割り当てするメモリ リソースが必要があります。 その場合は、一部のドライバーが、アンロードし、連続したメモリの空き領域を作成するには、さまざまなメモリの場所に再度読み込まれます。 2 つの主なシナリオでは、再調整が引き起こされます。
+Windows 10 でサポートされているドライバーモデルは、PC と 2: 1 と Windows 10 のスマートフォン用および小型の画面タブレット用です。 つまり、Ihv は、ドライバーを1つのプラットフォームで開発し、そのドライバーをすべてのデバイス (デスクトップ、ラップトップ、タブレット、携帯電話) で動作させることができます。 その結果、開発時間とコストが削減されます。
 
-1. PCI ホットプラグ:ユーザーはデバイスをプラグインし、PCI バスには、新しいデバイスのドライバーの読み込みには、十分なリソースはありません。 このカテゴリに分類されるデバイスのいくつかの例には、Thunderbolt、USB C および NVME ストレージが含まれます。 このシナリオでメモリ リソースを再配置し、統合 (rebalanced) サポートする必要があるされる追加のデバイス。
-2. PCI サイズ バー:デバイスのドライバーのメモリに読み込みが成功した後、その他のリソースを要求します。 デバイスのいくつかの例には、ハイエンドなグラフィックス カードと記憶装置が含まれます。
-詳細については、次を参照してください。[実装 PortCls オーディオ ドライバーの PnP 再調整](implement-pnp-rebalance-for-portcls-audio-drivers.md)します。
+ユニバーサルオーディオドライバーを開発するには、次のツールを使用します。
+
+1. Visual Studio 2015: 新しいドライバー設定では、"ターゲットプラットフォーム" を "Universal" に設定して、マルチプラットフォームドライバーを作成できます。
+2. APIValidator: これは、ドライバーが universal であるかどうかを確認し、更新が必要な呼び出しを強調表示する WDK ツールです。
+3. GitHub のオーディオサンプル: sysvad と SwapAPO は、ユニバーサルドライバーに変換されました。
+GitHub サンプルコードの詳細とポインターについては、「[ユニバーサル Windows Drivers For Audio](audio-universal-drivers.md)」を参照してください。
+
+## <a name="span-idresourcemanagementspanspan-idresourcemanagementspanspan-idresourcemanagementspanresource-management-for-audio-drivers"></a><span id="ResourceManagement"></span><span id="resourcemanagement"></span><span id="RESOURCEMANAGEMENT"></span>オーディオドライバーのリソース管理
+
+
+低コストのモバイルデバイスで優れたオーディオエクスペリエンスを作成する際の1つの問題は、一部のデバイスでさまざまな同時実行制約があることです。 たとえば、デバイスが同時に最大6つのオーディオストリームを再生でき、2つのオフロードストリームのみをサポートする可能性があります。 モバイルデバイスにアクティブな通話がある場合、デバイスがサポートするオーディオストリームは2つだけである可能性があります。 デバイスがオーディオをキャプチャしている場合、デバイスは最大4つのオーディオストリームのみを再生できます。
+
+Windows 10 には、高優先度のオーディオストリームや携帯電話通話を再生できるように、同時実行の制約を表現するメカニズムが含まれています。 システムに十分なリソースがない場合は、低優先度のストリームが終了します。 このメカニズムは、デスクトップやノート pc にない携帯電話やタブレットでのみ使用できます。
+
+詳細については、「 [Audio Hardware Resource Management](audio-hardware-resource-management.md)」を参照してください。
+
+## <a name="span-idpnprebalancespanspan-idpnprebalancespanspan-idpnprebalancespanpnp-rebalance-for-audio-drivers"></a><span id="PNPRebalance"></span><span id="pnprebalance"></span><span id="PNPREBALANCE"></span>オーディオドライバーの PNP 再調整
+
+
+PNP の再調整は、メモリリソースを再割り当てする必要がある特定の PCI シナリオで使用されます。 この場合、一部のドライバーはアンロードされ、別のメモリ位置に再読み込みされるため、連続した空きメモリ領域が作成されます。 再調整は、主に次の2つのシナリオで発生します。
+
+1. PCI hotplug: ユーザーがデバイスに接続し、PCI バスに新しいデバイス用のドライバーを読み込むための十分なリソースがありません。 このカテゴリに分類されるデバイスの例として、Thunderbolt icon、USB-C、および NVME ストレージがあります。 このシナリオでは、追加する追加のデバイスをサポートするために、メモリリソースを再編成して統合する必要があります (再分配)。
+2. PCI 再測定可能なバー: デバイスのドライバーがメモリに正常に読み込まれた後、追加のリソースを要求します。 デバイスの例としては、ハイエンドグラフィックスカードや記憶装置などがあります。
+詳細については、「 [PortCls Audio Drivers の PnP 再調整の実装](implement-pnp-rebalance-for-portcls-audio-drivers.md)」を参照してください。
 
  
 
