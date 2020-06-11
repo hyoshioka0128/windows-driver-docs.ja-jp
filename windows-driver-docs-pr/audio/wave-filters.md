@@ -19,12 +19,12 @@ keywords:
 - WaveCyclic、フィルター
 ms.date: 05/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f8264ef7e4d007d006d05c5924890e4d74876ad8
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: 21eb5816447c39b189c021f5de85e561d721f635
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925629"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681670"
 ---
 # <a name="wave-filters"></a>ウェーブ フィルター
 
@@ -42,7 +42,7 @@ Wave フィルターは、wave 形式のデジタルオーディオデータを�
 
 オーディオアダプタードライバーは、ハードウェアベンダーがアダプタードライバーの一部として実装する wave ミニポートドライバーを、システムによって実装される wave ポートドライバーでバインドすることによって、wave フィルターを形成します。 ミニポートドライバーは、wave フィルターに対するハードウェア固有のすべての操作を処理し、ポートドライバーはすべての汎用 wave フィルター関数を管理します。
 
-PortCls システムドライバー (Portcls) は、WaveRT、WavePci、WaveCyclic の3つの wave ポートドライバーを実装しています。
+PortCls システムドライバー (Portcls.sys) には、WaveRT、WavePci、WaveCyclic の3つの wave ポートドライバーが実装されています。
 
 次の3種類の wave フィルターが動作します。
 
@@ -63,7 +63,7 @@ WaveRT フィルターは、ポート/ミニポートドライバーのペアと
 
 -   WaveRT ミニポートドライバーオブジェクトをインスタンス化します。
 
--   このメソッドは、GUID 値**CLSID\_PortWaveRT**を持つ[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、wastport ドライバーオブジェクトをインスタンス化します。
+-   このメソッドは、GUID 値**CLSID \_ PortWaveRT**を持つ[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、wastport ドライバーオブジェクトをインスタンス化します。
 
 -   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
@@ -97,7 +97,7 @@ WavePci フィルターは、ポート/ミニポートドライバーのペア�
 
 -   WavePci ミニポートドライバーオブジェクトをインスタンス化します。
 
--   このメソッドは、GUID 値**CLSID\_PortWavePci**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、WavePci port driver オブジェクトをインスタンス化します。
+-   このメソッドは、GUID 値**CLSID \_ PortWavePci**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、WavePci port driver オブジェクトをインスタンス化します。
 
 -   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
@@ -107,13 +107,16 @@ WavePci フィルターは、ポート/ミニポートドライバーのペア�
 
 ### <a name="span-idwavecyclic_filterspanspan-idwavecyclic_filterspanwavecyclic-filters"></a><span id="wavecyclic_filter"></span><span id="WAVECYCLIC_FILTER"></span>WaveCyclic フィルター
 
+> [!NOTE]
+> Microsoft は、多様で inclusionary な環境をサポートしています。 このドキュメント内には、"スレーブ" という語への参照があります。 Microsoft のバイアスフリー通信用スタイルガイドでは、これを exclusionary 語として認識しています。 この表現は、現在ソフトウェア内で使用されている用語として使用されています。
+
 **注: 以前のバージョンの Windows の WaveCyclic 情報**
 
 WaveCyclic フィルターは、ポート/ミニポートドライバーのペアとして実装されます。 WaveCyclic フィルターファクトリは、次のように WaveCyclic フィルターを作成します。
 
 -   WaveCyclic ミニポートドライバーオブジェクトをインスタンス化します。
 
--   このメソッドは、GUID 値**CLSID\_PortWaveCyclic**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、WaveCyclic port driver オブジェクトをインスタンス化します。
+-   このメソッドは、GUID 値**CLSID \_ PortWaveCyclic**を指定して[**pcnewport**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewport)を呼び出すことによって、WaveCyclic port driver オブジェクトをインスタンス化します。
 
 -   ポートドライバーの[**IPort:: Init**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iport-init)メソッドを呼び出して、ミニポートドライバーをポートドライバーにバインドします。
 
@@ -133,7 +136,7 @@ WaveCyclic ミニポートドライバーは、既定の DMA チャネルオブ�
 
 アダプタードライバーのカスタム[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)実装では、特殊なハードウェア制約を満たすためにデータのカスタム処理を実行できます。 たとえば、Windows マルチメディア関数では、16ビットのサンプルが常に符号付きの値である wave 形式が使用されますが、オーディオレンダリングハードウェアは、16ビットの符号なしの値を代わりに使用するように設計されている場合があります。 この場合、ドライバーのカスタム[**IDmaChannel:: CopyTo**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-copyto)メソッドを記述して、署名されたソース値を、ハードウェアが必要とする符号なしのターゲット値に変換することができます。 この手法は、ハードウェア設計の欠陥を回避するのに役立ちますが、ソフトウェアのオーバーヘッドに大きなコストがかかることもあります。
 
-独自の DMA チャネルオブジェクトを実装するドライバーの例については、「Sb16 sample audio adapter in the WDK」を参照してください。 定数\_オーバーライド DMA\_チャネルが**TRUE**に定義されている場合、ソースコード内の条件付きコンパイルステートメントによって、独自の[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)オブジェクトを実装できるようになります。このオブジェクトは、ドライバーが IPortWaveCyclic:: New*Xxx*DmaChannel 呼び出しの既定の IDmaChannel オブジェクトの代わりに使用します。
+独自の DMA チャネルオブジェクトを実装するドライバーの例については、「Sb16 sample audio adapter in the WDK」を参照してください。 定数オーバーライド \_ DMA \_ チャネルが**TRUE**に定義されている場合、ソースコード内の条件付きコンパイルステートメントによって、独自の[IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)オブジェクトを実装できるようになります。このオブジェクトは、ドライバーが IPortWaveCyclic:: New*Xxx*DmaChannel 呼び出しの既定の IDmaChannel オブジェクトの代わりに使用します。
 
  
 

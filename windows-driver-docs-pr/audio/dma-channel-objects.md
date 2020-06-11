@@ -6,51 +6,49 @@ keywords:
 - ヘルパーオブジェクト WDK オーディオ、DMA チャネルオブジェクト
 - DMA チャネルオブジェクト WDK オーディオ
 - マスターデバイス WDK オーディオ
-- スレーブデバイス WDK オーディオ
 - IDmaChannel インターフェイス
 - チャネルオブジェクト WDK オーディオ
-ms.date: 04/20/2017
+ms.date: 06/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b4b4ba0b9ce16ed8a9ebe5ee88926d37cfc1f08
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e95aca2d9485a70df9ebedd916b2924d1ccf6618
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72833469"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681676"
 ---
 # <a name="dma-channel-objects"></a>DMA チャネルのオブジェクト
 
-
-## <span id="dma_channel_objects"></span><span id="DMA_CHANNEL_OBJECTS"></span>
-
+> [!NOTE]
+> Microsoft は、多様で inclusionary な環境をサポートしています。 このドキュメント内には、"スレーブ" という語への参照があります。 Microsoft のバイアスフリー通信用スタイルガイドでは、これを exclusionary 語として認識しています。 この表現は、現在ソフトウェア内で使用されている用語として使用されています。
 
 PortCls システムドライバーは、WaveCyclic および WavePci ミニポートドライバーの利点を得るために、 [IDmaChannel](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannel)インターフェイスと[IDmaChannelSlave](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-idmachannelslave)インターフェイスを実装しています。 **IDmaChannel**は、dma チャネルとそれに関連付けられている dma バッファーおよびバッファー使用法パラメーターを表します。 また、WaveCyclic ミニポートドライバーは、 **IDmaChannelSlave**を使用して下位デバイスの DMA チャネルを管理します。 **IDmaChannelSlave**は**IDmaChannel**から継承します。 DMA 操作の制御の詳細については、「[アダプターオブジェクトと dma](https://docs.microsoft.com/windows-hardware/drivers/kernel/adapter-objects-and-dma)」を参照してください。
 
 **IDmaChannel**オブジェクトは、次のものをカプセル化します。
 
--   マスターデバイスまたは下位デバイスの DMA チャネル
+- マスターデバイスまたは下位デバイスの DMA チャネル
 
--   チャネルに関連付けられているデータバッファー
+- チャネルに関連付けられているデータバッファー
 
--   チャネルの使用方法を説明する情報
+- チャネルの使用方法を説明する情報
 
 ポートとミニポートドライバーは、dma チャネルオブジェクトを使用して、DMA チャネルの使用状況に関する情報を伝達します。 通常、ミニポートドライバーは、初期化中またはストリームの作成中に、一連の DMA チャネルを割り当てます。 新しいストリームの作成時に、ミニポートドライバーは、ストリームに使用する DMA チャネルオブジェクトをポートドライバーに伝えます。
 
 DMA チャネルオブジェクトは、マスターデバイスまたは下位デバイスに対して作成できます。
 
--   下位デバイスには DMA ハードウェア機能が組み込まれていないため、デバイスに必要なデータ転送を実行するには、システム DMA コントローラーに依存する必要があります。
+- 下位デバイスには DMA ハードウェア機能が組み込まれていないため、デバイスに必要なデータ転送を実行するには、システム DMA コントローラーに依存する必要があります。
 
--   マスターデバイスは、独自のバスマスタリング DMA ハードウェアを使用して、システムバス上でデータ転送を実行します。
+- マスターデバイスは、独自のバスマスタリング DMA ハードウェアを使用して、システムバス上でデータ転送を実行します。
 
 下位 DMA チャネルオブジェクトを使用する WaveCyclic デバイスの例については、Microsoft Windows Driver Kit (WDK) の Sb16 サンプルオーディオドライバーを参照してください。 マスタ DMA チャネルオブジェクトは、ポートとミニポートドライバー間の DMA チャネルに関する情報を共有するためのバックボードよりもわずかです。 マスターデバイスと下位デバイスの詳細については、「[アダプターオブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/kernel/introduction-to-adapter-objects)」を参照してください。
 
 マスターデバイスまたは下位デバイスの DMA チャネルオブジェクトでは、次のものが公開されます。
 
--   アダプターオブジェクト
+- アダプターオブジェクト
 
--   ドライバーと DMA ハードウェアが共有できる1つの共通バッファー
+- ドライバーと DMA ハードウェアが共有できる1つの共通バッファー
 
--   クエリと変更が可能なバッファーサイズ値
+- クエリと変更が可能なバッファーサイズ値
 
 *アダプターオブジェクト*は、*物理デバイスオブジェクト (PDO)* の DMA アダプター構造です。 次のいずれかのメソッドを呼び出すことによって、ミニポートドライバーが DMA チャネルオブジェクトを作成すると、アダプターオブジェクトが自動的に作成されます。
 
@@ -62,7 +60,7 @@ DMA チャネルオブジェクトは、マスターデバイスまたは下位�
 
 [**IDmaChannel:: GetAdapterObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-getadapterobject)メソッドを使用して、アダプターオブジェクトへのポインターを取得できます。
 
-アダプタードライバーでは、 [**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)関数を呼び出して DMA チャネルオブジェクトを作成することもできますが、呼び出し元は明示的に指定する必要があるため、この関数は**IPortWave*Xxx*:: New*xxx*DmaChannel**呼び出しよりも使用するのが困難です。デバイスオブジェクトとその他のコンテキスト情報を指定します。
+アダプタードライバーは、 [**PcNewDmaChannel**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcnewdmachannel)関数を呼び出して DMA チャネルオブジェクトを作成することもできますが、この関数は、 **IPortWave*Xxx*:: New*xxx*DmaChannel**の呼び出しよりも使用するのが困難です。これは、呼び出し元がデバイスオブジェクトとその他のコンテキスト情報を明示的に指定する必要があるためです。
 
 下位デバイスの DMA チャネルの場合、 [**IDmaChannel:: TransferCount**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannel-transfercount)メソッドは、 [**IDmaChannelSlave:: Start**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-idmachannelslave-start)の呼び出しで指定された最大転送サイズ ( *mapsize*パラメーター) を返します。 また、アダプターオブジェクトには、DMA デバイスの操作とクエリを実行するためのメソッドが用意されています。 これらの方法のいずれも、マスタ DMA チャネルでは意味がありません。
 

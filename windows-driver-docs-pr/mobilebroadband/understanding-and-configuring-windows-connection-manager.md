@@ -4,12 +4,12 @@ description: Windows 接続マネージャーの理解と構成
 ms.assetid: 5ef0034f-5b30-4484-a11c-ed19931484a2
 ms.date: 05/03/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce81320dadd12132ea712b81ef903c1006fe66a
-ms.sourcegitcommit: eb1f58d23da3b1240385c072837d9118239a8f97
+ms.openlocfilehash: 0046844b912bdaebb3766d188bbf3383a7adf4fa
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883897"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681680"
 ---
 # <a name="understanding-and-configuring-windows-connection-manager"></a>Windows 接続マネージャーの理解と構成
 
@@ -25,7 +25,7 @@ Windows 8 で導入された自動接続管理は、イーサネット、Wi-fi�
 
 -   モデムなどのダイヤルアップ接続
 
--   純粋仮想インターフェイス (Vpn やトンネル IP 接続など)
+-   純粋仮想インターフェイス (Vpn、トンネル IP 接続など)
 
 ## <a name="span-idconnection_management_policiesspanspan-idconnection_management_policiesspanspan-idconnection_management_policiesspanconnection-management-policies"></a><span id="Connection_management_policies"></span><span id="connection_management_policies"></span><span id="CONNECTION_MANAGEMENT_POLICIES"></span>接続管理ポリシー
 
@@ -63,23 +63,23 @@ Windows 10 バージョン1809、ビルド17763.404 以降では、この値は�
 
 このポリシーが**1**に設定されている場合、コンピューターが、優先するネットワークに対して少なくとも1つのアクティブなインターネット接続を使用していると、新しい自動インターネット接続はブロックされます。 優先順位は次のとおりです。
 
-1. Ethernet
+1. イーサネット
 2. WLAN
-3. Cellular
+3. 移動体通信
 
 接続されている場合は、常にイーサネットが優先されます。 ユーザーは、引き続き任意のネットワークに手動で接続できます。 これは、Windows 10 バージョン1809、ビルド17763.404 より前の Windows のビルドで、このポリシー設定の [*有効*] 状態でした。 このオプションは、Windows 8 で最初に使用できました。
 
-このポリシー設定が**2**に設定されている場合の動作は、 **1**に設定した場合と似ています。 ただし、携帯データネットワーク接続が使用可能な場合、その接続は常に携帯電話接続を必要とするサービスに対して接続されたままになります。 ユーザーが WLAN またはイーサネット接続に接続されている場合、インターネットトラフィックは携帯ネットワーク接続を経由してルーティングされません。 このオプションは、Windows 10 バージョン1703で初めて使用できました。
+このポリシー設定が**2**に設定されている場合、の動作は、 **1**に設定されている場合と似ています。 ただし、携帯データネットワーク接続が使用可能な場合、その接続は常に携帯電話接続を必要とするサービスに対して接続されたままになります。 ユーザーが WLAN またはイーサネット接続に接続されている場合、インターネットトラフィックは携帯ネットワーク接続を経由してルーティングされません。 このオプションは、Windows 10 バージョン1703で初めて使用できました。
 
 このポリシー設定が**3**に設定されている場合、この動作は**2**に設定されている場合と似ています。 ただし、イーサネット接続がある場合、Windows では、ユーザーが WLAN に手動で接続することを許可していません。 WLAN は、イーサネット接続がない場合にのみ接続できます (自動または手動)。
 
 ### <a name="span-idsoft_disconnectspanspan-idsoft_disconnectspanspan-idsoft_disconnectspansoft-disconnect"></a><span id="Soft_disconnect"></span><span id="soft_disconnect"></span><span id="SOFT_DISCONNECT"></span>ソフト切断
 
-ソフト切断は次のように機能します。
+ソフト切断ポリシーは、次のように機能します。
 
 1.  ネットワークが接続されなくなったと判断された場合、直ちに切断されることはありません。 突然の切断は、ほどの特典を提供することなくユーザーエクスペリエンスを低下させ、可能な限り回避します。
 
-2.  Windows によってインターフェイスのソフト切断が決定されるとすぐに、ネットワークが使用されなくなることが TCP スタックに通知されます。 既存の TCP セッションは引き続き中断されますが、新しい TCP セッションは明示的にバインドされている場合にのみこのインターフェイスを使用し、目的の宛先に他のインターフェイスをルーティングしない場合は、このインターフェイスを使用します。
+2.  Windows によってインターフェイスのソフト切断が決定されるとすぐに、ネットワークが使用されなくなることが TCP スタックに通知されます。 既存の TCP セッションは中断せずに続行されますが、新しい TCP セッションでは、明示的にバインドされている場合、または目的の宛先に他のインターフェイスがルーティングされない場合にのみ、このインターフェイスが使用されます。
 
 3.  TCP スタックへのこの通知によって、ネットワークの状態の変更が生成されます。 ネットワークアプリケーションは、可能であれば、これらのイベントをリッスンし、新しいネットワークに事前に接続を移動する必要があります。
 
@@ -89,21 +89,21 @@ Windows 10 バージョン1809、ビルド17763.404 以降では、この値は�
 
 ### <a name="span-idinitial_connectionspanspan-idinitial_connectionspanspan-idinitial_connectionspaninitial-connection"></a><span id="Initial_connection"></span><span id="initial_connection"></span><span id="INITIAL_CONNECTION"></span>初期接続
 
-Windows は自動的に接続し、1つの状況ですぐにソフト切断します。 PC を初めて起動するか、スタンバイから再開すると、すべてのインターフェイスが同時に接続を試行して、ユーザーができるだけ迅速にネットワーク接続を取得できるようにします。 複数のインターフェイスが正常に接続されている場合、Windows はすぐにソフト切断インターフェイスを開始します。
+Windows は自動的に接続し、1つの状況ですぐにソフト切断します。 PC を初めて起動するか、スタンバイから再開すると、すべてのインターフェイスが同時に接続を試行し、ユーザーができるだけ迅速にネットワーク接続を取得できるようにします。 複数のインターフェイスが正常に接続されている場合、Windows はすぐにソフト切断インターフェイスを開始します。
 
 ### <a name="span-idprohibit_interconnect_between_domain_and_non-domain_networksspanspan-idprohibit_interconnect_between_domain_and_non-domain_networksspanspan-idprohibit_interconnect_between_domain_and_non-domain_networksspanprohibit-interconnect-between-domain-and-non-domain-networks"></a><span id="Prohibit_interconnect_between_domain_and_non-domain_networks"></span><span id="prohibit_interconnect_between_domain_and_non-domain_networks"></span><span id="PROHIBIT_INTERCONNECT_BETWEEN_DOMAIN_AND_NON-DOMAIN_NETWORKS"></span>ドメインとドメイン以外のネットワーク間の相互接続を禁止する
 
 このポリシーは、Windows 8、Windows 8.1、および Windows 10 では既定で無効になっています。 このポリシーを有効にすると、Windows は、ドメインネットワークとドメイン以外のネットワークとの間で PC が相互接続されないようにします。 企業の管理者は、マルチホームコンピューターを攻撃ポイントとして使用することによって潜在的なセキュリティ違反を懸念する場合に、これを使用できます。
 
-接続されているすべてのネットワークがドメインにルーティングされる場合、またはドメインに接続されたネットワークルートがない場合、このポリシーはシステムの動作に影響しません。
+このポリシーは、接続されているすべてのネットワークがドメインにルーティングされる場合、またはドメインに接続されているネットワークルートがない場合に、システムの動作に影響しません。
 
 ### <a name="span-idmultiple_wireless_networksspanspan-idmultiple_wireless_networksspanspan-idmultiple_wireless_networksspanmultiple-wireless-networks"></a><span id="Multiple_wireless_networks"></span><span id="multiple_wireless_networks"></span><span id="MULTIPLE_WIRELESS_NETWORKS"></span>複数のワイヤレスネットワーク
 
-多くの Windows 8、Windows 8.1、または Windows 10 mobile デバイスは、エンタープライズ Wi-fi ネットワークの範囲内であっても、常に外部インターネット接続を使用できます。 このポリシーが有効になっている場合、ユーザーは、パブリックモバイルブロードバンドネットワークまたは企業のプライベート Wi-fi ネットワークに自由に接続し、それらを自由に切り替えることができます。 ただし、手動で接続すると、もう一方が自動的に切断されます。
+多くの Windows 8、Windows 8.1、および Windows 10 mobile デバイスは、エンタープライズ Wi-fi ネットワークの範囲内であっても、常に外部インターネット接続を利用できます。 このポリシーが有効になっている場合、ユーザーは、パブリックモバイルブロードバンドネットワークまたは企業のプライベート Wi-fi ネットワークに自由に接続し、それらを自由に切り替えることができます。 ただし、手動で接続すると、もう一方が自動的に切断されます。
 
 ### <a name="span-idethernetspanspan-idethernetspanspan-idethernetspanethernet"></a><span id="Ethernet"></span><span id="ethernet"></span><span id="ETHERNET"></span>ビット
 
-Windows 8、Windows 8.1、または Windows 10 は、イーサネットケーブルを PC に自動的に接続または切断することができないため、ワイヤレス接続を許可または禁止することによってのみ、ポリシーを適用できます。 PC にドメインネットワークへのイーサネット接続がある場合、そのドメインに接続していないワイヤレスネットワークを接続することはできません。その逆も同様です。 これを行おうとすると、次のエラーが発生します。
+Windows 8、Windows 8.1、および Windows 10 は、イーサネットケーブルを PC に自動的に接続または切断することができないため、ワイヤレス接続を許可または禁止することによってのみ、ポリシーを適用できます。 PC にドメインネットワークへのイーサネット接続がある場合、そのドメインに接続していないワイヤレスネットワークを接続することはできません。その逆も同様です。 これを行おうとすると、次のエラーが発生します。
 
 ![自動接続管理エラー](images/mb-acm-1.png)
 
@@ -117,12 +117,12 @@ Windows 8、Windows 8.1、または Windows 10 は、イーサネットケーブ
 
 ### <a name="span-idprohibit_roaming_on_mobile_broadband_networksspanspan-idprohibit_roaming_on_mobile_broadband_networksspanspan-idprohibit_roaming_on_mobile_broadband_networksspanprohibit-roaming-on-mobile-broadband-networks"></a><span id="Prohibit_roaming_on_mobile_broadband_networks"></span><span id="prohibit_roaming_on_mobile_broadband_networks"></span><span id="PROHIBIT_ROAMING_ON_MOBILE_BROADBAND_NETWORKS"></span>モバイルブロードバンドネットワークでのローミングを禁止する
 
-このポリシーは、Windows がローミング状態にあるモバイルブロードバンドネットワークに接続できないようにします。 既定では、このポリシーは無効になっており、ユーザーは、ローミング中、またはこのようなネットワークへの自動接続を有効にするために、モバイルブロードバンドネットワークに手動で接続することを選択できます。 有効にすると、ユーザーは接続マネージャーからローミングモバイルブロードバンドネットワークを選択できなくなります。
+このポリシーは、Windows がローミング状態にあるモバイルブロードバンドネットワークに接続できないようにします。 既定では、このポリシーは無効になっており、ユーザーは、ローミング中、またはこのようなネットワークへの自動接続を有効にするために、モバイルブロードバンドネットワークに手動で接続することを選択できます。 このポリシーが有効になっていると、ユーザーは接続マネージャーからローミングモバイルブロードバンドネットワークを選択できません。
 
 ## <a name="span-idnetwork_preferencesspanspan-idnetwork_preferencesspanspan-idnetwork_preferencesspannetwork-preferences"></a><span id="Network_preferences"></span><span id="network_preferences"></span><span id="NETWORK_PREFERENCES"></span>ネットワークの基本設定
 
 
-どのような接続を維持するかを検討する場合、Windows はいくつかの特徴を使用して、優先するネットワークを決定します。 これは、ルーティングではなく、特定のインターフェイスへの接続を維持するかどうかを決定する場合にのみ使用されます。 接続されたインターフェイスが論理的に切断されていない場合は、ルーティングテーブルのメトリックによってルーティングが決定されます。 ルートメトリックが手動で指定されていない場合、Windows はアダプターのリンク速度に基づいてルートメトリックを自動的に割り当てます。
+どのような接続を維持するかを検討する場合、Windows はいくつかの特徴を使用して、優先するネットワークを決定します。 これは、ルーティングではなく、特定のインターフェイスへの接続を維持するかどうかを決定する場合にのみ使用されます。 接続されたインターフェイスが論理的に切断されていない場合、ルーティングはルーティングテーブルのメトリックによって決定されます。 ルートメトリックが手動で指定されていない場合、Windows はアダプターのリンク速度に基づいてルートメトリックを自動的に割り当てます。
 
 ### <a name="span-idconnection_prioritiesspanspan-idconnection_prioritiesspanspan-idconnection_prioritiesspanconnection-priorities"></a><span id="Connection_priorities"></span><span id="connection_priorities"></span><span id="CONNECTION_PRIORITIES"></span>接続の優先順位
 
@@ -176,7 +176,7 @@ Windows 8、Windows 8.1、および Windows 10 では、ユーザーの操作に
 
 モバイルブロードバンドおよび Wi-fi ホットスポットオペレーターは、[**プロビジョニングエージェント**](https://docs.microsoft.com/uwp/api/Windows.Networking.NetworkOperators.ProvisioningAgent)または[**msProvisionNetworks**](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn529170(v=vs.85)) api を使用して、Windows に一連のモバイルブロードバンドおよび wi-fi プロファイルを提供します。
 
-最初にプロビジョニングされたオペレーターが作成したプロファイルは、既存のネットワークリストの上部 (Wi-fi のみ) または下部 (モバイルブロードバンドが含まれている場合) に追加されます。 ネットワークの一覧で、プロビジョニングするネットワークの位置には影響を与えることはできません。 ただし、ネットワークの一覧でネットワークの相対順序を定義できます。
+最初にプロビジョニングされたオペレーターが作成したプロファイルは、既存のネットワークリストの上部 (Wi-fi のみ) または下部 (モバイルブロードバンドが含まれている場合) に追加されます。 ネットワークの一覧でユーザーがプロビジョニングするネットワークの位置には影響を与えることはできません。 ただし、ネットワークの一覧でネットワークの相対順序を定義できます。
 
 ユーザーの操作によって、プロビジョニングメタデータのアプリケーション間でネットワークの一覧が変更される場合があります。 プロビジョニングメタデータを再適用すると、目的のネットワークの順序が復元されます。 ただし、並べ替えられたネットワークのセットは、ユーザーがネットワークを移動した最も低い位置に移動されます。
 
@@ -190,13 +190,13 @@ Windows 8、Windows 8.1、および Windows 10 では、ユーザーの操作に
 
 ### <a name="span-idmanual_modificationspanspan-idmanual_modificationspanspan-idmanual_modificationspanmanual-modification"></a><span id="Manual_modification"></span><span id="manual_modification"></span><span id="MANUAL_MODIFICATION"></span>手動による変更
 
-Windows 8 より前の Wi-fi 優先ネットワークの一覧は、コントロールパネルの [ワイヤレスネットワークの管理] でユーザーにアクセスできました。 テレメトリは、この機能にアクセスしたユーザーがほとんどいないことを示します。 また、このユーザーインターフェイスは wi-fi のみに関連付けられており、Wi-fi とモバイルブロードバンドの間に設定を組み込むことができませんでした。
+Windows 8 より前の場合、Wi-fi 優先ネットワークの一覧は、コントロールパネルの [ワイヤレスネットワークの管理] でユーザーにアクセスできました。 テレメトリは、この機能にアクセスしたユーザーがほとんどいないことを示します。 また、このユーザーインターフェイスは wi-fi のみに関連付けられており、Wi-fi とモバイルブロードバンドの間に設定を組み込むことができませんでした。
 
 ほとんどのユーザーは、ネットワークの一覧を手動で変更する必要はありません。 ただし、特定のユーザーまたはアプリケーションでは、そのために必要な場合があります。
 
 ### <a name="span-iduser_interfacespanspan-iduser_interfacespanspan-iduser_interfacespanuser-interface"></a><span id="User_interface"></span><span id="user_interface"></span><span id="USER_INTERFACE"></span>ユーザーインターフェイス
 
-範囲内にあるときに、優先するネットワークの一覧からプロファイルを削除するには、ネットワークを右クリックし、 **[このネットワークを忘れる]** を選択します。 範囲内にないネットワークは、ユーザーインターフェイスを使用して一覧から削除することはできません。
+範囲内にあるときに、優先するネットワークの一覧からプロファイルを削除するには、ネットワークを右クリックし、[**このネットワークを忘れる**] を選択します。 範囲内にないネットワークは、ユーザーインターフェイスを使用して一覧から削除することはできません。
 
 ### <a name="span-idwin32_apisspanspan-idwin32_apisspanspan-idwin32_apisspanwin32-apis"></a><span id="Win32_APIs"></span><span id="win32_apis"></span><span id="WIN32_APIS"></span>Win32 Api
 
@@ -212,7 +212,7 @@ Windows 8 より前の Wi-fi 優先ネットワークの一覧は、コントロ
 
 -   Wi-fi ネットワークの場合は、 [**WlanDeleteProfile**](https://docs.microsoft.com/windows/desktop/api/wlanapi/nf-wlanapi-wlandeleteprofile)関数を使用します。
 
--   モバイルブロードバンドネットワークの場合は、 [**Imbnconnectionprofile::D e)** ](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)メソッドを使用します。
+-   モバイルブロードバンドネットワークの場合は、 [**Imbnconnectionprofile::D e)**](https://docs.microsoft.com/windows/desktop/api/mbnapi/nf-mbnapi-imbnconnectionprofile-delete)メソッドを使用します。
 
 ### <a name="span-idcommand-linespanspan-idcommand-linespanspan-idcommand-linespancommand-line"></a><span id="Command-line"></span><span id="command-line"></span><span id="COMMAND-LINE"></span>コマンドライン
 
@@ -232,9 +232,9 @@ Windows 8 より前の Wi-fi 優先ネットワークの一覧は、コントロ
 
 ### <a name="span-idconflict_resolutionspanspan-idconflict_resolutionspanspan-idconflict_resolutionspanconflict-resolution"></a><span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>競合の解決
 
-同じネットワークに複数のプロファイルが存在する場合、Windows 8 と Windows 8.1 は次のロジックを使用して、使用するプロファイルを決定します。
+同じネットワークに複数のプロファイルが存在する場合、Windows 8 と Windows 8.1 は、次のロジックを使用して、使用するプロファイルを決定します。
 
-1.  **[プロファイルの種類]**
+1.  **プロファイルの種類**
 
     1.  グループポリシープロファイルは、ユーザーが作成したプロファイルより優先されます。
 

@@ -1,67 +1,67 @@
 ---
-title: I/O ドライバー モデルのサンプル
-description: SPB、ドライバーは、シンプルな周辺機器バス、システムの GPIO ピン、およびリソース ハブ経由で通信します。 ここでは、ユーザー モード、カーネル モード、および実際のハードウェア コンポーネントの編成方法を確認できます。
+title: サンプルドライバーの i/o モデル
+description: SPB ドライバーは、単純な周辺機器バス、システム GPIO ピン、およびリソースハブを介して通信します。 ここでは、コンポーネントがユーザーモード、カーネルモード、および実際のハードウェアでどのように構成されているかを確認できます。
 ms.assetid: 86DA1BDE-DD97-45CA-884D-12BD279BD12E
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e090668c678b8ad9b6f31822341acadef2b2c7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 00b8a9c4bc1fd9be97e71729c316d515d999afa7
+ms.sourcegitcommit: bd120d96651f9e338956388c618acec7d215b0d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345104"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84681678"
 ---
-# <a name="sample-driver-io-model"></a>I/O ドライバー モデルのサンプル
+# <a name="sample-driver-io-model"></a>サンプルドライバーの i/o モデル
 
 
-SPB、ドライバーは、シンプルな周辺機器バス、システムの GPIO ピン、およびリソース ハブ経由で通信します。 内のコンポーネントを整理する方法を確認できます。 ユーザー モード、カーネル モード、および実際のハードウェア。
+SPB ドライバーは、単純な周辺機器バス、システム GPIO ピン、およびリソースハブを介して通信します。 ここでは、コンポーネントがどのように構成されているか (ユーザーモード、カーネルモード、実際のハードウェア) を確認できます。
 
-![ドライバーの i/o モデル](images/io.png)
+![ドライバー i/o モデル](images/io.png)
 
 ## <a name="simple-peripheral-bus-spb"></a>SPB (Simple Peripheral Bus)
 
 
-Windows 8.1 では、開発と SPB コント ローラー ドライバーを簡単に実装するクラス拡張 (カーネル モードで実行されている) として、SPB コンポーネントをサポートします。 SPB コンポーネント:
+Windows 8.1 は、SPB コントローラードライバーの開発と実装を容易にするクラス拡張 (カーネルモードで実行) として SPB コンポーネントをサポートしています。 SPB コンポーネント:
 
--   登録設定の取得などのリソース ハブでのすべての通信を処理します。
--   同時のターゲットとバスのロック要求を管理する implements 階層化キューの構造体
--   ユーザー モードからカーネル モードのバッファーを変換します。
+-   リソースハブとのすべての通信を処理します。これには、登録や設定の取得も含まれます。
+-   階層化されたキュー構造を実装して、同時ターゲットとバスロック要求を管理します
+-   バッファーをユーザーモードからカーネルモードに変換します。
 
-詳細については、次を参照してください。[シンプルな周辺機器のバス](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)します。
+詳細については、「[単純な周辺機器バス](https://docs.microsoft.com/windows-hardware/design/component-guidelines/simple-peripheral-bus--spb-)」を参照してください。
 
-### <a name="spb-component-and-the-sample-driver"></a>SPB コンポーネントとドライバーのサンプル
+### <a name="spb-component-and-the-sample-driver"></a>SPB コンポーネントとサンプルドライバー
 
-| モジュール         | クラス/インターフェイス |
+| Module         | クラス/インターフェイス |
 |----------------|-----------------|
-| SpbRequest.cpp | CSpbRequest     |
+| SpbRequest. .cpp | CSpbRequest     |
 
  
 
-サンプル コード、SPB コンポーネントとやり取りする SpbAccelerometer SpbRequest.cpp はあります。 CSpbRequest クラスでは、3 つのメソッドは、以下に示すように、このコンポーネントと対話します。
+SpbAccelerometer サンプルコードは、SPB コンポーネントと連携しています。 次に示すように、CSpbRequest クラスの3つのメソッドは、このコンポーネントと対話します。
 
-| メソッド                                          | 目的                                       |
+| Method                                          | 目的                                       |
 |-------------------------------------------------|-----------------------------------------------|
-| **CSpbRequest::CreateAndSendIoctl**             | 作成し、IOCTL 要求を発行します。          |
-| **CSpbRequest::CreateAndSendWrite**             | 作成し、書き込みを SPB の問題               |
-| **CSpbRequest::CreateAndSendWriteReadSequence** | 作成し、SPB シーケンスの書き込みと読み取りを発行します。 |
+| **CSpbRequest:: CreateAndSendIoctl**             | IOCTL 要求を作成して発行します。          |
+| **CSpbRequest:: CreateAndSendWrite**             | SPB 書き込みを作成および発行します。               |
+| **CSpbRequest:: CreateAndSendWriteReadSequence** | SPB 書き込み/読み取りシーケンスを作成して発行します。 |
 
  
 
 ## <a name="general-purpose-inputoutput-gpio"></a>汎用入力/出力 (GPIO)
 
-Windows 8.1 では、カーネル モード SPB のコンポーネントと同じレベルに配置されている、GPIO のクラスの拡張機能をサポートします。 ドライバーのクライアントの標準的なインターフェイスを提供しつつ、基になるハードウェアの接続と GPIO の場所の柔軟性を高めるため、拡張を使用できます。
+Windows 8.1 は、カーネルモード SPB コンポーネントと同じレベルに存在する GPIO クラス拡張機能をサポートしています。 拡張機能を使用すると、基盤となるハードウェア接続と GPIO の場所を柔軟に管理でき、クライアントドライバーの標準インターフェイスが提供されます。
 
-SoC の GPIO ピンのプラットフォームは、チップに分散だけでなく SPI に接続されたモデムのようなその他のコンポーネントで公開されています。
+SoC のプラットフォームでは、GPIO ピンはチップ全体に分散され、SPI 接続モデムなどの他のコンポーネントでも公開されます。
 
-### <a name="the-gpio-component-and-the-sample-driver"></a>GPIO コンポーネントとドライバーのサンプル
+### <a name="the-gpio-component-and-the-sample-driver"></a>GPIO コンポーネントとサンプルドライバー
 
-| モジュール               | クラス/インターフェイス |
+| Module               | クラス/インターフェイス |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | N/A             |
+| SpbAccelerometer asl | 該当なし             |
 
  
 
-SpbAccelerometer サンプルは、割り込みの GPIO コンポーネントに依存します。 SpbAccelerometer.asl ファイル GpioInt() 要素は、割り込みリソースとして ADXL345 に接続されている GPIO ピンを定義します。
+SpbAccelerometer サンプルは、割り込み用の GPIO コンポーネントに依存しています。 SpbAccelerometer ファイルの GpioInt () 要素は、割り込みリソースとして ADXL345 に接続されている GPIO pin を定義します。
 
 ```cpp
 //
@@ -76,29 +76,29 @@ I2CSerialBus(0x1D, ControllerInitiated, 400000, AddressingMode7Bit, "\\_SB.I2C",
 GpioInt(Level, ActiveHigh, Exclusive, PullDown, 0, "\\_SB.GPIO") {1} })
 ```
 
-I2C リソースの主な要素を次に示します。
+次に、I2C リソースの主な要素を示します。
 
 | 要素    | 説明                                             |
 |------------|---------------------------------------------------------|
-| 0x1D       | スレーブ デバイス I2C アドレスを指定します。         |
-| 400000     | スレーブ デバイスの動作の頻度を指定します。 |
-| \\\\SB します。I2C | スレーブ デバイス ACPI ノードを指定します。           |
+| 0x1D       | 下位デバイスの I2C アドレスを指定します。         |
+| 400000     | 下位デバイスの動作頻度を指定します。 |
+| \\\\SB.I2C | 下位デバイスの ACPI ノードを指定します。           |
 
  
 
-### <a name="processing-acceleration-data"></a>高速化データの処理
+### <a name="processing-acceleration-data"></a>高速化データを処理しています
 
-| モジュール                  | クラス/インターフェイス      |
+| Module                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| AccelerometerDevice | CAccelerometerDevice |
 
  
 
-GPIO 行が ADXL345、サンプル ドライバーのパッシブ ISR ルーチンによってアサートされた場合 (**CAccelerometerDevice::OnInterruptIsr**) が呼び出されます。 ヘルパー関数の場合、 **CAccelerometerDevice::OnInterruptWorkItem**、割り込みのデータを処理する::**OnInterruptIsr**格納されています。
+ADXL345 によって GPIO 行がアサートされると、サンプルドライバーのパッシブ ISR ルーチン (**CAccelerometerDevice:: OnInterruptIsr**) が呼び出されます。 ヘルパー関数**CAccelerometerDevice:: OnInterruptWorkItem**は、::**OnInterruptIsr**に格納されている割り込みデータを処理します。
 
-によって、割り込みが処理された場合::**OnInterruptIsr** 0x30 の登録に対応しています (ADXL\_345\_INT\_Adxl345.h ファイル内のソース)、ドライバーが、レジスタの読み取りを取得する操作を呼び出す、0x32 0x37 経由のレジスタの内容。 これらのレジスタには、x、Y 軸、および z 軸の高速化の最新データが含まれます。 読み取り操作が呼び出される、 **CAcclerometerDevice::RequestData**メソッド (によって呼び出される**CAccelerometerDevice::OnInterruptWorkItem**)。
+::**OnInterruptIsr**によって処理された割り込みが register 0X30 ( \_ Adxl345 ファイルの adxl 345 INT SOURCE) に対応する場合 \_ \_ 、ドライバーは、レジスタ読み取り操作を呼び出して、0x37 を介してレジスタの内容を取得します。 これらのレジスタには、X、Y、Z 軸の最新のアクセラレーションデータが含まれています。 読み取り操作は、 **CAcclerometerDevice:: RequestData**メソッド ( **CAccelerometerDevice:: OnInterruptWorkItem**によって呼び出されます) で呼び出されます。
 
-ときに、::**RequestData**メソッドの処理、読み取り操作の結果、各軸に対応するデータの 2 バイトが最初に組み合わされています。 次に、実際の高速化の値を取得するスケール ファクターが適用されます。 (スケール ファクターは解像度の範囲の G は、強制的に (32) で除算した結果 (2 ^13)。 結果は、.00390625.).
+::**Requestdata**メソッドは、読み取り操作の結果を処理するときに、最初に各軸に対応する2バイトのデータを結合します。 次に、スケールファクターを適用して、実際の加速度値を取得します。 (スケールファクターは、G-力の範囲 (32) を解像度 (2 ^ 13) で除算した結果です。 結果は. 00390625 です。)
 
 ```cpp
 // Get the data values as doubles
@@ -115,26 +115,26 @@ yAccel = (DOUBLE)yRaw * scaleFactor;
 zAccel = (DOUBLE)zRaw * scaleFactor;
 ```
 
-スケール ファクターは 0x31 の登録の設定によって決まります (データ\_形式)。
+スケールファクターは、レジスタ 0x31 (データ形式) の設定によって決まり \_ ます。
 
-## <a name="resource-hub"></a>リソース ハブ
+## <a name="resource-hub"></a>リソースハブ
 
-Windows 8.1 には、すべてのデバイスおよびバス コント ローラーへの接続を管理するリソース ハブがサポートしています。 確実に必要な開始と停止の順序を維持します。
+Windows 8.1 は、すべてのデバイスとバスコントローラーの接続を管理するリソースハブをサポートしています。 これにより、必要な開始と停止の順序が維持されます。
 
-ハブは、SoC プラットフォームとそのフラット デバイス ツリーにある目的に特化したコンポーネントです。 これらのシステム バスは、Pc と異なります。
+ハブは、SoC プラットフォームとそのフラットデバイスツリーを対象としたコンポーネントです。 これらのシステムのバスは Pc とは異なります。
 
--   接続が通常検出不可能です;ACPI で静的に定義されています。
--   ハードウェア コンポーネントに多くの場合、厳密な親子のリレーションシップで複数バスではなくにまたがる複数の依存関係があります。
+-   通常、接続は検出できません。ACPI では静的に定義されています。
+-   多くの場合、ハードウェアコンポーネントは、厳密な親子関係ではなく、複数のバスにまたがる複数の依存関係を持ちます。
 
-### <a name="resource-hub-and-the-sample-driver"></a>リソースのハブとドライバーのサンプル
+### <a name="resource-hub-and-the-sample-driver"></a>リソースハブとサンプルドライバー
 
-| モジュール               | クラス/インターフェイス |
+| Module               | クラス/インターフェイス |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | N/A             |
+| SpbAccelerometer asl | 該当なし             |
 
  
 
-**ResourceTemplate** SpbAccelerometer.asl のセクションでは、リソースの接続方法を指定します。
+SpbAccelerometer の**Resourcetemplate**セクションでは、リソースの接続方法を指定します。
 
 ```cpp
 Name(RBUF, ResourceTemplate()
