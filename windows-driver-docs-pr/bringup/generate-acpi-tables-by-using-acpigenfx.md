@@ -4,12 +4,12 @@ description: Acpi 生成フレームワーク (AcpiGenFx) ライブラリを使�
 ms.assetid: 46A725C3-609E-45B9-A4BD-033656208E92
 ms.date: 05/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d335b8f5f287b161ba66cf9597325ea240a8f25d
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: faa0b01c0a5f019876a7a44f193524c7a1943d65
+ms.sourcegitcommit: 6bd546fea677833fc20cd802256d030633ac562e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83851962"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84717447"
 ---
 # <a name="generate-acpi-tables-by-using-acpigenfx"></a>AcpiGenFx を使用して ACPI テーブルを生成する
 
@@ -42,9 +42,9 @@ AcpiGenFx は本質的に宣言されています。出力は静的データの�
 WDK インストールの**AcpiGenFx**フォルダーにある次のファイルを見つけます。
 
 > [!NOTE]
-> AcpiGenFx と関連するサンプルは、WDK の Tools フォルダーで入手できます。 Tools ディレクトリで、ターゲットアーキテクチャフォルダーに移動し、次に AcpiGenFx フォルダーに移動します。 たとえば、x86 バージョンは C:\Program Files (x86) \Windows Kits\10\Tools\x86\ACPIGenFx. にあります。
+> AcpiGenFx.dll と関連付けられているサンプルは、WDK の Tools フォルダーにあります。 Tools ディレクトリで、ターゲットアーキテクチャフォルダーに移動し、次に AcpiGenFx フォルダーに移動します。 たとえば、x86 バージョンは C:\Program Files (x86) \Windows Kits\10\Tools\x86\ACPIGenFx. にあります。
 
-- AcpiGenFx
+- AcpiGenFx.dll
 
     ACPIGenFx を使用するために必要です。
 
@@ -68,7 +68,7 @@ Windows 10 キット、ツール、およびコードサンプルをダウンロ
 
 1. Visual Studio で、新しい C# コンソールプロジェクトを開きます。
 
-1. AutoAcpi .dll アセンブリへの参照を追加します。 [**プロジェクト**] メニューの [**参照の追加**] をクリックします。 [**参照**] をクリックし、autoacpi .dll の場所に移動します。 **[OK]** をクリックします。
+1. AutoAcpi.dll アセンブリへの参照を追加します。 [**プロジェクト**] メニューの [**参照の追加**] をクリックします。 [**参照**] をクリックし、AutoAcpi.dll の場所に移動します。 **[OK]** をクリックします。
 
 1. **ソリューションエクスプローラー**で、[**参照**] を展開し、[ **acpigenfx**] を選択します。 オブジェクトブラウザーのオブジェクトを表示します (** &gt; オブジェクトブラウザーの表示**)。
 
@@ -122,7 +122,7 @@ Windows 10 キット、ツール、およびコードサンプルをダウンロ
 
 このアプリでは、Aslc と Bin という2つの追加フォルダーが生成されます。 Aslc には、aslc 形式のすべてのファームウェアテーブルが含まれています。 Bin には、バイナリ blob 形式のすべてのファームウェアテーブルが含まれています。
 
-WDK に用意されている ASL コンパイラを使用して、ASL コードファイルを ACPI コンピューター言語 (AML) バイナリにコンパイルします。
+WDK に用意されている asl.exe コンパイラを使用して、ASL コードファイルを ACPI 機械語 (AML) バイナリにコンパイルします。
 
 ## <a name="add-devices-and-resources-in-the-dsdt"></a>DSDT にデバイスとリソースを追加する
 
@@ -373,6 +373,9 @@ void * ReferenceDBG2Table(void) {
 
 1. デバイスを作成し、リソースを割り当てます。 たとえば、ここに示されているセンサーデバイスの場合、このサンプルでは、 **Platform. AddGenericDevice**を呼び出し、デバイス名、ハードウェア ID、および一意のインスタンスを指定します。 DSDT で説明されている I ² C serial bus, I2C1 に接続するセンサーデバイス。
 
+> [!NOTE]
+> Microsoft は、多様で inclusionary な環境をサポートしています。 このドキュメント内には、"スレーブ" という語への参照があります。 Microsoft の[バイアスフリー通信](https://docs.microsoft.com/style-guide/bias-free-communication)用スタイルガイドでは、これを exclusionary 語として認識しています。 この表現は、現在ソフトウェア内で使用されている用語として使用されています。
+
 ```asl
 namespace SSDTSample
 {
@@ -439,7 +442,7 @@ DefinitionBlock ("SSDT.aml", "SSDT", 5, "MSFT", "EDK2", 1)
 
 ## <a name="replacing-acpi-firmware-during-development-and-testing"></a>開発およびテスト中の ACPI ファームウェアの置換
 
-開発とテストのシナリオでは、デバイスの asl コンパイラから生成された AML バイナリを置き換えることができます。 これを行うには、AML バイナリの名前を acpitabl に変更し、% windir% system32 に移動し \\ ます。 ブート時に、Windows は、ACPI ファームウェアに存在するテーブルを acpitabl のテーブルに置き換えます。
+開発とテストのシナリオでは、デバイスの asl.exe コンパイラから生成された AML バイナリを置き換えることができます。 これを行うには、AML バイナリの名前を acpitabl に変更し、% windir% system32 に移動し \\ ます。 ブート時に、Windows は、ACPI ファームウェアに存在するテーブルを acpitabl のテーブルに置き換えます。
 
 次のコマンドを使用して、テスト署名が有効になっていることを確認します。
 

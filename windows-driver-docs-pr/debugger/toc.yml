@@ -1842,8 +1842,6 @@
               href: analyzing-a-kernel-mode-dump-file-with-kd.md
             - name: WinDbg によるカーネルモード ダンプ ファイルの分析
               href: analyzing-a-kernel-mode-dump-file-with-windbg.md
-            - name: KAnalyze によるカーネルモード ダンプ ファイルの分析
-              href: analyzing-a-kernel-mode-dump-file-with-kanalyze.md
     - name: ユーザーモード ダンプ ファイル
       items:
         - name: ユーザーモード ダンプ ファイル
@@ -4666,10 +4664,6 @@
                   href: '-wmitrace-tmffile.md'
                 - name: '!wmitrace.traceoperation'
                   href: '-wmitrace-traceoperation.md'
-            - name: OEM サポート拡張機能 (kdex2x86.dll)
-              href: oem-support-extensions--kdex2x86-dll-.md
-            - name: SieExtPub.dll
-              href: sieextpub-dll.md
     - name: デバッガー関連の API
       items:
         - name: デバッガー関連の API

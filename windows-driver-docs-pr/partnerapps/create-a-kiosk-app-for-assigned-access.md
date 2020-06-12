@@ -1,31 +1,31 @@
 ---
-title: キオスク アプリの割り当てのアクセスのベスト プラクティス
-description: キオスク アプリの割り当てのアクセスのベスト プラクティス
+title: 割り当てられたアクセスのベストプラクティス用キオスクアプリ
+description: 割り当てられたアクセスのベストプラクティス用キオスクアプリ
 ms.assetid: 2405B5BB-2214-4B40-B3A1-C47073390B21
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3088a5c8933ebf141a37b825f2cf04dc56903d1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 3799a1a850bc4c77163cd6b4f15750f8bb66c0e8
+ms.sourcegitcommit: 6bd546fea677833fc20cd802256d030633ac562e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67353583"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84717451"
 ---
-# <a name="kiosk-apps-for-assigned-access-best-practices"></a>割り当てられたアクセスのキオスク アプリ:ベスト プラクティス
+# <a name="kiosk-apps-for-assigned-access-best-practices"></a>割り当てられたアクセス用のキオスクアプリ: ベストプラクティス
 
 
-Windows 10 では、1 つのユニバーサル Windows アプリだけと対話するのにことができますキオスク デバイスを作成するのに割り当てられたアクセスを使用できます。 このトピックでは、キオスク アプリ、およびベスト プラクティスを実装する方法を説明します。
+Windows 10 では、割り当てられたアクセスを使用してキオスクデバイスを作成することができます。これにより、ユーザーは単一のユニバーサル Windows アプリと対話できるようになります。 このトピックでは、キオスクアプリを実装する方法とベストプラクティスについて説明します。
 
-割り当てられたアクセスが提供する 2 つの異なるエクスペリエンスがあります。
+割り当てられたアクセスでは、次の2つの異なるエクスペリエンスが提供されます。
 
-1. シングル アプリ キオスク エクスペリエンス
-    1. アカウントには、1 つのアプリを割り当てます。 ユーザーがログインするときは、のみ、このアプリとその他に何もへのアクセス、システム上、なります。 この期間中、キオスク アプリがロック画面上で実行されている、キオスク デバイスはロックされています。 このエクスペリエンスはパブリックに公開されたキオスク コンピューターのよく使用されます。 参照してください[を設定するには、Windows 10 Pro、Enterprise、または教育のキオスク](https://docs.microsoft.com/windows/configuration/set-up-a-kiosk-for-windows-10-for-desktop-editions)詳細についてはします。
+1. シングルアプリキオスクエクスペリエンス
+    1. 1つのアプリをアカウントに割り当てます。 ユーザーがログインすると、このアプリにのみアクセスでき、システム上では何もアクセスできなくなります。 この間、キオスクデバイスはロック画面上で実行されているキオスクアプリでロックされます。 このエクスペリエンスは、一般に公開されているキオスクコンピューターでよく使用されます。 詳細については、「 [Windows 10 Pro、Enterprise、または教育でのキオスクのセットアップ](https://docs.microsoft.com/windows/configuration/set-up-a-kiosk-for-windows-10-for-desktop-editions)」を参照してください。
 
-2. マルチ アプリ キオスク エクスペリエンスの (Windows 10 バージョン 1709 以降で使用可能)
-    1. アカウントには、1 つまたは複数のアプリを割り当てることができます。 ユーザーのログオン、選択したアプリのみへのアクセスを制限付きのシェル エクスペリエンスで、デバイスが開始されます。 参照してください[複数のアプリを実行している Windows 10 キオスクを作成する](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)詳細についてはします。
+2. マルチアプリキオスクエクスペリエンス (Windows 10 バージョン1709以降で使用可能)
+    1. 1つまたは複数のアプリをアカウントに割り当てることができます。 ユーザーがログインすると、デバイスは、選択したアプリにのみアクセスできる制限付きシェルエクスペリエンスで開始されます。 詳細については[、「複数のアプリを実行する Windows 10 キオスクを作成](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps)する」を参照してください。
 
 > [!NOTE]
-> この記事では、シングル アプリ キオスク エクスペリエンスのみについて説明します。 マルチ アプリ エクスペリエンスでは、選択されているアプリは、通常のデスクトップ コンテキストで実行され、特別な処理または変更は必要ありません。
+> この記事では、シングルアプリキオスクエクスペリエンスのみについて説明します。 マルチアプリエクスペリエンスでは、選択したアプリは通常のデスクトップコンテキストで実行され、特別な処理や変更は必要ありません。
 
 ## <a name="terms"></a>用語
 
@@ -37,83 +37,83 @@ Windows 10 では、1 つのユニバーサル Windows アプリだけと対話�
 </colgroup>
 <thead>
 <tr class="header">
-<th>用語</th>
+<th>期間</th>
 <th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><span id="assigned_access"></span><span id="ASSIGNED_ACCESS"></span>割り当てられたアクセス</p></td>
-<td><p>により、システム管理者は、デバイスのユーザーに公開されているアプリケーションのエントリ ポイントを制限することで、ユーザーのエクスペリエンスを管理する機能です。 たとえば、キオスクのように、PC が機能するために 1 つのアプリを使用する、会社の顧客を制限できます。 ユーザーが指定したアカウントでサインイン、ときにのみその 1 つのアプリを使用して開けなくなるします。 アプリを切り替えるか、タッチ ジェスチャ、マウス、キーボード、またはハードウェア ボタンを使用してアプリを閉じるにできません。 アプリの通知も表示されませんされます。</p></td>
+<td><p>デバイスのユーザーに公開されているアプリケーションのエントリポイントを制限することで、システム管理者がユーザーのエクスペリエンスを管理できるようにする機能。 たとえば、会社の顧客を1つのアプリを使用するように制限して、PC がキオスクのように動作するようにすることができます。 指定されたアカウントでサインインするたびに、その1つのアプリのみを使用できます。 タッチジェスチャ、マウス、キーボード、またはハードウェアボタンを使用してアプリを切り替えたり、アプリを閉じたりすることはできません。 また、アプリの通知も表示されません。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="lock_screen_app__or_lock_app_"></span><span id="LOCK_SCREEN_APP__OR_LOCK_APP_"></span>ロック画面アプリ (またはロック アプリ)</p></td>
-<td><p>アプリケーション ロックの新しい機能拡張フレームワークの利用または動的の壁紙を設定することの利点は、いずれかのことです。</p></td>
+<td><p><span id="lock_screen_app__or_lock_app_"></span><span id="LOCK_SCREEN_APP__OR_LOCK_APP_"></span>ロック画面アプリ (またはロックアプリ)</p></td>
+<td><p>動的な壁紙を設定したり、新しいロック拡張フレームワークを利用したりする機能を利用できるアプリケーション。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="above_lock_screen_app__or_above_lock_app_"></span><span id="ABOVE_LOCK_SCREEN_APP__OR_ABOVE_LOCK_APP_"></span>ロック画面のアプリ上 (またはロック アプリ上)</p></td>
-<td><p>(たとえば、デスクトップがロックされている) 場合、ロック画面のアプリの実行中にロック画面を起動するアプリケーション。</p></td>
+<td><p><span id="above_lock_screen_app__or_above_lock_app_"></span><span id="ABOVE_LOCK_SCREEN_APP__OR_ABOVE_LOCK_APP_"></span>ロック画面アプリ (またはその上のロックアプリ)</p></td>
+<td><p>ロック画面アプリの実行中にロック画面の上に起動するアプリケーション (デスクトップがロックされている場合など)。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="under_lock_app"></span><span id="UNDER_LOCK_APP"></span>ロック アプリ</p></td>
-<td><p>ロックされていない Windows コンテキストでは通常、実行されるアプリケーション。</p></td>
+<td><p><span id="under_lock_app"></span><span id="UNDER_LOCK_APP"></span>[アプリのロック]</p></td>
+<td><p>ロックされていない Windows コンテキストで、正常に実行されるアプリケーション。</p></td>
 </tr>
 <tr class="odd">
-<td><p><span id="LockApplicationHost"></span><span id="lockapplicationhost"></span><span id="LOCKAPPLICATIONHOST"></span><a href="https://go.microsoft.com/fwlink/?LinkId=691219" data-raw-source="[LockApplicationHost](https://go.microsoft.com/fwlink/?LinkId=691219)">LockApplicationHost</a></p></td>
-<td><p>要求をロック画面アプリ上のデバイスを許可する WinRT クラスは、ロックの解除し、アプリ、デバイスがロックを解除する開始時に通知が登録を許可します。</p></td>
+<td><p><span id="LockApplicationHost"></span><span id="lockapplicationhost"></span><span id="LOCKAPPLICATIONHOST"></span><a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost" data-raw-source="[LockApplicationHost](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost)">LockApplicationHost</a></p></td>
+<td><p>上のロック画面アプリがデバイスのロックを解除することを許可し、デバイスのロック解除が開始されたときにアプリが通知を受け取ることができるようにする WinRT クラス。</p></td>
 </tr>
 <tr class="even">
-<td><p><span id="View_or_Application_View"></span><span id="view_or_application_view"></span><span id="VIEW_OR_APPLICATION_VIEW"></span>表示またはアプリケーションの表示</p></td>
-<td><p>各ビューは、アプリに別のウィンドウです。 アプリは、main を表示、および複数の作成ができ、要求時にセカンダリを表示します。 参照してください<a href="https://go.microsoft.com/fwlink/?LinkId=691220" data-raw-source="[ApplicationView]( https://go.microsoft.com/fwlink/?LinkId=691220)">ApplicationView</a>詳細についてはします。</p></td>
+<td><p><span id="View_or_Application_View"></span><span id="view_or_application_view"></span><span id="VIEW_OR_APPLICATION_VIEW"></span>ビューまたはアプリケーションビュー</p></td>
+<td><p>各ビューは、アプリの別のウィンドウです。 アプリはメインビューを持つことができ、必要に応じて複数のセカンダリビューを作成できます。 詳細については、「 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView" data-raw-source="[ApplicationView]( https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)">Applicationview</a> 」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
-## <a name="the-windowsabovelockscreen-extension"></a>Windows.aboveLockScreen 拡張機能
+## <a name="the-windowsabovelockscreen-extension"></a>AboveLockScreen 拡張機能
 
-Windows 10 で割り当てられたアクセスは、ロックのフレームワークを活用します。 割り当てられたアクセスのユーザーがログイン時にバック グラウンド タスクは、デスクトップをロックし、ロックの上、キオスク アプリを起動します。 Windows.aboveLockScreen 拡張機能を使用しているかどうかに応じて、アプリの動作が異なる場合があります。
+Windows 10 で割り当てられたアクセスは、ロックフレームワークを活用します。 割り当てられたアクセスユーザーがログインすると、バックグラウンドタスクによってデスクトップがロックされ、ロックの上にキオスクアプリが起動されます。 AboveLockScreen 拡張機能を使用するかどうかによって、アプリの動作が異なる場合があります。
 
-使用して**windows.aboveLockScreen**キオスク アプリにアクセスできるように、 [LockApplicationHost](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost)アプリが実行されているロック上 (およびそのキオスクとして実行されている場合を把握できるようにするランタイム クラスエクスペリエンス)。 インスタンスを返すことができない場合は、通常のデスクトップのコンテキストで、アプリが実行されています。 
+**AboveLockScreen**を使用すると、キオスクアプリで[lockapplicationhost](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost) runtime クラスにアクセスできるようになります。これにより、アプリがロックの上で実行されている (したがって、キオスク環境として実行されている) ことを確認できます。 インスタンスを返すことができない場合、アプリは通常のデスクトップコンテキストで実行されています。 
 
-ロック framework ロックの上、キオスク アプリを起動して、アプリには、 **windows.aboveLockScreen**拡張機能では、ロックのフレームワークは自動的にロックの上の新しいセカンダリ ビューを作成します。 メイン ビューは、ロックの下にあります。 このセカンダリ ビューは、アプリのコンテンツが含まれてし、ユーザーに対して表示します。 この追加のビューは、キオスク、エクスペリエンスを調整する、拡張機能を使用できます。 たとえば、次のようなことができます。
+ロックフレームワークがロックの上にキオスクアプリを起動し、アプリに**aboveLockScreen**拡張子がある場合、ロックフレームワークによって、ロックの上に新しいセカンダリビューが自動的に作成されます。 メインビューはロックの下にあります。 このセカンダリビューには、アプリのコンテンツが含まれ、ユーザーに表示されます。 この追加のビューを拡張機能と共に使用して、キオスクエクスペリエンスを調整できます。 たとえば、次のように操作できます。
 
-* [キオスク エクスペリエンスをセキュリティで保護された](#secureinfo)キオスクだけのコンテンツを表示する個別のページを作成します。
+* キオスク専用のコンテンツを表示する別のページを作成して[、キオスクエクスペリエンスを保護](#secureinfo)します。
 
-* 呼び出す、 **LockApplicationHost.RequestUnlock()** メソッドへのアプリから[割り当てのアクセス モードを終了](#addaway)ログイン画面に戻ります。   
+* アプリから**Lockapplicationhost. RequestUnlock ()** メソッドを呼び出して、[割り当てられたアクセスモードを終了](#addaway)し、ログイン画面に戻ります。   
 
-* [イベント ハンドラーを追加](#eventhandler)に、**LockApplicationHost.Unlocking*ユーザーが、キオスクのエクスペリエンスを終了するには Ctrl + Alt + Del キーを押したときに発生するイベントです。 ハンドラーが終了する前にデータを保存することも可能性があります。
-
-
-
-アプリがない場合、 **windows.aboveLockScreen**拡張機能では、セカンダリのビューは作成されませんし、アプリは、通常どおり実行されている場合が起動します。 さらに、アプリには、LockApplicationHost のインスタンスへのアクセス権がないため、またはキオスク エクスペリエンスの正規表現のコンテキストで実行されている場合を判断することができません。 サポートするためにできるなどの利点があります、拡張子を含まない[複数のモニター](#multiplemonitors)
+* ユーザーが Ctrl + Alt + Del キーを押してキオスクエクスペリエンスを終了したときに発生する、**Lockapplicationhost. アンロック*イベントに[イベントハンドラーを追加](#eventhandler)します。 ハンドラーは、終了する前にデータを保存するために使用することもできます。
 
 
-かどうか、アプリは、拡張機能を使用して、関係なく、そのデータをセキュリティで保護することを確認します。 参照してください、[アプリに割り当てられたアクセスするためのガイドライン](https://docs.microsoft.com/windows/configuration/guidelines-for-assigned-access-app#secure-your-information)詳細についてはします。
+
+アプリに**aboveLockScreen**拡張子がない場合、セカンダリビューは作成されず、アプリは正常に実行されているかのように起動します。 また、アプリは LockApplicationHost のインスタンスにアクセスできないため、通常のコンテキストで実行されているか、キオスクエクスペリエンスで実行されているかを判断できません。 拡張機能を含まない場合は、[複数のモニター](#multiplemonitors)をサポートできるなどの利点があります。
+
+
+アプリが拡張機能を使用しているかどうかにかかわらず、データをセキュリティで保護する必要があります。 詳細については、「[割り当てられたアクセスアプリのガイドライン](https://docs.microsoft.com/windows/configuration/guidelines-for-assigned-access-app#secure-your-information)」を参照してください。
 
 > [!NOTE]
-> 以降では、Windows 10 version 1607 ではありません、ユニバーサル Windows プラットフォーム (UWP) 拡張機能の制限にほとんどのアプリを表示できるように**設定**アクセス権を割り当てるときにユーザーを構成します。
+> Windows 10 バージョン1607以降では、ユニバーサル Windows プラットフォーム (UWP) 拡張機能に制限がなくなりました。そのため、ユーザーが割り当てられたアクセスを構成すると、ほとんどのアプリが**設定**に表示されるようになります。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
 
 > [!NOTE]
-> このセクションを使用するキオスク アプリケーションに適用されます、 **windows.aboveLockScreen**拡張機能。
+> このセクションは、 **aboveLockScreen**拡張機能を使用するキオスクアプリケーションに適用されます。
 
 
 
-### お客様の情報をセキュリティで保護します。 <a name="secureinfo"></a>
+### <a name="secure-your-information"></a>情報をセキュリティで保護する<a name="secureinfo"></a>
 
-キオスク アプリが実行するものである場合両方上のロックでアクセス権が割り当てとも、ロックされていない Windows コンテキストで、ロックの上に表示するために別のページと、ロックの状況で他のページを作成します。 これは、オプションを選択するキオスク モードは、通常、匿名アクセスを意味するため、キオスク モードの場合は、機密情報を表示しないようにすることができます。 次に、2 つの異なるページを使用して、用に 1 つのロックおよびロックの上の 1 つには次の手順に示します。
+キオスクアプリが、割り当てられたアクセスで上記のロックと、ロックされていない Windows コンテキストの両方を実行することを意図している場合は、別のページを作成して、ロックの上に別のページを表示することもできます。 これにより、キオスクモードでは通常匿名アクセスが使用されるため、キオスクモードでは機密情報を表示しないようにすることができます。 2つの異なるページを使用する手順を次に示します。1つはロックの下、もう1つはロックの上にあります。
 
-1.  内のオーバーライドで、 **OnLaunched** App.xaml.cs で関数のインスタンスを取得しようとしています、 [LockApplicationHost](https://go.microsoft.com/fwlink/?LinkId=691219) rootFrame ナビゲーションの前にクラス。
-2.  呼び出しが失敗した場合、キオスク アプリは正常に起動、ロックの下。
-3.  呼び出しが成功すると、割り当てられたアクセス モードで実行されているロック上キオスク アプリを起動する必要があります。 このバージョンの機密情報を非表示にする別のメイン ページに、キオスク アプリのことができます。
+1.  App.xaml.cs の**Onlaunched**関数のオーバーライド内で、rootframe ナビゲーションの前に[lockapplicationhost](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost)クラスのインスタンスを取得してみてください。
+2.  呼び出しが失敗した場合、キオスクアプリはロックの下で正常に起動されます。
+3.  呼び出しが成功した場合、キオスクアプリは、割り当てられたアクセスモードで実行されているロックの上に起動する必要があります。 このバージョンのキオスクアプリでは、機密情報を非表示にするために別のメインページが必要になる場合があります。
 
-次の例では、これを行う方法を示します。 AssignedAccessPage.xaml は事前に定義し、アプリは、ロック モードの上で実行されていることが検出される AssignedAccessPage.xaml に移動します。 その結果、通常のページをでのみ表示は、ロックの状況下。
+これを行う方法を次の例に示します。 AssignedAccessPage は事前に定義されています。アプリは、上記のロックモードで実行されていることを検出すると、AssignedAccessPage に移動します。 その結果、通常のページは [ロック] シナリオでのみ表示されます。
 
-このメソッドを使用して、アプリのライフ サイクルでいつでも、ロック画面アプリが実行されているかどうかを決定し、それに対応することができます。
+このメソッドを使用して、アプリがアプリのライフサイクルの任意の時点でロック画面上で実行されているかどうかを確認し、それに応じて対応することができます。
 ```cpp
 using Windows.ApplicationModel.LockScreen;
 
@@ -139,20 +139,20 @@ if (rootFrame.Content == null)
 }
 ```
 
-### 複数のビュー、windows、およびスレッド <a name="multiplemonitors"></a>
+### <a name="multiple-views-windows-and-threads"></a>複数のビュー、ウィンドウ、スレッド<a name="multiplemonitors"></a>
 
-Windows 10、バージョン 1803、以降[複数ビュー](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)がないアプリのキオスク エクスペリエンスではサポートされている、 **windows.aboveLockScreen**拡張機能。 複数のビューを使用するには、キオスク デバイスを確認します。**マルチ ディスプレイ**にオプションが設定されている**これらの表示を拡張**します。
+Windows 10 バージョン1803以降では、 **aboveLockScreen**拡張子のないアプリでは、[複数のビュー](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)がキオスク環境でサポートされています。 複数のビューを使用するには、[キオスクデバイスの**複数ディスプレイ**] オプションが、**これらの表示を拡張**するように設定されていることを確認します。
 
-ときに複数のビューを使用するアプリ (されず**windows.aboveLockScreen**) が起動される、キオスク エクスペリエンス中に、アプリのメイン ビューを 1 日のモニターに表示されます。 新しいビューがアプリを使用して作成された場合[CreateNewView()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication)、これは、2 つ目のモニターにレンダリングされます。 アプリでは、別のビューを作成する場合は、3 つ目のモニターに移動し、具合にします。
+キオスクエクスペリエンス中に複数のビュー ( **aboveLockScreen**なし) のアプリが起動されると、アプリのメインビューが1つ目のモニターに表示されます。 [CreateNewView ()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication)を使用してアプリで新しいビューを作成すると、2番目のモニターに表示されます。 アプリが別のビューを作成すると、3番目のモニターに移ります。
 
 > [!IMPORTANT]
-> キオスク デバイスは、モニターごとに 1 つのビューのみを表示できます。 たとえば、キオスク デバイスに 1 つのモニターがある場合は、キオスク アプリのメイン ビュー常に表示されます。 アプリが作成した新しいビューには表示されません。
+> キオスクデバイスは、モニターごとに1つのビューのみを表示できます。 たとえば、キオスクデバイスにモニターが1つしかない場合、キオスクアプリのメインビューが常に表示されます。 アプリによって作成された新しいビューは表示されません。
 
-キオスク アプリがある場合、 **windows.aboveLockScreen**拡張機能が実行されていると、ロックの上、初期化が異なります。 セカンダリ上にビューを使用して、ロックの状況では、そのメイン ビューにあります。 このセカンダリ ビューは、ユーザーが表示されるものになります。 明示的にすべての新しいビューを作成しない場合でも必要があることも 2 つのビューで、アプリのインスタンスに注意してください。  
+キオスクアプリに**aboveLockScreen**拡張子があり、ロックの上で実行されている場合は、異なる方法で初期化されます。 メインビューはロックの下にあり、その上に2つ目のビューがあります。 このセカンダリビューには、ユーザーに表示されるものが表示されます。 新しいビューを明示的に作成しない場合でも、アプリインスタンスには2つのビューがあります。  
 
-![ロック モードでアプリを実行するときにビューの z オーダー](images/assignedaccesssamplelayout.png)
+![アプリがロックモードで実行されている場合のビューの z オーダー](images/assignedaccesssamplelayout.png)
 
-(割り当てられたアクセス モード) では、アプリのメイン ウィンドウで、次のコードを実行すると、ビューの数と、現在の画面のメイン ビューがかどうかを参照してください。
+アプリのメインウィンドウ ([割り当てられたアクセスモード]) で次のコードを実行すると、ビューカウントと、現在の画面がメインビューであるかどうかを確認できます。
 
 ```cpp
 using Windows.ApplicationModel.Core;
@@ -163,7 +163,7 @@ CoreApplication.Views.Count //2
 
 ### <a name="dispatcher"></a>ディスパッチャー
 
-各ビューまたはウィンドウは、独自のディスパッチャーを持っています。 メイン ビューがユーザーに表示されていないために、使用**GetCurrentView()** MainView() ではなく、ロックの上で実行されているアプリのセカンダリのビューにアクセスします。 
+各ビューまたはウィンドウには、独自のディスパッチャーがあります。 メインビューはユーザーに表示されないため、 **GetCurrentView ()** を使用して、mainview () ではなく、ロックの上にあるアプリのセカンダリビューにアクセスします。 
 
 ```cpp
 using Windows.ApplicationModel.Core;
@@ -191,18 +191,18 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-アプリは、windows.aboveLockScreen を備え、キオスク エクスペリエンスとして実行され、ときに新しいビューを作成すると、アプリ内で例外が発生します。
+アプリに aboveLockScreen があり、キオスク環境として実行されている場合、新しいビューを作成すると、アプリ内で例外が発生します。
 
 ```cpp
 Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exception
 ```
 
-このため、複数のビューがあるまたは複数のモニター上で実行できません。 を、アプリがいずれもサポートする必要がある場合は、アプリから windows.aboveLockScreen 拡張機能を削除する必要があります。
+このため、複数のビューを使用したり、複数のモニターで実行したりすることはできません。 アプリでいずれかをサポートする必要がある場合は、アプリから aboveLockScreen 拡張機能を削除する必要があります。
 
 
-### 割り当てられたアクセス外の手段を追加します。 <a name="addaway"></a>
+### <a name="add-a-way-out-of-assigned-access"></a>割り当てられたアクセスからの方法の追加<a name="addaway"></a>
 
-場合によっては、[電源] ボタン、エスケープ ボタン、またはその他のボタンを使用してアプリケーションを停止できない可能性があります有効または、キーボードでご確認いただけます。 このような状況では、割り当てられたアクセス、ソフトウェア キーのインスタンスを停止する方法を提供します。 次のイベント ハンドラーは、ボタンに応答することによって割り当てられたアクセス モードを停止する方法を示しています。 ソフトウェア キーによって発生する可能性がイベントをクリックします。
+場合によっては、アプリケーションを停止するために使用されている電源ボタン、エスケープボタン、またはその他のボタンが、キーボードで有効になっていないか、使用できないことがあります。 このような状況では、ソフトウェアキーなど、割り当てられたアクセスを停止する方法を提供します。 次のイベントハンドラーは、ソフトウェアキーによってトリガーされる可能性があるボタンクリックイベントに応答して、割り当てられたアクセスモードを停止する方法を示しています。
 
 ```cpp
 LockApplicationHost^ lockHost = LockApplicationHost::GetForCurrentView();
@@ -212,11 +212,11 @@ LockApplicationHost^ lockHost = LockApplicationHost::GetForCurrentView();
     }
 ```
 
-### ライフ サイクル管理 <a name="eventhandler"></a>
+### <a name="lifecycle-management"></a>ライフサイクル管理<a name="eventhandler"></a>
 
-キオスク アプリのライフ サイクルは、割り当てられたアクセス フレームワークによって処理されます。 アプリが予期せず終了した場合、フレームワークは再起動しようとします。 ただし、ユーザーは、ログイン画面を表示するには Ctrl + Alt + Del を押すと、ロックを解除するイベントがトリガーされます。 割り当てられたアクセス フレームワークは、イベントをリッスンし、アプリを終了ましょう。
+キオスクアプリのライフサイクルは、割り当てられたアクセスフレームワークによって処理されます。 アプリが予期せず終了した場合、フレームワークはそれを再起動しようとします。 ただし、ユーザーが Ctrl + Alt + Del キーを押してログイン画面を表示すると、ロック解除イベントがトリガーされます。 割り当てられたアクセスフレームワークはイベントをリッスンし、アプリを終了しようとします。
 
-キオスク アプリはこのイベントのハンドラーを登録し、終了する前にアクションを実行できます。 この例は、データを保存します。 ハンドラーの登録の例を次のコードを参照してください。
+また、キオスクアプリはこのイベントのハンドラーを登録し、終了前にアクションを実行することもできます。 この例として、データを保存することがあります。 ハンドラーを登録する例については、次のコードを参照してください。
 
 ```cpp
 using Windows.ApplicationModel.LockScreen;
@@ -239,26 +239,26 @@ private void LockHost_Unlocking(LockApplicationHost sender, LockScreenUnlockingE
 }
 ```
 
-Ctrl + Alt + Del キーを押すし、ログイン画面が表示されます、次の 2 つが発生する可能性があります。
+ユーザーが Ctrl + Alt + Del キーを押した後、ログイン画面が表示されると、次の2つの処理が発生する可能性があります。
 
-1.  ユーザーが、割り当てられたアクセス アカウントのパスワードを知っていて、デスクトップのロックを解除します。 割り当てられたアクセス フレームワークと起動、デスクトップ、およびキオスク アプリを起動、ロック画面アプリが起動をロックします。
-2.  ユーザーがパスワードを知らないか、その後の操作を受け取りません。 ログイン画面のタイムアウトとデスクトップ relocks;ロック画面アプリが起動の結果には、キオスク アプリを起動します。
+1.  ユーザーは、割り当てられたアクセスアカウントのパスワードを認識し、デスクトップのロックを解除します。 割り当てられたアクセスフレームワークが起動し、デスクトップがロックされ、ロック画面アプリが起動されます。これにより、キオスクアプリが起動されます。
+2.  ユーザーはパスワードを知らないか、それ以上のアクションを実行していません。 ログイン画面のタイムアウトとデスクトップの再ロック。ロック画面アプリが起動すると、キオスクアプリが起動します。
 
-### <a name="span-iddontcreatenewwindowsorviewsinassignedaccessmodespanspan-iddontcreatenewwindowsorviewsinassignedaccessmodespanspan-iddontcreatenewwindowsorviewsinassignedaccessmodespandont-create-new-windows-or-views-in-assigned-access-mode"></a><span id="Don_t_create_new_windows_or_views_in_assigned_access_mode"></span><span id="don_t_create_new_windows_or_views_in_assigned_access_mode"></span><span id="DON_T_CREATE_NEW_WINDOWS_OR_VIEWS_IN_ASSIGNED_ACCESS_MODE"></span>割り当てられたアクセス モードで新しいウィンドウまたはビューを作成しないでください。
+### <a name="span-iddon_t_create_new_windows_or_views_in_assigned_access_modespanspan-iddon_t_create_new_windows_or_views_in_assigned_access_modespanspan-iddon_t_create_new_windows_or_views_in_assigned_access_modespandont-create-new-windows-or-views-in-assigned-access-mode"></a><span id="Don_t_create_new_windows_or_views_in_assigned_access_mode"></span><span id="don_t_create_new_windows_or_views_in_assigned_access_mode"></span><span id="DON_T_CREATE_NEW_WINDOWS_OR_VIEWS_IN_ASSIGNED_ACCESS_MODE"></span>割り当てられたアクセスモードで新しいウィンドウまたはビューを作成しない
 
-次の関数呼び出しは割り当てられたアクセス モードでメソッドが呼び出された場合に、ランタイム例外終了します。 ロックの状況で使用する場合は、同じアプリでは、関数を呼び出し場合、ランタイム例外は発生しません。 使用することをお勧め[LockApplicationHost](https://go.microsoft.com/fwlink/?LinkId=691219)アプリの割り当てられたアクセスのモードを決定し、新しいビューを作成しない場合は、アプリが割り当てられたアクセス モードなど、アプリをそれに応じてコードします。
+次の関数呼び出しは、割り当てられたアクセスモードで呼び出された場合、ランタイム例外が発生します。 同じアプリが lock で使用されている場合、関数を呼び出すと、ランタイム例外は発生しません。 [Lockapplicationhost](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.LockScreen.LockApplicationHost)を使用してアプリの割り当てられたアクセスモードを決定し、アプリがアクセスモードに割り当てられている場合に新しいビューを作成しないなど、アプリを適宜コーディングすると便利です。
 
 ```cpp
 Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exception
 ```
 
-## <a name="span-idappendix1uwpextensionspanspan-idappendix1uwpextensionspanspan-idappendix1uwpextensionspanappendix-1-uwp-extension"></a><span id="Appendix_1__UWP_extension"></span><span id="appendix_1__uwp_extension"></span><span id="APPENDIX_1__UWP_EXTENSION"></span>付録 1:UWP 拡張機能
+## <a name="span-idappendix_1__uwp_extensionspanspan-idappendix_1__uwp_extensionspanspan-idappendix_1__uwp_extensionspanappendix-1-uwp-extension"></a><span id="Appendix_1__UWP_extension"></span><span id="appendix_1__uwp_extension"></span><span id="APPENDIX_1__UWP_EXTENSION"></span>付録 1: UWP 拡張機能
 
 
-次のサンプル アプリケーションで使用するマニフェスト、 **windows.aboveLockScreen**UWP 拡張機能。 
+次のサンプルアプリケーションマニフェストでは、 **aboveLockScreen**UWP 拡張を使用します。 
 
 > [!NOTE]
-> 以降では、Windows 10 version 1607 ではありません、ユニバーサル Windows プラットフォーム (UWP) 拡張機能の制限にほとんどのアプリを表示できるように**設定**アクセス権を割り当てるときにユーザーを構成します。
+> Windows 10 バージョン1607以降では、ユニバーサル Windows プラットフォーム (UWP) 拡張機能に制限がなくなりました。そのため、ユーザーが割り当てられたアクセスを構成すると、ほとんどのアプリが**設定**に表示されるようになります。
 
 
 ```cpp
@@ -295,23 +295,23 @@ Windows.ApplicationModel.Core.CoreApplication.CreateNewView(); //causes exceptio
 </Package>
 ```
 
-## <a name="span-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanspan-idappendix2troubleshootingspanappendix-2-troubleshooting"></a><span id="Appendix_2__troubleshooting"></span><span id="appendix_2__troubleshooting"></span><span id="APPENDIX_2__TROUBLESHOOTING"></span>付録 2: のトラブルシューティング
+## <a name="span-idappendix_2__troubleshootingspanspan-idappendix_2__troubleshootingspanspan-idappendix_2__troubleshootingspanappendix-2-troubleshooting"></a><span id="Appendix_2__troubleshooting"></span><span id="appendix_2__troubleshooting"></span><span id="APPENDIX_2__TROUBLESHOOTING"></span>付録 2: トラブルシューティング
 
 
-通常、キオスク アプリは、ロック画面のアプリ上のアクティブ化に失敗した場合、[ロックダウン] 画面で、アクティブ化エラー コードが表示されます。 エラー コードを使用して Windows を参照して、問題を見つけた[システム エラー コード](https://docs.microsoft.com/windows/desktop/Debug/system-error-codes)します。 さらにイベント ビューアーには、ライセンス認証エラーの詳細が含まれています。 次の手順に従います。
+通常、キオスクアプリがロック画面アプリ上でアクティブ化に失敗した場合は、ロックダウン画面でアクティブ化エラーコードを見つけることができます。 エラーコードを使用して、Windows[システムエラーコード](https://docs.microsoft.com/windows/desktop/Debug/system-error-codes)を検索して問題を検出します。 さらにイベントビューアーには、ライセンス認証エラーの詳細が含まれています。 次の手順に従います。
 
-1.  **イベント ビューアー**を開きます。 アクティブ化エラーを検出する可能性が高い 2 つの場所があります。
-2.  **イベント ビューアー (ローカル)** ウィンドウで、展開**Windows ログ**、 をクリックし、**アプリケーション**します。
-3.  また、**イベント ビューアー (ローカル)** 、展開**Applications and Services Logs**、展開**Windows**、展開**アプリ**順にクリックします**Microsoft Windows-TWinUI/運用**します。
+1.  **イベント ビューアー**を開きます。 アクティブ化エラーを検出できる場所は2つあります。
+2.  [**イベントビューアー (ローカル)** ] ウィンドウで、[ **Windows ログ**] を展開し、[**アプリケーション**] をクリックします。
+3.  また、**イベントビューアー (ローカル)** で、[**アプリケーションとサービスログ**]、 **[Windows**]、[**アプリ**] の順に展開し、[ **TWinUI/Operational**] をクリックします。
 
-割り当てられたアクセス権を持つキオスク アプリが全画面表示モードで実行しないでくださいため**ApplicationView.GetForCurrentView() します。IsFullScreenMode**は false を返します。
+アクセス権が割り当てられているキオスクアプリは全画面**表示モード (GetForCurrentView) で実行されないことに注意してください。IsFullScreenMode**は false を返します。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [割り当てられたアクセス](https://docs.microsoft.com/windows-hardware/customize/enterprise/assigned-access)
 
-[アプリの複数のビューを表示します。]( https://go.microsoft.com/fwlink/?LinkId=708251)
+[アプリの複数のビューの表示](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)
 
 
 

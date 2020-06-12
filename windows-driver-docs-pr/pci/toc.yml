@@ -4,6 +4,8 @@
   href: pci-power-management-and-device-drivers.md
 - name: Windows での PCI Express ネイティブ コントロールの有効化
   href: enabling-pci-express-native-control.md
+- name: デバイス ドライバーのための DMA 再マッピングを有効にする
+  href: enabling-dma-remapping-for-device-drivers.md
 - name: PCIe ルート ポートのデバイス固有データ (_DSD)
   href: dsd-for-pcie-root-ports.md
 - name: PCI デバイス構成領域へのアクセス

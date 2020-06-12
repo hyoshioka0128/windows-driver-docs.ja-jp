@@ -8,12 +8,12 @@ keywords:
 - アダプタオブジェクト WDK カーネル、アダプタオブジェクトについて
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd589a676a4d1e2b0785d5b52a4426ed86ca863
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 71e2ce06498c0e0c0f7eaf21a59433a24e060fdf
+ms.sourcegitcommit: 2d999dcf63d3b67bf74777d6fae29d96b98141ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838635"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714825"
 ---
 # <a name="introduction-to-adapter-objects"></a>アダプター オブジェクトの概要
 
@@ -42,6 +42,10 @@ DMA 転送を実行するために、これらの DMA メソッドのいずれ�
 (バスマスタ DMA 対応の SCSI デバイスの場合、SCSI ポートドライバーは、HBA 固有の SCSI ミニポートドライバー用のアダプターオブジェクトを設定します。 ミニポートドライバーの[*HwScsiFindAdapter*](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff557300(v=vs.85))ルーチンは、ポートドライバーにアダプター固有のデータを提供します)。
 
 ドライバーがアダプタオブジェクトと*Adaptercontrol*ルーチンを使用するタイミングと方法の詳細については、「[システム Dma](using-system-dma.md)と[バスマスタ DMA](using-bus-master-dma.md)の使用」を参照してください。
+
+## <a name="related-topics"></a>関連トピック
+
+[デバイス ドライバーのための DMA 再マッピングを有効にする](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)
 
  
 
