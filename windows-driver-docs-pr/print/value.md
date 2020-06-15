@@ -4,79 +4,46 @@ description: WSD 値構成体を使用すると、特定のスキーマ要素か
 ms.assetid: 8930e012-88ee-44ff-9abc-a15367f04ca3
 keywords:
 - 値の構成体
-ms.date: 04/20/2017
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f93fd1e12ad8d22ec5daa8b5322c1971421f8772
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
+ms.openlocfilehash: 55321eb98cdf6abb3aac354dc04c2c36fe4e4ad5
+ms.sourcegitcommit: 8a3cb2a87ce9751059bca8145a55b8cc39c34de9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652855"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756172"
 ---
 # <a name="value-wsd"></a>Value (WSD)
 
+WSD コンストラクトを使用すると、 `Value` Web サービスインターフェイスの特定のスキーマ要素からデータを取得するクエリを使用して、bidi 通信スキーマを拡張できます。
 
-WSD `Value` コンストラクトを使用すると、Web サービスインターフェイスの特定のスキーマ要素からデータを取得するクエリを使用して、bidi 通信スキーマを拡張できます。
+| 属性 | 説明 |
+|--|--|
+| **drvPrinterEvent** | Optionalポートモニターがドライバーに通知を送信するかどうかを示すブール値です。 **TRUE**の値は、ポートモニターがドライバーに通知を送信することを示します。**FALSE**は、ポートモニターがドライバーに通知を送信しないことを示します。 |
+| **filter** | クエリで指定された XML ドキュメントに、WSD モニターが適用する XPath クエリ。 このトピックの後半の説明を参照してください。 |
+| **name** | スキーマ値の名前です。 |
+| **query** | WSD モニターが実行するクエリの種類。 |
+| **type** | コンストラクター内のデータの型 `Value` 。 [**BIDI_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)列挙体の値。 |
+| **xmllang** | Optionalブール値。 **TRUE**の場合、関連付けられた `Value` 構造体をローカライズ可能な文字列値として扱う必要があることを意味します。 これは、上記で定義した XPath クエリで、xml: lang 属性で区別されるノードの一覧を返すことが想定されていることを意味します。 次に、WSD モニタは、値の一覧で最適なロケール一致を検索します。 既定値は**FALSE**です。 |
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>備わっている</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>drvPrinterEvent</strong></p></td>
-<td><p>Optionalポートモニターがドライバーに通知を送信するかどうかを示すブール値です。 <strong>TRUE</strong>の値は、ポートモニターがドライバーに通知を送信することを示します。<strong>FALSE</strong>は、ポートモニターがドライバーに通知を送信しないことを示します。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>フィルター (filter)</strong></p></td>
-<td><p>クエリで指定された XML ドキュメントに、WSD モニターが適用する XPath クエリ。 このトピックの後半の説明を参照してください。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>name</strong></p></td>
-<td><p>スキーマ値の名前です。</p></td>
-</tr>
-<tr class="even">
-<td><p>クエリ</p></td>
-<td><p>WSD モニターが実行するクエリの種類。</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>type</strong></p></td>
-<td><p>のデータの種類 <code>Value</code> <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type" data-raw-source="[&lt;strong&gt;BIDI_TYPE&lt;/strong&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/winspool/ne-winspool-bidi_type)"><strong>BIDI_TYPE</strong></a>列挙体の値を構築します。</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>xmllang</strong></p></td>
-<td><p>Optionalブール値。 <strong>TRUE</strong>の場合は、関連付けられている <code>Value</code> コンストラクトはローカライズ可能な文字列値として扱う必要があります。 これは、上記で定義した XPath クエリで、xml: lang 属性で区別されるノードの一覧を返すことが想定されていることを意味します。 次に、WSD モニタは、値の一覧で最適なロケール一致を検索します。 既定値は<strong>FALSE</strong>です。</p></td>
-</tr>
-</tbody>
-</table>
+XPath 言語は Windows に実装されており、XML ファイル内の要素を指定する便利な方法を提供します。 詳細については、「 [XPath リファレンス](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))」を参照してください。
 
- 
+**Xmllang**属性は、コンストラクトの type 属性 `Value` が "bidi \_ STRING" または "bidi TEXT" の場合にのみ使用され \_ ます。
 
-XPath 言語は Windows に実装されており、XML ファイル内の要素を指定する便利な方法を提供します。 詳細については、Windows SDK と[XPath リファレンス](https://go.microsoft.com/fwlink/p/?linkid=33165)の XML 開発者ガイドを参照してください。
+`Value`コンストラクトは、WsdBidi で定義されています。
 
-**Xmllang**属性は、`Value` コンストラクトの type 属性が "BIDI\_STRING" または "BIDI\_TEXT" の場合にのみ使用されます。
-
-`Value` コンストラクトは、WsdBidi で定義されています。
-
-### <a href="" id="example"></a> 「例」
+## <a name="example"></a>例
 
 次のコード例では、WSD モニターによって、RAM メモリのサイズが整数値として決定されます。
 
-```cpp
+```xml
 <Schema xmlns:nprt='https://schemas.microsoft.com/windows/2005/05/wdp/print'>
   <Property name='Printer'>
     <Property name='DeviceInfo'>
-      <Value name='PrinterString' 
+      <Value name='PrinterString'
  query='nprt:PrinterDescription'
- filter='nprt:PrinterDescription/nprt:PrinterName' 
- type='BIDI_STRING' 
+ filter='nprt:PrinterDescription/nprt:PrinterName'
+ type='BIDI_STRING'
  xmllang='true'/>
     </Property>
     <Property name='Configuration'>
@@ -93,15 +60,7 @@ XPath 言語は Windows に実装されており、XML ファイル内の要素�
 
 前の例では、次のクエリが実行されます。
 
-```cpp
+```console
 \Printer.DeviceInfo:PrinterString
 \Printer.Configuration.Memory:Size
 ```
-
- 
-
- 
-
-
-
-
