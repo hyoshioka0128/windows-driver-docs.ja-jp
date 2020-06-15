@@ -4,16 +4,18 @@ description: Windows 10 以降では、拡張機能 INF と呼ばれる追加の
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d3bc985429956fd791eb458f6f3e9a3b2fe22da
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 04bc03a97e0efb611e58ddbd20e1b756b0d43c29
+ms.sourcegitcommit: ed28d54b986933ce1ab810df361269675e216e33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235385"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84765948"
 ---
 # <a name="using-an-extension-inf-file"></a>拡張 INF ファイルの使用
 
-Windows 10 より前の Windows では、特定のデバイスにインストールするドライバーパッケージが1つだけ選択されていました。  この結果、すべてのシナリオと構成のコードを含む大規模で複雑なドライバーパッケージが生成され、各マイナー更新でドライバーパッケージ全体を更新する必要がありました。  Windows 10 以降では、INF 機能を複数のコンポーネントに分割することができ、それぞれを個別に処理することができます。  ドライバーパッケージの INF ファイルの機能を拡張するには、別のドライバーパッケージに拡張機能の INF を提供します。  拡張機能の INF:
+Windows 10 より前の Windows では、特定のデバイスにインストールするドライバーパッケージが1つだけ選択されていました。  この結果、すべてのシナリオと構成のコードを含む大規模で複雑なドライバーパッケージが生成され、各マイナー更新でドライバーパッケージ全体を更新する必要がありました。  Windows 10 以降では、INF 機能を複数のコンポーネントに分割することができ、それぞれを個別に処理することができます。
+
+ドライバーパッケージの INF ファイルの機能を拡張するには、別のドライバーパッケージに拡張機能の INF を提供します。  拡張機能の INF:
 
 * は、別の会社によって提供され、ベース INF から独立して更新できます。
 * は基本 INF と同じように見えますが、カスタマイズまたは特殊化のためにベース INF を拡張できます。
@@ -27,7 +29,7 @@ Windows 10 より前の Windows では、特定のデバイスにインストー
 * デバイスのフレンドリ名をカスタマイズしたり、ハードウェア構成設定を変更したりするなど、基本 INF に用意されている設定を変更する。
 * [Inf AddComponent ディレクティブ](inf-addcomponent-directive.md)を指定し、[コンポーネントの inf ファイル](using-a-component-inf-file.md)を指定して、1つまたは複数のソフトウェアコンポーネントを作成します。
 
-これらのシナリオのサンプルコードについては、このページの次の例を参照してください。  また、「[ユニバーサルドライバーのシナリオ](../develop/universal-driver-scenarios.md)」も参照してください。このシナリオでは、 [dchu ユニバーサルドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)が拡張機能の inf を使用する方法を説明します
+これらのシナリオのサンプルコードについては、以下の例を参照してください。  [Dch の汎用ドライバーのサンプル](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)で拡張機能の inf を使用する方法については、「 [Dch 準拠のドライバーパッケージの例](../develop/dch-example.md)」も参照してください。
 
 次の図では、2つの異なる企業が同じデバイス用に個別のドライバーパッケージを作成しています。これらは点線で示されています。  最初のは拡張機能の INF のみを含み、2つ目の要素にはコンポーネント INF とレガシソフトウェアモジュールが含まれています。  また、この図は、拡張機能の INF がコンポーネント INF を参照する方法も示しています。これは、ソフトウェアモジュールを参照してインストールすることができます。
 
@@ -49,7 +51,7 @@ Windows 10 より前の Windows では、特定のデバイスにインストー
 
 ![基本 INF と拡張機能の Inf を選択する方法を示す図](images/extension-base-inf-example.png)
 
-**Extensionid**の値は中かっこで示され、各ドライバーの[ランク](how-setup-ranks-drivers--windows-vista-and-later-.md)はバナーリボンに表示されます。
+**Extensionid**値 `{A}` 、 `{B}` 、および `{C}` は中かっこで示され、各ドライバーの[ランク](how-setup-ranks-drivers--windows-vista-and-later-.md)はバナーリボンに表示されます。
 
 最初に、システムは最新のバージョンとランクが最も高いドライバーを選択します。
 
@@ -98,7 +100,7 @@ INF を拡張機能の INF として定義するために必要なエントリ�
 
 5.  でサービスを定義しないで `SPSVCINST_ASSOCSERVICE` ください。  ただし、拡張機能の INF では、デバイスのフィルタードライバーなど、他のサービスを定義できます。  サービスの指定の詳細については、「 [**INF AddService ディレクティブ**](inf-addservice-directive.md)」を参照してください。
 
-ほとんどの場合、基本ドライバーパッケージとは別に、拡張機能の INF パッケージをハードウェアデベロッパーセンターに送信します。  拡張機能の Inf をパッケージ化する方法の例と、サンプルコードへのリンクについては、「[ユニバーサルドライバーのシナリオ](../develop/universal-driver-scenarios.md)」を参照してください。
+ほとんどの場合、基本ドライバーパッケージとは別に、拡張機能の INF パッケージをハードウェアデベロッパーセンターに送信します。  拡張機能の Inf のパッケージ化方法の例と、サンプルコードへのリンクについては、「 [Dch 準拠のドライバーパッケージの例](../develop/dch-example.md)」を参照してください。
 
 ドライバーの検証と送信のプロセスは、通常の Inf と同様に拡張機能の Inf と同じです。 詳細については、「 [WINDOWS HLK はじめに](https://docs.microsoft.com/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)」を参照してください。
 
@@ -230,7 +232,7 @@ OsrFx2.ExtensionDesc = "OsrFx2 DCHU Device Extension"
 REG_EXPAND_SZ = 0x00020000
 FLG_ADDREG_KEYONLY = 0x00000010
 ```
-拡張機能 INF を使用してフィルタードライバーをインストールするには、[このページ](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)を参照してください。拡張機能 inf を使用してフィルタードライバーを適切に登録する方法について説明しています。
+拡張機能 INF を使用してフィルタードライバーをインストールする方法の詳細については、「[デバイスフィルタードライバーの順序](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)」を参照してください。
 
 ##  <a name="submitting-an-extension-inf-for-certification"></a>認定のために拡張機能の INF を送信する
 
@@ -238,7 +240,8 @@ FLG_ADDREG_KEYONLY = 0x00000010
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ユニバーサル ドライバーのシナリオ](../develop/universal-driver-scenarios.md)
+* [パートナー センターでの拡張 INF の使用](../dashboard/submit-dashboard-extension-inf-files.md)
+* [DCH 準拠のドライバー パッケージの例](../develop/dch-example.md)
 * [ユニバーサル INF ファイルの使用](using-a-universal-inf-file.md)
-* [Windows ドライバーでのはじめに](../develop/getting-started-with-windows-drivers.md)
+* [Windows ドライバーの概要](../develop/getting-started-with-windows-drivers.md)
 * [ユニバーサルドライバー用ドライバーパッケージインストールツールキット](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/DCHU)
