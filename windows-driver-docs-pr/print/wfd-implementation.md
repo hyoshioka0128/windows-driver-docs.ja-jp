@@ -1,330 +1,168 @@
 ---
-title: Wi-Fi Direct 印刷の実装
-description: Wi-Fi Direct 印刷の実装のデバイスの要件についてを説明します。
+title: Wi-fi Direct 印刷の実装
+description: Wi-fi Direct 印刷実装のデバイス要件について説明します。
 ms.assetid: 03266F8F-4C91-49E7-9CAF-2D08AF5E3E18
-ms.date: 01/30/2018
+ms.date: 06/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16381bee107e988684373adb4b147d27634f98cd
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e1ced3a6dbd2f9371aac25c37f3992448c1b7f5a
+ms.sourcegitcommit: 77c63789350cfc1dc740baaafdef64803d86217f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387186"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84793750"
 ---
-# <a name="wi-fi-direct-printing-implementation"></a>Wi-Fi Direct 印刷の実装
-
+# <a name="wi-fi-direct-printing-implementation"></a>Wi-fi Direct 印刷の実装
 
 ## <a name="device-requirements"></a>デバイスの要件
 
+「 [Wi-fi Direct 印刷の概要](wfd-overview.md)」で説明されているように、デバイスがシームレスな接続性を実現するには、デバイスが次の要件を満たしている必要があります。
 
-」の説明に従って、シームレスな接続エクスペリエンスを取得する WFD WSD デバイスを[Wi-Fi Direct 印刷の概要](wfd-overview.md)、デバイスが、次の要件に準拠するには。
+- デバイスは、縦方向のペアリングをサポートし、関連する DPWS (WSD) データを WPS メッセージに送信する必要があります (以下の「垂直方向のペアリングデータ Blob の実装」で説明されている形式)。
 
--   デバイスが垂直方向のペアをサポートし、WPS メッセージ ("を実装する垂直ペアリング データ Blob"以下で説明されている形式) で関連する DPWS (WSD) データを送信する必要があります。
--   すべての論理デバイスを物理デバイスでは、PNP-X 対応の拡張機能内 PNP-X 対応のコンテナーと同じ ID を使用する必要があります。
-    -   PNP-X 対応のコンテナーの Id のネットワーク接続されているデバイスの実装の詳細については、次を参照してください。[コンテナー Id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)します。
-    -   PNP-X 対応の拡張機能の概要については、次を参照してください、 [PnP-x:。プラグ アンド プレイ Extensions for Windows 仕様](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))します。
+- 物理デバイス内のすべての論理デバイスは、PnP-X 拡張機能で同じ Pnp-x コンテナー ID を使用する必要があります。
 
-WFD コンテナー ID は、プリンターの UUID を照合するため、PNP-X 対応のコンテナーの ID は、デバイスのメタデータでは必要ありません。 ただし、デバイスがデバイス メタデータを PNP-X 対応のメタデータをサポートし、PNP-X 対応のコンテナー ID をデバイスのメタデータで PNP-X 対応のメタデータの一部として提供することをまだお勧めします。 このコンテナーの ID が、WFD コンテナーの ID と一致する必要があります。
+  - ネットワークに接続されたデバイスの PnP X コンテナー Id の実装の詳細については、「[コンテナー id の概要](https://docs.microsoft.com/windows-hardware/drivers/install/overview-of-container-ids)」を参照してください。
 
-WFD レイヤーと WSD のレイヤーで同じコンテナー ID を持つことにより、次の。
+  - PnP X の拡張機能に関する一般的な情報については、「 [pnp-x: プラグアンドプレイ extensions For Windows Specification](https://docs.microsoft.com/previous-versions/gg463082(v=msdn.10))」を参照してください。
 
--   ペアリングの UI では、複数の論理デバイスが 1 つの物理デバイスで共存させるしより論理的でユーザーのペアリング処理など、デバイスを追加ウィザードを理解することができます。 (例: ユーザーが持っていない WFD と別の操作で手動での印刷デバイスをペアリングします。)
--   デバイスとプリンターは、(WFD devnode の 1 つのセット) と 1 つの WSD devnode 一連のシステムにインストールされている devnode の 2 つのセットがある場合でも、デバイスの 1 つのデバイスのアイコンを表示することができます。
--   その適切なコンテナー ID の実装が正常に実行する Windows ハードウェア認定キット テストに必要なに注意してください。 不適切な実装には、各論理デバイスを別の物理デバイスとして認識するテストが発生します。
+WFD コンテナー ID はプリンターの UUID と一致するので、デバイスメタデータには、PnP X コンテナー ID は必要ありません。 ただし、デバイスがデバイスメタデータ内の PnP-X メタデータをサポートし、デバイスメタデータの Pnp-x メタデータの一部として Pnp-x コンテナー ID を提供することをお勧めします。 このコンテナー ID は、WFD コンテナー ID と一致している必要があります。
 
-WFD WSD デバイスは、上記の要件に準拠していませんが、これらのデバイスにこの実装で説明されている接続性は適用されません。
+WFD レイヤーおよび WSD レイヤーで同じコンテナー ID を持つと、次のことが保証されます。
 
-デバイスがで指定されている永続的なグループと同時実行の接続-複数のグループを実装する必要があります、 [Wi-fi Alliance - Wi-Fi Direct 業界に関するホワイト ペーパー](https://go.microsoft.com/fwlink/p/?LinkId=784967)します。
+- デバイスの追加ウィザードなどの組み合わせ UI を使用すると、複数の論理デバイスが1つの物理デバイスに共存していることを認識し、より論理的な方法でペアリングを処理することができます。 (たとえば、ユーザーが別の操作で WFD デバイスと印刷デバイスを手動でペアリングする必要はありません)。
 
-## <a name="how-to-publish-container-uuid-over-wi-fi-direct-for-printers"></a>プリンターの Wi-Fi Direct 経由で UUID のコンテナーを発行する方法
+- 2つの devnodes がシステムにインストールされている場合でも、デバイス & プリンターでは、デバイスの1つのデバイスアイコンを表示できます (1 セットの WFD devnodes と1セットの WSD devnodes)。
 
+- Windows ハードウェア認定キットのテストを正しく実行するには、適切なコンテナー ID を実装する必要があることに注意してください。 不適切な実装の場合、テストでは各論理デバイスが個別の物理デバイスとして認識されます。
 
-Windows Wi-fi Alliance"Wi Fi ピア-ツー ピア (P2P) Specification v1.1"あたりの要求/プローブ応答を使用して Wi-Fi Direct 経由でプリンターを検出するセクション 3.1.2.1.2 (スキャン フェーズ)。 デバイス、プリンターここでは、返信、適切なプローブ要求/応答フレームを使用して PC に。
+WFD WSD デバイスが上記の要件に準拠していない場合、この実装で説明されている接続エクスペリエンスは、これらのデバイスに適用されません。
 
-カスタム i を使用して、両方のプローブ要求とプローブ応答フレームを拡張できます。 Microsoft では、さまざまな拡張機能を有効にするいくつかの属性を持つカスタム IE を定義します。
+デバイスは、wi-fi[アライアンス-Wi-fi Direct 業界のホワイトペーパー](https://www.wi-fi.org)に記載されているように、永続的なグループと同時接続を実装する必要があります。
 
-**Microsoft の 802.11 カスタム IE を構築する方法**
+## <a name="how-to-publish-container-uuid-over-wi-fi-direct-for-printers"></a>プリンター用の Wi-fi ダイレクトを使用してコンテナーの UUID を公開する方法
 
-カスタム IE は、ベンダーの ID と仕入先データで構成されます。
+Windows では、wi-fi アライアンス "Wi-fi ピアツーピア (P2P) Specification v1.1" セクション 3.1.2.1.2 (スキャンフェーズ) ごとに、プローブ要求/応答を使用して Wi-fi ダイレクトでプリンタを検出します。 デバイス (この場合は Printer) は、適切なプローブ要求/応答フレームを使用して PC に応答します。
 
-![wfd ベンダー拡張機能](images/wfd-customie.png)
+プローブ要求 & プローブ応答フレームは、どちらもカスタムを使用して拡張できます。 Microsoft では、さまざまな拡張機能を有効にするために、いくつかの属性を持つカスタム IE を定義しています。
 
-*WFD ベンダー拡張機能*
+### <a name="how-to-construct-a-microsoft-80211-custom-ie-for-container-uuid"></a>コンテナー UUID 用の Microsoft 802.11 カスタム IE を構築する方法
 
-Microsoft では、仕入先 ID 0x137 を使用して、Microsoft によって所有されている IEs を表します。 各仕入先のベンダー拡張機能内にある仕入先データ ブロックには、仕入先を定義するデータの任意のブロックが含まれています。 仕入先データは、Microsoft のベンダー拡張機能から成る 1 つまたは複数の型の値の長さ (TLV) 構造体のブロックします。 TLV 構造体の組織は、図の下に表示されます。
+カスタム IE は、次の WFD ベンダ拡張機能の図に示すように、ベンダー ID & ベンダデータで構成されています。
 
-![wfd 仕入先データ](images/wfd-vendordatatlv.png)
+![wfd ベンダ拡張機能](images/wfd-customie.png)
 
-*WFD 仕入先データ*
+Microsoft は、ベンダー ID 0x137 を使用して、Microsoft が所有しているものを表します。 各ベンダーのベンダーの拡張機能に含まれるベンダーデータブロックには、ベンダーが定義する任意のデータブロックが含まれています。 Microsoft ベンダ拡張機能のベンダーデータブロックは、1つまたは複数の型の長さの値 (TLV) 構造で構成されています。 TLV 構造体の編成については、次の*WFD ベンダデータ*の図を参照してください。
 
-**コンテナーの UUID の TLV 定義**
+![wfd ベンダデータ](images/wfd-vendordatatlv.png)
 
-含まれる ID に関連する 2 つの TLVs があります。 デバイスには、その Windows 送信「属性の要求」があるし、"コンテナーの UUID"で、デバイスが応答 TLV があります。
+### <a name="tlv-definition-for-container-uuid"></a>コンテナー UUID の TLV 定義
+
+含まれている ID に関連する TLVs が2つあります。 Windows が & デバイスに送信する "属性の要求" には、デバイスが応答する "コンテナー UUID" TLV があります。
 
 定義:
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>名前/説明</th>
-<th>型 (2 バイト)</th>
-<th>長さ (2 バイト)</th>
-<th>(長さによって定義された) 値</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>(これは送信要求プローブで PC が探索時に) Microsoft 属性の要求</p></td>
-<td><p>0x1005</p></td>
-<td><p>0x0002</p></td>
-<td><p>0x0001 = Microsoft が含まれている UUID を要求します。</p></td>
-</tr>
-<tr class="even">
-<td><p>コンテナーの UUID (これは、プリンターで送信番目のプローブ応答探索中に)</p></td>
-<td><p>0x1006</p></td>
-<td><p>0x0010</p></td>
-<td><p>プリンターで定義するには</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-## <a name="implementing-vertical-pairing-data-blob"></a>ペアリングの垂直方向のデータ Blob を実装します。
-
-
-垂直方向のペアのデータ Blob は、pc で、プリンターに接続する前に、WSD 印刷サービスを理解できます。 このメカニズムは Wi-Fi Direct のサービスの discovery 仕様が書き込まれる前に実装されているサービスの検出の単純な代替です。
-
-コンテナー UUID のようにペアリングの垂直方向のデータ Blob も Microsoft IE の属性です。 コンテナー ID 属性とは異なりこのする必要がありますでパブリッシュするか M7/M8 WPS メッセージ (Wi-Fi Direct ペアリング) 中の役割に応じてデバイスから。
-
-**Microsoft の 802.11 カスタム IE を構築する方法**
-
-カスタム IE は、ベンダーの ID と仕入先データで構成されます。
-
-![wfd ベンダー拡張機能](images/wfd-customie.png)
-
-*WFD ベンダー拡張機能*
-
-Microsoft では、仕入先 ID 0x137 を使用して、Microsoft によって所有されている IEs を表します。 各仕入先のベンダー拡張機能内にある仕入先データ ブロックには、仕入先を定義するデータの任意のブロックが含まれています。 仕入先データは、Microsoft のベンダー拡張機能から成る 1 つまたは複数の型の値の長さ (TLV) 構造体のブロックします。 TLV 構造体の組織は、次の図に示されます。
-
-![wfd 仕入先データ](images/wfd-vendordatatlv.png)
-
-*WFD 仕入先データ*
-
-**垂直方向のペアの Blob の TLV 定義**
-
-垂直方向のペアリングを Rally の 2 つの特定 TLV 型が定義されます。 これらの TLV 型は、次の表に一覧表示されます。
-
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>名前/説明</th>
-<th>型 (2 バイト)</th>
-<th>長さ (2 バイト)</th>
-<th>(長さによって定義された) 値</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>垂直方向のペアの識別子 (デバイスの内部のトポロジは、通信)</p></td>
-<td><p>0x1001</p></td>
-<td><p>0x0002</p></td>
-<td><p>以下は、"垂直方向のペアリング識別子 TLV"を参照してください。</p></td>
-</tr>
-<tr class="even">
-<td><p>トランスポート UUID (デバイスのトランスポート UUID 値)</p></td>
-<td><p>0x1002</p></td>
-<td><p>0x0010</p></td>
-<td><p>上記の「UUID のコンテナーの TLV 定義」を参照してください。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-*垂直 TLVs のペアリングを rally*
-**識別子 TLV の垂直方向のペアリング**
-
-垂直方向のペアリング識別子 (VPI) TLV は、Windows がデバイスのサービスと通信する方法を指定します。 デバイスの内部トポロジを通信します。 垂直方向のペアは、デバイスでは実装されていない場合でも、垂直方向のペアリングを Rally 拡張機能をサポートするために少なくとも 1 つ VPI が必要です。 このような状況で、VPI はトランスポートが使用しないことを指定します。 VPI TLV は、WPS M1 メッセージで Microsoft のベンダー拡張機能の一部として送信する必要があります。
-
-VPI TLV に含まれているデータは 2 バイト長であり、2 つの異なるフィールドで構成されます。 トランスポート フィールドとプロファイル要求フィールド、(各フィールドは 1 バイト長) 次の図のようにします。
-
-![vpi tlv に含まれている wfd データ](images/wfd-vpi.png)
-
-*VPI TLV に含まれている WFD データ*
-
-**VPI トランスポート フィールド**
-
-トランスポート フィールドには、Windows は、デバイスとの通信に使用できるトランスポートを指定します。 VPI ごとに 1 つだけのトランスポートを指定できます。 デバイスは、PNP-X 対応の複数のトランスポートをサポートする場合に、Microsoft のベンダー拡張機能 (1 つの各トランスポートの) 複数の VPI TLVs を含めることでこの通信できます。 VPI トランスポート フィールドの有効な値は、次の表に表示されます。
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>[値]</th>
-<th>[トランスポート]</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0x00</p></td>
-<td><p>なし</p></td>
-</tr>
-<tr class="even">
-<td><p>0x01</p></td>
-<td><p>DPWS</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x02</p></td>
-<td><p>UPnP</p></td>
-</tr>
-<tr class="even">
-<td><p>0x03</p></td>
-<td><p>セキュリティで保護された DPWS</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x04-0 xff の場合</p></td>
-<td><p>予約済み</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-*VPI トランスポート フィールドの値*
-
-**注**  Windows 7 は、両方は必要ありませんが、DPWS (0x01) または Secure DPWS (0x03) のサポートを提供します。
-
- 
+| 名前/説明 | 型 (2 バイト) | 長さ (2 バイト) | 値 (長さで定義) |
+|--|--|--|--|
+| Microsoft 属性 (検出中にプローブ要求で PC によって送信されます) の要求 | 0x1005 | 0x0002 | 0x0001 = Microsoft は含まれている UUID を要求しています |
+| コンテナー UUID (検出中にプローブ応答でプリンタによって送信されます) | 0x1006 | 0x0010 | プリンターで定義するには |
 
-**注**  デバイスが垂直方向のペアリングを Rally を実装していない場合は、0x00 (なし) のトランスポート値を持つ 1 つだけ VPI が指定する必要があります。 このような状況で、デバイスでは、トランスポートの UUID TLV は指定しないでください。 デバイスとペアリングする期待する必要がありますいないを Windows に通知します。 したがって、Windows は、事前がデバイスの Wi-fi 設定を構成する間に、デバイスとペアリングには試行されません。
+## <a name="implementing-vertical-pairing-data-blob"></a>垂直方向のペアリングデータ Blob の実装
 
- 
+垂直方向のペアリングデータ Blob を使用すると、PC はプリンターに接続する前に WSD 印刷サービスを理解できます。 このメカニズムは、Wi-fi Direct のサービス検出仕様が書き込まれる前に実装された、サービス検索の簡単な代替手段です。
 
-**VPI プロファイル要求 フィールド**
+コンテナー UUID と同様に、垂直ペアリングデータ Blob も Microsoft IE の属性です。 コンテナー ID 属性とは異なり、この属性は、その役割に応じて、デバイスから M7/M8 WPS メッセージ (Wi-fi Direct ペアリング中) に発行する必要があります。
 
-VPI は WPS プロトコルを使用して、デバイスのサービスをプロビジョニングするデバイスを使用できます。 このような状況で、Windows その情報を送信、サービスを構成するデバイスのサービスを要求できます。 この情報は、プロファイルと呼ばれます。 VPI の 2 番目のフィールドでは、デバイスが、Windows 送信プロファイルを要求するかどうかを指定します。 VPI プロファイル要求 フィールドの有効な値は、次の表に表示されます。
+### <a name="how-to-construct-a-microsoft-80211-custom-ie-for-vertical-pairing"></a>垂直方向のペアリング用に Microsoft 802.11 カスタム IE を構築する方法
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>値</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0x01</p></td>
-<td><p>Wi-fi プロファイルが要求されました。 これは、Windows 7 で現在サポートされている唯一の値です。</p></td>
-</tr>
-<tr class="even">
-<td><p>0x00, 0x02 – 0 xff の場合</p></td>
-<td><p>予約済み</p></td>
-</tr>
-</tbody>
-</table>
+カスタム IE は、次の WFD ベンダ拡張機能の図に示すように、ベンダー ID & ベンダデータで構成されています。
 
- 
+![wfd ベンダ拡張機能](images/wfd-customie.png)
 
-*VPI プロファイル要求 フィールドの値*
+Microsoft は、ベンダー ID 0x137 を使用して、Microsoft が所有しているものを表します。 各ベンダーのベンダーの拡張機能に含まれるベンダーデータブロックには、ベンダーが定義する任意のデータブロックが含まれています。 Microsoft ベンダ拡張機能のベンダーデータブロックは、1つまたは複数の型の長さの値 (TLV) 構造で構成されています。 TLV 構造体の編成については、次の WFD ベンダデータの図を参照してください。
 
-**注**  0x00 のフィールドの値を VPI プロファイル要求では、Windows 7 で現在サポートされていないために予約されていると見なされます。 VPI プロファイル要求 フィールドは 0x01 (Wi-fi プロファイルの要求) の値にのみ設定する必要があります、トランスポートの場合であっても 0x00 (なし) の値が指定されています。
+![wfd ベンダデータ](images/wfd-vendordatatlv.png)
 
- 
+### <a name="tlv-definition-for-vertical-pairing-blob"></a>垂直方向のペアリング Blob の TLV 定義
 
-**トランスポート UUID TLV**
+2つの特定の TLV の種類が、集結の垂直方向のペアリング用に定義されています。 これらの TLV の種類を次の表に示します。
 
-トランスポートの UUID TLV は、特定のトランスポートを使用している (DPWS または UPnP) に WPS UUID と異なる基本 UUID 値を指定します。 トランスポートの UUID TLV は省略可能です。 トランスポートの UUID TLV が含まれていない場合、WPS UUID は、指定されたトランスポートの id を形成に使用されます。
+| 名前/説明 | 型 (2 バイト) | 長さ (2 バイト) | 値 (長さで定義) |
+|--|--|--|--|
+| 垂直方向のペアリング識別子 (デバイスの内部トポロジを通信します) | 0x1001 | 0x0002 | 下の「垂直方向のペアリング識別子 TLV」を参照してください。 |
+| トランスポート UUID (デバイスのトランスポート UUID 値) | 0x1002 | 0x0010 | 上の「コンテナー UUID の TLV 定義」を参照してください。 |
 
-トランスポートの UUID TLV が含まれる場合は、トランスポートを識別する VPI TLV の直後に、必要があります。 1 つ以上の VPI TLV が含まれる場合は、トランスポートの UUID TLV できます各 VPI TLV 後。
+### <a name="vertical-pairing-identifier-tlv"></a>垂直方向のペアリング識別子 TLV
 
-**注**  トランスポート UUID TLV データ値がネットワークのバイト順である必要があります。
+TLV は、デバイスの内部トポロジを通信します。これは、Windows がデバイスのサービスと通信する方法を指定します。 デバイスに垂直方向のペアリングが実装されていない場合でも、1つ以上の VPI が集結方向のペアリング拡張機能をサポートするために必要です。 このような状況では、VPI はトランスポートが使用されないことを指定します。 VPI TLV は、WPS M1 メッセージで Microsoft ベンダ拡張機能の一部として送信される必要があります。
 
- 
+VPI TLV に含まれるデータは2バイト長で、次の2つのフィールドで構成されています。これは、VPI TLV に含まれる WFD データの次の図に示すように、トランスポートフィールドとプロファイル要求フィールドです (各フィールドは1バイト長です)。
 
-**注**  デバイスは、0x00 (なし) の VPI トランスポートの値を指定する場合もトランスポート UUID の TLV が含まれません。
+![vpi tlv に含まれる wfd データ](images/wfd-vpi.png)
 
- 
+### <a name="vpi-transport-field"></a>VPI TRANSPORT フィールド
 
-## <a name="wps-example"></a>WPS 例
+トランスポートフィールドは、Windows がデバイスとの通信に使用できるトランスポートを指定します。 各 VPI に指定できるトランスポートは1つだけです。 デバイスが複数の PnP-X トランスポートをサポートしている場合は、Microsoft ベンダ拡張機能に複数の VPI TLVs (トランスポートごとに1つ) を含めることで、このような通信を行うことができます。 次の表に、"VPI Transport" フィールドの有効な値を示します。
 
+| 値 | トランスポート |
+|--|--|
+| 0x00 | None |
+| 0x01 | DPWS |
+| 0x02 | UPnP |
+| 0x03 | セキュリティで保護された DPWS |
+| 0x04 ~ 0xFF | 予約されています。 |
 
-この例では、プリンター デバイスが DPWS を使用し、WS 印刷インターフェイスを実装するいると仮定します。 デバイスは、次の表で UUID 値を使用します。
+> [!NOTE]
+> Windows 7 では DPWS (0x01) またはセキュア DPWS (0x03) がサポートされていますが、両方はサポートされていません。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>サービス</th>
-<th>同一。</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>WPS</p></td>
-<td><p>ec742c0d-5915-4bcb-b969-008132afec5e</p></td>
-</tr>
-<tr class="even">
-<td><p>DPWS 印刷</p></td>
-<td><p>urn:uuid:00010203-0405-0607-0809-0a0b0c0e0e0f</p></td>
-</tr>
-</tbody>
-</table>
+デバイスが集結垂直ペアリングを実装していない場合、トランスポート値が 0x00 (なし) の VPI を1つだけ指定する必要があります。 このような状況では、デバイスでトランスポート UUID TLV を指定しないでください。 これは、デバイスとのペアリングを想定していないことを Windows に通知します。 そのため、デバイスの Wi-fi 設定を構成するときに、Windows はデバイスとの事前ペアリングを試行しません。
 
- 
+### <a name="vpi-profile-request-field"></a>VPI PROFILE 要求フィールド
 
-*WPS 例: UUID の値をサービス*
+VPI は、デバイスが WPS プロトコルを使用してデバイスのサービスをプロビジョニングできるようにします。 このような状況では、デバイスサービスは、サービスを構成するために Windows に情報を送信するように要求できます。 この情報は、プロファイルと呼ばれます。 VPI の2番目のフィールドは、デバイスが Windows にプロファイルを送信するように要求しているかどうかを指定します。 次の表に、[VPI Profile 要求] フィールドの有効な値を示します。
 
-**注**  UUID の値はすべて小文字で指定し、DPWS id の文字列形式の urn: uuid:uuid を使用して\_値。
+| 値 | 説明 |
+|--|--|
+| 0x01 | Wi-fi プロファイルが要求されました。 これは、現在 Windows 7 でサポートされている唯一の値です。 |
+| 0x00、0x02 –0xFF | 予約されています。 |
 
- 
+現在 Windows 7 ではサポートされていないため、VPI Profile 要求フィールドの値0x00 は予約済みと見なされます。 トランスポートに値 0x00 (none) が指定されている場合でも、VPI Profile 要求フィールドは、0x01 (Wi-fi プロファイルが要求される) 値にのみ設定する必要があります。
 
-**注**  この例では、UUID 値は、架空のものし、実際のデバイスでは使用する必要があります。
+### <a name="transport-uuid-tlv"></a>トランスポート UUID TLV
 
- 
+トランスポート UUID TLV は、特定のトランスポート (DPWS または UPnP) が、WPS UUID とは異なるベース UUID 値を持つことを指定します。 トランスポート UUID TLV は省略可能です。 トランスポート UUID TLV が含まれていない場合、指定されたトランスポートの id を形成するために、WPS UUID が使用されます。
 
-デバイスは、その WPS M7/M8 メッセージを送信するとき、次の図に表示される Microsoft のベンダー拡張機能が含まれています。
+トランスポート UUID TLV が含まれている場合は、トランスポートを識別する VPI TLV の直後にある必要があります。 複数の VPI TLV が含まれている場合は、各 VPI TLV の後にトランスポート UUID TLV を含めることができます。
 
-![例 wfd ベンダー拡張機能の詳細](images/wfd-vendorextensiondetails.png)
+トランスポート UUID TLV のデータ値は、ネットワークのバイト順にする必要があります。
 
-*例 WFD ベンダー拡張機能の詳細*
+デバイスで、VPI Transport 値 0x00 (none) が指定されている場合、トランスポート UUID TLV を含めないでください。
 
-この例では、ベンダー拡張機能には、0x137 で、Microsoft のベンダー拡張機能として識別のベンダー ID 値が含まれています。 ベンダ拡張の仕入先データ フィールド内で、2 つの TLV 構造です。
+## <a name="wps-example"></a>WPS の例
 
-最初の TLV は、0x1001、として、VPI TLV を識別するの型の値を持ちます。 最初の TLV 内のデータの長さは 0x0101 の値を含む 2 バイトです。 これは、デバイスが DPWS トランスポート (0x01) をサポートしていると、プロファイル (0x01) を要求していることを指定します。
+この例では、プリンターデバイスが DPWS を使用し、WS Print インターフェイスを実装しているものとします。 デバイスは、次の表に示す UUID 値を使用します。
 
-2 番目の TLV は、トランスポート UUID として TLV を識別する、0x1002 の型値を持ちます。 2 番目の TLV 内のデータの長さは、UUID 値 00010203-0405-0607-0809-0a0b0c0e0e0f のバイナリ バージョンが含まれている 16 バイトです。
+| サービス | ID |
+|--|--|
+| WPS | ec742c0d-5915-4bcb-b969-008132afec5e |
+| DPWS 印刷 | urn: uuid: 00010203-0405-0607-0809-0a0b0c0e0e0f |
 
-顧客は、垂直方向にプリンターをペア、ときに Windows をデバイスの Wi-fi ラジオ適切な設定で最初に構成します。 また、UUID 値の指定されたトランスポートを使用して、DPWS デバイスしペアします。
+### <a name="wps-exampleservice-uuid-values"></a>WPS の例—サービス UUID の値
 
-デバイスが Wi-fi ネットワークに接続するし、その DPWS サービスを発表、Windows は PnP デバイスの適切なノードを作成およびインストールし、適切なドライバーを読み込みます。
+UUID 値はすべて小文字で指定され、DPWS id 文字列は urn: uuid: uuid 値の形式を使用し \_ ます。
 
- 
+> [!NOTE]
+> この例の UUID 値は架空のものであり、実際のデバイスでは使用できません。
 
- 
+デバイスが WPS M7/M8 メッセージを送信すると、次の WFD ベンダ拡張機能の詳細の例に示されている Microsoft ベンダーの拡張機能が含まれます。
 
+![wfd ベンダ拡張機能の詳細の例](images/wfd-vendorextensiondetails.png)
 
+この例では、vendor 拡張機能にベンダー ID 値0x137 が含まれています。これにより、Microsoft vendor 拡張機能として識別されます。 Vendor 拡張機能の vendor データフィールド内には、2つの TLV 構造体があります。
 
+最初の TLV の Type 値は0x1001 で、TLV は VPI として識別されます。 最初の TLV のデータの長さは2バイトで、値0x0101 を含みます。 これは、デバイスが DPWS transport (0x01) をサポートし、プロファイルを要求している (0x01) ことを指定します。
 
+2番目の TLV の Type 値は0x1002 で、TLV はトランスポート UUID として識別されます。 2番目の TLV のデータの長さは16バイトであり、これには UUID 値00010203-0405-0607-0809-0a0b0c0e0e0f のバイナリバージョンが含まれています。
+
+顧客がプリンターを縦に組み合わせている場合、Windows はまず、適切な設定を使用してデバイスの Wi-fi ラジオを構成します。 次に、指定されたトランスポート UUID 値を使用して、デバイスの DPWS デバイスをペアリングします。
+
+デバイスが Wi-fi ネットワークに接続し、その DPWS サービスを発表すると、Windows は適切な PnP デバイスノードを作成し、適切なドライバーをインストールして読み込みます。

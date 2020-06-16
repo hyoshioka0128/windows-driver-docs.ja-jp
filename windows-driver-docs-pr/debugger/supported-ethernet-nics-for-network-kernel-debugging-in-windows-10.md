@@ -2,14 +2,14 @@
 title: Windows 10 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
 description: ターゲットコンピューターで Windows を実行している場合は、イーサネットネットワークケーブルでカーネルデバッグを行うことができます。 ターゲットコンピューターには、サポートされているネットワークインターフェイスカード (NIC) またはネットワークアダプターが必要です。
 ms.assetid: F98A7ACE-DD04-423C-A438-89E21363C693
-ms.date: 06/01/2020
+ms.date: 06/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49cee589c33b008aae631ae853ea9ac30b6339c6
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: a44c6eebc06d394e034a352d8c86bd7f21a6b7d9
+ms.sourcegitcommit: d728d086444a8a820fb098df34414ccdb3f32100
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336391"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84784634"
 ---
 # <a name="supported-ethernet-nics-for-network-kernel-debugging-in-windows-10"></a>Windows 10 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
 
@@ -32,7 +32,7 @@ Windows の特定のリリースでサポートされている Nic のセット�
 
 `C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\VerifiedNicList.xml`
 
-特定のリリースに対して WDK に付属している VerifiedNicList を確認する必要があります。これは、以前のリリースには存在しない Windows の新しいリリースに追加のハードウェアサポートが追加されるためです。  そのため、その特定のリリースの VerifiedNicLIst ファイルを確認する必要があります。
+特定のリリースに対して WDK に同梱されている VerifiedNicList.xml を確認する必要があります。これは、以前のリリースには存在しない Windows の新しいリリースに追加のハードウェアサポートが追加されるためです。  そのため、その特定のリリースの VerifiedNicLIst.xml ファイルを確認する必要があります。
 
 ## <a name="finding-the-vendor-id-and-device-id"></a>ベンダー ID とデバイス ID の検索
 
@@ -61,7 +61,7 @@ Windows の特定のリリースでサポートされている Nic のセット�
 
 ベンダー ID 14E4 の場合、次のデバイス Id がサポートされています。
 
-1600 1601 1639 163A 163A 163A 163A 163A 1641 1642 1643 1644 1645 1646 1647 1648 164A 164A 164A 164A 164A 1650 1653 1654 1655 1656 1657 1659 163A 163A 163A 163A 163A 165F 1662 1663 1665 1668 1669 163A 163A 166D 166E 1672 1673 1674 1676 1677 1678 1679 163A 163A 163A 163A 163A 163A 168D 168E 1680 1681 1682 1683 1684 1686 1687 1688 1690 1691 1692 1693 1694 1696 1698 1699 169A 169B 169D 163A 163A 163A16A4 16A4 16A6 16A7 16A8 16A4 16A4 16A4 16A4 16B1 16B2 16B3 16A4 16A4 16A4 16B7 16A4 16C7 16A4 16F7 16A4 16A4 16A4 170D 170D 170D
+1600 1601 1614 1639 163A 163A 163A 163A 163A 1641 1642 1643 1644 1645 1646 1647 1648 164A 164A 164A 164A 164A 1650 1653 1654 1655 1656 1657 1659 163A 163A 163A 163A 163A 165F 1662 1663 1665 1668 1669 163A 163A 166D 166E 1672 1673 1674 1676 1677 1678 1679 163A 163A 16 168D 168E 169A 169D 163A 163A (&)16A2 16A2 16A2 16A6 16A7 16A8 16A2 16A2 16A2 16A2 16B1 16B2 16B3 16A2 16A2 16A2 16B7 16A2 16C7 16C9 16A2 16A2 16A2 16A2 1 16A2 16A2 16D6 16D7 16D8 16D9 16A2 16A2 16A2 16A2 16E3 16E4 16E9 16A2 16A2 16F7 16A2 16A2 16A2 170D 170D 170D D802
 
 ## <a name="vendor-id-1969-atheros-communications"></a>ベンダー ID 1969、Atheros Communications
 
