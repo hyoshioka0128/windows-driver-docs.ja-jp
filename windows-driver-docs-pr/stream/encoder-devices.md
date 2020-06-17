@@ -1,6 +1,6 @@
 ---
 title: エンコーダー デバイス
-description: エンコーダー デバイス
+description: エンコーダーデバイス
 ms.assetid: 156b1d6d-c6f6-4ab3-a91e-3124351c6ae5
 keywords:
 - エンコーダーデバイス WDK AVStream
@@ -13,22 +13,22 @@ keywords:
 - ハードウェアベースのエンコーダー WDK AVStream
 - 統合エンコーダー WDK AVStream
 - スタンドアロンエンコーダー WDK AVStream
-ms.date: 04/20/2017
+ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd748cf3209d28a4e23c072d46720ab058d1be3
-ms.sourcegitcommit: ba3199328ea5d80119eafc399dc989e11e7ae1d6
+ms.openlocfilehash: c4879b3fee037f88b4c3fb94663d0e012f1b1ee8
+ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74861840"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879040"
 ---
-# <a name="encoder-devices"></a>エンコーダー デバイス
+# <a name="encoder-devices"></a>エンコーダーデバイス
 
 エンコーダーは、非圧縮データストリーム (ビデオまたはオーディオ) を入力として受信し、ストリームを MPEG2 などの特定の形式にエンコードして、エンコードされたストリームを出力するデバイスです。 エンコーダーデバイスは、組み合わせたテレビチューナー/キャプチャアダプターなど、別のデバイスの一部である場合もあれば、独立している場合もあります。 たとえば、統合エンコーダーは、アナログテレビチューナー/デコーダーなどのキャプチャデバイスからデータストリームを受信し、エンコードされたストリームを生成します。 スタンドアロンエンコーダーは、圧縮されていないファイルから入力データを受け取り、データを処理して、エンコードされたデータを出力する場合があります。
 
 Microsoft では、DirectX 9.0 以降でのハードウェアベースのオーディオ/ビデオエンコーダーデバイスのサポートを提供しています。
 
-オーディオ/ビデオエンコーダーデバイスをサポートするには、カーネルストリーミングフィルターミニドライバーで Microsoft が定義したエンコーダーのプロパティのサポートを実装する必要があります。 エンコーダーのプロパティを実装することによって、既存のストリームクラスまたは AVStream ミニドライバーにサポートを追加できます。 また、新しいミニドライバー (スタンドアロンエンコーダーまたは統合されたエンコーダー用) を作成する場合は、ストリームクラスが互換性のために残されており、サポートされなくなったため、AVStream アーキテクチャに従うことをお勧めします。 Avstream のシミュレートされた[ハードウェアサンプルドライバー (Avshws)](https://go.microsoft.com/fwlink/p/?LinkId=618052)を出発点として使用することができます。 Avshws ドライバーは、DMA 転送のサポートを実装する、ピン中心の AVStream の例です。
+オーディオ/ビデオエンコーダーデバイスをサポートするには、カーネルストリーミングフィルターミニドライバーで Microsoft が定義したエンコーダーのプロパティのサポートを実装する必要があります。 エンコーダーのプロパティを実装することによって、既存のストリームクラスまたは AVStream ミニドライバーにサポートを追加できます。 また、新しいミニドライバー (スタンドアロンエンコーダーまたは統合されたエンコーダー用) を作成する場合は、ストリームクラスが互換性のために残されており、サポートされなくなったため、AVStream アーキテクチャに従うことをお勧めします。 Avstream のシミュレートされた[ハードウェアサンプルドライバー (Avshws)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)を出発点として使用することができます。 Avshws ドライバーは、DMA 転送のサポートを実装する、ピン中心の AVStream の例です。
 
 > [!NOTE]
 > ソフトウェアによって実装されたエンコーダーを作成する場合は、カーネルストリーミングフィルターとして記述しないでください。 代わりに、このようなフィルターは、Microsoft DirectShow フィルターまたは DirectX Media オブジェクトとして記述する必要があります。 ソフトウェアベースのエンコーダーの詳細については、DirectShow SDK のトピック「エンコーダー API」を参照してください。

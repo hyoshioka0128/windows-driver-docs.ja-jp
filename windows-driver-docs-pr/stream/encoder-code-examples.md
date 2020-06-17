@@ -16,27 +16,26 @@ keywords:
 - レジストリ WDK エンコーダー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f6b83cee8a47538019fbefe3cb244aab5a0e5c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 14b781f40bf5e1514701fd6e55c0af9c68b1e447
+ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843205"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879034"
 ---
 # <a name="encoder-code-examples"></a>エンコーダーのコード例
 
+次のコード例は、Avstream のシミュレートされた[ハードウェアサンプルドライバー (AVSHwS)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws/)に基づいています。 次のことを示します。
 
-次のコード例は、Avstream のシミュレートされた[ハードウェアサンプルドライバー (AVSHwS)](https://go.microsoft.com/fwlink/p/?linkid=256083)に基づいています。 次のことを示します。
+- エンコーダーでサポートされるビットレートを指定する方法
 
--   エンコーダーでサポートされるビットレートを指定する方法
+- エンコーダーでサポートされるビットレートエンコードモードを指定する方法
 
--   エンコーダーでサポートされるビットレートエンコードモードを指定する方法
+- エンコーダーデバイスの*デバイスパラメーター \\ 機能*のレジストリキーで、実行時にメタデータ値を指定する方法
 
--   エンコーダーデバイスの*デバイスパラメーター\\機能*のレジストリキーで実行時にメタデータ値を指定する方法
+## <a name="implementing-supported-bit-rates"></a>サポートされるビットレートの実装
 
-### <a name="implementing-supported-bit-rates"></a>**サポートされるビットレートの実装**
-
-次のコードスニペットは、 [Encapiparam\_ビットレート](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)プロパティのサポートを実装する方法を示しています。 Ksk プロパティを使用して、 [ **\_LONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)構造体をステップ実行\_、400 bps の下限と 400万 bps の上限を指定して、400ビット/秒 (bps) のステッピング粒度を指定します。
+次のコードスニペットは、 [Encapiparam \_ ビットレート](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate)プロパティのサポートを実装する方法を示しています。 [**Ksproperty \_ ステッピング \_ LONG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksproperty_stepping_long)構造体を使用して、400 bps の下限と 400万 bps の上限で400ビット/秒 (bps) のステッピング粒度を指定します。
 
 ```cpp
 const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
@@ -49,9 +48,9 @@ const KSPROPERTY_STEPPING_LONG BitRateRanges [] = {
 };
 ```
 
-GraphEdit などのツールでフィルターを右クリックしてエンコーダーフィルターのプロパティページにアクセスすると、これらの値が使用されている **ビットレート** スライダーバーが表示されます。
+[GraphEdit] などのツールでフィルターを右クリックしてエンコーダーフィルターのプロパティページにアクセスすると、これらの値が使用されている [**ビットレート**] スライダーバーが表示されます。
 
-次に、エンコーダーフィルターのインスタンスが作成されたときの既定のエンコードビットレートを指定します。 使用されるデータ型は、ENCAPIPARAM\_ビットレートプロパティに必要なプロパティ値の型に対応する ULONG です。 この値は、エンコーダーのプロパティページに表示される既定のエンコード "Bit Rate" です。
+次に、エンコーダーフィルターのインスタンスが作成されたときの既定のエンコードビットレートを指定します。 使用されるデータ型は、ENCAPIPARAM ビットレートプロパティに必要なプロパティ値の型に対応する ULONG です \_ 。 この値は、エンコーダーのプロパティページに表示される既定のエンコード "Bit Rate" です。
 
 ```cpp
 const ULONG BitRateValues [] = {
@@ -59,7 +58,7 @@ const ULONG BitRateValues [] = {
 };
 ```
 
-有効な範囲の一覧と、ENCAPIPARAM\_ビットレートプロパティの既定値を指定します。
+次のように、有効な範囲の一覧と ENCAPIPARAM ビットレートプロパティの既定値を指定し \_ ます。
 
 ```cpp
  const KSPROPERTY_MEMBERSLIST BitRateMembersList [] = {
@@ -96,7 +95,7 @@ const ULONG BitRateValues [] = {
 };
 ```
 
-ENCAPIPARAM\_ビットレートプロパティセットに定義されている1つのプロパティを指定します。
+ENCAPIPARAM ビットレートプロパティセットに定義されている1つのプロパティを指定し \_ ます。
 
 ```cpp
 DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
@@ -115,13 +114,12 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRate) {
 };
 ```
 
-*Get*プロパティハンドラーがエンコーディングビットレートを返し  、 *Set*プロパティハンドラーは、渡された入力値が有効であることをテストしてから使用する必要があることに**注意**してください。
+> [!NOTE]
+> *Get*プロパティハンドラーはエンコーディングビットレートを返し、 *Set*プロパティハンドラーは使用前に渡された入力値が有効であることをテストする必要があります。
 
- 
+## <a name="implementing-supported-encoding-bit-rate-modes"></a>サポートされているエンコードビットレートモードの実装
 
-### <a name="implementing-supported-encoding-bit-rate-modes"></a>**サポートされているエンコードビットレートモードの実装**
-
-次のコードスニペットは、 [Encapiparam\_ビットレート\_MODE](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)プロパティのサポートを実装する方法を示しています。
+次のコードスニペットは、 [Encapiparam \_ ビットレート \_ モード](https://docs.microsoft.com/windows-hardware/drivers/stream/encapiparam-bitrate-mode)プロパティのサポートを実装する方法を示しています。
 
 エンコーダーでサポートされているエンコードモードを定義します。
 
@@ -140,7 +138,7 @@ const VIDEOENCODER_BITRATE_MODE BitRateModeDefaultValues [] = {
 };
 ```
 
-ENCAPIPARAM\_ビットレート\_MODE プロパティの有効範囲と既定値の一覧を指定します。
+ENCAPIPARAM ビットレートモードプロパティの有効範囲と既定値の一覧を指定し \_ \_ ます。
 
 ```cpp
 const KSPROPERTY_MEMBERSLIST BitRateModeMembersList [] = {
@@ -175,7 +173,7 @@ const KSPROPERTY_VALUES BitRateModeValuesSet = {
 };
 ```
 
-ENCAPIPARAM\_ビットレート\_MODE プロパティセットに対して定義されている単一のプロパティを指定します。
+ENCAPIPARAM \_ ビットレートモードプロパティセットに定義されている1つのプロパティを指定し \_ ます。
 
 ```cpp
 DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
@@ -194,11 +192,10 @@ DEFINE_KSPROPERTY_TABLE(ENCAPI_BitRateMode) {
 };
 ```
 
-*Get*プロパティハンドラーがエンコーディングビットレートモードを返す必要がある  **ことに注意**してください。また、 *Set*プロパティハンドラーは、使用前に渡された入力値が有効であることをテストする必要があります。
+> [!NOTE]
+> *Get*プロパティハンドラーはエンコーディングビットレートモードを返す必要があります。また、 *Set*プロパティハンドラーは、渡された入力値が有効であることをテストしてから使用する必要があります。
 
- 
-
-次に、プロパティセットを[**Ksk フィルター\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造体のオートメーションテーブルとして指定します。
+次に、プロパティセットを[**Ksk フィルター \_ 記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_descriptor)構造体のオートメーションテーブルとして指定します。
 
 ```cpp
 DEFINE_KSPROPERTY_SET_TABLE(PropertyTable) {
@@ -224,8 +221,8 @@ DEFINE_KSAUTOMATION_TABLE(FilterTestTable) {
     DEFINE_KSAUTOMATION_EVENTS_NULL
 };
 
-const 
-KSFILTER_DESCRIPTOR 
+const
+KSFILTER_DESCRIPTOR
 FilterDescriptor = {
     ...,
     &FilterTestTable, // Automation Table
@@ -234,11 +231,12 @@ FilterDescriptor = {
 };
 ```
 
-### <a href="" id="specifying-the-encoder-s-capabilities-in-the-registry"></a>**レジストリでのエンコーダーの機能の指定**
+## <a name="specifying-the-encoders-capabilities-in-the-registry"></a>レジストリでのエンコーダーの機能の指定
 
 次のコードサンプルでは、*デバイスパラメーター*レジストリキーの下に*機能*のレジストリキーを作成する方法、および*機能*キーの下にサブキーと値を作成して指定する方法を示します。 ドライバーの初期化時に、このコードを実行します。
 
-**注:** 次のコードは、物理デバイスごとに1つのハードウェアエンコーダーが存在することを前提としています。 ハードウェアに複数のエンコーダーが含まれている場合は、 **Iogetdeviceinterfaces**関数の呼び出しで返されたリストを反復処理し、各エンコーダーの機能を登録する必要があります。
+> [!NOTE]
+> 次のコードは、物理デバイスごとに1つのハードウェアエンコーダーが存在することを前提としています。 ハードウェアに複数のエンコーダーが含まれている場合は、 **Iogetdeviceinterfaces**関数の呼び出しで返されたリストを反復処理し、各エンコーダーの機能を登録する必要があります。
 
 ```cpp
 /**************************************************************************
@@ -248,7 +246,7 @@ IN Pdo: PhysicalDeviceObject
 IN categoryGUID: Category GUID eg KSCATEGORY_CAPTURE
 
 1. Get Symbolic name for interface
-2. Open registry key for storing information about a 
+2. Open registry key for storing information about a
    particular device interface instance
 3. Create Capabilities key under "Device Parameters" key
 4. Create a DWORD value "TestCapValueDWORD" under Capabilities
@@ -260,9 +258,9 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
 {
 
     // 1. Get Symbolic name for interface
-    // pSymbolicNameList can contain multiple strings if pdo is NULL. 
-    // Driver should parse this list of string to get 
-    // the one corresponding to current device interface instance. 
+    // pSymbolicNameList can contain multiple strings if pdo is NULL.
+    // Driver should parse this list of string to get
+    // the one corresponding to current device interface instance.
     PWSTR  pSymbolicNameList = NULL;
 
     NTSTATUS ntStatus = IoGetDeviceInterfaces(
@@ -275,7 +273,7 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
         HANDLE hDeviceParametersKey = NULL;
         UNICODE_STRING symbolicName;
 
-        // 2. Open registry key for storing information about a 
+        // 2. Open registry key for storing information about a
         // particular device interface instance
         RtlInitUnicodeString(&symbolicName, pSymbolicNameList);
         ntStatus = IoOpenDeviceInterfaceRegistryKey(
@@ -286,7 +284,7 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
         {
             OBJECT_ATTRIBUTES objAttribSubKey;
             UNICODE_STRING subKey;
- 
+
             // 3. Create Capabilities key under "Device Parameters" key
             RtlInitUnicodeString(&subKey,L"Capabilities");
             InitializeObjectAttributes(&objAttribSubKey,
@@ -294,9 +292,9 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
                 OBJ_KERNEL_HANDLE,
                 hDeviceParametersKey,
                 NULL);
- 
+
             HANDLE hCapabilityKeyHandle = NULL;
- 
+
             ntStatus = ZwCreateKey(&hCapabilityKeyHandle,
                     KEY_READ|KEY_WRITE|KEY_SET_VALUE,
                     &objAttribSubKey,
@@ -308,12 +306,12 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
             {
                 OBJECT_ATTRIBUTES objAttribDwordKeyVal;
                 UNICODE_STRING subValDword;
- 
-                // 4. Create a DWORD value "TestCapValueDWORD" under Capabilities 
+
+                // 4. Create a DWORD value "TestCapValueDWORD" under Capabilities
                 RtlInitUnicodeString(&subValDword,L"TestCapValueDWORD");
- 
+
                 ULONG data = 0xaaaaaaaa;
- 
+
                 ntStatus = ZwSetValueKey(hCapabilityKeyHandle,&subValDword,0,REG_DWORD,&data,sizeof(ULONG));
                 ZwClose(hCapabilityKeyHandle);
             }
@@ -321,15 +319,7 @@ NTSTATUS CreateDwordValueInCapabilityRegistry(IN PDEVICE_OBJECT pdo, IN GUID cat
         ZwClose(hDeviceParametersKey);
         ExFreePool(pSymbolicNameList);
     }
- 
+
     return ntStatus;
 }
 ```
-
- 
-
- 
-
-
-
-
