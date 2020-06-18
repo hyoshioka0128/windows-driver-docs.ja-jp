@@ -250,6 +250,8 @@
       href: overview-of-windows-memory-space.md
     - name: システム領域メモリの割り当て
       href: allocating-system-space-memory.md
+    - name: POOL_FLAGS
+      href: pool_flags.md
     - name: レジスターのマッピング
       href: map-registers.md
     - name: バス相対アドレスの仮想アドレスへのマッピング
