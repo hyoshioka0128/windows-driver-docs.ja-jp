@@ -1,94 +1,80 @@
 ---
-title: PROPSETID\_VIDCAP\_CAMERACONTROL
-description: PROPSETID\_VIDCAP\_CAMERACONTROL
+title: PROPSETID \_ VIDCAP \_ CAMERACONTROL
+description: PROPSETID \_ VIDCAP \_ CAMERACONTROL
 ms.assetid: 8899a474-fa6f-4d5c-bd68-2433428bb5c5
 keywords:
 - KSPROPERTY_VIDCAP_CAMERACONTROL
-ms.date: 11/28/2017
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 87102b025557ca5069915795ba45a601e78d6afc
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9b08f2c802c26a96187a02b24dd3fee8e7e09ec3
+ms.sourcegitcommit: 31fa7dbbcd051d7ec1ea3e05a4c0340af9d3b8a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72823726"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073437"
 ---
-# <a name="propsetid_vidcap_cameracontrol"></a>PROPSETID\_VIDCAP\_CAMERACONTROL
+# <a name="propsetid_vidcap_cameracontrol"></a>PROPSETID \_ VIDCAP \_ CAMERACONTROL
 
+PROPSETID \_ VIDCAP \_ CAMERACONTROL プロパティセットは、カメラのデバイス設定を制御します。 このコントロールによって提供されるコントロールは、ITU-T 標準のサブセットです。
 
-## <span id="ddk_propsetid_vidcap_cameracontrol_ks"></span><span id="DDK_PROPSETID_VIDCAP_CAMERACONTROL_KS"></span>
+\_ \_ Ksproperty. h の ksk プロパティ VIDCAP CAMERACONTROL 列挙体は、このセットのプロパティを指定します。
 
-
-PROPSETID\_VIDCAP\_CAMERACONTROL プロパティセットは、カメラのデバイス設定を制御します。 このコントロールによって提供されるコントロールは、ITU-T 標準のサブセットです。
-
-Ksk プロパティ\_VIDCAP\_CAMERACONTROL 列挙体は、このセットのプロパティを指定します。
-
-このプロパティセットのサポートは省略可能であり、カメラコントロール設定を提供するデバイスのミニドライバーのみが実装する必要があります。 詳細については、 [ITU](https://go.microsoft.com/fwlink/p/?linkid=8741)の web サイトを参照してください。
+このプロパティセットのサポートは省略可能であり、カメラコントロール設定を提供するデバイスのミニドライバーのみが実装する必要があります。 詳細については、 [ITU](https://www.itu.int/)の web サイトを参照してください。
 
 USB ビデオクラスより前では、この列挙体には次のプロパティが含まれていました。
 
-[**KSK プロパティ\_CAMERACONTROL\_の公開**](ksproperty-cameracontrol-exposure.md)
+[**KSPROPERTY \_ CAMERACONTROL の \_ 公開**](ksproperty-cameracontrol-exposure.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_フォーカス**](ksproperty-cameracontrol-focus.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ フォーカス**](ksproperty-cameracontrol-focus.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_虹彩**](ksproperty-cameracontrol-iris.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ 虹彩**](ksproperty-cameracontrol-iris.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_ZOOM**](ksproperty-cameracontrol-zoom.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ ZOOM**](ksproperty-cameracontrol-zoom.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_PAN**](ksproperty-cameracontrol-pan.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ PAN**](ksproperty-cameracontrol-pan.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_ROLL**](ksproperty-cameracontrol-roll.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ ROLL**](ksproperty-cameracontrol-roll.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_チルト**](ksproperty-cameracontrol-tilt.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ 傾き**](ksproperty-cameracontrol-tilt.md)
 
-[USB ビデオクラスドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)の導入により、次のプロパティが ksk プロパティ\_VIDCAP\_CAMERACONTROL 列挙型に追加されました。 Windows Vista 以降のバージョンの Windows では、次のプロパティがサポートされています。
+[USB ビデオクラスドライバー](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver)の導入により、次のプロパティが ksk プロパティ \_ VIDCAP CAMERACONTROL 列挙に追加されました \_ 。
 
-[**KSPROPERTY\_CAMERACONTROL\_SCANMODE**](ksproperty-cameracontrol-scanmode.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ SCANMODE**](ksproperty-cameracontrol-scanmode.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_PRIVACY**](ksproperty-cameracontrol-privacy.md)
+[**KSK プロパティ \_ CAMERACONTROL の \_ プライバシー**](ksproperty-cameracontrol-privacy.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_PANTILT**](ksproperty-cameracontrol-pantilt.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ PANTILT**](ksproperty-cameracontrol-pantilt.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_パン\_相対**](ksproperty-cameracontrol-pan-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ パン \_ 相対**](ksproperty-cameracontrol-pan-relative.md)
 
-[**KSPROPERTY\_CAMERACONTROL\_傾き\_相対**](ksproperty-cameracontrol-tilt-relative.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ 傾き \_ 相対**](ksproperty-cameracontrol-tilt-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_ROLL\_相対**](ksproperty-cameracontrol-roll-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ ロール \_ 相対**](ksproperty-cameracontrol-roll-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_ZOOM\_相対**](ksproperty-cameracontrol-zoom-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ ZOOM \_ 相対値**](ksproperty-cameracontrol-zoom-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_露出\_相対的**](ksproperty-cameracontrol-exposure-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ 露出の \_ 相対値**](ksproperty-cameracontrol-exposure-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_虹彩\_相対**](ksproperty-cameracontrol-iris-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ 虹彩の \_ 相対値**](ksproperty-cameracontrol-iris-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_フォーカス\_相対**](ksproperty-cameracontrol-focus-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ の \_ 相対的なフォーカス**](ksproperty-cameracontrol-focus-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_PANTILT\_相対**](ksproperty-cameracontrol-pantilt-relative.md)
+[**KSK プロパティ \_ CAMERACONTROL \_ PANTILT \_ 相対値**](ksproperty-cameracontrol-pantilt-relative.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_焦点\_の長さ**](ksproperty-cameracontrol-focal-length.md)
+[**KSPROPERTY \_ CAMERACONTROL の \_ 焦点の \_ 長さ**](ksproperty-cameracontrol-focal-length.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_自動\_露出\_優先度**](ksproperty-cameracontrol-auto-exposure-priority.md)
+[**KSK プロパティ \_ CAMERACONTROL の \_ 自動 \_ 露出の \_ 優先度**](ksproperty-cameracontrol-auto-exposure-priority.md)
 
 DirectShow **IAMCameraControl**インターフェイス (Windows Software Development KIT (SDK) の Microsoft DirectShow ドキュメントを参照) は、このセットのプロパティへのアクセスを提供します。
 
-## <a name="span-idwindows_8_extended_camera_control_propertiesspanspan-idwindows_8_extended_camera_control_propertiesspanspan-idwindows_8_extended_camera_control_propertiesspanwindows8-extended-camera-control-properties"></a><span id="Windows_8_extended_camera_control_properties"></span><span id="windows_8_extended_camera_control_properties"></span><span id="WINDOWS_8_EXTENDED_CAMERA_CONTROL_PROPERTIES"></span>Windows 8 拡張カメラコントロールのプロパティ
-
+## <a name="windows8-extended-camera-control-properties"></a>Windows 8 拡張カメラコントロールのプロパティ
 
 Windows 8 以降では、ユーザーモードクライアントでカメラのコントロール設定を取得または設定するために、次の追加のプロパティがサポートされています。
 
-[**KSK プロパティ\_CAMERACONTROL\_FLASH\_プロパティ**](ksproperty-cameracontrol-flash-property.md)
+[**KSPROPERTY \_ CAMERACONTROL \_ FLASH \_ プロパティ**](ksproperty-cameracontrol-flash-property.md)
 
-[**KSK プロパティ\_CAMERACONTROL\_IMAGE\_PIN\_機能\_S**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s)
+[**KSPROPERTY \_ CAMERACONTROL \_ IMAGE \_ PIN \_ 機能 \_**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-ksproperty_cameracontrol_image_pin_capability_s)
 
-[**KSK プロパティ\_CAMERACONTROL\_REGION\_\_関心のある\_プロパティ**](ksproperty-cameracontrol-region-of-interest-property.md)
+[**関連する \_ \_ \_ プロパティの KSK \_ プロパティ CAMERACONTROL 領域 \_**](ksproperty-cameracontrol-region-of-interest-property.md)
 
-[**KSPROPERTY\_CAMERACONTROL\_VIDEO\_安定化\_MODE\_プロパティ**](ksproperty-cameracontrol-video-stabilization-mode-property.md)
-
- 
-
- 
-
-
-
-
-
+[**KSPROPERTY \_ CAMERACONTROL \_ VIDEO \_ 安定化 \_ MODE \_ プロパティ**](ksproperty-cameracontrol-video-stabilization-mode-property.md)

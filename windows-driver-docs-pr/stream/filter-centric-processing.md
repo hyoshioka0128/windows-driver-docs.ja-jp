@@ -7,40 +7,36 @@ keywords:
 - AVStream フィルター中心フィルター WDK
 - フィルターの種類 WDK AVStream
 - AVStrMiniFilterProcess
-ms.date: 04/20/2017
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 940ba2221c0e175bd4fd2713c25498a8908fc58e
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6da9748243c2c5a7eadc758afb34fe55d892a5fa
+ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72834401"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84992474"
 ---
 # <a name="filter-centric-processing"></a>フィルター中心の処理
 
+フィルター中心の処理を使用するフィルターでは、各ピンインスタンスで使用できるデータフレームがあるときに、AVStream はミニドライバーが提供する[*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンを呼び出します。 ミニドライバーは、 [**Kspin \_ 記述子 \_ EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**Flags**メンバーを設定することによって、この既定の動作を変更できます。
 
-
-
-
-フィルター中心の処理を使用するフィルターでは、各ピンインスタンスで使用できるデータフレームがあるときに、AVStream はミニドライバーが提供する[*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンを呼び出します。 ミニドライバーは、 [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**Flags**メンバーを設定することによって、この既定の動作を変更できます。
-
-フィルター中心の処理を実装するには、 [**Ksk フィルター\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_dispatch)構造体の**プロセス**メンバーで、ミニドライバーが提供する[*avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンへのポインターを指定します。 [**Kspin\_DISPATCH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)の**プロセス**メンバーを**NULL**に設定します。
+フィルター中心の処理を実装するには、 [**Ksk フィルター \_ ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksfilter_dispatch)構造体の**プロセス**メンバーで、ミニドライバーによって提供される[*avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンへのポインターを指定します。 [**Kspin \_ DISPATCH**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_dispatch)の**プロセス**メンバーを**NULL**に設定します。
 
 AVStream は、次のすべての条件が満たされた場合にのみ[*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)を呼び出します。
 
--   フレームは、処理のためにフレームを必要とするピンで使用できます。 ミニドライバーは、 [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の**flags**メンバーにフラグを設定することによって、処理動作を変更できます。 相互排他的なフラグ KSPIN\_\_フラグの組み合わせに特に注意する必要があります。\_の処理と KSPIN\_フラグ\_必要\_\_フレーム\_には\_必要 @no\_ではありません\_の処理には __ を使用します。 ミニドライバーは、 [**KsPinAttachAndGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattachandgate)または[**KsPinAttachOrGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattachorgate)ルーチンを使用してフレームを必要とする pin のセットを変更することもできます。
+- フレームは、処理のためにフレームを必要とするピンで使用できます。 ミニドライバーは、 [**Kspin \_ 記述子 \_ EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)の**flags**メンバーでフラグを設定することによって、処理動作を変更できます。 相互排他的なフラグの組み合わせに特に注意してください \_ \_ \_ 。処理に必要ない kspin フラグのフレームと、 \_ \_ \_ \_ \_ \_ \_ 処理に必要ないくつかのフレームを \_ 処理 \_ するために kspin フラグを使用します。 ミニドライバーは、 [**KsPinAttachAndGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattachandgate)または[**KsPinAttachOrGate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspinattachorgate)ルーチンを使用してフレームを必要とする pin のセットを変更することもできます。
 
--   Pin インスタンスの数が、 [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**InstancesNecessary**メンバー以上です。 [**Kspin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)構造体の**clientstate**メンバーは、pin が現在設定されている特定の[**ksstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)列挙子を指定します。 **InstancesNecessary**が満たされた後は、 **KSK 状態\_停止**状態の追加の pin によってフィルター処理が妨げられることはありません。
+- Pin インスタンスの数が、 [**Kspin \_ 記述子 \_ EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**InstancesNecessary**メンバー以上です。 [**Kspin**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin)構造体の**clientstate**メンバーは、pin が現在設定されている特定の[**ksstate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ne-ks-ksstate)列挙子を指定します。 **InstancesNecessary**が満たされた後は、 **ksk 状態の \_ 停止**状態の追加のピンによってフィルター処理が妨げられることはありません。
 
--   必要な pin インスタンスの数が満たされています ( [**Kspin\_記述子\_EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**InstancesNecessary**メンバーによって指定されています。
+- 必要な pin インスタンスの数が満たされています ( [**Kspin \_ 記述子 \_ EX**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_kspin_descriptor_ex)構造体の**InstancesNecessary**メンバーによって指定されています)。
 
--   ミニドライバーは、**Ksgate * * * Xxx*関数を使用して、フィルターのプロセス制御ゲートを閉じていません。
+- ミニドライバーは、**Ksgate * * * Xxx*関数を使用して、フィルターのプロセス制御ゲートを閉じていません。
 
-[*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンでは、ミニドライバーは、 [**ksprocesspin\_indexentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin_indexentry)構造体の配列へのポインターを受け取ります。 AVStream では、KSK の配列をピン ID によって\_INDEXENTRY 構造体の順序で並べ替えます。
+[*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンでは、ミニドライバーは[**ksk processpin \_ indexentry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksprocesspin_indexentry)構造体の配列へのポインターを受け取ります。 AVStream は、KSK の配列を \_ ピン ID で並べ替えます。
 
-次のコード例は、プロセスのピン構造を使用する方法を示しています。 このコードは、フィルター中心のキャプチャドライバーを記述する方法を示す[Avstream フィルター中心のシミュレートされたキャプチャドライバー (Avssamp)](https://go.microsoft.com/fwlink/p/?linkid=256084)サンプルから取得されます。 このサンプルのソースコードと説明は、Windows Driver Kit サンプルのダウンロードに含まれています。
+次のコード例は、プロセスのピン構造を使用する方法を示しています。 このコードは、フィルター中心のキャプチャドライバーを記述する方法を示す[Avstream フィルター中心のシミュレートされたキャプチャドライバー (Avssamp)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-filter-centric-simulated-capture-sample-driver-avssamp/)サンプルから取得されます。 このサンプルのソースコードと説明は、Windows Driver Kit サンプルのダウンロードに含まれています。
 
-ミニドライバーは、フィルター処理ディスパッチで KSK PROCESSPIN\_INDEXENTRY 構造体の配列を受け取ります。 この例では、ミニドライバーは、index ビデオ\_PIN\_ID の ks\_PROCESSPIN 構造から最初の KSPROCESSPIN 構造体を抽出します。
+ミニドライバーは、 \_ フィルター処理ディスパッチで KSK PROCESSPIN indexentry 構造体の配列を受け取ります。 この例では、ミニドライバーは、index VIDEO PIN ID の KSPROCESSPIN indexentry 構造から最初の KSK PROCESSPIN 構造体を抽出し \_ \_ \_ ます。
 
 ```cpp
 NTSTATUS
@@ -56,7 +52,7 @@ VideoPin = ProcessPinsIndex [VIDEO_PIN_ID].Pins [0];
 }
 ```
 
-ミニドライバーは、 **ProcessPinsIndex** \[*n*\]を参照することはできません。**ProcessPinsIndex** \[*n*\] の**Count**メンバーが少なくとも1つであること、*または*kspin の**InstancesNecessary**メンバーであることを確認する前に \[0\] を**ピン**留め\_記述子\_EX 構造体は、**ピン**内に含まれています \[0\] は少なくとも1つです。 (後者が true の場合、pin は存在することが保証されます)。
+ミニドライバーで**ProcessPinsIndex** n を参照することはできません \[ *n* \] 。**Pins** \[ \] **ProcessPinsIndex** n の**Count**メンバー \[ *n* \] が少なくとも1つあること、*または*ピン0に含まれる kspin 記述子 EX 構造体の**InstancesNecessary**メンバーが少なくとも1つあることを確認する前に、0をピン留め \_ \_ **Pins** \[ \] します。 (後者が true の場合、pin は存在することが保証されます)。
 
 次に、フレームをキャプチャするピンを指定するために、 [*Avstrminifilterprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnksfilterprocess)コールバックルーチンは、 *CaptureFrame*へのポインター (ベンダが提供するキャプチャルーチン) を渡します。
 

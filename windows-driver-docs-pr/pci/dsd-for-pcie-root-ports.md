@@ -5,12 +5,12 @@ ms:assetid: 44ad67da-f374-4a8e-80bd-d531853088a2
 keywords: ACPI、ACPI \_ DSD 方法
 ms.date: 05/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 51d2e55e01550c726bd2dcd4631d3d27426719fd
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 0b6faf10c6c4d1ba1fa340ee0f194e4e9fc7aa30
+ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533819"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84992467"
 ---
 # <a name="acpi-interface-device-specific-data-_dsd-for-pcie-root-ports"></a>ACPI インターフェイス: \_ PCIe ルートポート用のデバイス固有データ (DSD)
 
@@ -83,7 +83,7 @@ Package (2) {"UID", 0}, // Property 2: UID of the externally facing port on plat
 
 - このポートに接続されているデバイスのドライバーは、DMA の再[マップ](https://docs.microsoft.com/windows-hardware/drivers/pci/enabling-dma-remapping-for-device-drivers)をサポートする必要があります。それ以外の場合、Windows 10 は、 [Dmaguard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard)に応じて、ユーザーがログインするか、または無期限に操作するまで、これらのデバイスの動作をブロックします。
 
-```asl
+```ASL
 Name (_DSD, Package () {  
 
 ToUUID("70D24161-6DD5-4C9E-8070-705531292865"),

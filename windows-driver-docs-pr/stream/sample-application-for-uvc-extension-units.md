@@ -1,33 +1,32 @@
 ---
 title: UVC 拡張ユニットのサンプル アプリケーション
-description: UVC 拡張ユニットのサンプル アプリケーション
+description: UVC 拡張機能ユニットのサンプルアプリケーション
 ms.assetid: f900b0b1-3469-442f-8593-2094a0966d4a
 keywords:
-- 拡張機能ユニット WDK USB ビデオ クラス、サンプル、サンプル アプリケーション
-- サンプル コード WDK USB ビデオ クラス、UVC 拡張ユニット
-ms.date: 04/20/2017
+- 拡張機能ユニット WDK USB ビデオクラス, サンプル, サンプルアプリケーション
+- サンプルコード WDK USB ビデオクラス、UVC 拡張ユニット
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a661099f55e56e29e5802cd0f02c704f7ebc8c3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 68144abcaf7519e88f58a6e7461a30e5b4c0bcbc
+ms.sourcegitcommit: 31fa7dbbcd051d7ec1ea3e05a4c0340af9d3b8a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63389215"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073423"
 ---
-# <a name="sample-application-for-uvc-extension-units"></a>UVC 拡張ユニットのサンプル アプリケーション
+# <a name="sample-application-for-uvc-extension-units"></a>UVC 拡張機能ユニットのサンプルアプリケーション
 
+このトピックには、拡張機能ユニットをサポートするために使用できるサンプルアプリケーションコードが含まれています。
 
-このトピックには、ユニットの拡張機能をサポートするために使用できるサンプル アプリケーションのコードが含まれています。
+アプリケーションは、 [**IKsTopologyInfo:: Creat Deinstance**](https://docs.microsoft.com/previous-versions/windows/desktop/api/Vidcap/nf-vidcap-ikstopologyinfo-createnodeinstance)の後に node オブジェクトで**QueryInterface**を呼び出して必要な COM API を取得することによって、インターフェイスにアクセスします。 詳細については、「 [**IKsTopologyInfo**](https://docs.microsoft.com/previous-versions/windows/desktop/api/Vidcap/nn-vidcap-ikstopologyinfo)」を参照してください。
 
-アプリケーションを使用して、インターフェイスにアクセスして**IKsTopologyInfo::CreateNodeInstance**への呼び出しに続く**QueryInterface**で必要な COM API を取得するノード オブジェクト。 **IKsTopologyInfo**にインターフェイスが記載されている、 [API とリファレンスのカタログ](https://go.microsoft.com/fwlink/p/?linkid=27252)web サイト。
+次のコードをアプリケーションソースに追加します。これには、TestApp という名前を付けます。
 
-任意 TestApp.cpp という名前のアプリケーションのソースで、次のコードを含めます。
-
-コードを TestApp.cpp にも含める[単位の拡張機能で自動更新のイベントをサポートしている](supporting-autoupdate-events-with-extension-units.md)します。
+また、「[拡張単位を使用した自動更新イベントのサポート](supporting-autoupdate-events-with-extension-units.md)」に示されているコードを TestApp に含めます。
 
 ```cpp
   // pUnkOuter is the unknown associated with the base filter
-  hr = pUnkOuter->QueryInterface(__uuidof(IKsTopologyInfo), 
+  hr = pUnkOuter->QueryInterface(__uuidof(IKsTopologyInfo),
                                (void **) &pKsTopologyInfo);
   if (!SUCCEEDED(hr))
   {
@@ -35,7 +34,7 @@ ms.locfileid: "63389215"
  goto errExit;
   }
 
-  hr = FindExtensionNode(pKsTopologyInfo,                                                                                                   
+  hr = FindExtensionNode(pKsTopologyInfo,
      GUID_EXTENSION_UNIT_DESCRIPTOR,
      &dwExtensionNode);
   if (FAILED(hr))
@@ -45,8 +44,8 @@ ms.locfileid: "63389215"
   }
 
   hr = pKsTopologyInfo->CreateNodeInstance(
-        dwExtensionNode, 
-   __uuidof(IExtensionUnit), 
+        dwExtensionNode,
+   __uuidof(IExtensionUnit),
  (void **) &pExtensionUnit);
  if (FAILED(hr))
   {
@@ -74,21 +73,13 @@ ms.locfileid: "63389215"
       printf("Unable to get property value\n");
       goto errExit;
   }
- 
+
   // assume the property value is an integer
   ASSERT(ulSize == 4);
-  printf("The value of property 1 = %d\n", *((int *) 
+  printf("The value of property 1 = %d\n", *((int *)
      pbPropertyValue));
 ```
 
-この場合、 **pUnkOuter** USB ビデオ クラス (UVC) デバイスを表すキャプチャ フィルターへのポインターにする必要があります。 フィルターのクエリを実行できるフィルター グラフをキャプチャ フィルターを追加した後、 **IKsTopologyInfo**インターフェイスのこのサンプル コードで示すようにします。
+この場合、 **pUnkOuter**は、USB ビデオクラス (uvc) デバイスを表すキャプチャフィルターへのポインターである必要があります。 キャプチャフィルターをフィルターグラフに追加した後、次のサンプルコードに示すように、 **IKsTopologyInfo**インターフェイスのフィルターに対してクエリを実行できます。
 
-コードを記述、 **FindExtensionNode**関数では、その ID を返すと、必要な拡張ユニットのノードを検索する*dwExtensionNode*します。 このサンプル コードの後続の呼び出しでこの ID が使用される、 **IKsTopologyInfo::CreateNodeInstance**メソッド。
-
- 
-
- 
-
-
-
-
+**FindExtensionNode**関数のコードを記述して、必要な拡張ユニットノードを特定し、その ID を*dwextensionnode*に返すようにします。 この ID は、 **IKsTopologyInfo:: Creat Deinstance**メソッドの後続の呼び出しで使用されます。

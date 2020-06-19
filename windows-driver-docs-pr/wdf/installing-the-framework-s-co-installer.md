@@ -1,49 +1,49 @@
 ---
-title: KMDF 共同インストーラーを INF ファイルで指定します。
-description: 共同インストーラーをドライバー パッケージに含める場合は、ドライバーの INF ファイルで指定する必要がありますセクションに関する情報は、このトピックを読み取ります。
+title: INF ファイルでの KMDF 共同インストーラーの指定
+description: ドライバーパッケージに共同インストーラーを含める場合は、ドライバーの INF ファイルに入力する必要があるセクションの詳細について、このトピックを参照してください。
 ms.assetid: e4f476ad-1ab5-44e3-9368-7467479bda85
 keywords:
-- カーネル モード ドライバー フレームワーク WDK は、ドライバーをインストールします。
-- フレームワーク ベースのドライバー WDK KMDF をインストールします。
-- INF ファイル WDK KMDF、共同インストーラー
-- WDK KMDF 共同インストーラー
-- 共同インストーラーが WDK KMDF をセクションします。
+- カーネルモードドライバーフレームワーク WDK、ドライバーのインストール
+- フレームワークベースのドライバー WDK KMDF, インストール
+- INF ファイル WDK KMDF、coinstallers
+- coinstallers WDK KMDF
+- CoInstallers セクション WDK KMDF
 - DDInstall セクション WDK KMDF
-- Wdf の INF ファイル セクション WDK KMDF
+- Wdf INF ファイルセクション WDK KMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 765a8157d08c843a8187c9ceea452d4c4657b531
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: a4dbc60269f33d37d2e77205220bc57d6f3e63b6
+ms.sourcegitcommit: 31fa7dbbcd051d7ec1ea3e05a4c0340af9d3b8a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67381096"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85073425"
 ---
-# <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>KMDF 共同インストーラーを INF ファイルで指定します。
+# <a name="specifying-the-kmdf-co-installer-in-an-inf-file"></a>INF ファイルでの KMDF 共同インストーラーの指定
 
 
-共同インストーラーを含める場合は、[ドライバー パッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)ドライバーの INF ファイルで指定する必要がありますセクションに関する情報は、このトピックの読み取り。 この情報は、Microsoft 提供の .msu 再頒布可能パッケージを呼び出す独自のセットアップ アプリケーションを提供する場合に適用されません。
+[ドライバーパッケージ](https://docs.microsoft.com/windows-hardware/drivers/install/components-of-a-driver-package)に共同インストーラーを含める場合は、ドライバーの INF ファイルに入力する必要があるセクションの詳細について、このトピックを参照してください。 この情報は、Microsoft が提供する .msu 再頒布可能パッケージを呼び出す独自のセットアップアプリケーションを提供する場合には適用されません。
 
-##  <a name="inf-file-sections-for-the-co-installer"></a>共同インストーラーのセクションでは INF ファイル
+##  <a name="inf-file-sections-for-the-co-installer"></a>共同インストーラーの INF ファイルのセクション
 
 
-ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。CoInstallers**共同インストーラーがインストール セクション。 このセクションの名前など**MyDevice.ntx86.CoInstallers**します。 INF ファイルで共同インストーラーを指定する方法については、次を参照してください。 [ **INF DDInstall.CoInstallers セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)します。
+ドライバーの INF ファイルには、INF <em>Ddinstall</em>が含まれている必要があり**ます。CoInstallers**セクション。共同インストーラーをインストールします。 たとえば、このセクションには ntx86 という名前が付けられます。 **CoInstallers**です。 INF ファイルでの共同インストーラーの指定の詳細については、「 [**Inf Ddinstall」セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-coinstallers-section)を参照してください。
 
-さらに、ドライバーの INF ファイルは、INF を含める必要があります<em>DDInstall</em>**します。Wdf**共同インストーラーがインストールされていた後を読み取っていることをセクションします。 このセクションの名前など、 **MyDevice.ntx86.Wdf**します。 フレームワークの共同インストーラーがインストールされた後は、ドライバーをインストールしているときに、このセクションを読み取ります。
+また、ドライバーの INF ファイルには、INF <em>Ddinstall</em>が含まれている必要があり**ます。Wdf**セクションは、インストール後に共同インストーラーによって読み取られます。 たとえば、このセクションには ntx86 という名前が付けられます。 **Wdf**です。 フレームワークの共同インストーラーがインストールされると、ドライバーのインストール中にこのセクションが読み取られます。
 
-INF <em>DDInstall</em>**します。Wdf**セクションには、次のディレクティブが含まれています。
+INF <em>Ddinstall</em>**。Wdf** section には、次のディレクティブが含まれています。
 
-- **KmdfService =** <em>DriverService</em> **、** <em>Wdf のインストール-セクション</em>
+- **Kmdfservice =** <em>driverservice</em>**、**<em>Wdf</em>
 
-*DriverService*オペレーティング システムが、ドライバーのカーネル モードのサービスに割り当てる名前を表すと*Wdf のインストール-セクション*共同インストーラーを取得する読み取りする INF セクションの名前を表しますドライバーに関する情報。
+*Driverservice*は、オペレーティングシステムによってドライバーのカーネルモードサービスに割り当てられる名前を表し、 *Wdf*は、ドライバーに関する情報を取得するために、共同インストーラーが読み取る INF セクションの名前を表します。
 
-INF セクション*Wdf のインストール-セクション*識別する必要があります、次のディレクティブを含めます。
+*Wdf*によって識別される INF セクションには、次のディレクティブが含まれている必要があります。
 
--   **KmdfLibraryVersion =** *WdfLibraryVersion*
+-   **Kmdflibraryversion =** *wdflibraryversion*
 
-*WdfLibraryVersion* 「1.0」や「1.11」など、ライブラリのバージョン番号を表します。
+*Wdflibraryversion*は、"1.0" や "1.11" などのライブラリのバージョン番号を表します。
 
-次の INF など<em>DDInstall</em>**します。Wdf**セクションを指定します**エコー\_wdfsect**として、 *Wdf のインストール-セクション*名。
+たとえば、次の INF <em>Ddinstall がインストール</em>されていると**します。Wdf**セクションでは、 *Wdf*という名前の**Echo \_ wdfsect**を指定します。
 
 ```cpp
 [ECHO_Device.NT.Wdf]
@@ -52,17 +52,17 @@ KmdfService = Echo, Echo_wdfsect
 KmdfLibraryVersion = 1.0
 ```
 
-INX ファイルを使用して複数のバージョンの framework の複数の INF ファイルを作成しなくて済みます、 [Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツール。 INX ファイルの詳細については、次を参照してください。 [INX INF ファイルを作成するファイルを使用する](using-inx-files-to-create-inf-files.md)します。
+INX ファイルと[Stampinf](https://docs.microsoft.com/windows-hardware/drivers/devtest/stampinf)ツールを使用すると、複数のバージョンのフレームワークに対して複数の INF ファイルを作成することを回避できます。 INX ファイルの詳細については、「 [USING INX files To CREATE INF files](using-inx-files-to-create-inf-files.md)」を参照してください。
 
-### <a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**サンプル INF** * **DDInstall *。共同インストーラーと** * **DDInstall *。Wdf のセクションでは**
+### <a name="sample-inf-ddinstallcoinstallers-and-ddinstallwdf-sections"></a><a href="" id="sample-inf-ddinstall-coinstallers-and-ddinstall-wdf-sections"></a>**サンプル INF** ***Ddinstall *。CoInstallers および** * **ddinstall *.Wdf セクション**
 
-次のコード例は、INF を作成する方法を示します<em>DDInstall</em>**します。CoInstallers**セクションと INF <em>DDInstall</em>**します。Wdf** PnP ドライバーの INF ファイルのセクション。 例では、呼び出される INF ファイルを作成する方法を示しています。 *MyDevice.inf*に基づく、[エコー](https://go.microsoft.com/fwlink/p/?linkid=256129)サンプル ドライバーの*Echo.inf*ファイル。 Echo サンプル ドライバーは、WDK の samples ディレクトリにあります。
+次のコード例は、INF <em>Ddinstall</em>を作成する方法を示して**います。CoInstallers** section および INF <em>ddinstall</em>**。** PnP ドライバー用の INF ファイルの Wdf セクション。 この例では、 *Mydevice .inf*という名前の inf ファイルを作成する方法を示します。このファイルは、 [echo](https://go.microsoft.com/fwlink/p/?linkid=256129)サンプルドライバーの*echo .inf*ファイルに基づいています。 Echo サンプルドライバーは、WDK の samples ディレクトリにあります。
 
-作成する*MyDevice.inf*、すべてを変更する必要があります**エコー\_デバイス**で部分文字列を*Echo.inf*製品の適切な名前にします。 次のコード例では**MyDevice**します。
+*Mydevice .inf*を作成するには、 *modem.inf*のすべての**echo \_ デバイス**の部分文字列を、製品に適した名前に変更する必要があります。 次のコード例では、 **Mydevice**を使用します。
 
-セクションのレイアウトと一致しようとする必要がありますが、 *Echo.inf*サンプルの使用。 つまり、可能であれば、まとめておくため共同 installer に関連するセクションでは、切り取りと貼り付けのエラーをより簡単に特定します。
+*Echo*サンプルで使用するセクションレイアウトとの一致を試みる必要があります。 言い換えると、可能であれば、共同インストーラーに関連するセクションをまとめて、切り取りと貼り付けのエラーをより簡単に見つけられるようにしてください。
 
-前に、変更した*echo.inf*、共同インストーラーをインストールするためのセクションでは、次のとおり。
+*Echo .inf*を変更する前に、共同インストーラーをインストールするセクションは次のようになります。
 
 ```cpp
 =============== Top of Echo.inf ====================
@@ -94,7 +94,7 @@ KmdfLibraryVersion = 1.0
 ===============  End of Echo.inf ===============
 ```
 
-すべてを変更した後**エコー\_デバイス**の部分文字列、 *MyDevice.inf*ファイルが次のように表示されます。
+すべての**ECHO \_ デバイス**の部分文字列を変更した後、 *mydevice .inf*ファイルは次のように表示されます。
 
 ```cpp
 =============== Top of MyDevice.inf ===============
@@ -118,7 +118,7 @@ HKR,,CoInstallers32,0x00010000, "WdfCoInstaller01000.dll,WdfCoInstaller"
 [MyDevice_CoInstaller_CopyFiles]
 WdfCoInstaller01000.dll
 
-[MyDevice_Device.NT.Wdf]
+[MyDevice.NT.Wdf]
 KmdfService = MyDevice, MyDevice_wdfsect
 [MyDevice_wdfsect]
 KmdfLibraryVersion = 1.0
