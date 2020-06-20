@@ -7,27 +7,26 @@ keywords:
 - システムメモリの WDK AVStream にキャプチャしています
 - 固定 VRAM 処理 WDK AVStream
 - VRAM capture WDK AVStream、要求シーケンス
-ms.date: 04/20/2017
+ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ec43e1ea3bf5a577fc0d6906b085011c6cc9798
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 46fb36bedb55839564a12ee88a89b569e850cdb2
+ms.sourcegitcommit: baf3075858705d4c78d4ea4b0869bf6291bcb823
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845275"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85112133"
 ---
 # <a name="vram-capture-properties"></a>VRAM キャプチャのプロパティ
 
-
 ピン中心の AVStream ミニドライバーは、VRAM に取り込むために複数のプロパティをサポートする必要があります。 このセクションでは、ミニドライバーが VRAM 処理の前後に受け取る要求のシーケンスについて説明します。
 
-キャプチャが開始される前に、KS プロキシは\_SURFACE の get プロパティ要求\_キャプチャするために[ **\_Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-preferred-capture-surface)を送信します。 ミニドライバーは、ドライバーがシステムメモリと VRAM のどちらにキャプチャされているかによって異なる値を返す必要があります。
+キャプチャが開始される前に、KS プロキシは[**Ksk プロパティの推奨される \_ \_ キャプチャ \_ サーフェス**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-preferred-capture-surface)の get プロパティ要求を送信します。 ミニドライバーは、ドライバーがシステムメモリと VRAM のどちらにキャプチャされているかによって異なる値を返す必要があります。
 
-### <a name="capturing-to-system-memory"></a>キャプチャ (システムメモリに)
+## <a name="capturing-to-system-memory"></a>キャプチャ (システムメモリに)
 
-システムメモリにキャプチャするには、\_ALLOC\_SYSTEM\_AGP\_キャプチャする KS を返します。
+システムメモリにキャプチャするには、KS \_ capture \_ ALLOC system AGP を返し \_ \_ ます。
 
-キャプチャドライバーは、[**現在\_\_Ksk プロパティ**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-current-capture-surface)を受け取ります。このプロパティには、システムメモリ値の型を持つ\_SURFACE set-property 要求がキャプチャされます。 キャプチャドライバーは、バスマスタ DMA デバイスとして機能し、データをシステムメモリに直接配置します。
+キャプチャドライバーは、システムメモリ値の型を使用して、 [**Ksk プロパティの \_ 現在の \_ キャプチャ \_ 画面**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-current-capture-surface)のプロパティ要求を受け取ります。 キャプチャドライバーは、バスマスタ DMA デバイスとして機能し、データをシステムメモリに直接配置します。
 
 このモードでは、キャプチャドライバーは、出力ピンの[*Avstrminipinprocess*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nc-ks-pfnkspin)コールバック関数でシステムメモリバッファーを受け取ります。
 
@@ -35,52 +34,44 @@ Pin プロセスコールバックで DMA を実装する方法については�
 
 複数の出力ピン (たとえば、個別のビデオ、オーディオ、VBI ピン) でキャプチャするには、各ピンが前に説明した VRAM のプロパティと処理をサポートする必要があります。 プロキシは、pin ごとに個別のスレッドを生成します。
 
-### <a name="capturing-to-vram"></a>VRAM へのキャプチャ
+## <a name="capturing-to-vram"></a>VRAM へのキャプチャ
 
-ドライバーで VRAM キャプチャがサポートされている場合は、\_を返します。\_は、KSK\_プロパティに応答して**ALLOC\_vram をキャプチャ**し、\_の\_キャプチャを推奨します。
+ドライバーが VRAM キャプチャをサポートしている場合は、KSPROPERTY の推奨されるキャプチャサーフェイスに応答して**KS \_ キャプチャの \_ アロケーション \_ VRAM**を返し \_ \_ \_ ます。
 
-次のミニドライバーは、 [ **\_アダプター\_guid**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-display-adapter-guid)の取得プロパティの要求を表示\_ksk プロパティを受け取り、表示アダプターの guid を照会します。
+次に、ミニドライバーは、表示アダプターの GUID に対してクエリを実行して、 [**ksproperty \_ 表示 \_ アダプターの \_ guid**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-display-adapter-guid)取得プロパティの要求を受信します。
 
-ベンダーから提供されたグラフィックスミニポートドライバーからアダプターの GUID を取得します。 [**DXGK\_INTERFACESPECIFICDATA**](https://docs.microsoft.com/windows-hardware/drivers/display/dxgk-interfacespecificdata)構造体には、プロパティ要求で返すアダプター GUID が含まれています。 この構造は DirectX グラフィックスカーネル (DXGK) サブシステムによって生成され、アダプターの初期化時にミニポートドライバーに渡されます。
+ベンダーから提供されたグラフィックスミニポートドライバーからアダプターの GUID を取得します。 [**DXGK \_ INTERFACESPECIFICDATA**](https://docs.microsoft.com/windows-hardware/drivers/display/dxgk-interfacespecificdata)構造体には、プロパティ要求で返すアダプター GUID が含まれています。 この構造は DirectX グラフィックスカーネル (DXGK) サブシステムによって生成され、アダプターの初期化時にミニポートドライバーに渡されます。
 
-Pin が VRAM トランスポートをサポートし、ディスプレイアダプターとダウンストリームフィルターが一致する場合、KS プロキシモジュールがアロケーターとして選択されます。 このプロキシは、 [**Ksk プロパティ\_現在\_キャプチャ\_surface**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-current-capture-surface)プロパティをキャプチャに選択されたサーフェイスの種類に設定することにより、ピン間の VRAM の移動をキャプチャピンに通知します。
+Pin が VRAM トランスポートをサポートし、ディスプレイアダプターとダウンストリームフィルターが一致する場合、KS プロキシモジュールがアロケーターとして選択されます。 このプロキシは、 [**Ksk プロパティの \_ 現在の \_ キャプチャ \_ サーフェイス**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-current-capture-surface)プロパティをキャプチャ用に選択されたサーフェイスの種類に設定することにより、ピン間での VRAM surface トランスポートの選択についてキャプチャピンに通知します。
 
-ピンが\_ALLOC\_VRAM\_キャプチャすると、VRAM 処理要求を受け取ります。
+ピンが KS キャプチャの \_ \_ アロケーション \_ vram を受け取ると、VRAM 処理要求を受信します。
 
-VRAM 処理要求は2つの部分で構成されます。 まず、キャプチャドライバーは Ksk プロパティの get 要求を受信します。この[ **\_マップ\_キャプチャ\_ハンドルして\_を\_VRAM\_アドレスに処理**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-map-capture-handle-to-vram-address)します。 Get ハンドラーは、カーネルモードの VRAM サーフェイスハンドルを含む IRP を受け取ります。
+VRAM 処理要求は2つの部分で構成されます。 最初に、キャプチャドライバーは、 [** \_ \_ \_ \_ \_ VRAM \_ アドレスに対して ksk プロパティマップキャプチャハンドル**](https://docs.microsoft.com/windows-hardware/drivers/stream/ksproperty-map-capture-handle-to-vram-address)の get 要求を受け取ります。 Get ハンドラーは、カーネルモードの VRAM サーフェイスハンドルを含む IRP を受け取ります。
 
 キャプチャドライバーまたはディスプレイミニポートドライバーは、VRAM サーフェイスハンドルを実際の VRAM 物理アドレスにマップする必要があります。 VRAM サーフェイスハンドル*は有効なままではありません。* 後で使用できるようにキャッシュしないでください。
 
-プロパティ要求で提供された[ **\_情報\_プロパティ\_の、VRAM\_SURFACE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info_property_s)内のマップされたアドレスを返します。 キャプチャドライバーは、ディスプレイミニポートドライバーからのマッピングを要求する IOCTL を発行できます。
+プロパティ要求に指定された[**VRAM \_ SURFACE \_ INFO \_ プロパティ \_ **](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info_property_s)のマップされたアドレスを返します。 キャプチャドライバーは、ディスプレイミニポートドライバーからのマッピングを要求する IOCTL を発行できます。
 
 次に、キャプチャフィルターの*Avstrminipinprocess*は、ピンに処理するデータがあるときに呼び出されます。
 
-ミニドライバーは、このピンのリーディングエッジストリームポインターを取得してロックするために、 [**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)を呼び出す必要があります。 この関数は、 [**Ksk ストリーム\_ポインター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksstream_pointer)構造体へのポインターを返します。
+ミニドライバーは、このピンのリーディングエッジストリームポインターを取得してロックするために、 [**KsPinGetLeadingEdgeStreamPointer**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-kspingetleadingedgestreampointer)を呼び出す必要があります。 この関数は、 [**Ksk ストリーム \_ ポインター**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-_ksstream_pointer)構造体へのポインターを返します。
 
-このストリームポインター構造体には、 [**Ksk ストリーム\_ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)へのポインターが含まれています。
+このストリームポインター構造体には、 [**Ksk ストリーム \_ ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksstream_header)へのポインターが含まれています。
 
-ストリームヘッダーの**データ**メンバーで、 [**VRAM\_SURFACE\_INFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info)構造体へのポインターを見つけます。
+ストリームヘッダーの**データ**メンバーで、 [**VRAM \_ SURFACE \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-vram_surface_info)構造体へのポインターを見つけます。
 
-この構造体には、KSK プロパティ\_マップ\_キャプチャ\_ハンドル\_を\_VRAM\_アドレスに返すために返される物理アドレスが含まれます。 ハンドルを表す**Hsurface**メンバーが**NULL**です。
+この構造体には、VRAM のプロパティマップのキャプチャハンドルへの応答として返される物理アドレスが含まれ \_ \_ \_ \_ \_ \_ ます。 ハンドルを表す**Hsurface**メンバーが**NULL**です。
 
 キャプチャドライバーは次のことを行う必要があります。
 
--   VRAM 物理アドレスを使用してキャプチャハードウェアをプログラムします。
+- VRAM 物理アドレスを使用してキャプチャハードウェアをプログラムします。
 
--   ビデオフレームの完了を処理します。
+- ビデオフレームの完了を処理します。
 
--   VRAM\_\_SURFACE の**Cbcaptured**されたメンバーに、vram サーフェイスにコピーされたバイト数を入力します。 KSK ストリーム\_ヘッダーの**Dataused**メンバーを、キャプチャされたバイト数で設定しないでください。 代わりに、 **Dataused**を SIZEOF (VRAM\_SURFACE\_INFO) に設定します。
+- VRAM サーフェイスにコピーされたバイト数を使用して、 **cbcaptured 情報の Cbcaptured**メンバーを入力し \_ \_ ます。 KSK ストリームヘッダーの**Dataused**メンバーに、 \_ キャプチャされたバイト数を設定しないでください。 代わりに、 **Dataused**を SIZEOF (VRAM \_ SURFACE INFO) に設定し \_ ます。
 
--   キャプチャドライバーがタイムスタンプを実行する場合は、**プレゼンテーション時間**、**期間** を設定し、必要に応じて、ksk ストリーム\_ヘッダーに**オプションフラグ**を設定します。
+- キャプチャドライバーでタイムスタンプが実行される場合は、[KSK ストリームヘッダー] に [**プレゼンテーション時間**]、[**期間**]、および [関連する**オプション] フラグ**を設定し \_ ます。
 
--   [**KsStreamPointerAdvanceOffsets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvanceoffsets)を呼び出して、処理を続行するか、すべての複製を削除してから、 [**Ksstreamポインター delete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)を呼び出して要求を完了します。
+- [**KsStreamPointerAdvanceOffsets**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointeradvanceoffsets)を呼び出して、処理を続行するか、すべての複製を削除してから、 [**Ksstreamポインター delete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)を呼び出して要求を完了します。
 
-Windows Driver Kit (WDK) のサンプルに含まれている[Avstream](https://go.microsoft.com/fwlink/p/?linkid=256083)の**CCapturePin::P rocessd3dsurface**メソッドは、このコールバックを実装する1つの方法を示しています *。*
-
- 
-
- 
-
-
-
-
+Windows Driver Kit (WDK) のサンプルでは、Avstream でシミュレートされた[ハードウェアサンプルドライバー (AVSHwS)](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/avstream-simulated-hardware-sample-driver-avshws)の**CCapturePin::P rocessd3dsurface**メソッドは、このコールバックを実装して VRAM をサポートする方法の1つを示してい*ます。*

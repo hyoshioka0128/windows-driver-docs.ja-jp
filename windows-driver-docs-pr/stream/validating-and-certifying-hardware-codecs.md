@@ -1,32 +1,31 @@
 ---
 title: ハードウェア コーデックの検証と認定
-description: ハードウェア コーデックの検証と認定
+description: ハードウェアコーデックの検証と認定
 ms.assetid: 8cf96aac-78ba-41f0-b9d0-48948f704262
 keywords:
-- ハードウェア コーデック WDK AVStream、検証しています
-- ハードウェア コーデック WDK AVStream、認定
-- ハードウェアのコーデック サポート WDK AVStream、検証と認定
-ms.date: 04/20/2017
+- ハードウェアコーデック WDK AVStream、検証
+- ハードウェアコーデック WDK AVStream、認定
+- ハードウェアコーデックによる WDK AVStream のサポート、検証と認定
+ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c20a3a7d55db997ac74364c65cacbf34be1648
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 2df745926afbe29a8f46f8004b24e35d0d17f9c0
+ms.sourcegitcommit: baf3075858705d4c78d4ea4b0869bf6291bcb823
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67384906"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85112132"
 ---
-# <a name="validating-and-certifying-hardware-codecs"></a>ハードウェア コーデックの検証と認定
+# <a name="validating-and-certifying-hardware-codecs"></a>ハードウェアコーデックの検証と認定
 
+ベンダーが提供する AVStream ミニドライバーにハードウェアベースのコーデックサポートが含まれている場合、またはハードウェアをサポートするカスタムの MFT を実装している場合は、x.509 証明書チェーンを指定し、ドライバーの INF ファイルで値を指定して、ドライバーに KSPROPSETID OPMVideoOutput を実装する必要があります \_ 。
 
-AVStream、ベンダーから提供されたようにミニドライバーには、コーデックのハードウェア ベースのサポートが含まれています。 または、ハードウェアをサポートするカスタム MFT を実装している、する必要があります、X.509 証明書チェーンを指定、ドライバーの INF ファイルで merit 値を指定および実装 KSPROPSETID\_OPMVideoOutput ドライバー。
+## <a name="obtaining-a-x509-certificate"></a>X.509 証明書の取得
 
-### <a name="obtaining-an-x509-certificate"></a>**X.509 証明書を取得します。**
+ハードウェアによってサポートされるメディアファンデーション変換 (MFT) エンコーダーまたはデコーダーは、CodecMeritCertificationPolicy EKU (拡張キー使用法) 証明書の拡張機能を指定する有効な Microsoft 署名 x.509 証明書を提供する必要があります。 ハードウェアアクセラレータによるコーデックのライセンスを取得するには、PVP-OPM ライセンスプログラムに参加する必要があります。 ライセンス資料を要求するには、 [Windows Media License agreement](mailto://wmla@microsoft.com)エイリアスにお問い合わせください。
 
-Media Foundation の変換 (MFT) エンコーダーまたはデコーダー ハードウェアによってサポートされる必要があります、Microsoft によって署名された有効な X.509 証明書を提供 CodecMeritCertificationPolicy EKU (拡張キー使用法) の証明書の拡張機能を指定します。 ハードウェアの高速化されたコーデックのライセンスを取得するには、PVP OPM ライセンス プログラムに参加する必要があります。 ライセンスの資料を要求するお問い合わせください、 [Windows メディアの使用許諾契約書](mailto://wmla@microsoft.com)エイリアス。
+## <a name="specifying-merit"></a>指定 (昇給を)
 
-### <a name="specifying-merit"></a>**価値を指定します。**
-
-INF ファイルの [AddReg] セクションでは、MFTMerit を DWORD に型指定されたレジストリ値を設定します。
+INF ファイルの AddReg セクションで、DWORD 型の MFTMerit レジストリ値を設定します。
 
 ```INF
 [myVideoDecoder.Reader.AddReg]
@@ -35,35 +34,37 @@ HKR,,FriendlyName,,%shedVideoDecoder.Reader.FriendlyName%
 HKR,,MFTMerit,0x00010001,7
 ```
 
-### <a name="implementing-kspropsetidopmvideooutput"></a>**KSPROPSETID を実装する\_OPMVideoOutput**
+## <a name="implementing-kspropsetid_opmvideooutput"></a>KSPROPSETID OPMVideoOutput の実装 \_
 
-KSPROPSETID\_で OPMVideoOutput プロパティ セットが公開される、 *Ksopmapi.h*と*Opmapi.h*ヘッダー ファイルは、Windows 7 用 Windows SDK 以降に付属います。
+KSPROPSETID \_ OPMVideoOutput プロパティセットは、Windows 7 以降の Windows SDK に付属している*Ksopmapi*および*opmapi .h*ヘッダーファイルで公開されています。
 
-プロパティ セットとメソッドが次からの抜粋で定義されている、 *Ksopmapi.h*ファイル。
+プロパティセットとメソッドは、 *Ksopmapi*ファイルから抜粋した次のように定義されています。
 
 ```cpp
 #ifdef DEFINE_GUIDSTRUCT
 #define STATIC_KSPROPSETID_OPMVideoOutput \
-0x6f414bb, 0xf43a, 0x4fe2, 0xa5, 0x66, 0x77, 0x4b, 0x4c, 0x81, 0xf0, 0xdb                         
-DEFINE_GUIDSTRUCT("06F414BB-F43A-4fe2-A566-774B4C81F0DB", KSPROPSETID_OPMVideoOutput);          
-#define KSPROPSETID_OPMVideoOutput DEFINE_GUIDNAMED(KSPROPSETID_OPMVideoOutput)                   
+0x6f414bb, 0xf43a, 0x4fe2, 0xa5, 0x66, 0x77, 0x4b, 0x4c, 0x81, 0xf0, 0xdb
+DEFINE_GUIDSTRUCT("06F414BB-F43A-4fe2-A566-774B4C81F0DB", KSPROPSETID_OPMVideoOutput);
+#define KSPROPSETID_OPMVideoOutput DEFINE_GUIDNAMED(KSPROPSETID_OPMVideoOutput)
 #endif
- 
+
 typedef enum
-{                                                                                    
-    //  Output is OPM_RANDOM_NUMBER followed by certificate                                        
-    KSMETHOD_OPMVIDEOOUTPUT_STARTINITIALIZATION = 0,                                              
- 
-    //  Input OPM_ENCRYPTED_INITIALIZATION_PARAMETERS                                             
-    //  Output OPM_STANDARD_INFORMATION                                                           
-    KSMETHOD_OPMVIDEOOUTPUT_FINISHINITIALIZATION = 1,                                             
- 
-    //  Input is OPM_GET_INFO_PARAMETERS, output is OPM_REQUESTED_INFORMATION                     
-    //  Use KsMethod - both input and output in the buffer (not after the KSMETHOD structure)     
-    KSMETHOD_OPMVIDEOOUTPUT_GETINFORMATION = 2                                                    
-} KSMETHOD_OPMVIDEOOUTPUT;           
+{
+    //  Output is OPM_RANDOM_NUMBER followed by certificate
+    KSMETHOD_OPMVIDEOOUTPUT_STARTINITIALIZATION = 0,
+
+    //  Input OPM_ENCRYPTED_INITIALIZATION_PARAMETERS
+    //  Output OPM_STANDARD_INFORMATION
+    KSMETHOD_OPMVIDEOOUTPUT_FINISHINITIALIZATION = 1,
+
+    //  Input is OPM_GET_INFO_PARAMETERS, output is OPM_REQUESTED_INFORMATION
+    //  Use KsMethod - both input and output in the buffer (not after the KSMETHOD structure)
+    KSMETHOD_OPMVIDEOOUTPUT_GETINFORMATION = 2
+} KSMETHOD_OPMVIDEOOUTPUT;
 ```
 
-ユーザー モード コンポーネント アクセス KSPROPSETID\_を通じて OPMVideoOutput、 **IKsControl** AVStream プロキシ MFT 上のインターフェイス。 ハンドラー ルーチン OPMVideoOutput メソッドの実装を示すコード例では、次を参照してください。[コーデック Merit 検証](codec-merit-validation.md)です。
+ユーザーモードコンポーネント \_ は、AVStream プロキシ MFT の**Iksk コントロール**インターフェイスを介して、kspropsetid OPMVideoOutput にアクセスします。 OPMVideoOutput メソッドハンドラールーチンの実装を示すコード例については、「[コーデックの有効性の検証](codec-merit-validation.md)」を参照してください。
 
-ドライバー固有 OPM については、次を参照してください。[出力 Protection Manager をサポートしている](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)します。 OPM の特定のアプリケーションについては、次を参照してください。[出力 Protection Manager を使用した](https://go.microsoft.com/fwlink/p/?linkid=155059)します。
+OPM に関するドライバー固有の情報については、「 [Output Protection Manager のサポート](https://docs.microsoft.com/windows-hardware/drivers/display/supporting-output-protection-manager)」を参照してください。
+
+OPM のアプリケーション固有の情報については、「 [Output Protection Manager の使用](https://docs.microsoft.com/windows/win32/medfound/using-output-protection-manager)」を参照してください。

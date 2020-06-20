@@ -1,14 +1,14 @@
 ---
 title: USB ビデオ クラス (UVC) ドライバー実装チェックリスト
 description: デバイス用の USB ビデオクラス (UVC) ドライバーを実装する手順について説明します。
-ms.date: 01/30/2018
+ms.date: 06/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 94839ce6a93ffd5b55ea6dde8ff0885210373222
-ms.sourcegitcommit: eb1f58d23da3b1240385c072837d9118239a8f97
+ms.openlocfilehash: 39b2485631a33df4f414dc48e6d354ea36d500b5
+ms.sourcegitcommit: baf3075858705d4c78d4ea4b0869bf6291bcb823
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75883889"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85112140"
 ---
 # <a name="usb-video-class-uvc-driver-implementation-checklist"></a>USB ビデオ クラス (UVC) ドライバー実装チェックリスト
 
@@ -18,7 +18,7 @@ ms.locfileid: "75883889"
 
 - USB.org で[USB クラス](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)のドキュメント (uvc 以外) にアクセスする
 
-- [USB ビデオクラス 1.5](https://go.microsoft.com/fwlink/p/?linkid=2085170)のドキュメントを USB.org からダウンロードします。
+- [USB ビデオクラス 1.5](https://www.usb.org/document-library/video-class-v15-document-set)のドキュメントを USB.org からダウンロードします。
 
 - [USB ビデオクラスドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/stream/usb-video-class-driver-overview)に関するトピックを確認します。
 
@@ -51,7 +51,7 @@ ms.locfileid: "75883889"
 
   - USB.org のドキュメント:
 
-    - 前の手順 1. でダウンロードした*Uvc 1.5 クラス仕様*のページ17で開始する*メソッド 2*のセクションを確認します。
+    - 前の手順 1. でダウンロードした*specification.pdfUvc 1.5 クラス*のページ17で開始される*メソッド 2*のセクションを確認します。
 
   - Microsoft 固有のドキュメント:
 

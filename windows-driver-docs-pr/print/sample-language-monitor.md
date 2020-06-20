@@ -6,18 +6,18 @@ keywords:
 - 言語モニター WDK 印刷、サンプル
 ms.date: 06/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4574bce3f8d966c913c9035359ab023bdc1d0554
-ms.sourcegitcommit: f4f861a9f833ef1389ff5c08e2b9de0d3df81bef
+ms.openlocfilehash: 34b3e56eb6ea61cd0ee288e0793457dbcbbe7d47
+ms.sourcegitcommit: f29360d62eb77b6ee875ce66483d5bc72785eede
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84974148"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85111251"
 ---
 # <a name="sample-language-monitor"></a>サンプル言語モニター
 
 Pjlmon.dll は、双方向の*PJL*言語サポートをサポートする言語モニターです。
 
-Windows 7 の場合、Pjlmon.dll のサンプルソースコードは、 [Windows Driver Kit バージョン 7.1.0](https://www.microsoft.com/en-us/download/details.aspx?id=11800)のインストールダウンロードに含まれています。 このサンプルは、 ** \\ src \\ 印刷モニターの \\ \\ pjlmon**サブディレクトリ (たとえば、C:\WinDDK\7600.16385.1\src\print\monitors\pjlmon) にあります。
+Windows 7 の場合、Pjlmon.dll のサンプルソースコードは、 [Windows Driver Kit バージョン 7.1.0](https://www.microsoft.com/download/details.aspx?id=11800)のインストールダウンロードに含まれています。 このサンプルは、 ** \\ src \\ 印刷モニターの \\ \\ pjlmon**サブディレクトリ (たとえば、C:\WinDDK\7600.16385.1\src\print\monitors\pjlmon) にあります。
 
 Windows 8 の場合、Pjlmon.dll のサンプルソースコードは、GitHub の Windows Driver Kit (WDK) 8.0 サンプルアーカイブリポジトリの[pjlmon](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.0%20Samples/%5BC%2B%2B%5D-Windows%20Driver%20Kit%20(WDK)%208.0%20Samples/C%2B%2B/WDK%208.0%20Samples/Print%20Monitors%20Samples/Solution/pjlmon)ディレクトリにあります。
 
