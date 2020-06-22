@@ -6,12 +6,12 @@ keywords:
 - USBView
 ms.date: 02/22/2017
 ms.localizationpriority: high
-ms.openlocfilehash: 54ba17767e3bd70a172d1dea99322990fcbd8812
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 3a7f5270d5b4231129571f391989581754fc14df
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78335954"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84533825"
 ---
 # <a name="usbview"></a>USBView
 
@@ -34,7 +34,7 @@ USBView をダウンロードして使用するには、次の手順を行いま
 
 ## <a name="usbview-source-code"></a>USBView ソース コード
 
-[USBView](https://go.microsoft.com/fwlink/p/?LinkId=618004) は、GitHub の [Windows ドライバー サンプル](https://go.microsoft.com/fwlink/p/?LinkId=616507) リポジトリでも入手できます。
+[USBView](https://github.com/Microsoft/Windows-driver-samples/tree/master/usb/usbview) は、GitHub の [Windows ドライバー サンプル](https://github.com/Microsoft/Windows-driver-samples) リポジトリでも入手できます。
 
 ## <a name="span-idusing_usbviewspanspan-idusing_usbviewspanuse-usbview"></a><span id="using_usbview"></span><span id="USING_USBVIEW"></span>USBView を使用する
 

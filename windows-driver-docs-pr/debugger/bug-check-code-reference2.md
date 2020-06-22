@@ -4,19 +4,19 @@ description: このセクションでは、ブルー スクリーンに渡され
 ms.assetid: DBA85578-97CF-4BD7-A67D-1C7AD2E9B2BB
 ms.date: 04/03/2020
 ms.localizationpriority: high
-ms.openlocfilehash: ea3c330f00fc893fad1cadc70fd2c3bd94937ff3
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: a4d12aa3f8e3013bbb42c51254dd93b20aeebf61
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81224688"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534499"
 ---
 # <a name="bug-check-code-reference"></a>バグ チェック コード リファレンス
 
 このセクションでは、バグ チェックのブルー スクリーンに表示される、一般的なバグ チェック コードについて説明します。 また、Windows デバッガーで [ **!analyze**](-analyze.md) 拡張機能を使用して、バグ チェック コードに関する情報を表示する方法についても説明します。
 
 > [!NOTE]
-> このトピックはプログラマーを対象としています。 カスタマーのシステムでブルー スクリーンとバグ チェック コードが表示された場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://go.microsoft.com/fwlink/p/?linkid=183646)」を参照してください。
+> このトピックはプログラマーを対象としています。 カスタマーのシステムでブルー スクリーンとバグ チェック コードが表示された場合は、「[ブルー スクリーン エラーのトラブルシューティング](https://support.microsoft.com/help/14238/windows-10-troubleshoot-blue-screen-errors)」を参照してください。
 
 ## <a name="using-windbg-to-display-stop-code-information"></a>WinDbg を使用して停止コード情報を表示する
 

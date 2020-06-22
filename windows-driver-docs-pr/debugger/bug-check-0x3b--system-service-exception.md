@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 8180a3a7470771ccdb5204580f380267ada803db
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 1ee9898b747fe08032107845c2167414eabca5e6
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78402348"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534639"
 ---
 # <a name="bug-check-0x3b-system_service_exception"></a>バグ チェック 0x3B:SYSTEM\_SERVICE\_EXCEPTION
 
@@ -106,7 +106,7 @@ WinDbg および **!analyze** の詳細については、次のトピックを�
 
 ### <a name="identify-the-driver"></a>ドライバーを特定する
 
-エラーの原因となったドライバーを特定できる場合は、その名前がブルー スクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver** に格納されます。 これを表示するには、[**dx** (デバッガー オブジェクト モデル式の表示)](https://docs.microsoft.com/windows-hardware/drivers/debugger/dx--display-visualizer-variables-) デバッガーコマンドを使用します: `dx KiBugCheckDriver`。
+エラーの原因となったドライバーを特定できる場合は、その名前がブルー スクリーンに出力され、メモリ内の場所 (PUNICODE\_STRING) **KiBugCheckDriver** に格納されます。 これを表示するには、[**dx** (デバッガー オブジェクト モデル式の表示)](dx--display-visualizer-variables-.md) デバッガーコマンドを使用します: `dx KiBugCheckDriver`。
 
 [ **!error**](-error.md) 拡張機能を使用して、パラメーター 1 の例外コードに関する情報を表示します。 **!error** からの出力の例を次に示します。
 

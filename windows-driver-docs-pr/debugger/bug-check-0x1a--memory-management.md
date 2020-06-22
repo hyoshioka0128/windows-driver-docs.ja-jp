@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: aa8f9ccbbf1c8f8e979072dea177ef3202cb8ef3
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 86962e0d29df9fc1f7019c2cef24629c31f6fee7
+ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80327571"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84534651"
 ---
 # <a name="bug-check-0x1a-memory_management"></a>バグ チェック 0x1A:MEMORY\_MANAGEMENT
 
@@ -254,6 +254,6 @@ MEMORY\_MANAGEMENT バグ チェックの値は、0x0000001A です。 これは
 <a name="resolution"></a>解決方法
 ----------
 
-[ **!analyze**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-analyze) デバッグ拡張機能は、バグ チェックに関する情報を表示し、根本原因の特定に役立ちます。 
+[ **!analyze**](-analyze.md) デバッグ拡張機能は、バグ チェックに関する情報を表示し、根本原因の特定に役立ちます。
 
 Windows メモリ診断ツールを実行すると、物理メモリ モジュールに影響するあらゆる種類の問題を排除するためにも役立ちます。
