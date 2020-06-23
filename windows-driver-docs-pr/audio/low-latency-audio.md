@@ -1,45 +1,43 @@
 ---
-title: 低遅延オーディオ
+title: 低待機時間オーディオ
 description: このトピックでは、Windows 10 でのオーディオの待機時間の変化について説明します。 アプリケーション開発者向けの API オプションに加え、低待機時間のオーディオをサポートするために実行できるドライバーの変更についても説明します。
 ms.assetid: 888AEF01-271D-41CD-8372-A47551348959
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc8c1f88db55e0317daf12eb1a5e0356ca37b120
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: dfe4dc6f31faa90789e9718bbec65b2f3911bf32
+ms.sourcegitcommit: 57b649e59a2be2055413982035d89bc85e3e425d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72830467"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133286"
 ---
-# <a name="low-latency-audio"></a>低遅延オーディオ
-
+# <a name="low-latency-audio"></a>低待機時間オーディオ
 
 このトピックでは、Windows 10 でのオーディオの待機時間の変化について説明します。 アプリケーション開発者向けの API オプションに加え、低待機時間のオーディオをサポートするために実行できるドライバーの変更についても説明します。
 
-このトピックは次のセクションで構成されます。
+このトピックは、次のセクションで構成されています。
 
--   [概要](#overview)
--   [定義](#definitions)
--   [Windows オーディオスタック](#windows_audio_stack)
--   [Windows 10 でのオーディオスタックの強化](#audio_stack_improvements_in_windows_10)
--   [API の機能強化](#api_improvements)
--   [AudioGraph](#audiograph)
--   [Windows Audio Session API (中 API)](#windows_audio_session_api_wasapi)
--   [ドライバーの機能強化](#driver_improvements)
--   [測定ツール](#measurement_tools)
--   [サンプル](#samples)
--   [FAQ](#faq)
+- [概要](#overview)
+- [定義](#definitions)
+- [Windows オーディオスタック](#windows_audio_stack)
+- [Windows 10 でのオーディオスタックの強化](#audio_stack_improvements_in_windows_10)
+- [API の機能強化](#api_improvements)
+- [AudioGraph](#audiograph)
+- [Windows Audio Session API (中 API)](#windows_audio_session_api_wasapi)
+- [ドライバーの機能強化](#driver_improvements)
+- [測定ツール](#measurement_tools)
+- [サンプル](#samples)
+- [FAQ](#faq)
 
 ## <a name="span-idoverviewspanspan-idoverviewspanspan-idoverviewspanoverview"></a><span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
 
-
 オーディオ待機時間とは、サウンドが作成されてから聞こえたときまでの遅延です。 次のようないくつかの主要なシナリオでは、オーディオの待機時間を短くすることが非常に重要です。
 
--   Pro オーディオ
--   音楽の作成
--   Communications
--   仮想現実
--   ゲーム
+- Pro オーディオ
+- 音楽の作成
+- 通信
+- 仮想現実
+- ゲーム
 
 Windows 10 には、オーディオの待機時間を短縮するための変更が含まれています。 このドキュメントの目的は次のとおりです。
 
@@ -52,44 +50,16 @@ Windows 10 には、オーディオの待機時間を短縮するための変更
 
 ## <a name="span-iddefinitionsspanspan-iddefinitionsspanspan-iddefinitionsspandefinitions"></a><span id="Definitions"></span><span id="definitions"></span><span id="DEFINITIONS"></span>定義
 
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>用語</p></td>
-<td align="left"><p>説明</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>レンダー待機時間</p></td>
-<td align="left"><p>アプリケーションが音声データのバッファーをレンダー Api に送信するまでの遅延時間。この時間が、スピーカーから聞こえるようになります。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>キャプチャの待機時間</p></td>
-<td align="left"><p>サウンドがマイクからキャプチャされてから、アプリケーションによって使用されているキャプチャ Api に送信されるまでの遅延時間。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>ラウンドトリップの待機時間</p></td>
-<td align="left"><p>マイクからサウンドがキャプチャされてから、アプリケーションによって処理され、スピーカーにレンダリングするためにアプリケーションによって送信されるまでの遅延。 これは、レンダリングの待機時間 + キャプチャの待機時間とほぼ同じです。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>タッチツーアプリの待機時間</p></td>
-<td align="left"><p>通知がアプリケーションに送信されるまでにユーザーが画面をタップするまでの遅延時間。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>タッチツーサウンド待機時間</p></td>
-<td align="left"><p>ユーザーが画面をタップするまでの待ち時間。イベントはアプリケーションに送信され、スピーカーを介してサウンドが聞こえます。 これは、レンダリングの待機時間とタッチツーアプリの待機時間と同じです。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|||
+|--- |--- |
+|用語|説明|
+|レンダー待機時間|アプリケーションが音声データのバッファーをレンダー Api に送信するまでの遅延時間。この時間が、スピーカーから聞こえるようになります。|
+|キャプチャの待機時間|サウンドがマイクからキャプチャされてから、アプリケーションによって使用されているキャプチャ Api に送信されるまでの遅延時間。|
+|ラウンドトリップの待機時間|マイクからサウンドがキャプチャされてから、アプリケーションによって処理され、スピーカーにレンダリングするためにアプリケーションによって送信されるまでの遅延。 これは、レンダリングの待機時間 + キャプチャの待機時間とほぼ同じです。|
+|タッチツーアプリの待機時間|通知がアプリケーションに送信されるまでにユーザーが画面をタップするまでの遅延時間。|
+|タッチツーサウンド待機時間|ユーザーが画面をタップするまでの待ち時間。イベントはアプリケーションに送信され、スピーカーを介してサウンドが聞こえます。 これは、レンダリングの待機時間とタッチツーアプリの待機時間と同じです。|
 
 ## <a name="span-idwindows_audio_stackspanspan-idwindows_audio_stackspanspan-idwindows_audio_stackspanwindows-audio-stack"></a><span id="Windows_Audio_Stack"></span><span id="windows_audio_stack"></span><span id="WINDOWS_AUDIO_STACK"></span>Windows オーディオスタック
-
 
 次の図は、Windows オーディオスタックの簡略化されたバージョンを示しています。
 
@@ -133,7 +103,6 @@ Windows 10 には、オーディオの待機時間を短縮するための変更
 
 ## <a name="span-idaudio_stack_improvements_in_windows_10spanspan-idaudio_stack_improvements_in_windows_10spanspan-idaudio_stack_improvements_in_windows_10spanaudio-stack-improvements-in-windows-10"></a><span id="Audio_Stack_Improvements_in_Windows_10"></span><span id="audio_stack_improvements_in_windows_10"></span><span id="AUDIO_STACK_IMPROVEMENTS_IN_WINDOWS_10"></span>Windows 10 でのオーディオスタックの強化
 
-
 待機時間を短縮するために、次の3つの領域で Windows 10 が強化されています。
 
 1. オーディオを使用するすべてのアプリケーションでは、Windows 8.1 と比較して、コードの変更やドライバーの更新を行わずに、ラウンドトリップの待機時間 (前のセクションで説明したように) で 4.5-16ms を減らすことができます。
@@ -148,18 +117,17 @@ Windows 10 には、オーディオの待機時間を短縮するための変更
 
 ## <a name="span-idapi_improvementsspanspan-idapi_improvementsspanspan-idapi_improvementsspanapi-improvements"></a><span id="API_Improvements"></span><span id="api_improvements"></span><span id="API_IMPROVEMENTS"></span>API の機能強化
 
-
 次の2つの Windows 10 Api は、低待機時間機能を提供します。
 
--   [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)
--   [Windows Audio Session API (中 API)](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)
+- [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph)
+- [Windows Audio Session API (中 API)](https://docs.microsoft.com/windows/desktop/CoreAudio/wasapi)
 
 アプリケーション開発者は、次の2つの Api のどれを使用するかを決定できます。
 
--   新しいアプリケーション開発で可能な限り、AudioGraph を優先します。
--   次の場合にのみ、使用している API を使用します。
-    -   AudioGraph で提供されているものよりも追加の制御が必要です。
-    -   AudioGraph で提供される待ち時間よりも待機時間が短くなります。
+- 新しいアプリケーション開発で可能な限り、AudioGraph を優先します。
+- 次の場合にのみ、使用している API を使用します。
+    - AudioGraph で提供されているものよりも追加の制御が必要です。
+    - AudioGraph で提供される待ち時間よりも待機時間が短くなります。
 
 このトピックの「[測定ツール](#measurement_tools)」セクションでは、受信トレイ hdaudio ドライバーを使用して、haswell なシステムからの特定の測定値を示します。
 
@@ -167,40 +135,20 @@ Windows 10 には、オーディオの待機時間を短縮するための変更
 
 ### <a name="span-idaudiographspanspan-idaudiographspanspan-idaudiographspanaudiograph"></a><span id="AudioGraph"></span><span id="audiograph"></span><span id="AUDIOGRAPH"></span>AudioGraph
 
-AudioGraph は、対話型の音楽作成シナリオを簡単に実現することを目的とした、Windows 10 の新しいユニバーサル Windows プラットフォーム API です。 Audiograph は、いくつかのプログラミング言語C++( C#、、JavaScript) で使用でき、シンプルで機能豊富なプログラミングモデルを備えています。
+AudioGraph は、対話型の音楽作成シナリオを簡単に実現することを目的とした、Windows 10 の新しいユニバーサル Windows プラットフォーム API です。 AudioGraph は、いくつかのプログラミング言語 (C++、C#、JavaScript) で使用でき、シンプルで機能豊富なプログラミングモデルを備えています。
 
 低待機時間のシナリオを対象とするために、AudioGraph には[Audiographsettings:: QuantumSizeSelectionMode プロパティ](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings#Windows_Media_Audio_AudioGraphSettings_QuantumSizeSelectionMode)が用意されています。 このプロパティは、次の表に示す値のいずれかになります。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Value</p></td>
-<td align="left"><p>説明</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>SystemDefault</p></td>
-<td align="left"><p>バッファーを既定のバッファーサイズ (~ 10 ミリ秒) に設定します。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>LowestLatency</p></td>
-<td align="left"><p>バッファーをドライバーでサポートされている最小値に設定します。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>ClosestToDesired</p></td>
-<td align="left"><p>バッファーサイズを、DesiredSamplesPerQuantum プロパティで定義された値に等しいか、ドライバーでサポートされている DesiredSamplesPerQuantum の近くにある値に設定します。</p></td>
-</tr>
-</tbody>
-</table>
+|||
+|--- |--- |
+|値|[説明]|
+|SystemDefault|バッファーを既定のバッファーサイズ (~ 10 ミリ秒) に設定します。|
+|LowestLatency|バッファーをドライバーでサポートされている最小値に設定します。|
+|ClosestToDesired|バッファーサイズを、DesiredSamplesPerQuantum プロパティで定義された値に等しいか、ドライバーでサポートされている DesiredSamplesPerQuantum の近くにある値に設定します。|
 
- 
+ AudioCreation サンプル (GitHub からダウンロード可能) では、 <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation> オーディオグラフを使用して待機時間を短くする方法を示しています。 次のコードスニペットは、最小バッファーサイズを設定する方法を示しています。
 
-AudioCreation サンプル (GitHub でダウンロード可能: <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>) では、オーディオグラフを使用して待機時間を短くする方法を示しています。 次のコードスニペットは、最小バッファーサイズを設定する方法を示しています。
-
-```cpp
+```csharp
 AudioGraphSettings settings = new AudioGraphSettings(AudioRenderCategory.Media);
 settings.QuantumSizeSelectionMode = QuantumSizeSelectionMode.LowestLatency;
 CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
@@ -210,9 +158,9 @@ CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
 
 Windows 10 以降では、次のように、の中で API が強化されています。
 
--   特定のオーディオデバイスのオーディオドライバーでサポートされているバッファーサイズ (周期性値) の範囲をアプリケーションが検出できるようにします。 これにより、共有モードでストリームを開くときに、アプリケーションが既定のバッファーサイズ (10 ミリ秒) または小さいバッファー (&lt;10 ミリ秒) のいずれかを選択できるようになります。 アプリケーションでバッファーサイズが指定されていない場合は、既定のバッファーサイズが使用されます。
--   オーディオエンジンの現在の形式と周期性をアプリケーションが検出できるようにします。 これにより、アプリケーションはオーディオエンジンの現在の設定にスナップできます。
--   オーディオエンジンによって再サンプリングされることなく、指定した形式でレンダリングまたはキャプチャするようにアプリに指定できます。
+- 特定のオーディオデバイスのオーディオドライバーでサポートされているバッファーサイズ (周期性値) の範囲をアプリケーションが検出できるようにします。 これにより、 &lt; 共有モードでストリームを開くときに、アプリケーションが既定のバッファーサイズ (10 ミリ秒) または小さいバッファー (10 ミリ秒) のいずれかを選択できるようになります。 アプリケーションでバッファーサイズが指定されていない場合は、既定のバッファーサイズが使用されます。
+- オーディオエンジンの現在の形式と周期性をアプリケーションが検出できるようにします。 これにより、アプリケーションはオーディオエンジンの現在の設定にスナップできます。
+- オーディオエンジンによって再サンプリングされることなく、指定した形式でレンダリングまたはキャプチャするようにアプリに指定できます。
 
 上記の機能は、すべての Windows デバイスで使用できるようになります。 ただし、リソースが十分にあり、ドライバーが更新されている特定のデバイスでは、他よりも優れたユーザーエクスペリエンスが提供されます。
 
@@ -220,34 +168,14 @@ Windows 10 以降では、次のように、の中で API が強化されてい�
 
 [**IAudioClient3**](https://docs.microsoft.com/windows/desktop/api/audioclient/nn-audioclient-iaudioclient3)は、次の3つのメソッドを定義します。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>メソッド</p></td>
-<td align="left"><p>説明</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>GetCurrentSharedModeEnginePeriod</p></td>
-<td align="left"><p>オーディオエンジンの現在の形式と周期性を返します。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>GetSharedModeEnginePeriod</p></td>
-<td align="left"><p>エンジンによってサポートされる、指定されたストリーム形式の周期性の範囲を返します</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>InitializeSharedAudioStream</p></td>
-<td align="left"><p>指定した周期性を使用して共有ストリームを初期化します</p></td>
-</tr>
-</tbody>
-</table>
+|||
+|--- |--- |
+|メソッド|説明|
+|GetCurrentSharedModeEnginePeriod|オーディオエンジンの現在の形式と周期性を返します。|
+|GetSharedModeEnginePeriod|エンジンによってサポートされる、指定されたストリーム形式の周期性の範囲を返します|
+|InitializeSharedAudioStream|指定した周期性を使用して共有ストリームを初期化します|
 
- 
-
-(<https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession>GitHub で提供されている) IAudioClient3 のオーディオサンプルは、低待機時間でを使用する方法を示しています。
+(GitHub で利用可能な) IAudioClient3 オーディオサンプルは、 <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession> 低待機時間に対してを使用する方法を示しています。
 
 次のコードスニペットは、システムでサポートされている最も短い待機時間設定で音楽作成アプリを操作する方法を示しています。
 
@@ -332,7 +260,7 @@ if (AUDCLNT_E_ENGINE_FORMAT_LOCKED == hr) {
 }
 ```
 
-また、MFCreateMFByteStreamOnStreamEx API を使用するアプリケーションでは、[リアルタイムの作業キュー API](https://docs.microsoft.com/windows/desktop/ProcThread/platform-work-queue-api)または[](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex)を使用して作業項目を作成し、独自のスレッドではなく、オーディオまたは Pro オーディオとしてタグ付けすることもお勧めします。 これにより、干渉しない非オーディオサブシステムを回避する方法で OS が管理できるようになります。 これに対して、すべての AudioGraph スレッドは、OS によって自動的に適切に管理されます。 次のコードスニペットでは、メインフレームのワークキュー Api を使用する方法を示しています。
+また、MFCreateMFByteStreamOnStreamEx API を使用するアプリケーションでは、[リアルタイムの作業キュー API](https://docs.microsoft.com/windows/desktop/ProcThread/platform-work-queue-api)または[**MFCreateMFByteStreamOnStreamEx**](https://docs.microsoft.com/windows/desktop/api/mfidl/nf-mfidl-mfcreatemfbytestreamonstreamex)を使用して作業項目を作成し、独自のスレッドではなく、オーディオまたは Pro オーディオとしてタグ付けすることもお勧めします。 これにより、干渉しない非オーディオサブシステムを回避する方法で OS が管理できるようになります。 これに対して、すべての AudioGraph スレッドは、OS によって自動的に適切に管理されます。 次のコードスニペットでは、メインフレームのワークキュー Api を使用する方法を示しています。
 
 ```cpp
 // Specify Source Reader Attributes 
@@ -483,19 +411,18 @@ Exit:
 
 最後に、中の API を使用するアプリケーション開発者は、各ストリームの機能に基づいて、オーディオカテゴリでストリームにタグを付ける必要があります。また、生のシグナル処理モードを使用するかどうかを指定する必要があります。 影響が認識されない限り、すべてのオーディオストリームで未加工のシグナル処理モードを使用しないことをお勧めします。 Raw モードでは、OEM によって選択されたすべてのシグナル処理がバイパスされるため、次のようになります。
 
--   特定のエンドポイントのレンダー信号は、非常に最適化されている場合があります。
--   キャプチャシグナルは、アプリケーションが理解できない形式になる場合があります。
--   待機時間が改善される可能性があります。
+- 特定のエンドポイントのレンダー信号は、非常に最適化されている場合があります。
+- キャプチャシグナルは、アプリケーションが理解できない形式になる場合があります。
+- 待機時間が改善される可能性があります。
 
 ## <a name="span-iddriver_improvementsspanspan-iddriver_improvementsspanspan-iddriver_improvementsspandriver-improvements"></a><span id="Driver_Improvements"></span><span id="driver_improvements"></span><span id="DRIVER_IMPROVEMENTS"></span>ドライバーの機能強化
 
-
 オーディオドライバーで低待機時間をサポートするために、Windows 10 には次の3つの新機能が用意されています。
 
-1. \[必須\] 各モードでサポートされている最小バッファーサイズを宣言します。
-2. \[省略可能ですが、ドライバーと OS の間のデータフローの調整を改善\] ことをお勧めします。
-3. \[省略可能ですが、低待機時間のシナリオで OS によって保護されるように、ドライバーリソース (割り込み、スレッド) を登録\] ことをお勧めします。
-Hdaudbus によって既に実行されているため、受信トレイ HDAudio bus ドライバー hdaudbus によって列挙される HDAudio ミニポート関数ドライバーは、HDAudio 割り込みを登録する必要がありません。 ただし、ミニポートドライバーが独自のスレッドを作成する場合は、それを登録する必要があります。
+1. \[必須 \] 各モードでサポートされている最小バッファーサイズを宣言します。
+2. \[省略可能ですが、 \] ドライバーと OS の間のデータフローの調整を向上させることをお勧めします。
+3. \[省略可能ですが、 \] 低待機時間シナリオで OS によって保護できるように、ドライバーリソース (割り込み、スレッド) を登録することをお勧めします。
+hdaudbus.sys によって既に実行されているため、受信トレイ HDAudio bus ドライバー hdaudbus.sys によって列挙される HDAudio ミニポート関数ドライバーは、HDAudio 割り込みを登録する必要がありません。 ただし、ミニポートドライバーが独自のスレッドを作成する場合は、それを登録する必要があります。
 
 次の3つのセクションでは、新しい機能の詳細について説明します。
 
@@ -503,7 +430,7 @@ Hdaudbus によって既に実行されているため、受信トレイ HDAudio
 
 ドライバーは、OS、ドライバー、およびハードウェア間でオーディオデータを移動するときに、さまざまな制約の下で動作します。 これらの制約は、メモリとハードウェア間でデータを移動する物理ハードウェアトランスポート、またはハードウェアまたは関連する DSP 内の信号処理モジュールによって発生することがあります。
 
-Windows 10 では、ドライバーは DEVPKEY\_Ksk Audio\_PacketSize\_Constraints デバイスプロパティを使用して、バッファーサイズ機能を表すことができます。 このプロパティを使用すると、ユーザーは、ドライバーによってサポートされる絶対最小バッファーサイズと、各シグナル処理モードの特定のバッファーサイズ制約を定義できます (モード固有の制約は、ドライバーの最小バッファーサイズよりも大きくする必要があります)。それ以外の場合は、オーディオスタックによって無視されます)。 たとえば、次のコードスニペットは、サポートされている絶対バッファーサイズが1ミリ秒であることをドライバーが宣言する方法を示していますが、既定のモードでは128フレーム (48 kHz サンプルレートを想定している場合は3ミリ秒に対応) がサポートされています。
+Windows 10 では、ドライバーは DEVPKEY \_ ksaudio \_ PacketSize Constraints デバイスプロパティを使用してバッファーサイズ機能を表現でき \_ ます。 このプロパティを使用すると、ユーザーは、ドライバーによってサポートされる絶対最小バッファーサイズと、各シグナル処理モードの特定のバッファーサイズ制約を定義できます (モード固有の制約は、ドライバーの最小バッファーサイズよりも大きくする必要があります。それ以外の場合は、オーディオスタックによって無視されます)。 たとえば、次のコードスニペットは、サポートされている絶対バッファーサイズが1ミリ秒であることをドライバーが宣言する方法を示していますが、既定のモードでは128フレーム (48 kHz サンプルレートを想定している場合は3ミリ秒に対応) がサポートされています。
 
 ```cpp
 // Describe constraints for small buffers
@@ -529,10 +456,10 @@ static struct
 
 これらの構造に関する詳細な情報については、次のトピックを参照してください。
 
--   [**KSAUDIO\_PACKETSIZE\_CONSTRAINTS 構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
--   [**KSAUDIO\_PACKETSIZE\_PROCESSINGMODE\_制約構造**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
+-   [**KSAUDIO \_ PACKETSIZE \_ CONSTRAINTS 構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_constraints)
+-   [**KSAUDIO \_ PACKETSIZE \_ processingmode \_ 制約構造体**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-_ksaudio_packetsize_signalprocessingmode_constraint)
 
-また、sysvad サンプル (<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>) では、ドライバーが各モードの最小バッファーを宣言するために、これらのプロパティの使用方法を示しています。
+また、sysvad サンプル () は、 <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> ドライバーが各モードの最小バッファーを宣言するために、これらのプロパティの使用方法を示しています。
 
 **2. ドライバーと OS の調整を改善します。**
 
@@ -558,7 +485,7 @@ static struct
 -   ドライバーと DSP の間で、Windows パフォーマンスカウンターと DSP の壁面クロックの間の相関関係を計算します。 この手順は、非常に単純な (ただし、正確ではありませんが) 非常に複雑なものや斬新なもの (より正確です) の範囲です。
 -   シグナル処理アルゴリズムまたはパイプラインまたはハードウェアトランスポートに起因する一定の遅延を考慮します。ただし、これらの遅延が考慮されない場合は除きます。
 
-Sysvad サンプル (<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>) は、上記の DDIs を使用する方法を示しています。
+Sysvad サンプル () は、 <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad> 上記の DDIs を使用する方法を示しています。
 
 **3. ドライバーリソースを登録する**
 
@@ -578,20 +505,20 @@ Sysvad サンプル (<https://github.com/Microsoft/Windows-driver-samples/tree/m
     -   バスドライバーのリソースを登録します。
     -   子のリソースが親のリソースに依存していることを Portcls に通知します。 HD オーディオアーキテクチャでは、オーディオミニポートドライバーが独自のドライバー所有のスレッドリソースを登録するだけで済みます。
 
-注:
+メモ:
 
--   Hdaudbus によって既に実行されているため、受信トレイ HDAudio bus ドライバー hdaudbus によって列挙される HDAudio ミニポート関数ドライバーは、HDAudio 割り込みを登録する必要がありません。 ただし、ミニポートドライバーが独自のスレッドを作成する場合は、それを登録する必要があります。
--   ストリーミングリソースの登録のみを目的として Portcls とリンクするドライバーでは、Portcls (および依存ファイル) を含むように、その Inf を更新する必要があります。 新しい INF copy セクションは、これらのファイルのみをコピーするために、wdmaudio に定義されています。
+-   hdaudbus.sys によって既に実行されているため、受信トレイ HDAudio bus ドライバー hdaudbus.sys によって列挙される HDAudio ミニポート関数ドライバーは、HDAudio 割り込みを登録する必要がありません。 ただし、ミニポートドライバーが独自のスレッドを作成する場合は、それを登録する必要があります。
+-   ストリーミングリソースを登録する目的でのみ Portcls とリンクするドライバーでは、が含まれている必要があります。また、必要に応じて、(および依存ファイル) を portcls.sys コピーします。 新しい INF copy セクションは、これらのファイルのみをコピーするために、wdmaudio に定義されています。
 -   Windows 10 でのみ実行されるオーディオドライバーは、次のようなハードリンクを行うことができます。
     -   [**PcAddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcaddstreamresource)
     -   [**PcRemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-pcremovestreamresource)
--   ダウンレベルの OS で実行する必要があるオーディオドライバーは、次のインターフェイスを使用できます (ミニポートは、PortCls がインターフェイスをサポートしている場合にのみ、IPortClsStreamResourceManager インターフェイス\_の IID の QueryInterface を呼び出し、そのリソースを登録できます)。
+-   ダウンレベルの OS で実行する必要があるオーディオドライバーは、次のインターフェイスを使用できます (ミニポートは、IID \_ iportclsstreamresourcemanager インターフェイスの QueryInterface を呼び出し、PortCls がインターフェイスをサポートしている場合にのみそのリソースを登録できます)。
     -   [IPortClsStreamResourceManager](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nn-portcls-iportclsstreamresourcemanager)
         -   [**AddStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsstreamresourcemanager-addstreamresource)
         -   [**RemoveStreamResource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/nf-portcls-iportclsstreamresourcemanager-removestreamresource)
 -   これらの DDIs は、次の列挙型と構造体を使用します。
     -   [**PcStreamResourceType**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ne-portcls-_pcstreamresourcetype)
-    -   [**PCSTREAMRESOURCE\_記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcstreamresource_descriptor)
+    -   [**PCSTREAMRESOURCE \_ 記述子**](https://docs.microsoft.com/windows-hardware/drivers/ddi/portcls/ns-portcls-_pcstreamresource_descriptor)
 
 最後に、リソースの登録のみを目的として PortCls を使用するドライバーは、その inf の DDInstall セクションに次の2行を追加する必要があります。 オーディオミニポートドライバーは、既に wdmaudio にインクルード/ニーズがあるため、これを必要としません。
 
@@ -605,47 +532,44 @@ Needs=WDMPORTCLS.CopyFilesOnly
 
 ## <a name="span-idmeasurement_toolsspanspan-idmeasurement_toolsspanspan-idmeasurement_toolsspanmeasurement-tools"></a><span id="Measurement_Tools"></span><span id="measurement_tools"></span><span id="MEASUREMENT_TOOLS"></span>測定ツール
 
-
 ユーザーは、ラウンドトリップの待機時間を測定するために、スピーカーを介してパルスを再生し、マイク経由でキャプチャするツールを使用できます。 次のパスの遅延を測定します。
 
 1. アプリケーションは、render API (AudioGraph または ' という) を呼び出して、パルスを再生します。
 2. 音声はスピーカー経由で再生されます。
 3. オーディオはマイクからキャプチャされます。
-4. さまざまなバッファーサイズのラウンドトリップの待機時間を測定するために、キャプチャ API (AudioGraph または ' 中 API) によってパルスが検出されます。ユーザーは、小さなバッファーをサポートするドライバーをインストールする必要があります。 受信トレイ HDAudio ドライバーが更新され、128サンプル (2.66ms@48kHz) と480サンプル (10ms@48kHz) の間のバッファーサイズがサポートされるようになりました。 次の手順は、受信トレイ HDAudio ドライバー (すべての Windows 10 Sku の一部) をインストールする方法を示しています。
+4. さまざまなバッファーサイズのラウンドトリップの待機時間を測定するために、キャプチャ API (AudioGraph または ' 中 API) によってパルスが検出されます。ユーザーは、小さなバッファーをサポートするドライバーをインストールする必要があります。 受信トレイ HDAudio ドライバーは、128サンプル ( 2.66ms@48kHz ) と480サンプル () の間のバッファーサイズをサポートするように更新されました 10ms@48kHz 。 次の手順は、受信トレイ HDAudio ドライバー (すべての Windows 10 Sku の一部) をインストールする方法を示しています。
 
--   デバイスマネージャーを開始します。
--   **[サウンドビデオとゲームコントローラー]** で、内部スピーカーに対応するデバイスをダブルクリックします。
--   次のウィンドウで、 **[ドライバー]** タブにアクセスします。
--   &gt; -**ドライバーの更新** を選択し、**ドライバーソフトウェア -のコンピューターを参照して**ください を選択し &gt; **このコンピューターのデバイスドライバーの一覧から**選択します -**High Definition Audio デバイスを選択**&gt;**次へ** をクリックします。
--   [ドライバーの警告を更新する] というタイトルのウィンドウが表示されたら、[**はい]** をクリックします。
--   **[閉じる]** を選択します。
--   システムの再起動を求められた場合は、 **[はい]** を選択して再起動します。
--   再起動後、システムは、サードパーティ製のコーデックドライバーではなく、受信トレイ Microsoft HDAudio ドライバーを使用します。 オーディオコーデックに最適な設定を使用する場合は、以前に使用していたドライバーを忘れないようにしてください。
+- デバイス マネージャーを開始します。
+- [**サウンドビデオとゲームコントローラー**] で、内部スピーカーに対応するデバイスをダブルクリックします。
+- 次のウィンドウで、[**ドライバー** ] タブにアクセスします。
+- [**ドライバーの更新**] を選択し  - &gt; **て [コンピューターを参照してドライバーソフトウェアを検索**する] [  - &gt; **このコンピューターのデバイスドライバーの一覧から選択する**] [  - &gt; **高解像度オーディオデバイス] を選択**し、[**次へ**] をクリックします。
+- [ドライバーの警告を更新する] というタイトルのウィンドウが表示されたら、[**はい]** をクリックします。
+- [**閉じる**] を選択します。
+- システムの再起動を求められた場合は、[**はい**] を選択して再起動します。
+- 再起動後、システムは、サードパーティ製のコーデックドライバーではなく、受信トレイ Microsoft HDAudio ドライバーを使用します。 オーディオコーデックに最適な設定を使用する場合は、以前に使用していたドライバーを忘れないようにしてください。
 
 ![異なるバッファーサイズを持つ、中規模の api と audiograph 間のラウンドトリップの待機時間の差を示すグラフ。 ](images/low-latency-audio-roundtrip-latency.png)
 
 次の理由により、中 API と AudioGraph の間の待機時間の違いがわかります。
 
--   AudioGraph は、レンダリングとキャプチャを同期するために、キャプチャ側に1つの待機時間バッファーを追加します (これは、' 中 API ' では提供されません)。 この追加により、AudioGraph を使用して作成されたアプリケーションのコードが簡略化されます。
--   システムで &gt; 6ms バッファーが使用されている場合、AudioGraph のレンダリング側に待機時間に関する追加のバッファーがあります。
--   AudioGraph には、オーディオ効果のキャプチャを無効にするオプションがありません
+- AudioGraph は、レンダリングとキャプチャを同期するために、キャプチャ側に1つの待機時間バッファーを追加します (これは、' 中 API ' では提供されません)。 この追加により、AudioGraph を使用して作成されたアプリケーションのコードが簡略化されます。
+- システムが6ms バッファーを使用しているときに、AudioGraph のレンダリング側に待機時間の追加バッファーがあり &gt; ます。
+- AudioGraph には、オーディオ効果のキャプチャを無効にするオプションがありません
 
 ## <a name="span-idsamplesspanspan-idsamplesspanspan-idsamplesspansamples"></a><span id="Samples"></span><span id="samples"></span><span id="SAMPLES"></span>Samples
 
-
--   中 API Audio サンプル: <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession>
--   AudioCreation サンプル (Audiocreation): <https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
--   Sysvad driver サンプル: <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
+- 中 API Audio のサンプル:<https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WindowsAudioSession>
+- AudioCreation サンプル (Audiocreation):<https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation>
+- Sysvad driver サンプル:<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
 
 ## <a name="span-idfaqspanspan-idfaqspanfaq"></a><span id="FAQ"></span><span id="faq"></span>FAQ
 
-
 **1. すべてのアプリケーションで新しい Api を使用して待機時間を短縮することはできませんか。低待機時間では、ユーザーの操作性が向上していることを常に保証しますか。**
 
-必ずしもそうであるとは限りません。 待機時間を短くすると、トレードオフが発生します。
+必ずしもその必要はありません。 待機時間を短くすると、トレードオフが発生します。
 
--   低待機時間は、電力消費量が高くなることを意味します。 システムで10ミリ秒バッファーが使用されている場合は、CPU がすべての10ミリ秒をウェイクアップし、データバッファーにデータを入力して、スリープ状態に移行することを意味します。 ただし、システムで1ミリ秒バッファーが使用されている場合は、CPU がすべての1ミリ秒をウェイクアップすることを意味します。 2番目のシナリオでは、CPU が頻繁にウェイクアップし、電力消費量が増加することを意味します。 これにより、バッテリの寿命が減少します。
--   ほとんどのアプリケーションは、最適なユーザーエクスペリエンスを提供するためにオーディオ効果に依存しています。 たとえば、メディアプレーヤーでは、再現性の高いオーディオを提供する必要があります。 通信アプリケーションは、最小限のエコーとノイズを必要とします。 これらの種類のオーディオ効果をストリームに追加すると、待機時間が長くなります。 これらのアプリケーションは、オーディオの待ち時間よりもオーディオ品質に関心があります。
+- 低待機時間は、電力消費量が高くなることを意味します。 システムで10ミリ秒バッファーが使用されている場合は、CPU がすべての10ミリ秒をウェイクアップし、データバッファーにデータを入力して、スリープ状態に移行することを意味します。 ただし、システムで1ミリ秒バッファーが使用されている場合は、CPU がすべての1ミリ秒をウェイクアップすることを意味します。 2番目のシナリオでは、CPU が頻繁にウェイクアップし、電力消費量が増加することを意味します。 これにより、バッテリの寿命が減少します。
+- ほとんどのアプリケーションは、最適なユーザーエクスペリエンスを提供するためにオーディオ効果に依存しています。 たとえば、メディアプレーヤーでは、再現性の高いオーディオを提供する必要があります。 通信アプリケーションは、最小限のエコーとノイズを必要とします。 これらの種類のオーディオ効果をストリームに追加すると、待機時間が長くなります。 これらのアプリケーションは、オーディオの待ち時間よりもオーディオ品質に関心があります。
 
 要約すると、各アプリケーションの種類には、オーディオの待機時間に関するさまざまなニーズがあります。 アプリケーションの待機時間を短くする必要がない場合、待機時間を短くするために新しい Api を使用しないでください。
 
@@ -653,14 +577,6 @@ Needs=WDMPORTCLS.CopyFilesOnly
 
 いいえ。 システムで小さなバッファーをサポートするためには、ドライバーを更新する必要があります。 どのシステムが小さなバッファーをサポートするように更新されるかは、Oem によって決定されます。 また、より新しいシステムは、古いシステムよりも小さなバッファーをサポートするためにより多くの likey です (つまり、新しいシステムの待機時間が古いシステムよりも低い可能性があります)。
 
-**3. ドライバーが小さいバッファーサイズ (&lt;10 ミリ秒バッファー) をサポートしている場合、Windows 10 のすべてのアプリケーションは、自動的に小さいバッファーを使用してオーディオのレンダリングとキャプチャを行いますか。**
+**3. ドライバーが小さいバッファーサイズ (10 ミリ秒バッファー) をサポートしている場合 &lt; 、Windows 10 のすべてのアプリケーションは自動的に小さいバッファーを使用してオーディオをレンダリングし、キャプチャしますか。**
 
 いいえ。 既定では、Windows 10 のすべてのアプリケーションは、10ミリ秒バッファーを使用してオーディオのレンダリングとキャプチャを行います。 アプリケーションで小さなバッファーを使用する必要がある場合は、そのために、新しい AudioGraph 設定または IAudioClient3 インターフェイスを使用する必要があります。 ただし、Windows 10 の1つのアプリケーションが小さなバッファーの使用を要求した場合、オーディオエンジンはその特定のバッファーサイズを使用してオーディオの転送を開始します。 その場合、同じエンドポイントとモードを使用するすべてのアプリケーションは、その小さいバッファーサイズに自動的に切り替わります。 低待機時間のアプリケーションが終了すると、オーディオエンジンは10ミリ秒バッファーに再び切り替えます。
-
- 
-
- 
-
-
-
-

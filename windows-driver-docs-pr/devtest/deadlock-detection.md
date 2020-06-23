@@ -9,12 +9,12 @@ keywords:
 - スレッドが WDK ドライバー検証ツールをロックする
 ms.date: 06/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d4c905a7cd7cf778cf088502c879d59a7b153b8
-ms.sourcegitcommit: 0a0b75d93130b6c5854279607cd0aac099f65fd5
+ms.openlocfilehash: 4251ae6424c19b02af40d47de5ca5253b53d869a
+ms.sourcegitcommit: 8f693fbfca7705f138442fb22411edbcc8850d31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428323"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85191767"
 ---
 # <a name="deadlock-detection"></a>デッドロックの検出
 
@@ -66,9 +66,9 @@ Driver Verifier のデッドロック検出オプションは、 **! デッド�
 
 デッドロック検出によって違反が検出されると、バグチェック0xC4 が発行されます。 このバグチェックの最初のパラメーターは、正確な違反を示します。 次のような違反が考えられます。
 
-- ロック階層違反に含まれる2つ以上のスレッド
+-   ロック階層違反に含まれる2つ以上のスレッド
 
-- シーケンスから解放されるリソース
+-   共有所有者として既に共有されているリソースを排他的に取得しようとするスレッド (共有リソースのみを取得できます。共有リソースを排他的に取得することはできません)。
 
 - 同じリソースを2回取得しようとするスレッド (自己デッドロック)
 
@@ -92,7 +92,10 @@ Driver Verifier のデッドロック検出オプションは、 **! デッド�
 
 ### <a name="activating-this-option"></a>このオプションをアクティブにする
 
-ドライバー検証ツールマネージャーまたは Verifier コマンドラインを使用して、1つまたは複数のドライバーのデッドロック検出機能をアクティブにすることができます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
+> [!NOTE]
+> このオプションは、[カーネル同期遅延ファジー](https://docs.microsoft.com/windows-hardware/drivers/devtest/kernel-synchronization-delay-fuzzing)化と互換性がありません
+
+ドライバー検証ツールマネージャーまたは Verifier.exe コマンドラインを使用して、1つまたは複数のドライバーのデッドロック検出機能をアクティブにすることができます。 詳細については、「[ドライバーの検証オプションの選択](selecting-driver-verifier-options.md)」を参照してください。
 
 - **コマンドラインで**
 
