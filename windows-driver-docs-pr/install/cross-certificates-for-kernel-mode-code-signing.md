@@ -4,12 +4,12 @@ description: この情報では、Microsoft Windows のコード署名カーネ�
 ms.assetid: 0A1364BF-04DA-4F1C-803A-18FE2A5EF390
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2536d56a8f9f7b1ee7bc67944366f5933e72a7ff
-ms.sourcegitcommit: fe3c8b53a94c35b564b04adc0d56852879a2f119
+ms.openlocfilehash: c2a34a2bdbf14135a394429939b7f5c15b22b511
+ms.sourcegitcommit: c4f15f33d57d360f0868abe43a018248b97d5656
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85200197"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85311621"
 ---
 # <a name="cross-certificates-for-kernel-mode-code-signing"></a>カーネル モードのコード署名のクロス証明書
 
@@ -66,28 +66,28 @@ Microsoft では、コード署名カーネルモードコード用に SPCs を�
 
 次の一覧には、コード署名カーネルモードコードのために SPCs を発行するために Microsoft によって現在サポートされているすべての Ca が含まれています。
 
-|                              CA                              |                 ルート証明書の拇印                 |                        ダウンロード リンク                        |
-| :----------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
-| Certum 信頼されたネットワーク CA                                    | 55 43 55 15 fd d2 48 65 75 fd c5 cf 3b ad 00 c9 13 12 3d 03 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321770) |
-| DigiCert の保証 ID ルート CA                                  | ba 3e a5 4d 72 c1 45 d3 7c 25 5e 1e a4 0a fb c6 33 48 b9 6e | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321771) |
-| DigiCert Global Root CA                                      | c9 83 39 19 f1 f3 6a 63 48 11 1e 93 02 6f d4 0e b9 6f bc 34 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321772) |
-| DigiCert High Assurance EV Root CA                           | 2f 25 13 af 39 92 db 0a 3f 79 70 9f f8 14 3b 3f 7b d2 d1 43 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321773) |
-| Entrust.net Certification Authority (2048)                   | 00 a3 e6 00 9e aa 73 9b 3d ee f4 b5 06 64 9e 8a 1a 7a d3 3a | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321774) |
-| Entrust ルート証明機関– G2                    | d8 fc 24 87 48 58 5e 17 3e fb fb 30 75 c4 b4 d6 0f 9d 8d 08 | [ダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=624811) |
-| GeoTrust Primary Certification Authority                     | e8 6e 80 82 99 0e 3d fa ed 81 6d 9e b1 72 0f 91 a4 f1 a1 85 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321775) |
-| GeoTrust プライマリ証明機関– G3                | b2 bb bd fa c8 f1 a8 ad 58 95 cd 49 38 4b 22 ca 19 db 2d 1f | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321776) |
-| GlobalSign Root CA                                           | cc 1d ee bf 6d 55 c2 c9 06 1b a1 6f 10 a0 bf a6 97 9a-z 4a 32 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321777) |
-| ゴー Daddy ルート証明機関– G2                     | 84 2c 5c b3 4b 73 bb c5 ed 85 64 bd ed a7 86 96 7d 7b 42 ef | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321778) |
-| NetLock Arany (クラス Gold)                                   | 89 4f 1d 28 97 aa 4c 07 4d cd 85 c5 fc 09 ee 73 b9 51 04 d8 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321779) |
-| NetLock Platina (クラスプラチナ)                             | 97 dd 74 97 16 20 57 29 41 dc 80 0c 2f d8 0a 48 07 7d 10 b0 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321780) |
-| セキュリティ通信 RootCA1                               | 41 f2 8c e5 6f d8 b9 cb 46 7f b5 03 2a 3c ae 1c dc 9d 86 48 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321781) |
-| Starfield.html ルート証明機関– G2                    | 40 c2 0a 9a-z 33 fa d0 36 ac bf e8 2d 6c bb ee 1b 42 9b 86 de | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321782) |
-| StartCom 証明機関                             | e6 06 9e 04 8d ea 8d 81 7a fc 41 88 b1 be f1 d8 88 d0 af 17 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321783) |
-| TC TrustCenter Class 2 CA II                                 | 42 62 ff 7d 89 70 66 aa e7 75 80 d3 3a d2 88 03 f9 a1 1a 62 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321784) |
-| Thawte Primary Root CA                                       | 55 38 e9 fe c1 40 30 b7 40 15 23 49 e1 15 a1 16 5d 29 07 4a | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321785) |
-| Thawte プライマリルート CA – G3                                  | ba 57 ca 5e 78 dd 2d 1d 74 76 ae be e9 95 3e 39 6f d0 55 46 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321786) |
-| VeriSign クラス3パブリックプライマリ証明機関– G5 | 57 53 4c cc 33 91 4c 41 f7 0e 2c bb 21 03 a1 db 18 81 7d 8b | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321787) |
-| VeriSign Universal Root Certification Authority              | 9e d8 cd 56 01 f0 10 56 51 eb bb 3f 57 f0 31 82 e5 fa 7e 01 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321788) |
+|                              CA                              |                 ルート証明書の拇印                 |有効期限|                        ダウンロード リンク                        |
+| :----------------------------------------------------------: | :---------------------------------------------------------: | :-----------: | :---------------------------------------------------------: |
+| Certum 信頼されたネットワーク CA                                    | 55 43 55 15 fd d2 48 65 75 fd c5 cf 3b ad 00 c9 13 12 3d 03 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321770) |
+| DigiCert の保証 ID ルート CA                                  | ba 3e a5 4d 72 c1 45 d3 7c 25 5e 1e a4 0a fb c6 33 48 b9 6e | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321771) |
+| DigiCert Global Root CA                                      | c9 83 39 19 f1 f3 6a 63 48 11 1e 93 02 6f d4 0e b9 6f bc 34 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321772) |
+| DigiCert High Assurance EV Root CA                           | 2f 25 13 af 39 92 db 0a 3f 79 70 9f f8 14 3b 3f 7b d2 d1 43 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321773) |
+| Entrust.net Certification Authority (2048)                   | 00 a3 e6 00 9e aa 73 9b 3d ee f4 b5 06 64 9e 8a 1a 7a d3 3a | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321774) |
+| Entrust ルート証明機関– G2                    | d8 fc 24 87 48 58 5e 17 3e fb fb 30 75 c4 b4 d6 0f 9d 8d 08 | 2025/07/07    | [ダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=624811) |
+| GeoTrust Primary Certification Authority                     | e8 6e 80 82 99 0e 3d fa ed 81 6d 9e b1 72 0f 91 a4 f1 a1 85 | 2021/02/22    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321775) |
+| GeoTrust プライマリ証明機関– G3                | b2 bb bd fa c8 f1 a8 ad 58 95 cd 49 38 4b 22 ca 19 db 2d 1f | 2021/02/22    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321776) |
+| GlobalSign Root CA                                           | cc 1d ee bf 6d 55 c2 c9 06 1b a1 6f 10 a0 bf a6 97 9a-z 4a 32 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321777) |
+| ゴー Daddy ルート証明機関– G2                     | 84 2c 5c b3 4b 73 bb c5 ed 85 64 bd ed a7 86 96 7d 7b 42 ef | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321778) |
+| NetLock Arany (クラス Gold)                                   | 89 4f 1d 28 97 aa 4c 07 4d cd 85 c5 fc 09 ee 73 b9 51 04 d8 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321779) |
+| NetLock Platina (クラスプラチナ)                             | 97 dd 74 97 16 20 57 29 41 dc 80 0c 2f d8 0a 48 07 7d 10 b0 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321780) |
+| セキュリティ通信 RootCA1                               | 41 f2 8c e5 6f d8 b9 cb 46 7f b5 03 2a 3c ae 1c dc 9d 86 48 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321781) |
+| Starfield.html ルート証明機関– G2                    | 40 c2 0a 9a-z 33 fa d0 36 ac bf e8 2d 6c bb ee 1b 42 9b 86 de | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321782) |
+| StartCom 証明機関                             | e6 06 9e 04 8d ea 8d 81 7a fc 41 88 b1 be f1 d8 88 d0 af 17 | 2021/04/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321783) |
+| TC TrustCenter Class 2 CA II                                 | 42 62 ff 7d 89 70 66 aa e7 75 80 d3 3a d2 88 03 f9 a1 1a 62 | 2021/04/11    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321784) |
+| Thawte Primary Root CA                                       | 55 38 e9 fe c1 40 30 b7 40 15 23 49 e1 15 a1 16 5d 29 07 4a | 2021/02/22    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321785) |
+| Thawte プライマリルート CA – G3                                  | ba 57 ca 5e 78 dd 2d 1d 74 76 ae be e9 95 3e 39 6f d0 55 46 | 2021/02/22    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321786) |
+| VeriSign クラス3パブリックプライマリ証明機関– G5 | 57 53 4c cc 33 91 4c 41 f7 0e 2c bb 21 03 a1 db 18 81 7d 8b | 2021/02/22    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321787) |
+| VeriSign Universal Root Certification Authority              | 9e d8 cd 56 01 f0 10 56 51 eb bb 3f 57 f0 31 82 e5 fa 7e 01 | 2021/02/22    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321788) |
 
 ## <a name="new-cross-certificate-list"></a>新しいクロス証明書の一覧
 
@@ -95,12 +95,12 @@ Microsoft では、コード署名カーネルモードコード用に SPCs を�
 次の一覧には、コード署名カーネルモードコード用に SPCs を発行するために Microsoft によって現在サポートされている新しい Ca がいくつか含まれています。
 
 
-|                              CA                              |                 ルート証明書の拇印                 |                        ダウンロード リンク                        |
-| :----------------------------------------------------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
-| AddTrust External CA Root                                    | a7 5a c6 57 aa 7a 4c df e5 f9 de 39 3e 69 ef ca b6 59 d2 50 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321790) |
-| GoDaddy クラス2証明機関                      | d9 61 24 72 ef 0f 27 87 e2 b2 d9 e0 63 a0 6b 32 fa 5e 33 3d | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321791) |
-| Starfield.html クラス2証明機関                    | f8 fc 7f 3c dd 51 76 ad d2 7c f9 7f 73 96 59 09 46 6d 9a-z 22 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321792) |
-| UTN-USERFirst-Object                                         | ae 1e 25 26 01 30 a3 0b 1b c2 20 29 35 65 3b e5 a7 23 be f5 | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321793) |
+|                              CA                              |                 ルート証明書の拇印                 |有効期限|                         ダウンロード リンク                        |
+| :----------------------------------------------------------: | :---------------------------------------------------------: | :-----------: | :---------------------------------------------------------: |
+| AddTrust External CA Root                                    | a7 5a c6 57 aa 7a 4c df e5 f9 de 39 3e 69 ef ca b6 59 d2 50 | 2023/08/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321790) |
+| GoDaddy クラス2証明機関                      | d9 61 24 72 ef 0f 27 87 e2 b2 d9 e0 63 a0 6b 32 fa 5e 33 3d | 2023/08/27    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321791) |
+| Starfield.html クラス2証明機関                    | f8 fc 7f 3c dd 51 76 ad d2 7c f9 7f 73 96 59 09 46 6d 9a-z 22 | 2023/08/27    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321792) |
+| UTN-USERFirst-Object                                         | ae 1e 25 26 01 30 a3 0b 1b c2 20 29 35 65 3b e5 a7 23 be f5 | 2023/08/15    | [ダウンロード](https://go.microsoft.com/fwlink/p/?linkid=321793) |
  
 
  
