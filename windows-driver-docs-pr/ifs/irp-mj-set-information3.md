@@ -4,28 +4,27 @@ description: IRP_MJ_SET_INFORMATION
 ms.assetid: 2a6c837c-85c9-46d8-85d8-d779f22be54e
 keywords:
 - IRP_MJ_SET_INFORMATION
-- セキュリティ WDK ファイル システム、セキュリティ チェックを追加します。
-- セキュリティは、WDK のファイル システム、IRP_MJ_SET_INFORMATION を確認します。
-- WDK のファイル システム操作の名前を変更します。
-- ハード リンク操作 WDK ファイル システム
-- WDK の名前のファイル システム
+- セキュリティ WDK ファイルシステム、セキュリティチェックの追加
+- セキュリティチェック WDK ファイルシステム、IRP_MJ_SET_INFORMATION
+- 名前変更の操作 (WDK ファイルシステム)
+- ハードリンク操作 WDK ファイルシステム
+- WDK ファイルシステムの名前
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24f39466824de162db2b0b1e47447960bccaebe7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2d47878142f50102ba53201ed9e95be041360e71
+ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324468"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85382725"
 ---
-# <a name="irpmjsetinformation"></a>IRP\_MJ\_SET\_INFORMATION
+# <a name="irp_mj_set_information"></a>IRP_MJ_SET_INFORMATION
 
-
-名前の変更とハード リンクのケース セットの情報は、特定の状況でのセキュリティ チェックを必要があります。 具体的には、呼び出し元を設定して、名前の変更またはハード リンクのターゲットを削除する必要がある場合、 **ReplaceIfExists**フィールドを**TRUE**、ファイル システムは、呼び出し元が持つようにするためのセキュリティ チェックを実行する必要がありますターゲットを削除する適切なアクセスを許可します。 さらに、することができます、ファイル システム、ポリシーの問題として望んでいないこの方法で削除することを許可するファイルの特定の種類 (レジストリ ハイブとページング ファイル、たとえば)。 次のコード例では、呼び出し元がファイルを削除する適切なセキュリティ権限を持つかどうかを決定します。
+設定情報の名前変更とハードリンクのケースでは、特定の状況下でセキュリティチェックが必要になる場合があります。 具体的には、呼び出し元が**置換 Eifexists**フィールドを**TRUE**に設定して、名前の変更またはハードリンクのターゲットを削除する場合、ファイルシステムはセキュリティチェックを実行して、ターゲットを削除するための適切なアクセス許可が呼び出し元に与えられていることを確認する必要があります。 さらに、ポリシーに関係なくファイルシステムがこの方法での削除を許可しないファイルの種類が存在する場合があります (レジストリハイブやページングファイルなど)。 次のコード例では、呼び出し元に、ファイルを削除するための適切なセキュリティアクセス許可があるかどうかを判断します。
 
 ```cpp
-NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext, 
-                                  PSECURITY_DESCRIPTOR targetSD, 
+NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
+                                  PSECURITY_DESCRIPTOR targetSD,
                                   PFCB ParentFcb)
 {
     SECURITY_SUBJECT_CONTEXT SubjectContext;
@@ -44,7 +43,7 @@ NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
     Granted = SeAccessCheck(targetSD,           // Target's SD.
                             &SubjectContext,    // Captured security context.
                             TRUE,               // Tokens are locked.
-                            DELETE,             // we only care about delete 
+                            DELETE,             // we only care about delete
                             0,                  // previously granted access.
                             &Privileges,        // privilege_set
                             IoGetFileObjectGenericMapping(), // Generic mappings.
@@ -55,9 +54,9 @@ NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
     //
     // Do not need privilege set, so release it.
     //
-    if (Privileges != NULL) { 
+    if (Privileges != NULL) {
 
-        SeFreePrivileges( Privileges ); 
+        SeFreePrivileges( Privileges );
         Privileges = NULL;
     }
 
@@ -66,24 +65,23 @@ NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
         status = STATUS_SUCCESS;
 
         //
-        // The user does not have DELETE access to the target, but 
+        // The user does not have DELETE access to the target, but
         // could have FILE_DELETE_CHILD access to the parent directory.
         //
         (void) FsdLoadSecurityDescriptor(IrpContext, ParentFcb);
         if (!ParentFcb->SecurityDescriptor) {
             //
-            // fine - no security is fine - he gets to do what he wants 
+            // fine - no security is fine - the user gets to do what they want
             //
             SeUnlockSubjectContext( &SubjectContext );
             SeReleaseSubjectContext( &SubjectContext );
             return STATUS_SUCCESS;
         }
 
- 
         Granted = SeAccessCheck(&ParentFcb->SecurityDescriptor,
                                 &SubjectContext,   // Captured security context.
                                 TRUE,              // Tokens are locked.
-                                FILE_DELETE_CHILD, // we only care about delete 
+                                FILE_DELETE_CHILD, // we only care about delete
                                 0,                 // Previously granted access.
                                 &Privileges,       // privilege_set
                                 IoGetFileObjectGenericMapping(), // Generic mappings
@@ -93,8 +91,8 @@ NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
         //
         // Release privileges
         //
-        if (Privileges != NULL) { 
-            SeFreePrivileges( Privileges ); 
+        if (Privileges != NULL) {
+            SeFreePrivileges( Privileges );
             Privileges = NULL;
         }
     }
@@ -104,14 +102,6 @@ NTSTATUS FsdCheckDeleteFileAccess(POW_IRP_CONTEXT IrpContext,
 }
 ```
 
-このコードは、名前の変更とハード リンクの作成の場合に使用できます。
+このコードは、名前変更とハードリンク作成ケースの両方に使用できます。
 
-削除されるファイルの種類に基づいて、削除を禁止するファイル システムを決定する、ポリシー レベル コードについて説明するには、このドキュメントのスコープの外側では注意してください。
-
- 
-
- 
-
-
-
-
+このドキュメントでは、削除するファイルの種類に基づいてファイルシステムで削除が禁止されていると判断されたポリシーレベルのコードについて説明します。
