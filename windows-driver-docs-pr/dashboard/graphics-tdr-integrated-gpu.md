@@ -2,14 +2,14 @@
 title: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した統合 GPU の無数のマシン
 description: この測定では、グラフィックス ドライバーにおけるクラッシュが原因で TDR が発生した統合 GPU のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリが集計されます。
 ms.topic: article
-ms.date: 01/28/2020
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bf4d53c4c6eabfdf06fe7d8cf60b0f0bdcbb8714
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 71c33528ebeb9f322a908548d483bf0d20e23d0b
+ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77076280"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353714"
 ---
 # <a name="myriad-of-machines-with-integrated-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって TDR が発生した統合 GPU の無数のマシン
 
@@ -25,8 +25,8 @@ ms.locfileid: "77076280"
 |**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
-|**最小インスタンス**|10,000 台のマシン|
-|**合格基準**|TDR が生じているマシンが 130/10000 以下|
+|**最小インスタンス**|20,000 台のマシン|
+|**合格基準**|TDR が生じているマシンが 60/10,000 以下|
 |**測定 ID**|24633264|
 
 ## <a name="calculation"></a>計算

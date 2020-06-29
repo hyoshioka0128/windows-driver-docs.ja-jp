@@ -7,16 +7,18 @@ ms.date: 11/07/2018
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: 846802f41117c9a4ee14266142fc4bef4da499b8
-ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
+ms.openlocfilehash: 0a2ce71a213655ec65de73923052fd7f25424999
+ms.sourcegitcommit: 444e055daa9b28e9fd9dc92dd0a3f1e62e215b31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421377"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666164"
 ---
-# <a name="static-driver-verifier-known-issues"></a>静的ドライバー検証ツールの既知の問題
+# <a name="static-driver-verifier-known-issues---windows-10-version-1809"></a>静的ドライバー検証ツールの既知の問題 - Windows 10 バージョン 1809
 
-このページでは、WDK で静的ドライバー検証ツールを使うと発生する可能性がある一般的な問題について説明します。 以下の情報は、Windows 10 October 2018 Update (バージョン 1809) に付属するバージョンのツールに特に関係のあるものです。
+このページでは、Windows Driver Kit (WDK) で静的ドライバー検証 (SDV) ツールを使うと発生する可能性がある一般的な問題について説明します。 以下の情報は、Windows 10 October 2018 Update (バージョン 1809) に付属するバージョンのツールに特に関係のあるものです。
+
+最新の公式 WDK に関する既知の SDV の問題については、[WDK の既知の問題](https://social.msdn.microsoft.com/Forums/en-US/96c770a9-19a3-42d0-8d0e-bd200285d980/hardware-development-kits-for-windows-10-version-2004?forum=wdk)に関する記事を参照してください。
 
 ## <a name="interceptedbuild-failures"></a>InterceptedBuild エラー
 

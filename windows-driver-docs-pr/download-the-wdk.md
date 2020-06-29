@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 111b79261c3f65b871d001e0fb21728f08b3e1bf
-ms.sourcegitcommit: b54d49545599b0a64f64e4e4b9fd78c8d9198094
+ms.openlocfilehash: b3f5d23794fa490bc9ed0428c2b3d9f1f70fcc02
+ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83383923"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85382733"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -81,7 +81,7 @@ EWDK では、.NET Framework バージョン 4.7.2 も必要です。 .NET Frame
 
 ### <a name="release-notes-and-runtime-requirements"></a>リリース ノートと実行時の要件
 
-WDK を使うと、次のオペレーティング システムで動作するドライバーを開発できます。
+Windows 7 以降で Windows 10 バージョン 2004 WDK を実行し、それを使用してこれらのオペレーティング システムのドライバーを開発することができます。
 
 |クライアントの OS|サーバーの OS|
 |-|-|

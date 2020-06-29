@@ -3,20 +3,20 @@ title: WDK を使った ARM64 ドライバーのビルド
 description: このトピックでは、Windows Driver Kit (WDK) で ARM64 ドライバーをビルドする方法について説明します。
 ms.date: 01/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f087caa719f84620358aafbcb1904e30835824e
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: ac4f277ee1a2d0b9a08c004173f68385b1bacdae
+ms.sourcegitcommit: 444e055daa9b28e9fd9dc92dd0a3f1e62e215b31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "67370364"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84666166"
 ---
 # <a name="building-arm64-drivers-with-the-wdk"></a>WDK を使った ARM64 ドライバーのビルド
 
-バージョン 1709 から、ARM64 プロセッサ搭載のコンピューターでも Windows 10 Desktop (Pro エディションおよび S エディション) を実行できるようになりました。  ただし、ARM 版 Windows 10 では、カーネル モード ドライバーの x86 エミュレーションがサポートされないため、以下の手順を使用して、カーネル モード ドライバーを ARM64 用に再コンパイルする必要があります。
+Windows 10 は、ARM64 プロセッサを搭載したコンピューターで実行できます。  ただし、ARM 版 Windows 10 では、x86 カーネル モード ドライバーのエミュレーションがサポートされないため、以下の手順を使用して、カーネル モード ドライバーを ARM64 用に再コンパイルする必要があります。
 
 ## <a name="setup"></a>セットアップ
 
-1. [Visual Studio 2017 Preview](https://visualstudio.microsoft.com/vs/preview/) をダウンロードします。  15.4.0 Preview 2.0 以上のバージョンが必要です。
+1. [Visual Studio 2017 または 2019](https://visualstudio.microsoft.com/downloads/) をダウンロードする。  バージョン 15.9 以上が必要です。
 2. Windows のスタート メニューで、「**Visual Studio インストーラー**」と入力します。  次に、 **[ワークロード]** タブの **[C++ によるデスクトップ開発]** を選択します。  
 ![[ワークロード] タイルの [Windows] オプションから [C++ によるデスクトップ開発] を選択する](images/VS-workloads.png)
 

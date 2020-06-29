@@ -2,14 +2,14 @@
 title: グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン
 description: この測定では、グラフィックス ドライバーのバイナリにおけるクラッシュが原因で TDR が発生したディスクリート GPU の個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリが集計されます
 ms.topic: article
-ms.date: 10/28/2019
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d741c3a3a5be5e86e828c292ef16c00e947ed69
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 7d125427eaa95cbb6a3623ff0fbfe90aad87baff
+ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77075640"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353725"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン 
 
@@ -24,8 +24,8 @@ ms.locfileid: "77075640"
 |**オーディエンス**|Standard|
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
-|**最小母集団**|10,000 台のマシン|
-|**合格基準**|TDR の発生したマシンが 10,000 台中 130 台以下|
+|**最小母集団**|20,000 台のマシン|
+|**合格基準**|TDR の発生したマシンが 10,000 台中 65 台以下|
 |**測定 ID**|20574707|
 
 ## <a name="calculation"></a>計算

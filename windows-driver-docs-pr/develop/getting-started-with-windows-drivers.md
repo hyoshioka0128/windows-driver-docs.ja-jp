@@ -4,12 +4,12 @@ title: Windows ドライバーの概要
 description: Windows ドライバーでは、Windows 10X と Windows デスクトップ両方で実行されるドライバーを 1 つ作成できます。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2640310a12a2d111fb1d617e4aa9c5a7413c5fa5
-ms.sourcegitcommit: 609c5731b2db4c17b9959082c4621c001e012db1
+ms.openlocfilehash: b2039ae8d30b9de3f55aa8e52f80441ba6e1c854
+ms.sourcegitcommit: 9fe9c8309690fd8fe7af50865d3ac216887ab922
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223513"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85071688"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows ドライバーの概要
 
@@ -44,7 +44,7 @@ Windows ドライバーが認定オプションになる場合、次の要件が
 | Windows 10X で実行                                                  | はい           | いいえ                     |
 | WHCP の認定が必要                                         | はい           | いいえ                     |
 | WDK および HLK がドライバーの開発と認定を行うための主な手段| はい           | はい                    |
-| 信頼性とサービス性の要件     | はい           | いいえ                     |
+| より厳密な信頼性と保守性の要件 (ドライバー パッケージの分離など) に準拠する     | はい           | いいえ                     |
 
 
 Windows 10 デスクトップのみで実行されるドライバーは Windows ドライバーの追加の要件を満たす必要がありませんが、そうすることで、ドライバーのサービス性と信頼性を高め、将来の Windows 10X での認定に備えることができます。

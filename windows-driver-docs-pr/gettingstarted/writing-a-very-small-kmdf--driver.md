@@ -6,12 +6,12 @@ keywords:
 - KMDF Hello World
 ms.date: 04/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 454ff276b4da0cc590509f947dc804ed301ce040
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 3c886ae2b5dec4eea98b9b00aa184db1f1a1516e
+ms.sourcegitcommit: 830392693a16a87294b66679b0b3a623bd0c7971
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235284"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84633829"
 ---
 # <a name="write-a-hello-world-windows-driver-kmdf"></a>Hello World Windows ドライバーの作成 (KMDF)
 
@@ -43,9 +43,9 @@ ms.locfileid: "83235284"
 
     ![[ソリューション エクスプローラー] ウィンドウのスクリーン ショットと、ソリューションと空のドライバー プロジェクト (kmdfhelloworld) を表示した状態](images/vs2015-kmdf-hello-world-solution-explorer.png)
 
-7.  **[ソリューション エクスプローラー]** ウィンドウで、 **[KmdfHelloWorld]** プロジェクトを右クリックして、 **[プロパティ]** を選びます。 **[構成プロパティ] &gt; [Driver Settings (ドライバーの設定)] &gt; [全般]** の順に移動し、 **[ターゲット プラットフォーム]** が既定で **[ユニバーサル]** に設定されていることを確認します。  **[キャンセル]** をクリックします。
+7.  **[ソリューション エクスプローラー]** ウィンドウで、 **[KmdfHelloWorld]** プロジェクトを右クリックして、 **[プロパティ]** を選びます。 **[構成プロパティ] &gt; [Driver Settings (ドライバーの設定)] &gt; [全般]** の順に移動し、 **[ターゲット プラットフォーム]** が既定で **[ユニバーサル]** に設定されていることを確認します。  **[適用]** をクリックし、 **[OK]** をクリックします。
 
-8.  **[ソリューション エクスプローラー]** ウィンドウで、 **[KmdfHelloWorld]** プロジェクトを再度右クリックして、 **[追加] &gt; [新しい項目]** を選びます。
+8.  **[ソリューション エクスプローラー]** ウィンドウで、 **[KmdfHelloWorld]** プロジェクトを再度右クリックして、 **[追加]**  を選択し、 **[新しい項目]** をクリックします。
 9.  **[新しい項目の追加]** ダイアログ ボックスで、 **[C++ ファイル]** を選びます。 **[名前]** に「Driver.c」と入力します。
 
     > [!NOTE]
@@ -289,7 +289,7 @@ ms.locfileid: "83235284"
 2. ターゲットコンピューターでは、ドライバー ファイルを含むフォルダーに移動し、DevCon ツールを実行してドライバーをインストールします。 
     1. ここで示しているのは、ドライバーのインストールに使う devcon ツールの一般的な構文です。
 
-        *devcon install \<INF ファイル\> \<ハードウェア ID\>*
+        *devcon install \<INF file\> \<hardware ID\>*
 
         このドライバーのインストールに必要な INF ファイルは KmdfHelloWorld.inf です。 この INF ファイルには、ドライバーのバイナリ *KmdfHelloWorld.sys* のインストールに必要なハードウェア ID が含まれています。 INF ファイルにあるハードウェア ID が **Root\\KmdfHelloWorld** であることを思い出してください。
     2. 管理者としてコマンド プロンプト ウィンドウを開きます。 ビルドされたドライバーの .sys ファイルを含むフォルダーに移動し、次のコマンドを入力します。

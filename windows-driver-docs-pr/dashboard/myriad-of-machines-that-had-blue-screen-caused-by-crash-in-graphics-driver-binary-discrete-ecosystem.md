@@ -2,14 +2,14 @@
 title: グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
 description: この測定では、グラフィックス ドライバーのバイナリにおけるクラッシュが原因でブルー スクリーンが発生したディスクリート GPU の個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリが集計されます
 ms.topic: article
-ms.date: 10/28/2019
+ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49e8753557fc5229f659f8d6b237ffcce20767c2
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 2804162a8b291f4faa8ba79ee1baf8b69758c1a8
+ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72962186"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353716"
 ---
 # <a name="myriad-of-machines-with-discrete-gpu-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
 
@@ -27,7 +27,7 @@ ms.locfileid: "72962186"
 |**期間**|7 日間のスライディング ウィンドウ|
 |**測定基準**|マシンの集計|
 |**最小母集団**|20,000 台のマシン|
-|**合格基準**|ブルー スクリーンの発生したマシンが 10,000 台中 30 台以下|
+|**合格基準**|ブルー スクリーンの発生したマシンが 10,000 台中 15 台以下|
 |**測定 ID**|16507562|
 
 ## <a name="calculation"></a>計算
