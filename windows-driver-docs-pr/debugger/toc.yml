@@ -46,10 +46,24 @@
               href: setting-up-a-1394-cable-connection.md
         - name: Windows 10 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
           href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10.md
-        - name: Windows 8.1 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
-          href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md
-        - name: Windows 8 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
-          href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md
+        - name: 以前のバージョンの Windows でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+          items:
+            - name: Windows 10 - 1909 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1909.md
+            - name: Windows 10 - 1903 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1903.md
+            - name: Windows 10 - 1809 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1809.md
+            - name: Windows 10 - 1803 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1803.md
+            - name: Windows 10 - 1709 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1709.md
+            - name: Windows 10 - 1703 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-10-1703.md
+            - name: Windows 8.1 でネットワーク カーネル デバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8-1.md
+            - name: Windows 8 でネットワーク カーネルのデバッグ用にサポートされているイーサネット NIC
+              href: supported-ethernet-nics-for-network-kernel-debugging-in-windows-8.md
         - name: tools.ini の構成
           href: configuring-tools-ini.md
         - name: KDbgCtrl の使用
@@ -1564,18 +1578,10 @@
               href: other-acpi-debugging-extensions.md
         - name: NDIS のデバッグ
           items:
-            - name: NDIS のデバッグ
-              href: ndis-debugging.md
             - name: NDIS のデバッグの概要
               href: overview-of-ndis-debugging.md
-            - name: NDIS のデバッグの準備
-              href: preparing-for-ndis-debugging.md
             - name: NDIS のデバッグのトレースを有効にする
-              items:
-                - name: NDIS のデバッグのトレースを有効にする
-                  href: enabling-ndis-debug-tracing.md
-                - name: レジストリ値を設定して NDIS のデバッグのトレースを有効にする
-                  href: enabling-ndis-debug-tracing-by-setting-registry-values.md
+              href: enabling-ndis-debug-tracing.md
         - name: カーネル ストリーミングのデバッグ
           items:
             - name: カーネル ストリーミングのデバッグ
@@ -4240,16 +4246,6 @@
                   href: '-ndiskd-pendingnbls.md'
                 - name: '!ndiskd.nbllog'
                   href: '-ndiskd-nbllog.md'
-                - name: '!ndiskd.cxadapter'
-                  href: '-ndiskd-cxadapter.md'
-                - name: '!ndiskd.netqueue'
-                  href: '-ndiskd-netqueue.md'
-                - name: '!ndiskd.netrb'
-                  href: '-ndiskd-netrb.md'
-                - name: '!ndiskd.netpacket'
-                  href: '-ndiskd-netpacket.md'
-                - name: '!ndiskd.netpacketfragment'
-                  href: '-ndiskd-netpacketfragment.md'
                 - name: '!ndiskd.oid'
                   href: '-ndiskd-oid.md'
                 - name: '!ndiskd.interfaces'
@@ -4296,6 +4292,22 @@
                   href: '-ndiskd-ndiskdversion.md'
                 - name: '!ndiskd.netreport'
                   href: '-ndiskd-netreport.md'
+                - name: NDIS CX 拡張機能 (Ndiskd.dll)
+                  items:
+                    - name: '!ndiskd.cxadapter'
+                      href: '-ndiskd-cxadapter.md'
+                    - name: '!ndiskd.netqueue'
+                      href: '-ndiskd-netqueue.md'
+                    - name: '!ndiskd.netrb'
+                      href: '-ndiskd-netrb.md'
+                    - name: '!ndiskd.netpacket'
+                      href: '-ndiskd-netpacket.md'
+                    - name: '!ndiskd.netfragment'
+                      href: '-ndiskd-netfragment.md'
+                    - name: '!ndiskd.nrc'
+                      href: '-ndiskd-nrc.md'
+                    - name: '!ndiskd.netring'
+                      href: '-ndiskd-netring.md'
             - name: RPC 拡張機能 (Rpcexts.dll)
               items:
                 - name: RPC 拡張機能 (Rpcexts.dll)

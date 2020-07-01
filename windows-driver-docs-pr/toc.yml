@@ -1,14 +1,14 @@
-- name: 新機能
+- name: Windows 10 バージョン 2004 でのドライバー開発に関する最新情報
+  href: what-s-new-in-driver-development.md
+- name: 以前のリリースの新機能
   items:
-    - name: Windows 10 バージョン 2004 の新機能
-      href: what-s-new-in-driver-development.md
-    - name: Windows 10 バージョン 1903 の新機能
+    - name: Windows 10 バージョン 1903 でのドライバー開発に関する最新情報
       href: driver-changes-for-windows-10-version-1903.md
-    - name: Windows 10 バージョン 1809 の新機能
+    - name: Windows 10 バージョン 1809 でのドライバー開発に関する最新情報
       href: driver-changes-for-windows-10-version-1809.md
-    - name: Windows 10 バージョン 1803 の新機能
+    - name: Windows 10 バージョン 1803 でのドライバー開発に関する最新情報
       href: driver-changes-for-windows-10-version-1803.md
-    - name: Windows 10 バージョン 1709 の新機能
+    - name: Windows 10 バージョン 1709 でのドライバー開発に関する最新情報
       href: driver-changes-for-windows-10-version-1709.md
 - name: ダウンロード
   items:
