@@ -4,7 +4,7 @@ description: Ndisref 拡張機能は、追跡された参照カウントのデ�
 ms.assetid: 6860A567-1017-4184-B8DF-157467360FB9
 keywords:
 - ndisref Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/18/2020
 topic_type:
 - apiref
 api_name:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d2856dc43389d6096bd818a0410d75a017672dd7
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c758301f248f1e9dcee537b6fe2f9e6d463c3ea8
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534189"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593930"
 ---
 # <a name="ndiskdndisref"></a>!ndiskd.ndisref
-
 
 **! Ndiskd**拡張機能は、追跡された参照カウントのデバッグログを表示します。
 
 ```console
-!ndiskd.ndisref [-handle <x>] [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
+!ndiskd.ndisref -handle <x> [-tagtype <str>] [-stacks] [-tag <str>] [-refdebug] 
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 必須。 Refcount ブロックのハンドル。
@@ -46,12 +44,11 @@ ms.locfileid: "84534189"
 <span id="_______-refdebug______"></span><span id="_______-REFDEBUG______"></span>*-refdebug*   
 使用可能な場合は詳細なデバッグログを表示します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 次の例では、NDIS ミニポートドライバーのハンドルを **! ndiskd ndisref**拡張機能に渡して、そのドライバーの refcount ブロックを表示します。 まず、システム上のすべてのミニポートドライバーの一覧を表示するには、パラメーターを付けずに[**ミニドライバー**](-ndiskd-minidriver.md)を実行します。 次の出力例では、kdnic ドライバーのハンドルである ffffdf801418d650 を探します。
 
@@ -97,8 +94,7 @@ REFCOUNT BLOCK
     Include inactive tags
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -106,18 +102,8 @@ REFCOUNT BLOCK
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
-
- 
-
- 
-
-
-
-
-
-

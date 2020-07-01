@@ -4,7 +4,7 @@ description: Ndiskd interface 拡張機能には、ネットワークインタ�
 ms.assetid: AC458FDF-CCB6-4A65-8C9C-38C436062017
 keywords:
 - ndiskd Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,36 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fda0e07004abce591f27fe7e91d0a6d21fcf138
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 794adb5dcd1ea347ad2fd08b54cac1e8f41dcb20
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534927"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593944"
 ---
 # <a name="ndiskdinterfaces"></a>!ndiskd.interfaces
-
 
 **! Ndiskd** interface 拡張機能には、ネットワークインターフェイスに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、すべてのネットワークインターフェイスの一覧が表示されます。
 
 ネットワークインターフェイスの詳細については、「 [NDIS Network インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)」を参照してください。
 
 ```console
-!ndiskd.interfaces [-handle <x>] [-luid <x>] 
+!ndiskd.interfaces -handle <x> [-luid <x>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-ネットワークインターフェイスのハンドル。
+ネットワークインターフェイスの省略可能なハンドル。
 
 <span id="_______-luid______"></span><span id="_______-LUID______"></span>*-luid*   
 ネットワークインターフェイスの[Netluid](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value) (ローカルのローカル一意識別子)。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 システム上のすべてのネットワークインターフェイスの一覧を表示するには、パラメーターを付けずに **! ndiskd インターフェイス**拡張を実行します。 この例では、Intel (R) 82579LM ギガビットネットワーク接続インターフェイスを探します。 そのハンドルは ffffdf80139f8a20 です。
 
@@ -120,8 +117,7 @@ STATE
     Refer to RFC 2863 for definitions of many of these terms
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -129,20 +125,10 @@ STATE
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [NDIS ネットワーク インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-network-interfaces2)
 
 [NET \_ LUID 値](https://docs.microsoft.com/windows-hardware/drivers/network/net-luid-value)
-
- 
-
- 
-
-
-
-
-
-

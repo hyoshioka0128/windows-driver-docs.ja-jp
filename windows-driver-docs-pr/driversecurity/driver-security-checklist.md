@@ -4,12 +4,12 @@ description: この記事では、ドライバー開発者向けのドライバ�
 ms.assetid: 25375E02-FCA1-4E94-8D9A-AA396C909278
 ms.date: 03/13/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fb99a4b7c936136b6e7f5776bf3f0b0982be45
-ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
+ms.openlocfilehash: c12c8ee0bf7801c6921b62e8903a612114790fbf
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153181"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593976"
 ---
 # <a name="driver-security-checklist"></a>ドライバーのセキュリティ チェックリスト
 
@@ -100,7 +100,7 @@ Windows Driver Framework のソースコードはオープンソースであり�
 
 **セキュリティチェックリスト項目 \# 4:** *実稼働コード署名の開発、テスト、およびカーネルドライバーコードの製造を行いません。*
 
-開発、テスト、または製造に使用されるカーネルドライバーのコードには、セキュリティ上のリスクをもたらす危険な機能が含まれている可能性があります。  この危険なコードは、Windows によって信頼されている証明書で署名されることはありません。  危険なドライバーコードを実行するための正しいメカニズムは、UEFI セキュアブートを無効にし、BCD "TESTSIGNING" を有効にし、信頼されていない証明書 (たとえば、makecert によって生成されたもの) を使用して開発、テスト、および製造コードに署名することです。
+開発、テスト、または製造に使用されるカーネルドライバーのコードには、セキュリティ上のリスクをもたらす危険な機能が含まれている可能性があります。  この危険なコードは、Windows によって信頼されている証明書で署名されることはありません。  危険なドライバーコードを実行するための正しいメカニズムは、UEFI セキュアブートを無効にし、BCD "TESTSIGNING" を有効にし、信頼されていない証明書 (たとえば、makecert.exe によって生成されたもの) を使用して開発、テスト、および製造コードに署名することです。
 
 信頼できるソフトウェア発行元証明書 (SPC) または Windows Hardware Quality Labs (WHQL) の署名によって署名されたコードは、Windows コードの整合性とセキュリティテクノロジをバイパスできないようにする必要があります。  信頼された SPC または WHQL 署名によってコードが署名される前に、まず、[信頼性の高いカーネルモードドライバーの作成](https://docs.microsoft.com/windows-hardware/drivers/kernel/creating-reliable-kernel-mode-drivers)に関するガイダンスに準拠していることを確認します。 また、コードには、次に示す危険な動作を含めることはできません。  ドライバーの署名の詳細については、この記事で後述する「[リリースドライバーの署名](#releasedriversigning)」を参照してください。
 
@@ -239,7 +239,7 @@ Irp を \_ 実際にサポートして処理しない限り、状態値が SUCCE
 
 **IRP のクリーンアップと終了操作を正しく処理する**
 
-[**Irp \_ MJ \_ CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)要求と[**irp \_ MJ \_ CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)要求の違いを理解していることを確認してください。 クリーンアップ要求は、アプリケーションがファイルオブジェクトのすべてのハンドルを閉じた後に到着しますが、すべての i/o 要求が完了する前に発生することもあります。 Close 要求は、ファイルオブジェクトのすべての i/o 要求が完了または取り消された後に到着します。 詳細については、以下の記事を参照してください。
+[**Irp \_ MJ \_ CLEANUP**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-cleanup)要求と[**irp \_ MJ \_ CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)要求の違いを理解していることを確認してください。 クリーンアップ要求は、アプリケーションがファイルオブジェクトのすべてのハンドルを閉じた後に到着しますが、すべての i/o 要求が完了する前に発生することもあります。 Close 要求は、ファイルオブジェクトのすべての i/o 要求が完了または取り消された後に到着します。 詳細については、次の記事を参照してください。
 
 [DispatchCreate、DispatchClose、DispatchCreateClose ルーチン](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatchcreate--dispatchclose--and-dispatchcreateclose-routines)
 
@@ -297,7 +297,7 @@ PDO へのアクセスを制御する betters 方法の1つは、INF で SDDL �
 
 WDM ドライバーを使用していて、名前付きデバイスオブジェクトを使用している場合は、 [Iocreateデバイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)を使用し、SDDL を指定してセキュリティ保護することができます。 [IocreateDeviceClassGuid](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)を実装するときは、常にカスタムクラス GUID を指定します。 ここでは、既存のクラス GUID を指定しないでください。 これにより、そのクラスに属する他のデバイスのセキュリティ設定または互換性が損なわれる可能性があります。 詳細については、「 [WdmlibIoCreateDeviceSecure](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdmsec/nf-wdmsec-wdmlibiocreatedevicesecure)」を参照してください。
 
-詳細については、以下の記事を参照してください。
+詳細については、次の記事を参照してください。
 
 [デバイス アクセスの制御](https://docs.microsoft.com/windows-hardware/drivers/kernel/controlling-device-access)
 
@@ -331,7 +331,7 @@ AC (Application Container)
 
 詳細な IOCTL セキュリティ制御を実装しても、上記の手法を使用したドライバーアクセスの管理は不要になります。
 
-詳細については、以下の記事を参照してください。
+詳細については、次の記事を参照してください。
 
 [I/O 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)
 
@@ -377,7 +377,7 @@ HVCI 互換コードを実装するには、ドライバーコードが次のこ
 
 NDIS ドライバーのセキュリティについては、「[ネットワークドライバーのセキュリティの問題](https://docs.microsoft.com/windows-hardware/drivers/network/security-issues-for-network-drivers)」を参照してください。
 
-*ディスプレイ*
+*表示*
 
 ディスプレイドライバーのセキュリティについては、「保留中のコンテンツ」を参照してください &lt; &gt; 。
 
@@ -402,7 +402,7 @@ WIA のセキュリティについては、「 [Windows イメージ取得 (wia)
 - デバイスの WMI クラスへのアクセスを制限します。
 - Setupapi.log 関数を正しく使用します
 
-詳細については、以下の記事を参照してください。
+詳細については、次の記事を参照してください。
 
 [セキュリティで保護されたデバイスのインストールの作成](https://docs.microsoft.com/windows-hardware/drivers/install/creating-secure-device-installations)
 
@@ -551,7 +551,7 @@ C:\binskim-master\bld\bin\AnyCPU_Release\Publish\netcoreapp2.0\win-x64> BinSkim 
 BinSkim PE/MSIL Analysis Driver 1.6.0.0
 
   --sympath                      Symbols path value, e.g., SRV*http://msdl.microsoft.com/download/symbols or Cache*d:\symbols;Srv*http://symweb. See
-                                 https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/advanced-symsrv-use for syntax information. Note that BinSkim will clear the
+                                 https://docs.microsoft.com/windows-hardware/drivers/debugger/advanced-symsrv-use for syntax information. Note that BinSkim will clear the
                                  _NT_SYMBOL_PATH environment variable at runtime. Use this argument for symbol information instead.
 
   --local-symbol-directories     A set of semicolon-delimited local directory paths that will be examined when attempting to locate PDBs.
@@ -733,7 +733,7 @@ Saf Ecode-[https://safecode.org/](https://safecode.org/)
 
 [アラートからドライバーへの脆弱性: Microsoft Defender ATP 調査の特権エスカレーションの欠陥](https://www.microsoft.com/security/blog/2019/03/25/from-alert-to-driver-vulnerability-microsoft-defender-atp-investigation-unearths-privilege-escalation-flaw/)
 
-**書籍**
+**ブック**
 
 *ソフトウェアセキュリティの24個の危険な点: プログラミングの欠陥と*、Michael Howard、David Leblanc 著、John 閲覧 ga での修正方法
 

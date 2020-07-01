@@ -4,7 +4,7 @@ description: Ndiskd filterdriver 拡張機能には、NDIS フィルタードラ
 ms.assetid: 9FE3E885-98BC-4FCC-9E1C-DBECD070F92A
 keywords:
 - ndiskd filterdriver Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e62d3f12734917cb0eeda417ce0a014200bc9dd
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 3dfba9d71ea58d2761dba52c099a42e970213193
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534215"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593950"
 ---
 # <a name="ndiskdfilterdriver"></a>!ndiskd.filterdriver
-
 
 **! Ndiskd filterdriver**拡張機能には、NDIS フィルタードライバーに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、すべてのフィルタードライバーの一覧が表示されます。
 
 ```console
-!ndiskd.filterdriver [-handle <x>] [-filters] [-handlers] 
+!ndiskd.filterdriver -handle <x> [-filters] [-handlers] 
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
-
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-NDIS フィルタードライバーのハンドル。
+NDIS フィルタードライバーの省略可能なハンドル。
 
 <span id="_______-filters______"></span><span id="_______-FILTERS______"></span>*-フィルター*   
 このドライバーのフィルターのインスタンスを表示します。
@@ -40,12 +38,11 @@ NDIS フィルタードライバーのハンドル。
 <span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span>*-ハンドラー*   
 このドライバーのフィルターハンドラーを表示します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 システム上のすべてのフィルタードライバーの一覧を表示するには、パラメーターを付けずに **! ndiskd**を実行します。 次の例では、仮想 WiFi フィルタードライバーのハンドルが ffffbc064cc83be0 であることを確認します。
 
@@ -110,8 +107,7 @@ HANDLERS
     StatusHandler                          fffff80787d877c0  bp
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -119,16 +115,6 @@ HANDLERS
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

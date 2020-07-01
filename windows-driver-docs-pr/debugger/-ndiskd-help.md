@@ -4,7 +4,7 @@ description: Ndiskd help コマンドを実行すると、使用可能な ndiskd
 ms.assetid: ba9a1364-173b-4258-9894-09271e47786e
 keywords:
 - ndiskd Windows デバッグのヘルプ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,29 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3079375184a8b6bd7605929762e30f3a18949a8a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 71cc9c2f3e291059aef6bc70a84042c135574523
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534935"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593946"
 ---
 # <a name="ndiskdhelp"></a>!ndiskd.help
-
 
 **! Ndiskd help**コマンドを実行すると、使用可能な! ndiskd コマンドの一覧と、それぞれの簡単な説明が表示されます。
 
 ```console
-!ndiskd.help 
+!ndiskd.help
 ```
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="dll"></a>[DLL]
 
+Ndiskd.dll
 
-Ndiskd .dll
-
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
 次の例では、 **! ndiskd help**を使用してヘルプコマンドの一覧を示します。
 
@@ -62,14 +59,12 @@ NDIS KD EXTENSIONS
 **注:**  
 この例の下部には、いくつかの代替コマンドが記載されています。 これらのコマンドは、以前に使用した NDIS ドライバー開発者が使用できますが、代わりにプライマリコマンドを使用することをお勧めします。
 
-
-
 ```console
 3: kd> !ndiskd.help -all
 
 NDIS KD EXTENSIONS
 
-    Primary commands:                                                           
+    Primary commands:
     help               This help and lots more
     netadapter         Show network adapters  (this is a good starting place)
         minidriver     Show network adapter drivers
@@ -102,14 +97,18 @@ NDIS KD EXTENSIONS
     wdiminidriver      Shows one or more CMiniportDriver structures
     nwadapter          Shows one or more nwifi!ADAPT structures
     ndisrwlock         Show an NDIS_RW_LOCK_EX lock
-    ndisslot           Show an NDIS per-processor slot
-    ndis               Show NDIS.sys build info
         dbglevel       Change the debugging level [checked NDIS.sys only]
         dbgsystems     Toggle subsystems being debugged [checked NDIS.sys only]
         ndiskdversion  Show info about NDISKD itself
     netreport          Draw a box diagram of your network stack
+    cxadapter          Show information about an NETADAPTER
+    netqueue           Show information about a NetAdapterCx datapath queue
+    nrc                Show information about an NET_RING_COLLECTION
+    netring            Show information about an NET_RING
+    netpacket          Show information about an NET_PACKET
+    netfragment        Show information about an NET_FRAGMENT
 
-    Alternate commands:                                                         
+    Alternate commands:
     miniport           Same as !ndiskd.netadapter
     gminiports         Same as !ndiskd.netadapter
     miniports          "Classic" version of !ndiskd.netadapter
@@ -124,8 +123,7 @@ NDIS KD EXTENSIONS
     nbpools            Same as !ndiskd.nbpool
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -133,14 +131,4 @@ NDIS KD EXTENSIONS
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
-
-
-
-
-
-
-
-
-
-
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)

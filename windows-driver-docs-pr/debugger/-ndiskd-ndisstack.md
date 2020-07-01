@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: dbae7155893803c3b77b746fa70cb8a276937b7a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 40ff8a37531655f3e591a4f92a035c7cb84e7952
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534919"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593921"
 ---
 # <a name="ndiskdndisstack"></a>!ndiskd.ndisstack
 
@@ -29,7 +29,7 @@ ms.locfileid: "84534919"
 **! Ndiskd ndisstack**拡張機能は、デバッグスタックトレースを表示します。
 
 ```console
-!ndiskd.ndisstack [-handle <x>] [-statistics] 
+!ndiskd.ndisstack -handle <x> [-statistics]
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
@@ -43,7 +43,7 @@ ms.locfileid: "84534919"
 
 ### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
 
-Ndiskd .dll
+Ndiskd.dll
 
 ## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
@@ -54,7 +54,7 @@ Ndiskd .dll
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 

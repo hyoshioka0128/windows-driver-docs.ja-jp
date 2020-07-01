@@ -4,7 +4,7 @@ description: Ndiskd protocol コマンドは、NDIS プロトコルドライバ�
 ms.assetid: c1d349d5-b0ba-4665-a399-1bc5cd55dde6
 keywords:
 - ndiskd プロトコル Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 5738462ec1840b0a43c6b2e450db97ad0d68b39e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: e12b9cac8aa24b30a13070cf58e73c83f15ddd7c
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534719"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593891"
 ---
 # <a name="ndiskdprotocol"></a>!ndiskd.protocol
-
 
 **! Ndiskd protocol**コマンドは、NDIS プロトコルドライバーに関する情報を表示します。 パラメーターを使用せずにこの拡張機能を実行すると、システムでアクティブになっている NDIS プロトコルドライバーの一覧がに表示されます。
 
@@ -28,22 +27,19 @@ ms.locfileid: "84534719"
 !ndiskd.protocol [-handle <x>] [-findname <any>] 
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-NDIS プロトコルのハンドル。
+NDIS プロトコルの省略可能なハンドル。
 
 <span id="_______-findname______"></span><span id="_______-FINDNAME______"></span>*-findname*   
 名前プレフィックスでプロトコルをフィルター処理します。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="dll"></a>[DLL]
 
+Ndiskd.dll
 
-Ndiskd .dll
-
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 **! Ndiskd protocol**コマンドを入力して、すべての NDIS プロトコルとそのハンドル、およびミニポートへのオープンバインド (存在する場合) の一覧を表示します。 次の例では、TCPIP6TUNNEL プロトコルの handle、ffff8083e1a95c00 を探します。
 
@@ -120,8 +116,7 @@ HANDLERS
     DirectOidRequestCompleteHandler        fffff80e2e398120  bp
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -129,16 +124,6 @@ HANDLERS
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

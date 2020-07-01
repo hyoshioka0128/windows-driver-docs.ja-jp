@@ -4,7 +4,7 @@ description: Ndiskd netadapter 拡張機能には、システム上でアクテ�
 ms.assetid: 7D55F7CE-5DDB-4C80-8C27-F619F2FB7F15
 keywords:
 - ndiskd netadapter Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/23/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee88687a333b072a6f6b545ff9ebf914e79117d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ccd75c0c06a92ce0d01058119c52198c324c4fc8
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534915"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593922"
 ---
 # <a name="ndiskdnetadapter"></a>!ndiskd.netadapter
-
 
 **! Ndiskd netadapter**拡張機能には、システム上でアクティブになっている NDIS ミニポートまたはネットワークアダプターに関する情報が表示されます。 パラメーターを使用せずにこのコマンドを実行すると、すべてのネットワークアダプターの一覧が表示されます。
 
@@ -34,8 +33,7 @@ ms.locfileid: "84534915"
         [-vfs] [-vports] [-iftrace] [-ip]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 NDIS ミニポートのハンドル。
@@ -139,12 +137,11 @@ Vports (仮想ポート) を表示します。
 <span id="_______-ip______"></span><span id="_______-IP______"></span>*-ip*   
 ネットワークのインターフェイスの IP アドレスを表示します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 パラメーターを使用せずに **! ndiskd netadapter**を実行すると、システム上のすべてのネットワークアダプターの一覧と、関連するミニポートドライバーを取得できます。 この例の出力では、ffffdf80140c71a0 というハンドルを持つ Microsoft カーネルデバッグネットワークアダプターを探しています。 カーネルデバッグネットワークアダプターの詳細については、NDIS ブログの「[ネットワーク経由でのカーネルデバッグ](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)」を参照してください。
 
@@ -268,8 +265,7 @@ HANDLERS
 
 各ハンドラーの右側にある "bp" リンクをクリックして、特定の問題をデバッグするハンドラーにブレークポイントを設定できるようになりました。 たとえば、データパスにハングがある場合は、ドライバーの SendNetBufferListsHandler または ReturnNetBufferListsHandler を調べることができます。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -277,20 +273,10 @@ HANDLERS
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [ネットワーク経由でのカーネルデバッグ](https://docs.microsoft.com/archive/blogs/ndis/kernel-debugging-over-the-network)
 
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
-
-
-
-
-
-
-
-
-
-

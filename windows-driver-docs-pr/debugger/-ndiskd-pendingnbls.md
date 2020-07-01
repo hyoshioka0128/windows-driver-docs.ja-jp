@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8ef36050d62568b5ca340f5c7a8e82d8592899
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c0595b3a21c08633857a3479df9f7a8e0d0c4964
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534721"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593894"
 ---
 # <a name="ndiskdpendingnbls"></a>!ndiskd.pendingnbls
-
 
 **! Ndiskd pendingnbls**拡張機能には、転送中の保留中の NBLs ([**NET \_ BUFFER \_ list**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)) が表示されます。
 
@@ -29,7 +28,6 @@ ms.locfileid: "84534721"
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 NDIS ミニポート、フィルター、またはオープンのハンドル。
@@ -40,12 +38,11 @@ NDIS ミニポート、フィルター、またはオープンのハンドル。
 <span id="_______-verbosity______"></span><span id="_______-VERBOSITY______"></span>*-詳細*度   
 表示する詳細レベル。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 **! pendingnbls**には、NDIS ミニポート、フィルター、またはオープンのハンドルを渡すことができます。 次の一連の例では、ミニポートハンドルを使用します。 すべてのミニポートとそれに関連付けられているミニドライバーの一覧を表示するには、パラメーターを使用せずに[**! ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。 次の出力例では、ffffe00bc3f701a0 というハンドルを持つ Microsoft カーネルデバッグネットワークアダプターを探します。 ミニドライバーのハンドルは ffffe00bc51b9ae0 です。
 
@@ -100,7 +97,6 @@ fffff80a`e9611870 4053            push    rbx
 
 **メモ**   この例のデバッグ対象ターゲットコンピューターは、ブレークポイントにヒットしたときに web ページを読み込んでいたので、ミニポートのデータパスを通過しています。 そのため、保留中の NBL が送信されました。 ミニドライバーの1つ以上の NBL ハンドラーにブレークポイントを設定した後でも、データパスにアクティビティがない場合は、保留中の NBLs が表示されないことがあります。
 
- 
 
 ```console
 0: kd> !ndiskd.pendingnbls ffffe00bc3f701a0
@@ -116,7 +112,7 @@ PHASE 3/3: Found 1 pending NBL(s) of 4817 total NBL(s).
 Search complete.
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
+## <a name="see-also"></a>関連項目
 
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
@@ -125,7 +121,7 @@ Search complete.
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -136,13 +132,3 @@ Search complete.
 [**!ndiskd.minidriver**](-ndiskd-minidriver.md)
 
 [**bp、bu、bm (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)
-
- 
-
- 
-
-
-
-
-
-

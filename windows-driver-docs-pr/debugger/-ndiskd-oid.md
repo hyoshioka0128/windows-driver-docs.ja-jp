@@ -4,7 +4,7 @@ description: Ndiskd oid 拡張機能には、NDIS OID 要求に関する情報�
 ms.assetid: FCDE2F78-98C0-4437-999A-4566FEB5D7BB
 keywords:
 - ndiskd oid Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fb93b5d6dcda07a027a2d5cc73955bb9fecaf067
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: c3538d2631ac3cf01c453bcdc23b6c6024a22566
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534723"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593892"
 ---
 # <a name="ndiskdoid"></a>!ndiskd.oid
-
 
 **! Ndiskd oid**拡張機能には、NDIS oid 要求に関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、すべてのミニポートとフィルターに対する保留中のすべての OID 要求の一覧が表示されます。 各ミニポートまたはフィルターには、1つの保留中の OID 要求と、任意の数のキューに置かれた OID 要求があります。
 
@@ -30,8 +29,7 @@ ms.locfileid: "84534723"
 !ndiskd.oid [-handle <x>] [-legacyoid] [-nolimit>] [-miniport <x>] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 NDIS \_ OID 要求のハンドル \_
@@ -45,17 +43,15 @@ NDIS \_ OID 要求のハンドル \_
 <span id="_______-miniport______"></span><span id="_______-MINIPORT______"></span>*-ミニポート*   
 このミニポートのスタックで保留中の OID 要求を検索します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="remarks"></a>注釈
--------
+### <a name="remarks"></a>Remarks
 
 **! ndiskd oid**は、システム上の保留中のすべての oid の一覧を一度に表示します。これにより、システムのハングや[0x9f バグチェック](bug-check-0x9f--driver-power-state-failure.md)の状況 (ドライバーの \_ 電源 \_ 状態の障害) のデバッグに役立ち \_ ます。 たとえば、架空の0x9F バグチェックを分析すると、システムが IRP でハングし、NDIS を待機していたことが判明したとします。 NDIS では、OS からの Irp は電源遷移を含む Oid に変換されるので、 **! ndiskd oid**を実行すると、スタックの一番下にあるデバイスが[oid \_ PNP \_ SET \_ パワー](https://docs.microsoft.com/windows-hardware/drivers/network/oid-pnp-set-power)に clinging され、スタックの残りの部分がハングしている可能性があります。 NDIS ドライバーでは、OID を1秒以上保留しないようにする必要があります。そのため、デバイスの OID が長時間保留になっている原因を調査して、問題を解決することができます。
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 正常に実行されているシステムで保留中の OID の例を確認するには、ミニポートの OID 要求ハンドラールーチンにブレークポイントを設定します (ミニポートの対応するミニポートドライバー)。 最初に、パラメーターを付けずに[**! ndiskd**](-ndiskd-minidriver.md)コマンドを実行して、システム上のミニポートドライバーの一覧を取得します。 この例の出力では、kdnic ミニドライバー、ffffdf801418d650. のハンドルを探します。
 
@@ -123,8 +119,7 @@ ALL PENDING OIDs
 
 この例では、保留中の OID は[oid 生成 \_ \_ 統計](https://docs.microsoft.com/windows-hardware/drivers/network/oid-gen-statistics)です。 ! Ndiskd oid の結果を見ると、フィルターによって OID 要求が複製され、スタックに渡されます。また、Oid は通常、フィルターによってミニポートにフィルター処理されます。 したがって、この例では、同じ名前を持つ3つの別個の OID 要求があるように見えるかもしれませんが、実際には、3つの Oid と3つのドライバーに物理的に分散された論理操作が1つあります。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -132,7 +127,7 @@ ALL PENDING OIDs
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -147,13 +142,3 @@ ALL PENDING OIDs
 [NDIS Oid](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
 
 [NDIS OID 要求インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-
- 
-
- 
-
-
-
-
-
-

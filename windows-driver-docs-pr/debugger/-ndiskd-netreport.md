@@ -4,7 +4,7 @@ description: Ndiskd netreport 拡張機能によって、ネットワークス�
 ms.assetid: 0FC134A8-8D91-4299-8D15-4E8EDD9ED855
 keywords:
 - ndiskd netreport Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/23/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c74aca795441d1715ab965fd65527f98a4d1ee
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: b9ec2838ea485a2cf5e344e6ead4b7886d748084
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534729"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593918"
 ---
 # <a name="ndiskdnetreport"></a>!ndiskd.netreport
-
 
 **! Ndiskd netreport**拡張機能によって、ネットワークスタック全体のビジュアルレポートが生成されます。 レポート **! ndiskd netreport**は HTML ファイルを生成し、その場所へのリンクを提供します。 HTML ファイルにはネットワークスタックに関する詳細情報が含まれているため、分析のために共有する必要がある場合は、大きなクラッシュダンプファイルを送信するのではなく、電子メールで送信することができます。
 
@@ -28,8 +27,7 @@ ms.locfileid: "84534729"
 !ndiskd.netreport [-outputpath <str>] [-jsononly] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-outputpath______"></span><span id="_______-OUTPUTPATH______"></span>*-outputpath*   
 レポートファイルの書き込み先を指定します。
@@ -37,12 +35,11 @@ ms.locfileid: "84534729"
 <span id="_______-jsononly______"></span><span id="_______-JSONONLY______"></span>*-jsononly*   
 では、HTML ではなく生データのみが書き込まれます。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 **! Ndiskd netreport**拡張機能を実行して、ネットワークスタックのボックス図を描画します。
 
@@ -82,8 +79,7 @@ NETWORK STACK REPORT
 
 ![ネットワークデバッグレポートのデータフロー](images/!ndiskd-netreport-activesystem-dataflows.png)
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -91,20 +87,10 @@ NETWORK STACK REPORT
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.nbllog**](-ndiskd-nbllog.md)
 
 [NIC チーミングを使用したネットワークサブシステムのパフォーマンス](https://docs.microsoft.com/previous-versions/dn567652(v=vs.85))
-
- 
-
- 
-
-
-
-
-
-

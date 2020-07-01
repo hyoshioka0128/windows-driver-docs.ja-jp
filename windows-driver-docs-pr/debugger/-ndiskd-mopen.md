@@ -4,7 +4,7 @@ description: Ndiskd mopen 拡張機能は、ミニポートとプロトコルの
 ms.assetid: 439c4647-8f3e-4473-aca8-364b5d2206e9
 keywords:
 - ndiskd mopen Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3407e5f652bf63ecade29eb4552c49d8c02d8da
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 0f3faa99ca2ba7c41faff3fa6aa05805f47c5697
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534923"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593938"
 ---
 # <a name="ndiskdmopen"></a>!ndiskd.mopen
-
 
 **! Ndiskd mopen**拡張機能には、ミニポートとプロトコルの間のバインディングに関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、NDIS ミニポートドライバーとプロトコルドライバーの間のすべての開いているバインドの一覧が表示されます。
 
@@ -30,19 +29,17 @@ ms.locfileid: "84534923"
 
 ## <a name="span-idddk__ndiskd_mopen_dbgspanspan-idddk__ndiskd_mopen_dbgspanparameters"></a><span id="ddk__ndiskd_mopen_dbg"></span><span id="DDK__NDISKD_MOPEN_DBG"></span>パラメータ
 
-
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-NDIS オープンバインドのハンドル。
+NDIS オープンバインドの省略可能なハンドル。
 
 <span id="_______-ref______"></span><span id="_______-REF______"></span>*-ref*   
 開いているバインドの refcounts を表示します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 ! Ndiskd mopen コマンドを入力して、開いているすべてのバインドの一覧を取得します。 この例では、Microsoft ISATAP アダプター \# 2 のミニポートと TCPIP6TUNNEL プロトコルの間のバインドを探します。 そのハンドルは ffff8083e56b8110 です。
 
@@ -104,8 +101,7 @@ RECEIVE PATH
     Frame Type(s)      0x86dd
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -113,16 +109,6 @@ RECEIVE PATH
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

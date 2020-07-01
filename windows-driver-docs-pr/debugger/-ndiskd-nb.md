@@ -4,7 +4,7 @@ description: Ndiskd nb 拡張子は、NET_BUFFER (NB) 構造に関する情報�
 ms.assetid: 7351264c-4adc-43ac-9eca-41deb3d35983
 keywords:
 - ndiskd nb Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: c393b538c6666049bebbfb6ce0c4f290dca068b7
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6980c6320baa0044027fbb31cbe68f0f857a859c
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534735"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593936"
 ---
 # <a name="ndiskdnb"></a>!ndiskd.nb
-
 
 **! Ndiskd nb**拡張機能には、 [**NET \_ BUFFER**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-structure) (nb) 構造に関する情報が表示されます。
 
 ```console
-!ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data] 
+!ndiskd.nb [-handle <x>] [-verbosity <x>] [-basic] [-chain] [-data]
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 必須。 **NET \_ バッファー**構造体のアドレス。
@@ -46,12 +44,11 @@ NB に関連付けられているすべての MDLs を表示します。
 <span id="_______-data______"></span><span id="_______-DATA______"></span>*-データ*   
 NB の実際のデータペイロードをダンプします。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 次の例の**net \_ バッファー**は、 [**! Ndiskd**](-ndiskd-nbl.md)トピックの「例」セクションの[**net \_ buffer \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)から取得されました。 NB のハンドルは ffffdf8014952610 です。
 
@@ -85,8 +82,7 @@ NET_BUFFER ffffdf8014952610
         Process            [System process]    ByteOffset         0n36  
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -94,7 +90,7 @@ NET_BUFFER ffffdf8014952610
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -103,13 +99,3 @@ NET_BUFFER ffffdf8014952610
 [**NET \_ バッファーの \_ 一覧**](https://docs.microsoft.com/windows-hardware/drivers/network/net-buffer-list-structure)
 
 [**!ndiskd.nbl**](-ndiskd-nbl.md)
-
- 
-
- 
-
-
-
-
-
-

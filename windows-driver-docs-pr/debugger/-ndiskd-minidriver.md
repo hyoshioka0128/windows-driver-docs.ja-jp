@@ -4,7 +4,7 @@ description: ミニドライバーコマンドは、NDIS ミニポートドラ�
 ms.assetid: CD349B10-8363-4D48-A830-CC9EF5EA75BF
 keywords:
 - ミニドライバー Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: be4fa3d8ca7e1d401fc365b98b329c34a016709a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ad2fc33e2c763bdff36450f3d59f9f4fc19bef8c
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534925"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593940"
 ---
 # <a name="ndiskdminidriver"></a>!ndiskd.minidriver
-
 
 **ミニドライバー**コマンドは、NDIS ミニポートドライバーに関する情報を表示します。 パラメーターを使用せずにこの拡張機能を実行すると、システムでアクティブになっている NDIS ミニポートドライバーの一覧がによって表示されます。
 
 ```console
-!ndiskd.minidriver [-handle <x>] [-basic] [-miniports] [-devices] [-handlers] 
+!ndiskd.minidriver [-handle <x>] [-basic] [-miniports] [-devices] [-handlers]
 ```
 
 ## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
 
-
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-NDIS ミニポートドライバーのハンドル。
+NDIS ミニポートドライバーの省略可能なハンドル。
 
 <span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 ミニポートドライバーに関する基本的な情報を表示します。
@@ -46,13 +44,11 @@ NDIS ミニポートドライバーのハンドル。
 <span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span>*-ハンドラー*   
 このドライバーのミニポートハンドラーを表示します。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="dll"></a>[DLL]
 
+Ndiskd.dll
 
-Ndiskd .dll
-
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
 システムでアクティブになっているすべての NDIS ミニポートドライバーの一覧を取得するには、パラメーターを指定せずに **! ndiskd ミニドライバー**コマンドを入力します。 次の例では、kdnic アダプターのハンドル、ffffd20d12dec020 を探します。
 
@@ -83,15 +79,14 @@ MINIPORT DRIVER
 
 MINIPORTS
 
-    Miniport                                                                    
+    Miniport
     ffffd20d12dd71a0 - Microsoft Kernel Debug Network Adapter
 
     Handlers
     Device objects
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -99,16 +94,6 @@ MINIPORTS
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

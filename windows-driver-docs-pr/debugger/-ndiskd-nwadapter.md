@@ -12,34 +12,31 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 594b3a9e19309fb9c9b9e37f5f48a62b9ce0191a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 7e7d190136fad37805651b8c80d17b8914c27b76
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534725"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593906"
 ---
 # <a name="ndiskdnwadapter"></a>!ndiskd.nwadapter
-
 
 **! Ndiskd. nwadapter**拡張機能には、1つまたは複数の nwifi に関する情報が表示されます。構造を調整します。 パラメーターを使用せずにこの拡張機能を実行すると、! ndiskd はすべての nwifi!構造を調整します。
 
 ```console
-!ndiskd.nwadapter [-handle <x>] 
+!ndiskd.nwadapter [-handle <x>]
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
 
-
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 適合ブロックのアドレス。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -47,16 +44,6 @@ Ndiskd .dll
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
-
- 
-
- 
-
-
-
-
-
-

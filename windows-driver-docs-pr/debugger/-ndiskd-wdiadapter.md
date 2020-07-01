@@ -4,7 +4,7 @@ description: Ndiskd 拡張機能は、WDIWiFi CAdapter 構造体に関する情�
 ms.assetid: 1AC069E8-CF87-459B-9C56-DDC1A6F765A8
 keywords:
 - wdiadapter Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 487dd6d66da29402ea7d150e4a835475343b2738
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ddfa77f65dc81ec5b75b0b6d4b1be426219b6d8b
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534713"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593828"
 ---
 # <a name="ndiskdwdiadapter"></a>!ndiskd.wdiadapter
-
 
 **! Ndiskd**拡張機能は、WDIWiFi に関する情報を表示します。CAdapter 構造体。 パラメーターを使用せずにこの拡張機能を実行すると、! ndiskd にはすべての WDIWiFi の一覧が表示されます。CAdapter 構造体。
 
@@ -32,11 +31,10 @@ WDI ミニポートドライバーリファレンスの詳細については、�
 !ndiskd.wdiadapter [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-CAdapter オブジェクトのハンドル。
+CAdapter オブジェクトの省略可能なハンドル。
 
 <span id="_______-pm______"></span><span id="_______-PM______"></span>*-pm*   
 電源管理の状態と機能を表示します。
@@ -44,18 +42,17 @@ CAdapter オブジェクトのハンドル。
 <span id="_______-rcvfilter______"></span><span id="_______-RCVFILTER______"></span>*-rcvfilter*   
 受信フィルター処理機能を示します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 パラメーターを付けずに **! ndiskd wdiadapter**拡張機能を実行すると、すべての cadapter オブジェクトの一覧と、それぞれの WDI アダプターの詳細が表示されます。 次の例では、CAdapter 構造体が1つしかありません。 関連付けられている WDI アダプターのハンドルは ffffc804af396000 です。
 
 ```console
 1: kd> !ndiskd.wdiadapter
-    CAdapter                                                                    
+    CAdapter
     ffffc804af396000 - WDI Adapter
 
 
@@ -134,8 +131,7 @@ RECEIVE FILTER
     Max lookahead split size               0
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -143,20 +139,10 @@ RECEIVE FILTER
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [WDI ミニポート ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
 [WDI ミニポートドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-
- 
-
- 
-
-
-
-
-
-

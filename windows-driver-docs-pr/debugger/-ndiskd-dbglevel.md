@@ -4,7 +4,7 @@ description: Ndiskd dbglevel 拡張機能が表示され、必要に応じて現
 ms.assetid: D134FD03-DABA-4558-A5C3-C365F77BD69A
 keywords:
 - ndiskd dbglevel Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/15/2020
 topic_type:
 - apiref
 api_name:
@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef68ecec2640b779b115633acf92501f783b3f4d
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: a415d4aa79483da9b7ecfa19cf56a4ce6968ad2e
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534739"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593956"
 ---
 # <a name="ndiskddbglevel"></a>!ndiskd.dbglevel
-
 
 **! Ndiskd dbglevel**拡張機能が表示され、必要に応じて現在の NDIS デバッグレベルが変更されます。
 
@@ -51,42 +50,37 @@ ms.locfileid: "84534739"
     !wmitrace.enable ndis {DD7A21E6-A651-46D4-B7C2-66543067B869} -level 4 -flag 0x31f3
 ```
 
- 
-
 WPP の詳細については、「 [Wpp ソフトウェアのトレース](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)」を参照してください。
 
 ドライバーの検証機能の詳細については、「 [Driver verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)」を参照してください。
 
-WMI トレースの詳細については、「 [Wmi トレース拡張機能 (Wmitrace)](wmi-tracing-extensions--wmitrace-dll-.md)」を参照してください。
+WMI トレースの詳細については、「 [Wmi トレース拡張機能 (Wmitrace.dll)](wmi-tracing-extensions--wmitrace-dll-.md)」を参照してください。
 
 ```console
-!ndiskd.dbglevel [-level <str>] 
+!ndiskd.dbglevel [-level <str>]
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-level______"></span><span id="_______-LEVEL______"></span>*-level*   
 デバッグの詳細レベル。 次のいずれかの値になります。
 
--   NONE-デバッグトレースを無効にします
--   FATAL-致命的なエラーの出力を有効にします。
--   エラー-エラーの出力を有効にします
--   警告-警告の出力を有効にします
--   INFO-情報メッセージを出力できるようにします。
--   VERBOSE-すべてのデバッグトレースを出力できるようにします
+- NONE-デバッグトレースを無効にします
+- FATAL-致命的なエラーの出力を有効にします。
+- エラー-エラーの出力を有効にします
+- 警告-警告の出力を有効にします
+- INFO-情報メッセージを出力できるようにします。
+- VERBOSE-すべてのデバッグトレースを出力できるようにします
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="remarks"></a>注釈
--------
+### <a name="remarks"></a>Remarks
 
-この拡張機能は、チェックを行う NDIS にのみ適用されます。 NDIS のビルド情報を確認するには、 [**! ndiskd ndis**](-ndiskd-ndis.md)拡張機能を実行します。
+この拡張機能は、チェックされた NDIS.sys にのみ適用されます。 NDIS.sys のビルド情報を確認するには、 [**! ndiskd ndis**](-ndiskd-ndis.md)拡張機能を実行します。
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -94,7 +88,7 @@ Ndiskd .dll
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -105,13 +99,3 @@ Ndiskd .dll
 [ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)
 
 [WMI トレース拡張機能 (Wmitrace.dll)](wmi-tracing-extensions--wmitrace-dll-.md)
-
- 
-
- 
-
-
-
-
-
-

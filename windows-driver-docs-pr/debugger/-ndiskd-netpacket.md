@@ -4,7 +4,7 @@ description: Ndiskd netpacket 拡張機能には、NET_PACKET 構造に関する
 ms.assetid: 304BA2CF-B6BC-452C-8543-9B872054AA9E
 keywords:
 - ndiskd netpacket Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/17/2020
 topic_type:
 - apiref
 api_name:
@@ -12,22 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d16cc097bdd59b753beead63946f8849f29e776a
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: cba5ebff2a786fb4640fd464368799e3e1af5638
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534913"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593914"
 ---
 # <a name="ndiskdnetpacket"></a>!ndiskd.netpacket
-
 
 **! Ndiskd netpacket**拡張機能には、 [NET \_ パケット](https://docs.microsoft.com/windows-hardware/drivers/netcx/net-packet)構造に関する情報が表示されます。
 
 ネットワークアダプターの WDF クラス拡張 (NetAdapterCx) の詳細については、「 [Network ADAPTER WDF Class extension (Cx)](https://docs.microsoft.com/windows-hardware/drivers/netcx)」を参照してください。
 
 ```console
-!ndiskd.netpacket [-handle <x>] [-basic] [-layout] [-checksum] [-data] 
+!ndiskd.netpacket -handle <x> [-basic] [-layout] [-checksum] [-data]
 ```
 
 ## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
@@ -48,26 +47,23 @@ ms.locfileid: "84534913"
 <span id="_______-data______"></span><span id="_______-DATA______"></span>*-データ*   
 ペイロードメモリをダンプします。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>使用例
---------
+### <a name="examples"></a>例
 
 **メモ**   「[オブジェクトの概要](https://docs.microsoft.com/windows-hardware/drivers/netcx/summary-of-objects)」を参照して、NET \_ PACKET オブジェクトと NetAdapterCx 内の他のオブジェクトとの関係を説明する図を参照してください。
 
- 
-
 ネットパケットのハンドルを取得するには \_ 、次の手順を実行します。
 
-1.  [**! Ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。
-2.  NetAdapterCx ドライバーがインストールされている NetAdapter のハンドルをクリックします。
-3.  NetAdapter の NETADAPTER オブジェクトの右側にある [詳細情報] リンクをクリックして、 [**! ndiskd cxadapter**](-ndiskd-cxadapter.md)拡張機能を実行します。
-4.  *-データパス*パラメーターを指定して **! ndiskd cxadapter**コマンドを入力すると、netadapter のデータパスキューが表示されます。
-5.  データパスキューのいずれかのハンドルをクリックします。
-6.  データパスキューのリングバッファーのハンドルをクリックします。
-7.  リングバッファーの詳細の下部にある [すべての要素の一覧表示] リンクをクリックして、含まれている要素を確認します。
+1. [**! Ndiskd netadapter**](-ndiskd-netadapter.md)拡張機能を実行します。
+2. NetAdapterCx ドライバーがインストールされている NetAdapter のハンドルをクリックします。
+3. NetAdapter の NETADAPTER オブジェクトの右側にある [詳細情報] リンクをクリックして、 [**! ndiskd cxadapter**](-ndiskd-cxadapter.md)拡張機能を実行します。
+4. *-データパス*パラメーターを指定して **! ndiskd cxadapter**コマンドを入力すると、netadapter のデータパスキューが表示されます。
+5. データパスキューのいずれかのハンドルをクリックします。
+6. データパスキューのリングバッファーのハンドルをクリックします。
+7. リングバッファーの詳細の下部にある [すべての要素の一覧表示] リンクをクリックして、含まれている要素を確認します。
 
 この手順の手順1-4 の詳細については、 **! ndiskd cxadapter**トピックの例を参照してください。 この手順の手順5の詳細については、 [**! ndiskd netqueue**](-ndiskd-netqueue.md)のトピックの例を参照してください。 この手順の手順6-7 の詳細については、 [**「」の**](-ndiskd-netrb.md)例を参照してください。
 次の例では、最初の NET パケットのハンドルである ffffd1022d000040 を探し \_ ます。
@@ -145,8 +141,7 @@ Ndiskd .dll
     ffffd102303e8352  00 fc   
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -154,7 +149,7 @@ Ndiskd .dll
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
@@ -171,13 +166,3 @@ Ndiskd .dll
 [**!ndiskd.netqueue**](-ndiskd-netqueue.md)
 
 [**!ndiskd.netrb**](-ndiskd-netrb.md)
-
- 
-
- 
-
-
-
-
-
-

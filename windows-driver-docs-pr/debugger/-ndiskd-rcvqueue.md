@@ -4,7 +4,7 @@ description: Ndiskd rcvqueue コマンドは、受信キューに関する情報
 ms.assetid: 776A459F-A698-4BF6-8DAD-BEB15858AD7F
 keywords:
 - ndiskd rcvqueue Windows デバッグ
-ms.date: 05/23/2017
+ms.date: 06/26/2020
 topic_type:
 - apiref
 api_name:
@@ -12,24 +12,22 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d37760a91048660b0f7e15b3bd90be41db83bbbf
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: ba450f644765419946c19f2a00540afd364f0042
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534717"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593902"
 ---
 # <a name="ndiskdrcvqueue"></a>!ndiskd.rcvqueue
-
 
 **! Ndiskd rcvqueue**コマンドは、受信キューに関する情報を表示します。
 
 ```console
-!ndiskd.rcvqueue [-handle <x>] [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
+!ndiskd.rcvqueue -handle <x> [-filters] [-mem] [-verbose] [-rcvqueueverbosity <x>] 
 ```
 
-## <a name="span-idddk__devobj_dbgspanspan-idddk__devobj_dbgspanparameters"></a><span id="ddk__devobj_dbg"></span><span id="DDK__DEVOBJ_DBG"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
 必須。 受信キューのハンドル。
@@ -46,13 +44,11 @@ ms.locfileid: "84534717"
 <span id="_______-rcvqueueverbosity______"></span><span id="_______-RCVQUEUEVERBOSITY______"></span>*-rcvqueueverbosity*   
 表示する詳細レベル。
 
-## <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+## <a name="dll"></a>[DLL]
 
+Ndiskd.dll
 
-Ndiskd .dll
-
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
 受信キューハンドルを取得するには、まず、パラメーターを指定せずに[**! ndiskd netadapter**](-ndiskd-netadapter.md)コマンドを入力して、ネットアダプター、ドライバー、およびそれらのハンドルの一覧を表示します。 次の例では、Microsoft ISATAP アダプター \# 2 の NetAdapter ハンドル ffff8083e02ce1a0 を探します。
 
@@ -109,8 +105,7 @@ RECEIVE QUEUE
     Shared memory allocations
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -118,18 +113,8 @@ RECEIVE QUEUE
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [**!ndiskd.netadapter**](-ndiskd-netadapter.md)
-
- 
-
- 
-
-
-
-
-
-

@@ -12,15 +12,14 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 04977b5c5abe79ad128f3a8a12b6f89ff4b5783e
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 7e8459949b4f6586b9507f5b90c504ff5eb66688
+ms.sourcegitcommit: 8596782b07c8a71adf38fc2c2da68b75ba0a1259
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534711"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85593822"
 ---
 # <a name="ndiskdwdiminidriver"></a>!ndiskd.wdiminidriver
-
 
 **! Ndiskd**拡張機能には、1つ以上の CMiniportDriver 構造に関する情報が表示されます。 パラメーターを使用せずにこの拡張機能を実行すると、すべての CMiniportDriver 構造体の一覧が表示されます。
 
@@ -32,11 +31,10 @@ WDI ミニポートドライバーリファレンスの詳細については、�
 !ndiskd.wdiminidriver [-handle <x>] [-pm] [-rcvfilter] 
 ```
 
-## <a name="span-idparametersspanspan-idparametersspanspan-idparametersspanparameters"></a><span id="Parameters"></span><span id="parameters"></span><span id="PARAMETERS"></span>パラメータ
-
+## <a name="parameters"></a>パラメーター
 
 <span id="_______-handle______"></span><span id="_______-HANDLE______"></span>*-ハンドル*   
-CMiniportDriver オブジェクトのハンドル。
+CMiniportDriver オブジェクトの省略可能なハンドル。
 
 <span id="_______-basic______"></span><span id="_______-BASIC______"></span>*-基本*   
 ミニポートドライバーに関する基本的な情報を表示します。
@@ -44,12 +42,11 @@ CMiniportDriver オブジェクトのハンドル。
 <span id="_______-handlers______"></span><span id="_______-HANDLERS______"></span>*-ハンドラー*   
 このドライバーのミニポートハンドラーを表示します。
 
-### <a name="span-iddllspanspan-iddllspandll"></a><span id="DLL"></span><span id="dll"></span>DLL
+### <a name="dll"></a>[DLL]
 
-Ndiskd .dll
+Ndiskd.dll
 
-<a name="examples"></a>例
---------
+### <a name="examples"></a>例
 
 すべての CMiniportDriver オブジェクトの一覧を表示するには、パラメーターを使用せずに **! ndiskd wdiminidriver**拡張機能を実行します。 次の例では、CMiniportDriver オブジェクトが1つだけ存在します。 WdiMiniDriver のハンドルは ffffc804b8ce7c40 です。
 
@@ -125,8 +122,7 @@ HANDLERS
     CloseAdapterCompleteHandler            fffff80965fface0   wdiwifi!WDICloseAdapterCompleteHandler
 ```
 
-## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
-
+## <a name="see-also"></a>関連項目
 
 [ネットワーク ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/index)
 
@@ -134,20 +130,10 @@ HANDLERS
 
 [ネットワークスタックのデバッグ](https://channel9.msdn.com/Shows/Defrag-Tools/Defrag-Tools-175-Debugging-the-Network-Stack)
 
-[**NDIS 拡張機能 (Ndiskd .dll)**](ndis-extensions--ndiskd-dll-.md)
+[**NDIS 拡張機能 (Ndiskd.dll)**](ndis-extensions--ndiskd-dll-.md)
 
 [**!ndiskd.help**](-ndiskd-help.md)
 
 [WDI ミニポート ドライバー設計ガイド](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-miniport-driver-design-guide)
 
 [WDI ミニポートドライバーリファレンス](https://docs.microsoft.com/windows-hardware/drivers/ddi/_netvista/)
-
- 
-
- 
-
-
-
-
-
-
