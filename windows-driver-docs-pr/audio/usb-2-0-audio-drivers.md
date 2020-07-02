@@ -7,18 +7,18 @@ ms.topic: article
 ms.custom:
 - CI 111498
 - CSSTroubleshooting
-ms.openlocfilehash: a8989f52c9b5f6b4223c6c5ee60bac692df97474
-ms.sourcegitcommit: e1ff1dd43b87dfb7349cebf70ed2878dc8d7c794
+ms.openlocfilehash: fde47d6a24609de53ef16e6eddbe893192aaf4fb
+ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75606384"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85829039"
 ---
 # <a name="usb-audio-20-drivers"></a>USB Audio 2.0 のドライバー
 
-Windows 10 以降のリリース1703では、USB Audio 2.0 ドライバーが Windows に付属しています。 USB オーディオ2.0 デバイスクラスをサポートするように設計されています。 ドライバーは、WaveRT audio port クラスのミニポートです。 USB オーディオ2.0 デバイスクラスの詳細については、「 [https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50)」を参照してください。
+Windows 10 以降のリリース1703では、USB Audio 2.0 ドライバーが Windows に付属しています。 USB オーディオ2.0 デバイスクラスをサポートするように設計されています。 ドライバーは、WaveRT audio port クラスのミニポートです。 USB オーディオ2.0 デバイスクラスの詳細については、「」を参照してください [https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50](https://www.usb.org/documents?search=&type%5B0%5D=55&items_per_page=50) 。
 
-ドライバーの名前は_usbaudio2_で、関連付けられている inf ファイルは_usbaudio2_です。
+ドライバーの名前は_usbaudio2.sys_であり、関連付けられている inf ファイルは_usbaudio2_です。
 
 ドライバーは、デバイスマネージャーで "USB オーディオクラス2デバイス" として識別します。 この名前は、使用可能な場合は、USB 製品文字列で上書きされます。
 
@@ -26,9 +26,9 @@ Windows 10 以降のリリース1703では、USB Audio 2.0 ドライバーが Wi
 
 ## <a name="architecture"></a>アーキテクチャ
 
-USBAudio は、以下に示すように、Windows USB オーディオの広範なアーキテクチャに適合します。 
+USBAudio.Sys、以下に示すように、Windows USB オーディオの広範なアーキテクチャに適しています。 
 
-![上部に Kmixer と USB オーディオデバイスが下部に表示されているスタック図](images/usb-2-0-audio-arch.png)
+![上部に Kmixer.sys と USB オーディオデバイスが下部に表示されているスタック図](images/usb-2-0-audio-arch.png)
 
 ## <a name="related-usb-specifications"></a>関連する USB 仕様
 
@@ -46,7 +46,7 @@ USB-IF は、 [Usb 仕様](https://www.usb.org/documents)、テスト仕様、�
 
 タイプ I 形式 (FMT-2 2.3.1):
 
-- 8\.. 32 ビットの PCM 形式 (サンプルあたり) (FMT20 2.3.1.7.1)
+- 8.. 32 ビットの PCM 形式 (サンプルあたり) (FMT20 2.3.1.7.1)
 - PCM8 形式 (FMT-2 2.3.1.7.2)
 - IEEE_FLOAT 形式 (FMT-2 2.3.1.7.3)
 
@@ -121,11 +121,11 @@ AS インターフェイス記述子の bFormatType フィールドは、形式�
 
 この仕様の詳細については、「FMT-2 2.3.1.6」を参照してください。
 
-次の制約が適用されます。
+次の制限事項が適用されます。
 
-|                            |                        |                               |
-|----------------------------|------------------------|-------------------------------|
-| 入力 I PCM 形式:         | 1 < = bSubslotSize < = 4 |     8 < = bBitResolution < = 32 |
+|Format                      |サブスロットサイズ            |ビット解像度                 |
+|----|----|----|
+| 入力 I PCM 形式:         | 1 <= bSubslotSize <= 4 |     8 <= bBitResolution <= 32 |
 | 「I PCM8 format」と入力します。        | bSubslotSize = = 1      |     bBitResolution = = 8       |
 | IEEE_FLOAT 形式で入力します。  | bSubslotSize = = 4      |     bBitResolution = = 32      |
 | 種類 III IEC61937 形式: | bSubslotSize = = 2      |     bBitResolution = = 16      |
@@ -142,18 +142,18 @@ BmAttributes フィールドの MaxPacketsOnly フラグはサポートされて
 
 このドライバーは、一部のコントロールに対して、ADC 2 のセクション5.2 で定義された制御要求のサブセットをサポートし、割り込みデータメッセージ (ADC-2 6.1) をサポートしています。 次の表は、ドライバーに実装されているサブセットを示しています。
 
-| エンティティ           | Control                    | その他のものを取得する | その他の設定 | 範囲の取得 | 妨害 |
+| Entity           | コントロール                    | その他のものを取得する | その他の設定 | 範囲の取得 | 妨害 |
 |------------------|----------------------------|---------|---------|-----------|-----------|
-| クロックソース     | サンプリング頻度の制御 | ○       | ○       | ○         |           |
-| クロックセレクター   | クロックセレクターコントロール     | ○       |         |           |           |
-| クロック乗数 | 分子コントロール          | ○       |         |           |           |
-|                  | 分母コントロール        | ○       |         |           |           |
-| ターミナル         | コネクタコントロール          | ○       |         |           | ○         |
-| ミキサーユニット       | ミキサーコントロール              | ○       | ○       | ○         |           |
-| セレクターユニット    | セレクターコントロール           | ○       | ○       |           |           |
-| 機能ユニット     | ミュートコントロール               | ○       | ○       |           | ○         |
-|                  | ボリュームコントロール             | ○       | ○       | ○         | ○         |
-|                  | 自動ゲイン制御     | ○       | ○       |           |           |
+| クロックソース     | サンプリング頻度の制御 | x       | x       | x         |           |
+| クロックセレクター   | クロックセレクターコントロール     | x       |         |           |           |
+| クロック乗数 | 分子コントロール          | x       |         |           |           |
+|                  | 分母コントロール        | x       |         |           |           |
+| ターミナル         | コネクタコントロール          | x       |         |           | x         |
+| ミキサーユニット       | ミキサーコントロール              | x       | x       | x         |           |
+| セレクターユニット    | セレクターコントロール           | x       | x       |           |           |
+| 機能ユニット     | ミュートコントロール               | x       | x       |           | x         |
+|                  | ボリュームコントロール             | x       | x       | x         | x         |
+|                  | 自動ゲイン制御     | x       | x       |           |           |
 | 効果の単位      | –                          |         |         |           |           |
 | 処理ユニット  | –                          |         |         |           |           |
 | 拡張機能ユニット   | –                          |         |         |           |           |
@@ -209,7 +209,7 @@ USB\Class_01&SubClass_03&Prot_20
 
 サブクラス型については、USB audio 2.0 仕様を参照してください。
 
-MIDI を搭載した USB オーディオ2.0 デバイス (上のサブクラス 0x03) は、usbaudio. sys (USB Audio 1.0 driver) が読み込まれた別のマルチ機能デバイスとして MIDI 関数を列挙します。
+MIDI を搭載した USB オーディオ2.0 デバイス (上のサブクラス 0x03) は、usbaudio.sys (USB Audio 1.0 driver) が読み込まれた別のマルチ機能デバイスとして MIDI 関数を列挙します。
 
 USB Audio 1.0 クラスドライバーは、この互換性のある ID を wdma_usb に登録します。
 
@@ -250,17 +250,17 @@ REG_DWORD  T<tid>_J<n>_PortConnection     The enum value is define in EPxcPortCo
 REG_DWORD  T<tid>_J<n>_Color              The color needs to be represent by RGB like this: 0x00RRGGBB (NOT a COLORREF).
 ```
 
-\<tid\> = ターミナル ID (記述子で定義)
+\<tid\>= ターミナル ID (記述子で定義)
   
-\<n\> = ジャック番号 (1 ~ n)。 
+\<n\>= ジャック番号 (1 ~ n)。 
 
-\<tid\> と \<n\> の規則は次のとおりです。
+およびの \<tid\> 規則 \<n\> は次のとおりです。
 
 - Base 10 (8, 9, 10, 8, 9, a)
 - 先頭に0を含まない
 - n は1から始まる (最初のジャックは、ジャック0ではなくジャック 1)
 
-たとえば次のようになります。
+次に例を示します。
 
 T1_NrJacks、T1_J2_ChannelMapping、T1_J2_ConnectorType
 
@@ -328,7 +328,7 @@ UCHAR Example2_MSOS20DescriptorSetForUAC2 [0x76] = {
     0x00, 0x00, 0xff, 0x00  // PropertyData - 0xff0000 - RED }
 ```
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 
 ドライバーが起動しない場合は、システムイベントログを確認する必要があります。 ドライバーは、エラーの原因を示すイベントをログに記録します。 同様に、[このブログエントリ](https://matthewvaneerde.wordpress.com/2017/01/09/collecting-audio-logs-the-old-fashioned-way/)に記載されている手順に従って、オーディオログを手動で収集することもできます。 ドライバーの問題を示している可能性がある場合は、以下で説明するフィードバックハブを使用して報告し、ログを含めてください。
 
@@ -344,12 +344,12 @@ Windows 10 バージョン1703で "オーディオサービスが応答しませ
 
 この USB Audio 2.0 クラスドライバーは、Microsoft によってサポートされています。
 
-### <a name="see-also"></a>「
+### <a name="see-also"></a>関連項目
 
 [Windows Driver Model (WDM)](https://docs.microsoft.com/windows-hardware/drivers/kernel/windows-driver-model)
 
 [オーディオドライバーの概要](https://docs.microsoft.com/windows-hardware/drivers/audio/getting-started-with-wdm-audio-drivers)
 
-[WaveRT ポートドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/introducing-the-wavert-port-driver)
+[WaveRT ポート ドライバー](https://docs.microsoft.com/windows-hardware/drivers/audio/introducing-the-wavert-port-driver)
 
 [低待機時間オーディオ](https://docs.microsoft.com/windows-hardware/drivers/audio/low-latency-audio)

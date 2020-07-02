@@ -1,59 +1,61 @@
 ---
-title: KSPROPSETID\_Pin
-description: KSPROPSETID\_Pin
+title: KSPROPSETID \_ Pin
+description: KSPROPSETID \_ Pin
 ms.assetid: a74a9cb2-2809-4e03-95da-71eeb5f079e9
-ms.date: 11/28/2017
+ms.date: 06/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ead0a61a66c47591e757b97d57010aedc869f706
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5775c3a892fcc869794b20caa85d0801b6b0f5ab
+ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72845626"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85829005"
 ---
-# <a name="kspropsetid_pin"></a>KSPROPSETID\_Pin
+# <a name="kspropsetid_pin"></a>KSPROPSETID \_ Pin
 
 
 ## <span id="ddk_kspropsetid_pin_ks"></span><span id="DDK_KSPROPSETID_PIN_KS"></span>
 
 
-クライアントは、KSPROPSETID\_Pin プロパティセット内のプロパティを使用して、サポートされている各 pin ファクトリに関する情報を KS フィルターに照会します。
+クライアントは、KSPROPSETID pin プロパティに設定されているプロパティを使用して、 \_ サポートされている各 Pin ファクトリに関する情報を KS フィルターに照会します。
 
-[**Ksk プロパティ\_ピン留め\_CTYPES**](ksproperty-pin-ctypes.md)プロパティは、KS フィルターがサポートする pin ファクトリの数を指定します。 このプロパティセットの他のすべてのプロパティは、個々の pin ファクトリに関する情報を指定します。 KS フィルターは、各 pin ファクトリを ID で識別します。これは0から、pin ファクトリの数から1を引いた数までの範囲です。 クライアントには、プロパティ要求を発行するときに使用する[**KSP\_ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)構造内にピンファクトリ T が含まれています。
+[**Ksproperty \_ ピン \_ ctypes**](ksproperty-pin-ctypes.md)プロパティは、KS フィルターがサポートする PIN ファクトリの数を指定します。 このプロパティセットの他のすべてのプロパティは、個々の pin ファクトリに関する情報を指定します。 KS フィルターは、各 pin ファクトリを ID で識別します。これは0から、pin ファクトリの数から1を引いた数までの範囲です。 クライアントには、プロパティ要求を発行するときに使用する[**KSP の \_ ピン**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-ksp_pin)構造内に、ピンファクトリ T が含まれています。
 
-KSK PROPSETID\_ピンのプロパティセットには次のものが含まれます。
+KSPROPSETID \_ Pin プロパティセットには次のものが含まれます。
 
-[**KSK プロパティ\_ピン\_カテゴリ**](ksproperty-pin-category.md)
+[**KSK プロパティの \_ PIN \_ カテゴリ**](ksproperty-pin-category.md)
 
-[**KSK プロパティ\_ピン\_CINSTANCES**](ksproperty-pin-cinstances.md)
+[**KSPROPERTY \_ ピン \_ CINSTANCES**](ksproperty-pin-cinstances.md)
 
-[**KSK プロパティ\_PIN\_通信**](ksproperty-pin-communication.md)
+[**KSK プロパティの \_ PIN \_ 通信**](ksproperty-pin-communication.md)
 
-[**KSK プロパティ\_PIN\_CONSTRAINEDDATARANGES**](ksproperty-pin-constraineddataranges.md)
+[**KSPROPERTY \_ PIN \_ CONSTRAINEDDATARANGES**](ksproperty-pin-constraineddataranges.md)
 
-[**KSK プロパティ\_ピン\_CTYPES**](ksproperty-pin-ctypes.md)
+[**KSPROPERTY \_ ピン \_ CTYPES**](ksproperty-pin-ctypes.md)
 
-[**KSK プロパティ\_ピン留め\_データフロー**](ksproperty-pin-dataflow.md)
+[**KSK プロパティ \_ ピンデータ \_ フロー**](ksproperty-pin-dataflow.md)
 
-[**KSK プロパティ\_ピン\_DATAINTERSECTION 集合**](ksproperty-pin-dataintersection.md)
+[**KSK プロパティ \_ ピン \_ DATAINTERSECTION と**](ksproperty-pin-dataintersection.md)
 
-[**KSK プロパティ\_PIN\_DATARANGES**](ksproperty-pin-dataranges.md)
+[**KSPROPERTY \_ PIN \_ DATARANGES**](ksproperty-pin-dataranges.md)
 
-[**KSK プロパティ\_\_GLOBALCINSTANCES にピン留めする**](ksproperty-pin-globalcinstances.md)
+[**KSK プロパティ \_ ピン \_ GLOBALCINSTANCES**](ksproperty-pin-globalcinstances.md)
 
-[**KSK プロパティ\_ピン留め\_インターフェイス**](ksproperty-pin-interfaces.md)
+[**KSK プロパティの \_ PIN \_ インターフェイス**](ksproperty-pin-interfaces.md)
 
-[**KSK プロパティ\_ピン\_メディア**](ksproperty-pin-mediums.md)
+[**KSK プロパティの \_ PIN \_ メディア**](ksproperty-pin-mediums.md)
 
-[**KSK プロパティ\_PIN\_名**](ksproperty-pin-name.md)
+[**KSPROPERTY \_ PIN \_ MODEDATAFORMATS**](ksproperty-pin-modedataformats.md)
 
-[**KSK プロパティ\_PIN\_NECESSARYINSTANCES**](ksproperty-pin-necessaryinstances.md)
+[**KSK プロパティの \_ PIN \_ 名**](ksproperty-pin-name.md)
 
-[**KSK プロパティ\_固定\_PHYSICALCONNECTION**](ksproperty-pin-physicalconnection.md)
+[**KSPROPERTY \_ PIN \_ NECESSARYINSTANCES**](ksproperty-pin-necessaryinstances.md)
 
-[**KSK プロパティ\_PIN\_PROPOSEDATAFORMAT**](ksproperty-pin-proposedataformat.md)
+[**KSPROPERTY \_ ピン \_ PHYSICALCONNECTION**](ksproperty-pin-physicalconnection.md)
 
-[**KSK プロパティ\_PIN\_PROPOSEDATAFORMAT2**](ksproperty-pin-proposedataformat2.md)
+[**KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT**](ksproperty-pin-proposedataformat.md)
+
+[**KSPROPERTY \_ PIN \_ PROPOSEDATAFORMAT2**](ksproperty-pin-proposedataformat2.md)
 
  
 

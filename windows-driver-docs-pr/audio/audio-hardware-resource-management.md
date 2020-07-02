@@ -4,38 +4,38 @@ description: Windows 10 には、と XML ファイルを使用して同時実行
 ms.assetid: 6E94529E-F3F0-4DC5-AF8B-F896A4F991E3
 ms.date: 10/29/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9608a783fd0a1b19e51f204c03d4d7b587d62574
-ms.sourcegitcommit: 076f9cd83313f6d8ab5688340f05bde7e8fbb8ee
+ms.openlocfilehash: b9c31a33c9779767237e11b44a0347f24abc9a7d
+ms.sourcegitcommit: 7a69c2e0abf91a57407b13a30faf24925f677970
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82999063"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85829031"
 ---
 # <a name="audio-hardware-resource-management"></a>オーディオ ハードウェア リソースの管理
 
 Windows 10 には、XML ファイルを使用して同時実行の制約を表現する機能が含まれています。 リソースの制約付きモバイルデバイスでは、特定のオーディオストリームの優先順位を指定する機能によって、カスタマーエクスペリエンスを向上させることができます。
 
-**注**  このメカニズムは、スマートフォンとタブレットでのみ使用できます。
- 
+>[!NOTE]
+>このメカニズムは、スマートフォンとタブレットでのみ使用できます。
+
 低コストのモバイルデバイスで優れたオーディオエクスペリエンスを作成する際の1つの問題は、一部のデバイスでさまざまな同時実行制約があることです。 たとえば、デバイスが同時に最大6つのオーディオストリームを再生でき、2つのオフロードストリームのみをサポートする可能性があります。 モバイルデバイスにアクティブな通話がある場合、デバイスがサポートするオーディオストリームは2つだけである可能性があります。 デバイスがオーディオをキャプチャしている場合、デバイスは最大4つのオーディオストリームのみを再生できます。
 
 Windows 10 には、高優先度のオーディオストリームや携帯電話通話を再生できるように、同時実行の制約を表現するメカニズムが含まれています。 システムに十分なリソースがない場合は、低優先度のストリームが終了します。 このメカニズムは、デスクトップやノート pc にない携帯電話やタブレットでのみ使用できます。
 
 制約を指定するには、次の2つの手順を実行します。
 
-- 「[同時実行制約を指定](#specify_concurrency_constraints)する」の説明に従って、同時実行制約 XML ファイルを作成します。
-- 「 [\_レジストリキー\_の構成](#registry_key_configuration)」で説明されているように、カスタムの同時実行制約 XML ファイルを使用するようにレジストリエントリを構成します。
+- 「[同時実行制約を指定](#specify-concurrency-resource-constraints)する」の説明に従って、同時実行制約 XML ファイルを作成します。
+- 「[レジストリ \_ キーの \_ 構成](#registry-key-configuration)」で説明されているように、カスタムの同時実行制約 XML ファイルを使用するようにレジストリエントリを構成します。
 
-## <a name="span-idspecify_concurrency_constraintsspanspan-idspecify_concurrency_constraintsspanspan-idspecify_concurrency_constraintsspanspecify-concurrency-resource-constraints"></a><span id="Specify_Concurrency_Constraints"></span><span id="specify_concurrency_constraints"></span><span id="SPECIFY_CONCURRENCY_CONSTRAINTS"></span>同時実行リソースの制約を指定する
+## <a name="specify-concurrency-resource-constraints"></a>同時実行リソースの制約を指定する
 
-
-XML 制約ファイルは、3つのセクションで構成されています。 最初の必須セクションは、制限&lt;&gt; &lt;/制限&gt;によって定義されます。 このセクションは、最大15個のリソース制約を定義するために使用できます。 たとえば、レンダリングストリームの最大数とオフロードできるストリームの最大数に対する制約を定義できます。
+XML 制約ファイルは、3つのセクションで構成されています。 最初の必須セクションは、制限/制限によって定義され &lt; &gt; &lt; &gt; ます。 このセクションは、最大15個のリソース制約を定義するために使用できます。 たとえば、レンダリングストリームの最大数とオフロードできるストリームの最大数に対する制約を定義できます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ConstraintModel>
   
-  <Limits> 
+  <Limits>
     <Resource>
       <ID>MaxRender</ID>
       <Consumption>6</Consumption>
@@ -53,7 +53,7 @@ XML ファイルの次のセクションでは、排他的なエンドポイン�
 
 たとえば、オーディオハードウェアに、同じ DAC に対して接続されている [ExclusiveEndpoints Setスピーカ] と [Wiredヘッドホン] の両方があり、同時にアクティブにできない場合は、同じ [] の一覧に存在する必要があります。
 
-このセクションには、 &lt;複数&gt;の ExclusiveEndpoints ノードを含めることができます。 各 ExclusiveEndpoints ノードには、2つ以上のエンドポイントノードが含まれています。 各エンドポイントノードには、HWID、名、および PinId が含まれています。
+このセクションには、複数の ExclusiveEndpoints ノードを含めることができ &lt; &gt; ます。 各 ExclusiveEndpoints ノードには、2つ以上のエンドポイントノードが含まれています。 各エンドポイントノードには、HWID、名、および PinId が含まれています。
 
 ```xml
   <ExclusiveEndpoints>
@@ -76,7 +76,7 @@ XML ファイルの次のセクションでは、排他的なエンドポイン�
   </ExclusiveEndpoints>
 ```
 
-XML ファイルの最後の必須セクションでは、さまざまなリソースコンシューマーを定義します。 ファイルのこのセクションには、 &lt;複数&gt;の ResourceConsumer エントリが含まれています。 各エントリは、リソースコンシューマーとそれに関連付けられているリソースに関する情報を指定します。 使用される各リソースは、 &lt;制限&gt;セクションで事前に定義されている必要があります。
+XML ファイルの最後の必須セクションでは、さまざまなリソースコンシューマーを定義します。 ファイルのこのセクションには、複数の ResourceConsumer エントリが含まれてい &lt; &gt; ます。 各エントリは、リソースコンシューマーとそれに関連付けられているリソースに関する情報を指定します。 使用される各リソースは、制限セクションで事前に定義されている必要があり &lt; &gt; ます。
 
 ```xml
   <ResourceConsumer>
@@ -100,67 +100,65 @@ XML ファイルの最後の必須セクションでは、さまざまなリソ�
 
 オーディオリソースが使用されると、オーディオサービスはリソースを追跡します。 使用できるリソースが不足している場合は、優先順位の低いストリームが終了するか、既存のリソースコンシューマーの優先順位が高い場合は現在のリソース要求が失敗します。
 
-これらは有効な&lt;ConsumerInfo&gt;エントリです。
+これらは有効な &lt; ConsumerInfo &gt; エントリです。
 
--   &lt;PhoneCall&gt; - &lt;phonecall&gt;ノードには、"Active" または "Hold" を指定できる callstate 子ノードを含むが含まれています。
--   &lt;ストリーム&gt;オーディオストリーム。 ストリーム&lt;&gt;ノードには、次の子ノードが含まれています。
+- &lt;PhoneCall &gt; -phonecall ノードには、 &lt; &gt; "Active" または "Hold" を指定できる callstate 子ノードを含むが含まれています。
+- &lt;ストリーム &gt; オーディオストリーム。 &lt;ストリーム &gt; ノードには、次の子ノードが含まれています。
 
     &lt;HWID-ドライバーの INF ファイルで指定されているリソースコンシューマーのハードウェア ID (hw id)。
 
-    &lt;名&gt; -リソースコンシューマーのトポロジフィルター参照文字列。
+    &lt;名 &gt; -リソースコンシューマーのトポロジフィルター参照文字列。
 
-    &lt;PinId&gt; -リソースコンシューマーの pin id。
+    &lt;PinId &gt; -リソースコンシューマーの PIN id。
 
-    &lt;Mode&gt; -関連付けられているモードの GUID。 詳細については、「[オーディオ信号処理モード](audio-signal-processing-modes.md)」を参照してください。
+    &lt;Mode &gt; -関連付けられているモードの GUID。 詳細については、「[オーディオ信号処理モード](audio-signal-processing-modes.md)」を参照してください。
 
-    &lt;ConnectorType&gt; -リソースコンシューマーのコネクタの種類。 有効な値は、Host、Loopback、または Offload です。
+    &lt;ConnectorType &gt; -リソースコンシューマーのコネクタの種類。 有効な値は、Host、Loopback、または Offload です。
 
--   &lt;FM&gt; fm ラジオ。
--   &lt;KeywordDetector&gt; -Cortana 音声操作をサポートするために使用されるキーワード検出機能。
+- &lt;FM &gt; Fm ラジオ。
+- &lt;KeywordDetector &gt; -Cortana 音声操作をサポートするために使用されるキーワード検出機能。
 
 次の表は、オーディオストリームの優先順位が最も高い優先順位から順に表示されています。
 
-|                          |     |
-|--------------------------|-----|
-| 通知           | 1   |
+|オーディオストリームのレンダリング|Priority|
+|----|----|
+| 通信           | 1   |
 | ゲーム チャット                | 2   |
 | スクリーン リーダー            | 3   |
 | カメラシャッター           | 4   |
 | 会話にプッシュ             | 5   |
 | 通話通知で     | 6   |
 | パーソナルアシスタント       | 6   |
-| Speech                   | 7   |
+| 音声                   | 7   |
 | 着信音                 | 8   |
 | アラーム                    | 9   |
 | 映画                    | 10  |
 | 前景のみのメディア    | 10  |
 | バックグラウンド対応メディア | 11  |
-| Media                    | 11  |
+| メディア                    | 11  |
 | サウンド効果            | 12  |
 | DTMF                     | 12  |
 | ゲームメディア               | 12  |
 | システム                   | 12  |
 | ゲーム効果             | 12  |
 | その他                    | 13  |
-| 警告                   | 14  |
-
- 
+| アラート                   | 14  |
 
 次の表は、優先順位の高い順に一覧表示されるオーディオストリームの優先順位をまとめたものです。
 
-|                          |     |
-|--------------------------|-----|
-| 通知           | 1   |
+|オーディオストリームのキャプチャ|Priority|
+|----|----|
+| 通信           | 1   |
 | ゲーム チャット                | 2   |
 | 会話にプッシュ             | 4   |
 | パーソナルアシスタント       | 6   |
-| Speech                   | 7   |
+| 音声                   | 7   |
 | バックグラウンド対応メディア | 8   |
-| Media                    | 8   |
+| メディア                    | 8   |
 | その他                    | 13  |
 | ゲームメディア               | 15  |
 | スクリーン リーダー            | 15  |
-| 警告                   | 15  |
+| アラート                   | 15  |
 | 前景のみのメディア    | 15  |
 | ゲーム効果             | 15  |
 | サウンド効果            | 15  |
@@ -172,17 +170,15 @@ XML ファイルの最後の必須セクションでは、さまざまなリソ�
 | 着信音                 | 15  |
 | システム                   | 15  |
 
- 
-
-**使用例**
+### <a name="examples"></a>使用例
 
 - 例 1: ユーザーは、通信のレンダーストリームとキャプチャストリームを使用して、Skype を介して通信しています。 ゲームを開始し、ゲーム効果ストリームを作成しようとします。 使用可能なリソースが不足している場合、ゲーム効果ストリームの作成は失敗します。
 
 - 例 2: ユーザーが音楽を再生している。 これらは、音声ストリームを作成するアプリケーションを起動します。 使用可能なリソースが不足している場合は、音楽ストリームが終了し、音声ストリームの作成は成功します。
 
-## <a name="span-idregistry_key_configurationspanspan-idregistry_key_configurationspanspan-idregistry_key_configurationspanregistry-key-configuration"></a><span id="Registry_Key_Configuration"></span><span id="registry_key_configuration"></span><span id="REGISTRY_KEY_CONFIGURATION"></span>レジストリキーの構成
+## <a name="registry-key-configuration"></a>レジストリキーの構成
 
-同時実行制約 XML ファイルへの完全なパスは、次のレジストリキーで指定する必要があります。 
+同時実行制約 XML ファイルへの完全なパスは、次のレジストリキーで指定する必要があります。
 
 ```inf
 HKR\SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig
@@ -196,9 +192,7 @@ HKR,SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig,<Name of the c
 
 このレジストリキーに、XML へのパスを含む値を指定します。 XML ファイルの名前とレジストリ値の名前は一意にすることをお勧めします。他のサブシステムやオーディオデバイスでは、XML ファイルに独自の制約セットが提供される可能性があるためです。 レジストリキーは、オーディオドライバーの INF ファイルで設定できます。
 
-
-## <a name="span-idexample_xml_constraints_filespanspan-idexample_xml_constraints_filespanspan-idexample_xml_constraints_filespanexample-xml-constraints-file"></a><span id="Example_XML_Constraints_File"></span><span id="example_xml_constraints_file"></span><span id="EXAMPLE_XML_CONSTRAINTS_FILE"></span>XML 制約ファイルの例
-
+## <a name="example-xml-constraints-file"></a>XML 制約ファイルの例
 
 これは、SYSVAD 仮想オーディオドライバーサンプルの XML 制約ファイルの例です。
 
@@ -1629,11 +1623,3 @@ HKR,SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig,<Name of the c
 
 </ConstraintModel>
 ```
-
- 
-
- 
-
-
-
-
