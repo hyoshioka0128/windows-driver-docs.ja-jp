@@ -3,7 +3,7 @@ title: KSCATEGORY_NETWORK_CAMERA
 description: KSCATEGORY_NETWORK_CAMERA
 ms.assetid: FE86C0D5-3512-4DC9-891D-60E46BA33F51
 keywords:
-- KSCATEGORY_NETWORK_CAMERA デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの KSCATEGORY_NETWORK_CAMERA
 topic_type:
 - apiref
 api_name:
@@ -15,17 +15,17 @@ api_type:
 ms.localizationpriority: medium
 ms.date: 10/17/2018
 ms.custom: 19H1
-ms.openlocfilehash: d22c7bb4426c77a3223fa8bd27f287417ca88e44
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: f2e1fd4582d3d07da17d5629ccaef7850a0b8d99
+ms.sourcegitcommit: a260b60c121b25f06e8672afaaa8a3b197b17534
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390741"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85839122"
 ---
-# <a name="kscategorynetworkcamera"></a>KSCATEGORY_NETWORK_CAMERA
+# <a name="kscategory_network_camera"></a>KSCATEGORY_NETWORK_CAMERA
 
 
-KSCATEGORY_NETWORK_CAMERA GUID の定義は次のとおりです。
+KSCATEGORY_NETWORK_CAMERA GUID は次のように定義されています。
 
 <table>
 <colgroup>
@@ -45,7 +45,7 @@ KSCATEGORY_NETWORK_CAMERA GUID の定義は次のとおりです。
 </tr>
 <tr class="even">
 <td align="left"><p>クラス GUID</p></td>
-<td align="left"><p>{B8238652-B500-41EB-B4F3-4234F7F5AE9}</p></td>
+<td align="left"><p>{B8238652-B500-41EB-B4F3-4234F7F5AE99}</p></td>
 </tr>
 </tbody>
 </table>
@@ -63,7 +63,7 @@ KSCATEGORY_NETWORK_CAMERA GUID の定義は次のとおりです。
 <tbody>
 <tr class="odd">
 <td align="left"><p>Header</p></td>
-<td align="left">Ks.h (Ks.h を含む)</td>
+<td align="left">Ks (Ks を含む)</td>
 </tr>
 </tbody>
 </table>
