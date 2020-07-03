@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_CONFIRM
-description: WDI_TLV_SAE_CONFIRM では、同時認証の Equals (SAE) 確認要求の確認入力 フィールドを含む TLV です。
+description: WDI_TLV_SAE_CONFIRM は、Equals (SAE) Confirm 要求を同時に認証するための Confirm フィールドを含む TLV です。
 ms.assetid: F2251F48-7EED-460B-9EFD-554451E1172B
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_SAE_CONFIRM ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_SAE_CONFIRM
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 949cf66d9025d3912bb347119af532ec0b9d152b
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: a279d965e8df785a08aa1ff6c3c59189f2318d27
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905457"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918188"
 ---
-# <a name="wditlvsaeconfirm"></a>WDI_TLV_SAE_CONFIRM
+# <a name="wdi_tlv_sae_confirm"></a>WDI_TLV_SAE_CONFIRM
 
-**WDI_TLV_SAE_CONFIRM**同時認証の Equals (SAE) 確認要求の確認入力 フィールドを含む TLV です。
+**WDI_TLV_SAE_CONFIRM**は、EQUALS (SAE) CONFIRM 要求を同時に認証するための confirm フィールドを含む TLV です。
 
-この TLV がで使用される[WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md)します。
+この TLV は[WDI_TLV_SAE_CONFIRM_REQUEST](wdi-tlv-sae-confirm-request.md)で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,14 @@ ms.locfileid: "59905457"
 
 ## <a name="length"></a>長さ
 
-UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 つ以上の要素を含める必要があります。
+UINT8 要素の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT8[] | 確認入力 フィールドにします。 |
+| UINT8 [] | Confirm フィールド。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10、バージョンが 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

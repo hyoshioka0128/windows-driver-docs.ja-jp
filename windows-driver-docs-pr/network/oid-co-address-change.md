@@ -6,23 +6,20 @@ keywords:
 - OID_CO_ADDRESS_CHANGE
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 057575360289eacbabdac36ca2356e9d91d86382
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1e91da29223d4ccde274d137f6c7dc2f8a1c1da9
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363534"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918200"
 ---
-# <a name="oidcoaddresschange"></a>OID_CO_ADDRESS_CHANGE
+# <a name="oid_co_address_change"></a>OID_CO_ADDRESS_CHANGE
 
-OID_CO_ADDRESS_CHANGE OID は、コール マネージャーによってコール マネージャーで、アドレス ファミリをオープンした各クライアントに送信されます。 この操作は、コール マネージャーを使用するスイッチのアドレスの変更に応答で実行されます。 たとえば、コール マネージャーは、NIC を 1 つのスイッチから切断別のスイッチに接続されるため、ユーザーがいる場合、この要求を送信します。 通知された各クライアントでは、現在有効なアドレスの一覧を取得する呼び出しのマネージャーに OID_CO_GET_ADDRESSES クエリを送信する必要があります。
+OID_CO_ADDRESS_CHANGE OID は、コールマネージャーによって、通話マネージャーを使用してアドレスファミリを開いた各クライアントに送信されます。 このアクションは、呼び出しマネージャーが使用するスイッチアドレスの変更に応答して実行されます。 たとえば、だれかが1つのスイッチから NIC を切断し、別のスイッチに接続した場合、呼び出しマネージャーはこの要求を送信します。 通知された各クライアントは、OID_CO_GET_ADDRESSES クエリを呼び出しマネージャーに送信して、現在有効なアドレスの一覧を取得する必要があります。
 
-コール マネージャーは、クライアントは、コール マネージャーで、アドレス ファミリを開いた後にすぐにも OID_CO_ADDRESS_CHANGE とクライアントに送信します。 これにより、変更のスイッチのアドレスが変更された後、アドレス ファミリを表示するクライアントに通知します。 クライアントする必要がありますしする必要がありますし、クエリを送信 OID_CO_GET_ADDRESSES コール マネージャーにします。
+また、コールマネージャーは、クライアントが呼び出しマネージャーでアドレスファミリを開いた直後に、クライアントに OID_CO_ADDRESS_CHANGE を送信します。 これにより、スイッチアドレスが変更された後にアドレスファミリを開くクライアントが変更を通知されるようになります。 その後、クライアントは OID_CO_GET_ADDRESSES クエリを呼び出しマネージャーに送信する必要があります。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

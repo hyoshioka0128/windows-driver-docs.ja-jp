@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_CONFIRM_RESPONSE
-description: WDI_TLV_SAE_CONFIRM_RESPONSE では、同時認証の Equals (SAE) 確認応答のフレームを含む TLV です。
+description: WDI_TLV_SAE_CONFIRM_RESPONSE は、Equals (SAE) Confirm RESPONSE frame の同時認証を含む TLV です。
 ms.assetid: 42ACD823-3FFB-442F-B81C-82446C3606FF
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_SAE_CONFIRM_RESPONSE ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_SAE_CONFIRM_RESPONSE
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 994ffc57f0550dc5ec59e7ae9f1f262d4e2f64ee
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 071fbba63d0eb8dd5482eee99c63975d44922f25
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359341"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918190"
 ---
-# <a name="wditlvsaeconfirmresponse"></a>WDI_TLV_SAE_CONFIRM_RESPONSE
+# <a name="wdi_tlv_sae_confirm_response"></a>WDI_TLV_SAE_CONFIRM_RESPONSE
 
-**WDI_TLV_SAE_CONFIRM_RESPONSE**同時認証の Equals (SAE) 確認応答のフレームを含む TLV です。
+**WDI_TLV_SAE_CONFIRM_RESPONSE**は、EQUALS (SAE) CONFIRM RESPONSE Frame の同時認証を含む TLV です。
 
-この TLV がのペイロード データに使用される[NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)します。
+この TLV は、 [NDIS_STATUS_WDI_INDICATION_SAE_AUTH_PARAMS_NEEDED](ndis-status-wdi-indication-sae-auth-params-needed.md)のペイロードデータで使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63359341"
 
 ## <a name="length"></a>長さ
 
-UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 つ以上の要素を含める必要があります。
+UINT8 要素の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT8[] | SAE 確認応答フレーム。 |
+| UINT8 [] | SAE Confirm 応答フレーム。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

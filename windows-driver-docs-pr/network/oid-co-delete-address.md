@@ -6,16 +6,16 @@ keywords:
 - OID_CO_DELETE_ADDRESS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 271061deee0f234432fe0de82fbc52a42c665736
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: aad1289b726a2de12f058994df04f6d0311e50c3
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56551093"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918204"
 ---
-# <a name="oidcodeleteaddress"></a>OID_CO_DELETE_ADDRESS
+# <a name="oid_co_delete_address"></a>OID_CO_DELETE_ADDRESS
 
-OID_CO_DELETE_ADDRESS OID は、ホストのエイリアスのアドレスを削除する、クライアントが、コール マネージャーに送信されます。 エイリアスのアドレス形式は次のように定義されている CO_ADDRESS 構造体としてです。
+OID_CO_DELETE_ADDRESS OID は、ホストのエイリアスアドレスを削除するために、クライアントから呼び出しマネージャーに送信されます。 エイリアスアドレスは、次のように定義された CO_ADDRESS 構造として書式設定されます。
 
 ```c++
 typedef struct _CO_ADDRESS {
@@ -24,18 +24,15 @@ typedef struct _CO_ADDRESS {
 } CO_ADDRESS, *PCO_ADDRESS; 
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **AddressSize**  
-アドレスの構造のバイト単位のサイズを指定します。
+アドレスの構造体のサイズをバイト単位で指定します。
 
 **アドレス**  
-エイリアスのアドレスを含む可変長配列を指定します。 アドレスの形式は、コール マネージャーによって使用される信号のプロトコルに固有です。
+エイリアスアドレスを含む可変長配列を指定します。 アドレスの形式は、コールマネージャーによって使用されるシグナリングプロトコルに固有です。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

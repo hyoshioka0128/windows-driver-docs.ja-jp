@@ -6,21 +6,18 @@ keywords:
 - OID_GEN_CO_XMIT_PDUS_OK
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 74e649086d0eb4959b751afd53a6d6a720b5b284
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 4bfcd537bec9ee3aeeaae4acac558ae14a46afc0
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355696"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918270"
 ---
-# <a name="oidgencoxmitpdusok"></a>OID_GEN_CO_XMIT_PDUS_OK
+# <a name="oid_gen_co_xmit_pdus_ok"></a>OID_GEN_CO_XMIT_PDUS_OK
 
-OID_GEN_CO_XMIT_PDUS_OK OID には、エラーなしで送信された Pdu の数を指定します。
+OID_GEN_CO_XMIT_PDUS_OK OID は、エラーを発生させずに送信する Pdu の数を指定します。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

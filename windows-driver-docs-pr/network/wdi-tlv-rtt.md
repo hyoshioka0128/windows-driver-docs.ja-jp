@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_RTT
-description: WDI_TLV_RTT では、細かいタイミング測定 (FTM) 要求のピコで測定されたラウンドト リップ時間 (RTT) を含む TLV です。
+description: WDI_TLV_RTT は、タイミング測定 (FTM) 要求の測定されたラウンドトリップ時間 (RTT) を TLV で表したものです。
 ms.assetid: 82543997-30D3-469B-8EDE-31AF528BDDE4
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_RTT ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_RTT
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4584bfefa92829d249502e4ebf11816ef06a6390
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 65873dda02a98d87f3fca8318d5bff3111bcc1d6
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359191"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918198"
 ---
-# <a name="wditlvrtt"></a>WDI_TLV_RTT
+# <a name="wdi_tlv_rtt"></a>WDI_TLV_RTT
 
-**WDI_TLV_RTT**ピコ、細かいタイミング測定 (FTM) 要求が、測定のラウンドト リップ時間 (RTT) を含む TLV します。 
+**WDI_TLV_RTT**は、タイミング測定 (FTM) 要求の測定されたラウンドトリップ時間 (RTT) を TLV で表したものです。 
 
-この TLV がで使用される[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)します。
+この TLV は[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63359191"
 
 ## <a name="length"></a>長さ
 
-Uint32 型のサイズをバイト単位で。
+UINT32 のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT32 | RTT します。 |
+| UINT32 | RTT。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

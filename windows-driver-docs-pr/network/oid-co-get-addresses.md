@@ -6,16 +6,16 @@ keywords:
 - OID_CO_GET_ADDRESSES
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a9004aadc69b1a2d2afa3d9b1ab426cc77df8adb
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 19c68a354e0ad3b040a2a0d4a2a4d761642f3303
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363278"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918232"
 ---
-# <a name="oidcogetaddresses"></a>OID_CO_GET_ADDRESSES
+# <a name="oid_co_get_addresses"></a>OID_CO_GET_ADDRESSES
 
-OID_CO_GET_ADDRESSES OID は、コール マネージャーにクエリをクライアントによって使用されます。 このクエリは、OID_CO_ADDRESS_CHANGE をクライアントに送信呼び出しのマネージャーへの応答で作成されます。 このクエリに応答してでコール マネージャーをクライアントに送信アドレス一覧書式設定されている次のように定義されている CO_ADDRESS_LIST 構造体として。
+OID_CO_GET_ADDRESSES OID は、呼び出しマネージャーに対してクエリを実行するためにクライアントによって使用されます。 このクエリは、コールマネージャーがクライアントに OID_CO_ADDRESS_CHANGE を送信することに応答して作成されます。 このクエリに応答して、呼び出しマネージャーは、次のように定義された CO_ADDRESS_LIST 構造として書式設定されたアドレス一覧をクライアントに送信します。
 
 ```c++
 typedef struct _CO_ADDRESS_LIST {
@@ -25,16 +25,16 @@ typedef struct _CO_ADDRESS_LIST {
 } CO_ADDRESS_LIST, *PCO_ADDRESS_LIST;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
-**NumberOfAddressesAvailable**  
-アドレスのコール マネージャーの一覧で、アドレスの最大数を指定します。 クライアントにコール マネージャーが返すアドレスの実際の数に関係なく**AddressList**、バッファーのサイズ**AddressList**は常に**NumberOfAddressesAvailable**コール マネージャーに固有の固定サイズであるアドレスのサイズを乗算します。
+**使用可能な Numberofアドレス**  
+通話マネージャーのアドレスリスト内のアドレスの最大数を指定します。 呼び出しマネージャーが**addresslist**でクライアントに返すアドレスの実際の数に関係なく、 **addresslist**のバッファーのサイズは常に、呼び出しマネージャーに固有の固定サイズであるアドレスサイズを乗算した**numberofaddresses を使用でき**ます。
 
 **NumberOfAddresses**  
-コール マネージャーに書き込まれるアドレスの数を指定します**AddressList**します。
+呼び出しマネージャーが**AddressList**に書き込んだアドレスの数を指定します。
 
 **AddressList**  
-エイリアスのアドレス形式は次のように定義されている CO_ADDRESS 構造体としてです。
+エイリアスアドレスは、次のように定義された CO_ADDRESS 構造として書式設定されます。
 
 ```c++
 typedef struct _CO_ADDRESS {
@@ -43,20 +43,17 @@ typedef struct _CO_ADDRESS {
 } CO_ADDRESS, *PCO_ADDRESS;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **AddressSize**  
-構造のバイト単位のサイズを指定します。**アドレス**します。
+**アドレス**の構造体のサイズをバイト単位で指定します。
 
-**Address**  
-アドレスの一覧を含む可変長配列を指定します。 アドレスの形式は、コール マネージャーによって使用される信号のプロトコルに固有です。
+**アドレス**  
+アドレスの一覧を含む可変長配列を指定します。 アドレスの形式は、コールマネージャーによって使用されるシグナリングプロトコルに固有です。
 
-**AddressList**ローカル ホストに到達できるネットワーク アドレスが含まれます。 **AddressList**特定に返されるクライアントには、クライアント自体が OID_CO_ADD_ADDRESS とアドレスのコール マネージャーの一覧に追加するすべてのアドレスと同様に、すべてのクライアントに共通するアドレスが含まれています。
+**AddressList**には、ローカルホストに到達できるネットワークアドレスが含まれています。 特定のクライアントに返される**AddressList**には、すべてのクライアントに共通のアドレスと、クライアント自体が OID_CO_ADD_ADDRESS でマネージャーのアドレス一覧に追加したアドレスが含まれます。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

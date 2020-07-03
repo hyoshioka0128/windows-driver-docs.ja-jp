@@ -6,23 +6,20 @@ keywords:
 - OID_TCP_TASK_IPSEC_DELETE_SA
 ms.date: 11/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d38e25ffc8b622662829bb98eae9a36a48359b21
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 64faff7c14433def5995419cbd5c66dbea72a26e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843893"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918290"
 ---
 # <a name="oid_tcp_task_ipsec_delete_sa"></a>OID_TCP_TASK_IPSEC_DELETE_SA
 
-OID_TCP_TASK_IPSEC_DELETE_SA OID は、ミニポートドライバーが NIC からセキュリティアソシエーション (SA) を削除するように要求するために、トランスポートプロトコルによって設定されます。 SA 情報は、 [OFFLOAD_IPSEC_DELETE_SA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_offload_ipsec_delete_sa)構造体として書式設定されます。
+OID_TCP_TASK_IPSEC_DELETE_SA OID は、ミニポートドライバーが NIC からセキュリティアソシエーション (SA) を削除するように要求するために、トランスポートプロトコルによって設定されます。 SA 情報は[OFFLOAD_IPSEC_DELETE_SA](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_offload_ipsec_delete_sa)構造として書式設定されます。
 
 この要求を受信すると、ミニポートドライバーは、指定された SA を NIC から削除し、SA に割り当てられているすべてのシステムリソースを解放する必要があります。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

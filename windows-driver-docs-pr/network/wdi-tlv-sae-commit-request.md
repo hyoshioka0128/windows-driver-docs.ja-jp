@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_COMMIT_REQUEST
-description: WDI_TLV_SAE_COMMIT_REQUEST では、同時認証の Equals (SAE) コミット要求のパラメーターを含む TLV です。
+description: WDI_TLV_SAE_COMMIT_REQUEST は、Equals (SAE) Commit 要求を同時に認証するためのパラメーターを含む TLV です。
 ms.assetid: E339E58E-7929-416A-815D-C663EF1359D4
 ms.date: 02/14/2019
 keywords:
-- WDI_TLV_SAE_COMMIT_REQUEST ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_SAE_COMMIT_REQUEST
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 45946a0051d2bfe0e26aeeaa5dbc3f025e457cdc
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7a4fd25037f7c315de65fe7ed4eb04df750f0b0c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359090"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918196"
 ---
-# <a name="wditlvsaecommitrequest"></a>WDI_TLV_SAE_COMMIT_REQUEST
+# <a name="wdi_tlv_sae_commit_request"></a>WDI_TLV_SAE_COMMIT_REQUEST
 
-**WDI_TLV_SAE_COMMIT_REQUEST**同時認証の Equals (SAE) コミット要求のパラメーターを含む TLV です。 
+**WDI_TLV_SAE_COMMIT_REQUEST**は、EQUALS (SAE) COMMIT 要求を同時に認証するためのパラメーターを含む TLV です。 
 
-この TLV がのコマンド パラメーターで使用される[OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md)します。
+この TLV は、 [OID_WDI_SET_SAE_AUTH_PARAMS](oid-wdi-set-sae-auth-params.md)のコマンドパラメーターで使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,21 +26,17 @@ ms.locfileid: "63359090"
 
 ## <a name="length"></a>長さ
 
-すべてのサイズ (バイト) を合計には、TLVs が含まれています。
+含まれているすべての TLVs のサイズの合計 (バイト単位)。
 
 ## <a name="values"></a>値
 
-| TLV | 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
+| TLV | 型 | 複数の TLV インスタンスを使用できます | 省略可能 | 説明 |
 | --- | --- | --- | --- | --- |
-| [WDI_TLV_SAE_FINITE_CYCLIC_GROUP](wdi-tlv-sae-finite-cyclic-group.md) | UINT16 |   |   | SAE 認証に使用される有限循環グループ。 |
-| [WDI_TLV_SAE_SCALAR](wdi-tlv-sae-scalar.md) | TLV\<一覧\<UINT8 &GT;&GT; |   |   | 有限フィールド要素 (FFE)。 |
-| [WDI_TLV_SAE_ELEMENT](wdi-tlv-sae-element.md) | TLV\<一覧\<UINT8 &GT;&GT; |   |   | エンコードされたフィールドの要素 (EFE)。 |
-| [WDI_TLV_SAE_ANTI_CLOGGING_TOKEN](wdi-tlv-sae-anti-clogging-token.md) | TLV\<一覧\<UINT8 &GT;&GT; |   |   | として、BSSID によって要求された反 clogging トークンです。 |
+| [WDI_TLV_SAE_FINITE_CYCLIC_GROUP](wdi-tlv-sae-finite-cyclic-group.md) | UINT16 |   |   | SAE 認証に使用される有限の循環グループ。 |
+| [WDI_TLV_SAE_SCALAR](wdi-tlv-sae-scalar.md) | TLV\<LIST\<UINT8>> |   |   | 有限フィールド要素 (FFE)。 |
+| [WDI_TLV_SAE_ELEMENT](wdi-tlv-sae-element.md) | TLV\<LIST\<UINT8>> |   |   | エンコードされたフィールド要素 (EFE)。 |
+| [WDI_TLV_SAE_ANTI_CLOGGING_TOKEN](wdi-tlv-sae-anti-clogging-token.md) | TLV\<LIST\<UINT8>> |   |   | BSSID によって要求された輻輳トークン。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes
