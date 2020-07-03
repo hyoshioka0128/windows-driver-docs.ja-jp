@@ -6,36 +6,33 @@ keywords:
 - OID_GEN_CO_HARDWARE_STATUS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e66f46a34e7f8afc5ac138ac7dfa0a3fcd5f0b6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7241b2a9568c895298bf587ab1d2442714e1f36c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379218"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917964"
 ---
-# <a name="oidgencohardwarestatus"></a>OID_GEN_CO_HARDWARE_STATUS
+# <a name="oid_gen_co_hardware_status"></a>OID_GEN_CO_HARDWARE_STATUS
 
-OID_GEN_CO_HARDWARE_STATUS OID は NDIS_HARDWARE_STATUS 型の値は次の 1 つとして、基になる NIC の現在のハードウェアの状態を指定します。
+OID_GEN_CO_HARDWARE_STATUS OID は、基になる NIC の現在のハードウェアの状態を、次のいずれかの NDIS_HARDWARE_STATUS の種類の値として指定します。
 
 **NdisHardwareStatusReady**  
-使用できると、ネットワーク経由でデータを送受信できます。
+ネットワーク経由でデータを送受信することができます。
 
 **NdisHardwareStatusInitializing**  
 初期化しています。
 
 **NdisHardwareStatusReset**  
-リセットしています。
+リセット。
 
 **NdisHardwareStatusClosing**  
-終了します。
+Closing.
 
 **NdisHardwareStatusNotReady**  
 準備ができていません。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

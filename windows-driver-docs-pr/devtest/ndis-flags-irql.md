@@ -1,10 +1,10 @@
 ---
-title: フラグ\_Irql ルール (ndis)
-description: フラグ\_Irql ルールでは、KeGetCurrentIrql をディスパッチ レベルのフラグ パラメーターが現在の IRQL を示すコールバック関数内で呼び出されませんする必要がありますを指定します。
+title: Flags \_ Irql rule (ndis)
+description: Flags \_ Irql rule は、現在の Irql を示すディスパッチレベルフラグパラメーターを持つコールバック関数内で Kegetcurrent Entirql を呼び出すことができないことを指定します。
 ms.assetid: 19c5c497-9648-4be9-87d1-82f4fa295351
 ms.date: 05/21/2018
 keywords:
-- Flags_Irql ルール (ndis)
+- Flags_Irql 規則 (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 619c8fab5a7ea6441c80f072632cf661aa3c32e7
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: cd220d523a6fa617be93a5597c84d7a3fcdc3377
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392382"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916582"
 ---
-# <a name="flagsirql-rule-ndis"></a>フラグ\_Irql ルール (ndis)
+# <a name="flags_irql-rule-ndis"></a>Flags \_ Irql rule (ndis)
 
 
-**フラグ\_Irql**ルールを指定する**KeGetCurrentIrql**ディスパッチ レベルのフラグ パラメーターが現在の IRQL を示すコールバック関数の中でないと呼ばれる必要があります。
+**Flags \_ Irql** rule は、現在の Irql を示すディスパッチレベルフラグパラメーターを持つコールバック関数内で**Kegetcurrent entirql**を呼び出すことができないことを指定します。
 
-ディスパッチのレベルのフラグの正しい使用では、IRQL を設定しようと不要なを回避できます。 このフラグを使用する方法の詳細については、次を参照してください。[ディスパッチ IRQL 追跡](https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking)します。
+ディスパッチレベルフラグを正しく使用すると、IRQL の設定が不要になるのを防ぐことができます。 このフラグの使用方法の詳細については、「[ディスパッチ IRQL の追跡](https://docs.microsoft.com/windows-hardware/drivers/network/dispatch-irql-tracking)」を参照してください。
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -44,14 +42,14 @@ ms.locfileid: "67392382"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>Flags_Irql</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Flags_Irql</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

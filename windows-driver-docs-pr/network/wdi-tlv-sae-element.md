@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_ELEMENT
-description: WDI_TLV_SAE_ELEMENT では、同時認証の Equals (SAE) コミット要求のエンコードされたフィールド要素 (EFE) を含む TLV です。
+description: WDI_TLV_SAE_ELEMENT は、Equals (SAE) Commit 要求を同時に認証するための、エンコードされたフィールド要素 (EFE) を含む TLV です。
 ms.assetid: B5E4DC7A-40B5-4F1D-A1C5-D2526FA0DF4D
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_SAE_ELEMENT ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_SAE_ELEMENT
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 47bca20236a58cd367c28f87a947d54eeed7b123
-ms.sourcegitcommit: d17b4c61af620694ffa1c70a2dc9d308fd7e5b2e
+ms.openlocfilehash: 1244433d21a586bb425964f9adfee38e95899272
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905406"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916386"
 ---
-# <a name="wditlvsaeelement"></a>WDI_TLV_SAE_ELEMENT
+# <a name="wdi_tlv_sae_element"></a>WDI_TLV_SAE_ELEMENT
 
-**WDI_TLV_SAE_ELEMENT**同時認証の Equals (SAE) コミット要求のエンコードされたフィールド要素 (EFE) を含む TLV です。
+**WDI_TLV_SAE_ELEMENT**は、EQUALS (SAE) Commit 要求を同時に認証するための、エンコードされたフィールド要素 (efe) を含む TLV です。
 
-この TLV がで使用される[WDI_TLV_SAE_COMMIT_REQUEST](wdi-tlv-sae-commit-request.md)します。
+この TLV は[WDI_TLV_SAE_COMMIT_REQUEST](wdi-tlv-sae-commit-request.md)で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,14 @@ ms.locfileid: "59905406"
 
 ## <a name="length"></a>長さ
 
-UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 つ以上の要素を含める必要があります。
+UINT8 要素の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT8[] | EFE の一部です。 |
+| UINT8 [] | EFE の一部。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10、バージョンが 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

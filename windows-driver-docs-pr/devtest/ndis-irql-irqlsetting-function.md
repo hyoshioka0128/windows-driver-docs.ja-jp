@@ -1,10 +1,10 @@
 ---
-title: Irql\_IrqlSetting\_関数ルール (ndis)
-description: Irql\_IrqlSetting\_関数の規則は、適切な IRQL レベルで NDIS 割り込みマクロを呼び出す必要があることを指定します。
+title: Irql \_ irqlsetting \_ 関数ルール (ndis)
+description: Irql \_ irqlsetting \_ 関数ルールは、正しい Irql レベルで NDIS 割り込みマクロを呼び出す必要があることを指定します。
 ms.assetid: 47e62c7c-bd43-4b4a-b7d6-3f64a4b8a6c8
 ms.date: 05/21/2018
 keywords:
-- Irql_IrqlSetting_Function ルール (ndis)
+- Irql_IrqlSetting_Function 規則 (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,24 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 327aa0974dd9a7d6e3cc226b66c07dc42b5648dc
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 7170f870d2007ced39b22149b9d700181547d2a9
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392331"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916212"
 ---
-# <a name="irqlirqlsettingfunction-rule-ndis"></a>Irql\_IrqlSetting\_関数ルール (ndis)
+# <a name="irql_irqlsetting_function-rule-ndis"></a>Irql \_ irqlsetting \_ 関数ルール (ndis)
 
 
-Irql\_IrqlSetting\_関数の規則は、適切な IRQL レベルで NDIS 割り込みマクロを呼び出す必要があることを指定します。
+Irql \_ irqlsetting \_ 関数ルールは、正しい Irql レベルで NDIS 割り込みマクロを呼び出す必要があることを指定します。
 
-このルールは、次の NDIS マクロを確認します。
+このルールは、次の NDIS マクロを検証します。
 
-**NDIS\_低い\_IRQL**
-**NDIS\_を発生させる\_IRQL\_TO\_ディスパッチ**
+**NDIS \_低 \_ IRQL** 
+ **NDIS \_ \_ \_ は \_ ディスパッチに IRQL を発生させ**ます
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -47,14 +45,14 @@ Irql\_IrqlSetting\_関数の規則は、適切な IRQL レベルで NDIS 割り�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>Irql_IrqlSetting_Function</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Irql_IrqlSetting_Function</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,8 +60,8 @@ Irql\_IrqlSetting\_関数の規則は、適切な IRQL レベルで NDIS 割り�
 <a name="applies-to"></a>適用対象
 ----------
 
-[**NDIS\_低い\_IRQL**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-lower-irql)
-[**NDIS\_を発生させる\_IRQL\_TO\_ディスパッチ**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-raise-irql-to-dispatch)
+[**NDIS \_低 \_ IRQL**](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-lower-irql) 
+ [**NDIS \_ \_ \_ は \_ ディスパッチに IRQL を発生させ**ます](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-raise-irql-to-dispatch)
 
 
 

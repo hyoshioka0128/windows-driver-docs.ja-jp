@@ -6,21 +6,18 @@ keywords:
 - OID_802_3_XMIT_DEFERRED
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b65efb6fed21f97e4c99205ccbed2fd9f0fe3d6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0b3a0f377cbd41d833c8d2a66524c86d7979254d
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63372194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916408"
 ---
-# <a name="oid8023xmitdeferred"></a>OID_802_3_XMIT_DEFERRED
+# <a name="oid_802_3_xmit_deferred"></a>OID_802_3_XMIT_DEFERRED
 
-NIC の後に正常に送信されたフレームの数は、少なくとも 1 回の伝送を延期します。
+NIC が少なくとも1回転送を延期した後に正常に送信されたフレームの数。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

@@ -1,26 +1,26 @@
 ---
 title: WDI_TLV_RTT_ACCURACY
-description: WDI_TLV_RTT_ACCURACY では、精度、または正常タイミング測定 (FTM) 要求の true 値にラウンドト リップ時間 (RTT) の測定、近さの程度の期待される範囲を含む TLV です。
+description: WDI_TLV_RTT_ACCURACY は、ラウンドトリップ時間 (RTT) の測定値に対する精度または予想される近さの程度を含む TLV です。これは、タイミング測定 (FTM) 要求の真の値になります。
 ms.assetid: 689C9C22-6AA4-4581-BF26-147F49F2456F
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_RTT_ACCURACY ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_RTT_ACCURACY
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a765cae38c9c1f153d5dcd54e94c176e7470dd45
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6c238e844fab98c883aef76ca995a4bafc92f46b
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359096"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917486"
 ---
-# <a name="wditlvrttaccuracy"></a>WDI_TLV_RTT_ACCURACY
+# <a name="wdi_tlv_rtt_accuracy"></a>WDI_TLV_RTT_ACCURACY
 
-**WDI_TLV_RTT_ACCURACY**正確さ、または正常タイミング測定 (FTM) 要求の true 値にラウンドト リップ時間 (RTT) の測定、近さの程度の期待される範囲を含む TLV は、します。 単位は、ピコで。
+**WDI_TLV_RTT_ACCURACY**は、ラウンドトリップ時間 (RTT) の測定値に対する精度または予想される近さの程度を含む TLV です。これは、タイミング測定 (FTM) 要求の真の値になります。 単位は、のようになります。
 
-などの場合は、現在の RTT、RTT 精度は 6671.28 ピコ 1 メートルの場合は、+/-で、測定をオフに可能性がありますをハードウェア プロファイルを介して 66712.82 ピコ (10 m 離れてターゲット AP) が呼ばれます。 可能な精度が実際の FTM を実行したときに、そのハードウェアと一致する条件のプロファイルに基づいて特定として提供する IHV の役目です。 FTM 精度に影響を与える複数の変数があると、これらの変数を複数の可能性を測定しと見なされます。 特定の精度が望ましい理由の位置を計算するときより高い精度で、または FTM の精度に基づく位置の計算エラーを変更するための測定値を優先など、上位層で使用できる有用な情報は、このためです。 CDF を使用する必要があります最小の 90% をプロファイルするとき。 
+たとえば、現在の RTT が 66712.82 (ターゲット AP から10メートル離れた) である場合、ハードウェアプロファイルによって、測定が +/-1 メーターによってオフにされていることがわかっている場合、RTT 精度は6671.28 のようになります。 実際の FTM が作成されたときのハードウェアのプロファイルと照合条件に基づいて、可能な限り正確な精度を提供するのは、IHV の役割です。 FTM の精度に影響を与える変数が複数あり、これらの変数を測定して考慮できる複数の可能性があります。 より具体的な精度が求められる理由は、これが、位置を計算するときに高い精度で測定を優先する場合や、FTM 精度に基づいて計算された位置エラーを変更する場合など、上位層で使用できる有用な情報であるためです。 プロファイリングを行う場合は、少なくとも90% の CDF を使用する必要があります。 
 
-この TLV がで使用される[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)します。
+この TLV は[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -28,18 +28,14 @@ ms.locfileid: "63359096"
 
 ## <a name="length"></a>長さ
 
-Uint32 型のサイズをバイト単位で。
+UINT32 のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT32 | RTT します。 |
+| UINT32 | RTT。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

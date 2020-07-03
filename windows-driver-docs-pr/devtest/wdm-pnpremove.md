@@ -1,6 +1,6 @@
 ---
 title: PnpRemove ルール (wdm)
-description: PnpRemove ルールでは、ドライバーが IRP を完了できないことを指定します\_MN\_突然\_削除、IRP\_MN\_キャンセル\_削除\_デバイス、IRP\_MN\_キャンセル\_停止\_デバイス、または IRP\_MN\_削除\_デバイスの要求の失敗にします。
+description: PnpRemove 規則は、ドライバーが IRP の突然の \_ 削除 \_ \_ 、irp が完了した \_ \_ \_ \_ デバイスの削除、irp のキャンセルを停止するデバイス \_ \_ \_ \_ 、または irp が \_ 失敗したデバイスの要求を \_ 削除 \_ できないことを指定します。
 ms.assetid: 2713F943-36A2-41B9-B9C0-86FC06B22443
 ms.date: 05/21/2018
 keywords:
@@ -12,30 +12,28 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 155872a2df6ddd59254239a5ead63afd4e85aff5
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 77f3266ac3e416888225f3869114246c2e4cb020
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393680"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917678"
 ---
 # <a name="pnpremove-rule-wdm"></a>PnpRemove ルール (wdm)
 
 
-**PnpRemove**ルールでは、ドライバーが IRP を完了できないことを指定します\_MN\_突然\_削除、IRP\_MN\_キャンセル\_削除\_デバイス、IRP\_MN\_キャンセル\_停止\_デバイス、または IRP\_MN\_削除\_デバイスの要求の失敗にします。
+**PnpRemove**規則は、ドライバーが irp の突然の \_ 削除 \_ 、irp が完了した \_ \_ \_ \_ \_ デバイスの削除、irp のキャンセルを停止するデバイス \_ \_ \_ \_ 、または irp が \_ 失敗したデバイスの要求を \_ 削除 \_ できないことを指定します。
 
 > [!NOTE]
-> Windows 8.1 でテストすることができます、 **PnpRemove**ルールを[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)します。 ルールが現在の使用可能なない[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)します。
+> Windows 8.1 では、[ドライバーの検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)を使用して**PnpRemove**の規則をテストできます。 このルールは、現在、[静的ドライバー検証ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)では使用できません。
 
  
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | WDM |
+**ドライバーモデル: WDM**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00043006) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツールの \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00043006) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -46,12 +44,12 @@ ms.locfileid: "67393680"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>を選択し、 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[DDI compliance checking](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">DDI 準拠の検査</a>オプション。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>を実行し、[ <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking" data-raw-source="[DDI compliance checking](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">DDI 準拠チェック</a>] オプションを選択します。</p></td>
 </tr>
 </tbody>
 </table>

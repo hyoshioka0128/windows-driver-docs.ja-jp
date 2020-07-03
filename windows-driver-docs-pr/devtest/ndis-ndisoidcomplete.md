@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d05887ee24d32d6a631b4bc34854dd9fd5f0b7f4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9b4bfe344072899fc30455ef09d7d460bf48aad4
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840088"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917836"
 ---
 # <a name="ndisoidcomplete-rule-ndis"></a>NdisOidComplete rule (ndis)
 
@@ -64,7 +64,7 @@ ms.locfileid: "72840088"
 
  
 
-ミニポートドライバーは、NDIS\_STATUS\_PENDING として、要求操作の最終状態を持つ[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)関数を呼び出すことはできません。
+ミニポートドライバーは、要求操作[**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)の最終ステータスが \_ "NDIS status PENDING" である NdisMOidRequestComplete 関数を呼び出すことはできません \_ 。
 
 <table>
 <colgroup>
@@ -102,13 +102,11 @@ ms.locfileid: "72840088"
 
  
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00091001) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツールの \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00091001) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -134,8 +132,8 @@ ms.locfileid: "72840088"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**MiniportDevicePnPEventNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify)
-[**Miniportoidrequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
+[**MiniportDevicePnPEventNotify**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_device_pnp_event_notify) 
+[**Miniportoidrequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
 [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)
  
 

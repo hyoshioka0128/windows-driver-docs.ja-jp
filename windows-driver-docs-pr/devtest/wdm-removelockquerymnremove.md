@@ -1,6 +1,6 @@
 ---
 title: RemoveLockQueryMnRemove ルール (wdm)
-description: RemoveLockQueryMnRemove ルールは、IoAcquireRemoveLock および IoReleaseRemoveLock への呼び出しが、MinorFunction IRP を使用して\_PNP を\_処理するときに正しく使用されることを確認します。\_は、\_デバイスを削除\_\_ます。
+description: RemoveLockQueryMnRemove ルールは、 \_ \_ MinorFunction irp クエリでデバイスを削除するときに、IoAcquireRemoveLock と IoReleaseRemoveLock の呼び出しが正しく使用されていることを確認し \_ \_ \_ \_ ます。
 ms.assetid: 593B8305-EA61-4857-9304-A8319A8E0017
 ms.date: 05/21/2018
 keywords:
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 16a0060f50a3eb326e07294ae1f48beee492a04a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f8452c1ca8630daf18592fcdb880a36e3941c010
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839122"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916160"
 ---
 # <a name="removelockquerymnremove-rule-wdm"></a>RemoveLockQueryMnRemove ルール (wdm)
 
 
-**RemoveLockQueryMnRemove**ルールは、 [**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)および[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)への呼び出しが、minorfunction IRP\_の\_クエリで irp\_\_MJ を処理するときに正しく使用されることを確認し\_\_デバイスを削除する。 ドライバーは、IRP をスタックに転送する前に、削除ロックを取得する必要があります。
+**RemoveLockQueryMnRemove**ルールは、 [**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) [**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) \_ \_ minorfunction irp クエリでデバイスを削除するときに、IoAcquireRemoveLock と IoReleaseRemoveLock の呼び出しが正しく使用されていることを確認し \_ \_ \_ \_ ます。 ドライバーは、IRP をスタックに転送する前に、削除ロックを取得する必要があります。
 
 このルールは、FDO および FIDO ドライバーにのみ適用されます。
 
@@ -34,17 +34,15 @@ PnP マネージャーは、スタックを通じて削除クエリを送信し�
 
 1.  デバイスがデバイススタックからデタッチされる前に、 [**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)は irp が次の種類の irp に対してスタックに転送される前に成功する必要があります。
 
-    -   IRP\_\_クエリ\_削除
-    -   IRP\_\_SUPRISE 削除\_
-    -   IRP\_\_\_デバイスの削除
+    -   IRP を実行する \_ \_ クエリの \_ 削除
+    -   IRP \_ の \_ \_ 消去
+    -   IRP のすべての \_ \_ デバイスの削除 \_
 
 2.  [**IoDetachDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodetachdevice)または[**iodeletedevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iodeletedevice)を呼び出す前に、 [**IoReleaseRemoveLockAndWait**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelockandwait)を呼び出す必要があります。 (これにより、すべての削除ロックがデバイスドライバーで確実に解放されます)。
 
-|              |     |
-|--------------|-----|
-| ドライバーモデル | WDM |
+**ドライバーモデル: WDM**
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>
@@ -61,7 +59,7 @@ PnP マネージャーは、スタックを通じて削除クエリを送信し�
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>RemoveLockQueryMnRemove</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
@@ -73,10 +71,10 @@ PnP マネージャーは、スタックを通じて削除クエリを送信し�
 <a name="applies-to"></a>適用対象
 ----------
 
-[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock)
-[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver)
-[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock)
-[**pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)
+[**IoAcquireRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioacquireremovelock) 
+[**IoCallDriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocalldriver) 
+[**IoReleaseRemoveLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-ioreleaseremovelock) 
+[**Pocalldriver**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-pocalldriver)
  
 
  

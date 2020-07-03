@@ -6,21 +6,18 @@ keywords:
 - OID_GEN_CO_TRANSMIT_QUEUE_LENGTH
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a9020c9c1032acc979014be6564533c9b89ab3
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 976b978bb8d69ba95a01e45a1525593a0cf436e4
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386236"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917025"
 ---
-# <a name="oidgencotransmitqueuelength"></a>OID_GEN_CO_TRANSMIT_QUEUE_LENGTH
+# <a name="oid_gen_co_transmit_queue_length"></a>OID_GEN_CO_TRANSMIT_QUEUE_LENGTH
 
-OID_GEN_CO_TRANSMIT_QUEUE_LENGTH OID は、Pdu 現在キュー内の数、伝送の NIC であるかどうか、またはドライバーの内部キューを指定します。 返される数は常に Pdu の合計数現在キューに置かれた、要求は、NDIS ライブラリでキューに置かれた未送信の送信が含まれています。
+OID_GEN_CO_TRANSMIT_QUEUE_LENGTH OID は、NIC またはドライバー内部キューにあるかどうかにかかわらず、現在転送のためにキューに入れられている Pdu の数を指定します。 返される数は常に、現在キューに置かれている Pdu の総数です。この数には、NDIS ライブラリでキューに登録された未送信の送信要求が含まれます。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

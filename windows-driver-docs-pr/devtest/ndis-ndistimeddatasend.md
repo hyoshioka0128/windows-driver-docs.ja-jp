@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d494b097b26e219af2c22b1d3673c7d27b9008d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 045e68b583588c8db723eddbe91d6e5fa043cc70
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840079"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916320"
 ---
 # <a name="ndistimeddatasend-rule-ndis"></a>NdisTimedDataSend rule (ndis)
 
 
 **NdisTimedDataSend**ルールは、NDIS ドライバーが[*Miniportsendnetbufferlists*](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)を呼び出すと、ミニポートドライバーが30秒以内に送信要求を完了することを確認します。
 
-カーネルデバッガーを使用して、問題の原因を特定することができます。 PendingNbl のルール\_の状態を確認します。これにより、タイムアウトの原因となっている保留中のバッファーの一覧が参照されます。 [**Nbl**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-nbl)デバッガー拡張機能を使用して、 [**NET\_BUFFER\_の一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)を確認します。 デバッガーの使用方法の詳細については、「 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)」を参照してください。
+カーネルデバッガーを使用して、問題の原因を特定することができます。 \_PendingNbl のルールの状態を確認します。これにより、タイムアウトの原因となっている保留中のバッファーの一覧が参照されます。 [**Nbl**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ndiskd-nbl)デバッガー拡張機能を使用して、 [**NET \_ BUFFER \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_net_buffer_list)を確認します。 デバッガーの使用方法の詳細については、「 [Windows デバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)」を参照してください。
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0009200d) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0009200d) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -58,7 +56,7 @@ ms.locfileid: "72840079"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**Miniportsendnetbufferlists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists)
+[**Miniportsendnetbufferlists**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_send_net_buffer_lists) 
 [ **NdisMSendNetBufferListsComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismsendnetbufferlistscomplete)
  
 

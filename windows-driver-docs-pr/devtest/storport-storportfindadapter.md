@@ -1,6 +1,6 @@
 ---
 title: StorPortFindAdapter ルール (storport)
-description: HwStorFindAdapter ルーチンは、ポート\_構成\_情報構造体の MaximumTransferLength フィールドと NumberOfPhysicalBreaks フィールドを設定する必要があります。
+description: HwStorFindAdapter ルーチンでは、ポート構成情報の構造で MaximumTransferLength および NumberOfPhysicalBreaks フィールドを設定する必要があり \_ \_ ます。
 ms.assetid: 8BE79E99-078E-4CCE-A6C1-0DEB1F1252DA
 ms.date: 05/21/2018
 keywords:
@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 775a8d14e0e5505267789d6e1a43a31dc4c2ff9c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 080a7e6944754e5ea085da720fb4c8c7d6b73505
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839283"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916201"
 ---
 # <a name="storportfindadapter-rule-storport"></a>StorPortFindAdapter ルール (storport)
 
 
-[**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)ルーチンは、**ポート\_構成\_情報**構造体の**Maximumtransferlength**フィールドと**numberofphysicalbreaks**フィールドを設定する必要があります。 既定では、両方のフィールドの値は**SP\_初期化**されていない\_値です。 これらのフィールドのいずれかがまだ SP\_に設定されている場合は、 **Findadapter**からの終了時に初期化されていない **\_値**になります。ドライバーはルールに失敗します。
+[**HwStorFindAdapter**](https://docs.microsoft.com/windows-hardware/drivers/ddi/storport/nc-storport-hw_find_adapter)ルーチンでは、**ポート \_ 構成 \_ 情報**の構造で**maximumtransferlength**および**numberofphysicalbreaks**フィールドを設定する必要があります。 既定では、両方のフィールドの値は SP の初期化されていない** \_ \_ 値**です。 これらのフィールドのいずれかが、 **Findadapter**からの終了時に SP の初期化されていない** \_ \_ 値**に設定されている場合、ドライバーはルールに失敗します。
 
-|              |          |
-|--------------|----------|
-| ドライバーモデル | Storport |
+**ドライバーモデル: Storport**
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>
@@ -45,7 +43,7 @@ ms.locfileid: "72839283"
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Storportfindadapter</strong>ルールを指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>

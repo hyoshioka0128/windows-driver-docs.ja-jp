@@ -1,6 +1,6 @@
 ---
 title: WlanTimedConnectRequest rule (ndis)
-description: WlanTimedConnectRequest ルールでは、OID\_DOT11\_CONNECT\_要求の後に、\_DOT11\_接続\_\_から10秒以内に開始されることを確認します。
+description: WlanTimedConnectRequest ルールでは、OID \_ dot11 \_ 接続要求の後に \_ NDIS ステータスの \_ \_ dot11 接続が \_ \_ 10 秒以内に開始されることを確認します。
 ms.assetid: F40D92B1-CA48-4060-B9E2-A965900EAF7B
 ms.date: 05/21/2018
 keywords:
@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d3841717f03d90c80744fe9f78396ff8613fadd9
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b1b2a821642d9a6de9082c3ff512aca421a4f761
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839346"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917766"
 ---
 # <a name="wlantimedconnectrequest-rule-ndis"></a>WlanTimedConnectRequest rule (ndis)
 
 
-**WlanTimedConnectRequest**ルールでは、OID\_DOT11\_CONNECT\_要求の後に、\_DOT11\_接続\_\_から10秒以内に開始されることを確認します。
+**WlanTimedConnectRequest**ルールでは、OID \_ dot11 \_ 接続要求の後に \_ NDIS ステータスの \_ \_ dot11 接続が \_ \_ 10 秒以内に開始されることを確認します。
 
-さらに、NDIS の\_状態\_DOT11\_接続の\_開始は、OID\_DOT11\_接続\_要求が、NDIS\_STATUS\_SUCCESS で完了した場合にのみ示されます。 このルールは、拡張ステーションのポート (ポート 0) にのみ適用されます。
+さらに、NDIS \_ ステータス \_ dot11 \_ 接続 \_ の開始は、OID \_ DOT11 \_ 接続 \_ 要求が ndis ステータス成功で完了した場合にのみ示され \_ \_ ます。 このルールは、拡張ステーションのポート (ポート 0) にのみ適用されます。
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00094009) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツール \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00094009) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -58,9 +56,9 @@ ms.locfileid: "72839346"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**Miniporthaltex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
-[**Miniporthaltex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
+[**ミニ Porthaltex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 
+[**Miniportoidrequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 
 [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)関連項目
 --------
 

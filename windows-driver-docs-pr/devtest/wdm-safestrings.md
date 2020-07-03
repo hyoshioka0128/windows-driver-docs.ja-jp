@@ -1,6 +1,6 @@
 ---
 title: SafeStrings ルール (wdm)
-description: SafeStrings ルールでは、ドライバーがシステムを誤ってまたは悪意のある侵入から保護する文字列操作関数のみを呼び出すことを指定します。 これらのドライバーの安全な文字列関数は、Ntstrsafe.h で定義されます。
+description: SafeStrings 規則は、意図しない、または悪意のある侵入からシステムを保護する文字列操作関数だけがドライバーによって呼び出されるように指定します。 これらのドライバーの安全な文字列関数は、、Ntstrsafe.h で定義されています。
 ms.assetid: 77e949cf-b184-4235-80c4-4718d4808d11
 ms.date: 05/21/2018
 keywords:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 64fafd6c0365963d9b62f1e9a714f0593c400332
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 0613e89440b7a10782e6d8908341bcb2765b5c33
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67394082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917201"
 ---
 # <a name="safestrings-rule-wdm"></a>SafeStrings ルール (wdm)
 
 
-**SafeStrings**ルールでは、ドライバーがシステムを誤ってまたは悪意のある侵入から保護する文字列操作関数のみを呼び出すことを指定します。 これらのドライバーの安全な文字列関数は、Ntstrsafe.h で定義されます。
+**Safestrings**規則は、意図しない、または悪意のある侵入からシステムを保護する文字列操作関数だけがドライバーによって呼び出されるように指定します。 これらのドライバーの安全な文字列関数は、、Ntstrsafe.h で定義されています。
 
-このルールに準拠するには、カーネル モード ドライバー用に安全と見なされる、文字列関数を使用します。 安全な文字列関数と置き換える、安全でない関数は、「 [**安全な文字列関数を使用して**](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-safe-string-functions)します。 安全な文字列関数の 2 つのセットがあります。 安全な文字列関数の 1 つのセットでは、(、Ntstrsafe.h で定義されている場合) カーネル モード コードで使用されます。 その他の一連の安全な文字列関数は、ユーザー モード アプリケーションで使用され、Strsafe.h で定義されています。
+この規則に準拠するには、カーネルモードドライバーで安全と見なされる文字列関数を使用します。 安全な文字列関数と置換される unsafe 関数は、 [**「Safe 文字列関数の使用**](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-safe-string-functions)」に記載されています。 安全な文字列関数には、2つのセットがあります。 安全な文字列関数の1つのセットは、(、Ntstrsafe.h で定義されている) カーネルモードコードで使用します。 セーフ文字列関数のもう1つのセットは、ユーザーモードアプリケーションで使用するためのもので、Strsafe で定義されています。
 
-カーネル モード ドライバーは、ユーザー モードの安全な文字列関数を使用している場合、ドライバーはこの規則に違反します。
+カーネルモードドライバーでユーザーモードのセーフ文字列関数が使用されている場合、ドライバーはこの規則に違反します。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | WDM |
+**ドライバーモデル: WDM**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -46,22 +44,22 @@ ms.locfileid: "67394082"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>SafeStrings</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>safestrings</strong>ルールを指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="see-also"></a>関連項目
+<a name="see-also"></a>こちらもご覧ください
 --------
 
-[**安全な文字列関数を使用します。** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-safe-string-functions)
+[**セーフ文字列関数の使用**](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-safe-string-functions)
  
 
  

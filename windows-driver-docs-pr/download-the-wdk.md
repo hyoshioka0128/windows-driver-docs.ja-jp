@@ -10,12 +10,12 @@ keywords:
 ms.date: 03/16/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b3f5d23794fa490bc9ed0428c2b3d9f1f70fcc02
-ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
+ms.openlocfilehash: 218f3bb861995adaf4125d3098c3498416e10272
+ms.sourcegitcommit: 65b0a70e00c319b18f86a5b451908798ce2026a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2020
-ms.locfileid: "85382733"
+ms.locfileid: "85448515"
 ---
 # <a name="download-the-windows-driver-kit-wdk"></a>Windows Driver Kit (WDK) のダウンロード
 
@@ -25,6 +25,17 @@ WDK は、Windows ドライバーの開発、テスト、展開に使用しま�
 * [既知の問題を確認する](https://go.microsoft.com/fwlink/?linkid=872986)
 
 [Windows Insider Program に参加](https://insider.windows.com/)して [WDK Insider Preview ビルド](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewWDK)を入手してください。 Windows Insider Preview ビルドのインストール手順については、「[プレビュー バージョンの Windows Driver Kit (WDK) のインストール](installing-preview-versions-wdk.md)」をご覧ください。
+
+## <a name="runtime-requirements"></a>ランタイム要件
+
+Windows 7 以降で Windows 10 バージョン 2004 WDK を実行し、それを使用してこれらのオペレーティング システムのドライバーを開発することができます。
+
+|クライアントの OS|サーバーの OS|
+|-|-|
+|Windows 10|Windows Server 2019、Windows Server 2016|
+|Windows 8.1|Windows Server 2012 R2|
+Windows 8|Windows Server 2012|
+Windows 7|Windows Server 2008 R2 SP1|
 
 ## <a name="wdk-for-windows-10-version-2004"></a>WDK for Windows 10 バージョン 2004
 
@@ -77,22 +88,10 @@ EWDK では、.NET Framework バージョン 4.7.2 も必要です。 .NET Frame
 
 * [EWDK for Windows 10 バージョン 2004 のダウンロード](https://docs.microsoft.com/legal/windows/hardware/enterprise-wdk-license-2019)
 
-## <a name="additional-information"></a>追加情報
 
-### <a name="release-notes-and-runtime-requirements"></a>リリース ノートと実行時の要件
+## <a name="driver-samples-for-windows-10"></a>Windows 10 向けのドライバー サンプル
 
-Windows 7 以降で Windows 10 バージョン 2004 WDK を実行し、それを使用してこれらのオペレーティング システムのドライバーを開発することができます。
-
-|クライアントの OS|サーバーの OS|
-|-|-|
-|Windows 10|Windows Server 2019、Windows Server 2016|
-|Windows 8.1|Windows Server 2012 R2|
-Windows 8|Windows Server 2012|
-Windows 7|Windows Server 2008 R2 SP1|
-
-### <a name="universal-windows-driver-samples"></a>ユニバーサル Windows ドライバーのサンプル
-
-ユニバーサル Windows ドライバーのサンプルをダウンロードするには、次のいずれかを実行します。
+ドライバー サンプルをダウンロードするには、次のいずれかを実行します。
 
 * [GitHub](https://github.com/Microsoft/Windows-driver-samples) のドライバー サンプル ページにアクセスし、 **[クローンまたはダウンロード]** をクリックしてから **[ZIP をダウンロード]** をクリックします。
 * [GitHub Extension for Visual Studio](https://visualstudio.github.com/) をダウンロードしてから、GitHub リポジトリに接続します。

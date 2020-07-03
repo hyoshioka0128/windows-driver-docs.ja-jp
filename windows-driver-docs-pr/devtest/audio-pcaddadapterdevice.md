@@ -1,6 +1,6 @@
 ---
 title: PcAddAdapterDevice ルール (オーディオ)
-description: PcAddAdapterDevice ルール PortCls ミニポート ドライバーが正しく、PcAddAdapterDevice 関数を使用する、DeviceExtensionSize は、ゼロ (0) またはないポート未満のいずれかにすることは、具体的にはよう指定\_クラス\_デバイス\_拡張機能\_サイズ。
+description: PcAddAdapterDevice ルールは、PortCls ミニポートドライバーが PcAddAdapterDevice 関数を正しく使用することを指定します。具体的には、DeviceExtensionSize はゼロ (0) であるか、またはポートクラスのデバイス拡張サイズ以下である必要があり \_ \_ \_ \_ ます。
 ms.assetid: AD020D31-9994-4AD1-A937-E29A594FC9D4
 ms.date: 05/21/2018
 keywords:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ac6d3a7d7f2153a5a46d6fb8448796bd195a42e
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 7fa9b1d656b699e6ff93260c9553401ef57b3973
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391742"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917732"
 ---
 # <a name="pcaddadapterdevice-rule-audio"></a>PcAddAdapterDevice ルール (オーディオ)
 
 
-PcAddAdapterDevice ルールでは、PortCls ミニポート ドライバーが正しく使用を指定します、 **PcAddAdapterDevice**を具体的には、関数、 *DeviceExtensionSize*ゼロ (0) または no のいずれかにする必要があります小さいポート\_クラス\_デバイス\_拡張子\_サイズ。
+PcAddAdapterDevice ルールは、PortCls ミニポートドライバーが**pcaddadapterdevice**関数を正しく使用することを指定します。具体的には、 *deviceextensionsize*はゼロ (0) であるか、またはポート \_ クラスのデバイス拡張サイズ以下である必要があり \_ \_ \_ ます。
 
-|              |       |
-|--------------|-------|
-| ドライバー モデル | オーディオ |
+**ドライバーモデル: オーディオ**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00071007) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツール \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00071007) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -41,15 +39,15 @@ PcAddAdapterDevice ルールでは、PortCls ミニポート ドライバーが�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain オーディオ</strong>します。</p>
-<p>以下に例を示します。</p>
-<p><strong>verifier /domain audio</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
+<td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 Driver Verifier コマンドを入力し、 <strong>/domain audio</strong>を指定します。</p>
+<p>たとえば、次のように入力します。</p>
+<p><strong>verifier/domain audio</strong> [<em>オプション</em>] <strong>/driver</strong> <em> &lt; ドライバー &gt; </em>の設定</p>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

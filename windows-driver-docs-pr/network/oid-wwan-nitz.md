@@ -7,12 +7,12 @@ keywords:
 - Windows Vista 以降のネットワークドライバーの OID_WWAN_NITZ
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b048475b19bdd02951b4c506ceae6a56a60adeab
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6ac746bd22ec03facb9a0867c00c3cbb7728a935
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843826"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916785"
 ---
 # <a name="oid_wwan_nitz"></a>OID_WWAN_NITZ
 
@@ -28,14 +28,11 @@ Set 要求は適用できません。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1903 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1903**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-[MB NITZ のサポート](mb-nitz-support.md)
+[MB NITZ サポート](mb-nitz-support.md)
 
 [NDIS_STATUS_WWAN_NITZ_INFO](ndis-status-wwan-nitz-info.md)
 

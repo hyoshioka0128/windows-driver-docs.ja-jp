@@ -6,21 +6,18 @@ keywords:
 - OID_802_3_XMIT_HEARTBEAT_FAILURE
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b2ddf808cd48cbb15faa9e886f2ff3d2eefb75d0
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 272043fbad2f3d653dbdbc1a3876f064680b9520
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63342304"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916405"
 ---
-# <a name="oid8023xmitheartbeatfailure"></a>OID_802_3_XMIT_HEARTBEAT_FAILURE
+# <a name="oid_802_3_xmit_heartbeat_failure"></a>OID_802_3_XMIT_HEARTBEAT_FAILURE
 
-フレームの数が正常に送信の検出されず、ハートビートの衝突検出します。
+競合を検出せずに正常に送信されたフレームの数-ハートビートを検出します。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

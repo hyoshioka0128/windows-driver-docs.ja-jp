@@ -6,23 +6,20 @@ keywords:
 - OID_GEN_CO_VENDOR_DRIVER_VERSION
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5730e9baf4e7e647a9528e62b0e6b5ab4b33be23
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 000a4fcdfc168b7b7c35414ad548607846ec53de
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56574592"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917021"
 ---
-# <a name="oidgencovendordriverversion"></a>OID_GEN_CO_VENDOR_DRIVER_VERSION
+# <a name="oid_gen_co_vendor_driver_version"></a>OID_GEN_CO_VENDOR_DRIVER_VERSION
 
-NIC ドライバーのベンダーが割り当てたバージョン番号。
+製造元によって割り当てられた NIC ドライバーのバージョン番号。
 
-この OID は 2 つのバイトの長さです。高位の半分は、メジャー バージョンを指定の戻り値の下位半分マイナーのバージョンを指定します。
+この OID の長さは2バイトです。戻り値の下位半分にはマイナーバージョンが指定されていますが、上位半分ではメジャーバージョンが指定されています。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

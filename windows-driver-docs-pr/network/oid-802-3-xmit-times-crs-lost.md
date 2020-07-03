@@ -6,21 +6,18 @@ keywords:
 - OID_802_3_XMIT_TIMES_CRS_LOST
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cea80d6b42891483cc56bc083b61995c157eb85
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: aabc51688ef8230ba52f90b44e65a8b238da5139
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385024"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916395"
 ---
-# <a name="oid8023xmittimescrslost"></a>OID_802_3_XMIT_TIMES_CRS_LOST
+# <a name="oid_802_3_xmit_times_crs_lost"></a>OID_802_3_XMIT_TIMES_CRS_LOST
 
-CRS の通知回数の合計は、パケットの転送中に失われています。
+パケット転送中に CRS シグナルが失われた回数。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_SAE_ANTI_CLOGGING_TOKEN
-description: WDI_TLV_SAE_ANTI_CLOGGING_TOKEN では、同時認証の Equals (SAE) コミット要求の防止 clogging トークンを含む TLV です。
+description: WDI_TLV_SAE_ANTI_CLOGGING_TOKEN は、Equals (SAE) コミット要求を同時に認証するための輻輳トークンを含む TLV です。
 ms.assetid: 9A1046AE-029F-4B37-9523-655425BC93F1
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_SAE_ANTI_CLOGGING_TOKEN ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_SAE_ANTI_CLOGGING_TOKEN
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6628de1eb463dbc774fa513fe7688b2e2e08bdfa
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: bf97fbce6360f1f7c2f4839b921cec220f0cb03d
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916892"
 ---
-# <a name="wditlvsaeanticloggingtoken"></a>WDI_TLV_SAE_ANTI_CLOGGING_TOKEN
+# <a name="wdi_tlv_sae_anti_clogging_token"></a>WDI_TLV_SAE_ANTI_CLOGGING_TOKEN
 
-**WDI_TLV_SAE_ANTI_CLOGGING_TOKEN**反 clogging 同時認証の Equals (SAE) コミット要求のトークンを含む TLV は、します。
+**WDI_TLV_SAE_ANTI_CLOGGING_TOKEN**は、EQUALS (SAE) コミット要求を同時に認証するための輻輳トークンを含む TLV です。
 
-この TLV がで使用される[WDI_TLV_SAE_COMMIT_REQUEST](wdi-tlv-sae-commit-request.md)します。
+この TLV は[WDI_TLV_SAE_COMMIT_REQUEST](wdi-tlv-sae-commit-request.md)で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63359192"
 
 ## <a name="length"></a>長さ
 
-UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 つ以上の要素を含める必要があります。
+UINT8 要素の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT8[] | 反 clogging トークンです。 |
+| UINT8 [] | 輻輳トークンです。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

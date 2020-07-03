@@ -6,16 +6,16 @@ keywords:
 - OID_GEN_CO_SUPPORTED_GUIDS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 06beebe83ccdb92a24ba5a004cdc90aee170f7ad
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 0a8e50bf218e57f0bb653244c93db1f204cf2645
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72824389"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917032"
 ---
 # <a name="oid_gen_co_supported_guids"></a>OID_GEN_CO_SUPPORTED_GUIDS
 
-OID_GEN_CO_SUPPORTED_GUIDS OID は、NDIS_GUID 型の構造体の配列を返すようにミニポートドライバーに要求します。 配列内の各構造体は、カスタム識別子 (グローバル一意識別子) からカスタム OID へのマッピング、またはミニポートドライバーが[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)経由で送信する NDIS_STATUS へのマッピングを指定します。
+OID_GEN_CO_SUPPORTED_GUIDS OID は、NDIS_GUID 型の構造体の配列を返すようにミニポートドライバーに要求します。 配列内の各構造体は、カスタム識別子 (グローバル一意識別子) をカスタム OID またはミニポートドライバーが[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)経由で送信する NDIS_STATUS との間のマッピングを指定します。
 
 NDIS_GUID 構造体は次のように定義されています。
 
@@ -42,17 +42,17 @@ typedef struct _NDIS_GUID {
 **状態**  
 **Guid**が割り当てられている NDIS_STATUS。
 
-**サイズ**  
-FNDIS_GUID_ARRAY フラグが設定されている場合、 **size**はミニポートドライバーによって返される配列内の各データ項目のサイズ (バイト単位) を指定します。 FNDIS_GUID_ANSI_STRING または fNDIS_GUID_NDIS_STRING フラグが設定されている場合、 **Size**は-1 に設定されます。 それ以外の場合、 **size**は GUID が表すデータ項目のサイズをバイト単位で指定します。
+**[サイズ]**  
+FNDIS_GUID_ARRAY フラグが設定されている場合、**サイズ**はミニポートドライバーによって返される配列内の各データ項目のサイズ (バイト単位) を指定します。 FNDIS_GUID_ANSI_STRING または fNDIS_GUID_NDIS_STRING フラグが設定されている場合、 **Size**は-1 に設定されます。 それ以外の場合、 **size**は GUID が表すデータ項目のサイズをバイト単位で指定します。
 
-**示す**  
-次のフラグを連結して、GUID が OID または NDIS_STATUS 文字列にマップされているかどうかを示し、GUID に対して指定されたデータの型を示すことができます。 
+**フラグ**  
+次のフラグは、GUID が OID または NDIS_STATUS 文字列にマップされているかどうかを示すために、また、GUID に対して指定されたデータの型を示すために、連結することができます。 
 
 fNDIS_GUID_TO_OID  
-設定すると、NDIS_GUID 構造体が GUID を OID にマップすることを示します。
+設定すると、NDIS_GUID 構造体によって GUID が OID にマップされることを示します。
 
 fNDIS_GUID_TO_STATUS  
-設定すると、NDIS_GUID 構造体が GUID を NDIS_STATUS 文字列にマップすることを示します。
+設定すると、NDIS_GUID 構造体によって GUID が NDIS_STATUS 文字列にマップされることを示します。
 
 fNDIS_GUID_ANSI_STRING  
 設定すると、null で終わる ANSI 文字列が GUID に対して指定されていることを示します。
@@ -72,9 +72,9 @@ fNDIS_GUID_ALLOW_WRITE
 ## <a name="remarks"></a>注釈
 
 > [!NOTE]
-> 既定では、ミニポートドライバーによって提供されるカスタム WMI Guid には、管理者特権を持つユーザーのみがアクセスできます。 ミニポートドライバーがその GUID の読み取りまたは書き込み操作をサポートしている場合、管理者特権を持つユーザーは、常にカスタム GUID に対して読み取りまたは書き込みを行うことができます。 FNDIS_GUID_ALLOW_READ フラグと fNDIS_GUID_ALLOW_WRITE フラグを設定して、すべてのユーザーがカスタム GUID にアクセスできるようにします。
+> 既定では、ミニポートドライバーによって提供されるカスタム WMI Guid には、管理者特権を持つユーザーのみがアクセスできます。 ミニポートドライバーがその GUID の読み取りまたは書き込み操作をサポートしている場合、管理者特権を持つユーザーは、常にカスタム GUID に対して読み取りまたは書き込みを行うことができます。 FNDIS_GUID_ALLOW_READ および fNDIS_GUID_ALLOW_WRITE フラグを設定して、すべてのユーザーがカスタム GUID にアクセスできるようにします。
 
-ミニポートドライバーによって登録されるすべてのカスタム Guid は、fNDIS_GUID_TO_OID または fNDIS_GUID_TO_STATUS のいずれかを設定する必要があることに注意してください (両方を設定しないでください)。 他のすべてのフラグは、必要に応じて OR 演算子を使用して組み合わせることができます。
+ミニポートドライバーによって登録されるすべてのカスタム Guid は fNDIS_GUID_TO_OID または fNDIS_GUID_TO_STATUS (両方を設定しない) のいずれかを設定する必要があることに注意してください。 他のすべてのフラグは、必要に応じて OR 演算子を使用して組み合わせることができます。
 
 次の例では、NDIS_GUID 構造体によって GUID が OID_GEN_CO_RCV_PDUS_NO_BUFFER にマップされます。
 
@@ -88,14 +88,11 @@ NDIS_GUID NdisGuid =  {{0x0a214809, 0xe35f, 0x11d0, 0x96, 0x92, 0x00,
 ```
 GUID は、情報を取得または設定するために Windows Management Instrumentation (WMI) によって使用される識別子です。 NDIS は、WMI によって NDIS ドライバーに送信された GUID をインターセプトし、その GUID を OID にマップして、OID をドライバーに送信します。 ドライバーは、データ項目を NDIS に返します。これにより、データが WMI に返されます。
 
-また、NDIS は、NIC の状態の変更を WMI によって認識される Guid に変換します。 ミニポートドライバーが[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)を使用して NIC の状態の変更を報告すると、ndis はミニポートドライバーによって示される NDIS_STATUS を、NDIS が WMI に送信する GUID に変換します。
+また、NDIS は、NIC の状態の変更を WMI によって認識される Guid に変換します。 ミニポートドライバーが[NdisMCoIndicateStatusEx](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismcoindicatestatusex)を使用して NIC の状態の変更を報告すると、ndis は、ミニポートドライバーによって示されている NDIS_STATUS を NDIS が WMI に送信する GUID に変換します。
 
-接続指向ミニポートドライバーが税関 Guid をサポートしている場合は、OID_GEN_CO_SUPPORTED_GUIDS をサポートしている必要があります。これは、カスタムの Oid のカスタム Oid または NDIS_STATUS 文字列へのマッピングを NDIS に返します。 OID_GEN_CO_SUPPORTED_GUIDS を使用してミニポートドライバーに対してクエリを実行すると、NDIS によってミニポートドライバーのカスタム Guid が WMI に登録されます。
+接続指向ミニポートドライバーが税関 Guid をサポートしている場合は、OID_GEN_CO_SUPPORTED_GUIDS をサポートする必要があります。これは、カスタムの Oid または NDIS_STATUS 文字列へのカスタム Guid のマッピングを NDIS に返すものです。 OID_GEN_CO_SUPPORTED_GUIDS でミニポートドライバーに対してクエリを実行すると、NDIS によってミニポートドライバーのカスタム Guid が WMI に登録されます。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

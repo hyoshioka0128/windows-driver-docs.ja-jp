@@ -6,16 +6,16 @@ keywords:
 - OID_CO_ADD_ADDRESS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2969e6314ebd2fb24b0ce09104070069811476cf
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 05a27322f98fc08570bfb2d17d51aa115c90852a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363314"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916838"
 ---
-# <a name="oidcoaddaddress"></a>OID_CO_ADD_ADDRESS
+# <a name="oid_co_add_address"></a>OID_CO_ADD_ADDRESS
 
-OID_CO_ADD_ADDRESS OID は、ホストのエイリアスのアドレスを指定する、クライアントが、コール マネージャーに送信されます。 エイリアスのアドレス形式は次のように定義されている CO_ADDRESS 構造体としてです。
+OID_CO_ADD_ADDRESS OID は、ホストのエイリアスアドレスを指定するために、クライアントから呼び出しマネージャーに送信されます。 エイリアスアドレスは、次のように定義された CO_ADDRESS 構造として書式設定されます。
 
 ```c++
 typedef struct _CO_ADDRESS{
@@ -24,21 +24,18 @@ typedef struct _CO_ADDRESS{
 } CO_ADDRESS, *PCO_ADDRESS;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **AddressSize**  
-構造のバイト単位のサイズを指定します。**アドレス**します。
+**アドレス**の構造体のサイズをバイト単位で指定します。
 
-**Address**  
-エイリアスのアドレスを含む可変長配列を指定します。 アドレスの形式は、コール マネージャーによって使用される信号のプロトコルに固有です。
+**アドレス**  
+エイリアスアドレスを含む可変長配列を指定します。 アドレスの形式は、コールマネージャーによって使用されるシグナリングプロトコルに固有です。
 
-この OID は通常ホストが特定のサービスを提供する、よく知られているアドレスを指定するために使用します。 たとえば、クライアントは、LAN エミュレーションのサーバーの既知のアドレスを指定できます。 この oid コール マネージャーの応答は、コール マネージャーによって使用される信号のプロトコルに固有です。 ATM コール マネージャーは、たとえば、エイリアスのアドレスのスイッチに通知するスイッチにメッセージを送信します。
+通常、この OID は、ホストが特定のサービスを提供する既知のアドレスを指定するために使用されます。 たとえば、クライアントは、LAN エミュレーションサーバーの既知のアドレスを指定できます。 この OID に対する呼び出しマネージャーの応答は、コールマネージャーによって使用されるシグナリングプロトコルに固有のものです。 たとえば、ATM コールマネージャーは、エイリアスアドレスのスイッチを通知するメッセージをスイッチに送信します。
 
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

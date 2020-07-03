@@ -1,6 +1,6 @@
 ---
 title: PagedCode ルール (storport)
-description: このルールの検証時に、ページング\_コードのマクロが呼び出されると、ドライバーは IRQL ディスパッチ\_レベル。 IRQL のディスパッチを実行してコード\_レベルはページ フォールトを回避するために、非ページ メモリである必要があります。
+description: このルールは、ページングされたコードマクロが呼び出されたときに、 \_ ドライバーが IRQL ディスパッチレベルにあることを確認し \_ ます。 \_ページフォールトが発生しないようにするには、IRQL ディスパッチレベルで実行されているすべてのコードが非ページメモリにある必要があります。
 ms.assetid: 7FED3FEF-E6E5-4C26-8777-0A4BCCE0E1EE
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b52a5f03c00f660827b2cd479d67b6b823fa6d5
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: daad3c8547dfc9686e558a9d17350b02b981d9a1
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67391916"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916731"
 ---
 # <a name="pagedcode-rule-storport"></a>PagedCode ルール (storport)
 
 
-このルールの検証時に、 [**ページ\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロが呼び出されると、ドライバーが、 **IRQL&lt;ディスパッチ\_レベル**します。 任意のコード実行**IRQL &gt;= ディスパッチ\_レベル**ページ フォールトを回避するために、非ページ メモリである必要があります。
+このルールは、ページングされた[** \_ コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)マクロが呼び出されたときに、ドライバーが**IRQL &lt; ディスパッチ \_ レベル**にあることを確認します。 ページフォールトが発生しないようにするには、 **IRQL &gt; = ディスパッチ \_ レベル**で実行されているすべてのコードが非ページメモリにある必要があります。
 
-|              |          |
-|--------------|----------|
-| ドライバー モデル | Storport |
+**ドライバーモデル: Storport**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -42,14 +40,14 @@ ms.locfileid: "67391916"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>PagedCode</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>PagedCode</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +55,7 @@ ms.locfileid: "67391916"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**ページングされた\_コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)
+[**ページング \_ コード**](https://docs.microsoft.com/windows-hardware/drivers/kernel/mm-bad-pointer)
  
 
  

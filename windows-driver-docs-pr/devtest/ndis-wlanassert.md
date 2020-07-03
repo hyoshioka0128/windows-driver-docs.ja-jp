@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 158a0752bedbe9f6b339270aa9bb131a93aa7ac3
-ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
+ms.openlocfilehash: 69ad43be3b675c5a9ea4c1886c0f3f3ec734505e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81219516"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916860"
 ---
 # <a name="wlanassert-rule-ndis"></a>WlanAssert rule (ndis)
 
@@ -37,13 +37,11 @@ ms.locfileid: "81219516"
 
 0xC4 バグチェックでは、*違反テキスト*がパラメーター2として指定されます。
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 |                                   |                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xc4: ドライバー\_VERIFIER\_検出され\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)が発生しました (0x00093004) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00093004) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -64,7 +62,7 @@ ms.locfileid: "81219516"
 </tbody>
 </table>
 
-<a name="applies-to"></a>状態名
+<a name="applies-to"></a>適用対象
 ----------
 
 [TxTransferCompleteIndication](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nc-dot11wdi-ndis_wdi_tx_transfer_complete_ind)
@@ -83,13 +81,13 @@ ms.locfileid: "81219516"
 
 [NdisMDeregisterWdiMiniportDriver](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/nf-dot11wdi-ndismderegisterwdiminiportdriver)
 
-<a name="see-also"></a>参照
+<a name="see-also"></a>こちらもご覧ください
 --------
 
-[WDI IHV ドライバーインターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-ihv-driver-interfaces)
+[WDI IHV ドライバー インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/network/wdi-ihv-driver-interfaces)
 
 [一般的な接続操作のガイドライン](https://docs.microsoft.com/windows-hardware/drivers/network/general-connection-operation-guidelines)
 
-[OID\_DOT11\_リセット\_要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
+[OID \_ DOT11 \_ リセット \_ 要求](https://docs.microsoft.com/windows-hardware/drivers/network/oid-dot11-reset-request)
 
-[NDIS\_STATUS\_DOT11\_アソシエーション\_開始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-start)
+[NDIS \_ ステータス \_ DOT11 の \_ 関連付けの \_ 開始](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-association-start)

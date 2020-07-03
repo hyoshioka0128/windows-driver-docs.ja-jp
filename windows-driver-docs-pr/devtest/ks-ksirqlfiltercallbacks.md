@@ -1,10 +1,10 @@
 ---
-title: KsIrqlFilterCallbacks ルール)
-description: KsIrqlFilterCallbacks ルールでは、カーネル ストリーミング (KS) ミニポート ドライバーがコールバック関数が呼び出された時と同じ IRQL で KS フィルターのコールバック関数から返すことを指定します。
+title: KsIrqlFilterCallbacks バック規則 ()
+description: KsIrqlFilterCallbacks 規則は、カーネルストリーミング (KS) ミニポートドライバーが、コールバック関数が呼び出されたときと同じ IRQL を持つ KS フィルターコールバック関数から戻ることを指定します。
 ms.assetid: AC27FF93-DC7C-4287-B3D6-2579FAA65A77
 ms.date: 05/21/2018
 keywords:
-- KsIrqlFilterCallbacks ルール)
+- KsIrqlFilterCallbacks バック規則 ()
 topic_type:
 - apiref
 api_name:
@@ -12,39 +12,37 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 828d254907e8f6ce15fb80622d0e97b189c60a03
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 0ab83622bf1878579331a3e9e115fb0063c244f9
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392754"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917920"
 ---
-# <a name="ksirqlfiltercallbacks-rule-"></a>KsIrqlFilterCallbacks ルール)
+# <a name="ksirqlfiltercallbacks-rule-"></a>KsIrqlFilterCallbacks バック規則 ()
 
 
-KsIrqlFilterCallbacks ルールでは、カーネル ストリーミング (KS) ミニポート ドライバーがコールバック関数が呼び出された時と同じ IRQL で KS フィルターのコールバック関数から返すことを指定します。
+KsIrqlFilterCallbacks 規則は、カーネルストリーミング (KS) ミニポートドライバーが、コールバック関数が呼び出されたときと同じ IRQL を持つ KS フィルターコールバック関数から戻ることを指定します。
 
-**デバッグのヒント**
+**デバッグに関するヒント**
 
-Driver Verifier は、この規則違反を検出する場合に、トリガー [ **0xC4 のバグ チェック。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)で、 *arg1* 0x00081007 の値。 *Arg3* (RuleState) と*arg4* (下位状態) バグ チェックの規則違反に関する追加情報へのポインターを提供します。
+ドライバーの検証でこの規則の違反が検出されると、[**バグチェック 0xC4: ドライバー \_ 検証ツールが \_ 検出さ \_ **](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)れた違反を、 *arg1*値が0x00081007 としてトリガーされます。 バグチェックの*arg3* (rulestate) と*arg4* (下位状態) は、規則違反に関する追加情報へのポインターを提供します。
 
-使用して、 [ **! ruleinfo** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)デバッガーが関数の開始と終了の IRQL の値を確認する拡張機能。
+[**! Ruleinfo**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-ruleinfo)デバッガー拡張機能を使用して、関数の開始時と終了時の IRQL 値を確認します。
 
-コマンドを使用します。
+次のコマンドを使用します。
 
-**! ruleinfo 0x81007** *RuleState* *下位状態*します。
+**! ruleinfo 0x81007** *ruleinfo* *下位の。*
 
-ルールの状態データ、 *OldIrql* IRQL は、コールバックが入力した場合。 *NewIrql* IRQL は、コールバック関数が終了した場合。
+ルールの状態データでは、 *Oldirql*は、コールバックが入力されたときの IRQL です。 *NewIrql*は、コールバック関数が終了したときの IRQL です。
 
-使用しない[ **! irql** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/-irql) Driver Verifier は、バグ チェックする前に IRQL 発生可能性がありますがなので、現在の IRQL を決定します。 代わりに、 **! verifier 0x008** IRQL を表示するログに記録します。
+ドライバー検証ツールがバグチェックの前に IRQL を発生させる可能性があるため、 [**! irql**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-irql)を使用して現在の irql を判断しないでください。 代わりに、 **! verifier 0x008**を使用して、IRQL ログを表示します。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | KS  |
+**ドライバーモデル: KS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00081007) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツール \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00081007) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -55,15 +53,15 @@ Driver Verifier は、この規則違反を検出する場合に、トリガー 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain ks</strong>します。</p>
-<p>次に、例を示します。</p>
-<p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
+<td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 ドライバー検証ツールコマンドを入力し、「 <strong>/domain ks</strong>」と指定します。</p>
+<p>たとえば、次のように入力します。</p>
+<p><strong>verifier/domain ks</strong> [<em>オプション</em>] <strong>/driver</strong> <em> &lt; ドライバー &gt; </em>の設定</p>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

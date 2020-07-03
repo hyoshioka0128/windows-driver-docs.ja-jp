@@ -6,21 +6,18 @@ keywords:
 - OID_802_3_XMIT_LATE_COLLISIONS
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 488d57b0638954169d18cd51f3f2b7f55ced6f93
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 990cd0938f8051b1f3e891ade58318b6bec22bbd
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323704"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916403"
 ---
-# <a name="oid8023xmitlatecollisions"></a>OID_802_3_XMIT_LATE_COLLISIONS
+# <a name="oid_802_3_xmit_late_collisions"></a>OID_802_3_XMIT_LATE_COLLISIONS
 
 通常のウィンドウの後に検出された競合の数。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

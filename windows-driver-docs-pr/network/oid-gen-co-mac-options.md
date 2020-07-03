@@ -6,21 +6,18 @@ keywords:
 - OID_GEN_CO_MAC_OPTIONS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f696fa83ba07876e2ee39e904f88974159874354
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a1efbfbf7bd365184e265f205f2cd1cb23c15aeb
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917956"
 ---
-# <a name="oidgencomacoptions"></a>OID_GEN_CO_MAC_OPTIONS
+# <a name="oid_gen_co_mac_options"></a>OID_GEN_CO_MAC_OPTIONS
 
-OID_GEN_CO_MAC_OPTIONS OID が予約されています。 コードでは使用しないでください。
+OID_GEN_CO_MAC_OPTIONS OID は予約されています。 コードでは使用しないでください。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

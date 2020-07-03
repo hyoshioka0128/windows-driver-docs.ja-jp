@@ -6,21 +6,18 @@ keywords:
 - OID_GEN_CO_BYTES_XMIT_OUTSTANDING
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d43ae98c47cc2da7b5dda933b2f6f1c0ae870682
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7d8cff43577fd941f07f82793b29e7fb4d12d03a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63323624"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916262"
 ---
-# <a name="oidgencobytesxmitoutstanding"></a>OID_GEN_CO_BYTES_XMIT_OUTSTANDING
+# <a name="oid_gen_co_bytes_xmit_outstanding"></a>OID_GEN_CO_BYTES_XMIT_OUTSTANDING
 
-OID_GEN_CO_BYTES_XMIT_OUTSTANDING OID には転送キューに入れられた Pdu のバイト数を指定します。
+OID_GEN_CO_BYTES_XMIT_OUTSTANDING OID は、送信のためにキューに入れられる Pdu のバイト数を指定します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

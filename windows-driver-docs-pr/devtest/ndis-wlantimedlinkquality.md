@@ -1,6 +1,6 @@
 ---
 title: WlanTimedLinkQuality rule (ndis)
-description: WlanTimedLinkQuality ルールでは、NDIS\_の状態\_DOT11\_\_リンクが指定されています。これは、\_DOT11\_関連付け\_完了した後、NDIS\_状態が成功した後の15秒後に行われます。
+description: WlanTimedLinkQuality ルールでは、ndis \_ \_ ステータスの \_ \_ dot11 関連付けが正常に完了してから15秒後に、ndis ステータス dot11 リンクの品質を示し \_ \_ \_ \_ ます。
 ms.assetid: B7055493-C09B-4565-A10F-32A34CCD5621
 ms.date: 05/21/2018
 keywords:
@@ -12,27 +12,25 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d4dc9f267353a17ecd7e6c116d6b54abd9f43388
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7fe9413ba5c190d063f8537daacbaf05bcb378f8
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840063"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916448"
 ---
 # <a name="wlantimedlinkquality-rule-ndis"></a>WlanTimedLinkQuality rule (ndis)
 
 
-**WlanTimedLinkQuality**ルールでは、ndis\_の状態\_dot11\_\_リンクが指定されています。これは、NDIS\_状態が正常に完了してから15秒後に行われ、DOT11\_関連付け\_完了\_.
+**WlanTimedLinkQuality**ルールでは、ndis \_ \_ ステータスの \_ \_ dot11 関連付けが正常に完了してから15秒後に、ndis ステータス dot11 リンクの品質を示し \_ \_ \_ \_ ます。
 
-|              |      |
-|--------------|------|
-| ドライバーモデル | NDIS |
+**ドライバーモデル: NDIS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| このルールでバグチェックが見つかりました | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0009400b) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツールの \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0009400b) |
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>
@@ -56,13 +54,13 @@ ms.locfileid: "72840063"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**Miniporthaltex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt)
-[**Miniporthaltex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request)
-[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
+[**ミニ Porthaltex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_halt) 
+[**Miniportoidrequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_oid_request) 
+[**NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex) 
 [**NdisMOidRequestComplete**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismoidrequestcomplete)関連項目
 --------
 
-[NDIS\_ステータス\_DOT11\_リンク\_品質](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-link-quality)
+[NDIS \_ ステータス \_ DOT11 \_ リンクの \_ 品質](https://docs.microsoft.com/windows-hardware/drivers/network/ndis-status-dot11-link-quality)
  
 
  

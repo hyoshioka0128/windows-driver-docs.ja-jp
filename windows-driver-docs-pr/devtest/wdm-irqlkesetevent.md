@@ -1,6 +1,6 @@
 ---
 title: IrqlKeSetEvent ルール (wdm)
-description: IrqlKeSetEvent ルールは、Wait が FALSE に設定されている場合は KeSetEvent ルーチンが IRQL DISPATCH_LEVEL でのみ呼び出されることを指定し、Wait が TRUE に設定されている場合は IRQL APC_LEVEL を呼び出します。
+description: IrqlKeSetEvent ルールは、Wait が FALSE に設定されている場合に、KeSetEvent ルーチンが IRQL DISPATCH_LEVEL でのみ呼び出されることを指定します。また、Wait が TRUE に設定されている場合は、IRQL が APC_LEVEL ます。
 ms.assetid: 6274c70c-f61c-4e48-8ee9-a68107158cce
 ms.date: 05/21/2018
 keywords:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: fc7a34a5a9439d629c5eac9987d0bcae7aa540c3
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2ab2db32f769ae6eebcf0912b8df83ccd445db25
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839916"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917882"
 ---
 # <a name="irqlkesetevent-rule-wdm"></a>IrqlKeSetEvent ルール (wdm)
 
 
-**IrqlKeSetEvent**ルールでは、 [**KESETEVENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)ルーチンが IRQL でのみ呼び出されることを指定します。 *wait*が**FALSE**に設定されている場合は、DISPATCH &lt;= DISPATCH\_level、*待機*がに設定されている場合は、irql &lt;= APC\_レベルです。**TRUE**。
+**IrqlKeSetEvent**ルールは、Wait が FALSE に設定されている場合は[**KESETEVENT**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kesetevent)ルーチンが irql = ディスパッチレベルでのみ呼び出されることを指定し、 &lt; \_ *Wait* **FALSE** &lt; \_ *wait*が**TRUE**に設定されている場合は irql = APC レベルで呼び出されます。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | WDM |
+**ドライバーモデル: WDM**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00020016) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00020016) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -49,7 +47,7 @@ ms.locfileid: "72839916"
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>IrqlKeSetEvent</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>

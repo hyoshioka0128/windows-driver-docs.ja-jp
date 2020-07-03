@@ -6,16 +6,16 @@ keywords:
 - OID_GEN_CO_LINK_SPEED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 604d057c478e3ffa66488e0d89abe760633cf019
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edad21b56d642a77d337cbc6d6282a7a46c67c3e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63379220"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917960"
 ---
-# <a name="oidgencolinkspeed"></a>OID_GEN_CO_LINK_SPEED
+# <a name="oid_gen_co_link_speed"></a>OID_GEN_CO_LINK_SPEED
 
-OID_GEN_CO_LINK_SPEED OID は、その現在の送信を返し、次のように定義されている NDIS_CO_LINK_SPEED 構造体として書式設定された速度を受信するミニポート ドライバーを要求します。
+OID_GEN_CO_LINK_SPEED OID は、次のように定義されている NDIS_CO_LINK_SPEED 構造として書式設定された現在の送信速度と受信速度をミニポートドライバーに返すように要求します。
 
 ```c++
 typedef struct _NDIS_CO_LINK_SPEED{
@@ -24,18 +24,15 @@ typedef struct _NDIS_CO_LINK_SPEED{
 } NDIS_CO_LINK_SPEED, *PNDIS_CO_LINK_SPEED;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
-**送信**  
-NIC の現在の送信速度 測定単位は 100,000 の値が 10 Mbps のハードウェア ビット レートを表すためにの 100 bps です。
+**Outbound**  
+NIC の現在の送信速度。 測定単位は100bps であるため、10万の値は、ハードウェアのビットレートとして 10 Mbps を表します。
 
 **受信**  
-NIC の現在の受信速度 測定単位は 100,000 の値が 10 Mbps のハードウェア ビット レートを表すためにの 100 bps です。
+NIC の現在の受信速度。 測定単位は100bps であるため、10万の値は、ハードウェアのビットレートとして 10 Mbps を表します。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

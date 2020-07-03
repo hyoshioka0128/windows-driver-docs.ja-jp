@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1af85249dd08229b2cc4208a599e15ae5e110165
-ms.sourcegitcommit: 84be9e06fd0886598df77dffcbc75632d613c8f3
+ms.openlocfilehash: dc91bbc89e2c40498849627859eac7d4b005f72b
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81219526"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917928"
 ---
 # <a name="ksinvalidstreampointer-rule-ks"></a>KsInvalidStreamPointer rule (ks)
 
@@ -28,13 +28,11 @@ https://docs.microsoft.com/windows-hardware/drivers/stream/leading-and-trailing-
 
 また、このルールは、コピーされていないストリームポインターを削除しようとしたときに、 [Ksstreampointer delete](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/nf-ks-ksstreampointerdelete)が使用されていないことを確認します。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | KS  |
+**ドライバーモデル: KS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0008100c) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツール \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0008100c) |
 
 <a name="example"></a>例
 -------
@@ -72,16 +70,16 @@ KsStreamPointerDelete (NULL);
 <tbody>
 <tr class="odd">
 <td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 ドライバー検証ツールコマンドを入力し、「 <strong>/domain ks</strong>」と指定します。</p>
-<p>例 :</p>
+<p>たとえば、次のように入力します。</p>
 <p></p>
-<p>詳細については、「<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">ドライバーの検証ツール</a>」を参照してください。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-**検証ツール**\[*オプション*\] **/driver** *&lt;ドライバー&gt;*
+**検証ツール (/domain** \[ )*オプション* \]**/driver** * &lt; ドライバー &gt; *の/driver
 
 <table>
 <colgroup>
@@ -99,7 +97,7 @@ KsStreamPointerDelete (NULL);
 </tbody>
 </table>
 
-<a name="applies-to"></a>状態名
+<a name="applies-to"></a>適用対象
 ----------
 
 Ksstreamポインターの削除

@@ -1,6 +1,6 @@
 ---
-title: Irql\_StatusIndication\_関数ルール (ndis)
-description: Irql\_StatusIndication\_関数規則は、ミニポートドライバーとフィルタードライバーの NDIS ステータスを示す関数を正しい IRQL レベルで呼び出す必要があることを指定します。
+title: Irql \_ statusindication \_ 関数の規則 (ndis)
+description: Irql \_ statusindication 関数の規則は、 \_ ミニポートドライバーとフィルタードライバーの NDIS ステータスを示す関数を正しい Irql レベルで呼び出す必要があることを指定します。
 ms.assetid: 0e0630f7-3f7b-455f-9763-f0cd5128ef69
 ms.date: 05/21/2018
 keywords:
@@ -12,26 +12,24 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fc6b6908e4a659f10b25eb5972d8b14f918f46
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ad966b50fa62c99131fe3a1b28f7617c832e7f82
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839381"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917179"
 ---
-# <a name="irql_statusindication_function-rule-ndis"></a>Irql\_StatusIndication\_関数ルール (ndis)
+# <a name="irql_statusindication_function-rule-ndis"></a>Irql \_ statusindication \_ 関数の規則 (ndis)
 
 
-Irql\_StatusIndication\_関数規則は、ミニポートドライバーとフィルタードライバーの NDIS ステータスを示す関数を正しい IRQL レベルで呼び出す必要があることを指定します。
+Irql \_ statusindication 関数の規則は、 \_ ミニポートドライバーとフィルタードライバーの NDIS ステータスを示す関数を正しい Irql レベルで呼び出す必要があることを指定します。
 
 このルールは、次の NDIS 関数を検証します。
 
-**NdisFIndicateStatus**
+**NdisFIndicateStatus** 
 **NdisMIndicateStatusEx**
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -50,7 +48,7 @@ Irql\_StatusIndication\_関数規則は、ミニポートドライバーとフ�
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Irql_StatusIndication_Function</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
@@ -62,7 +60,7 @@ Irql\_StatusIndication\_関数規則は、ミニポートドライバーとフ�
 <a name="applies-to"></a>適用対象
 ----------
 
-[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus)
+[**NdisFIndicateStatus**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisfindicatestatus) 
 [ **NdisMIndicateStatusEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndismindicatestatusex)
 
 

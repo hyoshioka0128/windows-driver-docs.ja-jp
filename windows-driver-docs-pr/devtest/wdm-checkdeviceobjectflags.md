@@ -1,6 +1,6 @@
 ---
 title: CheckDeviceObjectFlags ルール (wdm)
-description: CheckDeviceObjectFlags ルールでは、のデバイスオブジェクトフラグが電源\_PAGABLE を\_ことを確認する必要があることを指定します。\_また、電源\_突入電流が FDO と子 PDOs に対して一貫して設定されていることを確認する必要があります。 このルールは、バスドライバーにのみ適用されます。
+description: CheckDeviceObjectFlags ルールでは、バスドライバーが、電源設定可能なデバイスオブジェクトフラグ \_ \_ と \_ POWER \_ 突入電流を FDO および子 pdos に対して一貫して設定することを確認する必要があることを指定します。 このルールは、バスドライバーにのみ適用されます。
 ms.assetid: E229D3A2-30CE-433A-9889-F762CA923803
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 194f321e631202f9f40c8a7bbfa15493b280da21
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 34e33e31a6f71b5acd2dc825ec95bd7de8074c61
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839249"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916806"
 ---
 # <a name="checkdeviceobjectflags-rule-wdm"></a>CheckDeviceObjectFlags ルール (wdm)
 
 
-**Checkdeviceobjectflags**ルールでは、のデバイスオブジェクトフラグが電源\_pagable を\_ことを確認する必要があることを指定します。\_また、電源\_突入電流が FDO と子 pdos に対して一貫して設定されていることを確認する必要があります。 このルールは、バスドライバーにのみ適用されます。
+**Checkdeviceobjectflags**ルールでは、バスドライバーが、電源設定可能なデバイスオブジェクトフラグ \_ \_ と \_ power \_ 突入電流を FDO および子 pdos に対して一貫して設定することを確認する必要があることを指定します。 このルールは、バスドライバーにのみ適用されます。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | WDM |
+**ドライバーモデル: WDM**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -45,7 +43,7 @@ ms.locfileid: "72839249"
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Checkdeviceobjectflags</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
@@ -57,7 +55,7 @@ ms.locfileid: "72839249"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
+[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 
 [ **IoCreateDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iocreatedevice)
  
 

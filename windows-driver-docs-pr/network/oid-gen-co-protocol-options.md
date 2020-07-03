@@ -6,32 +6,29 @@ keywords:
 - OID_GEN_CO_PROTOCOL_OPTIONS
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d0698b891872e151876486579c5be7b470bd7a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c2b3bca6ee5dc9e76646bc1759f472c77d92b2f9
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355721"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917494"
 ---
-# <a name="oidgencoprotocoloptions"></a>OID_GEN_CO_PROTOCOL_OPTIONS
+# <a name="oid_gen_co_protocol_options"></a>OID_GEN_CO_PROTOCOL_OPTIONS
 
-プロトコル ドライバーの省略可能なプロパティを定義するビットマスク。 プロトコルは、これらのオプションで利用できますが、そのプロパティの NDIS を通知します。 プロトコル ドライバーがバインディングでそのフラグを設定しない場合、NDIS すべてクリアが前提としています。
+プロトコルドライバーのオプションプロパティを定義するビットマスク。 プロトコルは、そのプロパティを NDIS に通知します。これにより、オプションでこれらを利用できます。 プロトコルドライバーによってバインドにフラグが設定されていない場合、NDIS はすべてが明確であると想定します。
 
-次のフラグは現在定義されています。
+現在、次のフラグが定義されています。
 
 NDIS_PROT_OPTION_ESTIMATED_LENGTH  
-このプロトコルには正確な値ではなく、パケット サイズの最悪の場合の推定値でパケットを示すことができますを示します。
+パケットが、このプロトコルに対する正確な値ではなく、最悪のパケットサイズの推定で示されることを示します。
 
 NDIS_PROT_OPTION_NO_LOOPBACK  
-プロトコルでは、バインディングでループバックのサポートは必要ありません。
+プロトコルでは、バインディングでのループバックのサポートは必要ありません。
 
 NDIS_PROT_OPTION_NO_RSVD_ON_RCVPKT  
-プロトコルが使用しない、 **ProtocolReserved**のセクションに示されるパケットを受信します。 これにより、受信パケットを 1 つ以上のプロトコルを示す NDIS できます。
+プロトコルは、指定された受信パケットの**Protocolreserved**セクションを使用しません。 これにより、NDIS は複数のプロトコルに対して受信パケットを示すことができます。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

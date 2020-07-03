@@ -5,12 +5,12 @@ ms.assetid: 78B049E0-A80E-42AA-9D81-D45BBCF84FCB
 ms.date: 08/17/2018
 keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_SAR_CONFIG
 ms.localizationpriority: medium
-ms.openlocfilehash: 6154a4915f092a476710aa8d3162a55318d6ad56
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 11cd79cf3a9a218b570cf498d7208891d69f950c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843797"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916778"
 ---
 # <a name="oid_wwan_sar_config"></a>OID_WWAN_SAR_CONFIG
 
@@ -28,12 +28,9 @@ OID_WWAN_SAR_CONFIG、モバイルブロードバンド (MB) デバイスの特�
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 Version 1703 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1703**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [MB SAR プラットフォームのサポート](https://docs.microsoft.com/windows-hardware/drivers/network/mb-sar-platform-support)
 

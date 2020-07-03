@@ -6,12 +6,12 @@ keywords:
 - OID_CO_AF_CLOSE
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fc1c52ef2ef5f263db973010894657359cb87990
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ccb7a8665955f5a8bf265921b57ecff9eeab390c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843268"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916626"
 ---
 # <a name="oid_co_af_close"></a>OID_CO_AF_CLOSE
 
@@ -23,12 +23,9 @@ OID_CO_AF_CLOSE OID は、基になるミニポートドライバーから自身
 
 3. クライアントが呼び出しマネージャーに登録したすべての Sap の登録を解除するために、必要な回数だけ[NdisClDeregisterSap](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclderegistersap)を呼び出します。
 
-4. [NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily)を呼び出して、OID_CO_AF_CLOSE を含む要求で NdisAfHandle によって参照されているアドレスファミリを閉じます。
+4. [NdisClCloseAddressFamily](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisclcloseaddressfamily)を呼び出して、含まれている要求の NdisAfHandle によって参照されているアドレスファミリを閉じ OID_CO_AF_CLOSE
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

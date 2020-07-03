@@ -1,6 +1,6 @@
 ---
 title: FDOPowerPolicyOwnerAPI 規則 (kmdf)
-description: FDOPowerPolicyOwnerAPI 規則は、FDO ドライバーが電源ポリシーの所有権を放棄した場合に、WdfDeviceInitSetPowerPolicyEventCallbacks バック、WdfDeviceAssignS0IdleSettings、および WdfDeviceAssignSxWakeSettings の各メソッドを呼び出すことができることを指定します。ドライバーが電源ポリシーの所有者である実行パス。 SDV は、このルールに対して警告を発行します。
+description: FDOPowerPolicyOwnerAPI ルールでは、FDO ドライバーが電源ポリシーの所有権を放棄した場合、WdfDeviceInitSetPowerPolicyEventCallbacks バック、WdfDeviceAssignS0IdleSettings、WdfDeviceAssignSxWakeSettings の各メソッドは、ドライバーが電源ポリシーの所有者である実行パスでのみ呼び出すことができます。 SDV は、このルールに対して警告を発行します。
 ms.assetid: b0695dff-070c-4c55-a71d-a78fc45eb805
 ms.date: 05/21/2018
 keywords:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 88e567cbec2c3fb6278639a33826f1a0a50940ba
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: e8629df7588edbb23e0b891434866a9d51d7b77d
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840221"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917071"
 ---
 # <a name="fdopowerpolicyownerapi-rule-kmdf"></a>FDOPowerPolicyOwnerAPI 規則 (kmdf)
 
 
-**Fdopowerpolicyownerapi**ルールでは、FDO ドライバーが電源ポリシーの所有権を放棄する場合、 [**Wdfdeviceinitsetpowerpolicyeventcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)、 [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)、および[**の各メソッドを指定します。WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)は、ドライバーが電源ポリシーの所有者である実行パスでのみ呼び出すことができます。 SDV は、このルールに対して警告を発行します。
+**Fdopowerpolicyownerapi**ルールでは、FDO ドライバーが電源ポリシーの所有権を放棄した場合、 [**Wdfdeviceinitsetpowerpolicyeventcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)、 [**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)、 [**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)の各メソッドは、ドライバーが電源ポリシーの所有者である実行パスでのみ呼び出すことができます。 SDV は、このルールに対して警告を発行します。
 
-FDO ドライバーが、2番目のパラメーターの値として**FALSE**を指定して[**Wdfdeviceinitsetpowerpolicyownership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)メソッドを呼び出した場合は、それ以降の[**Wdfdeviceinitsetpowerpolicyeventコールバック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)の呼び出し、 **WdfDeviceAssignS0IdleSettings**、およびそのドライバーによって**WdfDeviceAssignSxWakeSettings**されると、規則違反と警告メッセージが生成されます。
+FDO ドライバーが、2番目のパラメーターの値として**FALSE**を指定して[**Wdfdeviceinitsetpowerpolicyownership**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)メソッドを呼び出すと、そのドライバーによって[**Wdfdeviceinitsetpowerpolicyeventcalls**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)、 **WdfDeviceAssignS0IdleSettings**、および**WdfDeviceAssignSxWakeSettings**を呼び出すと、規則違反と警告メッセージが表示されます。
 
-|              |      |
-|--------------|------|
-| ドライバーモデル | KMDF |
+**ドライバーモデル: KMDF**
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>
@@ -47,7 +45,7 @@ FDO ドライバーが、2番目のパラメーターの値として**FALSE**を
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Fdopowerpolicyownerapi</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
@@ -59,10 +57,10 @@ FDO ドライバーが、2番目のパラメーターの値として**FALSE**を
 <a name="applies-to"></a>適用対象
 ----------
 
-[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings)
-[**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings)
-[**Wdfdeviceinitsetpowerpolicyeventcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks)
-[**Wdfdeviceinitsetpowerpolicyオーナーシップ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)
+[**WdfDeviceAssignS0IdleSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassigns0idlesettings) 
+[**WdfDeviceAssignSxWakeSettings**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceassignsxwakesettings) 
+[**Wdfdeviceinitsetpowerpolicyeventcallbacks バック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyeventcallbacks) 
+[**Wdfdeviceinitsetpowerpolicyownership 所有権**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdevice/nf-wdfdevice-wdfdeviceinitsetpowerpolicyownership)
  
 
  

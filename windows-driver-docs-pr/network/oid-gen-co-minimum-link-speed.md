@@ -6,16 +6,16 @@ keywords:
 - OID_GEN_CO_MINIMUM_LINK_SPEED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df5f23d62dd9be3be1a8768581aa0aefdd8ac5f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c4cfe31f6c01081656c99c31144bbeef481d04c0
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917500"
 ---
-# <a name="oidgencominimumlinkspeed"></a>OID_GEN_CO_MINIMUM_LINK_SPEED
+# <a name="oid_gen_co_minimum_link_speed"></a>OID_GEN_CO_MINIMUM_LINK_SPEED
 
-OID_GEN_CO_MINIMUM_LINK_SPEED OID が返す最小の送信と受信速度が次のように定義されている NDIS_CO_LINK_SPEED 構造体として書式設定するには、ミニポート ドライバーを要求します。
+OID_GEN_CO_MINIMUM_LINK_SPEED OID は、次のように定義された NDIS_CO_LINK_SPEED 構造として書式設定された最小の送信速度と受信速度をミニポートドライバーに返すように要求します。
 
 ```c++
 typedef struct _NDIS_CO_LINK_SPEED{
@@ -24,18 +24,15 @@ typedef struct _NDIS_CO_LINK_SPEED{
 } NDIS_CO_LINK_SPEED, *PNDIS_CO_LINK_SPEED;
 ```
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
-**送信**  
-NIC の最小の送信速度 測定単位は 100,000 の値が 10 Mbps のハードウェア ビット レートを表すためにの 100 bps です。
+**Outbound**  
+NIC の最小転送速度。 測定単位は100bps であるため、10万の値は、ハードウェアのビットレートとして 10 Mbps を表します。
 
 **受信**  
-NIC の最小の受信速度 測定単位は 100,000 の値が 10 Mbps のハードウェア ビット レートを表すためにの 100 bps です。
+NIC の最小受信速度。 測定単位は100bps であるため、10万の値は、ハードウェアのビットレートとして 10 Mbps を表します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

@@ -5,12 +5,12 @@ ms.assetid: F59D861C-B7DB-4C28-8842-4FDBAE1B95F1
 keywords: OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES、OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES RSSv2
 ms.date: 10/11/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a50c3deb16aade12857130a8d9ac30b0984fd0ef
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 4e922335372512effda090610f7928c668e3d142
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235449"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916609"
 ---
 # <a name="oid_gen_rss_set_indirection_table_entries"></a>OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES
 
@@ -22,7 +22,7 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES OID は、個々の間接テーブル�
 
 OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES は、 [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)構造を使用して、一連のアクションを同期的に実行するようにミニポートアダプターに指示します。各アクションは、指定された VPORT の RSS 間接テーブルの1つのエントリを、指定された CPU に移動します。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 この OID は、それを発行したプロセッサコンテキストで実行され、完了する必要があります。 ミニポートドライバーは、NDIS_STATUS_SUCCESS を上位層に返すときに、この OID を完全に実行する必要があります。 これは、最初の移動が NDIS_STATUS_SUCCESS で終了した直後に新しいプロセッサで複数のデバイスを移動するために、バックツーバックの OID 要求を受信するようにミニポートドライバーで準備する必要があることを意味します。 
 
@@ -90,19 +90,16 @@ OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES の OID ハンドラーは、次のよ
 
 この OID は、エラーが発生したときに次の状態コードを返します。
 
-| status code | エラー状態 |
+| 状態コード | エラー状態 |
 | --- | --- |
 | NDIS_STATUS_INVALID_LENGTH | OID の形式が正しくありません。 |
 | NDIS_STATUS_INVALID_PARAMETER | ヘッダーまたは OID 自体に含まれるその他のフィールド (個々のコマンドエントリではありません) には、無効な値が含まれています。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1709 |
-| ヘッダー | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1709**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 - [Receive Side Scaling Version 2 (RSSv2)](receive-side-scaling-version-2-rssv2-.md)
 - [NDIS_RSS_SET_INDIRECTION_ENTRIES](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_rss_set_indirection_entries)

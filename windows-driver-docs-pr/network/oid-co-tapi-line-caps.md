@@ -6,18 +6,18 @@ keywords:
 - OID_CO_TAPI_LINE_CAPS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c55b4c15b07c41afa7fe7f05b979cb921aad7e94
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 01cea4126ec7f85cd84e6ac215af06a0f28dae9e
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380708"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917524"
 ---
-# <a name="oidcotapilinecaps"></a>OID_CO_TAPI_LINE_CAPS
+# <a name="oid_co_tapi_line_caps"></a>OID_CO_TAPI_LINE_CAPS
 
-OID_CO_TAPI_LINE_CAPS OID は、指定した行のテレフォニー機能を返すには、コール マネージャーまたは統合ミニポート コール マネージャー (MCM) ドライバーを要求します。 この OID は、この行のアドレスが異種のテレフォニー機能を持つかどうかを示すには、コール マネージャーまたは MCM ドライバーにも要求します。
+OID_CO_TAPI_LINE_CAPS OID は、指定された回線のテレフォニー機能を返すために、呼び出しマネージャーまたは統合ミニポート呼び出しマネージャー (MCM) ドライバーを要求します。 また、この OID は、この行のアドレスが異なるテレフォニー機能を持つかどうかを示すために、呼び出しマネージャーまたは MCM ドライバーに要求します。
 
-この要求は、特定の行のテレフォニー機能を照会する次のように定義されている、CO_TAPI_LINE_CAPS 構造体を使用します。
+この要求では、次のように定義された CO_TAPI_LINE_CAPS 構造を使用して、指定された行のテレフォニー機能を照会します。
 
 ```c++
 typedef struct _CO_TAPI_LINE_CAPS {
@@ -27,33 +27,30 @@ typedef struct _CO_TAPI_LINE_CAPS {
 } CO_TAPI_LINE_CAPS, *PCO_TAPI_LINE_CAPS;
 ``` 
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **ulLineID**  
-どのテレフォニー機能が返される行を指定します。 **ulLineID**は 0 から始まる識別子です。
+テレフォニー機能を返す回線を指定します。 **ulLineID**は、0から始まる識別子です。
 
 **ulFlags**  
-行は、異種のテレフォニー機能を備えた複数のアドレスをサポートする場合、コール マネージャーまたは MCM ドライバー設定 ulFlags; 内のビット CO_TAPI_FLAG_PER_ADDRESS_CAPSそれ以外の場合、コール マネージャーまたは MCM ドライバーには、このビットがクリアします。 未定義のすべてのビットは予約されており、0 に設定する必要があります。
+回線が異なるテレフォニー機能を持つ複数のアドレスをサポートしている場合、呼び出しマネージャーまたは MCM ドライバーは、ulFlags に CO_TAPI_FLAG_PER_ADDRESS_CAPS ビットを設定します。それ以外の場合、呼び出しマネージャーまたは MCM ドライバーはこのビットをクリアします。 未定義のビットはすべて予約されており、0に設定する必要があります。
 
 **LineDevCaps**  
-LINE_DEV_CAPS 構造として書式設定された行のテレフォニー機能を指定します。 この構造体の詳細については、Microsoft Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
+LINE_DEV_CAPS 構造体として書式設定された、線のテレフォニー機能を指定します。 この構造体の詳細については、Microsoft Windows SDK と ndistapi .h のヘッダーファイルを参照してください。
 
 ## <a name="remarks"></a>注釈
 
-コール マネージャーのまたは MCM ドライバーのデバイスのテレフォニー機能を照会した[OID_CO_TAPI_CM_CAPS](oid-co-tapi-cm-caps.md)、接続指向のクライアントがデバイスでサポートされている行のテレフォニー機能を照会します。
+[OID_CO_TAPI_CM_CAPS](oid-co-tapi-cm-caps.md)を使用して通話マネージャーまたは mcm ドライバーのデバイスのテレフォニー機能に対してクエリを実行すると、接続指向クライアントは、デバイスでサポートされている回線のテレフォニー機能に対してクエリを実行します。
 
-- デバイスでサポートされているすべての行が行と同じ機能を持っており、これらの行のすべてのアドレスが同じアドレス機能を備えて、クライアントは、デバイスの行の機能を取得する OID_CO_TAPI_LINE_CAPS 1 回を照会します。 この場合、コール マネージャーによって返される行の機能または MCM のドライバーがデバイスでサポートされているすべての行に適用されます。
-- 機能を取得するデバイスでサポートされている行ごとにただし、デバイスに複数の異なる機能を備えた複数の行がサポートしている場合、またはこれらの行のアドレスは、アドレスの種類の異なる機能を持つ場合は、クライアントが OID_CO_TAPI_LINE_CAPS を 1 回クエリします。各の行。
+- デバイスでサポートされているすべての行の回線機能が同じで、これらの行のすべてのアドレスが同じアドレス機能を持っている場合、クライアントは一度 OID_CO_TAPI_LINE_CAPS クエリを実行し、デバイスの回線機能を取得します。 この場合、呼び出しマネージャーまたは MCM ドライバーによって返される行機能は、デバイスでサポートされているすべての行に適用されます。
+- ただし、デバイスが異なる機能を持つ複数の行をサポートしている場合、または、これらの行のアドレスが異なるアドレス機能を持つ場合、クライアントは、デバイスでサポートされている行ごとに1回 OID_CO_TAPI_LINE_CAPS を照会し、各行の機能を取得します。
 
-**UlFlags**設定は、クライアントは、その後、行のアドレスの機能を照会する回数を決定します。
+**Ulflags**設定は、クライアントが行のアドレスの機能に対してクエリを実行する回数を決定します。
 
-- 行が 1 つのアドレスをサポートしている場合、または行が同じアドレス機能を備えた複数のアドレスをサポートしている場合、クライアントが 1 回 OID_CO_TAPI_ADDRESS_CAPS を照会します。
-- 行は、複数の異なる機能を備えた複数のアドレスをサポートする場合、クライアント クエリ OID_CO_TAPI_ADDRESS_CAPS 1 回行には、各アドレスのください。
+- 回線でサポートされているアドレスが1つだけの場合、または同じアドレス機能を持つ複数のアドレスが回線でサポートされている場合、クライアントは一度 OID_CO_TAPI_ADDRESS_CAPS クエリを実行します。
+- 機能が異なる複数のアドレスが回線でサポートされている場合、クライアントは、行の各アドレスに対して1回 OID_CO_TAPI_ADDRESS_CAPS を照会する必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

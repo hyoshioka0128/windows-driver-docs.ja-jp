@@ -7,12 +7,12 @@ keywords:
 - Windows Vista 以降のネットワークドライバーの OID_WWAN_PIN_EX2
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d7811d62e3411848e5ffdec12e7350af096519a5
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 95230980572820cea51d20b39ca7872ba41de51d
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843817"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85918132"
 ---
 # <a name="oid_wwan_pin_ex2"></a>OID_WWAN_PIN_EX2
 
@@ -32,14 +32,11 @@ OID_WWAN_PIN_EX2 [OID_WWAN_PIN_EX](oid-wwan-pin-ex.md)と同様に、デバイ�
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1903 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1903**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-[MB UICC アプリケーションとファイルシステムアクセス](mb-uicc-application-and-file-system-access.md)
+[MB UICC アプリケーションとファイル システム アクセス](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_PIN_INFO](ndis-status-wwan-pin-info.md)
 

@@ -6,34 +6,34 @@ keywords:
 - OID_GEN_CO_MEDIA_SUPPORTED
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ccb08cde7fb56219683bcdbc3a9d07b2e23b70
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 96f92e6110d3b2a3a4d0b51041cb24c1ded7c883
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361170"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917916"
 ---
-# <a name="oidgencomediasupported"></a>OID_GEN_CO_MEDIA_SUPPORTED
+# <a name="oid_gen_co_media_supported"></a>OID_GEN_CO_MEDIA_SUPPORTED
 
-メディアの完全な一覧は、次のシステム定義の値の適切なサブセットとして、NIC がサポートを型します。
+次のシステム定義の値の適切なサブセットとして、NIC がサポートするメディアの種類の完全な一覧。
 
 **NdisMedium802_3**  
 イーサネット (802.3)。
 
 **NdisMedium802_5**  
-トークン リング (802.5)。
+トークンリング (802.5)。
 
 **NdisMediumFddi**  
-FDDI します。
+FDDI.
 
 **NdisMediumWan**  
-WAN します。
+WAN.
 
 **NdisMediumLocalTalk**  
-LocalTalk します。
+LocalTalk.
 
 **NdisMediumDix**  
-DEC/Intel/Xerox (DIX) イーサネットします。
+DEC/Intel/Xerox (DIX) イーサネット。
 
 **NdisMediumArcnetRaw**  
 ARCNET (raw)。
@@ -42,27 +42,24 @@ ARCNET (raw)。
 ARCNET (878.2)。
 
 **NdisMediumWirelessWan**  
-NdisWirelessXxx メディアのさまざまな種類。
+さまざまな種類の NdisWirelessXxx メディア。
 
 **NdisMediumAtm**  
-ATM します。
+ATM.
 
 **NdisMediumIrda**  
-Windows 2000 以降のプラットフォームで将来使用するために予約されています。
+Windows 2000 以降のプラットフォームで今後使用するために予約されています。
 
 ## <a name="remarks"></a>注釈
 
-ATM ネットワーク用のドライバーを LAN エミュレーション宣言としてそのメディア**NdisMedium802_3** 、なく**NdisMediumAtm**します。 このようなドライバーは、上位レベルの NDIS ドライバーにイーサネットをエミュレート、ATM フォーラムのレーンに準拠し、UNI 信号方式のサポートを提供します。
+ATM ネットワーク用の LAN エミュレーションドライバーは、メディアを**NdisMediumAtm**ではなく、 **NdisMedium802_3**として宣言します。 このようなドライバーは、イーサネットを高レベルの NDIS ドライバーにエミュレートし、ATM フォーラムの LANE に準拠し、UNI シグナリングのサポートを提供します。
 
-ワイヤレス WAN NIC ドライバーはそのメディアの種類としてレポートする必要があります**NdisMediumWirelessWan**します。 ただし、このようなミニポート ドライバーも指定する必要あります**NdisWWDIXEthernetFrames**いずれにもヘッダーの形式には、この形式を選択したプロトコルがバインドされているし、ミニポート ドライバーは、NIC のネイティブのヘッダーの形式も提供できます。 既存の LAN ベースのプロトコルをサポートするには、ドライバー開発者はワイヤレス NIC のネイティブのヘッダーの形式と既存のプロトコルで認識される形式にメディア固有の情報に「変換」する NDIS 中間ドライバーを提供できます。
+ワイヤレス WAN NIC ドライバーは、メディアの種類を**NdisMediumWirelessWan**として報告する必要があります。 ただし、このようなミニポートドライバーは、この形式を選択する任意のバインドされたプロトコルに**NdisWWDIXEthernetFrames** header 形式を提供する必要があります。また、ミニポートドライバーも、NIC のネイティブヘッダー形式を提供できます。 既存の LAN ベースのプロトコルをサポートするために、ドライバーライターは、ワイヤレス NIC のネイティブヘッダー形式と中程度の情報を既存のプロトコルによって認識される形式に "変換" する NDIS 中間ドライバーを提供できます。
 
-基になるミニポート ドライバーに返された場合**NULL**このクエリのかどうか、実験的なメディアを使用して、ドライバーを示す必要がありますまたは受信[NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))します。
+基になるミニポートドライバーがこのクエリに対して**NULL**を返した場合、または実験的なメディアの種類が使用されている場合は、ドライバーで Receive with [NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))を指定する必要があります。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_UICC_FILE_STATUS
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d0d247384205d1d439e77bf86224ece343ce9c17
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 2e31b0892ca40b93738a35500f9aac423e25533f
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843769"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917658"
 ---
 # <a name="oid_wwan_uicc_file_status"></a>OID_WWAN_UICC_FILE_STATUS
 
@@ -27,14 +27,11 @@ Set 要求は適用できません。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1903 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1903**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-[MB UICC アプリケーションとファイルシステムアクセス](mb-uicc-application-and-file-system-access.md)
+[MB UICC アプリケーションとファイル システム アクセス](mb-uicc-application-and-file-system-access.md)
 
 [NDIS_STATUS_WWAN_UICC_UICC_FILE_STATUS](ndis-status-wwan-uicc-file-status.md)
 

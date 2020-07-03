@@ -1,24 +1,24 @@
 ---
 title: WDI_TLV_LCI_REPORT_BODY
-description: WDI_TLV_LCI_REPORT_BODY では、細かいタイミング Measuremement (FTM) 要求の場所の構成レポート (LCI) を含む TLV です。
+description: WDI_TLV_LCI_REPORT_BODY は、細かなタイミング測定 (FTM) 要求の場所の構成レポート (LCI) を含む TLV です。
 ms.assetid: D80AB500-0B4F-47AC-ADF7-DDB5635FF1F2
 ms.date: 02/15/2019
 keywords:
-- WDI_TLV_LCI_REPORT_BODY ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_LCI_REPORT_BODY
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6d92d7859feeac6e27efacab4574968369737bb1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6197c77ce1c54ba0038ff198828f595ebf4ab12c
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63390957"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916109"
 ---
-# <a name="wditlvlcireportbody"></a>WDI_TLV_LCI_REPORT_BODY
+# <a name="wdi_tlv_lci_report_body"></a>WDI_TLV_LCI_REPORT_BODY
 
-**WDI_TLV_LCI_REPORT_BODY**細かいタイミング Measuremement (FTM) 要求の場所の構成レポート (LCI) を含む TLV は、します。
+**WDI_TLV_LCI_REPORT_BODY**は、細かなタイミング測定 (FTM) 要求の場所の構成レポート (lci) を含む TLV です。
 
-この TLV がで使用される[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)します。
+この TLV は[WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md)で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -26,18 +26,14 @@ ms.locfileid: "63390957"
 
 ## <a name="length"></a>長さ
 
-UINT8 の要素の配列のサイズをバイト単位で。 配列には、1 つ以上の要素を含める必要があります。
+UINT8 要素の配列のサイズ (バイト単位)。 配列には1つ以上の要素が含まれている必要があります。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | 説明 |
 | --- | --- |
-| UINT8[] | LCI レポートします。 |
+| UINT8 [] | LCI レポート。 |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: windows 10、バージョン1903の**サポートされている最小サーバー**: windows server 2016**ヘッダー**: Wditypes

@@ -6,21 +6,18 @@ keywords:
 - OID_GEN_CO_RCV_PDUS_NO_BUFFER
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 857666bedebdd6067031c4591b5bcb4c50a1b7ea
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 15c5e43229af84cab175d80d0e33c47d8bc6daf1
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386251"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916369"
 ---
-# <a name="oidgencorcvpdusnobuffer"></a>OID_GEN_CO_RCV_PDUS_NO_BUFFER
+# <a name="oid_gen_co_rcv_pdus_no_buffer"></a>OID_GEN_CO_RCV_PDUS_NO_BUFFER
 
-OID_GEN_CO_RCV_PDUS_NO_BUFFER OID は、受信バッファー領域の不足 NIC の NIC を受信できません。 Pdu の数を指定します。 正確な数を指定するには、代わりには、一部の Nic は、このような問題のために少なくとも 1 つの PDU をしなかったが回数の合計のみで提供します。
+OID_GEN_CO_RCV_PDUS_NO_BUFFER OID は、nic 受信バッファー領域が不足しているために NIC が受信できなかった Pdu の数を指定します。 正確な数を指定する代わりに、Nic によっては、少なくとも1つの PDU が不足している回数のみが提供されます。これは、このような問題が原因です。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

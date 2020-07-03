@@ -6,21 +6,18 @@ keywords:
 - OID_CO_GET_CALL_INFORMATION
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 02597b0d40ae41dd83b57c79557f4f2cf184a541
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 636cc4b6843254a637948aac135905702e3c9f29
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363274"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917736"
 ---
-# <a name="oidcogetcallinformation"></a>OID_CO_GET_CALL_INFORMATION
+# <a name="oid_co_get_call_information"></a>OID_CO_GET_CALL_INFORMATION
 
-OID_CO_GET_CALL_INFORMATION OID は、将来使用するために予約されています。
+OID_CO_GET_CALL_INFORMATION OID は将来使用するために予約されています。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

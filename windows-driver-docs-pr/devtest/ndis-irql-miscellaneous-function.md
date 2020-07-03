@@ -1,10 +1,10 @@
 ---
-title: Irql\_その他の\_関数規則 (ndis)
-description: Irql\_その他の\_関数規則は、正しい IRQL レベルで NDIS 関数を呼び出す必要があることを指定します。
+title: Irql の \_ その他の \_ 関数規則 (ndis)
+description: Irql の \_ その他の関数の規則は、 \_ 正しい irql レベルで NDIS 関数を呼び出す必要があることを指定します。
 ms.assetid: ae1d0243-1db9-428f-a112-f438e2322ff2
 ms.date: 05/21/2018
 keywords:
-- Irql_Miscellaneous_Function rule (ndis)
+- Irql_Miscellaneous_Function 規則 (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,74 +12,72 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: a5c23e6b01b65a6d8c1fe1dced6456993751e795
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 29447d9125eddb33f4ed497ac56ebe504527b3f7
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916529"
 ---
-# <a name="irql_miscellaneous_function-rule-ndis"></a>Irql\_その他の\_関数規則 (ndis)
+# <a name="irql_miscellaneous_function-rule-ndis"></a>Irql の \_ その他の \_ 関数規則 (ndis)
 
 
-Irql\_その他の\_関数規則は、正しい IRQL レベルで NDIS 関数を呼び出す必要があることを指定します。
+Irql の \_ その他の関数の規則は、 \_ 正しい irql レベルで NDIS 関数を呼び出す必要があることを指定します。
 
 このルールは、次の機能を検証します。
 
-**KeGetCurrentProcessorNumber**
-**NdisAllocateFromNPagedLookasideList**
-**NdisAllocateGenericObject**
-**NdisAllocateIoWorkItem**
-**NdisAllocateMemoryWithTagPriority**
-**NdisAnsiStringToUnicodeString**
-**NdisCloseConfiguration**
-**NdisCloseFile**
-**NdisDeleteNPagedLookasideList**
-**NdisDeregisterDeviceEx**
-**NdisEqualMemory**
-**NdisEqualUnicodeString**
-**NdisFreeGenericObject**
-**NdisFreeIoWorkItem**
-**NdisFreeMemory**
-**NdisFreeSpinLock**
-**NdisFreeString**
-**NdisFreeToNPagedLookasideList**
-**NdisGeneratePartialCancelId**
-**NdisGetCurrentProcessorCounts**
-**NdisGetDriverHandle**
-**NdisGetRoutineAddress**
-**NdisGetSharedDataAlignment**
-**NdisGetVersion**
-**NdisInitAnsiString**
-**NdisInitializeListHead**
-**NdisInitializeNPagedLookasideList**
-**NdisInitializeSListHead**
-**NdisInitializeString**
-**NdisInitUnicodeString**
-**NdisMapFile**
-**NdisOpenConfigurationEx**
-**NdisOpenConfigurationKeyByIndex**
-**NdisOpenConfigurationKeyByName**
-**NdisOpenFile**
-**NdisQueryAdapterInstanceName**
-**NdisQueryDepthSList**
-**NdisQueueIoWorkItem**
-**NdisReadConfiguration**
-**NdisReadNetworkAddress**
-**NdisReEnumerateProtocolBindings**
-**NdisSetOptionalHandlers**
-**NdisSystemProcessorCount**
-**NdisUnicodeStringToAnsiString**
-**NdisUnmapFile**
-**NdisUpcaseUnicodeString**
-**NdisWaitEvent**
-**NdisWriteConfiguration**
-**NdisWriteErrorLogEntry**
+**Kegetcurrentprocessornumber** 
+**NdisAllocateFromNPagedLookasideList** 
+**NdisAllocateGenericObject** 
+**NdisAllocateIoWorkItem** 
+**NdisAllocateMemoryWithTagPriority** 
+**NdisAnsiStringToUnicodeString** 
+**NdisCloseConfiguration** 
+**NdisCloseFile** 
+**NdisDeleteNPagedLookasideList** 
+**NdisDeregisterDeviceEx** 
+**NdisEqualMemory** 
+**NdisEqualUnicodeString** 
+**NdisFreeGenericObject** 
+**NdisFreeIoWorkItem** 
+**NdisFreeMemory** 
+**NdisFreeSpinLock** 
+**NdisFreeString** 
+**NdisFreeToNPagedLookasideList** 
+**NdisGeneratePartialCancelId** 
+**NdisGetCurrentProcessorCounts** 
+**NdisGetDriverHandle** 
+**NdisGetRoutineAddress** 
+**NdisGetSharedDataAlignment** 
+**NdisGetVersion** 
+**NdisInitAnsiString** 
+**NdisInitializeListHead** 
+**NdisInitializeNPagedLookasideList** 
+**NdisInitializeSListHead** 
+**NdisInitializeString** 
+**NdisInitUnicodeString** 
+**NdisMapFile** 
+**NdisOpenConfigurationEx** 
+**NdisOpenConfigurationKeyByIndex** 
+**NdisOpenConfigurationKeyByName** 
+**NdisOpenFile** 
+**NdisQueryAdapterInstanceName** 
+**NdisQueryDepthSList** 
+**NdisQueueIoWorkItem** 
+**NdisReadConfiguration** 
+**NdisReadNetworkAddress** 
+**NdisReEnumerateProtocolBindings** 
+**NdisSetOptionalHandlers** 
+**NdisSystemProcessorCount** 
+**NdisUnicodeStringToAnsiString** 
+**NdisUnmapFile** 
+**NdisUpcaseUnicodeString** 
+**NdisWaitEvent** 
+**NdisWriteConfiguration** 
+**NdisWriteErrorLogEntry** 
 **NdisWriteEventLogEntry**
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -98,7 +96,7 @@ Irql\_その他の\_関数規則は、正しい IRQL レベルで NDIS 関数を
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Irql_Miscellaneous_Function</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>

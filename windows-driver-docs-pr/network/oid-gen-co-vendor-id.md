@@ -6,25 +6,22 @@ keywords:
 - OID_GEN_CO_VENDOR_ID
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47e03f2ae75759b27d09d33edcc463fa6de7097a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: eb4c51320642946d336a806d553cffa33f5fc5d4
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355714"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917020"
 ---
-# <a name="oidgencovendorid"></a>OID_GEN_CO_VENDOR_ID
+# <a name="oid_gen_co_vendor_id"></a>OID_GEN_CO_VENDOR_ID
 
-仕入先が特定の NIC を識別するために代入する 1 バイトの後に、3 バイト IEEE に登録されたベンダー コード
+IEEE に登録された3バイトのベンダーコード。その後に、ベンダーが特定の NIC を識別するために割り当てる1バイトが続きます。
 
-IEEE コードは一意にベンダーを識別し、NIC のハードウェア アドレスの先頭に表示される 3 つのバイト数と同じです。
+IEEE コードはベンダーを一意に識別し、NIC ハードウェアアドレスの先頭に表示される3バイトと同じです。
 
-ベンダーは、IEEE 登録コードなしでは、値 0 xffffff を使用してください。
+IEEE に登録されたコードのないベンダーは、値0xFFFFFF を使用する必要があります。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

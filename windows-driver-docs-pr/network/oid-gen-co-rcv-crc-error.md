@@ -6,21 +6,18 @@ keywords:
 - OID_GEN_CO_RCV_CRC_ERROR
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d02a7f91de56a45159e35214a53a4f3b5868a28b
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: b81f5ca0a99a67cbbba36d03cc72384a40d1f7b7
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56582050"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917492"
 ---
-# <a name="oidgencorcvcrcerror"></a>OID_GEN_CO_RCV_CRC_ERROR
+# <a name="oid_gen_co_rcv_crc_error"></a>OID_GEN_CO_RCV_CRC_ERROR
 
-OID_GEN_CO_RCV_CRC_ERROR OID は、Pdu の巡回冗長と受信の数 (CRC) エラーを確認するを指定します。
+OID_GEN_CO_RCV_CRC_ERROR OID は、巡回冗長検査 (CRC) エラーで受信した Pdu の数を指定します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

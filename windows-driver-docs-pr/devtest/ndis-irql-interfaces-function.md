@@ -1,10 +1,10 @@
 ---
-title: Irql\_インターフェイス\_関数規則 (ndis)
-description: Irql\_インターフェイス\_関数規則は、NDIS ネットワークインターフェイス関数を正しい IRQL レベルで呼び出す必要があることを指定します。
+title: Irql \_ インターフェイス \_ 関数ルール (ndis)
+description: Irql \_ interface \_ 関数ルールは、NDIS ネットワークインターフェイス関数を正しい Irql レベルで呼び出す必要があることを指定します。
 ms.assetid: cea79975-4b14-4c7e-acfe-0bb10679e25b
 ms.date: 05/21/2018
 keywords:
-- Irql_Interfaces_Function rule (ndis)
+- Irql_Interfaces_Function 規則 (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,35 +12,33 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b853ae10b54423b1ad6f3076a9cea64044d9801
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 55ddadc4542085791cef9ce3a7e021fb87188b82
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840111"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916465"
 ---
-# <a name="irql_interfaces_function-rule-ndis"></a>Irql\_インターフェイス\_関数規則 (ndis)
+# <a name="irql_interfaces_function-rule-ndis"></a>Irql \_ インターフェイス \_ 関数ルール (ndis)
 
 
-Irql\_インターフェイス\_関数規則は、NDIS ネットワークインターフェイス関数を正しい IRQL レベルで呼び出す必要があることを指定します。
+Irql \_ interface \_ 関数ルールは、NDIS ネットワークインターフェイス関数を正しい Irql レベルで呼び出す必要があることを指定します。
 
 このルールは、次の NDIS ネットワークインターフェイス機能を検証します。
 
-**NdisIfAddIfStackEntry**
-**NdisIfAllocateNetLuidIndex**
-**NdisIfDeleteIfStackEntry**
-**NdisIfDeregisterInterface**
-**NdisIfDeregisterProvider**
-**NdisIfFreeNetLuidIndex**
-**NdisIfGetInterfaceIndexFromNetLuid**
-**NdisIfGetNetLuidFromInterfaceIndex**
-**NdisIfQueryBindingIfIndex**
-**NdisIfRegisterInterface**
+**NdisIfAddIfStackEntry** 
+**NdisIfAllocateNetLuidIndex** 
+**NdisIfDeleteIfStackEntry** 
+**NdisIfDeregisterInterface** 
+**NdisIfDeregisterProvider** 
+**NdisIfFreeNetLuidIndex** 
+**NdisIfGetInterfaceIndexFromNetLuid** 
+**NdisIfGetNetLuidFromInterfaceIndex** 
+**NdisIfQueryBindingIfIndex** 
+**NdisIfRegisterInterface** 
 **NdisIfRegisterProvider**
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -59,7 +57,7 @@ Irql\_インターフェイス\_関数規則は、NDIS ネットワークイン�
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>Irql_Interfaces_Function</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
@@ -71,16 +69,16 @@ Irql\_インターフェイス\_関数規則は、NDIS ネットワークイン�
 <a name="applies-to"></a>適用対象
 ----------
 
-[**NdisIfAddIfStackEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifaddifstackentry)
-[**NdisIfAllocateNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifallocatenetluidindex)
-[**NdisIfDeleteIfStackEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifdeleteifstackentry)
-[**NdisIfDeregisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifderegisterinterface)
-[**NdisIfDeregisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifderegisterprovider)
-[**NdisIfFreeNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiffreenetluidindex)
-[**NdisIfGetInterfaceIndexFromNetLuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifgetinterfaceindexfromnetluid)
-[**NdisIfGetNetLuidFromInterfaceIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifgetnetluidfrominterfaceindex)
-[**NdisIfQueryBindingIfIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifquerybindingifindex)
-[**NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface)
+[**NdisIfAddIfStackEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifaddifstackentry) 
+[**NdisIfAllocateNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifallocatenetluidindex) 
+[**NdisIfDeleteIfStackEntry**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifdeleteifstackentry) 
+[**NdisIfDeregisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifderegisterinterface) 
+[**NdisIfDeregisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifderegisterprovider) 
+[**NdisIfFreeNetLuidIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisiffreenetluidindex) 
+[**NdisIfGetInterfaceIndexFromNetLuid**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifgetinterfaceindexfromnetluid) 
+[**NdisIfGetNetLuidFromInterfaceIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifgetnetluidfrominterfaceindex) 
+[**NdisIfQueryBindingIfIndex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifquerybindingifindex) 
+[**NdisIfRegisterInterface**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterinterface) 
 [**NdisIfRegisterProvider**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisifregisterprovider)
 
 

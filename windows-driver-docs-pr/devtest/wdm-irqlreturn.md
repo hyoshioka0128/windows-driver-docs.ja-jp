@@ -1,6 +1,6 @@
 ---
 title: IrqlReturn ルール (wdm)
-description: IrqlReturn ルールでは、ドライバーのディスパッチ ルーチンが呼び出される位置同じ IRQL で返すことを指定します。
+description: IrqlReturn ルールでは、ドライバーのディスパッチルーチンが、呼び出されたときと同じ IRQL で返されることを指定します。
 ms.assetid: 1b2ef432-e3ba-4a01-b3df-839ff13b03f6
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a7f5eba63151d34cc7be283c505369f41c7f5d
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 6714b3994f5a6b56e62a3941d5fd337547961372
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392062"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917814"
 ---
 # <a name="irqlreturn-rule-wdm"></a>IrqlReturn ルール (wdm)
 
 
-**IrqlReturn**ルールでは、ドライバーのディスパッチ ルーチンが呼び出される位置同じ IRQL で返すことを指定します。 ルーチンは正しくするディスパッチで呼び出される Irql の詳細については、次を参照してください。 [**ディスパッチ ルーチンは、Irql します。** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatch-routines-and-irqls)
+**Irqlreturn**ルールでは、ドライバーのディスパッチルーチンが、呼び出されたときと同じ IRQL で返されることを指定します。 ディスパッチルーチンが適切に呼び出される IRQLs の詳細については、「 [**ディスパッチルーチンと IRQLs** 」を参照してください。](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatch-routines-and-irqls)
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | WDM |
+**ドライバーモデル: WDM**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -42,22 +40,22 @@ ms.locfileid: "67392062"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>IrqlReturn</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>irqlreturn</strong>ルールを指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
 
-<a name="see-also"></a>関連項目
+<a name="see-also"></a>こちらもご覧ください
 --------
 
-[**ディスパッチ ルーチンは、Irql**](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatch-routines-and-irqls)
+[**ディスパッチ ルーチンと IRQL**](https://docs.microsoft.com/windows-hardware/drivers/kernel/dispatch-routines-and-irqls)
  
 
  

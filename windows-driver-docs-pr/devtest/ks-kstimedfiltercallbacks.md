@@ -1,10 +1,10 @@
 ---
-title: KsTimedFilterCallbacks ルール)
-description: KsTimedFilterCallbacks ルールでは、カーネル ストリーミング (KS) ミニポート ドライバーが 500 ミリ秒以内で、フィルターのコールバック関数から返すことを指定します。
+title: KsTimedFilterCallbacks rule ()
+description: KsTimedFilterCallbacks ルールは、カーネルストリーミング (KS) ミニポートドライバーが500ミリ秒以内にフィルターコールバック関数から戻ることを指定します。
 ms.assetid: 5F631D49-405F-4F1A-A280-FEFB4ADA460D
 ms.date: 05/21/2018
 keywords:
-- KsTimedFilterCallbacks ルール)
+- KsTimedFilterCallbacks rule ()
 topic_type:
 - apiref
 api_name:
@@ -12,25 +12,23 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9255f964f50bdab14bc8791eea3f25536703e22f
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: bda8ca202949784cbe4d870abda60a0ce787c003
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392726"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917109"
 ---
-# <a name="kstimedfiltercallbacks-rule-"></a>KsTimedFilterCallbacks ルール)
+# <a name="kstimedfiltercallbacks-rule-"></a>KsTimedFilterCallbacks rule ()
 
 
-KsTimedFilterCallbacks ルールでは、カーネル ストリーミング (KS) ミニポート ドライバーが 500 ミリ秒以内で、フィルターのコールバック関数から返すことを指定します。
+KsTimedFilterCallbacks ルールは、カーネルストリーミング (KS) ミニポートドライバーが500ミリ秒以内にフィルターコールバック関数から戻ることを指定します。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | KS  |
+**ドライバーモデル: KS**
 
 |                                   |                                                                                                                                       |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグ チェック 0xC4 の。ドライバー\_VERIFIER\_検出\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation) (0x00082003) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00082003) |
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -41,15 +39,15 @@ KsTimedFilterCallbacks ルールでは、カーネル ストリーミング (KS)
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">実行時に</th>
+<th align="left">実行時</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>このルールを確認するには、コマンド プロンプト ウィンドウを開きます。 Driver Verifier のコマンドを入力し、指定<strong>/domain ks</strong>します。</p>
-<p>次に、例を示します。</p>
-<p><strong>verifier /domain ks</strong> [<em>options</em>] <strong>/driver</strong> <em>&lt;yourdriver&gt;</em></p>
-<p>詳細については、次を参照してください。 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>します。</p></td>
+<td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 ドライバー検証ツールコマンドを入力し、「 <strong>/domain ks</strong>」と指定します。</p>
+<p>たとえば、次のように入力します。</p>
+<p><strong>verifier/domain ks</strong> [<em>オプション</em>] <strong>/driver</strong> <em> &lt; ドライバー &gt; </em>の設定</p>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>

@@ -6,18 +6,18 @@ keywords:
 - OID_CO_TAPI_ADDRESS_CAPS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 136a7b1a892e817cff0c6acd1a5a13fd01624c87
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 38825b1c6bb8e5e95e48a332dc68c5c71ae94e31
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916804"
 ---
-# <a name="oidcotapiaddresscaps"></a>OID_CO_TAPI_ADDRESS_CAPS
+# <a name="oid_co_tapi_address_caps"></a>OID_CO_TAPI_ADDRESS_CAPS
 
-OID_CO_TAPI_ADDRESS_CAPS OID を特定の行で指定されたアドレスのテレフォニー機能を返すには、コール マネージャーまたは統合ミニポート コール マネージャー (MCM) ドライバーを要求します。
+OID_CO_TAPI_ADDRESS_CAPS OID は、指定された行の指定されたアドレスのテレフォニー機能を返すために、呼び出しマネージャーまたは integrated ミニポート呼び出しマネージャー (MCM) ドライバーを要求します。
 
-この要求は、次のように定義されている CO_TAPI_ADDRESS_CAPS 構造体を使用します。
+この要求では、次のように定義されている CO_TAPI_ADDRESS_CAPS 構造を使用します。
 
 ```c++
 typedef struct _CO_TAPI_ADDRESS_CAPS {
@@ -28,34 +28,31 @@ typedef struct _CO_TAPI_ADDRESS_CAPS {
 } CO_TAPI_ADDRESS_CAPS, *PCO_TAPI_ADDRESS_CAPS;
 ``` 
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **ulLineID**  
-指定されたアドレスが配置されている行の 0 から始まる行識別子を指定します。
+指定したアドレスが配置されている行の0から始まる行識別子を指定します。
 
 **ulAddressID**  
-機能が返される行の 0 から始まるアドレスの識別子を指定します。
+機能を返す行の0から始まるアドレス識別子を指定します。
 
 **ulFlags**  
-これらのフラグが予約されています。
+これらのフラグは予約されています。
 
 **LineAddressCaps**  
-LINE_ADDRESS_CAPS 構造として書式設定された、アドレスのテレフォニー機能を指定します。 この構造体の詳細については、Microsoft Windows SDK と ndistapi.h ヘッダー ファイルを参照してください。
+LINE_ADDRESS_CAPS 構造として書式設定された、アドレスのテレフォニー機能を指定します。 この構造体の詳細については、Microsoft Windows SDK と ndistapi .h のヘッダーファイルを参照してください。
 
 ## <a name="remarks"></a>注釈
 
-コール マネージャーのまたは MCM ドライバーのデバイスの行の機能を照会した[OID_CO_TAPI_LINE_CAPS](oid-co-tapi-line-caps.md)、接続指向のクライアントは、各行のアドレスの機能を次のようにクエリします。
+[OID_CO_TAPI_LINE_CAPS](oid-co-tapi-line-caps.md)を使用して call manager または mcm ドライバーのデバイスの回線機能に対してクエリを実行すると、接続指向クライアントは次のように、各行のアドレスの機能に対してクエリを実行します。
 
-- クライアントはすべての機能を決定する OID_CO_TAPI_ADDRESS_CAPS 1 回照会 OID_CO_TAPI_LINE_CAPS の前のクエリに行が 1 つのアドレスをサポートするか、行のすべてのアドレスが同じアドレス機能を備えている、指定した場合、行のアドレス。 この場合、コール マネージャーによって返されるアドレス機能または MCM ドライバーは、行のすべてのアドレスに適用されます。
+- OID_CO_TAPI_LINE_CAPS の前のクエリで、回線が1つのアドレスだけをサポートしていること、または行のすべてのアドレスが同じアドレス機能を持つことが示された場合、クライアントは、行のすべてのアドレスの機能を確認するために1回 OID_CO_TAPI_ADDRESS_CAPS をクエリします。 この場合、呼び出しマネージャーまたは MCM ドライバーによって返されるアドレス機能は、行のすべてのアドレスに適用されます。
 
-- 行は、複数の異なる機能を備えた複数のアドレスをサポートする場合、クライアントにクエリを OID_CO_TAPI_ADDRESS_CAPS 1 回、行の各アドレス。 この場合、コール マネージャーによって返されるアドレス機能または MCM のドライバーが特定の行で指定されたアドレスに適用されます。
+- 機能が異なる複数のアドレスが回線でサポートされている場合、クライアントは行の各アドレスに対して1回ずつ OID_CO_TAPI_ADDRESS_CAPS クエリを実行します。 この場合、呼び出しマネージャーまたは MCM ドライバーによって返されるアドレス機能は、指定された行の指定したアドレスに適用されます。
 
-指定されたアドレスのアドレスの機能を返します、コール マネージャーまたは MCM ドライバー **LineAddressCaps**します。
+呼び出しマネージャーまたは MCM ドライバーは、 **Lineaddresscaps**内の指定されたアドレスのアドレス機能を返します。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

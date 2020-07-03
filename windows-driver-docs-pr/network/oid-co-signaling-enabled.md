@@ -6,21 +6,18 @@ keywords:
 - OID_CO_SIGNALING_ENABLED
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 96da64c9c5a0dbc349ee0217a3a8e5546315093e
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43708611612409d58219e6ec654c10571412c979
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63363269"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917734"
 ---
-# <a name="oidcosignalingenabled"></a>OID_CO_SIGNALING_ENABLED
+# <a name="oid_co_signaling_enabled"></a>OID_CO_SIGNALING_ENABLED
 
-OID_CO_SIGNALING_ENABLED OID は、呼び出しを行い、着信呼び出しをディスパッチする準備ができたことを示すためにコール マネージャーによって送信されます。 コール マネージャーは、この OID をコール マネージャーで開き、アドレス ファミリを持つ各クライアントに送信します。
+OID_CO_SIGNALING_ENABLED OID は呼び出しマネージャーによって送信され、呼び出しを行い、着信呼び出しをディスパッチする準備ができていることを示します。 呼び出しマネージャーは、アドレスファミリが呼び出しマネージャーで開かれている各クライアントにこの OID を送信します。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

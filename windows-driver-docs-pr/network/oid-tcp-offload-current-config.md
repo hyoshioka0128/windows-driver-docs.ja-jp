@@ -6,12 +6,12 @@ keywords:
 - OID_TCP_OFFLOAD_CURRENT_CONFIG、wdk Oid、WDK ネットワークオブジェクト識別子、WDK ネットワーク Oid
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c5db248e281e0c51b0760e60169d6344df4dfb14
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6a9083238d253e4bd9c37c75e0a692766536e98a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843905"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917644"
 ---
 # <a name="oid_tcp_offload_current_config"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -37,7 +37,7 @@ OID_TCP_OFFLOAD_CURRENT_CONFIG に応答して、前の一覧の構造体の**�
 
 ミニポートドライバーは、初期化中にすべてのタスクオフロード機能を自動的に有効にする必要があります。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>こちらもご覧ください
 
 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)  
@@ -48,8 +48,5 @@ OID_TCP_OFFLOAD_CURRENT_CONFIG に応答して、前の一覧の構造体の**�
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

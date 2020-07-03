@@ -1,6 +1,6 @@
 ---
 title: IrqlExAllocatePool ルール (wdm)
-description: IrqlExAllocatePool 規則は、ドライバーが IRQL ディスパッチ\_レベルで実行されている場合にのみ、ExAllocatePoolWithTag と ExAllocatePoolWithTagPriority を呼び出すように指定します。
+description: IrqlExAllocatePool 規則は、IRQL ディスパッチレベルで実行されている場合にのみ、ドライバーが ExAllocatePoolWithTag と ExAllocatePoolWithTagPriority を呼び出すように指定し \_ ます。
 ms.assetid: 0bb179c5-e76b-46bc-b497-8639328d2eb2
 ms.date: 05/21/2018
 keywords:
@@ -12,32 +12,30 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb05a4f598fd2c910b3e25d1f4b025b61672ab0
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: bb821492a7f30f32a5394d6e0fd09c25b60aac99
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839935"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916848"
 ---
 # <a name="irqlexallocatepool-rule-wdm"></a>IrqlExAllocatePool ルール (wdm)
 
 
-**IrqlExAllocatePool**規則は、IRQL&lt;= DISPATCH\_レベルで実行されている場合にのみ、ドライバーが[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)と[**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)を呼び出すように指定します。
+**IrqlExAllocatePool**規則は、IRQL = ディスパッチレベルで実行されている場合にのみ、ドライバーが[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)と[**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)を呼び出すように指定し &lt; \_ ます。
 
-ディスパッチ\_レベルで実行している呼び出し元は、 *Pooltype*に対して非ページ*Xxx*値を指定する必要があります。 IRQL &lt;= APC\_レベルで実行されている呼び出し元は、任意の[**プール\_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)の値を指定できます。
+ディスパッチレベルで実行している呼び出し元は、 \_ *pooltype*に対して非ページ*Xxx*値を指定する必要があります。 IRQL = APC レベルで実行されている呼び出し元は &lt; \_ 、任意の[**プールの \_ 種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ne-wdm-_pool_type)の値を指定できます。
 
-|              |     |
-|--------------|-----|
-| ドライバー モデル | WDM |
+**ドライバーモデル: WDM**
 
 |                                   |                                                                                                                                                                                                                                        |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー\_VERIFIER\_検出された\_違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00020004)、 [**バグチェックの 0xa: IRQL\_\_より少ない\_または\_** ](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal) |
+| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツールで \_ 検出された \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0X00020004)、 [**バグチェックの 0xa: IRQL が \_ 少ない、 \_ \_ または \_ 等しい**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal) |
 
 <a name="example"></a>例
 -------
 
-次の例では、 [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)ルーチンの後に[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)ルーチンが呼び出されます。これにより、IRQL が\_レベルにディスパッチされます。 **Exallocatepoolwithtag**ルーチンは、規則に違反する**PagedPool**を使用して呼び出されます。
+次の例では、 [**KeAcquireSpinLock**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-keacquirespinlock)ルーチンの後に、IRQL をディスパッチレベルに設定する[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)ルーチンが呼び出され \_ ます。 **Exallocatepoolwithtag**ルーチンは、規則に違反する**PagedPool**を使用して呼び出されます。
 
 ```ManagedCPlusPlus
 NTSTATUS
@@ -110,7 +108,7 @@ ProcessRequest (
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>IrqlExAllocatePool</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
@@ -140,12 +138,12 @@ ProcessRequest (
 <a name="applies-to"></a>適用対象
 ----------
 
-[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag)
-[**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)も参照してください
+[**Exallocatepoolwithtag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtag) 
+[**Exallocatepoolwithtagpriority**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithtagpriority)関連項目
 --------
 
-[](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities) [**スピンロックの使用中に発生するエラーとデッドロックを防ぐ**
-ハードウェアの優先順位を管理する](https://docs.microsoft.com/windows-hardware/drivers/kernel/preventing-errors-and-deadlocks-while-using-spin-locks)
+[**ハードウェアの優先順位**](https://docs.microsoft.com/windows-hardware/drivers/kernel/managing-hardware-priorities) 
+ の管理[**スピンロックを使用しているときのエラーとデッドロックの防止**](https://docs.microsoft.com/windows-hardware/drivers/kernel/preventing-errors-and-deadlocks-while-using-spin-locks)
  
 
  

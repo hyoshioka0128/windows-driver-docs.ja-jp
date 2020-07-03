@@ -6,21 +6,18 @@ keywords:
 - OID_802_3_XMIT_MAX_COLLISIONS
 ms.date: 11/01/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 083ab911dfd48b859aba3b473a89b92b895768a4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d02ee67836e4e468e0a396f251fe7015bec1124a
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359274"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916402"
 ---
-# <a name="oid8023xmitmaxcollisions"></a>OID_802_3_XMIT_MAX_COLLISIONS
+# <a name="oid_802_3_xmit_max_collisions"></a>OID_802_3_XMIT_MAX_COLLISIONS
 
-過剰な衝突により送信されなかったフレームの数。
+過剰な衝突が原因で送信されなかったフレームの数。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

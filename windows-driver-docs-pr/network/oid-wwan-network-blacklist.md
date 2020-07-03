@@ -5,12 +5,12 @@ ms.assetid: CD5F0913-73E4-4A04-BB56-76A59D886FF1
 ms.date: 08/21/2018
 keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_NETWORK_BLACKLIST
 ms.localizationpriority: medium
-ms.openlocfilehash: 046cd5a65a6dd31dbe91729b1147057551c3e936
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 48948ab939ec6c18e26eea4035f4e1224454290f
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843829"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916875"
 ---
 # <a name="oid_wwan_network_blacklist"></a>OID_WWAN_NETWORK_BLACKLIST
 
@@ -28,14 +28,11 @@ OID_WWAN_NETWORK_BLACKLIST モバイルブロードバンド (MBB) デバイス�
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 Version 1703 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1703**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-[MB ネットワークブラックリスト操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
+[MB ネットワーク ブラックリスト操作](https://docs.microsoft.com/windows-hardware/drivers/network/mb-network-blacklist-operations)
 
 [NDIS_STATUS_WWAN_NETWORK_BLACKLIST](ndis-status-wwan-network-blacklist.md)
 

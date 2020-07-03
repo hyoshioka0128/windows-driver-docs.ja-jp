@@ -1,10 +1,10 @@
 ---
-title: NdisStallExecution\_Delay ルール (ndis)
-description: NdisStallExecution\_Delay ルールでは、50マイクロ秒を超えるマイクロ 2 Stoストールの値を使用して NdisStallExecution を呼び出すことができないことを指定します。
+title: NdisStallExecution \_ Delay ルール (ndis)
+description: NdisStallExecution \_ Delay ルールでは、50マイクロ秒を超えるマイクロ秒 Sto失速の値を使用して NdisStallExecution を呼び出さないことを指定します。
 ms.assetid: 4c9368d0-4da7-4adc-bc63-4f21af90b682
 ms.date: 05/21/2018
 keywords:
-- NdisStallExecution_Delay rule (ndis)
+- NdisStallExecution_Delay 規則 (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,23 +12,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 78c7831bb4c61d194565aac8c1fece3f5cce540a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b8b50d9603243753016ba98ac7e5bc81d67a91eb
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840081"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917590"
 ---
-# <a name="ndisstallexecution_delay-rule-ndis"></a>NdisStallExecution\_Delay ルール (ndis)
+# <a name="ndisstallexecution_delay-rule-ndis"></a>NdisStallExecution \_ Delay ルール (ndis)
 
 
-NdisStallExecution\_Delay ルールでは、50マイクロ秒を超える*マイクロ 2 Stoストール*の値を使用して**NdisStallExecution**を呼び出すことができないことを指定します。
+NdisStallExecution \_ Delay ルールでは、50マイクロ秒を超える*マイクロ秒 sto失速*の値を使用して**NdisStallExecution**を呼び出さないことを指定します。
 
-|              |      |
-|--------------|------|
-| ドライバーモデル | NDIS |
+**ドライバーモデル: NDIS**
 
-<a name="how-to-test"></a>テストする方法
+<a name="how-to-test"></a>テスト方法
 -----------
 
 <table>
@@ -45,7 +43,7 @@ NdisStallExecution\_Delay ルールでは、50マイクロ秒を超える*マイ
 <td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>NdisStallExecution_Delay</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (ロールの種類の宣言を使用します)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
 <li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>

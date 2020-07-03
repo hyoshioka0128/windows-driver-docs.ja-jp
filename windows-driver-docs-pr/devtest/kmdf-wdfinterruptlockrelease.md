@@ -1,6 +1,6 @@
 ---
 title: WdfInterruptLockRelease ルール (kmdf)
-description: WdfInterruptLockRelease ルールでは、KMDF コールバック ルーチンのバランスの取れた方法で WdfInterruptAcquireLock および WdfInterruptReleaseLock への呼び出しが使用されることを指定します。
+description: WdfInterruptLockRelease 規則は、KMDF コールバックルーチン内で、WdfInterruptAcquireLock と WdfInterruptReleaseLock の呼び出しが均衡の取れた方法で使用されることを指定します。
 ms.assetid: 2cad3811-99c2-4909-bad6-54cab9f006e6
 ms.date: 05/21/2018
 keywords:
@@ -12,21 +12,19 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8daa88e0c20ec1c04a11ccb1b1749edb225a80a5
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 5d4c3e7915a66b1ccd1dd038a4565613225914ac
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392820"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917990"
 ---
 # <a name="wdfinterruptlockrelease-rule-kmdf"></a>WdfInterruptLockRelease ルール (kmdf)
 
 
-**WdfInterruptLockRelease**への呼び出し規則を指定[ **WdfInterruptAcquireLock** ](https://msdn.microsoft.com/library/windows/hardware/ff547340)と[ **WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376) KMDF コールバック ルーチンのバランスの取れた方法で使用されます。 任意の KMDF コールバック ルーチンの末尾には、ドライバー保持しないようにする以前の呼び出しによって取得されたフレームワークのスピン ロック オブジェクト**WdfInterruptAcquireLock**します。
+**WdfInterruptLockRelease**規則は、kmdf コールバックルーチン内で、 [**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)と[**WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376)の呼び出しが均衡の取れた方法で使用されることを指定します。 KMDF コールバックルーチンの最後では、 **WdfInterruptAcquireLock**への以前の呼び出しによって取得されたフレームワークのスピンロックオブジェクトをドライバーが保持することはできません。
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | KMDF |
+**ドライバーモデル: KMDF**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -42,14 +40,14 @@ ms.locfileid: "67392820"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>WdfInterruptLockRelease</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>WdfInterruptLockRelease</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -57,8 +55,8 @@ ms.locfileid: "67392820"
 <a name="applies-to"></a>適用対象
 ----------
 
-[**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340)
-[**WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376)
+[**WdfInterruptAcquireLock**](https://msdn.microsoft.com/library/windows/hardware/ff547340) 
+[ **WdfInterruptReleaseLock**](https://msdn.microsoft.com/library/windows/hardware/ff547376)
  
 
  

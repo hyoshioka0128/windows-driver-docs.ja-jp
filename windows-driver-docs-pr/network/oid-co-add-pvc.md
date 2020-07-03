@@ -6,16 +6,16 @@ keywords:
 - OID_CO_ADD_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cf68553e157aeff5eb840d9d15e083f243b63f
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6a2fe14f72eda2e3da9533e3af7a07068e135bfe
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843269"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916926"
 ---
 # <a name="oid_co_add_pvc"></a>OID_CO_ADD_PVC
 
-OID_CO_ADD_PVC OID は、クライアントから呼び出しマネージャーに送信され、永続的な仮想接続 (PVC) が、構成された Pvc の呼び出しマネージャーの一覧に追加されます。 PVC は、次のように定義された CO_PVC 構造体として書式設定されます。
+OID_CO_ADD_PVC OID は、クライアントから呼び出しマネージャーに送信され、永続的な仮想接続 (PVC) が、構成された Pvc の呼び出しマネージャーの一覧に追加されます。 PVC は、次のように定義された CO_PVC 構造として書式設定されます。
 
 ```c++
 typedef struct _CO_PVC {
@@ -36,8 +36,5 @@ PVC は、管理者によって手動で構成されます。 このようなア
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

@@ -6,18 +6,18 @@ keywords:
 - OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a2aba33822e587782642eb0e58308b57c1d1f9
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 984bda7c7eace1c0999eab3b34a8dff241b9ec16
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67383259"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917529"
 ---
-# <a name="oidcotapigetcalldiagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
+# <a name="oid_co_tapi_get_call_diagnostics"></a>OID_CO_TAPI_GET_CALL_DIAGNOSTICS
 
-OID_CO_TAPI_GET_CALL_DIAGNOSTICS OID は、失敗した呼び出しまたはリモートの TAPI パーティによって破棄呼び出しに関する診断情報を返すには、コール マネージャーまたは MCM のドライバーを要求します。
+OID_CO_TAPI_GET_CALL_DIAGNOSTICS OID は、呼び出しマネージャーまたは MCM ドライバーに対して、失敗した呼び出しまたはリモート TAPI パーティによって破棄された呼び出しに関する診断情報を返すように要求します。
 
-この要求は、次のように定義されている CO_TAPI_CALL_DIAGNOSTICS 構造体を使用します。
+この要求では、次のように定義されている CO_TAPI_CALL_DIAGNOSTICS 構造を使用します。
 
 ```c++
 typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
@@ -28,71 +28,68 @@ typedef struct _CO_TAPI_CALL_DIAGNOSTICS {
 ```
 
 **ulOrigin**  
-LINECALLORIGIN_ 定数は、次の 1 つとして、呼び出しの発信元を指定します。 
+呼び出しの発信先を、次のいずれかの LINECALLORIGIN_ 定数として指定します。 
 
 - **LINECALLORIGIN_OUTBOUND**  
-呼び出しは、発信呼び出しです。
+呼び出しは発信呼び出しです。
 
 - **LINECALLORIGIN_INTERNAL**  
-呼び出しは、受信および内部で (たとえば同じ PBX) で発行されたです。
+この呼び出しは受信され、内部的に発生します (たとえば、同じ PBX で)。
 
-- **LINECALLORIGIN_EXTERNAL**呼び出しが着信し、発行された外部でします。
+- **LINECALLORIGIN_EXTERNAL**呼び出しは受信され、外部から発信されます。
 
 - **LINECALLORIGIN_UNKNOWN**  
-呼び出しでは、受信されます。 原点は、現在既知ではありませんが、後で知られる可能性があります。
+呼び出しは着信です。 その配信元は現在不明ですが、後で認識される可能性があります。
 
 - **LINECALLORIGIN_UNAVAIL**  
-呼び出しでは、受信されます。 原点は、ご利用いただけません、呼ばれることはありません。
+呼び出しは着信です。 そのオリジンは使用できず、知られることもありません。
 
 - **LINECALLORIGIN_CONFERENCE**  
-呼び出しハンドルは--電話会議は、スイッチで会議ブリッジへのアプリケーションの接続です。
+呼び出しハンドルは、会議呼び出し (つまり、アプリケーションからスイッチ内のカンファレンスブリッジへの接続) を対象としています。
 
 **ulReason**  
-LINECALLREASON_ 定数は、次の 1 つとして、呼び出しの理由を指定します。 
+呼び出しの理由を、次のいずれかの LINECALLREASON_ 定数として指定します。 
 
 - **LINECALLREASON_DIRECT**  
-呼び出しは、直接です。
+呼び出しは直接です。
 
 - **LINECALLREASON_FWDBUSY**  
-ビジー状態の拡張機能からの呼び出しが転送されました。
+呼び出しは、ビジー状態の拡張から転送されました。
 
 - **LINECALLREASON_FWDNOANSWER**  
-未回答の拡張機能からいくつかのリングの後に、呼び出しが転送されました。
+この呼び出しは、未回答の拡張機能からいくつかのリングの後に転送されました。
 
 - **LINECALLREASON_FWDUNCOND**  
-呼び出しは、別の数値から無条件で転送されました。
+呼び出しは別の数値から無条件に転送されました。
 
 - **LINECALLREASON_PICKUP**  
-呼び出しは、別の拡張機能から取得されました。
+この呼び出しは別の拡張機能から取得されました。
 
 - **LINECALLREASON_UNPARK**  
-保留中ルーティングの呼び出しと呼び出しが取得されました。
+呼び出しは、保留中の呼び出しとして取得されました。
 
 - **LINECALLREASON_REDIRECT**  
-呼び出しは、このステーションにリダイレクトされました。
+呼び出しがこのステーションにリダイレクトされました。
 
 - **LINECALLREASON_CALLCOMPLETION**  
-呼び出しでは、呼び出しの完了要求の結果はでした。
+呼び出し完了要求の結果でした。
 
 - **LINECALLREASON_TRANSFER**  
-別の番号からの呼び出しが転送されました。 パーティの識別子情報がある可能性があります、呼び出し元であると、通話が転送します。
+呼び出しは別の数値から転送されました。 パーティ id 情報は、呼び出し元がだれであるか、および呼び出しが転送された場所を示している場合があります。
 
 - **LINECALLREASON_REMINDER**  
-呼び出しはアラーム (または「取り消し」) をユーザーが保留されている呼び出しを持つか、可能性のある長時間保留中します。
+この呼び出しは、ユーザーが通話を保留しているか、長時間に及ぶ可能性のあるリマインダー ("リコール") です。
 
 - **LINECALLREASON_UNKNOWN**  
-呼び出しの理由は、現在既知ではありませんが、後で知られる可能性があります。
+この呼び出しの理由は、現在不明ですが、後で認識される可能性があります。
 
 - **LINECALLREASON_UNAVAIL**  
-呼び出しの理由では、ご利用いただけません、後で知られることはできません。
+この呼び出しの理由は使用できず、後で知ることはできません。
 
 **DiagInfo**  
-指定します、 [NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))コール マネージャーまたは MCM ドライバーによって提供されるオプションの診断情報の長さとする、オフセットを含む構造体。 コンテンツと形式の診断情報は、ドライバーが決定します。
+へのオフセット、および呼び出しマネージャーまたは MCM ドライバーによって提供されるオプションの診断情報の長さを含む[NDIS_VAR_DATA_DESC](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff559020(v=vs.85))構造体を指定します。 診断情報の内容と形式は、ドライバーによって決まります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

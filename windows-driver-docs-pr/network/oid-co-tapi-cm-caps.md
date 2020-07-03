@@ -6,18 +6,18 @@ keywords:
 - OID_CO_TAPI_CM_CAPS
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: cc20e53411e46cf75a3e86d44b7f63a4d1f4c24f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: d3260327315567fdab76d57767d2a6247761c3ac
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380710"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917532"
 ---
-# <a name="oidcotapicmcaps"></a>OID_CO_TAPI_CM_CAPS
+# <a name="oid_co_tapi_cm_caps"></a>OID_CO_TAPI_CM_CAPS
 
-OID_CO_TAPI_CM_CAPS OID 要求をそのデバイスでサポートされている行の数を返すには、コール マネージャーまたは統合ミニポート コール マネージャー (MCM) ドライバー (デバイスの管理サービスの呼び出しを提供する)。 この OID は、次の行に複数の異なる行の機能があるかどうかを示すには、コール マネージャーまたは MCM ドライバーも要求します。
+OID_CO_TAPI_CM_CAPS OID は、コールマネージャーまたは統合されたミニポート呼び出しマネージャー (MCM) ドライバーに対して、デバイス (呼び出し管理サービスを提供するデバイス) によってサポートされる行の数を返すように要求します。 また、この OID は呼び出しマネージャーまたは MCM ドライバーに対して、行の機能が異なるかどうかを示すように要求します。
 
-この要求は、次のように定義されている CO_TAPI_CM_CAPS 構造体を使用します。
+この要求では、次のように定義されている CO_TAPI_CM_CAPS 構造を使用します。
 
 ```c++
 typedef struct _CO_TAPI_CM_CAPS {
@@ -27,25 +27,22 @@ typedef struct _CO_TAPI_CM_CAPS {
 } CO_TAPI_CM_CAPS, *PCO_TAPI_CM_CAPS;
 ``` 
 
-この構造体のメンバーには、次の情報が含まれます。
+この構造体のメンバーには、次の情報が含まれています。
 
 **ulCoTapiVersion**  
-コール マネージャーまたは MCM ドライバーによってサポートされている TAPI バージョンを指定します。 コール マネージャーまたは MCM ドライバー設定この CO_TAPI_VERSION します。
+通話マネージャーまたは MCM ドライバーでサポートされている TAPI バージョンを指定します。 呼び出しマネージャーまたは MCM ドライバーは、これを CO_TAPI_VERSION に設定する必要があります。
 
 **ulNumLines**  
-デバイスでサポートされている行の数を指定します。
+デバイスでサポートされる行の数を指定します。
 
 **ulFlags**  
-デバイスが複数の異なる行の機能を備えた複数の行をサポートまたはコール マネージャーまたは MCM のドライバーがビット CO_TAPI_FLAG_PER_LINE_CAPS を設定する場合、これらの行のいずれかのアドレスでは、アドレスの種類の異なる機能があります、 **ulFlags**;それ以外の場合、コール マネージャーまたは MCM ドライバーには、このビットがクリアします。 未定義のすべてのビットは将来使用するために予約されていると、0 に設定する必要があります。
+デバイスで回線機能が異なる複数の行がサポートされている場合、またはこれらの行のアドレスのアドレスが異なる場合、呼び出しマネージャーまたは MCM ドライバーは、 **Ulflags**に CO_TAPI_FLAG_PER_LINE_CAPS ビットを設定します。それ以外の場合、呼び出しマネージャーまたは MCM ドライバーはこのビットをクリアします。 未定義のビットは、将来使用するために予約されており、0に設定する必要があります。
 
 ## <a name="remarks"></a>注釈
 
-接続指向のクライアントでは、この OID から返される情報を使用して、コール マネージャーのまたは MCM ドライバーのデバイスの行の機能をクエリする方法を決定[OID_CO_TAPI_LINE_CAPS](oid-co-tapi-line-caps.md)します。
+接続指向クライアントは、この OID から返された情報を使用して、呼び出しマネージャーまたは MCM ドライバーのデバイスのライン機能を[OID_CO_TAPI_LINE_CAPS](oid-co-tapi-line-caps.md)で照会する方法を決定します。
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

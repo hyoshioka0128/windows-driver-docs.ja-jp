@@ -6,16 +6,16 @@ keywords:
 - OID_CO_DELETE_PVC
 ms.date: 11/03/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 01098387d069bf42f92fb8e5c028f18e8c9689ef
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 5d8ed8fffe832602672e803170e80fc68073449f
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843265"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917738"
 ---
 # <a name="oid_co_delete_pvc"></a>OID_CO_DELETE_PVC
 
-OID_CO_DELETE_PVC OID は、構成された Pvc の呼び出しマネージャーの一覧から永続的な仮想接続 (PVC) を削除するために、クライアントから呼び出しマネージャーに送信されます。 PVC は、次のように定義された CO_PVC 構造体として書式設定されます。
+OID_CO_DELETE_PVC OID は、構成された Pvc の呼び出しマネージャーの一覧から永続的な仮想接続 (PVC) を削除するために、クライアントから呼び出しマネージャーに送信されます。 PVC は、次のように定義された CO_PVC 構造として書式設定されます。
 
 ```c++
 typedef struct _CO_PVC {
@@ -36,8 +36,5 @@ PVC は、管理者によって手動で削除されます。 このようなア
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

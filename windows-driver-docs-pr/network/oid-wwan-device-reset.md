@@ -6,12 +6,12 @@ keywords:
 - MB デバイスのリセット、モバイルブロードバンドデバイスのリセット、モバイルブロードバンドミニポートドライバーデバイスのリセット
 ms.date: 08/18/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a8c69a8db7259445e4b7c926be833f8f3984a2c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 685a489c1426bbd8de4bc5b52a328ad671271afb
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843859"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916800"
 ---
 # <a name="oid_wwan_device_reset"></a>OID_WWAN_DEVICE_RESET
 
@@ -25,12 +25,9 @@ Set 要求の場合、OID_WWAN_DEVICE_RESET は[NDIS_WWAN_SET_DEVICE_RESET](http
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1709 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1709**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [NDIS_STATUS_WWAN_DEVICE_RESET_STATUS](ndis-status-wwan-device-reset-status.md)
 
@@ -38,5 +35,5 @@ Set 要求の場合、OID_WWAN_DEVICE_RESET は[NDIS_WWAN_SET_DEVICE_RESET](http
 
 [NDIS_WWAN_SET_DEVICE_RESET](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_set_device_reset)
 
-[MB のモデムリセット操作](mb-modem-reset-operations.md)
+[MB モデム リセット操作](mb-modem-reset-operations.md)
 

@@ -1,17 +1,17 @@
 ---
 title: NDIS_STATUS_WWAN_PCO_STATUS
-description: ミニポートドライバーは、NDIS_STATUS_WWAN_PCO_STATUS 通知を使用して、以前の OID_WWAN_PCO クエリ要求の完了を MB サービスに通知します。
+description: ミニポートドライバーは、NDIS_STATUS_WWAN_PCO_STATUS 通知を使用して、前の OID_WWAN_PCO クエリ要求の完了を MB サービスに通知します。
 ms.assetid: E0F70FAE-B7C6-4BE4-B89A-88084463EEA5
 keywords:
-- NDIS_STATUS_WWAN_PCO_STATUS、PCO 状態通知、モバイルブロードバンド PCO 状態通知、MB PCO 状態通知
+- NDIS_STATUS_WWAN_PCO_STATUS, PCO 状態通知, モバイルブロードバンド PCO 状態通知, MB PCO 状態通知
 ms.date: 08/08/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: a289ee894c9616d4c3775a81ec9b22005a062e5a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: fee9878c89954cef31361139d9a291f8c2316bc0
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844769"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917804"
 ---
 # <a name="ndis_status_wwan_pco_status"></a>NDIS_STATUS_WWAN_PCO_STATUS
 
@@ -27,21 +27,18 @@ ms.locfileid: "72844769"
 
 この通知は、 **OID_WWAN_PCO**クエリ要求が完了したことをホストに通知するために使用されます。 pco 値は通知に含まれています。 ホストは、ポート番号に対応する PDN に PCO 値の完全な構造を渡すようにモデムに要求します。
 
-PCO 機能がモデムでサポートされていても、ホストが**OID_WWAN_PCO**クエリ要求を送信したときにネットワークから pco 値が受信されなかった場合、モデムは空の WWAN_PCO_ を含む**NDIS_STATUS_WWAN_PCO_STATUS**通知を返す必要があります。 [値](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value)のペイロード。 
+PCO 機能がモデムによってサポートされていても、ホストが**OID_WWAN_PCO**クエリ要求を送信したときにネットワークから pco 値が受信されなかった場合、モデムは空の[WWAN_PCO_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wwan/ns-wwan-_wwan_pco_value)ペイロードで**NDIS_STATUS_WWAN_PCO_STATUS**通知を返す必要があります。 
 
-この通知では、 [NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)構造体が使用されます。
+この通知では、 [NDIS_WWAN_PCO_STATUS](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndiswwan/ns-ndiswwan-_ndis_wwan_pco_status)構造を使用します。
 
 > [!NOTE]
 > 現時点では、Windows 10 バージョン1709以降では、一部のモデムはオペレーター固有の PCO 要素しか提供できません。 PCO データ構造がモデムによって受信されても、適用可能なオペレーター固有の PCO 要素が存在しない場合、不要なデバイスのウェイクアップを避けるために、モデムは PCO 通知を OS にアドバタイズしません。 
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1709 |
-| Header | Ndis. h |
+**バージョン**: Windows 10 バージョン 1709**ヘッダー**: Ndis. h
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [OID_WWAN_PCO](oid-wwan-pco.md)
 

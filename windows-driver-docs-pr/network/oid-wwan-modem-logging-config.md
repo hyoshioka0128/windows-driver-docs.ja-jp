@@ -7,12 +7,12 @@ keywords:
 - Windows Vista 以降のネットワークドライバーの OID_WWAN_MODEM_LOGGING_CONFIG
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9eaaa5fc0776d82c31c3cb5aa5b5f2de00a65ac7
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: cf324cec4ff5c1816f16855f844b67730525db86
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843834"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916089"
 ---
 # <a name="oid_wwan_modem_logging_config"></a>OID_WWAN_MODEM_LOGGING_CONFIG
 
@@ -30,14 +30,11 @@ OID_WWAN_MODEM_LOGGING_CONFIG は、モデムによって収集されるログ�
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 バージョン 1903 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1903**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-[DSS でのモデムログ (MB)](mb-modem-logging-with-dss.md)
+[DSS による MB モデムのログ記録](mb-modem-logging-with-dss.md)
 
 [NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG](ndis-status-wwan-modem-logging-config.md)
 

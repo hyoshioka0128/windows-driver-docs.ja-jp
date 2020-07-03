@@ -6,34 +6,34 @@ keywords:
 - OID_GEN_CO_MEDIA_IN_USE
 ms.date: 11/02/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eb974aeb0ff8cb421077c3122d60069e5f19509
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: afbeba2a2f20c972aafccf298158956d27291e47
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67361181"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916900"
 ---
-# <a name="oidgencomediainuse"></a>OID_GEN_CO_MEDIA_IN_USE
+# <a name="oid_gen_co_media_in_use"></a>OID_GEN_CO_MEDIA_IN_USE
 
-NIC がサポートされているメディアの種類の完全な一覧は、いくつか、(NULL のフィルターとも呼ばれます)、none または、次のすべてのとして定義。
+NIC で現在サポートされているメディアの種類の完全な一覧。一部として定義されていません (NULL フィルターとも呼ばれます)。または、次のすべてが対象となります。
 
 **NdisMedium802_3**  
 イーサネット (802.3)。
 
 **NdisMedium802_5**  
-トークン リング (802.5)。
+トークンリング (802.5)。
 
 **NdisMediumFddi**  
-FDDI します。
+FDDI.
 
 **NdisMediumWan**  
-WAN します。
+WAN.
 
 **NdisMediumLocalTalk**  
-LocalTalk します。
+LocalTalk.
 
 **NdisMediumDix**  
-DIX します。
+DIX.
 
 **NdisMediumArcnetRaw**  
 ARCNET (raw)。
@@ -42,18 +42,15 @@ ARCNET (raw)。
 ARCNET (878.2)。
 
 **NdisMediumWirelessWan**  
-NdisWirelessXxx メディアのさまざまな種類。
+さまざまな種類の NdisWirelessXxx メディア。
 
 **NdisMediumAtm**  
-ATM します。
+ATM.
 
-基になるミニポート ドライバーに返された場合**NULL**このクエリのかどうか、実験的なメディアを使用して、ドライバーを示す必要がありますまたは受信[NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))します。
+基になるミニポートドライバーがこのクエリに対して**NULL**を返した場合、または実験的なメディアの種類が使用されている場合は、ドライバーで Receive with [NdisMCoIndicateReceivePacket](https://docs.microsoft.com/previous-versions/windows/hardware/network/ff553455(v=vs.85))を指定する必要があります。
 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| バージョン | Windows Vista 以降 |
-| Header | Ntddndis.h (include Ndis.h) |
+**バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
 

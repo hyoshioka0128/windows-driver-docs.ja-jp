@@ -5,12 +5,12 @@ ms.assetid: 394650CF-5410-40C6-8749-D941DF68D303
 ms.date: 08/23/2018
 keywords: -Windows Vista 以降のネットワークドライバーの OID_WWAN_LTE_ATTACH_STATUS
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ba8296f592e77cd98f1a7b64ba09fd80446345a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 53d32782d969c3ddff3aa6e7733aa3a392ad5acb
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843837"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85917578"
 ---
 # <a name="oid_wwan_lte_attach_status"></a>OID_WWAN_LTE_ATTACH_STATUS
 
@@ -26,12 +26,9 @@ Set 要求は適用できません。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows 10 Version 1703 |
-| Header | Ntddndis (Ndis .h を含む) |
+**バージョン**: Windows 10 バージョン 1703**ヘッダー**: Ntddndis (Ndis .h を含む)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 [MB LTE アタッチ操作](mb-lte-attach-operations.md)
 

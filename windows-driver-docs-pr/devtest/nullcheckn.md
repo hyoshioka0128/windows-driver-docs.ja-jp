@@ -1,10 +1,10 @@
 ---
-title: NullCheck ルール (ndis)
-description: NullCheck ルールは、ドライバーの後で、ドライバーのコード内の NULL 値が逆参照しないことを確認します。
+title: NullCheck 規則 (ndis)
+description: NullCheck 規則は、ドライバーコード内の NULL 値がドライバーの後で逆参照されないことを検証します。
 ms.assetid: E892C9C3-854B-49EF-B69E-E2ED6438128F
 ms.date: 05/21/2018
 keywords:
-- NullCheck ルール (ndis)
+- NullCheck 規則 (ndis)
 topic_type:
 - apiref
 api_name:
@@ -12,26 +12,26 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: f15f7f960451fc21c55311fa7436879dedd820f6
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 4ddb9ec41e18cba931c6549c65b32bd0e287ecf5
+ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67392094"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85916284"
 ---
-# <a name="nullcheck-rule-ndis"></a>NullCheck ルール (ndis)
+# <a name="nullcheck-rule-ndis"></a>NullCheck 規則 (ndis)
 
 
-NullCheck ルールは、ドライバーの後で、ドライバーのコード内の NULL 値が逆参照しないことを確認します。 このルールは、これらの条件のいずれかが true の場合、欠陥を報告します。
+NullCheck 規則は、ドライバーコード内の NULL 値がドライバーの後で逆参照されないことを検証します。 このルールは、次のいずれかの条件が満たされた場合に、欠陥を報告します。
 
--   以降は逆参照が NULL の代入です。
--   ドライバーでは、後で逆参照が NULL の可能性があるプロシージャにグローバル/パラメーターがあるし、ポインターの初期値は NULL である可能性がありますの候補を示す、ドライバーでの明示的なチェックがあります。
+-   後で逆参照される NULL の割り当てがあります。
+-   ドライバー内のプロシージャには、後で逆参照される可能性のあるグローバル/パラメーターがあります。また、ドライバーに明示的なチェックがあり、ポインターの初期値が NULL である可能性があることが示されています。
 
-NullCheck ルール違反では、最も関連のコード ステートメントは、トレースのツリー ペインで強調表示されます。 レポートの出力の使用方法の詳細については、次を参照してください。[静的ドライバー検証ツールのレポート](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)と[トレース ビューアーを理解する](https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer)します。
+NullCheck 規則違反では、最も関連性の高いコードステートメントが [トレースツリー] ウィンドウで強調表示されます。 レポート出力の操作の詳細については、「[静的ドライバーの検証ツールレポート](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier-report)」と「[トレースビューアーに](https://docs.microsoft.com/windows-hardware/drivers/devtest/understanding-the-defect-viewer)ついて」を参照してください。
 
-**構造体の例**
+**Struct の例**
 
-このコード スニペットでは、構造体の適切な使用を示します。
+このコードスニペットは、構造体の適切な使用方法を示しています。
 
 ```
 //Rule does not fail
@@ -48,7 +48,7 @@ void GoodStruc(B *x) {
 }
 ```
 
-このコード スニペットでは、構造体の不適切な使用を示します。 コードでは、コンパイルされますが、実行時エラーが生成されます。
+このコードスニペットは、構造体の不適切な使用方法を示しています。 コードはコンパイルされますが、ランタイムエラーが生成されます。
 
 ```
 //Rule fails
@@ -65,7 +65,7 @@ void BadStruc(A *x) {
 
 **関数の例**
 
-この例では null の場合、逆参照する可能性のある関数のパラメーターがそれ以降です。 さらに、ポインターの初期値は NULL である可能性がありますの候補を示す、明示的なチェックがあります。
+この例では、NULL になる可能性がある関数のパラメーターがあり、後で逆参照されます。 また、ポインターの初期値が NULL であることを示す明示的なチェックがあります。
 
 ```
 //Rule fails
@@ -77,7 +77,7 @@ void Bad(int *x)
 }
 ```
 
-この例ではありません規則違反、パラメーターがないための暗黙的な前提条件が NULL であると想定する可能性があるため。
+この例では、パラメーターが NULL であると想定されていないという暗黙の事前条件があるため、規則違反はありません。
 
 ```
 //Rule does not fail
@@ -88,7 +88,7 @@ void Good1(int *x)
 }
 ```
 
-この 2 番目の例は、明示的なチェックの null の場合にたびに、パラメーターを使用します。
+この2番目の例では、パラメーターが使用されるたびに、NULL に対する明示的なチェックがあります。
 
 ```
 //Rule does not fail
@@ -101,9 +101,7 @@ void Good2(int *x)
 }
 ```
 
-|              |      |
-|--------------|------|
-| ドライバー モデル | NDIS |
+**ドライバーモデル: NDIS**
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -119,14 +117,14 @@ void Good2(int *x)
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>実行<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">Static Driver Verifier</a>を指定し、 <strong>NullCheck</strong>ルール。</p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier" data-raw-source="[Static Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/static-driver-verifier)">静的ドライバー検証ツール</a>を実行し、 <strong>nullcheck</strong>規則を指定します。</p>
 コードの分析を実行するには、次の手順に従います。
 <ol>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">(ロールの型宣言の使用)、コードを準備します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">Static Driver Verifier を実行します。</a></li>
-<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">表示し、結果を分析します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code" data-raw-source="[Prepare your code (use role type declarations).](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#preparing-your-source-code)">コードを準備します (役割の種類の宣言を使います)。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier" data-raw-source="[Run Static Driver Verifier.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#running-static-driver-verifier)">静的ドライバー検証ツールを実行します。</a></li>
+<li><a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results" data-raw-source="[View and analyze the results.](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers#viewing-and-analyzing-the-results)">結果を表示して分析します。</a></li>
 </ol>
-<p>詳細については、次を参照してください。<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">ドライバーで障害を検出する Static Driver Verifier を使用して</a>します。</p></td>
+<p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers" data-raw-source="[Using Static Driver Verifier to Find Defects in Drivers](https://docs.microsoft.com/windows-hardware/drivers/devtest/using-static-driver-verifier-to-find-defects-in-drivers)">Static Driver Verifier を使用したドライバーの欠陥の検出</a>」を参照してください。</p></td>
 </tr>
 </tbody>
 </table>
