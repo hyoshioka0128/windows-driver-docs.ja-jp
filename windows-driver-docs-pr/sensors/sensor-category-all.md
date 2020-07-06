@@ -1,8 +1,8 @@
 ---
-title: センサー\_カテゴリ\_すべて
-description: センサー\_カテゴリ\_すべてのカテゴリは、すべてのセンサーのプラットフォームで定義されているカテゴリのセットを表します。
+title: センサー \_ カテゴリ \_ すべて
+description: センサー \_ カテゴリ [ \_ すべて] カテゴリは、プラットフォームで定義されたすべてのセンサーカテゴリのセットを表します。
 ms.assetid: 9a4524d2-055c-46e0-9650-66e6f2872fbc
-keywords: SENSOR_CATEGORY_ALL センサー デバイス
+keywords: SENSOR_CATEGORY_ALL センサーデバイス
 topic_type:
 - apiref
 api_name:
@@ -13,40 +13,42 @@ api_type:
 - HeaderDef
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4150aa1e8e6be42ce8d0cc6ffd2de7101e21f4
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0ea9aea5e7694a99724060c031e929088896a762
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63384895"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968469"
 ---
-# <a name="sensorcategoryall"></a>センサー\_カテゴリ\_すべて
+# <a name="sensor_category_all"></a>センサー \_ カテゴリ \_ すべて
 
 
-センサー\_カテゴリ\_すべてのカテゴリは、すべてのセンサーのプラットフォームで定義されているカテゴリのセットを表します。
+センサー \_ カテゴリ [ \_ すべて] カテゴリは、プラットフォームで定義されたすべてのセンサーカテゴリのセットを表します。
 
-## <a name="platform-defined-property-keys"></a>プラットフォーム定義されているプロパティのキー
+## <a name="platform-defined-property-keys"></a>プラットフォームで定義されたプロパティキー
 
-このカテゴリには、次のプラットフォームで定義されているデータ フィールドが含まれています。
+このカテゴリには、次のプラットフォーム定義のデータフィールドが含まれます。
 
-|データの種類|種類|説明|
+|データの種類|Type|説明|
 |--|--|--|
-|SENSOR_DATA_TYPE_TIMESTAMP|VT_FILETIME|すべてのデータのレポートに必要です。 データ レポートが作成された時間と各データ レポートをマークします。 世界協定時刻 (UTC) を使用します。|
+|SENSOR_DATA_TYPE_TIMESTAMP|VT_FILETIME|すべてのデータレポートに必要です。 データレポートが作成された時刻で各データレポートをマークします。 世界協定時刻 (UTC) を使用します。|
  
 
 >[!IMPORTANT]
-> 各プラットフォームで定義されている共通のデータ型**PROPERTYKEY**共通に基づいて**GUID**センサーという\_データ\_型\_共通\_GUID。 予約済みの基本値は、使用しないでくださいこの**GUID**プロパティ キーを定義します。
+> 各プラットフォーム定義の共通データ型**Propertykey**は、センサー **GUID** \_ データ型共通 guid という名前の共通 guid に基づいてい \_ \_ \_ ます。 予約済みの基本値であるため、この**GUID**を使用して独自のプロパティキーを定義しないでください。
 
  
 
 ## <a name="requirements"></a>要件
 
-| | |
-|--|--|
-|サポートされている最小のクライアント|Windows 7|
-|サポートされている最小のサーバー|サポートなし|
-|バージョン|Windows 7 で使用できます。|
-|Header|Sensors.h|
+**サポートされている最低限のクライアント**: Windows 7
+
+**サポートされている最小サーバー**: サポートされていません
+
+**バージョン**: Windows 7 で使用できます。
+
+**ヘッダー**: センサー. h
+
  
 
  

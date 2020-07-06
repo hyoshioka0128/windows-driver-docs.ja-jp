@@ -1,20 +1,20 @@
 ---
 title: コレクション リスト シリアル化ヘルパー
-description: コレクションリストのシリアル化ヘルパー関数は、v2 センサードライバーによって使用され、センサー\_コレクション\_リスト構造体に対してシリアル化関連の操作を実行します。
+description: コレクションリストのシリアル化ヘルパー関数は、v2 センサードライバーによって使用され、センサーコレクションリスト構造に対するシリアル化関連の操作を実行し \_ \_ ます。
 ms.assetid: 586FEDD7-6BA1-4E76-8E8D-E486F4711FAE
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 222df31c118d39464502c139fd0e96d5e6d2f608
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: a5f249fd74d7082bde99c02b5c44d3957bd2cade
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842530"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967895"
 ---
 # <a name="collection-list-serialization-helpers"></a>コレクション リスト シリアル化ヘルパー
 
 
-コレクションリストのシリアル化ヘルパー関数は、v2 センサードライバーによって使用され、[**センサー\_コレクション\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)構造体に対してシリアル化関連の操作を実行します。
+コレクションリストのシリアル化ヘルパー関数は、v2 センサードライバーによって使用され、[**センサー \_ コレクション \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)構造に対するシリアル化関連の操作を実行します。
 
 ヘルパー関数は、センサーデバイスドライバーソフトウェアインターフェイス (DDSI) と共に使用されます。 また、これらのヘルパー関数はアーキテクチャに依存しないため、プロセスの境界を越えてデータを転送するために使用するのが安全です。 たとえば、DeviceIoControl を呼び出すと、これらのヘルパー関数を安全に使用できます。
 
@@ -26,7 +26,7 @@ ms.locfileid: "72842530"
 
 コメント
 
--   正常なバッファー割り当ては、ステータス\_OK 値によって示されます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
+-   正常なバッファー割り当ては、ステータス OK 値によって示され \_ ます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
 
 **SerializationBufferFree**
 
@@ -52,48 +52,49 @@ ms.locfileid: "72842530"
 
 センサー DDSI による使用量
 
--   [**センサー\_コレクション\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)情報をシリアル化バッファーに書き込みます。
+-   [**センサー \_ コレクション \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)情報をシリアル化バッファーに書き込みます。
 
 コメント
 
--   書き込み操作が正常に行われた場合は、状態\_OK 値が示されます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
+-   正常な書き込み操作は、ステータス OK 値によって示され \_ ます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
 
 **CollectionsListAllocateBufferAndSerialize**
 
 センサー DDSI による使用量
 
--   シリアル化バッファーを割り当て、[**センサー\_コレクション\_リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)情報をバッファーに書き込みます。
+-   シリアル化バッファーを割り当て、そのバッファーに[**センサー \_ コレクション \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)情報を書き込みます。
 
 コメント
 
 -   バッファー割り当てが成功した場合は、コレクションリストの情報がバッファーに書き込まれます。 それ以外の場合、書き込み操作は実行されず、適切な NTSTATUS エラーコードが返されます。
 
--   書き込み操作が正常に行われた場合は、状態\_OK 値が示されます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
+-   正常な書き込み操作は、ステータス OK 値によって示され \_ ます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
 
 **CollectionsListDeserializeFromBuffer**
 
 センサー DDSI による使用量
 
--   ソースバッファーから[**センサー\_コレクション\_一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)情報を読み取ります。
+-   ソースバッファーから[**センサー \_ コレクション \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/sensorsdef/ns-sensorsdef-sensor_collection_list)情報を読み取ります。
 
 コメント
 
--   正常な読み取り操作は、ステータス\_OK 値によって示されます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
+-   正常な読み取り操作は、ステータス OK 値によって示され \_ ます。 それ以外の場合は、適切な NTSTATUS エラーコードが返されます。
 
 ## <a name="requirements"></a>要件
 
-|                          |                        |
-|--------------------------|------------------------|
-| サポートされている最小のクライアント | Windows 8.1            |
-| サポートされている最小のサーバー | Windows Server 2012 R2 |
-| Header                   | Sensorsutils         |
+**サポートされている最低限のクライアント**: Windows 8.1
+
+**サポートされている最小サーバー**: Windows Server 2012 R2
+
+**ヘッダー**: Sensorsutils
+
 
  
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[マーシャリングヘルパー関数](marshalling-helper-functions.md)
+[マーシャリング ヘルパーの関数](marshalling-helper-functions.md)
 
  
 

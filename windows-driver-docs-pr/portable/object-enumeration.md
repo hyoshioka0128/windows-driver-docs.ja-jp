@@ -3,30 +3,32 @@ Description: オブジェクトの列挙
 title: オブジェクトの列挙
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 50cde952ffda2599aff596fc54510cadcd353d91
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 90b76e6bcb84752836934c6f5863c3d59c26e4e2
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63362008"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968187"
 ---
 # <a name="object-enumeration"></a>オブジェクトの列挙
 
 
-*WpdObjectEnum.cpp*と*WpdObjectEnum.h*ファイルには、デバイスでサポートされているオブジェクトを列挙するメンバー関数が含まれます。
+*WpdObjectEnum*ファイルと*WpdObjectEnum*ファイルには、デバイスでサポートされているオブジェクトを列挙するメンバー関数が含まれています。
 
-Windows ベースのアプリケーションを呼び出すときに**IPortableDeviceContent::EnumObject**または 2 つの方法の 1 つ、 **IEnumPortableDeviceObjectIDs**インターフェイスでは、この呼び出しをさらを 3 つのトリガーコマンド ハンドラーで、 **WpdObjectEnumerator**クラス。 次の表に、アプリケーション メソッドのマッピング**WpdObjectEnumerator**ドライバー メソッド。
+Windows ベースのアプリケーションが**Iportabledevicecontent:: EnumObject**呼び出すか、またはいずれかの 2 **IEnumPortableDeviceObjectIDs**つのメソッドが呼び出されると、この呼び出しによって**WpdObjectEnumerator**クラスの3つのコマンドハンドラーのいずれかがトリガーされます。 次の表は、 **WpdObjectEnumerator** driver メソッドへのアプリケーションメソッドのマッピングを示しています。
 
-|                                           |                                         |
-|-------------------------------------------|-----------------------------------------|
-| **IPortableDeviceContent メソッド**         | **WpdObjectEnumerator コマンド ハンドラー** |
-| **IPortableDeviceContent::EnumObjects**   | **OnStartFind**                         |
-| **IEnumPortableDeviceObjectIDs::Next**    | **OnFindNext**                          |
-| **IEnumPortableDeviceObjectIDs::Release** | **OnEndFind**                           |
+IPortableDeviceContent メソッド * * * *:**コマンドハンドラー**
+
+IPortableDeviceContent:: * * * *: **Onstartfind**
+
+IEnumPortableDeviceObjectIDs:: Next * * * *: **Onfindnext**
+
+IEnumPortableDeviceObjectIDs:: Release * * * *: **OnEndFind**
+
 
  
 
-**WpdObjectEnumerator**によってコマンド ハンドラーが呼び出される、 **WpdObjectEnumerator::DispatchWpdMessage**メソッド。 次のサンプル ドライバーからの抜粋のコードを含む**WpdObjectEnumerator::DispatchWpdMessage します。**
+**WpdObjectEnumerator**コマンドハンドラーは、 **WpdObjectEnumerator::D ispatchwpdmessage**メソッドによって呼び出されます。 サンプルドライバーの次の抜粋には、 **WpdObjectEnumerator::D ispatchwpdmessage**のコードが含まれています。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectEnumerator::DispatchWpdMessage(const PROPERTYKEY&     Command,

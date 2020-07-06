@@ -1,47 +1,48 @@
 ---
 title: OID_WDI_TASK_REQUEST_FTM
-description: 表示されている BSS ターゲットを使用した問題タイミング測定 (FTM) プロシージャを開始する LE OID_WDI_TASK_REQUEST_FTM が発行されます。
+description: OID_WDI_TASK_REQUEST_FTM は、リストされている BSS ターゲットを使用して、詳細なタイミング測定 (FTM) プロシージャを開始するために LE に発行されます。
 ms.assetid: 67E17BD2-9216-43B5-8D1E-C6DF8537D79E
 ms.date: 02/08/2019
 keywords:
-- OID_WDI_TASK_REQUEST_FTM ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの OID_WDI_TASK_REQUEST_FTM
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e4d4a295aaa71d6bd80ab3dcbcf371ec77809cc8
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a7e2cf3a171a59613e11575b7b6c2e9025620856
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63340016"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968537"
 ---
-# <a name="oidwditaskrequestftm"></a>OID_WDI_TASK_REQUEST_FTM
+# <a name="oid_wdi_task_request_ftm"></a>OID_WDI_TASK_REQUEST_FTM
 
 
-**OID_WDI_TASK_REQUEST_FTM**が一覧表示されている BSS ターゲットを持つ細かいタイミング測定 (FTM) プロシージャを開始する LE に発行します。 ターゲットの数は、値の小さい**FTMNumberOfSupportedTargets**、ステーション属性から取得します。
+**OID_WDI_TASK_REQUEST_FTM**は、リストされている BSS ターゲットを使用して、詳細なタイミング測定 (FTM) プロシージャを開始するために LE に発行されます。 ターゲットの数が、ステーション属性から取得された**Ftmnumberofsupportedtargets**の値以下です。
 
-このタスクは、ターゲットを持つすべての FTM セッションが完了した、タイムアウトは有効期限が切れた、またはホストは、操作を中止すると、すぐに実行する必要があります。
+このタスクは、ターゲットを持つすべての FTM セッションが完了するか、タイムアウトが経過するか、ホストが操作を中止した直後に完了する必要があります。
 
-このタスクが完了したときに、ドライバーは送信する必要があります、 [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)要求されたターゲットの各 FTM 応答の一覧を含む状態を示す値。
+このタスクが完了すると、ドライバーは、要求された各ターゲットの FTM 応答の一覧を含む[NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)状態の通知を送信する必要があります。
 
-このタスクが完了した後、ポートが良好な状態である必要があり、ホストが新しい一連のターゲットのタスクを再試行すぐに可能性がありますので、新しい FTM 要求を処理できるようにする必要があります。
+このタスクが完了したら、ポートは良好な状態であり、新しい FTM 要求を処理する準備ができている必要があります。これは、ホストが新しいターゲットのセットを使用してタスクを直ちに再試行する可能性があるためです。
 
-ターゲットごとに示される場合、場所の構成情報 (LCI) レポートを要求する必要があります。 、指定した場合、LE はターゲットから 1 つを要求する必要があります。 
+ターゲットごとに、場所の構成情報 (LCI) レポートを要求するかどうかが示されます。 指定されている場合、LE はターゲットに1つを要求します。 
 
 ## <a name="task-parameters"></a>タスク パラメーター
 
-| TLV | 種類 | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
+| TLV | Type | 複数の TLV インスタンスを使用できます | 省略可能 | 説明 |
 | --- | --- | --- | --- | --- |
-| [WDI_TLV_FTM_REQUEST_TIMEOUT](wdi-tlv-ftm-request-timeout.md) | UINT32 |   |   | FTM を完了する、ミリ秒単位の最大時間。 タイムアウトは、ターゲットの数を掛けた 150 ミリ秒に設定されます。 |
-| [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md) | WDI_FTM_TARGET_BSS_ENTRY | x |   | 手順を実行するどの FTM と BSS ターゲットの一覧。 |
+| [WDI_TLV_FTM_REQUEST_TIMEOUT](wdi-tlv-ftm-request-timeout.md) | UINT32 |   |   | FTM を完了するまでの最大時間 (ミリ秒単位)。 タイムアウトは、150ミリ秒にターゲットの数を乗算した値に設定されます。 |
+| [WDI_TLV_FTM_TARGET_BSS_ENTRY](wdi-tlv-ftm-target-bss-entry.md) | WDI_FTM_TARGET_BSS_ENTRY | X |   | FTM の手順を完了する必要がある BSS ターゲットの一覧。 |
 
-## <a name="task-completion-indication"></a>タスクの完了を示す値
+## <a name="task-completion-indication"></a>タスクの完了を示す
 
 [NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE](ndis-status-wdi-indication-request-ftm-complete.md)
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Dot11wdi.h |
+**サポートされている最小クライアント**: Windows 10、バージョン1903
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Dot11wdi
+

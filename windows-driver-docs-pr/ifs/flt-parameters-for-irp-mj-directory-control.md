@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f1b7e8a7369a6bbbd4218863c7290aa5c8001a
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: c9eb4eaf9c4aad02c1e59b0ffc236c8b1f4cd279
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072239"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968255"
 ---
 # <a name="flt_parameters-for-irp_mj_directory_control-union"></a>IRP_MJ_DIRECTORY_CONTROL 共用体の FLT_PARAMETERS
 
@@ -54,7 +54,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 **DirectoryControl**  
 次のメンバーを含む構造体。
@@ -62,16 +62,16 @@ typedef union _FLT_PARAMETERS {
 **QueryDirectory**  
 IRP_MN_QUERY_DIRECTORY 操作に使用される共用体コンポーネントです。
 
-**長さ**  
+**[データ型]**  
 **Querydirectory. DirectoryBuffer**メンバーが指すバッファーの長さ (バイト単位)。
 
-**/Db**  
+**FileName**  
 指定したディレクトリ内のファイルの名前を格納している[**UNICODE_STRING**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfwdm/ns-wudfwdm-_unicode_string)構造体へのポインター。
 
 **FileInformationClass**  
 次に示す値のいずれかを指定します。
 
-| 値 | 意味 |
+| 値 | 説明 |
 |-------|---------|
 | ファイルのディレクトリ情報 (& i)   | 各ファイルの[**FILE_BOTH_DIR_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)構造体を返します。                      |
 | FileDirectoryInformation       | 各ファイルの[**FILE_DIRECTORY_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_directory_information)構造体を返します。                     |
@@ -94,13 +94,13 @@ IRP_MN_QUERY_DIRECTORY 操作に使用される共用体コンポーネントで
 **NotifyDirectory**  
 IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作に使用される共用体コンポーネントです。
 
-**長さ**  
+**[データ型]**  
 **Notifydirectory. DirectoryBuffer**メンバーが指すバッファーの長さ (バイト単位)。
 
 **補完フィルター**  
 通知リストの Irp を完了させる必要があるファイルまたはディレクトリに対する変更の種類を指定するフラグのビットマスク。 有効なフラグ値については、次に説明します。
 
-| Flag | 意味  |
+| フラグ | 説明  |
 |------|----------|
 | FILE_NOTIFY_CHANGE_FILE_NAME    | このディレクトリでファイルが追加、削除、または名前が変更されました。                  |
 | FILE_NOTIFY_CHANGE_DIR_NAME     | サブディレクトリの作成、削除、または名前の変更が行われました。                          |
@@ -117,10 +117,10 @@ IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作に使用される共用体コンポーネ�
 | FILE_NOTIFY_CHANGE_STREAM_WRITE | このファイルストリームのデータは変更されています。                                           |
 
 **Spare1**  
-現在使用されていません。
+現在は使用しません。
 
 **Spare2**  
-現在使用されていません。
+現在は使用しません。
 
 **DirectoryBuffer**  
 ディレクトリの内容に関する要求された情報を受け取る、呼び出し元から提供される出力バッファーへのポインター。 このメンバーは省略可能であり、MDL が**Notifydirectory. MdlAddress**に指定されている場合は NULL にすることができます。 「**解説**」を参照してください。
@@ -128,7 +128,7 @@ IRP_MN_NOTIFY_CHANGE_DIRECTORY 操作に使用される共用体コンポーネ�
 **MdlAddress**  
 **Notifydirectory. directorybuffer**メンバーが指すバッファーを記述する MDL のアドレス。 このメンバーは省略可能であり、 **Notifydirectory. directorybuffer**にバッファーが指定されている場合は**NULL**にすることができます。 「**解説**」を参照してください。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 IRP_MJ_DIRECTORY_CONTROL 操作の[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体によって表される、IRP ベースのディレクトリ制御情報操作のパラメーターが含まれています。 これは FLT_IO_PARAMETER_BLOCK 構造体に含まれています。
 
@@ -140,11 +140,10 @@ IRP_MJ_DIRECTORY_CONTROL は、IRP ベースの操作です。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| ヘッダー | Fltkernel .h (Fltkernel. h を含む) |
+**ヘッダー**: fltkernel .H (fltkernel .h を含む)
 
-## <a name="see-also"></a>参照
+
+## <a name="see-also"></a>関連項目
 
 [**FILE_BOTH_DIR_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_file_both_dir_information)
 

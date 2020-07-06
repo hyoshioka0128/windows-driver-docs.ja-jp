@@ -1,9 +1,9 @@
 ---
 title: dx (デバッガー オブジェクト モデル式の表示)
-description: Dx コマンドでは、NatVis の拡張機能モデルを使用して、C++ の式が表示されます。 Dx コマンドは、デバッガー オブジェクトで動作します。
+description: Dx コマンドは、NatVis 拡張モデルを使用して C++ の式を表示します。 Dx コマンドは、デバッガーオブジェクトで動作します。
 ms.assetid: 93047911-5195-4FB9-A015-5349084EDC0A
 keywords:
-- dx (表示デバッガー オブジェクト モデルの式) Windows のデバッグ
+- dx (デバッガーオブジェクトモデル式の表示) Windows デバッグ
 ms.date: 05/28/2019
 topic_type:
 - apiref
@@ -12,90 +12,104 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efbf791848c434cd3c55113496f411adb6338fc
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 1906e00abd0942ef0771ff31c0a3616d4fd38400
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67366901"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968191"
 ---
 # <a name="dx-display-debugger-object-model-expression"></a>dx (デバッガー オブジェクト モデル式の表示)
 
 
-**Dx**コマンドは、NatVis の拡張機能モデルを使用して、C++ の式を表示します。 NatVis の詳細については、次を参照してください。[ネイティブ オブジェクトのカスタム ビューを作成](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)です。
+**Dx**コマンドは、NatVis 拡張モデルを使用して C++ の式を表示します。 NatVis の詳細については、「[ネイティブオブジェクトのカスタムビューを作成する](https://docs.microsoft.com/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2015)」を参照してください。
 
 ```dbgcmd
 dx [-g|-gc #][-c #][-n|-v]-r[#] Expression[,<FormatSpecifier> ]
 dx [{-?}|{-h}]
 ```
 
-## <a name="span-idddkcmddisplaytypedbgspanspan-idddkcmddisplaytypedbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>パラメーター
+## <a name="span-idddk_cmd_display_type_dbgspanspan-idddk_cmd_display_type_dbgspanparameters"></a><span id="ddk_cmd_display_type_dbg"></span><span id="DDK_CMD_DISPLAY_TYPE_DBG"></span>パラメータ
 
 
-<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span> *式*   
-表示する C++ の式。
+<span id="_______Expression______"></span><span id="_______expression______"></span><span id="_______EXPRESSION______"></span>*式*   
+表示される C++ 式。
 
-<span id="_______-g______"></span><span id="_______-G______"></span> **-g**   
-反復可能なデータ グリッド オブジェクトとして表示されます。 要素は、グリッド内の行と表示のそれぞれの子要素の列は、各反復処理されます。 これにより、配列などの構造体、配列の各要素が行に表示されます、構造体の各フィールドは、列に表示されるものを表示することができます。
+<span id="_______-g______"></span><span id="_______-G______"></span>**-g**   
+反復可能なのデータグリッドオブジェクトとして表示します。 反復される各要素はグリッド内の行であり、各子要素の子は列です。 これにより、構造体の配列などを表示できます。各配列要素は行に表示され、構造体の各フィールドは列に表示されます。
 
-列名を左クリックして (DML リンクの可用性がある)、その列で並べ替えられます。 その列で既に並べ替えられて場合、並べ替え順序が反転します。
+(利用可能な DML リンクがある) 列名を左クリックすると、その列で並べ替えられます。 その列によって既に並べ替えられている場合、並べ替え順序は逆になります。
 
-これは、反復可能な任意のオブジェクトが必要で 'グリッドとして表示' と呼ばれる DML を使用して追加された項目を右クリック コンテキスト メニューがあります。 出力ウィンドウ内のオブジェクトを右クリックし、これを選択する標準のツリー ビューではなくグリッド ビューでは、オブジェクトが表示されます。
+反復可能なされているオブジェクトには、' Display as Grid ' という DML を使用して追加された右クリックコンテキストメニュー項目があります。 出力ウィンドウでオブジェクトを右クリックし、これを選択すると、標準のツリービューではなくグリッドビューにオブジェクトが表示されます。
 
-(+) が表示される列で提供することでという名前を右クリックし、動作を左クリックします。
+列名によって表示される (+) は、右クリックと左クリックの両方の動作を提供します。
 
--   左クリックは、その列を受け取り、独自のテーブルに分解することです。 元の行と展開された列の子を参照してください。
--   右クリックでは、"展開に Grid"列を取得し、適切なほとんどの列として、現在のテーブルに再度追加提供します。
+-   左クリックはその列を受け取り、それを独自のテーブルに分割します。 元の行と展開された列の子が表示されます。
+-   右クリックすると、[グリッドに展開] が表示され、列を取得して、右端の列として現在のテーブルに再度追加します。
 
-<span id="_______-gc________"></span><span id="_______-GC________"></span> **-gc \#**    
-グリッドとして表示し、グリッド セルのサイズを指定した数に制限 (\#) 文字。
+<span id="_______-gc________"></span><span id="_______-GC________"></span>**-gc \# **   
+グリッドとして表示し、グリッドセルのサイズを指定した文字数 () に制限し \# ます。
 
-<span id="_______-c________"></span><span id="_______-C________"></span> **-c \#**    
-コンテナーの継続が表示されます (スキップ\#コンテナーの要素)。このオプションは、出力のカスタム自動化のシナリオで通常使用され、提供を「...」一覧の下部にある要素を継続します。
+<span id="_______-c________"></span><span id="_______-C________"></span>**-c \# **   
+コンテナーの継続を表示 \# します (コンテナーの要素をスキップします)。このオプションは、通常、カスタム出力の自動化シナリオで使用され、"..." を提供します。リストの下部にある継続要素。
 
-<span id="_______-n______"></span><span id="_______-N______"></span> **-n**   
-データを表示できる 2 つの方法はあります。 NatVis 視覚化 (既定値) を使用して、または、基になるネイティブ C/C++ 構造体を使用します。 ネイティブの C/C++ 構造体だけと NatVis 視覚化ではないを使用して出力を表示するために-n パラメーターを指定します。
+<span id="_______-n______"></span><span id="_______-N______"></span>**-n**   
+データを表示する方法は2つあります。 NatVis ビジュアライゼーション (既定値) を使用するか、基になるネイティブ C/c + + 構造体を使用します。 -N パラメーターを指定すると、ネイティブの C/c + + 構造だけを使用して出力がレンダリングされ、NatVis の視覚化は表示されません。
 
-<span id="_______-v______"></span><span id="_______-V______"></span> **-v**   
-メソッドとその他の非標準のオブジェクトを含む詳細な情報を表示します。
+<span id="_______-v______"></span><span id="_______-V______"></span>**-v**   
+メソッドおよびその他の一般的でないオブジェクトを含む詳細情報を表示します。
 
-<span id="_______-r_______"></span><span id="_______-R_______"></span> **-r**<em>\#</em>   
-再帰的に表示 (フィールド) を最大サブタイプ *\#* レベル。 場合 *\#* は既定値は、1 つの再帰レベルを指定しません。
+<span id="_______-r_______"></span><span id="_______-R_______"></span>**-r**<em>\#</em>   
+レベルまでのサブタイプ (フィールド) を再帰的に表示 *\#* します。 *\#* が指定されていない場合、再帰レベル1が既定値になります。
 
-<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span> **\[&lt;、FormatSpecifier&gt;\]**    
-既定のレンダリングを変更するのにには、次の書式指定子のいずれかを使用します。
+<span id="__________FormatSpecifier_________"></span><span id="__________formatspecifier_________"></span><span id="__________FORMATSPECIFIER_________"></span>** \[ &lt; 、Formatspecifier &gt; \] 子**   
+次のいずれかの書式指定子を使用して、既定の表示を変更します。
 
-|                         |                                                                                          |
-|-------------------------|------------------------------------------------------------------------------------------|
-| 、x                      | 序数を 16 進数で表示します。                                                          |
-| 、d                      | 序数を 10 進数で表示します。                                                              |
-| 、o                      | 序数を 8 進数で表示します。                                                                |
-| 、b                      | バイナリ内の序数を表示します。                                                               |
-| 、en                     | 名前のみ (値なし) で列挙型を表示します。                                                    |
-| 、c                      | 単一の文字 (文字列ではなく) として表示します。                                               |
-| 、s                      | 引用符で囲まれた ASCII 8 ビットの文字列を表示します。                                                    |
-| 、sb                     | クォート ASCII として 8 ビットの文字列を表示                                                  |
-| 、s8                     | Utf-8 の引用符で囲まれた 8 ビットの文字列を表示します。                                                    |
-| 、s8b                    | Utf-8 引用符として 8 ビットの文字列を表示                                                  |
-| 、su                     | 16 ビットの文字列を utf-16 に引用符で囲まれた表示します。                                                  |
-| 、サブ                    | 16 ビットの文字列を utf-16 unqouted として表示します。                                                |
-| ,!                      | Raw モードでのみオブジェクトを表示する (例:: NatVis なし)                                       |
-| ,\#                     | リテラル値としてポインター/配列/コンテナーの長さを指定\#(数値に置き換えます) |
-| 、\[&lt;式&gt;\] | 式と、ポインター/配列/コンテナーの長さを指定&lt;式&gt;           |
-| 、nd                     | オブジェクトの派生 (runtype) 型が見つからない。 静的な値のみを表示します。          |
+**, x**:16 進数で序数を表示する
 
-<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span> **dx** { **-?** }   
-コマンド ライン ヘルプを表示します。
+**, d**:10 進数で序数を表示する
 
-<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span> **dx** { **-h**}   
-デバッガーで使用可能なオブジェクトのヘルプを表示します。
+**, o**: 序数を8進数で表示する
 
-<span id="_______dx_-id______"></span><span id="_______DX_-ID______"></span> **dx** { **-id**}   
-Microsoft 内部使用のみです。 コマンドの出力でデータ モデルのリンクをたどるために使用します。
+**, b**: 序数をバイナリで表示する
+
+**, en**: 名前のみで列挙を表示する (値なし)
+
+**, c**: 1 つの文字として表示します (文字列ではありません)
+
+**, s**: 8 ビット文字列を ASCII 引用符で囲んで表示する
+
+**, sb**: 8 ビット文字列を ASCII 引用符で囲まないで表示する
+
+**, s8**: 8 ビット文字列を utf-8 引用符で囲んで表示します。
+
+**, s8b**: 8 ビット文字列を utf-8 引用符で囲まないように表示します。
+
+**, su**:16 ビット文字列を utf-16 引用符として表示します。
+
+**, sub**:16 ビット文字列を utf-16 unqouted として表示します。
+
+**,!**: Raw モードのみでオブジェクトを表示します (例: no NatVis)
+
+**、 \# **: ポインター/配列/コンテナーの長さをリテラル値として指定します \# (数値で置き換えます)
+
+**,\[&lt;&gt;式 \] **: 式の式として、ポインター/配列/コンテナーの長さを指定します &lt;&gt;
+
+**、nd**: オブジェクトの派生 (runtype) 型が見つかりません。 静的な値のみを表示する
+
+
+<span id="_______dx_-_______"></span><span id="_______DX_-_______"></span>**dx** {**-?**}   
+コマンドラインヘルプを表示します。
+
+<span id="_______dx_-h______"></span><span id="_______DX_-H______"></span>**dx** {**-h**}   
+デバッガーで使用できるオブジェクトのヘルプを表示します。
+
+<span id="_______dx_-id______"></span><span id="_______DX_-ID______"></span>**dx** {**-id**}   
+マイクロソフト内部でのみ使用。 コマンド出力のデータモデルリンクに従うために使用されます。
 
 ## <a name="command-line-usage-example"></a>コマンドラインの使用例
 
-デバッグの設定のオブジェクトに関する情報を表示する .dx 設定 コマンドを使用できます。 デバッグの設定オブジェクトの詳細については、次を参照してください。 [ **.settings** ](-settings--set-debug-settings-.md)します。
+[Dx 設定] コマンドを使用すると、デバッグ設定オブジェクトに関する情報を表示できます。 デバッグ設定オブジェクトの詳細については、「[**設定**](-settings--set-debug-settings-.md)」を参照してください。
 ```dbgcmd
 kd> dx -r1 Debugger.Settings
 Debugger.Settings : 
@@ -108,7 +122,7 @@ Debugger.Settings :
     AutoSaveSettings : false
 ```
 
-オプションを使用する r1 再帰デバッガーの他のオブジェクトを表示する、セッション、設定と状態。
+-R1 再帰オプションを使用して、他のデバッガーオブジェクト (セッション、設定、状態) を表示します。
 
 ```dbgcmd
 kd> dx -r1 Debugger
@@ -118,7 +132,7 @@ Debugger :
   State    : 
 ```
 
-Debugger.Sessions を指定するオブジェクトを移動するは、r3 再帰オプションをさらに、オブジェクトのチェーンをダウンします。
+オブジェクトチェーンをさらに下に移動するには、-r3 再帰オプションを使用して Debugger オブジェクトを指定します。
 
 ```dbgcmd
 kd> dx -r3 Debugger.Sessions
@@ -138,7 +152,7 @@ Debugger.Sessions :
        ...               ...
 ```
 
-序数値を 16 進数で表示する、x 書式指定子を追加します。
+X 書式指定子を追加して、16進数で序数値を表示します。
 
 ```dbgcmd
 kd> dx -r3 Debugger.Sessions,x
@@ -163,7 +177,7 @@ Debugger.Sessions,x :
        ...               ...
 ```
 
-この例では、アクティブ デバッグ セッションを使用して、最初のプロセスの最初のスレッドの呼び出し履歴を一覧表示します。
+この例では、アクティブなデバッグセッションを使用して、最初のプロセスの最初のスレッドの呼び出し履歴を一覧表示します。
 
 ```dbgcmd
 kd> dx -r1 Debugger.Sessions.First().Processes.First().Threads.First().Stack.Frames
@@ -179,15 +193,15 @@ Debugger.Sessions.First().Processes.First().Threads.First().Stack.Frames :
     [0x8]            : nt!KiIdleLoop + 0x1a
 ```
 
-データ グリッドとして出力を表示するのにには、-g オプションを使用します。 並べ替えのキー列をクリックします。
+出力をデータグリッドとして表示するには、-g オプションを使用します。 並べ替える列をクリックします。
 
 ```dbgcmd
 kd> dx -g @$curprocess.Modules
 ```
 
-![output from dx -g @$curprocess.modules showing columnar grid output](images/dx-grid-example.png)
+![表形式のグリッド出力を表示する dx-g @ $curprocess モジュールからの出力](images/dx-grid-example.png)
 
-オブジェクトに関する情報を表示するのにには、-h オプションを使用します。
+オブジェクトに関する情報を表示するには、-h オプションを使用します。
 ```dbgcmd
 kd>  dx -h Debugger.State
 Debugger.State   [State pertaining to the current execution of the debugger (e.g.: user variables)]
@@ -196,11 +210,11 @@ Debugger.State   [State pertaining to the current execution of the debugger (e.g
     UserVariables     [User variables which are maintained by the debugger and can be referenced by a pseudo-register prefix of @$]
 ```
 
-## <a name="displaying-teb-and-peb-information-using-the-environment-object"></a>環境のオブジェクトを使用して TEB と PEB の情報を表示します。
+## <a name="displaying-teb-and-peb-information-using-the-environment-object"></a>環境オブジェクトを使用した TEB および PEB 情報の表示
 
-スレッドとプロセスに関連付けられている TEB と PEB の情報を表示するのにには、環境のオブジェクトを使用します。
+環境オブジェクトを使用して、スレッドとプロセスに関連付けられている TEB と PEB の情報を表示します。
 
-TEB を表示するに関連付けられている現在のスレッドの使用してこのコマンド。
+現在のスレッドに関連付けられている TEB を表示するには、次のコマンドを使用します。
 
 ```dbgcmd
 0: kd> dx -r2 @$curthread.Environment
@@ -224,7 +238,7 @@ TEB を表示するに関連付けられている現在のスレッドの使用�
          ...
 ```
 
-PEB を表示するには、このコマンドを現在のプロセス使用に伴います。
+現在のプロセスに関連付けられている PEB を表示するには、次のコマンドを使用します。
 
 ```dbgcmd
 0: kd> dx -r2 @$curprocess.Environment
@@ -251,9 +265,9 @@ PEB を表示するには、このコマンドを現在のプロセス使用に�
 ```
 
 
-## <a name="kernel-iohandles-object"></a>カーネル Io.Handles オブジェクト
+## <a name="kernel-iohandles-object"></a>カーネル Io。ハンドルオブジェクト
 
-カーネル ハンドルの情報を表示するのにには、Io.Handles オブジェクトの現在のプロセスを使用します。
+現在のプロセスの Io ハンドルオブジェクトを使用して、カーネルハンドル情報を表示します。
 
 ```dbgcmd
 0: kd> dx -r1 @$curprocess.Io.Handles
@@ -266,7 +280,7 @@ PEB を表示するには、このコマンドを現在のプロセス使用に�
     ...
 ```
 
-使用します。最初のハンドルに関する情報を表示する First() 関数。
+を使用します。First () 関数は、最初のハンドルに関する情報を表示します。
 
 ```dbgcmd
 0: kd> dx -r2 @$curprocess.Io.Handles.First()
@@ -302,25 +316,25 @@ PEB を表示するには、このコマンドを現在のプロセス使用に�
         UnderlyingObject : Unexpected failure to dereference object
 ```
 
-Io.Handles オブジェクトは、カーネルのみオブジェクトであることに注意してください。
+Io ハンドルオブジェクトはカーネルのみのオブジェクトであることに注意してください。
 
 
-## <a name="working-around-symbol-file-limitations-with-casting"></a>シンボル ファイルの制限事項のキャストを回避します。
+## <a name="working-around-symbol-file-limitations-with-casting"></a>キャストによるシンボルファイルの制限の回避
 
-さまざまな Windows システム環境変数に関する情報を表示する場合がありますいないすべての型情報が使用可能なパブリック シンボル。 この例では、この状況を示します。
+さまざまな Windows システム変数に関する情報を表示する場合、パブリックシンボルですべての型情報が使用できるとは限りません。 この例では、この状況を示します。
 
 ```dbgcmd
 0: kd> dx nt!PsIdleProcess
 Error: No type (or void) for object at Address 0xfffff800e1d50128
 ```
 
-Dx コマンドには、型情報がない変数のアドレスを参照する機能がサポートしています。 このような「アドレスの」参照として扱われます"void \*"ようにキャストすることができます。 つまり、データ型がわかっている場合は、次の構文使用できることを変数の型情報を表示します。
+Dx コマンドは、型情報を持たない変数のアドレスを参照する機能をサポートしています。 このような "アドレス" 参照は "void" として扱われ、そのように \* キャストできます。 つまり、データ型がわかっている場合は、次の構文を使用して変数の型情報を表示できます。
 
 ```dbgcmd
 dx (Datatype *)&VariableName
 ```
 
-たとえばを nt!Nt のデータ型を含む PsIdleProcess!\_」プロセスでは、次のコマンドを使用します。
+たとえば、nt!データ型が nt! \_ の PsIdleProcessEPROCESS、次のコマンドを使用します。
 
 ```dbgcmd
 dx (nt!_EPROCESS *)&nt!PsIdleProcess
@@ -335,26 +349,26 @@ dx (nt!_EPROCESS *)&nt!PsIdleProcess
     [+0x2f8 ( 0: 0)] JobNotReallyActive : 0x0 [Type: unsigned long]
 ```
 
-Dx コマンドは、@ MASM 構文を使用して、切り替えの式エバリュエーターをサポートしていません。 式エバリュエーターの詳細については、次を参照してください。[を評価する式](evaluating-expressions.md)します。
+Dx コマンドでは、式エバリュエーターの @ @ MASM 構文への切り替えはサポートされていません。 式エバリュエーターの詳細については、「[式の評価](evaluating-expressions.md)」を参照してください。
 
 ## <a name="using-linq-with-the-debugger-objects"></a>デバッガー オブジェクトでの LINQ の使用
 
-LINQ 構文は、データを検索および操作デバッガー オブジェクトを使用できます。 LINQ に、構造化照会言語 (SQL) データベースのクエリに使用される概念的に似ています。 さまざまな LINQ メソッドを使用して、検索、フィルター、デバッグ データを解析することができます。 については、デバッガーのオブジェクトと、LINQ を使用して参照してください[デバッガー オブジェクトで LINQ を使用して](using-linq-with-the-debugger-objects.md)します。
+LINQ 構文をデバッガーオブジェクトと共に使用して、データの検索と操作を行うことができます。 LINQ は、概念的にはデータベースのクエリに使用される構造化照会言語 (SQL) と似ています。 さまざまな LINQ メソッドを使用して、デバッグデータの検索、フィルター処理、および解析を行うことができます。 デバッガーオブジェクトで LINQ を使用する方法については、「[デバッガーオブジェクト](using-linq-with-the-debugger-objects.md)での Linq の使用」を参照してください。
 
-## <a name="using-debugger-objects-with-natvis-and-javascript"></a>NatVis および JavaScript でデバッガー オブジェクトの使用
+## <a name="using-debugger-objects-with-natvis-and-javascript"></a>NatVis と JavaScript でのデバッガーオブジェクトの使用
 
-NatVis でデバッガー オブジェクトの使用方法の詳細については、次を参照してください。 [NatVis ネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)します。
+NatVis でのデバッガーオブジェクトの使用の詳細については、「 [NatVis のネイティブデバッガーオブジェクト](native-debugger-objects-in-natvis.md)」を参照してください。
 
-JavaScript でデバッガー オブジェクトの使用方法の詳細については、次を参照してください。 [JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)します。
+JavaScript でのデバッガーオブジェクトの使用の詳細については、「 [Javascript 拡張機能でのネイティブデバッガーオブジェクト](native-objects-in-javascript-extensions.md)」を参照してください。
 
 
-## <a name="span-idseealsospansee-also"></a><span id="see_also"></span>参照してください。
+## <a name="span-idsee_alsospansee-also"></a><span id="see_also"></span>関連項目
 
-[デバッガー オブジェクトを LINQ で使用します。](using-linq-with-the-debugger-objects.md)
+[デバッガー オブジェクトでの LINQ の使用](using-linq-with-the-debugger-objects.md)
 
-[NatVis でネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)
+[NatVis のネイティブ デバッガー オブジェクト](native-debugger-objects-in-natvis.md)
 
-[JavaScript の拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md) 
+[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md) 
 
 ---
 

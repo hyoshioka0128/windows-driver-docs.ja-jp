@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e340d0ed4daf34229b40b57eaa32c17b52ad00eb
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: c072f92183a1ae7e048d696de4ba3a92a8811f1f
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917206"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968277"
 ---
 # <a name="requestedpowerirp-rule-wdm"></a>RequestedPowerIrp ルール (wdm)
 
@@ -28,9 +28,8 @@ ms.locfileid: "85917206"
 
 **ドライバーモデル: WDM**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0004100B) |
+**このルールでバグチェックが見つかりました**:[**バグチェック 0XC4: ドライバー \_ 検証ツールで \_ 検出された \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0004100B)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------

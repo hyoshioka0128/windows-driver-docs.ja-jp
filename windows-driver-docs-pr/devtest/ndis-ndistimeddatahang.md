@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 1033d8894ff1e7e36195b3cbaac4a55bb3ba68e2
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 76e3042bf237772c2473acd17c3fbb7b4ef2e68d
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916322"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967929"
 ---
 # <a name="ndistimeddatahang-rule-ndis"></a>NdisTimedDataHang rule (ndis)
 
@@ -30,9 +30,8 @@ ms.locfileid: "85916322"
 
 **ドライバーモデル: NDIS**
 
-|                                   |                                                                                                                                         |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0x0009200F) |
+**このルールでバグチェックが見つかりました**:[**バグチェック 0XC4: ドライバー \_ 検証ツールで \_ 検出された \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x0x0009200F)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------

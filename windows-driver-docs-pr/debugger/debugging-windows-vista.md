@@ -4,12 +4,12 @@ description: WinDbg を使用して Windows Vista をデバッグするには、
 ms.assetid: 1E4FC9D9-7F84-4F67-8FBC-4283C69AB0AC
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08c750e38a44e9623c8e34927e238aeb30bec36c
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: edbd6af655149b1899cd5814171425ecf47b4905
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534779"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968015"
 ---
 # <a name="debugging-windows-vista"></a>Windows Vista のデバッグ
 
@@ -27,9 +27,8 @@ Windows 用のデバッグツールのみをダウンロードする場合は、
 
 Windows 用の Windows 7 デバッグツールは、x86 ベースまたは x64 ベースのプロセッサで実行でき、x86 ベースまたは x64 ベースのプロセッサで実行されているコードをデバッグできます。 デバッガーとデバッグ対象のコードは、同じコンピューター上で実行されることも、別々のコンピューターで実行されることもあります。 いずれの場合も、デバッガーが実行されるコンピューターは "*ホスト コンピューター*" と呼ばれ、デバッグ対象のコンピューターは "*ターゲット コンピューター*" と呼ばれます。 対象のコンピューターでこれらのオペレーティングシステムのいずれかが実行されている場合は、windows 用の Windows 7 デバッグツールを使用します。
 
-|               |                     |
-|---------------|---------------------|
-| Windows Vista | Windows Server 2008 |
+**Windows Vista**: windows Server 2008
+
  
 
 対象のコンピューターでより新しいバージョンの Windows が実行されている場合は、 [windows 用の現在のデバッグツール](index.md)を入手してください。

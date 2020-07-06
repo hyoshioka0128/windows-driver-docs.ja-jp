@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 11/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 207a206ad7e39ccbd0b2ef93fe3eb27b9d410062
-ms.sourcegitcommit: 257850d61aa5d1db707dc2f30721319b650e47f6
+ms.openlocfilehash: f487d320d59d1ec3494922bc5e10a0ade89b6b14
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73801176"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968339"
 ---
 # <a name="flt_parameters-for-irp_mj_create_mailslot-union"></a>IRP_MJ_CREATE_MAILSLOT 共用体の FLT_PARAMETERS
 
@@ -43,27 +43,27 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 FLT_PARAMETERS の**Createmailslot**構造には、次のメンバーが含まれています。
 
 **SecurityContext**  
 IRP_MJ_CREATE_MAILSLOT 要求のセキュリティコンテキストを表す[IO_SECURITY_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_security_context)構造体へのポインター。この場合、次のようになります。
 
-- **> SecurityContext AccessState**は、オブジェクトのサブジェクトコンテキスト、アクセスの種類、およびその他の必要なアクセスの種類を含む[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)構造体へのポインターです。
+- **>SecurityContext AccessState**は、オブジェクトのサブジェクトコンテキスト、アクセスの種類、およびその他の必要なアクセスの種類を含む[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)構造体へのポインターです。
 
-- **> SecurityContext DesiredAccess**は、メールスロットに要求されたアクセス権を指定する[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)構造です。 詳細については、 [**FltCreateMailslotFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatemailslotfile)の*DesiredAccess*パラメーターを参照してください。
+- **>SecurityContext DesiredAccess**は、メールスロットに要求されたアクセス権を指定する[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)構造です。 詳細については、 [**FltCreateMailslotFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatemailslotfile)の*DesiredAccess*パラメーターを参照してください。
 
 **[オプション]**  
 メールスロットを作成または開くときに適用されるオプションを指定するフラグのビットマスク。また、メールスロットが既に存在する場合に実行されるアクションも指定します。 このメンバーの下位24ビットは、 **FltCreateMailslotFile**の*createoptions*パラメーターに対応しています。 上位8ビットは、 **FltCreateMailslotFile**の*CreateDisposition*パラメーターに対応します。
 
-**確保**  
+**予約されています。**  
 確保使用しないでください。
 
-**アクセスの許可**  
+**ShareAccess**  
 メールスロットファイルに要求された共有アクセス権のビットマスク。 このパラメーターがゼロの場合は、排他アクセスが要求されます。 詳細については、 [**FltCreateMailslotFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/fltkernel/nf-fltkernel-fltcreatemailslotfile)への "/"*アクセス*パラメーターの説明を参照してください。
 
-**Parameters**  
+**パラメーター**  
 作成または開いているメールスロットに関する情報を格納している[MAILSLOT_CREATE_PARAMETERS](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_mailslot_create_parameters)構造体へのポインター。
 
 
@@ -79,9 +79,8 @@ IRP_MJ_CREATE_MAILSLOT は、IRP ベースの操作です。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| Header| Fltkernel .h (Fltkernel. h を含む) |
+**ヘッダー**: fltkernel .H (fltkernel .h を含む)
+
 
 ## <a name="see-also"></a>関連項目
 

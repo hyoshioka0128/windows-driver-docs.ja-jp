@@ -1,9 +1,9 @@
 ---
-title: センサー\_カテゴリ\_生体認証
-description: センサー\_カテゴリ\_生体認証のカテゴリには、生物に関する情報を提供するセンサーが含まれています。
+title: センサー \_ カテゴリの \_ 生体認証
+description: センサー \_ カテゴリの \_ 生体認証カテゴリには、生きていることに関する情報を提供するセンサーが含まれています。
 ms.assetid: e26073e1-11cc-40a9-9a60-3a15ceb46059
 keywords:
-- SENSOR_CATEGORY_BIOMETRIC センサー デバイス
+- SENSOR_CATEGORY_BIOMETRIC センサーデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,56 +14,58 @@ api_type:
 - HeaderDef
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b76336448a5b6ef1a27e297f8548b0e7627747c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6f59e3b3ea0939f75bac2850900f2daf2bbd8d6d
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63383568"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968447"
 ---
-# <a name="sensorcategorybiometric"></a>センサー\_カテゴリ\_生体認証
+# <a name="sensor_category_biometric"></a>センサー \_ カテゴリの \_ 生体認証
 
 
-センサー\_カテゴリ\_生体認証のカテゴリには、生物に関する情報を提供するセンサーが含まれています。
+センサー \_ カテゴリの \_ 生体認証カテゴリには、生きていることに関する情報を提供するセンサーが含まれています。
 
-## <a name="platform-defined-sensor-types"></a>プラットフォーム定義されているセンサーの種類
+## <a name="platform-defined-sensor-types"></a>プラットフォームで定義されたセンサーの種類
 
-このカテゴリには、次のプラットフォームで定義されているセンサーの種類が含まれています。
+このカテゴリには、次のプラットフォームで定義されたセンサーの種類が含まれます。
 
 |センサーの種類|説明|
 |--|--|
 |SENSOR_TYPE_HUMAN_PRESENCE|人間の存在を検出するセンサー。|
-|SENSOR_TYPE_HUMAN_PROXIMITY|人間の近接性を検出するセンサー。|
-|SENSOR_TYPE_TOUCH|タッチ センサー。|
+|SENSOR_TYPE_HUMAN_PROXIMITY|人間の距離を検出するセンサー。|
+|SENSOR_TYPE_TOUCH|タッチセンサー。|
 
  
 
-### <a name="platform-defined-data-fields"></a>プラットフォーム定義されているデータ フィールド
+### <a name="platform-defined-data-fields"></a>プラットフォーム定義のデータフィールド
 
-このカテゴリには、次のプラットフォームで定義されているデータ フィールドが含まれています。
+このカテゴリには、次のプラットフォーム定義のデータフィールドが含まれます。
 
-|データの種類|種類|説明|
+|データの種類|Type|説明|
 |--|--|--|
-|SENSOR_DATA_TYPE_HUMAN_PRESENCE|VT_BOOL|人間がコンピューターを使用する場合は VARIANT_TRUE です。|
-|SENSOR_DATA_TYPE_HUMAN_PROXIMITY_METERS|VT_R4|人間とメートル単位で、コンピューター間の距離。|
-|SENSOR_DATA_TYPE_TOUCH_STATE|VT_BOOL|タッチ センサーが処理された場合は VARIANT_TRUE、場合は variant_false になります。|
+|SENSOR_DATA_TYPE_HUMAN_PRESENCE|VT_BOOL|人間がコンピューターを使用しているときに VARIANT_TRUE します。|
+|SENSOR_DATA_TYPE_HUMAN_PROXIMITY_METERS|VT_R4|人間とコンピューター間の距離 (メートル単位)。|
+|SENSOR_DATA_TYPE_TOUCH_STATE|VT_BOOL|タッチセンサーにタッチしているときに VARIANT_TRUE します。それ以外の場合は VARIANT_FALSE ます。|
 
  
 
 >[!IMPORTANT]
-> 生体認証データのプラットフォームで定義されている各種**PROPERTYKEY**共通に基づいて**GUID**センサーという\_データ\_型\_生体認証の\_GUID。 予約済みの基本値は、使用しないでくださいこの**GUID**プロパティ キーを定義します。
+> 各プラットフォーム定義の生体認証データ型**Propertykey**は、センサー **GUID** \_ データ \_ 型 \_ 生体認証 Guid という名前の共通の GUID に基づいてい \_ ます。 予約済みの基本値であるため、この**GUID**を使用して独自のプロパティキーを定義しないでください。
 
  
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 
-| | |
-|--|--|
-|サポートされている最小のクライアント|Windows 7|
-|サポートされている最小のサーバー|サポートなし|
-|バージョン|Windows 7 で使用できます。|
-|Header|Sensors.h|
+**サポートされている最低限のクライアント**: Windows 7
+
+**サポートされている最小サーバー**: サポートされていません
+
+**バージョン**: Windows 7 で使用できます。
+
+**ヘッダー**: センサー. h
+
 
  
 

@@ -1,9 +1,9 @@
 ---
 title: memusage
-description: Memusage 拡張機能では、物理メモリの使用に関する概要統計が表示されます。
+description: '[Memusage 拡張機能] には、物理メモリの使用量に関する概要統計が表示されます。'
 ms.assetid: 32796ada-53ee-465f-b284-db6ee5481878
 keywords:
-- Windows デバッグ memusage
+- memusage ウィンドウのデバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,47 +12,46 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8468f84e63c62f9ee54280adf8f755f8a4d5e7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 43000e448c5f7a400eeaccfa73a8a6b832276a4f
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336123"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968303"
 ---
 # <a name="memusage"></a>!memusage
 
 
 **! Memusage**拡張機能には、物理メモリの使用に関する概要統計が表示されます。
 
-構文
+Syntax
 
 ```dbgcmd
 !memusage [Flags]
 ```
 
-## <a name="span-idddkmemusagedbgspanspan-idddkmemusagedbgspanparameters"></a><span id="ddk__memusage_dbg"></span><span id="DDK__MEMUSAGE_DBG"></span>パラメーター
+## <a name="span-idddk__memusage_dbgspanspan-idddk__memusage_dbgspanparameters"></a><span id="ddk__memusage_dbg"></span><span id="DDK__MEMUSAGE_DBG"></span>パラメータ
 
 
-<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span> *フラグ*   
-次の値のいずれを指定できます。 既定では 0x0 です。
+<span id="_______Flags______"></span><span id="_______flags______"></span><span id="_______FLAGS______"></span>*フラグ*   
+次のいずれかの値を指定できます。 既定値は0x0 です。
 
 <span id="0x0"></span><span id="0X0"></span>0x0  
-PFN データベース内のページの詳細な説明と共に、一般的な概要情報が表示されます。 このタイプの出力の例については、「解説」を参照してください。
+一般的な概要情報と、PFN データベース内のページの詳細な説明が表示されます。 この種類の出力の例については、「解説」を参照してください。
 
 <span id="0x1"></span><span id="0X1"></span>0x1  
-PFN データベースで変更済みの非書き込みページに関する概要情報のみを表示します.
+PFN データベースの変更された書き込みなしのページに関する概要情報のみを表示します。
 
 <span id="0x2"></span><span id="0X2"></span>0x2  
-詳細については PFN データベースで変更済みの非書き込みページのみを表示します。
+PFN データベースの変更された書き込みなしページに関する詳細情報のみを表示します。
 
 <span id="0x8"></span><span id="0X8"></span>0x8  
-のみメモリの使用に関する全般の概要情報が表示されます。
+メモリの使用に関する全般的な概要情報のみを表示します。
 
-### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>環境
+### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
-|       |                  |
-|-------|------------------|
-| モード | カーネル モードのみ |
+**モード**: カーネルモードのみ
+
 
  
 
@@ -60,13 +59,13 @@ PFN データベースで変更済みの非書き込みページに関する概�
 
 Kdexts.dll
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-物理メモリの統計情報は、メモリ マネージャーのページのフレーム数 (PFN) のデータベース テーブルから収集されます。
+物理メモリの統計情報は、Memory Manager のページフレーム番号 (PFN) データベーステーブルから収集されます。
 
-このコマンドでは、対象のコンピュータが取得するデータ量が大きいため、64 ビット モードで実行されている場合に特にに実行するには長い時間がかかります。 PFN データベース読み込み中、カウンターは、その進行状況を示します。 この読み込みプロセスをスピードアップするために COM ポート速度を増やす、 [ **CTRL + A (トグル ボー レート)** ](ctrl-a--toggle-baud-rate-.md)キー、またはを使用して、 [ **.cache (キャッシュ サイズを設定する)** ](-cache--set-cache-size-.md)(おそらく約 10 MB) にキャッシュ サイズを大きくコマンド。
+このコマンドの実行には長い時間がかかります。特に、対象のコンピュータが64ビットモードで実行されている場合は、取得するデータ量が多いためです。 PFN データベースの読み込み中に、カウンターにその進行状況が表示されます。 この読み込みを高速化するには、 [**CTRL + A (ボーレートの切り替え)**](ctrl-a--toggle-baud-rate-.md)キーを使用して COM ポートの速度を上げるか、 [**. Cache (キャッシュサイズの設定)**](-cache--set-cache-size-.md)コマンドを使用してキャッシュサイズを増やします (おそらく約 10 MB)。
 
-**! Memusage**コマンドを実行中にも使用できます[ローカル カーネル デバッグ](performing-local-kernel-debugging.md)します。
+[ローカルカーネルデバッグ](performing-local-kernel-debugging.md)の実行中に、 **! memusage**コマンドを使用することもできます。
 
 この拡張機能からの出力の例を次に示します。
 
@@ -133,14 +132,14 @@ Control Valid Standby Dirty Shared Locked PageTables  name
 --------     0      0     0 -----     0 -----  driver ( NonPaged Pool )
 ```
 
-最初の列には、各マップの構造を記述するコントロールの領域の構造体のアドレスが表示されます。 使用して、 [ **! ca** ](-ca.md)拡張機能コマンドでこれらのコントロールの領域を表示します。
+最初の列には、マップされた各構造体を記述するコントロール領域の構造体のアドレスが表示されます。 これらのコントロール領域を表示するには、 [**! ca**](-ca.md)拡張コマンドを使用します。
 
 <a name="remarks"></a>注釈
 -------
 
-使用することができます、 [ **! vm** ](-vm.md)拡張機能コマンドで仮想メモリ使用量を分析します。 この拡張機能は通常より役に立つ **! memusage**します。 メモリ管理の詳細については、次を参照してください。 *Microsoft Windows internals 』*、Mark Russinovich と David Solomon します。 
+[**! Vm**](-vm.md) extension コマンドを使用して、仮想メモリの使用量を分析できます。 この拡張機能は、通常、 **! memusage**よりも便利です。 メモリ管理の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。 
 
-[ **! Pfn** ](-pfn.md) PFN データベース内の特定のページ フレームのエントリを表示する拡張機能のコマンドを使用できます。
+[**! Pfn**](-pfn.md) extension コマンドを使用すると、pfn データベース内の特定のページフレームエントリを表示できます。
 
  
 

@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 02e495f881f6ad938a3f8eb1338c7c2b622beb04
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 88c41a0cc2ed665787d7530df76530b6873636df
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916852"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968085"
 ---
 # <a name="irqldispatch-rule-wdm"></a>IrqlDispatch ルール (wdm)
 
@@ -54,9 +54,8 @@ ms.locfileid: "85916852"
 
 **ドライバーモデル: WDM**
 
-|                                   |                                                                                                                                                                                                                                         |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェックの 0xa: IRQL \_\_以下 \_ \_ **](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal) 、[**バグチェック 0xc4: ドライバー \_ 検証ツールで \_ 検出された \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00020003) |
+**このルールでバグチェックが見つかりました**:[**バグチェック 0xa: IRQL \_ が \_ 少ない \_ か \_ 等しい**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal)、[**バグチェック 0xc4: ドライバー \_ 検証ツールで \_ 検出さ \_ **](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)れた違反 (0x00020003)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------

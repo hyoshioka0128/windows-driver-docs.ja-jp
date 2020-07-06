@@ -1,27 +1,29 @@
 ---
-title: アイドル状態とアクティブな電源の GPU 電源管理
+title: アイドル状態および現在使用されている電源の GPU 電源管理
 description: Windows Display Driver Model (WDDM) 1.2 以降のドライバーが個々のデバイスまたは一連のデバイスの電力を管理できるようにする GPU 電源管理インフラストラクチャ。
 ms.assetid: F8096F7E-39EA-45CB-8A1C-60A7A298AFEC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a3a9b3a2e47c8b9581998b4ad51c40609e90a4
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: b88727c350c3d4c094cf0c0019a05d8be8b8bfd8
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72838932"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967965"
 ---
-# <a name="gpu-power-management-of-idle-states-and-active-power"></a>アイドル状態とアクティブな電源の GPU 電源管理
+# <a name="gpu-power-management-of-idle-states-and-active-power"></a>アイドル状態および現在使用されている電源の GPU 電源管理
 
 
 Windows 8 以降では、Windows Display Driver Model (WDDM) 1.2 以降のドライバーが個々のデバイスまたは一連のデバイスの電力を管理できるようにする、オプションの GPU 電源管理インフラストラクチャを使用できます。 このインフラストラクチャは、Windows とのコラボレーションにおける、F 状態と P 状態の電源管理をサポートするための標準化されたメカニズムを提供します。
 
-|                                                                                   |                                        |
-|-----------------------------------------------------------------------------------|----------------------------------------|
-| 最小 WDDM バージョン                                                              | 1.2                                    |
-| Windows の最小バージョン                                                           | 8                                      |
-| ドライバーの実装                                                             | 省略可能                               |
-| [必要条件](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)とテスト | **デバイス...RuntimePowerMgmt** |
+**最小 WDDM バージョン**: 1.2
+
+**Windows の最小バージョン**: 8
+
+**ドライバーの実装**: 省略可能
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)必要条件とテスト**:**デバイス...RuntimePowerMgmt**
+
 
  
 
@@ -38,14 +40,14 @@ Windows 8 以降では、Windows Display Driver Model (WDDM) 1.2 以降のドラ
 -   [*DxgkCbSetPowerComponentResidency*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkcb_setpowercomponentresidency)
 -   [*DxgkDdiPowerRuntimeControlRequest*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddipowerruntimecontrolrequest)
 -   [*DxgkDdiSetPowerComponentFState*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/nc-d3dkmddi-dxgkddisetpowercomponentfstate)
--   [**DXGK\_DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
--   [**DXGK\_POWER\_コンポーネント\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_flags)
--   [**DXGK\_POWER\_コンポーネント\_マッピング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_mapping)
--   [**DXGK\_POWER\_コンポーネント\_の種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_power_component_type)
--   [**DXGK\_POWER\_RUNTIME\_コンポーネント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_runtime_component)
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
--   [**DXGKARG\_QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)
--   [**DXGK\_QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)
+-   [**DXGK \_ DRIVERCAPS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_drivercaps)
+-   [**DXGK の \_ 電源 \_ コンポーネント \_ フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_flags)
+-   [**DXGK の \_ 電源 \_ コンポーネントの \_ マッピング**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_component_mapping)
+-   [**DXGK の \_ 電源 \_ コンポーネントの \_ 種類**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_power_component_type)
+-   [**DXGK の \_ 電源 \_ ランタイム \_ コンポーネント**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_power_runtime_component)
+-   [**DXGK \_ QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGKARG \_ QUERYADAPTERINFO**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgkarg_queryadapterinfo)
+-   [**DXGK \_ QUERYSEGMENTOUT3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_querysegmentout3)
 
 ## <a name="span-idgpu_power_management_scenariosspanspan-idgpu_power_management_scenariosspanspan-idgpu_power_management_scenariosspangpu-power-management-scenarios"></a><span id="GPU_power_management_scenarios"></span><span id="gpu_power_management_scenarios"></span><span id="GPU_POWER_MANAGEMENT_SCENARIOS"></span>GPU の電源管理のシナリオ
 

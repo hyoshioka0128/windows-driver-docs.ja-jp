@@ -4,15 +4,15 @@ description: OID_WDI_SET_SAE_AUTH_PARAMS は、ドライバーからの NDIS_STA
 ms.assetid: D20F92F9-8AEF-456C-B27A-20E61F75B3B7
 ms.date: 02/15/2019
 keywords:
-- OID_WDI_SET_SAE_AUTH_PARAMS ネットワークドライバー (Windows Vista 以降)
+- Windows Vista 以降のネットワークドライバーの OID_WDI_SET_SAE_AUTH_PARAMS
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6e465d32aaaa9abc398752498193ec423dcdaf40
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 7895e12187c02675c21f1971f782f2cb1f8e8fc4
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72843871"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968507"
 ---
 # <a name="oid_wdi_set_sae_auth_params"></a>OID_WDI_SET_SAE_AUTH_PARAMS
 
@@ -22,9 +22,9 @@ ms.locfileid: "72843871"
 
 SAE 認証の詳細については、「 [WPA3 SAE authentication](wpa3-sae-authentication.md)」を参照してください。
 
-## <a name="command-parameters"></a>コマンドパラメーター
+## <a name="command-parameters"></a>コマンド パラメーター
 
-| TLV | タスクバーの検索ボックスに | 複数の TLV インスタンスを使用できます | オプション | 説明 |
+| TLV | Type | 複数の TLV インスタンスを使用できます | 省略可能 | 説明 |
 | --- | --- | --- | --- | --- |
 | [WDI_TLV_BSSID](wdi-tlv-bssid.md) | [**WDI_MAC_ADDRESS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dot11wdi/ns-dot11wdi-_wdi_mac_address) |  |  | AP の BSSID。 |
 | [WDI_TLV_SAE_REQUEST_TYPE](wdi-tlv-sae-request-type.md) | [**WDI_SAE_REQUEST_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wditypes/ne-wditypes-_wdi_sae_request_type) |   |   | BSSID に送信する SAE 要求フレームの種類。 |
@@ -34,8 +34,9 @@ SAE 認証の詳細については、「 [WPA3 SAE authentication](wpa3-sae-auth
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | WIN ENT LTSB 2016 Estonian 64 Bits |
-| Header | Dot11wdi |
+**サポートされている最小クライアント**: Windows 10、バージョン1903
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Dot11wdi
+

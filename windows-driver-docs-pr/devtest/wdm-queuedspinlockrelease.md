@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9714c7ba933688b8b9e1c68e486e1ddd1180aa
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: d8929e895933dec5d9a359cc0818d65fe67272e6
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85918062"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968279"
 ---
 # <a name="queuedspinlockrelease-rule-wdm"></a>QueuedSpinLockRelease ルール (wdm)
 
@@ -28,9 +28,8 @@ ms.locfileid: "85918062"
 
 **ドライバーモデル: WDM**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00040007) |
+**このルールでバグチェックが見つかりまし**た:[**バグチェック 0XC4: ドライバー \_ 検証ツール \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00040007)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------

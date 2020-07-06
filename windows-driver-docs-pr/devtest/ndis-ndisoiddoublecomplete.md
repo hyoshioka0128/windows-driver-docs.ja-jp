@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 114cfb7ec00e07eff2e41ec7f1ea2ce6246da93b
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 98960f3018245e532f0170d718682472a42df06f
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916260"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968290"
 ---
 # <a name="ndisoiddoublecomplete-rule-ndis"></a>NdisOidDoubleComplete rule (ndis)
 
@@ -28,9 +28,8 @@ OID が追跡 (追跡 \_ オブジェクト) されます。 カーネルデバ�
 
 **ドライバーモデル: NDIS**
 
-|                                   |                                                                                                                                        |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツールの \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00091002) |
+**このルールでバグチェックが見つかりまし**た:[**バグチェック 0XC4: ドライバー \_ 検証ツールの \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00091002)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------

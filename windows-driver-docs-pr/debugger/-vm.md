@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: eaaa9cf742780e9f186c9eded8a13a777d7899f1
-ms.sourcegitcommit: 2aa583e3da4ae9338a0d11678bf77f1460286f2d
+ms.openlocfilehash: 0a9e06ad65fe3f16190d9bae2c82fd0074b4e205
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "70025160"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968233"
 ---
 # <a name="vm"></a>!vm
 
@@ -54,9 +54,8 @@ ms.locfileid: "70025160"
 
 ### <a name="span-idenvironmentspanspan-idenvironmentspanspan-idenvironmentspanenvironment"></a><span id="Environment"></span><span id="environment"></span><span id="ENVIRONMENT"></span>Environment
 
-|       |                  |
-|-------|------------------|
-| モード | カーネルモードのみ |
+**モード**: カーネルモードのみ
+
 
  
 
@@ -70,11 +69,11 @@ ms.locfileid: "70025160"
 <tbody>
 <tr class="odd">
 <td align="left"><p><strong>Windows 2000</strong></p></td>
-<td align="left"><p>Kdextx86</p></td>
+<td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 以降</strong></p></td>
-<td align="left"><p>Kdexts .dll</p></td>
+<td align="left"><p><strong>Windows XP 以降</strong></p></td>
+<td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,7 +82,7 @@ ms.locfileid: "70025160"
 
 ### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-[ **! Memusage**](-memusage.md)拡張コマンドを使用すると、物理メモリの使用量を分析できます。 メモリ管理の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
+[**! Memusage**](-memusage.md)拡張コマンドを使用すると、物理メモリの使用量を分析できます。 メモリ管理の詳細については、「 *Microsoft Windows の内部*」 (Mark Russinovich と David ソロモン) を参照してください。
 
 <a name="remarks"></a>注釈
 -------
@@ -131,7 +130,7 @@ kd> !vm 1
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">意味</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>

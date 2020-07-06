@@ -1,21 +1,21 @@
 ---
 title: WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
-description: WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS では、現在構成されている Rsn Eapol キー情報を含む TLV です。
+description: WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS は、現在構成されている Rsn Eapol キー情報を含む TLV です。
 ms.assetid: DFF81CBD-1B10-456F-AD8D-1163DD80C981
 ms.date: 04/02/2018
 keywords:
-- WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a812bd7b11c7f1118ec14a7f2a934ba0c09b56
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a6e2eceea6140f3449bed66b0ae2aa960ffb5ed1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380691"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968309"
 ---
-# <a name="wditlvpmprotocolrsnoffloadkeys"></a>WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
+# <a name="wdi_tlv_pm_protocol_rsn_offload_keys"></a>WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS
 
-WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS では、現在構成されている Rsn Eapol キー情報を含む TLV です。 この TLV がで使用される、 [NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED](ndis-status-wdi-indication-cipher-key-updated.md)状態を示す値。
+WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS は、現在構成されている Rsn Eapol キー情報を含む TLV です。 この TLV は、 [NDIS_STATUS_WDI_INDICATION_CIPHER_KEY_UPDATED](ndis-status-wdi-indication-cipher-key-updated.md)状態表示で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -23,14 +23,15 @@ WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS では、現在構成されている Rsn Ea
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | [説明] |
 | --- | --- |
 | WDI_RSN_OFFLOAD_KEYS_CONTAINER | 現在構成されている Rsn Eapol キー情報。 |
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1803 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: Windows 10、バージョン1803
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Wditypes
+

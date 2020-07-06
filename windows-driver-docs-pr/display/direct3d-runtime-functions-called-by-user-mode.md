@@ -5,12 +5,12 @@ ms.assetid: CB6A0314-E410-4865-8833-801BDB24AA25
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: a97d582ead5fb6278e5d0ecb9c55c2bb0da43fdf
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 68b2fbb3902e1d186378674b5e17a914f177f375
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839737"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968135"
 ---
 # <a name="direct3d-runtime-functions-called-by-user-mode-display-drivers"></a>ユーザーモードディスプレイドライバーによって呼び出される Direct3D ランタイム関数
 
@@ -18,11 +18,11 @@ ms.locfileid: "72839737"
 
 ## <a name="direct3d-runtime-kernel-services-accessing-functions"></a>関数にアクセスする Direct3D ランタイムカーネルサービス
 
-**Microsoft Direct3D version 9**ランタイムは、ユーザーモードの表示ドライバーの[openadapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)の呼び出しで、 [D3DDDI_ADAPTERCALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_adaptercallbacks)構造体のメンバーを介して、*アダプター固有*のコールバック関数へのポインターを提供します。プロシージャ. ランタイムは、ユーザーモードの表示ドライバーの[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数の呼び出しで、 [D3DDDI_DEVICECALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)構造体のメンバーを通じて、*デバイス固有*のコールバック関数を表示するポインターを提供します。 
+**Microsoft Direct3D version 9**ランタイムは、ユーザーモードの表示ドライバーの[openadapter](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_openadapter)関数の呼び出しで、 [D3DDDI_ADAPTERCALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_adaptercallbacks)構造体のメンバーを介して、*アダプター固有*のコールバック関数へのポインターを提供します。 ランタイムは、ユーザーモードの表示ドライバーの[CreateDevice](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createdevice)関数の呼び出しで、 [D3DDDI_DEVICECALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicecallbacks)構造体のメンバーを介して*デバイス固有*のコールバック関数を表示するポインターを提供します。 
 
-**Microsoft Direct3D version 10**以降のランタイムは、ユーザーモードのディスプレイドライバーの[OpenAdapter10](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)の呼び出しで、 **D3DDDI_ADAPTERCALLBACKS**構造体のメンバーを介して、アダプター固有のコールバック関数へのポインターを提供します。OpenAdapter10_2 関数。 ランタイムは、ユーザーモードの display driver の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 **D3DDDI_DEVICECALLBACKS**構造体のメンバーを通じて、デバイス固有のコールバック関数を表示するポインターを提供します。
+**Microsoft Direct3D version 10**以降のランタイムは、ユーザーモードの表示ドライバーの[OpenAdapter10](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_openadapter)または OpenAdapter10_2 関数の呼び出しで、 **D3DDDI_ADAPTERCALLBACKS**構造体のメンバーを介して、アダプター固有のコールバック関数へのポインターを提供します。 ランタイムは、ユーザーモードの display driver の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 **D3DDDI_DEVICECALLBACKS**構造体のメンバーを介してデバイス固有のコールバック関数を表示するポインターを提供します。
 
-|関数 | |
+|機能 | |
 |:----|:----|
 |[PFND3DDDI_ALLOCATECB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_allocatecb)|[PFND3DDDI_CREATECONTEXTVIRTUALCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createcontextvirtualcb)|
 |[PFND3DDDI_CREATEHWCONTEXTCB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createhwcontextcb)|[PFND3DDDI_CREATEHWQUEUECB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createhwqueuecb)|
@@ -92,15 +92,14 @@ ms.locfileid: "72839737"
 
 ## <a name="direct3d-runtime-version-10-and-later-core-callback-functions"></a>Direct3D ランタイムバージョン10以降のコアコールバック関数
 
-このセクションでは、Microsoft Direct3D 10 以降のランタイムがユーザーモード表示ドライバーに提供する主要なコールバック関数について説明します。 ランタイムは、ユーザーモードの display driver の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 [D3D10DDI_CORELAYER_DEVICECALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_corelayer_devicecallbacks)構造体のメンバーを通じてコアコールバック関数へのポインターを提供します。
+このセクションでは、Microsoft Direct3D 10 以降のランタイムがユーザーモード表示ドライバーに提供する主要なコールバック関数について説明します。 ランタイムは、ユーザーモードの display driver の[CreateDevice (D3D10)](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_createdevice)関数の呼び出しで、 [D3D10DDI_CORELAYER_DEVICECALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d10ddi_corelayer_devicecallbacks)構造体のメンバーを介してコアコールバック関数へのポインターを提供します。
 
 ### <a name="direct3d-runtime-version-10-control-callback-functions"></a>Direct3D ランタイムバージョン10コントロールのコールバック関数
 
 次に示すのは、Microsoft Direct3D 10 以降のランタイムがユーザーモード表示ドライバーに提供するコントロールコールバック関数の一覧です。
 
-| | |
-|:---|:---|
-|[PFND3D10DDI_DISABLE_DEFERRED_STAGING_RESOURCE_DESTRUCTION_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_disable_deferred_staging_resource_destruction_cb) |[PFND3D10DDI_SETERROR_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb) |
+**[PFND3D10DDI_DISABLE_DEFERRED_STAGING_RESOURCE_DESTRUCTION_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_disable_deferred_staging_resource_destruction_cb)**: [PFND3D10DDI_SETERROR_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_seterror_cb)
+
 
 
 ### <a name="direct3d-runtime-version-10-state-refresh-callback-functions"></a>Direct3D ランタイムバージョン10の状態更新コールバック関数
@@ -111,20 +110,30 @@ Direct3D 10 ランタイムはアプリケーションの現在バインドさ�
 
 状態更新コールバック関数は、ステートレスドライバーを開発したり、コマンドバッファーのプリアンブルデータを構築しようとしたりするときに役立ちます。 また、状態更新コールバック関数を使用すると、ユーザーモードの表示ドライバーは、Direct3D 10 ランタイムによって管理される高ウォーターマークの恩恵を受けることができます。 ハイウォーターマークは、NULL 以外の最大スロットインデックスを示します。したがって、ハイウォーターマークは、このようなスロット間でのトラバーサルを向上させます。
 
-| | |
-|:---|:---|
-| [PFND3D10DDI_STATE_GS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_constbuf_cb) | [PFND3D10DDI_STATE_GS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_sampler_cb) |
-|[PFND3D10DDI_STATE_GS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_shader_cb) |[PFND3D10DDI_STATE_GS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_srv_cb) |
-|[PFND3D10DDI_STATE_IA_INDEXBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_indexbuf_cb) |[PFND3D10DDI_STATE_IA_INPUTLAYOUT_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_inputlayout_cb)|
-|[PFND3D10DDI_STATE_IA_PRIMITIVE_TOPOLOGY_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_primitive_topology_cb) |[PFND3D10DDI_STATE_IA_VERTEXBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_vertexbuf_cb)|
-|[PFND3D10DDI_STATE_OM_BLENDSTATE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_om_blendstate_cb)|[PFND3D10DDI_STATE_OM_DEPTHSTATE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_om_depthstate_cb) |
-|[PFND3D10DDI_STATE_OM_RENDERTARGETS_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_om_rendertargets_cb) |[PFND3D10DDI_STATE_PS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_constbuf_cb) |
-|[PFND3D10DDI_STATE_PS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_sampler_cb) |[PFND3D10DDI_STATE_PS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_shader_cb) |
-|[PFND3D10DDI_STATE_PS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_srv_cb) |[PFND3D10DDI_STATE_RS_RASTSTATE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_rs_raststate_cb) |
-|[PFND3D10DDI_STATE_RS_SCISSOR_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_rs_scissor_cb) |[PFND3D10DDI_STATE_RS_VIEWPORTS_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_rs_viewports_cb) |
-|[PFND3D10DDI_STATE_SO_TARGETS_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_so_targets_cb) |[PFND3D10DDI_STATE_TEXTFILTERSIZE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_textfiltersize_cb) |
-|[PFND3D10DDI_STATE_VS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_constbuf_cb) |[PFND3D10DDI_STATE_VS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_sampler_cb) |
-|[PFND3D10DDI_STATE_VS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_shader_cb) |[PFND3D10DDI_STATE_VS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_srv_cb) |
+**[PFND3D10DDI_STATE_GS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_constbuf_cb)**: [PFND3D10DDI_STATE_GS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_sampler_cb)
+
+**[PFND3D10DDI_STATE_GS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_shader_cb)**: [PFND3D10DDI_STATE_GS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_gs_srv_cb)
+
+**[PFND3D10DDI_STATE_IA_INDEXBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_indexbuf_cb)**: [PFND3D10DDI_STATE_IA_INPUTLAYOUT_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_inputlayout_cb)
+
+**[PFND3D10DDI_STATE_IA_PRIMITIVE_TOPOLOGY_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_primitive_topology_cb)**: [PFND3D10DDI_STATE_IA_VERTEXBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ia_vertexbuf_cb)
+
+**[PFND3D10DDI_STATE_OM_BLENDSTATE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_om_blendstate_cb)**: [PFND3D10DDI_STATE_OM_DEPTHSTATE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_om_depthstate_cb)
+
+**[PFND3D10DDI_STATE_OM_RENDERTARGETS_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_om_rendertargets_cb)**: [PFND3D10DDI_STATE_PS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_constbuf_cb)
+
+**[PFND3D10DDI_STATE_PS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_sampler_cb)**: [PFND3D10DDI_STATE_PS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_shader_cb)
+
+**[PFND3D10DDI_STATE_PS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_ps_srv_cb)**: [PFND3D10DDI_STATE_RS_RASTSTATE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_rs_raststate_cb)
+
+**[PFND3D10DDI_STATE_RS_SCISSOR_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_rs_scissor_cb)**: [PFND3D10DDI_STATE_RS_VIEWPORTS_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_rs_viewports_cb)
+
+**[PFND3D10DDI_STATE_SO_TARGETS_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_so_targets_cb)**: [PFND3D10DDI_STATE_TEXTFILTERSIZE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_textfiltersize_cb)
+
+**[PFND3D10DDI_STATE_VS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_constbuf_cb)**: [PFND3D10DDI_STATE_VS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_sampler_cb)
+
+**[PFND3D10DDI_STATE_VS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_shader_cb)**: [PFND3D10DDI_STATE_VS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d10ddi_state_vs_srv_cb)
+
 
 ## <a name="direct3d-runtime-version-10-kernel-services-accessing-functions"></a>Direct3D ランタイムバージョン10カーネルサービスアクセス関数
 
@@ -132,7 +141,7 @@ Direct3D 10 ランタイムはアプリケーションの現在バインドさ�
 
 ## <a name="direct3d-runtime-version-11-functions"></a>Direct3D ランタイムバージョン11関数
 
-このセクションでは、Microsoft Direct3D 11 以降のランタイムがユーザーモード表示ドライバーに提供する主要なコールバック関数について説明します。 ランタイムは、ユーザーモードの display driver の CreateDevice (D3D10) 関数の呼び出しで、 [D3D11DDI_CORELAYER_DEVICECALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_corelayer_devicecallbacks)構造体のメンバーを通じてコアコールバック関数へのポインターを提供します。
+このセクションでは、Microsoft Direct3D 11 以降のランタイムがユーザーモード表示ドライバーに提供する主要なコールバック関数について説明します。 ランタイムは、ユーザーモードの display driver の CreateDevice (D3D10) 関数の呼び出しで、 [D3D11DDI_CORELAYER_DEVICECALLBACKS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddi_corelayer_devicecallbacks)構造体のメンバーを介してコアコールバック関数へのポインターを提供します。
 
 
 ### <a name="direct3d-runtime-version-11-control-callback-functions"></a>Direct3D ランタイムバージョン11コントロールコールバック関数
@@ -149,70 +158,113 @@ Direct3D 11 ランタイムはアプリケーションの現在バインドさ�
 
 状態更新コールバック関数は、ステートレスドライバーを開発したり、コマンドバッファーのプリアンブルデータを構築しようとしたりするときに役立ちます。 また、状態更新コールバック関数を使用すると、Direct3D 11 ランタイムによって管理されるハイウォーターマークを利用して、ユーザーモードの表示ドライバーを活用できます。 ハイウォーターマークは、NULL 以外の最大スロットインデックスを示します。したがって、ハイウォーターマークは、このようなスロット間でのトラバーサルを向上させます。
 
-| | |
-|:---|:---|
-| [PFND3D11DDI_STATE_CS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_constbuf_cb) | [PFND3D11DDI_STATE_CS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_sampler_cb) |
-| [PFND3D11DDI_STATE_CS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_shader_cb) | [PFND3D11DDI_STATE_CS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_srv_cb) |
-| [PFND3D11DDI_STATE_CS_UAV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_uav_cb) | [PFND3D11DDI_STATE_DS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_constbuf_cb) |
-| [PFND3D11DDI_STATE_DS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_sampler_cb) | [PFND3D11DDI_STATE_DS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_shader_cb) |
-| [PFND3D11DDI_STATE_DS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_srv_cb) | [PFND3D11DDI_STATE_HS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_constbuf_cb) |
-| [PFND3D11DDI_STATE_HS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_sampler_cb) | [PFND3D11DDI_STATE_HS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_shader_cb) |
-| [PFND3D11DDI_STATE_HS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_srv_cb) |  |
+**[PFND3D11DDI_STATE_CS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_constbuf_cb)**: [PFND3D11DDI_STATE_CS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_sampler_cb)
+
+**[PFND3D11DDI_STATE_CS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_shader_cb)**: [PFND3D11DDI_STATE_CS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_srv_cb)
+
+**[PFND3D11DDI_STATE_CS_UAV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_cs_uav_cb)**: [PFND3D11DDI_STATE_DS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_constbuf_cb)
+
+**[PFND3D11DDI_STATE_DS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_sampler_cb)**: [PFND3D11DDI_STATE_DS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_shader_cb)
+
+**[PFND3D11DDI_STATE_DS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_ds_srv_cb)**: [PFND3D11DDI_STATE_HS_CONSTBUF_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_constbuf_cb)
+
+**[PFND3D11DDI_STATE_HS_SAMPLER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_sampler_cb)**: [PFND3D11DDI_STATE_HS_SHADER_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_shader_cb)
+
+**[PFND3D11DDI_STATE_HS_SRV_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_state_hs_srv_cb)**: 
+
 
 
 ## <a name="direct3d-runtime-version-12-and-later-functions"></a>Direct3D ランタイムバージョン12以降の関数
 
 このセクションのリファレンスページでは、Microsoft Direct3D 12 以降のランタイムがユーザーモード表示ドライバーに提供する主要なコールバック関数について説明します。 
 
-| | |
-|:---|:---|
-| [PFND3D12DDI_WRITEBUFFERIMMEDIATE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_writebufferimmediate_0032) | [PFND3D12DDI_VIDEO_PROCESS_FRAME_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_process_frame_0032) |
-| [PFND3D12DDI_VIDEO_DECODE_FRAME_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_decode_frame_0032) | PFND3D12DDI_VIDEO_DECODE_FRAME_0030 |
-| [PFND3D12DDI_TRANSFORMENCRYPTEDDATA_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_transformencrypteddata_0030) | [PFND3D12DDI_SETVIEWINSTANCEMASK_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_setviewinstancemask_0033) |
-| [PFND3D12DDI_SETPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_setprotectedresourcesession_0030) | [PFND3D12DDI_OPENPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_openprotectedresourcesession_0030) |
-| [PFND3D12DDI_OPENCRYPTOSESSIONPOLICY_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_opencryptosessionpolicy_0030) | [PFND3D12DDI_OPENCRYPTOSESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_opencryptosession_0030) |
-| [PFND3D12DDI_GETKEYBASEDATA_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_getkeybasedata_0030) | [PFND3D12DDI_DESTROYVIDEODECODERHEAP_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoderheap_0032) |
-| [PFND3D12DDI_DESTROYPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyprotectedresourcesession_0030) | [PFND3D12DDI_DESTROYCRYPTOSESSIONPOLICY_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroycryptosessionpolicy_0030) |
-| [PFND3D12DDI_DESTROYCRYPTOSESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroycryptosession_0030) | [PFND3D12DDI_CREATEVIDEOPROCESSOR_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideoprocessor_0032) |
-| [PFND3D12DDI_CREATEVIDEODECODERHEAP_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoderheap_0033) | PFND3D12DDI_CREATEVIDEODECODERHEAP_0032 |
-| [PFND3D12DDI_CREATEVIDEODECODER_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoder_0032) | [PFND3D12DDI_CREATEPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createprotectedresourcesession_0030) |
-| [PFND3D12DDI_CREATEHEAPANDRESOURCE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createheapandresource_0030) | [PFND3D12DDI_CREATECRYPTOSESSIONPOLICY_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createcryptosessionpolicy_0030) |
-| [PFND3D12DDI_CREATECRYPTOSESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createcryptosession_0030) | [PFND3D12DDI_CREATE_PROTECTED_SESSION_CB_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_protected_session_cb_0030) |
-| [PFND3D12DDI_CREATE_PIPELINE_STATE_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_pipeline_state_0033) | [PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideoprocessorsize_0032) |
-| [PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideodecodersize_0032) | [PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideodecoderheapsize_0033) |
-| PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0032 | [PFND3D12DDI_CALCPRIVATEPROTECTEDRESOURCESESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateprotectedresourcesessionsize_0030) |
-| [PFND3D12DDI_CALCPRIVATEOPENEDPROTECTEDRESOURCESESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateopenedprotectedresourcesessionsize_0030) | [PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateopenedcryptosessionsize_0030) |
-| [PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONPOLICYSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateopenedcryptosessionpolicysize_0030) | [PFND3D12DDI_CALCPRIVATECRYPTOSESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatecryptosessionsize_0030) |
-| [PFND3D12DDI_CALCPRIVATECRYPTOSESSIONPOLICYSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatecryptosessionpolicysize_0030) | [PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calc_private_pipeline_state_size_0033) |
-| [PFND3D12DDI_CREATEVIDEOPROCESSOR_0043](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideoprocessor_0043) | [PFND3D12DDI_DESTROYVIDEODECODERHEAP_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoderheap_0032) |
-| [PFND3D12DDI_CREATEVIDEODECODERHEAP_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoderheap_0033) | PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAP |
-| [PFND3D12DDI_DESTROYVIDEODECODER_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoder_0021) | PFND3D12DDI_CALCPRIVATEVIDEODECODER |
-| [PFND3D12DDI_ALLOCATE_CB_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_allocate_cb_0022) | [PFND3D12DDI_BEGIN_END_QUERY_0003](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_begin_end_query_0003) |
-| [PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0023](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatecommandqueuesize_0023) | [PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideodecodersize_0032) |
-| [PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideoprocessorsize_0032) | [PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_checkresourceallocationinfo_0022) |
-| [PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_checkexisitingresourceallocationinfo_0022) | [PFND3D12DDI_CREATE_PIPELINE_STATE_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_pipeline_state_0021) |
-|[PFND3D12DDI_CREATECOMMANDQUEUE_0023](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createcommandqueue_0023)|[PFND3D12DDI_CREATEVIDEODECODER_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoder_0032) |
-|[PFND3D12DDI_CREATEVIDEOPROCESSOR_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideoprocessor_0032)|[PFND3D12DDI_DEALLOCATE_CB_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_deallocate_cb_0022)|
-|[PFND3D12DDI_DESTROYVIDEODECODER_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoder_0021)|[PFND3D12DDI_DESTROYVIDEOPROCESSOR_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideoprocessor_0021)|
-|PFND3D12DDI_GETPAGEABLESIZE|[PFND3D12DDI_RESOLVE_QUERY_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_resolve_query_data)|
-|[PFND3D12DDI_RESOURCEBARRIER_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_resourcebarrier_0022)|[PFND3D12DDI_SET_EXTENDED_FEATURE_CALLBACKS_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_set_extended_feature_callbacks_0021)|
-|[PFND3D12DDI_SET_PREDICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_set_predication)|[PFND3D12DDI_SHADERCACHEGETVALUE_CB_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_shadercachegetvalue_cb_0021)|
-|[PFND3D12DDI_SHADERCACHESTOREVALUE_CB_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_shadercachestorevalue_cb_0021)|[PFND3D12DDI_VIDEO_DECODE_FRAME](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_decode_frame_0032)|
-|PFND3D12DDI_VIDEO_DECODER_TRIM_ALLOCATIONS|PFND3D12DDI_VIDEO_GET_DECODE_BITSTREAM_ENCRYPTION_SCHEME_COUNT|
-|PFND3D12DDI_VIDEO_GET_DECODE_FORMAT_COUNT|PFND3D12DDI_VIDEO_GET_DECODE_PROFILE_COUNT|
-|[PFND3D12DDI_VIDEO_GETCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_getcaps)|[PFND3D12DDI_VIDEO_PROCESS_FRAME_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_process_frame_0032)|
-|PFND3D12DDI_VIDEO_PROCESSOR_TRIM_ALLOCATIONS|[PFND3DWDDM2_0DDI_GETRESOURCELAYOUT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getresourcelayout)|
-|[PFND3DWDDM2_2DDI_CALCPRIVATE_SHADERCACHE_SESSION_SIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_calcprivate_shadercache_session_size)|[PFND3DWDDM2_2DDI_CREATE_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_create_shadercache_session)|
-|[PFND3DWDDM2_2DDI_DESTROY_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_destroy_shadercache_session)|[PFND3DWDDM2_2DDI_RELOCATEDEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_relocatedevicefuncs)|
-|[PFND3DWDDM2_2DDI_SET_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_set_shadercache_session)|[PFND3DWDDM2_2DDI_SHADERCACHE_ADDREF_RELEASE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_addref_release_cb)|
-|PFND3DWDDM2_2DDI_SHADERCACHE_GET_VALUE|[PFND3DWDDM2_2DDI_SHADERCACHE_STORE_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_store_value_cb)|
+**[PFND3D12DDI_WRITEBUFFERIMMEDIATE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_writebufferimmediate_0032)**: [PFND3D12DDI_VIDEO_PROCESS_FRAME_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_process_frame_0032)
+
+**[PFND3D12DDI_VIDEO_DECODE_FRAME_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_decode_frame_0032)**: PFND3D12DDI_VIDEO_DECODE_FRAME_0030
+
+**[PFND3D12DDI_TRANSFORMENCRYPTEDDATA_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_transformencrypteddata_0030)**: [PFND3D12DDI_SETVIEWINSTANCEMASK_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_setviewinstancemask_0033)
+
+**[PFND3D12DDI_SETPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_setprotectedresourcesession_0030)**: [PFND3D12DDI_OPENPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_openprotectedresourcesession_0030)
+
+**[PFND3D12DDI_OPENCRYPTOSESSIONPOLICY_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_opencryptosessionpolicy_0030)**: [PFND3D12DDI_OPENCRYPTOSESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_opencryptosession_0030)
+
+**[PFND3D12DDI_GETKEYBASEDATA_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_getkeybasedata_0030)**: [PFND3D12DDI_DESTROYVIDEODECODERHEAP_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoderheap_0032)
+
+**[PFND3D12DDI_DESTROYPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyprotectedresourcesession_0030)**: [PFND3D12DDI_DESTROYCRYPTOSESSIONPOLICY_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroycryptosessionpolicy_0030)
+
+**[PFND3D12DDI_DESTROYCRYPTOSESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroycryptosession_0030)**: [PFND3D12DDI_CREATEVIDEOPROCESSOR_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideoprocessor_0032)
+
+**[PFND3D12DDI_CREATEVIDEODECODERHEAP_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoderheap_0033)**: PFND3D12DDI_CREATEVIDEODECODERHEAP_0032
+
+**[PFND3D12DDI_CREATEVIDEODECODER_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoder_0032)**: [PFND3D12DDI_CREATEPROTECTEDRESOURCESESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createprotectedresourcesession_0030)
+
+**[PFND3D12DDI_CREATEHEAPANDRESOURCE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createheapandresource_0030)**: [PFND3D12DDI_CREATECRYPTOSESSIONPOLICY_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createcryptosessionpolicy_0030)
+
+**[PFND3D12DDI_CREATECRYPTOSESSION_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createcryptosession_0030)**: [PFND3D12DDI_CREATE_PROTECTED_SESSION_CB_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_protected_session_cb_0030)
+
+**[PFND3D12DDI_CREATE_PIPELINE_STATE_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_pipeline_state_0033)**: [PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideoprocessorsize_0032)
+
+**[PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideodecodersize_0032)**: [PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideodecoderheapsize_0033)
+
+**PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0032**: [PFND3D12DDI_CALCPRIVATEPROTECTEDRESOURCESESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateprotectedresourcesessionsize_0030)
+
+**[PFND3D12DDI_CALCPRIVATEOPENEDPROTECTEDRESOURCESESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateopenedprotectedresourcesessionsize_0030)**: [PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateopenedcryptosessionsize_0030)
+
+**[PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONPOLICYSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivateopenedcryptosessionpolicysize_0030)**: [PFND3D12DDI_CALCPRIVATECRYPTOSESSIONSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatecryptosessionsize_0030)
+
+**[PFND3D12DDI_CALCPRIVATECRYPTOSESSIONPOLICYSIZE_0030](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatecryptosessionpolicysize_0030)**: [PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calc_private_pipeline_state_size_0033)
+
+**[PFND3D12DDI_CREATEVIDEOPROCESSOR_0043](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideoprocessor_0043)**: [PFND3D12DDI_DESTROYVIDEODECODERHEAP_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoderheap_0032)
+
+**[PFND3D12DDI_CREATEVIDEODECODERHEAP_0033](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoderheap_0033)**: PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAP
+
+**[PFND3D12DDI_DESTROYVIDEODECODER_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoder_0021)**: PFND3D12DDI_CALCPRIVATEVIDEODECODER
+
+**[PFND3D12DDI_ALLOCATE_CB_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_allocate_cb_0022)**: [PFND3D12DDI_BEGIN_END_QUERY_0003](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_begin_end_query_0003)
+
+**[PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0023](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatecommandqueuesize_0023)**: [PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideodecodersize_0032)
+
+**[PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_calcprivatevideoprocessorsize_0032)**: [PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_checkresourceallocationinfo_0022)
+
+**[PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_checkexisitingresourceallocationinfo_0022)**: [PFND3D12DDI_CREATE_PIPELINE_STATE_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_create_pipeline_state_0021)
+
+**[PFND3D12DDI_CREATECOMMANDQUEUE_0023](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createcommandqueue_0023)**: [PFND3D12DDI_CREATEVIDEODECODER_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideodecoder_0032)
+
+**[PFND3D12DDI_CREATEVIDEOPROCESSOR_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_createvideoprocessor_0032)**: [PFND3D12DDI_DEALLOCATE_CB_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_deallocate_cb_0022)
+
+**[PFND3D12DDI_DESTROYVIDEODECODER_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideodecoder_0021)**: [PFND3D12DDI_DESTROYVIDEOPROCESSOR_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_destroyvideoprocessor_0021)
+
+**PFND3D12DDI_GETPAGEABLESIZE**: [PFND3D12DDI_RESOLVE_QUERY_DATA](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_resolve_query_data)
+
+**[PFND3D12DDI_RESOURCEBARRIER_0022](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_resourcebarrier_0022)**: [PFND3D12DDI_SET_EXTENDED_FEATURE_CALLBACKS_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_set_extended_feature_callbacks_0021)
+
+**[PFND3D12DDI_SET_PREDICATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_set_predication)**: [PFND3D12DDI_SHADERCACHEGETVALUE_CB_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_shadercachegetvalue_cb_0021)
+
+**[PFND3D12DDI_SHADERCACHESTOREVALUE_CB_0021](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_shadercachestorevalue_cb_0021)**: [PFND3D12DDI_VIDEO_DECODE_FRAME](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_decode_frame_0032)
+
+**PFND3D12DDI_VIDEO_DECODER_TRIM_ALLOCATIONS**: PFND3D12DDI_VIDEO_GET_DECODE_BITSTREAM_ENCRYPTION_SCHEME_COUNT
+
+**PFND3D12DDI_VIDEO_GET_DECODE_FORMAT_COUNT**: PFND3D12DDI_VIDEO_GET_DECODE_PROFILE_COUNT
+
+**[PFND3D12DDI_VIDEO_GETCAPS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_getcaps)**: [PFND3D12DDI_VIDEO_PROCESS_FRAME_0032](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d12umddi/nc-d3d12umddi-pfnd3d12ddi_video_process_frame_0032)
+
+**PFND3D12DDI_VIDEO_PROCESSOR_TRIM_ALLOCATIONS**: [PFND3DWDDM2_0DDI_GETRESOURCELAYOUT](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_0ddi_getresourcelayout)
+
+**[PFND3DWDDM2_2DDI_CALCPRIVATE_SHADERCACHE_SESSION_SIZE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_calcprivate_shadercache_session_size)**: [PFND3DWDDM2_2DDI_CREATE_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_create_shadercache_session)
+
+**[PFND3DWDDM2_2DDI_DESTROY_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_destroy_shadercache_session)**: [PFND3DWDDM2_2DDI_RELOCATEDEVICEFUNCS](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_relocatedevicefuncs)
+
+**[PFND3DWDDM2_2DDI_SET_SHADERCACHE_SESSION](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_set_shadercache_session)**: [PFND3DWDDM2_2DDI_SHADERCACHE_ADDREF_RELEASE_CB](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_addref_release_cb)
+
+**PFND3DWDDM2_2DDI_SHADERCACHE_GET_VALUE**: [PFND3DWDDM2_2DDI_SHADERCACHE_STORE_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3dwddm2_2ddi_shadercache_store_value_cb)
+
 
 ## <a name="see-also"></a>関連項目
 
 [DXGI DDI のサポート](supporting-the-dxgi-ddi.md)
 
-[マルチプレーンオーバーレイのサポート](multiplane-overlay-support.md)
+[マルチプレーン オーバーレイのサポート](multiplane-overlay-support.md)
 
-[ユーザーモード表示ドライバーによって実装される Direct3D 関数](direct3d-functions-implemented-by-user-mode.md)
+[ユーザー モード ディスプレイ ドライバーによって実装される Direct3D 関数](direct3d-functions-implemented-by-user-mode.md)
 
 [Direct3D レンダリングのパフォーマンスの向上](direct3d-rendering-performance-improvements.md)

@@ -1,21 +1,21 @@
 ---
 title: WDI_TLV_RSN_KEY_INFO
-description: WDI_TLV_RSN_KEY_INFO は、Rsn Eapol キー パラメーターを含む TLV です。
+description: WDI_TLV_RSN_KEY_INFO は、Rsn の Eapol キーパラメーターを含む TLV です。
 ms.assetid: 8C7C77F7-FF62-485C-94C4-EE0F1E57D771
 ms.date: 04/02/2018
 keywords:
-- WDI_TLV_RSN_KEY_INFO ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_RSN_KEY_INFO
 ms.localizationpriority: medium
-ms.openlocfilehash: c86ecacd424f00a41db920352ce3bd618aa7e0ff
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: edb27701ccdb71c0bb2e3d3987fa95cbbbe28b73
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63359093"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968587"
 ---
-# <a name="wditlvrsnkeyinfo"></a>WDI_TLV_RSN_KEY_INFO
+# <a name="wdi_tlv_rsn_key_info"></a>WDI_TLV_RSN_KEY_INFO
 
-WDI_TLV_RSN_KEY_INFO は、Rsn Eapol キー パラメーターを含む TLV です。 この TLV の値であり、 [WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY](wdi-tlv-pm-protocol-offload-80211rsn-rekey.md) TLV します。
+WDI_TLV_RSN_KEY_INFO は、Rsn の Eapol キーパラメーターを含む TLV です。 この TLV は、 [WDI_TLV_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY](wdi-tlv-pm-protocol-offload-80211rsn-rekey.md) TLV の値です。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -23,22 +23,23 @@ WDI_TLV_RSN_KEY_INFO は、Rsn Eapol キー パラメーターを含む TLV で�
 
 ## <a name="length"></a>長さ
 
-次の値のバイト単位でサイズ。
+次の値のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | [説明] |
 | --- | --- |
-| UINT32 | プロトコルのオフロード ID を指定する UINT32 値 これは、オフロードされたプロトコルを識別する OS で提供される値です。 OS では、追加要求を送信します。 または、上にあるドライバーへの要求が完了すると、前に、プロトコル間で一意の値に OS セット ProtocolOffloadId をネットワーク アダプターにオフロードします。 |
-| UINT64 | 再生のカウンターを指定する UINT64 値。 |
-| UINT8\[16\] | IEEE 802.11 キー確認キー (KCK) を指定する UINT8 配列を指定します。 |
-| UINT8\[16\] | IEEE 802.11 キー暗号化キー (KEK) を指定する UINT8 配列。  |
+| UINT32 | プロトコルオフロード ID を指定する UINT32 値。 オフロードプロトコルを識別する OS 提供の値です。 OS が追加要求を送信する前、またはそれ以降のドライバーへの要求を完了する前に、OS は ProtocolOffloadId をネットワークアダプターのプロトコルオフロード間で一意の値に設定します。 |
+| UINT64 | Replay カウンターを指定する UINT64 値。 |
+| UINT8 \[ 16\] | IEEE 802.11 キー確認キー (KCK) を指定する配列。 |
+| UINT8 \[ 16\] | IEEE 802.11 キー暗号化キー (KEK) を指定する UINT8 配列。  |
  
 
 ## <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1803 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: Windows 10、バージョン1803
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Wditypes
+

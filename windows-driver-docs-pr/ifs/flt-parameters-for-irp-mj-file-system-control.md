@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 854cc1fe98305c2a961cb783086f1e34f73a4edd
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: 7a87f1ee7e997c04b08049337d1338f6bc1f0a50
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072243"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968081"
 ---
 # <a name="flt_parameters-for-irp_mj_file_system_control-union"></a>IRP_MJ_FILE_SYSTEM_CONTROL 共用体の FLT_PARAMETERS
 
@@ -69,7 +69,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 **FileSystemControl**  
 次のメンバーを含む構造体。
@@ -83,21 +83,21 @@ IRP_MN_VERIFY_VOLUME 操作に使用される共用体コンポーネントで�
 **DeviceObject**  
 検証するボリュームのデバイスオブジェクトへのポインター。
 
-**的**  
+**共通**  
 IRP_MN_KERNEL_CALL および IRP_MN_USER_FS_REQUEST 操作のすべてのバッファリングメソッドに使用される共用体コンポーネント。
 
 **OutputBufferLength**  
 **Outputbuffer**または**Direct**によって参照されていないバッファーの長さ (バイト単位)。
 
 **InputBufferLength**  
-**InputBuffer**、**バッファリングされた systembuffer**、または**直接の inputsystembuffer**メンバーが指すバッファーの長さ (バイト単位)。
+**InputBuffer**、 **Buffered.Systembuffer**、または**直接の inputsystembuffer**メンバーが指すバッファーの長さ (バイト単位)。
 
 **FsControlCode**  
 ターゲットデバイスのファイルシステム、ファイルシステムフィルター、またはミニフィルタードライバーに渡される FSCTL 関数コード。
 
 IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモードアーキテクチャガイド*」の「 [i/o 制御コードの使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)」および Microsoft Windows SDK のドキュメントの「デバイスの入力と出力の制御コード」を参照してください。 (このリソースは、一部の言語および国では使用できません。)
 
-**両者**  
+**どちらもオフ**  
 バッファリングメソッドが METHOD_NEITHER 場合に IRP_MN_KERNEL_CALL および IRP_MN_USER_FS_REQUEST 操作に使用される共用体コンポーネント。 バッファリングメソッドの詳細については、「*カーネルモードアーキテクチャガイド*」の「 [i/o 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)」を参照してください。 (このリソースは、一部の言語および国では使用できません。)
 
 **InputBuffer**  
@@ -117,7 +117,7 @@ IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモード
 **SystemBuffer**  
 操作に対してシステムが割り当てたバッファーのアドレス。 METHOD_BUFFERED i/o では、このバッファーは入力と出力の両方に使用されます。 詳細については、「*カーネルモードアーキテクチャガイド*」の「[データバッファーにアクセスするためのメソッド](https://docs.microsoft.com/windows-hardware/drivers/kernel/methods-for-accessing-data-buffers)」を参照してください。 (このリソースは、一部の言語および国では使用できません。)
 
-**接続**  
+**直接**  
 バッファリングメソッドが METHOD_IN_DIRECT または METHOD_OUT_DIRECT 場合に、IRP_MN_KERNEL_CALL 操作および IRP_MN_USER_FS_REQUEST 操作に使用される共用体コンポーネント。 バッファリングメソッドの詳細については、「*カーネルモードアーキテクチャガイド*」の「 [i/o 制御コードの定義](https://docs.microsoft.com/windows-hardware/drivers/kernel/defining-i-o-control-codes)」を参照してください。
 
 **InputSystemBuffer**  
@@ -129,7 +129,7 @@ IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモード
 **OutputMdlAddress**  
 **直接の outputbuffer**メンバーが指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは必須であり、 **NULL**にすることはできません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 [**IRP_MJ_FILE_SYSTEM_CONTROL**](irp-mj-file-system-control.md)操作の[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体によって表されるファイルシステムコントロール情報操作のパラメーターが含まれています。 これは[**FLT_IO_PARAMETER_BLOCK**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)構造体に含まれています。
 
@@ -141,11 +141,10 @@ IRP_MJ_FILE_SYSTEM_CONTROL は、IRP ベースの操作です。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| ヘッダー | Fltkernel .h (Fltkernel. h を含む) |
+**ヘッダー**: fltkernel .H (fltkernel .h を含む)
 
-## <a name="see-also"></a>参照
+
+## <a name="see-also"></a>関連項目
 
 [**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 

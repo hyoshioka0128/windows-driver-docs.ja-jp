@@ -14,12 +14,12 @@ api_type:
 - UserDefined
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e599ba76e3e39f307f00587e0c3217abd6e8058b
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 94195908ac31592708a3fe61e6fa82b53f1c0dab
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852312"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968063"
 ---
 # <a name="pfree_function-function-pointer"></a>PFREE_FUNCTION 関数ポインター
 
@@ -70,14 +70,16 @@ VOID
   {...}
 ```
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| ターゲット プラットフォーム | デスクトップ |
-| バージョン | Windows Vista から利用できます。 |
-| Header | Wdm (Wdm または Ntddk を含む) |
-| IRQL | <= APC_LEVEL |
+**ターゲットプラットフォーム**: デスクトップ
+
+**バージョン**: windows Vista 以降で使用できます。
+
+**ヘッダー**: Wdm (wdm .h または Ntddk を含む)
+
+**IRQL**: <= APC_LEVEL
+
 
 ## <a name="see-also"></a>関連項目
 

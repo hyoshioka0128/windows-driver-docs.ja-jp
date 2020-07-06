@@ -3,52 +3,52 @@ title: Hdpi.h マクロ
 description: Hdpi .h ヘッダーに含まれるマクロ。
 ms.localizationpriority: medium
 ms.date: 02/25/2020
-ms.openlocfilehash: a781f092f31abf5be80d82c6a77557aeed0acb46
-ms.sourcegitcommit: f1f641bd759b7bf6e45626ffcc090ffd28337c30
+ms.openlocfilehash: 1ebc9dfad8c16a77bddfd3d2043bf2ca06e81050
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78166684"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968217"
 ---
 # <a name="hdpih-macros"></a>Hdpi.h マクロ
 
 [Hdpi .h](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/)ヘッダーファイルには、次のマクロが含まれています。
 
-- [HidP\_GetButtons](#hidp_getbuttons)
-- [HidP\_GetButtonsEx](#hidp_getbuttonsex)
-- [HidP\_SetButtons](#hidp_setbuttons)
-- [HidP\_UnsetButtons](#hidp_unsetbuttons)
+- [HidP \_ getbuttons](#hidp_getbuttons)
+- [HidP \_ getbuttonsex](#hidp_getbuttonsex)
+- [HidP \_ setbuttons](#hidp_setbuttons)
+- [HidP \_ unsetbuttons](#hidp_unsetbuttons)
 
-## <a name="hidp_getbuttons"></a>HidP\_GetButtons
+## <a name="hidp_getbuttons"></a>HidP \_ getbuttons
 
-**Hidp\_GetButtons**マクロは、 [**Hidp\_getbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)ルーチンのニーモニックエイリアスです。
+**Hidp \_ getbuttons**マクロは、 [**hidp \_ getbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_GetButtons(Rty, UPa, LCo, ULi, ULe, Ppd, Rep, RLe) \
         HidP_GetUsages(Rty, UPa, LCo, ULi, ULe, Ppd, Rep, RLe)
 ```
 
-## <a name="hidp_getbuttonsex"></a>HidP\_GetButtonsEx
+## <a name="hidp_getbuttonsex"></a>HidP \_ getbuttonsex
 
-**Hidp\_GetButtonsEx**マクロは、 [**Hidp\_get使用性別**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)ルーチンのニーモニックエイリアスです。
+**Hidp \_ getbuttonsex**マクロは、 [**hidp \_ get使用性別**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_GetButtonsEx(Rty, LCo, BLi, ULe, Ppd, Rep, RLe)  \
          HidP_GetUsagesEx(Rty, LCo, BLi, ULe, Ppd, Rep, RLe)
 ```
 
-## <a name="hidp_setbuttons"></a>HidP\_SetButtons
+## <a name="hidp_setbuttons"></a>HidP \_ setbuttons
 
-**Hidp\_SetButtons**マクロは、 [**Hidp\_setbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)ルーチンのニーモニックエイリアスです。
+**Hidp \_ setbuttons**マクロは、 [**hidp \_ setbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_SetButtons(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle) \
         HidP_SetUsages(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle)
 ```
 
-## <a name="hidp_unsetbuttons"></a>HidP\_UnsetButtons
+## <a name="hidp_unsetbuttons"></a>HidP \_ unsetbuttons
 
-**Hidp\_UnsetButtons**マクロは、 [**Hidp\_unsetbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)ルーチンのニーモニックエイリアスです。
+**Hidp \_ unsetbuttons**マクロは、 [**hidp \_ unsetbuttons**](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)ルーチンのニーモニックエイリアスです。
 
 ```cpp
 #define HidP_UnsetButtons(Rty, Up, Lco, ULi, ULe, Ppd, Rep, Rle) \
@@ -57,18 +57,17 @@ ms.locfileid: "78166684"
 
 ### <a name="requirements"></a>要件
 
-| | |
-| --- | --- |
-| ヘッダー | [hidpi. h](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/) (hidpi を含む) |
+**ヘッダー**: [hidpi. h](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/) (hidpi を含む)
 
-## <a name="see-also"></a>参照
+
+## <a name="see-also"></a>関連項目
 
 [hidpi. h](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/)
 
-[HidP\_GetUsages](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)
+[HidP \_ getusages](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusages)
 
-[HidP\_Getの性別](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)
+[HidP \_ getの性別](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_getusagesex)
 
-[HidP\_SetUsages](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)
+[HidP \_ setusages](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_setusages)
 
-[HidP\_UnsetUsages](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)
+[HidP \_ unsetusages](https://docs.microsoft.com/windows-hardware/drivers/ddi/hidpi/nf-hidpi-hidp_unsetusages)

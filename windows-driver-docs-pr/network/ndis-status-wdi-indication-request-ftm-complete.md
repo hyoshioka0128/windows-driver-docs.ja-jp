@@ -4,31 +4,32 @@ description: NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
 ms.assetid: 6EBC0131-F2EF-4A2D-997A-8990E53369CF
 ms.date: 02/11/2019
 keywords:
-- NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 90d173cbabb928e587cadf16c2f8c92855748059
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0a6a44f2da4ee51cabb722e442f7b24a86c1a6a1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361062"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968317"
 ---
-# <a name="ndisstatuswdiindicationrequestftmcomplete"></a>NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
+# <a name="ndis_status_wdi_indication_request_ftm_complete"></a>NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE
 
-ミニポート ドライバーの送信、 **NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE**タスクの完了を示すとしてホストに状態を示す値[OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)します。 この通知には、各要求されたターゲットから受け取った問題タイミング測定 (FTM) 応答の一覧が含まれています。
+ミニポートドライバーは、 [OID_WDI_TASK_REQUEST_FTM](oid-wdi-task-request-ftm.md)のタスクの完了を示す**NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE**状態をホストに送信します。 この通知には、要求された各ターゲットから受信した詳細なタイミング測定 (FTM) 応答の一覧が含まれています。
 
-## <a name="payload-data"></a>ペイロード データ
+## <a name="payload-data"></a>ペイロードデータ
 
-| 種類 | TLV | 許可されている複数の TLV インスタンス | 省略可能 | 説明 |
+| Type | TLV | 複数の TLV インスタンスを使用できます | 省略可能 | 説明 |
 | --- | --- |--- | --- | --- |
-| WDI_STATUS | ヘッダー フィールド。  |   | イベントの一般的な完了状態。 |
-| [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md) | 複数の TLV\<WDI_TLV_FTM_RESPONSE > | x |   | 各ターゲット FTM 応答の一覧。 |
+| WDI_STATUS | ヘッダー内のフィールド。  |   | イベントの一般的な完了ステータス。 |
+| [WDI_TLV_FTM_RESPONSE](wdi-tlv-ftm-response.md) | 複数の TLV\<WDI_TLV_FTM_RESPONSE> | X |   | 各ターゲットの FTM 応答の一覧。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 バージョン 1903 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Dot11wdi.h |
+**サポートされている最小クライアント**: Windows 10、バージョン1903
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Dot11wdi
+

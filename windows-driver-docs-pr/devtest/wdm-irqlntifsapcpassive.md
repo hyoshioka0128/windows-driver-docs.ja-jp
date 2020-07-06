@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: d13ff18d148e43e123865fa93a5cb4bad1ee2206
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: abeccdf83c014cabd11d6f8b657bb67795a053dc
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85916442"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968549"
 ---
 # <a name="irqlntifsapcpassive-rule-wdm"></a>IrqlNtifsApcPassive 規則 (wdm)
 
@@ -25,9 +25,8 @@ ms.locfileid: "85916442"
 
 **ドライバーモデル: WDM**
 
-|                                   |                                                                                                                                    |
-|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x20024) |
+**このルールでバグチェックが見つかりまし**た:[**バグチェック 0XC4: ドライバー \_ 検証ツールが \_ 検出した \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x20024)
+
 
 <a name="example"></a>例
 -------
@@ -99,7 +98,7 @@ IRQL レベルの詳細については、「[ディスパッチルーチンと I
 <tr class="odd">
 <td align="left">
 <p>Verifier.exe のコマンドラインを使用して、1つまたは複数のドライバーについて、DDI 準拠-追加の IRQL 規則をアクティブにすることができます。 詳細については、「<a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/selecting-driver-verifier-options" data-raw-source="[Selecting Driver Verifier Options](https://docs.microsoft.com/windows-hardware/drivers/devtest/ddi-compliance-checking)">ドライバーの検証オプションの選択</a>」を参照してください。 DDI 準拠-追加の IRQL 規則をアクティブ化または非アクティブ化するには、コンピューターを再起動する必要があります。</p>
-<p>コマンドライン、DDI 準拠-追加の IRQL チェックは、規則クラス値35で表されます。 たとえば、次のように入力します。</p>
+<p>コマンドライン、DDI 準拠-追加の IRQL チェックは、規則クラス値35で表されます。 次に例を示します。</p>
 <p><code>verifier /ruleclasses 35 /driver MyDriver.sys</code></p>
 <p>OR</p>
 <p><code>verifier /rc 35 /driver MyDriver.sys</code></p>

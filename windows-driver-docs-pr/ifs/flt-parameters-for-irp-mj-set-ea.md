@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 638da672d967bf0f79be59c1baec5c62398438e8
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: a688cd4b9ffeed5968d03699aab2d5d52f24261b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072227"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968073"
 ---
 # <a name="flt_parameters-for-irp_mj_set_ea-union"></a>IRP_MJ_SET_EA 共用体の FLT_PARAMETERS
 
@@ -41,12 +41,12 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 **SetEa**  
 次のメンバーを含む構造体。
 
-**長さ**  
+**[データ型]**  
 **EaBuffer**が指すバッファーの長さ (バイト単位)。
 
 **EaBuffer**  
@@ -55,7 +55,7 @@ typedef union _FLT_PARAMETERS {
 **MdlAddress**  
 **EaBuffer**が指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは省略可能であり、 **EaBuffer**でバッファーが指定されている場合は**NULL**にすることができます。 「**解説**」を参照してください。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 [**IRP_MJ_SET_EA**](irp-mj-set-ea.md)操作の[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体によって表される拡張属性の設定のパラメーターが含まれています。 これは FLT_IO_PARAMETER_BLOCK 構造体に含まれています。
 
@@ -67,11 +67,10 @@ IRP_MJ_SET_EA は、IRP ベースの操作です。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| ヘッダー | Fltkernel .h (Fltkernel. h を含む) |
+**ヘッダー**: fltkernel .H (fltkernel .h を含む)
 
-## <a name="see-also"></a>参照
+
+## <a name="see-also"></a>関連項目
 
 [**FILE_FULL_EA_INFORMATION**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)
 

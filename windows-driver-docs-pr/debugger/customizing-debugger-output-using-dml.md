@@ -4,12 +4,12 @@ description: デバッガーマークアップ言語 (DML) は、デバッガー
 ms.assetid: 04984510-B95F-405F-81DF-E9D0673210B4
 ms.date: 11/13/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb2477b1e331569a525f9052af6fa16353c5656
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: d0524a0bed0dbea8f4433c82983726961af28c42
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837815"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968051"
 ---
 # <a name="customizing-debugger-output-using-dml"></a>DML を使用したデバッガー出力のカスタマイズ
 
@@ -21,7 +21,7 @@ DML は、Windows 10 以降で使用できます。
 ## <a name="span-iddml_overviewspanspan-iddml_overviewspanspan-iddml_overviewspandml-overview"></a><span id="DML_Overview"></span><span id="dml_overview"></span><span id="DML_OVERVIEW"></span>DML の概要
 
 
-DML の主な利点は、デバッガーの出力の関連情報にリンクする機能を提供することです。 主な DML タグの1つは &lt;リンク&gt; タグです。これにより、出力プロデューサーは、出力に関連する情報に、リンクの記述されたアクションからアクセスできることを示すことができます。 Web ブラウザーの HTML リンクと同様に、これにより、ハイパーリンクされた情報をユーザーがナビゲートできるようになります。
+DML の主な利点は、デバッガーの出力の関連情報にリンクする機能を提供することです。 プライマリ DML タグの1つは &lt; link &gt; タグです。これにより、出力プロデューサーは、出力に関連する情報に、リンクの記述されたアクションを通じてアクセスできることを示します。 Web ブラウザーの HTML リンクと同様に、これにより、ハイパーリンクされた情報をユーザーがナビゲートできるようになります。
 
 ハイパーリンクコンテンツを提供する利点は、デバッガーとデバッガー拡張機能の検出性を高めるために使用できることです。 デバッガーとその拡張機能には多くの機能が含まれていますが、さまざまなシナリオで使用する適切なコマンドを決定するのは困難な場合があります。 ユーザーは、特定のシナリオで使用できるコマンドを把握している必要があります。 ユーザーとカーネルのデバッグの違いにより、複雑さが増します。 これは多くの場合、多くのユーザーがデバッグコマンドを認識しないため、役に立ちます。 DML リンクを使用すると、テキストの説明、クリック可能なメニューシステム、リンクされたヘルプなど、任意のデバッグコマンドを別のプレゼンテーションにラップすることができます。 DML を使用すると、コマンドの出力を拡張して、タスクに関連する追加の関連コマンドをユーザーに案内することができます。
 
@@ -44,13 +44,13 @@ DML は拡張できません。すべてのタグが事前に定義され、す�
 
 **タグ構造**
 
-XML と同様に、DML タグは開始 &lt;tagname \[args\]&gt; および次の &lt;/tagname&gt;として指定されています。
+XML と同様に、DML タグは、開始タグ &lt; \[ 引数 \] &gt; と次の &lt; /tagname と &gt; して指定されます。
 
 **特殊文字**
 
-DML コンテンツは、特殊文字の XML/HTML ルールにおおよそ従います。 &、&lt;、&gt; および "は特殊文字であり、プレーンテキストでは使用できません。 同じエスケープバージョンは、&、&lt;、&gt;、および "です。 次に例を示します。
+DML コンテンツは、特殊文字の XML/HTML ルールにおおよそ従います。 、、および & 文字は &lt; &gt; 特殊で、プレーンテキストでは使用できません。 同じエスケープバージョンは、、 &lt; 、 &gt; および & ます。 次に例を示します。
 
-"Alice & Bob は 3 &lt; 4" と考えています。
+"Alice & Bob は 3 4 と考えています &lt; "
 
 は、次の DML に変換されます。
 
@@ -60,12 +60,12 @@ DML コンテンツは、特殊文字の XML/HTML ルールにおおよそ従い
 
 **C プログラミング言語の書式設定文字**
 
-XML/HTML ルールから大きな出発点として、DML テキストには、\\b、\\t、\\r、\\n などの C プログラミング言語のストリームスタイルの書式設定文字を含めることができます。 これは、既存のデバッガーテキストの実稼働と使用との互換性をサポートするためのものです。
+XML/HTML ルールから大きな出発点として、DML テキストには \\ 、b、 \\ t、 \\ r、n などの C プログラミング言語のストリームスタイルの書式設定文字を含めることができ \\ ます。 これは、既存のデバッガーテキストの実稼働と使用との互換性をサポートするためのものです。
 
 ## <a name="span-idexample_dmlspanspan-idexample_dmlspanspan-idexample_dmlspanexample-dml"></a><span id="Example_DML"></span><span id="example_dml"></span><span id="EXAMPLE_DML"></span>DML の例
 
 
-ファイル C:\\Dml\_実験に次の行が含まれているとします。
+ファイル C: \\ DmlExperiment.txt に \_ 次の行が含まれているとします。
 
 ```text
 My DML Experiment
@@ -80,14 +80,14 @@ My DML Experiment
 
 ![dml ファイル出力のスクリーンショット](images/dmlcommands03.png)
 
-**[Usb リンクで始まるモジュールの一覧]** をクリックすると、次の図のような出力が表示されます。
+[ **Usb リンクで始まるモジュールの一覧**] をクリックすると、次の図のような出力が表示されます。
 
 ![モジュール一覧のスクリーンショット](images/dmlcommands04.png)
 
 ## <a name="span-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanspan-idright-click_behavior_in_dmlspanright-click-behavior-in-dml"></a><span id="Right-Click_Behavior_in_DML"></span><span id="right-click_behavior_in_dml"></span><span id="RIGHT-CLICK_BEHAVIOR_IN_DML"></span>DML での右クリック動作
 
 
-右クリック動作は DML で使用できます。 このサンプルでは、&lt;altlink&gt; を使用して、ブレークポイントの[**bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを送信し、通常のクリックで[**u (unassemble)** ](u--unassemble-.md)を送信するための右クリック動作を定義する方法を示します。
+右クリック動作は DML で使用できます。 このサンプルでは、altlink を使用して右クリック動作を定義し、 &lt; &gt; ブレークポイントの[**Bp (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)コマンドを送信し、通常のクリックで[**u (unassemble)**](u--unassemble-.md)を送信する方法を示します。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -101,11 +101,11 @@ u MyProgram!memcpy
 
 ### <a name="span-id_link_spanspan-id_link_spanltlinkgt"></a><span id="_link_"></span><span id="_LINK_"></span>&lt;リンク&gt;
 
-*&lt;link \[name = "text"\] \[cmd = "debugger\_command"\]\[alt = "ホバーテキストを表示する"\] \[section = "name"\]&gt;リンクテキスト&lt;/link&gt;*
+*&lt;link \[ name = "text" \] \[ cmd = "debugger \_ command" \] \[ alt = "表示するテキストをポイントする" \] \[ セクション = "名前" \] &gt; リンクテキスト &lt; /link&gt;*
 
 Link タグは、DML の基本的なハイパーリンクメカニズムです。 DML プレゼンテーションをサポートするユーザーインターフェイスに、リンクテキストをクリック可能なリンクとして表示するように指示します。 Cmd を指定したリンクがクリックされると、デバッガーコマンドが実行され、その出力が現在の出力と置き換えられます。
 
-Name 引数と section 引数を使用すると、HTML の &lt;名前&gt; および \#名のサポートと同様に、名前付きリンク間のナビゲーションを行うことができます。 セクションの引数を持つリンクがクリックされると、UI では、名前が一致するリンクがスキャンされ、そのリンクがビューにスクロールされます。 これにより、リンクを同じページ (または新しいページの特定のセクション) の異なるセクションにポイントすることができます。 DML のセクション名は、新しい構文を定義しなくても、コマンド文字列の末尾にセクション名を指定できるようにするために使用します。
+Name および section 引数を使用すると、HTML の名前と名前のサポートに似た名前付きリンク間のナビゲーションが可能に &lt; &gt; \# なります。 セクションの引数を持つリンクがクリックされると、UI では、名前が一致するリンクがスキャンされ、そのリンクがビューにスクロールされます。 これにより、リンクを同じページ (または新しいページの特定のセクション) の異なるセクションにポイントすることができます。 DML のセクション名は、新しい構文を定義しなくても、コマンド文字列の末尾にセクション名を指定できるようにするために使用します。
 
 プレーンテキストへの変換では、タグが削除されます。
 
@@ -128,15 +128,15 @@ Name 引数と section 引数を使用すると、HTML の &lt;名前&gt; およ
 
 ### <a name="span-id_altlink_spanspan-id_altlink_spanltaltlinkgt"></a><span id="_altlink_"></span><span id="_ALTLINK_"></span>&lt;altlink&gt;
 
-*&lt;altlink \[name = "text"\] \[cmd = "debugger\_command"\] \[section = "name"\]&gt;alt link text&lt;/altlink&gt;*
+*&lt;altlink \[ name = "text" \] \[ cmd = "debugger \_ command" \] \[ section = "name" \] &gt; alt link text &lt; /altlink&gt;*
 
-&lt;altlink&gt; タグは、DML で使用できる右クリックの動作を提供します。 Cmd を指定したリンクがクリックされると、デバッガーコマンドが実行され、その出力が現在の出力と置き換えられます。 通常と右のクリック動作をサポートするために、&lt;altlink&gt; tab は通常、&lt;リンク&gt; タグとペアになっています。
+&lt;Altlink タグは、 &gt; DML で使用できる右クリックの動作を提供します。 Cmd を指定したリンクがクリックされると、デバッガーコマンドが実行され、その出力が現在の出力と置き換えられます。 &lt; &gt; 通常の &lt; &gt; 右クリック動作をサポートするために、[altlink] タブは通常、リンクタグとペアになっています。
 
 プレーンテキストへの変換では、タグが削除されます。
 
 **例**
 
-この例では、&lt;altlink&gt; を使用して、ブレークポイントの[**bp (ブレークポイントの設定)** ](bp--bu--bm--set-breakpoint-.md)コマンドを送信し、通常のクリックで[**u (unassemble)** ](u--unassemble-.md)を送信するための右クリック動作を定義する方法を示します。
+この例では、altlink を使用して右クリック動作を定義し、 &lt; &gt; ブレークポイントの[**Bp (ブレークポイントの設定)**](bp--bu--bm--set-breakpoint-.md)コマンドを送信し、通常のクリックで[**u (unassemble)**](u--unassemble-.md)を送信する方法を示します。
 
 ```text
 <link cmd="u MyProgram!memcpy">
@@ -145,9 +145,9 @@ u MyProgram!memcpy
 </link>
 ```
 
-### <a name="span-id_exec_spanspan-id_exec_spanltexecgt"></a><span id="_exec_"></span><span id="_EXEC_"></span>&lt;exec&gt;
+### <a name="span-id_exec_spanspan-id_exec_spanltexecgt"></a><span id="_exec_"></span><span id="_EXEC_"></span>&lt;実行&gt;
 
-*&lt;exec cmd = "debugger\_command"&gt;説明テキスト&lt;/exec&gt;*
+*&lt;exec cmd = "デバッガー \_ コマンド" &gt; 説明テキスト &lt; /exec&gt;*
 
 Exec タグは link タグに似ています。これは、説明文がクリック可能な項目として表示されることを意味します。 ただし、exec タグがコマンドブラウザーウィンドウで使用されている場合、指定されたコマンドは現在の出力を置き換えずに実行されます。このタグを使用すると、メニューからクリックでコマンドを実行できます。
 
@@ -165,9 +165,9 @@ Exec タグは link タグに似ています。これは、説明文がクリッ
 
 ### <a name="span-id_b_spanspan-id_b_spanltbgt"></a><span id="_b_"></span><span id="_B_"></span>&lt;b&gt;
 
-*&lt;b&gt;太字のテキスト&lt;/b&gt;*
+*&lt;b &gt; 太字テキスト &lt; /b&gt;*
 
-このタグは太字で要求します。 &lt;b&gt;、&lt;i&gt; および &lt;u&gt; を入れ子にして、プロパティを混在させることができます。
+このタグは太字で要求します。 &lt;B &gt; 、i、および u は、プロパティを &lt; &gt; &lt; &gt; 組み合わせて入れ子にすることができます。
 
 プレーンテキストへの変換では、タグが削除されます。
 
@@ -179,11 +179,11 @@ Exec タグは link タグに似ています。これは、説明文がクリッ
 <b>This is bold Text</b>
 ```
 
-### <a name="span-id_i_spanspan-id_i_spanltigt"></a><span id="_i_"></span><span id="_I_"></span>&gt;&lt;
+### <a name="span-id_i_spanspan-id_i_spanltigt"></a><span id="_i_"></span><span id="_I_"></span>&lt;私&gt;
 
-*&lt;/i&gt;斜体のテキストを&lt;し&gt;*
+*&lt;テキストを斜体にする &gt; &lt; /i&gt;*
 
-このタグは、斜体を要求します。 &lt;b&gt;、&lt;i&gt; および &lt;u&gt; を入れ子にして、プロパティを混在させることができます。
+このタグは、斜体を要求します。 &lt;B &gt; 、i、および u は、プロパティを &lt; &gt; &lt; &gt; 組み合わせて入れ子にすることができます。
 
 プレーンテキストへの変換では、タグが削除されます。
 
@@ -197,9 +197,9 @@ Exec タグは link タグに似ています。これは、説明文がクリッ
 
 ### <a name="span-id_u_spanspan-id_u_spanltugt"></a><span id="_u_"></span><span id="_U_"></span>&lt;u&gt;
 
-*&lt;u&gt;下線付きテキスト&lt;/u&gt;*
+*&lt;u &gt; 下線付きテキスト &lt; /u&gt;*
 
-このタグは、下線付きのテキストを要求します。 &lt;b&gt;、&lt;i&gt; および &lt;u&gt; を入れ子にして、プロパティを混在させることができます。
+このタグは、下線付きのテキストを要求します。 &lt;B &gt; 、i、および u は、プロパティを &lt; &gt; &lt; &gt; 組み合わせて入れ子にすることができます。
 
 プレーンテキストへの変換では、タグが削除されます。
 
@@ -219,9 +219,9 @@ Exec タグは link タグに似ています。これは、説明文がクリッ
 <b><u><i>This is bold, underlined and italizized text. </i></u></b> 
 ```
 
-### <a name="span-id_col_spanspan-id_col_spanltcolgt"></a><span id="_col_"></span><span id="_COL_"></span>&lt;col&gt;
+### <a name="span-id_col_spanspan-id_col_spanltcolgt"></a><span id="_col_"></span><span id="_COL_"></span>&lt;行列&gt;
 
-&lt;col fg = "name" bg = "name"&gt;text&lt;/col&gt;
+&lt;col fg = "name" bg = "name" &gt; text &lt; /col&gt;
 
 テキストの前景色と背景色を要求します。 色は、表示される色の種類をユーザーが制御できるように、絶対値ではなく既知の色の名前として指定されます。 現在の色の名前 (既定では、WinDbg にのみ適用されます)。
 
@@ -241,49 +241,49 @@ Exec タグは link タグに似ています。これは、説明文がクリッ
 <td align="left"><p>wbg-Windows の背景</p>
 <p>wfg-Windows フォアグラウンド</p></td>
 <td align="left">既定のウィンドウの背景色と前景色。 ウィンドウおよびウィンドウテキストのシステムカラーの既定値。
-<p>&lt;col fg = "wfg" bg = "wbg"&gt; これは標準の前景/背景のテキスト &lt;/col&gt;</p></td>
+<p>&lt;col fg = "wfg" bg = "wbg" &gt; これは標準の前景/背景のテキスト/ &lt; 列&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>clbg-現在の行の前景</p>
 <p>clfg-現在の行の背景</p></td>
 <td align="left">現在の線の背景色と前景色。 強調表示および強調表示テキストのシステムカラーを既定値に設定します。
-<p>&lt;col fg = "clfg" bg = "clfg"&gt; テストテキスト-現在の行&lt;/col&gt;</p></td>
+<p>&lt;col fg = "clfg" bg = "clfg" &gt; テストテキスト-現在の行 &lt; /列&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>empbg-強調した背景</p>
 <p>emphfg-強調前面</p></td>
 <td align="left">強調表示したテキスト。 既定値は薄い青です。
-<p>&lt;col fg = "empfg" bg = "empfg"&gt; これは強調表示前/背景のテキスト &lt;/col&gt;</p></td>
+<p>&lt;col fg = "empfg" bg = "empfg" &gt; これは強調表示前/背景テキスト/ &lt; 列&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>subbg-バックグラウンド</p>
 <p>subfg-サブフォアグラウンド</p></td>
 <td align="left">テキストを入力します。 既定では、非アクティブなキャプションテキストとアクティブでないキャプションのシステムカラーです。
-<p>&lt;col fg = "subfg" bg = "subfg"&gt; これは、前景/背景のテキスト &lt;/col&gt;</p></td>
+<p>&lt;col fg = "subfg" bg = "subfg" &gt; これは subdued の前景/背景のテキスト/ &lt; 列&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>normbg-標準の背景</p>
 <p>normfg-標準の前景</p></td>
-<td align="left">正常
-<p>&lt;col fg = "normfg" bg = "normbg"&gt; テストテキスト-Normal (normfg/normbg) &lt;/col&gt;</p></td>
+<td align="left">標準
+<p>&lt;col fg = "normfg" bg = "normbg" &gt; Test Text-Normal (normfg/normbg) &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>"組み込み"-警告の背景</p>
 <p>warnfg-警告の前景</p></td>
-<td align="left">Warning
-<p>&lt;col fg = "warnfg" bg = ""&gt; テストテキスト-警告 (warnfg/) &lt;/col&gt;</p></td>
+<td align="left">警告
+<p>&lt;col fg = "warnfg" bg = "" &gt; warnfg "テストテキスト-Warning (/"/")/ &lt; col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>errbg-エラーの背景</p>
 <p>errfg-エラーの前景</p></td>
 <td align="left">エラー
-<p>&lt;col fg = "errfg" bg = "errfg"&gt; テストテキスト-エラー (errfg/errfg) &lt;/col&gt;</p></td>
+<p>&lt;col fg = "errfg" bg = "errfg" &gt; テストテキスト-エラー (errfg/errfg)/ &lt; 列&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>verbbg-詳細な背景</p>
 <p>verbfg-詳細なフォアグラウンド</p></td>
-<td align="left">Verbose
-<p>&lt;col fg = "verbfg" bg = "verbbg"&gt; テストテキスト-Verbose (verbfg/verbbg) &lt;/col&gt;</p></td>
+<td align="left">"詳細"
+<p>&lt;col fg = "verbfg" bg = "verbbg" &gt; テストテキスト-Verbose (verbfg/verbbg) &lt; /col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,48 +301,48 @@ Exec タグは link タグに似ています。これは、説明文がクリッ
 <tr class="odd">
 <td align="left"><p>srcnum-Source numeric 定数</p></td>
 <td align="left">ソース要素の色。
-<p>&lt;col fg = "srcnum" bg = "wbg"&gt; テストテキスト-srcnum &lt;/col&gt;</p></td>
+<p>&lt;col fg = "srcnum" bg = "wbg" &gt; テストテキスト-srcnum &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcchar-ソース文字定数</p></td>
-<td align="left"><p>&lt;col fg = "srcchar" bg = "wbg"&gt; テストテキスト-srcchar &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcchar" bg = "wbg" &gt; Test Text-srcchar &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcstr-ソース文字列定数</p></td>
-<td align="left"><p>&lt;col fg = "srcstr" bg = "wbg"&gt; テストテキスト-srcstr &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcstr" bg = "wbg" &gt; テストテキスト-srcstr &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcid-ソース識別子</p></td>
-<td align="left"><p>&lt;col fg = "srcid" bg = "wbg"&gt; テストテキスト-srcid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcid" bg = "wbg" &gt; テストテキスト-srcid &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srckw-キーワード</p></td>
-<td align="left"><p>&lt;col fg = "srckw" bg = "wbg"&gt; テストテキスト-srckw &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srckw" bg = "wbg" &gt; Test Text-srckw &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcpair-Source 中かっこまたは一致するシンボルペア</p></td>
-<td align="left"><p>&lt;col fg = "srcpair" bg = "empbbg"&gt; テストテキスト-srcpair &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcpair" bg = "empbbg" &gt; テストテキスト-srcpair &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srccmnt-ソースコメント</p></td>
-<td align="left"><p>&lt;col fg = "srccmnt" bg = "wbg"&gt; テストテキスト-srccmnt &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srccmnt" bg = "wbg" &gt; テストテキスト-srccmnt &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcdrct-Source ディレクティブ</p></td>
-<td align="left"><p>&lt;col fg = "srcdrct" bg = "wbg"&gt; テストテキスト-srcdrct &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcdrct" bg = "wbg" &gt; テストテキスト-srcdrct &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>srcspid-ソースの特殊な識別子</p></td>
-<td align="left"><p>&lt;col fg = "srcspid" bg = "wbg"&gt; テストテキスト-srcspid &lt;/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcspid" bg = "wbg" &gt; テストテキスト-srcspid &lt; /col&gt;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>srcannot Source 注釈</p></td>
-<td align="left"><p>&lt;col fg = "srcannot" bg = "wbg"&gt; テストテキスト-srcannot/col&gt;</p></td>
+<td align="left"><p>&lt;col fg = "srcannot ません" bg = "wbg" &gt; テストテキスト-srcannot &lt; /col&gt;</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>変更された変更データ</p></td>
 <td align="left">以前の停止時点以降に変更されたデータ (WinDbg でのレジスタの変更など) に使用されます。 既定値は赤です。
-<p>&lt;col fg = "changed" bg = "wbg"&gt; テストテキスト-変更された&lt;/col&gt;</p></td>
+<p>&lt;col fg = "changed" bg = "wbg" &gt; Test Text-changed &lt; /col&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -486,7 +486,7 @@ Dbgeng には、既にテキスト処理の入力メソッドと出力インタ�
 
 **Dbgeng に DML コンテンツを提供する**
 
-出力コントロールフラグ DEBUG\_OUTCTL\_DML は、dbgeng メソッドによって生成されたテキストを DML コンテンツとして処理する必要があることを示します。 このフラグが指定されていない場合、テキストはプレーンテキストのコンテキストとして扱われます。 デバッグ\_OUTCTL\_DML は次のメソッドで使用できます。
+出力コントロールフラグ DEBUG \_ outctl DML は、 \_ dbgeng メソッドによって生成されたテキストを DML コンテンツとして処理する必要があることを示します。 このフラグが指定されていない場合、テキストはプレーンテキストのコンテキストとして扱われます。 デバッグ \_ outctl \_ DML は、次のメソッドで使用できます。
 
 -   [**IDebugControl4:: Controlの出力**](https://msdn.microsoft.com/library/windows/hardware/ff539248)
 -   [**IDebugControl4::ControlledOutputVaList**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dbgeng/nf-dbgeng-idebugcontrol3-controlledoutputvalist)
@@ -495,19 +495,24 @@ Dbgeng には、既にテキスト処理の入力メソッドと出力インタ�
 
 指定されたテキストは、有効な文字について DML 規則に従う必要があります。
 
-すべての出力ルーチンが拡張され、新しい書式指定子%\[h | w\]Y {t} を使用できるようになりました。 この書式指定子は、引数として文字列ポインターを持ち、指定されたテキストがプレーンテキストであり、出力処理中に DML 形式に変換される必要があることを示します。 これにより、呼び出し元は dml 形式自体に事前に変換することなく、DML コンテンツにプレーンテキストを簡単に含めることができます。 H と w の修飾子は、% s と同様に、ANSI または Unicode のテキストを示します。
+すべての出力ルーチンが拡張され、新しい書式指定子% \[ h | w \] Y {t} を使用できるようになりました。 この書式指定子は、引数として文字列ポインターを持ち、指定されたテキストがプレーンテキストであり、出力処理中に DML 形式に変換される必要があることを示します。 これにより、呼び出し元は dml 形式自体に事前に変換することなく、DML コンテンツにプレーンテキストを簡単に含めることができます。 H と w の修飾子は、% s と同様に、ANSI または Unicode のテキストを示します。
 
 次の表は、% Y 書式指定子の使用方法をまとめたものです。
 
-|        |                                                                                                                                                                                                                                    |
-|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| % Y {t}  | 引用符で囲まれた文字列。 出力形式 (最初の引数) が DML の場合、はテキストを DML に変換します。                                                                                                                                                   |
-| % Y {T}  | 引用符で囲まれた文字列。 は、出力形式に関係なく、常にテキストを DML に変換します。                                                                                                                                                    |
-| % Y {s}  | 引用符で囲まれていない文字列。 出力形式 (最初の引数) が DML の場合、はテキストを DML に変換します。                                                                                                                                                 |
-| % Y {S}  | 引用符で囲まれていない文字列。 は、出力形式に関係なく、常にテキストを DML に変換します。                                                                                                                                                  |
-| % Y {as} | ULONG64. デバッガーの書式設定されたポインターフィールドの上位32ビットの部分に埋め込むために、空の文字列または9文字のスペースを追加します。 余分なスペースによって9つのスペースが出力されます。これには、上位8個のゼロと \` 文字が含まれます。 |
-| % Y {ps} | ULONG64. デバッガーの書式設定されたポインターフィールドに埋め込むための余分なスペース (上位8のゼロと \` 文字を含む)。                                                                                                             |
-| % Y {l}  | ULONG64. ソース行情報としてのアドレス。                                                                                                                                                                                       |
+**% Y {t}**: 引用符で囲まれた文字列です。 出力形式 (最初の引数) が DML の場合、はテキストを DML に変換します。
+
+**% Y {T}**: 引用符で囲まれた文字列です。 は、出力形式に関係なく、常にテキストを DML に変換します。
+
+**% Y {s}**: 引用符で囲まれていない文字列です。 出力形式 (最初の引数) が DML の場合、はテキストを DML に変換します。
+
+**% Y {S}**: 引用符で囲まれていない文字列です。 は、出力形式に関係なく、常にテキストを DML に変換します。
+
+**% Y {as}**: ULONG64。 デバッガーの書式設定されたポインターフィールドの上位32ビットの部分に埋め込むために、空の文字列または9文字のスペースを追加します。 余分なスペースによって9つのスペースが出力されます。これには、上位8個のゼロと文字が含まれ \` ます。
+
+**% Y {ps}**: ULONG64。 デバッガーの書式設定されたポインターフィールド (上位8個のゼロと文字を含む) を埋め込むための余分な領域 \` 。
+
+**% Y {l}**: ULONG64。 ソース行情報としてのアドレス。
+
 
 
 
@@ -565,7 +570,7 @@ DML/NORMAL Y{ps} 32value : '        '
 DML/NORMAL Y{l}: [d:\th\minkernel\kernelbase\debug.c @ 443]
 ```
 
-追加の制御フラグ、デバッグ\_OUTCTL\_アンビエント\_DML では、出力の制御属性を変更せずに DML コンテキストテキストを指定できます。 デバッグ\_OUTCTL\_アンビエント\_テキストも、以前に存在していたデバッグ\_OUTCTL\_アンビエントのわかりやすい別名として追加されています。 出力制御フラグは、dbgeng. h で定義されています。
+追加の制御フラグ (デバッグ \_ outctl \_ アンビエント \_ DML) を使用すると、出力の制御属性を変更せずに dml コンテキストテキストを指定できます。 デバッグ \_ outctl \_ アンビエント \_ テキストも、以前に存在していたデバッグ outctl アンビエントのわかりやすい別名として追加されてい \_ \_ ます。 出力制御フラグは、dbgeng. h で定義されています。
 
 ```cpp
 #define DEBUG_OUTCTL_DML               0x00000020
@@ -597,14 +602,14 @@ IDebugOutputCallbacks2 を使用すると、dbgeng インターフェイスク�
 
 新しいメソッドは次のとおりです。
 
--   IDebugOutputCallbacks2:: GetInterestMask –コールバックオブジェクトが、受信する出力通知の種類を記述できるようにします。 基本的な選択肢は、プレーンテキストコンテンツ (デバッグ\_OUTCBI\_テキスト) と DML コンテンツ (デバッグ\_OUTCBI\_DML) です。 また、コールバックオブジェクトは、明示的なフラッシュの通知を要求することもできます (デバッグ\_OUTCBI\_明示的な\_フラッシュ)。
+-   IDebugOutputCallbacks2:: GetInterestMask –コールバックオブジェクトが、受信する出力通知の種類を記述できるようにします。 基本的な選択肢は、プレーンテキストコンテンツ (デバッグ \_ outcbi \_ テキスト) と DML コンテンツ (デバッグ \_ outcbi \_ DML) です。 また、コールバックオブジェクトは、明示的なフラッシュの通知を要求することもできます (デバッグ \_ outcbi \_ explicit \_ フラッシュ)。
 -   IDebugOutputCallbacks2:: Output2 –すべての IDebugOutputCallbacks2 通知は、Output2 を経由します。 Flags、Arg、および Text パラメーターが通知ペイロードを保持しているときに、どの種類の通知を受信するかを示すパラメーターです。 通知は次のとおりです。
 
-    -   \_OUTCB\_TEXT – Plain text の出力をデバッグします。 フラグはデバッグ\_OUTCBF\_\*からのものであり、Arg は出力マスク、テキストはプレーンテキストです。 これは、対象のマスクで デバッグ\_OUTCBI\_テキストが指定されている場合にのみ受信されます。
+    -   DEBUG \_ outcb \_ Text – Plain text の出力。 フラグはデバッグ \_ outcbf からのもの \_ \* で、Arg は出力マスク、テキストはプレーンテキストです。 これは \_ 、対象マスクで DEBUG outcbi \_ テキストが指定されている場合にのみ受信されます。
 
-    -   デバッグ\_OUTCB\_DML – DML コンテンツ出力。 フラグはデバッグ\_OUTCBF\_\*からのものであり、Arg は出力マスク、テキストは DML コンテンツです。 これは、対象マスクで DML が指定された場合にのみ受信されます\_\_OUTCBI です。
+    -   デバッグ \_ outcb \_ DML – dml コンテンツ出力。 フラグはデバッグ \_ outcbf からのもの \_ \* で、Arg は出力マスク、テキストは DML コンテンツです。 これは \_ 、対象マスクでデバッグ outcbi \_ DML が指定されている場合にのみ受信されます。
     
-    -   デバッグ\_OUTCB\_EXPLICIT\_FLUSH –呼び出し元は、バッファーに含まれるテキストなしで FlushCallbacks バックを呼び出しました。 通常、バッファーされたテキストをフラッシュすると、デバッグ\_OUTCBF\_結合\_明示的\_フラッシュフラグが設定され、2つの通知が1つにまとめられます。 テキストがバッファリングされていない場合は、フラッシュのみの通知が送信されます。
+    -   デバッグ \_ outcb \_ EXPLICIT \_ フラッシュ–呼び出し元は、バッファーに含まれるテキストなしで flushcallbacks バックを呼び出しました。 通常、バッファー内のテキストをフラッシュすると、DEBUG \_ outcbf \_ 組み合わせの \_ 明示的な \_ フラッシュフラグが設定され、2つの通知が1つにまとめられます。 テキストがバッファリングされていない場合は、フラッシュのみの通知が送信されます。
 
  次に示すように、関心のマスクフラグは dbgeng .h で定義されています。
 
@@ -633,7 +638,7 @@ Dbgeng は、必要に応じて、プレーンテキストと DML を自動的�
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
-[デバッガーマークアップ言語の使用](debugger-markup-language-commands.md)
+[デバッガー マークアップ言語の使用](debugger-markup-language-commands.md)
 
 
 

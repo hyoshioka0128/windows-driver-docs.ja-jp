@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 368a927303267dff6ae6fa1e8260f2049c9980fb
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 9d154ace595f5247d6c41d0e320a2cc61bf334fd
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917910"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968559"
 ---
 # <a name="irqlkedispatchlte-rule-wdm"></a>IrqlKeDispatchLte ルール (wdm)
 
@@ -60,9 +60,8 @@ ms.locfileid: "85917910"
 
 **ドライバーモデル: WDM**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00020011) |
+**このルールでバグチェックが見つかりました**:[**バグチェック 0XC4: ドライバー \_ 検証ツールで \_ 検出された \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00020011)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------

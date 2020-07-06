@@ -1,21 +1,21 @@
 ---
 title: WDI_PEER_ID
-description: このトピックでは、WDI ミニポート ドライバー WDI_PEER_ID データ型について説明します。
+description: このトピックでは、WDI ミニポートドライバーの WDI_PEER_ID データ型について説明します。
 ms.assetid: 2D8700BC-7FED-4343-AC3F-8C43B0BE40FF
 keywords:
-- WDI_PEER_ID、WDK WDI_PEER_ID ネットワーク ドライバー
+- WDI_PEER_ID、WDK WDI_PEER_ID ネットワークドライバー
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 12cebc10a70f34dff7d43055249e53d90d5a0b47
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cb25861a52f1d83ab9ce8f93ec7fafdd1e6f0118
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63385289"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967894"
 ---
-# <a name="wdipeerid"></a>WDI_PEER_ID
+# <a name="wdi_peer_id"></a>WDI_PEER_ID
 
-WDI_PEER_ID のデータ型は、ピア ID を定義する UINT16 値
+WDI_PEER_ID データ型は、ピア ID を定義する UINT16 値です。
 
 ```c++
 typedef UINT16 WDI_PEER_ID;
@@ -23,13 +23,14 @@ typedef UINT16 WDI_PEER_ID;
 
 ## <a name="remarks"></a>注釈
 
-すべてのピア (ワイルドカード) を指定する場合は、WDI_PEER_ANY (0 xffff) の値を使用できます。
+任意のピア (ワイルドカード) を指定する場合は、WDI_PEER_ANY (0xFFFF) 値を使用できます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Dot11wdi.h |
+**サポートされている最低限のクライアント**: Windows 10
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Dot11wdi
+
 

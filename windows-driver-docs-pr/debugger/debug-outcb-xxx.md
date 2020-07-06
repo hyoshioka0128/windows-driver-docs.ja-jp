@@ -1,6 +1,6 @@
 ---
-title: デバッグ\_OUTCB\_XXX
-description: デバッグ\_OUTPUTCB\_XXX 定数は、出力のフラグ。 出力のフラグは、それに伴う出力の種類を示すビット フィールドを形成します。
+title: デバッグ \_ OUTCB \_ XXX
+description: DEBUG \_ outputcb \_ XXX 定数は出力フラグです。 出力フラグは、それに付随する出力の種類を示すビットフィールドを形成します。
 ms.date: 11/28/2018
 topic_type:
 - apiref
@@ -13,35 +13,34 @@ api_location:
 api_type:
 - HeaderDef
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aa4ac3c8b0bd599996574a6a02e0fbbe19842ae
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ce23bc0a751c52eab4eaf65fb84c9965330c7403
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63351286"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968021"
 ---
-# <a name="debugoutcbxxx"></a>デバッグ\_OUTCB\_XXX
+# <a name="debug_outcb_xxx"></a>デバッグ \_ OUTCB \_ XXX
 
 
-デバッグ\_OUTCB\_XXX 定数は、出力のフラグ。 出力のフラグは、それに伴う出力の種類を示すビット フィールドを形成します。
+DEBUG \_ outcb \_ XXX 定数は出力フラグです。 出力フラグは、それに付随する出力の種類を示すビットフィールドを形成します。
 
-デバッグ\_OUTCB\_XXX Output2 に送信できる出力コールバック通知の種類を定義します。
+デバッグ \_ outcb \_ XXX は、Output2 に送信できるさまざまな種類の出力コールバック通知を定義します。
 
-使用可能な値は、次に示します。
+指定できる値は次のとおりです。
 
 |定数|説明|
 |-----|-------|
-|DEBUG_OUTCB_TEXT|以下のプレーン テキスト コンテンツ、フラグは、引数マスクです。|
-|DEBUG_OUTCB_DML|デバッガー マークアップ コンテンツ、下のフラグは、引数マスクです。|
-|DEBUG_OUTCB_EXPLICIT_FLUSH|明示的な出力フラッシュ、フラグ、および引数の通知には 0 です。|
+|DEBUG_OUTCB_TEXT|プレーンテキストコンテンツ、フラグは次のとおりです。引数は mask です。|
+|DEBUG_OUTCB_DML|デバッガーのマークアップコンテンツ、フラグは次のとおりです。引数は mask です。|
+|DEBUG_OUTCB_EXPLICIT_FLUSH|明示的な出力フラッシュ、フラグ、および引数の通知は0です。|
 
 
 <a name="requirements"></a>要件
 ------------
 
-|||
-|-----|-------|
-|Header|DbgEng.h (DbgEng.h を含む)|
+**ヘッダー**: dbgeng .H (dbgeng .h を含む)
+
 
  
 

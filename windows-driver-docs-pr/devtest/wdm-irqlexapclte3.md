@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 98cd8957c311966bf6d586b4bfd3ed4986ccea6a
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: 85ff8b32992977d3dd0c3bcfa57101338b8ba8ff
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917155"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968087"
 ---
 # <a name="irqlexapclte3-rule-wdm"></a>IrqlExApcLte3 ルール (wdm)
 
@@ -40,9 +40,8 @@ IRQL に関連するエラーが発生したドライバーは重大な問題を
 
 **ドライバーモデル: WDM**
 
-|                                   |                                                                                                                                                                                                                                     |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証ツールで \_ 検出された \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x20007)、 [**バグチェックの 0xa: IRQL が \_ \_ 少ない \_ か \_ 等しい**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal) |
+**このルールでバグチェックが見つかりました**:[**バグチェック 0XC4: ドライバー \_ 検証ツールが \_ 検出した \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0X20007)、[**バグチェックの 0xa: IRQL が \_ \_ 少ない \_ か \_ 等しい**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xa--irql-not-less-or-equal)
+
 
 <a name="example"></a>例
 -------

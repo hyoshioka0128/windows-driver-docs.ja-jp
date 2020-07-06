@@ -4,24 +4,26 @@ description: Windows 8 では、ドライバーがスリープと再開のシス
 ms.assetid: 1E71BFDF-3C67-41F6-968A-8AE54B54CCCB
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 21d14fa3191877eb0a84e559a3fed3240faa9241
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 6bda009ca528a5e774775ce6af5c1883521b8bfd
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825708"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968589"
 ---
 # <a name="standby-hibernate-optimizations"></a>スタンバイ休止状態の最適化
 
 
 Windows 8 では、ドライバーがスリープと再開のシステムパフォーマンスを向上させるために、必要に応じてを活用できるグラフィックススタックの最適化を提供しています。
 
-|                                                                                   |                                             |
-|-----------------------------------------------------------------------------------|---------------------------------------------|
-| Windows Display Driver Model (WDDM) の最小バージョン                               | 1.2                                         |
-| Windows の最小バージョン                                                           | 8                                           |
-| ドライバーの実装—完全なグラフィックスとレンダーのみ                               | オプション                                    |
-| [必要条件](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)とテスト | **StandbyHibernateFlags のヲ** |
+**Windows Display Driver Model (WDDM) の最小バージョン**: 1.2
+
+**Windows の最小バージョン**: 8
+
+**ドライバーの実装—完全なグラフィックスとレンダーのみ**: 省略可能
+
+** [Whck](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)の要件とテスト**:**デバイスグラフィックのヲ**
+
 
  
 
@@ -30,11 +32,11 @@ Windows 8 では、ドライバーがスリープと再開のシステムパフ�
 
 これらの構造は、スタンバイ休止状態をサポートするために、Windows 8 以降で新しく追加または更新されました。
 
--   [**DXGK\_QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
--   [**DXGK\_SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
--   [**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
+-   [**DXGK \_ QUERYADAPTERINFOTYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ne-d3dkmddi-_dxgk_queryadapterinfotype)
+-   [**DXGK \_ SEGMENTDESCRIPTOR3**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentdescriptor3)
+-   [**DXGK \_ SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)
 
-この機能をサポートできるすべてのデバイスは、これらの休止状態の最適化を利用する必要があります。 WDDM 1.2 以降のドライバーがセグメントの機能を列挙する場合、 **PreservedDuringStandby**、 **PreservedDuringHibernate**、および**PartiallyPreservedDuringHibernate**の1つ以上のスタンバイ休止状態フラグも設定する必要があります。 詳細については、 [**DXGK\_SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)トピックの「解説」を参照してください。
+この機能をサポートできるすべてのデバイスは、これらの休止状態の最適化を利用する必要があります。 WDDM 1.2 以降のドライバーがセグメントの機能を列挙する場合、 **PreservedDuringStandby**、 **PreservedDuringHibernate**、および**PartiallyPreservedDuringHibernate**の1つ以上のスタンバイ休止状態フラグも設定する必要があります。 詳細については、 [**DXGK \_ SEGMENTFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dkmddi/ns-d3dkmddi-_dxgk_segmentflags)トピックの「解説」を参照してください。
 
 ## <a name="span-idstandbyoptspanspan-idstandbyoptspanusing-standby-hibernate-optimizations"></a><span id="standbyopt"></span><span id="STANDBYOPT"></span>スタンバイ休止状態の最適化の使用
 

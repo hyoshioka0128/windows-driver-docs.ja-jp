@@ -3,32 +3,36 @@ Description: プロパティのサポート
 title: プロパティのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a36aaa31b751f6672e97906fe6d8aa6c90e9e8c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 445700819101499437251fbaff795a6730994a74
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63376234"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967859"
 ---
 # <a name="property-support"></a>プロパティのサポート
 
 
-*WpdObjectProperties.cpp*と*WpdObjectProperties.h*ファイルには設定し、デバイス上のオブジェクトのプロパティを取得するメンバー関数が含まれます。
+*WpdObjectProperties*ファイルと*WpdObjectProperties*ファイルには、デバイスのオブジェクトプロパティを設定および取得するメンバー関数が含まれています。
 
-Windows アプリケーションを呼び出すには、5 つのメソッドのいずれかと、 **IPortableDeviceProperties**インターフェイスでは、この呼び出しをさらに、トリガーで 5 つのコマンド ハンドラーの 1 つ、 **WpdObjectProperty**クラス。 次の表に、アプリケーション メソッドのマッピング**WpdObjectProperties**ドライバー メソッド。
+Windows アプリケーションが**Iportabledeviceproperties**インターフェイスの5つのメソッドのいずれかを呼び出すと、この呼び出しによって**WpdObjectProperty**クラスの5つのコマンドハンドラーのいずれかがトリガーされます。 次の表は、 **WpdObjectProperties** driver メソッドへのアプリケーションメソッドのマッピングを示しています。
 
-|                                                       |                                                   |
-|-------------------------------------------------------|---------------------------------------------------|
-| **IPortableDeviceProperties メソッド**                  | **WpdObjectProperties コマンド ハンドラー**           |
-| **IPortableDeviceProperties::Delete**                 | **OnDelete**                                      |
-| **IPortableDeviceProperties::GetPropertyAttributes**  | **OnGetPropertyAttributes**                       |
-| **IPortableDeviceProperties::GetSupportedProperties** | **OnGetSupportedProperties**                      |
-| **IPortableDeviceProperties::GetValues**              | **OnGetPropertyValues または OnGetAllPropertyValues** |
-| **IPortableDeviceProperties::SetValues**              | **OnSetPropertyValues**                           |
+IPortableDeviceProperties メソッド * * * *: **WpdObjectProperties コマンドハンドラー**
+
+IPortableDeviceProperties::D e) * * * *: **OnDelete**
+
+IPortableDeviceProperties:: GetPropertyAttributes * * * *: **OnGetPropertyAttributes**
+
+IPortableDeviceProperties:: GetSupportedProperties * * * *: **OnGetSupportedProperties**
+
+IPortableDeviceProperties:: GetValues * * * *: **OnGetPropertyValues または OnGetAllPropertyValues**
+
+IPortableDeviceProperties:: SetValues * * * *: **OnSetPropertyValues**
+
 
  
 
-によって WpdObjectProperties コマンド ハンドラーが呼び出される、 **WpdObjectProperty::DispatchWpdMessage**メソッド。 次のサンプル ドライバーからの抜粋のコードを含む**WpdObjectProperty::DispatchWpdMessage:**
+WpdObjectProperties コマンドハンドラーは、 **WpdObjectProperty::D ispatchwpdmessage**メソッドによって呼び出されます。 サンプルドライバーの次の抜粋には、 **WpdObjectProperty::D ispatchwpdmessage**のコードが含まれています。
 
 ```ManagedCPlusPlus
 HRESULT WpdObjectProperties::DispatchWpdMessage(

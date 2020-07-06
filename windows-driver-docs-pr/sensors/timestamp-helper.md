@@ -1,45 +1,46 @@
 ---
 title: タイム スタンプ ヘルパー
-description: タイム スタンプのヘルパー関数は v2 センサー ドライバーによって使用され、センサー デバイス ドライバー ソフトウェア インターフェイス (DDSI) と共に使用します。
+description: タイムスタンプヘルパー関数は、v2 センサードライバーによって使用され、センサーデバイスドライバーソフトウェアインターフェイス (DDSI) で使用されます。
 ms.assetid: AE02CEBE-C5CB-4F54-BCB0-439D360DF6A1
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cc7f491235dbc958a42aec09a7cae54de65de7f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c0ffa699a3dc2309dd5af02737ecc0676965867e
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63345097"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968105"
 ---
 # <a name="time-stamp-helper"></a>タイム スタンプ ヘルパー
 
 
-タイム スタンプのヘルパー関数は v2 センサー ドライバーによって使用され、センサー デバイス ドライバー ソフトウェア インターフェイス (DDSI) と共に使用します。
+タイムスタンプヘルパー関数は、v2 センサードライバーによって使用され、センサーデバイスドライバーソフトウェアインターフェイス (DDSI) で使用されます。
 
-**GetPerformanceTime**
+**Getパフォーマンス時間**
 
 センサー DDSI による使用量
 
--   時間 (ミリ秒) を取得します。
+-   時間をミリ秒単位で取得します。
 
 コメント
 
--   プロセスまたは測定の期間の計算に使用します。
+-   プロセスまたは測定の期間の計算に使用されます。
 
 ### <a name="requirements"></a>要件
 
-|                          |                        |
-|--------------------------|------------------------|
-| サポートされている最小のクライアント | Windows 8.1            |
-| サポートされている最小のサーバー | Windows Server 2012 R2 |
-| Header                   | Sensorsutils.h         |
+**サポートされている最低限のクライアント**: Windows 8.1
+
+**サポートされている最小サーバー**: Windows Server 2012 R2
+
+**ヘッダー**: Sensorsutils
+
 
  
 
 ## <a name="related-topics"></a>関連トピック
 
 
-[ヘルパー関数をマーシャ リング](marshalling-helper-functions.md)
+[マーシャリング ヘルパーの関数](marshalling-helper-functions.md)
 
  
 

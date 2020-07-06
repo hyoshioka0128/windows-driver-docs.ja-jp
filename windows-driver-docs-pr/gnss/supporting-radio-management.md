@@ -10,12 +10,12 @@ keywords:
 - ラジオ管理、GPS
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 69304e9e86afc1cf3dfc62a69866d127ef4f0338
-ms.sourcegitcommit: 5273e44c5c6c1c87952d74e95e5473c32a916d10
+ms.openlocfilehash: 41517e0cb783979a32a63104d92edbb9fc1f17d0
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122689"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968271"
 ---
 # <a name="supporting-radio-management"></a>無線管理のサポート
 
@@ -40,23 +40,36 @@ GPS など、ラジオデバイス用のデバイスドライバーを作成す�
 
 次の表に、ラジオ管理 API のメソッドと、サンプル DLL に含まれる対応するメソッドの一覧を示します。
 
-|                                                     |                                                       |
-|-----------------------------------------------------|-------------------------------------------------------|
-| Radio Manager API                                   | Radio Manager DLL                                     |
-| ImediarGetRadioInstances Omanager::               | CSampleRadioManager::GetRadioInstances                |
-| ImediarOnSystemRadioStateChange Omanager::        | CSampleRadioManager::OnSystemRadioStateChange         |
-| IRadioInstance:: GetFriendlyName                     | CSampleRadioInstance:: GetFriendlyName                 |
-| IRadioInstance::GetInstanceSignature                | CSampleRadioInstance::GetInstanceSignature            |
-| IRadioInstance::GetRadioManagerSignature            | CSampleRadioInstance::GetRadioManagerSignature        |
-| IRadioInstance::GetRadioState                       | CSampleRadioInstance::GetRadioState                   |
-| IRadioState::IsAssociatingDevice                    | CSampleRadioInstance::IsAssociatingDevice             |
-| IRadioState::IsMultiComm                            | CSampleRadioInstance::IsMultiComm                     |
-| IRadioState::SetRadioState                          | CSampleRadioInstance::SetRadioState                   |
-| IRadioInstanceCollection:: GetAt                     | CRadioInstanceCollection:: GetAt                       |
-| IRadioInstanceCollection:: GetCount                  | CRadioInstanceCollection:: GetCount                    |
-| IMediaRadioManagerNotifySink:: OnInstanceAdd         | CSampleRadioManager:: \_ 焼討 eventoninstanceadd         |
-| IMediaRadioManagerNotifySink::OnInstanceRadioChange | CSampleRadioManager:: \_ FireEventOnInstanceRadioChange |
-| IMediaRadioManagerNotifySink::OnInstanceRemove      | CSampleRadioManager:: \_ FireEventOnInstanceRemove      |
+**Radio MANAGER API**: RADIO manager DLL
+
+**ImediarGetRadioInstances Omanager::** CSampleRadioManager:: GetRadioInstances
+
+**ImediarOnSystemRadioStateChange Omanager::** CSampleRadioManager:: OnSystemRadioStateChange
+
+**IRadioInstance:: getfriendlyname**: CSampleRadioInstance:: getfriendlyname
+
+**IRadioInstance:: GetInstanceSignature**: CSampleRadioInstance:: GetInstanceSignature
+
+**IRadioInstance:: GetRadioManagerSignature**: CSampleRadioInstance:: GetRadioManagerSignature
+
+**IRadioInstance:: GetRadioState**: CSampleRadioInstance:: GetRadioState
+
+**IRadioState:: IsAssociatingDevice**: CSampleRadioInstance:: IsAssociatingDevice
+
+**IRadioState:: IsMultiComm**: CSampleRadioInstance:: IsMultiComm
+
+**IRadioState:: SetRadioState**: CSampleRadioInstance:: SetRadioState
+
+**IRadioInstanceCollection:: GetAt**: CRadioInstanceCollection:: GetAt
+
+**IRadioInstanceCollection:: GetCount**: CRadioInstanceCollection:: GetCount
+
+**IMediaRadioManagerNotifySink:: OnInstanceAdd**: CSampleRadioManager:: \_ 焼討 eventoninstanceadd
+
+**IMediaRadioManagerNotifySink:: OnInstanceRadioChange**: CSampleRadioManager:: \_ FireEventOnInstanceRadioChange
+
+**IMediaRadioManagerNotifySink:: OnInstanceRemove**: CSampleRadioManager:: \_ FireEventOnInstanceRemove
+
 
 ## <a name="communicating-with-the-device-driver"></a>デバイスドライバーとの通信
 
@@ -88,4 +101,4 @@ GPS など、ラジオデバイス用のデバイスドライバーを作成す�
 
 1. [**デバッグ]、[プロセスにアタッチ**] の順に選択します。 [**プロセスにアタッチ**] ダイアログボックスに表示される使用可能なプロセスの一覧で、[dllhost.exe] を選択します。
 
-Dllhost.exe のインスタンスが複数実行されている場合は、オプション管理 DLL に関連付けられているプロセスを特定するために、削除プロセスでそれぞれを選択する必要があることに注意してください。 適切なプロセスにアタッチしたら、Visual Studio でブレークポイントを設定し、デバッグを開始できます。
+dllhost.exe の複数のインスタンスが実行されている場合は、ラジオ管理 DLL に関連付けられているプロセスを特定するために、削除プロセスでそれぞれを選択する必要があることに注意してください。 適切なプロセスにアタッチしたら、Visual Studio でブレークポイントを設定し、デバッグを開始できます。

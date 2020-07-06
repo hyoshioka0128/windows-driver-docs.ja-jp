@@ -1,21 +1,21 @@
 ---
 title: WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE
-description: WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE では、デバイス サービスに固有のオペコードを含む TLV です。
+description: WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE は、デバイスサービス固有のオペコードを含む TLV です。
 ms.assetid: A0C9E728-E0E5-47C1-AEB8-E001057FA35A
 ms.date: 06/15/2018
 keywords:
-- WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c1152c85fb382c27db8610af7f735b156c2710
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 1c8a4ee4799d1ddcde2e41908afc28fa94541fea
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63375321"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968193"
 ---
-# <a name="wditlvdeviceserviceparamsopcode"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE
+# <a name="wdi_tlv_device_service_params_opcode"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE
 
-WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE では、デバイス サービスに固有のオペコードを含む TLV です。 この TLV がで使用される、 [NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT](ndis-status-wdi-indication-device-service-event.md)状態を示す値。
+WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE は、デバイスサービス固有のオペコードを含む TLV です。 この TLV は、 [NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT](ndis-status-wdi-indication-device-service-event.md)状態表示で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -23,18 +23,19 @@ WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE では、デバイス サービスに固有
 
 ## <a name="length"></a>長さ
 
-UINT8 のバイト単位のサイズ。
+UINT8 のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | [説明] |
 | --- | --- |
-| TLV\<UINT8\> | デバイス サービスに固有のオペコードにします。 |
+| TLV\<UINT8\> | デバイスサービス固有のオペコード。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 Version 1809 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: Windows 10、バージョン1809
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Wditypes
+

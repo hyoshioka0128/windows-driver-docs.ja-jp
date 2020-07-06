@@ -1,21 +1,21 @@
 ---
 title: WDI_EXTENDED_TID
-description: このトピックでは、WDI ミニポート ドライバー WDI_EXTENDED_TID データ型について説明します。
+description: このトピックでは、WDI ミニポートドライバーの WDI_EXTENDED_TID データ型について説明します。
 ms.assetid: C7ECB1BD-CB4A-4FD7-8222-9C9E25C15910
 keywords:
-- WDI_EXTENDED_TID、WDK WDI_EXTENDED_TID ネットワーク ドライバー
+- WDI_EXTENDED_TID、WDK WDI_EXTENDED_TID ネットワークドライバー
 ms.date: 11/27/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6654123110081e749b939e1d147f8685a7a16b60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a58bca838aeb851ba899d933c8fa8899910bed9
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63330498"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967889"
 ---
-# <a name="wdiextendedtid"></a>WDI_EXTENDED_TID
+# <a name="wdi_extended_tid"></a>WDI_EXTENDED_TID
 
-WDI_EXTENDED_TID のデータ型は、トラフィックの識別子 (TID) を定義する UINT8 値です。
+WDI_EXTENDED_TID データ型は、トラフィック識別子 (TID) を定義する UINT8 値です。
 
 ```c++
 typedef UINT8 WDI_EXTENDED_TID;
@@ -25,19 +25,20 @@ typedef UINT8 WDI_EXTENDED_TID;
 
 使用できる値は次のとおりです。
 
-| 値 | 説明 |
+| 値 | [説明] |
 | --- | --- |
-| 0-15 | 802.11 Tid |
+| 0-15 | 802.11 TIDs |
 | 16 (WDI_EXT_TID_NON_QOS) | 非 QoS データ |
-| 17-24 | IHV が挿入されたフレームで使用するために予約されています。 17 ~ 24 の間隔で拡張 TID を持つフレームは、同じ間隔 17 ~ 24 の小さい拡張 TID よりも優先順位の高いと見なされます。 |
+| 17-24 | IHV が挿入したフレームで使用するために予約されています。 間隔17-24 の拡張 TID を持つフレームは、同じ間隔17-24 の拡張 TID が小さい方より高い優先順位と見なされます。 |
 | 25-30 | 未使用の値 |
-| 31 (WDI_EXT_TID_UNKNOWN) | 不明または未指定 |
+| 31 (WDI_EXT_TID_UNKNOWN) | 不明/未指定 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Dot11wdi.h |
+**サポートされている最低限のクライアント**: Windows 10
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Dot11wdi
+
 

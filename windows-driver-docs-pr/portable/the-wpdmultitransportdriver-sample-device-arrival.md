@@ -3,41 +3,45 @@ Description: MultiTransport デバイスのサポート
 title: MultiTransport デバイスのサポート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f686c03b91ec7d64486ac475372590f015725f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 663b9a3f84ad152d90b7e7825be85b6fd88899af
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370538"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968300"
 ---
 # <a name="multitransport-device-support"></a>MultiTransport デバイスのサポート
 
 
-WpdMultiTransportDriver サンプルは、WpdHelloWorldDriver に基づいており、元のドライバーのソース コードのほとんどは変更されません。 具体的には、オブジェクトの列挙型、プロパティ、および機能をサポートするコードには、非常にいくつかの変更やリビジョンが含まれています。
+WpdMultiTransportDriver サンプルは WpdHelloWorldDriver に基づいており、元のドライバーのソースコードのほとんどは変更されません。 特に、オブジェクトの列挙、プロパティ、および機能をサポートするコードには、変更やリビジョンがほとんど含まれていません。
 
-2 つの主な領域に、WpdMultiTransportDriver のコードに変更履歴が表示されます。 デバイス到着と I/O キュー。 デバイスの到着をサポートするコードが 2 つのファイルで見つかった*Device.cpp*と*Driver.cpp*します。 I/O キューをサポートするコードは「 *Driver.cpp*と*Queue.cpp*
+WpdMultiTransportDriver のコードのリビジョンは、デバイスの到着と i/o キューという2つの主な領域に表示されます。 デバイスの到着をサポートするコードは、*デバイス .cpp*と*ドライバー .cpp*の2つのファイルにあります。 I/o キューをサポートするコードについては、「*ドライバー .cpp*と*キュー .cpp* 」を参照してください。
 
-## <a name="span-idmultitransportdevice-arrivalspanspan-idmultitransportdevice-arrivalspanspan-idmultitransportdevice-arrivalspanmultitransport-device-arrival"></a><span id="Multitransport_Device-Arrival"></span><span id="multitransport_device-arrival"></span><span id="MULTITRANSPORT_DEVICE-ARRIVAL"></span>Multitransport デバイス到着
+## <a name="span-idmultitransport_device-arrivalspanspan-idmultitransport_device-arrivalspanspan-idmultitransport_device-arrivalspanmultitransport-device-arrival"></a><span id="Multitransport_Device-Arrival"></span><span id="multitransport_device-arrival"></span><span id="MULTITRANSPORT_DEVICE-ARRIVAL"></span>Multitransport デバイス-到着
 
 
-デバイス到着コードは「、 **CDevice::OnPrepareHardware**メソッド (で、 *Device.cpp*ファイル) と、 **CDriver::OnDeviceAdd**メソッド (で*Driver.cpp*ファイル)。
+デバイス到着コードは、 **Cdevice:: on(** *.cpp*ファイル) メソッドと**Cdevice:: Onpreparehardware**メソッド ( *Driver. .cpp*ファイル) にあります。このメソッドには、
 
-内のコード、 **CDevice::OnPrepareHardware** WPD クラスの拡張機能を初期化する前に、メソッドは、次のタスクを完了します。 (最後の 3 つのタスクは、WPD クラスの拡張機能に渡されるオプションのパラメーターを設定します)。
+**Cdevice:: onモジュール**のメソッドのコードは、WPD クラス拡張を初期化する前に、次のタスクを完了します。 (最後の3つのタスクは、WPD クラス拡張に渡されるオプションパラメーターを設定します)。
 
-並列のキューが必要なように、 **IOCTL\_複合\_トランスポート\_要求 Ioctl**デバイス インターフェイスの状態の変更時に、WPD クラスのインストーラーから正しく受信することができます。 2 番目のキューは、トランスポート ドライバーが使用する (たとえば、並列でない) 別のディスパッチ モードを使用できます。 シーケンシャルなキューでは、WUDF は一度に 1 つの要求をのみであるため、管理も簡素化します。 ただし、WPD ドライバーが並列で複数の要求を処理できる場合は、これは必要ありません、セカンダリ キュー。
+デバイスインターフェイスの状態が変化したときに、 **ioctl \_ 複合 \_ トランスポート \_ 要求の ioctl**を WPD クラスインストーラーから正しく受信できるように、並列キューが必要です。 2つ目のキューでは、トランスポートドライバーで別の (たとえば、非並列) ディスパッチモードを使用できます。 WUDF では一度に1つの要求のみが許可されるため、順次キューは管理が簡単です。 ただし、WPD ドライバーが複数の要求を並列処理できる場合、セカンダリキューは必要ありません。
 
-|                                                                       |                                                                                                                                                                                                                                  |
-|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| タスク                                                                  | 説明                                                                                                                                                                                                                      |
-| 機能の一意な識別子 (FUID) を作成します。                         | FUID は、ドライバーが初期化中に WPD クラスの拡張機能に渡されるグローバル一意識別子 (GUID) 値です。 (クラスの拡張機能に、各トランスポートにあるこの FUID が関連付けます)。                                   |
-| ポインターを取得、 **IQueueCallbackDeviceIoControl**インターフェイス。 | ドライバーは、このポインターを使用して、非-WPD Ioctl クラスの拡張機能を転送します。                                                                                                                                             |
-| Multitransport モード オプションを有効にします。                                | このオプションは、multitransport フレームワークを設定する必要があります、WPD クラスの拡張を通知します。                                                                                                                                  |
-| 必要に応じてプラグ アンド プレイ (PnP) の値を設定します。                         | これらの値は、フレームワークを multitransport 構成に使用されます。                                                                                                                                                                 |
-| 現在のトランスポートの帯域幅を設定します。                                  | この値は、クラスの拡張および複合ドライバーによって使用されます (*WpdComp.dll*)。 複合のドライバーでは、拡張機能から値を取得し、複数のトランスポートがアクティブである場合に最適なトランスポートを決定するために使用します。 |
+**タスク**: 説明
+
+**機能的な一意識別子 (FUTEX id) を作成します。**: futex id は、初期化中にドライバーが WPD クラス拡張に渡すグローバル一意識別子 (GUID) 値です。 (クラス拡張では、この FUTEX ID が各トランスポートに関連付けられます)。
+
+** **IQueueCallbackDeviceIoControl**インターフェイスへのポインターを取得します。**: ドライバーは、このポインターを使用して、非 WPD ioctl をクラス拡張に転送します。
+
+**Multitransport モードオプションを有効にします。**: このオプションは、multitransport フレームワークを設定する必要があることを WPD クラス拡張に通知します。
+
+**必要なプラグアンドプレイ (PnP) の値を設定します。** これらの値は、multitransport フレームワークを構成するために使用されます。
+
+**現在のトランスポート帯域幅を設定します。**: この値は、クラス拡張と複合ドライバー (*WpdComp.dll*) によって使用されます。 複合ドライバーは拡張から値を取得し、それを使用して、複数のトランスポートがアクティブな場合の最適なトランスポートを決定します。
+
 
  
 
-次のコード例から、 **CDevice::OnPrepareHardware**メソッドは、サンプルのドライバーが、機能固有の識別子 (FUID) を作成する方法を示しています。 この GUID の作成の前のコメントを確認してください。
+**Cdevice:: on、hardware**メソッドの次のコード例は、サンプルドライバーが機能の一意識別子 (futex id) を作成した方法を示しています。 この GUID を作成する前に、コメントを必ず確認してください。
 
 ```ManagedCPlusPlus
  // ATTENTION: The following GUID value is provided for illustrative
@@ -55,7 +59,7 @@ WpdMultiTransportDriver サンプルは、WpdHelloWorldDriver に基づいてお
                 GUID guidFUID = { 0x245e5e81, 0x2c17, 0x40a4, { 0x8b, 0x10, 0xe9, 0x43, 0xc5, 0x4c, 0x97, 0xb2 } };
 ```
 
-次のコード例、 **CDevice::OnPrepareHardware**メソッドは、前の表の 3 つの残りのタスクを示しています (の取得、 **IQueueCallbackDeviceIoControl**ポインターの有効化multitransport のモード、PnP 値と現在の帯域幅を設定します。
+**Cdevice:: OnIQueueCallbackDeviceIoControl hardware**メソッドからの次のコード例では、前の表の3つの残りのタスク**IQueueCallbackDeviceIoControl**を示します (マルチトランスポートモードを有効にし、PnP 値と現在の帯域幅を設定します)。
 
 ```ManagedCPlusPlus
      if (hr == S_OK)
@@ -104,14 +108,14 @@ WpdMultiTransportDriver サンプルは、WpdHelloWorldDriver に基づいてお
                 }
 ```
 
-## <a name="span-idmultitransportqueuesspanspan-idmultitransportqueuesspanspan-idmultitransportqueuesspanmultitransport-queues"></a><span id="MultiTransport_Queues"></span><span id="multitransport_queues"></span><span id="MULTITRANSPORT_QUEUES"></span>MultiTransport キュー
+## <a name="span-idmultitransport_queuesspanspan-idmultitransport_queuesspanspan-idmultitransport_queuesspanmultitransport-queues"></a><span id="MultiTransport_Queues"></span><span id="multitransport_queues"></span><span id="MULTITRANSPORT_QUEUES"></span>MultiTransport キュー
 
 
-WpdHelloWorld ドライバーのサンプルでは、WPD シリアライザーからプロセスの Ioctl に、1 つの連続したキューをサポートします。 WpdMultiTransportDriver ドライバーは、2 つのキューをサポートしています。 キューを並列および順次のキュー。 並列のキューが、複数を処理するシーケンシャル キューは、一度に 1 つだけの要求を処理中に I/O の同時要求すると、します。
+WpdHelloWorld ドライバーサンプルでは、WPD シリアライザーから Ioctl を処理するための単一のシーケンシャルキューがサポートされています。 WpdMultiTransportDriver ドライバーでは、並列キューと順次キューという2つのキューがサポートされています。 並列キューは、同時に複数の i/o 要求を処理しますが、順次キューは一度に1つの要求のみを処理します。
 
-コードでは、デバイスの到着、 **CDriver::OnDeviceAdd**メソッドは、両方のキューを準備します。 最初の (または既定の) キューは各 IOCTL を処理し、いずれか 2 つ目 (シーケンシャル) のキューに、ドライバーまたは WPD クラスの拡張機能でサポートされている別のキューに転送する並列キューです。
+**Cdriver:: OnDeviceAdd**メソッドのデバイス到着コードは、両方のキューを準備します。 最初の (または既定の) キューは、各 IOCTL を処理し、ドライバーの2番目の (順次) キューに転送するか、または WPD クラス拡張でサポートされている別のキューに転送する並列キューです。
 
-次のコード例には、並列および順次の両方のキューを作成するコードが含まれています。
+次のコード例には、並列キューと順次キューの両方を作成するコードが含まれています。
 
 ```ManagedCPlusPlus
         //
@@ -162,9 +166,9 @@ WpdHelloWorld ドライバーのサンプルでは、WPD シリアライザー�
         }
 ```
 
-中に、 **CDriver::OnDeviceAdd** I/O キューの作成を処理するメソッド、両方のキューで機能をサポートするコードがある、 *Queue.cpp*ファイル。
+**Cdriver:: OnDeviceAdd**メソッドは、i/o キューの作成を処理しますが、両方のキューの機能をサポートするコードは、キューの *.cpp*ファイルにあります。
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 [WPD ドライバーのサンプル](the-wpd-driver-samples.md)

@@ -6,12 +6,12 @@ keywords:
 - WSK_CLIENT、WDK WSK_CLIENT ネットワークドライバー
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec0e8ed2a558fe03437a27b67906aff42ffd79c
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: eb25b22fc7c0082cbf49fe03cc7f1a5079049183
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72844357"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968449"
 ---
 # <a name="wsk_client"></a>WSK_CLIENT
 
@@ -26,16 +26,16 @@ typedef PVOID PWSK_CLIENT;
 
 ## <a name="remarks"></a>注釈
 
-WSK アプリケーションが[WskCaptureProviderNPI](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskcaptureprovidernpi)関数を呼び出すと、wsk サブシステムは、 *WskProviderNpi*パラメーターを使って WSK アプリケーションへの WSK_CLIENT 構造体へのポインターを返します。 WSK サブシステムは、この構造体を使用して、WSK アプリケーションと WSK サブシステムの間のバインディングの状態を追跡します。 WSK アプリケーションは、このポインターをパラメーターとして[WSK_PROVIDER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)のすべての関数 ([wskcontrolclient](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)、 [Wsksocket](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)、および[wskcontrolclient](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)) に渡します。
+WSK アプリケーションが[WskCaptureProviderNPI](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nf-wsk-wskcaptureprovidernpi)関数を呼び出すと、wsk サブシステムは、 *WskProviderNpi*パラメーターを使って wsk アプリケーションへのポインターを WSK_CLIENT 構造体に返します。 WSK サブシステムは、この構造体を使用して、WSK アプリケーションと WSK サブシステムの間のバインディングの状態を追跡します。 WSK アプリケーションは、このポインターを[WSK_PROVIDER_DISPATCH](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/ns-wsk-_wsk_provider_dispatch)のすべての関数 ([wskcontrolclient](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_control_client)、 [Wsksocket](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket)、および[wskcontrolclient](https://docs.microsoft.com/windows-hardware/drivers/ddi/wsk/nc-wsk-pfn_wsk_socket_connect)) にパラメーターとして渡します。
 
 詳細については、「 [Winsock カーネルアプリケーションの登録](registering-a-winsock-kernel-application.md)」を参照してください。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| バージョン | Windows Vista 以降のバージョンの Windows オペレーティングシステムで使用できます。 |
-| Header | Wsk .h (Wsk .h を含む) |
+**バージョン**: windows Vista 以降のバージョンの windows オペレーティングシステムで使用できます。
+
+**ヘッダー**: wsk .H (wsk .h を含む)
+
 
 ## <a name="see-also"></a>関連項目
 

@@ -4,12 +4,12 @@ description: 非 HID のキーボードおよびマウスは複数のレガシ�
 ms.assetid: 0771D802-4F1D-4612-8376-ED3113DCC652
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6157b731a543b6bf6aa86310bec800699a366d39
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: df9d233525f9c32998c76e1771e703dc6f108ae7
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256730"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968219"
 ---
 # <a name="keyboard-and-mouse-class-drivers"></a>キーボードとマウスのクラス ドライバー
 
@@ -33,13 +33,13 @@ ms.locfileid: "76256730"
 
 このトピックでは、次の Microsoft Windows 2000 および system クラスのドライバーの機能について説明します。
 
-- **Kbdclass**(GUID\_クラスのデバイスのクラスドライバー\_キーボードデバイスクラス)
+- **Kbdclass**、GUID クラスのデバイスのクラスドライバー \_ の \_ デバイスクラス
 
-- MOUSE**クラス**、GUID\_クラスのデバイス用のクラスドライバー\_MOUSE device クラス
+- MOUSE**クラス**、GUID クラスのデバイスのクラスドライバー \_ 、 \_ MOUSE device クラス
 
-Kbdclass は Kbdclass サービスを実装し、その実行可能イメージは Kbdclass です。
+Kbdclass は Kbdclass サービスを実装し、その実行可能イメージは kbdclass.sys ます。
 
-を実行すると、このクラスは、このサービスを実装します。
+を実行すると、このクラスは、このサービスを実装し、その実行可能イメージを mouclass.sys します。
 
 Kbdclass と、各機能の各機能:
 
@@ -75,7 +75,7 @@ Kbdclass と、各機能の各機能:
 - 1つまたは複数のオプションの上位レベルのマウスフィルタードライバー
 - **I8042prt**, 関数ドライバー
 
-**Kbdclass と** **クラス**は、2つの異なるモードで複数のデバイスをサポートできます。 1対*1 モード*では、各デバイスに独立したデバイススタックがあります。 クラスドライバーは、独立したクラスを作成し、各デバイススタックにアタッチします。 各デバイススタックには、独自の制御状態と入力バッファーがあります。 Microsoft Win32 サブシステムは、一意のファイルオブジェクトを介して各デバイスからの入力にアクセスします。
+**Kbdclass と****クラス**は、2つの異なるモードで複数のデバイスをサポートできます。 1対*1 モード*では、各デバイスに独立したデバイススタックがあります。 クラスドライバーは、独立したクラスを作成し、各デバイススタックにアタッチします。 各デバイススタックには、独自の制御状態と入力バッファーがあります。 Microsoft Win32 サブシステムは、一意のファイルオブジェクトを介して各デバイスからの入力にアクセスします。
 
 *Grandmaster モード*では、クラスドライバーは、次の方法ですべてのデバイスを操作します。
 
@@ -91,19 +91,19 @@ Kbdclass と、各機能の各機能:
 
 - Grandmaster は、1つのグローバルデバイス状態を保持します。
 
-Kbdclass および CurrentControlSet は、レジストリエントリ値**Connect複数ポート**が0x00 に設定されている場合、1対1モードで動作します (キー **HKLM\\Services\\\\***&lt;クラスサービス&gt;***\\パラメーター**(*クラスサービス*は Kbdclass またはクラス)。 それ以外の場合は、Kbdclass とは grandmaster モードで動作します。
+Kbdclass およびの各クラスは、1対1モードで動作します。レジストリエントリ値**connect複数ポート**が0x00 に設定されている場合 (ここで、*クラスサービス*が Kbdclass または** \\ \\ CurrentControlSet \\ *** &lt; &gt; *** \\ **クラスである場合)。 それ以外の場合は、Kbdclass とは grandmaster モードで動作します。
 
 ## <a name="open-and-close-via-the-class-driver"></a>クラスドライバーを使用してを開き、閉じる
 
 Microsoft Win32 サブシステムによって、すべてのキーボードおよびマウスデバイスが排他的に使用されます。 Win32 サブシステムでは、デバイスクラスごとに、入力が単一の入力デバイスからのものであるかのように、すべてのデバイスからの入力を扱います。 アプリケーションは、1つの特定のデバイスからの入力のみを受信するように要求することはできません。
 
-Win32 サブシステムは、プラグアンドプレイマネージャーから、GUID\_クラス\_キーボードまたは GUID\_クラス\_マウスデバイスインターフェイスが有効になっているという通知を受け取った後プラグアンドプレイ入力デバイスを動的に開きます。 Win32 サブシステムは、開いているインターフェイスが無効になっているという通知を受信した後、プラグアンドプレイデバイスを閉じます。 Win32 サブシステムでは、レガシデバイスも名前で開かれます (たとえば、"\\Device\\KeyboardLegacyClass0")。 Win32 サブシステムがレガシデバイスを正常に開くと、デバイスが後で物理的に削除されたかどうかを判断できないことに注意してください。
+Win32 サブシステムは、GUID \_ クラス \_ キーボードまたは guid \_ クラスの \_ マウスデバイスインターフェイスが有効になっていることをプラグアンドプレイマネージャーから通知を受け取った後、入力デバイスプラグアンドプレイ動的に開きます。 Win32 サブシステムは、開いているインターフェイスが無効になっているという通知を受信した後、プラグアンドプレイデバイスを閉じます。 Win32 サブシステムでは、レガシデバイスも名前で開かれます (たとえば、" \\ Device \\ KeyboardLegacyClass0")。 Win32 サブシステムがレガシデバイスを正常に開くと、デバイスが後で物理的に削除されたかどうかを判断できないことに注意してください。
 
 Kbdclass とは、作成要求を受け取ると、プラグアンドプレイ次の操作を実行します。
 
 - **プラグアンドプレイ操作**
 
-    デバイスがプラグアンドプレイ開始状態になっている場合、クラスドライバーは IRP\_MJ\_CREATE 要求をドライバースタックに送信します。 それ以外の場合、クラスドライバーは要求をドライバースタックに送信せずに要求を完了します。 クラスドライバーは、デバイスに対する読み取りアクセス権を持つ信頼されたファイルを設定します。 Grandmaster デバイスがある場合、クラスドライバーは、下位クラスのデバイスに関連付けられているすべてのポートに create 要求を送信します。
+    デバイスがプラグアンドプレイ開始状態になっている場合、クラスドライバーは IRP \_ MJ \_ CREATE 要求をドライバースタックに送信します。 それ以外の場合、クラスドライバーは要求をドライバースタックに送信せずに要求を完了します。 クラスドライバーは、デバイスに対する読み取りアクセス権を持つ信頼されたファイルを設定します。 Grandmaster デバイスがある場合、クラスドライバーは、下位クラスのデバイスに関連付けられているすべてのポートに create 要求を送信します。
 
 - **レガシ操作**
 
@@ -113,11 +113,11 @@ Kbdclass とは、作成要求を受け取ると、プラグアンドプレイ�
 
 クラスドライバーは、デバイスを開く前に、そのクラスのサービスをデバイスに接続する必要があります。 クラスドライバーは、クラスをデバイススタックにアタッチした後に、クラスサービスを接続します。 関数ドライバーは、クラスのサービスコールバックを使用して、デバイスからデバイスのクラスデータキューに入力データを転送します。 デバイスの関数ドライバーの ISR ディスパッチ完了ルーチンは、クラスサービスコールバックを呼び出します。 Kbdclass はクラスサービスコールバック[**KeyboardClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542324(v=vs.85))を提供します。また、クラスはクラスサービスコールバック[**MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))を提供します。
 
-ベンダは、デバイスの上位レベルのフィルタードライバーをインストールすることによって、クラスサービスコールバックの動作を変更できます。 サンプルのキーボードフィルタードライバー [Kbfiltr](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/keyboard-input-wdf-filter-driver-kbfiltr/)では、 [**Kbfilter\_ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542297(v=vs.85)) callback[が定義さ](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/mouse-input-wdf-filter-driver-moufiltr/)れています。また、サンプルのマウスフィルタードライバー ServiceCallback は、コールバックを[ **\_** ](https://docs.microsoft.com/previous-versions/ff542380(v=vs.85))定義しています。 サンプルフィルターサービスのコールバックは、デバイスのポート入力バッファーからクラスデータキューに転送される入力データを変更するように構成できます。 たとえば、フィルターサービスのコールバックでは、データの削除、変換、または挿入を行うことができます。
+ベンダは、デバイスの上位レベルのフィルタードライバーをインストールすることによって、クラスサービスコールバックの動作を変更できます。 サンプルのキーボードフィルタードライバー [Kbfiltr](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/keyboard-input-wdf-filter-driver-kbfiltr/)では、 [**kbfilter \_ ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542297(v=vs.85)) callback[が定義さ](https://docs.microsoft.com/samples/microsoft/windows-driver-samples/mouse-input-wdf-filter-driver-moufiltr/)れています。また、サンプルのマウスフィルタードライバーの例では、 [** \_ ServiceCallback**](https://docs.microsoft.com/previous-versions/ff542380(v=vs.85)) callback が定義されています。 サンプルフィルターサービスのコールバックは、デバイスのポート入力バッファーからクラスデータキューに転送される入力データを変更するように構成できます。 たとえば、フィルターサービスのコールバックでは、データの削除、変換、または挿入を行うことができます。
 
 クラスとフィルターサービスのコールバックは、次のように接続されます。
 
-- クラスドライバーは、内部デバイス接続要求をデバイススタック ([**ioctl\_内部\_キーボード\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_keyboard_connect)または[**ioctl\_内部\_マウス\_接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_mouse_connect)) を介して送信します。 クラス接続データは、接続\_データ構造体によって指定されます。これには、クラスデバイスオブジェクトへのポインターとクラスサービスコールバックへのポインターが含まれます。
+- クラスドライバーは、デバイススタック ([**ioctl \_ 内部 \_ キーボード \_ 接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_keyboard_connect)または[**ioctl \_ 内部 \_ マウス \_ 接続**](https://docs.microsoft.com/windows-hardware/drivers/ddi/kbdmou/ni-kbdmou-ioctl_internal_mouse_connect)) を介して、内部デバイス接続要求を送信します。 クラス接続データは、CONNECT データ構造体によって指定されます。これには、 \_ クラスデバイスオブジェクトへのポインターとクラスサービスコールバックへのポインターが含まれます。
 
 - フィルタードライバーは、connect 要求を受信すると、クラス接続データのコピーを保存し、要求の connect データをフィルター接続データに置き換えます。 フィルター接続データは、フィルターデバイスオブジェクトへのポインターとフィルタードライバーサービスコールバックへのポインターを指定します。 フィルタードライバーは、フィルター処理された connect 要求を関数ドライバーに送信します。
 
@@ -131,17 +131,17 @@ Kbdclass とは、作成要求を受け取ると、プラグアンドプレイ�
 
 I8042prt は、キーボードデバイスに関する情報を照会し、キーボードデバイスでパラメーターを設定するために、次の内部デバイス制御要求をサポートしています。
 
-[**IOCTL\_キーボード\_クエリ\_属性**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
+[**IOCTL \_ キーボード \_ クエリの \_ 属性**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_attributes)
 
-[**IOCTL\_キーボード\_クエリ\_インジケーター\_翻訳**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
+[**IOCTL \_ キーボード \_ クエリ \_ インジケーター \_ 変換**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicator_translation)
 
-[**IOCTL\_キーボード\_クエリ\_インジケーター**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
+[**IOCTL \_ キーボード \_ クエリ \_ インジケーター**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_indicators)
 
-[**IOCTL\_キーボード\_クエリ\_速度**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
+[**IOCTL \_ キーボード \_ クエリ \_ 速度**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_query_typematic)
 
-[ **\_インジケーターを設定する IOCTL\_のキーボード\_** ](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
+[**IOCTL \_ キーボード \_ セット \_ インジケーター**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_indicators)
 
-[**IOCTL\_キーボード\_設定\_速度**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
+[**IOCTL \_ キーボード \_ セット \_ 速度**](https://docs.microsoft.com/windows/desktop/api/ntddkbd/ni-ntddkbd-ioctl_keyboard_set_typematic)
 
 すべてのキーボードデバイスコントロール要求の詳細については、「[ヒューマンインターフェイスデバイスリファレンス](https://docs.microsoft.com/windows/win32/api/_hid/)」を参照してください。
 
@@ -155,19 +155,19 @@ Windows 2000 および Windows XP には、スキャンコードのマッピン�
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
 ```
 
-Ctrl キーの下に**キーボードレイアウト**キーもあることを確認します (複数形に注意してください) が、そのキーを変更することはできませ**ん  。**
+**メモ**   また、コントロールキーの下に**キーボードレイアウト**キー (複数形に注意してください) もありますが、そのキーは変更しないでください。
 
-**キーボードレイアウト**キーでは、 **scancode マップ**値を追加する必要があります。 この値は、REG\_BINARY (リトルエンディアン形式) 型であり、次の表に示すデータ形式が指定されています。
+**キーボードレイアウト**キーでは、 **scancode マップ**値を追加する必要があります。 この値は、型 REG \_ BINARY (リトルエンディアン形式) で、次の表に示すデータ形式が指定されています。
 
 |                         |                 |                              |
 |-------------------------|-----------------|------------------------------|
 | 開始オフセット (バイト単位) | サイズ (バイト単位) | データ                         |
-| 0                       | ホーム フォルダーが置かれているコンピューターにアクセスできない               | ヘッダー: バージョン情報  |
-| ホーム フォルダーが置かれているコンピューターにアクセスできない                       | ホーム フォルダーが置かれているコンピューターにアクセスできない               | Header: フラグ                |
-| 8                       | ホーム フォルダーが置かれているコンピューターにアクセスできない               | ヘッダー: マッピングの数   |
-| 12                      | ホーム フォルダーが置かれているコンピューターにアクセスできない               | 個々のマッピング           |
+| 0                       | 4               | ヘッダー: バージョン情報  |
+| 4                       | 4               | Header: フラグ                |
+| 8                       | 4               | ヘッダー: マッピングの数   |
+| 12                      | 4               | 個々のマッピング           |
 | ...                     | ...             | ...                          |
-| 過去4バイト            | ホーム フォルダーが置かれているコンピューターにアクセスできない               | Null ターミネータ (0x00000000) |
+| 過去4バイト            | 4               | Null ターミネータ (0x00000000) |
 
 1番目と2番目の DWORD ストアヘッダー情報は、現在のバージョンのスキャンコードマッパーのすべてゼロに設定する必要があります。 3番目の DWORD エントリには、その後に続くマッピングの総数 (null 終端マッピングを含む) が含まれます。 したがって、最小カウントは 1 (マッピングが指定されていない) になります。 個々のマッピングはヘッダーの後に続きます。 各マッピングは、長さが1つの DWORD で、2つの単語長フィールドに分割されます。 各 WORD フィールドには、マップするキーのスキャンコードが格納されます。
 
@@ -177,7 +177,7 @@ Ctrl キーの下に**キーボードレイアウト**キーもあることを�
 
 ### <a name="example-1"></a>例 1
 
-次に例を示します。 左の CTRL キーと CAPS LOCK キーを交換するには、レジストリエディター (可能であれば、Regedt32) を使用して、Scancode マップキーを次の値で変更します。
+次に例を示します。 左の CTRL キーと CAPSLOCK キーを交換するには、レジストリエディター (可能であれば Regedt32.exe) を使用して、Scancode マップキーを次の値で変更します。
 
 ``` syntax
 00000000 00000000 03000000 3A001D00 1D003A00 00000000
@@ -185,15 +185,20 @@ Ctrl キーの下に**キーボードレイアウト**キーもあることを�
 
 次の表は、これらのエントリが DWORD フィールドに分割され、スワップされたバイト数を示しています。
 
-|            |                                                    |
-|------------|----------------------------------------------------|
-| Value      | 意味                                     |
-| 0x00000000 | ヘッダー: バージョン。 すべてゼロに設定します。                |
-| 0x00000000 | Header: フラグ。 すべてゼロに設定します。                  |
-| 0x00000003 | マップ内の3つのエントリ (null エントリを含む)。   |
-| 0x001D003A | 左 CTRL キー--&gt; CAPS LOCK (0x1D--&gt; 0x3A)。 |
-| 0x003A001D | CAPS LOCK--&gt; 左 CTRL キー (0x3A--&gt; 0x1D)。 |
-| 0x00000000 | Null 終端文字。                                   |
+**値**: 解釈
+
+**0x00000000**: ヘッダー: バージョン。 すべてゼロに設定します。
+
+**0x00000000**: Header: フラグ。 すべてゼロに設定します。
+
+**0x00000003**: マップ内の3つのエントリ (null エントリを含む)。
+
+**0X001d003a**: 左 CTRL キー-- &gt; CAPS LOCK (0x1d-- &gt; 0x3a)。
+
+**0X003a001d**: CAPS LOCK-- &gt; ← + CTRL キー (0x3a-- &gt; 0x1d)。
+
+**0x00000000**: Null ターミネータ。
+
 
 ### <a name="example-2"></a>例 2
 
@@ -205,21 +210,26 @@ Ctrl キーの下に**キーボードレイアウト**キーもあることを�
 
 次の表は、これらのエントリが DWORD フィールドに分割され、スワップされたバイト数を示しています。
 
-|            |                                                       |
-|------------|-------------------------------------------------------|
-| Value      | 意味                                        |
-| 0x00000000 | ヘッダー: バージョン。 すべてゼロに設定します。                   |
-| 0x00000000 | Header: フラグ。 すべてゼロに設定します。                     |
-| 0x00000003 | マップ内の3つのエントリ (null エントリを含む)。      |
-| 0xE01D0000 | 右 CTRL キー (0xE01D--&gt; 0x00) を削除します。       |
-| 0xE038E020 | 右 ALT キー--&gt; ミュートキー (0xE038--&gt; 0Xe038)。 |
-| 0x00000000 | Null 終端文字。                                      |
+**値**: 解釈
+
+**0x00000000**: ヘッダー: バージョン。 すべてゼロに設定します。
+
+**0x00000000**: Header: フラグ。 すべてゼロに設定します。
+
+**0x00000003**: マップ内の3つのエントリ (null エントリを含む)。
+
+**0Xe01d0000**: 右の CTRL キー (0xE01D-- &gt; 0x00) を削除します。
+
+**0xE038E020**: Right ALT key-- &gt; ミュートキー (0xe038-- &gt; 0xe038)。
+
+**0x00000000**: Null ターミネータ。
+
 
 必要なデータが生成されたら、いくつかの方法でレジストリに挿入できます。
 
 - レジストリエディターを使用して、システムレジストリに簡単に組み込むことができる .reg ファイルを生成できます。
-- .Inf ファイルは、追加するレジストリ情報を含む \[AddReg\] セクションで作成することもできます。
-- この情報を手動でレジストリに追加するには、Regedt32 を使用します。
+- \[ \] 追加するレジストリ情報が含まれている AddReg セクションで .inf ファイルを作成することもできます。
+- Regedt32.exe を使用して、手動で情報をレジストリに追加できます。
 
 スキャンコードマッパーには、いくつかの利点と欠点があります。
 
@@ -239,7 +249,7 @@ Ctrl キーの下に**キーボードレイアウト**キーもあることを�
 
 I8042prt は、次の内部デバイスコントロール要求をサポートして、マウスデバイスに関する情報を照会します。
 
-[**IOCTL\_マウス\_クエリ\_属性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542085(v=vs.85))
+[**IOCTL \_ マウス \_ クエリ \_ 属性**](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff542085(v=vs.85))
 
 すべてのマウスデバイスコントロール要求の詳細については、「[ヒューマンインターフェイスデバイスリファレンス](https://docs.microsoft.com/windows/win32/api/_hid/)」を参照してください。
 
@@ -247,7 +257,7 @@ I8042prt は、次の内部デバイスコントロール要求をサポート�
 
 マウスクラスドライバーに関連付けられているレジストリキーの一覧を次に示します。
 
-\[キー: HKLM\\SYSTEM\\CurrentControlSet\\Services\\にクラス\\パラメーター\]
+\[キー: HKLM \\ SYSTEM \\ CurrentControlSet \\ Services の \\ \\ パラメーター\]
 
 - **Maximumportsserviced** -Windows XP 以降では使用されません。 Windows NT4 の場合のみ。
 - **ポインター devicebase-access** –マウスクラスのデバイスドライバーによって作成されるデバイスオブジェクトの基本名を指定します。
@@ -256,15 +266,15 @@ I8042prt は、次の内部デバイスコントロール要求をサポート�
 
 ## <a name="absolute-pointing-devices"></a>絶対ポイントデバイス
 
-デバイスの種類が[**GUID\_クラス\_マウス**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-class-mouse)、デバイスの関数ドライバー:
+[**GUID \_ クラス \_ MOUSE**](https://docs.microsoft.com/windows-hardware/drivers/install/guid-class-mouse)型のデバイスの場合、デバイスの関数ドライバーは次のとおりです。
 
 - デバイス固有の入力を処理します。
 
-- [**MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))が必要とする[**マウス\_入力\_データ**](https://docs.microsoft.com/windows/win32/api/ntddmou/ns-ntddmou-mouse_input_data)構造体を作成します。
+- [**MouseClassServiceCallback**](https://docs.microsoft.com/previous-versions/ff542394(v=vs.85))で必要な[**マウス \_ 入力 \_ データ**](https://docs.microsoft.com/windows/win32/api/ntddmou/ns-ntddmou-mouse_input_data)構造を作成します。
 
-- ISR ディスパッチ完了ルーチンで MouseClassServiceCallback を呼び出すことによって、マウス\_入力\_データ構造体を、マウスポインターをに転送します。
+- \_ \_ ISR ディスパッチ完了ルーチンで**MouseClassServiceCallback**を呼び出すことによって、マウス入力データ構造をマウス入力データのデータキューに転送します。
 
-絶対ポインティングデバイスの場合、デバイスの関数ドライバーは、次のように、マウス\_入力\_データ構造体の**Lastx**、 **lastx**、および**Flags**メンバーを設定する必要があります。
+絶対ポインティングデバイスの場合、デバイスの関数ドライバーは、 **Flags**次のように、マウス入力データ構造体の**lastx**、 **lastx**、および Flags のメンバーを設定する必要があり \_ \_ ます。
 
 - デバイスの入力値をデバイスの最大機能で割るだけでなく、ドライバーはデバイスの入力値を0xFFFF でスケーリングします。
 
@@ -273,9 +283,9 @@ I8042prt は、次の内部デバイスコントロール要求をサポート�
     LastY = ((device input y value) * 0xFFFF ) / (Maximum y capability of the device)
     ```
 
-- ドライバーでは、マウス\_\_の絶対フラグを**フラグ**に設定します。
+- ドライバーは、マウス \_ 移動の \_ 絶対フラグを**フラグ**に設定します。
 
-- 入力を Windows マネージャーによって仮想デスクトップ全体にマップする必要がある場合、ドライバーは、マウス\_仮想\_デスクトップフラグを**フラグ**に設定します。 マウス\_VIRTUAL\_DESKTOP フラグが設定されていない場合、ウィンドウマネージャーは入力をプライマリモニターのみにマップします。
+- 入力を Windows マネージャーによって仮想デスクトップ全体にマップする必要がある場合、ドライバーは、マウスの \_ 仮想 \_ デスクトップフラグを**フラグ**に設定します。 マウス \_ 仮想デスクトップの \_ フラグが設定されていない場合、ウィンドウマネージャーは入力をプライマリモニターのみにマップします。
 
 次の例では、デバイスの種類によって、これらの特別な要件が絶対ポインティングデバイスにどのように実装されるかを指定します。
 
@@ -285,16 +295,16 @@ I8042prt は、次の内部デバイスコントロール要求をサポート�
 
 - PS/2 スタイルのデバイス:
 
-    上位レベルのフィルタードライバーが必要です。 フィルタードライバーは、IsrHook コールバックとクラスサービスコールバックを提供します。 I8042prt は、未加工のデバイス入力を処理する IsrHook を呼び出し、フィルタークラスのサービスコールバックを呼び出して入力をフィルター処理します。 フィルタークラスのサービスコールバックは、 **MouseClassServiceCallback**を呼び出します。 IsrHook コールバックとクラスサービスコールバックの組み合わせは、デバイス固有の入力を処理し、必要なマウス\_入力\_データ構造を作成し、デバイス入力データを拡張して、マウス\_移動\_絶対フラグを設定します。
+    上位レベルのフィルタードライバーが必要です。 フィルタードライバーは、IsrHook コールバックとクラスサービスコールバックを提供します。 I8042prt は、未加工のデバイス入力を処理する IsrHook を呼び出し、フィルタークラスのサービスコールバックを呼び出して入力をフィルター処理します。 フィルタークラスのサービスコールバックは、 **MouseClassServiceCallback**を呼び出します。 IsrHook コールバックとクラスサービスコールバックの組み合わせにより、デバイス固有の入力が処理され、必要なマウス入力データ構造が作成され、 \_ \_ デバイス入力データが拡張され、マウス移動絶対フラグが設定され \_ \_ ます。
 
 - Serenum.sys によって列挙されるプラグアンドプレイ COM ポートデバイス:
 
-    プラグアンドプレイ関数ドライバーが必要です。 関数ドライバーは、必要なマウス\_入力\_データ構造を作成し、デバイス入力データをスケーリングし、マウス\_移動\_絶対フラグを設定してから、 **MouseClassServiceCallback**を呼び出します。
+    プラグアンドプレイ関数ドライバーが必要です。 関数ドライバーは、必要なマウス \_ 入力データ構造を作成し、 \_ デバイス入力データをスケーリングし、 \_ \_ **MOUSECLASSSERVICECALLBACK**を呼び出す前にマウス移動絶対フラグを設定します。
 
 - 非プラグアンドプレイ COM ポートデバイス:
 
-    デバイス固有の関数ドライバーが必要です。 関数ドライバーは、必要なマウス\_入力\_データ構造を作成し、デバイス入力データをスケーリングし、マウス\_移動\_絶対フラグを設定してから、 **MouseClassServiceCallback**を呼び出します。
+    デバイス固有の関数ドライバーが必要です。 関数ドライバーは、必要なマウス \_ 入力データ構造を作成し、 \_ デバイス入力データをスケーリングし、 \_ \_ **MOUSECLASSSERVICECALLBACK**を呼び出す前にマウス移動絶対フラグを設定します。
 
 - サポートされていないバス上のデバイス:
 
-    デバイス固有の関数ドライバーが必要です。 関数ドライバーは、必要なマウス\_入力\_データ構造を作成し、デバイス入力データをスケーリングし、マウス\_移動\_絶対フラグを設定してから、 **MouseClassServiceCallback**を呼び出します。
+    デバイス固有の関数ドライバーが必要です。 関数ドライバーは、必要なマウス \_ 入力データ構造を作成し、 \_ デバイス入力データをスケーリングし、 \_ \_ **MOUSECLASSSERVICECALLBACK**を呼び出す前にマウス移動絶対フラグを設定します。

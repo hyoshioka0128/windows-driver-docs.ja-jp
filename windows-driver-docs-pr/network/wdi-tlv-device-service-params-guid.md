@@ -1,21 +1,21 @@
 ---
 title: WDI_TLV_DEVICE_SERVICE_PARAMS_GUID
-description: WDI_TLV_DEVICE_SERVICE_PARAMS_GUID では、この状態を示す値が属している、デバイス サービスを識別する GUID を含む TLV です。
+description: WDI_TLV_DEVICE_SERVICE_PARAMS_GUID は、この状態の表示が属するデバイスサービスを識別する GUID を含む TLV です。
 ms.assetid: BBD64E6F-A2E2-4601-A231-4FCB4574EFC7
 ms.date: 06/15/2018
 keywords:
-- WDI_TLV_DEVICE_SERVICE_PARAMS_GUID ネットワーク ドライバーが Windows Vista 以降
+- Windows Vista 以降のネットワークドライバーの WDI_TLV_DEVICE_SERVICE_PARAMS_GUID
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a07ccc43724f11b6d29c2c7bb29f8bc313f2f0f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c74ec4cb17a859c78c5b8742ccd696a92244a7c1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63365370"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968203"
 ---
-# <a name="wditlvdeviceserviceparamsguid"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_GUID
+# <a name="wdi_tlv_device_service_params_guid"></a>WDI_TLV_DEVICE_SERVICE_PARAMS_GUID
 
-WDI_TLV_DEVICE_SERVICE_PARAMS_GUID では、この状態を示す値が属している、デバイス サービスを識別する GUID を含む TLV です。 この TLV がで使用される、 [NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT](ndis-status-wdi-indication-device-service-event.md)状態を示す値。
+WDI_TLV_DEVICE_SERVICE_PARAMS_GUID は、この状態の表示が属するデバイスサービスを識別する GUID を含む TLV です。 この TLV は、 [NDIS_STATUS_WDI_INDICATION_DEVICE_SERVICE_EVENT](ndis-status-wdi-indication-device-service-event.md)状態表示で使用されます。
 
 ## <a name="tlv-type"></a>TLV 型
 
@@ -23,18 +23,19 @@ WDI_TLV_DEVICE_SERVICE_PARAMS_GUID では、この状態を示す値が属して
 
 ## <a name="length"></a>長さ
 
-GUID のバイト単位のサイズ。
+GUID のサイズ (バイト単位)。
 
 ## <a name="values"></a>値
 
-| 型 | 説明 |
+| Type | [説明] |
 | --- | --- |
-| GUID | この状態の表示が所属する (IHV と OEM によって定義される) と、デバイス サービスを識別する GUID。 |
+| GUID | この状態の表示が属するデバイスサービスを識別する GUID (IHV/OEM による定義による)。 |
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| --- | --- |
-| サポートされている最小のクライアント | Windows 10 Version 1809 |
-| サポートされている最小のサーバー | Windows Server 2016 |
-| Header | Wditypes.hpp |
+**サポートされている最小クライアント**: Windows 10、バージョン1809
+
+**サポートされている最小サーバー**: Windows server 2016
+
+**ヘッダー**: Wditypes
+

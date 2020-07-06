@@ -4,24 +4,26 @@ description: Windows Display Driver Model (WDDM) 1.2 以降のユーザーモー
 ms.assetid: 8BB6A7A3-E102-4069-BFC2-9605DDE9F020
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cdfda6e350753a70edb0d9e0a1af8a56aef1082
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 58691a688afc069ab6154c9cad99f3c4985b1721
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72825294"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968221"
 ---
 # <a name="video-memory-offer-and-reclaim"></a>ビデオ メモリの提供と再利用
 
 
 Windows Display Driver Model (WDDM) 1.2 以降のユーザーモード表示ドライバーでは、Windows 8 以降で使用可能なメモリプランと回収機能を使用して、ローカルメモリとシステムメモリ内の一時サーフェイスに必要なメモリオーバーヘッドを削減する必要があります。
 
-|                                                                                   |                                  |
-|-----------------------------------------------------------------------------------|----------------------------------|
-| 最小 WDDM バージョン                                                              | 1.2                              |
-| Windows の最小バージョン                                                           | 8                                |
-| ドライバーの実装—完全なグラフィックスとレンダーのみ                               | Mandatory                        |
-| [必要条件](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)とテスト | **デバイス...OfferReclaim** |
+**最小 WDDM バージョン**: 1.2
+
+**Windows の最小バージョン**: 8
+
+**ドライバーの実装—完全なグラフィックスとレンダーのみ**: 必須
+
+** [WHCK](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit)必要条件とテスト**:**デバイス...OfferReclaim**
+
 
  
 
@@ -51,18 +53,18 @@ Microsoft Direct3D 10 ハードウェアがサポートされている場合、�
 
 これらの関連する構造体と列挙型を使用します。
 
--   [**D3DDDI\_オファー\_優先順位**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_offer_priority)
--   [**D3DDDIARG\_OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_offerresources)
--   [**D3DDDIARG\_RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_reclaimresources)
--   [**D3DDDICB\_OFFERALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_offerallocations)
--   [**D3DDDICB\_RECLAIMALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_reclaimallocations)
--   [**DXGI\_DDI\_ARG\_OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_offerresources)
--   [**DXGI\_DDI\_ARG\_RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_reclaimresources)
--   [**DXGI1\_2\_DDI\_BASE\_FUNCTIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
+-   [**D3DDDI \_ プランの \_ 優先度**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_offer_priority)
+-   [**D3DDDIARG \_ OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_offerresources)
+-   [**D3DDDIARG \_ RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddiarg_reclaimresources)
+-   [**D3DDDICB \_ OFFERALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_offerallocations)
+-   [**D3DDDICB \_ RECLAIMALLOCATIONS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddicb_reclaimallocations)
+-   [**DXGI \_ DDI \_ ARG \_ OFFERRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_offerresources)
+-   [**DXGI \_ DDI \_ ARG \_ RECLAIMRESOURCES**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-_dxgi_ddi_arg_reclaimresources)
+-   [**DXGI1 \_ 2 \_ DDI \_ 基本 \_ 関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/dxgiddi/ns-dxgiddi-dxgi1_2_ddi_base_functions)
 
 オファー/回収機能をサポートするために、Windows 8 以降では、この構造には次の2つの新しいメンバーがあります。
 
--   [**D3DDDI\_の割り当て一覧**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationlist)
+-   [**D3DDDI の割り当て \_ リスト**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ns-d3dukmdt-_d3dddi_allocationlist)
 
 割り当てが破棄された後、そのデータのすべてのデータが失われるため、ドライバーがこの機能を正しく処理していることを慎重にテストする必要があります。
 

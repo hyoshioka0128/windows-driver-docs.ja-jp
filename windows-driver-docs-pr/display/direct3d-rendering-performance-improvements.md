@@ -1,20 +1,20 @@
 ---
 title: Direct3D レンダリングのパフォーマンスの向上
-description: Windows Display Driver Model (WDDM) 1.3 以降のドライバーでは、Microsoft Direct3D レンダリングのパフォーマンスを向上させることができます。これにより、Direct3D 9 ハードウェアでハードウェアコマンドバッファーとカウンターをより適切に使用し、システムメモリの効率的なコピーを行うことができます。サブリソース. これらの機能は、Direct3D バージョン10ハードウェアで使用できる一部の機能を反映していますが、Windows 8.1 以降の新機能です。
+description: Windows Display Driver Model (WDDM) 1.3 以降のドライバーでは、Microsoft Direct3D レンダリングのパフォーマンスを向上させることができます。これにより、Direct3D 9 ハードウェアはハードウェアコマンドバッファーとカウンターをより適切に使用し、サブリソースに対して効率的にシステムメモリをコピーできるようになります。 これらの機能は、Direct3D バージョン10ハードウェアで使用できる一部の機能を反映していますが、Windows 8.1 以降の新機能です。
 ms.assetid: F9AAE489-EC45-4EE6-875E-E084BB3054EE
 ms.date: 10/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cd1da2b3eb70364fb03c236fa805129267aecc48
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9b7253019244c327c3ee85a3de88c5c27c7956ad
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72839008"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968349"
 ---
 # <a name="direct3d-rendering-performance-improvements"></a>Direct3D レンダリングのパフォーマンスの向上
 
 
-Windows Display Driver Model (WDDM) 1.3 以降のドライバーでは、Microsoft Direct3D レンダリングのパフォーマンスを向上させることができます。これにより、Direct3D 9 ハードウェアでハードウェアコマンドバッファーとカウンターをより適切に使用し、システムメモリの効率的なコピーを行うことができます。サブリソース. これらの機能は、Direct3D バージョン10ハードウェアで使用できる一部の機能を反映していますが、Windows 8.1 以降の新機能です。
+Windows Display Driver Model (WDDM) 1.3 以降のドライバーでは、Microsoft Direct3D レンダリングのパフォーマンスを向上させることができます。これにより、Direct3D 9 ハードウェアはハードウェアコマンドバッファーとカウンターをより適切に使用し、サブリソースに対して効率的にシステムメモリをコピーできるようになります。 これらの機能は、Direct3D バージョン10ハードウェアで使用できる一部の機能を反映していますが、Windows 8.1 以降の新機能です。
 
 新しい Direct3D 11.1 リソースのトリミングとマップの既定のパフォーマンスの向上も利用できます。 マップの既定のシナリオについては、以下の「動作の変更」セクションで説明します。
 
@@ -28,25 +28,25 @@ Windows Display Driver Model (WDDM) 1.3 以降のドライバーでは、Microso
 このセクションには、Microsoft Direct3D のレンダリングパフォーマンスの向上をサポートするために、Windows Display Driver Model (WDDM) 1.3 以降のユーザーモード表示ドライバーが実装する関数が含まれています。
 
 
-|||
-|:--|:--|
-|[PFND3DDDI_FLUSH1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_flush1)| [PFND3DDDI_CHECKCOUNTERINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounterinfo)|
-|[PFND3DDDI_CHECKCOUNTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounter) |[PFND3DDDI_UPDATESUBRESOURCEUP](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updatesubresourceup)|
+**[PFND3DDDI_FLUSH1](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_flush1)**: [PFND3DDDI_CHECKCOUNTERINFO](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounterinfo)
+
+**[PFND3DDDI_CHECKCOUNTER](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_checkcounter)**: [PFND3DDDI_UPDATESUBRESOURCEUP](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_updatesubresourceup)
+
 
 ### <a name="direct3d-rendering-performance-structures-and-enumerations"></a>Direct3D レンダリングのパフォーマンス構造と列挙体
 
-これらのユーザーモード構造体と列挙型では、レンダリングのパフォーマンスが向上し、Windows 8.1 が新しく追加または更新されています。 [**D3D11\_1\_DDI\_フラッシュ\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)を除く、すべての Direct3D レベル9ドライバーに適用されます。
+これらのユーザーモード構造体と列挙型では、レンダリングのパフォーマンスが向上し、Windows 8.1 が新しく追加または更新されています。 すべては、 [**D3D11 \_ 1 \_ DDI \_ フラッシュ \_ フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)を除く、Direct3D Level 9 ドライバーに適用されます。
 
--   [**D3DDDI\_FLUSH\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddi_flush_flags)(新規)
--   [**D3DDDIARG\_COPYFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_copyflags) (new)
--   [**D3DDDIARG\_カウンターの\_情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_counter_info)(新規)
--   [**D3DDDIARG\_UPDATESUBRESOURCEUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_updatesubresourceup) (新規)
--   [**D3DDDICAPS\_単純\_インスタンス化\_サポート**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddicaps_simple_instancing_support)(新機能)
--   [*CreateResource2*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2) ( **CaptureBuffer**フラグ値が設定されている場合、1.3 以降の Direct3D レベル9ドライバーは、 **E\_invalidarg**エラーコードを返す必要があります)
--   [**D3D11\_1\_DDI\_フラッシュ\_フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)(**D3DWDDM1\_3DDI\_TRIM\_メモリ**定数が追加されました)
--   [**D3DDDI\_DEVICEFUNCS 関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)(**pfnFlush1**、 **pfncheckcounterinfo**、 **pfncheckcounter**、 **pfnUpdateSubresourceUP** members added)
--   [**D3DDDI\_POOL**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_pool) (**D3DDDIPOOL\_STAGINGMEM**定数が追加されました)
--   [**D3DDDICAPS\_TYPE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type) ( **\_D3DDDICAPS は\_単純\_インスタンス化\_サポート**定数を追加)
+-   [**D3DDDI \_フラッシュ \_ フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-d3dddi_flush_flags)(新規)
+-   [**D3DDDIARG \_COPYFLAGS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_copyflags) (新規)
+-   [**D3DDDIARG \_カウンター \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_counter_info)(新規)
+-   [**D3DDDIARG \_UPDATESUBRESOURCEUP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddiarg_updatesubresourceup) (新規)
+-   [**D3DDDICAPS \_単純 \_ な \_ インスタンス**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-d3dddicaps_simple_instancing_support)化のサポート (新規)
+-   [*CreateResource2*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_createresource2) ( **CaptureBuffer**フラグ値が設定されている場合、1.3 以降の Direct3D Level 9 ドライバーは、 **E \_ invalidarg**エラーコードを返す必要があります)
+-   [**D3D11 \_ 1 \_ DDI \_ フラッシュ \_ フラグ**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ne-d3d10umddi-d3d11_1_ddi_flush_flags)(**D3DWDDM1 \_ 3ddi \_ TRIM \_ メモリ**定数が追加されました)
+-   [**D3DDDI \_DEVICEFUNCS 関数**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ns-d3dumddi-_d3dddi_devicefuncs)(**pfnFlush1**、 **pfncheckcounterinfo**、 **pfncheckcounter**、 **pfnUpdateSubresourceUP** members の追加)
+-   [**D3DDDI \_プール**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dukmdt/ne-d3dukmdt-_d3dddi_pool)(**D3DDDIPOOL \_ STAGINGMEM**定数の追加)
+-   [**D3DDDICAPS \_型**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/ne-d3dumddi-_d3dddicaps_type)(**D3DDDICAPS \_ GET \_ SIMPLE \_ の \_ インスタンス**化のサポート定数が追加されました)
 -   [*Getcaps*](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3dumddi/nc-d3dumddi-pfnd3dddi_getcaps) (解説の新しい情報)
 
 ## <a name="span-idddi_implementation_requirements_starting_with_wddm_13spanspan-idddi_implementation_requirements_starting_with_wddm_13spanddi-implementation-requirements-starting-with-wddm-13"></a><span id="ddi_implementation_requirements_starting_with_wddm_1.3"></span><span id="DDI_IMPLEMENTATION_REQUIREMENTS_STARTING_WITH_WDDM_1.3"></span>WDDM 1.3 以降の DDI 実装要件
@@ -62,7 +62,7 @@ WDDM 1.3 以降では、ユーザーモードドライバーを実装するた�
 <thead>
 <tr class="header">
 <th align="left">関数グループ</th>
-<th align="left">説明</th>
+<th align="left">[説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -127,7 +127,7 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 
 [***Createresource (D3D11)***](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource) **関数**-
 
-これらの入力[**D3D11DDIARG\_CREATERESOURCE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)構造体のメンバーは制限されています。
+これらの入力[**D3D11DDIARG \_ createresource**](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/ns-d3d10umddi-d3d11ddiarg_createresource)構造体のメンバーは、次のように制限されています。
 
 <table>
 <colgroup>
@@ -143,7 +143,7 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="ResourceDimension_and_Usage"></span><span id="resourcedimension_and_usage"></span><span id="RESOURCEDIMENSION_AND_USAGE"></span><strong>Resourcedimension</strong>と<strong>Usage</strong></p></td>
-<td align="left"><p>これらの動作変更が適用されるのは、Direct3D ランタイムが<strong>Resourcedimension</strong>の型<strong>D3D10DDIRESOURCE_BUFFER</strong>を指定し、<strong>使用</strong>する<strong>D3D10_DDI_USAGE_DEFAULT</strong>型を指定した場合のみです。</p></td>
+<td align="left"><p>これらの動作変更が適用さ<strong>れるのは</strong>、Direct3D ランタイムが<strong>resourcedimension</strong>と type <strong>D3D10_DDI_USAGE_DEFAULT</strong>の型<strong>D3D10DDIRESOURCE_BUFFER</strong>を指定した場合のみです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="BindFlags"></span><span id="bindflags"></span><span id="BINDFLAGS"></span><strong>BindFlags</strong></p></td>
@@ -151,7 +151,7 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="MapFlags"></span><span id="mapflags"></span><span id="MAPFLAGS"></span><strong>MapFlags</strong></p></td>
-<td align="left"><p>ここに記載されている他のすべてのメンバー要件が満たされている場合、ランタイムは<strong>D3D10_DDI_MAP_READ</strong>、 <strong>D3D10_DDI_MAP_WRITE</strong>、および<strong>D3D10_DDI_MAP_READWRITE</strong>の各値を設定できます。 ドライバーは、これらの値をサポートしている必要があります。 <strong>D3D10_DDI_MAP_WRITE_DISCARD</strong>と<strong>D3D10_DDI_MAP_WRITE_NOOVERWRITE</strong>の値が無効です。</p></td>
+<td align="left"><p>ここに記載されている他のすべてのメンバー要件が満たされている場合、ランタイムは<strong>D3D10_DDI_MAP_READ</strong>、 <strong>D3D10_DDI_MAP_WRITE</strong>、および<strong>D3D10_DDI_MAP_READWRITE</strong>の値を設定できます。 ドライバーは、これらの値をサポートしている必要があります。 <strong>D3D10_DDI_MAP_WRITE_DISCARD</strong>と<strong>D3D10_DDI_MAP_WRITE_NOOVERWRITE</strong>の値が無効です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="MiscFlags"></span><span id="miscflags"></span><span id="MISCFLAGS"></span><strong>MiscFlags</strong></p></td>
@@ -194,13 +194,13 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">説明</th>
+<th align="left">[説明]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="hResource"></span><span id="hresource"></span><span id="HRESOURCE"></span><em>hResource</em></p></td>
-<td align="left"><p><strong>D3D10DDIRESOURCE_BUFFER</strong>リソースは、 <a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>CREATERESOURCE (D3D11)</em></a>の作成呼び出しで<em>mapflags</em>の0以外の値が設定されている場合にのみ設定されます。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>CREATERESOURCE</em></a>の作成呼び出しで<em>mapflags</em>に0以外の値が設定されている場合、Direct3D ランタイムは<strong>D3D10DDIRESOURCE_BUFFER</strong>リソースのみを設定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span></span><em></em></p></td>
@@ -212,7 +212,7 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="DDIMap"></span><span id="ddimap"></span><span id="DDIMAP"></span><em>DDIMap</em></p></td>
-<td align="left"><p>ここに記載されている他のすべてのメンバー要件が満たされている場合、ランタイムは、作成呼び出しで設定された<em>Mapflags</em>値と一致する<strong>D3D10_DDI_MAP_READ</strong>、 <strong>D3D10_DDI_MAP_WRITE</strong>、または<strong>D3D10_DDI_MAP_READWRITE</strong>の値をに<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>設定できます。CreateResource (D3D11)</em></a>。</p></td>
+<td align="left"><p>ここに記載されている他のすべてのメンバーの要件が満たされている場合、ランタイムは<strong>D3D10_DDI_MAP_READ</strong>、 <strong>D3D10_DDI_MAP_WRITE</strong>、または<strong>D3D10_DDI_MAP_READWRITE</strong>の値を設定できます。これは、作成呼び出しで設定された<em>MAPFLAGS</em>値と<a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>createresource (D3D11)</em></a>に一致します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Flags"></span><span id="flags"></span><span id="FLAGS"></span><em>示す</em></p></td>
@@ -239,7 +239,7 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 <thead>
 <tr class="header">
 <th align="left">パラメーター</th>
-<th align="left">説明</th>
+<th align="left">[説明]</th>
 </tr>
 </thead>
 <tbody>
@@ -249,7 +249,7 @@ WDDM 1.3 以降のドライバーによって実装されるこれらの関数�
 </tr>
 <tr class="even">
 <td align="left"><p><span id="hResource"></span><span id="hresource"></span><span id="HRESOURCE"></span><em>hResource</em></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>Createresource</em></a>の作成呼び出しで<em>mapflags</em>に0以外の値が設定されている場合、ランタイムは<strong>D3D10DDIRESOURCE_BUFFER</strong>リソースのみを設定します。</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource" data-raw-source="[&lt;em&gt;CreateResource(D3D11)&lt;/em&gt;](https://docs.microsoft.com/windows-hardware/drivers/ddi/d3d10umddi/nc-d3d10umddi-pfnd3d11ddi_createresource)"><em>Createresource (D3D11)</em></a>の作成呼び出しで<em>mapflags</em>の0以外の値が設定されている場合、ランタイムは<strong>D3D10DDIRESOURCE_BUFFER</strong>リソースのみを設定します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><span id="Subresource"></span><span id="subresource"></span><span id="SUBRESOURCE"></span><em>Subresource</em></p></td>

@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 11/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c49a6cc4c3551f039961aa39a1dfba3257a63600
-ms.sourcegitcommit: 23ca676ade460f8ce7866015559c24728c7c308b
+ms.openlocfilehash: 2495e968d3ffc20bb942aedb9e0f07345da79aa1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73799190"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968211"
 ---
 # <a name="flt_parameters-for-irp_mj_create-union"></a>IRP_MJ_CREATE 共用体の FLT_PARAMETERS
 
@@ -45,7 +45,7 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
 FLT_PARAMETERS の**Create**構造には、次のメンバーが含まれます。
 
@@ -53,9 +53,9 @@ FLT_PARAMETERS の**Create**構造には、次のメンバーが含まれます�
 
 IRP_MJ_CREATE 要求のセキュリティコンテキストを表す[IO_SECURITY_CONTEXT](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_io_security_context)構造体へのポインター。この場合、次のようになります。
 
-- **> SecurityContext AccessState**は、オブジェクトのサブジェクトコンテキスト、アクセスの種類、およびその他の必要なアクセスの種類を含む[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)構造体へのポインターです。
+- **>SecurityContext AccessState**は、オブジェクトのサブジェクトコンテキスト、アクセスの種類、およびその他の必要なアクセスの種類を含む[ACCESS_STATE](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_access_state)構造体へのポインターです。
 
-- **> SecurityContext DesiredAccess**は、ファイルに要求されたアクセス権を指定する[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)構造です。 詳細については、 [**Fltcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)の*DesiredAccess*パラメーターを参照してください。
+- **>SecurityContext DesiredAccess**は、ファイルに要求されたアクセス権を指定する[ACCESS_MASK](https://docs.microsoft.com/windows-hardware/drivers/kernel/access-mask)構造です。 詳細については、 [**Fltcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)の*DesiredAccess*パラメーターを参照してください。
 
 **[オプション]**  
 ファイルを作成または開くときに適用するオプション、およびファイルが既に存在する場合に実行するアクションを指定するフラグのビットマスク。 このメンバーの下位24ビットは、 [**Fltcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)の*createoptions*パラメーターに対応しています。 上位8ビットは**Fltcreatefile**の*CreateDisposition*パラメーターに対応します。
@@ -63,7 +63,7 @@ IRP_MJ_CREATE 要求のセキュリティコンテキストを表す[IO_SECURITY
 **FileAttributes**  
 ファイルを作成または開くときに適用される属性のビットマスク。 詳細については、 [**Fltcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)の*fileattributes*パラメーターを参照してください。
 
-**アクセスの許可**  
+**ShareAccess**  
 ファイルに要求された共有アクセス権のビットマスク。 このパラメーターがゼロの場合は、排他アクセスが要求されます。 詳細については、 [**Fltcreatefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/nf-fltkernel-fltcreatefile)の "/"*アクセス*パラメーターを参照してください。
 
 **EaLength**  
@@ -83,9 +83,7 @@ IRP_MJ_CREATE は、IRP ベースの操作です。
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| Header | *fltkernel .h* (fltkernel. h を含む)
+|Header |*fltkernel .h* (fltkernel. h を含む)
 
 ## <a name="see-also"></a>関連項目
 

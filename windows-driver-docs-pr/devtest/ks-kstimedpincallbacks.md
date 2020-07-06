@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: e297bc689fa9f0b57e8d78bb9af730f111e56d39
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: f4ae4305a876ae23a6d09bcd6ab9364d9f6b6dd7
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917107"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968527"
 ---
 # <a name="kstimedpincallbacks-rule-"></a>KsTimedPinCallbacks rule ()
 
@@ -26,9 +26,8 @@ KsTimedPinCallbacks ルールは、カーネルストリーミング (KS) ミニ
 
 **ドライバーモデル: KS**
 
-|                                   |                                                                                                                                       |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| この規則で見つかったバグ チェック | [**バグチェック 0xC4: ドライバー \_検証の \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00082004) |
+**このルールでバグチェックが見つかりまし**た:[**バグチェック 0XC4: ドライバー \_ 検証ツール \_ 検出 \_ 違反**](https://docs.microsoft.com/windows-hardware/drivers/debugger/bug-check-0xc4--driver-verifier-detected-violation)(0x00082004)
+
 
 <a name="how-to-test"></a>テスト方法
 -----------
@@ -45,7 +44,7 @@ KsTimedPinCallbacks ルールは、カーネルストリーミング (KS) ミニ
 <tbody>
 <tr class="odd">
 <td align="left"><p>この規則を確認するには、コマンドプロンプトウィンドウを開きます。 ドライバー検証ツールコマンドを入力し、「 <strong>/domain ks</strong>」と指定します。</p>
-<p>たとえば、次のように入力します。</p>
+<p>次に例を示します。</p>
 <p><strong>verifier/domain ks</strong> [<em>オプション</em>] <strong>/driver</strong> <em> &lt; ドライバー &gt; </em>の設定</p>
 <p>詳細については、「 <a href="https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier" data-raw-source="[Driver Verifier](https://docs.microsoft.com/windows-hardware/drivers/devtest/driver-verifier)">Driver Verifier</a>」を参照してください。</p></td>
 </tr>

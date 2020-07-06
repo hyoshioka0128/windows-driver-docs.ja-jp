@@ -1,9 +1,9 @@
 ---
-title: センサー\_カテゴリ\_環境
-description: センサー\_カテゴリ\_環境のカテゴリには、周囲の環境または天気に関する情報を提供するセンサーが含まれています。
+title: センサー \_ カテゴリの \_ 環境
+description: センサーカテゴリの環境カテゴリには、 \_ \_ 周囲の環境または気象に関する情報を提供するセンサーが含まれています。
 ms.assetid: 49839092-0792-4e89-bc3a-7defc4730937
 keywords:
-- SENSOR_CATEGORY_ENVIRONMENTAL センサー デバイス
+- SENSOR_CATEGORY_ENVIRONMENTAL センサーデバイス
 topic_type:
 - apiref
 api_name:
@@ -14,60 +14,62 @@ api_type:
 - HeaderDef
 ms.date: 01/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d130f2a0e6a8667a0da6737742b5afc9700ee13d
-ms.sourcegitcommit: a33b7978e22d5bb9f65ca7056f955319049a2e4c
+ms.openlocfilehash: 868ede4c243b955b52a77737c66fa16d533168d1
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "56527957"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968235"
 ---
-# <a name="sensorcategoryenvironmental"></a>センサー\_カテゴリ\_環境
+# <a name="sensor_category_environmental"></a>センサー \_ カテゴリの \_ 環境
 
 
-センサー\_カテゴリ\_環境のカテゴリには、周囲の環境または天気に関する情報を提供するセンサーが含まれています。
+センサーカテゴリの環境カテゴリには、 \_ \_ 周囲の環境または気象に関する情報を提供するセンサーが含まれています。
 
-### <a name="platform-defined-sensor-types"></a>プラットフォーム定義されているセンサーの種類
+### <a name="platform-defined-sensor-types"></a>プラットフォームで定義されたセンサーの種類
 
-このカテゴリには、次のプラットフォームで定義されているセンサーの種類が含まれています。
+このカテゴリには、次のプラットフォームで定義されたセンサーの種類が含まれます。
 
-|センサーの種類|意味|
+|センサーの種類|説明|
 |--|--|
-|SENSOR_TYPE_ENVIRONMENTAL_ATMOSPHERIC_PRESSURE|Barometers します。|
-|SENSOR_TYPE_ENVIRONMENTAL_HUMIDITY|Hygrometers します。|
-|SENSOR_TYPE_ENVIRONMENTAL_TEMPERATURE|温度計です。|
-|SENSOR_TYPE_ENVIRONMENTAL_WIND_DIRECTION|風見します。|
-|SENSOR_TYPE_ENVIRONMENTAL_WIND_SPEED|Anemometers します。|
+|SENSOR_TYPE_ENVIRONMENTAL_ATMOSPHERIC_PRESSURE|Barometers.|
+|SENSOR_TYPE_ENVIRONMENTAL_HUMIDITY|Hygrometers.|
+|SENSOR_TYPE_ENVIRONMENTAL_TEMPERATURE|温度計.|
+|SENSOR_TYPE_ENVIRONMENTAL_WIND_DIRECTION|Weather vanes。|
+|SENSOR_TYPE_ENVIRONMENTAL_WIND_SPEED|Anemometers。|
 
  
 
-### <a name="platform-defined-data-fields"></a>プラットフォーム定義されているデータ フィールド
+### <a name="platform-defined-data-fields"></a>プラットフォーム定義のデータフィールド
 
-このカテゴリには、次のプラットフォームで定義されているデータ フィールドが含まれています。
+このカテゴリには、次のプラットフォーム定義のデータフィールドが含まれます。
 
-|データの種類|種類|意味|
+|データの種類|Type|説明|
 |--|--|--|
-|SENSOR_DATA_TYPE_ATMOSPHERIC_PRESSURE_BAR|VT_R4|大気圧の単位は気圧 (棒)。|
-|SENSOR_DATA_TYPE_TEMPERATURE_CELSIUS|VT_R4|温度を摂氏でします。|
-|SENSOR_DATA_TYPE_RELATIVE_HUMIDITY_PERCENT|VT_R4|パーセンテージとして相対湿度。|
-|SENSOR_DATA_TYPE_WIND_DIRECTION_DEGREES_ANTICLOCKWISE|VT_R4|方位は磁北、相対方向を風力 (度単位)。 North は、大きくと、左回りに回転値 0.0 (x 軸の上) として表されます。 Z 軸ポイント増加します。|
-|SENSOR_DATA_TYPE_WIND_SPEED_METERS_PER_SECOND|VT_R4|1 秒あたりのメートル単位で風速。|
+|SENSOR_DATA_TYPE_ATMOSPHERIC_PRESSURE_BAR|VT_R4|Atmospheres (バー) の大気圧。|
+|SENSOR_DATA_TYPE_TEMPERATURE_CELSIUS|VT_R4|気温 (摂氏)。|
+|SENSOR_DATA_TYPE_RELATIVE_HUMIDITY_PERCENT|VT_R4|相対湿度 (パーセント)。|
+|SENSOR_DATA_TYPE_WIND_DIRECTION_DEGREES_ANTICLOCKWISE|VT_R4|磁方位を基準とする風向 (度)。 北部は 0.0 (x 軸の上部) として表され、値は反時計回りの回転で増加します。 Z 軸は上向きの位置を示します。|
+|SENSOR_DATA_TYPE_WIND_SPEED_METERS_PER_SECOND|VT_R4|1秒あたりのメートル単位の風速。|
 
  
 
 >[!IMPORTANT]
-> 各プラットフォームで定義されている環境のデータ型**PROPERTYKEY**共通に基づいて**GUID**センサーという\_データ\_型\_環境\_GUID。 予約済みの基本値は、使用しないでくださいこの**GUID**プロパティ キーを定義します。
+> 各プラットフォーム定義の環境データ型**Propertykey**は、センサーデータ型の環境 GUID という名前の共通の**guid**に基づいてい \_ \_ \_ \_ ます。 予約済みの基本値であるため、この**GUID**を使用して独自のプロパティキーを定義しないでください。
 
  
 
 ## <a name="requirements"></a>要件
 
 
-| | |
-|--|--|
-|サポートされている最小のクライアント|Windows 7|
-|サポートされている最小のサーバー|サポートなし|
-|バージョン|Windows 7 で使用できます。|
-|Header|Sensors.h|
+**サポートされている最低限のクライアント**: Windows 7
+
+**サポートされている最小サーバー**: サポートされていません
+
+**バージョン**: Windows 7 で使用できます。
+
+**ヘッダー**: センサー. h
+
 
 
  

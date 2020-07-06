@@ -3,37 +3,46 @@ Description: ドライバーの機能
 title: ドライバーの機能
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5616504930a48c3c1f0dfc72deb75ee432e8d460
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cd4e0ef946c35f2b8a6cb29f7c44033db4cbf2f2
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63378232"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968585"
 ---
 # <a name="driver-capabilities"></a>ドライバーの機能
 
 
-*WpdCapabilities.cpp*と*WpdCapabilities.h*ファイルには、サポートされているコマンド、コマンド オプション、関数のカテゴリを取得するコマンド ハンドラーが含まれています。
+*Wpdcapabilities .cpp*および*wpdcapabilities .h*ファイルには、サポートされているコマンド、コマンドオプション、関数カテゴリなどを取得するコマンドハンドラーが含まれています。
 
-Windows ベースのアプリケーションを呼び出すメソッドのいずれかと、 **IPortableDeviceCapabilities**インターフェイスでは、この呼び出しをさらに、トリガーで 8 つのコマンド ハンドラーの 1 つ、 **WpdCapabilities**クラス。 次の表のマッピングを識別する**IPortableDeviceCapabilities**メソッド**WpdCapabilities**コマンド ハンドラー。
+Windows ベースのアプリケーションが**IPortableDeviceCapabilities**インターフェイスのメソッドのいずれかを呼び出すと、この呼び出しは**wpdcapabilities**クラスの8つのコマンドハンドラーの1つをトリガーします。 次の表は、 **IPortableDeviceCapabilities**メソッドから**wpdcapabilities**コマンドハンドラーへのマッピングを示しています。
 
-|                                                               |                                    |
-|---------------------------------------------------------------|------------------------------------|
-| **IPortableDeviceCapabilities メソッド**                        | **WpdCapabilities イベント ハンドラー**  |
-| **IPortableDeviceCapabilities::GetCommandOptions**            | **OnGetCommandOptions**            |
-| **IPortableDeviceCapabilities::GetFixedPropertyAttributes**   | **OnGetFixedPropertyAttributes**   |
-| **IPortableDeviceCapabilities::GetFunctionalCategories**      | **OnGetFunctionalCategories**      |
-| **IPortableDeviceCapabilities::GetFunctionalObjects**         | **OnGetFunctionalObjects**         |
-| **IPortableDeviceCapabilities::GetSupportedCommands**         | **OnGetSupportedCommands**         |
-| **IPortableDeviceCapabilities::GetSupportedContentTypes**     | **OnGetSupportedContentTypes**     |
-| **IPortableDeviceCapabilities::GetSupportedFormatProperties** | **OnGetSupportedFormatProperties** |
-| **IPortableDeviceCapabilities::GetSupportedFormats**          | **OnGetSupportedFormats**          |
-| **IPortableDeviceCapabilities::GetSupportedEvents**           | **OnGetSupportedEvents**           |
-| **IPortableDeviceCapabilities::GetEventOptions**              | **OnGetEventOptions**              |
+IPortableDeviceCapabilities メソッド * * * *: **Wpdcapabilities イベントハンドラー**
+
+IPortableDeviceCapabilities:: GetCommandOptions * * * *: **OnGetCommandOptions**
+
+IPortableDeviceCapabilities:: GetFixedPropertyAttributes * * * *: **OnGetFixedPropertyAttributes**
+
+IPortableDeviceCapabilities:: GetFunctionalCategories * * * *: **OnGetFunctionalCategories**
+
+IPortableDeviceCapabilities:: GetFunctionalObjects * * * *: **OnGetFunctionalObjects**
+
+IPortableDeviceCapabilities:: GetSupportedCommands * * * *: **OnGetSupportedCommands**
+
+IPortableDeviceCapabilities:: GetSupportedContentTypes * * * *: **OnGetSupportedContentTypes**
+
+IPortableDeviceCapabilities:: GetSupportedFormatProperties * * * *: **OnGetSupportedFormatProperties**
+
+IPortableDeviceCapabilities:: GetSupportedFormats * * * *: **OnGetSupportedFormats**
+
+IPortableDeviceCapabilities:: GetSupportedEvents * * * *: **OnGetSupportedEvents**
+
+IPortableDeviceCapabilities:: GetEventOptions * * * *: **OnGetEventOptions**
+
 
  
 
-によって WpdCapabilities コマンド ハンドラーが呼び出される、 **WpdCapabilities::DispatchMessage**メソッド。 次のサンプル ドライバーからの抜粋のコードを含む**WpdCapabilities::DispatchMessage**します。
+WpdCapabilities コマンドハンドラーは、 **wpdcapabilities::D ispatchmessage**メソッドによって呼び出されます。 サンプルドライバーの次の抜粋には、 **Wpdcapabilities**のコード (:D ispatchmessage) が含まれています。
 
 ```ManagedCPlusPlus
 HRESULT WpdCapabilities::DispatchWpdMessage(const PROPERTYKEY&      Command,

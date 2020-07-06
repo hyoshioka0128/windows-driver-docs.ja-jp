@@ -16,12 +16,12 @@ api_type:
 - HeaderDef
 ms.date: 02/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 753ba62acf5e4639c7e47a25ba79d72018b60726
-ms.sourcegitcommit: f64e64c9b2f15df154a5702e15e6a65243fc7f64
+ms.openlocfilehash: 2722dc3a0a4806553a43817e692fbd1d696f5766
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072229"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85968471"
 ---
 # <a name="flt_parameters-for-irp_mj_read-union"></a>IRP_MJ_READ 共用体の FLT_PARAMETERS
 
@@ -43,15 +43,15 @@ typedef union _FLT_PARAMETERS {
 } FLT_PARAMETERS, *PFLT_PARAMETERS;
 ```
 
-## <a name="members"></a>Members
+## <a name="members"></a>メンバー
 
-**込ん**  
+**読み取り**  
 次のメンバーを含む構造体。
 
-**長さ**  
+**[データ型]**  
 読み取るデータの長さ (バイト単位)。
 
-**キー**  
+**Key**  
 ターゲットファイルのバイト範囲ロックに関連付けられたキー値。
 
 **ByteOffset**  
@@ -63,7 +63,7 @@ typedef union _FLT_PARAMETERS {
 **MdlAddress**  
 **Readbuffer**メンバーが指すバッファーを記述するメモリ記述子リスト (MDL) のアドレス。 このメンバーは省略可能であり、 **Readbuffer**にバッファーが指定されている場合は**NULL**にすることができます。 「**解説**」を参照してください。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 IRP_MJ_READ 操作の[**FLT_PARAMETERS**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_parameters)構造体には、コールバックデータ ([**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)) 構造体によって表される読み取り操作のパラメーターが含まれています。 これは FLT_IO_PARAMETER_BLOCK 構造体に含まれています。
 
@@ -75,11 +75,10 @@ IRP_MJ_READ は、IRP ベースの操作でも、高速な i/o 操作でもか�
 
 ## <a name="requirements"></a>要件
 
-|   |   |
-| - | - |
-| ヘッダー | Fltkernel .h (Fltkernel. h を含む) |
+**ヘッダー**: fltkernel .H (fltkernel .h を含む)
 
-## <a name="see-also"></a>参照
+
+## <a name="see-also"></a>関連項目
 
 [**FLT_CALLBACK_DATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_callback_data)
 
