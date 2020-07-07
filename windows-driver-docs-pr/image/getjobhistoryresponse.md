@@ -10,22 +10,19 @@ api_name:
 - wscn GetJobHistoryResponse
 api_type:
 - Schema
-ms.date: 11/28/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: df3d4b5ae3fe43b640fb49565773d8d81fbb5931
-ms.sourcegitcommit: ab64169b631da4db3f0b895600f1c38a22cb7e2e
-ms.translationtype: MT
+ms.openlocfilehash: fb0423ff4198ead5198f18f8274e680ca67f224a
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75652972"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020069"
 ---
 # <a name="getjobhistoryresponse-element"></a>Getjobhistory Response 要素
 
-
 必須の**Getjobhistory response**要素は、完了したジョブの概要を返します。
 
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用
 
 ```xml
 <wscn:GetJobHistoryResponse>
@@ -33,37 +30,21 @@ ms.locfileid: "75652972"
 </wscn:GetJobHistoryResponse>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 属性はありません。
 
 ## <a name="child-elements"></a>子要素
 
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>要素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="jobhistory.md" data-raw-source="[&lt;strong&gt;JobHistory&lt;/strong&gt;](jobhistory.md)"><strong>JobHistory</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+| 要素 |
+|--|
+| [**JobHistory**](jobhistory.md) |
 
 ## <a name="parent-elements"></a>親要素
 
-
 親要素はありません。
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>注釈
 
 WSD Scan サービスは、 **Getjobhistory response** operation 要素をサポートしている必要があります。
 
@@ -71,8 +52,7 @@ WSD Scan サービスは、 **Getjobhistory response** operation 要素をサポ
 
 WSD Scan サービスによって管理されるジョブ履歴の量は、実装に固有のものです。
 
-<a name="examples"></a>例
---------
+## <a name="examples"></a>例
 
 次のコード例では、ジョブ履歴に対するクライアントの要求に応答して、ジョブ履歴が返されないようにする方法を示します。
 
@@ -153,19 +133,8 @@ WSD Scan サービスによって管理されるジョブ履歴の量は、実�
 </soap:Envelope>
 ```
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>こちらもご覧ください
 
-
-[**Getjobhistory 要求**](getjobhistoryrequest.md)
+[**GetJobHistoryRequest**](getjobhistoryrequest.md)
 
 [**JobHistory**](jobhistory.md)
-
-
-
-
-
-
-
-
-
-

@@ -1,31 +1,28 @@
 ---
-title: ScalingHeight 要素
-description: 必要な ScalingHeight 要素には、出力ドキュメントの高さを拡大縮小に使用できる値の範囲が含まれています。
+title: /高さ要素 (出力ドキュメントの高さ)
+description: 必須の scaling Ingheight 要素には、出力ドキュメントの高さを調整するために使用できる値の範囲が含まれています。
 ms.assetid: f13e1ef8-e05f-4aab-bf2a-08a953638334
 keywords:
-- ScalingHeight 要素イメージング デバイス
+- スケールアウト要素のイメージ化デバイス
 topic_type:
 - apiref
 api_name:
 - wscn ScalingHeight
 api_type:
 - Schema
-ms.date: 11/28/2017
+ms.date: 07/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad54a20b497e2fed139a5a0c78af2f681c468a1
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
-ms.translationtype: MT
+ms.openlocfilehash: 1ea1521fbb01257eb89d69d4d597dc1631f03137
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63364395"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020077"
 ---
-# <a name="scalingheight-element"></a>ScalingHeight 要素
+# <a name="scalingheight-element-output-document-height"></a>/高さ要素 (出力ドキュメントの高さ)
 
+必須の scaling **Ingheight**要素には、出力ドキュメントの高さを調整するために使用できる値の範囲が含まれています。
 
-必要な**ScalingHeight**要素には、出力ドキュメントの高さを拡大縮小に使用できる値の範囲が含まれています。
-
-<a name="usage"></a>使用方法
------
+## <a name="usage"></a>使用
 
 ```xml
 <wscn:ScalingHeight>
@@ -33,61 +30,30 @@ ms.locfileid: "63364395"
 </wscn:ScalingHeight>
 ```
 
-<a name="attributes"></a>属性
-----------
+## <a name="attributes"></a>属性
 
 属性はありません。
 
 ## <a name="child-elements"></a>子要素
 
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>要素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="maxvalue.md" data-raw-source="[&lt;strong&gt;MaxValue&lt;/strong&gt;](maxvalue.md)"><strong>MaxValue</strong></a></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="minvalue.md" data-raw-source="[&lt;strong&gt;MinValue&lt;/strong&gt;](minvalue.md)"><strong>MinValue</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+| 要素 |
+|--|
+| [**MaxValue**](maxvalue.md) |
+| [**MinValue**](minvalue.md) |
 
 ## <a name="parent-elements"></a>親要素
 
+| 要素 |
+|--|
+| [**ScalingRangeSupported**](scalingrangesupported.md) |
 
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>要素</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="scalingrangesupported.md" data-raw-source="[&lt;strong&gt;ScalingRangeSupported&lt;/strong&gt;](scalingrangesupported.md)"><strong>ScalingRangeSupported</strong></a></p></td>
-</tr>
-</tbody>
-</table>
+## <a name="remarks"></a>注釈
 
-<a name="remarks"></a>注釈
--------
+Scaling **Ingheight**要素には、スキャンデバイスが出力ドキュメントの高さを調整するためにサポートする最小値と最大値を指定する[**MinValue**](minvalue.md)要素と[**MaxValue**](maxvalue.md)要素が含まれています。
 
-**ScalingHeight**要素が含まれています、 [ **MinValue** ](minvalue.md)と[ **MaxValue** ](maxvalue.md)要素です出力ドキュメントの高さを拡張するため、デバイスのスキャンをサポートする最小値と最大値を指定します。
+**MinValue**と**maxvalue**は、1 ~ 1000 の整数にする必要があります。 **MinValue**の値は**MaxValue**以下でなければなりません。 値100はスキャンデバイスがスキャンされたイメージの高さに対して調整を行うことができないことを意味します。 少なくとも、WSD Scan サービスでは100の値がサポートされている必要があります。
 
-**MinValue**と**MaxValue**と 1 ~ 1000 の整数でなければなりません**MinValue**に等しいまたはそれよりも小さい**MaxValue**します。 100 にすると、デバイスのスキャンは、スキャンしたイメージの高さに調整をしないでの値。 少なくとも、WSD スキャン サービスは、100 の値をサポートする必要があります。
-
-## <a name="see-also"></a>関連項目
-
+## <a name="see-also"></a>こちらもご覧ください
 
 [**MaxValue**](maxvalue.md)
 
@@ -96,13 +62,3 @@ ms.locfileid: "63364395"
 [**ScalingRangeSupported**](scalingrangesupported.md)
 
 [**ScalingWidth2**](scalingwidth.md)
-
- 
-
- 
-
-
-
-
-
-
