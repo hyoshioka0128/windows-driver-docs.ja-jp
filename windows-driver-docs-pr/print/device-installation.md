@@ -1,6 +1,6 @@
 ---
-title: デバイスのインストール
-description: デバイスのインストール
+title: 印刷デバイスのインストール
+description: デバイスが初めて接続されたときの、ポート接続された印刷デバイスの初期インストールに関する情報と、システム状態の可能性について説明します。
 ms.assetid: 47bbe4cd-bcbc-42d5-9513-9ea659c123dc
 keywords:
 - ホットプラグ可能バス WDK プリンター
@@ -8,16 +8,16 @@ keywords:
 - 状態 WDK プリンター
 - プリンターのインストールの確認
 - インストールされているドライバーテストの WDK プリンター
-ms.date: 06/05/2020
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e84520782c1b2d13ac0394bda31ae4c09eb9ee3
-ms.sourcegitcommit: f0e54ea159d168a77643bf2e098d6b90e92b528c
+ms.openlocfilehash: d3416f248075a249181af908c18201c9d6e7207c
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455560"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060837"
 ---
-# <a name="device-installation"></a>デバイスのインストール
+# <a name="print-device-installation"></a>印刷デバイスのインストール
 
 ポート接続デバイスの最初のインストールはさまざまな方法で実行され、デバイスが初めて接続されるときに、システムはさまざまな状態になることがあります。
 

@@ -1,29 +1,20 @@
 ---
-title: プリンター用の UWP デバイス アプリ
-description: プリンター用の UWP デバイス アプリでは、カスタマイズされたプリンターの設定と通知のサポートにより、デバイスの特殊な機能を強調表示を Ihv を許可します。
+title: プリンター用 UWP デバイスアプリ (印刷)
+description: プリンターの UWP デバイスアプリを使用すると、プリンターの設定と通知のサポートをカスタマイズすることで、デバイスの特別な機能を Ihv が強調することができます。
 ms.assetid: 687ECBA2-2DEF-4C62-A587-17A281490B59
-ms.date: 04/20/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bab571429a969f6f6976858750548b2e1f4f878
-ms.sourcegitcommit: f663c383886d87ea762e419963ff427500cc5042
+ms.openlocfilehash: 23e8080307813681f5150f35e29b3cdbcfbb3e75
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67393174"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060861"
 ---
-# <a name="uwp-device-apps-for-printers"></a>プリンター用の UWP デバイス アプリ
+# <a name="uwp-device-apps-for-printers-print"></a>プリンター用 UWP デバイスアプリ (印刷)
 
+プリンターの UWP デバイスアプリを使用すると、プリンターの設定と通知のサポートをカスタマイズすることで、デバイスの特別な機能を Ihv が強調することができます。
 
-プリンター用の UWP デバイス アプリでは、カスタマイズされたプリンターの設定と通知のサポートにより、デバイスの特殊な機能を強調表示を Ihv を許可します。
+UWP デバイスアプリは Microsoft Store によって配布され、アプリケーションのダウンロードをオプトインしたユーザーに対して自動的にインストールされます。 プリンター用の UWP デバイスアプリは、Windows 上のすべてのプリンターに対して提供される場合があります。
 
-UWP デバイス アプリは Microsoft Store で配布し、アプリケーションをダウンロードする管理者がユーザーに自動的にインストールします。 Windows 上のすべてのプリンターには、プリンター用の UWP デバイス アプリを指定することがあります。
-
-V4 印刷ドライバーを使用してインストールされているプリンターには、基本設定が printTaskSettings コントラクトをサポートすることによって発生または backgroundTasks コントラクトをサポートすることによってプリンターの通知をサポートのカスタマイズされたプリンターを指定できます。 詳細については、次を参照してください。[印刷デバイス アプリを UWP を開発](https://docs.microsoft.com/windows-hardware/drivers/devapps/windows-store-device-apps-for-printers)します。
-
- 
-
- 
-
-
-
-
+V4 印刷ドライバーを使用してインストールされたプリンターでは、printTaskSettings コントラクトをサポートするか、backgroundTasks コントラクトをサポートすることでプリンター通知をサポートすることで、カスタマイズされたプリンター設定エクスペリエンスを提供できます。 詳細については、「[印刷用の UWP デバイスアプリの開発](https://docs.microsoft.com/windows-hardware/drivers/devapps/windows-store-device-apps-for-printers)」を参照してください。

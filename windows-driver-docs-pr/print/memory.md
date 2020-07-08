@@ -1,51 +1,42 @@
 ---
-title: メモリ
-description: メモリ
+title: メモリ (印刷)
+description: 印刷デバイスにインストールされているメモリの値のエントリ
 ms.assetid: 9e1ad59f-9a97-49d7-b749-14380067cf64
-ms.date: 11/28/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 46f29d7fd95946d066350a5f8dec9fe39e188463
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 45d7702b716f4a7a188d6170e181aecf40d90310
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63367595"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060802"
 ---
-# <a name="memory"></a>メモリ
+# <a name="memory-print"></a>メモリ (印刷)
 
+スキーマパス: \\Printer.Configuration。量
 
-スキーマのパス:\\Printer.Configuration.Memory
-
-ノード型: プロパティ
+ノードの種類: プロパティ
 
 説明: デバイスにインストールされているメモリの値のエントリ
 
-メモリのプロパティには、2 つの子の値が含まれています。**サイズ**と**PS**します。
+Memory プロパティには、**サイズ**と**PS**という2つの子値が含まれています。
 
-### <a name="span-idsizespanspan-idsizespan-size"></a><span id="size"></span><span id="SIZE"></span> サイズ
+## <a name="size"></a>サイズ
 
-スキーマのパス:\\Printer.Configuration.Memory:Size
+スキーマパス: \\Printer.Configuration。メモリ: サイズ
 
-ノード型: 値
+ノードの種類: 値
 
-データ型: BIDI\_INT
+データ型: BIDI \_ INT
 
-説明: デバイスにインストールされているキロバイト (KB) 単位での物理メモリの量。
+説明: デバイスにインストールされている物理メモリの量 (KB 単位)。
 
-### <a name="span-idpsspanspan-idpsspan-ps"></a><span id="ps"></span><span id="PS"></span> PS
+## <a name="ps"></a>PS
 
-スキーマのパス:\\Printer.Configuration.Memory:PS
+スキーマパス: \\Printer.Configuration。メモリ: PS
 
-ノード型: 値
+ノードの種類: 値
 
-データ型: BIDI\_INT
+データ型: BIDI \_ INT
 
-説明: キロバイト (KB) 単位のデバイスでは、Postscript インタープリターを使用可能なメモリの量。 この量は、インストールされている物理メモリの量よりも少ないにあります。
-
- 
-
- 
-
-
-
-
+説明: デバイスの Postscript インタープリターで使用可能なメモリの量 (kb 単位)。 この値は、インストールされている物理メモリの量よりも少なくする必要があります。

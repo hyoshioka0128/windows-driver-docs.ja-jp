@@ -1,46 +1,45 @@
 ---
-title: Location
-description: Location
+title: 場所 (ホチキス止め)
+description: このプロパティには、出力ページのホチキス止め位置に関連するすべての値のエントリが含まれます。
 ms.assetid: cbe6ec7f-36dd-484e-8db6-42e91e69577c
-ms.date: 11/28/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e403b7dc2056e09d6c63d7063de0fbf0523f999f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: a8a714ed9489c7919f7e181040da2d7a334ff450
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63388077"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060849"
 ---
-# <a name="location"></a>Location
+# <a name="location-staple"></a>場所 (ホチキス止め)
 
+スキーマパス: \\ Printer... ステープル. 場所
 
-スキーマのパス:\\Printer.Finishing.Staple.Location
+ノードの種類: プロパティ
 
-ノード型: プロパティ
+説明: このプロパティには、出力ページのホチキス止め位置に関連するすべての値のエントリが含まれます。
 
-説明: このプロパティには、ホチキス止め出力ページ上の場所に関連するすべての値のエントリが含まれています。
+Location プロパティには、 **Currentvalue**と supported の2つの子値が含ま**れてい**ます。
 
-Location プロパティには、2 つの子の値が含まれています。**CurrentValue**と**サポート**します。
+## <a name="currentvalue"></a>CurrentValue
 
-### <a name="span-idcurrentvaluespanspan-idcurrentvaluespan-currentvalue"></a><span id="currentvalue"></span><span id="CURRENTVALUE"></span> CurrentValue
+スキーマパス: \\ Printer... ステープル. Location: CurrentValue
 
-スキーマのパス:\\Printer.Finishing.Staple.Location:CurrentValue
+ノードの種類: 値
 
-ノード型: 値
+データ型: BIDI \_ 文字列
 
-データ型: BIDI\_文字列
+説明: ホチキス止めが適用される現在の (既定の) 場所。
 
-説明: 回ステープル処理を適用する現在の (既定値) の場所。
-
-次の値は使用できます。
+次の値を使用できます。
 
 StapleTopLeft
 
-StapleBottomLeft
+左側にあるもの
 
 StapleTopRight
 
-StapleBottomRight
+最適
 
 StapleDualLeft
 
@@ -56,20 +55,12 @@ SaddleStitch
 
 Unknown
 
-### <a name="span-idsupportedspanspan-idsupportedspan-supported"></a><span id="supported"></span><span id="SUPPORTED"></span> サポートされています
+## <a name="supported"></a>サポートされています
 
-スキーマのパス:\\Printer.Finishing.Staple.Location:Supported
+スキーマパス: \\ Printer... ステープル. Location: サポートされています
 
-ノード型: 値
+ノードの種類: 値
 
-データ型: BIDI\_文字列
+データ型: BIDI \_ 文字列
 
-説明: A ホチキス止めの場所のサポートされているすべての値のコンマ区切り一覧。
-
- 
-
- 
-
-
-
-
+説明: ホチキス止めの場所でサポートされているすべての値のコンマ区切りの一覧です。

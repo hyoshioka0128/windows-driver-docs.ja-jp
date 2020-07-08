@@ -11,16 +11,16 @@ api_location:
 - Ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 04/21/2020
+ms.date: 07/07/2020
 ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
-ms.openlocfilehash: dc0ea2a841ac1c89235f2194e459a60a48c1e4f4
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: e52042089d4ca186758016a0cec77c04366e8fba
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270443"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060859"
 ---
 # <a name="ksproperty_cameracontrol_extended_relativepaneloptimization"></a>KSK プロパティ \_ CAMERACONTROL \_ EXTENDED \_ RELATIVEPANELOPTIMIZATION
 
@@ -30,11 +30,11 @@ Ksk プロパティコントロールの設定例については、GitHub の[Av
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
-| 取得 | オン | 移行先 | プロパティ記述子の型 | プロパティ値の型 |
-| --- | --- | --- | --- | --- |
-| はい | はい | Assert | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)|
+| 取得 | オン | Target | プロパティ記述子の型 | プロパティ値の型 |
+|--|--|--|--|--|
+| はい | はい | Assert | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 プロパティ要求には、 [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体と[KSCAMERA_EXTENDEDPROP_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)構造体が含まれています。
 
@@ -45,9 +45,9 @@ Ksk プロパティコントロールの設定例については、GitHub の[Av
 KSCAMERA_EXTENDEDPROP_HEADER に配置できるフラグを次に示し**ます。フラグ**と**KSCAMERA_EXTENDEDPROP_HEADER。機能**フィールド。
 
 | 相対パネルの最適化モード | 説明 |
-| --- | --- |
-| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ OFF | カメラは通常モードの操作を使用します  |
-| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ ON  | カメラは、値フィールドに記述されている位置に対して、最適化を使用します。 |
+|--|--|
+| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ OFF | カメラは通常モードの操作を使用します |
+| KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ ON | カメラは、値フィールドに記述されている位置に対して、最適化を使用します。 |
 | KSCAMERA \_ EXTENDEDPROP \_ RELATIVEPANELOPTIMIZATION \_ 動的 | ストリームを glitching せずにストリーミングするときに、カメラの位置のヒントを動的に調整できます |
 
 **KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION**は常に同期コントロールです。
@@ -65,13 +65,13 @@ KSCAMERA_EXTENDEDPROP_HEADER に配置できるフラグを次に示し**ます�
 次の表に、メタデータコントロールを使用する場合の[KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造のフィールドの要件を示します。
 
 | メンバー | 説明 |
-| --- | --- |
-| Version | これは1である必要があります。 |
+|--|--|
+| バージョン | これは1である必要があります。 |
 | PinId | KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF) |
 | サイズ | これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります |
 | 結果 | 最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。 |
 | 機能 | **は**、上記で定義されている、サポートされている***KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_XXX***フラグのビット単位である必要があります。 |
-| Flags | これは、読み取り/書き込みフィールドです。 これは、上で定義された**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_ON**または**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_OFF**フラグのいずれかになります。 |
+| フラグ | これは、読み取り/書き込みフィールドです。 これは、上で定義された**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_ON**または**KSCAMERA_EXTENDEDPROP_RELATIVEPANELOPTIMIZATION_OFF**フラグのいずれかになります。 |
 
 **KSCAMERA \_ extendedprop \_ RELATIVEPANELOPTIMIZATION \_ ON**が[**KSCAMERA \_ extendedprop \_ ヘッダー**](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)の**Flags**フィールドに指定されている場合は、この**ul**フィールドで、カメラが現在接続している相対的な方向の pld を指定する必要があります。
 
@@ -87,6 +87,4 @@ GET 操作の場合、ドライバーはカメラが現在プログラミング�
 
 ## <a name="requirements"></a>必要条件
 
-| &nbsp; | &nbsp; |
-| --- | --- |
-| ヘッダー | ksmedia .h (Ksk を含む) |
+**ヘッダー:** ksk メディア. h (ksk を含む)

@@ -1,35 +1,34 @@
 ---
-title: IPrinterScriptUsbJobContext PrintedPageCount メソッド
-description: 現在のジョブで印刷デバイスによって印刷されたページ数を設定します。
+title: Iプリンター Scriptusbjobcontext PrintedPageCount メソッド ()
+description: 現在のジョブの印刷デバイスによって印刷されたページ数を設定します。
 MSHAttr:
 - PreferredSiteName:MSDN
 - PreferredLib:/library/windows/hardware
 ms.assetid: 3C1DAE22-F1DF-48AE-A6F6-CCB8A97EB424
 keywords:
-- 印刷デバイスの PrintedPageCount メソッド
-- PrintedPageCount メソッド、印刷デバイス IPrinterScriptUsbJobContext インターフェイス
-- IPrinterScriptUsbJobContext インターフェイス、印刷デバイス PrintedPageCount メソッド
+- PrintedPageCount メソッドの印刷デバイス
+- PrintedPageCount メソッドの印刷デバイス、Iプリンター Scriptusbjobcontext インターフェイス
+- Iプリンター Scriptusbjobcontext インターフェイスの印刷デバイス、PrintedPageCount メソッド
 topic_type:
 - apiref
 api_name:
 - IPrinterScriptUsbJobContext.PrintedPageCount
 api_type:
 - COM
-ms.date: 04/20/2017
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d57fc1464cc39e4137bcd5665df41b903476ec6
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ace4a6c63eafafe494012e682c5e2a2139860529
+ms.sourcegitcommit: c2c99017178160988aa0e9a861ac347a11cda12a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63349241"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092469"
 ---
-# <a name="iprinterscriptusbjobcontextprintedpagecount-method"></a>IPrinterScriptUsbJobContext::PrintedPageCount メソッド
+# <a name="iprinterscriptusbjobcontextprintedpagecount-method-in"></a>Iプリンター Scriptusbjobcontext::P rintedPageCount メソッド ()
 
-現在のジョブで印刷デバイスによって印刷されたページ数を設定します。
+現在のジョブの印刷デバイスによって印刷されたページ数を設定します。
 
-<a name="syntax"></a>構文
-------
+## <a name="syntax"></a>構文
 
 ```cpp
 HRESULT PrintedPageCount(
@@ -37,52 +36,33 @@ HRESULT PrintedPageCount(
 );
 ```
 
-<a name="parameters"></a>パラメーター
-----------
+## <a name="parameters"></a>パラメーター
 
-*value* \[in\]  
-現在のジョブで印刷デバイスによって印刷されたページ数。
+*値* \[から\]  
+現在のジョブの印刷デバイスによって印刷されたページ数。
 
-<a name="return-value"></a>戻り値
-------------
+## <a name="return-value"></a>戻り値
 
-このメソッドが戻る、 **HRESULT**値。
+このメソッドは、 **HRESULT**値を返します。
 
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>注釈
 
-**PrintedPageCount**は読み取り/書き込みの方法です。 IHV JavaScript **writeData**関数が印刷されたページ数最新に保つため、ジョブの進行状況が正しくを設定する USBMon を許可します。
+**PrintedPageCount**は、読み取り/書き込みメソッドです。 IHV JavaScript **Writedata**関数は、印刷されたページ数を最新の状態に保ち、usbmon がジョブの正しい進行状況を設定できるようにする必要があります。
 
-IHV JavaScript コードを呼び出すことはない場合**PrintedPageCount**印刷されたページ数を設定することが前提とページ数が正確にことはできません、USBMon、スプーラーの進行状況の推定を続行できるようになります。
+IHV JavaScript コードが**PrintedPageCount**を呼び出して、印刷されたページ数を設定しない場合は、ページ数が正確ではないと想定されます。また、usbmon では、スプーラーが進行状況の推定を続けることができます。
 
-USBMon と USB ベースの双方向については、印刷デバイスとの通信を参照してください[USB Bidi エクステンダー](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)します。
+印刷デバイスとの USBMon と USB ベースの双方向通信の詳細については、「 [USB Bidi Extender](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)」を参照してください。
 
-<a name="requirements"></a>必要条件
-------------
+## <a name="requirements"></a>必要条件
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>サポートされている最小のクライアント</p></td>
-<td><p>Windows 8.1</p></td>
-</tr>
-<tr class="even">
-<td><p>サポートされている最小のサーバー</p></td>
-<td><p>Windows Server 2012 R2</p></td>
-</tr>
-<tr class="odd">
-<td><p>対象プラットフォーム</p></td>
-<td>Desktop</td>
-</tr>
-</tbody>
-</table>
+**サポートされている最低限のクライアント:** Windows 8.1
+
+**サポートされる最小サーバー:** Windows Server 2012 R2
+
+**ターゲットプラットフォーム:** デスクトップ
 
 ## <a name="see-also"></a>関連項目
 
 [**IPrinterScriptUsbJobContext**](iprinterscriptusbjobcontext.md)
 
-[USB Bidi エクステンダー](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)
+[USB 双方向エクステンダー](https://docs.microsoft.com/windows-hardware/drivers/print/usb-bidi-extender)

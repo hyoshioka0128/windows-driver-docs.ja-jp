@@ -1,14 +1,14 @@
 ---
 title: KSPROPERTY_NETWORKCAMERACONTROL_URI
 description: Onvif プロトコルカメラからのストリーム URI ペイロードの取得を有効にします。
-ms.date: 04/14/2020
+ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: edd688042250f2dd57052e407e95ba4ae2ca5029
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 7897eb49780d7a9be103c0603f103f8075a97efc
+ms.sourcegitcommit: ff2f72fe98f6ba559c1c01b17d25c773df7337c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83270435"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86060838"
 ---
 # <a name="ksproperty_networkcameracontrol_uri"></a>KSPROPERTY_NETWORKCAMERACONTROL_URI
 
@@ -17,13 +17,9 @@ KSPROPERTY_NETWORKCAMERACONTROL_URI プロパティを使用すると、Onvif �
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
 | 取得 | オン | プロパティ記述子の型 | プロパティ値の型 |
-| --- | --- | --- | --- |
+|--|--|--|--|
 | はい | いいえ | [KSPROPERTY_NETWORKCAMERACONTROL_PROPERTY](https://docs.microsoft.com/windows-hardware/drivers/stream/ne-ksmedia-ksproperty_networkcameracontrol_property) | LONG |
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-| &nbsp; | &nbsp; |
-| --- | --- |
-| ヘッダー | ksmedia .h (Ksk を含む) |
-
-## <a name="see-also"></a>関連項目
+**ヘッダー:** ksk メディア. h (ksk を含む)
