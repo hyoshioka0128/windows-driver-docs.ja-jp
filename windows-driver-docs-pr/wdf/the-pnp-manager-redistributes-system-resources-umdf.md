@@ -1,5 +1,5 @@
 ---
-title: PnP マネージャーがシステム リソースを再配布する
+title: PnP マネージャーによるシステムリソースの再配布 (UMDF 1)
 description: PnP マネージャーがシステム リソースを再配布する
 ms.assetid: c8e6277b-b1e5-449f-b5a0-f5a46b46e56e
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - システムリソースの再配布のシナリオ WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: df830c62538799d67c7faafd66e19e71a494f892
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: b97df9ba28892a51fce9c5c5b53528bd6d3a6e1a
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210826"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141340"
 ---
-# <a name="the-pnp-manager-redistributes-system-resources"></a>PnP マネージャーがシステム リソースを再配布する
+# <a name="the-pnp-manager-redistributes-system-resources-umdf-1"></a>PnP マネージャーによるシステムリソースの再配布 (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

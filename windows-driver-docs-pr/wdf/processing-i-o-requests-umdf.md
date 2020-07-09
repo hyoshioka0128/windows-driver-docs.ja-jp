@@ -1,5 +1,5 @@
 ---
-title: I/O 要求の処理
+title: I/o 要求の処理 (UMDF 1)
 description: I/O 要求の処理
 ms.assetid: d12e879e-3aeb-4e88-82de-47e06e7ac482
 keywords:
@@ -11,14 +11,14 @@ keywords:
 - i/o 要求の処理 (WDK UMDF)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4716a995f2c0618aec05d4674330e8a01611a2
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 66e7eb1d97f6ce1dc3da183c7565d579ca277d19
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210852"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141339"
 ---
-# <a name="processing-io-requests"></a>I/O 要求の処理
+# <a name="processing-io-requests-umdf-1"></a>I/o 要求の処理 (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
@@ -26,15 +26,15 @@ ms.locfileid: "75210852"
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [I/o 要求処理操作フロー](i-o-request-processing-operation-flow.md)
--   [低ドライバーへの i/o 要求の送信](sending-i-o-requests-to-lower-drivers.md)
--   [I/o 要求のパラメーターの取得](obtaining-parameters-for-i-o-requests.md)
--   [I/o 要求をキャンセルしています](canceling-i-o-requests-umdf.md)
--   [I/o 要求を完了しています](completing-i-o-requests-umdf.md)
--   [UMDF ドライバーのデータバッファーへのアクセス](accessing-data-buffers-in-umdf-1-x-drivers.md)
--   [フレームワークの要求オブジェクトの再利用](reusing-framework-request-objects-umdf.md)
+-   [I/O 要求処理の操作フロー](i-o-request-processing-operation-flow.md)
+-   [下位ドライバーへの I/O 要求の送信](sending-i-o-requests-to-lower-drivers.md)
+-   [I/O 要求のパラメーターの取得](obtaining-parameters-for-i-o-requests.md)
+-   [I/O 要求のキャンセル](canceling-i-o-requests-umdf.md)
+-   [I/O 要求の完了](completing-i-o-requests-umdf.md)
+-   [UMDF ドライバーでのデータ バッファーへのアクセス](accessing-data-buffers-in-umdf-1-x-drivers.md)
+-   [フレームワーク要求オブジェクトの再利用](reusing-framework-request-objects-umdf.md)
 -   [UMDF 1.x ドライバーでのクライアント偽装の処理](handling-client-impersonation-in-umdf-1-x-drivers.md)
--   [ドライバーへの通知の作成と終了の不均衡を防ぐ](preventing-an-imbalance-of-create-and-close-notifications-to-a-driver.md)
+-   [ドライバーへの作成通知とクローズ通知の不均衡の防止](preventing-an-imbalance-of-create-and-close-notifications-to-a-driver.md)
 
  
 

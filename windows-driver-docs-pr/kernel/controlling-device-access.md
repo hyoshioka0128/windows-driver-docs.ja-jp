@@ -1,5 +1,5 @@
 ---
-title: デバイス アクセスの制御
+title: デバイスアクセスの制御 (WDM)
 description: デバイス アクセスの制御
 ms.assetid: b5e562ad-573b-4b0f-9d85-2410fda16e4e
 keywords:
@@ -10,14 +10,14 @@ keywords:
 - セキュリティ記述子 WDK デバイスオブジェクト
 ms.date: 06/16/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b888be585678f8ca1877d527a5369fb94eef767b
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: df64a4461f4768aab2c73b358b60274eae0b974e
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72828512"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141270"
 ---
-# <a name="controlling-device-access"></a>デバイス アクセスの制御
+# <a name="controlling-device-access-wdm"></a>デバイスアクセスの制御 (WDM)
 
 
 
@@ -43,7 +43,7 @@ WDM ドライバーの場合、PnP マネージャーによって、デバイス
 
 3.  それ以外の場合、PnP マネージャーは、各オブジェクトの既定のセキュリティ記述子を変更せずに残します。 この場合、スタックの既定のセキュリティ記述子は、PDO のデバイスの種類とデバイスの特性によって決まります。
 
-ほとんどのデバイスの種類と特性において、既定のセキュリティ記述子は、管理者にフルアクセス (汎用\_すべて) を付与し、読み取り、書き込み、実行アクセス (汎用\_読み取り |GENERIC\_WRITE |汎用\_実行) 他のすべてのユーザーにアクセスします。
+ほとんどのデバイスの種類と特性において、既定のセキュリティ記述子は、 \_ 管理者、読み取り、書き込み、実行アクセス (一般 \_ 読み取り |) へのフルアクセス (汎用すべて) を付与します。一般的な \_ 書き込み |汎用 \_ 実行) 他のすべてのユーザーにアクセスします。
 
 レジストリでデバイスまたはデバイスのセットアップクラスのセキュリティ記述子を設定する方法の詳細については、「[レジストリにデバイスオブジェクトのプロパティを設定](setting-device-object-properties-in-the-registry.md)する」を参照してください。
 

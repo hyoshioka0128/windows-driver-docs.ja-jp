@@ -1,17 +1,17 @@
 ---
-title: 割り込みの処理
+title: 割り込みの処理 (UMDF 1)
 description: 割り込みの処理
 ms.assetid: 79BA75B3-E10F-4AC1-A2C5-A502BF821188
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a04a6b9c23421062a21e1bea39ff33658e3ab68
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 6b70a4890494814ce597e9867561cd7e03567dc7
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210538"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141267"
 ---
-# <a name="servicing-an-interrupt"></a>割り込みの処理
+# <a name="servicing-an-interrupt-umdf-1"></a>割り込みの処理 (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "75210538"
 
 デバイスがハードウェア割り込みを生成すると、フレームワークは、ドライバーの interrupt service ルーチン (ISR) を呼び出します。これは、フレームワークベースのドライバーが[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr)コールバック関数として実装します。
 
-[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr) callback 関数は、パッシブ\_レベルで実行されます。これにより、レジスタの内容、データを処理するための作業項目をキューに格納し、割り込み回線が共有されている場合に、他の割り込みのサービスを可能にするために ISR から戻る必要があります。 UMDF ドライバーの ISR はパッシブ\_レベルで実行されるため、PCI ラインベースの割り込みを処理することはお勧めしません。 これらの割り込みは、通常、複数のデバイス間で共有されますが、その中には ISR の遅延を受け入れることができないものもあります。 ただし、UMDF ドライバーで PCI MSI 割り込みを処理することはできます。 これらの割り込みはエッジセマンティクスを持ち、共有されていません。
+[*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr) callback 関数は、パッシブレベルで実行されます。これに \_ より、レジスタの内容、データを処理するための作業項目をキューに格納し、その割り込み回線が共有されている場合に、他の割り込みのサービスを可能にするために ISR から戻る必要があります。 UMDF ドライバーの ISR はパッシブレベルで実行 \_ されるため、PCI ラインベースの割り込みを処理することはお勧めしません。 これらの割り込みは、通常、複数のデバイス間で共有されますが、その中には ISR の遅延を受け入れることができないものもあります。 ただし、UMDF ドライバーで PCI MSI 割り込みを処理することはできます。 これらの割り込みはエッジセマンティクスを持ち、共有されていません。
 
 通常、 [*OnInterruptIsr*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_isr) callback 関数は、後で保存された情報を処理する作業項目をスケジュールします。 フレームワークベースのドライバーは、作業項目ルーチンを[*OnInterruptWorkItem*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_workitem)コールバック関数として実装します。
 

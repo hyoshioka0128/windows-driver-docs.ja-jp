@@ -1,14 +1,14 @@
 ---
 title: WinDbg プレビュー-[表示] メニュー
 description: ここでは、[表示] メニューの操作方法について説明します。
-ms.date: 01/10/2020
+ms.date: 07/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbd91f829ad6c9d02ab4cd74f3d643a703be172
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: 8ec196b6f1cf452a47fb756929b3d2bd26d55cd0
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76256691"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141306"
 ---
 # <a name="windbg-preview---view-menu"></a>WinDbg プレビュー-[表示] メニュー
 
@@ -24,7 +24,7 @@ ms.locfileid: "76256691"
 
 [コマンド] ウィンドウでは、デバッガーコマンドを入力できます。 デバッガーコマンドの詳細については、「[デバッガーコマンド](debugger-commands.md)」を参照してください。
 
-## <a name="watch"></a>視聴する
+## <a name="watch"></a>Watch
 
 [ウォッチ] ウィンドウでは、ローカル変数とレジスタをウォッチできます。 
 
@@ -42,9 +42,9 @@ ms.locfileid: "76256691"
 
 ## <a name="memory"></a>メモリ
 
-メモリの場所を表示するには、[メモリ] ウィンドウを使用します。 メモリアドレスを指定するだけでなく、$scopeip や $eventip などの擬似レジスタ値を使用してメモリを調べることもできます。 [メモリ] ウィンドウの擬似レジスタ値 (`@$scopeip`など) を使用するように、@ 記号を事前に追加します。 詳細については、「[擬似レジスタの構文](pseudo-register-syntax.md)」を参照してください。
+メモリの場所を表示するには、[メモリ] ウィンドウを使用します。 メモリアドレスを指定するだけでなく、$scopeip や $eventip などの擬似レジスタ値を使用してメモリを調べることもできます。 [メモリ] ウィンドウの擬似レジスタ値 (など) を使用するように、@ 記号を事前に追加し `@$scopeip` ます。 詳細については、「[擬似レジスタの構文](pseudo-register-syntax.md)」を参照してください。
 
-## <a name="stack"></a>Stack
+## <a name="stack"></a>スタック
 
 現在の呼び出し履歴を表示するには、[スタック] ウィンドウを使用します。 スタックウィンドウは、現在のフレームの基本的な強調表示を提供します。 
 
@@ -54,7 +54,7 @@ ms.locfileid: "76256691"
 
 ![ デバッガーの [逆アセンブリ] ウィンドウ](images/windbgx-disassembly.png)
 
-## <a name="threads"></a>スレッド数
+## <a name="threads"></a>Threads
 
 [スレッド] ウィンドウには、現在のスレッドが強調表示されます。
 
@@ -70,13 +70,24 @@ ms.locfileid: "76256691"
 
  引き続き、logopen コマンドを使用して、従来のデバッガーコマンドログを作成できます。 詳細については、「 [WinDbg でのログファイルの保持](keeping-a-log-file-in-windbg.md)」を参照してください。
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>メモ
 
 メモオプションを使用して、メモウィンドウを開きます。
 
-## <a name="timelines"></a>所要時間
+## <a name="timelines"></a>タイムライン
 
 タイムラインウィンドウを開くか、またはタイムラインウィンドウにフォーカスを移動するには、タイムラインを使用します。 タイムラインの詳細については、「 [WinDbg Preview-タイムライン](windbg-timeline-preview.md)」を参照してください。
+
+## <a name="modules"></a>モジュール
+
+モジュールを使用して、読み込まれたモジュールとその関連情報を表示します。 モジュールには次のものが表示されます。
+
+- パスの場所を含むモジュールの名前
+- 読み込まれたモジュールのサイズ (バイト単位)
+- モジュールが読み込まれるベースアドレス。
+- ファイル バージョン
+
+![5つのモジュールが表示されているモジュールビューウィンドウ](images/windbgx-view-modules.png)
 
 ## <a name="layouts"></a>レイアウト
 
@@ -86,10 +97,10 @@ ms.locfileid: "76256691"
 
 デバッガーウィンドウを既定の位置にリセットするには、この関数を使用します。
 
-## <a name="accent-color"></a>アクセント カラー
+## <a name="accent-color"></a>アクセントカラー
 
 ドロップダウンメニューを使用して、デバッガーのアクセントカラーを設定します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WinDbg プレビューを使用したデバッグ](debugging-using-windbg-preview.md)

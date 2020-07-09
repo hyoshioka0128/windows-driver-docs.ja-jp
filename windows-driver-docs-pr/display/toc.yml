@@ -616,6 +616,8 @@
           href: specialized-monitors.md
         - name: HMD と特殊なモニター用の EDID 拡張機能
           href: specialized-monitors-edid-extension.md
+        - name: HMD と特殊なモニター用のカスタム Compositor アプリの構築
+          href: specialized-monitors-compositor.md
     - name: 複数モニターとビデオ表現ネットワーク
       items:
         - name: 複数モニターとビデオ表現ネットワーク

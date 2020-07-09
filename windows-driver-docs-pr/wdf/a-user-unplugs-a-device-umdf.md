@@ -1,5 +1,5 @@
 ---
-title: ユーザーがデバイスを取り外す
+title: デバイスを Unplugs するユーザー (UMDF 1)
 description: ユーザーがデバイスを取り外す
 ms.assetid: d0c8fd6d-b356-4048-aa97-ebe331d23361
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - デバイスシナリオの取り外し WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ffa7cf9423150f26e81593ba97b490000f75ac
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: e698bcde0d5f7508e2e44f066381d7f71e60c255
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210076"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141312"
 ---
-# <a name="a-user-unplugs-a-device"></a>ユーザーがデバイスを取り外す
+# <a name="a-user-unplugs-a-device-umdf-1"></a>デバイスを Unplugs するユーザー (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

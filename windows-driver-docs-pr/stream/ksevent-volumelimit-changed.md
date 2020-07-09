@@ -25,6 +25,6 @@ ms.locfileid: "86060845"
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
-| 取得 | オン | Target | イベント記述子の種類 | イベント値の種類 |
+| 取得 | オン | 移行先 | イベント記述子の種類 | イベント値の種類 |
 |--|--|--|--|--|
 | いいえ | はい | Pin | [**KSE_NODE**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kse_node) | [**KSEVENTDATA**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ks/ns-ks-kseventdata) |

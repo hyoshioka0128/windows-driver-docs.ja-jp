@@ -1,6 +1,6 @@
 ---
-title: IRP_MJ_FILE_SYSTEM_CONTROL
-description: IRP\_MJ\_ファイル\_システム\_コントロール
+title: IRP_MJ_FILE_SYSTEM_CONTROL (IFS)
+description: IRP \_ MJ \_ ファイル \_ システム \_ コントロール
 ms.assetid: 9df42b58-5820-44fd-8e55-0195807be951
 keywords:
 - インストール可能なファイルシステムドライバーの IRP_MJ_FILE_SYSTEM_CONTROL
@@ -12,20 +12,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c25545db49d9ca3f3bd6a0721473c2c75cd14cfd
-ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
+ms.openlocfilehash: b7ad389bacb472b51e95e3ba48504ad932d5a3e4
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977681"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141217"
 ---
-# <a name="irp_mj_file_system_control"></a>IRP\_MJ\_ファイル\_システム\_コントロール
+# <a name="irp_mj_file_system_control-ifs"></a>IRP \_ MJ \_ FILE \_ SYSTEM \_ CONTROL (IFS)
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_FILE\_SYSTEM\_CONTROL 要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。 たとえば、ユーザーモードアプリケーションが Microsoft Win32 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数を呼び出してファイルシステム i/o 制御 (FSCTL) 要求を送信した場合などに送信できます。
+IRP \_ MJ \_ FILE \_ system \_ CONTROL 要求は、i/o マネージャーおよびその他のカーネルモードドライバーによって送信されます。 たとえば、ユーザーモードアプリケーションが Microsoft Win32 [**DeviceIoControl**](https://docs.microsoft.com/windows/desktop/api/ioapiset/nf-ioapiset-deviceiocontrol)関数を呼び出してファイルシステム i/o 制御 (FSCTL) 要求を送信した場合などに送信できます。
 
 ## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
@@ -106,72 +106,72 @@ IRP\_MJ\_FILE\_SYSTEM\_CONTROL 要求は、i/o マネージャーおよびその
 <a href="" id="deviceobject"></a>*DeviceObject*  
 ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp*  
-ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡されるシステム指定の入力バッファーへのポインター。 バッファーまたはメソッド\_直接 i/o に\_ために使用されます。 このパラメーターが必須かどうかは、特定のファイルシステム制御コードによって異なります。
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp &gt;AssociatedIrp.SystemBuffer*  
+ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡されるシステム指定の入力バッファーへのポインター。 メソッドのバッファーまたはメソッドの直接 i/o に使用され \_ \_ ます。 このパラメーターが必須かどうかは、特定のファイルシステム制御コードによって異なります。
 
-<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*  
-最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
+<a href="" id="irp--iostatus"></a>*Irp- &gt; iostatus*  
+最後の完了状態と要求された操作に関する情報を受け取る[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造体へのポインター。
 
-<a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
-ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡される出力バッファーを記述するメモリ記述子リスト (MDL) のアドレス。 メソッド\_直接 i/o に使用されます。 このパラメーターが必須かどうかは、特定の i/o 制御コードによって異なります。
+<a href="" id="irp--mdladdress"></a>*Irp- &gt; mdladdress*  
+ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡される出力バッファーを記述するメモリ記述子リスト (MDL) のアドレス。 メソッドダイレクト i/o に使用され \_ ます。 このパラメーターが必須かどうかは、特定の i/o 制御コードによって異なります。
 
-<a href="" id="irp--userbuffer"></a>*Irp-&gt;UserBuffer*  
-ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡される、呼び出し元から提供される出力バッファーへのポインター。 I/o ではない\_バッファーまたはメソッド\_に使用されます。 このパラメーターが省略可能か必須かは、特定の i/o 制御コードによって決まります。
+<a href="" id="irp--userbuffer"></a>*Irp- &gt; UserBuffer*  
+ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡される、呼び出し元から提供される出力バッファーへのポインター。 メソッドのバッファーに使用されるか、または i/o ではないメソッドに使用され \_ \_ ます。 このパラメーターが省略可能か必須かは、特定の i/o 制御コードによって決まります。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*  
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*  
 *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_ファイル\_システム\_コントロールの処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であるため、使用できません。
+*Irpsp- &gt; FileObject*パラメーターには、関連する**FileObject**フィールドへのポインターが含まれています。これは、ファイルオブジェクト構造でも \_ あります。 ファイルオブジェクト構造の関連性のある**fileobject**フィールド \_ は、IRP MJ FILE SYSTEM CONTROL の処理中は無効である \_ ため、 \_ \_ \_ 使用しないでください。
 
-<a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
-次のフラグは、IRP\_に対して設定できます。\_ボリューム\_確認してください。
+<a href="" id="irpsp--flags"></a>*IrpSp- &gt; フラグ*  
+次のフラグは、IRP を確認するボリュームに設定でき \_ \_ \_ ます。
 
-SL\_\_RAW\_マウントが許可
+SL に \_ よる \_ RAW \_ マウント
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*  
-IRP\_MJ\_ファイル\_システム\_コントロールを指定します。
+<a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt; MajorFunction*  
+IRP \_ MJ \_ ファイルシステムコントロールを指定し \_ \_ ます。
 
-<a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
-次のいずれかです。
+<a href="" id="irpsp--minorfunction"></a>*IrpSp- &gt; minorfunction*  
+次のいずれか:
 
--   IRP\_\_カーネル\_呼び出し
--   IRP\_\_ファイル\_システム\_読み込み
--   IRP\_\_マウント\_ボリューム
--   IRP\_\_ユーザー\_FS\_要求
--   IRP\_\_確認\_ボリューム
+-   IRP の全 \_ \_ カーネル \_ 呼び出し
+-   IRP の全 \_ \_ 負荷の \_ ファイル \_ システム
+-   IRP の全 \_ \_ マウント \_ ボリューム
+-   IRP の全 \_ \_ ユーザーのユーザー \_ FS \_ 要求
+-   IRP の全 \_ \_ 検査の \_ ボリューム
 
-<a href="" id="irpsp--parameters-filesystemcontrol-fscontrolcode"></a>*IrpSp-&gt;Parameters. FileSystemControl. FsControlCode*  
-ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡される FSCTL 関数コード。 IRP\_で使用する場合は\_ユーザー\_FS\_要求のみです。
+<a href="" id="irpsp--parameters-filesystemcontrol-fscontrolcode"></a>*IrpSp- &gt; Parameters. FileSystemControl. FsControlCode*  
+ターゲットボリュームのファイルシステムまたはファイルシステムフィルタードライバーに渡される FSCTL 関数コード。 IRP の \_ \_ ユーザー \_ FS \_ 要求のみで使用します。
 
 IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモードアーキテクチャガイド*」の「 [i/o 制御コードの使用](https://docs.microsoft.com/windows-hardware/drivers/kernel/using-i-o-control-codes)」および Microsoft Windows SDK のドキュメントの「デバイスの入力と出力の制御コード」を参照してください。
 
-<a href="" id="irpsp--parameters-filesystemcontrol-inputbufferlength"></a>*IrpSp-&gt;Parameters. Filesystembufferlength*  
-*Irp&gt;AssociatedIrp*によってポイントされるバッファーのサイズ (バイト単位)。
+<a href="" id="irpsp--parameters-filesystemcontrol-inputbufferlength"></a>*IrpSp- &gt; Parameters. FileSystemControl. InputBufferLength*  
+*Irp &gt;AssociatedIrp.Systembuffer*が指すバッファーのサイズ (バイト単位)。
 
-<a href="" id="irpsp--parameters-filesystemcontrol-outputbufferlength"></a>*IrpSp-&gt;Parameters. Filesystembufferlength*  
-*Irp&gt;UserBuffer*が指すバッファーのサイズ (バイト単位)。
+<a href="" id="irpsp--parameters-filesystemcontrol-outputbufferlength"></a>*IrpSp- &gt; Parameters. Filesystembufferlength*  
+* &gt; UserBuffer*によってポイントされるバッファーのサイズ (バイト単位)。
 
-<a href="" id="irpsp--parameters-filesystemcontrol-type3inputbuffer"></a>*IrpSp-&gt;Parameters. FileSystemControl. Type3InputBuffer*  
-メソッドを使用したカーネルモード要求の入力バッファー\_ません。
+<a href="" id="irpsp--parameters-filesystemcontrol-type3inputbuffer"></a>*IrpSp- &gt; Parameters Type3InputBuffer*  
+メソッドを使用したカーネルモード要求の入力バッファーが \_ ありません。
 
-<a href="" id="irpsp--parameters-mountvolume-deviceobject"></a>*IrpSp-&gt;Parameters. MountVolume. DeviceObject*  
+<a href="" id="irpsp--parameters-mountvolume-deviceobject"></a>*IrpSp- &gt; MountVolume. DeviceObject*  
 ボリュームがマウントされる実際のデバイスのデバイスオブジェクトへのポインター。 ファイルシステムフィルタードライバーでは、このパラメーターを使用しないでください。
 
-<a href="" id="irpsp--parameters-mountvolume-vpb"></a>*IrpSp-&gt;Parameters. MountVolume. Vpb*  
-マウントするボリュームのボリュームパラメーターブロック (VPB) へのポインター。 リムーバブルメディアをサポートするファイルシステムでは、このパラメーターで渡された VPB を以前に使用した VPB に置き換えることができます。 このようなファイルシステムでは、ボリュームがマウントされた後、このポインターが有効であるとは見なされなくなります。 これらのファイルシステムをフィルター処理するファイルシステムフィルタードライバーでは、次のように、このパラメーターを使用する必要があります。 IRP を下位レベルのドライバーに送信する前に、フィルターにより*Irpsp-&gt;MountVolume-&gt;RealDevice*の値が保存されます。 ボリュームが正常にマウントされると、フィルターはこのポインターを使用して、正しい VPB ポインターを取得できます。
+<a href="" id="irpsp--parameters-mountvolume-vpb"></a>*IrpSp- &gt; MountVolume. Vpb*  
+マウントするボリュームのボリュームパラメーターブロック (VPB) へのポインター。 リムーバブルメディアをサポートするファイルシステムでは、このパラメーターで渡された VPB を以前に使用した VPB に置き換えることができます。 このようなファイルシステムでは、ボリュームがマウントされた後、このポインターが有効であるとは見なされなくなります。 これらのファイルシステムをフィルター処理するファイルシステムフィルタードライバーでは、次のように、このパラメーターを使用する必要があります。 IRP を下位レベルのドライバーに送信する前に、フィルターによって MountVolume の値が保存されます。 * &gt; &gt; * ボリュームが正常にマウントされると、フィルターはこのポインターを使用して、正しい VPB ポインターを取得できます。
 
-<a href="" id="irpsp--parameters-verifyvolume-deviceobject"></a>*IrpSp-&gt;Parameters. VerifyVolume. DeviceObject*  
+<a href="" id="irpsp--parameters-verifyvolume-deviceobject"></a>*IrpSp- &gt; Parameters. VerifyVolume. DeviceObject*  
 検証するボリュームのデバイスオブジェクトへのポインター。
 
-<a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp-&gt;パラメーター。 VerifyVolume. Vpb*  
+<a href="" id="irpsp--parameters-verifyvolume-vpb"></a>*IrpSp- &gt; Parameters. VerifyVolume. Vpb*  
 検証するボリュームの VPB へのポインター。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 
-[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
+[**IO \_ スタックの \_ 場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
+[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
 [**IoBuildAsynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildasynchronousfsdrequest)
 
@@ -179,7 +179,7 @@ IOCTL 要求と FSCTL 要求の詳細については、「*カーネルモード
 
 [**IoBuildSynchronousFsdRequest**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iobuildsynchronousfsdrequest)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 

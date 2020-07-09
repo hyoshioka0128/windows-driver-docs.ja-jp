@@ -30,11 +30,11 @@ Ksk プロパティコントロールの設定例については、GitHub の[Av
 
 ## <a name="usage-summary-table"></a>使用状況の概要テーブル
 
-| 取得 | オン | Target | プロパティ記述子の型 | プロパティ値の型 |
+| 取得 | オン | 移行先 | プロパティ記述子の型 | プロパティ値の型 |
 |--|--|--|--|--|
-| はい | はい | Assert | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) |
+| はい | はい | フィルター | [KSPROPERTY](https://docs.microsoft.com/previous-versions/ff564262(v=vs.85)) | [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header) |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
 プロパティ要求には、 [KSCAMERA_EXTENDEDPROP_HEADER](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_header)構造体と[KSCAMERA_EXTENDEDPROP_VALUE](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-tagkscamera_extendedprop_value)構造体が含まれています。
 
@@ -66,7 +66,7 @@ KSCAMERA_EXTENDEDPROP_HEADER に配置できるフラグを次に示し**ます�
 
 | メンバー | 説明 |
 |--|--|
-| バージョン | これは1である必要があります。 |
+| Version | これは1である必要があります。 |
 | PinId | KSCAMERA_EXTENDEDPROP_FILTERSCOPE (0xFFFFFFFF) |
 | サイズ | これは sizeof (KSCAMERA_EXTENDEDPROP_HEADER) + sizeof (KSCAMERA_EXTENDEDPROP_VALUE) である必要があります |
 | 結果 | 最後の設定操作のエラー結果を示します。 設定操作が行われていない場合は、0にする必要があります。 |

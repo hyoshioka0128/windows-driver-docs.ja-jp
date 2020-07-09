@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_PNP
+title: IRP_MJ_PNP (IFS)
 description: IRP\_MJ\_PNP
 ms.assetid: aec2f309-02a1-460a-b674-33ad18286347
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 064ef8319c3e9fe9cf48a54277f8444113baa903
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: e572a2959843326b99de1c160cf6c3b64472e489
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852256"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141228"
 ---
-# <a name="irp_mj_pnp"></a>IRP\_MJ\_PNP
+# <a name="irp_mj_pnp-ifs"></a>IRP \_ MJ \_ PNP (IFS)
 
 
 ## <a name="when-sent"></a>送信時
@@ -43,7 +43,7 @@ IRP MJ PNP のマイナー関数コードに関する参照情報について \_
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">期間</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -115,7 +115,7 @@ PnP Irp の場合、このポインターは**NULL**である必要がありま�
 IRP MJ PNP を指定し \_ \_ ます。
 
 <a href="" id="irpsp--minorfunction"></a>*IrpSp- &gt; minorfunction*  
-次のいずれかです。
+次のいずれか:
 
 -   IRP を終了する \_ \_ \_ デバイスの削除 \_
 -   IRP を実行する \_ \_ クエリ \_ デバイスの削除 \_

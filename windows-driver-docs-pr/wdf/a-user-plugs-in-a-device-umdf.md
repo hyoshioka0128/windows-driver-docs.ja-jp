@@ -1,5 +1,5 @@
 ---
-title: ユーザーがデバイスを接続する
+title: ユーザーがデバイスに接続する (UMDF 1)
 description: ユーザーがデバイスを接続する
 ms.assetid: 1968270b-ce57-4a8c-8b7a-bbd4a972435d
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - デバイスシナリオでのプラグイン WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 64c5ccdaa14cdee12c6250133683dc0ba1b79745
-ms.sourcegitcommit: c6040377fd6dd99031e4085a60ffbab4e1052dc2
+ms.openlocfilehash: e124fb0eaf75b66557abb05f56592f8b7d1967b4
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421381"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141241"
 ---
-# <a name="a-user-plugs-in-a-device"></a>ユーザーがデバイスを接続する
+# <a name="a-user-plugs-in-a-device-umdf-1"></a>ユーザーがデバイスに接続する (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

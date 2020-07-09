@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_DIRECTORY_CONTROL
+title: IRP_MJ_DIRECTORY_CONTROL (IFS)
 description: IRP \_ MJ \_ DIRECTORY \_ コントロール
 ms.assetid: cb1bed36-bcb5-419b-87ca-6d9107ece6d1
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ba45995e9a98cb43bebc6f9ec019d982fcda2346
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: 27dad27ec40dd7da37269f66ee7a066f849e779c
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852310"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141328"
 ---
-# <a name="irp_mj_directory_control"></a>IRP \_ MJ \_ DIRECTORY \_ コントロール
+# <a name="irp_mj_directory_control-ifs"></a>IRP \_ MJ \_ DIRECTORY \_ コントロール (IFS)
 
 
 ## <a name="when-sent"></a>送信時
@@ -39,7 +39,7 @@ IRP \_ MJ \_ DIRECTORY \_ CONTROL 要求は、i/o マネージャーおよびそ
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">期間</th>
+<th align="left">用語</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -100,7 +100,7 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 <thead>
 <tr class="header">
 <th align="left">フラグ</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
@@ -135,7 +135,7 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 <thead>
 <tr class="header">
 <th align="left">フラグ</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +152,7 @@ FileFileIdBothDirectoryInformation Directoryinformation FileDirectoryInformation
 IRP \_ MJ DIRECTORY コントロールを指定し \_ \_ ます。
 
 <a href="" id="irpsp--minorfunction"></a>*IrpSp- &gt; minorfunction*  
-次のいずれかです。
+次のいずれか:
 
 -   IRP \_ の \_ \_ 変更通知 \_ ディレクトリ
 -   IRP の全 \_ \_ クエリの \_ ディレクトリ
@@ -177,7 +177,7 @@ IRP \_ MJ DIRECTORY コントロールを指定し \_ \_ ます。
 <thead>
 <tr class="header">
 <th align="left">値</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>

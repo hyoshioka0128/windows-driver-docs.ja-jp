@@ -1,5 +1,5 @@
 ---
-title: デバイスが低電力状態になる
+title: デバイスが低電力状態になる (UMDF 1)
 description: デバイスが低電力状態になる
 ms.assetid: c3697272-75ec-4de5-b123-3d1c68d2044e
 keywords:
@@ -7,14 +7,14 @@ keywords:
 - 低電力状態シナリオの WDK UMDF
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 393aed47b83ff5689122eb47125c8bab84b4746c
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: db1f6b0da890cb42d28b49a7b60c046151d331c6
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210884"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141259"
 ---
-# <a name="a-device-enters-a-low-power-state"></a>デバイスが低電力状態になる
+# <a name="a-device-enters-a-low-power-state-umdf-1"></a>デバイスが低電力状態になる (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]

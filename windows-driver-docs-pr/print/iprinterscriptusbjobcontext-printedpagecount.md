@@ -45,7 +45,7 @@ HRESULT PrintedPageCount(
 
 このメソッドは、 **HRESULT**値を返します。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
 **PrintedPageCount**は、読み取り/書き込みメソッドです。 IHV JavaScript **Writedata**関数は、印刷されたページ数を最新の状態に保ち、usbmon がジョブの正しい進行状況を設定できるようにする必要があります。
 

@@ -78,8 +78,6 @@
       href: creating-a-driver-package.md
     - name: デバイス メタデータ パッケージの作成
       href: creating-a-device-metadata-package.md
-    - name: デバイス ドライバーのための DMA 再マッピングを有効にする
-      href: enabling-dma-remapping-for-device-drivers.md
 - name: ドライバーへの署名
   items:
     - name: ドライバーへの署名
@@ -130,8 +128,6 @@
       href: read-the-driver-test-results-log.md
     - name: コマンド プロンプトから実行時にドライバーをテストする方法
       href: how-to-test-a-driver-at-runtime-from-a-command-prompt.md
-    - name: WDK を使った Device Fundamental テストのトラブルシューティング
-      href: troubleshooting-the-device-fundamental-tests.md
     - name: ドライバー テスト テンプレートを使ってドライバー テストを作成する方法
       href: how-to-write-a-driver-test-.md
     - name: テスト メタデータを追加する方法

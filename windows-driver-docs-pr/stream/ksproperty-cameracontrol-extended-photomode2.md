@@ -1,9 +1,9 @@
 ---
-title: KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE
-description: KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE プロパティは、構成するサブモードを使用します。
+title: KSK プロパティ \_ CAMERACONTROL \_ 拡張 \_ photomode (submode)
+description: KSK プロパティ \_ CAMERACONTROL \_ 拡張 photomode プロパティを使用すると、 \_ サブモードを構成できます。
 ms.assetid: B5BE7B11-66FD-476C-8141-C2210B21133C
 keywords:
-- KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE ストリーミング メディア デバイス
+- ストリーミングメディアデバイスの KSPROPERTY_CAMERACONTROL_EXTENDED_PHOTOMODE
 topic_type:
 - apiref
 api_name:
@@ -12,33 +12,33 @@ api_location:
 - Ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 09/11/2018
+ms.date: 07/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dc6d1c9c9a16088fb7579f9e7fd8c7ba85d2af60
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: b8a6d32664d43cd069c47ec0fe0350e6f6bf0cbd
+ms.sourcegitcommit: 8b6d83bcedea8c872ec8c7df874344421a39dd57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324805"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86128889"
 ---
-# <a name="kspropertycameracontrolextendedphotomode"></a>KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE
+# <a name="ksproperty_cameracontrol_extended_photomode-submode"></a>KSK プロパティ \_ CAMERACONTROL \_ 拡張 \_ photomode (submode)
 
-KSPROPERTY\_CAMERACONTROL\_拡張\_PHOTOMODE プロパティは、構成するサブモードを使用します。
+KSK プロパティ \_ CAMERACONTROL \_ 拡張 photomode プロパティを使用すると、 \_ サブモードを構成できます。
 
 ## <a name="usage-summary"></a>使用状況の概要
 
-次のサブモードの定義は次のとおりです。
+次のサブモードは、次のように定義されています。
 
 ```cpp
 #define KSCAMERA_EXTENDEDPROP_PHOTOMODE_SEQUENCE_SUB_NONE       0x00000000
 #define KSCAMERA_EXTENDEDPROP_PHOTOMODE_SEQUENCE_SUB_VARIABLE   0x00000001
 ```
 
-KSCAMERA\_EXTENDEDPROP\_PHOTOMODE\_シーケンス\_SUB\_NONE が標準のフォト シーケンスで使用します。
+KSCAMERA \_ extendedprop \_ photomode \_ sequence \_ SUB \_ NONE は、通常の写真シーケンスで使用されます。
 
-KSCAMERA\_EXTENDEDPROP\_PHOTOMODE\_シーケンス\_SUB\_変数を使用して、写真のシーケンスが変数であることを示します。 フレームごとの設定を指定する場合、KSCAMERA\_EXTENDEDPROP\_PHOTOMODE\_シーケンス\_SUB\_変数のフラグは、KSCAMERA のサブモード フィールドで指定\_EXTENDEDPROP\_項目の設定が指定されていない場合でも写真シーケンスの変数を示し、PHOTOMODE 構造 (項目の数はすべてのフレームの場合は 0)。 フレームの数が 1 と項目 count が 0、グローバル設定を使用して 1 つのフレーム変数の写真のシーケンスに変数の写真のシーケンスが軽減されます。
+KSCAMERA \_ extendedprop \_ photomode \_ シーケンス \_ サブ \_ 変数は、写真シーケンスが可変であることを示すために使用されます。 フレームごとの設定を指定すると、 \_ \_ \_ \_ \_ 項目設定が指定されていない場合でも、KSCAMERA extendedprop photomode 構造の submode フィールドに KSCAMERA extendedprop photomode シーケンスサブ変数フラグが指定されて、 \_ \_ 変数の写真シーケンスが示されます (項目数はすべてのフレームに対して0になります)。 フレーム数が1で、項目数が0の場合、変数 photo sequence はグローバル設定を使用して1つのフレーム変数の写真シーケンスに減らされます。
 
-次に、定義、KSCAMERA の\_EXTENDEDPROP\_ksmedia.h で定義されている PHOTOMODE 構造体
+次に、 \_ \_ ksmedia. h で定義されている KSCAMERA extendedprop photomode 構造の定義を示します。
 
 ```cpp
 typedef struct tagKSCAMERA_EXTENDEDPROP_PHOTOMODE {  
@@ -49,33 +49,22 @@ typedef struct tagKSCAMERA_EXTENDEDPROP_PHOTOMODE {
 } KSCAMERA_EXTENDEDPROP_PHOTOMODE, *PKSCAMERA_EXTENDEDPROP_PHOTOMODE;
 ```
 
-変数写真シーケンス モードでは、写真のシーケンスの次の固有の特性があります。
+可変フォトシーケンスモードには、写真シーケンスに対して次のような固有の特性があります。
 
--   写真の有限のシーケンスが常に使用します。
+- 常に有限の写真シーケンスを使用します。
 
--   フレームごとのフレーム数が 0 より大きい場合、設定は適用されます。
+- フレームごとの設定は、フレーム数が0より大きい場合に適用されます。
 
--   ドライバーは、KS を必要としない最後に、写真のシーケンスを自動的に停止\_VideoControlFlag\_ループ カウントを 0 より大きい場合に、StopPhotoSequenceCapture トリガーを指定します。
+- ドライバーは、 \_ \_ ループ数が0より大きい場合に KS videocontrolflag StopPhotoSequenceCapture トリガーを使用しなくても、最後に写真シーケンスを自動的に停止します。
 
--   前回のサンプルは、KSSTREAM と共に設定されなければなりません\_ヘッダー\_OPTIONSF\_ENDOFPHOTOSEQUENCE フラグ。
+- 最後のサンプルは、KSK ストリーム \_ ヘッダー \_ オプション sf ENDOFPHOTOSEQUENCE フラグでマークされている必要があり \_ ます。
 
--   キャプチャ パイプラインは、ドライバーから任意のサンプルを削除できません。
+- キャプチャパイプラインはドライバーからサンプルを削除しません。
 
--   パイプラインも、ドライバーでもない\\MFT0 任意の写真の縮小表示を生成します。
+- パイプラインとドライバー MFT0 のいずれも、写真のサムネイルは生成されません \\ 。
 
-このプロパティは、非同期キャンセルできません。
+このプロパティは非同期であり、キャンセルできません。
 
 ## <a name="requirements"></a>必要条件
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Header</p></td>
-<td>Ksmedia.h</td>
-</tr>
-</tbody>
-</table>
+**ヘッダー:** Ksmedia .h (Ksk を含む)

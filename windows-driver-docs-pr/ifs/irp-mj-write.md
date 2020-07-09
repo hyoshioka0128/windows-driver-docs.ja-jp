@@ -1,9 +1,9 @@
 ---
-title: IRP_MJ_WRITE
+title: IRP_MJ_WRITE (IFS)
 description: IRP_MJ_WRITE
 ms.assetid: 8f16a579-1598-4f70-8d88-dfe877daec31
 keywords:
-- IRP_MJ_WRITE インストール可能なファイルシステムドライバー
+- インストール可能なファイルシステムドライバーの IRP_MJ_WRITE
 topic_type:
 - apiref
 api_name:
@@ -12,20 +12,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fd68e4a7e392d0758702f759e3b8981278ce8c42
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: 9f6de72c2b7be99c0abc426d1e0811bf3ec3f88a
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72841144"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141224"
 ---
-# <a name="irp_mj_write"></a>IRP\_MJ\_WRITE
+# <a name="irp_mj_write-ifs"></a>IRP \_ MJ \_ WRITE (IFS)
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_書き込み要求は、i/o マネージャーまたはファイルシステムドライバーによって送信されます。 この要求は、たとえば、ユーザーモードアプリケーションが**WriteFile**などの Microsoft Win32 関数を呼び出したときや、カーネルモードコンポーネントが[**zwwritefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)を呼び出したときに送信できます。
+IRP \_ MJ \_ 書き込み要求は、i/o マネージャーまたはファイルシステムドライバーによって送信されます。 この要求は、たとえば、ユーザーモードアプリケーションが**WriteFile**などの Microsoft Win32 関数を呼び出したときや、カーネルモードコンポーネントが[**zwwritefile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)を呼び出したときに送信できます。
 
 ## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
@@ -34,21 +34,21 @@ IRP\_MJ\_書き込み要求は、i/o マネージャーまたはファイルシ�
 
 MDL 書き込み要求の場合、ファイルシステムはマイナー関数コードを確認して、どの操作が要求されているかを判断する必要があります。 有効なマイナー関数コードを次に示します。これらは、キャッシュされたファイル i/o に対してのみ使用できます。
 
-- IRP\_完了\_完了
+- IRP \_ \_ 完了完了
 
-- IRP\_\_完了\_MDL
+- IRP \_ \_ 完全完了 \_ MDL
 
-- IRP\_\_完了\_MDL\_DPC
+- IRP \_ の \_ 包括的な \_ MDL \_ DPC
 
-- IRP\_\_圧縮
+- IRP \_ \_ 圧縮済み
 
-- IRP\_\_DPC
+- IRP の全 \_ \_ DPC
 
-- IRP\_\_MDL
+- IRP の全 \_ \_ MDL
 
-- IRP\_\_MDL\_DPC
+- IRP の全 \_ \_ MDL \_ DPC
 
-- IRP\_通常\_
+- IRP \_ \_ 通常
 
 この IRP を処理する方法の詳細については、Windows Driver Kit (WDK) に含まれている FASTFAT サンプルを調べてください。
 
@@ -66,71 +66,71 @@ MDL 書き込み要求の場合、ファイルシステムはマイナー関数�
 
 ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp-&gt;AssociatedIrp*  
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp &gt;AssociatedIrp.SystemBuffer*  
 
-\_バッファー\_IO フラグが*DeviceObject-&gt;フラグ*で設定されている場合に、中間システムバッファーとして使用されるシステム指定のバッファーへのポインター。 それ以外の場合、このメンバーは**NULL**に設定されます。
+\_ \_ * &gt; DeviceObject*にバッファリング IO フラグが設定されている場合、中間システムバッファーとして使用されるシステム指定のバッファーへのポインター。 それ以外の場合、このメンバーは**NULL**に設定されます。
 
-<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*  
+<a href="" id="irp--iostatus"></a>*Irp- &gt; iostatus*  
 
-最後の完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造体へのポインター。 IRP\_MJ\_書き込み要求が失敗した場合、ファイルシステムの書き込みディスパッチルーチンはエラー NTSTATUS 値を返し、 *irp&gt;IoStatus*の値を返します。情報は定義されていないため、使用しないでください。
+最終的な完了ステータスと要求された操作に関する情報を受け取る[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造体へのポインター。 IRP \_ MJ 書き込み要求が失敗した場合 \_ 、ファイルシステムの書き込みディスパッチルーチンはエラー NTSTATUS 値を返し、 *irp- &gt; iostatus*の値を返します。情報は定義されていないため、使用しないでください。
 
-<a href="" id="irp--mdladdress"></a>*Irp-&gt;MdlAddress*  
+<a href="" id="irp--mdladdress"></a>*Irp- &gt; mdladdress*  
 
 データの書き込み先のページを記述するメモリ記述子リスト (MDL) のアドレス。
 
-<a href="" id="irpsp--fileobject"></a>*IrpSp-&gt;FileObject*
+<a href="" id="irpsp--fileobject"></a>*IrpSp- &gt; FileObject*
 
-*DeviceObject*に関連付けられているファイルオブジェクトへのポインター。 FO\_同期\_IO フラグが*Irpsp-&gt;の&gt;FileObject フラグ*で設定されている場合、ファイルオブジェクトは同期 i/o 用に開かれています。
+*DeviceObject*に関連付けられているファイルオブジェクトへのポインター。 FO \_ 同期 \_ IO フラグが*irpsp- &gt; &gt; Flags*で設定されている場合、ファイルオブジェクトは同期 i/o 用に開かれています。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_WRITE の処理中は、ファイル\_オブジェクト構造の関連性の**あるフィールドは**無効であり、使用できません。
+*Irpsp- &gt; FileObject*パラメーターには、関連する**FileObject**フィールドへのポインターが含まれています。これは、ファイルオブジェクト構造でも \_ あります。 ファイルオブジェクト構造の MJ **fileobject**フィールド \_ は、IRP WRITE の処理中は無効であり、 \_ 使用でき \_ ません。
 
-<a href="" id="irpsp--flags"></a>*IrpSp-&gt;フラグ*  
+<a href="" id="irpsp--flags"></a>*IrpSp- &gt; フラグ*  
 
-SL\_強制\_ダイレクト\_書き込みフラグが設定されている場合、カーネルモードドライバーは、直接書き込みをブロックしているために通常は書き込むことができないボリューム領域に書き込むことができます。 Windows Vista 以降のオペレーティングシステムでは、セキュリティ上の理由により、直接書き込みのブロックが実装されました。 このフラグは、ファイルシステムレイヤーとストレージスタックレイヤーの両方でチェックされます。 直接書き込みブロックの詳細については、「[ボリュームとディスクへの直接書き込み操作のブロック](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。 SL\_FORCE\_ダイレクト\_書き込みフラグは、windows Vista 以降のバージョンの Windows で使用できます。
+SL \_ FORCE \_ ダイレクト \_ 書き込みフラグが設定されている場合、カーネルモードドライバーは、直接書き込みをブロックしているために通常は書き込むことができないボリューム領域に書き込むことができます。 Windows Vista 以降のオペレーティングシステムでは、セキュリティ上の理由により、直接書き込みのブロックが実装されました。 このフラグは、ファイルシステムレイヤーとストレージスタックレイヤーの両方でチェックされます。 直接書き込みブロックの詳細については、「[ボリュームとディスクへの直接書き込み操作のブロック](https://docs.microsoft.com/windows-hardware/drivers/ddi/index)」を参照してください。 SL \_ FORCE \_ ダイレクト \_ 書き込みフラグは、windows Vista 以降のバージョンの windows で使用できます。
 
-<a href="" id="irpsp--majorfunction"></a>*IrpSp-&gt;MajorFunction*
+<a href="" id="irpsp--majorfunction"></a>*IrpSp- &gt; MajorFunction*
 
-IRP\_MJ\_書き込むことを指定します。
+IRP MJ WRITE を指定し \_ \_ ます。
 
-<a href="" id="irpsp--minorfunction"></a>*IrpSp-&gt;MinorFunction*  
+<a href="" id="irpsp--minorfunction"></a>*IrpSp- &gt; minorfunction*  
 
 要求される操作を指定し、次のいずれかを含みます。
 
--   IRP\_完了\_完了
+-   IRP \_ \_ 完了完了
 
--   IRP\_\_完了\_MDL
+-   IRP \_ \_ 完全完了 \_ MDL
 
--   IRP\_\_完了\_MDL\_DPC
+-   IRP \_ の \_ 包括的な \_ MDL \_ DPC
 
--   IRP\_\_圧縮
+-   IRP \_ \_ 圧縮済み
 
--   IRP\_\_DPC
+-   IRP の全 \_ \_ DPC
 
--   IRP\_\_MDL
+-   IRP の全 \_ \_ MDL
 
--   IRP\_\_MDL\_DPC
+-   IRP の全 \_ \_ MDL \_ DPC
 
--   IRP\_通常\_
+-   IRP \_ \_ 通常
 
-<a href="" id="irpsp--parameters-write-byteoffset"></a>*IrpSp-&gt;のパラメーターです。 ByteOffset を書き込みます。*  
+<a href="" id="irpsp--parameters-write-byteoffset"></a>*IrpSp- &gt; Parameters。書き込み。 ByteOffset*  
 
-書き込むデータのファイル内の開始バイトオフセットを指定する、大きな\_整数変数。
+\_書き込むデータのファイル内での開始バイトオフセットを指定する大きな整数変数。
 
-特定の状況では、このパラメーターに特別な値が含まれる場合があります。 次に、例を示します。
+特定の状況では、このパラメーターに特別な値が含まれる場合があります。 次に例を示します。
 
 -   次の条件に該当する場合は、ファイルの現在の終わりを明示的なファイルオフセット値の代わりに使用する必要があることを示します。
 
-    *Irpsp-&gt;parameters. ByteOffset. LowPart* = = ファイル\_\_ファイルと*Irpsp-\_パラメーター*の\_エンド&gt;に\_書き込みます。 Byteoffset. highpart = =-1
+    *Irpsp- &gt;Parameters.. ByteOffset. LowPart* = = \_ \_ \_ \_ ファイルの終わりへのファイルの書き込み \_ と*irpsp の書き込み。 &gt; highpart* = =-1
 
-<a href="" id="irpsp--parameters-write-key"></a>*IrpSp-&gt;のパラメーターです。キー*  
+<a href="" id="irpsp--parameters-write-key"></a>*IrpSp- &gt; Parameters. Write. Key*  
 
 ターゲットファイルのバイト範囲ロックに関連付けられたキー値。
 
-<a href="" id="irpsp--parameters-write-length"></a>*IrpSp-&gt;Parameters. Write. Length*  
+<a href="" id="irpsp--parameters-write-length"></a>*IrpSp- &gt; Parameters. Write. Length*  
 
-書き込まれるデータの長さ (バイト単位)。 書き込み操作が成功すると、書き込まれたバイト数が、 *Irp&gt;IoStatus*によって示される IO\_ステータス\_ブロック構造の**情報**メンバーに返されます。
+書き込まれるデータの長さ (バイト単位)。 書き込み操作が成功すると、書き込まれたバイト数が、 **Information** \_ \_ *Irp- &gt; iostatus*によって示された IO 状態ブロック構造体の情報メンバーに返されます。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
 ファイルシステムは、ファイルの最後に、基になるファイルストレージデバイスのセクターサイズの倍数まで、書き込み操作と読み取り操作を実行します。 読み取り前または書き込み前の操作を処理する場合、バッファーの割り当てとスワップを行うフィルターでは、割り当てられたバッファーのサイズを、関連付けられているデバイスのセクターサイズの倍数まで丸める必要があります。 そうでない場合は、基になるファイルシステムから転送されるデータの長さが、バッファーに割り当てられた長さを超えます。 バッファーのスワップの詳細については、「 [Swapbuffers のミニサンプル](https://go.microsoft.com/fwlink/p/?linkid=256055)」を参照してください。
@@ -142,19 +142,19 @@ IRP\_MJ\_書き込むことを指定します。
 
 [**Cc/Mdlwrite**](https://msdn.microsoft.com/library/windows/hardware/ff539181)
 
-[**FLT\_IO\_パラメーター\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
+[**FLT \_ IO \_ パラメーター \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/fltkernel/ns-fltkernel-_flt_io_parameter_block)
 
-[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
+[**IO \_ スタックの \_ 場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
+[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
 [**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_読み取り**](irp-mj-read.md)
+[**IRP \_ MJ の \_ 読み取り**](irp-mj-read.md)
 
-[**IRP\_MJ\_WRITE (WDK カーネルリファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)
+[**IRP \_ MJ \_ WRITE (WDK カーネルリファレンス)**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-write)
 
 [**ZwWriteFile**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-ntwritefile)
 

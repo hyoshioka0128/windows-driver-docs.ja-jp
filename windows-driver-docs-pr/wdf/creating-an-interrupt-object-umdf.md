@@ -1,17 +1,17 @@
 ---
-title: 割り込みオブジェクトの作成
+title: Interrupt オブジェクトの作成 (UMDF 1)
 description: 割り込みオブジェクトの作成
 ms.assetid: D281F2E8-3ADA-4F4E-B345-CE72FA3C69EC
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d21db1b9d8553012243c5af85d8825b5d0cea01
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: a4e738bdb4f1d9321c0e4847b833a23f54d51531
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75210224"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141308"
 ---
-# <a name="creating-an-interrupt-object"></a>割り込みオブジェクトの作成
+# <a name="creating-an-interrupt-object-umdf-1"></a>Interrupt オブジェクトの作成 (UMDF 1)
 
 
 [!include[UMDF 1 Deprecation](../includes/umdf-1-deprecation.md)]
@@ -20,7 +20,7 @@ ms.locfileid: "75210224"
 
 通常、ドライバーは[**Idriverentry:: OnDeviceAdd**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-idriverentry-ondeviceadd)にフレームワークの割り込みオブジェクトを作成します。 ただし、 [**IPnpCallbackHardware2:: On ハードウェア**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-ipnpcallbackhardware2-onpreparehardware)に割り込みオブジェクトを作成することもできます。
 
-フレームワークの interrupt オブジェクトを作成するには、ドライバーが[**Wudf\_interrupt\_CONFIG**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を初期化し、それを[**IWDFDevice3:: createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)メソッドに渡す必要があります。 このメソッドは、ドライバーによって提供される次のイベントコールバック関数を登録します。
+フレームワークの割り込みオブジェクトを作成するには、ドライバーが[**Wudf の \_ 割り込み \_ 構成**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/ns-wudfinterrupt-_wudf_interrupt_config)構造体を初期化し、それを[**IWDFDevice3:: createinterrupt**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfddi/nf-wudfddi-iwdfdevice3-createinterrupt)メソッドに渡す必要があります。 このメソッドは、ドライバーによって提供される次のイベントコールバック関数を登録します。
 
 <a href="" id="oninterruptenable"></a>[*OnInterruptEnable*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wudfinterrupt/nc-wudfinterrupt-wudf_interrupt_enable)  
 ハードウェアの割り込みを有効にします。

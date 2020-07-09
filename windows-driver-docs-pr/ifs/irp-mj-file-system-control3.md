@@ -1,28 +1,28 @@
 ---
-title: IRP_MJ_FILE_SYSTEM_CONTROL
+title: IRP_MJ_FILE_SYSTEM_CONTROL (IFS)
 description: IRP_MJ_FILE_SYSTEM_CONTROL
 ms.assetid: 38b88379-c007-4e88-a6d9-5aacd6bdefd3
 keywords:
 - IRP_MJ_FILE_SYSTEM_CONTROL
-- セキュリティ WDK ファイル システム、セキュリティ チェックを追加します。
-- セキュリティは、WDK のファイル システム、IRP_MJ_FILE_SYSTEM_CONTROL を確認します。
-- ファイル システムのコントロールの WDK セキュリティ
-- ファイル情報処理 WDK ファイル システムを設定します。
+- セキュリティ WDK ファイルシステム、セキュリティチェックの追加
+- セキュリティチェック WDK ファイルシステム、IRP_MJ_FILE_SYSTEM_CONTROL
+- ファイルシステムが WDK セキュリティを制御する
+- WDK ファイルシステムを処理するファイル情報の設定
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 67c1808a9aa5c250814b7aea834acd0c48df8e13
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: c24f95c9e2c813dc3aff1e439ecbbdeee6c2ba9c
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63324368"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141226"
 ---
-# <a name="irpmjfilesystemcontrol"></a>IRP_MJ_FILE_SYSTEM_CONTROL
+# <a name="irp_mj_file_system_control-ifs"></a>IRP_MJ_FILE_SYSTEM_CONTROL (IFS)
 
 
-ファイル システムのコントロールには、基本的には任意の特殊な操作を実行するファイル システムができます。 ファイル システム、および Windows 用に開発されたすべてのサード パーティ製のファイル システムの特殊なコントロールの数がある既存の Windows を積極的にすべてのパラメーターを確認する必要があります。 さらに、FSCTL 操作多くの場合、制限のセキュリティ権限。 これらは、WDK を含む FASTFAT サンプル コードで確認できます (を参照してください、 **FatInvalidateVolumes** fsctrl.c、関数など)。 これは、権限チェックの例です。 FASTFAT ファイル システムのポリシーは、特定の権限が、システムで有効にすることを要求するこの場合は。
+ファイルシステムコントロールを使用すると、ファイルシステムは基本的に特化された操作を実行できます。 既存の Windows ファイルシステムには、いくつかの特殊な制御があります。また、Windows 用に開発されたサードパーティのファイルシステムでも、すべてのパラメーターを積極的に確認することが不可欠です。 また、FSCTL 操作には、多くの場合、制限付きのセキュリティ権限があります。 これらは、WDK に含まれる FASTFAT サンプルコードで確認できます (例については、fsctrl の**FatInvalidateVolumes**関数を参照してください)。 これは、特権チェックの一例です。 この場合、FASTFAT ファイルシステムのポリシーは、指定された特権がシステムで有効になっていることを要求します。
 
-I/O マネージャーが、FSCTL の特定の操作で FILE_READ_DATA および FILE_WRITE_DATA アクセス許可をファイル システムが CTL_CODE マクロを使用してファイル システム操作の定義でこれらのビットを設定する場合に適用されます。 必要なその他のすべての権限をチェックする必要があります、ファイル システム (たとえば FILE_READ_ATTRIBUTES 権限) でこれがファイル システムのポリシーの場合。
+ファイルシステムが CTL_CODE マクロを使用してファイルシステム操作の定義でこれらのビットを設定している場合、i/o マネージャーは、特定の FSCTL 操作に対して FILE_READ_DATA および FILE_WRITE_DATA のアクセス許可を適用します。 ファイルシステムのポリシーの場合は、ファイルシステムによって必要なその他すべてのアクセス許可 (FILE_READ_ATTRIBUTES アクセス許可など) を確認する必要があります。
 
  
 

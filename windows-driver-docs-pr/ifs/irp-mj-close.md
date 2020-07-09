@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_CLOSE
+title: IRP_MJ_CLOSE (IFS)
 description: IRP\_MJ\_CLOSE
 ms.assetid: 62bb28de-7f89-4009-9ea9-0aa3d6bca0ed
 keywords:
@@ -12,20 +12,20 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 20bf95ad79076b05173438981698a95951fe8045
-ms.sourcegitcommit: c9fc8f401d13ea662709ad1f0cb41c810e7cb4c9
+ms.openlocfilehash: d9612df55783090503f4c31c2af94ef79798dfe3
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76977687"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141325"
 ---
-# <a name="irp_mj_close"></a>IRP\_MJ\_CLOSE
+# <a name="irp_mj_close-ifs"></a>IRP \_ MJ \_ CLOSE (IFS)
 
 
 ## <a name="when-sent"></a>送信時
 
 
-IRP\_MJ\_CLOSE 要求の受信は、ファイルオブジェクトの参照カウントが0に達したことを示します。通常、ファイルシステムドライバーまたはその他のカーネルモードコンポーネントがファイルオブジェクトで[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出したためです。 通常、この要求はクリーンアップ要求の後に続きます。 ただし、これは必ずしも、終了要求がクリーンアップ要求の直後に受信されることを意味するわけではありません。
+IRP MJ CLOSE 要求の受信は、ファイル \_ \_ オブジェクトの参照カウントが0に達したことを示します。通常、ファイルシステムドライバーまたはその他のカーネルモードコンポーネントがファイルオブジェクトで[**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)を呼び出したことが原因です。 通常、この要求はクリーンアップ要求の後に続きます。 ただし、これは必ずしも、終了要求がクリーンアップ要求の直後に受信されることを意味するわけではありません。
 
 ## <a name="operation-file-system-drivers"></a>操作: ファイルシステムドライバー
 
@@ -41,9 +41,9 @@ IRP\_MJ\_CLOSE 要求の受信は、ファイルオブジェクトの参照カ�
 
 それ以外の場合、フィルタードライバーは、フィルタードライバーによって保持されているファイルごとのオブジェクトおよびファイルごとのオブジェクトのコンテキスト情報を削除するなど、必要な処理を実行した後、スタック上の次の下位のドライバーに IRP を渡す必要があります。
 
-ファイルシステムフィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)によって[**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)要求がボリュームのファイルシステムドライバースタックに送信されることに注意してください。 ファイルシステムは、 [**IRP\_MJ\_create**](irp-mj-create.md)以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 フィルター ドライバーを受信することはそのため**IRP\_MJ\_クリーンアップ**と[**IRP\_MJ\_閉じる**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)未知のファイル オブジェクトを要求します。
+ファイルシステムフィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)によって[**IRP \_ MJ \_ CLEANUP**](irp-mj-cleanup.md)要求がボリュームのファイルシステムドライバースタックに送信されることに注意してください。 ファイルシステムは、 [**IRP \_ MJ \_ create**](irp-mj-create.md)以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 したがって、フィルタードライバーは、以前に表示されていないファイルオブジェクトに対して、 **irp \_ MJ \_ CLEANUP**要求と[**irp \_ MJ \_ CLOSE**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)要求を受け取ることを想定しています。
 
-フィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)とは異なり、 [**iocreatestreamfileMJ tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)では、 [**IRP\_\_クリーンアップ**](irp-mj-cleanup.md)要求がファイルシステムのドライバースタックに送信されないことにも注意してください。 このため、およびでは、ファイルシステムは、 [**IRP\_MJ\_create**](irp-mj-create.md)以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 したがって、フィルタードライバーは、以前に表示されていないファイルオブジェクトに対して、 **IRP\_MJ\_閉じる**要求を受け取ることを期待します。
+フィルタードライバーの作成者は、 [**Iocreatestreamfileobject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)とは異なり、 [**iocreatestreamfileMJ tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)では、 [**IRP \_ の \_ クリーンアップ**](irp-mj-cleanup.md)要求がファイルシステムのドライバースタックに送信されないことにも注意してください。 このため、ファイルシステムでは、 [**IRP \_ MJ \_ create**](irp-mj-create.md)以外の操作の副作用としてストリームファイルオブジェクトを作成することが多いため、フィルタードライバーがストリームファイルオブジェクトの作成を確実に検出することは困難です。 そのため、フィルタードライバーは、以前に表示されていないファイルオブジェクトに対して**IRP \_ MJ \_ CLOSE**要求を受け取ることを想定しています。
 
 ## <a name="parameters"></a>パラメーター
 
@@ -53,41 +53,41 @@ IRP\_MJ\_CLOSE 要求の受信は、ファイルオブジェクトの参照カ�
 <a href="" id="deviceobject"></a>*DeviceObject*  
 ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--flags"></a>*Irp&gt;フラグ*  
+<a href="" id="irp--flags"></a>*Irp- &gt; フラグ*  
 この要求には、次のフラグが設定されています。
 
-IRP\_\_操作を閉じる
+IRP \_ CLOSE \_ 操作
 
-IRP\_同期\_API
+IRP \_ 同期 \_ API
 
-<a href="" id="irp--iostatus"></a>*Irp&gt;IoStatus*最終的な完了状態と要求された操作に関する情報を受け取る、 [**IO\_ステータス\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造へのポインター。
+<a href="" id="irp--iostatus"></a>*Irp- &gt;* 最後の完了状態と要求された操作に関する情報を受け取る[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)構造への iostatus ポインター。
 
-<a href="" id="irpsp--fileobject"></a>*Irpsp-&gt;FileObject* *DeviceObject*に関連付けられているファイルオブジェクトへのポインター。
+<a href="" id="irpsp--fileobject"></a>*Irpsp- &gt;* *DeviceObject*に関連付けられているファイルオブジェクトへの FileObject ポインター。
 
-*Irpsp-&gt;FileObject*パラメーターには、関連する**fileobject**フィールドへのポインターが含まれています。これは、ファイル\_オブジェクト構造体でもあります。 IRP\_MJ\_CLOSE の処理中は、ファイル\_オブジェクト構造の関連性のあるフィールドが無効である**ため、使用**できません。
+*Irpsp- &gt; FileObject*パラメーターには、関連する**FileObject**フィールドへのポインターが含まれています。これは、ファイルオブジェクト構造でも \_ あります。 ファイルオブジェクト構造の関連性のある**fileobject**フィールド \_ は、IRP MJ CLOSE の処理中は無効であり、 \_ 使用でき \_ ません。
 
-<a href="" id="irpsp--majorfunction"></a>*Irpsp-&gt;MajorFunction*IRP\_MJ\_閉じることを指定します。
+<a href="" id="irpsp--majorfunction"></a>*Irpsp- &gt;MajorFunction*は、IRP MJ CLOSE を指定し \_ \_ ます。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 
-[**IO\_スタック\_の場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
+[**IO \_ スタックの \_ 場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_stack_location)
 
-[**IO\_状態\_ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
+[**IO \_ 状態 \_ ブロック**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_io_status_block)
 
 [**IoCreateStreamFileObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobject)
 
 [**Iocreatestreamfileite Tlite**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntifs/nf-ntifs-iocreatestreamfileobjectlite)
 
-[**IoGetCurrentIrpStackLocation**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
+[**Iogetlocation Entiの場所**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-iogetcurrentirpstacklocation)
 
 [**IRP**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_irp)
 
-[**IRP\_MJ\_CLOSE (WDK カーネルリファレンス)** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)
+[**IRP \_ MJ \_ CLOSE (WDK カーネルリファレンス)**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mj-close)
 
-[**IRP\_MJ\_クリーンアップ**](irp-mj-cleanup.md)
+[**IRP \_ MJ の \_ クリーンアップ**](irp-mj-cleanup.md)
 
-[**IRP\_MJ\_作成**](irp-mj-create.md)
+[**IRP \_ MJ の \_ 作成**](irp-mj-create.md)
 
 [**ObDereferenceObject**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-obdereferenceobject)
 

@@ -1,5 +1,5 @@
 ---
-title: IRP_MJ_CREATE
+title: IRP_MJ_CREATE (IFS)
 description: IRP\_MJ\_CREATE
 ms.assetid: fdcc81f0-e571-4194-88cd-d0956ca1577e
 keywords:
@@ -12,14 +12,14 @@ api_type:
 - NA
 ms.date: 11/28/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 47e88c2b95a573b693ad73fb7a562870a9c382c4
-ms.sourcegitcommit: 2f37e8de9759164804a3b1c7f5c9e497a607539b
+ms.openlocfilehash: b8668bb45c502e6bcedc6d28c7b420f3a156f4e2
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83852314"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141333"
 ---
-# <a name="irp_mj_create"></a>IRP\_MJ\_CREATE
+# <a name="irp_mj_create-ifs"></a>IRP \_ MJ \_ CREATE (IFS)
 
 
 ## <a name="when-sent"></a>送信時
@@ -58,7 +58,7 @@ I/o マネージャーは、 \_ \_ 新しいファイルまたはディレクト
 <a href="" id="deviceobject"></a>*DeviceObject*  
 ターゲットデバイスオブジェクトへのポインター。
 
-<a href="" id="irp--associatedirp-systembuffer"></a>*Irp- &gt; AssociatedIrp*  
+<a href="" id="irp--associatedirp-systembuffer"></a>*Irp &gt;AssociatedIrp.SystemBuffer*  
 ファイルオブジェクトが拡張属性を持つファイルを表す場合は、ファイルの[** \_ 完全な \_ EA \_ 情報**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/ns-wdm-_file_full_ea_information)を指すポインターです。 それ以外の場合、このメンバーは**NULL**に設定されます。
 
 <a href="" id="irp--flags"></a>*Irp- &gt; フラグ*  
@@ -104,7 +104,7 @@ IRP \_ 同期 \_ API
 <thead>
 <tr class="header">
 <th align="left">フラグ</th>
-<th align="left">説明</th>
+<th align="left">意味</th>
 </tr>
 </thead>
 <tbody>
@@ -131,7 +131,7 @@ IRP \_ 同期 \_ API
 
 <a href="" id="irpsp--majorfunction"></a>*Irpsp- &gt;MajorFunction*は、IRP MJ CREATE を指定し \_ \_ ます。
 
-<a href="" id="irpsp--parameters-create-ealength"></a>*Irpsp- &gt;EaLength*で、バッファーのサイズ (バイト単位) を* &gt; AssociatedIrp*に変更します。 * &gt; AssociatedIrp*の値が**NULL**の場合、このメンバーは0である必要があります。
+<a href="" id="irpsp--parameters-create-ealength"></a>*Irpsp- &gt;EaLength* * &gt; tembufferAssociatedIrp.Sys*で、バッファーのサイズ (バイト単位) を作成します。 *Irp &gt;AssociatedIrp.Systembuffer*の値が**NULL**の場合、このメンバーは0である必要があります。
 
 <a href="" id="irpsp--parameters-create-fileattributes"></a>*Irpsp- &gt;Parameters.* ファイルを作成または開くときに適用される属性フラグの fileattributes ビットマスク。 明示的に指定された属性は、ファイルが作成、置き換えられた場合、または上書きされた場合にのみ適用されます。 既定では、この値はファイル属性 NORMAL です。これは、 \_ \_ 他のフラグまたは互換性のあるフラグの論理和の組み合わせによってオーバーライドできます。 このメンバーは、 [**Iocreatefilを**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddk/nf-ntddk-iocreatefilespecifydeviceobjecthint)指定する*fileattributes*パラメーターに対応します。
 
