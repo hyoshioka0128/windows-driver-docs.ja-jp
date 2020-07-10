@@ -4,12 +4,12 @@ description: Microsoft ハードウェア API の以下のメソッドは、デ�
 ms.topic: article
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d591e217b677454753aac7efef13c06cf11726
-ms.sourcegitcommit: 2efaa8f233b1d19e18faa3387a9c11ef69fe790f
+ms.openlocfilehash: 9c249cbfdbcda158190c10bea937317e24dd156c
+ms.sourcegitcommit: 40d7d538756767d26bbda636589f614f85a6fab3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82777895"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86020025"
 ---
 # <a name="get-product-data"></a>製品データの取得
 
@@ -64,7 +64,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
   "isFlightSign": false,
   "marketingNames": [
     "marketing name 1",
-    " marketing name 2"
+    "marketing name 2"
 ],
   "productName": "product name",
   "selectedProductTypes": {
@@ -77,7 +77,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
   ],
   "additionalAttributes": {},
   "testHarness": "hlk",
-  " announcementDate ": "2016-10-22T00:00:00Z",
+  "announcementDate": "2016-10-22T00:00:00Z",
 }
 ```
 
@@ -111,9 +111,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
   "id": 1152921504621442000,
   "productId": 13635057453741328,
    "workflowStatus": {
-      "currentStep": " finalizeIngestion",
-      " state": " completed",
-      " messages": []
+      "currentStep": "finalizeIngestion",
+      "state": "completed",
+      "messages": []
     },
   "links": [
     {
@@ -152,9 +152,9 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 ```json
 {
-      "currentStep": " finalizeIngestion",
-      " state": " completed",
-      " messages": []
+      "currentStep": "finalizeIngestion",
+      "state": "completed",
+      "messages": []
     }
 ```
 

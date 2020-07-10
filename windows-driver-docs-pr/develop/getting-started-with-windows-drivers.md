@@ -4,12 +4,12 @@ title: Windows ドライバーの概要
 description: Windows ドライバーでは、Windows 10X と Windows デスクトップ両方で実行されるドライバーを 1 つ作成できます。
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2039ae8d30b9de3f55aa8e52f80441ba6e1c854
-ms.sourcegitcommit: 9fe9c8309690fd8fe7af50865d3ac216887ab922
+ms.openlocfilehash: da9e24d9f24bccd7742cfcfec628b9284f9fda5f
+ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85071688"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141275"
 ---
 # <a name="getting-started-with-windows-drivers"></a>Windows ドライバーの概要
 
@@ -38,7 +38,7 @@ Windows ドライバーが認定オプションになる場合、次の要件が
 
 次の表は、上記の違いをまとめたものです。
 
-|                                                                     |Windows ドライバー|Windows デスクトップ ドライバー |
+|     機能                                                         |Windows ドライバー|Windows デスクトップ ドライバー |
 | --------------------------------------------------------------------|:-------------:|:----------------------:|
 | Windows 10 デスクトップで実行                                           | はい           | はい                    |
 | Windows 10X で実行                                                  | はい           | いいえ                     |
