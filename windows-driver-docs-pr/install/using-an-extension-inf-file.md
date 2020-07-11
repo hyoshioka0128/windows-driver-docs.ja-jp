@@ -4,12 +4,12 @@ description: Windows 10 以降では、拡張機能 INF と呼ばれる追加の
 ms.assetid: 124C4E58-7F06-46F5-B530-29A03FA75C0A
 ms.date: 06/05/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 04bc03a97e0efb611e58ddbd20e1b756b0d43c29
-ms.sourcegitcommit: ed28d54b986933ce1ab810df361269675e216e33
+ms.openlocfilehash: d354ee7facb4b3d09addfc1812a8f54afc4b087e
+ms.sourcegitcommit: 5148f4ff682a2d9cdf5eafdb76e13400331f5660
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765948"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86272975"
 ---
 # <a name="using-an-extension-inf-file"></a>拡張 INF ファイルの使用
 
@@ -38,6 +38,8 @@ Windows 10 より前の Windows では、特定のデバイスにインストー
 ## <a name="how-extension-inf-and-base-inf-work-together"></a>拡張機能 INF とベース INF の連携のしくみ
 
 拡張機能 INF の設定は、基本 INF の設定後に適用されます。 その結果、拡張機能の INF とベース INF で同じ設定が指定されている場合、拡張機能 INF のバージョンが適用されます。 同様に、ベース INF が変更された場合、拡張機能の INF はそのままで、新しい基本 INF に適用されます。
+
+上書きできるエントリと、適用可能なパラメーター値の範囲および制約を記述するコメントをベース INF に含めると便利です。
 
 ## <a name="specifying-extensionid"></a>ExtensionId の指定
 
@@ -97,6 +99,8 @@ INF を拡張機能の INF として定義するために必要なエントリ�
     または、拡張機能の INF によって、ベース INF と同じハードウェア ID が一覧表示される場合があります。たとえば、デバイスの対象が既に狭い場合や、ベース INF に特定のハードウェア ID が既に含まれている場合などです。
     
     場合によっては、拡張機能の INF では、より多くのデバイスで設定をカスタマイズするために、互換性のある ID のような特定のデバイス ID が提供されることがあります。
+
+    [Chid ターゲット](https://docs.microsoft.com/windows-hardware/drivers/bringup/target-a-system-using-chid)は、4つの部分で構成されるハードウェア ID が使用できない場合、または制限が不十分な場合に使用できます。
 
 5.  でサービスを定義しないで `SPSVCINST_ASSOCSERVICE` ください。  ただし、拡張機能の INF では、デバイスのフィルタードライバーなど、他のサービスを定義できます。  サービスの指定の詳細については、「 [**INF AddService ディレクティブ**](inf-addservice-directive.md)」を参照してください。
 
@@ -233,6 +237,23 @@ REG_EXPAND_SZ = 0x00020000
 FLG_ADDREG_KEYONLY = 0x00000010
 ```
 拡張機能 INF を使用してフィルタードライバーをインストールする方法の詳細については、「[デバイスフィルタードライバーの順序](https://docs.microsoft.com/windows-hardware/drivers/develop/device-filter-driver-ordering)」を参照してください。
+
+拡張機能を向上させるには、IHV が拡張機能の[INF テンプレート](using-an-extension-inf-file-template.md)にオプション機能を配置することをお勧めします。
+
+## <a name="backward-compatibility"></a>下位互換性
+
+ベース INF に対する変更は、既存の拡張機能の Inf の旧バージョンとの互換性が損なわれないように十分にテストする必要があります。
+
+基本 INF を管理する場合は、次のベストプラクティスに従ってください。
+
+* コードコメントとデザインドキュメントの両方で、ドキュメントパラメーター値の範囲と制約の両方を指定します。 今後の変更は、指定された範囲に従っている必要があります。
+* 新しい範囲をサポートするには、省略可能なパラメーターを追加します (既定値はありません)。
+
+IHV がすべての機能をベース INF に配置する場合、既存の拡張機能の Inf が引き続き動作するようにする方法の1つを次に示します。
+
+1. IHV には、既定でオプション機能を無効にするためのレジストリフラグを設定するコンパニオンアプリが用意されています。
+2. 基本ドライバーは、オプションの機能を使用する前に、フラグが有効になっているかどうかを確認します。
+3. OEM が提供する拡張機能の INF では、フラグを [有効] に設定することによってオプトインできます。
 
 ##  <a name="submitting-an-extension-inf-for-certification"></a>認定のために拡張機能の INF を送信する
 

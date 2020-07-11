@@ -3,12 +3,12 @@ Description: USB ファンクション コントローラー用 Windows ドラ�
 title: USB ファンクション コントローラー用 Windows ドライバー開発の概要
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fae4e4aacb28a1cb4ec4b665c0e4cd7c2d3b7e5a
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: f8fd03bf824f4f910a3bcf36d266fef6f796006b
+ms.sourcegitcommit: 5040ef6a71dffaf2e2749d6533e27b76e5e42f33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72842393"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86269613"
 ---
 # <a name="overview-of-developing-windows-drivers-for-usb-function-controllers"></a>USB ファンクション コントローラー用 Windows ドライバー開発の概要
 
@@ -23,27 +23,27 @@ ms.locfileid: "72842393"
 <td><p><strong>目的</strong></p>
 <p>このセクションでは、Windows オペレーティングシステムでのサポートについて説明します。これは、Microsoft が提供する USB 機能コントローラー拡張機能 (UFX) と通信する Universal Serial Bus (USB) 関数コントローラードライバーを開発するためのものです。</p>
 <p><strong>開発ツールと Microsoft 提供のバイナリ</strong></p>
-<p>Windows Driver Kit (WDK) には、ドライバーの開発に必要なリソース (ヘッダー、ライブラリ、ツール、サンプルなど) が含まれています。</p>
+<p>Windows Driver Kit (WDK) には、ヘッダー、ライブラリ、ツール、サンプルなど、ドライバーの開発に必要なリソースが含まれています。</p>
 <p><a href="https://go.microsoft.com/fwlink/p/?linkid=617155" data-raw-source="[Download kits and tools for Windows](https://go.microsoft.com/fwlink/p/?linkid=617155)">Windows 用のキットとツールのダウンロード</a></p>
-<p>関数コントローラードライバーを作成するには、次のものが必要です。</p>
+<p>Windows には、Synopsys IP のコントローラーハードウェアの UfxSynopsys.sys などの受信トレイ USB 関数コントローラードライバーが用意されています。 一般的に、プラットフォームを導入するときにハードウェアパートナーまたは Oem によって実行されるプラットフォームレベルの変更と検証が必要です。 このプロセスには、ACPI との統合が含まれており、USB アタッチ/デタッチイベントのシステムドライバーに通知したり、Microsoft が提供する HLK テストを使用して追加の検証を実行したりすることができます。 独自のコントローラードライバーを作成するには、次のものが必要です。</p>
 <ul>
-<li>UFX (Ufx01000) が FDO として読み込まれました。 このドライバーは Windows に含まれています。</li>
+<li>UFX (Ufx01000.sys) が FDO として読み込まれました。 このドライバーは Windows に含まれています。</li>
 <li>スタブライブラリ (Ufx01000) にリンクします。 スタブライブラリは、WDK にあります。 ライブラリは、関数コントローラードライバーによって行われた呼び出しを変換し、UFX に渡します。</li>
 <li>WDK に用意されている Ufxclient. h を含めます。</li>
 </ul>
 <p>ユーザーモードから要求を送信するには、次のものが必要です。</p>
 <ul>
-<li>USB 関数クラスドライバーとして読み込まれた GenericUSBFn。 このドライバーは Windows に含まれています。</li>
+<li>GenericUSBFn.sys、USB 関数クラスドライバーとして読み込まれます。 このドライバーは Windows に含まれています。</li>
 <li>WDK に用意されている Genericusbfをインクルードします。</li>
 </ul>
 <p>USB クラスドライバーから要求を送信するには、次のものが必要です。</p>
 <ul>
-<li>UFX (Ufx01000) が FDO として読み込まれました。 このドライバーは Windows に含まれています。</li>
+<li>UFX (Ufx01000.sys) が FDO として読み込まれました。 このドライバーは Windows に含まれています。</li>
 <li>WDK に用意されている Usbfをインクルードします。</li>
 </ul>
 独自の充電器による課金を処理するフィルタードライバーを作成するには、次のものが必要です。
 <ul>
-<li>UfxChipidea または Ufxsynopsys がクライアントドライバーとして UFX に読み込まれました。</li>
+<li>UfxChipidea.sys または Ufxsynopsys.sys、クライアントドライバーとして UFX に読み込まれています。</li>
 <li>WDK に用意されている Ufxproprietarycharger を含めます。</li>
 </ul></td>
 <td><p><strong>UFX のアーキテクチャ</strong></p>
