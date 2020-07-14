@@ -82,6 +82,8 @@
           href: using-a-universal-inf-file.md
         - name: 拡張 INF ファイルの使用
           href: using-an-extension-inf-file.md
+        - name: 拡張 INF ファイル テンプレートの使用
+          href: using-an-extension-inf-file-template.md
         - name: Windows Update を使用したデバイス ファームウェアの更新
           href: updating-device-firmware-using-windows-update.md
         - name: INF セクションの概要
