@@ -4,14 +4,14 @@ description: この測定では、グラフィックス ドライバーのバイ
 ms.topic: article
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2804162a8b291f4faa8ba79ee1baf8b69758c1a8
-ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
+ms.openlocfilehash: ac93e773e31728a6dcf1c273b696c33b4826d999
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353716"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86036012"
 ---
-# <a name="myriad-of-machines-with-discrete-gpu-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン
+# <a name="myriad-of-machines-with-discrete-gpu-that-had-a-blue-screen-caused-by-a-crash-in-the-graphics-driver-binary-ecosystem"></a>グラフィックス ドライバー バイナリのクラッシュによってブルー スクリーンが表示されたディスクリート GPU の無数のマシン (エコシステム)
 
 ## <a name="description"></a>説明
 

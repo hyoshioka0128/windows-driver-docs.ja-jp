@@ -4,14 +4,14 @@ description: この測定値は、年単位の総実行時間について、グ�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00c88187a857cfc107189f317249ba5dd5f23612
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e61039638064e6e92b541e46753105d087dfa5b7
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017066"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86036008"
 ---
-# <a name="number-of-user-mode-reliability-for-crashes-in-creative-applications-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>クリエイティブ アプリケーションにおけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい
+# <a name="number-of-user-mode-reliability-for-crashes-in-creative-applications-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal-expanded"></a>クリエイティブ アプリケーションにおけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい (展開)
 
 ## <a name="description"></a>説明
 

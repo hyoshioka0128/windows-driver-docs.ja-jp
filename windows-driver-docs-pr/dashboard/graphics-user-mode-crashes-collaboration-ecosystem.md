@@ -4,14 +4,14 @@ description: この測定値は、年換算の総実行時間について、グ�
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 318abc2f57cda797b647a9dd6e4b61c90eead082
-ms.sourcegitcommit: 0e83928aac8f171980e94b67f9291468e6e68093
+ms.openlocfilehash: c219625a0ba3882cfeefb8c90a4d89bf2857130a
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84336389"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86036023"
 ---
-# <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal"></a>使用量によって正規化されたコミュニケーションおよびコラボレーション アプリケーションでのユーザー モードのクラッシュ数 <= ベースライン目標
+# <a name="number-of-user-mode-crashes-in-communication-and-collaboration-applications-normalized-by-usage--baseline-goal-ecosystem"></a>使用量によって正規化されたコミュニケーションおよびコラボレーション アプリケーションでのユーザー モードのクラッシュ数 <= ベースライン目標 (エコシステム)
 
 ## <a name="description"></a>説明
 

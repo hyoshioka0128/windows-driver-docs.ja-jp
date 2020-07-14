@@ -1,17 +1,17 @@
 ---
 title: インストール後 2 日以内にロールバックまたは再インストールされた多数のドライバー
-description: この測定値は、インストール後 2 日以内にロールバックまたは再インストールされた個別のマシンのミリアドとして、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
+description: この測定値は、インストール後 2 日以内にロールバックまたは再インストールされた無数の個別のマシンとして、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 12bffc6d4a7d693f4c06688628a6a62e290158fa
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: 4e6c0cf929fcb8ced4e7bcbaef10c51df478dd3e
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84110244"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035998"
 ---
-# <a name="myriad-of-drivers-that-were-rolled-back-or-re-installed-within-2-days-of-installation"></a>インストール後 2 日以内にロールバックまたは再インストールされた多数のドライバー
+# <a name="myriad-of-drivers-that-were-rolled-back-or-re-installed-within-2-days-of-installation-ecosystem"></a>インストール後 2 日以内にロールバックまたは再インストールされた無数のドライバー (エコシステム)
 
 ## <a name="description"></a>説明
 
@@ -32,7 +32,7 @@ ms.locfileid: "84110244"
 
 ## <a name="calculation"></a>計算
 
-この測定値は、ドライバーのロールバック/このドライバーをインストールした 10,000 デバイスあたりの別のドライバーインストールの比率として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
+この測定値は、ドライバーのロールバック/このドライバーをインストールした 10,000 デバイスあたりの別のドライバーインストールの比率として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです
 
 ロールバックまたは別のドライバーがインストールされたデバイスの合計 = ドライバーのインストールから 2 日以内にロールバックまたは別のドライバーがインストールされたデバイスの数
 

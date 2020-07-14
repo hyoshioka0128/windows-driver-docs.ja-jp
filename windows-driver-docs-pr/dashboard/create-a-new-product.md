@@ -4,12 +4,12 @@ description: Microsoft ハードウェア API の以下のメソッドを使用�
 ms.date: 04/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bea184cab181b3a92713957d7a643a6164df11
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 31e32fa44d981da56e848bf9fc3ba9e67780fc62
+ms.sourcegitcommit: f68ab92a8f1c13502e070297cf5410f6bbe4a9dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072183"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86213175"
 ---
 # <a name="create-a-new-product"></a>新しい製品の作成
 
@@ -32,7 +32,7 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| Authorization | string | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** \<token\> という形式の Azure AD アクセス トークン。 |
 | accept | string | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 
@@ -55,7 +55,6 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
   "isTestSign": false,
   "isFlightSign": false,  
   "marketingNames": [],
-  "productName": "VST_apdevtest1",
   "selectedProductTypes": {
     "windows_v100_RS3": "Unclassified"
   },

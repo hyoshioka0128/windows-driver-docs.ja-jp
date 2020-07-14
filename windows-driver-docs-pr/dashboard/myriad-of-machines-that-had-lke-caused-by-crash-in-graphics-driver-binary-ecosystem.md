@@ -4,14 +4,14 @@ description: この測定値は、グラフィックス ドライバーのバイ
 ms.topic: article
 ms.date: 10/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c53dbdb8e3c0678349a926d9c215f817ae33140
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 79e151e3087d62a09fb122d062f0045819b171a5
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72980747"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035995"
 ---
-# <a name="myriad-of-machines-that-had-an-lke-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン
+# <a name="myriad-of-machines-that-had-an-lke-caused-by-a-crash-in-the-graphics-driver-binary-ecosystem"></a>グラフィックス ドライバー バイナリのクラッシュによって LKE が発生した無数のマシン (エコシステム)
 
 ## <a name="description"></a>説明
 

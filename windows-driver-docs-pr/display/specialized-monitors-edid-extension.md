@@ -1,6 +1,6 @@
 ---
-title: HMD と特殊なモニター用の EDID 拡張機能
-description: HMD と特殊なモニター用の EDID 拡張機能
+title: ヘッドマウントおよび特殊なモニタ用の EDID 拡張機能
+description: ヘッドマウントおよび特殊なモニタ用の EDID 拡張機能
 keywords:
 - デバイスの WDK を表示する
 - ドライバーの監視 WDK
@@ -14,14 +14,14 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: c97ee96359dddb76967d9dfe0e6c1577ad14bf31
-ms.sourcegitcommit: 8143bb312ead6582b4b3e0ad34b6266dcfd74fb5
+ms.openlocfilehash: ffcf4d661dfc762f89b3b9c52f6502b39a8ccf72
+ms.sourcegitcommit: 5953acfcf699397a708bcc360b9f2199115feb52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84992486"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86292871"
 ---
-# <a name="edid-extension-vsdb-for-hmds-and-specialized-displays"></a>HMDs および特殊な表示用の EDID 拡張機能 (VSDB)
+# <a name="edid-extension-for-head-mounted-and-specialized-monitors"></a>ヘッドマウントおよび特殊なモニタ用の EDID 拡張機能
 
 *ディスプレイの製造元の仕様*
 
@@ -41,9 +41,9 @@ ms.locfileid: "84992486"
 
 ビデオエレクトロニクス標準の関連付け (VESA) では、このドキュメントで定義されている VSDB と同様の情報へのアクセスを提供する DisplayId v2.0 の標準化されたフィールドが定義されています。  HMDs 用にこのデータを配信するには、DisplayID v2.0 以降が推奨されています。ただし、デバイスが他の理由で EDID を使用する必要がある場合は、この VSDB を使用する必要があります。
 
-## <a name="vendor-specific-data-block-vsdb"></a>ベンダー固有データブロック (VSDB)
+## <a name="vendor-specific-data-block-vsdb"></a>ベンダー固有のデータブロック (VSDB)
 
-EDID を含むファームウェアコードを記述するパーティには、CTA 拡張ブロックが含まれている必要があります。このブロック内には、Microsoft が定義したベンダー固有のデータブロック (VSDB) が付属しています。 EDIDs の構造については、「VESA 拡張拡張ディスプレイ識別データ標準」 ([E EDID](https://vesa.org/vesa-standards/standards-summaries/)) で説明されています。「バージョン1.4、リリース A、リビジョン 2.2 2」を参照してください。  CTA extension ブロックは、CTA の861シリーズドキュメント「圧縮されていない高速デジタルインターフェイス用の DTV プロファイル」で定義されています。  VSDBs は、最新の (書き込み時の) 公開バージョンのセクション7.5.4 で説明されています。 [861 CTA](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf)は、他のデータブロックに対する vsdb の順序を含みます。 
+EDID を含むファームウェアコードを記述するパーティには、CTA 拡張ブロックが含まれている必要があります。このブロック内には、Microsoft が定義したベンダー固有のデータブロック (VSDB) が付属しています。 EDIDs の構造については、「VESA 拡張拡張ディスプレイ識別データ標準」 ([E EDID](https://vesa.org/vesa-standards/standards-summaries/)) で説明されています。「バージョン1.4、リリース A、リビジョン 2.2 2」を参照してください。  CTA extension ブロックは、CTA の861シリーズドキュメント「圧縮されていない高速デジタルインターフェイス用の DTV プロファイル」で定義されています。  VSDBs は、最新の (書き込み時の) 公開バージョンのセクション7.5.4 で説明されています。 [861 CTA](https://standards.cta.tech/kwspub/published_docs/CTA-861-G-Preview.pdf)は、他のデータブロックに対する vsdb の順序を含みます。
 
 VSDB 構造体には、次の表で説明されている形式と値が必要です。
 
@@ -107,10 +107,10 @@ Microsoft のコンテンツに関連付けられているバージョン番号�
 * 専用のビデオモニターの表示-`0x13`
 * アクセサリディスプレイ-`0x14`
 
-### <a name="containerid-16-bytes"></a>ContainerID [16 バイト]
+### <a name="container-id-16-bytes"></a>コンテナー ID [16 バイト]
 
-各デバイスに固有の16バイトの汎用一意識別子。 これは、ファクトリフロアで書き込まれた識別子です。 
+各デバイスに固有の16バイトの汎用一意識別子。 これは、ファクトリフロアで書き込まれた識別子です。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 以前のオペレーティングシステムとの互換性を最大限に保つために、HMDs では `0x1` `0x2` この EDID 拡張機能のバージョンとを引き続き使用することをお勧めします。 HMDs に使用する値については、上記のセクションを参照してください。

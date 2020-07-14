@@ -1,6 +1,6 @@
 ---
-title: HMD と特殊なモニター
-description: HMD と特殊なモニター
+title: ヘッドマウントおよび特殊なモニター
+description: ヘッドマウントおよび特殊なモニター
 keywords:
 - デバイスの WDK を表示する
 - ドライバーの監視 WDK
@@ -14,14 +14,14 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: 1047f28b1bb6a5924932e5f379acfe3d51470fa0
-ms.sourcegitcommit: 8b6d83bcedea8c872ec8c7df874344421a39dd57
+ms.openlocfilehash: 18d22fdc448505ad58cf599dd777d9b002fc438d
+ms.sourcegitcommit: 5953acfcf699397a708bcc360b9f2199115feb52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86128881"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86292867"
 ---
-# <a name="hmds-and-specialized-displays"></a>HMDs と特殊化された表示
+# <a name="head-mounted-and-specialized-monitors"></a>ヘッドマウントおよび特殊なモニター
 
 Windows には、ヘッドマウントされたディスプレイ (HMDs) とその他の種類の "特殊な" 表示シナリオに対するサポートが組み込まれています。 これらの表示は、標準の Windows システムコンポジター (DWM) によって無視されるため、カスタムコンポジターでのみ解決できます。 さらに、HMDs と特殊化された表示には、Windows によって次のプロパティが付与されます。
 
@@ -34,17 +34,17 @@ Windows Mixed Reality ヘッドセットは、カスタムコンポジターに�
 
 ## <a name="topics"></a>トピック
 
-[HMDs および特殊な表示用の EDID 拡張機能](specialized-monitors-edid-extension.md)
+[ヘッドマウントおよび特殊なモニタ用の EDID 拡張機能](specialized-monitors-edid-extension.md)
 
 [HMDs および特殊化された表示のためのカスタムコンポジターの構築](specialized-monitors-compositor.md)
 
 ## <a name="version-history"></a>バージョン履歴
 
-### <a name="windows-10-version-1709-fall-creators-update"></a>Windows 10 バージョン 1709 (作成者の更新プログラムの分類)
+### <a name="windows-10-version-1709-fall-creators-update"></a>Windows 10、バージョン 1709 (作成者の更新プログラム)
 
 * Windows Mixed Reality には、virtual Reality デバイスのサポートが付属しています。 Windows Mixed Reality デバイスは、HMDs バージョン1用の Microsoft EDID 拡張機能に準拠している必要があります。
 
-### <a name="windows-10-version-1809"></a>Windows 10 バージョン 1809
+### <a name="windows-10-version-1809"></a>Windows 10 Version 1809
 
 * Api ファミリを使用してサードパーティの HMD コンポジターを構築するためのサポートを追加しました `Windows.Devices.Display.Core` 。 サポートされているデバイスは、HMDs バージョン2用の Microsoft EDID 拡張機能に準拠している必要があります。
 

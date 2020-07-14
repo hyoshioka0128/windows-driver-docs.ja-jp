@@ -4,14 +4,14 @@ description: この測定値は、年単位の総実行時間について、グ�
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bb786d87571ef4dc7446b2a1b0bb6066e866fd7
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d6bc8c6b61184261fc7e4b92508a5af07d7df1eb
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71016938"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86036004"
 ---
-# <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-edge-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal"></a>Microsoft Edge におけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値がベースライン目標と同じかそれより小さい
+# <a name="number-of-user-mode-reliability-for-crashes-in-microsoft-edge-normalized-by-usage-is-less-than-or-equal-to-the-baseline-goal-ecosystem"></a>Microsoft Edge におけるユーザー モードの信頼性を示すクラッシュ数を使用量で正規化した値が、ベースライン目標と同じかそれより小さい (エコシステム)
 
 ## <a name="description"></a>説明
 

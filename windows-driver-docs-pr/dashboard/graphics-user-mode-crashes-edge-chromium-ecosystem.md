@@ -4,14 +4,14 @@ description: この測定値は、年換算の総実行時間について、グ�
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: dcdd3a854fd9107900f67dc0ede80f71f1369588
-ms.sourcegitcommit: d7b5e6049db3109fdcbe83279875f24f3fa6acdd
+ms.openlocfilehash: d1602b18df3d073bb586b52562d58beb4048f9e6
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84110242"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86036022"
 ---
-# <a name="number-of-user-mode-crashes-in-microsoft-edge-chromium-normalized-by-usage--baseline-goal"></a>使用量により正規化された Microsoft Edge Chromium でのユーザー モード クラッシュの数 <= ベースライン目標
+# <a name="number-of-user-mode-crashes-in-microsoft-edge-chromium-normalized-by-usage--baseline-goal-ecosystem"></a>使用量により正規化された Microsoft Edge Chromium でのユーザー モード クラッシュの数 <= ベースライン目標 (エコシステム)
 
 ## <a name="description"></a>説明
 

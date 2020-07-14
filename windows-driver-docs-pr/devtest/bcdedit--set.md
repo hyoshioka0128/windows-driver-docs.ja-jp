@@ -12,12 +12,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: high
-ms.openlocfilehash: 05a0fff08f9416c372f08371ab0ed3a8078bfb30
-ms.sourcegitcommit: cbcb712a9f1f62c7d67e1b98097a0d8d24bd0c71
+ms.openlocfilehash: 088372dd352e0fd6fb3fa2dff629f9d84845036b
+ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83769688"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85967981"
 ---
 # <a name="bcdedit-set"></a>BCDEdit /set
 
@@ -338,11 +338,12 @@ bcdedit /deletevalue groupsize
 
 ## <a name="requirements"></a>要件
 
-|||
-|----|----|
-|サポートされている最小のクライアント|Windows Vista|
-|サポートされている最小のサーバー|Windows Server 2008|
-|||
+**サポートされている最小のクライアント**:Windows Vista
+
+**サポートされている最小のサーバー**:Windows Server 2008
+
+****: 
+
 
 ## <a name="see-also"></a>関連項目
 

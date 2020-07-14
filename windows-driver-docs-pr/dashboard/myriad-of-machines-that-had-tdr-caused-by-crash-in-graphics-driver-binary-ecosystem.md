@@ -4,14 +4,14 @@ description: この測定では、グラフィックス ドライバーのバイ
 ms.topic: article
 ms.date: 06/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 74e1ed08bac5bc1d50a5fbf050b61bd136bbc5c7
-ms.sourcegitcommit: 8517f8ecc7a53e958ea3989ea5441ec549b70b64
+ms.openlocfilehash: 1836e211871ac63aae32ae8c1d18cd5dfb1455bf
+ms.sourcegitcommit: cb5f370b867ceab28b6b6c64a3586b0bb3831b3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353718"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035996"
 ---
-# <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary"></a>グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン 
+# <a name="myriad-of-machines-with-discrete-gpu-that-had-a-tdr-caused-by-a-crash-in-the-graphics-driver-binary-ecosystem"></a>グラフィックス ドライバー バイナリのクラッシュによって TDR が発生したディスクリート GPU の無数のマシン (エコシステム)
 
 ## <a name="description"></a>説明
 
