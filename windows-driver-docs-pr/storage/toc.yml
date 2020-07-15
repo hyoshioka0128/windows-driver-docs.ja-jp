@@ -388,6 +388,8 @@
               href: interlocked-operations-in-storport-miniport-drivers.md
             - name: レジストリ エントリ
               href: registry-entries-for-storport-miniport-drivers.md
+            - name: Storport ミニポート ドライバーでの DMA 再マッピングのサポート
+              href: storport-miniport-dma-remapping-support.md
             - name: NVMe デバイス用ファームウェアのアップグレード
               href: upgrading-firmware-for-an-nvme-device.md
             - name: StorNVMe ミニポート ドライバー
