@@ -3,7 +3,7 @@ title: DEVPKEY_DeviceInterface_Restricted
 description: DEVPKEY_DeviceInterface_Restricted
 ms.assetid: 54C71B62-3F3D-462B-BF72-DDF1F97D3C75
 keywords:
-- DEVPKEY_DeviceInterface_Restricted デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_DeviceInterface_Restricted
 topic_type:
 - apiref
 api_name:
@@ -14,51 +14,57 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: e697bd3380989536f432424292f369e6a807d4a6
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: b4d5f6c8bbea6dc8dd859a4e134968b9f2122aa6
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67377288"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418236"
 ---
-# <a name="devpkeydeviceinterfacerestricted"></a>DEVPKEY_DeviceInterface_Restricted
+# <a name="devpkey_deviceinterface_restricted"></a>DEVPKEY_DeviceInterface_Restricted
 
 
-DEVPKEY_DeviceInterface_Restricted デバイス インターフェイスのプロパティは、設定が考慮されるシステム コンポーネントによって特権アクセスを持つことが存在し、TRUE に設定して、デバイス インターフェイスを扱う必要があることを示します。
+DEVPKEY_DeviceInterface_Restricted デバイスインターフェイスのプロパティは、それが存在し、TRUE に設定されているデバイスインターフェイスが、設定を優先するシステムコンポーネントによる特権アクセスで処理される必要があることを示します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_DeviceInterface_Restricted</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-boolean.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BOOLEAN&lt;/strong&gt;](devprop-type-boolean.md)"><strong>DEVPROP_TYPE_BOOLEAN</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-呼び出すことができます[ **SetupDiGetDeviceInterfaceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw) DEVPKEY_DeviceInterface_Restricted の値を取得します。
+[**Setupdigetdeviceinterfaceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacepropertyw)を呼び出して、DEVPKEY_DeviceInterface_Restricted の値を取得できます。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -68,12 +74,12 @@ DEVPKEY_DeviceInterface_Restricted デバイス インターフェイスのプ�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 8 以降で利用できます。</p></td>
+<td align="left"><p>Version</p></td>
+<td align="left"><p>Windows 8 以降で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>

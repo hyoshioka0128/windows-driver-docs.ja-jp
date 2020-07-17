@@ -4,12 +4,12 @@ description: 直接メモリアクセス (DMA) の再マッピングを有効に
 ms.date: 07/10/2020
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7c53e633b4e56528a088bafad1b65037f056cf32
-ms.sourcegitcommit: 3b69a8db54229c2fcf150015c47a89d65dc775ab
+ms.openlocfilehash: 815474d5466642ef0cdebf2ef61871494426f482
+ms.sourcegitcommit: 1ab8fc6d15fac78ce243f3852d86733ebfca40dc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86301474"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86436882"
 ---
 # <a name="enabling-dma-remapping-for-device-drivers"></a>デバイスドライバーの DMA 再マップの有効化
 
@@ -52,13 +52,7 @@ VT-d/AMD-Vi が有効な最新の Windows 10 ビルドを使用して、Intel x6
 
 ## <a name="validating-that-dma-remapping-is-enabled-for-a-specific-device-driver-instance"></a>特定のデバイスドライバーインスタンスに対して DMA の再マップが有効になっていることを検証しています
 
-特定のドライバーが DMA の再マップを選択したかどうかを確認するには、デバイスの [**詳細**] タブで、[dma 再マップポリシー] プロパティに対応する値についてデバイスマネージャーを確認します。 表示されるプロパティは、 **DEVPKEY_Device_DmaRemappingPolicy**に対応します。 このプロパティの値は、アクティブな DMA 再マップポリシーを示し、次のいずれかの値を指定できます。
-
-| 値 | 意味 |
-| ----- | ------- |
-| 2     | 現在、特定のデバイスインスタンスに対して DMA の再マップが適用されています。 |
-| 1     | デバイスドライバーが DMA の再マップを明示的にオプトアウトした。 |
-| 0または DMA の再マップポリシープロパティは表示されません | DMA 再マップ INF ディレクティブが INF ファイルで指定されていません。 このデバイスには DMA の再マップは適用されません。 |
+特定のドライバーが DMA の再マップを選択したかどうかを確認するには、デバイスの [**詳細**] タブで、[dma 再マップポリシー] プロパティに対応する値についてデバイスマネージャーを確認します。 ドライバーは、これらの値の[**DEVPKEY_Device_DmaRemappingPolicy**](../install/devpkey-device-dmaremappingpolicy.md)プロパティにクエリを実行できます。
 
 ![デバイス マネージャーの [詳細] タブ](images/device-details-tab-1903.png)
 

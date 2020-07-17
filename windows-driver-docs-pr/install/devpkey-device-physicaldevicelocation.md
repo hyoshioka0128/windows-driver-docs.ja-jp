@@ -3,7 +3,7 @@ title: DEVPKEY_Device_PhysicalDeviceLocation
 description: DEVPKEY_Device_PhysicalDeviceLocation
 ms.assetid: DEF01D17-7E32-45BB-8846-D3B3B60506EB
 keywords:
-- DEVPKEY_Device_PhysicalDeviceLocation デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_PhysicalDeviceLocation
 topic_type:
 - apiref
 api_name:
@@ -14,55 +14,61 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 796af60e5486cedcb698dadc3a23ca5de15164b4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7be1b9dbd3bf7a1420e374fdcbb59ef69e90493d
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378152"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418230"
 ---
-# <a name="devpkeydevicephysicaldevicelocation"></a>DEVPKEY_Device_PhysicalDeviceLocation
+# <a name="devpkey_device_physicaldevicelocation"></a>DEVPKEY_Device_PhysicalDeviceLocation
 
 
-DEVPKEY_Device_PhysicalDeviceLocation デバイスのプロパティには、Windows に用意されているデバイスのファームウェア、物理デバイスの場所情報がカプセル化します。
+DEVPKEY_Device_PhysicalDeviceLocation デバイスプロパティは、デバイスのファームウェアによって Windows に提供される物理的なデバイスの場所情報をカプセル化します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_PhysicalDeviceLocation</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BINARY&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_BINARY</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>対応する SPDRP_<em>Xxx</em></strong>  <strong>識別子</strong></p></td>
+<td align="left"><p><strong>対応する SPDRP_<em>Xxx</em> </strong> <strong>識別子</strong></p></td>
 <td align="left"><p>SPDRP_PHYSICAL_DEVICE_LOCATION</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-Windows では、物理デバイスの位置情報で DEVPKEY_Device_PhysicalDeviceLocation の値を設定します。 ACPI 4.0 a で、情報の形式が定義されている仕様、6.1.6 を参照します。
+Windows は、DEVPKEY_Device_PhysicalDeviceLocation の値に物理的なデバイスの場所情報を設定します。 情報の形式は、ACPI 4.0 の仕様セクション6.1.6 で定義されています。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_PhysicalDeviceLocation の値を取得します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して、DEVPKEY_Device_PhysicalDeviceLocation の値を取得できます。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -74,12 +80,12 @@ Windows では、物理デバイスの位置情報で DEVPKEY_Device_PhysicalDev
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>バージョン</p></td>
+<td align="left"><p>Version</p></td>
 <td align="left"><p>Windows 8 以降で利用可能</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>

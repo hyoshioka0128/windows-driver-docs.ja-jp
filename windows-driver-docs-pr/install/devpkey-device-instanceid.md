@@ -3,7 +3,7 @@ title: DEVPKEY_Device_InstanceId
 description: DEVPKEY_Device_InstanceId
 ms.assetid: 74c78289-e140-46da-8005-ef6f441f78ec
 keywords:
-- DEVPKEY_Device_InstanceId デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_InstanceId
 topic_type:
 - apiref
 api_name:
@@ -14,73 +14,65 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 7b80155797a6f3389343d35df97c0df8d55dbca2
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 7dbc7443be39afa9c3dc915a6a4797dd2aa7e4c7
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378225"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418333"
 ---
-# <a name="devpkeydeviceinstanceid"></a>DEVPKEY_Device_InstanceId
+# <a name="devpkey_device_instanceid"></a>DEVPKEY_Device_InstanceId
 
 
-DEVPKEY_Device_InstanceId デバイス プロパティは、デバイスのデバイスのインスタンス識別子を表します。
+DEVPKEY_Device_InstanceId デバイスプロパティは、デバイスのデバイスインスタンス識別子を表します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_InstanceId</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって読み取り専用アクセス。</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-DEVPKEY_Device_InstanceId の値が、デバイスのインスタンスのインストール中に Windows によって内部的に設定されます。
+DEVPKEY_Device_InstanceId の値は、デバイスインスタンスのインストール時に Windows によって内部的に設定されます。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)デバイス インスタンスの DEVPKEY_Device_InstanceId の値を取得します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して、デバイスインスタンスの DEVPKEY_Device_InstanceId の値を取得できます。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_InstanceId プロパティのキーをサポートしていません。 Windows の以前のバージョンのデバイスのインスタンス識別子を取得する方法については、次を参照してください。[デバイス インスタンス Id を取得する](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-a-device-instance-identifier)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートしていますが、DEVPKEY_Device_InstanceId プロパティキーをサポートしていません。 これらの以前のバージョンの Windows でデバイスインスタンス識別子を取得する方法については、「[デバイスインスタンス識別子の取得](https://docs.microsoft.com/windows-hardware/drivers/install/retrieving-a-device-instance-identifier)」を参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
-</tr>
-</tbody>
-</table>
+**バージョン**: windows Vista 以降のバージョンの windows**ヘッダー**: Devpkey (Devpkey を含む)
+
 
 ## <a name="see-also"></a>関連項目
 

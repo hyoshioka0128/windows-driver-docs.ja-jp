@@ -3,7 +3,7 @@ title: DEVPKEY_Device_SafeRemovalRequired
 description: DEVPKEY_Device_SafeRemovalRequired
 ms.assetid: a162e259-21aa-40d9-a65a-af175a59df6a
 keywords:
-- DEVPKEY_Device_SafeRemovalRequired デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_SafeRemovalRequired
 topic_type:
 - apiref
 api_name:
@@ -14,71 +14,77 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 07fcfdca02c60e66a2263307c3fcc6bc0c28ace4
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ef7906313cc671605a1e20ad970f8c2917643765
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378112"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418416"
 ---
-# <a name="devpkeydevicesaferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
+# <a name="devpkey_device_saferemovalrequired"></a>DEVPKEY_Device_SafeRemovalRequired
 
 
-DEVPKEY_Device_SafeRemovalRequired デバイス プロパティは、ホット プラグ デバイス インスタンスがコンピューターからの安全な取り外しを必要とするかどうかを示すブール値を表します。
+DEVPKEY_Device_SafeRemovalRequired デバイスプロパティは、ホットプラグデバイスインスタンスでコンピューターからの安全な削除が必要かどうかを示すブール値を表します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_SafeRemovalRequired</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-boolean.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_BOOLEAN&lt;/strong&gt;](devprop-type-boolean.md)"><strong>DEVPROP_TYPE_BOOLEAN</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-ホット プラグ デバイス インスタンスに対してこのプロパティは、DEVPROP_TRUE の値を持つ、デバイス インスタンスには、コンピューターからの安全な取り外しが必要です。 この場合は、Windows の表示、**ハードウェアの安全な**タスク バーの右側にある通知領域にアイコン。 ユーザーは、このアイコンをクリックすると、システムの起動時、**ハードウェアの安全な**プログラム。 このプログラムを使用すると、ユーザーはコンピューターから突然削除できる前に、削除のデバイスのインスタンスを準備するシステムに指示できます。
+ホットプラグデバイスインスタンスのこのプロパティの値が DEVPROP_TRUE の場合、デバイスインスタンスはコンピューターからの安全な削除を必要とします。 この場合、Windows では、タスクバーの右側の通知領域に [**ハードウェアの安全な削除**] アイコンが表示されます。 ユーザーがこのアイコンをクリックすると、システムによって**ハードウェアの安全な削除**が開始されます。 このプログラムを使用すると、ユーザーは、デバイスインスタンスをコンピューターから削除する前に、そのデバイスインスタンスを削除するための準備を行うようにシステムに指示できます。
 
-**注**  デバイス インスタンスが挿入されるメディアが必要し、DEVPROP_TRUE の DEVPKEY_Device_SafeRemovalRequired プロパティ値を持つ必要がありますデバイス インスタンスが、光学ディスク ドライブなどのリムーバブル メディア デバイスの場合。 デバイスのインスタンスが表示される両方に該当する場合、**ハードウェアの安全な**プログラム。
+**メモ**   デバイスインスタンスが光学ディスクドライブなどのリムーバブルメディアデバイスの場合、デバイスインスタンスにメディアを挿入し、[DEVPKEY_Device_SafeRemovalRequired] プロパティの値を [DEVPROP_TRUE] に設定する必要があります。 両方が true の場合、デバイスインスタンスは、ハードウェアの**安全な削除**プログラムに表示されます。
 
  
 
-Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバイス インスタンスでは、次の場合、システムから安全な取り外しが必要であるを決定します。
+Windows プラグアンドプレイ (PnP) は、次の条件に当てはまる場合に、ホットプラグデバイスインスタンスがシステムからの安全な削除を必要とすることを決定します。
 
--   デバイス インスタンスは、システムに現在接続されています。
+-   デバイスインスタンスは、現在システムに接続されています。
 
--   デバイス インスタンスが開始されたか、または、システムによって自動的に取り出すことができます。
+-   デバイスインスタンスは起動されているか、システムによって自動的に取り出すことができます。
 
--   デバイス インスタンス CM_DEVCAP_SURPRISEREMOVALOK デバイス機能のビットが設定されていません。 デバイスの機能の詳細については、次を参照してください。 [ **SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)します。
+-   デバイスインスタンスの CM_DEVCAP_SURPRISEREMOVALOK デバイス機能ビットが設定されていません。 デバイスの機能の詳細については、「 [**SetupDiGetDeviceRegistryProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceregistrypropertya)」を参照してください。
 
--   デバイス インスタンスが持っていない、 [ **DEVPKEY_Device_SafeRemovalRequiredOverride** ](devpkey-device-saferemovalrequiredoverride.md)デバイス プロパティ DEVPROP_FALSE に設定します。
+-   デバイスインスタンスの[**DEVPKEY_Device_SafeRemovalRequiredOverride**](devpkey-device-saferemovalrequiredoverride.md)デバイスプロパティが DEVPROP_FALSE に設定されていません。
 
-    **注**  無条件 pnp DEVPROP_TRUE に DEVPKEY_Device_SafeRemovalRequiredOverride デバイスのプロパティが設定されている場合、ホット プラグ デバイスが安全な取り外し必要であります。
+    **メモ**   PnP は、DEVPKEY_Device_SafeRemovalRequiredOverride デバイスプロパティが DEVPROP_TRUE に設定されている場合に、ホットプラグデバイスで安全な削除が必要であることを無条件に判断します。
 
      
 
--   デバイス インスタンスがあるか、その親デバイス インスタンスから直接リムーバブル リムーバブル先祖、そのデバイス ツリーまたはします。
+-   デバイスインスタンスは、その親デバイスインスタンスから直接取り外しられているか、デバイスツリーにリムーバブルの先祖があります。
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_SafeRemovalRequired の値を取得します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して、DEVPKEY_Device_SafeRemovalRequired の値を取得できます。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -90,12 +96,12 @@ Windows のプラグ アンド プレイ (PnP) は、ホット プラグ デバ�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Version</p></td>
+<td align="left"><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>

@@ -3,7 +3,7 @@ title: DEVPKEY_Device_BaseContainerId
 description: DEVPKEY_Device_BaseContainerId
 ms.assetid: ccc20b78-60a3-4351-9809-e2a285ad0a19
 keywords:
-- DEVPKEY_Device_BaseContainerId デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_BaseContainerId
 topic_type:
 - apiref
 api_name:
@@ -14,83 +14,89 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 6fd92b523af1bffd23524dbde1840f36d4dbd4c0
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c288741b17c1bf085859c6e770d566f9d24e1eb0
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67387108"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418278"
 ---
-# <a name="devpkeydevicebasecontainerid"></a>DEVPKEY_Device_BaseContainerId
+# <a name="devpkey_device_basecontainerid"></a>DEVPKEY_Device_BaseContainerId
 
 
-DEVPKEY_Device_BaseContainerId デバイス プロパティを表します、 *GUID*基本のコンテナー識別子の値 (*ID*)。Windows プラグ アンド プレイ (PnP) マネージャーでは、[デバイス] ノードにこの値を割り当てます (*devnode*)。
+DEVPKEY_Device_BaseContainerId デバイスプロパティは、ベースコンテナー識別子 (*ID*) の*GUID*値を表します。Windows プラグアンドプレイ (PnP) マネージャーによって、この値がデバイスノード (*devnode*) に割り当てられます。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_BaseContainerId</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><a href="devprop-type-guid.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_GUID&lt;/strong&gt;](devprop-type-guid.md)"><strong>DEVPROP_TYPE_GUID</strong></a></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>対応する SPDRP_</strong><em>Xxx</em> <strong>識別子</strong></p></td>
 <td align="left"><p>SPDRP_BASE_CONTAINERID</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-PnP マネージャーでは、次のメソッドのいずれかを使用して devnode のコンテナーの ID を決定します。
+PnP マネージャーは、次のいずれかの方法を使用して、devnode のコンテナー ID を決定します。
 
--   バス ドライバーは、コンテナー ID を提供します。
+-   バスドライバーは、コンテナー ID を提供します。
 
-    PnP マネージャーでは、コンテナー ID を割り当てる devnode に、まず devnode のバス ドライバーがコンテナー ID を指定できるかどうか バス ドライバーを通じてコンテナー ID を提供する、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)クエリ要求を**Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**します。
+    PnP マネージャーは、devnode にコンテナー ID を割り当てると、まず、devnode のバスドライバーがコンテナー ID を提供できるかどうかを確認します。 バスドライバーは、 [**IRP_MN_QUERY_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)クエリ要求を通じてコンテナー ID を提供します。 **QueryId**フィールドは**busquerycontainerid**に設定されています。
 
--   PnP マネージャーでは、リムーバブル デバイスの機能を使用して、コンテナー ID が生成されます。
+-   PnP マネージャーは、リムーバブルデバイスの機能を使用して、コンテナー ID を生成します。
 
-    バス ドライバーは、列挙 devnode のコンテナーの ID を提供することはできません、PnP マネージャーは、デバイスに列挙されているすべての devnode のコンテナー ID を生成するのにリムーバブル デバイスの機能を使用します。 バス ドライバーへの応答でこのデバイスの機能の報告、 [ **IRP_MN_QUERY_CAPABILITIES** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求。
+    バスドライバーが列挙されている devnode のコンテナー ID を提供できない場合、PnP マネージャーはリムーバブルデバイス機能を使用して、デバイス用に列挙されているすべての devnodes のコンテナー ID を生成します。 バスドライバーは、 [**IRP_MN_QUERY_CAPABILITIES**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-capabilities)要求に応答してこのデバイス機能を報告します。
 
--   PnP マネージャーでは、リムーバブル デバイスの機能のオーバーライドを使用してコンテナー ID を生成します。
+-   PnP マネージャーは、リムーバブルデバイスの機能のオーバーライドを使用して、コンテナー ID を生成します。
 
-    優先機構はリムーバブル デバイスの機能の値を変更していない、強制的に、PnP マネージャー デバイス用のコンテナーの Id を生成するときに、上書きの設定とリムーバブル デバイスの機能の値ではなくを使用する作成されます。
+    上書きメカニズムによってリムーバブルデバイスの機能の値が変更されることはありませんが、デバイスのコンテナー Id を生成するときに、リムーバブルデバイスの機能の値ではなく、強制的に PnP マネージャーによって上書き設定が使用されるように強制されます。
 
-これらのメソッドの詳細については、次を参照してください。[どのコンテナー Id が生成される](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)します。
+これらのメソッドの詳細については、「[コンテナー id の生成方法](https://docs.microsoft.com/windows-hardware/drivers/install/how-container-ids-are-generated)」を参照してください。
 
-コンテナーの ID 値を取得する方法に関係なく、PnP マネージャーは devnode の DEVPKEY_Device_BaseContainerId プロパティに値を割り当てます。
+コンテナー ID の値を取得する方法に関係なく、PnP マネージャーは devnode の [DEVPKEY_Device_BaseContainerId] プロパティに値を割り当てます。
 
-その他のシステムに存在する devnode で新しい devnode のグループ化を強制する DEVPKEY_Device_BaseContainerId プロパティを使用できます。 これにより、親として新しい devnode を使用できます (または*基本*) その他のコンテナーの ID に関連する devnode します。 これを行うには、まず既存の devnode の DEVPKEY_Device_BaseContainerID GUID を入手する必要があります。 次に、応答で、コンテナーの新しい devnode ID GUID を返す必要がある、 [ **IRP_MN_QUERY_ID** ](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)クエリ要求を持つ、 **Parameters.QueryId.IdType**フィールドに設定**BusQueryContainerID**します。
+DEVPKEY_Device_BaseContainerId プロパティを使用して、システムに存在する他の devnodes と新しい devnode のグループ化を強制することができます。 これにより、新しい devnode を他の関連する devnodes の親 (または*基本*) コンテナー ID として使用できるようになります。 これを行うには、最初に既存の devnode の DEVPKEY_Device_BaseContainerID GUID を取得する必要があります。 次に、 **QueryId**フィールドが**busquerycontainerid**に設定されている[**IRP_MN_QUERY_ID**](https://docs.microsoft.com/windows-hardware/drivers/kernel/irp-mn-query-id)クエリ要求に応答して、新しい devnode のコンテナー ID GUID を返す必要があります。
 
-**注**   、DEVPKEY_Device_BaseContainerId のクエリによって返される値または[ **DEVPKEY_Device_ContainerId** ](devpkey-device-containerid.md)プロパティが同じ devnode 異なることが.
-
- 
-
-**注**  DEVPKEY_Device_BaseContainerId プロパティ システムにデバイス コンテナー グループを再構築を使わないでください。 使用して、 [ **DEVPKEY_Device_ContainerId** ](devpkey-device-containerid.md)プロパティ代わりにします。
+**メモ**   DEVPKEY_Device_BaseContainerId または[**DEVPKEY_Device_ContainerId**](devpkey-device-containerid.md)プロパティのクエリによって返される値は、同じ devnode に対して異なる場合があります。
 
  
 
-コンテナー Id の詳細については、次を参照してください。[コンテナー Id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)します。
+**メモ**   DEVPKEY_Device_BaseContainerId プロパティを使用して、システム内のデバイスコンテナーグループを再構築しないでください。 代わりに、 [**DEVPKEY_Device_ContainerId**](devpkey-device-containerid.md)プロパティを使用してください。
 
-<a name="requirements"></a>要件
+ 
+
+コンテナー Id の詳細については、「[コンテナー id](https://docs.microsoft.com/windows-hardware/drivers/install/container-ids)」を参照してください。
+
+<a name="requirements"></a>必要条件
 ------------
 
 <table>
@@ -100,12 +106,12 @@ PnP マネージャーでは、次のメソッドのいずれかを使用して 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Version</p></td>
+<td align="left"><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>

@@ -3,7 +3,7 @@ title: DEVPKEY_DeviceClass_PropPageProvider
 description: DEVPKEY_DeviceClass_PropPageProvider
 ms.assetid: 467a050e-9dd4-4b3b-a942-ee29667ac264
 keywords:
-- DEVPKEY_DeviceClass_PropPageProvider デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_DeviceClass_PropPageProvider
 topic_type:
 - apiref
 api_name:
@@ -14,83 +14,75 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: aac9c9fd620fee098f744081c2b16653fda1ef66
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: bd640ad19a5d84237cdcfcd57b748e041ad383d7
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67362959"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418387"
 ---
-# <a name="devpkeydeviceclassproppageprovider"></a>DEVPKEY_DeviceClass_PropPageProvider
+# <a name="devpkey_deviceclass_proppageprovider"></a>DEVPKEY_DeviceClass_PropPageProvider
 
 
-DEVPKEY_DeviceClass_PropPageProvider デバイス プロパティがプロパティ ページのプロバイダーを表す、[デバイス セットアップ クラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)します。
+DEVPKEY_DeviceClass_PropPageProvider デバイスプロパティは、[デバイスセットアップクラス](https://docs.microsoft.com/windows-hardware/drivers/install/device-setup-classes)のプロパティページプロバイダーを表します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_DeviceClass_PropPageProvider</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>データ形式</strong></p></td>
-<td align="left"><p>"<em>prop プロバイダー</em>.dll、<em>プロバイダー エントリ ポイント</em>"</p></td>
+<td align="left"><p>"<em>prop-provider</em>,<em>provider-entry</em>"</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>対応するレジストリ値の名前</strong></p></td>
 <td align="left"><p><strong>EnumPropPages32</strong></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-DEVPKEY_DeviceClass_PropPageProvider の値は、の値、 **EnumPropPages32**クラスのレジストリ キーの下のレジストリ値。 この値には、デバイス セットアップ クラスのクラスのプロパティのページ プロバイダーの DLL と、プロバイダーのエントリ ポイントの名前が含まれています。
+DEVPKEY_DeviceClass_PropPageProvider の値は、クラスレジストリキーの下にある**EnumPropPages32**レジストリ値の値です。 この値には、クラスプロパティページプロバイダー DLL の名前と、デバイスセットアップクラスのプロバイダーのエントリポイントが含まれます。
 
-**EnumPropPages32**のデバイス セットアップ クラスに対するレジストリ値を設定できます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INFClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)のクラスをインストールする INF ファイル。
+デバイスセットアップクラスの**EnumPropPages32**レジストリ値は、クラスをインストールする inf ファイルの[**inf ClassInstall32 セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-classinstall32-section)に含まれている[**inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)によって設定できます。
 
-呼び出すことができます[ **SetupDiGetClassProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[ **SetupDiGetClassPropertyEx** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw) DEVPKEY_DeviceClass_ の値を取得するにはPropPageProvider します。
+[**Setupdigetclassproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyw)または[**Setupdigetclasspropertyex**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclasspropertyexw)を呼び出して、DEVPKEY_DeviceClass_PropPageProvider の値を取得できます。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_DeviceClass_PropPageProvider プロパティのキーをサポートしていません。 このプロパティの値をアクセスするには、対応するのにアクセスして**EnumPropPages32**クラスのレジストリ キーの下のレジストリ値。 クラスのレジストリ キー値のエントリをアクセスする方法については、次を参照してください。[にアクセスするレジストリ エントリの値で、クラス レジストリ キー](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートしていますが、DEVPKEY_DeviceClass_PropPageProvider プロパティキーをサポートしていません。 このプロパティの値にアクセスするには、クラスレジストリキーの下にある対応する**EnumPropPages32**レジストリ値にアクセスします。 クラスレジストリキーの値エントリにアクセスする方法の詳細については、「[クラスレジストリキー」の「レジストリエントリ値](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-registry-entry-values-under-the-class-registry-key)へのアクセス」を参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
-</tr>
-</tbody>
-</table>
+**バージョン**: windows Vista 以降のバージョンの windows**ヘッダー**: Devpkey (Devpkey を含む)
+
 
 ## <a name="see-also"></a>関連項目
 

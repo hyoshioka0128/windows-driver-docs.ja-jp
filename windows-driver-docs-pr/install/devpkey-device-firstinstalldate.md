@@ -3,7 +3,7 @@ title: DEVPKEY_Device_FirstInstallDate
 description: DEVPKEY_Device_FirstInstallDate
 ms.assetid: aedc4f18-51be-4c42-a172-c1fd88cc49b3
 keywords:
-- DEVPKEY_Device_FirstInstallDate デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_FirstInstallDate
 topic_type:
 - apiref
 api_name:
@@ -14,55 +14,61 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 2a992ae713e7c04ba205ccbcdf2a872b43ad223f
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ae6b702b53327c48673ac201c0167e8fdeecaea5
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378233"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418561"
 ---
-# <a name="devpkeydevicefirstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
+# <a name="devpkey_device_firstinstalldate"></a>DEVPKEY_Device_FirstInstallDate
 
 
-DEVPKEY_Device_FirstInstallDate デバイスのプロパティは、システム内のデバイスのインスタンスを初めてインストールしたときに、タイムスタンプを指定します。
+DEVPKEY_Device_FirstInstallDate デバイスプロパティは、デバイスインスタンスがシステムに最初にインストールされたときのタイムスタンプを指定します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_FirstInstallDate</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-filetime.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_FILETIME&lt;/strong&gt;](devprop-type-filetime.md)"><strong>DEVPROP_TYPE_FILETIME</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって読み取り専用アクセス。</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-Windows では、デバイス インスタンスが最初に、システムでインストールされを指定するタイムスタンプを持つ DEVPKEY_Device_FirstInstallDate の値を設定します。
+Windows は、デバイスインスタンスがシステムに最初にインストールされた日時を指定するタイムスタンプを使用して DEVPKEY_Device_FirstInstallDate の値を設定します。
 
-**注**  とは異なり、 [ **DEVPKEY_Device_InstallDate** ](devpkey-device-installdate.md)プロパティ、連続する各更新プログラムと DEVPKEY_Device_FirstInstallDate プロパティの値は変更されませんデバイス ドライバー。 たとえば、Windows Update で更新されたドライバーが、このプロパティの値を変更できません。
+**メモ**   [**DEVPKEY_Device_InstallDate**](devpkey-device-installdate.md)プロパティとは異なり、DEVPKEY_Device_FirstInstallDate プロパティの値は、デバイスドライバーの更新ごとに変更されることはありません。 たとえば、Windows Update によって更新されたドライバーは、このプロパティの値を変更しません。
 
  
 
-呼び出すことができます[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw) DEVPKEY_Device_FirstInstallDate プロパティの値を取得します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出して、DEVPKEY_Device_FirstInstallDate プロパティの値を取得できます。
 
 <a name="requirements"></a>必要条件
 ------------
@@ -74,12 +80,12 @@ Windows では、デバイス インスタンスが最初に、システムで�
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows 7 および Windows の以降のバージョンで使用できます。</p></td>
+<td align="left"><p>Version</p></td>
+<td align="left"><p>Windows 7 以降のバージョンの Windows で使用できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
+<td align="left"><p>ヘッダー</p></td>
+<td align="left">Devpkey (Devpkey を含む)</td>
 </tr>
 </tbody>
 </table>

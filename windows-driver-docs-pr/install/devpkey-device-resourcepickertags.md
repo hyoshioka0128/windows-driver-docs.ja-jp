@@ -3,7 +3,7 @@ title: DEVPKEY_Device_ResourcePickerTags
 description: DEVPKEY_Device_ResourcePickerTags
 ms.assetid: 9ad9dddf-3211-4296-a806-1639cfc0f644
 keywords:
-- DEVPKEY_Device_ResourcePickerTags デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_ResourcePickerTags
 topic_type:
 - apiref
 api_name:
@@ -14,35 +14,41 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 46c034a594c3ced9344e3e3a8259c8e6e9119f5e
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: eb0c2c2ddcf91eb338b9dda2a86ddc8dcdf2acaf
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67363026"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418422"
 ---
-# <a name="devpkeydeviceresourcepickertags"></a>DEVPKEY_Device_ResourcePickerTags
+# <a name="devpkey_device_resourcepickertags"></a>DEVPKEY_Device_ResourcePickerTags
 
 
-DEVPKEY_Device_ResourcePickerTags デバイス プロパティは、リソース ピッカーのタグをデバイス インスタンスを表します。
+DEVPKEY_Device_ResourcePickerTags デバイスプロパティは、デバイスインスタンスのリソースピッカータグを表します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_ResourcePickerTags</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>アプリケーションをインストールし、インストーラーによって、読み取り専用アクセス</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションおよびインストーラーによる読み取り専用アクセス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>対応するレジストリ値の識別子とレジストリ値の名前</strong></p></td>
@@ -50,49 +56,35 @@ DEVPKEY_Device_ResourcePickerTags デバイス プロパティは、リソース
 <p><strong>ResourcePickerTags</strong></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-使用して DEVPKEY_Device_ResourcePickerTags の値を設定することができます、 [ **INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)に含まれている、 [ **INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)のデバイスをインストールする INF ファイル。
+DEVPKEY_Device_ResourcePickerTags の値は、デバイスをインストールする inf ファイルの inf [** *ddinstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)に含まれている[**inf AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)を使用して設定できます。
 
-PKEY_Device_ResourcePickerTags の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出すことによって PKEY_Device_ResourcePickerTags の値を取得できます。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_ResourcePickerTags プロパティのキーをサポートしていません。 この以前のバージョンの Windows で、対応するアクセスすることでこのプロパティの値にアクセスできます**ResourcePickerTags**ソフトウェア キーをデバイス インスタンスの下のレジストリ値。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス ドライバーのプロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートしていますが、DEVPKEY_Device_ResourcePickerTags プロパティキーをサポートしていません。 以前のバージョンの Windows では、デバイスインスタンスのソフトウェアキーの下にある対応する**ResourcePickerTags**レジストリ値にアクセスすることによって、このプロパティの値にアクセスできます。 以前のバージョンの Windows でこのプロパティ値にアクセスする方法の詳細については、「[デバイスドライバーのプロパティ](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-driver-properties)へのアクセス」を参照してください。
 
 <a name="requirements"></a>必要条件
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
-</tr>
-</tbody>
-</table>
+**バージョン**: windows Vista 以降のバージョンの windows**ヘッダー**: Devpkey (Devpkey を含む)
+
 
 ## <a name="see-also"></a>関連項目
 
 
 [**INF AddReg ディレクティブ**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)
 
-[**INF *DDInstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
+[**INF *Ddinstall*セクション**](https://docs.microsoft.com/windows-hardware/drivers/install/inf-ddinstall-section)
 
 [**SetupDiGetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)
 

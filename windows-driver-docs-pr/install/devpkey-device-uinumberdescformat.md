@@ -3,7 +3,7 @@ title: DEVPKEY_Device_UINumberDescFormat
 description: DEVPKEY_Device_UINumberDescFormat
 ms.assetid: 6720b35e-a65b-4935-8010-aef53e3951e9
 keywords:
-- DEVPKEY_Device_UINumberDescFormat デバイスとドライバーのインストール
+- デバイスとドライバーのインストールの DEVPKEY_Device_UINumberDescFormat
 topic_type:
 - apiref
 api_name:
@@ -14,75 +14,67 @@ api_type:
 - HeaderDef
 ms.localizationpriority: medium
 ms.date: 10/17/2018
-ms.openlocfilehash: 268502dfbb160a72bcaf5ea0fb1ecd30cf137443
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: ba340256a64916119135c0910d5e7e701c402075
+ms.sourcegitcommit: e180a0670b0b78c30541755e6e030df249979f1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67378096"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86418232"
 ---
-# <a name="devpkeydeviceuinumberdescformat"></a>DEVPKEY_Device_UINumberDescFormat
+# <a name="devpkey_device_uinumberdescformat"></a>DEVPKEY_Device_UINumberDescFormat
 
 
-DEVPKEY_Device_UINumberDescFormat デバイス プロパティを表します、 **printf**-互換性のある形式の文字列インスタンスのデバイス DEVPKEY_DEVICE_UINumber デバイス プロパティの値を表示するために使用する必要があります。
+DEVPKEY_Device_UINumberDescFormat デバイスプロパティは、デバイスインスタンスの DEVPKEY_DEVICE_UINumber デバイスプロパティの値を表示するために使用する、 **printf**と互換性のある書式指定文字列を表します。
 
 <table>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>プロパティのキー</strong></p></td>
+<td align="left"><p><strong>プロパティキー</strong></p></td>
 <td align="left"><p>DEVPKEY_Device_UINumberDescFormat</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>データ型のプロパティの識別子</strong></p></td>
+<td align="left"><p><strong>プロパティ-データ型識別子</strong></p></td>
 <td align="left"><p><a href="devprop-type-string.md" data-raw-source="[&lt;strong&gt;DEVPROP_TYPE_STRING&lt;/strong&gt;](devprop-type-string.md)"><strong>DEVPROP_TYPE_STRING</strong></a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>プロパティへのアクセス</strong></p></td>
-<td align="left"><p>読み取りおよび書き込みアクセス アプリケーションをインストールしてインストーラー</p></td>
+<td align="left"><p><strong>「プロパティ アクセス」</strong></p></td>
+<td align="left"><p>インストールアプリケーションとインストーラーによる読み取りおよび書き込みアクセス</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>対応する SPDRP_</strong><em>Xxx</em> <strong>識別子</strong></p></td>
 <td align="left"><p>SPDRP_UI_NUMBER_DESC_FORMAT</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ローカライズか。</strong></p></td>
-<td align="left"><p>X</p></td>
+<td align="left"><p><strong>た?</strong></p></td>
+<td align="left"><p>いいえ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<a name="remarks"></a>コメント
+<a name="remarks"></a>解説
 -------
 
-DDEVPKEY_Device_UINumberDescFormat の値を取得するには呼び出すことによって[ **SetupDiGetDeviceProperty** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)呼び出すことによってこの値を設定することもできますまたは[  **。SetupDiSetDeviceProperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)します。
+[**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdevicepropertyw)を呼び出すことによって DDEVPKEY_Device_UINumberDescFormat の値を取得できます。また、 [**Setupdigetdeviceproperty**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdisetdevicepropertyw)を呼び出すことによって、この値を設定することもできます。
 
-Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートは DEVPKEY_Device_UINumberDescFormat プロパティのキーをサポートしていません。 代わりに、Windows の以前のバージョンのプロパティの値へのアクセスに対応する SPDRP_UI_NUMBER_DESC_FORMAT 識別子を使用することができます。 Windows の以前のバージョンでこのプロパティの値にアクセスする方法については、次を参照してください。[デバイス インスタンス SPDRP_Xxx プロパティへのアクセス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)します。
+Windows Server 2003、Windows XP、および Windows 2000 は、このプロパティをサポートしていますが、DEVPKEY_Device_UINumberDescFormat プロパティキーをサポートしていません。 代わりに、対応する SPDRP_UI_NUMBER_DESC_FORMAT 識別子を使用して、これらの以前のバージョンの Windows でプロパティの値にアクセスできます。 以前のバージョンの Windows でこのプロパティ値にアクセスする方法の詳細については、「[デバイスインスタンス](https://docs.microsoft.com/windows-hardware/drivers/install/accessing-device-instance-spdrp-xxx-properties)へのアクセス SPDRP_Xxx のプロパティ」を参照してください。
 
-<a name="requirements"></a>要件
+<a name="requirements"></a>必要条件
 ------------
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>バージョン</p></td>
-<td align="left"><p>Windows Vista および Windows の以降のバージョンで使用できます。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Header</p></td>
-<td align="left">Devpkey.h (Devpkey.h を含む)</td>
-</tr>
-</tbody>
-</table>
+**バージョン**: windows Vista 以降のバージョンの windows**ヘッダー**: Devpkey (Devpkey を含む)
+
 
 ## <a name="see-also"></a>関連項目
 
