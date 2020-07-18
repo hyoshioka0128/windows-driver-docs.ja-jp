@@ -1,70 +1,57 @@
 ---
-title: Windows Display Driver Model (WDDM) のロードマップ
-description: Windows Display Driver Model (WDDM) 用ドライバーの開発のためのロードマップ
+title: Windows Display Driver Model (WDDM) のためのロードマップ
+description: Windows Display Driver Model (WDDM) 用ドライバーを開発するためのロードマップ
 ms.assetid: 4f7ea2f4-ca2f-4b1d-97be-fb22e81c8080
 ms.date: 12/06/2018
 ms.localizationpriority: medium
 ms.custom: seodec18
-ms.openlocfilehash: aad2b93de22631e7c3f3a2ce0de4f31e743a7549
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: c6ebef19ed83695b36c4d1dddf184daea88028e9
+ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67365619"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86459248"
 ---
-# <a name="roadmap-for-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のロードマップ
+# <a name="road-map-for-the-windows-display-driver-model-wddm"></a>Windows Display Driver Model (WDDM) のためのロードマップ
 
+![wddm ディスプレイドライバーを開発するための wdk ロードマップ](images/wdkroadmap-th.png)
 
-![wddm を開発するためのロードマップを wdk のディスプレイ ドライバー](images/wdkroadmap-th.png)
+Windows Display Driver Model (WDDM) では、グラフィックスハードウェアベンダーが、ユーザーモードのディスプレイドライバーとカーネルモードのディスプレイドライバー (または、*ミニポートドライバーを表示*) をペアリングする必要があります。
 
-Windows 表示 Driver Model (WDDM) では、グラフィックス ハードウェアの製造元が、ディスプレイ ドライバーのペアになっているユーザー モードおよびカーネル モードのディスプレイ ドライバーを指定する必要があります (または*ディスプレイ ミニポート ドライバー*)。
+これらの表示ドライバーを作成するには、次の手順を実行します。
 
-これらを作成するディスプレイ ドライバーで、次の手順に従います。
+- 手順 1: Windows のアーキテクチャとドライバーについて説明します。
 
--   手順 1:Windows アーキテクチャとドライバーについて説明します。
+  Windows オペレーティングシステムでのドライバーの動作の基礎を理解しておく必要があります。 基本を理解することで、適切な設計上の決定を行い、開発プロセスを効率化することができます。 [すべてのドライバー開発者向けの概念を](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)ご覧ください。
 
-    Windows オペレーティング システムでのドライバーのしくみの基礎を理解する必要があります。 基本事項を把握すると、適切な設計上の決定を行い、開発プロセスを効率化することは役立ちます。 参照してください[ドライバー開発者向けのすべての概念](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/concepts-and-knowledge-for-all-driver-developers)します。
+- 手順 2: WDDM ディスプレイドライバーの基礎について説明します。
 
--   手順 2:ディスプレイ ドライバーの WDDM の基礎について説明します。
+  基本については、「 [Windows Display Driver Model (WDDM) の概要](introduction-to-the-windows-vista-and-later-display-driver-model.md)」を参照してください)、[ビデオメモリ管理と GPU スケジューリング](video-memory-management-and-gpu-scheduling.md)、および[ディスプレイミニポートドライバーのスレッドと同期モデル](threading-and-synchronization-model-of-display-miniport-driver.md)を参照してください。
 
-    基礎を学習するを参照してください[Windows Display Driver Model (WDDM) への概要)](introduction-to-the-windows-vista-and-later-display-driver-model.md)、[ビデオ メモリ管理と GPU がスケジュール](video-memory-management-and-gpu-scheduling.md)、および[スレッド処理との同期モデル。表示のミニポート ドライバー](threading-and-synchronization-model-of-display-miniport-driver.md)します。
+    最新の Windows リリースの新機能の詳細については、「 [windows 10 のディスプレイドライバーとグラフィックスドライバーの新](https://docs.microsoft.com/windows-hardware/drivers/display/what-s-new-for-windows-10-display-and-graphics-drivers)機能」を参照してください。
 
-    最近の Windows リリースの主要な新機能の説明を参照してください。
+- 手順 3: ユーザーモード表示ドライバーと問題について説明します。これには、[ユーザーモードの [ディスプレイドライバー](user-mode-display-drivers.md) ] と [[複数のモニター] および [ビデオの現在のネットワーク](multiple-monitors-and-video-present-networks.md)] セクションからのミニポートドライバーが表示されます。
 
-    -   [Windows 8.1 のディスプレイ ドライバー (WDDM 1.3) の新機能については](what-s-new-for-windows-8-1-display-drivers--wddm-1-3-.md)
-    -   [Windows 8 のディスプレイ ドライバー (WDDM 1.2) の新機能については](what-s-new-for-windows-8-display-drivers.md)
-    -   [Windows Display Driver Model の強化 (WDDM 1.2)](https://go.microsoft.com/fwlink/p/?LinkId=226814)
--   手順 3:ユーザー モードのディスプレイ ドライバーについて説明し、問題からミニポート ドライバーの表示、[ユーザー モード ドライバーの表示](user-mode-display-drivers.md)と[複数のモニターとビデオの存在するネットワーク](multiple-monitors-and-video-present-networks.md)セクション。
+- 手順 4: Windows ドライバーのビルド、テスト、およびデバッグのプロセスとツールについて説明します。
 
--   手順 4:Windows ドライバーのビルド、テスト、およびデバッグ プロセスおよびツールについて説明します。
+  ドライバーのビルドは、ユーザーモードアプリケーションのビルドと同じではありません。 Windows ドライバーのビルド、デバッグ、およびテストプロセス、ドライバーの署名、およびドライバーの検証に関する情報については、「[ドライバーの開発、テスト、および展開](https://docs.microsoft.com/windows-hardware/drivers/develop/)」を参照してください。 ツールのビルド、テスト、検証、およびデバッグについては、「[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)」を参照してください。
 
-    ドライバーの構築は、ユーザー モード アプリケーションを構築することと同じではありません。 参照してください[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers) Windows ドライバーのビルド、デバッグ、およびテスト プロセス、ドライバーの署名、およびドライバーの検証について。 参照してください[ドライバー開発ツール](https://docs.microsoft.com/windows-hardware/drivers/devtest/index)については、検証、および、デバッグ ツールを構築、テストします。
+- 手順 5: ディスプレイドライバーの設計に関するその他の決定を行います。
 
--   手順 5:追加ディスプレイ ドライバーの設計に関する決定事項を作成します。
+  設計に関する決定事項については、「windows display driver [model (wddm) の実装に関するヒントと要件](implementation-tips-and-requirements-for-the-windows-vista-display-dri.md)」および「 [Windows display DRIVER model (wddm)」](tasks-in-the-windows-vista-display-driver-model.md)を参照してください。
 
-    設計上の決定を行う方法の詳細については、次を参照してください。[実装のヒントと要件の Windows Display Driver Model (WDDM)](implementation-tips-and-requirements-for-the-windows-vista-display-dri.md)と[タスク Windows Display Driver Model (WDDM)](tasks-in-the-windows-vista-display-driver-model.md)します。
+- 手順 6:[ディスプレイドライバーのサンプル](display-samples.md)にアクセスして確認します。
 
--   手順 6:アクセスして確認で WDK のディスプレイ ドライバー サンプル[表示サンプル](display-samples.md)します。
+- 手順 7: ディスプレイドライバーを開発、ビルド、テスト、およびデバッグします。
 
--   手順 7:開発、ビルド、テスト、および、ディスプレイ ドライバーをデバッグします。
+  グラフィックスアダプターの表示ドライバーを開発する方法の詳細については、「[ディスプレイミニポートの初期化」および「ユーザーモードの表示ドライバー](initializing-display-miniport-and-user-mode-display-drivers.md) 」および「 [Windows display DRIVER Model (WDDM) の操作フロー](windows-vista-and-later-display-driver-model-operation-flow.md)」を参照してください。 反復的なビルド、テスト、およびデバッグについては、「[ドライバーの開発、テスト、および配置](https://docs.microsoft.com/windows-hardware/drivers)」を参照してください。 ディスプレイドライバーに固有のデバッグのヒントについては、「 [WDDM ドライバーのデバッグのヒント](debugging-tips-for-wddm-drivers.md)」を参照してください。 このプロセスを使用すると、動作するドライバーを確実にビルドできます。
 
-    グラフィックス アダプターのディスプレイ ドライバーを開発する方法については、次を参照してください[初期化表示ミニポートとユーザー モード ドライバーの表示](initializing-display-miniport-and-user-mode-display-drivers.md)と[Windows 表示 Driver Model (WDDM) 操作フロー](windows-vista-and-later-display-driver-model-operation-flow.md). 参照してください[開発、テスト、および展開ドライバー](https://docs.microsoft.com/windows-hardware/drivers)については反復的なビルド、テスト、およびデバッグします。 ディスプレイ ドライバー固有のヒントをデバッグするには、次を参照してください。 [Windows 表示 Driver Model (WDDM) のデバッグのヒント](debugging-tips-for-the-windows-vista-display-driver-model.md)します。 このプロセスに役立つ、動作するドライバーをビルドすることを確認します。
+- 手順 8: ディスプレイドライバーのドライバーパッケージを作成します。
 
--   手順 8:ディスプレイ ドライバーのドライバー パッケージを作成します。
+  詳細については、「[ドライバーパッケージの配布](https://docs.microsoft.com/windows-hardware/drivers/develop/distributing-a-driver-package-win8)」を参照してください。 グラフィックスアダプターの表示ドライバーをインストールする方法の詳細については、「[表示ミニポートのインストール要件」および「ユーザーモードの表示ドライバー](installing-display-miniport-and-user-mode-display-drivers.md)」を参照してください。
 
-    詳細については、次を参照してください。[ドライバー パッケージを配布する](https://docs.microsoft.com/windows-hardware/drivers)します。 グラフィックス アダプターのディスプレイ ドライバーをインストールする方法については、次を参照してください。[ミニポートの表示と表示のユーザー モード ドライバーのインストール要件](installing-display-miniport-and-user-mode-display-drivers.md)します。
+- 手順 9: 表示ドライバーに署名して配布します。
 
--   手順 9:サインインし、ディスプレイ ドライバーを配布します。
+  最後の手順は、署名 (オプション) し、ドライバーを配布することです。 ドライバーが[Windows ハードウェアラボキット](https://docs.microsoft.com/windows-hardware/test/hlk/)(以前の Windows ロゴキットまたは WLK) で定義されている品質基準を満たしている場合は、Microsoft Windows Update プログラムを通じて配布できます。 詳細については、「[ドライバーパッケージの配布](https://docs.microsoft.com/windows-hardware/drivers/develop/distributing-a-driver-package-win8)」を参照してください。
 
-    最後の手順では、(省略可能) 署名し、ドライバーを配布します。 ドライバーがで定義されている品質基準を満たしているかどうか、 [Windows ハードウェア認定キット](https://go.microsoft.com/fwlink/p/?linkid=248337)以前の Windows Logo Kit (WLK)、Microsoft Windows 更新プログラムを通じて配布できます。 詳細については、次を参照してください。[ドライバー パッケージを配布する](https://docs.microsoft.com/windows-hardware/drivers)します。
-
-これらは、基本的な手順です。 追加の手順は、個々 のドライバーのニーズに基づいて、必要でにあります。
-
- 
-
- 
-
-
-
-
-
+基本的な手順は次のとおりです。 個々のドライバーのニーズに基づいて、追加の手順が必要になる場合があります。

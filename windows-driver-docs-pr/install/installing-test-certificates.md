@@ -4,47 +4,47 @@ description: テスト証明書のインストール
 ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: da6dc5c4a44e219afc30ac748f9b4823bea04980
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: 86112b64c75ac238e7370328971fb527edbdeb3f
+ms.sourcegitcommit: 701e4a41860877cc1134e139bc0bd4a9f7270443
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67385623"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86453987"
 ---
 # <a name="installing-test-certificates"></a>テスト証明書のインストール
 
 
-テスト署名を正常にインストールする[ドライバー パッケージ](driver-packages.md)テスト コンピューターには、コンピューターで、署名を確認できる必要があります。 そのためには、テスト コンピューターが、コンピューターの信頼されたルート証明機関の証明書ストアにインストールされているパッケージのテスト証明書を発行した証明機関 (CA) の証明書をいる必要があります。
+テスト署名された[ドライバーパッケージ](driver-packages.md)をテストコンピューターに正常にインストールするには、コンピューターが署名を検証できる必要があります。 これを行うには、コンピューターの信頼されたルート証明機関の証明書ストアにインストールされたパッケージのテスト証明書を発行した証明機関 (CA) の証明書がテストコンピューターに必要です。
 
-CA 証明書は、信頼されたルート証明機関の証明書ストアに 1 回だけ追加する必要があります。 追加されるとのすべてのドライバーまたはドライバー パッケージは、ドライバー パッケージがコンピューターにインストールする前に、証明書で署名されたデジタル署名を確認し、使用できます。
+CA 証明書は、信頼されたルート証明機関の証明書ストアに1回だけ追加する必要があります。 追加されると、ドライバーパッケージがコンピューターにインストールされる前に、証明書によってデジタル署名されたすべてのドライバーまたはドライバーパッケージの署名を検証するために使用できます。
 
-テスト証明書を信頼されたルート証明機関の証明書ストアに追加する最も簡単な方法は、使用、 [ **CertMgr** ](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)ツール。 このトピックでは、Contoso.com(test) テスト証明書をインストールする手順について説明します。 内でこの証明書が格納されている、 *ContosoTest.cer*ファイル。 この証明書の作成方法の詳細については、次を参照してください。[テスト証明書を作成する](creating-test-certificates.md)します。
+信頼されたルート証明機関の証明書ストアにテスト証明書を追加する最も簡単な方法は、 [**certmgr.exe**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)ツールを使用することです。 このトピックでは、テスト証明書 (Contoso .com) をインストールする手順について説明します。 この証明書は、 *ContosoTest*ファイル内に格納されます。 この証明書の作成方法の詳細については、「[テスト証明書の作成](creating-test-certificates.md)」を参照してください。
 
-次のコマンドラインは、インストール、またはテスト コンピューターの信頼されたルート証明機関の証明書ストアに Contoso.com(test) 証明書を追加します。 Certmgr.exe を使用します。
+次のコマンドラインでは、Certmgr.exe を使用して、テストコンピューターの信頼されたルート証明機関の証明書ストアに、Contoso .com (テスト) 証明書をインストールまたは追加します。
 
 ```cpp
-certmgr.exe /add ContosoTest.cer /s /r localMachine root
+certmgr /add ContosoTest.cer /s /r localMachine root
 ```
 
-各項目の意味は次のとおりです。
+各値の説明:
 
--   ]、[追加オプションを指定する、証明書で、 *ContosoTest.cer*ファイルが指定された証明書ストアに追加するのには。
+-   /Add オプションは、 *ContosoTest*ファイル内の証明書を指定された証明書ストアに追加することを指定します。
 
--   **/S**オプションは、証明書がシステム ストアに追加することを指定します。
+-   **/S**オプションは、証明書をシステムストアに追加することを指定します。
 
--   /R オプションをいずれかであるシステム ストアの場所を指定します*currentUser*または*localMachine*します。
+-   /R オプションは、システムストアの場所を指定します。これは*currentUser*または*localMachine*のいずれかです。
 
--   *ルート*か、ローカル コンピューターの保存先ストアの名前を指定します***ルート***信頼されたルート証明機関の証明書ストアを指定するか、 ***trustedpublisher***信頼された発行元の証明書ストアを指定します。
+-   *ルート*ローカルコンピューターの保存先ストアの名前を指定します。これは、信頼された発行元の証明書ストアを指定するために、ルート証明機関の証明書ストアまたは***trustedpublisher***を指定する***ルート***のいずれかです。
 
-証明書を信頼されたルート証明機関の証明書ストアにコピー後できますで表示する、Microsoft 管理コンソール (MMC) の証明書スナップイン」の説明に従って[テスト証明書の表示](viewing-test-certificates.md)します。
+証明書を信頼されたルート証明機関の証明書ストアにコピーした後、「[テスト証明書の表示](viewing-test-certificates.md)」で説明されているように、Microsoft 管理コンソール (MMC) の証明書スナップインを使用して証明書を表示できます。
 
-次のスクリーン ショットでは、信頼されたルート証明機関の証明書ストアに Contoso.com(Test) 証明書を示しています。
+次のスクリーンショットは、信頼されたルート証明機関の証明書ストアにある Contoso .com (Test) 証明書を示しています。
 
-![信頼されたルート証明機関の証明書のスクリーン ショットは、mmc 証明書スナップインで保存します。](images/certstore2.png)
+![mmc 証明書スナップイン内の信頼されたルート証明機関の証明書ストアのスクリーンショット](images/certstore2.png)
 
-CertMgr とコマンドライン引数の詳細については、次を参照してください。 [ **CertMgr**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)します。
+Certmgr.exe とそのコマンドライン引数の詳細については、 [**certmgr.exe**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)を参照してください。
 
-テスト証明書をインストールする方法の詳細については、次を参照してください。[テスト コンピューターにテスト証明書をインストールする](installing-a-test-certificate-on-a-test-computer.md)します。
+テスト証明書のインストール方法の詳細については、「テスト[コンピューターへのテスト証明書のインストール](installing-a-test-certificate-on-a-test-computer.md)」を参照してください。
 
  
 

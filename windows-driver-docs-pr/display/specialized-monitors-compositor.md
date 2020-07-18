@@ -6,6 +6,7 @@ keywords:
 - ドライバーの監視 WDK
 - ドライバーの表示 WDK、ドライバーの監視
 - monitors
+- ヘッドマウントされたディスプレイ
 - HMD
 - 仮想現実
 ms.author: windowsdriverdev
@@ -14,12 +15,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.localizationpriority: medium
-ms.openlocfilehash: a2938fc937361cd82f2c2f5e221a0be69b5f504e
-ms.sourcegitcommit: 5953acfcf699397a708bcc360b9f2199115feb52
+ms.openlocfilehash: 3a6ad6e3d44da3171907c2bdffc449fc862bd9c4
+ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86292873"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86459240"
 ---
 # <a name="building-a-custom-compositor-app-for-head-mounted-and-specialized-monitors"></a>ヘッドマウントおよび特殊なモニター用のカスタムコンポジターアプリを構築する
 
@@ -64,7 +65,7 @@ API は次の方法でこれを実現します。
 * **EDID 拡張機能**-Hmds、X レイモニター、ビデオ壁面、またはその他の特殊なシナリオとして永続的に使用するように設計されたカスタムディスプレイデバイスは、[ヘッドマウントおよび特殊な表示用に Microsoft EDID 拡張機能](specialized-monitors-edid-extension.md)を実装する必要があります。
 * **ユーザー**による上書き-既製のモニターを使用したカスタムハードウェアインストールの場合、Windows には、モニターを "特殊化" として指定するための UI の切り替えが用意されています。
 
-ソフトウェアの EDID を上書きすることによって、表示を HMDs または特殊化された表示として指定することはでき**ません**。
+ソフトウェアの EDID を上書きすることによって、表示を HMDs または特殊化された表示として指定することはでき*ません*。
 
 > [!NOTE]
 > 特化したディスプレイは、Windows 10 バージョン2004以降でのみ利用可能で、Windows 10 Enterprise、Windows 10 Pro for Workstation、または Windows 10 IoT Enterprise を必要とします。
@@ -74,6 +75,7 @@ API は次の方法でこれを実現します。
 カスタムコンポジターの実装は、いくつかの段階に分けることができます。
 
 > [!div class="checklist"]
+>
 > * 関連する HMDs または特殊化された表示を列挙して検出する
 > * 選択した表示の所有権を取得する
 > * 選択したすべての表示のモードを構成する

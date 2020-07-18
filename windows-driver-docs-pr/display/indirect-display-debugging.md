@@ -1,31 +1,32 @@
 ---
 title: デバッグ (間接ディスプレイドライバーを)
-description: 間接的な表示のデバッグ手法について説明します
+description: 間接ディスプレイドライバーのデバッグ手法について説明します。
 ms.assetid: a343812d-03d0-4a95-9c36-7e6b5a404088
-ms.date: 04/22/2020
+ms.date: 07/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c3acb5f719859e8f219cbc90adfafd53d94331
-ms.sourcegitcommit: 49d7f27a24360559456063092ac35b2ba1aba7b1
+ms.openlocfilehash: 632e4c8e00de634fd9a9644dfd82e8d2fc1b9a7a
+ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82742618"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86459214"
 ---
-# <a name="debugging-indirect-displays"></a>デバッグ (間接表示を)
+# <a name="debugging-indirect-display-drivers"></a>デバッグ (間接ディスプレイドライバーを)
 
-間接的に表示されるドライバーは、umdf ドライバーであるため、UMDF デバッグドキュメントが適切な開始点となります。このセクションのページの例を[次](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)に示します。  このページには、間接的に表示される特定のデバッグ情報が表示されます。
+間接的に表示されるドライバー (IDDs) は、umdf ドライバーであるため、UMDF デバッグドキュメントを使用することをお勧めします (このセクションのページの例を[次](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)に示します)。  このページでは、表示固有のデバッグ情報を間接的に提供します。
 
-## <a name="span-idregistry_controlspanspan-idregistry_controlspanspan-idregistry_controlspanregistry-control"></a><span id="Registry_Control"></span><span id="registry_control"></span><span id="Registry_Control"></span>レジストリコントロール
+## <a name="registry-control"></a>レジストリコントロール
 
-IddCx には、間接ディスプレイドライバーのデバッグを支援するために使用できるレジストリ設定がいくつかあります。  すべてのレジストリ値は、 **HKLM\System\CurrentControlSet\Control\GraphicsDrivers**レジストリキーの下にあります。
+間接表示ドライバークラス拡張 (IccDx) には、IDDs のデバッグを支援するために使用できるレジストリ設定がいくつかあります。 すべてのレジストリ値は、 **HKLM\System\CurrentControlSet\Control\GraphicsDrivers**レジストリキーの下にあります。
 
-
-| 値の名前               | 詳細 |
+| 値名               | 詳細 |
 |--------------------------|---------|
-| TerminateIndirectOnStall | 0を指定すると、フレームが使用可能になってから10秒以内にフレームが処理されない場合に、ドライバーを終了するウォッチドッグが無効になります。  それ以外の値を指定すると、ウォッチドッグは有効のままになります。 |
-| IddCxDebugCtrl           | IddCx のさまざまなデバッグ側面を有効にしたビットフィールド、次の表を参照してください。 |
+| TerminateIndirectOnStall | 0を指定すると、フレームが使用可能になってから10秒以内にフレームが処理されない場合に、ドライバーを終了するウォッチドッグが無効になります。 それ以外の値を指定すると、ウォッチドッグは有効のままになります。 |
+| IddCxDebugCtrl           | IddCx のさまざまなデバッグ側面を有効にしたビットフィールド。 次の表を参照してください。 |
 
-**メモ**TerminateIndirectOnStall レジストリ値を使用してウォッチドッグ HLK を無効にすると、テストは失敗します。
+> [!NOTE]
+>
+> TerminateIndirectOnStall レジストリ値を使用してウォッチドッグを無効にした場合、HLK テストは失敗します。
 
 ### <a name="iddcxdebugctrl-values"></a>IddCxDebugCtrl の値
 
@@ -41,20 +42,22 @@ IddCx には、間接ディスプレイドライバーのデバッグを支援�
 | 0x0080 | Ddi コールでドライバーを終了するときに時間がかかりすぎる DDI ウォッチドッグを無効にします |
 | 0x0100 | 未使用 |
 | 0x0200 | デバッグオーバーレイを有効にします。以下を参照してください |
-| 0x0400 | フレーム内のダーティ rect に色の付いたアルファボックスを重ねて、0x0200 を設定する必要があります |
-| 0x0800 | Pref stats を frame にオーバーレイし、0x0200 を設定する必要があります |
+| 0x0400 | フレーム内のダーティ rect の上に色付きのアルファボックスを重ねます。0x0200 を設定する必要があります |
+| 0x0800 | Pref stats をフレームにオーバーレイします。0x0200 を設定する必要があります |
 
-**メモ**どのオーバーレイ関数も、ドライバーによって作成され、IddCxSwapChainSetDevice () に渡された Direct3D デバイスを動作させるために、D3D11_CREATE_DEVICE_BGRA_SUPPORT フラグを使用して作成する必要があります。
+> [!NOTE]
+>
+> いずれかのオーバーレイ関数が動作するには、ドライバーによって作成され、 [**IddCxSwapChainSetDevice**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxswapchainsetdevice)に渡される Direct3D デバイスを**D3D11_CREATE_DEVICE_BGRA_SUPPORT**フラグを使用して作成する必要があります。
 
-## <a name="span-ididdcx_wpp_tracesspanspan-ididdcx_wpp_tracesspanspan-ididdcx_wpp_tracesspaniddcx-wpp-traces"></a><span id="IddCx_WPP_traces"></span><span id="iddcx_wpp_traces"></span><span id="IddCx_WPP_traces"></span>IddCx WPP トレース
+## <a name="iddcx-wpp-traces"></a>IddCx WPP トレース
 
-Iddcx は、WPP インフラストラクチャを使用してデバッグ情報を記録します。  WPP 情報はファイルにキャプチャできますが、キャプチャの進行中はカーネルデバッガーに表示できます。
+Iddcx は、 [WPP インフラストラクチャ](https://docs.microsoft.com/windows-hardware/drivers/devtest/wpp-software-tracing)を使用してデバッグ情報を記録します。 WPP 情報はファイルにキャプチャできますが、キャプチャの進行中はカーネルデバッガーに表示できます。
 
 ### <a name="capturing-iddcx-wpp-tracing"></a>IddCx WPP トレースのキャプチャ
 
-WPP のトレースを有効にする方法はいくつかあります。 logman プログラムでビルドを使用すると便利です。  次の行をバッチファイルにコピーし、管理者特権でのコマンドプロンプトから実行すると、IddCx WPP トレースが IddCx ファイルに収集されます。
+WPP のトレースを有効にするには、いくつかの方法があります。 便利な方法の1つとして、 [*logman.exe*](https://docs.microsoft.com/windows-server/administration/windows-commands/logman)プログラムでビルドを使用する方法があります。 次の行をバッチファイルにコピーし、管理者特権でのコマンドプロンプトから実行すると、IddCx WPP トレースが*IddCx*ファイルに収集されます。
 
-```
+```console
 @echo off  
 echo Starting WPP tracing....
 logman create trace IddCx -o IddCx.etl -ets -ow -mode sequential -p  {D92BCB52-FA78-406F-A9A5-2037509FADEA} 0x4f4 0xFF
@@ -65,21 +68,12 @@ logman -stop IddCx -ets
 ```
 
 #### <a name="controlling-what-is-captured"></a>キャプチャ対象の制御
-Logman の Flags パラメーター (この場合は 0x4f4) は、どの WPP メッセージ IddCx ログを記録するかを制御します。  この値の意味は、Windows ビルド19041以降で変更されています。
 
-##### <a name="flags-meaning-prior-to-windows-build-19041"></a>Windows ビルド19041より前のフラグの意味
-フラグがレベルとして扱われ、上位レベルごとに新しい種類のメッセージと、前のレベルのすべてのメッセージが追加されました。
-
-| フラグレベルの値  | キャプチャされたメッセージの種類 |
-|:------------------:|-----------------------|
-| 1                  | 使用されていない              |
-| 2                  | エラー                |
-| 3                  | 警告              |
-| 4                  | Information           |
-| 5                  | "詳細"               |
+*logman.exe*の Flags パラメーター (この場合は 0x4f4) は、どの WPP メッセージ IddCx ログを記録するかを制御します。  この値の意味は、Windows ビルド19041以降で変更されています。
 
 ##### <a name="flags-meaning-for-windows-build-19041-and-above"></a>Windows ビルド19041以降のフラグの意味
-フラグはビットフィールドで、メッセージの種類がキャプチャされた場合、各ビットが制御します。
+
+フラグはビットフィールドで、各ビットはそのメッセージの種類がキャプチャされるかどうかを制御します。
 
 | フラグビット | キャプチャされたメッセージの種類  |
 |:---------:|------------------------|
@@ -96,30 +90,48 @@ Logman の Flags パラメーター (この場合は 0x4f4) は、どの WPP メ
 | 0x400     | カーネルから IddCx への呼び出し |
 | 0x800     | IddCx からカーネルへの呼び出し |
 
-通常のログ記録シナリオでは、0x0f4 を使用することをお勧めします。フレームごとの情報を表示する場合は、0x1f4 を使用することをお勧めします。
+0x0f4 の通常のログ記録シナリオは、出発点として適しています。 フレームごとの情報を表示する場合は、0x1f4 を使用することをお勧めします。
+
+##### <a name="flags-meaning-prior-to-windows-build-19041"></a>Windows ビルド19041より前のフラグの意味
+
+フラグがレベルとして扱われ、上位レベルごとに新しい種類のメッセージと、前のレベルのすべてのメッセージが追加されました。
+
+| フラグレベルの値  | キャプチャされたメッセージの種類 |
+|:------------------:|-----------------------|
+| 1                  | 使用されていない              |
+| 2                  | エラー                |
+| 3                  | 警告              |
+| 4                  | Information           |
+| 5                  | "詳細"               |
 
 ### <a name="decoding-iddcx-wpp-tracing"></a>IddCx WPP トレースをデコードしています
-すべての WPP トレースと同様に、WPP 情報は pdb ファイルに格納されます。そのため、pdb にアクセスして、その情報をデコードする必要があります。  Windows ビルド19560より前の場合、パブリックシンボルサーバーの IddCx には、WPP デコードを有効にするために必要な WPP 情報が含ま**れていません**。 Windows ビルド19560以降の場合、パブリックシンボルサーバーの IddCx には、WPP メッセージをデコードするために必要な WPP 情報が含まれています。
+
+すべての WPP トレースと同様に、WPP 情報は*pdb*ファイルに格納されます。そのため、 *pdb*にアクセスして、その情報をデコードする必要があります。 Windows ビルド19560以降では、パブリックシンボルサーバーの*IddCx*には、wpp メッセージをデコードするために必要な wpp 情報が含まれています。 Windows ビルド19560より前では、パブリックシンボルサーバーの*IddCx*には、wpp デコードを有効にするために必要な wpp 情報が含まれて*いません*。
 
 標準の WPP デコードツールのいずれかを使用して、メッセージのデコードと表示を行うことができます。
 
-## <a name="span-iddebugging_iddcx_errorsspanspan-iddebugging_iddcx_errorsspanspan-iddebugging_iddcx_errorsspandebugging-iddcx-errors"></a><span id="Debugging_IddCx_errors"></span><span id="debugging_iddcx_errors"></span><span id="Debugging_IddCx_errors"></span>IddCx エラーのデバッグ
-間接的な表示ドライバーを開発するときに、IddCx がエラーを検出したときに追加情報を取得すると便利な場合がよくあります。  上記のセクションを使用すると、IddCx がエラーを検出したときにデバッガーを中断するように IddCx を構成できますが、エラーのコンテキストを理解するために、最後のいくつかのトレースメッセージに IddCx エラーメッセージを表示すると便利です。
-上記のセクションを使用すると、logman を使用して WPP のトレースを有効にすることができます。次の情報を参考にして、障害発生時のカーネルデバッガーでインメモリの WPP バッファーを表示します。
-**メモ**これを機能させるには、デバッガーが WPP デコード情報を含む IddCx を取得するために、(ユーザーモードのデバッガーではなく) カーネルデバッガーと Windows ビルド19560以降を使用する必要があります。
+## <a name="debugging-iddcx-errors"></a>IddCx エラーのデバッグ
 
-次の例では、間接ディスプレイドライバーが IddCxMonitorArrival () を呼び出し、IddCx 処理の一部としてドライバーの EvtIddCxMonitorQueryTargetModes () DDI を呼び出します。この例では、ドライバーは DISPLAYCONFIG_VIDEO_SIGNAL_INFO のモードを返しました。AdditionalSignalInfo。 vSyncFreqDivider が0に設定されていますが、これは無効であり、エラーが発生します。
+間接的な表示ドライバーを開発するときに、IddCx がエラーを検出したときに追加情報を取得すると便利な場合がよくあります。 前述のように、IddCx がエラーを検出したときにデバッガーを中断するように IddCx を構成することもできますが、エラーのコンテキストを理解するために、最後のいくつかのトレースメッセージに IddCx エラーメッセージを表示すると便利です。
+
+上記のセクションを使用すると、 *logman.exe*を使用して WPP のトレースを有効にすることができます。また、次の情報を使用すると、障害発生時のカーネルデバッガーにメモリ内の WPP バッファーが表示されます。
+
+> [!NOTE]
+>
+> これを機能させるには、デバッガーが WPP デコード情報を含む*IddCx*を取得するために、(ユーザーモードのデバッガーではなく) カーネルデバッガーと Windows ビルド19560以降を使用する必要があります。
+
+次の例では、間接ディスプレイドライバーは[**Iddcxmonitorarrival**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nf-iddcx-iddcxmonitorarrival)を呼び出します。 処理の一環として、IddCx はドライバーの[**EvtIddCxMonitorQueryTargetModes**](https://docs.microsoft.com/windows-hardware/drivers/ddi/iddcx/nc-iddcx-evt_idd_cx_monitor_query_target_modes) DDI を呼び出します。 この例では、ドライバーは DISPLAYCONFIG_VIDEO_SIGNAL_INFO を持つモードを返しました。AdditionalSignalInfo。 vSyncFreqDivider が0に設定されていますが、これは無効であり、エラーが発生します。
 
 使用されるデバッガーコマンドの一覧を次に示します。
 
-| command                             | 意味  |
+| コマンド                             | 意味  |
 |-------------------------------------|----------|
-| !wmitrace.bufdump                   | すべてのログバッファーと名前を一覧表示します。 IddCx は自分の名前であり、logman コマンドラインから取得されます。 |
-| ! wmitrace<Log buffer name> | IddCx の例で、指定したログバッファーの内容をデコードして表示します。 |
+| !wmitrace.bufdump                   | すべてのログバッファーと名前を一覧表示します。 IddCx は自分の名前であり、logman.exe コマンドラインから取得します。 |
+| ! wmitrace *LogBufferName*   | 指定されたログバッファーの内容をデコードして表示します。次の例では IddCx です。 |
 
 この例のデバッガー出力を次に示します。
 
-```
+```dbgcmd
 0: kd> !wmitrace.bufdump
 (WmiTrace) BufDump
     LoggerContext Array @ 0xFFFFE6055EB0AC40 [64 Elements]

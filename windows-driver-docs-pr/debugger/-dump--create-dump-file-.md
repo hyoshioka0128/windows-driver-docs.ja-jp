@@ -6,7 +6,7 @@ keywords:
 - ダンプファイルの作成 (.dump) コマンド
 - ダンプファイル、ダンプファイルの作成 (.dump) コマンド
 - . ダンプ (ダンプファイルの作成) Windows デバッグ
-ms.date: 08/01/2018
+ms.date: 07/17/2020
 topic_type:
 - apiref
 api_name:
@@ -14,51 +14,62 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: edbe1c9c7a3d2adc25a46bab2d535c2337842542
-ms.sourcegitcommit: ca5045a739eefd6ed14b9dbd9249b335e090c4e9
+ms.openlocfilehash: c1b614b783bede05c8b82928bcc4080f84b1b04c
+ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85968047"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86459232"
 ---
 # <a name="dump-create-dump-file"></a>.dump (ダンプ ファイルの作成)
-
 
 **.Dump**コマンドは、ユーザーモードまたはカーネルモードのクラッシュダンプファイルを作成します。
 
 ```dbgcmd
-.dump Options FileName 
+.dump [options] FileName
 .dump /?
 ```
 
-## <a name="span-idddk_meta_create_dump_file_dbgspanspan-idddk_meta_create_dump_file_dbgspanparameters"></a><span id="ddk_meta_create_dump_file_dbg"></span><span id="DDK_META_CREATE_DUMP_FILE_DBG"></span>パラメータ
+## <a name="parameters"></a>パラメーター
 
+*[オプション]*  
+次の1つ以上のオプションを表します。
 
-<span id="_______Options______"></span><span id="_______options______"></span><span id="_______OPTIONS______"></span>*オプション*   
-次のオプションの1つ以上を表します。
+**/a**  
+すべてのプロセスのダンプを作成します (-u が必要です)。
 
-<span id="_o"></span><span id="_O"></span>**/o**  
+**/b [a]**  
+CAB にダンプをパッケージ化し、ダンプを削除します。 オプションが指定されている*場合、追加*情報が含まれます。
+
+**スイッチ\<comment\>**  
+コメントを追加します (すべての形式でサポートされていません)。
+
+**/j\<addr\>**  
+JIT_DEBUG_INFO アドレスを指定してください。
+
+**/o**  
 同じ名前の既存のダンプファイルを上書きします。 このオプションを使用せず、同じファイル名のファイルが存在する場合は、ダンプファイルは書き込まれません。
 
-<span id="_f_FullOptions_"></span><span id="_f_fulloptions_"></span><span id="_F_FULLOPTIONS_"></span>**/f \[ **<em>FullOptions</em>**\]**  
+**/u**  
+一意の識別子をダンプ名に追加します。
+
+**/f \[ **<em>FullOptions</em>**\]**  
 (カーネルモード:)[メモリダンプ全体](complete-memory-dump.md)を作成します。
 
 (ユーザーモード:)*完全なユーザーモードダンプ*を作成します。 詳細については、「[ユーザーモードのダンプファイルの種類](user-mode-dump-files.md#varieties)」を参照してください。 名前にかかわらず、最大のミニダンプファイルには、完全なユーザーモードダンプよりも多くの情報が含まれています。 たとえば、 **. dump/mf**または **. dump/ma**は、**ダンプ/f**よりも大きいファイルを作成します。 ユーザーモードでは、 **. dump** **/m \[ **<em>minioptions</em> **\]** は常により適して**います。ダンプ/f**。
 
 ダンプファイルの内容を変更するには、次の*FullOptions*を追加します。オプションでは大文字と小文字が区別されます。
 
-すべての**効果: 効果**
+|すべてのもの|結果|
+|--- |--- |
+|**y**| ダンプファイルに AVX register 情報を追加します。|
 
-**y**: ダンプファイルに AVX register 情報を追加します。
-
- 
-
-<span id="_m_MiniOptions_"></span><span id="_m_minioptions_"></span><span id="_M_MINIOPTIONS_"></span>**/m \[ **<em>Minioptions</em>**\]**  
+**/m \[ **<em>Minioptions</em>**\]**  
 *小さいメモリダンプ*(カーネルモードの場合) または*ミニダンプ*(ユーザーモード) を作成する詳細については、「[ユーザーモードのダンプファイル](user-mode-dump-files.md)」を参照してください。 **/F**も **/m**も指定しない場合、 **/m**が既定値になります。
 
 ユーザーモードでは、別の*ミニオプション*を使用して、ダンプに含める追加のデータを**指定できます**。 *Minioptions*が含まれていない場合、ダンプにはモジュール、スレッド、およびスタックの情報が含まれますが、追加のデータは含まれません。 次のいずれかの*ミニオプション*を追加して、ダンプファイルの内容を変更できます。大文字と小文字が区別されます。
 
-|MiniOption|効果|
+|MiniOption|結果|
 |--- |--- |
 |a|すべてのオプションの追加を使用してミニダンプを作成します。 /Ma オプションは、/mfFhut に相当します。これは、完全なメモリデータの追加、データの処理、モジュール情報のアンロード、基本的なメモリ情報、およびスレッド時間情報をミニダンプに追加します。 参照できないメモリの読み取りに失敗すると、ミニダンプ生成が終了します。|
 |A|/Ma オプションは、/ma に相当します。ただし、利用できないメモリの読み取りに失敗した場合は無視され、ミニダンプの生成は続行されます。|
@@ -76,22 +87,29 @@ ms.locfileid: "85968047"
 |R|ミニダンプから完全なモジュールパスを削除します。 モジュール名だけが含まれます。 これは、ユーザーのディレクトリ構造のプライバシーを保護する場合に便利なオプションです。|
 |Y|ダンプファイルに AVX register 情報を追加します。|
 
- 
+### <a name="kernel-mode-options"></a>カーネルモードオプション
 
-### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+カーネルモードでは、次のオプションを使用できます。
+
+**/k**  
+カーネルメモリのみを使用してダンプを作成します。
+
+**/ka**  
+アクティブなカーネルとユーザーモードのメモリを使用してダンプを作成します。
+
+## <a name="additional-information"></a>追加情報
 
 カーネルモードのダンプファイルとその使用方法の説明については、「[カーネルモードダンプファイル](kernel-mode-dump-files.md)」を参照してください。 ユーザーモードのダンプファイルとその使用方法の説明については、「[ユーザーモードのダンプファイル](user-mode-dump-files.md)」を参照してください。
 
-## <a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>解説
 
 このコマンドは、さまざまな状況で使用できます。
 
--   このコマンドは、ユーザーモードのライブデバッグ中に、ダンプファイルを生成するように対象アプリケーションに指示しますが、ターゲットアプリケーションは終了しません。
+- このコマンドは、ユーザーモードのライブデバッグ中に、ダンプファイルを生成するように対象アプリケーションに指示しますが、ターゲットアプリケーションは終了しません。
 
--   このコマンドは、カーネルモードのデバッグ中にダンプファイルを生成するように対象のコンピュータに指示しますが、ターゲットコンピュータはクラッシュしません。
+- このコマンドは、カーネルモードのデバッグ中にダンプファイルを生成するように対象のコンピュータに指示しますが、ターゲットコンピュータはクラッシュしません。
 
--   クラッシュダンプのデバッグ中に、このコマンドを実行すると、古いものから新しいクラッシュダンプファイルが作成されます。 これは、大きなクラッシュダンプファイルがあり、より小さいファイルを作成する場合に便利です。
+- クラッシュダンプのデバッグ中に、このコマンドを実行すると、古いものから新しいクラッシュダンプファイルが作成されます。 これは、大きなクラッシュダンプファイルがあり、より小さいファイルを作成する場合に便利です。
 
 生成されるダンプファイルの種類を制御できます。
 
@@ -106,16 +124,11 @@ ms.locfileid: "85968047"
 次の例では、フルメモリとハンドル情報を含むユーザーモードミニダンプを作成します。
 
 ```dbgcmd
-0:000> .dump /mfh myfile.dmp 
+0:000> .dump /mfh myfile.dmp
 ```
 
 ハンドル情報は、 [**! handle**](-handle.md) extension コマンドを使用して読み取ることができます。
 
- 
+## <a name="see-also"></a>参照
 
- 
-
-
-
-
-
+[さまざまなカーネルモード ダンプ ファイル](varieties-of-kernel-mode-dump-files.md)

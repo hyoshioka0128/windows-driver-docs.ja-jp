@@ -4,31 +4,27 @@ description: サンプルのカスタム プロパティ ページ
 ms.assetid: 96dd5f08-1543-4e13-9344-767cd9e6df78
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2eb6f4429061a99af5fa54a2d1ad399d58cb74f
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 2ea72b51abc0b88737d4dfce925d5282fc3398ca
+ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63348728"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86459238"
 ---
 # <a name="sample-custom-property-page"></a>サンプルのカスタム プロパティ ページ
 
 
-次のダイアログ ボックスには、サンプルのカスタム プロパティ ページが含まれています。
+次のダイアログボックスには、カスタムプロパティページのサンプルが含まれています。
 
-![サンプルのカスタム プロパティ ページ。](images/sampprop.png)
+![カスタムプロパティページのサンプルです。](images/sampprop.png)
 
-前のダイアログ ボックスでは、プロバイダーは、プロパティをという名前のプロパティ ページを提供します。 既定で、システムによって提供されます、**全般**、**ドライバー**、および**詳細**タブ ダイアログ ボックスに表示します。 システムが提供も必要に応じて、**リソース**と**Power**タブ。
+前のダイアログボックスでは、プロパティという名前のプロパティページがプロバイダーによって提供されています。 既定では、ダイアログボックスに表示される **[全般**] タブ、[**ドライバー**] タブ、および [**詳細**] タブがシステムによって提供されます。 必要に応じて、システムには**リソース**と**電源**タブも用意されています。
 
-**注**  セットアップ コンポーネントは、そのデバイスまたはデバイス クラスの 1 つ以上のプロパティ ページを定義できます。 各タブ ページの目的を簡潔に説明する名前が必要です。 名前が一意であるかどうかを確認する、システムをチェックしません。
-
- 
+**メモ**   セットアップコンポーネントでは、デバイスまたはデバイスクラスに対して複数のプロパティページを定義できます。 各タブには、ページの目的を簡潔に説明する名前が付いている必要があります。 システムは、名前が一意であるかどうかを確認しません。
 
  
+## <a name="related-information"></a>関連情報
 
- 
-
-
-
-
+* [デバイスプロパティページプロバイダーの特定の要件](specific-requirements-for-device-property-page-providers--property-pag.md)
+* [デバイスのプロパティ ページのプロバイダーの種類](types-of-device-property-page-providers.md)
 
