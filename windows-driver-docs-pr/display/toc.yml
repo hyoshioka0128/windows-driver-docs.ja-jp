@@ -644,7 +644,7 @@
           href: indirect-display-driver-model-overview.md
         - name: IddCx オブジェクト
           href: iddcx-objects.md
-        - name: デバッグ
+        - name: 間接ディスプレイ ドライバーのデバッグ
           href: indirect-display-debugging.md
     - name: Windows Display Driver Model (WDDM) のタスク
       items:
@@ -662,10 +662,10 @@
           href: manipulating-3-d-virtual-textures-directly-from-hardware.md
         - name: ハードウェア情報の登録
           href: registering-hardware-information.md
-    - name: Windows Display Driver Model (WDDM) のデバッグのヒント
+    - name: Windows Display Driver Model (WDDM) のデバッグ
       items:
-        - name: Windows Display Driver Model (WDDM) のデバッグのヒント
-          href: debugging-tips-for-the-windows-vista-display-driver-model.md
+        - name: WDDM ドライバーのデバッグ ヒント
+          href: debugging-tips-for-wddm-drivers.md
         - name: 確認済みのバイナリのインストール
           href: installing-checked-binaries.md
         - name: デバッグ用の GPU スケジューラの動作の変更
@@ -1172,8 +1172,6 @@
           href: synchronization-issues-for-display-drivers.md
         - name: ディスプレイ ドライバーのデバッグ
           items:
-            - name: ディスプレイ ドライバーのデバッグ
-              href: debugging-display-drivers.md
             - name: EA 回復の無効化
               href: disabling-ea-recovery.md
             - name: ディスプレイ ドライバーのテスト中におけるウォッチドッグ タイマーの無効化
