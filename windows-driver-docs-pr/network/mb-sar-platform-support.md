@@ -3,12 +3,12 @@ title: MB SAR プラットフォームのサポート
 description: MB SAR プラットフォームのサポート
 ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a43b54916dbfef9c96b30c06c7571544906956
-ms.sourcegitcommit: f4f861a9f833ef1389ff5c08e2b9de0d3df81bef
+ms.openlocfilehash: d604c45320edca15ab45d15bdca157cc35126cf2
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84974150"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557793"
 ---
 # <a name="mb-sar-platform-support"></a>MB SAR プラットフォームのサポート
 
@@ -66,10 +66,10 @@ MBIM_COMMAND_MSG の InformationBuffer に MBIM_MS_SAR_CONFIG が含まれてい
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | MBIM_MS_SET_SAR_CONFIG | 適用なし | 適用なし |
-| Response | MBIM_MS_SAR_CONFIG | MBIM_MS_SAR_CONFIG | 利用不可 |
+| 応答 | MBIM_MS_SAR_CONFIG | MBIM_MS_SAR_CONFIG | 適用なし |
 
 ### <a name="data-structures"></a>データ構造
 
@@ -81,7 +81,7 @@ InformationBuffer は NULL にする必要があり、InformationBufferLength �
 
 InformationBuffer では、次の MBIM_MS_SET_SAR_CONFIG 構造体を使用する必要があります。
 
-| Offset | サイズ | フィールド | 型 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SARMode | MBIM_MS_SAR_CONTROL_MODE | 詳細については、MBIM_MS_SAR_CONTROL_MODE の表を参照してください。 |
 | 4 | 4 | SARBackOffStatus | MBIM_MS_SAR_BACKOFF_STATE | 詳細については、MBIM_MS_SAR_BACKOFF_STATE の表を参照してください。  MBIM_MS_SAR_CONTROL_MODE がデバイスで制御されるように設定されている場合、OS でこのフィールドを設定することはできません。 |
@@ -112,7 +112,7 @@ MBIM_MS_SAR_CONFIG_STATE アンテナの SAR バックオフに対して可能�
 | 0 | 4 | SARAntennaIndex | UINT32 | このテーブルの**SARBackOffIndex**フィールドに対応するアンテナインデックス。 これはアンテナ番号に対応し、デバイス上の各アンテナのインデックスを作成するために OEM の実装に残されます。 インデックスは、この値に対して有効です。 *Set*コマンドでこの値を**0xffffffff**に設定した場合は、 **SARBackOffIndex**をすべてのアンテナに適用する必要があります。 この値が " **0xffffffff** " に設定されている場合は、 **SARBackOffIndex**がすべてのアンテナに適用されていることを示します。 |
 | 4 | 4 | SARBAckOffIndex | UINT32 | OEM またはモデムベンダーによって定義されたバックオフテーブルに対応するバックオフインデックス。 テーブルには、個々のバンドと関連付けられたバックオフパラメーターがあります。 |
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>応答
 
 InformationBuffer では、次の MBIM_MS_SAR_CONFIG 構造体を使用する必要があります。 MBIM_MS_SAR_CONFIG には、SAR の構成を指定します。
 
@@ -173,10 +173,10 @@ MBIM_COMMAND_MSG の InformationBuffer に MBIM_MS_SET_TRANSMISSION_STATUS が�
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | MBIM_MS_SET_TRANSMISSION_STATUS | 適用なし | 適用なし |
-| Response | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO |
+| 応答 | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO | MBIM_MS_TRANSMISSION_STATUS_INFO |
 
 ### <a name="data-structures"></a>データ構造
 
@@ -200,7 +200,7 @@ InformationBuffer では、次の MBIM_MS_SET_TRANSMISSION_STATUS 構造体を�
 | MBIMMsTransmissionNotificationDisabled | 0 | モデムチャネルの送信状態通知が無効になっています。 |
 | MBIMMsTransmissionNotificationEnabled | 1 | モデムチャネルの送信状態通知が有効になりました。 |
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>応答
 
 応答には、次の MBIM_MS_TRANSMISSION_STATUS_INFO 構造が使用されます。
 

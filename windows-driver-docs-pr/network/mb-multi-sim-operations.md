@@ -3,12 +3,12 @@ title: MB マルチ SIM 操作
 description: MB マルチ SIM 操作
 ms.date: 10/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3f386758f6a241f78f09f4b94f3f8085ab7095
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 943146bc13f2457489b5a8a8cbf31d8b8f42e412
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243025"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557799"
 ---
 # <a name="mb-multi-sim-operations"></a>MB のマルチ SIM 操作
 
@@ -46,7 +46,7 @@ NDIS 6.7 の Windows デスクトップモデムインターフェイスモデ�
 * このモデルでは、直接モデムハードウェアに関連付けられている単一の UICC カードがあることを前提としています。
 * UICC は、単一アプリケーションの SIM カードであるかのように扱われます。
 
-これに対し、Windows Mobile の Microsoft Radio Interface Layer (RIL) インターフェイスでは、これらの仮定の多重度が明示的に公開されます。 Windows Mobile のモバイルブロードバンドインターフェイスでは、個別のミニポートを使用して個別に登録する機能が公開されており、デバイスの一部の基本的な構成は、RIL インターフェイスによって既に実行されていることを前提としています。 同等の機能を提供するために、Windows デスクトップは、エグゼキュータとスロットの数を検出し、エグゼキュータに個別にアクセスするためのメカニズムを提供する必要があります。また、エグゼキュータとスロット間のマッピングを定義し、マップ内のアプリケーションを定義します。各実行プログラムが使用する UICC カード。
+これに対し、Windows Mobile の Microsoft Radio Interface Layer (RIL) インターフェイスでは、これらの仮定の多重度が明示的に公開されます。 Windows Mobile のモバイルブロードバンドインターフェイスでは、個別のミニポートを使用して個別に登録する機能が公開されており、デバイスの一部の基本的な構成は、RIL インターフェイスによって既に実行されていることを前提としています。 同等の機能を提供するために、Windows デスクトップは、実行プログラムとスロットの数を検出し、エグゼキュータに個別にアクセスするためのメカニズムを提供し、エグゼキュータとスロット間のマッピングを定義し、各実行プログラムが使用するマップされた UICC カード内のアプリケーションを定義する必要があります。
 
 携帯ネットワークのアーキテクチャと Windows 10 Mobile とデスクトップの違いの詳細については、「[携帯ネットワークのアーキテクチャと実装](cellular-architecture-and-driver-model.md)」を参照してください。
 
@@ -66,13 +66,13 @@ NDIS 6.7 の Windows デスクトップモデムインターフェイスモデ�
 
 Windows 以外のモバイルオペレーティングシステムでは、複数の物理 WWAN ミニポートインスタンスを持つ1つのデバイスとしてマルチ実行プログラムのモデムが表示されます。 各物理ミニポートインスタンスは、NDIS インスタンスとして登録を維持できる実行プログラムを表します。 コンテキスト固有のパケットデータとデバイスサービスセッションを管理するために、実行時に追加の仮想インスタンスを作成することができます。 実行プログラム固有のコマンドと通知は、その実行プログラムを表す WWAN ミニポート NDIS 物理インスタンスを介して交換されます。 モデム固有のコマンド (実行プログラム固有ではないコマンド) とそれに対応する通知は、物理ミニポートインスタンスに送信されるか、または任意の物理ミニポートインスタンスから送信されることがあります。
 
-次の2つの図は、実行プログラム固有のコマンドと通知 (最初の図) の違いを示しています。ここでは、コマンドと通知を実行し、同じ実行プログラムと、モデム固有のコマンドと通知 (2 番目の図) を使用します。コマンドは任意の実行プログラムを通過し、任意の実行プログラムから取得できます。
+次の2つの図は、実行プログラム固有のコマンドと通知 (最初の図) の違いを示しています。この図では、コマンドと通知が同じ実行プログラムから送られ、モデム固有のコマンドと通知 (2 番目の図) が実行されます。ここでは、コマンドは実行プログラムによって実行され、任意の
 
 ![実行プログラム固有のコマンドと通知](images/multi-SIM_4_executorSpecificCommands.png "実行プログラム固有のコマンドと通知")
 
 ![モデム固有のコマンドと通知](images/multi-SIM_4_modemSpecificCommands.png "モデム固有のコマンドと通知")
 
-ミニポートインスタンスに対して発行されたすべての OID セットまたはクエリ要求は、ミニポートインスタンスが関連付けられているモデムと実行プログラムに対して実行されます。 同様に、ミニポートインスタンスから送信されたすべての要請されていない通知および要請されていないデバイスサービスイベントは、モデムおよびミニポートインスタンスが関連付けられている実行プログラムに適用されます。 たとえば、ミニポートからの要請されていない NDIS_STATUS_WWAN_REGISTER_STATE または NDIS_STATUS_WWAN_PACKET_SERVICE 通知は、関連付けられているモデムと実行プログラムの登録 (またはパケットサービスの状態) を示します。これは、次の状態には関係ありません。他のモデムまたはその他の実行プログラム。 
+ミニポートインスタンスに対して発行されたすべての OID セットまたはクエリ要求は、ミニポートインスタンスが関連付けられているモデムと実行プログラムに対して実行されます。 同様に、ミニポートインスタンスから送信されたすべての要請されていない通知および要請されていないデバイスサービスイベントは、モデムおよびミニポートインスタンスが関連付けられている実行プログラムに適用されます。 たとえば、ミニポートからの要請されていない NDIS_STATUS_WWAN_REGISTER_STATE または NDIS_STATUS_WWAN_PACKET_SERVICE 通知は、関連付けられているモデムと実行プログラムの登録 (またはパケットサービスの状態) を示します。これは、他のモデムまたは他の実行プログラムの状態とは関係ありません。 
 
 1つのデバイスに複数のモデムまたは複数の実行プログラムがある場合、そのモデムと実行プログラムの組み合わせに関連付けられている物理ミニポートアダプターは、特定のモデムと実行プログラムの組み合わせに関連する、非状況依存の非要請通知を発行します。 
 
@@ -80,7 +80,7 @@ Windows 以外のモバイルオペレーティングシステムでは、複数
 
 複数のモデムまたは複数の実行プログラムがあるデバイスの場合、モデムと実行プログラムの組み合わせに関連付けられている物理ミニポートアダプターインスタンスは、非コンテキスト固有の OID セット要求を受け取ることができます。 ミニポートドライバーは、このような要求の進行状況を追跡します。 このようなセット要求がいずれかのアダプターで進行中で、まだ完了していない場合は、そのようなセット要求の試行 (同じモデムおよび実行プログラムに関連付けられているアダプターインスタンスへの要求) が、前の要求が完了した後にキューに登録され、処理される必要があります。 
 
-Windows 10 desktop WMBCLASS ドライバーは、前の段落に記載されている仕様に従ってこのセット要求の競合状態を処理しますが、モデムレイヤーで競合状態が発生した場合、モデムは同じガイダンスに従って競合をキューに入れます。同じ基になるデバイスにリンクされている別の関数がまだ処理されている場合の、MBIM 関数でのデバイス全体のコマンド。
+Windows 10 desktop WMBCLASS ドライバーは、このセット要求の競合状態を処理するために、前の段落で説明した仕様に従っていますが、モデムレイヤーで競合状態が発生した場合、モデムは同じガイダンスに従って、同じ基になるデバイスにリンクされている別の関数を処理している場合、MBIM 関数で
 
 ## <a name="oids-for-set-and-query-requests"></a>Set 要求とクエリ要求の Oid
 
@@ -142,7 +142,7 @@ Windows 10 バージョン1703以降では、windows 以外のモバイルデバ
 
 ## <a name="mbim-interface-update-for-multi-sim-operations"></a>マルチ SIM 操作用の MBIM インターフェイスの更新
 
-Windows 以外のモバイルオペレーティングシステムでは、複数の MBIM 機能を備えた1つの USB 複合デバイスとして複数実行プログラムのモデムが表示されます。 各 MBIM 関数は、登録を維持できる実行プログラムを表します。 実行プログラム固有のコマンドと通知は、その実行プログラムを表す MBIM 関数を介して交換されますが、モデム固有のコマンド (つまり、実行プログラムに固有ではないコマンド) とそれに対応する通知を送信または送信することができます。基になる同じ USB 複合デバイスに属する任意の MBIM 関数から。 
+Windows 以外のモバイルオペレーティングシステムでは、複数の MBIM 機能を備えた1つの USB 複合デバイスとして複数実行プログラムのモデムが表示されます。 各 MBIM 関数は、登録を維持できる実行プログラムを表します。 実行プログラム固有のコマンドと通知は、その実行プログラムを表す MBIM 関数を介して交換されます。一方、モデム固有のコマンド (つまり、実行プログラムに固有ではないコマンド) とそれに対応する通知は、基になる同じ USB 複合デバイスに属する任意の MBIM 関数との間で送受信されます。 
 
 MBIM 関数に対して発行されたすべての CID セットまたはクエリ要求は、ミニポートインスタンスが関連付けられているモデムと実行プログラムに対して実行されます。同様に、MBIM 関数から送信されるすべての要請されていない通知は、MBIM 関数が関連付けられているモデムおよび実行プログラムに適用されます。 同様に、ミニポートインスタンスから送信されたすべての要請されていないデバイスサービスイベントは、モデムと、MBIM 関数が関連付けられている実行プログラムに適用されます。 たとえば、MBIM 関数からの要請されていない MBIM_CID_REGISTER_STATE または MBIM_CID_PACKET_SERVICE 通知は、関連するモデム/実行プログラムの登録またはパケットサービスの状態のみを示し、他のモデムまたは他の実行プログラムの状態とは関係がありません。 
 
@@ -166,7 +166,7 @@ UUID 値 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 **UUID_MS_BasicConnect**には、次の cid が定義されています。
 
-| CID | コマンドコード | 最小 OS バージョン |
+| CID | コマンド コード | 最小 OS バージョン |
 | --- | --- | --- |
 | MBIM_CID_MS_SYS_CAPS | 5 | Windows 10 Version 1703 |
 | MBIM_CID_MS_DEVICE_CAPS_V2 | 6 | Windows 10 Version 1703 |
@@ -181,40 +181,40 @@ UUID 値 = **3d01dcc5-fef5-4d05-0d3abef7058e9aaf**
 
 この CID は、モデムに関する情報を取得します。 これは、USB 関数として公開されている MB のインスタンスのいずれかで送信できます。
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 MBIM_COMMAND_MSG の InformationBuffer には、MBIM_MS_SYS_CAPS_INFO として応答データが含まれています。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
-該当しない。
+適用不可。
 
 ##### <a name="unsolicited-event"></a>一方的なイベント
 
-該当しない。
+適用不可。
 
 #### <a name="parameters"></a>パラメーター
 
-|  | 設定 | [クエリ] | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | 該当なし | 該当なし |
-| 応答 | 該当なし | MBIM_MS_SYS_CAPS_INFO | 該当なし |
+| コマンド | 適用なし | 適用なし | 適用なし |
+| 応答 | 適用なし | MBIM_MS_SYS_CAPS_INFO | 適用なし |
 
 #### <a name="data-structures"></a>データ構造
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 InformationBuffer は null にする必要があり、InformationBufferLength は0である必要があります。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
-該当しない。
+適用不可。
 
 ##### <a name="response"></a>応答
 
 InformationBuffer では、次の MBIM_SYS_CAPS_INFO 構造体を使用する必要があります。
 
-| [オフセット] | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | NumberOfExecutors | UINT32 | このモデムによって報告された MBB インスタンスの数 |
 | 4 | 4 | NumberOfSlots | UINT32 | このモデムで使用可能な物理 UICC スロットの数 |
@@ -243,26 +243,26 @@ InformationBuffer では、次の MBIM_SYS_CAPS_INFO 構造体を使用する必
 
 #### <a name="parameters"></a>パラメーター
 
-|  | 設定 | [クエリ] | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | 該当なし | 該当なし |
-| 応答 | 該当なし | MBIM_MS_DEVICE_CAPS_INFO_V2 | 該当なし |
+| コマンド | 適用なし | 適用なし | 適用なし |
+| 応答 | 適用なし | MBIM_MS_DEVICE_CAPS_INFO_V2 | 適用なし |
 
 #### <a name="data-structures"></a>データ構造
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 10.5.1.4 public USB MBIM standard のセクションと同じです。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
-該当しない。
+適用不可。
 
 ##### <a name="response"></a>応答
 
 InformationBuffer では、次の MBIM_DEVICE_CAPS_INFO_V2 構造体を使用する必要があります。 パブリック USB MBIM 標準のセクション10.5.1 で定義されている MBIM_CID_DEVICE_CAPS 構造と比較して、次の構造には*Deviceindex*という名前の新しいフィールドがあります。 ここに記載されていない限り、パブリック USB MBIM 標準の表10-14 のフィールドの説明がここに適用されます。
 
-| [オフセット] | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | DeviceType | MBIM_DEVICE_TYPE |  |
 | 4 | 4 | CellularClass | MBIM_CELLULAR_CLASS |  |
@@ -271,11 +271,11 @@ InformationBuffer では、次の MBIM_DEVICE_CAPS_INFO_V2 構造体を使用す
 | 16 | 4 | Microsoft.visualstudio.ordesigner.dataclass.member | MBIM_DATA_CLASS |  |
 | 20 | 4 | SmsCaps | MBIM_SMS_CAPS |  |
 | 24 | 4 | ControlCaps | MBIM_CTRL_CAPS |  |
-| 28 | 4 | 最大セッション | UINT32 |  |
+| 28 | 4 | MaxSessions | UINT32 |  |
 | 32 | 4 | CustomDataClassOffset | OFFSET |  |
-| 36 | 4 | CustomDataClassSize | サイズ (0. 22) |  |
+| 36 | 4 | CustomDataClassSize | サイズ (0.. 22) |  |
 | 40 | 4 | DeviceIdOffset | OFFSET |  |
-| 44 | 4 | DeviceIdSize | サイズ (0. 26) |  |
+| 44 | 4 | DeviceIdSize | サイズ (0.. 26) |  |
 | 48 | 4 | FirmwareInfoOffset | OFFSET |  |
 | 52 | 4 | FirmwareInfoSize | サイズ (0 ~ 60) |  |
 | 56 | 4 | ハードウェアの配信 Ooffset | OFFSET |  |
@@ -293,39 +293,39 @@ InformationBuffer では、次の MBIM_DEVICE_CAPS_INFO_V2 構造体を使用す
 
 この CID は、デバイススロットのマッピングを設定または返します (つまり、実行プログラムとスロットのマッピング)。
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 MBIM_COMMAND_MSG の InformationBuffer は使用されません。 MBIM_COMMAND_DONE の InformationBuffer に MBIM_MS_DEVICE_SLOT_MAPPING_INFO が返されます。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
 MBIM_COMMAND_MSG の InformationBuffer に MBIM_MS_DEVICE_SLOT_MAPPING_INFO が含まれています。 MBIM_COMMAND_DONE の InformationBuffer に MBIM_MS_DEVICE_SLOT_MAPPING_INFO が返されます。 Set CID が成功したか失敗したかにかかわらず、応答に含まれる MBIM_MS_DEVICE_SLOT_MAPPING_INFO は、現在のデバイススロットマッピングを表します。
 
 ##### <a name="unsolicited-events"></a>一方的なイベント
 
-該当しない。
+適用不可。
 
 #### <a name="parameters"></a>パラメーター
 
-|  | 設定 | [クエリ] | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 該当なし | 該当なし |
-| 応答 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 該当なし |
+| コマンド | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 適用なし | 適用なし |
+| 応答 | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | MBIM_MS_DEVICE_SLOT_MAPPING_INFO | 適用なし |
 
 #### <a name="data-structures"></a>データ構造
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 InformationBuffer は null にする必要があり、InformationBufferLength は0である必要があります。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
 InformationBuffer では、次の MBIM_MS_DEVICE_SLOT_MAPPING_INFO 構造体を使用する必要があります。
 
-| [オフセット] | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | MapCount (MC) | UINT32 | マッピングの数。これは、常にデバイス/エグゼキュータの数と等しくなります。 |
-| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | このリストの*i 番目*のペア。ここで、(0 < = i < = (MC-1)) は、 *i 番目*のデバイス/実行プログラムに現在マップされているスロットのインデックスを記録します。 ペアの最初の要素は、4バイトのフィールドであり、この MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 構造体の先頭 (オフセット 0) から UINT32 に計算された DataBuffer へのオフセットが含まれます。 ペアの2番目の要素は、レコード要素の4バイトサイズです。 スロットインデックスの種類は UINT32 であるため、ペアの2番目の要素は常に4です。 |
+| 4 | 8 * MC | SlotMapList | OL_PAIR_LIST | このリストの*i 番目*のペア。ここで、(0 <= i <= (MC-1)) は、 *i 番目*のデバイス/実行プログラムに現在マップされているスロットのインデックスを記録します。 ペアの最初の要素は、4バイトのフィールドであり、この MBIM_MS_DEVICE_SLOT_MAPPINGS_INFO 構造体の先頭 (オフセット 0) から UINT32 に計算された DataBuffer へのオフセットが含まれます。 ペアの2番目の要素は、レコード要素の4バイトサイズです。 スロットインデックスの種類は UINT32 であるため、ペアの2番目の要素は常に4です。 |
 | 4 + (8 * MC) | 4 * MC | DataBuffer | DATABUFFER | *SlotMapList*を格納するデータバッファー。 スロットのサイズは4バイトで、MC はスロットインデックスの数と同じであるため、DataBuffer の合計サイズは 4 * MC になります。 |
 
 ##### <a name="response"></a>応答
@@ -347,13 +347,13 @@ Set で使用される MBIM_MS_DEVICE_SLOT_MAPPING_INFO は、応答のために
 
 この CID は、指定された UICC スロットとその中のカード (存在する場合) の高レベルの集計された状態を取得します。 また、いずれかのスロットの状態が変化したときに、要請されていない通知を配信するためにも使用できます。
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 MBIM_COMMAND_MSG の InformationBuffer に MBIM_MS_SLOT_INFO_REQ 構造体が含まれています。 MBIM_COMMAND_DONE メッセージの InformationBuffer に MBIM_MS_SLOT_INFO 構造体が含まれています。
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
-該当しない。
+適用不可。
 
 ##### <a name="unsolicited-events"></a>一方的なイベント
 
@@ -361,33 +361,33 @@ MBIM_COMMAND_MSG の InformationBuffer に MBIM_MS_SLOT_INFO_REQ 構造体が含
 
 #### <a name="parameters"></a>パラメーター
 
-|  | 設定 | [クエリ] | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | MBIM_MS_SLOT_INFO_REQ | 該当なし |
-| 応答 | 該当なし | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
+| コマンド | 適用なし | MBIM_MS_SLOT_INFO_REQ | 適用なし |
+| 応答 | 適用なし | MBIM_MS_SLOT_INFO | MBIM_MS_SLOT_INFO |
 
 #### <a name="data-structures"></a>データ構造
 
-##### <a name="query"></a>[クエリ]
+##### <a name="query"></a>クエリ
 
 InformationBuffer では、次の MBIM_MS_SLOT_INFO_REQ 構造体を使用する必要があります。
 
-| [オフセット] | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | [説明] |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | 照会するスロットのインデックス。 |
 
-##### <a name="set"></a>設定
+##### <a name="set"></a>オン
 
-該当しない。
+適用不可。
 
 ##### <a name="response"></a>応答
 
 InformationBuffer では、次の MBIM_MS_SLOT_INFO 構造体を使用する必要があります。
 
-| [オフセット] | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | [説明] |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | SlotIndex | UINT32 | スロットのインデックス。 |
-| 4 | 4 | 状態 | MBIM_MS_UICC_SLOT_STATE | スロットとカードの状態 (該当する場合)。 |
+| 4 | 4 | State | MBIM_MS_UICC_SLOT_STATE | スロットとカードの状態 (該当する場合)。 |
 
 次の MBIM_MS_UICCSLOT_STATE 構造は、スロットの可能な状態を示します。
 

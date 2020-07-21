@@ -9,11 +9,11 @@ keywords:
 ms.date: 04/20/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: dc3dc5c034c6e26646c9e929cadaa9d1f934186d
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72840282"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86568071"
 ---
 # <a name="determining-if-a-debugger-is-attached"></a>デバッガーがアタッチされているかどうかの判別
 
@@ -25,11 +25,11 @@ ms.locfileid: "72840282"
 
 カーネルデバッグの状態を確認するには、次の変数とルーチンが役立ちます。
 
--   (Microsoft Windows XP 以降)[**KD\_DEBUGGER\_enabled**](https://docs.microsoft.com/previous-versions/ff548118(v=vs.85))グローバルカーネル変数は、カーネルデバッグが有効になっているかどうかを示します。
+-   (Microsoft Windows XP 以降)[**KD \_ デバッガーが \_ 有効になっ**](https://docs.microsoft.com/previous-versions/ff548118(v=vs.85))ているグローバルカーネル変数は、カーネルデバッグが有効になっているかどうかを示します。
 
--   (Windows XP 以降)[**KD\_デバッガー\_\_存在しない**](https://docs.microsoft.com/previous-versions/ff548125(v=vs.85))グローバルカーネル変数は、カーネルデバッガーが現在アタッチされているかどうかを示します。
+-   (Windows XP 以降)[**KD \_ デバッガー \_ \_ **](https://docs.microsoft.com/previous-versions/ff548125(v=vs.85))のグローバルカーネル変数は、カーネルデバッガーが現在アタッチされているかどうかを示します。
 
--   (Microsoft Windows Server 2003 以降)[**KdRefreshDebuggerNotPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdrefreshdebuggernotpresent)ルーチンは、KD\_デバッガーの値を更新し\_\_存在しません。
+-   (Microsoft Windows Server 2003 以降)[**KdRefreshDebuggerNotPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdrefreshdebuggernotpresent)ルーチンは、KD \_ デバッガーが存在しない値を更新し \_ \_ ます。
 
  
 

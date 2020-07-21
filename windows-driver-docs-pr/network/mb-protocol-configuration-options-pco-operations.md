@@ -6,12 +6,12 @@ keywords:
 - MB PCO オプション、モバイルブロードバンド PCO オプション、MB プロトコル構成オプション、モバイルブロードバンドプロトコル構成オプション、WDK ネットワークドライバー、MBB ミニポートドライバー
 ms.date: 09/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 833bb6114ad36b39a8080dff25988eead22efb7d
-ms.sourcegitcommit: adccef85b24a37b1caa51e1b3435741a2f022cd5
+ms.openlocfilehash: b1bf9a72e9b9f1cd50de65a04ff99a4fa38c546f
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724413"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557713"
 ---
 # <a name="mb-protocol-configuration-options-pco-operations"></a>MB プロトコル構成オプション (PCO) 操作
 
@@ -90,16 +90,16 @@ InformationBuffer には、唯一の関連フィールドが*SessionId*である
 
 #### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | 適用なし | MBIM_PCO_VALUE | 適用なし |
-| Response | 適用なし | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
+| 応答 | 適用なし | MBIM_PCO_VALUE | MBIM_PCO_VALUE |
 
 #### <a name="data-structures"></a>データ構造
 
 ##### <a name="mbim_pco_type"></a>MBIM_PCO_TYPE
 
-| Type | 値 | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
 | MBIMPcoTypeComplete | 0 | 完全な PCO 構造体がネットワークから受信したとおりに渡されることを指定します。ヘッダーは、3GPP TS 24.008 仕様で定義されている PCO 構造体のオクテット3のプロトコルを現実に反映します。 |
 | MBIMPcoTypePartial | 1 | モデムがネットワークから受信した PCO 構造のサブセットを渡すだけであることを指定します。 ヘッダーは 3GPP TS 24.008 仕様で定義されている PCO 構造に一致しますが、オクテット3の "構成プロトコル" が有効ではない可能性があります。 |

@@ -3,483 +3,483 @@ title: MB 低レベル UICC アクセス
 description: MB 低レベル UICC アクセス
 ms.assetid: AD0E9F20-9C95-4102-94EF-054D45E2C597
 keywords:
-- 低レベルの MB UICC アクセス、低レベルのモバイル ブロード バンド UICC アクセス、モバイル ブロード バンド ミニポート ドライバー低レベルをリセット、MB UICC UICC、MB UICC ATR、MB UICC 応答チャネルを開く、MB UICC がチャネル、MB UICC APDU、MB UICC 端末の機能を閉じるには、MB UICC のリセット
+- MB 低レベル UICC アクセス、モバイルブロードバンド低レベル UICC アクセス、モバイルブロードバンドミニポートドライバーの低レベル UICC、MB UICC ATR、リセットするための MB UICC 応答、mb uicc オープンチャネル、mb UICC 終了チャネル、mb uicc APDU、mb uicc ターミナル機能、mb UICC リセット
 ms.date: 12/05/2017
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e31353e294746506f6470973eb368d8d1336feaa
-ms.sourcegitcommit: 970845120208f29b874066f2b8b7e97078088013
+ms.openlocfilehash: c3e33884b3c66879bde5f5c755a5f84805246eb9
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66806828"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557761"
 ---
 # <a name="mb-low-level-uicc-access"></a>MB 低レベル UICC アクセス
 
 ## <a name="overview"></a>概要
 
-ブロード バンド インターフェイス モデルの Mobile リビジョン 1.0、または MBIM1、ホスト デバイスと、携帯データ ネットワークのモデムの OEM および IHV に依存しないインターフェイスを定義します。
+モバイルブロードバンドインターフェイスモデルリビジョン 1.0 (MBIM1) では、ホストデバイスと携帯データモデムの間に、OEM および IHV に依存しないインターフェイスが定義されています。
 
-MBIM1 関数は、UICC スマート カードが含まれていて、一部のデータと内部状態へのアクセスを提供します。 ただし、スマート カードには、MBIM インターフェイスによって定義されているもの以外の他の機能があります。 これらの追加機能には、近距離通信、に基づいてモバイル ペイメント ソリューションのプロビジョニング、またはリモート UICC プロファイル全体のセキュリティで保護された要素のサポートが含まれます。
+MBIM1 関数には、UICC スマートカードが含まれており、そのデータの一部と内部状態にアクセスできます。 ただし、スマートカードには、MBIM インターフェイスで定義されている以外の機能が追加されている場合があります。 これらの追加機能には、近距離通信に基づくモバイル支払いソリューションのセキュリティで保護された要素のサポート、または UICC プロファイル全体のリモートプロビジョニングが含まれます。
 
-モバイル ブロード バンドが有効な Windows デバイス、無線インターフェイス層 (RIL) インターフェイスだけでなく、MBIM インターフェイスを使用します。 RIL が提供する機能の 1 つは、低レベルのアクセス、UICC するインターフェイスです。 このトピックでは、MBIM インターフェイスでこの追加機能を記述する MBIM に Microsoft の拡張のセットについて説明します。
+モバイルブロードバンド対応の Windows デバイスでは、MBIM インターフェイスが、ラジオインターフェイスレイヤー (RIL) インターフェイスに加えて使用されます。 RIL が提供する機能の1つは、UICC に低レベルでアクセスするためのインターフェイスです。 このトピックでは、mbim インターフェイスでこの追加機能を説明する、MBIM に対する Microsoft の拡張機能のセットについて説明します。
 
-Microsoft 拡張機能には、一連のデバイスのサービスのコマンド (セットおよびクエリの両方) と通知が構成されています。 これらの拡張機能は、デバイス サービス ストリームの新しい用途を含めないでください。
+Microsoft 拡張機能は、一連のデバイスサービスコマンド (設定とクエリの両方) と通知を構成します。 これらの拡張機能には、デバイスサービスストリームの新しい使用は含まれていません。
 
 ## <a name="mbim-service-and-cid-values"></a>MBIM サービスと CID 値
 
-| サービス名 | UUID | UUID 値 |
+| [サービス名] | UUID | UUID の値 |
 | --- | --- | --- |
-| Microsoft UICC の低レベルのアクセス | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
+| Microsoft 低レベルの UICC アクセス | UUID_MS_UICC_LOW_LEVEL | C2F6588E-F037-4BC9-8665-F4D44BD09367 |
 
-次の表は、設定、CID がサポートするかどうかも、各 CID のコマンド コードを指定、クエリ、またはイベント (通知) を要求します。 詳細については、パラメーター、データ構造、および通知の詳細については、このトピック内の各 CID の個々 のセクションを参照してください。 
+次の表は、各 CID のコマンドコードと、CID が Set、Query、または Event (通知) 要求をサポートしているかどうかを示しています。 パラメーター、データ構造、および通知の詳細については、このトピック内の各 CID の個別のセクションを参照してください。 
 
-| CID | コマンド コード | 設定 | クエリ | 通知 |
+| CID | コマンドコード | オン | クエリ | 通知 |
 | --- | --- | --- | --- | --- |
 | MBIM_CID_MS_UICC_ATR | 1 | N | Y | N |
-| MBIM_CID_MS_UICC_OPEN_CHANNEL | 2 | Y | N | N |
-| MBIM_CID_MS_UICC_CLOSE_CHANNEL | 3 | Y | N | N |
-| MBIM_CID_MS_UICC_APDU) | 4 | Y | N | N |
+| MBIM_CID_MS_UICC_OPEN_CHANNEL | 2 | Y | × | N |
+| MBIM_CID_MS_UICC_CLOSE_CHANNEL | 3 | Y | × | N |
+| MBIM_CID_MS_UICC_APDU) | 4 | Y | × | N |
 | MBIM_CID_MS_UICC_TERMINAL_CAPABILITY | 5 | Y | Y | N |
 | MBIM_CID_MS_UICC_RESET | 6 | Y | Y | N |
 
 ## <a name="status-codes"></a>状態コード
 
-MBIM 状態コードがの 9.4. 5. で定義されている、 [MBIM 標準](https://go.microsoft.com/fwlink/p/?linkid=842064)します。 さらに、次の追加のエラー ステータス コードが定義されています。
+MBIM の状態コードは、 [mbim 標準](https://go.microsoft.com/fwlink/p/?linkid=842064)の9.4.5 セクションで定義されています。 さらに、次のようなエラー状態コードが定義されています。
 
-| 状態コード | 値 (16 進数) | 説明 |
+| 状態コード | 値 (16 進) | 説明 |
 | --- | --- | --- |
-| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 87430001 | 開いている論理チャネルは、UICC で利用できる論理チャネルがないために失敗しました (それらがサポートしていないか、使用中のすべての状態に)。 |
-| MBIM_STATUS_MS_SELECT_FAILED | 87430002 | 選択に失敗したため、論理のチャネルをオープンに失敗しました。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 87430003 | 論理のチャンネル番号が無効です (MBIM_CID_MS_UICC_OPEN_CHANNEL によってが開いていない)。 |
+| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | 87430001 | UICC で使用可能な論理チャネルがないため、論理チャネルを開くことができませんでした (サポートされていないか、それらのすべてが使用されています)。 |
+| MBIM_STATUS_MS_SELECT_FAILED | 87430002 | SELECT に失敗したため、論理チャネルを開くことができませんでした。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 87430003 | 論理チャネル番号が無効です (MBIM_CID_MS_UICC_OPEN_CHANNEL によって開かれていません)。 |
 
-### <a name="mbimsubscriberreadystate"></a>MBIM_SUBSCRIBER_READY_STATE
+### <a name="mbim_subscriber_ready_state"></a>MBIM_SUBSCRIBER_READY_STATE
 
-| 種類 | Value | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
-| MBIMSubscriberReadyStateNoEsimProfile | 7 | カードは、準備ができてが有効になっているプロファイルではありません。 |
+| MBIMSubscriberReadyStateNoEsimProfile | 7 | カードの準備ができていますが、有効なプロファイルがありません。 |
 
-## <a name="uicc-responses-and-status"></a>UICC 応答と状態
+## <a name="uicc-responses-and-status"></a>UICC の応答とステータス
 
-文字ベースまたはレコード ベースのインターフェイス、またはその両方、UICC を実装できます。 特定のメカニズムは別ですが、結果は、2 つの状態のバイト数が (SW1 と SW2 という名前) および (空にすることがあります) が応答して、UICC が各コマンドに応答します。 通常の成功の状態が 90 で示されます 00 です。 ただし、UICC カード アプリケーション ツールキットをサポートしています、UICC がターミナルに事前対応型のコマンドを送信する必要がある場合は、(XX は異なります) 91 XX の状態が正常に返されたが示されます。 MBIM 関数、またはターミナルでは処理されます (送信、FETCH、UICC を事前対応型のコマンドの処理または MBIM_ でホストに送信するその他の UICC 操作中に受信した事前対応型のコマンドと同様、このプロアクティブ コマンドを処理します。CID_STK_PAC)。 90 の両方を考慮する必要があります MBIM_CID_MS_UICC_OPEN_CHANNEL または MBIM_CID_MS_UICC_APDU MBIM ホストが送信するとき、正常な状態として XX を 00 と 91。
+UICC は、文字ベースのインターフェイスとレコードベースのインターフェイスのいずれかまたは両方を実装する場合があります。 特定のメカニズムは異なりますが、結果として、UICC は2つのステータスバイト (SW1 と SW2) と応答 (空の場合があります) を持つ各コマンドに応答することになります。 正常な成功の状態は、90 00 によって示されます。 ただし、UICC でカード application toolkit がサポートされ、UICC がターミナルにプロアクティブコマンドを送信する必要がある場合、正常に返されるのは、状態が 91 XX (XX が異なる) であることを示します。 MBIM 関数 (ターミナル) は、他の UICC 操作中に受信したプロアクティブコマンドを処理するのと同様に、このプロアクティブコマンドを処理します (UICC にフェッチを送信する、プロアクティブコマンドを処理する、MBIM_CID_STK_PAC を使用してホストに送信するなど)。 MBIM ホストが MBIM_CID_MS_UICC_OPEN_CHANNEL または MBIM_CID_MS_UICC_APDU のいずれかを送信する場合、通常の状態として 90 00 と 91 XX の両方を考慮する必要があります。
 
-コマンドは、256 バイトよりも大きい応答を返すできる必要があります。 このメカニズムがの 5.1.3 のセクションで説明されている、 [ISO/IEC 7816-標準 4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596)します。 カードが 90 ではなく、61 XX の SW1 SW2 ステータス ワードを返すここでは、00、XX は残りのバイト数または 00 256 バイトまたは複数の残りがある場合。 モデムする必要があります発行 GET 応答で、同じクラス バイト繰り返しのすべてのデータを受信するまで。 最終ステータス ワード 90 を示される 00 です。 シーケンスは、特定の論理チャネル内で中断されたことがあります。 追加 Apdu はモデムで処理する必要があり、ホストに透過的にする必要があります。 ホストで処理される場合、[apdu] いくつかが可能性があります Apdu のシーケンス中にカードを参照非同期にする保証はありません。
+コマンドは、256バイトを超える応答を返すことができる必要があります。 このメカニズムについては、 [ISO/IEC 7816-4:2013 標準](https://go.microsoft.com/fwlink/p/?linkid=864596)の5.1.3 セクションを参照してください。 この場合、カードは 90 00 ではなく、61 XX の SW1 SW2 ステータスワードを返します。ここで、XX は残りのバイト数か、256バイト以上がある場合は00です。 すべてのデータが受信されるまで、モデムは同じクラスバイトの GET 応答を繰り返し実行する必要があります。 これは、最後のステータスワード 90 00 によって示されます。 シーケンスは、特定の論理チャネル内で中断されないようにする必要があります。 追加の APDUs はモデムで処理される必要があり、ホストに対して透過的である必要があります。 ホストで処理された場合、APDUs のシーケンス中に他の APDU がそのカードを非同期に参照しているという保証はありません。
 
 ## <a name="comparison-to-ihvril"></a>IHVRIL との比較
 
-IHVRIL 仕様の 5.2.3.3.14 を通じて 5.2.3.3.10 のセクションでは、この仕様の基になるようなインターフェイスを定義します。 いくつかの違いは次のとおりです。
+5.2.3.3.10 から5.2.3.3.14 までのセクションでは、この仕様の基になる同様のインターフェイスを定義しています。 次のような違いがあります。
 
-- RIL インターフェイスでは、セキュリティで保護されたメッセージングを指定する方法は提供されません。 Apdu を交換する MBIM コマンドは、明示的なパラメーターとして、これを指定します。
-- RIL インターフェイスは、[apdu] 内のクラスのバイトの解釈を明確に定義されません。 ホストから送信されたクラス バイトにする必要がある MBIM 仕様の状態の表示は使用されていません (および MBIM 関数がこのバイトを構築する代わりに)。
-- RIL インターフェイスでは、MBIM インターフェイスでは、これを実現 CID を 1 つのバリアント型引数と一方に、グループ内のすべての UICC チャネルを閉じるに個別の関数を使用します。
-- MBIM エラー状態と UICC 状態 (SW1 SW2) 間のリレーションシップは RIL エラーと UICC 状態間のリレーションシップをより明確に定義されています。
-- MBIM インターフェイスは、指定したアプリケーションを選択して障害からの新しい論理チャネルの割り当ての失敗を区別します。
-- MBIM インターフェイスは、モデム カードに送信するための端末の機能のオブジェクトの送信を許可します。
+- RIL インターフェイスには、セキュリティで保護されたメッセージングを指定する方法は用意されていません。 APDUs を交換するための MBIM コマンドでは、これを明示的なパラメーターとして指定します。
+- RIL インターフェイスは、APDU 内のクラスバイトの解釈を明確に定義しません。 MBIM 仕様では、ホストから送信されたクラスバイトは存在する必要がありますが、使用されていません (代わりに、MBIM 関数によってこのバイトが構築されます)。
+- RIL インターフェイスは、グループ内のすべての UICC チャネルを閉じるために個別の関数を使用します。一方、MBIM インターフェイスでは、1つの CID に対する variant 引数を使用してこれを実現しています。
+- MBIM エラー状態と UICC ステータス (SW1 SW2) の関係は、RIL エラーと UICC ステータスの関係よりも明確に定義されています。
+- MBIM インターフェイスは、新しい論理チャネルを失敗から割り当てて、指定されたアプリケーションを選択できないことを識別します。
+- MBIM インターフェイスは、カードに送信するモデムターミナル機能オブジェクトの送信を許可します。
 
-## <a name="mbimcidmsuiccatr"></a>MBIM_CID_MS_UICC_ATR
+## <a name="mbim_cid_ms_uicc_atr"></a>MBIM_CID_MS_UICC_ATR
 
-回答をリセット (ATR) は、リセットが実行された後に、UICC によって送信されたバイト数の最初の文字列です。 これには、カードではサポートされている論理のチャネルの数などの機能について説明します。 MBIM 関数は、UICC から受信したときに、ATR を保存する必要があります。 その後、ホストは、ATR を取得するのに MBIM_CID_MS_UICC_ATR コマンドを使用することがあります。
+リセットの解答 (ATR) は、リセットが実行された後に UICC によって送信された最初のバイトの文字列です。 サポートされている論理チャネルの数など、カードの機能について説明します。 MBIM 関数は、UICC から受信したときに、ATR を保存する必要があります。 その後、ホストは MBIM_CID_MS_UICC_ATR コマンドを使用して ATR を取得できます。
 
 ### <a name="parameters"></a>パラメーター
 
-|   | 設定 | クエリ | 通知 |
+|   | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 該当なし | 空 | 該当なし |
-| 応答 | 該当なし | MBIM_MS_ATR_INFO | 該当なし |
+| コマンド | 適用なし | Empty | 適用なし |
+| 応答 | 適用なし | MBIM_MS_ATR_INFO | 適用なし |
 
 ### <a name="query"></a>クエリ
 
-クエリ メッセージの InformationBuffer が空です。 
+クエリメッセージの InformationBuffer が空です。 
 
-### <a name="set"></a>設定
+### <a name="set"></a>オン
 
-適用できません。
+適用不可。
 
 ### <a name="response"></a>応答
 
-MBIM_COMMAND_DONE InformationBuffer にはには、この関数に接続されている UICC をリセットするには、その答えを記述する次の MBIM_MS_ATR_INFO 構造体が含まれています。
+MBIM_COMMAND_DONE の InformationBuffer には、この関数にアタッチされている UICC に対してリセットする応答を記述する次の MBIM_MS_ATR_INFO 構造が含まれています。
 
-#### <a name="mbimmsatrinfo"></a>MBIM_MS_ATR_INFO
+#### <a name="mbim_ms_atr_info"></a>MBIM_MS_ATR_INFO
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | AtrSize | SIZE(0..33) | 長さ**AtrData**します。 |
-| 4 | 4 | AtrOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**AtrData** ATR データを格納します。 |
-| 8 | AtrSize | DataBuffer | DATABUFFER | **AtrData**バイト配列。 |
+| 0 | 4 | AtrSize/ | サイズ (0.. 33) | **AtrData**の長さ。 |
+| 4 | 4 | AtrOffset | OFFSET | この構造体の先頭から計算された、 **AtrData**と呼ばれるバイト配列に、ATR データを格納しているバイト単位のオフセット。 |
+| 8 | AtrSize/ | DataBuffer | DATABUFFER | **AtrData**バイト配列。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
-適用できません。
+適用不可。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが適用されます。
+次のステータスコードが適用されます。
 
-| 状態コード | 説明 |
+| status code | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_NOT_INITIALIZED | UICC はまだ完全に初期化されていないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_NOT_INITIALIZED | Uicc がまだ完全に初期化されていないため、UICC 操作を実行できません。 |
 
-## <a name="mbimcidmsuiccopenchannel"></a>MBIM_CID_MS_UICC_OPEN_CHANNEL
+## <a name="mbim_cid_ms_uicc_open_channel"></a>MBIM_CID_MS_UICC_OPEN_CHANNEL
 
-ホストでは、MBIM_CID_MS_UICC_OPEN_CHANNEL コマンドを使用して関数が UICC カード上の新しい論理チャネルを開くし、指定した UICC アプリケーション (アプリケーション ID で指定) を選択します。
+ホストは、MBIM_CID_MS_UICC_OPEN_CHANNEL コマンドを使用して、関数が UICC カード上の新しい論理チャネルを開き、指定された UICC (アプリケーション ID で指定された) アプリケーションを選択するように要求します。
 
-関数は、一連の UICC コマンドを使用してこの MBIM コマンドを実装します。
+関数は、UICC コマンドのシーケンスを使用して、この MBIM コマンドを実装します。
 
-1.  関数は、の 11.1.17」セクションの説明に従って、UICC に管理チャネル コマンドを送信、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)、新しい論理チャネルを作成します。 このコマンドが失敗した場合、関数は SW1 SW2 で MBIM_STATUS_MS_NO_LOGICAL_CHANNELS 状態を取得し、これ以上の操作を受け取りません。 
-2.  管理チャネル コマンドが成功した場合、UICC は関数に新しい論理チャネルのチャネルの数を報告します。 関数は、[名前] で、SELECT を送信するコマンドの where P1 の 11.1.1」セクションの説明に従って、04 を =、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 この操作が失敗した場合、関数は論理チャネルを閉じる UICC 管理チャネル コマンドを送信し、選択を SW1 SW2 で MBIM_STATUS_MS_SELECT_FAILED 状態を返します。
-3.  SELECT コマンドが成功すると、関数は、論理のチャンネル番号と今後の参照用の host で指定したチャネルのグループを記録します。 論理のチャンネル番号、SW1 SW2 からの選択、および応答の選択からに戻りますホスト。
+1.  この関数は、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション11.1.17 の説明に従って、管理チャネルコマンドを uicc に送信して、新しい論理チャネルを作成します。 このコマンドが失敗した場合、この関数は、MBIM_STATUS_MS_NO_LOGICAL_CHANNELS 状態を SW1 SW2 に戻し、それ以上の操作を行いません。 
+2.  [チャネルの管理] コマンドが成功した場合、UICC は新しい論理チャネルのチャネル番号を関数に報告します。 関数は、 [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション11.1.1 で説明されているように、P1 = 04 という名前の SELECT [by name] コマンドを送信します。 この操作が失敗した場合、関数は、管理チャネルコマンドを UICC に送信して論理チャネルを閉じ、SELECT から SW1 SW2 を使用して MBIM_STATUS_MS_SELECT_FAILED の状態を返します。
+3.  SELECT コマンドが成功した場合、この関数は、後で参照するためにホストによって指定された論理チャネル番号とチャネルグループを記録します。 次に、論理チャネル番号、選択からの SW1 SW2、および SELECT からホストへの応答が返されます。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_SET_UICC_OPEN_CHANNEL | 該当なし | 該当なし |
-| 応答 | MBIM_MS_UICC_OPEN_CHANNEL_INFO | 該当なし | 該当なし |
+| コマンド | MBIM_MS_SET_UICC_OPEN_CHANNEL | 適用なし | 適用なし |
+| 応答 | MBIM_MS_UICC_OPEN_CHANNEL_INFO | 適用なし | 適用なし |
 
 ### <a name="query"></a>クエリ
 
-適用できません。
+適用不可。
 
-### <a name="set"></a>設定
+### <a name="set"></a>オン
 
-MBIM_COMMAND_MSG InformationBuffer にはには、次の MBIM_MS_SET_UICC_OPEN_CHANNEL 構造が含まれています。
+MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_MS_SET_UICC_OPEN_CHANNEL 構造が含まれています。
 
-#### <a name="mbimmssetuiccopenchannel"></a>MBIM_MS_SET_UICC_OPEN_CHANNEL
+#### <a name="mbim_ms_set_uicc_open_channel"></a>MBIM_MS_SET_UICC_OPEN_CHANNEL
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | AppIdSize | SIZE(0..32) | アプリケーション ID (AppId) のサイズ。 |
-| 4 | 4 | AppIdOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**AppId**を選択するアプリケーション Id を定義します。 |
-| 8 | 4 | SelectP2Arg | UINT32(0..255) | *P2* SELECT コマンドの引数。 |
-| 12 | 4 | ChannelGroup | UINT32 | このチャネルのチャネルのグループを識別するタグの値。 |
+| 0 | 4 | AppIdSize | サイズ (0.. 32) | アプリケーション ID (AppId) のサイズ。 |
+| 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭から計算された、選択する AppId を定義する**appid**と呼ばれるバイト配列へのオフセット (バイト単位)。 |
+| 8 | 4 | SelectP2Arg | UINT32 (0.. 255) | SELECT コマンドの*P2*引数。 |
+| 12 | 4 | ChannelGroup | UINT32 | このチャネルのチャネルグループを識別するタグ値。 |
 | 16 | AppIdSize | DataBuffer | DATABUFFER | **AppId**バイト配列。 |
 
 ### <a name="response"></a>応答
 
-MBIM_COMMAND_DONE InformationBuffer にはには、次の MBIM_MS_UICC_OPEN_CHANNEL_INFO 構造が含まれています。
+MBIM_COMMAND_DONE の InformationBuffer には、次の MBIM_MS_UICC_OPEN_CHANNEL_INFO 構造が含まれています。
 
-#### <a name="mbimmsuiccopenchannelinfo"></a>MBIM_MS_UICC_OPEN_CHANNEL_INFO
+#### <a name="mbim_ms_uicc_open_channel_info"></a>MBIM_MS_UICC_OPEN_CHANNEL_INFO
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 状況 | BYTE[2] | SW1 と SW2、そのバイト順でします。 詳細については、次の次の表は、ノートを参照してください。 |
-| 4 | 4 | Channel | UINT32(0..19) | 論理のチャネルの識別子です。 このメンバーが 0 の場合は、操作できませんでした。 |
-| 8 | 4 | ResponseLength | SIZE(0..256) | 応答の長さ (バイト単位)。 |
-| 12 | 4 | ResponseOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**応答**SELECT からの応答を格納しています。 |
-| 16 | - | DataBuffer | DATABUFFER | **応答**バイト配列のデータ。 |
+| 0 | 4 | Status | バイト [2] | このバイト順での SW1 と SW2。 詳細については、この表の次のメモを参照してください。 |
+| 4 | 4 | チャネル | UINT32 (0.. 19) | 論理チャネル識別子。 このメンバーが0の場合、操作は失敗します。 |
+| 8 | 4 | ResponseLength | サイズ (0 ~ 256) | 応答の長さ (バイト単位)。 |
+| 12 | 4 | ResponseOffset | OFFSET | この構造体の先頭から計算されたバイト配列へのオフセット (バイト単位)。これは、SELECT からの応答を含む**応答**と呼ばれるバイト配列になります。 |
+| 16 | - | DataBuffer | DATABUFFER | **応答**バイト配列データ。 |
 
-コマンドは、MBIM_STATUS_MS_NO_LOGICAL_CHANNELS を返す場合、**状態**フィールドは単語を含む、UICC 状態 SW1 と SW2 管理チャネル コマンドから、その他のフィールドが 0 になります。 コマンドは、MBIM_STATUS_MS_SELECT_FAILED を返す場合、**状態**フィールドは単語を含む、UICC 状態 SW1 と SW2 SELECT コマンドから、その他のフィールドが 0 になります。 その他の状態、InformationBuffer を空にする必要があります。
+コマンドが MBIM_STATUS_MS_NO_LOGICAL_CHANNELS を返す場合、 **status**フィールドには、[チャネルの管理] コマンドの uicc ステータスワード SW1 と SW2 が含まれており、残りのフィールドは0になります。 コマンドが MBIM_STATUS_MS_SELECT_FAILED を返す場合、 **status**フィールドには SELECT コマンドの uicc ステータスワード SW1 と SW2 が含まれ、残りのフィールドはゼロになります。 その他の状態の場合、InformationBuffer は空である必要があります。
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
-適用できません。
+適用不可。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
-| 状態コード | 説明 |
+| status code | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_NOT_INITIALIZED | UICC はまだ完全に初期化されていないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | UICC で利用できる論理チャネルがないため、論理チャネルを開いているが失敗しました (それらがサポートしていないか、使用中のすべての状態に)。 |
-| MBIM_STATUS_MS_SELECT_FAILED | 選択に失敗したため、論理のチャネルをオープンに失敗しました。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_NOT_INITIALIZED | Uicc がまだ完全に初期化されていないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_MS_NO_LOGICAL_CHANNELS | UICC で使用可能な論理チャネルがないため、論理チャネルを開くことができませんでした (サポートされていないか、それらのすべてが使用されています)。 |
+| MBIM_STATUS_MS_SELECT_FAILED | SELECT に失敗したため、論理チャネルを開くことができませんでした。 |
 
-## <a name="mbimcidmsuiccclosechannel"></a>MBIM_CID_MS_UICC_CLOSE_CHANNEL
+## <a name="mbim_cid_ms_uicc_close_channel"></a>MBIM_CID_MS_UICC_CLOSE_CHANNEL
 
-ホストは、論理、UICC でチャネルを閉じる関数に MBIM_CID_MS_UICC_CLOSE_CHANNEL を送信します。 ホストは、チャンネル番号を指定することがあります。 またはチャネルのグループを指定することがあります。
+ホストは、UICC の論理チャネルを閉じるために MBIM_CID_MS_UICC_CLOSE_CHANNEL を関数に送信します。 ホストは、チャネル番号を指定することも、チャネルグループを指定することもできます。
 
-ホストは、チャンネル番号を指定する場合、関数が以前 MBIM_CID_MS_UICC_OPEN_CHANNEL によってこのチャネルが開かれたかどうかを確認する必要があります。 そうである場合は、管理チャネル コマンドをチャネルを閉じる、MBIM_STATUS_SUCCESS、ステータス、および管理チャネルから SW1 SW2 を返すに UICC に送信します。 そうでないことが操作は不要する場合 MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL エラー状態を返すとします。
+ホストがチャネル番号を指定する場合、関数は、このチャネルが前の MBIM_CID_MS_UICC_OPEN_CHANNEL によって開かれたかどうかを確認する必要があります。 その場合は、チャネルの管理コマンドを UICC に送信してチャネルを閉じ、MBIM_STATUS_SUCCESS の状態を返して、MANAGE CHANNEL から SW1 SW2 を返します。 そうでない場合は、何も処理を行わず、MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL エラー状態を返します。
 
-ホストは、チャネルのグループを指定する場合、関数を決定しますが (あれば) 論理チャネルがそのチャネルのグループに開かれ、このような各チャネルに対して UICC 管理チャネル コマンドを送信します。 最後の管理チャネルの SW1 SW2 で MBIM_STATUS_SUCCESS の状態を返します。 解決されたチャネルがない場合は、90 を結果が返ります 00 です。
+ホストでチャネルグループが指定されている場合、この関数は、チャネルグループを使用して開いた論理チャネルがあるかどうかを判断し、そのようなチャネルごとに UICC に管理チャネルコマンドを送信します。 最後に管理するチャネルの SW2 の MBIM_STATUS_SUCCESS 状態を返します。 チャネルが閉じられていない場合は、90 00 を返します。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_SET_UICC_CLOSE_CHANNEL | 該当なし | 該当なし |
-| 応答 | MBIM_MS_UICC_CLOSE_CHANNEL_INFO | 該当なし | 該当なし |
+| コマンド | MBIM_MS_SET_UICC_CLOSE_CHANNEL | 適用なし | 適用なし |
+| 応答 | MBIM_MS_UICC_CLOSE_CHANNEL_INFO | 適用なし | 適用なし |
 
 ### <a name="query"></a>クエリ
 
-適用できません。
+適用不可。
 
-### <a name="set"></a>設定
+### <a name="set"></a>オン
 
-MBIM_COMMAND_MSG InformationBuffer にはには、次の MBIM_MS_SET_UICC_CLOSE_CHANNEL 構造が含まれています。
+MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_MS_SET_UICC_CLOSE_CHANNEL 構造が含まれています。
 
-#### <a name="mbimmssetuiccclosechannel"></a>MBIM_MS_SET_UICC_CLOSE_CHANNEL
+#### <a name="mbim_ms_set_uicc_close_channel"></a>MBIM_MS_SET_UICC_CLOSE_CHANNEL
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | Channel | UINT32(0..19) | 0 以外の場合は、終了するチャネルを指定します。 ゼロの場合に、チャネルが関連付けられていることを指定します**ChannelGroup**終了します。 |
-| 4 | 4 | ChannelGroup | UINT32 | 場合**チャネル**0 の場合は、タグの値をこのタグを持つすべてのチャネルが閉じられたを指定します。 場合**チャネル**が 0 以外の場合、このフィールドは無視されます。
+| 0 | 4 | チャネル | UINT32 (0.. 19) | 0以外の場合、閉じるチャネルを指定します。 0の場合は、 **Channelgroup**に関連付けられているチャネルを閉じるように指定します。 |
+| 4 | 4 | ChannelGroup | UINT32 | **Channel**が0の場合、タグ値が指定され、このタグを持つすべてのチャネルが閉じられます。 **Channel**が0以外の場合、このフィールドは無視されます。
 
 ### <a name="response"></a>応答
 
-MBIM_COMMAND_DONE InformationBuffer にはには、次の MBIM_MS_UICC_CLOSE_CHANNEL_INFO 構造が含まれています。
+MBIM_COMMAND_DONE の InformationBuffer には、次の MBIM_MS_UICC_CLOSE_CHANNEL_INFO 構造が含まれています。
 
-#### <a name="mbimmsuiccclosechannelinfo"></a>MBIM_MS_UICC_CLOSE_CHANNEL_INFO
+#### <a name="mbim_ms_uicc_close_channel_info"></a>MBIM_MS_UICC_CLOSE_CHANNEL_INFO
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 状況 | BYTE[2] | SW1 と最後にこのコマンドの代わりの関数によって実行される管理チャネルの SW2 します。 |
+| 0 | 4 | Status | バイト [2] | このコマンドの代わりに関数によって実行された最後の MANAGE CHANNEL の SW1 と SW2。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
-適用できません。
+適用不可。
 
 ### <a name="status-codes"></a>状態コード
 
-| 状態コード | 説明 |
+| status code | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_NOT_INITIALIZED | UICC はまだ完全に初期化されていないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 論理のチャンネル番号が無効です (つまり、これで開かれませんでした MBIM_CID_MS_UICC_OPEN_CHANNEL)。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_NOT_INITIALIZED | Uicc がまだ完全に初期化されていないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 論理チャネル番号が無効です (つまり、MBIM_CID_MS_UICC_OPEN_CHANNEL で開かれていません)。 |
 
-## <a name="mbimcidmsuiccapdu"></a>MBIM_CID_MS_UICC_APDU
+## <a name="mbim_cid_ms_uicc_apdu"></a>MBIM_CID_MS_UICC_APDU
 
-ホストは、[apdu] コマンドを UICC で指定した論理チャネルに送信し、応答を受信する MBIM_CID_MS_UICC_APDU を使用します。 MBIM 関数は、論理チャネルが MBIM_CID_MS_UICC_OPEN_CHANNEL で以前に開かれたことを確認し、されていない場合、ステータス MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL で失敗する必要があります。
+ホストは、MBIM_CID_MS_UICC_APDU を使用して、UICC 上の指定された論理チャネルにコマンド APDU を送信し、応答を受信します。 MBIM 関数は、論理チャネルが以前に MBIM_CID_MS_UICC_OPEN_CHANNEL で開かれていることを確認し、状態が MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL でない場合は失敗します。
 
-ホストでは、完全な [apdu] を関数に送信する必要があります。 [Apdu] のセクション 4 の最初の interindustry 定義で定義されているクラスのバイト値の送信、 [ISO/IEC 7816-4:2013 標準](https://go.microsoft.com/fwlink/p/?linkid=864596)、またはの 10.1.1 の拡張定義で、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 [Apdu] は、セキュリティで保護されたメッセージングせずに、またはセキュリティで保護されたメッセージングを使用した送信があります。 認証されていないコマンド ヘッダー。 ホストでは、クラス バイト、論理チャンネル番号、および、[apdu] およびセキュリティで保護されたメッセージの種類を指定します。
+ホストは、完全な APDU を関数に送信する必要があります。 APDU は、 [ISO/IEC 7816-4:2013 標準](https://go.microsoft.com/fwlink/p/?linkid=864596)のセクション4で定義されているクラスバイト値、または[ETSI TS 102 221 Technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション10.1.1 の拡張定義で送信される場合があります。 APDU は、セキュリティで保護されたメッセージングまたはセキュリティで保護されたメッセージングを使用せずに送信できます。 コマンドヘッダーは認証されていません。 ホストは、APDU と共に、クラスバイト、論理チャネル番号、およびセキュリティで保護されたメッセージングの種類を指定します。
 
-コマンドの最初のバイト」のセクション 4 で定義されているコード化されたクラスのバイトは、[apdu]、 [ISO/IEC 7816-標準 4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596)またはセクションの 10.1.1、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)します。 ホストには、0 X、4 X、X 6、8 CX、X または EX クラス バイトを送信できます。 ただし、関数は、直接、UICC にこのバイトを渡しません。 代わりに、[apdu] を UICC に送信する前に、関数は、ホストから最初のバイトで置き換えますクラスの新しいバイト (」のセクション 4 で定義されているエンコードされた、 [ISO/IEC 7816-標準 4:2013](https://go.microsoft.com/fwlink/p/?linkid=864596)またはセクションの 10.1.1、 [ETSI TS102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594))、ホストで指定された型、チャネル、および SecureMessaging 値に基づいています。
+コマンド APDU の最初のバイトは、 [ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)の[ISO/IEC 7816-4:2013 標準](https://go.microsoft.com/fwlink/p/?linkid=864596)またはセクション10.1.1 のセクション4で定義されているようにコード化されたクラスバイトです。 ホストは、0X、4X、6X、8X、CX、EX の各クラスバイトを送信する場合があります。 ただし、この関数は、UICC にこのバイトを直接渡しません。 代わりに、APDU を UICC に送信する前に、ホストによって指定された型、チャネル、および SecureMessaging の値に基づいて、ホストの最初のバイトを新しいクラスバイト ( [ISO/IEC 7816-4:2013 標準](https://go.microsoft.com/fwlink/p/?linkid=864596)のセクション4で定義された、または[ETSI TS 102 221 technical specification](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション10.1.1 によってエンコードされた) に置き換えます。
 
-| バイト クラス | 説明 |
+| Byte クラス | 説明 |
 | --- | --- |
-| 0 X | 7816 4 interindustry、1 < = チャネル < = 3、該当する場合は、低ニブルでセキュリティをエンコードします |
-| 4 X | 7816 4 interindustry、4 < チャネルを = < = 19、いいえ高セキュリティ メッセージング |
-| 6 X | 7816 4 interindustry、4 < チャネルを = < = 19、セキュリティで保護された (ヘッダーは認証されていない) |
-| 8 X | 102 221 拡張、1 < = チャネル < = 3、該当する場合は、低ニブルでセキュリティをエンコードします |
-| CX | 102 221 拡張, 4 < チャネルを = < = 19、いいえ高セキュリティ メッセージング |
-| EX | 102 221 拡張, 4 < チャネルを = < = 19、セキュリティで保護された (ヘッダーは認証されていない) |
+| 60 | 7816-4 インター産業、1 <= channel <= 3、該当する場合は低いニブルでセキュリティをエンコードする |
+| 4 | 7816-4 インター産業、4 <= channel <= 19、セキュリティで保護されたメッセージングなし |
+| 6X | 7816-4 インター産業、4 <= channel <= 19、secure (ヘッダー未認証) |
+| 読み取れ | 102 221 extended、1<= channel <= 3、該当する場合は低ニブルのセキュリティをエンコードします。 |
+| CX | 102 221 拡張、4 <= channel <= 19、セキュリティで保護されたメッセージングなし |
+| EX | 102 221 拡張、4 <= channel <= 19、secure (ヘッダー未認証) |
 
-関数を返す応答の状態、および SW1 SW2、UICC からホストにします。
+関数は、UICC からホストに状態、SW1 SW2、および応答を返す必要があります。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_SET_UICC_APDU | 該当なし | 該当なし |
-| 応答 | MBIM_MS_UICC_APDU_INFO | 該当なし | 該当なし |
+| コマンド | MBIM_MS_SET_UICC_APDU | 適用なし | 適用なし |
+| 応答 | MBIM_MS_UICC_APDU_INFO | 適用なし | 適用なし |
 
 ### <a name="query"></a>クエリ
 
-適用できません。
+適用不可。
 
-### <a name="set"></a>設定
+### <a name="set"></a>オン
 
-MBIM_COMMAND_MSG InformationBuffer にはには、次の MBIM_MS_SET_UICC_APDU 構造が含まれています。
+MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_MS_SET_UICC_APDU 構造が含まれています。
 
-#### <a name="mbimmssetuiccapdu"></a>MBIM_MS_SET_UICC_APDU
+#### <a name="mbim_ms_set_uicc_apdu"></a>MBIM_MS_SET_UICC_APDU
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | [説明] |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | Channel | UINT32(1..19) | [Apdu] が送信するチャネルを指定します。 |
-| 4 | 4 | SecureMessaging | MBIM_MS_UICC_SECURE_MESSAGING | セキュリティで保護されたメッセージングを使用して、[apdu] が交換されるかどうかを指定します。 |
-| 8 | 4 | 種類 | MBIM_MS_UICC_CLASS_BYTE_TYPE | クラス バイト定義の種類を指定します。 |
-| 12 | 4 | CommandSize | UINT32(0..261) | **コマンド**長さ (バイト単位)。 |
-| 16 | 4 | CommandOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**コマンド**[apdu] を格納しています。 |
+| 0 | 4 | チャネル | UINT32 (1.. 19) | APDU を送信するチャネルを指定します。 |
+| 4 | 4 | SecureMessaging | MBIM_MS_UICC_SECURE_MESSAGING | セキュリティで保護されたメッセージングを使用して APDU を交換するかどうかを指定します。 |
+| 8 | 4 | 種類 | MBIM_MS_UICC_CLASS_BYTE_TYPE | クラスのバイト定義の種類を指定します。 |
+| 12 | 4 | CommandSize | UINT32 (0.. 261) | **コマンド**の長さ (バイト単位)。 |
+| 16 | 4 | ド Doffset | OFFSET | この構造体の先頭から、APDU を含む**コマンド**と呼ばれるバイト配列へのオフセット (バイト単位)。 |
 | 20 | - | DataBuffer | DATABUFFER | **コマンド**バイト配列。 |
 
-MBIM_MS_SET_UICC_APDU 構造は、次の MBIM_MS_UICC_SECURE_MESSAGING と MBIM_MS_UICC_CLASS_BYTE_TYPE データ構造を使用します。
+MBIM_MS_SET_UICC_APDU 構造体は、次の MBIM_MS_UICC_SECURE_MESSAGING と MBIM_MS_UICC_CLASS_BYTE_TYPE データ構造を使用します。
 
-##### <a name="mbimmsuiccsecuremessaging"></a>MBIM_MS_UICC_SECURE_MESSAGING
+##### <a name="mbim_ms_uicc_secure_messaging"></a>MBIM_MS_UICC_SECURE_MESSAGING
 
-| 種類 | Value | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
-| MBIMMsUiccSecureMessagingNone | 0 | セキュリティで保護しないメッセージング。 |
-| MBIMMsUiccSecureMessagingNoHdrAuth | 1 | セキュリティ保護されたメッセージング、認証されていないコマンド ヘッダー。 |
+| MBIMMsUiccSecureMessagingNone | 0 | セキュリティで保護されたメッセージングはありません。 |
+| MBIMMsUiccSecureMessagingNoHdrAuth | 1 | セキュリティで保護されたメッセージング、コマンドヘッダーは認証されていません。 |
 
-##### <a name="mbimmsuiccclassbytetype"></a>MBIM_MS_UICC_CLASS_BYTE_TYPE
+##### <a name="mbim_ms_uicc_class_byte_type"></a>MBIM_MS_UICC_CLASS_BYTE_TYPE
 
-| 種類 | Value | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
-| MBIMMsUiccInterindustry | 0 | ISO 7816 4 での最初の interindustry 定義に従って定義されます。 |
-| MBIMMsUiccExtended | 1 | ETSI 102 221 で拡張の定義に従って定義されます。 |
+| MBIMMsUiccInterindustry | 0 | ISO 7816-4 の最初の業界の定義に従って定義されます。 |
+| MBIMMsUiccExtended | 1 | ETSI 102 221 の拡張定義に従って定義されます。 |
 
 ### <a name="response"></a>応答
 
-MBIM_COMMAND_DONE InformationBuffer にはには、次の MBIM_MS_UICC_APDU_INFO 構造が含まれています。
+MBIM_COMMAND_DONE の InformationBuffer には、次の MBIM_MS_UICC_APDU_INFO 構造が含まれています。
 
-#### <a name="mbimmsuiccapduinfo"></a>MBIM_MS_UICC_APDU_INFO
+#### <a name="mbim_ms_uicc_apdu_info"></a>MBIM_MS_UICC_APDU_INFO
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | 型 | [説明] |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | 状況 | BYTE[2] | コマンドの結果として SW1 と SW2 のステータス単語。 |
-| 4 | 4 | ResponseLength | サイズ | 応答の長さ (バイト単位)。 |
-| 8 | 4 | ResponseOffset | OFFSET | 呼ばれるバイト配列に、この構造体の先頭からのオフセット (バイト単位) が計算される**応答**SELECT からの応答を格納しています。 |
-| 12 | - | DataBuffer | DATABUFFER | **応答**バイト配列。 |
+| 0 | 4 | Status | バイト [2] | コマンドの結果として生成された SW1 と SW2 のステータスワード。 |
+| 4 | 4 | ResponseLength | SIZE | 応答の長さ (バイト単位)。 |
+| 8 | 4 | ResponseOffset | OFFSET | この構造体の先頭から計算されたバイト配列へのオフセット (バイト単位)。これは、SELECT からの応答を含む**応答**と呼ばれるバイト配列になります。 |
+| 12 | - | DataBuffer | DATABUFFER | **応答**のバイト配列。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
-適用できません。
+適用不可。
 
 ### <a name="status-codes"></a>状態コード
 
-次のステータス コードが、適用されます。
+次のステータスコードが適用されます。
 
-| 状態コード | 説明 |
+| status code | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_NOT_INITIALIZED | UICC はまだ完全に初期化されていないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 論理のチャンネル番号が無効です (つまり、これで開かれませんでした MBIM_CID_MS_UICC_OPEN_CHANNEL)。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_NOT_INITIALIZED | Uicc がまだ完全に初期化されていないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 論理チャネル番号が無効です (つまり、MBIM_CID_MS_UICC_OPEN_CHANNEL で開かれていません)。 |
 
-関数では、[apdu] を UICC に送信することができます、SW1 SW2 状態の単語と、UICC (あれば) からの応答と共に MBIM_STATUS_SUCCESS が返されます。 ホストには、状態、UICC で、[apdu] コマンドが成功したかどうかを判断する (SW1 SW2) または失敗した理由を調べる必要があります。
+関数が、UICC に APDU を送信できる場合、SW2 ステータスワードと、UICC からの応答 (存在する場合) と共に MBIM_STATUS_SUCCESS を返します。 ホストは状態 (SW1 SW2) を調べて、UICC で APDU コマンドが成功したかどうか、または失敗した理由を確認する必要があります。
 
-## <a name="mbimcidmsuiccterminalcapability"></a>MBIM_CID_MS_UICC_TERMINAL_CAPABILITY
+## <a name="mbim_cid_ms_uicc_terminal_capability"></a>MBIM_CID_MS_UICC_TERMINAL_CAPABILITY
 
-ホストは、ホストの機能について、モデムを通知するために MBIM_CID_MS_UICC_TERMINAL_CAPABILITY を送信します。 ターミナル機能 APDU、11.1.19 のセクションで指定された、 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)、(サポートされている) 場合、最初のアプリケーションが選択される前に、カードに送信する必要があります。 そのため、ホストは、端末の機能 [apdu] に直接送信することはできませんは、モデムが永続的に格納されている 1 つまたは複数の端末の機能オブジェクトを含む MBIM_CID_MS_UICC_TERMINAL_CAPABILITY コマンドを送信します。 次のカードを挿入またはリセット、ATR 後で、モデムを選択、MF し端末の機能がサポートされているかどうか確認します。 そうである場合、モデムは MBIM_CID_MS_UICC_TERMINAL_CAPABILITY コマンドとそのモデムで生成された情報で指定された情報でターミナル機能 [apdu] を送信します。
+ホストは MBIM_CID_MS_UICC_TERMINAL_CAPABILITY を送信して、ホストの機能についてモデムに通知します。 [ETSI TS 102 221 技術仕様](https://go.microsoft.com/fwlink/p/?linkid=864594)のセクション11.1.19 に記載されているターミナル機能 APDU は、最初のアプリケーションが選択される前にカードに送信される必要があります (サポートされている場合)。 このため、ホストはターミナル機能の APDU を直接送信することはできませんが、その代わりに、モデムによって永続的に格納される1つ以上のターミナル機能オブジェクトを含む MBIM_CID_MS_UICC_TERMINAL_CAPABILITY コマンドを送信します。 次のカードの挿入時またはリセット時に、ATR の後に、モデムは MF を選択し、ターミナル機能がサポートされているかどうかを確認します。 その場合、モデムは、MBIM_CID_MS_UICC_TERMINAL_CAPABILITY コマンドで指定された情報と、モデムによって生成された情報を使用して、ターミナル機能の APDU を送信します。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | 設定 | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_SET_UICC_TERMINAL_CAPABILITY | 空 | 該当なし |
-| 応答 | 該当なし | MBIM_MS_TERMINAL_CAPABILITY_INFO | 該当なし |
+| コマンド | MBIM_MS_SET_UICC_TERMINAL_CAPABILITY | Empty | 適用なし |
+| 応答 | 適用なし | MBIM_MS_TERMINAL_CAPABILITY_INFO | 適用なし |
 
 ### <a name="query"></a>クエリ
 
-InformationBuffer は null にして、InformationBufferLength を 0 にする必要があります。
+InformationBuffer は null にする必要があり、InformationBufferLength は0である必要があります。
 
-### <a name="set"></a>設定
+### <a name="set"></a>オン
 
-MBIM_COMMAND_MSG InformationBuffer にはには、次の MBIM_MS_SET_UICC_TERMINAL_CAPABILITY 構造が含まれています。
+MBIM_COMMAND_MSG の InformationBuffer には、次の MBIM_MS_SET_UICC_TERMINAL_CAPABILITY 構造が含まれています。
 
-#### <a name="mbimmssetuiccterminalcapability"></a>MBIM_MS_SET_UICC_TERMINAL_CAPABILITY
+#### <a name="mbim_ms_set_uicc_terminal_capability"></a>MBIM_MS_SET_UICC_TERMINAL_CAPABILITY
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | elementCount | UINT32 | 端末の機能のオブジェクトの要素数。 |
-| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 各端末の機能オブジェクト TLV のオフセットと長さのペア リストです。 |
-| 4 + 8 * EC | - | DataBuffer | DATABUFFER | TLVs 端末の機能を実際のオブジェクトのバイト配列。 |
+| 0 | 4 | ElementCount | UINT32 | ターミナル機能オブジェクトの要素数。 |
+| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 各ターミナル機能オブジェクト TLV のオフセット長ペアの一覧。 |
+| 4 + 8 * EC | - | DataBuffer | DATABUFFER | 実際のターミナル機能オブジェクト TLVs のバイト配列。 |
 
 ### <a name="response"></a>応答
 
-応答は、モデムには、最後の送信端末の機能オブジェクトの正確な SET コマンドが含まれます。 そのため、MBIM_MS_TERMINAL_CAPABILITY_INFO は MBIM_MS_SET_UICC_TERMINAL_CAPABILITY と同じです。
+応答には、最後に送信されたターミナル機能オブジェクトと共に、正確な SET コマンドが格納されます。 したがって、MBIM_MS_TERMINAL_CAPABILITY_INFO は MBIM_MS_SET_UICC_TERMINAL_CAPABILITY と同じです。
 
-#### <a name="mbimmsterminalcapabilityinfo"></a>MBIM_MS_TERMINAL_CAPABILITY_INFO
+#### <a name="mbim_ms_terminal_capability_info"></a>MBIM_MS_TERMINAL_CAPABILITY_INFO
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | elementCount | UINT32 | 端末の機能のオブジェクトの要素数。 |
-| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 各端末の機能オブジェクト TLV のオフセットと長さのペア リストです。 |
-| 4 + 8 * EC | - | DataBuffer | DATABUFFER | TLVs 端末の機能を実際のオブジェクトのバイト配列。 |
+| 0 | 4 | ElementCount | UINT32 | ターミナル機能オブジェクトの要素数。 |
+| 4 | 8 * EC | CapabilityList OL_PAIR_LIST| 各ターミナル機能オブジェクト TLV のオフセット長ペアの一覧。 |
+| 4 + 8 * EC | - | DataBuffer | DATABUFFER | 実際のターミナル機能オブジェクト TLVs のバイト配列。 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
-適用できません。
+適用不可。
 
 ### <a name="status-codes"></a>状態コード
 
-| 状態コード | 説明 |
+| status code | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_FAILURE | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_SIM_NOT_INSERTED | UICC が見つからないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_BAD_SIM | UICC がエラー状態であるため、UICC 操作を実行できません。 |
-| MBIM_STATUS_NOT_INITIALIZED | UICC はまだ完全に初期化されていないため、UICC 操作を実行できません。 |
-| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 論理のチャンネル番号が無効です (つまり、これで開かれませんでした MBIM_CID_MS_UICC_OPEN_CHANNEL)。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_FAILURE | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_SIM_NOT_INSERTED | UICC がないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_BAD_SIM | Uicc がエラー状態であるため、UICC 操作を実行できません。 |
+| MBIM_STATUS_NOT_INITIALIZED | Uicc がまだ完全に初期化されていないため、UICC 操作を実行できません。 |
+| MBIM_STATUS_MS_INVALID_LOGICAL_CHANNEL | 論理チャネル番号が無効です (つまり、MBIM_CID_MS_UICC_OPEN_CHANNEL で開かれていません)。 |
 
-## <a name="mbimcidmsuiccreset"></a>MBIM_CID_MS_UICC_RESET
+## <a name="mbim_cid_ms_uicc_reset"></a>MBIM_CID_MS_UICC_RESET
 
-ホストは、MBIM 関数、UICC をリセットするか、関数のパススルー状態を照会する MBIM_CID_MS_UICC_RESET を送信します。
+ホストは、MBIM 関数に MBIM_CID_MS_UICC_RESET を送信して UICC をリセットするか、関数のパススルー状態を照会します。
 
-ホストは、関数が、UICC をリセットすることを要求するときにパススルーのアクションを指定します。
+関数が UICC をリセットしたことをホストが要求すると、パススルーアクションを指定します。
 
-ホストが指定されている場合、 *MBIMMsUICCPassThroughEnable*パススルー アクション、関数は、UICC をリセットし、電源を投入する UICC には、UICC をホストと UICC (通信に使用するパススルー モードを使用した場合と同じ扱いいない場合でも、UICC Telecom UICC ファイル システム)。 関数は、任意の Apdu をカードに送信しませんしは、ホストと、UICC 間の通信にいつでも影響しません。
+ホストが*MBIMMsUICCPassThroughEnable*パススルーアクションを指定した場合、関数は uicc をリセットし、uicc 電源をオンにすると、uicc はホストと uicc 間の通信を可能にするパススルーモードであるかのように処理されます (Uicc に通信 uicc ファイルシステムがない場合でも)。 関数は、APDUs をカードに送信するのではなく、ホストと UICC 間の通信を使用していつでも邪魔になることはありません。
 
-ホストが指定されている場合、 *MBIMMsUICCPassThroughDisable*パススルー操作、関数で、UICC をリセットし、UICC 電源投入時に、通常の電気通信 UICC として、UICC を処理され、UICC に存在している通信費 UICC ファイル システムが必要です.
+ホストで*MBIMMsUICCPassThroughDisable*パススルーアクションが指定されている場合、関数は uicc をリセットし、uicc 電源をオンにすると、uicc を通常の通信用 uicc として扱い、通信 uicc ファイルシステムが uicc に存在することを想定します。
 
-関数で応答した場合に、ホストが、パススルーの状態を判断する関数をクエリした場合、 *MBIMMsUICCPassThroughEnabled*状態、そのパススルー モードが有効になっていることを意味します。 関数で応答した場合、 *MBIMMsUICCPassThroughDisabled*状態、パススルーそのモードが無効になっていることを意味します。
+ホストが関数に対してクエリを行い、パススルーの状態を判断すると、その関数が*MBIMMsUICCPassThroughEnabled*ステータスで応答する場合は、パススルーモードが有効になっていることを意味します。 関数が*MBIMMsUICCPassThroughDisabled*状態で応答する場合は、パススルーモードが無効になっていることを意味します。
 
 ### <a name="parameters"></a>パラメーター
 
-|   | 設定 | クエリ | 通知 |
+|   | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | MBIM_MS_SET_UICC_RESET | 空 | 該当なし |
-| 応答 | MBIM_MS_UICC_RESET_INFO | MBIM_MS_UICC_RESET_INFO | 該当なし |
+| コマンド | MBIM_MS_SET_UICC_RESET | Empty | 適用なし |
+| 応答 | MBIM_MS_UICC_RESET_INFO | MBIM_MS_UICC_RESET_INFO | 適用なし |
 
 ### <a name="query"></a>クエリ
 
-InformationBuffer を null にするものとし、 *InformationBufferLength* 0 にする必要があります。
+InformationBuffer は null にする必要があり、 *Informationbufferlength*は0である必要があります。
 
-### <a name="set"></a>設定
+### <a name="set"></a>オン
 
-#### <a name="mbimsetmsuiccreset"></a>MBIM_SET_MS_UICC_RESET
+#### <a name="mbim_set_ms_uicc_reset"></a>MBIM_SET_MS_UICC_RESET
 
-MBIM_SET_MS_UICC_RESET 構造体には、ホストによって指定されたパススルー操作が含まれています。
+MBIM_SET_MS_UICC_RESET 構造体には、ホストによって指定されたパススルーアクションが含まれています。
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PassThroughAction | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)します。 |
+| 0 | 4 | アクションの実行 | MBIM_MS_UICC_PASSTHROUGH_ACTION | 詳細については、「 [MBIM_MS_UICC_PASSTHROUGH_ACTION](#mbim_ms_uicc_passthrough_action)」を参照してください。 |
 
-#### <a name="mbim_ms_uicc_passthrough_action">MBIM_MS_UICC_PASSTHROUGH_ACTION</a>
+#### <a name=""></a><a name="mbim_ms_uicc_passthrough_action">MBIM_MS_UICC_PASSTHROUGH_ACTION</a>
 
-MBIM_MS_UICC_PASSTHROUGH_ACTION 列挙体は、MBIM 関数にホストを指定できますパススルー操作の種類を定義します。
+MBIM_MS_UICC_PASSTHROUGH_ACTION 列挙体は、ホストが MBIM 関数に指定できるパススルーアクションの種類を定義します。
 
-| 型 | Value |
+| 種類 | 値 |
 | --- | --- |
 | MBIMMsUiccPassThroughDisable | 0 |
 | MBIMMsUiccPassThroughEnable | 1 |
 
 ### <a name="response"></a>応答
 
-#### <a name="mbimmsuiccresetinfo"></a>MBIM_MS_UICC_RESET_INFO
+#### <a name="mbim_ms_uicc_reset_info"></a>MBIM_MS_UICC_RESET_INFO
 
-MBIM_MS_UICC_RESET_INFO 構造体には、MBIM 関数のパススルー状態が含まれています。
+MBIM_MS_UICC_RESET_INFO 構造体には、MBIM 関数のパススルーステータスが格納されます。
 
-| Offset | サイズ | フィールド | 種類 | 説明 |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
-| 0 | 4 | PassThroughStatus | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、次を参照してください。 [MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)します。 |
+| 0 | 4 | 状態の状態 | MBIM_MS_UICC_PASSTHROUGH_STATUS | 詳細については、「 [MBIM_MS_UICC_PASSTHROUGH_STATUS](#mbim_ms_uicc_passthrough_status)」を参照してください。 |
 
-#### <a name="mbim_ms_uicc_passthrough_status">MBIM_MS_UICC_PASSTHROUGH_STATUS</a> 
+#### <a name=""></a><a name="mbim_ms_uicc_passthrough_status">MBIM_MS_UICC_PASSTHROUGH_STATUS</a> 
 
-MBIM_MS_UICC_PASSTHROUGH_STATUS 列挙体は、ホストに MBIM 関数を指定します、パススルーの状態の種類を定義します。
+MBIM_MS_UICC_PASSTHROUGH_STATUS 列挙体は、MBIM 関数がホストに対して指定するパススルーステータスの種類を定義します。
 
-| 型 | Value |
+| 種類 | 値 |
 | --- | --- |
 | MBIMMsUiccPassThroughDisabled | 0 |
 | MBIMMsUiccPassThroughEnabled | 1 |
 
-### <a name="unsolicited-events"></a>要請されていないイベント
+### <a name="unsolicited-events"></a>一方的なイベント
 
-適用できません。
+適用不可。
 
 ### <a name="status-codes"></a>状態コード
 
-| 状態コード | 説明 |
+| status code | 説明 |
 | --- | --- |
-| MBIM_STATUS_SUCCESS | すべてのコマンドで定義されている基本的な MBIM 状態です。 |
-| MBIM_STATUS_BUSY | デバイスがビジーです。 |
-| MBIM_STATUS_FAILURE | 操作に失敗しました。 |
-| MBIM_STATUS_NO_DEVICE_SUPPORT | デバイスは、この操作をサポートしていません。 |
+| MBIM_STATUS_SUCCESS | すべてのコマンドに対して定義されている基本的な MBIM ステータス。 |
+| MBIM_STATUS_BUSY | デバイスがビジー状態です。 |
+| MBIM_STATUS_FAILURE | 操作が失敗しました。 |
+| MBIM_STATUS_NO_DEVICE_SUPPORT | デバイスはこの操作をサポートしていません。 |
 
-### <a name="oidwwanuiccreset"></a>OID_WWAN_UICC_RESET
+### <a name="oid_wwan_uicc_reset"></a>OID_WWAN_UICC_RESET
 
-MBIM_CID_MS_UICC_RESET の NDIS 相当するものは[OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)します。 
+MBIM_CID_MS_UICC_RESET に対応する NDIS は[OID_WWAN_UICC_RESET](oid-wwan-uicc-reset.md)です。 
 
 

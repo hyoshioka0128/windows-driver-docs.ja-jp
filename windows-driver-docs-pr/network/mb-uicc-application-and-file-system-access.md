@@ -7,12 +7,12 @@ keywords:
 ms.date: 03/07/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 32c9d8e34abeb3a8c58edaf0cf1750f51764f449
-ms.sourcegitcommit: df7d6565a4cd2659c46d5fd83ef04a1672c60dbf
+ms.openlocfilehash: 4fcee2ae2d2d1b6915814577cdfa3344369a8858
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85382739"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557767"
 ---
 # <a name="mb-uicc-application-and-file-system-access"></a>MB UICC アプリケーションとファイル システム アクセス
 
@@ -63,9 +63,9 @@ UICC ファイルシステムは、ディレクトリツリーのフォレスト
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
-| コマンド | 適用なし | 空 | 適用なし |
+| コマンド | 適用なし | Empty | 適用なし |
 | 応答 | 適用なし | MBIM_UICC_APP_LIST | 適用なし |
 
 ### <a name="query"></a>クエリ
@@ -105,7 +105,7 @@ MBIM_COMMAND_DONE の InformationBuffer には、次の MBIM_UICC_APP_LIST 構�
 
 #### <a name="mbim_uicc_app_type"></a>MBIM_UICC_APP_TYPE
 
-| Type | [値] | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
 | MBIMUiccAppTypeUnknown | 0 | 不明な型です。 |
 | MBIMUiccAppTypeMf | 1 | MF をルートとする従来の SIM ディレクトリ。 |
@@ -147,7 +147,7 @@ MBIM_CID_MS_UICC_APP_INFO には、次の定数が定義されています。
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | 適用なし | MBIM_UICC_FILE_PATH | 適用なし |
 | 応答 | 適用なし | MBIM_UICC_FILE_STATUS | 適用なし |
@@ -158,7 +158,7 @@ MBIM_COMMAND_MSG の InformationBuffer には、ターゲット EF が MBIM_UICC
 
 #### <a name="mbim_uicc_file_path-version-1"></a>MBIM_UICC_FILE_PATH (バージョン 1)
 
-| Offset | サイズ | フィールド | Type | [説明] |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Version | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドは**1**である必要があります。 |
 | 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
@@ -177,7 +177,7 @@ InformationBuffer では、次の MBIM_UICC_FILE_STATUS 構造が使用されま
 
 #### <a name="mbim_uicc_file_status-version-1"></a>MBIM_UICC_FILE_STATUS (バージョン 1)
 
-| Offset | サイズ | フィールド | Type | [説明] |
+| Offset | サイズ | フィールド | 型 | [説明] |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Version | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドは**1**である必要があります。 |
 | 4 | 4 | StatusWord1 | UINT32 (0.. 256) | UICC コマンドに固有の戻りパラメーター。 |
@@ -193,7 +193,7 @@ InformationBuffer では、次の MBIM_UICC_FILE_STATUS 構造が使用されま
 
 MBIM_UICC_FILE_ACCESSIBILITY 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
-| Type | [値] | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
 | MBIMUiccFileAccessibilityUnknown | 0 | ファイル共有性が不明です。 |
 | MBIMUiccFileAccessibilityNotShareable | 1 | 共有可能ファイルではありません。 |
@@ -203,7 +203,7 @@ MBIM_UICC_FILE_ACCESSIBILITY 列挙体は、前の MBIM_UICC_FILE_STATUS 構造�
 
 MBIM_UICC_FILE_TYPE 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
-| Type | [値] | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
 | MBIMUiccFileTypeUnknown | 0 | ファイルの種類が不明です。 |
 | MBIMUiccFileTypeWorkingEf | 1 | 作業 EF。 |
@@ -214,7 +214,7 @@ MBIM_UICC_FILE_TYPE 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使�
 
 MBIM_UICC_FILE_STRUCTURE 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
-| Type | [値] | 説明 |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
 | MBIMUiccFileStructureUnknown | 0 | 不明なファイル構造です。 |
 | MBIMUiccFileStructureTransparent | 1 | 可変長の1つのレコード。 |
@@ -226,7 +226,7 @@ MBIM_UICC_FILE_STRUCTURE 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体�
 
 MBIM_PIN_TYPE_EX 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用されます。
 
-| Type | [値] | [説明] |
+| 種類 | 値 | 説明 |
 | --- | --- | --- |
 | MBIMPinTypeNone | 0 | 入力が保留中の PIN はありません。 |
 | MBIMPinTypeCustom | 1 | PIN の種類はカスタム型で、この列挙に示されている他の PIN の種類はありません。 |
@@ -271,7 +271,7 @@ MBIM_PIN_TYPE_EX 列挙体は、前の MBIM_UICC_FILE_STATUS 構造体で使用�
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | 適用なし | MBIM_UICC_ACCESS_BINARY | 適用なし |
 | 応答 | 適用なし | MBIM_UICC_RESPONSE | 適用なし |
@@ -339,7 +339,7 @@ InformationBuffer では、次の MBIM_UICC_RESPONSE 構造が使用されます
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | 適用なし | MBIM_UICC_ACCESS_RECORD | 適用なし |
 | 応答 | 適用なし | MBIM_UICC_RESPONSE | 適用なし |
@@ -350,7 +350,7 @@ InformationBuffer では、次の MBIM_UICC_RESPONSE 構造が使用されます
 
 #### <a name="mbim_uicc_access_record-version-1"></a>MBIM_UICC_ACCESS_RECORD (バージョン 1)
 
-| Offset | サイズ | フィールド | Type | [説明] |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Version | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドを**1**に設定する必要があります。 |
 | 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
@@ -397,7 +397,7 @@ MBIM_CID_MS_PIN_EX MBIM_CID_MS_PIN と同様に、デバイスは一度に1つ�
 
 ### <a name="parameters"></a>パラメーター
 
-|  | オン | クエリ | 通知 |
+| 操作 | オン | クエリ | 通知 |
 | --- | --- | --- | --- |
 | コマンド | MBIM_SET_PIN_EX | MBIM_PIN_APP | 適用なし |
 | 応答 | MBIM_PIN_INFO_EX | MBIM_PIN_INFO_EX | 適用なし |
@@ -408,7 +408,7 @@ InformationBuffer では、次の MBIM_PIN_APP 構造が使用されます。
 
 #### <a name="mbim_pin_app-version-1"></a>MBIM_PIN_APP (バージョン 1)
 
-| Offset | サイズ | フィールド | Type | [説明] |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | Version | UINT32 | 後に続く構造体のバージョン番号。 この構造体のバージョン1では、このフィールドを**1**に設定する必要があります。 |
 | 4 | 4 | AppIdOffset | OFFSET | この構造体の先頭からアプリケーション ID を格納しているバッファーまでのオフセット (バイト単位)。 |
@@ -421,7 +421,7 @@ InformationBuffer では、次の MBIM_SET_PIN_EX 構造が使用されます。
 
 #### <a name="mbim_set_pin_ex"></a>MBIM_SET_PIN_EX
 
-| Offset | サイズ | フィールド | Type | [説明] |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PinType | MBIM_PIN_TYPE_EX | PIN の種類。 このトピックの MBIM_PIN_TYPE_EX テーブルを参照してください。 |
 | 4 | 4 | PinOperation | MBIM_PIN_OPERATION | PIN 操作。 「MBIM 1.0」を参照してください。 |
@@ -437,7 +437,7 @@ InformationBuffer では、次の MBIM_SET_PIN_EX 構造が使用されます。
 
 InformationBuffer では、次の MBIM_PIN_INFO_EX 構造が使用されます。
 
-| Offset | サイズ | フィールド | Type | [説明] |
+| Offset | サイズ | フィールド | Type | 説明 |
 | --- | --- | --- | --- | --- |
 | 0 | 4 | PinType | MBIM_PIN_TYPE_EX | PIN の種類。 このトピックの MBIM_PIN_TYPE_EX テーブルを参照してください。 |
 | 4 | 4 | PinState | MBIM_PIN_STATE | PIN の状態。 「MBIM 1.0」を参照してください。 |

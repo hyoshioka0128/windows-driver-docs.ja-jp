@@ -2,14 +2,14 @@
 title: テスト証明書のインストール
 description: テスト証明書のインストール
 ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
-ms.date: 04/20/2017
+ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 86112b64c75ac238e7370328971fb527edbdeb3f
-ms.sourcegitcommit: 701e4a41860877cc1134e139bc0bd4a9f7270443
+ms.openlocfilehash: 5108d21db519137367cbb618fdb9640c64495cf1
+ms.sourcegitcommit: 41bc8d70b5aff5a30c33bcc571b3718c0232e68e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86453987"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86543090"
 ---
 # <a name="installing-test-certificates"></a>テスト証明書のインストール
 
@@ -36,11 +36,25 @@ certmgr /add ContosoTest.cer /s /r localMachine root
 
 -   *ルート*ローカルコンピューターの保存先ストアの名前を指定します。これは、信頼された発行元の証明書ストアを指定するために、ルート証明機関の証明書ストアまたは***trustedpublisher***を指定する***ルート***のいずれかです。
 
-証明書を信頼されたルート証明機関の証明書ストアにコピーした後、「[テスト証明書の表示](viewing-test-certificates.md)」で説明されているように、Microsoft 管理コンソール (MMC) の証明書スナップインを使用して証明書を表示できます。
+正常に実行されると、次の出力が生成されます。
+
+```cmd
+certmgr /add ContosoTest.cer /s /r localMachine root
+CertMgr Succeeded
+```
+
+証明書を信頼されたルート証明機関の証明書ストア (ユーザーストアでは*なく*コンピューターストア) にコピーした後、「[テスト証明書の表示](viewing-test-certificates.md)」で説明されているように、MICROSOFT 管理コンソール (MMC) の証明書スナップインを使用して証明書を表示できます。
 
 次のスクリーンショットは、信頼されたルート証明機関の証明書ストアにある Contoso .com (Test) 証明書を示しています。
 
 ![mmc 証明書スナップイン内の信頼されたルート証明機関の証明書ストアのスクリーンショット](images/certstore2.png)
+
+コマンドプロンプトで証明書を表示することもできます。
+
+```cmd
+certutil -store root | findstr Contoso
+certutil -store root <SHA-1 id of certificate>
+```
 
 Certmgr.exe とそのコマンドライン引数の詳細については、 [**certmgr.exe**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)を参照してください。
 

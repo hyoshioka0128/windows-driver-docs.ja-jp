@@ -4,12 +4,12 @@ description: ネイティブデバッガーオブジェクトは、デバッガ�
 ms.assetid: A8E12564-D083-43A7-920E-22C4D627FEE9
 ms.date: 01/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a96d0222a5715394edbdf924ab2dda506f53922d
-ms.sourcegitcommit: 6d930ed810124ade8e29a617c7abcd399113696f
+ms.openlocfilehash: db50e1fdea070bae8383c8295371589798a5eb92
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76315112"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557743"
 ---
 # <a name="native-debugger-objects-in-javascript-extensions---debugger-object-details"></a>JavaScript 拡張機能のネイティブ デバッガー オブジェクト - デバッガー オブジェクトの詳細
 
@@ -41,36 +41,36 @@ JavaScript 拡張機能に渡されるデバッガーオブジェクトには、
 
 **プロパティアクセス**
 
-JavaScript プロバイダー自体によって配置されるオブジェクトにはいくつかのプロパティがありますが、JavaScript を入力するネイティブオブジェクトのプロパティの大部分は、データモデルによって提供されます。 これは、プロパティアクセス---オブジェクト propertyname またはオブジェクト\[propertyName\]の場合、次のようになります。
+JavaScript プロバイダー自体によって配置されるオブジェクトにはいくつかのプロパティがありますが、JavaScript を入力するネイティブオブジェクトのプロパティの大部分は、データモデルによって提供されます。 これは、プロパティアクセス---オブジェクト propertyname またはオブジェクト propertyname の \[ 場合 \] 、次のようになります。
 
 -   *PropertyName*が JavaScript プロバイダー自体によってオブジェクトに投影されたプロパティの名前である場合、この値は最初に解決されます。それ以外
 -   *PropertyName*がデータモデル (別のビジュアライザー) によってオブジェクトに投影されたキーの名前である場合、この名前は2番目の名前に解決されます。それ以外
 -   *PropertyName*がネイティブオブジェクトのフィールドの名前である場合、この名前は3番目の名前に解決されます。それ以外
 -   オブジェクトがポインターである場合、ポインターは逆参照され、上記のサイクルは続行されます (逆参照されたオブジェクトの射影されたプロパティと、その後にネイティブフィールドが続くキー)
 
-JavaScript でのプロパティアクセスの通常の方法である、オブジェクト. propertyName と object\[propertyName\]--デバッガー内の ' dx ' コマンドと同様に、オブジェクトの基になるネイティブフィールドにアクセスします。
+JavaScript でのプロパティアクセスの通常の方法である、オブジェクト propertyname とオブジェクト propertyname は、 \[ \] デバッガー内の ' dx ' コマンドと同様に、オブジェクトの基になるネイティブフィールドにアクセスします。
 
 **プロジェクション名**
 
 次のプロパティ (およびメソッド) は、JavaScript を入力するネイティブオブジェクトに投影されます。
 
-| 認証方法             | Signature                  | 説明                                                                                                                                |
+| Method             | 署名                  | 説明                                                                                                                                |
 |--------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | hostContext        | プロパティ                   | オブジェクトが含まれているコンテキスト (アドレス空間、デバッグターゲットなど) を表すオブジェクトを返します。                              |
 | targetLocation     | プロパティ                   | オブジェクトがアドレス空間 (仮想アドレス、レジスタ、サブレジスタなど) 内にあることを抽象化したオブジェクトを返します。 |
-| targetSize         | プロパティ                   | オブジェクトのサイズ (実質的には sizeof (オブジェクト&gt;の&lt;型) を返します。                                                                |
-| addParentModel     | .addParentModel(object)    | 新しい親モデル (JavaScript プロトタイプに似ていますが、データモデル側) をオブジェクトに追加します。                                          |
-| removeParentModel  | .removeParentModel(object) | 指定された親モデルをオブジェクトから削除します。                                                                                               |
+| targetSize         | プロパティ                   | オブジェクトのサイズ (実質的には sizeof ( &lt; オブジェクトの型 &gt; )) を返します。                                                                |
+| addParentModel     | 。 addParentModel (オブジェクト)    | 新しい親モデル (JavaScript プロトタイプに似ていますが、データモデル側) をオブジェクトに追加します。                                          |
+| removeParentModel  | removeParentModel (オブジェクト) | 指定された親モデルをオブジェクトから削除します。                                                                                               |
 | runtimeTypedObject | プロパティ                   | オブジェクトに対して分析を実行し、それをランタイム (最派生) 型に変換しようとします。                                                 |
 | targetType         | プロパティ                   | JavaScript 拡張機能は、基になる言語の型システムに直接アクセスできます。 このアクセスは、型オブジェクトの概念によって表されます。 詳細については、「 [JavaScript 拡張機能のネイティブデバッガーオブジェクト-型オブジェクト](native-objects-in-javascript-extensions-type-objects.md)」を参照してください。  |
 
 オブジェクトがポインターの場合、次のプロパティ (およびメソッド) が、JavaScript に入るポインターに投影されます。
 
-| プロパティ名 | Signature      | 説明                                                                    |
+| プロパティ名 | 署名      | 説明                                                                    |
 |---------------|----------------|--------------------------------------------------------------------------------|
-| 追加           | 。追加 (値)    | ポインターと指定した値の間でポインターの数値演算を実行します。     |
+| add           | 。追加 (値)    | ポインターと指定した値の間でポインターの数値演算を実行します。     |
 | address       | プロパティ       | ポインターのアドレスを64ビットの序数オブジェクト (ライブラリ型) として返します。 |
-| 間接   | .dereference() | ポインターを逆参照し、基になるオブジェクトを返します。                     |
+| 間接   | . 逆参照 () | ポインターを逆参照し、基になるオブジェクトを返します。                     |
 | isNull        | プロパティ       | ポインター値が nullptr (0) かどうかを返します。                        |
 
 **ネイティブデバッガーオブジェクトに関連する特別な型**
@@ -79,9 +79,9 @@ JavaScript でのプロパティアクセスの通常の方法である、オブ
 
 ネイティブオブジェクトの targetLocation プロパティから返される location オブジェクトには、次のプロパティ (およびメソッド) が含まれています。
 
-| プロパティ名 | Signature        | 説明                                          |
+| プロパティ名 | 署名        | 説明                                          |
 |---------------|------------------|------------------------------------------------------|
-| 追加           | 。追加 (値)      | 位置に絶対バイトオフセットを追加します。        |
+| add           | 。追加 (値)      | 位置に絶対バイトオフセットを追加します。        |
 | 減算 (subtract)      | . 減算 (値) | 位置から絶対バイトオフセットを減算します。 |
 
 **追加の属性**
@@ -107,7 +107,7 @@ function iterateNative(nativeObject)
 
 **インデックス**
 
-序数 (たとえば、ネイティブ配列) を使用して1つのディメンションでインデックス可能として認識されるオブジェクトは、標準プロパティアクセス演算子--object\[index\]を使用して JavaScript でインデックスを作成できます。 オブジェクトが名前によってインデックス可能な場合、または複数の次元でインデックスを付けられる場合は、JavaScript コードがインデクサーを利用できるように、getValueAt メソッドと setValueAt メソッドがオブジェクトに投影されます。
+序数 (たとえば、ネイティブ配列) を使用して1つのディメンションでインデックス可能として認識されるオブジェクトは、JavaScript で標準プロパティアクセス演算子--object index を使用してインデックスを作成できます \[ \] 。 オブジェクトが名前によってインデックス可能な場合、または複数の次元でインデックスを付けられる場合は、JavaScript コードがインデクサーを利用できるように、getValueAt メソッドと setValueAt メソッドがオブジェクトに投影されます。
 
 ```javascript
 function indexNative(nativeArray)
@@ -139,8 +139,8 @@ function stringifyNative(nativeObject)
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">認証方法</th>
-<th align="left">Signature</th>
+<th align="left">Method</th>
+<th align="left">署名</th>
 <th align="left">説明</th>
 </tr>
 </thead>
@@ -183,7 +183,7 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 | 名前空間   | 説明                                                              |
 |-------------|--------------------------------------------------------------------------|
 | 診断 | スクリプトコードの診断とデバッグに役立つ機能    |
-| memory      | デバッグターゲット内でメモリの読み取りと書き込みを有効にする機能 |
+| メモリ      | デバッグターゲット内でメモリの読み取りと書き込みを有効にする機能 |
 
 **ルートレベル**
 
@@ -191,15 +191,15 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 
 <table>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="30%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left">名前</th>
-<th align="left">Signature</th>
+<th align="left">署名</th>
 <th align="left">フェーズ存在</th>
 <th align="left">説明</th>
 </tr>
@@ -208,139 +208,139 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 <tr class="odd">
 <td align="left">Createポインターオブジェクト</td>
 <td align="left"><p>Createポインターオブジェクト (address、moduleName、typeName、[contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">指定したアドレスまたは場所にポインターオブジェクトを作成します。 モジュール名と型名は文字列です。 省略可能な<strong>Contextinheritor は</strong>引数は、getModuleSymbol と同様に機能します。</td>
 </tr>
 <tr class="even">
 <td align="left">createTypedObject</td>
 <td align="left"><p>createTypedObject (location、moduleName、typeName、[contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">指定した位置にあるデバッグターゲットのアドレス空間内にある、ネイティブに型指定されたオブジェクトを表すオブジェクトを作成します。 モジュール名と型名は文字列です。 省略可能な contextInheritor は引数は、getModuleSymbol と同様に機能します。</td>
 </tr>
 <tr class="odd">
 <td align="left">currentProcess</td>
 <td align="left"><p>プロパティ</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">デバッガーの現在のプロセスを表すオブジェクトを返します。</td>
 </tr>
 <tr class="even">
 <td align="left">currentSession</td>
 <td align="left"><p>プロパティ</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">デバッガーの現在のセッション (ターゲット、ダンプなど) を表すオブジェクトをデバッグしています</td>
 </tr>
 <tr class="odd">
 <td align="left">currentThread</td>
 <td align="left"><p>プロパティ</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">デバッガーの現在のスレッドを表すオブジェクトを返します。</td>
 </tr>
 <tr class="even">
 <td align="left">evaluateExpression</td>
 <td align="left"><p>evaluateExpression (式、[contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、デバッグホストが呼び出され、デバッグターゲットの言語のみを使用して式が評価されます。 省略可能な<em>Contextinheritor は</em>引数を指定した場合、式は引数のコンテキスト (例: アドレス空間およびデバッグターゲット) で評価されます。それ以外の場合は、デバッガーの現在のコンテキストで評価されます。</td>
 </tr>
 <tr class="odd">
 <td align="left">評価 Ate式 Incontext</td>
 <td align="left"><p>Evaluate式 Incontext (コンテキスト、式)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、デバッグホストが呼び出され、デバッグターゲットの言語のみを使用して式が評価されます。 Context 引数は、評価に使用する暗黙的な this ポインターを示します。 式はコンテキストで評価されます (例: アドレス空間とデバッグターゲット)。<em>コンテキスト</em>引数によって示されます。</td>
 </tr>
 <tr class="even">
 <td align="left">getModuleSymbol</td>
 <td align="left"><p>getModuleSymbol (moduleName, symbolName, [contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">特定のモジュール内のグローバルシンボルのオブジェクトを返します。 モジュール名とシンボル名は文字列です。 省略可能な<em>Contextinheritor は</em>引数を指定した場合、モジュールとシンボルは、渡されたオブジェクトと同じコンテキスト (アドレス空間、デバッグターゲット) 内で検索されます。 引数が指定されていない場合は、デバッガーの現在のコンテキストでモジュールとシンボルが検索されます。 1回限りのスクリプトではない JavaScript 拡張機能は、常に明示的なコンテキストを提供する必要があります</td>
 </tr>
 <tr class="odd">
 <td align="left">getNamedModel</td>
 <td align="left"><p>getNamedModel (modelName)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">指定された名前に対して登録されたデータモデルを返します。 これは、まだ登録されていない名前を使用して呼び出すことができることに注意してください。 これにより、その名前のスタブが作成され、登録時にスタブの操作が実際のオブジェクトに対して行われます。</td>
 </tr>
 <tr class="even">
 <td align="left">indexedValue</td>
-<td align="left"><p>new indexedValue(value, indicies)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left"><p>新しい indexedValue (value, 決まっ)</p></td>
+<td align="left">2</td>
 <td align="left">決まっの既定のセットを反復される値に割り当てるために JavaScript 反復子から返すことができるオブジェクトのコンストラクター。 決まっのセットは、JavaScript 配列として表現する必要があります。</td>
 </tr>
 <tr class="odd">
 <td align="left">Int64</td>
 <td align="left"><p>新しい Int64 (value, [highValue])</p></td>
-<td align="left">1 で保護されたプロセスとして起動されました</td>
+<td align="left">1</td>
 <td align="left">これにより、ライブラリ Int64 型が構築します。 1つの引数のバージョンは、(変換せずに) Int64 にパックしてそのに配置できる任意の値を受け取ります。 省略可能な2番目の引数を指定すると、最初の引数の変換が下位の32ビットにパックされ、2番目の引数の変換が上位32ビットにパックされます。</td>
 </tr>
 <tr class="even">
 <td align="left">namedModelParent</td>
 <td align="left"><p>新しい namedModelParent (オブジェクト、名前)</p></td>
-<td align="left">1 で保護されたプロセスとして起動されました</td>
+<td align="left">1</td>
 <td align="left"><strong>InitializeScript</strong>から返された配列に配置することを目的としたオブジェクトのコンストラクター。これは、指定された名前を持つデータモデルのデータモデルの親拡張として JavaScript プロトタイプまたは ES6 クラスを使用することを表します。</td>
 </tr>
 <tr class="odd">
 <td align="left">namedModelRegistration</td>
 <td align="left"><p>新しい namedModelRegistration (オブジェクト、名前)</p></td>
-<td align="left">1 で保護されたプロセスとして起動されました</td>
+<td align="left">1</td>
 <td align="left"><strong>InitializeScript</strong>から返された配列に配置することを目的としたオブジェクトのコンストラクター。これは、他の拡張機能が検索および拡張できるように、既知の名前を使用して JavaScript プロトタイプまたは ES6 クラスをデータモデルとして登録することを表します。</td>
 </tr>
 <tr class="even">
-<td align="left">名前空間</td>
+<td align="left">namespace</td>
 <td align="left"><p>プロパティ</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">デバッガーのルート名前空間への直接アクセスを提供します。 たとえば、最初のデバッグターゲットのプロセスリストに、ホスト. 名前空間. Debugger. Sessions. First () を使用してアクセスできます。このプロパティを使用するプロセス</td>
 </tr>
 <tr class="odd">
 <td align="left">registerNamedModel</td>
 <td align="left"><p>registerNamedModel (object, modelName)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、JavaScript プロトタイプまたは ES6 クラスが、指定された名前でデータモデルとして登録されます。 このような登録により、プロトタイプまたはクラスを他のスクリプトまたはその他のデバッガー拡張機能によって特定し、拡張することができます。 スクリプトでは、これを強制的に実行するのではなく、 <strong>initializeScript</strong>メソッドから<strong>namedmodelregistration</strong>オブジェクトを返すようにする必要があることに注意してください。 変更を強制的に行うすべてのスクリプトは、クリーンアップするために<strong>initializeScript</strong>メソッドを持つ必要があります。</td>
 </tr>
 <tr class="even">
 <td align="left">registerExtensionForTypeSignature</td>
 <td align="left"><p>registerExtensionForTypeSignature (object, typeSignature)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、指定された型シグネチャによって指定されたネイティブ型の拡張データモデルとして、JavaScript プロトタイプまたは ES6 クラスが登録されます。 スクリプトでは、これを強制的に実行するのではなく、 <strong>initializeScript</strong>メソッドから<strong>typeSignatureExtension</strong>オブジェクトを返すようにする必要があることに注意してください。 変更を強制的に行うすべてのスクリプトは、クリーンアップするために<strong>initializeScript</strong>メソッドを持つ必要があります。</td>
 </tr>
 <tr class="odd">
 <td align="left">registerPrototypeForTypeSignature</td>
 <td align="left"><p>registerPrototypeForTypeSignature (object, typeSignature)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、指定された型シグネチャによって指定されたネイティブ型の正規データモデル (例: ビジュアライザー) として JavaScript プロトタイプまたは ES6 クラスが登録されます。 スクリプトでは、これを強制的に実行するのではなく、 <strong>initializeScript</strong>メソッドから<strong>typeSignatureRegistration</strong>オブジェクトを返すようにする必要があることに注意してください。 変更を強制的に行うすべてのスクリプトは、クリーンアップするために<strong>uninitializeScript</strong>メソッドを持つ必要があります。</td>
 </tr>
 <tr class="even">
 <td align="left">Languageprimitives.parseint64</td>
 <td align="left"><p>Languageprimitives.parseint64 (string, [radix])</p></td>
-<td align="left">1 で保護されたプロセスとして起動されました</td>
+<td align="left">1</td>
 <td align="left">このメソッドは、標準の JavaScript parseInt メソッドと同様に機能しますが、代わりにライブラリ Int64 型を返す点が異なります。 基数が指定されている場合、解析は、示されているように、基数2、8、10、または16のいずれかで行われます。</td>
 </tr>
 <tr class="odd">
 <td align="left">typeSignatureExtension</td>
 <td align="left"><p>new typeSignatureExtension (object, typeSignature, [moduleName], [minVersion], [maxVersion])</p></td>
-<td align="left">1 で保護されたプロセスとして起動されました</td>
+<td align="left">1</td>
 <td align="left"><strong>InitializeScript</strong>から返された配列に配置することを目的としたオブジェクトのコンストラクター。これは、JavaScript プロトタイプまたは ES6 クラスによって型シグネチャを介して記述されるネイティブ型の拡張を表します。 このような登録では、完全に使用するのではなく、シグネチャに一致する任意の型のデバッガーの視覚化に "フィールドを追加" します。 オプションのモジュール名とバージョンでは、登録を制限できます。 バージョンは、"1.2.3.4" スタイルの文字列として指定されます。</td>
 </tr>
 <tr class="even">
 <td align="left">typeSignatureRegistration</td>
 <td align="left"><p>new typeSignatureRegistration (object, typeSignature, [moduleName], [minVersion], [maxVersion])</p></td>
-<td align="left">1 で保護されたプロセスとして起動されました</td>
+<td align="left">1</td>
 <td align="left"><strong>InitializeScript</strong>から返された配列に配置することを目的としたオブジェクトのコンストラクター。これは、ネイティブな型シグネチャに対する JavaScript プロトタイプまたは ES6 クラスの正規登録を表します。 このような登録は、拡張するだけではなく、シグネチャと一致する任意の型のデバッガーの視覚化を引き継ぎます。 オプションのモジュール名とバージョンでは、登録を制限できます。 バージョンは、"1.2.3.4" スタイルの文字列として指定されます。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterNamedModel</td>
-<td align="left"><p>unregisterNamedModel(modelName)</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left"><p>unregisterNamedModel (modelName)</p></td>
+<td align="left">2</td>
 <td align="left">これにより、指定された名前によるルックアップからデータモデルの登録を解除し、 <strong>Registernamedmodel</strong>によって実行される操作を元に戻すことがする</td>
 </tr>
 <tr class="even">
 <td align="left">unregisterExtensionForTypeSignature</td>
 <td align="left"><p>unregisterExtensionForTypeSignature (object, typeSignature, [moduleName], [minVersion], [maxVersion])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、指定された型シグネチャによって指定されたネイティブ型の拡張データモデルとして、JavaScript プロトタイプまたは ES6 クラスの登録が解除されます。 これは、registerExtensionForTypeSignature の論理的な undo です。 スクリプトでは、これを強制的に実行するのではなく、 <strong>initializeScript</strong>メソッドから<strong>typeSignatureExtension</strong>オブジェクトを返すようにする必要があることに注意してください。 変更を強制的に行うすべてのスクリプトは、クリーンアップするために<strong>initializeScript</strong>メソッドを持つ必要があります。 オプションのモジュール名とバージョンでは、登録を制限できます。 バージョンは、"1.2.3.4" スタイルの文字列として指定されます。</td>
 </tr>
 <tr class="odd">
 <td align="left">unregisterPrototypeForTypeSignature</td>
 <td align="left"><p>unregisterPrototypeForTypeSignature (object, typeSignature, [moduleName], [minVersion], [maxVersion])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、指定された型シグネチャによって指定されたネイティブ型の正規データモデル (例: ビジュアライザー) から JavaScript プロトタイプまたは ES6 クラスが登録解除されます。 これは、registerPrototypeForTypeSignature の論理的な undo です。 スクリプトでは、これを強制的に実行するのではなく、 <strong>initializeScript</strong>メソッドから<strong>typeSignatureRegistration</strong>オブジェクトを返すようにする必要があることに注意してください。 変更を強制的に行うすべてのスクリプトは、クリーンアップするために<strong>uninitializeScript</strong>メソッドを持つ必要があります。 オプションのモジュール名とバージョンでは、登録を制限できます。 バージョンは、"1.2.3.4" スタイルの文字列として指定されます。</td>
 </tr>
 </tbody>
@@ -350,9 +350,9 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 
 ホストオブジェクトの診断サブ名前空間には、次のものが含まれます。
 
-| 名前     | Signature           | フェーズ存在 | 説明                                                                                                                                                                                                                                                                                                                                                   |
+| 名前     | 署名           | フェーズ存在 | 説明                                                                                                                                                                                                                                                                                                                                                   |
 |----------|---------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| debugLog | debugLog (オブジェクト...) | 1 で保護されたプロセスとして起動されました             | これにより、スクリプト拡張機能に対する printf スタイルのデバッグが提供されます。 現時点では、debugLog からの出力は、デバッガーの出力コンソールにルーティングされます。 後で、この出力を柔軟にルーティングする計画があります。 注: これは、コンソールにユーザー出力を印刷する手段としては使用しないでください。 今後、このファイルがルーティングされることはありません。 |
+| debugLog | debugLog (オブジェクト...) | 1             | これにより、スクリプト拡張機能に対する printf スタイルのデバッグが提供されます。 現時点では、debugLog からの出力は、デバッガーの出力コンソールにルーティングされます。 後で、この出力を柔軟にルーティングする計画があります。 注: これは、コンソールにユーザー出力を印刷する手段としては使用しないでください。 今後、このファイルがルーティングされることはありません。 |
 
 **メモリの機能**
 
@@ -368,7 +368,7 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 <thead>
 <tr class="header">
 <th align="left">名前</th>
-<th align="left">Signature</th>
+<th align="left">署名</th>
 <th align="left">フェーズ存在</th>
 <th align="left">説明</th>
 </tr>
@@ -377,22 +377,22 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 <tr class="odd">
 <td align="left">readMemoryValues</td>
 <td align="left"><p>readMemoryValues (location、numElements、[elementSize]、[isSigned]、[contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
+<td align="left">2</td>
 <td align="left">これにより、デバッグターゲットのアドレス空間から生の値の配列が読み取られ、このメモリのビューの上に型指定された配列が配置されます。 指定された場所には、アドレス (64 ビット値)、場所オブジェクト、またはネイティブポインターを指定できます。 配列のサイズは、 <em>Numelements</em>引数によって示されます。 配列の各要素のサイズ (および型) は、オプションの<em>Elementsize</em>および<em>issigned</em>引数によって指定されます。 このような引数が指定されていない場合、既定値は byte (符号なし/1 バイト) です。 省略可能な<em>Contextinheritor</em>は引数を指定した場合、引数で指定されたコンテキスト (例: アドレス空間およびデバッグターゲット) でメモリが読み取られます。それ以外の場合は、デバッガーの現在のコンテキストから読み込まれます。 8、16、および32ビットの値に対してこのメソッドを使用すると、読み取りメモリに高速に型指定されたビューが配置されることに注意してください。 64ビットの値に対してこのメソッドを使用すると、64ビットのライブラリ型の配列が構築されるため、大幅にコストが高くなります。</td>
 </tr>
 <tr class="even">
 <td align="left">readString</td>
 <td align="left"><p>readString (location、[contextInheritor])</p>
 <p>readString (location、[length]、[contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
-<td align="left">これにより、デバッグターゲットのアドレス空間からナロー (現在のコードページ) 文字列が読み込まれ、UTF-16 に変換され、結果が JavaScript 文字列として返されます。 メモリを読み取ることができなかった場合、例外がスローされる可能性があります。 指定された場所には、アドレス (64 ビット値)、場所オブジェクト、またはネイティブ char<em>を指定できます。 省略可能な<em>Contextinheritor</em>は引数を指定した場合、引数で指定されたコンテキスト (例: アドレス空間およびデバッグターゲット) でメモリが読み取られます。それ以外の場合は、デバッガーの現在のコンテキストから読み込まれます。 省略可能な<em>長さ</em>の引数を指定すると、読み取り文字列は指定した長さになります。</td>
+<td align="left">2</td>
+<td align="left">これにより、デバッグターゲットのアドレス空間からナロー (現在のコードページ) 文字列が読み込まれ、UTF-16 に変換され、結果が JavaScript 文字列として返されます。 メモリを読み取ることができなかった場合、例外がスローされる可能性があります。 指定できる場所は、アドレス (64 ビット値)、場所オブジェクト、またはネイティブ char <em> です。 省略可能な<em>Contextinheritor</em>は引数を指定した場合、引数で指定されたコンテキスト (例: アドレス空間およびデバッグターゲット) でメモリが読み取られます。それ以外の場合は、デバッガーの現在のコンテキストから読み込まれます。 省略可能な<em>長さ</em>の引数を指定すると、読み取り文字列は指定した長さになります。</td>
 </tr>
 <tr class="odd">
 <td align="left">readWideString</td>
 <td align="left"><p>readWideString (location、[contextInheritor])</p>
 <p>readWideString (location、[length]、[contextInheritor])</p></td>
-<td align="left">2 で保護されたプロセスとして起動されました</td>
-<td align="left">これにより、デバッグターゲットのアドレス空間からワイド (UTF-16) 文字列が読み込まれ、結果が JavaScript 文字列として返されます。 メモリを読み取ることができなかった場合、例外がスローされる可能性があります。 指定された場所には、アドレス (64 ビット値)、場所オブジェクト、またはネイティブ wchar_t</em>を指定できます。 省略可能な<em>Contextinheritor</em>は引数を指定した場合、引数で指定されたコンテキスト (例: アドレス空間およびデバッグターゲット) でメモリが読み取られます。それ以外の場合は、デバッガーの現在のコンテキストから読み込まれます。 省略可能な<em>長さ</em>の引数を指定すると、読み取り文字列は指定した長さになります。</td>
+<td align="left">2</td>
+<td align="left">これにより、デバッグターゲットのアドレス空間からワイド (UTF-16) 文字列が読み込まれ、結果が JavaScript 文字列として返されます。 メモリを読み取ることができなかった場合、例外がスローされる可能性があります。 指定された場所には、アドレス (64 ビット値)、場所オブジェクト、またはネイティブ wchar_t を指定でき </em> ます。 省略可能な<em>Contextinheritor</em>は引数を指定した場合、引数で指定されたコンテキスト (例: アドレス空間およびデバッグターゲット) でメモリが読み取られます。それ以外の場合は、デバッガーの現在のコンテキストから読み込まれます。 省略可能な<em>長さ</em>の引数を指定すると、読み取り文字列は指定した長さになります。</td>
 </tr>
 </tbody>
 </table>
@@ -406,7 +406,7 @@ JavaScript プロバイダーは、ホストと呼ばれるオブジェクトを
 | 概念                 | ネイティブインターフェイス             | 同じ JavaScript                                                |
 |-------------------------|------------------------------|----------------------------------------------------------------------|
 | 文字列変換       | IStringDisplayableConcept    | standard: toString (...){...}                                         |
-| 機能             | IIterableConcept             | standard: \[Symbol. iterator\]() {...}                                 |
+| 機能             | IIterableConcept             | standard: \[ Symbol. iterator \] () {...}                                 |
 | インデックス            | IIndexableConcept            | プロトコル: getDimensionality (...)/getValueAt (...)/setValueAt (...) |
 | ランタイム型の変換 | IPreferredRuntimeTypeConcept | プロトコル: getPreferredRuntimeTypedObject (...)                        |
 
@@ -429,7 +429,7 @@ class myObject
 
 **機能**
 
-オブジェクトが反復可能なであるかどうかを ES6 プロトコルに直接マップするかどうかを、データモデルの概念として反復可能なます。 \[Symbol. iterator\] メソッドを持つオブジェクトは、反復可能なと見なされます。 このようなの実装により、オブジェクトが反復可能なされます。
+オブジェクトが反復可能なであるかどうかを ES6 プロトコルに直接マップするかどうかを、データモデルの概念として反復可能なます。 反復可能なメソッドを持つオブジェクト \[ はすべて、 \] と見なされます。 このようなの実装により、オブジェクトが反復可能なされます。
 
 反復可能なのみのオブジェクトは、次のような実装を持つことができます。
 
@@ -476,7 +476,7 @@ class myObject
 
 **インデックス**
 
-JavaScript とは異なり、データモデルでは、プロパティアクセスとインデックス作成の間で非常に明確な区別が行われます。 データモデルでインデックスを可能なものとして提示する JavaScript オブジェクトは、インデクサーの次元を返す getDimensionality メソッドで構成されるプロトコルを実装する必要があります。また、getValueAt メソッドと setValueAt メソッドのオプションのペアを指定された決まっでオブジェクトの読み取りと書き込みを実行します。 オブジェクトが読み取り専用または書き込み専用の場合は、getValueAt メソッドまたは setValueAt メソッドを省略できます。
+JavaScript とは異なり、データモデルでは、プロパティアクセスとインデックス作成の間で非常に明確な区別が行われます。 データモデルでインデックスを可能なものとして提示する JavaScript オブジェクトは、インデクサーの次元を返す getDimensionality メソッドと、指定された決まっでオブジェクトの読み取りと書き込みを実行するオプションの getValueAt メソッドと setValueAt メソッドで構成されるプロトコルを実装する必要があります。 オブジェクトが読み取り専用または書き込み専用の場合は、getValueAt メソッドまたは setValueAt メソッドを省略できます。
 
 ```javascript
 class myObject
@@ -538,10 +538,10 @@ class myNativeModel
 
 ## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
-[JavaScript 拡張機能のネイティブデバッガーオブジェクト](native-objects-in-javascript-extensions.md)
+[JavaScript 拡張機能のネイティブ デバッガー オブジェクト](native-objects-in-javascript-extensions.md)
 
 [JavaScript 拡張機能のネイティブデバッガーオブジェクト-設計とテストに関する考慮事項](native-objects-in-javascript-extensions-design-considerations.md)
 
 [JavaScript デバッガー スクリプト](javascript-debugger-scripting.md)
 
-[JavaScript デバッガーのサンプルスクリプト](javascript-debugger-example-scripts.md)
+[JavaScript デバッガーのスクリプト例](javascript-debugger-example-scripts.md)

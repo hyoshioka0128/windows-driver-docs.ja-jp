@@ -4,73 +4,73 @@ description: ドライバーの選択プロセスの概要
 ms.assetid: 120ab9f9-6ac5-4b76-bee1-2e975d0c38f2
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fef4436d078e4fccb7d62e9968867e8bc8c4011
-ms.sourcegitcommit: 3a51ae8db61be0e25549a5527ea3143e3025e82f
+ms.openlocfilehash: 7a43355c0238b8b73223cbcaaef7117203526e0e
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65456369"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557738"
 ---
 # <a name="overview-of-the-driver-selection-process"></a>ドライバーの選択プロセスの概要
 
 
-Windows ドライバーとしてを表す、*ドライバー ノード*、任意のサービス、デバイスに固有の共同インストーラー、およびレジストリ エントリなど、デバイスのすべてのソフトウェアのサポートが含まれています。 デバイスのサービスには、関数のドライバーと、デバイス上のレベルと下位レベルのフィルター ドライバーが含まれます。
+Windows は、ドライバーを*ドライバーノード*として表します。これには、サービス、デバイス固有の共同インストーラー、レジストリエントリなど、デバイスのすべてのソフトウェアサポートが含まれます。 デバイスのサービスには、関数ドライバーと、上位レベルおよび低レベルのデバイスフィルタードライバーが含まれます。
 
-一部のデバイスでは、そのデバイスまたはデバイスのファミリをサポートするように設計されたいずれか専用のように設計されたベンダーから提供されたドライバーが必要です。 すべてのデバイスをサポートするシステム提供のドライバーによって他のデバイスを実行できますを指定した[デバイス セットアップ クラス](device-setup-classes.md)します。 Windows では、デバイスに最も一致するドライバーを選択します。 このようなドライバーが見つからない場合は、Windows の場合は、ますます一般的なドライバーから選択します。
+一部のデバイスでは、ベンダーが提供するドライバーが必要です。このドライバーは、そのデバイス専用に設計されているか、デバイスファミリをサポートするように設計されています。 ただし、その他のデバイスは、特定の[デバイスセットアップクラス](device-setup-classes.md)のすべてのデバイスをサポートするシステム提供のドライバーによって駆動されます。 Windows は、デバイスに最も近いドライバーを選択します。 このようなドライバーが見つからない場合は、より多くの一般的なドライバーを選択します。
 
-### <a href="" id="how-setup-searches-for-drivers"></a> Windows でドライバーを検索する方法
+### <a name="how-windows-searches-for-drivers"></a><a href="" id="how-setup-searches-for-drivers"></a>Windows でのドライバーの検索方法
 
-Windows デバイスと一致するドライバーの特定の場所を検索します。 ドライバーでは、次の場合、デバイスが一致します。
+Windows は、特定の場所で、デバイスに一致するドライバーを検索します。 次の条件に該当する場合、ドライバーはデバイスと一致します。
 
--   プラグ アンド プレイ (PnP) のいずれかの[識別文字列](device-identification-strings.md)デバイスとデバイスの識別文字列が一致するバス ドライバーによって報告された、 [ **INF*モデル*セクション**](inf-models-section.md)エントリのドライバーの[INF ファイル](overview-of-inf-files.md)します。
+-   デバイスのバスドライバーによって報告されたプラグアンドプレイ (PnP)[デバイス識別文字列](device-identification-strings.md)の1つは、ドライバーの[inf ファイル](overview-of-inf-files.md)の " [**inf*モデル*" セクション**](inf-models-section.md)エントリのデバイス識別文字列と一致します。
 
--   一致するデバイス id の文字列の場合、 [ **INF*モデル*セクション**](inf-models-section.md)エントリを指定します、 *TargetOSVersion*装飾、装飾では、デバイスのインストールをオペレーティング システムのバージョンと一致します。
+-   [**INF*モデル*セクション**](inf-models-section.md)エントリの一致するデバイス id 文字列で*TargetOSVersion*装飾が指定されている場合、そのデコレーションは、デバイスをインストールするオペレーティングシステムのバージョンと一致します。
 
-    詳細については、 *TargetOSVersion*の装飾を参照してください[プラットフォーム拡張機能バージョンのオペレーティング システムと組み合わせて](combining-platform-extensions-with-operating-system-versions.md)します。
+    *TargetOSVersion*装飾の詳細については、「[プラットフォーム拡張機能とオペレーティングシステムバージョンの組み合わせ](combining-platform-extensions-with-operating-system-versions.md)」を参照してください。
 
-Windows のドライバーの一致を検索する場所の詳細については、次を参照してください。[ドライバーが Windows 検索](where-setup-searches-for-drivers.md)します。
+Windows が一致するドライバーを検索する場所の詳細については、「 [windows がドライバーを検索する場所](where-setup-searches-for-drivers.md)」を参照してください。
 
-### <a href="" id="how-setup-ranks-drivers"></a> Windows ドライバーをランク付けする方法
+### <a name="how-windows-ranks-drivers"></a><a href="" id="how-setup-ranks-drivers"></a>Windows がドライバーをランク付けする方法
 
-Windows では、一致するすべてのドライバーの一覧を作成し、各ドライバーのランクを割り当てます。 Windows より大きいまたは 0 以下である整数値を持つ各ドライバーのランクを表します。
+一致するすべてのドライバーの一覧が作成され、各ドライバーにランクが割り当てられます。 Windows は、各ドライバーのランクを0以上の整数値で表します。
 
-順位付けのプロセスの詳細については、次を参照してください。[ランク ドライバーをどのように Windows](how-setup-ranks-drivers.md)します。
+順位付けプロセスの詳細については、「 [Windows がドライバーをランク付けする方法](how-setup-ranks-drivers--windows-vista-and-later-.md)」を参照してください。
 
-Windows Vista 以降、Windows をランク付けしてドライバーをドライバーがデジタル署名されているかどうかに基づいています。 Windows には、次のようにデジタル署名に基づいたドライバーが順位付けされます。
+Windows Vista 以降では、ドライバーがデジタル署名されているかどうかに基づいてドライバーもランク付けされます。 Windows は、次のように、デジタル署名に基づいてドライバーをランク付けします。
 
--   場合、 [ **AllSignersEqual**グループ ポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)は Windows ランク付けを無効になっている、マイクロソフトの署名で署名されたドライバーよりも高いで署名されたドライバー、 [Authenticode](authenticode.md)署名します。 この順位付けは、Authenticode 署名で署名されたドライバーは、その他のすべての面で、デバイスに適している場合でも発生します。
+-   [ **AllSignersEqual**グループポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)が無効になっている場合、Windows は、 [Authenticode](authenticode.md)署名で署名されたドライバーよりも高い Microsoft 署名で署名されたドライバーをランク付けします。 この順位付けは、Authenticode 署名で署名されたドライバーが、その他のすべての側面でデバイスに対してより適切に一致している場合でも発生します。
 
--   場合、 [ **AllSignersEqual**グループ ポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)が有効にすると、Windows をランク付けデジタル署名されたドライバーをすべて均等にします。
+-   [ **AllSignersEqual**グループポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)が有効になっている場合、Windows はデジタル署名されたすべてのドライバーを均等にランク付けします。
 
-**注**  以降、Windows 7 で、 [AllSignersEqual グループ ポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)既定で有効です。 Windows Vista および Windows Server 2008、 **AllSignersEqual**グループ ポリシーが既定で無効になっています。 IT 部門は、既定の動作を有効または無効に順位付けをオーバーライドできます、 **AllSignersEqual**グループ ポリシー。
+**メモ**   Windows 7 以降では、 [AllSignersEqual グループポリシー](allsignersequal-group-policy--windows-vista-and-later-.md)が既定で有効になっています。 Windows Vista および Windows Server 2008 では、 **AllSignersEqual**グループポリシーは既定で無効になっています。 IT 部門は、 **AllSignersEqual**グループポリシーを有効または無効にすることで、既定の順位付け動作を上書きできます。
 
  
 
-署名機関を Windows からの署名を以下に示します。
+Windows 署名機関からの署名には、次のものが含まれます。
 
--   Premium Windows Hardware Quality Labs (WHQL) の署名と標準 WHQL 署名
+-   Premium Windows Hardware Quality Labs (WHQL) の署名と標準の WHQL 署名
 
--   受信トレイのドライバーの署名
+-   受信トレイドライバーの署名
 
--   Windows Sustained Engineering (Windows SE) の署名
+-   Windows の継続的エンジニアリング (Windows SE) の署名
 
--   同じである Windows バージョンについては、WHQL 署名かそれより遅い、 [LowerLogoVersion](lowerlogoversion.md)ドライバーのデバイス セットアップ クラスの値
+-   ドライバーのデバイスセットアップクラスの[LowerLogoVersion](lowerlogoversion.md)値と同じかそれ以降の Windows バージョンの WHQL 署名
 
-### <a href="" id="how-setup-selects-drivers"></a> Windows ドライバーを選択する方法
+### <a name="how-windows-selects-drivers"></a><a href="" id="how-setup-selects-drivers"></a>Windows がドライバーを選択する方法
 
-Windows では、デバイスに最適なものとして、ドライバーを最低ランク値を選択します。
+デバイスに最適なランク値を持つドライバーが、Windows によって選択されます。
 
-ただしはデバイスの最適な一致する複数の均等にランク付けされたドライバーがある場合は、Windows を使用して、ドライバーの日付とバージョン ドライバーを選択します。 ドライバーの日付とバージョンがで指定された、 [ **INF DriverVer ディレクティブ**](inf-driverver-directive.md)に含まれるドライバーの[INF ファイル](overview-of-inf-files.md)します。
+ただし、デバイスに最適な一致のドライバーが複数ある場合、Windows はドライバーの日付とバージョンを使用してドライバーを選択します。 ドライバーの日付とバージョンは、ドライバーの[inf ファイル](overview-of-inf-files.md)に格納されている[**inf DriverVer ディレクティブ**](inf-driverver-directive.md)によって指定されます。
 
-Windows は、次の条件を使用し、デバイスのドライバーを選択します。
+Windows では、デバイスのドライバーを選択するために次の条件を使用します。
 
--   Windows では、デバイスに最適なものとして最も低い順位値を持つドライバーを選択します。
+-   デバイスに最適なランク値を持つドライバーが、Windows によって選択されます。
 
--   ランクが等しいドライバーでは、Windows はドライバーが最新の日付を選択します。
+-   ランクが等しいドライバーの場合、Windows は最新の日付を持つドライバーを選択します。
 
--   ランクが等しいと日付を持つドライバーについては、Windows は、最上位のバージョンのあるドライバーを選択します。
+-   ランクと日付が等しいドライバーの場合、Windows は最も高いバージョンのドライバーを選択します。
 
--   ランクが等しい、日付、およびバージョンのあるドライバーは、Windows は、すべてのドライバーを選択できます。
+-   ランク、日付、およびバージョンが同じドライバーの場合、Windows は任意のドライバーを選択できます。
 
  
 

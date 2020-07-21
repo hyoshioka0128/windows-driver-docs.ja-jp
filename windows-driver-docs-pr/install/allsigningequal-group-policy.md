@@ -1,6 +1,6 @@
 ---
-title: AllSigningEqual グループポリシー
-description: AllSigningEqual グループポリシー
+title: AllSigningEqual グループ ポリシー
+description: AllSigningEqual グループ ポリシー
 ms.assetid: b23eed87-76ce-4447-86d2-2be370ee57c5
 keywords:
 - ドライバー選択 WDK デバイスのインストール、AllSigningEqual グループポリシー
@@ -9,14 +9,14 @@ keywords:
 - AllSigningEq
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: fde3803c053634ddc0d8fed4c123fafccf996692
-ms.sourcegitcommit: 63402c9cd10f909e355172037f9bd2d58813303c
+ms.openlocfilehash: 02229a24e20c07bb6cb781126e1e710bfa235040
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82885435"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557791"
 ---
-# <a name="allsigningequal-group-policy"></a>AllSigningEqual グループポリシー
+# <a name="allsigningequal-group-policy"></a>AllSigningEqual グループ ポリシー
 
 
 **Allsigningequal**グループポリシーが無効になっている場合、windows 署名機関 (Microsoft signature) によって署名されたドライバーは、次のいずれかのドライバーよりも優れています。
@@ -39,7 +39,7 @@ Windows 署名機関からの署名は均等に順位付けされ、次のシグ
 
 ネットワーク管理者は、 **Allsigningequal**グループポリシーを有効にすることで、この動作を変更できます。 これにより、デバイスに最適なドライバーを選択するときに、すべての Microsoft 署名の種類と Authenticode 署名が順位に関して等しいと見なされるように Windows が構成されます。
 
-**注**  Windows 7 以降では、 **allsigningequal**グループポリシーが既定で有効になっています。
+**メモ**   Windows 7 以降では、 **Allsigningequal**グループポリシーが既定で有効になっています。
 
  
 
@@ -75,13 +75,13 @@ Windows Vista 以降のバージョンの Windows で AllSigningEqual グルー�
 
 ターゲットシステムで設定が更新されていることを確認するには、次の手順を実行します。
 
-1.  *Cmd.exe*へのデスクトップショートカットを作成し、 *cmd.exe*ショートカットを右クリックして、[**管理者として実行**] を選択します。
+1.  *Cmd.exe*へのデスクトップショートカットを作成し、 *Cmd.exe*ショートカットを右クリックして、[**管理者として実行**] を選択します。
 
-2.  コマンドプロンプトウィンドウで、グループポリシー update ユーティリティ ( *GPUpdate .exe*) を実行します。
+2.  コマンドプロンプトウィンドウで、グループポリシー update ユーティリティ、 *GPUpdate.exe*を実行します。
 
 この構成の変更は1回行われ、AllSigningEqual が再構成されるまで、コンピューター上の後続のすべてのドライバーのインストールに適用されます。
 
-ドライバーの順位付けの詳細については、「 [Windows がドライバーをランク付けする方法](how-setup-ranks-drivers.md)」を参照してください。
+ドライバーの順位付けの詳細については、「 [Windows がドライバーをランク付けする方法](how-setup-ranks-drivers--windows-vista-and-later-.md)」を参照してください。
 
  
 

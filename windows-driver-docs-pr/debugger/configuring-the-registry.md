@@ -3,30 +3,30 @@ title: レジストリの構成
 description: レジストリの構成
 ms.assetid: 69a1dd39-c4aa-491d-9e28-fd1661ec9a7a
 keywords:
-- SymProxy、レジストリ
-- ProxyCfg と SymProxy
-- Netsh と SymProxy
+- SymProxy、registry
+- Proxycfg.exe と SymProxy
+- Netsh および SymProxy
 ms.date: 03/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c5c64a2a261410d16b1cec0395b68a46d2f3843c
-ms.sourcegitcommit: 2854c02cbe5b2c0010d0c64367cfe8dbd201d3f1
+ms.openlocfilehash: 5453a38b46b66b1654375ccf69079e32d79f9d3e
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67499807"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557769"
 ---
 # <a name="configuring-the-registry"></a>レジストリの構成
 
 
-SymProxy では、このレジストリ キーでその設定が格納されます。
+SymProxy は、このレジストリキーに設定を格納します。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy
 ```
 
-このレジストリ キーを制御記号を見つける対象の場所は、Web サイト、ログ出力レベル、および SymProxy がネットワークへの直接接続で動作するかどうかに格納します。 Windows のツールをデバッグで提供される SymProxy 登録ツール (Symproxy.reg) を実行して、このキーを作成できます。 型**symproxy.reg**コマンド プロンプトまたは Windows エクスプ ローラーからそれをダブルクリックします。
+このレジストリキーは、Web サイトに格納するシンボルの検索場所、ログ記録レベル、および SymProxy がネットワークへの直接接続で動作するかどうかを制御します。 このキーを作成するには、Windows 用デバッグツールで提供されている SymProxy 登録ツール (Symproxy reg) を実行します。 コマンドプロンプトで「 **symproxy .reg** 」と入力するか、Windows エクスプローラーでダブルクリックします。
 
-これにより、設定を無効にするために、"x"プレフィックスのエントリが追加されます。 設定を有効にするには、目的の設定の前にある"x"を削除します。
+これにより、"x" というプレフィックスが付いた設定のエントリが追加され、無効になります。 設定を有効にするには、目的の設定の先頭から "x" を削除します。
 
 ```reg
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Symbol Server Proxy]
@@ -45,7 +45,7 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 "xUriTiers"=dword:0000001
 ```
 
-Symproxy.reg レジストリ ファイルは、シンボルの仮想ディレクトリ名を前提としていて、Microsoft パブリック シンボル サーバーを使用するシンボル パスを構成します。
+Symproxy .reg レジストリファイルは、シンボルの仮想ディレクトリ名を前提としており、Microsoft パブリックシンボルサーバーを使用するようにシンボルパスを構成します。
 
 ```reg
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Symbol Server Proxy\Web Directories]
@@ -54,7 +54,7 @@ Symproxy.reg レジストリ ファイルは、シンボルの仮想ディレク
 "SymbolPath"="https://msdl.microsoft.com/download/symbols"
 ```
 
-Symproxy.reg でイベント ログ エントリは、このトピックのイベント ログのセクションでは後者では説明します。
+Symproxy .reg のイベントログエントリについては、このトピックの「イベントログ」セクションで説明します。
 
 ```reg
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Application\Microsoft-Windows-SymProxy]
@@ -66,90 +66,90 @@ Symproxy.reg でイベント ログ エントリは、このトピックのイ�
 "TypesSupported"=dword:00000007
 ```
 
-このトピックでは、symproxy.reg web ディレクトリ エントリがについて説明します。
+このトピックでは、symproxy .reg の web ディレクトリエントリについて説明します。
 
-### <a name="span-idwebdirectoriesspanspan-idwebdirectoriesspanweb-directories"></a><span id="web_directories"></span><span id="WEB_DIRECTORIES"></span>Web ディレクトリ
+### <a name="span-idweb_directoriesspanspan-idweb_directoriesspanweb-directories"></a><span id="web_directories"></span><span id="WEB_DIRECTORIES"></span>Web ディレクトリ
 
-シンボル ストアとして使用している IIS で生成された各仮想ディレクトリの下のレジストリ キーをセットアップする必要があります、 **Web ディレクトリ**次のレジストリ キーのサブキー。
+シンボルストアとして使用している IIS で生成された仮想ディレクトリごとに、次のレジストリキーの**Web ディレクトリ**サブキーの下にレジストリキーを設定する必要があります。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy
 ```
 
-**シンボル ストアの仮想ディレクトリのレジストリ キーを編集するには**
+**シンボルストアの仮想ディレクトリのレジストリキーを編集するには**
 
--   内容を編集**SymbolPath** SymProxy シンボル ストアで使用されるシンボル ストアのすべてを格納します。 使用されている 1 つ以上のシンボル ストアがある場合は、セミコロンで区切ります。 10 ストアの最大値が値ごとにサポートされています。 HTTP パスを含める必要があります、 **https:// プレフィックス**、UNC パスを含める必要があります、 **\\ \\** プレフィックス。
+-   SymProxy シンボルストアによって使用されるすべてのシンボルストアを含むように、シンボルの**内容を編集**します。 複数のシンボルストアが使用されている場合は、セミコロンで区切ります。 各値に対して最大10個のストアがサポートされています。 HTTP パスには**https://プレフィックス**を含める必要があり、UNC パスにはプレフィックスを含める必要があり **\\\\** ます。
 
-たとえば、仮想ディレクトリのいずれかと、シンボルが呼び出され、UNC ストアでは、アクセス対象のシンボル ストアが配置されている場合\\\\シンボル\\シンボルと HTTP ストア https://msdl.microsoft.com/download/symbols 、次のレジストリの作成キー。
+たとえば、仮想ディレクトリの1つがシンボルと呼ばれており、それがアクセスするシンボルストアが UNC ストア \\ \\ シンボルと HTTP ストアにある場合、 \\ https://msdl.microsoft.com/download/symbols 次のレジストリキーを作成します。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy/Web Directories/Symbols
 ```
 
-このキーが作成されると、編集、 **SymbolPath**する\\\\シンボル\\シンボル;<https://msdl.microsoft.com/download/symbols>。 これは、レジストリ エディターの次のスクリーン ショットで確認できます。
+このキーを作成した後、シンボル**パス**をシンボルシンボルに編集し \\ \\ \\ <https://msdl.microsoft.com/download/symbols> ます。 これは、レジストリエディターの次のスクリーンショットで確認できます。
 
-![変更後の symbolpath を示すレジストリ エディターのスクリーン ショット](images/symproxy-registry.png)
+![変更されたシンボルパスを示すレジストリエディターのスクリーンショット](images/symproxy-registry.png)
 
-この例で、SymProxy まず検索内のシンボル\\\\シンボル\\シンボル。 ファイルが見つからない場合があります、Microsoft のシンボル ストアが使用されます。
+この例では、SymProxy は最初にシンボルのシンボルを検索 \\ \\ \\ します。 ファイルが見つからない場合は、Microsoft シンボルストアが使用されます。
 
--   レジストリの仮想ディレクトリ名に一致する Web ディレクトリの下のキーの各\_SymbolPath と呼ばれる SZ を作成する必要があります。 値には、SymProxy シンボル ストアの設定に使用されるすべてのアップ ストリームのシンボル ストアが含まれています。
+-   Web ディレクトリの下にある、仮想ディレクトリ名と一致する各キーで、 \_ シンボルパスという名前の REG SZ を作成する必要があります。 値には、SymProxy シンボルストアを設定するために使用されるすべてのアップストリームシンボルストアが含まれます。
 
--   最大 10 個の項目がサポートされています。
+-   最大10個のエントリがサポートされています。
 
--   別のエントリはセミコロンでします。
+-   エントリをセミコロンで区切ります。
 
--   UNC パスを含める必要がある、"\\\\"プレフィックス
+-   UNC パスには " \\ " プレフィックスを含める必要があります \\
 
--   HTTP パスは、"https://"プレフィックスを含める必要があります。
+-   HTTP パスには、"https://" プレフィックスを含める必要があります
 
--   最も高価なに最もコストのかからないから値を注文します。
+-   値は、最もコストが低いものから順に並べ替えてください。
 
-    - サーバーと、計算でのデータ通信コストと使用率パフォーマンスの目標のバランスを取る必要があります。
+    - 計算では、使用状況のパフォーマンス目標とサーバーとデータの通信コストのバランスを取る必要があります。
 
-    - 一般に、インターネット HTTP サーバーの前に、ローカルの SMB または HTTP サーバーを配置します。
+    - 一般に、インターネット HTTP サーバーの前にローカルの SMB/HTTP サーバーを配置します。
 
-### <a name="span-idsymproxyperformancecountersspanspan-idsymproxyperformancecountersspanspan-idsymproxyperformancecountersspansymproxy-performance-counters"></a><span id="SymProxy_Performance_Counters"></span><span id="symproxy_performance_counters"></span><span id="SYMPROXY_PERFORMANCE_COUNTERS"></span>SymProxy パフォーマンス カウンター
+### <a name="span-idsymproxy_performance_countersspanspan-idsymproxy_performance_countersspanspan-idsymproxy_performance_countersspansymproxy-performance-counters"></a><span id="SymProxy_Performance_Counters"></span><span id="symproxy_performance_counters"></span><span id="SYMPROXY_PERFORMANCE_COUNTERS"></span>SymProxy パフォーマンスカウンター
 
-SymProxy は、SymProxy と呼ばれるプロバイダー経由でのパフォーマンス カウンターを生成できます。
+SymProxy は、SymProxy と呼ばれるプロバイダーを使用してパフォーマンスカウンターを出力できます。
 
-パフォーマンス カウンターのサポートを有効にするには、コマンド ウィンドウで管理者 symproxy マニフェスト ファイルを登録します。
+パフォーマンスカウンターのサポートを有効にするには、管理者コマンドウィンドウで symproxy マニフェストファイルを登録します。
 
 ```console
 C:\> lodctr.exe /m:%WINDIR%\system32\inetsrv\symproxy.man
 ```
 
-パフォーマンス カウンターのサポートを無効にするには、マニフェストの登録を解除します。
+パフォーマンスカウンターのサポートを無効にするには、マニフェストの登録を解除します。
 
 ```console
 C:\> unlodctr.exe /m:%WINDIR%\system32\inetsrv\symproxy.man
 ```
 
-### <a name="span-idsymproxyeventtracingforwindowsspanspan-idsymproxyeventtracingforwindowsspanspan-idsymproxyeventtracingforwindowsspansymproxy-event-tracing-for-windows"></a><span id="SymProxy_Event_Tracing_for_Windows"></span><span id="symproxy_event_tracing_for_windows"></span><span id="SYMPROXY_EVENT_TRACING_FOR_WINDOWS"></span>SymProxy Event Tracing for Windows
+### <a name="span-idsymproxy_event_tracing_for_windowsspanspan-idsymproxy_event_tracing_for_windowsspanspan-idsymproxy_event_tracing_for_windowsspansymproxy-event-tracing-for-windows"></a><span id="SymProxy_Event_Tracing_for_Windows"></span><span id="symproxy_event_tracing_for_windows"></span><span id="SYMPROXY_EVENT_TRACING_FOR_WINDOWS"></span>SymProxy Windows イベントトレーシング
 
-SymProxy は、Microsoft-Windows-SymProxy と呼ばれるプロバイダー経由での ETW イベントを作成できます。
+SymProxy は、Microsoft-Windows-SymProxy と呼ばれるプロバイダーを使用して ETW イベントを作成できます。
 
 ```console
 C:\> logman query providers | findstr SymProxy
 Microsoft-Windows-SymProxy {0876099C-A903-47FF-AF14-52035BB479EF}
 ```
 
-ETW のサポートを有効にするには、マニフェスト ファイルを登録します。
+ETW のサポートを有効にするには、マニフェストファイルを登録します。
 
 ```console
 C:\> wevtutil.exe install-manifest %WINDIR%\system32\inetsrv\symproxy.man
 ```
 
-ETW のサポートを無効にするには、マニフェスト ファイルの登録を解除します。
+ETW のサポートを無効にするには、マニフェストファイルの登録を解除します。
 
 ```console
 C:\> wevtutil.exe uninstall-manifest %WINDIR%\system32\inetsrv\symproxy.man
 ```
 
-### <a name="span-ideventlogspanspan-ideventlogspanspan-ideventlogspanevent-log"></a><span id="Event_Log"></span><span id="event_log"></span><span id="EVENT_LOG"></span>イベント ログ
+### <a name="span-idevent_logspanspan-idevent_logspanspan-idevent_logspanevent-log"></a><span id="Event_Log"></span><span id="event_log"></span><span id="EVENT_LOG"></span>イベントログ
 
-内のイベントとして、イベントが記録された ETW が構成されている場合、*運用、および分析*下チャネル*Applications and Services Logs\\Microsoft\\Windows\\SymProxy*イベント ログにします。
+ETW が構成されている場合、イベントはイベントとしてイベントとして記録されます。このイベント*は、イベント*ログの [*アプリケーションとサービスログ] の [ \\ Microsoft \\ Windows \\ symproxy* ] に記録されます。
 
-イベント ログ エントリのメッセージを正しく表示するには、symproxy.reg ファイルのイベント ログの領域は、レジストリに追加する必要があります。
+イベントログエントリのメッセージを正しく表示するには、symproxy .reg ファイルのイベントログ領域をレジストリに追加する必要があります。
 
 ```reg
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Application\Microsoft-Windows-SymProxy]
@@ -161,52 +161,51 @@ C:\> wevtutil.exe uninstall-manifest %WINDIR%\system32\inetsrv\symproxy.man
 "TypesSupported"=dword:00000007
 ```
 
-### <a name="span-idsymproxyeventsspanspan-idsymproxyeventsspanspan-idsymproxyeventsspansymproxy-events"></a><span id="SymProxy_Events"></span><span id="symproxy_events"></span><span id="SYMPROXY_EVENTS"></span>SymProxy イベント
+### <a name="span-idsymproxy_eventsspanspan-idsymproxy_eventsspanspan-idsymproxy_eventsspansymproxy-events"></a><span id="SymProxy_Events"></span><span id="symproxy_events"></span><span id="SYMPROXY_EVENTS"></span>SymProxy イベント
 
-SymProxy には、次のイベントが記録されます。
+SymProxy は、次のイベントをログに記録します。
 
-|              |                                   |             |
-|--------------|-----------------------------------|-------------|
 | **イベント ID** | **説明**                   | **チャネル** |
-| 1            | ISAPI フィルターの開始         | 管理       |
-| 2            | ISAPI フィルターを停止します。          | 管理       |
-| 3            | ISAPI フィルターの構成 | 管理       |
-| 4            | キャッシュ ミスの統計             | 管理       |
-| 10           | URL の要求]-[ローカル キャッシュ ヒット     | Operational |
-| 11           | URL の要求]-[ローカル キャッシュ ミス    | Operational |
-| 20           | SymSrv を使用してシンボルのダウンロード        | Operational |
-| 30           | 重要なシンボルがありません。           | 管理       |
-| 31           | 重要なイメージがありません。            | 管理       |
-| 40           | SymSrv – パスが見つかりません           | 管理       |
-| 41           | SymSrv – ファイルが見つかりませんでした。           | 管理       |
-| 42           | SymSrv – アクセスが拒否されました            | 管理       |
-| 43           | SymSrv – パスが長すぎます            | 管理       |
-| 49           | SymSrv – エラー コード               | 管理       |
-| 90           | ロックの競合                   | Operational |
+|--------------|-----------------------------------|-------------|
+| 1            | ISAPI フィルターの開始         | [Admin]       |
+| 2            | ISAPI フィルターの停止          | [Admin]       |
+| 3            | ISAPI フィルターの構成 | [Admin]       |
+| 4            | キャッシュの統計情報を見逃す             | [Admin]       |
+| 10           | URL 要求-ローカルキャッシュヒット     | 運用時 |
+| 11           | URL 要求-ローカルキャッシュミス    | 運用時 |
+| 20           | SymSrv 経由のシンボルのダウンロード        | 運用時 |
+| 30           | クリティカルシンボルが見つかりません           | [Admin]       |
+| 31           | 重要なイメージが見つかりません            | [Admin]       |
+| 40           | SymSrv –パスが見つかりません           | [Admin]       |
+| 41           | SymSrv –ファイルが見つかりません           | [Admin]       |
+| 42           | SymSrv –アクセスが拒否されました            | [Admin]       |
+| 43           | SymSrv –パスが長すぎます            | [Admin]       |
+| 49           | SymSrv –エラーコード               | [Admin]       |
+| 90           | ロック競合                   | 運用時 |
 | 100          | 一般的な重大なメッセージ          | 分析    |
-| 101          | 一般的なエラー メッセージ             | 分析    |
+| 101          | 一般的なエラーメッセージ             | 分析    |
 | 102          | 一般的な警告メッセージ           | 分析    |
-| 103          | 一般的な情報メッセージ     | 分析    |
-| 104          | 分析の一般的なメッセージ          | 分析    |
-| 105          | 一般的なデバッグ メッセージ             | デバッグ       |
+| 103          | 一般情報メッセージ     | 分析    |
+| 104          | 一般的な分析メッセージ          | 分析    |
+| 105          | 一般的なデバッグメッセージ             | デバッグ       |
 
 
 
-### <a name="span-idsymbolserverproxyconfigurationspanspan-idsymbolserverproxyconfigurationspanspan-idsymbolserverproxyconfigurationspansymbol-server-proxy-configuration"></a><span id="Symbol_Server_Proxy_Configuration"></span><span id="symbol_server_proxy_configuration"></span><span id="SYMBOL_SERVER_PROXY_CONFIGURATION"></span>シンボル サーバー プロキシの構成
+### <a name="span-idsymbol_server_proxy_configurationspanspan-idsymbol_server_proxy_configurationspanspan-idsymbol_server_proxy_configurationspansymbol-server-proxy-configuration"></a><span id="Symbol_Server_Proxy_Configuration"></span><span id="symbol_server_proxy_configuration"></span><span id="SYMBOL_SERVER_PROXY_CONFIGURATION"></span>シンボルサーバープロキシの構成
 
-SymProxy は、次のレジストリ キーの領域にその構成設定を保存します。
+SymProxy は、次のレジストリキー領域に構成設定を格納します。
 
 ```reg
 HKLM/Software/Microsoft/Symbol Server Proxy
 ```
 
-この場所から、SymProxy はそのグローバル設定とアップ ストリームのシンボル ストアのシンボル パスを取得します。
+この場所から、SymProxy はグローバル設定と上流シンボルストアのシンボルパスを取得します。
 
-既に説明したようにカスタマイズした symproxy.reg ファイルにマージすることで、このキーを作成できます。
+このキーを作成するには、前に説明した手順でカスタマイズした symproxy .reg ファイルをマージします。
 
-### <a name="span-idsymbolserverproxykeyspanspan-idsymbolserverproxykeyspanspan-idsymbolserverproxykeyspansymbol-server-proxy-key"></a><span id="Symbol_Server_Proxy__key"></span><span id="symbol_server_proxy__key"></span><span id="SYMBOL_SERVER_PROXY__KEY"></span>シンボル サーバーのプロキシ キー
+### <a name="span-idsymbol_server_proxy__keyspanspan-idsymbol_server_proxy__keyspanspan-idsymbol_server_proxy__keyspansymbol-server-proxy-key"></a><span id="Symbol_Server_Proxy__key"></span><span id="symbol_server_proxy__key"></span><span id="SYMBOL_SERVER_PROXY__KEY"></span>シンボルサーバープロキシキー
 
-シンボル サーバーのプロキシのレジストリ キーは、次のグローバル設定をサポートしています (すべての REG\_DWORD)。 設定は、アプリケーション プールのリサイクルをライブで適用できます。 新しい w3wp.exe プロセスが作成され、新しい値が読み取られます。 古い w3wp.exe プロセスに保留中のすべての要求が完了すると、古い w3wp.exe プロセスは終了します。 既定の IIS は 1,740 分 (29 時間) ごと w3wp.exe プロセスをリサイクルします。
+シンボルサーバープロキシのレジストリキーは、次のグローバル設定 (すべての REG DWORD) をサポートしてい \_ ます。 アプリケーションプールをリサイクルして、設定をライブで適用することができます。 新しい w3wp.exe プロセスが作成され、新しい値が読み取られます。 古い w3wp.exe プロセスに対する保留中の要求がすべて完了すると、古い w3wp.exe プロセスが終了します。 既定では、IIS は1740分 (29 時間) ごとに w3wp.exe プロセスをリサイクルします。
 
 <table>
 <colgroup>
@@ -220,48 +219,48 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 </tr>
 <tr class="odd">
 <td align="left">NoInternetProxy</td>
-<td align="left"><p>サービスとしての実行時に SymSrv.dll を使用して WinHTTP WinInet ではなく HTTP 要求を行います。 その結果、ネットワーク リソースの外部サービスがアクセスできるように HTTP プロキシ設定を設定する必要があります。 Netsh プログラムを使用してこれが実行できます。 型"netsh.exe winhttp のでしょうか。" 手順についてはします。</p>
-<p>既定では、SymProxy は、指定された HTTP プロキシを使用します。 HTTP プロキシが構成されていない場合、SymProxy はダミーのプロキシを使用します。 これにより、HTTP サイト、イントラネット内に安全にアクセスできます。 、副作用としては、SymProxy これにより保護されていないサイトに直接接続する防ぎます。</p>
-<p>REG_DWORD を作成する:"NoInternetProxy"値が、プロキシは、直接接続することがないと動作を SymProxy を構成します。</p></td>
+<td align="left"><p>サービスとして実行している場合、SymSrv.dll は、WinInet ではなく WinHTTP を使用して HTTP 要求を行います。 そのため、サービスがネットワークリソースの外部にアクセスできるように、HTTP プロキシ設定を設定する必要がある場合があります。 これは netsh プログラムを使用して行うことができます。 「netsh.exe winhttp-?」と入力します。 を参照してください。</p>
+<p>既定では、SymProxy は、指定された HTTP プロキシを使用します。 HTTP プロキシが構成されていない場合、SymProxy はダミープロキシを使用します。 これにより、イントラネット内の HTTP サイトへのセキュリティで保護されたアクセスが可能になります。 副作用として、SymProxy がセキュリティで保護されていないサイトに直接接続するのを防ぐことができます。</p>
+<p>REG_DWORD の作成: "NoInternetProxy" 値は、直接接続を許可する、プロキシを使用せずに動作するように SymProxy を構成します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">NoFilePointers</td>
-<td align="left"><p>既定では、存在しないのシンボル (ローカル キャッシュ) 内の要求されたファイルの横にある file.ptr ファイル SymProxy を検索します。 見つかったが返されます file.ptr ファイルで指定された場所。 この機能は、のみ SymStore.exe でローカル キャッシュを設定しているときに必要です。</p>
-<p>REG_DWORD を作成します。 ルックアップをスキップする"NoFilePointers"の値。</p></td>
+<td align="left"><p>既定では、存在しないシンボルの場合、SymProxy は、要求されたファイル (ローカルキャッシュ内) の横にあるファイルの ptr ファイルを検索します。 見つかった場合は、ファイルの ptr ファイルによって指定された場所が返されます。 この機能は、ローカルキャッシュが SymStore.exe によって設定されている場合にのみ必要です。</p>
+<p>参照をスキップするには、REG_DWORD: "NoFilePointers" の値を作成します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">NoUncompress</td>
-<td align="left"><p>既定では、SymProxy は、ファイルを呼び出し元に返す前にダウンロードしたシンボルを展開します。 これで、クライアントでは、CPU を削減しますが I/O が増加します。</p>
-<p>REG_DWORD を作成します。 圧縮解除をスキップする"NoUncompress"の値。</p></td>
+<td align="left"><p>既定では、SymProxy は、ファイルを呼び出し元に返す前に、ダウンロードされたシンボルを圧縮解除します。 これにより、クライアント側の CPU が減少しますが、i/o が増加します。</p>
+<p>REG_DWORD: "NoUncompress" 値を作成して、展開をスキップします。</p></td>
 </tr>
 <tr class="even">
 <td align="left">NoCache</td>
-<td align="left"><p>既定では、SymProxy は仮想ディレクトリのパスで定義されている、ローカル ファイル システムにダウンロードしたシンボルをキャッシュします。</p>
-<p>作成、REG_DWORD:"含む NoCache"の値は、ダウンロードをスキップする代わりに、クライアントにリモート ファイルのパスを指定します。</p></td>
+<td align="left"><p>既定では、SymProxy はダウンロードしたシンボルを仮想ディレクトリのパスで定義されたローカルファイルシステムにキャッシュします。</p>
+<p>REG_DWORD を作成します。 "NoCache" 値を作成してダウンロードをスキップし、代わりにファイルのリモートパスをクライアントに提供します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">MissTimeout</td>
-<td align="left"><p>タイムアウト期間を秒単位のシンボルがないが、アップ ストリームのシンボル サーバーを再クエリを使用しない不足しているとして報告されます。</p>
-<p>何も見つからなかったは、ベース UTC 時間に関連付けられます。 ファイルの後続の要求は、N 秒のすぐに拒否されます。</p>
-<p>再クエリすると、アップ ストリームのシンボルを N 秒後に、ファイルの最初の要求を格納します。</p>
-<p>成功した場合、シンボル ファイルが返され、ミスを削除します。</p>
-<p>失敗した場合は、ミスは、新しいタイムアウト期間を開始する、現在の時刻 (UTC) で前方移動します。</p>
-<p>使用して、"Miss キャッシュ<em>"、ミスを監視するカウンター。</p>
+<td align="left"><p>アップストリームシンボルサーバーを再照会せずに、欠落しているシンボルが見つからないと報告されるタイムアウト期間 (秒単位)。</p>
+<p>ミスは UTC ベースの時刻に関連付けられています。 ファイルに対する後続の要求は、すぐに N 秒間拒否されます。</p>
+<p>N 秒後にファイルの最初の要求が発生すると、アップストリームのシンボルストアが再照会されます。</p>
+<p>成功すると、シンボルファイルが返され、ミスが削除されます。</p>
+<p>失敗した場合は、現在の時刻 (UTC) に移動して、新しいタイムアウト期間を開始します。</p>
+<p>"ミスキャッシュ" カウンターを使用して <em> 、ミスを監視します。</p>
 <p><ul>
-    <li>指定されていない (既定) - 300 秒/5 分</li>
-    <li>0 – 無効になっている機能</li>
-    <li>N – タイムアウト N 秒を継続します。</li>
+    <li>未指定-(既定値) 300 秒/5 分</li>
+    <li>0: 機能が無効です。</li>
+    <li>N –タイムアウトの継続 N 秒</li>
    </ul>
 </td>
 </tr>
 <tr class="even">
 <td align="left">MissAgeCheck</td>
-<td align="left"><p>ミスの有効期間の間の期間を確認します。 キャッシュ ミスがスキャンされ、MissAgeTimeout 秒経過したレコードが削除されます。</p>
-<p>現在の統計情報は、イベント ID 4 を使用して、イベント ログに保存されます。</p>
+<td align="left"><p>期限チェックの間隔。 ミスキャッシュがスキャンされ、誤検出時間よりも古いレコードが削除されます。</p>
+<p>現在の統計情報は、イベント ID 4 を使用してイベントログに保存されます。</p>
 <p><ul>
-    <li>指定されていない (既定) - 3600 (秒)/1 時間</li>
-    <li>0 – 無効になっている機能</li>
-    <li>N – N 秒のチェック間隔</li>
+    <li>未指定-(既定値) 3600 秒/1 時間</li>
+    <li>0: 機能が無効です。</li>
+    <li>N – N 秒間のチェックの間隔</li>
    </ul>
 </td>
 </tr>
@@ -269,39 +268,39 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 <td align="left"><p>FailureTimeout</p>
 <p>FailureCount</p>
 <p>FailurePeriod</p>
-<p>FailureBlackout</p></td>
-<td align="left"><p>ブラック アウト機能は、応答性の高いいる termporarly 無効にするアップ ストリームのシンボル ストアに使用されます。 ブラック アウト機能は、動作を定義するのに 4 つの REG_DWORD 値を使用します。 既定では、この機能は無効になります。</p>
-<p>シンボル パスで定義されているアップ ストリームのシンボル ストアごとに、エラーは個別に記録されます。 FailureTimeout (ミリ秒) よりも、要求がかかる場合は、エラーの数が増加します。</p>
-<p>シンボル パスは、FailureCount FailurePeriod (秒) が失敗した後、配信不能としてマークされます。 この時点で FailureBlackout 秒が経過するまで、すべての要求は無視されます。 タイムアウトの後の最初の呼び出し元は、アップ ストリームのシンボル ストアをテストします。 成功した場合は、タイムアウトが削除され、要求が許可されます。 失敗した場合、時刻は、今すぐ + FailureBlackout 秒に設定されます。 その後は、アップ ストリームのシンボル ストアはもう一度テストします。</p></td>
+<p>FailureBlackout アウト</p></td>
+<td align="left"><p>ブラックアウト機能は、応答しないアップストリームシンボルストアを termporarly 無効にするために使用されます。 ブラックアウト機能では、4つの REG_DWORD 値を使用して、の動作を定義します。 既定では、この機能は無効になっています。</p>
+<p>シンボルパスで定義されている上流シンボルストアごとに、エラーが個別に記録されます。 要求の実行時間が FailureTimeout (ミリ秒) を超えた場合、エラー数が増加します。</p>
+<p>シンボルパスは、FailurePeriod 秒の FailureCount に失敗した後に、配信不能としてマークされます。 現時点では、FailureBlackout の秒数が経過するまで、すべての要求は無視されます。 タイムアウト後の最初の呼び出し元は、アップストリームシンボルストアをテストします。 成功すると、タイムアウトが削除され、要求が許可されます。 失敗した場合、時刻は Now + FailureBlackout ダウン秒に設定されます。 その後、アップストリームシンボルストアは再テストされます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">MissAgeTimeout</td>
-<td align="left"><p>保留中の説明</p>
+<td align="left">誤 Sagetimeout</td>
+<td align="left"><p>説明保留中</p>
 <p></p></td>
 </tr>
 <tr class="odd">
 <td align="left">RequestTimeout</td>
-<td align="left"><p>保留中の説明</p>
+<td align="left"><p>説明保留中</p>
 <p></p></td>
 </tr>
 <tr class="even">
 <td align="left">RetryAppHang</td>
-<td align="left"><p>保留中の説明</p>
+<td align="left"><p>説明保留中</p>
 <p></p></td>
 </tr>
 <tr class="odd">
 <td align="left">NoLongerIndexedAuthoritive</td>
-<td align="left"><p>保留中の説明</p>
+<td align="left"><p>説明保留中</p>
 <p></p></td>
 </tr>
 <tr class="even">
 <td align="left">UriFilter</td>
-<td align="left"><p>保留中の説明</p>
+<td align="left"><p>説明保留中</p>
 <p></p></td>
 </tr>
 <tr class="odd">
 <td align="left">UriTiers</td>
-<td align="left"><p>保留中の説明</p>
+<td align="left"><p>説明保留中</p>
 <p></p></td>
 </tr>
 </tbody>
@@ -309,17 +308,17 @@ HKLM/Software/Microsoft/Symbol Server Proxy
 
 
 
-### <a name="span-idaccessingoutsidenetworkresourcesspanspan-idaccessingoutsidenetworkresourcesspanaccessing-outside-network-resources"></a><span id="accessing_outside_network_resources"></span><span id="ACCESSING_OUTSIDE_NETWORK_RESOURCES"></span>外部のネットワーク リソースにアクセスします。
+### <a name="span-idaccessing_outside_network_resourcesspanspan-idaccessing_outside_network_resourcesspanaccessing-outside-network-resources"></a><span id="accessing_outside_network_resources"></span><span id="ACCESSING_OUTSIDE_NETWORK_RESOURCES"></span>ネットワークリソース外へのアクセス
 
-SymSrv を SymProxy と組み合わせて使用すると、ときにサービスとして実行し、WinHTTP API を使用して、HTTP 接続経由でのシンボルにアクセスします。 これは、WinInet を使用して、この目的のための通常の動作とは異なります。
+SymSrv と Symsrv を組み合わせて使用すると、サービスとして実行され、WinHTTP API を使用して HTTP 接続経由でシンボルにアクセスします。 これは、この目的で WinInet を使用する通常の動作とは異なります。
 
-そのため、このサービスが外部ネットワーク リソースにアクセスできるように HTTP プロキシ設定を設定する必要があります。 これらの設定を構成するのにには、次のメソッドのいずれかを使用します。
+そのため、このサービスがネットワークリソースの外部にアクセスできるように、HTTP プロキシ設定を設定することが必要になる場合があります。 これらの設定を構成するには、次のいずれかの方法を使用します。
 
--   Netsh ツール (netsh.exe) を使用します。 手順については、コマンド プロンプト ウィンドウで、次を入力します。
+-   Netsh ツール (netsh.exe) を使用します。 手順については、コマンドプロンプトウィンドウで次のように入力します。
 
     ```console
     netsh winhttp -? 
     ```
 
-SymProxy の既定の動作では、どのような HTTP プロキシが ProxyCfg または Netsh のいずれかで指定されたを使用します。 HTTP プロキシが構成されていない場合、SymProxy はダミーのプロキシを使用して、イントラネット内の HTTP サイトのセキュリティ保護にアクセスできるようにします。 、副作用としては、この手法は、SymProxy を外部のインターネットに直接接続を使用できないようにします。 インターネットへの直接接続で動作する SymProxy を許可する場合は、作成、REG\_という名前の DWORD 値**NoInternetProxy**で、**シンボル サーバーのプロキシ**レジストリのキー。 値を設定**NoInternetProxy** 1 ProxyCfg によって示される HTTP プロキシがないことを確認します。
+SymProxy の既定の動作では、Proxycfg.exe または Netsh のいずれかによって指定された HTTP プロキシが使用されます。 HTTP プロキシが構成されていない場合、SymProxy はダミープロキシを使用して、イントラネット内のセキュリティで保護された HTTP サイトへのアクセスを許可します。 副作用として、この手法は、SymProxy が外部インターネットへの直接接続を処理できないようにします。 SymProxy でインターネットへの直接接続を使用することを許可する場合は、 \_ レジストリの**シンボルサーバープロキシ**キーに**nointernetproxy**という名前の REG DWORD 値を作成します。 **Nointernetproxy**の値を1に設定し、proxycfg.exe によって示される HTTP プロキシが存在しないことを確認します。
 
