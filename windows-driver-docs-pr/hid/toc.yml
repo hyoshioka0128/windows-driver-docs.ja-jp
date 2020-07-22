@@ -148,13 +148,9 @@
           items:
             - name: ジョイスティックのサポートの概要
               href: joystick-support.md
-            - name: ジョイスティック ドライバー モデル
-              href: joystick-driver-model.md
-            - name: ミニドライバーで指定されるコールバック
-              href: minidriver-supplied-callbacks.md
-            - name: ' 元のインターフェイス'
+            - name: 元のインターフェイス
               href: original-interface.md
-            - name: ' DirectX 5.0 インターフェイス'
+            - name: DirectX 5.0 インターフェイス
               href: directx-5-0-interface.md
             - name: INF ファイルを作成する
               href: creating-an-inf-file.md

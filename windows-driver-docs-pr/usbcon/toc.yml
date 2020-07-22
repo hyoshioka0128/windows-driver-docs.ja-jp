@@ -374,8 +374,6 @@
           items:
             - name: USB 複合デバイス上のインターフェイス コレクション列挙の概要
               href: support-for-interface-collections.md
-            - name: ワイヤレス モバイル コミュニケーション デバイス クラスのサポート
-              href: support-for-the-wireless-mobile-communication-device-class--wmcdc-.md
         - name: Usbccgp.sys のコンテンツ セキュリティ機能
           href: content-security-features-in-the-composite-client-generic-parent-drive.md
     - name: Winusb.sys

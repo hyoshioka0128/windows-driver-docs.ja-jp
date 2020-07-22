@@ -82,8 +82,6 @@
   items:
     - name: ドライバーへの署名
       href: signing-a-driver.md
-    - name: 一般リリースのためのカーネル ドライバーへの構成証明署名
-      href: attestation-signing-a-kernel-driver-for-public-release.md
     - name: 開発中とテスト中のドライバーへの署名
       href: signing-a-driver-during-development-and-testing.md
     - name: 一般リリース用のドライバーへの署名

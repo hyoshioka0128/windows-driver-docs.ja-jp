@@ -482,7 +482,7 @@
                   href: using-unc-shares.md
                 - name: 通常のバージョン管理と組み合わせた HTTP サイトと UNC 共有の使用
                   href: using-http-sites-and-unc-shares-in-conjuction-with-regular-version-con.md
-    - name: セキュリティの考慮事項
+    - name: セキュリティに関する考慮事項
       items:
         - name: セキュリティの考慮事項
           href: security-considerations.md
@@ -1164,7 +1164,7 @@
           href: using-debugger-extension-commands.md
         - name: 新しいデバッガー拡張機能の作成
           href: writing-new-debugger-extensions.md
-    - name: リモート デバッグ
+    - name: Remote Debugging
       items:
         - name: リモート デバッグ
           href: remote-debugging.md
@@ -3392,8 +3392,6 @@
               href: '-dml-proc.md'
             - name: '!dumpfa'
               href: '-dumpfa.md'
-            - name: '!elog_str'
-              href: '-elog-str.md'
             - name: '!envvar'
               href: '-envvar.md'
             - name: '!error'

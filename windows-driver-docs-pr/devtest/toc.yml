@@ -586,9 +586,9 @@
       items:
         - name: ドライバーの検証ツール
           href: driver-verifier.md
-        - name: 'ドライバーの検証ツール: 新機能'
+        - name: 'ドライバーの検証ツール: 新着情報'
           items:
-            - name: 'ドライバーの検証ツール: 新機能'
+            - name: 'ドライバーの検証ツール: 新着情報'
               href: driver-verifier--what-s-new.md
             - name: ドライバーの検証ツールのコマンド構文
               href: verifier-command-line.md
@@ -2168,7 +2168,7 @@
               href: tracelog-examples.md
             - name: '例 1:基本的な開始コマンド'
               href: example-1--basic-start-command.md
-            - name: '例 2: プロバイダーを指定した基本的な開始コマンド'
+            - name: '例 2:プロバイダーを指定した基本的な開始コマンド'
               href: example-2--basic-start-command-with-provider.md
             - name: '例 3: 一般的な開始コマンド'
               href: example-3--typical-start-command.md
@@ -2230,7 +2230,7 @@
               href: tracefmt-examples.md
             - name: '例 1:パラメーターなし'
               href: example-1--no-parameters.md
-            - name: '例 2: 基本的なコマンド'
+            - name: '例 2:基本的なコマンド'
               href: example-2--basic-command.md
             - name: '例 3: TMF ファイルの指定'
               href: example-3--specifying-a-tmf-file.md
@@ -2262,7 +2262,7 @@
               href: logging-to-the-global-logger-session.md
             - name: グローバル ロガー セッションにログ記録する方法
               href: how-to-log-to-the-global-logger-session.md
-            - name: '例:グローバル ロガー プロバイダー '
+            - name: '以下に例を示します。グローバル ロガー プロバイダー '
               href: example--global-logger-provider.md
     - name: WPP ソフトウェア トレース
       items:
@@ -2668,14 +2668,6 @@
                   href: debugging-code-overview.md
                 - name: 条件付きコンパイルとビルド環境
                   href: conditional-compilation-and-the-build-environment.md
-                - name: デバッガーへの割り込み
-                  href: breaking-into-the-debugger.md
-                - name: デバッガーへの出力の送信
-                  href: sending-output-to-the-debugger.md
-                - name: デバッグ メッセージの読み取りとフィルター処理
-                  href: reading-and-filtering-debugging-messages.md
-                - name: デバッガーがアタッチされているかどうかの判別
-                  href: determining-if-a-debugger-is-attached.md
             - name: バグ チェック コードの解釈
               href: interpreting-a-bug-check-code.md
         - name: デバッガーの使用
@@ -2744,5 +2736,5 @@
               href: troubleshooting.md
             - name: XML リファレンス
               href: xml-reference.md
-            - name: その他の資料
+            - name: その他の技術情報
               href: additional-resources.md
