@@ -5,7 +5,7 @@ ms.assetid: 60eeb24a-accf-4db8-ba5b-1738a9aa4b46
 keywords:
 - バグチェック 0xF9 DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
 - DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
-ms.date: 05/23/2017
+ms.date: 07/21/2020
 topic_type:
 - apiref
 api_name:
@@ -13,24 +13,21 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 295f9f42e0b6cc99fb9acb58713bfafa9d12b5cb
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 6060ec2a0b66c9efcd124163bf73897585533a75
+ms.sourcegitcommit: 67fb9981ca51df198dfb6af9bf4987843266f8ac
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84534787"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86879090"
 ---
 # <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>バグチェック 0xF9: ドライバー \_ が \_ \_ \_ \_ オープンボリュームの状態の再解析を返しました \_
-
 
 ドライバーは \_ 、 \_ \_ \_ ボリュームオープンバグチェックのステータスの再解析に \_ \_ 0x000000f9 の値を返しました。 これは、ドライバーが \_ \_ \_ 名前の末尾がない IRP MJ CREATE 要求へのステータスの再解析を返したことを示します。
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
 
-
 ## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>\_ \_ \_ \_ \_ ボリュームオープンパラメーターの状態の再解析がドライバーによって返されました \_
-
 
 <table>
 <colgroup>
@@ -63,18 +60,10 @@ ms.locfileid: "84534787"
 </tbody>
 </table>
 
- 
-
-<a name="remarks"></a>注釈
--------
+## <a name="remarks"></a>解説
 
 ! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
-ステータスの \_ 再解析は \_ \_ 、ドライバーが名前空間をサポートしていることを示すため、末尾の名前を持つ IRP MJ CREATE 要求に対してのみ返される必要があります。
 
- 
+ステータスの \_ 再解析は \_ \_ 、ドライバーが名前空間をサポートしていることを示すため、末尾の名前を持つ IRP MJ CREATE 要求に対してのみ返される必要があります。 
 
- 
-
-
-
-
+ファイルシステムドライバーの使用方法の詳細については、「 [file systems driver design guide](https://docs.microsoft.com/windows-hardware/drivers/ifs/)」を参照してください。 IRP MJ CREATE 要求の詳細については、 \_ \_ 「 [IRP_MJ_CREATE (IFS)](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create)」を参照してください。

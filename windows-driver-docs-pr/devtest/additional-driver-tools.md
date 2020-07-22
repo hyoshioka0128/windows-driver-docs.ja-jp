@@ -2,30 +2,30 @@
 title: その他のドライバー ツール
 description: その他のドライバー ツール
 keywords:
-- WDK、ドライバーのテスト ツール
-- ドライバーの開発ツールを WDK、ドライバーのテスト
-- ドライバー WDK、ツールのテスト
-- ドライバー WDK、ツールのテスト
-- WDK のテスト システムのクラッシュ
-- WDK のテストがクラッシュします。
+- ツール WDK、テストドライバー
+- ドライバー開発ツール WDK、テストドライバー
+- WDK のドライバーテスト, ツール
+- ドライバーのテスト WDK、ツール
+- システムクラッシュテスト WDK
+- WDK のクラッシュテスト
 ms.date: 06/28/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 28def66fd2909abf231bd152c4249f8623394332
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ab554476c5a5ad9d1f31b1c54e3895e40e86f7f2
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63332042"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873843"
 ---
-# <a name="tools-for-testing-drivers"></a>ドライバー テスト用ツール
+# <a name="additional-tools-for-testing-drivers"></a>ドライバーをテストするためのその他のツール
 
-## <a name="span-idinthissectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
+## <a name="span-idin_this_sectionspanin-this-section"></a><span id="in_this_section"></span>このセクションの内容
 
 - [ドライバーを構築するためのツール](tools-for-building-drivers.md)
  
 - [ドライバーの署名用ツール](tools-for-signing-drivers.md)
 
-- [INF ファイル用ツール](tools-for-inf-files.md)
+- [INF ファイル用のツール](tools-for-inf-files.md)
 
 - [ドライバーのテストとデバッグ用のブート オプション変更ツール](boot-options-for-driver-testing-and-debugging.md)
 

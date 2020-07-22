@@ -9,36 +9,38 @@ keywords:
 - DbgPrintEx 関数
 - KdPrint 関数
 - KdPrintEx 関数
-ms.date: 05/23/2017
+ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f0aa10a13187565ff7cedf9e407a58b3e7a0aa80
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 8251d4dc8ff55d70c7c39533e8cc6ede44900a25
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209790"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873854"
 ---
 # <a name="sending-output-to-the-debugger"></a>デバッガーへの出力の送信
 
-
-## <span id="ddk_sending_output_to_the_debugger_dbg"></span><span id="DDK_SENDING_OUTPUT_TO_THE_DEBUGGER_DBG"></span>
-
-
 ユーザーモードとカーネルモードのコードでは、さまざまなルーチンを使用して、出力をデバッガーに送信します。
 
-### <a name="span-iduser_mode_output_routinesspanspan-iduser_mode_output_routinesspanuser-mode-output-routines"></a><span id="user_mode_output_routines"></span><span id="USER_MODE_OUTPUT_ROUTINES"></span>ユーザーモード出力ルーチン
+## <a name="user-mode-output-routines"></a>ユーザーモード出力ルーチン
 
-**OutputDebugString**は、null で終わる文字列を呼び出しプロセスのデバッガーに送信します。 ユーザーモードドライバーでは、 **OutputDebugString**によってコマンドウィンドウデバッガーに文字列が表示されます。 デバッガーが実行されていない場合、このルーチンによる影響はありません。 **OutputDebugString**は、 **printf**書式設定された文字列の可変引数をサポートしていません。
+**OutputDebugString**ルーチンは、null で終わる文字列を呼び出しプロセスのデバッガーに送信します。 ユーザーモードドライバーでは、 **OutputDebugString**によってコマンドウィンドウデバッガーに文字列が表示されます。 デバッガーが実行されていない場合、このルーチンによる影響はありません。 **OutputDebugString**は、 **printf**書式設定された文字列の可変引数をサポートしていません。
 
-このルーチンの完全なドキュメントについては、Microsoft Windows SDK を参照してください。
+このルーチンのプロトタイプは次のとおりです。
 
-### <a name="span-idkernel_mode_output_routinesspanspan-idkernel_mode_output_routinesspankernel-mode-output-routines"></a><span id="kernel_mode_output_routines"></span><span id="KERNEL_MODE_OUTPUT_ROUTINES"></span>カーネルモード出力ルーチン
+```cpp
+VOID OutputDebugString(
+   LPCTSTR lpOutputString
+   );
+```
 
-[ **Dbgprint** ] デバッガーウィンドウに出力を表示します。 このルーチンは、基本的な**printf**形式のパラメーターをサポートしています。 **Dbgprint**を呼び出すことができるのは、カーネルモードのコードだけです。
+このルーチンの完全なドキュメントについては、「[デバッガーとの通信](https://docs.microsoft.com/windows/win32/debug/communicating-with-the-debugger)」を参照してください。
 
-**Dbgprintex**は、 **dbgprint**に似ていますが、メッセージに "タグを付ける" ことができます。 デバッガーを実行するときに、特定のタグを持つメッセージだけを送信することを許可できます。 これにより、関心のあるメッセージだけを表示できます。 詳細については、「[デバッグメッセージの読み取りとフィルター処理](reading-and-filtering-debugging-messages.md)」を参照してください。
+### <a name="kernel-mode-output-routines"></a>カーネルモード出力ルーチン
 
-**注**   windows Vista 以降のバージョンの windows では、 **dbgprint**でもタグ付きメッセージが生成されます。 これは、以前のバージョンの Windows から変更されています。
-**KdPrint**と**KdPrintEx**は、チェックされたビルド環境でコンパイルされると、それぞれ**Dbgprint**と**dbgprintex**と同じです。 無料のビルド環境でコンパイルした場合、影響はありません。
+[**Dbgprint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprint)ルーチンは、デバッガーウィンドウに出力を表示します。 このルーチンは、基本的な**printf**形式のパラメーターをサポートしています。 **Dbgprint**を呼び出すことができるのは、カーネルモードのドライバーだけです。
 
-これらのルーチンおよびビルド環境の完全なドキュメントについては、「Windows Driver Kit」を参照してください。
+[**Dbgprintex**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-dbgprintex)ルーチンは、 **dbgprint**に似ていますが、メッセージに "タグを付ける" ことができます。 デバッガーを実行するときに、特定のタグを持つメッセージだけを送信することを許可できます。 これにより、関心のあるメッセージだけを表示できます。 詳細については、「[デバッグメッセージの読み取りとフィルター処理](reading-and-filtering-debugging-messages.md)」を参照してください。
+
+
+[**KdPrint**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprint)マクロと[**KdPrintEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdprintex)マクロは、チェックされたビルド環境でコンパイルされると、それぞれ**Dbgprint**および**dbgprintex**と同じです。 無料のビルド環境でコンパイルした場合、影響はありません。

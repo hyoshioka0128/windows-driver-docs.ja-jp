@@ -8,12 +8,12 @@ keywords:
 - ECHO
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 967afeedef7b2eaa72234ebd654c05ca9eedf520
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: a14d525f369aa573ae8bbddc8760000fc0526489
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557785"
+ms.locfileid: "86873867"
 ---
 # <a name="debug-windows-drivers---step-by-step-lab-echo-kernel-mode"></a>Windows ドライバーのデバッグ - ステップ バイ ステップ ラボ (Echo カーネル モード)
 
@@ -485,8 +485,6 @@ WDK インストールの Tools フォルダーに移動して、DevCon ツー�
 >[!TIP]
 > インストールに問題がある場合は、次のファイルで詳細を確認してください。
 `%windir%\inf\setupapi.dev.log`
-
-詳細な手順については、「[ドライバーの展開、テスト、およびデバッグのためのコンピューターの構成](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」を参照してください。
 
 サンプルドライバーが正常にインストールされたら、テストする準備ができました。
 

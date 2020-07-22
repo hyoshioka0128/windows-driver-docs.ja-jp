@@ -1,9 +1,9 @@
 ---
 title: dbgprint
-description: による dbgprint の拡張機能では、による DbgPrint のバッファーに送信されていた文字列が表示されます。
+description: Dbgprint 拡張機能では、以前に DbgPrint バッファーに送信された文字列が表示されます。
 ms.assetid: bf25ac2a-5a07-43df-946b-3b2237b1816b
 keywords:
-- Windows デバッグによる dbgprint
+- dbgprint の Windows デバッグ
 ms.date: 05/23/2017
 topic_type:
 - apiref
@@ -12,17 +12,17 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 00281b2d5f6a389d1dd15c02d9015e4fddabfc79
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 609e4f68f38d5c7a56d25b43c0ffd21544b485f4
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63336860"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873833"
 ---
 # <a name="dbgprint"></a>!dbgprint
 
 
-**! による dbgprint**拡張機能には、以前に送信された文字列が表示されます、**による DbgPrint**バッファー。
+**! Dbgprint**拡張機能には、以前に**dbgprint**バッファーに送信された文字列が表示されます。
 
 ```dbgcmd
 !dbgprint
@@ -44,7 +44,7 @@ ms.locfileid: "63336860"
 <td align="left"><p>Kdextx86.dll</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Windows XP 以降</strong></p></td>
+<td align="left"><p><strong>Windows XP 以降</strong></p></td>
 <td align="left"><p>Kdexts.dll</p></td>
 </tr>
 </tbody>
@@ -52,18 +52,18 @@ ms.locfileid: "63336860"
 
  
 
-### <a name="span-idadditionalinformationspanspan-idadditionalinformationspanspan-idadditionalinformationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
+### <a name="span-idadditional_informationspanspan-idadditional_informationspanspan-idadditional_informationspanadditional-information"></a><span id="Additional_Information"></span><span id="additional_information"></span><span id="ADDITIONAL_INFORMATION"></span>追加情報
 
-について**による DbgPrint**、 **KdPrint**、 **DbgPrintEx**と**KdPrintEx**を参照してください[出力を送信しますデバッガー](sending-output-to-the-debugger.md)します。
+**Dbgprint**、 **KdPrint**、 **dbgprintex**、 **KdPrintEx**の詳細については、「[出力をデバッガーに送信する](sending-output-to-the-debugger.md)」を参照してください。
 
-<a name="remarks"></a>注釈
+<a name="remarks"></a>解説
 -------
 
-カーネル モード ルーチン**による DbgPrint**、 **KdPrint**、 **DbgPrintEx**、および**KdPrintEx**ターゲット上のバッファーに書式設定された文字列を送信コンピューター。 文字列は、このような印刷が無効になっている場合を除きに自動的にホスト コンピューター上のデバッガー コマンド ウィンドウに表示されます。
+カーネルモードルーチン**Dbgprint**、 **KdPrint**、 **Dbgprintex**、および**KdPrintEx**は、ターゲットコンピューター上のバッファーに書式設定された文字列を送信します。 この文字列は、このような印刷機能が無効になっていない限り、ホストコンピューター上のデバッガーコマンドウィンドウに自動的に表示されます。
 
-一般に、このバッファーに送信されるメッセージは、デバッガー コマンド ウィンドウで自動的に表示されます。 ただし、この表示は、グローバル フラグ (gflags.exe) ユーティリティを無効にできます。 さらに、この表示は自動的にないローカル カーネル デバッグ中に。 詳細については、次を参照してください。 [、による DbgPrint バッファー](reading-and-filtering-debugging-messages.md#the-dbgprint-buffer)します。
+一般に、このバッファーに送信されたメッセージは、デバッガーのコマンドウィンドウに自動的に表示されます。 ただし、この表示は、グローバルフラグ (gflags.exe) ユーティリティを使用して無効にすることができます。 また、この表示はローカルカーネルデバッグ中に自動的には表示されません。 詳細については、「[デバッグメッセージの読み取りとフィルター処理](reading-and-filtering-debugging-messages.md)」の「Dbgprint Buffer」を参照してください。
 
-**! による dbgprint**拡張子 (かどうか自動印刷を無効になっています) に関係なく表示するには、このバッファーの内容が原因です。 フィルターで除外されたコンポーネントと重要度レベルに基づいてメッセージは表示されません。 (このフィルター処理の詳細については、「[読み取りとデバッグ メッセージのフィルタ リング](reading-and-filtering-debugging-messages.md)。)
+**! Dbgprint**拡張機能を使用すると、このバッファーの内容が表示されます (自動印刷が無効になっているかどうかに関係なく)。 コンポーネントと重要度レベルに基づいてフィルターで除外されたメッセージは表示されません。 (このフィルター処理の詳細については、「[デバッグメッセージの読み取りとフィルター処理](reading-and-filtering-debugging-messages.md)」を参照してください)。
 
  
 

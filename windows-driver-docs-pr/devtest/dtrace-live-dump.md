@@ -1,5 +1,5 @@
 ---
-title: DTrace ETW
+title: DTrace ライブ ダンプ
 description: DTrace では、LKD () を使用したライブダンプファイルの作成がサポートされています。
 ms.assetid: bbf23d76-423d-4d1e-afde-83739015bbf1
 keywords:
@@ -13,12 +13,12 @@ keywords:
 - トレースメッセージフォーマットファイル WDK
 ms.date: 11/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 18fb9b1539cd693b044cd0faa228c66191bc27ae
-ms.sourcegitcommit: d30691c8276f7dddd3f8333e84744ddeea1e1020
+ms.openlocfilehash: 6edb4d356c2c11923454c6fa21f4a74a0d9155e4
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75209460"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873865"
 ---
 # <a name="dtrace-live-dump"></a>DTrace ライブ ダンプ
 
@@ -81,17 +81,17 @@ CPU     ID                    FUNCTION:NAME
 Triggering LiveDump
 ```
 
-作成されるダンプファイルは、通常 `C:\Windows\LiveKernelReports`にあります。
+作成されるダンプファイルは、通常、にあり `C:\Windows\LiveKernelReports` ます。
 
-ダンプファイルの場所が変更されている場合、値は次のレジストリキーに格納されます: `hklm\system\currentcontrolset\control\crashcontrol\livekernelreports`
+ダンプファイルの場所が変更されている場合、値は次のレジストリキーに格納されます。`hklm\system\currentcontrolset\control\crashcontrol\livekernelreports`
 
 上で説明したように、WinDbg を使用してダンプファイルを操作します。
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 
 ### <a name="viewing-live-dump-related-events"></a>ライブダンプ関連のイベントの表示
 
-Windows イベントビューアーを開きます。 [アプリケーションとサービスログ]-> Microsoft-> Windows-> Kernel-Livedump-> Operational] を参照してください。
+Windows イベントビューアーを開きます。 [アプリケーションとサービスログ]->Microsoft->Windows->Kernel-Livedump->Operational] を参照してください。
 
 ログが見つからない場合は、次に示すように、コマンドプロンプトまたはイベントビューアーから分析チャネルを有効にします。
 

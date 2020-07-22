@@ -4,12 +4,12 @@ description: 静的ドライバー検証ツール (SDV) は、WDM、KMDF、NDIS�
 ms.assetid: 29E93E9E-7F87-4706-97AD-DB9A32EDD388
 ms.date: 10/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f409b0f5c75d672e7fa9bd30f20abcdb6f7c95
-ms.sourcegitcommit: 8e8aa927cf4ab56d0af652fa5e988a8ed6967904
+ms.openlocfilehash: d5288a967f39f8b02cd446704dcde08b10f72513
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72916104"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873819"
 ---
 # <a name="determining-if-static-driver-verifier-supports-your-driver-or-library"></a>ドライバーまたはライブラリが静的ドライバー検証ツールでサポートされているかどうかの判定
 
@@ -26,7 +26,7 @@ ms.locfileid: "72916104"
 
 上記の条件に該当しないドライバーがある場合、SDV はドライバー "generic" を考慮して、限られたチェックのセットを実行します。
 
-また、SDV によって検証されるライブラリは、一般的な C やC++ライブラリではなく、カーネルモードのドライバーライブラリである必要があることに注意してください。  
+また、SDV によって検証されるライブラリは、一般的な C や C++ のライブラリではなく、カーネルモードのドライバーライブラリである必要があることに注意してください。  
 
 静的ドライバーの検証ツールは、ドライバーまたはライブラリが複数の[ユーティリティライブラリ](#utility-libraries)にリンクされている場合でも、これらの条件を渡すドライバーまたはライブラリをサポートします。
 
@@ -38,7 +38,7 @@ ms.locfileid: "72916104"
 - ドライバーまたはライブラリが NDIS を使用する場合は、NDIS バージョン6.0、6.1、6.20、6.30、または6.40 が使用されます。 この一覧は変更される可能性があることに注意してください。
 - ドライバーモデル (KMDF と WDM、KMDF、NDIS など) は組み合わせられません。
 
-静的な分析結果の品質と精度に影響を与える要因が他にもあります。 次のような要因があります。
+静的な分析結果の品質と精度に影響を与える要因が他にもあります。 その要因には次のものがあります。
 
 - SDV によって処理されていないユーティリティライブラリの使用。
 - ドライバーのサイズ (特に10万行を超えるコードがある場合)。
@@ -88,7 +88,7 @@ WDM ドライバーまたはライブラリがあり、SDV を実行する場合
 <td align="left">ウォッチドッグ</td>
 </tr>
 <tr class="odd">
-<td align="left">ath_hwpci</td>
+<td align="left">ath_hwpci .lib</td>
 <td align="left">hidparse .lib</td>
 <td align="left">rpcxdr .lib</td>
 <td align="left">win32k. .lib</td>
@@ -101,7 +101,7 @@ WDM ドライバーまたはライブラリがあり、SDV を実行する場合
 </tr>
 <tr class="odd">
 <td align="left">battc</td>
-<td align="left">ipmidrv_hrmcust</td>
+<td align="left">ipmidrv_hrmcust .lib</td>
 <td align="left">scsiport</td>
 <td align="left">WMBBCLASS .lib</td>
 </tr>
@@ -160,7 +160,7 @@ WDM ドライバーまたはライブラリがあり、SDV を実行する場合
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">csr_vfp_avdtp</td>
+<td align="left">csr_vfp_avdtp .lib</td>
 <td align="left">msrpc .lib</td>
 <td align="left">tape .lib</td>
 <td align="left"></td>
@@ -220,7 +220,7 @@ WDM ドライバーまたはライブラリがあり、SDV を実行する場合
 
 静的ドライバーの検証ツールは、ドライバーまたはライブラリがドライバーまたはライブラリの[要件](#driver-or-library-requirements)に準拠している場合に、複数のユーティリティライブラリへのリンクを持つドライバーまたはライブラリをサポートします。
 
-|                     |
+| ファイル名           |
 |---------------------|
 | BufferOverflowK |
 | hal.dll             |

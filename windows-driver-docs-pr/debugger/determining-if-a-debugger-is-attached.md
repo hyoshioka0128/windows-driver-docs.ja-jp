@@ -3,40 +3,25 @@ title: デバッガーがアタッチされているかどうかの判別
 description: デバッガーがアタッチされているかどうかの判別
 ms.assetid: 78f7d90a-459c-4967-a980-3f8d6339eb77
 keywords:
-- デバッガーがアタッチされているかどうかを決定します。
-- KdRefreshDebuggerNotPresent function
+- デバッガーがアタッチされているかどうかを確認する
+- KdRefreshDebuggerNotPresent 関数
 - KD_DEBUGGER_ENABLED グローバル変数
 - KD_DEBUGGER_NOT_PRESENT グローバル変数
-ms.date: 05/23/2017
+ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e6bddc42dc2ce5b0edb4eab70a6f6c4d0c507c
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7c863634de0c18803471035717b75c16a2516675
+ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346305"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86873857"
 ---
 # <a name="determining-if-a-debugger-is-attached"></a>デバッガーがアタッチされているかどうかの判別
 
+カーネルモードのコードでは、次の変数とルーチンを使用してカーネルデバッグの状態を確認できます。
 
-## <span id="ddk_determining_if_a_debugger_is_attached_dbg"></span><span id="DDK_DETERMINING_IF_A_DEBUGGER_IS_ATTACHED_DBG"></span>
+- [**KD \_ デバッガーが \_ 有効になっ**](https://docs.microsoft.com/previous-versions/ff548118(v=vs.85))ているグローバルカーネル変数は、カーネルデバッグが有効になっているかどうかを示します。
 
+- [**KD \_ デバッガー \_ \_ **](https://docs.microsoft.com/previous-versions/ff548125(v=vs.85))のグローバルカーネル変数は、カーネルデバッガーが現在アタッチされているかどうかを示します。
 
-カーネル モード コードには、次の変数とルーチンを使用してカーネル デバッグの状態を確認できます。
-
--   KD\_デバッガー\_有効カーネルのグローバル変数は、カーネルのデバッグが有効になっているかどうかを示します。
-
--   KD\_デバッガー\_いない\_存在のカーネルのグローバル変数は、カーネル デバッガーが現在接続されているかどうかを示します。
-
--   (Windows Server 2003 以降)**KdRefreshDebuggerNotPresent**ルーチン KD の値を更新する\_デバッガー\_いない\_存在します。
-
-完全なドキュメントについては、Windows ドライバー キットを参照してください。
-
- 
-
- 
-
-
-
-
-
+- [**KdRefreshDebuggerNotPresent**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-kdrefreshdebuggernotpresent)ルーチンは、KD \_ デバッガーが存在しない値を更新し \_ \_ ます。
