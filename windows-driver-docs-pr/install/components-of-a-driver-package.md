@@ -14,12 +14,12 @@ keywords:
 - .cat ファイル
 ms.date: 05/09/2018
 ms.localizationpriority: High
-ms.openlocfilehash: 115cadb1d9cb25695825af04094b18493751c54f
-ms.sourcegitcommit: ea42499bb6c405abaa8b1093afa741cd3910da66
+ms.openlocfilehash: 30b141e4d06268f6eddaa2037f25945c39f59d69
+ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619774"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86557797"
 ---
 # <a name="components-of-a-driver-package"></a>ドライバー パッケージのコンポーネント
 
@@ -63,7 +63,7 @@ Windows オペレーティング システムにデバイスをインストー�
 
     ドライバー カタログ ファイルには、ドライバー パッケージ内の各ファイルの暗号化ハッシュが含まれています。 Windows では、これらのハッシュを使用して、パッケージが公開された後に変更されていないことを確認します。 カタログ ファイルが変更されないようにするには、[デジタル署名](digital-signatures.md)する必要があります。
 
-    ドライバーに署名する方法の詳細については、「[一般リリース用のドライバーへの署名](signing-drivers-for-public-release.md)」および「[開発中とテスト中のドライバーへの署名](signing-drivers-during-development-and-test.md)」を参照してください。
+    ドライバーに署名する方法の詳細については、「[一般リリース用のドライバーへの署名](signing-drivers-for-public-release--windows-vista-and-later-.md)」および「[開発中とテスト中のドライバーへの署名](signing-drivers-during-development-and-test.md)」を参照してください。
 
 ### <a name="other-files"></a>その他のファイル
 

@@ -4,12 +4,12 @@ description: この測定値は、カメラ デバイスでプレビュー機能
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e6692b5b895ecb11224d62561e306a083d37a7
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d0cfdc6b7cc7b4713fbf9eccc2c477c630f01605
+ms.sourcegitcommit: 191da92cfb33775b02ca160b4657d409635bd60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017077"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86898734"
 ---
 # <a name="percent-of-camera-preview-failures"></a>カメラのプレビュー エラー率
 
@@ -38,17 +38,24 @@ ms.locfileid: "71017077"
 
    a。 "*成功したプレビュー イベント = 0% の失敗*"
 
-       MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT == 0
-       MFCaptureEnginePreviewSinkFirstFrame (MF_CAPTURE_ENGINE_PREVIEW_STARTED)
+```cpp
+MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT == 0
+MFCaptureEnginePreviewSinkFirstFrame (MF_CAPTURE_ENGINE_PREVIEW_STARTED)
+```
 
    b. "*失敗したプレビュー イベント = 100% の失敗*"
 
-       MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT != 0
-      **または**、成功したプレビュー イベントの後に以下が続く場合:
+```cpp
+MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT != 0
+```
 
-       MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_ERROR)
-       MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STOPPED) > 1000ms
-       MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT != 0
+**または**、成功したプレビュー イベントの後に以下が続く場合:
+
+```cpp
+MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_ERROR)
+MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STOPPED) > 1000ms
+MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PREVIEW_STARTED) HRESULT != 0
+```
 
 ### <a name="final-calculation"></a>最終的な計算
 

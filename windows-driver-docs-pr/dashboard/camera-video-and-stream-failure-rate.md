@@ -4,12 +4,12 @@ description: この測定値は、カメラ デバイスでビデオおよびス
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1365dc8641cb6a5b4d7d0bd8f9856c281c368174
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 05d400468f06d0dd7ee0af6db136b968c01ec937
+ms.sourcegitcommit: 191da92cfb33775b02ca160b4657d409635bd60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017075"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86898732"
 ---
 # <a name="percent-of-camera-video-and-stream-failures"></a>カメラのビデオおよびストリーム エラー率
 
@@ -38,15 +38,19 @@ ms.locfileid: "71017075"
 
    a。 "*成功したビデオおよびストリーミングのイベント = 0% の失敗*"  
 
-       i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STARTED)
+      ```cpp
+      MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STARTED)
+      ```
 
    b. "*失敗したビデオおよびストリーミングのイベント = 100% の失敗*"
 
-         i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_ERROR)
-        ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STOPPED)
-       iii. MFCaptureEngineSessionStop
-        iv. OnEvent_RecordStop_Failure
-         v. Timed Out
+      ```cpp
+      i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_ERROR)
+      ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_RECORD_STOPPED)
+      iii. MFCaptureEngineSessionStop
+      iv. OnEvent_RecordStop_Failure
+      v. Timed Out
+      ```
 
 ### <a name="final-calculation"></a>最終的な計算
 
