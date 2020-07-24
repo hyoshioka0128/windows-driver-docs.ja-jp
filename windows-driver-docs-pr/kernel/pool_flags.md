@@ -11,12 +11,12 @@ keywords:
 - バッファーメモリ割り当て (WDK カーネル)
 ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e8c4c6a8d5f305af00d5e649de9e14e282c47a2
-ms.sourcegitcommit: b481c9513a9ea7f824ecabd1ae18876548032252
+ms.openlocfilehash: 1f5c1efa80979791025c01101d17128a730f24be
+ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84882325"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972157"
 ---
 # <a name="pool_flags"></a>POOL_FLAGS
 
@@ -78,9 +78,7 @@ ms.locfileid: "84882325"
 
 ## <a name="requirements"></a>必要条件
 
-| &nbsp; | &nbsp; |
-| ---- |:---- |
-|ヘッダー|wdm (Wdm、Ntddk、Ntifs、Wudfwdm などを含む) を指定します。|
+**ヘッダー**: Wdm (wdm .H、Ntddk、Ntifs、Wudfwdm などを含む) です。
 
 ## <a name="see-also"></a>参照
 

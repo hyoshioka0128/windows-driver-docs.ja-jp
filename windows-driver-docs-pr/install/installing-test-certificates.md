@@ -4,12 +4,12 @@ description: テスト証明書のインストール
 ms.assetid: 4c306390-32cc-4c7a-9f61-48e8af385a6d
 ms.date: 07/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5108d21db519137367cbb618fdb9640c64495cf1
-ms.sourcegitcommit: 41bc8d70b5aff5a30c33bcc571b3718c0232e68e
+ms.openlocfilehash: c433aad292c490f831f81b0bc8250e894df13567
+ms.sourcegitcommit: 6914901515545eda08b2c35bef816e6e2711a5b6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543090"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86944620"
 ---
 # <a name="installing-test-certificates"></a>テスト証明書のインストール
 
@@ -43,7 +43,7 @@ certmgr /add ContosoTest.cer /s /r localMachine root
 CertMgr Succeeded
 ```
 
-証明書を信頼されたルート証明機関の証明書ストア (ユーザーストアでは*なく*コンピューターストア) にコピーした後、「[テスト証明書の表示](viewing-test-certificates.md)」で説明されているように、MICROSOFT 管理コンソール (MMC) の証明書スナップインを使用して証明書を表示できます。
+証明書を信頼されたルート証明機関の証明書ストア (ユーザーストアでは*なく*ローカルコンピューターのルートストア) にコピーした後、「[テスト証明書の表示](viewing-test-certificates.md)」で説明されているように、MICROSOFT 管理コンソール (MMC) の証明書スナップインを使用して証明書を表示できます。
 
 次のスクリーンショットは、信頼されたルート証明機関の証明書ストアにある Contoso .com (Test) 証明書を示しています。
 
@@ -55,6 +55,14 @@ CertMgr Succeeded
 certutil -store root | findstr Contoso
 certutil -store root <SHA-1 id of certificate>
 ```
+
+または、PowerShell から:
+
+```cmd
+Get-ChildItem -path cert: \LocalMachine\My | findstr Contoso
+```
+
+Certmgr.exe ツールは Windows SDK の一部であり、通常はにインストールされ `C:\Program Files (x86)\Windows Kits\10\bin\<build>\x86\certmgr.exe` ます。
 
 Certmgr.exe とそのコマンドライン引数の詳細については、 [**certmgr.exe**](https://docs.microsoft.com/windows-hardware/drivers/devtest/certmgr)を参照してください。
 

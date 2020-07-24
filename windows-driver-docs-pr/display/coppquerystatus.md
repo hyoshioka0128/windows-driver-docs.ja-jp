@@ -1,24 +1,24 @@
 ---
 title: COPPQueryStatus 関数
-description: COPPQueryStatus 関数のサンプルでは、COPP DirectX VA デバイスに関連付けられている保護されたビデオ セッションの状態を取得します。
+description: Sample COPPQueryStatus 関数は、COPP DirectX VA デバイスに関連付けられている、保護されたビデオセッションの状態を取得します。
 ms.assetid: c2265df7-8b60-4a14-b7dc-ee227ad062dc
 keywords:
-- 保護 WDK COPP、ビデオのミニポート ドライバー コード テンプレートのコピーします。
-- ビデオのコピー防止 WDK COPP、ビデオのミニポート ドライバー コード テンプレート
-- 保護されたビデオ WDK COPP、ビデオのミニポート ドライバー コード テンプレート
-- ビデオのミニポート ドライバー WDK Windows 2000、COPP コード テンプレート
+- コピー防止 WDK COPP、ビデオミニポートドライバーコードテンプレート
+- ビデオコピー防止 WDK COPP、ビデオミニポートドライバーコードテンプレート
+- protected video WDK COPP、ビデオミニポートドライバーコードテンプレート
+- ビデオミニポートドライバー WDK Windows 2000、COPP コードテンプレート
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ab40601db1fdbeedf41b1dcc4c41e0fd2ffa6ad9
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: ef7ba2580ec60903c9398d4112493bb60ea3d6e1
+ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63331350"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949724"
 ---
 # <a name="coppquerystatus-function"></a>COPPQueryStatus 関数
 
-COPPQueryStatus 関数のサンプルでは、COPP DirectX VA デバイスに関連付けられている保護されたビデオ セッションの状態を取得します。
+Sample COPPQueryStatus 関数は、COPP DirectX VA デバイスに関連付けられている、保護されたビデオセッションの状態を取得します。
 
 ### <a name="syntax"></a>構文
 
@@ -32,41 +32,47 @@ HRESULT COPPQueryStatus(
 
 ## <a name="parameters"></a>パラメーター
 
-*[in] pThis*
+*pThis [in]*
 
-* COPP DirectX VA デバイス オブジェクトへのポインター。
+* COPP DirectX VA デバイスオブジェクトへのポインター。
 
-*[in] pInput*
+*pInput [入力]*
 
-* 特定のステータス情報を取得する要求を含む DXVA_COPPStatusInput 構造へのポインターを提供します。
+* 特定のステータス情報を取得する要求を含む DXVA_COPPStatusInput 構造体へのポインターを提供します。
 
-*pOutput [out]*
+*pOutput [出力]*
 
-* 使用している物理コネクタに関する状態情報を受け取る DXVA_COPPStatusOutput 構造体へのポインター。
+* 使用されている物理コネクタに関するステータス情報を受け取る DXVA_COPPStatusOutput 構造体へのポインター。
 
 ## <a name="return-value"></a>戻り値
 
-0 (S_OK または DD_OK) を返します成功した場合。それ以外の場合、エラー コードを返します。
+成功した場合は 0 (S_OK または DD_OK) を返します。それ以外の場合は、エラーコードを返します。
 
 ## <a name="remarks"></a>注釈
 
-ビデオのセッションは、保護モードに設定する必要があります (つまり、必要がある active) 関連付けられている COPP DirectX VA する前にデバイスがその COPPQueryStatus 関数の呼び出しを受信します。 つまり、COPPQueryStatus する前に、COPPSequenceStart 関数を呼び出す必要があります。 COPPQueryStatus は COPPSequenceStart する前に呼び出されると、COPPQueryStatus は E_UNEXPECTED を返します。
+関連する COPP DirectX VA デバイスが COPPQueryStatus 関数への呼び出しを受け取る前に、ビデオセッションを保護モードに設定する必要があります (つまり、アクティブにする必要があります)。 つまり、COPPQueryStatus の前に、COPPSequenceStart 関数を呼び出す必要があります。 COPPQueryStatus が COPPSequenceStart の前に呼び出された場合、COPPQueryStatus は E_UNEXPECTED を返す必要があります。
 
-COPPQueryStatus 関数は、状態要求を含む pInput に設定されている DXVA_COPPStatusInput 構造体を受け取ります。 COPPQueryStatus 関数は、要求を処理し、pOutput で DXVA_COPPStatusOutput 構造内の適切な状態を返します。
+COPPQueryStatus 関数は、ステータス要求を含む pInput で設定された DXVA_COPPStatusInput 構造体を受け取ります。 COPPQueryStatus 関数は、要求を処理し、pOutput の DXVA_COPPStatusOutput 構造体に適切な状態を返します。
 
-## <a name="mapping-rendermocomp-to-coppquerystatus"></a>COPPQueryStatus へ RenderMoComp のマッピング
+## <a name="mapping-rendermocomp-to-coppquerystatus"></a>RenderMoComp から COPPQueryStatus へのマッピング
 
-COPPQueryStatus 関数のサンプルは、DD_MOTIONCOMPCALLBACKS 構造体の RenderMoComp メンバーへの呼び出しに直接マップされます。 RenderMoComp メンバーは、ディスプレイ ドライバーによって提供される DdMoCompRender コールバックを参照する関数 DD_RENDERMOCOMPDATA 構造体を指します。
+Sample COPPQueryStatus 関数は、DD_MOTIONCOMPCALLBACKS 構造体の RenderMoComp メンバーへの呼び出しに直接マップされます。 RenderMoComp メンバーは、DD_RENDERMOCOMPDATA 構造体を参照するディスプレイドライバーが提供する DdMoCompRender コールバック関数を指します。
 
-RenderMoComp のコールバック関数が関数を使用せず、ディスプレイ ドライバーによって提供される BeginMoCompFrame または EndMoCompFrame 最初に呼び出されると呼ばれます。
+RenderMoComp コールバック関数が呼び出されるのは、表示ドライバーが提供する BeginMoCompFrame または EndMoCompFrame 関数が最初に呼び出されない場合です。
 
-DD_RENDERMOCOMPDATA 構造は次のように入力されます。
+DD_RENDERMOCOMPDATA 構造体は次のように入力されます。
 
-|メンバー |値 | |dwNumBuffers |0 を返します。 | | lpBufferInfo | NULL. | |dwFunction |DXVA_COPPQueryStatusFnCode 定数が (dxva.h で定義されている)。 | |lpInputData |DXVA_COPPStatusInput 構造体へのポインター。 | |lpOutputData |DXVA_COPPStatusOutput 構造体へのポインター。 |
+| メンバー | 値 |
+| ------ | ----- |
+| dwNumBuffers | ゼロ。 |
+| lpBufferInfo | NULL。 |
+| dwFunction | DXVA_COPPQueryStatusFnCode 定数 (DXVA で定義)。 |
+| lpInputData | DXVA_COPPStatusInput 構造体へのポインター。 |
+| lpOutputData | DXVA_COPPStatusOutput 構造体へのポインター。 |
 
-## <a name="example-code"></a>コードの例
+## <a name="example-code"></a>コード例
 
-次のコードでは、COPPQueryStatus 関数を実装する方法の例を示します。
+次のコードは、COPPQueryStatus 関数を実装する方法の例を示しています。
 
 ```cpp
 HRESULT
@@ -163,6 +169,6 @@ COPPQueryStatus(
 
 **必要条件**
 
-| 対象プラットフォーム | バージョン |
+| ターゲット プラットフォーム | Version |
 | -- | -- |
-| Desktop | この関数は、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。 |
+| デスクトップ | この機能は、Windows Server 2003 SP1 以降、および Windows XP SP2 以降にのみ適用されます。 |

@@ -4,12 +4,12 @@ description: ユニバーサルまたはモバイルのドライバーパッケ�
 ms.assetid: 2CBEB814-974D-4E8B-A44A-2CFAA8D4C94E
 ms.date: 04/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b099889203e9d3e00e0eb16348ef67d8bb9b256
-ms.sourcegitcommit: 958a5ced83856df22627c06eb42c9524dd547906
+ms.openlocfilehash: 6d58ee54df9114a67c2ed61f77765cdd0f70d8e9
+ms.sourcegitcommit: 5e5f3491e29f99b11a12b45da870043e0e92ddc5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235393"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949036"
 ---
 # <a name="using-a-universal-inf-file"></a>Using a Universal INF File (ユニバーサル INF ファイルの使用)
 
@@ -37,6 +37,8 @@ Windows 10 など、windows の一部のエディションでは、Windows 10 De
 -   [**INF DDInstall.LogConfigOverride セクション**](inf-ddinstall-logconfigoverride-section.md)
 
 **TargetOSVersion**デコレーションに**ProductType**フラグまたは**suitemask**フラグが含まれていない限り、 [**INF の製造元セクション**](inf-manufacturer-section.md)は有効です。
+
+[**INF DefaultInstall セクション**](inf-defaultinstall-section.md)は、アーキテクチャの装飾がある場合にのみ有効です。たとえば、のようになり `[DefaultInstall.NTAMD64]` ます。
 
 ## <a name="which-inf-directives-are-invalid-in-a-universal-inf-file"></a>ユニバーサル INF ファイルでは、どの INF ディレクティブも無効ですか。
 

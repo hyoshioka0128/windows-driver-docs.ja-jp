@@ -3,44 +3,40 @@ title: プラットフォーム拡張機能とその他のセクション名の�
 description: プラットフォーム拡張機能とその他のセクション名の拡張機能を組み合わせる
 ms.assetid: ca82ba0f-0d65-47ca-826a-4f78435b1442
 keywords:
-- INF ファイル WDK デバイス インストールでは、プラットフォーム拡張機能
-- 'プラットフォーム拡張機能: WDK INF ファイル'
-- WDK INF プラットフォームの拡張機能
-- 'プラットフォーム拡張機能: WDK INF ファイルの結合'
-- WDK の INF ファイルのインストール セクション名
-- 装飾の INF WDK
-- WDK のオペレーティング システム
+- INF ファイル WDK デバイスのインストール、プラットフォーム拡張機能
+- プラットフォーム拡張機能の WDK INF ファイル
+- 拡張機能の WDK INF プラットフォーム
+- プラットフォーム拡張機能と WDK INF ファイルの組み合わせ
+- install-section-WDK INF ファイル名
+- 装飾のある INF WDK
+- オペレーティングシステム WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: b4234541fcb785fe0112bc8e0386682d3dfe1879
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 7361665e62800bc87330613afea8b435d9eb2af8
+ms.sourcegitcommit: 53565c07d980307b079a6accf541fd221e623142
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63361178"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972153"
 ---
 # <a name="combining-platform-extensions-with-other-section-name-extensions"></a>プラットフォーム拡張機能とその他のセクション名の拡張機能を組み合わせる
 
 
-INF を含む INF ファイル*DDInstall*プラットフォーム拡張機能のセクションでは、必要ななどのデバイスごとの追加セクションを含めることも<em>DDInstall</em>**します。サービス**と省略可能な<em>DDInstall</em>**します。HW**、 <em>DDInstall</em>**します。CoInstallers**、 <em>DDInstall</em>**します。LogConfigOverride**、および<em>DDInstall</em>**します。インターフェイス**セクション。 クロス オペレーティング システムおよびクロス プラットフォーム INF ファイルでは、INF ライター定義セクション名の直後に、適切なプラットフォーム拡張機能を指定する必要があります (たとえば、<em>インストール セクション名</em> **.ntx86 します。HW**)。
+Inf *ddinstall*セクションとプラットフォーム拡張機能を含む inf ファイルには、必要な<em>ddinstall</em>など、デバイスごとの追加のセクションを含めることもでき**ます。サービス**とオプションの<em>ddinstall</em>**。HW**、 <em>ddinstall</em>**。CoInstallers**、 <em>ddinstall</em>**。LogConfigOverride**および<em>ddinstall</em>**。インターフェイス**セクション。 クロスオペレーティングシステムとクロスプラットフォームの INF ファイルでは、INF ライターで定義されたセクション名の直後に適切なプラットフォーム拡張機能を指定する必要が<em>あります (たとえば、</em>ntx86 を指定し**ます。ハードウェア**)。
 
-クロス オペレーティング システムの INF ファイルが含まれている場合は、装飾<em>インストール セクション名</em> **.nt**、<em>インストール セクション名</em> **.ntx86**、 <em>インストール セクション名</em> **.ntia64**、または<em>インストール セクション名</em> **.ntamd64**セクションでは、その他必要があります並列装飾し、装飾されていないデバイスごとのセクションでします。 つまり、INF ファイルでは、両方を持つ場合*インストール セクション名*と<em>インストール セクション名</em> **.nt**のセクションでは、これが、 *DDInstall*.**HW**  セクションで、並列にも必要<em>インストール セクション名</em> **.nt します。HW**セクション (デバイスまたはドライバーが必要な場合、**します。HW** Windows 2000 と Windows の以降のバージョンについてのセクション)。
+クロスオペレーティングシステムの INF ファイルに装飾され<em>たインストールセクション名</em>**. nt**、**ntx86** <em>、</em>**ntia64** <em>、または</em>**ntamd64**セクションが含まれている場合は、さらに、追加の並列装飾および非装飾のデバイスごとのセクションも必要に<em>なります。</em> つまり、INF ファイルに*インストールセクション名*とインストールセクション名の両方の<em>install-section-name</em>**セクションが**あり、 *ddinstall*があるとします。**HW**セクションでは、並列<em>インストールセクション名</em>**. nt も必要です。HW**セクション (デバイスまたはドライバーにが必要な場合) **。** Windows 2000 以降のバージョンの windows の場合は、HW セクションを参照してください。
 
-トピックでは、 [INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)セクションの表示、 **nt**<em>xxx</em>**します。HW**正式な構文のステートメント内の適切なセクションの一部として拡張機能参照、次の例のようにします。
+「 [INF ファイルのセクションとディレクティブ](inf-file-sections-and-directives.md)」セクションのトピックでは、 **nt**<em>xxx</em>を示して**います。** 次の例のように、適切なセクション参照に含まれる正式な構文ステートメントの一部としての HW 拡張。
 
-**\[** <em>インストール セクション名</em>**します。HW\]**  |
- **\[** <em>インストール セクション名</em> **.nt します。HW\]**  |
- **\[** <em>インストール セクション名</em> **.ntx86 します。HW\]**  |
- **\[** <em>インストール セクション名</em> **.ntia64 します。HW\]**  |
- **\[** <em>インストール セクション名</em> **.ntamd64 します。HW\]** 正式な構文のステートメントでは、これらの拡張機能の基本的なセクションに有効な代替手段であることを示します。 このステートメントの種類は*いない*がする INF ファイルを指定、<em>インストール セクション名</em> **.nt します。HW**セクションではすべて他のプラットフォームに固有を含める必要がありますも<em>インストール セクション名</em> **.nt**<em>xxx</em>**します。HW**セクション。 これらの拡張機能のサブセットを使用すると、特定のクロス プラットフォームのインストールを必要とされる装飾セクションを指定します。
+```inf
+[install-section-name.HW] | 
+[install-section-name.nt.HW] | 
+[install-section-name.ntx86.HW] | 
+[install-section-name.ntia64.HW] | 
+[install-section-name.ntamd64.HW] 
+```
 
-INF ファイルが含まれている*インストール セクション名*プラットフォーム拡張機能とプラットフォームの拡張機能を含めることも、 [ **INF SourceDisksNames セクション**](inf-sourcedisksnames-section.md)と[ **INF SourceDisksFiles セクション**](inf-sourcedisksfiles-section.md)エントリ、プラットフォーム固有の方法でインストール ファイルの場所を指定します。
+このような正式な構文ステートメントは、これらの拡張機能が基本セクションの代替として有効であることを示します。 この種類のステートメントでは、<em>インストールセクション名</em>. nt を含む INF ファイルは指定*されていません***。HW**セクションには、プラットフォーム固有のその他すべての<em>インストールセクション名</em>**. nt**<em>xxx</em>も含まれている必要があります。**HW**セクション。 これらの拡張機能のサブセットを使用して、特定のクロスプラットフォームインストールに必要な装飾されたセクションを指定できます。
 
- 
-
- 
-
-
-
-
+また、*インストール-セクション名*のプラットフォーム拡張機能を含む inf ファイルには、プラットフォーム固有の方法でインストールファイルの場所を指定するために、 [**Inf SourceDisksNames セクション**](inf-sourcedisksnames-section.md)と[**inf sourcedisksnames セクション**](inf-sourcedisksfiles-section.md)エントリを含むプラットフォーム拡張機能を含めることもできます。
 

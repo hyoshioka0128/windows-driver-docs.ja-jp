@@ -1,6 +1,6 @@
 ---
-title: IRP_MJ_SET_INFORMATION (IFS)
-description: IRP_MJ_SET_INFORMATION
+title: IRP_MJ_SET_INFORMATION のセキュリティチェック
+description: ファイルシステムがセキュリティチェックを行う方法について説明し IRP_MJ_SET_INFORMATION
 ms.assetid: 2a6c837c-85c9-46d8-85d8-d779f22be54e
 keywords:
 - IRP_MJ_SET_INFORMATION
@@ -11,14 +11,14 @@ keywords:
 - WDK ファイルシステムの名前
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: d2a1cd88248b1c7a328fb18f7f71cd2be7423500
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: 30581f6fc6877e5540c36c154432b7f554b3049f
+ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141320"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949734"
 ---
-# <a name="irp_mj_set_information-ifs"></a>IRP_MJ_SET_INFORMATION (IFS)
+# <a name="security-checks-on-irp_mj_set_information"></a>IRP_MJ_SET_INFORMATION のセキュリティチェック
 
 設定情報の名前変更とハードリンクのケースでは、特定の状況下でセキュリティチェックが必要になる場合があります。 具体的には、呼び出し元が**置換 Eifexists**フィールドを**TRUE**に設定して、名前の変更またはハードリンクのターゲットを削除する場合、ファイルシステムはセキュリティチェックを実行して、ターゲットを削除するための適切なアクセス許可が呼び出し元に与えられていることを確認する必要があります。 さらに、ポリシーに関係なくファイルシステムがこの方法での削除を許可しないファイルの種類が存在する場合があります (レジストリハイブやページングファイルなど)。 次のコード例では、呼び出し元に、ファイルを削除するための適切なセキュリティアクセス許可があるかどうかを判断します。
 

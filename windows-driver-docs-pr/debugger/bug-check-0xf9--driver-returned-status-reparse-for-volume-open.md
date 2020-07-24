@@ -13,12 +13,12 @@ api_name:
 api_type:
 - NA
 ms.localizationpriority: medium
-ms.openlocfilehash: 6060ec2a0b66c9efcd124163bf73897585533a75
-ms.sourcegitcommit: 67fb9981ca51df198dfb6af9bf4987843266f8ac
+ms.openlocfilehash: bceffbbf536a832d5f1422ce320547eeddf4d270
+ms.sourcegitcommit: 8584ffc0ebe497f9fa9e0e8692285549eaa64fa6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86879090"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87113694"
 ---
 # <a name="bug-check-0xf9-driver_returned_status_reparse_for_volume_open"></a>バグチェック 0xF9: ドライバー \_ が \_ \_ \_ \_ オープンボリュームの状態の再解析を返しました \_
 
@@ -26,6 +26,10 @@ ms.locfileid: "86879090"
 
 > [!IMPORTANT]
 > このトピックはプログラマーを対象としています。 コンピューターの使用中にブルースクリーンのエラーコードが表示された顧客の場合は、「[ブルースクリーンエラーのトラブルシューティング](https://www.windows.com/stopcode)」を参照してください。
+
+> [!NOTE]
+> ドライバーの検証ツールが有効になっていない場合は、E6 主要なバグチェックコードを確認できます。 ドライバーの検証ツールが有効になっていない状態でこのコードが発生する場合は、 [DMA の検証](https://docs.microsoft.com/windows-hardware/drivers/devtest/dma-verification)に関するページを参照してください。 
+
 
 ## <a name="driver_returned_status_reparse_for_volume_open-parameters"></a>\_ \_ \_ \_ \_ ボリュームオープンパラメーターの状態の再解析がドライバーによって返されました \_
 
@@ -60,7 +64,7 @@ ms.locfileid: "86879090"
 </tbody>
 </table>
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
 ! [デバッグ拡張機能の[**分析**](-analyze.md)] には、バグチェックに関する情報が表示され、根本原因を特定するのに役立ちます。
 

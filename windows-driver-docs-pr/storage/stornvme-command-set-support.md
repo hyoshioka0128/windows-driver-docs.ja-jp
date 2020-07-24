@@ -1,17 +1,17 @@
 ---
-title: StorNVMe コマンド セットのサポート
-description: StorNVMe コマンド セットのサポート
+title: StorNVMe コマンドセットのサポート
+description: StoreNVMe によって提供されるコマンドセットのサポートについて説明します。
 ms.assetid: c0bcee11-ea66-4726-99a2-ad18256cf616
 ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d8085c82690b07a198411a7c93b92cb423322a0b
-ms.sourcegitcommit: d395d4b36f39d3557adda53735a4fdc8745a6408
+ms.openlocfilehash: 1c2aec6c6a39439bef884f0d14ec05aa2b48b7dd
+ms.sourcegitcommit: df50dc10210c124f2c7fb173d6e4fb796f56e5bd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83642598"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86949748"
 ---
-# <a name="stornvme-command-set-support"></a>StorNVMe コマンド セットのサポート
+# <a name="stornvme-command-set-support"></a>StorNVMe コマンドセットのサポート
 
 次の表は、NVMe *Admin*と*nvm*コマンドセットおよび関連するオペコードを一覧表示し、Windows 10 バージョン1903以降で**stornvme**が提供するサポートを示しています。  
 
@@ -32,8 +32,8 @@ ms.locfileid: "83642598"
 | Ah      | 機能の取得                | 内部ドライバーの使用IOCTL_STORAGE_QUERY_PROPERTY |   |
 | ハーフ      | 非同期イベント要求  | 内部ドライバーの使用 |   |   |
 | Dh      | 名前空間の管理        | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
-| 10h     | ファームウェアのコミット             | IOCTL_STORAGE_FIRMWARE_ACTIVATE | |
-| 11h     | ファームウェアイメージのダウンロード     | IOCTL_STORAGE_FIRMWARE_DOWNLOAD | |
+| 10h     | ファームウェアのコミット             | IOCTL_STORAGE_FIRMWARE_ACTIVATE  | |
+| 11h     | ファームウェアイメージのダウンロード     | IOCTL_STORAGE_FIRMWARE_DOWNLOAD  | |
 | 14h     | デバイスのセルフテスト            | IOCTL_STORAGE_PROTOCOL_COMMAND  | |
 | 15h     | 名前空間の添付ファイル        | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
 | 19h     | ディレクティブの送信              | 内部ドライバーの使用 |   |
@@ -55,12 +55,12 @@ ms.locfileid: "83642598"
 | ------  | --------------------------  | --------------------- | -------- |
 | 0       | フラッシュ                       | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_SYNCHRONIZE_CACHE |
 | 1       | Write                       | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_WRITE/SCSIOP_WRITE16 |
-| 2       | 読み取り                        | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_READ/SCSIOP_READ16 |
+| 2       | Read                        | 内部ドライバーの使用状況、IOCTL_SCSI_PASS_THROUGH | IOCTL_SCSI_PASS_THROUGH の SCSIOP_READ/SCSIOP_READ16 |
 | 4       | 修正不可能に書き込み         |   | 以下は現在サポートされていません |
 | 5       | 比較                     | IOCTL_STORAGE_PROTOCOL_COMMAND | IOCTL_STORAGE_PROTOCOL_COMMAND の Win PE モードでのみ有効です |
 | 8       | ゼロの書き込み                |   | 以下は現在サポートされていません |
 | 9       | データセットの管理          | IOCTL_SCSI_PASS_THROUGH | トリムのみ (割り当て解除);IOCTL_SCSI_PASS_THROUGH の SCSIOP_UNMAP |
-| ハーフ      | 確認事項                      |   | 以下は現在サポートされていません |
+| ハーフ      | 確認                      |   | 以下は現在サポートされていません |
 | Dh      | 予約レジスタ        |   | 以下は現在サポートされていません |
 | Eh      | 予約レポート          |   | 以下は現在サポートされていません |
 | 11h     | 予約の取得         |   | 以下は現在サポートされていません |
