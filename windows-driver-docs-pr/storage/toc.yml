@@ -488,7 +488,7 @@
           href: overview.md
         - name: 定義
           href: definitions.md
-        - name: 要件
+        - name: サイロ ドライバーのシステム要件
           href: requirements.md
         - name: アーキテクチャ
           href: architecture.md

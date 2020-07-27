@@ -490,7 +490,7 @@
               href: tampering-with-data.md
             - name: 否認
               href: repudiation.md
-            - name: 情報の漏洩
+            - name: 情報漏えい
               href: information-disclosure.md
             - name: サービス拒否
               href: denial-of-service.md
@@ -516,7 +516,7 @@
           href: security-features-for-file-systems.md
         - name: セキュリティ記述子
           items:
-            - name: 概要
+            - name: ファイル システムでのセキュリティ記述子
               href: security-descriptors.md
             - name: セキュリティ識別子
               href: security-identifier.md
@@ -526,7 +526,7 @@
               href: access-control-entry.md
             - name: アクセス制御リスト
               href: access-control-list.md
-        - name: 権限
+        - name: ファイル システムでの特権の管理
           href: privileges.md
         - name: 監査
           href: auditing.md
@@ -558,13 +558,13 @@
               href: media-validation.md
         - name: セキュリティの検査
           items:
-            - name: 概要
+            - name: ファイル システムでのセキュリティ チェック
               href: security-checks.md
             - name: デバイス オブジェクトに対するセキュリティ記述子の適用
               href: applying-security-descriptors-on-the-device-object.md
             - name: IRP_MJ_CREATE ディスパッチ ルーチン
               items:
-                - name: 概要
+                - name: IRP_MJ_CREATE でのセキュリティ チェック
                   href: irp-mj-create-dispatch-routine.md
                 - name: IRP_MJ_CREATE での走査特権の確認
                   href: checking-for-traverse-privilege-on-irp-mj-create.md
@@ -578,13 +578,13 @@
                   href: assigning-security-to-a-new-file-on-irp-mj-create.md
                 - name: IRP_MJ_CREATE でのクォータの処理
                   href: handling-quotas-on-irp-mj-create.md
-            - name: IRP_MJ_QUERY_SECURITY と IRP_MJ_SET_SECURITY
+            - name: IRP_MJ_QUERY_SECURITY と IRP_MJ_SET_SECURITY でのセキュリティ チェック
               href: irp-mj-query-security-and-irp-mj-set-security.md
-            - name: IRP_MJ_DIRECTORY_CONTROL
+            - name: IRP_MJ_DIRECTORY_CONTROL でのセキュリティ チェック
               href: irp-mj-directory-control2.md
-            - name: IRP_MJ_FILE_SYSTEM_CONTROL
+            - name: IRP_MJ_FILE_SYSTEM_CONTROL でのセキュリティ チェック
               href: irp-mj-file-system-control3.md
-            - name: IRP_MJ_SET_INFORMATION
+            - name: IRP_MJ_SET_INFORMATION でのセキュリティ チェック
               href: irp-mj-set-information3.md
             - name: 偽装
               href: impersonation.md
