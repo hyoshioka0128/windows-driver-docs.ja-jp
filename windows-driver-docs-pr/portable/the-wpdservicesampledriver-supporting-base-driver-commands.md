@@ -1,45 +1,31 @@
 ---
-Description: 基本ドライバー コマンド (WpdServiceSampleDriver) のサポート
-title: 基本ドライバー コマンド (WpdServiceSampleDriver) のサポート
+Description: 基本ドライバーコマンドのサポート (Wpdサービス Amwadriver)
+title: 基本ドライバーコマンドのサポート (Wpdサービス Amwadriver)
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e97804a357b14431b945461821b1441da193c6a
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 6b1af829fcec30fec4bf83409b24009f38dc8dca
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370492"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264465"
 ---
-# <a name="support-for-base-driver-commands-wpdservicesampledriver"></a>基本ドライバー コマンド (WpdServiceSampleDriver) のサポート
+# <a name="support-for-base-driver-commands-wpdservicesampledriver"></a>基本ドライバーコマンドのサポート (Wpdサービス Amwadriver)
 
+サンプルの基本ドライバーモジュール (*Wpdbasedriver .cpp*) では、2つのコマンドが処理されます。 wpd \_ コマンド \_ では \_ \_ \_ \_ 、永続的な一意の ID からオブジェクト id を取得 \_ \_ し、 \_ wpd コマンドに共通の \_ \_ \_ クライアント情報を保存し \_ \_ ます。
 
-ドライバー モジュール (*WpdBaseDriver.cpp*) サンプルが 2 つのコマンドを処理します。WPD\_コマンド\_共通\_取得\_オブジェクト\_ID\_FROM\_持続\_UNIQUE\_ID と WPD\_コマンド\_一般的な\_保存\_クライアント\_情報。
+ただし、 *Wpdbasedriver .cpp*は、ドライバー内のすべてのコマンド処理の開始点としても使用されます。 これは、すべてのコマンドが最初に**Wpdbasedriver::D ispatchmessage**メソッドによって処理されることを意味します。 このメソッドは、指定されたコマンドのカテゴリを調べて、列挙型、プロパティ、機能、またはサービスコマンドハンドラーに転送します。
 
-ただし、 *WpdBaseDriver.cpp*処理、ドライバーですべてのコマンドの開始点になります。 つまり、すべてのコマンドで最初に処理、 **WpdBaseDriver::DispatchMessage**メソッド。 このメソッドは、指定されたコマンドのカテゴリを調べ、列挙型、プロパティ、機能、またはサービス コマンド ハンドラーに転送します。
+次の表では、基本ドライバーモジュールでサポートされている2つのコマンドと、基本ドライバーモジュールでサポートされているコマンドのハンドラーについて説明します。
 
-次の表では、基本ドライバー モジュールでサポートされているコマンドのハンドラーと共に、基本ドライバー モジュールでサポートされている 2 つのコマンドについて説明します。
-
-|                                                                       |                                      |                                                                                                                       |
+| command                                                               | Handler                              | 説明                                                                                                           |
 |-----------------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| コマンド                                                               | ハンドラー                              | 説明                                                                                                           |
-| WPD\_コマンド\_共通\_取得\_オブジェクト\_ID\_FROM\_持続\_UNIQUE\_ID | OnGetOjectIDsFromPersistentUniqueIDs | 指定された永続的な一意の識別子に一致するオブジェクト識別子を取得しようとするアプリケーションに発行されます。 |
-| WPD\_コマンド\_共通\_保存\_クライアント\_情報                       | OnSaveClientInfo                     | アプリケーションをデバイスまたはサービスへの接続を開こうとすると発行されます。                                       |
+| WPD \_ コマンド \_ 共通 \_ \_ \_ \_ の \_ 永続 \_ \_ ID からのオブジェクト ID の取得 | OnGetOjectIDsFromPersistentUniqueIDs | アプリケーションが、指定された永続的な一意の識別子と一致するオブジェクト識別子を取得しようとしたときに発行されます。 |
+| WPD \_ コマンドの \_ 共通 \_ 保存 \_ クライアント \_ 情報                       | OnSaveClientInfo                     | アプリケーションがデバイスまたはサービスへの接続を開こうとしたときに発行されます。                                       |
 
- 
-
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
-
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 ****
-[WpdServiceSampleDriver](the-wpdservicesampledriver-sample.md)
+[Wpdサービスの Am氏ドライバー](the-wpdservicesampledriver-sample.md)
 
 [WPD ドライバーのサンプル](the-wpd-driver-samples.md)
-
- 
-
- 
-
-
-
-
-

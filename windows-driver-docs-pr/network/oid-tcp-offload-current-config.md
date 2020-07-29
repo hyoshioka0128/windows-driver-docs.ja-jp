@@ -4,14 +4,14 @@ description: このトピックでは、OID_TCP_OFFLOAD_CURRENT_CONFIG オブジ
 ms.assetid: 8DC81A41-1E4D-4F78-80D1-54C79F974CE3
 keywords:
 - OID_TCP_OFFLOAD_CURRENT_CONFIG、wdk Oid、WDK ネットワークオブジェクト識別子、WDK ネットワーク Oid
-ms.date: 11/01/2017
+ms.date: 02/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9083238d253e4bd9c37c75e0a692766536e98a
-ms.sourcegitcommit: 82a9be3b3584f991e5121f8f46a972e04185fa52
+ms.openlocfilehash: e02308cedd70ce7dac411536a8f1d147cac32914
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85917644"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264443"
 ---
 # <a name="oid_tcp_offload_current_config"></a>OID_TCP_OFFLOAD_CURRENT_CONFIG
 
@@ -19,7 +19,7 @@ ms.locfileid: "85917644"
 
 Set 要求はサポートされていません。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
 NDIS は、この OID をミニポートドライバー用に処理します。 ミニポートドライバーは、ミニポートアダプターのオフロード機能を NDIS に報告します。 ミニポートドライバーから NDIS にタスクオフロード構成設定を渡す方法と、NDIS からそれ以降のドライバーに渡す方法については、「NDIS_OFFLOAD」を参照してください。
 
@@ -37,16 +37,15 @@ OID_TCP_OFFLOAD_CURRENT_CONFIG に応答して、前の一覧の構造体の**�
 
 ミニポートドライバーは、初期化中にすべてのタスクオフロード機能を自動的に有効にする必要があります。
 
-### <a name="see-also"></a>こちらもご覧ください
+### <a name="see-also"></a>関連項目
 
 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
 [NDIS_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_offload)  
 [NDIS_OID_REQUEST](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/ns-ndis-_ndis_oid_request)  
 [NDIS_TCP_IP_CHECKSUM_OFFLOAD](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_ip_checksum_offload)  
-[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2)    
+[NDIS_TCP_LARGE_SEND_OFFLOAD_V2](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_tcp_large_send_offload_v2) 
 [NDIS_IPSEC_OFFLOAD_V1](https://docs.microsoft.com/windows-hardware/drivers/ddi/ntddndis/ns-ntddndis-_ndis_ipsec_offload_v1)  
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **バージョン**: Windows Vista 以降の**ヘッダー**: Ntddndis (Ndis .h を含む)
-

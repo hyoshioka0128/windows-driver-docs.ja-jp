@@ -1,17 +1,17 @@
 ---
-title: HVCI ドライバーの互換性を評価する
+title: HVCI ドライバーの互換性の評価
 description: を使用して、ドライバーコードの HVCI ドライバーの互換性を評価するには、次の手順に従います。
 ms.assetid: ''
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1f4331474b7dc9093483ee762e3059f13cce60
-ms.sourcegitcommit: 969a98d4866be74e145df617a9f0963053898a0d
+ms.openlocfilehash: 49032c0843f3f0e1015abe50a1faf5ae1fffcf7e
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153164"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264463"
 ---
-# <a name="evaluate-hvci-driver-compatibility"></a>HVCI ドライバーの互換性を評価する
+# <a name="evaluate-hvci-driver-compatibility"></a>HVCI ドライバーの互換性の評価
 
 ## <a name="overview"></a>概要
 
@@ -41,9 +41,8 @@ HVCI 互換コードを実装するには、ドライバーコードが次のこ
 
 システムで使用するために予約されていない次の DDIs の一覧は、影響を受ける可能性があります。
 
-|                                                                                                      |
+|       DDI 名                                                                                                  |
 |------------------------------------------------------------------------------------------------------|
-| DDI 名                                                                                             |
 | [**ExAllocatePool**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepool)                                                          |
 | [**ExAllocatePoolWithQuota**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquota)                                        |
 | [**ExAllocatePoolWithQuotaTag**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdm/nf-wdm-exallocatepoolwithquotatag)                                  |
@@ -172,7 +171,7 @@ DGReadiness ツールを使用するには、次の手順を実行します。
 
     画面への出力は色分けされています。
 
-    |                   |                                                                                                   |
+    |       カテゴリ    |  説明                                                                                      |
     |-------------------|---------------------------------------------------------------------------------------------------|
     | 赤-エラー      | DG/CG の有効化と使用を禁止する要素が見つからないか、構成されていません。                |
     | 黄-警告 | このデバイスは、DG/CG の有効化と使用に使用できますが、追加のセキュリティ上の利点はありません。 |
@@ -199,7 +198,7 @@ DGReadiness ツールを使用するには、次の手順を実行します。
         Reason: execute pool type count:                3
     ```
 
-    上に示したサンプルでは、2つのドライバーが互換性なしとして識別されます。 TestDriver1 にメモリセクションアラインメントエラーがあり、TestDriver2 には実行可能メモリ領域を使用するように構成されたプールがあります。
+    上に示したサンプルでは、2つのドライバーが互換性なしとして識別されます。 TestDriver1.sys にメモリセクションのアラインメントエラーがあり、TestDriver2.sys 実行可能メモリ領域を使用するように構成されたプールがあります。
 
     デバイスドライバーの非互換性の7種類の統計情報は、! verifier デバッガー拡張機能を使用して使用することもできます。 ! Verifier 拡張機能の詳細については、「 [**! verifier**](https://docs.microsoft.com/windows-hardware/drivers/debugger/-verifier)」を参照してください。
 

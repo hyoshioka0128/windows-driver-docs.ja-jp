@@ -6,12 +6,12 @@ keywords:
 - ドライバー署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 839cac6ab06b61c20054efa133a65b4e9126e8a5
-ms.sourcegitcommit: a0e6830b125a86ac0a0da308d5bf0091e968b787
+ms.openlocfilehash: a93512443a4fb412a8f02e9a85b6cda6c7a93665
+ms.sourcegitcommit: 9342720249c59946ef2196dd2c833a1667129929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86557729"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295837"
 ---
 # <a name="driver-signing"></a>Driver Signing (ドライバーの署名)
 
@@ -29,7 +29,6 @@ Windows 10 より前のオペレーティングシステムについて、サー
 ## <a name="in-this-section"></a>このセクションの内容
 
 
--   [ドライバーのインストール用のデジタル署名の概要](overview-of-digital-signatures-for-driver-installation.md)
 -   [Windows 10 S モードでのドライバー要件](Windows10SDriverRequirements.md)
 -   [署名プロセスの管理](managing-the-signing-process.md)
 -   [開発中とテスト中のドライバーへの署名](signing-drivers-during-development-and-test.md)

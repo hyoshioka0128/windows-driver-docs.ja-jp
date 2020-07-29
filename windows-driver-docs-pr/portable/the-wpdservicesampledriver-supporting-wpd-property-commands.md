@@ -1,39 +1,39 @@
 ---
-Description: プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
-title: プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
-ms.date: 04/20/2017
+Description: プロパティコマンドを使用したスコープアクセスの使用 (Wpdサービス Amwadriver)
+title: プロパティコマンドを使用したスコープアクセスの使用 (Wpdサービス Amwadriver)
+ms.date: 07/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bd89ce3ce9653958bf77bc3c2c0d8d6f45c897ad
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: e77c4b744bf0c61ede97742fdd55573bd8ffc3e3
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63370692"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264441"
 ---
-# <a name="support-for-property-commands-wpdbasichardwaredriversample"></a>プロパティ コマンド (WpdBasicHardwareDriverSample) のサポート
+# <a name="using-scope-access-with-property-commands-wpdservicesampledriver"></a>プロパティコマンドを使用したスコープアクセスの使用 (Wpdサービス Amwadriver)
 
 
-ドライバーのサンプルでは、6 つのプロパティのコマンドをサポートします。 これらのコマンドが最初に、処理、 **WpdObjectProperties::DispatchMessage**メソッドを対応するコマンド ハンドラーが呼び出されます。 **DispatchMessage**メソッドと個別のハンドラーは、すべてで、 *WpdObjectProperties.cpp ファイル*します。
+サンプルドライバーでは、6つのプロパティコマンドがサポートされています。 これらのコマンドは、最初に**WpdObjectProperties::D ispatchmessage**メソッドによって処理され、次に対応するコマンドハンドラーが呼び出されます。 **DispatchMessage**メソッドと個々のハンドラーはすべて、 *WpdObjectProperties ファイル*に含まれています。
 
-次の表では、ハンドラーの名前と共に、サポートされているプロパティのコマンドのそれぞれについて説明しますが**DispatchMessage**特定のコマンドを処理するときに呼び出します。
+次の表では、サポートされている各プロパティコマンドと、特定のコマンドを処理するときに**DispatchMessage**が呼び出すハンドラーの名前について説明します。
 
-| コマンド                                           | ハンドラー                  | 説明                                                                                                   |
+| command                                           | Handler                  | 説明                                                                                                   |
 |---------------------------------------------------|--------------------------|---------------------------------------------------------------------------------------------------------------|
-| WPD\_コマンド\_オブジェクト\_プロパティ\_取得\_サポートされています。  | OnGetSupportedProperties | 指定したオブジェクトのプロパティのキーの配列を返します。                                                       |
-| WPD\_コマンド\_オブジェクト\_プロパティ\_取得             | OnGetPropertyValues      | ドライバーに渡されるプロパティのキーに対応するプロパティ値のコレクションを返します。 |
-| WPD\_コマンド\_オブジェクト\_プロパティ\_取得\_すべて        | OnGetAllProperties       | 指定したオブジェクトのすべてのプロパティ値を返します。                                                           |
-| WPD\_コマンド\_オブジェクト\_プロパティ\_設定             | OnSetPropertyValues      | デバイスでは、指定されたプロパティ値を設定します。                                                              |
-| WPD\_コマンド\_オブジェクト\_プロパティ\_取得\_属性 | OnGetPropertyAttributes  | 指定したオブジェクトでは、1 つまたは複数のプロパティの属性のコレクションを返します。                              |
-| WPD\_コマンド\_オブジェクト\_プロパティ\_削除          | OnDeleteProperties       | 指定したプロパティのキーによって識別されるプロパティを削除します。                                        |
+| WPD \_ コマンド \_ オブジェクトの \_ プロパティが \_ \_ サポートされています  | OnGetSupportedProperties | 指定されたオブジェクトのプロパティキーの配列を返します。                                                       |
+| WPD \_ コマンド \_ オブジェクトの \_ プロパティ \_ 取得             | OnGetPropertyValues      | ドライバーに渡されたプロパティキーに対応するプロパティ値のコレクションを返します。 |
+| WPD \_ コマンド \_ オブジェクトの \_ プロパティを \_ \_ すべて取得        | OnGetAllProperties       | 指定されたオブジェクトのすべてのプロパティ値を返します。                                                           |
+| WPD \_ コマンド \_ オブジェクトの \_ プロパティの \_ 設定             | OnSetPropertyValues      | デバイスで指定されたプロパティ値を設定します。                                                              |
+| WPD \_ コマンド \_ オブジェクト \_ プロパティ \_ の \_ 属性の取得 | OnGetPropertyAttributes  | 指定されたオブジェクトの1つ以上のプロパティの属性のコレクションを返します。                              |
+| WPD \_ コマンド \_ オブジェクトの \_ プロパティの \_ 削除          | OnDeleteProperties       | 指定されたプロパティキーによって識別されるプロパティを削除します。                                        |
 
 
 
-## <a name="span-idusingaccessscopewhensettingandretrievingpropertiesspanspan-idusingaccessscopewhensettingandretrievingpropertiesspanspan-idusingaccessscopewhensettingandretrievingpropertiesspanusing-access-scope-when-setting-and-retrieving-properties"></a><span id="Using_Access_Scope_when_Setting_and_Retrieving_Properties_"></span><span id="using_access_scope_when_setting_and_retrieving_properties_"></span><span id="USING_ACCESS_SCOPE_WHEN_SETTING_AND_RETRIEVING_PROPERTIES_"></span>設定するときに、アクセス スコープを使用して、プロパティを取得します。
+## <a name="span-idusing_access_scope_when_setting_and_retrieving_properties_spanspan-idusing_access_scope_when_setting_and_retrieving_properties_spanspan-idusing_access_scope_when_setting_and_retrieving_properties_spanusing-access-scope-when-setting-and-retrieving-properties"></a><span id="Using_Access_Scope_when_Setting_and_Retrieving_Properties_"></span><span id="using_access_scope_when_setting_and_retrieving_properties_"></span><span id="USING_ACCESS_SCOPE_WHEN_SETTING_AND_RETRIEVING_PROPERTIES_"></span>プロパティの設定および取得時にアクセススコープを使用する
 
 
-WpdServiceSampleDriver で 6 つのプロパティのハンドラーに含まれるコードは、WpdHelloWorld ドライバーに含まれるコードとほぼ同じです。 例外は*サービス レベルのアクセス スコープ*Windows 7 の新しい概念であります。
+Wpdの Am氏ドライバーの6つのプロパティハンドラーにあるコードは、WpdHelloWorld ドライバーに含まれるコードとほぼ同じです。 この例外は、Windows 7 の新しい概念である*サービスレベルのアクセススコープ*です。
 
-サービス レベルのアクセス スコープ列挙を指定した親サービスの下にあるオブジェクトのみを制限するためのドライバーを使用できます。 ドライバーは、アクセス スコープをサポートしているし、アプリケーションが呼び出す、 **IPortableDeviceService::Open**メソッド (を渡すことによって、特定のサービスのプラグ アンド プレイ識別子)、アプリケーションのみがアクセスできる、デバイスでは、特定のサービスそのサービスの子オブジェクト。 アクセス スコープの実装は、ドライバーによって異なる場合があります。 WpdServiceSampleDriver スコープ、(より制限の少ない)、デバイス レベルの 2 つの基本的なレベルを定義するビットマスクを使用して、この概念を示していて、サービス レベル (より制限の厳しい)。 次のコード例では、これらのレベルの違いを示します。
+サービスレベルのアクセススコープを使用すると、ドライバーは、特定の親サービスで検出されたオブジェクトのみに列挙を制限できます。 ドライバーがアクセススコープをサポートしていて、アプリケーションが**Iportabledeviceservice:: Open**メソッドを (特定のサービスのプラグアンドプレイ識別子を渡して) 呼び出す場合、アプリケーションは、そのサービスのデバイス、指定されたサービス、および子オブジェクトにのみアクセスできます。 アクセススコープの実装は、ドライバーによって異なる場合があります。 Wpdservices Amwadriver は、ビットマスクを使用して、2つの基本レベルのスコープ、デバイスレベル (制限の緩い)、およびサービスレベル (より制限の厳しい) を定義することで、この概念を示しています。 次のコード例は、これらのレベルの違いを示しています。
 
 ```ManagedCPlusPlus
 // Access Scope is a bit mask, where each bit enables access to a particular scope
@@ -47,7 +47,7 @@ typedef enum tagACCESS_SCOPE
 }ACCESS_SCOPE;
 ```
 
-ドライバーとフェイク オブジェクトは、列挙型のツリーを設定するときに、 **FakeContent::RequiredScope**各コンテンツ オブジェクトのメンバーは、適切なスコープで初期化されます。 たとえば、アドレス帳サービス レベルのアクセスのみに制限されている連絡先オブジェクトを初期化できます。
+ドライバーが列挙ツリーにフェイクオブジェクトを設定すると、各コンテンツオブジェクトの**Fakecontent:: RequiredScope**メンバーが適切なスコープで初期化されます。 たとえば、Contacts オブジェクトを初期化して、サービスレベルのアクセスのみに制限することができます。
 
 ```ManagedCPlusPlus
 class FakeContactContent : public FakeContent
@@ -64,7 +64,7 @@ public:
 }
 ```
 
-次のコード例から、 **OnGetSupportedProperties**ハンドラー関数が適切なプロパティのキーが返されたことを確認するアクセス スコープの使用方法を示しています。
+次の**OnGetSupportedProperties** handler 関数のコード例は、正しいプロパティキーが返されたことを確認するためにアクセススコープがどのように使用されたかを示しています。
 
 ```ManagedCPlusPlus
     // Add supported property keys for the specified object to the collection
@@ -76,7 +76,7 @@ public:
     }
 ```
 
-コードで、前の例では、 **FakeDevice::GetSupportedProperties**メソッドは、ファイルにある*FakeDevice.cpp*します。
+前の例のコードでは、 **fakedevice:: GetSupportedProperties**メソッドを呼び出しています。このメソッドは、ファイル*fakedevice .cpp*にあります。
 
 ```ManagedCPlusPlus
 HRESULT FakeDevice::GetSupportedProperties(
@@ -108,7 +108,7 @@ HRESULT FakeDevice::GetSupportedProperties(
 }
 ```
 
-このメソッドは、最初に、指定したオブジェクトの内容を取得しようとします。 次に、メソッドが、コンテンツを取得できない場合は、要求されたプロパティのキーを取得します。**FakeContent::GetContent**スコープを確認し、アプリケーションがデバイス全体にわたるアクセス) などの緩いアクセス スコープを提供する場合は、アクセスを拒否します。
+このメソッドは、まず、指定されたオブジェクトのコンテンツを取得しようとします。 次に、メソッドがコンテンツを取得できる場合は、要求されたプロパティキーを取得します。**Fakecontent::** は、スコープを確認し、アプリケーションが制限の緩いアクセススコープ (デバイス全体のアクセスなど) を提供する場合にアクセスを拒否します。
 
 ```ManagedCPlusPlus
 HRESULT FakeContent::GetContent(
@@ -138,11 +138,11 @@ bool FakeContent::CanAccess(
 }
 ```
 
-## <a name="span-idrelatedtopicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
+## <a name="span-idrelated_topicsspanrelated-topics"></a><span id="related_topics"></span>関連トピック
 
 
 ****
-[WpdBasicHardwareDriverSample](the-wpdbasichardwaredriver-sample.md)
+[Wpdbasicハードウェアのサンプル](the-wpdbasichardwaredriver-sample.md)
 
 [WPD ドライバーのサンプル](the-wpd-driver-samples.md)
 

@@ -11,14 +11,14 @@ keywords:
 - タスクオフロード WDK TCP/IP トランスポート
 - 接続オフロード WDK TCP/IP トランスポート
 - パケット WDK ネットワーク、TCP/IP オフロード
-ms.date: 04/20/2017
+ms.date: 06/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c55134ba2d320e4791dbb412a6450ca45bfd1f6
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: 68803e54f329221257f4cb0205918f5e186f718d
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565634"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264455"
 ---
 # <a name="tcpip-offload-overview"></a>TCP/IP オフロードの概要
 
@@ -39,17 +39,19 @@ Windows Vista 以降、Windows オペレーティングシステムでは、次�
 
 -   接続のオフロード
 
+Windows 10 バージョン1912以降では、Windows は UDP セグメント化オフロード (USO) もサポートしています。
+
 Windows Vista 以降で提供される TCP/IP トランスポートでは、IPv4 と IPv6 の両方のパケットに対して TCP/IP オフロードサービスがサポートされています。
 
 NDIS 6.0 以降のミニポートドライバーでは、マルチプロトコルドライバー環境で TCP/IP オフロードサービスがサポートされています。 TCP/IP オフロード対応のミニポートアダプターにバインドされている複数の NDIS 6.0 およびそれ以降のプロトコルドライバーは、TCP/IP オフロードサービスを構成できます。
 
-このセクションの内容:
+ここでは、以下の内容について説明します。
 
--   [Tcp/ip オフロードの NET\_BUFFER\_LIST 情報へのアクセス](accessing-tcp-ip-offload-net-buffer-list-information.md)
+-   [TCP/IP オフロードの NET \_ BUFFER \_ LIST 情報へのアクセス](accessing-tcp-ip-offload-net-buffer-list-information.md)
 -   [TCP/IP オフロード管理者インターフェイスの使用](using-the-tcp-ip-offload-administrator-interface.md)
--   [オフロード対応ミニポートドライバーのセキュリティガイドライン](security-guidelines-for-offload-capable-miniport-drivers.md)
--   [TCP/IP タスクオフロード](task-offload.md)
--   [接続のオフロード](connection-offload.md)
+-   [オフロード対応ミニポート ドライバーのセキュリティ ガイドライン](security-guidelines-for-offload-capable-miniport-drivers.md)
+-   [TCP/IP タスク オフロード](task-offload.md)
+-   [接続オフロード](connection-offload.md)
 
  
 

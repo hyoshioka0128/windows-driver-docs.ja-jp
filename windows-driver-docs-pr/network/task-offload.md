@@ -1,6 +1,6 @@
 ---
-title: TCP/IP タスクオフロードの概要
-description: TCP/IP タスクオフロードの概要
+title: TCP/IP タスク オフロードの概要
+description: TCP/IP タスク オフロードの概要
 ms.assetid: e73cc4e8-574b-438b-acd2-f0aaf5c20589
 keywords:
 - TCP/IP オフロード WDK ネットワーク、タスクオフロード
@@ -10,14 +10,14 @@ keywords:
 - 機能 WDK TCP/IP オフロード
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 2757c34d2b720fc5173d47229c9c1aff6b8c6083
-ms.sourcegitcommit: fec48fa5342d9cd4cd5ccc16aaa06e7c3d730112
+ms.openlocfilehash: b276bc47df14f2c9c231e17a6276c7a480c74057
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69565696"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264439"
 ---
-# <a name="tcpip-task-offload-overview"></a>TCP/IP タスクオフロードの概要
+# <a name="tcpip-task-offload-overview"></a>TCP/IP タスク オフロードの概要
 
 
 
@@ -69,17 +69,22 @@ Windows 8 と windows Server 2012 以降では、Windows オペレーティン�
 -   Receive Side Scaling (RSS)
 -   仮想マシン キュー (VMQ)
 
-このセクションの内容:
+### <a name="udp-segmentation-offload-uso"></a>UDP セグメント化オフロード (USO)
 
--   [タスクオフロード機能の決定](determining-task-offload-capabilities.md)
--   [タスクオフロードサービスの有効化と無効化](enabling-and-disabling-task-offload-services.md)
--   [現在のタスクのオフロード設定を確認しています](determining-the-current-task-offload-settings.md)
--   [タスクのオフロードの種類の組み合わせ](combining-types-of-task-offloads.md)
--   [レジストリ値を使用してタスクオフロードを有効または無効にする](using-registry-values-to-enable-and-disable-task-offloading.md)
--   [チェックサムタスクのオフロード](offloading-checksum-tasks.md)
+Windows 10 バージョン1912以降では、Windows は[UDP セグメント化オフロード (USO)](udp-segmentation-offload-uso-.md)をサポートしています。 USO を使用すると、ネットワークカードは、ネットワークメディアの最大転送単位 (MTU) サイズを超える UDP データグラムのセグメント化をオフロードできます。
+
+ここでは、以下の内容について説明します。
+
+-   [タスク オフロード機能の判断](determining-task-offload-capabilities.md)
+-   [タスク オフロード サービスの有効化と無効化](enabling-and-disabling-task-offload-services.md)
+-   [現在のタスク オフロード設定の判断](determining-the-current-task-offload-settings.md)
+-   [タスク オフロードの種類の組み合わせ](combining-types-of-task-offloads.md)
+-   [タスク オフロードを有効および無効にするレジストリ値の使用](using-registry-values-to-enable-and-disable-task-offloading.md)
+-   [チェックサム タスクのオフロード](offloading-checksum-tasks.md)
 -   [IPsec タスクのオフロード](offloading-ipsec-tasks.md)
     - \[IPsec タスクオフロード機能は非推奨とされており、使用しないでください。\]
 -   [大きな TCP パケットのセグメント化のオフロード](offloading-the-segmentation-of-large-tcp-packets.md)
+-   [UDP セグメント化オフロード (USO)](udp-segmentation-offload-uso-.md)
 
  
 

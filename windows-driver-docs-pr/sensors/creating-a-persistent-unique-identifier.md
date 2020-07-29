@@ -1,20 +1,20 @@
 ---
-title: センサーの永続的な一意識別子の作成
-description: センサーの永続的な一意識別子の作成
+title: センサーの永続的な一意識別子を作成する (以前のバージョン)
+description: センサーの永続的な一意識別子を作成する (以前のバージョン)
 ms.assetid: 09ff583e-6bb5-4812-ae3b-970dac671e39
 ms.date: 07/20/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fa27226dd42f64517508d29ea2764d31abb9ce
-ms.sourcegitcommit: 4b7a6ac7c68e6ad6f27da5d1dc4deabd5d34b748
+ms.openlocfilehash: ff2f246ab8953bd6589a16c23c0e87940d93dacd
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72837627"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264447"
 ---
-# <a name="creating-a-persistent-unique-identifier-for-a-sensor"></a>センサーの永続的な一意識別子の作成
+# <a name="creating-a-persistent-unique-identifier-for-a-sensor-previous-version"></a>センサーの永続的な一意識別子を作成する (以前のバージョン)
 
 
-ドライバーは、センサーごとに永続的な一意識別子 (PUID) を作成する必要があります。 PUID は、セッション間で格納され、デバイス上のオブジェクトを一意に識別する GUID 値です。 ドライバーは、センサー\_プロパティ\_永続的\_一意の\_ID という名前のプロパティを照会したときに、PUID 値を返す必要があります。 デバイスに複数のセンサーが含まれている場合は、各センサーに独自の PUID が割り当てられている必要があります。 アプリケーションは、センサー API で[ISensor:: GetID](https://go.microsoft.com/fwlink/p/?linkid=157812)メソッドを呼び出すことによって、この ID を取得できます。
+ドライバーは、センサーごとに永続的な一意識別子 (PUID) を作成する必要があります。 PUID は、セッション間で格納され、デバイス上のオブジェクトを一意に識別する GUID 値です。 センサープロパティの永続的な一意の ID という名前のプロパティを照会すると、ドライバーは PUID の値を返す必要があり \_ \_ \_ \_ ます。 デバイスに複数のセンサーが含まれている場合は、各センサーに独自の PUID が割り当てられている必要があります。 アプリケーションは、センサー API で[ISensor:: GetID](https://go.microsoft.com/fwlink/p/?linkid=157812)メソッドを呼び出すことによって、この ID を取得できます。
 
 センサーがコンピューターに初めて接続し、後で使用するためにこの値を保存するときに、センサーごとに新しい PUID を作成する必要があります。
 

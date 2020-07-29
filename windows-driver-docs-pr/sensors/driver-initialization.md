@@ -4,59 +4,59 @@ description: ドライバーの初期化
 ms.assetid: 9886BBBC-7EE5-45AF-AEDD-75C0885C622B
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ecc49488e52a51cc37dd658c71740a486534a5b7
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: cdde029776cb127adc8336d4d884b3ee454311dd
+ms.sourcegitcommit: 9102e34c3322d8697dbb6f9a1d78879147a73373
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63377788"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87264449"
 ---
 # <a name="driver-initialization"></a>ドライバーの初期化
 
 
-ドライバーの初期化では、ユーザー モード ドライバーの機能のより複雑な段階の 1 つです。 ドライバーのサンプルでは、コンポーネントの最も、全部ではありませんが接触します。
+ドライバーの初期化は、ユーザーモードドライバーの機能のより複雑なフェーズの1つです。 これは、サンプルドライバーのコンポーネントのほとんど (すべてではない場合) に接しています。
 
 ### <a name="acpi-configuration-and-initialization"></a>ACPI の構成と初期化
 
 | モジュール               | クラス/インターフェイス |
 |----------------------|-----------------|
-| SpbAccelerometer.asl | なし             |
+| SpbAccelerometer asl | なし             |
 
  
 
-ドライバーのサンプルでは、センサーが完全に I2C バスに接続されているように設計されています。 プラグ アンド プレイをサポートしているのではなく、Advanced Configuration and Power Interface (ACPI) をサポートします。
+このサンプルドライバーは、センサーが I2C バスに永続的に接続するように設計されています。 プラグアンドプレイをサポートする代わりに、Advanced Configuration and Power Interface (ACPI) をサポートしています。
 
-ACPI は、Windows デバイスの構成と電源管理を制御できます。 ACPI の仕様には、テーブルの定義の Windows デバイスと周辺機器は、システム ボードに接続されているそのリンクがあります。 システムの説明の差別化されたテーブル (あります)、システムに接続されている周辺機器の説明、センサーなど。 ACPI 機械語 (AML) としての既知のバイナリ形式で格納されます。 します。 テーブルの詳細については、ACPI システム説明テーブルのトピックを参照してください。 (一部のシステムが、周辺機器を記述する、セカンダリ システムの説明テーブル (SSDT) をも使用することに注意してください)。
+ACPI を使用すると、Windows はデバイスの構成と電源管理を制御できます。 ACPI 仕様には、Windows デバイスと、システムボードに接続されている周辺機器をリンクするテーブルの定義があります。 差別化システム説明表 (DSDT) は、システムに接続されている周辺機器 (センサーを含む) を示します。 これは、ACPI コンピューター言語 (AML) と呼ばれるバイナリ形式で格納されます。 DSDT テーブルの詳細については、「ACPI システムの説明表」を参照してください。 (一部のシステムでは、周辺機器を示すために "セカンダリシステムの説明" テーブル (SSDT) も使用されています)。
 
-SoC の Windows デバイス、センサー デバイスとドライバーをインストールするには、対応するノードでします。 テーブルを更新する必要があります。 このノードでは、サンプル デバイスのコント ローラーとコネクタに関する情報があります。 Windows とドライバーの使い方、データ ノードで次に示します。
+Windows SoC デバイスにセンサーデバイスとドライバーをインストールするには、対応するノードを使用して DSDT テーブルを更新する必要があります。 このノードには、サンプルデバイスのコントローラーとコネクタに関する情報が含まれています。 Windows とドライバーがノードのデータを使用する方法を次に示します。
 
-1.  1. プラグ アンド プレイ (PnP) マネージャーでは、ACPI ドライバーからデバイスの接続情報を取得します。
-2.  PnP マネージャーは、bus 接続を表す接続 ID を作成します。
-3.  PnP マネージャーでは、ハードウェア リソースとしてサンプル ドライバーに接続 ID を渡します。
-4.  ドライバーのサンプルでは、接続 ID を使用して、センサー デバイスへの論理接続を開くし、接続ハンドルを取得します。
-5.  ドライバーは、I/O の対象の要求がデバイスに送信されますこのハンドルを指定します。
+1.  プラグアンドプレイ (PnP) マネージャーは、ACPI ドライバーからデバイス接続情報を取得します。
+2.  PnP マネージャーは、バス接続を表す接続 ID を作成します。
+3.  PnP マネージャーは、接続 ID をハードウェアリソースとしてサンプルドライバーに渡します。
+4.  サンプルドライバーでは、接続 ID を使用してセンサーデバイスへの論理接続を開き、接続のハンドルを取得します。
+5.  ドライバーは、このハンドルを、デバイスに送信する i/o 要求のターゲットとして指定します。
 
-### <a name="updating-the-dsdt-table"></a>します。 テーブルの更新
+### <a name="updating-the-dsdt-table"></a>DSDT テーブルを更新しています
 
-します。 テーブルを更新する方法を説明する手順については、を参照してください、[サンプル デバイスとドライバーをインストール、サメ Cove](installing-the-sample-device-and-driver-on-your-sharks-cove-board.md)トピック。
+DSDT テーブルを更新する方法を説明する手順については、[サメ Cove のサンプルデバイスとドライバーのインストール](installing-the-sample-device-and-driver-on-your-sharks-cove-board.md)に関するトピックを参照してください。
 
-### <a name="modifying-the-sample-asl-file"></a>サンプルの ASL ファイルを変更します。
+### <a name="modifying-the-sample-asl-file"></a>サンプルの ASL ファイルの変更
 
-別のデバイスをサポートするために、サンプル ドライバーを変更する場合は、サンプルの ASL ファイルに対応する更新プログラムが行います。 更新プログラムのほとんどがなります、 \_I2C を指定したファイルと、デバイスが必要な GPIO リソースの CRS セクション。 一意の提供する必要も\_HID エントリ、更新された INF ファイルに対応するエントリと一致します。
+別のデバイスをサポートするようにサンプルドライバーを変更する場合は、サンプルの ASL ファイルに対して対応する更新を行います。 ほとんどの更新は、 \_ デバイスに必要な I2C および GPIO リソースを指定するファイルの CRS セクションに対して行われます。 また、 \_ 更新された INF ファイル内の対応するエントリと一致する一意の HID エントリを指定する必要もあります。
 
-### <a name="decoding-i2c-or-gpio-resources"></a>GPIO、I2C、またはリソースのデコード
+### <a name="decoding-i2c-or-gpio-resources"></a>I2C リソースまたは GPIO リソースのデコード
 
-/Resdecode オプションを指定しない場合、 \_CRS セクションには、バイナリの blob にが含まれます。 このセクションを人間が判読できるテキストに変換するには、次のように/resdecode が適用されます。Asl.exe /tab:dsdt /resdecode
+/Resデコードオプションを指定しない場合、 \_ CRS セクションにバイナリ blob が含まれます。 このセクションを人間が判読できるテキストに変換するには、次に示すように、/Asl.exe を適用します。
 
-### <a name="updating-the-windows-setup-information-file"></a>Windows のセットアップ情報ファイルの更新
+### <a name="updating-the-windows-setup-information-file"></a>Windows セットアップ情報ファイルを更新しています
 
 | モジュール               | クラス/インターフェイス |
 |----------------------|-----------------|
-| SpbAccelerometer.inf | なし             |
+| SpbAccelerometer | なし             |
 
  
 
-だけでなく、します。 テーブルを更新するには、Windows セットアップ情報ファイル、デバイスが ACPI をサポートしていることを指定するには、(INF) を更新する必要があります。 センサーは常に、ACPI で列挙、ために、INF ファイル内のハードウェア識別子は"ACPI"文字列を含める必要があります。
+DSDT テーブルを更新するだけでなく、Windows セットアップ情報ファイル (INF) を更新して、デバイスで ACPI がサポートされるように指定する必要があります。 センサーは常に ACPI によって列挙されるため、INF ファイル内のハードウェア識別子には "ACPI" 文字列が含まれている必要があります。
 
 ```cpp
 ; =================== Manufacturer/Models sections =======================
@@ -68,263 +68,262 @@ SoC の Windows デバイス、センサー デバイスとドライバーをイ
 %SpbAccelerometer.DeviceDesc% = SpbAccelerometer_Install,ACPI\SpbAccelerometer
 ```
 
-### <a name="initializing-the-driver-and-device"></a>ドライバーとデバイスの初期化
+### <a name="initializing-the-driver-and-device"></a>ドライバーとデバイスを初期化しています
 
 | モジュール      | クラス/インターフェイス |
 |-------------|-----------------|
-| DllMain.cpp | なし             |
-| Device.cpp  | CMyDevice       |
-| Driver.cpp  | CMyDriver       |
-| Queue.cpp   | CMyQueue        |
+| DllMain | なし             |
+| デバイス .cpp  | CMyDevice       |
+| ドライバー .cpp  | CMyDriver       |
+| キュー .cpp   | CMyQueue        |
 
  
 
-以下の方法は、早期の初期化フェーズ中にドライバーまたは Windows によって呼び出されます。 デバイスの事前初期化メソッドは、ドライバーでサポートされる任意のデバイスに適用されます。 Device.cpp モジュールに表示されます。
+次のメソッドは、初期初期化フェーズ中に Windows またはドライバーによって呼び出されます。 デバイスの事前初期化方法は、ドライバーでサポートされているすべてのデバイスに適用されます。 これらは、モジュールの .cpp に表示されます。
 
-|     | メソッド                        | によって呼び出されます                                                         | 目的                                                                                                       |
+|  手順   | メソッド                        | 呼び出し元                                                         | 目的                                                                                                       |
 |-----|-------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| 1   | **DllGetClassObject**         | WUDFHost.exe                                                       | ドライバーのクラスのオブジェクトを取得します。 (COM DLL に必要)。                                                   |
-| 2   | **CMyDevice::OnQueryRemove**  | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 |                                                                                                               |
-| 3   | **CMyDriver::OnDeviceAdd**    | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | デバイスが追加されたことをドライバーに通知します。                                                             |
-| 4   | **CMyDevice::Configure**      | **CMyDriver::OnDeviceAdd**                                         | デバイスのキューおよび対応するコールバック オブジェクトを構成します。                                        |
-| 5   | **CMyQueue:CreateInstance**   | **CMyDevice::Configure**                                           | デバイスのキューのコールバックのインスタンスを作成します                                                            |
-| 6   | **CMyDevice::CreateInstance** | **CMyDevice::OnDeviceAdd**                                         | (この例では、加速度計) で特定のデバイスに対応するデバイス オブジェクトのインスタンスを作成します。 |
-| 7   | **CMyDevice::Initialize**     | **CMyDevice::CreateInstance**                                      | デバイスのコールバック オブジェクトを初期化します。                                                                       |
+| 1   | **DllGetClassObject**         | WUDFHost.exe                                                       | ドライバーのクラスオブジェクトを取得します。 (すべての COM DLL に必要です)。                                                   |
+| 2   | **CMyDevice:: OnQueryRemove**  | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 |                                                                                                               |
+| 3   | **CMyDriver:: OnDeviceAdd**    | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | デバイスが追加されたことをドライバーに通知します。                                                             |
+| 4   | **CMyDevice:: Configure**      | **CMyDriver:: OnDeviceAdd**                                         | デバイスのキューおよび対応するコールバックオブジェクトを構成します。                                        |
+| 5   | **CMyQueue: CreateInstance**   | **CMyDevice:: Configure**                                           | デバイスのキューコールバックのインスタンスを作成します。                                                            |
+| 6   | **CMyDevice:: CreateInstance** | **CMyDevice:: OnDeviceAdd**                                         | 特定のデバイス (この場合は加速度計) に対応するデバイスオブジェクトのインスタンスを作成します。 |
+| 7   | **CMyDevice:: Initialize**     | **CMyDevice:: CreateInstance**                                      | デバイスコールバックオブジェクトを初期化します。                                                                       |
 
  
 
-### <a name="establishing-a-data-connection"></a>データ接続を確立します。
+### <a name="establishing-a-data-connection"></a>データ接続の確立
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
 
  
 
-以下の方法は、デバイス オブジェクトを準備する、ACPI の構成データを取得し、データ接続の割り込みを作成するために初期化中に、ドライバーによって呼び出されます。 サンプル ドライバーの場合は、これらのメソッドを AccelerometerDevice.cpp ファイルにあります。
+次のメソッドは、初期化時にドライバーによって呼び出され、デバイスオブジェクトを準備し、ACPI 構成データを取得して、データ接続の割り込みを作成します。 サンプルドライバーでは、これらのメソッドは AccelerometerDevice ファイルにあります。
 
-コンパスなどの別のデバイスをサポートするドライバーのサンプルを移植する場合は、並列のモジュール、CompassDevice.cpp を作成します。 CCompassDevice クラスを使用して、CAccelerometerDevice クラスを交換し、デバイスのオブジェクト、データ、および割り込みをサポートするために、サンプルのモジュール内のメソッドを変更します。
+コンパスなどの別のデバイスをサポートするようにサンプルドライバーを移植している場合は、parallel モジュールを作成します。 CAccelerometerDevice クラスを CCompassDevice クラスに置き換え、デバイスのオブジェクト、データ、および割り込みをサポートするように、サンプルのモジュール内のメソッドを修正します。
 
-|     | メソッド                                                 | によって呼び出されます                                                         | 目的                                                                                                                |
+| 手順    | メソッド                                                 | 呼び出し元                                                         | 目的                                                                                                                |
 |-----|--------------------------------------------------------|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                       | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | ドライバーによって特定のデバイスがアクセスできるようにするために必要な操作を開始します。                                       |
-| 2   | **CSensorDdi::Initialize**                             | **CMyDevice::OnPrepareHardware**                                   | 作成し、センサー デバイス オブジェクトを初期化します。                                                                        |
-| 3   | **CSensorDevice::Initialize**                          | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。                                   |
-| 4   | **CAccelerometerDevice::InitializeDevice**             | **CSensorDevice::Initialize**                                      | 加速度計のデバイス オブジェクトを初期化します。                                                                           |
-| 5   | **CAccelerometerDevice::GetConfigurationData**         | **CAccelerometerDevice::InitializeDevice**                         | ACPI から構成データの取得を開始します。                                                               |
-| 6   | **CAccelerometerDevice::PrepareInputParametersForDsm** | **CAccelerometerDevice::GetConfigurationData**                     | ACPI の入力バッファーを確保します (ACPI\_EVAL\_入力\_バッファー) デバイス固有メソッド (DSM) 関数を呼び出す前にします。 |
-| 7   | **CAccelerometerDevice::ParseAcpiOutputBuffer**        | **CAccelerometerDevice::GetConfigurationData**                     | ACPI の出力バッファーに返された構成データの解析 (ACPI\_EVAL\_出力\_バッファー)。                |
-| 8   | **CAccelerometerDevice::ParseResources**               | **CAccelerometerDevice::InitializeDevice**                         | I2C のシリアル接続をサポートすることを確認し、デバイス リソースを解析します。                                        |
-| 9   | **CAccelerometerDevice::ConnectInterrupt**             | **CAccelerometerDevice::ParseResources**                           | データ接続の割り込みを作成します。                                                                                 |
+| 1   | **CMyDevice:: On Hardware**                       | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。                                       |
+| 2   | **CSensorDdi:: Initialize**                             | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成し、初期化します。                                                                        |
+| 3   | **CSensorDevice:: Initialize**                          | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。                                   |
+| 4   | **CAccelerometerDevice:: InitializeDevice**             | **CSensorDevice:: Initialize**                                      | 加速度計 device オブジェクトを初期化します。                                                                           |
+| 5   | **CAccelerometerDevice::GetConfigurationData**         | **CAccelerometerDevice:: InitializeDevice**                         | ACPI からの構成データの取得を開始します。                                                               |
+| 6   | **CAccelerometerDevice::P repareInputParametersForDsm** | **CAccelerometerDevice::GetConfigurationData**                     | \_ \_ \_ デバイス固有のメソッド (DSM) 関数を呼び出す前に、acpi 入力バッファー (acpi EVAL 入力バッファー) を準備します。 |
+| 7   | **CAccelerometerDevice::P arseAcpiOutputBuffer**        | **CAccelerometerDevice::GetConfigurationData**                     | ACPI 出力バッファー (ACPI \_ EVAL output buffer) で返された構成データを解析し \_ \_ ます。                |
+| 8   | **CAccelerometerDevice::P arseResources**               | **CAccelerometerDevice:: InitializeDevice**                         | デバイスリソースを解析して、シリアル I2C 接続をサポートしていることを確認します。                                        |
+| 9   | **CAccelerometerDevice:: ConnectInterrupt**             | **CAccelerometerDevice::P arseResources**                           | データ接続の割り込みを作成します。                                                                                 |
 
  
 
-### <a name="initializing-the-spb-request-object"></a>SPB 要求オブジェクトの初期化
+### <a name="initializing-the-spb-request-object"></a>SPB 要求オブジェクトを初期化しています
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SpbRequest.cpp          | CSpbRequest          |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SpbRequest. .cpp          | CSpbRequest          |
 
  
 
-以下の方法は、基になる SPB コント ローラーにファイル ハンドルを開くための初期化中に、ドライバーによって呼び出されます。 (このシーケンスの最初の 4 つのメソッドは、データ接続シーケンスの最初の 4 つのメソッドと同じことに注意してください)。
+次のメソッドは、初期化中にドライバーによって呼び出され、基になる SPB コントローラーへのファイルハンドルを開きます。 (このシーケンスの最初の4つのメソッドは、データ接続シーケンスの最初の4つのメソッドと同じであることに注意してください)。
 
-|     | メソッド                                      | によって呼び出されます                                                         | 目的                                                                                                                                          |
+| 手順   | メソッド                                      | 呼び出し元                                                         | 目的                                                                                                                                          |
 |-----|---------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**            | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | 特定のデバイスがアクセスできるようにするドライバーが必要な操作を開始します。                                                                |
-| 2   | **CSensorDdi::Initialize**                  | **CMyDevice::OnPrepareHardware**                                   | 作成して、センサー デバイス オブジェクトを初期化します。                                                                                                |
-| 3   | **CSensorDevice::Initialize**               | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。                                                             |
-| 4   | **CAccelerometerDevice::InitializeDevice**  | **CSensorDevice::Initialize**                                      | 加速度計のデバイス オブジェクトを初期化します。                                                                                                     |
-| 5   | **CAccelerometerDevice::InitializeRequest** | **CAccelerometerDevice::InitializeDevice**                         | (ドライバーが以前に取得されるリソース ハブ パスと接続 ID を使用して) SPB 要求オブジェクトの初期化プロセスを開始します。 |
-| 6   | **CSpbRequest::Initialize**                 | **CAccelerometerDevice::InitializeRequest**                        | 基になる SPB へのファイル ハンドルを開く                                                                                                        |
+| 1   | **CMyDevice:: On Hardware**            | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。                                                                |
+| 2   | **CSensorDdi:: Initialize**                  | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成し、初期化します。                                                                                                |
+| 3   | **CSensorDevice:: Initialize**               | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。                                                             |
+| 4   | **CAccelerometerDevice:: InitializeDevice**  | **CSensorDevice:: Initialize**                                      | 加速度計 device オブジェクトを初期化します。                                                                                                     |
+| 5   | **CAccelerometerDevice::InitializeRequest** | **CAccelerometerDevice:: InitializeDevice**                         | SPB 要求オブジェクトの初期化プロセスを開始します (リソースハブのパスと、ドライバーが以前に取得した接続 ID を使用します)。 |
+| 6   | **CSpbRequest:: Initialize**                 | **CAccelerometerDevice::InitializeRequest**                        | 基になる SPB へのファイルハンドルを開きます。                                                                                                        |
 
  
 
-### <a name="initializing-the-supported-sensor-properties-and-data-fields"></a>サポートされているセンサーのプロパティとデータ フィールドの初期化
+### <a name="initializing-the-supported-sensor-properties-and-data-fields"></a>サポートされているセンサーのプロパティとデータフィールドを初期化しています
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SpbRequest.cpp          | CSpbRequest          |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SpbRequest. .cpp          | CSpbRequest          |
 
  
 
-以下の方法は、初期化プロパティとセンサーでサポートされているデータ フィールドを取得中に、ドライバーによって呼び出されます。 Windows センサー プラットフォームでは、加速度計プロパティは、読み取りまたは読み取り/書き込みのセンサーのレポート間隔や、最小のサポートされているレポートの間隔などのデータに対応します。 データ フィールドは、その x、Y、および z 軸に沿って加速度計の実際の測定値に対応します。 (このシーケンスの最初の 3 つのメソッドは、前のデータ接続、および SPB の要求オブジェクトのシーケンスの最初の 3 つのメソッドと同じことに注意してください)。
+次のメソッドは、初期化時にドライバーによって呼び出され、センサーによってサポートされるプロパティとデータフィールドを取得します。 Windows センサープラットフォームの場合、加速度計プロパティは、センサーのレポート間隔やサポートされる最小レポート間隔など、読み取りまたは読み取り/書き込みのデータに対応します。 データフィールドは、X、Y、Z 軸に沿った実際の加速度計の読み取りに対応しています。 (このシーケンスの最初の3つのメソッドは、前のデータ接続の最初の3つのメソッドと、SPB の要求オブジェクトのシーケンスと同じであることに注意してください)。
 
-|     | メソッド                                             | によって呼び出されます                                                         | 目的                                                                                                               |
+| 手順  | メソッド                                             | 呼び出し元                                                         | 目的                                                                                                               |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | 特定のデバイスがアクセスできるようにするドライバーが必要な操作を開始します。                                     |
-| 2   | **CSensorDdi::Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 作成し、センサー デバイス オブジェクトを初期化します。                                                                      |
-| 3   | **CSensorDevice::Initialize**                      | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。                                  |
-| 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice::Initialize**                                      | 初期化を開始、 **IPortableDeviceValues**プロパティのキーとデータ フィールドの値を格納するオブジェクト。 |
-| 5   | **CSensorDevice::AddPropertyKeys**                 | **CSensorDevice::InitializeSensorDriverInterface**                 | サポートされているプロパティを反復処理し、追加、 **PROPERTYKEY**ごと。                                        |
-| 6   | **CAccelerometerDevice::GetSupportedProperties**   | **CSensorDevice::AddPropertyKeys**                                 | 取得、 **PROPERTYKEY**構造体が特定のデバイスのプロパティ。                                                |
-| 7   | **CSensorDevice::AddDataFieldKeys**                | **CSensorDevice::InitializeSensorDriverInterface**                 | サポートされているデータ フィールドを反復処理し、追加、 **PROPERTYKEY**ごと。                                       |
-| 8   | **CSensorDevice::GetSupportedDataFields**          | **CSensorDevice::AddDataFieldKeys**                                | 取得、 **PROPERTYKEY**の特定のデバイスのデータ フィールド。                                                         |
+| 1   | **CMyDevice:: On Hardware**                   | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。                                     |
+| 2   | **CSensorDdi:: Initialize**                         | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成して初期化します。                                                                      |
+| 3   | **CSensorDevice:: Initialize**                      | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。                                  |
+| 4   | **CSensorDevice:: InitializeSensorDriverInterface** | **CSensorDevice:: Initialize**                                      | プロパティキーと datafield 値を格納する**Iportabledevicevalues**オブジェクトの初期化を開始します。 |
+| 5   | **CSensorDevice:: AddPropertyKeys**                 | **CSensorDevice:: InitializeSensorDriverInterface**                 | サポートされているプロパティを反復処理し、それぞれの**Propertykey**を追加します。                                        |
+| 6   | **CAccelerometerDevice:: GetSupportedProperties**   | **CSensorDevice:: AddPropertyKeys**                                 | 指定されたデバイスのプロパティの**Propertykey**構造体を取得します。                                                |
+| 7   | **CSensorDevice:: AddDataFieldKeys**                | **CSensorDevice:: InitializeSensorDriverInterface**                 | サポートされているデータフィールドを反復処理し、それぞれに**Propertykey**を追加します。                                       |
+| 8   | **CSensorDevice:: GetSupportedDataFields**          | **CSensorDevice:: AddDataFieldKeys**                                | 指定されたデバイスのデータフィールドの**Propertykey**を取得します。                                                         |
 
  
 
-### <a name="initializing-the-persistent-unique-id-property"></a>永続的な一意の ID プロパティの初期化
+### <a name="initializing-the-persistent-unique-id-property"></a>永続的な一意の ID プロパティを初期化しています
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDevice.cpp        | CSensorDevice        |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SensorDevice .cpp        | CSensorDevice        |
 
  
 
-以下の方法は、センサーの永続的な一意の識別子 (PUID) を初期化するために初期化中に、ドライバーによって呼び出されます。 Windows を使用して、 **PUID**デバイス セッション間でデータを保持します。 (このシーケンスの最初の 4 つのメソッドは、前のプロパティとデータ フィールドのシーケンスの最初の 4 つのメソッドと同じことに注意してください)。
+次のメソッドは、初期化時にドライバーによって呼び出され、センサーの永続的な一意識別子 (PUID) を初期化します。 Windows では、 **PUID**を使用して、デバイスセッション間でデータを保持します。 (このシーケンスの最初の4つのメソッドは、前のプロパティとデータフィールドのシーケンスの最初の4つのメソッドと同じであることに注意してください)。
 
-|     | メソッド                                             | によって呼び出されます                                                         | 目的                                                                                                   |
+| 手順  | メソッド                                             | 呼び出し元                                                         | 目的                                                                                                   |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | 特定のデバイスがアクセスできるようにするドライバーが必要な操作を開始します。                         |
-| 2   | **CSensorDdi::Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 作成し、センサー デバイス オブジェクトを初期化します。                                                          |
-| 3   | **CSensorDevice::Initialize**                      | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。                      |
-| 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice::Initialize**                                      | プロパティのキーとデータ フィールドの値を格納するオブジェクトの初期化を開始します。               |
-| 5   | **CSensorDevice::SetUniqueID**                     | **CSensorDevice::InitializeSensorDriverInterface**                 | セッション間で永続的な一意識別子 (PUID)、ドライバーを使用してを取得するメソッドを呼び出します。 |
-| 6   | **CAcclerometerDevice::GetSensorObjectID**         | **CSensorDevice::SetUniqueID**                                     | 加速度計の永続的な識別子 ("ADXL345") を取得します。                                               |
+| 1   | **CMyDevice:: On Hardware**                   | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。                         |
+| 2   | **CSensorDdi:: Initialize**                         | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成して初期化します。                                                          |
+| 3   | **CSensorDevice:: Initialize**                      | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。                      |
+| 4   | **CSensorDevice:: InitializeSensorDriverInterface** | **CSensorDevice:: Initialize**                                      | プロパティキーと datafield 値を格納するオブジェクトの初期化を開始します。               |
+| 5   | **CSensorDevice:: SetUniqueID**                     | **CSensorDevice:: InitializeSensorDriverInterface**                 | ドライバーがセッション間で使用できる永続的な一意識別子 (PUID) を取得するメソッドを呼び出します。 |
+| 6   | **CAcclerometerDevice:: GetSensorObjectID**         | **CSensorDevice:: SetUniqueID**                                     | 加速度計の永続的な識別子 ("ADXL345") を取得します。                                               |
 
  
 
-### <a name="setting-the-default-property-values"></a>プロパティの値の既定の設定
+### <a name="setting-the-default-property-values"></a>既定のプロパティ値の設定
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDevice.cpp        | CSensorDevice        |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SensorDevice .cpp        | CSensorDevice        |
 
  
 
-Windows のセンサー プラットフォームでは、センサーの種類の既定のプロパティ値、製造元の名前、センサーのモデル、およびシリアル番号をサポートします。 SpbAccelerometer サンプルのコードでは、ドライバーとデバイスの初期化フェーズの一環としてこれらのプロパティを設定します。 以下の方法は、初期化、加速度計の既定値を設定中に、ドライバーによって呼び出されます。 (このシーケンスの最初の 4 つのメソッドは、プロパティ設定の前のシーケンスの最初の 4 つのメソッドと同じことに注意してください)。
+Windows センサープラットフォームでは、センサーの種類、製造元の名前、センサーモデル、およびシリアル番号の既定のプロパティ値がサポートされています。 SpbAccelerometer サンプルのコードでは、ドライバーとデバイスの初期化フェーズの一部としてこれらのプロパティを設定します。 次のメソッドは、初期化中に、加速度計の既定値を設定するために、ドライバーによって呼び出されます。 (このシーケンスの最初の4つのメソッドは、前のプロパティ設定シーケンスの最初の4つのメソッドと同じであることに注意してください)。
 
-|     | メソッド                                             | によって呼び出されます                                                         | 目的                                                                                           |
+| 手順   | メソッド                                             | 呼び出し元                                                         | 目的                                                                                           |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | 特定のデバイスがアクセスできるようにするドライバーが必要な操作を開始します。                 |
-| 2   | **CSensorDdi::Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 作成し、センサー デバイス オブジェクトを初期化します。                                                   |
-| 3   | **CSensorDevice::Initialize**                      | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。              |
-| 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice::Initialize**                                      | プロパティのキーとデータ フィールドの値を格納するオブジェクトの初期化を開始します。       |
-| 5   | **CAccelerometerDevice::SetDefaultPropertyValues** | **CSensorDevice::InitializeSensorDriverInterface**                 | 既定の加速度計 (製造元、モデル、シリアル番号など) のプロパティ値を設定します。 |
+| 1   | **CMyDevice:: On Hardware**                   | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。                 |
+| 2   | **CSensorDdi:: Initialize**                         | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成し、初期化します。                                                   |
+| 3   | **CSensorDevice:: Initialize**                      | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。              |
+| 4   | **CSensorDevice:: InitializeSensorDriverInterface** | **CSensorDevice:: Initialize**                                      | プロパティキーと datafield 値を格納するオブジェクトの初期化を開始します。       |
+| 5   | **CAccelerometerDevice:: SetDefaultPropertyValues** | **CSensorDevice:: InitializeSensorDriverInterface**                 | 加速度計 (製造元、モデル、シリアル番号など) の既定のプロパティ値を設定します。 |
 
  
 
-### <a name="retrieving-the-default-writeable-properties"></a>既定の書き込み可能なプロパティを取得します。
+### <a name="retrieving-the-default-writeable-properties"></a>既定の書き込み可能プロパティの取得
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDevice.cpp        | CSensorDevice        |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SensorDevice .cpp        | CSensorDevice        |
 
  
 
-センサーの読み取り/書き込みプロパティは既定のプロパティの場合は true を Windows のセンサー プラットフォームが読み取り専用にサポートします。 SpbAccelerometer サンプルのコードでは、ドライバーとデバイスの初期化フェーズの一環として、書き込み可能な (または、設定可能な) 既定のプロパティの一覧を取得します。 以下の方法は、初期化、加速度計のこれらのプロパティを取得中に、ドライバーによって呼び出されます。 (このシーケンスの最初の 4 つのメソッドは、プロパティ設定の前のシーケンスの最初の 4 つのメソッドと同じことに注意してください)。
+Windows センサープラットフォームでは、センサーの読み取り専用プロパティと読み取り/書き込みプロパティがサポートされています。これは、既定のプロパティにも当てはまります。 SpbAccelerometer サンプルのコードは、ドライバーとデバイスの初期化フェーズの一部として、書き込み可能な (または設定可能な) 既定のプロパティの一覧を取得します。 次のメソッドは、初期化中に、加速度計のこれらのプロパティを取得するために、ドライバーによって呼び出されます。 (このシーケンスの最初の4つのメソッドは、前のプロパティ設定シーケンスの最初の4つのメソッドと同じであることに注意してください)。
 
-|     | メソッド                                             | によって呼び出されます                                                         | 目的                                                                                           |
+| 手順   | メソッド                                             | 呼び出し元                                                         | 目的                                                                                           |
 |-----|----------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**                   | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | ドライバーによって特定のデバイスがアクセスできるようにするために必要な操作を開始します。                  |
-| 2   | **CSensorDdi::Initialize**                         | **CMyDevice::OnPrepareHardware**                                   | 作成し、センサー デバイス オブジェクトを初期化します。                                                  |
-| 3   | **CSensorDevice::Initialize**                      | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。              |
-| 4   | **CSensorDevice::InitializeSensorDriverInterface** | **CSensorDevice::Initialize**                                      | プロパティのキーとデータ フィールドの値を格納するオブジェクトの初期化を開始します。       |
-| 5   | **CAccelerometerDevice::SetDefaultPropertyValues** | **CSensorDevice::InitializeSensorDriverInterface**                 | 既定の加速度計 (製造元、モデル、シリアル番号など) のプロパティ値を設定します。 |
+| 1   | **CMyDevice:: On Hardware**                   | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。                  |
+| 2   | **CSensorDdi:: Initialize**                         | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成して初期化します。                                                  |
+| 3   | **CSensorDevice:: Initialize**                      | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。              |
+| 4   | **CSensorDevice:: InitializeSensorDriverInterface** | **CSensorDevice:: Initialize**                                      | プロパティキーと datafield 値を格納するオブジェクトの初期化を開始します。       |
+| 5   | **CAccelerometerDevice:: SetDefaultPropertyValues** | **CSensorDevice:: InitializeSensorDriverInterface**                 | 加速度計 (製造元、モデル、シリアル番号など) の既定のプロパティ値を設定します。 |
 
  
 
-### <a name="activating-support-for-events"></a>イベントのサポートをアクティブ化します。
+### <a name="activating-support-for-events"></a>イベントのサポートのアクティブ化
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDevice.cpp        | CSensorDevice        |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SensorDevice .cpp        | CSensorDevice        |
 
  
 
-Windows のセンサー プラットフォームでは、イベントをサポートします。 アプリケーションは、ドライバーからの通知を取得するイベント ハンドラーを登録します。 加速度計、これらの通知は、特定の変更感度 (g 単位) を超えた場合や、現在のレポート期間の有効期限が切れるときにトリガーされます。
+Windows センサープラットフォームでは、イベントがサポートされています。 アプリケーションは、ドライバーから通知を取得するためにイベントハンドラーを登録します。 加速度計の場合、特定の変更の感度 (G force で測定) が経過するか、現在のレポートの期間が経過すると、これらの通知がトリガーされます。
 
-センサー プラットフォームでは、イベント モデルをサポートするために、ドライバーは、イベント通知を処理するスレッドをアクティブ化する必要があります。 以下の方法は、このライセンス認証を実行するために初期化中に、ドライバーによって呼び出されます。 (このシーケンスの最初の 3 つのメソッドは、いくつかの前のシーケンスの最初の 3 つのメソッドと同じことに注意してください)。
+センサープラットフォームでイベントモデルをサポートするには、ドライバーがスレッドをアクティブにしてイベント通知を処理する必要があります。 次のメソッドは、このアクティブ化を実行するために、初期化中にドライバーによって呼び出されます。 (このシーケンスの最初の3つのメソッドは、前のシーケンスの数値の最初の3つのメソッドと同じであることに注意してください)。
 
-|     | メソッド                                         | によって呼び出されます                                                         | 目的                                                                              |
+| 手順   | メソッド                                         | 呼び出し元                                                         | 目的                                                                              |
 |-----|------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnPrepareHardware**               | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | 特定のデバイスがアクセスできるようにするドライバーが必要な操作を開始します。    |
-| 2   | **CSensorDdi::Initialize**                     | **CMyDevice::OnPrepareHardware**                                   | 作成して、センサー デバイス オブジェクトを初期化します。                                    |
-| 3   | **CSensorDevice::Initialize**                  | **CSensorDdi::Initialize**                                         | センサー ドライバー インターフェイス、クライアント マネージャー、およびレポート マネージャーを初期化します。 |
-| 4   | **CReportManager::Initialize**                 | **CSensorDevice::Initialize**                                      | イベントを処理するために使用されるスレッドを作成します。                                            |
-| 5   | **CReportManager::ActivateDataEventingThread** | **CReportManager::Initialize**                                     | 前のメソッドによって作成されたスレッドをアクティブにします。                                 |
+| 1   | **CMyDevice:: On Hardware**               | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | ドライバーが特定のデバイスにアクセスできるようにするために必要な操作を開始します。    |
+| 2   | **CSensorDdi:: Initialize**                     | **CMyDevice:: On Hardware**                                   | センサーデバイスオブジェクトを作成し、初期化します。                                    |
+| 3   | **CSensorDevice:: Initialize**                  | **CSensorDdi:: Initialize**                                         | センサードライバーインターフェイス、クライアントマネージャー、およびレポートマネージャーを初期化します。 |
+| 4   | **CReportManager:: Initialize**                 | **CSensorDevice:: Initialize**                                      | イベントを処理するために使用するスレッドを作成します。                                            |
+| 5   | **CReportManager:: アクティブ Dataeventingthread** | **CReportManager:: Initialize**                                     | 前のメソッドによって作成されたスレッドをアクティブにします。                                 |
 
  
 
-### <a name="initializing-the-class-extension"></a>クラスの拡張機能の初期化
+### <a name="initializing-the-class-extension"></a>クラス拡張の初期化
 
 | モジュール     | クラス/インターフェイス |
 |------------|-----------------|
-| Device.cpp | CMyDevice       |
+| デバイス .cpp | CMyDevice       |
 
  
 
-Windows のセンサー プラットフォームには、センサー データを取得して、イベント通知の発生の標準的なメカニズムを提供するセンサー API のクラスの拡張子が付きます。 ドライバーのサンプルを呼び出す、 **ISensorClassExtension::Initialize**メソッドへの呼び出しを受信した後に、クラス拡張を初期化するために**CMyDevice::OnPrepareHardware**します。
+Windows センサープラットフォームにはセンサー API のクラス拡張機能があり、センサーデータを取得してイベント通知を発生させるための標準的なメカニズムを提供します。 このサンプルドライバーは、 **ISensorClassExtension:: Initialize**メソッドを呼び出して、 **CMyDevice:: on hardware**の呼び出しを受け取った後に、クラス拡張を初期化します。
 
-### <a name="configuring-the-device-and-placing-it-in-standby-mode"></a>デバイスを構成して、スタンバイ モードに配置
+### <a name="configuring-the-device-and-placing-it-in-standby-mode"></a>デバイスを構成してスタンバイモードにする
 
 | モジュール                  | クラス/インターフェイス      |
 |-------------------------|----------------------|
-| Device.cpp              | CMyDevice            |
-| SensorDdi.cpp           | CSensorDdi           |
-| AccelerometerDevice.cpp | CAccelerometerDevice |
-| SensorDevice.cpp        | CSensorDevice        |
+| デバイス .cpp              | CMyDevice            |
+| SensorDdi .cpp           | CSensorDdi           |
+| AccelerometerDevice | CAccelerometerDevice |
+| SensorDevice .cpp        | CSensorDevice        |
 
  
 
-デバイスとドライバーの初期化のメソッドの最後のシーケンスは、ADXL345 を構成し、スタンバイ モードに配置します。 (このシーケンスの書き込みと読み取り操作が繰り返されます複数回まで、デバイスが構成されている。)
+デバイスとドライバーの初期化の最後のシーケンスでは、ADXL345 を構成し、スタンバイモードにします。 (この一連の書き込み操作と読み取り操作は、デバイスが構成されるまで複数回繰り返されます)。
 
-|     | メソッド                                          | によって呼び出されます                                                         | 目的                                                                               |
+| 手順  | メソッド                                          | 呼び出し元                                                         | 目的                                                                               |
 |-----|-------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| 1   | **CMyDevice::OnD0Entry**                        | WUDFx.dll (Windows のユーザー モード ドライバー フレームワークのコンポーネント)。 | システムに新しいデバイスが表示されたときに呼び出されます。                                      |
-| 2   | **CSensorDdi::Start**                           | **CMyDevice::OnD0Entry**                                           | 呼び出す CSensorDevice::Start パススルー方式。                                |
-| 3   | **CSensorDevice::Start**                        | **CSensorDdi::Start**                                              | デバイスの構成プロセスを開始します。                                           |
-| 4   | **CAccelerometerDevice::ConfigureHardware**     | **CSensorDevice::Start**                                           | ADXL345 の指定されたレジスタに値を書き込み操作を開始します。 |
-| 5   | **CAcclerometerDevice::WriteRegister**          | **CAccelerometerDevice::ConfigureHardware**                        | ADXL345 の指定されたレジスタに値を書き込み操作を開始します。 |
-| 6   | **CSpbRequest::CreateAndSendWrite**             | **CAcclerometerDevice::WriteRegister**                             | I2C バス経由での書き込み要求を送信します。                                          |
-| 7   | **CAcclerometerDevice::ReadRegister**           | **CAccelerometerDevice::ConfigureHardware**                        | 指定された ADXL345 レジスタから値を読み取り操作を開始します。       |
-| 8   | **CSpbRequest::CreateAndSendWriteReadSequence** | **CAcclerometerDevice::ReadRegister**                              | I2C バス経由で読み取りの結果を受信します。                                           |
-| 9   | **CSpbRequest::CreateAndSendIoctl**             | **CSpbRequest::CreateAndSendWriteReadSequence**                    | ヘルパー メソッドを作成、IOCTL 要求を送信します。                                |
+| 1   | **CMyDevice::OnD0Entry**                        | WUDFx.dll (Windows ユーザーモードドライバーフレームワークのコンポーネント)。 | 新しいデバイスがシステムに表示されたときに呼び出されます。                                      |
+| 2   | **CSensorDdi:: Start**                           | **CMyDevice::OnD0Entry**                                           | CSensorDevice:: Start を呼び出すパススルーメソッド。                                |
+| 3   | **CSensorDevice:: Start**                        | **CSensorDdi:: Start**                                              | デバイス構成プロセスを開始します。                                           |
+| 4   | **CAccelerometerDevice::ConfigureHardware**     | **CSensorDevice:: Start**                                           | ADXL345 の指定したレジスタに値を書き込む操作を開始します。 |
+| 5   | **CAcclerometerDevice::WriteRegister**          | **CAccelerometerDevice::ConfigureHardware**                        | ADXL345 の指定したレジスタに値を書き込む操作を開始します。 |
+| 6   | **CSpbRequest:: CreateAndSendWrite**             | **CAcclerometerDevice::WriteRegister**                             | I2C バス経由で書き込み要求を送信します。                                          |
+| 7   | **CAcclerometerDevice:: ReadRegister**           | **CAccelerometerDevice::ConfigureHardware**                        | 指定された ADXL345 register から値を読み取る操作を開始します。       |
+| 8   | **CSpbRequest:: CreateAndSendWriteReadSequence** | **CAcclerometerDevice:: ReadRegister**                              | は、I2C バス経由で読み取り結果を受信します。                                           |
+| 9   | **CSpbRequest:: CreateAndSendIoctl**             | **CSpbRequest:: CreateAndSendWriteReadSequence**                    | IOCTL 要求を作成して送信するヘルパーメソッド。                                |
 
  
 
-デバイスの構成作業のほとんどは、一連の行わ**CAccelerometerDevice::WriteRegister**と**CAccelerometerDevice::ReadRegister**メソッドの呼び出し。 ドライバーを使用して、::**WriteRegister** 、ADXL345 のいずれかに値を記述するメソッドを登録します対応の戻り値を確認し、::**ReadRegister**ことを確認するメソッドの書き込み。操作に成功しました。 書き込みと読み取り操作の完全なシーケンスを次に示します。
+ほとんどのデバイス構成作業は、一連の**CAccelerometerDevice:: WriteRegister**メソッドと**CAccelerometerDevice:: readregister**メソッド呼び出しによって行われます。 ドライバーは、::**WriteRegister**メソッドを使用して、いずれかの ADXL345 レジスタに値を書き込みます。次に、対応する::**Readregister**メソッドで返された値を調べて、書き込み操作が成功したことを確認します。 書き込み操作と読み取り操作の完全なシーケンスを次に示します。
 
-|     | メソッド                                  | 登録する | データ                | 目的                                                                                                            |
+| 手順 | Method                                  | [登録] | Data                | 目的                                                                                                            |
 |-----|-----------------------------------------|----------|---------------------|--------------------------------------------------------------------------------------------------------------------|
-| 1   | **CAccelerometerDevice::WriteRegister** | **0x2d** | **'\\0' (0x00)**    | センサーの電源管理の登録とスタンバイ モードで、デバイスをリセットします。                                   |
-| 2   | **CAccelerometerDevice::ReadRegister**  | **0x2d** | **'\\0' (0x00)**    | 返されたレジスタの値は、書き込み操作が成功したことを示します。                                          |
-| 3   | **CAccelerometerDevice::WriteRegister** | **0x31** | **'\\v' (0x0b)**    | 範囲が 16 G +/-の各軸に沿ったフル解像度モードでは、デバイスを設定します。                                   |
-| 4   | **CAccelerometerDevice::ReadRegister**  | **0x31** | **'\\v' (0x0b**     | 返されたレジスタの値は、書き込み操作が成功したことを示します。                                          |
-| 5   | **CAccelerometerDevice::WriteRegister** | **0x38** | **'\\0' (0x00)**    | センサーの FIFO コントロール レジスタをバイパス モードにリセットします。                                                      |
-| 6   | **CAccelerometerDevice::ReadRegister**  | **0x38** | **'\\0' (0x00)**    | 返されたレジスタの値は、書き込み操作が成功したことを示します。                                          |
-| 7   | **CAccelerometerDevice::WriteRegister** | **0x2C** | **'\\a' (0x07)**    | 設定、BW\_レート レジスタを低電力モードを開始します。                                                             |
-| 8   | **CAccelerometerDevice::ReadRegister**  | **0x2C** | **'\\a' (0x07)**    | 返されたレジスタの値は、書き込み操作が成功したことを示します。                                          |
-| 9   | **CAccelerometerDevice::WriteRegister** | **0x24** | **'\\x1' (0x01)**   | 設定、TRESH\_ACT (アクティビティしきい値) が 1 に登録します。                                                            |
-| 10  | **CAccelerometerDevice::ReadRegister**  | **0x24** | **'\\x1' (0x01)**   |                                                                                                                    |
-| 11  | **CAccelerometerDevice::WriteRegister** | **0x27** | **(0xf0)**          | 設定、ACT\_INACT\_CTL (アクティブまたは非アクティブ) 0xf0 に登録します。                                                       |
-| 12  | **CAccelerometerDevice::ReadRegister**  | **0x27** | **(0xf0)**          | 返されたレジスタの値は、書き込み操作が成功したことを示します。                                              |
-| 13  | **CAccelerometerDevice::WriteRegister** | **0x2f** | **'\\0x10' (0x10)** | 設定、INT\_マップ (割り込みマッピング) に登録します。 0x10 の値は、透かしが INT2 暗証番号 (pin) にマップされているを要求します。 |
-| 14  | **CAccelerometerDevice::ReadRegister**  | **0x2f** | **'\\0x10' (0x10)** | 返されたレジスタの値は、書き込み操作が成功したことを示します。                                          |
+| 1   | **CAccelerometerDevice::WriteRegister** | **0x2d** | **' \\ 0 ' (0x00)**    | センサーの電源管理登録をリセットし、デバイスをスタンバイモードにします。                                   |
+| 2   | **CAccelerometerDevice:: ReadRegister**  | **0x2d** | **' \\ 0 ' (0x00)**    | 返されるレジスタ値は、書き込み操作が成功したことを示します。                                          |
+| 3   | **CAccelerometerDevice::WriteRegister** | **0x31** | **' \\ v ' (0x0b)**    | デバイスを、+/-16G の各軸に沿った範囲で、完全解像度モードに設定します。                                   |
+| 4   | **CAccelerometerDevice:: ReadRegister**  | **0x31** | **' \\ v ' (0x0b**     | 返されるレジスタ値は、書き込み操作が成功したことを示します。                                          |
+| 5   | **CAccelerometerDevice::WriteRegister** | **0x38** | **' \\ 0 ' (0x00)**    | センサーの FIFO 制御レジスタをバイパスモードにリセットします。                                                      |
+| 6   | **CAccelerometerDevice:: ReadRegister**  | **0x38** | **' \\ 0 ' (0x00)**    | 返されるレジスタ値は、書き込み操作が成功したことを示します。                                          |
+| 7   | **CAccelerometerDevice::WriteRegister** | **0x2C** | **' \\ a ' (0x07)**    | BW \_ RATE 登録を低電力モードで開始するように設定します。                                                             |
+| 8   | **CAccelerometerDevice:: ReadRegister**  | **0x2C** | **' \\ a ' (0x07)**    | 返されるレジスタ値は、書き込み操作が成功したことを示します。                                          |
+| 9   | **CAccelerometerDevice::WriteRegister** | **0x24** | **' \\ x1 ' (0x01)**   | TRESH \_ ACT (アクティビティしきい値) レジスタを1に設定します。                                                            |
+| 10  | **CAccelerometerDevice:: ReadRegister**  | **0x24** | **' \\ x1 ' (0x01)**   |                                                                                                                    |
+| 11  | **CAccelerometerDevice::WriteRegister** | **0x27** | **0xf0 です**          | ACT \_ inact \_ CTL (アクティブ/非アクティブ) レジスタを0xf0 に設定します。                                                       |
+| 12  | **CAccelerometerDevice:: ReadRegister**  | **0x27** | **0xf0 です**          | 返されるレジスタ値は、書き込み操作が成功したことを示します。                                              |
+| 13  | **CAccelerometerDevice::WriteRegister** | **0x2f** | **' \\ 0x10 ' (0x10)** | INT \_ マップ (割り込みマッピング) レジスタを設定します。 値が0x10 の場合は、ウォーターマークが INT2 pin にマップされることを要求します。 |
+| 14  | **CAccelerometerDevice:: ReadRegister**  | **0x2f** | **' \\ 0x10 ' (0x10)** | 返されるレジスタ値は、書き込み操作が成功したことを示します。                                          |
 
- 
 
-ドライバーとデバイスが構成した後は、初期化シーケンスが完了し、アプリがセンサー データの受信を開始することができます。
+ドライバーとデバイスの構成が完了すると、初期化シーケンスが完了し、アプリがセンサーデータの受信を開始できるようになります。
 
  
 
