@@ -4,12 +4,12 @@ description: Microsoft による承認または段階的なロールアウトで
 ms.topic: article
 ms.date: 11/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7532f0275676300aa320449823c62dd70db21333
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d40a2be514185ab4470f5c8abe854cf83de26c7b
+ms.sourcegitcommit: 3a2a28d1e7f0dfd799b7b87f02bc2bea9129c10d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77072169"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87335384"
 ---
 # <a name="cancel-a-shipping-label"></a>配送先住所ラベルの取り消し
 
@@ -33,16 +33,16 @@ Microsoft ハードウェア API に関するすべての[前提条件](dashboar
 
 | Header | 種類 | 説明 |
 |:--|:--|:--|
-| Authorization | String | 必須。 **Bearer** \<トークン\>という形式の Azure AD アクセス トークン。 |
+| Authorization | String | 必須。 **Bearer** \<token\> という形式の Azure AD アクセス トークン。 |
 | 同意する | String | 任意。 コンテンツの種類を指定します。 許容値は “application/json” です |
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-このメソッドでは要求パラメーターを指定しないでください。 
+このメソッドでは要求パラメーターを指定しないでください。
 
 ### <a name="request-body"></a>[要求本文]
 
-このメソッドでは要求本文を指定しないでください。 
+このメソッドでは要求本文を指定しないでください。
 
 ### <a name="request-examples"></a>要求の例
 

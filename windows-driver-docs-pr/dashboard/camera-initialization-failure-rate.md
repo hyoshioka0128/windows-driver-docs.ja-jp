@@ -4,12 +4,12 @@ description: この測定値は、カメラ デバイスで初期化が失敗し
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4410cd826e6735d7b5ad57033f5d06e3a3d3d83c
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: bb35618cdca31d30820e9c4d60afe10457eeb6b6
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017082"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425725"
 ---
 # <a name="percent-of-camera-initialization-failures"></a>カメラの初期化エラー率
 
@@ -38,13 +38,15 @@ ms.locfileid: "71017082"
 
    a。 "*成功した初期化イベント = 0% の失敗*"
 
-       i. MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0
+     i. `MF_CAPTURE_ENGINE_INITIALIZED with an HRESULT == 0`
 
    b. "*失敗した初期化イベント = 100% の失敗*"
 
-         i. MF_E_NO_CAPTURE_DEVICES_AVAILABLE
-        ii. E_ACCESSDENIED
-       iii. ERROR_BAD_UNIT
+     i. `MF_E_NO_CAPTURE_DEVICES_AVAILABLE`
+
+     ii. `E_ACCESSDENIED`
+
+     iii. `ERROR_BAD_UNIT`
 
 ### <a name="final-calculation"></a>最終的な計算
 
