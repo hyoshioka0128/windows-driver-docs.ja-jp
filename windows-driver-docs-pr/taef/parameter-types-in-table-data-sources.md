@@ -4,32 +4,63 @@ description: テーブルのデータ ソースにおけるパラメーターの
 ms.assetid: 034F171E-716F-4795-9B07-46A109052227
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: f3004599456191567616a82ae54546f5ac447f59
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 9fd03548bd9009cfe6fb3208bcfc2da2a7020808
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63355472"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425734"
 ---
 # <a name="parameter-types-in-table-data-sources"></a>テーブルのデータ ソースにおけるパラメーターの型
 
+次の表は、テーブルベースのデータソースで使用できるさまざまなパラメーター型の概要と、ネイティブ、マネージ、およびスクリプトの各テストでデータソースファイルの互換性を確保するために使用できる文字列の種類を示しています。
 
-次の表には、概要テーブルで使用できるさまざまなパラメーターの型のベースのデータ ソースとどの型文字列を使用して互換性のあるデータ ソース ファイルにすることができます、ネイティブで管理され、スクリプトをテストします。
+>[!NOTE]
+>"String"、"int"、"bool"、"double"、" \_ \_ int64"、"unsigned \_ \_ int64"、および "XML" の各型は、すべてのマネージテスト、ネイティブテスト、またはスクリプトテストで使用できます。
 
-ネイティブ管理スクリプト ParameterType LanguageType ParameterType LanguageType ParameterType LanguageType"String"WEX::Common::String"String"の文字列"String"または"BSTR"VT\_BSTR"int"int"Int32"または"int"int"int"VT\_INT"unsigned int"unsigned int"uint"または"uint32"uint"unsigned int"または"uint"VT\_UINT"bool"bool"bool"または"boolean"bool"bool"VT\_BOOL"double"double"double"または"decimal"decimal"double"VT\_R8"\_\_int64" \_ \_int64"\_\_int64"または"int64"int64"\_\_int64"VT\_I8"符号なし\_ \_int64"符号なし\_ \_int64"符号なし\_ \_int64"または"uint64"uint64"符号なし\_ \_int64"VT\_UI8"DWORD"DWORD"DWORD"uint"サイズ\_t"サイズ\_t"NoThrowString"WEX::Common::NoThrowString"XML"WEX::Common::String"XML"文字列"XML"VT\_BSTR
- 
+既定では、型が指定されていない場合、型は "String" と見なされます。 各テーブルの最初の行を参照してください。
 
-注: "String"、"int"、"bool"、"double"、"\_\_int64"、"符号なし\_ \_int64"、"XML"の種類を使用して、すべての管理、ネイティブまたはスクリプトをテストします。
+上で指定した型と共に配列型を指定するには、 \[ \] 型の末尾に "" を追加するだけです。
 
-既定では、型が指定されていない場合、型と見なされます"String"にします。 上記の最初の行を参照してください。
+## <a name="for-native-tests"></a>ネイティブテストの場合
 
-上記で指定した任意のタイプを合わせて配列型を指定するだけ追加"\[\]"型の末尾にします。
+|ParameterType|言語の種類|
+|----|----|
+|文字列|WEX:: Common:: String|
+|通り|INT|
+|"unsigned int"|unsigned int|
+|型|[bool]|
+|小数|double|
+|" \_ \_ int64"|\_\_int64|
+|"unsigned \_ \_ int64"|符号なし \_ \_ int64|
+|プロシージャ|DWORD|
+|"size \_ t"|サイズ \_ t|
+|"NoThrowString"|WEX:: Common:: NoThrowString|
+|XML|WEX:: Common:: String|
 
- 
+## <a name="for-managed-tests"></a>マネージテストの場合
 
- 
+|ParameterType|言語の種類|
+|----|----|
+|文字列|string|
+|"Int32" または "int"|INT|
+|"uint" または "uint32"|uint|
+|"bool" または "boolean"|[bool]|
+|"double" または "decimal"|decimal|
+|" \_ \_ int64" または "int64"|int64|
+|"unsigned \_ \_ int64" または "uint64"|uint64|
+|プロシージャ|uint|
+|XML|string|
 
+## <a name="for-script-tests"></a>スクリプトテストの場合
 
-
-
-
+|ParameterType|言語の種類|
+|----|----|
+|"String" または "BSTR"|VT \_ BSTR|
+|通り|VT \_ INT|
+|"unsigned int" または "uint"|VT \_ UINT|
+|型|VT \_ BOOL|
+|小数|VT \_ R8|
+|" \_ \_ int64"|VT \_ I8|
+|"unsigned \_ \_ int64"|VT \_ UI8|
+|XML|VT \_ BSTR|

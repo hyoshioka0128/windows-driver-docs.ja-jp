@@ -1,15 +1,15 @@
 ---
-title: Microsoft Bluetooth テストプラットフォーム
+title: Microsoft Bluetooth テストプラットフォーム-HID
 description: Bluetooth テストプラットフォーム (BTP) の HID テスト。
 ms.assetid: b5b039bb-af0f-446f-9657-aa0e137a3437
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 62dd2fbdbbafef0e8e73534c4ef4a1ae33338599
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: 22c35e13beba1d5618712f22adab395047df37a2
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528928"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412517"
 ---
 # <a name="btp-hid-tests"></a>BTP HID テスト #
 
@@ -23,14 +23,14 @@ BTP HID テストでは、ローカルシステムが BR/EDR または LE を介
 
 ## <a name="running-the-hid-tests"></a>HID テストの実行 ##
 
-BTP パッケージが抽出されたフォルダーに移動します。 通常は `C:\BTP`の下にあります。 パッケージのバージョンの後にあるという名前のフォルダーでは、次のスクリプトが参照されます。 その後、次のいずれかを実行します。
+BTP パッケージが抽出されたフォルダーに移動します。 通常はになり `C:\BTP` ます。 パッケージのバージョンの後にあるという名前のフォルダーでは、次のスクリプトが参照されます。 その後で、いずれかを実行します。
 
-- 管理者特権のコマンドプロンプトから `RunHidTests.bat <radio name>` するか、
-- 管理者特権の PowerShell コンソールからの `RunHidTests.ps1 <radio name>`
+- `RunHidTests.bat <radio name>`管理者特権でのコマンドプロンプトまたは
+- `RunHidTests.ps1 <radio name>`管理者特権の PowerShell コンソールから
 
-使用可能なラジオ名パラメーターの情報については、こちらを参照して[ください](testing-BTP-hw.md#supported-radios)。
+使用可能なラジオ名パラメーターについては、「 [Bluetooth テストプラットフォームでサポートされているハードウェア](testing-BTP-hw.md#supported-radios)」を参照してください。
 
-また、オプションのパラメーター `-VerboseLogs` を末尾に含めて、BTP の内部操作のより詳細な出力を取得することもできます。
+また、オプションのパラメーターを末尾に含めて、 `-VerboseLogs` BTP の内部操作の詳細な出力を取得することもできます。
 
 テストが開始されると、12ピンアダプターの横にある赤い LED がオンになると、テストからコマンドが送信されます。 この LED は、すべてのテストの終了時にオフになります。 前回のテストが失敗したために次のテストの開始時にオンになっている場合は、その電源を入れて電源を入れ、既知の状態に戻します。 電源サイクルが失敗した場合、ラジオが不明な状態になっているため、テストは失敗します。
 

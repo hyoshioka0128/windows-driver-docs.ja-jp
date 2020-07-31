@@ -16,12 +16,12 @@ keywords:
 - Stdunk サンプル audio driver WDK audio
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9242bb43973280df23a142e33f86d53f411ab811
-ms.sourcegitcommit: 98930ca95b9adbb6e5e472f89e91ab084e67e31d
+ms.openlocfilehash: 74077d4c3c08d1301e6f3e1fde09595a82a7e995
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925537"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402267"
 ---
 # <a name="sample-audio-drivers"></a>オーディオ ドライバーのサンプル
 
@@ -69,24 +69,24 @@ a. GitHub ツールを使用して、サンプルを操作できます。 また
 
 <https://github.com/Microsoft/Windows-driver-samples/archive/master.zip>
 
-b. マスター .zip ファイルをローカルハードドライブにダウンロードします。
+b. master.zip ファイルをローカルハードドライブにダウンロードします。
 
-c. *Windows-driver-samples-master*を右クリックし、[**すべて展開**] を選択します。 新しいフォルダーを指定するか、抽出されたファイルを格納する既存のフォルダーを参照します。 たとえば、ファイルを抽出する新しいフォルダーとして*C:\\driversamples\\ *を指定することができます。
+c. *Windows-driver-samples-master.zip*を右クリックし、[**すべて展開**] を選択します。 新しいフォルダーを指定するか、抽出されたファイルを格納する既存のフォルダーを参照します。 たとえば、ファイルを抽出する新しいフォルダーとして*C: \\ driversamples \\ *を指定することができます。
 
 d. ファイルが抽出されたら、次のサブフォルダーに移動します。
 
-*C:\\driversamples\\Audio\\Sysvad*
+*C: \\ driversamples \\ Audio \\ Sysvad*
 
 **Visual Studio でドライバーソリューションを開く**
 
-Microsoft Visual Studio で、[**ファイル** &gt; ] [**開く** &gt; ] [**プロジェクト/ソリューション...** ] の順にクリックし、抽出したファイルが格納されているフォルダー (例 *: C:\\driversamples\\Audio\\Sysvad*) に移動します。 *Sysvad*ソリューションファイルをダブルクリックして開きます。
+Microsoft Visual Studio で、[**ファイル**] [開く] [ &gt; **Open** &gt; **プロジェクト/ソリューション...** ] の順にクリックし、抽出したファイルが格納されているフォルダー (例 *: C: \\ driversamples \\ Audio \\ Sysvad*) に移動します。 *Sysvad*ソリューションファイルをダブルクリックして開きます。
 
 Visual Studio で、ソリューションエクスプローラーを見つけます。 (まだ開いていない場合は、[**表示**] メニューの [**ソリューションエクスプローラー** ] をクリックします)。ソリューションエクスプローラーには、6つのプロジェクトを持つソリューションが1つ表示されます。
 
 ## <a name="span-idsample_audio_driversspanspan-idsample_audio_driversspanarchived-audio-samples"></a><span id="sample_audio_drivers"></span><span id="SAMPLE_AUDIO_DRIVERS"></span>アーカイブされたオーディオのサンプル
 
 
-これらのオーディオサンプルでは、以前のバージョンの Microsoft Windows Driver Kit (WDK) がサポートされています。 これらは、[こちらで](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)入手できる zip ファイルのダウンロードの一部として入手できます。
+これらのオーディオサンプルでは、以前のバージョンの Microsoft Windows Driver Kit (WDK) がサポートされています。 これらは、 [zip ファイルのダウンロード](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Driver%20Kit%20Sample/Windows%20Driver%20Kit%20(WDK)%208.1%20Samples)の一部として入手できます。
 
 -   **Microsoft 仮想オーディオデバイスドライバーのサンプル (Msvad)**
 

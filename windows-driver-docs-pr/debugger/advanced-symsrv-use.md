@@ -11,15 +11,14 @@ keywords:
 - ダウンストリームストア (シンボルサーバー)
 ms.date: 05/23/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ec394624406cf4cf4d4844bff2ecd6ec3cc46740
-ms.sourcegitcommit: dadc9ced1670d667e31eb0cb58d6a622f0f09c46
+ms.openlocfilehash: 698135f29b8db0db31452578dd1d53618e7b9b86
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84533961"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402301"
 ---
 # <a name="advanced-symsrv-use"></a>SymSrv の高度な使用方法
-
 
 SymSrv は、一元化されたシンボルストアからシンボルファイルを配信できます。 このストアには、任意の数のプログラムやオペレーティングシステムに対応する任意の数のシンボルファイルを含めることができます。 ストアには、バイナリファイルを含めることもできます (これはミニダンプをデバッグする場合に便利です)。
 
@@ -31,16 +30,16 @@ SymSrv を使用すると、大きなシンボルストアを、特殊なデバ�
 
 ### <a name="span-idsetting_the_symbol_pathspanspan-idsetting_the_symbol_pathspansetting-the-symbol-path"></a><span id="setting_the_symbol_path"></span><span id="SETTING_THE_SYMBOL_PATH"></span>シンボルパスの設定
 
-このシンボルサーバーを使用するには、デバッガーと同じディレクトリに symsrv .dll をインストールする必要があります。 シンボルパスは次のように設定できます。
+このシンボルサーバーを使用するには、symsrv.dll をデバッガーと同じディレクトリにインストールする必要があります。 シンボルパスは、次のコードに示すように設定できます。
 
 ```console
-set _NT_SYMBOL_PATH = symsrv*ServerDLL*DownstreamStore*\\Server\Share 
+set _NT_SYMBOL_PATH = symsrv*ServerDLL*DownstreamStore*\\Server\Share
 
-set _NT_SYMBOL_PATH = symsrv*ServerDLL*\\Server\Share 
+set _NT_SYMBOL_PATH = symsrv*ServerDLL*\\Server\Share
 
-set _NT_SYMBOL_PATH = srv*DownstreamStore*\\Server\Share 
+set _NT_SYMBOL_PATH = srv*DownstreamStore*\\Server\Share
 
-set _NT_SYMBOL_PATH = srv*\\Server\Share 
+set _NT_SYMBOL_PATH = srv*\\Server\Share
 ```
 
 この構文の部分は、次のように説明されています。
@@ -49,10 +48,10 @@ set _NT_SYMBOL_PATH = srv*\\Server\Share
 このキーワードは常に最初に表示される必要があります。 これは、この項目が通常のシンボルディレクトリではなく、シンボルサーバーであることをデバッガーに示します。
 
 <span id="ServerDLL"></span><span id="serverdll"></span><span id="SERVERDLL"></span>*ServerDLL*  
-シンボルサーバー DLL の名前を指定します。 SymSrv シンボルサーバーを使用している場合、これは常に symsrv .dll です。
+シンボルサーバー DLL の名前を指定します。 SymSrv シンボルサーバーを使用している場合、これは常に symsrv.dll になります。
 
 <span id="srv"></span><span id="SRV"></span>**is**  
-これは**symsrv \* symsrv .dll**の短縮形です。
+これは**symsrv \*symsrv.dll**の短縮形です。
 
 <span id="DownstreamStore"></span><span id="downstreamstore"></span><span id="DOWNSTREAMSTORE"></span>*DownstreamStore*  
 ダウンストリームストアを指定します。 これは、個々のシンボルファイルをキャッシュするために使用されるローカルディレクトリまたはネットワーク共有です。
@@ -104,7 +103,7 @@ set _NT_SYMBOL_PATH=srv*\\localserver\myshare\mycache*https://www.company.com/ma
 
 ### <a name="span-idcompressed_filesspanspan-idcompressed_filesspancompressed-files"></a><span id="compressed_files"></span><span id="COMPRESSED_FILES"></span>圧縮されたファイル
 
-SymSrv は、圧縮されたファイルを含むシンボルストアと互換性があります。ただし、[ここで](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=17657)使用可能な compress ツールで圧縮が行われている必要があります。 圧縮ファイルには、ファイル拡張子の最後の文字としてアンダースコア (たとえば、 \_ module2 または) を指定する必要があり \_ ます。 詳細については、「 [SymStore](symstore.md)」を参照してください。
+SymSrv は、圧縮されたファイルを含むシンボルストアと互換性があります。ただし、 [Microsoft ダウンロードセンター](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=17657)から入手できる compress.exe ツールで圧縮が行われている必要があります。 圧縮ファイルには、ファイル拡張子の最後の文字としてアンダースコア (たとえば、 \_ module2 または) を指定する必要があり \_ ます。 詳細については、「 [SymStore](symstore.md)」を参照してください。
 
 ストアのファイルが圧縮されている場合は、ダウンストリームストアを使用する必要があります。 SymSrv は、ダウンストリームストアにキャッシュする前にすべてのファイルを圧縮解除します。
 
@@ -146,11 +145,11 @@ SymSrv は、カスケードストアを含むパスを処理するときに、�
 
 見つかった場合は、(アップストリーム) シンボルサーバーから以前の (下流の) シンボルサーバーにファイルがコピーされます。 これは、(下流の) シンボルサーバーごとに繰り返されます。 このようにして、(共有) ダウンストリームシンボルサーバーには、シンボルサーバーを使用するすべてのクライアントの集合的な作業が設定されます。
 
-チェーンされた UNC パスは、SRV プレフィックスなしでも使用でき \* ますが、 \* symsrv の高度なエラー処理を使用するように srv を指定することをお勧めします。
+チェーンされた UNC パスは SRV プレフィックスなしでも使用でき \* ますが、 \* symsrv.dll の高度なエラー処理を使用できるように srv を指定することをお勧めします。
 
 HTTP シンボルサーバーをパスに含める場合は、1つだけを指定でき (チェーンごとに)、パスの末尾に配置する必要があります (キャッシュとして機能するように書き込むことはできません)。 HTTP ベースのシンボルストアがストアの一覧の中央または左側に配置されている場合、検出されたファイルをコピーしてそのチェーンを破損させることはできません。 さらに、シンボルハンドラーは web サイトからファイルを開くことができないので、HTTP ベースのストアを一番左にしたり、リストにのみ格納したりすることはできません。 SymSrv がこのシンボルパスで表示されている場合、既定の下流ストアがシンボルパスに示されているかどうかに関係なく、ファイルを既定の下流ストアにコピーしてそこから開くことで、回復を試みます。
 
-HTTP は、SRV \* プレフィックス (symsrv シンボルハンドラーによって実装されている) を使用する場合にのみサポートされます。
+HTTP は、SRV \* プレフィックス (symsrv.dll シンボルハンドラーによって実装されている) を使用する場合にのみサポートされます。
 
 **HTTP および SMB 共有シンボルサーバーのシナリオ例**
 

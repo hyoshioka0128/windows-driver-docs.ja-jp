@@ -4,38 +4,26 @@ description: RunAs
 ms.assetid: 47183A50-513C-4bc5-8DC4-33065323F584
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 439d001b07d66c7d80b6691b7936b046ea249f39
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 52a8be4e9412f4c06df88ed2133d9425fed43f56
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63380204"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425732"
 ---
 # <a name="runas"></a>RunAs
 
+TAEF は、ローカルシステムとして、または低整合性プロセス内で、昇格、制限、テストを実行するためのメカニズムを提供します。
 
-TAEF 管理者特権で、テストを実行するためのメカニズムを提供する、制限されているか、低い整合性プロセス内でローカル システムとして。
+## <a name="prerequisites"></a>前提条件
 
-## <a name="span-idprerequisitesspanspan-idprerequisitesspanspan-idprerequisitesspanprerequisites"></a><span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>前提条件
+- 管理者特権のないプロセスから管理者特権でのテストを実行したり、昇格されたプロセスから管理者以外のテストを実行したり、テストをローカルシステムとして実行したりするには、コンピューターにサービスをインストールして実行する必要があり[ます。](te-service.md)
 
+## <a name="runas-types"></a>RunAs の種類
 
--   [Te.Service](te-service.md)をインストールし、昇格されたプロセスから、管理者特権以外のテストを実行、非管理者特権プロセスから管理者特権でのテストを実行するために、またはローカル システムとしてテストを実行するコンピューター上で実行します。
+TAEF では、テストメタデータまたはコマンドプロンプトを使用して指定される次の種類の RunAs がサポートされています。
 
-## <a name="span-idrunastypesspanspan-idrunastypesspanspan-idrunastypesspanrunas-types"></a><span id="RunAs_Types"></span><span id="runas_types"></span><span id="RUNAS_TYPES"></span>RunAs の種類
-
-
-TAEF には、RunAs はテスト メタデータまたはコマンド プロンプトを使用して指定されている、次の種類がサポートしています。
-
--   [RunAs の管理者特権](runas-elevated.md)
--   [RunAs LowIL](runas-lowil.md)
--   [RunAs の制限](runas-restricted.md)
--   [RunAs システム](runas-system.md)
-
- 
-
- 
-
-
-
-
-
+- [RunAs Elevated](runas-elevated.md)
+- [RunAs LowIL](runas-lowil.md)
+- [RunAs Restricted](runas-restricted.md)
+- [RunAs System](runas-system.md)

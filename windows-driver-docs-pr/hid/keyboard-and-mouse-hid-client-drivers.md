@@ -3,268 +3,229 @@ title: キーボードとマウスの HID クライアント ドライバー
 description: キーボードとマウスの HID クライアント ドライバーをご覧ください。
 ms.assetid: DAD50261-7619-4554-B864-9158A0FA1ACE
 keywords:
-- HID キーボード ドライバー
-- キーボード ドライバー、HID
-- Windows 用 HID キーボード ドライバー
-- マウスの HID ドライバー
-- マウスのドライバー、HID
-- Windows 用 HID マウス ドライバー
+- HID キーボードドライバー
+- キーボードドライバー、HID
+- Windows 用 HID キーボードドライバー
+- HID マウスドライバー
+- マウスドライバー、HID
+- Windows 用 HID マウスドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: e4d83fcc34bcdc272e9e903ab1e9dfca6ca50893
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 3a7a76af565ccaf5058e3d19eeb335ddd348c2e1
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63346242"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425738"
 ---
 # <a name="keyboard-and-mouse-hid-client-drivers"></a>キーボードとマウスの HID クライアント ドライバー
 
 > [!NOTE]
-> このトピックでは、HID クライアント キーボードとマウス用のドライバーを作成している開発者です。 マウスまたはキーボードを修正する場合を参照してください。
+> このトピックは、キーボードおよびマウス HID クライアント用のドライバーを作成する開発者を対象としています。 マウスまたはキーボードを修正する場合は、次を参照してください。
 >
-> - [マウス、タッチパッド、およびキーボードの Windows での問題](https://support.microsoft.com/help/17417/windows-mouse-touchpad-keyboard-problems)
-> - [正しく動作しないワイヤレス マウスをトラブルシューティングします。](https://support.microsoft.com/help/321122/troubleshoot-a-wireless-mouse-that-does-not-function-correctly)
+> - [Windows でのマウス、タッチパッド、キーボードの問題](https://support.microsoft.com/help/17417/windows-mouse-touchpad-keyboard-problems)
+> - [正常に機能しないワイヤレスマウスのトラブルシューティング](https://support.microsoft.com/help/321122/troubleshoot-a-wireless-mouse-that-does-not-function-correctly)
 
-このトピックでは、キーボードとマウスの HID クライアント ドライバーについて説明します。 キーボードとマウスは、HID Usage テーブルで標準化され、Windows オペレーティング システムで実装された HID クライアントの最初のセットを表します。
+このトピックでは、キーボードとマウスの HID クライアントドライバーについて説明します。 キーボードとマウスは、HID の使用表で標準化され、Windows オペレーティングシステムに実装されている最初の HID クライアントのセットを表します。
 
-キーボードとマウスの HID クライアント ドライバーは、マッパーのドライバーを非表示の形式で実装されます。 HID ドライバーは、非-HID クラス ドライバーと HID クラス ドライバーの間の I/O 要求の双方向のインターフェイスを提供するカーネル モード WDM フィルター ドライバーです。 マッパーのドライバーでは、他の 1 つの I/O 要求とデータ プロトコルがマップされます。
+キーボードとマウスの HID クライアントドライバーは、HID マッパードライバーの形式で実装されています。 HID マッパードライバーは、非 HID クラスドライバーと HID クラスドライバーの間の i/o 要求に対して双方向インターフェイスを提供するカーネルモードの WDM フィルタードライバーです。 マッパードライバーは、1つの i/o 要求とデータプロトコルを相互にマップします。
 
-Windows では、HID キーボード、および HID マウス デバイスをシステムから提供された HID マッパー ドライバーを提供します。
+Windows には、HID キーボードおよび HID マウスデバイス用のシステム提供の HID マッパードライバーが用意されています。
 
 ## <a name="architecture-and-overview"></a>アーキテクチャと概要
 
-次の図は、キーボードとマウスまたはタッチパッドの USB デバイスのシステムによって提供されるドライバー スタックを示しています。
+次の図は、USB キーボードおよびマウス/タッチパッドデバイスのシステム提供のドライバースタックを示しています。
 
-![キーボードとマウス ドライバー スタックの図、hid クラス マッパーのキーボードとマウス、キーボードとマウスのクラス ドライバーとドライバー。](images/keyboard-driver-stack.png)
+![キーボードおよびマウスドライバーのスタック図。キーボードおよびマウス用の hid クラスマッパードライバーと共に、キーボードおよびマウスクラスドライバーが表示されます。](images/keyboard-driver-stack.png)
 
 上の図には、次のコンポーネントが含まれています。
 
-- KBDHID.sys – キーボード用 HID クライアント マッパー ドライバー。 HID の使用を既存のキーボード クラス ドライバーとのインターフェイスのスキャン コードに変換します。
-- MOUHID.sys – マウスまたはタッチパッド用 HID クライアント マッパー ドライバー。 HID の使用をマウス コマンドに変換します (X Y、ボタン、ホイール/)、既存のキーボード クラス ドライバーとのインターフェイス。
-- KBDCLASS.sys – キーボード クラス ドライバーは、安全な方法でのキーボードとキーパッド、システム上のすべての機能を保持します。
-- MOUCLASS.sys –、マウスのクラス ドライバーはすべてのマウスの機能/システム上のタッチパッドします。 ドライバーでは、絶対と相対の両方のポインティング デバイスをサポートします。 これは別の Windows でドライバーによって管理されるよう、タッチ スクリーン用のドライバーではありません。
+- KBDHID.sys –キーボード用の HID クライアントマッパードライバー。 HID 使用法を scancodes に変換し、既存のキーボードクラスドライバーとのインターフェイスを使用します。
+- MOUHID.sys – HID クライアントマッパー driver for ネズミ/タッチパッド向け。 HID 使用法を、既存のキーボードクラスドライバーとのインターフェイスにマウスコマンド (X/Y、ボタン、ホイール) に変換します。
+- KBDCLASS.sys-キーボードクラスドライバーは、システム上のすべてのキーボードとキーパッドの機能を安全な方法で保持します。
+- MOUCLASS.sys –マウスクラスドライバーは、システム上のすべてのマウス/タッチパッド向けの機能を維持します。 このドライバーは、絶対ポイントデバイスと相対ポイントデバイスの両方をサポートしています。 これは、Windows の別のドライバーによって管理されている touchscreens のドライバーではありません。
 
-システムでは、次のようにドライバー スタックを作成します。
+システムは、次のようにドライバースタックを構築します。
 
-- トランスポート スタックは、接続されている各 HID デバイスの物理デバイス オブジェクト (PDO) を作成し、順番 HID クラス ドライバーが読み込まれます、適切なトランスポートの HID ドライバーを読み込みます。
-- HID クラス ドライバーは、キーボードまたはマウス TLC ごとの PDO を作成します。 複雑な HID デバイス (1 つ以上の TLC) HID クラス ドライバーによって作成された複数の Pdo として公開されます。 たとえば、統合のマウスとキーボードは、標準キーボード コントロールの 1 つのコレクションとマウスの別のコレクションがあります。
-- キーボードまたはマウス FDO を適切なドライバーが読み込まれてクライアントのマッパーを非表示にします。
-- HID のマッパー ドライバーでは、キーボードとマウスの Fdo を作成し、クラス ドライバーを読み込みます。
+- トランスポートスタックは、接続されている各 HID デバイスに対して物理デバイスオブジェクト (PDO) を作成し、適切な HID トランスポートドライバーを読み込みます。これにより、HID クラスドライバーが読み込まれます。
+- HID クラスドライバーは、キーボードまたはマウス TLC ごとに PDO を作成します。 複雑な HID デバイス (1 つ以上の TLC) は、HID クラスドライバーによって作成された複数の PDOs として公開されます。 たとえば、マウスが統合されたキーボードには、標準のキーボードコントロール用に1つのコレクションがあり、マウスに別のコレクションが存在する場合があります。
+- キーボードまたはマウス hid クライアントマッパードライバーは、適切な FDO に読み込まれます。
+- HID マッパードライバーは、キーボードおよびマウス用の FDOs を作成し、クラスドライバーを読み込みます。
 
-重要な注意事項:
+重要なメモ:
 
-- ドライバーのベンダーは、キーボードとマウス サポートされている HID の使用と最上位レベルのコレクションに対応している必要はありません。
-- ベンダーは、これら特定 TLC の機能の alter/強化するために、HID スタック内のフィルター ドライバーを必要に応じて指定可能性があります。
-- ベンダーは、ベンダー固有で、ベンダー、hid クライアントとデバイスの間の独自のデータを交換するには、個別の TLCs を作成する必要があります。 しない限り、フィルター ドライバーを使用しないように重要です。
-- システムでは、すべてのキーボードとマウス コレクションを排他的に使用が開きます。
-- システムでは、キーボードを無効にするか有効にできないようにします。
-- システムでは、水平、垂直ホイールのスムーズ スクロール機能をサポートします。
+- サポートされている HID 使用と最上位のコレクションに準拠しているキーボードおよびマウスでは、ベンダードライバーは必要ありません。
+- 必要に応じて、ベンダーは HID スタックにフィルタードライバーを提供して、これらの特定の TLC の機能を変更/拡張できます。
+- ベンダーは、独自の TLCs を作成する必要があります。これはベンダー固有のもので、hid クライアントとデバイスの間でベンダー独自のデータを交換します。 重大でない限り、フィルタードライバーは使用しないでください。
+- システムによって、すべてのキーボードおよびマウスのコレクションが排他的に使用されます。
+- キーボードを無効または有効にできないようにします。
+- システムは、スムーズスクロール機能を備えた水平または垂直のホイールをサポートしています。
 
-## <a name="driver-guidance"></a>ドライバー ガイダンス
+## <a name="driver-guidance"></a>ドライバーのガイダンス
 
-マイクロソフトでは、ドライバーを書く ihv 向けの次のガイダンスを提供します。
+Microsoft では、Ihv によるドライバーの書き込みに関する次のガイダンスを提供しています。
 
-1. フィルター ドライバーや新しい HID クライアント ドライバーの形式で追加のドライバーを追加するドライバー開発者が許可されます。 条件を次に示します。
-    1. ドライバーをフィルタ リングします。ドライバー開発者向けで、ことを確認します、付加価値ドライバーのフィルター ドライバーし、は置き換えられません (またはの代わりに使用)、入力のスタック内の既存の Windows HID ドライバー。
-        - フィルター ドライバーは、次のシナリオで使用できます。
-            - Kbdhid/mouhid を上部のフィルターとして
-            - Kbdclass/mouclass を上部のフィルターとして
-        - フィルター ドライバーが_いない_HIDCLASS およびトランスポートの HID ミニドライバー間のフィルターとしてお勧めします。
+1. ドライバー開発者は、フィルタードライバーまたは新しい HID クライアントドライバーの形式で追加のドライバーを追加できます。 条件は次のとおりです。
+    1. フィルタードライバー: ドライバー開発者は、その値追加ドライバーがフィルタードライバーであり、入力スタック内の既存の Windows HID ドライバーを置き換える (またはその代わりに使用されない) ことを確認する必要があります。
+        - フィルタードライバーは、次のシナリオで許可されます。
+            - Kbdhid/の場合は、上位フィルターとして
+            - Kbdclass/クラスへの上位フィルターとして
+        - フィルタードライバーは、HIDCLASS と HID Transport ミニドライバー間のフィルターとして推奨されて_いません_。
 
-    2. 関数のドライバー:または仕入先を作成できます (フィルター ドライバーの場合) ではなく関数ドライバー仕入先については、(必要な場合は、ユーザー モード サービス) で特定の HID Pdo。
+    2. 関数ドライバー: または、ベンダー固有の HID PDOs (必要に応じてユーザーモードサービス) に対してのみ、(フィルタードライバーではなく) 関数ドライバーを作成できます。
 
-        関数のドライバーは、次のシナリオで使用できます。
+        関数ドライバーは、次のシナリオで使用できます。
 
-        - 特定のベンダのハードウェア上でのみを読み込む
+        - 特定のベンダーのハードウェアにのみ負荷をかける
 
-    3. トランスポート ドライバー:Windows チームでは、書き込み/維持するために複雑なドライバーは、追加のトランスポートの HID ミニドライバーを作成することはできません。 パートナーが SoC システムでは特に、新しいトランスポートの HID ミニドライバーを作成する場合、理由を理解し、ドライバーは正しく開発されていることを確認する詳細なアーキテクチャ レビューをお勧めします。
+    3. トランスポートドライバー: Windows チームは、書き込み/保守のための複雑なドライバーであるため、追加の HID Transport ミニドライバーを作成することは推奨されません。 パートナーが新しい HID トランスポートミニドライバーを作成している場合 (特に SoC システムの場合) は、その理由を理解し、ドライバーが正しく開発されていることを確認するために、詳細なアーキテクチャレビューを行うことをお勧めします。
 
-2. ドライバー開発者は、ドライバー フレームワーク (KMDF または UMDF) を利用し、フィルター ドライバーの WDM に依存しません。
-3. ドライバー開発者向けには、そのサービスとドライバー スタック間ユーザー カーネルの遷移の数を削減する必要があります。
-4. ドライバー開発者は、キーボード、およびタッチパッドの両方の機能 (エンドユーザー (デバイス マネージャー) または PC の製造元によって調整可能) を使用してシステムをスリープ解除する機能を確認してください。 さらに SoC システムでは、これらのデバイスは、システムは、S0 を動作状態では、そのコンピューター自体を低電源状態からウェイクできるある必要があります。
-5. ドライバー開発者向けでは、自社のハードウェアが電力を効率的に管理を確認してください。
-    - デバイスは、デバイスがアイドル状態のとき、その最下位の電力状態に移動できます。
-    - システム (たとえば、スタンバイ (S3) またはコネクト スタンバイ) は、低電力状態にあるときにデバイスが省電力状態にします。
+2. ドライバーの開発者は、ドライバーフレームワーク (KMDF または UMDF) を活用する必要があり、そのフィルタードライバーでは WDM に依存しません。
+3. ドライバーの開発者は、サービスとドライバースタック間のカーネルユーザーの移行回数を減らす必要があります。
+4. ドライバー開発者は、キーボードとタッチパッドの両方の機能 (エンドユーザー (デバイスマネージャー) または PC の製造元によって調整可能) を使用してシステムをスリープ解除できることを確認する必要があります。 SoC システムに加えて、これらのデバイスは、システムが動作している S0 の状態である間、電力が低い状態からスリープ解除できる必要があります。
+5. ドライバーの開発者は、ハードウェアが効率的に電源管理されるようにする必要があります。
+    - デバイスがアイドル状態になると、デバイスの電源が最も低くなります。
+    - システムの電源が低状態である場合 (たとえば、スタンバイ (S3) またはコネクトスタンバイ)、デバイスの電源の状態は最も低くなります。
 
-## <a name="keyboard-layout"></a>キーボード レイアウト
+## <a name="keyboard-layout"></a>キーボードレイアウト
 
-A*キーボード レイアウト*完全 Microsoft Windows 2000 およびそれ以降のバージョンのキーボードの入力の特性について説明します。 たとえば、キーボード レイアウトは、言語、キーボードの種類とバージョン、修飾子、スキャン コード、およびなどを指定します。
+*キーボードレイアウト*では、Microsoft Windows 2000 以降のバージョンのキーボード入力特性が完全に記述されています。 たとえば、キーボードレイアウトでは、言語、キーボードの種類、バージョン、修飾子、スキャンコードなどを指定します。
 
-キーボード レイアウトについては、次を参照してください。
+キーボードレイアウトの詳細については、次を参照してください。
 
-- キーボードのヘッダー ファイル、kdb.h で、Windows ドライバー開発キット (DDK)、キーボード レイアウトに関する一般的な情報を記述します。
+- キーボードのレイアウトに関する全般的な情報をドキュメントに記載した Windows Driver Development Kit (DDK) のキーボードヘッダーファイル (kdb .h)。
 
-- サンプルのキーボード[レイアウト](https://go.microsoft.com/fwlink/p/?linkid=256128)します。
+- サンプルのキーボード[レイアウト](https://go.microsoft.com/fwlink/p/?linkid=256128)。
 
-特定のキーボードのレイアウトを表示するのを参照してください。 [Windows キーボードのレイアウト](https://docs.microsoft.com/globalization/windows-keyboard-layouts)します。
+特定のキーボードのレイアウトを視覚化するには、「 [Windows キーボードレイアウト](https://docs.microsoft.com/globalization/windows-keyboard-layouts)」を参照してください。
 
-キーボード レイアウトの周りの詳細、コントロール パネル を参照してください。\\時計、言語および地域\\言語。
+キーボードレイアウトの詳細については、コントロールパネルの \\ 時計、言語、および地域の言語に関するページを参照してください \\ 。
 
-## <a name="supported-buttons-and-wheels-on-mice"></a>サポートされているボタンやマウスのホイール
+## <a name="supported-buttons-and-wheels-on-mice"></a>マウスでサポートされているボタンとホイール
 
-次の表は、Windows オペレーティング システムのさまざまなクライアントのバージョン間でサポートされる機能を識別します。
+次の表は、さまざまなクライアントバージョンの Windows オペレーティングシステムでサポートされている機能を示しています。
 
-| 機能                                               | Windows XP             | Windows Vista          | Windows 7              | Windows 8 以降    |
-|-------------------------------------------------------|------------------------|------------------------|------------------------|------------------------|
-| 1 ~ 5 をボタンします。                                           | (P/2 & HID) のサポート  | (Ps/2 & HID) のサポート | (Ps/2 & HID) のサポート | (Ps/2 & HID) のサポート |
-| 垂直スクロール ホイール                                 | (Ps/2 & HID) のサポート | (Ps/2 & HID) のサポート | (Ps/2 & HID) のサポート | (Ps/2 & HID) のサポート |
-| 水平スクロールのホイール                               | サポートされない          | サポートされている (HID のみ)    | サポートされている (HID のみ)    | サポートされている (HID のみ)    |
-| スムーズ スクロール ホイールをサポート (水平方向および垂直方向) | サポートされない          | 部分的にサポートされています       | サポートされている (HID のみ)   | サポートされている (HID のみ)   |
+|特徴量|Windows XP|Windows Vista|Windows 7|Windows 8 以降|
+|----|----|----|----|----|
+|ボタン1-5|サポート (P/2 & HID)|サポートされている (PS/2 & HID)|サポートされている (PS/2 & HID)|サポートされている (PS/2 & HID)|
+|垂直スクロールホイール|サポートされている (PS/2 & HID)|サポートされている (PS/2 & HID)|サポートされている (PS/2 & HID)|サポートされている (PS/2 & HID)|
+|水平スクロールホイール|サポートされていません|サポート (HID のみ)|サポート (HID のみ)|サポート (HID のみ)|
+|スムーズスクロールホイールのサポート (水平および垂直)|サポートされていません|部分的にサポート|サポート (HID のみ)|サポート (HID のみ)|
 
-### <a name="activating-buttons-4-5-and-wheel-on-ps2-mice"></a>Ps/2 マウスのホイール ボタン 4 ~ 5 のアクティブ化
+### <a name="activating-buttons-4-5-and-wheel-on-ps2-mice"></a>PS/2 マウスでのボタン4-5 とホイールのアクティブ化
 
-新しい 4 と 5 つのボタンをアクティブ化 + ホイールのモードを Windows で使用されるメソッドは、3 番目のボタンと IntelliMouse と互換性のあるマウスのホイールをアクティブ化に使用する方法の拡張機能。
+新しい 4&5 ボタン + ホイールモードをアクティブにするために Windows によって使用されるメソッドは、3番目のボタンと IntelliMouse 互換のマウスのホイールをアクティブ化するために使用されるメソッドの拡張機能です。
 
-- これは実現し、レートを設定、レポート連続して 200 レポート/秒、100 をレポート/秒、3 ボタン ホイール モードにし、80 のレポートを最初に、マウスを設定/2 番目、およびマウスから ID を読み取るします。 このシーケンスが完了したときに、マウスは、ID が 3 を報告する必要があります。
-- レポートのレート連続して 200 レポート/秒、しを 200 レポート/秒もう一度、5 つのボタンのホイール モードにし、80 のレポートを次に、マウスを設定/2 番目、およびマウスから ID を読み取るします。 このシーケンスが完了すると、5 つのボタンのホイール マウスは、(一方、IntelliMouse と互換性のある 3 ボタン ホイール マウスには、ID が 3 のレポートもは) ID 4 を報告する必要があります。
+- 1つ目は、マウスを3ボタンホイールモードに設定することです。これは、レポートレートを200レポート/秒に連続して設定し、次に 100 80 reports/second に設定し、次にマウスから ID を読み取ることで実現されます。 このシーケンスが完了すると、マウスは ID 3 を報告する必要があります。
+- 次に、マウスは5つのボタンのホイールモードに設定されます。これは、レポートレートを連続して200レポート/秒に設定し、次に 200 reports/second に再び設定し、次に 80 reports/second に対してマウスで ID を読み取ることで実現されます。 このシーケンスが完了すると、5ボタンのホイールマウスは ID 4 を報告する必要があります (一方、IntelliMouse と互換性のある3ボタンホイールマウスでは、ID が3であると報告されます)。
 
-これは ps/2 マウスのみに適用し、(HID マウスは、レポート記述子の正確な使用状況をレポートする必要があります)、HID マウスには適用されませんに注意してください。
+これは PS/2 マウスにのみ適用されることに注意してください。 HID マウスには適用されません (HID マウスはレポート記述子で正確な使用状況を報告する必要があります)。
 
-#### <a name="standard-ps2-compatible-mouse-data-packet-format-2-buttons"></a>標準的な PS/2 と互換性のあるマウス データ パケット形式 (2 つのボタン)
+#### <a name="standard-ps2-compatible-mouse-data-packet-format-2-buttons"></a>標準 PS/2 互換マウスデータパケット形式 (2 ボタン)
 
-| バイト | D7    | D6    | D5    | D4    | D3  | D2  | D1  | D0  | Comment                          |
-|------|-------|-------|-------|-------|-----|-----|-----|-----|----------------------------------|
-| 1    | Yover | 付属のクロスオーバ | Ysign | Xsign | Tag | M   | R   | L   | X または Y overvlows、記号のボタン |
-| 2    | X7    | X6    | X5    | X4    | X3  | X2  | X1  | X0  | データのバイト x                      |
-| 3    | Y7 です。 ここ    | Y6    | Y5    | Y4    | Y3  | Y2  | Y1  | Y0  | Y のデータのバイト数                     |
+|Byte|D7|D6|D5|D4|D3|D2|D1|D0|コメント|
+|------|-------|-------|-------|-------|-----|-----|-----|-----|-----|
+| 1    | Yover | Xover | Ysign | Xsign | タグ | M   | R   | L   | X/Y overvlows と記号、ボタン |
+| 2    | X 7    | X6    | X5    | X4    | X3  | X2  | X1  | X0  | X データバイト                      |
+| 3    | Y7    | Y6    | Y5    | Y4    | Y3  | Y2  | Y1  | Y0  | Y データバイト数                     |
 
 > [!NOTE]
-> Windows マウス ドライバーでは、オーバーフロー ビットはチェックされません。 オーバーフローが発生した場合、マウス最大符号付きの変位値が送信する必要があります。
+> Windows マウスドライバーでは、オーバーフロービットはチェックされません。 オーバーフローが発生した場合、マウスは単に最大符号付きの変位値を送信する必要があります。
 
-#### <a name="standard-ps2-compatible-mouse-data-packet-format-3-buttons--verticalwheel"></a>標準 PS/2 と互換性のあるマウス データ パケット形式 (3 ボタン + VerticalWheel)
+#### <a name="standard-ps2-compatible-mouse-data-packet-format-3-buttons--verticalwheel"></a>標準 PS/2 互換マウスデータパケット形式 (3 つのボタン + 垂直ホイール)
 
-| バイト | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | Comment                     |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | コメント                     |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|-----------------------------|
-| 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X と Y の記号と M/R/L ボタン |
-| 2    | X7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | データのバイト x                 |
-| 3    | Y7 です。 ここ  | Y6  | Y5    | Y4    | Y3  | Y2  | Y1  | Y0  | Y のデータのバイト数                |
-| 4    | Z7  | Z6  | Z5    | Z4    | Z3  | Z2  | Z1  | Z0  | Z ホイール/データのバイト           |
+| 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 記号と R/L/M ボタン |
+| 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X データバイト                 |
+| 3    | Y7  | Y6  | Y5    | Y4    | Y3  | Y2  | Y1  | Y0  | Y データバイト数                |
+| 4    | Z7  | Z6  | Z5    | Z4    | Z3  | Z2  | Z1  | A-za-z0  | Z/ホイールデータバイト           |
 
-#### <a name="standard-ps2-compatible-mouse-data-packet-format-5-buttons--verticalwheel"></a>標準 PS/2 と互換性のあるマウス データ パケット形式 (5 ボタン + VerticalWheel)
+#### <a name="standard-ps2-compatible-mouse-data-packet-format-5-buttons--verticalwheel"></a>標準 PS/2 互換マウスデータパケット形式 (5 つのボタン + 垂直ホイール)
 
-| バイト | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | Comment                               |
+| Byte | D7  | D6  | D5    | D4    | D3  | D2  | D1  | D0  | コメント                               |
 |------|-----|-----|-------|-------|-----|-----|-----|-----|---------------------------------------|
-| 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X と Y の記号と M/R/L ボタン           |
-| 2    | X7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | データのバイト x                           |
-| 3    | Y7 です。 ここ  | Y6  | Y5    | Y4    | Y3  | Y2  | Y1  | Y0  | Y のデータのバイト数                          |
-| 4    | 0   | 0   | B5    | B4    | Z3  | Z2  | Z1  | Z0  | Z/ホイール データと手順 4. と 5. ボタン |
+| 1    | 0   | 0   | Ysign | Xsign | 1   | M   | R   | L   | X/Y 記号と R/L/M ボタン           |
+| 2    | X 7  | X6  | X5    | X4    | X3  | X2  | X1  | X0  | X データバイト                           |
+| 3    | Y7  | Y6  | Y5    | Y4    | Y3  | Y2  | Y1  | Y0  | Y データバイト数                          |
+| 4    | 0   | 0   | B5    | B4    | Z3  | Z2  | Z1  | A-za-z0  | Z/ホイールデータとボタン4および5 |
 
-重要な注意事項:
+>[!IMPORTANT]
+>IntelliMouse と互換性のある3ボタンホイールモードで使用される8ビットではなく、5つのボタンのホイールマウスの Z/ホイールデータが4ビットに縮小されていることに注意してください。 この削減は、特定の割り込み期間中に、通常、ホイールが範囲 + 7/-8 を超える値を生成できないという事実によって可能になります。 マウスが5ボタンのホイールモードになっている場合は、Windows のマウスドライバーによって4つの Z/wheel データビットが拡張され、3ボタンのホイールモードでマウスが動作する場合は、Z/ホイールのデータバイトが表示されます。
+>
+>のボタン 4 & 5 は、WM appcommand メッセージにマップされ \_ 、アプリの \_ バックとアプリの転送に対応し \_ ます。
 
-- IntelliMouse と互換性のある 3 ボタン ホイール モードで使用される 8 ビットではなく 4 つのビット ホイールの 5 ボタン マウスのホイール Z/データが削減されたことに注意してください。 この短縮はファクトのことは、ホイールを通常を生成できません、範囲 + 7/8 を超える値の間に特定の割り込みによって実現されます。 Windows マウスのドライバーは署名は、マウスが 3 ボタン ホイール モードで動作するときに、マウスが、5 つのボタンのホイール モードとフル Z/ホイール データ バイトがときに、4 つの Z/ホイール データ ビットを拡張します。
-- 4 および 5 に、ボタンは、WM にマップされます\_APPCOMMAND のメッセージをアプリに対応して\_戻る ボタンとアプリ\_転送します。
+### <a name="devices-not-requiring-vendor-drivers"></a>ベンダドライバを必要としないデバイス
 
-### <a name="devices-not-requiring-vendor-drivers"></a>デバイス ドライバーのベンダーを必要としません。
-
-ドライバーのベンダーは、次のデバイス必要ないです。
+製造元のドライバーは、次のデバイスには必要ありません。
 
 - HID 標準に準拠しているデバイス。
-- キーボード、マウス、またはゲーム ポートのデバイスのシステムが指定した非-HIDClass ドライバーが運用します。
+- システムによって提供される非 HIDClass ドライバーによって操作されるキーボード、マウス、またはゲームポートデバイス。
 
 ## <a name="kbfiltr-sample"></a>Kbfiltr サンプル
 
-Kbfiltr は Kbdclass、キーボード デバイスと I8042prt、PS/2 スタイル キーボードの機能のドライバーのシステム クラスのドライバーで使用するように設計します。 Kbfiltr は、I/O 要求をフィルター処理する方法と Kbdclass と I8042prt の動作を変更するコールバック ルーチンを追加する方法について説明します。
+Kbfiltr は、Kbdclass で使用するように設計されています。これは、キーボードデバイスと I8042prt のシステムクラスドライバーであり、PS/2 スタイルのキーボード用の関数ドライバーです。 Kbfiltr は、i/o 要求をフィルター処理する方法と、Kbdclass および I8042prt の操作を変更するコールバックルーチンを追加する方法を示しています。
 
 Kbfiltr 操作の詳細については、次を参照してください。
 
-- Ntddkbd.h WDK ヘッダー ファイルです。
+- Ntddkbd WDK ヘッダーファイル。
 
-- サンプル[Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125)ソース コード。
+- サンプルの[Kbfiltr](https://go.microsoft.com/fwlink/p/?linkid=256125)ソースコード。
 
 ### <a name="kbfiltr-ioctls"></a>Kbfiltr Ioctl
 
-<table>
-<tr>
-<th>制御コード</th>
-<th>説明</th>
-</tr>
-<tr>
-<td>
-<p>
-&lt;/Mshelp:link tabindex =「0」keywords="hid.ioctl_internal_i8042_hook_keyboard"&gt;<b>IOCTL_INTERNAL_I8042_HOOK_KEYBOARD</b>&lt;/MSHelp:link&gt;
-</p>
-</td>
-<td>
-<p>IOCTL_INTERNAL_I8042_HOOK_KEYBOARD 要求は、次を行います。</p>
-<ul>
-<li>
-<p>I8042prt キーボードの初期化ルーチンに初期化のコールバック ルーチンを追加します。</p>
-</li>
-<li>
-<p>I8042prt キーボード ISR に ISR のコールバック ルーチンを追加します。</p>
-</li>
-</ul>
-<p>初期化と ISR コールバックは省略可能と PS/2 スタイル キーボード デバイスを上位レベルのフィルター ドライバーによって提供されます。</p>
-<p>I8042prt を受信した後、 &lt;/mshelp:link tabindex =「0」keywords="hid.ioctl_internal_keyboard_connect2"&gt;<b>IOCTL_INTERNAL_KEYBOARD_CONNECT</b>&lt;/MSHelp:link&gt;要求、キーボード デバイス スタックの先頭には同期 IOCTL_INTERNAL_I8042_HOOK_KEYBOARD 要求を送信します。</p>
-<p>Kbfiltr がフック キーボードの要求を受け取った後 Kbfiltr には、次のように、要求がフィルター処理されます。</p>
-<ul>
-<li>
-<p>上位レベルのデバイス オブジェクト、初期化のコールバックをへのポインター、ISR コールバックへのポインターのコンテキストを含む、Kbfiltr に渡される上位レベルの情報を保存します。</p>
-</li>
-<li>
-<p>独自の上位レベルの情報を置き換えられます。</p>
-</li>
-<li>
-<p>Kbfiltr ISR コールバックを使用するコールバックを I8042prt およびポインターのコンテキストを保存します。</p>
-</li>
-</ul>
-</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-&lt;MSHelp:link tabindex="0" keywords="hid.ioctl_internal_keyboard_connect"&gt;<b>IOCTL_INTERNAL_KEYBOARD_CONNECT</b>&lt;/MSHelp:link&gt;
-</p>
-</td>
-<td>
-<p>IOCTL_INTERNAL_KEYBOARD_CONNECT 要求は、キーボード デバイスに Kbdclass サービスを接続します。 キーボード デバイスを開く前に、Kbdclass はキーボード デバイス スタックには、この要求を送信します。 </p>
-<p>Kbfiltr がキーボードの接続要求を受け取った後 Kbfiltr には、次のように接続要求がフィルター処理されます。</p>
-<ul>
-<li>
-<p>Kbdclass のコピーを保存&lt;/mshelp:link tabindex =「0」keywords="hid.connect_data__kbdclass_"&gt;<b>CONNECT_DATA (Kbdclass)</b>&lt;/MSHelp:link&gt;渡される構造体Kbdclass によってフィルター ドライバー</p>
-</li>
-<li>
-<p>独自の置換クラス ドライバーの接続情報のために情報を接続</p>
-</li>
-<li>
-<p>デバイス スタック IOCTL_INTERNAL_KEYBOARD_CONNECT 要求を送信します。</p>
-</li>
-</ul>
-<p>要求が成功しなかった場合、Kbfiltr は、該当するエラー状態で要求を完了します。</p>
-<p>Kbfiltr の操作を補足するフィルター サービス コールバック ルーチンのテンプレートを提供する&lt;/mshelp:link tabindex =「0」keywords="hid.keyboardclassservicecallback"&gt;<b>KeyboardClassServiceCallback</b> &lt;/MSHelp:link&gt;、Kbdclass クラス サービス コールバック ルーチン。 フィルター サービスのコールバックは、デバイスの入力バッファーからクラスのデータ キューに転送される入力データをフィルター処理できます。 </p>
-<dl>
-<dd>
-</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-&lt;MSHelp:link tabindex="0" keywords="hid.ioctl_internal_keyboard_disconnect"&gt;<b>IOCTL_INTERNAL_KEYBOARD_DISCONNECT</b>&lt;/MSHelp:link&gt;
-</p>
-</td>
-<td>
-<p>IOCTL_INTERNAL_KEYBOARD_DISCONNECT 要求が STATUS_NOT_IMPLEMENTED の状態で完了します。 プラグ アンド プレイ キーボードの追加またはプラグ アンド プレイ マネージャーによって削除されたことに注意してください。</p>
-</td>
-</tr>
-</table>
+#### <a name="ioctl_internal_i8042_hook_keyboard"></a>IOCTL_INTERNAL_I8042_HOOK_KEYBOARD
 
-<p>他のすべてのデバイス制御要求には、Kbfiltr は現在 IRP スタックをスキップし、さらに処理することがなく、デバイス スタック ダウン要求を送信します。</p>
-<p><b>Kbfiltr によって実装されるコールバック ルーチン</b></p>
-<p>
-<ul>
-<li><b>KbFilter_InitializationRoutine</b>
+IOCTL_INTERNAL_I8042_HOOK_KEYBOARD 要求では、次のことが行われます。
 
-     (see &lt;MSHelp:link tabindex="0" keywords="hid.pi8042_keyboard_initialization_routine"&gt;<b>PI8042_KEYBOARD_INITIALIZATION_ROUTINE</b>&lt;/MSHelp:link&gt;)<p><b>
-          KbFilter_InitializationRoutine</b> is not needed if I8042prt's default initialization of a keyboard is sufficient.</p>
-<p>I8042prt 呼び出し<b>KbFilter_InitializationRoutine</b>とき、キーボードを初期化します。 既定のキーボードの初期化には、次の操作が含まれています: キーボードのリセット、キーボードの速度と遅延を設定し、発光ダイオード (LED) を設定します。
-<pre><code>
+- 初期化コールバックルーチンを I8042prt キーボード初期化ルーチンに追加します。
+- ISR コールバックルーチンを I8042prt キーボード ISR に追加します。
+
+初期化と ISR のコールバックは省略可能であり、PS/2 スタイルのキーボードデバイス用の上位レベルのフィルタードライバーによって提供されます。
+
+I8042prt は、 **IOCTL_INTERNAL_KEYBOARD_CONNECT**要求を受信すると、同期**IOCTL_INTERNAL_I8042_HOOK_KEYBOARD**要求をキーボードデバイススタックの一番上に送信します。
+
+Kbfiltr がフックキーボード要求を受け取ると、Kbfiltr は次の方法で要求をフィルター処理します。
+
+- 上位レベルのデバイスオブジェクトのコンテキスト、初期化コールバックへのポインター、および ISR コールバックへのポインターを含む、Kbfiltr に渡される上位レベルの情報を保存します。
+- 上位レベルの情報を独自のに置き換えます。
+- I8042prt のコンテキストと、Kbfiltr ISR コールバックで使用できるコールバックへのポインターを保存します。
+
+#### <a name="ioctl_internal_keyboard_connect"></a>IOCTL_INTERNAL_KEYBOARD_CONNECT
+
+**IOCTL_INTERNAL_KEYBOARD_CONNECT**要求は、Kbdclass サービスをキーボードデバイスに接続します。 Kbdclass は、キーボードデバイスを開く前に、この要求をキーボードデバイススタックに送信します。
+
+Kbfiltr がキーボード接続要求を受け取った後、Kbfiltr は次の方法で connect 要求をフィルター処理します。
+
+- Kbdclass によってフィルタードライバーに渡される Kbdclass の**CONNECT_DATA (Kbdclass)** 構造体のコピーを保存します。
+- クラスドライバー接続情報の独自の接続情報を置き換えます。
+- **IOCTL_INTERNAL_KEYBOARD_CONNECT**要求をデバイススタックに送信します。
+
+要求が成功しなかった場合、Kbfiltr は適切なエラー状態で要求を完了します。
+
+Kbfiltr は、Kbdclass クラスのサービスコールバックルーチン**KeyboardClassServiceCallback**の操作を補完できるフィルターサービスコールバックルーチンのテンプレートを提供します。 フィルターサービスのコールバックでは、デバイスの入力バッファーからクラスデータキューに転送される入力データをフィルター処理できます。
+
+#### <a name="ioctl_internal_keyboard_disconnect"></a>IOCTL_INTERNAL_KEYBOARD_DISCONNECT
+
+**IOCTL_INTERNAL_KEYBOARD_DISCONNECT**要求は、STATUS_NOT_IMPLEMENTED の状態で完了します。 プラグアンドプレイマネージャーでプラグアンドプレイキーボードを追加または削除できることに注意してください。
+
+その他のすべてのデバイス制御要求では、Kbfiltr は、現在の IRP スタックをスキップし、要求をデバイススタックに送信します。これを処理する必要はありません。
+
+### <a name="callback-routines-implemented-by-kbfiltr"></a>Kbfiltr によって実装されるコールバックルーチン
+
+#### <a name="kbfilter_initializationroutine"></a>KbFilter_InitializationRoutine
+
+「」を参照してください**PI8042_KEYBOARD_INITIALIZATION_ROUTINE**
+
+キーボードの I8042prt の既定の初期化に十分な場合、 **KbFilter_InitializationRoutine**は必要ありません。
+
+I8042prt は、キーボードを初期化するときに**KbFilter_InitializationRoutine**を呼び出します。 既定のキーボード初期化には、次の操作が含まれます。
+
+- キーボードをリセットする
+- 速度のレートと遅延を設定する
+- 発光ダイオード (LED) を設定する
+
+```cpp
 /*
 Parameters
 DeviceObject [in]
@@ -284,26 +245,27 @@ Specifies, if TRUE, to turn translation on. Otherwise, translation is turned off
 
 Return value
 KbFilter_InitializationRoutine returns an appropriate NTSTATUS code.
-
-<em>/
+*/
 
 NTSTATUS KbFilter_InitializationRoutine(
-  <em>In</em>  PDEVICE_OBJECT          DeviceObject,
-  <em>In</em>  PVOID                   SynchFuncContext,
-  <em>In</em>  PI8042_SYNCH_READ_PORT  ReadPort,
-  <em>In</em>  PI8042_SYNCH_WRITE_PORT WritePort,
-  <em>Out</em> PBOOLEAN                TurnTranslationOn
+  In  PDEVICE_OBJECT          DeviceObject,
+  In  PVOID                   SynchFuncContext,
+  In  PI8042_SYNCH_READ_PORT  ReadPort,
+  In  PI8042_SYNCH_WRITE_PORT WritePort,
+  Out PBOOLEAN                TurnTranslationOn
 );
-</code></pre>
-</p>
-</li>
-<li><b>KbFilter_IsrHook</b>
+```
 
-     (see &lt;MSHelp:link tabindex="0" keywords="hid.pi8042_keyboard_isr"&gt;<i>PI8042_KEYBOARD_ISR</i>&lt;/MSHelp:link&gt;)<p>This callback is not needed if the default operation of I8042prt is sufficient.</p>
-<p>I8042prt キーボード ISR 呼び出し<b>KbFilter_IsrHook</b>後、割り込みを検証し、スキャン コードを読むことです。 </p>
-<p><b>KbFilter_IsrHook</b> I8042prt キーボード ISR. の IRQL でカーネル モードで実行</p>
-<pre><code>
-/</em>
+#### <a name="kbfilter_isrhook"></a>KbFilter_IsrHook
+
+「 **PI8042_KEYBOARD_ISR**」を参照してください。 I8042prt の既定の操作で十分な場合、このコールバックは必要ありません。
+
+I8042prt キーボード ISR は、割り込みを検証し、スキャンコードを読み取ると**KbFilter_IsrHook**を呼び出します。
+
+**KbFilter_IsrHook**は、I8042prt キーボードの IRQL でカーネルモードで実行されます。
+
+```cpp
+/*
 Parameters
 DeviceObject [in]
 Pointer to the filter device object of the driver that supplies this callback.
@@ -328,8 +290,7 @@ Pointer to a KEYBOARD_SCAN_STATE structure that specifies the keyboard scan stat
 
 Return value
 KbFilter_IsrHook returns TRUE if the interrupt service routine should continue; otherwise it returns FALSE.
-
-<em>/
+*/
 
 KbFilter_IsrHook KbFilter_IsrHook(
   <em>In</em>    PDEVICE_OBJECT       DeviceObject,
@@ -340,13 +301,16 @@ KbFilter_IsrHook KbFilter_IsrHook(
   <em>Out</em>   PBOOLEAN             ContinueProcessing,
   <em>In</em>    PKEYBOARD_SCAN_STATE ScanState
 );
+```
 
-);
-</code></pre>
-</li>
-<li><b>KbFilter_ServiceCallback</b> (を参照してください&lt;/mshelp:link tabindex =「0」keywords="hid.kbdclass_class_service_callback_routine"&gt;<i>PSERVICE_CALLBACK_ROUTINE</i>&lt;/MSHelp:リンク&gt;)<p>ドライバーの関数呼び出しの ISR ディスパッチの完了ルーチン<b>KbFilter_ServiceCallback</b>、しのキーボード クラス ドライバーの実装を呼び出す&lt;/mshelp:link tabindex =「0」keywords="hid.kbdclass_class_service_callback_routine"&gt;<i>PSERVICE_CALLBACK_ROUTINE</i>&lt;/MSHelp:link&gt;します。 仕入先には、デバイスの入力バッファーからクラスのデータ キューに転送される入力データを変更するフィルター サービスのコールバックを実装できます。 たとえば、コールバックできます削除、変換、またはデータを挿入します。
-<pre><code>
-/</em>
+#### <a name="kbfilter_servicecallback"></a>KbFilter_ServiceCallback
+
+「 **PSERVICE_CALLBACK_ROUTINE**」を参照してください。
+
+関数ドライバーの ISR ディスパッチ完了ルーチンは**KbFilter_ServiceCallback**を呼び出し、その後、キーボードクラスドライバーの*PSERVICE_CALLBACK_ROUTINE*の実装を呼び出します。 ベンダーは、フィルターサービスコールバックを実装して、デバイスの入力バッファーからクラスデータキューに転送される入力データを変更できます。 たとえば、コールバックは、データの削除、変換、または挿入を行うことができます。
+
+```cpp
+/*
 Parameters
 DeviceObject [in]
 Pointer to the class device object.
@@ -362,7 +326,6 @@ Pointer to the number of keyboard input data packets that are transferred by the
 
 Return value
 None
-
 */
 
 VOID KbFilter_ServiceCallback(
@@ -371,84 +334,45 @@ VOID KbFilter_ServiceCallback(
   <em>In</em>    PKEYBOARD_INPUT_DATA InputDataEnd,
   <em>Inout</em> PULONG               InputDataConsumed
 );
+```
 
-);
-</code></pre>
-</p>
+## <a name="moufiltr-sample"></a>お持ちのサンプル
 
-## <a name="moufiltr-sample"></a>Moufiltr サンプル
+I8042prt は、このクラスと共に使用するように設計されています。このクラスは、Windows 2000 以降のバージョンで使用されるマウスデバイス用のシステムクラスドライバーであり、Windows 2000 以降で使用される PS/2 スタイルのマウスの関数ドライバーです。 I8042prt filtr は、i/o 要求をフィルター処理し、の操作を変更するコールバックルーチンを追加する方法を示しています。
 
-Moufiltr は Mouclass、Windows 2000 以降のバージョンと I8042prt、関数のドライバーを Windows 2000 以降を使用するスタイル 2 PS/マウスを使用するマウス デバイスのシステム クラスのドライバーで使用するように設計します。 Moufiltr では、I/O 要求をフィルター処理し、Mouclass と I8042prt の動作を変更するコールバック ルーチンを追加する方法を示します。
+### <a name="moufiltr-control-codes"></a>コントロールコード
 
-<table>
-<tr>
-<th>制御コード</th>
-<th>説明</th>
-</tr>
-<tr>
-<td>
-<p>
-&lt;/Mshelp:link tabindex =「0」keywords="hid.ioctl_internal_i8042_hook_mouse"&gt;<b>IOCTL_INTERNAL_I8042_HOOK_MOUSE</b>&lt;/MSHelp:link&gt;
-</p>
-</td>
-<td>
-<p>IOCTL_INTERNAL_I8042_HOOK_MOUSE 要求 I8042prt マウス ISR. ISR のコールバック ルーチンを追加します ISR コールバックは省略可能で、マウスの上位レベルのフィルター ドライバーによって提供されます。</p>
-<p>I8042prt が受信した後、この要求を送信する&lt;/mshelp:link tabindex =「0」keywords="hid.ioctl_internal_mouse_connect2"&gt;<b>IOCTL_INTERNAL_MOUSE_CONNECT</b>&lt;/MSHelp:link&gt;要求。 I8042prt は、マウス デバイス スタックの一番上に同期 IOCTL_INTERNAL_I8042_HOOK_MOUSE 要求を送信します。</p>
-<p>Moufiltr がフック マウスの要求を受信した後は、次のように、要求がフィルター処理されます。</p>
-<ul>
-<li>
-<p>上位レベルのデバイス オブジェクトと、ISR コールバックへのポインターのコンテキストを含む、Moufiltr に渡される上位レベルの情報を保存します。</p>
-</li>
-<li>
-<p>独自の上位レベルの情報を置き換えられます。</p>
-</li>
-<li>
-<p>Moufiltr ISR コールバックを使用するコールバックを I8042prt およびポインターのコンテキストを保存します。</p>
-</li>
-</ul>
-<p>この要求とコールバックの詳細については、次のトピックを参照してください。</p>
-<dl>
-<dd>
-<p>
-&lt;/Mshelp:link tabindex =「0」keywords="hid.i8042prt_callback_routines"&gt;I8042prt コールバック ルーチン&lt;/MSHelp:link&gt;
-</p>
-</dd>
-<dd>
-<p>
-&lt;/Mshelp:link tabindex =「0」keywords="hid.moufiltr_callback_routines"&gt;Moufiltr コールバック ルーチン&lt;/MSHelp:link&gt;
-</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-&lt;/Mshelp:link tabindex =「0」keywords="hid.ioctl_internal_mouse_connect"&gt;<b>IOCTL_INTERNAL_MOUSE_CONNECT</b>&lt;/MSHelp:link&gt;
-</p>
-</td>
-<td>
-<p>IOCTL_INTERNAL_MOUSE_CONNECT 要求は、マウス デバイスに Mouclass サービスを接続します。</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>
-&lt;/Mshelp:link tabindex =「0」keywords="hid.ioctl_internal_mouse_disconnect"&gt;<b>IOCTL_INTERNAL_MOUSE_DISCONNECT</b>&lt;/MSHelp:link&gt;
-</p>
-</td>
-<td>
-<p>IOCTL_INTERNAL_MOUSE_DISCONNECT 要求は、Moufiltr STATUS_NOT_IMPLEMENTED のエラー状態で終了されます。</p>
-</td>
-</tr>
-</table>
-<p> </p>
-</p>
-<p>その他のすべての要求は、Moufiltr は現在 IRP スタックをスキップし、さらに処理することがなく、デバイス スタック ダウン要求を送信します。</p>
-<p><b>Kbfiltr によって実装されるコールバック ルーチン</b></p>
-<dl>
-<dd><b>MouFilter_IsrHook</b> (を参照してください&lt;/mshelp:link tabindex =「0」keywords="hid.pi8042_mouse_isr"&gt;<i>PI8042_MOUSE_ISR</i>&lt;/MSHelp:link&gt;)<p>
-<pre><code>
+#### <a name="ioctl_internal_i8042_hook_mouse"></a>IOCTL_INTERNAL_I8042_HOOK_MOUSE
+
+**IOCTL_INTERNAL_I8042_HOOK_MOUSE**要求は、isr コールバックルーチンを I8042PRT MOUSE isr に追加します。 ISR コールバックは省略可能であり、上位レベルのマウスフィルタードライバーによって提供されます。
+
+I8042prt は、 **IOCTL_INTERNAL_MOUSE_CONNECT**要求を受信した後に、この要求を送信します。 I8042prt は、マウスデバイススタックの一番上に同期**IOCTL_INTERNAL_I8042_HOOK_MOUSE**要求を送信します。
+
+ネズミ Filtr は、フックマウス要求を受信した後、次の方法で要求をフィルター処理します。
+
+- 上位レベルのデバイスオブジェクトのコンテキストと ISR コールバックへのポインターを含む、テキストに渡された上位レベルの情報を保存します。
+- 上位レベルの情報を独自のに置き換えます。
+- I8042prt のコンテキストと、このコールバックが使用できるコールバックへのポインターを保存します。
+
+### <a name="moufiltr-callback-routines"></a>///コールバックルーチン
+
+#### <a name="ioctl_internal_mouse_connect"></a>IOCTL_INTERNAL_MOUSE_CONNECT
+
+IOCTL_INTERNAL_MOUSE_CONNECT 要求は、マウスデバイスにマウスのサービスを接続します。
+
+#### <a name="ioctl_internal_mouse_disconnect"></a>IOCTL_INTERNAL_MOUSE_DISCONNECT
+
+IOCTL_INTERNAL_MOUSE_DISCONNECT 要求は、STATUS_NOT_IMPLEMENTED のエラー状態を持つ、の場合には、このように完了します。
+
+他のすべての要求については、現在の IRP スタックがスキップされ、デバイススタックに要求が送信されます。これを処理する必要はありません。
+
+### <a name="callback-routines"></a>コールバックルーチン
+
+#### <a name="moufilter_isrhook"></a>MouFilter_IsrHook
+
+「 **PI8042_MOUSE_ISR**」を参照してください。
+
+```cpp
 /*
 Parameters
 DeviceObject
@@ -477,7 +401,6 @@ Pointer to MOUSE_RESET_SUBSTATE enumeration value, which identifies the mouse re
 
 Return value
 MouFilter_IsrHook returns TRUE if the interrupt service routine should continue; otherwise it returns FALSE.
-
 */
 
 BOOLEAN MouFilter_IsrHook(
@@ -490,20 +413,21 @@ BOOLEAN MouFilter_IsrHook(
    PMOUSE_STATE          MouseState,
    PMOUSE_RESET_SUBSTATE ResetSubState
 );
-</code></pre>
-</p>
-<p>A <b>MouFilter_IsrHook</b> I8042prt の既定の操作のための十分な場合、コールバックは必要ありません。
+```
 
-I8042prt マウス ISR 呼び出し<b>MouFilter_IsrHook</b>割り込みを検証後します。
+I8042prt の既定の操作で十分であれば、 **MouFilter_IsrHook**コールバックは必要ありません。
 
-マウスをリセットするには、I8042prt は運用の下位の MOUSE_RESET_SUBSTATE 列挙値によって識別されますがそれぞれ 1 つのシーケンスについて説明します。 I8042prt がマウスおよび対応するマウスをリセットする方法の詳細については、下位状態をリセットし、ntdd8042.h MOUSE_RESET_SUBSTATE のドキュメントを参照してください。
+I8042prt マウス ISR は、割り込みを検証した後に**MouFilter_IsrHook**を呼び出します。
 
-<b>MouFilter_IsrHook</b> I8042prt マウス ISR. の IRQL でカーネル モードで実行
+マウスをリセットするために、I8042prt は一連の操作の下位の部分を通過し、それぞれが MOUSE_RESET_SUBSTATE 列挙値によって識別されます。 I8042prt がマウスとそれに対応するマウスリセットの下位部分をリセットする方法の詳細については、ntdd8042 の MOUSE_RESET_SUBSTATE のドキュメントを参照してください。
 
-</p>
-</dd>
-<dd><b>MouFilter_ServiceCallback</b> (を参照してください&lt;/mshelp:link tabindex =「0」keywords="hid.kbdclass_class_service_callback_routine"&gt;<i>PSERVICE_CALLBACK_ROUTINE</i>&lt;/MSHelp: リンク&gt;)<p>
-<pre><code>
+**MouFilter_IsrHook**は、I8042PRT マウス ISR の IRQL でカーネルモードで実行されます。
+
+#### <a name="moufilter_servicecallback"></a>MouFilter_ServiceCallback
+
+「」を参照してください*PSERVICE_CALLBACK_ROUTINE*
+
+```cpp
 /*
 Parameters
 DeviceObject [in]
@@ -520,7 +444,6 @@ Pointer to the number of mouse input data packets that are transferred by the ro
 
 Return value
 None
-
 */
 
 VOID MouFilter_ServiceCallback(
@@ -529,8 +452,6 @@ VOID MouFilter_ServiceCallback(
   _In_    PMOUSE_INPUT_DATA InputDataEnd,
   _Inout_ PULONG            InputDataConsumed
 );
-</code></pre>
-</p>
-<p>I8042prt の ISR DPC MouseClassServiceCallback を呼び出して、MouFilter_ServiceCallback を呼び出します。 デバイスの入力バッファーからクラスのデータ キューに転送される入力データを変更するのには、フィルター サービスのコールバックを構成できます。 たとえば、コールバックできます削除、変換、またはデータを挿入します。
+```
 
-</p>
+I8042prt の ISR DPC は MouFilter_ServiceCallback を呼び出し、その後、MouseClassServiceCallback を呼び出します。 フィルターサービスコールバックは、デバイスの入力バッファーからクラスデータキューに転送される入力データを変更するように構成できます。 たとえば、コールバックは、データの削除、変換、または挿入を行うことができます。

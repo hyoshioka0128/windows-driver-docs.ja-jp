@@ -180,6 +180,8 @@
           href: how-to-test-sign-a-driver-package.md
         - name: テスト証明書の作成
           href: creating-test-certificates.md
+        - name: テスト証明書のインストール
+          href: installing-test-certificates.md
         - name: テスト証明書の参照
           href: viewing-test-certificates.md
         - name: ドライバー パッケージのテスト署名用のカタログ ファイルの作成
@@ -198,8 +200,6 @@
           href: the-testsigning-boot-configuration-option.md
         - name: コードの整合性でのイベント ログとシステム監査の有効化
           href: enabling-code-integrity-event-logging-and-system-auditing.md
-        - name: テスト証明書のインストール
-          href: installing-test-certificates.md
         - name: テスト署名の検証
           href: verifying-the-test-signature.md
         - name: テスト コンピューターへのテスト署名されたドライバー パッケージのインストール

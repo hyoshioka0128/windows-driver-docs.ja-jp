@@ -4,21 +4,21 @@ description: シンプルなデータ ドリブン テストの例
 ms.assetid: 59A897C3-C9CD-4e1c-B4BA-F81B3B3E4532
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 507620097df485986b2281923014ee0c22dbdd14
-ms.sourcegitcommit: 0cc5051945559a242d941a6f2799d161d8eba2a7
+ms.openlocfilehash: 0f6f8d4dad8e0921c334c6391057bd29e02be291
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "63386490"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402297"
 ---
 # <a name="simple-data-driven-test-example"></a>シンプルなデータ ドリブン テストの例
 
 
-このセクションでは、データ ドリブン テストのいくつかの例を説明し、各例では、特定の機能について説明します。
+ここでは、データドリブンテストの例をいくつか紹介し、各例の特定の機能について説明します。
 
-最初の例では、SimpleDataDrivenExample と呼ばれる、基本的なデータ ドリブン テストです。
+最初の例は、SimpleDataDrivenExample という基本的なデータドリブンテストです。
 
-管理対象の例では、次のような XML ファイルが表示されます。
+マネージドの例では、次のような XML ファイルを検索します。
 
 ```cpp
     1  <?xml version="1.0"?>
@@ -48,11 +48,11 @@ ms.locfileid: "63386490"
     25 </Data>
 ```
 
-この XML ファイルでは、データのパラメーターを使用するには、このデータ ドリブン テストを定義します。 最上位の XML ノードは、 **&lt;データ&gt;** タグを含むことができる**1 つまたは複数&lt;テーブル&gt;** 内に定義されているタグ。 **すべてのテーブルは、一意の"ID"属性に関連付ける必要があります。** テスト関数は、XML ファイルで使用する特定のテーブルを識別するためにテーブルの ID 値を使用します。
+この XML ファイルは、使用するデータドリブンテストのデータパラメーターを定義します。 最上位の XML ノードは** &lt; データ &gt; **タグであり、その中に定義されている**1 つ以上の &lt; テーブル &gt; **タグを含むことができます。 **すべてのテーブルは、一意の "ID" 属性に関連付けられている必要があります。** テスト関数は、テーブル ID 値を使用して、XML ファイルで使用される特定のテーブルを識別します。
 
-内で、&lt;テーブル&gt;タグがある、省略可能な **&lt;も存在しない&gt;** セクション。 使用して指定されたパラメーターのデータ型を明示的に指定するここ **&lt;も存在しない&gt;** タグ。 上記の例では、明示的に指定する"Int32"型のパラメーター「サイズ」は、パラメーター"Color"は文字列です。 要約。**存在しないセクションは省略可能です。既定では、パラメーターの型情報が指定されていない場合は、保存されますを文字列として。**
+&lt;Table タグ内 &gt; には、省略可能な** &lt; ParameterTypes &gt; **セクションがあります。 ここでは、 ** &lt; ParameterTypes &gt; ** tags を使用して、特定のパラメーターのデータ型を明示的に指定できます。 上の例では、パラメーター "Size" の型が "Int32" で、パラメーター "Color" が文字列であることを明示的に指定しています。 概要: **ParameterTypes セクションは省略可能です。既定では、パラメーターの型情報が指定されていない場合は、文字列として保存されます。**
 
-マネージとネイティブの例と比較すると、ことを確認する 2 つの唯一の違い、 **&lt;も存在しない&gt;** ブロックします。 ネイティブ XML ファイルでは、"int"ネイティブ整数型のサイズを指定し、色の種類を指定しないことで既定の WEX::Common::String の種類を使用します。 便宜上は、次の例は、ネイティブの例から XML ファイルを示します。
+マネージとネイティブの例を比較した場合、2つの違いは** &lt; ParameterTypes &gt; **ブロックだけであることがわかります。 ネイティブ XML ファイルはネイティブの整数型 "int" のサイズを指定し、既定の型 WEX:: Common:: String を使用して、指定しない色の型にします。 便宜上、次の例では、ネイティブの例の XML ファイルを示します。
 
 ```cpp
     1  <?xml version="1.0"?>
@@ -81,26 +81,26 @@ ms.locfileid: "63386490"
     24 </Data>
 ```
 
-サポートされるパラメーター型**ネイティブ**と**マネージ**コードは、一覧表示されます[ここ](parameter-types-in-table-data-sources.md)します。
+**ネイティブ**コードと**マネージ**コードでサポートされているパラメーターの型は、「[テーブルデータソースのパラメーターの型](parameter-types-in-table-data-sources.md)」に記載されています。
 
-その他の任意のデータ型を指定すると、テストは警告がスロー文字列であることだとします。
+他のデータ型を指定した場合、テストでは警告がスローされ、それが文字列であると見なされます。
 
-XML を継続的バックアップ ファイルの後、&lt;も存在しない&gt;ブロック、XML ファイルの両方で、同一のセットがある **&lt;行&gt;s**、内のデータの 1 つのセットに対応する各どちらのマネージ コードとネイティブの例です。 このケースで 4 を使用して定義されているデータの 4 つのセットがある&lt;行&gt;をブロックするを使用してパラメーターの値を指定する各、 **&lt;パラメーター&gt;** タグ。
+XML ファイルを引き続き使用すると、 &lt; 両方の &gt; xml ファイルの ParameterTypes ブロックの後に、同一の** &lt; 行 &gt; **セットが作成されます。これらはそれぞれ、マネージとネイティブの両方の例の1つのデータセットに対応しています。 このケースでは、4つの行ブロックによって定義された4つのデータセットがあり &lt; &gt; 、それぞれが** &lt; パラメーター &gt; **タグを使用してパラメーターの値を指定しています。
 
-データのソース ファイルのさまざまな部分の基本について説明します。 これで、上記の XML ファイルで指定した値を取得する方法を見てみましょう。
+ここでは、データソースファイルのさまざまな部分の基本的な基本について説明します。 次に、上記の XML ファイルで指定した値を取得する方法を見てみましょう。
 
-## <a name="span-idauthoringtesttobeadatadriventestspanspan-idauthoringtesttobeadatadriventestspanspan-idauthoringtesttobeadatadriventestspanauthoring-test-to-be-a-data-driven-test"></a><span id="Authoring_test_to_be_a_data_driven_test"></span><span id="authoring_test_to_be_a_data_driven_test"></span><span id="AUTHORING_TEST_TO_BE_A_DATA_DRIVEN_TEST"></span>データ ドリブン テストにテストの作成
+## <a name="span-idauthoring_test_to_be_a_data_driven_testspanspan-idauthoring_test_to_be_a_data_driven_testspanspan-idauthoring_test_to_be_a_data_driven_testspanauthoring-test-to-be-a-data-driven-test"></a><span id="Authoring_test_to_be_a_data_driven_test"></span><span id="authoring_test_to_be_a_data_driven_test"></span><span id="AUTHORING_TEST_TO_BE_A_DATA_DRIVEN_TEST"></span>データドリブンテストの作成テスト
 
 
-これで、データを指定すると、コードを関連付けるか、XML ファイルでこのデータを使用してデータを使用するメソッドをテストする方法必要があります。 これを行う - どちら、マネージ コードとネイティブの例で、指定することによって、 **"DataSource"** メタデータ。 データ ソースのメタデータには、次の 3 つの部分に分かれてがあります。
+データを指定したので、このデータを使用するコードまたはテストメソッドを XML ファイルで関連付ける方法が必要になります。 これを行うには、 **"DataSource"** メタデータを指定して、マネージとネイティブの両方の例を使用します。 DataSource メタデータには、次の3つの部分があります。
 
-1.  ' テーブル:'-これは XML テーブルとしてデータ ソースを識別します。
-2.  'DataDrivenTests.xml' の XML テーブルを含むファイルです。
-3.  '\#Table2' - 次の'\#' 区切り、'Table2' 値が使用する XML ドキュメント内で特定のテーブルを識別します。 1 つのテーブルの XML データ ソースは、複数のテーブルを含めることができます。 TAEF は、指定した値に一致する 'Id' 属性を持つ Table 要素の XML ファイルを参照します。
+1.  ' Table: '-データソースを XML テーブルとして識別します。
+2.  ' DataDrivenTests.xml '-XML テーブルを含むファイルです。
+3.  ' \# Table2 '-' ' 区切り記号 ' の後にある ' \# table2 ' 値は、使用する XML ドキュメント内の特定のテーブルを識別します。 1つの XML テーブルデータソースには、複数のテーブルを含めることができます。 TAEF は、指定された値と一致する ' Id ' 属性を持つテーブル要素の XML ファイルを検索します。
 
-もう一度、上記の側面を網羅するコードを簡単に見てことができます。
+ここでも、上記の側面についてのコードを簡単に見ていきましょう。
 
-### <a name="span-idnativecodespanspan-idnativecodespanspan-idnativecodespannative-code"></a><span id="Native_code"></span><span id="native_code"></span><span id="NATIVE_CODE"></span>ネイティブ コード
+### <a name="span-idnative_codespanspan-idnative_codespanspan-idnative_codespannative-code"></a><span id="Native_code"></span><span id="native_code"></span><span id="NATIVE_CODE"></span>ネイティブコード
 
 ```cpp
 1   class SimpleDataDrivenExample
@@ -118,7 +118,7 @@ XML を継続的バックアップ ファイルの後、&lt;も存在しない&g
 12     ...
 ```
 
-### <a name="span-idmanagedcodespanspan-idmanagedcodespanspan-idmanagedcodespanmanaged-code"></a><span id="Managed_code"></span><span id="managed_code"></span><span id="MANAGED_CODE"></span>マネージ コード
+### <a name="span-idmanaged_codespanspan-idmanaged_codespanspan-idmanaged_codespanmanaged-code"></a><span id="Managed_code"></span><span id="managed_code"></span><span id="MANAGED_CODE"></span>マネージコード
 
 ```cpp
     1 [TestMethod]
@@ -129,9 +129,9 @@ XML を継続的バックアップ ファイルの後、&lt;も存在しない&g
     6 }
 ```
 
-「データ ソース」は、Microsoft.VisualStudio.TestTools.UnitTesting の既知のプロパティです。
+"DataSource" は、Microsoft.visualstudio.testtools.uitest.extension.silverlight.dll テストの既知のプロパティです。
 
-上記のほかには、マネージ コードでデータ ドリブン テストのいくつか追加の手順が必要です。 プライベート TestContext プロパティ - VSTS をお勧めなどを定義する必要があります (<https://msdn2.microsoft.com/library/ms404699(VS.80).aspx>)。 このプロパティにパブリック assessors も定義します。 内部的にして、データにアクセスできるように、TAEF はこの TestContext プロパティを設定します。 コードのこの部分で簡単に検討することができます。
+上記に加えて、マネージコードでのデータドリブンテストには追加の手順が必要になります。 また、"TestContext" というプライベートプロパティを定義する必要もあり <https://msdn2.microsoft.com/library/ms404699(VS.80).aspx> ます ()。 このプロパティに対してパブリック assessors を定義することもできます。 内部 TAEF は、この TestContext プロパティを設定して、データにアクセスできるようにします。 コードの次の部分を簡単に見てみましょう。
 
 ```cpp
     1 public TestContext TestContext
@@ -141,10 +141,10 @@ XML を継続的バックアップ ファイルの後、&lt;も存在しない&g
     5 }
 ```
 
-## <a name="span-idretrievingdatainthetestmethodspanspan-idretrievingdatainthetestmethodspanspan-idretrievingdatainthetestmethodspanretrieving-data-in-the-test-method"></a><span id="Retrieving_data_in_the_Test_method"></span><span id="retrieving_data_in_the_test_method"></span><span id="RETRIEVING_DATA_IN_THE_TEST_METHOD"></span>テスト メソッドでデータを取得します。
+## <a name="span-idretrieving_data_in_the_test_methodspanspan-idretrieving_data_in_the_test_methodspanspan-idretrieving_data_in_the_test_methodspanretrieving-data-in-the-test-method"></a><span id="Retrieving_data_in_the_Test_method"></span><span id="retrieving_data_in_the_test_method"></span><span id="RETRIEVING_DATA_IN_THE_TEST_METHOD"></span>テストメソッドでのデータの取得
 
 
-取得 Api は、マネージ コードとネイティブ コードで異なります。 まず理解、**ネイティブの取得 API**:
+取得 Api はマネージコードとネイティブコードで異なります。 まず、**ネイティブ取得 API**について説明します。
 
 ```cpp
     1  void SimpleDataDrivenExample::DataDrivenTest()
@@ -170,11 +170,11 @@ XML を継続的バックアップ ファイルの後、&lt;も存在しない&g
     21 }
 ```
 
-4、11、および 17 行に特に注意します。 これらの行ごとに、前に取得するデータを保存するローカル変数を定義します。 ここにある型を取得するのには重要です。 「サイズ」を XML ファイルで、"int"型を定義するために取得する型は int のローカル変数を定義する必要があります。 検索 API では、最初のパラメーターとして文字列値として取得するパラメーターの名前を受け取ります。 2 番目のパラメーターは、ローカル変数の参照によって渡され、TAEF コードで設定です。
+4、11、および17行目に特に注意を払ってください。 これらの行の前に、取得するデータを保存するローカル変数を定義します。 ここで型を取得することが重要です。 "Size" は XML ファイルの "int" 型に定義されているため、この型を取得するには int 型のローカル変数を定義する必要があります。 取得 API は、最初のパラメーターとして文字列値として取得するパラメーターの名前を受け取ります。 2番目のパラメーターは、参照渡しで渡され、TAEF コードによって設定されるローカル変数です。
 
-定義されているこの検索 API **TestData.h** TAEF のすべてのテストを含む WexTestClass.h ヘッダーが含まれているとします。
+この取得 API は**TestData**で定義され、すべての taef テストに含まれる WexTestClass ヘッダーに含まれています。
 
-データを取得する**マネージ コード**、ことを定義した TestContext プロパティを使用します。 次のコードで (または例では) を参照してください。
+**マネージコード**内のデータを取得するには、定義した TestContext プロパティを使用します。 次のコードを見てみましょう (または例)。
 
 ```cpp
     1  public void DataDrivenTest()
@@ -189,20 +189,20 @@ XML を継続的バックアップ ファイルの後、&lt;も存在しない&g
     10 }
 ```
 
-VSTS に慣れている場合、上記の例はのようなことが表示されます。 DataRow を取得しようとしているパラメーターの名前と列名を指定します。
+VSTS を使い慣れている場合は、上記の例が似ていることがわかります。 DataRow を使用し、取得しようとしているパラメーターの名前として列名を指定します。
 
-例で確認する場合、同じクラスの非データ ドリブン テストもあります。 つまり、**同じテスト クラスでテストをデータ ドリブンと NonDataDriven を組み合わせることのできる柔軟性があります。**
+例を見ると、同じクラスに非データドリブンテストも存在します。 言い換える**と、DataDriven と NonDataDriven のテストを同じテストクラスで組み合わせるという柔軟性があります。**
 
-## <a name="span-idrunningsimpledatadrivenexamplewithtaefspanspan-idrunningsimpledatadrivenexamplewithtaefspanspan-idrunningsimpledatadrivenexamplewithtaefspanrunning-simpledatadrivenexample-with-taef"></a><span id="Running_SimpleDataDrivenExample_with_TAEF"></span><span id="running_simpledatadrivenexample_with_taef"></span><span id="RUNNING_SIMPLEDATADRIVENEXAMPLE_WITH_TAEF"></span>TAEF を SimpleDataDrivenExample を実行しています。
+## <a name="span-idrunning_simpledatadrivenexample_with_taefspanspan-idrunning_simpledatadrivenexample_with_taefspanspan-idrunning_simpledatadrivenexample_with_taefspanrunning-simpledatadrivenexample-with-taef"></a><span id="Running_SimpleDataDrivenExample_with_TAEF"></span><span id="running_simpledatadrivenexample_with_taef"></span><span id="RUNNING_SIMPLEDATADRIVENEXAMPLE_WITH_TAEF"></span>TAEF での SimpleDataDrivenExample の実行
 
 
-方法を理解しているかどうかを確認**作成者データ ドリブン テスト**する方法と**TAEF でテストを実行**のヒントとテクニック DataDrivenTests TAEF での実行を開始する前にします。 方法上のメモリを更新すると便利**選択**TAEF で動作します。
+**データドリブンテストを作成**する方法、および Taef で DataDrivenTests を実行するためのヒントとテクニックから始める前に、 **Taef でテストを実行**する方法を把握しておく必要があります。 TAEF での**選択**の動作に関するメモリを更新すると便利な場合があります。
 
-データ ドリブン テストの実行中のコマンド プロンプトは TAEF で汎用テストを実行すると大きく異なります。 説明した例 (ネイティブとマネージ) を実行するには、次のコマンドを実行だけです。
+データドリブンテストを実行するためのコマンドプロンプトは、TAEF で汎用テストを実行する場合と大きく異なります。 上記で説明した両方の例 (ネイティブとマネージ) を実行するには、次のコマンドを実行します。
 
-<span id="TE.exe_Examples_CPP.DataDriven.Example.dll_Examples_CSharp.DataDriven.Example.dll__________________________name__Simple_"></span><span id="te.exe_examples_cpp.datadriven.example.dll_examples_csharp.datadriven.example.dll__________________________name__simple_"></span><span id="TE.EXE_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL__________________________NAME__SIMPLE_"></span>TE.exe 例\\CPP します。DataDriven.Example.dll 例\\CSharp.DataDriven.Example.dll/name:\*単純な\*  
+<span id="TE.exe_Examples_CPP.DataDriven.Example.dll_Examples_CSharp.DataDriven.Example.dll__________________________name__Simple_"></span><span id="te.exe_examples_cpp.datadriven.example.dll_examples_csharp.datadriven.example.dll__________________________name__simple_"></span><span id="TE.EXE_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL__________________________NAME__SIMPLE_"></span>TE.exe 例 \\CPP.DataDriven.Example.dll 例 \\CSharp.DataDriven.Example.dll/Name: \* Simple\*  
 
-'/Name' 名に基づく選択条件を追加し、興味のあるクラスのみを選択します。 クラス内から実行するテストを選択するには、すべての dll のプロパティを一覧表示する必要があります最初。 次に、選択条件として使用するプロパティを決定できます。
+'/Name ' は、名前に基づいて選択条件を追加し、関心のあるクラスのみを選択します。 クラス内から実行するテストを選択するには、まず dll のすべてのプロパティを一覧表示する必要があります。 次に、選択条件に使用するプロパティを決定できます。
 
 ``` syntax
 TE.exe Examples\CPP.DataDriven.Example.dll Examples\CSharp.DataDriven.Example.dll /name:*Simple* /listproperties
@@ -319,25 +319,25 @@ f:\Examples\CPP.DataDriven.Example.dll
 
 ```
 
-ここでは、SetsOfMetadataTest や上に示した SetsOfDataTest は無視してみましょう。 これらについて調べる場合は詳細を読む[軽量データ ドリブン テスト](light-weight-data-driven-testing.md)します。 さまざまなプロパティとデータ パラメーターの名前と値がわかったら、その指定に基づいて特定のテストを選択できます。 実際に試してみて、選択内容を確認する作業を進めるにします。
+ここでは、上記の SetsOfMetadataTest と SetsOfDataTest を無視してみましょう。 これらの詳細については、「[軽量なデータドリブンテスト](light-weight-data-driven-testing.md)」を参照してください。 さまざまなプロパティとデータパラメーターの名前と値がわかったので、それに基づいて特定のテストを選択できます。 試してみて、選択内容を確認してください。
 
-非データ駆動テストのみを実行するには、次のコマンドを実行します。
+非データドリブンテストのみを実行するには、次のように実行します。
 
-<span id="TE.exe_Examples_CSharp.DataDriven.Example.dll_Examples_CPP.DataDriven.Example.dll__________________________select___Name___Simple___And_not__DataSource____"></span><span id="te.exe_examples_csharp.datadriven.example.dll_examples_cpp.datadriven.example.dll__________________________select___name___simple___and_not__datasource____"></span><span id="TE.EXE_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL__________________________SELECT___NAME___SIMPLE___AND_NOT__DATASOURCE____"></span>TE.exe Examples\\CSharp.DataDriven.Example.dll Examples\\CPP.DataDriven.Example.dll /select:"@Name='\*Simple\*' And not(@DataSource=\*)"  
+<span id="TE.exe_Examples_CSharp.DataDriven.Example.dll_Examples_CPP.DataDriven.Example.dll__________________________select___Name___Simple___And_not__DataSource____"></span><span id="te.exe_examples_csharp.datadriven.example.dll_examples_cpp.datadriven.example.dll__________________________select___name___simple___and_not__datasource____"></span><span id="TE.EXE_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL__________________________SELECT___NAME___SIMPLE___AND_NOT__DATASOURCE____"></span>TE.exe 例 \\CSharp.DataDriven.Example.dll 例 \\CPP.DataDriven.Example.dll/select: " @Name = ' \* Simple \* ' And not ( @DataSource = \* )"  
 
-ここで、次のように実行すると、ドリブン テストでは、色が"Black"として指定されている、データのみを実行します。
+ここで、color が "Black" と指定されているデータドリブンテストのみを実行するには、次のように実行します。
 
-<span id="TE.exe_Examples_CSharp.DataDriven.Example.dll_Examples_CPP.DataDriven.Example.dll__________________________select___Name___Simple___And__Data_Color__Black__"></span><span id="te.exe_examples_csharp.datadriven.example.dll_examples_cpp.datadriven.example.dll__________________________select___name___simple___and__data_color__black__"></span><span id="TE.EXE_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL__________________________SELECT___NAME___SIMPLE___AND__DATA_COLOR__BLACK__"></span>TE.exe 例\\CSharp.DataDriven.Example.dll 例\\CPP します。DataDriven.Example.dll リンク:"@Name='\*単純\*' と@Data:Color= '黒'"  
+<span id="TE.exe_Examples_CSharp.DataDriven.Example.dll_Examples_CPP.DataDriven.Example.dll__________________________select___Name___Simple___And__Data_Color__Black__"></span><span id="te.exe_examples_csharp.datadriven.example.dll_examples_cpp.datadriven.example.dll__________________________select___name___simple___and__data_color__black__"></span><span id="TE.EXE_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL__________________________SELECT___NAME___SIMPLE___AND__DATA_COLOR__BLACK__"></span>TE.exe 例 \\CSharp.DataDriven.Example.dll 例 \\CPP.DataDriven.Example.dll/select: " @Name = ' \* Simple \* ' And @Data:Color = ' Black '"  
 
-"Color"同様<strong>@Data: &lt;DataDrivenParameterName&gt;=&lt;DataDrivenParameterValue&gt;</strong>に基づいて特定のデータを実行しますデータ ドリブン パラメーター値を指定します。 上記の場合で実行されます WEX::TestExecution::Examples::SimpleDataDrivenExample::DataDrivenTest\#1 とかかえるします。Examples.CSharpDataDrivenSimpleExample.DataDrivenTest\#1
+"Color" を使用した場合と同様に、 <strong> @Data: &lt; datadriDataDriven &gt; = &lt; &gt; </strong>は、指定されたパラメーター値に基づいて特定のデータを実行します。 上記の例では、WEX:: TestExecution:: example:: Simpledatadriatadriventest の例::D \# 1 と WEX が実行されます。例. CSharpDataDrivenSimpleExample. DataDrivenTest \# 1
 
-注意してください、**テスト インデックス**で上記の list プロパティ。 選択上記もインデックスを基にします。
+上記の listproperties の**テストインデックス**に注意してください。 インデックスに基づいて上記を選択することもできます。
 
-<span id="TE.exe_Examples_CSharp.DataDriven.Example.dll_Examples_CPP.DataDriven.Example.dll__________________________select___Name___Simple___And__Data_Index_1_"></span><span id="te.exe_examples_csharp.datadriven.example.dll_examples_cpp.datadriven.example.dll__________________________select___name___simple___and__data_index_1_"></span><span id="TE.EXE_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL__________________________SELECT___NAME___SIMPLE___AND__DATA_INDEX_1_"></span>TE.exe Examples\\CSharp.DataDriven.Example.dll Examples\\CPP.DataDriven.Example.dll /select:"@Name='\*Simple\*' And @Data:Index=1"  
+<span id="TE.exe_Examples_CSharp.DataDriven.Example.dll_Examples_CPP.DataDriven.Example.dll__________________________select___Name___Simple___And__Data_Index_1_"></span><span id="te.exe_examples_csharp.datadriven.example.dll_examples_cpp.datadriven.example.dll__________________________select___name___simple___and__data_index_1_"></span><span id="TE.EXE_EXAMPLES_CSHARP.DATADRIVEN.EXAMPLE.DLL_EXAMPLES_CPP.DATADRIVEN.EXAMPLE.DLL__________________________SELECT___NAME___SIMPLE___AND__DATA_INDEX_1_"></span>TE.exe 例 \\CSharp.DataDriven.Example.dll 例 \\CPP.DataDriven.Example.dll/select: " @Name = ' \* Simple \* ' And @Data:Index = 1"  
 
-上記は、同じ 2 つのテストを実行@Data:Color= '黒' を選択します。 警備員とインデックスの選択に追加するも **@Data:Index &gt; lowerGuardValue と@Data:index &lt; upperGuardValue**
+上の例では、' Black ' が選択されているのと同じ2つのテストが実行され @Data:Color ます。 また、下** @Data:Index &gt; guシャード値と @Data:index &lt; upperGuardValue**を使用して、インデックス選択にガードを追加することもできます。
 
-データ ドリブン TAEF とテストの基本を理解している場合は、同じ例では、次のクラスと共にに従います。[行レベルのメタデータのオーバーライド](metadata-overriding-data-driven-test-example.md)、[配列パラメーター型を指定する](array-support-data-driven-test-example.md)します。
+TAEF でのデータドリブンテストの基本を理解している場合は、同じ例の次のクラスに従います。[行レベルでメタデータをオーバーライド](metadata-overriding-data-driven-test-example.md)し、[配列パラメーターの型を指定](array-support-data-driven-test-example.md)します。
 
 
 

@@ -1,187 +1,177 @@
 ---
-Description: C と C++ WinUSB テンプレートを使用、USB デバイスと通信する Windows デスクトップ アプリを作成する最も簡単な方法です。
+Description: USB デバイスと通信する Windows デスクトップアプリを作成する最も簡単な方法は、C/c + + WinUSB テンプレートを使用することです。
 title: WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 881c47a571a8a03ee1bf6b6418c7bf69c39db68f
-ms.sourcegitcommit: ef6d15e2f4a8ce75a0ee726432574f2e25f061eb
+ms.openlocfilehash: a623c332d791f450810b230faa4de07b2551c2be
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293241"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412549"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 
+USB デバイスと通信する Windows デスクトップアプリを作成する最も簡単な方法は、C/c + + WinUSB テンプレートを使用することです。 このテンプレートには、Windows Driver Kit (WDK) と Microsoft Visual Studio (Professional または Ultimate) を備えた統合環境が必要です。 このテンプレートは、開始点として使用できます。
 
-**重要な API**
+## <a name="prerequisites"></a>前提条件
 
--   [SetupAPI 関数](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)
--   [WinUSB 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)
+- 統合開発環境をセットアップするには、最初に Microsoft Visual Studio Ultimate 2019 または Microsoft Visual Studio Professional 2019 をインストールし、次に WDK をインストールします。 Visual Studio と WDK のセットアップ方法については、「 [wdk のダウンロード」ページ](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)を参照してください。
+- Windows 用デバッグツールは、WDK をインストールするときに含まれています。 詳細については、「 [Windows 用デバッグツールのダウンロードとインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)」を参照してください。
 
-C と C++ WinUSB テンプレートを使用、USB デバイスと通信する Windows デスクトップ アプリを作成する最も簡単な方法です。 このテンプレートでは、Windows Driver Kit (WDK) (デバッグ ツールの Windows) で、Microsoft Visual Studio (Professional または Ultimate) との統合環境が必要です。 開始点としては、テンプレートを使用することができます。
+## <a name="creating-a-winusb-application"></a>WinUSB アプリケーションの作成
 
-## <a name="prerequisites"></a>必須コンポーネント
+テンプレートからアプリケーションを作成するには、次のようにします。
 
+1. [**新しいプロジェクト**] ダイアログボックスの上部にある [検索] ボックスに、「USB」と入力し**ます。**
+2. 中央のウィンドウで、[ **Winusb アプリケーション (Universal)**] を選択します。
+3. **[次へ]** をクリックします。
+4. プロジェクト名を入力し、保存場所を選択して、[**作成**] をクリックします。
 
--   統合開発環境を設定するには、Microsoft Visual Studio Ultimate 2019 または Microsoft Visual Studio Professional 2019 最初にインストールし、WDK をインストールし。 Visual Studio と WDK の入手方法について詳しくは、[こちら](https://go.microsoft.com/fwlink/p/?linkid=239721)をご覧ください。
--   WDK をインストールするときに、Windows 用デバッグ ツールが含まれます。 詳細については、次を参照してください。[ダウンロードとデバッグ ツールの Windows にインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)します。
+    次のスクリーンショットは、 **Winusb アプリケーション (ユニバーサル)** テンプレートの [**新しいプロジェクト**] ダイアログボックスを示しています。
 
-## <a name="creating-a-winusb-application"></a>WinUSB アプリケーションを作成します。
+    ![winusb テンプレートの新しいプロジェクト作成の最初の画面](images/winusb-template-creation-1.png)
 
-テンプレートからアプリケーションの作成。
+    ![winusb テンプレートの新しいプロジェクト作成2番目の画面](images/winusb-template-creation-2.png)
 
-1.  **新しいプロジェクト**ダイアログ ボックスで、型、上部にある検索ボックスに**USB です。**
-2.  中央のペインで選択**WinUSB アプリケーション (ユニバーサル)** します。
-3.  **[次へ]** をクリックします。
-4.  プロジェクト名を入力、保存を選択する場所、およびクリック**作成**です。
+    このトピックでは、Visual Studio プロジェクトの名前が*USB アプリケーション 1*であることを前提としています。
 
-    次のスクリーン ショットに示す、**新しいプロジェクト**の ダイアログ ボックス、 **WinUSB アプリケーション (ユニバーサル)** テンプレート。
+    Visual Studio により、1 つのプロジェクトと 1 つのソリューションが作られます。 次のスクリーンショットに示すように、[**ソリューションエクスプローラー** ] ウィンドウで、プロジェクトに属しているソリューション、プロジェクト、およびファイルを確認できます。 (**ソリューションエクスプローラー**ウィンドウが表示されていない場合は、[**表示**] メニューの [**ソリューションエクスプローラー** ] をクリックします)。このソリューションには、USB アプリケーション1という名前の C++ アプリケーションプロジェクトが含まれています。
 
-    ![winusb テンプレートの新しいプロジェクトの作成最初 画面](images/winusb-template-creation-1.png)
+    ![winusb テンプレートソリューションエクスプローラー1](images/winusb-template-solution-explorer-1.png)
 
-    ![winusb テンプレートの新しいプロジェクトの作成 2 番目 画面](images/winusb-template-creation-2.png)
+    USB アプリケーション1プロジェクトには、アプリケーションのソースファイルが含まれています。 アプリケーションのソースコードを確認する場合は、[**ソースファイル**] の下に表示される任意のファイルを開くことができます。  
 
-    このトピックでは、Visual Studio プロジェクトの名前がある前提としています。 *USB Application1*します。
+5. ソリューションにドライバーパッケージプロジェクトを追加します。 ソリューション ("USB アプリケーション 1") を右クリックし、 **Add** \> 次のスクリーンショットに示すように、[**新しいプロジェクト**の追加] をクリックします。
 
-    Visual Studio により、1 つのプロジェクトと 1 つのソリューションが作られます。 ソリューション、プロジェクト、および内のプロジェクトに属するファイルを確認できます、**ソリューション エクスプ ローラー**ウィンドウで、次のスクリーン ショットに示すようにします。 ( **[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、 **[表示]** メニューの **[ソリューション エクスプローラー]** を選びます)。ソリューションに含まれる、 C++ USB Application1 という名前のアプリケーション プロジェクト。
+    ![winusb テンプレート作成の2番目のプロジェクトの追加](images/winusb-template-creation-3.png)
 
-    ![winusb テンプレート ソリューション エクスプ ローラー 1](images/winusb-template-solution-explorer-1.png)
+6. [**新しいプロジェクト**] ダイアログボックスの上部にある [検索] ボックスに、もう一度「USB」と入力し**ます。**
+7. 中央のウィンドウで、[ **Winusb INF Driver Package**] を選択します。
+8. **[次へ]** をクリックします。
+9. プロジェクト名を入力し、[**作成**] をクリックします。
 
-    USB Application1 プロジェクトには、アプリケーションのソース ファイルが含まれます。 アプリケーション ソース コードを確認する場合は、下に表示されるファイルのいずれかを開くことができます**ソースファイル**します。  
-    
-5. ドライバー パッケージのプロジェクトをソリューションに追加します。 (ソリューション ' USB Application1') のソリューションを右クリックし、をクリックして**追加** \> **新しいプロジェクト**次のスクリーン ショットに示すようにします。
+    次のスクリーンショットは、 **Winusb INF ドライバーパッケージ**テンプレートの [**新しいプロジェクト**] ダイアログボックスを示しています。
 
-    ![winusb テンプレートの作成 2 番目プロジェクト追加](images/winusb-template-creation-3.png)
+    ![winusb テンプレート2番目のプロジェクト作成の最初の画面](images/winusb-template-creation-4.png)
 
-6. **新しいプロジェクト**ダイアログ ボックスで、上部にある検索ボックスをもう一度入力**USB です。**
-7.  中央のペインで選択**WinUSB INF ドライバー パッケージ**します。
-8.  **[次へ]** をクリックします。
-9.  プロジェクト名を入力し、クリックして**作成**です。
+    ![winusb テンプレート2番目のプロジェクト作成2画面](images/winusb-template-creation-5.png)
 
-    次のスクリーン ショットに示す、**新しいプロジェクト**の ダイアログ ボックス、 **WinUSB INF ドライバー パッケージ**テンプレート。
+    このトピックでは、Visual Studio プロジェクトの名前が*USB アプリケーション 1 Package*であることを前提としています。
 
-    ![winusb テンプレートの 2 つ目プロジェクト作成最初 画面](images/winusb-template-creation-4.png)
+    USB アプリケーション1パッケージプロジェクトには、デバイスドライバーとして Microsoft が提供する Winusb.sys ドライバーをインストールするために使用される INF ファイルが含まれています。
 
-    ![winusb テンプレート 2 プロジェクトの作成 2 番目の画面](images/winusb-template-creation-5.png)
+    次のスクリーンショットに示すように、**ソリューションエクスプローラー**に両方のプロジェクトを含める必要があります。
 
-    このトピックでは、Visual Studio プロジェクトの名前がある前提としています。 *USB Application1 パッケージ*します。        
+    ![winusb テンプレートソリューションエクスプローラー2](images/winusb-template-solution-explorer-2.png)
 
-    USB Application1 パッケージ プロジェクトには、デバイス ドライバーとして Microsoft が提供 Winusb.sys ドライバーをインストールするために使用される INF ファイルが含まれています。
+10. INF ファイルの USBApplication1 で、次のコードを見つけます。`%DeviceName% =USB_Install, USB\VID_vvvv&PID_pppp`
 
-    **ソリューション エクスプ ローラー**の次のスクリーン ショットに示すようになりました、両方のプロジェクトを含める必要があります。
+11. VID \_ vvvv&PID \_ pppp を、使用しているデバイスのハードウェア ID に置き換えます。 デバイスマネージャーからハードウェア ID を取得します。 デバイスマネージャーで、デバイスのプロパティを表示します。 [**詳細**] タブで、"**ハードウェア id** " プロパティの値を確認します。
+12. [**ソリューションエクスプローラー** ] ウィンドウで、[ **Solution ' USB アプリケーション 1 ' (2 of 2 projects)**] を右クリックし、[ **Configuration Manager**] を選択します。 アプリケーションプロジェクトとパッケージプロジェクトの両方の構成とプラットフォームを選択します。 この演習では、次のスクリーンショットに示すように、[デバッグ] と [x64] を選択します。
 
-    ![winusb テンプレート ソリューション エクスプ ローラー 2](images/winusb-template-solution-explorer-2.png)
+![winusb アプリケーションテンプレート](images/winusb-template-configuration-manager.png)
 
-10.  USBApplication1.inf、INF ファイルでは、これらの行を見つけます。
+## <a name="building-deploying-and-debugging-the-project"></a>プロジェクトのビルド、配置、およびデバッグ
 
-    `%DeviceName% =USB_Install, USB\VID_vvvv&PID_pppp`
+この演習では、Visual Studio を使用してプロジェクトを作成しました。 次に、デバイスが接続されるデバイスを構成する必要があります。 このテンプレートを使用するには、Winusb ドライバーがデバイスのドライバーとしてインストールされている必要があります。
 
-11.  VID を置き換える\_vvvv & PID\_pppp デバイスのハードウェア ID を使用します。 デバイス マネージャーから、ハードウェア ID を取得します。 デバイス マネージャーでは、デバイスのプロパティを表示します。 **詳細** タブで、表示、**ハードウェア Id**プロパティの値。
-12.  **ソリューション エクスプ ローラー**ウィンドウで、右クリック**ソリューション ' USB Application1' (2/2 プロジェクト)** 、選択**Configuration Manager**します。 構成と、アプリケーション プロジェクトとパッケージのプロジェクトの両方のプラットフォームを選択します。 この演習で選択デバッグおよび x64 では、次のスクリーン ショットに示すようにします。
+テストおよびデバッグ環境では、次のことが可能です。
 
-![winusb アプリケーション テンプレート](images/winusb-template-configuration-manager.png)
+- 2台のコンピューターのセットアップ: ホストコンピューターとターゲットコンピューター。 ホストコンピューター上の Visual Studio でプロジェクトを開発し、ビルドします。 デバッガーはホスト コンピューター上で実行され、Visual Studio のユーザー インターフェイスで利用できます。 アプリケーションをテストしてデバッグすると、ドライバーはターゲットコンピューターで実行されます。
 
-## <a name="building-deploying-and-debugging-the-project"></a>ビルド、配置、およびプロジェクトのデバッグ
+- 単一コンピューターのセットアップ: ターゲットとホストが1台のコンピューター上で実行されます。 Visual Studio でプロジェクトを開発してビルドし、デバッガーとアプリケーションを実行します。
 
-これまで、この演習では、プロジェクトを作成するのに Visual Studio を使用しました。 次に、デバイスが接続されているデバイスを構成する必要があります。 テンプレートでは、デバイスのドライバーとして Winusb ドライバーがインストールされていることが必要です。
+次の手順に従って、アプリケーションとドライバーをデプロイ、インストール、読み込み、デバッグできます。
 
-テストとデバッグ環境を持つことができます。
+- **2台のコンピューターのセットアップ**
 
--   2 つのコンピューターのセットアップ: ホスト コンピューターと対象コンピューター。 開発およびホスト コンピューターで Visual Studio でプロジェクトをビルドするとします。 デバッガーはホスト コンピューター上で実行され、Visual Studio のユーザー インターフェイスで利用できます。 テスト アプリケーションをデバッグすると、ドライバーは、ターゲット コンピューターで実行されます。
-
--   1 台のコンピューターのセットアップ:1 台のコンピューターで、ターゲットとホストを実行します。 Visual Studio でプロジェクトをビルドを開発し、デバッガーとアプリケーションを実行します。
-
-展開してインストール、読み込むには、するか、および次の手順に従って、アプリケーションとドライバーをデバッグすることができます。
-
--   **2 つのコンピューターのセットアップ**
-
-    1.  次の手順で、対象のコンピュータをプロビジョニング[ドライバーの展開とテスト用にプロビジョニング](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)します。
-        **注:** プロビジョニングすると、WDKRemoteUser という名前のターゲット コンピューターで、ユーザーが作成されます。 プロビジョニングが完了したら、WDKRemoteUser に切り替え、ユーザーが表示されます。 
-    2.  ホスト コンピューター上で、Visual Studio でソリューションを開きます。
-    3.  Main.cpp では、OpenDevice の呼び出しの前にこの行を追加します。
+  1. 「[ドライバーの展開およびテスト用にコンピューターをプロビジョニングする](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)」の手順に従って、対象のコンピューターをプロビジョニングします。
+        **注:** プロビジョニングによって、WDKRemoteUser という名前のターゲットコンピューターにユーザーが作成されます。 プロビジョニングが完了すると、ユーザーが WDKRemoteUser に切り替えられることがわかります。
+  2. ホスト コンピューター上で、Visual Studio でソリューションを開きます。
+  3. メイン .cpp で、OpenDevice 呼び出しの前に次の行を追加します。
 
         `system ("pause")`
 
-        行は、アプリケーションを起動したときに一時停止です。 これは、リモート デバッグで役に立ちます。
+        この行により、起動時にアプリケーションが一時停止します。 これは、リモートデバッグに役立ちます。
 
-    4.  Pch.h には、この行を含めます。
+  4. .Pch で、次の行を追加します。
 
         `#include <cstdlib>`
 
-        ステートメントは、これが必要です、`system()`前の手順で呼び出します。
+        このインクルードステートメントは、前の `system()` 手順での呼び出しに必要です。
 
-    5.  **ソリューション エクスプ ローラー** USB Application1 パッケージを右クリックして、ウィンドウ、**プロパティ**します。
-    6.  **USB Application1 パッケージのプロパティ ページ**に移動します ウィンドウの左側のウィンドウで、**構成プロパティ&gt;ドライバー インストール&gt;展開**ように、次のスクリーン ショット。
-    7.  **[展開前にドライバーの以前のバージョンを削除する]** チェック ボックスをオンにします。
-    8.  **[リモート コンピューター名]** については、テストとデバッグ用に構成したコンピューターの名前を選んでください。 この演習では、dbg ターゲットをという名前のコンピューターを使用します。
-    9.  選択**インストール/再インストールを確認します**します。 **[適用]** をクリックします。
+  5. [**ソリューションエクスプローラー** ] ウィンドウで、[USB アプリケーション 1 Package] を右クリックし、[**プロパティ**] を選択します。
+  6. 次のスクリーンショットに示すように、[ **USB アプリケーション1パッケージのプロパティページ**] ウィンドウの左側のウィンドウで、[構成プロパティ] [ドライバー] [インストール] [ ** &gt; &gt; デプロイ**] の順に移動します。
+  7. **[展開前にドライバーの以前のバージョンを削除する]** チェック ボックスをオンにします。
+  8. **[リモート コンピューター名]** については、テストとデバッグ用に構成したコンピューターの名前を選んでください。 この演習では、dbg-target という名前のコンピューターを使用します。
+  9. [**インストール/再インストールと検証**] を選択します。 **[Apply]** をクリックします。
 
-        ![winusb テンプレートのデプロイ](images/winusb-template-deployment.png)
+        ![winusb テンプレートの展開](images/winusb-template-deployment.png)
 
-    10. プロパティ ページに移動します**構成プロパティ&gt;デバッグ**を選択し、**デバッグ ツールの Windows – リモート デバッガー**の次のスクリーン ショットに示すようにします。
+  10. 次のスクリーンショットに示すように、[プロパティ] ページで、[**構成プロパティ] [ &gt; デバッグ**] に移動し、[ **Windows 用デバッグツール–リモートデバッガー**] を選択します。
 
-        ![winusb テンプレートのリモート デバッガー](images/winusb-template-remote-debugger.png)
+        ![winusb テンプレートリモートデバッガー](images/winusb-template-remote-debugger.png)
 
-    11. 選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウ。 ( **[出力]** ウィンドウが表示されていない場合は、 **[表示]** メニューの **[出力]** をクリックします)。この演習では、x64 用のプロジェクトを作成した Windows 10 を実行しているシステム。
-    12. 選択**ソリューションの配置**から、**ビルド**メニュー。 
+  11. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。 Visual Studio の [**出力**] ウィンドウにビルドの進行状況が表示されます。 (**出力**ウィンドウが表示されていない場合は、[**表示**] メニューの [**出力**] をクリックします)。この演習では、Windows 10 を実行する x64 システム用のプロジェクトをビルドしました。
+  12. [**ビルド**] メニューの [**ソリューションの配置**] をクリックします。
 
-ターゲット コンピューターで実行されているドライバーのインストール スクリプトが表示されます。 %Systemdrive% に、ドライバー ファイルがコピーされます\\drivertest\\ターゲット コンピューター上のドライバー フォルダー。 .inf、.cat、test cert、.sys など、必要なファイルがすべて %systemdrive%\\drivertest\\drivers フォルダーに存在することを確認します。 デバイスは、エラーなしでデバイス マネージャーを表示する必要があります。
+ターゲットコンピューターで、ドライバーインストールスクリプトが実行されていることを確認します。 ドライバーファイルは、ターゲットコンピューターの% Systemdrive% \\ drivertest drivers フォルダーにコピーされ \\ ます。 .inf、.cat、test cert、.sys など、必要なファイルがすべて %systemdrive%\\drivertest\\drivers フォルダーに存在することを確認します。 デバイスは、エラーなしでデバイスマネージャーに表示される必要があります。
 
-ホスト コンピューターでは、このメッセージが表示されます、**出力**ウィンドウ。
+ホストコンピューターで、[**出力**] ウィンドウにこのメッセージが表示されます。
 
 ```syntax
-Deploying driver files for project 
+Deploying driver files for project
 "<path>\visual studio 14\Projects\USB Application1\USB Application1 Package\USB Application1 Package.vcxproj".  
 Deployment may take a few minutes...
 ========== Build: 1 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
 ```
 
-**アプリケーションをデバッグするには**
+### <a name="to-debug-the-application"></a>アプリケーションをデバッグするには
 
-1.  ホスト コンピューターに移動します。 **x64 &gt; Win8.1Debug**ソリューション フォルダーにします。
-2.  対象のコンピュータに UsbApplication1.exe アプリケーションの実行ファイルをコピーします。
-3.  ターゲット コンピューターでは、アプリケーションを起動します。
-4.  ホスト コンピューターから、**デバッグ**メニューの **プロセスにアタッチ**します。
-5.  ウィンドウで、次のように選択します。 **Windows ユーザー モード デバッガー** (デバッグ ツールの Windows)、トランスポートや、ターゲット コンピューターの名前では、この例で dbg のターゲットと修飾子としてこの図のようにします。
+1. ホストコンピューターで、ソリューションフォルダー内の**x64 &gt; Win 8.1 デバッグ**に移動します。
+2. アプリケーションの実行可能ファイルを対象のコンピューターにコピーし UsbApplication1.exe ます。
+3. ターゲットコンピューターで、アプリケーションを起動します。
+4. ホストコンピューターで、[**デバッグ**] メニューの [**プロセスにアタッチ**] をクリックします。
+5. ウィンドウで、トランスポートとして [ **Windows ユーザーモードデバッガー** (windows のデバッグツール)] を選択し、次の図に示すように、修飾子としてターゲットコンピューターの名前 (この場合は [dbg-target]) を選択します。
 
     ![winusb テンプレートのデバッグ設定](images/winusb-template6.png)
 
-6.  一覧からアプリケーションを選択**選択可能なプロセス**クリック**アタッチ**。 使用してデバッグできます**イミディ エイト ウィンドウ**でオプションを使用して、または**デバッグ**メニュー。
+6. **利用可能なプロセス**の一覧からアプリケーションを選択し、[**アタッチ**] をクリックします。 **イミディエイトウィンドウ**を使用するか、[**デバッグ**] メニューのオプションを使用してデバッグできるようになりました。
 
-上記の手順を使用して、アプリケーションをデバッグする**デバッグ ツールの Windows – リモート デバッガー**します。 使用する場合、**リモート Windows デバッガー** (Visual Studio に含まれているデバッガー) し、次の手順に従います。
+上記の手順では、 **Windows 用デバッグツール–リモートデバッガー**を使用してアプリケーションをデバッグします。 **リモート Windows デバッガー** (Visual Studio に含まれるデバッガー) を使用する場合は、次の手順に従います。
 
-1.  対象のコンピューターには、ファイアウォール経由で許可されているアプリのリストに msvsmon.exe を追加します。
-2.  Visual Studio リモート デバッグ モニターにある c: 起動\\DriverTest\\msvsmon\\msvsmon.exe します。
-3.  C: などの作業フォルダーを作成\\remotetemp します。
-4.  ターゲット コンピューター上の作業フォルダーに UsbApplication1.exe アプリケーションの実行ファイルをコピーします。
-5.  Visual Studio で、ホスト コンピューターでを右クリックし、 **USB Application1 パッケージ**順に選択して、**プロジェクトのアンロード**します。
-6.  右クリックし、 **USB Application1**プロジェクトで、プロジェクトのプロパティで、展開、**構成プロパティ**ノードをクリックします**デバッグ**します。
-7.  変更**起動するデバッガー**に**リモート Windows デバッガー**します。
-8.  記載されている手順に従って、リモート コンピューターで実行可能ファイルを実行するプロジェクト設定を変更[、プロジェクト ビルドのローカルのリモート デバッグ](https://docs.microsoft.com/visualstudio/debugger/remote-debugging?view=vs-2015)します。 確認します**作業ディレクトリ**と**リモート コマンド**プロパティには、ターゲット コンピューターのフォルダーが反映されます。
-9.  アプリケーションのデバッグ、**ビルド**メニューの [**デバッグの開始]** 、またはキーを押します**f5 キー。**
+1. ターゲットコンピューターで、ファイアウォールで許可されているアプリの一覧に msvsmon.exe を追加します。
+2. C: drivertest msvsmonmsvsmon.exe にある Visual Studio リモートデバッグモニターを起動 \\ \\ \\ します。
+3. C: remotetemp などの作業フォルダーを作成し \\ ます。
+4. アプリケーションの実行可能ファイルをコピーして、ターゲットコンピューターの作業フォルダーに UsbApplication1.exe します。
+5. ホストコンピューターの Visual Studio で、[ **USB アプリケーション 1 Package** ] プロジェクトを右クリックし、[**プロジェクトのアンロード**] を選択します。
+6. [ **USB アプリケーション 1** ] プロジェクトを右クリックし、[プロジェクトのプロパティ] で [**構成プロパティ**] ノードを展開して、[**デバッグ**] をクリックします。
+7. **リモート Windows デバッガー**に**起動するようにデバッガー**を変更します。
+8. 「ローカルでビルドされた[プロジェクトのリモートデバッグ](https://docs.microsoft.com/visualstudio/debugger/remote-debugging?view=vs-2015)」に記載されている手順に従って、リモートコンピューターで実行可能ファイルを実行するようにプロジェクトの設定を変更します。 **作業ディレクトリ**と**リモートコマンド**のプロパティに、対象のコンピューター上のフォルダーが反映されていることを確認してください。
+9. アプリケーションをデバッグするには、[**ビルド**] メニューの [**デバッグの開始**] をクリックするか、F5 キーを押し**ます。**
 
--   **1 台のコンピューターのセットアップ:**
+- **単一コンピューターのセットアップ:**
 
-    1.  アプリケーションとドライバーのインストール パッケージをビルドするには、選択**ソリューションのビルド**から、**ビルド**メニュー。 Visual Studio に表示されるビルドの進行状況、**出力**ウィンドウ。 ( **[出力]** ウィンドウが表示されていない場合は、 **[表示]** メニューの **[出力]** をクリックします)。この演習では、x64 用のプロジェクトを作成した Windows 10 を実行しているシステム。
-    2.  パッケージ化、Windows エクスプ ローラーで、USB Application1 フォルダーに移動しますおよびに移動し、構築されたドライバーを表示する**x64\>デバッグ\>USB Application1 パッケージ**します。 ドライバー パッケージには、いくつかのファイルが含まれています。MyDriver.inf はドライバーをインストールするときに、Windows が使用する情報ファイルで、mydriver.cat はインストーラーを使用してドライバー パッケージのテスト署名を検証するカタログ ファイルです。 これらのファイルは、次のスクリーン ショットに表示されます。
+  1. アプリケーションとドライバーのインストールパッケージをビルドするには、[**ビルド**] メニューの [**ソリューションのビルド**] をクリックします。 Visual Studio の [**出力**] ウィンドウにビルドの進行状況が表示されます。 (**出力**ウィンドウが表示されていない場合は、[**表示**] メニューの [**出力**] をクリックします)。この演習では、Windows 10 を実行する x64 システム用のプロジェクトをビルドしました。
+  2. ビルドされたドライバーパッケージを表示するには、Windows エクスプローラーで USB アプリケーション1フォルダーに移動し、[ **x64 \> Debug \> usb アプリケーション 1 package**] に移動します。 ドライバーパッケージには、いくつかのファイルが含まれています。 MyDriver .inf は、Windows がドライバーのインストール時に使用する情報ファイルです。 mydriver.cat は、インストーラーがドライバーパッケージのテスト署名を検証するために使用するカタログファイルです。 これらのファイルを次のスクリーンショットに示します。
 
-        ![winusb アプリケーション テンプレート](images/winusb-template3.png)
+        ![winusb アプリケーションテンプレート](images/winusb-template3.png)
 
-        **注**パッケージに含まれるドライバー ファイルがありません。 INF ファイルは、Windows で検出されたインボックス ドライバー Winusb.sys を参照しているためにである\\System32 フォルダー。
-    3.  ドライバーを手動でインストールします。 デバイス マネージャーでは、パッケージに、INF を指定することで、ドライバーを更新します。 前のセクションで示すようにソリューション フォルダーにあるドライバ パッケージ をポイントします。
-    4.  右クリックし、 **USB Application1**プロジェクトで、プロジェクトのプロパティで、展開、**構成プロパティ**ノードをクリックします**デバッグ**します。
-    5.  変更**起動するデバッガー**に**ローカル Windows デバッガー**します。
-    6.  7.  USB Application1 パッケージ プロジェクトを右クリックして**プロジェクトのアンロード**します。
-    8.  アプリケーションのデバッグ、**ビルド**メニューの [**デバッグの開始]** 、またはキーを押します**f5 キーを押して**します。
+        **メモ** パッケージにドライバーファイルが含まれていません。 これは、INF ファイルが Windows System32 フォルダーにあるインボックスドライバー Winusb.sys を参照しているためです \\ 。
+  3. ドライバーを手動でインストールします。 デバイスマネージャーで、パッケージで INF を指定してドライバーを更新します。 前のセクションで示した、ソリューションフォルダーにあるドライバーパッケージをポイントします。
+  4. [ **USB アプリケーション 1** ] プロジェクトを右クリックし、[プロジェクトのプロパティ] で [**構成プロパティ**] ノードを展開して、[**デバッグ**] をクリックします。
+  5. **ローカル Windows デバッガー**に**起動するようにデバッガー**を変更します。
+  6. [USB アプリケーション 1 Package] プロジェクトを右クリックし、[**プロジェクトのアンロード**] を選択します。
+  7. アプリケーションをデバッグするには、[**ビルド**] メニューの [**デバッグの開始**] をクリックするか、 **F5**キーを押します。
 
-## <a name="template-code-discussion"></a>テンプレート コードの説明
+## <a name="template-code-discussion"></a>テンプレートコードの説明
 
+このテンプレートは、デスクトップアプリケーションの開始点となります。 USB アプリケーション1プロジェクトには、ソースファイルのデバイス .cpp とメイン .cpp があります。
 
-テンプレートは、お客様のデスクトップ アプリケーションの開始点です。 USB Application1 プロジェクトは、ソース ファイル device.cpp と main.cpp にします。
+メインの .cpp ファイルには、アプリケーションのエントリポイント tmain が含まれています。 \_ デバイスにハンドルを開いたり閉じたりするすべてのヘルパー関数が、デバイス .cpp に含まれています。
 
-Main.cpp ファイルには、アプリケーションのエントリ ポイントが含まれています。 \_tmain します。 Device.cpp には、デバイスを識別するハンドルを開いたり閉じたりするすべてのヘルパー関数が含まれています。
-
-テンプレートでは、device.h をという名前のヘッダー ファイルもあります。 このファイルには、デバイス インターフェイスの GUID (後述) とデバイスの定義が含まれています。\_情報を格納するデータ構造が、アプリケーションによって取得します。 たとえば、OpenDevice によって取得され、後続の操作で使用される WinUSB インターフェイスのハンドルを格納します。
+このテンプレートには、デバイス .h という名前のヘッダーファイルもあります。 このファイルには、デバイスインターフェイス GUID (後で説明します) と、 \_ アプリケーションによって取得された情報を格納するデバイスデータ構造の定義が含まれています。 たとえば、OpenDevice によって取得され、後続の操作で使用される WinUSB インターフェイスハンドルを格納します。
 
 ```cpp
 typedef struct _DEVICE_DATA {
@@ -194,9 +184,9 @@ typedef struct _DEVICE_DATA {
 } DEVICE_DATA, *PDEVICE_DATA;
 ```
 
-### <a href="" id="deviceinstance"></a>インスタンス パスを取得する - デバイスの device.cpp で RetrieveDevicePath を参照してください。
+### <a name="getting-the-instance-path-for-the-device---see-retrievedevicepath-in-devicecpp"></a>デバイスのインスタンスパスを取得しています。 RetrieveDevicePath の「」を参照してください。
 
-USB デバイスへのアクセス、アプリケーションでは、呼び出すことによって、デバイスの有効なファイル ハンドルを作成**CreateFile**します。 その呼び出しでは、アプリケーションがデバイス パスのインスタンスを取得する必要があります。 アプリでは、デバイス パスを取得する[SetupAPI](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)ルーチンを Winusb.sys のインストールに使用された INF ファイルで、デバイス インターフェイスの GUID を指定します。 GUID を名前付き GUID 定数を宣言する Device.h\_DEVINTERFACE\_USBApplication1 します。 これらのルーチンを使用するは、アプリケーションは、指定したデバイスのインターフェイス クラスのすべてのデバイスを列挙し、デバイスのデバイス パスを取得します。
+アプリケーションは、USB デバイスにアクセスするために、 **CreateFile**を呼び出すことによって、デバイスの有効なファイルハンドルを作成します。 その呼び出しに対して、アプリケーションはデバイスパスのインスタンスを取得する必要があります。 デバイスパスを取得するために、アプリは、 [setupapi.log](https://docs.microsoft.com/windows-hardware/drivers/install/setupapi)ルーチンを使用して、Winusb.sys のインストールに使用された INF ファイル内のデバイスインターフェイス GUID を指定します。 Device .h は、GUID devinterface USBApplication1 という名前の GUID 定数を宣言します。 \_ \_ これらのルーチンを使用すると、アプリケーションは、指定されたデバイスインターフェイスクラス内のすべてのデバイスを列挙し、デバイスのデバイスパスを取得します。
 
 ```cpp
 HRESULT
@@ -352,31 +342,33 @@ Return value:
 }
 ```
 
-前の関数では、アプリケーションは、これらのルーチンを呼び出すことによって、デバイス パスを取得します。
+上記の関数では、アプリケーションは次のルーチンを呼び出してデバイスパスを取得します。
 
-1.  [**SetupDiGetClassDevs** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa)を識別するハンドルを取得する、*デバイス情報設定されている*、指定したデバイスのインターフェイス クラス GUIDに一致するすべてのインストールされているデバイスに関する情報を格納する配列\_DEVINTERFACE\_USBApplication1 します。 配列内の各要素と呼ばれる、*デバイス インターフェイス*がインストールされ、システムに登録されているデバイスに対応しています。 デバイスのインターフェイス クラスは、デバイス インターフェイス INF ファイルで定義した GUID を渡すことによって識別されます。 関数は、デバイス情報のセットに HDEVINFO ハンドルを返します。
-2.  [**SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)デバイスを列挙するインターフェイスでデバイス情報設定し、デバイス インターフェイスに関する情報を取得します。
+1. [**SetupDiGetClassDevs**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetclassdevsexa)は、*デバイス情報セット*のハンドルを取得します。これは、指定したデバイスインターフェイスクラス GUID devinterface USBApplication1 に一致したすべてのインストール済みデバイスに関する情報を格納する配列 \_ \_ です。 *デバイスインターフェイス*と呼ばれる配列内の各要素は、システムにインストールされ、登録されているデバイスに対応します。 デバイスインターフェイスクラスは、INF ファイルで定義したデバイスインターフェイス GUID を渡すことによって識別されます。 関数は、デバイス情報セットへの HDEVINFO ハンドルを返します。
+2. [**Setupdienumdeviceinterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces) 。デバイス情報セット内のデバイスインターフェイスを列挙し、デバイスインターフェイスに関する情報を取得します。
 
-    この呼び出しでは、次のものが必要です。
+    この呼び出しには、次の項目が必要です。
 
-    -   初期化された呼び出し元が割り当てた[ **SP\_デバイス\_インターフェイス\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)構造を持つその**cbSize**メンバーに設定構造体のサイズ。
-    -   手順 1 から HDEVINFO ハンドル。
-    -   デバイスのインターフェイスの INF ファイルで定義した GUID です。
+   - **CbSize**メンバーが構造体のサイズに設定されている、初期化された呼び出し元割り当て済み[**SP \_ デバイス \_ インターフェイス \_ データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)構造体。
+   - 手順 1. の HDEVINFO ハンドル。
+   - INF ファイルで定義したデバイスインターフェイス GUID。
 
-    [**SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)デバイス インターフェイスの指定したインデックスのデバイス情報設定の配列を検索し、初期化された入力[ **SP\_デバイス\_インターフェイス\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)インターフェイスに関する基本的なデータを含む構造体。
+    [**Setupdienumdeviceinterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)は、デバイスインターフェイスの指定したインデックスのデバイス情報セット配列を検索し、初期化された[**SP \_ デバイス \_ インターフェイスの \_ データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_data)構造に、インターフェイスに関する基本データを入力します。
 
-    **注**デバイス情報のセット内のすべてのデバイス インターフェイスを列挙するために呼び出す[ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)関数が戻るまでループで**FALSE**障害のエラー コードはエラーと\_いいえ\_詳細\_項目。 エラー\_いいえ\_詳細\_項目のエラー コードを呼び出すことによって取得できる**GetLastError**します。 反復処理ごとに、メンバーのインデックスをインクリメントします。
+    **メモ**  デバイス情報セット内のすべてのデバイスインターフェイスを列挙するには、関数が**FALSE**を返し、エラーのエラーコードが "その他の項目はありません" になるまで、ループで[**Setupdienumdeviceinterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)を呼び出します \_ \_ \_ 。 このエラーは、 \_ \_ \_ **GetLastError**を呼び出すことによって、他の項目のエラーコードを取得できません。 各反復処理で、メンバーインデックスをインクリメントします。
 
-    または、呼び出せる[ **SetupDiEnumDeviceInfo** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)するデバイス情報のセットを列挙し、呼び出し元が割り当てた内でのインデックスで指定された、デバイスのインターフェイス要素に関する情報を返します[ **SP\_DEVINFO\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)構造体。 この構造体への参照を渡すことができますし、 *DeviceInfoData*のパラメーター、 [ **SetupDiEnumDeviceInterfaces** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)関数。
+    または、デバイス情報セットを列挙する[**SetupDiEnumDeviceInfo**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinfo)を呼び出し、インデックスによって指定されたデバイスインターフェイス要素に関する情報を、呼び出し元が割り当てた[**SP \_ DEVINFO \_ データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_devinfo_data)構造体に返すこともできます。 その後、 [**Setupdienumdeviceinterfaces**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdienumdeviceinterfaces)関数の*deviceinfodata*パラメーターでこの構造体への参照を渡すことができます。
 
-3.  [**SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)デバイス インターフェイスの詳細なデータを取得します。 情報が返されます、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造体。 のサイズ、 **SP\_デバイス\_インターフェイス\_詳細\_データ**構造の変化に合わせて、 **SetupDiGetDeviceInterfaceDetail**が呼び出されます2 回クリックします。 最初の呼び出しが用に割り当てるバッファーのサイズを取得、 **SP\_デバイス\_インターフェイス\_詳細\_データ**構造体。 2 番目の呼び出しでは、インターフェイスに関する詳しい情報を割り当てられたバッファーを設定します。
-    1.  呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)で*DeviceInterfaceDetailData*パラメーターに設定**NULL**します。 関数が適切なバッファー サイズを返します、 *requiredlength*パラメーター。 この呼び出しがエラーで失敗\_不十分\_バッファーのエラー コード。 このエラー コードが必要です。
-    2.  メモリを割り当て、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造が取得される適切なバッファー サイズに基づいて、*requiredlength*パラメーター。
-    3.  呼び出し[ **SetupDiGetDeviceInterfaceDetail** ](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)もう一度で初期化された構造体への参照を渡すと、 *DeviceInterfaceDetailData*パラメーター。 関数から制御が戻るときに、構造体はインターフェイスに関する詳しい情報を入力されます。 デバイスのパスが、 [ **SP\_デバイス\_インターフェイス\_詳細\_データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造体の**DevicePath**メンバー。
+3. [**Setupdigetdeviceinterfacedetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)を使用して、デバイスインターフェイスの詳細なデータを取得します。 情報は、 [**SP \_ デバイス \_ インターフェイスの \_ 詳細 \_ データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造で返されます。 **SP \_ デバイス \_ インターフェイスの \_ 詳細 \_ データ**構造のサイズが異なるため、 **setupdigetdeviceinterfacedetail**は2回呼び出されます。 最初の呼び出しでは、 **SP \_ デバイス \_ インターフェイスの \_ 詳細 \_ データ**構造に割り当てるバッファーサイズを取得します。 2番目の呼び出しは、割り当てられたバッファーにインターフェイスに関する詳細情報を入力します。
+   1. *Deviceinterfacedetail data*パラメーターが**NULL**に設定された[**Setupdigetdeviceinterfacedetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)を呼び出します。 関数は、 *requiredlength*パラメーターの正しいバッファーサイズを返します。 この呼び出しは、エラーが発生した \_ \_ バッファーエラーコードで失敗します。 このエラーコードは想定されています。
+   2. *Requiredlength*パラメーターで取得される正しいバッファーサイズに基づいて、 [**SP \_ デバイス \_ インターフェイスの \_ 詳細 \_ データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造にメモリを割り当てます。
+   3. [**Setupdigetdeviceinterfacedetail**](https://docs.microsoft.com/windows/desktop/api/setupapi/nf-setupapi-setupdigetdeviceinterfacedetaila)をもう一度呼び出し、 *Deviceinterfacedetail data*パラメーターで初期化された構造体への参照を渡します。 関数から制御が戻ると、インターフェイスに関する詳細情報が構造体に格納されます。 デバイスパスは、 [**SP \_ デバイスインターフェイスの \_ \_ 詳細 \_ データ**](https://docs.microsoft.com/windows/desktop/api/setupapi/ns-setupapi-_sp_device_interface_detail_data_a)構造の**DevicePath**メンバーに含まれています。
 
-### <a href="" id="filehandle"></a>ファイルを作成するデバイスの処理 - device.cpp OpenDevice を参照してください。
+### <a name="creating-a-file-handle-for-the-device"></a>デバイスのファイルハンドルの作成
 
-デバイスを対話のニーズ、WinUSB インターフェイス デバイス上の最初の (既定値) インターフェイスへのハンドル。 テンプレート コードがファイル ハンドルと WinUSB インターフェイスのハンドルを取得し、デバイスに格納\_データ構造体。
+「デバイス .cpp の OpenDevice」を参照してください。
+
+デバイスと対話するために、はデバイスの最初の (既定の) インターフェイスへの WinUSB インターフェイスハンドルを必要とします。 テンプレートコードは、ファイルハンドルと WinUSB インターフェイスハンドルを取得し、デバイスデータ構造に格納し \_ ます。
 
 ```cpp
 HRESULT
@@ -456,15 +448,15 @@ Return value:
 }
 ```
 
-1.  アプリによる呼び出し**CreateFile**先ほど取得したデバイスのパスを指定することで、デバイスのファイル ハンドルを作成します。 ファイルを使用して\_フラグ\_OVERLAPPED WinUSB がこの設定に依存するためのフラグします。
-2.  ファイル ハンドルを使用すると、デバイス、アプリは WinUSB インターフェイスのハンドルを作成します。 [WinUSB Functions](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)ファイル ハンドルが、代わりに、ターゲット デバイスを識別するために、このハンドルを使用します。 WinUSB インターフェイス ハンドルをアプリの呼び出しを取得する[ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)ファイル ハンドルを渡すことによって。 I/O 要求をデバイスに送信して、デバイスから情報を取得、後続の呼び出しで受信したハンドルを使用します。
+1. アプリは**CreateFile**を呼び出して、以前に取得したデバイスパスを指定することによって、デバイスのファイルハンドルを作成します。 \_ \_ Winusb がこの設定に依存しているため、ファイルフラグのオーバーラップフラグが使用されます。
+2. デバイスのファイルハンドルを使用すると、アプリによって WinUSB インターフェイスハンドルが作成されます。 [Winusb 関数](https://docs.microsoft.com/previous-versions/windows/hardware/drivers/ff540046(v=vs.85)#winusb)は、このハンドルを使用して、ファイルハンドルではなくターゲットデバイスを識別します。 WinUSB インターフェイスハンドルを取得するために、アプリはファイルハンドルを渡すことによって[**winusb \_ Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)を呼び出します。 その後の呼び出しで received ハンドルを使用して、デバイスから情報を取得し、デバイスに i/o 要求を送信します。
 
-### <a name="release-the-device-handles---see-closedevice-in-devicecpp"></a>デバイス ハンドルのリリース - device.cpp CloseDevice を参照してください。
+### <a name="release-the-device-handles---see-closedevice-in-devicecpp"></a>デバイスハンドルを解放する-「デバイス. .cpp の CloseDevice」を参照してください。
 
-テンプレート コードでは、ファイル ハンドルとデバイスの WinUSB インターフェイスのハンドルを解放するコードを実装します。
+テンプレートコードは、ファイルハンドルを解放するコードと、デバイスの WinUSB インターフェイスハンドルを実装します。
 
--   **CloseHandle**によって作成されたハンドルを解放する**CreateFile**」の説明に従って、[ファイル ハンドルを作成、デバイスの](#filehandle)このチュートリアルの「します。
--   [**WinUsb\_Free** ](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free)によって返されると、デバイスの WinUSB インターフェイスのハンドルを解放する[ **WinUsb\_初期化**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize)します。
+- **CloseHandle**を使用して、このチュートリアルの「[デバイスのファイルハンドルを作成](#creating-a-file-handle-for-the-device)する」で説明されているように、 **CreateFile**によって作成されたハンドルを解放します。
+- [**WinUsb\_Free**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_free): デバイスの WinUSB インターフェイス ハンドルを解放します。これは、[**WinUsb\_Initialize**](https://docs.microsoft.com/windows/desktop/api/winusb/nf-winusb-winusb_initialize) によって返されます。
 
 ```cpp
 VOID
@@ -505,22 +497,19 @@ Return value:
 }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
+次に、次のトピックを読んで、デバイス情報を取得し、データ転送をデバイスに送信します。
 
-次に、デバイス情報を取得するを送信し、デバイスにデータ転送にこれらのトピックを参照してください。
+- [WinUSB 機能を使用して USB デバイスにアクセスする](using-winusb-api-to-communicate-with-a-usb-device.md)
 
--   [WinUSB 関数を使用して USB デバイスへのアクセスします。](using-winusb-api-to-communicate-with-a-usb-device.md)
+    デバイス速度、インターフェイス記述子、関連するエンドポイント、パイプなど、USB 固有の情報をデバイスに照会する方法について説明します。
 
-    デバイスの速度、インターフェイスの記述子、関連するエンドポイント、およびそのパイプなどの USB に固有の情報については、デバイスを照会する方法について説明します。
+- [WinUSB デスクトップ アプリから USB 等時性転送を送信する](getting-set-up-to-use-windows-devices-usb.md)
 
--   [WinUSB デスクトップ アプリから USB アイソクロナス転送を送信します。](getting-set-up-to-use-windows-devices-usb.md)
-
-    USB デバイスのアイソクロナス エンドポイント間でデータを転送します。
+    USB デバイスのアイソクロナスエンドポイントとの間でデータを転送します。
 
 ## <a name="related-topics"></a>関連トピック
-[USB デバイスの Windows デスクトップ アプリ](windows-desktop-app-for-a-usb-device.md)  
-[ドライバーの展開およびテスト用のコンピューターをプロビジョニングします。](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)  
 
-
-
+[USB デバイス用の Windows デスクトップ アプリ](windows-desktop-app-for-a-usb-device.md)  
+[ドライバーの展開とテスト用にコンピューターをプロビジョニングする](https://docs.microsoft.com/windows-hardware/drivers/gettingstarted/provision-a-target-computer-wdk-8-1)  

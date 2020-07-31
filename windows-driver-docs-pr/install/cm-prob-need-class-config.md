@@ -6,14 +6,14 @@ keywords:
 - CM_PROB_NEED_CLASS_CONFIG
 ms.date: 02/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a579b0fa11002368bd838c016fef1612b5de254
-ms.sourcegitcommit: 6f165a03303b7e4950b37d4b992f0f481b14f3ca
+ms.openlocfilehash: 28860c16bee71e2045790b780d2511060cbb63a0
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279963"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425735"
 ---
-# <a name="code-56---cm_prob_need_class_config"></a>コード 56-CM_PROB_NEED_CLASS_CONFIG
+# <a name="code-56---cm_prob_need_class_config"></a>Code 56 - CM_PROB_NEED_CLASS_CONFIG
 
 このデバイスマネージャーエラーメッセージは、Windows がこのデバイスのクラス構成をまだセットアップしていることを示しています。
 
@@ -31,3 +31,10 @@ ms.locfileid: "78279963"
 
 この問題コードは、多くの場合、一時的なものです。
 
+デバイスのセットアップクラスによっては、デバイスをドライバーパッケージと共にインストールした後に、デバイスを動作させるために追加のクラス構成操作が必要になります。  構成が完了すると、デバイスが再起動され、この問題コードを使用できなくなります。
+
+たとえば、NET class デバイスは `*IfType` 、、 `UpperRange` 、およびその他のネットワーク固有の INF ディレクティブに基づいて追加の構成を受け取ります。
+
+NET クラスデバイスでこの問題コードが引き続き発生する場合、ドライバー INF に無効なネットワーク固有の INF ディレクティブが含まれているか、システムのネットワーク状態が破損している可能性があり、リセットする必要があります。
+
+これを行うには、設定アプリの [ネットワークリセット] ボタンを使用します。

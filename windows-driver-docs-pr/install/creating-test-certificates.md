@@ -4,12 +4,12 @@ description: テスト証明書の作成
 ms.assetid: 4e6daa96-029c-4e1c-b483-b900cb836858
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 30b8d68e952c4efaa6eba5c7d3cb510f385e80f0
-ms.sourcegitcommit: 701e4a41860877cc1134e139bc0bd4a9f7270443
+ms.openlocfilehash: b7b6fb48d9afc559d50397167155d773d0da4181
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86453984"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412547"
 ---
 # <a name="creating-test-certificates"></a>テスト証明書の作成
 
@@ -32,7 +32,7 @@ ms.locfileid: "86453984"
 makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.3.3 ContosoTest.cer
 ```
 
-各値の説明:
+この場合、
 
 -   **-R**オプションを指定すると、同じ発行者とサブジェクト名を持つ自己署名証明書が作成されます。
 
@@ -52,7 +52,10 @@ makecert -r -pe -ss PrivateCertStore -n CN=Contoso.com(Test) -eku 1.3.6.1.5.5.7.
 
 MakeCert ツールとそのコマンドライン引数の詳細については、 [**MakeCert**](https://docs.microsoft.com/windows-hardware/drivers/devtest/makecert)を参照してください。
 
-また、Windows Driver Kit (WDK) の*bin \\ selfsign*ディレクトリにある readme ファイル*Selfsign_readme.htm*も参照してください。
+> [!NOTE]
+> テスト証明書を作成したら、Certmgr.exe ツールを使用して、信頼されたルート証明機関の証明書ストアに証明書を追加します。 詳細については、「[テスト証明書のインストール](installing-test-certificates.md)」を参照してください。
+
+また、 `Selfsign_readme.htm` `bin\selfsign` Windows Driver KIT (WDK) のディレクトリにある readme ファイルも参照してください。
 
  
 

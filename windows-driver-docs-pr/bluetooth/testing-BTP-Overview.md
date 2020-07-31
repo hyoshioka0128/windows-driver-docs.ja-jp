@@ -1,15 +1,15 @@
 ---
-title: Microsoft Bluetooth テストプラットフォーム
-description: Bluetooth テストプラットフォーム (BTP) の概要。
+title: Microsoft Bluetooth テストプラットフォームの概要
+description: Bluetooth テストプラットフォーム (BTP) の概要
 ms.assetid: de5723f8-cc32-4660-9694-63f6603e6983
 ms.date: 2/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 71d5f5a327019bc2130f1e8b374bafdb5e2d1897
-ms.sourcegitcommit: d03c24342b9852013301a37e2ec95592804204f1
+ms.openlocfilehash: 7137db8819a13fb8d77310f77e7f17bb6d32e8b8
+ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77528923"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412523"
 ---
 # <a name="bluetooth-test-platform-btp-overview"></a>Bluetooth テストプラットフォーム (BTP) の概要
 

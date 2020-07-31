@@ -1,19 +1,19 @@
 ---
-title: デバッグ (間接ディスプレイドライバーを)
+title: 間接ディスプレイ ドライバーのデバッグ
 description: 間接ディスプレイドライバーのデバッグ手法について説明します。
 ms.assetid: a343812d-03d0-4a95-9c36-7e6b5a404088
 ms.date: 07/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 632e4c8e00de634fd9a9644dfd82e8d2fc1b9a7a
-ms.sourcegitcommit: 0d89fc46058efb2ebc6ed9bd8f638c3f8cc1a678
+ms.openlocfilehash: 8ae9551a699e3015718bcffeca075e4a6ffd4166
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86459214"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402289"
 ---
-# <a name="debugging-indirect-display-drivers"></a>デバッグ (間接ディスプレイドライバーを)
+# <a name="debugging-indirect-display-drivers"></a>間接ディスプレイ ドライバーのデバッグ
 
-間接的に表示されるドライバー (IDDs) は、umdf ドライバーであるため、UMDF デバッグドキュメントを使用することをお勧めします (このセクションのページの例を[次](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)に示します)。  このページでは、表示固有のデバッグ情報を間接的に提供します。
+間接的に表示されるドライバー (IDDs) は、umdf ドライバーであるため、umdf[ドライバーの読み込みに失敗した原因を特定する、または Umdf デバイスを起動できない原因を特定](https://docs.microsoft.com/windows-hardware/drivers/wdf/determining-why-the-umdf-driver-fails-to-load-or-the-umdf-device-fails)するなど、umdf デバッグのドキュメントが適しています。  このページでは、表示固有のデバッグ情報を間接的に提供します。
 
 ## <a name="registry-control"></a>レジストリコントロール
 
@@ -101,7 +101,7 @@ logman -stop IddCx -ets
 | 1                  | 使用されていない              |
 | 2                  | エラー                |
 | 3                  | 警告              |
-| 4                  | Information           |
+| 4                  | 情報           |
 | 5                  | "詳細"               |
 
 ### <a name="decoding-iddcx-wpp-tracing"></a>IddCx WPP トレースをデコードしています
