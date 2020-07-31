@@ -1988,6 +1988,8 @@
                   href: receiving-network-data-with-ipsec-offload-version-2.md
             - name: 大きな TCP パケットのセグメント化のオフロード
               href: offloading-the-segmentation-of-large-tcp-packets.md
+            - name: UDP セグメント化オフロード (USO)
+              href: udp-segmentation-offload-uso-.md
         - name: 接続オフロード
           items:
             - name: 接続オフロードの概要

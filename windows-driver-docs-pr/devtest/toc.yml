@@ -586,7 +586,7 @@
       items:
         - name: ドライバーの検証ツール
           href: driver-verifier.md
-        - name: 'ドライバーの検証ツール: 新着情報'
+        - name: 'ドライバーの検証ツール: 新機能'
           items:
             - name: 'ドライバーの検証ツール: 新着情報'
               href: driver-verifier--what-s-new.md
@@ -1834,6 +1834,8 @@
                       href: color-coding-in-the-trace-tree-pane.md
                     - name: '[Trace Tree]\(トレース ツリー\) ウィンドウの操作'
                       href: trace-tree-pane-actions.md
+                    - name: 欠陥トレースの保存
+                      href: saving-defect-traces.md
                 - name: '[Source Code]\(ソース コード\) ウィンドウ'
                   items:
                     - name: '[Source Code]\(ソース コード\) ウィンドウ'
