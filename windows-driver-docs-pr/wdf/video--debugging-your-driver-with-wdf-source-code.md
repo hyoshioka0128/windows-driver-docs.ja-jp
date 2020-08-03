@@ -5,12 +5,12 @@ Search.SourceType: Video
 ms.assetid: 735D71FC-0B35-4C79-8C0A-F3C762095C06
 ms.date: 05/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd9703ca9adebf2a77f8bc6c9c5ec020db70180
-ms.sourcegitcommit: f788aa204a3923f9023d8690488459a4d9bc2495
+ms.openlocfilehash: d0e6196a03009c62caee5d4220c26f0188951507
+ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86141191"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87479122"
 ---
 # <a name="video-debugging-your-driver-with-wdf-source-code"></a>ビデオ:WDF ソース コードでのドライバーのデバッグ
 
@@ -74,8 +74,6 @@ WDF ソースデバッグを使用すると、WDF ソースコードをダウン
 
 [ソースモードでのデバッグ](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-in-source-mode)が有効になっていることを確認します。 [デバッグ] メニューを開き、[ソースモード] がオンになっていることを確認します。
 
-
- 
 ### <a name="clear-stale-symbols-cache"></a>古いシンボルキャッシュのクリア
 
 以前に同じ Windows ターゲットに対して WDF ドライバーをデバッグした場合は、ソースのインデックスが作成されていないローカルにキャッシュされた WDF シンボルを使用している可能性があります。 これは、! lmi コマンドを使用して確認できます。
@@ -110,6 +108,3 @@ C:\...\Wdf01000.pdb\...\Wdf01000.pdb
 ```
 
 WDF ソースレベルのデバッグは、ライブデバッグとクラッシュダンプの分析だけでなく、IRP ディスパッチャーのようなコア関数にブレークポイントを設定し、後続のコードパスを調べることで、フレームワークの内部構造の詳細を学習するためにも使用できます。
-
-
-
