@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-hardware
 ms.technology: windows-devices
 ms.custom: 19H1
-ms.openlocfilehash: 373b90f326408e36dbd4fb92b7380fb92aea60fb
-ms.sourcegitcommit: 988d100e4d3b218a59fdac034d39a1816d145c85
+ms.openlocfilehash: 08ef2051b123dc40525b5d9756208b75f1352a40
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75210896"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473738"
 ---
 # <a name="network-adapter-wdf-class-extension-netadaptercx"></a>ネットワーク アダプターの WDF クラス拡張機能 (NetAdapterCx)
 
@@ -49,7 +49,7 @@ NetAdapterCx クライアント ドライバーを開発するときに Microsof
 * [NDIS ミニポート ドライバーの NetAdapterCx への移植](porting-ndis-miniport-drivers-to-netadaptercx.md)
 * [NetAdapterCx クライアント ドライバーの構築](building-a-netadaptercx-client-driver.md)
 * [NetAdapterCx クライアント ドライバーの INF ファイル](inf-files-for-netadaptercx-client-drivers.md)
-* [NetAdapterCx でのオブジェクトの有効期間の管理](managing-the-lifetime-of-objects-in-netadaptercx.md)
+* [NetAdapterCx でのオブジェクトの有効期間の管理](summary-of-netadaptercx-objects.md)
 * [構成情報へのアクセス](accessing-configuration-information.md)
 * [制御要求の処理](handling-control-requests.md)
 * [NetAdapterCx クライアント ドライバーのデバッグ](debugging-a-netadaptercx-client-driver.md)

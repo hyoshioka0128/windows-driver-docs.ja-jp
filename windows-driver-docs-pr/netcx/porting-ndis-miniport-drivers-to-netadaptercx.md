@@ -7,12 +7,12 @@ keywords:
 ms.date: 01/22/2019
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2d0d800e5ab51fe0de76f7b077a3bd7de4dcca9c
-ms.sourcegitcommit: b316c97bafade8b76d5d3c30d48496915709a9df
+ms.openlocfilehash: 53d09037d633a6003b9a5471a5f9ecb5350e017f
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79243029"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473758"
 ---
 # <a name="porting-ndis-miniport-drivers-to-netadaptercx"></a>NDIS ミニポート ドライバーの NetAdapterCx への移植
 
@@ -20,14 +20,14 @@ ms.locfileid: "79243029"
 
 WDF に関する一般情報については、 [WDF ドライバー開発ガイド](../wdf/index.md)を参照してください。
 
-## <a name="compilation-settings"></a>コンパイルの設定
+## <a name="compilation-settings"></a>コンパイル設定
 
 Visual Studio で既存の NDIS ミニポートドライバープロジェクトを開き、次の手順を使用してそれを KMDF プロジェクトに変換します。
 
-1. 最初に、 **[構成プロパティ-> ドライバーの設定-> ドライバーモデル]** に移動し、**ドライバーの種類**が kmdf に設定されていること、および**kmdf バージョンのメジャー**と**kmdf バージョンのマイナー**が両方とも空であることを確認します。
-2. プロジェクトのプロパティ で、**ドライバーの設定-> ネットワークアダプタードライバー** を開き、**ネットワークアダプター クラス拡張へのリンクを** **はい**に設定します。
-   * 変換されたドライバーが引き続き NDIS Api を呼び出す場合は、引き続き `ndis.lib`に対するリンクを作成します。
-3. `NDIS650_MINIPORT=1`などの NDIS プリプロセッサマクロを削除します。
+1. 最初に、[**構成プロパティ->ドライバーの設定->ドライバーモデル**] に移動し、**ドライバーの種類**が kmdf に設定されていること、および**kmdf バージョンのメジャー**と**kmdf バージョンのマイナー**が両方とも空であることを確認します。
+2. [プロジェクトのプロパティ] で、[**ドライバーの設定->ネットワークアダプタードライバー** ] を開き、[**ネットワークアダプター] クラス拡張へのリンクを** **[はい]** に設定します。
+   * 変換されたドライバーが引き続き NDIS Api を呼び出す場合は、へのリンクを続行 `ndis.lib` します。
+3. などの NDIS プリプロセッサマクロを削除 `NDIS650_MINIPORT=1` します。
 4. すべてのソースファイル (または、共通/プリコンパイル済みヘッダー) に次のヘッダーを追加します。
   
    ```C++
@@ -49,9 +49,9 @@ Visual Studio で既存の NDIS ミニポートドライバープロジェクト
 
    - **\*Ifコネクターが存在します**
    - **\*ConnectionType**
-   - **\*方向の型**
+   - **\*Direction 型**
    - **\*AccessType**
-   - **\*のハードウェアループバック**
+   - **\*ハードウェアループバック**
 
      これらのキーワードと例の詳細については、「 [INF files For NetAdapterCx client drivers](inf-files-for-netadaptercx-client-drivers.md)」を参照してください。
 
@@ -93,7 +93,7 @@ Oid のハンドラーの登録の詳細については、「[制御要求の処
 
 ## <a name="reading-configuration-from-the-registry"></a>レジストリから構成を読み取っています
 
-次に、 [**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)および関連する関数の呼び出しを `NetConfiguration*` メソッドに置き換えます。 `NetConfiguration*` メソッドは `Ndis*Configuration*` 関数に似ているため、コードを再構築する必要はありません。
+次に、 [**NdisOpenConfigurationEx**](https://docs.microsoft.com/windows-hardware/drivers/ddi/ndis/nf-ndis-ndisopenconfigurationex)および関連する関数への呼び出しをメソッドに置き換え `NetConfiguration*` ます。 `NetConfiguration*`メソッドは関数に似ているため、コードを再 `Ndis*Configuration*` 構築する必要はありません。
 
 詳細については、「[構成情報へのアクセス](accessing-configuration-information.md)」を参照してください。
 
@@ -105,7 +105,7 @@ WDF ネットワーククライアントドライバーでこれを行うには�
 
 最も単純なポートは、クライアントの[*EVT_WDF_DRIVER_DEVICE_ADD*](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfdriver/nc-wdfdriver-evt_wdf_driver_device_add)コールバックから[**Wdfcontroldeviceinitallocate**](https://docs.microsoft.com/windows-hardware/drivers/ddi/wdfcontrol/nf-wdfcontrol-wdfcontroldeviceinitallocate)を呼び出して、コントロールデバイスオブジェクトを作成することです。 詳細については、「[コントロールデバイスオブジェクトの使用](../wdf/using-control-device-objects.md)」を参照してください。
 
-ただし、「デバイスインターフェイスの[使用](using-device-interfaces.md)」で説明されているように、デバイスインターフェイスを作成することをお勧めします。
+ただし、「デバイスインターフェイスの[使用](../wdf/using-device-interfaces.md)」で説明されているように、デバイスインターフェイスを作成することをお勧めします。
 
 ## <a name="finishing-device-initialization"></a>デバイスの初期化の終了
 
@@ -166,7 +166,7 @@ WDF クライアントでは、NetAdapter または作成した OID キューと
 
 ## <a name="ndis-wdf-function-equivalents"></a>NDIS-WDF 関数に対応する関数
 
-ほとんどの `NdisXxx` 関数は、同等の WDF に置き換えることができます。 一般に、`NDIS.SYS`からインポートされる機能はごくわずかであることがわかります。
+ほとんどの `NdisXxx` 関数は、同等の WDF に置き換えることができます。 一般に、からインポートされる機能はごくわずかであることがわかり `NDIS.SYS` ます。
 
 同等の関数の一覧については、「 [WDF 関数に相当する関数](ndis-wdf-function-equivalents.md)」を参照してください。
 
@@ -176,6 +176,6 @@ WDF クライアントでは、NetAdapter または作成した OID キューと
 
 [! Ndiskd netadapter](../debugger/-ndiskd-netadapter.md)デバッガー拡張機能では **、次の**ような結果が表示されます。
 
-## <a name="conclusion"></a>まとめ
+## <a name="conclusion"></a>結論
 
 このトピックの手順に従って、デバイスを開始および停止する動作するドライバーが必要です。

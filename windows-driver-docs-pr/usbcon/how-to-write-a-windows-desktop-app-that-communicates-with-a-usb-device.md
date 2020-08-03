@@ -3,18 +3,18 @@ Description: USB デバイスと通信する Windows デスクトップアプリ
 title: WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 ms.date: 07/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a623c332d791f450810b230faa4de07b2551c2be
-ms.sourcegitcommit: 7a7ce6070ed16673108cc64c33b3ddb894453cfb
+ms.openlocfilehash: 04049fa103cd92251c84c52408f06e74c5f81260
+ms.sourcegitcommit: e2d27f19033482dece6350f3190ce073b1cd9f06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87412549"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87479134"
 ---
 # <a name="write-a-windows-desktop-app-based-on-the-winusb-template"></a>WinUSB テンプレートに基づいて Windows デスクトップ アプリを記述する
 
 USB デバイスと通信する Windows デスクトップアプリを作成する最も簡単な方法は、C/c + + WinUSB テンプレートを使用することです。 このテンプレートには、Windows Driver Kit (WDK) と Microsoft Visual Studio (Professional または Ultimate) を備えた統合環境が必要です。 このテンプレートは、開始点として使用できます。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>[前提条件]
 
 - 統合開発環境をセットアップするには、最初に Microsoft Visual Studio Ultimate 2019 または Microsoft Visual Studio Professional 2019 をインストールし、次に WDK をインストールします。 Visual Studio と WDK のセットアップ方法については、「 [wdk のダウンロード」ページ](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk)を参照してください。
 - Windows 用デバッグツールは、WDK をインストールするときに含まれています。 詳細については、「 [Windows 用デバッグツールのダウンロードとインストール](https://go.microsoft.com/fwlink/p/?linkid=235427)」を参照してください。
@@ -91,21 +91,25 @@ USB デバイスと通信する Windows デスクトップアプリを作成す�
   2. ホスト コンピューター上で、Visual Studio でソリューションを開きます。
   3. メイン .cpp で、OpenDevice 呼び出しの前に次の行を追加します。
 
-        `system ("pause")`
+  ```syntax
+  system ("pause")
+  ```
 
-        この行により、起動時にアプリケーションが一時停止します。 これは、リモートデバッグに役立ちます。
-
+  この行により、起動時にアプリケーションが一時停止します。 これは、リモートデバッグに役立ちます。
+  
   4. .Pch で、次の行を追加します。
 
-        `#include <cstdlib>`
+  ```syntax
+  #include <cstdlib>
+  ```
 
-        このインクルードステートメントは、前の `system()` 手順での呼び出しに必要です。
+  このインクルードステートメントは、前の `system()` 手順での呼び出しに必要です。
 
   5. [**ソリューションエクスプローラー** ] ウィンドウで、[USB アプリケーション 1 Package] を右クリックし、[**プロパティ**] を選択します。
   6. 次のスクリーンショットに示すように、[ **USB アプリケーション1パッケージのプロパティページ**] ウィンドウの左側のウィンドウで、[構成プロパティ] [ドライバー] [インストール] [ ** &gt; &gt; デプロイ**] の順に移動します。
   7. **[展開前にドライバーの以前のバージョンを削除する]** チェック ボックスをオンにします。
   8. **[リモート コンピューター名]** については、テストとデバッグ用に構成したコンピューターの名前を選んでください。 この演習では、dbg-target という名前のコンピューターを使用します。
-  9. [**インストール/再インストールと検証**] を選択します。 **[Apply]** をクリックします。
+  9. [**インストール/再インストールと検証**] を選択します。 **[適用]** をクリックします。
 
         ![winusb テンプレートの展開](images/winusb-template-deployment.png)
 

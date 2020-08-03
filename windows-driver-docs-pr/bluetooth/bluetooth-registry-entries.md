@@ -3,66 +3,52 @@ title: Bluetooth レジストリ エントリ
 description: Bluetooth レジストリ エントリ
 ms.assetid: a4d2848d-cb3c-4413-b06f-fe4695448f6a
 keywords:
-- Bluetooth の WDK、レジストリ エントリ
+- Bluetooth WDK、レジストリエントリ
 - レジストリ WDK Bluetooth
 - COD_Type サブキー
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 08e9f13edd8d2e5e831f46f91baa135ad086c6e1
-ms.sourcegitcommit: fb7d95c7a5d47860918cd3602efdd33b69dcf2da
+ms.openlocfilehash: e5298f160a02d80ff6d04a61ce374e8130d2fb09
+ms.sourcegitcommit: 20a89aa2cb2c6385c2a49ebf78e5797c821d87ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67364662"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473724"
 ---
 # <a name="bluetooth-registry-entries"></a>Bluetooth レジストリ エントリ
 
+このセクションでは、Bluetooth ドライバースタックに適用されるデバイスクラス (CoD) レジストリサブキーとエントリについて説明します。
 
-このセクションでは、クラスからのデバイス (CoD) レジストリ サブキーと、Bluetooth ドライバー スタックに適用されるエントリについて説明します。
+## <a name="cod-major-and-cod-type-values"></a>"COD Major" と "COD Type" の値
 
-### <a name="span-idcodtypesubkeyspanspan-idcodtypesubkeyspancod-major-and-cod-type-values"></a><span id="cod_type_subkey"></span><span id="COD_TYPE_SUBKEY"></span>「COD メジャー」と"COD Type"値
+相手先ブランド供給の製造元 (Oem) は、 **cod の Major**および**cod の種類**の値を使用して、Bluetooth 対応の Windows デバイスのデバイスのクラスを示すことができます。 Bluetooth クラスのインストーラーによって、これらのレジストリ値に基づいてデバイスのクラスが設定されると、リモートデバイスはポータブルコンピューター、デスクトップコンピューター、電話などに接続しているかどうかを判断できます。
 
-供給元 (Oem) が使用できる、 **COD メジャー**と**COD 型**を Bluetooth 対応の Windows デバイスのデバイス クラスを示す値。 Bluetooth クラスのインストーラーは、これらのレジストリ値に基づいて、デバイスのクラスを設定、リモート デバイスがポータブル コンピューター、デスクトップ コンピューター、電話を接続しているかどうかを判断することができます。
+**Cod メジャー**と**cod 型**の値へのレジストリパスは次のとおりです。
 
-レジストリのパス、 **COD メジャー**と**COD 型**値は。
+HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Services の \\ bthport \\ パラメーター
 
-HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\BTHPORT\\パラメーター
+これらの値を設定すると、Bluetooth ラジオが取り付けられているかどうかに関係なく、システムのデバイスの Bluetooth クラスが変更されることに注意してください。 **Cod のメジャー**および**cod の種類**は、 `DWORD` [Bluetooth SIG の割り当て番号](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)のデバイスフィールド値のクラスに対して定義されている値に設定できます。
 
-これらの値の設定、Bluetooth 無線接続に関係なく、システムでは、デバイスの Bluetooth クラスが変わることに注意してください。 設定することができます、 **COD メジャー**と**COD 型**に`DWORD`値クラスのデバイスに対して定義されているフィールドの値、 [Bluetooth SIG Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/baseband/)します。
+Bluetooth プロファイルドライバーである BthPort.sys は、 **Cod メジャー**および**cod 型**の値を読み取って、デバイスの照会にどのように応答するかを決定します。 これらの値は、 `COD_MAJOR_XXX` デバイスのクラスとビットにのみ影響し `COD_XXX_MINOR_XXX` ます。 ビットは、 `COD_SERVICE_XXX` このレジストリエントリの影響を受けません。
 
-Bluetooth のプロファイル ドライバー BthPort.sys、読み取り、 **COD メジャー**と**COD 型**の値を調べて、デバイスの照会に反応する必要があります。 これらの値に影響するのみ、`COD_MAJOR_XXX`と`COD_XXX_MINOR_XXX`クラスのデバイスのビット。 `COD_SERVICE_XXX`ビットがこのレジストリ エントリを受けません。
+Cod の**Major**および**cod 型**の値が設定されていない場合、または無効な値に設定されている場合は、Bluetooth クラスのインストーラーによって、これらの値がそれぞれとに設定され `COD_MAJOR_COMPUTER` `COD_COMPUTER_MINOR_DESKTOP` ます。
 
-場合、 **COD メジャー**と**COD 型**Bluetooth クラスのインストーラーにこれらの値を設定する値が設定されていないか、無効な値に設定されて、`COD_MAJOR_COMPUTER`と`COD_COMPUTER_MINOR_DESKTOP`、それぞれします。
+## <a name="scanning-parameterization-settings"></a>パラメーター化の設定をスキャンしています
 
-### <a name="span-idscanningparameterizationsettingsspanspan-idscanningparameterizationsettingsspanspan-idscanningparameterizationsettingsspanscanning-parameterization-settings"></a><span id="Scanning_Parameterization_Settings"></span><span id="scanning_parameterization_settings"></span><span id="SCANNING_PARAMETERIZATION_SETTINGS"></span>パラメーター化の設定をスキャンします。
+プロファイルドライバーは、特定のデバイスシナリオの特定のニーズに合わせて調整するために、プロファイルドライバーの INF ファイル内のデバイスのスキャンパラメーター設定を指定できます。
 
-プロファイルのドライバーでは、特定のデバイスのシナリオの特定のニーズに合わせてカスタマイズする、プロファイル ドライバーの INF ファイルで、デバイスのスキャンのパラメーター設定を指定できます。
+次に示す1つ以上のスキャンパラメーターを AddReg ディレクティブに指定すると、既定のシステムスキャンパラメーターを上書きできます。 このディレクティブの使用方法の詳細については、「 [INF AddReg ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)」を参照してください。
 
-いずれかを指定してパラメーターをスキャンする既定のシステムをオーバーライドするまたは AddReg ディレクティブに下記の次のスキャンのパラメーター。 このディレクティブを使用する方法の詳細についてで参照できる[INF AddReg ディレクティブ](https://docs.microsoft.com/windows-hardware/drivers/install/inf-addreg-directive)します。
-
-|                           |               |           |                                                                                |
-|---------------------------|---------------|-----------|--------------------------------------------------------------------------------|
-| ［値の名前］                | 種類          | 最小値 | 最大値                                                                      |
-| HighDutyCycleScanWindow   | DWORD 0x10001 | 0x0004    | 0x4000 です。 同じか HighDutyCycleScanInterval パラメーター未満にする必要があります。 |
+| 値名                | 種類          | Min Value (最小値) | Max Value (最大値)                                                                      |
+|----|----|----|----|
+| HighDutyCycleScanWindow   | DWORD 0x10001 | 0x0004    | 0x4000. は HighDutyCycleScanInterval パラメーターと同じか、それより小さい値にする必要があります |
 | HighDutyCycleScanInterval | DWORD 0x10001 | 0x0004    | 0x4000                                                                         |
-| LowDutyCycleScanWindow    | DWORD 0x10001 | 0x0004    | 0x4000 です。 LowDutyCycleScanInterval パラメーターよりも小さくする必要があります。           |
+| LowDutyCycleScanWindow    | DWORD 0x10001 | 0x0004    | 0x4000. は LowDutyCycleScanInterval パラメーターよりも小さくする必要があります           |
 | LowDutyCycleScanInterval  | DWORD 0x10001 | 0x0004    | 0x4000                                                                         |
 | LinkSupervisionTimeout    | DWORD 0x10001 | 0x000A    | 0x0C80                                                                         |
 | ConnectionLatency         | DWORD 0x10001 | 0x0000    | 0x01F4                                                                         |
-| ConnectionIntervalMin     | DWORD 0x10001 | 0x0006    | 0x0C80 します。 ConnectionIntervalMax 以下にする必要があります。                     |
+| ConnectionIntervalMin     | DWORD 0x10001 | 0x0006    | 0x0C80。 は、ConnectionIntervalMax 以下でなければなりません                     |
 | ConnectionIntervalMax     | DWORD 0x10001 | 0x0006    | 0x0C80                                                                         |
 
- 
-
-**注**  スキャン パラメーター変更により、Bluetooth スタックのパフォーマンスに、グローバルに影響します。 パラメーターをプログラムによってスキャンに変更を加えることは許可されていません。 低負荷サイクルを使用してスキャンの頻度が高すぎたパラメーターはありませんしか他の Bluetooth 低エネルギー接続で Bluetooth BR/EDR 接続に対しても使用可能な帯域幅に影響を及ぼす。
-
- 
-
- 
-
- 
-
-
-
-
-
+>[!NOTE]
+>スキャンパラメーターを変更すると、Bluetooth スタックのパフォーマンスにグローバルな影響が生じます。 プログラムによってパラメーターのスキャンを変更することはできません。 低負荷サイクルのスキャンパラメーターを使用すると、他の Bluetooth 低エネルギー接続で使用可能な帯域幅に悪影響を与えるだけでなく、Bluetooth BR/EDR 接続にも悪影響を及ぼす可能性があります。
