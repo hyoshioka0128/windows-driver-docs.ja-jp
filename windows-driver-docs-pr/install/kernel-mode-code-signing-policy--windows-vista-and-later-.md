@@ -13,12 +13,12 @@ keywords:
 - パッケージデジタル署名 WDK
 ms.date: 04/20/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa60068e0cca799467ad4fa2148dc44c3a98cd0
-ms.sourcegitcommit: f6aebb32c045b9da7da4bf9b3fd8d6fad05e9deb
+ms.openlocfilehash: 8c93477e4a4604041473fc3931f746e4b80fd7db
+ms.sourcegitcommit: a59b63e84e6790af4c17b232f11a2f50f875c97a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114633"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87527887"
 ---
 # <a name="driver-signing-policy"></a>ドライバー署名ポリシー
 
@@ -63,7 +63,7 @@ Windows 10 バージョン1607より前では、次の種類のドライバー�
 
 セキュアブートは Windows Vista および Windows 7 には適用されないことに注意してください。
 
-|適用対象|Windows Vista、Windows 7、Windows 8 以降 (セキュアブートオフ)|Windows 8、Windows 8.1、Windows 10、バージョン1507、1511 (セキュアブートオン)|Windows 10、バージョン1607、1703、1709 (セキュアブートオン)|Windows 10、バージョン 1803 + セキュアブートオン|
+|適用対象:|Windows Vista、Windows 7、Windows 8 以降 (セキュアブートオフ)|Windows 8、Windows 8.1、Windows 10、バージョン1507、1511 (セキュアブートオン)|Windows 10、バージョン1607、1703、1709 (セキュアブートオン)|Windows 10、バージョン 1803 + セキュアブートオン|
 |--- |--- |--- |--- |--- |
 |**アーキテクチャ**|64ビットのみ、32ビットに署名は必要ありません|64-bit、32ビット|64-bit、32ビット|64-bit、32ビット|
 |**署名が必要:**|埋め込みファイルまたはカタログファイル|埋め込みファイルまたはカタログファイル|埋め込みファイルまたはカタログファイル|埋め込みファイルまたはカタログファイル|
@@ -74,10 +74,23 @@ Windows 10 バージョン1607より前では、次の種類のドライバー�
 
 ELAM ドライバーの署名の詳細については、「[早期起動マルウェア対策](https://docs.microsoft.com/windows/desktop/w8cookbook/secured-boot)」を参照してください。
 
+## <a name="signing-a-driver-for-internal-distribution-only"></a>ドライバーへの内部配布専用の署名
+
+場合によっては、Windows Update ではなく社内の内部でドライバーを配布することが必要になることがあります。  これを行うには、それを実行するコンピューターをテストモードにする必要がないように、次の手順を実行します。
+
+1. [ハードウェアデベロッパーセンターに登録](https://docs.microsoft.com/windows-hardware/drivers/dashboard/register-for-the-hardware-program)します。
+2. [ハードウェアデベロッパーセンターの FAQ]((https://docs.microsoft.com/windows-hardware/drivers/dashboard/hardware-dashboard-faq))を確認し、適切な契約に署名します。
+3. Codesign 証明書をアップロードします。
+4. 非 EV codesign 証明書を使用して、ドライバーにローカルで署名します。
+5. 上記の codesign 証明書を使用して cab にドライバーをパッケージ化し、CAB に署名します。
+6. 署名のために CAB をハードウェアデベロッパーセンターに送信します。
+7. 送信が承認されると、ハードウェアデベロッパーセンターは、ドライバーに Microsoft 署名を返します。
+8. ドライバーを内部で配布します。
+
 ## <a name="see-also"></a>参照
 
 * [開発およびテスト中の署名されていないドライバーパッケージのインストール](installing-an-unsigned-driver-during-development-and-test.md)
-* [パブリックリリースのドライバーに署名する](signing-drivers-for-public-release--windows-vista-and-later-.md)
-* [開発およびテスト中のドライバーへの署名](signing-drivers-during-development-and-test.md)
+* [一般リリース用のドライバーへの署名](signing-drivers-for-public-release--windows-vista-and-later-.md)
+* [開発中とテスト中のドライバーへの署名](signing-drivers-during-development-and-test.md)
 * [デジタル署名](driver-signing.md)
-* [署名されたドライバーパッケージのインストールおよび読み込みに関する問題のトラブルシューティング](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)
+* [署名済みドライバー パッケージを使用したインストールと読み込みの問題のトラブルシューティング](troubleshooting-install-and-load-problems-with-signed-driver-packages.md)

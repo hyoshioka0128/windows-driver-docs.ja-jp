@@ -4,12 +4,12 @@ description: UWP デバイスアプリを使用すると、デバイスの製造
 ms.assetid: 079CB01E-D16C-4597-8F08-BD75F1D02427
 ms.date: 09/14/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 452a5e9f56624f1a14b3be47b50959ecccef8594
-ms.sourcegitcommit: 3ec971f54122b77408433f7f1e59c467099fb4de
+ms.openlocfilehash: 66f8cbbc979756e8cae28787310a1f5217aaf2cd
+ms.sourcegitcommit: a59b63e84e6790af4c17b232f11a2f50f875c97a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873863"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87527889"
 ---
 # <a name="creating-a-camera-driver-mft-for-a-uwp-device-app"></a>UWP デバイスアプリ用のカメラドライバー MFT の作成
 
@@ -276,7 +276,7 @@ KSCATEGORY_VIDEO_CAMERA:
 "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}" 
 ```
 
-```inf
+```cpp
 KSCATEGORY_CAPTURE:
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{ 65E8773D-8F56-11D0-A3B9-00A0C9223196}\##?#USB#VID_045E&PID_075D&MI_00#8&23C3DB65&0&0000#{65E8773D-8F56-11D0-A3B9-00A0C9223196}\#GLOBAL\Device Parameters]
@@ -286,7 +286,8 @@ KSCATEGORY_CAPTURE:
 "CameraPostProcessingPluginCLSID"="{3456A71B-ECD7-11D0-B908-00A0C9223196}"
 ```
 
-**メモ** `KSCATEGORY_VIDEO_CAMERA`カメラを使用することをお勧めします。   通常は、デバイスの登録方法に応じて、レジストリキーの1つだけが必要になります。
+>[!NOTE]
+>`KSCATEGORY_VIDEO_CAMERA`カメラを使用することをお勧めします。 通常は、デバイスの登録方法に応じて、レジストリキーの1つだけが必要になります。
 
 
 ## <a name="associate-your-app-with-the-camera"></a>アプリをカメラに関連付ける
