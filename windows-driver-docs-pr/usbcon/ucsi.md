@@ -3,12 +3,12 @@ Description: Microsoft では、USB Type-C コネクタ システム ソフト�
 title: USB Type-C Connector System Software Interface (UCSI) ドライバー
 ms.date: 04/20/2017
 ms.localizationpriority: High
-ms.openlocfilehash: bb4c1969370147e8298eabd32aef3befb2cee2e6
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: d2301377daf1057a90220785404b459182499f86
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "72007630"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402271"
 ---
 # <a name="usb-type-c-connector-system-software-interface-ucsi-driver"></a>USB Type-C Connector System Software Interface (UCSI) ドライバー
 
@@ -63,7 +63,7 @@ UCSI 準拠のハードウェアが ACPI 以外のトランスポートを使用
 
 -   **USB コネクタ マネージャー**
 
-    Microsoft では、[こちら](https://go.microsoft.com/fwlink/p/?LinkId=703713)で確認できる UCSI 仕様で定義されている機能を実装する Windows (UcmUcsiCx.sys) を備えた UCSI インボックス ドライバーを提供しています。 この仕様では、UCSI の機能、およびハードウェア コンポーネント デザイナー、システム ビルダー、およびデバイス ドライバーの開発者向けにレジスタとデータ構造について説明します。
+    Microsoft では、[USB Type-C コネクタ システム ソフトウェア インターフェイス仕様](https://go.microsoft.com/fwlink/p/?LinkId=703713)で定義されている機能を実装する Windows (UcmUcsiCx.sys) を備えた UCSI インボックス ドライバーを提供しています。 この仕様では、UCSI の機能、およびハードウェア コンポーネント デザイナー、システム ビルダー、およびデバイス ドライバーの開発者向けにレジスタとデータ構造について説明します。
 
     このドライバーは、埋め込みコントローラーを備えたシステムを対象としています。 このドライバーは、Microsoft が提供する USB コネクタ マネージャーのクラス拡張機能ドライバー (Ucmcx.sys) のクライアントです。 ドライバーでは、ファームウェアへの要求を開始してデータまたは電源ロールを変更し、ユーザーにトラブルシューティング メッセージを提供するために必要な情報を取得するなどのタスクが処理されます。
 

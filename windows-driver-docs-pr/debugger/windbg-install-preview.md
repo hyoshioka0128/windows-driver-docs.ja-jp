@@ -3,12 +3,12 @@ title: WinDbg プレビュー - インストール
 description: このセクションでは、WinDbg プレビュー デバッガーをインストールする方法について説明します。
 ms.date: 03/30/2020
 ms.localizationpriority: High
-ms.openlocfilehash: 32d4efebef4cfff9698f51d55de3a6b7536ebe26
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: 5fbf4f401195993efecca5eca2337a93825eeb65
+ms.sourcegitcommit: 1d531bf9d02653fdf9ad728126d68b8acb86182e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80812514"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87402287"
 ---
 # <a name="windbg-preview---installation"></a>WinDbg プレビュー - インストール
 
@@ -18,14 +18,13 @@ ms.locfileid: "80812514"
 
 このセクションでは、WinDbg プレビュー デバッガーをインストールする方法について説明します。
 
-WinDbg プレビュー デバッガーは、Microsoft Store で入手できます。 インストールには Windows 10 Anniversary Update が必要です。 インストールするには、Microsoft Store を開き、"WinDbg プレビュー" を検索するか、[ここ](
-https://www.microsoft.com/store/apps/9pgjgd53tn86)をクリックします。
+WinDbg プレビュー デバッガーは、Microsoft Store で入手できます。 インストールには Windows 10 Anniversary Update が必要です。 インストールするには、Microsoft Store を開いて "WinDbg プレビュー" を検索するか、次のリンクを使用して [WinDbg プレビュー](https://www.microsoft.com/store/apps/9pgjgd53tn86)に直接移動します。
 
 アプリが見つかったら、それをクリックしてダウンロードし、インストールします。
 
 ## <a name="checking-for-updates"></a>更新プログラムの確認
 
-1. Store アプリを開き、検索ボックスの横にあるアカウントの画像をクリックします。 
+1. Store アプリを開き、検索ボックスの横にあるアカウントの画像をクリックします。
 
 2. **[ダウンロードと更新]** をクリックして、更新プログラムを確認します。
 

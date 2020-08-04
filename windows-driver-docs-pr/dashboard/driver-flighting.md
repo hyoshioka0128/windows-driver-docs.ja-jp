@@ -1,15 +1,15 @@
 ---
 title: ドライバーのフライティング
-description: パートナー センターでドライバーをフライティングすると、定義した Windows Insider リング内でドライバーを配布して、自動的に監視および評価することができます。
+description: 定義した Windows Insider リング内でドライバーを配布します。 ドライバーをフライティングすると、自動的に監視および評価することができます。
 ms.date: 07/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53839b5beeb7ec2a73fc1eafc2bd77fcf6cb740e
-ms.sourcegitcommit: 34a06eda78c8d935f3900b86fa0f620027bc6577
+ms.openlocfilehash: f3c308adf14d0cc04e94dd4573769b723fc0ccd4
+ms.sourcegitcommit: 3a2a28d1e7f0dfd799b7b87f02bc2bea9129c10d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778344"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87335386"
 ---
 # <a name="driver-flighting"></a>ドライバーのフライティング
 

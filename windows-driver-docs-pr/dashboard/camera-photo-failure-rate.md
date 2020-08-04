@@ -4,12 +4,12 @@ description: この測定値は、カメラ デバイスで写真機能の使用
 ms.topic: article
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 605ab114189e5a34e665dd3441ca4ad1ff10dcbf
-ms.sourcegitcommit: 5598b4c767ab56461b976b49fd75e4e5fb6018d2
+ms.openlocfilehash: e5be9197499104417f1170e138f519bba302140c
+ms.sourcegitcommit: f63852446e614c985a65f599cdfe788bdb0c6089
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71017078"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87425730"
 ---
 # <a name="percent-of-camera-photo-capture-failures"></a>カメラの写真キャプチャ エラー率
 
@@ -33,19 +33,22 @@ ms.locfileid: "71017078"
 1. この測定値は、**カメラ デバイスで写真機能の使用が失敗したインスタンスの割合**として、7 日間のスライディング ウィンドウからのテレメトリを集計したものです。
 
      a。 この測定では、単一のデバイスで複数の撮影インスタンスがカウントされる場合があります
-     
-2. インスタンスの種類:
 
-    a。 "*成功した撮影イベント = 0% の失敗*" 
+2. インスタンスの種類
 
-        i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN)
-       ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED)
+   a。 "*成功した撮影イベント = 0% の失敗*"
+
+     i. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN)`
+
+     ii. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED)`
 
     b. 失敗した撮影イベント = 100% の失敗
 
-         i. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN) HRESULT !=0
-        ii. MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED) HRESULT !=0
-       iii. Timed Out
+     i. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_TAKEN) HRESULT !=0`
+
+     ii. `MFCaptureEngineOnEvent (MF_CAPTURE_ENGINE_PHOTO_SEQUENCE_STARTED) HRESULT !=0`
+
+     iii. タイムアウト
 
 ### <a name="final-calculation"></a>最終的な計算
 
