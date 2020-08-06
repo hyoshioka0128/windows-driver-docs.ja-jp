@@ -93,7 +93,7 @@ EWDK では、.NET Framework バージョン 4.7.2 も必要です。 .NET Frame
 
 ドライバー サンプルをダウンロードするには、次のいずれかを実行します。
 
-* [GitHub](https://github.com/Microsoft/Windows-driver-samples) のドライバー サンプル ページにアクセスし、 **[クローンまたはダウンロード]** をクリックしてから **[ZIP をダウンロード]** をクリックします。
+* [GitHub](https://github.com/Microsoft/Windows-driver-samples) のドライバー サンプル ページにアクセスし、 **[Clone or download]\(クローンまたはダウンロード\)** をクリックしてから **[Download ZIP]\(ZIP をダウンロード\)** をクリックします。
 * [GitHub Extension for Visual Studio](https://visualstudio.github.com/) をダウンロードしてから、GitHub リポジトリに接続します。
 * [Microsoft サンプル ポータル](https://docs.microsoft.com/samples/browse/?products=windows-wdk)上でドライバーのサンプルを参照します。
 
